@@ -1,0 +1,31 @@
+Version 0.100
+	gui
+		Fixes:
+			- "Programs" tab, was set as default at startup;
+			- Fixed tray icon display;
+		
+	core
+		New:
+			- Full theme support;
+			- Translation support;
+			
+		Fixes:
+			- Fixed "Can't find theme. File or path not exists: Default" error message;
+			- Fixed tray icon image load;
+			- Fixed proccess output encoding;
+			- run.cpp moved to /src/gui direcotiry;
+			- Fixed crashes of wrestool while getting icons;
+			- Fixed proccess exit code detection;
+			- Fixed enveropment variable detection;
+			- Fixed startup wizard, now it creates Default prefix;
+			
+Version 0.101
+	gui
+		Fixed:
+			- Fixed TRANSLATIONS variable in q4wine.pro
+		
+		New:
+			- Full proffessional Ukrainian translation by Chornoivan Uriy Olexeevich
+			
+Version 0.102
+	

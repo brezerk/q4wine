@@ -1,0 +1,34 @@
+
+[Panelize]
+Знайти коректури, в╕дкинут╕ командою patch=find . -name \*.rej -print
+Знайти ориг╕нали (*.orig) п╕сля команди patch=find . -name \*.orig -print
+Знайти програми з╕ взведеними SUID/SGID б╕тами=find . \( \( -perm -04000 -a -perm +011 \) -o \( -perm -02000 -a -perm +01 \) \) -print
+
+[New Left Panel]
+display=listing
+reverse=0
+case_sensitive=1
+sort_order=name
+list_mode=full
+user_format=half type name | size | perm
+user_status0=half type name | size | perm
+user_status1=half type name | size | perm
+user_status2=half type name | size | perm
+user_status3=half type name | size | perm
+user_mini_status=0
+
+[New Right Panel]
+display=listing
+reverse=0
+case_sensitive=1
+sort_order=name
+list_mode=full
+user_format=half type name | size | perm
+user_status0=half type name | size | perm
+user_status1=half type name | size | perm
+user_status2=half type name | size | perm
+user_status3=half type name | size | perm
+user_mini_status=0
+
+[Misc]
+display_codepage=Other_8_bit

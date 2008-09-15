@@ -1,0 +1,568 @@
+<ui version="4.0" >
+ <author>Malakhov A.S. aka Brezerk</author>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>619</width>
+    <height>510</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>%1 :. Qt4 GUI for Wine v%2</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <layout class="QGridLayout" >
+    <item row="0" column="0" >
+     <widget class="QTabWidget" name="tbwGeneral" >
+      <property name="currentIndex" >
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab" >
+       <attribute name="title" >
+        <string>Programs</string>
+       </attribute>
+       <layout class="QGridLayout" >
+        <item row="0" column="0" >
+         <widget class="QGroupBox" name="gbCategoryes" >
+          <property name="minimumSize" >
+           <size>
+            <width>250</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize" >
+           <size>
+            <width>250</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="title" >
+           <string>Сategoryes</string>
+          </property>
+          <layout class="QGridLayout" >
+           <item row="0" column="0" >
+            <widget class="QTreeWidget" name="twPrograms" >
+             <property name="contextMenuPolicy" >
+              <enum>Qt::CustomContextMenu</enum>
+             </property>
+             <property name="acceptDrops" >
+              <bool>true</bool>
+             </property>
+             <property name="autoExpandDelay" >
+              <number>0</number>
+             </property>
+             <property name="itemsExpandable" >
+              <bool>true</bool>
+             </property>
+             <column>
+              <property name="text" >
+               <string>Prefixes</string>
+              </property>
+             </column>
+             <item>
+              <property name="text" >
+               <string>Default</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1" >
+         <widget class="QGroupBox" name="gbIcons" >
+          <property name="title" >
+           <string>Icons</string>
+          </property>
+          <layout class="QGridLayout" >
+           <item row="0" column="0" >
+            <widget class="QListWidget" name="lstIcons" >
+             <property name="contextMenuPolicy" >
+              <enum>Qt::CustomContextMenu</enum>
+             </property>
+             <property name="selectionMode" >
+              <enum>QAbstractItemView::ExtendedSelection</enum>
+             </property>
+             <property name="iconSize" >
+              <size>
+               <width>64</width>
+               <height>64</height>
+              </size>
+             </property>
+             <property name="textElideMode" >
+              <enum>Qt::ElideNone</enum>
+             </property>
+             <property name="movement" >
+              <enum>QListView::Snap</enum>
+             </property>
+             <property name="resizeMode" >
+              <enum>QListView::Adjust</enum>
+             </property>
+             <property name="gridSize" >
+              <size>
+               <width>80</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="viewMode" >
+              <enum>QListView::IconMode</enum>
+             </property>
+             <property name="uniformItemSizes" >
+              <bool>false</bool>
+             </property>
+             <property name="wordWrap" >
+              <bool>false</bool>
+             </property>
+             <property name="selectionRectVisible" >
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2" >
+         <widget class="QGroupBox" name="gbInfo" >
+          <property name="title" >
+           <string>Info</string>
+          </property>
+          <layout class="QGridLayout" >
+           <item row="0" column="0" >
+            <widget class="QLabel" name="lblInfo" >
+             <property name="text" >
+              <string>Name:&lt;br>Desctiption:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2" >
+       <attribute name="title" >
+        <string>Process</string>
+       </attribute>
+       <layout class="QVBoxLayout" >
+        <item>
+         <widget class="QFrame" name="tlbProccess" >
+          <property name="minimumSize" >
+           <size>
+            <width>16</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize" >
+           <size>
+            <width>16777215</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="frameShape" >
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow" >
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableProc" >
+          <property name="selectionMode" >
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior" >
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="sortingEnabled" >
+           <bool>false</bool>
+          </property>
+          <column>
+           <property name="text" >
+            <string>PID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text" >
+            <string>Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text" >
+            <string>Ni</string>
+           </property>
+          </column>
+          <column>
+           <property name="text" >
+            <string>Prefix</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblProcInfo" >
+          <property name="text" >
+           <string>Total procces:</string>
+          </property>
+          <property name="margin" >
+           <number>3</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3" >
+       <attribute name="title" >
+        <string>Setup</string>
+       </attribute>
+       <layout class="QGridLayout" >
+        <item row="0" column="0" >
+         <widget class="QGroupBox" name="gbSelPrefix" >
+          <property name="title" >
+           <string>Current Prefix</string>
+          </property>
+          <layout class="QGridLayout" >
+           <item row="0" column="0" >
+            <widget class="QComboBox" name="cbPrefixes" >
+             <item>
+              <property name="text" >
+               <string>Default (Windows XP)</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="0" column="1" >
+            <widget class="QPushButton" name="cmdManagePrefixes" >
+             <property name="maximumSize" >
+              <size>
+               <width>160</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="text" >
+              <string>Manage</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0" >
+         <widget class="QGroupBox" name="gbWineSetup" >
+          <property name="title" >
+           <string>Options</string>
+          </property>
+          <layout class="QGridLayout" >
+           <item row="0" column="0" >
+            <widget class="QTabWidget" name="twWineSetup" >
+             <property name="currentIndex" >
+              <number>0</number>
+             </property>
+             <widget class="QWidget" name="tab_4" >
+              <attribute name="title" >
+               <string>Base setup</string>
+              </attribute>
+              <layout class="QVBoxLayout" >
+               <item>
+                <widget class="QLabel" name="label" >
+                 <property name="text" >
+                  <string>Hi. No functions here. It'l be implemented at v.0.120.</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="cmdCreateFake" >
+                 <property name="enabled" >
+                  <bool>false</bool>
+                 </property>
+                 <property name="text" >
+                  <string>Create Fake Drive</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="cmdUpdateDrive" >
+                 <property name="enabled" >
+                  <bool>false</bool>
+                 </property>
+                 <property name="text" >
+                  <string>Update Fake Drive</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer>
+                 <property name="orientation" >
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" >
+                  <size>
+                   <width>535</width>
+                   <height>71</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tab_5" >
+              <attribute name="title" >
+               <string>System Software</string>
+              </attribute>
+              <layout class="QVBoxLayout" >
+               <item>
+                <widget class="QLabel" name="label_2" >
+                 <property name="text" >
+                  <string>Hi. No functions here. It'l be implemented at v.0.120.</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer>
+                 <property name="orientation" >
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" >
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="tab_6" >
+              <attribute name="title" >
+               <string>Core fonts</string>
+              </attribute>
+              <layout class="QVBoxLayout" >
+               <item>
+                <widget class="QLabel" name="label_3" >
+                 <property name="text" >
+                  <string>Hi. No functions here. It'l be implemented at v.0.120.</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer>
+                 <property name="orientation" >
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" >
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_8" >
+       <attribute name="title" >
+        <string>Prefixes</string>
+       </attribute>
+       <layout class="QVBoxLayout" >
+        <item>
+         <widget class="QFrame" name="tlbPrefix" >
+          <property name="minimumSize" >
+           <size>
+            <width>16</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize" >
+           <size>
+            <width>16777215</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="frameShape" >
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow" >
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tablePrefix" >
+          <property name="selectionMode" >
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior" >
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <column>
+           <property name="text" >
+            <string>Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text" >
+            <string>Version</string>
+           </property>
+          </column>
+          <column>
+           <property name="text" >
+            <string>Path</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>619</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File" >
+    <property name="title" >
+     <string>&amp;File</string>
+    </property>
+    <addaction name="mainRun" />
+    <addaction name="mainInstall" />
+    <addaction name="separator" />
+    <addaction name="mainOptions" />
+    <addaction name="separator" />
+    <addaction name="mainExit" />
+   </widget>
+   <widget class="QMenu" name="menuHelp" >
+    <property name="title" >
+     <string>Help</string>
+    </property>
+    <addaction name="mainAbout" />
+    <addaction name="mainAboutQt" />
+    <addaction name="separator" />
+    <addaction name="mainHandbook" />
+   </widget>
+   <widget class="QMenu" name="menuTools" >
+    <property name="title" >
+     <string>Tools</string>
+    </property>
+    <addaction name="mainPrograms" />
+    <addaction name="mainProcess" />
+    <addaction name="mainSetup" />
+    <addaction name="mainPrefix" />
+    <addaction name="separator" />
+    <addaction name="mainExportIcons" />
+   </widget>
+   <addaction name="menu_File" />
+   <addaction name="menuTools" />
+   <addaction name="menuHelp" />
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+  <action name="action_Import" >
+   <property name="text" >
+    <string>&amp;Import</string>
+   </property>
+  </action>
+  <action name="action_Export" >
+   <property name="text" >
+    <string>&amp;Export</string>
+   </property>
+  </action>
+  <action name="mainRun" >
+   <property name="text" >
+    <string>&amp;Run...</string>
+   </property>
+  </action>
+  <action name="mainExit" >
+   <property name="text" >
+    <string>E&amp;xit</string>
+   </property>
+  </action>
+  <action name="mainAbout" >
+   <property name="text" >
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="mainHandbook" >
+   <property name="text" >
+    <string>Handbook</string>
+   </property>
+  </action>
+  <action name="mainAboutQt" >
+   <property name="text" >
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="mainInstall" >
+   <property name="text" >
+    <string>Instal wizard</string>
+   </property>
+  </action>
+  <action name="mainPrograms" >
+   <property name="text" >
+    <string>Programs</string>
+   </property>
+  </action>
+  <action name="mainProcess" >
+   <property name="text" >
+    <string>Process</string>
+   </property>
+  </action>
+  <action name="mainSetup" >
+   <property name="text" >
+    <string>Setup</string>
+   </property>
+  </action>
+  <action name="mainPrefix" >
+   <property name="text" >
+    <string>Prefixes</string>
+   </property>
+  </action>
+  <action name="mainExportIcons" >
+   <property name="text" >
+    <string>Export icons</string>
+   </property>
+  </action>
+  <action name="mainOptions" >
+   <property name="text" >
+    <string>Options</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="2" margin="3" />
+ <resources>
+  <include location="k4wine.qrc" />
+ </resources>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX" >
+   <number>5</number>
+  </property>
+  <property name="gridDeltaY" >
+   <number>5</number>
+  </property>
+  <property name="gridSnapX" >
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY" >
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible" >
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>
