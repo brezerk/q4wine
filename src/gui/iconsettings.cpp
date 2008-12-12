@@ -42,7 +42,7 @@ IconSettings::IconSettings(bool newIcon, QString prefix_id, QString prefix_dir, 
 	
 	setupUi(this);
 	
-	QSettings settings("Brezerk GNU Soft", APP_NAME);
+	QSettings settings(APP_SHORT_NAME, "default");
 	settings.beginGroup("app");
 	loadThemeIcons(settings.value("theme").toString());
 	settings.endGroup();	
@@ -71,8 +71,9 @@ IconSettings::IconSettings(bool newIcon, QString prefix_id, QString prefix_dir, 
 		case FALSE:
 			lblCaption->setText(tr("Icon settings"));
 			setWindowTitle(tr("Icon settings"));
-			
-			getIconReccord();
+			settings.beginGroup("app");
+				getIconReccord(settings.value("theme").toString());
+			settings.endGroup();
 		break;
 	}
 	
@@ -134,13 +135,13 @@ QIcon IconSettings::loadIcon(QString iconName, QString themePath){
 	return icon;	
 }
 
-void IconSettings::getIconReccord(){
+void IconSettings::getIconReccord(QString themePath){
 	QSqlQuery query;
 	
 	if (!dir_id.isEmpty()){
-		query.exec(tr("SELECT name, exec, cmdargs, icon_path, desc, image, mount, display, winedebug, useconsole, override, id, wrkdir FROM icon WHERE prefix_id=%1 AND dir_id=%2 and name=\"%3\"") .arg(prefix_id) .arg(dir_id) .arg(iconName));
+		query.exec(tr("SELECT name, exec, cmdargs, icon_path, desc, image, mount, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND dir_id=%2 and name=\"%3\"") .arg(prefix_id) .arg(dir_id) .arg(iconName));
 	} else {
-		query.exec(tr("SELECT name, exec, cmdargs, icon_path, desc, image, mount, display, winedebug, useconsole, override, id, wrkdir FROM icon WHERE prefix_id=%1 AND name=\"%2\" AND dir_id ISNULL") .arg(prefix_id) .arg(iconName));
+		query.exec(tr("SELECT name, exec, cmdargs, icon_path, desc, image, mount, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND name=\"%2\" AND dir_id ISNULL") .arg(prefix_id) .arg(iconName));
 	}
 	
 	query.first();
@@ -155,6 +156,26 @@ void IconSettings::getIconReccord(){
 		if (QFile(query.value(3).toString()).exists()){
 			cmdGetIcon->setIcon (QIcon(query.value(3).toString()));
 			iconPath=query.value(3).toString();
+		} else {
+			iconPath=query.value(3).toString();
+			if (iconPath=="wineconsole"){
+				cmdGetIcon->setIcon(loadIcon("data/wineconsole.png", themePath));
+			} else if (iconPath=="regedit"){
+				cmdGetIcon->setIcon(loadIcon("data/regedit.png", themePath));
+			} else if (iconPath=="wordpad"){
+				cmdGetIcon->setIcon(loadIcon("data/notepad.png", themePath));
+			} else if (iconPath=="winecfg"){
+				cmdGetIcon->setIcon(loadIcon("data/winecfg.png", themePath));
+			} else if (iconPath=="uninstaller"){
+				cmdGetIcon->setIcon(loadIcon("data/uninstaller.png", themePath));
+			} else if (iconPath=="eject"){
+				cmdGetIcon->setIcon(loadIcon("data/eject.png", themePath));
+			} else if (iconPath=="explorer"){
+				cmdGetIcon->setIcon(loadIcon("data/explorer.png", themePath));
+			} else {
+				cmdGetIcon->setIcon(loadIcon("data/exec_wine.png", themePath));
+				iconPath="";
+			}
 		}
 	}
 	
@@ -164,8 +185,9 @@ void IconSettings::getIconReccord(){
 	txtDisplay->setText(query.value(7).toString());
 	txtWinedebug->setText(query.value(8).toString());
 	txtWorkDir->setText(query.value(12).toString());
-	
-	
+	txtDesktopSize->setText(query.value(13).toString());
+	spinNice->setValue(query.value(14).toInt());
+
 	if (query.value(9).toString()=="1"){
 		cbUseConsole->setCheckState(Qt::Checked);
 		txtWinedebug->setEnabled(TRUE);
@@ -209,7 +231,7 @@ void IconSettings::getIconReccord(){
 void IconSettings::getWineDlls(QString winedll_path){
 	
 	if (winedll_path.isEmpty()){
-		QSettings settings("Brezerk GNU Soft", APP_NAME);
+		QSettings settings(APP_SHORT_NAME, "default");
 		settings.beginGroup("wine");
 			winedll_path=settings.value("WineLibs").toString();
 		settings.endGroup();
@@ -351,8 +373,9 @@ void IconSettings::cmdGetIcon_Click(){
 			QStringList list1 = fileName.split("/");
 			
 			tmpDir.append(QDir::homePath());
-			tmpDir.append(APP_CONF);
-			tmpDir.append("tmp/");
+			tmpDir.append("/.config/");
+			tmpDir.append(APP_SHORT_NAME);
+			tmpDir.append("/tmp/");
 			tmpDir.append(list1.last());
 			
 			QDir tmp(tmpDir);
@@ -524,7 +547,7 @@ void IconSettings::cmdOk_Click(){
 	
 	switch (newIcon){
 		case TRUE:
-			query.prepare("INSERT INTO icon(override, winedebug, useconsole, display, mount, image, cmdargs, exec, icon_path, desc, dir_id, id, name, prefix_id, wrkdir) VALUES(:override, :winedebug, :useconsole, :display, :mount, :image, :cmdargs, :exec, :icon_path, :desc, :dir_id, NULL, :name, :prefix_id, :wrkdir);");
+			query.prepare("INSERT INTO icon(override, winedebug, useconsole, display, mount, image, cmdargs, exec, icon_path, desc, dir_id, id, name, prefix_id, wrkdir, desktop, nice) VALUES(:override, :winedebug, :useconsole, :display, :mount, :image, :cmdargs, :exec, :icon_path, :desc, :dir_id, NULL, :name, :prefix_id, :wrkdir, :desktop, :nice);");
 			
 			if(dir_id.isEmpty())
 				query.bindValue(":dir_id", QVariant(QVariant::String));
@@ -534,7 +557,7 @@ void IconSettings::cmdOk_Click(){
 			query.bindValue(":prefix_id", prefix_id);
 		break;
 		case FALSE:
-			query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display, mount=:mount, image=:image, cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir WHERE id=:id;");
+			query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display, mount=:mount, image=:image, cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice WHERE id=:id;");
 			
 			query.bindValue(":id", iconId);
 		break;
@@ -597,6 +620,10 @@ void IconSettings::cmdOk_Click(){
 		query.bindValue(":desc", txtDesc->text());
 	
 	query.bindValue(":name", txtName->text());
+
+	query.bindValue(":desktop", txtDesktopSize->text());
+
+	query.bindValue(":nice", spinNice->value());
 
 	if (!query.exec()){
 		QMessageBox::warning(this, tr("Error"), tr("debug: %1").arg(query.lastError().text()));

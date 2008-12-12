@@ -27,7 +27,7 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-
+#include "config.h"
 
 #include "iconsview.h"
  
@@ -92,7 +92,9 @@ void IconsView::cmdOk_Click(){
 		if (cbDefaultExport->checkState()==Qt::Checked){
 		saveFile.clear();
 		saveFile.append(QDir::homePath());
-		saveFile.append("/.q4wine/icons/");
+		saveFile.append("/.config/");
+		saveFile.append(APP_SHORT_NAME);
+		saveFile.append("/icons/");
 		saveFile.append(lstIcons->currentItem()->text());
 		
 		saveFileName=lstIcons->currentItem()->text();
@@ -116,7 +118,9 @@ void IconsView::cmdOk_Click(){
 						if ((!saveFileName.isEmpty()) && (ok)){
 							saveFile.clear();
 							saveFile.append(QDir::homePath());
-							saveFile.append("/.q4wine/icons/");
+							saveFile.append("/.config/");
+							saveFile.append(APP_SHORT_NAME);
+							saveFile.append("/icons/");
 							saveFile.append(saveFileName);
 						} else {
 							reject();
@@ -126,7 +130,9 @@ void IconsView::cmdOk_Click(){
 					case 1:
 						saveFile.clear();
 						saveFile.append(QDir::homePath());
-						saveFile.append("/.q4wine/icons/");
+						saveFile.append("/.config/");
+						saveFile.append(APP_SHORT_NAME);
+						saveFile.append("/icons/");
 						saveFile.append(saveFileName);
 						selectedFile=saveFile;
 						accept();
@@ -147,7 +153,9 @@ void IconsView::cmdOk_Click(){
 		} else {
 			saveFile.clear();
 			saveFile.append(QDir::homePath());
-			saveFile.append("/.q4wine/icons/");
+			saveFile.append("/.config/");
+			saveFile.append(APP_SHORT_NAME);
+			saveFile.append("/icons/");
 			saveFile = QFileDialog::getSaveFileName(this, tr("Select file to save"), saveFile , tr("Images (*.png)"));
 	
 			if (saveFile.isEmpty()){

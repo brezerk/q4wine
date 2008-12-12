@@ -37,17 +37,12 @@
 #include <QSqlRelation>
 #include <QSqlRelationalTableModel>
 
-
-
-
-
 void Wizard::loadThemeIcons(QString themePath, int Scene){
 	QPixmap pixmap;
 				
-	
 	switch (Scene){
 		case 0:
-			
+			// Prefix creation
 			if (!pixmap.load(tr("%1/data/prefixc.png").arg(themePath))){
 				pixmap.load(":data/prefixc.png");
 			}
@@ -65,7 +60,7 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 			
 		break;
 		case 1:
-			
+			// First startup
 			if (!pixmap.load(tr("%1/data/firstc.png").arg(themePath))){
 				pixmap.load(":data/firstc.png");
 			}
@@ -88,7 +83,20 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 			cmdGetConsoleBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetWrestoolBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetIcotoolBin->setIcon(loadIcon("data/folder.png", themePath));
-			
+		break;
+		case 2:
+			// Fake drive
+			if (!pixmap.load(tr("%1/data/firstc.png").arg(themePath))){
+				pixmap.load(":data/firstc.png");
+			}
+			lblPicture->setPixmap(pixmap);
+		break;
+		case 3:
+			// Fake drive
+			if (!pixmap.load(tr("%1/data/firstc.png").arg(themePath))){
+				pixmap.load(":data/firstc.png");
+			}
+			lblPicture->setPixmap(pixmap);
 		break;
 	}
 	return;
@@ -115,9 +123,11 @@ QIcon Wizard::loadIcon(QString iconName, QString themePath){
 
 
 
-Wizard::Wizard(int WizardType, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
-	
+	/*
+		Note: var1, var2 is optional data, used for different scene actions ;)
+	*/
 	
 	setupUi(this);
 
@@ -127,8 +137,8 @@ Wizard::Wizard(int WizardType, QWidget * parent, Qt::WFlags f) : QDialog(parent,
 	Page=1;
 
 	
+	QSettings settings(APP_SHORT_NAME, "default");
 	
-	QSettings settings("Brezerk GNU Soft", APP_NAME);
 	settings.beginGroup("app");
 		loadThemeIcons(settings.value("theme").toString(), Scena);
 	settings.endGroup();	
@@ -196,8 +206,23 @@ Wizard::Wizard(int WizardType, QWidget * parent, Qt::WFlags f) : QDialog(parent,
 			
 			txtWrestoolBin->setText(getWhichOut("wrestool"));
 			txtIcotoolBin->setText(getWhichOut("icotool"));
-
-			
+		break;
+		case 2:
+			TotalPage=6;
+			this->var1=var1;
+			setWindowTitle(tr("Fake drive creation wizard"));
+			lblCaption->setText(tr("<b>Fake drive creation wizard</b>"));
+			lblStep->setText(tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
+			lblWizardInfo->setText(Wizard::tr("<p>Welcome to fake drive creation wizard.</p><p>This wizard helps you to make all necessary steps for successful fake drive creation.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>"));
+		break;
+		case 3:
+			TotalPage=6;
+			this->var1=var1;
+			setWindowTitle(tr("Fake drive update wizard"));
+			lblCaption->setText(tr("<b>Fake drive update wizard</b>"));
+			lblStep->setText(tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
+			lblWizardInfo->setText(Wizard::tr("<p>Welcome to fake drive update wizard.</p><p>This wizard helps you to make all necessary steps for successful fake drive creation.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>"));
+			Scena=2;
 		break;
 	}
 
@@ -210,6 +235,11 @@ Wizard::Wizard(int WizardType, QWidget * parent, Qt::WFlags f) : QDialog(parent,
 	widgetCreatePrefix0->setVisible(FALSE);
 	widgetCreatePrefix1->setVisible(FALSE);
 	widgetCreatePrefix2->setVisible(FALSE);
+
+	widgetCreateFakeDrive0->setVisible(FALSE);
+	widgetCreateFakeDrive1->setVisible(FALSE);
+	widgetCreateFakeDrive2->setVisible(FALSE);
+	widgetCreateFakeDrive3->setVisible(FALSE);
 	
 	widgetFirstStartup0->setVisible(FALSE);
 	widgetFirstStartup1->setVisible(FALSE);
@@ -240,9 +270,10 @@ void Wizard::comboProxyType_indexChanged(QString text){
 
 void Wizard::changeBoxState(int state){
 	/*
-		Функция обработки выбора чекбокса
+		Checkbox selecting event
 	*/
 
+	/*
 	switch(Scena){
 		case 0:
 			switch (Page){
@@ -256,7 +287,7 @@ void Wizard::changeBoxState(int state){
 			}
 		break;
 	}	
-
+	*/
 
 	return;
 }
@@ -264,7 +295,7 @@ void Wizard::changeBoxState(int state){
 
 bool Wizard::eventFilter(QObject *obj, QEvent *event){
 	/*
-		Функция отображения диалога выбора каталога
+		User select folder dialog function
 	*/
 	
 	if (event->type() == QEvent::MouseButtonPress) {
@@ -306,47 +337,6 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 			
 		}
 	}
-	
-	
-	/*
-	if (event->type() == QEvent::MouseButtonPress) {
-		
-		
-		QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
-		
-		if (!dir.isEmpty()){
-			QString a;
-			
-			a.append("txt");
-			a.append(obj->objectName().right(obj->objectName().length()-6));
-			
-			QLineEdit *lineEdit = findChild<QLineEdit *>(a);
-			
-			if (lineEdit){
-				
-				
-				if (obj==cmdGetWineBin){
-					txtWineServer->setText(tr("%1wineserver").arg(dir));
-					dir.append("wine");
-					txtWineLoader->setText(dir);
-					
-				}
-				
-				if (obj==cmdGetWineServer)
-					dir.append("wineserver");
-				
-				if (obj==cmdGetWineLoader)
-					dir.append("wine");
-				
-					lineEdit->setText(dir);
-					
-			} else {
-				qDebug("Error");	
-			}
-		}
-	}
-	*/
-	
 	return FALSE;	
 }
 
@@ -457,8 +447,8 @@ void Wizard::nextWizardPage(){
 				break;
 				case 7:
 					
-					QSettings settings("Brezerk GNU Soft", APP_NAME);
-	
+					QSettings settings(APP_SHORT_NAME, "default");
+						
 					settings.beginGroup("wine");
 					settings.setValue("WineBin", txtWineBin->text());
 					settings.setValue("ServerBin", txtWineServerBin->text());
@@ -543,14 +533,12 @@ void Wizard::nextWizardPage(){
 				case 5:
 				
 					QSqlQuery q;
-					q.prepare("INSERT INTO prefix(id, name, path, version, wine_exec, wine_server, wine_loader, wine_dllpath, cdrom_mount, cdrom_drive) VALUES(NULL, :name, :path, :version, :wine_exec, :wine_server, :wine_loader, :wine_dllpath, :cdrom_mount, :cdrom_drive);");
+					q.prepare("INSERT INTO prefix(id, name, path, wine_exec, wine_server, wine_loader, wine_dllpath, cdrom_mount, cdrom_drive) VALUES(NULL, :name, :path, :wine_exec, :wine_server, :wine_loader, :wine_dllpath, :cdrom_mount, :cdrom_drive);");
 					q.bindValue(":name", txtPrefixName->text());
 					q.bindValue(":path", txtPrefixPath->text());
-					if (cbCreafeFake->checkState()==Qt::Checked){
-						q.bindValue(":version", cbFakeVersion->currentText());
-					} else {
-						q.bindValue(":version", "");
-					}
+					//if (cbCreafeFake->checkState()==Qt::Checked){
+					//	q.bindValue(":version", cbFakeVersion->currentText());
+					//}
 					
 					q.bindValue(":wine_exec", txtWineBin->text());
 					q.bindValue(":wine_server", txtWineServerBin->text());
@@ -570,10 +558,299 @@ void Wizard::nextWizardPage(){
 						#endif
 						return;
 					}
+
 					
-					
+					if (cbCreafeFake->checkState()==Qt::Checked){	
+						Wizard *createFakeDriveWizard = new Wizard(2, txtPrefixName->text());
+						createFakeDriveWizard->exec();
+					}
 
 					accept() ;
+				break;
+			}
+		break;
+		case 2:
+			switch (Page){
+				case 6:
+
+					QApplication::setOverrideCursor( Qt::BusyCursor );
+					
+					//Set variables
+					QSqlQuery query;
+					QString prefix_name = var1;
+					QString prefix_id;
+					
+					//Getting versions
+					QString version;
+					if (comboFakeVersion->currentText()=="Windows XP")
+							version = "winxp";
+					if (comboFakeVersion->currentText()=="Windows 2008")
+							version = "win2008";
+					if (comboFakeVersion->currentText()=="Windows Vista")
+							version = "vista";
+					if (comboFakeVersion->currentText()=="Windows 2003")
+							version = "win2003";
+					if (comboFakeVersion->currentText()=="Windows 2000")
+							version = "win2k";
+					if (comboFakeVersion->currentText()=="Windows ME")
+							version = "winme";
+					if (comboFakeVersion->currentText()=="Windows 98")
+							version = "win98";
+					if (comboFakeVersion->currentText()=="Windows 95")
+							version = "win95";
+					if (comboFakeVersion->currentText()=="Windows NT 4.0")
+							version = "nt40";
+					if (comboFakeVersion->currentText()=="Windows NT 3.0")
+							version = "nt351";
+					if (comboFakeVersion->currentText()=="Windows 3.1")
+							version = "win31";
+					if (comboFakeVersion->currentText()=="Windows 3.0")
+							version = "win30";
+					if (comboFakeVersion->currentText()=="Windows 2.0")
+							version = "win20";
+		
+					WineBinLauncher *launcher;
+
+					launcher = new WineBinLauncher(prefix_name);
+	
+					launcher->appendWineExe("prefixcreate");
+					launcher->run_exec(this, "", "-w", TRUE);
+						if (launcher->exec()!=QDialog::Accepted){
+							QApplication::restoreOverrideCursor();
+
+							qDebug()<<"Error while run WineExe: ";
+							reject();
+							return;
+						}
+
+					Registry registry;
+
+					if (registry.init()){
+						registry.append(tr("[HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion]\n\"RegisteredOrganization\"=\"%1\"\n\"RegisteredOwner\"=\"%2\"\n\n[HKEY_CURRENT_USER\\Software\\Wine]\n\"Version\"=\"%3\"").arg(txtOrganization->text()).arg(txtOwner->text()).arg(version));	
+
+						if (!txtFakeBrowsers->text().isEmpty())
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\WineBrowser]\n\"Browsers\"=\"%1\"").arg(txtFakeBrowsers->text()));
+
+						if (!txtFakeMailers->text().isEmpty())
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\WineBrowser]\n\"Mailers\"=\"%1\"").arg(txtFakeMailers->text()));
+						
+						if (comboFakeD3D_Multi->currentText()!="default")
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"Multisampling\"=\"%1\"").arg(comboFakeD3D_Multi->currentText()));
+
+						if (comboFakeD3D_Render->currentText()!="default")
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"DirectDrawRenderer\"=\"%1\"").arg(comboFakeD3D_Render->currentText()));
+
+						if (comboFakeD3D_LMode->currentText()!="default")
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"RenderTargetLockMode\"=\"%1\"").arg(comboFakeD3D_LMode->currentText()));
+
+						if (comboFakeD3D_Offscreen->currentText()!="default")
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"OffscreenRenderingMode\"=\"%1\"").arg(comboFakeD3D_Offscreen->currentText()));
+
+						if (comboFakeD3D_GLSL->currentText()!="default")
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"UseGLSL\"=\"%1\"").arg(comboFakeD3D_GLSL->currentText()));
+
+						if (!txtFakeD3D_VMem->text().isEmpty())
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"VideoMemorySize\"=\"%1\"").arg(txtFakeD3D_VMem->text()));
+
+						if (comboFakeX11_WR->currentText()!="default")
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver]\n\"ClientSideWithRender\"=\"%1\"").arg(comboFakeX11_WR->currentText()));
+
+						if (comboFakeX11_AAR->currentText()!="default")
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver]\n\"ClientSideAntiAliasWithRender\"=\"%1\"").arg(comboFakeX11_AAR->currentText()));
+
+						if (comboFakeX11_AAC->currentText()!="default")
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver]\n\"ClientSideAntiAliasWithCore\"=\"%1\"").arg(comboFakeX11_AAC->currentText()));
+
+						if (comboFakeX11_XRandr->currentText()!="default")
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver]\n\"UseXRandR\"=\"%1\"").arg(comboFakeX11_XRandr->currentText()));
+
+						if (comboFakeX11_XVid->currentText()!="default")
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver]\n\"UseXVidMode\"=\"%1\"").arg(comboFakeX11_XVid->currentText()));
+
+						
+
+						if (cbUseQtColors->checkState()==Qt::Checked){
+							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Control Panel\\Colors]\n"));
+
+
+								QColor color;
+								QPalette cur_palette;
+		
+								cur_palette = qApp->palette();
+
+								color = cur_palette.color(QPalette::Base);
+								registry.append(tr("\"Window\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+
+								color = cur_palette.color(QPalette::Window);
+								registry.append(tr("\"ActiveBorder\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+								registry.append(tr("\"InactiveBorder\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+								registry.append(tr("\"AppWorkSpace\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+								registry.append(tr("\"Menu\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+								registry.append(tr("\"MenuBar\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+								registry.append(tr("\"Scrollbar\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+								registry.append(tr("\"MenuHilight\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+								registry.append(tr("\"ButtonFace\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+
+								color = cur_palette.color(QPalette::AlternateBase);
+								registry.append(tr("\"ButtonAlternateFace\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+
+								color = cur_palette.color(QPalette::Dark);
+								registry.append(tr("\"ButtonDkShadow\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+								registry.append(tr("\"ButtonShadow\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+								registry.append(tr("\"GrayText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+
+								color = cur_palette.color(QPalette::Light);
+								registry.append(tr("\"ButtonHilight\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+								
+								color = cur_palette.color(QPalette::ButtonText);
+								registry.append(tr("\"ButtonText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+
+								color = cur_palette.color(QPalette::WindowText);
+								registry.append(tr("\"MenuText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+								registry.append(tr("\"WindowFrame\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+								registry.append(tr("\"WindowText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+
+								color = cur_palette.color(QPalette::Highlight);
+								registry.append(tr("\"Hilight\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+
+								color = cur_palette.color(QPalette::HighlightedText);
+								registry.append(tr("\"HilightText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+
+								color = cur_palette.color(QPalette::ToolTipBase);
+								registry.append(tr("\"InfoWindow\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+
+								color = cur_palette.color(QPalette::ToolTipText);
+								registry.append(tr("\"InfoText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+
+
+						}
+
+
+						if (registry.exec(this, prefix_name)){
+							
+							QString dir_id;
+
+							//Is settings directory exists?
+							query.prepare("SELECT id FROM prefix WHERE name=:name");
+							query.bindValue(":name", prefix_name);
+							query.exec();
+							query.first();
+							prefix_id=query.value(0).toString();
+							query.clear();
+
+							query.prepare("SELECT id FROM dir WHERE prefix_id=:prefix_id AND name=:name;");
+							query.bindValue(":name", tr("system"));
+							query.bindValue(":prefix_id", prefix_id);
+							query.exec();
+
+							if (query.first()){
+								dir_id=query.value(0).toString();
+								query.clear();
+							} else {
+								query.clear();
+
+								//Is seems--no. Then Adding settings directory
+								query.prepare("INSERT INTO dir(id, name, prefix_id) VALUES(NULL, :name, :prefix_id)");
+								query.bindValue(":name", tr("system"));
+								query.bindValue(":prefix_id", prefix_id);
+								query.exec();
+								query.clear();
+
+								//Then, getting dir id.
+								query.prepare("SELECT id FROM dir WHERE prefix_id=:prefix_id AND name=:name;");
+								query.bindValue(":name", tr("system"));
+								query.bindValue(":prefix_id", prefix_id);
+								query.exec();
+								query.first();
+								dir_id=query.value(0).toString();
+								query.clear();
+
+								//Adding icons
+								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
+								query.bindValue(":cmdargs", QVariant(QVariant::String));
+								query.bindValue(":exec", "winecfg");
+								query.bindValue(":icon_path", "winecfg");
+								query.bindValue(":desc", tr("Configure the general settings for Wine"));
+								query.bindValue(":dir_id", dir_id);
+								query.bindValue(":name", "winecfg");
+								query.bindValue(":prefix_id", prefix_id);
+								query.exec();
+								query.clear();
+
+								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
+								query.bindValue(":cmdargs", "--backend=user cmd");
+								query.bindValue(":exec", "wineconsole");
+								query.bindValue(":icon_path", "wineconsole");
+								query.bindValue(":desc", tr("Wineconsole is similar to wine command wcmd"));
+								query.bindValue(":dir_id", dir_id);
+								query.bindValue(":name", "console");
+								query.bindValue(":prefix_id", prefix_id);
+								query.exec();
+								query.clear();
+
+								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
+								query.bindValue(":cmdargs", QVariant(QVariant::String));
+								query.bindValue(":exec", "uninstaller");
+								query.bindValue(":icon_path", "uninstaller");
+								query.bindValue(":desc", tr("Uninstall Windows programs under Wine properly"));
+								query.bindValue(":dir_id", dir_id);
+								query.bindValue(":name", "uninstaller");
+								query.bindValue(":prefix_id", prefix_id);
+								query.exec();
+								query.clear();
+
+								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
+								query.bindValue(":cmdargs", QVariant(QVariant::String));
+								query.bindValue(":exec", "regedit");
+								query.bindValue(":icon_path", "regedit");
+								query.bindValue(":desc", tr("Wine registry editor"));
+								query.bindValue(":dir_id", dir_id);
+								query.bindValue(":name", "regedit");
+								query.bindValue(":prefix_id", prefix_id);
+								query.exec();
+								query.clear();
+
+								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
+								query.bindValue(":cmdargs", QVariant(QVariant::String));
+								query.bindValue(":exec", "explorer");
+								query.bindValue(":icon_path", "explorer");
+								query.bindValue(":desc", tr("Browse the files in the virtual Wine drive"));
+								query.bindValue(":dir_id", dir_id);
+								query.bindValue(":name", "explorer");
+								query.bindValue(":prefix_id", prefix_id);
+								query.exec();
+								query.clear();
+
+								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
+								query.bindValue(":cmdargs", QVariant(QVariant::String));
+								query.bindValue(":exec", "eject");
+								query.bindValue(":icon_path", "eject");
+								query.bindValue(":desc", tr("Wine CD eject tool"));
+								query.bindValue(":dir_id", dir_id);
+								query.bindValue(":name", "eject");
+								query.bindValue(":prefix_id", prefix_id);
+								query.exec();
+								query.clear();
+
+								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
+								query.bindValue(":cmdargs", QVariant(QVariant::String));
+								query.bindValue(":exec", "wordpad");
+								query.bindValue(":icon_path", "wordpad");
+								query.bindValue(":desc", tr("Wine wordpad text editor"));
+								query.bindValue(":dir_id", dir_id);
+								query.bindValue(":name", "wordpad");
+								query.bindValue(":prefix_id", prefix_id);
+								query.exec();
+								query.clear();
+							}
+							
+							QApplication::restoreOverrideCursor();
+							accept() ;
+						} else {
+							QApplication::restoreOverrideCursor();
+							reject();
+						}
+					}
 				break;
 			}
 		break;
@@ -589,7 +866,7 @@ void Wizard::nextWizardPage(){
 
 void Wizard::previosWizardPage(){
 	/*
-		Функция обработки начатия кнопки back
+		Back command function clicking
 	*/
 
 	/*	switch(Scena){
@@ -715,7 +992,7 @@ void Wizard::updateScena(){
 						info = tr("<p>Please check parameters listed below before clicking <b>Next</b>:</p><p><b>Prefix name:</b> %1<br><b>Prefix path:</b> %2</p>").arg(txtPrefixName->text()).arg(txtPrefixPath->text());
 
 						if (cbCreafeFake->checkState()==Qt::Checked){
-							info.append(tr("<p>Wine fake drive will be created.</p><p>Fake Drive version: <b>%1</b></p>").arg(cbFakeVersion->currentText()));
+							info.append(tr("<p>Wine fake drive will be created.</p>"));
 						}
 
 						if (!txtWineBin->text().isEmpty()){
@@ -753,6 +1030,60 @@ void Wizard::updateScena(){
 						widgetCreatePrefix2->setVisible(FALSE);
 						cmdNext->setText(tr("Finish"));
 						
+					break;
+				}
+			break;
+			case 2:
+				/* 
+					New fake drive creation
+				*/
+				switch (Page){
+					case 1:
+						
+						
+
+						widgetCreateFakeDrive0->setVisible(FALSE);
+						widgetInfo->setVisible(TRUE);
+						
+						cmdNext->setEnabled(TRUE);
+						cmdBack->setEnabled(FALSE);
+					break;
+					case 2:
+						widgetCreateFakeDrive0->setVisible(TRUE);
+						widgetCreateFakeDrive1->setVisible(FALSE);
+						widgetInfo->setVisible(FALSE);
+						cmdNext->setEnabled(TRUE);
+						cmdBack->setEnabled(TRUE);
+					
+						cmdNext->setText(tr("Next >"));
+					break;
+					case 3:
+						widgetCreateFakeDrive0->setVisible(FALSE);
+						widgetCreateFakeDrive1->setVisible(TRUE);
+						widgetCreateFakeDrive2->setVisible(FALSE);
+					break;
+					case 4:
+						widgetCreateFakeDrive1->setVisible(FALSE);
+						widgetCreateFakeDrive3->setVisible(FALSE);
+						widgetCreateFakeDrive2->setVisible(TRUE);
+					break;
+					case 5:
+						widgetCreateFakeDrive2->setVisible(FALSE);
+						widgetCreateFakeDrive3->setVisible(TRUE);
+						widgetInfo->setVisible(FALSE);
+						cmdNext->setText(tr("Next >"));
+					break;
+
+					case 6:
+						QString info;
+
+						info = tr("<p>All ready for fake drive creation. </p><p>Please, press the <b>Finish</b> button to create facke drive. Or press <b>Back</b> button for return.</p>");
+						
+						lblWizardInfo->setText(info);
+						widgetInfo->setVisible(TRUE);
+						widgetCreateFakeDrive2->setVisible(FALSE);
+						widgetCreateFakeDrive3->setVisible(FALSE);
+						cmdNext->setText(tr("Finish"));
 					break;
 				}
 			break;

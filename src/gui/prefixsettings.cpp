@@ -35,7 +35,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 	
 	this->prefix_name=prefix_name;
 	
-	QSettings settings("Brezerk GNU Soft", APP_NAME);
+	QSettings settings(APP_NAME, "default");
 	settings.beginGroup("app");
 		loadThemeIcons(settings.value("theme").toString());
 	settings.endGroup();	
@@ -97,8 +97,8 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 void PrefixSettings::loadThemeIcons(QString themePath){
 	QPixmap pixmap;
 				
-	if (!pixmap.load(tr("%1/data/prefix.png").arg(themePath))){
-		pixmap.load(":data/prefix.png");
+	if (!pixmap.load(tr("%1/data/exec.png").arg(themePath))){
+		pixmap.load(":data/exec.png");
 	}
 				
 	lblLogo->setPixmap(pixmap);

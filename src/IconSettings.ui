@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>720</width>
-    <height>431</height>
+    <height>447</height>
    </rect>
   </property>
   <property name="minimumSize" >
@@ -22,16 +22,7 @@
    <property name="spacing" >
     <number>0</number>
    </property>
-   <property name="leftMargin" >
-    <number>0</number>
-   </property>
-   <property name="topMargin" >
-    <number>0</number>
-   </property>
-   <property name="rightMargin" >
-    <number>0</number>
-   </property>
-   <property name="bottomMargin" >
+   <property name="margin" >
     <number>0</number>
    </property>
    <item>
@@ -180,7 +171,7 @@
         <property name="orientation" >
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0" >
          <size>
           <width>40</width>
           <height>20</height>
@@ -217,7 +208,7 @@
          <attribute name="title" >
           <string>General</string>
          </attribute>
-         <layout class="QVBoxLayout" >
+         <layout class="QVBoxLayout" name="verticalLayout_2" >
           <item>
            <widget class="QGroupBox" name="groupBox" >
             <property name="title" >
@@ -227,16 +218,7 @@
              <item>
               <widget class="QWidget" native="1" name="widget_2" >
                <layout class="QHBoxLayout" >
-                <property name="leftMargin" >
-                 <number>0</number>
-                </property>
-                <property name="topMargin" >
-                 <number>0</number>
-                </property>
-                <property name="rightMargin" >
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin" >
+                <property name="margin" >
                  <number>0</number>
                 </property>
                 <item>
@@ -280,16 +262,7 @@
              <item>
               <widget class="QWidget" native="1" name="widget_4" >
                <layout class="QHBoxLayout" >
-                <property name="leftMargin" >
-                 <number>0</number>
-                </property>
-                <property name="topMargin" >
-                 <number>0</number>
-                </property>
-                <property name="rightMargin" >
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin" >
+                <property name="margin" >
                  <number>0</number>
                 </property>
                 <item>
@@ -320,16 +293,7 @@
              <item>
               <widget class="QWidget" native="1" name="widget_12" >
                <layout class="QHBoxLayout" >
-                <property name="leftMargin" >
-                 <number>0</number>
-                </property>
-                <property name="topMargin" >
-                 <number>0</number>
-                </property>
-                <property name="rightMargin" >
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin" >
+                <property name="margin" >
                  <number>0</number>
                 </property>
                 <item>
@@ -382,16 +346,7 @@
              <item row="0" column="0" >
               <widget class="QWidget" native="1" name="widget_10" >
                <layout class="QHBoxLayout" >
-                <property name="leftMargin" >
-                 <number>0</number>
-                </property>
-                <property name="topMargin" >
-                 <number>0</number>
-                </property>
-                <property name="rightMargin" >
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin" >
+                <property name="margin" >
                  <number>0</number>
                 </property>
                 <item>
@@ -428,16 +383,7 @@
                 </sizepolicy>
                </property>
                <layout class="QGridLayout" >
-                <property name="leftMargin" >
-                 <number>0</number>
-                </property>
-                <property name="topMargin" >
-                 <number>0</number>
-                </property>
-                <property name="rightMargin" >
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin" >
+                <property name="margin" >
                  <number>0</number>
                 </property>
                 <item row="0" column="0" >
@@ -465,16 +411,7 @@
              <item row="1" column="0" >
               <widget class="QWidget" native="1" name="widget_11" >
                <layout class="QHBoxLayout" >
-                <property name="leftMargin" >
-                 <number>0</number>
-                </property>
-                <property name="topMargin" >
-                 <number>0</number>
-                </property>
-                <property name="rightMargin" >
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin" >
+                <property name="margin" >
                  <number>0</number>
                 </property>
                 <item>
@@ -506,11 +443,51 @@
            </widget>
           </item>
           <item>
+           <widget class="QGroupBox" name="groupBox_8" >
+            <property name="title" >
+             <string>Desktop</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout" >
+             <item>
+              <widget class="QWidget" native="1" name="widget_13" >
+               <layout class="QHBoxLayout" name="_2" >
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_7" >
+                  <property name="minimumSize" >
+                   <size>
+                    <width>140</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize" >
+                   <size>
+                    <width>140</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text" >
+                   <string>Desktop size:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="txtDesktopSize" />
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
            <spacer>
             <property name="orientation" >
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>680</width>
               <height>26</height>
@@ -547,16 +524,7 @@
              <item>
               <widget class="QWidget" native="1" name="widget_5" >
                <layout class="QHBoxLayout" >
-                <property name="leftMargin" >
-                 <number>0</number>
-                </property>
-                <property name="topMargin" >
-                 <number>0</number>
-                </property>
-                <property name="rightMargin" >
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin" >
+                <property name="margin" >
                  <number>0</number>
                 </property>
                 <item>
@@ -600,16 +568,7 @@
              <item>
               <widget class="QWidget" native="1" name="widget_6" >
                <layout class="QHBoxLayout" >
-                <property name="leftMargin" >
-                 <number>0</number>
-                </property>
-                <property name="topMargin" >
-                 <number>0</number>
-                </property>
-                <property name="rightMargin" >
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin" >
+                <property name="margin" >
                  <number>0</number>
                 </property>
                 <item>
@@ -658,7 +617,7 @@
             <property name="orientation" >
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>20</width>
               <height>40</height>
@@ -703,7 +662,7 @@
                <property name="orientation" >
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint" >
+               <property name="sizeHint" stdset="0" >
                 <size>
                  <width>40</width>
                  <height>20</height>
@@ -783,7 +742,7 @@
          <attribute name="title" >
           <string>Advanced</string>
          </attribute>
-         <layout class="QVBoxLayout" >
+         <layout class="QVBoxLayout" name="verticalLayout_3" >
           <item>
            <widget class="QGroupBox" name="groupBox_4" >
             <property name="title" >
@@ -796,16 +755,7 @@
              <item>
               <widget class="QWidget" native="1" name="widget_9" >
                <layout class="QHBoxLayout" >
-                <property name="leftMargin" >
-                 <number>0</number>
-                </property>
-                <property name="topMargin" >
-                 <number>0</number>
-                </property>
-                <property name="rightMargin" >
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin" >
+                <property name="margin" >
                  <number>0</number>
                 </property>
                 <item>
@@ -855,16 +805,7 @@
              <item>
               <widget class="QWidget" native="1" name="widget_8" >
                <layout class="QHBoxLayout" >
-                <property name="leftMargin" >
-                 <number>0</number>
-                </property>
-                <property name="topMargin" >
-                 <number>0</number>
-                </property>
-                <property name="rightMargin" >
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin" >
+                <property name="margin" >
                  <number>0</number>
                 </property>
                 <item>
@@ -900,11 +841,61 @@
            </widget>
           </item>
           <item>
+           <widget class="QGroupBox" name="groupBox_9" >
+            <property name="title" >
+             <string>Nice level priority</string>
+            </property>
+            <layout class="QVBoxLayout" name="_3" >
+             <property name="topMargin" >
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QWidget" native="1" name="widget_14" >
+               <layout class="QHBoxLayout" name="_4" >
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_13" >
+                  <property name="minimumSize" >
+                   <size>
+                    <width>140</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize" >
+                   <size>
+                    <width>140</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text" >
+                   <string>Priority:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinNice" >
+                  <property name="minimum" >
+                   <number>0</number>
+                  </property>
+                  <property name="maximum" >
+                   <number>20</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
            <spacer>
             <property name="orientation" >
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>20</width>
               <height>40</height>
@@ -930,7 +921,7 @@
           <property name="orientation" >
            <enum>Qt::Horizontal</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0" >
            <size>
             <width>40</width>
             <height>20</height>

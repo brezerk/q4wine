@@ -56,10 +56,10 @@ bool initDb()
 	}
 	
 	QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-	db.setDatabaseName(QMessageBox::tr("%1/.q4wine/db/generic.dat").arg(QDir::homePath()));
+	db.setDatabaseName(QMessageBox::tr("%1/.config/%2/db/generic.dat").arg(QDir::homePath()).arg(APP_SHORT_NAME));
 
 	if (!db.open()){
-		qDebug()<<"[EE] Sorry, i can't open database file by path: ~/.q4wine/db/generic.dat\".\n\n"
+		qDebug()<<"[EE] Sorry, i can't open database file db/generic.dat\".\n\n"
 					"May be database is not correctly installed...";
 					
 		return FALSE;
@@ -79,7 +79,7 @@ bool createDb(){
 	//db.setDatabaseName(QMessageBox::tr("%1/.q4wine/db/generic.dat").arg(QDir::homePath()));
 
 	if (!db.open()){
-		qDebug()<<"[EE] Sorry, i can't open database file by path: ~/.q4wine/db/generic.dat\".\n\n"
+		qDebug()<<"[EE] Sorry, i can't open database file db/generic.dat\".\n\n"
 				"May be database is not correctly installed...";
 					
 		return FALSE;
@@ -93,7 +93,7 @@ bool createDb(){
 		return FALSE;
 	}
 	
-	if(!query.exec("CREATE TABLE icon (wrkdir TEXT, override TEXT, winedebug TEXT, useconsole NUMERIC, display TEXT, mount TEXT, image TEXT, cmdargs TEXT, exec TEXT, icon_path TEXT, desc TEXT, dir_id NUMERIC, id INTEGER PRIMARY KEY, name TEXT, prefix_id NUMERIC);"))
+	if(!query.exec("CREATE TABLE icon (wrkdir TEXT, override TEXT, winedebug TEXT, useconsole NUMERIC, display TEXT, mount TEXT, image TEXT, cmdargs TEXT, exec TEXT, icon_path TEXT, desc TEXT, desktop TEXT, nice TEXT, dir_id NUMERIC, id INTEGER PRIMARY KEY, name TEXT, prefix_id NUMERIC);"))
 	{
 		qDebug() << "Failed to create table 'dir'" << query.lastError();
 		return FALSE;

@@ -33,8 +33,7 @@ Run::Run(QString prefix_id, QString prefix_dir, QString winedll_path, QWidget * 
 {
 	setupUi(this);
 
-	
-	QSettings settings("Brezerk GNU Soft", APP_NAME);
+	QSettings settings(APP_SHORT_NAME, "default");
 	settings.beginGroup("app");
 		loadThemeIcons(settings.value("theme").toString());
 	settings.endGroup();	
@@ -195,7 +194,7 @@ void Run::getWineDlls(QString winedll_path){
 	cboxDlls->clear();
 	
 	if (winedll_path.isEmpty()){
-		QSettings settings("Brezerk GNU Soft", APP_NAME);
+		QSettings settings(APP_NAME, "default");
 		settings.beginGroup("wine");
 		winedll_path=settings.value("WineLibs").toString();
 		settings.endGroup();

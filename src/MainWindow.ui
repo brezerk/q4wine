@@ -269,14 +269,21 @@
                <item>
                 <widget class="QLabel" name="label" >
                  <property name="text" >
-                  <string>Hi. No functions here. It'l be implemented at v.0.120.</string>
+                  <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'Fixed [Misc]'; font-size:11pt; font-weight:400; font-style:normal;">
+&lt;p align="justify" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This is the point where you have to start when creating new empty prefix. You can also create a new or update an old fake Windows drive.&lt;/p>&lt;/body>&lt;/html></string>
+                 </property>
+                 <property name="wordWrap" >
+                  <bool>true</bool>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QPushButton" name="cmdCreateFake" >
                  <property name="enabled" >
-                  <bool>false</bool>
+                  <bool>true</bool>
                  </property>
                  <property name="text" >
                   <string>Create Fake Drive</string>
@@ -284,9 +291,9 @@
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="cmdUpdateDrive" >
+                <widget class="QPushButton" name="cmdUpdateFake" >
                  <property name="enabled" >
-                  <bool>false</bool>
+                  <bool>true</bool>
                  </property>
                  <property name="text" >
                   <string>Update Fake Drive</string>
@@ -298,7 +305,7 @@
                  <property name="orientation" >
                   <enum>Qt::Vertical</enum>
                  </property>
-                 <property name="sizeHint" >
+                 <property name="sizeHint" stdset="0" >
                   <size>
                    <width>535</width>
                    <height>71</height>
@@ -325,7 +332,7 @@
                  <property name="orientation" >
                   <enum>Qt::Vertical</enum>
                  </property>
-                 <property name="sizeHint" >
+                 <property name="sizeHint" stdset="0" >
                   <size>
                    <width>20</width>
                    <height>40</height>
@@ -352,7 +359,7 @@
                  <property name="orientation" >
                   <enum>Qt::Vertical</enum>
                  </property>
-                 <property name="sizeHint" >
+                 <property name="sizeHint" stdset="0" >
                   <size>
                    <width>20</width>
                    <height>40</height>
@@ -433,7 +440,7 @@
      <x>0</x>
      <y>0</y>
      <width>619</width>
-     <height>25</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File" >

@@ -57,7 +57,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	cmdGetIcotoolBin->installEventFilter(this);
 	cmdGetShBin->installEventFilter(this);
 	
-	QSettings settings("Brezerk GNU Soft", APP_NAME);
+	QSettings settings(APP_SHORT_NAME, "default");
 	
 	settings.beginGroup("wine");
 		txtWineBin->setText(settings.value("WineBin").toString());
@@ -88,8 +88,10 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	QString themeDir;
 	themeDir.clear();
 	themeDir.append(QDir::homePath());
-	themeDir.append(APP_CONF);
-	themeDir.append("theme");
+	themeDir.append("/.config/");
+	themeDir.append(APP_SHORT_NAME);
+	themeDir.append("/theme/");
+
 	
 	getThemes(settings.value("theme").toString(), themeDir);
 	
@@ -379,7 +381,7 @@ void AppSettings::cmdOk_Click(){
 		}
 	}
 	
-	QSettings settings("Brezerk GNU Soft", APP_NAME);
+	QSettings settings(APP_SHORT_NAME, "default");
 	
 	settings.beginGroup("wine");
 		settings.setValue("WineBin", txtWineBin->text());
@@ -435,7 +437,6 @@ void AppSettings::cmdOk_Click(){
 				settings.setValue("type", 2);
 			}
 		}
-		
 		
 	settings.endGroup();
 	accept();

@@ -27,8 +27,6 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-
-
 #ifndef WIZARD_H
 #define WIZARD_H
 
@@ -43,15 +41,18 @@
 #include <QSettings>
 #include <QTextCodec>
 #include <QMessageBox>
+#include <QProgressDialog>
 
 #include <config.h>
-
+#include "registry.h"
+#include "process.h"
+#include "winebinlauncher.h"
 
 class Wizard : public QDialog, public Ui::Wizard
 {
 	Q_OBJECT
 	public:
-		Wizard(int a, QWidget * parent = 0, Qt::WFlags f = 0);
+		Wizard(int a, QString var1 = "", QWidget * parent = 0, Qt::WFlags f = 0);
 
 	private slots:
 		void nextWizardPage();
@@ -63,15 +64,13 @@ class Wizard : public QDialog, public Ui::Wizard
 		void updateScena();
  		QString getWhichOut(QString fileName);
 		int Scena, Page, TotalPage;
-		
 		bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
-		
 		QProcess *proc;
-		
+
 	protected:
 		bool eventFilter(QObject *obj, QEvent *event);
 		void getprocDevices();
-
+		QString var1;
 		void loadThemeIcons(QString themePath, int Scene);
 		QIcon loadIcon(QString iconName, QString themePath);
 };

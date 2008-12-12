@@ -65,8 +65,9 @@ int main(int argc, char *argv[])
 	QApplication app(argc, argv);
 	QTranslator*  qtt = new QTranslator ( 0 );
 
-	
-	QSettings settings("Brezerk GNU Soft", APP_NAME);
+	//QSettings settings("Brezerk GNU Soft", APP_NAME);
+
+	QSettings settings(APP_SHORT_NAME, "default");
 	
 	QString i18nPath;
 	
@@ -99,24 +100,40 @@ int main(int argc, char *argv[])
 		qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
 	}
 
+	QDir dir;
+
+	QString rootConfPath;
+	rootConfPath.append(QDir::homePath());
+	rootConfPath.append("/.q4wine/");
+
+	if (dir.exists(rootConfPath)){
+		QMessageBox::warning(0, QObject::tr("Version outdated"), QObject::tr("Sorry, new wersion of q4wine require new files location.<br><br>You must manually delete all old files at:<br>$HOME/.q4wine<br>$HOME/.config/Brezerk\\ GNU\\ Soft<br><br>Note: new files location is:<br>~/.config/q4wine"));
+		return -1;
+	}
+
+	rootConfPath.clear();
+	rootConfPath.append(QDir::homePath());
+	rootConfPath.append("/.config/Brezerk GNU Soft");
+
+	if (dir.exists(rootConfPath)){
+		QMessageBox::warning(0, QObject::tr("Version outdated"), QObject::tr("Sorry, new wersion of q4wine require new files location.<br><br>You must manually delete all old files at:<br>$HOME/.q4wine<br>$HOME/.config/Brezerk\\ GNU\\ Soft<br><br>Note: new files location is:<br>~/.config/q4wine"));
+		return -1;
+	}
+
+
 	if (!settings.contains ("configure")){
 			//If no key, we gona to start an First Run Wizard to setup q4wine
 		Wizard *firstSetupWizard = new Wizard(1);
 		if (firstSetupWizard->exec()==QDialog::Accepted){
 				
-				//Creating folder structure, if not exists
-				
-			QDir dir;
-			QString rootConfPath;
-				
-				
-			//Check for $HOME/.q4wine/
-			rootConfPath=QDir::homePath();
-			rootConfPath.append(APP_CONF);
+			rootConfPath.clear();
+			rootConfPath.append(QDir::homePath());
+			rootConfPath.append("/.config/");
+			rootConfPath.append(APP_SHORT_NAME);
 				
 			if (!dir.exists(rootConfPath)){
 				if (!dir.mkdir(rootConfPath)){
-					qDebug()<<qApp->tr("[EE] Unable to create root directory %1.").arg(rootConfPath);
+					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create root directory %1.").arg(rootConfPath));
 					return -1;
 				}
 			}
@@ -128,7 +145,7 @@ int main(int argc, char *argv[])
 				
 			if (!dir.exists(subDir)){
 				if (!dir.mkdir(subDir)){
-					qDebug()<<qApp->tr("[EE] Unable to create directory %1.").arg(subDir);
+					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
 					return -1;
 				}
 			}
@@ -138,7 +155,7 @@ int main(int argc, char *argv[])
 				
 			if (!dir.exists(subDir)){
 				if (!dir.mkdir(subDir)){
-					qDebug()<<qApp->tr("[EE] Unable to create directory %1.").arg(subDir);
+					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
 					return -1;
 				}
 			}
@@ -148,7 +165,7 @@ int main(int argc, char *argv[])
 				
 			if (!dir.exists(subDir)){
 				if (!dir.mkdir(subDir)){
-					qDebug()<<qApp->tr("[EE] Unable to create directory %1.").arg(subDir);
+					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
 					return -1;
 				}
 			}
@@ -158,7 +175,7 @@ int main(int argc, char *argv[])
 				
 			if (!dir.exists(subDir)){
 				if (!dir.mkdir(subDir)){
-					qDebug()<<qApp->tr("[EE] Unable to create directory %1.").arg(subDir);
+					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
 					return -1;
 				}
 			}
@@ -168,18 +185,18 @@ int main(int argc, char *argv[])
 				
 			if (!dir.exists(subDir)){
 				if (!dir.mkdir(subDir)){
-					qDebug()<<qApp->tr("[EE] Unable to create directory %1.").arg(subDir);
+					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
 					return -1;
 				}
 			}
 				
 			if (!initDb()){
-				qDebug()<<qApp->tr("[EE] Unable to load database.");
+				QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to load database."));
 				return -1;
 			}
 				
 			if (!createDb()){
-				qDebug()<<qApp->tr("[EE] Unable to create database.");
+				QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create database."));;
 				return -1;
 			}
 			
@@ -203,7 +220,7 @@ int main(int argc, char *argv[])
 		}
 	} else {
 		if (!initDb()){
-			qDebug()<<qApp->tr("[EE] Unable to load database.");
+			QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to load database."));
 			return -1;
 		}	
 	}	

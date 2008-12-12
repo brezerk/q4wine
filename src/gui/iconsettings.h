@@ -71,7 +71,7 @@ class IconSettings : public QDialog, public Ui::IconSettings
 	private:
 		QString prefix_dir, dir_id, prefix_id, iconName, iconId, iconPath;
 		bool newIcon;
-		void getIconReccord();
+		void getIconReccord(QString themePath);
 		void resizeEvent (QResizeEvent);
 		bool eventFilter (QObject *object, QEvent *event);
 		void getWineDlls(QString winedll_path);

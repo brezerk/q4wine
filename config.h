@@ -50,12 +50,13 @@ struct ExecObject{
 	QString winedebug;
 	QString display;
 	QString wrkdir;
+	QString desktop;
+	QString nice;
 };
 
 
 #define APP_NAME "Q4Wine"
 #define APP_SHORT_NAME "q4wine"
-#define APP_CONF "/.q4wine/"
 
 /*
  * Note APP_VERS and APP_PREF automatycaly generates by qmake and config.sh
@@ -64,7 +65,7 @@ struct ExecObject{
  * APP_PREF -- Application install prefix (Used for trak translations, help and thems files)
  */
 
-#define APP_VERS "0.102"
+#define APP_VERS "0.107"
 #define APP_PREF "/usr"
 
 #endif

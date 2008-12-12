@@ -12,11 +12,11 @@ Version 0.100
 		Fixes:
 			- Fixed "Can't find theme. File or path not exists: Default" error message;
 			- Fixed tray icon image load;
-			- Fixed proccess output encoding;
-			- run.cpp moved to /src/gui direcotiry;
+			- Fixed process output encoding;
+			- run.cpp moved to /src/gui directory;
 			- Fixed crashes of wrestool while getting icons;
-			- Fixed proccess exit code detection;
-			- Fixed enveropment variable detection;
+			- Fixed process exit code detection;
+			- Fixed envelopment variable detection;
 			- Fixed startup wizard, now it creates Default prefix;
 			
 Version 0.101
@@ -25,7 +25,78 @@ Version 0.101
 			- Fixed TRANSLATIONS variable in q4wine.pro
 		
 		New:
-			- Full proffessional Ukrainian translation by Chornoivan Uriy Olexeevich
+			- Full professional Ukrainian translation by Chornoivan Uriy Olexeevich
 			
 Version 0.102
-	
+	core
+		Fixed:
+			- Some stuff and optimization.
+
+		New:
+			- Display info and error notification when starts detached wine process.
+			- Now you can manually set wine desktop name and desktop size at icon settings.
+			- Now you can manually set _nice_ (man nice) priority at icon settings.
+			  (Note: priority might by at range from 0 to 20)
+			- Now you can renice process priority using context menu at "Process" tab.
+			  (Note: this action need root privileges. i.e. sudo app.)
+
+Version 0.103
+	core
+		New:
+			- Fake drive core functions.
+
+Version 0.104
+	gui
+		New:
+			- Fake drive creation wizard.
+	core
+		New:
+			- Registry core functions.
+			- Fake drive wizard creates 'system' folder and wine utils icons.
+			- Fake drive wizard runs wineprefixcreate.
+
+Version 0.105
+	core
+		New:
+			- New winetool class.
+			- Q4Wine now can import QT palette in to wine color settings
+		Fixed:
+			- Bug when deleting folder with icons.
+			- Bug in UpdateDatabaseConnectedItems.
+			- Crashes when lstFolders lose focus.
+
+Version 0.106
+	core
+		New:
+			- Update prefix functions.
+
+		Fixed:
+			- Remove old prefix while creation new one.
+			- Run FakeDrive creation wizard after PrefixCreation wizard (If requested).
+			- SQL "Parameter count mismatch" at Prefix creation wizard.
+			- Removed version selector at PrefixCreation wizard.
+
+Version 0.107
+	core
+		New:
+			- Updated Ukrainian translation.
+			- Added en_us dummy translation (Nead professional English translation).
+			- Added ru_ru dummy translation (Nead professional Russian translation).
+
+	core
+		Fixed:
+			- Updated database creation wizard.
+			- CHANGED default database and config files location.
+				WARNING: You must manually delete all old files at:
+								$ rm -rdf $HOME/.q4wine
+								$ rm -rdf $HOME/.config/Brezerk\ GNU\ Soft
+				
+						 New files location:
+								$HOME/.config/q4wine
+			- Add outdated notifier messages.
+			- Fixed icon loose at PrefixSettings dialog.
+
+
+
+
+

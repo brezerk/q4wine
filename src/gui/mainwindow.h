@@ -52,6 +52,7 @@
 #include "iconsview.h"
 #include "wizard.h"
 #include "process.h"
+#include "winebinlauncher.h"
 #include "iconsettings.h"
 #include "prefixsettings.h"
 #include "about.h"
@@ -78,19 +79,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 	Q_OBJECT
 	public:
 		MainWindow(QWidget * parent = 0, Qt::WFlags f = 0);
-		QString HOME_PATH;
-		QString ROOT_PATH;
-		QString TEMP_PATH;
-		QString PREFIX_EI_PATH;
-		
-		QString WINE_DEFAULT_PREFIX;
-		QString DEFAULT_WINE_BIN, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS;
-		QString WRESTOOL_BIN, ICOTOOL_BIN;		
-		QString TAR_BIN, MOUNT_BIN, UMOUNT_BIN, SUDO_BIN, NICE_BIN, RENICE_BIN, SH_BIN;
-		QString CONSOLE_BIN, CONSOLE_ARGS;
-		QString THEME_NAME;
-		bool SHOW_TRAREY_ICON;
-		
+			
 		// Icon copy\cyt structure
 		iconCopyBuffer iconBuffer;
 		
@@ -98,14 +87,19 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		
 	private slots:
 
+		//FIXME: plz. normalize function names..
 		void GetProcProccessInfo(void);
+		void SelectProcNicePriority(void);
+		void SetProcNicePriority(int priority, int pid);
 		void cmdKillSelectedProccess(void);
 		void cmdKillWineProccess(void);
 		void cmdManagePrefixes_Click(void);
+
+		void cmdCreateFake_Click(void);
+		void cmdUpdateFake_Click(void);
 		
-		//FIXME: нормализовать имя
+		//FIXME: here to...
 		void showProcContextMenu( const QPoint);
-		
 		
 		void ResizeContent(int tabIndex);
 
@@ -190,6 +184,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		// Procces control option for toolbar
 		QAction *killWineProcTool;
 		QAction *killWineTool;
+		QAction *reniceProc;
 		QAction *rebootWineTool;
 		QAction *refreshWineProcTool;
 
@@ -251,7 +246,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void resizeEvent (QResizeEvent);
 		void createMenus(void);
 		void createToolBars(void);
-		void UpdateDatabaseConnectedItems(void);
+		void UpdateDatabaseConnectedItems(int currentPrefix = -1);
 		
 		void MountImage(QString image, QString mount);
 		void UnMountImage(QString mount);
@@ -275,6 +270,19 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		
 		//Resource\theme loader
 		QIcon loadIcon(QString iconName);
+
+		QString HOME_PATH;
+		QString ROOT_PATH;
+		QString TEMP_PATH;
+		QString PREFIX_EI_PATH;
+
+		QString WINE_DEFAULT_PREFIX;
+		QString DEFAULT_WINE_BIN, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS;
+		QString WRESTOOL_BIN, ICOTOOL_BIN;		
+		QString TAR_BIN, MOUNT_BIN, UMOUNT_BIN, SUDO_BIN, NICE_BIN, RENICE_BIN, SH_BIN;
+		QString CONSOLE_BIN, CONSOLE_ARGS;
+		QString THEME_NAME;
+		bool SHOW_TRAREY_ICON;
 
 };
 

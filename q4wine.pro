@@ -5,9 +5,9 @@
 TEMPLATE = app
 TARGET = q4wine
 
-DEPENDPATH += . src src/gui src/i18n
-INCLUDEPATH += . src/gui srcs
-APP_VERSION = "0.102"
+DEPENDPATH += . src src/gui src/core src/i18n
+INCLUDEPATH += . src/gui src/core srcs
+APP_VERSION = "0.107"
 
 # User notification
 
@@ -36,6 +36,8 @@ system(./config.sh $$APP_VERSION $$PREFIX)
 HEADERS += config.h \
            ui_Proccess.h \
            src/initdb.h \
+           src/core/registry.h \
+           src/core/winebinlauncher.h \
            src/gui/about.h \
            src/gui/appsettings.h \
            src/gui/iconsettings.h \
@@ -58,6 +60,8 @@ FORMS += src/About.ui \
 
 SOURCES += src/gui/run.cpp \
            src/main.cpp \
+           src/core/registry.cpp \
+           src/core/winebinlauncher.cpp \
            src/gui/about.cpp \
            src/gui/appsettings.cpp \
            src/gui/iconsettings.cpp \
@@ -70,7 +74,9 @@ SOURCES += src/gui/run.cpp \
 # Application resource 
 
 RESOURCES += src/k4wine.qrc
-TRANSLATIONS += src/i18n/uk_ua.ts
+TRANSLATIONS += src/i18n/en_us.ts \
+				src/i18n/ru_ru.ts \
+                src/i18n/uk_ua.ts
 
 QT += sql gui core network
 CONFIG += build_all warn_on debug
