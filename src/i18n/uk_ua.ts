@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="uk">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -1133,7 +1134,7 @@ p, li { white-space: pre-wrap; }
         <translation>&amp;Про програму</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3006"/>
+        <location filename="../gui/mainwindow.cpp" line="3013"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
@@ -1525,7 +1526,7 @@ Access is necessary for displaying wine proccess information.</source>
         <translation>Експорт префікса</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2853"/>
+        <location filename="../gui/mainwindow.cpp" line="2860"/>
         <source>WIP</source>
         <translation>Незавершений проект</translation>
     </message>
@@ -1785,12 +1786,12 @@ Access is necessary for displaying wine proccess information.</source>
         <translation>Вибачте, але піктограма з назвою %1 вже існує.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2829"/>
+        <location filename="../gui/mainwindow.cpp" line="2836"/>
         <source>Open ISO Image file</source>
         <translation>Відкрити файл образу ISO</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2829"/>
+        <location filename="../gui/mainwindow.cpp" line="2836"/>
         <source>Iso files (*.iso)</source>
         <translation>Файли ISO (*.iso)</translation>
     </message>
@@ -1805,79 +1806,79 @@ Access is necessary for displaying wine proccess information.</source>
         <translation>Здається, у параметрах піктограми не було вказано файла образу.&lt;br&gt;Вам слід вказати його вручну.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2523"/>
+        <location filename="../gui/mainwindow.cpp" line="2526"/>
         <source>Sorry. Cannot copy or move in to the same file</source>
         <translation>Вибачте, але копіювання або пересування до того ж файла неможливе</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2600"/>
+        <location filename="../gui/mainwindow.cpp" line="2604"/>
         <source>Sorry. It seems file already exists.</source>
         <translation>Вибачте, здається, файл з такою назвою вже є.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2601"/>
+        <location filename="../gui/mainwindow.cpp" line="2605"/>
         <source>Sorry. It seems file already exists.&lt;br&gt;Please rename it, or cancel paste operation.</source>
         <translation>Вибачте, здається, файл вже існує.&lt;br&gt;Будь ласка, змініть його назву або скасуйте дію зі вставлення.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2733"/>
+        <location filename="../gui/mainwindow.cpp" line="2740"/>
         <source>Enter new directory name</source>
         <translation>Введіть нову назву каталогу</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2915"/>
+        <location filename="../gui/mainwindow.cpp" line="2922"/>
         <source>Directory name:</source>
         <translation>Назва каталогу:</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2853"/>
+        <location filename="../gui/mainwindow.cpp" line="2860"/>
         <source>Sorry, no install wizard yet. It&apos;l implemented at v0.110.</source>
         <translation>Вибачте, майстра встановлення ще немає. Його буде реалізовано у версії 0.110.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2915"/>
+        <location filename="../gui/mainwindow.cpp" line="2922"/>
         <source>Enter new name for directory</source>
         <translation>Введіть нову назву каталогу</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2945"/>
+        <location filename="../gui/mainwindow.cpp" line="2952"/>
         <source>Q4Wine</source>
         <translation>Q4Wine</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2945"/>
+        <location filename="../gui/mainwindow.cpp" line="2952"/>
         <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
 </source>
         <translation>Ви справді бажаєте вилучити теку з назвою «%1» і всі відповідні піктограми?
 </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3006"/>
+        <location filename="../gui/mainwindow.cpp" line="3013"/>
         <source>Sorry, but prefix already have directory named %1.</source>
         <translation>Вибачте, але у префіксі вже існує каталог з назвою %1.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3218"/>
+        <location filename="../gui/mainwindow.cpp" line="3225"/>
         <source>Mounting...</source>
         <translation>Монтування...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3203"/>
+        <location filename="../gui/mainwindow.cpp" line="3210"/>
         <source>Image successfully mounted</source>
         <translation>Образ успішно змонтовано</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3205"/>
+        <location filename="../gui/mainwindow.cpp" line="3212"/>
         <source>Image mount fail</source>
         <translation>Спроба монтування образу завершилася невдачею</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3221"/>
+        <location filename="../gui/mainwindow.cpp" line="3228"/>
         <source>Image successfully unmounted</source>
         <translation>Образ успішно демонтовано</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3223"/>
+        <location filename="../gui/mainwindow.cpp" line="3230"/>
         <source>Image unmount fail</source>
         <translation>Спроба демонтування образу завершилася невдачею</translation>
     </message>
@@ -2484,7 +2485,7 @@ p, li { white-space: pre-wrap; }
         <translation>&lt; Назад</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1074"/>
+        <location filename="../gui/wizard.cpp" line="1095"/>
         <source>Next &gt;</source>
         <translation>Вперед &gt;</translation>
     </message>
@@ -2499,12 +2500,12 @@ p, li { white-space: pre-wrap; }
         <translation>Майстер створення нового префікса</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="956"/>
+        <location filename="../gui/wizard.cpp" line="977"/>
         <source>&lt;b&gt;Prefix creation wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер створення нового префікса&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="891"/>
+        <location filename="../gui/wizard.cpp" line="912"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation>&lt;b&gt;Крок %1 з %2&lt;/b&gt;</translation>
     </message>
@@ -2514,7 +2515,7 @@ p, li { white-space: pre-wrap; }
         <translation>Відкрити каталог</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1105"/>
+        <location filename="../gui/wizard.cpp" line="1126"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
@@ -2529,12 +2530,12 @@ p, li { white-space: pre-wrap; }
         <translation>Вибачте, ви вказали неправильний шлях префікса. Такого шляху не існує.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="957"/>
+        <location filename="../gui/wizard.cpp" line="978"/>
         <source>&lt;p&gt;Welcome to prefix creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful Wine prefix creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра створення префікса для Wine.&lt;/p&gt;&lt;p&gt;Цей майстер допоможе вам виконати усі кроки, необхідні для успішного створення префікса.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра, або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутись до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1086"/>
+        <location filename="../gui/wizard.cpp" line="1107"/>
         <source>Finish</source>
         <translation>Завершити</translation>
     </message>
@@ -2544,7 +2545,7 @@ p, li { white-space: pre-wrap; }
         <translation>Створити фіктивний диск wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="992"/>
+        <location filename="../gui/wizard.cpp" line="1013"/>
         <source>&lt;p&gt;Please check parameters listed below before clicking &lt;b&gt;Next&lt;/b&gt;:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Prefix name:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Prefix path:&lt;/b&gt; %2&lt;/p&gt;</source>
         <translation>&lt;p&gt;Будь ласка, перед тим, як натиснути кнопку &lt;b&gt;Далі&lt;/b&gt; перевірте параметри:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Назва префікса:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Шлях префікса:&lt;/b&gt; %2&lt;/p&gt;</translation>
     </message>
@@ -2869,67 +2870,67 @@ p, li { white-space: pre-wrap; }
         <translation>Будь ласка, вкажіть пристрій-джерело.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="900"/>
+        <location filename="../gui/wizard.cpp" line="921"/>
         <source>&lt;b&gt;First startup wizrd&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер початкового налаштування&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="901"/>
+        <location filename="../gui/wizard.cpp" line="922"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра початкового налаштування.&lt;/p&gt;&lt;p&gt;За допомогою цього майстра ви зможете виконати всі кроки з початкового налаштування %1.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутися до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="911"/>
+        <location filename="../gui/wizard.cpp" line="932"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Malakhov Alexey aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General ideia comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts witch was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation>&lt;p&gt;Першим автором &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; був Олексій Малахов aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Загальну ідею було взято зі скриптів &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt;, автором яких є Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Програму випущено за умов дотримання &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Коментарі, повідомлення про вади, тощо, надсилайте за адресою [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Пам’ятайте&lt;/span&gt;&lt;/b&gt;: Це програмне забезпечення постачається без будь-яких гарантій. Автор &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;НЕ&lt;/span&gt;&lt;/b&gt; надає жодної підтримки або жодних довідок щодо WineTools, Wine, встановлення програм, Linux або Microsoft Windows.&lt;/p&gt;&lt;p&gt;Якщо вам &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;потрібна допомога&lt;/span&gt;, надішліть своє питання до списку розсилки за адресою &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Якщо вам &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;потрібна підтримка&lt;/span&gt;, придбайте комерційну версію wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="999"/>
+        <location filename="../gui/wizard.cpp" line="1020"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: %1</source>
         <translation>&lt;p&gt;&lt;b&gt;Виконуваний файл Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1001"/>
+        <location filename="../gui/wizard.cpp" line="1022"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: Default</source>
         <translation>&lt;p&gt;&lt;b&gt;Виконуваний файл Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1005"/>
+        <location filename="../gui/wizard.cpp" line="1026"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Сервер Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1007"/>
+        <location filename="../gui/wizard.cpp" line="1028"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Сервер Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1011"/>
+        <location filename="../gui/wizard.cpp" line="1032"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Завантажувач Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1013"/>
+        <location filename="../gui/wizard.cpp" line="1034"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Завантажувач Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1017"/>
+        <location filename="../gui/wizard.cpp" line="1038"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Каталог dll Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1019"/>
+        <location filename="../gui/wizard.cpp" line="1040"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Каталог dll Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1023"/>
+        <location filename="../gui/wizard.cpp" line="1044"/>
         <source>&lt;p&gt;&lt;b&gt;Quick mount options&lt;/b&gt; &lt;br&gt;&lt;b&gt;Device&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Mount point&lt;/b&gt;: %2&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Параметри швидкого монтування&lt;/b&gt; &lt;br&gt;&lt;b&gt;Пристрій&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Точка монтування&lt;/b&gt;: %2&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1105"/>
+        <location filename="../gui/wizard.cpp" line="1126"/>
         <source>Sorry, i can&apos;t access to /proc/diskstats</source>
         <translation>Вибачте, не вдалося отримати доступ до /proc/diskstats</translation>
     </message>
@@ -3527,14 +3528,19 @@ p, li { white-space: pre-wrap; }
         <translation>Потужний текстовий редактор wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="995"/>
+        <location filename="../gui/wizard.cpp" line="1016"/>
         <source>&lt;p&gt;Wine fake drive will be created.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Буде створено фіктивний диск wine&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1080"/>
+        <location filename="../gui/wizard.cpp" line="1101"/>
         <source>&lt;p&gt;All ready for fake drive creation. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create facke drive. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Все готово для створення фіктивного диску. &lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Завершити&lt;/b&gt; щоб створити фіктивний диск. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt; щоб повернутися і змінити обрані параметри.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/wizard.cpp" line="860"/>
+        <source>autostart</source>
+        <translation></translation>
     </message>
 </context>
 </TS>
