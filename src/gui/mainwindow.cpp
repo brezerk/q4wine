@@ -2516,6 +2516,9 @@ void MainWindow::contextIconCopy(void){
 }
 
 void MainWindow::contextIconPaste(void){
+
+
+
 	QSqlQuery query;
 	QStringList dataList = SQL_getPrefixAndDirData(twPrograms->currentItem());
 	
@@ -2587,6 +2590,7 @@ void MainWindow::contextIconPaste(void){
 				iconBuffer.move=false;
 			break;
 			case false:
+
 				//Copy & Paste section
 				for (int i=0; i<iconBuffer.names.count(); i++){
 					
@@ -2611,44 +2615,47 @@ void MainWindow::contextIconPaste(void){
 					
 					
 					if (!iconBuffer.dir_id.isEmpty()){
-						query.prepare("SELECT name, exec, cmdargs, icon_path, desc, image, mount, display, winedebug, useconsole, override, wrkdir FROM icon WHERE prefix_id=:prefix_id and dir_id=:dir_id and name=:name");
+						query.prepare("SELECT name, exec, cmdargs, icon_path, desc, image, mount, display, winedebug, useconsole, override, wrkdir, nice, desktop FROM icon WHERE prefix_id=:prefix_id and dir_id=:dir_id and name=:name");
 						query.bindValue(":dir_id", iconBuffer.dir_id);
 					} else {
-						query.prepare("SELECT name, exec, cmdargs, icon_path, desc, image, mount, display, winedebug, useconsole, override, wrkdir FROM icon WHERE prefix_id=:prefix_id and dir_id ISNULL and name=:name");
+						query.prepare("SELECT name, exec, cmdargs, icon_path, desc, image, mount, display, winedebug, useconsole, override, wrkdir, nice, desktop FROM icon WHERE prefix_id=:prefix_id and dir_id ISNULL and name=:name");
 					}
 					query.bindValue(":name", iconBuffer.names.at(i));
 					query.bindValue(":prefix_id", iconBuffer.prefix_id);
 					if (!query.exec()){
-						#ifdef DEBUG
+					
 							qDebug()<<"WARNING: SQL_getPrefixAndDirData\nINFO:\n"<<query.executedQuery()<<"\n"<<query.lastError();
-						#endif
 						
-						return;
+					/*	return;
 					}
 					
 					if (!query.isValid()){
+					*/
 						// If query fails, exit and
 						// Clearing icon buffer
 						iconBuffer.names.clear();
 						iconBuffer.dir_id="";
 						iconBuffer.prefix_id="";
 						iconBuffer.move=false;
+
+						qDebug()<<"Exiting...."<<query.executedQuery()<<"\n"<<query.lastError();
 						return;	
 					}
 						
+
+				
 					
 					query.first();
 					
 					QStringList reccordBuffer;
 					
-					for (int j=0; j<=11; j++){
+					for (int j=0; j<=13; j++){
 						reccordBuffer<<query.value(j).toString();
 					}
-					
+
 					query.clear();
 					
-					
-					query.prepare("INSERT INTO icon(name, exec, cmdargs, icon_path, desc, image, mount, display, winedebug, useconsole, override, prefix_id, dir_id, id, wrkdir) VALUES(:name, :exec, :cmdargs, :icon_path, :desc, :image, :mount, :display, :winedebug, :useconsole, :override, :prefix_id, :dir_id, NULL, :wrkdir)");
+					query.prepare("INSERT INTO icon(name, exec, cmdargs, icon_path, desc, image, mount, display, winedebug, useconsole, override, prefix_id, dir_id, id, wrkdir, nice, desktop) VALUES(:name, :exec, :cmdargs, :icon_path, :desc, :image, :mount, :display, :winedebug, :useconsole, :override, :prefix_id, :dir_id, NULL, :wrkdir, :nice, :desktop)");
 			
 					if(dataList.at(2).isEmpty())
 						query.bindValue(":dir_id", QVariant(QVariant::String));
@@ -2668,11 +2675,11 @@ void MainWindow::contextIconPaste(void){
 					query.bindValue(":useconsole", reccordBuffer.at(9));
 					query.bindValue(":override", reccordBuffer.at(10));
 					query.bindValue(":wrkdir", reccordBuffer.at(11));
+					query.bindValue(":nice", reccordBuffer.at(12));
+					query.bindValue(":desktop", reccordBuffer.at(13));
 
 					if (!query.exec()){
-						#ifdef DEBUG
 							qDebug()<<"WARNING: SQL_getPrefixAndDirData\nINFO:\n"<<query.executedQuery()<<"\n"<<query.lastError();
-						#endif
 						return;
 					}
 					

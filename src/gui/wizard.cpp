@@ -843,6 +843,27 @@ void Wizard::nextWizardPage(){
 								query.exec();
 								query.clear();
 							}
+
+
+							query.clear();
+
+							query.prepare("SELECT id FROM dir WHERE prefix_id=:prefix_id AND name=:name;");
+							query.bindValue(":name", tr("autostart"));
+							query.bindValue(":prefix_id", prefix_id);
+							query.exec();
+
+							if (!query.first()){
+								query.clear();
+
+								//Is seems--no. Then Adding settings directory
+								query.prepare("INSERT INTO dir(id, name, prefix_id) VALUES(NULL, :name, :prefix_id)");
+								query.bindValue(":name", tr("autostart"));
+								query.bindValue(":prefix_id", prefix_id);
+								query.exec();
+								
+							}
+							query.clear();
+
 							
 							QApplication::restoreOverrideCursor();
 							accept() ;

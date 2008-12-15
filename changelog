@@ -96,7 +96,13 @@ Version 0.107
 			- Add outdated notifier messages.
 			- Fixed icon loose at PrefixSettings dialog.
 
+Version 0.108
+	core
+		New:
+			- Fake drive wizard creates 'autostart' folder.
 
+		Fixed:
+			- Copy issue.
 
 
 
