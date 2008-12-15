@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <!DOCTYPE KDevPrjSession>
 <KDevPrjSession>
- <DocsAndViews NumberOfDocuments="10" >
+ <DocsAndViews NumberOfDocuments="9" >
   <Doc0 NumberOfViews="1" URL="file:///home/brezerk/develop/q4wine/changelog" >
    <View0 Encoding="KOI8-U" Type="Source" />
   </Doc0>
@@ -20,18 +20,15 @@
   <Doc5 NumberOfViews="1" URL="file:///home/brezerk/develop/q4wine/src/gui/iconsettings.cpp" >
    <View0 Encoding="KOI8-U" Type="Source" />
   </Doc5>
-  <Doc6 NumberOfViews="1" URL="file:///home/brezerk/develop/q4wine/config.h.in" >
-   <View0 Encoding="" Type="Source" />
+  <Doc6 NumberOfViews="1" URL="file:///home/brezerk/develop/q4wine/q4wine.pro" >
+   <View0 Encoding="KOI8-U" line="9" Type="Source" />
   </Doc6>
-  <Doc7 NumberOfViews="1" URL="file:///home/brezerk/develop/q4wine/q4wine.pro" >
-   <View0 Encoding="KOI8-U" Type="Source" />
-  </Doc7>
-  <Doc8 NumberOfViews="1" URL="file:///home/brezerk/develop/q4wine/src/gui/appsettings.cpp" >
+  <Doc7 NumberOfViews="1" URL="file:///home/brezerk/develop/q4wine/src/gui/appsettings.cpp" >
    <View0 Encoding="" Type="Source" />
-  </Doc8>
-  <Doc9 NumberOfViews="1" URL="file:///home/brezerk/develop/q4wine/src/gui/wizard.cpp" >
+  </Doc7>
+  <Doc8 NumberOfViews="1" URL="file:///home/brezerk/develop/q4wine/src/gui/wizard.cpp" >
    <View0 Encoding="KOI8-U" line="864" Type="Source" />
-  </Doc9>
+  </Doc8>
  </DocsAndViews>
  <pluginList>
   <kdevdebugger>

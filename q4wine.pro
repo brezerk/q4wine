@@ -7,7 +7,7 @@ TARGET = q4wine
 
 DEPENDPATH += . src src/gui src/core src/i18n
 INCLUDEPATH += . src/gui src/core srcs
-APP_VERSION = "0.107"
+APP_VERSION = "0.108"
 
 # User notification
 
