@@ -93,3 +93,19 @@ QString CoreMethods::getPrefixPath(QString prefixName){
 
 	return prefixPath;
 }
+
+QString CoreMethods::getSettingValue(QString group, QString key){
+	/*
+	 * Getting setting key value
+	 */
+
+	QString value;
+
+	QSettings settings(APP_SHORT_NAME, "default");
+
+	settings.beginGroup(group);
+		value = settings.value(key).toString();
+	settings.endGroup();
+
+	return value;
+}

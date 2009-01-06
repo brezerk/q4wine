@@ -162,6 +162,9 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::cmdWinetricks_Click() {
+
+	qDebug()<<"bin:"<<core->getSettingValue("console", "bin")<<" args:"<<core->getSettingValue("console", "args");
+
   winetricks *w = new winetricks ();
 
 

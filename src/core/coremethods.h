@@ -30,6 +30,8 @@
 #ifndef COREMETHODS_H
 #define COREMETHODS_H
 
+#include "config.h"
+
 #include <QProcess>
 #include <QStringList>
 #include <QtCore>
@@ -44,6 +46,8 @@ public:
     /* Search for fileName in PATH with /usr/bin/which */
     QString getWhichOut (QString fileName);
 	QString getPrefixPath(QString prefixName);
+
+	QString getSettingValue(QString group, QString key);
     CoreMethods ();
     private:
 
