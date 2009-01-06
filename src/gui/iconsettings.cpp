@@ -82,8 +82,6 @@ IconSettings::IconSettings(bool newIcon, QString prefix_id, QString prefix_dir, 
 	connect(cmdGetProgram, SIGNAL(clicked()), this, SLOT(cmdGetProgram_Click()));
 	connect(cmdGetWorkDir, SIGNAL(clicked()), this, SLOT(cmdGetWorkDir_Click()));
 	connect(cmdGetIcon, SIGNAL(clicked()), this, SLOT(cmdGetIcon_Click()));
-	connect(cmdGetImage, SIGNAL(clicked()), this, SLOT(cmdGetImage_Click()));
-	connect(cmdGetMount, SIGNAL(clicked()), this, SLOT(cmdGetMount_Click()));
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 	
@@ -108,9 +106,6 @@ void IconSettings::loadThemeIcons(QString themePath){
 	cmdGetProgram->setIcon(loadIcon("data/folder.png", themePath));
 	cmdGetWorkDir->setIcon(loadIcon("data/folder.png", themePath));
 	
-	cmdGetImage->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetMount->setIcon(loadIcon("data/folder.png", themePath));
-
 	cmdGetIcon->setIcon(loadIcon("data/exec_wine.png", themePath));
  	
 	return;
@@ -139,9 +134,9 @@ void IconSettings::getIconReccord(QString themePath){
 	QSqlQuery query;
 	
 	if (!dir_id.isEmpty()){
-		query.exec(tr("SELECT name, exec, cmdargs, icon_path, desc, image, mount, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND dir_id=%2 and name=\"%3\"") .arg(prefix_id) .arg(dir_id) .arg(iconName));
+		query.exec(tr("SELECT name, exec, cmdargs, icon_path, desc, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND dir_id=%2 and name=\"%3\"") .arg(prefix_id) .arg(dir_id) .arg(iconName));
 	} else {
-		query.exec(tr("SELECT name, exec, cmdargs, icon_path, desc, image, mount, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND name=\"%2\" AND dir_id ISNULL") .arg(prefix_id) .arg(iconName));
+		query.exec(tr("SELECT name, exec, cmdargs, icon_path, desc, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND name=\"%2\" AND dir_id ISNULL") .arg(prefix_id) .arg(iconName));
 	}
 	
 	query.first();
@@ -152,6 +147,8 @@ void IconSettings::getIconReccord(QString themePath){
 	
 	iconPath.clear();
 	
+
+
 	if (!query.value(3).toString().isEmpty()){
 		if (QFile(query.value(3).toString()).exists()){
 			cmdGetIcon->setIcon (QIcon(query.value(3).toString()));
@@ -178,17 +175,15 @@ void IconSettings::getIconReccord(QString themePath){
 			}
 		}
 	}
-	
-	txtDesc->setText(query.value(4).toString());
-	txtImagePath->setText(query.value(5).toString());
-	txtMountPath->setText(query.value(6).toString());
-	txtDisplay->setText(query.value(7).toString());
-	txtWinedebug->setText(query.value(8).toString());
-	txtWorkDir->setText(query.value(12).toString());
-	txtDesktopSize->setText(query.value(13).toString());
-	spinNice->setValue(query.value(14).toInt());
 
-	if (query.value(9).toString()=="1"){
+	txtDesc->setText(query.value(4).toString());
+	txtDisplay->setText(query.value(5).toString());
+	txtWinedebug->setText(query.value(6).toString());
+	txtWorkDir->setText(query.value(10).toString());
+	txtDesktopSize->setText(query.value(11).toString());
+	spinNice->setValue(query.value(12).toInt());
+
+	if (query.value(7).toString()=="1"){
 		cbUseConsole->setCheckState(Qt::Checked);
 		txtWinedebug->setEnabled(TRUE);
 	} else {
@@ -196,7 +191,7 @@ void IconSettings::getIconReccord(QString themePath){
 		txtWinedebug->setEnabled(FALSE);
 	}
 	
-	QStringList override = query.value(10).toString().split(";");
+	QStringList override = query.value(8).toString().split(";");
 	
 	QString overrideorder;
 	
@@ -223,7 +218,7 @@ void IconSettings::getIconReccord(QString themePath){
 			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
 	}	
 	
-	iconId = query.value(11).toString();
+	iconId = query.value(9).toString();
 	
 	return;
 }
@@ -474,28 +469,6 @@ void IconSettings::cmdGetIcon_Click(){
 	return;
 }
 
-
-void IconSettings::cmdGetImage_Click(){
-	QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO image file"), prefix_dir, tr("ISO Image files (*.iso)"));
-	
-	if(!fileName.isEmpty()){
-		if (QFile::exists (fileName))
-			txtImagePath->setText(fileName);
-	}
-	
-	return;
-}
-
-void IconSettings::cmdGetMount_Click(){
-	QString fileName = QFileDialog::getExistingDirectory(this, tr("Open mount directory"), prefix_dir,	QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-	
-	if(!fileName.isEmpty()){
-		txtMountPath->setText(fileName);
-	}
-	
-	return;
-}
-
 void IconSettings::cmdCancel_Click(){
 	reject();
 	return;	
@@ -547,7 +520,7 @@ void IconSettings::cmdOk_Click(){
 	
 	switch (newIcon){
 		case TRUE:
-			query.prepare("INSERT INTO icon(override, winedebug, useconsole, display, mount, image, cmdargs, exec, icon_path, desc, dir_id, id, name, prefix_id, wrkdir, desktop, nice) VALUES(:override, :winedebug, :useconsole, :display, :mount, :image, :cmdargs, :exec, :icon_path, :desc, :dir_id, NULL, :name, :prefix_id, :wrkdir, :desktop, :nice);");
+			query.prepare("INSERT INTO icon(override, winedebug, useconsole, display, cmdargs, exec, icon_path, desc, dir_id, id, name, prefix_id, wrkdir, desktop, nice) VALUES(:override, :winedebug, :useconsole, :display, :cmdargs, :exec, :icon_path, :desc, :dir_id, NULL, :name, :prefix_id, :wrkdir, :desktop, :nice);");
 			
 			if(dir_id.isEmpty())
 				query.bindValue(":dir_id", QVariant(QVariant::String));
@@ -557,7 +530,7 @@ void IconSettings::cmdOk_Click(){
 			query.bindValue(":prefix_id", prefix_id);
 		break;
 		case FALSE:
-			query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display, mount=:mount, image=:image, cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice WHERE id=:id;");
+			query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice WHERE id=:id;");
 			
 			query.bindValue(":id", iconId);
 		break;
@@ -588,16 +561,6 @@ void IconSettings::cmdOk_Click(){
 		query.bindValue(":display", QVariant(QVariant::String));
 	else
 		query.bindValue(":display", txtDisplay->text());
-		
-	if (txtMountPath->text().isEmpty())
-		query.bindValue(":mount", QVariant(QVariant::String));
-	else
-		query.bindValue(":mount", txtMountPath->text());
-	
-	if (txtImagePath->text().isEmpty())
-		query.bindValue(":image", QVariant(QVariant::String));
-	else
-		query.bindValue(":image", txtImagePath->text());
 		
 	if (txtCmdArgs->text().isEmpty())
 		query.bindValue(":cmdargs", QVariant(QVariant::String));

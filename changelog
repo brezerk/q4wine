@@ -1,80 +1,69 @@
-Version 0.100
-	gui
-		Fixes:
-			- "Programs" tab, was set as default at startup;
-			- Fixed tray icon display;
-		
-	core
+Installation
+***********************************************
+See INSTALL file for details
+
+Changelog
+***********************************************
+Version 0.109-r2
+	core:
 		New:
-			- Full theme support;
-			- Translation support;
-			
-		Fixes:
-			- Fixed "Can't find theme. File or path not exists: Default" error message;
-			- Fixed tray icon image load;
-			- Fixed process output encoding;
-			- run.cpp moved to /src/gui directory;
-			- Fixed crashes of wrestool while getting icons;
-			- Fixed process exit code detection;
-			- Fixed envelopment variable detection;
-			- Fixed startup wizard, now it creates Default prefix;
-			
-Version 0.101
-	gui
+			- New CMake (required version 2.6)) build system now used;
+			- Added q4wine.desktop file;
+			- New core class;
+
+		Experemental:
+			- Temporary winetricks support;
+
 		Fixed:
-			- Fixed TRANSLATIONS variable in q4wine.pro
-		
+			- Fixed icon options edit error: "Debug: Parameter count mismatch";
+			- Fixed regression at icon options edit;
+			- Removed q4wine.pro;
+			  (Note: qmake now deprecated, use cmake)
+			- updated INSTALL text file;
+
+Version 0.109-r1
+	core:
 		New:
-			- Full professional Ukrainian translation by Chornoivan Uriy Olexeevich
-			
-Version 0.102
-	core
+			- Russian translation by Pavel Zinin (pashazz)
+
 		Fixed:
-			- Some stuff and optimization.
+			- Fixed icon add error: "Debug: Parameter count mismatch";
+			- Fixed spaces in Program path and Worcking directory errors;
+			- Removed src.pro;
+			- Added INSTALL text file;
 
-		New:
-			- Display info and error notification when starts detached wine process.
-			- Now you can manually set wine desktop name and desktop size at icon settings.
-			- Now you can manually set _nice_ (man nice) priority at icon settings.
-			  (Note: priority might by at range from 0 to 20)
-			- Now you can renice process priority using context menu at "Process" tab.
-			  (Note: this action need root privileges. i.e. sudo app.)
-
-Version 0.103
-	core
-		New:
-			- Fake drive core functions.
-
-Version 0.104
+Version 0.109
 	gui
 		New:
-			- Fake drive creation wizard.
-	core
-		New:
-			- Registry core functions.
-			- Fake drive wizard creates 'system' folder and wine utils icons.
-			- Fake drive wizard runs wineprefixcreate.
-
-Version 0.105
-	core
-		New:
-			- New winetool class.
-			- Q4Wine now can import QT palette in to wine color settings
-		Fixed:
-			- Bug when deleting folder with icons.
-			- Bug in UpdateDatabaseConnectedItems.
-			- Crashes when lstFolders lose focus.
-
-Version 0.106
-	core
-		New:
-			- Update prefix functions.
+			- New CD image manager;
+			- New CD mount menu style;
+			- TrayIcon now shows and hide q4wine when double clicking on it;
 
 		Fixed:
-			- Remove old prefix while creation new one.
-			- Run FakeDrive creation wizard after PrefixCreation wizard (If requested).
-			- SQL "Parameter count mismatch" at Prefix creation wizard.
-			- Removed version selector at PrefixCreation wizard.
+			- Removed mount point and cd image settings at Icon Settings;
+			- Fixed prefix toolbar click crush;
+			- Fixed some English mistakes ;)
+			- Updated Ukrainian translation;
+			- Fixed icons show update at context menu request;
+
+	core
+		New:
+			- CD mount detection;
+			- Database version updater;
+
+		Fixed:
+			- Prefix setup bug with mount point and mount drive;
+			- Numerious fixes and code reorganization;
+			- Prefix Settings abd Prefix Wizard now use /etc/fstab instead of /proc/diskstats;
+			- Fixed QTranslator i18n settings load;
+
+Version 0.108
+	core
+		New:
+			- Fake drive wizard creates 'autostart' folder.
+
+		Fixed:
+			- Copy issue.
 
 Version 0.107
 	core
@@ -96,13 +85,99 @@ Version 0.107
 			- Add outdated notifier messages.
 			- Fixed icon loose at PrefixSettings dialog.
 
-Version 0.108
+Version 0.106
 	core
 		New:
-			- Fake drive wizard creates 'autostart' folder.
+			- Update prefix functions.
 
 		Fixed:
-			- Copy issue.
+			- Remove old prefix while creation new one.
+			- Run FakeDrive creation wizard after PrefixCreation wizard (If requested).
+			- SQL "Parameter count mismatch" at Prefix creation wizard.
+			- Removed version selector at PrefixCreation wizard.
+
+Version 0.105
+	core
+		New:
+			- New winetool class.
+			- Q4Wine now can import QT palette in to wine color settings
+		Fixed:
+			- Bug when deleting folder with icons.
+			- Bug in UpdateDatabaseConnectedItems.
+			- Crashes when lstFolders lose focus.
+
+Version 0.104
+	gui
+		New:
+			- Fake drive creation wizard.
+	core
+		New:
+			- Registry core functions.
+			- Fake drive wizard creates 'system' folder and wine utils icons.
+			- Fake drive wizard runs wineprefixcreate.
+
+Version 0.103
+	core
+		New:
+			- Fake drive core functions.
+
+Version 0.102
+	core
+		Fixed:
+			- Some stuff and optimization.
+
+		New:
+			- Display info and error notification when starts detached wine process.
+			- Now you can manually set wine desktop name and desktop size at icon settings.
+			- Now you can manually set _nice_ (man nice) priority at icon settings.
+			  (Note: priority might by at range from 0 to 20)
+			- Now you can renice process priority using context menu at "Process" tab.
+			  (Note: this action need root privileges. i.e. sudo app.)
+
+Version 0.101
+	gui
+		Fixed:
+			- Fixed TRANSLATIONS variable in q4wine.pro
+		
+		New:
+			- Full professional Ukrainian translation by Chornoivan Uriy Olexeevich
+
+Version 0.100
+	gui
+		Fixes:
+			- "Programs" tab, was set as default at startup;
+			- Fixed tray icon display;
+		
+	core
+		New:
+			- Full theme support;
+			- Translation support;
+			
+		Fixes:
+			- Fixed "Can't find theme. File or path not exists: Default" error message;
+			- Fixed tray icon image load;
+			- Fixed process output encoding;
+			- run.cpp moved to /src/gui directory;
+			- Fixed crashes of wrestool while getting icons;
+			- Fixed process exit code detection;
+			- Fixed envelopment variable detection;
+			- Fixed startup wizard, now it creates Default prefix;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

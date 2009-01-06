@@ -49,16 +49,18 @@
 
 #include "config.h"
 
+#include "coremethods.h"
 #include "iconsview.h"
 #include "wizard.h"
 #include "process.h"
 #include "winebinlauncher.h"
 #include "iconsettings.h"
+#include "imagemanager.h"
 #include "prefixsettings.h"
 #include "about.h"
 #include "appsettings.h"
 #include "run.h"
-
+#include "winetricks.h"
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -79,7 +81,8 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 	Q_OBJECT
 	public:
 		MainWindow(QWidget * parent = 0, Qt::WFlags f = 0);
-			
+		virtual ~MainWindow();
+
 		// Icon copy\cyt structure
 		iconCopyBuffer iconBuffer;
 		
@@ -87,121 +90,146 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		
 	private slots:
 
-		//FIXME: plz. normalize function names..
-		void GetProcProccessInfo(void);
-		void SelectProcNicePriority(void);
-		void SetProcNicePriority(int priority, int pid);
-		void cmdKillSelectedProccess(void);
-		void cmdKillWineProccess(void);
-		void cmdManagePrefixes_Click(void);
+		//Core functions
+		void CoreFunction_GetProcProccessInfo(void);
+		void CoreFunction_SetProcNicePriority(int priority, int pid);
+		void CoreFunction_ResizeContent(int tabIndex);
 
+		void menuMountImages_triggered ( QAction * action );
+
+		/*
+		 * Icon tray slots
+		 */
+		void trayIcon_Activate(QSystemTrayIcon::ActivationReason reason);
+
+		/*
+		 * Command buttons slots
+		 */ 
+		void cmdManagePrefixes_Click(void);
 		void cmdCreateFake_Click(void);
 		void cmdUpdateFake_Click(void);
-		
-		//FIXME: here to...
-		void showProcContextMenu( const QPoint);
-		
-		void ResizeContent(int tabIndex);
+		void cmdWinetricks_Click (void);
+
 
 		/*
 		 *Prefix tool bars action
 		 */
-		void toolPrefixCreate_Clicked(void);
-		void toolPrefixDelete_Clicked(void);
-		void toolPrefixExport_Clicked(void);
-		void toolPrefixImport_Clicked(void);
-		void toolPrefixSettings_Clicked(void);
+		void prefixAdd_Click(void);
+		void prefixDelete_Click(void);
+		void prefixExport_Click(void);
+		void prefixImport_Click(void);
+		void prefixSettings_Click(void);
 
-		//FIXME: PUT IN TO EVENT FILTER
-		void UpdateProcListContent(const QModelIndex);
-		void UpdatePrefixListContent(const QModelIndex);
-		
-		void lstIcons_ItemClicked(QListWidgetItem * item);
-		void lstIcons_ItemDoubleClicked(QListWidgetItem * item);
+		/*
+		 *Process action slots
+		 */
+		void processRenice_Click(void);
+		void processKillSelected_Click(void);
+		void processKillWine_Click(void);
+
+
+		/*
+		 *Icon list slots
+		 */		
+		void lstIcons_ItemClick(QListWidgetItem * item);
+		void lstIcons_ItemDoubleClick(QListWidgetItem * item);
 		void lstIcons_ShowContextMenu(const QPoint);
 
-		void twPrograms_ItemClicked(QTreeWidgetItem * item, int);
+		/*
+		 *Programs tree slots
+		 */
+		void twPrograms_ItemClick(QTreeWidgetItem * item, int);
 		void twPrograms_ShowContextMenu(const QPoint);
 	
-		void tablePrefix_showContextMenu(const QPoint);
-		
+		/*
+		 *Prefix table slots
+		 */
+		void tablePrefix_ShowContextMenu(const QPoint);
+		void tablePrefix_UpdateContentList(const QModelIndex);
+
+		void tableProc_ShowContextMenu(const QPoint);
+		void tableProc_UpdateContentList(const QModelIndex);
+
 		/*
 		 * Context menu slots
 		 */
 		
 			//Directory context
-			void contextDirAdd(void);
-			void contextDirRename(void);
-			void contextDirDelete(void);
-			void contextDirMountDrive(void);
-			void contextDirUnMountDrive(void);
-			void contextDirMountOther(void);
-			void contextDirConfigure(void);
-			void contextDirInstall(void);
-			void contextDirUnInstall(void);
+			void dirAdd_Click(void);
+			void dirRename_Click(void);
+			void dirDelete_Click(void);
+			void dirUnmount_Click(void);
+			void dirMountOther_Click(void);
+			void dirConfigure_Click(void);
+			void dirInstall_Click(void);
+			void dirUninstall_Click(void);
 			
 			//Icon context
-			void contextIconAdd(void);
-			void contextIconRun(void);
-			void contextIconCut(void);
-			void contextIconCopy(void);
-			void contextIconPaste(void);
-			void contextIconRename(void);
-			void contextIconOption(void);
-			void contextIconDelete(void);
-			void contextIconMount(void);
-			void contextIconMountOther(void);
-			void contextIconUnmount(void);
+			void iconAdd_Click(void);
+			void iconRun_Click(void);
+			void iconCut_Click(void);
+			void iconCopy_Click(void);
+			void iconPaste_Click(void);
+			void iconRename_Click(void);
+			void iconOption_Click(void);
+			void iconDelete_Click(void);
+			void iconMount_Click(void);
+			void iconMountOther_Click(void);
+			void iconUnmount_Click(void);
 		
 			//Main menu slots
-			void menuMainExit(void);
-			void menuMainPrograms(void);
-			void menuMainProcess(void);
-			void menuMainSetup(void);
-			void menuMainPrefix(void);
-			void menuMainAbout(void);
-			void menuMainAboutQt(void);
-			void menuMainExportIcons(void);
-			void menuMainRun(void);
-			void menuMainOptions(void);
-			void menuMainInstall(void);
-			
+			void mainExit_Click(void);
+			void mainPrograms_Click(void);
+			void mainImageManager_Click(void);
+			void mainProcess_Click(void);
+			void mainSetup_Click(void);
+			void mainPrefix_Click(void);
+			void mainAbout_Click(void);
+			void mainAboutQt_Click(void);
+			void mainExportIcons_Click(void);
+			void mainRun_Click(void);
+			void mainOptions_Click(void);
+			void mainInstall_Click(void);
 	private:
+		//Classes
+
+		CoreMethods *core;
+
 		// Proxy
 		QNetworkProxy proxy;
 		// Tray icon
 		QSystemTrayIcon *trayIcon;
+
 		QMenu *trayIconMenu;
+		QMenu *images;
+		QMenu *menuProc;
+		QMenu *menuPrefix;
+		QMenu *menuDir;
+		QMenu *menuDirMount;
+		QMenu *menuIcon;
+		QMenu *menuIconMount;
 		
 		void createTrayIcon();
 		void SetMeVisible(bool visible);
 		
-		// Process List control context menu
-		QAction *killAct;
-		QAction *killWineAct;
-		QAction *refreshAct;
+		QAction *processKillSelected;
+		QAction *processKillWine;
+		QAction *processRefresh;
+		QAction *processRenice;
 
-		// Procces control option for toolbar
-		QAction *killWineProcTool;
-		QAction *killWineTool;
-		QAction *reniceProc;
-		QAction *rebootWineTool;
-		QAction *refreshWineProcTool;
-
-		// Prefix control option for toolbar
-		QAction *toolPrefixCreate;
-		QAction *toolPrefixExport;
-		QAction *toolPrefixImport;
-		QAction *toolPrefixDelete;
-		QAction *toolPrefixSettings;
+		// Prefix actions for context menu
+		QAction *prefixAdd;
+		QAction *prefixImport;
+		QAction *prefixExport;
+		QAction *prefixDelete;
+		QAction *prefixSettings;
 
 		// Directories control for context menu
 		QAction *dirAdd;
 		QAction *dirRename;
 		QAction *dirDelete; 
-		QAction *dirMountDrive;
 		QAction *dirMountOther;
-		QAction *dirUnMountDrive;
+		QAction *dirUnmount;
 		QAction *dirConfigure;
 		QAction *dirInstall;
 		QAction *dirUninstall;
@@ -219,49 +247,32 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QAction *iconUnmount;
 		QAction *iconMountOther;
 		
-		// Prefix actions for context menu
-		QAction *prefixAdd;
-		QAction *prefixImport;
-		QAction *prefixExport;
-		QAction *prefixDelete;
-		QAction *prefixSettings;
-		
-		// Icons control for context menu
-		QAction *icoAdd;
-		QAction *icoRename;
-		QAction *icoDelete;
-		QAction *icoOption;
-		
 		// Toolbars
 		QToolBar *procToolBar;
 		QToolBar *prefixToolBar;
 
 		// Settings functions
-		
-		void SettingGet(void);
-		void SettingCheck(QString filePath, QString message);
-		
+		void CoreFunction_CreateMenus(void);
+		void CoreFunction_CreateToolBars(void);	
+		void CoreFunction_SettingGet(void);
+		void CoreFunction_SettingCheck(QString filePath, QString message);
+		void CoreFunction_WineRunAutorunItems(void);
+		void CoreFunction_WineRunProgram(QString exec, QStringList args, QString wrkdir);
+		void CoreFunction_WinePrepareRunParams(ExecObject execObj);
+		void CoreFunction_DatabaseUpdateConnectedItems(int currentPrefix = -1);
+		void CoreFunction_ImageMount(QString image, QString mount);
+		void CoreFunction_ImageUnmount(QString mount);
 	
 		//Events definition
 		void resizeEvent (QResizeEvent);
-		void createMenus(void);
-		void createToolBars(void);
-		void UpdateDatabaseConnectedItems(int currentPrefix = -1);
-		
-		void MountImage(QString image, QString mount);
-		void UnMountImage(QString mount);
-		void DeleteDirectory(QString path);
+	
+		//void DeleteDirectory(QString path);
 		
 		QStringList SQL_getPrefixAndDirData(QTreeWidgetItem *treeItem);
 		QStringList SQL_getPrefixAndDirInfo(QTreeWidgetItem *treeItem);
 		QStringList SQL_getDirctoryInfo(QString prefix_name, QString dirname);
 		bool SQL_isIconExistsByName(QString prefix_id, QString dir_id, QString name);
-		
-		void RunWineUtils(QString util_name, QTreeWidgetItem *item);
-		void RunAutorunItems(void);
-		void RunWineProgram(QString exec, QStringList args, QString wrkdir);
-		void PrepareWineRunParams(ExecObject execObj);
-		
+
 		bool checkDb();
 	protected:
 		// Event filter
@@ -269,7 +280,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void closeEvent(QCloseEvent *event);
 		
 		//Resource\theme loader
-		QIcon loadIcon(QString iconName);
+		QIcon CoreFunction_IconLoad(QString iconName);
 
 		QString HOME_PATH;
 		QString ROOT_PATH;

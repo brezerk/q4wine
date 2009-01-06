@@ -187,25 +187,27 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 			cmdGetConsoleBin->installEventFilter(this);
 			cmdGetWrestoolBin->installEventFilter(this);
 			cmdGetIcotoolBin->installEventFilter(this);
+                        core = new CoreMethods ();
+                        txtWineBin->setText(core->getWhichOut("wine"));
+                        txtWineServerBin->setText(core->getWhichOut("wineserver"));
+                        txtWineLoaderBin->setText(core->getWhichOut("wine"));
 			
-			txtWineBin->setText(getWhichOut("wine"));
-			txtWineServerBin->setText(getWhichOut("wineserver"));
-			txtWineLoaderBin->setText(getWhichOut("wine"));
+                        txtTarBin->setText(core->getWhichOut("tar"));
+                        txtMountBin->setText(core->getWhichOut("mount"));
+                        txtUmountBin->setText(core->getWhichOut("umount"));
+                        txtSudoBin->setText(core->getWhichOut("sudo"));
+                        txtNiceBin->setText(core->getWhichOut("nice"));
+                        txtReniceBin->setText(core->getWhichOut("renice"));
+                        txtShBin->setText(core->getWhichOut("sh"));
 			
-			txtTarBin->setText(getWhichOut("tar"));
-			txtMountBin->setText(getWhichOut("mount"));
-			txtUmountBin->setText(getWhichOut("umount"));
-			txtSudoBin->setText(getWhichOut("sudo"));
-			txtNiceBin->setText(getWhichOut("nice"));
-			txtReniceBin->setText(getWhichOut("renice"));
-			txtShBin->setText(getWhichOut("sh"));
-			
-			txtConsoleBin->setText(getWhichOut("konsole"));
+                        txtConsoleBin->setText(core->getWhichOut("konsole"));
 			if (!txtConsoleBin->text().isEmpty())
 				txtConsoleArgs->setText("--noclose --noframe --notabbar --nomenubar --notoolbar --nohist -e");
 			
-			txtWrestoolBin->setText(getWhichOut("wrestool"));
-			txtIcotoolBin->setText(getWhichOut("icotool"));
+                        txtWrestoolBin->setText(core->getWhichOut("wrestool"));
+                        txtIcotoolBin->setText(core->getWhichOut("icotool"));
+                        delete core;
+
 		break;
 		case 2:
 			TotalPage=6;
@@ -545,8 +547,17 @@ void Wizard::nextWizardPage(){
 					q.bindValue(":wine_loader", txtWineLoaderBin->text());
 					q.bindValue(":wine_dllpath", txtWineDllPath->text());
 					if (!txtMountPoint->text().isEmpty()){
-						q.bindValue(":cdrom_mount", combSourceDevice->currentText());
-						q.bindValue(":cdrom_drive", txtMountPoint->text());
+						if (txtMountPoint->text().endsWith ("/"))
+							txtMountPoint->setText(txtMountPoint->text().mid(0, txtMountPoint->text().length()-1));
+
+						q.bindValue(":cdrom_mount", txtMountPoint->text());
+
+						if (combSourceDevice->currentText()!=tr("<none>")){
+							q.bindValue(":cdrom_drive", combSourceDevice->currentText());
+						} else {
+							q.bindValue(":cdrom_drive", QVariant(QVariant::String));
+						}
+
 					} else {
 						q.bindValue(":cdrom_mount", "");
 						q.bindValue(":cdrom_drive", "");
@@ -1113,61 +1124,33 @@ void Wizard::updateScena(){
 	return;
 }
 
-//FIXME: This function is dublicated in prefixsettings.cpp line 77 =(
+
 void Wizard::getprocDevices(){
 	/*
 		Getting divice names at /proc/diskstats
 	*/
 
 	QString name, procstat, path, prefix;;
+		
+	QFile file("/etc/fstab");
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+		QMessageBox::warning(this, tr("Error"), tr("Sorry, i can't access to /etc/fstab"));
+	}
 
-	QFile file("/proc/diskstats");
-		if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-			QMessageBox::warning(this, tr("Error"), tr("Sorry, i can't access to /proc/diskstats"));
+	while (1) {
+		QByteArray line = file.readLine();
+		
+		if (line.isEmpty())
+			break;
+		
+		if (line.indexOf("cdrom")>=0){
+			QList<QByteArray> array = line.split(' ').at(0).split('\t');
+				combSourceDevice->addItem(array.at(0));
 		}
-		
-			int indOf;
-		
-			while (1) {
-				QByteArray line = file.readLine();
-				if (line.isEmpty())
-					break;
-				
-				//Searching for sd, hd or sr devices
-				indOf = line.indexOf("sd");
-				if (indOf == -1){
-					indOf = line.indexOf("hd");
-					if (indOf == -1){
- 						indOf = line.indexOf("sr");
-					}
-				}
-				
-				if (indOf >= 0){
-					combSourceDevice->addItem(QString("/dev/").append(line.mid(indOf, 4).trimmed()));
-				}
-			}
+	}
 	file.close();
 	
 	return;
 }
 
 
-QString Wizard::getWhichOut(QString fileName){
-	proc = new QProcess(this);
-	QStringList args;
-	
-	args<<fileName;
-	
-	proc->setWorkingDirectory (QDir::homePath());
-	proc->start("/usr/bin/which", args, QIODevice::ReadOnly);
-	
-	
-	proc->waitForFinished();
-	
-	QString string = proc->readAllStandardOutput();
-	if (!string.isEmpty()){
-		return string.trimmed();
-	}
-	
-	return "";
-}

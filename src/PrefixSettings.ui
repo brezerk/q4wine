@@ -185,7 +185,7 @@
          <string/>
         </property>
         <property name="pixmap" >
-         <pixmap resource="k4wine.qrc" >:/data/exec.png</pixmap>
+         <pixmap resource="q4wine.qrc" >:/data/exec.png</pixmap>
         </property>
        </widget>
       </item>
@@ -657,6 +657,7 @@ Note: leave it blank for default.</string>
   </layout>
  </widget>
  <resources>
+  <include location="q4wine.qrc" />
   <include location="k4wine.qrc" />
  </resources>
  <connections/>

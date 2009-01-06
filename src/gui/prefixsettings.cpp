@@ -133,7 +133,6 @@ QIcon PrefixSettings::loadIcon(QString iconName, QString themePath){
 	return icon;	
 }
 
-//FIXME: This function is dublicated in wizard.cpp line 361 =(
 void PrefixSettings::getprocDevices(){
 	/*
 		Getting divice names at /proc/diskstats
@@ -141,29 +140,23 @@ void PrefixSettings::getprocDevices(){
 
 	QString name, procstat, path, prefix;;
 		
-	QFile file("/proc/diskstats");
+	QFile file("/etc/fstab");
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-		QMessageBox::warning(this, tr("Error"), tr("Sorry, i can't access to /proc/diskstats"));
+		QMessageBox::warning(this, tr("Error"), tr("Sorry, i can't access to /etc/fstab"));
 	}
 		
-	int indOf;
-		
+	//int indOf;
+	comboDeviceList->addItem(tr("<none>"));
+
 	while (1) {
 		QByteArray line = file.readLine();
+		
 		if (line.isEmpty())
 			break;
-				
-				//Searching for sd, hd or sr devices
-		indOf = line.indexOf("sd");
-		if (indOf == -1){
-			indOf = line.indexOf("hd");
-			if (indOf == -1){
-				indOf = line.indexOf("sr");
-			}
-		}
-				
-		if (indOf >= 0){
-			comboDeviceList->addItem(QString("/dev/").append(line.mid(indOf, 4).trimmed()));
+		
+		if (line.indexOf("cdrom")>=0){
+			QList<QByteArray> array = line.split(' ').at(0).split('\t');
+				comboDeviceList->addItem(array.at(0));
 		}
 	}
 	file.close();
@@ -201,8 +194,16 @@ void PrefixSettings::cmdOk_Click(){
 	query.bindValue(":wine_loader", txtWineLoaderBin->text());
 	query.bindValue(":wine_server", txtWineServerBin->text());
 	query.bindValue(":wine_exec", txtWineBin->text());
+
+	if (txtMountPoint->text().endsWith ("/"))
+		txtMountPoint->setText(txtMountPoint->text().mid(0, txtMountPoint->text().length()-1));
+
 	query.bindValue(":cdrom_mount", txtMountPoint->text());
-	query.bindValue(":cdrom_drive", comboDeviceList->currentText());
+	if (comboDeviceList->currentText()!=tr("<none>")){
+		query.bindValue(":cdrom_drive", comboDeviceList->currentText());
+	} else {
+		query.bindValue(":cdrom_drive", QVariant(QVariant::String));
+	}
 	query.bindValue(":name", txtPrefixName->text());
 	query.bindValue(":path", txtPrefixPath->text());
 	query.bindValue(":id", prefix_id);

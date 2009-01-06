@@ -65,8 +65,8 @@ struct ExecObject{
  * APP_PREF -- Application install prefix (Used for trak translations, help and thems files)
  */
 
-#define APP_VERS "0.107"
-#define APP_PREF "/usr"
+#define APP_VERS "0.109-r2"
+#define APP_PREF "/home/brezerk/usr"
+#define APP_REALM "Linux"
 
 #endif
-

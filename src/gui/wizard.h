@@ -47,6 +47,7 @@
 #include "registry.h"
 #include "process.h"
 #include "winebinlauncher.h"
+#include "coremethods.h"
 
 class Wizard : public QDialog, public Ui::Wizard
 {
@@ -62,10 +63,11 @@ class Wizard : public QDialog, public Ui::Wizard
 
 	private:
 		void updateScena();
- 		QString getWhichOut(QString fileName);
+
 		int Scena, Page, TotalPage;
 		bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
-		QProcess *proc;
+
+                CoreMethods *core;
 
 	protected:
 		bool eventFilter(QObject *obj, QEvent *event);

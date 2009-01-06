@@ -61,8 +61,6 @@ class IconSettings : public QDialog, public Ui::IconSettings
 		void cmdAdd_Click();
 		void cmdGetProgram_Click();
 		void cmdGetIcon_Click();
-		void cmdGetImage_Click();
-		void cmdGetMount_Click();
 		void cmdGetWorkDir_Click();
 		void cbUseConsole_stateChanged(int);
 		void cmdCancel_Click();

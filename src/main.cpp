@@ -80,12 +80,20 @@ int main(int argc, char *argv[])
 	QString lang;
 	
 	// Getting env LANG variable
-	lang = getenv("LANG");
-	lang = lang.split(".").at(0).toLower();
 	
-	if (!lang.isNull()){
+	
+	settings.beginGroup("app");
+		lang = settings.value("lang").toString();
+	settings.endGroup();
+
+	if (lang.isNull()){
+		lang = getenv("LANG");
+		lang = lang.split(".").at(0).toLower();
 		lang.append(".qm");
-	
+	}
+
+	if (!lang.isNull()){
+
 		if (qtt->load(lang, i18nPath)){
 			app.installTranslator( qtt );
 		} else {
