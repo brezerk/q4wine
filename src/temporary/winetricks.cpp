@@ -37,8 +37,24 @@
     m_ui->setupUi(this);
     core = new CoreMethods();
     _winetricks = core->getWhichOut("winetricks");
+_prefix = core->getPrefixPath(_prefixName);
     //console
-    _console = setConsole ();
+        _console = core->getSettingValue("console", "bin");
+        _args = core->getSettingValue("console", "args");
+        qDebug() << "In constructor winetricks \n";
+        qDebug() << "bin: " << _console << " args: " << _args << " prefix: " << _prefix;
+        //проверка
+        /* if (_console.isEmpty() || _prefix.isEmpty()) {
+            QMessageBox msg;
+            msg.setWindowTitle(tr("Q4Wine"));
+            msg.setText(tr("Default console not set. Closing..."));
+            msg.exec();
+        }
+              if (_prefix.isEmpty()) {
+                  qDebug  <<tr( "Program error Prefix is empty .\n");
+                  this->close();
+        }
+        */
     //button connections
 connect (m_ui->buttonBox, SIGNAL (accepted()), this, SLOT(onaccept()));
 connect (m_ui->buttonBox, SIGNAL (rejected()), this, SLOT(onreject()));
@@ -47,36 +63,13 @@ connect (m_ui->btnInstWinetricks, SIGNAL (clicked()), this, SLOT (instwinetricks
 }
 
 
+
 winetricks::~winetricks()
 {
     delete m_ui;
     delete core;
 }
 
-QString winetricks::setConsole() { //console search
-QString _console; //to return
-    //fist, konsole
-    if (!core->getWhichOut("konsole").isEmpty())
-{
-        _console = core->getWhichOut("konsole");
-                   return _console;
-               }
-    //then gnome-terminal
-    if (!core->getWhichOut("gnome-terminal").isEmpty())  {
-        _console = core->getWhichOut("gnome-terminal");
-        return _console;
-    }
-    //then xfce4-terminal
-    if (!core->getWhichOut("xfce4-terminal").isEmpty()) {
-        _console = core->getWhichOut("xfce4-terminal");
-        return _console;
-    }
-    //then xterm
-    if (!core->getWhichOut("xterm").isEmpty()) {
-        _console = core->getWhichOut("xterm");
-        return _console;
-    }
-}
 void winetricks::setPrefix (QString prefix) {
     _prefix = prefix;
     }
@@ -90,9 +83,8 @@ msg.exec();
 
 void winetricks::run_winetricks(){
  QObject *parent;
- QStringList args;
-
-       QString program = _console + " -e " + _winetricks + " "  + m_ui->lstMain->currentItem()->text() ;
+qDebug () << " \t console: " << _console << "\n \t args: " << _args << "\n \t winetricks: " << _winetricks << "\n \t prefix: " << _prefix << "\n";
+       QString program = _console + " "+ _args + " "+ "WINEPREFIX=" + _prefix +  " "  + _winetricks + " "  + m_ui->lstMain->currentItem()->text() ;
        ;
 
  QProcess *swinetricks = new QProcess (parent);

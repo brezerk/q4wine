@@ -45,7 +45,7 @@ class winetricks : public QDialog {
 public:
     winetricks();
     virtual ~winetricks();
-QString setConsole ();
+    QString _prefixName;
 void setPrefix (QString prefix);
 protected:
     virtual void changeEvent(QEvent *e);
@@ -56,6 +56,8 @@ protected:
     void instwinetricks();
     private:
  QString _console;
+ QString setConsole ();
+QString _args;
     QString _prefix;
 QString _winetricks;
       Ui::winetricks *m_ui;
