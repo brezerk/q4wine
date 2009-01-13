@@ -60,7 +60,7 @@
 #include "about.h"
 #include "appsettings.h"
 #include "run.h"
-#include "winetricks.h"
+#include "temporary/winetricks.h"
 #include <stdlib.h>
 #include <unistd.h>
 
