@@ -33,6 +33,7 @@
 #include <QtGui/QDialog>
 #include <QStringList>
 #include "coremethods.h"
+#include "process.h"
 #include <QProcess>
 #include <QMessageBox>
 namespace Ui {
@@ -40,31 +41,29 @@ namespace Ui {
 }
 
 class winetricks : public QDialog {
-    Q_OBJECT
-    Q_DISABLE_COPY(winetricks)
+	Q_OBJECT
+	Q_DISABLE_COPY(winetricks)
 public:
-    winetricks(QString);
-    virtual ~winetricks();
-    QString _prefixName;
+	winetricks(QString);
+	virtual ~winetricks();
+	QString _prefixName;
 
 protected:
-    virtual void changeEvent(QEvent *e);
+	virtual void changeEvent(QEvent *e);
 
-   private slots:
-    void onreject ();
-    void onaccept();
-    void instwinetricks();
-    private:
- QString _console;
- QString setConsole ();
-QString _args;
-    QString _prefix;
-QString _winetricks;
-      Ui::winetricks *m_ui;
-    void run_winetricks ();
-    void install_winetricks ();
-CoreMethods *core;
-
+	private slots:
+		void onreject ();
+		void onaccept();
+		void instwinetricks();
+	private:
+		QString console_bin;
+		QString console_args;
+		QString prefix_path;
+		QString winetricks_bin;
+		Ui::winetricks *m_ui;
+		void run_winetricks ();
+		void install_winetricks ();
+		CoreMethods *core;
 };
 
 #endif // WINETRICKS_H

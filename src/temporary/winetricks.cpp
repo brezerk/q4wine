@@ -30,79 +30,92 @@
 #include "winetricks.h"
 #include "ui_winetricks.h"
 
- winetricks::winetricks(QString prefix) :
-
-    m_ui(new Ui::winetricks)
- {
-    m_ui->setupUi(this);
+winetricks::winetricks(QString prefixName) : m_ui(new Ui::winetricks)
+{
     core = new CoreMethods();
-    _winetricks = core->getWhichOut("winetricks");
-     _prefixName = prefix;
-_prefix = core->getPrefixPath(_prefixName);
-    //console
-        _console = core->getSettingValue("console", "bin");
-        _args = core->getSettingValue("console", "args");
-        qDebug() << "In constructor winetricks \n";
-        qDebug() << "bin: " << _console << " args: " << _args << " prefix: " << _prefix;
-        //проверка
-        /* if (_console.isEmpty() || _prefix.isEmpty()) {
-            QMessageBox msg;
-            msg.setWindowTitle(tr("Q4Wine"));
-            msg.setText(tr("Default console not set. Closing..."));
-            msg.exec();
-        }
-              if (_prefix.isEmpty()) {
-                  qDebug  <<tr( "Program error Prefix is empty .\n");
-                  this->close();
-        }
-        */
-    //button connections
-connect (m_ui->buttonBox, SIGNAL (accepted()), this, SLOT(onaccept()));
-connect (m_ui->buttonBox, SIGNAL (rejected()), this, SLOT(onreject()));
-connect (m_ui->btnInstWinetricks, SIGNAL (clicked()), this, SLOT (instwinetricks()));
 
+	this->winetricks_bin = core->getWhichOut("winetricks");
+    this->prefix_path = core->getPrefixPath(prefixName);
+	this->console_bin = core->getSettingValue("console", "bin");
+    this->console_args = core->getSettingValue("console", "args");
+
+	m_ui->setupUi(this);
+
+	connect (m_ui->buttonBox, SIGNAL (accepted()), this, SLOT(onaccept()));
+	connect (m_ui->buttonBox, SIGNAL (rejected()), this, SLOT(onreject()));
+	connect (m_ui->btnInstWinetricks, SIGNAL (clicked()), this, SLOT (instwinetricks()));
 }
-
-
 
 winetricks::~winetricks()
 {
-    delete m_ui;
-    delete core;
+	delete core;
+	delete m_ui;
 }
 
 void winetricks::instwinetricks() {install_winetricks();}
+
 void winetricks::install_winetricks() {
-QMessageBox msg;
-msg.setText(tr("Not implemented. Manually download winetricks from the http://kegel.com/wine/winetricks, copy it to /usr/bin, and set execution permissions"));
-msg.setWindowTitle(tr("Q4Wine"));
-msg.exec();
+	QMessageBox msg;
+	msg.setText(tr("Not implemented. Manually download winetricks from the http://kegel.com/wine/winetricks, copy it to /usr/bin, and set execution permissions"));
+	msg.setWindowTitle(tr("Q4Wine"));
+	msg.exec();
 }
 
 void winetricks::run_winetricks(){
- QObject *parent;
-qDebug () << " \t console: " << _console << "\n \t args: " << _args << "\n \t winetricks: " << _winetricks << "\n \t prefix: " << _prefix << "\n";
-       QString program = _console + " "+ _args + " "+ "WINEPREFIX=" + _prefix +  " "  + _winetricks + " "  + m_ui->lstMain->currentItem()->text() ;
-       ;
 
- QProcess *swinetricks = new QProcess (parent);
-swinetricks->start (program);
+	QStringList args;
+
+	if (!console_args.isEmpty()){
+		// If we have any conslope parametres, we gona preccess them one by one
+		QStringList cons_args = console_args.split(" ");
+		for (int i=0; i<cons_args.count(); i++){
+			args.append(cons_args.at(i));
+		}
+	}
+
+	args.append(core->getSettingValue("system", "sh"));
+	args.append("-c");
+
+
+	QString arg;
+	arg.append("WINEPREFIX=");
+	arg.append(this->prefix_path);
+	arg.append(" ");
+	arg.append(this->winetricks_bin);
+	arg.append(" ");
+	arg.append(m_ui->lstMain->currentItem()->text());
+
+	args.append(arg);
+
+	qDebug()<<args;
+
+	Process *exportProcess = new Process(args, console_bin, QDir::homePath(), tr("Running winetricks..."), tr("Plz wait..."));
+			
+	if (exportProcess->exec()==QDialog::Accepted){
+		accept();
+	} else {
+		reject();
+	}
+
 }
-
-
 
 void winetricks::onaccept() {
-run_winetricks();
-this->close();
+	run_winetricks();
+	this->close();
 }
-void winetricks::onreject() { this->close();}
+
+void winetricks::onreject() { 
+	this->close();
+	reject();
+}
+
 void winetricks::changeEvent(QEvent *e)
 {
-    switch (e->type()) {
-    case QEvent::LanguageChange:
-        m_ui->retranslateUi(this);
-        break;
-    default:
-        break;
+	switch (e->type()) {
+		case QEvent::LanguageChange:
+			m_ui->retranslateUi(this);
+		break;
+		default:
+		break;
     }
 }

@@ -162,11 +162,22 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::cmdWinetricks_Click() {
+    core = new CoreMethods();
 
-	qDebug()<<"bin:"<<core->getSettingValue("console", "bin")<<" args:"<<core->getSettingValue("console", "args");
+	if (core->getWhichOut("winetricks").isEmpty()){
+		QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks. Right-click on that link and use 'save as' to save a fresh copy. Or you can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p>"));
+		return;
+	}
 
-  winetricks *w = new winetricks (cbPrefixes->currentText());
-  w->exec();
+	if (core->getSettingValue("console", "bin").isEmpty()){
+		QMessageBox::warning(this, tr("Error"), tr("<p>You do not set default console binary.</p><p>Set it into q4wine option dialog.</p>"));
+		return;
+	}
+
+	delete core;
+
+	winetricks *w = new winetricks (cbPrefixes->currentText());
+	w->exec();
 }
 void MainWindow::trayIcon_Activate(QSystemTrayIcon::ActivationReason reason){
 	if (reason==QSystemTrayIcon::DoubleClick){
