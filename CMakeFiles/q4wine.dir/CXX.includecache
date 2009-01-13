@@ -377,8 +377,8 @@ appsettings.h
 /home/pasha/work/q4wine/src/gui/appsettings.h
 run.h
 /home/pasha/work/q4wine/src/gui/run.h
-winetricks.h
-/home/pasha/work/q4wine/src/gui/winetricks.h
+temporary/winetricks.h
+/home/pasha/work/q4wine/src/gui/temporary/winetricks.h
 stdlib.h
 -
 unistd.h
@@ -647,6 +647,8 @@ QStringList
 -
 coremethods.h
 /home/pasha/work/q4wine/src/temporary/coremethods.h
+process.h
+/home/pasha/work/q4wine/src/temporary/process.h
 QProcess
 -
 QMessageBox
@@ -4036,6 +4038,26 @@ QSettings
 ui_Process.h
 -
 
+src/gui/process.h
+ui_Process.h
+-
+QDialog
+-
+QDebug
+-
+QProcess
+-
+QObject
+-
+QWidget
+-
+QFileDialog
+-
+QMessageBox
+-
+QTextCodec
+-
+
 src/temporary/winetricks.h
 QtGui/QDialog
 -
@@ -4043,6 +4065,8 @@ QStringList
 -
 coremethods.h
 src/temporary/coremethods.h
+process.h
+src/temporary/process.h
 QProcess
 -
 QMessageBox
