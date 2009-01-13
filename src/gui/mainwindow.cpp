@@ -165,9 +165,8 @@ void MainWindow::cmdWinetricks_Click() {
 
 	qDebug()<<"bin:"<<core->getSettingValue("console", "bin")<<" args:"<<core->getSettingValue("console", "args");
 
-  winetricks *w = new winetricks ();
-w->_prefixName = cbPrefixes->currentText(); //vot blya ЗДЕСЬ БАГ. Как исправить не додумался
-   w->exec();
+  winetricks *w = new winetricks (cbPrefixes->currentText());
+  w->exec();
 }
 void MainWindow::trayIcon_Activate(QSystemTrayIcon::ActivationReason reason){
 	if (reason==QSystemTrayIcon::DoubleClick){

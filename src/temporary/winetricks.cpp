@@ -30,13 +30,14 @@
 #include "winetricks.h"
 #include "ui_winetricks.h"
 
- winetricks::winetricks() :
-         _prefix ("~/.wine"),
+ winetricks::winetricks(QString prefix) :
+
     m_ui(new Ui::winetricks)
  {
     m_ui->setupUi(this);
     core = new CoreMethods();
     _winetricks = core->getWhichOut("winetricks");
+     _prefixName = prefix;
 _prefix = core->getPrefixPath(_prefixName);
     //console
         _console = core->getSettingValue("console", "bin");
@@ -70,9 +71,6 @@ winetricks::~winetricks()
     delete core;
 }
 
-void winetricks::setPrefix (QString prefix) {
-    _prefix = prefix;
-    }
 void winetricks::instwinetricks() {install_winetricks();}
 void winetricks::install_winetricks() {
 QMessageBox msg;

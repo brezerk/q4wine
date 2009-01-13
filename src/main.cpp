@@ -56,7 +56,7 @@
 #include <stdlib.h>
 
 #include "stdio.h"
-#include "commandline.h"
+
 #include "initdb.h"
 
 int main(int argc, char *argv[])
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
 		lang = lang.split(".").at(0).toLower();
 		lang.append(".qm");
 	}
-        CommnadLine *cmd = new CommandLine(app.arguments());
+
 
 	if (!lang.isNull()){
 

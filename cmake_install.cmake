@@ -1,4 +1,4 @@
-# Install script for directory: /home/pasha/workspace/q4wine
+# Install script for directory: /home/pasha/work/q4wine
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" MATCHES "^(Unspec
          FILE "$ENV{DESTDIR}/usr/local/bin/q4wine"
          RPATH "")
   ENDIF(EXISTS "$ENV{DESTDIR}/usr/local/bin/q4wine")
-  FILE(INSTALL DESTINATION "/usr/local/bin" TYPE EXECUTABLE FILES "/home/pasha/workspace/q4wine/q4wine")
+  FILE(INSTALL DESTINATION "/usr/local/bin" TYPE EXECUTABLE FILES "/home/pasha/work/q4wine/q4wine")
   IF(EXISTS "$ENV{DESTDIR}/usr/local/bin/q4wine")
     IF(CMAKE_INSTALL_DO_STRIP)
       EXECUTE_PROCESS(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/local/bin/q4wine")
@@ -47,11 +47,11 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" MATCHES "^(Unspec
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" MATCHES "^(Unspecified)$")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" MATCHES "^(Unspecified)$")
-  FILE(INSTALL DESTINATION "/usr/local/share/q4wine" TYPE DIRECTORY FILES "/home/pasha/workspace/q4wine/src/theme")
+  FILE(INSTALL DESTINATION "/usr/local/share/q4wine" TYPE DIRECTORY FILES "/home/pasha/work/q4wine/src/theme")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" MATCHES "^(Unspecified)$")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" MATCHES "^(Unspecified)$")
-  FILE(INSTALL DESTINATION "/usr/local/share/q4wine" TYPE DIRECTORY FILES "/home/pasha/workspace/q4wine/src/i18n" FILES_MATCHING REGEX "/[^/]*\\.qm$")
+  FILE(INSTALL DESTINATION "/usr/local/share/q4wine" TYPE DIRECTORY FILES "/home/pasha/work/q4wine/src/i18n" FILES_MATCHING REGEX "/[^/]*\\.qm$")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" MATCHES "^(Unspecified)$")
 
 IF(CMAKE_INSTALL_COMPONENT)
@@ -60,7 +60,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/pasha/workspace/q4wine/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/pasha/work/q4wine/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/pasha/workspace/q4wine/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/pasha/work/q4wine/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

@@ -43,10 +43,10 @@ class winetricks : public QDialog {
     Q_OBJECT
     Q_DISABLE_COPY(winetricks)
 public:
-    winetricks();
+    winetricks(QString);
     virtual ~winetricks();
     QString _prefixName;
-void setPrefix (QString prefix);
+
 protected:
     virtual void changeEvent(QEvent *e);
 
