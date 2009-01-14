@@ -48,7 +48,7 @@ class Process : public QDialog, public Ui::Process
 {
 	Q_OBJECT
 	public:
-		Process(QStringList args, QString exec, QString dir, QString info, QString caption, QWidget * parent = 0, Qt::WFlags f = 0);
+                Process(QStringList args, QString exec, QString dir, QString info, QString caption, QStringList env = QProcess::systemEnvironment(),QWidget * parent = 0, Qt::WFlags f = 0);
 		QProcess *myProcess;
 		
 	private slots:

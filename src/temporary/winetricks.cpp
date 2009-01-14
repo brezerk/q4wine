@@ -72,14 +72,14 @@ void winetricks::run_winetricks(){
 			args.append(cons_args.at(i));
 		}
 	}
-
-	args.append(core->getSettingValue("system", "sh"));
-	args.append("-c");
+//args.append(core->getSettingValue("system", "sh")); //winetricks run on bash only!
+  //    args.append("-c");
 
 
 	QString arg;
-	arg.append("WINEPREFIX=");
-	arg.append(this->prefix_path);
+;
+//	arg.append("WINEPREFIX=");
+//	arg.append(this->prefix_path);
 	arg.append(" ");
 	arg.append(this->winetricks_bin);
 	arg.append(" ");
@@ -88,9 +88,12 @@ void winetricks::run_winetricks(){
 	args.append(arg);
 
 	qDebug()<<args;
+qDebug() << console_bin << " "<< QDir::homePath() ;
+QStringList env = QProcess::systemEnvironment();
+env << "WINEPFEFIX=" + this->prefix_path;
+        Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Running winetricks..."), tr("Plz wait..."),    , env);
 
-	Process *exportProcess = new Process(args, console_bin, QDir::homePath(), tr("Running winetricks..."), tr("Plz wait..."));
-			
+//here is the
 	if (exportProcess->exec()==QDialog::Accepted){
 		accept();
 	} else {

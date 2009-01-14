@@ -165,44 +165,67 @@
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList" >
-    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-L7BZaeLBzv,guid=4d5b8da49e9bd6027430b414496b7040</value>
-    <value type="QString" >DESKTOP_SESSION=gnome</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-G0JNurAvZX,guid=2adf4a0db63c7732c14cf3f9496cf117</value>
+    <value type="QString" >DESKTOP_SESSION=kde4-neon</value>
     <value type="QString" >DESKTOP_STARTUP_ID=</value>
     <value type="QString" >DISPLAY=:0.0</value>
-    <value type="QString" >GDMSESSION=gnome</value>
+    <value type="QString" >GDMSESSION=kde4-neon</value>
     <value type="QString" >GDM_LANG=ru_RU.UTF-8</value>
     <value type="QString" >GDM_XSERVER_LOCATION=local</value>
-    <value type="QString" >GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString" >GNOME_KEYRING_PID=7436</value>
-    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-Vtoll5/socket</value>
-    <value type="QString" >GPG_AGENT_INFO=/tmp/seahorse-TMYmGU/S.gpg-agent:7524:1</value>
-    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/pasha/.gtkrc-1.2-gnome2</value>
+    <value type="QString" >GNOME_KEYRING_PID=6038</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-nSemmh/socket</value>
+    <value type="QString" >GS_LIB=/home/pasha/.fonts</value>
+    <value type="QString" >GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/pasha/.gtkrc-2.0::/home/pasha/.kde-neon/share/config/gtkrc-2.0</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/pasha/.gtkrc::/home/pasha/.kde-neon/share/config/gtkrc</value>
     <value type="QString" >HOME=/home/pasha</value>
+    <value type="QString" >KDETMP=/home/pasha/.kde-neon//tmp</value>
+    <value type="QString" >KDEVARTMP=/home/pasha/.kde-neon//var/tmp</value>
+    <value type="QString" >KDE_FULL_SESSION=true</value>
+    <value type="QString" >KDE_MULTIHEAD=false</value>
+    <value type="QString" >KDE_SESSION_UID=</value>
+    <value type="QString" >KDE_SESSION_VERSION=4</value>
     <value type="QString" >LANG=ru_RU.UTF-8</value>
+    <value type="QString" >LANGUAGE=</value>
     <value type="QString" >LIBGL_DRIVERS_PATH=/usr/lib/dri</value>
     <value type="QString" >LOGNAME=pasha</value>
+    <value type="QString" >MALLOC_CHECK_=2</value>
+    <value type="QString" >MOZ_LAUNCHED_CHILD=</value>
+    <value type="QString" >NO_EM_RESTART=</value>
     <value type="QString" >ORBIT_SOCKETDIR=/tmp/orbit-pasha</value>
-    <value type="QString" >PATH=/usr/bin:/home/pasha/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
-    <value type="QString" >PWD=/home/pasha</value>
-    <value type="QString" >QTDIR=/usr</value>
-    <value type="QString" >SESSION_MANAGER=local/pasha-desktop:/tmp/.ICE-unix/7447</value>
+    <value type="QString" >PATH=/opt/project-neon/bin:/opt/project-neon/bin:/opt/kde-nightly/bin:/home/pasha/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
+    <value type="QString" >PWD=/home/pasha/Документы</value>
+    <value type="QString" >QTDIR=/opt/project-neon</value>
+    <value type="QString" >QT_PLUGIN_PATH=/home/pasha/.kde-neon/lib/kde4/plugins/:/opt/kde-nightly/lib/kde4/plugins/</value>
+    <value type="QString" >SESSION_MANAGER=local/pasha-desktop:/tmp/.ICE-unix/6198</value>
     <value type="QString" >SHELL=/bin/bash</value>
-    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-Vtoll5/ssh</value>
+    <value type="QString" >SHLVL=1</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-nSemmh/ssh</value>
     <value type="QString" >USER=pasha</value>
     <value type="QString" >USERNAME=pasha</value>
-    <value type="QString" >WINDOWPATH=7</value>
+    <value type="QString" >WINDOWPATH=7:7</value>
     <value type="QString" >XAUTHORITY=/home/pasha/.Xauthority</value>
+    <value type="QString" >XCURSOR_PATH=/opt/kde-nightly/share/icons::~/.icons:/usr/share/icons:/usr/share/pixmaps:/usr/X11R6/lib/X11/icons</value>
+    <value type="QString" >XCURSOR_THEME=Oxygen_Black</value>
     <value type="QString" >XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
-    <value type="QString" >XDG_SESSION_COOKIE=af3ef8118fa73125b2334a8f4910bc9e-1231777854.961722-306914318</value>
+    <value type="QString" >XDG_SESSION_COOKIE=af3ef8118fa73125b2334a8f4910bc9e-1231876374.843958-1679591806</value>
+    <value type="QString" >XRE_BINARY_PATH=</value>
+    <value type="QString" >XRE_IMPORT_PROFILES=</value>
+    <value type="QString" >XRE_PROFILE_LOCAL_PATH=</value>
+    <value type="QString" >XRE_PROFILE_NAME=</value>
+    <value type="QString" >XRE_PROFILE_PATH=</value>
+    <value type="QString" >XRE_START_OFFLINE=</value>
+    <value type="QString" >XUL_APP_FILE=</value>
+    <value type="QString" >_=/opt/kde-nightly/bin/startkde</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
     <value type="QString" >/home/pasha/work/q4wine/q4wine.pro</value>
     <value type="QString" >-spec</value>
-    <value type="QString" >/usr/share/qt4/mkspecs/linux-g++</value>
+    <value type="QString" >linux-g++</value>
     <value type="QString" >-r</value>
     <value type="QString" >CONFIG+=debug_and_release</value>
+    <value type="QString" >CONFIG+=release</value>
    </valuelist>
-   <value key="abstractProcess.command" type="QString" >/usr/bin/qmake-qt4</value>
+   <value key="abstractProcess.command" type="QString" >/opt/project-neon/bin/qmake</value>
    <value key="abstractProcess.enabled" type="bool" >false</value>
    <value key="abstractProcess.workingDirectory" type="QString" >/home/pasha/work/q4wine</value>
    <value key="buildConfiguration" type="int" >8</value>
@@ -213,35 +236,57 @@
   <valuemap type="QVariantMap" >
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList" >
-    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-L7BZaeLBzv,guid=4d5b8da49e9bd6027430b414496b7040</value>
-    <value type="QString" >DESKTOP_SESSION=gnome</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-G0JNurAvZX,guid=2adf4a0db63c7732c14cf3f9496cf117</value>
+    <value type="QString" >DESKTOP_SESSION=kde4-neon</value>
     <value type="QString" >DESKTOP_STARTUP_ID=</value>
     <value type="QString" >DISPLAY=:0.0</value>
-    <value type="QString" >GDMSESSION=gnome</value>
+    <value type="QString" >GDMSESSION=kde4-neon</value>
     <value type="QString" >GDM_LANG=ru_RU.UTF-8</value>
     <value type="QString" >GDM_XSERVER_LOCATION=local</value>
-    <value type="QString" >GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString" >GNOME_KEYRING_PID=7436</value>
-    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-Vtoll5/socket</value>
-    <value type="QString" >GPG_AGENT_INFO=/tmp/seahorse-TMYmGU/S.gpg-agent:7524:1</value>
-    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/pasha/.gtkrc-1.2-gnome2</value>
+    <value type="QString" >GNOME_KEYRING_PID=6038</value>
+    <value type="QString" >GNOME_KEYRING_SOCKET=/tmp/keyring-nSemmh/socket</value>
+    <value type="QString" >GS_LIB=/home/pasha/.fonts</value>
+    <value type="QString" >GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/pasha/.gtkrc-2.0::/home/pasha/.kde-neon/share/config/gtkrc-2.0</value>
+    <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/pasha/.gtkrc::/home/pasha/.kde-neon/share/config/gtkrc</value>
     <value type="QString" >HOME=/home/pasha</value>
+    <value type="QString" >KDETMP=/home/pasha/.kde-neon//tmp</value>
+    <value type="QString" >KDEVARTMP=/home/pasha/.kde-neon//var/tmp</value>
+    <value type="QString" >KDE_FULL_SESSION=true</value>
+    <value type="QString" >KDE_MULTIHEAD=false</value>
+    <value type="QString" >KDE_SESSION_UID=</value>
+    <value type="QString" >KDE_SESSION_VERSION=4</value>
     <value type="QString" >LANG=ru_RU.UTF-8</value>
+    <value type="QString" >LANGUAGE=</value>
     <value type="QString" >LIBGL_DRIVERS_PATH=/usr/lib/dri</value>
     <value type="QString" >LOGNAME=pasha</value>
+    <value type="QString" >MALLOC_CHECK_=2</value>
+    <value type="QString" >MOZ_LAUNCHED_CHILD=</value>
+    <value type="QString" >NO_EM_RESTART=</value>
     <value type="QString" >ORBIT_SOCKETDIR=/tmp/orbit-pasha</value>
-    <value type="QString" >PATH=/usr/bin:/home/pasha/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
-    <value type="QString" >PWD=/home/pasha</value>
-    <value type="QString" >QTDIR=/usr</value>
-    <value type="QString" >SESSION_MANAGER=local/pasha-desktop:/tmp/.ICE-unix/7447</value>
+    <value type="QString" >PATH=/opt/project-neon/bin:/opt/project-neon/bin:/opt/kde-nightly/bin:/home/pasha/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
+    <value type="QString" >PWD=/home/pasha/Документы</value>
+    <value type="QString" >QTDIR=/opt/project-neon</value>
+    <value type="QString" >QT_PLUGIN_PATH=/home/pasha/.kde-neon/lib/kde4/plugins/:/opt/kde-nightly/lib/kde4/plugins/</value>
+    <value type="QString" >SESSION_MANAGER=local/pasha-desktop:/tmp/.ICE-unix/6198</value>
     <value type="QString" >SHELL=/bin/bash</value>
-    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-Vtoll5/ssh</value>
+    <value type="QString" >SHLVL=1</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/keyring-nSemmh/ssh</value>
     <value type="QString" >USER=pasha</value>
     <value type="QString" >USERNAME=pasha</value>
-    <value type="QString" >WINDOWPATH=7</value>
+    <value type="QString" >WINDOWPATH=7:7</value>
     <value type="QString" >XAUTHORITY=/home/pasha/.Xauthority</value>
+    <value type="QString" >XCURSOR_PATH=/opt/kde-nightly/share/icons::~/.icons:/usr/share/icons:/usr/share/pixmaps:/usr/X11R6/lib/X11/icons</value>
+    <value type="QString" >XCURSOR_THEME=Oxygen_Black</value>
     <value type="QString" >XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gdm/</value>
-    <value type="QString" >XDG_SESSION_COOKIE=af3ef8118fa73125b2334a8f4910bc9e-1231777854.961722-306914318</value>
+    <value type="QString" >XDG_SESSION_COOKIE=af3ef8118fa73125b2334a8f4910bc9e-1231876374.843958-1679591806</value>
+    <value type="QString" >XRE_BINARY_PATH=</value>
+    <value type="QString" >XRE_IMPORT_PROFILES=</value>
+    <value type="QString" >XRE_PROFILE_LOCAL_PATH=</value>
+    <value type="QString" >XRE_PROFILE_NAME=</value>
+    <value type="QString" >XRE_PROFILE_PATH=</value>
+    <value type="QString" >XRE_START_OFFLINE=</value>
+    <value type="QString" >XUL_APP_FILE=</value>
+    <value type="QString" >_=/opt/kde-nightly/bin/startkde</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
     <value type="QString" >release</value>

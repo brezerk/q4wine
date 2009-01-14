@@ -31,16 +31,16 @@
 
 #include "process.h"
 
-Process::Process(QStringList args, QString exec, QString dir, QString info, QString caption, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+Process::Process (QStringList args, QString exec, QString dir, QString info, QString caption,QStringList env = QProcess::systemEnvironment() , QWidget * parent = 0, Qt::WFlags f = 0)
 {
 	setupUi(this);
 	
 	myProcess = new QProcess(parent);
-	
+        myProcess->setEnvironment(env);
 	connect(myProcess, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(slotFinished(int, QProcess::ExitStatus)));
 	
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_clicked()));
-	
+
 	lblInfo->setText(info);
 	setWindowTitle(caption);
 
