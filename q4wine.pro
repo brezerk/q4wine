@@ -85,7 +85,8 @@ SOURCES += src/gui/run.cpp \
     src/gui/process.cpp \
     src/gui/wizard.cpp \
     src/gui/imagemanager.cpp \
-    src/temporary/winetricks.cpp
+    src/temporary/winetricks.cpp \
+    src/core/coremethods.cpp
 
 # Application resource
 RESOURCES += src/k4wine.qrc \

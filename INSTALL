@@ -24,16 +24,17 @@ It is licensed under the terms GPL v3 license.
 
 Build dependencies
 ***********************************************
-app-admin/sudo
-app-emulation/wine
->=dev-db/sqlite-3.5.6
->=sys-apps/which-2.19
->=media-gfx/icoutils-0.26.0
->=qt-4.4.0
->=qt-sql-4.4.0
+sudo
+wine
+>=sqlite-3.5.6
+>=which-2.19
+>=icoutils-0.26.0
+>=qt4.4.0
+>=qt-sql4.4.0
 >=qt-gui-4.4.0
 >=qt-core-4.4.0
 >=qt-network-4.4.0
+wget
 
 Installation
 ***********************************************

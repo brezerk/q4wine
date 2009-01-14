@@ -165,9 +165,10 @@ void MainWindow::cmdWinetricks_Click() {
     core = new CoreMethods();
 
 	if (core->getWhichOut("winetricks").isEmpty()){
-		QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks. Right-click on that link and use 'save as' to save a fresh copy. Or you can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p>"));
+                QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks. Right-click on that link and use 'save as' to save a fresh copy. Or you can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p>"));
 		return;
 	}
+
 
 	if (core->getSettingValue("console", "bin").isEmpty()){
 		QMessageBox::warning(this, tr("Error"), tr("<p>You do not set default console binary.</p><p>Set it into q4wine option dialog.</p>"));

@@ -55,10 +55,7 @@ winetricks::~winetricks()
 void winetricks::instwinetricks() {install_winetricks();}
 
 void winetricks::install_winetricks() {
-	QMessageBox msg;
-	msg.setText(tr("Not implemented. Manually download winetricks from the http://kegel.com/wine/winetricks, copy it to /usr/bin, and set execution permissions"));
-	msg.setWindowTitle(tr("Q4Wine"));
-	msg.exec();
+        downloadwinetricks ();
 }
 
 void winetricks::run_winetricks(){
@@ -85,7 +82,8 @@ void winetricks::run_winetricks(){
 		arg.append(m_ui->lstMain->currentItem()->text());
 
 	args.append(arg);
-	
+        qDebug()<<args;
+
 	Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Running winetricks..."), tr("Plz wait..."));
 
 	if (exportProcess->exec()==QDialog::Accepted){
@@ -95,6 +93,42 @@ void winetricks::run_winetricks(){
 	}
 
 }
+
+
+void winetricks::downloadwinetricks () {
+    //check if winetricks exists
+
+
+
+QStringList args;
+        if (!console_args.isEmpty()){
+                // If we have any conslope parametres, we gona preccess them one by one
+                QStringList cons_args = console_args.split(" ");
+                for (int i=0; i<cons_args.count(); i++){
+                        args.append(cons_args.at(i));
+                }
+        }
+        args.append(core->getWhichOut("sudo"));
+        args.append(core->getSettingValue("system", "sh"));
+        args.append("-c");
+        QString arg;
+        arg.append("wget http://kegel.com/wine/winetricks -O /usr/bin/winetricks && chmod +x /usr/bin/winetricks");
+        args.append(arg);
+        qDebug()<<args;
+
+        Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
+
+        if (exportProcess->exec()==QDialog::Accepted){
+            QString winetricks_bin = core->getWhichOut("winetricks");
+
+
+                accept();
+        } else {
+                reject();
+        }
+
+}
+
 
 void winetricks::onaccept() {
 	run_winetricks();

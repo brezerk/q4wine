@@ -51,10 +51,12 @@ public:
 protected:
 	virtual void changeEvent(QEvent *e);
 
+
 	private slots:
 		void onreject ();
 		void onaccept();
 		void instwinetricks();
+
 	private:
 		QString console_bin;
 		QString console_args;
@@ -63,6 +65,8 @@ protected:
 		Ui::winetricks *m_ui;
 		void run_winetricks ();
 		void install_winetricks ();
+                 void downloadwinetricks();
+                      void removefile(QString);
 		CoreMethods *core;
 };
 
