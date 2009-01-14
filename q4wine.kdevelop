@@ -38,7 +38,7 @@
       <includestyle>4</includestyle>
       <designerintegration>ExternalDesigner</designerintegration>
       <qmake>/usr/bin/qmake</qmake>
-      <designer>/usr/bin/designer-qt4</designer>
+      <designer>/usr/qt/3/bin/designer</designer>
       <root>/usr/lib/qt4</root>
       <designerpluginpaths/>
     </qt>
@@ -79,8 +79,8 @@
       <orientation>Vertical</orientation>
     </splitheadersource>
     <references>
-      <pcs>automatic_%2Fhome%2Fpasha%2Fprogramming%2Fq4wine</pcs>
-      <pcs>automatic_%2Fhome%2Fpasha%2Fworkspace%2Fq4wine</pcs>
+      <pcs>automatic_%2Fhome%2Fbrezerk%2Fdevelop%2Fq4wine</pcs>
+      <pcs>Qt4</pcs>
     </references>
   </kdevcppsupport>
   <kdevdoctreeview>
