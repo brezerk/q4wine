@@ -31,12 +31,12 @@
 
 #include "process.h"
 
-Process::Process (QStringList args, QString exec, QString dir, QString info, QString caption,QStringList env = QProcess::systemEnvironment() , QWidget * parent = 0, Qt::WFlags f = 0)
+Process::Process (QStringList args, QString exec, QString dir, QString info, QString caption, QStringList env , QWidget * parent, Qt::WFlags f)
 {
 	setupUi(this);
 	
 	myProcess = new QProcess(parent);
-        myProcess->setEnvironment(env);
+	myProcess->setEnvironment(env);
 	connect(myProcess, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(slotFinished(int, QProcess::ExitStatus)));
 	
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_clicked()));
@@ -45,6 +45,8 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 	setWindowTitle(caption);
 
 	myProcess->setWorkingDirectory (dir);
+
+	qDebug()<<args;
 	myProcess->start(exec, args);
 	
 	return;	
