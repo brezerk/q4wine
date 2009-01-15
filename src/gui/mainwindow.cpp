@@ -1411,7 +1411,6 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		for (i=0; i<cntproc;i++)
 		{
 			name = kp[i].ki_comm;
-
 			envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 				if (envs){
 					int j=0;
@@ -1437,12 +1436,12 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 				}
 		
 				if (tableProc->item(curRows - 1, 0)){
-					tableProc->item(curRows - 1, 0)->setText(tr("%1").args(kp[i].ki_pid));
+					tableProc->item(curRows - 1, 0)->setText(tr("%1").arg((int)ikp[i].ki_pid));
 					tableProc->item(curRows - 1, 1)->setText(name);
 					tableProc->item(curRows - 1, 2)->setText(nice);
 					tableProc->item(curRows - 1, 3)->setText(prefix);
 				} else {
-					QTableWidgetItem *newItem = new QTableWidgetItem(tr("%1").args(kp[i].ki_pid));
+					QTableWidgetItem *newItem = new QTableWidgetItem(tr("%1").arg((int)kp[i].ki_pid));
 					tableProc->setItem(curRows - 1, 0, newItem);
 					newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
 					newItem = new QTableWidgetItem(name);
