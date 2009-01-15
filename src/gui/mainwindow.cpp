@@ -1434,14 +1434,14 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 					tableProc->insertRow (numRows);
 					numRows = tableProc->rowCount();
 				}
-		
+				int ipid = kp[i].ki_pid;
 				if (tableProc->item(curRows - 1, 0)){
-					tableProc->item(curRows - 1, 0)->setText(tr("%1").arg((int)ikp[i].ki_pid));
+					tableProc->item(curRows - 1, 0)->setText(tr("%1").arg(ipid);
 					tableProc->item(curRows - 1, 1)->setText(name);
 					tableProc->item(curRows - 1, 2)->setText(nice);
 					tableProc->item(curRows - 1, 3)->setText(prefix);
 				} else {
-					QTableWidgetItem *newItem = new QTableWidgetItem(tr("%1").arg((int)kp[i].ki_pid));
+					QTableWidgetItem *newItem = new QTableWidgetItem(tr("%1").arg(ipid));
 					tableProc->setItem(curRows - 1, 0, newItem);
 					newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
 					newItem = new QTableWidgetItem(name);
