@@ -39,24 +39,24 @@ QString CoreMethods::getWhichOut(QString fileName){
 	 * Getting 'whitch' output;
 	 */
 
-    proc = new QProcess(this);
+	proc = new QProcess(this);
 
-        QStringList args;
+	QStringList args;
 
-        args<<fileName;
+	args<<fileName;
 
-        proc->setWorkingDirectory (QDir::homePath());
-        proc->start("/usr/bin/which", args, QIODevice::ReadOnly);
-        proc->waitForFinished();
+	proc->setWorkingDirectory (QDir::homePath());
+	proc->start("/usr/bin/which", args, QIODevice::ReadOnly);
+	proc->waitForFinished();
 
-        QString string = proc->readAllStandardOutput();
-        delete proc;
+	QString string = proc->readAllStandardOutput();
+	delete proc;
 
-        if (!string.isEmpty()){
-                return string.trimmed();
-        }
+	if (!string.isEmpty()){
+		return string.trimmed();
+	}
 
-        return "";
+	return "";
 }
 
 QString CoreMethods::getPrefixPath(QString prefixName){

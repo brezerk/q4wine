@@ -94,7 +94,6 @@ void winetricks::run_winetricks(){
 
 }
 
-
 void winetricks::downloadwinetricks () {
     //check if winetricks exists
 

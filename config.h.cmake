@@ -58,6 +58,10 @@ struct ExecObject{
 #define APP_NAME "Q4Wine"
 #define APP_SHORT_NAME "q4wine"
 
+#cmakedefine _OS_LINUX_
+#cmakedefine _OS_FREEBSD_
+#cmakedefine _OS_DARWIN_
+
 /*
  * Note APP_VERS and APP_PREF automatycaly generates by qmake and config.sh
  *

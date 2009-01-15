@@ -117,18 +117,31 @@ FIND_PACKAGE(Qt4 REQUIRED)
 
 SET(APP_VERSION "0.109-r2")
 
+MESSAGE(STATUS "Build realm is: ${CMAKE_SYSTEM_NAME}")
+
+IF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
+	SET(_OS_LINUX_ 1)
+ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
+
+IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
+        SET(_OS_FREEBSD_ 1)
+ENDIF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
+
+IF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
+        SET(_OS_DARWIN_ 1)
+ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
+
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )
-file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_VERS \"${APP_VERSION}\"\n"
-)
+
+
+file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_VERS \"${APP_VERSION}\"\n")
         MESSAGE(STATUS "q4wine core version: ${APP_VERSION}")
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_PREF \"${CMAKE_INSTALL_PREFIX}\"\n" )
         MESSAGE("")
         MESSAGE(STATUS "Install prefix is: ${CMAKE_INSTALL_PREFIX}")
-        MESSAGE(STATUS "NOTE: You can set prefix by adding
--DCMAKE_INSTALL_PREFIX=/usr/ option to cmake command")
+        MESSAGE(STATUS "NOTE: You can set prefix by adding -DCMAKE_INSTALL_PREFIX=/usr/ option to cmake command")
         MESSAGE("")
-file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_REALM \"${CMAKE_SYSTEM_NAME}\"\n" )
-        MESSAGE(STATUS "Build realm is: ${CMAKE_SYSTEM_NAME}")
+
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
 
 QT4_WRAP_UI( UI_HEADERS ${UIS})

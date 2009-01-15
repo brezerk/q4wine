@@ -1285,10 +1285,14 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 
 	QString name, procstat, path, prefix;;
 
-	#ifndef _OS_FREEBSD_
+	#ifdef _OS_LINUX_
 		QDir dir("/proc");
-	#else
-		QDir dir("/usr/compat/linux/proc");
+		QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
+	#endif
+
+	#ifdef _OS_FREEBSD_
+		QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
+		QDir dir("/proc");
 	#endif
 
 	int curRows = 0, numRows = 0;
@@ -1296,12 +1300,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 	
 	// Check for /proc..
 	if (!dir.exists()){
-		int ret = QMessageBox::warning(this, tr("Error"),
-                   tr("Process is unable access to /proc directory.\n"
-							 "Access is necessary for displaying wine process information."
-                      ),
-                   QMessageBox::Retry ,
-                   QMessageBox::Ignore);
+		int ret = QMessageBox::warning(this, tr("Error"), message, QMessageBox::Retry, QMessageBox::Ignore);
 
 		if (ret == QMessageBox::Ignore)
 			timer->stop();
@@ -1311,87 +1310,110 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 	memSum = 0;
 	numRows = tableProc->rowCount();
 
-	dir.setFilter(QDir::Dirs | QDir::NoSymLinks);
-	dir.setSorting(QDir::Name);
+	#ifdef _OS_LINUX_
 
-	QFileInfoList list = dir.entryInfoList();
+		dir.setFilter(QDir::Dirs | QDir::NoSymLinks);
+		dir.setSorting(QDir::Name);
 	
-	// Getting directoryes one by one
-	for (int i = 0; i < list.size(); ++i) {
-		QFileInfo fileInfo = list.at(i);
-		path = "/proc/";
-		path.append(fileInfo.fileName());
-		path.append("/stat");
+		QFileInfoList list = dir.entryInfoList();
 		
-		QFile file(path);
-		if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-			QTextStream in(&file);
-				QString line = in.readLine();
-				if (!line.isNull()){
-					QString nice;
-					nice = line.section(' ', 18, 18);
-					QString name;
-					name = line.section(' ', 1, 1);
-					name.remove(QChar('('));
-					name.remove(QChar(')'));
-					name = name.toLower();
-
-					if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
-
-						path = "/proc/";
-						path.append(fileInfo.fileName());
-						path.append("/environ");
-						QFile e_file(path);
-						
-						if (e_file.open(QIODevice::ReadOnly | QIODevice::Text)){
-							QTextStream e_in(&e_file);
-
-							QString e_line = e_in.readLine();
-
-							int index = e_line.indexOf("WINEPREFIX=");
-							prefix="";
-							if (index!=-1)
-								for (int i=index+11; i<=e_line.length(); i++){
-									if (e_line.mid(i, 1).data()->isPrint()){
-										prefix.append(e_line.mid(i, 1));
-									} else {
-										break;
+		// Getting directoryes one by one
+		for (int i = 0; i < list.size(); ++i) {
+			QFileInfo fileInfo = list.at(i);
+			path = "/proc/";
+			path.append(fileInfo.fileName());
+			path.append("/stat");
+			
+			QFile file(path);
+			if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+				QTextStream in(&file);
+					QString line = in.readLine();
+					if (!line.isNull()){
+						QString nice;
+						nice = line.section(' ', 18, 18);
+						QString name;
+						name = line.section(' ', 1, 1);
+						name.remove(QChar('('));
+						name.remove(QChar(')'));
+						name = name.toLower();
+	
+						if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
+	
+							path = "/proc/";
+							path.append(fileInfo.fileName());
+							path.append("/environ");
+							QFile e_file(path);
+							
+							if (e_file.open(QIODevice::ReadOnly | QIODevice::Text)){
+								QTextStream e_in(&e_file);
+	
+								QString e_line = e_in.readLine();
+	
+								int index = e_line.indexOf("WINEPREFIX=");
+								prefix="";
+								if (index!=-1)
+									for (int i=index+11; i<=e_line.length(); i++){
+										if (e_line.mid(i, 1).data()->isPrint()){
+											prefix.append(e_line.mid(i, 1));
+										} else {
+											break;
+										}
 									}
-								}
-						}
-
-						curRows++;
+							}
 	
-						if (curRows>numRows){
-							tableProc->insertRow (numRows);
-							numRows = tableProc->rowCount();
-						}
-	
-						if (tableProc->item(curRows - 1, 0)){
-							tableProc->item(curRows - 1, 0)->setText(fileInfo.fileName());
-							tableProc->item(curRows - 1, 1)->setText(name);
-							tableProc->item(curRows - 1, 2)->setText(nice);
-							tableProc->item(curRows - 1, 3)->setText(prefix);
-						} else {
-							QTableWidgetItem *newItem = new QTableWidgetItem(fileInfo.fileName());
-							tableProc->setItem(curRows - 1, 0, newItem);
-							newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-							newItem = new QTableWidgetItem(name);
-							tableProc->setItem(curRows - 1, 1, newItem);
-							newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-							newItem = new QTableWidgetItem(nice);
-							tableProc->setItem(curRows - 1, 2, newItem);
-							newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-							newItem = new QTableWidgetItem(prefix);
-							tableProc->setItem(curRows - 1, 3, newItem);
-							newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+							curRows++;
+		
+							if (curRows>numRows){
+								tableProc->insertRow (numRows);
+								numRows = tableProc->rowCount();
+							}
+		
+							if (tableProc->item(curRows - 1, 0)){
+								tableProc->item(curRows - 1, 0)->setText(fileInfo.fileName());
+								tableProc->item(curRows - 1, 1)->setText(name);
+								tableProc->item(curRows - 1, 2)->setText(nice);
+								tableProc->item(curRows - 1, 3)->setText(prefix);
+							} else {
+								QTableWidgetItem *newItem = new QTableWidgetItem(fileInfo.fileName());
+								tableProc->setItem(curRows - 1, 0, newItem);
+								newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+								newItem = new QTableWidgetItem(name);
+								tableProc->setItem(curRows - 1, 1, newItem);
+								newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+								newItem = new QTableWidgetItem(nice);
+								tableProc->setItem(curRows - 1, 2, newItem);
+								newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+								newItem = new QTableWidgetItem(prefix);
+								tableProc->setItem(curRows - 1, 3, newItem);
+								newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+							}
 						}
 					}
-				}
-			file.close();
+				file.close();
+			}
+			
 		}
-		
-	}
+	
+	#endif
+
+	#ifdef _OS_FREEBSD_
+		kvm_t *kd;
+		int cntproc, i;
+
+		struct kinfo_proc *kp;
+		struct proc *proc;
+		char buf[256];
+		char **envs;
+
+		kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, buf);
+		kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &cntproc);
+
+		for (i=0; i<cntproc;i++)
+		{
+			name = kp[i].ki_comm;
+			qDebug()<<name;
+		}
+	#endif
 
 	// Remove unneaded entyes
 	numRows = tableProc->rowCount();
