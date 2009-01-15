@@ -1417,7 +1417,9 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 					int j=0;
 					while (envs[j]){
 						prefix=envs[j];
-						if (prefix.indexOf("WINEPREFIX=")!){
+						int index = prefix.indexOf("WINEPREFIX=");
+						if (index!=0){
+							prefix=prefix.mid(prefix, prefix.length()));
 							break;
 						}
 						j++;
@@ -1435,12 +1437,12 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 				}
 		
 				if (tableProc->item(curRows - 1, 0)){
-					tableProc->item(curRows - 1, 0)->setText(kp[i].ki_pid);
+					tableProc->item(curRows - 1, 0)->setText(tr("%1").args(kp[i].ki_pid));
 					tableProc->item(curRows - 1, 1)->setText(name);
 					tableProc->item(curRows - 1, 2)->setText(nice);
 					tableProc->item(curRows - 1, 3)->setText(prefix);
 				} else {
-					QTableWidgetItem *newItem = new QTableWidgetItem(kp[i].ki_pid);
+					QTableWidgetItem *newItem = new QTableWidgetItem(tr("%1").args(kp[i].ki_pid));
 					tableProc->setItem(curRows - 1, 0, newItem);
 					newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
 					newItem = new QTableWidgetItem(name);
