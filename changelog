@@ -13,6 +13,7 @@ Version 0.109-r2
 
 		Experemental:
 			- Temporary winetricks support;
+			- Added winetricks download support;
 
 		Fixed:
 			- Fixed icon options edit error: "Debug: Parameter count mismatch";
@@ -20,6 +21,7 @@ Version 0.109-r2
 			- Removed q4wine.pro;
 			  (Note: qmake now deprecated, use cmake)
 			- updated INSTALL text file;
+			- Fixed empty console arguments process;
 
 Version 0.109-r1
 	core:

@@ -59,7 +59,6 @@ void Process::cmdCancel_clicked(void){
 }
 
 void Process::slotFinished(int, QProcess::ExitStatus){
-		
 			if (myProcess->exitCode()!=0){
 	
 				QString lang;

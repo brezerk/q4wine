@@ -433,7 +433,8 @@ void MainWindow::CoreFunction_WinePrepareRunParams(ExecObject execObj){
 			// If we have any conslope parametres, we gona preccess them one by one
 			QStringList cons_args = CONSOLE_ARGS.split(" ");
 			for (int i=0; i<cons_args.count(); i++){
-				args.append(cons_args.at(i));
+				if (!cons_args.at(i).isEmpty())
+					args.append(cons_args.at(i));
 			}
 		}
 		

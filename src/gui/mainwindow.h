@@ -64,6 +64,14 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+//#if APP_REALM == "FreeBSD"
+//	#include <kvm.h>
+//	#include <sys/param.h>
+//	#include <sys/user.h>
+//	#include <sys/file.h>
+//	#include <sys/sysctl.h>
+//#endif
+
 class QAction;
 class QMenu;
 class QTextEdit;
