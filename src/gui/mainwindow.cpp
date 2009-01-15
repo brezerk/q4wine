@@ -1419,7 +1419,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 						prefix=envs[j];
 						int index = prefix.indexOf("WINEPREFIX=");
 						if (index!=0){
-							prefix=prefix.mid(prefix, prefix.length()));
+							prefix=prefix.mid(prefix+11);
 							break;
 						}
 						j++;
