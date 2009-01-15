@@ -181,7 +181,7 @@ void MainWindow::cmdWinetricks_Click() {
 	w->exec();
 }
 void MainWindow::trayIcon_Activate(QSystemTrayIcon::ActivationReason reason){
-	if (reason==QSystemTrayIcon::DoubleClick){
+	if (reason==QSystemTrayIcon::Trigger){
 		if (!isVisible()){
 			SetMeVisible(TRUE);
 		} else {
@@ -1411,7 +1411,49 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		for (i=0; i<cntproc;i++)
 		{
 			name = kp[i].ki_comm;
-			qDebug()<<name;
+
+			envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
+				if (envs){
+					int j=0;
+					while (envs[j]){
+						prefix=envs[j];
+						if (prefix.indexOf("WINEPREFIX=")!){
+							break;
+						}
+						j++;
+					}
+				} else {
+					prefix="";
+				}
+
+			if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
+				curRows++;
+		
+				if (curRows>numRows){
+					tableProc->insertRow (numRows);
+					numRows = tableProc->rowCount();
+				}
+		
+				if (tableProc->item(curRows - 1, 0)){
+					tableProc->item(curRows - 1, 0)->setText(fileInfo.fileName());
+					tableProc->item(curRows - 1, 1)->setText(name);
+					tableProc->item(curRows - 1, 2)->setText(nice);
+					tableProc->item(curRows - 1, 3)->setText(prefix);
+				} else {
+					QTableWidgetItem *newItem = new QTableWidgetItem(fileInfo.fileName());
+					tableProc->setItem(curRows - 1, 0, newItem);
+					newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+					newItem = new QTableWidgetItem(name);
+					tableProc->setItem(curRows - 1, 1, newItem);
+					newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+					newItem = new QTableWidgetItem(nice);
+					tableProc->setItem(curRows - 1, 2, newItem);
+					newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+					newItem = new QTableWidgetItem(prefix);
+					tableProc->setItem(curRows - 1, 3, newItem);
+					newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+				}
+			}
 		}
 	#endif
 
