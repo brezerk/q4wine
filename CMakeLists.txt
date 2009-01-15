@@ -80,8 +80,6 @@ MESSAGE(STATUS " * (C) 2008-2009, brezblock core team")
 MESSAGE(STATUS " * http://brezblock.org.ua/")                             
 MESSAGE("")                                                               
 
-ADD_DEFINITIONS(-Wall -g)
-
 SET(QT_MIN_VERSION "4.4.1")
 FIND_PACKAGE(Qt4 REQUIRED) 
         IF(QT_FOUND)       
@@ -121,14 +119,17 @@ MESSAGE(STATUS "Build realm is: ${CMAKE_SYSTEM_NAME}")
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
 	SET(_OS_LINUX_ 1)
+	ADD_DEFINITIONS(-Wall -g)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
         SET(_OS_FREEBSD_ 1)
+	ADD_DEFINITIONS(-lkvm -Wall -g -DKERNEL)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
         SET(_OS_DARWIN_ 1)
+	ADD_DEFINITIONS(-lkvm -Wall -g -DKERNEL)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
 
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )
