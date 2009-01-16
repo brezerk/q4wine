@@ -1418,6 +1418,10 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 						env_arg=envs[j];
 						int index = env_arg.indexOf("WINEPREFIX=");
 						if (index>=0){
+							int ipid = kp[i].ki_pid;
+							int ni = kp[i].ki_nice;
+							nice = tr("%1").arg(ni);
+							name = kp[i].ki_comm;
 							prefix=env_arg.mid(11);
 							break;
 						}
@@ -1430,11 +1434,6 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 			if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
 				curRows++;
 			
-				int ipid = kp[i].ki_pid;
-				int ni = kp[i].ki_nice;
-				nice = tr("%1").arg(ni);
-				name = kp[i].ki_comm;
-
 				if (curRows>numRows){
 					tableProc->insertRow (numRows);
 					numRows = tableProc->rowCount();
