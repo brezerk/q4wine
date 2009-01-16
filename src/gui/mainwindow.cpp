@@ -1410,9 +1410,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		for (i=0; i<cntproc;i++)
 		{
 			prefix="";
-			name = kp[i].ki_comm;
-			nice = kp[i].ki_nice;
-			int ipid = kp[i].ki_pid;
+
 			envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 				if (envs){
 					int j=0;
@@ -1431,7 +1429,12 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 
 			if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
 				curRows++;
-		
+			
+				int ipid = kp[i].ki_pid;
+				int ni = kp[i].ki_nice;
+				nice = tr("%1").arg(ni);
+				name = kp[i].ki_comm;
+
 				if (curRows>numRows){
 					tableProc->insertRow (numRows);
 					numRows = tableProc->rowCount();
