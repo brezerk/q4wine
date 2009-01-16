@@ -1417,7 +1417,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 					while (envs[j]){
 						prefix=envs[j];
 						int index = prefix.indexOf("WINEPREFIX=");
-						if (index!=0){
+						if (index>=0){
 							//prefix=prefix.mid(index+11);
 							qDebug()<<" pid: "<<ipid<<" prefix: "<<prefix<<"\n";
 							break;
