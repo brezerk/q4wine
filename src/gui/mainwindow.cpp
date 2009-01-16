@@ -1397,7 +1397,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 	#ifdef _OS_FREEBSD_
 
 		kvm_t *kd;
-		int cntproc, i;
+		int cntproc, i, ni, ipid;
 
 		struct kinfo_proc *kp;
 		struct proc *proc;
@@ -1418,8 +1418,8 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 						env_arg=envs[j];
 						int index = env_arg.indexOf("WINEPREFIX=");
 						if (index>=0){
-							int ipid = kp[i].ki_pid;
-							int ni = kp[i].ki_nice;
+							ipid = kp[i].ki_pid;
+							ni = kp[i].ki_nice;
 							nice = tr("%1").arg(ni);
 							name = kp[i].ki_comm;
 							prefix=env_arg.mid(11);
