@@ -1283,7 +1283,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		its fully wrighted with QT and might work more stable =)
 	*/
 
-	QString name, procstat, path, prefix;;
+	QString name, procstat, path, prefix, nice;
 
 	#ifdef _OS_LINUX_
 		QDir dir("/proc");
@@ -1329,9 +1329,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 				QTextStream in(&file);
 					QString line = in.readLine();
 					if (!line.isNull()){
-						QString nice;
 						nice = line.section(' ', 18, 18);
-						QString name;
 						name = line.section(' ', 1, 1);
 						name.remove(QChar('('));
 						name.remove(QChar(')'));
@@ -1397,6 +1395,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 	#endif
 
 	#ifdef _OS_FREEBSD_
+
 		kvm_t *kd;
 		int cntproc, i;
 
@@ -1436,7 +1435,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 				}
 				int ipid = kp[i].ki_pid;
 				if (tableProc->item(curRows - 1, 0)){
-					tableProc->item(curRows - 1, 0)->setText(tr("%1").arg(ipid);
+					tableProc->item(curRows - 1, 0)->setText(tr("%1").arg(ipid));
 					tableProc->item(curRows - 1, 1)->setText(name);
 					tableProc->item(curRows - 1, 2)->setText(nice);
 					tableProc->item(curRows - 1, 3)->setText(prefix);
