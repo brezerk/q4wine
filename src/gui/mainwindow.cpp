@@ -1283,7 +1283,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		its fully wrighted with QT and might work more stable =)
 	*/
 
-	QString name, procstat, path, prefix, nice;
+	QString name, procstat, path, prefix, env_arg, nice;
 
 	#ifdef _OS_LINUX_
 		QDir dir("/proc");
@@ -1409,17 +1409,18 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 
 		for (i=0; i<cntproc;i++)
 		{
+			prefix="";
 			name = kp[i].ki_comm;
+			nice = kp[i].ki_nice;
 			int ipid = kp[i].ki_pid;
 			envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 				if (envs){
 					int j=0;
 					while (envs[j]){
-						prefix=envs[j];
-						int index = prefix.indexOf("WINEPREFIX=");
+						env_arg=envs[j];
+						int index = env_arg.indexOf("WINEPREFIX=");
 						if (index>=0){
-							//prefix=prefix.mid(index+11);
-							qDebug()<<" pid: "<<ipid<<" prefix: "<<prefix<<"\n";
+							prefix=env_arg.mid(11);
 							break;
 						}
 						j++;
