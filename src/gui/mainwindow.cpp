@@ -1410,6 +1410,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		for (i=0; i<cntproc;i++)
 		{
 			name = kp[i].ki_comm;
+			int ipid = kp[i].ki_pid;
 			envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 				if (envs){
 					int j=0;
@@ -1417,7 +1418,8 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 						prefix=envs[j];
 						int index = prefix.indexOf("WINEPREFIX=");
 						if (index!=0){
-							prefix=prefix.mid(index+11);
+							//prefix=prefix.mid(index+11);
+							qDebug()<<" pid: "<<ipid<<" prefix: "<<prefix<<"\n";
 							break;
 						}
 						j++;
@@ -1433,7 +1435,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 					tableProc->insertRow (numRows);
 					numRows = tableProc->rowCount();
 				}
-				int ipid = kp[i].ki_pid;
+				
 				if (tableProc->item(curRows - 1, 0)){
 					tableProc->item(curRows - 1, 0)->setText(tr("%1").arg(ipid));
 					tableProc->item(curRows - 1, 1)->setText(name);
