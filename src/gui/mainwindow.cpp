@@ -1410,7 +1410,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		for (i=0; i<cntproc;i++)
 		{
 			name = kp[i].ki_comm;
-			envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
+			envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 				if (envs){
 					int j=0;
 					while (envs[j]){
