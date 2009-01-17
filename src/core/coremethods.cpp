@@ -123,7 +123,7 @@ QXmlStreamReader reader (&file);
     reader.readNext();
     qDebug() << "first" << reader.tokenString(); //it is
 
-    //test
+
     while (!reader.atEnd()) {
         if (reader.hasError()) {
             qDebug () << tr ("File format error!");
