@@ -29,6 +29,7 @@ SET ( HEADERS_DIR
         ${CMAKE_SOURCE_DIR}/src/gui
         ${CMAKE_SOURCE_DIR}/src/core
         ${CMAKE_SOURCE_DIR}/src/temporary
+	${CMAKE_SOURCE_DIR}/src/wis
 )                                        
 
 SET ( MOC_HEADEDRS

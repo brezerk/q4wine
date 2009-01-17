@@ -59,7 +59,9 @@ HEADERS += config.h \
     src/gui/imagemanager.h \
     src/core/coremethods.h \
     src/temporary/winetricks.h \
-    src/core/registry.h
+    src/core/registry.h \
+    src/wis/wisitem.h \
+    src/wistest.h
 FORMS += src/About.ui \
     src/AppSettings.ui \
     src/IconSettings.ui \
@@ -86,7 +88,9 @@ SOURCES += src/gui/run.cpp \
     src/gui/wizard.cpp \
     src/gui/imagemanager.cpp \
     src/temporary/winetricks.cpp \
-    src/core/coremethods.cpp
+    src/core/coremethods.cpp \
+    src/wistest.cpp \
+    src/wis/wisitem.cpp
 
 # Application resource
 RESOURCES += src/k4wine.qrc \

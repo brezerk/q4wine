@@ -48,7 +48,7 @@
 #include <QIcon>
 #include <QTreeWidgetItem>
 #include <QGroupBox>
-
+#include "wisitem.h"
 #include "mainwindow.h"
 
 QTimer *timer = new QTimer();
@@ -152,7 +152,10 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	
 	//Itin classes
 	core = new CoreMethods();
+        // test block
+WisItem wis;
 
+ wis = core->getWisInfo("/home/pasha/sample.xml"); // test
 	return;
 }
 

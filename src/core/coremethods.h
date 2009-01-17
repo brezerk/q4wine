@@ -31,7 +31,7 @@
 #define COREMETHODS_H
 
 #include "config.h"
-
+#include "wisitem.h"
 #include <QProcess>
 #include <QStringList>
 #include <QtCore>
@@ -39,16 +39,17 @@
 #include <QSqlQuery>
 #include <QDir>
 #include <QSqlError>
+#include <QXmlStreamReader>
 
 class CoreMethods : public QObject
 {
 public:
     /* Search for fileName in PATH with /usr/bin/which */
-    QString getWhichOut (QString fileName);
+        QString getWhichOut (QString fileName);
 	QString getPrefixPath(QString prefixName);
-
+        WisItem getWisInfo (QString fileName);
 	QString getSettingValue(QString group, QString key);
-    CoreMethods ();
+        CoreMethods ();
     private:
 
     QProcess *proc;
