@@ -44,15 +44,15 @@
 class CoreMethods : public QObject
 {
 public:
-    /* Search for fileName in PATH with /usr/bin/which */
-        QString getWhichOut (QString fileName);
+	/* Search for fileName in PATH with /usr/bin/which */
+	QString getWhichOut (QString fileName);
 	QString getPrefixPath(QString prefixName);
-        WisItem getWisInfo (QString fileName);
+	WisItem getWisInfo (QString fileName);
 	QString getSettingValue(QString group, QString key);
-        CoreMethods ();
-    private:
+	CoreMethods ();
+	private:
 
-    QProcess *proc;
+	QProcess *proc;
 };
 
 #endif // COREMETHODS_H

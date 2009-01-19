@@ -30,21 +30,23 @@
 #ifndef WINETRICKS_H
 #define WINETRICKS_H
 
+#include "config.h"
+
+#include <ui_winetricks.h>
+
 #include <QtGui/QDialog>
 #include <QStringList>
-#include "coremethods.h"
-#include "process.h"
 #include <QProcess>
 #include <QMessageBox>
-namespace Ui {
-    class winetricks;
-}
 
-class winetricks : public QDialog {
+#include "coremethods.h"
+#include "process.h"
+
+class winetricks : public QDialog, public Ui::winetricks {
 	Q_OBJECT
 	Q_DISABLE_COPY(winetricks)
 public:
-	winetricks(QString);
+	winetricks(QString prefixName, QWidget * parent = 0, Qt::WFlags f = 0);
 	virtual ~winetricks();
 	QString _prefixName;
 
@@ -62,11 +64,10 @@ protected:
 		QString console_args;
 		QString prefix_path;
 		QString winetricks_bin;
-		Ui::winetricks *m_ui;
 		void run_winetricks ();
 		void install_winetricks ();
-                 void downloadwinetricks();
-                      void removefile(QString);
+		void downloadwinetricks();
+		void removefile(QString);
 		CoreMethods *core;
 };
 

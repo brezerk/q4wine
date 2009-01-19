@@ -28,34 +28,34 @@
  ***************************************************************************/
 
 #include "winetricks.h"
-#include "ui_winetricks.h"
 
-winetricks::winetricks(QString prefixName) : m_ui(new Ui::winetricks)
+winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
-    core = new CoreMethods();
+	core = new CoreMethods();
 
 	this->winetricks_bin = core->getWhichOut("winetricks");
-    this->prefix_path = core->getPrefixPath(prefixName);
+	this->prefix_path = core->getPrefixPath(prefixName);
 	this->console_bin = core->getSettingValue("console", "bin");
-    this->console_args = core->getSettingValue("console", "args");
+	this->console_args = core->getSettingValue("console", "args");
 
-	m_ui->setupUi(this);
+	setupUi(this);
 
-	connect (m_ui->buttonBox, SIGNAL (accepted()), this, SLOT(onaccept()));
-	connect (m_ui->buttonBox, SIGNAL (rejected()), this, SLOT(onreject()));
-	connect (m_ui->btnInstWinetricks, SIGNAL (clicked()), this, SLOT (instwinetricks()));
+	connect (buttonBox, SIGNAL (accepted()), this, SLOT(onaccept()));
+	connect (buttonBox, SIGNAL (rejected()), this, SLOT(onreject()));
+	connect (btnInstWinetricks, SIGNAL (clicked()), this, SLOT (instwinetricks()));
 }
 
 winetricks::~winetricks()
 {
 	delete core;
-	delete m_ui;
 }
 
-void winetricks::instwinetricks() {install_winetricks();}
+void winetricks::instwinetricks() {
+	install_winetricks();
+}
 
 void winetricks::install_winetricks() {
-        downloadwinetricks ();
+	downloadwinetricks ();
 }
 
 void winetricks::run_winetricks(){
@@ -80,7 +80,7 @@ void winetricks::run_winetricks(){
 		arg.append(" ");
 		arg.append(this->winetricks_bin);
 		arg.append(" ");
-		arg.append(m_ui->lstMain->currentItem()->text());
+		arg.append(lstMain->currentItem()->text());
 
 	args.append(arg);
 
@@ -111,7 +111,10 @@ void winetricks::downloadwinetricks () {
 	args.append(core->getSettingValue("system", "sh"));
 	args.append("-c");
 	QString arg;
-		arg.append("wget http://kegel.com/wine/winetricks -O /usr/bin/winetricks && chmod +x /usr/bin/winetricks");
+		arg.append(core->getWhichOut("wget"));
+		arg.append(" http://kegel.com/wine/winetricks -O /usr/bin/winetricks && ");
+		arg.append(core->getWhichOut("chmod"));
+		arg.append(" +x /usr/bin/winetricks");
 	args.append(arg);
 	qDebug()<<args;
 
@@ -140,7 +143,7 @@ void winetricks::changeEvent(QEvent *e)
 {
 	switch (e->type()) {
 		case QEvent::LanguageChange:
-			m_ui->retranslateUi(this);
+			retranslateUi(this);
 		break;
 		default:
 		break;

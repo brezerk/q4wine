@@ -59,8 +59,6 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	setupUi(this);
 	
 	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
-
-
 	
 	// Getting settings from config file
 	CoreFunction_SettingGet();
@@ -83,6 +81,7 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	connect(cmdCreateFake, SIGNAL(clicked()), this, SLOT(cmdCreateFake_Click()));
 	connect(cmdUpdateFake, SIGNAL(clicked()), this, SLOT(cmdUpdateFake_Click()));
     connect(cmdWinetricks, SIGNAL(clicked()), this, SLOT(cmdWinetricks_Click()));
+	connect(cmdTestWis, SIGNAL(clicked()), this, SLOT(cmdTestWis_Click()));
 	
 	
 	// Signals commection for Icons and Folders 
@@ -149,19 +148,27 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	
 	
 	createTrayIcon();
-	
-	//Itin classes
-	core = new CoreMethods();
-        // test block
-WisItem wis;
 
- wis = core->getWisInfo("/home/pasha/sample.xml"); // test
 	return;
 }
 
 MainWindow::~MainWindow()
 {
     delete core;
+}
+
+void MainWindow::cmdTestWis_Click(){
+	//Itin classes
+	core = new CoreMethods();
+	// test block
+	WisItem wis;
+
+	QString path = HOME_PATH;
+	path.append("/.config/q4wine/sample.xml");
+
+	wis = core->getWisInfo(path); // test
+
+	return;
 }
 
 void MainWindow::cmdWinetricks_Click() {
@@ -178,11 +185,12 @@ void MainWindow::cmdWinetricks_Click() {
 		return;
 	}
 
-	delete core;
-
 	winetricks *w = new winetricks (cbPrefixes->currentText());
 	w->exec();
+
+	return;
 }
+
 void MainWindow::trayIcon_Activate(QSystemTrayIcon::ActivationReason reason){
 	if (reason==QSystemTrayIcon::Trigger){
 		if (!isVisible()){

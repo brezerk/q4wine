@@ -353,11 +353,18 @@ p, li { white-space: pre-wrap; }
               <attribute name="title" >
                <string>Core fonts</string>
               </attribute>
-              <layout class="QVBoxLayout" name="_4" >
+              <layout class="QVBoxLayout" name="verticalLayout" >
                <item>
                 <widget class="QLabel" name="label_3" >
                  <property name="text" >
-                  <string>Hi. No functions here. It'l be implemented at v.0.120.</string>
+                  <string>Hi. This is development area.</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="cmdTestWis" >
+                 <property name="text" >
+                  <string>Test WIS</string>
                  </property>
                 </widget>
                </item>

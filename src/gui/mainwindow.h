@@ -128,7 +128,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void cmdCreateFake_Click(void);
 		void cmdUpdateFake_Click(void);
 		void cmdWinetricks_Click (void);
-
+		void cmdTestWis_Click (void);
 
 		/*
 		 *Prefix tool bars action
