@@ -49,6 +49,7 @@
 
 #include "config.h"
 
+#include "wisitem.h"
 #include "coremethods.h"
 #include "iconsview.h"
 #include "wizard.h"

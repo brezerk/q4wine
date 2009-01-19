@@ -111,77 +111,76 @@ QString CoreMethods::getSettingValue(QString group, QString key){
 }
 
 WisItem  CoreMethods::getWisInfo(QString fileName) {
-    WisItem obj; //to return
+	WisItem obj; //to return
 
-    QFile file (fileName);
-if (!file.open(QIODevice::ReadOnly)) {
-qDebug()<<tr ("cannot open file ") + file.fileName() + tr (" because ") + file.errorString();
-obj.error = true;
-return obj;
-}
-QXmlStreamReader reader (&file);
-    reader.readNext();
-    qDebug() << "first" << reader.tokenString(); //it is
+	QFile file (fileName);
+	if (!file.open(QIODevice::ReadOnly)) {
+		qDebug()<<tr ("cannot open file ") + file.fileName() + tr (" because ") + file.errorString();
+		obj.error = true;
+		return obj;
+	}
 
+	QXmlStreamReader reader (&file);
+	reader.readNext();
+	qDebug() << "first" << reader.tokenString(); //it is
 
-    while (!reader.atEnd()) {
-        if (reader.hasError()) {
-            qDebug () << tr ("File format error!");
-            break;
-        }
-            qDebug()<< tr ("Token detected:  ") + reader.name().toString() + tr (" contains ") + reader.text().toString();
-     switch (reader.TokenType) {
-            case QXmlStreamReader::EndElement:
-                                        break;
-            case QXmlStreamReader::StartElement:
-                    switch (reader.name().toString()) {
-                case "q4wine_pack":
-                        qDebug () << tr ("Q4wine package");
-                                                break;
-                case "name":
-                        qDebug () << tr ("name");
-                        obj.name \= reader.readElementText();
-                        break;
-                case "author":
-                        qDebug () << tr ("author");
-                        obj.author = reader.readElementText();
-                        break;
-                case "description":
-                        qDebug () << tr ("description of package");
-                        obj.description =\ reader.readElementText();
-                        break;
-               case "download":
-                       qDebug () << tr (" download URL");
-                       obj.download = reader.readElementText();
-                       break;
-               case "site":
-                       qDebug () << tr ("site");
-                       obj.site = reader.readElementText();
-                        break;
-                case "install":
-                        qDebug () << tr ("install path");
-                         obj.install = reader.readElementText();
-                        break;
-                 case "contact":
-                        qDebug () << tr ("contact info");
-                        obj.contact = reader.readElementText();
-                        break;
-                  default:
-                        qDebug () << tr ("incorrect element");
-                        obj.warning = true;
-                        break;
-                    }
-                    qDebug () << " detected.\n";
-                break;
-                case QXmlStreamReader::Invalid:
-                qDebug() << tr ("q4wine: error: ") + reader.errorString() + "\n";
-                obj.error = true;
-              break;
-          }
+	while (!reader.atEnd()) {
+		if (reader.hasError()) {
+			qDebug () << tr ("File format error!");
+			break;
+		}
 
-    }
-    file.close();
-    return obj;
+		qDebug()<< tr ("Token detected:  ") + reader.name().toString() + tr (" contains ") + reader.text().toString();
+
+		switch (reader.tokenType()){
+			case QXmlStreamReader::EndElement:
+				qDebug()<<"End Element";
+			break;
+			case QXmlStreamReader::StartElement:
+				if (reader.name().toString() == "q4wine_pack"){
+					qDebug () << tr ("Q4wine package");
+				}
+				if (reader.name().toString() == "name"){
+					qDebug () << tr ("name");
+					obj.name = reader.readElementText();
+				}
+				if (reader.name().toString() == "author"){
+					qDebug () << tr ("author");
+					obj.author = reader.readElementText();
+				}
+				if (reader.name().toString() == "description"){
+					qDebug () << tr ("description of package");
+					obj.description = reader.readElementText();
+				}
+				if (reader.name().toString() == "download"){
+					qDebug () << tr (" download URL");
+					obj.download = reader.readElementText();
+				}
+				if (reader.name().toString() == "site"){
+					qDebug () << tr ("site");
+					obj.site = reader.readElementText();
+				}
+				if (reader.name().toString() == "install"){
+					qDebug () << tr ("install path");
+					obj.install = reader.readElementText();
+				}
+				if (reader.name().toString() == "contact"){
+					qDebug () << tr ("contact info");
+					obj.contact = reader.readElementText();
+				}
+			break;
+			default:
+				qDebug () << tr ("incorrect element");
+				obj.warning = true;
+				break;
+			case QXmlStreamReader::Invalid:
+				qDebug() << tr ("q4wine: error: ") + reader.errorString() + "\n";
+				obj.error = true;
+			break;
+		}
+	}
+	file.close();
+	return obj;
 }
 
 
