@@ -100,13 +100,9 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 	Q_OBJECT
 	public:
 		MainWindow(QWidget * parent = 0, Qt::WFlags f = 0);
-		virtual ~MainWindow();
-
 		// Icon copy\cyt structure
 		iconCopyBuffer iconBuffer;
-		
-		
-		
+
 	private slots:
 
 		//Core functions
@@ -211,7 +207,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 			void mainInstall_Click(void);
 	private:
 		//Classes
-
 		CoreMethods *core;
 
 		// Proxy

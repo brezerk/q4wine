@@ -116,7 +116,6 @@ void winetricks::downloadwinetricks () {
 		arg.append(core->getWhichOut("chmod"));
 		arg.append(" +x /usr/bin/winetricks");
 	args.append(arg);
-	qDebug()<<args;
 
 	Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
 
@@ -139,6 +138,8 @@ void winetricks::onreject() {
 	reject();
 }
 
+/*
+Not needed right now...
 void winetricks::changeEvent(QEvent *e)
 {
 	switch (e->type()) {
@@ -149,3 +150,4 @@ void winetricks::changeEvent(QEvent *e)
 		break;
     }
 }
+*/

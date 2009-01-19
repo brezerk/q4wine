@@ -51,8 +51,7 @@ public:
 	QString _prefixName;
 
 protected:
-	virtual void changeEvent(QEvent *e);
-
+	//virtual void changeEvent(QEvent *e);
 
 	private slots:
 		void onreject ();

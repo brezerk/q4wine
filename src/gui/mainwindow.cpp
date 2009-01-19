@@ -146,19 +146,14 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 
 	CoreFunction_WineRunAutorunItems();
 	
-	
 	createTrayIcon();
 
 	return;
 }
 
-MainWindow::~MainWindow()
-{
-    delete core;
-}
-
 void MainWindow::cmdTestWis_Click(){
 	//Itin classes
+	
 	core = new CoreMethods();
 	// test block
 	WisItem wis;
@@ -167,7 +162,7 @@ void MainWindow::cmdTestWis_Click(){
 	path.append("/.config/q4wine/sample.xml");
 
 	wis = core->getWisInfo(path); // test
-
+	
 	return;
 }
 
