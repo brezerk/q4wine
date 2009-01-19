@@ -162,7 +162,8 @@ void MainWindow::cmdTestWis_Click(){
 	path.append("/.config/q4wine/sample.xml");
 
 	wis = core->getWisInfo(path); // test
-	
+        qDebug() << "it is name" << wis.name;
+        qDebug () << "it is download" << wis.download;
 	return;
 }
 

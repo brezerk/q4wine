@@ -1,0 +1,9 @@
+<q4wine_pack>
+<name> sample plugin </name>
+<description> sample desc </description>
+<author> author </author>
+<install> where to install? </install>
+<download> where to download? </download>
+<contact> mail@mail.com </contact>
+<site> upstream url </site>
+
