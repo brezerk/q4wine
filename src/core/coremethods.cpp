@@ -59,7 +59,7 @@ QString CoreMethods::getWhichOut(QString fileName){
 	return "";
 }
 
-QString CoreMethods::getPrefixPath(QString prefixName){
+QString CoreMethods::getPrefixPath(QString prefixName, bool check_exists){
 	/*
 	 * Getting prefix path by its name
 	 */
@@ -83,13 +83,13 @@ QString CoreMethods::getPrefixPath(QString prefixName){
 		prefixPath.append("/.wine");
 	}
 
-	QDir fake_dir (prefixPath);
-
-	if (!fake_dir.exists()){
-		QMessageBox::warning(0, tr("Error"), tr("Sorry, specified prefix %1 directory not exists.").arg(prefixPath), QMessageBox::Ok);
-			return "";
+	if (check_exists){
+		QDir fake_dir (prefixPath);
+		if (!fake_dir.exists()){
+			QMessageBox::warning(0, tr("Error"), tr("Sorry, specified prefix %1 directory not exists.").arg(prefixPath), QMessageBox::Ok);
+				return "";
+		}
 	}
-
 
 	return prefixPath;
 }

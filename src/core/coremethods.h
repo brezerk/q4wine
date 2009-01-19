@@ -46,7 +46,7 @@ class CoreMethods : public QObject
 public:
 	/* Search for fileName in PATH with /usr/bin/which */
 	QString getWhichOut (QString fileName);
-	QString getPrefixPath(QString prefixName);
+	QString getPrefixPath(QString prefixName, bool check_exists = TRUE);
 	WisItem getWisInfo (QString fileName);
 	QString getSettingValue(QString group, QString key);
 	CoreMethods ();

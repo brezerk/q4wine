@@ -1493,7 +1493,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 
 void MainWindow::cmdCreateFake_Click(){
 
-	QString prefixPath=core->getPrefixPath(cbPrefixes->currentText());
+	QString prefixPath = core->getPrefixPath(cbPrefixes->currentText(), FALSE);
 
 	QString sysregPath;
 	sysregPath.append(prefixPath);
@@ -1513,18 +1513,17 @@ void MainWindow::cmdCreateFake_Click(){
 				if (exportProcess->exec()!=QDialog::Accepted){
 					return;
 				}
-
-				QDir fakeDir (prefixPath);
-				fakeDir.mkdir(prefixPath);
-
-				Wizard *createFakeDriveWizard = new Wizard(2, cbPrefixes->currentText());
-					if (createFakeDriveWizard->exec()==QDialog::Accepted){
-						CoreFunction_DatabaseUpdateConnectedItems(cbPrefixes->currentIndex());
-					}
 		}
 	}
 
+	QDir fakeDir (prefixPath);
+		if (!fakeDir.exists())
+			fakeDir.mkdir(prefixPath);
 
+	Wizard *createFakeDriveWizard = new Wizard(2, cbPrefixes->currentText());
+		if (createFakeDriveWizard->exec()==QDialog::Accepted){
+			CoreFunction_DatabaseUpdateConnectedItems(cbPrefixes->currentIndex());
+		}
 
 	return;
 }
