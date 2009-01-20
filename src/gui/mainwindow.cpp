@@ -819,7 +819,9 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 			//else
 				QString out = myProcess->readAll();
 					if (!out.isEmpty()){
+						qDebug()<<out;
 						out = out.split(" ").first();
+						qDebug()<<out;
 						if (!out.isEmpty()){
 							#ifdef _OS_LINUX_
 							if (out.contains("loop")){
@@ -836,6 +838,8 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 								arguments << "losetup -l -u" << out.mid(7);
 								qDebug()<<"FreeBSD detected! args is: "<<arguments;
 								#endif
+
+								qDebug()<<arguments;
 								
 								myProcess->start(SUDO_BIN, arguments);
 									if (!myProcess->waitForFinished()){
