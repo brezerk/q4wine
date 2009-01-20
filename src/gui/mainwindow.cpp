@@ -3440,10 +3440,9 @@ void MainWindow::CoreFunction_ImageUnmount(QString mount){
 	QStringList args;
 	Process *exportProcess;
 	
-	#ifdef _OS_FREEBSD
+	#ifdef _OS_FREEBSD_
 		args.clear();
 		args << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(mount);
-		
 
 		qDebug()<<"get mount: "<<args;
 		QProcess *myProcess = new QProcess(this);
