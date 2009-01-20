@@ -3464,12 +3464,16 @@ void MainWindow::CoreFunction_ImageUnmount(QString mount){
 			}
 
 			QString devid = myProcess->readAll();
+			qDebug()<<"proc readed: "<<devid;
 			if (!devid.isEmpty()){
 				devid = devid.split(" ").first();
-				if (!devid.isEmpty())
+				if (!devid.isEmpty()){
+					qDebug()<<"device last: "<<devid;
 					if (devid.contains("md")){
 						args.clear();
 						args << "mdconfig" <<  "-d" << tr("-u%1").arg(devid.mid(7));
+
+						qDebug()<<"mdargs: "<<args;
 
 						exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("Unmounting..."), tr("running mdconfig"));
 							
@@ -3479,6 +3483,7 @@ void MainWindow::CoreFunction_ImageUnmount(QString mount){
 							statusBar()->showMessage(tr("mdimage remove fail"));
 						}
 					}
+				}
 			}
 
 	#endif
