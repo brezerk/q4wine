@@ -819,15 +819,13 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 			//else
 				QString out = myProcess->readAll();
 					if (!out.isEmpty()){
-						qDebug()<<out;
 						out = out.split(" ").first();
-						qDebug()<<out;
 						if (!out.isEmpty()){
 							#ifdef _OS_LINUX_
 							if (out.contains("loop")){
 							#endif
 							#ifdef _OS_FREEBSD_
-							if (out.contains("fd")){
+							if (out.contains("md")){
 							#endif
 								myProcess->close ();
 								arguments.clear();
