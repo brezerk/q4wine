@@ -3440,6 +3440,23 @@ void MainWindow::CoreFunction_ImageUnmount(QString mount){
 	QStringList args;
 	Process *exportProcess;
 	
+	#ifdef _OS_FREEBSD
+		args.clear();
+		args << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(mount);
+		
+
+		qDebug()<<"get mount: "<<args;
+		QProcess *myProcess = new QProcess(this);
+    	myProcess->start(SH_BIN, args);
+		if (!myProcess->waitForFinished()){
+			qDebug() << "Make failed:" << myProcess->errorString();
+			return;
+		}
+
+		QString devid = myProcess->readAll();
+		qDebug()<<"proc readed: "<<devid;
+	#endif
+
 	args.clear();
 	args << UMOUNT_BIN;
 	args << mount;
@@ -3453,18 +3470,6 @@ void MainWindow::CoreFunction_ImageUnmount(QString mount){
 	}
 	
 	#ifdef _OS_FREEBSD_
-		args.clear();
-		args << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(mount);
-		
-		QProcess *myProcess = new QProcess(this);
-     		myProcess->start(SH_BIN, args);
-			if (!myProcess->waitForFinished()){
-				qDebug() << "Make failed:" << myProcess->errorString();
-				return;
-			}
-
-			QString devid = myProcess->readAll();
-			qDebug()<<"proc readed: "<<devid;
 			if (!devid.isEmpty()){
 				devid = devid.split(" ").first();
 				if (!devid.isEmpty()){
@@ -3485,10 +3490,7 @@ void MainWindow::CoreFunction_ImageUnmount(QString mount){
 					}
 				}
 			}
-
 	#endif
-
-
 
 	return;
 }
