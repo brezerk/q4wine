@@ -835,8 +835,6 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 								#ifdef _OS_FREEBSD_
 								arguments << "mdconfig" <<  "-l" << tr("-u%1").arg(out.mid(7));
 								#endif
-
-								qDebug()<<arguments;
 								
 								myProcess->start(SUDO_BIN, arguments);
 									if (!myProcess->waitForFinished()){
@@ -1463,54 +1461,59 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		{
 			prefix="";
 
-			envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
-				if (envs){
-					int j=0;
-					while (envs[j]){
-						env_arg=envs[j];
-						int index = env_arg.indexOf("WINEPREFIX=");
-						if (index>=0){
-							ipid = kp[i].ki_pid;
-							ni = kp[i].ki_nice;
-							nice = tr("%1").arg(ni);
-							name = kp[i].ki_comm;
-							prefix=env_arg.mid(11);
-							break;
+			ipid = kp[i].ki_pid;
+			name = kp[i].ki_comm;
+			if (!tableProc->findItems(tr("%1").arg(ipid), Qt::MatchExactly ))
+				if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
+					ni = kp[i].ki_nice;
+					nice = tr("%1").arg(ni);
+	
+					envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
+						if (envs){
+							int j=0;
+							while (envs[j]){
+								env_arg=envs[j];
+								int index = env_arg.indexOf("WINEPREFIX=");
+								if (index>=0){
+									
+	
+									prefix=env_arg.mid(11);
+									break;
+								}
+								j++;
+							}
+						} else {
+							prefix="";
 						}
-						j++;
-					}
-				} else {
-					prefix="";
-				}
-
-			if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
-				curRows++;
-			
-				if (curRows>numRows){
-					tableProc->insertRow (numRows);
-					numRows = tableProc->rowCount();
-				}
+	
+	
+					curRows++;
 				
-				if (tableProc->item(curRows - 1, 0)){
-					tableProc->item(curRows - 1, 0)->setText(tr("%1").arg(ipid));
-					tableProc->item(curRows - 1, 1)->setText(name);
-					tableProc->item(curRows - 1, 2)->setText(nice);
-					tableProc->item(curRows - 1, 3)->setText(prefix);
-				} else {
-					QTableWidgetItem *newItem = new QTableWidgetItem(tr("%1").arg(ipid));
-					tableProc->setItem(curRows - 1, 0, newItem);
-					newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-					newItem = new QTableWidgetItem(name);
-					tableProc->setItem(curRows - 1, 1, newItem);
-					newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-					newItem = new QTableWidgetItem(nice);
-					tableProc->setItem(curRows - 1, 2, newItem);
-					newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-					newItem = new QTableWidgetItem(prefix);
-					tableProc->setItem(curRows - 1, 3, newItem);
-					newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+					if (curRows>numRows){
+						tableProc->insertRow (numRows);
+						numRows = tableProc->rowCount();
+					}
+					
+					if (tableProc->item(curRows - 1, 0)){
+						tableProc->item(curRows - 1, 0)->setText(tr("%1").arg(ipid));
+						tableProc->item(curRows - 1, 1)->setText(name);
+						tableProc->item(curRows - 1, 2)->setText(nice);
+						tableProc->item(curRows - 1, 3)->setText(prefix);
+					} else {
+						QTableWidgetItem *newItem = new QTableWidgetItem(tr("%1").arg(ipid));
+						tableProc->setItem(curRows - 1, 0, newItem);
+						newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+						newItem = new QTableWidgetItem(name);
+						tableProc->setItem(curRows - 1, 1, newItem);
+						newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+						newItem = new QTableWidgetItem(nice);
+						tableProc->setItem(curRows - 1, 2, newItem);
+						newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+						newItem = new QTableWidgetItem(prefix);
+						tableProc->setItem(curRows - 1, 3, newItem);
+						newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+					}
 				}
-			}
 		}
 	#endif
 
@@ -3397,7 +3400,7 @@ void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
 
 		if (image.right(3)=="iso"){
 			args << SH_BIN;
-			args << "-c"
+			args << "-c";
 				arg = MOUNT_BIN;
 				arg << " -t cd9660 /dev/`mdconfig -f ";
 				arg << image;
