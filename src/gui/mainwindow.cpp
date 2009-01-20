@@ -3402,10 +3402,10 @@ void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
 			args << SH_BIN;
 			args << "-c";
 				arg = MOUNT_BIN;
-				arg << " -t cd9660 /dev/`mdconfig -f ";
-				arg << image;
-				arg << "` ";
-				arg << mount;
+				arg.append(" -t cd9660 /dev/`mdconfig -f ");
+				arg.append(image);
+				arg.append("` ");
+				arg.append(mount);
 			args << arg;
 		} else {
 			args << MOUNT_BIN << "-t" << "cd9660" << image << mount;
