@@ -148,13 +148,14 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	
 	createTrayIcon();
 
+	core = new CoreMethods();
+
 	return;
 }
 
 void MainWindow::cmdTestWis_Click(){
 	//Itin classes
 	
-	core = new CoreMethods();
 	// test block
 	WisItem wis;
 
@@ -168,7 +169,6 @@ void MainWindow::cmdTestWis_Click(){
 }
 
 void MainWindow::cmdWinetricks_Click() {
-    core = new CoreMethods();
 
 	if (core->getWhichOut("winetricks").isEmpty()){
                 QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks. Right-click on that link and use 'save as' to save a fresh copy. Or you can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p>"));
@@ -834,7 +834,6 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 								#endif
 								#ifdef _OS_FREEBSD_
 								arguments << "mdconfig" <<  "-l" << tr("-u%1").arg(out.mid(7));
-								qDebug()<<"FreeBSD detected! args is: "<<arguments;
 								#endif
 
 								qDebug()<<arguments;
@@ -846,13 +845,11 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 									} else {
 										out = myProcess->readAll();
 											if (!out.isEmpty()){
-												qDebug()<<"FreeBSD detected! out is: "<<out;
 												#ifdef _OS_LINUX_
 													out = out.split("/").last().mid(0, out.split("/").last().length()-2);
 												#endif
 												#ifdef _OS_FREEBSD_
-													out = out.split("/").last().mid(0, out.split("/").last().length()-2);
-													qDebug()<<"FreeBSD detected! iso file is: "<<out;
+													out = out.split("/").last().mid(0, out.split("/").last().length()-1);
 												#endif
 											}
 									}
@@ -980,7 +977,12 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint){
 
 			QStringList arguments;
 
-			arguments << "-c" << tr("%1 -t iso9660 | grep %2").arg(MOUNT_BIN).arg(cdrom_mount);
+			#ifdef _OS_LINUX_
+				arguments << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(cdrom_mount);
+			#endif
+			#ifdef _OS_FREEBSD_
+				arguments << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(cdrom_mount);
+			#endif
 
 			QProcess *myProcess = new QProcess(this);
      		myProcess->start(SH_BIN, arguments);
@@ -993,17 +995,33 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint){
 					if (!out.isEmpty()){
 						out = out.split(" ").first();
 						if (!out.isEmpty()){
+							#ifdef _OS_LINUX_
 							if (out.contains("loop")){
+							#endif
+							#ifdef _OS_FREEBSD_
+							if (out.contains("md")){
+							#endif
 								myProcess->close ();
 								arguments.clear();
+								#ifdef _OS_LINUX_
 								arguments << "losetup" << out;
+								#endif
+								#ifdef _OS_FREEBSD_
+								arguments << "mdconfig" <<  "-l" << tr("-u%1").arg(out.mid(7));
+								#endif
 								myProcess->start(SUDO_BIN, arguments);
 									if (!myProcess->waitForFinished()){
 										qDebug() << "Make failed:" << myProcess->errorString();
 										return;
 									} else {
 										out = myProcess->readAll();
-										out = out.split("/").last().mid(0, out.split("/").last().length()-2);
+										#ifdef _OS_LINUX_
+											out = out.split("/").last().mid(0, out.split("/").last().length()-2);
+										#endif
+										#ifdef _OS_FREEBSD_
+											out = out.split("/").last().mid(0, out.split("/").last().length()-1);
+										#endif
+
 									}
 							}
 						} else {
@@ -3366,22 +3384,51 @@ bool MainWindow::SQL_isIconExistsByName(QString prefix_id, QString dir_id, QStri
 }
 
 void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
+	/*
+		Mounting an image or drive to mountmount
+			@image -- an image (or drive) name
+			@mount -- mount point
+	*/
+
 	QStringList args;
+
+	#ifdef _OS_FREEBSD_
+		QString arg;
+
+		if (image.right(3)=="iso"){
+			args << SH_BIN;
+			args << "-c"
+				arg = MOUNT_BIN;
+				arg << " -t cd9660 /dev/`mdconfig -f ";
+				arg << image;
+				arg << "` ";
+				arg << mount;
+			args << arg;
+		} else {
+			args << MOUNT_BIN << "-t" << "cd9660" << image << mount;
+		}
+	#endif
 	
-	args << MOUNT_BIN;
-	args << image;
-	args << mount;
+	#ifdef _OS_LINUX_
+		args << MOUNT_BIN;
+		args << image;
+		args << mount;
+			
+		if (image.right(3)=="iso"){
+			args << "-o" << "loop";
+		}
+	#endif
 		
-	if (image.right(3)=="iso")
-		args << "-o" << "loop";
-	
-	Process *exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("Mounting..."), tr("Mounting..."));
-				
-	if (exportProcess->exec()==QDialog::Accepted){
-		statusBar()->showMessage(tr("Image successfully mounted"));
-	} else {
-		statusBar()->showMessage(tr("Image mount fail"));
-	}
+	qDebug()<<"Mounting args: "<<args;
+
+		Process *exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("Mounting..."), tr("Mounting..."));
+					
+		if (exportProcess->exec()==QDialog::Accepted){
+			statusBar()->showMessage(tr("Image successfully mounted"));
+		} else {
+			statusBar()->showMessage(tr("Image mount fail"));
+		}
+
 	return;
 }
 
