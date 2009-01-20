@@ -3393,16 +3393,21 @@ void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
 			@mount -- mount point
 	*/
 
+
+	//mount_cd9660
+
 	QStringList args;
 
 	#ifdef _OS_FREEBSD_
 		QString arg;
 
-		if (image.right(3)=="iso"){
+		if ((image.right(3)=="iso") or (image.right(3)=="nrg")){
 			args << SH_BIN;
 			args << "-c";
-				arg = MOUNT_BIN;
-				arg.append(" -t cd9660 /dev/`mdconfig -f ");
+				arg = core->getWhitchOut("mount_cd9660");
+				if (image.right(3)=="nrg")
+					arg = arg.append(" -s 307200 ")
+				arg.append("  /dev/`mdconfig -f ");
 				arg.append(image);
 				arg.append("` ");
 				arg.append(mount);
@@ -3420,6 +3425,10 @@ void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
 		if (image.right(3)=="iso"){
 			args << "-o" << "loop";
 		}
+		if (image.right(3)=="nrg"){
+			args << "-o" << "loop,offset=307200";
+		}
+
 	#endif
 		
 	qDebug()<<"Mounting args: "<<args;
@@ -3444,7 +3453,6 @@ void MainWindow::CoreFunction_ImageUnmount(QString mount){
 		args.clear();
 		args << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(mount);
 
-		qDebug()<<"get mount: "<<args;
 		QProcess *myProcess = new QProcess(this);
     	myProcess->start(SH_BIN, args);
 		if (!myProcess->waitForFinished()){
@@ -3453,7 +3461,6 @@ void MainWindow::CoreFunction_ImageUnmount(QString mount){
 		}
 
 		QString devid = myProcess->readAll();
-		qDebug()<<"proc readed: "<<devid;
 	#endif
 
 	args.clear();
@@ -3469,26 +3476,23 @@ void MainWindow::CoreFunction_ImageUnmount(QString mount){
 	}
 	
 	#ifdef _OS_FREEBSD_
+		if (!devid.isEmpty()){
+			devid = devid.split(" ").first();
 			if (!devid.isEmpty()){
-				devid = devid.split(" ").first();
-				if (!devid.isEmpty()){
-					qDebug()<<"device last: "<<devid;
-					if (devid.contains("md")){
-						args.clear();
-						args << "mdconfig" <<  "-d" << tr("-u%1").arg(devid.mid(7));
+				if (devid.contains("md")){
+					args.clear();
+					args << "mdconfig" <<  "-d" << tr("-u%1").arg(devid.mid(7));
 
-						qDebug()<<"mdargs: "<<args;
-
-						exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("Unmounting..."), tr("running mdconfig"));
+					exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("Unmounting..."), tr("running mdconfig"));
 							
-						if (exportProcess->exec()==QDialog::Accepted){
-							statusBar()->showMessage(tr("mdimage removed"));
-						} else {
-							statusBar()->showMessage(tr("mdimage remove fail"));
-						}
+					if (exportProcess->exec()==QDialog::Accepted){
+						statusBar()->showMessage(tr("mdimage removed"));
+					} else {
+						statusBar()->showMessage(tr("mdimage remove fail"));
 					}
 				}
 			}
+		}
 	#endif
 
 	return;
