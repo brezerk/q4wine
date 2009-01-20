@@ -3404,9 +3404,9 @@ void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
 		if ((image.right(3)=="iso") or (image.right(3)=="nrg")){
 			args << SH_BIN;
 			args << "-c";
-				arg = core->getWhitchOut("mount_cd9660");
+				arg = core->getWhichOut("mount_cd9660");
 				if (image.right(3)=="nrg")
-					arg = arg.append(" -s 307200 ")
+					arg = arg.append(" -s 307200 ");
 				arg.append("  /dev/`mdconfig -f ");
 				arg.append(image);
 				arg.append("` ");
