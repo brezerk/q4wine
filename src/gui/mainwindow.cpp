@@ -833,7 +833,7 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 								arguments << "losetup" << out;
 								#endif
 								#ifdef _OS_FREEBSD_
-								arguments << "losetup -l -u" << out.mid(7);
+								arguments << "mdconfig -l -u" << out.mid(7);
 								qDebug()<<"FreeBSD detected! args is: "<<arguments;
 								#endif
 
