@@ -1463,7 +1463,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 
 			ipid = kp[i].ki_pid;
 			name = kp[i].ki_comm;
-			if (!tableProc->findItems(tr("%1").arg(ipid), Qt::MatchExactly ))
+			//if (!tableProc->findItems(tr("%1").arg(ipid), Qt::MatchExactly ))
 				if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
 					ni = kp[i].ki_nice;
 					nice = tr("%1").arg(ni);
@@ -3498,3 +3498,4 @@ void MainWindow::CoreFunction_WineRunAutorunItems(void){
 	
 	return;	
 }
+
