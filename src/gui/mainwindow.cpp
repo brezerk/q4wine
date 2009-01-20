@@ -802,8 +802,12 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 	
 		QStringList arguments;
 		
-
-			arguments << "-c" << tr("%1 -l -t iso9660 | grep %2").arg(MOUNT_BIN).arg(mount_point);
+			#ifdef _OS_LINUX_
+				arguments << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(mount_point);
+			#endif
+			#ifdef _OS_FREEBSD_
+				arguments << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(mount_point);
+			#endif
 
 			QProcess *myProcess = new QProcess(this);
      		myProcess->start(SH_BIN, arguments);
@@ -817,17 +821,38 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 					if (!out.isEmpty()){
 						out = out.split(" ").first();
 						if (!out.isEmpty()){
+							#ifdef _OS_LINUX_
 							if (out.contains("loop")){
+							#endif
+							#ifdef _OS_FREEBSD_
+							if (out.contains("fd")){
+							#endif
 								myProcess->close ();
 								arguments.clear();
+								#ifdef _OS_LINUX_
 								arguments << "losetup" << out;
+								#endif
+								#ifdef _OS_FREEBSD_
+								arguments << "losetup -l -u" << out.mid(7);
+								qDebug()<<"FreeBSD detected! args is: "<<arguments;
+								#endif
+								
 								myProcess->start(SUDO_BIN, arguments);
 									if (!myProcess->waitForFinished()){
 										qDebug() << "Make failed:" << myProcess->errorString();
 										return;
 									} else {
 										out = myProcess->readAll();
-										out = out.split("/").last().mid(0, out.split("/").last().length()-2);
+											if (!out.isEmpty()){
+												qDebug()<<"FreeBSD detected! out is: "<<out;
+												#ifdef _OS_LINUX_
+													out = out.split("/").last().mid(0, out.split("/").last().length()-2);
+												#endif
+												#ifdef _OS_FREEBSD_
+													out = out.split("/").last().mid(0, out.split("/").last().length()-2);
+													qDebug()<<"FreeBSD detected! iso file is: "<<out;
+												#endif
+											}
 									}
 							}
 						} else {

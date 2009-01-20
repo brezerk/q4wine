@@ -121,7 +121,7 @@ WisItem  CoreMethods::getWisInfo(QString fileName) {
 	}
 
 	QXmlStreamReader reader (&file);
-
+		
         reader.readNext(); //startDocument
 	qDebug() << "first" << reader.tokenString(); //it is
         reader.readNext(); //q4wine_pack
@@ -132,46 +132,53 @@ WisItem  CoreMethods::getWisInfo(QString fileName) {
 			qDebug () << tr ("File format error!");
 			break;
 		}
-                reader.readNext();
-                QString name, text;
-name = reader.name().toString();
-text = reader.readElementText().trimmed();
-                qDebug()<< tr ("Token detected:  ") + name + tr (" contains ") + text;
+				qDebug()<<reader.readNext();
+				if (!reader.isWhitespace()){
+					QString name, text;
+					name = reader.name().toString();
+					text = reader.readElementText().trimmed();
 
+					
+					qDebug()<< tr ("Token detected:  '%1' contains '%2'").arg(name).arg(text);
+					
+					if (name == "q4wine_pack"){
+						qDebug () << tr ("Q4wine package");
+					}
 
-                                if (name == "q4wine_pack"){
-					qDebug () << tr ("Q4wine package");
-				}
-                                if (name == "name"){
-					qDebug () << tr ("name");
-					obj.name = text;
-				}
-                                if (name  == "author"){
-                                        qDebug () << tr ("author ") + text ;
-					obj.author = text;
-				}
-				if (name == "description"){
-					qDebug () << tr ("description of package");
-					obj.description = text;
-				}
-				if (name == "download"){
-					qDebug () << tr (" download URL");
-					obj.download = text;
-				}
-				if (name == "site"){
-					qDebug () << tr ("site");
-					obj.site = text;
-				}
-				if (name == "install"){
-					qDebug () << tr ("install path");
-					obj.install = text;
-				}
-				if (name == "contact"){
-					qDebug () << tr ("contact info");
-					obj.contact = text;
-				}
+					if (name == "name"){
+						qDebug () << tr ("name");
+						obj.name = text;
+					}
 
+					if (name  == "author"){
+						qDebug () << tr ("author ") + text ;
+						obj.author = text;
+					}
+					if (name == "description"){
+						qDebug () << tr ("description of package");
+						obj.description = text;
+					}
 
+					if (name == "download"){
+						qDebug () << tr (" download URL");
+						obj.download = text;
+					}
+
+					if (name == "site"){
+						qDebug () << tr ("site");
+						obj.site = text;
+					}
+
+					if (name == "install"){
+						qDebug () << tr ("install path");
+						obj.install = text;
+					}
+
+					if (name == "contact"){
+						qDebug () << tr ("contact info");
+						obj.contact = text;
+					}
+				}
 	}
 	file.close();
 	return obj;
