@@ -3436,21 +3436,111 @@ void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
 }
 
 void MainWindow::CoreFunction_ImageUnmount(QString mount){
-	
+	/*
+			QStringList arguments;
+
+			#ifdef _OS_LINUX_
+				arguments << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(cdrom_mount);
+			#endif
+			#ifdef _OS_FREEBSD_
+				arguments << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(cdrom_mount);
+			#endif
+
+			QProcess *myProcess = new QProcess(this);
+     		myProcess->start(SH_BIN, arguments);
+			if (!myProcess->waitForFinished()){
+				qDebug() << "Make failed:" << myProcess->errorString();
+				return;
+			}
+			//else
+				QString out = myProcess->readAll();
+					if (!out.isEmpty()){
+						out = out.split(" ").first();
+						if (!out.isEmpty()){
+							#ifdef _OS_LINUX_
+							if (out.contains("loop")){
+							#endif
+							#ifdef _OS_FREEBSD_
+							if (out.contains("md")){
+							#endif
+								myProcess->close ();
+								arguments.clear();
+								#ifdef _OS_LINUX_
+								arguments << "losetup" << out;
+								#endif
+								#ifdef _OS_FREEBSD_
+								arguments << "mdconfig" <<  "-l" << tr("-u%1").arg(out.mid(7));
+								#endif
+								myProcess->start(SUDO_BIN, arguments);
+									if (!myProcess->waitForFinished()){
+										qDebug() << "Make failed:" << myProcess->errorString();
+										return;
+									} else {
+										out = myProcess->readAll();
+										#ifdef _OS_LINUX_
+											out = out.split("/").last().mid(0, out.split("/").last().length()-2);
+										#endif
+										#ifdef _OS_FREEBSD_
+											out = out.split("/").last().mid(0, out.split("/").last().length()-1);
+										#endif
+
+									}
+							}
+						} else {
+							out = "none";
+						}
+					} else {
+						out = "none";
+					}
+	*/
 	QStringList args;
+	Process *exportProcess;
 	
+	args.clear();
 	args << UMOUNT_BIN;
 	args << mount;
-		
 
-	Process *exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("Mounting..."), tr("Mounting..."));
+	exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("Unmounting..."), tr("Unmounting..."));
 				
 	if (exportProcess->exec()==QDialog::Accepted){
-		statusBar()->showMessage(tr("Image successfully unmounted"));
+		statusBar()->showMessage(tr("image successfully unmounted"));
 	} else {
-		statusBar()->showMessage(tr("Image unmount fail"));
+		statusBar()->showMessage(tr("image unmount fail"));
 	}
 	
+	#ifdef _OS_FREEBSD_
+		args.clear();
+		args << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(mount);
+		
+		QProcess *myProcess = new QProcess(this);
+     		myProcess->start(SH_BIN, args);
+			if (!myProcess->waitForFinished()){
+				qDebug() << "Make failed:" << myProcess->errorString();
+				return;
+			}
+
+			QString devid = myProcess->readAll();
+			if (!devid.isEmpty()){
+				devid = devid.split(" ").first();
+				if (!devid.isEmpty())
+					if (devid.contains("md")){
+						args.clear();
+						args << "mdconfig" <<  "-d" << tr("-u%1").arg(out.mid(7));
+
+						exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("Unmounting..."), tr("running mdconfig"));
+							
+						if (exportProcess->exec()==QDialog::Accepted){
+							statusBar()->showMessage(tr("mdimage removed"));
+						} else {
+							statusBar()->showMessage(tr("mdimage remove fail"));
+						}
+					}
+			}
+
+	#endif
+
+
+
 	return;
 }
 
