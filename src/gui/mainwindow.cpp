@@ -1465,7 +1465,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 
 			ipid = kp[i].ki_pid;
 
-			if (cur_pids.indexOf(tr("%1").arg(ipid))>0){
+			if (cur_pids.indexOf(tr("%1").arg(ipid))==-1){
 				cur_pids << tr("%1").arg(ipid);
 
 				name = kp[i].ki_comm;
