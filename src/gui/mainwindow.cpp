@@ -1455,7 +1455,15 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		char **envs;
 
 		kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, buf);
+			if (!kd){
+				QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_openfiles.</p><p>In most case q4wine require access to /dev/mem witch can be readed only by kmem group.</p><p>Please make shure thet you run q4wine with kmem groupe id</p>"), QMessageBox::Retry, QMessageBox::Ignore);
+				return;
+			}
 		kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &cntproc);
+			if (!kp){
+				QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_getprocs.</p><p>In most case q4wine require access to /dev/mem witch can be readed only by kmem group.</p><p>Please make shure thet you run q4wine with kmem groupe id</p>"), QMessageBox::Retry, QMessageBox::Ignore);
+				return;
+			}
 
 		QStringList cur_pids;
 
