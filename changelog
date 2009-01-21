@@ -4,6 +4,18 @@ See INSTALL file for details
 
 Changelog
 ***********************************************
+Version 0.110
+	core:
+		New:
+			- FreeBSD full support (proc and mounts);
+			- nrg images mount (Linux only);
+			- new core functions class (will be moved to libq4wine shared library)
+			- updated locales;
+
+		Fixed:
+			- Winetriks prefix fixes;
+			- Many fixes;
+
 Version 0.109-r2
 	core:
 		New:

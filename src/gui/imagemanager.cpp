@@ -185,7 +185,13 @@ void ImageManager::actionAddImage(){
 	bool fexists=FALSE, ok;
 	QString fileName, newName;
 	
-	fileName = QFileDialog::getOpenFileName(this, tr("Open CD image file"), QDir::homePath(), tr("CD Image files (*.iso)"));
+	#ifdef _OS_LINUX_
+		fileName = QFileDialog::getOpenFileName(this, tr("Open ISO or NRG Image file"), QDir::homePath(), tr("iso and nrg files (*.iso *.nrg)"));
+	#endif
+
+	#ifdef _OS_FREEBSD_
+		fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), QDir::homePath(), tr("iso files (*.iso)"));
+	#endif
 
 	if(!fileName.isEmpty()){
 		QSqlQuery query;

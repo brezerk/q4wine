@@ -844,7 +844,7 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 										out = myProcess->readAll();
 											if (!out.isEmpty()){
 												#ifdef _OS_LINUX_
-													out = out.split("/").last().mid(0, out.split("/").last().length()-2);
+													out = out.split("/").last().split(")").first();
 												#endif
 												#ifdef _OS_FREEBSD_
 													out = out.split("/").last().mid(0, out.split("/").last().length()-1);
@@ -1457,61 +1457,67 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, buf);
 		kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &cntproc);
 
+		QStringList cur_pids;
+
 		for (i=0; i<cntproc;i++)
 		{
 			prefix="";
 
 			ipid = kp[i].ki_pid;
-			name = kp[i].ki_comm;
-			//if (!tableProc->findItems(tr("%1").arg(ipid), Qt::MatchExactly ))
-				if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
-					ni = kp[i].ki_nice;
-					nice = tr("%1").arg(ni);
-	
-					envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
-						if (envs){
-							int j=0;
-							while (envs[j]){
-								env_arg=envs[j];
-								int index = env_arg.indexOf("WINEPREFIX=");
-								if (index>=0){
-									
-	
-									prefix=env_arg.mid(11);
-									break;
+
+			if (cur_pids.indexOf(tr("%1").arg(ipid))>0){
+				cur_pids << tr("%1").arg(ipid);
+
+				name = kp[i].ki_comm;
+					if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
+						ni = kp[i].ki_nice;
+						nice = tr("%1").arg(ni);
+		
+						envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
+							if (envs){
+								int j=0;
+								while (envs[j]){
+									env_arg=envs[j];
+									int index = env_arg.indexOf("WINEPREFIX=");
+									if (index>=0){
+										
+		
+										prefix=env_arg.mid(11);
+										break;
+									}
+									j++;
 								}
-								j++;
+							} else {
+								prefix="";
 							}
-						} else {
-							prefix="";
-						}
-	
-	
-					curRows++;
-				
-					if (curRows>numRows){
-						tableProc->insertRow (numRows);
-						numRows = tableProc->rowCount();
-					}
+		
+		
+						curRows++;
 					
-					if (tableProc->item(curRows - 1, 0)){
-						tableProc->item(curRows - 1, 0)->setText(tr("%1").arg(ipid));
-						tableProc->item(curRows - 1, 1)->setText(name);
-						tableProc->item(curRows - 1, 2)->setText(nice);
-						tableProc->item(curRows - 1, 3)->setText(prefix);
-					} else {
-						QTableWidgetItem *newItem = new QTableWidgetItem(tr("%1").arg(ipid));
-						tableProc->setItem(curRows - 1, 0, newItem);
-						newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-						newItem = new QTableWidgetItem(name);
-						tableProc->setItem(curRows - 1, 1, newItem);
-						newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-						newItem = new QTableWidgetItem(nice);
-						tableProc->setItem(curRows - 1, 2, newItem);
-						newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-						newItem = new QTableWidgetItem(prefix);
-						tableProc->setItem(curRows - 1, 3, newItem);
-						newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+						if (curRows>numRows){
+							tableProc->insertRow (numRows);
+							numRows = tableProc->rowCount();
+						}
+						
+						if (tableProc->item(curRows - 1, 0)){
+							tableProc->item(curRows - 1, 0)->setText(tr("%1").arg(ipid));
+							tableProc->item(curRows - 1, 1)->setText(name);
+							tableProc->item(curRows - 1, 2)->setText(nice);
+							tableProc->item(curRows - 1, 3)->setText(prefix);
+						} else {
+							QTableWidgetItem *newItem = new QTableWidgetItem(tr("%1").arg(ipid));
+							tableProc->setItem(curRows - 1, 0, newItem);
+							newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+							newItem = new QTableWidgetItem(name);
+							tableProc->setItem(curRows - 1, 1, newItem);
+							newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+							newItem = new QTableWidgetItem(nice);
+							tableProc->setItem(curRows - 1, 2, newItem);
+							newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+							newItem = new QTableWidgetItem(prefix);
+							tableProc->setItem(curRows - 1, 3, newItem);
+							newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+						}
 					}
 				}
 		}
@@ -2593,37 +2599,6 @@ void MainWindow::iconMountOther_Click(void){
 	
 	dirMountOther_Click();
 
-	/*
-	QStringList dataList = SQL_getPrefixAndDirData(twPrograms->currentItem());
-	QSqlQuery query;
-	
-	if (!dataList.at(2).isEmpty()){
-		query.prepare("SELECT mount FROM icon WHERE prefix_id=:prefix_id and dir_id=:dir_id and name=:name");
-		query.bindValue(":dir_id", dataList.at(2));
-	} else {
-		query.prepare("SELECT mount FROM icon WHERE prefix_id=:prefix_id and dir_id ISNULL and name=:name");
-	}
-	
-	query.bindValue(":prefix_id", dataList.at(0));
-	query.bindValue(":name", lstIcons->currentItem()->text());
-	query.exec();
-	query.first();
-	
-	
-	QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), HOME_PATH, tr("Iso files (*.iso)"));
-	
-	if(fileName.isEmpty()){
-		return;
-	}
-	
-	if (query.value(0).toString().isEmpty()){
-		QMessageBox::warning(this, tr("Error"), tr("It seems no mount point was set in icon options.<br>You might need to set it manualy."));
-		return;
-	}
-	
-	CoreFunction_ImageMount(fileName, query.value(0).toString());
-	*/
-	
 	return;
 }
 
@@ -3056,13 +3031,17 @@ void MainWindow::dirMountOther_Click(void){
 	query.prepare("select cdrom_mount from prefix where id=:id");
 	query.bindValue(":id", dataList.at(0));
 	if (!query.exec()){
-#ifdef DEBUG
 		qDebug()<<"WARNING: contextDirMountDrive\nINFO:\n"<<query.executedQuery()<<"\n"<<query.lastError();
-#endif
 		return;
 	}
 	
-	QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), HOME_PATH, tr("Iso files (*.iso)"));
+	#ifdef _OS_LINUX_
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO or NRG Image file"), HOME_PATH, tr("iso and nrg files (*.iso *.nrg)"));
+	#endif
+
+	#ifdef _OS_FREEBSD_
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), HOME_PATH, tr("iso files (*.iso)"));
+	#endif
 	
 	if(fileName.isEmpty()){
 		QMessageBox::warning(this, tr("Error"), tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
@@ -3405,8 +3384,9 @@ void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
 			args << SH_BIN;
 			args << "-c";
 				arg = core->getWhichOut("mount_cd9660");
-				if (image.right(3)=="nrg")
-					arg = arg.append(" -s 307200 ");
+				//FIXME: not tested
+				//if (image.right(3)=="nrg")
+				//	arg = arg.append(" -s 307200 ");
 				arg.append("  /dev/`mdconfig -f ");
 				arg.append(image);
 				arg.append("` ");
@@ -3430,8 +3410,6 @@ void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
 		}
 
 	#endif
-		
-	qDebug()<<"Mounting args: "<<args;
 
 		Process *exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("Mounting..."), tr("Mounting..."));
 					
