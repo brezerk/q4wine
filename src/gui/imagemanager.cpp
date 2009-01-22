@@ -254,10 +254,7 @@ void ImageManager::actionRemoveImage(){
 		query.bindValue(":path", lblPathInfo->text());
 		if (!query.exec()){
 			QMessageBox::warning(this, tr("Error"), tr("debug: %1").arg(query.lastError().text()));
-		} else {
-			qDebug()<<"Woooot!";
 		}
-
 	
 		query.clear();
 
