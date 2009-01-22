@@ -1763,7 +1763,7 @@ void MainWindow::prefixImport_Click(){
 		QDir dir;
 		QString targetDir;
 		
-		if (tablePrefix->item(tablePrefix->currentRow(), 2)->text().isNull()){
+		if (tablePrefix->item(tablePrefix->currentRow(), 2)->text().isEmpty()){
 			targetDir.clear();
 			targetDir.append(HOME_PATH);
 			targetDir.append("/.wine/");
@@ -1771,7 +1771,7 @@ void MainWindow::prefixImport_Click(){
 			targetDir.clear();
 			targetDir.append(tablePrefix->item(tablePrefix->currentRow(), 2)->text());
 		}
-		
+
 		if (dir.exists(targetDir)){
 			if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete all old prefix files?"), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
 

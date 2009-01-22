@@ -86,12 +86,11 @@ int main(int argc, char *argv[])
 		lang = settings.value("lang").toString();
 	settings.endGroup();
 
-	if (lang.isNull()){
+	if (lang.isEmpty()){
 		lang = getenv("LANG");
 		lang = lang.split(".").at(0).toLower();
 		lang.append(".qm");
 	}
-
 
 	if (!lang.isNull()){
 

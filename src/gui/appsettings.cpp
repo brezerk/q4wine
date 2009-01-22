@@ -111,7 +111,11 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	
 	getLangs();
 	
-	comboLangs->setCurrentIndex(comboLangs->findText(settings.value("lang").toString()));
+	if (settings.value("lang").toString().isEmpty()){
+		comboLangs->setCurrentIndex(comboLangs->findText(tr("System Default")));
+	} else {
+		comboLangs->setCurrentIndex(comboLangs->findText(settings.value("lang").toString()));
+	}
 	
 	settings.endGroup();	
 	
@@ -402,8 +406,13 @@ void AppSettings::cmdOk_Click(){
 	} else {
 		settings.setValue("theme", "Default");
 	}
-		
-	settings.setValue("lang", comboLangs->currentText());
+	
+
+	if (comboLangs->currentText()==tr("System Default")){
+		settings.setValue("lang", "");
+	} else {
+		settings.setValue("lang", comboLangs->currentText());
+	}
 	
 	settings.endGroup();
 	settings.beginGroup("system");

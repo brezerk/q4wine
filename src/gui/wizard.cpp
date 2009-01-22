@@ -202,7 +202,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 			
                         txtConsoleBin->setText(core->getWhichOut("konsole"));
 			if (!txtConsoleBin->text().isEmpty())
-				txtConsoleArgs->setText("--noclose --noframe --notabbar --nomenubar --notoolbar --nohist -e");
+				txtConsoleArgs->setText("--noclose -e");
 			
                         txtWrestoolBin->setText(core->getWhichOut("wrestool"));
                         txtIcotoolBin->setText(core->getWhichOut("icotool"));
