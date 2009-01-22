@@ -54,6 +54,8 @@
 #include <QDebug>
 #include <QDir>
 #include <QMenu>
+#include <QHeaderView>
+#include <QTableWidget>
 
 class ImageManager : public QDialog, public Ui::ImageManager
 {

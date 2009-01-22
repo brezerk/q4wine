@@ -54,6 +54,7 @@ class Process : public QDialog, public Ui::Process
 	private slots:
 		void slotFinished(int, QProcess::ExitStatus);
 		void cmdCancel_clicked(void);
+		void slotError(QProcess::ProcessError);
 		
 };
 

@@ -37,9 +37,6 @@ ImageManager::ImageManager(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	loadThemeIcons(settings.value("theme").toString());
 	settings.endGroup();
 
-	tableImage->setColumnWidth (0, 560);
-	tableImage->setColumnWidth (1, 100);
-
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 	connect(tableImage, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tableImage_showContextMenu(const QPoint &)));
 	connect(tableImage, SIGNAL(clicked(const QModelIndex &)), this, SLOT(update_lblPathInfo(const QModelIndex &)));
@@ -62,7 +59,7 @@ void ImageManager::update_lblPathInfo(const QModelIndex){
 	query.exec();
 	query.first();
 
-	lblPathInfo->setText(tr("File path: %1").arg(query.value(0).toString()));
+	lblPathInfo->setText(tr("%1").arg(query.value(0).toString()));
 
 	return;
 }
@@ -145,6 +142,10 @@ void ImageManager::getCDImages(void){
 	if (numRows > curRows)
 		for (int i=curRows; i <= numRows; i++)
 			tableImage->removeRow(curRows);
+
+	tableImage->resizeRowsToContents();
+	tableImage->resizeColumnsToContents();
+	tableImage->horizontalHeader()->setStretchLastSection(TRUE);
 
 	return;
 }
@@ -239,21 +240,26 @@ void ImageManager::actionAddImage(){
 		query.clear();
 		actionRefreshImageList();
 	}
+
 	return;
 }
 
 void ImageManager::actionRemoveImage(){
-	if (tableImage->currentRow()<0)
-	return;
+	if (tableImage->currentRow()==-1)
+		return;
 
 	QSqlQuery query;
+		query.prepare("DELETE FROM images WHERE name=:name and path=:path");
+		query.bindValue(":name", tableImage->item(tableImage->currentRow(), 0)->text());
+		query.bindValue(":path", lblPathInfo->text());
+		if (!query.exec()){
+			QMessageBox::warning(this, tr("Error"), tr("debug: %1").arg(query.lastError().text()));
+		} else {
+			qDebug()<<"Woooot!";
+		}
 
-	query.prepare("DELETE FROM images WHERE name=:name and path=:path");
-	query.bindValue(":name", tableImage->item(tableImage->currentRow(), 0)->text());
-	query.bindValue(":path", lblPathInfo->text());
-
-	query.exec();
-	query.clear();
+	
+		query.clear();
 
 	actionRefreshImageList();
 

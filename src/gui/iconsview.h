@@ -41,6 +41,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QInputDialog>
+#include <QSizePolicy>
+#include <QTableWidget>
 
 class IconsView : public QDialog, public Ui::IconsView
 {

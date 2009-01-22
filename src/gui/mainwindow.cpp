@@ -74,6 +74,7 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	// Slots connections
 
 	// Timer signal for getting proc info
+	run_timer=TRUE;
 	connect(timer, SIGNAL(timeout()), this, SLOT(CoreFunction_GetProcProccessInfo()));
 
 	connect(tbwGeneral, SIGNAL(currentChanged(int)), this, SLOT(CoreFunction_ResizeContent(int)));
@@ -538,8 +539,7 @@ void MainWindow::CoreFunction_WineRunProgram(QString exec, QStringList args, QSt
 	if (!proc->startDetached( exec, args, wrkdir)){
 		statusBar()->showMessage(tr("Error: can't start %1").arg(exec));
 	} else {
-		proc->waitForStarted ();
-		statusBar()->showMessage(tr("Start: Done"));
+		statusBar()->showMessage(tr("Start: Done (For more info, run in console mode)"));
 	}
 
 	return;
@@ -1245,38 +1245,32 @@ void MainWindow::CoreFunction_ResizeContent(int tabIndex){
 	*/
 
 	switch (tabIndex){
-		case 0:
-			// Stopping timer for reading /proc
-			timer->stop();
-		break;
 		case 1:
 			//Initiate /proc reading
-			CoreFunction_GetProcProccessInfo();
-			// Starting timer for reading /proc
-			timer->start(1000);
+			if (run_timer){
+				CoreFunction_GetProcProccessInfo();
+				// Starting timer for reading /proc
+				timer->start(1000);
+			}
 
-		/*	gbProcessList->setGeometry(3, 3, tbwGeneral->width()-gbControl->width()-12, tbwGeneral->height()-(gbProccesInfo->height()+33));
-
-			gbControl->setGeometry(tbwGeneral->width()-gbControl->width()-7, 3, 142, gbProcessList->height());
-
-			gbProccesInfo->setGeometry(3, tbwGeneral->height()-(gbProccesInfo->height()+30),  tbwGeneral->width()-10, gbProccesInfo->height());
-		*/
-
-			procToolBar->setFixedWidth (tbwGeneral->width()-10);
-
-			tableProc->setColumnWidth (0, 60);
-			tableProc->setColumnWidth (1, 120);
-			tableProc->setColumnWidth (2, 40);
-			tableProc->setColumnWidth (3, tableProc->width()-241);
+			tableProc->resizeRowsToContents();
+			tableProc->resizeColumnsToContents();
+			tableProc->horizontalHeader()->setStretchLastSection(TRUE);
 		break;
 		case 3:
-			prefixToolBar->setFixedWidth (tbwGeneral->width()-10);
 
-			tablePrefix->setColumnWidth (0, 120);
-			tablePrefix->setColumnWidth (1, 120);
-			tablePrefix->setColumnWidth (2, tablePrefix->width()-261);
+			tablePrefix->resizeRowsToContents();
+			tablePrefix->resizeColumnsToContents();
+			tablePrefix->horizontalHeader()->setStretchLastSection(TRUE);
 
-			timer->stop();
+			// Stopping timer for reading /proc
+			if (run_timer)
+				timer->stop();
+		break;
+		default:
+			// Stopping timer for reading /proc
+			if (run_timer)
+				timer->stop();
 		break;
 	}
 	
@@ -1297,8 +1291,7 @@ void MainWindow::processRenice_Click(void){
 		int curNice;
 		curNice = tableProc->item(rowNum, 2)->text().toInt();
 
-     int i = QInputDialog::getInteger(this, tr("Select process priority"),
-                                      tr("<p>Priority value can be in<br>the range from PRIO_MIN (-20)<br>to PRIO_MAX (20).</p><p>See \"man renice\" for details.</p>"), curNice, -20, 20, 1, &ok);
+     int i = QInputDialog::getInteger(this, tr("Select process priority"), tr("<p>Priority value can be in<br>the range from PRIO_MIN (-20)<br>to PRIO_MAX (20).</p><p>See \"man renice\" for details.</p>"), curNice, -20, 20, 1, &ok);
 
      if (ok)
          CoreFunction_SetProcNicePriority(i, tableProc->item(rowNum, 0)->text().toInt());
@@ -1333,6 +1326,9 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		its fully wrighted with QT and might work more stable =)
 	*/
 
+	if (!run_timer)
+		return;
+
 	QString name, procstat, path, prefix, env_arg, nice;
 
 	#ifdef _OS_LINUX_
@@ -1352,8 +1348,10 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 	if (!dir.exists()){
 		int ret = QMessageBox::warning(this, tr("Error"), message, QMessageBox::Retry, QMessageBox::Ignore);
 
-		if (ret == QMessageBox::Ignore)
+		if (ret == QMessageBox::Ignore){
 			timer->stop();
+			run_timer=FALSE;
+		}
 		return;
 	}
 
@@ -1445,9 +1443,8 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 	#endif
 
 	#ifdef _OS_FREEBSD_
-
 		kvm_t *kd;
-		int cntproc, i, ni, ipid;
+		int cntproc, i, ni, ipid, ret;
 
 		struct kinfo_proc *kp;
 		struct proc *proc;
@@ -1456,12 +1453,22 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 
 		kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, buf);
 			if (!kd){
-				QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_openfiles.</p><p>In most case q4wine require access to /dev/mem witch can be readed only by kmem group.</p><p>Please make shure thet you run q4wine with kmem groupe id</p>"), QMessageBox::Retry, QMessageBox::Ignore);
+				ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_openfiles.</p><p>In most case q4wine require access to /dev/mem witch can be readed only by kmem group.</p><p>Please make shure thet you run q4wine with kmem group id</p>"), QMessageBox::Retry, QMessageBox::Ignore);
+	
+				if (ret == QMessageBox::Ignore){
+					timer->stop();
+					run_timer=FALSE;
+				}
 				return;
 			}
 		kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &cntproc);
 			if (!kp){
-				QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_getprocs.</p><p>In most case q4wine require access to /dev/mem witch can be readed only by kmem group.</p><p>Please make shure thet you run q4wine with kmem groupe id</p>"), QMessageBox::Retry, QMessageBox::Ignore);
+				ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_getprocs.</p><p>In most case q4wine require access to /dev/mem witch can be readed only by kmem group.</p><p>Please make shure thet you run q4wine with kmem group id</p>"), QMessageBox::Retry, QMessageBox::Ignore);
+
+				if (ret == QMessageBox::Ignore){
+					timer->stop();
+					run_timer=FALSE;
+				}
 				return;
 			}
 
@@ -1576,6 +1583,8 @@ void MainWindow::cmdCreateFake_Click(){
 				if (exportProcess->exec()!=QDialog::Accepted){
 					return;
 				}
+		} else {
+			return;
 		}
 	}
 

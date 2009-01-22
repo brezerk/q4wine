@@ -40,6 +40,8 @@
 #include <QMessageBox>
 #include <QKeyEvent>
 #include <QSqlQuery>
+#include <QHeaderView>
+#include <QTableWidget>
 
 #include "config.h"
 #include "process.h"

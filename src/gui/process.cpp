@@ -38,7 +38,7 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 	myProcess = new QProcess(parent);
 	myProcess->setEnvironment(env);
 	connect(myProcess, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(slotFinished(int, QProcess::ExitStatus)));
-	
+	connect(myProcess, SIGNAL(error(QProcess::ProcessError)), this, SLOT(slotError(QProcess::ProcessError)));	
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_clicked()));
 
 	lblInfo->setText(info);
@@ -56,7 +56,14 @@ void Process::cmdCancel_clicked(void){
 	return;
 }
 
-void Process::slotFinished(int, QProcess::ExitStatus){
+void Process::slotError(QProcess::ProcessError err){
+	qDebug()<<"Error is: "<<err;
+	return;
+}
+
+void Process::slotFinished(int, QProcess::ExitStatus exitc){
+			qDebug()<<exitc;
+
 			if (myProcess->exitCode()!=0){
 	
 				QString lang;

@@ -44,6 +44,7 @@
 #include <QWidget>
 #include <QMessageBox>
 #include <QDir>
+#include <QSizePolicy>
 
 #include <ui_MainWindow.h>
 
@@ -291,6 +292,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 	protected:
 		// Event filter
 		bool eventFilter(QObject *obj, QEvent *event);
+		bool run_timer;
 		void closeEvent(QCloseEvent *event);
 		
 		//Resource\theme loader

@@ -121,6 +121,10 @@ void Run::cmdAdd_Click(){
 		twDlls->setItem(0, 1, newItem);
 		newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
 	}
+
+	twDlls->resizeRowsToContents();
+	twDlls->resizeColumnsToContents();
+	twDlls->horizontalHeader()->setStretchLastSection(TRUE);
 	return;
 }
 
@@ -164,7 +168,8 @@ void Run::cmdOk_Click(){
 	execObj.winedebug = txtWinedebug->text();
 	execObj.display = txtDisplay->text();
 	execObj.wrkdir = txtWorkDir->text();
-	
+	execObj.nice = txtNice->text();
+	execObj.desktop = txtDesktopSize->text();
 	
 	accept();
 	return;	
@@ -194,12 +199,12 @@ void Run::getWineDlls(QString winedll_path){
 	cboxDlls->clear();
 	
 	if (winedll_path.isEmpty()){
-		QSettings settings(APP_NAME, "default");
+		QSettings settings(APP_SHORT_NAME, "default");
 		settings.beginGroup("wine");
 		winedll_path=settings.value("WineLibs").toString();
 		settings.endGroup();
 	}
-		
+
 	QDir dir(winedll_path);
 	dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
 	
@@ -253,7 +258,7 @@ void Run::comboPrefixes_indexChanged (int){
 	query.bindValue(":name", comboPrefixes->currentText());
 	query.exec();
 	query.first();
-			
+
 	getWineDlls(query.value(0).toString());
 	prefix_dir=query.value(1).toString();
 	query.clear();
@@ -279,12 +284,12 @@ void Run::cbUseConsole_stateChanged(int){
 }
 
 void Run::ResizeContent(int TabIndex){
-
 	switch (TabIndex){
 		case 1:
-			twDlls->setColumnWidth (0, twDlls->width()/2-11);
-			twDlls->setColumnWidth (1, twDlls->width()/2-11);
-			break;
+			twDlls->resizeRowsToContents();
+			twDlls->resizeColumnsToContents();
+			twDlls->horizontalHeader()->setStretchLastSection(TRUE);
+		break;
 	}
 	
 	return;

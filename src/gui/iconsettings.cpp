@@ -268,10 +268,11 @@ bool IconSettings::eventFilter( QObject *object, QEvent *event )
 void IconSettings::ResizeContent(int TabIndex){
 
 	switch (TabIndex){
-		case 2:
-				twDlls->setColumnWidth (0, twDlls->width()/2-11);
-				twDlls->setColumnWidth (1, twDlls->width()/2-11);
-			break;
+		case 1:
+			twDlls->resizeRowsToContents();
+			twDlls->resizeColumnsToContents();
+			twDlls->horizontalHeader()->setStretchLastSection(TRUE);
+		break;
 	}
 	
 	return;
@@ -322,6 +323,10 @@ void IconSettings::cmdAdd_Click(){
 		twDlls->setItem(0, 1, newItem);
 		newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
 	}
+
+	twDlls->resizeRowsToContents();
+	twDlls->resizeColumnsToContents();
+	twDlls->horizontalHeader()->setStretchLastSection(TRUE);
 	return;
 }
 

@@ -45,6 +45,8 @@
 #include <QSqlRelation>
 #include <QSettings>
 #include <QKeyEvent>
+#include <QHeaderView>
+#include <QTableWidget>
 
 #include "config.h"
 #include "iconsview.h"
