@@ -57,25 +57,41 @@ void Process::cmdCancel_clicked(void){
 }
 
 void Process::slotError(QProcess::ProcessError err){
-	switch (err){
-		case 0:
-			QMessageBox::warning(this, tr("Error"), tr("Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program."));
-		break;
-		case 1:
-			QMessageBox::warning(this, tr("Error"), tr("Process: The process crashed some time after starting successfully."));
-		break;
-		case 3:
-			QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to read from the process. For example, the process may not be running."));
-		break;
-		case 4:
-			QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel."));
-		break;
-		case 5:
-			QMessageBox::warning(this, tr("Error"), tr("Process: An unknown error occurred. This is the default return value of error()."));
-		break;
-	}
+
+	if (myProcess->exitCode()!=0){
 	
-	qDebug()<<myProcess->exitCode();
+		QString lang;
+		// Getting env LANG variable
+		lang = getenv("LANG");
+		lang = lang.split(".").at(1);
+		
+		if (lang.isNull())
+			lang = "UTF8";
+				
+		QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+			QString string = codec->toUnicode(myProcess->readAllStandardError());
+			if (!string.isEmpty()){
+				QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Error log:<br>%1").arg(string));
+			} else {
+					switch (err){
+						case 0:
+							QMessageBox::warning(this, tr("Error"), tr("Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program."));
+						break;
+						case 1:
+							QMessageBox::warning(this, tr("Error"), tr("Process: The process crashed some time after starting successfully."));
+						break;
+						case 3:
+							QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to read from the process. For example, the process may not be running."));
+						break;
+						case 4:
+							QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel."));
+						break;
+						case 5:
+							QMessageBox::warning(this, tr("Error"), tr("Process: An unknown error occurred. This is the default return value of error()."));
+						break;
+					}
+			}
+	}
 
 	reject ();
 	return;
