@@ -1273,7 +1273,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2286"/>
+        <location filename="../gui/mainwindow.cpp" line="2280"/>
         <source>Options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1397,663 +1397,663 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="241"/>
+        <location filename="../gui/mainwindow.cpp" line="235"/>
         <source>SELECT name, desc FROM icon WHERE dir_id=(SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=&quot;%1&quot;) AND name=&quot;%2&quot;) and name=&quot;%3&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="243"/>
+        <location filename="../gui/mainwindow.cpp" line="237"/>
         <source>SELECT name, desc FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=&quot;%1&quot;) AND  dir_id ISNULL AND name=&quot;%2&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="247"/>
+        <location filename="../gui/mainwindow.cpp" line="241"/>
         <source>Program: %1&lt;br&gt; Description: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="263"/>
+        <location filename="../gui/mainwindow.cpp" line="257"/>
         <source>Can&apos;t find wine binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="265"/>
+        <location filename="../gui/mainwindow.cpp" line="259"/>
         <source>Can&apos;t find wine server binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="267"/>
+        <location filename="../gui/mainwindow.cpp" line="261"/>
         <source>Can&apos;t find wine loader.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="269"/>
+        <location filename="../gui/mainwindow.cpp" line="263"/>
         <source>Can&apos;t find wine library directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="281"/>
+        <location filename="../gui/mainwindow.cpp" line="275"/>
         <source>Can&apos;t find theme.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="288"/>
+        <location filename="../gui/mainwindow.cpp" line="282"/>
         <source>Can&apos;t find tar binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="290"/>
+        <location filename="../gui/mainwindow.cpp" line="284"/>
         <source>Can&apos;t find mount binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="292"/>
+        <location filename="../gui/mainwindow.cpp" line="286"/>
         <source>Can&apos;t find umount binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="294"/>
+        <location filename="../gui/mainwindow.cpp" line="288"/>
         <source>Can&apos;t find sudo binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="296"/>
+        <location filename="../gui/mainwindow.cpp" line="290"/>
         <source>Can&apos;t find nice binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="298"/>
+        <location filename="../gui/mainwindow.cpp" line="292"/>
         <source>Can&apos;t find renice binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="300"/>
+        <location filename="../gui/mainwindow.cpp" line="294"/>
         <source>Can&apos;t find sh binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="305"/>
+        <location filename="../gui/mainwindow.cpp" line="299"/>
         <source>Can&apos;t find console binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="312"/>
+        <location filename="../gui/mainwindow.cpp" line="306"/>
         <source>Can&apos;t find wrestool binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="314"/>
+        <location filename="../gui/mainwindow.cpp" line="308"/>
         <source>Can&apos;t find icotool binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1776"/>
+        <location filename="../gui/mainwindow.cpp" line="1770"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="358"/>
+        <location filename="../gui/mainwindow.cpp" line="352"/>
         <source>&lt;p&gt;%1&lt;/p&gt;&lt;p&gt;File or path not exists: &quot;%2&quot;&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="359"/>
+        <location filename="../gui/mainwindow.cpp" line="353"/>
         <source>Warning: &quot;%1&quot; use options dialog for fix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="370"/>
+        <location filename="../gui/mainwindow.cpp" line="364"/>
         <source>Starting programm...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="458"/>
+        <location filename="../gui/mainwindow.cpp" line="452"/>
         <source> WINEPREFIX=%1 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="461"/>
+        <location filename="../gui/mainwindow.cpp" line="455"/>
         <source> WINEPREFIX=%1/.wine </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="467"/>
+        <location filename="../gui/mainwindow.cpp" line="461"/>
         <source> WINEDLLPATH=%1 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="473"/>
+        <location filename="../gui/mainwindow.cpp" line="467"/>
         <source> WINELOADER=%1 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="479"/>
+        <location filename="../gui/mainwindow.cpp" line="473"/>
         <source> WINESERVER=%1 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="483"/>
+        <location filename="../gui/mainwindow.cpp" line="477"/>
         <source> WINEDLLOVERRIDES=&quot;%1&quot; </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="487"/>
+        <location filename="../gui/mainwindow.cpp" line="481"/>
         <source> WINEDEBUG=%1 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="491"/>
+        <location filename="../gui/mainwindow.cpp" line="485"/>
         <source> DISPLAY=%1 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="540"/>
+        <location filename="../gui/mainwindow.cpp" line="534"/>
         <source>Error: can&apos;t start %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="560"/>
+        <location filename="../gui/mainwindow.cpp" line="554"/>
         <source>Program: &lt;br&gt; Description:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1523"/>
+        <location filename="../gui/mainwindow.cpp" line="1517"/>
         <source>%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="649"/>
+        <location filename="../gui/mainwindow.cpp" line="643"/>
         <source>SELECT id,name FROM dir WHERE prefix_id=%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2370"/>
+        <location filename="../gui/mainwindow.cpp" line="2364"/>
         <source>Mount iso...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1054"/>
+        <location filename="../gui/mainwindow.cpp" line="1048"/>
         <source>mount [%1]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1055"/>
+        <location filename="../gui/mainwindow.cpp" line="1049"/>
         <source>umount [%1]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1059"/>
+        <location filename="../gui/mainwindow.cpp" line="1053"/>
         <source>mount [none]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1060"/>
+        <location filename="../gui/mainwindow.cpp" line="1054"/>
         <source>umount [none]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1294"/>
+        <location filename="../gui/mainwindow.cpp" line="1288"/>
         <source>Select process priority</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1294"/>
+        <location filename="../gui/mainwindow.cpp" line="1288"/>
         <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1312"/>
+        <location filename="../gui/mainwindow.cpp" line="1306"/>
         <source>reniceing...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1317"/>
+        <location filename="../gui/mainwindow.cpp" line="1311"/>
         <source>Renice fail fail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3203"/>
+        <location filename="../gui/mainwindow.cpp" line="3197"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1575"/>
+        <location filename="../gui/mainwindow.cpp" line="1569"/>
         <source>There are other Fake drive installed in %1 prefix directory.&lt;br&gt;&lt;br&gt;Do you wish to REMOVE ALL FILES from prefix folder?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1783"/>
+        <location filename="../gui/mainwindow.cpp" line="1777"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1783"/>
+        <location filename="../gui/mainwindow.cpp" line="1777"/>
         <source>Removing old fake drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1646"/>
+        <location filename="../gui/mainwindow.cpp" line="1640"/>
         <source>This action will send a TREM(-9) signal to all wine proccess with WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Do you realy whant it? </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1650"/>
+        <location filename="../gui/mainwindow.cpp" line="1644"/>
         <source>env WINEPREFIX=&quot;%1&quot; wineserver -kill</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1667"/>
+        <location filename="../gui/mainwindow.cpp" line="1661"/>
         <source>This action will send a TREM(-9) signal to proccess &apos;%2&apos; pid: %1&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you realy whant it? </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1699"/>
+        <location filename="../gui/mainwindow.cpp" line="1693"/>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1704"/>
+        <location filename="../gui/mainwindow.cpp" line="1698"/>
         <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1760"/>
+        <location filename="../gui/mainwindow.cpp" line="1754"/>
         <source>Select file to import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1879"/>
+        <location filename="../gui/mainwindow.cpp" line="1873"/>
         <source>Images (*.tbz)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1776"/>
+        <location filename="../gui/mainwindow.cpp" line="1770"/>
         <source>Do you really wish to delete all old prefix files?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1808"/>
+        <location filename="../gui/mainwindow.cpp" line="1802"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1808"/>
+        <location filename="../gui/mainwindow.cpp" line="1802"/>
         <source>Importing prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1879"/>
+        <location filename="../gui/mainwindow.cpp" line="1873"/>
         <source>Select file to export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1899"/>
+        <location filename="../gui/mainwindow.cpp" line="1893"/>
         <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1899"/>
+        <location filename="../gui/mainwindow.cpp" line="1893"/>
         <source>Exporting prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3088"/>
+        <location filename="../gui/mainwindow.cpp" line="3082"/>
         <source>WIP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2085"/>
+        <location filename="../gui/mainwindow.cpp" line="2079"/>
         <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2101"/>
+        <location filename="../gui/mainwindow.cpp" line="2095"/>
         <source>Open image file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2101"/>
+        <location filename="../gui/mainwindow.cpp" line="2095"/>
         <source>Win32 Executable (*.exe *.dll)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2140"/>
+        <location filename="../gui/mainwindow.cpp" line="2134"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2140"/>
+        <location filename="../gui/mainwindow.cpp" line="2134"/>
         <source>Exporting icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2149"/>
+        <location filename="../gui/mainwindow.cpp" line="2143"/>
         <source>%1/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2166"/>
+        <location filename="../gui/mainwindow.cpp" line="2160"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2166"/>
+        <location filename="../gui/mainwindow.cpp" line="2160"/>
         <source>Converting icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2200"/>
+        <location filename="../gui/mainwindow.cpp" line="2194"/>
         <source>Stop current</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2204"/>
+        <location filename="../gui/mainwindow.cpp" line="2198"/>
         <source>Stop wine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2208"/>
+        <location filename="../gui/mainwindow.cpp" line="2202"/>
         <source>Refresh list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2212"/>
+        <location filename="../gui/mainwindow.cpp" line="2206"/>
         <source>Renice</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2260"/>
+        <location filename="../gui/mainwindow.cpp" line="2254"/>
         <source>New</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2221"/>
+        <location filename="../gui/mainwindow.cpp" line="2215"/>
         <source>Create new directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2278"/>
+        <location filename="../gui/mainwindow.cpp" line="2272"/>
         <source>Rename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2225"/>
+        <location filename="../gui/mainwindow.cpp" line="2219"/>
         <source>Rename current directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2282"/>
+        <location filename="../gui/mainwindow.cpp" line="2276"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2229"/>
+        <location filename="../gui/mainwindow.cpp" line="2223"/>
         <source>Delete current directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2232"/>
+        <location filename="../gui/mainwindow.cpp" line="2226"/>
         <source>Unmount cd drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2233"/>
+        <location filename="../gui/mainwindow.cpp" line="2227"/>
         <source>Unmounts cdrom drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2298"/>
+        <location filename="../gui/mainwindow.cpp" line="2292"/>
         <source>mount ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2299"/>
+        <location filename="../gui/mainwindow.cpp" line="2293"/>
         <source>Browse for other image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2240"/>
+        <location filename="../gui/mainwindow.cpp" line="2234"/>
         <source>Configure wine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2241"/>
+        <location filename="../gui/mainwindow.cpp" line="2235"/>
         <source>Runs winecfg for current prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2244"/>
+        <location filename="../gui/mainwindow.cpp" line="2238"/>
         <source>App install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2245"/>
+        <location filename="../gui/mainwindow.cpp" line="2239"/>
         <source>Runs application install wizard for current prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2248"/>
+        <location filename="../gui/mainwindow.cpp" line="2242"/>
         <source>App uninstall</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2249"/>
+        <location filename="../gui/mainwindow.cpp" line="2243"/>
         <source>Runs application uninstall wizard for current prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2256"/>
+        <location filename="../gui/mainwindow.cpp" line="2250"/>
         <source>Run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2261"/>
+        <location filename="../gui/mainwindow.cpp" line="2255"/>
         <source>Create new icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2264"/>
+        <location filename="../gui/mainwindow.cpp" line="2258"/>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2265"/>
+        <location filename="../gui/mainwindow.cpp" line="2259"/>
         <source>Cut selected icons to buffer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2268"/>
+        <location filename="../gui/mainwindow.cpp" line="2262"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2269"/>
+        <location filename="../gui/mainwindow.cpp" line="2263"/>
         <source>Copy selected icons to buffer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2272"/>
+        <location filename="../gui/mainwindow.cpp" line="2266"/>
         <source>Paste</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2273"/>
+        <location filename="../gui/mainwindow.cpp" line="2267"/>
         <source>Paste selected icons from buffer to selected folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2279"/>
+        <location filename="../gui/mainwindow.cpp" line="2273"/>
         <source>Rename current icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2283"/>
+        <location filename="../gui/mainwindow.cpp" line="2277"/>
         <source>Delete current icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2287"/>
+        <location filename="../gui/mainwindow.cpp" line="2281"/>
         <source>Modify current icon options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2290"/>
+        <location filename="../gui/mainwindow.cpp" line="2284"/>
         <source>mount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2291"/>
+        <location filename="../gui/mainwindow.cpp" line="2285"/>
         <source>Mount image from icon options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2294"/>
+        <location filename="../gui/mainwindow.cpp" line="2288"/>
         <source>umount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2295"/>
+        <location filename="../gui/mainwindow.cpp" line="2289"/>
         <source>Unmount image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2307"/>
+        <location filename="../gui/mainwindow.cpp" line="2301"/>
         <source>Create new prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2311"/>
+        <location filename="../gui/mainwindow.cpp" line="2305"/>
         <source>Import prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2316"/>
+        <location filename="../gui/mainwindow.cpp" line="2310"/>
         <source>Export prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2321"/>
+        <location filename="../gui/mainwindow.cpp" line="2315"/>
         <source>Delete prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2326"/>
+        <location filename="../gui/mainwindow.cpp" line="2320"/>
         <source>Edit prefix settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2390"/>
+        <location filename="../gui/mainwindow.cpp" line="2384"/>
         <source>%1/%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2395"/>
+        <location filename="../gui/mainwindow.cpp" line="2389"/>
         <source>:/%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2455"/>
+        <location filename="../gui/mainwindow.cpp" line="2449"/>
         <source>Delete Icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2455"/>
+        <location filename="../gui/mainwindow.cpp" line="2449"/>
         <source>Do you want to delete all selected icons?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2532"/>
+        <location filename="../gui/mainwindow.cpp" line="2526"/>
         <source>Enter new icon name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2532"/>
+        <location filename="../gui/mainwindow.cpp" line="2526"/>
         <source>Icon name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2556"/>
+        <location filename="../gui/mainwindow.cpp" line="2550"/>
         <source>Sorry, but icon named %1 already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3062"/>
+        <location filename="../gui/mainwindow.cpp" line="3056"/>
         <source>Open ISO Image file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2682"/>
+        <location filename="../gui/mainwindow.cpp" line="2676"/>
         <source>It seems no mount point was set in icon options.&lt;br&gt;You might need to set it manualy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2677"/>
+        <location filename="../gui/mainwindow.cpp" line="2671"/>
         <source>It seems no image file was set in icon options.&lt;br&gt;You might need to set it manualy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2773"/>
+        <location filename="../gui/mainwindow.cpp" line="2767"/>
         <source>Sorry. Cannot copy or move in to the same file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2851"/>
+        <location filename="../gui/mainwindow.cpp" line="2845"/>
         <source>Sorry. It seems file already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2852"/>
+        <location filename="../gui/mainwindow.cpp" line="2846"/>
         <source>Sorry. It seems file already exists.&lt;br&gt;Please rename it, or cancel paste operation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2987"/>
+        <location filename="../gui/mainwindow.cpp" line="2981"/>
         <source>Enter new directory name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3112"/>
+        <location filename="../gui/mainwindow.cpp" line="3106"/>
         <source>Directory name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3088"/>
+        <location filename="../gui/mainwindow.cpp" line="3082"/>
         <source>Sorry, no install wizard yet. It&apos;l implemented at v0.110.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3112"/>
+        <location filename="../gui/mainwindow.cpp" line="3106"/>
         <source>Enter new name for directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3142"/>
+        <location filename="../gui/mainwindow.cpp" line="3136"/>
         <source>Q4Wine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3142"/>
+        <location filename="../gui/mainwindow.cpp" line="3136"/>
         <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3203"/>
+        <location filename="../gui/mainwindow.cpp" line="3197"/>
         <source>Sorry, but prefix already have directory named %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3433"/>
+        <location filename="../gui/mainwindow.cpp" line="3427"/>
         <source>Mounting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3436"/>
+        <location filename="../gui/mainwindow.cpp" line="3430"/>
         <source>Image successfully mounted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3438"/>
+        <location filename="../gui/mainwindow.cpp" line="3432"/>
         <source>Image mount fail</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2068,37 +2068,37 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3066"/>
+        <location filename="../gui/mainwindow.cpp" line="3060"/>
         <source>It seems no mount point was set in prefix options.&lt;br&gt;You might need to set it manualy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1548"/>
+        <location filename="../gui/mainwindow.cpp" line="1542"/>
         <source>Total process: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2201"/>
+        <location filename="../gui/mainwindow.cpp" line="2195"/>
         <source>Send TERM signal to selected process</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2205"/>
+        <location filename="../gui/mainwindow.cpp" line="2199"/>
         <source>Send TERM signal to main wine process</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2209"/>
+        <location filename="../gui/mainwindow.cpp" line="2203"/>
         <source>Refresh process list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2213"/>
+        <location filename="../gui/mainwindow.cpp" line="2207"/>
         <source>Set process priority</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2306"/>
+        <location filename="../gui/mainwindow.cpp" line="2300"/>
         <source>Create new</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2129,81 +2129,76 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="175"/>
-        <source>&lt;p&gt;q4wine can&apos;t locate winetricks!&lt;/p&gt;&lt;p&gt;The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks. Right-click on that link and use &apos;save as&apos; to save a fresh copy. Or you can get it from the commandline with the command:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="181"/>
         <source>&lt;p&gt;You do not set default console binary.&lt;/p&gt;&lt;p&gt;Set it into q4wine option dialog.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="542"/>
+        <location filename="../gui/mainwindow.cpp" line="536"/>
         <source>Start: Done (For more info, run in console mode)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3451"/>
+        <location filename="../gui/mainwindow.cpp" line="3445"/>
         <source>%1 | grep %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3481"/>
+        <location filename="../gui/mainwindow.cpp" line="3475"/>
         <source>-u%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1456"/>
+        <location filename="../gui/mainwindow.cpp" line="1450"/>
         <source>&lt;p&gt;It seems q4wine can not run kvm_openfiles.&lt;/p&gt;&lt;p&gt;In most case q4wine require access to /dev/mem witch can be readed only by kmem group.&lt;/p&gt;&lt;p&gt;Please make shure thet you run q4wine with kmem group id&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1466"/>
+        <location filename="../gui/mainwindow.cpp" line="1460"/>
         <source>&lt;p&gt;It seems q4wine can not run kvm_getprocs.&lt;/p&gt;&lt;p&gt;In most case q4wine require access to /dev/mem witch can be readed only by kmem group.&lt;/p&gt;&lt;p&gt;Please make shure thet you run q4wine with kmem group id&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3058"/>
+        <location filename="../gui/mainwindow.cpp" line="3052"/>
         <source>Open ISO or NRG Image file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3058"/>
+        <location filename="../gui/mainwindow.cpp" line="3052"/>
         <source>iso and nrg files (*.iso *.nrg)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3062"/>
+        <location filename="../gui/mainwindow.cpp" line="3056"/>
         <source>iso files (*.iso)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3483"/>
+        <location filename="../gui/mainwindow.cpp" line="3477"/>
         <source>Unmounting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3470"/>
+        <location filename="../gui/mainwindow.cpp" line="3464"/>
         <source>image successfully unmounted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3472"/>
+        <location filename="../gui/mainwindow.cpp" line="3466"/>
         <source>image unmount fail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3483"/>
+        <location filename="../gui/mainwindow.cpp" line="3477"/>
         <source>running mdconfig</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3486"/>
+        <location filename="../gui/mainwindow.cpp" line="3480"/>
         <source>mdimage removed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3488"/>
+        <location filename="../gui/mainwindow.cpp" line="3482"/>
         <source>mdimage remove fail</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2338,9 +2333,6 @@ Note: leave it blank for default.</source>
     </message>
 </context>
 <context>
-    <name>Proccess</name>
-</context>
-<context>
     <name>Process</name>
     <message>
         <location filename="../Process.ui" line="16"/>
@@ -2358,42 +2350,42 @@ Note: leave it blank for default.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="137"/>
+        <location filename="../gui/process.cpp" line="134"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="135"/>
+        <location filename="../gui/process.cpp" line="132"/>
         <source>It seems procces fail.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="137"/>
+        <location filename="../gui/process.cpp" line="134"/>
         <source>It seems procces fail.&lt;br&gt;&lt;br&gt;Cant read STDERR message.&lt;br&gt;%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="98"/>
+        <location filename="../gui/process.cpp" line="96"/>
         <source>Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="101"/>
+        <location filename="../gui/process.cpp" line="99"/>
         <source>Process: The process crashed some time after starting successfully.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="104"/>
+        <location filename="../gui/process.cpp" line="102"/>
         <source>Process: An error occurred when attempting to read from the process. For example, the process may not be running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="107"/>
+        <location filename="../gui/process.cpp" line="105"/>
         <source>Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="110"/>
+        <location filename="../gui/process.cpp" line="108"/>
         <source>Process: An unknown error occurred. This is the default return value of error().</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2792,7 +2784,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="555"/>
+        <location filename="../gui/wizard.cpp" line="565"/>
         <source>&lt;none&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2918,7 +2910,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="483"/>
+        <location filename="../gui/wizard.cpp" line="493"/>
         <source>No Proxy</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3243,7 +3235,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1106"/>
+        <location filename="../gui/wizard.cpp" line="1116"/>
         <source>Next &gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3273,152 +3265,152 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="152"/>
+        <location filename="../gui/wizard.cpp" line="153"/>
         <source>New prefix creation wizard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="988"/>
+        <location filename="../gui/wizard.cpp" line="998"/>
         <source>&lt;b&gt;Prefix creation wizard&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="923"/>
+        <location filename="../gui/wizard.cpp" line="933"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="170"/>
+        <location filename="../gui/wizard.cpp" line="171"/>
         <source>First startup wizard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="171"/>
+        <location filename="../gui/wizard.cpp" line="172"/>
         <source>&lt;b&gt;First startup wizard&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="215"/>
+        <location filename="../gui/wizard.cpp" line="225"/>
         <source>Fake drive creation wizard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="216"/>
+        <location filename="../gui/wizard.cpp" line="226"/>
         <source>&lt;b&gt;Fake drive creation wizard&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="218"/>
+        <location filename="../gui/wizard.cpp" line="228"/>
         <source>&lt;p&gt;Welcome to fake drive creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="223"/>
+        <location filename="../gui/wizard.cpp" line="233"/>
         <source>Fake drive update wizard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="224"/>
+        <location filename="../gui/wizard.cpp" line="234"/>
         <source>&lt;b&gt;Fake drive update wizard&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="226"/>
+        <location filename="../gui/wizard.cpp" line="236"/>
         <source>&lt;p&gt;Welcome to fake drive update wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="308"/>
+        <location filename="../gui/wizard.cpp" line="318"/>
         <source>Open File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="310"/>
+        <location filename="../gui/wizard.cpp" line="320"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="334"/>
+        <location filename="../gui/wizard.cpp" line="344"/>
         <source>%1wineserver</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="335"/>
+        <location filename="../gui/wizard.cpp" line="345"/>
         <source>%1wine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1137"/>
+        <location filename="../gui/wizard.cpp" line="1147"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="354"/>
+        <location filename="../gui/wizard.cpp" line="364"/>
         <source>Sorry, specify %1 directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="357"/>
+        <location filename="../gui/wizard.cpp" line="367"/>
         <source>Sorry, specify %1 binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="365"/>
+        <location filename="../gui/wizard.cpp" line="375"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="368"/>
+        <location filename="../gui/wizard.cpp" line="378"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="441"/>
+        <location filename="../gui/wizard.cpp" line="451"/>
         <source>Sorry, specify proxy host.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="445"/>
+        <location filename="../gui/wizard.cpp" line="455"/>
         <source>Sorry, specify proxy port.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="503"/>
+        <location filename="../gui/wizard.cpp" line="513"/>
         <source>Enter prefix name first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="507"/>
+        <location filename="../gui/wizard.cpp" line="517"/>
         <source>SELECT name FROM prefix WHERE name=&apos;%1&apos;;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="510"/>
+        <location filename="../gui/wizard.cpp" line="520"/>
         <source>Sorry. There is other prefix with same name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="517"/>
+        <location filename="../gui/wizard.cpp" line="527"/>
         <source>Sorry, prefix path is wrong! Directory not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="521"/>
+        <location filename="../gui/wizard.cpp" line="531"/>
         <source>Select prefix directory first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="527"/>
+        <location filename="../gui/wizard.cpp" line="537"/>
         <source>Sorry, specify mount point directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="531"/>
+        <location filename="../gui/wizard.cpp" line="541"/>
         <source>Sorry, specify source device.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="640"/>
+        <location filename="../gui/wizard.cpp" line="650"/>
         <source>[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion]
 &quot;RegisteredOrganization&quot;=&quot;%1&quot;
 &quot;RegisteredOwner&quot;=&quot;%2&quot;
@@ -3428,7 +3420,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="643"/>
+        <location filename="../gui/wizard.cpp" line="653"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\WineBrowser]
@@ -3436,7 +3428,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="646"/>
+        <location filename="../gui/wizard.cpp" line="656"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\WineBrowser]
@@ -3444,7 +3436,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="649"/>
+        <location filename="../gui/wizard.cpp" line="659"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3452,7 +3444,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="652"/>
+        <location filename="../gui/wizard.cpp" line="662"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3460,7 +3452,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="655"/>
+        <location filename="../gui/wizard.cpp" line="665"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3468,7 +3460,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="658"/>
+        <location filename="../gui/wizard.cpp" line="668"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3476,7 +3468,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="661"/>
+        <location filename="../gui/wizard.cpp" line="671"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3484,7 +3476,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="664"/>
+        <location filename="../gui/wizard.cpp" line="674"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3492,7 +3484,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="667"/>
+        <location filename="../gui/wizard.cpp" line="677"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3500,7 +3492,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="670"/>
+        <location filename="../gui/wizard.cpp" line="680"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3508,7 +3500,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="673"/>
+        <location filename="../gui/wizard.cpp" line="683"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3516,7 +3508,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="676"/>
+        <location filename="../gui/wizard.cpp" line="686"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3524,7 +3516,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="679"/>
+        <location filename="../gui/wizard.cpp" line="689"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3532,7 +3524,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="684"/>
+        <location filename="../gui/wizard.cpp" line="694"/>
         <source>
 
 [HKEY_CURRENT_USER\Control Panel\Colors]
@@ -3540,269 +3532,269 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="693"/>
+        <location filename="../gui/wizard.cpp" line="703"/>
         <source>&quot;Window&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="696"/>
+        <location filename="../gui/wizard.cpp" line="706"/>
         <source>&quot;ActiveBorder&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="697"/>
+        <location filename="../gui/wizard.cpp" line="707"/>
         <source>&quot;InactiveBorder&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="698"/>
+        <location filename="../gui/wizard.cpp" line="708"/>
         <source>&quot;AppWorkSpace&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="699"/>
+        <location filename="../gui/wizard.cpp" line="709"/>
         <source>&quot;Menu&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="700"/>
+        <location filename="../gui/wizard.cpp" line="710"/>
         <source>&quot;MenuBar&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="701"/>
+        <location filename="../gui/wizard.cpp" line="711"/>
         <source>&quot;Scrollbar&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="702"/>
+        <location filename="../gui/wizard.cpp" line="712"/>
         <source>&quot;MenuHilight&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="703"/>
+        <location filename="../gui/wizard.cpp" line="713"/>
         <source>&quot;ButtonFace&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="706"/>
+        <location filename="../gui/wizard.cpp" line="716"/>
         <source>&quot;ButtonAlternateFace&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="709"/>
+        <location filename="../gui/wizard.cpp" line="719"/>
         <source>&quot;ButtonDkShadow&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="710"/>
+        <location filename="../gui/wizard.cpp" line="720"/>
         <source>&quot;ButtonShadow&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="711"/>
+        <location filename="../gui/wizard.cpp" line="721"/>
         <source>&quot;GrayText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="714"/>
+        <location filename="../gui/wizard.cpp" line="724"/>
         <source>&quot;ButtonHilight&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="717"/>
+        <location filename="../gui/wizard.cpp" line="727"/>
         <source>&quot;ButtonText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="720"/>
+        <location filename="../gui/wizard.cpp" line="730"/>
         <source>&quot;MenuText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="721"/>
+        <location filename="../gui/wizard.cpp" line="731"/>
         <source>&quot;WindowFrame&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="722"/>
+        <location filename="../gui/wizard.cpp" line="732"/>
         <source>&quot;WindowText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="725"/>
+        <location filename="../gui/wizard.cpp" line="735"/>
         <source>&quot;Hilight&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="728"/>
+        <location filename="../gui/wizard.cpp" line="738"/>
         <source>&quot;HilightText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="731"/>
+        <location filename="../gui/wizard.cpp" line="741"/>
         <source>&quot;InfoWindow&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="734"/>
+        <location filename="../gui/wizard.cpp" line="744"/>
         <source>&quot;InfoText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="772"/>
+        <location filename="../gui/wizard.cpp" line="782"/>
         <source>system</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="784"/>
+        <location filename="../gui/wizard.cpp" line="794"/>
         <source>Configure the general settings for Wine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="795"/>
+        <location filename="../gui/wizard.cpp" line="805"/>
         <source>Wineconsole is similar to wine command wcmd</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="806"/>
+        <location filename="../gui/wizard.cpp" line="816"/>
         <source>Uninstall Windows programs under Wine properly</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="817"/>
+        <location filename="../gui/wizard.cpp" line="827"/>
         <source>Wine registry editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="828"/>
+        <location filename="../gui/wizard.cpp" line="838"/>
         <source>Browse the files in the virtual Wine drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="839"/>
+        <location filename="../gui/wizard.cpp" line="849"/>
         <source>Wine CD eject tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="850"/>
+        <location filename="../gui/wizard.cpp" line="860"/>
         <source>Wine wordpad text editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="932"/>
+        <location filename="../gui/wizard.cpp" line="942"/>
         <source>&lt;b&gt;First startup wizrd&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="933"/>
+        <location filename="../gui/wizard.cpp" line="943"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="943"/>
+        <location filename="../gui/wizard.cpp" line="953"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Malakhov Alexey aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General ideia comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts witch was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1118"/>
+        <location filename="../gui/wizard.cpp" line="1128"/>
         <source>Finish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="989"/>
+        <location filename="../gui/wizard.cpp" line="999"/>
         <source>&lt;p&gt;Welcome to prefix creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful Wine prefix creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1024"/>
+        <location filename="../gui/wizard.cpp" line="1034"/>
         <source>&lt;p&gt;Please check parameters listed below before clicking &lt;b&gt;Next&lt;/b&gt;:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Prefix name:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Prefix path:&lt;/b&gt; %2&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1027"/>
+        <location filename="../gui/wizard.cpp" line="1037"/>
         <source>&lt;p&gt;Wine fake drive will be created.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1031"/>
+        <location filename="../gui/wizard.cpp" line="1041"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1033"/>
+        <location filename="../gui/wizard.cpp" line="1043"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1037"/>
+        <location filename="../gui/wizard.cpp" line="1047"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1039"/>
+        <location filename="../gui/wizard.cpp" line="1049"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1043"/>
+        <location filename="../gui/wizard.cpp" line="1053"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1045"/>
+        <location filename="../gui/wizard.cpp" line="1055"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1049"/>
+        <location filename="../gui/wizard.cpp" line="1059"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1051"/>
+        <location filename="../gui/wizard.cpp" line="1061"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1055"/>
+        <location filename="../gui/wizard.cpp" line="1065"/>
         <source>&lt;p&gt;&lt;b&gt;Quick mount options&lt;/b&gt; &lt;br&gt;&lt;b&gt;Device&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Mount point&lt;/b&gt;: %2&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1112"/>
+        <location filename="../gui/wizard.cpp" line="1122"/>
         <source>&lt;p&gt;All ready for fake drive creation. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create facke drive. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="871"/>
+        <location filename="../gui/wizard.cpp" line="881"/>
         <source>autostart</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1137"/>
+        <location filename="../gui/wizard.cpp" line="1147"/>
         <source>Sorry, i can&apos;t access to /etc/fstab</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3810,17 +3802,17 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>winetricks</name>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="87"/>
+        <location filename="../temporary/winetricks.cpp" line="88"/>
         <source>Running winetricks...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="120"/>
+        <location filename="../temporary/winetricks.cpp" line="121"/>
         <source>Plz wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="120"/>
+        <location filename="../temporary/winetricks.cpp" line="121"/>
         <source>Downloading and installing winetricks...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3830,363 +3822,379 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="42"/>
+        <location filename="../temporary/winetricks.ui" line="20"/>
         <source>art2kmin </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="47"/>
+        <location filename="../temporary/winetricks.ui" line="25"/>
         <source>colorprofile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="52"/>
+        <location filename="../temporary/winetricks.ui" line="30"/>
         <source>comctl32</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="57"/>
+        <location filename="../temporary/winetricks.ui" line="35"/>
         <source>comctl32.ocx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="62"/>
+        <location filename="../temporary/winetricks.ui" line="40"/>
         <source>controlpad</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="67"/>
+        <location filename="../temporary/winetricks.ui" line="45"/>
         <source>corefonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="72"/>
+        <location filename="../temporary/winetricks.ui" line="50"/>
         <source>dcom98</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="77"/>
+        <location filename="../temporary/winetricks.ui" line="55"/>
         <source>dirac0.8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="82"/>
+        <location filename="../temporary/winetricks.ui" line="60"/>
         <source>directx9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="87"/>
+        <location filename="../temporary/winetricks.ui" line="65"/>
         <source>divx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="92"/>
+        <location filename="../temporary/winetricks.ui" line="70"/>
         <source>dotnet11</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="97"/>
+        <location filename="../temporary/winetricks.ui" line="75"/>
         <source>dotnet20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="102"/>
+        <location filename="../temporary/winetricks.ui" line="80"/>
         <source>ffdshow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="107"/>
+        <location filename="../temporary/winetricks.ui" line="85"/>
         <source>flash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="112"/>
+        <location filename="../temporary/winetricks.ui" line="90"/>
         <source>fm20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="117"/>
+        <location filename="../temporary/winetricks.ui" line="95"/>
         <source>fontfix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="122"/>
+        <location filename="../temporary/winetricks.ui" line="100"/>
         <source>gdiplus</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="127"/>
+        <location filename="../temporary/winetricks.ui" line="105"/>
         <source>gecko</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="132"/>
+        <location filename="../temporary/winetricks.ui" line="110"/>
         <source>icodecs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="137"/>
+        <location filename="../temporary/winetricks.ui" line="115"/>
         <source>jet40</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="142"/>
+        <location filename="../temporary/winetricks.ui" line="120"/>
         <source>liberation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="147"/>
+        <location filename="../temporary/winetricks.ui" line="125"/>
         <source>mdac25</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="152"/>
+        <location filename="../temporary/winetricks.ui" line="130"/>
         <source>mdac27</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="157"/>
+        <location filename="../temporary/winetricks.ui" line="135"/>
         <source>mdac28</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="162"/>
+        <location filename="../temporary/winetricks.ui" line="140"/>
         <source>mfc40</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="167"/>
+        <location filename="../temporary/winetricks.ui" line="145"/>
         <source>mfc42</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="172"/>
+        <location filename="../temporary/winetricks.ui" line="150"/>
         <source>mono20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="177"/>
+        <location filename="../temporary/winetricks.ui" line="155"/>
         <source>msi2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="182"/>
+        <location filename="../temporary/winetricks.ui" line="160"/>
         <source>mshfixgd</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="187"/>
+        <location filename="../temporary/winetricks.ui" line="165"/>
         <source>msls31</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="192"/>
+        <location filename="../temporary/winetricks.ui" line="170"/>
         <source>msmask</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="197"/>
+        <location filename="../temporary/winetricks.ui" line="175"/>
         <source>msscript</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="202"/>
+        <location filename="../temporary/winetricks.ui" line="180"/>
         <source>msxml3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="207"/>
+        <location filename="../temporary/winetricks.ui" line="185"/>
         <source>msxml4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="212"/>
+        <location filename="../temporary/winetricks.ui" line="190"/>
         <source>msxmk6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="217"/>
+        <location filename="../temporary/winetricks.ui" line="195"/>
         <source>ogg</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="222"/>
+        <location filename="../temporary/winetricks.ui" line="200"/>
         <source>ole2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="227"/>
+        <location filename="../temporary/winetricks.ui" line="205"/>
         <source>pdh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="232"/>
+        <location filename="../temporary/winetricks.ui" line="210"/>
         <source>quicktime72</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="237"/>
+        <location filename="../temporary/winetricks.ui" line="215"/>
         <source>riched20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="242"/>
+        <location filename="../temporary/winetricks.ui" line="220"/>
         <source>riched30</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="247"/>
+        <location filename="../temporary/winetricks.ui" line="225"/>
         <source>tahoma</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="252"/>
+        <location filename="../temporary/winetricks.ui" line="230"/>
         <source>urlmon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="257"/>
+        <location filename="../temporary/winetricks.ui" line="235"/>
         <source>vb3run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="262"/>
+        <location filename="../temporary/winetricks.ui" line="240"/>
         <source>vb4run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="267"/>
+        <location filename="../temporary/winetricks.ui" line="245"/>
         <source>vb5run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="272"/>
+        <location filename="../temporary/winetricks.ui" line="250"/>
         <source>vb6run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="277"/>
+        <location filename="../temporary/winetricks.ui" line="255"/>
         <source>vcrun6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="282"/>
+        <location filename="../temporary/winetricks.ui" line="260"/>
         <source>vcrun2003</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="287"/>
+        <location filename="../temporary/winetricks.ui" line="265"/>
         <source>vcrun2005</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="292"/>
+        <location filename="../temporary/winetricks.ui" line="270"/>
         <source>vcrun2005sp1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="297"/>
+        <location filename="../temporary/winetricks.ui" line="275"/>
         <source>vcrun2008</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="302"/>
+        <location filename="../temporary/winetricks.ui" line="280"/>
         <source>wininet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="307"/>
+        <location filename="../temporary/winetricks.ui" line="285"/>
         <source>wmp9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="312"/>
+        <location filename="../temporary/winetricks.ui" line="290"/>
         <source>wmp10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="317"/>
+        <location filename="../temporary/winetricks.ui" line="295"/>
         <source>wsh56</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="322"/>
+        <location filename="../temporary/winetricks.ui" line="300"/>
         <source>wsh56js</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="327"/>
+        <location filename="../temporary/winetricks.ui" line="305"/>
         <source>wsh56vb</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="332"/>
+        <location filename="../temporary/winetricks.ui" line="310"/>
         <source>xvid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="337"/>
+        <location filename="../temporary/winetricks.ui" line="315"/>
         <source>firefox3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="342"/>
+        <location filename="../temporary/winetricks.ui" line="320"/>
         <source>ie6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="347"/>
+        <location filename="../temporary/winetricks.ui" line="325"/>
         <source>kde</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="352"/>
+        <location filename="../temporary/winetricks.ui" line="330"/>
         <source>mpc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="357"/>
+        <location filename="../temporary/winetricks.ui" line="335"/>
         <source>vlc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="362"/>
+        <location filename="../temporary/winetricks.ui" line="340"/>
         <source>allfonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="367"/>
+        <location filename="../temporary/winetricks.ui" line="345"/>
         <source>allcodecs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="372"/>
+        <location filename="../temporary/winetricks.ui" line="350"/>
         <source>fakeie6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="377"/>
+        <location filename="../temporary/winetricks.ui" line="355"/>
         <source>native_mdac</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="382"/>
+        <location filename="../temporary/winetricks.ui" line="360"/>
         <source>native_oleaut32</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="396"/>
-        <source>Compatible with winetricks &gt;= 20081223</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../temporary/winetricks.ui" line="409"/>
+        <location filename="../temporary/winetricks.ui" line="403"/>
         <source>Install Winetricks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="422"/>
-        <source>Uses cabextract</source>
+        <location filename="../temporary/winetricks.cpp" line="59"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.cpp" line="59"/>
+        <source>&lt;p&gt;q4wine can&apos;t locate winetricks!&lt;/p&gt;&lt;p&gt;The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Or use &quot;Install winetricks&quot; button.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="368"/>
+        <source>Install</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="375"/>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="395"/>
+        <source>Compatible with winetricks &gt;= 20081223
+Uses cabextract</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -44,8 +44,6 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 	lblInfo->setText(info);
 	setWindowTitle(caption);
 
-	qDebug()<<"Exec string: "<< exec << args << " Cur dir:" << dir;
-
 	myProcess->setWorkingDirectory (dir);
 	myProcess->start(exec, args);
 	
@@ -117,7 +115,6 @@ void Process::slotError(QProcess::ProcessError err){
 }
 
 void Process::slotFinished(int, QProcess::ExitStatus exitc){
-			qDebug()<<exitc;
 
 			if (myProcess->exitCode()!=0){
 	

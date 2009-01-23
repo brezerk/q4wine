@@ -135,6 +135,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 
 	Scena=WizardType;
 	Page=1;
+	QString console_w;
 
 	
 	QSettings settings(APP_SHORT_NAME, "default");
@@ -200,9 +201,18 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
                         txtReniceBin->setText(core->getWhichOut("renice"));
                         txtShBin->setText(core->getWhichOut("sh"));
 			
-                        txtConsoleBin->setText(core->getWhichOut("konsole"));
-			if (!txtConsoleBin->text().isEmpty())
-				txtConsoleArgs->setText("--noclose -e");
+						console_w = core->getWhichOut("konsole");
+							if (!console_w.isEmpty()){
+									txtConsoleBin->setText(console_w);
+									txtConsoleArgs->setText("--noclose -e");
+							} else {
+									console_w = core->getWhichOut("xterm");
+									if (!console_w.isEmpty()){
+											txtConsoleBin->setText(console_w);
+											txtConsoleArgs->setText("-e");
+									}
+							}
+				
 			
                         txtWrestoolBin->setText(core->getWhichOut("wrestool"));
                         txtIcotoolBin->setText(core->getWhichOut("icotool"));

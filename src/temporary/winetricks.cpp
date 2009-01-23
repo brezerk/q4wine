@@ -40,9 +40,9 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
 
 	setupUi(this);
 
-	connect (buttonBox, SIGNAL (accepted()), this, SLOT(onaccept()));
-	connect (buttonBox, SIGNAL (rejected()), this, SLOT(onreject()));
-	connect (btnInstWinetricks, SIGNAL (clicked()), this, SLOT (instwinetricks()));
+	connect (cmdInstall, SIGNAL (clicked()), this, SLOT(run_winetricks()));
+	connect (cmdExit, SIGNAL (clicked()), this, SLOT(accept()));
+	connect (cmdInstWinetricks, SIGNAL (clicked()), this, SLOT (install_winetricks()));
 }
 
 winetricks::~winetricks()
@@ -50,15 +50,16 @@ winetricks::~winetricks()
 	delete core;
 }
 
-void winetricks::instwinetricks() {
-	install_winetricks();
-}
-
 void winetricks::install_winetricks() {
 	downloadwinetricks ();
 }
 
 void winetricks::run_winetricks(){
+	if (core->getWhichOut("winetricks").isEmpty()){
+		QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>"));
+		return;
+	}
+
 
 	QStringList args;
 
@@ -87,10 +88,10 @@ void winetricks::run_winetricks(){
 	Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Running winetricks..."), tr("Plz wait..."));
 
 	if (exportProcess->exec()==QDialog::Accepted){
-		accept();
-	} else {
-		reject();
+		return;
 	}
+
+	return;
 
 }
 
@@ -121,21 +122,9 @@ void winetricks::downloadwinetricks () {
 
 	if (exportProcess->exec()==QDialog::Accepted){
 		QString winetricks_bin = core->getWhichOut("winetricks");
-		accept();
-	} else {
-		reject();
 	}
-}
 
-
-void winetricks::onaccept() {
-	run_winetricks();
-	this->close();
-}
-
-void winetricks::onreject() { 
-	this->close();
-	reject();
+	//exportProcess->waitForFinished(0);
 }
 
 /*
