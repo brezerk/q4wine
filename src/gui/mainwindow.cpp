@@ -1883,7 +1883,7 @@ void MainWindow::prefixExport_Click(){
 		
 		args << "-cjf";
 		args << fileName;
-		args << "./";
+		
 
 		QString prefix_path = tablePrefix->item(tablePrefix->currentRow(), 2)->text();
 		
@@ -1892,6 +1892,8 @@ void MainWindow::prefixExport_Click(){
 			prefix_path.append(HOME_PATH);
 			prefix_path.append("/.wine/");
 		}
+
+		args << prefix_path;
 		
 		//Creating process dialog
 		Process *exportProcess = new Process(args, "/bin/tar", prefix_path, tr("Exporting %1 prefix.<br>This can take a while...").arg(tablePrefix->item(tablePrefix->currentRow(), 0)->text()), tr("Exporting prefix"));

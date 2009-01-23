@@ -44,8 +44,6 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 	lblInfo->setText(info);
 	setWindowTitle(caption);
 
-	qDebug()<<exec<<args;
-
 	myProcess->setWorkingDirectory (dir);
 	myProcess->start(exec, args);
 	
@@ -59,9 +57,6 @@ void Process::cmdCancel_clicked(void){
 }
 
 void Process::slotError(QProcess::ProcessError err){
-
-	qDebug()<<myProcess->exitCode();
-
 	if (myProcess->exitCode()!=0){
 	
 		QString lang;
