@@ -44,7 +44,7 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 	lblInfo->setText(info);
 	setWindowTitle(caption);
 
-	qDebug()<<"Exec string: "<<exec, args << " Cur dir:" << dir;
+	qDebug()<<"Exec string: "<< exec << args << " Cur dir:" << dir;
 
 	myProcess->setWorkingDirectory (dir);
 	myProcess->start(exec, args);
