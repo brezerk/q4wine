@@ -1780,7 +1780,7 @@ void MainWindow::prefixImport_Click(){
 				args << "-rdf";
 				args << targetDir;
 
-				Process *exportProcess = new Process(args, "/bin/rm", HOME_PATH, tr("Removing old fake drive.<br>This can take a while..."), tr("Removing old fake drive"));
+				Process *exportProcess = new Process(args, core->getWhichOut("rm"), HOME_PATH, tr("Removing old fake drive.<br>This can take a while..."), tr("Removing old fake drive"));
 			
 				if (exportProcess->exec()!=QDialog::Accepted){
 					return;
@@ -1805,7 +1805,7 @@ void MainWindow::prefixImport_Click(){
 			args << "-C" << targetDir;
 			
 			//Creating process dialog
-			Process *exportProcess = new Process(args, "/bin/tar", HOME_PATH, tr("Importing prefix.<br>This can take a while..."), tr("Importing prefix"));
+			Process *exportProcess = new Process(args, TAR_BIN, HOME_PATH, tr("Importing prefix.<br>This can take a while..."), tr("Importing prefix"));
 	
 			exportProcess->show();
 			
@@ -1896,7 +1896,7 @@ void MainWindow::prefixExport_Click(){
 		args << prefix_path;
 		
 		//Creating process dialog
-		Process *exportProcess = new Process(args, "/bin/tar", prefix_path, tr("Exporting %1 prefix.<br>This can take a while...").arg(tablePrefix->item(tablePrefix->currentRow(), 0)->text()), tr("Exporting prefix"));
+		Process *exportProcess = new Process(args, TAR_BIN, prefix_path, tr("Exporting %1 prefix.<br>This can take a while...").arg(tablePrefix->item(tablePrefix->currentRow(), 0)->text()), tr("Exporting prefix"));
 	
 		exportProcess->show();
 	}
