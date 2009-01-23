@@ -57,7 +57,27 @@ void Process::cmdCancel_clicked(void){
 }
 
 void Process::slotError(QProcess::ProcessError err){
-	qDebug()<<"Error is: "<<err;
+	switch (err){
+		case 0:
+			QMessageBox::warning(this, tr("Error"), tr("Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program."));
+		break;
+		case 1:
+			QMessageBox::warning(this, tr("Error"), tr("Process: The process crashed some time after starting successfully."));
+		break;
+		case 3:
+			QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to read from the process. For example, the process may not be running."));
+		break;
+		case 4:
+			QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel."));
+		break;
+		case 5:
+			QMessageBox::warning(this, tr("Error"), tr("Process: An unknown error occurred. This is the default return value of error()."));
+		break;
+	}
+	
+	qDebug()<<myProcess->exitCode();
+
+	reject ();
 	return;
 }
 
