@@ -3817,357 +3817,352 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="13"/>
+        <location filename="../temporary/winetricks.ui" line="14"/>
         <source>Dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="20"/>
+        <location filename="../temporary/winetricks.ui" line="21"/>
         <source>art2kmin </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="25"/>
+        <location filename="../temporary/winetricks.ui" line="26"/>
         <source>colorprofile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="30"/>
+        <location filename="../temporary/winetricks.ui" line="31"/>
         <source>comctl32</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="35"/>
+        <location filename="../temporary/winetricks.ui" line="36"/>
         <source>comctl32.ocx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="40"/>
+        <location filename="../temporary/winetricks.ui" line="41"/>
         <source>controlpad</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="45"/>
+        <location filename="../temporary/winetricks.ui" line="46"/>
         <source>corefonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="50"/>
+        <location filename="../temporary/winetricks.ui" line="51"/>
         <source>dcom98</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="55"/>
+        <location filename="../temporary/winetricks.ui" line="56"/>
         <source>dirac0.8</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="60"/>
+        <location filename="../temporary/winetricks.ui" line="61"/>
         <source>directx9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="65"/>
+        <location filename="../temporary/winetricks.ui" line="66"/>
         <source>divx</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="70"/>
+        <location filename="../temporary/winetricks.ui" line="71"/>
         <source>dotnet11</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="75"/>
+        <location filename="../temporary/winetricks.ui" line="76"/>
         <source>dotnet20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="80"/>
+        <location filename="../temporary/winetricks.ui" line="81"/>
         <source>ffdshow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="85"/>
+        <location filename="../temporary/winetricks.ui" line="86"/>
         <source>flash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="90"/>
+        <location filename="../temporary/winetricks.ui" line="91"/>
         <source>fm20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="95"/>
+        <location filename="../temporary/winetricks.ui" line="96"/>
         <source>fontfix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="100"/>
+        <location filename="../temporary/winetricks.ui" line="101"/>
         <source>gdiplus</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="105"/>
+        <location filename="../temporary/winetricks.ui" line="106"/>
         <source>gecko</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="110"/>
+        <location filename="../temporary/winetricks.ui" line="116"/>
         <source>icodecs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="115"/>
+        <location filename="../temporary/winetricks.ui" line="121"/>
         <source>jet40</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="120"/>
+        <location filename="../temporary/winetricks.ui" line="126"/>
         <source>liberation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="125"/>
+        <location filename="../temporary/winetricks.ui" line="131"/>
         <source>mdac25</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="130"/>
+        <location filename="../temporary/winetricks.ui" line="136"/>
         <source>mdac27</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="135"/>
+        <location filename="../temporary/winetricks.ui" line="141"/>
         <source>mdac28</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="140"/>
+        <location filename="../temporary/winetricks.ui" line="146"/>
         <source>mfc40</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="145"/>
+        <location filename="../temporary/winetricks.ui" line="151"/>
         <source>mfc42</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="150"/>
+        <location filename="../temporary/winetricks.ui" line="156"/>
         <source>mono20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="155"/>
+        <location filename="../temporary/winetricks.ui" line="166"/>
         <source>msi2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="160"/>
+        <location filename="../temporary/winetricks.ui" line="171"/>
         <source>mshfixgd</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="165"/>
+        <location filename="../temporary/winetricks.ui" line="176"/>
         <source>msls31</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="170"/>
+        <location filename="../temporary/winetricks.ui" line="181"/>
         <source>msmask</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="175"/>
+        <location filename="../temporary/winetricks.ui" line="186"/>
         <source>msscript</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="180"/>
+        <location filename="../temporary/winetricks.ui" line="191"/>
         <source>msxml3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="185"/>
+        <location filename="../temporary/winetricks.ui" line="196"/>
         <source>msxml4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="190"/>
-        <source>msxmk6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../temporary/winetricks.ui" line="195"/>
+        <location filename="../temporary/winetricks.ui" line="206"/>
         <source>ogg</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="200"/>
+        <location filename="../temporary/winetricks.ui" line="211"/>
         <source>ole2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="205"/>
+        <location filename="../temporary/winetricks.ui" line="216"/>
         <source>pdh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="210"/>
+        <location filename="../temporary/winetricks.ui" line="221"/>
         <source>quicktime72</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="215"/>
+        <location filename="../temporary/winetricks.ui" line="226"/>
         <source>riched20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="220"/>
+        <location filename="../temporary/winetricks.ui" line="231"/>
         <source>riched30</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="225"/>
+        <location filename="../temporary/winetricks.ui" line="236"/>
         <source>tahoma</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="230"/>
+        <location filename="../temporary/winetricks.ui" line="241"/>
         <source>urlmon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="235"/>
+        <location filename="../temporary/winetricks.ui" line="246"/>
         <source>vb3run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="240"/>
+        <location filename="../temporary/winetricks.ui" line="251"/>
         <source>vb4run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="245"/>
+        <location filename="../temporary/winetricks.ui" line="256"/>
         <source>vb5run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="250"/>
+        <location filename="../temporary/winetricks.ui" line="261"/>
         <source>vb6run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="255"/>
+        <location filename="../temporary/winetricks.ui" line="266"/>
         <source>vcrun6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="260"/>
+        <location filename="../temporary/winetricks.ui" line="271"/>
         <source>vcrun2003</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="265"/>
+        <location filename="../temporary/winetricks.ui" line="276"/>
         <source>vcrun2005</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="270"/>
+        <location filename="../temporary/winetricks.ui" line="281"/>
         <source>vcrun2005sp1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="275"/>
+        <location filename="../temporary/winetricks.ui" line="286"/>
         <source>vcrun2008</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="280"/>
+        <location filename="../temporary/winetricks.ui" line="296"/>
         <source>wininet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="285"/>
+        <location filename="../temporary/winetricks.ui" line="301"/>
         <source>wmp9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="290"/>
+        <location filename="../temporary/winetricks.ui" line="306"/>
         <source>wmp10</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="295"/>
+        <location filename="../temporary/winetricks.ui" line="311"/>
         <source>wsh56</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="300"/>
+        <location filename="../temporary/winetricks.ui" line="316"/>
         <source>wsh56js</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="305"/>
+        <location filename="../temporary/winetricks.ui" line="321"/>
         <source>wsh56vb</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="310"/>
+        <location filename="../temporary/winetricks.ui" line="326"/>
         <source>xvid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="315"/>
+        <location filename="../temporary/winetricks.ui" line="336"/>
         <source>firefox3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="320"/>
+        <location filename="../temporary/winetricks.ui" line="341"/>
         <source>ie6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="325"/>
+        <location filename="../temporary/winetricks.ui" line="346"/>
         <source>kde</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="330"/>
+        <location filename="../temporary/winetricks.ui" line="351"/>
         <source>mpc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="335"/>
+        <location filename="../temporary/winetricks.ui" line="356"/>
         <source>vlc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="340"/>
+        <location filename="../temporary/winetricks.ui" line="361"/>
         <source>allfonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="345"/>
+        <location filename="../temporary/winetricks.ui" line="366"/>
         <source>allcodecs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="350"/>
+        <location filename="../temporary/winetricks.ui" line="371"/>
         <source>fakeie6</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="355"/>
+        <location filename="../temporary/winetricks.ui" line="376"/>
         <source>native_mdac</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="360"/>
+        <location filename="../temporary/winetricks.ui" line="381"/>
         <source>native_oleaut32</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="403"/>
+        <location filename="../temporary/winetricks.ui" line="424"/>
         <source>Install Winetricks</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4182,18 +4177,43 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="368"/>
+        <location filename="../temporary/winetricks.ui" line="389"/>
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="375"/>
+        <location filename="../temporary/winetricks.ui" line="396"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="395"/>
-        <source>Compatible with winetricks &gt;= 20081223
+        <location filename="../temporary/winetricks.ui" line="111"/>
+        <source>hosts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="161"/>
+        <source>mono22</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="201"/>
+        <source>msxml6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="291"/>
+        <source>vjrun20</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="331"/>
+        <source>autohotkey</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="416"/>
+        <source>Compatible with winetricks &gt;= 20090121
 Uses cabextract</source>
         <translation type="unfinished"></translation>
     </message>

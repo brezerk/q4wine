@@ -43,7 +43,7 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Release</value>
    <value key="QtVersionId" type="int" >0</value>
    <value key="addQDumper" type="" ></value>
-   <value key="buildDirectory" type="QString" >/home/pasha/work/q4wine/q4wine</value>
+   <value key="buildDirectory" type="QString" >/home/pasha/work/q4wine</value>
   </valuemap>
  </data>
  <data>

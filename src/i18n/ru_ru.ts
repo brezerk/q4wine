@@ -61,12 +61,12 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Developer&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Sergiev Posad, Moscow region, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../About.ui" line="274"/>
         <source>Packages Authors</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../About.ui" line="289"/>
@@ -85,7 +85,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#5f9ea0;&quot;&gt;sspphheerraa@jabber.org&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;andrey.aleksandrovich@googlemail.com&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Kharkov, UA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../About.ui" line="332"/>
@@ -102,17 +102,17 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Russian translation&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Sergiev Posad, Moscow region, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../About.ui" line="358"/>
         <source>Thanks</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../About.ui" line="364"/>
         <source>Special thanks</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../About.ui" line="373"/>
@@ -130,7 +130,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#5f9ea0;&quot;&gt;sspphheerraa@jabber.org&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;andrey.aleksandrovich@googlemail.com&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Kharkov, UA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message encoding="UTF-8">
         <location filename="../About.ui" line="415"/>
@@ -358,7 +358,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;You should also get your employer (if you work as a programmer) or school, if any, to sign a &quot;copyright disclaimer&quot; for the program, if necessary. For more information on this, and how to apply and follow the GNU GPL, see &amp;lt;http://www.gnu.org/licenses/&amp;gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;The GNU General Public License does not permit incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read &amp;lt;http://www.gnu.org/philosophy/why-not-lgpl.html&amp;gt;. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -641,7 +641,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/appsettings.cpp" line="411"/>
         <source>System Default</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -649,72 +649,72 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../core/coremethods.cpp" line="89"/>
         <source>Error</source>
-        <translation type="unfinished">Ошибка</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="89"/>
         <source>Sorry, specified prefix %1 directory not exists.</source>
-        <translation type="unfinished">Извините, указанной директории префикса %1 не существует.</translation>
+        <translation>Извините, указанной директории префикса %1 не существует.</translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="118"/>
         <source>cannot open file </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="118"/>
         <source> because </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="132"/>
         <source>File format error!</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="142"/>
         <source>Token detected:  &apos;%1&apos; contains &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="145"/>
         <source>Q4wine package</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="149"/>
         <source>name</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="154"/>
         <source>author </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="158"/>
         <source>description of package</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="163"/>
         <source> download URL</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="168"/>
         <source>site</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="173"/>
         <source>install path</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../core/coremethods.cpp" line="178"/>
         <source>contact info</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -977,12 +977,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/iconsettings.cpp" line="137"/>
         <source>SELECT name, exec, cmdargs, icon_path, desc, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND dir_id=%2 and name=&quot;%3&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="139"/>
         <source>SELECT name, exec, cmdargs, icon_path, desc, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND name=&quot;%2&quot; AND dir_id ISNULL</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1163,27 +1163,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/imagemanager.cpp" line="62"/>
         <source>%1</source>
-        <translation type="unfinished">%1</translation>
+        <translation>%1</translation>
     </message>
     <message>
         <location filename="../gui/imagemanager.cpp" line="190"/>
         <source>Open ISO or NRG Image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть файл образов ISO или NRG</translation>
     </message>
     <message>
         <location filename="../gui/imagemanager.cpp" line="190"/>
         <source>iso and nrg files (*.iso *.nrg)</source>
-        <translation type="unfinished"></translation>
+        <translation>iso и nrg файлы (*.iso *.nrg)</translation>
     </message>
     <message>
         <location filename="../gui/imagemanager.cpp" line="194"/>
         <source>Open ISO Image file</source>
-        <translation type="unfinished">Открыть файл образа ISO</translation>
+        <translation>Открыть файл образа ISO</translation>
     </message>
     <message>
         <location filename="../gui/imagemanager.cpp" line="194"/>
         <source>iso files (*.iso)</source>
-        <translation type="unfinished"></translation>
+        <translation>iso файлы (*.iso)</translation>
     </message>
 </context>
 <context>
@@ -2106,102 +2106,102 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../MainWindow.ui" line="326"/>
         <source>It (temporary) implemented by winetricks</source>
-        <translation type="unfinished"></translation>
+        <translation>Временно реализовано с помощью winetricks</translation>
     </message>
     <message>
         <location filename="../MainWindow.ui" line="333"/>
         <source>Run Winetricks</source>
-        <translation type="unfinished"></translation>
+        <translation>Запустить Winetricks</translation>
     </message>
     <message>
         <location filename="../MainWindow.ui" line="360"/>
         <source>Hi. This is development area.</source>
-        <translation type="unfinished"></translation>
+        <translation>Привет. Это поле в разработке</translation>
     </message>
     <message>
         <location filename="../MainWindow.ui" line="367"/>
         <source>Test WIS</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../MainWindow.ui" line="575"/>
         <source>Winetricks</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="175"/>
         <source>&lt;p&gt;You do not set default console binary.&lt;/p&gt;&lt;p&gt;Set it into q4wine option dialog.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Вы не установили консоль по умолчанию.&lt;/p&gt;&lt;p&gt;Установите ее в диалоге настройки q4wine.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="536"/>
         <source>Start: Done (For more info, run in console mode)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="3445"/>
         <source>%1 | grep %2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="3475"/>
         <source>-u%1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1450"/>
         <source>&lt;p&gt;It seems q4wine can not run kvm_openfiles.&lt;/p&gt;&lt;p&gt;In most case q4wine require access to /dev/mem witch can be readed only by kmem group.&lt;/p&gt;&lt;p&gt;Please make shure thet you run q4wine with kmem group id&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Видимо, q4wine не может запустить kvm_openfiles.&lt;/p&gt;&lt;p&gt;Обычно q4wine требует чтение /dev/mem (группа kmem).&lt;/p&gt;&lt;p&gt;Пожалуйста, запустите q4wine с kmem group id. (Добавьте себя в группу kmem)&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1460"/>
         <source>&lt;p&gt;It seems q4wine can not run kvm_getprocs.&lt;/p&gt;&lt;p&gt;In most case q4wine require access to /dev/mem witch can be readed only by kmem group.&lt;/p&gt;&lt;p&gt;Please make shure thet you run q4wine with kmem group id&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Видимо, q4wine не может запустить kvm_getprocs.&lt;/p&gt;&lt;p&gt;Обычно q4wine требует чтение /dev/mem (группа kmem).&lt;/p&gt;&lt;p&gt;Пожалуйста, запустите q4wine с kmem group id. (Добавьте себя в группу kmem)&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="3052"/>
         <source>Open ISO or NRG Image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть файл образов ISO или NRG</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="3052"/>
         <source>iso and nrg files (*.iso *.nrg)</source>
-        <translation type="unfinished"></translation>
+        <translation>iso и nrg файлы (*.iso *.nrg)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="3056"/>
         <source>iso files (*.iso)</source>
-        <translation type="unfinished"></translation>
+        <translation>iso файлы (*.iso)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="3477"/>
         <source>Unmounting...</source>
-        <translation type="unfinished"></translation>
+        <translation>размонтирование...</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="3464"/>
         <source>image successfully unmounted</source>
-        <translation type="unfinished"></translation>
+        <translation>Образ успешно отмонтирован</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="3466"/>
         <source>image unmount fail</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка размонтирования образа</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="3477"/>
         <source>running mdconfig</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="3480"/>
         <source>mdimage removed</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="3482"/>
         <source>mdimage remove fail</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2370,27 +2370,27 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../gui/process.cpp" line="96"/>
         <source>Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program.</source>
-        <translation type="unfinished"></translation>
+        <translation>Process: Процесс не запущен. Проверьте, что возможно, выполение программы невозможно. Или вы не имеете прав для запуска программы</translation>
     </message>
     <message>
         <location filename="../gui/process.cpp" line="99"/>
         <source>Process: The process crashed some time after starting successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Process: Произошел выход из процесса и его перезапуск.</translation>
     </message>
     <message>
         <location filename="../gui/process.cpp" line="102"/>
         <source>Process: An error occurred when attempting to read from the process. For example, the process may not be running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Process: Произошла ошибка при чтении из процесса. Например, процесс не запущен.</translation>
     </message>
     <message>
         <location filename="../gui/process.cpp" line="105"/>
         <source>Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel.</source>
-        <translation type="unfinished"></translation>
+        <translation>Process: Произошла ошибка при записи в процесс. Например, процесс не запущен.</translation>
     </message>
     <message>
         <location filename="../gui/process.cpp" line="108"/>
         <source>Process: An unknown error occurred. This is the default return value of error().</source>
-        <translation type="unfinished"></translation>
+        <translation>Process: произошла неизвестная ошибка:</translation>
     </message>
 </context>
 <context>
@@ -2634,22 +2634,22 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../Run.ui" line="383"/>
         <source>Desktop</source>
-        <translation type="unfinished">Рабочий стол</translation>
+        <translation>Рабочий стол</translation>
     </message>
     <message>
         <location filename="../Run.ui" line="407"/>
         <source>Desktop size:</source>
-        <translation type="unfinished">Размер рабочего стола:</translation>
+        <translation>Размер рабочего стола:</translation>
     </message>
     <message>
         <location filename="../Run.ui" line="651"/>
         <source>Nice level priority</source>
-        <translation type="unfinished">Уровень приоритета nice</translation>
+        <translation>Уровень приоритета nice</translation>
     </message>
     <message>
         <location filename="../Run.ui" line="678"/>
         <source>Priority:</source>
-        <translation type="unfinished">Приоритет:</translation>
+        <translation>Приоритет:</translation>
     </message>
 </context>
 <context>
@@ -3810,398 +3810,426 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../temporary/winetricks.cpp" line="88"/>
         <source>Running winetricks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Запуск winetricks...</translation>
     </message>
     <message>
         <location filename="../temporary/winetricks.cpp" line="121"/>
         <source>Plz wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста, подождите...</translation>
     </message>
     <message>
         <location filename="../temporary/winetricks.cpp" line="121"/>
         <source>Downloading and installing winetricks...</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузка и установка winetricks...</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="13"/>
+        <location filename="../temporary/winetricks.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Winetricks</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="20"/>
+        <location filename="../temporary/winetricks.ui" line="21"/>
         <source>art2kmin </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="25"/>
+        <location filename="../temporary/winetricks.ui" line="26"/>
         <source>colorprofile</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="30"/>
+        <location filename="../temporary/winetricks.ui" line="31"/>
         <source>comctl32</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="35"/>
+        <location filename="../temporary/winetricks.ui" line="36"/>
         <source>comctl32.ocx</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="40"/>
+        <location filename="../temporary/winetricks.ui" line="41"/>
         <source>controlpad</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="45"/>
+        <location filename="../temporary/winetricks.ui" line="46"/>
         <source>corefonts</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="50"/>
+        <location filename="../temporary/winetricks.ui" line="51"/>
         <source>dcom98</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="55"/>
+        <location filename="../temporary/winetricks.ui" line="56"/>
         <source>dirac0.8</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="60"/>
+        <location filename="../temporary/winetricks.ui" line="61"/>
         <source>directx9</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="65"/>
+        <location filename="../temporary/winetricks.ui" line="66"/>
         <source>divx</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="70"/>
+        <location filename="../temporary/winetricks.ui" line="71"/>
         <source>dotnet11</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="75"/>
+        <location filename="../temporary/winetricks.ui" line="76"/>
         <source>dotnet20</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="80"/>
+        <location filename="../temporary/winetricks.ui" line="81"/>
         <source>ffdshow</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="85"/>
+        <location filename="../temporary/winetricks.ui" line="86"/>
         <source>flash</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="90"/>
+        <location filename="../temporary/winetricks.ui" line="91"/>
         <source>fm20</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="95"/>
+        <location filename="../temporary/winetricks.ui" line="96"/>
         <source>fontfix</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="100"/>
+        <location filename="../temporary/winetricks.ui" line="101"/>
         <source>gdiplus</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="105"/>
+        <location filename="../temporary/winetricks.ui" line="106"/>
         <source>gecko</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="110"/>
+        <location filename="../temporary/winetricks.ui" line="116"/>
         <source>icodecs</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="115"/>
+        <location filename="../temporary/winetricks.ui" line="121"/>
         <source>jet40</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="120"/>
+        <location filename="../temporary/winetricks.ui" line="126"/>
         <source>liberation</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="125"/>
+        <location filename="../temporary/winetricks.ui" line="131"/>
         <source>mdac25</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="130"/>
+        <location filename="../temporary/winetricks.ui" line="136"/>
         <source>mdac27</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="135"/>
+        <location filename="../temporary/winetricks.ui" line="141"/>
         <source>mdac28</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="140"/>
+        <location filename="../temporary/winetricks.ui" line="146"/>
         <source>mfc40</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="145"/>
+        <location filename="../temporary/winetricks.ui" line="151"/>
         <source>mfc42</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="150"/>
+        <location filename="../temporary/winetricks.ui" line="156"/>
         <source>mono20</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="155"/>
+        <location filename="../temporary/winetricks.ui" line="166"/>
         <source>msi2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="160"/>
+        <location filename="../temporary/winetricks.ui" line="171"/>
         <source>mshfixgd</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="165"/>
+        <location filename="../temporary/winetricks.ui" line="176"/>
         <source>msls31</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="170"/>
+        <location filename="../temporary/winetricks.ui" line="181"/>
         <source>msmask</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="175"/>
+        <location filename="../temporary/winetricks.ui" line="186"/>
         <source>msscript</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="180"/>
+        <location filename="../temporary/winetricks.ui" line="191"/>
         <source>msxml3</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="185"/>
+        <location filename="../temporary/winetricks.ui" line="196"/>
         <source>msxml4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="190"/>
-        <source>msxmk6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../temporary/winetricks.ui" line="195"/>
+        <location filename="../temporary/winetricks.ui" line="206"/>
         <source>ogg</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="200"/>
+        <location filename="../temporary/winetricks.ui" line="211"/>
         <source>ole2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="205"/>
+        <location filename="../temporary/winetricks.ui" line="216"/>
         <source>pdh</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="210"/>
+        <location filename="../temporary/winetricks.ui" line="221"/>
         <source>quicktime72</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="215"/>
+        <location filename="../temporary/winetricks.ui" line="226"/>
         <source>riched20</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="220"/>
+        <location filename="../temporary/winetricks.ui" line="231"/>
         <source>riched30</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="225"/>
+        <location filename="../temporary/winetricks.ui" line="236"/>
         <source>tahoma</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="230"/>
+        <location filename="../temporary/winetricks.ui" line="241"/>
         <source>urlmon</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="235"/>
+        <location filename="../temporary/winetricks.ui" line="246"/>
         <source>vb3run</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="240"/>
+        <location filename="../temporary/winetricks.ui" line="251"/>
         <source>vb4run</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="245"/>
+        <location filename="../temporary/winetricks.ui" line="256"/>
         <source>vb5run</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="250"/>
+        <location filename="../temporary/winetricks.ui" line="261"/>
         <source>vb6run</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="255"/>
+        <location filename="../temporary/winetricks.ui" line="266"/>
         <source>vcrun6</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="260"/>
+        <location filename="../temporary/winetricks.ui" line="271"/>
         <source>vcrun2003</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="265"/>
+        <location filename="../temporary/winetricks.ui" line="276"/>
         <source>vcrun2005</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="270"/>
+        <location filename="../temporary/winetricks.ui" line="281"/>
         <source>vcrun2005sp1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="275"/>
+        <location filename="../temporary/winetricks.ui" line="286"/>
         <source>vcrun2008</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="280"/>
+        <location filename="../temporary/winetricks.ui" line="296"/>
         <source>wininet</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="285"/>
+        <location filename="../temporary/winetricks.ui" line="301"/>
         <source>wmp9</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="290"/>
+        <location filename="../temporary/winetricks.ui" line="306"/>
         <source>wmp10</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="295"/>
+        <location filename="../temporary/winetricks.ui" line="311"/>
         <source>wsh56</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="300"/>
+        <location filename="../temporary/winetricks.ui" line="316"/>
         <source>wsh56js</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="305"/>
+        <location filename="../temporary/winetricks.ui" line="321"/>
         <source>wsh56vb</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="310"/>
+        <location filename="../temporary/winetricks.ui" line="326"/>
         <source>xvid</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="315"/>
+        <location filename="../temporary/winetricks.ui" line="336"/>
         <source>firefox3</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="320"/>
+        <location filename="../temporary/winetricks.ui" line="341"/>
         <source>ie6</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="325"/>
+        <location filename="../temporary/winetricks.ui" line="346"/>
         <source>kde</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="330"/>
+        <location filename="../temporary/winetricks.ui" line="351"/>
         <source>mpc</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="335"/>
+        <location filename="../temporary/winetricks.ui" line="356"/>
         <source>vlc</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="340"/>
+        <location filename="../temporary/winetricks.ui" line="361"/>
         <source>allfonts</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="345"/>
+        <location filename="../temporary/winetricks.ui" line="366"/>
         <source>allcodecs</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="350"/>
+        <location filename="../temporary/winetricks.ui" line="371"/>
         <source>fakeie6</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="355"/>
+        <location filename="../temporary/winetricks.ui" line="376"/>
         <source>native_mdac</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="360"/>
+        <location filename="../temporary/winetricks.ui" line="381"/>
         <source>native_oleaut32</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="403"/>
+        <location filename="../temporary/winetricks.ui" line="424"/>
         <source>Install Winetricks</source>
-        <translation type="unfinished"></translation>
+        <translation>Установить Winetricks</translation>
     </message>
     <message>
         <location filename="../temporary/winetricks.cpp" line="59"/>
         <source>Error</source>
-        <translation type="unfinished">Ошибка</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../temporary/winetricks.cpp" line="59"/>
         <source>&lt;p&gt;q4wine can&apos;t locate winetricks!&lt;/p&gt;&lt;p&gt;The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Or use &quot;Install winetricks&quot; button.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;q4wine не может найти winetricks!&lt;/p&gt;&lt;p&gt;Скрипт находится на хостинге Dan Kegel на http://kegel.com/wine/winetricks. Вы может скачать его, выполнив команду: &lt;/p&gt;&lt;p&gt; wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Или используя кнопку &quot;Установить Winetricks&quot;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="368"/>
+        <location filename="../temporary/winetricks.ui" line="389"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Установить</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="375"/>
+        <location filename="../temporary/winetricks.ui" line="396"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Выход</translation>
     </message>
     <message>
         <location filename="../temporary/winetricks.ui" line="395"/>
         <source>Compatible with winetricks &gt;= 20081223
 Uses cabextract</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Совместимо с winetricks &gt;= 20081223
+Использует cabextract</translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="111"/>
+        <source>hosts</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="161"/>
+        <source>mono22</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="201"/>
+        <source>msxml6</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="291"/>
+        <source>vjrun20</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="331"/>
+        <source>autohotkey</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="416"/>
+        <source>Compatible with winetricks &gt;= 20090121
+Uses cabextract</source>
+        <translation>Совместимо с winetricks &gt;= 20090121
+Использует cabextract </translation>
     </message>
 </context>
 </TS>
