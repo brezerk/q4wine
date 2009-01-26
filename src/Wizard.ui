@@ -1226,8 +1226,7 @@ p, li { white-space: pre-wrap; }
              <item>
               <widget class="QLabel" name="label_5" >
                <property name="text" >
-                <string>Please set default user utils paths
-</string>
+                <string>&lt;p>Please set default user utils paths&lt;br>&lt;/p></string>
                </property>
               </widget>
              </item>
@@ -2727,15 +2726,15 @@ p, li { white-space: pre-wrap; }
         <zorder>widgetCreateFakeDrive1</zorder>
         <zorder>widgetCreateFakeDrive2</zorder>
         <zorder>widgetInfo</zorder>
-        <zorder>widgetCreatePrefix1</zorder>
-        <zorder>widgetCreatePrefix2</zorder>
         <zorder>widgetFirstStartup0</zorder>
         <zorder>widgetFirstStartup1</zorder>
-        <zorder>widgetFirstStartup2</zorder>
         <zorder>widgetFirstStartup3</zorder>
         <zorder>widgetCreateFakeDrive3</zorder>
         <zorder>widgetCreateFakeDrive0</zorder>
+        <zorder>widgetCreatePrefix2</zorder>
+        <zorder>widgetCreatePrefix1</zorder>
         <zorder>widgetCreatePrefix0</zorder>
+        <zorder>widgetFirstStartup2</zorder>
        </widget>
       </item>
       <item row="1" column="0" colspan="2" >
@@ -2834,7 +2833,7 @@ p, li { white-space: pre-wrap; }
  </widget>
  <layoutdefault spacing="2" margin="9" />
  <resources>
-  <include location="k4wine.qrc" />
+  <include location="q4wine.qrc" />
  </resources>
  <connections/>
 </ui>

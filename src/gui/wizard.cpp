@@ -257,6 +257,8 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	widgetFirstStartup1->setVisible(FALSE);
 	widgetFirstStartup2->setVisible(FALSE);
 	widgetFirstStartup3->setVisible(FALSE);
+
+	widgetInfo->setVisible(FALSE);
 	
 	updateScena();
 
@@ -949,7 +951,6 @@ void Wizard::updateScena(){
 						cmdBack->setEnabled(FALSE);
 					break;
 					case 2:
-						
 						txtInfo->setText(tr("<p><b><span style='font-weight:600; color:#6495ed;'>%1</span></b> was initially written by Malakhov Alexey aka John Brezerk  [<a href='mailto:brezerk@gmail.com'>brezerk@gmail.com</a>]</p><p>General ideia comes from <b><span style='font-weight:600; color:#6495ed;'>WineTools</span></b> scripts witch was initially written by Frank Hendriksen [<a href='mailto:frank@frankscorner.org'>frank@frankscorner.org</a>]</p><p>It is licensed under the <b><span style='font-weight:600; color:#6495ed;'>GPL v3</span></b>.</p><p>Send comments, bugreports, etc. to [<a href='mailto:brezerk@gmail.com'>brezerk@gmail.com</a>]</p><p><b><span style='font-weight:600; color:#6495ed;'>Note</span></b>: This software comes with absolutely no warranty. You will <b><span style='font-weight:600; color:#7D1D10;'>NOT</span></b> get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.</p><p>If you <span style='font-weight:600; color:#6495ed;'>need help</span>, ask the mailing lists at <a href='http://www.winehq.org/site/forums'>http://www.winehq.org/site/forums</a>.</p><p>If you <span style='font-weight:600; color:#6495ed;'>want support</span>, buy the commercial versions of wine: CodeWeavers CrossOver Office (<a href='http://www.codeweavers.com'>http://www.codeweavers.com</a>) for Desktop Applications</p>").arg(APP_NAME));
 						
 						widgetCreatePrefix1->setVisible(FALSE);
@@ -963,7 +964,7 @@ void Wizard::updateScena(){
 						widgetFirstStartup0->setVisible(FALSE);
 						widgetFirstStartup1->setVisible(FALSE);
 						widgetCreatePrefix1->setVisible(TRUE);
-						lblInfoPrefix1->setText("<p>Please enter default wine settings.</p><br>");
+						lblInfoPrefix1->setText(tr("<p>Please enter default wine settings.</p><br>"));
 					break;
 					case 4:
 						widgetCreatePrefix1->setVisible(FALSE);
@@ -983,6 +984,7 @@ void Wizard::updateScena(){
 						widgetInfo->setVisible(FALSE);
 					break;
 					case 7:
+						lblWizardInfo->setText(tr("<p>All ready for finishing %1 setup. </p><p>Please, press the <b>Finish</b> button to create finish setup process. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
 						widgetFirstStartup3->setVisible(FALSE);
 						widgetInfo->setVisible(TRUE);
 						cmdNext->setText(tr("Finish"));
@@ -995,8 +997,8 @@ void Wizard::updateScena(){
 				*/
 				switch (Page){
 					case 1:
-						lblCaption->setText(Wizard::tr("<b>Prefix creation wizard</b>"));
-						lblWizardInfo->setText(Wizard::tr("<p>Welcome to prefix creation wizard.</p><p>This wizard helps you to make all necessary steps for successful Wine prefix creation.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>"));
+						lblCaption->setText(tr("<b>Prefix creation wizard</b>"));
+						lblWizardInfo->setText(tr("<p>Welcome to prefix creation wizard.</p><p>This wizard helps you to make all necessary steps for successful Wine prefix creation.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>"));
 
 						widgetCreatePrefix0->setVisible(FALSE);
 						widgetCreatePrefix1->setVisible(FALSE);

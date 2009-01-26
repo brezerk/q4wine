@@ -29,7 +29,7 @@ wine
 >=sqlite-3.5.6
 >=which-2.19
 >=icoutils-0.26.0
->=qt4.4.0
+>=qt-4.4.0
 >=qt-sql4.4.0
 >=qt-gui-4.4.0
 >=qt-core-4.4.0

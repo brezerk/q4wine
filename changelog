@@ -10,7 +10,7 @@ Version 0.110
 			- FreeBSD full support (proc and mounts);
 			- nrg images mount (Linux only);
 			- new core functions class (will be moved to libq4wine shared library);
-			- updated locales;
+			- updated Ukrainian and Russian locales;
 			- basic wis xml parser class;
 			- Added nice level field to Run dialog;
 			- Added descktop size to Run dialog;
@@ -22,6 +22,7 @@ Version 0.110
 			- Table view and resize;
 			- Fixed getWineDll at Run dialog;
 			- User Locale detection bug;
+			- Copy & Paste issues;
 			- Removed deprecated konsole args;
 			- Fixed Prefix import bug;
 			- Fixed /bin/tar compilled path for import and export prefixes;

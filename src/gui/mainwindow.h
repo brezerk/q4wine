@@ -143,7 +143,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void processKillSelected_Click(void);
 		void processKillWine_Click(void);
 
-
 		/*
 		 *Icon list slots
 		 */		
@@ -169,7 +168,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		/*
 		 * Context menu slots
 		 */
-		
 			//Directory context
 			void dirAdd_Click(void);
 			void dirRename_Click(void);
@@ -241,6 +239,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 		// Directories control for context menu
 		QAction *dirAdd;
+		QAction *dirRun;
 		QAction *dirRename;
 		QAction *dirDelete; 
 		QAction *dirMountOther;

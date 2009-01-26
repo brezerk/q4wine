@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ru">
+<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -8,12 +9,12 @@
         <translation>О программе %1</translation>
     </message>
     <message>
-        <location filename="../About.ui" line="170"/>
+        <location filename="../About.ui" line="168"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../About.ui" line="189"/>
+        <location filename="../About.ui" line="187"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -26,114 +27,42 @@ p, li { white-space: pre-wrap; }
 .&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;(C) 2008-2009, brezblock core team.&lt;/p&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;http://brezblock.org.ua/&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../About.ui" line="323"/>
+        <location filename="../About.ui" line="321"/>
         <source>Authors</source>
         <translation>Авторы</translation>
     </message>
     <message>
-        <location filename="../About.ui" line="317"/>
+        <location filename="../About.ui" line="315"/>
         <source>Translation</source>
         <translation>Перевод</translation>
     </message>
     <message>
-        <location filename="../About.ui" line="406"/>
+        <location filename="../About.ui" line="404"/>
         <source>License agreement</source>
         <translation>Лицензионное соглашение</translation>
     </message>
     <message>
-        <location filename="../About.ui" line="670"/>
+        <location filename="../About.ui" line="668"/>
         <source>Ok</source>
         <translation>ОК</translation>
     </message>
     <message>
-        <location filename="../About.ui" line="247"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600;&quot;&gt;Malakhov Alexey Sergeevich&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt; (John Brezerk)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Main developer, maintainer&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#5f9ea0;&quot;&gt;brezerk@jabber.com.ua&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;brezerk@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Kiev, UA&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;Pavel Zinin&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt; (pashazz)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Developer&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Sergiev Posad, Moscow region, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../About.ui" line="274"/>
+        <location filename="../About.ui" line="272"/>
         <source>Packages Authors</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../About.ui" line="289"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600;&quot;&gt;Malakhov Alexey Sergeevich&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt; (John Brezerk)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Gentoo ebuild author&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#5f9ea0;&quot;&gt;brezerk@jabber.com.ua&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;brezerk@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Kiev, UA&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;Maloshtan Andrey Aleksandrovich&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Gentoo ebuild author&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#5f9ea0;&quot;&gt;sspphheerraa@jabber.org&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;andrey.aleksandrovich@googlemail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Kharkov, UA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../About.ui" line="332"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600;&quot;&gt;Chornoivan Uriy Olexeevich&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Ukrainian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;yurchor@ukr.net&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Kiev, UA&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;Pavel Zinin&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt; (pashazz)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Russian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Sergiev Posad, Moscow region, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../About.ui" line="358"/>
+        <location filename="../About.ui" line="356"/>
         <source>Thanks</source>
-        <translation></translation>
+        <translation>Благодарности</translation>
     </message>
     <message>
-        <location filename="../About.ui" line="364"/>
+        <location filename="../About.ui" line="362"/>
         <source>Special thanks</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../About.ui" line="373"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;Sergey V. Dyatko&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Suppot, assistance, testing and advice for FreeBSD port&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;sergey.dyatko@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Minsk, BY&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;Maloshtan Andrey Aleksandrovich&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Testing, bug reports&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#5f9ea0;&quot;&gt;sspphheerraa@jabber.org&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;andrey.aleksandrovich@googlemail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Kharkov, UA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>Отдельное спасибо</translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../About.ui" line="415"/>
+        <location filename="../About.ui" line="413"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -358,6 +287,78 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;You should also get your employer (if you work as a programmer) or school, if any, to sign a &quot;copyright disclaimer&quot; for the program, if necessary. For more information on this, and how to apply and follow the GNU GPL, see &amp;lt;http://www.gnu.org/licenses/&amp;gt;.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;The GNU General Public License does not permit incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read &amp;lt;http://www.gnu.org/philosophy/why-not-lgpl.html&amp;gt;. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../About.ui" line="245"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600;&quot;&gt;Alexey S. Malakhov&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt; (John Brezerk)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Main developer, maintainer&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#5f9ea0;&quot;&gt;brezerk@jabber.com.ua&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;brezerk@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Kiev, UA&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;Pavel&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;Zinin &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;(pashazz)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Developer&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Sergiev Posad, Moscow region, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../About.ui" line="287"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Alexey S. Malakhov&lt;/span&gt; (John Brezerk)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Gentoo ebuild author&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#5f9ea0;&quot;&gt;brezerk@jabber.com.ua&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;brezerk@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Kiev, UA&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;Andrey A. Maloshtan&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Gentoo ebuild author&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#5f9ea0;&quot;&gt;sspphheerraa@jabber.org&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;andrey.aleksandrovich@googlemail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Kharkov, UA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../About.ui" line="330"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600;&quot;&gt;Uriy O. Chornoivan&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Ukrainian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;yurchor@ukr.net&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Kiev, UA&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#000000;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;Pavel Zinin&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt; (pashazz)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Russian translation&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Sergiev Posad, Moscow region, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../About.ui" line="371"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;Sergey V. Dyatko&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#000000;&quot;&gt;Suppot, assistance, testing and advice for FreeBSD port&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;sergey.dyatko@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Minsk, BY&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:600; color:#000000;&quot;&gt;Andrey A. Maloshtan&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Testing, bug reports&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#5f9ea0;&quot;&gt;sspphheerraa@jabber.org&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;andrey.aleksandrovich@googlemail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;Kharkov, UA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
 </context>
@@ -1194,12 +1195,12 @@ p, li { white-space: pre-wrap; }
         <translation>%1 : Qt4 GUI для Wine, v%2</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="540"/>
+        <location filename="../MainWindow.ui" line="543"/>
         <source>Programs</source>
         <translation>Программы</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="555"/>
+        <location filename="../MainWindow.ui" line="558"/>
         <source>Prefixes</source>
         <translation>Префиксы</translation>
     </message>
@@ -1224,7 +1225,7 @@ p, li { white-space: pre-wrap; }
         <translation>Название:&lt;br&gt;Описание:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="545"/>
+        <location filename="../MainWindow.ui" line="548"/>
         <source>Process</source>
         <translation>Процесс</translation>
     </message>
@@ -1234,7 +1235,7 @@ p, li { white-space: pre-wrap; }
         <translation>PID</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="430"/>
+        <location filename="../MainWindow.ui" line="433"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -1254,7 +1255,7 @@ p, li { white-space: pre-wrap; }
         <translation>Всего процесссов:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="550"/>
+        <location filename="../MainWindow.ui" line="553"/>
         <source>Setup</source>
         <translation>Настроить</translation>
     </message>
@@ -1274,7 +1275,7 @@ p, li { white-space: pre-wrap; }
         <translation>Управление...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2280"/>
+        <location filename="../gui/mainwindow.cpp" line="2284"/>
         <source>Options</source>
         <translation>Параметры</translation>
     </message>
@@ -1313,72 +1314,72 @@ p, li { white-space: pre-wrap; }
         <translation>Базовые шрифты</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="435"/>
+        <location filename="../MainWindow.ui" line="438"/>
         <source>Version</source>
         <translation>Версия</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="440"/>
+        <location filename="../MainWindow.ui" line="443"/>
         <source>Path</source>
         <translation>Путь</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="462"/>
+        <location filename="../MainWindow.ui" line="465"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="473"/>
+        <location filename="../MainWindow.ui" line="476"/>
         <source>Help</source>
         <translation>Помощь</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="482"/>
+        <location filename="../MainWindow.ui" line="485"/>
         <source>Tools</source>
         <translation>Утилиты</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="500"/>
+        <location filename="../MainWindow.ui" line="503"/>
         <source>&amp;Import</source>
         <translation>&amp;Импорт</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="505"/>
+        <location filename="../MainWindow.ui" line="508"/>
         <source>&amp;Export</source>
         <translation>&amp;Экспорт</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="510"/>
+        <location filename="../MainWindow.ui" line="513"/>
         <source>&amp;Run...</source>
         <translation>&amp;Запустить</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="515"/>
+        <location filename="../MainWindow.ui" line="518"/>
         <source>E&amp;xit</source>
         <translation>В&amp;ыход</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="520"/>
+        <location filename="../MainWindow.ui" line="523"/>
         <source>&amp;About</source>
         <translation>&amp;О программе</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="525"/>
+        <location filename="../MainWindow.ui" line="528"/>
         <source>Handbook</source>
         <translation>Руководство</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="530"/>
+        <location filename="../MainWindow.ui" line="533"/>
         <source>About Qt</source>
         <translation>О Qt</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="535"/>
+        <location filename="../MainWindow.ui" line="538"/>
         <source>Instal wizard</source>
         <translation>Мастер установки</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="560"/>
+        <location filename="../MainWindow.ui" line="563"/>
         <source>Export icons</source>
         <translation>Экпортировать пиктограмму</translation>
     </message>
@@ -1568,7 +1569,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2364"/>
+        <location filename="../gui/mainwindow.cpp" line="2368"/>
         <source>Mount iso...</source>
         <translation>Монтировать iso</translation>
     </message>
@@ -1613,14 +1614,14 @@ p, li { white-space: pre-wrap; }
         <translation>Ошибка renice</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3197"/>
+        <location filename="../gui/mainwindow.cpp" line="3202"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1569"/>
         <source>There are other Fake drive installed in %1 prefix directory.&lt;br&gt;&lt;br&gt;Do you wish to REMOVE ALL FILES from prefix folder?</source>
-        <translation>Другой виртуальный диск установлен в директорию с префиксом %1 &lt;br&gt;&lt;br&gt; Хотите удалить все файлы из префиксной папки?</translation>
+        <translation>Другой виртуальный диск установлен в директорию с префиксом %1 &lt;br&gt;&lt;br&gt; Хотите удалить все файлы из префиксной директории?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1777"/>
@@ -1698,7 +1699,7 @@ p, li { white-space: pre-wrap; }
         <translation>Экспорт префикса</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3082"/>
+        <location filename="../gui/mainwindow.cpp" line="3087"/>
         <source>WIP</source>
         <translation>WIP</translation>
     </message>
@@ -1763,298 +1764,298 @@ p, li { white-space: pre-wrap; }
         <translation>Изменить приоритет</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2254"/>
+        <location filename="../gui/mainwindow.cpp" line="2258"/>
         <source>New</source>
         <translation>Новый</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2215"/>
+        <location filename="../gui/mainwindow.cpp" line="2219"/>
         <source>Create new directory</source>
         <translation>Создать новую директорию</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2272"/>
+        <location filename="../gui/mainwindow.cpp" line="2276"/>
         <source>Rename</source>
         <translation>Переименовать</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2219"/>
+        <location filename="../gui/mainwindow.cpp" line="2223"/>
         <source>Rename current directory</source>
         <translation>Переименовать текущую директорию</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2276"/>
+        <location filename="../gui/mainwindow.cpp" line="2280"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2223"/>
+        <location filename="../gui/mainwindow.cpp" line="2227"/>
         <source>Delete current directory</source>
         <translation>Удалить текущую директорию</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2226"/>
+        <location filename="../gui/mainwindow.cpp" line="2230"/>
         <source>Unmount cd drive</source>
         <translation>Размонтировать CD дисковод</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2227"/>
+        <location filename="../gui/mainwindow.cpp" line="2231"/>
         <source>Unmounts cdrom drive</source>
         <translation>Размонтировать дисковод CDROM</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2292"/>
+        <location filename="../gui/mainwindow.cpp" line="2296"/>
         <source>mount ...</source>
         <translation>mount ...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2293"/>
+        <location filename="../gui/mainwindow.cpp" line="2297"/>
         <source>Browse for other image</source>
         <translation>Искать другой образ</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2234"/>
+        <location filename="../gui/mainwindow.cpp" line="2238"/>
         <source>Configure wine</source>
         <translation>Настройка Wine</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2235"/>
+        <location filename="../gui/mainwindow.cpp" line="2239"/>
         <source>Runs winecfg for current prefix</source>
         <translation>Запустить winecfg в текущем префиксе</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2238"/>
+        <location filename="../gui/mainwindow.cpp" line="2242"/>
         <source>App install</source>
         <translation>Установка приложения</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2239"/>
+        <location filename="../gui/mainwindow.cpp" line="2243"/>
         <source>Runs application install wizard for current prefix</source>
         <translation>Запустить мастер установки приложений в текущем префиксе</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2242"/>
+        <location filename="../gui/mainwindow.cpp" line="2246"/>
         <source>App uninstall</source>
         <translation>Удаление приложения</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2243"/>
+        <location filename="../gui/mainwindow.cpp" line="2247"/>
         <source>Runs application uninstall wizard for current prefix</source>
         <translation>Запустить мастер удаления приложений в текущем префиксе</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2250"/>
+        <location filename="../gui/mainwindow.cpp" line="2254"/>
         <source>Run</source>
         <translation>Запустить</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2255"/>
+        <location filename="../gui/mainwindow.cpp" line="2259"/>
         <source>Create new icon</source>
         <translation>Создать новую пиктограмму</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2258"/>
+        <location filename="../gui/mainwindow.cpp" line="2262"/>
         <source>Cut</source>
         <translation>Вырезать</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2259"/>
+        <location filename="../gui/mainwindow.cpp" line="2263"/>
         <source>Cut selected icons to buffer</source>
         <translation>Вырезать выбранные пиктограммы в буфер</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2262"/>
+        <location filename="../gui/mainwindow.cpp" line="2266"/>
         <source>Copy</source>
         <translation>Копировать</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2263"/>
+        <location filename="../gui/mainwindow.cpp" line="2267"/>
         <source>Copy selected icons to buffer</source>
         <translation>Копировать выбранные пиктограммы в буфер</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2266"/>
+        <location filename="../gui/mainwindow.cpp" line="2270"/>
         <source>Paste</source>
         <translation>Вставить</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2267"/>
+        <location filename="../gui/mainwindow.cpp" line="2271"/>
         <source>Paste selected icons from buffer to selected folder</source>
         <translation>Вставить выбранные пиктограммы из буфера в выбранную папаку</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2273"/>
+        <location filename="../gui/mainwindow.cpp" line="2277"/>
         <source>Rename current icon</source>
         <translation>Переименовать текущую пиктограмму</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2277"/>
+        <location filename="../gui/mainwindow.cpp" line="2281"/>
         <source>Delete current icon</source>
         <translation>Удалить текущую пиктограмму</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2281"/>
+        <location filename="../gui/mainwindow.cpp" line="2285"/>
         <source>Modify current icon options</source>
         <translation>Изменить настройки текущей пиктограммы</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2284"/>
+        <location filename="../gui/mainwindow.cpp" line="2288"/>
         <source>mount</source>
         <translation>mount</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2285"/>
+        <location filename="../gui/mainwindow.cpp" line="2289"/>
         <source>Mount image from icon options</source>
         <translation>Монтировать образ из параметров пиктограммы</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2288"/>
+        <location filename="../gui/mainwindow.cpp" line="2292"/>
         <source>umount</source>
         <translation>umount</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2289"/>
+        <location filename="../gui/mainwindow.cpp" line="2293"/>
         <source>Unmount image</source>
         <translation>Размонтировать образ</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2301"/>
+        <location filename="../gui/mainwindow.cpp" line="2305"/>
         <source>Create new prefix</source>
         <translation>Создать новый префикс</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2305"/>
+        <location filename="../gui/mainwindow.cpp" line="2309"/>
         <source>Import prefix</source>
         <translation>Импортировать префикс</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2310"/>
+        <location filename="../gui/mainwindow.cpp" line="2314"/>
         <source>Export prefix</source>
         <translation>Экспортировать префикс</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2315"/>
+        <location filename="../gui/mainwindow.cpp" line="2319"/>
         <source>Delete prefix</source>
         <translation>Удалить префикс</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2320"/>
+        <location filename="../gui/mainwindow.cpp" line="2324"/>
         <source>Edit prefix settings</source>
         <translation>Редактировать настройки префикса</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2384"/>
+        <location filename="../gui/mainwindow.cpp" line="2391"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2389"/>
+        <location filename="../gui/mainwindow.cpp" line="2396"/>
         <source>:/%1</source>
         <translation>:/%1</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2449"/>
+        <location filename="../gui/mainwindow.cpp" line="2456"/>
         <source>Delete Icon</source>
         <translation>Удалить пиктограмму</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2449"/>
+        <location filename="../gui/mainwindow.cpp" line="2456"/>
         <source>Do you want to delete all selected icons?</source>
         <translation>Удалить все выбранные пиктограммы?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2526"/>
+        <location filename="../gui/mainwindow.cpp" line="2533"/>
         <source>Enter new icon name</source>
         <translation>Введите новое название пиктограммы</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2526"/>
+        <location filename="../gui/mainwindow.cpp" line="2533"/>
         <source>Icon name:</source>
         <translation>Название пиктограммы:</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2550"/>
+        <location filename="../gui/mainwindow.cpp" line="2557"/>
         <source>Sorry, but icon named %1 already exists.</source>
         <translation>Извините, но пиктограмма %1 уже существует.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3056"/>
+        <location filename="../gui/mainwindow.cpp" line="3061"/>
         <source>Open ISO Image file</source>
         <translation>Открыть файл образа ISO</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2676"/>
+        <location filename="../gui/mainwindow.cpp" line="2683"/>
         <source>It seems no mount point was set in icon options.&lt;br&gt;You might need to set it manualy.</source>
         <translation>Не установлено точки монтирования в параметрах пиктограммы. &lt;br&gt;Вам нужно установить ее вручную.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2671"/>
+        <location filename="../gui/mainwindow.cpp" line="2678"/>
         <source>It seems no image file was set in icon options.&lt;br&gt;You might need to set it manualy.</source>
         <translation>Не установлено файла образа в параметрах пиктограммы. &lt;br&gt;Вам нужно установить ее вручную.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2767"/>
+        <location filename="../gui/mainwindow.cpp" line="2774"/>
         <source>Sorry. Cannot copy or move in to the same file</source>
         <translation>Извините. Не могу скопировать или переместить в указанный файл</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2845"/>
+        <location filename="../gui/mainwindow.cpp" line="2852"/>
         <source>Sorry. It seems file already exists.</source>
         <translation>Извините, кажется файл уже существует.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2846"/>
+        <location filename="../gui/mainwindow.cpp" line="2853"/>
         <source>Sorry. It seems file already exists.&lt;br&gt;Please rename it, or cancel paste operation.</source>
         <translation>Извините, кажется файл уже существует.&lt;br&gt; Пожалуйста, переименуйте его, или отмените вставку.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2981"/>
+        <location filename="../gui/mainwindow.cpp" line="2986"/>
         <source>Enter new directory name</source>
         <translation>Введите имя новой директории</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3106"/>
+        <location filename="../gui/mainwindow.cpp" line="3111"/>
         <source>Directory name:</source>
         <translation>Имя директории:</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3082"/>
+        <location filename="../gui/mainwindow.cpp" line="3087"/>
         <source>Sorry, no install wizard yet. It&apos;l implemented at v0.110.</source>
         <translation>Извините, мастер настройки будет реализован в версии 0.110.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3106"/>
+        <location filename="../gui/mainwindow.cpp" line="3111"/>
         <source>Enter new name for directory</source>
         <translation>Введите новое имя для директории</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3136"/>
+        <location filename="../gui/mainwindow.cpp" line="3141"/>
         <source>Q4Wine</source>
         <translation>Q4Wine</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3136"/>
+        <location filename="../gui/mainwindow.cpp" line="3141"/>
         <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
 </source>
         <translation>Вы действительно хотите удалить папку с названием &quot;%1&quot; и все ассоциированные пиктограммы?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3197"/>
+        <location filename="../gui/mainwindow.cpp" line="3202"/>
         <source>Sorry, but prefix already have directory named %1.</source>
         <translation>Извините, но в префиксе уже имеется директория с названием %1.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3427"/>
+        <location filename="../gui/mainwindow.cpp" line="3432"/>
         <source>Mounting...</source>
         <translation>Монтирование...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3430"/>
+        <location filename="../gui/mainwindow.cpp" line="3435"/>
         <source>Image successfully mounted</source>
         <translation>Образ успешно примонтирован</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3432"/>
+        <location filename="../gui/mainwindow.cpp" line="3437"/>
         <source>Image mount fail</source>
         <translation>Ошибка монтирования образа</translation>
     </message>
@@ -2064,12 +2065,12 @@ p, li { white-space: pre-wrap; }
         <translation>Категории</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="570"/>
+        <location filename="../MainWindow.ui" line="573"/>
         <source>CD image manager</source>
         <translation>Менеджер образов CD</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3060"/>
+        <location filename="../gui/mainwindow.cpp" line="3065"/>
         <source>It seems no mount point was set in prefix options.&lt;br&gt;You might need to set it manualy.</source>
         <translation>Не установлено точки монтирования в параметрах префикса. &lt;br&gt;Вам нужно установить ее вручную.</translation>
     </message>
@@ -2099,7 +2100,7 @@ p, li { white-space: pre-wrap; }
         <translation>Установить приоритет процесса</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2300"/>
+        <location filename="../gui/mainwindow.cpp" line="2304"/>
         <source>Create new</source>
         <translation>Создать новый</translation>
     </message>
@@ -2119,12 +2120,12 @@ p, li { white-space: pre-wrap; }
         <translation>Привет. Это поле в разработке</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="367"/>
+        <location filename="../MainWindow.ui" line="370"/>
         <source>Test WIS</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="575"/>
+        <location filename="../MainWindow.ui" line="578"/>
         <source>Winetricks</source>
         <translation></translation>
     </message>
@@ -2139,12 +2140,12 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3445"/>
+        <location filename="../gui/mainwindow.cpp" line="3450"/>
         <source>%1 | grep %2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3475"/>
+        <location filename="../gui/mainwindow.cpp" line="3480"/>
         <source>-u%1</source>
         <translation></translation>
     </message>
@@ -2159,49 +2160,59 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;p&gt;Видимо, q4wine не может запустить kvm_getprocs.&lt;/p&gt;&lt;p&gt;Обычно q4wine требует чтение /dev/mem (группа kmem).&lt;/p&gt;&lt;p&gt;Пожалуйста, запустите q4wine с kmem group id. (Добавьте себя в группу kmem)&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3052"/>
+        <location filename="../gui/mainwindow.cpp" line="3057"/>
         <source>Open ISO or NRG Image file</source>
         <translation>Открыть файл образов ISO или NRG</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3052"/>
+        <location filename="../gui/mainwindow.cpp" line="3057"/>
         <source>iso and nrg files (*.iso *.nrg)</source>
         <translation>iso и nrg файлы (*.iso *.nrg)</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3056"/>
+        <location filename="../gui/mainwindow.cpp" line="3061"/>
         <source>iso files (*.iso)</source>
         <translation>iso файлы (*.iso)</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3477"/>
+        <location filename="../gui/mainwindow.cpp" line="3482"/>
         <source>Unmounting...</source>
         <translation>размонтирование...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3464"/>
+        <location filename="../gui/mainwindow.cpp" line="3469"/>
         <source>image successfully unmounted</source>
         <translation>Образ успешно отмонтирован</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3466"/>
+        <location filename="../gui/mainwindow.cpp" line="3471"/>
         <source>image unmount fail</source>
         <translation>Ошибка размонтирования образа</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3477"/>
+        <location filename="../gui/mainwindow.cpp" line="3482"/>
         <source>running mdconfig</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3480"/>
+        <location filename="../gui/mainwindow.cpp" line="3485"/>
         <source>mdimage removed</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3482"/>
+        <location filename="../gui/mainwindow.cpp" line="3487"/>
         <source>mdimage remove fail</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2214"/>
+        <source>Run...</source>
+        <translation>Запустить...</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2215"/>
+        <source>Run application at current prefix</source>
+        <translation>Запустить приложение в текущем префиксе</translation>
     </message>
 </context>
 <context>
@@ -2746,7 +2757,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you wish to use different wine versions, you may wish set custom wine path here.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#6495ed;&quot;&gt;Note&lt;/span&gt;: leave it blank for default.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Если вы хотите использовать разные версии Wine, вы можете установить дополнительные пути к WIne здесь.&lt;/p&gt;
+        <translation>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Если вы хотите использовать разные версии Wine, вы можете установить дополнительные пути к Wine здесь.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#6495ed;&quot;&gt;Примечание&lt;/span&gt;: Оставьте их пустыми для значений по умолчанию.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -2788,9 +2799,9 @@ p, li { white-space: pre-wrap; }
         <translation>Диск:</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="565"/>
+        <location filename="../gui/wizard.cpp" line="567"/>
         <source>&lt;none&gt;</source>
-        <translation>&lt;none&gt;</translation>
+        <translation>&lt;нет&gt;</translation>
     </message>
     <message>
         <location filename="../Wizard.ui" line="748"/>
@@ -2865,219 +2876,220 @@ p, li { white-space: pre-wrap; }
         <location filename="../Wizard.ui" line="1229"/>
         <source>Please set default user utils paths
 </source>
-        <translation>Пожалйста, установите пути к пользовательским утилитам</translation>
+        <translation type="obsolete">Пожалйста, установите пути к пользовательским утилитам
+</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1237"/>
+        <location filename="../Wizard.ui" line="1236"/>
         <source>Console</source>
         <translation>Консоль</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1261"/>
+        <location filename="../Wizard.ui" line="1260"/>
         <source>Bin:</source>
         <translation>Исп. файл:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1305"/>
+        <location filename="../Wizard.ui" line="1304"/>
         <source>Args:</source>
         <translation>Аргументы:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1321"/>
+        <location filename="../Wizard.ui" line="1320"/>
         <source>Icotool</source>
         <translation>Icotool</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1345"/>
+        <location filename="../Wizard.ui" line="1344"/>
         <source>wrestool:</source>
         <translation>wrestool:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1389"/>
+        <location filename="../Wizard.ui" line="1388"/>
         <source>icotool:</source>
         <translation>icotool:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1452"/>
+        <location filename="../Wizard.ui" line="1451"/>
         <source>Network</source>
         <translation>Сеть</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1458"/>
+        <location filename="../Wizard.ui" line="1457"/>
         <source>Please set network settings
 </source>
         <translation>Пожалуста, установите настройи сети
 </translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1484"/>
+        <location filename="../Wizard.ui" line="1483"/>
         <source>Proxy type:</source>
         <translation>Тип прокси:</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="493"/>
+        <location filename="../gui/wizard.cpp" line="495"/>
         <source>No Proxy</source>
         <translation>Без прокси</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1497"/>
+        <location filename="../Wizard.ui" line="1496"/>
         <source>HTTP</source>
-        <translation>HTTP</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1502"/>
+        <location filename="../Wizard.ui" line="1501"/>
         <source>Socks v5</source>
-        <translation>Socks v5</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1531"/>
+        <location filename="../Wizard.ui" line="1530"/>
         <source>Host:</source>
         <translation>Узел:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1569"/>
+        <location filename="../Wizard.ui" line="1568"/>
         <source>Port:</source>
         <translation>Порт:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1579"/>
+        <location filename="../Wizard.ui" line="1578"/>
         <source>0000000000; </source>
         <translation>0000000000; </translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1607"/>
+        <location filename="../Wizard.ui" line="1606"/>
         <source>Username:</source>
         <translation>Пользователь:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1642"/>
+        <location filename="../Wizard.ui" line="1641"/>
         <source>Password:</source>
         <translation>Пароль:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1693"/>
+        <location filename="../Wizard.ui" line="1692"/>
         <source>General settings</source>
         <translation>Главные настройки</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1699"/>
+        <location filename="../Wizard.ui" line="1698"/>
         <source>Please enter user registration information:</source>
         <translation>Пожалуйста, введите информацию о регистрации пользователя:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1724"/>
+        <location filename="../Wizard.ui" line="1723"/>
         <source>Owner:</source>
         <translation>Владелец:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1762"/>
+        <location filename="../Wizard.ui" line="1761"/>
         <source>Organization:</source>
         <translation>Организация:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1782"/>
+        <location filename="../Wizard.ui" line="1781"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please select default fake drive version:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Выберите версию по умолчанию для виртуального диска:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Выберите версию по умолчанию для фиктивного диска:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1812"/>
+        <location filename="../Wizard.ui" line="1811"/>
         <source>Version:</source>
-        <translation>Версия</translation>
+        <translation>Версия:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1820"/>
+        <location filename="../Wizard.ui" line="1819"/>
         <source>Windows XP</source>
         <translation>Windows XP</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1825"/>
+        <location filename="../Wizard.ui" line="1824"/>
         <source>Windows 2008</source>
         <translation>Windows Server 2008</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1830"/>
+        <location filename="../Wizard.ui" line="1829"/>
         <source>Windows Vista</source>
         <translation>Windows Vista</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1835"/>
+        <location filename="../Wizard.ui" line="1834"/>
         <source>Windows 2003</source>
         <translation>Windows 2003</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1840"/>
+        <location filename="../Wizard.ui" line="1839"/>
         <source>Windows 2000</source>
         <translation>Windows 2003</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1845"/>
+        <location filename="../Wizard.ui" line="1844"/>
         <source>Windows ME</source>
         <translation>Windows ME</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1850"/>
+        <location filename="../Wizard.ui" line="1849"/>
         <source>Windows 98</source>
         <translation>Windows 98</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1855"/>
+        <location filename="../Wizard.ui" line="1854"/>
         <source>Windows 95</source>
         <translation>Windows 95</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1860"/>
+        <location filename="../Wizard.ui" line="1859"/>
         <source>Windows NT 4.0</source>
         <translation>Windows NT 4.0</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1865"/>
+        <location filename="../Wizard.ui" line="1864"/>
         <source>Windows NT 3.5</source>
         <translation>Windows NT 3.5</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1870"/>
+        <location filename="../Wizard.ui" line="1869"/>
         <source>Windows 3.1</source>
         <translation>Windows 3.1</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1875"/>
+        <location filename="../Wizard.ui" line="1874"/>
         <source>Windows 3.0</source>
         <translation>Windows 3.0</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1880"/>
+        <location filename="../Wizard.ui" line="1879"/>
         <source>Windows 2.0</source>
         <translation>Windows 2.0</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1891"/>
+        <location filename="../Wizard.ui" line="1890"/>
         <source>
 If you wish to use qt system colors in wine dialogs, select option below:</source>
         <translation>
 Если вы хотите использовать системные цвета Qt в диалогах Wine, выберите опцию ниже:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1923"/>
+        <location filename="../Wizard.ui" line="1922"/>
         <source>Colors:</source>
         <translation>Цвета:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1930"/>
+        <location filename="../Wizard.ui" line="1929"/>
         <source>Use QT palette</source>
         <translation>Использовать палитру Qt</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1980"/>
+        <location filename="../Wizard.ui" line="1979"/>
         <source>Direct 3D settings</source>
         <translation>Настройки Direct3D</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2625"/>
+        <location filename="../Wizard.ui" line="2624"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -3086,167 +3098,167 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;p, li { white-space: pre-wrap; }&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примечание&lt;/span&gt;: Оставьте пустыми для значений по умолчанию&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2015"/>
+        <location filename="../Wizard.ui" line="2014"/>
         <source>Multisampling:</source>
         <translation>Multisampling:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2561"/>
+        <location filename="../Wizard.ui" line="2560"/>
         <source>default</source>
-        <translation>По умолчанию</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2236"/>
+        <location filename="../Wizard.ui" line="2235"/>
         <source>enabled</source>
-        <translation>Включено</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2241"/>
+        <location filename="../Wizard.ui" line="2240"/>
         <source>disabled</source>
-        <translation>Отключено</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2062"/>
+        <location filename="../Wizard.ui" line="2061"/>
         <source>D3D Renderer:</source>
         <translation>Рендерер D3D:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2075"/>
+        <location filename="../Wizard.ui" line="2074"/>
         <source>gdi</source>
         <translation>gdi</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2080"/>
+        <location filename="../Wizard.ui" line="2079"/>
         <source>opengl</source>
         <translation>opengl</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2109"/>
+        <location filename="../Wizard.ui" line="2108"/>
         <source>LockMode:</source>
         <translation>LockMode:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2127"/>
+        <location filename="../Wizard.ui" line="2126"/>
         <source>readdraw</source>
         <translation>readdraw</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2132"/>
+        <location filename="../Wizard.ui" line="2131"/>
         <source>readtex</source>
         <translation>readtex</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2137"/>
+        <location filename="../Wizard.ui" line="2136"/>
         <source>texdraw</source>
-        <translation>texdraw</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2142"/>
+        <location filename="../Wizard.ui" line="2141"/>
         <source>textex</source>
-        <translation>textex</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2171"/>
+        <location filename="../Wizard.ui" line="2170"/>
         <source>Offscreen Mode:</source>
-        <translation>Offscreen Mode:</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2184"/>
+        <location filename="../Wizard.ui" line="2183"/>
         <source>backbuffer</source>
         <translation>backbuffer</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2189"/>
+        <location filename="../Wizard.ui" line="2188"/>
         <source>pbuffer</source>
         <translation>pbuffer</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2194"/>
+        <location filename="../Wizard.ui" line="2193"/>
         <source>fbo</source>
         <translation>fbo</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2223"/>
+        <location filename="../Wizard.ui" line="2222"/>
         <source>Use GLSL:</source>
         <translation>Использовать GLSL:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2270"/>
+        <location filename="../Wizard.ui" line="2269"/>
         <source>VMemory (Mb):</source>
         <translation>Размер видеопамяти (Мб):</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2280"/>
+        <location filename="../Wizard.ui" line="2279"/>
         <source>D999999999; </source>
         <translation>D999999999; </translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2330"/>
+        <location filename="../Wizard.ui" line="2329"/>
         <source>X11 Driver</source>
         <translation>X11 Driver</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2365"/>
+        <location filename="../Wizard.ui" line="2364"/>
         <source>WithRender:</source>
         <translation>WithRender:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2566"/>
+        <location filename="../Wizard.ui" line="2565"/>
         <source>Y</source>
-        <translation>Д</translation>
+        <translation>Y</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2571"/>
+        <location filename="../Wizard.ui" line="2570"/>
         <source>N</source>
-        <translation>Н</translation>
+        <translation>N</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2412"/>
+        <location filename="../Wizard.ui" line="2411"/>
         <source>AA WithRender:</source>
         <translation>AA WithRender:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2459"/>
+        <location filename="../Wizard.ui" line="2458"/>
         <source>AA WithCore:</source>
         <translation>AA WithCore:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2506"/>
+        <location filename="../Wizard.ui" line="2505"/>
         <source>UseXRandR:</source>
         <translation>UseXRandR:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2553"/>
+        <location filename="../Wizard.ui" line="2552"/>
         <source>UseXVidMode:</source>
         <translation>UseXVidMode:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2619"/>
+        <location filename="../Wizard.ui" line="2618"/>
         <source>Wine Browsers</source>
         <translation>Браузеры Wine</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2654"/>
+        <location filename="../Wizard.ui" line="2653"/>
         <source>Browsers:</source>
         <translation>Браузеры:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2692"/>
+        <location filename="../Wizard.ui" line="2691"/>
         <source>Mailers:</source>
         <translation>E-Mail клиенты:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2806"/>
+        <location filename="../Wizard.ui" line="2805"/>
         <source>&lt; Back</source>
         <translation>&lt; Назад</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1116"/>
+        <location filename="../gui/wizard.cpp" line="1118"/>
         <source>Next &gt;</source>
         <translation>Далее &gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2823"/>
+        <location filename="../Wizard.ui" line="2822"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
@@ -3276,12 +3288,12 @@ p, li { white-space: pre-wrap; }
         <translation>Мастер создания нового префикса</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="998"/>
+        <location filename="../gui/wizard.cpp" line="1000"/>
         <source>&lt;b&gt;Prefix creation wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Мастер создания префикса&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="933"/>
+        <location filename="../gui/wizard.cpp" line="935"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation>&lt;b&gt;Шаг %1 из %2&lt;/b&gt;</translation>
     </message>
@@ -3298,125 +3310,125 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/wizard.cpp" line="225"/>
         <source>Fake drive creation wizard</source>
-        <translation>Мастер создания виртуального диска</translation>
+        <translation>Мастер создания фиктивного диска</translation>
     </message>
     <message>
         <location filename="../gui/wizard.cpp" line="226"/>
         <source>&lt;b&gt;Fake drive creation wizard&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Мастер создания виртуального диска&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Мастер создания фиктивного диска&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../gui/wizard.cpp" line="228"/>
         <source>&lt;p&gt;Welcome to fake drive creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Добро пожаловать в мастер создания виртуального диска&lt;/p&gt;&lt;p&gt;Этот мастер поможет вам сделать все шаги для успешного создания виртуального диска &lt;/p&gt;&lt;p&gt;Пожалуйста, нажмите кнопку &lt;b&gt;Вперед&lt;/b&gt;, чтобы перейти к следующей странице мастера. Или нажмите &lt;b&gt;Назад&lt;b&gt; для возврата. &lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Добро пожаловать в мастер создания фиктивного диска&lt;/p&gt;&lt;p&gt;Этот мастер поможет вам сделать все шаги для успешного создания фиктивного диска &lt;/p&gt;&lt;p&gt;Пожалуйста, нажмите кнопку &lt;b&gt;Далее&lt;/b&gt;, чтобы перейти к следующей странице мастера. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата. &lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../gui/wizard.cpp" line="233"/>
         <source>Fake drive update wizard</source>
-        <translation>Мастер обновления виртуального диска</translation>
+        <translation>Мастер обновления фиктивного диска</translation>
     </message>
     <message>
         <location filename="../gui/wizard.cpp" line="234"/>
         <source>&lt;b&gt;Fake drive update wizard&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Мастер обновления виртуального диска&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Мастер обновления фиктивного диска&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../gui/wizard.cpp" line="236"/>
         <source>&lt;p&gt;Welcome to fake drive update wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Добро пожаловать в мастер обновления виртуального диска&lt;/p&gt;&lt;p&gt;Этот мастер поможет вам сделать все шаги для успешного обновления виртуального диска &lt;/p&gt;&lt;p&gt;Пожалуйста, нажмите кнопку &lt;b&gt;Вперед&lt;/b&gt;, чтобы перейти к следующей странице мастера. Или нажмите &lt;b&gt;Назад&lt;b&gt; для возврата. &lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Добро пожаловать в мастер обновления фиктивного диска&lt;/p&gt;&lt;p&gt;Этот мастер поможет вам сделать все шаги для успешного обновления фиктивного диска &lt;/p&gt;&lt;p&gt;Пожалуйста, нажмите кнопку &lt;b&gt;Далее&lt;/b&gt;, чтобы перейти к следующей странице мастера. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата. &lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="318"/>
+        <location filename="../gui/wizard.cpp" line="320"/>
         <source>Open File</source>
         <translation>Открыть файл</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="320"/>
+        <location filename="../gui/wizard.cpp" line="322"/>
         <source>Open Directory</source>
         <translation>Открыть папку</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="344"/>
+        <location filename="../gui/wizard.cpp" line="346"/>
         <source>%1wineserver</source>
         <translation>%1wineserver</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="345"/>
+        <location filename="../gui/wizard.cpp" line="347"/>
         <source>%1wine</source>
         <translation>%1wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1147"/>
+        <location filename="../gui/wizard.cpp" line="1149"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="364"/>
+        <location filename="../gui/wizard.cpp" line="366"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Пожалуйста, укажите директорию %1.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="367"/>
+        <location filename="../gui/wizard.cpp" line="369"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Пожалуйста, укажите файл %1.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="375"/>
+        <location filename="../gui/wizard.cpp" line="377"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation>Извините, указанной директории %1 не существует.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="378"/>
+        <location filename="../gui/wizard.cpp" line="380"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation>Извините, указанного файла %1 не существует.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="451"/>
+        <location filename="../gui/wizard.cpp" line="453"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Пожалуйста, введите узел прокси.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="455"/>
+        <location filename="../gui/wizard.cpp" line="457"/>
         <source>Sorry, specify proxy port.</source>
         <translation>Пожалуйста, введите порт прокси.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="513"/>
+        <location filename="../gui/wizard.cpp" line="515"/>
         <source>Enter prefix name first.</source>
         <translation>Введите сначала название префикса.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="517"/>
+        <location filename="../gui/wizard.cpp" line="519"/>
         <source>SELECT name FROM prefix WHERE name=&apos;%1&apos;;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="520"/>
+        <location filename="../gui/wizard.cpp" line="522"/>
         <source>Sorry. There is other prefix with same name.</source>
-        <translation>Извините. Другой префикс с тем же именем.</translation>
+        <translation>Извините. Уже существует другой префикс с тем же именем.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="527"/>
+        <location filename="../gui/wizard.cpp" line="529"/>
         <source>Sorry, prefix path is wrong! Directory not exists.</source>
         <translation>Извините, путь к префику неправилен! Директория не существует.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="531"/>
+        <location filename="../gui/wizard.cpp" line="533"/>
         <source>Select prefix directory first.</source>
         <translation>Сначала выберите директорию префикса.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="537"/>
+        <location filename="../gui/wizard.cpp" line="539"/>
         <source>Sorry, specify mount point directory.</source>
         <translation>Пожалуйста, укажите директорию точки монтирования.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="541"/>
+        <location filename="../gui/wizard.cpp" line="543"/>
         <source>Sorry, specify source device.</source>
         <translation>Извините, укажите диск.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="650"/>
+        <location filename="../gui/wizard.cpp" line="652"/>
         <source>[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion]
 &quot;RegisteredOrganization&quot;=&quot;%1&quot;
 &quot;RegisteredOwner&quot;=&quot;%2&quot;
@@ -3426,7 +3438,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="653"/>
+        <location filename="../gui/wizard.cpp" line="655"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\WineBrowser]
@@ -3434,7 +3446,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="656"/>
+        <location filename="../gui/wizard.cpp" line="658"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\WineBrowser]
@@ -3442,7 +3454,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="659"/>
+        <location filename="../gui/wizard.cpp" line="661"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3450,7 +3462,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="662"/>
+        <location filename="../gui/wizard.cpp" line="664"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3458,7 +3470,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="665"/>
+        <location filename="../gui/wizard.cpp" line="667"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3466,7 +3478,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="668"/>
+        <location filename="../gui/wizard.cpp" line="670"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3474,7 +3486,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="671"/>
+        <location filename="../gui/wizard.cpp" line="673"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3482,7 +3494,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="674"/>
+        <location filename="../gui/wizard.cpp" line="676"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3490,7 +3502,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="677"/>
+        <location filename="../gui/wizard.cpp" line="679"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3498,7 +3510,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="680"/>
+        <location filename="../gui/wizard.cpp" line="682"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3506,7 +3518,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="683"/>
+        <location filename="../gui/wizard.cpp" line="685"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3514,7 +3526,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="686"/>
+        <location filename="../gui/wizard.cpp" line="688"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3522,7 +3534,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="689"/>
+        <location filename="../gui/wizard.cpp" line="691"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3530,7 +3542,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="694"/>
+        <location filename="../gui/wizard.cpp" line="696"/>
         <source>
 
 [HKEY_CURRENT_USER\Control Panel\Colors]
@@ -3538,271 +3550,286 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="703"/>
+        <location filename="../gui/wizard.cpp" line="705"/>
         <source>&quot;Window&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="706"/>
+        <location filename="../gui/wizard.cpp" line="708"/>
         <source>&quot;ActiveBorder&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="707"/>
+        <location filename="../gui/wizard.cpp" line="709"/>
         <source>&quot;InactiveBorder&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="708"/>
+        <location filename="../gui/wizard.cpp" line="710"/>
         <source>&quot;AppWorkSpace&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="709"/>
+        <location filename="../gui/wizard.cpp" line="711"/>
         <source>&quot;Menu&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="710"/>
+        <location filename="../gui/wizard.cpp" line="712"/>
         <source>&quot;MenuBar&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="711"/>
+        <location filename="../gui/wizard.cpp" line="713"/>
         <source>&quot;Scrollbar&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="712"/>
+        <location filename="../gui/wizard.cpp" line="714"/>
         <source>&quot;MenuHilight&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="713"/>
+        <location filename="../gui/wizard.cpp" line="715"/>
         <source>&quot;ButtonFace&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="716"/>
+        <location filename="../gui/wizard.cpp" line="718"/>
         <source>&quot;ButtonAlternateFace&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="719"/>
+        <location filename="../gui/wizard.cpp" line="721"/>
         <source>&quot;ButtonDkShadow&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="720"/>
+        <location filename="../gui/wizard.cpp" line="722"/>
         <source>&quot;ButtonShadow&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="721"/>
+        <location filename="../gui/wizard.cpp" line="723"/>
         <source>&quot;GrayText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="724"/>
+        <location filename="../gui/wizard.cpp" line="726"/>
         <source>&quot;ButtonHilight&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="727"/>
+        <location filename="../gui/wizard.cpp" line="729"/>
         <source>&quot;ButtonText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="730"/>
+        <location filename="../gui/wizard.cpp" line="732"/>
         <source>&quot;MenuText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="731"/>
+        <location filename="../gui/wizard.cpp" line="733"/>
         <source>&quot;WindowFrame&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="732"/>
+        <location filename="../gui/wizard.cpp" line="734"/>
         <source>&quot;WindowText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="735"/>
+        <location filename="../gui/wizard.cpp" line="737"/>
         <source>&quot;Hilight&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="738"/>
+        <location filename="../gui/wizard.cpp" line="740"/>
         <source>&quot;HilightText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="741"/>
+        <location filename="../gui/wizard.cpp" line="743"/>
         <source>&quot;InfoWindow&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="744"/>
+        <location filename="../gui/wizard.cpp" line="746"/>
         <source>&quot;InfoText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="782"/>
+        <location filename="../gui/wizard.cpp" line="784"/>
         <source>system</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="794"/>
+        <location filename="../gui/wizard.cpp" line="796"/>
         <source>Configure the general settings for Wine</source>
         <translation>Настроить главные параметры Wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="805"/>
+        <location filename="../gui/wizard.cpp" line="807"/>
         <source>Wineconsole is similar to wine command wcmd</source>
         <translation>Консоль wine похожа на wcmd</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="816"/>
+        <location filename="../gui/wizard.cpp" line="818"/>
         <source>Uninstall Windows programs under Wine properly</source>
         <translation>Удалить windows-программы, установленные под Wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="827"/>
+        <location filename="../gui/wizard.cpp" line="829"/>
         <source>Wine registry editor</source>
         <translation>Редактор реестра Wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="838"/>
+        <location filename="../gui/wizard.cpp" line="840"/>
         <source>Browse the files in the virtual Wine drive</source>
-        <translation>Смотреть файлы в виртульном диске WIne (файловый менеджер Wine)</translation>
+        <translation>Смотреть файлы в виртульном диске Wine (файловый менеджер Wine)</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="849"/>
+        <location filename="../gui/wizard.cpp" line="851"/>
         <source>Wine CD eject tool</source>
         <translation>утилита для извлечения дисков Wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="860"/>
+        <location filename="../gui/wizard.cpp" line="862"/>
         <source>Wine wordpad text editor</source>
         <translation>Текстовый редактор Wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="942"/>
+        <location filename="../gui/wizard.cpp" line="944"/>
         <source>&lt;b&gt;First startup wizrd&lt;/b&gt;</source>
         <translation>&lt;b&gt;Мастер первого запуска&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="943"/>
+        <location filename="../gui/wizard.cpp" line="945"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Добро пожаловать в мастер первого запуска&lt;/p&gt;&lt;p&gt;Этот мастер поможет вам сделать все шаги для успешной настройки %1. &lt;/p&gt;&lt;p&gt;Пожалуйста, нажмите кнопку &lt;b&gt;Вперед&lt;/b&gt;, чтобы перейти к следующей странице мастера. Или нажмите &lt;b&gt;Назад&lt;b&gt; для возврата. &lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Добро пожаловать в мастер первого запуска&lt;/p&gt;&lt;p&gt;Этот мастер поможет вам сделать все шаги для успешной настройки %1. &lt;/p&gt;&lt;p&gt;Пожалуйста, нажмите кнопку &lt;b&gt;Далее&lt;/b&gt;, чтобы перейти к следующей странице мастера. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата. &lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="953"/>
+        <location filename="../gui/wizard.cpp" line="954"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Malakhov Alexey aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General ideia comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts witch was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Malakhov Alexey aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General ideia comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts witch was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Первым автором &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; был Алексей Малахов aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Вдохновением для проекта послужили скрипты &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt;, написанные Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Программа распространяется на условиях лицензии &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Комментарии, сообщения об ошибках, и т.д., присылайте по адресу [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Помните&lt;/span&gt;&lt;/b&gt;: Это программное обеспечение поставляется без каких-либо гарантий. Автор &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;НЕ&lt;/span&gt;&lt;/b&gt; предоставляет никакой поддержки или справок касательно WineTools, Wine, установки программ, Linux или Microsoft Windows.&lt;/p&gt;&lt;p&gt;Если вам &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;необходима помощь&lt;/span&gt;, присылайте свои вопросы в список рассылки по адресу &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Если вам &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;необходима поддержка&lt;/span&gt;, купите коммерческую версию wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1128"/>
+        <location filename="../gui/wizard.cpp" line="1130"/>
         <source>Finish</source>
         <translation>Закончить</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="999"/>
+        <location filename="../gui/wizard.cpp" line="1001"/>
         <source>&lt;p&gt;Welcome to prefix creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful Wine prefix creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Добро пожаловать в мастер создания префикса&lt;/p&gt;&lt;p&gt;Этот мастер поможет вам сделать все шаги для успешного создания префикса Wine &lt;/p&gt;&lt;p&gt;Пожалуйста, нажмите кнопку &lt;b&gt;Вперед&lt;/b&gt;, чтобы перейти к следующей странице мастера. Или нажмите &lt;b&gt;Назад&lt;b&gt; для возврата. &lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Добро пожаловать в мастер создания префикса&lt;/p&gt;&lt;p&gt;Этот мастер поможет вам сделать все шаги для успешного создания префикса Wine &lt;/p&gt;&lt;p&gt;Пожалуйста, нажмите кнопку &lt;b&gt;Далее&lt;/b&gt;, чтобы перейти к следующей странице мастера. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1034"/>
+        <location filename="../gui/wizard.cpp" line="1036"/>
         <source>&lt;p&gt;Please check parameters listed below before clicking &lt;b&gt;Next&lt;/b&gt;:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Prefix name:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Prefix path:&lt;/b&gt; %2&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Пожалуйста, проверьте параметры в списке внизу до нажатия &lt;b&gt;Далее&lt;/b&gt;:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Название префикса:&lt;b&gt; %1&lt;br&gt;&lt;b&gt;Путь к префиксу: &lt;/b&gt; %2 &lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Пожалуйста, проверьте параметры в списке внизу до нажатия &lt;b&gt;Далее&lt;/b&gt;:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Название префикса:&lt;b&gt; %1&lt;br&gt;&lt;b&gt;Путь к префиксу:&lt;/b&gt; %2&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1037"/>
+        <location filename="../gui/wizard.cpp" line="1039"/>
         <source>&lt;p&gt;Wine fake drive will be created.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Виртуальный диск Wine будет создан.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1041"/>
+        <location filename="../gui/wizard.cpp" line="1043"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: %1</source>
         <translation>&lt;p&gt;&lt;b&gt;Исп. файл Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1043"/>
+        <location filename="../gui/wizard.cpp" line="1045"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: Default</source>
         <translation>&lt;p&gt;&lt;b&gt;Исп. файл Wine&lt;/b&gt;: Default</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1047"/>
+        <location filename="../gui/wizard.cpp" line="1049"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Сервер Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1049"/>
+        <location filename="../gui/wizard.cpp" line="1051"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: Default</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1053"/>
+        <location filename="../gui/wizard.cpp" line="1055"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Загрузчик Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1055"/>
+        <location filename="../gui/wizard.cpp" line="1057"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Загрузчик Wine&lt;/b&gt;: Default</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1059"/>
+        <location filename="../gui/wizard.cpp" line="1061"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Путь к Dll Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1061"/>
+        <location filename="../gui/wizard.cpp" line="1063"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Путь к Dll Wine&lt;/b&gt;: Default</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1065"/>
+        <location filename="../gui/wizard.cpp" line="1067"/>
         <source>&lt;p&gt;&lt;b&gt;Quick mount options&lt;/b&gt; &lt;br&gt;&lt;b&gt;Device&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Mount point&lt;/b&gt;: %2&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Настройки быстрого монтирования&lt;/b&gt; &lt;br&gt;&lt;b&gt;Диск&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Точка монтрования&lt;/b&gt;: %2&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1122"/>
+        <location filename="../gui/wizard.cpp" line="1124"/>
         <source>&lt;p&gt;All ready for fake drive creation. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create facke drive. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Все готово для созданяи виртуального диска. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Закончить&lt;/b&gt; для создания виртуадьного диска. Или нажмите &lt;b&gt;Назад&lt;/b&gt;для возврата.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Все готово для созданяи виртуального диска. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Закончить&lt;/b&gt; для создания виртуадьного диска. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="881"/>
+        <location filename="../gui/wizard.cpp" line="883"/>
         <source>autostart</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1147"/>
+        <location filename="../gui/wizard.cpp" line="1149"/>
         <source>Sorry, i can&apos;t access to /etc/fstab</source>
         <translation>Извините, я не могу получить доступ к /etc/fstab</translation>
+    </message>
+    <message>
+        <location filename="../Wizard.ui" line="1229"/>
+        <source>&lt;p&gt;Please set default user utils paths&lt;br&gt;&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Пожалйста, установите пути к утилитам wine&lt;br&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/wizard.cpp" line="967"/>
+        <source>&lt;p&gt;Please enter default wine settings.&lt;/p&gt;&lt;br&gt;</source>
+        <translation>&lt;p&gt;Пожалуйста, установите пути к утилитам wine.&lt;br&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/wizard.cpp" line="987"/>
+        <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Все готово для завершения установки %1. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Закончить&lt;/b&gt; для завершения процесса установки. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
