@@ -250,7 +250,10 @@ void MainWindow::CoreFunction_SettingGet(){
 
 	QSettings settings(APP_SHORT_NAME, "default");
 
-	//qDebug()<<"Sett: "<<settings.fileName();
+	settings.beginGroup("MainWindow");
+		resize(settings.value("size", QSize(400, 400)).toSize());
+		move(settings.value("pos", QPoint(200, 200)).toPoint());
+	settings.endGroup();
 
 	settings.beginGroup("wine");
 		DEFAULT_WINE_BIN=settings.value("WineBin").toString();
@@ -1141,6 +1144,12 @@ void MainWindow::closeEvent(QCloseEvent *event){
 		QSqlDatabase db = QSqlDatabase::database();
 		db.close();
 	}
+
+	QSettings settings(APP_SHORT_NAME, "default");
+	settings.beginGroup("MainWindow");
+	settings.setValue("size", size());
+	settings.setValue("pos", pos());
+	settings.endGroup();
 }
 
 
@@ -1907,6 +1916,12 @@ void MainWindow::mainExit_Click(){
 
 	QSqlDatabase db = QSqlDatabase::database();
 	db.close();
+
+	QSettings settings(APP_SHORT_NAME, "default");
+	settings.beginGroup("MainWindow");
+	settings.setValue("size", size());
+	settings.setValue("pos", pos());
+	settings.endGroup();
 
 	qApp->quit();
 	return;

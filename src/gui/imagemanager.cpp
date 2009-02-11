@@ -86,20 +86,20 @@ void ImageManager::tableImage_showContextMenu(const QPoint){
 
 
 void ImageManager::getCDImages(void){
-	
+
 	QSqlQuery query;
-	
+
 	qint64 size;
 
 	query.exec("SELECT name, path FROM images ORDER BY name");
 
 	int numRows = tableImage->rowCount();
 	int curRows = 0;
-	
+
 	while (query.next()) {
-			
+
 						curRows++;
-	
+
 						if (curRows>numRows){
 							tableImage->insertRow (numRows);
 							numRows = tableImage->rowCount();
@@ -111,7 +111,7 @@ void ImageManager::getCDImages(void){
 						} else {
 							size = 0;
 						}
-	
+
 						if (tableImage->item(curRows - 1, 0)){
 							tableImage->item(curRows - 1, 0)->setText(query.value(0).toString());
 
@@ -152,13 +152,13 @@ void ImageManager::getCDImages(void){
 
 void ImageManager::loadThemeIcons(QString themePath){
 	QPixmap pixmap;
-				
+
 	if (!pixmap.load(tr("%1/data/iso_manager.png").arg(themePath))){
 		pixmap.load(":data/iso_manager.png");
 	}
-				
+
 	lblLogo->setPixmap(pixmap);
-	
+
 	managerToolBar = new QToolBar(tlbManager);
 
 	actionAdd = managerToolBar->addAction (loadIcon("data/add.png", themePath), tr("Add image"));
@@ -168,7 +168,7 @@ void ImageManager::loadThemeIcons(QString themePath){
 	connect(actionRemove, SIGNAL(triggered()), this, SLOT(actionRemoveImage()));
 
 	managerToolBar->addSeparator ();
-	
+
 	actionRefresh = managerToolBar->addAction (loadIcon("data/reload.png", themePath), tr("Refresh image list"));
 	connect(actionRefresh, SIGNAL(triggered()), this, SLOT(actionRefreshImageList()));
 
@@ -177,15 +177,15 @@ void ImageManager::loadThemeIcons(QString themePath){
 
 void ImageManager::cmdOk_Click(){
 	accept();
-	return;	
+	return;
 }
 
 
 void ImageManager::actionAddImage(){
-	
+
 	bool fexists=FALSE, ok;
 	QString fileName, newName;
-	
+
 	#ifdef _OS_LINUX_
 		fileName = QFileDialog::getOpenFileName(this, tr("Open ISO or NRG Image file"), QDir::homePath(), tr("iso and nrg files (*.iso *.nrg)"));
 	#endif
@@ -210,7 +210,7 @@ void ImageManager::actionAddImage(){
 		while (fexists){
 			newName = QInputDialog::getText(this, tr("Sorry. It seems CD iamge already exists."),
 								tr("Sorry. It seems CD image file already exists.<br>Please rename it, or cancel add image operation."), QLineEdit::Normal, fileName.split("/").last() , &ok);
-						
+
 			if (!ok){
 				return;
 			}
@@ -225,9 +225,9 @@ void ImageManager::actionAddImage(){
 		}
 
 		query.prepare("INSERT INTO images(name, path) VALUES(:name, :path);");
-		
+
 		QStringList list1 = fileName.split("/");
-			
+
 		;
 
 		query.bindValue(":name", newName);
@@ -255,7 +255,7 @@ void ImageManager::actionRemoveImage(){
 		if (!query.exec()){
 			QMessageBox::warning(this, tr("Error"), tr("debug: %1").arg(query.lastError().text()));
 		}
-	
+
 		query.clear();
 
 	actionRefreshImageList();
@@ -271,9 +271,9 @@ void ImageManager::actionRefreshImageList(){
 QIcon ImageManager::loadIcon(QString iconName, QString themePath){
 	// Function tryes to load icon image from theme dir
 	// If it fails -> load default from rsource file
-	
+
 	QIcon icon;
-	
+
 	if ((!themePath.isEmpty()) and (themePath!="Default")){
 		icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
 		if (icon.isNull()){
@@ -283,5 +283,6 @@ QIcon ImageManager::loadIcon(QString iconName, QString themePath){
 		icon.addFile(tr(":/%1").arg(iconName));
 	}
 
-	return icon;	
+	return icon;
 }
+
