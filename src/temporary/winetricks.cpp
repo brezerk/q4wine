@@ -71,10 +71,10 @@ void winetricks::run_winetricks(){
 				args.append(cons_args.at(i));
 		}
 	}
-	
+
 	args.append(core->getSettingValue("system", "sh"));
 	args.append("-c");
-	
+
 	QString arg;
 		arg.append("WINEPREFIX=");
 		arg.append(this->prefix_path);
@@ -117,6 +117,9 @@ void winetricks::downloadwinetricks () {
 		arg.append(core->getWhichOut("chmod"));
 		arg.append(" +x /usr/bin/winetricks");
 	args.append(arg);
+
+	qDebug()<<console_bin<<args;
+	return;
 
 	Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
 

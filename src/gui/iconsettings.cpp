@@ -361,7 +361,7 @@ void IconSettings::cmdGetIcon_Click(){
 		}
 	}
 
-	fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), searchPath, tr("Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)") );
+	fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), searchPath, tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)") );
 
 	if(!fileName.isEmpty()){
 

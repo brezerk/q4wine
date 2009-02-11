@@ -2098,7 +2098,7 @@ void MainWindow::mainExportIcons_Click(){
 	QString fileName, tmpDir;
 	QStringList args;
 
-	fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)") );
+	fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)") );
 
 	if(fileName.isEmpty())
 		return;
