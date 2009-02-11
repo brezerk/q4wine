@@ -60,9 +60,7 @@ void winetricks::run_winetricks(){
 		return;
 	}
 
-
 	QStringList args;
-
 	if (!console_args.isEmpty()){
 		// If we have any conslope parametres, we gona preccess them one by one
 		QStringList cons_args = console_args.split(" ");
@@ -92,7 +90,6 @@ void winetricks::run_winetricks(){
 	}
 
 	return;
-
 }
 
 void winetricks::downloadwinetricks () {
