@@ -11,6 +11,7 @@ Varsion 0.111
 			- Updated q4wine.desktop;
 			- Make install now install q4wine.desktop and icons;
 			- Added basic shortcuts;
+			- q4wine now save and restore size and position of main window;
 	core:
 		Fixed:
 			- Fixed icoutils icon export bugs;
