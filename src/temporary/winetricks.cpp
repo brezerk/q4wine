@@ -113,13 +113,17 @@ void winetricks::downloadwinetricks () {
 	args.append("-c");
 	QString arg;
 		arg.append(core->getWhichOut("wget"));
-		arg.append(" http://kegel.com/wine/winetricks -O /usr/bin/winetricks && ");
-		arg.append(core->getWhichOut("chmod"));
-		arg.append(" +x /usr/bin/winetricks");
+		#ifdef _OS_LINUX_
+		    arg.append(" http://kegel.com/wine/winetricks -O /usr/bin/winetricks && ");
+		    arg.append(core->getWhichOut("chmod"));
+		    arg.append(" +x /usr/bin/winetricks");
+		#endif
+		#ifdef _OS_FREEBSD_
+		    arg.append(" http://kegel.com/wine/winetricks -O /usr/local/bin/winetricks && ");
+		    arg.append(core->getWhichOut("chmod"));
+		    arg.append(" +x /usr/local/bin/winetricks");
+		#endif
 	args.append(arg);
-
-	qDebug()<<console_bin<<args;
-	return;
 
 	Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
 
