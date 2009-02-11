@@ -4,6 +4,20 @@ See INSTALL file for details
 
 Changelog
 ***********************************************
+Varsion 0.111
+	core:
+		New:
+			- New q4wine icons with different sizes;
+			- Updated q4wine.desktop;
+			- Make install now install q4wine.desktop and icons;
+			- Added basic shortcuts;
+	core:
+		Fixed:
+			- Fixed icoutils icon export bugs;
+			- Fixed file name case sence on icon exort;
+			- Added .exe or .dll file selection masks on icon export;
+			- Fixed start selection file path on icon export;
+
 Version 0.110
 	core:
 		New:
@@ -106,7 +120,7 @@ Version 0.107
 				WARNING: You must manually delete all old files at:
 								$ rm -rdf $HOME/.q4wine
 								$ rm -rdf $HOME/.config/Brezerk\ GNU\ Soft
-				
+
 						 New files location:
 								$HOME/.config/q4wine
 			- Add outdated notifier messages.
@@ -165,7 +179,7 @@ Version 0.101
 	gui
 		Fixed:
 			- Fixed TRANSLATIONS variable in q4wine.pro
-		
+
 		New:
 			- Full professional Ukrainian translation by Chornoivan Uriy Olexeevich
 
@@ -174,12 +188,12 @@ Version 0.100
 		Fixes:
 			- "Programs" tab, was set as default at startup;
 			- Fixed tray icon display;
-		
+
 	core
 		New:
 			- Full theme support;
 			- Translation support;
-			
+
 		Fixes:
 			- Fixed "Can't find theme. File or path not exists: Default" error message;
 			- Fixed tray icon image load;

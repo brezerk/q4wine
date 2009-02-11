@@ -18,6 +18,10 @@
   <property name="windowTitle" >
    <string>Run program</string>
   </property>
+  <property name="windowIcon" >
+   <iconset resource="q4wine.qrc" >
+    <normaloff>:/data/q4wine.png</normaloff>:/data/q4wine.png</iconset>
+  </property>
   <layout class="QVBoxLayout" >
    <property name="spacing" >
     <number>0</number>

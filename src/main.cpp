@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 	QSettings settings(APP_SHORT_NAME, "default");
 	
 	QString i18nPath;
-	
+
 	i18nPath.clear();
 	i18nPath.append(APP_PREF);
 	i18nPath.append("/share/");

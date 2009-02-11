@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>579</width>
+    <width>585</width>
     <height>531</height>
    </rect>
   </property>
   <property name="windowTitle" >
    <string>%1 :. Qt4 GUI for Wine v%2</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="q4wine.qrc" >
+    <normaloff>:/data/q4wine.png</normaloff>:/data/q4wine.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" >
@@ -269,11 +273,7 @@
                <item>
                 <widget class="QLabel" name="label" >
                  <property name="text" >
-                  <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
-p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Fixed [Misc]'; font-size:11pt; font-weight:400; font-style:normal;">
-&lt;p align="justify" style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This is the point where you have to start when creating new empty prefix. You can also create a new or update an old fake Windows drive.&lt;/p>&lt;/body>&lt;/html></string>
+                  <string>This is the point where you have to start when creating new empty prefix. You can also create a new or update an old fake Windows drive.</string>
                  </property>
                  <property name="wordWrap" >
                   <bool>true</bool>
@@ -456,8 +456,8 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>579</width>
-     <height>25</height>
+     <width>585</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File" >
@@ -498,29 +498,28 @@ p, li { white-space: pre-wrap; }
    <addaction name="menuHelp" />
   </widget>
   <widget class="QStatusBar" name="statusbar" />
-  <action name="action_Import" >
-   <property name="text" >
-    <string>&amp;Import</string>
-   </property>
-  </action>
-  <action name="action_Export" >
-   <property name="text" >
-    <string>&amp;Export</string>
-   </property>
-  </action>
   <action name="mainRun" >
    <property name="text" >
-    <string>&amp;Run...</string>
+    <string>Run...</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+Z</string>
    </property>
   </action>
   <action name="mainExit" >
    <property name="text" >
-    <string>E&amp;xit</string>
+    <string>Quit</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+Q</string>
    </property>
   </action>
   <action name="mainAbout" >
    <property name="text" >
-    <string>&amp;About</string>
+    <string>About</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+E</string>
    </property>
   </action>
   <action name="mainHandbook" >
@@ -529,6 +528,9 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="text" >
     <string>Handbook</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+R</string>
    </property>
   </action>
   <action name="mainAboutQt" >
@@ -543,50 +545,71 @@ p, li { white-space: pre-wrap; }
    <property name="text" >
     <string>Instal wizard</string>
    </property>
+   <property name="shortcut" >
+    <string>Ctrl+X</string>
+   </property>
   </action>
   <action name="mainPrograms" >
    <property name="text" >
     <string>Programs</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+A</string>
    </property>
   </action>
   <action name="mainProcess" >
    <property name="text" >
     <string>Process</string>
    </property>
+   <property name="shortcut" >
+    <string>Ctrl+S</string>
+   </property>
   </action>
   <action name="mainSetup" >
    <property name="text" >
     <string>Setup</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+D</string>
    </property>
   </action>
   <action name="mainPrefix" >
    <property name="text" >
     <string>Prefixes</string>
    </property>
+   <property name="shortcut" >
+    <string>Ctrl+F</string>
+   </property>
   </action>
   <action name="mainExportIcons" >
    <property name="text" >
     <string>Export icons</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+C</string>
    </property>
   </action>
   <action name="mainOptions" >
    <property name="text" >
     <string>Options</string>
    </property>
+   <property name="shortcut" >
+    <string>Ctrl+W</string>
+   </property>
   </action>
   <action name="mainImageManage" >
    <property name="text" >
     <string>CD image manager</string>
    </property>
-  </action>
-  <action name="mainWinetricks" >
-   <property name="text" >
-    <string>Winetricks</string>
+   <property name="shortcut" >
+    <string>Ctrl+V</string>
    </property>
   </action>
  </widget>
  <layoutdefault spacing="2" margin="3" />
- <resources/>
+ <resources>
+  <include location="q4wine.qrc" />
+ </resources>
  <connections/>
  <designerdata>
   <property name="gridDeltaX" >

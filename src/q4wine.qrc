@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="/" >
     <file>data/drive_menu.png</file>
+    <file>data/q4wine-128x128.png</file>
     <file>data/cdrom_menu.png</file>
     <file>data/iso_manager.png</file>
     <file>data/add.png</file>
@@ -30,5 +31,6 @@
     <file>data/up.png</file>
     <file>data/wine.png</file>
     <file>data/wizard.png</file>
+    <file>data/q4wine.png</file>
   </qresource>
 </RCC>

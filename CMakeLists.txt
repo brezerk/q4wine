@@ -4,6 +4,16 @@ PROJECT(q4wine)
 
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 
+SET(APP_VERSION "0.111")
+
+SET( DESKTOP_ENTRY
+        ${CMAKE_SOURCE_DIR}/q4wine.desktop
+)
+
+SET( DESKTOP_PIXMAPS
+	${CMAKE_SOURCE_DIR}/src/icons/q4wine.png
+)
+
 SET( SOURCES
         ${CMAKE_SOURCE_DIR}/src/gui/run.cpp
         ${CMAKE_SOURCE_DIR}/src/main.cpp   
@@ -116,27 +126,40 @@ FIND_PACKAGE(Qt4 REQUIRED)
                 MESSAGE(FATAL ERROR "Qt4 not found.")
         ENDIF(QT_FOUND)
 
-SET(APP_VERSION "0.110")
-
 MESSAGE(STATUS "Build realm is: ${CMAKE_SYSTEM_NAME}")
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
 	SET(_OS_LINUX_ 1)
 	ADD_DEFINITIONS(-Wall -g)
+	IF( NOT DESKTOP_ENTRY_PATH )
+		SET( DESKTOP_ENTRY_PATH /usr/share/applications/ )
+	ENDIF( NOT DESKTOP_ENTRY_PATH )
+	IF( NOT PIXMAPS_ENTRY_PATH )
+		SET( PIXMAPS_ENTRY_PATH /usr/share/pixmaps/ )
+	ENDIF( NOT PIXMAPS_ENTRY_PATH )
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
         SET(_OS_FREEBSD_ 1)
 	ADD_DEFINITIONS(-Wall -g -DKERNEL)
+	IF( NOT DESKTOP_ENTRY_PATH )
+		SET( DESKTOP_ENTRY_PATH /usr/local/share/applications/ )
+	ENDIF( NOT DESKTOP_ENTRY_PATH )
+	IF( NOT PIXMAPS_ENTRY_PATH )
+		SET( PIXMAPS_ENTRY_PATH /usr/local/share/pixmaps/ )
+	ENDIF( NOT PIXMAPS_ENTRY_PATH )
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
+	MESSAGE("")
+	MESSAGE(" Warning: Darwin was not tested, and not supported!")
+	MESSAGE(" You can mail test nad bugs to us")
+	MESSAGE("")
         SET(_OS_DARWIN_ 1)
 	ADD_DEFINITIONS(-Wall -g -DKERNEL)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
 
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )
-
 
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_VERS \"${APP_VERSION}\"\n")
         MESSAGE(STATUS "q4wine core version: ${APP_VERSION}")
@@ -146,6 +169,15 @@ file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_PREF \"${CMAKE_INSTALL_PRE
         MESSAGE(STATUS "NOTE: You can set prefix by adding -DCMAKE_INSTALL_PREFIX=/usr/ option to cmake command")
         MESSAGE("")
 
+        MESSAGE("")
+        MESSAGE(STATUS "Desktop items install path is: ${DESKTOP_ENTRY_PATH}")
+        MESSAGE(STATUS "NOTE: You can set install path by adding -DDESKTOP_ENTRY_PATH=/usr/share/application option to cmake command")
+        MESSAGE("")
+
+        MESSAGE("")
+        MESSAGE(STATUS "Install prefix is: ${PIXMAPS_ENTRY_PATH}")
+        MESSAGE(STATUS "NOTE: You can set install path by adding -DPIXMAPS_ENTRY_PATH=/usr/share/pixmaps option to cmake command")
+        MESSAGE("")
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
 
 QT4_WRAP_UI( UI_HEADERS ${UIS})
@@ -170,8 +202,7 @@ IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
 install(TARGETS q4wine DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
-install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/theme DESTINATION
-${CMAKE_INSTALL_PREFIX}/share/q4wine)
-install(FILES ${QM_I18N} DESTINATION
-${CMAKE_INSTALL_PREFIX}/share/q4wine/i18n)
- 
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/theme DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine)
+install(FILES ${QM_I18N} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine/i18n)
+install(FILES ${DESKTOP_ENTRY} DESTINATION ${DESKTOP_ENTRY_PATH})
+install(FILES ${DESKTOP_PIXMAPS} DESTINATION ${PIXMAPS_ENTRY_PATH})
