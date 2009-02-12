@@ -1456,7 +1456,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		char buf[256];
 		char **envs;
 
-		kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, buf);
+		kd = kvm_openfiles("/dev/null", "/dev/null", "/dev/null", O_RDONLY, "kvm_open");
 			if (!kd){
 				ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_openfiles.</p><p>In most case q4wine require access to /dev/mem witch can be readed only by kmem group.</p><p>Please make shure thet you run q4wine with kmem group id</p>"), QMessageBox::Retry, QMessageBox::Ignore);
 
@@ -3073,11 +3073,11 @@ void MainWindow::dirMountOther_Click(void){
 	}
 
 	#ifdef _OS_LINUX_
-	QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO or NRG Image file"), HOME_PATH, tr("iso and nrg files (*.iso *.nrg)"));
+	  QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO or NRG Image file"), HOME_PATH, tr("iso and nrg files (*.iso *.nrg)"));
 	#endif
 
 	#ifdef _OS_FREEBSD_
-	QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), HOME_PATH, tr("iso files (*.iso)"));
+	  QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), HOME_PATH, tr("iso files (*.iso)"));
 	#endif
 
 	if(fileName.isEmpty()){
@@ -3113,11 +3113,6 @@ void MainWindow::dirUninstall_Click(void){
 	//RunWineUtils("uninstaller", twPrograms->currentItem());
 	return;
 }
-
-
-
-
-
 
 void MainWindow::dirRename_Click(void){
 	QSqlQuery query;
