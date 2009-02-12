@@ -1498,14 +1498,17 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 
 						qDebug()<<"ki_comm: "<<kp[i].ki_comm;
 						qDebug()<<"ki_ocomm:"<<kp[i].ki_ocomm;
-						qDebug()<<"ki_comm[COMMLEN+1]"<<kp[i].ki_comm[COMMLEN+1];
-						qDebug()<<"ki_ocomm[OCOMMLEN+1]"<<kp[i].ki_ocomm[OCOMMLEN+1];
+						qDebug()<<"ki_comm[COMMLEN+1]: "<<kp[i].ki_comm[COMMLEN+1];
+						qDebug()<<"ki_ocomm[OCOMMLEN+1]: "<<kp[i].ki_ocomm[OCOMMLEN+1];
+						qDebug()<<"ki_emul[KI_EMULNAMELEN+1]: "<<kp[i].ki_emul;
+						qDebug()<<"ki_emul[KI_EMULNAMELEN+1]: "<<kp[i].ki_emul[KI_EMULNAMELEN+1];
 
 
 						envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 							if (envs){
 								int j=0;
 								while (envs[j]){
+									qDebug()<<"ki_args: "<<envs[j];
 									env_arg=envs[j];
 									int index = env_arg.indexOf("WINEPREFIX=");
 									if (index>=0){
