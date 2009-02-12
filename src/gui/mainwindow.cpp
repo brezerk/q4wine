@@ -1489,6 +1489,11 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 				cur_pids << tr("%1").arg(ipid);
 
 				name = kp[i].ki_comm;
+
+				qDebug()<<kp[i].ki_comm[COMMLEN+1];
+				qDebug()<<kp[i].ki_ocomm[OCOMMLEN+1];
+				qDebug()<<kp[i].ki_ocomm;
+
 					if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
 						ni = kp[i].ki_nice;
 						nice = tr("%1").arg(ni);
