@@ -1456,7 +1456,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		char buf[256];
 		char **envs;
 
-		kd = kvm_openfiles("/dev/null", "/dev/null", "/dev/null", O_RDONLY, "kvm_open");
+		kd = kvm_openfiles("/dev/null", "/dev/null", "/dev/null", O_RDONLY, buff);
 			if (!kd){
 				ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_openfiles.</p><p>In most case q4wine require access to /dev/mem witch can be readed only by kmem group.</p><p>Please make shure thet you run q4wine with kmem group id</p>"), QMessageBox::Retry, QMessageBox::Ignore);
 
