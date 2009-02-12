@@ -1490,12 +1490,17 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 
 				name = kp[i].ki_comm;
 
-				qDebug()<<kp[i].ki_comm;
-				qDebug()<<kp[i].ki_ocomm;
+
 
 					if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
 						ni = kp[i].ki_nice;
 						nice = tr("%1").arg(ni);
+
+						qDebug()<<"ki_comm: "<<kp[i].ki_comm;
+						qDebug()<<"ki_ocomm:"<<kp[i].ki_ocomm;
+						qDebug()<<"ki_comm[COMMLEN+1]"<<kp[i].ki_comm[COMMLEN+1];
+						qDebug()<<"ki_ocomm[OCOMMLEN+1]"<<kp[i].ki_ocomm[OCOMMLEN+1];
+
 
 						envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 							if (envs){
