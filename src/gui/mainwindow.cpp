@@ -1490,8 +1490,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 
 				name = kp[i].ki_comm;
 
-				qDebug()<<kp[i].ki_comm[COMMLEN+1];
-				qDebug()<<kp[i].ki_ocomm[OCOMMLEN+1];
+				qDebug()<<kp[i].ki_comm;
 				qDebug()<<kp[i].ki_ocomm;
 
 					if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
