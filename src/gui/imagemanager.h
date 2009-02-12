@@ -89,3 +89,5 @@ class ImageManager : public QDialog, public Ui::ImageManager
 };
 
 #endif
+
+
