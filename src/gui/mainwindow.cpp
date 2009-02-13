@@ -1504,6 +1504,18 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 						qDebug()<<"ki_emul[KI_EMULNAMELEN+1]: "<<kp[i].ki_emul[KI_EMULNAMELEN+1];
 
 
+						envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
+							if (envs){
+							  int j=0;
+							while (envs[j]){
+							  qDebug()<<"argv ["<<j<<"]: "<<envs[j];
+							  j++;
+							}
+							} else {
+							  qDebug()<<"none argvs");
+							}
+
+
 						envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 							if (envs){
 								int j=0;
