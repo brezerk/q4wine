@@ -1497,12 +1497,6 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 						nice = tr("%1").arg(ni);
 
 						qDebug()<<"ki_comm: "<<kp[i].ki_comm;
-						qDebug()<<"ki_ocomm:"<<kp[i].ki_ocomm;
-						qDebug()<<"ki_comm[COMMLEN+1]: "<<kp[i].ki_comm[COMMLEN+1];
-						qDebug()<<"ki_ocomm[OCOMMLEN+1]: "<<kp[i].ki_ocomm[OCOMMLEN+1];
-						qDebug()<<"ki_emul[KI_EMULNAMELEN+1]: "<<kp[i].ki_emul;
-						qDebug()<<"ki_emul[KI_EMULNAMELEN+1]: "<<kp[i].ki_emul[KI_EMULNAMELEN+1];
-
 
 						envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 							if (envs){
@@ -1631,8 +1625,6 @@ void MainWindow::cmdCreateFake_Click(){
 
 
 void MainWindow::cmdUpdateFake_Click(){
-
-
 	//Check if FakeDive exists?
 /*	QString prefix_path;
 	QSqlQuery query;
@@ -1653,13 +1645,10 @@ void MainWindow::cmdUpdateFake_Click(){
 			return;
 	}
 */
-
-
 	Wizard *createFakeDriveWizard = new Wizard(3, cbPrefixes->currentText());
 	if (createFakeDriveWizard->exec()==QDialog::Accepted){
 		CoreFunction_DatabaseUpdateConnectedItems(cbPrefixes->currentIndex());
 	}
-
 	return;
 }
 

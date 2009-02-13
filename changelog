@@ -18,6 +18,8 @@ Varsion 0.111
 			- Fixed file name case sence on icon exort;
 			- Added .exe or .dll file selection masks on icon export;
 			- Fixed start selection file path on icon export;
+			- FreeBSD: kvm functions now do not need kmem gid;
+			- FreeBSD: wine_pthread now resolve exec name;
 
 Version 0.110
 	core:
