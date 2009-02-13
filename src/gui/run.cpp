@@ -267,7 +267,7 @@ void Run::comboPrefixes_indexChanged (int){
 }
 
 /*************************************************************\
-|						CheckBox Events								 |
+|		CheckBox Events	    					  |
 \*************************************************************/
 
 void Run::cbUseConsole_stateChanged(int){
