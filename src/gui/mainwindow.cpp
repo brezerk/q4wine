@@ -1506,7 +1506,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 							  j++;
 							}
 							} else {
-							  qDebug()<<"none argvs");
+							  qDebug()<<"none argvs";
 							}
 
 
