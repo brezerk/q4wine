@@ -1452,7 +1452,6 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		int cntproc, i, ni, ipid, ret;
 
 		struct kinfo_proc *kp;
-		struct proc *proc;
 		char buf[256];
 		char **envs;
 
