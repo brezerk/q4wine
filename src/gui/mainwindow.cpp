@@ -1496,7 +1496,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 						ni = kp[i].ki_nice;
 						nice = tr("%1").arg(ni);
 
-						if (name.contains("pthread"){
+						if (name.contains("pthread")){
 							envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 							if (envs){
 							  name = envs[0];
