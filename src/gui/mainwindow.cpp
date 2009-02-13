@@ -171,6 +171,8 @@ void MainWindow::cmdTestWis_Click(){
 
 void MainWindow::cmdWinetricks_Click() {
 
+  	QMessageBox::warning(this, tr("Warning"), tr("<p>Winetricks officaly NOT supported by q4wine.</p><p>There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.</p>"));
+
 	if (core->getSettingValue("console", "bin").isEmpty()){
 		QMessageBox::warning(this, tr("Error"), tr("<p>You do not set default console binary.</p><p>Set it into q4wine option dialog.</p>"));
 		return;
