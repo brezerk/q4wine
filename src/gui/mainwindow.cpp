@@ -1496,19 +1496,17 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 						ni = kp[i].ki_nice;
 						nice = tr("%1").arg(ni);
 
-						qDebug()<<"ki_comm: "<<kp[i].ki_comm;
-
-						envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
+						if (name.contains("pthread"){
+							envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 							if (envs){
-							  int j=0;
-							while (envs[j]){
-							  qDebug()<<"argv ["<<j<<"]: "<<envs[j];
-							  j++;
+							  name = envs[0];
+							  if (name.isEmpty()){
+							    name = kp[i].ki_comm;
+							  } else {
+							    name = name.split("\").last();
+							  }
 							}
-							} else {
-							  qDebug()<<"none argvs";
-							}
-
+						}
 
 						envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 							if (envs){
