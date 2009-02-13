@@ -1503,7 +1503,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 							  if (name.isEmpty()){
 							    name = kp[i].ki_comm;
 							  } else {
-							    name = name.split("\").last();
+							    name = name.split('/').last();
 							  }
 							}
 						}
