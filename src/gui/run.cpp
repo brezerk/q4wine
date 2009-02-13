@@ -36,22 +36,22 @@ Run::Run(QString prefix_id, QString prefix_dir, QString winedll_path, QWidget * 
 	QSettings settings(APP_SHORT_NAME, "default");
 	settings.beginGroup("app");
 		loadThemeIcons(settings.value("theme").toString());
-	settings.endGroup();	
-	
+	settings.endGroup();
+
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 	connect(cmdGetProgramBin, SIGNAL(clicked()), this, SLOT(cmdGetProgram_Click()));
 	connect(cmdGetWorkDir, SIGNAL(clicked()), this, SLOT(cmdGetWorkDir_Click()));
 	connect(cmdAdd, SIGNAL(clicked()), this, SLOT(cmdAdd_Click()));
-	
+
 	connect(comboPrefixes, SIGNAL(currentIndexChanged (int)), this, SLOT(comboPrefixes_indexChanged (int)));
 	connect(cbUseConsole, SIGNAL(stateChanged(int)), this, SLOT(cbUseConsole_stateChanged(int)));
-	
+
 	connect(twbGeneral, SIGNAL(currentChanged(int)), this, SLOT(ResizeContent(int)));
-	
+
 	cmdGetProgramBin->installEventFilter(this);
 	cmdGetWorkDir->installEventFilter(this);
-	
+
 	if (prefix_id.isEmpty()){
 		QSqlQuery query;
 		query.exec("SELECT id, path FROM prefix WHERE name=\"Default\"");
@@ -63,9 +63,9 @@ Run::Run(QString prefix_id, QString prefix_dir, QString winedll_path, QWidget * 
 		this->prefix_id=prefix_id;
 		this->prefix_dir=prefix_dir;
 	}
-	
+
 	getPrefixes();
-	
+
 	return;
 }
 
@@ -73,16 +73,16 @@ Run::Run(QString prefix_id, QString prefix_dir, QString winedll_path, QWidget * 
 
 void Run::loadThemeIcons(QString themePath){
 	QPixmap pixmap;
-				
+
 	if (!pixmap.load(tr("%1/data/exec.png").arg(themePath))){
 		pixmap.load(":data/exec.png");
 	}
-				
+
 	lblLogo->setPixmap(pixmap);
-	
+
 	cmdGetProgramBin->setIcon(loadIcon("data/folder.png", themePath));
 	cmdGetWorkDir->setIcon(loadIcon("data/folder.png", themePath));
-	
+
 	return;
 }
 
@@ -90,9 +90,9 @@ void Run::loadThemeIcons(QString themePath){
 QIcon Run::loadIcon(QString iconName, QString themePath){
 	// Function tryes to load icon image from theme dir
 	// If it fails -> load default from rsource file
-	
+
 	QIcon icon;
-	
+
 	if ((!themePath.isEmpty()) and (themePath!="Default")){
 		icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
 		if (icon.isNull()){
@@ -102,13 +102,13 @@ QIcon Run::loadIcon(QString iconName, QString themePath){
 		icon.addFile(tr(":/%1").arg(iconName));
 	}
 
-	return icon;	
+	return icon;
 }
 
 
 void Run::cmdCancel_Click(){
 	reject();
-	return;	
+	return;
 }
 
 void Run::cmdAdd_Click(){
@@ -129,7 +129,7 @@ void Run::cmdAdd_Click(){
 }
 
 void Run::cmdOk_Click(){
-	
+
 	QString override;
 	for (int i=1; i<=twDlls->rowCount(); i++){
 		override.append(tr("%1=").arg(twDlls->item(i-1, 0)->text()));
@@ -142,22 +142,22 @@ void Run::cmdOk_Click(){
 		if (twDlls->item(i-1, 1)->text()==tr("Buildin, Native"))
 			override.append("b,n;");
 	}
-	
+
 
 	execObj.execcmd = txtProgramBin->text();
-	
+
 	QSqlQuery query;
-	
+
 	query.prepare("SELECT id FROM prefix WHERE name=:name");
 	query.bindValue(":name", comboPrefixes->currentText());
 	query.exec();
 	query.first();
-			
+
 	execObj.prefixid = query.value(0).toString();
-	
+
 	query.clear();
-	
-	
+
+
 	if (cbUseConsole->checkState()==Qt::Checked){
 		execObj.useconsole = "1";
 	} else {
@@ -170,9 +170,9 @@ void Run::cmdOk_Click(){
 	execObj.wrkdir = txtWorkDir->text();
 	execObj.nice = txtNice->text();
 	execObj.desktop = txtDesktopSize->text();
-	
+
 	accept();
-	return;	
+	return;
 }
 
 bool Run::eventFilter( QObject *object, QEvent *event )
@@ -184,20 +184,20 @@ bool Run::eventFilter( QObject *object, QEvent *event )
 		QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
 		if (keyEvent->key()==Qt::Key_Delete)
 			twDlls->removeRow(twDlls->currentRow());
-		
+
 		return true;
 	}
-	
+
 	return QWidget::eventFilter(object, event);
-} 
+}
 
 void Run::getWineDlls(QString winedll_path){
 	/*
 	 * This function Builds Wine dll list for selected prefix
 	 */
-	
+
 	cboxDlls->clear();
-	
+
 	if (winedll_path.isEmpty()){
 		QSettings settings(APP_SHORT_NAME, "default");
 		settings.beginGroup("wine");
@@ -207,7 +207,7 @@ void Run::getWineDlls(QString winedll_path){
 
 	QDir dir(winedll_path);
 	dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
-	
+
 	QFileInfoList list = dir.entryInfoList();
 	for (int i = 0; i < list.size(); ++i) {
 		QFileInfo fileInfo = list.at(i);
@@ -215,23 +215,23 @@ void Run::getWineDlls(QString winedll_path){
 			cboxDlls->addItem ( fileInfo.fileName().left(fileInfo.fileName().length()-3));
 		}
 	}
-	
+
 	cboxDlls->setMaxVisibleItems (10);
-	
-	return;	
+
+	return;
 }
 
 void Run::getPrefixes(){
 	/*
 	 * Getting prefixes and set default
 	 */
-	
+
 	QSqlQuery query;
-	
+
 	query.exec("SELECT name, id, wine_dllpath, path FROM prefix");
 	while (query.next()){
 		comboPrefixes->addItem(query.value(0).toString());
-		
+
 		if (query.value(1).toString()==prefix_id){
 			comboPrefixes->setCurrentIndex ( comboPrefixes->findText(query.value(0).toString()) );
 			getWineDlls(query.value(2).toString());
@@ -242,7 +242,7 @@ void Run::getPrefixes(){
 			}
 		}
 	}
-	
+
 	query.clear();
 	return;
 }
@@ -251,9 +251,9 @@ void Run::comboPrefixes_indexChanged (int){
 	/*
 	 * If user select prefix -- rebuild wine dlls list
 	 */
-	
+
 	QSqlQuery query;
-	
+
 	query.prepare("SELECT wine_dllpath, path FROM prefix WHERE name=:name");
 	query.bindValue(":name", comboPrefixes->currentText());
 	query.exec();
@@ -262,7 +262,7 @@ void Run::comboPrefixes_indexChanged (int){
 	getWineDlls(query.value(0).toString());
 	prefix_dir=query.value(1).toString();
 	query.clear();
-	
+
 	return;
 }
 
@@ -272,6 +272,9 @@ void Run::comboPrefixes_indexChanged (int){
 
 void Run::cbUseConsole_stateChanged(int){
 	switch(cbUseConsole->checkState()){
+		case Qt::PartiallyChecked:
+			txtWinedebug->setEnabled(TRUE);
+			break;
 		case Qt::Checked:
 			txtWinedebug->setEnabled(TRUE);
 			break;
@@ -279,7 +282,7 @@ void Run::cbUseConsole_stateChanged(int){
 			txtWinedebug->setEnabled(FALSE);
 			break;
 	}
-	
+
 	return;
 }
 
@@ -291,29 +294,29 @@ void Run::ResizeContent(int TabIndex){
 			twDlls->horizontalHeader()->setStretchLastSection(TRUE);
 		break;
 	}
-	
+
 	return;
 }
 
 void Run::cmdGetProgram_Click(){
-		
+
 	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Exe file"), prefix_dir, tr("Exe files (*.exe)"));
-	
+
 	if(!fileName.isEmpty()){
 		QStringList list1 = fileName.split("/");
 		txtProgramBin->setText(fileName);
-			
+
 		QString wrkDir;
 		wrkDir = fileName.left(fileName.length() - list1.last().length());
 		txtWorkDir->setText(wrkDir);
 	}
-	
+
 	return;
 }
 
 void Run::cmdGetWorkDir_Click(){
 	QString fileName = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
-	
+
 	if(!fileName.isEmpty()){
 		txtWorkDir->setText(fileName);
 	}

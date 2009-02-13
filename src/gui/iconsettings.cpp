@@ -289,6 +289,9 @@ void IconSettings::resizeEvent (QResizeEvent){
 
 void IconSettings::cbUseConsole_stateChanged(int){
 	switch(cbUseConsole->checkState()){
+		case Qt::PartiallyChecked:
+			txtWinedebug->setEnabled(TRUE);
+		break;
 		case Qt::Checked:
 			txtWinedebug->setEnabled(TRUE);
 		break;

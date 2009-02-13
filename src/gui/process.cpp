@@ -34,11 +34,11 @@
 Process::Process (QStringList args, QString exec, QString dir, QString info, QString caption, QStringList env , QWidget * parent, Qt::WFlags f)
 {
 	setupUi(this);
-	
+
 	myProcess = new QProcess(parent);
 	myProcess->setEnvironment(env);
 	connect(myProcess, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(slotFinished(int, QProcess::ExitStatus)));
-	connect(myProcess, SIGNAL(error(QProcess::ProcessError)), this, SLOT(slotError(QProcess::ProcessError)));	
+	connect(myProcess, SIGNAL(error(QProcess::ProcessError)), this, SLOT(slotError(QProcess::ProcessError)));
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_clicked()));
 
 	lblInfo->setText(info);
@@ -46,8 +46,8 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 
 	myProcess->setWorkingDirectory (dir);
 	myProcess->start(exec, args);
-	
-	return;	
+
+	return;
 }
 
 void Process::cmdCancel_clicked(void){
@@ -58,15 +58,15 @@ void Process::cmdCancel_clicked(void){
 
 void Process::slotError(QProcess::ProcessError err){
 	if (myProcess->exitCode()!=0){
-	
+
 		QString lang;
 		// Getting env LANG variable
 		lang = getenv("LANG");
 		lang = lang.split(".").at(1);
-		
+
 		if (lang.isNull())
 			lang = "UTF8";
-				
+
 		QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
 			QString string = codec->toUnicode(myProcess->readAllStandardError());
 			if (!string.isEmpty()){
@@ -78,6 +78,9 @@ void Process::slotError(QProcess::ProcessError err){
 						break;
 						case 1:
 							QMessageBox::warning(this, tr("Error"), tr("Process: The process crashed some time after starting successfully."));
+						break;
+						case 2:
+							QMessageBox::warning(this, tr("Error"), tr("Process: The last waitFor...() function timed out."));
 						break;
 						case 3:
 							QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to read from the process. For example, the process may not be running."));
@@ -98,6 +101,9 @@ void Process::slotError(QProcess::ProcessError err){
 			case 1:
 				QMessageBox::warning(this, tr("Error"), tr("Process: The process crashed some time after starting successfully."));
 			break;
+			case 2:
+				QMessageBox::warning(this, tr("Error"), tr("Process: The last waitFor...() function timed out."));
+			break;
 			case 3:
 				QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to read from the process. For example, the process may not be running."));
 			break;
@@ -117,22 +123,22 @@ void Process::slotError(QProcess::ProcessError err){
 void Process::slotFinished(int, QProcess::ExitStatus exitc){
 
 			if (myProcess->exitCode()!=0){
-	
+
 				QString lang;
 				// Getting env LANG variable
 				lang = getenv("LANG");
 				lang = lang.split(".").at(1);
-		
+
 				if (lang.isNull())
 					lang = "UTF8";
-				
+
 				QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
 				QString string = codec->toUnicode(myProcess->readAllStandardError());
 				if (!string.isEmpty()){
 					QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Error log:<br>%1").arg(string));
 				} else {
 					QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Cant read STDERR message.<br>%1").arg(string));
-					
+
 				}
 				reject ();
 				return;

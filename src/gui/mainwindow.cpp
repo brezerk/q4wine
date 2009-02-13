@@ -1512,12 +1512,9 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 							if (envs){
 								int j=0;
 								while (envs[j]){
-									qDebug()<<"ki_args: "<<envs[j];
 									env_arg=envs[j];
 									int index = env_arg.indexOf("WINEPREFIX=");
 									if (index>=0){
-
-
 										prefix=env_arg.mid(11);
 										break;
 									}

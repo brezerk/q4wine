@@ -42,23 +42,23 @@
 #include <QSqlRelationalTableModel>
 
 bool createDb(){
-	/* 
+	/*
 	 * create en empty database structure.
 	 * Nead for first setup or recovery
 	 */
-	
+
 	/*
 	QSqlDatabase db = QSqlDatabase::database();
-	
+
 	//db.setDatabaseName(QMessageBox::tr("%1/.q4wine/db/generic.dat").arg(QDir::homePath()));
 
 	if (!db.open()){
 		qDebug()<<"[EE] Sorry, i can't open database file db/generic.dat\".\n\n"
 				"May be database is not correctly installed...";
-					
+
 		return FALSE;
 	}
-	
+
 	QSqlQuery query;
 
 	if(!query.exec("CREATE TABLE prefix (wine_dllpath TEXT, wine_loader TEXT, wine_server TEXT, wine_exec TEXT, cdrom_mount TEXT, cdrom_drive TEXT, id INTEGER PRIMARY KEY, name TEXT, path TEXT, version TEXT);"))
@@ -66,13 +66,13 @@ bool createDb(){
 		qDebug() << "Failed to create table 'dir'" << query.lastError();
 		return FALSE;
 	}
-	
+
 	if(!query.exec("CREATE TABLE icon (wrkdir TEXT, override TEXT, winedebug TEXT, useconsole NUMERIC, display TEXT, mount TEXT, image TEXT, cmdargs TEXT, exec TEXT, icon_path TEXT, desc TEXT, desktop TEXT, nice TEXT, dir_id NUMERIC, id INTEGER PRIMARY KEY, name TEXT, prefix_id NUMERIC);"))
 	{
 		qDebug() << "Failed to create table 'dir'" << query.lastError();
 		return FALSE;
 	}
-	
+
 	if(!query.exec("CREATE TABLE dir (id INTEGER PRIMARY KEY, name TEXT, prefix_id NUMERIC);"))
 	{
 		qDebug() << "Failed to create table 'dir'" << query.lastError();
@@ -88,75 +88,53 @@ bool createDb(){
 	*/
 
 
-	return TRUE;	
-}
-
-bool checkDb(QSqlRecord * record, QString table){
-
-	if (record->isEmpty()){
-		QSqlQuery query;
-			
-			if (table=="prefix"){
-				if(!query.exec("CREATE TABLE prefix (wine_dllpath TEXT, wine_loader TEXT, wine_server TEXT, wine_exec TEXT, cdrom_mount TEXT, cdrom_drive TEXT, id INTEGER PRIMARY KEY, name TEXT, path TEXT, version TEXT);"))
-					return FALSE;
-			}
-
-			if (table=="dir"){
-				if(!query.exec("CREATE TABLE dir (id INTEGER PRIMARY KEY, name TEXT, prefix_id NUMERIC);"))
-					return FALSE;
-			}
-
-			if (table=="icon"){
-				if(!query.exec("CREATE TABLE icon (wrkdir TEXT, override TEXT, winedebug TEXT, useconsole NUMERIC, display TEXT, cmdargs TEXT, exec TEXT, icon_path TEXT, desc TEXT, desktop TEXT, nice TEXT, dir_id NUMERIC, id INTEGER PRIMARY KEY, name TEXT, prefix_id NUMERIC);"))
-					return FALSE;
-			}
-
-			if (table=="images"){
-				if(!query.exec("CREATE TABLE images (id INTEGER PRIMARY KEY, name TEXT, path TEXT);"))
-					return FALSE;
-			}
-			
-		}
-	
 	return TRUE;
 }
 
 bool initDb()
 {
-	/* 
+	/*
 	 * Databace engine init
 	 */
-	
-	
+
+
 	if (!QSqlDatabase::drivers().contains("QSQLITE")){
 		qDebug()<<"[EE] Unable to load database. This program needs the SQLITE driver";
 		return FALSE;
 	}
-	
+
 	QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 	db.setDatabaseName(QMessageBox::tr("%1/.config/%2/db/generic.dat").arg(QDir::homePath()).arg(APP_SHORT_NAME));
 
 	if (!db.open()){
 		qDebug()<<"[EE] Sorry, i can't open database file db/generic.dat\".\n\n"
 					"May be database is not correctly installed...";
-					
 		return FALSE;
 	}
-		
-	if (!checkDb(&db.record("prefix"), "prefix"))
-		return FALSE;
 
-	if (!checkDb(&db.record("dir"), "dir"))
-		return FALSE;
+	QSqlQuery query;
 
-	if (!checkDb(&db.record("icon"), "icon"))
-		return FALSE;
+	if (db.record("prefix").isEmpty()){
+		if(!query.exec("CREATE TABLE prefix (wine_dllpath TEXT, wine_loader TEXT, wine_server TEXT, wine_exec TEXT, cdrom_mount TEXT, cdrom_drive TEXT, id INTEGER PRIMARY KEY, name TEXT, path TEXT, version TEXT);"))
+			return FALSE;
+	}
 
-	if (!checkDb(&db.record("images"), "images"))
-		return FALSE;
+	if (db.record("dir").isEmpty()){
+		if(!query.exec("CREATE TABLE dir (id INTEGER PRIMARY KEY, name TEXT, prefix_id NUMERIC);"))
+			return FALSE;
+	}
 
+	if (db.record("icon").isEmpty()){
+		if(!query.exec("CREATE TABLE icon (wrkdir TEXT, override TEXT, winedebug TEXT, useconsole NUMERIC, display TEXT, cmdargs TEXT, exec TEXT, icon_path TEXT, desc TEXT, desktop TEXT, nice TEXT, dir_id NUMERIC, id INTEGER PRIMARY KEY, name TEXT, prefix_id NUMERIC);"))
+			return FALSE;
+	}
 
-	return TRUE;	
+  	if (db.record("images").isEmpty()){
+		if(!query.exec("CREATE TABLE images (id INTEGER PRIMARY KEY, name TEXT, path TEXT);"))
+			return FALSE;
+	}
+
+	return TRUE;
 }
 
 
