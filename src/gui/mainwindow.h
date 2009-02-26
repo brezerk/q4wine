@@ -73,6 +73,8 @@
 	#include <sys/user.h>
 	#include <sys/file.h>
 	#include <sys/sysctl.h>
+	#include <limits.h>
+	#include <paths.h>
 #endif
 
 // Experemental darwin support (need testing)
