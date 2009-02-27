@@ -446,11 +446,19 @@ void MainWindow::CoreFunction_WinePrepareRunParams(ExecObject execObj){
 		}
 
 		args.append(SH_BIN);
+
 	} else {
 		exec = SH_BIN;
 	}
 
 	args.append("-c");
+
+
+	if ((execObj.useconsole == "1") && (!execObj.wrkdir.isNull())){
+		envargs.append(" cd \"");
+		envargs.append(execObj.wrkdir);
+		envargs.append("\" ; ");
+	}
 
 	if (!query.value(0).toString().isEmpty()){
 		//If icon has prefix -- add to args
@@ -523,6 +531,9 @@ void MainWindow::CoreFunction_WinePrepareRunParams(ExecObject execObj){
 	args.append(exec_string);
 
 	query.clear();
+
+	qDebug()<<exec;
+	qDebug()<<args;
 
 	CoreFunction_WineRunProgram(exec, args, execObj.wrkdir);
 	return;
