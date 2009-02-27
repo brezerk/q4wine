@@ -50,6 +50,7 @@
 #include <QToolBar>
 #include <QIcon>
 #include <QGroupBox>
+#include <QLocale>
 
 #include "gui/mainwindow.h"
 
@@ -68,7 +69,7 @@ int main(int argc, char *argv[])
 	//QSettings settings("Brezerk GNU Soft", APP_NAME);
 
 	QSettings settings(APP_SHORT_NAME, "default");
-	
+
 	QString i18nPath;
 
 	i18nPath.clear();
@@ -76,18 +77,27 @@ int main(int argc, char *argv[])
 	i18nPath.append("/share/");
 	i18nPath.append(APP_SHORT_NAME);
 	i18nPath.append("/i18n");
-	
+
 	QString lang;
-	
+
 	// Getting env LANG variable
-	
-	
+
+
 	settings.beginGroup("app");
 		lang = settings.value("lang").toString();
 	settings.endGroup();
 
+	// This is hack for next QLocale bug:
+	//  http://bugs.gentoo.org/150745
+
 	if (lang.isEmpty()){
-		lang = getenv("LANG");
+		lang = getenv("LC_ALL");
+		  if (lang.isEmpty()){
+			lang = getenv("LC_MESSAGES");
+			    if (lang.isEmpty()){
+				 lang = getenv("LANG");
+			    }
+		  }
 		lang = lang.split(".").at(0).toLower();
 		lang.append(".qm");
 	}
@@ -134,96 +144,96 @@ int main(int argc, char *argv[])
 			//If no key, we gona to start an First Run Wizard to setup q4wine
 		Wizard *firstSetupWizard = new Wizard(1);
 		if (firstSetupWizard->exec()==QDialog::Accepted){
-				
+
 			rootConfPath.clear();
 			rootConfPath.append(QDir::homePath());
 			rootConfPath.append("/.config/");
 			rootConfPath.append(APP_SHORT_NAME);
-				
+
 			if (!dir.exists(rootConfPath)){
 				if (!dir.mkdir(rootConfPath)){
 					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create root directory %1.").arg(rootConfPath));
 					return -1;
 				}
 			}
-					
+
 			QString subDir;
-				
+
 			subDir=rootConfPath;
 			subDir.append("/db");
-				
+
 			if (!dir.exists(subDir)){
 				if (!dir.mkdir(subDir)){
 					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
 					return -1;
 				}
 			}
-				
+
 			subDir=rootConfPath;
 			subDir.append("/icons");
-				
+
 			if (!dir.exists(subDir)){
 				if (!dir.mkdir(subDir)){
 					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
 					return -1;
 				}
 			}
-				
+
 			subDir=rootConfPath;
 			subDir.append("/prefixes");
-				
+
 			if (!dir.exists(subDir)){
 				if (!dir.mkdir(subDir)){
 					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
 					return -1;
 				}
 			}
-				
+
 			subDir=rootConfPath;
 			subDir.append("/tmp");
-				
+
 			if (!dir.exists(subDir)){
 				if (!dir.mkdir(subDir)){
 					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
 					return -1;
 				}
 			}
-			
+
 			subDir=rootConfPath;
 			subDir.append("/theme");
-				
+
 			if (!dir.exists(subDir)){
 				if (!dir.mkdir(subDir)){
 					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
 					return -1;
 				}
 			}
-				
+
 			if (!initDb()){
 				QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to load database."));
 				return -1;
 			}
-				
+
 			if (!createDb()){
 				QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create database."));;
 				return -1;
 			}
-			
+
 			settings.setValue("configure", "yes");
-			
-			
+
+
 			//Creating default prefix reccord
 			QSqlQuery q;
 			q.prepare("INSERT INTO prefix(id, name) VALUES(NULL, :name);");
 			q.bindValue(":name", "Default");
-					
+
 			if (!q.exec()){
 				#ifdef DEBUG
 					qDebug()<<"WARNING: SQL error at Wizard::Scene prefix create\nINFO:\n"<<q.executedQuery()<<"\n"<<q.lastError();
 				#endif
 				return -1;
 			}
-			
+
 		} else {
 			return -1;
 		}
@@ -231,12 +241,12 @@ int main(int argc, char *argv[])
 		if (!initDb()){
 			QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to load database."));
 			return -1;
-		}	
-	}	
-	
+		}
+	}
+
 
 	MainWindow mainWin;
 	mainWin.show();
-	
+
 	return app.exec();
 }

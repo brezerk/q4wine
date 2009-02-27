@@ -39,7 +39,6 @@ IconSettings::IconSettings(bool newIcon, QString prefix_id, QString prefix_dir, 
 	 * @p_id    -- PrefixId
 	 * @p_id    -- PrefixId
 	 */
-
 	setupUi(this);
 
 	QSettings settings(APP_SHORT_NAME, "default");
@@ -90,6 +89,8 @@ IconSettings::IconSettings(bool newIcon, QString prefix_id, QString prefix_dir, 
 	twDlls->installEventFilter(this);
 
 	getWineDlls(winedll_path);
+
+
 
 	return;
 }

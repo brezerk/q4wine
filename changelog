@@ -11,6 +11,7 @@ Version 0.112
 			- Fixed q4wine.desktop GENERIC names;
 			- Fixed IconSettings path detections (ProgramPath\WorkDirPath e.t.c.);
 			- Fixed .exe adding to IconName on Prgoram file	select;
+			- Run and IconSettings now are modal dialogs;
 
 Version 0.111
 	core:

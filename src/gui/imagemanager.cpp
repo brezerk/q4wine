@@ -30,6 +30,9 @@
 
 ImageManager::ImageManager(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
+	setModal(true);
+	qDebug()<<isModal();
+
 	setupUi(this);
 
 	QSettings settings(APP_SHORT_NAME, "default");

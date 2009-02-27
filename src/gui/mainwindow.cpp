@@ -2065,7 +2065,7 @@ void MainWindow::mainImageManager_Click(){
 	 * CD Image Manager
 	 */
 
-	ImageManager *manager = new ImageManager();
+	ImageManager *manager = new ImageManager(0);
 
 	manager->exec();
 	return;
@@ -2631,7 +2631,7 @@ void MainWindow::iconAdd_Click(void){
 	if (dataList.at(0)=="-1")
 		return;
 
-		IconSettings *iconAddWizard = new IconSettings(TRUE, dataList.at(0), dataList.at(1), dataList.at(6), "", dataList.at(2));
+	IconSettings *iconAddWizard = new IconSettings(TRUE, dataList.at(0), dataList.at(1), dataList.at(6), "", dataList.at(2));
 	if (iconAddWizard->exec() == QDialog::Accepted){
 		// Updating icons view
 		twPrograms_ItemClick(treeItem, 0);
