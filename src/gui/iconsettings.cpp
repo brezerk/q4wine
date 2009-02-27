@@ -308,7 +308,17 @@ void IconSettings::cbUseConsole_stateChanged(int){
 \*************************************************************/
 
 void IconSettings::cmdGetWorkDir_Click(){
-	QString fileName = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
+
+  	QString selDir=prefix_dir;
+
+	if (!txtProgramPath->text().isEmpty()){
+		selDir=txtProgramPath->text().left(txtProgramPath->text().length() - txtProgramPath->text().split("/").last().length());;
+	}
+
+	if (!QDir(selDir).exists())
+	    selDir=prefix_dir;
+
+	QString fileName = QFileDialog::getExistingDirectory(this, tr("Open Directory"), selDir, QFileDialog::DontResolveSymlinks);
 
 	if(!fileName.isEmpty()){
 		txtWorkDir->setText(fileName);
@@ -335,11 +345,24 @@ void IconSettings::cmdAdd_Click(){
 
 void IconSettings::cmdGetProgram_Click(){
 
-	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Exe file"), prefix_dir, tr("Exe files (*.exe)"));
+	QString selDir=prefix_dir;
+
+	if (!txtProgramPath->text().isEmpty()){
+	    if (!txtWorkDir->text().isEmpty()){
+		selDir=txtWorkDir->text();
+	    } else {
+		selDir=txtProgramPath->text().left(txtProgramPath->text().length() - txtProgramPath->text().split("/").last().length());;
+	    }
+	}
+
+	if (!QDir(selDir).exists())
+	    selDir=prefix_dir;
+
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Exe file"), selDir, tr("Exe files (*.exe)"));
 
 	if(!fileName.isEmpty()){
 			QStringList list1 = fileName.split("/");
-			txtName->setText(list1.last());
+			txtName->setText(list1.last().left(list1.last().length() - list1.last().split(".").last().length() - 1));
 			txtProgramPath->setText(fileName);
 
 			QString wrkDir;
@@ -367,7 +390,6 @@ void IconSettings::cmdGetIcon_Click(){
 	fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), searchPath, tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)") );
 
 	if(!fileName.isEmpty()){
-
 		if ((fileName.toLower().right(3)!="exe") && (fileName.toLower().right(3)!="dll")){
 			cmdGetIcon->setIcon (QIcon(fileName));
 		} else {

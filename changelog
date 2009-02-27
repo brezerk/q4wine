@@ -4,7 +4,15 @@ See INSTALL file for details
 
 Changelog
 ***********************************************
-Varsion 0.111
+Version 0.112
+	core:
+		Fixed:
+			- Added FreeBSD port patches by Dmitry Marakasov aka amdmi3;
+			- Fixed q4wine.desktop GENERIC names;
+			- Fixed IconSettings path detections (ProgramPath\WorkDirPath e.t.c.);
+			- Fixed .exe adding to IconName on Prgoram file	select;
+
+Version 0.111
 	core:
 		New:
 			- New q4wine icons with different sizes;
