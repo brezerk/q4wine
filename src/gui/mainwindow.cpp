@@ -532,9 +532,6 @@ void MainWindow::CoreFunction_WinePrepareRunParams(ExecObject execObj){
 
 	query.clear();
 
-	qDebug()<<exec;
-	qDebug()<<args;
-
 	CoreFunction_WineRunProgram(exec, args, execObj.wrkdir);
 	return;
 }
