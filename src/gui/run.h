@@ -38,6 +38,7 @@
 #include <QFileDialog>
 #include <QSettings>
 #include <QMessageBox>
+#include <QUrl>
 #include <QKeyEvent>
 #include <QSqlQuery>
 #include <QHeaderView>
@@ -61,17 +62,17 @@ class Run : public QDialog, public Ui::Run
 		void comboPrefixes_indexChanged (int);
 		void cbUseConsole_stateChanged(int);
 		void ResizeContent(int TabIndex);
-		
+
 		void cmdGetProgram_Click();
 		void cmdGetWorkDir_Click();
-		
+
 	private:
 		QString prefix_id, prefix_dir;
-		
+
 		bool eventFilter (QObject *object, QEvent *event);
 		void getWineDlls (QString wine_dllpath);
 		void getPrefixes (void);
-		
+
 		void loadThemeIcons(QString themePath);
 		QIcon loadIcon(QString iconName, QString themePath);
 };

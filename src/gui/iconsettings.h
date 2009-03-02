@@ -45,6 +45,7 @@
 #include <QSqlRelation>
 #include <QSettings>
 #include <QKeyEvent>
+#include <QUrl>
 #include <QHeaderView>
 #include <QTableWidget>
 
@@ -67,7 +68,7 @@ class IconSettings : public QDialog, public Ui::IconSettings
 		void cbUseConsole_stateChanged(int);
 		void cmdCancel_Click();
 		void cmdOk_Click();
-		
+
 	private:
 		QString prefix_dir, dir_id, prefix_id, iconName, iconId, iconPath;
 		bool newIcon;
@@ -75,10 +76,10 @@ class IconSettings : public QDialog, public Ui::IconSettings
 		void resizeEvent (QResizeEvent);
 		bool eventFilter (QObject *object, QEvent *event);
 		void getWineDlls(QString winedll_path);
-		
+
 		void loadThemeIcons(QString themePath);
 		QIcon loadIcon(QString iconName, QString themePath);
-		
+
 		QString WRESTOOL_BIN;
 		QString ICOTOOL_BIN;
 };

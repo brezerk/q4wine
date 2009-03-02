@@ -6,12 +6,16 @@ Changelog
 ***********************************************
 Version 0.112
 	core:
+		New:
+			- Added Sidebar Urls for Run and IconSettings file dialogs;
 		Fixed:
 			- Added FreeBSD port patches by Dmitry Marakasov aka amdmi3;
 			- Fixed q4wine.desktop GENERIC names;
 			- Fixed IconSettings path detections (ProgramPath\WorkDirPath e.t.c.);
 			- Fixed .exe adding to IconName on Prgoram file	select;
 			- Run and IconSettings now are modal dialogs;
+			- Fixed LC_ALL and LS_MESSAGES locale detection;
+		
 
 Version 0.111
 	core:

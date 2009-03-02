@@ -238,7 +238,9 @@ void Run::getPrefixes(){
 			prefix_dir=query.value(3).toString();
 			if (prefix_dir.isNull()){
 				prefix_dir.append(QDir::homePath());
-				prefix_dir.append("/.wine/");
+				prefix_dir.append("/.wine/drive_c/");
+			} else {
+				prefix_dir.append("/drive_c/");
 			}
 		}
 	}
@@ -300,7 +302,40 @@ void Run::ResizeContent(int TabIndex){
 
 void Run::cmdGetProgram_Click(){
 
-	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Exe file"), prefix_dir, tr("Exe files (*.exe)"));
+//	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Exe file"), prefix_dir, tr("Exe files (*.exe)"));
+
+    QString fileName;
+	QString searchPath=prefix_dir;
+
+	if (!txtProgramBin->text().isEmpty()){
+	    if (!txtWorkDir->text().isEmpty()){
+		searchPath=txtWorkDir->text();
+	    } else {
+		searchPath=txtProgramBin->text().left(txtProgramBin->text().length() - txtProgramBin->text().split("/").last().length());;
+	    }
+	}
+
+	if (!QDir(searchPath).exists())
+	    searchPath=prefix_dir;
+
+	QList<QUrl> prefix_urls;
+	prefix_urls << QUrl::fromLocalFile(prefix_dir);
+
+	if (searchPath != prefix_dir)
+	    prefix_urls << QUrl::fromLocalFile(searchPath);
+	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
+
+	QFileDialog dialog(this);
+	  dialog.setFileMode(QFileDialog::ExistingFile);
+	  dialog.setWindowTitle(tr("Open Exe file"));
+	  dialog.setDirectory(searchPath);
+	  dialog.setNameFilter(tr("Exe files (*.exe)"));
+	  dialog.setSidebarUrls(prefix_urls);
+
+	 if (dialog.exec())
+	    fileName = dialog.selectedFiles().first();
+
+
 
 	if(!fileName.isEmpty()){
 		QStringList list1 = fileName.split("/");
@@ -315,7 +350,35 @@ void Run::cmdGetProgram_Click(){
 }
 
 void Run::cmdGetWorkDir_Click(){
-	QString fileName = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
+	QString searchPath=prefix_dir;
+	QString fileName;
+
+	if (!txtProgramBin->text().isEmpty()){
+		searchPath=txtProgramBin->text().left(txtProgramBin->text().length() - txtProgramBin->text().split("/").last().length());;
+	}
+
+	if (!QDir(searchPath).exists())
+	    searchPath=prefix_dir;
+
+	QList<QUrl> prefix_urls;
+	prefix_urls << QUrl::fromLocalFile(prefix_dir);
+
+	if (searchPath != prefix_dir)
+	    prefix_urls << QUrl::fromLocalFile(searchPath);
+	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
+
+	QFileDialog dialog(this);
+	  dialog.setFileMode(QFileDialog::Directory);
+	  dialog.setWindowTitle(tr("Open Directory"));
+	  dialog.setDirectory(searchPath);
+	  dialog.setOption(QFileDialog::ShowDirsOnly, true);
+
+	  dialog.setSidebarUrls(prefix_urls);
+
+	//fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), searchPath, tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)") );
+
+	 if (dialog.exec())
+	    fileName = dialog.selectedFiles().first();
 
 	if(!fileName.isEmpty()){
 		txtWorkDir->setText(fileName);
