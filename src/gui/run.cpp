@@ -335,8 +335,6 @@ void Run::cmdGetProgram_Click(){
 	 if (dialog.exec())
 	    fileName = dialog.selectedFiles().first();
 
-
-
 	if(!fileName.isEmpty()){
 		QStringList list1 = fileName.split("/");
 		txtProgramBin->setText(fileName);

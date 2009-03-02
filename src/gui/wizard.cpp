@@ -27,7 +27,6 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-
 #include "wizard.h"
 
 #include <QSqlDatabase>
@@ -39,39 +38,39 @@
 
 void Wizard::loadThemeIcons(QString themePath, int Scene){
 	QPixmap pixmap;
-				
+
 	switch (Scene){
 		case 0:
 			// Prefix creation
 			if (!pixmap.load(tr("%1/data/prefixc.png").arg(themePath))){
 				pixmap.load(":data/prefixc.png");
 			}
-						
+
 			lblPicture->setPixmap(pixmap);
-			
-			
+
+
 			cmdGetWineBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetWineServerBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetWineLoaderBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetWineDllPath->setIcon(loadIcon("data/folder.png", themePath));
-			
+
 			cmdGetPrefixPath->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetMountPoint->setIcon(loadIcon("data/folder.png", themePath));
-			
+
 		break;
 		case 1:
 			// First startup
 			if (!pixmap.load(tr("%1/data/firstc.png").arg(themePath))){
 				pixmap.load(":data/firstc.png");
 			}
-						
+
 			lblPicture->setPixmap(pixmap);
-			
+
 			cmdGetWineBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetWineServerBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetWineLoaderBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetWineDllPath->setIcon(loadIcon("data/folder.png", themePath));
-			
+
 			cmdGetTarBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetMountBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetUmountBin->setIcon(loadIcon("data/folder.png", themePath));
@@ -79,7 +78,7 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 			cmdGetNiceBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetReniceBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetShBin->setIcon(loadIcon("data/folder.png", themePath));
-	
+
 			cmdGetConsoleBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetWrestoolBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetIcotoolBin->setIcon(loadIcon("data/folder.png", themePath));
@@ -106,9 +105,9 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 QIcon Wizard::loadIcon(QString iconName, QString themePath){
 	// Function tryes to load icon image from theme dir
 	// If it fails -> load default from rsource file
-	
+
 	QIcon icon;
-	
+
 	if ((!themePath.isEmpty()) and (themePath!="Default")){
 		icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
 		if (icon.isNull()){
@@ -118,7 +117,7 @@ QIcon Wizard::loadIcon(QString iconName, QString themePath){
 		icon.addFile(tr(":/%1").arg(iconName));
 	}
 
-	return icon;	
+	return icon;
 }
 
 
@@ -128,7 +127,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	/*
 		Note: var1, var2 is optional data, used for different scene actions ;)
 	*/
-	
+
 	setupUi(this);
 
 	widgetCreatePrefix0->setVisible(FALSE);
@@ -137,15 +136,15 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	Page=1;
 	QString console_w;
 
-	
+
 	QSettings settings(APP_SHORT_NAME, "default");
-	
+
 	settings.beginGroup("app");
 		loadThemeIcons(settings.value("theme").toString(), Scena);
-	settings.endGroup();	
-	
-	
-	
+	settings.endGroup();
+
+
+
 	switch (Scena){
 		case 0:
 			TotalPage=5;
@@ -162,7 +161,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 			cmdGetWineLoaderBin->installEventFilter(this);
 			cmdGetWineDllPath->installEventFilter(this);
 			cmdGetMountPoint->installEventFilter(this);
-	
+
 			getprocDevices();
 		break;
 		case 1:
@@ -176,7 +175,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 			cmdGetWineServerBin->installEventFilter(this);
 			cmdGetWineLoaderBin->installEventFilter(this);
 			cmdGetWineDllPath->installEventFilter(this);
-			
+
 			cmdGetTarBin->installEventFilter(this);
 			cmdGetMountBin->installEventFilter(this);
 			cmdGetUmountBin->installEventFilter(this);
@@ -184,23 +183,32 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 			cmdGetNiceBin->installEventFilter(this);
 			cmdGetReniceBin->installEventFilter(this);
 			cmdGetShBin->installEventFilter(this);
-			
+
 			cmdGetConsoleBin->installEventFilter(this);
 			cmdGetWrestoolBin->installEventFilter(this);
 			cmdGetIcotoolBin->installEventFilter(this);
-                        core = new CoreMethods ();
-                        txtWineBin->setText(core->getWhichOut("wine"));
-                        txtWineServerBin->setText(core->getWhichOut("wineserver"));
-                        txtWineLoaderBin->setText(core->getWhichOut("wine"));
-			
-                        txtTarBin->setText(core->getWhichOut("tar"));
-                        txtMountBin->setText(core->getWhichOut("mount"));
-                        txtUmountBin->setText(core->getWhichOut("umount"));
-                        txtSudoBin->setText(core->getWhichOut("sudo"));
-                        txtNiceBin->setText(core->getWhichOut("nice"));
-                        txtReniceBin->setText(core->getWhichOut("renice"));
-                        txtShBin->setText(core->getWhichOut("sh"));
-			
+				core = new CoreMethods ();
+				txtWineBin->setText(core->getWhichOut("wine"));
+				txtWineServerBin->setText(core->getWhichOut("wineserver"));
+				txtWineLoaderBin->setText(core->getWhichOut("wine"));
+
+				if (QDir("/usr/lib/wine").exists())
+				    txtWineDllPath->setText("/usr/lib/wine");
+
+				if (QDir("/local/usr/lib/wine").exists())
+				    txtWineDllPath->setText("/local/usr/lib/wine");
+
+				if (QDir("/usr/local/lib/wine").exists())
+				    txtWineDllPath->setText("/usr/local/lib/wine");
+
+				txtTarBin->setText(core->getWhichOut("tar"));
+				txtMountBin->setText(core->getWhichOut("mount"));
+				txtUmountBin->setText(core->getWhichOut("umount"));
+				txtSudoBin->setText(core->getWhichOut("sudo"));
+				txtNiceBin->setText(core->getWhichOut("nice"));
+				txtReniceBin->setText(core->getWhichOut("renice"));
+				txtShBin->setText(core->getWhichOut("sh"));
+
 						console_w = core->getWhichOut("konsole");
 							if (!console_w.isEmpty()){
 									txtConsoleBin->setText(console_w);
@@ -212,11 +220,11 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 											txtConsoleArgs->setText("-e");
 									}
 							}
-				
-			
-                        txtWrestoolBin->setText(core->getWhichOut("wrestool"));
-                        txtIcotoolBin->setText(core->getWhichOut("icotool"));
-                        delete core;
+
+
+				txtWrestoolBin->setText(core->getWhichOut("wrestool"));
+				txtIcotoolBin->setText(core->getWhichOut("icotool"));
+				delete core;
 
 		break;
 		case 2:
@@ -243,7 +251,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	connect(cmdBack, SIGNAL(clicked()), this, SLOT(previosWizardPage()));
 
 	connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
-	
+
 	widgetCreatePrefix0->setVisible(FALSE);
 	widgetCreatePrefix1->setVisible(FALSE);
 	widgetCreatePrefix2->setVisible(FALSE);
@@ -252,14 +260,14 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	widgetCreateFakeDrive1->setVisible(FALSE);
 	widgetCreateFakeDrive2->setVisible(FALSE);
 	widgetCreateFakeDrive3->setVisible(FALSE);
-	
+
 	widgetFirstStartup0->setVisible(FALSE);
 	widgetFirstStartup1->setVisible(FALSE);
 	widgetFirstStartup2->setVisible(FALSE);
 	widgetFirstStartup3->setVisible(FALSE);
 
 	widgetInfo->setVisible(FALSE);
-	
+
 	updateScena();
 
 	return;
@@ -276,9 +284,9 @@ void Wizard::comboProxyType_indexChanged(QString text){
 		txtProxyHost->setEnabled(TRUE);
 		txtProxyPort->setEnabled(TRUE);
 		txtProxyUser->setEnabled(TRUE);
-		txtProxyPass->setEnabled(TRUE);		
+		txtProxyPass->setEnabled(TRUE);
 	}
-	
+
 	return;
 }
 
@@ -300,7 +308,7 @@ void Wizard::changeBoxState(int state){
 				break;
 			}
 		break;
-	}	
+	}
 	*/
 
 	return;
@@ -311,47 +319,47 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 	/*
 		User select folder dialog function
 	*/
-	
+
 	if (event->type() == QEvent::MouseButtonPress) {
-		
+
 		QString file;
-		
+
 		if (obj->objectName().right(3)=="Bin"){
 			file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
 		} else {
 			file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
 		}
-			
+
 		if (!file.isEmpty()){
 			QString a;
-			
+
 			a.append("txt");
 			a.append(obj->objectName().right(obj->objectName().length()-6));
-			
+
 			QLineEdit *lineEdit = findChild<QLineEdit *>(a);
-			
+
 			if (lineEdit){
 				lineEdit->setText(file);
 			} else {
-				qDebug("Error");	
+				qDebug("Error");
 			}
-			
-			
+
+
 			if (obj==cmdGetWineBin){
-				
+
 				QString wrkDir;
 				QStringList list1 = file.split("/");
-				
+
 				wrkDir = file.left(file.length() - list1.last().length());
 				txtWineServerBin->setText(tr("%1wineserver").arg(wrkDir));
 				txtWineLoaderBin->setText(tr("%1wine").arg(wrkDir));
 
-					
+
 			}
-			
+
 		}
 	}
-	return FALSE;	
+	return FALSE;
 }
 
 
@@ -359,7 +367,7 @@ bool Wizard::checkEntry(QString fileName, QString info, bool isFile){
 	/*
 	 *	This function check user entry
 	 */
-	
+
 	if (fileName.isEmpty()){
 		switch (isFile){
 			case FALSE:
@@ -383,7 +391,7 @@ bool Wizard::checkEntry(QString fileName, QString info, bool isFile){
 			return FALSE;
 		}
 	}
-	
+
 	return TRUE;
 }
 
@@ -397,13 +405,13 @@ void Wizard::nextWizardPage(){
 		case 1:
 			switch (Page){
 				case 3:
-					
+
 					if (!checkEntry(txtWineBin->text(), "wine"))
 						return;
-					
+
 					if (!checkEntry(txtWineServerBin->text(), "wine server"))
 						return;
-					
+
 					if (!checkEntry(txtWineLoaderBin->text(), "wine loader"))
 						return;
 
@@ -412,10 +420,10 @@ void Wizard::nextWizardPage(){
 
 				break;
 				case 4:
-					
+
 					if (!checkEntry(txtTarBin->text(), "tar"))
 						return;
-					
+
 					if (!checkEntry(txtMountBin->text(), "mount"))
 						return;
 
@@ -424,7 +432,7 @@ void Wizard::nextWizardPage(){
 
 					if (!checkEntry(txtSudoBin->text(), "sudo"))
 						return;
-					
+
 					if (!checkEntry(txtUmountBin->text(), "nice"))
 						return;
 
@@ -436,16 +444,16 @@ void Wizard::nextWizardPage(){
 
 				break;
 				case 5:
-					
+
 					if (!checkEntry(txtConsoleBin->text(), "console"))
 						return;
-					
+
 					if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
 						return;
 
 					if (!checkEntry(txtIcotoolBin->text(), "icotool"))
 						return;
-				
+
 				break;
 				case 6:
 					if (comboProxyType->currentText()!=tr("No Proxy")){
@@ -460,16 +468,16 @@ void Wizard::nextWizardPage(){
 					}
 				break;
 				case 7:
-					
+
 					QSettings settings(APP_SHORT_NAME, "default");
-						
+
 					settings.beginGroup("wine");
 					settings.setValue("WineBin", txtWineBin->text());
 					settings.setValue("ServerBin", txtWineServerBin->text());
 					settings.setValue("LoaderBin", txtWineLoaderBin->text());
 					settings.setValue("WineLibs", txtWineDllPath->text());
 					settings.endGroup();
-	
+
 					settings.beginGroup("system");
 					settings.setValue("tar", txtTarBin->text());
 					settings.setValue("mount", txtMountBin->text());
@@ -501,9 +509,9 @@ void Wizard::nextWizardPage(){
 							settings.setValue("type", 2);
 						}
 					}
-		
+
 					settings.endGroup();
-					
+
 					accept();
 				break;
 			}
@@ -545,7 +553,7 @@ void Wizard::nextWizardPage(){
 					}
 				break;
 				case 5:
-				
+
 					QSqlQuery q;
 					q.prepare("INSERT INTO prefix(id, name, path, wine_exec, wine_server, wine_loader, wine_dllpath, cdrom_mount, cdrom_drive) VALUES(NULL, :name, :path, :wine_exec, :wine_server, :wine_loader, :wine_dllpath, :cdrom_mount, :cdrom_drive);");
 					q.bindValue(":name", txtPrefixName->text());
@@ -553,7 +561,7 @@ void Wizard::nextWizardPage(){
 					//if (cbCreafeFake->checkState()==Qt::Checked){
 					//	q.bindValue(":version", cbFakeVersion->currentText());
 					//}
-					
+
 					q.bindValue(":wine_exec", txtWineBin->text());
 					q.bindValue(":wine_server", txtWineServerBin->text());
 					q.bindValue(":wine_loader", txtWineLoaderBin->text());
@@ -574,7 +582,7 @@ void Wizard::nextWizardPage(){
 						q.bindValue(":cdrom_mount", "");
 						q.bindValue(":cdrom_drive", "");
 					}
-		
+
 					if (!q.exec()){
 						#ifdef DEBUG
 							qDebug()<<"WARNING: SQL error at Wizard::Scene prefix create\nINFO:\n"<<q.executedQuery()<<"\n"<<q.lastError();
@@ -582,8 +590,8 @@ void Wizard::nextWizardPage(){
 						return;
 					}
 
-					
-					if (cbCreafeFake->checkState()==Qt::Checked){	
+
+					if (cbCreafeFake->checkState()==Qt::Checked){
 						Wizard *createFakeDriveWizard = new Wizard(2, txtPrefixName->text());
 						createFakeDriveWizard->exec();
 					}
@@ -597,12 +605,12 @@ void Wizard::nextWizardPage(){
 				case 6:
 
 					QApplication::setOverrideCursor( Qt::BusyCursor );
-					
+
 					//Set variables
 					QSqlQuery query;
 					QString prefix_name = var1;
 					QString prefix_id;
-					
+
 					//Getting versions
 					QString version;
 					if (comboFakeVersion->currentText()=="Windows XP")
@@ -631,11 +639,11 @@ void Wizard::nextWizardPage(){
 							version = "win30";
 					if (comboFakeVersion->currentText()=="Windows 2.0")
 							version = "win20";
-		
+
 					WineBinLauncher *launcher;
 
 					launcher = new WineBinLauncher(prefix_name);
-	
+
 					launcher->appendWineExe("prefixcreate");
 					launcher->run_exec(this, "", "-w", TRUE);
 						if (launcher->exec()!=QDialog::Accepted){
@@ -649,14 +657,14 @@ void Wizard::nextWizardPage(){
 					Registry registry;
 
 					if (registry.init()){
-						registry.append(tr("[HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion]\n\"RegisteredOrganization\"=\"%1\"\n\"RegisteredOwner\"=\"%2\"\n\n[HKEY_CURRENT_USER\\Software\\Wine]\n\"Version\"=\"%3\"").arg(txtOrganization->text()).arg(txtOwner->text()).arg(version));	
+						registry.append(tr("[HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion]\n\"RegisteredOrganization\"=\"%1\"\n\"RegisteredOwner\"=\"%2\"\n\n[HKEY_CURRENT_USER\\Software\\Wine]\n\"Version\"=\"%3\"").arg(txtOrganization->text()).arg(txtOwner->text()).arg(version));
 
 						if (!txtFakeBrowsers->text().isEmpty())
 							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\WineBrowser]\n\"Browsers\"=\"%1\"").arg(txtFakeBrowsers->text()));
 
 						if (!txtFakeMailers->text().isEmpty())
 							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\WineBrowser]\n\"Mailers\"=\"%1\"").arg(txtFakeMailers->text()));
-						
+
 						if (comboFakeD3D_Multi->currentText()!="default")
 							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"Multisampling\"=\"%1\"").arg(comboFakeD3D_Multi->currentText()));
 
@@ -690,7 +698,7 @@ void Wizard::nextWizardPage(){
 						if (comboFakeX11_XVid->currentText()!="default")
 							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver]\n\"UseXVidMode\"=\"%1\"").arg(comboFakeX11_XVid->currentText()));
 
-						
+
 
 						if (cbUseQtColors->checkState()==Qt::Checked){
 							registry.append(tr("\n\n[HKEY_CURRENT_USER\\Control Panel\\Colors]\n"));
@@ -698,7 +706,7 @@ void Wizard::nextWizardPage(){
 
 								QColor color;
 								QPalette cur_palette;
-		
+
 								cur_palette = qApp->palette();
 
 								color = cur_palette.color(QPalette::Base);
@@ -724,7 +732,7 @@ void Wizard::nextWizardPage(){
 
 								color = cur_palette.color(QPalette::Light);
 								registry.append(tr("\"ButtonHilight\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
-								
+
 								color = cur_palette.color(QPalette::ButtonText);
 								registry.append(tr("\"ButtonText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
 
@@ -750,7 +758,7 @@ void Wizard::nextWizardPage(){
 
 
 						if (registry.exec(this, prefix_name)){
-							
+
 							QString dir_id;
 
 							//Is settings directory exists?
@@ -883,11 +891,11 @@ void Wizard::nextWizardPage(){
 								query.bindValue(":name", tr("autostart"));
 								query.bindValue(":prefix_id", prefix_id);
 								query.exec();
-								
+
 							}
 							query.clear();
 
-							
+
 							QApplication::restoreOverrideCursor();
 							accept() ;
 						} else {
@@ -899,7 +907,7 @@ void Wizard::nextWizardPage(){
 			}
 		break;
 	}
-	
+
 
 	Page++;
 
@@ -917,7 +925,7 @@ void Wizard::previosWizardPage(){
 			case 0:
 				switch (Page){
 					case 1:
-						
+
 					break;
 				}
 			break;
@@ -936,7 +944,7 @@ void Wizard::updateScena(){
 
 		switch(Scena){
 			case 1:
-				/* 
+				/*
 				New prefix creation
 				*/
 				switch (Page){
@@ -946,17 +954,17 @@ void Wizard::updateScena(){
 
 						widgetFirstStartup0->setVisible(FALSE);
 						widgetInfo->setVisible(TRUE);
-						
+
 						cmdNext->setEnabled(TRUE);
 						cmdBack->setEnabled(FALSE);
 					break;
 					case 2:
 						txtInfo->setText(tr("<p><b><span style='font-weight:600; color:#6495ed;'>%1</span></b> was initially written by Malakhov Alexey aka John Brezerk  [<a href='mailto:brezerk@gmail.com'>brezerk@gmail.com</a>]</p><p>General ideia comes from <b><span style='font-weight:600; color:#6495ed;'>WineTools</span></b> scripts witch was initially written by Frank Hendriksen [<a href='mailto:frank@frankscorner.org'>frank@frankscorner.org</a>]</p><p>It is licensed under the <b><span style='font-weight:600; color:#6495ed;'>GPL v3</span></b>.</p><p>Send comments, bugreports, etc. to [<a href='mailto:brezerk@gmail.com'>brezerk@gmail.com</a>]</p><p><b><span style='font-weight:600; color:#6495ed;'>Note</span></b>: This software comes with absolutely no warranty. You will <b><span style='font-weight:600; color:#7D1D10;'>NOT</span></b> get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.</p><p>If you <span style='font-weight:600; color:#6495ed;'>need help</span>, ask the mailing lists at <a href='http://www.winehq.org/site/forums'>http://www.winehq.org/site/forums</a>.</p><p>If you <span style='font-weight:600; color:#6495ed;'>want support</span>, buy the commercial versions of wine: CodeWeavers CrossOver Office (<a href='http://www.codeweavers.com'>http://www.codeweavers.com</a>) for Desktop Applications</p>").arg(APP_NAME));
-						
+
 						widgetCreatePrefix1->setVisible(FALSE);
 						widgetInfo->setVisible(FALSE);
 						widgetFirstStartup0->setVisible(TRUE);
-						
+
 						cmdNext->setEnabled(TRUE);
 						cmdBack->setEnabled(TRUE);
 					break;
@@ -978,7 +986,7 @@ void Wizard::updateScena(){
 					break;
 					case 6:
 						widgetFirstStartup1->setVisible(FALSE);
-						widgetFirstStartup2->setVisible(FALSE);		
+						widgetFirstStartup2->setVisible(FALSE);
 						widgetFirstStartup3->setVisible(TRUE);
 						cmdNext->setText(tr("Next >"));
 						widgetInfo->setVisible(FALSE);
@@ -988,11 +996,11 @@ void Wizard::updateScena(){
 						widgetFirstStartup3->setVisible(FALSE);
 						widgetInfo->setVisible(TRUE);
 						cmdNext->setText(tr("Finish"));
-					break;	
-				}				
+					break;
+				}
 			break;
 			case 0:
-				/* 
+				/*
 					New prefix creation
 				*/
 				switch (Page){
@@ -1004,7 +1012,7 @@ void Wizard::updateScena(){
 						widgetCreatePrefix1->setVisible(FALSE);
 						widgetCreatePrefix2->setVisible(FALSE);
 						widgetInfo->setVisible(TRUE);
-						
+
 						cmdNext->setEnabled(TRUE);
 						cmdBack->setEnabled(FALSE);
 					break;
@@ -1044,51 +1052,51 @@ void Wizard::updateScena(){
 						} else {
 							info.append(tr("<p><b>Wine Bin</b>: Default"));
 						}
-						
+
 						if (!txtWineServerBin->text().isEmpty()){
 							info.append(tr("<br><b>Wine Server</b>: %1").arg(txtWineServerBin->text()));
 						} else {
 							info.append(tr("<br><b>Wine Server</b>: Default"));
 						}
-						
+
 						if (!txtWineLoaderBin->text().isEmpty()){
 							info.append(tr("<br><b>Wine Loader</b>: %1").arg(txtWineLoaderBin->text()));
 						} else {
 							info.append(tr("<br><b>Wine Loader</b>: Default"));
 						}
-						
+
 						if (!txtWineDllPath->text().isEmpty()){
 							info.append(tr("<br><b>Wine Dll Path</b>: %1").arg(txtWineDllPath->text()));
 						} else {
 							info.append(tr("<br><b>Wine Dll Path</b>: Default"));
 						}
-						
+
 						if (!txtMountPoint->text().isEmpty()){
 							info.append(tr("<p><b>Quick mount options</b> <br><b>Device</b>: %1<br><b>Mount point</b>: %2</p>").arg(txtMountPoint->text()) .arg(combSourceDevice->currentText()));
 						}
-						
+
 						lblWizardInfo->setText(info);
 						widgetInfo->setVisible(TRUE);
 						widgetCreatePrefix0->setVisible(FALSE);
 						widgetCreatePrefix1->setVisible(FALSE);
 						widgetCreatePrefix2->setVisible(FALSE);
 						cmdNext->setText(tr("Finish"));
-						
+
 					break;
 				}
 			break;
 			case 2:
-				/* 
+				/*
 					New fake drive creation
 				*/
 				switch (Page){
 					case 1:
-						
-						
+
+
 
 						widgetCreateFakeDrive0->setVisible(FALSE);
 						widgetInfo->setVisible(TRUE);
-						
+
 						cmdNext->setEnabled(TRUE);
 						cmdBack->setEnabled(FALSE);
 					break;
@@ -1098,7 +1106,7 @@ void Wizard::updateScena(){
 						widgetInfo->setVisible(FALSE);
 						cmdNext->setEnabled(TRUE);
 						cmdBack->setEnabled(TRUE);
-					
+
 						cmdNext->setText(tr("Next >"));
 					break;
 					case 3:
@@ -1122,7 +1130,7 @@ void Wizard::updateScena(){
 						QString info;
 
 						info = tr("<p>All ready for fake drive creation. </p><p>Please, press the <b>Finish</b> button to create facke drive. Or press <b>Back</b> button for return.</p>");
-						
+
 						lblWizardInfo->setText(info);
 						widgetInfo->setVisible(TRUE);
 						widgetCreateFakeDrive2->setVisible(FALSE);
@@ -1143,7 +1151,7 @@ void Wizard::getprocDevices(){
 	*/
 
 	QString name, procstat, path, prefix;;
-		
+
 	QFile file("/etc/fstab");
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
 		QMessageBox::warning(this, tr("Error"), tr("Sorry, i can't access to /etc/fstab"));
@@ -1151,17 +1159,17 @@ void Wizard::getprocDevices(){
 
 	while (1) {
 		QByteArray line = file.readLine();
-		
+
 		if (line.isEmpty())
 			break;
-		
+
 		if (line.indexOf("cdrom")>=0){
 			QList<QByteArray> array = line.split(' ').at(0).split('\t');
 				combSourceDevice->addItem(array.at(0));
 		}
 	}
 	file.close();
-	
+
 	return;
 }
 

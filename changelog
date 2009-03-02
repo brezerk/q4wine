@@ -8,6 +8,7 @@ Version 0.112
 	core:
 		New:
 			- Added Sidebar Urls for Run and IconSettings file dialogs;
+			- Wine Dlls path autodetections; (If not work on your system -- plz mail to me ;) )
 		Fixed:
 			- Added FreeBSD port patches by Dmitry Marakasov aka amdmi3;
 			- Fixed q4wine.desktop GENERIC names;
