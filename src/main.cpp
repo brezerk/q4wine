@@ -57,6 +57,7 @@
 #include <stdlib.h>
 
 #include "stdio.h"
+#include <locale.h>
 
 #include "initdb.h"
 
@@ -81,8 +82,6 @@ int main(int argc, char *argv[])
 	QString lang;
 
 	// Getting env LANG variable
-
-
 	settings.beginGroup("app");
 		lang = settings.value("lang").toString();
 	settings.endGroup();
@@ -91,9 +90,9 @@ int main(int argc, char *argv[])
 	//  http://bugs.gentoo.org/150745
 
 	if (lang.isEmpty()){
-		lang = getenv("LC_ALL");
+		lang = setlocale(LC_ALL, "");
 		  if (lang.isEmpty()){
-			lang = getenv("LC_MESSAGES");
+			lang = setlocale(LC_MESSAGES, "");
 			    if (lang.isEmpty()){
 				 lang = getenv("LANG");
 			    }
