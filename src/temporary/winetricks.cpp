@@ -33,7 +33,11 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
 {
 	core = new CoreMethods();
 
-	this->winetricks_bin = core->getWhichOut("winetricks");
+	this->winetricks_bin.append(QDir::homePath());
+        this->winetricks_bin.append("/.config/");
+        this->winetricks_bin.append(APP_SHORT_NAME);
+        this->winetricks_bin.append("/winetricks");
+        
 	this->prefix_path = core->getPrefixPath(prefixName);
 	this->console_bin = core->getSettingValue("console", "bin");
 	this->console_args = core->getSettingValue("console", "args");
@@ -55,8 +59,8 @@ void winetricks::install_winetricks() {
 }
 
 void winetricks::run_winetricks(){
-	if (core->getWhichOut("winetricks").isEmpty()){
-		QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>"));
+        if (!QFile(this->winetricks_bin).exists()){
+                QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
 		return;
 	}
 
@@ -85,8 +89,6 @@ void winetricks::run_winetricks(){
 
 	Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Running winetricks..."), tr("Plz wait..."));
 
-	 qDebug()<<args;
-
 	if (exportProcess->exec()==QDialog::Accepted){
 		return;
 	}
@@ -95,7 +97,9 @@ void winetricks::run_winetricks(){
 }
 
 void winetricks::downloadwinetricks () {
-    //check if winetricks exists
+        /*
+         * Downloading winetriks and installing it
+         */
 
 	QStringList args;
 	if (!console_args.isEmpty()){
@@ -107,30 +111,22 @@ void winetricks::downloadwinetricks () {
 		}
 	}
 
-	args.append(core->getSettingValue("system", "sudo"));
-	args.append(core->getSettingValue("system", "sh"));
+        args.append(core->getSettingValue("system", "sh"));
 	args.append("-c");
 	QString arg;
 		arg.append(core->getWhichOut("wget"));
-		#ifdef _OS_LINUX_
-		    arg.append(" http://kegel.com/wine/winetricks -O /usr/bin/winetricks && ");
-		    arg.append(core->getWhichOut("chmod"));
-		    arg.append(" +x /usr/bin/winetricks");
-		#endif
-		#ifdef _OS_FREEBSD_
-		    arg.append(" http://kegel.com/wine/winetricks -O /usr/local/bin/winetricks && ");
-		    arg.append(core->getWhichOut("chmod"));
-		    arg.append(" +x /usr/local/bin/winetricks");
-		#endif
+                arg.append(" http://kegel.com/wine/winetricks -O ");
+                arg.append(this->winetricks_bin);
+                arg.append(" && ");
+                arg.append(core->getWhichOut("chmod"));
+                arg.append(" +x ");
+                arg.append(this->winetricks_bin);
+
 	args.append(arg);
 
 	Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
 
-	if (exportProcess->exec()==QDialog::Accepted){
-		QString winetricks_bin = core->getWhichOut("winetricks");
-	}
-
-	//exportProcess->waitForFinished(0);
+        exportProcess->exec();
 }
 
 /*

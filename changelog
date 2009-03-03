@@ -16,7 +16,8 @@ Version 0.112
 			- Fixed .exe adding to IconName on Prgoram file	select;
 			- Run and IconSettings now are modal dialogs;
 			- Fixed LC_ALL and LS_MESSAGES locale detection;
-		
+			- Winetriks executable now puts into $HOME/.config/q4inwe/ directory;
+			- No sudo neaded for Winetriks download and install;
 
 Version 0.111
 	core:
