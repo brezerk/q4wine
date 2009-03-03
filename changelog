@@ -9,6 +9,7 @@ Version 0.112
 		New:
 			- Added Sidebar Urls for Run and IconSettings file dialogs;
 			- Wine Dlls path autodetections; (If not work on your system -- plz mail to me ;) )
+			- You can diseble icotools support in q4wine by adding -DWITHOUT_ICOTOOLS=ON to cmake;
 		Fixed:
 			- Added FreeBSD port patches by Dmitry Marakasov aka amdmi3;
 			- Fixed q4wine.desktop GENERIC names;

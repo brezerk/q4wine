@@ -134,10 +134,17 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 		txtConsoleArgs->setText(settings.value("args").toString());
 	settings.endGroup();
 
-	settings.beginGroup("icotool");
-		txtWrestoolBin->setText(settings.value("wrestool").toString());
-		txtIcotoolBin->setText(settings.value("icotool").toString());
-	settings.endGroup();
+        #ifndef WITHOUT_ICOTOOLS
+            settings.beginGroup("icotool");
+                    txtWrestoolBin->setText(settings.value("wrestool").toString());
+                    txtIcotoolBin->setText(settings.value("icotool").toString());
+            settings.endGroup();
+        #else
+            txtWrestoolBin->setEnabled(false);
+            txtIcotoolBin->setEnabled(false);
+            cmdGetWrestoolBin->setEnabled(false);
+            cmdGetIcotoolBin->setEnabled(false);
+        #endif
 
 	settings.beginGroup("network");
 		txtProxyHost->setText(settings.value("host").toString());
@@ -365,14 +372,16 @@ void AppSettings::cmdOk_Click(){
 	if (!checkEntry(txtUmountBin->text(), "sh"))
 		return;
 
-	if (!checkEntry(txtConsoleBin->text(), "console"))
-		return;
+        if (!checkEntry(txtConsoleBin->text(), "console"))
+                return;
 
-	if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
-		return;
+        #ifndef WITHOUT_ICOTOOLS
+            if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
+                return;
 
-	if (!checkEntry(txtIcotoolBin->text(), "icotool"))
+            if (!checkEntry(txtIcotoolBin->text(), "icotool"))
 		return;
+        #endif
 
 	if (comboProxyType->currentText()!=tr("No Proxy")){
 		if (txtProxyHost->text().isEmpty()){
@@ -424,14 +433,17 @@ void AppSettings::cmdOk_Click(){
 		settings.setValue("renice", txtReniceBin->text());
 		settings.setValue("sh", txtShBin->text());
 	settings.endGroup();
-	settings.beginGroup("console");
-		settings.setValue("bin", txtConsoleBin->text());
-		settings.setValue("args", txtConsoleArgs->text());
-	settings.endGroup();
-	settings.beginGroup("icotool");
-		settings.setValue("wrestool", txtWrestoolBin->text());
-		settings.setValue("icotool", txtIcotoolBin->text());
-	settings.endGroup();
+
+        settings.beginGroup("console");
+                settings.setValue("bin", txtConsoleBin->text());
+                settings.setValue("args", txtConsoleArgs->text());
+        settings.endGroup();
+        #ifndef WITHOUT_ICOTOOLS
+            settings.beginGroup("icotool");
+                    settings.setValue("wrestool", txtWrestoolBin->text());
+                    settings.setValue("icotool", txtIcotoolBin->text());
+            settings.endGroup();
+        #endif
 	settings.beginGroup("network");
 		settings.setValue("host", txtProxyHost->text());
 		settings.setValue("post", txtProxyPort->text());

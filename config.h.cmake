@@ -62,6 +62,8 @@ struct ExecObject{
 #cmakedefine _OS_FREEBSD_
 #cmakedefine _OS_DARWIN_
 
+#cmakedefine WITHOUT_ICOTOOLS
+
 /*
  * Note APP_VERS and APP_PREF automatycaly generates by qmake and config.sh
  *

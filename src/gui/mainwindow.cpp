@@ -115,6 +115,11 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	connect(mainAbout, SIGNAL(triggered()), this, SLOT(mainAbout_Click()));
 	connect(mainAboutQt, SIGNAL(triggered()), this, SLOT(mainAboutQt_Click()));
 	connect(mainExportIcons, SIGNAL(triggered()), this, SLOT(mainExportIcons_Click()));
+
+        #ifdef WITHOUT_ICOTOOLS
+           mainExportIcons->setEnabled(false);
+        #endif
+
 	connect(mainOptions, SIGNAL(triggered()), this, SLOT(mainOptions_Click()));
 	connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
 	connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
@@ -306,13 +311,14 @@ void MainWindow::CoreFunction_SettingGet(){
 		CONSOLE_ARGS=settings.value("args").toString();
 	settings.endGroup();
 
-	settings.beginGroup("icotool");
-		WRESTOOL_BIN=settings.value("wrestool").toString();
-			CoreFunction_SettingCheck(WRESTOOL_BIN, tr("Can't find wrestool binary."));
-		ICOTOOL_BIN=settings.value("icotool").toString();
-			CoreFunction_SettingCheck(ICOTOOL_BIN, tr("Can't find icotool binary."));
-	settings.endGroup();
-
+        #ifndef WITHOUT_ICOTOOLS
+            settings.beginGroup("icotool");
+                    WRESTOOL_BIN=settings.value("wrestool").toString();
+                            CoreFunction_SettingCheck(WRESTOOL_BIN, tr("Can't find wrestool binary."));
+                    ICOTOOL_BIN=settings.value("icotool").toString();
+                            CoreFunction_SettingCheck(ICOTOOL_BIN, tr("Can't find icotool binary."));
+            settings.endGroup();
+        #endif
 
 	settings.beginGroup("network");
 	switch (settings.value("host").toInt()){

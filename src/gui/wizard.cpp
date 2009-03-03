@@ -82,6 +82,14 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 			cmdGetConsoleBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetWrestoolBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetIcotoolBin->setIcon(loadIcon("data/folder.png", themePath));
+
+                        #ifdef WITHOUT_ICOTOOLS
+                            cmdGetWrestoolBin->setEnabled(false);
+                            cmdGetIcotoolBin->setEnabled(false);
+                            txtWrestoolBin->setEnabled(false);
+                            txtIcotoolBin->setEnabled(false);
+                        #endif
+
 		break;
 		case 2:
 			// Fake drive
@@ -221,9 +229,10 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 									}
 							}
 
-
-				txtWrestoolBin->setText(core->getWhichOut("wrestool"));
+                             #ifndef WITHOUT_ICOTOOLS
+                                txtWrestoolBin->setText(core->getWhichOut("wrestool"));
 				txtIcotoolBin->setText(core->getWhichOut("icotool"));
+                             #endif
 				delete core;
 
 		break;
@@ -448,11 +457,13 @@ void Wizard::nextWizardPage(){
 					if (!checkEntry(txtConsoleBin->text(), "console"))
 						return;
 
-					if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
-						return;
+                                        #ifndef WITHOUT_ICOTOOLS
+                                            if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
+                                                return;
 
-					if (!checkEntry(txtIcotoolBin->text(), "icotool"))
+                                            if (!checkEntry(txtIcotoolBin->text(), "icotool"))
 						return;
+                                        #endif
 
 				break;
 				case 6:
