@@ -29,6 +29,7 @@ SET( SOURCES
         ${CMAKE_SOURCE_DIR}/src/gui/wizard.cpp          
         ${CMAKE_SOURCE_DIR}/src/gui/imagemanager.cpp    
         ${CMAKE_SOURCE_DIR}/src/temporary/winetricks.cpp
+	${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.cpp
         ${CMAKE_SOURCE_DIR}/src/core/coremethods.cpp
 	${CMAKE_SOURCE_DIR}/src/wis/wisitem.cpp
 	#	${CMAKE_SOURCE_DIR}/src/core/commandline.cpp
@@ -57,6 +58,8 @@ SET ( MOC_HEADEDRS
         ${CMAKE_SOURCE_DIR}/src/gui/wizard.h          
         ${CMAKE_SOURCE_DIR}/src/gui/imagemanager.h    
         ${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
+        ${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
+
         ${CMAKE_SOURCE_DIR}/src/core/coremethods.h
 	#${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
 	#	${CMAKE_SOURCE_DIR}/src/core/commandline.h
@@ -75,6 +78,9 @@ SET ( UIS
         ${CMAKE_SOURCE_DIR}/src/IconSettings.ui  
         ${CMAKE_SOURCE_DIR}/src/ImageManager.ui  
         ${CMAKE_SOURCE_DIR}/src/temporary/winetricks.ui
+        ${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.ui
+	
+
 )                                                      
 
 SET ( RCCS

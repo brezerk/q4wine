@@ -31,7 +31,7 @@
 #define WINETRICKS_H
 
 #include "config.h"
-
+#include "winetrickshelp.h"
 #include <ui_winetricks.h>
 
 #include <QtGui/QDialog>
@@ -56,7 +56,7 @@ protected:
 	private slots:
 		void run_winetricks();
 		void install_winetricks();
-
+                void run_help();
 	private:
 		QString console_bin;
 		QString console_args;

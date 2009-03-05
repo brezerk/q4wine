@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>415</width>
-    <height>351</height>
+    <width>417</width>
+    <height>345</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,6 +16,12 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" rowspan="3">
     <widget class="QListWidget" name="lstMain">
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="whatsThis">
+      <string/>
+     </property>
      <item>
       <property name="text">
        <string>art2kmin </string>
@@ -298,6 +304,11 @@
      </item>
      <item>
       <property name="text">
+       <string>wme9</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>wmp9</string>
       </property>
      </item>
@@ -397,31 +408,25 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>242</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="3" column="0">
+   <item row="4" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Compatible with winetricks &gt;= 20090121
+      <string>Compatible with winetricks = 20090227
 Uses cabextract</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
+   <item row="4" column="1">
     <widget class="QPushButton" name="cmdInstWinetricks">
      <property name="text">
       <string>Install Winetricks</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPushButton" name="cmdHelp">
+     <property name="text">
+      <string>Help</string>
      </property>
     </widget>
    </item>

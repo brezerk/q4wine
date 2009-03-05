@@ -47,6 +47,7 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
 	connect (cmdInstall, SIGNAL (clicked()), this, SLOT(run_winetricks()));
 	connect (cmdExit, SIGNAL (clicked()), this, SLOT(accept()));
 	connect (cmdInstWinetricks, SIGNAL (clicked()), this, SLOT (install_winetricks()));
+        connect (cmdHelp, SIGNAL(clicked()), this, SLOT (run_help()));
 }
 
 winetricks::~winetricks()
@@ -128,7 +129,10 @@ void winetricks::downloadwinetricks () {
 
         exportProcess->exec();
 }
-
+void winetricks::run_help() {
+    winetrickshelp *w = new winetrickshelp();
+    w->show();
+}
 /*
 Not needed right now...
 void winetricks::changeEvent(QEvent *e)
