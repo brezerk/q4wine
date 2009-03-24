@@ -63,9 +63,11 @@ struct ExecObject{
 #cmakedefine _OS_DARWIN_
 
 #cmakedefine WITHOUT_ICOTOOLS
+#cmakedefine WITH_DEVELOP_STUFF
+#cmakedefine WITH_WINETOOLS
 
 /*
- * Note APP_VERS and APP_PREF automatycaly generates by qmake and config.sh
+ * Note APP_VERS and APP_PREF automatycaly generates by cmake
  *
  * APP_VERS -- Application version
  * APP_PREF -- Application install prefix (Used for trak translations, help and thems files)

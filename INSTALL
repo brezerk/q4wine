@@ -45,8 +45,16 @@ Installation
 5. $ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 
 	| Note:
-	| By default, q4wine nead icotools to be installed;
-	| If you wish to disable icotools support add -DWITHOUT_ICOTOOLS=ON no cmake options
+        | By default, q4wine need icotools to be installed;
+        | If you wish to disable icotools support add -DWITHOUT_ICOTOOLS=ON to cmake options
+
+        | Note:
+        | By default, q4wine not support winetools;
+        | If you wish to enable winetools support add -DWITH_WINETOOLS=ON to cmake options
+
+        | Note:
+        | By default, q4wine not enable developer stuff;
+        | If you wish to enable developer stuff add -DWITH_DEVELOP_STUFF=ON to cmake options
 
 6. $ make
 7. $ make install

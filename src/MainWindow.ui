@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>619</width>
-    <height>531</height>
+    <width>617</width>
+    <height>529</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tbwGeneral">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -264,7 +264,7 @@
            <item row="0" column="0">
             <widget class="QTabWidget" name="twWineSetup">
              <property name="currentIndex">
-              <number>2</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="tab_4">
               <attribute name="title">
@@ -457,8 +457,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>619</width>
-     <height>26</height>
+     <width>617</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">

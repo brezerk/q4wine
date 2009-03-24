@@ -47,4 +47,7 @@ void winetrickshelp::changeEvent(QEvent *e)
     }
 }
 
+void winetrickshelp::on_buttonBox_clicked(QAbstractButton* button){
+   return;
+}
 

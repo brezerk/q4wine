@@ -120,6 +120,12 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
            mainExportIcons->setEnabled(false);
         #endif
 
+        #ifdef WITH_DEVELOP_STUFF
+                cmdTestWis->setEnabled(true);
+        #else
+                cmdTestWis->setEnabled(false);
+        #endif
+
 	connect(mainOptions, SIGNAL(triggered()), this, SLOT(mainOptions_Click()));
 	connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
 	connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
@@ -175,7 +181,9 @@ void MainWindow::cmdTestWis_Click(){
 }
 
 void MainWindow::cmdWinetricks_Click() {
-
+	#ifndef WITH_WINETOOLS
+	QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without winetriks support.</p><p>If you wish to enable winetriks support add:</p><p> \"-DWITH_WINETOOLS\" to cmake arguments.</p>"));
+	#else
   	QMessageBox::warning(this, tr("Warning"), tr("<p>Winetricks officaly NOT supported by q4wine.</p><p>There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.</p>"));
 
 	if (core->getSettingValue("console", "bin").isEmpty()){
@@ -185,7 +193,7 @@ void MainWindow::cmdWinetricks_Click() {
 
 	winetricks *w = new winetricks (cbPrefixes->currentText());
 	w->exec();
-
+	#endif
 	return;
 }
 
