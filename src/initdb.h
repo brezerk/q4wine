@@ -99,7 +99,7 @@ bool initDb()
 
 
 	if (!QSqlDatabase::drivers().contains("QSQLITE")){
-		qDebug()<<"[EE] Unable to load database. This program needs the SQLITE driver";
+                qDebug()<<"[EE] Unable to load database SQLITE driver. You need to compile qt-sql with sqlite database support";
 		return FALSE;
 	}
 
