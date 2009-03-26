@@ -14,6 +14,7 @@ Version 0.112
   - All developer stuff is disabled by default. You can enable it by adding -DWITH_DEVELOP_STUFF to cmake args;
   Fixed:
   - Added FreeBSD port patches by Dmitry Marakasov aka amdmi3;
+  - Fixed readonly text field on prefix create;
   - Fixed q4wine.desktop GENERIC names;
   - Fixed IconSettings path detections (ProgramPath\WorkDirPath e.t.c.);
   - Fixed .exe adding to IconName on Prgoram file select;

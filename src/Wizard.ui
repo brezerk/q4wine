@@ -1,8 +1,9 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <author>Malakov Alexey</author>
  <class>Wizard</class>
- <widget class="QDialog" name="Wizard" >
-  <property name="geometry" >
+ <widget class="QDialog" name="Wizard">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -10,91 +11,91 @@
     <height>432</height>
    </rect>
   </property>
-  <property name="minimumSize" >
+  <property name="minimumSize">
    <size>
     <width>668</width>
     <height>432</height>
    </size>
   </property>
-  <property name="maximumSize" >
+  <property name="maximumSize">
    <size>
     <width>668</width>
     <height>432</height>
    </size>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Wizard</string>
   </property>
-  <property name="windowIcon" >
-   <iconset resource="q4wine.qrc" >
+  <property name="windowIcon">
+   <iconset resource="q4wine.qrc">
     <normaloff>:/data/q4wine.png</normaloff>:/data/q4wine.png</iconset>
   </property>
-  <property name="autoFillBackground" >
+  <property name="autoFillBackground">
    <bool>true</bool>
   </property>
-  <layout class="QVBoxLayout" >
-   <property name="spacing" >
+  <layout class="QVBoxLayout">
+   <property name="spacing">
     <number>0</number>
    </property>
-   <property name="leftMargin" >
+   <property name="leftMargin">
     <number>0</number>
    </property>
-   <property name="topMargin" >
+   <property name="topMargin">
     <number>0</number>
    </property>
-   <property name="rightMargin" >
+   <property name="rightMargin">
     <number>0</number>
    </property>
-   <property name="bottomMargin" >
+   <property name="bottomMargin">
     <number>9</number>
    </property>
    <item>
-    <widget class="QWidget" native="1" name="widget_7" >
-     <property name="minimumSize" >
+    <widget class="QWidget" name="widget_7" native="true">
+     <property name="minimumSize">
       <size>
        <width>0</width>
        <height>66</height>
       </size>
      </property>
-     <property name="maximumSize" >
+     <property name="maximumSize">
       <size>
        <width>16777215</width>
        <height>66</height>
       </size>
      </property>
-     <property name="palette" >
+     <property name="palette">
       <palette>
        <active>
-        <colorrole role="Button" >
-         <brush brushstyle="SolidPattern" >
-          <color alpha="255" >
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
           </color>
          </brush>
         </colorrole>
-        <colorrole role="Midlight" >
-         <brush brushstyle="SolidPattern" >
-          <color alpha="255" >
+        <colorrole role="Midlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
           </color>
          </brush>
         </colorrole>
-        <colorrole role="Base" >
-         <brush brushstyle="SolidPattern" >
-          <color alpha="255" >
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
           </color>
          </brush>
         </colorrole>
-        <colorrole role="Window" >
-         <brush brushstyle="SolidPattern" >
-          <color alpha="255" >
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
@@ -103,36 +104,36 @@
         </colorrole>
        </active>
        <inactive>
-        <colorrole role="Button" >
-         <brush brushstyle="SolidPattern" >
-          <color alpha="255" >
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
           </color>
          </brush>
         </colorrole>
-        <colorrole role="Midlight" >
-         <brush brushstyle="SolidPattern" >
-          <color alpha="255" >
+        <colorrole role="Midlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
           </color>
          </brush>
         </colorrole>
-        <colorrole role="Base" >
-         <brush brushstyle="SolidPattern" >
-          <color alpha="255" >
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
           </color>
          </brush>
         </colorrole>
-        <colorrole role="Window" >
-         <brush brushstyle="SolidPattern" >
-          <color alpha="255" >
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
@@ -141,36 +142,36 @@
         </colorrole>
        </inactive>
        <disabled>
-        <colorrole role="Button" >
-         <brush brushstyle="SolidPattern" >
-          <color alpha="255" >
+        <colorrole role="Button">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
           </color>
          </brush>
         </colorrole>
-        <colorrole role="Midlight" >
-         <brush brushstyle="SolidPattern" >
-          <color alpha="255" >
+        <colorrole role="Midlight">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
           </color>
          </brush>
         </colorrole>
-        <colorrole role="Base" >
-         <brush brushstyle="SolidPattern" >
-          <color alpha="255" >
+        <colorrole role="Base">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
           </color>
          </brush>
         </colorrole>
-        <colorrole role="Window" >
-         <brush brushstyle="SolidPattern" >
-          <color alpha="255" >
+        <colorrole role="Window">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
@@ -180,44 +181,44 @@
        </disabled>
       </palette>
      </property>
-     <property name="autoFillBackground" >
+     <property name="autoFillBackground">
       <bool>true</bool>
      </property>
-     <layout class="QHBoxLayout" >
+     <layout class="QHBoxLayout">
       <item>
-       <widget class="QWidget" native="1" name="widget_3" >
-        <layout class="QHBoxLayout" >
-         <property name="topMargin" >
+       <widget class="QWidget" name="widget_3" native="true">
+        <layout class="QHBoxLayout">
+         <property name="topMargin">
           <number>0</number>
          </property>
-         <property name="bottomMargin" >
+         <property name="bottomMargin">
           <number>0</number>
          </property>
          <item>
-          <widget class="QLabel" name="lblCaption" >
-           <property name="sizePolicy" >
-            <sizepolicy vsizetype="Minimum" hsizetype="Preferred" >
+          <widget class="QLabel" name="lblCaption">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <property name="text" >
-            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Fixed'; font-size:11pt; font-weight:400; font-style:normal;">
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">wizard step title&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Fixed'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;wizard step title&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
-           <property name="textInteractionFlags" >
+           <property name="textInteractionFlags">
             <set>Qt::NoTextInteraction</set>
            </property>
           </widget>
          </item>
          <item>
           <spacer>
-           <property name="orientation" >
+           <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
-           <property name="sizeHint" stdset="0" >
+           <property name="sizeHint" stdset="0">
             <size>
              <width>76</width>
              <height>20</height>
@@ -226,9 +227,9 @@ p, li { white-space: pre-wrap; }
           </spacer>
          </item>
          <item>
-          <widget class="QLabel" name="lblStep" >
-           <property name="text" >
-            <string>&lt;b>Step 1 of 4&lt;/b></string>
+          <widget class="QLabel" name="lblStep">
+           <property name="text">
+            <string>&lt;b&gt;Step 1 of 4&lt;/b&gt;</string>
            </property>
           </widget>
          </item>
@@ -239,69 +240,69 @@ p, li { white-space: pre-wrap; }
     </widget>
    </item>
    <item>
-    <widget class="Line" name="line" >
-     <property name="orientation" >
+    <widget class="Line" name="line">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QWidget" native="1" name="widget_4" >
-     <layout class="QGridLayout" >
-      <property name="margin" >
+    <widget class="QWidget" name="widget_4" native="true">
+     <layout class="QGridLayout">
+      <property name="margin">
        <number>0</number>
       </property>
-      <property name="spacing" >
+      <property name="spacing">
        <number>0</number>
       </property>
-      <item row="0" column="0" >
-       <widget class="QWidget" native="1" name="widget_6" >
-        <property name="minimumSize" >
+      <item row="0" column="0">
+       <widget class="QWidget" name="widget_6" native="true">
+        <property name="minimumSize">
          <size>
           <width>158</width>
           <height>318</height>
          </size>
         </property>
-        <property name="maximumSize" >
+        <property name="maximumSize">
          <size>
           <width>158</width>
           <height>318</height>
          </size>
         </property>
-        <layout class="QGridLayout" >
-         <property name="leftMargin" >
+        <layout class="QGridLayout">
+         <property name="leftMargin">
           <number>9</number>
          </property>
-         <property name="topMargin" >
+         <property name="topMargin">
           <number>9</number>
          </property>
-         <property name="rightMargin" >
+         <property name="rightMargin">
           <number>0</number>
          </property>
-         <property name="bottomMargin" >
+         <property name="bottomMargin">
           <number>9</number>
          </property>
-         <property name="spacing" >
+         <property name="spacing">
           <number>0</number>
          </property>
-         <item row="0" column="0" >
-          <widget class="QLabel" name="lblPicture" >
-           <property name="minimumSize" >
+         <item row="0" column="0">
+          <widget class="QLabel" name="lblPicture">
+           <property name="minimumSize">
             <size>
              <width>140</width>
              <height>300</height>
             </size>
            </property>
-           <property name="maximumSize" >
+           <property name="maximumSize">
             <size>
              <width>140</width>
              <height>300</height>
             </size>
            </property>
-           <property name="frameShape" >
+           <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
            </property>
-           <property name="text" >
+           <property name="text">
             <string/>
            </property>
           </widget>
@@ -309,13 +310,13 @@ p, li { white-space: pre-wrap; }
         </layout>
        </widget>
       </item>
-      <item row="0" column="1" >
-       <widget class="QWidget" native="1" name="widgetFrame" >
-        <widget class="QWidget" native="1" name="widgetCreatePrefix0" >
-         <property name="enabled" >
+      <item row="0" column="1">
+       <widget class="QWidget" name="widgetFrame" native="true">
+        <widget class="QWidget" name="widgetCreatePrefix0" native="true">
+         <property name="enabled">
           <bool>true</bool>
          </property>
-         <property name="geometry" >
+         <property name="geometry">
           <rect>
            <x>0</x>
            <y>0</y>
@@ -323,68 +324,68 @@ p, li { white-space: pre-wrap; }
            <height>318</height>
           </rect>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>true</bool>
          </property>
-         <layout class="QVBoxLayout" >
-          <property name="leftMargin" >
+         <layout class="QVBoxLayout">
+          <property name="leftMargin">
            <number>9</number>
           </property>
-          <property name="rightMargin" >
+          <property name="rightMargin">
            <number>18</number>
           </property>
           <item>
-           <widget class="QLabel" name="label" >
-            <property name="text" >
+           <widget class="QLabel" name="label">
+            <property name="text">
              <string>Enter prefix name and select prefix location path.</string>
             </property>
-            <property name="alignment" >
+            <property name="alignment">
              <set>Qt::AlignJustify|Qt::AlignTop</set>
             </property>
-            <property name="wordWrap" >
+            <property name="wordWrap">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_2" >
-            <property name="text" >
-             <string>&lt;b>Prefix name:&lt;/b></string>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>&lt;b&gt;Prefix name:&lt;/b&gt;</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="txtPrefixName" />
+           <widget class="QLineEdit" name="txtPrefixName"/>
           </item>
           <item>
-           <widget class="QLabel" name="label_4" >
-            <property name="text" >
-             <string>&lt;b>Prefix path:&lt;/b></string>
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>&lt;b&gt;Prefix path:&lt;/b&gt;</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QWidget" native="1" name="widget_2" >
-            <layout class="QHBoxLayout" >
-             <property name="spacing" >
+           <widget class="QWidget" name="widget_2" native="true">
+            <layout class="QHBoxLayout">
+             <property name="spacing">
               <number>6</number>
              </property>
-             <property name="margin" >
+             <property name="margin">
               <number>0</number>
              </property>
              <item>
-              <widget class="QLineEdit" name="txtPrefixPath" >
-               <property name="readOnly" >
+              <widget class="QLineEdit" name="txtPrefixPath">
+               <property name="readOnly">
                 <bool>true</bool>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="cmdGetPrefixPath" >
-               <property name="text" >
+              <widget class="QPushButton" name="cmdGetPrefixPath">
+               <property name="text">
                 <string/>
                </property>
-               <property name="iconSize" >
+               <property name="iconSize">
                 <size>
                  <width>16</width>
                  <height>16</height>
@@ -396,17 +397,17 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item>
-           <widget class="QGroupBox" name="groupBox" >
-            <property name="title" >
+           <widget class="QGroupBox" name="groupBox">
+            <property name="title">
              <string>Fake Drive</string>
             </property>
-            <layout class="QVBoxLayout" >
-             <property name="rightMargin" >
+            <layout class="QVBoxLayout">
+             <property name="rightMargin">
               <number>9</number>
              </property>
              <item>
-              <widget class="QCheckBox" name="cbCreafeFake" >
-               <property name="text" >
+              <widget class="QCheckBox" name="cbCreafeFake">
+               <property name="text">
                 <string>Сreate Wine Fake Drive</string>
                </property>
               </widget>
@@ -416,10 +417,10 @@ p, li { white-space: pre-wrap; }
           </item>
           <item>
            <spacer>
-            <property name="orientation" >
+            <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" stdset="0" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
               <height>40</height>
@@ -429,8 +430,8 @@ p, li { white-space: pre-wrap; }
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" native="1" name="widgetInfo" >
-         <property name="geometry" >
+        <widget class="QWidget" name="widgetInfo" native="true">
+         <property name="geometry">
           <rect>
            <x>-1</x>
            <y>0</y>
@@ -438,11 +439,11 @@ p, li { white-space: pre-wrap; }
            <height>318</height>
           </rect>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>false</bool>
          </property>
-         <widget class="QLabel" name="lblWizardInfo" >
-          <property name="geometry" >
+         <widget class="QLabel" name="lblWizardInfo">
+          <property name="geometry">
            <rect>
             <x>9</x>
             <y>9</y>
@@ -450,28 +451,28 @@ p, li { white-space: pre-wrap; }
             <height>300</height>
            </rect>
           </property>
-          <property name="text" >
-           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Fixed'; font-size:11pt; font-weight:400; font-style:normal;">
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;/p>&lt;/body>&lt;/html></string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Fixed'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
-          <property name="textFormat" >
+          <property name="textFormat">
            <enum>Qt::RichText</enum>
           </property>
-          <property name="scaledContents" >
+          <property name="scaledContents">
            <bool>false</bool>
           </property>
-          <property name="alignment" >
+          <property name="alignment">
            <set>Qt::AlignJustify|Qt::AlignTop</set>
           </property>
-          <property name="wordWrap" >
+          <property name="wordWrap">
            <bool>true</bool>
           </property>
          </widget>
         </widget>
-        <widget class="QWidget" native="1" name="widgetCreatePrefix1" >
-         <property name="geometry" >
+        <widget class="QWidget" name="widgetCreatePrefix1" native="true">
+         <property name="geometry">
           <rect>
            <x>-1</x>
            <y>0</y>
@@ -479,62 +480,62 @@ p, li { white-space: pre-wrap; }
            <height>320</height>
           </rect>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>true</bool>
          </property>
-         <layout class="QGridLayout" >
-          <item row="0" column="0" >
-           <widget class="QGroupBox" name="groupBox_2" >
-            <property name="title" >
+         <layout class="QGridLayout">
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="title">
              <string>Wine paths:</string>
             </property>
-            <layout class="QVBoxLayout" >
+            <layout class="QVBoxLayout">
              <item>
-              <widget class="QLabel" name="lblInfoPrefix1" >
-               <property name="text" >
+              <widget class="QLabel" name="lblInfoPrefix1">
+               <property name="text">
                 <string>If you wish to use different wine versions, you may wish set custom wine path here.
 
 Note: leave it blank for default.</string>
                </property>
-               <property name="wordWrap" >
+               <property name="wordWrap">
                 <bool>true</bool>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_15" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_15" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_15" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_15">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>wine bin:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtWineBin" />
+                 <widget class="QLineEdit" name="txtWineBin"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetWineBin" >
-                  <property name="text" >
+                 <widget class="QPushButton" name="cmdGetWineBin">
+                  <property name="text">
                    <string/>
                   </property>
-                  <property name="iconSize" >
+                  <property name="iconSize">
                    <size>
                     <width>16</width>
                     <height>16</height>
@@ -546,39 +547,39 @@ Note: leave it blank for default.</string>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_21" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_21" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_18" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_18">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>wine server:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtWineServerBin" />
+                 <widget class="QLineEdit" name="txtWineServerBin"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetWineServerBin" >
-                  <property name="text" >
+                 <widget class="QPushButton" name="cmdGetWineServerBin">
+                  <property name="text">
                    <string/>
                   </property>
-                  <property name="iconSize" >
+                  <property name="iconSize">
                    <size>
                     <width>16</width>
                     <height>16</height>
@@ -590,39 +591,39 @@ Note: leave it blank for default.</string>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_22" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_22" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_21" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_21">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>wine loader:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtWineLoaderBin" />
+                 <widget class="QLineEdit" name="txtWineLoaderBin"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetWineLoaderBin" >
-                  <property name="text" >
+                 <widget class="QPushButton" name="cmdGetWineLoaderBin">
+                  <property name="text">
                    <string/>
                   </property>
-                  <property name="iconSize" >
+                  <property name="iconSize">
                    <size>
                     <width>16</width>
                     <height>16</height>
@@ -634,39 +635,39 @@ Note: leave it blank for default.</string>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_20" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_20" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_20" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_20">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>wine libs:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtWineDllPath" />
+                 <widget class="QLineEdit" name="txtWineDllPath"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetWineDllPath" >
-                  <property name="text" >
+                 <widget class="QPushButton" name="cmdGetWineDllPath">
+                  <property name="text">
                    <string/>
                   </property>
-                  <property name="iconSize" >
+                  <property name="iconSize">
                    <size>
                     <width>16</width>
                     <height>16</height>
@@ -679,10 +680,10 @@ Note: leave it blank for default.</string>
              </item>
              <item>
               <spacer>
-               <property name="orientation" >
+               <property name="orientation">
                 <enum>Qt::Vertical</enum>
                </property>
-               <property name="sizeHint" stdset="0" >
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>492</width>
                  <height>31</height>
@@ -695,8 +696,8 @@ Note: leave it blank for default.</string>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" native="1" name="widgetCreatePrefix2" >
-         <property name="geometry" >
+        <widget class="QWidget" name="widgetCreatePrefix2" native="true">
+         <property name="geometry">
           <rect>
            <x>-1</x>
            <y>0</y>
@@ -704,73 +705,73 @@ Note: leave it blank for default.</string>
            <height>320</height>
           </rect>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>true</bool>
          </property>
-         <layout class="QVBoxLayout" >
+         <layout class="QVBoxLayout">
           <item>
-           <widget class="QLabel" name="label_11" >
-            <property name="text" >
+           <widget class="QLabel" name="label_11">
+            <property name="text">
              <string>If you wish to use quick mount feature specify source device and mount point directory.
 
 Note: leave it blank if you don't nead it.</string>
             </property>
-            <property name="wordWrap" >
+            <property name="wordWrap">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QGroupBox" name="groupBox_3" >
-            <property name="title" >
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="title">
              <string>Quick mount options:</string>
             </property>
-            <layout class="QVBoxLayout" >
+            <layout class="QVBoxLayout">
              <item>
-              <widget class="QLabel" name="label_12" >
-               <property name="text" >
+              <widget class="QLabel" name="label_12">
+               <property name="text">
                 <string>Source device:</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QComboBox" name="combSourceDevice" >
+              <widget class="QComboBox" name="combSourceDevice">
                <item>
-                <property name="text" >
-                 <string>&lt;none></string>
+                <property name="text">
+                 <string>&lt;none&gt;</string>
                 </property>
                </item>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_13" >
-               <property name="text" >
+              <widget class="QLabel" name="label_13">
+               <property name="text">
                 <string>Mount point:</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_13" >
-               <layout class="QHBoxLayout" >
-                <property name="spacing" >
+              <widget class="QWidget" name="widget_13" native="true">
+               <layout class="QHBoxLayout">
+                <property name="spacing">
                  <number>6</number>
                 </property>
-                <property name="margin" >
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLineEdit" name="txtMountPoint" >
-                  <property name="readOnly" >
-                   <bool>true</bool>
+                 <widget class="QLineEdit" name="txtMountPoint">
+                  <property name="readOnly">
+                   <bool>false</bool>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetMountPoint" >
-                  <property name="text" >
+                 <widget class="QPushButton" name="cmdGetMountPoint">
+                  <property name="text">
                    <string/>
                   </property>
-                  <property name="iconSize" >
+                  <property name="iconSize">
                    <size>
                     <width>16</width>
                     <height>16</height>
@@ -786,10 +787,10 @@ Note: leave it blank if you don't nead it.</string>
           </item>
           <item>
            <spacer>
-            <property name="orientation" >
+            <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" stdset="0" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
               <height>76</height>
@@ -799,8 +800,8 @@ Note: leave it blank if you don't nead it.</string>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" native="1" name="widgetFirstStartup0" >
-         <property name="geometry" >
+        <widget class="QWidget" name="widgetFirstStartup0" native="true">
+         <property name="geometry">
           <rect>
            <x>-1</x>
            <y>0</y>
@@ -808,35 +809,35 @@ Note: leave it blank if you don't nead it.</string>
            <height>320</height>
           </rect>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>true</bool>
          </property>
-         <layout class="QGridLayout" >
-          <item row="0" column="0" >
-           <widget class="QGroupBox" name="groupBox_4" >
-            <property name="title" >
+         <layout class="QGridLayout">
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="title">
              <string>Base info:</string>
             </property>
-            <layout class="QGridLayout" >
-             <item row="0" column="0" >
-              <widget class="QTextEdit" name="txtInfo" >
-               <property name="autoFormatting" >
+            <layout class="QGridLayout">
+             <item row="0" column="0">
+              <widget class="QTextEdit" name="txtInfo">
+               <property name="autoFormatting">
                 <set>QTextEdit::AutoAll</set>
                </property>
-               <property name="documentTitle" >
+               <property name="documentTitle">
                 <string/>
                </property>
-               <property name="readOnly" >
+               <property name="readOnly">
                 <bool>true</bool>
                </property>
-               <property name="html" >
-                <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+               <property name="html">
+                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style>&lt;/head>&lt;body style=" font-family:'Fixed [Misc]'; font-size:12pt; font-weight:400; font-style:normal;">
-&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;">&lt;/p>&lt;/body>&lt;/html></string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Fixed [Misc]'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
-               <property name="textInteractionFlags" >
+               <property name="textInteractionFlags">
                 <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
                </property>
               </widget>
@@ -846,8 +847,8 @@ p, li { white-space: pre-wrap; }
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" native="1" name="widgetFirstStartup1" >
-         <property name="geometry" >
+        <widget class="QWidget" name="widgetFirstStartup1" native="true">
+         <property name="geometry">
           <rect>
            <x>-1</x>
            <y>0</y>
@@ -855,60 +856,60 @@ p, li { white-space: pre-wrap; }
            <height>320</height>
           </rect>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>true</bool>
          </property>
-         <layout class="QVBoxLayout" >
+         <layout class="QVBoxLayout">
           <item>
-           <widget class="QGroupBox" name="groupBox_7" >
-            <property name="autoFillBackground" >
+           <widget class="QGroupBox" name="groupBox_7">
+            <property name="autoFillBackground">
              <bool>false</bool>
             </property>
-            <property name="title" >
+            <property name="title">
              <string>System utils</string>
             </property>
-            <layout class="QVBoxLayout" >
+            <layout class="QVBoxLayout">
              <item>
-              <widget class="QLabel" name="label_3" >
-               <property name="text" >
-                <string>&lt;p>Please set default system utils paths&lt;br>&lt;/p></string>
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>&lt;p&gt;Please set default system utils paths&lt;br&gt;&lt;/p&gt;</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_14" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_14" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_14" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_14">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>tar:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtTarBin" />
+                 <widget class="QLineEdit" name="txtTarBin"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetTarBin" >
-                  <property name="text" >
+                 <widget class="QPushButton" name="cmdGetTarBin">
+                  <property name="text">
                    <string/>
                   </property>
-                  <property name="iconSize" >
+                  <property name="iconSize">
                    <size>
                     <width>16</width>
                     <height>16</height>
@@ -920,39 +921,39 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_17" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_17" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_16" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_16">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>mount:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtMountBin" />
+                 <widget class="QLineEdit" name="txtMountBin"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetMountBin" >
-                  <property name="text" >
+                 <widget class="QPushButton" name="cmdGetMountBin">
+                  <property name="text">
                    <string/>
                   </property>
-                  <property name="iconSize" >
+                  <property name="iconSize">
                    <size>
                     <width>16</width>
                     <height>16</height>
@@ -964,39 +965,39 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_18" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_18" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_17" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_17">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>umount:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtUmountBin" />
+                 <widget class="QLineEdit" name="txtUmountBin"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetUmountBin" >
-                  <property name="text" >
+                 <widget class="QPushButton" name="cmdGetUmountBin">
+                  <property name="text">
                    <string/>
                   </property>
-                  <property name="iconSize" >
+                  <property name="iconSize">
                    <size>
                     <width>16</width>
                     <height>16</height>
@@ -1008,39 +1009,39 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_19" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_19" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_19" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_19">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>sudo:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtSudoBin" />
+                 <widget class="QLineEdit" name="txtSudoBin"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetSudoBin" >
-                  <property name="text" >
+                 <widget class="QPushButton" name="cmdGetSudoBin">
+                  <property name="text">
                    <string/>
                   </property>
-                  <property name="iconSize" >
+                  <property name="iconSize">
                    <size>
                     <width>16</width>
                     <height>16</height>
@@ -1052,39 +1053,39 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_24" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_24" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_23" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_23">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>nice:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtNiceBin" />
+                 <widget class="QLineEdit" name="txtNiceBin"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetNiceBin" >
-                  <property name="text" >
+                 <widget class="QPushButton" name="cmdGetNiceBin">
+                  <property name="text">
                    <string/>
                   </property>
-                  <property name="iconSize" >
+                  <property name="iconSize">
                    <size>
                     <width>16</width>
                     <height>16</height>
@@ -1096,39 +1097,39 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_25" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_25" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_24" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_24">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>renice:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtReniceBin" />
+                 <widget class="QLineEdit" name="txtReniceBin"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetReniceBin" >
-                  <property name="text" >
+                 <widget class="QPushButton" name="cmdGetReniceBin">
+                  <property name="text">
                    <string/>
                   </property>
-                  <property name="iconSize" >
+                  <property name="iconSize">
                    <size>
                     <width>16</width>
                     <height>16</height>
@@ -1140,39 +1141,39 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_28" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_28" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_27" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_27">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>sh:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtShBin" />
+                 <widget class="QLineEdit" name="txtShBin"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetShBin" >
-                  <property name="text" >
+                 <widget class="QPushButton" name="cmdGetShBin">
+                  <property name="text">
                    <string/>
                   </property>
-                  <property name="iconSize" >
+                  <property name="iconSize">
                    <size>
                     <width>16</width>
                     <height>16</height>
@@ -1185,10 +1186,10 @@ p, li { white-space: pre-wrap; }
              </item>
              <item>
               <spacer>
-               <property name="orientation" >
+               <property name="orientation">
                 <enum>Qt::Vertical</enum>
                </property>
-               <property name="sizeHint" stdset="0" >
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>20</width>
                  <height>20</height>
@@ -1201,8 +1202,8 @@ p, li { white-space: pre-wrap; }
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" native="1" name="widgetFirstStartup2" >
-         <property name="geometry" >
+        <widget class="QWidget" name="widgetFirstStartup2" native="true">
+         <property name="geometry">
           <rect>
            <x>-1</x>
            <y>0</y>
@@ -1210,66 +1211,66 @@ p, li { white-space: pre-wrap; }
            <height>323</height>
           </rect>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>true</bool>
          </property>
-         <layout class="QVBoxLayout" >
+         <layout class="QVBoxLayout">
           <item>
-           <widget class="QGroupBox" name="groupBox_8" >
-            <property name="autoFillBackground" >
+           <widget class="QGroupBox" name="groupBox_8">
+            <property name="autoFillBackground">
              <bool>false</bool>
             </property>
-            <property name="title" >
+            <property name="title">
              <string>User utils</string>
             </property>
-            <layout class="QVBoxLayout" >
+            <layout class="QVBoxLayout">
              <item>
-              <widget class="QLabel" name="label_5" >
-               <property name="text" >
-                <string>&lt;p>Please set default user utils paths&lt;br>&lt;/p></string>
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>&lt;p&gt;Please set default user utils paths&lt;br&gt;&lt;/p&gt;</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QGroupBox" name="groupBox_5" >
-               <property name="title" >
+              <widget class="QGroupBox" name="groupBox_5">
+               <property name="title">
                 <string>Console</string>
                </property>
-               <layout class="QVBoxLayout" >
+               <layout class="QVBoxLayout">
                 <item>
-                 <widget class="QWidget" native="1" name="widget_12" >
-                  <layout class="QHBoxLayout" >
-                   <property name="margin" >
+                 <widget class="QWidget" name="widget_12" native="true">
+                  <layout class="QHBoxLayout">
+                   <property name="margin">
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_8" >
-                     <property name="minimumSize" >
+                    <widget class="QLabel" name="label_8">
+                     <property name="minimumSize">
                       <size>
                        <width>140</width>
                        <height>0</height>
                       </size>
                      </property>
-                     <property name="maximumSize" >
+                     <property name="maximumSize">
                       <size>
                        <width>140</width>
                        <height>16777215</height>
                       </size>
                      </property>
-                     <property name="text" >
+                     <property name="text">
                       <string>Bin:</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="txtConsoleBin" />
+                    <widget class="QLineEdit" name="txtConsoleBin"/>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="cmdGetConsoleBin" >
-                     <property name="text" >
+                    <widget class="QPushButton" name="cmdGetConsoleBin">
+                     <property name="text">
                       <string/>
                      </property>
-                     <property name="iconSize" >
+                     <property name="iconSize">
                       <size>
                        <width>16</width>
                        <height>16</height>
@@ -1281,32 +1282,32 @@ p, li { white-space: pre-wrap; }
                  </widget>
                 </item>
                 <item>
-                 <widget class="QWidget" native="1" name="widget_16" >
-                  <layout class="QHBoxLayout" >
-                   <property name="margin" >
+                 <widget class="QWidget" name="widget_16" native="true">
+                  <layout class="QHBoxLayout">
+                   <property name="margin">
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_22" >
-                     <property name="minimumSize" >
+                    <widget class="QLabel" name="label_22">
+                     <property name="minimumSize">
                       <size>
                        <width>140</width>
                        <height>0</height>
                       </size>
                      </property>
-                     <property name="maximumSize" >
+                     <property name="maximumSize">
                       <size>
                        <width>140</width>
                        <height>16777215</height>
                       </size>
                      </property>
-                     <property name="text" >
+                     <property name="text">
                       <string>Args:</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="txtConsoleArgs" />
+                    <widget class="QLineEdit" name="txtConsoleArgs"/>
                    </item>
                   </layout>
                  </widget>
@@ -1315,45 +1316,45 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QGroupBox" name="groupBox_6" >
-               <property name="title" >
+              <widget class="QGroupBox" name="groupBox_6">
+               <property name="title">
                 <string>Icotool</string>
                </property>
-               <layout class="QVBoxLayout" >
+               <layout class="QVBoxLayout">
                 <item>
-                 <widget class="QWidget" native="1" name="widget_26" >
-                  <layout class="QHBoxLayout" >
-                   <property name="margin" >
+                 <widget class="QWidget" name="widget_26" native="true">
+                  <layout class="QHBoxLayout">
+                   <property name="margin">
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_25" >
-                     <property name="minimumSize" >
+                    <widget class="QLabel" name="label_25">
+                     <property name="minimumSize">
                       <size>
                        <width>140</width>
                        <height>0</height>
                       </size>
                      </property>
-                     <property name="maximumSize" >
+                     <property name="maximumSize">
                       <size>
                        <width>140</width>
                        <height>16777215</height>
                       </size>
                      </property>
-                     <property name="text" >
+                     <property name="text">
                       <string>wrestool:</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="txtWrestoolBin" />
+                    <widget class="QLineEdit" name="txtWrestoolBin"/>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="cmdGetWrestoolBin" >
-                     <property name="text" >
+                    <widget class="QPushButton" name="cmdGetWrestoolBin">
+                     <property name="text">
                       <string/>
                      </property>
-                     <property name="iconSize" >
+                     <property name="iconSize">
                       <size>
                        <width>16</width>
                        <height>16</height>
@@ -1365,39 +1366,39 @@ p, li { white-space: pre-wrap; }
                  </widget>
                 </item>
                 <item>
-                 <widget class="QWidget" native="1" name="widget_27" >
-                  <layout class="QHBoxLayout" >
-                   <property name="margin" >
+                 <widget class="QWidget" name="widget_27" native="true">
+                  <layout class="QHBoxLayout">
+                   <property name="margin">
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_26" >
-                     <property name="minimumSize" >
+                    <widget class="QLabel" name="label_26">
+                     <property name="minimumSize">
                       <size>
                        <width>140</width>
                        <height>0</height>
                       </size>
                      </property>
-                     <property name="maximumSize" >
+                     <property name="maximumSize">
                       <size>
                        <width>140</width>
                        <height>16777215</height>
                       </size>
                      </property>
-                     <property name="text" >
+                     <property name="text">
                       <string>icotool:</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="txtIcotoolBin" />
+                    <widget class="QLineEdit" name="txtIcotoolBin"/>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="cmdGetIcotoolBin" >
-                     <property name="text" >
+                    <widget class="QPushButton" name="cmdGetIcotoolBin">
+                     <property name="text">
                       <string/>
                      </property>
-                     <property name="iconSize" >
+                     <property name="iconSize">
                       <size>
                        <width>16</width>
                        <height>16</height>
@@ -1413,10 +1414,10 @@ p, li { white-space: pre-wrap; }
              </item>
              <item>
               <spacer>
-               <property name="orientation" >
+               <property name="orientation">
                 <enum>Qt::Vertical</enum>
                </property>
-               <property name="sizeHint" stdset="0" >
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>470</width>
                  <height>16</height>
@@ -1429,8 +1430,8 @@ p, li { white-space: pre-wrap; }
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" native="1" name="widgetFirstStartup3" >
-         <property name="geometry" >
+        <widget class="QWidget" name="widgetFirstStartup3" native="true">
+         <property name="geometry">
           <rect>
            <x>-1</x>
            <y>0</y>
@@ -1438,66 +1439,66 @@ p, li { white-space: pre-wrap; }
            <height>320</height>
           </rect>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>true</bool>
          </property>
-         <layout class="QVBoxLayout" >
+         <layout class="QVBoxLayout">
           <item>
-           <widget class="QGroupBox" name="groupBox_9" >
-            <property name="autoFillBackground" >
+           <widget class="QGroupBox" name="groupBox_9">
+            <property name="autoFillBackground">
              <bool>false</bool>
             </property>
-            <property name="title" >
+            <property name="title">
              <string>Network</string>
             </property>
-            <layout class="QVBoxLayout" >
+            <layout class="QVBoxLayout">
              <item>
-              <widget class="QLabel" name="label_9" >
-               <property name="text" >
+              <widget class="QLabel" name="label_9">
+               <property name="text">
                 <string>Please set network settings
 </string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_30" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_30" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_30" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_30">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Proxy type:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboProxyType" >
+                 <widget class="QComboBox" name="comboProxyType">
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>No Proxy</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>HTTP</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Socks v5</string>
                    </property>
                   </item>
@@ -1507,36 +1508,36 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_23" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_23" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_28" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_28">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Host:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtProxyHost" >
-                  <property name="enabled" >
+                 <widget class="QLineEdit" name="txtProxyHost">
+                  <property name="enabled">
                    <bool>false</bool>
                   </property>
-                  <property name="inputMask" >
+                  <property name="inputMask">
                    <string/>
                   </property>
                  </widget>
@@ -1545,36 +1546,36 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_32" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_32" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_32" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_32">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Port:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtProxyPort" >
-                  <property name="enabled" >
+                 <widget class="QLineEdit" name="txtProxyPort">
+                  <property name="enabled">
                    <bool>false</bool>
                   </property>
-                  <property name="inputMask" >
+                  <property name="inputMask">
                    <string>0000000000; </string>
                   </property>
                  </widget>
@@ -1583,33 +1584,33 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_29" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_29" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_29" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_29">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Username:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtProxyUser" >
-                  <property name="enabled" >
+                 <widget class="QLineEdit" name="txtProxyUser">
+                  <property name="enabled">
                    <bool>false</bool>
                   </property>
                  </widget>
@@ -1618,33 +1619,33 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_31" >
-               <layout class="QHBoxLayout" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_31" native="true">
+               <layout class="QHBoxLayout">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_31" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_31">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Password:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtProxyPass" >
-                  <property name="enabled" >
+                 <widget class="QLineEdit" name="txtProxyPass">
+                  <property name="enabled">
                    <bool>false</bool>
                   </property>
                  </widget>
@@ -1654,10 +1655,10 @@ p, li { white-space: pre-wrap; }
              </item>
              <item>
               <spacer>
-               <property name="orientation" >
+               <property name="orientation">
                 <enum>Qt::Vertical</enum>
                </property>
-               <property name="sizeHint" stdset="0" >
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>470</width>
                  <height>21</height>
@@ -1670,8 +1671,8 @@ p, li { white-space: pre-wrap; }
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" native="1" name="widgetCreateFakeDrive0" >
-         <property name="geometry" >
+        <widget class="QWidget" name="widgetCreateFakeDrive0" native="true">
+         <property name="geometry">
           <rect>
            <x>-1</x>
            <y>0</y>
@@ -1679,57 +1680,57 @@ p, li { white-space: pre-wrap; }
            <height>320</height>
           </rect>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>true</bool>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2" >
+         <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QGroupBox" name="groupBox_10" >
-            <property name="autoFillBackground" >
+           <widget class="QGroupBox" name="groupBox_10">
+            <property name="autoFillBackground">
              <bool>false</bool>
             </property>
-            <property name="title" >
+            <property name="title">
              <string>General settings</string>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout" >
+            <layout class="QVBoxLayout" name="verticalLayout">
              <item>
-              <widget class="QLabel" name="label_10" >
-               <property name="text" >
+              <widget class="QLabel" name="label_10">
+               <property name="text">
                 <string>Please enter user registration information:</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_34" >
-               <layout class="QHBoxLayout" name="_5" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_34" native="true">
+               <layout class="QHBoxLayout" name="_5">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_34" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_34">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Owner:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtOwner" >
-                  <property name="enabled" >
+                 <widget class="QLineEdit" name="txtOwner">
+                  <property name="enabled">
                    <bool>true</bool>
                   </property>
-                  <property name="inputMask" >
+                  <property name="inputMask">
                    <string/>
                   </property>
                  </widget>
@@ -1738,36 +1739,36 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_35" >
-               <layout class="QHBoxLayout" name="_6" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_35" native="true">
+               <layout class="QHBoxLayout" name="_6">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_35" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_35">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Organization:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtOrganization" >
-                  <property name="enabled" >
+                 <widget class="QLineEdit" name="txtOrganization">
+                  <property name="enabled">
                    <bool>true</bool>
                   </property>
-                  <property name="inputMask" >
+                  <property name="inputMask">
                    <string/>
                   </property>
                  </widget>
@@ -1776,101 +1777,101 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_36" >
-               <property name="text" >
+              <widget class="QLabel" name="label_36">
+               <property name="text">
                 <string>Please select default fake drive version:</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_33" >
-               <layout class="QHBoxLayout" name="_4" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_33" native="true">
+               <layout class="QHBoxLayout" name="_4">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_33" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_33">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Version:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboFakeVersion" >
+                 <widget class="QComboBox" name="comboFakeVersion">
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows XP</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows 2008</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows Vista</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows 2003</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows 2000</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows ME</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows 98</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows 95</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows NT 4.0</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows NT 3.5</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows 3.1</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows 3.0</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Windows 2.0</string>
                    </property>
                   </item>
@@ -1880,47 +1881,47 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_37" >
-               <property name="text" >
+              <widget class="QLabel" name="label_37">
+               <property name="text">
                 <string>
 If you wish to use qt system colors in wine dialogs, select option below:</string>
                </property>
-               <property name="wordWrap" >
+               <property name="wordWrap">
                 <bool>true</bool>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_36" >
-               <layout class="QHBoxLayout" name="horizontalLayout" >
-                <property name="spacing" >
+              <widget class="QWidget" name="widget_36" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <property name="spacing">
                  <number>6</number>
                 </property>
-                <property name="margin" >
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_54" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_54">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Colors:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QCheckBox" name="cbUseQtColors" >
-                  <property name="text" >
+                 <widget class="QCheckBox" name="cbUseQtColors">
+                  <property name="text">
                    <string>Use QT palette</string>
                   </property>
                  </widget>
@@ -1933,10 +1934,10 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
           </item>
           <item>
            <spacer>
-            <property name="orientation" >
+            <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" stdset="0" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>470</width>
               <height>33</height>
@@ -1946,8 +1947,8 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" native="1" name="widgetCreateFakeDrive2" >
-         <property name="geometry" >
+        <widget class="QWidget" name="widgetCreateFakeDrive2" native="true">
+         <property name="geometry">
           <rect>
            <x>-1</x>
            <y>0</y>
@@ -1955,71 +1956,71 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
            <height>320</height>
           </rect>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>true</bool>
          </property>
-         <layout class="QGridLayout" name="gridLayout" >
-          <property name="leftMargin" >
+         <layout class="QGridLayout" name="gridLayout">
+          <property name="leftMargin">
            <number>6</number>
           </property>
-          <property name="rightMargin" >
+          <property name="rightMargin">
            <number>6</number>
           </property>
-          <item row="0" column="0" >
-           <widget class="QGroupBox" name="groupBox_12" >
-            <property name="autoFillBackground" >
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="groupBox_12">
+            <property name="autoFillBackground">
              <bool>false</bool>
             </property>
-            <property name="title" >
+            <property name="title">
              <string>Direct 3D settings</string>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_4" >
+            <layout class="QVBoxLayout" name="verticalLayout_4">
              <item>
-              <widget class="QLabel" name="label_38" >
-               <property name="text" >
+              <widget class="QLabel" name="label_38">
+               <property name="text">
                 <string>Note: Leave empty for default</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_40" >
-               <layout class="QHBoxLayout" name="_11" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_40" native="true">
+               <layout class="QHBoxLayout" name="_11">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_43" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_43">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Multisampling:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboFakeD3D_Multi" >
+                 <widget class="QComboBox" name="comboFakeD3D_Multi">
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>default</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>enabled</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>disabled</string>
                    </property>
                   </item>
@@ -2029,44 +2030,44 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_41" >
-               <layout class="QHBoxLayout" name="_12" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_41" native="true">
+               <layout class="QHBoxLayout" name="_12">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_44" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_44">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>D3D Renderer:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboFakeD3D_Render" >
+                 <widget class="QComboBox" name="comboFakeD3D_Render">
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>default</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>gdi</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>opengl</string>
                    </property>
                   </item>
@@ -2076,59 +2077,59 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_42" >
-               <layout class="QHBoxLayout" name="_13" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_42" native="true">
+               <layout class="QHBoxLayout" name="_13">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_45" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_45">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>LockMode:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboFakeD3D_LMode" >
+                 <widget class="QComboBox" name="comboFakeD3D_LMode">
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>default</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>disabled</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>readdraw</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>readtex</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>texdraw</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>textex</string>
                    </property>
                   </item>
@@ -2138,49 +2139,49 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_43" >
-               <layout class="QHBoxLayout" name="_14" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_43" native="true">
+               <layout class="QHBoxLayout" name="_14">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_46" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_46">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Offscreen Mode:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboFakeD3D_Offscreen" >
+                 <widget class="QComboBox" name="comboFakeD3D_Offscreen">
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>default</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>backbuffer</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>pbuffer</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>fbo</string>
                    </property>
                   </item>
@@ -2190,44 +2191,44 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_44" >
-               <layout class="QHBoxLayout" name="_15" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_44" native="true">
+               <layout class="QHBoxLayout" name="_15">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_47" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_47">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Use GLSL:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboFakeD3D_GLSL" >
+                 <widget class="QComboBox" name="comboFakeD3D_GLSL">
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>default</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>enabled</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>disabled</string>
                    </property>
                   </item>
@@ -2237,36 +2238,36 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_38" >
-               <layout class="QHBoxLayout" name="_9" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_38" native="true">
+               <layout class="QHBoxLayout" name="_9">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_40" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_40">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>VMemory (Mb):</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtFakeD3D_VMem" >
-                  <property name="enabled" >
+                 <widget class="QLineEdit" name="txtFakeD3D_VMem">
+                  <property name="enabled">
                    <bool>true</bool>
                   </property>
-                  <property name="inputMask" >
+                  <property name="inputMask">
                    <string>D999999999; </string>
                   </property>
                  </widget>
@@ -2277,12 +2278,12 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
             </layout>
            </widget>
           </item>
-          <item row="1" column="0" >
+          <item row="1" column="0">
            <spacer>
-            <property name="orientation" >
+            <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" stdset="0" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>470</width>
               <height>33</height>
@@ -2292,8 +2293,8 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" native="1" name="widgetCreateFakeDrive3" >
-         <property name="geometry" >
+        <widget class="QWidget" name="widgetCreateFakeDrive3" native="true">
+         <property name="geometry">
           <rect>
            <x>-1</x>
            <y>0</y>
@@ -2301,71 +2302,71 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
            <height>320</height>
           </rect>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>true</bool>
          </property>
-         <layout class="QGridLayout" name="gridLayout_2" >
-          <property name="leftMargin" >
+         <layout class="QGridLayout" name="gridLayout_2">
+          <property name="leftMargin">
            <number>6</number>
           </property>
-          <property name="rightMargin" >
+          <property name="rightMargin">
            <number>6</number>
           </property>
-          <item row="0" column="0" >
-           <widget class="QGroupBox" name="groupBox_13" >
-            <property name="autoFillBackground" >
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="groupBox_13">
+            <property name="autoFillBackground">
              <bool>false</bool>
             </property>
-            <property name="title" >
+            <property name="title">
              <string>X11 Driver</string>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_5" >
+            <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
-              <widget class="QLabel" name="label_39" >
-               <property name="text" >
+              <widget class="QLabel" name="label_39">
+               <property name="text">
                 <string>Note: Leave empty for default</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_45" >
-               <layout class="QHBoxLayout" name="_16" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_45" native="true">
+               <layout class="QHBoxLayout" name="_16">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_48" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_48">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>WithRender:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboFakeX11_WR" >
+                 <widget class="QComboBox" name="comboFakeX11_WR">
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>default</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Y</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>N</string>
                    </property>
                   </item>
@@ -2375,44 +2376,44 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_46" >
-               <layout class="QHBoxLayout" name="_17" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_46" native="true">
+               <layout class="QHBoxLayout" name="_17">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_49" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_49">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>AA WithRender:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboFakeX11_AAR" >
+                 <widget class="QComboBox" name="comboFakeX11_AAR">
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>default</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Y</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>N</string>
                    </property>
                   </item>
@@ -2422,44 +2423,44 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_47" >
-               <layout class="QHBoxLayout" name="_18" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_47" native="true">
+               <layout class="QHBoxLayout" name="_18">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_50" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_50">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>AA WithCore:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboFakeX11_AAC" >
+                 <widget class="QComboBox" name="comboFakeX11_AAC">
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>default</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Y</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>N</string>
                    </property>
                   </item>
@@ -2469,44 +2470,44 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_48" >
-               <layout class="QHBoxLayout" name="_19" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_48" native="true">
+               <layout class="QHBoxLayout" name="_19">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_51" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_51">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>UseXRandR:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboFakeX11_XRandr" >
+                 <widget class="QComboBox" name="comboFakeX11_XRandr">
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>default</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Y</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>N</string>
                    </property>
                   </item>
@@ -2516,44 +2517,44 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_49" >
-               <layout class="QHBoxLayout" name="_20" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_49" native="true">
+               <layout class="QHBoxLayout" name="_20">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_52" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_52">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>UseXVidMode:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="comboFakeX11_XVid" >
+                 <widget class="QComboBox" name="comboFakeX11_XVid">
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>default</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>Y</string>
                    </property>
                   </item>
                   <item>
-                   <property name="text" >
+                   <property name="text">
                     <string>N</string>
                    </property>
                   </item>
@@ -2565,12 +2566,12 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
             </layout>
            </widget>
           </item>
-          <item row="1" column="0" >
+          <item row="1" column="0">
            <spacer>
-            <property name="orientation" >
+            <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" stdset="0" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>470</width>
               <height>33</height>
@@ -2580,8 +2581,8 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" native="1" name="widgetCreateFakeDrive1" >
-         <property name="geometry" >
+        <widget class="QWidget" name="widgetCreateFakeDrive1" native="true">
+         <property name="geometry">
           <rect>
            <x>-1</x>
            <y>0</y>
@@ -2589,60 +2590,60 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
            <height>320</height>
           </rect>
          </property>
-         <property name="autoFillBackground" >
+         <property name="autoFillBackground">
           <bool>true</bool>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_6" >
-          <property name="rightMargin" >
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <property name="rightMargin">
            <number>3</number>
           </property>
           <item>
-           <widget class="QGroupBox" name="groupBox_14" >
-            <property name="autoFillBackground" >
+           <widget class="QGroupBox" name="groupBox_14">
+            <property name="autoFillBackground">
              <bool>false</bool>
             </property>
-            <property name="title" >
+            <property name="title">
              <string>Wine Browsers</string>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_7" >
+            <layout class="QVBoxLayout" name="verticalLayout_7">
              <item>
-              <widget class="QLabel" name="label_41" >
-               <property name="text" >
+              <widget class="QLabel" name="label_41">
+               <property name="text">
                 <string>Note: Leave empty for default</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_37" >
-               <layout class="QHBoxLayout" name="_8" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_37" native="true">
+               <layout class="QHBoxLayout" name="_8">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_42" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_42">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Browsers:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtFakeBrowsers" >
-                  <property name="enabled" >
+                 <widget class="QLineEdit" name="txtFakeBrowsers">
+                  <property name="enabled">
                    <bool>true</bool>
                   </property>
-                  <property name="inputMask" >
+                  <property name="inputMask">
                    <string/>
                   </property>
                  </widget>
@@ -2651,36 +2652,36 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
               </widget>
              </item>
              <item>
-              <widget class="QWidget" native="1" name="widget_39" >
-               <layout class="QHBoxLayout" name="_10" >
-                <property name="margin" >
+              <widget class="QWidget" name="widget_39" native="true">
+               <layout class="QHBoxLayout" name="_10">
+                <property name="margin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_53" >
-                  <property name="minimumSize" >
+                 <widget class="QLabel" name="label_53">
+                  <property name="minimumSize">
                    <size>
                     <width>140</width>
                     <height>0</height>
                    </size>
                   </property>
-                  <property name="maximumSize" >
+                  <property name="maximumSize">
                    <size>
                     <width>140</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="text" >
+                  <property name="text">
                    <string>Mailers:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtFakeMailers" >
-                  <property name="enabled" >
+                 <widget class="QLineEdit" name="txtFakeMailers">
+                  <property name="enabled">
                    <bool>true</bool>
                   </property>
-                  <property name="inputMask" >
+                  <property name="inputMask">
                    <string/>
                   </property>
                  </widget>
@@ -2693,10 +2694,10 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
           </item>
           <item>
            <spacer>
-            <property name="orientation" >
+            <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" stdset="0" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>470</width>
               <height>33</height>
@@ -2706,41 +2707,41 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
           </item>
          </layout>
         </widget>
-        <zorder>widgetCreateFakeDrive0</zorder>
-        <zorder>widgetCreateFakeDrive1</zorder>
         <zorder>widgetCreateFakeDrive2</zorder>
         <zorder>widgetCreateFakeDrive3</zorder>
         <zorder>widgetCreatePrefix0</zorder>
         <zorder>widgetCreatePrefix1</zorder>
-        <zorder>widgetCreatePrefix2</zorder>
         <zorder>widgetFirstStartup0</zorder>
         <zorder>widgetFirstStartup1</zorder>
         <zorder>widgetFirstStartup2</zorder>
         <zorder>widgetFirstStartup3</zorder>
         <zorder>widgetInfo</zorder>
+        <zorder>widgetCreateFakeDrive0</zorder>
+        <zorder>widgetCreateFakeDrive1</zorder>
+        <zorder>widgetCreatePrefix2</zorder>
        </widget>
       </item>
-      <item row="1" column="0" colspan="2" >
-       <widget class="QWidget" native="1" name="widget_5" >
-        <layout class="QVBoxLayout" >
-         <property name="spacing" >
+      <item row="1" column="0" colspan="2">
+       <widget class="QWidget" name="widget_5" native="true">
+        <layout class="QVBoxLayout">
+         <property name="spacing">
           <number>0</number>
          </property>
-         <property name="leftMargin" >
+         <property name="leftMargin">
           <number>9</number>
          </property>
-         <property name="topMargin" >
+         <property name="topMargin">
           <number>0</number>
          </property>
-         <property name="rightMargin" >
+         <property name="rightMargin">
           <number>9</number>
          </property>
-         <property name="bottomMargin" >
+         <property name="bottomMargin">
           <number>0</number>
          </property>
          <item>
-          <widget class="Line" name="line_2" >
-           <property name="orientation" >
+          <widget class="Line" name="line_2">
+           <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
           </widget>
@@ -2748,30 +2749,30 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
         </layout>
        </widget>
       </item>
-      <item row="2" column="0" colspan="2" >
-       <widget class="QWidget" native="1" name="widget" >
-        <layout class="QHBoxLayout" >
-         <property name="spacing" >
+      <item row="2" column="0" colspan="2">
+       <widget class="QWidget" name="widget" native="true">
+        <layout class="QHBoxLayout">
+         <property name="spacing">
           <number>9</number>
          </property>
-         <property name="leftMargin" >
+         <property name="leftMargin">
           <number>9</number>
          </property>
-         <property name="topMargin" >
+         <property name="topMargin">
           <number>6</number>
          </property>
-         <property name="rightMargin" >
+         <property name="rightMargin">
           <number>9</number>
          </property>
-         <property name="bottomMargin" >
+         <property name="bottomMargin">
           <number>0</number>
          </property>
          <item>
           <spacer>
-           <property name="orientation" >
+           <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
-           <property name="sizeHint" stdset="0" >
+           <property name="sizeHint" stdset="0">
             <size>
              <width>40</width>
              <height>20</height>
@@ -2780,28 +2781,28 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="cmdBack" >
-           <property name="enabled" >
+          <widget class="QPushButton" name="cmdBack">
+           <property name="enabled">
             <bool>false</bool>
            </property>
-           <property name="text" >
+           <property name="text">
             <string>&lt; Back</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="cmdNext" >
-           <property name="text" >
-            <string>Next ></string>
+          <widget class="QPushButton" name="cmdNext">
+           <property name="text">
+            <string>Next &gt;</string>
            </property>
-           <property name="default" >
+           <property name="default">
             <bool>true</bool>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="cmdCancel" >
-           <property name="text" >
+          <widget class="QPushButton" name="cmdCancel">
+           <property name="text">
             <string>Cancel</string>
            </property>
           </widget>
@@ -2814,9 +2815,9 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="2" margin="9" />
+ <layoutdefault spacing="2" margin="9"/>
  <resources>
-  <include location="q4wine.qrc" />
+  <include location="q4wine.qrc"/>
  </resources>
  <connections/>
 </ui>
