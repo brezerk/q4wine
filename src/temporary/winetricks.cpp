@@ -128,8 +128,31 @@ void winetricks::downloadwinetricks () {
 	Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
 
         exportProcess->exec();
+        // setting help
+
+
+
 }
+/*
+void winetricks::setHelp()  {
+    QProcess *p;
+    QString pargs;
+    pargs.append("-c ");
+    pargs.append(winetricks_bin);
+    pargs.append(" ??? ");
+    pargs.append("> ");
+    pargs.append(QDir::homePath());
+    pargs.append("/.config/");
+    pargs.append(APP_SHORT_NAME);
+    pargs.append("/winetricks_help");
+    p->start(core->getSettingValue("system", "sh") + " " + pargs);
+    p->waitForFinished();
+    delete p;
+
+}
+*/
 void winetricks::run_help() {
+
     winetrickshelp *w = new winetrickshelp();
     w->show();
 }

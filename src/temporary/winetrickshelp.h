@@ -7,7 +7,7 @@
 #include <QDir>
 #include <QMessageBox>
 #include <QTextCodec>
-
+#include <QTextStream>
 namespace Ui {
     class winetrickshelp;
 }
@@ -24,6 +24,8 @@ protected:
 
 private:
     Ui::winetrickshelp *m_ui;
+
+
 
 private slots:
     void on_buttonBox_clicked(QAbstractButton* button);
