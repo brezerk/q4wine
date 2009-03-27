@@ -12,7 +12,9 @@ Version 0.112
   - You can disable icotools support in q4wine by adding -DWITHOUT_ICOTOOLS=ON to cmake;
   - Winetools support is disabled by default. You can enable it by adding -DWITH_WINETOOLS to cmake args;
   - All developer stuff is disabled by default. You can enable it by adding -DWITH_DEVELOP_STUFF to cmake args;
+  - New database class;
   Fixed:
+  - Many small fixes;
   - Added FreeBSD port patches by Dmitry Marakasov aka amdmi3;
   - Fixed readonly text field on prefix create;
   - Fixed q4wine.desktop GENERIC names;

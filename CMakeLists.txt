@@ -4,7 +4,7 @@ PROJECT(q4wine)
 
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 
-SET(APP_VERSION "0.111")
+SET(APP_VERSION "0.112")
 
 SET( DESKTOP_ENTRY
         ${CMAKE_SOURCE_DIR}/q4wine.desktop
@@ -17,6 +17,7 @@ SET( DESKTOP_PIXMAPS
 SET( SOURCES
         ${CMAKE_SOURCE_DIR}/src/gui/run.cpp
         ${CMAKE_SOURCE_DIR}/src/main.cpp   
+	${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
         ${CMAKE_SOURCE_DIR}/src/core/registry.cpp
         ${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.cpp
         ${CMAKE_SOURCE_DIR}/src/gui/about.cpp           
@@ -32,6 +33,7 @@ SET( SOURCES
 	${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.cpp
         ${CMAKE_SOURCE_DIR}/src/core/coremethods.cpp
 	${CMAKE_SOURCE_DIR}/src/wis/wisitem.cpp
+	${CMAKE_SOURCE_DIR}/src/core/database/initdb.h
 	#	${CMAKE_SOURCE_DIR}/src/core/commandline.cpp
 )                                                       
 

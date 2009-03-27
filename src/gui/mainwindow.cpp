@@ -27,28 +27,6 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-
-#include <QtGui>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QStringList>
-#include <QSqlQuery>
-#include <QSqlRelation>
-#include <QSqlRelationalTableModel>
-
-#include <QTimer>
-#include <QTableWidget>
-#include <QTabWidget>
-#include <QLabel>
-#include <QString>
-#include <QMessageBox>
-#include <QChar>
-#include <QSize>
-#include <QToolBar>
-#include <QIcon>
-#include <QTreeWidgetItem>
-#include <QGroupBox>
-#include "wisitem.h"
 #include "mainwindow.h"
 
 QTimer *timer = new QTimer();
@@ -64,13 +42,7 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	CoreFunction_SettingGet();
 
 	// Database check
-	if (checkDb()){
-		CoreFunction_DatabaseUpdateConnectedItems();
-	} else {
-		QMessageBox::warning(this, tr("Database is corrupted..."), tr("Sorry, the database has a wrong structure."));
-		statusBar()->showMessage(tr("Error: Database is corrupted"));
-		return;
-	}
+	CoreFunction_DatabaseUpdateConnectedItems();
 	// Slots connections
 
 	// Timer signal for getting proc info
@@ -116,15 +88,15 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	connect(mainAboutQt, SIGNAL(triggered()), this, SLOT(mainAboutQt_Click()));
 	connect(mainExportIcons, SIGNAL(triggered()), this, SLOT(mainExportIcons_Click()));
 
-        #ifdef WITHOUT_ICOTOOLS
-           mainExportIcons->setEnabled(false);
-        #endif
+	  #ifdef WITHOUT_ICOTOOLS
+	     mainExportIcons->setEnabled(false);
+	  #endif
 
-        #ifdef WITH_DEVELOP_STUFF
-                cmdTestWis->setEnabled(true);
-        #else
-                cmdTestWis->setEnabled(false);
-        #endif
+	  #ifdef WITH_DEVELOP_STUFF
+		    cmdTestWis->setEnabled(true);
+	  #else
+		    cmdTestWis->setEnabled(false);
+	  #endif
 
 	connect(mainOptions, SIGNAL(triggered()), this, SLOT(mainOptions_Click()));
 	connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
@@ -184,7 +156,7 @@ void MainWindow::cmdWinetricks_Click() {
 	#ifndef WITH_WINETOOLS
 	QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without winetriks support.</p><p>If you wish to enable winetriks support add:</p><p> \"-DWITH_WINETOOLS\" to cmake arguments.</p>"));
 	#else
-  	QMessageBox::warning(this, tr("Warning"), tr("<p>Winetricks officaly NOT supported by q4wine.</p><p>There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.</p>"));
+	QMessageBox::warning(this, tr("Warning"), tr("<p>Winetricks officaly NOT supported by q4wine.</p><p>There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.</p>"));
 
 	if (core->getSettingValue("console", "bin").isEmpty()){
 		QMessageBox::warning(this, tr("Error"), tr("<p>You do not set default console binary.</p><p>Set it into q4wine option dialog.</p>"));
@@ -206,23 +178,6 @@ void MainWindow::trayIcon_Activate(QSystemTrayIcon::ActivationReason reason){
 		}
 	}
 	return;
-}
-
-bool MainWindow::checkDb(){
-	QSqlDatabase db = QSqlDatabase::database();
-
-	QStringList tables = db.tables();
-	if (!tables.contains("prefix", Qt::CaseInsensitive)){
-		return FALSE;
-	}
-	if (!tables.contains("icon", Qt::CaseInsensitive)){
-		return FALSE;
-	}
-	if (!tables.contains("dir", Qt::CaseInsensitive)){
-		return FALSE;
-	}
-
-	return TRUE;
 }
 
 void MainWindow::lstIcons_ItemClick(QListWidgetItem * item){
@@ -319,14 +274,14 @@ void MainWindow::CoreFunction_SettingGet(){
 		CONSOLE_ARGS=settings.value("args").toString();
 	settings.endGroup();
 
-        #ifndef WITHOUT_ICOTOOLS
-            settings.beginGroup("icotool");
-                    WRESTOOL_BIN=settings.value("wrestool").toString();
-                            CoreFunction_SettingCheck(WRESTOOL_BIN, tr("Can't find wrestool binary."));
-                    ICOTOOL_BIN=settings.value("icotool").toString();
-                            CoreFunction_SettingCheck(ICOTOOL_BIN, tr("Can't find icotool binary."));
-            settings.endGroup();
-        #endif
+	  #ifndef WITHOUT_ICOTOOLS
+		settings.beginGroup("icotool");
+			  WRESTOOL_BIN=settings.value("wrestool").toString();
+				    CoreFunction_SettingCheck(WRESTOOL_BIN, tr("Can't find wrestool binary."));
+			  ICOTOOL_BIN=settings.value("icotool").toString();
+				    CoreFunction_SettingCheck(ICOTOOL_BIN, tr("Can't find icotool binary."));
+		settings.endGroup();
+	  #endif
 
 	settings.beginGroup("network");
 	switch (settings.value("host").toInt()){

@@ -27,24 +27,39 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
-
 
 #include <QMainWindow>
 #include <QContextMenuEvent>
 #include <QMenu>
 #include <QAction>
-#include <QTimer>
 #include <QObject>
 #include <QSystemTrayIcon>
 #include <QNetworkProxy>
 #include <QWidget>
-#include <QMessageBox>
 #include <QDir>
 #include <QSizePolicy>
+#include <QtGui>
+#include <QSqlError>
+#include <QStringList>
+#include <QSqlQuery>
+#include <QSqlRelation>
+#include <QSqlRelationalTableModel>
+
+#include <QTimer>
+#include <QTableWidget>
+#include <QTabWidget>
+#include <QLabel>
+#include <QString>
+#include <QMessageBox>
+#include <QChar>
+#include <QSize>
+#include <QToolBar>
+#include <QIcon>
+#include <QTreeWidgetItem>
+#include <QGroupBox>
+
 
 #include <ui_MainWindow.h>
 
@@ -91,7 +106,7 @@ class QMenu;
 class QTextEdit;
 
 struct iconCopyBuffer {
-	QString dir_id;	
+	QString dir_id;
 	QString prefix_id;
 	bool move;
 	QStringList names;
@@ -122,7 +137,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 		/*
 		 * Command buttons slots
-		 */ 
+		 */
 		void cmdManagePrefixes_Click(void);
 		void cmdCreateFake_Click(void);
 		void cmdUpdateFake_Click(void);
@@ -147,7 +162,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 		/*
 		 *Icon list slots
-		 */		
+		 */
 		void lstIcons_ItemClick(QListWidgetItem * item);
 		void lstIcons_ItemDoubleClick(QListWidgetItem * item);
 		void lstIcons_ShowContextMenu(const QPoint);
@@ -157,7 +172,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		 */
 		void twPrograms_ItemClick(QTreeWidgetItem * item, int);
 		void twPrograms_ShowContextMenu(const QPoint);
-	
+
 		/*
 		 *Prefix table slots
 		 */
@@ -179,7 +194,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 			void dirConfigure_Click(void);
 			void dirInstall_Click(void);
 			void dirUninstall_Click(void);
-			
+
 			//Icon context
 			void iconAdd_Click(void);
 			void iconRun_Click(void);
@@ -192,7 +207,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 			void iconMount_Click(void);
 			void iconMountOther_Click(void);
 			void iconUnmount_Click(void);
-		
+
 			//Main menu slots
 			void mainExit_Click(void);
 			void mainPrograms_Click(void);
@@ -223,10 +238,10 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QMenu *menuDirMount;
 		QMenu *menuIcon;
 		QMenu *menuIconMount;
-		
+
 		void createTrayIcon();
 		void SetMeVisible(bool visible);
-		
+
 		QAction *processKillSelected;
 		QAction *processKillWine;
 		QAction *processRefresh;
@@ -243,13 +258,13 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QAction *dirAdd;
 		QAction *dirRun;
 		QAction *dirRename;
-		QAction *dirDelete; 
+		QAction *dirDelete;
 		QAction *dirMountOther;
 		QAction *dirUnmount;
 		QAction *dirConfigure;
 		QAction *dirInstall;
 		QAction *dirUninstall;
-		
+
 		// Icons control for context menu
 		QAction *iconRun;
 		QAction *iconAdd;
@@ -262,14 +277,14 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QAction *iconMount;
 		QAction *iconUnmount;
 		QAction *iconMountOther;
-		
+
 		// Toolbars
 		QToolBar *procToolBar;
 		QToolBar *prefixToolBar;
 
 		// Settings functions
 		void CoreFunction_CreateMenus(void);
-		void CoreFunction_CreateToolBars(void);	
+		void CoreFunction_CreateToolBars(void);
 		void CoreFunction_SettingGet(void);
 		void CoreFunction_SettingCheck(QString filePath, QString message);
 		void CoreFunction_WineRunAutorunItems(void);
@@ -278,24 +293,23 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void CoreFunction_DatabaseUpdateConnectedItems(int currentPrefix = -1);
 		void CoreFunction_ImageMount(QString image, QString mount);
 		void CoreFunction_ImageUnmount(QString mount);
-	
+
 		//Events definition
 		void resizeEvent (QResizeEvent);
-	
+
 		//void DeleteDirectory(QString path);
-		
+
 		QStringList SQL_getPrefixAndDirData(QTreeWidgetItem *treeItem);
 		QStringList SQL_getPrefixAndDirInfo(QTreeWidgetItem *treeItem);
 		QStringList SQL_getDirctoryInfo(QString prefix_name, QString dirname);
 		bool SQL_isIconExistsByName(QString prefix_id, QString dir_id, QString name);
 
-		bool checkDb();
 	protected:
 		// Event filter
 		bool eventFilter(QObject *obj, QEvent *event);
 		bool run_timer;
 		void closeEvent(QCloseEvent *event);
-		
+
 		//Resource\theme loader
 		QIcon CoreFunction_IconLoad(QString iconName);
 
@@ -306,7 +320,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 		QString WINE_DEFAULT_PREFIX;
 		QString DEFAULT_WINE_BIN, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS;
-		QString WRESTOOL_BIN, ICOTOOL_BIN;		
+		QString WRESTOOL_BIN, ICOTOOL_BIN;
 		QString TAR_BIN, MOUNT_BIN, UMOUNT_BIN, SUDO_BIN, NICE_BIN, RENICE_BIN, SH_BIN;
 		QString CONSOLE_BIN, CONSOLE_ARGS;
 		QString THEME_NAME;

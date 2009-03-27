@@ -32,7 +32,6 @@
 #include <QMessageBox>
 
 #include <QtGui>
-#include <QSqlDatabase>
 #include <QSqlError>
 #include <QStringList>
 #include <QSqlQuery>
@@ -59,31 +58,28 @@
 #include "stdio.h"
 #include <locale.h>
 
-#include "initdb.h"
+#include "core/database/db.h"
+#include "core/database/initdb.h"
 
 int main(int argc, char *argv[])
 {
-
+	DataBase db;
 	QApplication app(argc, argv);
 	QTranslator*  qtt = new QTranslator ( 0 );
-
-	//QSettings settings("Brezerk GNU Soft", APP_NAME);
-
 	QSettings settings(APP_SHORT_NAME, "default");
 
 	QString i18nPath;
+	   i18nPath.clear();
+	   i18nPath.append(APP_PREF);
+	   i18nPath.append("/share/");
+	   i18nPath.append(APP_SHORT_NAME);
+	   i18nPath.append("/i18n");
 
-	i18nPath.clear();
-	i18nPath.append(APP_PREF);
-	i18nPath.append("/share/");
-	i18nPath.append(APP_SHORT_NAME);
-	i18nPath.append("/i18n");
-
-	QString lang;
 
 	// Getting env LANG variable
+	QString lang;
 	settings.beginGroup("app");
-		lang = settings.value("lang").toString();
+	   lang = settings.value("lang").toString();
 	settings.endGroup();
 
 	// This is hack for next QLocale bug:
@@ -102,32 +98,41 @@ int main(int argc, char *argv[])
 	}
 
 	if (!lang.isNull()){
-
-		if (qtt->load(lang, i18nPath)){
-			app.installTranslator( qtt );
+	   if (qtt->load(lang, i18nPath)){
+		app.installTranslator( qtt );
+	   } else {
+		qDebug()<<"[EE] Can't open user selected translation";
+		if (qtt->load("en_us.qm", i18nPath)){
+		   app.installTranslator( qtt );
 		} else {
-			qDebug()<<"[EE] Can't open user selected translation";
-			if (qtt->load("en_us.qm", i18nPath)){
-				app.installTranslator( qtt );
-			} else {
-				qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
-			}
+		   qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
 		}
-	}	else {
-		qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
+	   }
+	} else {
+	   qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
 	}
-/* command line args */
+
+	/* ============================================= *\
+	 This is back support test for v <=0.100
+	 plz remove it on v0.120
+	   --------------------------------------------- */
 
 	QDir dir;
-
 	QString rootConfPath;
-	rootConfPath.append(QDir::homePath());
-	rootConfPath.append("/.q4wine/");
+	   rootConfPath.append(QDir::homePath());
+	   rootConfPath.append("/.q4wine/");
 
 	if (dir.exists(rootConfPath)){
-		QMessageBox::warning(0, QObject::tr("Version outdated"), QObject::tr("Sorry, new wersion of q4wine require new files location.<br><br>You must manually delete all old files at:<br>$HOME/.q4wine<br>$HOME/.config/Brezerk\\ GNU\\ Soft<br><br>Note: new files location is:<br>~/.config/q4wine"));
-		return -1;
+	   QMessageBox::warning(0, QObject::tr("Version outdated"), QObject::tr("Sorry, new wersion of q4wine require new files location.<br><br>You must manually delete all old files at:<br>$HOME/.q4wine<br>$HOME/.config/Brezerk\\ GNU\\ Soft<br><br>Note: new files location is:<br>~/.config/q4wine"));
+	   return -1;
 	}
+
+	/* ============================================== */
+
+	/* ============================================= *\
+	 This is back support test for v <=0.110
+	 plz remove it on v0.120
+	   --------------------------------------------- */
 
 	rootConfPath.clear();
 	rootConfPath.append(QDir::homePath());
@@ -138,114 +143,63 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
+	/* ============================================= */
 
 	if (!settings.contains ("configure")){
-			//If no key, we gona to start an First Run Wizard to setup q4wine
-		Wizard *firstSetupWizard = new Wizard(1);
-		if (firstSetupWizard->exec()==QDialog::Accepted){
+	   //If no key, we gona to start an First Run Wizard to setup q4wine
+	   Wizard *firstSetupWizard = new Wizard(1);
+	   if (firstSetupWizard->exec()==QDialog::Accepted){
 
 			rootConfPath.clear();
 			rootConfPath.append(QDir::homePath());
 			rootConfPath.append("/.config/");
 			rootConfPath.append(APP_SHORT_NAME);
 
+			// Creating root folder
 			if (!dir.exists(rootConfPath)){
-				if (!dir.mkdir(rootConfPath)){
-					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create root directory %1.").arg(rootConfPath));
-					return -1;
-				}
+			   if (!dir.mkdir(rootConfPath)){
+				QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create root directory %1.").arg(rootConfPath));
+				return -1;
+			   }
 			}
+
+			// Creating sub folders
+			QStringList subDirs;
+			subDirs << "db" << "icons" << "prefixes" << "tmp" << "theme";
 
 			QString subDir;
 
-			subDir=rootConfPath;
-			subDir.append("/db");
+			for (int i=0; i<subDirs.size(); ++i){
+			   subDir=rootConfPath;
+			   subDir.append("/");
+			   subDir.append(subDirs.at(i).toLocal8Bit().constData());
 
-			if (!dir.exists(subDir)){
+			   if (!dir.exists(subDir)){
 				if (!dir.mkdir(subDir)){
-					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
-					return -1;
+				   QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
+				   return -1;
 				}
-			}
-
-			subDir=rootConfPath;
-			subDir.append("/icons");
-
-			if (!dir.exists(subDir)){
-				if (!dir.mkdir(subDir)){
-					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
-					return -1;
-				}
-			}
-
-			subDir=rootConfPath;
-			subDir.append("/prefixes");
-
-			if (!dir.exists(subDir)){
-				if (!dir.mkdir(subDir)){
-					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
-					return -1;
-				}
-			}
-
-			subDir=rootConfPath;
-			subDir.append("/tmp");
-
-			if (!dir.exists(subDir)){
-				if (!dir.mkdir(subDir)){
-					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
-					return -1;
-				}
-			}
-
-			subDir=rootConfPath;
-			subDir.append("/theme");
-
-			if (!dir.exists(subDir)){
-				if (!dir.mkdir(subDir)){
-					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
-					return -1;
-				}
-			}
-
-			if (!initDb()){
-				QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to load database."));
-				return -1;
-			}
-
-			if (!createDb()){
-				QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create database."));;
-				return -1;
+			   }
 			}
 
 			settings.setValue("configure", "yes");
-
-
-			//Creating default prefix reccord
-			QSqlQuery q;
-			q.prepare("INSERT INTO prefix(id, name) VALUES(NULL, :name);");
-			q.bindValue(":name", "Default");
-
-			if (!q.exec()){
-				#ifdef DEBUG
-					qDebug()<<"WARNING: SQL error at Wizard::Scene prefix create\nINFO:\n"<<q.executedQuery()<<"\n"<<q.lastError();
-				#endif
-				return -1;
-			}
-
 		} else {
-			return -1;
-		}
-	} else {
-		if (!initDb()){
-			QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to load database."));
 			return -1;
 		}
 	}
 
+	if (!initDb())
+	   return -1;
+
+	QStringList tables;
+	tables << "prefix" << "dir" << "icon" << "images";
+	if (!db.checkDb(tables))
+	   return -1;
 
 	MainWindow mainWin;
 	mainWin.show();
+	int result = app.exec();
+	db.close();
 
-	return app.exec();
+	return result;
 }
