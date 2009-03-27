@@ -1119,9 +1119,6 @@ void MainWindow::closeEvent(QCloseEvent *event){
 	if (trayIcon->isVisible()) {
 		hide();
 		event->ignore();
-	} else {
-		QSqlDatabase db = QSqlDatabase::database();
-		db.close();
 	}
 
 	QSettings settings(APP_SHORT_NAME, "default");
@@ -1899,9 +1896,6 @@ void MainWindow::mainExit_Click(){
 	/*
 	 * main Menu Exit
 	 */
-
-	QSqlDatabase db = QSqlDatabase::database();
-	db.close();
 
 	QSettings settings(APP_SHORT_NAME, "default");
 	settings.beginGroup("MainWindow");
