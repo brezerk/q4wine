@@ -33,7 +33,6 @@
 #include "config.h"
 #include "winetrickshelp.h"
 #include <ui_winetricks.h>
-
 #include <QtGui/QDialog>
 #include <QStringList>
 #include <QProcess>
@@ -62,7 +61,6 @@ protected:
 		QString console_args;
 		QString prefix_path;
 		QString winetricks_bin;
-
 
 		void downloadwinetricks();
 		void removefile(QString);

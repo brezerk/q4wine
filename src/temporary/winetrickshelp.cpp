@@ -16,19 +16,21 @@ if (!QFile::exists(WINETRICKS_FILE)) {
 this->close();
 return;
 }
-QProcess *p = new QProcess (this);
-p->start(QDir::homePath() + tr(".config/q4wine/winetricks -"));
-p->waitForFinished();
-QString lang;
-                // Getting env LANG variable
-                lang = getenv("LANG");
-                lang = lang.split(".").at(1);
-
-                if (lang.isNull())
-                        lang = "UTF8";
-QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
-QString string = codec->toUnicode(p->readAllStandardOutput());
-m_ui->txtOutput->setText(string);
+QFile file;
+file.setFileName(QDir::homePath() + ".config/q4wine/winetricks_help");
+if (!file.open(QIODevice::ReadOnly)) {
+   QMessageBox msg;
+    msg.setText("error open " + file.fileName());
+    msg.setIcon(QMessageBox::Critical);
+    msg.setWindowTitle(tr("winetricks not found"));
+    msg.show();
+}
+QTextStream out (&file);
+out.setCodec(QTextCodec::codecForLocale());
+QString str;
+str = out.readAll();
+file.close();
+m_ui->txtOutput->setText(str);
 }
 
 winetrickshelp::~winetrickshelp()
@@ -48,6 +50,7 @@ void winetrickshelp::changeEvent(QEvent *e)
 }
 
 void winetrickshelp::on_buttonBox_clicked(QAbstractButton* button){
+
    return;
 }
 
