@@ -75,6 +75,7 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 			cmdGetMountBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetUmountBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetSudoBin->setIcon(loadIcon("data/folder.png", themePath));
+			cmdGetGuiSudoBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetNiceBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetReniceBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetShBin->setIcon(loadIcon("data/folder.png", themePath));
@@ -83,12 +84,12 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 			cmdGetWrestoolBin->setIcon(loadIcon("data/folder.png", themePath));
 			cmdGetIcotoolBin->setIcon(loadIcon("data/folder.png", themePath));
 
-                        #ifdef WITHOUT_ICOTOOLS
-                            cmdGetWrestoolBin->setEnabled(false);
-                            cmdGetIcotoolBin->setEnabled(false);
-                            txtWrestoolBin->setEnabled(false);
-                            txtIcotoolBin->setEnabled(false);
-                        #endif
+				#ifdef WITHOUT_ICOTOOLS
+				    cmdGetWrestoolBin->setEnabled(false);
+				    cmdGetIcotoolBin->setEnabled(false);
+				    txtWrestoolBin->setEnabled(false);
+				    txtIcotoolBin->setEnabled(false);
+				#endif
 
 		break;
 		case 2:
@@ -188,6 +189,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 			cmdGetMountBin->installEventFilter(this);
 			cmdGetUmountBin->installEventFilter(this);
 			cmdGetSudoBin->installEventFilter(this);
+			cmdGetGuiSudoBin->installEventFilter(this);
 			cmdGetNiceBin->installEventFilter(this);
 			cmdGetReniceBin->installEventFilter(this);
 			cmdGetShBin->installEventFilter(this);
@@ -213,6 +215,16 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 				txtMountBin->setText(core->getWhichOut("mount"));
 				txtUmountBin->setText(core->getWhichOut("umount"));
 				txtSudoBin->setText(core->getWhichOut("sudo"));
+
+				txtGuiSudoBin->setText(core->getWhichOut("zkdesu"));
+				   if (txtGuiSudoBin->text().isEmpty()){
+					txtGuiSudoBin->setText(core->getWhichOut("gksu"));
+				   } else {
+					if (txtGuiSudoBin->text().isEmpty()){
+					   txtGuiSudoBin->setText(core->getWhichOut("sudo"));
+					}
+				   }
+
 				txtNiceBin->setText(core->getWhichOut("nice"));
 				txtReniceBin->setText(core->getWhichOut("renice"));
 				txtShBin->setText(core->getWhichOut("sh"));
@@ -229,10 +241,10 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 									}
 							}
 
-                             #ifndef WITHOUT_ICOTOOLS
-                                txtWrestoolBin->setText(core->getWhichOut("wrestool"));
+				     #ifndef WITHOUT_ICOTOOLS
+					  txtWrestoolBin->setText(core->getWhichOut("wrestool"));
 				txtIcotoolBin->setText(core->getWhichOut("icotool"));
-                             #endif
+				     #endif
 				delete core;
 
 		break;
@@ -442,6 +454,9 @@ void Wizard::nextWizardPage(){
 					if (!checkEntry(txtSudoBin->text(), "sudo"))
 						return;
 
+					if (!checkEntry(txtGuiSudoBin->text(), "GUI sudo"))
+						return;
+
 					if (!checkEntry(txtUmountBin->text(), "nice"))
 						return;
 
@@ -457,13 +472,13 @@ void Wizard::nextWizardPage(){
 					if (!checkEntry(txtConsoleBin->text(), "console"))
 						return;
 
-                                        #ifndef WITHOUT_ICOTOOLS
-                                            if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
-                                                return;
+						    #ifndef WITHOUT_ICOTOOLS
+							  if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
+								return;
 
-                                            if (!checkEntry(txtIcotoolBin->text(), "icotool"))
+							  if (!checkEntry(txtIcotoolBin->text(), "icotool"))
 						return;
-                                        #endif
+						    #endif
 
 				break;
 				case 6:
@@ -494,6 +509,7 @@ void Wizard::nextWizardPage(){
 					settings.setValue("mount", txtMountBin->text());
 					settings.setValue("umount", txtUmountBin->text());
 					settings.setValue("sudo", txtSudoBin->text());
+					settings.setValue("gui_sudo", txtGuiSudoBin->text());
 					settings.setValue("nice", txtNiceBin->text());
 					settings.setValue("renice", txtReniceBin->text());
 					settings.setValue("sh", txtShBin->text());

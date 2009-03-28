@@ -259,6 +259,8 @@ void MainWindow::CoreFunction_SettingGet(){
 			CoreFunction_SettingCheck(UMOUNT_BIN, tr("Can't find umount binary."));
 		SUDO_BIN=settings.value("sudo").toString();
 			CoreFunction_SettingCheck(SUDO_BIN, tr("Can't find sudo binary."));
+		GUI_SUDO_BIN=settings.value("gui_sudo").toString();
+			CoreFunction_SettingCheck(GUI_SUDO_BIN, tr("Can't find GUI sudo binary."));
 		NICE_BIN=settings.value("nice").toString();
 			CoreFunction_SettingCheck(NICE_BIN, tr("Can't find nice binary."));
 		RENICE_BIN=settings.value("renice").toString();
@@ -323,7 +325,7 @@ void MainWindow::CoreFunction_SettingCheck(QString filePath, QString message){
 	QFileInfo *file = new QFileInfo(filePath);
 
 	if (!file->exists ()){
-		QMessageBox::warning(this, tr("Warning"), tr("<p>%1</p><p>File or path not exists: \"%2\"</p>").arg(message).arg(filePath));
+		QMessageBox::warning(this, tr("Warning"), tr("<p>%1</p><p>File or path not exists: \"%2\"</p><p>Please, go to %3 options dialog and set it.</p>").arg(message).arg(filePath).arg(APP_SHORT_NAME));
 		statusBar()->showMessage(tr("Warning: \"%1\" use options dialog for fix").arg(message));
 	}
 
@@ -1285,17 +1287,23 @@ void MainWindow::CoreFunction_SetProcNicePriority(int priority, int pid){
 	 */
 
 	QStringList args;
+	QString arg;
+	   args << RENICE_BIN;
+	   args.append(tr("%1").arg(priority));
+	   args.append(tr("%1").arg(pid));
 
-	args << RENICE_BIN;
-	args.append(tr("%1").arg(priority));
-	args.append(tr("%1").arg(pid));
+	//Fix args for kdesu\gksu\e.t.c.
+	if (!GUI_SUDO_BIN.contains(QRegExp("/sudo$"))){
+	   arg=args.join(" ");
+	   args.clear();
+	   args<<arg;
+	}
 
-	Process *exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("reniceing..."), tr("reniceing..."));
-
+	Process *exportProcess = new Process(args, GUI_SUDO_BIN, HOME_PATH, tr("reniceing..."), tr("reniceing..."));
 	if (exportProcess->exec()==QDialog::Accepted){
-		CoreFunction_GetProcProccessInfo();
+	   CoreFunction_GetProcProccessInfo();
 	} else {
-		statusBar()->showMessage(tr("Renice fail fail"));
+	   statusBar()->showMessage(tr("Renice fail fail"));
 	}
 
 	return;
@@ -3388,9 +3396,10 @@ void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
 	//mount_cd9660
 
 	QStringList args;
+	QString arg;
 
 	#ifdef _OS_FREEBSD_
-		QString arg;
+
 
 		if ((image.right(3)=="iso") or (image.right(3)=="nrg")){
 			args << SH_BIN;
@@ -3423,7 +3432,14 @@ void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
 
 	#endif
 
-		Process *exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("Mounting..."), tr("Mounting..."));
+		//Fix args for kdesu\gksu\e.t.c.
+		if (!GUI_SUDO_BIN.contains(QRegExp("/sudo$"))){
+		   arg=args.join(" ");
+		   args.clear();
+		   args<<arg;
+		}
+
+		Process *exportProcess = new Process(args, GUI_SUDO_BIN, HOME_PATH, tr("Mounting..."), tr("Mounting..."));
 
 		if (exportProcess->exec()==QDialog::Accepted){
 			statusBar()->showMessage(tr("Image successfully mounted"));
@@ -3437,6 +3453,7 @@ void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
 void MainWindow::CoreFunction_ImageUnmount(QString mount){
 
 	QStringList args;
+	QString arg;
 	Process *exportProcess;
 
 	#ifdef _OS_FREEBSD_
@@ -3444,7 +3461,7 @@ void MainWindow::CoreFunction_ImageUnmount(QString mount){
 		args << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(mount);
 
 		QProcess *myProcess = new QProcess(this);
-	myProcess->start(SH_BIN, args);
+		myProcess->start(SH_BIN, args);
 		if (!myProcess->waitForFinished()){
 			qDebug() << "Make failed:" << myProcess->errorString();
 			return;
@@ -3457,7 +3474,14 @@ void MainWindow::CoreFunction_ImageUnmount(QString mount){
 	args << UMOUNT_BIN;
 	args << mount;
 
-	exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("Unmounting..."), tr("Unmounting..."));
+	//Fix args for kdesu\gksu\e.t.c.
+	if (!GUI_SUDO_BIN.contains(QRegExp("/sudo$"))){
+	   arg=args.join(" ");
+	   args.clear();
+	   args<<arg;
+	}
+
+	exportProcess = new Process(args, GUI_SUDO_BIN, HOME_PATH, tr("Unmounting..."), tr("Unmounting..."));
 
 	if (exportProcess->exec()==QDialog::Accepted){
 		statusBar()->showMessage(tr("image successfully unmounted"));
@@ -3473,7 +3497,14 @@ void MainWindow::CoreFunction_ImageUnmount(QString mount){
 					args.clear();
 					args << "mdconfig" <<  "-d" << tr("-u%1").arg(devid.mid(7));
 
-					exportProcess = new Process(args, SUDO_BIN, HOME_PATH, tr("Unmounting..."), tr("running mdconfig"));
+					//Fix args for kdesu\gksu\e.t.c.
+					if (!GUI_SUDO_BIN.contains(QRegExp("/sudo$"))){
+					   arg=args.join(" ");
+					   args.clear();
+					   args<<arg;
+					}
+
+					exportProcess = new Process(args, GUI_SUDO_BIN, HOME_PATH, tr("Unmounting..."), tr("running mdconfig"));
 
 					if (exportProcess->exec()==QDialog::Accepted){
 						statusBar()->showMessage(tr("mdimage removed"));

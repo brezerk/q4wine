@@ -868,7 +868,7 @@ p, li { white-space: pre-wrap; }
             <property name="title">
              <string>System utils</string>
             </property>
-            <layout class="QVBoxLayout">
+            <layout class="QVBoxLayout" name="verticalLayout_3">
              <item>
               <widget class="QLabel" name="label_3">
                <property name="text">
@@ -1038,6 +1038,50 @@ p, li { white-space: pre-wrap; }
                 </item>
                 <item>
                  <widget class="QPushButton" name="cmdGetSudoBin">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>16</width>
+                    <height>16</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_50" native="true">
+               <layout class="QHBoxLayout" name="_2">
+                <property name="margin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_55">
+                  <property name="minimumSize">
+                   <size>
+                    <width>140</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>140</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>gui sudo:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="txtGuiSudoBin"/>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="cmdGetGuiSudoBin">
                   <property name="text">
                    <string/>
                   </property>
@@ -2712,13 +2756,13 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
         <zorder>widgetCreatePrefix0</zorder>
         <zorder>widgetCreatePrefix1</zorder>
         <zorder>widgetFirstStartup0</zorder>
-        <zorder>widgetFirstStartup1</zorder>
         <zorder>widgetFirstStartup2</zorder>
         <zorder>widgetFirstStartup3</zorder>
         <zorder>widgetInfo</zorder>
         <zorder>widgetCreateFakeDrive0</zorder>
         <zorder>widgetCreateFakeDrive1</zorder>
         <zorder>widgetCreatePrefix2</zorder>
+        <zorder>widgetFirstStartup1</zorder>
        </widget>
       </item>
       <item row="1" column="0" colspan="2">

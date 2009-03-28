@@ -13,6 +13,7 @@ Version 0.112
   - Winetools support is disabled by default. You can enable it by adding -DWITH_WINETOOLS to cmake args;
   - All developer stuff is disabled by default. You can enable it by adding -DWITH_DEVELOP_STUFF to cmake args;
   - New database class;
+  - kdesu\gksu support;
   Fixed:
   - Many small fixes;
   - Added FreeBSD port patches by Dmitry Marakasov aka amdmi3;

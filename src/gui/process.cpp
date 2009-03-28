@@ -121,8 +121,11 @@ void Process::slotError(QProcess::ProcessError err){
 }
 
 void Process::slotFinished(int, QProcess::ExitStatus exitc){
+	//qDebug()<<exitc;
+	//qDebug()<<myProcess->exitCode();
 
-			if (myProcess->exitCode()!=0){
+
+	//		if (myProcess->exitCode()!=0){
 
 				QString lang;
 				// Getting env LANG variable
@@ -140,9 +143,9 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 					QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Cant read STDERR message.<br>%1").arg(string));
 
 				}
-				reject ();
-				return;
-			}
+	//			reject ();
+	//			return;
+	//		}
 	accept();
 	return;
 }
