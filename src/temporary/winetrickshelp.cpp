@@ -6,6 +6,7 @@ winetrickshelp::winetrickshelp(QWidget *parent) :
     m_ui(new Ui::winetrickshelp)
 {
     m_ui->setupUi(this);
+    /*
     QString WINETRICKS_FILE = QDir::homePath() + ".config/q4wine/winetricks";
 if (!QFile::exists(WINETRICKS_FILE)) {
     QMessageBox msg;
@@ -15,9 +16,11 @@ if (!QFile::exists(WINETRICKS_FILE)) {
     msg.show();
 this->close();
 return;
+
 }
+*/
 QFile file;
-file.setFileName(QDir::homePath() + ".config/q4wine/winetricks_help");
+file.setFileName(QDir::homePath() + "/.config/q4wine/winetricks_help");
 if (!file.open(QIODevice::ReadOnly)) {
    QMessageBox msg;
     msg.setText("error open " + file.fileName());

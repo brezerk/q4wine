@@ -69,6 +69,7 @@ void Process::slotError(QProcess::ProcessError err){
 
 		QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
 			QString string = codec->toUnicode(myProcess->readAllStandardError());
+
 			if (!string.isEmpty()){
 				QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Error log:<br>%1").arg(string));
 			} else {
@@ -114,9 +115,11 @@ void Process::slotError(QProcess::ProcessError err){
 				QMessageBox::warning(this, tr("Error"), tr("Process: An unknown error occurred. This is the default return value of error()."));
 				break;
 		}
-	}
+
 
 	reject ();
+
+                    }
 	return;
 }
 
@@ -137,12 +140,14 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 
 				QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
 				QString string = codec->toUnicode(myProcess->readAllStandardError());
+
 				if (!string.isEmpty()){
 					QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Error log:<br>%1").arg(string));
 				} else {
 					QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Cant read STDERR message.<br>%1").arg(string));
 
 				}
+
 	//			reject ();
 	//			return;
 	//		}

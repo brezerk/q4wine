@@ -1,27 +1,27 @@
 Qt4 GUI for wine (W.I.N.E)
 ***********************************************
-
+ 
 Q4Wine is an qt4 GUI for W.I.N.E. It will helps you to
 manage wine prefixes and installed applications.
-
+ 
 This Software is published under the terms of the GNU GPL V3 and comes
 without any warranty. Feel free to change or distribute this software.
-
+ 
 Notes
 ***********************************************
 This software comes with absolutely no warranty. You will NOT get any support or help for WineTools,
 Wine, software installations, Linux or Microsoft Windows from the author.
-
-If you need help, ask the mailing lists at http://www.winehq.org/site/forums. 
-
-If you want support, buy the commercial versions of wine: CodeWeavers CrossOver Office 
+ 
+If you need help, ask the mailing lists at http://www.winehq.org/site/forums.
+ 
+If you want support, buy the commercial versions of wine: CodeWeavers CrossOver Office
 http://www.codeweavers.com for Desktop Applications.
-
+ 
 q4wine was initially written by Malakhov Alexey aka John Brezerk.
-
+ 
 General ideia comes from WineTools scripts witch was initially written by Frank Hendriksen.
 It is licensed under the terms GPL v3 license.
-
+ 
 Build dependencies
 ***********************************************
 sudo
@@ -35,7 +35,7 @@ wine
 >=qt-core-4.4.0
 >=qt-network-4.4.0
 wget
-
+ 
 Installation
 ***********************************************
 1. $ tar -xvzf q4wine-x.xxx-rx.tar.gz
@@ -43,34 +43,40 @@ Installation
 3. $ mkdir build
 4. $ cd build
 5. $ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-
-	| Note:
+ 
+  | Note:
         | By default, q4wine need icotools to be installed;
         | If you wish to disable icotools support add -DWITHOUT_ICOTOOLS=ON to cmake options
-
+ 
         | Note:
         | By default, q4wine not support winetools;
         | If you wish to enable winetools support add -DWITH_WINETOOLS=ON to cmake options
-
+ 
         | Note:
         | By default, q4wine not enable developer stuff;
         | If you wish to enable developer stuff add -DWITH_DEVELOP_STUFF=ON to cmake options
-
+ 
 6. $ make
 7. $ make install
 8. $ q4wine
 6. Enjoy :)
-
+ 
 Changelog
 ***********************************************
 See changelog file for details
-
+ 
 -- 
 Regards,
-
+ 
 Malakhov Alexey
 OpenXlout, q4wine ( http://sourceforge.net/projects/q4wine ) main developer.
 BrezBlock ( http://brezblock.org.ua ) maintainer
 e-mail: brezerk@gmail.com
 web: http://brezblock.org.ua
 BrezBlock, Kiev, Ukraine
+
+Zinin Pavel
+q4wine developer.
+allunix.ru forum moderator
+e-mail: pzinin@gmail.com
+web: http://pashazz.blogspot.com
