@@ -1,0 +1,82 @@
+
+Options:
+ -q         quiet.  You must have already agreed to the EULAs.
+ -v         verbose                                           
+ -V         display Version                                   
+Packages:                                                     
+ art2kmin      MS Access 2000 runtime.  Requires Access 2000 Dev license!
+ colorprofile  Standard RGB color profile                                
+ comctl32      MS common controls 5.80                                   
+ comctl32.ocx  MS comctl32.ocx and mscomctl.ocx, comctl32 wrappers for VB6
+ controlpad    MS ActiveX Control Pad                                     
+ corefonts     MS Arial, Courier, Times fonts                             
+ dcom98        MS DCOM (ole32, oleaut32); requires Win98 license!         
+ dirac0.8      the obsolete Dirac 0.8 directshow filter                   
+ directx9      MS DirectX 9 user redistributable                          
+ divx          divx video codec                                           
+ dotnet11      MS .NET 1.1 (requires Windows license)                     
+ dotnet20      MS .NET 2.0 (requires Windows license)                     
+ ffdshow       ffdshow video codecs                                       
+ flash         Adobe Flash Player ActiveX and firefox plugins             
+ fm20          MS Forms 2.0 Object Library                                
+ fontfix       Fix bad fonts which cause crash in some apps (e.g. .net).  
+ gdiplus       MS gdiplus.dll (from powerpoint viewer)                    
+ gecko         The HTML rendering Engine (Mozilla)                        
+ hosts         Adds empty C:\windows\system32\drivers\etc\{hosts,services} files
+ icodecs       Intel Codecs (Indeo)                                             
+ jet40         MS Jet 4.0 Service Pack 8                                        
+ liberation    Red Hat Liberation fonts (Sans, Serif, Mono)                     
+ mdac25        MS MDAC 2.5: Microsoft ODBC drivers, etc.                        
+ mdac27        MS MDAC 2.7                                                      
+ mdac28        MS MDAC 2.8                                                      
+ mfc40         MS mfc40 (Microsoft Foundation Classes from Visual C++ 4)        
+ mfc42         MS mfc42 (same as vcrun6 below)                                  
+ mono20        mono-2.0.1                                                       
+ mono22        mono-2.2                                                         
+ msi2          MS Installer 2.0                                                 
+ mshflxgd      MS Hierarchical Flex Grid Control                                
+ msls31        MS Line Services 3.1 (needed by native riched?)                  
+ msmask        MS Masked Edit Control                                           
+ msscript      MS Script Control                                                
+ msxml3        MS XML version 3                                                 
+ msxml4        MS XML version 4                                                 
+ msxml6        MS XML version 6                                                 
+ ogg           ogg filters/codecs: flac, theora, speex, vorbis, schroedinger    
+ ole2          MS 16 bit OLE                                                    
+ pdh           MS pdh.dll (Performance Data Helper)                             
+ quicktime72   Apple Quicktime 7.2                                              
+ riched20      MS riched20 and riched32                                         
+ riched30      MS riched30                                                      
+ tahoma        MS Tahoma font (not part of corefonts)                           
+ urlmon        MS urlmon.dll                                                    
+ vb3run        MS Visual Basic 3 runtime                                        
+ vb4run        MS Visual Basic 4 runtime                                        
+ vb5run        MS Visual Basic 5 runtime                                        
+ vb6run        MS Visual Basic 6 runtime                                        
+ vcrun6        MS Visual C++ 6 sp4 libraries (mfc42, msvcp60, msvcrt)           
+ vcrun2003     MS Visual C++ 2003 libraries (mfc71,msvcp71,msvcr71)             
+ vcrun2005     MS Visual C++ 2005 libraries (mfc80,msvcp80,msvcr80)             
+ vcrun2005sp1  MS Visual C++ 2005 sp1 libraries                                 
+ vcrun2008     MS Visual C++ 2008 libraries (mfc90,msvcp90,msvcr90)             
+ vjrun20       MS Visual J# 2.0 libraries (requires dotnet20)                   
+ wininet       MS wininet.dll (requires Windows license)                        
+ wme9          MS Windows Media Encoder 9 (requires Windows license)            
+ wmp9          MS Windows Media Player 9 (requires Windows license)             
+ wmp10         MS Windows Media Player 10 (requires Windows license)            
+ wsh56         MS Windows Scripting Host 5.6
+ wsh56js       MS Windows scripting 5.6, jscript only, no cscript
+ wsh56vb       MS Windows scripting 5.6, vbscript only, no cscript
+ xvid          xvid video codec
+Apps:
+ autohotkey    Autohotkey (open source gui scripting language)
+ firefox3      Firefox Version 3
+ ie6           Microsoft Internet Explorer 6.0
+ kde           KDE for Windows installer
+ mpc           Media Player Classic
+ vlc           VLC media player
+Pseudopackages:
+ allfonts      All listed fonts (corefonts, tahoma, liberation)
+ allcodecs     All listed codecs (xvid, ffdshow, icodecs)
+ fakeie6       Set registry to claim IE6sp1 is installed
+ native_mdac   Override odbc32 and odbccp32
+ native_oleaut32 Override oleaut32
