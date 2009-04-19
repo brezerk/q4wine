@@ -66,7 +66,25 @@ Installation
 7. $ make install
 8. $ q4wine
 6. Enjoy :)
- 
+
+Postinstall:
+***********************************************
+
+If you plan to use kdesu\gksu\xdg-su, then you might add folowing lines
+to /etc/sudoers (use visudo)
+
+#---------- Cut here -------------------------
+Cmnd_Alias Q4WINE_COMMS=/sbin/losetup
+User_Alias Q4WINE_USERS=%games,%users
+
+Q4WINE_USERS ALL=(ALL) NOPASSWD: Q4WINE_COMMS
+#---------- End of Cut -----------------------
+
+This will allow to run /sbin/losetup, which is used for bulding mounted iso's menu list, 
+with out prompting root password.
+
+Otherwise you can't get mount menu working =)
+
 Changelog
 ***********************************************
 See changelog file for details
