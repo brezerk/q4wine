@@ -68,17 +68,17 @@ SET ( MOC_HEADEDRS
 )                                                     
 
 SET ( UIS
-        ${CMAKE_SOURCE_DIR}/src/About.ui
-        ${CMAKE_SOURCE_DIR}/src/AppSettings.ui
-        ${CMAKE_SOURCE_DIR}/src/IconSettings.ui
-        ${CMAKE_SOURCE_DIR}/src/IconsView.ui   
-        ${CMAKE_SOURCE_DIR}/src/MainWindow.ui  
-        ${CMAKE_SOURCE_DIR}/src/PrefixSettings.ui
-        ${CMAKE_SOURCE_DIR}/src/Process.ui       
-        ${CMAKE_SOURCE_DIR}/src/Run.ui           
-        ${CMAKE_SOURCE_DIR}/src/Wizard.ui        
-        ${CMAKE_SOURCE_DIR}/src/IconSettings.ui  
-        ${CMAKE_SOURCE_DIR}/src/ImageManager.ui  
+        ${CMAKE_SOURCE_DIR}/src/uis/About.ui
+        ${CMAKE_SOURCE_DIR}/src/uis/AppSettings.ui
+        ${CMAKE_SOURCE_DIR}/src/uis/IconSettings.ui
+        ${CMAKE_SOURCE_DIR}/src/uis/IconsView.ui   
+        ${CMAKE_SOURCE_DIR}/src/uis/MainWindow.ui  
+        ${CMAKE_SOURCE_DIR}/src/uis/PrefixSettings.ui
+        ${CMAKE_SOURCE_DIR}/src/uis/Process.ui       
+        ${CMAKE_SOURCE_DIR}/src/uis/Run.ui           
+        ${CMAKE_SOURCE_DIR}/src/uis/Wizard.ui        
+        ${CMAKE_SOURCE_DIR}/src/uis/IconSettings.ui  
+        ${CMAKE_SOURCE_DIR}/src/uis/ImageManager.ui  
         ${CMAKE_SOURCE_DIR}/src/temporary/winetricks.ui
         ${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.ui
 	
