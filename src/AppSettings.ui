@@ -2,11 +2,14 @@
 <ui version="4.0">
  <class>AppSettings</class>
  <widget class="QDialog" name="AppSettings">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>718</width>
+    <width>716</width>
     <height>370</height>
    </rect>
   </property>
@@ -825,12 +828,6 @@
            </spacer>
           </item>
          </layout>
-         <zorder>groupBox_7</zorder>
-         <zorder>widget_28</zorder>
-         <zorder>widget_25</zorder>
-         <zorder>widget_24</zorder>
-         <zorder>widget_28</zorder>
-         <zorder>widget_25</zorder>
         </widget>
         <widget class="QWidget" name="tab_3">
          <attribute name="title">

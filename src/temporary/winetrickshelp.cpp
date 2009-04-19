@@ -19,21 +19,7 @@ return;
 
 }
 */
-QFile file;
-file.setFileName(QDir::homePath() + "/.config/q4wine/winetricks_help");
-if (!file.open(QIODevice::ReadOnly)) {
-   QMessageBox msg;
-    msg.setText("error open " + file.fileName());
-    msg.setIcon(QMessageBox::Critical);
-    msg.setWindowTitle(tr("winetricks not found"));
-    msg.show();
-}
-QTextStream out (&file);
-out.setCodec(QTextCodec::codecForLocale());
-QString str;
-str = out.readAll();
-file.close();
-m_ui->txtOutput->setText(str);
+
 }
 
 winetrickshelp::~winetrickshelp()
@@ -45,10 +31,10 @@ void winetrickshelp::changeEvent(QEvent *e)
 {
     switch (e->type()) {
     case QEvent::LanguageChange:
-        m_ui->retranslateUi(this);
-        break;
+	  m_ui->retranslateUi(this);
+	  break;
     default:
-        break;
+	  break;
     }
 }
 

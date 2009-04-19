@@ -10,8 +10,8 @@ Version 0.112
   - Added Sidebar Urls for Run and IconSettings file dialogs;
   - Wine Dlls path autodetections; (If not work on your system -- plz mail to me ;) )
   - You can disable icotools support in q4wine by adding -DWITHOUT_ICOTOOLS=ON to cmake;
-  - Winetools support is disabled by default. You can enable it by adding -DWITH_WINETOOLS to cmake args;
-  - All developer stuff is disabled by default. You can enable it by adding -DWITH_DEVELOP_STUFF to cmake args;
+  - Winetools support is disabled by default. You can enable it by adding -DWITH_WINETOOLS=ON to cmake args;
+  - All developer stuff is disabled by default. You can enable it by adding -DWITH_DEVELOP_STUFF=ON to cmake args;
   - New database class;
   - kdesu\gksu support;
   Fixed:
@@ -21,7 +21,7 @@ Version 0.112
   - Fixed q4wine.desktop GENERIC names;
   - Fixed IconSettings path detections (ProgramPath\WorkDirPath e.t.c.);
   - Fixed .exe adding to IconName on Prgoram file select;
-  - Run and IconSettings now are modal dialogs;
+  - Run, AppSettings, ImageManager, Wizard and IconSettings dialogs now are modal dialogs;
   - Fixed LC_ALL and LS_MESSAGES locale detection;
   - Winetriks executable now puts into $HOME/.config/q4inwe/ directory;
   - No sudo now needed for Winetriks download and install;
