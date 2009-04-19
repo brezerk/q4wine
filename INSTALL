@@ -35,6 +35,8 @@ wine
 >=qt-core-4.4.0
 >=qt-network-4.4.0
 wget
+
+NOTE: qt-sql might have sqlite drivers support!
  
 Installation
 ***********************************************
@@ -45,6 +47,10 @@ Installation
 5. $ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
  
   | Note:
+
+	| By default, q4wine will install desktop files in to /usr/share/applications/
+	| You can change install path by adding -DDESKTOP_ENTRY_PATH=/usr/local/share/application to cmake options
+
         | By default, q4wine need icotools to be installed;
         | If you wish to disable icotools support add -DWITHOUT_ICOTOOLS=ON to cmake options
  
