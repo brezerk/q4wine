@@ -119,38 +119,36 @@ void Process::slotError(QProcess::ProcessError err){
 
 	reject ();
 
-                    }
+			  }
 	return;
 }
 
 void Process::slotFinished(int, QProcess::ExitStatus exitc){
-	//qDebug()<<exitc;
-	//qDebug()<<myProcess->exitCode();
 
+	/*
+	 * This piece of code try to catch error messages.
+	 * In fact exitCode() not always can return error code
+	 * (for example kdesu\gksu)
+	 * So the beast way is to inform user about any STDERR messages.
+	 */
 
 	//		if (myProcess->exitCode()!=0){
+	// Getting env LANG variable
+	QString lang;
+	   lang = getenv("LANG");
+	   lang = lang.split(".").at(1);
 
-				QString lang;
-				// Getting env LANG variable
-				lang = getenv("LANG");
-				lang = lang.split(".").at(1);
+	// If in is empty -- set UTF8 locale
+	if (lang.isEmpty())
+	   lang = "UTF8";
 
-				if (lang.isNull())
-					lang = "UTF8";
+	// Read STDERR with locale support
+	QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+	QString string = codec->toUnicode(myProcess->readAllStandardError());
 
-				QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
-				QString string = codec->toUnicode(myProcess->readAllStandardError());
-
-				if (!string.isEmpty()){
-					QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Error log:<br>%1").arg(string));
-				} else {
-					QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Cant read STDERR message.<br>%1").arg(string));
-
-				}
-
-	//			reject ();
-	//			return;
-	//		}
+	if (!string.isEmpty()){
+	   QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Error log:<br>%1").arg(string));
+	}
 	accept();
 	return;
 }

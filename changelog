@@ -16,6 +16,7 @@ Version 0.112
   - kdesu\gksu support;
   Fixed:
   - Many small fixes;
+  - Updated STDERR message catch function;
   - Added FreeBSD port patches by Dmitry Marakasov aka amdmi3;
   - Fixed readonly text field on prefix create;
   - Fixed q4wine.desktop GENERIC names;

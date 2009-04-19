@@ -509,8 +509,6 @@ void MainWindow::CoreFunction_WinePrepareRunParams(ExecObject execObj){
 
 void MainWindow::CoreFunction_WineRunProgram(QString exec, QStringList args, QString wrkdir){
 
-	//qDebug()<<"exec: "<<exec<<" args:"<<args<<" wrkdir:"<<wrkdir;
-
 	QProcess *proc;
 
 	proc = new QProcess( this );
