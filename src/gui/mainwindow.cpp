@@ -88,7 +88,7 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	connect(mainAboutQt, SIGNAL(triggered()), this, SLOT(mainAboutQt_Click()));
 	connect(mainExportIcons, SIGNAL(triggered()), this, SLOT(mainExportIcons_Click()));
 
-	  #ifdef WITHOUT_ICOTOOLS
+	  #ifndef WITH_ICOTOOLS
 	     mainExportIcons->setEnabled(false);
 	  #endif
 
@@ -276,7 +276,7 @@ void MainWindow::CoreFunction_SettingGet(){
 		CONSOLE_ARGS=settings.value("args").toString();
 	settings.endGroup();
 
-	  #ifndef WITHOUT_ICOTOOLS
+	  #ifdef WITH_ICOTOOLS
 		settings.beginGroup("icotool");
 			  WRESTOOL_BIN=settings.value("wrestool").toString();
 				    CoreFunction_SettingCheck(WRESTOOL_BIN, tr("Can't find wrestool binary."));

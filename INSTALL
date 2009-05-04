@@ -52,7 +52,7 @@ Installation
 	| You can change install path by adding -DDESKTOP_ENTRY_PATH=/usr/local/share/application to cmake options
 
         | By default, q4wine need icotools to be installed;
-        | If you wish to disable icotools support add -DWITHOUT_ICOTOOLS=ON to cmake options
+        | If you wish to disable icotools support add -DWITH_ICOTOOLS=OFF to cmake options
  
         | Note:
         | By default, q4wine not support winetools;

@@ -185,6 +185,10 @@ IF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
 	ADD_DEFINITIONS(-Wall -g -DKERNEL)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
 
+IF (NOT DEFINED WITH_ICOTOOLS)
+	SET(WITH_ICOTOOLS "ON")
+ENDIF (NOT DEFINED WITH_ICOTOOLS)
+
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )
 
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_VERS \"${APP_VERSION}\"\n")
@@ -194,15 +198,13 @@ file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_PREF \"${CMAKE_INSTALL_PRE
 	  MESSAGE(STATUS "Install prefix is: ${CMAKE_INSTALL_PREFIX}")
 	  MESSAGE(STATUS "NOTE: You can set prefix by adding -DCMAKE_INSTALL_PREFIX=/usr/ option to cmake command")
 	  MESSAGE("")
-
-	  MESSAGE("")
 	  MESSAGE(STATUS "Desktop items install path is: ${DESKTOP_ENTRY_PATH}")
 	  MESSAGE(STATUS "NOTE: You can set install path by adding -DDESKTOP_ENTRY_PATH=/usr/share/application option to cmake command")
 	  MESSAGE("")
-
-	  MESSAGE("")
 	  MESSAGE(STATUS "Install prefix is: ${PIXMAPS_ENTRY_PATH}")
 	  MESSAGE(STATUS "NOTE: You can set install path by adding -DPIXMAPS_ENTRY_PATH=/usr/share/pixmaps option to cmake command")
+	  MESSAGE("")
+	  MESSAGE(STATUS "NOTE: For more configuration options see INSTALL text file!")
 	  MESSAGE("")
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
 
