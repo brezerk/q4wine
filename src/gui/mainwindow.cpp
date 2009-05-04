@@ -154,7 +154,7 @@ void MainWindow::cmdTestWis_Click(){
 
 void MainWindow::cmdWinetricks_Click() {
 	#ifndef WITH_WINETOOLS
-	QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without winetriks support.</p><p>If you wish to enable winetriks support add:</p><p> \"-DWITH_WINETOOLS\" to cmake arguments.</p>"));
+	QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without winetriks support.</p><p>If you wish to enable winetriks support add:</p><p> \"-DWITH_WINETOOLS=ON\" to cmake arguments.</p>"));
 	#else
 	QMessageBox::warning(this, tr("Warning"), tr("<p>Winetricks officaly NOT supported by q4wine.</p><p>There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.</p>"));
 
