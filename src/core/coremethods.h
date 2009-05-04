@@ -43,7 +43,8 @@
 
 class CoreMethods : public QObject
 {
-public:
+	Q_OBJECT
+	public:
 	/* Search for fileName in PATH with /usr/bin/which */
 	QString getWhichOut (QString fileName);
 	QString getPrefixPath(QString prefixName, bool check_exists = TRUE);

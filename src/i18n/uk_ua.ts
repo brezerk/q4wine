@@ -1,65 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="uk">
+<!DOCTYPE TS>
+<TS version="2.0" language="uk">
 <defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
         <location filename="../gui/about.cpp" line="35"/>
+        <location filename="../uis/About.ui" line="20"/>
         <source>About %1</source>
         <translation>Про %1</translation>
     </message>
     <message>
-        <location filename="../About.ui" line="173"/>
+        <location filename="../uis/About.ui" line="173"/>
         <source>About</source>
         <translation>Про програму</translation>
     </message>
     <message>
-        <location filename="../About.ui" line="370"/>
+        <location filename="../uis/About.ui" line="240"/>
+        <source>(C) 2008-2009, brezblock core team.</source>
+        <translation>(C) 2008-2009, brezblock core team.</translation>
+    </message>
+    <message>
+        <location filename="../uis/About.ui" line="264"/>
+        <location filename="../uis/About.ui" line="270"/>
+        <location filename="../uis/About.ui" line="317"/>
+        <location filename="../uis/About.ui" line="368"/>
         <source>Authors</source>
         <translation>Автори</translation>
     </message>
     <message>
-        <location filename="../About.ui" line="364"/>
-        <source>Translation</source>
-        <translation>Переклад</translation>
-    </message>
-    <message>
-        <location filename="../About.ui" line="459"/>
-        <source>License agreement</source>
-        <translation>Ліцензійна угода</translation>
-    </message>
-    <message>
-        <location filename="../About.ui" line="723"/>
-        <source>Ok</source>
-        <translation>Гаразд</translation>
-    </message>
-    <message>
-        <location filename="../About.ui" line="306"/>
-        <source>Packages Authors</source>
-        <translation>Автори пакетів</translation>
-    </message>
-    <message>
-        <location filename="../About.ui" line="405"/>
-        <source>Thanks</source>
-        <translation>Подяка</translation>
-    </message>
-    <message>
-        <location filename="../About.ui" line="411"/>
-        <source>Special thanks</source>
-        <translation>Особиста подяка</translation>
-    </message>
-    <message>
-        <location filename="../About.ui" line="227"/>
-        <source>Utility for managment wine applications and prefixes.</source>
-        <translation>Засіб для керування програмами і префіксами wine.</translation>
-    </message>
-    <message>
-        <location filename="../About.ui" line="240"/>
-        <source>(C) 2008-2009, brezblock core team.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../About.ui" line="279"/>
+        <location filename="../uis/About.ui" line="279"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -73,31 +43,29 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;Pavel&lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;Zinin &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;(pashazz)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Developer&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Sergiev Posad, Moscow region, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Sergiev Posad, Moscow region, RU&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#000000;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Dmitry Marakasov&lt;/span&gt; &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;FreeBSD support fixes&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;: &lt;span style=&quot; text-decoration: underline; color:#55aa7f;&quot;&gt;amdmi3@amdmi3.ru&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Moscow, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../About.ui" line="321"/>
+        <location filename="../uis/About.ui" line="326"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Alexey S. Malakhov&lt;/span&gt; (John Brezerk)&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Gentoo ebuild author&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;: &lt;span style=&quot; color:#5f9ea0;&quot;&gt;brezerk@jabber.com.ua&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;: &lt;span style=&quot; text-decoration: underline; color:#5f9ea0;&quot;&gt;brezerk@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Kiev, UA&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;Andrey A. Maloshtan&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Gentoo ebuild author&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;: &lt;span style=&quot; color:#5f9ea0;&quot;&gt;sspphheerraa@jabber.org&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;: &lt;span style=&quot; text-decoration: underline; color:#5f9ea0;&quot;&gt;andrey.aleksandrovich@googlemail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Kharkov, UA&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;Sergey V. Dyatko&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;FreeBSD port maintainer&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;: &lt;span style=&quot; text-decoration: underline; color:#5f9ea0;&quot;&gt;sergey.dyatko@gmail.com&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minsk, BY&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Markos Chandras &lt;/span&gt;(hwoarang)&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Gentoo ebuild maintainer&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#6495ed;&quot;&gt;Web&lt;/span&gt;: &lt;span style=&quot; text-decoration: underline; color:#5f9ea0;&quot;&gt;http://hwoarang.silverarrow.gr&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Greece&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;Chris.Giles&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Arch linux package maintainer&lt;/span&gt;&lt;/p&gt;
@@ -111,7 +79,12 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../About.ui" line="379"/>
+        <location filename="../uis/About.ui" line="362"/>
+        <source>Translation</source>
+        <translation>Переклад</translation>
+    </message>
+    <message>
+        <location filename="../uis/About.ui" line="377"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -128,7 +101,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../About.ui" line="420"/>
+        <location filename="../uis/About.ui" line="418"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -151,8 +124,14 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
-    <message encoding="UTF-8">
-        <location filename="../About.ui" line="468"/>
+    <message>
+        <location filename="../uis/About.ui" line="451"/>
+        <location filename="../uis/About.ui" line="457"/>
+        <source>License agreement</source>
+        <translation>Ліцензійна угода</translation>
+    </message>
+    <message>
+        <location filename="../uis/About.ui" line="466"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -379,286 +358,333 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The GNU General Public License does not permit incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read &amp;lt;http://www.gnu.org/philosophy/why-not-lgpl.html&amp;gt;. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
-</context>
-<context>
-    <name>AppSettings</name>
     <message>
-        <location filename="../gui/appsettings.cpp" line="37"/>
-        <source>%1 settings</source>
-        <translation>%1 параметрів</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="225"/>
-        <source>General</source>
-        <translation>Загальні</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="231"/>
-        <source>Wine settings</source>
-        <translation>Параметри Wine</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="816"/>
-        <source>Bin:</source>
-        <translation>Вик. файл:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="299"/>
-        <source>Server:</source>
-        <translation>Сервер:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="343"/>
-        <source>Loader:</source>
-        <translation>Завантажувач:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="387"/>
-        <source>Libs:</source>
-        <translation>Бібліотеки:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="416"/>
-        <source>Trarey Icon</source>
-        <translation>Піктограма лотка</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="422"/>
-        <source>Use trarey icon</source>
-        <translation>Використовувати піктограму у лотку</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="449"/>
-        <source>System</source>
-        <translation>Система</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="455"/>
-        <source>System utils</source>
-        <translation>Системні засоби</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="479"/>
-        <source>tar:</source>
-        <translation>tar:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="523"/>
-        <source>mount:</source>
-        <translation>mount:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="567"/>
-        <source>umount:</source>
-        <translation>umount:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="611"/>
-        <source>sudo:</source>
-        <translation>sudo:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="655"/>
-        <source>nice:</source>
-        <translation>nice:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="699"/>
-        <source>renice:</source>
-        <translation>renice:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="743"/>
-        <source>sh:</source>
-        <translation>sh:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="786"/>
-        <source>Utils</source>
-        <translation>Утиліти</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="792"/>
-        <source>Console</source>
-        <translation>Консоль</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="860"/>
-        <source>Args:</source>
-        <translation>Параметри:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="876"/>
-        <source>Icotool</source>
-        <translation>Icotool</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="900"/>
-        <source>wrestool:</source>
-        <translation>wrestool:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="944"/>
-        <source>icotool:</source>
-        <translation>icotool:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="987"/>
-        <source>Customize</source>
-        <translation>Налаштувати</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="993"/>
-        <source>Language</source>
-        <translation>Мова</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1017"/>
-        <source>Languale:</source>
-        <translation>Мова:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1039"/>
-        <source>Themes</source>
-        <translation>Теми</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1059"/>
-        <source>Network</source>
-        <translation>Мережа</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1065"/>
-        <source>Proxy settings</source>
-        <translation>Параметри проксі</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1247"/>
-        <source>Password:</source>
-        <translation>Пароль:</translation>
-    </message>
-    <message>
-        <location filename="../gui/appsettings.cpp" line="440"/>
-        <source>No Proxy</source>
-        <translation>Без проксі</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1102"/>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1107"/>
-        <source>Socks v5</source>
-        <translation>Socks v5</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1136"/>
-        <source>Host:</source>
-        <translation>Вузол:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1174"/>
-        <source>Port:</source>
-        <translation>Порт:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1212"/>
-        <source>Username:</source>
-        <translation>Користувач:</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1286"/>
-        <source>Help</source>
-        <translation>Довідка</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1306"/>
-        <source>Cancel</source>
-        <translation>Скасувати</translation>
-    </message>
-    <message>
-        <location filename="../AppSettings.ui" line="1313"/>
+        <location filename="../uis/About.ui" line="721"/>
         <source>Ok</source>
         <translation>Гаразд</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="165"/>
+        <location filename="../uis/About.ui" line="311"/>
+        <source>Packages Authors</source>
+        <translation>Автори пакетів</translation>
+    </message>
+    <message>
+        <location filename="../uis/About.ui" line="403"/>
+        <source>Thanks</source>
+        <translation>Подяка</translation>
+    </message>
+    <message>
+        <location filename="../uis/About.ui" line="409"/>
+        <source>Special thanks</source>
+        <translation>Особиста подяка</translation>
+    </message>
+    <message>
+        <location filename="../uis/About.ui" line="227"/>
+        <source>Utility for managment wine applications and prefixes.</source>
+        <translation>Засіб для керування програмами і префіксами wine.</translation>
+    </message>
+</context>
+<context>
+    <name>AppSettings</name>
+    <message>
+        <location filename="../gui/appsettings.cpp" line="36"/>
+        <location filename="../gui/appsettings.cpp" line="37"/>
+        <location filename="../uis/AppSettings.ui" line="23"/>
+        <location filename="../uis/AppSettings.ui" line="173"/>
+        <source>%1 settings</source>
+        <translation>%1 параметрів</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="229"/>
+        <source>General</source>
+        <translation>Загальні</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="235"/>
+        <source>Wine settings</source>
+        <translation>Параметри Wine</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="259"/>
+        <location filename="../uis/AppSettings.ui" line="864"/>
+        <source>Bin:</source>
+        <translation>Вик. файл:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="303"/>
+        <source>Server:</source>
+        <translation>Сервер:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="347"/>
+        <source>Loader:</source>
+        <translation>Завантажувач:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="391"/>
+        <source>Libs:</source>
+        <translation>Бібліотеки:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="420"/>
+        <source>Trarey Icon</source>
+        <translation>Піктограма лотка</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="426"/>
+        <source>Use trarey icon</source>
+        <translation>Використовувати піктограму у лотку</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="453"/>
+        <source>System</source>
+        <translation>Система</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="459"/>
+        <source>System utils</source>
+        <translation>Системні засоби</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="483"/>
+        <source>tar:</source>
+        <translation>tar:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="527"/>
+        <source>mount:</source>
+        <translation>mount:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="571"/>
+        <source>umount:</source>
+        <translation>umount:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="615"/>
+        <source>sudo:</source>
+        <translation>sudo:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="659"/>
+        <source>gui sudo:</source>
+        <translation>gui sudo:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="703"/>
+        <source>nice:</source>
+        <translation>nice:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="747"/>
+        <source>renice:</source>
+        <translation>renice:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="791"/>
+        <source>sh:</source>
+        <translation>sh:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="834"/>
+        <source>Utils</source>
+        <translation>Утиліти</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="840"/>
+        <source>Console</source>
+        <translation>Консоль</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="908"/>
+        <source>Args:</source>
+        <translation>Параметри:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="924"/>
+        <source>Icotool</source>
+        <translation>Icotool</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="948"/>
+        <source>wrestool:</source>
+        <translation>wrestool:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="992"/>
+        <source>icotool:</source>
+        <translation>icotool:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1035"/>
+        <source>Customize</source>
+        <translation>Налаштувати</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1041"/>
+        <source>Language</source>
+        <translation>Мова</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1065"/>
+        <source>Languale:</source>
+        <translation>Мова:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1087"/>
+        <source>Themes</source>
+        <translation>Теми</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1107"/>
+        <source>Network</source>
+        <translation>Мережа</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1113"/>
+        <source>Proxy settings</source>
+        <translation>Параметри проксі</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1137"/>
+        <location filename="../uis/AppSettings.ui" line="1295"/>
+        <source>Password:</source>
+        <translation>Пароль:</translation>
+    </message>
+    <message>
+        <location filename="../gui/appsettings.cpp" line="199"/>
+        <location filename="../gui/appsettings.cpp" line="392"/>
+        <location filename="../gui/appsettings.cpp" line="459"/>
+        <location filename="../uis/AppSettings.ui" line="1145"/>
+        <source>No Proxy</source>
+        <translation>Без проксі</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1150"/>
+        <source>HTTP</source>
+        <translation>HTTP</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1155"/>
+        <source>Socks v5</source>
+        <translation>Socks v5</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1184"/>
+        <source>Host:</source>
+        <translation>Вузол:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1222"/>
+        <source>Port:</source>
+        <translation>Порт:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1260"/>
+        <source>Username:</source>
+        <translation>Користувач:</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1334"/>
+        <source>Help</source>
+        <translation>Довідка</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1354"/>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1361"/>
+        <source>Ok</source>
+        <translation>Гаразд</translation>
+    </message>
+    <message>
+        <location filename="../gui/appsettings.cpp" line="174"/>
         <source>Open File</source>
         <translation>Відкрити файл</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="167"/>
+        <location filename="../gui/appsettings.cpp" line="176"/>
         <source>Open Directory</source>
         <translation>Відкрити каталог</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="247"/>
+        <location filename="../gui/appsettings.cpp" line="256"/>
         <source>%1/%2/theme.info</source>
         <translation>%1/%2/theme.info</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="255"/>
+        <location filename="../gui/appsettings.cpp" line="264"/>
         <source>%1 [%2; %3]</source>
         <translation>%1 [%2; %3]</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="316"/>
+        <location filename="../gui/appsettings.cpp" line="268"/>
+        <location filename="../gui/appsettings.cpp" line="326"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="260"/>
+        <location filename="../gui/appsettings.cpp" line="269"/>
         <source>%1/%2/data/wine.png</source>
         <translation>%1/%2/data/wine.png</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="281"/>
+        <location filename="../gui/appsettings.cpp" line="290"/>
         <source>%1/data/exec.png</source>
         <translation>%1/data/exec.png</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="321"/>
+        <location filename="../gui/appsettings.cpp" line="328"/>
+        <location filename="../gui/appsettings.cpp" line="331"/>
         <source>:/%1</source>
         <translation>:/%1</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="477"/>
+        <location filename="../gui/appsettings.cpp" line="394"/>
+        <location filename="../gui/appsettings.cpp" line="398"/>
+        <location filename="../gui/appsettings.cpp" line="482"/>
+        <location filename="../gui/appsettings.cpp" line="485"/>
+        <location filename="../gui/appsettings.cpp" line="493"/>
+        <location filename="../gui/appsettings.cpp" line="496"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="379"/>
+        <location filename="../gui/appsettings.cpp" line="394"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Будь ласка, вкажіть вузол проксі-сервера.</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="383"/>
+        <location filename="../gui/appsettings.cpp" line="398"/>
         <source>Sorry, specify proxy port.</source>
         <translation>Будь ласка, вкажіть порт проксі-сервера.</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="463"/>
+        <location filename="../gui/appsettings.cpp" line="482"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Будь ласка, вкажіть каталог %1.</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="466"/>
+        <location filename="../gui/appsettings.cpp" line="485"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Будь ласка, вкажіть виконуваний файл %1.</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="474"/>
+        <location filename="../gui/appsettings.cpp" line="493"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation>Вибачте, вказаного каталогу %1 не існує.</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="477"/>
+        <location filename="../gui/appsettings.cpp" line="496"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation>Вибачте, вказаного виконуваного файла %1 не існує.</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="411"/>
+        <location filename="../gui/appsettings.cpp" line="116"/>
+        <location filename="../gui/appsettings.cpp" line="426"/>
+        <location filename="../uis/AppSettings.ui" line="1073"/>
         <source>System Default</source>
         <translation>Системна локаль</translation>
     </message>
@@ -740,266 +766,286 @@ p, li { white-space: pre-wrap; }
     <name>IconSettings</name>
     <message>
         <location filename="../gui/iconsettings.cpp" line="73"/>
+        <location filename="../gui/iconsettings.cpp" line="74"/>
+        <location filename="../uis/IconSettings.ui" line="23"/>
         <source>Icon settings</source>
         <translation>Параметри піктограм</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="169"/>
+        <location filename="../uis/IconSettings.ui" line="173"/>
         <source>Iconn settings</source>
         <translation>Параметри піктограм</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="219"/>
+        <location filename="../uis/IconSettings.ui" line="217"/>
+        <location filename="../uis/IconSettings.ui" line="223"/>
         <source>General</source>
         <translation>Загальні</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="243"/>
+        <location filename="../uis/IconSettings.ui" line="247"/>
         <source>Program:</source>
         <translation>Програма:</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="287"/>
+        <location filename="../uis/IconSettings.ui" line="291"/>
         <source>Cmd Args:</source>
         <translation>Параметри:</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="318"/>
+        <location filename="../uis/IconSettings.ui" line="322"/>
         <source>Working dir:</source>
         <translation>Робочий каталог:</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="347"/>
+        <location filename="../uis/IconSettings.ui" line="351"/>
         <source>Icon options</source>
         <translation>Параметри піктограми</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="371"/>
+        <location filename="../uis/IconSettings.ui" line="375"/>
         <source>Name:</source>
         <translation>Назва:</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="436"/>
+        <location filename="../uis/IconSettings.ui" line="440"/>
         <source>Description:</source>
         <translation>Опис:</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="506"/>
+        <location filename="../uis/IconSettings.ui" line="510"/>
         <source>Override Dll</source>
         <translation>Перевизначення Dll</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="512"/>
+        <location filename="../uis/IconSettings.ui" line="516"/>
         <source>Present wine dlls</source>
         <translation>Наявні у wine dll</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="513"/>
+        <location filename="../gui/iconsettings.cpp" line="210"/>
+        <location filename="../gui/iconsettings.cpp" line="627"/>
+        <location filename="../uis/IconSettings.ui" line="555"/>
         <source>Native</source>
         <translation>Рідні</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="515"/>
+        <location filename="../gui/iconsettings.cpp" line="212"/>
+        <location filename="../gui/iconsettings.cpp" line="629"/>
+        <location filename="../uis/IconSettings.ui" line="560"/>
         <source>Buildin</source>
         <translation>Вбудовані</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="517"/>
+        <location filename="../gui/iconsettings.cpp" line="214"/>
+        <location filename="../gui/iconsettings.cpp" line="631"/>
+        <location filename="../uis/IconSettings.ui" line="565"/>
         <source>Native, Buildin</source>
         <translation>Рідні, вбудовані</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="519"/>
+        <location filename="../gui/iconsettings.cpp" line="216"/>
+        <location filename="../gui/iconsettings.cpp" line="633"/>
+        <location filename="../uis/IconSettings.ui" line="570"/>
         <source>Buildin, Native</source>
         <translation>Вбудовані, рідні</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="574"/>
+        <location filename="../uis/IconSettings.ui" line="578"/>
         <source>Add</source>
         <translation>Додати</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="584"/>
+        <location filename="../uis/IconSettings.ui" line="588"/>
         <source>Overrided dlls</source>
         <translation>Перевизначені dll</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="600"/>
+        <location filename="../uis/IconSettings.ui" line="604"/>
         <source>Dll name</source>
         <translation>Назва dll</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="617"/>
+        <location filename="../uis/IconSettings.ui" line="621"/>
         <source>Advanced</source>
         <translation>Додатково</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="623"/>
+        <location filename="../uis/IconSettings.ui" line="627"/>
         <source>Display</source>
         <translation>Показ</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="650"/>
+        <location filename="../uis/IconSettings.ui" line="654"/>
         <source>DISPLAY:</source>
         <translation>DISPLAY:</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="666"/>
+        <location filename="../uis/IconSettings.ui" line="670"/>
         <source>Debug options</source>
         <translation>Параметри зневаджування</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="675"/>
+        <location filename="../uis/IconSettings.ui" line="679"/>
         <source>Run with output in console</source>
         <translation>Виконати з виводом до консолі</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="700"/>
+        <location filename="../uis/IconSettings.ui" line="704"/>
         <source>WINEDEBUG:</source>
         <translation>WINEDEBUG:</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="789"/>
+        <location filename="../uis/IconSettings.ui" line="793"/>
         <source>Help</source>
         <translation>Довідка</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="809"/>
+        <location filename="../uis/IconSettings.ui" line="813"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="816"/>
+        <location filename="../uis/IconSettings.ui" line="820"/>
         <source>Ok</source>
         <translation>Гаразд</translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="69"/>
+        <location filename="../gui/iconsettings.cpp" line="70"/>
         <source>Adding new icon</source>
         <translation>Додавання нової піктограми</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="100"/>
+        <location filename="../gui/iconsettings.cpp" line="103"/>
         <source>%1/data/exec.png</source>
         <translation>%1/data/exec.png</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="122"/>
+        <location filename="../gui/iconsettings.cpp" line="125"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="127"/>
+        <location filename="../gui/iconsettings.cpp" line="130"/>
         <source>:/%1</source>
         <translation>:/%1</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="311"/>
+        <location filename="../gui/iconsettings.cpp" line="345"/>
         <source>Open Directory</source>
         <translation>Відкрити каталог</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="338"/>
+        <location filename="../gui/iconsettings.cpp" line="414"/>
         <source>Open Exe file</source>
         <translation>Відкрити файл exe</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="338"/>
+        <location filename="../gui/iconsettings.cpp" line="417"/>
         <source>Exe files (*.exe)</source>
         <translation>Файли exe (*.exe)</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="367"/>
+        <location filename="../gui/iconsettings.cpp" line="470"/>
         <source>Open image file</source>
         <translation>Відкрити файл зображення</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="407"/>
+        <location filename="../gui/iconsettings.cpp" line="473"/>
+        <source>Image files (*.png *.jpg *.gif *.bmp)</source>
+        <translation>Файли зображень (*.png *.jpg *.gif *.bmp)</translation>
+    </message>
+    <message>
+        <location filename="../gui/iconsettings.cpp" line="521"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Експорт піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="407"/>
+        <location filename="../gui/iconsettings.cpp" line="521"/>
         <source>Exporting icon</source>
         <translation>Експорт піктограми</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="424"/>
+        <location filename="../gui/iconsettings.cpp" line="538"/>
         <source>%1/</source>
         <translation>%1/</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="431"/>
+        <location filename="../gui/iconsettings.cpp" line="545"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Перетворення піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="431"/>
+        <location filename="../gui/iconsettings.cpp" line="545"/>
         <source>Converting icon</source>
         <translation>Перетворення піктограми</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="596"/>
+        <location filename="../gui/iconsettings.cpp" line="614"/>
+        <location filename="../gui/iconsettings.cpp" line="620"/>
+        <location filename="../gui/iconsettings.cpp" line="710"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="500"/>
+        <location filename="../gui/iconsettings.cpp" line="614"/>
         <source>Sorry, but icon named %1 already exists.</source>
         <translation>Вибачте, але піктограма з назвою %1 вже існує.</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="506"/>
+        <location filename="../gui/iconsettings.cpp" line="620"/>
         <source>No executiable program selected.</source>
         <translation>Не вибрано виконуваного файла програми.</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="512"/>
+        <location filename="../gui/iconsettings.cpp" line="626"/>
         <source>%1=</source>
         <translation>%1=</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="596"/>
+        <location filename="../gui/iconsettings.cpp" line="710"/>
         <source>debug: %1</source>
         <translation>зневаджування: %1</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="452"/>
+        <location filename="../uis/IconSettings.ui" line="456"/>
         <source>Desktop</source>
         <translation>Стільниця</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="476"/>
+        <location filename="../uis/IconSettings.ui" line="480"/>
         <source>Desktop size:</source>
         <translation>Розмір стільниці:</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="720"/>
+        <location filename="../uis/IconSettings.ui" line="724"/>
         <source>Nice level priority</source>
         <translation>Рівень пріорітету Nice</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="747"/>
+        <location filename="../uis/IconSettings.ui" line="751"/>
         <source>Priority:</source>
         <translation>Пріорітет:</translation>
     </message>
     <message>
-        <location filename="../IconSettings.ui" line="605"/>
+        <location filename="../uis/IconSettings.ui" line="609"/>
         <source>Override algorithm</source>
         <translation>Алгоритм перевизначення</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="137"/>
+        <location filename="../gui/iconsettings.cpp" line="140"/>
         <source>SELECT name, exec, cmdargs, icon_path, desc, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND dir_id=%2 and name=&quot;%3&quot;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="139"/>
+        <location filename="../gui/iconsettings.cpp" line="142"/>
         <source>SELECT name, exec, cmdargs, icon_path, desc, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND name=&quot;%2&quot; AND dir_id ISNULL</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="367"/>
+        <location filename="../gui/iconsettings.cpp" line="475"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)</source>
         <translation>Файли зображень та Виконувані файли Win32 (*.png *.jpg *.gif *.bmp *.exe *dll);;Файли зображень (*.png *.jpg *.gif *.bmp);;Виконувані файли Win32 (*.exe *.dll);;Виконувані файли Win32 (*.exe);;Бібліотеки Win32 (*.dll)</translation>
     </message>
@@ -1007,27 +1053,28 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>IconsView</name>
     <message>
-        <location filename="../IconsView.ui" line="13"/>
+        <location filename="../uis/IconsView.ui" line="13"/>
         <source>Icons Export</source>
         <translation>Експорт піктограм</translation>
     </message>
     <message>
-        <location filename="../IconsView.ui" line="23"/>
+        <location filename="../uis/IconsView.ui" line="23"/>
         <source>Avalible icons:</source>
         <translation>Наявні піктограми:</translation>
     </message>
     <message>
-        <location filename="../IconsView.ui" line="72"/>
+        <location filename="../uis/IconsView.ui" line="72"/>
         <source>Export icons to default place</source>
         <translation>Експортувати піктограми у типове місце</translation>
     </message>
     <message>
         <location filename="../gui/iconsview.cpp" line="110"/>
+        <location filename="../uis/IconsView.ui" line="100"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../IconsView.ui" line="107"/>
+        <location filename="../uis/IconsView.ui" line="107"/>
         <source>Ok</source>
         <translation>Гаразд</translation>
     </message>
@@ -1067,6 +1114,7 @@ p, li { white-space: pre-wrap; }
         <translation>Замінити існуючий чи перейменувати поточний?</translation>
     </message>
     <message>
+        <location filename="../gui/iconsview.cpp" line="143"/>
         <location filename="../gui/iconsview.cpp" line="168"/>
         <source>Error</source>
         <translation>Помилка</translation>
@@ -1095,112 +1143,117 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>ImageManager</name>
     <message>
-        <location filename="../ImageManager.ui" line="169"/>
+        <location filename="../uis/ImageManager.ui" line="23"/>
+        <location filename="../uis/ImageManager.ui" line="173"/>
         <source>CD Image Manager</source>
         <translation>Менеджер образів КД</translation>
     </message>
     <message>
-        <location filename="../ImageManager.ui" line="268"/>
+        <location filename="../uis/ImageManager.ui" line="272"/>
         <source>CD image name</source>
         <translation>Ім&apos;я образів КД</translation>
     </message>
     <message>
-        <location filename="../ImageManager.ui" line="273"/>
+        <location filename="../uis/ImageManager.ui" line="277"/>
         <source>Size</source>
         <translation>Розмір</translation>
     </message>
     <message>
-        <location filename="../ImageManager.ui" line="293"/>
+        <location filename="../uis/ImageManager.ui" line="297"/>
         <source>File path:</source>
         <translation>Шлях до файлу:</translation>
     </message>
     <message>
-        <location filename="../ImageManager.ui" line="305"/>
+        <location filename="../uis/ImageManager.ui" line="309"/>
         <source>Help</source>
         <translation>Довідка</translation>
     </message>
     <message>
-        <location filename="../ImageManager.ui" line="325"/>
+        <location filename="../uis/ImageManager.ui" line="329"/>
         <source>Ok</source>
         <translation>Гаразд</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="134"/>
+        <location filename="../gui/imagemanager.cpp" line="121"/>
+        <location filename="../gui/imagemanager.cpp" line="137"/>
         <source>%1 Mb</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="156"/>
+        <location filename="../gui/imagemanager.cpp" line="159"/>
         <source>%1/data/iso_manager.png</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="164"/>
+        <location filename="../gui/imagemanager.cpp" line="167"/>
         <source>Add image</source>
         <translation>Додати образ КД</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="167"/>
+        <location filename="../gui/imagemanager.cpp" line="170"/>
         <source>Remove image</source>
         <translation>Видалити образ КД</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="172"/>
+        <location filename="../gui/imagemanager.cpp" line="175"/>
         <source>Refresh image list</source>
         <translation>Оновити список образів КД</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="211"/>
+        <location filename="../gui/imagemanager.cpp" line="214"/>
         <source>Sorry. It seems CD iamge already exists.</source>
         <translation>Вибачте, здається, файл образу КД з такою назвою вже є.</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="212"/>
+        <location filename="../gui/imagemanager.cpp" line="215"/>
         <source>Sorry. It seems CD image file already exists.&lt;br&gt;Please rename it, or cancel add image operation.</source>
         <translation>Вибачте, здається, файл образу КД вже існує.&lt;br&gt;Будь ласка, змініть його назву або скасуйте дію зі додавання.</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="256"/>
+        <location filename="../gui/imagemanager.cpp" line="240"/>
+        <location filename="../gui/imagemanager.cpp" line="259"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="256"/>
+        <location filename="../gui/imagemanager.cpp" line="240"/>
+        <location filename="../gui/imagemanager.cpp" line="259"/>
         <source>debug: %1</source>
         <translation>зневаджування: %1</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="278"/>
+        <location filename="../gui/imagemanager.cpp" line="281"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
     </message>
     <message>
         <location filename="../gui/imagemanager.cpp" line="283"/>
+        <location filename="../gui/imagemanager.cpp" line="286"/>
         <source>:/%1</source>
         <translation>:/%1</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="62"/>
+        <location filename="../gui/imagemanager.cpp" line="65"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="190"/>
+        <location filename="../gui/imagemanager.cpp" line="193"/>
         <source>Open ISO or NRG Image file</source>
         <translation>Відкрити файл образу ISO або NRG</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="190"/>
+        <location filename="../gui/imagemanager.cpp" line="193"/>
         <source>iso and nrg files (*.iso *.nrg)</source>
         <translation>Файли ISO або NRG (*.iso *.nrg)</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="194"/>
+        <location filename="../gui/imagemanager.cpp" line="197"/>
         <source>Open ISO Image file</source>
         <translation>Відкрити файл образу ISO</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="194"/>
+        <location filename="../gui/imagemanager.cpp" line="197"/>
         <source>iso files (*.iso)</source>
         <translation>Файли ISO (*.iso)</translation>
     </message>
@@ -1208,1069 +1261,1149 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../MainWindow.ui" line="554"/>
+        <location filename="../uis/MainWindow.ui" line="30"/>
+        <location filename="../uis/MainWindow.ui" line="555"/>
         <source>Programs</source>
         <translation>Програми</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="578"/>
+        <location filename="../uis/MainWindow.ui" line="67"/>
+        <location filename="../uis/MainWindow.ui" line="399"/>
+        <location filename="../uis/MainWindow.ui" line="579"/>
         <source>Prefixes</source>
         <translation>Префікси</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="71"/>
+        <location filename="../uis/MainWindow.ui" line="72"/>
         <source>Default</source>
         <translation>Типові</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="82"/>
+        <location filename="../uis/MainWindow.ui" line="83"/>
         <source>Icons</source>
         <translation>Піктограми</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="134"/>
+        <location filename="../uis/MainWindow.ui" line="135"/>
         <source>Info</source>
         <translation>Інформація</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="189"/>
+        <location filename="../uis/MainWindow.ui" line="190"/>
         <source>PID</source>
         <translation>PID</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="433"/>
+        <location filename="../uis/MainWindow.ui" line="195"/>
+        <location filename="../uis/MainWindow.ui" line="434"/>
         <source>Name</source>
         <translation>Назва</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="199"/>
+        <location filename="../uis/MainWindow.ui" line="200"/>
         <source>Ni</source>
         <translation>Пріоритет</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="204"/>
+        <location filename="../uis/MainWindow.ui" line="205"/>
         <source>Prefix</source>
         <translation>Префікс</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="212"/>
+        <location filename="../uis/MainWindow.ui" line="213"/>
         <source>Total procces:</source>
         <translation>Загалом процесів:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="570"/>
+        <location filename="../uis/MainWindow.ui" line="224"/>
+        <location filename="../uis/MainWindow.ui" line="571"/>
         <source>Setup</source>
         <translation>Налаштувати</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="229"/>
+        <location filename="../uis/MainWindow.ui" line="230"/>
         <source>Current Prefix</source>
         <translation>Поточний префікс</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="236"/>
+        <location filename="../uis/MainWindow.ui" line="237"/>
         <source>Default (Windows XP)</source>
         <translation>Типовий (Windows XP)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="250"/>
+        <location filename="../uis/MainWindow.ui" line="251"/>
         <source>Manage</source>
         <translation>Керувати</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2312"/>
+        <location filename="../gui/mainwindow.cpp" line="2291"/>
+        <location filename="../uis/MainWindow.ui" line="261"/>
+        <location filename="../uis/MainWindow.ui" line="595"/>
         <source>Options</source>
         <translation>Параметри</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="270"/>
+        <location filename="../uis/MainWindow.ui" line="271"/>
         <source>Base setup</source>
         <translation>Базове налаштування</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="289"/>
+        <location filename="../uis/MainWindow.ui" line="290"/>
         <source>Create Fake Drive</source>
         <translation>Створити фіктивний диск</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="299"/>
+        <location filename="../uis/MainWindow.ui" line="300"/>
         <source>Update Fake Drive</source>
         <translation>Оновити фіктивний диск</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="320"/>
+        <location filename="../uis/MainWindow.ui" line="321"/>
         <source>System Software</source>
         <translation>Програми системи</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="354"/>
+        <location filename="../uis/MainWindow.ui" line="355"/>
         <source>Core fonts</source>
         <translation>Базові шрифти</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="438"/>
+        <location filename="../uis/MainWindow.ui" line="439"/>
         <source>Version</source>
         <translation>Версія</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="443"/>
+        <location filename="../uis/MainWindow.ui" line="444"/>
         <source>Path</source>
         <translation>Шлях</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="465"/>
+        <location filename="../uis/MainWindow.ui" line="466"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="476"/>
+        <location filename="../uis/MainWindow.ui" line="477"/>
         <source>Help</source>
         <translation>Довідка</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3225"/>
+        <location filename="../gui/mainwindow.cpp" line="162"/>
+        <location filename="../gui/mainwindow.cpp" line="904"/>
+        <location filename="../gui/mainwindow.cpp" line="1336"/>
+        <location filename="../gui/mainwindow.cpp" line="1442"/>
+        <location filename="../gui/mainwindow.cpp" line="1452"/>
+        <location filename="../gui/mainwindow.cpp" line="1692"/>
+        <location filename="../gui/mainwindow.cpp" line="2564"/>
+        <location filename="../gui/mainwindow.cpp" line="2685"/>
+        <location filename="../gui/mainwindow.cpp" line="2690"/>
+        <location filename="../gui/mainwindow.cpp" line="2781"/>
+        <location filename="../gui/mainwindow.cpp" line="3203"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1790"/>
+        <location filename="../gui/mainwindow.cpp" line="157"/>
+        <location filename="../gui/mainwindow.cpp" line="159"/>
+        <location filename="../gui/mainwindow.cpp" line="328"/>
+        <location filename="../gui/mainwindow.cpp" line="1574"/>
+        <location filename="../gui/mainwindow.cpp" line="1640"/>
+        <location filename="../gui/mainwindow.cpp" line="1661"/>
+        <location filename="../gui/mainwindow.cpp" line="1697"/>
+        <location filename="../gui/mainwindow.cpp" line="1770"/>
         <source>Warning</source>
         <translation>Попередження</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1660"/>
+        <location filename="../gui/mainwindow.cpp" line="1640"/>
         <source>This action will send a TREM(-9) signal to all wine proccess with WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Do you realy whant it? </source>
         <translation>Виконання цієї дії надішле сигнал TREM(-9) всім процесам wine з WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Ви справді цього бажаєте? </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1664"/>
+        <location filename="../gui/mainwindow.cpp" line="1644"/>
         <source>env WINEPREFIX=&quot;%1&quot; wineserver -kill</source>
         <translation>env WINEPREFIX=&quot;%1&quot; wineserver -kill</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1681"/>
+        <location filename="../gui/mainwindow.cpp" line="1661"/>
         <source>This action will send a TREM(-9) signal to proccess &apos;%2&apos; pid: %1&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you realy whant it? </source>
         <translation>Виконання цієї дії надішле сигнал TREM(-9) процесові «%2» з pid: %1&lt;br&gt;&lt;br&gt;При цьому є ЗНАЧНИЙ ризик пошкодження нормального стану wine.&lt;br&gt;&lt;br&gt;Ви справді бажаєте цього? </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2224"/>
+        <location filename="../gui/mainwindow.cpp" line="2203"/>
         <source>Stop current</source>
         <translation>Зупинити поточний</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2228"/>
+        <location filename="../gui/mainwindow.cpp" line="2207"/>
         <source>Stop wine</source>
         <translation>Зупинити wine</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2232"/>
+        <location filename="../gui/mainwindow.cpp" line="2211"/>
         <source>Refresh list</source>
         <translation>Оновити список</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2333"/>
+        <location filename="../gui/mainwindow.cpp" line="2312"/>
         <source>Create new prefix</source>
         <translation>Створити новий префікс</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2337"/>
+        <location filename="../gui/mainwindow.cpp" line="2315"/>
+        <location filename="../gui/mainwindow.cpp" line="2316"/>
         <source>Import prefix</source>
         <translation>Імпортувати префікс</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2342"/>
+        <location filename="../gui/mainwindow.cpp" line="2320"/>
+        <location filename="../gui/mainwindow.cpp" line="2321"/>
         <source>Export prefix</source>
         <translation>Експортувати префікс</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2352"/>
+        <location filename="../gui/mainwindow.cpp" line="2330"/>
+        <location filename="../gui/mainwindow.cpp" line="2331"/>
         <source>Edit prefix settings</source>
         <translation>Змінити параметри префікса</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2347"/>
+        <location filename="../gui/mainwindow.cpp" line="2325"/>
+        <location filename="../gui/mainwindow.cpp" line="2326"/>
         <source>Delete prefix</source>
         <translation>Вилучити префікс</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="61"/>
+        <location filename="../gui/mainwindow.cpp" line="39"/>
+        <location filename="../uis/MainWindow.ui" line="15"/>
         <source>%1 :. Qt4 GUI for Wine v%2</source>
         <translation>%1 : Графічна оболонка на Qt4 для Wine версії %2</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="140"/>
+        <location filename="../uis/MainWindow.ui" line="141"/>
         <source>Name:&lt;br&gt;Desctiption:</source>
         <translation>Назва:&lt;br&gt;Опис:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="562"/>
+        <location filename="../uis/MainWindow.ui" line="152"/>
+        <location filename="../uis/MainWindow.ui" line="563"/>
         <source>Process</source>
         <translation>Процес</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="485"/>
+        <location filename="../uis/MainWindow.ui" line="486"/>
         <source>Tools</source>
         <translation>Інструменти</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="530"/>
+        <location filename="../uis/MainWindow.ui" line="507"/>
+        <source>Ctrl+Z</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="515"/>
+        <source>Ctrl+Q</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="523"/>
+        <source>Ctrl+E</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="531"/>
         <source>Handbook</source>
         <translation>Підручник</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="538"/>
+        <location filename="../uis/MainWindow.ui" line="534"/>
+        <source>Ctrl+R</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="539"/>
         <source>About Qt</source>
         <translation>Про Qt</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="546"/>
+        <location filename="../uis/MainWindow.ui" line="547"/>
         <source>Instal wizard</source>
         <translation>Майстер встановлення</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="586"/>
+        <location filename="../uis/MainWindow.ui" line="550"/>
+        <source>Ctrl+X</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="558"/>
+        <source>Ctrl+A</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="566"/>
+        <source>Ctrl+S</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="574"/>
+        <source>Ctrl+D</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="582"/>
+        <source>Ctrl+F</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="587"/>
         <source>Export icons</source>
         <translation>Експортувати піктограми</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="70"/>
+        <location filename="../uis/MainWindow.ui" line="606"/>
+        <source>Ctrl+V</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Database is corrupted...</source>
-        <translation>Базу даних пошкоджено...</translation>
+        <translation type="obsolete">Базу даних пошкоджено...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="70"/>
         <source>Sorry, the database has a wrong structure.</source>
-        <translation>Вибачте, база даних має неправильну структуру.</translation>
+        <translation type="obsolete">Вибачте, база даних має неправильну структуру.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="71"/>
         <source>Error: Database is corrupted</source>
-        <translation>Помилка: базу даних пошкоджено</translation>
+        <translation type="obsolete">Помилка: базу даних пошкоджено</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="237"/>
+        <location filename="../gui/mainwindow.cpp" line="205"/>
         <source>SELECT name, desc FROM icon WHERE dir_id=(SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=&quot;%1&quot;) AND name=&quot;%2&quot;) and name=&quot;%3&quot;</source>
         <translation>SELECT name, desc FROM icon WHERE dir_id=(SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=&quot;%1&quot;) AND name=&quot;%2&quot;) and name=&quot;%3&quot;</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="239"/>
+        <location filename="../gui/mainwindow.cpp" line="207"/>
         <source>SELECT name, desc FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=&quot;%1&quot;) AND  dir_id ISNULL AND name=&quot;%2&quot;</source>
         <translation>SELECT name, desc FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=&quot;%1&quot;) AND  dir_id ISNULL AND name=&quot;%2&quot;</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="243"/>
+        <location filename="../gui/mainwindow.cpp" line="211"/>
         <source>Program: %1&lt;br&gt; Description: %2</source>
         <translation>Програма: %1&lt;br&gt; Опис: %2</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="262"/>
+        <location filename="../gui/mainwindow.cpp" line="230"/>
         <source>Can&apos;t find wine binary.</source>
         <translation>Не вдалося знайти виконуваного файла wine.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="264"/>
+        <location filename="../gui/mainwindow.cpp" line="232"/>
         <source>Can&apos;t find wine server binary.</source>
         <translation>Не вдалося знайти виконуваного файла сервера wine.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="266"/>
+        <location filename="../gui/mainwindow.cpp" line="234"/>
         <source>Can&apos;t find wine loader.</source>
         <translation>Не вдалося знайти завантажувача wine.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="268"/>
+        <location filename="../gui/mainwindow.cpp" line="236"/>
         <source>Can&apos;t find wine library directory.</source>
         <translation>Не вдалося знайти каталог бібліотек wine.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="280"/>
+        <location filename="../gui/mainwindow.cpp" line="248"/>
         <source>Can&apos;t find theme.</source>
         <translation>Не вдалося знайти тему.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="287"/>
+        <location filename="../gui/mainwindow.cpp" line="255"/>
         <source>Can&apos;t find tar binary.</source>
         <translation>Не вдалося знайти виконуваного файла tar.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="289"/>
+        <location filename="../gui/mainwindow.cpp" line="257"/>
         <source>Can&apos;t find mount binary.</source>
         <translation>Не вдалося знайти виконуваного файла mount.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="291"/>
+        <location filename="../gui/mainwindow.cpp" line="259"/>
         <source>Can&apos;t find umount binary.</source>
         <translation>Не вдалося знайти виконуваного файла umount.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="293"/>
+        <location filename="../gui/mainwindow.cpp" line="261"/>
         <source>Can&apos;t find sudo binary.</source>
         <translation>Не вдалося знайти виконуваного файла sudo.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="295"/>
+        <location filename="../gui/mainwindow.cpp" line="265"/>
         <source>Can&apos;t find nice binary.</source>
         <translation>Не вдалося знайти виконуваного файла nice.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="297"/>
+        <location filename="../gui/mainwindow.cpp" line="267"/>
         <source>Can&apos;t find renice binary.</source>
         <translation>Не вдалося знайти виконуваного файла renice.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="299"/>
+        <location filename="../gui/mainwindow.cpp" line="269"/>
         <source>Can&apos;t find sh binary.</source>
         <translation>Не вдалося знайти виконуваного файла sh.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="304"/>
+        <location filename="../gui/mainwindow.cpp" line="274"/>
         <source>Can&apos;t find console binary.</source>
         <translation>Не вдалося знайти виконуваного файла консолі.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="311"/>
+        <location filename="../gui/mainwindow.cpp" line="282"/>
         <source>Can&apos;t find wrestool binary.</source>
         <translation>Не вдалося знайти виконуваного файла wrestool.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="313"/>
+        <location filename="../gui/mainwindow.cpp" line="284"/>
         <source>Can&apos;t find icotool binary.</source>
         <translation>Не вдалося знайти виконуваного файла icotool.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="357"/>
         <source>&lt;p&gt;%1&lt;/p&gt;&lt;p&gt;File or path not exists: &quot;%2&quot;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;%1&lt;/p&gt;&lt;p&gt;Файла або шляху не існує: «%2»&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;%1&lt;/p&gt;&lt;p&gt;Файла або шляху не існує: «%2»&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="358"/>
+        <location filename="../gui/mainwindow.cpp" line="329"/>
         <source>Warning: &quot;%1&quot; use options dialog for fix</source>
         <translation>Попередження: «%1», скористайтеся діалоговим вікном параметрів, щоб виправити</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="457"/>
+        <location filename="../gui/mainwindow.cpp" line="436"/>
         <source> WINEPREFIX=%1 </source>
         <translation> WINEPREFIX=%1 </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="460"/>
+        <location filename="../gui/mainwindow.cpp" line="439"/>
         <source> WINEPREFIX=%1/.wine </source>
         <translation> WINEPREFIX=%1/.wine </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="466"/>
+        <location filename="../gui/mainwindow.cpp" line="443"/>
+        <location filename="../gui/mainwindow.cpp" line="445"/>
         <source> WINEDLLPATH=%1 </source>
         <translation> WINEDLLPATH=%1 </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="472"/>
+        <location filename="../gui/mainwindow.cpp" line="449"/>
+        <location filename="../gui/mainwindow.cpp" line="451"/>
         <source> WINELOADER=%1 </source>
         <translation> WINELOADER=%1 </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="478"/>
+        <location filename="../gui/mainwindow.cpp" line="455"/>
+        <location filename="../gui/mainwindow.cpp" line="457"/>
         <source> WINESERVER=%1 </source>
         <translation> WINESERVER=%1 </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="482"/>
+        <location filename="../gui/mainwindow.cpp" line="461"/>
         <source> WINEDLLOVERRIDES=&quot;%1&quot; </source>
         <translation> WINEDLLOVERRIDES=&quot;%1&quot; </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="486"/>
+        <location filename="../gui/mainwindow.cpp" line="465"/>
         <source> WINEDEBUG=%1 </source>
         <translation> WINEDEBUG=%1 </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="490"/>
+        <location filename="../gui/mainwindow.cpp" line="469"/>
         <source> DISPLAY=%1 </source>
         <translation> DISPLAY=%1 </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="559"/>
+        <location filename="../gui/mainwindow.cpp" line="536"/>
         <source>Program: &lt;br&gt; Description:</source>
         <translation>Програма: &lt;br&gt; Опис:</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1542"/>
+        <location filename="../gui/mainwindow.cpp" line="621"/>
+        <location filename="../gui/mainwindow.cpp" line="628"/>
+        <location filename="../gui/mainwindow.cpp" line="638"/>
+        <location filename="../gui/mainwindow.cpp" line="1290"/>
+        <location filename="../gui/mainwindow.cpp" line="1291"/>
+        <location filename="../gui/mainwindow.cpp" line="1469"/>
+        <location filename="../gui/mainwindow.cpp" line="1470"/>
+        <location filename="../gui/mainwindow.cpp" line="1478"/>
+        <location filename="../gui/mainwindow.cpp" line="1517"/>
+        <location filename="../gui/mainwindow.cpp" line="1522"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="648"/>
+        <location filename="../gui/mainwindow.cpp" line="625"/>
         <source>SELECT id,name FROM dir WHERE prefix_id=%1</source>
         <translation>SELECT id,name FROM dir WHERE prefix_id=%1</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2396"/>
+        <location filename="../gui/mainwindow.cpp" line="2359"/>
+        <location filename="../gui/mainwindow.cpp" line="2375"/>
         <source>Mount iso...</source>
         <translation>Змонтувати iso...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1053"/>
+        <location filename="../gui/mainwindow.cpp" line="839"/>
+        <location filename="../gui/mainwindow.cpp" line="1009"/>
+        <location filename="../gui/mainwindow.cpp" line="1030"/>
         <source>mount [%1]</source>
         <translation>mount [%1]</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1054"/>
+        <location filename="../gui/mainwindow.cpp" line="858"/>
+        <location filename="../gui/mainwindow.cpp" line="1031"/>
         <source>umount [%1]</source>
         <translation>umount [%1]</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1058"/>
+        <location filename="../gui/mainwindow.cpp" line="1035"/>
         <source>mount [none]</source>
         <translation>mount [none]</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1059"/>
+        <location filename="../gui/mainwindow.cpp" line="862"/>
+        <location filename="../gui/mainwindow.cpp" line="1036"/>
         <source>umount [none]</source>
         <translation>umount [none]</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1713"/>
+        <location filename="../gui/mainwindow.cpp" line="157"/>
+        <source>&lt;p&gt;q4wine was compiled without winetriks support.&lt;/p&gt;&lt;p&gt;If you wish to enable winetriks support add:&lt;/p&gt;&lt;p&gt; &quot;-DWITH_WINETOOLS=ON&quot; to cmake arguments.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;q4wine було зібрано без підтримки winetriks.&lt;/p&gt;&lt;p&gt;Якщо ви бажаєте додати підтримку winetriks додайте:&lt;/p&gt;&lt;p&gt; &quot;-DWITH_WINETOOLS=ON&quot; до аргументів cmake.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="263"/>
+        <source>Can&apos;t find GUI sudo binary.</source>
+        <translation>Не вдалося знайти виконуваного файла GUI sudo.</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="328"/>
+        <source>&lt;p&gt;%1&lt;/p&gt;&lt;p&gt;File or path not exists: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Please, go to %3 options dialog and set it.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;%1&lt;/p&gt;&lt;p&gt;Файл або Тека не існує: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Будь ласка, перейдіть до діалогу опцій %3 та встановіть вірний шлях.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1693"/>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
         <translation>Вибачте, типовий префікс не можна вилучати.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1718"/>
+        <location filename="../gui/mainwindow.cpp" line="1698"/>
         <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
         <translation>Ви справді бажаєте вилучити префікс з назвою «%1» і всі відповідні піктограми?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1774"/>
+        <location filename="../gui/mainwindow.cpp" line="1754"/>
         <source>Select file to import</source>
         <translation>Оберіть файл для імпорту</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1893"/>
+        <location filename="../gui/mainwindow.cpp" line="1754"/>
+        <location filename="../gui/mainwindow.cpp" line="1873"/>
         <source>Images (*.tbz)</source>
         <translation>Образи (*.tbz)</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1790"/>
+        <location filename="../gui/mainwindow.cpp" line="1770"/>
         <source>Do you really wish to delete all old prefix files?</source>
         <translation>Ви справді бажаєте вилучити всі старі файли префіксів?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1822"/>
+        <location filename="../gui/mainwindow.cpp" line="1802"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
         <translation>Імпорт префікса.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1822"/>
+        <location filename="../gui/mainwindow.cpp" line="1802"/>
         <source>Importing prefix</source>
         <translation>Імпорт префікса</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1893"/>
+        <location filename="../gui/mainwindow.cpp" line="1873"/>
         <source>Select file to export</source>
         <translation>Виберіть файл для експорту</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1913"/>
+        <location filename="../gui/mainwindow.cpp" line="1895"/>
         <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
         <translation>Експорт префікса %1.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1913"/>
+        <location filename="../gui/mainwindow.cpp" line="1895"/>
         <source>Exporting prefix</source>
         <translation>Експорт префікса</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3115"/>
+        <location filename="../gui/mainwindow.cpp" line="2088"/>
+        <location filename="../gui/mainwindow.cpp" line="3093"/>
         <source>WIP</source>
         <translation>Незавершений проект</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2109"/>
+        <location filename="../gui/mainwindow.cpp" line="2088"/>
         <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
         <translation>Вибачте, майстра встановлення ще немає. Його буде реалізовано у версії 0.110.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2125"/>
+        <location filename="../gui/mainwindow.cpp" line="2104"/>
         <source>Open image file</source>
         <translation>Відкрити файл зображення</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2164"/>
+        <location filename="../gui/mainwindow.cpp" line="2143"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Експорт піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2164"/>
+        <location filename="../gui/mainwindow.cpp" line="2143"/>
         <source>Exporting icon</source>
         <translation>Експорт піктограми</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2173"/>
+        <location filename="../gui/mainwindow.cpp" line="2152"/>
         <source>%1/</source>
         <translation>%1/</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2190"/>
+        <location filename="../gui/mainwindow.cpp" line="2169"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Перетворення піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2190"/>
+        <location filename="../gui/mainwindow.cpp" line="2169"/>
         <source>Converting icon</source>
         <translation>Перетворення піктограми</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2288"/>
+        <location filename="../gui/mainwindow.cpp" line="2227"/>
+        <location filename="../gui/mainwindow.cpp" line="2267"/>
         <source>New</source>
         <translation>Створити</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2249"/>
+        <location filename="../gui/mainwindow.cpp" line="2228"/>
         <source>Create new directory</source>
         <translation>Створити новий каталог</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2304"/>
+        <location filename="../gui/mainwindow.cpp" line="2231"/>
+        <location filename="../gui/mainwindow.cpp" line="2283"/>
         <source>Rename</source>
         <translation>Перейменувати</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2253"/>
+        <location filename="../gui/mainwindow.cpp" line="2232"/>
         <source>Rename current directory</source>
         <translation>Перейменувати поточний каталог</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2308"/>
+        <location filename="../gui/mainwindow.cpp" line="2235"/>
+        <location filename="../gui/mainwindow.cpp" line="2287"/>
         <source>Delete</source>
         <translation>Вилучити</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2257"/>
+        <location filename="../gui/mainwindow.cpp" line="2236"/>
         <source>Delete current directory</source>
         <translation>Вилучити поточний каталог</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2260"/>
+        <location filename="../gui/mainwindow.cpp" line="2239"/>
         <source>Unmount cd drive</source>
         <translation>Демонтувати пристрій КД</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2261"/>
+        <location filename="../gui/mainwindow.cpp" line="2240"/>
         <source>Unmounts cdrom drive</source>
         <translation>Демонтує пристрій для читання КД</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2324"/>
+        <location filename="../gui/mainwindow.cpp" line="2243"/>
+        <location filename="../gui/mainwindow.cpp" line="2303"/>
         <source>mount ...</source>
         <translation>змонтувати...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2325"/>
+        <location filename="../gui/mainwindow.cpp" line="2244"/>
+        <location filename="../gui/mainwindow.cpp" line="2304"/>
         <source>Browse for other image</source>
         <translation>Пошук іншого образу</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2268"/>
+        <location filename="../gui/mainwindow.cpp" line="2247"/>
         <source>Configure wine</source>
         <translation>Налаштувати wine</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2269"/>
+        <location filename="../gui/mainwindow.cpp" line="2248"/>
         <source>Runs winecfg for current prefix</source>
         <translation>Виконує winecfg для поточного префікса</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2272"/>
+        <location filename="../gui/mainwindow.cpp" line="2251"/>
         <source>App install</source>
         <translation>Встановити програму</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2273"/>
+        <location filename="../gui/mainwindow.cpp" line="2252"/>
         <source>Runs application install wizard for current prefix</source>
         <translation>Запускає майстер встановлення програми для поточного префікса</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2276"/>
+        <location filename="../gui/mainwindow.cpp" line="2255"/>
         <source>App uninstall</source>
         <translation>Вилучити програму</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2277"/>
+        <location filename="../gui/mainwindow.cpp" line="2256"/>
         <source>Runs application uninstall wizard for current prefix</source>
         <translation>Запускає майстер вилучення програми для поточного префікса</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2284"/>
+        <location filename="../gui/mainwindow.cpp" line="2263"/>
         <source>Run</source>
         <translation>Виконати</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2289"/>
+        <location filename="../gui/mainwindow.cpp" line="2264"/>
+        <location filename="../gui/mainwindow.cpp" line="2268"/>
         <source>Create new icon</source>
         <translation>Створити нову піктограму</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2292"/>
+        <location filename="../gui/mainwindow.cpp" line="2271"/>
         <source>Cut</source>
         <translation>Вирізати</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2293"/>
+        <location filename="../gui/mainwindow.cpp" line="2272"/>
         <source>Cut selected icons to buffer</source>
         <translation>Вирізати вибрані піктограми до буфера</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2296"/>
+        <location filename="../gui/mainwindow.cpp" line="2275"/>
         <source>Copy</source>
         <translation>Копіювати</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2297"/>
+        <location filename="../gui/mainwindow.cpp" line="2276"/>
         <source>Copy selected icons to buffer</source>
         <translation>Копіювати вибрані піктограми до буфера</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2300"/>
+        <location filename="../gui/mainwindow.cpp" line="2279"/>
         <source>Paste</source>
         <translation>Вставити</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2301"/>
+        <location filename="../gui/mainwindow.cpp" line="2280"/>
         <source>Paste selected icons from buffer to selected folder</source>
         <translation>Вставити скопійовані або вирізані піктограми з буфера до поточної теки</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2305"/>
+        <location filename="../gui/mainwindow.cpp" line="2284"/>
         <source>Rename current icon</source>
         <translation>Перейменувати поточну піктограму</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2309"/>
+        <location filename="../gui/mainwindow.cpp" line="2288"/>
         <source>Delete current icon</source>
         <translation>Вилучити поточну піктограму</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2313"/>
+        <location filename="../gui/mainwindow.cpp" line="2292"/>
         <source>Modify current icon options</source>
         <translation>Змінити параметри поточної піктограми</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2316"/>
+        <location filename="../gui/mainwindow.cpp" line="2295"/>
         <source>mount</source>
         <translation>mount</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2317"/>
+        <location filename="../gui/mainwindow.cpp" line="2296"/>
         <source>Mount image from icon options</source>
         <translation>Монтує образ з параметрів піктограми</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2320"/>
+        <location filename="../gui/mainwindow.cpp" line="2299"/>
         <source>umount</source>
         <translation>umount</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2321"/>
+        <location filename="../gui/mainwindow.cpp" line="2300"/>
         <source>Unmount image</source>
         <translation>Демонтує образ</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2419"/>
+        <location filename="../gui/mainwindow.cpp" line="2398"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2424"/>
+        <location filename="../gui/mainwindow.cpp" line="2400"/>
+        <location filename="../gui/mainwindow.cpp" line="2403"/>
         <source>:/%1</source>
         <translation>:/%1</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2484"/>
+        <location filename="../gui/mainwindow.cpp" line="2463"/>
         <source>Delete Icon</source>
         <translation>Вилучити піктограму</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2484"/>
+        <location filename="../gui/mainwindow.cpp" line="2463"/>
         <source>Do you want to delete all selected icons?</source>
         <translation>Ви справді бажаєте вилучити всі вибрані піктограми?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2561"/>
+        <location filename="../gui/mainwindow.cpp" line="2540"/>
         <source>Enter new icon name</source>
         <translation>Введіть нову назву піктограми</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2561"/>
+        <location filename="../gui/mainwindow.cpp" line="2540"/>
         <source>Icon name:</source>
         <translation>Назва піктограми:</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2585"/>
+        <location filename="../gui/mainwindow.cpp" line="2564"/>
         <source>Sorry, but icon named %1 already exists.</source>
         <translation>Вибачте, але піктограма з назвою %1 вже існує.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3089"/>
+        <location filename="../gui/mainwindow.cpp" line="3068"/>
         <source>Open ISO Image file</source>
         <translation>Відкрити файл образу ISO</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2711"/>
+        <location filename="../gui/mainwindow.cpp" line="2690"/>
         <source>It seems no mount point was set in icon options.&lt;br&gt;You might need to set it manualy.</source>
         <translation>Здається, у параметрах піктограми не було вказано точки монтування.&lt;br&gt;Вам слід вказати її вручну.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2706"/>
+        <location filename="../gui/mainwindow.cpp" line="2685"/>
         <source>It seems no image file was set in icon options.&lt;br&gt;You might need to set it manualy.</source>
         <translation>Здається, у параметрах піктограми не було вказано файла образу.&lt;br&gt;Вам слід вказати його вручну.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2802"/>
+        <location filename="../gui/mainwindow.cpp" line="2781"/>
         <source>Sorry. Cannot copy or move in to the same file</source>
         <translation>Вибачте, але копіювання або пересування до того ж файла неможливе</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2880"/>
+        <location filename="../gui/mainwindow.cpp" line="2802"/>
+        <location filename="../gui/mainwindow.cpp" line="2859"/>
         <source>Sorry. It seems file already exists.</source>
         <translation>Вибачте, здається, файл з такою назвою вже є.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2881"/>
+        <location filename="../gui/mainwindow.cpp" line="2803"/>
+        <location filename="../gui/mainwindow.cpp" line="2860"/>
         <source>Sorry. It seems file already exists.&lt;br&gt;Please rename it, or cancel paste operation.</source>
         <translation>Вибачте, здається, файл вже існує.&lt;br&gt;Будь ласка, змініть його назву або скасуйте дію зі вставлення.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3014"/>
+        <location filename="../gui/mainwindow.cpp" line="2993"/>
         <source>Enter new directory name</source>
         <translation>Введіть нову назву каталогу</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3134"/>
+        <location filename="../gui/mainwindow.cpp" line="2993"/>
+        <location filename="../gui/mainwindow.cpp" line="3112"/>
         <source>Directory name:</source>
         <translation>Назва каталогу:</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3115"/>
+        <location filename="../gui/mainwindow.cpp" line="3093"/>
         <source>Sorry, no install wizard yet. It&apos;l implemented at v0.110.</source>
         <translation>Вибачте, майстра встановлення ще немає. Його буде реалізовано у версії 0.110.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3134"/>
+        <location filename="../gui/mainwindow.cpp" line="3112"/>
         <source>Enter new name for directory</source>
         <translation>Введіть нову назву каталогу</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3164"/>
+        <location filename="../gui/mainwindow.cpp" line="3142"/>
         <source>Q4Wine</source>
         <translation>Q4Wine</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3164"/>
+        <location filename="../gui/mainwindow.cpp" line="3142"/>
         <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
 </source>
         <translation>Ви справді бажаєте вилучити теку з назвою «%1» і всі відповідні піктограми?
 </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3225"/>
+        <location filename="../gui/mainwindow.cpp" line="3203"/>
         <source>Sorry, but prefix already have directory named %1.</source>
         <translation>Вибачте, але у префіксі вже існує каталог з назвою %1.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3455"/>
+        <location filename="../gui/mainwindow.cpp" line="3441"/>
         <source>Mounting...</source>
         <translation>Монтування...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3458"/>
+        <location filename="../gui/mainwindow.cpp" line="3444"/>
         <source>Image successfully mounted</source>
         <translation>Образ успішно змонтовано</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3460"/>
+        <location filename="../gui/mainwindow.cpp" line="3446"/>
         <source>Image mount fail</source>
         <translation>Спроба монтування образу завершилася невдачею</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="369"/>
+        <location filename="../gui/mainwindow.cpp" line="340"/>
         <source>Starting programm...</source>
         <translation>Запускаємо програму...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="539"/>
+        <location filename="../gui/mainwindow.cpp" line="516"/>
         <source>Error: can&apos;t start %1</source>
         <translation>Помилка: неможливо запустити %1</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1301"/>
+        <location filename="../gui/mainwindow.cpp" line="1275"/>
         <source>Select process priority</source>
         <translation>Оберіть пріоритет процесу</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1301"/>
+        <location filename="../gui/mainwindow.cpp" line="1275"/>
         <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Значення пріоритету можуть бути&lt;br&gt;у межах від PRIO_MIN (-20)&lt;br&gt;до PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Ознайомтесь з &quot;man renice&quot;&lt;br&gt;для більш детальної інформації.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1319"/>
+        <location filename="../gui/mainwindow.cpp" line="1300"/>
         <source>reniceing...</source>
         <translation>Змінюємо пріоритет...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1324"/>
+        <location filename="../gui/mainwindow.cpp" line="1304"/>
         <source>Renice fail fail</source>
         <translation>Зміна пріоритета зазнала краху</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1594"/>
+        <location filename="../gui/mainwindow.cpp" line="1574"/>
         <source>There are other Fake drive installed in %1 prefix directory.&lt;br&gt;&lt;br&gt;Do you wish to REMOVE ALL FILES from prefix folder?</source>
         <translation>Вказана тека префікса %1 вже містить Фіктивний диск.&lt;br&gt;&lt;br&gt;Ви дійсно бажаєте ЗНИЩІТИ ВСІ ФАЙЛИ з теки префіксу?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1797"/>
+        <location filename="../gui/mainwindow.cpp" line="1580"/>
+        <location filename="../gui/mainwindow.cpp" line="1777"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>Знищуємо старий фіктивний диск.&lt;br&gt;Це може зайняти деякий час...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1797"/>
+        <location filename="../gui/mainwindow.cpp" line="1580"/>
+        <location filename="../gui/mainwindow.cpp" line="1777"/>
         <source>Removing old fake drive</source>
         <translation>Знищуємо старий фіктивний диск</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2236"/>
+        <location filename="../gui/mainwindow.cpp" line="2215"/>
         <source>Renice</source>
         <translation>Змінити пріоритет</translation>
     </message>
-    <message encoding="UTF-8">
-        <location filename="../MainWindow.ui" line="47"/>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="48"/>
         <source>Сategories</source>
         <translation>Категорії</translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="602"/>
-        <source>CD image manager</source>
-        <translation>Менеджер образів КД</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="3093"/>
-        <source>It seems no mount point was set in prefix options.&lt;br&gt;You might need to set it manualy.</source>
-        <translation>Здається, у параметрах префіксу не було вказано точки монтування.&lt;br&gt;Вам слід вказати її вручну.</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1567"/>
-        <source>Total process: %1</source>
-        <translation>Загалом процесів: %1</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2225"/>
-        <source>Send TERM signal to selected process</source>
-        <translation>Надсилає сигнал TERM вибраному процесові</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2229"/>
-        <source>Send TERM signal to main wine process</source>
-        <translation>Надіслати сигнал TERM головному процесові wine</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2233"/>
-        <source>Refresh process list</source>
-        <translation>Оновити список процесів</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2237"/>
-        <source>Set process priority</source>
-        <translation>Встановити пріоритет процесу</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2332"/>
-        <source>Create new</source>
-        <translation>Створити нову</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="326"/>
-        <source>It (temporary) implemented by winetricks</source>
-        <translation>Це тимчасова реалізация з використанням winetricks</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="333"/>
-        <source>Run Winetricks</source>
-        <translation>Запуск Winetricks</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="360"/>
-        <source>Hi. This is development area.</source>
-        <translation>Привіт. Це майданчик розробника.</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="370"/>
-        <source>Test WIS</source>
-        <translation>Тестувати WIS</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="177"/>
-        <source>&lt;p&gt;You do not set default console binary.&lt;/p&gt;&lt;p&gt;Set it into q4wine option dialog.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Ви не обрали консольну програму.&lt;/p&gt;&lt;p&gt;Перейдіть до діалогу опцій q4wine та встановіть її.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="541"/>
-        <source>Start: Done (For more info, run in console mode)</source>
-        <translation>Запуск: Зроблено (Для детальної інформації запустіть у консольному режимі)</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="3473"/>
-        <source>%1 | grep %2</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="3503"/>
-        <source>-u%1</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="3085"/>
-        <source>Open ISO or NRG Image file</source>
-        <translation>Відкрити файл образу ISO або NRG</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="3085"/>
-        <source>iso and nrg files (*.iso *.nrg)</source>
-        <translation>Файли ISO або NRG (*.iso *.nrg)</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="3089"/>
-        <source>iso files (*.iso)</source>
-        <translation>Файли ISO (*.iso)</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="3505"/>
-        <source>Unmounting...</source>
-        <translation>Демонтуємо...</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="3492"/>
-        <source>image successfully unmounted</source>
-        <translation>Образ успішно демонтовано</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="3494"/>
-        <source>image unmount fail</source>
-        <translation>Спроба демонтування образу завершилася невдачею</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="3505"/>
-        <source>running mdconfig</source>
-        <translation>Запуск mdconfig</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="3508"/>
-        <source>mdimage removed</source>
-        <translation>mdimage видалено</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="3510"/>
-        <source>mdimage remove fail</source>
-        <translation>mdimage видалено</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2244"/>
-        <source>Run...</source>
-        <translation>Виконати...</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2245"/>
-        <source>Run application at current prefix</source>
-        <translation>Запускає програму у поточному префіксі</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="276"/>
-        <source>This is the point where you have to start when creating new empty prefix. You can also create a new or update an old fake Windows drive.</source>
-        <translation>Це - початкова точка, з якої Вам потрібно розпочати процес налаштування нового префіксу. Ви також можете тут створити новий, або оновити існуючий фіктивний диск Windows.</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="506"/>
-        <source>Ctrl+Z</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="511"/>
-        <source>Quit</source>
-        <translation>Вийти</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="514"/>
-        <source>Ctrl+Q</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="519"/>
-        <source>About</source>
-        <translation>Про програму</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="522"/>
-        <source>Ctrl+E</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="533"/>
-        <source>Ctrl+R</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="549"/>
-        <source>Ctrl+X</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="557"/>
-        <source>Ctrl+A</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="565"/>
-        <source>Ctrl+S</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="573"/>
-        <source>Ctrl+D</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="581"/>
-        <source>Ctrl+F</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.ui" line="589"/>
+        <location filename="../uis/MainWindow.ui" line="590"/>
         <source>Ctrl+C</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="597"/>
+        <location filename="../uis/MainWindow.ui" line="598"/>
         <source>Ctrl+W</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../MainWindow.ui" line="605"/>
-        <source>Ctrl+V</source>
+        <location filename="../uis/MainWindow.ui" line="603"/>
+        <source>CD image manager</source>
+        <translation>Менеджер образів КД</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="904"/>
+        <source>It seems no mount point was set in prefix options.&lt;br&gt;You might need to set it manualy.</source>
+        <translation>Здається, у параметрах префіксу не було вказано точки монтування.&lt;br&gt;Вам слід вказати її вручну.</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1547"/>
+        <source>Total process: %1</source>
+        <translation>Загалом процесів: %1</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2204"/>
+        <source>Send TERM signal to selected process</source>
+        <translation>Надсилає сигнал TERM вибраному процесові</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2208"/>
+        <source>Send TERM signal to main wine process</source>
+        <translation>Надіслати сигнал TERM головному процесові wine</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2212"/>
+        <source>Refresh process list</source>
+        <translation>Оновити список процесів</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2216"/>
+        <source>Set process priority</source>
+        <translation>Встановити пріоритет процесу</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2311"/>
+        <source>Create new</source>
+        <translation>Створити нову</translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="327"/>
+        <source>It (temporary) implemented by winetricks</source>
+        <translation>Це тимчасова реалізация з використанням winetricks</translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="334"/>
+        <source>Run Winetricks</source>
+        <translation>Запуск Winetricks</translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="361"/>
+        <source>Hi. This is development area.</source>
+        <translation>Привіт. Це майданчик розробника.</translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="371"/>
+        <source>Test WIS</source>
+        <translation>Тестувати WIS</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="162"/>
+        <source>&lt;p&gt;You do not set default console binary.&lt;/p&gt;&lt;p&gt;Set it into q4wine option dialog.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Ви не обрали консольну програму.&lt;/p&gt;&lt;p&gt;Перейдіть до діалогу опцій q4wine та встановіть її.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="518"/>
+        <source>Start: Done (For more info, run in console mode)</source>
+        <translation>Запуск: Зроблено (Для детальної інформації запустіть у консольному режимі)</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="782"/>
+        <location filename="../gui/mainwindow.cpp" line="785"/>
+        <location filename="../gui/mainwindow.cpp" line="955"/>
+        <location filename="../gui/mainwindow.cpp" line="958"/>
+        <location filename="../gui/mainwindow.cpp" line="3460"/>
+        <source>%1 | grep %2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1462"/>
+        <location filename="../gui/mainwindow.cpp" line="812"/>
+        <location filename="../gui/mainwindow.cpp" line="984"/>
+        <location filename="../gui/mainwindow.cpp" line="3497"/>
+        <source>-u%1</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="3064"/>
+        <source>Open ISO or NRG Image file</source>
+        <translation>Відкрити файл образу ISO або NRG</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="3064"/>
+        <source>iso and nrg files (*.iso *.nrg)</source>
+        <translation>Файли ISO або NRG (*.iso *.nrg)</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="3068"/>
+        <source>iso files (*.iso)</source>
+        <translation>Файли ISO (*.iso)</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="3483"/>
+        <location filename="../gui/mainwindow.cpp" line="3506"/>
+        <source>Unmounting...</source>
+        <translation>Демонтуємо...</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="3486"/>
+        <source>image successfully unmounted</source>
+        <translation>Образ успішно демонтовано</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="3488"/>
+        <source>image unmount fail</source>
+        <translation>Спроба демонтування образу завершилася невдачею</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="3506"/>
+        <source>running mdconfig</source>
+        <translation>Запуск mdconfig</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="3509"/>
+        <source>mdimage removed</source>
+        <translation>mdimage видалено</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="3511"/>
+        <source>mdimage remove fail</source>
+        <translation>mdimage видалено</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2223"/>
+        <location filename="../uis/MainWindow.ui" line="504"/>
+        <source>Run...</source>
+        <translation>Виконати...</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2224"/>
+        <source>Run application at current prefix</source>
+        <translation>Запускає програму у поточному префіксі</translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="277"/>
+        <source>This is the point where you have to start when creating new empty prefix. You can also create a new or update an old fake Windows drive.</source>
+        <translation>Це - початкова точка, з якої Вам потрібно розпочати процес налаштування нового префіксу. Ви також можете тут створити новий, або оновити існуючий фіктивний диск Windows.</translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="512"/>
+        <source>Quit</source>
+        <translation>Вийти</translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="520"/>
+        <source>About</source>
+        <translation>Про програму</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1442"/>
         <source>&lt;p&gt;It seems q4wine can not run kvm_openfiles.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Схоже, що q4wine не може виконати команду kvm_openfiles.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1472"/>
+        <location filename="../gui/mainwindow.cpp" line="1452"/>
         <source>&lt;p&gt;It seems q4wine can not run kvm_getprocs.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Схоже, що q4wine не може виконати команду kvm_getprocs.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2125"/>
+        <location filename="../gui/mainwindow.cpp" line="2104"/>
         <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
         <translation>Виконувані файли та бібліотеки Win32 (*.exe *.dll);;Виконувані файли Win32 (*.exe);;Бібліотеки Win32 (*.dll)</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="174"/>
+        <location filename="../gui/mainwindow.cpp" line="159"/>
         <source>&lt;p&gt;Winetricks officaly NOT supported by q4wine.&lt;/p&gt;&lt;p&gt;There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine офіційно не підтримеє працю з Winetricks.&lt;/p&gt;&lt;p&gt;Було декілька повідомлень що до помилок які вели до помилок в роботі wine.&lt;/p&gt;</translation>
     </message>
@@ -2278,84 +2411,87 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>PrefixSettings</name>
     <message>
-        <location filename="../PrefixSettings.ui" line="222"/>
+        <location filename="../uis/PrefixSettings.ui" line="20"/>
+        <location filename="../uis/PrefixSettings.ui" line="170"/>
+        <location filename="../uis/PrefixSettings.ui" line="223"/>
         <source>Prefix settings</source>
         <translation>Параметри префікса</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="216"/>
+        <location filename="../uis/PrefixSettings.ui" line="217"/>
         <source>General</source>
         <translation>Загальні</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="246"/>
+        <location filename="../uis/PrefixSettings.ui" line="247"/>
         <source>Name:</source>
         <translation>Назва:</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="277"/>
+        <location filename="../uis/PrefixSettings.ui" line="278"/>
         <source>Prefix path:</source>
         <translation>Шлях префікса:</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="306"/>
+        <location filename="../uis/PrefixSettings.ui" line="307"/>
         <source>Quick mount</source>
         <translation>Швидке монтування</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="330"/>
+        <location filename="../uis/PrefixSettings.ui" line="331"/>
         <source>Device:</source>
         <translation>Пристрій:</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="361"/>
+        <location filename="../uis/PrefixSettings.ui" line="362"/>
         <source>Mount point:</source>
         <translation>Точка монтування:</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="410"/>
+        <location filename="../uis/PrefixSettings.ui" line="405"/>
+        <location filename="../uis/PrefixSettings.ui" line="411"/>
         <source>Wine settings</source>
         <translation>Параметри Wine</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="416"/>
+        <location filename="../uis/PrefixSettings.ui" line="417"/>
         <source>If you wish to use different wine versions, you may wish set custom wine paths here.
 Note: leave it blank for default.</source>
         <translation>Якщо ви маєте намір використовувати декілька версій wine, вам слід вказати тут нетипові шляхи для wine.
 Зауваження: не заповнюйте, якщо не збираєтеся цього робити.</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="445"/>
+        <location filename="../uis/PrefixSettings.ui" line="446"/>
         <source>Bin:</source>
         <translation>Вик.файл:</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="489"/>
+        <location filename="../uis/PrefixSettings.ui" line="490"/>
         <source>Server:</source>
         <translation>Сервер:</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="533"/>
+        <location filename="../uis/PrefixSettings.ui" line="534"/>
         <source>Loader:</source>
         <translation>Завантажувач:</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="577"/>
+        <location filename="../uis/PrefixSettings.ui" line="578"/>
         <source>Libs:</source>
         <translation>Бібліотеки:</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="625"/>
+        <location filename="../uis/PrefixSettings.ui" line="626"/>
         <source>Help</source>
         <translation>Довідка</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="645"/>
+        <location filename="../uis/PrefixSettings.ui" line="646"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../PrefixSettings.ui" line="652"/>
+        <location filename="../uis/PrefixSettings.ui" line="653"/>
         <source>Ok</source>
         <translation>Гаразд</translation>
     </message>
@@ -2365,11 +2501,13 @@ Note: leave it blank for default.</source>
         <translation>%1/%2</translation>
     </message>
     <message>
+        <location filename="../gui/prefixsettings.cpp" line="127"/>
         <location filename="../gui/prefixsettings.cpp" line="130"/>
         <source>:/%1</source>
         <translation>:/%1</translation>
     </message>
     <message>
+        <location filename="../gui/prefixsettings.cpp" line="145"/>
         <location filename="../gui/prefixsettings.cpp" line="183"/>
         <source>Error</source>
         <translation>Помилка</translation>
@@ -2400,6 +2538,7 @@ Note: leave it blank for default.</source>
         <translation>Вибачте, не вдалося отримати доступ до /proc/fstab</translation>
     </message>
     <message>
+        <location filename="../gui/prefixsettings.cpp" line="149"/>
         <location filename="../gui/prefixsettings.cpp" line="202"/>
         <source>&lt;none&gt;</source>
         <translation>&lt;немає&gt;</translation>
@@ -2408,71 +2547,96 @@ Note: leave it blank for default.</source>
 <context>
     <name>Process</name>
     <message>
-        <location filename="../Process.ui" line="16"/>
+        <location filename="../uis/Process.ui" line="16"/>
         <source>Mounting image...</source>
         <translation>Монтування образу...</translation>
     </message>
     <message>
-        <location filename="../Process.ui" line="67"/>
+        <location filename="../uis/Process.ui" line="67"/>
         <source>src: /home/brezerk/cdrom.iso</source>
         <translation>джерело: /home/brezerk/cdrom.iso</translation>
     </message>
     <message>
-        <location filename="../Process.ui" line="136"/>
+        <location filename="../uis/Process.ui" line="136"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="140"/>
+        <location filename="../gui/process.cpp" line="74"/>
+        <location filename="../gui/process.cpp" line="78"/>
+        <location filename="../gui/process.cpp" line="81"/>
+        <location filename="../gui/process.cpp" line="84"/>
+        <location filename="../gui/process.cpp" line="87"/>
+        <location filename="../gui/process.cpp" line="90"/>
+        <location filename="../gui/process.cpp" line="93"/>
+        <location filename="../gui/process.cpp" line="100"/>
+        <location filename="../gui/process.cpp" line="103"/>
+        <location filename="../gui/process.cpp" line="106"/>
+        <location filename="../gui/process.cpp" line="109"/>
+        <location filename="../gui/process.cpp" line="112"/>
+        <location filename="../gui/process.cpp" line="115"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="138"/>
+        <location filename="../gui/process.cpp" line="74"/>
         <source>It seems procces fail.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</source>
         <translation>Здається процес завершився помилкою.&lt;br&gt;&lt;br&gt;Повідомлення про помилку:&lt;br&gt;%1</translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="140"/>
         <source>It seems procces fail.&lt;br&gt;&lt;br&gt;Cant read STDERR message.&lt;br&gt;%1</source>
-        <translation>Здається процес завершився помилкою.&lt;br&gt;&lt;br&gt;Не вдалося прочитати повідомлення STDERR.&lt;br&gt;%1</translation>
+        <translation type="obsolete">Здається процес завершився помилкою.&lt;br&gt;&lt;br&gt;Не вдалося прочитати повідомлення STDERR.&lt;br&gt;%1</translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="99"/>
+        <location filename="../gui/process.cpp" line="78"/>
+        <location filename="../gui/process.cpp" line="100"/>
         <source>Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="102"/>
+        <location filename="../gui/process.cpp" line="81"/>
+        <location filename="../gui/process.cpp" line="103"/>
         <source>Process: The process crashed some time after starting successfully.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="108"/>
+        <location filename="../gui/process.cpp" line="87"/>
+        <location filename="../gui/process.cpp" line="109"/>
         <source>Process: An error occurred when attempting to read from the process. For example, the process may not be running.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="111"/>
+        <location filename="../gui/process.cpp" line="90"/>
+        <location filename="../gui/process.cpp" line="112"/>
         <source>Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="114"/>
+        <location filename="../gui/process.cpp" line="93"/>
+        <location filename="../gui/process.cpp" line="115"/>
         <source>Process: An unknown error occurred. This is the default return value of error().</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="105"/>
-        <source>Process: The last waitFor...() function timed out.</source>
-        <translation></translation>
+        <location filename="../gui/process.cpp" line="151"/>
+        <location filename="../gui/process.cpp" line="153"/>
+        <source>Output</source>
+        <translation>Зневадження</translation>
     </message>
-</context>
-<context>
-    <name>QMessageBox</name>
     <message>
-        <location filename="../initdb.h" line="107"/>
-        <source>%1/.config/%2/db/generic.dat</source>
+        <location filename="../gui/process.cpp" line="151"/>
+        <source>It seems the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
+        <translation>Здається процес завершився вдало.&lt;br&gt;&lt;br&gt;Зневадження STDERR:&lt;br&gt;%1</translation>
+    </message>
+    <message>
+        <location filename="../gui/process.cpp" line="153"/>
+        <source>It seems the process crashed.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
+        <translation>Здається процес завершився помилкою.&lt;br&gt;&lt;br&gt;Зневадження STDERR:&lt;br&gt;%1</translation>
+    </message>
+    <message>
+        <location filename="../gui/process.cpp" line="84"/>
+        <location filename="../gui/process.cpp" line="106"/>
+        <source>Process: The last waitFor...() function timed out.</source>
         <translation></translation>
     </message>
 </context>
@@ -2494,180 +2658,211 @@ Note: leave it blank for default.</source>
         <translation> WINEPREFIX=%1/.wine </translation>
     </message>
     <message>
+        <location filename="../core/winebinlauncher.cpp" line="102"/>
         <location filename="../core/winebinlauncher.cpp" line="104"/>
         <source> WINEDLLPATH=%1 </source>
         <translation> WINEDLLPATH=%1 </translation>
     </message>
     <message>
+        <location filename="../core/winebinlauncher.cpp" line="108"/>
         <location filename="../core/winebinlauncher.cpp" line="110"/>
         <source> WINELOADER=%1 </source>
         <translation> WINELOADER=%1 </translation>
     </message>
     <message>
+        <location filename="../core/winebinlauncher.cpp" line="114"/>
         <location filename="../core/winebinlauncher.cpp" line="116"/>
         <source> WINESERVER=%1 </source>
         <translation> WINESERVER=%1 </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="128"/>
+        <location filename="../main.cpp" line="126"/>
+        <location filename="../main.cpp" line="142"/>
         <source>Version outdated</source>
         <translation>Стара версія</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="128"/>
+        <location filename="../main.cpp" line="126"/>
+        <location filename="../main.cpp" line="142"/>
         <source>Sorry, new wersion of q4wine require new files location.&lt;br&gt;&lt;br&gt;You must manually delete all old files at:&lt;br&gt;$HOME/.q4wine&lt;br&gt;$HOME/.config/Brezerk\ GNU\ Soft&lt;br&gt;&lt;br&gt;Note: new files location is:&lt;br&gt;~/.config/q4wine</source>
         <translation>Вибачте, нова версія q4wine використовує нове місце зберігання файлів.&lt;br&gt;&lt;br&gt;Вам необхідно видалити всі старі файли з наступних тек:&lt;br&gt;$HOME/.q4wine&lt;br&gt;$HOME/.config/Brezerk\ GNU\ Soft&lt;br&gt;&lt;br&gt;Увага: нове зберігання файлів:&lt;br&gt;зберігання/q4wine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="232"/>
+        <location filename="../main.cpp" line="161"/>
+        <location filename="../main.cpp" line="179"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="145"/>
+        <location filename="../main.cpp" line="161"/>
         <source>[EE] Unable to create root directory %1.</source>
         <translation>[EE] Не вдалося створити кореневий каталог %1.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="197"/>
+        <location filename="../main.cpp" line="179"/>
         <source>[EE] Unable to create directory %1.</source>
         <translation>[EE] Не вдалося створити каталог %1.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="232"/>
         <source>[EE] Unable to load database.</source>
-        <translation>[EE] Не вдалося завантажити базу даних.</translation>
+        <translation type="obsolete">[EE] Не вдалося завантажити базу даних.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="208"/>
         <source>[EE] Unable to create database.</source>
-        <translation>[EE] Не вдалося створити базу даних.</translation>
+        <translation type="obsolete">[EE] Не вдалося створити базу даних.</translation>
+    </message>
+    <message>
+        <location filename="../core/database/initdb.h" line="43"/>
+        <location filename="../core/database/initdb.h" line="51"/>
+        <source>Critical error</source>
+        <translation>Критична помилка</translation>
+    </message>
+    <message>
+        <location filename="../core/database/initdb.h" line="43"/>
+        <source>Unable to load database SQLITE driver. You need to compile qt-sql with sqlite database support</source>
+        <translation>Неможливо завантажити SQLITE драйвер. Вам потрібно зібрати qt-sql з підтримкою sqlite</translation>
+    </message>
+    <message>
+        <location filename="../core/database/initdb.h" line="48"/>
+        <source>%1/.config/%2/db/generic.dat</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../core/database/initdb.h" line="51"/>
+        <source>Sorry, i can&apos;t open database file: %1/.config/%2/db/generic.dat ; Error is: %3</source>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>Run</name>
     <message>
-        <location filename="../Run.ui" line="169"/>
+        <location filename="../uis/Run.ui" line="23"/>
+        <location filename="../uis/Run.ui" line="173"/>
         <source>Run program</source>
         <translation>Виконання програм</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="259"/>
+        <location filename="../uis/Run.ui" line="217"/>
+        <location filename="../uis/Run.ui" line="263"/>
         <source>General</source>
         <translation>Загальні</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="283"/>
+        <location filename="../uis/Run.ui" line="287"/>
         <source>Program:</source>
         <translation>Програма:</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="327"/>
+        <location filename="../uis/Run.ui" line="331"/>
         <source>Cmd Args:</source>
         <translation>Параметри:</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="358"/>
+        <location filename="../uis/Run.ui" line="362"/>
         <source>Working dir:</source>
         <translation>Робочий каталог:</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="219"/>
+        <location filename="../uis/Run.ui" line="223"/>
         <source>Prefix</source>
         <translation>Префікс</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="243"/>
+        <location filename="../uis/Run.ui" line="247"/>
         <source>Name:</source>
         <translation>Назва:</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="441"/>
+        <location filename="../uis/Run.ui" line="445"/>
         <source>Override Dll</source>
         <translation>Перевизначення Dll</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="447"/>
+        <location filename="../uis/Run.ui" line="451"/>
         <source>Present wine dlls</source>
         <translation>Наявні dll wine</translation>
     </message>
     <message>
         <location filename="../gui/run.cpp" line="136"/>
+        <location filename="../uis/Run.ui" line="490"/>
         <source>Native</source>
         <translation>Рідні</translation>
     </message>
     <message>
         <location filename="../gui/run.cpp" line="138"/>
+        <location filename="../uis/Run.ui" line="495"/>
         <source>Buildin</source>
         <translation>Вбудовані</translation>
     </message>
     <message>
         <location filename="../gui/run.cpp" line="140"/>
+        <location filename="../uis/Run.ui" line="500"/>
         <source>Native, Buildin</source>
         <translation>Рідні, вбудовані</translation>
     </message>
     <message>
         <location filename="../gui/run.cpp" line="142"/>
+        <location filename="../uis/Run.ui" line="505"/>
         <source>Buildin, Native</source>
         <translation>Вбудовані, рідні</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="509"/>
+        <location filename="../uis/Run.ui" line="513"/>
         <source>Add</source>
         <translation>Додати</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="519"/>
+        <location filename="../uis/Run.ui" line="523"/>
         <source>Overrided dlls</source>
         <translation>Перевизначені dll</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="535"/>
+        <location filename="../uis/Run.ui" line="539"/>
         <source>Dll name</source>
         <translation>Назва dll</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="540"/>
+        <location filename="../uis/Run.ui" line="544"/>
         <source>Override algoritm</source>
         <translation>Алгоритм перевизначення</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="552"/>
+        <location filename="../uis/Run.ui" line="556"/>
         <source>Advanced</source>
         <translation>Додатково</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="558"/>
+        <location filename="../uis/Run.ui" line="562"/>
         <source>Display</source>
         <translation>Показ</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="585"/>
+        <location filename="../uis/Run.ui" line="589"/>
         <source>DISPLAY:</source>
         <translation>DISPLAY:</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="601"/>
+        <location filename="../uis/Run.ui" line="605"/>
         <source>Debug options</source>
         <translation>Параметри зневаджування</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="610"/>
+        <location filename="../uis/Run.ui" line="614"/>
         <source>Run with output in console</source>
         <translation>Виконати з виводом до консолі</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="635"/>
+        <location filename="../uis/Run.ui" line="639"/>
         <source>WINEDEBUG:</source>
         <translation>WINEDEBUG:</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="737"/>
+        <location filename="../uis/Run.ui" line="741"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="744"/>
+        <location filename="../uis/Run.ui" line="748"/>
         <source>Ok</source>
         <translation>Гаразд</translation>
     </message>
@@ -2682,6 +2877,7 @@ Note: leave it blank for default.</source>
         <translation>%1/%2</translation>
     </message>
     <message>
+        <location filename="../gui/run.cpp" line="99"/>
         <location filename="../gui/run.cpp" line="102"/>
         <source>:/%1</source>
         <translation>:/%1</translation>
@@ -2692,37 +2888,37 @@ Note: leave it blank for default.</source>
         <translation>%1=</translation>
     </message>
     <message>
-        <location filename="../gui/run.cpp" line="303"/>
+        <location filename="../gui/run.cpp" line="344"/>
         <source>Open Exe file</source>
         <translation>Відкрити файл exe</translation>
     </message>
     <message>
-        <location filename="../gui/run.cpp" line="303"/>
+        <location filename="../gui/run.cpp" line="347"/>
         <source>Exe files (*.exe)</source>
         <translation>Файли exe (*.exe)</translation>
     </message>
     <message>
-        <location filename="../gui/run.cpp" line="318"/>
+        <location filename="../gui/run.cpp" line="396"/>
         <source>Open Directory</source>
         <translation>Відкрити каталог</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="387"/>
+        <location filename="../uis/Run.ui" line="391"/>
         <source>Desktop</source>
         <translation>Стільниця</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="411"/>
+        <location filename="../uis/Run.ui" line="415"/>
         <source>Desktop size:</source>
         <translation>Розмір стільниці:</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="655"/>
+        <location filename="../uis/Run.ui" line="659"/>
         <source>Nice level priority</source>
         <translation>Рівень пріорітету Nice</translation>
     </message>
     <message>
-        <location filename="../Run.ui" line="682"/>
+        <location filename="../uis/Run.ui" line="686"/>
         <source>Priority:</source>
         <translation>Пріорітет:</translation>
     </message>
@@ -2740,6 +2936,7 @@ Note: leave it blank for default.</source>
         <translation>Зачекайте</translation>
     </message>
     <message>
+        <location filename="../core/winebinlauncher.cpp" line="164"/>
         <location filename="../core/winebinlauncher.cpp" line="166"/>
         <source>Error</source>
         <translation>Помилка</translation>
@@ -2758,12 +2955,12 @@ Note: leave it blank for default.</source>
 <context>
     <name>Wizard</name>
     <message>
-        <location filename="../Wizard.ui" line="26"/>
+        <location filename="../uis/Wizard.ui" line="30"/>
         <source>Wizard</source>
         <translation>Майстер</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="205"/>
+        <location filename="../uis/Wizard.ui" line="209"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -2774,52 +2971,52 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;wizard step title&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="231"/>
+        <location filename="../uis/Wizard.ui" line="235"/>
         <source>&lt;b&gt;Step 1 of 4&lt;/b&gt;</source>
         <translation>&lt;b&gt;Крок 1 з 4&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="339"/>
+        <location filename="../uis/Wizard.ui" line="343"/>
         <source>Enter prefix name and select prefix location path.</source>
         <translation>Введіть назву префікса та шлях до його теки.</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="352"/>
+        <location filename="../uis/Wizard.ui" line="356"/>
         <source>&lt;b&gt;Prefix name:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Назва префікса:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="362"/>
+        <location filename="../uis/Wizard.ui" line="366"/>
         <source>&lt;b&gt;Prefix path:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Тека префікса:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="401"/>
+        <location filename="../uis/Wizard.ui" line="405"/>
         <source>Fake Drive</source>
         <translation>Фіктивний диск</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1849"/>
+        <location filename="../uis/Wizard.ui" line="1897"/>
         <source>Windows 95</source>
         <translation>Windows 95</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1844"/>
+        <location filename="../uis/Wizard.ui" line="1892"/>
         <source>Windows 98</source>
         <translation>Windows 98</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1814"/>
+        <location filename="../uis/Wizard.ui" line="1862"/>
         <source>Windows XP</source>
         <translation>Windows XP</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1824"/>
+        <location filename="../uis/Wizard.ui" line="1872"/>
         <source>Windows Vista</source>
         <translation>Windows Vista</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="454"/>
+        <location filename="../uis/Wizard.ui" line="458"/>
         <source>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -2830,695 +3027,761 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2788"/>
+        <location filename="../uis/Wizard.ui" line="2836"/>
         <source>&lt; Back</source>
         <translation>&lt; Назад</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1118"/>
+        <location filename="../gui/wizard.cpp" line="1018"/>
+        <location filename="../gui/wizard.cpp" line="1065"/>
+        <location filename="../gui/wizard.cpp" line="1137"/>
+        <location filename="../gui/wizard.cpp" line="1153"/>
+        <location filename="../uis/Wizard.ui" line="2843"/>
         <source>Next &gt;</source>
         <translation>Вперед &gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2805"/>
+        <location filename="../uis/Wizard.ui" line="2853"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="153"/>
+        <location filename="../gui/wizard.cpp" line="161"/>
         <source>New prefix creation wizard</source>
         <translation>Майстер створення нового префікса</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1000"/>
+        <location filename="../gui/wizard.cpp" line="162"/>
+        <location filename="../gui/wizard.cpp" line="1035"/>
         <source>&lt;b&gt;Prefix creation wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер створення нового префікса&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="935"/>
+        <location filename="../gui/wizard.cpp" line="163"/>
+        <location filename="../gui/wizard.cpp" line="181"/>
+        <location filename="../gui/wizard.cpp" line="256"/>
+        <location filename="../gui/wizard.cpp" line="264"/>
+        <location filename="../gui/wizard.cpp" line="970"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation>&lt;b&gt;Крок %1 з %2&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="322"/>
+        <location filename="../gui/wizard.cpp" line="351"/>
         <source>Open Directory</source>
         <translation>Відкрити каталог</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1149"/>
+        <location filename="../gui/wizard.cpp" line="395"/>
+        <location filename="../gui/wizard.cpp" line="398"/>
+        <location filename="../gui/wizard.cpp" line="406"/>
+        <location filename="../gui/wizard.cpp" line="409"/>
+        <location filename="../gui/wizard.cpp" line="487"/>
+        <location filename="../gui/wizard.cpp" line="491"/>
+        <location filename="../gui/wizard.cpp" line="550"/>
+        <location filename="../gui/wizard.cpp" line="557"/>
+        <location filename="../gui/wizard.cpp" line="564"/>
+        <location filename="../gui/wizard.cpp" line="568"/>
+        <location filename="../gui/wizard.cpp" line="574"/>
+        <location filename="../gui/wizard.cpp" line="578"/>
+        <location filename="../gui/wizard.cpp" line="1184"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="533"/>
+        <location filename="../gui/wizard.cpp" line="568"/>
         <source>Select prefix directory first.</source>
         <translation>Спочатку оберіть каталог префікса.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="529"/>
+        <location filename="../gui/wizard.cpp" line="564"/>
         <source>Sorry, prefix path is wrong! Directory not exists.</source>
         <translation>Вибачте, ви вказали неправильний шлях префікса. Такого шляху не існує.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1001"/>
+        <location filename="../gui/wizard.cpp" line="1036"/>
         <source>&lt;p&gt;Welcome to prefix creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful Wine prefix creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра створення префікса для Wine.&lt;/p&gt;&lt;p&gt;Цей майстер допоможе вам виконати усі кроки, необхідні для успішного створення префікса.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра, або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутись до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1130"/>
+        <location filename="../gui/wizard.cpp" line="1025"/>
+        <location filename="../gui/wizard.cpp" line="1110"/>
+        <location filename="../gui/wizard.cpp" line="1165"/>
         <source>Finish</source>
         <translation>Завершити</translation>
     </message>
-    <message encoding="UTF-8">
-        <location filename="../Wizard.ui" line="410"/>
+    <message>
+        <location filename="../uis/Wizard.ui" line="414"/>
         <source>Сreate Wine Fake Drive</source>
         <translation>Створити фіктивний диск wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1036"/>
+        <location filename="../gui/wizard.cpp" line="1071"/>
         <source>&lt;p&gt;Please check parameters listed below before clicking &lt;b&gt;Next&lt;/b&gt;:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Prefix name:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Prefix path:&lt;/b&gt; %2&lt;/p&gt;</source>
         <translation>&lt;p&gt;Будь ласка, перед тим, як натиснути кнопку &lt;b&gt;Далі&lt;/b&gt; перевірте параметри:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Назва префікса:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Шлях префікса:&lt;/b&gt; %2&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="515"/>
+        <location filename="../gui/wizard.cpp" line="550"/>
         <source>Enter prefix name first.</source>
         <translation>Спочатку введіть назву префікса.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="519"/>
+        <location filename="../gui/wizard.cpp" line="554"/>
         <source>SELECT name FROM prefix WHERE name=&apos;%1&apos;;</source>
         <translation>SELECT name FROM prefix WHERE name=&apos;%1&apos;;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="522"/>
+        <location filename="../gui/wizard.cpp" line="557"/>
         <source>Sorry. There is other prefix with same name.</source>
         <translation>Вибачте, але префікс з такою назвою вже існує.</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="489"/>
+        <location filename="../uis/Wizard.ui" line="493"/>
         <source>Wine paths:</source>
         <translation>Шляхи Wine:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="525"/>
+        <location filename="../uis/Wizard.ui" line="529"/>
         <source>wine bin:</source>
         <translation>вик.файл wine:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="569"/>
+        <location filename="../uis/Wizard.ui" line="573"/>
         <source>wine server:</source>
         <translation>сервер wine:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="613"/>
+        <location filename="../uis/Wizard.ui" line="617"/>
         <source>wine loader:</source>
         <translation>завантажувач wine:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="657"/>
+        <location filename="../uis/Wizard.ui" line="661"/>
         <source>wine libs:</source>
         <translation>бібліотеки wine:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="726"/>
+        <location filename="../uis/Wizard.ui" line="730"/>
         <source>Quick mount options:</source>
         <translation>Параметри швидкого монтування:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="732"/>
+        <location filename="../uis/Wizard.ui" line="736"/>
         <source>Source device:</source>
         <translation>Пристрій-джерело:</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="567"/>
+        <location filename="../gui/wizard.cpp" line="573"/>
+        <location filename="../gui/wizard.cpp" line="577"/>
+        <location filename="../gui/wizard.cpp" line="602"/>
+        <location filename="../uis/Wizard.ui" line="744"/>
         <source>&lt;none&gt;</source>
         <translation>&lt;немає&gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="748"/>
+        <location filename="../uis/Wizard.ui" line="752"/>
         <source>Mount point:</source>
         <translation>Точка монтування:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="818"/>
+        <location filename="../uis/Wizard.ui" line="822"/>
         <source>Base info:</source>
         <translation>Базова інформація:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="868"/>
+        <location filename="../uis/Wizard.ui" line="837"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../uis/Wizard.ui" line="872"/>
         <source>System utils</source>
         <translation>Системні засоби</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="874"/>
+        <location filename="../uis/Wizard.ui" line="878"/>
         <source>&lt;p&gt;Please set default system utils paths&lt;br&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;Будь ласка, встановіть шляхи до тек з типовими системними засобами&lt;br&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="899"/>
+        <location filename="../uis/Wizard.ui" line="903"/>
         <source>tar:</source>
         <translation>tar:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="943"/>
+        <location filename="../uis/Wizard.ui" line="947"/>
         <source>mount:</source>
         <translation>mount:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="987"/>
+        <location filename="../uis/Wizard.ui" line="991"/>
         <source>umount:</source>
         <translation>umount:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1031"/>
+        <location filename="../uis/Wizard.ui" line="1035"/>
         <source>sudo:</source>
         <translation>sudo:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1075"/>
+        <location filename="../uis/Wizard.ui" line="1079"/>
+        <source>gui sudo:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../uis/Wizard.ui" line="1123"/>
         <source>nice:</source>
         <translation>nice:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1119"/>
+        <location filename="../uis/Wizard.ui" line="1167"/>
         <source>renice:</source>
         <translation>renice:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1163"/>
+        <location filename="../uis/Wizard.ui" line="1211"/>
         <source>sh:</source>
         <translation>sh:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1223"/>
+        <location filename="../uis/Wizard.ui" line="1271"/>
         <source>User utils</source>
         <translation>Засоби користувача</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1236"/>
+        <location filename="../uis/Wizard.ui" line="1284"/>
         <source>Console</source>
         <translation>Консоль</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1260"/>
+        <location filename="../uis/Wizard.ui" line="1308"/>
         <source>Bin:</source>
         <translation>Вик. файл:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1304"/>
+        <location filename="../uis/Wizard.ui" line="1352"/>
         <source>Args:</source>
         <translation>Параметри:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1320"/>
+        <location filename="../uis/Wizard.ui" line="1368"/>
         <source>Icotool</source>
         <translation>Icotool</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1344"/>
+        <location filename="../uis/Wizard.ui" line="1392"/>
         <source>wrestool:</source>
         <translation>wrestool:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1388"/>
+        <location filename="../uis/Wizard.ui" line="1436"/>
         <source>icotool:</source>
         <translation>icotool:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1451"/>
+        <location filename="../uis/Wizard.ui" line="1499"/>
         <source>Network</source>
         <translation>Мережа</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1457"/>
+        <location filename="../uis/Wizard.ui" line="1505"/>
         <source>Please set network settings
 </source>
         <translation>Будь ласка, вкажіть параметри мережі
 </translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1483"/>
+        <location filename="../uis/Wizard.ui" line="1531"/>
         <source>Proxy type:</source>
         <translation>Тип проксі-сервера:</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="495"/>
+        <location filename="../gui/wizard.cpp" line="299"/>
+        <location filename="../gui/wizard.cpp" line="485"/>
+        <location filename="../gui/wizard.cpp" line="530"/>
+        <location filename="../uis/Wizard.ui" line="1539"/>
         <source>No Proxy</source>
         <translation>Без проксі-сервера</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1496"/>
+        <location filename="../uis/Wizard.ui" line="1544"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1501"/>
+        <location filename="../uis/Wizard.ui" line="1549"/>
         <source>Socks v5</source>
         <translation>Socks v5</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1530"/>
+        <location filename="../uis/Wizard.ui" line="1578"/>
         <source>Host:</source>
         <translation>Вузол:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1568"/>
+        <location filename="../uis/Wizard.ui" line="1616"/>
         <source>Port:</source>
         <translation>Порт:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1578"/>
+        <location filename="../uis/Wizard.ui" line="1626"/>
         <source>0000000000; </source>
         <translation>0000000000; </translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1606"/>
+        <location filename="../uis/Wizard.ui" line="1654"/>
         <source>Username:</source>
         <translation>Користувач:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1641"/>
+        <location filename="../uis/Wizard.ui" line="1689"/>
         <source>Password:</source>
         <translation>Пароль:</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="46"/>
+        <location filename="../gui/wizard.cpp" line="45"/>
         <source>%1/data/prefixc.png</source>
         <translation>%1/data/prefixc.png</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="96"/>
+        <location filename="../gui/wizard.cpp" line="63"/>
+        <location filename="../gui/wizard.cpp" line="97"/>
+        <location filename="../gui/wizard.cpp" line="104"/>
         <source>%1/data/firstc.png</source>
         <translation>%1/data/firstc.png</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="113"/>
+        <location filename="../gui/wizard.cpp" line="121"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="118"/>
+        <location filename="../gui/wizard.cpp" line="123"/>
+        <location filename="../gui/wizard.cpp" line="126"/>
         <source>:/%1</source>
         <translation>:/%1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="171"/>
+        <location filename="../gui/wizard.cpp" line="179"/>
         <source>First startup wizard</source>
         <translation>Майстер початкового налаштування</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="172"/>
+        <location filename="../gui/wizard.cpp" line="180"/>
         <source>&lt;b&gt;First startup wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер початкового налаштування&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="320"/>
+        <location filename="../gui/wizard.cpp" line="349"/>
         <source>Open File</source>
         <translation>Відкрити файл</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="346"/>
+        <location filename="../gui/wizard.cpp" line="375"/>
         <source>%1wineserver</source>
         <translation>%1wineserver</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="347"/>
+        <location filename="../gui/wizard.cpp" line="376"/>
         <source>%1wine</source>
         <translation>%1wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="366"/>
+        <location filename="../gui/wizard.cpp" line="395"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Будь ласка, вкажіть каталог %1.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="369"/>
+        <location filename="../gui/wizard.cpp" line="398"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Будь ласка, вкажіть виконуваний файл %1.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="377"/>
+        <location filename="../gui/wizard.cpp" line="406"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation>Вибачте, вказаного каталогу %1 не існує.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="380"/>
+        <location filename="../gui/wizard.cpp" line="409"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation>Вибачте, вказаного виконуваного файла %1 не існує.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="453"/>
+        <location filename="../gui/wizard.cpp" line="487"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Будь ласка, вкажіть вузол проксі-сервера.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="457"/>
+        <location filename="../gui/wizard.cpp" line="491"/>
         <source>Sorry, specify proxy port.</source>
         <translation>Будь ласка, вкажіть порт проксі-сервера.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="539"/>
+        <location filename="../gui/wizard.cpp" line="574"/>
         <source>Sorry, specify mount point directory.</source>
         <translation>Будь ласка, вкажіть каталог точки монтування.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="543"/>
+        <location filename="../gui/wizard.cpp" line="578"/>
         <source>Sorry, specify source device.</source>
         <translation>Будь ласка, вкажіть пристрій-джерело.</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="944"/>
+        <location filename="../gui/wizard.cpp" line="979"/>
         <source>&lt;b&gt;First startup wizrd&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер початкового налаштування&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="945"/>
+        <location filename="../gui/wizard.cpp" line="980"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра початкового налаштування.&lt;/p&gt;&lt;p&gt;За допомогою цього майстра ви зможете виконати всі кроки з початкового налаштування %1.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутися до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="954"/>
+        <location filename="../gui/wizard.cpp" line="989"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Malakhov Alexey aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General ideia comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts witch was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation>&lt;p&gt;Першим автором &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; був Олексій Малахов aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Загальну ідею було взято зі скриптів &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt;, автором яких є Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Програму випущено за умов дотримання &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Коментарі, повідомлення про вади, тощо, надсилайте за адресою [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Пам’ятайте&lt;/span&gt;&lt;/b&gt;: Це програмне забезпечення постачається без будь-яких гарантій. Автор &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;НЕ&lt;/span&gt;&lt;/b&gt; надає жодної підтримки або жодних довідок щодо WineTools, Wine, встановлення програм, Linux або Microsoft Windows.&lt;/p&gt;&lt;p&gt;Якщо вам &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;потрібна допомога&lt;/span&gt;, надішліть своє питання до списку розсилки за адресою &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Якщо вам &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;потрібна підтримка&lt;/span&gt;, придбайте комерційну версію wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1043"/>
+        <location filename="../gui/wizard.cpp" line="1078"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: %1</source>
         <translation>&lt;p&gt;&lt;b&gt;Виконуваний файл Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1045"/>
+        <location filename="../gui/wizard.cpp" line="1080"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: Default</source>
         <translation>&lt;p&gt;&lt;b&gt;Виконуваний файл Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1049"/>
+        <location filename="../gui/wizard.cpp" line="1084"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Сервер Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1051"/>
+        <location filename="../gui/wizard.cpp" line="1086"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Сервер Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1055"/>
+        <location filename="../gui/wizard.cpp" line="1090"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Завантажувач Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1057"/>
+        <location filename="../gui/wizard.cpp" line="1092"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Завантажувач Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1061"/>
+        <location filename="../gui/wizard.cpp" line="1096"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Каталог dll Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1063"/>
+        <location filename="../gui/wizard.cpp" line="1098"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Каталог dll Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1067"/>
+        <location filename="../gui/wizard.cpp" line="1102"/>
         <source>&lt;p&gt;&lt;b&gt;Quick mount options&lt;/b&gt; &lt;br&gt;&lt;b&gt;Device&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Mount point&lt;/b&gt;: %2&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Параметри швидкого монтування&lt;/b&gt; &lt;br&gt;&lt;b&gt;Пристрій&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Точка монтування&lt;/b&gt;: %2&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1692"/>
+        <location filename="../uis/Wizard.ui" line="1740"/>
         <source>General settings</source>
         <translation>Загальні параметри</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1698"/>
+        <location filename="../uis/Wizard.ui" line="1746"/>
         <source>Please enter user registration information:</source>
         <translation>Введіть реєстраційні данні:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1723"/>
+        <location filename="../uis/Wizard.ui" line="1771"/>
         <source>Owner:</source>
         <translation>Користувач:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1761"/>
+        <location filename="../uis/Wizard.ui" line="1809"/>
         <source>Organization:</source>
         <translation>Організація:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1806"/>
+        <location filename="../uis/Wizard.ui" line="1854"/>
         <source>Version:</source>
         <translation>Версія:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1819"/>
+        <location filename="../uis/Wizard.ui" line="1867"/>
         <source>Windows 2008</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1829"/>
+        <location filename="../uis/Wizard.ui" line="1877"/>
         <source>Windows 2003</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1834"/>
+        <location filename="../uis/Wizard.ui" line="1882"/>
         <source>Windows 2000</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1839"/>
+        <location filename="../uis/Wizard.ui" line="1887"/>
         <source>Windows ME</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1854"/>
+        <location filename="../uis/Wizard.ui" line="1902"/>
         <source>Windows NT 4.0</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1859"/>
+        <location filename="../uis/Wizard.ui" line="1907"/>
         <source>Windows NT 3.5</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1864"/>
+        <location filename="../uis/Wizard.ui" line="1912"/>
         <source>Windows 3.1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1869"/>
+        <location filename="../uis/Wizard.ui" line="1917"/>
         <source>Windows 3.0</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1874"/>
+        <location filename="../uis/Wizard.ui" line="1922"/>
         <source>Windows 2.0</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1885"/>
+        <location filename="../uis/Wizard.ui" line="1933"/>
         <source>
 If you wish to use qt system colors in wine dialogs, select option below:</source>
         <translation>Якщо, Ви бажаєте використовувати кольорову палітру qt у діалогових вікнах wine, оберіть опцію нижче:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1917"/>
+        <location filename="../uis/Wizard.ui" line="1965"/>
         <source>Colors:</source>
         <translation>Кольори:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1924"/>
+        <location filename="../uis/Wizard.ui" line="1972"/>
         <source>Use QT palette</source>
         <translation>Використовувати палітру QT</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1974"/>
+        <location filename="../uis/Wizard.ui" line="2022"/>
         <source>Direct 3D settings</source>
         <translation>Налаштування Direct 3D</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2005"/>
+        <location filename="../uis/Wizard.ui" line="2053"/>
         <source>Multisampling:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2547"/>
+        <location filename="../uis/Wizard.ui" line="2061"/>
+        <location filename="../uis/Wizard.ui" line="2108"/>
+        <location filename="../uis/Wizard.ui" line="2155"/>
+        <location filename="../uis/Wizard.ui" line="2217"/>
+        <location filename="../uis/Wizard.ui" line="2269"/>
+        <location filename="../uis/Wizard.ui" line="2407"/>
+        <location filename="../uis/Wizard.ui" line="2454"/>
+        <location filename="../uis/Wizard.ui" line="2501"/>
+        <location filename="../uis/Wizard.ui" line="2548"/>
+        <location filename="../uis/Wizard.ui" line="2595"/>
         <source>default</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2226"/>
+        <location filename="../uis/Wizard.ui" line="2066"/>
+        <location filename="../uis/Wizard.ui" line="2274"/>
         <source>enabled</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2231"/>
+        <location filename="../uis/Wizard.ui" line="2071"/>
+        <location filename="../uis/Wizard.ui" line="2160"/>
+        <location filename="../uis/Wizard.ui" line="2279"/>
         <source>disabled</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2052"/>
+        <location filename="../uis/Wizard.ui" line="2100"/>
         <source>D3D Renderer:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2065"/>
+        <location filename="../uis/Wizard.ui" line="2113"/>
         <source>gdi</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2070"/>
+        <location filename="../uis/Wizard.ui" line="2118"/>
         <source>opengl</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2099"/>
+        <location filename="../uis/Wizard.ui" line="2147"/>
         <source>LockMode:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2117"/>
+        <location filename="../uis/Wizard.ui" line="2165"/>
         <source>readdraw</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2122"/>
+        <location filename="../uis/Wizard.ui" line="2170"/>
         <source>readtex</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2127"/>
+        <location filename="../uis/Wizard.ui" line="2175"/>
         <source>texdraw</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2132"/>
+        <location filename="../uis/Wizard.ui" line="2180"/>
         <source>textex</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2161"/>
+        <location filename="../uis/Wizard.ui" line="2209"/>
         <source>Offscreen Mode:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2174"/>
+        <location filename="../uis/Wizard.ui" line="2222"/>
         <source>backbuffer</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2179"/>
+        <location filename="../uis/Wizard.ui" line="2227"/>
         <source>pbuffer</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2184"/>
+        <location filename="../uis/Wizard.ui" line="2232"/>
         <source>fbo</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2213"/>
+        <location filename="../uis/Wizard.ui" line="2261"/>
         <source>Use GLSL:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2260"/>
+        <location filename="../uis/Wizard.ui" line="2308"/>
         <source>VMemory (Mb):</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2270"/>
+        <location filename="../uis/Wizard.ui" line="2318"/>
         <source>D999999999; </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2320"/>
+        <location filename="../uis/Wizard.ui" line="2368"/>
         <source>X11 Driver</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2351"/>
+        <location filename="../uis/Wizard.ui" line="2399"/>
         <source>WithRender:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2552"/>
+        <location filename="../uis/Wizard.ui" line="2412"/>
+        <location filename="../uis/Wizard.ui" line="2459"/>
+        <location filename="../uis/Wizard.ui" line="2506"/>
+        <location filename="../uis/Wizard.ui" line="2553"/>
+        <location filename="../uis/Wizard.ui" line="2600"/>
         <source>Y</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2557"/>
+        <location filename="../uis/Wizard.ui" line="2417"/>
+        <location filename="../uis/Wizard.ui" line="2464"/>
+        <location filename="../uis/Wizard.ui" line="2511"/>
+        <location filename="../uis/Wizard.ui" line="2558"/>
+        <location filename="../uis/Wizard.ui" line="2605"/>
         <source>N</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2398"/>
+        <location filename="../uis/Wizard.ui" line="2446"/>
         <source>AA WithRender:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2445"/>
+        <location filename="../uis/Wizard.ui" line="2493"/>
         <source>AA WithCore:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2492"/>
+        <location filename="../uis/Wizard.ui" line="2540"/>
         <source>UseXRandR:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2539"/>
+        <location filename="../uis/Wizard.ui" line="2587"/>
         <source>UseXVidMode:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2605"/>
+        <location filename="../uis/Wizard.ui" line="2653"/>
         <source>Wine Browsers</source>
         <translation>Браузери wine</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2636"/>
+        <location filename="../uis/Wizard.ui" line="2684"/>
         <source>Browsers:</source>
         <translation>Браузери:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2674"/>
+        <location filename="../uis/Wizard.ui" line="2722"/>
         <source>Mailers:</source>
         <translation>Поштовики:</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="225"/>
+        <location filename="../gui/wizard.cpp" line="254"/>
         <source>Fake drive creation wizard</source>
         <translation>Створення фіктивного диску</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="226"/>
+        <location filename="../gui/wizard.cpp" line="255"/>
         <source>&lt;b&gt;Fake drive creation wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер створення нового фіктивного диску&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="228"/>
+        <location filename="../gui/wizard.cpp" line="257"/>
         <source>&lt;p&gt;Welcome to fake drive creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра створення фіктивного диску.&lt;/p&gt;&lt;p&gt;Цей майстер допоможе вам виконати усі кроки, необхідні для успішного створення фіктивного диску.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра, або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутись до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="233"/>
+        <location filename="../gui/wizard.cpp" line="262"/>
         <source>Fake drive update wizard</source>
         <translation>Оновлення фіктивного диску</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="234"/>
+        <location filename="../gui/wizard.cpp" line="263"/>
         <source>&lt;b&gt;Fake drive update wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер оновлення існуючого фіктивного диску&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="236"/>
+        <location filename="../gui/wizard.cpp" line="265"/>
         <source>&lt;p&gt;Welcome to fake drive update wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра оновлення фіктивного диску.&lt;/p&gt;&lt;p&gt;Цей майстер допоможе вам виконати усі кроки, необхідні для успішного оновлення фіктивного диску.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра, або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутись до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="652"/>
+        <location filename="../gui/wizard.cpp" line="687"/>
         <source>[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion]
 &quot;RegisteredOrganization&quot;=&quot;%1&quot;
 &quot;RegisteredOwner&quot;=&quot;%2&quot;
@@ -3528,7 +3791,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="655"/>
+        <location filename="../gui/wizard.cpp" line="690"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\WineBrowser]
@@ -3536,7 +3799,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="658"/>
+        <location filename="../gui/wizard.cpp" line="693"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\WineBrowser]
@@ -3544,7 +3807,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="661"/>
+        <location filename="../gui/wizard.cpp" line="696"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3552,7 +3815,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="664"/>
+        <location filename="../gui/wizard.cpp" line="699"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3560,7 +3823,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="667"/>
+        <location filename="../gui/wizard.cpp" line="702"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3568,7 +3831,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="670"/>
+        <location filename="../gui/wizard.cpp" line="705"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3576,7 +3839,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="673"/>
+        <location filename="../gui/wizard.cpp" line="708"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3584,7 +3847,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="676"/>
+        <location filename="../gui/wizard.cpp" line="711"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\Direct3D]
@@ -3592,7 +3855,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="679"/>
+        <location filename="../gui/wizard.cpp" line="714"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3600,7 +3863,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="682"/>
+        <location filename="../gui/wizard.cpp" line="717"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3608,7 +3871,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="685"/>
+        <location filename="../gui/wizard.cpp" line="720"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3616,7 +3879,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="688"/>
+        <location filename="../gui/wizard.cpp" line="723"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3624,7 +3887,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="691"/>
+        <location filename="../gui/wizard.cpp" line="726"/>
         <source>
 
 [HKEY_CURRENT_USER\Software\Wine\X11 Driver]
@@ -3632,7 +3895,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="696"/>
+        <location filename="../gui/wizard.cpp" line="731"/>
         <source>
 
 [HKEY_CURRENT_USER\Control Panel\Colors]
@@ -3640,214 +3903,217 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="705"/>
+        <location filename="../gui/wizard.cpp" line="740"/>
         <source>&quot;Window&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="708"/>
+        <location filename="../gui/wizard.cpp" line="743"/>
         <source>&quot;ActiveBorder&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="709"/>
+        <location filename="../gui/wizard.cpp" line="744"/>
         <source>&quot;InactiveBorder&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="710"/>
+        <location filename="../gui/wizard.cpp" line="745"/>
         <source>&quot;AppWorkSpace&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="711"/>
+        <location filename="../gui/wizard.cpp" line="746"/>
         <source>&quot;Menu&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="712"/>
+        <location filename="../gui/wizard.cpp" line="747"/>
         <source>&quot;MenuBar&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="713"/>
+        <location filename="../gui/wizard.cpp" line="748"/>
         <source>&quot;Scrollbar&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="714"/>
+        <location filename="../gui/wizard.cpp" line="749"/>
         <source>&quot;MenuHilight&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="715"/>
+        <location filename="../gui/wizard.cpp" line="750"/>
         <source>&quot;ButtonFace&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="718"/>
+        <location filename="../gui/wizard.cpp" line="753"/>
         <source>&quot;ButtonAlternateFace&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="721"/>
+        <location filename="../gui/wizard.cpp" line="756"/>
         <source>&quot;ButtonDkShadow&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="722"/>
+        <location filename="../gui/wizard.cpp" line="757"/>
         <source>&quot;ButtonShadow&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="723"/>
+        <location filename="../gui/wizard.cpp" line="758"/>
         <source>&quot;GrayText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="726"/>
+        <location filename="../gui/wizard.cpp" line="761"/>
         <source>&quot;ButtonHilight&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="729"/>
+        <location filename="../gui/wizard.cpp" line="764"/>
         <source>&quot;ButtonText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="732"/>
+        <location filename="../gui/wizard.cpp" line="767"/>
         <source>&quot;MenuText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="733"/>
+        <location filename="../gui/wizard.cpp" line="768"/>
         <source>&quot;WindowFrame&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="734"/>
+        <location filename="../gui/wizard.cpp" line="769"/>
         <source>&quot;WindowText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="737"/>
+        <location filename="../gui/wizard.cpp" line="772"/>
         <source>&quot;Hilight&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="740"/>
+        <location filename="../gui/wizard.cpp" line="775"/>
         <source>&quot;HilightText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="743"/>
+        <location filename="../gui/wizard.cpp" line="778"/>
         <source>&quot;InfoWindow&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="746"/>
+        <location filename="../gui/wizard.cpp" line="781"/>
         <source>&quot;InfoText&quot;=&quot;%1 %2 %3&quot;
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="784"/>
+        <location filename="../gui/wizard.cpp" line="800"/>
+        <location filename="../gui/wizard.cpp" line="812"/>
+        <location filename="../gui/wizard.cpp" line="819"/>
         <source>system</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="796"/>
+        <location filename="../gui/wizard.cpp" line="831"/>
         <source>Configure the general settings for Wine</source>
         <translation>Загальний конфігуратор Wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="807"/>
+        <location filename="../gui/wizard.cpp" line="842"/>
         <source>Wineconsole is similar to wine command wcmd</source>
         <translation>Командна консоль wine, схожа на wcmd</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="818"/>
+        <location filename="../gui/wizard.cpp" line="853"/>
         <source>Uninstall Windows programs under Wine properly</source>
         <translation>Де інсталятор програм встановлених на wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="829"/>
+        <location filename="../gui/wizard.cpp" line="864"/>
         <source>Wine registry editor</source>
         <translation>Редактор реєстру wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="840"/>
+        <location filename="../gui/wizard.cpp" line="875"/>
         <source>Browse the files in the virtual Wine drive</source>
         <translation>Переглядач файлів на фіктивному диску wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="851"/>
+        <location filename="../gui/wizard.cpp" line="886"/>
         <source>Wine CD eject tool</source>
         <translation>Виштовхувач КД wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="862"/>
+        <location filename="../gui/wizard.cpp" line="897"/>
         <source>Wine wordpad text editor</source>
         <translation>Потужний текстовий редактор wine</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1039"/>
+        <location filename="../gui/wizard.cpp" line="1074"/>
         <source>&lt;p&gt;Wine fake drive will be created.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Буде створено фіктивний диск wine&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1124"/>
+        <location filename="../gui/wizard.cpp" line="1159"/>
         <source>&lt;p&gt;All ready for fake drive creation. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create facke drive. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Все готово для створення фіктивного диску. &lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Завершити&lt;/b&gt; щоб створити фіктивний диск. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt; щоб повернутися і змінити обрані параметри.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="883"/>
+        <location filename="../gui/wizard.cpp" line="909"/>
+        <location filename="../gui/wizard.cpp" line="918"/>
         <source>autostart</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="1149"/>
+        <location filename="../gui/wizard.cpp" line="1184"/>
         <source>Sorry, i can&apos;t access to /etc/fstab</source>
         <translation>Вибачте, не вдалося отримати доступ до /proc/fstab</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="1229"/>
+        <location filename="../uis/Wizard.ui" line="1277"/>
         <source>&lt;p&gt;Please set default user utils paths&lt;br&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;Будь ласка, встановіть шляхи до тек з типовими засобами користувача&lt;br&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="967"/>
+        <location filename="../gui/wizard.cpp" line="1002"/>
         <source>&lt;p&gt;Please enter default wine settings.&lt;/p&gt;&lt;br&gt;</source>
         <translation>&lt;p&gt;Будь ласка, встановіть типові шляхи до засобів wine.&lt;br&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/wizard.cpp" line="987"/>
+        <location filename="../gui/wizard.cpp" line="1022"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Все готово для завершення конфігурації %1. &lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Завершити&lt;/b&gt; щоб закінчити процес налаштування. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt; щоб повернутися і змінити обрані параметри.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="495"/>
+        <location filename="../uis/Wizard.ui" line="499"/>
         <source>If you wish to use different wine versions, you may wish set custom wine path here.
 
 Note: leave it blank for default.</source>
@@ -3856,7 +4122,7 @@ Note: leave it blank for default.</source>
 Зауваження: не заповнюйте, якщо не збираєтеся цього робити.</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="714"/>
+        <location filename="../uis/Wizard.ui" line="718"/>
         <source>If you wish to use quick mount feature specify source device and mount point directory.
 
 Note: leave it blank if you don&apos;t nead it.</source>
@@ -3865,443 +4131,546 @@ Note: leave it blank if you don&apos;t nead it.</source>
 Зауваження: не заповнюйте, якщо це вам не потрібно.</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="833"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../Wizard.ui" line="1781"/>
+        <location filename="../uis/Wizard.ui" line="1829"/>
         <source>Please select default fake drive version:</source>
         <translation>Оберіть версію фіктивного диску:</translation>
     </message>
     <message>
-        <location filename="../Wizard.ui" line="2611"/>
+        <location filename="../uis/Wizard.ui" line="2028"/>
+        <location filename="../uis/Wizard.ui" line="2374"/>
+        <location filename="../uis/Wizard.ui" line="2659"/>
         <source>Note: Leave empty for default</source>
-        <translation>Зауваження: не заповнюйте, якщо це вам не потрібно.</translation>
+        <translation>Зауваження: не заповнюйте, якщо це вам не потрібно</translation>
     </message>
 </context>
 <context>
     <name>winetricks</name>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="86"/>
+        <location filename="../temporary/winetricks.cpp" line="64"/>
+        <source>&lt;p&gt;q4wine can&apos;t locate winetricks at %1 path!&lt;/p&gt;&lt;p&gt;The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Or use &quot;Install winetricks&quot; button.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;q4wine не може знайти winetricks за шляхом %1!&lt;/p&gt;&lt;p&gt;Цей скрипт розробляєтся DanKegel та розміщується за адрессою: http://www.kegel.com/wine/winetricks.  Ви можете завантажити його з терміналу:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Або використати кнопку &quot;Install winetricks&quot;.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.cpp" line="91"/>
         <source>Running winetricks...</source>
         <translation>Запуск Winetricks...</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="127"/>
+        <location filename="../temporary/winetricks.cpp" line="91"/>
+        <location filename="../temporary/winetricks.cpp" line="128"/>
         <source>Plz wait...</source>
         <translation>Зачекайте...</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="127"/>
+        <location filename="../temporary/winetricks.cpp" line="128"/>
         <source>Downloading and installing winetricks...</source>
         <translation>Качаємо та встановлюємо winetricks...</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="14"/>
-        <source>Dialog</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../temporary/winetricks.ui" line="21"/>
+        <location filename="../temporary/winetricks.ui" line="27"/>
         <source>art2kmin </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="26"/>
+        <location filename="../temporary/winetricks.ui" line="32"/>
         <source>colorprofile</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="31"/>
+        <location filename="../temporary/winetricks.ui" line="37"/>
         <source>comctl32</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="36"/>
+        <location filename="../temporary/winetricks.ui" line="42"/>
         <source>comctl32.ocx</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="41"/>
+        <location filename="../temporary/winetricks.ui" line="47"/>
         <source>controlpad</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="46"/>
+        <location filename="../temporary/winetricks.ui" line="52"/>
         <source>corefonts</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="51"/>
+        <location filename="../temporary/winetricks.ui" line="57"/>
         <source>dcom98</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="56"/>
+        <location filename="../temporary/winetricks.ui" line="62"/>
         <source>dirac0.8</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="61"/>
+        <location filename="../temporary/winetricks.ui" line="67"/>
         <source>directx9</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="66"/>
+        <location filename="../temporary/winetricks.ui" line="72"/>
         <source>divx</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="71"/>
+        <location filename="../temporary/winetricks.ui" line="77"/>
         <source>dotnet11</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="76"/>
+        <location filename="../temporary/winetricks.ui" line="82"/>
         <source>dotnet20</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="81"/>
+        <location filename="../temporary/winetricks.ui" line="87"/>
         <source>ffdshow</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="86"/>
+        <location filename="../temporary/winetricks.ui" line="92"/>
         <source>flash</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="91"/>
+        <location filename="../temporary/winetricks.ui" line="97"/>
         <source>fm20</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="96"/>
+        <location filename="../temporary/winetricks.ui" line="102"/>
         <source>fontfix</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="101"/>
+        <location filename="../temporary/winetricks.ui" line="107"/>
         <source>gdiplus</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="106"/>
+        <location filename="../temporary/winetricks.ui" line="112"/>
         <source>gecko</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="116"/>
+        <location filename="../temporary/winetricks.ui" line="122"/>
         <source>icodecs</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="121"/>
+        <location filename="../temporary/winetricks.ui" line="127"/>
         <source>jet40</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="126"/>
+        <location filename="../temporary/winetricks.ui" line="132"/>
         <source>liberation</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="131"/>
+        <location filename="../temporary/winetricks.ui" line="137"/>
         <source>mdac25</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="136"/>
+        <location filename="../temporary/winetricks.ui" line="142"/>
         <source>mdac27</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="141"/>
+        <location filename="../temporary/winetricks.ui" line="147"/>
         <source>mdac28</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="146"/>
+        <location filename="../temporary/winetricks.ui" line="152"/>
         <source>mfc40</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="151"/>
+        <location filename="../temporary/winetricks.ui" line="157"/>
         <source>mfc42</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="156"/>
+        <location filename="../temporary/winetricks.ui" line="162"/>
         <source>mono20</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="166"/>
+        <location filename="../temporary/winetricks.ui" line="172"/>
         <source>msi2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="171"/>
+        <location filename="../temporary/winetricks.ui" line="177"/>
         <source>mshfixgd</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="176"/>
+        <location filename="../temporary/winetricks.ui" line="182"/>
         <source>msls31</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="181"/>
+        <location filename="../temporary/winetricks.ui" line="187"/>
         <source>msmask</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="186"/>
+        <location filename="../temporary/winetricks.ui" line="192"/>
         <source>msscript</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="191"/>
+        <location filename="../temporary/winetricks.ui" line="197"/>
         <source>msxml3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="196"/>
+        <location filename="../temporary/winetricks.ui" line="202"/>
         <source>msxml4</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="206"/>
+        <location filename="../temporary/winetricks.ui" line="212"/>
         <source>ogg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="211"/>
+        <location filename="../temporary/winetricks.ui" line="217"/>
         <source>ole2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="216"/>
+        <location filename="../temporary/winetricks.ui" line="222"/>
         <source>pdh</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="221"/>
+        <location filename="../temporary/winetricks.ui" line="227"/>
         <source>quicktime72</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="226"/>
+        <location filename="../temporary/winetricks.ui" line="232"/>
         <source>riched20</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="231"/>
+        <location filename="../temporary/winetricks.ui" line="237"/>
         <source>riched30</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="236"/>
+        <location filename="../temporary/winetricks.ui" line="242"/>
         <source>tahoma</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="241"/>
+        <location filename="../temporary/winetricks.ui" line="247"/>
         <source>urlmon</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="246"/>
+        <location filename="../temporary/winetricks.ui" line="252"/>
         <source>vb3run</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="251"/>
+        <location filename="../temporary/winetricks.ui" line="257"/>
         <source>vb4run</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="256"/>
+        <location filename="../temporary/winetricks.ui" line="262"/>
         <source>vb5run</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="261"/>
+        <location filename="../temporary/winetricks.ui" line="267"/>
         <source>vb6run</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="266"/>
+        <location filename="../temporary/winetricks.ui" line="272"/>
         <source>vcrun6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="271"/>
+        <location filename="../temporary/winetricks.ui" line="277"/>
         <source>vcrun2003</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="276"/>
+        <location filename="../temporary/winetricks.ui" line="282"/>
         <source>vcrun2005</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="281"/>
+        <location filename="../temporary/winetricks.ui" line="287"/>
         <source>vcrun2005sp1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="286"/>
+        <location filename="../temporary/winetricks.ui" line="292"/>
         <source>vcrun2008</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="296"/>
+        <location filename="../temporary/winetricks.ui" line="302"/>
         <source>wininet</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="301"/>
+        <location filename="../temporary/winetricks.ui" line="307"/>
+        <source>wme9</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="312"/>
         <source>wmp9</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="306"/>
+        <location filename="../temporary/winetricks.ui" line="317"/>
         <source>wmp10</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="311"/>
+        <location filename="../temporary/winetricks.ui" line="322"/>
         <source>wsh56</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="316"/>
+        <location filename="../temporary/winetricks.ui" line="327"/>
         <source>wsh56js</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="321"/>
+        <location filename="../temporary/winetricks.ui" line="332"/>
         <source>wsh56vb</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="326"/>
+        <location filename="../temporary/winetricks.ui" line="337"/>
         <source>xvid</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="336"/>
+        <location filename="../temporary/winetricks.ui" line="347"/>
         <source>firefox3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="341"/>
+        <location filename="../temporary/winetricks.ui" line="352"/>
         <source>ie6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="346"/>
+        <location filename="../temporary/winetricks.ui" line="357"/>
         <source>kde</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="351"/>
+        <location filename="../temporary/winetricks.ui" line="362"/>
         <source>mpc</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="356"/>
+        <location filename="../temporary/winetricks.ui" line="367"/>
         <source>vlc</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="361"/>
+        <location filename="../temporary/winetricks.ui" line="372"/>
         <source>allfonts</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="366"/>
+        <location filename="../temporary/winetricks.ui" line="377"/>
         <source>allcodecs</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="371"/>
+        <location filename="../temporary/winetricks.ui" line="382"/>
         <source>fakeie6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="376"/>
+        <location filename="../temporary/winetricks.ui" line="387"/>
         <source>native_mdac</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="381"/>
+        <location filename="../temporary/winetricks.ui" line="392"/>
         <source>native_oleaut32</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="424"/>
+        <location filename="../temporary/winetricks.ui" line="414"/>
+        <source>Compatible with winetricks = 20090227
+Uses cabextract</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="422"/>
         <source>Install Winetricks</source>
         <translation>Встановлюю Winetricks</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="59"/>
+        <location filename="../temporary/winetricks.ui" line="429"/>
+        <source>Help</source>
+        <translation>Довідка</translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.cpp" line="64"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="59"/>
         <source>&lt;p&gt;q4wine can&apos;t locate winetricks!&lt;/p&gt;&lt;p&gt;The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Or use &quot;Install winetricks&quot; button.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;q4wine не може знайти winetricks!&lt;/p&gt;&lt;p&gt;Цей скрипт розробляється та підтримується DanKegel (http://www.kegel.com/wine/winetricks). Ви можете завантажити його з командної строки:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Або скористатися кнопкою &quot;Встановити winetricks&quot;&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;q4wine не може знайти winetricks!&lt;/p&gt;&lt;p&gt;Цей скрипт розробляється та підтримується DanKegel (http://www.kegel.com/wine/winetricks). Ви можете завантажити його з командної строки:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Або скористатися кнопкою &quot;Встановити winetricks&quot;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="389"/>
+        <location filename="../temporary/winetricks.ui" line="400"/>
         <source>Install</source>
         <translation>Встановити</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="396"/>
+        <location filename="../temporary/winetricks.ui" line="407"/>
         <source>Exit</source>
         <translation>Вийти</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="111"/>
+        <location filename="../temporary/winetricks.ui" line="117"/>
         <source>hosts</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="161"/>
+        <location filename="../temporary/winetricks.ui" line="14"/>
+        <source>winetricks@q4wine</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.ui" line="167"/>
         <source>mono22</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="201"/>
+        <location filename="../temporary/winetricks.ui" line="207"/>
         <source>msxml6</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="291"/>
+        <location filename="../temporary/winetricks.ui" line="297"/>
         <source>vjrun20</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="331"/>
+        <location filename="../temporary/winetricks.ui" line="342"/>
         <source>autohotkey</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="416"/>
         <source>Compatible with winetricks &gt;= 20090121
 Uses cabextract</source>
-        <translation>Сумісно з winetricks &gt;= 20090121
+        <translation type="obsolete">Сумісно з winetricks &gt;= 20090121
 Використовуе cabextract</translation>
+    </message>
+</context>
+<context>
+    <name>winetrickshelp</name>
+    <message>
+        <location filename="../temporary/winetrickshelp.ui" line="17"/>
+        <source>Dialog</source>
+        <translation>Діалог</translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetrickshelp.ui" line="42"/>
+        <source>Packages:                                                     
+ art2kmin      MS Access 2000 runtime.  Requires Access 2000 Dev license!
+ colorprofile  Standard RGB color profile                                
+ comctl32      MS common controls 5.80                                   
+ comctl32.ocx  MS comctl32.ocx and mscomctl.ocx, comctl32 wrappers for VB6
+ controlpad    MS ActiveX Control Pad                                     
+ corefonts     MS Arial, Courier, Times fonts                             
+ dcom98        MS DCOM (ole32, oleaut32); requires Win98 license!         
+ dirac0.8      the obsolete Dirac 0.8 directshow filter                   
+ directx9      MS DirectX 9 user redistributable                          
+ divx          divx video codec                                           
+ dotnet11      MS .NET 1.1 (requires Windows license)                     
+ dotnet20      MS .NET 2.0 (requires Windows license)                     
+ ffdshow       ffdshow video codecs                                       
+ flash         Adobe Flash Player ActiveX and firefox plugins             
+ fm20          MS Forms 2.0 Object Library                                
+ fontfix       Fix bad fonts which cause crash in some apps (e.g. .net).  
+ gdiplus       MS gdiplus.dll (from powerpoint viewer)                    
+ gecko         The HTML rendering Engine (Mozilla)                        
+ hosts         Adds empty C:\windows\system32\drivers\etc\{hosts,services} files
+ icodecs       Intel Codecs (Indeo)                                             
+ jet40         MS Jet 4.0 Service Pack 8                                        
+ liberation    Red Hat Liberation fonts (Sans, Serif, Mono)                     
+ mdac25        MS MDAC 2.5: Microsoft ODBC drivers, etc.                        
+ mdac27        MS MDAC 2.7                                                      
+ mdac28        MS MDAC 2.8                                                      
+ mfc40         MS mfc40 (Microsoft Foundation Classes from Visual C++ 4)        
+ mfc42         MS mfc42 (same as vcrun6 below)                                  
+ mono20        mono-2.0.1                                                       
+ mono22        mono-2.2                                                         
+ msi2          MS Installer 2.0                                                 
+ mshflxgd      MS Hierarchical Flex Grid Control                                
+ msls31        MS Line Services 3.1 (needed by native riched?)                  
+ msmask        MS Masked Edit Control                                           
+ msscript      MS Script Control                                                
+ msxml3        MS XML version 3                                                 
+ msxml4        MS XML version 4                                                 
+ msxml6        MS XML version 6                                                 
+ ogg           ogg filters/codecs: flac, theora, speex, vorbis, schroedinger    
+ ole2          MS 16 bit OLE                                                    
+ pdh           MS pdh.dll (Performance Data Helper)                             
+ quicktime72   Apple Quicktime 7.2                                              
+ riched20      MS riched20 and riched32                                         
+ riched30      MS riched30                                                      
+ tahoma        MS Tahoma font (not part of corefonts)                           
+ urlmon        MS urlmon.dll                                                    
+ vb3run        MS Visual Basic 3 runtime                                        
+ vb4run        MS Visual Basic 4 runtime                                        
+ vb5run        MS Visual Basic 5 runtime
+ vb6run        MS Visual Basic 6 runtime
+ vcrun6        MS Visual C++ 6 sp4 libraries (mfc42, msvcp60, msvcrt)
+ vcrun2003     MS Visual C++ 2003 libraries (mfc71,msvcp71,msvcr71)
+ vcrun2005     MS Visual C++ 2005 libraries (mfc80,msvcp80,msvcr80)
+ vcrun2005sp1  MS Visual C++ 2005 sp1 libraries
+ vcrun2008     MS Visual C++ 2008 libraries (mfc90,msvcp90,msvcr90)
+ vjrun20       MS Visual J# 2.0 libraries (requires dotnet20)
+ wininet       MS wininet.dll (requires Windows license)
+ wme9          MS Windows Media Encoder 9 (requires Windows license)
+ wmp9          MS Windows Media Player 9 (requires Windows license)
+ wmp10         MS Windows Media Player 10 (requires Windows license)
+ wsh56         MS Windows Scripting Host 5.6
+ wsh56js       MS Windows scripting 5.6, jscript only, no cscript
+ wsh56vb       MS Windows scripting 5.6, vbscript only, no cscript
+ xvid          xvid video codec
+Apps:
+ autohotkey    Autohotkey (open source gui scripting language)
+ firefox3      Firefox Version 3
+ ie6           Microsoft Internet Explorer 6.0
+ kde           KDE for Windows installer
+ mpc           Media Player Classic
+ vlc           VLC media player
+Pseudopackages:
+ allfonts      All listed fonts (corefonts, tahoma, liberation)
+ allcodecs     All listed codecs (xvid, ffdshow, icodecs)
+ fakeie6       Set registry to claim IE6sp1 is installed
+ native_mdac   Override odbc32 and odbccp32
+ native_oleaut32 Override oleaut32
+</source>
+        <translation></translation>
     </message>
 </context>
 </TS>
