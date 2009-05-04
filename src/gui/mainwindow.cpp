@@ -1887,7 +1887,9 @@ void MainWindow::prefixExport_Click(){
 			prefix_path.append("/.wine/");
 		}
 
+		args << "-C";
 		args << prefix_path;
+		args << "./";
 
 		//Creating process dialog
 		Process *exportProcess = new Process(args, TAR_BIN, prefix_path, tr("Exporting %1 prefix.<br>This can take a while...").arg(tablePrefix->item(tablePrefix->currentRow(), 0)->text()), tr("Exporting prefix"));

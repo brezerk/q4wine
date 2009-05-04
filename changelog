@@ -15,6 +15,7 @@ Version 0.112
   - New database class;
   - kdesu\gksu support;
   Fixed:
+  - Fixed import\export prefix functions;
   - Many small fixes;
   - Updated STDERR message catch function;
   - Added FreeBSD port patches by Dmitry Marakasov aka amdmi3;

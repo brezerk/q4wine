@@ -35,6 +35,8 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 {
 	setupUi(this);
 
+	qDebug()<<exec<<args;
+
 	myProcess = new QProcess(parent);
 	myProcess->setEnvironment(env);
 	connect(myProcess, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(slotFinished(int, QProcess::ExitStatus)));
@@ -147,7 +149,11 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 	QString string = codec->toUnicode(myProcess->readAllStandardError());
 
 	if (!string.isEmpty()){
-	   QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Error log:<br>%1").arg(string));
+	   if (exitc == 0){
+		QMessageBox::warning(this, tr("Output"), tr("It seems the process exited normally.<br><br>STDERR log:<br>%1").arg(string));
+	   } else {
+		QMessageBox::warning(this, tr("Output"), tr("It seems the process crashed.<br><br>STDERR log:<br>%1").arg(string));
+	   }
 	}
 	accept();
 	return;

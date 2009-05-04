@@ -236,7 +236,7 @@ void Run::getPrefixes(){
 			comboPrefixes->setCurrentIndex ( comboPrefixes->findText(query.value(0).toString()) );
 			getWineDlls(query.value(2).toString());
 			prefix_dir=query.value(3).toString();
-			if (prefix_dir.isNull()){
+			if (prefix_dir.isEmpty()){
 				prefix_dir.append(QDir::homePath());
 				prefix_dir.append("/.wine/drive_c/");
 			} else {
@@ -264,6 +264,13 @@ void Run::comboPrefixes_indexChanged (int){
 	getWineDlls(query.value(0).toString());
 	prefix_dir=query.value(1).toString();
 	query.clear();
+
+	if (prefix_dir.isEmpty()){
+		prefix_dir.append(QDir::homePath());
+		prefix_dir.append("/.wine/drive_c/");
+	} else {
+		prefix_dir.append("/drive_c/");
+	}
 
 	return;
 }
@@ -302,9 +309,7 @@ void Run::ResizeContent(int TabIndex){
 
 void Run::cmdGetProgram_Click(){
 
-//	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Exe file"), prefix_dir, tr("Exe files (*.exe)"));
-
-    QString fileName;
+	QString fileName;
 	QString searchPath=prefix_dir;
 
 	if (!txtProgramBin->text().isEmpty()){
@@ -315,20 +320,30 @@ void Run::cmdGetProgram_Click(){
 	    }
 	}
 
-	if (!QDir(searchPath).exists())
-	    searchPath=prefix_dir;
+	if ((!QDir(searchPath).exists()) or (searchPath.isEmpty())){
+	    if (QDir(prefix_dir).exists()){
+		   searchPath=prefix_dir;
+	    } else {
+		   searchPath=QDir::homePath();
+	    }
+	 }
 
 	QList<QUrl> prefix_urls;
-	prefix_urls << QUrl::fromLocalFile(prefix_dir);
+	// Adding side bar urls for FileOpen dialogs
+	if (QDir(prefix_dir).exists())
+	   prefix_urls << QUrl::fromLocalFile(prefix_dir);
 
-	if (searchPath != prefix_dir)
+	if ((searchPath != prefix_dir) && (QDir(searchPath).exists()))
 	    prefix_urls << QUrl::fromLocalFile(searchPath);
+
 	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
+	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
 
 	QFileDialog dialog(this);
-	  dialog.setFileMode(QFileDialog::ExistingFile);
+	  dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
 	  dialog.setWindowTitle(tr("Open Exe file"));
 	  dialog.setDirectory(searchPath);
+	  dialog.setFileMode(QFileDialog::ExistingFile);
 	  dialog.setNameFilter(tr("Exe files (*.exe)"));
 	  dialog.setSidebarUrls(prefix_urls);
 
@@ -351,30 +366,38 @@ void Run::cmdGetWorkDir_Click(){
 	QString searchPath=prefix_dir;
 	QString fileName;
 
-	if (!txtProgramBin->text().isEmpty()){
+	if ((!txtProgramBin->text().isEmpty()) and (QDir().exists(txtProgramBin->text()))){
 		searchPath=txtProgramBin->text().left(txtProgramBin->text().length() - txtProgramBin->text().split("/").last().length());;
 	}
 
-	if (!QDir(searchPath).exists())
-	    searchPath=prefix_dir;
+	if (!QDir(searchPath).exists()){
+	    if (QDir(prefix_dir).exists()){
+		   searchPath=prefix_dir;
+	    } else {
+		   searchPath=QDir::homePath();
+	    }
+	 }
 
 	QList<QUrl> prefix_urls;
-	prefix_urls << QUrl::fromLocalFile(prefix_dir);
+	// Adding side bar urls for FileOpen dialogs
+	if (QDir(prefix_dir).exists())
+	   prefix_urls << QUrl::fromLocalFile(prefix_dir);
 
-	if (searchPath != prefix_dir)
+	if ((searchPath != prefix_dir) && (QDir(searchPath).exists()))
 	    prefix_urls << QUrl::fromLocalFile(searchPath);
+
 	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
+	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
 
 	QFileDialog dialog(this);
+	  dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
+
 	  dialog.setFileMode(QFileDialog::Directory);
 	  dialog.setWindowTitle(tr("Open Directory"));
 	  dialog.setDirectory(searchPath);
 	  dialog.setOption(QFileDialog::ShowDirsOnly, true);
 
 	  dialog.setSidebarUrls(prefix_urls);
-
-	//fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), searchPath, tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)") );
-
 	 if (dialog.exec())
 	    fileName = dialog.selectedFiles().first();
 

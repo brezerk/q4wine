@@ -312,24 +312,35 @@ void IconSettings::cbUseConsole_stateChanged(int){
 
 void IconSettings::cmdGetWorkDir_Click(){
 
-  	QString searchPath=prefix_dir;
+	QString searchPath=prefix_dir;
 	QString fileName;
 
-	if (!txtProgramPath->text().isEmpty()){
+	if ((!txtProgramPath->text().isEmpty()) and (QDir().exists(txtProgramPath->text()))){
 		searchPath=txtProgramPath->text().left(txtProgramPath->text().length() - txtProgramPath->text().split("/").last().length());;
 	}
 
-	if (!QDir(searchPath).exists())
-	    searchPath=prefix_dir;
+	if (!QDir(searchPath).exists()){
+	    if (QDir(prefix_dir).exists()){
+		   searchPath=prefix_dir;
+	    } else {
+		   searchPath=QDir::homePath();
+	    }
+	 }
 
 	QList<QUrl> prefix_urls;
-	prefix_urls << QUrl::fromLocalFile(prefix_dir);
+	// Adding side bar urls for FileOpen dialogs
+	if (QDir(prefix_dir).exists())
+	   prefix_urls << QUrl::fromLocalFile(prefix_dir);
 
-	if (searchPath != prefix_dir)
+	if ((searchPath != prefix_dir) && (QDir(searchPath).exists()))
 	    prefix_urls << QUrl::fromLocalFile(searchPath);
+
 	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
+	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
 
 	QFileDialog dialog(this);
+	  dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
+
 	  dialog.setFileMode(QFileDialog::Directory);
 	  dialog.setWindowTitle(tr("Open Directory"));
 	  dialog.setDirectory(searchPath);
@@ -379,20 +390,30 @@ void IconSettings::cmdGetProgram_Click(){
 	    }
 	}
 
-	if (!QDir(searchPath).exists())
-	    searchPath=prefix_dir;
+	if ((!QDir(searchPath).exists()) or (searchPath.isEmpty())){
+	    if (QDir(prefix_dir).exists()){
+		   searchPath=prefix_dir;
+	    } else {
+		   searchPath=QDir::homePath();
+	    }
+	 }
 
 	QList<QUrl> prefix_urls;
-	prefix_urls << QUrl::fromLocalFile(prefix_dir);
+	// Adding side bar urls for FileOpen dialogs
+	if (QDir(prefix_dir).exists())
+	   prefix_urls << QUrl::fromLocalFile(prefix_dir);
 
-	if (searchPath != prefix_dir)
+	if ((searchPath != prefix_dir) && (QDir(searchPath).exists()))
 	    prefix_urls << QUrl::fromLocalFile(searchPath);
+
 	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
+	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
 
 	QFileDialog dialog(this);
-	  dialog.setFileMode(QFileDialog::ExistingFile);
+	  dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
 	  dialog.setWindowTitle(tr("Open Exe file"));
 	  dialog.setDirectory(searchPath);
+	  dialog.setFileMode(QFileDialog::ExistingFile);
 	  dialog.setNameFilter(tr("Exe files (*.exe)"));
 	  dialog.setSidebarUrls(prefix_urls);
 
@@ -418,32 +439,41 @@ void IconSettings::cmdGetIcon_Click(){
 
 	QString fileName, searchPath;
 
-	if (!txtWorkDir->text().isEmpty()){
+	if ((!txtWorkDir->text().isEmpty()) and (QDir(txtWorkDir->text()).exists())){
 	    searchPath = txtWorkDir->text();
 	} else {
-		if (!iconPath.isEmpty()){
+		if ((!iconPath.isEmpty()) and (QFile(iconPath).exists())){
 			searchPath = iconPath;
 		} else {
-		    searchPath = prefix_dir;
+		    if (QDir(prefix_dir).exists()){
+			   searchPath=prefix_dir;
+		    } else {
+			   searchPath=QDir::homePath();
+		    }
 		}
 	}
 
 	QList<QUrl> prefix_urls;
-	prefix_urls << QUrl::fromLocalFile(prefix_dir);
+	// Adding side bar urls for FileOpen dialogs
+	if (QDir(prefix_dir).exists())
+	   prefix_urls << QUrl::fromLocalFile(prefix_dir);
 
 	if ((searchPath != prefix_dir) && (QDir(searchPath).exists()))
 	    prefix_urls << QUrl::fromLocalFile(searchPath);
+
 	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
+	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
 
 	QFileDialog dialog(this);
+	  dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
 	  dialog.setFileMode(QFileDialog::ExistingFile);
 	  dialog.setWindowTitle(tr("Open image file"));
 	  dialog.setDirectory(searchPath);
-          #ifdef WITHOUT_ICOTOOLS
-            dialog.setNameFilter(tr("Image files (*.png *.jpg *.gif *.bmp)"));
-          #else
-            dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)"));
-          #endif
+	    #ifdef WITHOUT_ICOTOOLS
+		dialog.setNameFilter(tr("Image files (*.png *.jpg *.gif *.bmp)"));
+	    #else
+		dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)"));
+	    #endif
 	  dialog.setSidebarUrls(prefix_urls);
 
 	//fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), searchPath, tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)") );
