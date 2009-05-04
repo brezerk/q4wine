@@ -80,7 +80,7 @@ User_Alias Q4WINE_USERS=%games,%users
 Q4WINE_USERS ALL=(ALL) NOPASSWD: Q4WINE_COMMS
 #---------- End of Cut -----------------------
 
-This will allow to run /sbin/losetup, which is used for bulding mounted iso's menu list, 
+This will allow to run /sbin/losetup, which is used for building mounted iso's menu list, 
 with out prompting root password.
 
 Otherwise you can't get mount menu working =)
