@@ -35,8 +35,6 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 {
 	setupUi(this);
 
-	qDebug()<<exec<<args;
-
 	myProcess = new QProcess(parent);
 	myProcess->setEnvironment(env);
 	connect(myProcess, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(slotFinished(int, QProcess::ExitStatus)));
