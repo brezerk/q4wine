@@ -3069,7 +3069,6 @@ void MainWindow::dirMountOther_Click(void){
 	#endif
 
 	if(fileName.isEmpty()){
-		QMessageBox::warning(this, tr("Error"), tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
 		return;
 	}
 
