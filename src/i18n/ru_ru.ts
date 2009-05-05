@@ -134,7 +134,7 @@ p, li { white-space: pre-wrap; }
         <source>License agreement</source>
         <translation>Лицензионное соглашение</translation>
     </message>
-    <message>
+    <message utf8="true">
         <location filename="../uis/About.ui" line="466"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -2217,7 +2217,7 @@ p, li { white-space: pre-wrap; }
         <source>Image mount fail</source>
         <translation>Ошибка монтирования образа</translation>
     </message>
-    <message>
+    <message utf8="true">
         <location filename="../uis/MainWindow.ui" line="48"/>
         <source>Сategories</source>
         <translation>Категории</translation>
@@ -2998,7 +2998,7 @@ p, li { white-space: pre-wrap; }
         <source>Fake Drive</source>
         <translation>Виртуальный диск</translation>
     </message>
-    <message>
+    <message utf8="true">
         <location filename="../uis/Wizard.ui" line="414"/>
         <source>Сreate Wine Fake Drive</source>
         <translation>Создать виртуальный диск Wine</translation>
@@ -3063,15 +3063,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../uis/Wizard.ui" line="822"/>
         <source>Base info:</source>
         <translation>Базовая информация:</translation>
-    </message>
-    <message>
-        <location filename="../uis/Wizard.ui" line="837"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="872"/>
@@ -3423,9 +3414,8 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation>Размер видеопамяти (Мб):</translation>
     </message>
     <message>
-        <location filename="../uis/Wizard.ui" line="2318"/>
         <source>D999999999; </source>
-        <translation>D999999999; </translation>
+        <translation type="obsolete">D999999999; </translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="2368"/>
@@ -4120,6 +4110,15 @@ Note: leave it blank if you don&apos;t nead it.</source>
         <translation>Если вы  хотите использовать функцию быстрого монтирования, укажите диск, который вы хотите примонтировать, и точку монтирования.
 
 Примечание: Оставьте поля пустыми, если вы не хотите пользоваться этой функцией.</translation>
+    </message>
+    <message>
+        <location filename="../uis/Wizard.ui" line="837"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:11pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1544"/>
