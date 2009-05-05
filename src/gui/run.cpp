@@ -390,7 +390,7 @@ void Run::cmdGetWorkDir_Click(){
 	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
 
 	QFileDialog dialog(this);
-	  dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
+	  dialog.setFilter(QDir::Dirs | QDir::Hidden);
 
 	  dialog.setFileMode(QFileDialog::Directory);
 	  dialog.setWindowTitle(tr("Open Directory"));
