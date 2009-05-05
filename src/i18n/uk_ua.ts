@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.0" language="uk">
-<defaultcodec></defaultcodec>
 <context>
     <name>About</name>
     <message>
@@ -4148,7 +4147,7 @@ Note: leave it blank if you don&apos;t nead it.</source>
     <message>
         <location filename="../temporary/winetricks.cpp" line="64"/>
         <source>&lt;p&gt;q4wine can&apos;t locate winetricks at %1 path!&lt;/p&gt;&lt;p&gt;The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Or use &quot;Install winetricks&quot; button.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;q4wine не може знайти winetricks за шляхом %1!&lt;/p&gt;&lt;p&gt;Цей скрипт розробляєтся DanKegel та розміщується за адрессою: http://www.kegel.com/wine/winetricks.  Ви можете завантажити його з терміналу:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Або використати кнопку &quot;Install winetricks&quot;.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;q4wine не може знайти winetricks за шляхом %1!&lt;/p&gt;&lt;p&gt;Цей скрипт розробляєтся DanKegel та розміщується за адрессою: http://www.kegel.com/wine/winetricks.  Ви можете завантажити його з терміналу:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Або використати кнопку &quot;Встановити winetricks&quot;.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../temporary/winetricks.cpp" line="91"/>
