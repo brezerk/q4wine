@@ -4,6 +4,12 @@ See INSTALL file for details
 
 Changelog
 ***********************************************
+Version 0.112-r1
+ Fixed:
+  - Fixed compilation with Qt-4.4.X;
+  - Removed QDir::Files from Directory selection dialogs;
+  - Fixed compilation warning for registry.h;
+
 Version 0.112
  core:
   New:

@@ -395,7 +395,8 @@ void Run::cmdGetWorkDir_Click(){
 	  dialog.setFileMode(QFileDialog::Directory);
 	  dialog.setWindowTitle(tr("Open Directory"));
 	  dialog.setDirectory(searchPath);
-	  dialog.setOption(QFileDialog::ShowDirsOnly, true);
+          // This option wirksonly it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
+          //dialog.setOption(QFileDialog::ShowDirsOnly, true);
 
 	  dialog.setSidebarUrls(prefix_urls);
 	 if (dialog.exec())

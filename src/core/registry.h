@@ -49,8 +49,9 @@
 
 #include "winebinlauncher.h"
 
-class Registry
+class Registry: public QObject
 {
+        Q_OBJECT
 	public:
 		Registry();
 		bool init();
