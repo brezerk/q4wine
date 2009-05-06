@@ -1434,7 +1434,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		int cntproc, i, ni, ipid, ret;
 
 		struct kinfo_proc *kp;
-		char buf[_POSIX2_LINE_MAX];
+                char buf[256];
 		char **envs;
 
 		kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
