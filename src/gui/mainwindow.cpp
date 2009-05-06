@@ -1644,7 +1644,8 @@ void MainWindow::processKillWine_Click(){
 				command=tr("env WINEPREFIX=\"%1\" wineserver -kill").arg(tableProc->item(rowNum, 3)->text());
 			else
 				command="wineserver -kill";
-			system(command.toAscii().data());
+                                if (system(command.toAscii().data())!=0)
+                                    QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(command.toAscii().data()), QMessageBox::Ok);
 		}
 	}
 	return;
@@ -1663,7 +1664,8 @@ void MainWindow::processKillSelected_Click(){
 			QString command;
 			command="kill -9 ";
 			command.append(procId);
-			system(command.toAscii().data());
+                        if (system(command.toAscii().data())!=0)
+                            QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(command.toAscii().data()), QMessageBox::Ok);
 		}
 	}
 	return;

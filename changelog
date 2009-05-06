@@ -9,13 +9,13 @@ Version 0.112-r1
   - Fixed compilation with Qt-4.4.X;
   - Removed QDir::Files from Directory selection dialogs;
   - Fixed compilation warning for registry.h;
-
+  - Fixed warnings ignoring return value of 'int system(const char*)' on 1666 and 1647 lines;
 Version 0.112
  core:
   New:
   - Added Sidebar Urls for Run and IconSettings file dialogs;
   - Wine Dlls path autodetections; (If not work on your system -- plz mail to me ;) )
-  - You can disable icotools support in q4wine by adding -DWITHOUT_ICOTOOLS=ON to cmake;
+  - You can disable icotools support in q4wine by adding -DWITH_ICOTOOLS=OFF to cmake;
   - Winetools support is disabled by default. You can enable it by adding -DWITH_WINETOOLS=ON to cmake args;
   - All developer stuff is disabled by default. You can enable it by adding -DWITH_DEVELOP_STUFF=ON to cmake args;
   - New database class;
