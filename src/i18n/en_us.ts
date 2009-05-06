@@ -772,28 +772,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="210"/>
-        <location filename="../gui/iconsettings.cpp" line="627"/>
+        <location filename="../gui/iconsettings.cpp" line="628"/>
         <location filename="../uis/IconSettings.ui" line="555"/>
         <source>Native</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="212"/>
-        <location filename="../gui/iconsettings.cpp" line="629"/>
+        <location filename="../gui/iconsettings.cpp" line="630"/>
         <location filename="../uis/IconSettings.ui" line="560"/>
         <source>Buildin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="214"/>
-        <location filename="../gui/iconsettings.cpp" line="631"/>
+        <location filename="../gui/iconsettings.cpp" line="632"/>
         <location filename="../uis/IconSettings.ui" line="565"/>
         <source>Native, Buildin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="216"/>
-        <location filename="../gui/iconsettings.cpp" line="633"/>
+        <location filename="../gui/iconsettings.cpp" line="634"/>
         <location filename="../uis/IconSettings.ui" line="570"/>
         <source>Buildin, Native</source>
         <translation type="unfinished"></translation>
@@ -826,74 +826,74 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="414"/>
+        <location filename="../gui/iconsettings.cpp" line="415"/>
         <source>Open Exe file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="417"/>
+        <location filename="../gui/iconsettings.cpp" line="418"/>
         <source>Exe files (*.exe)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="470"/>
+        <location filename="../gui/iconsettings.cpp" line="471"/>
         <source>Open image file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="473"/>
+        <location filename="../gui/iconsettings.cpp" line="474"/>
         <source>Image files (*.png *.jpg *.gif *.bmp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="521"/>
+        <location filename="../gui/iconsettings.cpp" line="522"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="521"/>
+        <location filename="../gui/iconsettings.cpp" line="522"/>
         <source>Exporting icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="538"/>
+        <location filename="../gui/iconsettings.cpp" line="539"/>
         <source>%1/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="545"/>
+        <location filename="../gui/iconsettings.cpp" line="546"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="545"/>
+        <location filename="../gui/iconsettings.cpp" line="546"/>
         <source>Converting icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="614"/>
-        <location filename="../gui/iconsettings.cpp" line="620"/>
-        <location filename="../gui/iconsettings.cpp" line="710"/>
+        <location filename="../gui/iconsettings.cpp" line="615"/>
+        <location filename="../gui/iconsettings.cpp" line="621"/>
+        <location filename="../gui/iconsettings.cpp" line="711"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="614"/>
+        <location filename="../gui/iconsettings.cpp" line="615"/>
         <source>Sorry, but icon named %1 already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="620"/>
+        <location filename="../gui/iconsettings.cpp" line="621"/>
         <source>No executiable program selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="626"/>
+        <location filename="../gui/iconsettings.cpp" line="627"/>
         <source>%1=</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="710"/>
+        <location filename="../gui/iconsettings.cpp" line="711"/>
         <source>debug: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -908,7 +908,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="475"/>
+        <location filename="../gui/iconsettings.cpp" line="476"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1266,7 +1266,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2291"/>
+        <location filename="../gui/mainwindow.cpp" line="2293"/>
         <location filename="../uis/MainWindow.ui" line="261"/>
         <location filename="../uis/MainWindow.ui" line="595"/>
         <source>Options</source>
@@ -1368,9 +1368,9 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/mainwindow.cpp" line="328"/>
         <location filename="../gui/mainwindow.cpp" line="1574"/>
         <location filename="../gui/mainwindow.cpp" line="1640"/>
-        <location filename="../gui/mainwindow.cpp" line="1661"/>
-        <location filename="../gui/mainwindow.cpp" line="1697"/>
-        <location filename="../gui/mainwindow.cpp" line="1770"/>
+        <location filename="../gui/mainwindow.cpp" line="1662"/>
+        <location filename="../gui/mainwindow.cpp" line="1699"/>
+        <location filename="../gui/mainwindow.cpp" line="1772"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1457,8 +1457,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2359"/>
-        <location filename="../gui/mainwindow.cpp" line="2375"/>
+        <location filename="../gui/mainwindow.cpp" line="2361"/>
+        <location filename="../gui/mainwindow.cpp" line="2377"/>
         <source>Mount iso...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1512,12 +1512,14 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/mainwindow.cpp" line="1336"/>
         <location filename="../gui/mainwindow.cpp" line="1442"/>
         <location filename="../gui/mainwindow.cpp" line="1452"/>
-        <location filename="../gui/mainwindow.cpp" line="1692"/>
-        <location filename="../gui/mainwindow.cpp" line="2564"/>
-        <location filename="../gui/mainwindow.cpp" line="2685"/>
-        <location filename="../gui/mainwindow.cpp" line="2690"/>
-        <location filename="../gui/mainwindow.cpp" line="2781"/>
-        <location filename="../gui/mainwindow.cpp" line="3203"/>
+        <location filename="../gui/mainwindow.cpp" line="1648"/>
+        <location filename="../gui/mainwindow.cpp" line="1668"/>
+        <location filename="../gui/mainwindow.cpp" line="1694"/>
+        <location filename="../gui/mainwindow.cpp" line="2566"/>
+        <location filename="../gui/mainwindow.cpp" line="2687"/>
+        <location filename="../gui/mainwindow.cpp" line="2692"/>
+        <location filename="../gui/mainwindow.cpp" line="2783"/>
+        <location filename="../gui/mainwindow.cpp" line="3205"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1543,13 +1545,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1580"/>
-        <location filename="../gui/mainwindow.cpp" line="1777"/>
+        <location filename="../gui/mainwindow.cpp" line="1779"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1580"/>
-        <location filename="../gui/mainwindow.cpp" line="1777"/>
+        <location filename="../gui/mainwindow.cpp" line="1779"/>
         <source>Removing old fake drive</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1564,429 +1566,435 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1661"/>
+        <location filename="../gui/mainwindow.cpp" line="1648"/>
+        <location filename="../gui/mainwindow.cpp" line="1668"/>
+        <source>Can&apos;t run: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1662"/>
         <source>This action will send a TREM(-9) signal to proccess &apos;%2&apos; pid: %1&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you realy whant it? </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1693"/>
+        <location filename="../gui/mainwindow.cpp" line="1695"/>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1698"/>
+        <location filename="../gui/mainwindow.cpp" line="1700"/>
         <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1754"/>
+        <location filename="../gui/mainwindow.cpp" line="1756"/>
         <source>Select file to import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1754"/>
-        <location filename="../gui/mainwindow.cpp" line="1873"/>
+        <location filename="../gui/mainwindow.cpp" line="1756"/>
+        <location filename="../gui/mainwindow.cpp" line="1875"/>
         <source>Images (*.tbz)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1770"/>
+        <location filename="../gui/mainwindow.cpp" line="1772"/>
         <source>Do you really wish to delete all old prefix files?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1802"/>
+        <location filename="../gui/mainwindow.cpp" line="1804"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1802"/>
+        <location filename="../gui/mainwindow.cpp" line="1804"/>
         <source>Importing prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1873"/>
+        <location filename="../gui/mainwindow.cpp" line="1875"/>
         <source>Select file to export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1895"/>
+        <location filename="../gui/mainwindow.cpp" line="1897"/>
         <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1895"/>
+        <location filename="../gui/mainwindow.cpp" line="1897"/>
         <source>Exporting prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2088"/>
-        <location filename="../gui/mainwindow.cpp" line="3093"/>
+        <location filename="../gui/mainwindow.cpp" line="2090"/>
+        <location filename="../gui/mainwindow.cpp" line="3095"/>
         <source>WIP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2088"/>
+        <location filename="../gui/mainwindow.cpp" line="2090"/>
         <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2104"/>
+        <location filename="../gui/mainwindow.cpp" line="2106"/>
         <source>Open image file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2143"/>
+        <location filename="../gui/mainwindow.cpp" line="2145"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2143"/>
+        <location filename="../gui/mainwindow.cpp" line="2145"/>
         <source>Exporting icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2152"/>
+        <location filename="../gui/mainwindow.cpp" line="2154"/>
         <source>%1/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2169"/>
+        <location filename="../gui/mainwindow.cpp" line="2171"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2169"/>
+        <location filename="../gui/mainwindow.cpp" line="2171"/>
         <source>Converting icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2203"/>
+        <location filename="../gui/mainwindow.cpp" line="2205"/>
         <source>Stop current</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2207"/>
+        <location filename="../gui/mainwindow.cpp" line="2209"/>
         <source>Stop wine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2211"/>
+        <location filename="../gui/mainwindow.cpp" line="2213"/>
         <source>Refresh list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2215"/>
+        <location filename="../gui/mainwindow.cpp" line="2217"/>
         <source>Renice</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2227"/>
-        <location filename="../gui/mainwindow.cpp" line="2267"/>
+        <location filename="../gui/mainwindow.cpp" line="2229"/>
+        <location filename="../gui/mainwindow.cpp" line="2269"/>
         <source>New</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2228"/>
+        <location filename="../gui/mainwindow.cpp" line="2230"/>
         <source>Create new directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2231"/>
-        <location filename="../gui/mainwindow.cpp" line="2283"/>
+        <location filename="../gui/mainwindow.cpp" line="2233"/>
+        <location filename="../gui/mainwindow.cpp" line="2285"/>
         <source>Rename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2232"/>
+        <location filename="../gui/mainwindow.cpp" line="2234"/>
         <source>Rename current directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2235"/>
-        <location filename="../gui/mainwindow.cpp" line="2287"/>
+        <location filename="../gui/mainwindow.cpp" line="2237"/>
+        <location filename="../gui/mainwindow.cpp" line="2289"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2236"/>
+        <location filename="../gui/mainwindow.cpp" line="2238"/>
         <source>Delete current directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2239"/>
+        <location filename="../gui/mainwindow.cpp" line="2241"/>
         <source>Unmount cd drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2240"/>
+        <location filename="../gui/mainwindow.cpp" line="2242"/>
         <source>Unmounts cdrom drive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2243"/>
-        <location filename="../gui/mainwindow.cpp" line="2303"/>
+        <location filename="../gui/mainwindow.cpp" line="2245"/>
+        <location filename="../gui/mainwindow.cpp" line="2305"/>
         <source>mount ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2244"/>
-        <location filename="../gui/mainwindow.cpp" line="2304"/>
+        <location filename="../gui/mainwindow.cpp" line="2246"/>
+        <location filename="../gui/mainwindow.cpp" line="2306"/>
         <source>Browse for other image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2247"/>
+        <location filename="../gui/mainwindow.cpp" line="2249"/>
         <source>Configure wine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2248"/>
+        <location filename="../gui/mainwindow.cpp" line="2250"/>
         <source>Runs winecfg for current prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2251"/>
+        <location filename="../gui/mainwindow.cpp" line="2253"/>
         <source>App install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2252"/>
+        <location filename="../gui/mainwindow.cpp" line="2254"/>
         <source>Runs application install wizard for current prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2255"/>
+        <location filename="../gui/mainwindow.cpp" line="2257"/>
         <source>App uninstall</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2256"/>
+        <location filename="../gui/mainwindow.cpp" line="2258"/>
         <source>Runs application uninstall wizard for current prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2263"/>
+        <location filename="../gui/mainwindow.cpp" line="2265"/>
         <source>Run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2264"/>
-        <location filename="../gui/mainwindow.cpp" line="2268"/>
+        <location filename="../gui/mainwindow.cpp" line="2266"/>
+        <location filename="../gui/mainwindow.cpp" line="2270"/>
         <source>Create new icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2271"/>
+        <location filename="../gui/mainwindow.cpp" line="2273"/>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2272"/>
+        <location filename="../gui/mainwindow.cpp" line="2274"/>
         <source>Cut selected icons to buffer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2275"/>
+        <location filename="../gui/mainwindow.cpp" line="2277"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2276"/>
+        <location filename="../gui/mainwindow.cpp" line="2278"/>
         <source>Copy selected icons to buffer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2279"/>
+        <location filename="../gui/mainwindow.cpp" line="2281"/>
         <source>Paste</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2280"/>
+        <location filename="../gui/mainwindow.cpp" line="2282"/>
         <source>Paste selected icons from buffer to selected folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2284"/>
+        <location filename="../gui/mainwindow.cpp" line="2286"/>
         <source>Rename current icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2288"/>
+        <location filename="../gui/mainwindow.cpp" line="2290"/>
         <source>Delete current icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2292"/>
+        <location filename="../gui/mainwindow.cpp" line="2294"/>
         <source>Modify current icon options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2295"/>
+        <location filename="../gui/mainwindow.cpp" line="2297"/>
         <source>mount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2296"/>
+        <location filename="../gui/mainwindow.cpp" line="2298"/>
         <source>Mount image from icon options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2299"/>
+        <location filename="../gui/mainwindow.cpp" line="2301"/>
         <source>umount</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2300"/>
+        <location filename="../gui/mainwindow.cpp" line="2302"/>
         <source>Unmount image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2312"/>
+        <location filename="../gui/mainwindow.cpp" line="2314"/>
         <source>Create new prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2315"/>
-        <location filename="../gui/mainwindow.cpp" line="2316"/>
+        <location filename="../gui/mainwindow.cpp" line="2317"/>
+        <location filename="../gui/mainwindow.cpp" line="2318"/>
         <source>Import prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2320"/>
-        <location filename="../gui/mainwindow.cpp" line="2321"/>
+        <location filename="../gui/mainwindow.cpp" line="2322"/>
+        <location filename="../gui/mainwindow.cpp" line="2323"/>
         <source>Export prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2325"/>
-        <location filename="../gui/mainwindow.cpp" line="2326"/>
+        <location filename="../gui/mainwindow.cpp" line="2327"/>
+        <location filename="../gui/mainwindow.cpp" line="2328"/>
         <source>Delete prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2330"/>
-        <location filename="../gui/mainwindow.cpp" line="2331"/>
+        <location filename="../gui/mainwindow.cpp" line="2332"/>
+        <location filename="../gui/mainwindow.cpp" line="2333"/>
         <source>Edit prefix settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2398"/>
+        <location filename="../gui/mainwindow.cpp" line="2400"/>
         <source>%1/%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2400"/>
-        <location filename="../gui/mainwindow.cpp" line="2403"/>
+        <location filename="../gui/mainwindow.cpp" line="2402"/>
+        <location filename="../gui/mainwindow.cpp" line="2405"/>
         <source>:/%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2463"/>
+        <location filename="../gui/mainwindow.cpp" line="2465"/>
         <source>Delete Icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2463"/>
+        <location filename="../gui/mainwindow.cpp" line="2465"/>
         <source>Do you want to delete all selected icons?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2540"/>
+        <location filename="../gui/mainwindow.cpp" line="2542"/>
         <source>Enter new icon name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2540"/>
+        <location filename="../gui/mainwindow.cpp" line="2542"/>
         <source>Icon name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2564"/>
+        <location filename="../gui/mainwindow.cpp" line="2566"/>
         <source>Sorry, but icon named %1 already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3068"/>
+        <location filename="../gui/mainwindow.cpp" line="3070"/>
         <source>Open ISO Image file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2690"/>
+        <location filename="../gui/mainwindow.cpp" line="2692"/>
         <source>It seems no mount point was set in icon options.&lt;br&gt;You might need to set it manualy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2685"/>
+        <location filename="../gui/mainwindow.cpp" line="2687"/>
         <source>It seems no image file was set in icon options.&lt;br&gt;You might need to set it manualy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2781"/>
+        <location filename="../gui/mainwindow.cpp" line="2783"/>
         <source>Sorry. Cannot copy or move in to the same file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2802"/>
-        <location filename="../gui/mainwindow.cpp" line="2859"/>
+        <location filename="../gui/mainwindow.cpp" line="2804"/>
+        <location filename="../gui/mainwindow.cpp" line="2861"/>
         <source>Sorry. It seems file already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2803"/>
-        <location filename="../gui/mainwindow.cpp" line="2860"/>
+        <location filename="../gui/mainwindow.cpp" line="2805"/>
+        <location filename="../gui/mainwindow.cpp" line="2862"/>
         <source>Sorry. It seems file already exists.&lt;br&gt;Please rename it, or cancel paste operation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2993"/>
+        <location filename="../gui/mainwindow.cpp" line="2995"/>
         <source>Enter new directory name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2993"/>
-        <location filename="../gui/mainwindow.cpp" line="3112"/>
+        <location filename="../gui/mainwindow.cpp" line="2995"/>
+        <location filename="../gui/mainwindow.cpp" line="3114"/>
         <source>Directory name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3093"/>
+        <location filename="../gui/mainwindow.cpp" line="3095"/>
         <source>Sorry, no install wizard yet. It&apos;l implemented at v0.110.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3112"/>
+        <location filename="../gui/mainwindow.cpp" line="3114"/>
         <source>Enter new name for directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3142"/>
+        <location filename="../gui/mainwindow.cpp" line="3144"/>
         <source>Q4Wine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3142"/>
+        <location filename="../gui/mainwindow.cpp" line="3144"/>
         <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3203"/>
+        <location filename="../gui/mainwindow.cpp" line="3205"/>
         <source>Sorry, but prefix already have directory named %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3441"/>
+        <location filename="../gui/mainwindow.cpp" line="3443"/>
         <source>Mounting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3444"/>
+        <location filename="../gui/mainwindow.cpp" line="3446"/>
         <source>Image successfully mounted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3446"/>
+        <location filename="../gui/mainwindow.cpp" line="3448"/>
         <source>Image mount fail</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2001,27 +2009,27 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2204"/>
+        <location filename="../gui/mainwindow.cpp" line="2206"/>
         <source>Send TERM signal to selected process</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2208"/>
+        <location filename="../gui/mainwindow.cpp" line="2210"/>
         <source>Send TERM signal to main wine process</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2212"/>
+        <location filename="../gui/mainwindow.cpp" line="2214"/>
         <source>Refresh process list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2216"/>
+        <location filename="../gui/mainwindow.cpp" line="2218"/>
         <source>Set process priority</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2311"/>
+        <location filename="../gui/mainwindow.cpp" line="2313"/>
         <source>Create new</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2040,71 +2048,71 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/mainwindow.cpp" line="785"/>
         <location filename="../gui/mainwindow.cpp" line="955"/>
         <location filename="../gui/mainwindow.cpp" line="958"/>
-        <location filename="../gui/mainwindow.cpp" line="3460"/>
+        <location filename="../gui/mainwindow.cpp" line="3462"/>
         <source>%1 | grep %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="812"/>
         <location filename="../gui/mainwindow.cpp" line="984"/>
-        <location filename="../gui/mainwindow.cpp" line="3497"/>
+        <location filename="../gui/mainwindow.cpp" line="3499"/>
         <source>-u%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3064"/>
+        <location filename="../gui/mainwindow.cpp" line="3066"/>
         <source>Open ISO or NRG Image file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3064"/>
+        <location filename="../gui/mainwindow.cpp" line="3066"/>
         <source>iso and nrg files (*.iso *.nrg)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3068"/>
+        <location filename="../gui/mainwindow.cpp" line="3070"/>
         <source>iso files (*.iso)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3483"/>
-        <location filename="../gui/mainwindow.cpp" line="3506"/>
+        <location filename="../gui/mainwindow.cpp" line="3485"/>
+        <location filename="../gui/mainwindow.cpp" line="3508"/>
         <source>Unmounting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3486"/>
+        <location filename="../gui/mainwindow.cpp" line="3488"/>
         <source>image successfully unmounted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3488"/>
+        <location filename="../gui/mainwindow.cpp" line="3490"/>
         <source>image unmount fail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3506"/>
+        <location filename="../gui/mainwindow.cpp" line="3508"/>
         <source>running mdconfig</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3509"/>
+        <location filename="../gui/mainwindow.cpp" line="3511"/>
         <source>mdimage removed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="3511"/>
+        <location filename="../gui/mainwindow.cpp" line="3513"/>
         <source>mdimage remove fail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2223"/>
+        <location filename="../gui/mainwindow.cpp" line="2225"/>
         <location filename="../uis/MainWindow.ui" line="504"/>
         <source>Run...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2224"/>
+        <location filename="../gui/mainwindow.cpp" line="2226"/>
         <source>Run application at current prefix</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2119,7 +2127,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2104"/>
+        <location filename="../gui/mainwindow.cpp" line="2106"/>
         <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
         <translation type="unfinished"></translation>
     </message>

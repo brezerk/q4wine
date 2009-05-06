@@ -1434,10 +1434,10 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		int cntproc, i, ni, ipid, ret;
 
 		struct kinfo_proc *kp;
-                char buf[256];
+                char buf[_POSIX2_LINE_MAX];
 		char **envs;
 
-                kd = kvm_openfiles("/dev/null", "/dev/null", "/dev/null", O_RDONLY, buf);
+                kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
 			if (!kd){
 				ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
 
