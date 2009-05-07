@@ -4,6 +4,8 @@ See INSTALL file for details
 
 Changelog
 ***********************************************
+
+
 Version 0.112-r1
  Fixed:
   - Fixed compilation with Qt-4.4.X;
