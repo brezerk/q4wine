@@ -5,6 +5,9 @@ See INSTALL file for details
 Changelog
 ***********************************************
 
+Version 0.113
+ Fixed:
+  - Added *.xpm filter to icon import patten;
 
 Version 0.112-r1
  Fixed:
@@ -12,6 +15,7 @@ Version 0.112-r1
   - Removed QDir::Files from Directory selection dialogs;
   - Fixed compilation warning for registry.h;
   - Fixed warnings ignoring return value of 'int system(const char*)' on 1666 and 1647 lines;
+
 Version 0.112
  core:
   New:

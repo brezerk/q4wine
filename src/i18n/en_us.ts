@@ -149,7 +149,7 @@ p, li { white-space: pre-wrap; }
         <source>License agreement</source>
         <translation type="unfinished"></translation>
     </message>
-    <message utf8="true">
+    <message>
         <location filename="../uis/About.ui" line="466"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -772,28 +772,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="210"/>
-        <location filename="../gui/iconsettings.cpp" line="628"/>
+        <location filename="../gui/iconsettings.cpp" line="626"/>
         <location filename="../uis/IconSettings.ui" line="555"/>
         <source>Native</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="212"/>
-        <location filename="../gui/iconsettings.cpp" line="630"/>
+        <location filename="../gui/iconsettings.cpp" line="628"/>
         <location filename="../uis/IconSettings.ui" line="560"/>
         <source>Buildin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="214"/>
-        <location filename="../gui/iconsettings.cpp" line="632"/>
+        <location filename="../gui/iconsettings.cpp" line="630"/>
         <location filename="../uis/IconSettings.ui" line="565"/>
         <source>Native, Buildin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="216"/>
-        <location filename="../gui/iconsettings.cpp" line="634"/>
+        <location filename="../gui/iconsettings.cpp" line="632"/>
         <location filename="../uis/IconSettings.ui" line="570"/>
         <source>Buildin, Native</source>
         <translation type="unfinished"></translation>
@@ -842,58 +842,63 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="474"/>
-        <source>Image files (*.png *.jpg *.gif *.bmp)</source>
+        <source>Image files (*.png *.jpg *.gif *.bmp *.xpm)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="522"/>
+        <location filename="../gui/iconsettings.cpp" line="476"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/iconsettings.cpp" line="520"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="522"/>
+        <location filename="../gui/iconsettings.cpp" line="520"/>
         <source>Exporting icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="539"/>
+        <location filename="../gui/iconsettings.cpp" line="537"/>
         <source>%1/</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="546"/>
+        <location filename="../gui/iconsettings.cpp" line="544"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="546"/>
+        <location filename="../gui/iconsettings.cpp" line="544"/>
         <source>Converting icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="615"/>
-        <location filename="../gui/iconsettings.cpp" line="621"/>
-        <location filename="../gui/iconsettings.cpp" line="711"/>
+        <location filename="../gui/iconsettings.cpp" line="613"/>
+        <location filename="../gui/iconsettings.cpp" line="619"/>
+        <location filename="../gui/iconsettings.cpp" line="709"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="615"/>
+        <location filename="../gui/iconsettings.cpp" line="613"/>
         <source>Sorry, but icon named %1 already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="621"/>
+        <location filename="../gui/iconsettings.cpp" line="619"/>
         <source>No executiable program selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="627"/>
+        <location filename="../gui/iconsettings.cpp" line="625"/>
         <source>%1=</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="711"/>
+        <location filename="../gui/iconsettings.cpp" line="709"/>
         <source>debug: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -905,11 +910,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/iconsettings.cpp" line="142"/>
         <source>SELECT name, exec, cmdargs, icon_path, desc, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND name=&quot;%2&quot; AND dir_id ISNULL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/iconsettings.cpp" line="476"/>
-        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2142,7 +2142,7 @@ p, li { white-space: pre-wrap; }
         <source>Programs</source>
         <translation type="unfinished"></translation>
     </message>
-    <message utf8="true">
+    <message>
         <location filename="../uis/MainWindow.ui" line="48"/>
         <source>Сategories</source>
         <translation type="unfinished"></translation>
@@ -3583,7 +3583,7 @@ p, li { white-space: pre-wrap; }
         <source>Fake Drive</source>
         <translation type="unfinished"></translation>
     </message>
-    <message utf8="true">
+    <message>
         <location filename="../uis/Wizard.ui" line="414"/>
         <source>Сreate Wine Fake Drive</source>
         <translation type="unfinished"></translation>

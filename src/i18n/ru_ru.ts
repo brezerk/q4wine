@@ -134,7 +134,7 @@ p, li { white-space: pre-wrap; }
         <source>License agreement</source>
         <translation>Лицензионное соглашение</translation>
     </message>
-    <message utf8="true">
+    <message>
         <location filename="../uis/About.ui" line="466"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -828,28 +828,28 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="210"/>
-        <location filename="../gui/iconsettings.cpp" line="628"/>
+        <location filename="../gui/iconsettings.cpp" line="626"/>
         <location filename="../uis/IconSettings.ui" line="555"/>
         <source>Native</source>
         <translation>Родные</translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="212"/>
-        <location filename="../gui/iconsettings.cpp" line="630"/>
+        <location filename="../gui/iconsettings.cpp" line="628"/>
         <location filename="../uis/IconSettings.ui" line="560"/>
         <source>Buildin</source>
         <translation>Встроенные</translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="214"/>
-        <location filename="../gui/iconsettings.cpp" line="632"/>
+        <location filename="../gui/iconsettings.cpp" line="630"/>
         <location filename="../uis/IconSettings.ui" line="565"/>
         <source>Native, Buildin</source>
         <translation>Родные, Встроенные</translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="216"/>
-        <location filename="../gui/iconsettings.cpp" line="634"/>
+        <location filename="../gui/iconsettings.cpp" line="632"/>
         <location filename="../uis/IconSettings.ui" line="570"/>
         <source>Buildin, Native</source>
         <translation>Встроенные, Родные</translation>
@@ -972,59 +972,68 @@ p, li { white-space: pre-wrap; }
         <translation>Открыть файл изображения</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="474"/>
         <source>Image files (*.png *.jpg *.gif *.bmp)</source>
-        <translation>Файлы изображений (*.png *.jpg *.gif *.bmp)</translation>
+        <translation type="obsolete">Файлы изображений (*.png *.jpg *.gif *.bmp)</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="522"/>
+        <location filename="../gui/iconsettings.cpp" line="474"/>
+        <source>Image files (*.png *.jpg *.gif *.bmp *.xpm)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../gui/iconsettings.cpp" line="476"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../gui/iconsettings.cpp" line="520"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Экспорт пиктограммы из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="522"/>
+        <location filename="../gui/iconsettings.cpp" line="520"/>
         <source>Exporting icon</source>
         <translation>Экспорт пиктограммы</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="539"/>
+        <location filename="../gui/iconsettings.cpp" line="537"/>
         <source>%1/</source>
         <translation>%1/</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="546"/>
+        <location filename="../gui/iconsettings.cpp" line="544"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Конвертация пиктограммы из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="546"/>
+        <location filename="../gui/iconsettings.cpp" line="544"/>
         <source>Converting icon</source>
         <translation>Ковертация пиктограммы</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="615"/>
-        <location filename="../gui/iconsettings.cpp" line="621"/>
-        <location filename="../gui/iconsettings.cpp" line="711"/>
+        <location filename="../gui/iconsettings.cpp" line="613"/>
+        <location filename="../gui/iconsettings.cpp" line="619"/>
+        <location filename="../gui/iconsettings.cpp" line="709"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="615"/>
+        <location filename="../gui/iconsettings.cpp" line="613"/>
         <source>Sorry, but icon named %1 already exists.</source>
         <translation>Извините, но пиктограмма %1 уже существует.</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="621"/>
+        <location filename="../gui/iconsettings.cpp" line="619"/>
         <source>No executiable program selected.</source>
         <translation>Не выбрано исолняемого файла (программы).</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="627"/>
+        <location filename="../gui/iconsettings.cpp" line="625"/>
         <source>%1=</source>
         <translation>%1=</translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="711"/>
+        <location filename="../gui/iconsettings.cpp" line="709"/>
         <source>debug: %1</source>
         <translation>debug: %1</translation>
     </message>
@@ -1044,9 +1053,8 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../gui/iconsettings.cpp" line="476"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)</source>
-        <translation>Файлы изображений и исполняемые файлы wine32 (*.png *.jpg *.gif *.bmp *.exe *.dll);;Файлы изображений (*.png *.jpg *.gif *.bmp);;Исполняемые файлы и библиотеки Win32 (*.exe *.dll);;Исполняемые файлы Win32 (*.exe);;Библиотеки Win32 (*.dll)</translation>
+        <translation type="obsolete">Файлы изображений и исполняемые файлы wine32 (*.png *.jpg *.gif *.bmp *.exe *.dll);;Файлы изображений (*.png *.jpg *.gif *.bmp);;Исполняемые файлы и библиотеки Win32 (*.exe *.dll);;Исполняемые файлы Win32 (*.exe);;Библиотеки Win32 (*.dll)</translation>
     </message>
 </context>
 <context>
@@ -1349,7 +1357,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../uis/MainWindow.ui" line="251"/>
         <source>Manage</source>
-        <translation>Управление...</translation>
+        <translation>Управление</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2293"/>
@@ -2225,7 +2233,7 @@ p, li { white-space: pre-wrap; }
         <source>Image mount fail</source>
         <translation>Ошибка монтирования образа</translation>
     </message>
-    <message utf8="true">
+    <message>
         <location filename="../uis/MainWindow.ui" line="48"/>
         <source>Сategories</source>
         <translation>Категории</translation>
@@ -3006,7 +3014,7 @@ p, li { white-space: pre-wrap; }
         <source>Fake Drive</source>
         <translation>Виртуальный диск</translation>
     </message>
-    <message utf8="true">
+    <message>
         <location filename="../uis/Wizard.ui" line="414"/>
         <source>Сreate Wine Fake Drive</source>
         <translation>Создать виртуальный диск Wine</translation>

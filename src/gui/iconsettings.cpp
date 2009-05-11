@@ -344,8 +344,8 @@ void IconSettings::cmdGetWorkDir_Click(){
 	  dialog.setFileMode(QFileDialog::Directory);
 	  dialog.setWindowTitle(tr("Open Directory"));
 	  dialog.setDirectory(searchPath);
-          // This option works only it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
-          // dialog.setOption(QFileDialog::ShowDirsOnly, true);
+	    // This option works only it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
+	    // dialog.setOption(QFileDialog::ShowDirsOnly, true);
 
 	  dialog.setSidebarUrls(prefix_urls);
 
@@ -471,13 +471,11 @@ void IconSettings::cmdGetIcon_Click(){
 	  dialog.setWindowTitle(tr("Open image file"));
 	  dialog.setDirectory(searchPath);
 	    #ifndef WITH_ICOTOOLS
-		dialog.setNameFilter(tr("Image files (*.png *.jpg *.gif *.bmp)"));
+		dialog.setNameFilter(tr("Image files (*.png *.jpg *.gif *.bmp *.xpm)"));
 	    #else
-		dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)"));
+		dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)"));
 	    #endif
 	  dialog.setSidebarUrls(prefix_urls);
-
-	//fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), searchPath, tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)") );
 
 	 if (dialog.exec())
 	    fileName = dialog.selectedFiles().first();
