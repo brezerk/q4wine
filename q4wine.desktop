@@ -1,5 +1,5 @@
 [Desktop Entry]
-Categories=Qt;KDE;Utility;
+Categories=Qt;System;Emulator;
 Comment[uk]=Графічна оболонка на Qt4 для налаштування Wine
 Comment=A Qt4 GUI configuration tool for Wine
 Comment[en]=A Qt4 GUI configuration tool for Wine
@@ -19,4 +19,5 @@ StartupNotify=true
 Terminal=false
 TerminalOptions=
 Type=Application
-Version=0.111
+X-SuSE-translate=true
+Version=0.113

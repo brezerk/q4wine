@@ -8,6 +8,7 @@ Changelog
 Version 0.113
  Fixed:
   - Added *.xpm filter to icon import patten;
+  - Some fixes for q4wine.desktop (thx to Eugene Pivnev)
 
 Version 0.112-r1
  Fixed:

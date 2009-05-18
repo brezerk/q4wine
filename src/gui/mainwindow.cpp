@@ -564,7 +564,6 @@ void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
 			if (QFile::exists (query.value(1).toString())){
 			   iconItem->setIcon(QIcon(query.value(1).toString()));
 			} else {
-
 				if (query.value(1).toString()=="wineconsole"){
 					iconItem->setIcon(CoreFunction_IconLoad("data/wineconsole.png"));
 				} else if (query.value(1).toString()=="regedit"){
@@ -649,15 +648,12 @@ void MainWindow::CoreFunction_DatabaseUpdateConnectedItems(int currentPrefix){
 			tablePrefix->insertRow (numRows);
 			numRows = tablePrefix->rowCount();
 		}
-
-
 			if (tablePrefix->item(curRows - 1, 0)){
 			tablePrefix->item(curRows - 1, 0)->setText(query.value(0).toString());
 			tablePrefix->item(curRows - 1, 1)->setText(query.value(1).toString());
 			tablePrefix->item(curRows - 1, 2)->setText(query.value(2).toString());
 		} else {
-
-			QTableWidgetItem *newItem = new QTableWidgetItem(query.value(0).toString());
+                        QTableWidgetItem *newItem = new QTableWidgetItem(query.value(0).toString());
 			tablePrefix->setItem(curRows - 1, 0, newItem);
 			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
 			newItem = new QTableWidgetItem(query.value(1).toString());
@@ -669,13 +665,11 @@ void MainWindow::CoreFunction_DatabaseUpdateConnectedItems(int currentPrefix){
 		}
 	}
 
-
 	numRows = tablePrefix->rowCount();
 	if (numRows > curRows){
 		for (int i=curRows; i <= numRows; i++)
 			tablePrefix->removeRow(curRows);
 	}
-
 
 	if (currentPrefix > 0)
 		cbPrefixes->setCurrentIndex (currentPrefix);
@@ -685,7 +679,6 @@ void MainWindow::CoreFunction_DatabaseUpdateConnectedItems(int currentPrefix){
 
 void MainWindow::cmdManagePrefixes_Click(){
 	tbwGeneral->setCurrentIndex (3);
-
 	return;
 }
 
@@ -694,7 +687,6 @@ void MainWindow::tableProc_UpdateContentList(const QModelIndex){
 		Function for updateing tableproc content and QAction status
 	*/
 	CoreFunction_GetProcProccessInfo();
-
 	return;
 }
 
@@ -714,8 +706,6 @@ void MainWindow::tablePrefix_UpdateContentList(const QModelIndex){
 		prefixExport->setEnabled(FALSE);
 		prefixSettings->setEnabled(FALSE);
 	}
-
-
 	return;
 }
 
@@ -1076,9 +1066,7 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint){
 
 		menuIcon->exec(QCursor::pos());
 
-
-
-	return;
+        return;
 }
 
 void MainWindow::createTrayIcon(){
