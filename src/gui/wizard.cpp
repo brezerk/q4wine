@@ -152,8 +152,6 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		loadThemeIcons(settings.value("theme").toString(), Scena);
 	settings.endGroup();
 
-
-
 	switch (Scena){
 		case 0:
 			TotalPage=5;
@@ -291,6 +289,8 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 
 	updateScena();
 
+	this->installEventFilter(this);
+
 	return;
 }
 
@@ -335,11 +335,38 @@ void Wizard::changeBoxState(int state){
 	return;
 }
 
-
 bool Wizard::eventFilter(QObject *obj, QEvent *event){
 	/*
 		User select folder dialog function
 	*/
+
+	if (this->widgetFrame->width()<=100)
+	   return FALSE;
+
+
+	if (event->type() == QEvent::Resize){
+
+	   this->widgetInfo->resize(this->widgetFrame->width(), this->widgetFrame->height());
+
+	   this->widgetCreateFakeDrive0->resize(this->widgetFrame->width(), this->widgetFrame->height());
+	   this->widgetCreateFakeDrive1->resize(this->widgetFrame->width(), this->widgetFrame->height());
+	   this->widgetCreateFakeDrive2->resize(this->widgetFrame->width(), this->widgetFrame->height());
+	   this->widgetCreateFakeDrive3->resize(this->widgetFrame->width(), this->widgetFrame->height());
+
+	   this->widgetCreatePrefix0->resize(this->widgetFrame->width(), this->widgetFrame->height());
+	   this->widgetCreatePrefix1->resize(this->widgetFrame->width(), this->widgetFrame->height());
+	   this->widgetCreatePrefix2->resize(this->widgetFrame->width(), this->widgetFrame->height());
+
+	   this->widgetFirstStartup0->resize(this->widgetFrame->width(), this->widgetFrame->height());
+	   this->widgetFirstStartup1->resize(this->widgetFrame->width(), this->widgetFrame->height());
+	   this->widgetFirstStartup2->resize(this->widgetFrame->width(), this->widgetFrame->height());
+	   this->widgetFirstStartup3->resize(this->widgetFrame->width(), this->widgetFrame->height());
+
+	   return TRUE;
+	}
+
+	if (obj->objectName()== "Wizard")
+	   return FALSE;
 
 	if (event->type() == QEvent::MouseButtonPress) {
 

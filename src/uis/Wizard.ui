@@ -10,7 +10,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>669</width>
+    <width>667</width>
     <height>450</height>
    </rect>
   </property>
@@ -433,41 +433,37 @@ p, li { white-space: pre-wrap; }
              <rect>
               <x>-1</x>
               <y>0</y>
-              <width>510</width>
-              <height>318</height>
+              <width>500</width>
+              <height>321</height>
              </rect>
             </property>
             <property name="autoFillBackground">
              <bool>false</bool>
             </property>
-            <widget class="QLabel" name="lblWizardInfo">
-             <property name="geometry">
-              <rect>
-               <x>9</x>
-               <y>9</y>
-               <width>483</width>
-               <height>300</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+            <layout class="QGridLayout" name="gridLayout_3">
+             <item row="0" column="0">
+              <widget class="QLabel" name="lblWizardInfo">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Fixed'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="textFormat">
-              <enum>Qt::RichText</enum>
-             </property>
-             <property name="scaledContents">
-              <bool>false</bool>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignJustify|Qt::AlignTop</set>
-             </property>
-             <property name="wordWrap">
-              <bool>true</bool>
-             </property>
-            </widget>
+               </property>
+               <property name="textFormat">
+                <enum>Qt::RichText</enum>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignJustify|Qt::AlignTop</set>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
            <widget class="QWidget" name="widgetCreatePrefix1" native="true">
             <property name="geometry">
@@ -2755,12 +2751,12 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
            <zorder>widgetFirstStartup0</zorder>
            <zorder>widgetFirstStartup2</zorder>
            <zorder>widgetFirstStartup3</zorder>
-           <zorder>widgetInfo</zorder>
            <zorder>widgetCreateFakeDrive0</zorder>
            <zorder>widgetCreateFakeDrive1</zorder>
            <zorder>widgetCreatePrefix2</zorder>
            <zorder>widgetFirstStartup1</zorder>
            <zorder>widgetCreateFakeDrive2</zorder>
+           <zorder>widgetInfo</zorder>
           </widget>
          </item>
         </layout>

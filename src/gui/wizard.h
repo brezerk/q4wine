@@ -41,6 +41,7 @@
 #include <QSettings>
 #include <QTextCodec>
 #include <QMessageBox>
+#include <QResizeEvent>
 #include <QProgressDialog>
 
 #include <config.h>
@@ -67,7 +68,7 @@ class Wizard : public QDialog, public Ui::Wizard
 		int Scena, Page, TotalPage;
 		bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
 
-                CoreMethods *core;
+		CoreMethods *core;
 
 	protected:
 		bool eventFilter(QObject *obj, QEvent *event);
