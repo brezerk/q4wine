@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>720</width>
-    <height>414</height>
+    <height>417</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -212,12 +212,6 @@
    </item>
    <item>
     <widget class="QWidget" name="widget" native="true">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
      <layout class="QVBoxLayout">
       <item>
        <widget class="QTabWidget" name="twbGeneral">
@@ -231,19 +225,19 @@
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="QGroupBox" name="groupBox">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
             <property name="title">
              <string>General</string>
             </property>
-            <layout class="QVBoxLayout">
+            <layout class="QVBoxLayout" name="_21">
+             <property name="sizeConstraint">
+              <enum>QLayout::SetMinimumSize</enum>
+             </property>
              <item>
               <widget class="QWidget" name="widget_2" native="true">
                <layout class="QHBoxLayout">
+                <property name="sizeConstraint">
+                 <enum>QLayout::SetMinimumSize</enum>
+                </property>
                 <property name="margin">
                  <number>0</number>
                 </property>
@@ -288,6 +282,9 @@
              <item>
               <widget class="QWidget" name="widget_4" native="true">
                <layout class="QHBoxLayout">
+                <property name="sizeConstraint">
+                 <enum>QLayout::SetMinimumSize</enum>
+                </property>
                 <property name="margin">
                  <number>0</number>
                 </property>
@@ -319,6 +316,9 @@
              <item>
               <widget class="QWidget" name="widget_12" native="true">
                <layout class="QHBoxLayout">
+                <property name="sizeConstraint">
+                 <enum>QLayout::SetMinimumSize</enum>
+                </property>
                 <property name="margin">
                  <number>0</number>
                 </property>
@@ -365,12 +365,6 @@
           </item>
           <item>
            <widget class="QGroupBox" name="groupBox_7">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
             <property name="title">
              <string>Icon options</string>
             </property>
@@ -476,12 +470,6 @@
           </item>
           <item>
            <widget class="QGroupBox" name="groupBox_8">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
             <property name="title">
              <string>Desktop</string>
             </property>
