@@ -8,7 +8,9 @@ Changelog
 Version 0.113
  Fixed:
   - Added *.xpm filter to icon import patten;
-  - Some fixes for q4wine.desktop (thx to Eugene Pivnev)
+  - Some fixes for q4wine.desktop (thx to Eugene Pivnev);
+  - Fixed GUI bug: Text fields size, on some desktop configurations, are too small to edit;
+  - Fixed a lot of English spelling errors (thx Sergey Kishchenko (tilarids));
 
 Version 0.112-r1
  Fixed:

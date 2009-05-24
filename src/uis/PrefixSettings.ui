@@ -6,15 +6,9 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>445</height>
+    <width>718</width>
+    <height>323</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>340</width>
-    <height>370</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>Prefix settings</string>

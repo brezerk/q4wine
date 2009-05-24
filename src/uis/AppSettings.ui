@@ -9,15 +9,9 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>716</width>
-    <height>370</height>
+    <width>714</width>
+    <height>404</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>340</width>
-    <height>370</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>%1 settings</string>
@@ -417,13 +411,13 @@
           <item>
            <widget class="QGroupBox" name="groupBox_4">
             <property name="title">
-             <string>Trarey Icon</string>
+             <string>Tray Icon</string>
             </property>
             <layout class="QVBoxLayout">
              <item>
               <widget class="QCheckBox" name="chShowTrarey">
                <property name="text">
-                <string>Use trarey icon</string>
+                <string>Use tray icon</string>
                </property>
                <property name="checked">
                 <bool>true</bool>
@@ -1062,7 +1056,7 @@
                    </size>
                   </property>
                   <property name="text">
-                   <string>Languale:</string>
+                   <string>Language:</string>
                   </property>
                  </widget>
                 </item>
@@ -1134,7 +1128,7 @@
                    </size>
                   </property>
                   <property name="text">
-                   <string>Password:</string>
+                   <string>Proxy type:</string>
                   </property>
                  </widget>
                 </item>

@@ -653,7 +653,7 @@ void MainWindow::CoreFunction_DatabaseUpdateConnectedItems(int currentPrefix){
 			tablePrefix->item(curRows - 1, 1)->setText(query.value(1).toString());
 			tablePrefix->item(curRows - 1, 2)->setText(query.value(2).toString());
 		} else {
-                        QTableWidgetItem *newItem = new QTableWidgetItem(query.value(0).toString());
+				QTableWidgetItem *newItem = new QTableWidgetItem(query.value(0).toString());
 			tablePrefix->setItem(curRows - 1, 0, newItem);
 			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
 			newItem = new QTableWidgetItem(query.value(1).toString());
@@ -1066,7 +1066,7 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint){
 
 		menuIcon->exec(QCursor::pos());
 
-        return;
+	  return;
 }
 
 void MainWindow::createTrayIcon(){
@@ -1422,10 +1422,10 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		int cntproc, i, ni, ipid, ret;
 
 		struct kinfo_proc *kp;
-                char buf[_POSIX2_LINE_MAX];
+		    char buf[_POSIX2_LINE_MAX];
 		char **envs;
 
-                kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
+		    kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
 			if (!kd){
 				ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
 
@@ -1625,15 +1625,15 @@ void MainWindow::processKillWine_Click(){
 		QString prefixPath;
 		prefixPath = tableProc->item(rowNum, 3)->text();
 
-		if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a TREM(-9) signal to all wine proccess with WINEPREFIX='%1'<br><br>Do you realy whant it? ").arg(tableProc->item(rowNum, 3)->text()), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
+		if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a TREM(-9) signal to all wine proccess with WINEPREFIX='%1'<br><br>Do you really want to proceed?").arg(tableProc->item(rowNum, 3)->text()), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
 			QString command;
 
 			if (!prefixPath.isEmpty())
 				command=tr("env WINEPREFIX=\"%1\" wineserver -kill").arg(tableProc->item(rowNum, 3)->text());
 			else
 				command="wineserver -kill";
-                                if (system(command.toAscii().data())==-1)
-                                    QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(command.toAscii().data()), QMessageBox::Ok);
+					  if (system(command.toAscii().data())==-1)
+						QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(command.toAscii().data()), QMessageBox::Ok);
 		}
 	}
 	return;
@@ -1647,13 +1647,13 @@ void MainWindow::processKillSelected_Click(){
 		QString procId;
 		procId = tableProc->item(rowNum, 0)->text();
 
-		if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a TREM(-9) signal to proccess '%2' pid: %1<br><br>It is HIGH risk to damage wine normal state.<br><br>Do you realy whant it? ").arg(tableProc->item(rowNum, 0)->text()) .arg(tableProc->item(rowNum, 1)->text()),                   QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
+		if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a TREM(-9) signal to proccess '%2' pid: %1<br><br>It is HIGH risk to damage wine normal state.<br><br>Do you really want to proceed?").arg(tableProc->item(rowNum, 0)->text()) .arg(tableProc->item(rowNum, 1)->text()),                   QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
 
 			QString command;
 			command="kill -9 ";
 			command.append(procId);
-                        if (system(command.toAscii().data())==-1)
-                            QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(command.toAscii().data()), QMessageBox::Ok);
+				if (system(command.toAscii().data())==-1)
+				    QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(command.toAscii().data()), QMessageBox::Ok);
 		}
 	}
 	return;
@@ -2235,7 +2235,7 @@ void MainWindow::CoreFunction_CreateMenus(){
 	connect(dirMountOther, SIGNAL(triggered()), this, SLOT(dirMountOther_Click()));
 
 	dirConfigure = new QAction(tr("Configure wine"), twPrograms);
-	dirConfigure->setStatusTip(tr("Runs winecfg for current prefix"));
+	dirConfigure->setStatusTip(tr("Configure Wine general settings"));
 	connect(dirConfigure, SIGNAL(triggered()), this, SLOT(dirConfigure_Click()));
 
 	dirInstall = new QAction(tr("App install"), twPrograms);
