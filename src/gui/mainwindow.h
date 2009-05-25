@@ -224,6 +224,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 	private:
 		//Classes
 		CoreMethods *core;
+                QLibrary libq4wine;
 
 		// Proxy
 		QNetworkProxy proxy;

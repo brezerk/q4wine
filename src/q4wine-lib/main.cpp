@@ -26,11 +26,21 @@
  *   you do not wish to do so, delete this exception statement from        *
  *   your version.                                                         *
  ***************************************************************************/
-#include "mainlib.h"
-/* LibQ4Wine is not implemented. Please do it. Target milestone v. 1.120 */
 
+#include "main.h"
 
 mainlib::mainlib()
 {
     /* nothing to do */
+}
+
+QString mainlib::getHello(){
+    return QObject::tr("Hallo!");
+}
+
+QString test(){
+    mainlib ml;
+    QString a;
+    a=ml.getHello();
+    return a;
 }

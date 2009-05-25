@@ -195,7 +195,6 @@ int main(int argc, char *argv[])
 	tables << "prefix" << "dir" << "icon" << "images";
 	if (!db.checkDb(tables))
 	   return -1;
-
 	MainWindow mainWin;
 	mainWin.show();
 	int result = app.exec();

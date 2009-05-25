@@ -31,11 +31,25 @@
 
 QTimer *timer = new QTimer();
 
+
 MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
+
+        libq4wine.setFileName("libq4wine-core");
+
+        if (!libq4wine.load()){
+            libq4wine.load();
+        }
+
+        typedef QString (*Fct) ();
+        Fct fct = (Fct)(libq4wine.resolve("test"));
+        if (fct) {
+            qDebug()<<fct();
+        } else {
+            qDebug()<<"Error";
+        }
 
 	// GUI setup
 	setupUi(this);
-
 	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
 
 	// Getting settings from config file
