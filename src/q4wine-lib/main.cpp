@@ -31,16 +31,19 @@
 
 mainlib::mainlib()
 {
-    /* nothing to do */
+    /// nothing to do here
 }
 
 QString mainlib::getHello(){
+    /// Just returns "Hallo" text
     return QObject::tr("Hallo!");
 }
 
 QString test(){
+    /// Create mainlib class copy
     mainlib ml;
     QString a;
+    /// Here ve call for mainlib.getHello() function to take hello text
     a=ml.getHello();
     return a;
 }

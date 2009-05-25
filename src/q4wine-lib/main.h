@@ -27,20 +27,54 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#include <QtCore>
-#include <QString>
+/** \defgroup libq4wine libq4wine-core
+ *
+ * \brief libq4wine-core provide general functions for q4wine-gui and q4wine-cli pakages
+ */
+
+/**
+ * \class mainlib
+ *
+ * \ingroup libq4wine
+ *
+ * \brief Provide general functions for q4wine-gui and q4wine-cli pakages
+ *
+ * This class provide core functions for q4wine.
+ * It is not useful by itself, but helps to create user-side applications which
+ * can use q4wine core functions;
+ *
+ * \note This is still in development state ;)
+ *
+ */
 
 #ifndef Q4WINELIB_H
 #define Q4WINELIB_H
+
+#include <QObject>
+#include <QString>
 
 #define Q4WINE_EXPORT
 
 class Q4WINE_EXPORT mainlib {
 public:
+    /// Create an mainlib class
     mainlib();
+    /** \brief This is just a test method.
+	* \return Return some QString text value
+	*
+	* This method does NOT do useful things.
+	* And returns exceptionally useful results.
+	* Use it everyday with good health.
+	*/
     QString getHello();
-};
+}; // end of class mainlib
 
+/** \ingroup libq4wine
+  * \brief This function is exported from shared libarary. So you can use it from other software.
+  * \return Return some QString text value
+  *
+  * This function is exported from shared libarary
+  */
 extern "C" Q4WINE_EXPORT QString test();
 
 #endif
