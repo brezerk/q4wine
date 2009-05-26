@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>q4wine: wizard.h Source File</title>
+<title>q4wine: src/gui/wizard.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 </head><body>
@@ -19,7 +19,7 @@
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
     </ul>
   </div>
-<h1>wizard.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/***************************************************************************</span>
+<h1>src/gui/wizard.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/***************************************************************************</span>
 <a name="l00002"></a>00002 <span class="comment"> *   Copyright (C) 2008 by Malakhov Alexey                                 *</span>
 <a name="l00003"></a>00003 <span class="comment"> *   brezerk@gmail.com                                                     *</span>
 <a name="l00004"></a>00004 <span class="comment"> *                                                                         *</span>
@@ -73,35 +73,35 @@
 <a name="l00052"></a>00052 
 <a name="l00053"></a>00053 <span class="keyword">class </span>Wizard : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::Wizard
 <a name="l00054"></a>00054 {
-<a name="l00055"></a>00055         Q_OBJECT
-<a name="l00056"></a>00056         <span class="keyword">public</span>:
-<a name="l00057"></a>00057                 Wizard(<span class="keywordtype">int</span> a, QString var1 = <span class="stringliteral">""</span>, QWidget * parent = 0, Qt::WFlags f = 0);
+<a name="l00055"></a>00055      Q_OBJECT
+<a name="l00056"></a>00056      <span class="keyword">public</span>:
+<a name="l00057"></a>00057           Wizard(<span class="keywordtype">int</span> a, QString var1 = <span class="stringliteral">""</span>, QWidget * parent = 0, Qt::WFlags f = 0);
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059         <span class="keyword">private</span> slots:
-<a name="l00060"></a>00060                 <span class="keywordtype">void</span> nextWizardPage();
-<a name="l00061"></a>00061                 <span class="keywordtype">void</span> previosWizardPage();
-<a name="l00062"></a>00062                 <span class="keywordtype">void</span> changeBoxState(<span class="keywordtype">int</span> state);
-<a name="l00063"></a>00063                 <span class="keywordtype">void</span> comboProxyType_indexChanged(QString text);
+<a name="l00059"></a>00059      <span class="keyword">private</span> slots:
+<a name="l00060"></a>00060           <span class="keywordtype">void</span> nextWizardPage();
+<a name="l00061"></a>00061           <span class="keywordtype">void</span> previosWizardPage();
+<a name="l00062"></a>00062           <span class="keywordtype">void</span> changeBoxState(<span class="keywordtype">int</span> state);
+<a name="l00063"></a>00063           <span class="keywordtype">void</span> comboProxyType_indexChanged(QString text);
 <a name="l00064"></a>00064 
-<a name="l00065"></a>00065         <span class="keyword">private</span>:
-<a name="l00066"></a>00066                 <span class="keywordtype">void</span> updateScena();
+<a name="l00065"></a>00065      <span class="keyword">private</span>:
+<a name="l00066"></a>00066           <span class="keywordtype">void</span> updateScena();
 <a name="l00067"></a>00067 
-<a name="l00068"></a>00068                 <span class="keywordtype">int</span> Scena, Page, TotalPage;
-<a name="l00069"></a>00069                 <span class="keywordtype">bool</span> checkEntry(QString fileName, QString info, <span class="keywordtype">bool</span> isFile = TRUE);
+<a name="l00068"></a>00068           <span class="keywordtype">int</span> Scena, Page, TotalPage;
+<a name="l00069"></a>00069           <span class="keywordtype">bool</span> checkEntry(QString fileName, QString info, <span class="keywordtype">bool</span> isFile = TRUE);
 <a name="l00070"></a>00070 
-<a name="l00071"></a>00071                 CoreMethods *core;
+<a name="l00071"></a>00071           CoreMethods *core;
 <a name="l00072"></a>00072 
-<a name="l00073"></a>00073         <span class="keyword">protected</span>:
-<a name="l00074"></a>00074                 <span class="keywordtype">bool</span> eventFilter(QObject *obj, QEvent *event);
-<a name="l00075"></a>00075                 <span class="keywordtype">void</span> getprocDevices();
-<a name="l00076"></a>00076                 QString var1;
-<a name="l00077"></a>00077                 <span class="keywordtype">void</span> loadThemeIcons(QString themePath, <span class="keywordtype">int</span> Scene);
-<a name="l00078"></a>00078                 QIcon loadIcon(QString iconName, QString themePath);
+<a name="l00073"></a>00073      <span class="keyword">protected</span>:
+<a name="l00074"></a>00074           <span class="keywordtype">bool</span> eventFilter(QObject *obj, QEvent *event);
+<a name="l00075"></a>00075           <span class="keywordtype">void</span> getprocDevices();
+<a name="l00076"></a>00076           QString var1;
+<a name="l00077"></a>00077           <span class="keywordtype">void</span> loadThemeIcons(QString themePath, <span class="keywordtype">int</span> Scene);
+<a name="l00078"></a>00078           QIcon loadIcon(QString iconName, QString themePath);
 <a name="l00079"></a>00079 };
 <a name="l00080"></a>00080 
 <a name="l00081"></a>00081 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 21:36:43 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 26 14:56:50 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

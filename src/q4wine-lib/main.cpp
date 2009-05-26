@@ -28,22 +28,188 @@
  ***************************************************************************/
 
 #include "main.h"
+#include "config.h"
 
-mainlib::mainlib()
+corelib::corelib()
 {
-    /// nothing to do here
+    //! nothing to do here
 }
 
-QString mainlib::getHello(){
-    /// Just returns "Hallo" text
-    return QObject::tr("Hallo!");
+corelib* createCoreLib(){
+    return new corelib();
 }
 
-QString test(){
-    /// Create mainlib class copy
-    mainlib ml;
-    QString a;
-    /// Here ve call for mainlib.getHello() function to take hello text
-    a=ml.getHello();
-    return a;
+QList<QStringList> corelib::getWineProcessList(){
+    QList<QStringList> proclist;
+    QStringList procline;
+
+    QString name, procstat, path, prefix, env_arg, nice;
+
+    #ifdef _OS_LINUX_
+        QDir dir("/proc");
+        QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
+    #endif
+
+    #ifdef _OS_FREEBSD_
+        QDir dir("/proc");
+        QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
+    #endif
+
+    // Check for /proc directory exists
+    if (!dir.exists()){
+        int ret = QMessageBox::warning(0, QObject::tr("Error"), message, QMessageBox::Retry, QMessageBox::Ignore);
+        if (ret == QMessageBox::Ignore){
+            procline << "timer" << "stop";
+            proclist << procline;
+            return proclist;
+        }
+    }
+
+
+    /* On Linux:
+     * This is new engine for getting process info from /proc directory
+     * its fully wrighted with QT and might work more stable =)
+     */
+    #ifdef _OS_LINUX_
+        dir.setFilter(QDir::Dirs | QDir::NoSymLinks);
+        dir.setSorting(QDir::Name);
+
+        QFileInfoList list = dir.entryInfoList();
+
+        // Getting directoryes one by one
+        for (int i = 0; i < list.size(); ++i) {
+            QFileInfo fileInfo = list.at(i);
+            path = "/proc/";
+            path.append(fileInfo.fileName());
+            path.append("/stat");
+            QFile file(path);
+            // Try to read stat file
+            if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+                QTextStream in(&file);
+                QString line = in.readLine();
+                if (!line.isNull()){
+                     // Getting nice and name of the process
+                     nice = line.section(' ', 18, 18);
+                     name = line.section(' ', 1, 1);
+                     name.remove(QChar('('));
+                     name.remove(QChar(')'));
+                     name = name.toLower();
+
+                    // If name contains wine or .exe and not contains q4wine,
+                    // then we try to get environ variables.
+                    if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
+                        path = "/proc/";
+                        path.append(fileInfo.fileName());
+                        path.append("/environ");
+                        QFile e_file(path);
+
+                        // Getting WINEPREFIX variable.
+                        if (e_file.open(QIODevice::ReadOnly | QIODevice::Text)){
+                            QTextStream e_in(&e_file);
+                            QString e_line = e_in.readLine();
+                            int index = e_line.indexOf("WINEPREFIX=");
+                            prefix="";
+                            if (index!=-1)
+                                for (int i=index+11; i<=e_line.length(); i++){
+                                     if (e_line.mid(i, 1).data()->isPrint()){
+                                           prefix.append(e_line.mid(i, 1));
+                                     } else {
+                                           break;
+                                     }
+                                }
+                         }
+
+                        // Puting all fields into QList<QStringList>
+                        procline.clear();
+                        procline << fileInfo.fileName() << name << nice << prefix;
+                        proclist << procline;
+
+                    }
+                }
+            file.close();
+            }
+        }
+        #endif
+
+        #ifdef _OS_FREEBSD_
+            kvm_t *kd;
+            int cntproc, i, ni, ipid, ret;
+
+            struct kinfo_proc *kp;
+            char buf[_POSIX2_LINE_MAX];
+            char **envs;
+
+            kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
+                if (!kd){
+                    ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
+                    if (ret == QMessageBox::Ignore){
+                        procline << "timer" << "stop";
+                        proclist << procline;
+                        return proclist;
+                    }
+                    return proclist;
+                }
+            kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &cntproc);
+                if (!kp){
+                    ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_getprocs.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
+                    if (ret == QMessageBox::Ignore){
+                        procline << "timer" << "stop";
+                        proclist << procline;
+                        return proclist;
+                    }
+                    return proclist;
+                }
+
+            QStringList cur_pids;
+            for (i=0; i<cntproc;i++){
+                prefix="";
+                ipid = kp[i].ki_pid;
+
+                if (cur_pids.indexOf(tr("%1").arg(ipid))==-1){
+                    cur_pids << tr("%1").arg(ipid);
+                    name = kp[i].ki_comm;
+
+                    if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
+                         ni = kp[i].ki_nice;
+                         nice = tr("%1").arg(ni);
+
+                         if (name.contains("pthread")){
+                              envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
+                              if (envs){
+                                    name = envs[0];
+                                    if (name.isEmpty()){
+                                         name = kp[i].ki_comm;
+                                    } else {
+                                         name = name.split('\\').last();
+                                    }
+                               }
+                          }
+
+                          envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
+                          if (envs){
+                                int j=0;
+                                while (envs[j]){
+                                     env_arg=envs[j];
+                                     int index = env_arg.indexOf("WINEPREFIX=");
+                                     if (index>=0){
+                                           prefix=env_arg.mid(11);
+                                           break;
+                                     }
+                                     j++;
+                                }
+                          } else {
+                                 prefix="";
+                          }
+
+                          // Puting all fields into QList<QStringList>
+                          procline.clear();
+                          procline << QObject::tr("%1").arg(ipid) << name << nice << prefix;
+                          proclist << procline;
+                     }
+                }
+           }
+        #endif
+
+
+    return proclist;
 }

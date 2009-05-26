@@ -1,0 +1,71 @@
+.TH "corelib" 3 "26 May 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+corelib \- This class provide general core functions for q4wine.  
+
+.PP
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <src/q4wine-lib/main.h>\fP
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcorelib\fP ()"
+.br
+.RI "\fICreate an mainlib class. \fP"
+.ti -1c
+.RI "QList< QStringList > \fBgetWineProcessList\fP ()"
+.br
+.RI "\fIThis function tries to get wine process list running in the current system. \fP"
+.ti -1c
+.RI "QString \fBtest\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class provide general core functions for q4wine. 
+
+It is not useful by itself, but helps to create user-side applications which can use q4wine core functions;
+.PP
+\fBNote:\fP
+.RS 4
+This is still in development state ;) 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "corelib::corelib ()"
+.PP
+Create an mainlib class. 
+.PP
+
+.PP
+nothing to do here 
+.SH "Member Function Documentation"
+.PP 
+.SS "QList< QStringList > corelib::getWineProcessList ()"
+.PP
+This function tries to get wine process list running in the current system. 
+.PP
+It gets process values: pid, name, nice priority and WINEPREFIX environment variable 
+.PP
+\fBNote:\fP
+.RS 4
+On Linux it uses /proc file system, and on FreeBSD/MacOS it uses /dev/kmem and kvm.h functions. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return an array of QList which contains an QStringList This function is exported from shared libarary 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for q4wine from the source code.

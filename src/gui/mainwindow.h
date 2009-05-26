@@ -81,6 +81,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#include <q4wine-lib/main.h>
+
 // Experemental FreeBSD support
 #ifdef _OS_FREEBSD_
 	#include <kvm.h>
@@ -222,6 +224,12 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 			void mainOptions_Click(void);
 			void mainInstall_Click(void);
 	private:
+
+                //! This is need for libq4wine-core.so import;
+                typedef void *CoreLibPrototype ();
+                CoreLibPrototype *CoreLibClassPointer;
+                corelib *CoreLib;
+
 		//Classes
 		CoreMethods *core;
                 QLibrary libq4wine;

@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>q4wine: main.h Source File</title>
+<title>q4wine: src/q4wine-lib/main.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css">
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 </head><body>
@@ -19,7 +19,7 @@
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
     </ul>
   </div>
-<h1>main.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/***************************************************************************</span>
+<h1>src/q4wine-lib/main.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/***************************************************************************</span>
 <a name="l00002"></a>00002 <span class="comment"> *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *</span>
 <a name="l00003"></a>00003 <span class="comment"> *   brezerk@gmail.com                                                     *</span>
 <a name="l00004"></a>00004 <span class="comment"> *                                                                         *</span>
@@ -48,25 +48,56 @@
 <a name="l00027"></a>00027 <span class="comment"> *   your version.                                                         *</span>
 <a name="l00028"></a>00028 <span class="comment"> ***************************************************************************/</span>
 <a name="l00029"></a>00029 
-<a name="l00050"></a>00050 <span class="preprocessor">#ifndef Q4WINELIB_H</span>
-<a name="l00051"></a>00051 <span class="preprocessor"></span><span class="preprocessor">#define Q4WINELIB_H</span>
-<a name="l00052"></a>00052 <span class="preprocessor"></span>
-<a name="l00053"></a>00053 <span class="preprocessor">#include &lt;QObject&gt;</span>
-<a name="l00054"></a>00054 <span class="preprocessor">#include &lt;QString&gt;</span>
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056 <span class="preprocessor">#define Q4WINE_EXPORT</span>
-<a name="l00057"></a>00057 <span class="preprocessor"></span>
-<a name="l00058"></a><a class="code" href="classmainlib.html">00058</a> <span class="keyword">class </span>Q4WINE_EXPORT <a class="code" href="classmainlib.html" title="Provide general functions for q4wine-gui and q4wine-cli pakages.">mainlib</a> {
-<a name="l00059"></a>00059 <span class="keyword">public</span>:
-<a name="l00061"></a>00061     <a class="code" href="classmainlib.html" title="Provide general functions for q4wine-gui and q4wine-cli pakages.">mainlib</a>();
-<a name="l00069"></a>00069     QString getHello();
-<a name="l00070"></a>00070 }; <span class="comment">// end of class mainlib</span>
-<a name="l00071"></a>00071 
-<a name="l00078"></a>00078 <span class="keyword">extern</span> <span class="stringliteral">"C"</span> Q4WINE_EXPORT QString <a class="code" href="group__libq4wine.html#g19674f9c08b830a18c151066efe141c7" title="This function is exported from shared libarary. So you can use it from other software...">test</a>();
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080 <span class="preprocessor">#endif</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#ifndef Q4WINELIB_H</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#define Q4WINELIB_H</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span>
+<a name="l00038"></a>00038 <span class="preprocessor">#include &lt;QObject&gt;</span>
+<a name="l00039"></a>00039 <span class="preprocessor">#include &lt;QList&gt;</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#include &lt;QString&gt;</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;QStringList&gt;</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;QDir&gt;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &lt;QFileInfoList&gt;</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#include &lt;QMessageBox&gt;</span>
+<a name="l00045"></a>00045 <span class="preprocessor">#include &lt;QIODevice&gt;</span>
+<a name="l00046"></a>00046 <span class="preprocessor">#include &lt;QChar&gt;</span>
+<a name="l00047"></a>00047 <span class="preprocessor">#include &lt;QTextStream&gt;</span>
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 <span class="comment">// FreeBSD support</span>
+<a name="l00050"></a>00050 <span class="preprocessor">#ifdef _OS_FREEBSD_</span>
+<a name="l00051"></a>00051 <span class="preprocessor"></span><span class="preprocessor">        #include &lt;kvm.h&gt;</span>
+<a name="l00052"></a>00052 <span class="preprocessor">        #include &lt;sys/param.h&gt;</span>
+<a name="l00053"></a>00053 <span class="preprocessor">        #include &lt;sys/user.h&gt;</span>
+<a name="l00054"></a>00054 <span class="preprocessor">        #include &lt;sys/file.h&gt;</span>
+<a name="l00055"></a>00055 <span class="preprocessor">        #include &lt;sys/sysctl.h&gt;</span>
+<a name="l00056"></a>00056 <span class="preprocessor">        #include &lt;limits.h&gt;</span>
+<a name="l00057"></a>00057 <span class="preprocessor">        #include &lt;paths.h&gt;</span>
+<a name="l00058"></a>00058 <span class="preprocessor">#endif</span>
+<a name="l00059"></a>00059 <span class="preprocessor"></span>
+<a name="l00060"></a>00060 <span class="comment">// Experimental Darwin support (no test were preformed)</span>
+<a name="l00061"></a>00061 <span class="preprocessor">#ifdef _OS_DARWIN_</span>
+<a name="l00062"></a>00062 <span class="preprocessor"></span><span class="preprocessor">        #include &lt;kvm.h&gt;</span>
+<a name="l00063"></a>00063 <span class="preprocessor">        #include &lt;sys/param.h&gt;</span>
+<a name="l00064"></a>00064 <span class="preprocessor">        #include &lt;sys/user.h&gt;</span>
+<a name="l00065"></a>00065 <span class="preprocessor">        #include &lt;sys/file.h&gt;</span>
+<a name="l00066"></a>00066 <span class="preprocessor">        #include &lt;sys/sysctl.h&gt;</span>
+<a name="l00067"></a>00067 <span class="preprocessor">        #include &lt;limits.h&gt;</span>
+<a name="l00068"></a>00068 <span class="preprocessor">        #include &lt;paths.h&gt;</span>
+<a name="l00069"></a>00069 <span class="preprocessor">#endif</span>
+<a name="l00070"></a>00070 <span class="preprocessor"></span>
+<a name="l00081"></a><a class="code" href="classcorelib.html">00081</a> <span class="keyword">class </span><a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a> {
+<a name="l00082"></a>00082 <span class="keyword">public</span>:
+<a name="l00084"></a>00084     <a class="code" href="classcorelib.html#afdd9440fae8fa0a5432a522f7c480bd" title="Create an mainlib class.">corelib</a>();
+<a name="l00085"></a>00085 
+<a name="l00093"></a>00093     QList&lt;QStringList&gt; <a class="code" href="classcorelib.html#b6ee10802744fe1c2016fedca2698509" title="This function tries to get wine process list running in the current system.">getWineProcessList</a>();
+<a name="l00094"></a>00094     QString test();
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096 }; <span class="comment">// end of class corelib</span>
+<a name="l00097"></a>00097 
+<a name="l00105"></a>00105 <span class="keyword">extern</span> <span class="stringliteral">"C"</span> <a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a>* <a class="code" href="group__libq4wine.html#g7ca89d5fdae99fa64de4fcb4fd0c9862" title="This function returns a class of corelib type.">createCoreLib</a>();
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon May 25 21:36:43 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 26 14:56:50 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

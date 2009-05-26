@@ -1,45 +1,48 @@
-.TH "libq4wine-core" 3 "25 May 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.TH "libq4wine-core" 3 "26 May 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-libq4wine-core \- libq4wine-core provide general functions for q4wine-gui and q4wine-cli pakages  
+libq4wine-core \- libq4wine-core pakage provide general functions for q4wine-gui and q4wine-cli pakages.  
 
 .PP
 .SS "Classes"
 
 .in +1c
 .ti -1c
-.RI "class \fBmainlib\fP"
+.RI "class \fBcorelib\fP"
 .br
-.RI "\fIProvide general functions for q4wine-gui and q4wine-cli pakages. \fP"
+.RI "\fIThis class provide general core functions for q4wine. \fP"
 .in -1c
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "Q4WINE_EXPORT QString \fBtest\fP ()"
+.RI "\fBcorelib\fP * \fBcreateCoreLib\fP ()"
 .br
-.RI "\fIThis function is exported from shared libarary. So you can use it from other software. \fP"
+.RI "\fIThis function returns a class of \fBcorelib\fP type. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-libq4wine-core provide general functions for q4wine-gui and q4wine-cli pakages 
+libq4wine-core pakage provide general functions for q4wine-gui and q4wine-cli pakages. 
 .SH "Function Documentation"
 .PP 
-.SS "Q4WINE_EXPORT QString test ()"
+.SS "\fBcorelib\fP* createCoreLib ()"
 .PP
-This function is exported from shared libarary. So you can use it from other software. 
+This function returns a class of \fBcorelib\fP type. 
+.PP
+Here we create an instance of \fBcorelib\fP class and returns its pointer. 
 .PP
 \fBReturns:\fP
 .RS 4
-Return some QString text value
+Return an a pointer to core lib class instance. 
 .RE
 .PP
-This function is exported from shared libarary 
+\fBNote:\fP
+.RS 4
+This function is exported from shared library. 
+.RE
 .PP
-Create \fBmainlib\fP class copy
-.PP
-Here ve call for \fBmainlib.getHello()\fP function to take hello text 
+
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for q4wine from the source code.

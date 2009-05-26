@@ -27,54 +27,80 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-/** \defgroup libq4wine libq4wine-core
- *
- * \brief libq4wine-core provide general functions for q4wine-gui and q4wine-cli pakages
- */
-
-/**
- * \class mainlib
- *
- * \ingroup libq4wine
- *
- * \brief Provide general functions for q4wine-gui and q4wine-cli pakages
- *
- * This class provide core functions for q4wine.
- * It is not useful by itself, but helps to create user-side applications which
- * can use q4wine core functions;
- *
- * \note This is still in development state ;)
- *
+/*!
+ * \defgroup libq4wine libq4wine-core
+ * \brief libq4wine-core pakage provide general functions for q4wine-gui and q4wine-cli pakages.
  */
 
 #ifndef Q4WINELIB_H
 #define Q4WINELIB_H
 
 #include <QObject>
+#include <QList>
 #include <QString>
+#include <QStringList>
+#include <QDir>
+#include <QFileInfoList>
+#include <QMessageBox>
+#include <QIODevice>
+#include <QChar>
+#include <QTextStream>
 
-#define Q4WINE_EXPORT
+// FreeBSD support
+#ifdef _OS_FREEBSD_
+        #include <kvm.h>
+        #include <sys/param.h>
+        #include <sys/user.h>
+        #include <sys/file.h>
+        #include <sys/sysctl.h>
+        #include <limits.h>
+        #include <paths.h>
+#endif
 
-class Q4WINE_EXPORT mainlib {
+// Experimental Darwin support (no test were preformed)
+#ifdef _OS_DARWIN_
+        #include <kvm.h>
+        #include <sys/param.h>
+        #include <sys/user.h>
+        #include <sys/file.h>
+        #include <sys/sysctl.h>
+        #include <limits.h>
+        #include <paths.h>
+#endif
+
+/*!
+ * \class corelib
+ * \ingroup libq4wine
+ * \brief This class provide general core functions for q4wine.
+ *
+ * It is not useful by itself, but helps to create user-side applications which
+ * can use q4wine core functions;
+ *
+ * \note This is still in development state ;)
+ */
+class corelib {
 public:
-    /// Create an mainlib class
-    mainlib();
-    /** \brief This is just a test method.
-	* \return Return some QString text value
-	*
-	* This method does NOT do useful things.
-	* And returns exceptionally useful results.
-	* Use it everyday with good health.
-	*/
-    QString getHello();
-}; // end of class mainlib
+    //! Create an mainlib class
+    corelib();
 
-/** \ingroup libq4wine
-  * \brief This function is exported from shared libarary. So you can use it from other software.
-  * \return Return some QString text value
-  *
-  * This function is exported from shared libarary
-  */
-extern "C" Q4WINE_EXPORT QString test();
+    /*! \brief This function tries to get wine process list running in the current system.
+      *
+      * It gets process values: pid, name, nice priority and WINEPREFIX environment variable
+      * \note On Linux it uses /proc file system, and on FreeBSD/MacOS it uses /dev/kmem and kvm.h functions.
+      * \return Return an array of QList which contains an QStringList
+      */
+    QList<QStringList> getWineProcessList();
+    QString test();
+
+}; // end of class corelib
+
+/*! \ingroup libq4wine
+ * \brief This function returns a class of corelib type.
+ *
+ * Here we create an instance of corelib class and returns its pointer.
+ * \return Return an a pointer to core lib class instance.
+ * \note This function is exported from shared library.
+ */
+extern "C" corelib* createCoreLib();
 
 #endif

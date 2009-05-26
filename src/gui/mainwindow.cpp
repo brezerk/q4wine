@@ -33,22 +33,22 @@ QTimer *timer = new QTimer();
 
 
 MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
-
+        //! Loading libq4wine-core.so
         libq4wine.setFileName("libq4wine-core");
 
         if (!libq4wine.load()){
             libq4wine.load();
         }
 
-        typedef QString (*Fct) ();
-        Fct fct = (Fct)(libq4wine.resolve("test"));
-        if (fct) {
-            qDebug()<<fct();
-        } else {
-            qDebug()<<"Error";
-        }
+        //! Getting corelib calss pointer
+        CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+        CoreLib = (corelib *)CoreLibClassPointer();
 
-	// GUI setup
+        QList<QStringList> test;
+        test = CoreLib->getWineProcessList();
+        qDebug()<<test;
+
+        //! Base GUI setup
 	setupUi(this);
 	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
 
