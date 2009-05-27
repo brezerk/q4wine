@@ -78,17 +78,19 @@
  *
  * \note This is still in development state ;)
  */
+class corelib;
+
 class corelib {
 public:
     //! Create an mainlib class
     corelib();
 
     /*! \brief This function tries to get wine process list running in the current system.
-      *
-      * It gets process values: pid, name, nice priority and WINEPREFIX environment variable
-      * \note On Linux it uses /proc file system, and on FreeBSD/MacOS it uses /dev/kmem and kvm.h functions.
-      * \return Return an array of QList which contains an QStringList
-      */
+     *
+     * It gets process values: pid, name, nice priority and WINEPREFIX environment variable
+     * \note On Linux it uses /proc file system, and on FreeBSD/MacOS it uses /dev/kmem and kvm.h functions.
+     * \return Return an array of QList which contains an QStringList
+     */
     QList<QStringList> getWineProcessList();
     QString test();
 

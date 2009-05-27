@@ -59,8 +59,8 @@ QList<QStringList> corelib::getWineProcessList(){
     if (!dir.exists()){
         int ret = QMessageBox::warning(0, QObject::tr("Error"), message, QMessageBox::Retry, QMessageBox::Ignore);
         if (ret == QMessageBox::Ignore){
-            procline << "timer" << "stop";
-            proclist << procline;
+	    procline << "-1";
+	    proclist << procline;
             return proclist;
         }
     }
@@ -117,7 +117,7 @@ QList<QStringList> corelib::getWineProcessList(){
                                            break;
                                      }
                                 }
-                         }
+                        }
 
                         // Puting all fields into QList<QStringList>
                         procline.clear();
@@ -131,6 +131,9 @@ QList<QStringList> corelib::getWineProcessList(){
         }
         #endif
 
+        /* On FreeBSD:
+         * This is new engine for getting process info from /proc directory and kmem interface
+         */
         #ifdef _OS_FREEBSD_
             kvm_t *kd;
             int cntproc, i, ni, ipid, ret;
@@ -143,7 +146,7 @@ QList<QStringList> corelib::getWineProcessList(){
                 if (!kd){
                     ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
                     if (ret == QMessageBox::Ignore){
-                        procline << "timer" << "stop";
+                        procline << "-1";
                         proclist << procline;
                         return proclist;
                     }
@@ -153,7 +156,7 @@ QList<QStringList> corelib::getWineProcessList(){
                 if (!kp){
                     ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_getprocs.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
                     if (ret == QMessageBox::Ignore){
-                        procline << "timer" << "stop";
+                        procline << "-1";
                         proclist << procline;
                         return proclist;
                     }

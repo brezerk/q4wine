@@ -33,22 +33,18 @@ QTimer *timer = new QTimer();
 
 
 MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
-        //! Loading libq4wine-core.so
+        // Loading libq4wine-core.so
         libq4wine.setFileName("libq4wine-core");
 
         if (!libq4wine.load()){
             libq4wine.load();
         }
 
-        //! Getting corelib calss pointer
+        // Getting corelib calss pointer
         CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
         CoreLib = (corelib *)CoreLibClassPointer();
 
-        QList<QStringList> test;
-        test = CoreLib->getWineProcessList();
-        qDebug()<<test;
-
-        //! Base GUI setup
+        // Base GUI setup
 	setupUi(this);
 	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
 
@@ -59,25 +55,25 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	CoreFunction_DatabaseUpdateConnectedItems();
 	// Slots connections
 
-	// Timer signal for getting proc info
-	run_timer=TRUE;
-	connect(timer, SIGNAL(timeout()), this, SLOT(CoreFunction_GetProcProccessInfo()));
+        // Timer flag to running
+        _IS_TIMER_RUNNING=TRUE;
 
+        // Connecting signals and slots
+	connect(timer, SIGNAL(timeout()), this, SLOT(getWineProccessInfo()));
 	connect(tbwGeneral, SIGNAL(currentChanged(int)), this, SLOT(CoreFunction_ResizeContent(int)));
 	connect(cmdManagePrefixes, SIGNAL(clicked()), this, SLOT(cmdManagePrefixes_Click()));
 	connect(cmdCreateFake, SIGNAL(clicked()), this, SLOT(cmdCreateFake_Click()));
 	connect(cmdUpdateFake, SIGNAL(clicked()), this, SLOT(cmdUpdateFake_Click()));
-	  connect(cmdWinetricks, SIGNAL(clicked()), this, SLOT(cmdWinetricks_Click()));
+        connect(cmdWinetricks, SIGNAL(clicked()), this, SLOT(cmdWinetricks_Click()));
 	connect(cmdTestWis, SIGNAL(clicked()), this, SLOT(cmdTestWis_Click()));
-
 
 	// Signals commection for Icons and Folders
 
 	connect(twPrograms, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(twPrograms_ItemClick(QTreeWidgetItem *, int)));
 	connect(twPrograms, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(twPrograms_ShowContextMenu(const QPoint &)));
-
 	connect(lstIcons, SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(lstIcons_ItemDoubleClick(QListWidgetItem *)));
 	connect(lstIcons, SIGNAL(itemClicked(QListWidgetItem *)), this, SLOT(lstIcons_ItemClick(QListWidgetItem *)));
+        connect(lstIcons, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(lstIcons_ShowContextMenu(const QPoint &)));
 
 	// Signals for updating toolbars
 	connect(tableProc, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tableProc_ShowContextMenu(const QPoint &)));
@@ -86,10 +82,6 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	// Init and connect SLOT & SIGNALS for context menus
 	connect(tablePrefix, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tablePrefix_ShowContextMenu(const QPoint &)));
 	connect(tablePrefix, SIGNAL(clicked(const QModelIndex &)), this, SLOT(tablePrefix_UpdateContentList(const QModelIndex &)));
-
-
-
-	connect(lstIcons, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(lstIcons_ShowContextMenu(const QPoint &)));
 
 	//Main menu actions connection to slots
 	connect(mainRun, SIGNAL(triggered()), this, SLOT(mainRun_Click()));
@@ -102,15 +94,15 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	connect(mainAboutQt, SIGNAL(triggered()), this, SLOT(mainAboutQt_Click()));
 	connect(mainExportIcons, SIGNAL(triggered()), this, SLOT(mainExportIcons_Click()));
 
-	  #ifndef WITH_ICOTOOLS
-	     mainExportIcons->setEnabled(false);
-	  #endif
+        #ifndef WITH_ICOTOOLS
+            mainExportIcons->setEnabled(false);
+        #endif
 
-	  #ifdef WITH_DEVELOP_STUFF
-		    cmdTestWis->setEnabled(true);
-	  #else
-		    cmdTestWis->setEnabled(false);
-	  #endif
+        #ifdef WITH_DEVELOP_STUFF
+            cmdTestWis->setEnabled(true);
+        #else
+            cmdTestWis->setEnabled(false);
+        #endif
 
 	connect(mainOptions, SIGNAL(triggered()), this, SLOT(mainOptions_Click()));
 	connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
@@ -137,23 +129,21 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	// Setting default IconsSize for lstIcons (Wine-Programm-Menu) nead for user settings
 	lstIcons->setIconSize(QSize(32, 32));
 
-
-
 	twPrograms->installEventFilter(this);
 	lstIcons->installEventFilter(this);
 
+        // FIXME: Move this into shared libaray
 	CoreFunction_WineRunAutorunItems();
 
 	createTrayIcon();
 
+        // FIXME: Remove this as replace for shared library
 	core = new CoreMethods();
 
 	return;
 }
 
 void MainWindow::cmdTestWis_Click(){
-	//Itin classes
-
 	// test block
 	WisItem wis;
 
@@ -700,7 +690,7 @@ void MainWindow::tableProc_UpdateContentList(const QModelIndex){
 	/*
 		Function for updateing tableproc content and QAction status
 	*/
-	CoreFunction_GetProcProccessInfo();
+	getWineProccessInfo();
 	return;
 }
 
@@ -1230,8 +1220,8 @@ void MainWindow::CoreFunction_ResizeContent(int tabIndex){
 	switch (tabIndex){
 		case 1:
 			//Initiate /proc reading
-			if (run_timer){
-				CoreFunction_GetProcProccessInfo();
+                        if (_IS_TIMER_RUNNING){
+				getWineProccessInfo();
 				// Starting timer for reading /proc
 				timer->start(1000);
 			}
@@ -1247,12 +1237,12 @@ void MainWindow::CoreFunction_ResizeContent(int tabIndex){
 			tablePrefix->horizontalHeader()->setStretchLastSection(TRUE);
 
 			// Stopping timer for reading /proc
-			if (run_timer)
+                        if (_IS_TIMER_RUNNING)
 				timer->stop();
 		break;
 		default:
 			// Stopping timer for reading /proc
-			if (run_timer)
+                        if (_IS_TIMER_RUNNING)
 				timer->stop();
 		break;
 	}
@@ -1301,7 +1291,7 @@ void MainWindow::CoreFunction_SetProcNicePriority(int priority, int pid){
 
 	Process *exportProcess = new Process(args, GUI_SUDO_BIN, HOME_PATH, tr("reniceing..."), tr("reniceing..."));
 	if (exportProcess->exec()==QDialog::Accepted){
-	   CoreFunction_GetProcProccessInfo();
+	   getWineProccessInfo();
 	} else {
 	   statusBar()->showMessage(tr("Renice fail fail"));
 	}
@@ -1309,241 +1299,62 @@ void MainWindow::CoreFunction_SetProcNicePriority(int priority, int pid){
 	return;
 }
 
-void MainWindow::CoreFunction_GetProcProccessInfo(void){
-	/*
-		This is new engine for getting proccess info from /proc directory
-		its fully wrighted with QT and might work more stable =)
-	*/
+void MainWindow::getWineProccessInfo(void){
+        // If _RUN_TIMER==FALSE then timer is stopped by user
+        if (!_IS_TIMER_RUNNING)
+            return;
 
-	if (!run_timer)
-		return;
+        QList<QStringList> proclist;
+        int numRows = tableProc->rowCount();
+        int curRows = 0;
 
-	QString name, procstat, path, prefix, env_arg, nice;
+        // Getting QList of QStringList which describes running wine processes
+        proclist = CoreLib->getWineProcessList();
 
-	#ifdef _OS_LINUX_
-		QDir dir("/proc");
-		QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
-	#endif
+        // Preccess QList items one by one
+        for (int i = 0; i < proclist.size(); ++i) {
+            //If first element value "-1" -- then disable timer and set _IS_TIMER_RUNNING flag
+            if (proclist.at(i).at(0) == "-1"){
+                _IS_TIMER_RUNNING=false;
+                timer->stop();
+                return;
+            }
 
-	#ifdef _OS_FREEBSD_
-		QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
-		QDir dir("/proc");
-	#endif
+            curRows++;
 
-	int curRows = 0, numRows = 0;
-	double memSum;
+            if (curRows>numRows){
+                tableProc->insertRow (numRows);
+                numRows = tableProc->rowCount();
+            }
 
-	// Check for /proc..
-	if (!dir.exists()){
-		int ret = QMessageBox::warning(this, tr("Error"), message, QMessageBox::Retry, QMessageBox::Ignore);
+            if (tableProc->item(curRows - 1, 0)){
+                 tableProc->item(curRows - 1, 0)->setText(proclist.at(i).at(0));
+                 tableProc->item(curRows - 1, 1)->setText(proclist.at(i).at(1));
+                 tableProc->item(curRows - 1, 2)->setText(proclist.at(i).at(2));
+                 tableProc->item(curRows - 1, 3)->setText(proclist.at(i).at(3));
+            } else {
+                 QTableWidgetItem *newItem = new QTableWidgetItem(proclist.at(i).at(0));
+                 tableProc->setItem(curRows - 1, 0, newItem);
+                 newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+                 newItem = new QTableWidgetItem(proclist.at(i).at(1));
+                 tableProc->setItem(curRows - 1, 1, newItem);
+                 newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+                 newItem = new QTableWidgetItem(proclist.at(i).at(2));
+                 tableProc->setItem(curRows - 1, 2, newItem);
+                 newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+                 newItem = new QTableWidgetItem(proclist.at(i).at(3));
+                 tableProc->setItem(curRows - 1, 3, newItem);
+                 newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+            }
 
-		if (ret == QMessageBox::Ignore){
-			timer->stop();
-			run_timer=FALSE;
-		}
-		return;
-	}
+        }
 
-	memSum = 0;
-	numRows = tableProc->rowCount();
-
-	#ifdef _OS_LINUX_
-
-		dir.setFilter(QDir::Dirs | QDir::NoSymLinks);
-		dir.setSorting(QDir::Name);
-
-		QFileInfoList list = dir.entryInfoList();
-
-		// Getting directoryes one by one
-		for (int i = 0; i < list.size(); ++i) {
-			QFileInfo fileInfo = list.at(i);
-			path = "/proc/";
-			path.append(fileInfo.fileName());
-			path.append("/stat");
-
-			QFile file(path);
-			if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-				QTextStream in(&file);
-					QString line = in.readLine();
-					if (!line.isNull()){
-						nice = line.section(' ', 18, 18);
-						name = line.section(' ', 1, 1);
-						name.remove(QChar('('));
-						name.remove(QChar(')'));
-						name = name.toLower();
-
-						if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
-
-							path = "/proc/";
-							path.append(fileInfo.fileName());
-							path.append("/environ");
-							QFile e_file(path);
-
-							if (e_file.open(QIODevice::ReadOnly | QIODevice::Text)){
-								QTextStream e_in(&e_file);
-
-								QString e_line = e_in.readLine();
-
-								int index = e_line.indexOf("WINEPREFIX=");
-								prefix="";
-								if (index!=-1)
-									for (int i=index+11; i<=e_line.length(); i++){
-										if (e_line.mid(i, 1).data()->isPrint()){
-											prefix.append(e_line.mid(i, 1));
-										} else {
-											break;
-										}
-									}
-							}
-
-							curRows++;
-
-							if (curRows>numRows){
-								tableProc->insertRow (numRows);
-								numRows = tableProc->rowCount();
-							}
-
-							if (tableProc->item(curRows - 1, 0)){
-								tableProc->item(curRows - 1, 0)->setText(fileInfo.fileName());
-								tableProc->item(curRows - 1, 1)->setText(name);
-								tableProc->item(curRows - 1, 2)->setText(nice);
-								tableProc->item(curRows - 1, 3)->setText(prefix);
-							} else {
-								QTableWidgetItem *newItem = new QTableWidgetItem(fileInfo.fileName());
-								tableProc->setItem(curRows - 1, 0, newItem);
-								newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-								newItem = new QTableWidgetItem(name);
-								tableProc->setItem(curRows - 1, 1, newItem);
-								newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-								newItem = new QTableWidgetItem(nice);
-								tableProc->setItem(curRows - 1, 2, newItem);
-								newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-								newItem = new QTableWidgetItem(prefix);
-								tableProc->setItem(curRows - 1, 3, newItem);
-								newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-							}
-						}
-					}
-				file.close();
-			}
-
-		}
-
-	#endif
-
-	#ifdef _OS_FREEBSD_
-		kvm_t *kd;
-		int cntproc, i, ni, ipid, ret;
-
-		struct kinfo_proc *kp;
-		    char buf[_POSIX2_LINE_MAX];
-		char **envs;
-
-		    kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
-			if (!kd){
-				ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
-
-				if (ret == QMessageBox::Ignore){
-					timer->stop();
-					run_timer=FALSE;
-				}
-				return;
-			}
-		kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &cntproc);
-			if (!kp){
-				ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_getprocs.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
-
-				if (ret == QMessageBox::Ignore){
-					timer->stop();
-					run_timer=FALSE;
-				}
-				return;
-			}
-
-		QStringList cur_pids;
-
-		for (i=0; i<cntproc;i++)
-		{
-			prefix="";
-
-			ipid = kp[i].ki_pid;
-
-			if (cur_pids.indexOf(tr("%1").arg(ipid))==-1){
-				cur_pids << tr("%1").arg(ipid);
-
-				name = kp[i].ki_comm;
-
-
-
-					if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
-						ni = kp[i].ki_nice;
-						nice = tr("%1").arg(ni);
-
-						if (name.contains("pthread")){
-							envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
-							if (envs){
-							  name = envs[0];
-							  if (name.isEmpty()){
-							    name = kp[i].ki_comm;
-							  } else {
-							    name = name.split('\\').last();
-							  }
-							}
-						}
-
-						envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
-							if (envs){
-								int j=0;
-								while (envs[j]){
-									env_arg=envs[j];
-									int index = env_arg.indexOf("WINEPREFIX=");
-									if (index>=0){
-										prefix=env_arg.mid(11);
-										break;
-									}
-									j++;
-								}
-							} else {
-								prefix="";
-							}
-
-
-						curRows++;
-
-						if (curRows>numRows){
-							tableProc->insertRow (numRows);
-							numRows = tableProc->rowCount();
-						}
-
-						if (tableProc->item(curRows - 1, 0)){
-							tableProc->item(curRows - 1, 0)->setText(tr("%1").arg(ipid));
-							tableProc->item(curRows - 1, 1)->setText(name);
-							tableProc->item(curRows - 1, 2)->setText(nice);
-							tableProc->item(curRows - 1, 3)->setText(prefix);
-						} else {
-							QTableWidgetItem *newItem = new QTableWidgetItem(tr("%1").arg(ipid));
-							tableProc->setItem(curRows - 1, 0, newItem);
-							newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-							newItem = new QTableWidgetItem(name);
-							tableProc->setItem(curRows - 1, 1, newItem);
-							newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-							newItem = new QTableWidgetItem(nice);
-							tableProc->setItem(curRows - 1, 2, newItem);
-							newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-							newItem = new QTableWidgetItem(prefix);
-							tableProc->setItem(curRows - 1, 3, newItem);
-							newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-						}
-					}
-				}
-		}
-	#endif
 
 	// Remove unneaded entyes
 	numRows = tableProc->rowCount();
 	if (numRows > curRows)
-		for (int i=curRows; i <= numRows; i++)
-			tableProc->removeRow(curRows);
+            for (int i=curRows; i <= numRows; i++)
+                tableProc->removeRow(curRows);
 
 
 	lblProcInfo->setText(tr("Total process: %1").arg(numRows));
@@ -1557,7 +1368,7 @@ void MainWindow::CoreFunction_GetProcProccessInfo(void){
 		processKillSelected->setEnabled(FALSE);
 		processKillWine->setEnabled(FALSE);
 		processRenice->setEnabled(FALSE);
-	}
+        }
 
 	return;
 }
@@ -2214,7 +2025,7 @@ void MainWindow::CoreFunction_CreateMenus(){
 
 	processRefresh = new QAction(CoreFunction_IconLoad("data/reload.png"), tr("Refresh list"), tableProc);
 	processRefresh->setStatusTip(tr("Refresh process list"));
-	connect(processRefresh, SIGNAL(triggered()), this, SLOT(CoreFunction_GetProcProccessInfo()));
+	connect(processRefresh, SIGNAL(triggered()), this, SLOT(getWineProccessInfo()));
 
 	processRenice = new QAction(tr("Renice"), tableProc);
 	processRenice->setStatusTip(tr("Set process priority"));

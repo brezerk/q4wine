@@ -83,26 +83,6 @@
 
 #include <q4wine-lib/main.h>
 
-// Experemental FreeBSD support
-#ifdef _OS_FREEBSD_
-	#include <kvm.h>
-	#include <sys/param.h>
-	#include <sys/user.h>
-	#include <sys/file.h>
-	#include <sys/sysctl.h>
-	#include <limits.h>
-	#include <paths.h>
-#endif
-
-// Experemental darwin support (need testing)
-#ifdef _OS_DARWIN_
-	#include <kvm.h>
-	#include <sys/param.h>
-	#include <sys/user.h>
-	#include <sys/file.h>
-	#include <sys/sysctl.h>
-#endif
-
 class QAction;
 class QMenu;
 class QTextEdit;
@@ -126,7 +106,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 	private slots:
 
 		//Core functions
-		void CoreFunction_GetProcProccessInfo(void);
+		void getWineProccessInfo(void);
 		void CoreFunction_SetProcNicePriority(int priority, int pid);
 		void CoreFunction_ResizeContent(int tabIndex);
 
@@ -316,24 +296,25 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 	protected:
 		// Event filter
 		bool eventFilter(QObject *obj, QEvent *event);
-		bool run_timer;
 		void closeEvent(QCloseEvent *event);
 
 		//Resource\theme loader
 		QIcon CoreFunction_IconLoad(QString iconName);
 
-		QString HOME_PATH;
-		QString ROOT_PATH;
-		QString TEMP_PATH;
-		QString PREFIX_EI_PATH;
+                QString HOME_PATH;
+                QString ROOT_PATH;
+                QString TEMP_PATH;
+                QString PREFIX_EI_PATH;
 
-		QString WINE_DEFAULT_PREFIX;
-		QString DEFAULT_WINE_BIN, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS;
-		QString WRESTOOL_BIN, ICOTOOL_BIN;
-		QString TAR_BIN, MOUNT_BIN, UMOUNT_BIN, SUDO_BIN, GUI_SUDO_BIN, NICE_BIN, RENICE_BIN, SH_BIN;
-		QString CONSOLE_BIN, CONSOLE_ARGS;
-		QString THEME_NAME;
-		bool SHOW_TRAREY_ICON;
+                QString WINE_DEFAULT_PREFIX;
+                QString DEFAULT_WINE_BIN, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS;
+                QString WRESTOOL_BIN, ICOTOOL_BIN;
+                QString TAR_BIN, MOUNT_BIN, UMOUNT_BIN, SUDO_BIN, GUI_SUDO_BIN, NICE_BIN, RENICE_BIN, SH_BIN;
+                QString CONSOLE_BIN, CONSOLE_ARGS;
+                QString THEME_NAME;
+
+                bool SHOW_TRAREY_ICON;
+                bool _IS_TIMER_RUNNING;
 
 };
 
