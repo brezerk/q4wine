@@ -27,8 +27,8 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#include "main.h"
 #include "config.h"
+#include "main.h"
 
 corelib::corelib()
 {
@@ -144,7 +144,7 @@ QList<QStringList> corelib::getWineProcessList(){
 
             kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
                 if (!kd){
-                    ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
+                    ret = QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
                     if (ret == QMessageBox::Ignore){
                         procline << "-1";
                         proclist << procline;
@@ -154,7 +154,7 @@ QList<QStringList> corelib::getWineProcessList(){
                 }
             kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &cntproc);
                 if (!kp){
-                    ret = QMessageBox::warning(this, tr("Error"), tr("<p>It seems q4wine can not run kvm_getprocs.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
+                    ret = QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("<p>It seems q4wine can not run kvm_getprocs.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
                     if (ret == QMessageBox::Ignore){
                         procline << "-1";
                         proclist << procline;
@@ -168,13 +168,13 @@ QList<QStringList> corelib::getWineProcessList(){
                 prefix="";
                 ipid = kp[i].ki_pid;
 
-                if (cur_pids.indexOf(tr("%1").arg(ipid))==-1){
-                    cur_pids << tr("%1").arg(ipid);
+                if (cur_pids.indexOf(QObject::tr("%1").arg(ipid))==-1){
+                    cur_pids << QObject::tr("%1").arg(ipid);
                     name = kp[i].ki_comm;
 
                     if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
                          ni = kp[i].ki_nice;
-                         nice = tr("%1").arg(ni);
+                         nice = QObject::tr("%1").arg(ni);
 
                          if (name.contains("pthread")){
                               envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
