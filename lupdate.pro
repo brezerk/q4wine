@@ -74,4 +74,5 @@ SOURCES += /src/gui/run.cpp \
 
 TRANSLATIONS += src/i18n/en_us.ts \
     src/i18n/ru_ru.ts \
-    src/i18n/uk_ua.ts
+    src/i18n/uk_ua.ts \
+    src/i18n/pt_BR.ts
