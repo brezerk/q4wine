@@ -1,4 +1,4 @@
-.TH "libq4wine-core" 3 "26 May 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.TH "libq4wine-core" 3 "28 May 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -17,7 +17,7 @@ libq4wine-core \- libq4wine-core pakage provide general functions for q4wine-gui
 
 .in +1c
 .ti -1c
-.RI "\fBcorelib\fP * \fBcreateCoreLib\fP ()"
+.RI "\fBcorelib\fP * \fBcreateCoreLib\fP (bool _GUI_MODE)"
 .br
 .RI "\fIThis function returns a class of \fBcorelib\fP type. \fP"
 .in -1c
@@ -26,7 +26,7 @@ libq4wine-core \- libq4wine-core pakage provide general functions for q4wine-gui
 libq4wine-core pakage provide general functions for q4wine-gui and q4wine-cli pakages. 
 .SH "Function Documentation"
 .PP 
-.SS "\fBcorelib\fP* createCoreLib ()"
+.SS "\fBcorelib\fP* createCoreLib (bool _GUI_MODE)"
 .PP
 This function returns a class of \fBcorelib\fP type. 
 .PP
@@ -43,6 +43,8 @@ This function is exported from shared library.
 .RE
 .PP
 
+.PP
+Definition at line 39 of file main.cpp.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for q4wine from the source code.

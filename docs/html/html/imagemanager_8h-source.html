@@ -80,40 +80,40 @@
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060 <span class="keyword">class </span>ImageManager : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::ImageManager
 <a name="l00061"></a>00061 {
-<a name="l00062"></a>00062      Q_OBJECT
-<a name="l00063"></a>00063      <span class="keyword">public</span>:
-<a name="l00064"></a>00064           ImageManager(QWidget * parent = 0, Qt::WFlags f = 0);
+<a name="l00062"></a>00062     Q_OBJECT
+<a name="l00063"></a>00063     <span class="keyword">public</span>:
+<a name="l00064"></a>00064         ImageManager(QWidget * parent = 0, Qt::WFlags f = 0);
 <a name="l00065"></a>00065 
-<a name="l00066"></a>00066      <span class="keyword">private</span> slots:
-<a name="l00067"></a>00067           <span class="keywordtype">void</span> cmdOk_Click();
+<a name="l00066"></a>00066     <span class="keyword">private</span> slots:
+<a name="l00067"></a>00067         <span class="keywordtype">void</span> cmdOk_Click();
 <a name="l00068"></a>00068 
-<a name="l00069"></a>00069           <span class="keywordtype">void</span> actionAddImage(<span class="keywordtype">void</span>);
-<a name="l00070"></a>00070           <span class="keywordtype">void</span> actionRemoveImage(<span class="keywordtype">void</span>);
-<a name="l00071"></a>00071           <span class="keywordtype">void</span> actionRefreshImageList(<span class="keywordtype">void</span>);
+<a name="l00069"></a>00069         <span class="keywordtype">void</span> actionAddImage(<span class="keywordtype">void</span>);
+<a name="l00070"></a>00070         <span class="keywordtype">void</span> actionRemoveImage(<span class="keywordtype">void</span>);
+<a name="l00071"></a>00071         <span class="keywordtype">void</span> actionRefreshImageList(<span class="keywordtype">void</span>);
 <a name="l00072"></a>00072 
-<a name="l00073"></a>00073           <span class="keywordtype">void</span> tableImage_showContextMenu(<span class="keyword">const</span> QPoint);
-<a name="l00074"></a>00074           <span class="keywordtype">void</span> update_lblPathInfo(<span class="keyword">const</span> QModelIndex);
-<a name="l00075"></a>00075           
-<a name="l00076"></a>00076      <span class="keyword">private</span>:
-<a name="l00077"></a>00077           QToolBar *managerToolBar;
-<a name="l00078"></a>00078           <span class="keywordtype">void</span> loadThemeIcons(QString themePath);
-<a name="l00079"></a>00079           <span class="keywordtype">void</span> createMenus(<span class="keywordtype">void</span>);
-<a name="l00080"></a>00080           QIcon loadIcon(QString iconName, QString themePath);
-<a name="l00081"></a>00081           <span class="keywordtype">void</span> getCDImages(<span class="keywordtype">void</span>);
-<a name="l00082"></a>00082           
+<a name="l00073"></a>00073         <span class="keywordtype">void</span> tableImage_showContextMenu(<span class="keyword">const</span> QPoint);
+<a name="l00074"></a>00074         <span class="keywordtype">void</span> update_lblPathInfo(<span class="keyword">const</span> QModelIndex);
+<a name="l00075"></a>00075         
+<a name="l00076"></a>00076     <span class="keyword">private</span>:
+<a name="l00077"></a>00077         QToolBar *managerToolBar;
+<a name="l00078"></a>00078         <span class="keywordtype">void</span> loadThemeIcons(QString themePath);
+<a name="l00079"></a>00079         <span class="keywordtype">void</span> createMenus(<span class="keywordtype">void</span>);
+<a name="l00080"></a>00080         QIcon loadIcon(QString iconName, QString themePath);
+<a name="l00081"></a>00081         <span class="keywordtype">void</span> getCDImages(<span class="keywordtype">void</span>);
+<a name="l00082"></a>00082         
 <a name="l00083"></a>00083 
-<a name="l00084"></a>00084           <span class="comment">//Tool bar acrtions</span>
-<a name="l00085"></a>00085           QAction *actionAdd;
-<a name="l00086"></a>00086           QAction *actionRemove;
-<a name="l00087"></a>00087           QAction *actionRefresh;
-<a name="l00088"></a>00088           
+<a name="l00084"></a>00084         <span class="comment">//Tool bar acrtions</span>
+<a name="l00085"></a>00085         QAction *actionAdd;
+<a name="l00086"></a>00086         QAction *actionRemove;
+<a name="l00087"></a>00087         QAction *actionRefresh;
+<a name="l00088"></a>00088         
 <a name="l00089"></a>00089 };
 <a name="l00090"></a>00090 
 <a name="l00091"></a>00091 <span class="preprocessor">#endif</span>
 <a name="l00092"></a>00092 <span class="preprocessor"></span>
 <a name="l00093"></a>00093 
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 26 14:56:50 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 28 13:23:22 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

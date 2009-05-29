@@ -35,46 +35,87 @@
 <a href="classcorelib-members.html">List of all members.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcorelib.html#afdd9440fae8fa0a5432a522f7c480bd">corelib</a> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="061b046f60f7487de1fcd917b025a845"></a><!-- doxytag: member="corelib::corelib" ref="061b046f60f7487de1fcd917b025a845" args="(bool _GUI_MODE)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcorelib.html#061b046f60f7487de1fcd917b025a845">corelib</a> (bool <a class="el" href="classcorelib.html#d4e9818217d7a1d93d74d46323c67fbb">_GUI_MODE</a>)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create an mainlib class.  <a href="#afdd9440fae8fa0a5432a522f7c480bd"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create an mainlib class. <br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">QList&lt; QStringList &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcorelib.html#b6ee10802744fe1c2016fedca2698509">getWineProcessList</a> ()</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function tries to get wine process list running in the current system.  <a href="#b6ee10802744fe1c2016fedca2698509"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="50a3457c6a164421bbccd3af05e96d41"></a><!-- doxytag: member="corelib::test" ref="50a3457c6a164421bbccd3af05e96d41" args="()" -->
-QString&nbsp;</td><td class="memItemRight" valign="bottom"><b>test</b> ()</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">QVariant&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10">getSetting</a> (const QString group, const QString key, const bool checkExist=true, const QVariant defaultVal=QVariant()) const </td></tr>
 
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function get application settings.  <a href="#26fd64ce403fb692f6c581eb9805ff10"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcorelib.html#7b6a40d5011da1ed5d13985b40f87189">showError</a> (const QString message, const bool info=true) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Displays error message depending on _GUI_MODE variable value.  <a href="#7b6a40d5011da1ed5d13985b40f87189"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcorelib.html#d4e9818217d7a1d93d74d46323c67fbb">_GUI_MODE</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Define is library operate in CLI or GUI mode.  <a href="#d4e9818217d7a1d93d74d46323c67fbb"></a><br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 This class provide general core functions for q4wine. 
 <p>
 It is not useful by itself, but helps to create user-side applications which can use q4wine core functions;<p>
 <dl class="note" compact><dt><b>Note:</b></dt><dd>This is still in development state ;) </dd></dl>
-<hr><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" name="afdd9440fae8fa0a5432a522f7c480bd"></a><!-- doxytag: member="corelib::corelib" ref="afdd9440fae8fa0a5432a522f7c480bd" args="()" -->
+
+<p>Definition at line <a class="el" href="main_8h-source.html#l00090">90</a> of file <a class="el" href="main_8h-source.html">main.h</a>.</p>
+<hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="26fd64ce403fb692f6c581eb9805ff10"></a><!-- doxytag: member="corelib::getSetting" ref="26fd64ce403fb692f6c581eb9805ff10" args="(const QString group, const QString key, const bool checkExist=true, const QVariant defaultVal=QVariant()) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">corelib::corelib           </td>
+          <td class="memname">QVariant corelib::getSetting           </td>
           <td>(</td>
-          <td class="paramname">          </td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>checkExist</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVariant&nbsp;</td>
+          <td class="paramname"> <em>defaultVal</em> = <code>QVariant()</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>
-Create an mainlib class. 
+This function get application settings. 
 <p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>group</em>&nbsp;</td><td>Settings group. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>key</em>&nbsp;</td><td>Settings key. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>defaultVal</em>&nbsp;</td><td>Default returned value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>checkExist</em>&nbsp;</td><td>If true - then we need to check exists file or dir by value or not. </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return an a key value. </dd></dl>
 
-<p>
-nothing to do here 
+<p>Definition at line <a class="el" href="q4wine-lib_2main_8cpp-source.html#l00216">216</a> of file <a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a>.</p>
+
 </div>
 </div><p>
-<hr><h2>Member Function Documentation</h2>
 <a class="anchor" name="b6ee10802744fe1c2016fedca2698509"></a><!-- doxytag: member="corelib::getWineProcessList" ref="b6ee10802744fe1c2016fedca2698509" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -94,14 +135,77 @@ nothing to do here
 This function tries to get wine process list running in the current system. 
 <p>
 It gets process values: pid, name, nice priority and WINEPREFIX environment variable <dl class="note" compact><dt><b>Note:</b></dt><dd>On Linux it uses /proc file system, and on FreeBSD/MacOS it uses /dev/kmem and kvm.h functions. </dd></dl>
-<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return an array of QList which contains an QStringList This function is exported from shared libarary </dd></dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return an array of QList which contains an QStringList </dd></dl>
+
+<p>Definition at line <a class="el" href="q4wine-lib_2main_8cpp-source.html#l00043">43</a> of file <a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="7b6a40d5011da1ed5d13985b40f87189"></a><!-- doxytag: member="corelib::showError" ref="7b6a40d5011da1ed5d13985b40f87189" args="(const QString message, const bool info=true) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int corelib::showError           </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>info</em> = <code>true</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Displays error message depending on _GUI_MODE variable value. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>message</em>&nbsp;</td><td>Error message. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>info</em>&nbsp;</td><td>Define display type. If false - user interactive message. </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>When using an interactive display type, this functions returns a user selected value. </dd></dl>
+
+<p>Definition at line <a class="el" href="q4wine-lib_2main_8cpp-source.html#l00232">232</a> of file <a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a>.</p>
+
+</div>
+</div><p>
+<hr><h2>Member Data Documentation</h2>
+<a class="anchor" name="d4e9818217d7a1d93d74d46323c67fbb"></a><!-- doxytag: member="corelib::_GUI_MODE" ref="d4e9818217d7a1d93d74d46323c67fbb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classcorelib.html#d4e9818217d7a1d93d74d46323c67fbb">corelib::_GUI_MODE</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Define is library operate in CLI or GUI mode. 
+<p>
+<dl class="note" compact><dt><b>Note:</b></dt><dd>This is typically need for error message display. </dd></dl>
+
+<p>Definition at line <a class="el" href="main_8h-source.html#l00117">117</a> of file <a class="el" href="main_8h-source.html">main.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
-<li>src/q4wine-lib/<a class="el" href="main_8h-source.html">main.h</a><li>src/q4wine-lib/main.cpp</ul>
+<li>src/q4wine-lib/<a class="el" href="main_8h-source.html">main.h</a><li>src/q4wine-lib/<a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 26 14:56:50 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 28 13:23:23 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

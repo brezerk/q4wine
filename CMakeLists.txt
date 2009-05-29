@@ -18,6 +18,7 @@ SET( SOURCES
 	${CMAKE_SOURCE_DIR}/src/gui/run.cpp
 	${CMAKE_SOURCE_DIR}/src/main.cpp
 	${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
+	${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
 	${CMAKE_SOURCE_DIR}/src/core/registry.cpp
 	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.cpp
 	${CMAKE_SOURCE_DIR}/src/gui/about.cpp
@@ -119,6 +120,7 @@ SET ( I18N
 	${CMAKE_SOURCE_DIR}/src/i18n/en_us.ts
 	${CMAKE_SOURCE_DIR}/src/i18n/ru_ru.ts
 	${CMAKE_SOURCE_DIR}/src/i18n/uk_ua.ts
+	${CMAKE_SOURCE_DIR}/src/i18n/pt_BR.ts
 )
 
 MESSAGE("")

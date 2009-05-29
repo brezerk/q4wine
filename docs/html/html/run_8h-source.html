@@ -72,35 +72,35 @@
 <a name="l00051"></a>00051 
 <a name="l00052"></a>00052 <span class="keyword">class </span>Run : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::Run
 <a name="l00053"></a>00053 {
-<a name="l00054"></a>00054      Q_OBJECT
-<a name="l00055"></a>00055      <span class="keyword">public</span>:
-<a name="l00056"></a>00056           Run(QString prefix_id, QString prefix_dir, QString winedll_path, QWidget * parent = 0, Qt::WFlags f = 0);
-<a name="l00057"></a>00057           ExecObject execObj;
-<a name="l00058"></a>00058      <span class="keyword">private</span> slots:
-<a name="l00059"></a>00059           <span class="keywordtype">void</span> cmdCancel_Click();
-<a name="l00060"></a>00060           <span class="keywordtype">void</span> cmdOk_Click();
-<a name="l00061"></a>00061           <span class="keywordtype">void</span> cmdAdd_Click();
-<a name="l00062"></a>00062           <span class="keywordtype">void</span> comboPrefixes_indexChanged (<span class="keywordtype">int</span>);
-<a name="l00063"></a>00063           <span class="keywordtype">void</span> cbUseConsole_stateChanged(<span class="keywordtype">int</span>);
-<a name="l00064"></a>00064           <span class="keywordtype">void</span> ResizeContent(<span class="keywordtype">int</span> TabIndex);
+<a name="l00054"></a>00054     Q_OBJECT
+<a name="l00055"></a>00055     <span class="keyword">public</span>:
+<a name="l00056"></a>00056         Run(QString prefix_id, QString prefix_dir, QString winedll_path, QWidget * parent = 0, Qt::WFlags f = 0);
+<a name="l00057"></a>00057         ExecObject execObj;
+<a name="l00058"></a>00058     <span class="keyword">private</span> slots:
+<a name="l00059"></a>00059         <span class="keywordtype">void</span> cmdCancel_Click();
+<a name="l00060"></a>00060         <span class="keywordtype">void</span> cmdOk_Click();
+<a name="l00061"></a>00061         <span class="keywordtype">void</span> cmdAdd_Click();
+<a name="l00062"></a>00062         <span class="keywordtype">void</span> comboPrefixes_indexChanged (<span class="keywordtype">int</span>);
+<a name="l00063"></a>00063         <span class="keywordtype">void</span> cbUseConsole_stateChanged(<span class="keywordtype">int</span>);
+<a name="l00064"></a>00064         <span class="keywordtype">void</span> ResizeContent(<span class="keywordtype">int</span> TabIndex);
 <a name="l00065"></a>00065 
-<a name="l00066"></a>00066           <span class="keywordtype">void</span> cmdGetProgram_Click();
-<a name="l00067"></a>00067           <span class="keywordtype">void</span> cmdGetWorkDir_Click();
+<a name="l00066"></a>00066         <span class="keywordtype">void</span> cmdGetProgram_Click();
+<a name="l00067"></a>00067         <span class="keywordtype">void</span> cmdGetWorkDir_Click();
 <a name="l00068"></a>00068 
-<a name="l00069"></a>00069      <span class="keyword">private</span>:
-<a name="l00070"></a>00070           QString prefix_id, prefix_dir;
+<a name="l00069"></a>00069     <span class="keyword">private</span>:
+<a name="l00070"></a>00070         QString prefix_id, prefix_dir;
 <a name="l00071"></a>00071 
-<a name="l00072"></a>00072           <span class="keywordtype">bool</span> eventFilter (QObject *<span class="keywordtype">object</span>, QEvent *event);
-<a name="l00073"></a>00073           <span class="keywordtype">void</span> getWineDlls (QString wine_dllpath);
-<a name="l00074"></a>00074           <span class="keywordtype">void</span> getPrefixes (<span class="keywordtype">void</span>);
+<a name="l00072"></a>00072         <span class="keywordtype">bool</span> eventFilter (QObject *<span class="keywordtype">object</span>, QEvent *event);
+<a name="l00073"></a>00073         <span class="keywordtype">void</span> getWineDlls (QString wine_dllpath);
+<a name="l00074"></a>00074         <span class="keywordtype">void</span> getPrefixes (<span class="keywordtype">void</span>);
 <a name="l00075"></a>00075 
-<a name="l00076"></a>00076           <span class="keywordtype">void</span> loadThemeIcons(QString themePath);
-<a name="l00077"></a>00077           QIcon loadIcon(QString iconName, QString themePath);
+<a name="l00076"></a>00076         <span class="keywordtype">void</span> loadThemeIcons(QString themePath);
+<a name="l00077"></a>00077         QIcon loadIcon(QString iconName, QString themePath);
 <a name="l00078"></a>00078 };
 <a name="l00079"></a>00079 
 <a name="l00080"></a>00080 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 26 14:56:50 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 28 13:23:23 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

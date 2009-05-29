@@ -11,6 +11,10 @@ Version 0.113
   - Some fixes for q4wine.desktop (thx to Eugene Pivnev);
   - Fixed GUI bug: Text fields size, on some desktop configurations, are too small to edit;
   - Fixed a lot of English spelling errors (thx Sergey Kishchenko (tilarids));
+  - Added libq4wine implementation;
+  - Added translation file for Portuguese (Brazil) by Marcio Moraes;
+  - Source code rewriting\reorganizing in progress..... ;
+  - First steps for source code documentation via Doxygen....;
 
 Version 0.112-r1
  Fixed:

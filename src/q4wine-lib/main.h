@@ -37,6 +37,7 @@
 
 #include <QObject>
 #include <QList>
+#include <QVariant>
 #include <QString>
 #include <QStringList>
 #include <QDir>
@@ -45,6 +46,9 @@
 #include <QIODevice>
 #include <QChar>
 #include <QTextStream>
+#include <QSettings>
+#include <QDebug>
+#include <QFileInfo>
 
 // FreeBSD support
 #ifdef _OS_FREEBSD_
@@ -68,6 +72,11 @@
         #include <paths.h>
 #endif
 
+#include "config.h"
+
+#include <iostream>
+using namespace std;
+
 /*!
  * \class corelib
  * \ingroup libq4wine
@@ -76,14 +85,11 @@
  * It is not useful by itself, but helps to create user-side applications which
  * can use q4wine core functions;
  *
- * \note This is still in development state ;)
  */
-class corelib;
-
 class corelib {
 public:
     //! Create an mainlib class
-    corelib();
+    corelib(bool _GUI_MODE);
 
     /*! \brief This function tries to get wine process list running in the current system.
      *
@@ -92,8 +98,30 @@ public:
      * \return Return an array of QList which contains an QStringList
      */
     QList<QStringList> getWineProcessList();
-    QString test();
 
+    /*! \brief This function get application settings.
+     *
+     * \param  group       Settings group.
+     * \param  key         Settings key.
+     * \param  defaultVal  Default returned value.
+     * \param  checkExist  If true - then we need to check exists file or dir by value or not.
+     * \return Return an a key value.
+     */
+    QVariant getSetting(const QString group, const QString key, const bool checkExist = true, const QVariant defaultVal = QVariant()) const;
+
+    private:
+    /*! Define is library operate in CLI or GUI mode.
+     * \note This is typically need for error message display.
+     */
+    bool _GUI_MODE;
+
+    /*! \brief Displays error message depending on _GUI_MODE variable value
+     *
+     * \param  message     Error message.
+     * \param  info	   Define display type. If false - user interactive message.
+     * \return When using an interactive display type, this functions returns a user selected value.
+     */
+    int showError(const QString message, const bool info = true) const;
 }; // end of class corelib
 
 /*! \ingroup libq4wine
@@ -103,6 +131,6 @@ public:
  * \return Return an a pointer to core lib class instance.
  * \note This function is exported from shared library.
  */
-extern "C" corelib* createCoreLib();
+extern "C" corelib* createCoreLib(bool _GUI_MODE);
 
 #endif

@@ -27,6 +27,11 @@
  *   your version.                                                         *
  ***************************************************************************/
 
+/*!
+ * \defgroup database Q4Wine database core
+ * \brief Database core pakage provide general database functions for q4wine.
+ */
+
 #ifndef DB_H
 #define DB_H
 
@@ -43,11 +48,31 @@
 
 #include "config.h"
 
+/*!
+ * \class DataBase
+ * \ingroup database
+ * \brief This class provide general database functions for q4wine.
+ *
+ * It is not useful by itself, but it creates database connections
+ * and provides basic database check.
+ *
+ */
 class DataBase
 {
 public:
+   //! Constructor
    DataBase();
-   bool checkDb(QStringList tables);
+
+   /*! \brief This function tries to check database structure.
+    *
+    * It gets process values: pid, name, nice priority and WINEPREFIX environment variable.
+    * \param  tables  List of tables name.
+    * \return Return true on success otherwise false.
+    */
+   bool checkDb(const QStringList tables) const;
+
+   /*! \brief This function close database connection.
+    */
    void close();
 };
 

@@ -59,11 +59,13 @@
 #include <QIcon>
 #include <QTreeWidgetItem>
 #include <QGroupBox>
-
+#include <QVariant>
 
 #include <ui_MainWindow.h>
 
 #include "config.h"
+
+#include "src/core/database/prefix.h"
 
 #include "wisitem.h"
 #include "coremethods.h"
@@ -78,6 +80,7 @@
 #include "appsettings.h"
 #include "run.h"
 #include "temporary/winetricks.h"
+
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -206,11 +209,12 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 	private:
 
                 //! This is need for libq4wine-core.so import;
-                typedef void *CoreLibPrototype ();
+		typedef void *CoreLibPrototype (bool);
                 CoreLibPrototype *CoreLibClassPointer;
                 corelib *CoreLib;
 
 		//Classes
+		Prefix *db_prefix;
 		CoreMethods *core;
                 QLibrary libq4wine;
 
@@ -274,8 +278,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		// Settings functions
 		void CoreFunction_CreateMenus(void);
 		void CoreFunction_CreateToolBars(void);
-		void CoreFunction_SettingGet(void);
-		void CoreFunction_SettingCheck(QString filePath, QString message);
+		void getSettings(void);
 		void CoreFunction_WineRunAutorunItems(void);
 		void CoreFunction_WineRunProgram(QString exec, QStringList args, QString wrkdir);
 		void CoreFunction_WinePrepareRunParams(ExecObject execObj);

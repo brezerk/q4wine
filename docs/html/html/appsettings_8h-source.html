@@ -72,29 +72,29 @@
 <a name="l00051"></a>00051 
 <a name="l00052"></a>00052 <span class="keyword">class </span>AppSettings : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::AppSettings
 <a name="l00053"></a>00053 {
-<a name="l00054"></a>00054      Q_OBJECT
-<a name="l00055"></a>00055      <span class="keyword">public</span>:
-<a name="l00056"></a>00056           AppSettings(QWidget * parent = 0, Qt::WFlags f = 0);
+<a name="l00054"></a>00054     Q_OBJECT
+<a name="l00055"></a>00055     <span class="keyword">public</span>:
+<a name="l00056"></a>00056         AppSettings(QWidget * parent = 0, Qt::WFlags f = 0);
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058      <span class="keyword">private</span> slots:
-<a name="l00059"></a>00059           <span class="keywordtype">void</span> cmdCancel_Click();
-<a name="l00060"></a>00060           <span class="keywordtype">void</span> cmdOk_Click();
-<a name="l00061"></a>00061           <span class="keywordtype">void</span> comboProxyType_indexChanged(QString text);
-<a name="l00062"></a>00062           
-<a name="l00063"></a>00063      <span class="keyword">private</span>:
-<a name="l00064"></a>00064           <span class="keywordtype">bool</span> eventFilter (QObject *<span class="keywordtype">object</span>, QEvent *event);
-<a name="l00065"></a>00065           <span class="keywordtype">void</span> getThemes(QString selTheme, QString themeDir);
-<a name="l00066"></a>00066           <span class="keywordtype">void</span> getLangs();
-<a name="l00067"></a>00067           <span class="keywordtype">bool</span> checkEntry(QString fileName, QString info, <span class="keywordtype">bool</span> isFile = TRUE);
-<a name="l00068"></a>00068           <span class="keywordtype">void</span> loadThemeIcons(QString themePath);
-<a name="l00069"></a>00069           QIcon loadIcon(QString iconName, QString themePath);
-<a name="l00070"></a>00070           
+<a name="l00058"></a>00058     <span class="keyword">private</span> slots:
+<a name="l00059"></a>00059         <span class="keywordtype">void</span> cmdCancel_Click();
+<a name="l00060"></a>00060         <span class="keywordtype">void</span> cmdOk_Click();
+<a name="l00061"></a>00061         <span class="keywordtype">void</span> comboProxyType_indexChanged(QString text);
+<a name="l00062"></a>00062         
+<a name="l00063"></a>00063     <span class="keyword">private</span>:
+<a name="l00064"></a>00064         <span class="keywordtype">bool</span> eventFilter (QObject *<span class="keywordtype">object</span>, QEvent *event);
+<a name="l00065"></a>00065         <span class="keywordtype">void</span> getThemes(QString selTheme, QString themeDir);
+<a name="l00066"></a>00066         <span class="keywordtype">void</span> getLangs();
+<a name="l00067"></a>00067         <span class="keywordtype">bool</span> checkEntry(QString fileName, QString info, <span class="keywordtype">bool</span> isFile = TRUE);
+<a name="l00068"></a>00068         <span class="keywordtype">void</span> loadThemeIcons(QString themePath);
+<a name="l00069"></a>00069         QIcon loadIcon(QString iconName, QString themePath);
+<a name="l00070"></a>00070         
 <a name="l00071"></a>00071 };
 <a name="l00072"></a>00072 
 <a name="l00073"></a>00073 <span class="preprocessor">#endif</span>
 <a name="l00074"></a>00074 <span class="preprocessor"></span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 26 14:56:50 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 28 13:23:22 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

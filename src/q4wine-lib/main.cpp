@@ -27,16 +27,16 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#include "config.h"
 #include "main.h"
 
-corelib::corelib()
+corelib::corelib(bool _GUI_MODE)
 {
-    //! nothing to do here
+    // Setting gui mode, if false - cli mode else gui mode
+    this->_GUI_MODE=_GUI_MODE;
 }
 
-corelib* createCoreLib(){
-    return new corelib();
+corelib* createCoreLib(bool _GUI_MODE){
+    return new corelib(_GUI_MODE);
 }
 
 QList<QStringList> corelib::getWineProcessList(){
@@ -46,25 +46,22 @@ QList<QStringList> corelib::getWineProcessList(){
     QString name, procstat, path, prefix, env_arg, nice;
 
     #ifdef _OS_LINUX_
-        QDir dir("/proc");
         QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
     #endif
 
     #ifdef _OS_FREEBSD_
-        QDir dir("/proc");
         QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
     #endif
 
     // Check for /proc directory exists
+    QDir dir("/proc");
     if (!dir.exists()){
-        int ret = QMessageBox::warning(0, QObject::tr("Error"), message, QMessageBox::Retry, QMessageBox::Ignore);
-        if (ret == QMessageBox::Ignore){
+	if (this->showError(message, false) == QMessageBox::Ignore){
 	    procline << "-1";
 	    proclist << procline;
             return proclist;
         }
     }
-
 
     /* On Linux:
      * This is new engine for getting process info from /proc directory
@@ -136,7 +133,7 @@ QList<QStringList> corelib::getWineProcessList(){
          */
         #ifdef _OS_FREEBSD_
             kvm_t *kd;
-            int cntproc, i, ni, ipid, ret;
+	    int cntproc, i, ni, ipid;
 
             struct kinfo_proc *kp;
             char buf[_POSIX2_LINE_MAX];
@@ -144,8 +141,7 @@ QList<QStringList> corelib::getWineProcessList(){
 
             kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
                 if (!kd){
-                    ret = QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
-                    if (ret == QMessageBox::Ignore){
+		    if (this->showError(QObject::tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), false) == QMessageBox::Ignore){
                         procline << "-1";
                         proclist << procline;
                         return proclist;
@@ -154,8 +150,7 @@ QList<QStringList> corelib::getWineProcessList(){
                 }
             kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &cntproc);
                 if (!kp){
-                    ret = QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("<p>It seems q4wine can not run kvm_getprocs.</p>"), QMessageBox::Retry, QMessageBox::Ignore);
-                    if (ret == QMessageBox::Ignore){
+		    if (this->showError(QObject::tr("<p>It seems q4wine can not run kvm_getprocs.</p>"), false) == QMessageBox::Ignore){
                         procline << "-1";
                         proclist << procline;
                         return proclist;
@@ -215,4 +210,39 @@ QList<QStringList> corelib::getWineProcessList(){
 
 
     return proclist;
+}
+
+QVariant corelib::getSetting(const QString group, const QString key, const bool checkExist, const QVariant defaultVal) const{
+    QVariant retVal;
+    QSettings settings(APP_SHORT_NAME, "default");
+
+    settings.beginGroup(group);
+	retVal = settings.value(key, defaultVal);
+    settings.endGroup();
+    if (checkExist==true)
+	if (!QFileInfo(retVal.toString()).exists()){
+	    this->showError(QObject::tr("<p>Error while loading application settings by key: '%1'. File or path not exists: \"%2\"</p><p>Please, go to %3 options dialog and set it.</p>").arg(key).arg(retVal.toString()).arg(APP_SHORT_NAME));
+	    retVal = QVariant();
+	}
+    return retVal;
+}
+
+int corelib::showError(const QString message, const bool info) const{
+    switch (this->_GUI_MODE){
+	case true:
+	    switch (info){
+		case true:
+		    QMessageBox::warning(0, QObject::tr("Error"), message);
+		    return 0;
+		break;
+		case false:
+		    return QMessageBox::warning(0, QObject::tr("Error"), message, QMessageBox::Retry, QMessageBox::Ignore);
+		break;
+	    }
+	break;
+	case false:
+	    cout << "test"; // message.toLatin1();
+	break;
+    }
+    return 0;
 }

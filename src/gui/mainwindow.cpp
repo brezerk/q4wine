@@ -42,14 +42,18 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 
         // Getting corelib calss pointer
         CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-        CoreLib = (corelib *)CoreLibClassPointer();
+	CoreLib = (corelib *)CoreLibClassPointer(true);
 
         // Base GUI setup
 	setupUi(this);
 	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
 
+	QStringList fields;
+	fields<<"id"<<"name";
+	qDebug()<<this->db_prefix->getFields(fields);
+
 	// Getting settings from config file
-	CoreFunction_SettingGet();
+	this->getSettings();
 
 	// Database check
 	CoreFunction_DatabaseUpdateConnectedItems();
@@ -217,123 +221,81 @@ void MainWindow::lstIcons_ItemClick(QListWidgetItem * item){
 	return;
 }
 
-void MainWindow::CoreFunction_SettingGet(){
+void MainWindow::getSettings(){
 	/*
 	 * Getting application settings
 	 */
+	QVariant val;
 
-	QSettings settings(APP_SHORT_NAME, "default");
+	val = CoreLib->getSetting("MainWindow", "size", false, QSize(400, 450));
+	    this->resize(val.toSize());
+	val = CoreLib->getSetting("MainWindow", "pos", false, QPoint(200, 200));
+	    this->move(val.toPoint());
 
-	settings.beginGroup("MainWindow");
-		resize(settings.value("size", QSize(400, 400)).toSize());
-		move(settings.value("pos", QPoint(200, 200)).toPoint());
-	settings.endGroup();
+	val = CoreLib->getSetting("wine", "WineBin");
+	    DEFAULT_WINE_BIN=val.toString();
+	val = CoreLib->getSetting("wine", "ServerBin");
+	    DEFAULT_WINE_SERVER=val.toString();
+	val = CoreLib->getSetting("wine", "LoaderBin");
+	    DEFAULT_WINE_LOADER=val.toString();
+	val = CoreLib->getSetting("wine", "WineLibs");
+	    DEFAULT_WINE_LIBS=val.toString();
 
-	settings.beginGroup("wine");
-		DEFAULT_WINE_BIN=settings.value("WineBin").toString();
-			CoreFunction_SettingCheck(DEFAULT_WINE_BIN, tr("Can't find wine binary."));
-		DEFAULT_WINE_SERVER=settings.value("ServerBin").toString();
-			CoreFunction_SettingCheck(DEFAULT_WINE_SERVER, tr("Can't find wine server binary."));
-		DEFAULT_WINE_LOADER=settings.value("LoaderBin").toString();
-			CoreFunction_SettingCheck(DEFAULT_WINE_LOADER, tr("Can't find wine loader."));
-		DEFAULT_WINE_LIBS=settings.value("WineLibs").toString();
-			CoreFunction_SettingCheck(DEFAULT_WINE_LIBS, tr("Can't find wine library directory."));
-	settings.endGroup();
+	val = CoreLib->getSetting("app", "showTrareyIcon", false);
+	    SHOW_TRAREY_ICON=val.toBool();
 
-	settings.beginGroup("app");
-	if (settings.value("showTrareyIcon").toInt()==1){
-		SHOW_TRAREY_ICON=TRUE;
-	} else {
-		SHOW_TRAREY_ICON=FALSE;
+	val = CoreLib->getSetting("system", "tar");
+	    TAR_BIN=val.toString();
+	val = CoreLib->getSetting("system", "mount");
+	    MOUNT_BIN=val.toString();
+	val = CoreLib->getSetting("system", "umount");
+	    UMOUNT_BIN=val.toString();
+	val = CoreLib->getSetting("system", "sudo");
+	    SUDO_BIN=val.toString();
+	val = CoreLib->getSetting("system", "gui_sudo");
+	    GUI_SUDO_BIN=val.toString();
+	val = CoreLib->getSetting("system", "nice");
+	    NICE_BIN=val.toString();
+	val = CoreLib->getSetting("system", "renice");
+	    RENICE_BIN=val.toString();
+	val = CoreLib->getSetting("system", "sh");
+	    SH_BIN=val.toString();
+
+	val = CoreLib->getSetting("console", "bin");
+	    CONSOLE_BIN=val.toString();
+	val = CoreLib->getSetting("console", "args", false);
+	    CONSOLE_ARGS=val.toString();
+
+	#ifdef WITH_ICOTOOLS
+	    val = CoreLib->getSetting("icotool", "wrestool");
+		WRESTOOL_BIN=val.toString();
+	    val = CoreLib->getSetting("icotool", "icotool");
+		ICOTOOL_BIN=val.toString();
+	#endif
+
+	switch (CoreLib->getSetting("network", "type", false).toInt()){
+	    case 0:
+		proxy.setType(QNetworkProxy::NoProxy);
+		QNetworkProxy::setApplicationProxy(proxy);
+	    break;
+	    case 1:
+		proxy.setType(QNetworkProxy::HttpProxy);
+		proxy.setHostName(CoreLib->getSetting("network", "host", false).toString());
+		proxy.setPort(CoreLib->getSetting("network", "port", false).toInt());
+		proxy.setUser(CoreLib->getSetting("network", "user", false).toString());
+		proxy.setPassword(CoreLib->getSetting("network", "pass", false).toString());
+		QNetworkProxy::setApplicationProxy(proxy);
+	    break;
+	    case 2:
+		proxy.setType(QNetworkProxy::Socks5Proxy);
+		proxy.setHostName(CoreLib->getSetting("network", "host", false).toString());
+		proxy.setPort(CoreLib->getSetting("network", "port", false).toInt());
+		proxy.setUser(CoreLib->getSetting("network", "user", false).toString());
+		proxy.setPassword(CoreLib->getSetting("network", "pass", false).toString());
+		QNetworkProxy::setApplicationProxy(proxy);
+	    break;
 	}
-
-	THEME_NAME=settings.value("theme").toString();
-	if (!THEME_NAME.isEmpty() and THEME_NAME!="Default")
-		CoreFunction_SettingCheck(THEME_NAME, tr("Can't find theme."));
-
-	settings.endGroup();
-
-
-	settings.beginGroup("system");
-		TAR_BIN=settings.value("tar").toString();
-			CoreFunction_SettingCheck(TAR_BIN, tr("Can't find tar binary."));
-		MOUNT_BIN=settings.value("mount").toString();
-			CoreFunction_SettingCheck(MOUNT_BIN, tr("Can't find mount binary."));
-		UMOUNT_BIN=settings.value("umount").toString();
-			CoreFunction_SettingCheck(UMOUNT_BIN, tr("Can't find umount binary."));
-		SUDO_BIN=settings.value("sudo").toString();
-			CoreFunction_SettingCheck(SUDO_BIN, tr("Can't find sudo binary."));
-		GUI_SUDO_BIN=settings.value("gui_sudo").toString();
-			CoreFunction_SettingCheck(GUI_SUDO_BIN, tr("Can't find GUI sudo binary."));
-		NICE_BIN=settings.value("nice").toString();
-			CoreFunction_SettingCheck(NICE_BIN, tr("Can't find nice binary."));
-		RENICE_BIN=settings.value("renice").toString();
-			CoreFunction_SettingCheck(RENICE_BIN, tr("Can't find renice binary."));
-		SH_BIN=settings.value("sh").toString();
-			CoreFunction_SettingCheck(RENICE_BIN, tr("Can't find sh binary."));
-	settings.endGroup();
-
-	settings.beginGroup("console");
-		CONSOLE_BIN=settings.value("bin").toString();
-		CoreFunction_SettingCheck(CONSOLE_BIN, tr("Can't find console binary."));
-
-		CONSOLE_ARGS=settings.value("args").toString();
-	settings.endGroup();
-
-	  #ifdef WITH_ICOTOOLS
-		settings.beginGroup("icotool");
-			  WRESTOOL_BIN=settings.value("wrestool").toString();
-				    CoreFunction_SettingCheck(WRESTOOL_BIN, tr("Can't find wrestool binary."));
-			  ICOTOOL_BIN=settings.value("icotool").toString();
-				    CoreFunction_SettingCheck(ICOTOOL_BIN, tr("Can't find icotool binary."));
-		settings.endGroup();
-	  #endif
-
-	settings.beginGroup("network");
-	switch (settings.value("host").toInt()){
-		case 0:
-			proxy.setType(QNetworkProxy::NoProxy);
-			QNetworkProxy::setApplicationProxy(proxy);
-		break;
-		case 1:
-			proxy.setType(QNetworkProxy::HttpProxy);
-			proxy.setHostName(settings.value("host").toString());
-			proxy.setPort(settings.value("port").toInt());
-			proxy.setUser(settings.value("user").toString());
-			proxy.setPassword(settings.value("pass").toString());
-			QNetworkProxy::setApplicationProxy(proxy);
-		break;
-		case 2:
-			proxy.setType(QNetworkProxy::Socks5Proxy);
-			proxy.setHostName(settings.value("host").toString());
-			proxy.setPort(settings.value("port").toInt());
-			proxy.setUser(settings.value("user").toString());
-			proxy.setPassword(settings.value("pass").toString());
-			QNetworkProxy::setApplicationProxy(proxy);
-		break;
-	}
-
-	settings.endGroup();
-
-
-
-
-	return;
-}
-
-void MainWindow::CoreFunction_SettingCheck(QString filePath, QString message){
-	/*
-	 * Cheking for correct file\directory path
-	 */
-
-	QFileInfo *file = new QFileInfo(filePath);
-
-	if (!file->exists ()){
-		QMessageBox::warning(this, tr("Warning"), tr("<p>%1</p><p>File or path not exists: \"%2\"</p><p>Please, go to %3 options dialog and set it.</p>").arg(message).arg(filePath).arg(APP_SHORT_NAME));
-		statusBar()->showMessage(tr("Warning: \"%1\" use options dialog for fix").arg(message));
-	}
-
-	return;
+    return;
 }
 
 void MainWindow::lstIcons_ItemDoubleClick(QListWidgetItem * item){
@@ -1873,7 +1835,7 @@ void MainWindow::mainOptions_Click(){
 	AppSettings *options = new AppSettings();
 
 	if (options->exec()==QDialog::Accepted){
-		CoreFunction_SettingGet();
+		getSettings();
 
 		if (SHOW_TRAREY_ICON){
 			trayIcon->show();

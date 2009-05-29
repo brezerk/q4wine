@@ -1,4 +1,4 @@
-.TH "corelib" 3 "26 May 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.TH "corelib" 3 "28 May 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,7 +14,7 @@ corelib \- This class provide general core functions for q4wine.
 
 .in +1c
 .ti -1c
-.RI "\fBcorelib\fP ()"
+.RI "\fBcorelib\fP (bool \fB_GUI_MODE\fP)"
 .br
 .RI "\fICreate an mainlib class. \fP"
 .ti -1c
@@ -22,8 +22,25 @@ corelib \- This class provide general core functions for q4wine.
 .br
 .RI "\fIThis function tries to get wine process list running in the current system. \fP"
 .ti -1c
-.RI "QString \fBtest\fP ()"
+.RI "QVariant \fBgetSetting\fP (const QString group, const QString key, const bool checkExist=true, const QVariant defaultVal=QVariant()) const "
 .br
+.RI "\fIThis function get application settings. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBshowError\fP (const QString message, const bool info=true) const "
+.br
+.RI "\fIDisplays error message depending on _GUI_MODE variable value. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fB_GUI_MODE\fP"
+.br
+.RI "\fIDefine is library operate in CLI or GUI mode. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -37,17 +54,33 @@ This is still in development state ;)
 .RE
 .PP
 
-.SH "Constructor & Destructor Documentation"
-.PP 
-.SS "corelib::corelib ()"
 .PP
-Create an mainlib class. 
+Definition at line 90 of file main.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "QVariant corelib::getSetting (const QString group, const QString key, const bool checkExist = \fCtrue\fP, const QVariant defaultVal = \fCQVariant()\fP) const"
+.PP
+This function get application settings. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIgroup\fP Settings group. 
+.br
+\fIkey\fP Settings key. 
+.br
+\fIdefaultVal\fP Default returned value. 
+.br
+\fIcheckExist\fP If true - then we need to check exists file or dir by value or not. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return an a key value. 
+.RE
 .PP
 
 .PP
-nothing to do here 
-.SH "Member Function Documentation"
-.PP 
+Definition at line 216 of file main.cpp.
 .SS "QList< QStringList > corelib::getWineProcessList ()"
 .PP
 This function tries to get wine process list running in the current system. 
@@ -61,10 +94,45 @@ On Linux it uses /proc file system, and on FreeBSD/MacOS it uses /dev/kmem and k
 .PP
 \fBReturns:\fP
 .RS 4
-Return an array of QList which contains an QStringList This function is exported from shared libarary 
+Return an array of QList which contains an QStringList 
 .RE
 .PP
 
+.PP
+Definition at line 43 of file main.cpp.
+.SS "int corelib::showError (const QString message, const bool info = \fCtrue\fP) const\fC [private]\fP"
+.PP
+Displays error message depending on _GUI_MODE variable value. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImessage\fP Error message. 
+.br
+\fIinfo\fP Define display type. If false - user interactive message. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+When using an interactive display type, this functions returns a user selected value. 
+.RE
+.PP
+
+.PP
+Definition at line 232 of file main.cpp.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool \fBcorelib::_GUI_MODE\fP\fC [private]\fP"
+.PP
+Define is library operate in CLI or GUI mode. 
+.PP
+\fBNote:\fP
+.RS 4
+This is typically need for error message display. 
+.RE
+.PP
+
+.PP
+Definition at line 117 of file main.h.
 
 .SH "Author"
 .PP 

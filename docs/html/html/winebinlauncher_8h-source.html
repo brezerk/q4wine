@@ -71,37 +71,37 @@
 <a name="l00050"></a>00050 <span class="preprocessor">#include &lt;ui_Process.h&gt;</span>
 <a name="l00051"></a>00051 
 <a name="l00052"></a>00052 <span class="keyword">struct </span>wine_prefix{
-<a name="l00053"></a>00053      QString path;
-<a name="l00054"></a>00054      QString wine_dllpath;
-<a name="l00055"></a>00055      QString wine_loader;
-<a name="l00056"></a>00056      QString wine_exec;
-<a name="l00057"></a>00057      QString wine_server;
+<a name="l00053"></a>00053     QString path;
+<a name="l00054"></a>00054     QString wine_dllpath;
+<a name="l00055"></a>00055     QString wine_loader;
+<a name="l00056"></a>00056     QString wine_exec;
+<a name="l00057"></a>00057     QString wine_server;
 <a name="l00058"></a>00058 };
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060 <span class="keyword">class </span>WineBinLauncher : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::Process
 <a name="l00061"></a>00061 {
-<a name="l00062"></a>00062      Q_OBJECT
-<a name="l00063"></a>00063      <span class="keyword">public</span>:
-<a name="l00064"></a>00064           WineBinLauncher(QString prefix_name = <span class="stringliteral">"Default"</span>, QWidget * parent = 0, Qt::WFlags f = 0);
-<a name="l00065"></a>00065           <span class="keywordtype">void</span> run_exec(QObject *parent, QString exe, QString args = <span class="stringliteral">""</span>, <span class="keywordtype">bool</span> KeepRunning = FALSE);
-<a name="l00066"></a>00066           <span class="keywordtype">void</span> appendWineExe(QString wine_append);
-<a name="l00067"></a>00067           QProcess *myProcess;
+<a name="l00062"></a>00062     Q_OBJECT
+<a name="l00063"></a>00063     <span class="keyword">public</span>:
+<a name="l00064"></a>00064         WineBinLauncher(QString prefix_name = <span class="stringliteral">"Default"</span>, QWidget * parent = 0, Qt::WFlags f = 0);
+<a name="l00065"></a>00065         <span class="keywordtype">void</span> run_exec(QObject *parent, QString exe, QString args = <span class="stringliteral">""</span>, <span class="keywordtype">bool</span> KeepRunning = FALSE);
+<a name="l00066"></a>00066         <span class="keywordtype">void</span> appendWineExe(QString wine_append);
+<a name="l00067"></a>00067         QProcess *myProcess;
 <a name="l00068"></a>00068 
-<a name="l00069"></a>00069      <span class="keyword">private</span>:
-<a name="l00070"></a>00070           wine_prefix prefix;
-<a name="l00071"></a>00071           QString regfile_image;
-<a name="l00072"></a>00072           
-<a name="l00073"></a>00073           QString DEFAULT_WINE_BIN, WINE_APPEND, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS, SH_BIN;
+<a name="l00069"></a>00069     <span class="keyword">private</span>:
+<a name="l00070"></a>00070         wine_prefix prefix;
+<a name="l00071"></a>00071         QString regfile_image;
+<a name="l00072"></a>00072         
+<a name="l00073"></a>00073         QString DEFAULT_WINE_BIN, WINE_APPEND, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS, SH_BIN;
 <a name="l00074"></a>00074 
-<a name="l00075"></a>00075      <span class="keyword">private</span> slots:
-<a name="l00076"></a>00076           <span class="keywordtype">void</span> slotFinished(<span class="keywordtype">int</span>, QProcess::ExitStatus);
-<a name="l00077"></a>00077           <span class="keywordtype">void</span> cmdCancel_clicked(<span class="keywordtype">void</span>);
+<a name="l00075"></a>00075     <span class="keyword">private</span> slots:
+<a name="l00076"></a>00076         <span class="keywordtype">void</span> slotFinished(<span class="keywordtype">int</span>, QProcess::ExitStatus);
+<a name="l00077"></a>00077         <span class="keywordtype">void</span> cmdCancel_clicked(<span class="keywordtype">void</span>);
 <a name="l00078"></a>00078 
 <a name="l00079"></a>00079 };
 <a name="l00080"></a>00080 
 <a name="l00081"></a>00081 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Tue May 26 14:56:50 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 28 13:23:22 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
