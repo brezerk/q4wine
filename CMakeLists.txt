@@ -56,8 +56,9 @@ SET ( HEADERS_DIR
 
 SET ( HEADERS
 	${CMAKE_SOURCE_DIR}/src/gui/run.h
-	${CMAKE_SOURCE_DIR}/src/core/database/db.h
 	${CMAKE_SOURCE_DIR}/src/core/registry.h
+	${CMAKE_SOURCE_DIR}/src/core/database/db.h
+	${CMAKE_SOURCE_DIR}/src/core/database/prefix.h
 	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.h
 	${CMAKE_SOURCE_DIR}/src/gui/about.h
 	${CMAKE_SOURCE_DIR}/src/gui/appsettings.h
