@@ -41,29 +41,78 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QString>
+#include <QLibrary>
 #include <QDebug>
 #include <QSettings>
+#include <QStringList>
 
 #include "config.h"
+#include "src/core/database/prefix.h"
 
+#include <q4wine-lib/main.h>
+
+/*!
+ * \class PrefixSettings
+ * \ingroup q4wine-gui
+ * \brief This class provide prefix settings dialog functions.
+ *
+ */
 class PrefixSettings : public QDialog, public Ui::PrefixSettings
 {
 	Q_OBJECT
 	public:
+		/*! \brief This is class constructor.
+		 *
+		 * \param  prefix_name  Current prefix name.
+		 */
 		PrefixSettings(QString prefix_name, QWidget * parent = 0, Qt::WFlags f = 0);
 		
 	private:
+		/*! \brief This is an event filter.
+		 *
+		 * This event filter hendle button click events
+		 * \param  prefix_name  Current prefix name.
+		 */
+		bool eventFilter(QObject *obj, QEvent *event);
+
+		/*! \brief This function loads theme images to widgets.
+		 *
+		 * \param themePath is a path to user selected theme ;)
+		 */
+		void loadThemeIcons(QString themePath);
+
+		/*! \brief This function returns load theme image item by user selected theme
+		 *
+		 * \param iconName icon name
+		 * \param themePath is a path to user selected theme ;)
+		 */
+		QIcon loadIcon(QString iconName, QString themePath);
+
+		/*!
+		 * Prefix id, and name
+		 */
 		QString prefix_id, prefix_name;
-		void getprocDevices();
 		
+		//! Database prefix class defenition.
+		Prefix *db_prefix;
+
+		//! This is need for libq4wine-core.so import.
+		QLibrary libq4wine;
+		typedef void *CoreLibPrototype (bool);
+		CoreLibPrototype *CoreLibClassPointer;
+		corelib *CoreLib;
+
 	private slots:
+		/*!
+		 * \bref Cancle button click slot
+		 */
 		void cmdCancel_Click();
+
+		/*!
+		 * \bref Ok button click slot
+		 */
 		void cmdOk_Click();
 		
-	protected:
-		bool eventFilter(QObject *obj, QEvent *event);
-		void loadThemeIcons(QString themePath);
-		QIcon loadIcon(QString iconName, QString themePath);
 		
 };
 

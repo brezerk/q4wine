@@ -227,6 +227,33 @@ QVariant corelib::getSetting(const QString group, const QString key, const bool 
     return retVal;
 }
 
+QStringList corelib::getCdromDevices(void) const{
+	QStringList retVal;
+
+	QFile file("/etc/fstab");
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+		 this->showError(QObject::tr("Sorry, i can't access to /etc/fstab"));
+	}
+
+	retVal<<QObject::tr("<none>");
+
+	while (1) {
+		QByteArray line = file.readLine();
+
+		if (line.isEmpty())
+			break;
+
+		if (line.indexOf("cdrom")>=0){
+			QList<QByteArray> array = line.split(' ').at(0).split('\t');
+				retVal<<array.at(0);
+		}
+	}
+
+	file.close();
+
+	return retVal;
+}
+
 int corelib::showError(const QString message, const bool info) const{
     switch (this->_GUI_MODE){
 	case true:

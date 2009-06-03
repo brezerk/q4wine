@@ -27,10 +27,14 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#ifndef PREFIX_H
-#define PREFIX_H
+#ifndef ICON_H
+#define ICON_H
 
-#include <config.h>
+
+
+#include "config.h"
+
+#include "prefix.h"
 
 #include <QList>
 #include <QString>
@@ -40,67 +44,25 @@
 #include <QDebug>
 #include <QVariant>
 
-
 /*!
- * \class Prefix
+ * \class Icon
  * \ingroup database
- * \brief This class provide database functions for prefix table.
+ * \brief This class provide database functions for Icon table.
  *
  */
-class Prefix
+class Icon : public Prefix
 {
-  public:
-	 /*! \brief This is calss constructor.
-	  */
-	  Prefix();
-  
-	 /*! \brief This function gets requested table fields from table.
-	  *
-	  * \param  fields  List of table fields names.
-	  * \return Return QList of QStringList with selected value or -1 on error.
-	  */
-	  QList<QStringList> getFields(const QStringList fields) const;
-  
-	 /*! \brief This function get requested table fields by keys value from table.
-	  *
-	  * \param  fields  A table fields names.
-	  * \param  keys    A table key fields names.
-	  * \param  vals    A table key fields values.
-	  * \return Return a list of table fields value or -1 on error.
-	  */
-	  QList<QStringList> getFieldsByKey(const QStringList fields, const QStringList keys,  const QStringList vals) const;
-  
-	 /*! \brief This function gets all table fields by key value from table.
-	  *
-	  * \param  key    A table key field name.
-	  * \param  val    A table key field value.
-	  * \return Return a list of table fields value or -1 on error.
-	  */
-	  QList<QStringList> getFieldsByKey(const QString key, const QString val) const;
-  
-	 /*! \brief This function get all fields from prefix table.
-	  *
-	  * \return Return a list of table fields value or -1 on error.
-	  */
-	  QList<QStringList> getFields(void) const;
+public:
+	//! Class constructor
+    Icon();
 
-	 /*! \brief This function gets all table fields by prefixName key value from table.
-	  *
-	  * \param  prefixName Prefix name key value.
-	  * \return Return a list of table fields value or -1 on error.
-	  */
-	  QStringList getFieldsByPrefixName(const QString prefixName) const;
-
-	 /*! \brief This function executes requested query.
-	  *
-	  * \param  SQL Query
-	  * \return Return true on success
-	  */
-	  bool updateQuery(QSqlQuery *sqlQuery) const;
-
-  protected:
-	 //! This variable defines which table is used by class
-	  QString _TABLE;
+   /*! \brief This function gets all icons fields by prefixId and dirId key value from table.
+	*
+	* \param  prefixId    A prefixid value.
+	* \param  dirId		  A prefixid value.
+	* \return Return a list of table fields value or -1 on error.
+	*/
+	QList<QStringList> getIconsInfo(const int prefixId, const int dirId) const;
 };
 
-#endif // PREFIX_H
+#endif // ICON_H

@@ -31,38 +31,41 @@
 
 PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
+	// Setup base UI
 	setupUi(this);
 	
+	// Setting class prefix name
 	this->prefix_name=prefix_name;
 	
-	QSettings settings(APP_NAME, "default");
-	settings.beginGroup("app");
-		loadThemeIcons(settings.value("theme").toString());
-	settings.endGroup();	
-	
-	QSqlQuery query;
-	query.prepare("select id, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive, name, path from prefix where name=:name");
-	query.bindValue(":name", prefix_name);
-	if (!query.exec()){
-		#ifdef DEBUG
-			qDebug()<<"WARNING: SQL error at MainWindow::PrefixSettings()\nINFO:\n"<<query.executedQuery()<<"\n"<<query.lastError();
-		#endif
-		return;
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
+
+	if (!libq4wine.load()){
+		libq4wine.load();
 	}
-	query.first();
-	
-	if (query.value(0).toString().isNull())
+
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib = (corelib *)CoreLibClassPointer(true);
+
+	// Creating database classes
+	db_prefix = new Prefix();
+
+	this->loadThemeIcons(this->CoreLib->getSetting("app", "theme", false).toString());
+
+	QStringList result = db_prefix->getFieldsByPrefixName(prefix_name);
+	if (result.at(0) == "-1")
 		return;
+
+	prefix_id=result.at(0);
 	
-	prefix_id=query.value(0).toString();
-	
-	txtWineLibs->setText(query.value(1).toString());
-	txtWineLoaderBin->setText(query.value(2).toString());
-	txtWineServerBin->setText(query.value(3).toString());
-	txtWineBin->setText(query.value(4).toString());
-		
+	txtWineLibs->setText(result.at(2));
+	txtWineLoaderBin->setText(result.at(3));
+	txtWineServerBin->setText(result.at(4));
+	txtWineBin->setText(result.at(5));
+
 	//comboDeviceList
-	txtMountPoint->setText(query.value(5).toString());
+	txtMountPoint->setText(result.at(6));
 	
 	if (prefix_name=="Default"){
 		txtPrefixName->setEnabled(FALSE);
@@ -72,13 +75,12 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 		cmdGetPrefixPath->installEventFilter(this);	
 	}
 	
-	txtPrefixName->setText(query.value(7).toString());
-	txtPrefixPath->setText(query.value(8).toString());
-	
-	getprocDevices();
-	
-	comboDeviceList->setCurrentIndex (comboDeviceList->findText(query.value(6).toString()));
-	
+	txtPrefixName->setText(prefix_name);
+	txtPrefixPath->setText(result.at(1));
+
+	comboDeviceList->addItems(CoreLib->getCdromDevices());
+	comboDeviceList->setCurrentIndex (comboDeviceList->findText(result.at(7)));
+
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 	
@@ -117,7 +119,7 @@ void PrefixSettings::loadThemeIcons(QString themePath){
 
 QIcon PrefixSettings::loadIcon(QString iconName, QString themePath){
 	// Function tryes to load icon image from theme dir
-	// If it fails -> load default from rsource file
+	// If it fails -> load default from resource file
 	
 	QIcon icon;
 	
@@ -133,62 +135,21 @@ QIcon PrefixSettings::loadIcon(QString iconName, QString themePath){
 	return icon;	
 }
 
-void PrefixSettings::getprocDevices(){
-	/*
-		Getting divice names at /proc/diskstats
-	*/
-
-	QString name, procstat, path, prefix;;
-		
-	QFile file("/etc/fstab");
-	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-		QMessageBox::warning(this, tr("Error"), tr("Sorry, i can't access to /etc/fstab"));
-	}
-		
-	//int indOf;
-	comboDeviceList->addItem(tr("<none>"));
-
-	while (1) {
-		QByteArray line = file.readLine();
-		
-		if (line.isEmpty())
-			break;
-		
-		if (line.indexOf("cdrom")>=0){
-			QList<QByteArray> array = line.split(' ').at(0).split('\t');
-				comboDeviceList->addItem(array.at(0));
-		}
-	}
-	file.close();
-	
-	return;
-}
-
 void PrefixSettings::cmdCancel_Click(){
 	reject();
 	return;	
 }
 
 void PrefixSettings::cmdOk_Click(){
-	QSqlQuery query;
-	
+
 	if (prefix_name!=txtPrefixName->text()){
-	
-		query.prepare("select id from prefix where name=:name");
-		query.bindValue(":name", txtPrefixName->text());
-		query.exec();
-		query.first();
-		
-		if (query.isValid ()){
+		if (!db_prefix->getFieldsByPrefixName(txtPrefixName->text()).isEmpty()){
 			QMessageBox::warning(this, tr("Error"), tr("Sorry, but prefix named %1 already exists.").arg(txtPrefixName->text()));
-			query.clear();
 			return;
 		}
-		
-		query.clear();
-	
 	}
 	
+	QSqlQuery query;
 	query.prepare("UPDATE prefix SET wine_dllpath=:wine_dllpath, wine_loader=:wine_loader, wine_server=:wine_server, wine_exec=:wine_exec, cdrom_mount=:cdrom_mount, cdrom_drive=:cdrom_drive, name=:name, path=:path WHERE id=:id;");
 	query.bindValue(":wine_dllpath", txtWineLibs->text());
 	query.bindValue(":wine_loader", txtWineLoaderBin->text());
@@ -208,15 +169,12 @@ void PrefixSettings::cmdOk_Click(){
 	query.bindValue(":path", txtPrefixPath->text());
 	query.bindValue(":id", prefix_id);
 	
-	if (!query.exec()){
-		#ifdef DEBUG
-			qDebug()<<"WARNING: SQL error at MainWindow::PrefixSettings::cmdOd_Click()\nINFO:\n"<<query.executedQuery()<<"\n"<<query.lastError();
-		#endif
-		return;
+	if (!db_prefix->updateQuery(&query)){
+		query.clear();
+		reject();
 	}
-	
+
 	query.clear();
-	
 	accept();
 	return;
 }

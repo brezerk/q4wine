@@ -27,6 +27,11 @@
  *   your version.                                                         *
  ***************************************************************************/
 
+/*!
+ * \defgroup q4wine-gui Q4Wine GUI
+ * \brief q4wine-gui pakage provide general GUI functions for q4wine.
+ */
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -66,6 +71,7 @@
 #include "config.h"
 
 #include "src/core/database/prefix.h"
+#include "src/core/database/dir.h"
 
 #include "wisitem.h"
 #include "coremethods.h"
@@ -208,15 +214,16 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 			void mainInstall_Click(void);
 	private:
 
-                //! This is need for libq4wine-core.so import;
+		 //! This is need for libq4wine-core.so import;
 		typedef void *CoreLibPrototype (bool);
                 CoreLibPrototype *CoreLibClassPointer;
                 corelib *CoreLib;
 
 		//Classes
 		Prefix *db_prefix;
+		Dir *db_dir;
 		CoreMethods *core;
-                QLibrary libq4wine;
+		QLibrary libq4wine;
 
 		// Proxy
 		QNetworkProxy proxy;
@@ -282,7 +289,14 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void CoreFunction_WineRunAutorunItems(void);
 		void CoreFunction_WineRunProgram(QString exec, QStringList args, QString wrkdir);
 		void CoreFunction_WinePrepareRunParams(ExecObject execObj);
-		void CoreFunction_DatabaseUpdateConnectedItems(int currentPrefix = -1);
+
+	   /*! \brief This function updates all database connectd widgets to current state.
+		*
+		* \param  currentPrefix  Current user selected prefix id.
+		*/
+		void updateDtabaseConnectedItems(int currentPrefix = -1);
+
+
 		void CoreFunction_ImageMount(QString image, QString mount);
 		void CoreFunction_ImageUnmount(QString mount);
 
@@ -295,6 +309,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QStringList SQL_getPrefixAndDirInfo(QTreeWidgetItem *treeItem);
 		QStringList SQL_getDirctoryInfo(QString prefix_name, QString dirname);
 		bool SQL_isIconExistsByName(QString prefix_id, QString dir_id, QString name);
+
 
 	protected:
 		// Event filter

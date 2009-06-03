@@ -109,6 +109,11 @@ public:
      */
     QVariant getSetting(const QString group, const QString key, const bool checkExist = true, const QVariant defaultVal = QVariant()) const;
 
+	/*! \brief This function get cdrom devices from /etc/fstab file.
+	 *
+	 * \return Return an list of cdrom devices.
+	 */
+	QStringList getCdromDevices(void) const;
     private:
     /*! Define is library operate in CLI or GUI mode.
      * \note This is typically need for error message display.

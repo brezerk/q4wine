@@ -436,11 +436,6 @@
           </column>
           <column>
            <property name="text">
-            <string>Version</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
             <string>Path</string>
            </property>
           </column>

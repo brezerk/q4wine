@@ -33,34 +33,34 @@ QTimer *timer = new QTimer();
 
 
 MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
-        // Loading libq4wine-core.so
-        libq4wine.setFileName("libq4wine-core");
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
 
-        if (!libq4wine.load()){
-            libq4wine.load();
-        }
+	if (!libq4wine.load()){
+		libq4wine.load();
+	}
 
-        // Getting corelib calss pointer
-        CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib = (corelib *)CoreLibClassPointer(true);
 
-        // Base GUI setup
+	// Creating database classes
+	db_dir = new Dir();
+	db_prefix = new Prefix();
+
+	// Base GUI setup
 	setupUi(this);
 	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
-
-	QStringList fields;
-	fields<<"id"<<"name";
-	qDebug()<<this->db_prefix->getFields(fields);
 
 	// Getting settings from config file
 	this->getSettings();
 
-	// Database check
-	CoreFunction_DatabaseUpdateConnectedItems();
+	// Updating database connected items
+	updateDtabaseConnectedItems();
 	// Slots connections
 
-        // Timer flag to running
-        _IS_TIMER_RUNNING=TRUE;
+	// Timer flag to running
+	_IS_TIMER_RUNNING=TRUE;
 
         // Connecting signals and slots
 	connect(timer, SIGNAL(timeout()), this, SLOT(getWineProccessInfo()));
@@ -77,7 +77,7 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	connect(twPrograms, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(twPrograms_ShowContextMenu(const QPoint &)));
 	connect(lstIcons, SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(lstIcons_ItemDoubleClick(QListWidgetItem *)));
 	connect(lstIcons, SIGNAL(itemClicked(QListWidgetItem *)), this, SLOT(lstIcons_ItemClick(QListWidgetItem *)));
-        connect(lstIcons, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(lstIcons_ShowContextMenu(const QPoint &)));
+	connect(lstIcons, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(lstIcons_ShowContextMenu(const QPoint &)));
 
 	// Signals for updating toolbars
 	connect(tableProc, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tableProc_ShowContextMenu(const QPoint &)));
@@ -567,68 +567,67 @@ void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
 	return;
 }
 
-void MainWindow::CoreFunction_DatabaseUpdateConnectedItems(int currentPrefix){
+void MainWindow::updateDtabaseConnectedItems(int currentPrefix){
 	/*
 		Function for updating objects content to database values
 	*/
 
-	QSqlQuery query;
-	QSqlQuery subQuery;
+	QList<QStringList> result, subresult;
+
+	int curRows = 0, numRows = 0;
+
+	QTableWidgetItem *newItem;
 	QTreeWidgetItem *prefixItem;
 	QTreeWidgetItem *subPrefixItem;
 
-	// Updating "Program Files" TreeView ptrefix root items
+	// Clearing widgets
+	cbPrefixes->clear();
 	twPrograms->clear();
 	lstIcons->clear();
-	query.exec("SELECT id,name FROM prefix ORDER BY id;");
-	while (query.next()) {
+
+	result = db_prefix->getFields();
+	for (int i = 0; i < result.size(); ++i) {
+	    //If first element value "-1" -- then exit;
+	    if (result.at(i).at(0) == "-1")
+		return;
+
+		// Inserting root items into programs tree view
 		prefixItem = new QTreeWidgetItem(twPrograms);
-		prefixItem->setText(0, tr("%1").arg(query.value(1).toString()));
+		prefixItem->setText(0, tr("%1").arg(result.at(i).at(1)));
 		prefixItem->setIcon(0, CoreFunction_IconLoad("data/wine.png"));
 		prefixItem->setExpanded (TRUE);
-		twPrograms->addTopLevelItem(&QTreeWidgetItem(prefixItem));
-		subQuery.exec(tr("SELECT id,name FROM dir WHERE prefix_id=%1").arg(query.value(0).toString()));
-		while (subQuery.next()){
-			subPrefixItem = new QTreeWidgetItem(prefixItem, 0);
-			subPrefixItem->setText(0, tr("%1").arg(subQuery.value(1).toString()));
-			subPrefixItem->setIcon(0, CoreFunction_IconLoad("data/folder.png"));
-		}
-	}
+		twPrograms->addTopLevelItem(prefixItem);
 
-	// Updating ComboBox prefix items
-	cbPrefixes->clear();
+			// Inserting subfolders items into programs tree view
+			subresult = db_dir->getFieldsByPrefixId(result.at(i).at(0));
+			for (int j = 0; j < subresult.size(); ++j) {
+				subPrefixItem = new QTreeWidgetItem(prefixItem, 0);
+				subPrefixItem->setText(0, tr("%1").arg(subresult.at(j).at(1)));
+				subPrefixItem->setIcon(0, CoreFunction_IconLoad("data/folder.png"));
+			}
 
-	query.exec("SELECT id,name,version FROM prefix ORDER BY id;");
-	while (query.next()) {
-		cbPrefixes->addItem ( tr("%1").arg(query.value(1).toString()));
-	}
+		// Inserting items into prefixes combo list
+	    cbPrefixes->addItem (result.at(i).at(1));
 
-	int curRows = 0, numRows = 0;
-	numRows = tablePrefix->rowCount();
-
-	query.exec("SELECT name,version,path FROM prefix ORDER BY id;");
-	while (query.next()) {
+		// Inserting items into prefixes table widget
 		curRows++;
+		numRows = tablePrefix->rowCount();
 
-		if (curRows>numRows){
-			tablePrefix->insertRow (numRows);
-			numRows = tablePrefix->rowCount();
-		}
-			if (tablePrefix->item(curRows - 1, 0)){
-			tablePrefix->item(curRows - 1, 0)->setText(query.value(0).toString());
-			tablePrefix->item(curRows - 1, 1)->setText(query.value(1).toString());
-			tablePrefix->item(curRows - 1, 2)->setText(query.value(2).toString());
-		} else {
-				QTableWidgetItem *newItem = new QTableWidgetItem(query.value(0).toString());
-			tablePrefix->setItem(curRows - 1, 0, newItem);
-			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-			newItem = new QTableWidgetItem(query.value(1).toString());
-			tablePrefix->setItem(curRows - 1, 1, newItem);
-			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-			newItem = new QTableWidgetItem(query.value(2).toString());
-			tablePrefix->setItem(curRows - 1, 2, newItem);
-			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-		}
+	    if (curRows>numRows){
+		tablePrefix->insertRow (numRows);
+		numRows = tablePrefix->rowCount();
+	    }
+	    if (tablePrefix->item(curRows - 1, 0)){
+		tablePrefix->item(curRows - 1, 0)->setText(result.at(i).at(1));
+		tablePrefix->item(curRows - 1, 1)->setText(result.at(i).at(2));
+	    } else {
+		newItem = new QTableWidgetItem(result.at(i).at(1));
+		tablePrefix->setItem(curRows - 1, 0, newItem);
+		newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+		newItem = new QTableWidgetItem(result.at(i).at(2));
+		tablePrefix->setItem(curRows - 1, 1, newItem);
+		newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+	    }
 	}
 
 	numRows = tablePrefix->rowCount();
@@ -1368,7 +1367,7 @@ void MainWindow::cmdCreateFake_Click(){
 
 	Wizard *createFakeDriveWizard = new Wizard(2, cbPrefixes->currentText());
 		if (createFakeDriveWizard->exec()==QDialog::Accepted){
-			CoreFunction_DatabaseUpdateConnectedItems(cbPrefixes->currentIndex());
+			updateDtabaseConnectedItems(cbPrefixes->currentIndex());
 		}
 
 	return;
@@ -1398,7 +1397,7 @@ void MainWindow::cmdUpdateFake_Click(){
 */
 	Wizard *createFakeDriveWizard = new Wizard(3, cbPrefixes->currentText());
 	if (createFakeDriveWizard->exec()==QDialog::Accepted){
-		CoreFunction_DatabaseUpdateConnectedItems(cbPrefixes->currentIndex());
+		updateDtabaseConnectedItems(cbPrefixes->currentIndex());
 	}
 	return;
 }
@@ -1455,7 +1454,7 @@ void MainWindow::prefixAdd_Click(){
 
 	Wizard *createPrefixWizard = new Wizard(0);
 	if (createPrefixWizard->exec()==QDialog::Accepted){
-		CoreFunction_DatabaseUpdateConnectedItems();
+		updateDtabaseConnectedItems();
 	}
 
 	return;
@@ -1505,7 +1504,7 @@ void MainWindow::prefixDelete_Click(){
 		}
 	}
 
-	CoreFunction_DatabaseUpdateConnectedItems();
+	updateDtabaseConnectedItems();
 	return;
 }
 
@@ -1516,117 +1515,74 @@ void MainWindow::prefixImport_Click(){
 
 	QString openpath;
 
-		//Getting user selected path for prefix store, if not -- use default
+	//Getting user selected path for prefix store, if not -- use default
 	if (!PREFIX_EI_PATH.isEmpty()){
 		openpath.append(PREFIX_EI_PATH);
 	} else {
-
-			openpath.append(QDir::homePath());
-			openpath.append("/.config/");
-			openpath.append(APP_SHORT_NAME);
-			openpath.append("/prefixes/");
-
+	    openpath.append(QDir::homePath());
+	    openpath.append("/.config/");
+	    openpath.append(APP_SHORT_NAME);
+	    openpath.append("/prefixes/");
 	}
 
 	QString fileName = QFileDialog::getOpenFileName(this, tr("Select file to import"), openpath , tr("Images (*.tbz)"));
 
 	if (!fileName.isEmpty()){
-		QDir dir;
-		QString targetDir;
+	    QDir dir;
+	    QString targetDir;
 
-		if (tablePrefix->item(tablePrefix->currentRow(), 2)->text().isEmpty()){
-			targetDir.clear();
-			targetDir.append(HOME_PATH);
-			targetDir.append("/.wine/");
+	    if (tablePrefix->item(tablePrefix->currentRow(), 1)->text().isEmpty()){
+		targetDir.clear();
+		targetDir.append(HOME_PATH);
+		targetDir.append("/.wine/");
+	    } else {
+		targetDir.clear();
+		targetDir.append(tablePrefix->item(tablePrefix->currentRow(), 1)->text());
+	    }
+
+	    if (dir.exists(targetDir)){
+		if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete all old prefix files?"), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
+		    QStringList args;
+		    args << "-rdf";
+		    args << targetDir;
+
+		    Process *exportProcess = new Process(args, core->getWhichOut("rm"), HOME_PATH, tr("Removing old fake drive.<br>This can take a while..."), tr("Removing old fake drive"));
+		    if (exportProcess->exec()!=QDialog::Accepted){
+			return;
+		    }
 		} else {
-			targetDir.clear();
-			targetDir.append(tablePrefix->item(tablePrefix->currentRow(), 2)->text());
+		    return;
 		}
+	    }
 
-		if (dir.exists(targetDir)){
-			if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete all old prefix files?"), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
+	    dir.mkdir(targetDir);
+	    QStringList args;
+	    args << "-xjf";
+	    args << fileName;
+	    args << "-C" << targetDir;
 
-
-				QStringList args;
-				args << "-rdf";
-				args << targetDir;
-
-				Process *exportProcess = new Process(args, core->getWhichOut("rm"), HOME_PATH, tr("Removing old fake drive.<br>This can take a while..."), tr("Removing old fake drive"));
-
-				if (exportProcess->exec()!=QDialog::Accepted){
-					return;
-				}
-
-				/*
-					QProgressDialog progress("Deleting files...", "Abort", -1, -1, this);
-					progress.setWindowModality(Qt::WindowModal);
-					progress.setValue(-1);
-					DeleteDirectory(targetDir);
-				*/
-			} else {
-				return;
-			}
-		}
-
-			QStringList args;
-			dir.mkdir(targetDir);
-
-			args << "-xjf";
-			args << fileName;
-			args << "-C" << targetDir;
-
-			//Creating process dialog
-			Process *exportProcess = new Process(args, TAR_BIN, HOME_PATH, tr("Importing prefix.<br>This can take a while..."), tr("Importing prefix"));
-
-			exportProcess->show();
-
-
+		//Creating process dialog
+	    Process *exportProcess = new Process(args, TAR_BIN, HOME_PATH, tr("Importing prefix.<br>This can take a while..."), tr("Importing prefix"));
+	    exportProcess->show();
 	}
-
-	return;
+    return;
 }
-
-/*
-Now it is deprecated. We use QProcess and "rm -rdf {$path}" with GUI dialog now.
-
-void MainWindow::DeleteDirectory(QString path){
-	QDir dir(path);
-	QFile file;
-	dir.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden | QDir::System | QDir::NoDotAndDotDot );
-
-	QFileInfoList list = dir.entryInfoList();
-
-	for (int i = 0; i < list.size(); ++i) {
-		QFileInfo fileInfo = list.at(i);
-		if ((fileInfo.isDir()) and (!fileInfo.isSymLink())){
-				DeleteDirectory(fileInfo.filePath());
-		} else {
-			if (!file.remove(fileInfo.filePath()))
-				qDebug()<<"cant kill:"<<fileInfo.filePath();
-		}
-	}
-
-	if (!dir.rmdir(path))
-		qDebug()<<"cant kill dir:"<<path;
-
-	return;
-}
-*/
 
 void MainWindow::prefixSettings_Click(){
-
-	// We gona get prefix_id and dir_id by calling SQL_getPrefixAndDirData
-
-	PrefixSettings settings(tablePrefix->item(tablePrefix->currentRow(), 0)->text());
-	if (settings.exec()==QDialog::Accepted){
-		CoreFunction_DatabaseUpdateConnectedItems();
-	}
+    /*
+     *	Getting prefix name, and show settings dialog
+     */
+    PrefixSettings settings(tablePrefix->item(tablePrefix->currentRow(), 0)->text());
+    if (settings.exec()==QDialog::Accepted){
+    	updateDtabaseConnectedItems();
+    }
+    return;
 }
 
 void MainWindow::prefixExport_Click(){
-	/*
-		Function for exporting preefix to file
-	*/
+    /*
+     * Function for exporting preefix to file
+     */
 
 	QString savepath;
 
@@ -1656,7 +1612,7 @@ void MainWindow::prefixExport_Click(){
 		args << fileName;
 
 
-		QString prefix_path = tablePrefix->item(tablePrefix->currentRow(), 2)->text();
+		QString prefix_path = tablePrefix->item(tablePrefix->currentRow(), 1)->text();
 
 		if (prefix_path.isEmpty()){
 			prefix_path.clear();
@@ -1696,7 +1652,6 @@ void MainWindow::SetMeVisible(bool visible){
 	/*
 	 * Hide and show MainWindow on TrayIcon click event
 	 */
-
 	setVisible(visible);
 	return;
 }
