@@ -141,14 +141,18 @@ void PrefixSettings::cmdCancel_Click(){
 }
 
 void PrefixSettings::cmdOk_Click(){
+	if (txtPrefixName->text().isEmpty()){
+		 QMessageBox::warning(this, tr("Error"), tr("Please, enter prefix name"));
+		  return;
+	}
 
 	if (prefix_name!=txtPrefixName->text()){
-		if (!db_prefix->getFieldsByPrefixName(txtPrefixName->text()).isEmpty()){
+		if (db_prefix->isExistsByName(txtPrefixName->text())){
 			QMessageBox::warning(this, tr("Error"), tr("Sorry, but prefix named %1 already exists.").arg(txtPrefixName->text()));
 			return;
 		}
 	}
-	
+
 	QSqlQuery query;
 	query.prepare("UPDATE prefix SET wine_dllpath=:wine_dllpath, wine_loader=:wine_loader, wine_server=:wine_server, wine_exec=:wine_exec, cdrom_mount=:cdrom_mount, cdrom_drive=:cdrom_drive, name=:name, path=:path WHERE id=:id;");
 	query.bindValue(":wine_dllpath", txtWineLibs->text());

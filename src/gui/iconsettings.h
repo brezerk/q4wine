@@ -57,7 +57,7 @@ class IconSettings : public QDialog, public Ui::IconSettings
 {
 	Q_OBJECT
 	public:
-		IconSettings(bool newIcon, QString prefix_id, QString prefix_dir, QString dir_id, QString icon_name, QString winedll_path = "", QWidget * parent = 0, Qt::WFlags f = 0);
+		IconSettings(QString prefix_name, QString dir_name, QString icon_name = "", QWidget * parent = 0, Qt::WFlags f = 0);
 
 	private slots:
 		void ResizeContent(int);
@@ -70,7 +70,7 @@ class IconSettings : public QDialog, public Ui::IconSettings
 		void cmdOk_Click();
 
 	private:
-		QString prefix_dir, dir_id, prefix_id, iconName, iconId, iconPath;
+		QString prefix_name, dir_name, icon_name, prefix_id, iconName, iconId, iconPath;
 		bool newIcon;
 		void getIconReccord(QString themePath);
 		void resizeEvent (QResizeEvent);

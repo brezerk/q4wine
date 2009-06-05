@@ -89,7 +89,21 @@ class Prefix
 	  * \param  prefixName Prefix name key value.
 	  * \return Return a list of table fields value or -1 on error.
 	  */
-	  QStringList getFieldsByPrefixName(const QString prefixName) const;
+	  QStringList getFieldsByPrefixName(const QString prefix_name) const;
+
+	 /*! \brief This function gets all table fields by prefix id key value from table.
+	  *
+	  * \param  prefix_id Prefix id key value.
+	  * \return Return a list of table fields value or -1 on error.
+	  */
+	  QStringList getFieldsByPrefixId(const QString prefix_id) const;
+
+	 /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
+	  *
+	  * \param  prefix_name    A prefix name value.
+	  * \return Return true on success.
+	  */
+	  bool delPrefixByPrefixName(const QString prefix_name) const;
 
 	 /*! \brief This function executes requested query.
 	  *
@@ -98,7 +112,16 @@ class Prefix
 	  */
 	  bool updateQuery(QSqlQuery *sqlQuery) const;
 
+	 /*! \brief This function check is reccord exists by prefix name or not.
+	  *
+	  * \param  name    A prefix name value.
+	  * \return Return true if exists.
+	  */
+	  bool isExistsByName(const QString prefix_name) const;
+
   protected:
+
+
 	 //! This variable defines which table is used by class
 	  QString _TABLE;
 };

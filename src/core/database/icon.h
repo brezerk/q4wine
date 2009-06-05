@@ -56,13 +56,76 @@ public:
 	//! Class constructor
     Icon();
 
-   /*! \brief This function gets all icons fields by prefixId and dirId key value from table.
+   /*! \brief This function gets all icons fields by prefix_id and dir_id key value from table.
 	*
-	* \param  prefixId    A prefixid value.
-	* \param  dirId		  A prefixid value.
+	* \param  prefix_id    A prefixid value.
+	* \param  dir_id	   A prefixid value.
 	* \return Return a list of table fields value or -1 on error.
 	*/
-	QList<QStringList> getIconsInfo(const int prefixId, const int dirId) const;
+	QList<QStringList> getIconsInfo(const QString prefix_id, const QString dir_id) const;
+
+   /*! \brief This function gets all icons fields by prefixId key value from table.
+	*
+	* \param  prefix_id      A prefix id value.
+	* \return Return a list of table fields value or -1 on error.
+	*/
+	QList<QStringList> getIconsInfo(const QString prefix_id) const;
+
+   /*! \brief This function gets all icons fields by prefix_name and dir_name (optional by icon name) keys value from table.
+	*
+	* \param  prefix_name    A prefix name value.
+	* \param  dir_name		 A dir name value.
+	* \param  icon_name      A icon name value (optional).
+	* \return Return a list of table fields value or -1 on error.
+	*/
+	QList<QStringList> getIconsInfoByNames(const QString prefix_name, const QString dir_name, const QString icon_name = "") const;
+
+   /*! \brief This function gets all icons fields by prefix_name (optional by icon name) keys value from table.
+	*
+	* \param  prefix_name    A prefix name value.
+	* \param  icon_name      A icon name value (optional).
+	* \return Return a list of table fields value or -1 on error.
+	*/
+	QList<QStringList> getIconsInfoByPrefixName(const QString prefix_name, const QString icon_name = "") const;
+
+   /*! \brief This function deletes all icons fields by prefix_name keys value from table.
+	*
+	* \param  prefix_name    A prefix name value.
+	* \return Return true on success.
+	*/
+	bool delIconsByPrefixName(const QString prefix_name) const;
+
+   /*! \brief This function delete icon field by prefix_name key value from table.
+	*
+	* \param  prefix_name    A prefix name value.
+	* \return Return true on success.
+	*/
+	bool delIcon(const QString prefix_name, const QString icon_name) const;
+
+   /*! \brief This function delete icon field by prefix_name and dir_name key value from table.
+	*
+	* \param  prefix_name    A prefix name value.
+	* \param  dir_name		 A dir name value.
+	* \return Return true on success.
+	*/
+	bool delIcon(const QString prefix_name, const QString dir_name, const QString icon_name) const;
+
+	/*! \brief This function check is reccord exists by icon_name or not.
+	 *
+	 * \param  prefix_name    A prefix name value.
+	 * \param  name    A name value.
+	 * \return Return true if exists.
+	 */
+	bool isExistsByName(const QString prefix_name, const QString icon_name) const;
+
+	/*! \brief This function check is reccord exists by icon_name or not.
+	 *
+	 * \param  prefix_name    A prefix name value.
+  	 * \param  dir_name		 A dir name value.
+	 * \param  name    A name value.
+	 * \return Return true if exists.
+	 */
+	bool isExistsByName(const QString prefix_name, const QString dir_name, const QString icon_name) const;
 };
 
 #endif // ICON_H

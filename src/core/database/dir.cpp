@@ -34,19 +34,21 @@ Dir::Dir()
   	this->_TABLE="dir";
 }
 
-QList<QStringList> Dir::getFieldsByPrefixId(const QString prefixId) const{
+QList<QStringList> Dir::getFieldsByPrefixId(const QString prefix_id) const{
 	QList<QStringList> valuelist;
 
-	QString sqlquery="SELECT id, name, prefix_id FROM dir WHERE prefix_id=";
-	sqlquery.append(prefixId);
-
 	QSqlQuery query;
-	if (query.exec(sqlquery)){
+	query.prepare("SELECT id, name, prefix_id FROM dir WHERE prefix_id=:prefix_id");
+	query.bindValue(":prefix_id", prefix_id);
+
+	if (query.exec()){
 		while (query.next()) {
 			QStringList values;
-			values.append(query.value(0).toString());
-			values.append(query.value(1).toString());
-			values.append(query.value(2).toString());
+			int i=0;
+			while (query.value(i).isValid()){
+				values.append(query.value(i).toString());
+				i++;
+			}
 			valuelist.append(values);
 		}
 	} else {
@@ -54,4 +56,16 @@ QList<QStringList> Dir::getFieldsByPrefixId(const QString prefixId) const{
 		valuelist.clear();
 	}
 	return valuelist;
+}
+
+bool  Dir::delDirByPrefixName(const QString prefix_name) const{
+	QSqlQuery query;
+	query.prepare("DELETE FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
+	query.bindValue(":prefix_name", prefix_name);
+
+	if (!query.exec()){
+		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
+		return false;
+	}
+	return true;
 }

@@ -59,7 +59,14 @@ public:
 	* \param  prefixId    A prefixid value.
 	* \return Return a list of table fields value or -1 on error.
 	*/
-	QList<QStringList> getFieldsByPrefixId(const QString prefixId) const;
+	QList<QStringList> getFieldsByPrefixId(const QString prefix_id) const;
+
+   /*! \brief This function deletes all dirs fields by prefix_name keys value from table.
+	*
+	* \param  prefix_name    A prefix name value.
+	* \return Return true on success.
+	*/
+	bool delDirByPrefixName(const QString prefix_name) const;
 };
 
 #endif // DIR_H

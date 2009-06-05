@@ -72,6 +72,7 @@
 
 #include "src/core/database/prefix.h"
 #include "src/core/database/dir.h"
+#include "src/core/database/icon.h"
 
 #include "wisitem.h"
 #include "coremethods.h"
@@ -151,15 +152,24 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void processKillSelected_Click(void);
 		void processKillWine_Click(void);
 
-		/*
-		 *Icon list slots
+		/*! \brief This slot request icon description.
+		 *
+		 * \param  item		an QListWidgetItem wich trigged an a slot
 		 */
 		void lstIcons_ItemClick(QListWidgetItem * item);
+
+		/*! \brief This slot runs icon.
+		 *
+		 * \param  item		an QListWidgetItem wich trigged an a slot
+		 */
 		void lstIcons_ItemDoubleClick(QListWidgetItem * item);
 		void lstIcons_ShowContextMenu(const QPoint);
 
-		/*
-		 *Programs tree slots
+		/*! \brief This slot request programs icons by folder and\or prefix name.
+		 *
+		 * When user click on directorym then q4wine displays
+		 * program icons belongs to this folder
+		 * \param  item		an QTreeWidgetItem wich trigged an a slot
 		 */
 		void twPrograms_ItemClick(QTreeWidgetItem * item, int);
 		void twPrograms_ShowContextMenu(const QPoint);
@@ -222,6 +232,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		//Classes
 		Prefix *db_prefix;
 		Dir *db_dir;
+		Icon *db_icon;
 		CoreMethods *core;
 		QLibrary libq4wine;
 

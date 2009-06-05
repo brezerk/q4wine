@@ -189,7 +189,6 @@ void MainWindow::trayIcon_Activate(QSystemTrayIcon::ActivationReason reason){
 }
 
 void MainWindow::lstIcons_ItemClick(QListWidgetItem * item){
-
 	/*
 	 * This is function for selection icons, and displaying
 	 * icon informationm like path and description
@@ -198,26 +197,21 @@ void MainWindow::lstIcons_ItemClick(QListWidgetItem * item){
 	if (!item)
 		return;
 
-	QTreeWidgetItem *treeItem;
-
 	if (!twPrograms->currentItem()){
 		lstIcons->clear();
 		return;
 	}
 
-	treeItem = twPrograms->currentItem();
-
-	QSqlQuery query;
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
+	QList<QStringList> iconsList;
 
 	if (treeItem->parent()){
-		query.exec(tr("SELECT name, desc FROM icon WHERE dir_id=(SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=\"%1\") AND name=\"%2\") and name=\"%3\"").arg(treeItem->parent()->text(0)) .arg(treeItem->text(0)) .arg(item->text()));
+		iconsList=db_icon->getIconsInfoByNames(treeItem->parent()->text(0), treeItem->text(0), item->text());
 	} else {
-		query.exec(tr("SELECT name, desc FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=\"%1\") AND  dir_id ISNULL AND name=\"%2\"").arg(treeItem->text(0)) .arg(item->text()));
+		iconsList=db_icon->getIconsInfoByPrefixName(treeItem->text(0), item->text());
 	}
 
-	query.next();
-	lblInfo->setText(tr("Program: %1<br> Description: %2").arg(query.value(0).toString()) .arg(query.value(1).toString()));
-
+	lblInfo->setText(tr("Program: %1<br> Description: %2").arg(iconsList.at(0).at(1)) .arg(iconsList.at(0).at(2)));
 	return;
 }
 
@@ -310,44 +304,31 @@ void MainWindow::lstIcons_ItemDoubleClick(QListWidgetItem * item){
 		return;
 	}
 
-	QTreeWidgetItem *treeItem;
-	treeItem = twPrograms->currentItem();
-	QSqlQuery query;
+	//FEXME: ------------------- All below might bo moved into CoreLib class
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
+	QList<QStringList> iconsList;
 
-	//QString execcmd, prefixid, runcmd, useconsole, cmdargs, override, winedebug, display, wrkdir, envargs;
-
-	//Getting icon info
 	if (treeItem->parent()){
-		query.prepare("SELECT exec, prefix_id, useconsole, cmdargs, override, winedebug, display, wrkdir, desktop, nice FROM icon WHERE dir_id=(SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND name=:dir_name) and name=:icon_name");
-		query.bindValue(":prefix_name", treeItem->parent()->text(0));
-		query.bindValue(":dir_name", treeItem->text(0));
-		query.bindValue(":icon_name", item->text());
+		iconsList=db_icon->getIconsInfoByNames(treeItem->parent()->text(0), treeItem->text(0), item->text());
 	} else {
-		query.prepare("SELECT exec, prefix_id, useconsole, cmdargs, override, winedebug, display, wrkdir, desktop, nice FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND  dir_id ISNULL AND name=:icon_name");
-		query.bindValue(":prefix_name", treeItem->text(0));
-		query.bindValue(":icon_name", item->text());
+		iconsList=db_icon->getIconsInfoByPrefixName(treeItem->text(0), item->text());
 	}
 
-	query.exec();
-	query.first();
-
-	//Saving icon info
-
+//  0   1     2     3          4       5         6          7           8        9        10    11       12    13         14
+//	id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id
 	ExecObject execObj;
+		execObj.wrkdir = iconsList.at(0).at(4);
+		execObj.override = iconsList.at(0).at(5);
+		execObj.winedebug = iconsList.at(0).at(6);
+		execObj.useconsole = iconsList.at(0).at(7);
+		execObj.display = iconsList.at(0).at(8);
+		execObj.cmdargs = iconsList.at(0).at(9);
+		execObj.execcmd = iconsList.at(0).at(10);
+		execObj.desktop = iconsList.at(0).at(11);
+		execObj.nice = iconsList.at(0).at(12);
+		execObj.prefixid = iconsList.at(0).at(13);
 
-	execObj.execcmd = query.value(0).toString();
-	execObj.prefixid = query.value(1).toString();
-	execObj.useconsole = query.value(2).toString();
-	execObj.cmdargs = query.value(3).toString();
-	execObj.override = query.value(4).toString();
-	execObj.winedebug = query.value(5).toString();
-	execObj.display = query.value(6).toString();
-	execObj.wrkdir = query.value(7).toString();
-	execObj.desktop = query.value(8).toString();
-	execObj.nice = query.value(9).toString();
-
-	query.clear();
-
+	//FIXME: Move it into corelib class
 	CoreFunction_WinePrepareRunParams(execObj);
 
 	return;
@@ -358,12 +339,14 @@ void MainWindow::CoreFunction_WinePrepareRunParams(ExecObject execObj){
 	 * Function prepare params for running with WineRun
 	 */
 
-	QSqlQuery query;
 
-	query.prepare("SELECT path, wine_dllpath, wine_loader, wine_exec, wine_server FROM prefix WHERE id=:prefix_id");
-	query.bindValue(":prefix_id", execObj.prefixid);
-	query.exec();
-	query.first();
+  	QStringList prefixList;
+
+	// 0   1     2             3            4            5          6            7
+	// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
+
+	prefixList = db_prefix->getFieldsByPrefixId(execObj.prefixid);
+
 
 	QString exec;
 	QStringList args;
@@ -397,28 +380,28 @@ void MainWindow::CoreFunction_WinePrepareRunParams(ExecObject execObj){
 		envargs.append("\" ; ");
 	}
 
-	if (!query.value(0).toString().isEmpty()){
+	if (!prefixList.at(1).isEmpty()){
 		//If icon has prefix -- add to args
-		envargs.append(tr(" WINEPREFIX=%1 ").arg(query.value(0).toString()));
+		envargs.append(tr(" WINEPREFIX=%1 ").arg(prefixList.at(1)));
 	} else {
 		//Else use default prefix
 		envargs.append(tr(" WINEPREFIX=%1/.wine ").arg(HOME_PATH));
 	}
 
-	if (!query.value(1).toString().isEmpty()){
-		envargs.append(tr(" WINEDLLPATH=%1 ").arg(query.value(1).toString()));
+	if (!prefixList.at(2).isEmpty()){
+		envargs.append(tr(" WINEDLLPATH=%1 ").arg(prefixList.at(2)));
 	} else {
 		envargs.append(tr(" WINEDLLPATH=%1 ").arg(DEFAULT_WINE_LIBS));
 	}
 
-	if (!query.value(2).toString().isEmpty()){
-		envargs.append(tr(" WINELOADER=%1 ").arg(query.value(2).toString()));
+	if (!prefixList.at(3).isEmpty()){
+		envargs.append(tr(" WINELOADER=%1 ").arg(prefixList.at(3)));
 	} else {
 		envargs.append(tr(" WINELOADER=%1 ").arg(DEFAULT_WINE_LOADER));
 	}
 
-	if (!query.value(4).toString().isEmpty()){
-		envargs.append(tr(" WINESERVER=%1 ").arg(query.value(4).toString()));
+	if (!prefixList.at(4).isEmpty()){
+		envargs.append(tr(" WINESERVER=%1 ").arg(prefixList.at(4)));
 	} else {
 		envargs.append(tr(" WINESERVER=%1 ").arg(DEFAULT_WINE_SERVER));
 	}
@@ -447,8 +430,8 @@ void MainWindow::CoreFunction_WinePrepareRunParams(ExecObject execObj){
 
 	exec_string.append(" ");
 
-	if (!query.value(3).toString().isEmpty()){
-		exec_string.append(query.value(3).toString());
+	if (!prefixList.at(5).isEmpty()){
+		exec_string.append(prefixList.at(5));
 	} else {
 		exec_string.append(DEFAULT_WINE_BIN);
 	}
@@ -466,8 +449,6 @@ void MainWindow::CoreFunction_WinePrepareRunParams(ExecObject execObj){
 	exec_string.append(execObj.cmdargs);
 
 	args.append(exec_string);
-
-	query.clear();
 
 	CoreFunction_WineRunProgram(exec, args, execObj.wrkdir);
 	return;
@@ -496,7 +477,7 @@ void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
 	 */
 
 	QListWidgetItem *iconItem;
-	QSqlQuery query;
+	QList<QStringList> iconsList;
 
 	lstIcons->clear();
 	lblInfo->setText(tr("Program: <br> Description:"));
@@ -504,45 +485,37 @@ void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
 	if (!item)
 		return;
 
-	QStringList getData = SQL_getPrefixAndDirData(item);
-
 	if (item->parent()){
-		query.prepare("SELECT name, icon_path FROM icon WHERE prefix_id=:prefix_id and dir_id=:dir_id");
-		query.bindValue(":prefix_id", getData.at(0));
-		query.bindValue(":dir_id", getData.at(2));
-
+		iconsList=db_icon->getIconsInfoByNames(item->parent()->text(0), item->text(0));
 	} else {
-		query.prepare("SELECT name, icon_path FROM icon WHERE prefix_id=:prefix_id and dir_id ISNULL");
-		query.bindValue(":prefix_id", getData.at(0));
+		iconsList=db_icon->getIconsInfoByPrefixName(item->text(0));
 	}
 
-	query.exec();
 
-	while (query.next()) {
+	for (int i = 0; i < iconsList.size(); ++i) {
 		iconItem = new QListWidgetItem(lstIcons, 0);
-		iconItem->setText(query.value(0).toString());
+		iconItem->setText(iconsList.at(i).at(1));
 
 		//Seting icon. If no icon or icon file not exists -- setting default
-		if (query.value(1).toString().isEmpty()){
-
+		if (iconsList.at(i).at(3).isEmpty()){
 			iconItem->setIcon(CoreFunction_IconLoad("data/exec_wine.png"));
 		} else {
-			if (QFile::exists (query.value(1).toString())){
-			   iconItem->setIcon(QIcon(query.value(1).toString()));
+			if (QFile::exists (iconsList.at(i).at(3))){
+			   iconItem->setIcon(QIcon(iconsList.at(i).at(3)));
 			} else {
-				if (query.value(1).toString()=="wineconsole"){
+				if (iconsList.at(i).at(3)=="wineconsole"){
 					iconItem->setIcon(CoreFunction_IconLoad("data/wineconsole.png"));
-				} else if (query.value(1).toString()=="regedit"){
+				} else if (iconsList.at(i).at(3)=="regedit"){
 					iconItem->setIcon(CoreFunction_IconLoad("data/regedit.png"));
-				} else if (query.value(1).toString()=="wordpad"){
+				} else if (iconsList.at(i).at(3)=="wordpad"){
 					iconItem->setIcon(CoreFunction_IconLoad("data/notepad.png"));
-				} else if (query.value(1).toString()=="winecfg"){
+				} else if (iconsList.at(i).at(3)=="winecfg"){
 					iconItem->setIcon(CoreFunction_IconLoad("data/winecfg.png"));
-				} else if (query.value(1).toString()=="uninstaller"){
+				} else if (iconsList.at(i).at(3)=="uninstaller"){
 					iconItem->setIcon(CoreFunction_IconLoad("data/uninstaller.png"));
-				} else if (query.value(1).toString()=="eject"){
+				} else if (iconsList.at(i).at(3)=="eject"){
 					iconItem->setIcon(CoreFunction_IconLoad("data/eject.png"));
-				} else if (query.value(1).toString()=="explorer"){
+				} else if (iconsList.at(i).at(3)=="explorer"){
 					iconItem->setIcon(CoreFunction_IconLoad("data/explorer.png"));
 				} else {
 					iconItem->setIcon(CoreFunction_IconLoad("data/exec_wine.png"));
@@ -560,9 +533,6 @@ void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
 			//}
 		}
 	}
-
-	query.clear();
-
 
 	return;
 }
@@ -1375,26 +1345,6 @@ void MainWindow::cmdCreateFake_Click(){
 
 
 void MainWindow::cmdUpdateFake_Click(){
-	//Check if FakeDive exists?
-/*	QString prefix_path;
-	QSqlQuery query;
-	query.prepare("SELECT path FROM prefix WHERE name=:name");
-	query.bindValue(":name", cbPrefixes->currentText());
-	query.exec();
-	query.first();
-	prefix_path = query.value(0).toString();
-	query.clear();
-
-	if (prefix_path.isEmpty())
-		prefix_path = WINE_DEFAULT_PREFIX;
-
-	QDir fake_dir (prefix_path);
-
-	if (!fake_dir.exists()){
-		QMessageBox::warning(this, tr("Error"), tr("Sorry, specified prefix %1 directory not exists.").arg(prefix_path), QMessageBox::Ok);
-			return;
-	}
-*/
 	Wizard *createFakeDriveWizard = new Wizard(3, cbPrefixes->currentText());
 	if (createFakeDriveWizard->exec()==QDialog::Accepted){
 		updateDtabaseConnectedItems(cbPrefixes->currentIndex());
@@ -1472,35 +1422,9 @@ void MainWindow::prefixDelete_Click(){
 
 		if(QMessageBox::warning(this, tr("Warning"),
 	   tr("Do you really wish to delete prefix named \"%1\" and all associated icons?").arg(tablePrefix->item(tablePrefix->currentRow(), 0)->text()), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
-
-				QSqlQuery q;
-					q.prepare("SELECT id FROM prefix WHERE name=:name;");
-					q.bindValue(":name", tablePrefix->item(tablePrefix->currentRow(), 0)->text());
-				q.exec();
-				q.first();
-
-				QString prefix_id=q.value(0).toString();
-
-				q.clear();
-
-				if (prefix_id.isEmpty())
-					return;
-
-				q.prepare("DELETE FROM prefix WHERE id=:prefix_id;");
-				q.bindValue(":prefix_id", prefix_id);
-				q.exec();
-				q.clear();
-
-				q.prepare("DELETE FROM dir WHERE prefix_id=:prefix_id;");
-				q.bindValue(":prefix_id", prefix_id);
-				q.exec();
-				q.clear();
-
-				q.prepare("DELETE FROM icon WHERE prefix_id=:prefix_id;");
-				q.bindValue(":prefix_id", prefix_id);
-				q.exec();
-				q.clear();
-
+			if (db_icon->delIconsByPrefixName(tablePrefix->item(tablePrefix->currentRow(), 0)->text()))
+				if(db_dir->delDirByPrefixName(tablePrefix->item(tablePrefix->currentRow(), 0)->text()))
+					db_prefix->delPrefixByPrefixName(tablePrefix->item(tablePrefix->currentRow(), 0)->text());
 		}
 	}
 
@@ -2174,57 +2098,21 @@ void MainWindow::iconDelete_Click(void){
 		This function delete add selected icons
 	*/
 
-	QList<QListWidgetItem *> icoList;
-	QTreeWidgetItem *treeItem;
-	QSqlQuery query;
-
-	QString prefix_id, dir_id, icon_name;
-
-	// Getting items
-	treeItem = twPrograms->currentItem();
-	icoList = lstIcons->selectedItems();
-
-//	qDebug()<<
+	QList<QListWidgetItem *> icoList = lstIcons->selectedItems();
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 
 	if (!treeItem)
 		return;
-
 	if (icoList.count()<0)
 		return;
 
 	if (QMessageBox::warning(this, tr("Delete Icon"), tr("Do you want to delete all selected icons?"),  QMessageBox::Yes, QMessageBox::No	)==QMessageBox::Yes){
-
-		// We gona get prefix_id and dir_id by calling SQL_getPrefixAndDirData
-		QStringList dataList;
-		dataList = SQL_getPrefixAndDirData(treeItem);
-
-		if (dataList.at(0)=="-1"){
-			return;
-		} else {
-			prefix_id = dataList.at(0);
-			dir_id = dataList.at(2);
-		}
-
-
-
 		for (int i=0; i<icoList.count(); i++){
-			if(dir_id.isEmpty()){
-				query.prepare("DELETE FROM icon WHERE name=:name and prefix_id=:prefix_id and dir_id ISNULL");
+			if(!treeItem->parent()){
+				db_icon->delIcon(treeItem->text(0), icoList.at(i)->text());
 			}else{
-				query.prepare("DELETE FROM icon WHERE name=:name and prefix_id=:prefix_id and dir_id=:dir_id");
-				query.bindValue(":dir_id", dir_id);
+				db_icon->delIcon(treeItem->parent()->text(0), treeItem->text(0), icoList.at(i)->text());
 			}
-
-			query.bindValue(":prefix_id", prefix_id);
-			query.bindValue(":name", icoList.at(i)->text());
-
-			if (!query.exec()){
-				#ifdef DEBUG
-					qDebug()<<"WARNING: SQL error at MainWindow::iconDelete_Click(void)\nINFO:\n"<<query.executedQuery()<<"\n"<<query.lastError();
-				#endif
-				return;
-			}
-			query.clear();
 		}
 		twPrograms_ItemClick(treeItem, 0);
 	}
@@ -2242,85 +2130,44 @@ void MainWindow::iconRun_Click(void){
 
 void MainWindow::iconRename_Click(void){
 
-	QTreeWidgetItem *treeItem;
-	QListWidgetItem *iconItem;
-	QSqlQuery query;
-
-	QString prefix_id, dir_id, icon_name;
+  	QSqlQuery query;
+	QTreeWidgetItem *treeItem=twPrograms->currentItem();
+	QListWidgetItem *iconItem=lstIcons->currentItem();
 	bool ok;
-
-	treeItem = twPrograms->currentItem();
-	iconItem = lstIcons->currentItem();
 
 	if (!treeItem)
 		return;
-
 	if (!iconItem)
 		return;
-
-	// We gona get prefix_id and dir_id by calling SQL_getPrefixAndDirData
-	QStringList dataList;
-	dataList = SQL_getPrefixAndDirData(treeItem);
-	if (dataList.at(0)=="-1"){
-		return;
-	} else {
-		prefix_id = dataList.at(0);
-		dir_id = dataList.at(2);
-	}
-
 
 	QString text = QInputDialog::getText(this, tr("Enter new icon name"), tr("Icon name:"), QLineEdit::Normal, iconItem->text(), &ok);
 
 	if (ok && !text.isEmpty()){
-
-
-		if(dir_id.isEmpty()){
-			query.prepare("select id from icon where name=:name and prefix_id=:prefix_id and dir_id ISNULL");
-		}else{
-			query.prepare("select id from icon where name=:name and prefix_id=:prefix_id and dir_id=:dir_id");
-			query.bindValue(":dir_id", dir_id);
+		if (!treeItem->parent()){
+			if (!db_icon->isExistsByName(treeItem->text(0), text)){
+				query.prepare("UPDATE icon SET name=:name WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id ISNULL AND name=:icon_name");
+				query.bindValue(":name", text);
+				query.bindValue(":prefix_name", treeItem->parent()->text(0));
+				query.bindValue(":icon_name", iconItem->text());
+			} else {
+				QMessageBox::warning(this, tr("Error"), tr("Sorry, but icon named %1 already exists.").arg(text));
+			}
+		} else {
+			if (!db_icon->isExistsByName(treeItem->parent()->text(0), treeItem->text(0), text)){
+				query.prepare("UPDATE icon SET name=:name WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id=(SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name1) AND name=:dir_name) AND name=:icon_name");
+				query.bindValue(":name", text);
+				query.bindValue(":prefix_name", treeItem->parent()->text(0));
+				query.bindValue(":prefix_name1", treeItem->parent()->text(0));
+				query.bindValue(":dir_name", treeItem->text(0));
+				query.bindValue(":icon_name", iconItem->text());
+			} else {
+				QMessageBox::warning(this, tr("Error"), tr("Sorry, but icon named %1 already exists.").arg(text));
+			}
 		}
 
-		query.bindValue(":name", text);
-		query.bindValue(":prefix_id", prefix_id);
+		db_icon->updateQuery(&query);
 
-		if (!query.exec()){
-			#ifdef DEBUG
-				qDebug()<<"WARNING: SQL error at MainWindow::iconRename_Click(void)\nINFO:\n"<<query.executedQuery()<<"\n"<<query.lastError();
-			#endif
-			return;
-		}
-		query.first();
-
-		if (query.isValid ()){
-			QMessageBox::warning(this, tr("Error"), tr("Sorry, but icon named %1 already exists.").arg(text));
-			query.clear();
-			return;
-		}
-		query.clear();
-
-		if(dir_id.isEmpty()){
-			query.prepare("UPDATE icon SET name=:new_name WHERE name=:name and prefix_id=:prefix_id and dir_id ISNULL");
-		}else{
-			query.prepare("UPDATE icon SET name=:new_name WHERE name=:name and prefix_id=:prefix_id and dir_id=:dir_id");
-			query.bindValue(":dir_id", dir_id);
-		}
-
-		query.bindValue(":prefix_id", prefix_id);
-		query.bindValue(":new_name", text);
-		query.bindValue(":name", iconItem->text());
-
-		if (!query.exec()){
-			#ifdef DEBUG
-				qDebug()<<"WARNING: SQL error at MainWindow::iconRename_Click(void)\nINFO:\n"<<query.executedQuery()<<"\n"<<query.lastError();
-			#endif
-			return;
-		}
-		query.clear();
-
-		// Updating icons view
 		twPrograms_ItemClick(treeItem, 0);
-
 	}
 	return;
 }

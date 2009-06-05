@@ -29,7 +29,7 @@
 
 #include "iconsettings.h"
 
-IconSettings::IconSettings(bool newIcon, QString prefix_id, QString prefix_dir, QString dir_id, QString icon_name, QString winedll_path, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_name, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
 	/*
 	 ** This functions is constructor for IconSettings dialog
@@ -41,6 +41,7 @@ IconSettings::IconSettings(bool newIcon, QString prefix_id, QString prefix_dir, 
 	 */
 	setupUi(this);
 
+	/*
 	QSettings settings(APP_SHORT_NAME, "default");
 	settings.beginGroup("app");
 	loadThemeIcons(settings.value("theme").toString());
@@ -91,7 +92,7 @@ IconSettings::IconSettings(bool newIcon, QString prefix_id, QString prefix_dir, 
 	twDlls->installEventFilter(this);
 
 	getWineDlls(winedll_path);
-
+	*/
 
 
 	return;
