@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -252,6 +252,26 @@ QStringList corelib::getCdromDevices(void) const{
 	file.close();
 
 	return retVal;
+}
+
+QStringList corelib::getWineDlls(QString prefix_lib_path) const{
+	QStringList dllList;
+	if (prefix_lib_path.isEmpty()){
+		prefix_lib_path=this->getSetting("wine", "WineLibs").toString();
+	}
+
+	QDir dir(prefix_lib_path);
+		dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+
+	QFileInfoList list = dir.entryInfoList();
+	for (int i = 0; i < list.size(); ++i) {
+		QFileInfo fileInfo = list.at(i);
+		if (fileInfo.fileName().indexOf(".dll.so")>=0){
+			dllList<<fileInfo.fileName().left(fileInfo.fileName().length()-3);
+		}
+	}
+
+	return dllList;
 }
 
 int corelib::showError(const QString message, const bool info) const{

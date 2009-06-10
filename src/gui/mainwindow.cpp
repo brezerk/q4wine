@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -521,16 +521,6 @@ void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
 					iconItem->setIcon(CoreFunction_IconLoad("data/exec_wine.png"));
 				}
 			}
-
-			// If icon cutted -- set icon disabled style
-
-			// FIXME: It pice works fine, but we nead to usse pixmaps fo grayscale, not Qt::ItemIsEnabled flag....
-			// FIXME: It is optional, i don't work on it until release... ;)
-
-			//if ((getData.at(0)==iconBuffer.prefix_id) and (getData.at(2)==iconBuffer.dir_id)){
-			//	if (iconBuffer.names.indexOf (query.value(0).toString())!=-1)
-			//		iconItem->setFlags(!Qt::ItemIsEnabled);
-			//}
 		}
 	}
 
@@ -1423,7 +1413,7 @@ void MainWindow::prefixDelete_Click(){
 		if(QMessageBox::warning(this, tr("Warning"),
 	   tr("Do you really wish to delete prefix named \"%1\" and all associated icons?").arg(tablePrefix->item(tablePrefix->currentRow(), 0)->text()), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
 			if (db_icon->delIconsByPrefixName(tablePrefix->item(tablePrefix->currentRow(), 0)->text()))
-				if(db_dir->delDirByPrefixName(tablePrefix->item(tablePrefix->currentRow(), 0)->text()))
+				if(db_dir->delDir(tablePrefix->item(tablePrefix->currentRow(), 0)->text()))
 					db_prefix->delPrefixByPrefixName(tablePrefix->item(tablePrefix->currentRow(), 0)->text());
 		}
 	}
@@ -2174,22 +2164,18 @@ void MainWindow::iconRename_Click(void){
 
 void MainWindow::iconAdd_Click(void){
 	QTreeWidgetItem *treeItem;
-	QSqlQuery query;
-
-	//QString prefix_id, dir_id, prefix_dir;
-
+	IconSettings *iconAddWizard;
 	treeItem = twPrograms->currentItem();
 
 	if (!treeItem)
 		return;
 
-	// We gona get prefix_id and dir_id by calling SQL_getPrefixAndDirData
-	QStringList dataList;
-	dataList = SQL_getPrefixAndDirInfo(treeItem);
-	if (dataList.at(0)=="-1")
-		return;
+	if (treeItem->parent()){
+		iconAddWizard = new IconSettings(treeItem->parent()->text(0), treeItem->text(0));
+	} else {
+		iconAddWizard = new IconSettings(treeItem->text(0), "");
+	}
 
-	IconSettings *iconAddWizard = new IconSettings(TRUE, dataList.at(0), dataList.at(1), dataList.at(6), "", dataList.at(2));
 	if (iconAddWizard->exec() == QDialog::Accepted){
 		// Updating icons view
 		twPrograms_ItemClick(treeItem, 0);
@@ -2525,14 +2511,8 @@ void MainWindow::iconPaste_Click(void){
 }
 
 void MainWindow::iconOption_Click(void){
-	QTreeWidgetItem *treeItem;
-	QListWidgetItem *iconItem;
-	QSqlQuery query;
-
-	QString prefix_id, dir_id, prefix_dir;
-
-	treeItem = twPrograms->currentItem();
-	iconItem = lstIcons->currentItem();
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
+	QListWidgetItem *iconItem = lstIcons->currentItem();
 
 	if (!treeItem)
 		return;
@@ -2540,32 +2520,24 @@ void MainWindow::iconOption_Click(void){
 	if (!iconItem)
 		return;
 
-	// We gona get prefix_id and dir_id by calling SQL_getPrefixAndDirData
-	QStringList dataList;
-	dataList = SQL_getPrefixAndDirData(treeItem);
-	if (dataList.at(0)=="-1"){
-		return;
+	IconSettings *iconAddWizard;
+
+	if (treeItem->parent()){
+		iconAddWizard = new IconSettings(treeItem->parent()->text(0), treeItem->text(0), iconItem->text());
 	} else {
-		prefix_id = dataList.at(0);
-		prefix_dir = dataList.at(1);
-		dir_id = dataList.at(2);
+		iconAddWizard = new IconSettings(treeItem->text(0), "", iconItem->text());
 	}
 
-	IconSettings *iconAddWizard = new IconSettings(FALSE, prefix_id, prefix_dir, dir_id, iconItem->text());
 	if (iconAddWizard->exec() == QDialog::Accepted){
 		// Updating icons view
 		twPrograms_ItemClick(treeItem, 0);
 	}
-
 	return;
 }
 
 void MainWindow::dirAdd_Click(void){
-	QSqlQuery query;
-	QTreeWidgetItem *treeItem;
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 	QTreeWidgetItem *prefixItem;
-	treeItem = twPrograms->currentItem();
-	QString prefix_id;
 
 	if (!treeItem->text(0).isEmpty()){
 		bool ok;
@@ -2573,28 +2545,28 @@ void MainWindow::dirAdd_Click(void){
 
 		if (ok && !dirname.isEmpty()){
 
-			QStringList getData;
 			if (treeItem->parent()){
-				getData = SQL_getDirctoryInfo(treeItem->parent()->text(0), dirname);
-				if (getData.at(0)=="-1")
+				if (db_dir->isExistsByName(treeItem->parent()->text(0), dirname)){
+					 QMessageBox::warning(this, tr("Error"), tr("Sorry, but directory named %1 already exists.").arg(dirname));
+					 return;
+				}
+
+				if (!db_dir->addDir(treeItem->parent()->text(0), dirname))
 					return;
 				prefixItem = new QTreeWidgetItem(treeItem->parent());
 			} else {
-				getData = SQL_getDirctoryInfo(treeItem->text(0), dirname);
-				if (getData.at(0)=="-1")
+				if (db_dir->isExistsByName(treeItem->text(0), dirname)){
+					 QMessageBox::warning(this, tr("Error"), tr("Sorry, but directory named %1 already exists.").arg(dirname));
+					 return;
+				}
+
+				if (!db_dir->addDir(treeItem->text(0), dirname))
 					return;
 				prefixItem = new QTreeWidgetItem(treeItem);
 			}
 
 			prefixItem->setText(0, dirname);
 			prefixItem->setIcon(0, CoreFunction_IconLoad("data/folder.png"));
-
-			query.prepare("INSERT INTO dir(id, name, prefix_id) VALUES(NULL, :name, :prefix_id)");
-			query.bindValue(":name", dirname);
-			query.bindValue(":prefix_id", getData.at(0));
-			query.exec();
-			query.clear();
-
 		}
 	}
 	return;
@@ -2682,27 +2654,24 @@ void MainWindow::dirUninstall_Click(void){
 
 void MainWindow::dirRename_Click(void){
 	QSqlQuery query;
-	QTreeWidgetItem *treeItem;
-	treeItem = twPrograms->currentItem();
-	QString prefix_id;
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 
 	if (treeItem->parent()){
 		bool ok;
 		QString dirname = QInputDialog::getText(this, tr("Enter new name for directory"), tr("Directory name:"), QLineEdit::Normal, treeItem->text(0) , &ok);
 		if (ok && !dirname.isEmpty() && dirname!=treeItem->text(0)){
-			query.prepare("select id from prefix where name=:name");
-			query.bindValue(":name", treeItem->parent()->text(0));
-			query.exec();
-			query.first();
-			prefix_id=query.value(0).toString();
-			query.clear();
 
-			query.prepare("UPDATE dir SET name=:name WHERE prefix_id=:prefix_id and name=:oldname");
+			if (db_dir->isExistsByName(treeItem->parent()->text(0), dirname)){
+				 QMessageBox::warning(this, tr("Error"), tr("Sorry, but directory named %1 already exists.").arg(dirname));
+				 return;
+			}
+
+			query.prepare("UPDATE dir SET name=:name WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND name=:oldname");
 			query.bindValue(":name", dirname);
-			query.bindValue(":prefix_id", prefix_id);
+			query.bindValue(":prefix_id", treeItem->parent()->text(0));
 			query.bindValue(":oldname", treeItem->text(0));
-			query.exec();
-			query.clear();
+
+			db_dir->updateQuery(&query);
 
 			treeItem->setText(0, dirname);
 		}
@@ -2711,82 +2680,23 @@ void MainWindow::dirRename_Click(void){
 }
 
 void MainWindow::dirDelete_Click(void){
-	QSqlQuery query;
 	QTreeWidgetItem *treeItem;
 	treeItem = twPrograms->currentItem();
-	QString prefix_id, dir_id;
 
 	if (treeItem->parent()){
 
 		if (QMessageBox::warning(this, tr("Q4Wine"), tr("Do you really wish delete folder named \"%1\" and all associated icons?\n").arg(twPrograms->currentItem()->text(0)),
 			 QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
 
-			query.prepare("select id from prefix where name=:name");
-			query.bindValue(":name", treeItem->parent()->text(0));
-			query.exec();
-			query.first();
-			prefix_id=query.value(0).toString();
-			query.clear();
 
-			query.prepare("select id from dir where name=:name and prefix_id=:prefix_id");
-			query.bindValue(":prefix_id", prefix_id);
-			query.bindValue(":name", treeItem->text(0));
-			query.exec();
-			query.first();
-			dir_id=query.value(0).toString();
-			query.clear();
-
-			query.prepare("DELETE FROM icon WHERE prefix_id=:prefix_id and dir_id=:dir_id");
-			query.bindValue(":prefix_id", prefix_id);
-			query.bindValue(":dir_id", dir_id);
-			query.exec();
-			query.clear();
-
-			query.prepare("DELETE FROM dir WHERE prefix_id=:prefix_id and name=:name");
-			query.bindValue(":prefix_id", prefix_id);
-			query.bindValue(":name", treeItem->text(0));
-			query.exec();
-			query.clear();
-
-			treeItem->parent()->removeChild (treeItem);
-
+			if (db_icon->delIcon(treeItem->parent()->text(0), treeItem->text(0), ""))
+				if(db_dir->delDir(treeItem->parent()->text(0), treeItem->text(0)))
+					treeItem->parent()->removeChild (treeItem);
 			twPrograms_ItemClick(twPrograms->currentItem(), 0);
 		}
 	}
 
 	return;
-}
-
-/**************************************\
-|			Embeded SQL functions	    |
-\**************************************/
-
-QStringList MainWindow::SQL_getDirctoryInfo(QString prefix_name, QString dirname){
-
-	QSqlQuery query;
-	QStringList dataList;
-	query.prepare("select id from prefix where name=:name");
-	query.bindValue(":name", prefix_name);
-	query.exec();
-	query.first();
-	dataList << query.value(0).toString();
-	query.clear();
-
-	query.prepare("select id from dir where name=:name and prefix_id=:prefix_id");
-	query.bindValue(":name", dirname);
-	query.bindValue(":prefix_id", dataList.at(0));
-	query.exec();
-	query.first();
-
-	if (query.isValid ()){
-		QMessageBox::warning(this, tr("Error"), tr("Sorry, but prefix already have directory named %1.").arg(dirname));
-		query.clear();
-		return QStringList ("-1");
-	}
-	query.clear();
-
-	return dataList;
-
 }
 
 QStringList MainWindow::SQL_getPrefixAndDirInfo(QTreeWidgetItem *treeItem){

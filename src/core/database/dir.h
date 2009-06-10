@@ -66,7 +66,23 @@ public:
 	* \param  prefix_name    A prefix name value.
 	* \return Return true on success.
 	*/
-	bool delDirByPrefixName(const QString prefix_name) const;
+	bool delDir(const QString prefix_name, const QString dir_name = "") const;
+
+	/*! \brief This function add dir by name and prefix_name.
+	 *
+	 * \param  prefix_name    A prefix name value.
+	 * \param  dir_name    A name value.
+	 * \return Return true if exists.
+	 */
+	bool addDir(const QString prefix_name, const QString dir_name) const;
+
+	/*! \brief This function check is reccord exists by dir_name or not.
+	 *
+	 * \param  prefix_name    A prefix name value.
+  	 * \param  dir_name		 A dir name value.
+	 * \return Return true if exists.
+	 */
+	bool isExistsByName(const QString prefix_name, const QString dir_name) const;
 };
 
 #endif // DIR_H

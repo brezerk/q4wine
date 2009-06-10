@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -318,7 +318,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 		QStringList SQL_getPrefixAndDirData(QTreeWidgetItem *treeItem);
 		QStringList SQL_getPrefixAndDirInfo(QTreeWidgetItem *treeItem);
-		QStringList SQL_getDirctoryInfo(QString prefix_name, QString dirname);
 		bool SQL_isIconExistsByName(QString prefix_id, QString dir_id, QString name);
 
 

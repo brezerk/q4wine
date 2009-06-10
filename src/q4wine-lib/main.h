@@ -114,6 +114,13 @@ public:
 	 * \return Return an list of cdrom devices.
 	 */
 	QStringList getCdromDevices(void) const;
+
+	/*! \brief This function builds wine dlls list for prefix_lib_path.
+	 *
+	 * \param  prefix_lib_path	Path for wine libs.
+	 * \return Return an list of cdrom devices.
+	 */
+	QStringList getWineDlls(QString prefix_lib_path) const;
     private:
     /*! Define is library operate in CLI or GUI mode.
      * \note This is typically need for error message display.

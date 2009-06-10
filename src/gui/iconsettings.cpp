@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -41,31 +41,46 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 	 */
 	setupUi(this);
 
-	/*
-	QSettings settings(APP_SHORT_NAME, "default");
-	settings.beginGroup("app");
-	loadThemeIcons(settings.value("theme").toString());
-	settings.endGroup();
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
 
-	settings.beginGroup("icotool");
-	WRESTOOL_BIN = settings.value("wrestool").toString();
-	ICOTOOL_BIN = settings.value("icotool").toString();
-	settings.endGroup();
-
-	if (prefix_dir.isEmpty()){
-		prefix_dir.append(QDir::homePath());
-		prefix_dir.append("/.wine/drive_c/");
-	} else {
-		prefix_dir.append("/drive_c/");
+	if (!libq4wine.load()){
+		libq4wine.load();
 	}
 
-	this->prefix_id=prefix_id;
-	this->prefix_dir=prefix_dir;
-	this->dir_id=dir_id;
-	this->iconName=icon_name;
-	this->newIcon=newIcon;
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib = (corelib *)CoreLibClassPointer(true);
 
-	switch (newIcon){
+	// Creating database classes
+	db_prefix = new Prefix();
+	db_icon = new Icon();
+
+	this->prefix_name = prefix_name;
+	this->dir_name = dir_name;
+	this->icon_name = icon_name;
+	this->prefix_path = db_prefix->getFieldsByPrefixName(this->prefix_name).at(1);
+	if (this->prefix_path.isEmpty()){
+		  this->prefix_path = QDir::homePath();
+		  this->prefix_path.append("/.wine/drive_c/");
+	} else {
+		  this->prefix_path.append("/drive_c/");
+	}
+
+
+	// Creating side bar urls
+	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
+	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
+
+	if (QDir(this->prefix_path).exists())
+	   prefix_urls << QUrl::fromLocalFile(this->prefix_path);
+
+	if (QDir().exists(db_prefix->getFieldsByPrefixName(this->prefix_name).at(6)))
+		prefix_urls << QUrl::fromLocalFile(db_prefix->getFieldsByPrefixName(this->prefix_name).at(6));
+
+	this->loadThemeIcons(this->CoreLib->getSetting("app", "theme", false).toString());
+
+	switch (icon_name.isEmpty()){
 		case TRUE:
 			lblCaption->setText(tr("Adding new icon"));
 			setWindowTitle(tr("Adding new icon"));
@@ -73,9 +88,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 		case FALSE:
 			lblCaption->setText(tr("Icon settings"));
 			setWindowTitle(tr("Icon settings"));
-			settings.beginGroup("app");
-				getIconReccord(settings.value("theme").toString());
-			settings.endGroup();
+			getIconReccord();
 		break;
 	}
 
@@ -91,9 +104,8 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 
 	twDlls->installEventFilter(this);
 
-	getWineDlls(winedll_path);
-	*/
-
+	cboxDlls->addItems(CoreLib->getWineDlls(db_prefix->getFieldsByPrefixName(prefix_name).at(2)));
+	cboxDlls->setMaxVisibleItems (10);
 
 	return;
 }
@@ -134,60 +146,56 @@ QIcon IconSettings::loadIcon(QString iconName, QString themePath){
 	return icon;
 }
 
-void IconSettings::getIconReccord(QString themePath){
-	QSqlQuery query;
+void IconSettings::getIconReccord(){
+	QList<QStringList> iconRec;
 
-	if (!dir_id.isEmpty()){
-		query.exec(tr("SELECT name, exec, cmdargs, icon_path, desc, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND dir_id=%2 and name=\"%3\"") .arg(prefix_id) .arg(dir_id) .arg(iconName));
+	if (this->dir_name.isEmpty()){
+		iconRec = db_icon->getIconsInfoByPrefixName(this->prefix_name, this->icon_name);
 	} else {
-		query.exec(tr("SELECT name, exec, cmdargs, icon_path, desc, display, winedebug, useconsole, override, id, wrkdir, desktop, nice FROM icon WHERE prefix_id=%1 AND name=\"%2\" AND dir_id ISNULL") .arg(prefix_id) .arg(iconName));
+		iconRec = db_icon->getIconsInfoByNames(this->prefix_name, this->dir_name, this->icon_name);
 	}
 
-	query.first();
-
-	txtName->setText(query.value(0).toString());
-	txtProgramPath->setText(query.value(1).toString());
-	txtCmdArgs->setText(query.value(2).toString());
+	txtName->setText(iconRec.at(0).at(1));
+	txtCmdArgs->setText(iconRec.at(0).at(9));
+	txtProgramPath->setText(iconRec.at(0).at(10));
 
 	iconPath.clear();
 
-
-
-	if (!query.value(3).toString().isEmpty()){
-		if (QFile(query.value(3).toString()).exists()){
-			cmdGetIcon->setIcon (QIcon(query.value(3).toString()));
-			iconPath=query.value(3).toString();
+	if (!iconRec.at(0).at(3).isEmpty()){
+		if (QFile(iconRec.at(0).at(3)).exists()){
+			cmdGetIcon->setIcon (QIcon(iconRec.at(0).at(3)));
+			iconPath=iconRec.at(0).at(3);
 		} else {
-			iconPath=query.value(3).toString();
+			iconPath=iconRec.at(0).at(3);
 			if (iconPath=="wineconsole"){
-				cmdGetIcon->setIcon(loadIcon("data/wineconsole.png", themePath));
+				cmdGetIcon->setIcon(loadIcon("data/wineconsole.png", this->CoreLib->getSetting("app", "theme", false).toString()));
 			} else if (iconPath=="regedit"){
-				cmdGetIcon->setIcon(loadIcon("data/regedit.png", themePath));
+				cmdGetIcon->setIcon(loadIcon("data/regedit.png", this->CoreLib->getSetting("app", "theme", false).toString()));
 			} else if (iconPath=="wordpad"){
-				cmdGetIcon->setIcon(loadIcon("data/notepad.png", themePath));
+				cmdGetIcon->setIcon(loadIcon("data/notepad.png", this->CoreLib->getSetting("app", "theme", false).toString()));
 			} else if (iconPath=="winecfg"){
-				cmdGetIcon->setIcon(loadIcon("data/winecfg.png", themePath));
+				cmdGetIcon->setIcon(loadIcon("data/winecfg.png", this->CoreLib->getSetting("app", "theme", false).toString()));
 			} else if (iconPath=="uninstaller"){
-				cmdGetIcon->setIcon(loadIcon("data/uninstaller.png", themePath));
+				cmdGetIcon->setIcon(loadIcon("data/uninstaller.png", this->CoreLib->getSetting("app", "theme", false).toString()));
 			} else if (iconPath=="eject"){
-				cmdGetIcon->setIcon(loadIcon("data/eject.png", themePath));
+				cmdGetIcon->setIcon(loadIcon("data/eject.png", this->CoreLib->getSetting("app", "theme", false).toString()));
 			} else if (iconPath=="explorer"){
-				cmdGetIcon->setIcon(loadIcon("data/explorer.png", themePath));
+				cmdGetIcon->setIcon(loadIcon("data/explorer.png", this->CoreLib->getSetting("app", "theme", false).toString()));
 			} else {
-				cmdGetIcon->setIcon(loadIcon("data/exec_wine.png", themePath));
+				cmdGetIcon->setIcon(loadIcon("data/exec_wine.png", this->CoreLib->getSetting("app", "theme", false).toString()));
 				iconPath="";
 			}
 		}
 	}
 
-	txtDesc->setText(query.value(4).toString());
-	txtDisplay->setText(query.value(5).toString());
-	txtWinedebug->setText(query.value(6).toString());
-	txtWorkDir->setText(query.value(10).toString());
-	txtDesktopSize->setText(query.value(11).toString());
-	spinNice->setValue(query.value(12).toInt());
+	txtDesc->setText(iconRec.at(0).at(2));
+	txtDisplay->setText(iconRec.at(0).at(8));
+	txtWinedebug->setText(iconRec.at(0).at(6));
+	txtWorkDir->setText(iconRec.at(0).at(4));
+	txtDesktopSize->setText(iconRec.at(0).at(11));
+	spinNice->setValue(iconRec.at(0).at(12).toInt());
 
-	if (query.value(7).toString()=="1"){
+	if (iconRec.at(0).at(7)=="1"){
 		cbUseConsole->setCheckState(Qt::Checked);
 		txtWinedebug->setEnabled(TRUE);
 	} else {
@@ -195,7 +203,7 @@ void IconSettings::getIconReccord(QString themePath){
 		txtWinedebug->setEnabled(FALSE);
 	}
 
-	QStringList override = query.value(8).toString().split(";");
+	QStringList override = iconRec.at(0).at(5).split(";");
 
 	QString overrideorder;
 
@@ -221,33 +229,6 @@ void IconSettings::getIconReccord(QString themePath){
 			twDlls->setItem(0, 1, newItem);
 			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
 	}
-
-	iconId = query.value(9).toString();
-
-	return;
-}
-
-void IconSettings::getWineDlls(QString winedll_path){
-
-	if (winedll_path.isEmpty()){
-		QSettings settings(APP_SHORT_NAME, "default");
-		settings.beginGroup("wine");
-			winedll_path=settings.value("WineLibs").toString();
-		settings.endGroup();
-	}
-
-	QDir dir(winedll_path);
-	dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
-
-	QFileInfoList list = dir.entryInfoList();
-	for (int i = 0; i < list.size(); ++i) {
-		QFileInfo fileInfo = list.at(i);
-		if (fileInfo.fileName().indexOf(".dll.so")>=0){
-			cboxDlls->addItem ( fileInfo.fileName().left(fileInfo.fileName().length()-3));
-		}
-	}
-
-	cboxDlls->setMaxVisibleItems (10);
 
 	return;
 }
@@ -313,31 +294,23 @@ void IconSettings::cbUseConsole_stateChanged(int){
 
 void IconSettings::cmdGetWorkDir_Click(){
 
-	QString searchPath=prefix_dir;
-	QString fileName;
+	QString fileName, searchPath=this->prefix_path;
 
 	if ((!txtProgramPath->text().isEmpty()) and (QDir().exists(txtProgramPath->text()))){
 		searchPath=txtProgramPath->text().left(txtProgramPath->text().length() - txtProgramPath->text().split("/").last().length());;
 	}
 
 	if (!QDir(searchPath).exists()){
-	    if (QDir(prefix_dir).exists()){
-		   searchPath=prefix_dir;
+		if (QDir(this->prefix_path).exists()){
+		   searchPath=this->prefix_path;
 	    } else {
 		   searchPath=QDir::homePath();
 	    }
 	 }
 
-	QList<QUrl> prefix_urls;
-	// Adding side bar urls for FileOpen dialogs
-	if (QDir(prefix_dir).exists())
-	   prefix_urls << QUrl::fromLocalFile(prefix_dir);
-
-	if ((searchPath != prefix_dir) && (QDir(searchPath).exists()))
-	    prefix_urls << QUrl::fromLocalFile(searchPath);
-
-	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
-	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
+	QList<QUrl> add_prefix_urls = this->prefix_urls;
+	if ((searchPath != this->prefix_path) && (QDir(searchPath).exists()))
+		add_prefix_urls << QUrl::fromLocalFile(searchPath);
 
 	QFileDialog dialog(this);
 	  dialog.setFilter(QDir::Dirs | QDir::Hidden);
@@ -345,17 +318,12 @@ void IconSettings::cmdGetWorkDir_Click(){
 	  dialog.setFileMode(QFileDialog::Directory);
 	  dialog.setWindowTitle(tr("Open Directory"));
 	  dialog.setDirectory(searchPath);
-	    // This option works only it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
-	    // dialog.setOption(QFileDialog::ShowDirsOnly, true);
+	  // This option works only it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
+	  // dialog.setOption(QFileDialog::ShowDirsOnly, true);
+	  dialog.setSidebarUrls(add_prefix_urls);
 
-	  dialog.setSidebarUrls(prefix_urls);
-
-	//fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), searchPath, tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)") );
-
-	 if (dialog.exec())
+	if (dialog.exec())
 	    fileName = dialog.selectedFiles().first();
-
-	//QString fileName = QFileDialog::getExistingDirectory(this, tr("Open Directory"), selDir, QFileDialog::DontResolveSymlinks);
 
 	if(!fileName.isEmpty()){
 		txtWorkDir->setText(fileName);
@@ -381,8 +349,8 @@ void IconSettings::cmdAdd_Click(){
 }
 
 void IconSettings::cmdGetProgram_Click(){
-	QString fileName;
-	QString searchPath=prefix_dir;
+
+	QString fileName, searchPath = this->prefix_path;
 
 	if (!txtProgramPath->text().isEmpty()){
 	    if (!txtWorkDir->text().isEmpty()){
@@ -393,23 +361,16 @@ void IconSettings::cmdGetProgram_Click(){
 	}
 
 	if ((!QDir(searchPath).exists()) or (searchPath.isEmpty())){
-	    if (QDir(prefix_dir).exists()){
-		   searchPath=prefix_dir;
+		if (QDir(dir_name).exists()){
+		   searchPath=this->prefix_path;
 	    } else {
 		   searchPath=QDir::homePath();
 	    }
 	 }
 
-	QList<QUrl> prefix_urls;
-	// Adding side bar urls for FileOpen dialogs
-	if (QDir(prefix_dir).exists())
-	   prefix_urls << QUrl::fromLocalFile(prefix_dir);
-
-	if ((searchPath != prefix_dir) && (QDir(searchPath).exists()))
-	    prefix_urls << QUrl::fromLocalFile(searchPath);
-
-	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
-	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
+	QList<QUrl> add_prefix_urls = this->prefix_urls;
+	if ((searchPath != this->prefix_path) && (QDir(searchPath).exists()))
+		add_prefix_urls << QUrl::fromLocalFile(searchPath);
 
 	QFileDialog dialog(this);
 	  dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
@@ -417,12 +378,10 @@ void IconSettings::cmdGetProgram_Click(){
 	  dialog.setDirectory(searchPath);
 	  dialog.setFileMode(QFileDialog::ExistingFile);
 	  dialog.setNameFilter(tr("Exe files (*.exe)"));
-	  dialog.setSidebarUrls(prefix_urls);
+	  dialog.setSidebarUrls(add_prefix_urls);
 
 	 if (dialog.exec())
 	    fileName = dialog.selectedFiles().first();
-
-	//QString fileName = QFileDialog::getOpenFileName(this, tr("Open Exe file"), selDir, tr("Exe files (*.exe)"));
 
 	if(!fileName.isEmpty()){
 			QStringList list1 = fileName.split("/");
@@ -439,44 +398,57 @@ void IconSettings::cmdGetProgram_Click(){
 
 void IconSettings::cmdGetIcon_Click(){
 
-	QString fileName, searchPath;
+	QString fileName, searchPath=this->prefix_path;
+
 
 	if ((!txtWorkDir->text().isEmpty()) and (QDir(txtWorkDir->text()).exists())){
-	    searchPath = txtWorkDir->text();
+		searchPath = txtWorkDir->text();
 	} else {
-		if ((!iconPath.isEmpty()) and (QFile(iconPath).exists())){
-			searchPath = iconPath;
+		if (QDir(this->prefix_path).exists()){
+		   searchPath=this->prefix_path;
 		} else {
-		    if (QDir(prefix_dir).exists()){
-			   searchPath=prefix_dir;
-		    } else {
-			   searchPath=QDir::homePath();
-		    }
+		   searchPath=QDir::homePath();
 		}
 	}
 
-	QList<QUrl> prefix_urls;
-	// Adding side bar urls for FileOpen dialogs
-	if (QDir(prefix_dir).exists())
-	   prefix_urls << QUrl::fromLocalFile(prefix_dir);
 
-	if ((searchPath != prefix_dir) && (QDir(searchPath).exists()))
-	    prefix_urls << QUrl::fromLocalFile(searchPath);
+	qDebug()<<searchPath;
 
-	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
-	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
+	QList<QUrl> add_prefix_urls = this->prefix_urls;
+	if ((searchPath != this->prefix_path) && (QDir(searchPath).exists()))
+		add_prefix_urls << QUrl::fromLocalFile(searchPath);
+
+	QString addPath;
+	addPath=QDir::homePath();
+	addPath.append("/.config/");
+	addPath.append(APP_SHORT_NAME);
+	addPath.append("/icons");
+
+	if ((QDir(addPath).exists()))
+		add_prefix_urls << QUrl::fromLocalFile(addPath);
+
+	addPath=QDir::homePath();
+	addPath.append("/.local/share/icons/");
+
+	if ((QDir(addPath).exists()))
+		add_prefix_urls << QUrl::fromLocalFile(addPath);
 
 	QFileDialog dialog(this);
 	  dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
 	  dialog.setFileMode(QFileDialog::ExistingFile);
 	  dialog.setWindowTitle(tr("Open image file"));
+	  if ((!iconPath.isEmpty()) and (QFile(iconPath).exists())){
+		  QStringList list = iconPath.split("/");
+		  searchPath = iconPath.left(iconPath.length() - list.last().length());
+	  }
 	  dialog.setDirectory(searchPath);
+
 	    #ifndef WITH_ICOTOOLS
 		dialog.setNameFilter(tr("Image files (*.png *.jpg *.gif *.bmp *.xpm)"));
 	    #else
 		dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)"));
 	    #endif
-	  dialog.setSidebarUrls(prefix_urls);
+	  dialog.setSidebarUrls(add_prefix_urls);
 
 	 if (dialog.exec())
 	    fileName = dialog.selectedFiles().first();
@@ -518,7 +490,7 @@ void IconSettings::cmdGetIcon_Click(){
 			args << "-o" << tmpDir;
 			args << fileName;
 
-			Process *exportProcess = new Process(args, WRESTOOL_BIN, QDir::homePath(), tr("Exporting icon from binary file.<br>This can take a while..."), tr("Exporting icon"));
+			Process *exportProcess = new Process(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Exporting icon from binary file.<br>This can take a while..."), tr("Exporting icon"));
 
 			if (exportProcess->exec()==QDialog::Accepted){
 			//icotool -x -o ./regedit.png --width=32 --height=32 ./regedit.exe_14_100_0.ico
@@ -542,7 +514,7 @@ void IconSettings::cmdGetIcon_Click(){
 				//Look here, this function checks is some icons found, or not. 5 -- is default number of arguments,
 				//if more -- then we have some ico file to convert
 				if (args.size()>=4){
-					exportProcess = new Process(args, ICOTOOL_BIN, QDir::homePath(), tr("Convering icon from binary file.<br>This can take a while..."), tr("Converting icon"));
+					exportProcess = new Process(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Convering icon from binary file.<br>This can take a while..."), tr("Converting icon"));
 					if (exportProcess->exec()==QDialog::Accepted){
 						IconsView *iconsView = new IconsView(tmpDir);
 						if (iconsView->exec()==QDialog::Accepted){
@@ -593,33 +565,32 @@ void IconSettings::cmdCancel_Click(){
 }
 
 void IconSettings::cmdOk_Click(){
-	QSqlQuery query;
 
-	if (iconName!=txtName->text()){
-		query.prepare("select id from icon where name=:name and prefix_id=:prefix_id and dir_id=:dir_id");
-		query.bindValue(":name", txtName->text());
+  if (txtProgramPath->text().isEmpty()){
+	  QMessageBox::warning(this, tr("Error"), tr("No executiable program selected."));
+	  return;
+  }
 
-		if(dir_id.isEmpty())
-			query.bindValue(":dir_id", QVariant(QVariant::String));
-		else
-			query.bindValue(":dir_id", dir_id);
+  if (txtName->text().isEmpty()){
+	  QMessageBox::warning(this, tr("Error"), tr("No program name specified."));
+	  return;
+  }
 
-		query.bindValue(":prefix_id", prefix_id);
+  if (icon_name!=txtName->text()){
+	  if (this->dir_name.isEmpty()){
+		  if (db_icon->isExistsByName(this->prefix_name, txtName->text())){
+			  QMessageBox::warning(this, tr("Error"), tr("Sorry, but icon named %1 already exists.").arg(txtName->text()));
+			  return;
+		  }
+	  } else {
+		  if (db_icon->isExistsByName(this->prefix_name, this->dir_name, txtName->text())){
+			  QMessageBox::warning(this, tr("Error"), tr("Sorry, but icon named %1 already exists.").arg(txtName->text()));
+			  return;
+		  }
+	  }
+  }
 
-		query.exec();
-		query.first();
-
-
-		if (query.isValid ()){
-			QMessageBox::warning(this, tr("Error"), tr("Sorry, but icon named %1 already exists.").arg(txtName->text()));
-			return;
-		}
-	}
-
-	if (txtProgramPath->text().isEmpty()){
-		QMessageBox::warning(this, tr("Error"), tr("No executiable program selected."));
-		return;
-	}
+  QSqlQuery query;
 
 	QString override;
 	for (int i=1; i<=twDlls->rowCount(); i++){
@@ -634,82 +605,66 @@ void IconSettings::cmdOk_Click(){
 			override.append("b,n;");
 	}
 
-
-
-	switch (newIcon){
+	switch (this->icon_name.isEmpty()){
 		case TRUE:
-			query.prepare("INSERT INTO icon(override, winedebug, useconsole, display, cmdargs, exec, icon_path, desc, dir_id, id, name, prefix_id, wrkdir, desktop, nice) VALUES(:override, :winedebug, :useconsole, :display, :cmdargs, :exec, :icon_path, :desc, :dir_id, NULL, :name, :prefix_id, :wrkdir, :desktop, :nice);");
-
-			if(dir_id.isEmpty())
-				query.bindValue(":dir_id", QVariant(QVariant::String));
-			else
-				query.bindValue(":dir_id", dir_id);
-
-			query.bindValue(":prefix_id", prefix_id);
+			query.prepare("INSERT INTO icon(override, winedebug, useconsole, display, cmdargs, exec, icon_path, desc, dir_id, id, name, prefix_id, wrkdir, desktop, nice) VALUES(:override, :winedebug, :useconsole, :display, :cmdargs, :exec, :icon_path, :desc, (SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)), NULL, :name, (SELECT id FROM prefix WHERE name=:prefix_name), :wrkdir, :desktop, :nice);");
 		break;
 		case FALSE:
-			query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice WHERE id=:id;");
-
-			query.bindValue(":id", iconId);
+			query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice WHERE name=:icon_name and dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)) and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
+			query.bindValue(":icon_name", this->icon_name);
 		break;
 	}
+
+	if(this->dir_name.isEmpty())
+		query.bindValue(":dir_name", QVariant(QVariant::String));
+	else
+		query.bindValue(":dir_name", this->dir_name);
+		query.bindValue(":prefix_dir_name", this->prefix_name);
+		query.bindValue(":prefix_name", this->prefix_name);
 
 	if (override.isEmpty())
 		query.bindValue(":override", QVariant(QVariant::String));
 	else
 		query.bindValue(":override", override);
-
 	if (txtWinedebug->text().isEmpty())
 		query.bindValue(":winedebug", QVariant(QVariant::String));
 	else
 		query.bindValue(":winedebug", txtWinedebug->text());
-
 	if (txtWorkDir->text().isEmpty())
 		query.bindValue(":wrkdir", QVariant(QVariant::String));
 	else
 		query.bindValue(":wrkdir", txtWorkDir->text());
-
-
 	if (cbUseConsole->checkState()==Qt::Checked)
 		query.bindValue(":useconsole", 1);
 	else
 		query.bindValue(":useconsole", 0);
-
 	if (txtDisplay->text().isEmpty())
 		query.bindValue(":display", QVariant(QVariant::String));
 	else
 		query.bindValue(":display", txtDisplay->text());
-
 	if (txtCmdArgs->text().isEmpty())
 		query.bindValue(":cmdargs", QVariant(QVariant::String));
 	else
 		query.bindValue(":cmdargs", txtCmdArgs->text());
-
 	if (txtProgramPath->text().isEmpty())
 		query.bindValue(":exec", QVariant(QVariant::String));
 	else
 		query.bindValue(":exec", txtProgramPath->text());
-
 	if (iconPath.isEmpty())
 		query.bindValue(":icon_path", QVariant(QVariant::String));
 	else
 		query.bindValue(":icon_path", iconPath);
-
 	if (txtDesc->text().isEmpty())
 		query.bindValue(":desc", QVariant(QVariant::String));
 	else
 		query.bindValue(":desc", txtDesc->text());
-
 	query.bindValue(":name", txtName->text());
-
 	query.bindValue(":desktop", txtDesktopSize->text());
-
 	query.bindValue(":nice", spinNice->value());
 
-	if (!query.exec()){
-		QMessageBox::warning(this, tr("Error"), tr("debug: %1").arg(query.lastError().text()));
-	}
+	db_prefix->updateQuery(&query);
 
 	accept();
+
 	return;
 }

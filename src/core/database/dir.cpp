@@ -58,9 +58,14 @@ QList<QStringList> Dir::getFieldsByPrefixId(const QString prefix_id) const{
 	return valuelist;
 }
 
-bool  Dir::delDirByPrefixName(const QString prefix_name) const{
+bool  Dir::delDir(const QString prefix_name, const QString dir_name) const{
 	QSqlQuery query;
-	query.prepare("DELETE FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
+	if (dir_name.isEmpty()){
+		query.prepare("DELETE FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
+	} else {
+		query.prepare("DELETE FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) and name=:dir_name");
+		query.bindValue(":dir_name", dir_name);
+	}
 	query.bindValue(":prefix_name", prefix_name);
 
 	if (!query.exec()){
@@ -68,4 +73,36 @@ bool  Dir::delDirByPrefixName(const QString prefix_name) const{
 		return false;
 	}
 	return true;
+}
+
+bool Dir::addDir(const QString prefix_name, const QString icon_name) const{
+	QSqlQuery query;
+	query.prepare("INSERT INTO dir(name, prefix_id) VALUES(:name, (SELECT id FROM prefix WHERE name=:prefix_name))");
+	query.bindValue(":prefix_name", prefix_name);
+	query.bindValue(":name", icon_name);
+
+	if (!query.exec()){
+		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
+		return false;
+	}
+	return true;
+}
+
+bool Dir::isExistsByName(const QString prefix_name, const QString dir_name) const{
+	QSqlQuery query;
+	query.prepare("SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND name=:dir_name");
+	query.bindValue(":prefix_name", prefix_name);
+	query.bindValue(":dir_name", dir_name);
+
+	if (!query.exec()){
+		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
+		return false;
+	}
+
+	query.first();
+	if (query.isValid()){
+		return true;
+	}
+
+	return false;
 }

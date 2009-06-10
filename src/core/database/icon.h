@@ -122,10 +122,11 @@ public:
 	 *
 	 * \param  prefix_name    A prefix name value.
   	 * \param  dir_name		 A dir name value.
-	 * \param  name    A name value.
+	 * \param  icon_name    A name value.
 	 * \return Return true if exists.
 	 */
 	bool isExistsByName(const QString prefix_name, const QString dir_name, const QString icon_name) const;
+
 };
 
 #endif // ICON_H

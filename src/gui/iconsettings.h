@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -45,6 +45,7 @@
 #include <QSqlRelation>
 #include <QSettings>
 #include <QKeyEvent>
+#include <QLibrary>
 #include <QUrl>
 #include <QHeaderView>
 #include <QTableWidget>
@@ -53,35 +54,87 @@
 #include "iconsview.h"
 #include "process.h"
 
+#include "src/core/database/prefix.h"
+#include "src/core/database/icon.h"
+
+#include <q4wine-lib/main.h>
+
+
+/*!
+ * \class PrefixSettings
+ * \ingroup q4wine-gui
+ * \brief This class provide icon settings dialog functions.
+ *
+ */
 class IconSettings : public QDialog, public Ui::IconSettings
 {
 	Q_OBJECT
 	public:
+		/*! \brief This is class constructor.
+		 *
+		 * \param  prefix_name  Current prefix name.
+		 * \param  dir_name		Current directory name.
+		 * \param  icon_name	Current directory name.
+		 */
 		IconSettings(QString prefix_name, QString dir_name, QString icon_name = "", QWidget * parent = 0, Qt::WFlags f = 0);
 
 	private slots:
+		/*! \brief This slot function resize dialog content.
+		 */
 		void ResizeContent(int);
+
+		/*! \brief This slot function adds selected dll to override list.
+		 */
 		void cmdAdd_Click();
+
+		/*! \brief This slot function gets path to executable win32 binary.
+		 */
 		void cmdGetProgram_Click();
+
+		/*! \brief This slot function gets and\or extract icons.
+		 */
 		void cmdGetIcon_Click();
+
+		/*! \brief This slot function gets work directory.
+		 */
 		void cmdGetWorkDir_Click();
+
+		/*! \brief This slot function trigger use console state.
+		 */
 		void cbUseConsole_stateChanged(int);
+
+		/*! \brief This slot for cancel button.
+		 */
 		void cmdCancel_Click();
+
+		/*! \brief This slot for ok button.
+		 */
 		void cmdOk_Click();
 
 	private:
-		QString prefix_name, dir_name, icon_name, prefix_id, iconName, iconId, iconPath;
-		bool newIcon;
-		void getIconReccord(QString themePath);
+		QString prefix_name, dir_name, icon_name, prefix_path, iconPath;
+
+		/*! \brief This function gets icon parms from database.
+		 */
+		void getIconReccord();
 		void resizeEvent (QResizeEvent);
 		bool eventFilter (QObject *object, QEvent *event);
-		void getWineDlls(QString winedll_path);
 
 		void loadThemeIcons(QString themePath);
 		QIcon loadIcon(QString iconName, QString themePath);
 
-		QString WRESTOOL_BIN;
-		QString ICOTOOL_BIN;
+		//! Side bar URLs list.
+		QList<QUrl> prefix_urls;
+
+		//! Database prefix class defenition.
+		Prefix *db_prefix;
+		Icon *db_icon;
+
+		//! This is need for libq4wine-core.so import.
+		QLibrary libq4wine;
+		typedef void *CoreLibPrototype (bool);
+		CoreLibPrototype *CoreLibClassPointer;
+		corelib *CoreLib;
 };
 
 #endif
