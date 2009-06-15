@@ -20,7 +20,7 @@
     </ul>
   </div>
 <h1>src/gui/prefixsettings.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/***************************************************************************</span>
-<a name="l00002"></a>00002 <span class="comment"> *   Copyright (C) 2008 by Malakhov Alexey                                 *</span>
+<a name="l00002"></a>00002 <span class="comment"> *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *</span>
 <a name="l00003"></a>00003 <span class="comment"> *   brezerk@gmail.com                                                     *</span>
 <a name="l00004"></a>00004 <span class="comment"> *                                                                         *</span>
 <a name="l00005"></a>00005 <span class="comment"> *   This program is free software: you can redistribute it and/or modify  *</span>
@@ -62,35 +62,49 @@
 <a name="l00041"></a>00041 <span class="preprocessor">#include &lt;QSqlQuery&gt;</span>
 <a name="l00042"></a>00042 <span class="preprocessor">#include &lt;QSqlError&gt;</span>
 <a name="l00043"></a>00043 <span class="preprocessor">#include &lt;QString&gt;</span>
-<a name="l00044"></a>00044 <span class="preprocessor">#include &lt;QDebug&gt;</span>
-<a name="l00045"></a>00045 <span class="preprocessor">#include &lt;QSettings&gt;</span>
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047 <span class="preprocessor">#include "config.h"</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#include &lt;QLibrary&gt;</span>
+<a name="l00045"></a>00045 <span class="preprocessor">#include &lt;QDebug&gt;</span>
+<a name="l00046"></a>00046 <span class="preprocessor">#include &lt;QSettings&gt;</span>
+<a name="l00047"></a>00047 <span class="preprocessor">#include &lt;QStringList&gt;</span>
 <a name="l00048"></a>00048 
-<a name="l00049"></a>00049 <span class="keyword">class </span>PrefixSettings : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::PrefixSettings
-<a name="l00050"></a>00050 {
-<a name="l00051"></a>00051     Q_OBJECT
-<a name="l00052"></a>00052     <span class="keyword">public</span>:
-<a name="l00053"></a>00053         PrefixSettings(QString prefix_name, QWidget * parent = 0, Qt::WFlags f = 0);
-<a name="l00054"></a>00054         
-<a name="l00055"></a>00055     <span class="keyword">private</span>:
-<a name="l00056"></a>00056         QString prefix_id, prefix_name;
-<a name="l00057"></a>00057         <span class="keywordtype">void</span> getprocDevices();
-<a name="l00058"></a>00058         
-<a name="l00059"></a>00059     <span class="keyword">private</span> slots:
-<a name="l00060"></a>00060         <span class="keywordtype">void</span> cmdCancel_Click();
-<a name="l00061"></a>00061         <span class="keywordtype">void</span> cmdOk_Click();
-<a name="l00062"></a>00062         
-<a name="l00063"></a>00063     <span class="keyword">protected</span>:
-<a name="l00064"></a>00064         <span class="keywordtype">bool</span> eventFilter(QObject *obj, QEvent *event);
-<a name="l00065"></a>00065         <span class="keywordtype">void</span> loadThemeIcons(QString themePath);
-<a name="l00066"></a>00066         QIcon loadIcon(QString iconName, QString themePath);
-<a name="l00067"></a>00067         
-<a name="l00068"></a>00068 };
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070 <span class="preprocessor">#endif</span>
+<a name="l00049"></a>00049 <span class="preprocessor">#include "config.h"</span>
+<a name="l00050"></a>00050 <span class="preprocessor">#include "src/core/database/prefix.h"</span>
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 <span class="preprocessor">#include &lt;q4wine-lib/main.h&gt;</span>
+<a name="l00053"></a>00053 
+<a name="l00060"></a><a class="code" href="class_prefix_settings.html">00060</a> <span class="keyword">class </span><a class="code" href="class_prefix_settings.html" title="-">PrefixSettings</a> : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::<a class="code" href="class_prefix_settings.html" title="-">PrefixSettings</a>
+<a name="l00061"></a>00061 {
+<a name="l00062"></a>00062     Q_OBJECT
+<a name="l00063"></a>00063     <span class="keyword">public</span>:
+<a name="l00068"></a>00068         <a class="code" href="class_prefix_settings.html#a1a3bd1f48d54bb3376f934d11e0327c" title="This is class constructor.">PrefixSettings</a>(QString prefix_name, QWidget * parent = 0, Qt::WFlags f = 0);
+<a name="l00069"></a>00069         
+<a name="l00070"></a>00070     <span class="keyword">private</span>:
+<a name="l00076"></a>00076         <span class="keywordtype">bool</span> <a class="code" href="class_prefix_settings.html#bc9c8d09d6d2b813a0c0fd18fefcc465" title="This is an event filter.">eventFilter</a>(QObject *obj, QEvent *event);
+<a name="l00077"></a>00077 
+<a name="l00082"></a>00082         <span class="keywordtype">void</span> <a class="code" href="class_prefix_settings.html#a78b25b52ab30bc302c5c4f1ebf5140d" title="This function loads theme images to widgets.">loadThemeIcons</a>(QString themePath);
+<a name="l00083"></a>00083 
+<a name="l00089"></a>00089         QIcon <a class="code" href="class_prefix_settings.html#702355920f346a804b98258b220980f4" title="This function returns load theme image item by user selected theme.">loadIcon</a>(QString iconName, QString themePath);
+<a name="l00090"></a>00090 
+<a name="l00094"></a><a class="code" href="class_prefix_settings.html#695643e2df97367383c7f9500809ad49">00094</a>         QString <a class="code" href="class_prefix_settings.html#695643e2df97367383c7f9500809ad49" title="Prefix id, and name.">prefix_id</a>, prefix_name;
+<a name="l00095"></a>00095         
+<a name="l00097"></a><a class="code" href="class_prefix_settings.html#eab1cf1cf4fd465b4a479b8742ed8562">00097</a>         <a class="code" href="class_prefix.html" title="This class provide database functions for prefix table.">Prefix</a> *<a class="code" href="class_prefix_settings.html#eab1cf1cf4fd465b4a479b8742ed8562" title="Database prefix class defenition.">db_prefix</a>;
+<a name="l00098"></a>00098 
+<a name="l00100"></a><a class="code" href="class_prefix_settings.html#f8b2b6013873bf287d9dea3401e4b202">00100</a>         QLibrary <a class="code" href="class_prefix_settings.html#f8b2b6013873bf287d9dea3401e4b202" title="This is need for libq4wine-core.so import.">libq4wine</a>;
+<a name="l00101"></a>00101         <span class="keyword">typedef</span> <span class="keywordtype">void</span> *CoreLibPrototype (<span class="keywordtype">bool</span>);
+<a name="l00102"></a>00102         CoreLibPrototype *CoreLibClassPointer;
+<a name="l00103"></a>00103         <a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a> *CoreLib;
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105     <span class="keyword">private</span> slots:
+<a name="l00109"></a>00109         <span class="keywordtype">void</span> <a class="code" href="class_prefix_settings.html#91ef0e635aa220ae7f84ae3bbdce3e72" title="Cancle button click slot">cmdCancel_Click</a>();
+<a name="l00110"></a>00110 
+<a name="l00114"></a>00114         <span class="keywordtype">void</span> <a class="code" href="class_prefix_settings.html#cc03db827ee49af30b095ca64e7e68bd" title="Ok button click slot">cmdOk_Click</a>();
+<a name="l00115"></a>00115         
+<a name="l00116"></a>00116         
+<a name="l00117"></a>00117 };
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 28 13:23:23 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

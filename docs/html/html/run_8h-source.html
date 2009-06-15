@@ -54,53 +54,63 @@
 <a name="l00033"></a>00033 <span class="preprocessor">#include &lt;ui_Run.h&gt;</span>
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035 <span class="preprocessor">#include &lt;QDialog&gt;</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#include &lt;QObject&gt;</span>
-<a name="l00037"></a>00037 <span class="preprocessor">#include &lt;QWidget&gt;</span>
-<a name="l00038"></a>00038 <span class="preprocessor">#include &lt;QFileDialog&gt;</span>
-<a name="l00039"></a>00039 <span class="preprocessor">#include &lt;QSettings&gt;</span>
-<a name="l00040"></a>00040 <span class="preprocessor">#include &lt;QMessageBox&gt;</span>
-<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;QUrl&gt;</span>
-<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;QKeyEvent&gt;</span>
-<a name="l00043"></a>00043 <span class="preprocessor">#include &lt;QSqlQuery&gt;</span>
-<a name="l00044"></a>00044 <span class="preprocessor">#include &lt;QHeaderView&gt;</span>
-<a name="l00045"></a>00045 <span class="preprocessor">#include &lt;QTableWidget&gt;</span>
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047 <span class="preprocessor">#include "config.h"</span>
-<a name="l00048"></a>00048 <span class="preprocessor">#include "process.h"</span>
-<a name="l00049"></a>00049 
+<a name="l00036"></a>00036 <span class="preprocessor">#include &lt;QLibrary&gt;</span>
+<a name="l00037"></a>00037 <span class="preprocessor">#include &lt;QObject&gt;</span>
+<a name="l00038"></a>00038 <span class="preprocessor">#include &lt;QWidget&gt;</span>
+<a name="l00039"></a>00039 <span class="preprocessor">#include &lt;QFileDialog&gt;</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#include &lt;QSettings&gt;</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;QMessageBox&gt;</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;QUrl&gt;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#include &lt;QKeyEvent&gt;</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#include &lt;QSqlQuery&gt;</span>
+<a name="l00045"></a>00045 <span class="preprocessor">#include &lt;QHeaderView&gt;</span>
+<a name="l00046"></a>00046 <span class="preprocessor">#include &lt;QTableWidget&gt;</span>
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="preprocessor">#include "config.h"</span>
+<a name="l00049"></a>00049 <span class="preprocessor">#include "process.h"</span>
 <a name="l00050"></a>00050 
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052 <span class="keyword">class </span>Run : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::Run
-<a name="l00053"></a>00053 {
-<a name="l00054"></a>00054     Q_OBJECT
-<a name="l00055"></a>00055     <span class="keyword">public</span>:
-<a name="l00056"></a>00056         Run(QString prefix_id, QString prefix_dir, QString winedll_path, QWidget * parent = 0, Qt::WFlags f = 0);
-<a name="l00057"></a>00057         ExecObject execObj;
-<a name="l00058"></a>00058     <span class="keyword">private</span> slots:
-<a name="l00059"></a>00059         <span class="keywordtype">void</span> cmdCancel_Click();
-<a name="l00060"></a>00060         <span class="keywordtype">void</span> cmdOk_Click();
-<a name="l00061"></a>00061         <span class="keywordtype">void</span> cmdAdd_Click();
-<a name="l00062"></a>00062         <span class="keywordtype">void</span> comboPrefixes_indexChanged (<span class="keywordtype">int</span>);
-<a name="l00063"></a>00063         <span class="keywordtype">void</span> cbUseConsole_stateChanged(<span class="keywordtype">int</span>);
-<a name="l00064"></a>00064         <span class="keywordtype">void</span> ResizeContent(<span class="keywordtype">int</span> TabIndex);
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066         <span class="keywordtype">void</span> cmdGetProgram_Click();
-<a name="l00067"></a>00067         <span class="keywordtype">void</span> cmdGetWorkDir_Click();
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069     <span class="keyword">private</span>:
-<a name="l00070"></a>00070         QString prefix_id, prefix_dir;
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072         <span class="keywordtype">bool</span> eventFilter (QObject *<span class="keywordtype">object</span>, QEvent *event);
-<a name="l00073"></a>00073         <span class="keywordtype">void</span> getWineDlls (QString wine_dllpath);
-<a name="l00074"></a>00074         <span class="keywordtype">void</span> getPrefixes (<span class="keywordtype">void</span>);
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076         <span class="keywordtype">void</span> loadThemeIcons(QString themePath);
-<a name="l00077"></a>00077         QIcon loadIcon(QString iconName, QString themePath);
-<a name="l00078"></a>00078 };
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080 <span class="preprocessor">#endif</span>
+<a name="l00051"></a>00051 <span class="preprocessor">#include "src/core/database/prefix.h"</span>
+<a name="l00052"></a>00052 <span class="preprocessor">#include "src/core/database/icon.h"</span>
+<a name="l00053"></a>00053 <span class="preprocessor">#include "src/core/database/dir.h"</span>
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055 <span class="preprocessor">#include &lt;q4wine-lib/main.h&gt;</span>
+<a name="l00056"></a>00056 
+<a name="l00063"></a><a class="code" href="class_run.html">00063</a> <span class="keyword">class </span><a class="code" href="class_run.html" title="-">Run</a> : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::<a class="code" href="class_run.html" title="-">Run</a>
+<a name="l00064"></a>00064 {
+<a name="l00065"></a>00065     Q_OBJECT
+<a name="l00066"></a>00066     <span class="keyword">public</span>:
+<a name="l00071"></a>00071         <a class="code" href="class_run.html#5ea7d5d0316ca06d660cec59be52fdb1" title="This is class constructor.">Run</a>(QString prefix_name, QWidget * parent = 0, Qt::WFlags f = 0);
+<a name="l00072"></a>00072         ExecObject execObj;
+<a name="l00073"></a>00073     <span class="keyword">private</span> slots:
+<a name="l00075"></a>00075         <span class="keywordtype">void</span> <a class="code" href="class_run.html#69a37f48c59f6a4c908fb21b576fe9f6" title="Cancel button click slot.">cmdCancel_Click</a>();
+<a name="l00077"></a>00077         <span class="keywordtype">void</span> <a class="code" href="class_run.html#5c24b3374bb3e6bdd5fac0034ca8413b" title="Ok button click slot.">cmdOk_Click</a>();
+<a name="l00079"></a>00079         <span class="keywordtype">void</span> <a class="code" href="class_run.html#4be08a88fa6614c1c1f862f3b06f1d21" title="Add lib button click slot.">cmdAdd_Click</a>();
+<a name="l00081"></a>00081         <span class="keywordtype">void</span> <a class="code" href="class_run.html#b2c3f932ef7fd9ca0dd713013bffe7fa" title="ComboxBox change slot.">comboPrefixes_indexChanged</a> (<span class="keywordtype">int</span>);
+<a name="l00083"></a>00083         <span class="keywordtype">void</span> <a class="code" href="class_run.html#817733b1fdbfd9a528b54537b318efdb" title="CheckBox change slot.">cbUseConsole_stateChanged</a>(<span class="keywordtype">int</span>);
+<a name="l00085"></a>00085         <span class="keywordtype">void</span> <a class="code" href="class_run.html#c0253c07130ee78f62d34ad6d4604989" title="Resize window content slot.">ResizeContent</a>(<span class="keywordtype">int</span> TabIndex);
+<a name="l00087"></a>00087         <span class="keywordtype">void</span> <a class="code" href="class_run.html#75818acc059367abd34e7ea567327270" title="Get program slot.">cmdGetProgram_Click</a>();
+<a name="l00089"></a>00089         <span class="keywordtype">void</span> <a class="code" href="class_run.html#cb982a409ab77a068c53010087e868e9" title="Get work dir slot.">cmdGetWorkDir_Click</a>();
+<a name="l00090"></a>00090     <span class="keyword">private</span>:
+<a name="l00091"></a>00091         QString prefix_name, prefix_dir;
+<a name="l00092"></a>00092 
+<a name="l00094"></a>00094         <span class="keywordtype">bool</span> <a class="code" href="class_run.html#3b18ca4c4092b8d736234471bacd9e1d" title="Event filter.">eventFilter</a> (QObject *<span class="keywordtype">object</span>, QEvent *event);
+<a name="l00096"></a>00096         <span class="keywordtype">void</span> <a class="code" href="class_run.html#05bf259e7533d949f8252227347e81ee" title="Get wine dll list.">getWineDlls</a> (QString wine_dllpath);
+<a name="l00098"></a>00098         <span class="keywordtype">void</span> <a class="code" href="class_run.html#28522a4b4476fc55af30ec07c6f4d94b" title="Get exesting prefixes list.">getPrefixes</a> (<span class="keywordtype">void</span>);
+<a name="l00099"></a>00099 
+<a name="l00101"></a>00101         <span class="keywordtype">void</span> <a class="code" href="class_run.html#2ddb0ae5a033958c2bbc7165275f410b" title="Load theme images.">loadThemeIcons</a>(QString themePath);
+<a name="l00103"></a>00103         QIcon <a class="code" href="class_run.html#c434076db71e2c0c23158a22f1f5551b" title="Load icon.">loadIcon</a>(QString iconName, QString themePath);
+<a name="l00104"></a>00104 
+<a name="l00106"></a><a class="code" href="class_run.html#293d8ed466743f5148c02083c130c9d8">00106</a>         <a class="code" href="class_prefix.html" title="This class provide database functions for prefix table.">Prefix</a> *<a class="code" href="class_run.html#293d8ed466743f5148c02083c130c9d8" title="Database prefix class defenition.">db_prefix</a>;
+<a name="l00107"></a>00107 
+<a name="l00109"></a><a class="code" href="class_run.html#62c63c50910234cbd67a1652f477790d">00109</a>         QLibrary <a class="code" href="class_run.html#62c63c50910234cbd67a1652f477790d" title="This is need for libq4wine-core.so import.">libq4wine</a>;
+<a name="l00110"></a>00110         <span class="keyword">typedef</span> <span class="keywordtype">void</span> *CoreLibPrototype (<span class="keywordtype">bool</span>);
+<a name="l00111"></a>00111         CoreLibPrototype *CoreLibClassPointer;
+<a name="l00112"></a>00112         <a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a> *CoreLib;
+<a name="l00113"></a>00113 };
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 28 13:23:23 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

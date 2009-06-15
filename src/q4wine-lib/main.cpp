@@ -274,6 +274,36 @@ QStringList corelib::getWineDlls(QString prefix_lib_path) const{
 	return dllList;
 }
 
+
+
+QString corelib::getWhichOut(QString fileName){
+	/*
+	 * Getting 'which' output;
+	 */
+
+	QProcess *proc;
+
+	proc = new QProcess();
+
+	QStringList args;
+
+	args<<fileName;
+
+	proc->setWorkingDirectory (QDir::homePath());
+	proc->start("which", args, QIODevice::ReadOnly);
+	proc->waitForFinished();
+
+	QString string = proc->readAllStandardOutput();
+	delete proc;
+
+	if (!string.isEmpty()){
+		return string.trimmed();
+	}
+
+	return "";
+}
+
+
 int corelib::showError(const QString message, const bool info) const{
     switch (this->_GUI_MODE){
 	case true:

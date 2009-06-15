@@ -64,44 +64,63 @@
 <a name="l00043"></a>00043 <span class="preprocessor">#include &lt;QMessageBox&gt;</span>
 <a name="l00044"></a>00044 <span class="preprocessor">#include &lt;QResizeEvent&gt;</span>
 <a name="l00045"></a>00045 <span class="preprocessor">#include &lt;QProgressDialog&gt;</span>
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047 <span class="preprocessor">#include &lt;config.h&gt;</span>
-<a name="l00048"></a>00048 <span class="preprocessor">#include "registry.h"</span>
-<a name="l00049"></a>00049 <span class="preprocessor">#include "process.h"</span>
-<a name="l00050"></a>00050 <span class="preprocessor">#include "winebinlauncher.h"</span>
-<a name="l00051"></a>00051 <span class="preprocessor">#include "coremethods.h"</span>
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <span class="keyword">class </span>Wizard : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::Wizard
-<a name="l00054"></a>00054 {
-<a name="l00055"></a>00055     Q_OBJECT
-<a name="l00056"></a>00056     <span class="keyword">public</span>:
-<a name="l00057"></a>00057         Wizard(<span class="keywordtype">int</span> a, QString var1 = <span class="stringliteral">""</span>, QWidget * parent = 0, Qt::WFlags f = 0);
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059     <span class="keyword">private</span> slots:
-<a name="l00060"></a>00060         <span class="keywordtype">void</span> nextWizardPage();
-<a name="l00061"></a>00061         <span class="keywordtype">void</span> previosWizardPage();
-<a name="l00062"></a>00062         <span class="keywordtype">void</span> changeBoxState(<span class="keywordtype">int</span> state);
-<a name="l00063"></a>00063         <span class="keywordtype">void</span> comboProxyType_indexChanged(QString text);
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065     <span class="keyword">private</span>:
-<a name="l00066"></a>00066         <span class="keywordtype">void</span> updateScena();
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068         <span class="keywordtype">int</span> Scena, Page, TotalPage;
-<a name="l00069"></a>00069         <span class="keywordtype">bool</span> checkEntry(QString fileName, QString info, <span class="keywordtype">bool</span> isFile = TRUE);
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071         CoreMethods *core;
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073     <span class="keyword">protected</span>:
-<a name="l00074"></a>00074         <span class="keywordtype">bool</span> eventFilter(QObject *obj, QEvent *event);
-<a name="l00075"></a>00075         <span class="keywordtype">void</span> getprocDevices();
-<a name="l00076"></a>00076         QString var1;
-<a name="l00077"></a>00077         <span class="keywordtype">void</span> loadThemeIcons(QString themePath, <span class="keywordtype">int</span> Scene);
-<a name="l00078"></a>00078         QIcon loadIcon(QString iconName, QString themePath);
-<a name="l00079"></a>00079 };
+<a name="l00046"></a>00046 <span class="preprocessor">#include &lt;QStringList&gt;</span>
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="preprocessor">#include &lt;config.h&gt;</span>
+<a name="l00049"></a>00049 <span class="preprocessor">#include "registry.h"</span>
+<a name="l00050"></a>00050 <span class="preprocessor">#include "process.h"</span>
+<a name="l00051"></a>00051 <span class="preprocessor">#include "winebinlauncher.h"</span>
+<a name="l00052"></a>00052 <span class="preprocessor">#include "coremethods.h"</span>
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <span class="preprocessor">#include "src/core/database/prefix.h"</span>
+<a name="l00055"></a>00055 <span class="preprocessor">#include "src/core/database/icon.h"</span>
+<a name="l00056"></a>00056 <span class="preprocessor">#include "src/core/database/dir.h"</span>
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="preprocessor">#include &lt;q4wine-lib/main.h&gt;</span>
+<a name="l00059"></a>00059 
+<a name="l00066"></a><a class="code" href="class_wizard.html">00066</a> <span class="keyword">class </span><a class="code" href="class_wizard.html" title="-">Wizard</a> : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::<a class="code" href="class_wizard.html" title="-">Wizard</a>
+<a name="l00067"></a>00067 {
+<a name="l00068"></a>00068     Q_OBJECT
+<a name="l00069"></a>00069     <span class="keyword">public</span>:
+<a name="l00075"></a>00075         <a class="code" href="class_wizard.html#1b76567cec80e6a21ff622269ac361e0" title="This is class constructor.">Wizard</a>(<span class="keywordtype">int</span> WizardType, QString var1 = <span class="stringliteral">""</span>, QWidget * parent = 0, Qt::WFlags f = 0);
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077     <span class="keyword">private</span> slots:
+<a name="l00079"></a>00079         <span class="keywordtype">void</span> <a class="code" href="class_wizard.html#8cb68c6387a8fef8a8dfdc77cdd08ad1" title="Next page button click slot.">nextWizardPage</a>();
 <a name="l00080"></a>00080 
-<a name="l00081"></a>00081 <span class="preprocessor">#endif</span>
+<a name="l00082"></a>00082         <span class="keywordtype">void</span> <a class="code" href="class_wizard.html#e8a5106880f21cde0c4a2eccc9a3368b" title="Previos page button click slot.">previosWizardPage</a>();
+<a name="l00083"></a>00083 
+<a name="l00085"></a>00085         <span class="keywordtype">void</span> <a class="code" href="class_wizard.html#8645d10ec56946038ee084148f65da10" title="ChekBox change slot.">changeBoxState</a>(<span class="keywordtype">int</span> state);
+<a name="l00086"></a>00086 
+<a name="l00088"></a>00088         <span class="keywordtype">void</span> <a class="code" href="class_wizard.html#2f4a6b795f3f9f479351fe0b10804169" title="ComboBox change slot.">comboProxyType_indexChanged</a>(QString text);
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090     <span class="keyword">private</span>:
+<a name="l00092"></a>00092         <span class="keywordtype">void</span> <a class="code" href="class_wizard.html#2805138fde91764ba44ff05f21dc2061" title="Function for updateing scene elements.">updateScena</a>();
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094         <span class="keywordtype">int</span> Scena, Page, TotalPage;
+<a name="l00095"></a>00095 
+<a name="l00097"></a>00097         <span class="keywordtype">bool</span> <a class="code" href="class_wizard.html#b0dace6f0c16a3c31018e08e54248e81" title="Function for checking user selected elements.">checkEntry</a>(QString fileName, QString info, <span class="keywordtype">bool</span> isFile = TRUE);
+<a name="l00098"></a>00098 
+<a name="l00100"></a><a class="code" href="class_wizard.html#44070470098215d5d5806ddfe08d6913">00100</a>         <a class="code" href="class_prefix.html" title="This class provide database functions for prefix table.">Prefix</a> *<a class="code" href="class_wizard.html#44070470098215d5d5806ddfe08d6913" title="Database prefix class defenition.">db_prefix</a>;
+<a name="l00101"></a>00101         <a class="code" href="class_icon.html" title="This class provide database functions for Icon table.">Icon</a> *db_icon;
+<a name="l00102"></a>00102         <a class="code" href="class_dir.html" title="This class provide database functions for Dir table.">Dir</a> *db_dir;
+<a name="l00103"></a>00103 
+<a name="l00105"></a><a class="code" href="class_wizard.html#1554d87262a87f9c99e7e7211dcac052">00105</a>         QLibrary <a class="code" href="class_wizard.html#1554d87262a87f9c99e7e7211dcac052" title="This is need for libq4wine-core.so import.">libq4wine</a>;
+<a name="l00106"></a>00106         <span class="keyword">typedef</span> <span class="keywordtype">void</span> *CoreLibPrototype (<span class="keywordtype">bool</span>);
+<a name="l00107"></a>00107         CoreLibPrototype *CoreLibClassPointer;
+<a name="l00108"></a>00108         <a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a> *CoreLib;
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110     <span class="keyword">protected</span>:
+<a name="l00112"></a>00112         <span class="keywordtype">bool</span> <a class="code" href="class_wizard.html#8f44d9812cf75ac8f85a4caafa14c517" title="Event filter.">eventFilter</a>(QObject *obj, QEvent *event);
+<a name="l00113"></a>00113         QString var1;
+<a name="l00114"></a>00114 
+<a name="l00116"></a>00116         <span class="keywordtype">void</span> <a class="code" href="class_wizard.html#c465232383f7c5f3fb9f30d4c1655c60" title="Load icon themes.">loadThemeIcons</a>(QString themePath, <span class="keywordtype">int</span> Scene);
+<a name="l00117"></a>00117 
+<a name="l00119"></a>00119         QIcon <a class="code" href="class_wizard.html#e5ecfe6f81c6aac8557fee48a1c26731" title="Load icon themes.">loadIcon</a>(QString iconName, QString themePath);
+<a name="l00120"></a>00120 };
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 28 13:23:23 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

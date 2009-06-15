@@ -43,6 +43,7 @@
 #include <QMessageBox>
 #include <QResizeEvent>
 #include <QProgressDialog>
+#include <QStringList>
 
 #include <config.h>
 #include "registry.h"
@@ -50,31 +51,71 @@
 #include "winebinlauncher.h"
 #include "coremethods.h"
 
+#include "src/core/database/prefix.h"
+#include "src/core/database/icon.h"
+#include "src/core/database/dir.h"
+
+#include <q4wine-lib/main.h>
+
+/*!
+ * \class Wizard
+ * \ingroup q4wine-gui
+ * \brief This class provide wizar dialog functions.
+ *
+ */
 class Wizard : public QDialog, public Ui::Wizard
 {
 	Q_OBJECT
 	public:
-		Wizard(int a, QString var1 = "", QWidget * parent = 0, Qt::WFlags f = 0);
+		/*! \brief This is class constructor.
+		 *
+		 * \param  WizardType	Type of wizard scenario.
+		 * \param  var1			This variable used for different scenarion actions.
+		 */
+		Wizard(int WizardType, QString var1 = "", QWidget * parent = 0, Qt::WFlags f = 0);
 
 	private slots:
+		//! \brief Next page button click slot.
 		void nextWizardPage();
+
+		//! \brief Previos page button click slot.
 		void previosWizardPage();
+
+		//! \brief ChekBox change slot.
 		void changeBoxState(int state);
+
+		//! \brief ComboBox change slot.
 		void comboProxyType_indexChanged(QString text);
 
 	private:
+		//! \brief Function for updateing scene elements.
 		void updateScena();
 
 		int Scena, Page, TotalPage;
+
+		//! \brief Function for checking user selected elements.
 		bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
 
-		CoreMethods *core;
+		//! Database prefix class defenition.
+		Prefix *db_prefix;
+		Icon *db_icon;
+		Dir *db_dir;
+
+		//! This is need for libq4wine-core.so import.
+		QLibrary libq4wine;
+		typedef void *CoreLibPrototype (bool);
+		CoreLibPrototype *CoreLibClassPointer;
+		corelib *CoreLib;
 
 	protected:
+		//! \brief Event filter.
 		bool eventFilter(QObject *obj, QEvent *event);
-		void getprocDevices();
 		QString var1;
+
+		//! \brief Load icon themes.
 		void loadThemeIcons(QString themePath, int Scene);
+
+		//! \brief Load icon themes.
 		QIcon loadIcon(QString iconName, QString themePath);
 };
 

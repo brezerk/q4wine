@@ -84,7 +84,7 @@
 <a name="l00063"></a>00063 
 <a name="l00064"></a>00064 <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])
 <a name="l00065"></a>00065 {
-<a name="l00066"></a>00066     DataBase db;
+<a name="l00066"></a>00066     <a class="code" href="class_data_base.html" title="This class provide general database functions for q4wine.">DataBase</a> db;
 <a name="l00067"></a>00067     QApplication app(argc, argv);
 <a name="l00068"></a>00068     QTranslator*  qtt = <span class="keyword">new</span> QTranslator ( 0 );
 <a name="l00069"></a>00069     QSettings settings(APP_SHORT_NAME, <span class="stringliteral">"default"</span>);
@@ -168,7 +168,7 @@
 <a name="l00147"></a>00147 
 <a name="l00148"></a>00148     <span class="keywordflow">if</span> (!settings.contains (<span class="stringliteral">"configure"</span>)){
 <a name="l00149"></a>00149        <span class="comment">//If no key, we gona to start an First Run Wizard to setup q4wine</span>
-<a name="l00150"></a>00150        Wizard *firstSetupWizard = <span class="keyword">new</span> Wizard(1);
+<a name="l00150"></a>00150        <a class="code" href="class_wizard.html" title="-">Wizard</a> *firstSetupWizard = <span class="keyword">new</span> <a class="code" href="class_wizard.html" title="-">Wizard</a>(1);
 <a name="l00151"></a>00151        <span class="keywordflow">if</span> (firstSetupWizard-&gt;exec()==QDialog::Accepted){
 <a name="l00152"></a>00152 
 <a name="l00153"></a>00153             rootConfPath.clear();
@@ -214,17 +214,17 @@
 <a name="l00193"></a>00193 
 <a name="l00194"></a>00194     QStringList tables;
 <a name="l00195"></a>00195     tables &lt;&lt; <span class="stringliteral">"prefix"</span> &lt;&lt; <span class="stringliteral">"dir"</span> &lt;&lt; <span class="stringliteral">"icon"</span> &lt;&lt; <span class="stringliteral">"images"</span>;
-<a name="l00196"></a>00196     <span class="keywordflow">if</span> (!db.checkDb(tables))
+<a name="l00196"></a>00196     <span class="keywordflow">if</span> (!db.<a class="code" href="class_data_base.html#2b9934f846f4ad513b0b5f216b63bd89" title="This function tries to check database structure.">checkDb</a>(tables))
 <a name="l00197"></a>00197        <span class="keywordflow">return</span> -1;
 <a name="l00198"></a>00198     MainWindow mainWin;
 <a name="l00199"></a>00199     mainWin.show();
 <a name="l00200"></a>00200     <span class="keywordtype">int</span> result = app.exec();
-<a name="l00201"></a>00201     db.close();
+<a name="l00201"></a>00201     db.<a class="code" href="class_data_base.html#32003488d10aa26ebcda3a145c36435c" title="This function close database connection.">close</a>();
 <a name="l00202"></a>00202 
 <a name="l00203"></a>00203     <span class="keywordflow">return</span> result;
 <a name="l00204"></a>00204 }
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 28 13:23:23 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

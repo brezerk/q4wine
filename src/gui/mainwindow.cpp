@@ -1652,22 +1652,11 @@ void MainWindow::mainRun_Click(){
 	 * main Menu shows Run dialog
 	 */
 
+	if (!twPrograms->currentItem())
+		return;
 
-	QTreeWidgetItem *treeItem;
-	treeItem = twPrograms->currentItem();
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 	QStringList dataList;
-
-
-	if (treeItem){
-
-		// We gona get prefix_id and dir_id by calling SQL_getPrefixAndDirData
-		dataList = SQL_getPrefixAndDirInfo(treeItem);
-		if (dataList.at(0)=="-1")
-			return;
-	} else {
-		dataList << "" << "" << "";
-	}
-
 
 	if (!isVisible())
 		SetMeVisible(TRUE);
@@ -1675,8 +1664,13 @@ void MainWindow::mainRun_Click(){
 	if (isMinimized ())
 		showNormal ();
 
+	Run *run;
 
-	Run *run = new Run(dataList.at(0), dataList.at(1), dataList.at(2));
+	if (treeItem->parent()){
+		run = new Run(treeItem->parent()->text(0));
+	} else {
+		run = new Run(treeItem->text(0));
+	}
 
 	if (run->exec()==QDialog::Accepted)
 		CoreFunction_WinePrepareRunParams(run->execObj);

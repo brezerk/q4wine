@@ -127,6 +127,32 @@ public:
 	 */
 	bool isExistsByName(const QString prefix_name, const QString dir_name, const QString icon_name) const;
 
-};
+	/*! \brief This function add icon record.
+	 *
+	 * \param  cmdargs		A command line arguments value.
+  	 * \param  exec			A exec binary value.
+	 * \param  icon_path	A icon name or path value.
+  	 * \param  desc			A description value.
+  	 * \param  prefix_name  A dir name value.
+  	 * \param  dir_name		A dir name value.
+  	 * \param  name			A dir name value.
+	 * \return Return true on success.
+	 */
+	bool addIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0) const;
+
+  	/*! \brief This function updates icon record by name, prefix_name and dir_name.
+	 *
+	 * \param  cmdargs		A command line arguments value.
+  	 * \param  exec			A exec binary value.
+	 * \param  icon_path	A icon name or path value.
+  	 * \param  desc			A description value.
+  	 * \param  prefix_name  A dir name value.
+  	 * \param  dir_name		A dir name value.
+  	 * \param  name			A dir name value.
+	 * \return Return true on success.
+	 */
+	bool updateIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString icon_name, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0) const;
+
+ };
 
 #endif // ICON_H

@@ -234,4 +234,188 @@ bool Icon::isExistsByName(const QString prefix_name, const QString dir_name, con
 	return false;
 }
 
+bool Icon::addIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString override, const QString winedebug, const QString useconsole, const QString display, const QString wrkdir, const QString desktop, const int nice) const{
+  	QSqlQuery query;
+	query.prepare("INSERT INTO icon(override, winedebug, useconsole, display, cmdargs, exec, icon_path, desc, dir_id, id, name, prefix_id, wrkdir, desktop, nice) VALUES(:override, :winedebug, :useconsole, :display, :cmdargs, :exec, :icon_path, :desc, (SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)), NULL, :name, (SELECT id FROM prefix WHERE name=:prefix_name), :wrkdir, :desktop, :nice);");
+
+	if (cmdargs.isEmpty()){
+		query.bindValue(":cmdargs", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":cmdargs", cmdargs);
+	}
+
+	if (exec.isEmpty()){
+		query.bindValue(":exec", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":exec", exec);
+	}
+
+	if (icon_path.isEmpty()){
+		query.bindValue(":icon_path", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":icon_path", icon_path);
+	}
+
+	if (desc.isEmpty()){
+		query.bindValue(":desc", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":desc", desc);
+	}
+
+	query.bindValue(":prefix_name", prefix_name);
+	query.bindValue(":prefix_dir_name", prefix_name);
+
+	if (dir_name.isEmpty()){
+		query.bindValue(":dir_name", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":dir_name", dir_name);
+	}
+
+	if (name.isEmpty()){
+		query.bindValue(":name", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":name", name);
+	}
+
+	if (override.isEmpty()){
+		query.bindValue(":override", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":override", override);
+	}
+
+	if (winedebug.isEmpty()){
+		query.bindValue(":winedebug", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":winedebug", winedebug);
+	}
+
+	if (useconsole.isEmpty()){
+		query.bindValue(":useconsole", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":useconsole", useconsole);
+	}
+
+	if (display.isEmpty()){
+		query.bindValue(":display", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":display", display);
+	}
+
+	if (wrkdir.isEmpty()){
+		query.bindValue(":wrkdir", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":wrkdir", wrkdir);
+	}
+
+	if (desktop.isEmpty()){
+		query.bindValue(":desktop", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":desktop", desktop);
+	}
+
+	query.bindValue(":nice", nice);
+
+	if (!query.exec()){
+		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
+		return false;
+	}
+
+	return true;
+}
+
+bool Icon::updateIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString icon_name, const QString override, const QString winedebug, const QString useconsole, const QString display, const QString wrkdir, const QString desktop, const int nice) const{
+  	QSqlQuery query;
+	if (!dir_name.isEmpty()){
+		query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice WHERE name=:icon_name and dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)) and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
+		query.bindValue(":prefix_dir_name", prefix_name);
+
+		if (dir_name.isEmpty()){
+			query.bindValue(":dir_name", QVariant(QVariant::String));
+		} else {
+			query.bindValue(":dir_name", dir_name);
+		}
+	} else {
+		query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice WHERE name=:icon_name and dir_id IS NULL and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
+	}
+	if (override.isEmpty()){
+		query.bindValue(":override", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":override", override);
+	}
+
+	if (winedebug.isEmpty()){
+		query.bindValue(":winedebug", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":winedebug", winedebug);
+	}
+
+	if (useconsole.isEmpty()){
+		query.bindValue(":useconsole", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":useconsole", useconsole);
+	}
+
+	if (display.isEmpty()){
+		query.bindValue(":display", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":display", display);
+	}
+
+	if (cmdargs.isEmpty()){
+		query.bindValue(":cmdargs", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":cmdargs", cmdargs);
+	}
+
+	if (exec.isEmpty()){
+		query.bindValue(":exec", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":exec", exec);
+	}
+
+	if (icon_path.isEmpty()){
+		query.bindValue(":icon_path", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":icon_path", icon_path);
+	}
+
+	if (desc.isEmpty()){
+		query.bindValue(":desc", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":desc", desc);
+	}
+
+	if (name.isEmpty()){
+		query.bindValue(":name", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":name", name);
+	}
+
+	if (wrkdir.isEmpty()){
+		query.bindValue(":wrkdir", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":wrkdir", wrkdir);
+	}
+
+	if (desktop.isEmpty()){
+		query.bindValue(":desktop", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":desktop", desktop);
+	}
+
+	query.bindValue(":nice", nice);
+
+
+	query.bindValue(":icon_name", icon_name);
+	query.bindValue(":prefix_name", prefix_name);
+
+
+
+	if (!query.exec()){
+		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
+		return false;
+	}
+
+	return true;
+}
 

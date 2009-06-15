@@ -61,7 +61,7 @@
 
 
 /*!
- * \class PrefixSettings
+ * \class IconSettings
  * \ingroup q4wine-gui
  * \brief This class provide icon settings dialog functions.
  *

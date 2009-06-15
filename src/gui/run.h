@@ -33,6 +33,7 @@
 #include <ui_Run.h>
 
 #include <QDialog>
+#include <QLibrary>
 #include <QObject>
 #include <QWidget>
 #include <QFileDialog>
@@ -47,34 +48,68 @@
 #include "config.h"
 #include "process.h"
 
+#include "src/core/database/prefix.h"
+#include "src/core/database/icon.h"
+#include "src/core/database/dir.h"
 
+#include <q4wine-lib/main.h>
 
+/*!
+ * \class Run
+ * \ingroup q4wine-gui
+ * \brief This class provide run dialog functions.
+ *
+ */
 class Run : public QDialog, public Ui::Run
 {
 	Q_OBJECT
 	public:
-		Run(QString prefix_id, QString prefix_dir, QString winedll_path, QWidget * parent = 0, Qt::WFlags f = 0);
+		/*! \brief This is class constructor.
+		 *
+		 * \param  prefix_name  Current user selected prefix name.
+		 */
+		Run(QString prefix_name, QWidget * parent = 0, Qt::WFlags f = 0);
 		ExecObject execObj;
 	private slots:
+		//! \brief Cancel button click slot.
 		void cmdCancel_Click();
+		//! \brief Ok button click slot.
 		void cmdOk_Click();
+		//! \brief Add lib button click slot.
 		void cmdAdd_Click();
+		//! \brief ComboxBox change slot.
 		void comboPrefixes_indexChanged (int);
+		//! \brief CheckBox change slot.
 		void cbUseConsole_stateChanged(int);
+		//! \brief Resize window content slot.
 		void ResizeContent(int TabIndex);
-
+		//! \brief Get program slot.
 		void cmdGetProgram_Click();
+		//! \brief Get work dir slot.
 		void cmdGetWorkDir_Click();
-
 	private:
-		QString prefix_id, prefix_dir;
+		QString prefix_name, prefix_dir;
 
+		//! \brief Event filter.
 		bool eventFilter (QObject *object, QEvent *event);
+		//! \brief Get wine dll list.
 		void getWineDlls (QString wine_dllpath);
+		//! \brief Get exesting prefixes list.
 		void getPrefixes (void);
 
+		//! \brief Load theme images.
 		void loadThemeIcons(QString themePath);
+		//! \brief Load icon.
 		QIcon loadIcon(QString iconName, QString themePath);
+
+		//! Database prefix class defenition.
+		Prefix *db_prefix;
+
+		//! This is need for libq4wine-core.so import.
+		QLibrary libq4wine;
+		typedef void *CoreLibPrototype (bool);
+		CoreLibPrototype *CoreLibClassPointer;
+		corelib *CoreLib;
 };
 
 #endif

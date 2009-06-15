@@ -29,14 +29,27 @@
 
 #include "run.h"
 
-Run::Run(QString prefix_id, QString prefix_dir, QString winedll_path, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+Run::Run(QString prefix_name, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
 	setupUi(this);
 
-	QSettings settings(APP_SHORT_NAME, "default");
-	settings.beginGroup("app");
-		loadThemeIcons(settings.value("theme").toString());
-	settings.endGroup();
+
+	this->prefix_name = prefix_name;
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
+
+	if (!libq4wine.load()){
+		libq4wine.load();
+	}
+
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib = (corelib *)CoreLibClassPointer(true);
+
+	// Creating database classes
+	db_prefix = new Prefix();
+
+	loadThemeIcons(CoreLib->getSetting("app", "theme", false).toString());
 
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
@@ -51,18 +64,6 @@ Run::Run(QString prefix_id, QString prefix_dir, QString winedll_path, QWidget * 
 
 	cmdGetProgramBin->installEventFilter(this);
 	cmdGetWorkDir->installEventFilter(this);
-
-	if (prefix_id.isEmpty()){
-		QSqlQuery query;
-		query.exec("SELECT id, path FROM prefix WHERE name=\"Default\"");
-		query.first();
-		this->prefix_id=query.value(0).toString();
-		this->prefix_dir=query.value(1).toString();
-		query.clear();
-	} else {
-		this->prefix_id=prefix_id;
-		this->prefix_dir=prefix_dir;
-	}
 
 	getPrefixes();
 
@@ -147,7 +148,7 @@ void Run::cmdOk_Click(){
 	execObj.execcmd = txtProgramBin->text();
 
 	QSqlQuery query;
-
+	//FIXME: Remove it please.
 	query.prepare("SELECT id FROM prefix WHERE name=:name");
 	query.bindValue(":name", comboPrefixes->currentText());
 	query.exec();
@@ -226,26 +227,22 @@ void Run::getPrefixes(){
 	 * Getting prefixes and set default
 	 */
 
-	QSqlQuery query;
 
-	query.exec("SELECT name, id, wine_dllpath, path FROM prefix");
-	while (query.next()){
-		comboPrefixes->addItem(query.value(0).toString());
-
-		if (query.value(1).toString()==prefix_id){
-			comboPrefixes->setCurrentIndex ( comboPrefixes->findText(query.value(0).toString()) );
-			getWineDlls(query.value(2).toString());
-			prefix_dir=query.value(3).toString();
-			if (prefix_dir.isEmpty()){
-				prefix_dir.append(QDir::homePath());
+	QList<QStringList> result = db_prefix->getFields();
+	for (int i = 0; i < result.size(); ++i) {
+		comboPrefixes->addItem(result.at(i).at(1));
+		if (result.at(i).at(1)==this->prefix_name){
+			comboPrefixes->setCurrentIndex ( comboPrefixes->findText(result.at(i).at(1)) );
+			if (result.at(i).at(2).isEmpty()){
+				prefix_dir = QDir::homePath();
 				prefix_dir.append("/.wine/drive_c/");
 			} else {
-				prefix_dir.append("/drive_c/");
+				prefix_dir = result.at(i).at(2);
 			}
+			getWineDlls(result.at(i).at(3));
 		}
 	}
 
-	query.clear();
 	return;
 }
 
@@ -253,24 +250,16 @@ void Run::comboPrefixes_indexChanged (int){
 	/*
 	 * If user select prefix -- rebuild wine dlls list
 	 */
+	QStringList result = db_prefix->getFieldsByPrefixName(comboPrefixes->currentText());
 
-	QSqlQuery query;
-
-	query.prepare("SELECT wine_dllpath, path FROM prefix WHERE name=:name");
-	query.bindValue(":name", comboPrefixes->currentText());
-	query.exec();
-	query.first();
-
-	getWineDlls(query.value(0).toString());
-	prefix_dir=query.value(1).toString();
-	query.clear();
-
-	if (prefix_dir.isEmpty()){
-		prefix_dir.append(QDir::homePath());
+	if (result.at(1).isEmpty()){
+		prefix_dir = QDir::homePath();
 		prefix_dir.append("/.wine/drive_c/");
 	} else {
-		prefix_dir.append("/drive_c/");
+		prefix_dir = result.at(1);
 	}
+
+	getWineDlls(result.at(2));
 
 	return;
 }
@@ -281,15 +270,12 @@ void Run::comboPrefixes_indexChanged (int){
 
 void Run::cbUseConsole_stateChanged(int){
 	switch(cbUseConsole->checkState()){
-		case Qt::PartiallyChecked:
-			txtWinedebug->setEnabled(TRUE);
-			break;
 		case Qt::Checked:
 			txtWinedebug->setEnabled(TRUE);
-			break;
-		case Qt::Unchecked:
+		break;
+		default:
 			txtWinedebug->setEnabled(FALSE);
-			break;
+		break;
 	}
 
 	return;

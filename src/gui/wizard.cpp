@@ -29,13 +29,6 @@
 
 #include "wizard.h"
 
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QStringList>
-#include <QSqlQuery>
-#include <QSqlRelation>
-#include <QSqlRelationalTableModel>
-
 void Wizard::loadThemeIcons(QString themePath, int Scene){
 	QPixmap pixmap;
 
@@ -134,10 +127,26 @@ QIcon Wizard::loadIcon(QString iconName, QString themePath){
 Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
 	/*
-		Note: var1, var2 is optional data, used for different scene actions ;)
+		Note: var1 is optional data, used for different scene actions ;)
 	*/
 
 	setupUi(this);
+
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
+
+	if (!libq4wine.load()){
+		libq4wine.load();
+	}
+
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib = (corelib *)CoreLibClassPointer(true);
+
+	// Creating database classes
+	db_prefix = new Prefix();
+	db_icon = new Icon();
+	db_dir = new Dir();
 
 	widgetCreatePrefix0->setVisible(FALSE);
 
@@ -145,12 +154,8 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	Page=1;
 	QString console_w;
 
+	loadThemeIcons(CoreLib->getSetting("app", "theme", false).toString(), Scena);
 
-	QSettings settings(APP_SHORT_NAME, "default");
-
-	settings.beginGroup("app");
-		loadThemeIcons(settings.value("theme").toString(), Scena);
-	settings.endGroup();
 
 	switch (Scena){
 		case 0:
@@ -169,7 +174,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 			cmdGetWineDllPath->installEventFilter(this);
 			cmdGetMountPoint->installEventFilter(this);
 
-			getprocDevices();
+			combSourceDevice->addItems(CoreLib->getCdromDevices());
 		break;
 		case 1:
 			TotalPage=7;
@@ -195,55 +200,54 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 			cmdGetConsoleBin->installEventFilter(this);
 			cmdGetWrestoolBin->installEventFilter(this);
 			cmdGetIcotoolBin->installEventFilter(this);
-				core = new CoreMethods ();
-				txtWineBin->setText(core->getWhichOut("wine"));
-				txtWineServerBin->setText(core->getWhichOut("wineserver"));
-				txtWineLoaderBin->setText(core->getWhichOut("wine"));
 
-				if (QDir("/usr/lib/wine").exists())
-				    txtWineDllPath->setText("/usr/lib/wine");
+			txtWineBin->setText(CoreLib->getWhichOut("wine"));
+			txtWineServerBin->setText(CoreLib->getWhichOut("wineserver"));
+			txtWineLoaderBin->setText(CoreLib->getWhichOut("wine"));
 
-				if (QDir("/local/usr/lib/wine").exists())
-				    txtWineDllPath->setText("/local/usr/lib/wine");
+			if (QDir("/usr/lib/wine").exists())
+				txtWineDllPath->setText("/usr/lib/wine");
 
-				if (QDir("/usr/local/lib/wine").exists())
-				    txtWineDllPath->setText("/usr/local/lib/wine");
+			if (QDir("/local/usr/lib/wine").exists())
+				txtWineDllPath->setText("/local/usr/lib/wine");
 
-				txtTarBin->setText(core->getWhichOut("tar"));
-				txtMountBin->setText(core->getWhichOut("mount"));
-				txtUmountBin->setText(core->getWhichOut("umount"));
-				txtSudoBin->setText(core->getWhichOut("sudo"));
+			if (QDir("/usr/local/lib/wine").exists())
+				txtWineDllPath->setText("/usr/local/lib/wine");
 
-				txtGuiSudoBin->setText(core->getWhichOut("zkdesu"));
-				   if (txtGuiSudoBin->text().isEmpty()){
-					txtGuiSudoBin->setText(core->getWhichOut("gksu"));
-				   } else {
-					if (txtGuiSudoBin->text().isEmpty()){
-					   txtGuiSudoBin->setText(core->getWhichOut("sudo"));
-					}
-				   }
+			txtTarBin->setText(CoreLib->getWhichOut("tar"));
+			txtMountBin->setText(CoreLib->getWhichOut("mount"));
+			txtUmountBin->setText(CoreLib->getWhichOut("umount"));
+			txtSudoBin->setText(CoreLib->getWhichOut("sudo"));
 
-				txtNiceBin->setText(core->getWhichOut("nice"));
-				txtReniceBin->setText(core->getWhichOut("renice"));
-				txtShBin->setText(core->getWhichOut("sh"));
+			txtGuiSudoBin->setText(CoreLib->getWhichOut("kdesu"));
+			if (txtGuiSudoBin->text().isEmpty()){
+				txtGuiSudoBin->setText(CoreLib->getWhichOut("gksu"));
+			} else {
+				if (txtGuiSudoBin->text().isEmpty()){
+				   txtGuiSudoBin->setText(CoreLib->getWhichOut("sudo"));
+				}
+			}
 
-						console_w = core->getWhichOut("konsole");
-							if (!console_w.isEmpty()){
-									txtConsoleBin->setText(console_w);
-									txtConsoleArgs->setText("--noclose -e");
-							} else {
-									console_w = core->getWhichOut("xterm");
-									if (!console_w.isEmpty()){
-											txtConsoleBin->setText(console_w);
-											txtConsoleArgs->setText("-e");
-									}
-							}
+			txtNiceBin->setText(CoreLib->getWhichOut("nice"));
+			txtReniceBin->setText(CoreLib->getWhichOut("renice"));
+			txtShBin->setText(CoreLib->getWhichOut("sh"));
 
-				     #ifndef WITHOUT_ICOTOOLS
-					  txtWrestoolBin->setText(core->getWhichOut("wrestool"));
-				txtIcotoolBin->setText(core->getWhichOut("icotool"));
-				     #endif
-				delete core;
+			console_w = CoreLib->getWhichOut("konsole");
+			if (!console_w.isEmpty()){
+				txtConsoleBin->setText(console_w);
+				txtConsoleArgs->setText("--noclose -e");
+			} else {
+				console_w = CoreLib->getWhichOut("xterm");
+				if (!console_w.isEmpty()){
+					txtConsoleBin->setText(console_w);
+					txtConsoleArgs->setText("-e");
+				}
+			}
+
+			#ifndef WITHOUT_ICOTOOLS
+				txtWrestoolBin->setText(CoreLib->getWhichOut("wrestool"));
+				txtIcotoolBin->setText(CoreLib->getWhichOut("icotool"));
+			#endif
 
 		break;
 		case 2:
@@ -392,17 +396,13 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 				qDebug("Error");
 			}
 
-
 			if (obj==cmdGetWineBin){
-
 				QString wrkDir;
 				QStringList list1 = file.split("/");
 
 				wrkDir = file.left(file.length() - list1.last().length());
 				txtWineServerBin->setText(tr("%1wineserver").arg(wrkDir));
 				txtWineLoaderBin->setText(tr("%1wine").arg(wrkDir));
-
-
 			}
 
 		}
@@ -499,13 +499,13 @@ void Wizard::nextWizardPage(){
 					if (!checkEntry(txtConsoleBin->text(), "console"))
 						return;
 
-						    #ifndef WITHOUT_ICOTOOLS
-							  if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
-								return;
-
-							  if (!checkEntry(txtIcotoolBin->text(), "icotool"))
+					#ifndef WITHOUT_ICOTOOLS
+					if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
 						return;
-						    #endif
+
+					 if (!checkEntry(txtIcotoolBin->text(), "icotool"))
+						return;
+					#endif
 
 				break;
 				case 6:
@@ -574,17 +574,13 @@ void Wizard::nextWizardPage(){
 			switch (Page){
 				case 2:
 					if (txtPrefixName->text().isEmpty()){
-							QMessageBox::warning(this, tr("Error"), tr("Enter prefix name first."));
-							return;
+						QMessageBox::warning(this, tr("Error"), tr("Enter prefix name first."));
+						return;
 					} else {
-
-						QSqlQuery query(tr("SELECT name FROM prefix WHERE name='%1';").arg(txtPrefixName->text()));
-
-						if (query.next()){
+						if (db_prefix->isExistsByName(txtPrefixName->text())){
 							QMessageBox::warning(this, tr("Error"), tr("Sorry. There is other prefix with same name."));
 							return;
 						}
-
 					}
 					if (!txtPrefixPath->text().isEmpty()){
 						if (!QDir(txtPrefixPath->text()).exists()){
@@ -592,8 +588,8 @@ void Wizard::nextWizardPage(){
 							return;
 						}
 					} else {
-							QMessageBox::warning(this, tr("Error"), tr("Select prefix directory first."));
-							return;
+						QMessageBox::warning(this, tr("Error"), tr("Select prefix directory first."));
+						return;
 					}
 				break;
 				case 4:
@@ -608,49 +604,43 @@ void Wizard::nextWizardPage(){
 				break;
 				case 5:
 
-					QSqlQuery q;
-					q.prepare("INSERT INTO prefix(id, name, path, wine_exec, wine_server, wine_loader, wine_dllpath, cdrom_mount, cdrom_drive) VALUES(NULL, :name, :path, :wine_exec, :wine_server, :wine_loader, :wine_dllpath, :cdrom_mount, :cdrom_drive);");
-					q.bindValue(":name", txtPrefixName->text());
-					q.bindValue(":path", txtPrefixPath->text());
-					//if (cbCreafeFake->checkState()==Qt::Checked){
-					//	q.bindValue(":version", cbFakeVersion->currentText());
-					//}
+					QSqlQuery query;
+					query.prepare("INSERT INTO prefix(id, name, path, wine_exec, wine_server, wine_loader, wine_dllpath, cdrom_mount, cdrom_drive) VALUES(NULL, :name, :path, :wine_exec, :wine_server, :wine_loader, :wine_dllpath, :cdrom_mount, :cdrom_drive);");
+					query.bindValue(":name", txtPrefixName->text());
+					query.bindValue(":path", txtPrefixPath->text());
 
-					q.bindValue(":wine_exec", txtWineBin->text());
-					q.bindValue(":wine_server", txtWineServerBin->text());
-					q.bindValue(":wine_loader", txtWineLoaderBin->text());
-					q.bindValue(":wine_dllpath", txtWineDllPath->text());
+					query.bindValue(":wine_exec", txtWineBin->text());
+					query.bindValue(":wine_server", txtWineServerBin->text());
+					query.bindValue(":wine_loader", txtWineLoaderBin->text());
+					query.bindValue(":wine_dllpath", txtWineDllPath->text());
 					if (!txtMountPoint->text().isEmpty()){
 						if (txtMountPoint->text().endsWith ("/"))
 							txtMountPoint->setText(txtMountPoint->text().mid(0, txtMountPoint->text().length()-1));
 
-						q.bindValue(":cdrom_mount", txtMountPoint->text());
+						query.bindValue(":cdrom_mount", txtMountPoint->text());
 
 						if (combSourceDevice->currentText()!=tr("<none>")){
-							q.bindValue(":cdrom_drive", combSourceDevice->currentText());
+							query.bindValue(":cdrom_drive", combSourceDevice->currentText());
 						} else {
-							q.bindValue(":cdrom_drive", QVariant(QVariant::String));
+							query.bindValue(":cdrom_drive", QVariant(QVariant::String));
 						}
 
 					} else {
-						q.bindValue(":cdrom_mount", "");
-						q.bindValue(":cdrom_drive", "");
+						query.bindValue(":cdrom_mount", "");
+						query.bindValue(":cdrom_drive", "");
 					}
 
-					if (!q.exec()){
-						#ifdef DEBUG
-							qDebug()<<"WARNING: SQL error at Wizard::Scene prefix create\nINFO:\n"<<q.executedQuery()<<"\n"<<q.lastError();
-						#endif
+					if (!db_prefix->updateQuery(&query)){
+						reject();
 						return;
 					}
-
 
 					if (cbCreafeFake->checkState()==Qt::Checked){
 						Wizard *createFakeDriveWizard = new Wizard(2, txtPrefixName->text());
 						createFakeDriveWizard->exec();
 					}
 
-					accept() ;
+				accept() ;
 				break;
 			}
 		break;
@@ -816,139 +806,21 @@ void Wizard::nextWizardPage(){
 							QString dir_id;
 
 							//Is settings directory exists?
-							query.prepare("SELECT id FROM prefix WHERE name=:name");
-							query.bindValue(":name", prefix_name);
-							query.exec();
-							query.first();
-							prefix_id=query.value(0).toString();
-							query.clear();
-
-							query.prepare("SELECT id FROM dir WHERE prefix_id=:prefix_id AND name=:name;");
-							query.bindValue(":name", tr("system"));
-							query.bindValue(":prefix_id", prefix_id);
-							query.exec();
-
-							if (query.first()){
-								dir_id=query.value(0).toString();
-								query.clear();
-							} else {
-								query.clear();
-
-								//Is seems--no. Then Adding settings directory
-								query.prepare("INSERT INTO dir(id, name, prefix_id) VALUES(NULL, :name, :prefix_id)");
-								query.bindValue(":name", tr("system"));
-								query.bindValue(":prefix_id", prefix_id);
-								query.exec();
-								query.clear();
-
-								//Then, getting dir id.
-								query.prepare("SELECT id FROM dir WHERE prefix_id=:prefix_id AND name=:name;");
-								query.bindValue(":name", tr("system"));
-								query.bindValue(":prefix_id", prefix_id);
-								query.exec();
-								query.first();
-								dir_id=query.value(0).toString();
-								query.clear();
+							if (!db_dir->isExistsByName(prefix_name, "system")){
+								db_dir->addDir(prefix_name, "system");
 
 								//Adding icons
-								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
-								query.bindValue(":cmdargs", QVariant(QVariant::String));
-								query.bindValue(":exec", "winecfg");
-								query.bindValue(":icon_path", "winecfg");
-								query.bindValue(":desc", tr("Configure the general settings for Wine"));
-								query.bindValue(":dir_id", dir_id);
-								query.bindValue(":name", "winecfg");
-								query.bindValue(":prefix_id", prefix_id);
-								query.exec();
-								query.clear();
-
-								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
-								query.bindValue(":cmdargs", "--backend=user cmd");
-								query.bindValue(":exec", "wineconsole");
-								query.bindValue(":icon_path", "wineconsole");
-								query.bindValue(":desc", tr("Wineconsole is similar to wine command wcmd"));
-								query.bindValue(":dir_id", dir_id);
-								query.bindValue(":name", "console");
-								query.bindValue(":prefix_id", prefix_id);
-								query.exec();
-								query.clear();
-
-								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
-								query.bindValue(":cmdargs", QVariant(QVariant::String));
-								query.bindValue(":exec", "uninstaller");
-								query.bindValue(":icon_path", "uninstaller");
-								query.bindValue(":desc", tr("Uninstall Windows programs under Wine properly"));
-								query.bindValue(":dir_id", dir_id);
-								query.bindValue(":name", "uninstaller");
-								query.bindValue(":prefix_id", prefix_id);
-								query.exec();
-								query.clear();
-
-								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
-								query.bindValue(":cmdargs", QVariant(QVariant::String));
-								query.bindValue(":exec", "regedit");
-								query.bindValue(":icon_path", "regedit");
-								query.bindValue(":desc", tr("Wine registry editor"));
-								query.bindValue(":dir_id", dir_id);
-								query.bindValue(":name", "regedit");
-								query.bindValue(":prefix_id", prefix_id);
-								query.exec();
-								query.clear();
-
-								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
-								query.bindValue(":cmdargs", QVariant(QVariant::String));
-								query.bindValue(":exec", "explorer");
-								query.bindValue(":icon_path", "explorer");
-								query.bindValue(":desc", tr("Browse the files in the virtual Wine drive"));
-								query.bindValue(":dir_id", dir_id);
-								query.bindValue(":name", "explorer");
-								query.bindValue(":prefix_id", prefix_id);
-								query.exec();
-								query.clear();
-
-								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
-								query.bindValue(":cmdargs", QVariant(QVariant::String));
-								query.bindValue(":exec", "eject");
-								query.bindValue(":icon_path", "eject");
-								query.bindValue(":desc", tr("Wine CD eject tool"));
-								query.bindValue(":dir_id", dir_id);
-								query.bindValue(":name", "eject");
-								query.bindValue(":prefix_id", prefix_id);
-								query.exec();
-								query.clear();
-
-								query.prepare("INSERT INTO icon(cmdargs, exec, icon_path, desc, dir_id, name, prefix_id) VALUES(:cmdargs, :exec, :icon_path, :desc, :dir_id, :name, :prefix_id);");
-								query.bindValue(":cmdargs", QVariant(QVariant::String));
-								query.bindValue(":exec", "wordpad");
-								query.bindValue(":icon_path", "wordpad");
-								query.bindValue(":desc", tr("Wine wordpad text editor"));
-								query.bindValue(":dir_id", dir_id);
-								query.bindValue(":name", "wordpad");
-								query.bindValue(":prefix_id", prefix_id);
-								query.exec();
-								query.clear();
+								db_icon->addIcon("", "winecfg", "winecfg", "Configure the general settings for Wine", prefix_name, "system", "winecfg");
+								db_icon->addIcon("--backend=user cmd", "wineconsole", "wineconsole", "Wineconsole is similar to wine command wcmd", prefix_name, "system", "console");
+								db_icon->addIcon("", "uninstaller", "uninstaller", "Uninstall Windows programs under Wine properly", prefix_name, "system", "uninstaller");
+								db_icon->addIcon("", "regedit", "regedit", "Wine registry editor", prefix_name, "system", "regedit");
+								db_icon->addIcon("", "explorer", "explorer", "Browse the files in the virtual Wine drive", prefix_name, "system", "explorer");
+								db_icon->addIcon("", "eject", "eject", "Wine CD eject tool", prefix_name, "system", "eject");
+								db_icon->addIcon("", "wordpad", "wordpad", "Wine wordpad text editor", prefix_name, "system", "wordpad");
 							}
 
-
-							query.clear();
-
-							query.prepare("SELECT id FROM dir WHERE prefix_id=:prefix_id AND name=:name;");
-							query.bindValue(":name", tr("autostart"));
-							query.bindValue(":prefix_id", prefix_id);
-							query.exec();
-
-							if (!query.first()){
-								query.clear();
-
-								//Is seems--no. Then Adding settings directory
-								query.prepare("INSERT INTO dir(id, name, prefix_id) VALUES(NULL, :name, :prefix_id)");
-								query.bindValue(":name", tr("autostart"));
-								query.bindValue(":prefix_id", prefix_id);
-								query.exec();
-
-							}
-							query.clear();
-
+							if (!db_dir->isExistsByName(prefix_name, "autostart"))
+								db_dir->addDir(prefix_name, "autostart");
 
 							QApplication::restoreOverrideCursor();
 							accept() ;
@@ -1197,34 +1069,3 @@ void Wizard::updateScena(){
 
 	return;
 }
-
-
-void Wizard::getprocDevices(){
-	/*
-		Getting divice names at /proc/diskstats
-	*/
-
-	QString name, procstat, path, prefix;;
-
-	QFile file("/etc/fstab");
-	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-		QMessageBox::warning(this, tr("Error"), tr("Sorry, i can't access to /etc/fstab"));
-	}
-
-	while (1) {
-		QByteArray line = file.readLine();
-
-		if (line.isEmpty())
-			break;
-
-		if (line.indexOf("cdrom")>=0){
-			QList<QByteArray> array = line.split(' ').at(0).split('\t');
-				combSourceDevice->addItem(array.at(0));
-		}
-	}
-	file.close();
-
-	return;
-}
-
-

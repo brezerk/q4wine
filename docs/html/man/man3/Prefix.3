@@ -1,0 +1,231 @@
+.TH "Prefix" 3 "15 Jun 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Prefix \- This class provide database functions for prefix table.  
+
+.PP
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <src/core/database/prefix.h>\fP
+.PP
+Inherited by \fBDir\fP, \fBIcon\fP, and Image.
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPrefix\fP ()"
+.br
+.RI "\fIThis is calss constructor. \fP"
+.ti -1c
+.RI "QList< QStringList > \fBgetFields\fP (const QStringList fields) const "
+.br
+.RI "\fIThis function gets requested table fields from table. \fP"
+.ti -1c
+.RI "QList< QStringList > \fBgetFieldsByKey\fP (const QStringList fields, const QStringList keys, const QStringList vals) const "
+.br
+.RI "\fIThis function get requested table fields by keys value from table. \fP"
+.ti -1c
+.RI "QList< QStringList > \fBgetFieldsByKey\fP (const QString key, const QString val) const "
+.br
+.RI "\fIThis function gets all table fields by key value from table. \fP"
+.ti -1c
+.RI "QList< QStringList > \fBgetFields\fP (void) const "
+.br
+.RI "\fIThis function get all fields from prefix table. \fP"
+.ti -1c
+.RI "QStringList \fBgetFieldsByPrefixName\fP (const QString prefix_name) const "
+.br
+.RI "\fIThis function gets all table fields by prefixName key value from table. \fP"
+.ti -1c
+.RI "QStringList \fBgetFieldsByPrefixId\fP (const QString prefix_id) const "
+.br
+.RI "\fIThis function gets all table fields by prefix id key value from table. \fP"
+.ti -1c
+.RI "bool \fBdelPrefixByPrefixName\fP (const QString prefix_name) const "
+.br
+.RI "\fIThis function deletes all prefix fields by prefix_name keys value from table. \fP"
+.ti -1c
+.RI "bool \fBupdateQuery\fP (QSqlQuery *sqlQuery) const "
+.br
+.RI "\fIThis function executes requested query. \fP"
+.ti -1c
+.RI "bool \fBisExistsByName\fP (const QString prefix_name) const "
+.br
+.RI "\fIThis function check is reccord exists by prefix name or not. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fB_TABLE\fP"
+.br
+.RI "\fIThis variable defines which table is used by class. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class provide database functions for prefix table. 
+.PP
+Definition at line 50 of file prefix.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Prefix::delPrefixByPrefixName (const QString prefix_name) const"
+.PP
+This function deletes all prefix fields by prefix_name keys value from table. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP A prefix name value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return true on success. 
+.RE
+.PP
+
+.PP
+Definition at line 180 of file prefix.cpp.
+.SS "QList< QStringList > Prefix::getFields (void) const"
+.PP
+This function get all fields from prefix table. 
+.PP
+\fBReturns:\fP
+.RS 4
+Return a list of table fields value or -1 on error. 
+.RE
+.PP
+
+.PP
+Definition at line 66 of file prefix.cpp.
+.SS "QList< QStringList > Prefix::getFields (const QStringList fields) const"
+.PP
+This function gets requested table fields from table. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfields\fP List of table fields names. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return QList of QStringList with selected value or -1 on error. 
+.RE
+.PP
+
+.PP
+Definition at line 37 of file prefix.cpp.
+.SS "QList<QStringList> Prefix::getFieldsByKey (const QString key, const QString val) const"
+.PP
+This function gets all table fields by key value from table. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkey\fP A table key field name. 
+.br
+\fIval\fP A table key field value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return a list of table fields value or -1 on error. 
+.RE
+.PP
+
+.SS "QList< QStringList > Prefix::getFieldsByKey (const QStringList fields, const QStringList keys, const QStringList vals) const"
+.PP
+This function get requested table fields by keys value from table. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfields\fP A table fields names. 
+.br
+\fIkeys\fP A table key fields names. 
+.br
+\fIvals\fP A table key fields values. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return a list of table fields value or -1 on error. 
+.RE
+.PP
+
+.PP
+Definition at line 87 of file prefix.cpp.
+.SS "QStringList Prefix::getFieldsByPrefixId (const QString prefix_id) const"
+.PP
+This function gets all table fields by prefix id key value from table. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_id\fP \fBPrefix\fP id key value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return a list of table fields value or -1 on error. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBDir\fP.
+.PP
+Definition at line 149 of file prefix.cpp.
+.SS "QStringList Prefix::getFieldsByPrefixName (const QString prefix_name) const"
+.PP
+This function gets all table fields by prefixName key value from table. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefixName\fP \fBPrefix\fP name key value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return a list of table fields value or -1 on error. 
+.RE
+.PP
+
+.PP
+Definition at line 126 of file prefix.cpp.
+.SS "bool Prefix::isExistsByName (const QString prefix_name) const"
+.PP
+This function check is reccord exists by prefix name or not. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP A prefix name value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return true if exists. 
+.RE
+.PP
+
+.PP
+Definition at line 192 of file prefix.cpp.
+.SS "bool Prefix::updateQuery (QSqlQuery * sqlQuery) const"
+.PP
+This function executes requested query. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fISQL\fP Query 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return true on success 
+.RE
+.PP
+
+.PP
+Definition at line 172 of file prefix.cpp.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for q4wine from the source code.

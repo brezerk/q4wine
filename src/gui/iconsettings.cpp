@@ -75,8 +75,11 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 	if (QDir(this->prefix_path).exists())
 	   prefix_urls << QUrl::fromLocalFile(this->prefix_path);
 
-	if (QDir().exists(db_prefix->getFieldsByPrefixName(this->prefix_name).at(6)))
-		prefix_urls << QUrl::fromLocalFile(db_prefix->getFieldsByPrefixName(this->prefix_name).at(6));
+	QString cd_mount = db_prefix->getFieldsByPrefixName(this->prefix_name).at(6);
+
+	if (!cd_mount.isEmpty())
+	  if (QDir().exists(cd_mount))
+		  prefix_urls << QUrl::fromLocalFile(cd_mount);
 
 	this->loadThemeIcons(this->CoreLib->getSetting("app", "theme", false).toString());
 
@@ -605,64 +608,21 @@ void IconSettings::cmdOk_Click(){
 			override.append("b,n;");
 	}
 
-	switch (this->icon_name.isEmpty()){
-		case TRUE:
-			query.prepare("INSERT INTO icon(override, winedebug, useconsole, display, cmdargs, exec, icon_path, desc, dir_id, id, name, prefix_id, wrkdir, desktop, nice) VALUES(:override, :winedebug, :useconsole, :display, :cmdargs, :exec, :icon_path, :desc, (SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)), NULL, :name, (SELECT id FROM prefix WHERE name=:prefix_name), :wrkdir, :desktop, :nice);");
-		break;
-		case FALSE:
-			query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice WHERE name=:icon_name and dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)) and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
-			query.bindValue(":icon_name", this->icon_name);
-		break;
+	QString useconsole;
+	if (cbUseConsole->checkState()==Qt::Checked){
+		useconsole="1";
+	} else {
+		useconsole="0";
 	}
 
-	if(this->dir_name.isEmpty())
-		query.bindValue(":dir_name", QVariant(QVariant::String));
-	else
-		query.bindValue(":dir_name", this->dir_name);
-		query.bindValue(":prefix_dir_name", this->prefix_name);
-		query.bindValue(":prefix_name", this->prefix_name);
-
-	if (override.isEmpty())
-		query.bindValue(":override", QVariant(QVariant::String));
-	else
-		query.bindValue(":override", override);
-	if (txtWinedebug->text().isEmpty())
-		query.bindValue(":winedebug", QVariant(QVariant::String));
-	else
-		query.bindValue(":winedebug", txtWinedebug->text());
-	if (txtWorkDir->text().isEmpty())
-		query.bindValue(":wrkdir", QVariant(QVariant::String));
-	else
-		query.bindValue(":wrkdir", txtWorkDir->text());
-	if (cbUseConsole->checkState()==Qt::Checked)
-		query.bindValue(":useconsole", 1);
-	else
-		query.bindValue(":useconsole", 0);
-	if (txtDisplay->text().isEmpty())
-		query.bindValue(":display", QVariant(QVariant::String));
-	else
-		query.bindValue(":display", txtDisplay->text());
-	if (txtCmdArgs->text().isEmpty())
-		query.bindValue(":cmdargs", QVariant(QVariant::String));
-	else
-		query.bindValue(":cmdargs", txtCmdArgs->text());
-	if (txtProgramPath->text().isEmpty())
-		query.bindValue(":exec", QVariant(QVariant::String));
-	else
-		query.bindValue(":exec", txtProgramPath->text());
-	if (iconPath.isEmpty())
-		query.bindValue(":icon_path", QVariant(QVariant::String));
-	else
-		query.bindValue(":icon_path", iconPath);
-	if (txtDesc->text().isEmpty())
-		query.bindValue(":desc", QVariant(QVariant::String));
-	else
-		query.bindValue(":desc", txtDesc->text());
-	query.bindValue(":name", txtName->text());
-	query.bindValue(":desktop", txtDesktopSize->text());
-	query.bindValue(":nice", spinNice->value());
-
-	db_prefix->updateQuery(&query);
+	switch (this->icon_name.isEmpty()){
+		case TRUE:
+			db_icon->addIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), txtDesktopSize->text(), spinNice->value());
+		break;
+		case FALSE:
+			db_icon->updateIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), icon_name, override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), txtDesktopSize->text(), spinNice->value());
+		break;
+	}
 
 	accept();
 

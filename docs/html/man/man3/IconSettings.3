@@ -1,0 +1,154 @@
+.TH "IconSettings" 3 "15 Jun 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IconSettings \- .IP "\(bu" 2
+
+.PP
+ 
+
+.PP
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <src/gui/iconsettings.h>\fP
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIconSettings\fP (QString prefix_name, QString dir_name, QString icon_name='', QWidget *parent=0, Qt::WFlags f=0)"
+.br
+.RI "\fIThis is class constructor. \fP"
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBResizeContent\fP (int)"
+.br
+.RI "\fIThis slot function resize dialog content. \fP"
+.ti -1c
+.RI "void \fBcmdAdd_Click\fP ()"
+.br
+.RI "\fIThis slot function adds selected dll to override list. \fP"
+.ti -1c
+.RI "void \fBcmdGetProgram_Click\fP ()"
+.br
+.RI "\fIThis slot function gets path to executable win32 binary. \fP"
+.ti -1c
+.RI "void \fBcmdGetIcon_Click\fP ()"
+.br
+.RI "\fIThis slot function gets and extract icons. \fP"
+.ti -1c
+.RI "void \fBcmdGetWorkDir_Click\fP ()"
+.br
+.RI "\fIThis slot function gets work directory. \fP"
+.ti -1c
+.RI "void \fBcbUseConsole_stateChanged\fP (int)"
+.br
+.RI "\fIThis slot function trigger use console state. \fP"
+.ti -1c
+.RI "void \fBcmdCancel_Click\fP ()"
+.br
+.RI "\fIThis slot for cancel button. \fP"
+.ti -1c
+.RI "void \fBcmdOk_Click\fP ()"
+.br
+.RI "\fIThis slot for ok button. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBgetIconReccord\fP ()"
+.br
+.RI "\fIThis function gets icon parms from database. \fP"
+.ti -1c
+.RI "void \fBresizeEvent\fP (QResizeEvent)"
+.br
+.ti -1c
+.RI "bool \fBeventFilter\fP (QObject *object, QEvent *event)"
+.br
+.ti -1c
+.RI "void \fBloadThemeIcons\fP (QString themePath)"
+.br
+.ti -1c
+.RI "QIcon \fBloadIcon\fP (QString iconName, QString themePath)"
+.br
+.ti -1c
+.RI "typedef void * \fBCoreLibPrototype\fP (bool)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBprefix_name\fP"
+.br
+.ti -1c
+.RI "QString \fBdir_name\fP"
+.br
+.ti -1c
+.RI "QString \fBicon_name\fP"
+.br
+.ti -1c
+.RI "QString \fBprefix_path\fP"
+.br
+.ti -1c
+.RI "QString \fBiconPath\fP"
+.br
+.ti -1c
+.RI "QList< QUrl > \fBprefix_urls\fP"
+.br
+.RI "\fISide bar URLs list. \fP"
+.ti -1c
+.RI "\fBPrefix\fP * \fBdb_prefix\fP"
+.br
+.RI "\fIDatabase prefix class defenition. \fP"
+.ti -1c
+.RI "\fBIcon\fP * \fBdb_icon\fP"
+.br
+.ti -1c
+.RI "QLibrary \fBlibq4wine\fP"
+.br
+.RI "\fIThis is need for libq4wine-core.so import. \fP"
+.ti -1c
+.RI "CoreLibPrototype * \fBCoreLibClassPointer\fP"
+.br
+.ti -1c
+.RI "\fBcorelib\fP * \fBCoreLib\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+.IP "\(bu" 2
+
+.PP
+
+
+This class provide icon settings dialog functions. 
+.PP
+Definition at line 69 of file iconsettings.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "IconSettings::IconSettings (QString prefix_name, QString dir_name, QString icon_name = \fC''\fP, QWidget * parent = \fC0\fP, Qt::WFlags f = \fC0\fP)"
+.PP
+This is class constructor. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP Current prefix name. 
+.br
+\fIdir_name\fP Current directory name. 
+.br
+\fIicon_name\fP Current directory name. 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file iconsettings.cpp.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for q4wine from the source code.

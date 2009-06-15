@@ -17,6 +17,7 @@
   <div class="tabs">
     <ul>
       <li><a href="annotated.html"><span>Class&nbsp;List</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&nbsp;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&nbsp;Members</span></a></li>
     </ul>
   </div>
@@ -45,6 +46,15 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">QVariant&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10">getSetting</a> (const QString group, const QString key, const bool checkExist=true, const QVariant defaultVal=QVariant()) const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function get application settings.  <a href="#26fd64ce403fb692f6c581eb9805ff10"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcorelib.html#56c25d539c766b2751887eeed91b7ca0">getWhichOut</a> (QString fileName)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function get cdrom devices from /etc/fstab file.  <a href="#56c25d539c766b2751887eeed91b7ca0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">QStringList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcorelib.html#1beaa1f4432307abbf7d852b58912164">getCdromDevices</a> (void) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function get cdrom devices from /etc/fstab file.  <a href="#1beaa1f4432307abbf7d852b58912164"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">QStringList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcorelib.html#a814e30d83df5294cf9e700071ad0d04">getWineDlls</a> (QString prefix_lib_path) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function builds wine dlls list for prefix_lib_path.  <a href="#a814e30d83df5294cf9e700071ad0d04"></a><br></td></tr>
 <tr><td colspan="2"><br><h2>Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcorelib.html#7b6a40d5011da1ed5d13985b40f87189">showError</a> (const QString message, const bool info=true) const </td></tr>
 
@@ -57,11 +67,34 @@
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 This class provide general core functions for q4wine. 
 <p>
-It is not useful by itself, but helps to create user-side applications which can use q4wine core functions;<p>
-<dl class="note" compact><dt><b>Note:</b></dt><dd>This is still in development state ;) </dd></dl>
-
+It is not useful by itself, but helps to create user-side applications which can use q4wine core functions; 
 <p>Definition at line <a class="el" href="main_8h-source.html#l00090">90</a> of file <a class="el" href="main_8h-source.html">main.h</a>.</p>
 <hr><h2>Member Function Documentation</h2>
+<a class="anchor" name="1beaa1f4432307abbf7d852b58912164"></a><!-- doxytag: member="corelib::getCdromDevices" ref="1beaa1f4432307abbf7d852b58912164" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList corelib::getCdromDevices           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This function get cdrom devices from /etc/fstab file. 
+<p>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return an list of cdrom devices. </dd></dl>
+
+<p>Definition at line <a class="el" href="q4wine-lib_2main_8cpp-source.html#l00230">230</a> of file <a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a>.</p>
+
+</div>
+</div><p>
 <a class="anchor" name="26fd64ce403fb692f6c581eb9805ff10"></a><!-- doxytag: member="corelib::getSetting" ref="26fd64ce403fb692f6c581eb9805ff10" args="(const QString group, const QString key, const bool checkExist=true, const QVariant defaultVal=QVariant()) const " -->
 <div class="memitem">
 <div class="memproto">
@@ -112,7 +145,64 @@ This function get application settings.
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>Return an a key value. </dd></dl>
 
-<p>Definition at line <a class="el" href="q4wine-lib_2main_8cpp-source.html#l00216">216</a> of file <a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a>.</p>
+<p>Definition at line <a class="el" href="q4wine-lib_2main_8cpp-source.html#l00215">215</a> of file <a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="56c25d539c766b2751887eeed91b7ca0"></a><!-- doxytag: member="corelib::getWhichOut" ref="56c25d539c766b2751887eeed91b7ca0" args="(QString fileName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString corelib::getWhichOut           </td>
+          <td>(</td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>fileName</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This function get cdrom devices from /etc/fstab file. 
+<p>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return an list of cdrom devices.</dd></dl>
+This function get output from which shell built-in command.<p>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return the full path of binary. </dd></dl>
+
+<p>Definition at line <a class="el" href="q4wine-lib_2main_8cpp-source.html#l00279">279</a> of file <a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="a814e30d83df5294cf9e700071ad0d04"></a><!-- doxytag: member="corelib::getWineDlls" ref="a814e30d83df5294cf9e700071ad0d04" args="(QString prefix_lib_path) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList corelib::getWineDlls           </td>
+          <td>(</td>
+          <td class="paramtype">QString&nbsp;</td>
+          <td class="paramname"> <em>prefix_lib_path</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This function builds wine dlls list for prefix_lib_path. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prefix_lib_path</em>&nbsp;</td><td>Path for wine libs. </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return an list of cdrom devices. </dd></dl>
+
+<p>Definition at line <a class="el" href="q4wine-lib_2main_8cpp-source.html#l00257">257</a> of file <a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -137,7 +227,7 @@ This function tries to get wine process list running in the current system.
 It gets process values: pid, name, nice priority and WINEPREFIX environment variable <dl class="note" compact><dt><b>Note:</b></dt><dd>On Linux it uses /proc file system, and on FreeBSD/MacOS it uses /dev/kmem and kvm.h functions. </dd></dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>Return an array of QList which contains an QStringList </dd></dl>
 
-<p>Definition at line <a class="el" href="q4wine-lib_2main_8cpp-source.html#l00043">43</a> of file <a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a>.</p>
+<p>Definition at line <a class="el" href="q4wine-lib_2main_8cpp-source.html#l00042">42</a> of file <a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -177,7 +267,7 @@ Displays error message depending on _GUI_MODE variable value.
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>When using an interactive display type, this functions returns a user selected value. </dd></dl>
 
-<p>Definition at line <a class="el" href="q4wine-lib_2main_8cpp-source.html#l00232">232</a> of file <a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a>.</p>
+<p>Definition at line <a class="el" href="q4wine-lib_2main_8cpp-source.html#l00307">307</a> of file <a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -198,14 +288,14 @@ Define is library operate in CLI or GUI mode.
 <p>
 <dl class="note" compact><dt><b>Note:</b></dt><dd>This is typically need for error message display. </dd></dl>
 
-<p>Definition at line <a class="el" href="main_8h-source.html#l00117">117</a> of file <a class="el" href="main_8h-source.html">main.h</a>.</p>
+<p>Definition at line <a class="el" href="main_8h-source.html#l00140">140</a> of file <a class="el" href="main_8h-source.html">main.h</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li>src/q4wine-lib/<a class="el" href="main_8h-source.html">main.h</a><li>src/q4wine-lib/<a class="el" href="q4wine-lib_2main_8cpp-source.html">main.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 28 13:23:23 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:21 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -75,11 +75,11 @@ bool  Dir::delDir(const QString prefix_name, const QString dir_name) const{
 	return true;
 }
 
-bool Dir::addDir(const QString prefix_name, const QString icon_name) const{
+bool Dir::addDir(const QString prefix_name, const QString dir_name) const{
 	QSqlQuery query;
 	query.prepare("INSERT INTO dir(name, prefix_id) VALUES(:name, (SELECT id FROM prefix WHERE name=:prefix_name))");
 	query.bindValue(":prefix_name", prefix_name);
-	query.bindValue(":name", icon_name);
+	query.bindValue(":name", dir_name);
 
 	if (!query.exec()){
 		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();

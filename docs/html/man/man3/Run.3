@@ -1,0 +1,145 @@
+.TH "Run" 3 "15 Jun 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Run \- .IP "\(bu" 2
+
+.PP
+ 
+
+.PP
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <src/gui/run.h>\fP
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRun\fP (QString prefix_name, QWidget *parent=0, Qt::WFlags f=0)"
+.br
+.RI "\fIThis is class constructor. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "ExecObject \fBexecObj\fP"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBcmdCancel_Click\fP ()"
+.br
+.RI "\fICancel button click slot. \fP"
+.ti -1c
+.RI "void \fBcmdOk_Click\fP ()"
+.br
+.RI "\fIOk button click slot. \fP"
+.ti -1c
+.RI "void \fBcmdAdd_Click\fP ()"
+.br
+.RI "\fIAdd lib button click slot. \fP"
+.ti -1c
+.RI "void \fBcomboPrefixes_indexChanged\fP (int)"
+.br
+.RI "\fIComboxBox change slot. \fP"
+.ti -1c
+.RI "void \fBcbUseConsole_stateChanged\fP (int)"
+.br
+.RI "\fICheckBox change slot. \fP"
+.ti -1c
+.RI "void \fBResizeContent\fP (int TabIndex)"
+.br
+.RI "\fIResize window content slot. \fP"
+.ti -1c
+.RI "void \fBcmdGetProgram_Click\fP ()"
+.br
+.RI "\fIGet program slot. \fP"
+.ti -1c
+.RI "void \fBcmdGetWorkDir_Click\fP ()"
+.br
+.RI "\fIGet work dir slot. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBeventFilter\fP (QObject *object, QEvent *event)"
+.br
+.RI "\fIEvent filter. \fP"
+.ti -1c
+.RI "void \fBgetWineDlls\fP (QString wine_dllpath)"
+.br
+.RI "\fIGet wine dll list. \fP"
+.ti -1c
+.RI "void \fBgetPrefixes\fP (void)"
+.br
+.RI "\fIGet exesting prefixes list. \fP"
+.ti -1c
+.RI "void \fBloadThemeIcons\fP (QString themePath)"
+.br
+.RI "\fILoad theme images. \fP"
+.ti -1c
+.RI "QIcon \fBloadIcon\fP (QString iconName, QString themePath)"
+.br
+.RI "\fILoad icon. \fP"
+.ti -1c
+.RI "typedef void * \fBCoreLibPrototype\fP (bool)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBprefix_name\fP"
+.br
+.ti -1c
+.RI "QString \fBprefix_dir\fP"
+.br
+.ti -1c
+.RI "\fBPrefix\fP * \fBdb_prefix\fP"
+.br
+.RI "\fIDatabase prefix class defenition. \fP"
+.ti -1c
+.RI "QLibrary \fBlibq4wine\fP"
+.br
+.RI "\fIThis is need for libq4wine-core.so import. \fP"
+.ti -1c
+.RI "CoreLibPrototype * \fBCoreLibClassPointer\fP"
+.br
+.ti -1c
+.RI "\fBcorelib\fP * \fBCoreLib\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+.IP "\(bu" 2
+
+.PP
+
+
+This class provide run dialog functions. 
+.PP
+Definition at line 63 of file run.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Run::Run (QString prefix_name, QWidget * parent = \fC0\fP, Qt::WFlags f = \fC0\fP)"
+.PP
+This is class constructor. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP Current user selected prefix name. 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file run.cpp.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for q4wine from the source code.

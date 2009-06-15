@@ -49,6 +49,7 @@
 #include <QSettings>
 #include <QDebug>
 #include <QFileInfo>
+#include <QProcess>
 
 // FreeBSD support
 #ifdef _OS_FREEBSD_
@@ -108,6 +109,17 @@ public:
      * \return Return an a key value.
      */
     QVariant getSetting(const QString group, const QString key, const bool checkExist = true, const QVariant defaultVal = QVariant()) const;
+
+	/*! \brief This function get cdrom devices from /etc/fstab file.
+	 *
+	 * \return Return an list of cdrom devices.
+	 */
+
+	/*! \brief This function get output from which shell built-in command.
+	 *
+	 * \return Return the full path of binary.
+	 */
+	QString getWhichOut (QString fileName);
 
 	/*! \brief This function get cdrom devices from /etc/fstab file.
 	 *

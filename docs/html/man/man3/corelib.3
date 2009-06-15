@@ -1,4 +1,4 @@
-.TH "corelib" 3 "28 May 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.TH "corelib" 3 "15 Jun 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,6 +25,18 @@ corelib \- This class provide general core functions for q4wine.
 .RI "QVariant \fBgetSetting\fP (const QString group, const QString key, const bool checkExist=true, const QVariant defaultVal=QVariant()) const "
 .br
 .RI "\fIThis function get application settings. \fP"
+.ti -1c
+.RI "QString \fBgetWhichOut\fP (QString fileName)"
+.br
+.RI "\fIThis function get cdrom devices from /etc/fstab file. \fP"
+.ti -1c
+.RI "QStringList \fBgetCdromDevices\fP (void) const "
+.br
+.RI "\fIThis function get cdrom devices from /etc/fstab file. \fP"
+.ti -1c
+.RI "QStringList \fBgetWineDlls\fP (QString prefix_lib_path) const "
+.br
+.RI "\fIThis function builds wine dlls list for prefix_lib_path. \fP"
 .in -1c
 .SS "Private Member Functions"
 
@@ -46,18 +58,23 @@ corelib \- This class provide general core functions for q4wine.
 .PP 
 This class provide general core functions for q4wine. 
 
-It is not useful by itself, but helps to create user-side applications which can use q4wine core functions;
-.PP
-\fBNote:\fP
-.RS 4
-This is still in development state ;) 
-.RE
-.PP
-
+It is not useful by itself, but helps to create user-side applications which can use q4wine core functions; 
 .PP
 Definition at line 90 of file main.h.
 .SH "Member Function Documentation"
 .PP 
+.SS "QStringList corelib::getCdromDevices (void) const"
+.PP
+This function get cdrom devices from /etc/fstab file. 
+.PP
+\fBReturns:\fP
+.RS 4
+Return an list of cdrom devices. 
+.RE
+.PP
+
+.PP
+Definition at line 230 of file main.cpp.
 .SS "QVariant corelib::getSetting (const QString group, const QString key, const bool checkExist = \fCtrue\fP, const QVariant defaultVal = \fCQVariant()\fP) const"
 .PP
 This function get application settings. 
@@ -80,7 +97,43 @@ Return an a key value.
 .PP
 
 .PP
-Definition at line 216 of file main.cpp.
+Definition at line 215 of file main.cpp.
+.SS "QString corelib::getWhichOut (QString fileName)"
+.PP
+This function get cdrom devices from /etc/fstab file. 
+.PP
+\fBReturns:\fP
+.RS 4
+Return an list of cdrom devices.
+.RE
+.PP
+This function get output from which shell built-in command.
+.PP
+\fBReturns:\fP
+.RS 4
+Return the full path of binary. 
+.RE
+.PP
+
+.PP
+Definition at line 279 of file main.cpp.
+.SS "QStringList corelib::getWineDlls (QString prefix_lib_path) const"
+.PP
+This function builds wine dlls list for prefix_lib_path. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_lib_path\fP Path for wine libs. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return an list of cdrom devices. 
+.RE
+.PP
+
+.PP
+Definition at line 257 of file main.cpp.
 .SS "QList< QStringList > corelib::getWineProcessList ()"
 .PP
 This function tries to get wine process list running in the current system. 
@@ -99,7 +152,7 @@ Return an array of QList which contains an QStringList
 .PP
 
 .PP
-Definition at line 43 of file main.cpp.
+Definition at line 42 of file main.cpp.
 .SS "int corelib::showError (const QString message, const bool info = \fCtrue\fP) const\fC [private]\fP"
 .PP
 Displays error message depending on _GUI_MODE variable value. 
@@ -118,7 +171,7 @@ When using an interactive display type, this functions returns a user selected v
 .PP
 
 .PP
-Definition at line 232 of file main.cpp.
+Definition at line 307 of file main.cpp.
 .SH "Member Data Documentation"
 .PP 
 .SS "bool \fBcorelib::_GUI_MODE\fP\fC [private]\fP"
@@ -132,7 +185,7 @@ This is typically need for error message display.
 .PP
 
 .PP
-Definition at line 117 of file main.h.
+Definition at line 140 of file main.h.
 
 .SH "Author"
 .PP 

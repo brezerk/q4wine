@@ -1,0 +1,149 @@
+.TH "PrefixSettings" 3 "15 Jun 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PrefixSettings \- .IP "\(bu" 2
+
+.PP
+ 
+
+.PP
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <src/gui/prefixsettings.h>\fP
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPrefixSettings\fP (QString prefix_name, QWidget *parent=0, Qt::WFlags f=0)"
+.br
+.RI "\fIThis is class constructor. \fP"
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBcmdCancel_Click\fP ()"
+.br
+.RI "\fICancle button click slot \fP"
+.ti -1c
+.RI "void \fBcmdOk_Click\fP ()"
+.br
+.RI "\fIOk button click slot \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBeventFilter\fP (QObject *obj, QEvent *event)"
+.br
+.RI "\fIThis is an event filter. \fP"
+.ti -1c
+.RI "void \fBloadThemeIcons\fP (QString themePath)"
+.br
+.RI "\fIThis function loads theme images to widgets. \fP"
+.ti -1c
+.RI "QIcon \fBloadIcon\fP (QString iconName, QString themePath)"
+.br
+.RI "\fIThis function returns load theme image item by user selected theme. \fP"
+.ti -1c
+.RI "typedef void * \fBCoreLibPrototype\fP (bool)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBprefix_id\fP"
+.br
+.RI "\fI\fBPrefix\fP id, and name. \fP"
+.ti -1c
+.RI "QString \fBprefix_name\fP"
+.br
+.ti -1c
+.RI "\fBPrefix\fP * \fBdb_prefix\fP"
+.br
+.RI "\fIDatabase prefix class defenition. \fP"
+.ti -1c
+.RI "QLibrary \fBlibq4wine\fP"
+.br
+.RI "\fIThis is need for libq4wine-core.so import. \fP"
+.ti -1c
+.RI "CoreLibPrototype * \fBCoreLibClassPointer\fP"
+.br
+.ti -1c
+.RI "\fBcorelib\fP * \fBCoreLib\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+.IP "\(bu" 2
+
+.PP
+
+
+This class provide prefix settings dialog functions. 
+.PP
+Definition at line 60 of file prefixsettings.h.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PrefixSettings::PrefixSettings (QString prefix_name, QWidget * parent = \fC0\fP, Qt::WFlags f = \fC0\fP)"
+.PP
+This is class constructor. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP Current prefix name. 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file prefixsettings.cpp.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool PrefixSettings::eventFilter (QObject * obj, QEvent * event)\fC [private]\fP"
+.PP
+This is an event filter. 
+.PP
+This event filter hendle button click events 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP Current prefix name. 
+.RE
+.PP
+
+.PP
+Definition at line 186 of file prefixsettings.cpp.
+.SS "QIcon PrefixSettings::loadIcon (QString iconName, QString themePath)\fC [private]\fP"
+.PP
+This function returns load theme image item by user selected theme. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIiconName\fP icon name 
+.br
+\fIthemePath\fP is a path to user selected theme ;) 
+.RE
+.PP
+
+.PP
+Definition at line 120 of file prefixsettings.cpp.
+.SS "void PrefixSettings::loadThemeIcons (QString themePath)\fC [private]\fP"
+.PP
+This function loads theme images to widgets. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIthemePath\fP is a path to user selected theme ;) 
+.RE
+.PP
+
+.PP
+Definition at line 99 of file prefixsettings.cpp.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for q4wine from the source code.

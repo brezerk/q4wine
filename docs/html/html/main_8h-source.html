@@ -65,34 +65,35 @@
 <a name="l00049"></a>00049 <span class="preprocessor">#include &lt;QSettings&gt;</span>
 <a name="l00050"></a>00050 <span class="preprocessor">#include &lt;QDebug&gt;</span>
 <a name="l00051"></a>00051 <span class="preprocessor">#include &lt;QFileInfo&gt;</span>
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <span class="comment">// FreeBSD support</span>
-<a name="l00054"></a>00054 <span class="preprocessor">#ifdef _OS_FREEBSD_</span>
-<a name="l00055"></a>00055 <span class="preprocessor"></span><span class="preprocessor">        #include &lt;kvm.h&gt;</span>
-<a name="l00056"></a>00056 <span class="preprocessor">        #include &lt;sys/param.h&gt;</span>
-<a name="l00057"></a>00057 <span class="preprocessor">        #include &lt;sys/user.h&gt;</span>
-<a name="l00058"></a>00058 <span class="preprocessor">        #include &lt;sys/file.h&gt;</span>
-<a name="l00059"></a>00059 <span class="preprocessor">        #include &lt;sys/sysctl.h&gt;</span>
-<a name="l00060"></a>00060 <span class="preprocessor">        #include &lt;limits.h&gt;</span>
-<a name="l00061"></a>00061 <span class="preprocessor">        #include &lt;paths.h&gt;</span>
-<a name="l00062"></a>00062 <span class="preprocessor">#endif</span>
-<a name="l00063"></a>00063 <span class="preprocessor"></span>
-<a name="l00064"></a>00064 <span class="comment">// Experimental Darwin support (no test were preformed)</span>
-<a name="l00065"></a>00065 <span class="preprocessor">#ifdef _OS_DARWIN_</span>
-<a name="l00066"></a>00066 <span class="preprocessor"></span><span class="preprocessor">        #include &lt;kvm.h&gt;</span>
-<a name="l00067"></a>00067 <span class="preprocessor">        #include &lt;sys/param.h&gt;</span>
-<a name="l00068"></a>00068 <span class="preprocessor">        #include &lt;sys/user.h&gt;</span>
-<a name="l00069"></a>00069 <span class="preprocessor">        #include &lt;sys/file.h&gt;</span>
-<a name="l00070"></a>00070 <span class="preprocessor">        #include &lt;sys/sysctl.h&gt;</span>
-<a name="l00071"></a>00071 <span class="preprocessor">        #include &lt;limits.h&gt;</span>
-<a name="l00072"></a>00072 <span class="preprocessor">        #include &lt;paths.h&gt;</span>
-<a name="l00073"></a>00073 <span class="preprocessor">#endif</span>
-<a name="l00074"></a>00074 <span class="preprocessor"></span>
-<a name="l00075"></a>00075 <span class="preprocessor">#include &lt;iostream&gt;</span>
-<a name="l00076"></a>00076 <span class="keyword">using namespace </span>std;
+<a name="l00052"></a>00052 <span class="preprocessor">#include &lt;QProcess&gt;</span>
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <span class="comment">// FreeBSD support</span>
+<a name="l00055"></a>00055 <span class="preprocessor">#ifdef _OS_FREEBSD_</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span><span class="preprocessor">        #include &lt;kvm.h&gt;</span>
+<a name="l00057"></a>00057 <span class="preprocessor">        #include &lt;sys/param.h&gt;</span>
+<a name="l00058"></a>00058 <span class="preprocessor">        #include &lt;sys/user.h&gt;</span>
+<a name="l00059"></a>00059 <span class="preprocessor">        #include &lt;sys/file.h&gt;</span>
+<a name="l00060"></a>00060 <span class="preprocessor">        #include &lt;sys/sysctl.h&gt;</span>
+<a name="l00061"></a>00061 <span class="preprocessor">        #include &lt;limits.h&gt;</span>
+<a name="l00062"></a>00062 <span class="preprocessor">        #include &lt;paths.h&gt;</span>
+<a name="l00063"></a>00063 <span class="preprocessor">#endif</span>
+<a name="l00064"></a>00064 <span class="preprocessor"></span>
+<a name="l00065"></a>00065 <span class="comment">// Experimental Darwin support (no test were preformed)</span>
+<a name="l00066"></a>00066 <span class="preprocessor">#ifdef _OS_DARWIN_</span>
+<a name="l00067"></a>00067 <span class="preprocessor"></span><span class="preprocessor">        #include &lt;kvm.h&gt;</span>
+<a name="l00068"></a>00068 <span class="preprocessor">        #include &lt;sys/param.h&gt;</span>
+<a name="l00069"></a>00069 <span class="preprocessor">        #include &lt;sys/user.h&gt;</span>
+<a name="l00070"></a>00070 <span class="preprocessor">        #include &lt;sys/file.h&gt;</span>
+<a name="l00071"></a>00071 <span class="preprocessor">        #include &lt;sys/sysctl.h&gt;</span>
+<a name="l00072"></a>00072 <span class="preprocessor">        #include &lt;limits.h&gt;</span>
+<a name="l00073"></a>00073 <span class="preprocessor">        #include &lt;paths.h&gt;</span>
+<a name="l00074"></a>00074 <span class="preprocessor">#endif</span>
+<a name="l00075"></a>00075 <span class="preprocessor"></span>
+<a name="l00076"></a>00076 <span class="preprocessor">#include "config.h"</span>
 <a name="l00077"></a>00077 
-<a name="l00088"></a>00088 <span class="keyword">class </span><a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a>;
-<a name="l00089"></a>00089 
+<a name="l00078"></a>00078 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00079"></a>00079 <span class="keyword">using namespace </span>std;
+<a name="l00080"></a>00080 
 <a name="l00090"></a><a class="code" href="classcorelib.html">00090</a> <span class="keyword">class </span><a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a> {
 <a name="l00091"></a>00091 <span class="keyword">public</span>:
 <a name="l00093"></a>00093     <a class="code" href="classcorelib.html#061b046f60f7487de1fcd917b025a845" title="Create an mainlib class.">corelib</a>(<span class="keywordtype">bool</span> <a class="code" href="classcorelib.html#d4e9818217d7a1d93d74d46323c67fbb" title="Define is library operate in CLI or GUI mode.">_GUI_MODE</a>);
@@ -101,17 +102,22 @@
 <a name="l00102"></a>00102 
 <a name="l00111"></a>00111     QVariant <a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="keyword">const</span> QString group, <span class="keyword">const</span> QString key, <span class="keyword">const</span> <span class="keywordtype">bool</span> checkExist = <span class="keyword">true</span>, <span class="keyword">const</span> QVariant defaultVal = QVariant()) <span class="keyword">const</span>;
 <a name="l00112"></a>00112 
-<a name="l00113"></a>00113     <span class="keyword">private</span>:
-<a name="l00117"></a><a class="code" href="classcorelib.html#d4e9818217d7a1d93d74d46323c67fbb">00117</a>     <span class="keywordtype">bool</span> _GUI_MODE;
-<a name="l00118"></a>00118 
-<a name="l00125"></a>00125     <span class="keywordtype">int</span> <a class="code" href="classcorelib.html#7b6a40d5011da1ed5d13985b40f87189" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(<span class="keyword">const</span> QString message, <span class="keyword">const</span> <span class="keywordtype">bool</span> info = <span class="keyword">true</span>) <span class="keyword">const</span>;
-<a name="l00126"></a>00126 }; <span class="comment">// end of class corelib</span>
-<a name="l00127"></a>00127 
-<a name="l00135"></a>00135 <span class="keyword">extern</span> <span class="stringliteral">"C"</span> <a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a>* <a class="code" href="group__libq4wine.html#g4051dc94dee795040c78f914f07c6784" title="This function returns a class of corelib type.">createCoreLib</a>(<span class="keywordtype">bool</span> _GUI_MODE);
-<a name="l00136"></a>00136 
-<a name="l00137"></a>00137 <span class="preprocessor">#endif</span>
+<a name="l00122"></a>00122     QString <a class="code" href="classcorelib.html#56c25d539c766b2751887eeed91b7ca0" title="This function get cdrom devices from /etc/fstab file.">getWhichOut</a> (QString fileName);
+<a name="l00123"></a>00123 
+<a name="l00128"></a>00128     QStringList <a class="code" href="classcorelib.html#1beaa1f4432307abbf7d852b58912164" title="This function get cdrom devices from /etc/fstab file.">getCdromDevices</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00129"></a>00129 
+<a name="l00135"></a>00135     QStringList <a class="code" href="classcorelib.html#a814e30d83df5294cf9e700071ad0d04" title="This function builds wine dlls list for prefix_lib_path.">getWineDlls</a>(QString prefix_lib_path) <span class="keyword">const</span>;
+<a name="l00136"></a>00136     <span class="keyword">private</span>:
+<a name="l00140"></a><a class="code" href="classcorelib.html#d4e9818217d7a1d93d74d46323c67fbb">00140</a>     <span class="keywordtype">bool</span> _GUI_MODE;
+<a name="l00141"></a>00141 
+<a name="l00148"></a>00148     <span class="keywordtype">int</span> <a class="code" href="classcorelib.html#7b6a40d5011da1ed5d13985b40f87189" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(<span class="keyword">const</span> QString message, <span class="keyword">const</span> <span class="keywordtype">bool</span> info = <span class="keyword">true</span>) <span class="keyword">const</span>;
+<a name="l00149"></a>00149 }; <span class="comment">// end of class corelib</span>
+<a name="l00150"></a>00150 
+<a name="l00158"></a>00158 <span class="keyword">extern</span> <span class="stringliteral">"C"</span> <a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a>* <a class="code" href="group__libq4wine.html#g4051dc94dee795040c78f914f07c6784" title="This function returns a class of corelib type.">createCoreLib</a>(<span class="keywordtype">bool</span> _GUI_MODE);
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Thu May 28 13:23:23 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
