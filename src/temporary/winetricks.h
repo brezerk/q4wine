@@ -32,12 +32,12 @@
 
 #include "config.h"
 #include "winetrickshelp.h"
-#include <ui_winetricks.h>
-#include <QtGui/QDialog>
+#include "ui_winetricks.h"
+
 #include <QStringList>
 #include <QProcess>
 #include <QMessageBox>
-
+#include <QtGui>
 #include "coremethods.h"
 #include "process.h"
 
@@ -53,10 +53,12 @@ protected:
 	//virtual void changeEvent(QEvent *e);
 
 	private slots:
-		void run_winetricks();
+
+                void on_lstMain_itemClicked(QListWidgetItem* item);
+
+  void run_winetricks();
 		void install_winetricks();
-                void run_help();
-	private:
+        private:
 		QString console_bin;
 		QString console_args;
 		QString prefix_path;
@@ -65,6 +67,12 @@ protected:
 		void downloadwinetricks();
 		void removefile(QString);
 		CoreMethods *core;
+
+                void parse();
+                void addToList (QString arg);
+
+                QStringList names;
+                QStringList descs;
 };
 
 #endif // WINETRICKS_H

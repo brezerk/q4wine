@@ -23,7 +23,7 @@ protected:
 private:
     Ui::winetrickshelp *m_ui;
     void parse();
-  //  void addToList();
+    void addToList(QString arg);
     //core
     CoreMethods *core;
     QString winetricks_bin;
