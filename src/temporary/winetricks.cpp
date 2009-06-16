@@ -133,8 +133,8 @@ void winetricks::downloadwinetricks () {
 
 
 }
-/*
-void winetricks::setHelp()  {
+
+/*void winetricks::setHelp()  {
     QProcess *p;
     QString pargs;
     pargs.append("-c ");

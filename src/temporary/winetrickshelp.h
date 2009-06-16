@@ -2,12 +2,10 @@
 #define WINETRICKSHELP_H
 
 #include <QtGui/QDialog>
+
 #include <QProcess>
-#include <QFile>
-#include <QDir>
-#include <QMessageBox>
 #include <QTextCodec>
-#include <QTextStream>
+#include "coremethods.h"
 namespace Ui {
     class winetrickshelp;
 }
@@ -24,8 +22,14 @@ protected:
 
 private:
     Ui::winetrickshelp *m_ui;
-
-
+    void parse();
+  //  void addToList();
+    //core
+    CoreMethods *core;
+    QString winetricks_bin;
+    //items
+    QStringList actions;
+    QStringList tooltips;
 
 private slots:
     void on_buttonBox_clicked(QAbstractButton* button);

@@ -1,5 +1,6 @@
 #include "winetrickshelp.h"
 #include "ui_winetrickshelp.h"
+#include <QtDebug>
 
 winetrickshelp::winetrickshelp(QWidget *parent) :
     QDialog(parent),
@@ -19,7 +20,13 @@ return;
 
 }
 */
+      core = new CoreMethods ();
+      this->winetricks_bin.append(QDir::homePath());
+       this->winetricks_bin.append("/.config/");
+       this->winetricks_bin.append(APP_SHORT_NAME);
+       this->winetricks_bin.append("/winetricks --kegelfuck"); //Kegel - idiot!
 
+       parse();
 }
 
 winetrickshelp::~winetrickshelp()
@@ -42,4 +49,31 @@ void winetrickshelp::on_buttonBox_clicked(QAbstractButton* button){
 
    return;
 }
+void winetrickshelp::parse() {
+    //create a Winetricks process
+      QProcess *p = new QProcess (this);
+    QString pargs;
+    pargs.append(winetricks_bin);
+qDebug () <<  pargs;
 
+   p->start(pargs);
+
+   p->waitForFinished();
+     //get output
+   QString lang;
+                // Getting env LANG variable
+                lang = getenv("LANG");
+                lang = lang.split(".").at(1);
+
+                if (lang.isNull())
+                        lang = "UTF8";
+                QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+                QString string = codec->toUnicode(p->readAllStandardError());
+qDebug() << string;
+
+
+    delete p;
+
+    //parse now
+
+}
