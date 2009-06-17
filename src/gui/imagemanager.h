@@ -47,6 +47,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QFile>
+#include <QLibrary>
 #include <QInputDialog>
 #include <QListWidgetItem>
 #include <QSettings>
@@ -57,33 +58,62 @@
 #include <QHeaderView>
 #include <QTableWidget>
 
+#include "src/core/database/image.h"
+#include <q4wine-lib/main.h>
+
+/*!
+ * \class ImageManager
+ * \ingroup q4wine-gui
+ * \brief This class provide image manager dialog functions.
+ *
+ */
 class ImageManager : public QDialog, public Ui::ImageManager
 {
 	Q_OBJECT
 	public:
+		//! Class constructor
 		ImageManager(QWidget * parent = 0, Qt::WFlags f = 0);
 
 	private slots:
+		//! Ok button click slot
 		void cmdOk_Click();
-
+		//! Image add slot
 		void actionAddImage(void);
+		//! Image rename slot
+		void actionRenameImage(void);
+		//! Image remove slot
 		void actionRemoveImage(void);
+		//! Image list refresh slot
 		void actionRefreshImageList(void);
 
+		//! Context menu show slot
 		void tableImage_showContextMenu(const QPoint);
+		//! Update lilPAthInfo slot
 		void update_lblPathInfo(const QModelIndex);
 		
 	private:
 		QToolBar *managerToolBar;
+		//! Loading theme icons
 		void loadThemeIcons(QString themePath);
+		//! Creating menus
 		void createMenus(void);
+		//! Load icons
 		QIcon loadIcon(QString iconName, QString themePath);
+		//! Getting CD images list
 		void getCDImages(void);
 		
+		 //! This is need for libq4wine-core.so import;
+		typedef void *CoreLibPrototype (bool);
+		CoreLibPrototype *CoreLibClassPointer;
+		corelib *CoreLib;
+		QLibrary libq4wine;
 
-		//Tool bar acrtions
+		Image *db_image;
+
+		//! Actions
 		QAction *actionAdd;
 		QAction *actionRemove;
+		QAction *actionRename;
 		QAction *actionRefresh;
 		
 };

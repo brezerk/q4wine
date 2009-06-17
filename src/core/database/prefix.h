@@ -103,7 +103,37 @@ class Prefix
 	  * \param  prefix_name    A prefix name value.
 	  * \return Return true on success.
 	  */
-	  bool delPrefixByPrefixName(const QString prefix_name) const;
+	  bool delByName(const QString prefix_name) const;
+
+	 /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
+	  *
+	  * \param  prefix_name    A prefix name value.
+	  * \param  prefix_path    A prefix path value.
+	  * \param  wine_exec	   A wine executable binary.
+	  * \param  wine_server    A wine server binary.
+	  * \param  wine_loader    A wine loader binary.
+	  * \param  wine_dllpath   A wine library directory.
+	  * \param  cdrom_mount    A cdrom mount directory.
+	  * \param  cdrom_drive    A cdrom drive.
+	  * \return Return true on success.
+	  */
+	  bool addPrefix(const QString prefix_name, const QString prefix_path="", const QString wine_exec="", const QString wine_server="", const QString wine_loader="", const QString wine_dllpath="", const QString cdrom_mount="", const QString cdrom_drive="") const;
+
+	 /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
+	  *
+	  * \param  prefix_name        A prefix name value.
+	  * \param  prefix_path        A prefix path value.
+	  * \param  wine_exec	       A wine executable binary.
+	  * \param  wine_server        A wine server binary.
+	  * \param  wine_loader        A wine loader binary.
+	  * \param  wine_dllpath       A wine library directory.
+	  * \param  cdrom_mount        A cdrom mount directory.
+	  * \param  cdrom_drive		   A cdrom drive.
+	  * \param  old_prefix_name	   A cdrom drive.
+	  * \return Return true on success.
+	  */
+	  bool updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive, const QString old_prefix_name) const;
+
 
 	 /*! \brief This function executes requested query.
 	  *

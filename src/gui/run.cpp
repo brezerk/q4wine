@@ -192,31 +192,13 @@ bool Run::eventFilter( QObject *object, QEvent *event )
 	return QWidget::eventFilter(object, event);
 }
 
-void Run::getWineDlls(QString winedll_path){
+void Run::getWineDlls(QString winelibs_path){
 	/*
 	 * This function Builds Wine dll list for selected prefix
 	 */
 
 	cboxDlls->clear();
-
-	if (winedll_path.isEmpty()){
-		QSettings settings(APP_SHORT_NAME, "default");
-		settings.beginGroup("wine");
-		winedll_path=settings.value("WineLibs").toString();
-		settings.endGroup();
-	}
-
-	QDir dir(winedll_path);
-	dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
-
-	QFileInfoList list = dir.entryInfoList();
-	for (int i = 0; i < list.size(); ++i) {
-		QFileInfo fileInfo = list.at(i);
-		if (fileInfo.fileName().indexOf(".dll.so")>=0){
-			cboxDlls->addItem ( fileInfo.fileName().left(fileInfo.fileName().length()-3));
-		}
-	}
-
+	cboxDlls->addItems (CoreLib->getWineDlls(winelibs_path));
 	cboxDlls->setMaxVisibleItems (10);
 
 	return;

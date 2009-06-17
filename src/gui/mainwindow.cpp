@@ -1414,7 +1414,7 @@ void MainWindow::prefixDelete_Click(){
 	   tr("Do you really wish to delete prefix named \"%1\" and all associated icons?").arg(tablePrefix->item(tablePrefix->currentRow(), 0)->text()), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
 			if (db_icon->delIconsByPrefixName(tablePrefix->item(tablePrefix->currentRow(), 0)->text()))
 				if(db_dir->delDir(tablePrefix->item(tablePrefix->currentRow(), 0)->text()))
-					db_prefix->delPrefixByPrefixName(tablePrefix->item(tablePrefix->currentRow(), 0)->text());
+					db_prefix->delByName(tablePrefix->item(tablePrefix->currentRow(), 0)->text());
 		}
 	}
 

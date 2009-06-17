@@ -31,7 +31,6 @@
 #define IMAGE_H
 
 #include "config.h"
-
 #include "prefix.h"
 
 #include <QList>
@@ -42,11 +41,42 @@
 #include <QDebug>
 #include <QVariant>
 
-
+/*!
+ * \class Image
+ * \ingroup database
+ * \brief This class provide database functions for Image table.
+ *
+ */
 class Image : public Prefix
 {
 public:
-    image();
+  	//! Class constructor
+	Image();
+	/*! \brief Getting images list.
+	 * \return Return QList on QStringList containing images.
+	 */
+	QList<QStringList> getFields(void) const;
+
+	/*! \brief Getting file path reccord by image name
+	 * \param  name   image name
+	 * \return Return QList on QStringList containing images.
+	 */
+	QString getPath(const QString name) const;\
+
+	/*! \brief Chek for image existance by name
+	 * \param  name   image name
+	 * \return If image exists -- returns true.
+	 */
+	bool isExistsByName(const QString name) const;
+
+	/*! \brief Add image reccord
+	 * \param  name   image name
+	 * \param  path   image file path
+	 * \return If image exists -- returns true.
+	 */
+	bool addImage(const QString name, const QString path) const;
+	bool delImage(const QString name) const;
+	bool renameImage(const QString name, const QString old_name) const;
 };
 
 #endif // IMAGE_H

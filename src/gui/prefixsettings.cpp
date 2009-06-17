@@ -153,32 +153,9 @@ void PrefixSettings::cmdOk_Click(){
 		}
 	}
 
-	QSqlQuery query;
-	query.prepare("UPDATE prefix SET wine_dllpath=:wine_dllpath, wine_loader=:wine_loader, wine_server=:wine_server, wine_exec=:wine_exec, cdrom_mount=:cdrom_mount, cdrom_drive=:cdrom_drive, name=:name, path=:path WHERE id=:id;");
-	query.bindValue(":wine_dllpath", txtWineLibs->text());
-	query.bindValue(":wine_loader", txtWineLoaderBin->text());
-	query.bindValue(":wine_server", txtWineServerBin->text());
-	query.bindValue(":wine_exec", txtWineBin->text());
-
-	if (txtMountPoint->text().endsWith ("/"))
-		txtMountPoint->setText(txtMountPoint->text().mid(0, txtMountPoint->text().length()-1));
-
-	query.bindValue(":cdrom_mount", txtMountPoint->text());
-	if (comboDeviceList->currentText()!=tr("<none>")){
-		query.bindValue(":cdrom_drive", comboDeviceList->currentText());
-	} else {
-		query.bindValue(":cdrom_drive", QVariant(QVariant::String));
-	}
-	query.bindValue(":name", txtPrefixName->text());
-	query.bindValue(":path", txtPrefixPath->text());
-	query.bindValue(":id", prefix_id);
-	
-	if (!db_prefix->updateQuery(&query)){
-		query.clear();
+	if (!db_prefix->updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name))
 		reject();
-	}
 
-	query.clear();
 	accept();
 	return;
 }

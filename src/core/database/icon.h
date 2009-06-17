@@ -30,10 +30,7 @@
 #ifndef ICON_H
 #define ICON_H
 
-
-
 #include "config.h"
-
 #include "prefix.h"
 
 #include <QList>

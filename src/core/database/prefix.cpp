@@ -177,7 +177,7 @@ bool Prefix::updateQuery(QSqlQuery *sqlQuery) const{
 	return true;
 }
 
-bool Prefix::delPrefixByPrefixName(const QString prefix_name) const{
+bool Prefix::delByName(const QString prefix_name) const{
 	QSqlQuery query;
 	query.prepare("DELETE FROM prefix WHERE id=(SELECT id FROM prefix WHERE name=:prefix_name )");
 	query.bindValue(":prefix_name", prefix_name);
@@ -188,6 +188,129 @@ bool Prefix::delPrefixByPrefixName(const QString prefix_name) const{
 	}
 	return true;
 }
+
+
+bool Prefix::addPrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive) const{
+	QSqlQuery query;
+	query.prepare("INSERT INTO prefix(name, path, wine_exec, wine_server, wine_loader, wine_dllpath, cdrom_mount, cdrom_drive) VALUES(:prefix_name, :prefix_path, :wine_exec, :wine_server, :wine_loader, :wine_dllpath, :cdrom_mount, :cdrom_drive);");
+
+	query.bindValue(":prefix_name", prefix_name);
+
+	if (prefix_path.isEmpty()){
+		query.bindValue(":prefix_path", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":prefix_path", prefix_path);
+	}
+
+	if (wine_exec.isEmpty()){
+		query.bindValue(":wine_exec", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":wine_exec", wine_exec);
+	}
+
+	if (wine_server.isEmpty()){
+		query.bindValue(":wine_server", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":wine_server", wine_server);
+	}
+
+	if (wine_loader.isEmpty()){
+		query.bindValue(":wine_loader", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":wine_loader", wine_loader);
+	}
+
+	if (wine_dllpath.isEmpty()){
+		query.bindValue(":wine_dllpath", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":wine_dllpath", wine_dllpath);
+	}
+
+	if (cdrom_mount.isEmpty()){
+		query.bindValue(":cdrom_mount", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":cdrom_mount", cdrom_mount);
+	}
+
+	if (cdrom_drive.isEmpty()){
+		query.bindValue(":cdrom_drive", QVariant(QVariant::String));
+	} else {
+		if (cdrom_drive==QObject::tr("<none>")){
+			query.bindValue(":cdrom_drive", QVariant(QVariant::String));
+		} else {
+			query.bindValue(":cdrom_drive", cdrom_drive);
+		}
+	}
+
+	if (!query.exec()){
+		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
+		return false;
+	}
+
+	return true;
+}
+
+bool Prefix::updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive, const QString old_prefix_name) const{
+	QSqlQuery query;
+	query.prepare("UPDATE prefix SET wine_dllpath=:wine_dllpath, wine_loader=:wine_loader, wine_server=:wine_server, wine_exec=:wine_exec, cdrom_mount=:cdrom_mount, cdrom_drive=:cdrom_drive, name=:prefix_name, path=:prefix_path WHERE name=:old_prefix_name");
+
+	query.bindValue(":prefix_name", prefix_name);
+	query.bindValue(":old_prefix_name", old_prefix_name);
+
+	if (prefix_path.isEmpty()){
+		query.bindValue(":prefix_path", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":prefix_path", prefix_path);
+	}
+
+	if (wine_exec.isEmpty()){
+		query.bindValue(":wine_exec", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":wine_exec", wine_exec);
+	}
+
+	if (wine_server.isEmpty()){
+		query.bindValue(":wine_server", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":wine_server", wine_server);
+	}
+
+	if (wine_loader.isEmpty()){
+		query.bindValue(":wine_loader", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":wine_loader", wine_loader);
+	}
+
+	if (wine_dllpath.isEmpty()){
+		query.bindValue(":wine_dllpath", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":wine_dllpath", wine_dllpath);
+	}
+
+	if (cdrom_mount.isEmpty()){
+		query.bindValue(":cdrom_mount", QVariant(QVariant::String));
+	} else {
+		query.bindValue(":cdrom_mount", cdrom_mount);
+	}
+
+	if (cdrom_drive.isEmpty()){
+		query.bindValue(":cdrom_drive", QVariant(QVariant::String));
+	} else {
+		if (cdrom_drive==QObject::tr("<none>")){
+			query.bindValue(":cdrom_drive", QVariant(QVariant::String));
+		} else {
+			query.bindValue(":cdrom_drive", cdrom_drive);
+		}
+	}
+
+	if (!query.exec()){
+		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
+		return false;
+	}
+
+	return true;
+}
+
 
 bool Prefix::isExistsByName(const QString prefix_name) const{
 	QSqlQuery query;
