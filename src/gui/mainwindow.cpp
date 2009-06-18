@@ -46,6 +46,8 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 
 	// Creating database classes
 	db_dir = new Dir();
+	db_icon = new Icon();
+	db_image = new Image();
 	db_prefix = new Prefix();
 
 	// Base GUI setup
@@ -652,291 +654,51 @@ void MainWindow::tableProc_ShowContextMenu(const QPoint){
 void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 	/*
 		Custom context menu for twPrograms
-	*/
 
-	QTreeWidgetItem *treeItem;
-	QSqlQuery query;
-	treeItem = twPrograms->currentItem();
 
-	twPrograms_ItemClick(treeItem, 0);
 
-	if (!treeItem)
-		return;
-
-	if (treeItem->parent()){
-		query.prepare("select cdrom_drive, cdrom_mount from prefix where name=:name");
-		query.bindValue(":name", treeItem->parent()->text(0));
-		query.exec();
-		query.first();
-	} else {
-		query.prepare("select cdrom_drive, cdrom_mount from prefix where name=:name");
-		query.bindValue(":name", treeItem->text(0));
-		query.exec();
-		query.first();
-	}
-
-	QString mount_drive, mount_point;
-	mount_drive = query.value(0).toString();
-	mount_point = query.value(1).toString();
-	query.clear();
-
-	QMenu* menuDirMountImages;
-	menuDirMountImages = new QMenu(this);
-
-	if (!treeItem->parent()){
-		dirRename->setEnabled(FALSE);
-		dirDelete->setEnabled(FALSE);
-	} else {
-		dirRename->setEnabled(TRUE);
-		dirDelete->setEnabled(TRUE);
-	}
-
-		QStringList arguments;
-
-			#ifdef _OS_LINUX_
-				arguments << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(mount_point);
-			#endif
-			#ifdef _OS_FREEBSD_
-				arguments << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(mount_point);
-			#endif
-
-			QProcess *myProcess = new QProcess(this);
-		myProcess->start(SH_BIN, arguments);
-
-			if (!myProcess->waitForFinished()){
-				qDebug() << "Make failed:" << myProcess->errorString();
-				return;
-			}
-			//else
-				QString out = myProcess->readAll();
-					if (!out.isEmpty()){
-						out = out.split(" ").first();
-						if (!out.isEmpty()){
-							#ifdef _OS_LINUX_
-							if (out.contains("loop")){
-							#endif
-							#ifdef _OS_FREEBSD_
-							if (out.contains("md")){
-							#endif
-								myProcess->close ();
-								arguments.clear();
-								#ifdef _OS_LINUX_
-								arguments << "losetup" << out;
-								#endif
-								#ifdef _OS_FREEBSD_
-								arguments << "mdconfig" <<  "-l" << tr("-u%1").arg(out.mid(7));
-								#endif
-
-								myProcess->start(SUDO_BIN, arguments);
-									if (!myProcess->waitForFinished()){
-										qDebug() << "Make failed:" << myProcess->errorString();
-										return;
-									} else {
-										out = myProcess->readAll();
-											if (!out.isEmpty()){
-												#ifdef _OS_LINUX_
-													out = out.split("/").last().split(")").first();
-												#endif
-												#ifdef _OS_FREEBSD_
-													out = out.split("/").last().mid(0, out.split("/").last().length()-1);
-												#endif
-											}
-									}
-							}
-						} else {
-							out = "none";
-						}
-					} else {
-						out = "none";
-					}
-
-			menuDirMount->clear();
-			menuDirMountImages = menuDirMount->addMenu(tr("mount [%1]").arg(out));
-			if (!mount_drive.isEmpty()){
-				menuDirMountImages->addAction(QIcon(":/data/drive_menu.png"), mount_drive);
-				menuDirMountImages->addSeparator();
-			}
-
-				query.exec("SELECT name FROM images ORDER BY name");
-				while (query.next()) {
-					menuDirMountImages->addAction(QIcon(":/data/cdrom_menu.png"), query.value(0).toString());
-				}
-
-			menuDirMount->addAction(dirUnmount);
-			menuDirMount->addAction(dirMountOther);
-
-			connect (menuDirMountImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountImages_triggered(QAction*)));
-
-		if (!mount_point.isEmpty()){
-			dirUnmount->setEnabled(TRUE);
-			dirMountOther->setEnabled(TRUE);
-			dirUnmount->setText(tr("umount [%1]").arg(mount_point));
-		} else {
-			dirUnmount->setEnabled(FALSE);
-			dirMountOther->setEnabled(FALSE);
-			dirUnmount->setText(tr("umount [none]"));
-		}
-
-		query.clear();
-
-		menuDir->exec(QCursor::pos());
-	return;
-}
-
-void MainWindow::menuMountImages_triggered ( QAction * action ){
-	/*
-	 * This slot process menuDirMountImages and menuIconMountImages triggered signal
-	 */
-
-	QSqlQuery query;
-	QString fileName, mountPoint;
-
-	if (action->text().contains("/dev/")){
-
-		fileName = action->text();
-	} else {
-		query.prepare("SELECT path FROM images WHERE name=:name");
-		query.bindValue(":name", action->text());
-		query.exec();
-		query.first();
-		if (query.isValid()){
-			fileName = query.value(0).toString();
-		}
-	}
-
-		query.clear();
-
-		QStringList dataList = SQL_getPrefixAndDirData(twPrograms->currentItem());
-		query.prepare("select cdrom_mount from prefix where id=:id");
-		query.bindValue(":id", dataList.at(0));
-		if (!query.exec()){
-			return;
-		}
-
-		query.first();
-
-		if (query.value(0).toString().isEmpty()){
-			QMessageBox::warning(this, tr("Error"), tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
-			return;
-		}
-
-		mountPoint = query.value(0).toString();
-
-		CoreFunction_ImageMount(fileName, mountPoint);
-
-	return;
-}
-
-void MainWindow::lstIcons_ShowContextMenu(const QPoint){
-	/*
-		Function showing context menu
-	*/
-
-	QListWidgetItem * item;
-	item = lstIcons->currentItem();
-
-	QTreeWidgetItem *treeItem;
-	QSqlQuery query;
-	treeItem = twPrograms->currentItem();
+	QListWidgetItem * item = lstIcons->currentItem();
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 
 	QString cdrom_drive, cdrom_mount;
+	QStringList result;
+	QList<QStringList> images;
 
 	if (!treeItem)
 		return;
 
 	if (treeItem->parent()){
-		query.prepare("select cdrom_drive, cdrom_mount from prefix where name=:name");
-		query.bindValue(":name", treeItem->parent()->text(0));
-		query.exec();
-		query.first();
+		result = db_prefix->getFieldsByPrefixName(treeItem->parent()->text(0));
 	} else {
-		query.prepare("select cdrom_drive, cdrom_mount from prefix where name=:name");
-		query.bindValue(":name", treeItem->text(0));
-		query.exec();
-		query.first();
+		result = db_prefix->getFieldsByPrefixName(treeItem->text(0));
 	}
 
-		cdrom_drive = query.value(0).toString();
-		cdrom_mount = query.value(1).toString();
+	cdrom_drive = result.at(7);
+	cdrom_mount = result.at(6);
 
-	query.clear();
+	menuIconMount->clear();
+	menuIconMount->setEnabled(FALSE);
 
+
+	if (!cdrom_drive.isEmpty() && !cdrom_mount.isEmpty()){
+		menuIconMount->setEnabled(TRUE);
 		QMenu* menuIconMountImages;
 		menuIconMountImages = new QMenu(this);
+		menuIconMountImages = menuIconMount->addMenu(tr("mount [%1]").arg(CoreLib->getMountedImages(cdrom_mount)));
 
-			QStringList arguments;
+		if (!cdrom_drive.isEmpty()){
+			menuIconMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
+			menuIconMountImages->addSeparator();
+		}
 
-			#ifdef _OS_LINUX_
-				arguments << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(cdrom_mount);
-			#endif
-			#ifdef _OS_FREEBSD_
-				arguments << "-c" << tr("%1 | grep %2").arg(MOUNT_BIN).arg(cdrom_mount);
-			#endif
+		menuIconMount->addAction(iconUnmount);
+		menuIconMount->addAction(iconMountOther);
 
-			QProcess *myProcess = new QProcess(this);
-		myProcess->start(SH_BIN, arguments);
-			if (!myProcess->waitForFinished()){
-				qDebug() << "Make failed:" << myProcess->errorString();
-				return;
-			}
-			//else
-				QString out = myProcess->readAll();
-					if (!out.isEmpty()){
-						out = out.split(" ").first();
-						if (!out.isEmpty()){
-							#ifdef _OS_LINUX_
-							if (out.contains("loop")){
-							#endif
-							#ifdef _OS_FREEBSD_
-							if (out.contains("md")){
-							#endif
-								myProcess->close ();
-								arguments.clear();
-								#ifdef _OS_LINUX_
-								arguments << "losetup" << out;
-								#endif
-								#ifdef _OS_FREEBSD_
-								arguments << "mdconfig" <<  "-l" << tr("-u%1").arg(out.mid(7));
-								#endif
-								myProcess->start(SUDO_BIN, arguments);
-									if (!myProcess->waitForFinished()){
-										qDebug() << "Make failed:" << myProcess->errorString();
-										return;
-									} else {
-										out = myProcess->readAll();
-										#ifdef _OS_LINUX_
-											out = out.split("/").last().mid(0, out.split("/").last().length()-2);
-										#endif
-										#ifdef _OS_FREEBSD_
-											out = out.split("/").last().mid(0, out.split("/").last().length()-1);
-										#endif
-
-									}
-							}
-						} else {
-							out = "none";
-						}
-					} else {
-						out = "none";
-					}
-
-			menuIconMount->clear();
-			menuIconMountImages = menuIconMount->addMenu(tr("mount [%1]").arg(out));
-
-			if (!cdrom_drive.isEmpty()){
-				menuIconMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
-				menuIconMountImages->addSeparator();
-			}
-
-			menuIconMount->addAction(iconUnmount);
-			menuIconMount->addAction(iconMountOther);
-
-				query.exec("SELECT name FROM images ORDER BY name");
-				while (query.next()) {
-					menuIconMountImages->addAction(QIcon(":/data/cdrom_menu.png") ,query.value(0).toString());
-				}
-				query.clear();
-			connect (menuIconMountImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountImages_triggered(QAction*)));
+		images = db_image->getFields();
+		for (int i = 0; i < images.size(); ++i) {
+			menuIconMountImages->addAction(QIcon(":/data/cdrom_menu.png") , images.at(i).at(0));
+		}
+		connect (menuIconMountImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountImages_triggered(QAction*)));
 
 		if (item){
 			if ((!cdrom_drive.isEmpty()) && (!cdrom_mount.isEmpty())){
@@ -959,8 +721,241 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint){
 
 		}
 
+		}
 
-		query.clear();
+
+
+	*/
+
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
+
+	QString cdrom_drive, cdrom_mount;
+	QStringList result;
+	QList<QStringList> images;
+
+	if (!treeItem)
+		return;
+
+	if (treeItem->parent()){
+		result = db_prefix->getFieldsByPrefixName(treeItem->parent()->text(0));
+	} else {
+		result = db_prefix->getFieldsByPrefixName(treeItem->text(0));
+	}
+
+	cdrom_drive = result.at(7);
+	cdrom_mount = result.at(6);
+
+	QMenu* menuDirMountImages;
+	menuDirMountImages = new QMenu(this);
+
+	if (!treeItem->parent()){
+		dirRename->setEnabled(FALSE);
+		dirDelete->setEnabled(FALSE);
+	} else {
+		dirRename->setEnabled(TRUE);
+		dirDelete->setEnabled(TRUE);
+	}
+
+	menuDirMount->clear();
+	menuDirMount->setEnabled(FALSE);
+
+	if (!cdrom_drive.isEmpty() && !cdrom_mount.isEmpty()){
+		menuDirMount->setEnabled(TRUE);
+		menuDirMountImages = menuDirMount->addMenu(tr("mount [%1]").arg(CoreLib->getMountedImages(cdrom_mount)));
+		if (!cdrom_drive.isEmpty()){
+			menuDirMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
+			menuDirMountImages->addSeparator();
+		}
+
+		images = db_image->getFields();
+		for (int i = 0; i < images.size(); ++i) {
+			menuDirMountImages->addAction(QIcon(":/data/cdrom_menu.png") , images.at(i).at(0));
+		}
+
+		menuDirMount->addAction(dirUnmount);
+		menuDirMount->addAction(dirMountOther);
+
+		connect (menuDirMountImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountImages_triggered(QAction*)));
+	}
+	if (!cdrom_mount.isEmpty()){
+		dirUnmount->setEnabled(TRUE);
+		dirMountOther->setEnabled(TRUE);
+		dirUnmount->setText(tr("umount [%1]").arg(cdrom_mount));
+	} else {
+		dirUnmount->setEnabled(FALSE);
+		dirMountOther->setEnabled(FALSE);
+		dirUnmount->setText(tr("umount [none]"));
+	}
+
+	menuDir->exec(QCursor::pos());
+	return;
+}
+
+void MainWindow::menuMountImages_triggered ( QAction * action ){
+	/*
+	 * This slot process menuDirMountImages and menuIconMountImages triggered signal
+	 */
+	bool ret;
+
+	if (twPrograms->currentItem()){
+		if (twPrograms->currentItem()->parent()){
+			ret = CoreLib->mountImage(action->text(), twPrograms->currentItem()->parent()->text(0));
+		} else {
+			ret =CoreLib->mountImage(action->text(), twPrograms->currentItem()->text(0));
+		}
+	}
+
+	if (ret){
+		statusBar()->showMessage(QObject::tr("Image successfully mounted"));
+	} else {
+		statusBar()->showMessage(QObject::tr("Image mount fail"));
+	}
+
+	/*
+
+
+
+
+		Mounting an image or drive to mountmount
+			@image -- an image (or drive) name
+			@mount -- mount point
+
+
+
+	//mount_cd9660
+
+	QStringList args;
+	QString arg;
+
+	#ifdef _OS_FREEBSD_
+
+
+		if ((image.right(3)=="iso") or (image.right(3)=="nrg")){
+			args << SH_BIN;
+			args << "-c";
+				arg = core->getWhichOut("mount_cd9660");
+				//FIXME: not tested
+				//if (image.right(3)=="nrg")
+				//	arg = arg.append(" -s 307200 ");
+				arg.append("  /dev/`mdconfig -f ");
+				arg.append(image);
+				arg.append("` ");
+				arg.append(mount);
+			args << arg;
+		} else {
+			args << MOUNT_BIN << "-t" << "cd9660" << image << mount;
+		}
+	#endif
+
+	#ifdef _OS_LINUX_
+		args << MOUNT_BIN;
+		args << image;
+		args << mount;
+
+		if (image.right(3)=="iso"){
+			args << "-o" << "loop";
+		}
+		if (image.right(3)=="nrg"){
+			args << "-o" << "loop,offset=307200";
+		}
+
+	#endif
+
+		//Fix args for kdesu\gksu\e.t.c.
+		if (!GUI_SUDO_BIN.contains(QRegExp("/sudo$"))){
+		   arg=args.join(" ");
+		   args.clear();
+		   args<<arg;
+		}
+
+		Process *exportProcess = new Process(args, GUI_SUDO_BIN, HOME_PATH, tr("Mounting..."), tr("Mounting..."));
+
+		if (exportProcess->exec()==QDialog::Accepted){
+			statusBar()->showMessage(tr("Image successfully mounted"));
+		} else {
+			statusBar()->showMessage(tr("Image mount fail"));
+		}
+
+	return;
+
+
+	*/
+
+	return;
+}
+
+void MainWindow::lstIcons_ShowContextMenu(const QPoint){
+	/*
+		Function showing context menu
+	*/
+
+	QListWidgetItem * item;
+	item = lstIcons->currentItem();
+
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
+
+	QString cdrom_drive, cdrom_mount;
+	QStringList result;
+	QList<QStringList> images;
+
+	if (!treeItem)
+		return;
+
+	if (treeItem->parent()){
+		result = db_prefix->getFieldsByPrefixName(treeItem->parent()->text(0));
+	} else {
+		result = db_prefix->getFieldsByPrefixName(treeItem->text(0));
+	}
+
+	cdrom_drive = result.at(7);
+	cdrom_mount = result.at(6);
+
+	menuIconMount->clear();
+	menuIconMount->setEnabled(FALSE);
+
+
+	if (!cdrom_drive.isEmpty() && !cdrom_mount.isEmpty()){
+		menuIconMount->setEnabled(TRUE);
+		QMenu* menuIconMountImages;
+		menuIconMountImages = new QMenu(this);
+		menuIconMountImages = menuIconMount->addMenu(tr("mount [%1]").arg(CoreLib->getMountedImages(cdrom_mount)));
+
+		if (!cdrom_drive.isEmpty()){
+			menuIconMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
+			menuIconMountImages->addSeparator();
+		}
+
+		menuIconMount->addAction(iconUnmount);
+		menuIconMount->addAction(iconMountOther);
+
+		images = db_image->getFields();
+		for (int i = 0; i < images.size(); ++i) {
+			menuIconMountImages->addAction(QIcon(":/data/cdrom_menu.png") , images.at(i).at(0));
+		}
+		connect (menuIconMountImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountImages_triggered(QAction*)));
+
+		if (item){
+			if ((!cdrom_drive.isEmpty()) && (!cdrom_mount.isEmpty())){
+				iconMount->setEnabled(TRUE);
+				iconUnmount->setEnabled(TRUE);
+				iconMount->setText(tr("mount [%1]").arg(cdrom_drive.split("/").last()));
+				iconUnmount->setText(tr("umount [%1]").arg(cdrom_mount));
+			} else {
+				iconMount->setEnabled(FALSE);
+				iconUnmount->setEnabled(FALSE);
+				iconMount->setText(tr("mount [none]"));
+				iconUnmount->setText(tr("umount [none]"));
+			}
+
+			if (!cdrom_drive.isEmpty()){
+				iconMountOther->setEnabled(TRUE);
+			} else {
+				iconMountOther->setEnabled(FALSE);
+			}
+
+		}
+
+		}
 
 		QListWidgetItem *iconItem;
 		iconItem=lstIcons->currentItem();
@@ -972,7 +967,7 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint){
 			iconDelete->setEnabled(TRUE);
 			iconCut->setEnabled(TRUE);
 			iconCopy->setEnabled(TRUE);
-			menuIconMount->setEnabled(TRUE);
+			//menuIconMount->setEnabled(TRUE);
 		} else {
 			iconRun->setEnabled(FALSE);
 			iconOptions->setEnabled(FALSE);
@@ -2250,7 +2245,7 @@ void MainWindow::iconMount_Click(void){
 		return;
 	}
 
-	CoreFunction_ImageMount(query.value(0).toString(), query.value(1).toString());
+//	CoreFunction_ImageMount(query.value(0).toString(), query.value(1).toString());
 
 	return;
 }
@@ -2619,7 +2614,7 @@ void MainWindow::dirMountOther_Click(void){
 
 
 	query.first();
-	CoreFunction_ImageMount(fileName, query.value(0).toString());
+//	CoreFunction_ImageMount(fileName, query.value(0).toString());
 	query.clear();
 
 	return;
@@ -2865,71 +2860,6 @@ bool MainWindow::SQL_isIconExistsByName(QString prefix_id, QString dir_id, QStri
 	query.clear();
 
 	return FALSE;
-}
-
-void MainWindow::CoreFunction_ImageMount(QString image, QString mount){
-	/*
-		Mounting an image or drive to mountmount
-			@image -- an image (or drive) name
-			@mount -- mount point
-	*/
-
-
-	//mount_cd9660
-
-	QStringList args;
-	QString arg;
-
-	#ifdef _OS_FREEBSD_
-
-
-		if ((image.right(3)=="iso") or (image.right(3)=="nrg")){
-			args << SH_BIN;
-			args << "-c";
-				arg = core->getWhichOut("mount_cd9660");
-				//FIXME: not tested
-				//if (image.right(3)=="nrg")
-				//	arg = arg.append(" -s 307200 ");
-				arg.append("  /dev/`mdconfig -f ");
-				arg.append(image);
-				arg.append("` ");
-				arg.append(mount);
-			args << arg;
-		} else {
-			args << MOUNT_BIN << "-t" << "cd9660" << image << mount;
-		}
-	#endif
-
-	#ifdef _OS_LINUX_
-		args << MOUNT_BIN;
-		args << image;
-		args << mount;
-
-		if (image.right(3)=="iso"){
-			args << "-o" << "loop";
-		}
-		if (image.right(3)=="nrg"){
-			args << "-o" << "loop,offset=307200";
-		}
-
-	#endif
-
-		//Fix args for kdesu\gksu\e.t.c.
-		if (!GUI_SUDO_BIN.contains(QRegExp("/sudo$"))){
-		   arg=args.join(" ");
-		   args.clear();
-		   args<<arg;
-		}
-
-		Process *exportProcess = new Process(args, GUI_SUDO_BIN, HOME_PATH, tr("Mounting..."), tr("Mounting..."));
-
-		if (exportProcess->exec()==QDialog::Accepted){
-			statusBar()->showMessage(tr("Image successfully mounted"));
-		} else {
-			statusBar()->showMessage(tr("Image mount fail"));
-		}
-
-	return;
 }
 
 void MainWindow::CoreFunction_ImageUnmount(QString mount){

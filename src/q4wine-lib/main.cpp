@@ -33,6 +33,10 @@ corelib::corelib(bool _GUI_MODE)
 {
     // Setting gui mode, if false - cli mode else gui mode
     this->_GUI_MODE=_GUI_MODE;
+
+	// Creating databases
+	db_image = new Image();
+	db_prefix = new Prefix();
 }
 
 corelib* createCoreLib(bool _GUI_MODE){
@@ -276,7 +280,7 @@ QStringList corelib::getWineDlls(QString prefix_lib_path) const{
 
 
 
-QString corelib::getWhichOut(QString fileName){
+QString corelib::getWhichOut(const QString fileName) const{
 	/*
 	 * Getting 'which' output;
 	 */
@@ -301,6 +305,125 @@ QString corelib::getWhichOut(QString fileName){
 	}
 
 	return "";
+}
+
+QString corelib::getMountedImages(const QString cdrom_mount) const{
+	QString image="";
+	QStringList arguments;
+
+	#ifdef _OS_LINUX_
+		arguments << "-c" << QObject::tr("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
+	#endif
+	#ifdef _OS_FREEBSD_
+		arguments << "-c" << QObject::tr("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
+	#endif
+
+	QProcess *myProcess = new QProcess();
+	myProcess->start(this->getSetting("system", "sh").toString(), arguments);
+	if (!myProcess->waitForFinished()){
+		qDebug() << "Make failed:" << myProcess->errorString();
+		return QString();
+	}
+
+	image = myProcess->readAll();
+		if (!image.isEmpty()){
+			image = image.split(" ").first();
+			if (!image.isEmpty()){
+				#ifdef _OS_LINUX_
+					if (image.contains("loop")){
+				#endif
+				#ifdef _OS_FREEBSD_
+					if (image.contains("md")){
+				#endif
+				myProcess->close ();
+				arguments.clear();
+				#ifdef _OS_LINUX_
+					arguments << "losetup" << image;
+				#endif
+				#ifdef _OS_FREEBSD_
+					arguments << "mdconfig" <<  "-l" << QObject::tr("-u%1").arg(image.mid(7));
+				#endif
+				myProcess->start(this->getSetting("system", "sudo").toString(), arguments);
+				if (!myProcess->waitForFinished()){
+					qDebug() << "Make failed:" << myProcess->errorString();
+					return QString();
+				} else {
+					image = myProcess->readAll();
+					#ifdef _OS_LINUX_
+						image = image.split("/").last().mid(0, image.split("/").last().length()-2);
+					#endif
+					#ifdef _OS_FREEBSD_
+						image = image.split("/").last().mid(0, image.split("/").last().length()-1);
+					#endif
+				}
+					}
+			} else {
+				image = "none";
+			}
+		} else {
+			image = "none";
+		}
+	return image;
+}
+
+bool corelib::mountImage(QString image_name, const QString prefix_name) const{
+  	QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);;
+
+	if (mount_point.isEmpty()){
+		QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
+		return FALSE;
+	}
+	if (image_name.isEmpty())
+		return FALSE;
+
+	if (!image_name.contains("/dev/")){
+		image_name = this->db_image->getPath(image_name);
+	}
+
+	QStringList args;
+	QString arg;
+
+	#ifdef _OS_FREEBSD_
+		if ((image_name.right(3)=="iso") or (image_name.right(3)=="nrg")){
+			args << this->getSetting("system", "sh").toString();
+			args << "-c";
+				arg = core->getWhichOut("mount_cd9660");
+				//FIXME: not tested
+				//if (image.right(3)=="nrg")
+				//	arg = arg.append(" -s 307200 ");
+				arg.append("  /dev/`mdconfig -f ");
+				arg.append(image_name);
+				arg.append("` ");
+				arg.append(mount_point);
+			args << arg;
+		} else {
+			args << this->getSetting("system", "mount").toString() << "-t" << "cd9660" << image_name << mount_point;
+		}
+	#endif
+
+	#ifdef _OS_LINUX_
+		args << this->getSetting("system", "mount").toString();
+		args << image_name;
+		args << mount_point;
+
+		if (image_name.right(3)=="iso"){
+			args << "-o" << "loop";
+		}
+		if (image_name.right(3)=="nrg"){
+			args << "-o" << "loop,offset=307200";
+		}
+
+	#endif
+
+		//Fix args for kdesu\gksu\e.t.c.
+		if (!this->getSetting("system", "gui_sudo").toString().contains(QRegExp("/sudo$"))){
+		   arg=args.join(" ");
+		   args.clear();
+		   args<<arg;
+		}
+
+		Process *exportProcess = new Process(args, this->getSetting("system", "gui_sudo").toString(), QDir::homePath(), QObject::tr("Mounting..."), QObject::tr("Mounting..."));
+		return exportProcess->exec();
 }
 
 

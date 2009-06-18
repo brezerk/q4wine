@@ -73,6 +73,7 @@
 #include "src/core/database/prefix.h"
 #include "src/core/database/dir.h"
 #include "src/core/database/icon.h"
+#include "src/core/database/image.h"
 
 #include "wisitem.h"
 #include "coremethods.h"
@@ -233,6 +234,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		Prefix *db_prefix;
 		Dir *db_dir;
 		Icon *db_icon;
+		Image *db_image;
 		CoreMethods *core;
 		QLibrary libq4wine;
 
@@ -307,8 +309,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		*/
 		void updateDtabaseConnectedItems(int currentPrefix = -1);
 
-
-		void CoreFunction_ImageMount(QString image, QString mount);
 		void CoreFunction_ImageUnmount(QString mount);
 
 		//Events definition

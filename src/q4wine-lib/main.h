@@ -50,6 +50,9 @@
 #include <QDebug>
 #include <QFileInfo>
 #include <QProcess>
+#include <QRegExp>
+
+#include "process.h"
 
 // FreeBSD support
 #ifdef _OS_FREEBSD_
@@ -74,6 +77,10 @@
 #endif
 
 #include "config.h"
+
+#include "src/core/database/prefix.h"
+#include "src/core/database/icon.h"
+#include "src/core/database/image.h"
 
 #include <iostream>
 using namespace std;
@@ -119,13 +126,28 @@ public:
 	 *
 	 * \return Return the full path of binary.
 	 */
-	QString getWhichOut (QString fileName);
+	QString getWhichOut (const QString fileName) const;
 
 	/*! \brief This function get cdrom devices from /etc/fstab file.
 	 *
 	 * \return Return an list of cdrom devices.
 	 */
 	QStringList getCdromDevices(void) const;
+
+	/*! \brief This function gets mouted image or media.
+	 *
+	 * \param  crom_mount	Mount point path.
+	 * \return Return an list of cdrom devices.
+	 */
+	QString getMountedImages(const QString cdrom_mount) const;
+
+	/*! \brief This function mount an image or drive to prefix mount point.
+	 *
+	 * \param  image_name	Image or drive name.
+	 * \param  prefix_name	Prefix name.
+	 * \return Return an list of cdrom devices.
+	 */
+	bool mountImage(QString image_name, const QString prefix_name) const;
 
 	/*! \brief This function builds wine dlls list for prefix_lib_path.
 	 *
@@ -146,6 +168,10 @@ public:
      * \return When using an interactive display type, this functions returns a user selected value.
      */
     int showError(const QString message, const bool info = true) const;
+
+	Prefix *db_prefix;
+	Image *db_image;
+
 }; // end of class corelib
 
 /*! \ingroup libq4wine
