@@ -150,26 +150,26 @@ QIcon IconSettings::loadIcon(QString iconName, QString themePath){
 }
 
 void IconSettings::getIconReccord(){
-	QList<QStringList> iconRec;
+	QStringList iconRec;
 
 	if (this->dir_name.isEmpty()){
-		iconRec = db_icon->getIconsInfoByPrefixName(this->prefix_name, this->icon_name);
+		iconRec = db_icon->getByName(this->prefix_name, this->dir_name, this->icon_name);
 	} else {
-		iconRec = db_icon->getIconsInfoByNames(this->prefix_name, this->dir_name, this->icon_name);
+		iconRec = db_icon->getByName(this->prefix_name, this->dir_name, this->icon_name);
 	}
 
-	txtName->setText(iconRec.at(0).at(1));
-	txtCmdArgs->setText(iconRec.at(0).at(9));
-	txtProgramPath->setText(iconRec.at(0).at(10));
+	txtName->setText(iconRec.at(1));
+	txtCmdArgs->setText(iconRec.at(9));
+	txtProgramPath->setText(iconRec.at(10));
 
 	iconPath.clear();
 
-	if (!iconRec.at(0).at(3).isEmpty()){
-		if (QFile(iconRec.at(0).at(3)).exists()){
-			cmdGetIcon->setIcon (QIcon(iconRec.at(0).at(3)));
-			iconPath=iconRec.at(0).at(3);
+	if (!iconRec.at(3).isEmpty()){
+		if (QFile(iconRec.at(3)).exists()){
+			cmdGetIcon->setIcon (QIcon(iconRec.at(3)));
+			iconPath=iconRec.at(3);
 		} else {
-			iconPath=iconRec.at(0).at(3);
+			iconPath=iconRec.at(3);
 			if (iconPath=="wineconsole"){
 				cmdGetIcon->setIcon(loadIcon("data/wineconsole.png", this->CoreLib->getSetting("app", "theme", false).toString()));
 			} else if (iconPath=="regedit"){
@@ -191,14 +191,14 @@ void IconSettings::getIconReccord(){
 		}
 	}
 
-	txtDesc->setText(iconRec.at(0).at(2));
-	txtDisplay->setText(iconRec.at(0).at(8));
-	txtWinedebug->setText(iconRec.at(0).at(6));
-	txtWorkDir->setText(iconRec.at(0).at(4));
-	txtDesktopSize->setText(iconRec.at(0).at(11));
-	spinNice->setValue(iconRec.at(0).at(12).toInt());
+	txtDesc->setText(iconRec.at(2));
+	txtDisplay->setText(iconRec.at(8));
+	txtWinedebug->setText(iconRec.at(6));
+	txtWorkDir->setText(iconRec.at(4));
+	txtDesktopSize->setText(iconRec.at(11));
+	spinNice->setValue(iconRec.at(12).toInt());
 
-	if (iconRec.at(0).at(7)=="1"){
+	if (iconRec.at(7)=="1"){
 		cbUseConsole->setCheckState(Qt::Checked);
 		txtWinedebug->setEnabled(TRUE);
 	} else {
@@ -206,7 +206,7 @@ void IconSettings::getIconReccord(){
 		txtWinedebug->setEnabled(FALSE);
 	}
 
-	QStringList override = iconRec.at(0).at(5).split(";");
+	QStringList override = iconRec.at(5).split(";");
 
 	QString overrideorder;
 

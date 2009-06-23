@@ -35,7 +35,6 @@ SET( SOURCES
 	${CMAKE_SOURCE_DIR}/src/gui/imagemanager.cpp
 	${CMAKE_SOURCE_DIR}/src/temporary/winetricks.cpp
 	${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.cpp
-	${CMAKE_SOURCE_DIR}/src/core/coremethods.cpp
 	${CMAKE_SOURCE_DIR}/src/wis/wisitem.cpp
 )
 
@@ -77,7 +76,6 @@ SET ( HEADERS
 	${CMAKE_SOURCE_DIR}/src/gui/imagemanager.h
 	${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
 	${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
-	${CMAKE_SOURCE_DIR}/src/core/coremethods.h
 	${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
 	${CMAKE_SOURCE_DIR}/src/core/database/initdb.h
 	${CMAKE_SOURCE_DIR}/config.h
@@ -117,6 +115,15 @@ SET ( UIS
 	${CMAKE_SOURCE_DIR}/src/uis/ImageManager.ui
 	${CMAKE_SOURCE_DIR}/src/temporary/winetricks.ui
 	${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.ui
+)
+
+
+SET ( LIB_MOC_HEADEDRS
+	${CMAKE_SOURCE_DIR}/src/gui/process.h
+)
+
+SET ( LIB_UIS
+	${CMAKE_SOURCE_DIR}/src/uis/Process.ui
 )
 
 SET ( RCCS
@@ -228,13 +235,16 @@ file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
 QT4_WRAP_UI( UI_HEADERS ${UIS})
 QT4_WRAP_CPP( MOC_SRCS ${MOC_HEADEDRS} )
 
+QT4_WRAP_UI( LIB_UI_HEADERS ${LIB_UIS})
+QT4_WRAP_CPP( LIB_MOC_SRCS ${LIB_MOC_HEADEDRS} )
+
 QT4_ADD_RESOURCES( RCC_SRCS ${RCCS} )
 QT4_ADD_TRANSLATION( QM_I18N ${I18N})
 
 INCLUDE_DIRECTORIES( ${HEADERS_DIR} )
 INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} )
 
-ADD_LIBRARY( q4wine-core SHARED ${Q4WINE-LIB-SOURCES} ${Q4WINE-LIB-HEADERS} )
+ADD_LIBRARY( q4wine-core SHARED ${Q4WINE-LIB-SOURCES} ${LIB_UI_HEADERS} ${LIB_MOC_SRCS} ${Q4WINE-LIB-HEADERS} ${QM_I18N} )
 
 ADD_EXECUTABLE( q4wine ${SOURCES} ${HEADERS} ${UI_HEADERS} ${MOC_SRCS} ${RCC_SRCS} ${QM_I18N} )
 TARGET_LINK_LIBRARIES( q4wine q4wine-core )

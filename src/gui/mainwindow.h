@@ -99,8 +99,8 @@ class QMenu;
 class QTextEdit;
 
 struct iconCopyBuffer {
-	QString dir_id;
-	QString prefix_id;
+	QString dir_name;
+	QString prefix_name;
 	bool move;
 	QStringList names;
 };
@@ -120,7 +120,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void getWineProccessInfo(void);
 		void CoreFunction_SetProcNicePriority(int priority, int pid);
 		void CoreFunction_ResizeContent(int tabIndex);
-
 		void menuMountImages_triggered ( QAction * action );
 
 		/*
@@ -180,7 +179,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		 */
 		void tablePrefix_ShowContextMenu(const QPoint);
 		void tablePrefix_UpdateContentList(const QModelIndex);
-
 		void tableProc_ShowContextMenu(const QPoint);
 		void tableProc_UpdateContentList(const QModelIndex);
 
@@ -188,54 +186,53 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		 * Context menu slots
 		 */
 			//Directory context
-			void dirAdd_Click(void);
-			void dirRename_Click(void);
-			void dirDelete_Click(void);
-			void dirUnmount_Click(void);
-			void dirMountOther_Click(void);
-			void dirConfigure_Click(void);
-			void dirInstall_Click(void);
-			void dirUninstall_Click(void);
+		void dirAdd_Click(void);
+		void dirRename_Click(void);
+		void dirDelete_Click(void);
+		void dirUnmount_Click(void);
+		void dirMountOther_Click(void);
+		void dirConfigure_Click(void);
+		void dirInstall_Click(void);
+		void dirUninstall_Click(void);
 
-			//Icon context
-			void iconAdd_Click(void);
-			void iconRun_Click(void);
-			void iconCut_Click(void);
-			void iconCopy_Click(void);
-			void iconPaste_Click(void);
-			void iconRename_Click(void);
-			void iconOption_Click(void);
-			void iconDelete_Click(void);
-			void iconMount_Click(void);
-			void iconMountOther_Click(void);
-			void iconUnmount_Click(void);
+		//Icon context
+		void iconAdd_Click(void);
+		void iconRun_Click(void);
+		void iconCut_Click(void);
+		void iconCopy_Click(void);
+		void iconPaste_Click(void);
+		void iconRename_Click(void);
+		void iconOption_Click(void);
+		void iconDelete_Click(void);
+		void iconMountOther_Click(void);
+		void iconUnmount_Click(void);
 
-			//Main menu slots
-			void mainExit_Click(void);
-			void mainPrograms_Click(void);
-			void mainImageManager_Click(void);
-			void mainProcess_Click(void);
-			void mainSetup_Click(void);
-			void mainPrefix_Click(void);
-			void mainAbout_Click(void);
-			void mainAboutQt_Click(void);
-			void mainExportIcons_Click(void);
-			void mainRun_Click(void);
-			void mainOptions_Click(void);
-			void mainInstall_Click(void);
+		//Main menu slots
+		void mainExit_Click(void);
+		void mainPrograms_Click(void);
+		void mainImageManager_Click(void);
+		void mainProcess_Click(void);
+		void mainSetup_Click(void);
+		void mainPrefix_Click(void);
+		void mainAbout_Click(void);
+		void mainAboutQt_Click(void);
+		void mainExportIcons_Click(void);
+		void mainRun_Click(void);
+		void mainOptions_Click(void);
+		void mainInstall_Click(void);
 	private:
 
-		 //! This is need for libq4wine-core.so import;
+		//! This is need for libq4wine-core.so import;
 		typedef void *CoreLibPrototype (bool);
-                CoreLibPrototype *CoreLibClassPointer;
-                corelib *CoreLib;
+			CoreLibPrototype *CoreLibClassPointer;
+			corelib *CoreLib;
 
 		//Classes
 		Prefix *db_prefix;
 		Dir *db_dir;
 		Icon *db_icon;
 		Image *db_image;
-		CoreMethods *core;
+
 		QLibrary libq4wine;
 
 		// Proxy
@@ -309,18 +306,8 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		*/
 		void updateDtabaseConnectedItems(int currentPrefix = -1);
 
-		void CoreFunction_ImageUnmount(QString mount);
-
 		//Events definition
 		void resizeEvent (QResizeEvent);
-
-		//void DeleteDirectory(QString path);
-
-		QStringList SQL_getPrefixAndDirData(QTreeWidgetItem *treeItem);
-		QStringList SQL_getPrefixAndDirInfo(QTreeWidgetItem *treeItem);
-		bool SQL_isIconExistsByName(QString prefix_id, QString dir_id, QString name);
-
-
 	protected:
 		// Event filter
 		bool eventFilter(QObject *obj, QEvent *event);
@@ -329,20 +316,20 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		//Resource\theme loader
 		QIcon CoreFunction_IconLoad(QString iconName);
 
-                QString HOME_PATH;
-                QString ROOT_PATH;
-                QString TEMP_PATH;
-                QString PREFIX_EI_PATH;
+		QString HOME_PATH;
+		QString ROOT_PATH;
+		QString TEMP_PATH;
+		QString PREFIX_EI_PATH;
 
-                QString WINE_DEFAULT_PREFIX;
-                QString DEFAULT_WINE_BIN, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS;
-                QString WRESTOOL_BIN, ICOTOOL_BIN;
-                QString TAR_BIN, MOUNT_BIN, UMOUNT_BIN, SUDO_BIN, GUI_SUDO_BIN, NICE_BIN, RENICE_BIN, SH_BIN;
-                QString CONSOLE_BIN, CONSOLE_ARGS;
-                QString THEME_NAME;
+		QString WINE_DEFAULT_PREFIX;
+		QString DEFAULT_WINE_BIN, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS;
+		QString WRESTOOL_BIN, ICOTOOL_BIN;
+		QString TAR_BIN, MOUNT_BIN, UMOUNT_BIN, SUDO_BIN, GUI_SUDO_BIN, NICE_BIN, RENICE_BIN, SH_BIN;
+		QString CONSOLE_BIN, CONSOLE_ARGS;
+		QString THEME_NAME;
 
-                bool SHOW_TRAREY_ICON;
-                bool _IS_TIMER_RUNNING;
+		bool SHOW_TRAREY_ICON;
+		bool _IS_TIMER_RUNNING;
 
 };
 

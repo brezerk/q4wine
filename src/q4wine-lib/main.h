@@ -51,6 +51,7 @@
 #include <QFileInfo>
 #include <QProcess>
 #include <QRegExp>
+#include <QTextCodec>
 
 #include "process.h"
 
@@ -149,6 +150,13 @@ public:
 	 */
 	bool mountImage(QString image_name, const QString prefix_name) const;
 
+	/*! \brief This function umount an image or drive from prefix mount point.
+	 *
+	 * \param  prefix_name	Prefix name.
+	 * \return Return an list of cdrom devices.
+	 */
+	bool umountImage(const QString prefix_name) const;
+
 	/*! \brief This function builds wine dlls list for prefix_lib_path.
 	 *
 	 * \param  prefix_lib_path	Path for wine libs.
@@ -161,16 +169,34 @@ public:
      */
     bool _GUI_MODE;
 
+	/*! \brief Runs process.
+	 *
+	 * \param  exec	  Executable path.
+	 * \param  args	  Arguments.
+	 * \param  dir	  Exec directory.
+	 * \return True on success.
+	 */
+	bool runProcess(const QString exec, const QStringList args, QString dir = "") const;
+
+
     /*! \brief Displays error message depending on _GUI_MODE variable value
      *
      * \param  message     Error message.
      * \param  info	   Define display type. If false - user interactive message.
      * \return When using an interactive display type, this functions returns a user selected value.
      */
-    int showError(const QString message, const bool info = true) const;
+	int showError(const QString message, const bool info) const;
+
+	/*! \brief Displays error message depending on _GUI_MODE variable value
+	 *
+	 * \param  message     Error message.
+	 */
+	void showError(const QString message) const;
 
 	Prefix *db_prefix;
 	Image *db_image;
+
+
 
 }; // end of class corelib
 

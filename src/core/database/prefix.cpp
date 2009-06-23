@@ -145,6 +145,51 @@ QStringList Prefix::getFieldsByPrefixName(const QString prefix_name) const{
 	return values;
 }
 
+QString Prefix::getId(const QString prefix_name) const{
+	QString value;
+	QSqlQuery query;
+
+	query.prepare("SELECT id FROM prefix WHERE name=:prefix_name");
+	query.bindValue(":prefix_name", prefix_name);
+
+	if (query.exec()){
+		query.first();
+		if (query.isValid()){
+		int i=0;
+			while (query.value(i).isValid()){
+				value.append(query.value(i).toString());
+				i++;
+			}
+		}
+	} else {
+		qDebug()<<"SqlError: "<<query.lastError();
+	}
+	return value;
+}
+
+
+QString Prefix::getPath(const QString prefix_name) const{
+	QString value;
+	QSqlQuery query;
+
+	query.prepare("SELECT path FROM prefix WHERE name=:prefix_name");
+	query.bindValue(":prefix_name", prefix_name);
+
+	if (query.exec()){
+		query.first();
+		if (query.isValid()){
+			if (query.value(0).toString().isEmpty()){
+				value = QDir::homePath();
+				value.append("/.wine");
+			} else {
+				value.append(query.value(0).toString());
+			}
+		}
+	} else {
+		qDebug()<<"SqlError: "<<query.lastError();
+	}
+	return value;
+}
 
 QStringList Prefix::getFieldsByPrefixId(const QString prefix_id) const{
 	QStringList values;

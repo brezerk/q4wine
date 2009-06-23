@@ -77,6 +77,14 @@ public:
 	*/
 	QList<QStringList> getIconsInfoByNames(const QString prefix_name, const QString dir_name, const QString icon_name = "") const;
 
+	QStringList getByName(const QString prefix_name, const QString dir_name, const QString icon_name = "") const;
+
+	bool copyIcon(const QString icon_name, const QString prefix_name, const QString dir_name, const QString new_icon_name, const QString new_prefix_name, const QString new_dir_name) const;
+
+	bool renameIcon(const QString icon_name, const QString prefix_name, const QString dir_name, const QString new_icon_name) const;
+
+
+
    /*! \brief This function gets all icons fields by prefix_name (optional by icon name) keys value from table.
 	*
 	* \param  prefix_name    A prefix name value.
@@ -149,6 +157,18 @@ public:
 	 * \return Return true on success.
 	 */
 	bool updateIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString icon_name, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0) const;
+
+	/*! \brief This function updates name, prefix_name and dir_name by old_name.
+	 *
+	 * \param  icon_name		A icon name value.
+  	 * \param  prefix_name		A dir name value.
+  	 * \param  dir_name			A dir name value.
+  	 * \param  old_icon_name	A old icon name value.
+	 * \return Return true on success.
+	 */
+	bool updateIcon(const QString icon_name, const QString prefix_id, const QString dir_id, const QString old_prefix_id, const QString old_dir_id, const QString old_icon_name) const;
+
+
 
  };
 

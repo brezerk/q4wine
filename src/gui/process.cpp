@@ -113,13 +113,10 @@ void Process::slotError(QProcess::ProcessError err){
 			break;
 			case 5:
 				QMessageBox::warning(this, tr("Error"), tr("Process: An unknown error occurred. This is the default return value of error()."));
-				break;
+			break;
 		}
-
-
 	reject ();
-
-			  }
+	}
 	return;
 }
 

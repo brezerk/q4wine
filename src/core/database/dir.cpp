@@ -106,3 +106,28 @@ bool Dir::isExistsByName(const QString prefix_name, const QString dir_name) cons
 
 	return false;
 }
+
+QString Dir::getId(const QString dir_name, const QString prefix_name) const{
+	QString value;
+	QSqlQuery query;
+
+	query.prepare("SELECT id FROM dir WHERE name=:dir_name and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
+	query.bindValue(":dir_name", dir_name);
+	query.bindValue(":prefix_name", prefix_name);
+
+	if (query.exec()){
+		query.first();
+		if (query.isValid()){
+		int i=0;
+			while (query.value(i).isValid()){
+				value.append(query.value(i).toString());
+				i++;
+			}
+		}
+	} else {
+		qDebug()<<"SqlError: "<<query.lastError();
+	}
+	return value;
+}
+
+

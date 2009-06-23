@@ -38,6 +38,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
+#include <QDir>
 #include <QVariant>
 
 
@@ -97,6 +98,20 @@ class Prefix
 	  * \return Return a list of table fields value or -1 on error.
 	  */
 	  QStringList getFieldsByPrefixId(const QString prefix_id) const;
+
+	 /*! \brief This function gets prefix id by name.
+	  *
+	  * \param  prefix_name    A prefix name value.
+	  * \return Return prefix id.
+	  */
+	  QString getId(const QString prefix_name) const;
+
+	 /*! \brief This function gets prefix path by name.
+	  *
+	  * \param  prefix_name    A prefix name value.
+	  * \return Return prefix path.
+	  */
+	  QString getPath(const QString prefix_name) const;
 
 	 /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
 	  *

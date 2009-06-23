@@ -367,16 +367,16 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 }
 
 bool corelib::mountImage(QString image_name, const QString prefix_name) const{
-  	QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);;
+  	QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
 
 	if (mount_point.isEmpty()){
-		QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
+		this->showError(QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
 		return FALSE;
 	}
 	if (image_name.isEmpty())
 		return FALSE;
 
-	if (!image_name.contains("/dev/")){
+	if (!image_name.contains("/")) {
 		image_name = this->db_image->getPath(image_name);
 	}
 
@@ -422,10 +422,121 @@ bool corelib::mountImage(QString image_name, const QString prefix_name) const{
 		   args<<arg;
 		}
 
-		Process *exportProcess = new Process(args, this->getSetting("system", "gui_sudo").toString(), QDir::homePath(), QObject::tr("Mounting..."), QObject::tr("Mounting..."));
-		return exportProcess->exec();
+		if (this->_GUI_MODE){
+			Process *proc;
+			proc = new Process(args, this->getSetting("system", "gui_sudo").toString(), QDir::homePath(), QObject::tr("Mounting..."), QObject::tr("Mounting..."));
+			return (proc->exec());
+		} else {
+			return (this->runProcess(this->getSetting("system", "gui_sudo").toString(), args));
+		}
 }
 
+bool corelib::umountImage(const QString prefix_name) const{
+  	QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
+
+	if (mount_point.isEmpty()){
+		this->showError(QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
+		return FALSE;
+	}
+
+	QStringList args;
+	QString arg;
+
+	#ifdef _OS_FREEBSD_
+		args.clear();
+		args << "-c" << tr("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(mount_point);
+
+		QProcess *myProcess = new QProcess(this);
+		myProcess->start(this->getSetting("system", "sh").toString(), args);
+		if (!myProcess->waitForFinished()){
+			qDebug() << "Make failed:" << myProcess->errorString();
+			return;
+		}
+
+		QString devid = myProcess->readAll();
+	#endif
+
+	args.clear();
+	args << this->getSetting("system", "umount").toString();
+	args << mount_point;
+
+	//Fix args for kdesu\gksu\e.t.c.
+	if (!this->getSetting("system", "gui_sudo").toString().contains(QRegExp("/sudo$"))){
+	   arg=args.join(" ");
+	   args.clear();
+	   args<<arg;
+	}
+
+	if (this->_GUI_MODE){
+		Process *proc;
+		proc = new Process(args, this->getSetting("system", "gui_sudo").toString(), QDir::homePath(), QObject::tr("Mounting..."), QObject::tr("Mounting..."));
+		return (proc->exec());
+	} else {
+		return (this->runProcess(this->getSetting("system", "gui_sudo").toString(), args));
+	}
+
+	#ifdef _OS_FREEBSD_
+		if (!devid.isEmpty()){
+			devid = devid.split(" ").first();
+			if (!devid.isEmpty()){
+				if (devid.contains("md")){
+					args.clear();
+					args << "mdconfig" <<  "-d" << tr("-u%1").arg(devid.mid(7));
+
+					//Fix args for kdesu\gksu\e.t.c.
+					if (!this->getSetting("system", "gui_sudo").toString().contains(QRegExp("/sudo$"))){
+					   arg=args.join(" ");
+					   args.clear();
+					   args<<arg;
+					}
+
+					if (this->_GUI_MODE){
+						Process *proc;
+						proc = new Process(args, this->getSetting("system", "gui_sudo").toString(), QDir::homePath(), QObject::tr("Mounting..."), QObject::tr("Mounting..."));
+						return (proc->exec());
+					} else {
+						return (this->runProcess(this->getSetting("system", "gui_sudo").toString(), args));
+					}
+				}
+			}
+		}
+	#endif
+
+	return TRUE;
+}
+
+bool corelib::runProcess(const QString exec, const QStringList args, QString dir) const{
+	if (dir.isEmpty())
+		dir=QDir::homePath();
+
+	QProcess *myProcess;
+	myProcess = new QProcess();
+	myProcess->setEnvironment(QProcess::systemEnvironment());
+	myProcess->setWorkingDirectory (dir);
+	myProcess->start(exec, args);
+
+	if (!myProcess->waitForFinished())
+		return FALSE;
+
+	// Getting env LANG variable
+	QString lang=getenv("LANG");
+	   lang=lang.split(".").at(1);
+
+	// If in is empty -- set UTF8 locale
+	if (lang.isEmpty())
+	   lang = "UTF8";
+
+	// Read STDERR with locale support
+	QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+	QString string = codec->toUnicode(myProcess->readAllStandardError());
+
+	if (!string.isEmpty()){
+		showError(QObject::tr("It seems the process crashed.<br><br>STDERR log:<br>%1").arg(string));
+		return FALSE;
+	}
+
+	return TRUE;
+}
 
 int corelib::showError(const QString message, const bool info) const{
     switch (this->_GUI_MODE){
@@ -436,7 +547,7 @@ int corelib::showError(const QString message, const bool info) const{
 		    return 0;
 		break;
 		case false:
-		    return QMessageBox::warning(0, QObject::tr("Error"), message, QMessageBox::Retry, QMessageBox::Ignore);
+			return QMessageBox::warning(0, QObject::tr("Error"), message, QMessageBox::Retry, QMessageBox::Ignore);
 		break;
 	    }
 	break;
@@ -445,4 +556,16 @@ int corelib::showError(const QString message, const bool info) const{
 	break;
     }
     return 0;
+}
+
+void corelib::showError(const QString message) const{
+	switch (this->_GUI_MODE){
+	case true:
+		QMessageBox::warning(0, QObject::tr("Error"), message);
+	break;
+	case false:
+		cout << "test"; // message.toLatin1();
+	break;
+	}
+	return;
 }

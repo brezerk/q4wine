@@ -118,7 +118,7 @@ void winetricks::downloadwinetricks () {
 		}
 	}
 
-        args.append(core->getSettingValue("system", "sh"));
+	args.append(core->getSettingValue("system", "sh"));
 	args.append("-c");
 	QString arg;
 		arg.append(core->getWhichOut("wget"));

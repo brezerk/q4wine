@@ -83,6 +83,15 @@ public:
 	 * \return Return true if exists.
 	 */
 	bool isExistsByName(const QString prefix_name, const QString dir_name) const;
+
+	/*! \brief This function gets prefix id by name.
+	 *
+	 * \param  dir_name		  A dir name value.
+	 * \param  prefix_name    A prefix name value.
+	 * \return Return prefix id.
+	 */
+	QString getId(const QString dir_name, const QString prefix_name) const;
+
 };
 
 #endif // DIR_H
