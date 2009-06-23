@@ -87,7 +87,10 @@
 #include "about.h"
 #include "appsettings.h"
 #include "run.h"
-#include "temporary/winetricks.h"
+
+#ifdef WITH_WINETOOLS
+  #include "temporary/winetricks.h"
+#endif
 
 #include <stdlib.h>
 #include <unistd.h>

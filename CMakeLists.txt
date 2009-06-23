@@ -33,8 +33,6 @@ SET( SOURCES
 	${CMAKE_SOURCE_DIR}/src/gui/process.cpp
 	${CMAKE_SOURCE_DIR}/src/gui/wizard.cpp
 	${CMAKE_SOURCE_DIR}/src/gui/imagemanager.cpp
-	${CMAKE_SOURCE_DIR}/src/temporary/winetricks.cpp
-	${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.cpp
 	${CMAKE_SOURCE_DIR}/src/wis/wisitem.cpp
 )
 
@@ -74,8 +72,6 @@ SET ( HEADERS
 	${CMAKE_SOURCE_DIR}/src/gui/process.h
 	${CMAKE_SOURCE_DIR}/src/gui/wizard.h
 	${CMAKE_SOURCE_DIR}/src/gui/imagemanager.h
-	${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
-	${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
 	${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
 	${CMAKE_SOURCE_DIR}/src/core/database/initdb.h
 	${CMAKE_SOURCE_DIR}/config.h
@@ -94,8 +90,6 @@ SET ( MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/gui/run.h
 	${CMAKE_SOURCE_DIR}/src/gui/wizard.h
 	${CMAKE_SOURCE_DIR}/src/gui/imagemanager.h
-	${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
-	${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
 	${CMAKE_SOURCE_DIR}/src/core/coremethods.h
 	#${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
 	#${CMAKE_SOURCE_DIR}/src/core/commandline.h
@@ -113,10 +107,35 @@ SET ( UIS
 	${CMAKE_SOURCE_DIR}/src/uis/Wizard.ui
 	${CMAKE_SOURCE_DIR}/src/uis/IconSettings.ui
 	${CMAKE_SOURCE_DIR}/src/uis/ImageManager.ui
-	${CMAKE_SOURCE_DIR}/src/temporary/winetricks.ui
-	${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.ui
 )
 
+
+IF (${WITH_WINETOOLS} MATCHES ON )
+	SET( SOURCES
+		${SOURCES}
+		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.cpp
+		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.cpp
+	)
+
+	SET ( HEADERS
+		${HEADERS}
+		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
+		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
+	)
+
+	SET ( MOC_HEADEDRS
+		${MOC_HEADEDRS}
+		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
+		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
+	)
+
+	SET ( UIS
+		${UIS}
+		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.ui
+		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.ui
+
+	)
+ENDIF (${WITH_WINETOOLS} MATCHES ON )
 
 SET ( LIB_MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/gui/process.h
@@ -212,6 +231,10 @@ ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
 IF (NOT DEFINED WITH_ICOTOOLS)
 	SET(WITH_ICOTOOLS "ON")
 ENDIF (NOT DEFINED WITH_ICOTOOLS)
+
+IF (NOT DEFINED WITH_WINETOOLS)
+	SET(WITH_WINETOOLS "OFF")
+ENDIF (NOT DEFINED WITH_WINETOOLS)
 
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )
 

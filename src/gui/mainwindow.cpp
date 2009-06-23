@@ -174,10 +174,10 @@ void MainWindow::cmdWinetricks_Click() {
 		QMessageBox::warning(this, tr("Error"), tr("<p>You do not set default console binary.</p><p>Set it into q4wine option dialog.</p>"));
 		return;
 	}
-
 	winetricks *w = new winetricks (cbPrefixes->currentText());
 	w->exec();
 	#endif
+
 	return;
 }
 
