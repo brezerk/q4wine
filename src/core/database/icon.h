@@ -57,14 +57,14 @@ public:
 	*
 	* \param  prefix_id    A prefixid value.
 	* \param  dir_id	   A prefixid value.
-	* \return Return a list of table fields value or -1 on error.
+	* \return Return a list of table fields.
 	*/
 	QList<QStringList> getIconsInfo(const QString prefix_id, const QString dir_id) const;
 
    /*! \brief This function gets all icons fields by prefixId key value from table.
 	*
 	* \param  prefix_id      A prefix id value.
-	* \return Return a list of table fields value or -1 on error.
+	* \return Return a list of table fields.
 	*/
 	QList<QStringList> getIconsInfo(const QString prefix_id) const;
 
@@ -73,23 +73,47 @@ public:
 	* \param  prefix_name    A prefix name value.
 	* \param  dir_name		 A dir name value.
 	* \param  icon_name      A icon name value (optional).
-	* \return Return a list of table fields value or -1 on error.
+	* \return Return a list of table fields.
 	*/
 	QList<QStringList> getIconsInfoByNames(const QString prefix_name, const QString dir_name, const QString icon_name = "") const;
 
+   /*! \brief This function gets icon fields by prefix_name, dir_name and icon name keys value from table.
+	*
+	* \param  prefix_name    A prefix name value.
+	* \param  dir_name		 A dir name value.
+	* \param  icon_name      A icon name value.
+	* \return Return a list of table fields.
+	*/
 	QStringList getByName(const QString prefix_name, const QString dir_name, const QString icon_name = "") const;
+	QList<QStringList> getByPrefixAndDirName(const QString prefix_name, const QString dir_name) const;
 
+   /*! \brief Copy icon.
+	*
+	* \param  prefix_name		A prefix name value.
+	* \param  dir_name			A dir name value.
+	* \param  icon_name			A icon name value.
+	* \param  new_prefix_name   A prefix name value.
+	* \param  new_dir_name		A dir name value.
+	* \param  new_icon_name     A icon name value.
+	* \return Return a list of table fields.
+	*/
 	bool copyIcon(const QString icon_name, const QString prefix_name, const QString dir_name, const QString new_icon_name, const QString new_prefix_name, const QString new_dir_name) const;
 
+   /*! \brief Rename icon.
+	*
+	* \param  prefix_name		A prefix name value.
+	* \param  dir_name			A dir name value.
+	* \param  icon_name			A icon name value.
+	* \param  new_icon_name     A icon name value.
+	* \return Return a list of table fields.
+	*/
 	bool renameIcon(const QString icon_name, const QString prefix_name, const QString dir_name, const QString new_icon_name) const;
-
-
 
    /*! \brief This function gets all icons fields by prefix_name (optional by icon name) keys value from table.
 	*
 	* \param  prefix_name    A prefix name value.
 	* \param  icon_name      A icon name value (optional).
-	* \return Return a list of table fields value or -1 on error.
+	* \return Return a list of table fields value.
 	*/
 	QList<QStringList> getIconsInfoByPrefixName(const QString prefix_name, const QString icon_name = "") const;
 

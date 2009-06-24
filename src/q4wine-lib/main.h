@@ -157,6 +157,22 @@ public:
 	 */
 	bool umountImage(const QString prefix_name) const;
 
+	/*! \brief Open icon folder.
+	 *
+	 * \param  prefix_name	Prefix name.
+	 * \param  dir_name	Prefix name.
+	 * \param  icon_name	Prefix name.
+	 * \return Return true on success.
+	 */
+	bool openIconDirectry(const QString prefix_name, const QString dir_name, const QString icon_name) const;
+
+	/*! \brief Open prefix folder.
+	 *
+	 * \param  prefix_name	Prefix name.
+	 * \return Return true on success.
+	 */
+	bool openPrefixDirectry(const QString prefix_name) const;
+
 	/*! \brief This function builds wine dlls list for prefix_lib_path.
 	 *
 	 * \param  prefix_lib_path	Path for wine libs.
@@ -176,8 +192,7 @@ public:
 	 * \param  dir	  Exec directory.
 	 * \return True on success.
 	 */
-	bool runProcess(const QString exec, const QStringList args, QString dir = "") const;
-
+	bool runProcess(const QString exec, const QStringList args, QString dir = "", bool showLog = TRUE) const;
 
     /*! \brief Displays error message depending on _GUI_MODE variable value
      *
@@ -195,6 +210,7 @@ public:
 
 	Prefix *db_prefix;
 	Image *db_image;
+	Icon *db_icon;
 
 
 

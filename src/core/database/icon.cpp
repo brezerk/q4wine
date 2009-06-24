@@ -117,6 +117,39 @@ QList<QStringList> Icon::getIconsInfoByNames(const QString prefix_name, const QS
 	return valuelist;
 }
 
+QList<QStringList> Icon::getByPrefixAndDirName(const QString prefix_name, const QString dir_name) const{
+	QList<QStringList> valuelist;
+	QSqlQuery query;
+	//                         0   1     2     3          4       5         6          7           8        9        10    11       12    13         14
+	if (dir_name.isEmpty()){
+		query.prepare("SELECT id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id ISNULL");
+	} else {
+		query.prepare("SELECT id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name1))");
+		query.bindValue(":dir_name", dir_name);
+		query.bindValue(":prefix_name1", prefix_name);
+	}
+	query.bindValue(":prefix_name", prefix_name);
+
+
+
+	if (query.exec()){
+		while (query.next()) {
+			QStringList values;
+			int i=0;
+			while (query.value(i).isValid()){
+				values.append(query.value(i).toString());
+				i++;
+			}
+			valuelist.append(values);
+		}
+	} else {
+		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
+		valuelist.clear();
+	}
+
+	return valuelist;
+}
+
 
 QStringList Icon::getByName(const QString prefix_name, const QString dir_name, const QString icon_name) const{
 	QStringList valuelist;

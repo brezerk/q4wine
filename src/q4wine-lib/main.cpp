@@ -35,6 +35,7 @@ corelib::corelib(bool _GUI_MODE)
     this->_GUI_MODE=_GUI_MODE;
 
 	// Creating databases
+	db_icon = new Icon();
 	db_image = new Image();
 	db_prefix = new Prefix();
 }
@@ -302,6 +303,8 @@ QString corelib::getWhichOut(const QString fileName) const{
 
 	if (!string.isEmpty()){
 		return string.trimmed();
+	} else {
+		this->showError(QObject::tr("Can't find or execute '%1' binary. See INSTALL file for application depends.").arg(fileName));
 	}
 
 	return "";
@@ -505,7 +508,20 @@ bool corelib::umountImage(const QString prefix_name) const{
 	return TRUE;
 }
 
-bool corelib::runProcess(const QString exec, const QStringList args, QString dir) const{
+bool corelib::openIconDirectry(const QString prefix_name, const QString dir_name, const QString icon_name) const{
+	QStringList result = db_icon->getByName(prefix_name, dir_name, icon_name);
+	QStringList args;
+	args<<result.at(4);
+	return this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
+}
+
+bool corelib::openPrefixDirectry(const QString prefix_name) const{
+	QStringList args;
+	args<<db_prefix->getPath(prefix_name);
+	return this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
+}
+
+bool corelib::runProcess(const QString exec, const QStringList args, QString dir, bool showLog) const{
 	if (dir.isEmpty())
 		dir=QDir::homePath();
 
@@ -518,23 +534,24 @@ bool corelib::runProcess(const QString exec, const QStringList args, QString dir
 	if (!myProcess->waitForFinished())
 		return FALSE;
 
-	// Getting env LANG variable
-	QString lang=getenv("LANG");
-	   lang=lang.split(".").at(1);
+	if (showLog){
+		// Getting env LANG variable
+		QString lang=getenv("LANG");
+		   lang=lang.split(".").at(1);
 
-	// If in is empty -- set UTF8 locale
-	if (lang.isEmpty())
-	   lang = "UTF8";
+		// If in is empty -- set UTF8 locale
+		if (lang.isEmpty())
+		   lang = "UTF8";
 
-	// Read STDERR with locale support
-	QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
-	QString string = codec->toUnicode(myProcess->readAllStandardError());
+		// Read STDERR with locale support
+		QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+		QString string = codec->toUnicode(myProcess->readAllStandardError());
 
-	if (!string.isEmpty()){
-		showError(QObject::tr("It seems the process crashed.<br><br>STDERR log:<br>%1").arg(string));
-		return FALSE;
+		if (!string.isEmpty()){
+			showError(QObject::tr("It seems the process crashed.<br><br>STDERR log:<br>%1").arg(string));
+			return FALSE;
+		}
 	}
-
 	return TRUE;
 }
 

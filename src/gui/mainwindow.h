@@ -48,9 +48,6 @@
 #include <QtGui>
 #include <QSqlError>
 #include <QStringList>
-#include <QSqlQuery>
-#include <QSqlRelation>
-#include <QSqlRelationalTableModel>
 
 #include <QTimer>
 #include <QTableWidget>
@@ -119,9 +116,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 	private slots:
 
-		//Core functions
 		void getWineProccessInfo(void);
-		void CoreFunction_SetProcNicePriority(int priority, int pid);
 		void CoreFunction_ResizeContent(int tabIndex);
 		void menuMountImages_triggered ( QAction * action );
 
@@ -189,6 +184,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		 * Context menu slots
 		 */
 			//Directory context
+		void dirOpenDir_Click(void);
 		void dirAdd_Click(void);
 		void dirRename_Click(void);
 		void dirDelete_Click(void);
@@ -199,6 +195,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void dirUninstall_Click(void);
 
 		//Icon context
+		void iconOpenDir_Click(void);
 		void iconAdd_Click(void);
 		void iconRun_Click(void);
 		void iconCut_Click(void);
@@ -253,7 +250,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QMenu *menuIconMount;
 
 		void createTrayIcon();
-		void SetMeVisible(bool visible);
+		void setMeVisible(bool visible);
 
 		QAction *processKillSelected;
 		QAction *processKillWine;
@@ -268,6 +265,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QAction *prefixSettings;
 
 		// Directories control for context menu
+		QAction *dirOpenDir;
 		QAction *dirAdd;
 		QAction *dirRun;
 		QAction *dirRename;
@@ -279,6 +277,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QAction *dirUninstall;
 
 		// Icons control for context menu
+		QAction *iconOpenDir;
 		QAction *iconRun;
 		QAction *iconAdd;
 		QAction *iconRename;
@@ -296,12 +295,16 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QToolBar *prefixToolBar;
 
 		// Settings functions
-		void CoreFunction_CreateMenus(void);
-		void CoreFunction_CreateToolBars(void);
+		void createMenuActions(void);
+		void createToolBarActions(void);
 		void getSettings(void);
+
+
+		//FIXME: Remove in to core lib
 		void CoreFunction_WineRunAutorunItems(void);
 		void CoreFunction_WineRunProgram(QString exec, QStringList args, QString wrkdir);
 		void CoreFunction_WinePrepareRunParams(ExecObject execObj);
+		void CoreFunction_SetProcNicePriority(int priority, int pid);
 
 	   /*! \brief This function updates all database connectd widgets to current state.
 		*
@@ -317,7 +320,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void closeEvent(QCloseEvent *event);
 
 		//Resource\theme loader
-		QIcon CoreFunction_IconLoad(QString iconName);
+		QIcon loadIcon(QString iconName);
 
 		QString HOME_PATH;
 		QString ROOT_PATH;

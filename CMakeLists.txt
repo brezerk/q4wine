@@ -36,14 +36,6 @@ SET( SOURCES
 	${CMAKE_SOURCE_DIR}/src/wis/wisitem.cpp
 )
 
-SET( Q4WINE-LIB-SOURCES
-        ${CMAKE_SOURCE_DIR}/src/q4wine-lib/main.cpp
-)
-
-SET( Q4WINE-LIB-HEADERS
-        ${CMAKE_SOURCE_DIR}/src/q4wine-lib/main.h
-)
-
 SET ( HEADERS_DIR
 	${CMAKE_SOURCE_DIR}
 	${CMAKE_SOURCE_DIR}/src
@@ -143,6 +135,47 @@ SET ( LIB_MOC_HEADEDRS
 
 SET ( LIB_UIS
 	${CMAKE_SOURCE_DIR}/src/uis/Process.ui
+)
+
+
+SET( Q4WINE-LIB-SOURCES
+		${CMAKE_SOURCE_DIR}/src/q4wine-lib/main.cpp
+		${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
+		${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
+		${CMAKE_SOURCE_DIR}/src/core/database/dir.cpp
+		${CMAKE_SOURCE_DIR}/src/core/database/icon.cpp
+		${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
+)
+
+SET( Q4WINE-LIB-HEADERS
+		${CMAKE_SOURCE_DIR}/src/q4wine-lib/main.h
+		${CMAKE_SOURCE_DIR}/config.h
+		 ${CMAKE_SOURCE_DIR}/src/core/database/db.h
+		${CMAKE_SOURCE_DIR}/src/core/database/prefix.h
+		${CMAKE_SOURCE_DIR}/src/core/database/dir.h
+		${CMAKE_SOURCE_DIR}/src/core/database/icon.h
+		${CMAKE_SOURCE_DIR}/src/core/database/image.h
+)
+
+SET( Q4WINE-CLI-SOURCES
+		${CMAKE_SOURCE_DIR}/src/q4wine-cli/main.cpp
+		${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
+		${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
+		${CMAKE_SOURCE_DIR}/src/core/database/dir.cpp
+		${CMAKE_SOURCE_DIR}/src/core/database/icon.cpp
+		${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
+		${CMAKE_SOURCE_DIR}/src/gui/process.cpp
+)
+
+SET( Q4WINE-CLI-HEADERS
+		${CMAKE_SOURCE_DIR}/src/q4wine-cli/main.h
+		${CMAKE_SOURCE_DIR}/config.h
+		${CMAKE_SOURCE_DIR}/src/core/database/db.h
+		${CMAKE_SOURCE_DIR}/src/core/database/prefix.h
+		${CMAKE_SOURCE_DIR}/src/core/database/dir.h
+		${CMAKE_SOURCE_DIR}/src/core/database/icon.h
+		${CMAKE_SOURCE_DIR}/src/core/database/image.h
+		${CMAKE_SOURCE_DIR}/src/gui/process.h
 )
 
 SET ( RCCS
@@ -269,18 +302,24 @@ INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} )
 
 ADD_LIBRARY( q4wine-core SHARED ${Q4WINE-LIB-SOURCES} ${LIB_UI_HEADERS} ${LIB_MOC_SRCS} ${Q4WINE-LIB-HEADERS} ${QM_I18N} )
 
+ADD_EXECUTABLE( q4wine-cli ${Q4WINE-CLI-SOURCES} ${Q4WINE-CLI-HEADERS} ${QM_I18N} ${LIB_UI_HEADERS} ${LIB_MOC_SRCS})
+
 ADD_EXECUTABLE( q4wine ${SOURCES} ${HEADERS} ${UI_HEADERS} ${MOC_SRCS} ${RCC_SRCS} ${QM_I18N} )
-TARGET_LINK_LIBRARIES( q4wine q4wine-core )
+
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
-	TARGET_LINK_LIBRARIES( q4wine ${QT_LIBRARIES} )
+	TARGET_LINK_LIBRARIES( q4wine ${QT_LIBRARIES} q4wine-core)
+	TARGET_LINK_LIBRARIES( q4wine-cli ${QT_LIBRARIES} q4wine-core)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES Linux)
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 	SET(BSD_LIBS -lkvm)
-	  TARGET_LINK_LIBRARIES( q4wine ${QT_LIBRARIES} ${BSD_LIBS} )
+	TARGET_LINK_LIBRARIES( q4wine ${QT_LIBRARIES} ${BSD_LIBS} q4wine-core)
+	TARGET_LINK_LIBRARIES( q4wine-cli ${QT_LIBRARIES} ${BSD_LIBS} q4wine-core)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
+
+install(TARGETS q4wine-cli DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
 install(TARGETS q4wine DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/theme DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine)
 install(FILES ${QM_I18N} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine/i18n)

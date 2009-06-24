@@ -6,15 +6,20 @@ Changelog
 ***********************************************
 
 Version 0.113
- Fixed:
+ Added:
+  - Added "open prefix directory"\"open icon directory" menu items;
+  - Added xdg-utils support (note: now it is in the depends list)
+  - Added q4wine-cli console utility for wine applications and prefixes management.
+  - Added libq4wine implementation;
+  - Added translation file for Portuguese (Brazil) by Marcio Moraes;
   - Added *.xpm filter to icon import patten;
+ Fixed:
   - Some fixes for q4wine.desktop (thx to Eugene Pivnev);
   - Fixed GUI bug: Text fields size, on some desktop configurations, are too small to edit;
   - Fixed a lot of English spelling errors (thx Sergey Kishchenko (tilarids));
-  - Added libq4wine implementation;
-  - Added translation file for Portuguese (Brazil) by Marcio Moraes;
-  - Source code rewriting\reorganizing in progress..... ;
   - First steps for source code documentation via Doxygen....;
+  - Total code reorganize;
+  - Database engine rewrite;
 
 Version 0.112-r1
  Fixed:
