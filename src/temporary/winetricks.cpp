@@ -31,16 +31,29 @@
 
 winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
-	core = new CoreMethods();
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
+
+	if (!libq4wine.load()){
+		libq4wine.load();
+	}
+
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib = (corelib *)CoreLibClassPointer(true);
+
+	db_prefix = new Prefix();
 
 	this->winetricks_bin.append(QDir::homePath());
-        this->winetricks_bin.append("/.config/");
-        this->winetricks_bin.append(APP_SHORT_NAME);
-        this->winetricks_bin.append("/winetricks");
+	this->winetricks_bin.append("/.config/");
+	this->winetricks_bin.append(APP_SHORT_NAME);
+	this->winetricks_bin.append("/winetricks");
         
-	this->prefix_path = core->getPrefixPath(prefixName);
-	this->console_bin = core->getSettingValue("console", "bin");
-	this->console_args = core->getSettingValue("console", "args");
+	qDebug()<<this->winetricks_bin;
+
+	this->prefix_path = db_prefix->getPath(prefixName);
+	this->console_bin = CoreLib->getSetting("console", "bin").toString();
+	this->console_args = CoreLib->getSetting("console", "args", FALSE).toString();
 
 	setupUi(this);
 
@@ -48,17 +61,12 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
 	connect (cmdExit, SIGNAL (clicked()), this, SLOT(accept()));
 	connect (cmdInstWinetricks, SIGNAL (clicked()), this, SLOT (install_winetricks()));
 
-        parse();
-        //fill list
-        QString str;
-        foreach (str, names) {
-            lstMain->addItem(str);
-        }
-}
-
-winetricks::~winetricks()
-{
-	delete core;
+	parse();
+	//fill list
+	QString str;
+	foreach (str, names) {
+		lstMain->addItem(str);
+	}
 }
 
 void winetricks::install_winetricks() {
@@ -66,8 +74,9 @@ void winetricks::install_winetricks() {
 }
 
 void winetricks::run_winetricks(){
-        if (!QFile(this->winetricks_bin).exists()){
-                QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
+
+	if (!QFile(this->winetricks_bin).exists()){
+		QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
 		return;
 	}
 
@@ -81,16 +90,34 @@ void winetricks::run_winetricks(){
 		}
 	}
 
-	args.append(core->getSettingValue("system", "sh"));
+	args.append(CoreLib->getSetting("system", "sh").toString());
 	args.append("-c");
 
 	QString arg;
+		if (!CoreLib->getSetting("network", "host", false).toString().isEmpty()){
+			arg.append("http_proxy=\"http://");
+			arg.append(CoreLib->getSetting("network", "host", false).toString());
+			if (!CoreLib->getSetting("network", "port", false).toString().isEmpty()){
+				arg.append(":");
+				arg.append(CoreLib->getSetting("network", "port", false).toString());
+			}
+			arg.append("\" ftp_proxy=\"http://");
+			arg.append(CoreLib->getSetting("network", "host", false).toString());
+			if (!CoreLib->getSetting("network", "port", false).toString().isEmpty()){
+				arg.append(":");
+				arg.append(CoreLib->getSetting("network", "port", false).toString());
+			}
+			arg.append("\" ");
+		}
+
 		arg.append("WINEPREFIX=");
 		arg.append(this->prefix_path);
 		arg.append(" ");
 		arg.append(this->winetricks_bin);
 		arg.append(" ");
 		arg.append(lstMain->currentItem()->text());
+
+		qDebug()<<arg;
 
 	args.append(arg);
 
@@ -118,16 +145,33 @@ void winetricks::downloadwinetricks () {
 		}
 	}
 
-	args.append(core->getSettingValue("system", "sh"));
+	args.append(CoreLib->getSetting("system", "sh").toString());
 	args.append("-c");
 	QString arg;
-		arg.append(core->getWhichOut("wget"));
-                arg.append(" http://kegel.com/wine/winetricks -O ");
-                arg.append(this->winetricks_bin);
-                arg.append(" && ");
-                arg.append(core->getWhichOut("chmod"));
-                arg.append(" +x ");
-                arg.append(this->winetricks_bin);
+
+		if (!CoreLib->getSetting("network", "host", false).toString().isEmpty()){
+			arg.append("http_proxy=\"http://");
+			arg.append(CoreLib->getSetting("network", "host", false).toString());
+			if (!CoreLib->getSetting("network", "port", false).toString().isEmpty()){
+				arg.append(":");
+				arg.append(CoreLib->getSetting("network", "port", false).toString());
+			}
+			arg.append("\" ftp_proxy=\"http://");
+			arg.append(CoreLib->getSetting("network", "host", false).toString());
+			if (!CoreLib->getSetting("network", "port", false).toString().isEmpty()){
+				arg.append(":");
+				arg.append(CoreLib->getSetting("network", "port", false).toString());
+			}
+			arg.append("\" ");
+		}
+
+		arg.append(CoreLib->getWhichOut("wget"));
+		arg.append(" http://kegel.com/wine/winetricks -O ");
+		arg.append(this->winetricks_bin);
+		arg.append(" && ");
+		arg.append(CoreLib->getWhichOut("chmod"));
+		arg.append(" +x ");
+		arg.append(this->winetricks_bin);
 
 	args.append(arg);
 

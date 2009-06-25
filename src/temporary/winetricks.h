@@ -38,41 +38,50 @@
 #include <QProcess>
 #include <QMessageBox>
 #include <QtGui>
-#include "coremethods.h"
+#include <QLibrary>
 #include "process.h"
+
+#include "src/core/database/prefix.h"
+
+#include <q4wine-lib/main.h>
 
 class winetricks : public QDialog, public Ui::winetricks {
 	Q_OBJECT
 	Q_DISABLE_COPY(winetricks)
 public:
 	winetricks(QString prefixName, QWidget * parent = 0, Qt::WFlags f = 0);
-	virtual ~winetricks();
 	QString _prefixName;
 
 protected:
 	//virtual void changeEvent(QEvent *e);
 
-	private slots:
+private slots:
+	void on_lstMain_itemClicked(QListWidgetItem* item);
+	void run_winetricks();
+	void install_winetricks();
 
-                void on_lstMain_itemClicked(QListWidgetItem* item);
+private:
+	//! This is need for libq4wine-core.so import;
+	typedef void *CoreLibPrototype (bool);
+		CoreLibPrototype *CoreLibClassPointer;
+		corelib *CoreLib;
 
-  void run_winetricks();
-		void install_winetricks();
-        private:
-		QString console_bin;
-		QString console_args;
-		QString prefix_path;
-		QString winetricks_bin;
+	QLibrary libq4wine;
 
-		void downloadwinetricks();
-		void removefile(QString);
-		CoreMethods *core;
+	Prefix *db_prefix;
 
-                void parse();
-                void addToList (QString arg);
+	QString console_bin;
+	QString console_args;
+	QString prefix_path;
+	QString winetricks_bin;
 
-                QStringList names;
-                QStringList descs;
+	void downloadwinetricks();
+	void removefile(QString);
+	void parse();
+	void addToList (QString arg);
+
+	QStringList names;
+	QStringList descs;
 };
 
 #endif // WINETRICKS_H

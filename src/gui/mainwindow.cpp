@@ -1205,7 +1205,7 @@ void MainWindow::cmdUpdateFake_Click(){
 }
 
 void MainWindow::processKillWine_Click(){
-	// Фенкция убивания процесса вина (префикс таки обрабатывается =))
+	// Function for killling wineserver for current prefix
 	int rowNum;
 	rowNum = tableProc->currentRow();
 
@@ -1214,14 +1214,7 @@ void MainWindow::processKillWine_Click(){
 		prefixPath = tableProc->item(rowNum, 3)->text();
 
 		if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a TREM(-9) signal to all wine proccess with WINEPREFIX='%1'<br><br>Do you really want to proceed?").arg(tableProc->item(rowNum, 3)->text()), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
-			QString command;
-
-			if (!prefixPath.isEmpty())
-				command=tr("env WINEPREFIX=\"%1\" wineserver -kill").arg(tableProc->item(rowNum, 3)->text());
-			else
-				command="wineserver -kill";
-					  if (system(command.toAscii().data())==-1)
-						QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(command.toAscii().data()), QMessageBox::Ok);
+			CoreLib->killWineServer(prefixPath);
 		}
 	}
 	return;

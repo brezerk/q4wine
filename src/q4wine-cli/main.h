@@ -27,4 +27,19 @@
  *   your version.                                                         *
  ***************************************************************************/
 
+#include <QtCore>
+#include <QTextStream>
+#include <QList>
+#include <QStringList>
+#include "config.h"
+
+#include <q4wine-lib/main.h>
+
+
+#include "src/core/database/initdb.h"
+#include "src/core/database/db.h"
+#include "src/core/database/prefix.h"
+#include "src/core/database/dir.h"
+#include "src/core/database/icon.h"
+#include "src/core/database/image.h"
 

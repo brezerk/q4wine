@@ -548,7 +548,7 @@ bool corelib::runProcess(const QString exec, const QStringList args, QString dir
 		QString string = codec->toUnicode(myProcess->readAllStandardError());
 
 		if (!string.isEmpty()){
-			showError(QObject::tr("It seems the process crashed.<br><br>STDERR log:<br>%1").arg(string));
+			showError(QObject::tr("It seems the process crashed. STDERR log: %1").arg(string));
 			return FALSE;
 		}
 	}
@@ -576,13 +576,32 @@ int corelib::showError(const QString message, const bool info) const{
 }
 
 void corelib::showError(const QString message) const{
+	QTextStream Qcout(stdout);
 	switch (this->_GUI_MODE){
 	case true:
 		QMessageBox::warning(0, QObject::tr("Error"), message);
 	break;
 	case false:
-		cout << "test"; // message.toLatin1();
+		Qcout<<QObject::tr("Error")<<endl<<message<<endl;
 	break;
 	}
 	return;
+}
+
+bool corelib::killWineServer(const QString prefix_path) const{
+	QString command;
+
+	if (!prefix_path.isEmpty()){
+		command=QObject::tr("env WINEPREFIX=\"%1\" wineserver -kill").arg(prefix_path);
+	} else {
+		command="wineserver -kill";
+	}
+
+
+	if (system(command.toAscii().data())==-1){
+		this->showError(QObject::tr("Can't run: %1").arg(command.toAscii().data()));
+		return FALSE;
+	}
+
+	return TRUE;
 }

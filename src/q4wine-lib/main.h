@@ -157,6 +157,13 @@ public:
 	 */
 	bool umountImage(const QString prefix_name) const;
 
+	/*! \brief This function kills wineserver.
+	 *
+	 * \param  prefix_path	Prefix name.
+	 * \return Return an list of cdrom devices.
+	 */
+	bool killWineServer(const QString prefix_path) const;
+
 	/*! \brief Open icon folder.
 	 *
 	 * \param  prefix_name	Prefix name.

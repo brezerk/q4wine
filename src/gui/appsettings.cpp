@@ -150,7 +150,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
 	settings.beginGroup("network");
 		txtProxyHost->setText(settings.value("host").toString());
-		txtProxyPort->setText(settings.value("post").toString());
+		txtProxyPort->setText(settings.value("port").toString());
 		txtProxyUser->setText(settings.value("user").toString());
 		txtProxyPass->setText(settings.value("pass").toString());
 
@@ -453,7 +453,7 @@ void AppSettings::cmdOk_Click(){
 	  #endif
 	settings.beginGroup("network");
 		settings.setValue("host", txtProxyHost->text());
-		settings.setValue("post", txtProxyPort->text());
+		settings.setValue("port", txtProxyPort->text());
 		settings.setValue("user", txtProxyUser->text());
 		settings.setValue("pass", txtProxyPass->text());
 		if (comboProxyType->currentText()==tr("No Proxy")){
