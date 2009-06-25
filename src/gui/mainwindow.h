@@ -301,9 +301,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 
 		//FIXME: Remove in to core lib
-		void CoreFunction_WineRunAutorunItems(void);
-		void CoreFunction_WineRunProgram(QString exec, QStringList args, QString wrkdir);
-		void CoreFunction_WinePrepareRunParams(ExecObject execObj);
+		void runAutostart(void);
 		void CoreFunction_SetProcNicePriority(int priority, int pid);
 
 	   /*! \brief This function updates all database connectd widgets to current state.

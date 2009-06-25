@@ -38,23 +38,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include <QString>
-
-struct ExecObject{
-	QString execcmd;
-	QString prefixid;
-	QString runcmd;
-	QString useconsole;
-	QString cmdargs;
-	QString override;
-	QString winedebug;
-	QString display;
-	QString wrkdir;
-	QString desktop;
-	QString nice;
-};
-
-
 #define APP_NAME "Q4Wine"
 #define APP_SHORT_NAME "q4wine"
 

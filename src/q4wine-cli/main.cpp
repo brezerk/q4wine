@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
 	QCoreApplication app(argc, argv);
 	QTextStream Qcout(stdout);
 	QString _PREFIX, _DIR, _ICON, _IMAGE;
+	QString path;
 	int _ACTION=0;
 
 	//! This is need for libq4wine-core.so import;
@@ -152,12 +153,50 @@ int main(int argc, char *argv[])
 		if ((app.arguments().at(i)=="--mountlist") or (app.arguments().at(i)=="-ml")){
 			_ACTION=10;
 		}
+
+		if ((app.arguments().at(i)=="--binary") or (app.arguments().at(i)=="-b")){
+			i++;
+			if (i<argc)
+			_IMAGE=app.arguments().at(i);
+			path.clear();
+			for (int j=++i; j<argc; j++){
+				 path.append(app.arguments().at(j));
+			}
+			_ACTION=12;
+		}
 	}
+
+	if ((_PREFIX.isEmpty()) && (_ICON.isEmpty()))
+		_ACTION=-1;
 
 	QList<QStringList> result;
 	QStringList sresult;
-	QString path;
+
+	ExecObject execObj;
 	switch (_ACTION){
+		case 0:
+			if (_PREFIX.isEmpty()){
+				Qcout<<app.tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
+				return -1;
+			}
+
+			if (_ICON.isEmpty()){
+				Qcout<<app.tr("No current icon set. Set icon via \"-i <icon_name>\" key.")<<endl;
+				return -1;
+			}
+
+			if (!db_icon->isExistsByName(_PREFIX, _DIR, _ICON)){
+				Qcout<<app.tr("Icon named \"%1\" not exists.  Run \"q4wine-cli -il\" for icon list.").arg(_ICON)<<endl;
+				return -1;
+			}
+
+			if (CoreLib->runIcon(_PREFIX, _DIR, _ICON)){
+				Qcout<<"Done"<<endl;
+			} else {
+				Qcout<<"Error"<<endl;
+				return -1;
+			}
+		break;
 		case 1:
 			result = CoreLib->getWineProcessList();
 			if (_PREFIX.isEmpty()){
@@ -344,8 +383,42 @@ int main(int argc, char *argv[])
 			Qcout<<endl;
 			Qcout<<app.tr("Author: Malakhov Alexey aka John Brezerk.")<<endl;
 		break;
+		case 12:
+			if (_PREFIX.isEmpty()){
+				Qcout<<app.tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
+				return -1;
+			}
+
+			qDebug()<<_IMAGE;
+
+			if (!QFile(_IMAGE).exists()){
+				Qcout<<app.tr("File \"%1\" not exists.").arg(_IMAGE)<<endl;
+				return -1;
+			}
+
+			sresult = _IMAGE.split("/");
+			execObj.wrkdir = _IMAGE.left(_IMAGE.length() - sresult.last().length());
+			execObj.override = "";
+			execObj.winedebug = "";
+			execObj.useconsole = "";
+			execObj.display = "";
+			execObj.cmdargs = path;
+			execObj.cmdargs = "";
+			execObj.desktop = "";
+			execObj.prefixid = db_prefix->getId(_PREFIX);
+			execObj.execcmd=_IMAGE;
+			if (CoreLib->runWineBinary(execObj)){
+				Qcout<<"Done"<<endl;
+			} else {
+				Qcout<<"Error"<<endl;
+				return -1;
+			}
+		break;
 		default:
-			Qcout<<app.tr("Usage: q4wine-cli [KEY]...")<<endl;
+			Qcout<<app.tr("Usage:")<<endl;
+			Qcout<<app.tr("  q4wine-cli [KEY]...")<<endl;
+			Qcout<<app.tr("  q4wine-cli -p <prefix_name> [-d <dir_name>] -i <icon_name>")<<endl;
+			Qcout<<app.tr("  q4wine-cli -p <prefix_name> -b <windows_binary_path> [args]")<<endl;
 			Qcout<<app.tr("Console utility for wine applications and prefixes management.")<<endl<<endl;
 			Qcout<<app.tr("KEYs list:")<<endl;
 			Qcout<<app.tr("  -h,  --help		  display this help and exit")<<endl;
@@ -355,6 +428,7 @@ int main(int argc, char *argv[])
 			Qcout<<app.tr("  -d,  --dir		  sets the current direcory name")<<endl;
 			Qcout<<app.tr("  -i,  --icon		  sets the current icon name")<<endl;
 			Qcout<<app.tr("  -cd, --cdimage	  sets the cd iamge name")<<endl;
+			Qcout<<app.tr("  -b, --binary	  sets the path to windows binary for execute with current prefix settings.")<<endl;
 			Qcout<<app.tr("  -k,  --kill		  sends -9 term signal to current prefix precess or for all prefixes processes")<<endl;
 			Qcout<<app.tr("  -pl, --prefixlist	  output all exesting prefixes names and exit")<<endl;
 			Qcout<<app.tr("  -dl, --dirlist	  output all exesting dir names for current prefix and exit")<<endl;

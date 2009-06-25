@@ -95,6 +95,22 @@ using namespace std;
  * can use q4wine core functions;
  *
  */
+
+//! Exec obj struct
+struct ExecObject{
+	QString execcmd;
+	QString prefixid;
+	QString runcmd;
+	QString useconsole;
+	QString cmdargs;
+	QString override;
+	QString winedebug;
+	QString display;
+	QString wrkdir;
+	QString desktop;
+	QString nice;
+};
+
 class corelib {
 public:
     //! Create an mainlib class
@@ -167,11 +183,28 @@ public:
 	/*! \brief Open icon folder.
 	 *
 	 * \param  prefix_name	Prefix name.
-	 * \param  dir_name	Prefix name.
-	 * \param  icon_name	Prefix name.
+	 * \param  dir_name		Dir name.
+	 * \param  icon_name	Icon name.
 	 * \return Return true on success.
 	 */
 	bool openIconDirectry(const QString prefix_name, const QString dir_name, const QString icon_name) const;
+
+	/*! \brief Prepare icon data for run wine.
+	 *
+	 * \param  prefix_name	Prefix name.
+	 * \param  dir_name		Dir name.
+	 * \param  icon_name	Icon name.
+	 * \return Return true on success.
+	 */
+	bool runIcon(const QString prefix_name, const QString dir_name, const QString icon_name) const;
+
+	/*! \brief Prepare icon data for run wine.
+	 *
+	 * \param  ExecObject	An icon data struct.
+	 * \param  prefix_name	Prefix name.
+	 * \return Return true on success.
+	 */
+	bool runWineBinary(const ExecObject execObj) const;
 
 	/*! \brief Open prefix folder.
 	 *
@@ -218,8 +251,6 @@ public:
 	Prefix *db_prefix;
 	Image *db_image;
 	Icon *db_icon;
-
-
 
 }; // end of class corelib
 

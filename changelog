@@ -13,6 +13,7 @@ Version 0.113
   - Added libq4wine implementation;
   - Added translation file for Portuguese (Brazil) by Marcio Moraes;
   - Added *.xpm filter to icon import patten;
+  - Added http proxy support for winetriks;
  Fixed:
   - Some fixes for q4wine.desktop (thx to Eugene Pivnev);
   - Fixed GUI bug: Text fields size, on some desktop configurations, are too small to edit;

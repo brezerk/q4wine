@@ -369,6 +369,137 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 	return image;
 }
 
+bool corelib::runIcon(const QString prefix_name, const QString dir_name, const QString icon_name) const{
+	QStringList result = db_icon->getByName(prefix_name, dir_name, icon_name);
+	//  0   1     2     3          4       5         6          7           8        9        10    11       12    13         14
+	//	id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id
+	ExecObject execObj;
+		execObj.wrkdir = result.at(4);
+		execObj.override = result.at(5);
+		execObj.winedebug = result.at(6);
+		execObj.useconsole = result.at(7);
+		execObj.display = result.at(8);
+		execObj.cmdargs = result.at(9);
+		execObj.execcmd = result.at(10);
+		execObj.desktop = result.at(11);
+		execObj.nice = result.at(12);
+		execObj.prefixid = result.at(13);
+	return runWineBinary(execObj);
+}
+
+bool corelib::runWineBinary(const ExecObject execObj) const{
+  	QStringList prefixList;
+	// 0   1     2             3            4            5          6            7
+	// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
+	prefixList = db_prefix->getFieldsByPrefixId(execObj.prefixid);
+
+	QString exec;
+	QStringList args;
+	QString envargs;
+
+	if (execObj.useconsole == "1"){
+		// If we gona use console output, so exec program is program specificed at CONSOLE global variable
+		exec = this->getSetting("console", "bin").toString();
+
+		if (!this->getSetting("console", "args").toString().isEmpty()){
+			// If we have any conslope parametres, we gona preccess them one by one
+			QStringList cons_args = this->getSetting("console", "args").toString().split(" ");
+			for (int i=0; i<cons_args.count(); i++){
+				if (!cons_args.at(i).isEmpty())
+					args.append(cons_args.at(i));
+			}
+		}
+
+		args.append(this->getSetting("system", "sh").toString());
+
+	} else {
+		exec = this->getSetting("system", "sh").toString();
+	}
+
+	args.append("-c");
+
+
+	if ((execObj.useconsole == "1") && (!execObj.wrkdir.isNull())){
+		envargs.append(" cd \"");
+		envargs.append(execObj.wrkdir);
+		envargs.append("\" ; ");
+	}
+
+	if (!prefixList.at(1).isEmpty()){
+		//If icon has prefix -- add to args
+		envargs.append(QObject::tr(" WINEPREFIX=%1 ").arg(prefixList.at(1)));
+	} else {
+		//Else use default prefix
+		envargs.append(QObject::tr(" WINEPREFIX=%1/.wine ").arg(QDir::homePath()));
+	}
+
+	if (!prefixList.at(2).isEmpty()){
+		envargs.append(QObject::tr(" WINEDLLPATH=%1 ").arg(prefixList.at(2)));
+	} else {
+		envargs.append(QObject::tr(" WINEDLLPATH=%1 ").arg(this->getSetting("wine", "WineLibs").toString()));
+	}
+
+	if (!prefixList.at(3).isEmpty()){
+		envargs.append(QObject::tr(" WINELOADER=%1 ").arg(prefixList.at(3)));
+	} else {
+		envargs.append(QObject::tr(" WINELOADER=%1 ").arg(this->getSetting("wine", "LoaderBin").toString()));
+	}
+
+	if (!prefixList.at(4).isEmpty()){
+		envargs.append(QObject::tr(" WINESERVER=%1 ").arg(prefixList.at(4)));
+	} else {
+		envargs.append(QObject::tr(" WINESERVER=%1 ").arg(this->getSetting("wine", "ServerBin").toString()));
+	}
+
+	if (!execObj.override.isEmpty()){
+		envargs.append(QObject::tr(" WINEDLLOVERRIDES=\"%1\" ").arg(execObj.override));
+	}
+
+	if (!execObj.winedebug.isEmpty() && execObj.useconsole == "1"){
+		envargs.append(QObject::tr(" WINEDEBUG=%1 ").arg(execObj.winedebug));
+	}
+
+	if (!execObj.display.isEmpty()){
+		envargs.append(QObject::tr(" DISPLAY=%1 ").arg(execObj.display));
+	}
+
+	QString exec_string = "";
+
+	exec_string.append(envargs);
+
+	if(!execObj.nice.isEmpty()){
+		exec_string.append(this->getSetting("system", "nice").toString());
+		exec_string.append(" -n ");
+		exec_string.append(execObj.nice);
+	}
+
+	exec_string.append(" ");
+
+	if (!prefixList.at(5).isEmpty()){
+		exec_string.append(prefixList.at(5));
+	} else {
+		exec_string.append(this->getSetting("wine", "WineBin").toString());
+	}
+
+	exec_string.append(" ");
+
+	if (!execObj.desktop.isEmpty()){
+		exec_string.append(" explorer.exe /desktop=");
+		exec_string.append(execObj.desktop);
+	}
+
+	exec_string.append(" \"");
+	exec_string.append(execObj.execcmd);
+	exec_string.append("\" ");
+	exec_string.append(execObj.cmdargs);
+
+	args.append(exec_string);
+
+	QProcess *proc;
+	proc = new QProcess();
+	return proc->startDetached( exec, args, execObj.wrkdir );
+}
+
 bool corelib::mountImage(QString image_name, const QString prefix_name) const{
   	QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
 

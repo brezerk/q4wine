@@ -139,7 +139,7 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	lstIcons->installEventFilter(this);
 
         // FIXME: Move this into shared libaray
-	CoreFunction_WineRunAutorunItems();
+	runAutostart();
 
 	createTrayIcon();
 
@@ -299,175 +299,19 @@ void MainWindow::lstIcons_ItemDoubleClick(QListWidgetItem * item){
 	/*
 	* This is function for getting icon settings and run associated program
 	*/
-
-	statusBar()->showMessage(tr("Starting programm..."));
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 
 	if (!twPrograms->currentItem()){
 		lstIcons->clear();
 		return;
 	}
 
-	//FEXME: ------------------- All below might bo moved into CoreLib class
-	QTreeWidgetItem *treeItem = twPrograms->currentItem();
-	QStringList result;
-
+	statusBar()->showMessage(tr("Starting programm..."));
 	if (treeItem->parent()){
-		result=db_icon->getByName(treeItem->parent()->text(0), treeItem->text(0), item->text());
+		CoreLib->runIcon(treeItem->parent()->text(0), treeItem->text(0), item->text());
 	} else {
-		result=db_icon->getByName(treeItem->text(0), "", item->text());
+		CoreLib->runIcon(treeItem->text(0), "", item->text());
 	}
-
-//  0   1     2     3          4       5         6          7           8        9        10    11       12    13         14
-//	id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id
-	ExecObject execObj;
-		execObj.wrkdir = result.at(4);
-		execObj.override = result.at(5);
-		execObj.winedebug = result.at(6);
-		execObj.useconsole = result.at(7);
-		execObj.display = result.at(8);
-		execObj.cmdargs = result.at(9);
-		execObj.execcmd = result.at(10);
-		execObj.desktop = result.at(11);
-		execObj.nice = result.at(12);
-		execObj.prefixid = result.at(13);
-
-	//FIXME: Move it into corelib class
-	CoreFunction_WinePrepareRunParams(execObj);
-
-	return;
-}
-
-void MainWindow::CoreFunction_WinePrepareRunParams(ExecObject execObj){
-	/*
-	 * Function prepare params for running with WineRun
-	 */
-
-
-  	QStringList prefixList;
-
-	// 0   1     2             3            4            5          6            7
-	// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
-
-	prefixList = db_prefix->getFieldsByPrefixId(execObj.prefixid);
-
-
-	QString exec;
-	QStringList args;
-	QString envargs;
-
-	if (execObj.useconsole == "1"){
-		// If we gona use console output, so exec program is program specificed at CONSOLE global variable
-		exec = CONSOLE_BIN;
-
-		if (!CONSOLE_ARGS.isEmpty()){
-			// If we have any conslope parametres, we gona preccess them one by one
-			QStringList cons_args = CONSOLE_ARGS.split(" ");
-			for (int i=0; i<cons_args.count(); i++){
-				if (!cons_args.at(i).isEmpty())
-					args.append(cons_args.at(i));
-			}
-		}
-
-		args.append(SH_BIN);
-
-	} else {
-		exec = SH_BIN;
-	}
-
-	args.append("-c");
-
-
-	if ((execObj.useconsole == "1") && (!execObj.wrkdir.isNull())){
-		envargs.append(" cd \"");
-		envargs.append(execObj.wrkdir);
-		envargs.append("\" ; ");
-	}
-
-	if (!prefixList.at(1).isEmpty()){
-		//If icon has prefix -- add to args
-		envargs.append(tr(" WINEPREFIX=%1 ").arg(prefixList.at(1)));
-	} else {
-		//Else use default prefix
-		envargs.append(tr(" WINEPREFIX=%1/.wine ").arg(HOME_PATH));
-	}
-
-	if (!prefixList.at(2).isEmpty()){
-		envargs.append(tr(" WINEDLLPATH=%1 ").arg(prefixList.at(2)));
-	} else {
-		envargs.append(tr(" WINEDLLPATH=%1 ").arg(DEFAULT_WINE_LIBS));
-	}
-
-	if (!prefixList.at(3).isEmpty()){
-		envargs.append(tr(" WINELOADER=%1 ").arg(prefixList.at(3)));
-	} else {
-		envargs.append(tr(" WINELOADER=%1 ").arg(DEFAULT_WINE_LOADER));
-	}
-
-	if (!prefixList.at(4).isEmpty()){
-		envargs.append(tr(" WINESERVER=%1 ").arg(prefixList.at(4)));
-	} else {
-		envargs.append(tr(" WINESERVER=%1 ").arg(DEFAULT_WINE_SERVER));
-	}
-
-	if (!execObj.override.isEmpty()){
-		envargs.append(tr(" WINEDLLOVERRIDES=\"%1\" ").arg(execObj.override));
-	}
-
-	if (!execObj.winedebug.isEmpty() && execObj.useconsole == "1"){
-		envargs.append(tr(" WINEDEBUG=%1 ").arg(execObj.winedebug));
-	}
-
-	if (!execObj.display.isEmpty()){
-		envargs.append(tr(" DISPLAY=%1 ").arg(execObj.display));
-	}
-
-	QString exec_string = "";
-
-	exec_string.append(envargs);
-
-	if(!execObj.nice.isEmpty()){
-		exec_string.append(NICE_BIN);
-		exec_string.append(" -n ");
-		exec_string.append(execObj.nice);
-	}
-
-	exec_string.append(" ");
-
-	if (!prefixList.at(5).isEmpty()){
-		exec_string.append(prefixList.at(5));
-	} else {
-		exec_string.append(DEFAULT_WINE_BIN);
-	}
-
-	exec_string.append(" ");
-
-	if (!execObj.desktop.isEmpty()){
-		exec_string.append(" explorer.exe /desktop=");
-		exec_string.append(execObj.desktop);
-	}
-
-	exec_string.append(" \"");
-	exec_string.append(execObj.execcmd);
-	exec_string.append("\" ");
-	exec_string.append(execObj.cmdargs);
-
-	args.append(exec_string);
-
-	CoreFunction_WineRunProgram(exec, args, execObj.wrkdir);
-	return;
-}
-
-void MainWindow::CoreFunction_WineRunProgram(QString exec, QStringList args, QString wrkdir){
-
-	QProcess *proc;
-
-	proc = new QProcess( this );
-	if (!proc->startDetached( exec, args, wrkdir)){
-		statusBar()->showMessage(tr("Error: can't start %1").arg(exec));
-	} else {
-		statusBar()->showMessage(tr("Start: Done (For more info, run in console mode)"));
-	}
-
 	return;
 }
 
@@ -1528,7 +1372,7 @@ void MainWindow::mainRun_Click(){
 	}
 
 	if (run->exec()==QDialog::Accepted)
-		CoreFunction_WinePrepareRunParams(run->execObj);
+		CoreLib->runWineBinary(run->execObj);
 
 	return;
 }
@@ -2401,41 +2245,16 @@ void MainWindow::dirOpenDir_Click(void){
 	return;
 }
 
-void MainWindow::CoreFunction_WineRunAutorunItems(void){
+void MainWindow::runAutostart(void){
+	QList<QStringList> iconsList, prefixList;
 
-	QSqlQuery query, icoQuery;
-	QString execcmd, prefixid, runcmd, useconsole, cmdargs, override, winedebug, display, wrkdir, envargs;
-	query.exec("select id, path, wine_dllpath, wine_loader, wine_exec, wine_server from prefix");
-
-	while(query.next()){
-		icoQuery.prepare("SELECT exec, prefix_id, useconsole, cmdargs, override, winedebug, display, wrkdir FROM icon WHERE dir_id=(SELECT id FROM dir WHERE prefix_id=:prefix_id and name=:name)");
-		icoQuery.bindValue(":prefix_id", query.value(0).toString());
-		icoQuery.bindValue(":name", "autostart");
-		if (!icoQuery.exec()){
-			#ifdef DEBUG
-				qDebug()<<"WARNING: SQL_getPrefixAndDirData\nINFO:\n"<<icoQuery.executedQuery()<<"\n"<<icoQuery.lastError();
-			#endif
-			return;
+	prefixList = db_prefix->getFields();
+	for (int i = 0; i < prefixList.size(); ++i) {
+		iconsList = db_icon->getByPrefixAndDirName(prefixList.at(i).at(1), "autostart");
+		for (int j = 0; j < iconsList.size(); ++j) {
+			CoreLib->runIcon(prefixList.at(i).at(1), "autostart", iconsList.at(j).at(1));
 		}
-		while (icoQuery.next()){
-			ExecObject execObj;
-			execObj.execcmd = icoQuery.value(0).toString();
-			execObj.prefixid = icoQuery.value(1).toString();
-			execObj.useconsole = icoQuery.value(2).toString();
-			execObj.cmdargs = icoQuery.value(3).toString();
-			execObj.override = icoQuery.value(4).toString();
-			execObj.winedebug = icoQuery.value(5).toString();
-			execObj.display = icoQuery.value(6).toString();
-			execObj.wrkdir = icoQuery.value(7).toString();
-			CoreFunction_WinePrepareRunParams(execObj);
-		}
-
-		icoQuery.clear();
-
 	}
-
-	query.clear();
-
 	return;
 }
 
