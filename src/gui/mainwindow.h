@@ -161,7 +161,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		 * \param  item		an QListWidgetItem wich trigged an a slot
 		 */
 		void lstIcons_ItemDoubleClick(QListWidgetItem * item);
-		void lstIcons_ShowContextMenu(const QPoint);
+		void lstIcons_ShowContextMenu(const QPoint & iPoint);
 
 		/*! \brief This slot request programs icons by folder and\or prefix name.
 		 *
@@ -251,6 +251,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QMenu *menuDir;
 		QMenu *menuDirMount;
 		QMenu *menuIcon;
+		QMenu *menuIconVoid;
 		QMenu *menuIconMount;
 		QMenu *menuIconXdgOpendir;
 		QMenu *menuIconWineOpendir;

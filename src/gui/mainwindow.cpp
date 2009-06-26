@@ -619,133 +619,125 @@ void MainWindow::menuMountImages_triggered ( QAction * action ){
 	return;
 }
 
-void MainWindow::lstIcons_ShowContextMenu(const QPoint){
+void MainWindow::lstIcons_ShowContextMenu(const QPoint & iPoint){
 	/*
 		Function showing context menu
 	*/
 
-	QListWidgetItem * item;
-	item = lstIcons->currentItem();
+	QListWidgetItem *iconItem = lstIcons->itemAt(iPoint);;
 
-	QTreeWidgetItem *treeItem = twPrograms->currentItem();
+		QTreeWidgetItem *treeItem = twPrograms->currentItem();
 
-	QString cdrom_drive, cdrom_mount;
-	QStringList result;
-	QList<QStringList> images;
+		QString cdrom_drive, cdrom_mount;
+		QStringList result;
+		QList<QStringList> images;
 
-	if (!treeItem)
-		return;
+		if (!treeItem)
+			return;
 
-	if (treeItem->parent()){
-		result = db_prefix->getFieldsByPrefixName(treeItem->parent()->text(0));
-	} else {
-		result = db_prefix->getFieldsByPrefixName(treeItem->text(0));
-	}
-
-	cdrom_drive = result.at(7);
-	cdrom_mount = result.at(6);
-
-	if (cdrom_mount.isEmpty()){
-		xdgOpenMountDir->setEnabled(FALSE);
-		winefileOpenMountDir->setEnabled(FALSE);
-	} else {
-		xdgOpenMountDir->setEnabled(TRUE);
-		winefileOpenMountDir->setEnabled(TRUE);
-	}
-
-
-	menuIconMount->clear();
-	menuIconMount->setEnabled(FALSE);
-
-
-	if (!cdrom_drive.isEmpty() && !cdrom_mount.isEmpty()){
-		menuIconMount->setEnabled(TRUE);
-		QMenu* menuIconMountImages;
-		menuIconMountImages = new QMenu(this);
-		menuIconMountImages = menuIconMount->addMenu(tr("mount [%1]").arg(CoreLib->getMountedImages(cdrom_mount)));
-
-		if (!cdrom_drive.isEmpty()){
-			menuIconMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
-			menuIconMountImages->addSeparator();
+		if (treeItem->parent()){
+			result = db_prefix->getFieldsByPrefixName(treeItem->parent()->text(0));
+		} else {
+			result = db_prefix->getFieldsByPrefixName(treeItem->text(0));
 		}
 
-		menuIconMount->addAction(iconUnmount);
-		menuIconMount->addAction(iconMountOther);
+		cdrom_drive = result.at(7);
+		cdrom_mount = result.at(6);
 
-		images = db_image->getFields();
-		for (int i = 0; i < images.size(); ++i) {
-			menuIconMountImages->addAction(QIcon(":/data/cdrom_menu.png") , images.at(i).at(0));
+		if (cdrom_mount.isEmpty()){
+			xdgOpenMountDir->setEnabled(FALSE);
+			winefileOpenMountDir->setEnabled(FALSE);
+		} else {
+			xdgOpenMountDir->setEnabled(TRUE);
+			winefileOpenMountDir->setEnabled(TRUE);
 		}
-		connect (menuIconMountImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountImages_triggered(QAction*)));
 
-		if (item){
-			if ((!cdrom_drive.isEmpty()) && (!cdrom_mount.isEmpty())){
-				iconMount->setEnabled(TRUE);
-				iconUnmount->setEnabled(TRUE);
-				iconMount->setText(tr("mount [%1]").arg(cdrom_drive.split("/").last()));
-				iconUnmount->setText(tr("umount [%1]").arg(cdrom_mount));
-			} else {
-				iconMount->setEnabled(FALSE);
-				iconUnmount->setEnabled(FALSE);
-				iconMount->setText(tr("mount [none]"));
-				iconUnmount->setText(tr("umount [none]"));
-			}
+
+		menuIconMount->clear();
+		menuIconMount->setEnabled(FALSE);
+
+
+		if (!cdrom_drive.isEmpty() && !cdrom_mount.isEmpty()){
+			menuIconMount->setEnabled(TRUE);
+			QMenu* menuIconMountImages;
+			menuIconMountImages = new QMenu(this);
+			menuIconMountImages = menuIconMount->addMenu(tr("mount [%1]").arg(CoreLib->getMountedImages(cdrom_mount)));
 
 			if (!cdrom_drive.isEmpty()){
-				iconMountOther->setEnabled(TRUE);
-			} else {
-				iconMountOther->setEnabled(FALSE);
+				menuIconMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
+				menuIconMountImages->addSeparator();
 			}
 
-		}
+			menuIconMount->addAction(iconUnmount);
+			menuIconMount->addAction(iconMountOther);
 
-		}
+			images = db_image->getFields();
+			for (int i = 0; i < images.size(); ++i) {
+				menuIconMountImages->addAction(QIcon(":/data/cdrom_menu.png") , images.at(i).at(0));
+			}
+			connect (menuIconMountImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountImages_triggered(QAction*)));
 
-		QListWidgetItem *iconItem;
-		iconItem=lstIcons->currentItem();
+			//if (item){
+				if ((!cdrom_drive.isEmpty()) && (!cdrom_mount.isEmpty())){
+					iconMount->setEnabled(TRUE);
+					iconUnmount->setEnabled(TRUE);
+					iconMount->setText(tr("mount [%1]").arg(cdrom_drive.split("/").last()));
+					iconUnmount->setText(tr("umount [%1]").arg(cdrom_mount));
+				} else {
+					iconMount->setEnabled(FALSE);
+					iconUnmount->setEnabled(FALSE);
+					iconMount->setText(tr("mount [none]"));
+					iconUnmount->setText(tr("umount [none]"));
+				}
 
-		if(iconItem){
-			iconRun->setEnabled(TRUE);
-			iconOptions->setEnabled(TRUE);
-			iconRename->setEnabled(TRUE);
-			iconDelete->setEnabled(TRUE);
-			iconCut->setEnabled(TRUE);
-			iconCopy->setEnabled(TRUE);
+				if (!cdrom_drive.isEmpty()){
+					iconMountOther->setEnabled(TRUE);
+				} else {
+					iconMountOther->setEnabled(FALSE);
+				}
 
-			if (treeItem->parent()){
-				result=db_icon->getByName(treeItem->parent()->text(0), treeItem->text(0), item->text());
-			} else {
-				result=db_icon->getByName(treeItem->text(0), "", item->text());
+			//}
+
 			}
 
-			if (!result.at(4).isEmpty()){
-				xdgOpenIconDir->setEnabled(TRUE);
-				winefileOpenIconDir->setEnabled(TRUE);
+			//QListWidgetItem *iconItem;
+			//iconItem=lstIcons->currentItem();
+
+			if (iconBuffer.names.count()>0){
+				iconPaste->setEnabled(TRUE);
+			} else {
+				iconPaste->setEnabled(FALSE);
+			}
+
+			if(iconItem){
+				iconRun->setEnabled(TRUE);
+				iconOptions->setEnabled(TRUE);
+				iconRename->setEnabled(TRUE);
+				iconDelete->setEnabled(TRUE);
+				iconCut->setEnabled(TRUE);
+				iconCopy->setEnabled(TRUE);
+
+				if (treeItem->parent()){
+					result=db_icon->getByName(treeItem->parent()->text(0), treeItem->text(0), iconItem->text());
+				} else {
+					result=db_icon->getByName(treeItem->text(0), "", iconItem->text());
+				}
+
+				if (!result.at(4).isEmpty()){
+					xdgOpenIconDir->setEnabled(TRUE);
+					winefileOpenIconDir->setEnabled(TRUE);
+				} else {
+					xdgOpenIconDir->setEnabled(FALSE);
+					winefileOpenIconDir->setEnabled(FALSE);
+				}
+
+				menuIcon->exec(QCursor::pos());
 			} else {
 				xdgOpenIconDir->setEnabled(FALSE);
 				winefileOpenIconDir->setEnabled(FALSE);
+
+				menuIconVoid->exec(QCursor::pos());
 			}
-
-			//menuIconMount->setEnabled(TRUE);
-		} else {
-			iconRun->setEnabled(FALSE);
-			iconOptions->setEnabled(FALSE);
-			iconRename->setEnabled(FALSE);
-			iconDelete->setEnabled(FALSE);
-			iconCut->setEnabled(FALSE);
-			iconCopy->setEnabled(FALSE);
-			xdgOpenIconDir->setEnabled(FALSE);
-			winefileOpenIconDir->setEnabled(FALSE);
-			menuIconMount->setEnabled(FALSE);
-		}
-
-		if (iconBuffer.names.count()>0){
-			iconPaste->setEnabled(TRUE);
-		} else {
-			iconPaste->setEnabled(FALSE);
-		}
-
-		menuIcon->exec(QCursor::pos());
 
 	  return;
 }
@@ -1785,12 +1777,14 @@ void MainWindow::createMenuActions(){
 		menuPrefix->addSeparator();
 		menuPrefix->addAction(prefixSettings);
 
+	menuIconMount = new QMenu(tr("Mount iso..."));
+	//menuIconMount->addAction(tr("Mount iso..."));
+
 
 	menuIcon = new QMenu(this);
 		menuIcon->addAction(iconRun);
 		menuIcon->addSeparator();
-			menuIconMount = new QMenu(this);
-			menuIconMount = menuIcon->addMenu(tr("Mount iso..."));
+		menuIcon->addMenu(menuIconMount);
 		menuIcon->addSeparator();
 		menuIcon->addAction(iconOptions);
 			menuIconXdgOpendir = new QMenu(this);
@@ -1812,18 +1806,34 @@ void MainWindow::createMenuActions(){
 		menuIcon->addSeparator();
 		menuIcon->addAction(iconAdd);
 
+  //menuIconMount = new QMenu(this);
+
+	  menuIconVoid = new QMenu(this);
+		menuIconVoid->addAction(dirRun);
+		menuIconVoid->addSeparator();
+		menuIconVoid->addAction(iconAdd);
+		menuIconVoid->addSeparator();
+		menuIconVoid->addAction(iconPaste);
+		menuIconVoid->addSeparator();
+		menuIconVoid->addMenu(menuIconMount);
+		menuIconVoid->addSeparator();
+			menuIconXdgOpendir = new QMenu(this);
+			menuIconXdgOpendir = menuIconVoid->addMenu(tr("xdg-open"));
+			menuIconXdgOpendir->addAction(xdgOpenMountDir);
+			menuIconXdgOpendir->addAction(xdgOpenPrefixDir);
+			menuIconWineOpendir = new QMenu(this);
+			menuIconWineOpendir = menuIconVoid->addMenu(tr("winefile"));
+			menuIconWineOpendir->addAction(winefileOpenMountDir);
+			menuIconWineOpendir->addAction(winefileOpenPrefixDir);
+
 	menuDir = new QMenu(this);
 		menuDir->addAction(dirAdd);
 		menuDir->addSeparator();
-			menuDirMount = new QMenu(this);
-			menuDirMount = menuDir->addMenu(tr("Mount iso..."));
+		menuDirMount = new QMenu(this);
+		menuDir->addMenu(menuDirMount);
 		menuDir->addSeparator();
 		menuDir->addAction(dirRun);
 		menuDir->addSeparator();
-//		menuDir->addAction(dirInstall);
-//		menuDir->addAction(dirUninstall);
-//		menuDir->addAction(dirConfigure);
-//		menuDir->addSeparator();
 		menuDir->addAction(dirRename);
 		menuDir->addSeparator();
 		menuDir->addAction(dirDelete);
