@@ -183,8 +183,10 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		/*
 		 * Context menu slots
 		 */
-			//Directory context
-		void dirOpenDir_Click(void);
+		//Directory context
+		void winefileOpenIconDir_Click(void);
+		void winefileOpenMountDir_Click(void);
+		void winefileOpenPrefixDir_Click(void);
 		void dirAdd_Click(void);
 		void dirRename_Click(void);
 		void dirDelete_Click(void);
@@ -195,7 +197,9 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void dirUninstall_Click(void);
 
 		//Icon context
-		void iconOpenDir_Click(void);
+		void xdgOpenIconDir_Click(void);
+		void xdgOpenMountDir_Click(void);
+		void xdgOpenPrefixDir_Click(void);
 		void iconAdd_Click(void);
 		void iconRun_Click(void);
 		void iconCut_Click(void);
@@ -248,6 +252,8 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QMenu *menuDirMount;
 		QMenu *menuIcon;
 		QMenu *menuIconMount;
+		QMenu *menuIconXdgOpendir;
+		QMenu *menuIconWineOpendir;
 
 		void createTrayIcon();
 		void setMeVisible(bool visible);
@@ -265,7 +271,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QAction *prefixSettings;
 
 		// Directories control for context menu
-		QAction *dirOpenDir;
 		QAction *dirAdd;
 		QAction *dirRun;
 		QAction *dirRename;
@@ -276,8 +281,16 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QAction *dirInstall;
 		QAction *dirUninstall;
 
+		//OpenDir
+		QAction *xdgOpenIconDir;
+		QAction *xdgOpenPrefixDir;
+		QAction *xdgOpenMountDir;
+		QAction *winefileOpenIconDir;
+		QAction *winefileOpenPrefixDir;
+		QAction *winefileOpenMountDir;
+
 		// Icons control for context menu
-		QAction *iconOpenDir;
+		//QAction *iconOpenDirWinefile;
 		QAction *iconRun;
 		QAction *iconAdd;
 		QAction *iconRename;

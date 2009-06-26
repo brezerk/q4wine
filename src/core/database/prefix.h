@@ -113,6 +113,13 @@ class Prefix
 	  */
 	  QString getPath(const QString prefix_name) const;
 
+	 /*! \brief This function gets prefix cdrom mount path by name.
+	  *
+	  * \param  prefix_name    A prefix name value.
+	  * \return Return prefix path.
+	  */
+	  QString getMountPath(const QString prefix_name) const;
+
 	 /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
 	  *
 	  * \param  prefix_name    A prefix name value.

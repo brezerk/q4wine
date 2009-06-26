@@ -500,6 +500,70 @@ bool corelib::runWineBinary(const ExecObject execObj) const{
 	return proc->startDetached( exec, args, execObj.wrkdir );
 }
 
+
+bool corelib::runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name) const{
+  	QStringList prefixList;
+	// 0   1     2             3            4            5          6            7
+	// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
+	prefixList = db_prefix->getFieldsByPrefixName(prefix_name);
+
+	QString exec;
+	QStringList args;
+	QString envargs;
+
+	exec = this->getSetting("system", "sh").toString();
+
+	args.append("-c");
+
+	if (!prefixList.at(1).isEmpty()){
+		//If icon has prefix -- add to args
+		envargs.append(QObject::tr(" WINEPREFIX=%1 ").arg(prefixList.at(1)));
+	} else {
+		//Else use default prefix
+		envargs.append(QObject::tr(" WINEPREFIX=%1/.wine ").arg(QDir::homePath()));
+	}
+
+	if (!prefixList.at(2).isEmpty()){
+		envargs.append(QObject::tr(" WINEDLLPATH=%1 ").arg(prefixList.at(2)));
+	} else {
+		envargs.append(QObject::tr(" WINEDLLPATH=%1 ").arg(this->getSetting("wine", "WineLibs").toString()));
+	}
+
+	if (!prefixList.at(3).isEmpty()){
+		envargs.append(QObject::tr(" WINELOADER=%1 ").arg(prefixList.at(3)));
+	} else {
+		envargs.append(QObject::tr(" WINELOADER=%1 ").arg(this->getSetting("wine", "LoaderBin").toString()));
+	}
+
+	if (!prefixList.at(4).isEmpty()){
+		envargs.append(QObject::tr(" WINESERVER=%1 ").arg(prefixList.at(4)));
+	} else {
+		envargs.append(QObject::tr(" WINESERVER=%1 ").arg(this->getSetting("wine", "ServerBin").toString()));
+	}
+
+	QString exec_string = "";
+	exec_string.append(envargs);
+	exec_string.append(" ");
+
+	if (!prefixList.at(5).isEmpty()){
+		exec_string.append(prefixList.at(5));
+	} else {
+		exec_string.append(this->getSetting("wine", "WineBin").toString());
+	}
+	exec_string.append(" ");
+	exec_string.append(" \"");
+	exec_string.append(winebinary);
+	exec_string.append("\" ");
+	exec_string.append(cmdargs);
+
+	args.append(exec_string);
+
+	QProcess *proc;
+	proc = new QProcess();
+	return proc->startDetached(exec, args, QDir::homePath());
+}
+
+
 bool corelib::mountImage(QString image_name, const QString prefix_name) const{
   	QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
 

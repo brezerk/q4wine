@@ -205,6 +205,7 @@ public:
 	 * \return Return true on success.
 	 */
 	bool runWineBinary(const ExecObject execObj) const;
+	bool runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name) const;
 
 	/*! \brief Open prefix folder.
 	 *
@@ -219,11 +220,6 @@ public:
 	 * \return Return an list of cdrom devices.
 	 */
 	QStringList getWineDlls(QString prefix_lib_path) const;
-    private:
-    /*! Define is library operate in CLI or GUI mode.
-     * \note This is typically need for error message display.
-     */
-    bool _GUI_MODE;
 
 	/*! \brief Runs process.
 	 *
@@ -233,6 +229,12 @@ public:
 	 * \return True on success.
 	 */
 	bool runProcess(const QString exec, const QStringList args, QString dir = "", bool showLog = TRUE) const;
+
+    private:
+    /*! Define is library operate in CLI or GUI mode.
+     * \note This is typically need for error message display.
+     */
+    bool _GUI_MODE;
 
     /*! \brief Displays error message depending on _GUI_MODE variable value
      *

@@ -191,6 +191,29 @@ QString Prefix::getPath(const QString prefix_name) const{
 	return value;
 }
 
+QString Prefix::getMountPath(const QString prefix_name) const{
+	QString value;
+	QSqlQuery query;
+
+	query.prepare("SELECT cdrom_mount FROM prefix WHERE name=:prefix_name");
+	query.bindValue(":prefix_name", prefix_name);
+
+	if (query.exec()){
+		query.first();
+		if (query.isValid()){
+			if (query.value(0).toString().isEmpty()){
+				value = QDir::homePath();
+				value.append("/.wine");
+			} else {
+				value.append(query.value(0).toString());
+			}
+		}
+	} else {
+		qDebug()<<"SqlError: "<<query.lastError();
+	}
+	return value;
+}
+
 QStringList Prefix::getFieldsByPrefixId(const QString prefix_id) const{
 	QStringList values;
 	QSqlQuery query;
