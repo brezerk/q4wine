@@ -54,12 +54,13 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	setupUi(this);
 	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
 
-	// Getting settings from config file
-	this->getSettings();
+
 
 	// Updating database connected items
 	updateDtabaseConnectedItems();
-	// Slots connections
+
+	// Getting settings from config file
+	this->getSettings();
 
 	// Timer flag to running
 	_IS_TIMER_RUNNING=TRUE;
@@ -269,6 +270,35 @@ void MainWindow::getSettings(){
 	    val = CoreLib->getSetting("icotool", "icotool");
 		ICOTOOL_BIN=val.toString();
 	#endif
+
+	QString oldDir, oldPrefix;
+	oldPrefix = CoreLib->getSetting("LastPrefix", "prefix", false).toString();
+	oldDir = CoreLib->getSetting("LastPrefix", "dir", false).toString();
+
+	if (!oldPrefix.isEmpty()){
+		QTreeWidgetItem* item;
+		QTreeWidgetItem* childItem;
+		for(int i=0; i < twPrograms->topLevelItemCount(); i++)
+		{
+			item = twPrograms->topLevelItem(i);
+			if (oldPrefix==item->text(0)){
+				if (oldDir.isEmpty()){
+					twPrograms->setCurrentItem(item);
+					twPrograms_ItemClick(item, 0);
+					cbPrefixes->
+					break;
+				} else {
+					for (int j=0; j < item->childCount(); j++){
+						childItem=item->child(j);
+						if (childItem->text(0)==oldDir){
+							twPrograms->setCurrentItem(childItem);
+							twPrograms_ItemClick(childItem, 0);
+						}
+					}
+				}
+			}
+		}
+	}
 
 	switch (CoreLib->getSetting("network", "type", false).toInt()){
 	    case 0:
@@ -761,11 +791,29 @@ void MainWindow::closeEvent(QCloseEvent *event){
 		event->ignore();
 	}
 
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
+
 	QSettings settings(APP_SHORT_NAME, "default");
-	settings.beginGroup("MainWindow");
-	settings.setValue("size", size());
-	settings.setValue("pos", pos());
-	settings.endGroup();
+		settings.beginGroup("MainWindow");
+		settings.setValue("size", size());
+		settings.setValue("pos", pos());
+		settings.endGroup();
+		settings.beginGroup("LastPrefix");
+		if (treeItem){
+			if (treeItem->parent()){
+				settings.setValue("prefix", treeItem->parent()->text(0));
+				settings.setValue("dir", treeItem->text(0));
+			} else {
+				settings.setValue("prefix", treeItem->text(0));
+				settings.setValue("dir", "");
+			}
+		} else {
+				settings.setValue("prefix", "");
+				settings.setValue("dir", "");
+		}
+		settings.endGroup();
+
+	return;
 }
 
 
