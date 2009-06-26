@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 	libq4wine.setFileName("libq4wine-core");
 
 	if (!libq4wine.load()){
-		libq4wine.load();
+		return -1;
 	}
 
 	// Getting corelib calss pointer

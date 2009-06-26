@@ -33,8 +33,7 @@
 #include <QStringList>
 #include "config.h"
 
-#include <q4wine-lib/main.h>
-
+#include "q4wine-lib/main.h"
 
 #include "src/core/database/initdb.h"
 #include "src/core/database/db.h"
