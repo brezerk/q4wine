@@ -285,7 +285,6 @@ void MainWindow::getSettings(){
 				if (oldDir.isEmpty()){
 					twPrograms->setCurrentItem(item);
 					twPrograms_ItemClick(item, 0);
-					cbPrefixes->
 					break;
 				} else {
 					for (int j=0; j < item->childCount(); j++){
