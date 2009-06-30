@@ -65,11 +65,11 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	lstIcons->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
 	lstIcons->setMovement(QListView::Snap);
 	lstIcons->setDragDropMode(QAbstractItemView::InternalMove);
-	//lstIcons->set
-	//lstIcons->setLayoutMode(QListView::Batched);
+	lstIcons->setSelectionMode(QAbstractItemView::ContiguousSelection);
 
 	QHBoxLayout *layout = new QHBoxLayout;
 	layout->addWidget(lstIcons);
+	layout->setMargin(3);
 	gbIcons->setLayout(layout);
 
 	// Updating database connected items
@@ -81,13 +81,13 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	// Timer flag to running
 	_IS_TIMER_RUNNING=TRUE;
 
-        // Connecting signals and slots
+	  // Connecting signals and slots
 	connect(timer, SIGNAL(timeout()), this, SLOT(getWineProccessInfo()));
 	connect(tbwGeneral, SIGNAL(currentChanged(int)), this, SLOT(CoreFunction_ResizeContent(int)));
 	connect(cmdManagePrefixes, SIGNAL(clicked()), this, SLOT(cmdManagePrefixes_Click()));
 	connect(cmdCreateFake, SIGNAL(clicked()), this, SLOT(cmdCreateFake_Click()));
 	connect(cmdUpdateFake, SIGNAL(clicked()), this, SLOT(cmdUpdateFake_Click()));
-        connect(cmdWinetricks, SIGNAL(clicked()), this, SLOT(cmdWinetricks_Click()));
+	  connect(cmdWinetricks, SIGNAL(clicked()), this, SLOT(cmdWinetricks_Click()));
 	connect(cmdTestWis, SIGNAL(clicked()), this, SLOT(cmdTestWis_Click()));
 
 	// Signals commection for Icons and Folders
@@ -117,17 +117,17 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	connect(mainAboutQt, SIGNAL(triggered()), this, SLOT(mainAboutQt_Click()));
 	connect(mainExportIcons, SIGNAL(triggered()), this, SLOT(mainExportIcons_Click()));
 
-	connect(lstIcons, SIGNAL(itemPressed (QListWidgetItem *)), this, SLOT(lstIcons_itemPressed (QListWidgetItem *)));
+	connect(lstIcons, SIGNAL(startDrag ()), this, SLOT(startDrag()));
 
-        #ifndef WITH_ICOTOOLS
-            mainExportIcons->setEnabled(false);
-        #endif
+	  #ifndef WITH_ICOTOOLS
+		mainExportIcons->setEnabled(false);
+	  #endif
 
-        #ifdef WITH_DEVELOP_STUFF
-            cmdTestWis->setEnabled(true);
-        #else
-            cmdTestWis->setEnabled(false);
-        #endif
+	  #ifdef WITH_DEVELOP_STUFF
+		cmdTestWis->setEnabled(true);
+	  #else
+		cmdTestWis->setEnabled(false);
+	  #endif
 
 	connect(mainOptions, SIGNAL(triggered()), this, SLOT(mainOptions_Click()));
 	connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
@@ -158,19 +158,35 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	twPrograms->installEventFilter(this);
 	lstIcons->installEventFilter(this);
 
-        // FIXME: Move this into shared libaray
+	  // FIXME: Move this into shared libaray
 	runAutostart();
 
 	createTrayIcon();
 
-        // FIXME: Remove this as replace for shared library
+	  // FIXME: Remove this as replace for shared library
 	//core = new CoreMethods();
 
 	return;
 }
 
 
-void MainWindow::lstIcons_itemPressed (QListWidgetItem * item){
+void MainWindow::startDrag (){
+
+   QListWidgetItem *item = lstIcons->currentItem();
+
+   if (item){
+	QMimeData *mimeData = new QMimeData;
+	QList<QUrl> urls;
+	urls<<QUrl::fromLocalFile("/home/brezerk/systemsettings.desktop");
+	mimeData->setUrls(urls);
+	//mimeData->setText("application/x-desktop");
+	//mimeData->setData("", "[Desktop Entry]\nExec=systemsettings -caption\"%c\" %i\nIcon=preferences-system\nType=Application\nX-DocPath=systemsettings/index.html\nX-KDE-StartupNotify=true\nGenericName=System Settings\nName=System Settings\nX-DBUS-StartupType=Unique\nCategories=Qt;KDE;System;");
+	QDrag *drag = new QDrag(this);
+	drag->setMimeData(mimeData);
+	drag->setPixmap(item->icon().pixmap(32));
+	drag->start(Qt::MoveAction);
+   }
+   qDebug()<<"emit done!";
   return;
 }
 
@@ -650,7 +666,7 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint & iPoint){
 		Function showing context menu
 	*/
 
-	QListWidgetItem *iconItem = lstIcons->itemAt(iPoint);;
+	QListWidgetItem *iconItem = lstIcons->itemAt(iPoint);
 	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 
 	if (iconItem)
@@ -728,13 +744,23 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint & iPoint){
 		iconPaste->setEnabled(FALSE);
 	}
 
+	if (lstIcons->selectedItems().count()>0){
+		iconDelete->setEnabled(TRUE);
+		iconCut->setEnabled(TRUE);
+		iconCopy->setEnabled(TRUE);
+	} else {
+		iconDelete->setEnabled(FALSE);
+		iconCut->setEnabled(FALSE);
+		iconCopy->setEnabled(FALSE);
+	}
+
+
+
 	if(iconItem){
 		iconRun->setEnabled(TRUE);
 		iconOptions->setEnabled(TRUE);
 		iconRename->setEnabled(TRUE);
 		iconDelete->setEnabled(TRUE);
-		iconCut->setEnabled(TRUE);
-		iconCopy->setEnabled(TRUE);
 
 		if (treeItem->parent()){
 			result=db_icon->getByName(treeItem->parent()->text(0), treeItem->text(0), iconItem->text());
@@ -924,7 +950,7 @@ void MainWindow::CoreFunction_ResizeContent(int tabIndex){
 	switch (tabIndex){
 		case 1:
 			//Initiate /proc reading
-                        if (_IS_TIMER_RUNNING){
+				if (_IS_TIMER_RUNNING){
 				getWineProccessInfo();
 				// Starting timer for reading /proc
 				timer->start(1000);
@@ -941,12 +967,12 @@ void MainWindow::CoreFunction_ResizeContent(int tabIndex){
 			tablePrefix->horizontalHeader()->setStretchLastSection(TRUE);
 
 			// Stopping timer for reading /proc
-                        if (_IS_TIMER_RUNNING)
+				if (_IS_TIMER_RUNNING)
 				timer->stop();
 		break;
 		default:
 			// Stopping timer for reading /proc
-                        if (_IS_TIMER_RUNNING)
+				if (_IS_TIMER_RUNNING)
 				timer->stop();
 		break;
 	}
@@ -1004,61 +1030,61 @@ void MainWindow::CoreFunction_SetProcNicePriority(int priority, int pid){
 }
 
 void MainWindow::getWineProccessInfo(void){
-        // If _RUN_TIMER==FALSE then timer is stopped by user
-        if (!_IS_TIMER_RUNNING)
-            return;
+	  // If _RUN_TIMER==FALSE then timer is stopped by user
+	  if (!_IS_TIMER_RUNNING)
+		return;
 
-        QList<QStringList> proclist;
-        int numRows = tableProc->rowCount();
-        int curRows = 0;
+	  QList<QStringList> proclist;
+	  int numRows = tableProc->rowCount();
+	  int curRows = 0;
 
-        // Getting QList of QStringList which describes running wine processes
-        proclist = CoreLib->getWineProcessList();
+	  // Getting QList of QStringList which describes running wine processes
+	  proclist = CoreLib->getWineProcessList();
 
-        // Preccess QList items one by one
-        for (int i = 0; i < proclist.size(); ++i) {
-            //If first element value "-1" -- then disable timer and set _IS_TIMER_RUNNING flag
-            if (proclist.at(i).at(0) == "-1"){
-                _IS_TIMER_RUNNING=false;
-                timer->stop();
-                return;
-            }
+	  // Preccess QList items one by one
+	  for (int i = 0; i < proclist.size(); ++i) {
+		//If first element value "-1" -- then disable timer and set _IS_TIMER_RUNNING flag
+		if (proclist.at(i).at(0) == "-1"){
+		    _IS_TIMER_RUNNING=false;
+		    timer->stop();
+		    return;
+		}
 
-            curRows++;
+		curRows++;
 
-            if (curRows>numRows){
-                tableProc->insertRow (numRows);
-                numRows = tableProc->rowCount();
-            }
+		if (curRows>numRows){
+		    tableProc->insertRow (numRows);
+		    numRows = tableProc->rowCount();
+		}
 
-            if (tableProc->item(curRows - 1, 0)){
-                 tableProc->item(curRows - 1, 0)->setText(proclist.at(i).at(0));
-                 tableProc->item(curRows - 1, 1)->setText(proclist.at(i).at(1));
-                 tableProc->item(curRows - 1, 2)->setText(proclist.at(i).at(2));
-                 tableProc->item(curRows - 1, 3)->setText(proclist.at(i).at(3));
-            } else {
-                 QTableWidgetItem *newItem = new QTableWidgetItem(proclist.at(i).at(0));
-                 tableProc->setItem(curRows - 1, 0, newItem);
-                 newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-                 newItem = new QTableWidgetItem(proclist.at(i).at(1));
-                 tableProc->setItem(curRows - 1, 1, newItem);
-                 newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-                 newItem = new QTableWidgetItem(proclist.at(i).at(2));
-                 tableProc->setItem(curRows - 1, 2, newItem);
-                 newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-                 newItem = new QTableWidgetItem(proclist.at(i).at(3));
-                 tableProc->setItem(curRows - 1, 3, newItem);
-                 newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-            }
+		if (tableProc->item(curRows - 1, 0)){
+		     tableProc->item(curRows - 1, 0)->setText(proclist.at(i).at(0));
+		     tableProc->item(curRows - 1, 1)->setText(proclist.at(i).at(1));
+		     tableProc->item(curRows - 1, 2)->setText(proclist.at(i).at(2));
+		     tableProc->item(curRows - 1, 3)->setText(proclist.at(i).at(3));
+		} else {
+		     QTableWidgetItem *newItem = new QTableWidgetItem(proclist.at(i).at(0));
+		     tableProc->setItem(curRows - 1, 0, newItem);
+		     newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+		     newItem = new QTableWidgetItem(proclist.at(i).at(1));
+		     tableProc->setItem(curRows - 1, 1, newItem);
+		     newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+		     newItem = new QTableWidgetItem(proclist.at(i).at(2));
+		     tableProc->setItem(curRows - 1, 2, newItem);
+		     newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+		     newItem = new QTableWidgetItem(proclist.at(i).at(3));
+		     tableProc->setItem(curRows - 1, 3, newItem);
+		     newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+		}
 
-        }
+	  }
 
 
 	// Remove unneaded entyes
 	numRows = tableProc->rowCount();
 	if (numRows > curRows)
-            for (int i=curRows; i <= numRows; i++)
-                tableProc->removeRow(curRows);
+		for (int i=curRows; i <= numRows; i++)
+		    tableProc->removeRow(curRows);
 
 
 	lblProcInfo->setText(tr("Total process: %1").arg(numRows));
@@ -1072,7 +1098,7 @@ void MainWindow::getWineProccessInfo(void){
 		processKillSelected->setEnabled(FALSE);
 		processKillWine->setEnabled(FALSE);
 		processRenice->setEnabled(FALSE);
-        }
+	  }
 
 	return;
 }
@@ -1263,7 +1289,7 @@ void MainWindow::prefixSettings_Click(){
      */
     PrefixSettings settings(tablePrefix->item(tablePrefix->currentRow(), 0)->text());
     if (settings.exec()==QDialog::Accepted){
-    	updateDtabaseConnectedItems();
+	updateDtabaseConnectedItems();
     }
     return;
 }
@@ -1828,7 +1854,10 @@ void MainWindow::createMenuActions(){
 		menuIconVoid->addSeparator();
 		menuIconVoid->addAction(iconAdd);
 		menuIconVoid->addSeparator();
+		menuIconVoid->addAction(iconCut);
+		menuIconVoid->addAction(iconCopy);
 		menuIconVoid->addAction(iconPaste);
+		menuIconVoid->addAction(iconDelete);
 		menuIconVoid->addSeparator();
 		menuIconVoid->addMenu(menuIconMount);
 		menuIconVoid->addSeparator();
@@ -2029,7 +2058,7 @@ void MainWindow::iconCut_Click(void){
 
 		see struct iconCopyBuffer definition for details
 	*/
-  	if (!twPrograms->currentItem())
+	if (!twPrograms->currentItem())
 		return;
 
 	QList<QListWidgetItem *> icoList = lstIcons->selectedItems();
@@ -2076,7 +2105,7 @@ void MainWindow::iconCopy_Click(void){
 	see struct iconCopyBuffer definition for details
 	*/
 
-  	if (!twPrograms->currentItem())
+	if (!twPrograms->currentItem())
 		return;
 
 	QList<QListWidgetItem *> icoList = lstIcons->selectedItems();
@@ -2188,7 +2217,7 @@ void MainWindow::xdgOpenIconDir_Click(void){
 	if (!iconItem)
 		return;
 
-  	if (treeItem->parent()){
+	if (treeItem->parent()){
 		result = db_icon->getByName(treeItem->parent()->text(0), treeItem->text(0), iconItem->text());
 	} else {
 		result = db_icon->getByName(treeItem->text(0), "", iconItem->text());
@@ -2208,7 +2237,7 @@ void MainWindow::xdgOpenPrefixDir_Click(void){
 	if (!treeItem)
 		return;
 
-  	if (treeItem->parent()){
+	if (treeItem->parent()){
 		result = db_prefix->getPath(treeItem->parent()->text(0));
 	} else {
 		result = db_prefix->getPath(treeItem->parent()->text(0));
@@ -2229,7 +2258,7 @@ void MainWindow::xdgOpenMountDir_Click(void){
 	if (!treeItem)
 		return;
 
-  	if (treeItem->parent()){
+	if (treeItem->parent()){
 		result = db_prefix->getMountPath(treeItem->parent()->text(0));
 	} else {
 		result = db_prefix->getMountPath(treeItem->parent()->text(0));
@@ -2269,7 +2298,7 @@ void MainWindow::winefileOpenPrefixDir_Click(void){
 	if (!treeItem)
 		return;
 
-  	if (treeItem->parent()){
+	if (treeItem->parent()){
 		result = db_prefix->getPath(treeItem->parent()->text(0));
 		CoreLib->runWineBinary("winefile", result + "/", treeItem->parent()->text(0));
 	} else {
@@ -2288,7 +2317,7 @@ void MainWindow::winefileOpenMountDir_Click(void){
 	if (!treeItem)
 		return;
 
-  	if (treeItem->parent()){
+	if (treeItem->parent()){
 		result = db_prefix->getMountPath(treeItem->parent()->text(0));
 		CoreLib->runWineBinary("winefile", result + "/", treeItem->parent()->text(0));
 	} else {
@@ -2341,7 +2370,7 @@ void MainWindow::dirUnmount_Click(void){
 		Request for unmounting cdrom drve described at wine prefix settings
 	*/
 
-  	bool ret;
+	bool ret;
 	if (twPrograms->currentItem()){
 		if (twPrograms->currentItem()->parent()){
 			ret=CoreLib->umountImage(twPrograms->currentItem()->parent()->text(0));
@@ -2362,7 +2391,7 @@ void MainWindow::dirMountOther_Click(void){
 	/*
 	Request for unmounting cdrom drve described at wine prefix settings
 	*/
-  	#ifdef _OS_LINUX_
+	#ifdef _OS_LINUX_
 	  QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO or NRG Image file"), HOME_PATH, tr("iso and nrg files (*.iso *.nrg)"));
 	#endif
 
@@ -2374,7 +2403,7 @@ void MainWindow::dirMountOther_Click(void){
 		return;
 	}
 
-  	bool ret;
+	bool ret;
 	if (twPrograms->currentItem()){
 		if (twPrograms->currentItem()->parent()){
 			ret=CoreLib->mountImage(fileName, twPrograms->currentItem()->parent()->text(0));
@@ -2432,7 +2461,7 @@ void MainWindow::dirRename_Click(void){
 			db_dir->renameDir(treeItem->text(0), treeItem->parent()->text(0), newName);
 			treeItem->setText(0, newName);
 		}
-	 
+
 	}
 	return;
 }

@@ -51,11 +51,11 @@ QList<QStringList> corelib::getWineProcessList(){
     QString name, procstat, path, prefix, env_arg, nice;
 
     #ifdef _OS_LINUX_
-        QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
+	  QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
     #endif
 
     #ifdef _OS_FREEBSD_
-        QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
+	  QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
     #endif
 
     // Check for /proc directory exists
@@ -64,8 +64,8 @@ QList<QStringList> corelib::getWineProcessList(){
 	if (this->showError(message, false) == QMessageBox::Ignore){
 	    procline << "-1";
 	    proclist << procline;
-            return proclist;
-        }
+		return proclist;
+	  }
     }
 
     /* On Linux:
@@ -73,145 +73,145 @@ QList<QStringList> corelib::getWineProcessList(){
      * its fully wrighted with QT and might work more stable =)
      */
     #ifdef _OS_LINUX_
-        dir.setFilter(QDir::Dirs | QDir::NoSymLinks);
-        dir.setSorting(QDir::Name);
+	  dir.setFilter(QDir::Dirs | QDir::NoSymLinks);
+	  dir.setSorting(QDir::Name);
 
-        QFileInfoList list = dir.entryInfoList();
+	  QFileInfoList list = dir.entryInfoList();
 
-        // Getting directoryes one by one
-        for (int i = 0; i < list.size(); ++i) {
-            QFileInfo fileInfo = list.at(i);
-            path = "/proc/";
-            path.append(fileInfo.fileName());
-            path.append("/stat");
-            QFile file(path);
-            // Try to read stat file
-            if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-                QTextStream in(&file);
-                QString line = in.readLine();
-                if (!line.isNull()){
-                     // Getting nice and name of the process
-                     nice = line.section(' ', 18, 18);
-                     name = line.section(' ', 1, 1);
-                     name.remove(QChar('('));
-                     name.remove(QChar(')'));
-                     name = name.toLower();
+	  // Getting directoryes one by one
+	  for (int i = 0; i < list.size(); ++i) {
+		QFileInfo fileInfo = list.at(i);
+		path = "/proc/";
+		path.append(fileInfo.fileName());
+		path.append("/stat");
+		QFile file(path);
+		// Try to read stat file
+		if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+		    QTextStream in(&file);
+		    QString line = in.readLine();
+		    if (!line.isNull()){
+			   // Getting nice and name of the process
+			   nice = line.section(' ', 18, 18);
+			   name = line.section(' ', 1, 1);
+			   name.remove(QChar('('));
+			   name.remove(QChar(')'));
+			   name = name.toLower();
 
-                    // If name contains wine or .exe and not contains q4wine,
-                    // then we try to get environ variables.
-                    if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
-                        path = "/proc/";
-                        path.append(fileInfo.fileName());
-                        path.append("/environ");
-                        QFile e_file(path);
+			  // If name contains wine or .exe and not contains q4wine,
+			  // then we try to get environ variables.
+			  if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
+				path = "/proc/";
+				path.append(fileInfo.fileName());
+				path.append("/environ");
+				QFile e_file(path);
 
-                        // Getting WINEPREFIX variable.
-                        if (e_file.open(QIODevice::ReadOnly | QIODevice::Text)){
-                            QTextStream e_in(&e_file);
-                            QString e_line = e_in.readLine();
-                            int index = e_line.indexOf("WINEPREFIX=");
-                            prefix="";
-                            if (index!=-1)
-                                for (int i=index+11; i<=e_line.length(); i++){
-                                     if (e_line.mid(i, 1).data()->isPrint()){
-                                           prefix.append(e_line.mid(i, 1));
-                                     } else {
-                                           break;
-                                     }
-                                }
-                        }
+				// Getting WINEPREFIX variable.
+				if (e_file.open(QIODevice::ReadOnly | QIODevice::Text)){
+				    QTextStream e_in(&e_file);
+				    QString e_line = e_in.readLine();
+				    int index = e_line.indexOf("WINEPREFIX=");
+				    prefix="";
+				    if (index!=-1)
+					  for (int i=index+11; i<=e_line.length(); i++){
+						 if (e_line.mid(i, 1).data()->isPrint()){
+							 prefix.append(e_line.mid(i, 1));
+						 } else {
+							 break;
+						 }
+					  }
+				}
 
-                        // Puting all fields into QList<QStringList>
-                        procline.clear();
-                        procline << fileInfo.fileName() << name << nice << prefix;
-                        proclist << procline;
+				// Puting all fields into QList<QStringList>
+				procline.clear();
+				procline << fileInfo.fileName() << name << nice << prefix;
+				proclist << procline;
 
-                    }
-                }
-            file.close();
-            }
-        }
-        #endif
+			  }
+		    }
+		file.close();
+		}
+	  }
+	  #endif
 
-        /* On FreeBSD:
-         * This is new engine for getting process info from /proc directory and kmem interface
-         */
-        #ifdef _OS_FREEBSD_
-            kvm_t *kd;
+	  /* On FreeBSD:
+	   * This is new engine for getting process info from /proc directory and kmem interface
+	   */
+	  #ifdef _OS_FREEBSD_
+		kvm_t *kd;
 	    int cntproc, i, ni, ipid;
 
-            struct kinfo_proc *kp;
-            char buf[_POSIX2_LINE_MAX];
-            char **envs;
+		struct kinfo_proc *kp;
+		char buf[_POSIX2_LINE_MAX];
+		char **envs;
 
-            kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
-                if (!kd){
+		kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
+		    if (!kd){
 		    if (this->showError(QObject::tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), false) == QMessageBox::Ignore){
-                        procline << "-1";
-                        proclist << procline;
-                        return proclist;
-                    }
-                    return proclist;
-                }
-            kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &cntproc);
-                if (!kp){
+				procline << "-1";
+				proclist << procline;
+				return proclist;
+			  }
+			  return proclist;
+		    }
+		kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &cntproc);
+		    if (!kp){
 		    if (this->showError(QObject::tr("<p>It seems q4wine can not run kvm_getprocs.</p>"), false) == QMessageBox::Ignore){
-                        procline << "-1";
-                        proclist << procline;
-                        return proclist;
-                    }
-                    return proclist;
-                }
+				procline << "-1";
+				proclist << procline;
+				return proclist;
+			  }
+			  return proclist;
+		    }
 
-            QStringList cur_pids;
-            for (i=0; i<cntproc;i++){
-                prefix="";
-                ipid = kp[i].ki_pid;
+		QStringList cur_pids;
+		for (i=0; i<cntproc;i++){
+		    prefix="";
+		    ipid = kp[i].ki_pid;
 
-                if (cur_pids.indexOf(QObject::tr("%1").arg(ipid))==-1){
-                    cur_pids << QObject::tr("%1").arg(ipid);
-                    name = kp[i].ki_comm;
+		    if (cur_pids.indexOf(QObject::tr("%1").arg(ipid))==-1){
+			  cur_pids << QObject::tr("%1").arg(ipid);
+			  name = kp[i].ki_comm;
 
-                    if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
-                         ni = kp[i].ki_nice;
-                         nice = QObject::tr("%1").arg(ni);
+			  if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
+				 ni = kp[i].ki_nice;
+				 nice = QObject::tr("%1").arg(ni);
 
-                         if (name.contains("pthread")){
-                              envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
-                              if (envs){
-                                    name = envs[0];
-                                    if (name.isEmpty()){
-                                         name = kp[i].ki_comm;
-                                    } else {
-                                         name = name.split('\\').last();
-                                    }
-                               }
-                          }
+				 if (name.contains("pthread")){
+					envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
+					if (envs){
+						name = envs[0];
+						if (name.isEmpty()){
+						     name = kp[i].ki_comm;
+						} else {
+						     name = name.split('\\').last();
+						}
+					 }
+				  }
 
-                          envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
-                          if (envs){
-                                int j=0;
-                                while (envs[j]){
-                                     env_arg=envs[j];
-                                     int index = env_arg.indexOf("WINEPREFIX=");
-                                     if (index>=0){
-                                           prefix=env_arg.mid(11);
-                                           break;
-                                     }
-                                     j++;
-                                }
-                          } else {
-                                 prefix="";
-                          }
+				  envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
+				  if (envs){
+					  int j=0;
+					  while (envs[j]){
+						 env_arg=envs[j];
+						 int index = env_arg.indexOf("WINEPREFIX=");
+						 if (index>=0){
+							 prefix=env_arg.mid(11);
+							 break;
+						 }
+						 j++;
+					  }
+				  } else {
+					   prefix="";
+				  }
 
-                          // Puting all fields into QList<QStringList>
-                          procline.clear();
-                          procline << QObject::tr("%1").arg(ipid) << name << nice << prefix;
-                          proclist << procline;
-                     }
-                }
-           }
-        #endif
+				  // Puting all fields into QList<QStringList>
+				  procline.clear();
+				  procline << QObject::tr("%1").arg(ipid) << name << nice << prefix;
+				  proclist << procline;
+			   }
+		    }
+	     }
+	  #endif
 
 
     return proclist;
@@ -388,7 +388,7 @@ bool corelib::runIcon(const QString prefix_name, const QString dir_name, const Q
 }
 
 bool corelib::runWineBinary(const ExecObject execObj) const{
-  	QStringList prefixList;
+	QStringList prefixList;
 	// 0   1     2             3            4            5          6            7
 	// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
 	prefixList = db_prefix->getFieldsByPrefixId(execObj.prefixid);
@@ -401,7 +401,7 @@ bool corelib::runWineBinary(const ExecObject execObj) const{
 		// If we gona use console output, so exec program is program specificed at CONSOLE global variable
 		exec = this->getSetting("console", "bin").toString();
 
-		if (!this->getSetting("console", "args").toString().isEmpty()){
+		if (!this->getSetting("console", "args", false).toString().isEmpty()){
 			// If we have any conslope parametres, we gona preccess them one by one
 			QStringList cons_args = this->getSetting("console", "args").toString().split(" ");
 			for (int i=0; i<cons_args.count(); i++){
@@ -502,7 +502,7 @@ bool corelib::runWineBinary(const ExecObject execObj) const{
 
 
 bool corelib::runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name) const{
-  	QStringList prefixList;
+	QStringList prefixList;
 	// 0   1     2             3            4            5          6            7
 	// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
 	prefixList = db_prefix->getFieldsByPrefixName(prefix_name);
@@ -565,7 +565,7 @@ bool corelib::runWineBinary(const QString winebinary, const QString cmdargs, con
 
 
 bool corelib::mountImage(QString image_name, const QString prefix_name) const{
-  	QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
+	QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
 
 	if (mount_point.isEmpty()){
 		this->showError(QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
@@ -630,7 +630,7 @@ bool corelib::mountImage(QString image_name, const QString prefix_name) const{
 }
 
 bool corelib::umountImage(const QString prefix_name) const{
-  	QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
+	QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
 
 	if (mount_point.isEmpty()){
 		this->showError(QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));

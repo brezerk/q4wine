@@ -16,8 +16,11 @@ protected:
 	void dragMoveEvent(QDragMoveEvent *event);
 	void dropEvent(QDropEvent *event);
 private:
-	void StartDrug();
 	QPoint startPos;
+	bool drag, dragstarted;
+
+signals:
+	void startDrag();
 };
 
 #endif // DRAGLISTWIDGET_H

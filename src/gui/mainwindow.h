@@ -232,7 +232,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void mainOptions_Click(void);
 		void mainInstall_Click(void);
 
-		void lstIcons_itemPressed (QListWidgetItem * item);
+		void startDrag();
 	private:
 
 		DragListWidget *lstIcons;
