@@ -63,6 +63,9 @@
 #include <QGroupBox>
 #include <QVariant>
 
+#include <QMimeData>
+#include <QDrag>
+
 #include <ui_MainWindow.h>
 
 #include "config.h"
@@ -71,6 +74,8 @@
 #include "src/core/database/dir.h"
 #include "src/core/database/icon.h"
 #include "src/core/database/image.h"
+
+#include "draglistwidget.h"
 
 #include "wisitem.h"
 #include "coremethods.h"
@@ -115,6 +120,8 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		iconCopyBuffer iconBuffer;
 
 	private slots:
+
+		//void StartDrug(QDragEnterEvent * event);
 
 		void getWineProccessInfo(void);
 		void CoreFunction_ResizeContent(int tabIndex);
@@ -224,7 +231,11 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void mainRun_Click(void);
 		void mainOptions_Click(void);
 		void mainInstall_Click(void);
+
+		void lstIcons_itemPressed (QListWidgetItem * item);
 	private:
+
+		DragListWidget *lstIcons;
 
 		//! This is need for libq4wine-core.so import;
 		typedef void *CoreLibPrototype (bool);
@@ -313,8 +324,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void createToolBarActions(void);
 		void getSettings(void);
 
-
-		//FIXME: Remove in to core lib
 		void runAutostart(void);
 		void CoreFunction_SetProcNicePriority(int priority, int pid);
 

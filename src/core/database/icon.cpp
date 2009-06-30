@@ -165,7 +165,6 @@ QStringList Icon::getByName(const QString prefix_name, const QString dir_name, c
 	query.bindValue(":icon_name", icon_name);
 	query.bindValue(":prefix_name", prefix_name);
 
-
 	if (query.exec()){
 		query.first();
 			QStringList values;
@@ -179,7 +178,6 @@ QStringList Icon::getByName(const QString prefix_name, const QString dir_name, c
 		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
 		valuelist.clear();
 	}
-
 	return valuelist;
 }
 

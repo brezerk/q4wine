@@ -173,7 +173,6 @@ int main(int argc, char *argv[])
 			   subDir=rootConfPath;
 			   subDir.append("/");
 			   subDir.append(subDirs.at(i).toLocal8Bit().constData());
-
 			   if (!dir.exists(subDir)){
 				if (!dir.mkdir(subDir)){
 				   QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));

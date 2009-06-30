@@ -54,6 +54,12 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	setupUi(this);
 	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
 
+	lstIcons = new DragListWidget(gbIcons);
+
+	QHBoxLayout *layout = new QHBoxLayout;
+	layout->addWidget(lstIcons);
+
+	gbIcons->setLayout(layout);
 
 
 	// Updating database connected items
@@ -100,6 +106,8 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	connect(mainAbout, SIGNAL(triggered()), this, SLOT(mainAbout_Click()));
 	connect(mainAboutQt, SIGNAL(triggered()), this, SLOT(mainAboutQt_Click()));
 	connect(mainExportIcons, SIGNAL(triggered()), this, SLOT(mainExportIcons_Click()));
+
+	connect(lstIcons, SIGNAL(itemPressed (QListWidgetItem *)), this, SLOT(lstIcons_itemPressed (QListWidgetItem *)));
 
         #ifndef WITH_ICOTOOLS
             mainExportIcons->setEnabled(false);
@@ -148,6 +156,11 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	//core = new CoreMethods();
 
 	return;
+}
+
+
+void MainWindow::lstIcons_itemPressed (QListWidgetItem * item){
+  return;
 }
 
 void MainWindow::cmdTestWis_Click(){
@@ -535,6 +548,8 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 	if (!treeItem)
 		return;
 
+	this->twPrograms_ItemClick(treeItem, 0);
+
 	if (treeItem->parent()){
 		result = db_prefix->getFieldsByPrefixName(treeItem->parent()->text(0));
 	} else {
@@ -625,121 +640,112 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint & iPoint){
 	*/
 
 	QListWidgetItem *iconItem = lstIcons->itemAt(iPoint);;
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 
-		QTreeWidgetItem *treeItem = twPrograms->currentItem();
+	if (iconItem)
+		this->lstIcons_ItemClick(iconItem);
 
-		QString cdrom_drive, cdrom_mount;
-		QStringList result;
-		QList<QStringList> images;
+	QString cdrom_drive, cdrom_mount;
+	QStringList result;
+	QList<QStringList> images;
 
-		if (!treeItem)
-			return;
+	if (!treeItem)
+		return;
+
+	if (treeItem->parent()){
+		result = db_prefix->getFieldsByPrefixName(treeItem->parent()->text(0));
+	} else {
+		result = db_prefix->getFieldsByPrefixName(treeItem->text(0));
+	}
+
+	cdrom_drive = result.at(7);
+	cdrom_mount = result.at(6);
+
+	if (cdrom_mount.isEmpty()){
+		xdgOpenMountDir->setEnabled(FALSE);
+		winefileOpenMountDir->setEnabled(FALSE);
+	} else {
+		xdgOpenMountDir->setEnabled(TRUE);
+		winefileOpenMountDir->setEnabled(TRUE);
+	}
+
+	menuIconMount->clear();
+	menuIconMount->setEnabled(FALSE);
+
+	if (!cdrom_drive.isEmpty() && !cdrom_mount.isEmpty()){
+		menuIconMount->setEnabled(TRUE);
+		QMenu* menuIconMountImages;
+		menuIconMountImages = new QMenu(this);
+		menuIconMountImages = menuIconMount->addMenu(tr("mount [%1]").arg(CoreLib->getMountedImages(cdrom_mount)));
+
+		if (!cdrom_drive.isEmpty()){
+			menuIconMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
+			menuIconMountImages->addSeparator();
+		}
+
+		menuIconMount->addAction(iconUnmount);
+		menuIconMount->addAction(iconMountOther);
+
+		images = db_image->getFields();
+		for (int i = 0; i < images.size(); ++i) {
+			menuIconMountImages->addAction(QIcon(":/data/cdrom_menu.png") , images.at(i).at(0));
+		}
+		connect (menuIconMountImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountImages_triggered(QAction*)));
+
+		if ((!cdrom_drive.isEmpty()) && (!cdrom_mount.isEmpty())){
+			iconMount->setEnabled(TRUE);
+			iconUnmount->setEnabled(TRUE);
+			iconMount->setText(tr("mount [%1]").arg(cdrom_drive.split("/").last()));
+			iconUnmount->setText(tr("umount [%1]").arg(cdrom_mount));
+		} else {
+			iconMount->setEnabled(FALSE);
+			iconUnmount->setEnabled(FALSE);
+			iconMount->setText(tr("mount [none]"));
+			iconUnmount->setText(tr("umount [none]"));
+		}
+
+		if (!cdrom_drive.isEmpty()){
+			iconMountOther->setEnabled(TRUE);
+		} else {
+			iconMountOther->setEnabled(FALSE);
+		}
+	}
+
+	if (iconBuffer.names.count()>0){
+		iconPaste->setEnabled(TRUE);
+	} else {
+		iconPaste->setEnabled(FALSE);
+	}
+
+	if(iconItem){
+		iconRun->setEnabled(TRUE);
+		iconOptions->setEnabled(TRUE);
+		iconRename->setEnabled(TRUE);
+		iconDelete->setEnabled(TRUE);
+		iconCut->setEnabled(TRUE);
+		iconCopy->setEnabled(TRUE);
 
 		if (treeItem->parent()){
-			result = db_prefix->getFieldsByPrefixName(treeItem->parent()->text(0));
+			result=db_icon->getByName(treeItem->parent()->text(0), treeItem->text(0), iconItem->text());
 		} else {
-			result = db_prefix->getFieldsByPrefixName(treeItem->text(0));
+			result=db_icon->getByName(treeItem->text(0), "", iconItem->text());
 		}
 
-		cdrom_drive = result.at(7);
-		cdrom_mount = result.at(6);
-
-		if (cdrom_mount.isEmpty()){
-			xdgOpenMountDir->setEnabled(FALSE);
-			winefileOpenMountDir->setEnabled(FALSE);
+		if (!result.at(4).isEmpty()){
+			xdgOpenIconDir->setEnabled(TRUE);
+			winefileOpenIconDir->setEnabled(TRUE);
 		} else {
-			xdgOpenMountDir->setEnabled(TRUE);
-			winefileOpenMountDir->setEnabled(TRUE);
+			xdgOpenIconDir->setEnabled(FALSE);
+			winefileOpenIconDir->setEnabled(FALSE);
 		}
 
-
-		menuIconMount->clear();
-		menuIconMount->setEnabled(FALSE);
-
-
-		if (!cdrom_drive.isEmpty() && !cdrom_mount.isEmpty()){
-			menuIconMount->setEnabled(TRUE);
-			QMenu* menuIconMountImages;
-			menuIconMountImages = new QMenu(this);
-			menuIconMountImages = menuIconMount->addMenu(tr("mount [%1]").arg(CoreLib->getMountedImages(cdrom_mount)));
-
-			if (!cdrom_drive.isEmpty()){
-				menuIconMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
-				menuIconMountImages->addSeparator();
-			}
-
-			menuIconMount->addAction(iconUnmount);
-			menuIconMount->addAction(iconMountOther);
-
-			images = db_image->getFields();
-			for (int i = 0; i < images.size(); ++i) {
-				menuIconMountImages->addAction(QIcon(":/data/cdrom_menu.png") , images.at(i).at(0));
-			}
-			connect (menuIconMountImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountImages_triggered(QAction*)));
-
-			//if (item){
-				if ((!cdrom_drive.isEmpty()) && (!cdrom_mount.isEmpty())){
-					iconMount->setEnabled(TRUE);
-					iconUnmount->setEnabled(TRUE);
-					iconMount->setText(tr("mount [%1]").arg(cdrom_drive.split("/").last()));
-					iconUnmount->setText(tr("umount [%1]").arg(cdrom_mount));
-				} else {
-					iconMount->setEnabled(FALSE);
-					iconUnmount->setEnabled(FALSE);
-					iconMount->setText(tr("mount [none]"));
-					iconUnmount->setText(tr("umount [none]"));
-				}
-
-				if (!cdrom_drive.isEmpty()){
-					iconMountOther->setEnabled(TRUE);
-				} else {
-					iconMountOther->setEnabled(FALSE);
-				}
-
-			//}
-
-			}
-
-			//QListWidgetItem *iconItem;
-			//iconItem=lstIcons->currentItem();
-
-			if (iconBuffer.names.count()>0){
-				iconPaste->setEnabled(TRUE);
-			} else {
-				iconPaste->setEnabled(FALSE);
-			}
-
-			if(iconItem){
-				iconRun->setEnabled(TRUE);
-				iconOptions->setEnabled(TRUE);
-				iconRename->setEnabled(TRUE);
-				iconDelete->setEnabled(TRUE);
-				iconCut->setEnabled(TRUE);
-				iconCopy->setEnabled(TRUE);
-
-				if (treeItem->parent()){
-					result=db_icon->getByName(treeItem->parent()->text(0), treeItem->text(0), iconItem->text());
-				} else {
-					result=db_icon->getByName(treeItem->text(0), "", iconItem->text());
-				}
-
-				if (!result.at(4).isEmpty()){
-					xdgOpenIconDir->setEnabled(TRUE);
-					winefileOpenIconDir->setEnabled(TRUE);
-				} else {
-					xdgOpenIconDir->setEnabled(FALSE);
-					winefileOpenIconDir->setEnabled(FALSE);
-				}
-
-				menuIcon->exec(QCursor::pos());
-			} else {
-				xdgOpenIconDir->setEnabled(FALSE);
-				winefileOpenIconDir->setEnabled(FALSE);
-
-				menuIconVoid->exec(QCursor::pos());
-			}
-
-	  return;
+		menuIcon->exec(QCursor::pos());
+	} else {
+		xdgOpenIconDir->setEnabled(FALSE);
+		winefileOpenIconDir->setEnabled(FALSE);
+		menuIconVoid->exec(QCursor::pos());
+	}
+	return;
 }
 
 void MainWindow::createTrayIcon(){
@@ -1788,12 +1794,12 @@ void MainWindow::createMenuActions(){
 		menuIcon->addSeparator();
 		menuIcon->addAction(iconOptions);
 			menuIconXdgOpendir = new QMenu(this);
-			menuIconXdgOpendir = menuIcon->addMenu(tr("xdg-open"));
+			menuIconXdgOpendir = menuIcon->addMenu(tr("Browser"));
 			menuIconXdgOpendir->addAction(xdgOpenIconDir);
 			menuIconXdgOpendir->addAction(xdgOpenMountDir);
 			menuIconXdgOpendir->addAction(xdgOpenPrefixDir);
 			menuIconWineOpendir = new QMenu(this);
-			menuIconWineOpendir = menuIcon->addMenu(tr("winefile"));
+			menuIconWineOpendir = menuIcon->addMenu(tr("Wine browser"));
 			menuIconWineOpendir->addAction(winefileOpenIconDir);
 			menuIconWineOpendir->addAction(winefileOpenMountDir);
 			menuIconWineOpendir->addAction(winefileOpenPrefixDir);
@@ -1806,8 +1812,6 @@ void MainWindow::createMenuActions(){
 		menuIcon->addSeparator();
 		menuIcon->addAction(iconAdd);
 
-  //menuIconMount = new QMenu(this);
-
 	  menuIconVoid = new QMenu(this);
 		menuIconVoid->addAction(dirRun);
 		menuIconVoid->addSeparator();
@@ -1818,18 +1822,19 @@ void MainWindow::createMenuActions(){
 		menuIconVoid->addMenu(menuIconMount);
 		menuIconVoid->addSeparator();
 			menuIconXdgOpendir = new QMenu(this);
-			menuIconXdgOpendir = menuIconVoid->addMenu(tr("xdg-open"));
+			menuIconXdgOpendir = menuIconVoid->addMenu(tr("Browser"));
 			menuIconXdgOpendir->addAction(xdgOpenMountDir);
 			menuIconXdgOpendir->addAction(xdgOpenPrefixDir);
 			menuIconWineOpendir = new QMenu(this);
-			menuIconWineOpendir = menuIconVoid->addMenu(tr("winefile"));
+			menuIconWineOpendir = menuIconVoid->addMenu(tr("Wine browser"));
 			menuIconWineOpendir->addAction(winefileOpenMountDir);
 			menuIconWineOpendir->addAction(winefileOpenPrefixDir);
+
+	menuDirMount = new QMenu(tr("Mount iso..."));
 
 	menuDir = new QMenu(this);
 		menuDir->addAction(dirAdd);
 		menuDir->addSeparator();
-		menuDirMount = new QMenu(this);
 		menuDir->addMenu(menuDirMount);
 		menuDir->addSeparator();
 		menuDir->addAction(dirRun);
@@ -1839,11 +1844,11 @@ void MainWindow::createMenuActions(){
 		menuDir->addAction(dirDelete);
 		menuDir->addSeparator();
 			menuIconXdgOpendir = new QMenu(this);
-			menuIconXdgOpendir = menuDir->addMenu(tr("xdg-open"));
+			menuIconXdgOpendir = menuDir->addMenu(tr("Browser"));
 			menuIconXdgOpendir->addAction(xdgOpenMountDir);
 			menuIconXdgOpendir->addAction(xdgOpenPrefixDir);
 			menuIconWineOpendir = new QMenu(this);
-			menuIconWineOpendir = menuDir->addMenu(tr("winefile"));
+			menuIconWineOpendir = menuDir->addMenu(tr("Wine browser"));
 			menuIconWineOpendir->addAction(winefileOpenMountDir);
 			menuIconWineOpendir->addAction(winefileOpenPrefixDir);
 
@@ -1870,25 +1875,21 @@ QIcon MainWindow::loadIcon(QString iconName){
 
 void MainWindow::createToolBarActions(){
 	// Toolbar creation function
+	procToolBar = new QToolBar(tlbProccess);
+	procToolBar->addAction(processKillSelected);
+	procToolBar->addAction(processKillWine);
+	procToolBar->addSeparator ();
+	procToolBar->addAction(processRefresh);
 
-		procToolBar = new QToolBar(tlbProccess);
-
-		procToolBar->addAction(processKillSelected);
-		procToolBar->addAction(processKillWine);
-		procToolBar->addSeparator ();
-		procToolBar->addAction(processRefresh);
-
-
-		prefixToolBar = new QToolBar(tlbPrefix);
-
-		prefixToolBar->addAction(prefixAdd);
-		prefixToolBar->addSeparator ();
-		prefixToolBar->addAction(prefixImport);
-		prefixToolBar->addAction(prefixExport);
-		prefixToolBar->addSeparator ();
-		prefixToolBar->addAction(prefixSettings);
-		prefixToolBar->addSeparator ();
-		prefixToolBar->addAction(prefixDelete);
+	prefixToolBar = new QToolBar(tlbPrefix);
+	prefixToolBar->addAction(prefixAdd);
+	prefixToolBar->addSeparator ();
+	prefixToolBar->addAction(prefixImport);
+	prefixToolBar->addAction(prefixExport);
+	prefixToolBar->addSeparator ();
+	prefixToolBar->addAction(prefixSettings);
+	prefixToolBar->addSeparator ();
+	prefixToolBar->addAction(prefixDelete);
 
 	return;
 }

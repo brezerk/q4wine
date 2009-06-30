@@ -34,6 +34,7 @@ SET( SOURCES
 	${CMAKE_SOURCE_DIR}/src/gui/wizard.cpp
 	${CMAKE_SOURCE_DIR}/src/gui/imagemanager.cpp
 	${CMAKE_SOURCE_DIR}/src/wis/wisitem.cpp
+	${CMAKE_SOURCE_DIR}/src/gui/draglistwidget.cpp
 )
 
 SET ( HEADERS_DIR
@@ -67,6 +68,7 @@ SET ( HEADERS
 	${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
 	${CMAKE_SOURCE_DIR}/src/core/database/initdb.h
 	${CMAKE_SOURCE_DIR}/config.h
+	${CMAKE_SOURCE_DIR}/src/gui/draglistwidget.h
 )
 
 SET ( MOC_HEADEDRS
@@ -85,6 +87,7 @@ SET ( MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/core/coremethods.h
 	#${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
 	#${CMAKE_SOURCE_DIR}/src/core/commandline.h
+	${CMAKE_SOURCE_DIR}/src/gui/draglistwidget.h
 )
 
 SET ( UIS

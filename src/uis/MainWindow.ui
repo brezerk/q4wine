@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>615</width>
-    <height>527</height>
+    <width>609</width>
+    <height>521</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,6 +30,29 @@
         <string>Programs</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="gbIcons">
+          <property name="title">
+           <string>Icons</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QGroupBox" name="gbInfo">
+          <property name="title">
+           <string>Info</string>
+          </property>
+          <layout class="QGridLayout" name="_5">
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblInfo">
+             <property name="text">
+              <string>Name:&lt;br&gt;Desctiption:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
         <item row="0" column="0">
          <widget class="QGroupBox" name="gbCategoryes">
           <property name="minimumSize">
@@ -53,9 +76,6 @@
              <property name="contextMenuPolicy">
               <enum>Qt::CustomContextMenu</enum>
              </property>
-             <property name="acceptDrops">
-              <bool>true</bool>
-             </property>
              <property name="autoExpandDelay">
               <number>0</number>
              </property>
@@ -72,74 +92,6 @@
                <string>Default</string>
               </property>
              </item>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QGroupBox" name="gbIcons">
-          <property name="title">
-           <string>Icons</string>
-          </property>
-          <layout class="QGridLayout">
-           <item row="0" column="0">
-            <widget class="QListWidget" name="lstIcons">
-             <property name="contextMenuPolicy">
-              <enum>Qt::CustomContextMenu</enum>
-             </property>
-             <property name="selectionMode">
-              <enum>QAbstractItemView::ExtendedSelection</enum>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>64</width>
-               <height>64</height>
-              </size>
-             </property>
-             <property name="textElideMode">
-              <enum>Qt::ElideNone</enum>
-             </property>
-             <property name="movement">
-              <enum>QListView::Snap</enum>
-             </property>
-             <property name="resizeMode">
-              <enum>QListView::Adjust</enum>
-             </property>
-             <property name="gridSize">
-              <size>
-               <width>80</width>
-               <height>80</height>
-              </size>
-             </property>
-             <property name="viewMode">
-              <enum>QListView::IconMode</enum>
-             </property>
-             <property name="uniformItemSizes">
-              <bool>false</bool>
-             </property>
-             <property name="wordWrap">
-              <bool>false</bool>
-             </property>
-             <property name="selectionRectVisible">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="1" column="0" colspan="2">
-         <widget class="QGroupBox" name="gbInfo">
-          <property name="title">
-           <string>Info</string>
-          </property>
-          <layout class="QGridLayout" name="_5">
-           <item row="0" column="0">
-            <widget class="QLabel" name="lblInfo">
-             <property name="text">
-              <string>Name:&lt;br&gt;Desctiption:</string>
-             </property>
             </widget>
            </item>
           </layout>
@@ -452,7 +404,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>615</width>
+     <width>609</width>
      <height>23</height>
     </rect>
    </property>
