@@ -42,21 +42,26 @@ void DragListWidget::dropEvent(QDropEvent *event){
 			event->setDropAction(Qt::MoveAction);
 			event->accept();
 	  }
+
+	  qDebug()<<event->mimeData();
+	qDebug()<<"Drop!";
 }
 
 
 void DragListWidget::StartDrug(){
 	QListWidgetItem * item = currentItem();
 
-	QMimeData *mimeData = new QMimeData;
-	QList<QUrl> urls;
-	urls<<QUrl::fromLocalFile("/home/brezerk/systemsettings.desktop");
-	mimeData->setUrls(urls);
-	//mimeData->setText("application/x-desktop");
-	//mimeData->setData("", "[Desktop Entry]\nExec=systemsettings -caption\"%c\" %i\nIcon=preferences-system\nType=Application\nX-DocPath=systemsettings/index.html\nX-KDE-StartupNotify=true\nGenericName=System Settings\nName=System Settings\nX-DBUS-StartupType=Unique\nCategories=Qt;KDE;System;");
-	QDrag *drag = new QDrag(this);
-	drag->setMimeData(mimeData);
-	drag->setPixmap(item->icon().pixmap(32));
-	drag->start(Qt::MoveAction);
-	qDebug()<<"Ololo!";
+	if (item){
+		QMimeData *mimeData = new QMimeData;
+		QList<QUrl> urls;
+		urls<<QUrl::fromLocalFile("/home/brezerk/systemsettings.desktop");
+		mimeData->setUrls(urls);
+		//mimeData->setText("application/x-desktop");
+		//mimeData->setData("", "[Desktop Entry]\nExec=systemsettings -caption\"%c\" %i\nIcon=preferences-system\nType=Application\nX-DocPath=systemsettings/index.html\nX-KDE-StartupNotify=true\nGenericName=System Settings\nName=System Settings\nX-DBUS-StartupType=Unique\nCategories=Qt;KDE;System;");
+		QDrag *drag = new QDrag(this);
+		drag->setMimeData(mimeData);
+		drag->setPixmap(item->icon().pixmap(32));
+		drag->start(Qt::MoveAction);
+		qDebug()<<"Ololo!";
+	 }
 }

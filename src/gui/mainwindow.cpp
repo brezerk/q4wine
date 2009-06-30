@@ -55,12 +55,22 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
 
 	lstIcons = new DragListWidget(gbIcons);
+	lstIcons->setViewMode(QListView::IconMode);
+	lstIcons->setGridSize(QSize(86, 86));
+	lstIcons->setResizeMode(QListView::Adjust);
+	lstIcons->setWrapping(TRUE);
+	lstIcons->setWordWrap(TRUE);
+	lstIcons->setAcceptDrops(TRUE);
+	lstIcons->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+	lstIcons->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
+	lstIcons->setMovement(QListView::Snap);
+	lstIcons->setDragDropMode(QAbstractItemView::InternalMove);
+	//lstIcons->set
+	//lstIcons->setLayoutMode(QListView::Batched);
 
 	QHBoxLayout *layout = new QHBoxLayout;
 	layout->addWidget(lstIcons);
-
 	gbIcons->setLayout(layout);
-
 
 	// Updating database connected items
 	updateDtabaseConnectedItems();
@@ -127,6 +137,7 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	tableProc->setContextMenuPolicy(Qt::CustomContextMenu);
 	twPrograms->setContextMenuPolicy(Qt::CustomContextMenu);
 	tablePrefix->setContextMenuPolicy(Qt::CustomContextMenu);
+	lstIcons->setContextMenuPolicy(Qt::CustomContextMenu);
 
 	// Creating actions for context menus & toolbars
 	createMenuActions();
