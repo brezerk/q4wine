@@ -465,10 +465,7 @@ bool corelib::runWineBinary(const ExecObject execObj) const{
 
 	QString exec_string = "";
 
-	qDebug()<<envargs;
-
 	exec_string.append(envargs);
-
 	if(!execObj.nice.isEmpty()){
 		exec_string.append(this->getSetting("system", "nice").toString());
 		exec_string.append(" -n ");

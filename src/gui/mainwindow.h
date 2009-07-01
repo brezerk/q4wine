@@ -184,7 +184,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		 */
 		void tablePrefix_ShowContextMenu(const QPoint);
 		void tablePrefix_UpdateContentList(const QModelIndex);
-		void tableProc_ShowContextMenu(const QPoint);
+		void tableProc_ShowContextMenu(const QPoint point);
 		void tableProc_UpdateContentList(const QModelIndex);
 
 		/*

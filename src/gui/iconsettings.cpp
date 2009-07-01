@@ -415,9 +415,6 @@ void IconSettings::cmdGetIcon_Click(){
 		}
 	}
 
-
-	qDebug()<<searchPath;
-
 	QList<QUrl> add_prefix_urls = this->prefix_urls;
 	if ((searchPath != this->prefix_path) && (QDir(searchPath).exists()))
 		add_prefix_urls << QUrl::fromLocalFile(searchPath);
