@@ -23,6 +23,7 @@ Version 0.113
   - Added Drop support for wine .bat files (Now autoadd wineconsole binary args);
 
  Fixed:
+  - Linux: Improved wine process list build (thx Sergey Kishchenko (tilarids));
   - Cleanup q4wine tmp directory on exit;
   - Some fixes for q4wine.desktop (thx to Eugene Pivnev);
   - Fixed GUI bug: Text fields size, on some desktop configurations, are too small to edit;
