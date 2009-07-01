@@ -50,6 +50,8 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	db_image = new Image();
 	db_prefix = new Prefix();
 
+
+	clearTmp();
 	// Base GUI setup
 	setupUi(this);
 	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
@@ -118,6 +120,9 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 	connect(mainExportIcons, SIGNAL(triggered()), this, SLOT(mainExportIcons_Click()));
 
 	connect(lstIcons, SIGNAL(startDrag ()), this, SLOT(startDrag()));
+	connect(lstIcons, SIGNAL(startDrop(QList<QUrl>)), this, SLOT(startDrop(QList<QUrl>)));
+
+
 
 	  #ifndef WITH_ICOTOOLS
 		mainExportIcons->setEnabled(false);
@@ -170,23 +175,97 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 }
 
 
+void MainWindow::clearTmp(){
+  QString fileName = QDir::homePath();
+  fileName.append("/.config/");
+  fileName.append(APP_SHORT_NAME);
+  fileName.append("/tmp/");
+
+  QDir dir(fileName);
+  dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+
+  QFileInfoList list = dir.entryInfoList();
+  for (int i = 0; i < list.size(); ++i) {
+	QFile(list.at(i).absoluteFilePath()).remove();
+  }
+  return;
+}
+
+void MainWindow::startDrop(QList<QUrl> files){
+  	//QList<QUrl> list = event->mimeData()->urls();
+  	QTreeWidgetItem *treeItem = twPrograms->currentItem();
+
+	if (!treeItem)
+	  return;
+
+	bool ok;
+  QString file, fileName;
+  QStringList list1;
+
+  QString dir_name, prefix_name;
+
+  	if (treeItem->parent()){
+	  prefix_name = treeItem->parent()->text(0);
+	  dir_name = treeItem->text(0);
+	} else {
+	  prefix_name = treeItem->text(0);
+	  dir_name = "";
+	}
+
+	for (int i=0; i < files.length(); i++){
+	  if (files.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive)){
+		file = files.at(i).toLocalFile();
+
+		list1 = file.split("/");
+		fileName=list1.last().left(list1.last().length() - list1.last().split(".").last().length() - 1);
+
+		while (db_icon->isExistsByName(prefix_name, dir_name, fileName)){
+			fileName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please rename it, or cancel paste operation."), QLineEdit::Normal, iconBuffer.names.at(i) , &ok);
+			if (!ok){
+				return;
+			}
+		}
+
+		if (files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive)){
+		  file = "--backend=user ";
+		  file.append(CoreLib->getWinePath(files.at(i).toLocalFile(), "-w"));
+		  db_icon->addIcon(file, "wineconsole", "", "", prefix_name, dir_name, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
+		} else {
+		  db_icon->addIcon("", file, "", "", prefix_name, dir_name, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
+		}
+	  }
+	}
+	twPrograms_ItemClick(treeItem, 0);
+}
+
 void MainWindow::startDrag (){
+  QString fileName;
+  QList<QListWidgetItem *> items = lstIcons->selectedItems ();
 
-   QListWidgetItem *item = lstIcons->currentItem();
+  if (items.count()>0){
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 
-   if (item){
+	if (!treeItem)
+	  return;
+
 	QMimeData *mimeData = new QMimeData;
 	QList<QUrl> urls;
-	urls<<QUrl::fromLocalFile("/home/brezerk/systemsettings.desktop");
+
+	for (int i=0; i<items.count(); i++){
+	  if (treeItem->parent()){
+		fileName = CoreLib->createDesktopFile(treeItem->parent()->text(0), treeItem->text(0), items.at(i)->text());
+	  } else {
+		fileName = CoreLib->createDesktopFile(treeItem->text(0), "", items.at(i)->text());
+	  }
+	  urls<<QUrl::fromLocalFile(fileName);
+	}
 	mimeData->setUrls(urls);
-	//mimeData->setText("application/x-desktop");
-	//mimeData->setData("", "[Desktop Entry]\nExec=systemsettings -caption\"%c\" %i\nIcon=preferences-system\nType=Application\nX-DocPath=systemsettings/index.html\nX-KDE-StartupNotify=true\nGenericName=System Settings\nName=System Settings\nX-DBUS-StartupType=Unique\nCategories=Qt;KDE;System;");
 	QDrag *drag = new QDrag(this);
 	drag->setMimeData(mimeData);
-	drag->setPixmap(item->icon().pixmap(32));
+	drag->setPixmap(items.at(0)->icon().pixmap(32));
 	drag->start(Qt::MoveAction);
-   }
-   qDebug()<<"emit done!";
+  }
+
   return;
 }
 
@@ -266,48 +345,48 @@ void MainWindow::getSettings(){
 	QVariant val;
 
 	val = CoreLib->getSetting("MainWindow", "size", false, QSize(400, 450));
-	    this->resize(val.toSize());
+		this->resize(val.toSize());
 	val = CoreLib->getSetting("MainWindow", "pos", false, QPoint(200, 200));
-	    this->move(val.toPoint());
+		this->move(val.toPoint());
 
 	val = CoreLib->getSetting("wine", "WineBin");
-	    DEFAULT_WINE_BIN=val.toString();
+		DEFAULT_WINE_BIN=val.toString();
 	val = CoreLib->getSetting("wine", "ServerBin");
-	    DEFAULT_WINE_SERVER=val.toString();
+		DEFAULT_WINE_SERVER=val.toString();
 	val = CoreLib->getSetting("wine", "LoaderBin");
-	    DEFAULT_WINE_LOADER=val.toString();
+		DEFAULT_WINE_LOADER=val.toString();
 	val = CoreLib->getSetting("wine", "WineLibs");
-	    DEFAULT_WINE_LIBS=val.toString();
+		DEFAULT_WINE_LIBS=val.toString();
 
 	val = CoreLib->getSetting("app", "showTrareyIcon", false);
-	    SHOW_TRAREY_ICON=val.toBool();
+		SHOW_TRAREY_ICON=val.toBool();
 
 	val = CoreLib->getSetting("system", "tar");
-	    TAR_BIN=val.toString();
+		TAR_BIN=val.toString();
 	val = CoreLib->getSetting("system", "mount");
-	    MOUNT_BIN=val.toString();
+		MOUNT_BIN=val.toString();
 	val = CoreLib->getSetting("system", "umount");
-	    UMOUNT_BIN=val.toString();
+		UMOUNT_BIN=val.toString();
 	val = CoreLib->getSetting("system", "sudo");
-	    SUDO_BIN=val.toString();
+		SUDO_BIN=val.toString();
 	val = CoreLib->getSetting("system", "gui_sudo");
-	    GUI_SUDO_BIN=val.toString();
+		GUI_SUDO_BIN=val.toString();
 	val = CoreLib->getSetting("system", "nice");
-	    NICE_BIN=val.toString();
+		NICE_BIN=val.toString();
 	val = CoreLib->getSetting("system", "renice");
-	    RENICE_BIN=val.toString();
+		RENICE_BIN=val.toString();
 	val = CoreLib->getSetting("system", "sh");
-	    SH_BIN=val.toString();
+		SH_BIN=val.toString();
 
 	val = CoreLib->getSetting("console", "bin");
-	    CONSOLE_BIN=val.toString();
+		CONSOLE_BIN=val.toString();
 	val = CoreLib->getSetting("console", "args", false);
-	    CONSOLE_ARGS=val.toString();
+		CONSOLE_ARGS=val.toString();
 
 	#ifdef WITH_ICOTOOLS
-	    val = CoreLib->getSetting("icotool", "wrestool");
+		val = CoreLib->getSetting("icotool", "wrestool");
 		WRESTOOL_BIN=val.toString();
-	    val = CoreLib->getSetting("icotool", "icotool");
+		val = CoreLib->getSetting("icotool", "icotool");
 		ICOTOOL_BIN=val.toString();
 	#endif
 
@@ -340,28 +419,28 @@ void MainWindow::getSettings(){
 	}
 
 	switch (CoreLib->getSetting("network", "type", false).toInt()){
-	    case 0:
+		case 0:
 		proxy.setType(QNetworkProxy::NoProxy);
 		QNetworkProxy::setApplicationProxy(proxy);
-	    break;
-	    case 1:
+		break;
+		case 1:
 		proxy.setType(QNetworkProxy::HttpProxy);
 		proxy.setHostName(CoreLib->getSetting("network", "host", false).toString());
 		proxy.setPort(CoreLib->getSetting("network", "port", false).toInt());
 		proxy.setUser(CoreLib->getSetting("network", "user", false).toString());
 		proxy.setPassword(CoreLib->getSetting("network", "pass", false).toString());
 		QNetworkProxy::setApplicationProxy(proxy);
-	    break;
-	    case 2:
+		break;
+		case 2:
 		proxy.setType(QNetworkProxy::Socks5Proxy);
 		proxy.setHostName(CoreLib->getSetting("network", "host", false).toString());
 		proxy.setPort(CoreLib->getSetting("network", "port", false).toInt());
 		proxy.setUser(CoreLib->getSetting("network", "user", false).toString());
 		proxy.setPassword(CoreLib->getSetting("network", "pass", false).toString());
 		QNetworkProxy::setApplicationProxy(proxy);
-	    break;
+		break;
 	}
-    return;
+	return;
 }
 
 void MainWindow::lstIcons_ItemDoubleClick(QListWidgetItem * item){
@@ -479,27 +558,27 @@ void MainWindow::updateDtabaseConnectedItems(int currentPrefix){
 			}
 
 		// Inserting items into prefixes combo list
-	    cbPrefixes->addItem (result.at(i).at(1));
+		cbPrefixes->addItem (result.at(i).at(1));
 
 		// Inserting items into prefixes table widget
 		curRows++;
 		numRows = tablePrefix->rowCount();
 
-	    if (curRows>numRows){
+		if (curRows>numRows){
 		tablePrefix->insertRow (numRows);
 		numRows = tablePrefix->rowCount();
-	    }
-	    if (tablePrefix->item(curRows - 1, 0)){
+		}
+		if (tablePrefix->item(curRows - 1, 0)){
 		tablePrefix->item(curRows - 1, 0)->setText(result.at(i).at(1));
 		tablePrefix->item(curRows - 1, 1)->setText(result.at(i).at(2));
-	    } else {
+		} else {
 		newItem = new QTableWidgetItem(result.at(i).at(1));
 		tablePrefix->setItem(curRows - 1, 0, newItem);
 		newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
 		newItem = new QTableWidgetItem(result.at(i).at(2));
 		tablePrefix->setItem(curRows - 1, 1, newItem);
 		newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-	    }
+		}
 	}
 
 	numRows = tablePrefix->rowCount();
@@ -994,9 +1073,9 @@ void MainWindow::processRenice_Click(void){
 		int curNice;
 		curNice = tableProc->item(rowNum, 2)->text().toInt();
 
-     int i = QInputDialog::getInteger(this, tr("Select process priority"), tr("<p>Priority value can be in<br>the range from PRIO_MIN (-20)<br>to PRIO_MAX (20).</p><p>See \"man renice\" for details.</p>"), curNice, -20, 20, 1, &ok);
+	 int i = QInputDialog::getInteger(this, tr("Select process priority"), tr("<p>Priority value can be in<br>the range from PRIO_MIN (-20)<br>to PRIO_MAX (20).</p><p>See \"man renice\" for details.</p>"), curNice, -20, 20, 1, &ok);
 
-     if (ok)
+	 if (ok)
 	   CoreFunction_SetProcNicePriority(i, tableProc->item(rowNum, 0)->text().toInt());
 	}
 }
@@ -1045,36 +1124,36 @@ void MainWindow::getWineProccessInfo(void){
 	  for (int i = 0; i < proclist.size(); ++i) {
 		//If first element value "-1" -- then disable timer and set _IS_TIMER_RUNNING flag
 		if (proclist.at(i).at(0) == "-1"){
-		    _IS_TIMER_RUNNING=false;
-		    timer->stop();
-		    return;
+			_IS_TIMER_RUNNING=false;
+			timer->stop();
+			return;
 		}
 
 		curRows++;
 
 		if (curRows>numRows){
-		    tableProc->insertRow (numRows);
-		    numRows = tableProc->rowCount();
+			tableProc->insertRow (numRows);
+			numRows = tableProc->rowCount();
 		}
 
 		if (tableProc->item(curRows - 1, 0)){
-		     tableProc->item(curRows - 1, 0)->setText(proclist.at(i).at(0));
-		     tableProc->item(curRows - 1, 1)->setText(proclist.at(i).at(1));
-		     tableProc->item(curRows - 1, 2)->setText(proclist.at(i).at(2));
-		     tableProc->item(curRows - 1, 3)->setText(proclist.at(i).at(3));
+			 tableProc->item(curRows - 1, 0)->setText(proclist.at(i).at(0));
+			 tableProc->item(curRows - 1, 1)->setText(proclist.at(i).at(1));
+			 tableProc->item(curRows - 1, 2)->setText(proclist.at(i).at(2));
+			 tableProc->item(curRows - 1, 3)->setText(proclist.at(i).at(3));
 		} else {
-		     QTableWidgetItem *newItem = new QTableWidgetItem(proclist.at(i).at(0));
-		     tableProc->setItem(curRows - 1, 0, newItem);
-		     newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-		     newItem = new QTableWidgetItem(proclist.at(i).at(1));
-		     tableProc->setItem(curRows - 1, 1, newItem);
-		     newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-		     newItem = new QTableWidgetItem(proclist.at(i).at(2));
-		     tableProc->setItem(curRows - 1, 2, newItem);
-		     newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-		     newItem = new QTableWidgetItem(proclist.at(i).at(3));
-		     tableProc->setItem(curRows - 1, 3, newItem);
-		     newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+			 QTableWidgetItem *newItem = new QTableWidgetItem(proclist.at(i).at(0));
+			 tableProc->setItem(curRows - 1, 0, newItem);
+			 newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+			 newItem = new QTableWidgetItem(proclist.at(i).at(1));
+			 tableProc->setItem(curRows - 1, 1, newItem);
+			 newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+			 newItem = new QTableWidgetItem(proclist.at(i).at(2));
+			 tableProc->setItem(curRows - 1, 2, newItem);
+			 newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+			 newItem = new QTableWidgetItem(proclist.at(i).at(3));
+			 tableProc->setItem(curRows - 1, 3, newItem);
+			 newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
 		}
 
 	  }
@@ -1084,7 +1163,7 @@ void MainWindow::getWineProccessInfo(void){
 	numRows = tableProc->rowCount();
 	if (numRows > curRows)
 		for (int i=curRows; i <= numRows; i++)
-		    tableProc->removeRow(curRows);
+			tableProc->removeRow(curRows);
 
 
 	lblProcInfo->setText(tr("Total process: %1").arg(numRows));
@@ -1180,7 +1259,7 @@ void MainWindow::processKillSelected_Click(){
 			command="kill -9 ";
 			command.append(procId);
 				if (system(command.toAscii().data())==-1)
-				    QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(command.toAscii().data()), QMessageBox::Ok);
+					QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(command.toAscii().data()), QMessageBox::Ok);
 		}
 	}
 	return;
@@ -1234,70 +1313,70 @@ void MainWindow::prefixImport_Click(){
 	if (!PREFIX_EI_PATH.isEmpty()){
 		openpath.append(PREFIX_EI_PATH);
 	} else {
-	    openpath.append(QDir::homePath());
-	    openpath.append("/.config/");
-	    openpath.append(APP_SHORT_NAME);
-	    openpath.append("/prefixes/");
+		openpath.append(QDir::homePath());
+		openpath.append("/.config/");
+		openpath.append(APP_SHORT_NAME);
+		openpath.append("/prefixes/");
 	}
 
 	QString fileName = QFileDialog::getOpenFileName(this, tr("Select file to import"), openpath , tr("Images (*.tbz)"));
 
 	if (!fileName.isEmpty()){
-	    QDir dir;
-	    QString targetDir;
+		QDir dir;
+		QString targetDir;
 
-	    if (tablePrefix->item(tablePrefix->currentRow(), 1)->text().isEmpty()){
+		if (tablePrefix->item(tablePrefix->currentRow(), 1)->text().isEmpty()){
 		targetDir.clear();
 		targetDir.append(HOME_PATH);
 		targetDir.append("/.wine/");
-	    } else {
+		} else {
 		targetDir.clear();
 		targetDir.append(tablePrefix->item(tablePrefix->currentRow(), 1)->text());
-	    }
+		}
 
-	    if (dir.exists(targetDir)){
+		if (dir.exists(targetDir)){
 		if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete all old prefix files?"), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
-		    QStringList args;
-		    args << "-rdf";
-		    args << targetDir;
+			QStringList args;
+			args << "-rdf";
+			args << targetDir;
 
 			Process *exportProcess = new Process(args, CoreLib->getWhichOut("rm"), HOME_PATH, tr("Removing old fake drive.<br>This can take a while..."), tr("Removing old fake drive"));
-		    if (exportProcess->exec()!=QDialog::Accepted){
+			if (exportProcess->exec()!=QDialog::Accepted){
 			return;
-		    }
+			}
 		} else {
-		    return;
+			return;
 		}
-	    }
+		}
 
-	    dir.mkdir(targetDir);
-	    QStringList args;
-	    args << "-xjf";
-	    args << fileName;
-	    args << "-C" << targetDir;
+		dir.mkdir(targetDir);
+		QStringList args;
+		args << "-xjf";
+		args << fileName;
+		args << "-C" << targetDir;
 
 		//Creating process dialog
-	    Process *exportProcess = new Process(args, TAR_BIN, HOME_PATH, tr("Importing prefix.<br>This can take a while..."), tr("Importing prefix"));
-	    exportProcess->show();
+		Process *exportProcess = new Process(args, TAR_BIN, HOME_PATH, tr("Importing prefix.<br>This can take a while..."), tr("Importing prefix"));
+		exportProcess->show();
 	}
-    return;
+	return;
 }
 
 void MainWindow::prefixSettings_Click(){
-    /*
-     *	Getting prefix name, and show settings dialog
-     */
-    PrefixSettings settings(tablePrefix->item(tablePrefix->currentRow(), 0)->text());
-    if (settings.exec()==QDialog::Accepted){
+	/*
+	 *	Getting prefix name, and show settings dialog
+	 */
+	PrefixSettings settings(tablePrefix->item(tablePrefix->currentRow(), 0)->text());
+	if (settings.exec()==QDialog::Accepted){
 	updateDtabaseConnectedItems();
-    }
-    return;
+	}
+	return;
 }
 
 void MainWindow::prefixExport_Click(){
-    /*
-     * Function for exporting preefix to file
-     */
+	/*
+	 * Function for exporting preefix to file
+	 */
 
 	QString savepath;
 

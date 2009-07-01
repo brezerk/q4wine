@@ -57,24 +57,24 @@
 
 // FreeBSD support
 #ifdef _OS_FREEBSD_
-        #include <kvm.h>
-        #include <sys/param.h>
-        #include <sys/user.h>
-        #include <sys/file.h>
-        #include <sys/sysctl.h>
-        #include <limits.h>
-        #include <paths.h>
+		#include <kvm.h>
+		#include <sys/param.h>
+		#include <sys/user.h>
+		#include <sys/file.h>
+		#include <sys/sysctl.h>
+		#include <limits.h>
+		#include <paths.h>
 #endif
 
 // Experimental Darwin support (no test were preformed)
 #ifdef _OS_DARWIN_
-        #include <kvm.h>
-        #include <sys/param.h>
-        #include <sys/user.h>
-        #include <sys/file.h>
-        #include <sys/sysctl.h>
-        #include <limits.h>
-        #include <paths.h>
+		#include <kvm.h>
+		#include <sys/param.h>
+		#include <sys/user.h>
+		#include <sys/file.h>
+		#include <sys/sysctl.h>
+		#include <limits.h>
+		#include <paths.h>
 #endif
 
 #include "config.h"
@@ -113,26 +113,26 @@ struct ExecObject{
 
 class corelib {
 public:
-    //! Create an mainlib class
-    corelib(bool _GUI_MODE);
+	//! Create an mainlib class
+	corelib(bool _GUI_MODE);
 
-    /*! \brief This function tries to get wine process list running in the current system.
-     *
-     * It gets process values: pid, name, nice priority and WINEPREFIX environment variable
-     * \note On Linux it uses /proc file system, and on FreeBSD/MacOS it uses /dev/kmem and kvm.h functions.
-     * \return Return an array of QList which contains an QStringList
-     */
-    QList<QStringList> getWineProcessList();
+	/*! \brief This function tries to get wine process list running in the current system.
+	 *
+	 * It gets process values: pid, name, nice priority and WINEPREFIX environment variable
+	 * \note On Linux it uses /proc file system, and on FreeBSD/MacOS it uses /dev/kmem and kvm.h functions.
+	 * \return Return an array of QList which contains an QStringList
+	 */
+	QList<QStringList> getWineProcessList();
 
-    /*! \brief This function get application settings.
-     *
-     * \param  group       Settings group.
-     * \param  key         Settings key.
-     * \param  defaultVal  Default returned value.
-     * \param  checkExist  If true - then we need to check exists file or dir by value or not.
-     * \return Return an a key value.
-     */
-    QVariant getSetting(const QString group, const QString key, const bool checkExist = true, const QVariant defaultVal = QVariant()) const;
+	/*! \brief This function get application settings.
+	 *
+	 * \param  group       Settings group.
+	 * \param  key         Settings key.
+	 * \param  defaultVal  Default returned value.
+	 * \param  checkExist  If true - then we need to check exists file or dir by value or not.
+	 * \return Return an a key value.
+	 */
+	QVariant getSetting(const QString group, const QString key, const bool checkExist = true, const QVariant defaultVal = QVariant()) const;
 
 	/*! \brief This function get cdrom devices from /etc/fstab file.
 	 *
@@ -207,6 +207,10 @@ public:
 	bool runWineBinary(const ExecObject execObj) const;
 	bool runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name) const;
 
+	QString createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const;
+
+	QString getWinePath(const QString path, const QString option) const;
+
 	/*! \brief Open prefix folder.
 	 *
 	 * \param  prefix_name	Prefix name.
@@ -230,18 +234,18 @@ public:
 	 */
 	bool runProcess(const QString exec, const QStringList args, QString dir = "", bool showLog = TRUE) const;
 
-    private:
-    /*! Define is library operate in CLI or GUI mode.
-     * \note This is typically need for error message display.
-     */
-    bool _GUI_MODE;
+	private:
+	/*! Define is library operate in CLI or GUI mode.
+	 * \note This is typically need for error message display.
+	 */
+	bool _GUI_MODE;
 
-    /*! \brief Displays error message depending on _GUI_MODE variable value
-     *
-     * \param  message     Error message.
-     * \param  info	   Define display type. If false - user interactive message.
-     * \return When using an interactive display type, this functions returns a user selected value.
-     */
+	/*! \brief Displays error message depending on _GUI_MODE variable value
+	 *
+	 * \param  message     Error message.
+	 * \param  info	   Define display type. If false - user interactive message.
+	 * \return When using an interactive display type, this functions returns a user selected value.
+	 */
 	int showError(const QString message, const bool info) const;
 
 	/*! \brief Displays error message depending on _GUI_MODE variable value

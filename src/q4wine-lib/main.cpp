@@ -31,8 +31,8 @@
 
 corelib::corelib(bool _GUI_MODE)
 {
-    // Setting gui mode, if false - cli mode else gui mode
-    this->_GUI_MODE=_GUI_MODE;
+	// Setting gui mode, if false - cli mode else gui mode
+	this->_GUI_MODE=_GUI_MODE;
 
 	// Creating databases
 	db_icon = new Icon();
@@ -41,38 +41,38 @@ corelib::corelib(bool _GUI_MODE)
 }
 
 corelib* createCoreLib(bool _GUI_MODE){
-    return new corelib(_GUI_MODE);
+	return new corelib(_GUI_MODE);
 }
 
 QList<QStringList> corelib::getWineProcessList(){
-    QList<QStringList> proclist;
-    QStringList procline;
+	QList<QStringList> proclist;
+	QStringList procline;
 
-    QString name, procstat, path, prefix, env_arg, nice;
+	QString name, procstat, path, prefix, env_arg, nice;
 
-    #ifdef _OS_LINUX_
+	#ifdef _OS_LINUX_
 	  QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
-    #endif
+	#endif
 
-    #ifdef _OS_FREEBSD_
+	#ifdef _OS_FREEBSD_
 	  QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
-    #endif
+	#endif
 
-    // Check for /proc directory exists
-    QDir dir("/proc");
-    if (!dir.exists()){
+	// Check for /proc directory exists
+	QDir dir("/proc");
+	if (!dir.exists()){
 	if (this->showError(message, false) == QMessageBox::Ignore){
-	    procline << "-1";
-	    proclist << procline;
+		procline << "-1";
+		proclist << procline;
 		return proclist;
 	  }
-    }
+	}
 
-    /* On Linux:
-     * This is new engine for getting process info from /proc directory
-     * its fully wrighted with QT and might work more stable =)
-     */
-    #ifdef _OS_LINUX_
+	/* On Linux:
+	 * This is new engine for getting process info from /proc directory
+	 * its fully wrighted with QT and might work more stable =)
+	 */
+	#ifdef _OS_LINUX_
 	  dir.setFilter(QDir::Dirs | QDir::NoSymLinks);
 	  dir.setSorting(QDir::Name);
 
@@ -87,9 +87,9 @@ QList<QStringList> corelib::getWineProcessList(){
 		QFile file(path);
 		// Try to read stat file
 		if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-		    QTextStream in(&file);
-		    QString line = in.readLine();
-		    if (!line.isNull()){
+			QTextStream in(&file);
+			QString line = in.readLine();
+			if (!line.isNull()){
 			   // Getting nice and name of the process
 			   nice = line.section(' ', 18, 18);
 			   name = line.section(' ', 1, 1);
@@ -107,11 +107,11 @@ QList<QStringList> corelib::getWineProcessList(){
 
 				// Getting WINEPREFIX variable.
 				if (e_file.open(QIODevice::ReadOnly | QIODevice::Text)){
-				    QTextStream e_in(&e_file);
-				    QString e_line = e_in.readLine();
-				    int index = e_line.indexOf("WINEPREFIX=");
-				    prefix="";
-				    if (index!=-1)
+					QTextStream e_in(&e_file);
+					QString e_line = e_in.readLine();
+					int index = e_line.indexOf("WINEPREFIX=");
+					prefix="";
+					if (index!=-1)
 					  for (int i=index+11; i<=e_line.length(); i++){
 						 if (e_line.mid(i, 1).data()->isPrint()){
 							 prefix.append(e_line.mid(i, 1));
@@ -127,7 +127,7 @@ QList<QStringList> corelib::getWineProcessList(){
 				proclist << procline;
 
 			  }
-		    }
+			}
 		file.close();
 		}
 	  }
@@ -138,37 +138,37 @@ QList<QStringList> corelib::getWineProcessList(){
 	   */
 	  #ifdef _OS_FREEBSD_
 		kvm_t *kd;
-	    int cntproc, i, ni, ipid;
+		int cntproc, i, ni, ipid;
 
 		struct kinfo_proc *kp;
 		char buf[_POSIX2_LINE_MAX];
 		char **envs;
 
 		kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
-		    if (!kd){
-		    if (this->showError(QObject::tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), false) == QMessageBox::Ignore){
+			if (!kd){
+			if (this->showError(QObject::tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), false) == QMessageBox::Ignore){
 				procline << "-1";
 				proclist << procline;
 				return proclist;
 			  }
 			  return proclist;
-		    }
+			}
 		kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &cntproc);
-		    if (!kp){
-		    if (this->showError(QObject::tr("<p>It seems q4wine can not run kvm_getprocs.</p>"), false) == QMessageBox::Ignore){
+			if (!kp){
+			if (this->showError(QObject::tr("<p>It seems q4wine can not run kvm_getprocs.</p>"), false) == QMessageBox::Ignore){
 				procline << "-1";
 				proclist << procline;
 				return proclist;
 			  }
 			  return proclist;
-		    }
+			}
 
 		QStringList cur_pids;
 		for (i=0; i<cntproc;i++){
-		    prefix="";
-		    ipid = kp[i].ki_pid;
+			prefix="";
+			ipid = kp[i].ki_pid;
 
-		    if (cur_pids.indexOf(QObject::tr("%1").arg(ipid))==-1){
+			if (cur_pids.indexOf(QObject::tr("%1").arg(ipid))==-1){
 			  cur_pids << QObject::tr("%1").arg(ipid);
 			  name = kp[i].ki_comm;
 
@@ -181,9 +181,9 @@ QList<QStringList> corelib::getWineProcessList(){
 					if (envs){
 						name = envs[0];
 						if (name.isEmpty()){
-						     name = kp[i].ki_comm;
+							 name = kp[i].ki_comm;
 						} else {
-						     name = name.split('\\').last();
+							 name = name.split('\\').last();
 						}
 					 }
 				  }
@@ -209,27 +209,27 @@ QList<QStringList> corelib::getWineProcessList(){
 				  procline << QObject::tr("%1").arg(ipid) << name << nice << prefix;
 				  proclist << procline;
 			   }
-		    }
-	     }
+			}
+		 }
 	  #endif
 
 
-    return proclist;
+	return proclist;
 }
 
 QVariant corelib::getSetting(const QString group, const QString key, const bool checkExist, const QVariant defaultVal) const{
-    QVariant retVal;
-    QSettings settings(APP_SHORT_NAME, "default");
+	QVariant retVal;
+	QSettings settings(APP_SHORT_NAME, "default");
 
-    settings.beginGroup(group);
+	settings.beginGroup(group);
 	retVal = settings.value(key, defaultVal);
-    settings.endGroup();
-    if (checkExist==true)
+	settings.endGroup();
+	if (checkExist==true)
 	if (!QFileInfo(retVal.toString()).exists()){
-	    this->showError(QObject::tr("<p>Error while loading application settings by key: '%1'. File or path not exists: \"%2\"</p><p>Please, go to %3 options dialog and set it.</p>").arg(key).arg(retVal.toString()).arg(APP_SHORT_NAME));
-	    retVal = QVariant();
+		this->showError(QObject::tr("<p>Error while loading application settings by key: '%1'. File or path not exists: \"%2\"</p><p>Please, go to %3 options dialog and set it.</p>").arg(key).arg(retVal.toString()).arg(APP_SHORT_NAME));
+		retVal = QVariant();
 	}
-    return retVal;
+	return retVal;
 }
 
 QStringList corelib::getCdromDevices(void) const{
@@ -563,6 +563,42 @@ bool corelib::runWineBinary(const QString winebinary, const QString cmdargs, con
 	return proc->startDetached(exec, args, QDir::homePath());
 }
 
+QString corelib::createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const{
+	QStringList result = db_icon->getByName(prefix_name, dir_name, icon_name);
+
+	QString fileName = QDir::homePath();
+	fileName.append("/.config/");
+	fileName.append(APP_SHORT_NAME);
+	fileName.append("/tmp/");
+	fileName.append(result.at(1));
+	fileName.append(".desktop");
+
+	QFile file(fileName);
+	file.open(QIODevice::Truncate | QIODevice::WriteOnly);
+
+	QTextStream out(&file);
+	out<<"[Desktop Entry]"<<endl;
+	out<<"Exec=q4wine-cli -p \""<<prefix_name<<"\" ";
+	if (!dir_name.isEmpty())
+	  out<<" -d \""<<dir_name<<"\" ";
+	out<<" -i \""<<icon_name<<"\" "<<endl;
+
+	if (result.at(3).isEmpty()){
+	  out<<"Icon=wine_exec"<<endl;
+	} else {
+	  out<<"Icon="<<result.at(3)<<endl;
+	}
+	out<<"Type=Application"<<endl;
+	out<<"X-KDE-StartupNotify=true"<<endl;
+	out<<"GenericName="<<result.at(2)<<endl;
+	out<<"Name="<<result.at(2)<<endl;
+	out<<"Path="<<result.at(4)<<endl;
+
+	file.close();
+
+	return fileName;
+}
+
 
 bool corelib::mountImage(QString image_name, const QString prefix_name) const{
 	QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
@@ -716,6 +752,27 @@ bool corelib::openPrefixDirectry(const QString prefix_name) const{
 	return this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
 }
 
+
+QString corelib::getWinePath(const QString path, const QString option) const{
+  QString output, exec;
+  QStringList args;
+
+  args.append(option);
+  args.append(path);
+  exec = this->getWhichOut("winepath");
+
+  QProcess *myProcess;
+  myProcess = new QProcess();
+  myProcess->setEnvironment(QProcess::systemEnvironment());
+  myProcess->setWorkingDirectory (QDir::homePath());
+  myProcess->start(exec, args);
+
+  if (myProcess->waitForFinished()){
+	output = myProcess->readAllStandardOutput().trimmed();
+  }
+  return output;
+}
+
 bool corelib::runProcess(const QString exec, const QStringList args, QString dir, bool showLog) const{
 	if (dir.isEmpty())
 		dir=QDir::homePath();
@@ -751,23 +808,23 @@ bool corelib::runProcess(const QString exec, const QStringList args, QString dir
 }
 
 int corelib::showError(const QString message, const bool info) const{
-    switch (this->_GUI_MODE){
+	switch (this->_GUI_MODE){
 	case true:
-	    switch (info){
+		switch (info){
 		case true:
-		    QMessageBox::warning(0, QObject::tr("Error"), message);
-		    return 0;
+			QMessageBox::warning(0, QObject::tr("Error"), message);
+			return 0;
 		break;
 		case false:
 			return QMessageBox::warning(0, QObject::tr("Error"), message, QMessageBox::Retry, QMessageBox::Ignore);
 		break;
-	    }
+		}
 	break;
 	case false:
-	    cout << "test"; // message.toLatin1();
+		cout << "test"; // message.toLatin1();
 	break;
-    }
-    return 0;
+	}
+	return 0;
 }
 
 void corelib::showError(const QString message) const{

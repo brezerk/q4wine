@@ -17,8 +17,13 @@ Version 0.113
   - Added *.xpm filter to icon import patten;
   - Added http proxy support for winetriks;
   - Improved icon display widget;
-  - Added Drag & Drop for icons and wine executables;
+  - Added Drag & Drop support;
+  - Added Drag support q4wine icons export;
+  - Added Drop support for wine .exe and .com files;
+  - Added Drop support for wine .bat files (Now autoadd wineconsole binary args);
+
  Fixed:
+  - Cleanup q4wine tmp directory on exit;
   - Some fixes for q4wine.desktop (thx to Eugene Pivnev);
   - Fixed GUI bug: Text fields size, on some desktop configurations, are too small to edit;
   - Fixed a lot of English spelling errors (thx Sergey Kishchenko (tilarids));

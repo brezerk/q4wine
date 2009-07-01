@@ -21,6 +21,7 @@ private:
 
 signals:
 	void startDrag();
+	void startDrop(QList<QUrl> files);
 };
 
 #endif // DRAGLISTWIDGET_H

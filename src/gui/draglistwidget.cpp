@@ -20,7 +20,7 @@ void DragListWidget::mousePressEvent(QMouseEvent *event){
 }
 
 void DragListWidget::mouseMoveEvent(QMouseEvent *event){
-   	if (itemAt(event->pos()) && dragstarted){
+	if (itemAt(event->pos()) && dragstarted){
 	   if (event->buttons() & Qt::LeftButton){
 		   int distance = (event->pos() - startPos).manhattanLength();
 		   if (distance > QApplication::startDragDistance())
@@ -35,13 +35,17 @@ void DragListWidget::mouseMoveEvent(QMouseEvent *event){
 }
 
 void DragListWidget::dragEnterEvent(QDragEnterEvent *event){
-	if (event->mimeData()->hasFormat("text/uri-list"))
-	{
-		DragListWidget *source = qobject_cast<DragListWidget *>(event->source());
-		if (source && source != this){
-		   event->acceptProposedAction();
-		}
+  if (event->mimeData()->hasFormat("text/uri-list"))
+  {
+	QList<QUrl> list = event->mimeData()->urls();
+	for (int i=0; i < list.length(); i++){
+	  //Accept only .exe, .bat or .com files
+	  if (list.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive)){
+		event->acceptProposedAction();
+		break;
+	  }
 	}
+  }
 }
 
 void DragListWidget::dragMoveEvent(QDragMoveEvent *event){
@@ -59,9 +63,7 @@ void DragListWidget::dropEvent(QDropEvent *event){
 		event->accept();
 	  }
 
-	  qDebug()<<event->mimeData()->text();
-	  qDebug()<<event->mimeData()->formats();
-	qDebug()<<"Drop!";
+	  emit(startDrop(event->mimeData()->urls()));
 }
 
 

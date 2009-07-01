@@ -233,6 +233,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void mainInstall_Click(void);
 
 		void startDrag();
+		void startDrop(QList<QUrl> files);
 	private:
 
 		DragListWidget *lstIcons;
@@ -335,6 +336,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 		//Events definition
 		void resizeEvent (QResizeEvent);
+		void clearTmp();
 	protected:
 		// Event filter
 		bool eventFilter(QObject *obj, QEvent *event);
