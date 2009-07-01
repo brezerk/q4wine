@@ -403,7 +403,7 @@ bool corelib::runWineBinary(const ExecObject execObj) const{
 
 		if (!this->getSetting("console", "args", false).toString().isEmpty()){
 			// If we have any conslope parametres, we gona preccess them one by one
-			QStringList cons_args = this->getSetting("console", "args").toString().split(" ");
+			QStringList cons_args = this->getSetting("console", "args", false).toString().split(" ");
 			for (int i=0; i<cons_args.count(); i++){
 				if (!cons_args.at(i).isEmpty())
 					args.append(cons_args.at(i));
@@ -420,9 +420,9 @@ bool corelib::runWineBinary(const ExecObject execObj) const{
 
 
 	if ((execObj.useconsole == "1") && (!execObj.wrkdir.isNull())){
-		envargs.append(" cd \"");
+		envargs.append(" cd '");
 		envargs.append(execObj.wrkdir);
-		envargs.append("\" ; ");
+		envargs.append("' && ");
 	}
 
 	if (!prefixList.at(1).isEmpty()){
@@ -452,7 +452,7 @@ bool corelib::runWineBinary(const ExecObject execObj) const{
 	}
 
 	if (!execObj.override.isEmpty()){
-		envargs.append(QObject::tr(" WINEDLLOVERRIDES=\"%1\" ").arg(execObj.override));
+		envargs.append(QObject::tr(" WINEDLLOVERRIDES='%1' ").arg(execObj.override));
 	}
 
 	if (!execObj.winedebug.isEmpty() && execObj.useconsole == "1"){
@@ -464,6 +464,8 @@ bool corelib::runWineBinary(const ExecObject execObj) const{
 	}
 
 	QString exec_string = "";
+
+	qDebug()<<envargs;
 
 	exec_string.append(envargs);
 

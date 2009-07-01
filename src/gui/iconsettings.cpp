@@ -306,9 +306,9 @@ void IconSettings::cmdGetWorkDir_Click(){
 	if (!QDir(searchPath).exists()){
 		if (QDir(this->prefix_path).exists()){
 		   searchPath=this->prefix_path;
-	    } else {
+		} else {
 		   searchPath=QDir::homePath();
-	    }
+		}
 	 }
 
 	QList<QUrl> add_prefix_urls = this->prefix_urls;
@@ -326,7 +326,7 @@ void IconSettings::cmdGetWorkDir_Click(){
 	  dialog.setSidebarUrls(add_prefix_urls);
 
 	if (dialog.exec())
-	    fileName = dialog.selectedFiles().first();
+		fileName = dialog.selectedFiles().first();
 
 	if(!fileName.isEmpty()){
 		txtWorkDir->setText(fileName);
@@ -337,6 +337,7 @@ void IconSettings::cmdGetWorkDir_Click(){
 void IconSettings::cmdAdd_Click(){
 	if (!cboxDlls->currentText().isEmpty()){
 		twDlls->insertRow (0);
+		//QTableWidgetItem *newItem = new QTableWidgetItem(cboxDlls->currentText().split(".").at(0));
 		QTableWidgetItem *newItem = new QTableWidgetItem(cboxDlls->currentText());
 		twDlls->setItem(0, 0, newItem);
 		newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
@@ -356,19 +357,19 @@ void IconSettings::cmdGetProgram_Click(){
 	QString fileName, searchPath = this->prefix_path;
 
 	if (!txtProgramPath->text().isEmpty()){
-	    if (!txtWorkDir->text().isEmpty()){
+		if (!txtWorkDir->text().isEmpty()){
 		searchPath=txtWorkDir->text();
-	    } else {
+		} else {
 		searchPath=txtProgramPath->text().left(txtProgramPath->text().length() - txtProgramPath->text().split("/").last().length());;
-	    }
+		}
 	}
 
 	if ((!QDir(searchPath).exists()) or (searchPath.isEmpty())){
 		if (QDir(dir_name).exists()){
 		   searchPath=this->prefix_path;
-	    } else {
+		} else {
 		   searchPath=QDir::homePath();
-	    }
+		}
 	 }
 
 	QList<QUrl> add_prefix_urls = this->prefix_urls;
@@ -384,7 +385,7 @@ void IconSettings::cmdGetProgram_Click(){
 	  dialog.setSidebarUrls(add_prefix_urls);
 
 	 if (dialog.exec())
-	    fileName = dialog.selectedFiles().first();
+		fileName = dialog.selectedFiles().first();
 
 	if(!fileName.isEmpty()){
 			QStringList list1 = fileName.split("/");
@@ -446,15 +447,15 @@ void IconSettings::cmdGetIcon_Click(){
 	  }
 	  dialog.setDirectory(searchPath);
 
-	    #ifndef WITH_ICOTOOLS
+		#ifndef WITH_ICOTOOLS
 		dialog.setNameFilter(tr("Image files (*.png *.jpg *.gif *.bmp *.xpm)"));
-	    #else
+		#else
 		dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)"));
-	    #endif
+		#endif
 	  dialog.setSidebarUrls(add_prefix_urls);
 
 	 if (dialog.exec())
-	    fileName = dialog.selectedFiles().first();
+		fileName = dialog.selectedFiles().first();
 
 	if(!fileName.isEmpty()){
 		if ((fileName.toLower().right(3)!="exe") && (fileName.toLower().right(3)!="dll")){

@@ -395,6 +395,9 @@ void MainWindow::getSettings(){
 	oldDir = CoreLib->getSetting("LastPrefix", "dir", false).toString();
 
 	if (!oldPrefix.isEmpty()){
+
+	  cbPrefixes->setCurrentIndex(cbPrefixes->findText(oldPrefix, Qt::MatchExactly));
+
 		QTreeWidgetItem* item;
 		QTreeWidgetItem* childItem;
 		for(int i=0; i < twPrograms->topLevelItemCount(); i++)
@@ -482,8 +485,10 @@ void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
 
 	if (item->parent()){
 		iconsList=db_icon->getByPrefixAndDirName(item->parent()->text(0), item->text(0));
+		cbPrefixes->setCurrentIndex(cbPrefixes->findText(item->parent()->text(0), Qt::MatchExactly));
 	} else {
 		iconsList=db_icon->getByPrefixAndDirName(item->text(0), "");
+		cbPrefixes->setCurrentIndex(cbPrefixes->findText(item->text(0), Qt::MatchExactly));
 	}
 
 
