@@ -143,6 +143,9 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 	QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
 	QString string = codec->toUnicode(myProcess->readAllStandardError());
 
+	qDebug()<<exitc;
+	qDebug()<<myProcess->exitCode();
+
 	if (!string.isEmpty()){
 	   if (exitc == 0){
 		QMessageBox::warning(this, tr("Output"), tr("It seems the process exited normally.<br><br>STDERR log:<br>%1").arg(string));

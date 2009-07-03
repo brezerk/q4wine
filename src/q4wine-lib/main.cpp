@@ -605,7 +605,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 	}
 
 
-	bool corelib::mountImage(QString image_name, const QString prefix_name) const{
+	bool corelib::mountImage(const QString image_name, const QString prefix_name) const{
 		QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
 
 		if (mount_point.isEmpty()){
@@ -615,14 +615,25 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 		if (image_name.isEmpty())
 			return FALSE;
 
-		if (!image_name.contains("/")) {
-			image_name = this->db_image->getPath(image_name);
+		QStringList args;
+		QString mount_string;
+
+//#ifdef _OS_FREEBSD_
+		if (image_name.contains("/")) {
+			mount_string=this->getSetting("advanced", "mount_drive_string", false).toString();
+			mount_string.replace("%MOUNT_DRIVE%", image_name);
+		} else {
+			mount_string=this->getSetting("advanced", "mount_image_string", false).toString();
+			mount_string.replace("%MOUNT_IMAGE%", this->db_image->getPath(image_name));
+			mount_string.replace("%MDCONFIG_BIN%", getWhichOut("mdconfig"));
 		}
 
-		QStringList args;
-		QString arg;
+		mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());
+		mount_string.replace("%MOUNT_BIN%", getSetting("system", "mount").toString());
+		mount_string.replace("%MOUNT_POINT%", mount_point);
 
-#ifdef _OS_FREEBSD_
+/*
+
 		if ((image_name.right(3)=="iso") or (image_name.right(3)=="nrg")){
 			args << this->getSetting("system", "sh").toString();
 			args << "-c";
@@ -638,35 +649,38 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 		} else {
 			args << this->getSetting("system", "mount").toString() << "-t" << "cd9660" << image_name << mount_point;
 		}
-#endif
-
+		*/
+//#endif
+/*
 #ifdef _OS_LINUX_
-		args << this->getSetting("system", "mount").toString();
-		args << image_name;
-		args << mount_point;
-
-		if (image_name.right(3)=="iso"){
-			args << "-o" << "loop";
+		if (image_name.contains("/")) {
+			mount_string=this->getSetting("advanced", "mount_drive_string", false).toString();
+			mount_string.replace("%MOUNT_DRIVE%", image_name);
+		} else {
+			mount_string=this->getSetting("advanced", "mount_image_string", false).toString();
+			mount_string.replace("%MOUNT_IMAGE%", this->db_image->getPath(image_name));
+			if (image_name.right(3)=="nrg"){
+				mount_string.replace("%MOUNT_OPTIONS%", "-o  loop,offset=307200");
+			} else {
+				mount_string.replace("%MOUNT_OPTIONS%", "-o  loop");
+			}
 		}
-		if (image_name.right(3)=="nrg"){
-			args << "-o" << "loop,offset=307200";
-		}
 
+		mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());
+		mount_string.replace("%MOUNT_BIN%", getSetting("system", "mount").toString());
+		mount_string.replace("%MOUNT_POINT%", mount_point);
 #endif
-
-		//Fix args for kdesu\gksu\e.t.c.
-		if (!this->getSetting("system", "gui_sudo").toString().contains(QRegExp("/sudo$"))){
-			arg=args.join(" ");
-			args.clear();
-			args<<arg;
-		}
+*/
+		args.clear();
+		args.append("-c");
+		args.append(mount_string);
 
 		if (this->_GUI_MODE){
 			Process *proc;
-			proc = new Process(args, this->getSetting("system", "gui_sudo").toString(), QDir::homePath(), QObject::tr("Mounting..."), QObject::tr("Mounting..."));
+			proc = new Process(args, this->getSetting("system", "sh").toString(), QDir::homePath(), QObject::tr("Mounting %1 into %2").arg(image_name).arg(mount_point), QObject::tr("Mounting..."));
 			return (proc->exec());
 		} else {
-			return (this->runProcess(this->getSetting("system", "gui_sudo").toString(), args));
+			return (this->runProcess(this->getSetting("system", "sh").toString(), args));
 		}
 	}
 
@@ -695,23 +709,22 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 		QString devid = myProcess->readAll();
 #endif
 
-		args.clear();
-		args << this->getSetting("system", "umount").toString();
-		args << mount_point;
+		QString mount_string;
+		mount_string=this->getSetting("advanced", "umount_string", false).toString();
+		mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());
+		mount_string.replace("%UMOUNT_BIN%", getSetting("system", "umount").toString());
+		mount_string.replace("%MOUNT_POINT%", mount_point);
 
-		//Fix args for kdesu\gksu\e.t.c.
-		if (!this->getSetting("system", "gui_sudo").toString().contains(QRegExp("/sudo$"))){
-			arg=args.join(" ");
-			args.clear();
-			args<<arg;
-		}
+		args.clear();
+		args.append("-c");
+		args.append(mount_string);
 
 		if (this->_GUI_MODE){
 			Process *proc;
-			proc = new Process(args, this->getSetting("system", "gui_sudo").toString(), QDir::homePath(), QObject::tr("Mounting..."), QObject::tr("Mounting..."));
+			proc = new Process(args, this->getSetting("system", "sh").toString(), QDir::homePath(), QObject::tr("Mounting..."), QObject::tr("Mounting..."));
 			return (proc->exec());
 		} else {
-			return (this->runProcess(this->getSetting("system", "gui_sudo").toString(), args));
+			return (this->runProcess(this->getSetting("system", "sh").toString(), args));
 		}
 
 #ifdef _OS_FREEBSD_

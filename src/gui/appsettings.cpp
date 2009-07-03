@@ -61,10 +61,10 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	QSettings settings(APP_SHORT_NAME, "default");
 
 	settings.beginGroup("wine");
-		txtWineBin->setText(settings.value("WineBin").toString());
-		txtWineServerBin->setText(settings.value("ServerBin").toString());
-		txtWineLoaderBin->setText(settings.value("LoaderBin").toString());
-		txtWineLibs->setText(settings.value("WineLibs").toString());
+	txtWineBin->setText(settings.value("WineBin").toString());
+	txtWineServerBin->setText(settings.value("ServerBin").toString());
+	txtWineLoaderBin->setText(settings.value("LoaderBin").toString());
+	txtWineLibs->setText(settings.value("WineLibs").toString());
 	settings.endGroup();
 
 	settings.beginGroup("app");
@@ -121,40 +121,68 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	settings.endGroup();
 
 	settings.beginGroup("system");
-		txtTarBin->setText(settings.value("tar").toString());
-		txtMountBin->setText(settings.value("mount").toString());
-		txtUmountBin->setText(settings.value("umount").toString());
-		txtSudoBin->setText(settings.value("sudo").toString());
-		txtGuiSudoBin->setText(settings.value("gui_sudo").toString());
-		txtNiceBin->setText(settings.value("nice").toString());
-		txtReniceBin->setText(settings.value("renice").toString());
-		txtShBin->setText(settings.value("sh").toString());
+	txtTarBin->setText(settings.value("tar").toString());
+	txtMountBin->setText(settings.value("mount").toString());
+	txtUmountBin->setText(settings.value("umount").toString());
+	txtSudoBin->setText(settings.value("sudo").toString());
+	txtGuiSudoBin->setText(settings.value("gui_sudo").toString());
+	txtNiceBin->setText(settings.value("nice").toString());
+	txtReniceBin->setText(settings.value("renice").toString());
+	txtShBin->setText(settings.value("sh").toString());
 	settings.endGroup();
 
 	settings.beginGroup("console");
-		txtConsoleBin->setText(settings.value("bin").toString());
-		txtConsoleArgs->setText(settings.value("args").toString());
+	txtConsoleBin->setText(settings.value("bin").toString());
+	txtConsoleArgs->setText(settings.value("args").toString());
 	settings.endGroup();
 
-	  #ifndef WITHOUT_ICOTOOLS
-		settings.beginGroup("icotool");
-			  txtWrestoolBin->setText(settings.value("wrestool").toString());
-			  txtIcotoolBin->setText(settings.value("icotool").toString());
-		settings.endGroup();
-	  #else
-		txtWrestoolBin->setEnabled(false);
-		txtIcotoolBin->setEnabled(false);
-		cmdGetWrestoolBin->setEnabled(false);
-		cmdGetIcotoolBin->setEnabled(false);
-	  #endif
+	settings.beginGroup("advanced");
+	txtMountString->setText(settings.value("mount_drive_string").toString());
+	txtMountImageString->setText(settings.value("mount_image_string").toString());
+	txtUmountString->setText(settings.value("umount_string").toString());
+	settings.endGroup();
+
+	if (txtMountString->text().isEmpty()){
+#ifdef _OS_LINUX_
+		txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+		txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
+#endif
+	}
+
+	if (txtMountImageString->text().isEmpty()){
+#ifdef _OS_LINUX_
+		txtMountImageString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+		txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
+#endif
+	}
+
+	if (txtUmountString->text().isEmpty())
+		txtUmountString->setText("%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+
+
+#ifndef WITHOUT_ICOTOOLS
+	settings.beginGroup("icotool");
+	txtWrestoolBin->setText(settings.value("wrestool").toString());
+	txtIcotoolBin->setText(settings.value("icotool").toString());
+	settings.endGroup();
+#else
+	txtWrestoolBin->setEnabled(false);
+	txtIcotoolBin->setEnabled(false);
+	cmdGetWrestoolBin->setEnabled(false);
+	cmdGetIcotoolBin->setEnabled(false);
+#endif
 
 	settings.beginGroup("network");
-		txtProxyHost->setText(settings.value("host").toString());
-		txtProxyPort->setText(settings.value("port").toString());
-		txtProxyUser->setText(settings.value("user").toString());
-		txtProxyPass->setText(settings.value("pass").toString());
+	txtProxyHost->setText(settings.value("host").toString());
+	txtProxyPort->setText(settings.value("port").toString());
+	txtProxyUser->setText(settings.value("user").toString());
+	txtProxyPass->setText(settings.value("pass").toString());
 
-		comboProxyType->setCurrentIndex(settings.value("type").toInt());
+	comboProxyType->setCurrentIndex(settings.value("type").toInt());
 
 	settings.endGroup();
 
@@ -378,16 +406,16 @@ void AppSettings::cmdOk_Click(){
 	if (!checkEntry(txtUmountBin->text(), "sh"))
 		return;
 
-	  if (!checkEntry(txtConsoleBin->text(), "console"))
-		    return;
-
-	  #ifndef WITHOUT_ICOTOOLS
-		if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
-		    return;
-
-		if (!checkEntry(txtIcotoolBin->text(), "icotool"))
+	if (!checkEntry(txtConsoleBin->text(), "console"))
 		return;
-	  #endif
+
+#ifndef WITHOUT_ICOTOOLS
+	if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
+		return;
+
+	if (!checkEntry(txtIcotoolBin->text(), "icotool"))
+		return;
+#endif
 
 	if (comboProxyType->currentText()!=tr("No Proxy")){
 		if (txtProxyHost->text().isEmpty()){
@@ -403,10 +431,10 @@ void AppSettings::cmdOk_Click(){
 	QSettings settings(APP_SHORT_NAME, "default");
 
 	settings.beginGroup("wine");
-		settings.setValue("WineBin", txtWineBin->text());
-		settings.setValue("ServerBin", txtWineServerBin->text());
-		settings.setValue("LoaderBin", txtWineLoaderBin->text());
-		settings.setValue("WineLibs", txtWineLibs->text());
+	settings.setValue("WineBin", txtWineBin->text());
+	settings.setValue("ServerBin", txtWineServerBin->text());
+	settings.setValue("LoaderBin", txtWineLoaderBin->text());
+	settings.setValue("WineLibs", txtWineLibs->text());
 	settings.endGroup();
 
 	settings.beginGroup("app");
@@ -431,40 +459,47 @@ void AppSettings::cmdOk_Click(){
 
 	settings.endGroup();
 	settings.beginGroup("system");
-		settings.setValue("tar", txtTarBin->text());
-		settings.setValue("mount", txtMountBin->text());
-		settings.setValue("umount", txtUmountBin->text());
-		settings.setValue("sudo", txtSudoBin->text());
-		settings.setValue("gui_sudo", txtGuiSudoBin->text());
-		settings.setValue("nice", txtNiceBin->text());
-		settings.setValue("renice", txtReniceBin->text());
-		settings.setValue("sh", txtShBin->text());
+	settings.setValue("tar", txtTarBin->text());
+	settings.setValue("mount", txtMountBin->text());
+	settings.setValue("umount", txtUmountBin->text());
+	settings.setValue("sudo", txtSudoBin->text());
+	settings.setValue("gui_sudo", txtGuiSudoBin->text());
+	settings.setValue("nice", txtNiceBin->text());
+	settings.setValue("renice", txtReniceBin->text());
+	settings.setValue("sh", txtShBin->text());
 	settings.endGroup();
 
-	  settings.beginGroup("console");
-		    settings.setValue("bin", txtConsoleBin->text());
-		    settings.setValue("args", txtConsoleArgs->text());
-	  settings.endGroup();
-	  #ifndef WITHOUT_ICOTOOLS
-		settings.beginGroup("icotool");
-			  settings.setValue("wrestool", txtWrestoolBin->text());
-			  settings.setValue("icotool", txtIcotoolBin->text());
-		settings.endGroup();
-	  #endif
+	settings.beginGroup("console");
+	settings.setValue("bin", txtConsoleBin->text());
+	settings.setValue("args", txtConsoleArgs->text());
+	settings.endGroup();
+#ifndef WITHOUT_ICOTOOLS
+	settings.beginGroup("icotool");
+	settings.setValue("wrestool", txtWrestoolBin->text());
+	settings.setValue("icotool", txtIcotoolBin->text());
+	settings.endGroup();
+#endif
+
+	settings.beginGroup("advanced");
+	settings.setValue("mount_drive_string", txtMountString->text());
+	settings.setValue("mount_image_string", txtMountImageString->text());
+	settings.setValue("umount_string", txtUmountString->text());
+	settings.endGroup();
+
 	settings.beginGroup("network");
-		settings.setValue("host", txtProxyHost->text());
-		settings.setValue("port", txtProxyPort->text());
-		settings.setValue("user", txtProxyUser->text());
-		settings.setValue("pass", txtProxyPass->text());
-		if (comboProxyType->currentText()==tr("No Proxy")){
-			settings.setValue("type", 0);
+	settings.setValue("host", txtProxyHost->text());
+	settings.setValue("port", txtProxyPort->text());
+	settings.setValue("user", txtProxyUser->text());
+	settings.setValue("pass", txtProxyPass->text());
+	if (comboProxyType->currentText()==tr("No Proxy")){
+		settings.setValue("type", 0);
+	} else {
+		if (comboProxyType->currentText()=="HTTP"){
+			settings.setValue("type", 1);
 		} else {
-			if (comboProxyType->currentText()=="HTTP"){
-				settings.setValue("type", 1);
-			} else {
-				settings.setValue("type", 2);
-			}
+			settings.setValue("type", 2);
 		}
+	}
 
 	settings.endGroup();
 	accept();
@@ -478,23 +513,23 @@ bool AppSettings::checkEntry(QString fileName, QString info, bool isFile){
 
 	if (fileName.isEmpty()){
 		switch (isFile){
-			case FALSE:
-				QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 directory.").arg(info));
-				break;
-			case TRUE:
-				QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 binary.").arg(info));
-				break;
+		case FALSE:
+			QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 directory.").arg(info));
+			break;
+		case TRUE:
+			QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 binary.").arg(info));
+			break;
 		}
 		return FALSE;
 	} else {
 		if (!QFile::exists(fileName)){
 			switch (isFile){
-				case FALSE:
-					QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory not exists.").arg(info));
-					break;
-				case TRUE:
-					QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary not exists.").arg(info));
-					break;
+			case FALSE:
+				QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory not exists.").arg(info));
+				break;
+			case TRUE:
+				QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary not exists.").arg(info));
+				break;
 			}
 			return FALSE;
 		}

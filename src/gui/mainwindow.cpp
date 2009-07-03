@@ -390,6 +390,62 @@ void MainWindow::getSettings(){
   ICOTOOL_BIN=val.toString();
 #endif
 
+
+
+	if (CoreLib->getSetting("advanced", "mount_drive_string", FALSE).toString().isEmpty()){
+		QSettings settings(APP_SHORT_NAME, "default");
+		settings.beginGroup("advanced");
+#ifdef _OS_LINUX_
+		settings.setValue("mount_drive_string", "%GUI_SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+		settings.setValue(("mount_drive_string", "%GUI_SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
+#endif
+		settings.endGroup();
+	}
+
+	if (CoreLib->getSetting("advanced", "mount_image_string", FALSE).toString().isEmpty()){
+		QSettings settings(APP_SHORT_NAME, "default");
+		settings.beginGroup("advanced");
+#ifdef _OS_LINUX_
+		settings.setValue("mount_image_string", "%GUI_SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+		settings.setValue("mount_image_string", "%GUI_SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
+#endif
+		settings.endGroup();
+	}
+
+	if (CoreLib->getSetting("advanced", "umount_string", FALSE).toString().isEmpty()){
+		QSettings settings(APP_SHORT_NAME, "default");
+		settings.beginGroup("advanced");
+#ifdef _OS_LINUX_
+		settings.setValue("umount_string", "%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+		settings.setValue("umount_string", "%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+#endif
+		settings.endGroup();
+	}
+
+
+/*
+	if (txtMountImageString->text().isEmpty()){
+#ifdef _OS_LINUX_
+		txtMountImageString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+		txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
+#endif
+	}
+
+	if (txtUmountString->text().isEmpty())
+		txtUmountString->setText("%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+*/
+
+
+
+
   QString oldDir, oldPrefix;
   oldPrefix = CoreLib->getSetting("LastPrefix", "prefix", false).toString();
   oldDir = CoreLib->getSetting("LastPrefix", "dir", false).toString();
@@ -768,9 +824,9 @@ void MainWindow::menuMountImages_triggered ( QAction * action ){
   }
 
   if (ret){
-	statusBar()->showMessage(QObject::tr("Image successfully mounted"));
+	statusBar()->showMessage(QObject::tr("%1 successfully mounted.").arg(action->text()));
   } else {
-	statusBar()->showMessage(QObject::tr("Image mount fail"));
+	statusBar()->showMessage(QObject::tr("%1 mount fail.").arg(action->text()));
   }
   return;
 }
