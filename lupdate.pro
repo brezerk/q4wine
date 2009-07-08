@@ -20,59 +20,48 @@ warning("==============================================")
  
 
 # Application source code
-HEADERS += /src/gui/run.h \                                                                                                     
-        /src/core/database/db.h \                                                                                            
-        /src/core/registry.h \                                                                                               
-        /src/core/winebinlauncher.h \                                                                                        
-        /src/gui/about.h \                                                                                                   
-        /src/gui/appsettings.h   \                                                                                           
-        /src/gui/iconsettings.h  \                                                                                           
-        /src/gui/iconsview.h  \                                                                                              
-        /src/gui/mainwindow.h      \                                                                                         
-        /src/gui/prefixsettings.h \                                                                                          
-        /src/gui/process.h \                                                                                                 
-        /src/gui/wizard.h \                                                                                                  
-        /src/gui/imagemanager.h \                                                                                            
-        /src/temporary/winetricks.h \                                                                                        
-        /src/temporary/winetrickshelp.h \                                                                                    
-        /src/core/coremethods.h \                                                                                            
-        /src/wis/wisitem.h \                                                                                                 
-        /src/core/database/initdb.h \                                                                                        
 
-FORMS += /src/uis/About.ui \                                                                                                  
-        /src/uis/AppSettings.ui \                                                                                            
-        /src/uis/IconSettings.ui \                                                                                           
-        /src/uis/IconsView.ui \                                                                                              
-        /src/uis/MainWindow.ui \                                                                                             
-        /src/uis/PrefixSettings.ui \                                                                                         
-        /src/uis/Process.ui \                                                                                                
-        /src/uis/Run.ui \                                                                                                    
-        /src/uis/Wizard.ui \                                                                                                 
-        /src/uis/IconSettings.ui \                                                                                           
-        /src/uis/ImageManager.ui \                                                                                           
-        /src/temporary/winetricks.ui \                                                                                       
+FORMS += /src/uis/About.ui \
+        /src/uis/AppSettings.ui \
+        /src/uis/IconSettings.ui \
+        /src/uis/IconsView.ui \
+        /src/uis/ImageManager.ui \
+        /src/uis/MainWindow.ui \
+        /src/uis/PrefixSettings.ui \
+        /src/uis/Process.ui \
+        /src/uis/Run.ui \
+        /src/uis/Wizard.ui \
+        /src/temporary/winetricks.ui \
         /src/temporary/winetrickshelp.ui
 
-SOURCES += /src/gui/run.cpp \                                                                                                   
-        /src/main.cpp \                                                                                                      
-        /src/core/database/db.cpp \                                                                                          
-        /src/core/registry.cpp \                                                                                             
-        /src/core/winebinlauncher.cpp \                                                                                      
-        /src/gui/about.cpp \                                                                                                 
-        /src/gui/appsettings.cpp \                                                                                           
-        /src/gui/iconsettings.cpp \                                                                                          
-        /src/gui/iconsview.cpp \                                                                                             
-        /src/gui/mainwindow.cpp \                                                                                            
-        /src/gui/prefixsettings.cpp \                                                                                        
-        /src/gui/process.cpp \                                                                                               
-        /src/gui/wizard.cpp \                                                                                                
-        /src/gui/imagemanager.cpp \                                                                                          
-        /src/temporary/winetricks.cpp \                                                                                      
-        /src/temporary/winetrickshelp.cpp \                                                                                  
-        /src/core/coremethods.cpp \                                                                                          
-        /src/wis/wisitem.cpp
+SOURCES += /src/core/registry.cpp \
+	/src/core/winebinlauncher.cpp \
+	/src/core/database/db.cpp \
+	/src/core/database/dir.cpp \
+	/src/core/database/icon.cpp \
+	/src/core/database/image.cpp \
+	/src/core/database/initdb.h \
+	/src/core/database/prefix.cpp \
+	/src/gui/about.cpp \
+	/src/gui/appsettings.cpp \
+	/src/gui/draglistwidget.cpp \
+	/src/gui/iconsettings.cpp \
+	/src/gui/iconsview.cpp \
+	/src/gui/imagemanager.cpp \
+	/src/gui/mainwindow.cpp \
+	/src/gui/prefixsettings.cpp \
+	/src/gui/process.cpp \
+	/src/gui/run.cpp \
+	/src/gui/wizard.cpp \
+	/src/q4wine-cli/main.cpp \
+	/src/q4wine-lib/main.cpp \
+	/src/temporary/winetricks.cpp \
+	/src/temporary/winetrickshelp.cpp \
+	/src/wis/wisitem.cpp
+	
 
 TRANSLATIONS += src/i18n/en_us.ts \
     src/i18n/ru_ru.ts \
     src/i18n/uk_ua.ts \
-    src/i18n/pt_BR.ts
+    src/i18n/pt_br.ts \
+    src/i18n/es_es.ts

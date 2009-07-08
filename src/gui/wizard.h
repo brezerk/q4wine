@@ -44,12 +44,12 @@
 #include <QResizeEvent>
 #include <QProgressDialog>
 #include <QStringList>
+#include <QLibrary>
 
 #include <config.h>
 #include "registry.h"
 #include "process.h"
 #include "winebinlauncher.h"
-#include "coremethods.h"
 
 #include "src/core/database/prefix.h"
 #include "src/core/database/icon.h"

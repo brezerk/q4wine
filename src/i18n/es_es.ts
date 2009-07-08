@@ -1033,6 +1033,11 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../uis/About.ui" line="311"/>
+        <source>Packages Authors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../uis/About.ui" line="326"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1060,6 +1065,11 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../uis/About.ui" line="362"/>
+        <source>Translation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../uis/About.ui" line="377"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1074,6 +1084,16 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Russian translation&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Sergiev Posad, Moscow region, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../uis/About.ui" line="403"/>
+        <source>Thanks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../uis/About.ui" line="409"/>
+        <source>Special thanks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1102,6 +1122,12 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#5f9ea0;&quot;&gt;sspphheerraa@jabber.org&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;andrey.aleksandrovich@googlemail.com&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Kharkov, UA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../uis/About.ui" line="455"/>
+        <location filename="../uis/About.ui" line="461"/>
+        <source>License agreement</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
@@ -1299,32 +1325,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uis/About.ui" line="311"/>
-        <source>Packages Authors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../uis/About.ui" line="362"/>
-        <source>Translation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../uis/About.ui" line="403"/>
-        <source>Thanks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../uis/About.ui" line="409"/>
-        <source>Special thanks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../uis/About.ui" line="455"/>
-        <location filename="../uis/About.ui" line="461"/>
-        <source>License agreement</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../uis/About.ui" line="691"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
@@ -1341,11 +1341,10 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="227"/>
-        <location filename="../gui/appsettings.cpp" line="420"/>
-        <location filename="../gui/appsettings.cpp" line="518"/>
-        <location filename="../uis/AppSettings.ui" line="1139"/>
-        <source>No Proxy</source>
+        <location filename="../gui/appsettings.cpp" line="116"/>
+        <location filename="../gui/appsettings.cpp" line="454"/>
+        <location filename="../uis/AppSettings.ui" line="1067"/>
+        <source>System Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1356,6 +1355,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/appsettings.cpp" line="204"/>
         <source>Open Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/appsettings.cpp" line="227"/>
+        <location filename="../gui/appsettings.cpp" line="420"/>
+        <location filename="../gui/appsettings.cpp" line="518"/>
+        <location filename="../uis/AppSettings.ui" line="1139"/>
+        <source>No Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1431,13 +1438,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="116"/>
-        <location filename="../gui/appsettings.cpp" line="454"/>
-        <location filename="../uis/AppSettings.ui" line="1067"/>
-        <source>System Default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../uis/AppSettings.ui" line="223"/>
         <source>General</source>
         <translation type="unfinished"></translation>
@@ -1466,6 +1466,16 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../uis/AppSettings.ui" line="385"/>
         <source>Libs:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="414"/>
+        <source>Tray Icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="420"/>
+        <source>Use tray icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1559,6 +1569,11 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../uis/AppSettings.ui" line="1059"/>
+        <source>Language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../uis/AppSettings.ui" line="1081"/>
         <source>Themes</source>
         <translation type="unfinished"></translation>
@@ -1574,33 +1589,13 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uis/AppSettings.ui" line="1289"/>
-        <source>Password:</source>
+        <location filename="../uis/AppSettings.ui" line="1131"/>
+        <source>Proxy type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="1144"/>
         <source>HTTP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../uis/AppSettings.ui" line="414"/>
-        <source>Tray Icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../uis/AppSettings.ui" line="420"/>
-        <source>Use tray icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../uis/AppSettings.ui" line="1059"/>
-        <source>Language:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../uis/AppSettings.ui" line="1131"/>
-        <source>Proxy type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1621,6 +1616,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../uis/AppSettings.ui" line="1254"/>
         <source>Username:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1289"/>
+        <source>Password:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1667,10 +1667,32 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>IconSettings</name>
     <message>
+        <location filename="../gui/iconsettings.cpp" line="88"/>
+        <location filename="../gui/iconsettings.cpp" line="89"/>
+        <source>Adding new icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../gui/iconsettings.cpp" line="92"/>
         <location filename="../gui/iconsettings.cpp" line="93"/>
         <location filename="../uis/IconSettings.ui" line="17"/>
         <source>Icon settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/iconsettings.cpp" line="119"/>
+        <source>%1/data/exec.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/iconsettings.cpp" line="141"/>
+        <source>%1/%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/iconsettings.cpp" line="143"/>
+        <location filename="../gui/iconsettings.cpp" line="146"/>
+        <source>:/%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1699,28 +1721,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/iconsettings.cpp" line="605"/>
         <location filename="../uis/IconSettings.ui" line="570"/>
         <source>Buildin, Native</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/iconsettings.cpp" line="88"/>
-        <location filename="../gui/iconsettings.cpp" line="89"/>
-        <source>Adding new icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/iconsettings.cpp" line="119"/>
-        <source>%1/data/exec.png</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/iconsettings.cpp" line="141"/>
-        <source>%1/%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/iconsettings.cpp" line="143"/>
-        <location filename="../gui/iconsettings.cpp" line="146"/>
-        <source>:/%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1787,6 +1787,11 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../gui/iconsettings.cpp" line="571"/>
+        <source>No executiable program selected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../gui/iconsettings.cpp" line="576"/>
         <source>No program name specified.</source>
         <translation type="unfinished"></translation>
@@ -1795,11 +1800,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/iconsettings.cpp" line="583"/>
         <location filename="../gui/iconsettings.cpp" line="588"/>
         <source>Sorry, but icon named %1 already exists.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/iconsettings.cpp" line="571"/>
-        <source>No executiable program selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1947,12 +1947,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>IconsView</name>
     <message>
-        <location filename="../gui/iconsview.cpp" line="110"/>
-        <location filename="../uis/IconsView.ui" line="100"/>
-        <source>Cancel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/iconsview.cpp" line="104"/>
         <source>Sorry. It seems file already exists.&lt;br&gt;Replace existent or rename current?</source>
         <translation type="unfinished"></translation>
@@ -1975,6 +1969,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/iconsview.cpp" line="109"/>
         <source>Replace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/iconsview.cpp" line="110"/>
+        <location filename="../uis/IconsView.ui" line="100"/>
+        <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2073,6 +2073,26 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../gui/imagemanager.cpp" line="185"/>
+        <source>Open ISO or NRG Image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/imagemanager.cpp" line="185"/>
+        <source>iso and nrg files (*.iso *.nrg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/imagemanager.cpp" line="189"/>
+        <source>Open ISO Image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/imagemanager.cpp" line="189"/>
+        <source>iso files (*.iso)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../gui/imagemanager.cpp" line="195"/>
         <location filename="../gui/imagemanager.cpp" line="214"/>
         <source>Sorry. It seems CD iamge already exists.</source>
@@ -2103,26 +2123,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/imagemanager.cpp" line="246"/>
         <location filename="../gui/imagemanager.cpp" line="249"/>
         <source>:/%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/imagemanager.cpp" line="185"/>
-        <source>Open ISO or NRG Image file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/imagemanager.cpp" line="185"/>
-        <source>iso and nrg files (*.iso *.nrg)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/imagemanager.cpp" line="189"/>
-        <source>Open ISO Image file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/imagemanager.cpp" line="189"/>
-        <source>iso files (*.iso)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2176,25 +2176,9 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uis/MainWindow.ui" line="201"/>
-        <location filename="../uis/MainWindow.ui" line="530"/>
-        <source>Options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="350"/>
-        <source>Program: %1&lt;br&gt; Description: %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="301"/>
         <location filename="../gui/mainwindow.cpp" line="303"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="306"/>
-        <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2203,18 +2187,23 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../gui/mainwindow.cpp" line="303"/>
+        <source>&lt;p&gt;Winetricks officaly NOT supported by q4wine.&lt;/p&gt;&lt;p&gt;There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="306"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../gui/mainwindow.cpp" line="306"/>
         <source>&lt;p&gt;You do not set default console binary.&lt;/p&gt;&lt;p&gt;Set it into q4wine option dialog.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uis/MainWindow.ui" line="439"/>
-        <source>Run...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="303"/>
-        <source>&lt;p&gt;Winetricks officaly NOT supported by q4wine.&lt;/p&gt;&lt;p&gt;There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.&lt;/p&gt;</source>
+        <location filename="../gui/mainwindow.cpp" line="350"/>
+        <source>Program: %1&lt;br&gt; Description: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2299,6 +2288,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../uis/MainWindow.ui" line="201"/>
+        <location filename="../uis/MainWindow.ui" line="530"/>
+        <source>Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../uis/MainWindow.ui" line="211"/>
         <source>Base setup</source>
         <translation type="unfinished"></translation>
@@ -2366,6 +2361,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../uis/MainWindow.ui" line="421"/>
         <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../uis/MainWindow.ui" line="439"/>
+        <source>Run...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2630,6 +2630,12 @@ Note: leave it blank for default.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../gui/process.cpp" line="84"/>
+        <location filename="../gui/process.cpp" line="106"/>
+        <source>Process: The last waitFor...() function timed out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../gui/process.cpp" line="87"/>
         <location filename="../gui/process.cpp" line="109"/>
         <source>Process: An error occurred when attempting to read from the process. For example, the process may not be running.</source>
@@ -2664,12 +2670,6 @@ Note: leave it blank for default.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/process.cpp" line="84"/>
-        <location filename="../gui/process.cpp" line="106"/>
-        <source>Process: The last waitFor...() function timed out.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../uis/Process.ui" line="16"/>
         <source>Mounting image...</source>
         <translation type="unfinished"></translation>
@@ -2688,25 +2688,31 @@ Note: leave it blank for default.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="849"/>
-        <location filename="../gui/mainwindow.cpp" line="2618"/>
-        <source>%1 successfully mounted.</source>
+        <location filename="../core/database/initdb.h" line="43"/>
+        <location filename="../core/database/initdb.h" line="51"/>
+        <source>Critical error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="851"/>
-        <location filename="../gui/mainwindow.cpp" line="2620"/>
-        <source>Fail to mount %1.</source>
+        <location filename="../core/database/initdb.h" line="43"/>
+        <source>Unable to load database SQLITE driver. You need to compile qt-sql with sqlite database support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2585"/>
-        <source>Drive successfully umounted.</source>
+        <location filename="../core/database/initdb.h" line="48"/>
+        <source>%1/.config/%2/db/generic.dat</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2587"/>
-        <source>Fail to umount drive.</source>
+        <location filename="../core/database/initdb.h" line="51"/>
+        <source>Sorry, i can&apos;t open database file: %1/.config/%2/db/generic.dat ; Error is: %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/database/prefix.cpp" line="306"/>
+        <location filename="../core/database/prefix.cpp" line="367"/>
+        <location filename="../q4wine-lib/main.cpp" line="249"/>
+        <source>&lt;none&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2756,6 +2762,28 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-lib/main.cpp" line="544"/>
         <location filename="../q4wine-lib/main.cpp" line="546"/>
         <source> WINESERVER=%1 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="849"/>
+        <location filename="../gui/mainwindow.cpp" line="2618"/>
+        <source>%1 successfully mounted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="851"/>
+        <location filename="../gui/mainwindow.cpp" line="2620"/>
+        <source>Fail to mount %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2585"/>
+        <source>Drive successfully umounted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2587"/>
+        <source>Fail to umount drive.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2858,37 +2886,30 @@ Note: leave it blank for default.</source>
         <source>Can&apos;t run: %1</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../core/database/initdb.h" line="43"/>
-        <location filename="../core/database/initdb.h" line="51"/>
-        <source>Critical error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../core/database/initdb.h" line="43"/>
-        <source>Unable to load database SQLITE driver. You need to compile qt-sql with sqlite database support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../core/database/initdb.h" line="48"/>
-        <source>%1/.config/%2/db/generic.dat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../core/database/initdb.h" line="51"/>
-        <source>Sorry, i can&apos;t open database file: %1/.config/%2/db/generic.dat ; Error is: %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../core/database/prefix.cpp" line="306"/>
-        <location filename="../core/database/prefix.cpp" line="367"/>
-        <location filename="../q4wine-lib/main.cpp" line="249"/>
-        <source>&lt;none&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>Run</name>
+    <message>
+        <location filename="../gui/run.cpp" line="78"/>
+        <source>%1/data/exec.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/run.cpp" line="98"/>
+        <source>%1/%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/run.cpp" line="100"/>
+        <location filename="../gui/run.cpp" line="103"/>
+        <source>:/%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/run.cpp" line="136"/>
+        <source>%1=</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <location filename="../gui/run.cpp" line="137"/>
         <location filename="../uis/Run.ui" line="490"/>
@@ -2911,27 +2932,6 @@ Note: leave it blank for default.</source>
         <location filename="../gui/run.cpp" line="143"/>
         <location filename="../uis/Run.ui" line="505"/>
         <source>Buildin, Native</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/run.cpp" line="78"/>
-        <source>%1/data/exec.png</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/run.cpp" line="98"/>
-        <source>%1/%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/run.cpp" line="100"/>
-        <location filename="../gui/run.cpp" line="103"/>
-        <source>:/%1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/run.cpp" line="136"/>
-        <source>%1=</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3109,30 +3109,6 @@ Note: leave it blank for default.</source>
 <context>
     <name>Wizard</name>
     <message>
-        <location filename="../gui/wizard.cpp" line="558"/>
-        <location filename="../gui/wizard.cpp" line="562"/>
-        <location filename="../uis/Wizard.ui" line="735"/>
-        <source>&lt;none&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/wizard.cpp" line="303"/>
-        <location filename="../gui/wizard.cpp" line="477"/>
-        <location filename="../gui/wizard.cpp" line="520"/>
-        <location filename="../uis/Wizard.ui" line="1530"/>
-        <source>No Proxy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/wizard.cpp" line="822"/>
-        <location filename="../gui/wizard.cpp" line="867"/>
-        <location filename="../gui/wizard.cpp" line="925"/>
-        <location filename="../gui/wizard.cpp" line="941"/>
-        <location filename="../uis/Wizard.ui" line="2816"/>
-        <source>Next &gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/wizard.cpp" line="38"/>
         <source>%1/data/prefixc.png</source>
         <translation type="unfinished"></translation>
@@ -3213,6 +3189,14 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../gui/wizard.cpp" line="267"/>
         <source>&lt;p&gt;Welcome to fake drive update wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/wizard.cpp" line="303"/>
+        <location filename="../gui/wizard.cpp" line="477"/>
+        <location filename="../gui/wizard.cpp" line="520"/>
+        <location filename="../uis/Wizard.ui" line="1530"/>
+        <source>No Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3299,6 +3283,13 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../gui/wizard.cpp" line="553"/>
         <source>Select prefix directory first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/wizard.cpp" line="558"/>
+        <location filename="../gui/wizard.cpp" line="562"/>
+        <location filename="../uis/Wizard.ui" line="735"/>
+        <source>&lt;none&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3581,6 +3572,25 @@ Note: leave it blank for default.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../gui/wizard.cpp" line="806"/>
+        <source>&lt;p&gt;Please enter default wine settings.&lt;/p&gt;&lt;br&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/wizard.cpp" line="822"/>
+        <location filename="../gui/wizard.cpp" line="867"/>
+        <location filename="../gui/wizard.cpp" line="925"/>
+        <location filename="../gui/wizard.cpp" line="941"/>
+        <location filename="../uis/Wizard.ui" line="2816"/>
+        <source>Next &gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/wizard.cpp" line="826"/>
+        <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../gui/wizard.cpp" line="829"/>
         <location filename="../gui/wizard.cpp" line="904"/>
         <location filename="../gui/wizard.cpp" line="950"/>
@@ -3650,16 +3660,6 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../gui/wizard.cpp" line="945"/>
         <source>&lt;p&gt;All ready for fake drive creation. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create facke drive. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/wizard.cpp" line="806"/>
-        <source>&lt;p&gt;Please enter default wine settings.&lt;/p&gt;&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/wizard.cpp" line="826"/>
-        <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4238,6 +4238,11 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
     <name>winetricks</name>
     <message>
         <location filename="../temporary/winetricks.cpp" line="79"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../temporary/winetricks.cpp" line="79"/>
         <source>&lt;p&gt;q4wine can&apos;t locate winetricks at %1 path!&lt;/p&gt;&lt;p&gt;The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Or use &quot;Install winetricks&quot; button.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4258,13 +4263,8 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="51"/>
-        <source>Install Winetricks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../temporary/winetricks.cpp" line="79"/>
-        <source>Error</source>
+        <location filename="../temporary/winetricks.ui" line="14"/>
+        <source>winetricks@q4wine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4283,8 +4283,8 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.ui" line="14"/>
-        <source>winetricks@q4wine</source>
+        <location filename="../temporary/winetricks.ui" line="51"/>
+        <source>Install Winetricks</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
