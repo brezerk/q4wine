@@ -2,983 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="ru">
 <context>
-    <name></name>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="535"/>
-        <source>Starting %1 ...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="538"/>
-        <location filename="../gui/mainwindow.cpp" line="544"/>
-        <source>%1 started.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="540"/>
-        <location filename="../gui/mainwindow.cpp" line="546"/>
-        <source>%1 fail to start.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="565"/>
-        <source>Program: &lt;br&gt; Description:</source>
-        <translation type="unfinished">Программа: &lt;br&gt; Описание:</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="636"/>
-        <location filename="../gui/mainwindow.cpp" line="645"/>
-        <location filename="../gui/mainwindow.cpp" line="1214"/>
-        <location filename="../gui/mainwindow.cpp" line="1215"/>
-        <source>%1</source>
-        <translation type="unfinished">%1</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="805"/>
-        <location filename="../gui/mainwindow.cpp" line="906"/>
-        <location filename="../gui/mainwindow.cpp" line="925"/>
-        <source>mount [%1]</source>
-        <translation type="unfinished">mount [%1]</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="824"/>
-        <location filename="../gui/mainwindow.cpp" line="926"/>
-        <source>umount [%1]</source>
-        <translation type="unfinished">umount: [%1]</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="828"/>
-        <location filename="../gui/mainwindow.cpp" line="931"/>
-        <source>umount [none]</source>
-        <translation type="unfinished">umount [none]</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="930"/>
-        <source>mount [none]</source>
-        <translation type="unfinished">mount [none]</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1199"/>
-        <source>Select process priority</source>
-        <translation type="unfinished">Выбрать приоритет процесса</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1199"/>
-        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;Значение приоритета может быть &lt;br&gt;от PRIO_MIN (-20)&lt;br&gt;до PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Смотри &quot;man renice&quot; для подробностей.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1224"/>
-        <source>reniceing...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1228"/>
-        <source>Renice fail fail</source>
-        <translation type="unfinished">Ошибка renice</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1303"/>
-        <source>Total process: %1</source>
-        <translation type="unfinished">Всего процессов: %1</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1318"/>
-        <location filename="../gui/mainwindow.cpp" line="1364"/>
-        <location filename="../gui/mainwindow.cpp" line="1379"/>
-        <location filename="../gui/mainwindow.cpp" line="1416"/>
-        <location filename="../gui/mainwindow.cpp" line="1461"/>
-        <source>Warning</source>
-        <translation type="unfinished">Предупреждение</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1318"/>
-        <source>There are other Fake drive installed in %1 prefix directory.&lt;br&gt;&lt;br&gt;Do you wish to REMOVE ALL FILES from prefix folder?</source>
-        <translation type="unfinished">Другой виртуальный диск установлен в директорию с префиксом %1 &lt;br&gt;&lt;br&gt; Хотите удалить все файлы из префиксной директории?</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1324"/>
-        <location filename="../gui/mainwindow.cpp" line="1466"/>
-        <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished">Удаление старого виртуального диска. &lt;br&gt; Это может занять много времени...</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1324"/>
-        <location filename="../gui/mainwindow.cpp" line="1466"/>
-        <source>Removing old fake drive</source>
-        <translation type="unfinished">Удаление старого виртуального диска</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1364"/>
-        <source>This action will send a TREM(-9) signal to all wine proccess with WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1379"/>
-        <source>This action will send a TREM(-9) signal to proccess &apos;%2&apos; pid: %1&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1385"/>
-        <location filename="../gui/mainwindow.cpp" line="1411"/>
-        <location filename="../gui/mainwindow.cpp" line="2545"/>
-        <location filename="../gui/mainwindow.cpp" line="2554"/>
-        <source>Error</source>
-        <translation type="unfinished">Ошибка</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1385"/>
-        <source>Can&apos;t run: %1</source>
-        <translation type="unfinished">Не могу запустить: %1</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1412"/>
-        <source>Sorry, you can&apos;t delete Default prefix.</source>
-        <translation type="unfinished">Извините, нельзя удалить главный префикс.</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1417"/>
-        <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="unfinished">Вы действительно хотите удалить префикс с названием &quot;%1&quot; и все ассоциированные пиктограммы?</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1445"/>
-        <source>Select file to import</source>
-        <translation type="unfinished">Выберите файл для импорта</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1445"/>
-        <location filename="../gui/mainwindow.cpp" line="1523"/>
-        <source>Images (*.tbz)</source>
-        <translation type="unfinished">Образы (*.tbz)</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1461"/>
-        <source>Do you really wish to delete all old prefix files?</source>
-        <translation type="unfinished">Вы действительно хотите удалить старые файлы префикса?</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1482"/>
-        <source>Importing prefix.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished">Импорт префикса. &lt;br&gt; Это может занять много времени...</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1482"/>
-        <source>Importing prefix</source>
-        <translation type="unfinished">Импорт префикса</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1523"/>
-        <source>Select file to export</source>
-        <translation type="unfinished">Выберите файл для экспорта</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1545"/>
-        <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished">Экспорт префиса  %1.&lt;br&gt; Это может занять много времени...</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1545"/>
-        <source>Exporting prefix</source>
-        <translation type="unfinished">Экспорт префикса</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1731"/>
-        <location filename="../gui/mainwindow.cpp" line="2636"/>
-        <source>WIP</source>
-        <translation type="unfinished">WIP</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1731"/>
-        <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
-        <translation type="unfinished">Извините, мастер настройки будет реализован в версии 0.110.</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1747"/>
-        <source>Open image file</source>
-        <translation type="unfinished">Открыть файл изображения</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1747"/>
-        <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
-        <translation type="unfinished">Исполняемые файлы и библиотеки Win32 (*.exe *.dll);;Исполняемые файлы Win32 (*.exe);;Библиотеки Win32 (*.dll)</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1786"/>
-        <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished">Экспорт пиктограммы из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1786"/>
-        <source>Exporting icon</source>
-        <translation type="unfinished">Экспорт пиктограммы</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1795"/>
-        <source>%1/</source>
-        <translation type="unfinished">%1/</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1812"/>
-        <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished">Конвертация пиктограммы из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1812"/>
-        <source>Converting icon</source>
-        <translation type="unfinished">Ковертация пиктограммы</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1846"/>
-        <source>Stop current</source>
-        <translation type="unfinished">Остановить текущий</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1847"/>
-        <source>Send TERM signal to selected process</source>
-        <translation type="unfinished">Послать сигнал TERM выбранному процессу</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1850"/>
-        <source>Stop wine</source>
-        <translation type="unfinished">Остановить Wine</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1851"/>
-        <source>Send TERM signal to main wine process</source>
-        <translation type="unfinished">Послать сигнал TERM главному процессу Wine</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1854"/>
-        <source>Refresh list</source>
-        <translation type="unfinished">Обновить список</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1855"/>
-        <source>Refresh process list</source>
-        <translation type="unfinished">Обновить список процессов</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1858"/>
-        <source>Renice</source>
-        <translation type="unfinished">Изменить приоритет</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1859"/>
-        <source>Set process priority</source>
-        <translation type="unfinished">Установить приоритет процесса</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1866"/>
-        <source>Run...</source>
-        <translation type="unfinished">Запустить...</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1867"/>
-        <source>Run application at current prefix</source>
-        <translation type="unfinished">Запустить приложение в текущем префиксе</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1870"/>
-        <location filename="../gui/mainwindow.cpp" line="1910"/>
-        <source>New</source>
-        <translation type="unfinished">Новый</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1871"/>
-        <source>Create new directory</source>
-        <translation type="unfinished">Создать новую директорию</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1874"/>
-        <location filename="../gui/mainwindow.cpp" line="1926"/>
-        <source>Rename</source>
-        <translation type="unfinished">Переименовать</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1875"/>
-        <source>Rename current directory</source>
-        <translation type="unfinished">Переименовать текущую директорию</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1878"/>
-        <location filename="../gui/mainwindow.cpp" line="1930"/>
-        <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1879"/>
-        <source>Delete current directory</source>
-        <translation type="unfinished">Удалить текущую директорию</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1882"/>
-        <source>Unmount cd drive</source>
-        <translation type="unfinished">Размонтировать CD дисковод</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1883"/>
-        <source>Unmounts cdrom drive</source>
-        <translation type="unfinished">Размонтировать дисковод CDROM</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1886"/>
-        <location filename="../gui/mainwindow.cpp" line="1946"/>
-        <source>mount ...</source>
-        <translation type="unfinished">mount ...</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1887"/>
-        <location filename="../gui/mainwindow.cpp" line="1947"/>
-        <source>Browse for other image</source>
-        <translation type="unfinished">Искать другой образ</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1890"/>
-        <source>Configure wine</source>
-        <translation type="unfinished">Настройка Wine</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1891"/>
-        <source>Configure Wine general settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1894"/>
-        <source>App install</source>
-        <translation type="unfinished">Установка приложения</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1895"/>
-        <source>Runs application install wizard for current prefix</source>
-        <translation type="unfinished">Запустить мастер установки приложений в текущем префиксе</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1898"/>
-        <source>App uninstall</source>
-        <translation type="unfinished">Удаление приложения</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1899"/>
-        <source>Runs application uninstall wizard for current prefix</source>
-        <translation type="unfinished">Запустить мастер удаления приложений в текущем префиксе</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1906"/>
-        <source>Run</source>
-        <translation type="unfinished">Запустить</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1907"/>
-        <location filename="../gui/mainwindow.cpp" line="1911"/>
-        <source>Create new icon</source>
-        <translation type="unfinished">Создать новую пиктограмму</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1914"/>
-        <source>Cut</source>
-        <translation type="unfinished">Вырезать</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1915"/>
-        <source>Cut selected icons to buffer</source>
-        <translation type="unfinished">Вырезать выбранные пиктограммы в буфер</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1918"/>
-        <source>Copy</source>
-        <translation type="unfinished">Копировать</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1919"/>
-        <source>Copy selected icons to buffer</source>
-        <translation type="unfinished">Копировать выбранные пиктограммы в буфер</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1922"/>
-        <source>Paste</source>
-        <translation type="unfinished">Вставить</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1923"/>
-        <source>Paste selected icons from buffer to selected folder</source>
-        <translation type="unfinished">Вставить выбранные пиктограммы из буфера в выбранную папаку</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1927"/>
-        <source>Rename current icon</source>
-        <translation type="unfinished">Переименовать текущую пиктограмму</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1931"/>
-        <source>Delete current icon</source>
-        <translation type="unfinished">Удалить текущую пиктограмму</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1934"/>
-        <source>Options</source>
-        <translation type="unfinished">Параметры</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1935"/>
-        <source>Modify current icon options</source>
-        <translation type="unfinished">Изменить настройки текущей пиктограммы</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1938"/>
-        <source>mount</source>
-        <translation type="unfinished">mount</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1939"/>
-        <source>Mount image from icon options</source>
-        <translation type="unfinished">Монтировать образ из параметров пиктограммы</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1942"/>
-        <source>umount</source>
-        <translation type="unfinished">umount</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1943"/>
-        <source>Unmount image</source>
-        <translation type="unfinished">Размонтировать образ</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1954"/>
-        <location filename="../gui/mainwindow.cpp" line="1966"/>
-        <source>Open icon directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1955"/>
-        <source>Open directory for current program</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1958"/>
-        <location filename="../gui/mainwindow.cpp" line="1970"/>
-        <source>Open prefix directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1959"/>
-        <location filename="../gui/mainwindow.cpp" line="1971"/>
-        <source>Open prefix directory for current program</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1962"/>
-        <location filename="../gui/mainwindow.cpp" line="1974"/>
-        <source>Open mount point directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1963"/>
-        <location filename="../gui/mainwindow.cpp" line="1975"/>
-        <source>Open mount point directory for current prefix</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1967"/>
-        <source>Open icon directory for current program</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1982"/>
-        <source>Create new</source>
-        <translation type="unfinished">Создать новый</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1983"/>
-        <source>Create new prefix</source>
-        <translation type="unfinished">Создать новый префикс</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1986"/>
-        <location filename="../gui/mainwindow.cpp" line="1987"/>
-        <source>Import prefix</source>
-        <translation type="unfinished">Импортировать префикс</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1991"/>
-        <location filename="../gui/mainwindow.cpp" line="1992"/>
-        <source>Export prefix</source>
-        <translation type="unfinished">Экспортировать префикс</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1996"/>
-        <location filename="../gui/mainwindow.cpp" line="1997"/>
-        <source>Delete prefix</source>
-        <translation type="unfinished">Удалить префикс</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2001"/>
-        <location filename="../gui/mainwindow.cpp" line="2002"/>
-        <source>Edit prefix settings</source>
-        <translation type="unfinished">Редактировать настройки префикса</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2025"/>
-        <location filename="../gui/mainwindow.cpp" line="2075"/>
-        <source>Mount iso...</source>
-        <translation type="unfinished">Монтировать iso...</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2036"/>
-        <location filename="../gui/mainwindow.cpp" line="2067"/>
-        <location filename="../gui/mainwindow.cpp" line="2089"/>
-        <source>Browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2041"/>
-        <location filename="../gui/mainwindow.cpp" line="2071"/>
-        <location filename="../gui/mainwindow.cpp" line="2093"/>
-        <source>Wine browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2107"/>
-        <source>%1/%2</source>
-        <translation type="unfinished">%1/%2</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2109"/>
-        <location filename="../gui/mainwindow.cpp" line="2112"/>
-        <source>:/%1</source>
-        <translation type="unfinished">:/%1</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2158"/>
-        <source>Delete Icon</source>
-        <translation type="unfinished">Удалить пиктограмму</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2158"/>
-        <source>Do you want to delete all selected icons?</source>
-        <translation type="unfinished">Удалить все выбранные пиктограммы?</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2199"/>
-        <source>Enter new icon name</source>
-        <translation type="unfinished">Введите новое название пиктограммы</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2199"/>
-        <source>Icon name:</source>
-        <translation type="unfinished">Название пиктограммы:</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2203"/>
-        <location filename="../gui/mainwindow.cpp" line="2361"/>
-        <source>Sorry. It seems file already exists.</source>
-        <translation type="unfinished">Извините, кажется файл уже существует.</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2203"/>
-        <source>Sorry. It seems file already exists.&lt;br&gt;Please rename it, or cancel rename operation.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2361"/>
-        <source>Sorry. It seems file already exists.&lt;br&gt;Please rename it, or cancel paste operation.</source>
-        <translation type="unfinished">Извините, кажется файл уже существует.&lt;br&gt; Пожалуйста, переименуйте его, или отмените вставку.</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2539"/>
-        <source>Enter new directory name</source>
-        <translation type="unfinished">Введите имя новой директории</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2539"/>
-        <location filename="../gui/mainwindow.cpp" line="2655"/>
-        <source>Directory name:</source>
-        <translation type="unfinished">Имя директории:</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2545"/>
-        <location filename="../gui/mainwindow.cpp" line="2554"/>
-        <source>Sorry, but directory named %1 already exists.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2597"/>
-        <source>Open ISO or NRG Image file</source>
-        <translation type="unfinished">Открыть файл образов ISO или NRG</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2597"/>
-        <source>iso and nrg files (*.iso *.nrg)</source>
-        <translation type="unfinished">iso и nrg файлы (*.iso *.nrg)</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2601"/>
-        <source>Open ISO Image file</source>
-        <translation type="unfinished">Открыть файл образа ISO</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2601"/>
-        <source>iso files (*.iso)</source>
-        <translation type="unfinished">iso файлы (*.iso)</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2636"/>
-        <source>Sorry, no install wizard yet. It&apos;l implemented at v0.110.</source>
-        <translation type="unfinished">Извините, мастер настройки будет реализован в версии 0.110.</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2655"/>
-        <source>Enter new name for directory</source>
-        <translation type="unfinished">Введите новое имя для директории</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2659"/>
-        <source>Sorry. It seems directory already exists.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2659"/>
-        <source>Sorry. It seems directory already exists.&lt;br&gt;Please rename it, or cancel rename operation.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2681"/>
-        <source>Q4Wine</source>
-        <translation type="unfinished">Q4Wine</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2681"/>
-        <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
-</source>
-        <translation type="unfinished">Вы действительно хотите удалить папку с названием &quot;%1&quot; и все ассоциированные пиктограммы?</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="97"/>
-        <source>Prefix named &quot;%1&quot; not exists. Run &quot;q4wine-cli -pl&quot; for prefix list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="179"/>
-        <location filename="../q4wine-cli/main.cpp" line="233"/>
-        <location filename="../q4wine-cli/main.cpp" line="245"/>
-        <location filename="../q4wine-cli/main.cpp" line="275"/>
-        <location filename="../q4wine-cli/main.cpp" line="289"/>
-        <location filename="../q4wine-cli/main.cpp" line="329"/>
-        <location filename="../q4wine-cli/main.cpp" line="388"/>
-        <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="184"/>
-        <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="189"/>
-        <source>Icon named &quot;%1&quot; not exists.  Run &quot;q4wine-cli -il&quot; for icon list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="203"/>
-        <source>Wine process list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="205"/>
-        <source>Wine process list for &quot;%1&quot; prefix</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="209"/>
-        <source> PID	  Nice	  Prefix path		  Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="221"/>
-        <source>Prefix list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="222"/>
-        <location filename="../q4wine-cli/main.cpp" line="350"/>
-        <source> Name:		Path:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="237"/>
-        <source>Prefix &quot;%1&quot; has following dir list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="238"/>
-        <source> Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="250"/>
-        <source>Dir named &quot;%1&quot; not exists. Run &quot;q4wine-cli -dl&quot; for dir list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="256"/>
-        <source>Prefix &quot;%1&quot; has following icon list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="258"/>
-        <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="260"/>
-        <source> Name:		Description:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="267"/>
-        <source>q4wine has following CD images at database</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="268"/>
-        <source> Name:					Path:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="279"/>
-        <source>Killing prefix &quot;%1&quot; wineserver.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="295"/>
-        <location filename="../q4wine-cli/main.cpp" line="335"/>
-        <location filename="../q4wine-cli/main.cpp" line="367"/>
-        <source>No mount point set in prefix configuration.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="301"/>
-        <source>No cdrom drive set in prefix configuration.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="304"/>
-        <source>Mounting drive &quot;%1&quot; into mount point &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="314"/>
-        <source>No CD iamge &quot;%1&quot; exists. Run &quot;q4wine-cli -cl&quot; for CD image list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="339"/>
-        <source>Un mounting mount point &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="349"/>
-        <source>Image list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="358"/>
-        <source>Mounted media list for all prefixes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="359"/>
-        <source> Prefix:	  Mount point:		Media:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="371"/>
-        <source>Mounted media list for prefix &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="372"/>
-        <source> Mount point:		Media:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="378"/>
-        <source>q4wine-cli %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="379"/>
-        <source>(Copyright (C) 2008-2009, brezblock core team.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="380"/>
-        <source>License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="381"/>
-        <source>This is free software: you are free to change and redistribute it.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="382"/>
-        <source>There is NO WARRANTY, to the extent permitted by law.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="384"/>
-        <source>Author: Malakhov Alexey aka John Brezerk.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="395"/>
-        <source>File &quot;%1&quot; not exists.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="418"/>
-        <source>Usage:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="419"/>
-        <source>  q4wine-cli [KEY]...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="420"/>
-        <source>  q4wine-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="421"/>
-        <source>  q4wine-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [args]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="422"/>
-        <source>Console utility for wine applications and prefixes management.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="423"/>
-        <source>KEYs list:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="424"/>
-        <source>  -h,  --help		  display this help and exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="425"/>
-        <source>  -v,  --version	  output version information and exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="426"/>
-        <source>  -ps, --procs		  output wine process list for current prefix or for all prefixes and exit </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="427"/>
-        <source>  -p,  --prefix		  sets the current prefix name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="428"/>
-        <source>  -d,  --dir		  sets the current direcory name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="429"/>
-        <source>  -i,  --icon		  sets the current icon name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="430"/>
-        <source>  -cd, --cdimage	  sets the cd iamge name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="431"/>
-        <source>  -b, --binary	  sets the path to windows binary for execute with current prefix settings.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="432"/>
-        <source>  -k,  --kill		  sends -9 term signal to current prefix precess or for all prefixes processes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="433"/>
-        <source>  -pl, --prefixlist	  output all exesting prefixes names and exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="434"/>
-        <source>  -dl, --dirlist	  output all exesting dir names for current prefix and exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="435"/>
-        <source>  -il, --iconlist	  output all exesting icon names for current prefix/directory and exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="436"/>
-        <source>  -cl, --cdlist		  output all cd images list and exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="437"/>
-        <source>  -ml, --mountlist	  output all mounted media for current prefix or all prefixes and exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="438"/>
-        <source>  -m,  --mount		  mount an cd iamage or drive for current prefix and exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="439"/>
-        <source>  -u,  --umount		  umount an cd iamage or drive for current prefix and exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="441"/>
-        <source>Exit status:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="442"/>
-        <source>  0 if OK,</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="443"/>
-        <source>  -1 if serious troubles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="445"/>
-        <source>Report q4wine bugs to brezerk@gmail.com</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="446"/>
-        <source>q4wine homepage: &lt;http://sourceforge.net/projects/q4wine/&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-cli/main.cpp" line="447"/>
-        <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>About</name>
     <message>
         <location filename="../gui/about.cpp" line="35"/>
@@ -1329,10 +352,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;END OF TERMS AND CONDITIONS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Utility for managment wine applications and prefixes.</source>
-        <translation type="obsolete">Утилита для управления приложениями и префиксами Wine.</translation>
-    </message>
 </context>
 <context>
     <name>AppSettings</name>
@@ -1374,14 +393,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../uis/AppSettings.ui" line="385"/>
         <source>Libs:</source>
         <translation>Библиотеки:</translation>
-    </message>
-    <message>
-        <source>Trarey Icon</source>
-        <translation type="obsolete">Пиктограмма в трее</translation>
-    </message>
-    <message>
-        <source>Use trarey icon</source>
-        <translation type="obsolete">Использовать пиктограмму в трее</translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="414"/>
@@ -1487,10 +498,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../uis/AppSettings.ui" line="1059"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Languale:</source>
-        <translation type="obsolete">Язык:</translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="1081"/>
@@ -1678,17 +685,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../uis/AppSettings.ui" line="1067"/>
         <source>System Default</source>
         <translation></translation>
-    </message>
-</context>
-<context>
-    <name>CoreMethods</name>
-    <message>
-        <source>Error</source>
-        <translation type="obsolete">Ошибка</translation>
-    </message>
-    <message>
-        <source>Sorry, specified prefix %1 directory not exists.</source>
-        <translation type="obsolete">Извините, указанной директории префикса %1 не существует.</translation>
     </message>
 </context>
 <context>
@@ -1902,10 +898,6 @@ p, li { white-space: pre-wrap; }
         <translation>Открыть файл изображения</translation>
     </message>
     <message>
-        <source>Image files (*.png *.jpg *.gif *.bmp)</source>
-        <translation type="obsolete">Файлы изображений (*.png *.jpg *.gif *.bmp)</translation>
-    </message>
-    <message>
         <location filename="../gui/iconsettings.cpp" line="448"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm)</source>
         <translation></translation>
@@ -1970,17 +962,9 @@ p, li { white-space: pre-wrap; }
         <translation>%1=</translation>
     </message>
     <message>
-        <source>debug: %1</source>
-        <translation type="obsolete">debug: %1</translation>
-    </message>
-    <message>
         <location filename="../uis/IconSettings.ui" line="609"/>
         <source>Override algorithm</source>
         <translation>Алгоритм замещения</translation>
-    </message>
-    <message>
-        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)</source>
-        <translation type="obsolete">Файлы изображений и исполняемые файлы wine32 (*.png *.jpg *.gif *.bmp *.exe *.dll);;Файлы изображений (*.png *.jpg *.gif *.bmp);;Исполняемые файлы и библиотеки Win32 (*.exe *.dll);;Исполняемые файлы Win32 (*.exe);;Библиотеки Win32 (*.dll)</translation>
     </message>
 </context>
 <context>
@@ -2165,14 +1149,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Error</source>
-        <translation type="obsolete">Ошибка</translation>
-    </message>
-    <message>
-        <source>debug: %1</source>
-        <translation type="obsolete">debug: %1</translation>
-    </message>
-    <message>
         <location filename="../gui/imagemanager.cpp" line="244"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
@@ -2182,10 +1158,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/imagemanager.cpp" line="249"/>
         <source>:/%1</source>
         <translation>:/%1</translation>
-    </message>
-    <message>
-        <source>%1</source>
-        <translation type="obsolete">%1</translation>
     </message>
     <message>
         <location filename="../gui/imagemanager.cpp" line="185"/>
@@ -2218,12 +1190,9 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="235"/>
+        <location filename="../gui/mainwindow.cpp" line="2203"/>
+        <location filename="../gui/mainwindow.cpp" line="2361"/>
         <source>Sorry. It seems icon already exists.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="235"/>
-        <source>Sorry. It seems icon already exists.&lt;br&gt;Please rename it, or cancel paste operation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2243,10 +1212,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../uis/MainWindow.ui" line="57"/>
         <source>Default</source>
         <translation>Умолчания</translation>
-    </message>
-    <message>
-        <source>Icons</source>
-        <translation type="obsolete">Пиктограммы</translation>
     </message>
     <message>
         <location filename="../uis/MainWindow.ui" line="77"/>
@@ -2312,6 +1277,7 @@ p, li { white-space: pre-wrap; }
         <translation>Управление</translation>
     </message>
     <message>
+        <location filename="../gui/mainwindow.cpp" line="1934"/>
         <location filename="../uis/MainWindow.ui" line="201"/>
         <location filename="../uis/MainWindow.ui" line="530"/>
         <source>Options</source>
@@ -2346,10 +1312,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../uis/MainWindow.ui" line="311"/>
         <source>Test WIS</source>
         <translation></translation>
-    </message>
-    <message>
-        <source>Version</source>
-        <translation type="obsolete">Версия</translation>
     </message>
     <message>
         <location filename="../uis/MainWindow.ui" line="379"/>
@@ -2442,178 +1404,27 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <source>Database is corrupted...</source>
-        <translation type="obsolete">База данных повреждена...</translation>
-    </message>
-    <message>
-        <source>Sorry, the database has a wrong structure.</source>
-        <translation type="obsolete">Извините, База данных имеет неверную структуру.</translation>
-    </message>
-    <message>
-        <source>Error: Database is corrupted</source>
-        <translation type="obsolete">Ошибка: База данных повреждена</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="350"/>
         <source>Program: %1&lt;br&gt; Description: %2</source>
         <translation>Программа: %1&lt;br&gt; Описание: %2</translation>
     </message>
     <message>
-        <source>Can&apos;t find wine binary.</source>
-        <translation type="obsolete">Не могу найти исполняемый файл Wine. (установите wine).</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find wine server binary.</source>
-        <translation type="obsolete">Не могу найти исполняемый файл сервера Wine.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find wine loader.</source>
-        <translation type="obsolete">Не могу найти загрузчик Wine.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find wine library directory.</source>
-        <translation type="obsolete">Не могу найти директорию с библиотеками WIne.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find theme.</source>
-        <translation type="obsolete">Не могу найти тему.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find tar binary.</source>
-        <translation type="obsolete">Не могу найти tar.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find mount binary.</source>
-        <translation type="obsolete">Не могу найти mount.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find umount binary.</source>
-        <translation type="obsolete">Не могу найти umount.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find sudo binary.</source>
-        <translation type="obsolete">Не могу найти sudo.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find nice binary.</source>
-        <translation type="obsolete">Не могу найти nice.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find renice binary.</source>
-        <translation type="obsolete">Не могу найти renice.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find sh binary.</source>
-        <translation type="obsolete">Не могу найти tar.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find console binary.</source>
-        <translation type="obsolete">Не могу найти console.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find wrestool binary.</source>
-        <translation type="obsolete">Не могу найти wrestool.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find icotool binary.</source>
-        <translation type="obsolete">Не могу найти icotool.</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="301"/>
         <location filename="../gui/mainwindow.cpp" line="303"/>
+        <location filename="../gui/mainwindow.cpp" line="1318"/>
+        <location filename="../gui/mainwindow.cpp" line="1364"/>
+        <location filename="../gui/mainwindow.cpp" line="1379"/>
+        <location filename="../gui/mainwindow.cpp" line="1416"/>
+        <location filename="../gui/mainwindow.cpp" line="1461"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <source>&lt;p&gt;%1&lt;/p&gt;&lt;p&gt;File or path not exists: &quot;%2&quot;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;%1&lt;/p&gt;&lt;p&gt;Файла или пути не существует: &quot;%2&quot;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Warning: &quot;%1&quot; use options dialog for fix</source>
-        <translation type="obsolete">Предупреждение: &quot;%1&quot; Используйте диалог настроек, чтобы исправить</translation>
-    </message>
-    <message>
-        <source>Starting programm...</source>
-        <translation type="obsolete">Запуск программы...</translation>
-    </message>
-    <message>
-        <source> WINEPREFIX=%1 </source>
-        <translation type="obsolete">WINEPREFIX=%1</translation>
-    </message>
-    <message>
-        <source> WINEPREFIX=%1/.wine </source>
-        <translation type="obsolete"> WINEPREFIX=%1/.wine </translation>
-    </message>
-    <message>
-        <source> WINEDLLPATH=%1 </source>
-        <translation type="obsolete"> WINEDLLPATH=%1 </translation>
-    </message>
-    <message>
-        <source> WINELOADER=%1 </source>
-        <translation type="obsolete"> WINELOADER=%1 </translation>
-    </message>
-    <message>
-        <source> WINESERVER=%1 </source>
-        <translation type="obsolete"> WINESERVER=%1 </translation>
-    </message>
-    <message>
-        <source> WINEDLLOVERRIDES=&quot;%1&quot; </source>
-        <translation type="obsolete"> WINEDLLOVERRIDES=&quot;%1&quot; </translation>
-    </message>
-    <message>
-        <source> WINEDEBUG=%1 </source>
-        <translation type="obsolete"> WINEDEBUG=%1 </translation>
-    </message>
-    <message>
-        <source> DISPLAY=%1 </source>
-        <translation type="obsolete"> DISPLAY=%1 </translation>
-    </message>
-    <message>
-        <source>Error: can&apos;t start %1</source>
-        <translation type="obsolete">Ошибка: %1 не запускается</translation>
-    </message>
-    <message>
-        <source>Program: &lt;br&gt; Description:</source>
-        <translation type="obsolete">Программа: &lt;br&gt; Описание:</translation>
-    </message>
-    <message>
-        <source>%1</source>
-        <translation type="obsolete">%1</translation>
-    </message>
-    <message>
-        <source>Mount iso...</source>
-        <translation type="obsolete">Монтировать iso...</translation>
-    </message>
-    <message>
-        <source>mount [%1]</source>
-        <translation type="obsolete">mount [%1]</translation>
-    </message>
-    <message>
-        <source>umount [%1]</source>
-        <translation type="obsolete">umount: [%1]</translation>
-    </message>
-    <message>
-        <source>mount [none]</source>
-        <translation type="obsolete">mount [none]</translation>
-    </message>
-    <message>
-        <source>umount [none]</source>
-        <translation type="obsolete">umount [none]</translation>
-    </message>
-    <message>
-        <source>Select process priority</source>
-        <translation type="obsolete">Выбрать приоритет процесса</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Значение приоритета может быть &lt;br&gt;от PRIO_MIN (-20)&lt;br&gt;до PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Смотри &quot;man renice&quot; для подробностей.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Renice fail fail</source>
-        <translation type="obsolete">Ошибка renice</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="306"/>
+        <location filename="../gui/mainwindow.cpp" line="1385"/>
+        <location filename="../gui/mainwindow.cpp" line="1411"/>
+        <location filename="../gui/mainwindow.cpp" line="2545"/>
+        <location filename="../gui/mainwindow.cpp" line="2554"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
@@ -2621,371 +1432,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/mainwindow.cpp" line="301"/>
         <source>&lt;p&gt;q4wine was compiled without winetriks support.&lt;/p&gt;&lt;p&gt;If you wish to enable winetriks support add:&lt;/p&gt;&lt;p&gt; &quot;-DWITH_WINETOOLS=ON&quot; to cmake arguments.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine был собран без поддержки winetriks.&lt;/p&gt;&lt;p&gt;Если вы хотите включить поддержку winetriks добавьте:&lt;/p&gt;&lt;p&gt; &quot;-DWITH_WINETOOLS=ON&quot; к аргументам cmake.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find GUI sudo binary.</source>
-        <translation type="obsolete">Не могу найти GUI sudo.</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;%1&lt;/p&gt;&lt;p&gt;File or path not exists: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Please, go to %3 options dialog and set it.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;%1&lt;/p&gt;&lt;p&gt;Файл или директорий не существует: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Пожалуйста, установите верные пути в диалоге настроек %3.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>There are other Fake drive installed in %1 prefix directory.&lt;br&gt;&lt;br&gt;Do you wish to REMOVE ALL FILES from prefix folder?</source>
-        <translation type="obsolete">Другой виртуальный диск установлен в директорию с префиксом %1 &lt;br&gt;&lt;br&gt; Хотите удалить все файлы из префиксной директории?</translation>
-    </message>
-    <message>
-        <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Удаление старого виртуального диска. &lt;br&gt; Это может занять много времени...</translation>
-    </message>
-    <message>
-        <source>Removing old fake drive</source>
-        <translation type="obsolete">Удаление старого виртуального диска</translation>
-    </message>
-    <message>
-        <source>This action will send a TREM(-9) signal to all wine proccess with WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Do you realy whant it? </source>
-        <translation type="obsolete">Это действие пошлет сигнал TERM (-9) всем процессам wine с WINEFREFIX=&apos;%1&apos; &lt;br&gt;&lt;br&gt; Продолжить?</translation>
-    </message>
-    <message>
-        <source>env WINEPREFIX=&quot;%1&quot; wineserver -kill</source>
-        <translation type="obsolete">env WINEPREFIX=&quot;%1&quot; wineserver -kill</translation>
-    </message>
-    <message>
-        <source>Can&apos;t run: %1</source>
-        <translation type="obsolete">Не могу запустить: %1</translation>
-    </message>
-    <message>
-        <source>This action will send a TREM(-9) signal to proccess &apos;%2&apos; pid: %1&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you realy whant it? </source>
-        <translation type="obsolete">Это действие пошлет сигналы TERM(-9 &apos;%2&apos; pid: %1&lt;br&gt;&lt;br&gt;Это большой риск для состояния WINE.&lt;br&gt;&lt;br&gt;Продолжить?</translation>
-    </message>
-    <message>
-        <source>Sorry, you can&apos;t delete Default prefix.</source>
-        <translation type="obsolete">Извините, нельзя удалить главный префикс.</translation>
-    </message>
-    <message>
-        <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="obsolete">Вы действительно хотите удалить префикс с названием &quot;%1&quot; и все ассоциированные пиктограммы?</translation>
-    </message>
-    <message>
-        <source>Select file to import</source>
-        <translation type="obsolete">Выберите файл для импорта</translation>
-    </message>
-    <message>
-        <source>Images (*.tbz)</source>
-        <translation type="obsolete">Образы (*.tbz)</translation>
-    </message>
-    <message>
-        <source>Do you really wish to delete all old prefix files?</source>
-        <translation type="obsolete">Вы действительно хотите удалить старые файлы префикса?</translation>
-    </message>
-    <message>
-        <source>Importing prefix.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Импорт префикса. &lt;br&gt; Это может занять много времени...</translation>
-    </message>
-    <message>
-        <source>Importing prefix</source>
-        <translation type="obsolete">Импорт префикса</translation>
-    </message>
-    <message>
-        <source>Select file to export</source>
-        <translation type="obsolete">Выберите файл для экспорта</translation>
-    </message>
-    <message>
-        <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Экспорт префиса  %1.&lt;br&gt; Это может занять много времени...</translation>
-    </message>
-    <message>
-        <source>Exporting prefix</source>
-        <translation type="obsolete">Экспорт префикса</translation>
-    </message>
-    <message>
-        <source>WIP</source>
-        <translation type="obsolete">WIP</translation>
-    </message>
-    <message>
-        <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
-        <translation type="obsolete">Извините, мастер настройки будет реализован в версии 0.110.</translation>
-    </message>
-    <message>
-        <source>Open image file</source>
-        <translation type="obsolete">Открыть файл изображения</translation>
-    </message>
-    <message>
-        <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Экспорт пиктограммы из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
-    </message>
-    <message>
-        <source>Exporting icon</source>
-        <translation type="obsolete">Экспорт пиктограммы</translation>
-    </message>
-    <message>
-        <source>%1/</source>
-        <translation type="obsolete">%1/</translation>
-    </message>
-    <message>
-        <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Конвертация пиктограммы из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
-    </message>
-    <message>
-        <source>Converting icon</source>
-        <translation type="obsolete">Ковертация пиктограммы</translation>
-    </message>
-    <message>
-        <source>Stop current</source>
-        <translation type="obsolete">Остановить текущий</translation>
-    </message>
-    <message>
-        <source>Stop wine</source>
-        <translation type="obsolete">Остановить Wine</translation>
-    </message>
-    <message>
-        <source>Refresh list</source>
-        <translation type="obsolete">Обновить список</translation>
-    </message>
-    <message>
-        <source>Renice</source>
-        <translation type="obsolete">Изменить приоритет</translation>
-    </message>
-    <message>
-        <source>New</source>
-        <translation type="obsolete">Новый</translation>
-    </message>
-    <message>
-        <source>Create new directory</source>
-        <translation type="obsolete">Создать новую директорию</translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation type="obsolete">Переименовать</translation>
-    </message>
-    <message>
-        <source>Rename current directory</source>
-        <translation type="obsolete">Переименовать текущую директорию</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">Удалить</translation>
-    </message>
-    <message>
-        <source>Delete current directory</source>
-        <translation type="obsolete">Удалить текущую директорию</translation>
-    </message>
-    <message>
-        <source>Unmount cd drive</source>
-        <translation type="obsolete">Размонтировать CD дисковод</translation>
-    </message>
-    <message>
-        <source>Unmounts cdrom drive</source>
-        <translation type="obsolete">Размонтировать дисковод CDROM</translation>
-    </message>
-    <message>
-        <source>mount ...</source>
-        <translation type="obsolete">mount ...</translation>
-    </message>
-    <message>
-        <source>Browse for other image</source>
-        <translation type="obsolete">Искать другой образ</translation>
-    </message>
-    <message>
-        <source>Configure wine</source>
-        <translation type="obsolete">Настройка Wine</translation>
-    </message>
-    <message>
-        <source>Runs winecfg for current prefix</source>
-        <translation type="obsolete">Запустить winecfg в текущем префиксе</translation>
-    </message>
-    <message>
-        <source>App install</source>
-        <translation type="obsolete">Установка приложения</translation>
-    </message>
-    <message>
-        <source>Runs application install wizard for current prefix</source>
-        <translation type="obsolete">Запустить мастер установки приложений в текущем префиксе</translation>
-    </message>
-    <message>
-        <source>App uninstall</source>
-        <translation type="obsolete">Удаление приложения</translation>
-    </message>
-    <message>
-        <source>Runs application uninstall wizard for current prefix</source>
-        <translation type="obsolete">Запустить мастер удаления приложений в текущем префиксе</translation>
-    </message>
-    <message>
-        <source>Run</source>
-        <translation type="obsolete">Запустить</translation>
-    </message>
-    <message>
-        <source>Create new icon</source>
-        <translation type="obsolete">Создать новую пиктограмму</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation type="obsolete">Вырезать</translation>
-    </message>
-    <message>
-        <source>Cut selected icons to buffer</source>
-        <translation type="obsolete">Вырезать выбранные пиктограммы в буфер</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation type="obsolete">Копировать</translation>
-    </message>
-    <message>
-        <source>Copy selected icons to buffer</source>
-        <translation type="obsolete">Копировать выбранные пиктограммы в буфер</translation>
-    </message>
-    <message>
-        <source>Paste</source>
-        <translation type="obsolete">Вставить</translation>
-    </message>
-    <message>
-        <source>Paste selected icons from buffer to selected folder</source>
-        <translation type="obsolete">Вставить выбранные пиктограммы из буфера в выбранную папаку</translation>
-    </message>
-    <message>
-        <source>Rename current icon</source>
-        <translation type="obsolete">Переименовать текущую пиктограмму</translation>
-    </message>
-    <message>
-        <source>Delete current icon</source>
-        <translation type="obsolete">Удалить текущую пиктограмму</translation>
-    </message>
-    <message>
-        <source>Modify current icon options</source>
-        <translation type="obsolete">Изменить настройки текущей пиктограммы</translation>
-    </message>
-    <message>
-        <source>mount</source>
-        <translation type="obsolete">mount</translation>
-    </message>
-    <message>
-        <source>Mount image from icon options</source>
-        <translation type="obsolete">Монтировать образ из параметров пиктограммы</translation>
-    </message>
-    <message>
-        <source>umount</source>
-        <translation type="obsolete">umount</translation>
-    </message>
-    <message>
-        <source>Unmount image</source>
-        <translation type="obsolete">Размонтировать образ</translation>
-    </message>
-    <message>
-        <source>Create new prefix</source>
-        <translation type="obsolete">Создать новый префикс</translation>
-    </message>
-    <message>
-        <source>Import prefix</source>
-        <translation type="obsolete">Импортировать префикс</translation>
-    </message>
-    <message>
-        <source>Export prefix</source>
-        <translation type="obsolete">Экспортировать префикс</translation>
-    </message>
-    <message>
-        <source>Delete prefix</source>
-        <translation type="obsolete">Удалить префикс</translation>
-    </message>
-    <message>
-        <source>Edit prefix settings</source>
-        <translation type="obsolete">Редактировать настройки префикса</translation>
-    </message>
-    <message>
-        <source>%1/%2</source>
-        <translation type="obsolete">%1/%2</translation>
-    </message>
-    <message>
-        <source>:/%1</source>
-        <translation type="obsolete">:/%1</translation>
-    </message>
-    <message>
-        <source>Delete Icon</source>
-        <translation type="obsolete">Удалить пиктограмму</translation>
-    </message>
-    <message>
-        <source>Do you want to delete all selected icons?</source>
-        <translation type="obsolete">Удалить все выбранные пиктограммы?</translation>
-    </message>
-    <message>
-        <source>Enter new icon name</source>
-        <translation type="obsolete">Введите новое название пиктограммы</translation>
-    </message>
-    <message>
-        <source>Icon name:</source>
-        <translation type="obsolete">Название пиктограммы:</translation>
-    </message>
-    <message>
-        <source>Sorry, but icon named %1 already exists.</source>
-        <translation type="obsolete">Извините, но пиктограмма %1 уже существует.</translation>
-    </message>
-    <message>
-        <source>Open ISO Image file</source>
-        <translation type="obsolete">Открыть файл образа ISO</translation>
-    </message>
-    <message>
-        <source>It seems no mount point was set in icon options.&lt;br&gt;You might need to set it manualy.</source>
-        <translation type="obsolete">Не установлено точки монтирования в параметрах пиктограммы. &lt;br&gt;Вам нужно установить ее вручную.</translation>
-    </message>
-    <message>
-        <source>It seems no image file was set in icon options.&lt;br&gt;You might need to set it manualy.</source>
-        <translation type="obsolete">Не установлено файла образа в параметрах пиктограммы. &lt;br&gt;Вам нужно установить ее вручную.</translation>
-    </message>
-    <message>
-        <source>Sorry. Cannot copy or move in to the same file</source>
-        <translation type="obsolete">Извините. Не могу скопировать или переместить в указанный файл</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems file already exists.</source>
-        <translation type="obsolete">Извините, кажется файл уже существует.</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems file already exists.&lt;br&gt;Please rename it, or cancel paste operation.</source>
-        <translation type="obsolete">Извините, кажется файл уже существует.&lt;br&gt; Пожалуйста, переименуйте его, или отмените вставку.</translation>
-    </message>
-    <message>
-        <source>Enter new directory name</source>
-        <translation type="obsolete">Введите имя новой директории</translation>
-    </message>
-    <message>
-        <source>Directory name:</source>
-        <translation type="obsolete">Имя директории:</translation>
-    </message>
-    <message>
-        <source>Sorry, no install wizard yet. It&apos;l implemented at v0.110.</source>
-        <translation type="obsolete">Извините, мастер настройки будет реализован в версии 0.110.</translation>
-    </message>
-    <message>
-        <source>Enter new name for directory</source>
-        <translation type="obsolete">Введите новое имя для директории</translation>
-    </message>
-    <message>
-        <source>Q4Wine</source>
-        <translation type="obsolete">Q4Wine</translation>
-    </message>
-    <message>
-        <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
-</source>
-        <translation type="obsolete">Вы действительно хотите удалить папку с названием &quot;%1&quot; и все ассоциированные пиктограммы?</translation>
-    </message>
-    <message>
-        <source>Sorry, but prefix already have directory named %1.</source>
-        <translation type="obsolete">Извините, но в префиксе уже имеется директория с названием %1.</translation>
-    </message>
-    <message>
-        <source>Mounting...</source>
-        <translation type="obsolete">Монтирование...</translation>
-    </message>
-    <message>
-        <source>Image successfully mounted</source>
-        <translation type="obsolete">Образ успешно примонтирован</translation>
-    </message>
-    <message>
-        <source>Image mount fail</source>
-        <translation type="obsolete">Ошибка монтирования образа</translation>
-    </message>
-    <message>
-        <source>Сategories</source>
-        <translation type="obsolete">Категории</translation>
     </message>
     <message>
         <location filename="../uis/MainWindow.ui" line="525"/>
@@ -3001,34 +1447,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../uis/MainWindow.ui" line="538"/>
         <source>CD image manager</source>
         <translation>Менеджер образов CD</translation>
-    </message>
-    <message>
-        <source>It seems no mount point was set in prefix options.&lt;br&gt;You might need to set it manualy.</source>
-        <translation type="obsolete">Не установлено точки монтирования в параметрах префикса. &lt;br&gt;Вам нужно установить ее вручную.</translation>
-    </message>
-    <message>
-        <source>Total process: %1</source>
-        <translation type="obsolete">Всего процессов: %1</translation>
-    </message>
-    <message>
-        <source>Send TERM signal to selected process</source>
-        <translation type="obsolete">Послать сигнал TERM выбранному процессу</translation>
-    </message>
-    <message>
-        <source>Send TERM signal to main wine process</source>
-        <translation type="obsolete">Послать сигнал TERM главному процессу Wine</translation>
-    </message>
-    <message>
-        <source>Refresh process list</source>
-        <translation type="obsolete">Обновить список процессов</translation>
-    </message>
-    <message>
-        <source>Set process priority</source>
-        <translation type="obsolete">Установить приоритет процесса</translation>
-    </message>
-    <message>
-        <source>Create new</source>
-        <translation type="obsolete">Создать новый</translation>
     </message>
     <message>
         <location filename="../uis/MainWindow.ui" line="267"/>
@@ -3051,37 +1469,258 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;p&gt;Вы не установили консоль по умолчанию.&lt;/p&gt;&lt;p&gt;Установите ее в диалоге настройки q4wine.&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>Open ISO or NRG Image file</source>
-        <translation type="obsolete">Открыть файл образов ISO или NRG</translation>
+        <location filename="../gui/mainwindow.cpp" line="535"/>
+        <source>Starting %1 ...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>iso and nrg files (*.iso *.nrg)</source>
-        <translation type="obsolete">iso и nrg файлы (*.iso *.nrg)</translation>
+        <location filename="../gui/mainwindow.cpp" line="538"/>
+        <location filename="../gui/mainwindow.cpp" line="544"/>
+        <source>%1 started.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>iso files (*.iso)</source>
-        <translation type="obsolete">iso файлы (*.iso)</translation>
+        <location filename="../gui/mainwindow.cpp" line="540"/>
+        <location filename="../gui/mainwindow.cpp" line="546"/>
+        <source>%1 fail to start.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unmounting...</source>
-        <translation type="obsolete">размонтирование...</translation>
+        <location filename="../gui/mainwindow.cpp" line="565"/>
+        <source>Program: &lt;br&gt; Description:</source>
+        <translation type="unfinished">Программа: &lt;br&gt; Описание:</translation>
     </message>
     <message>
-        <source>image successfully unmounted</source>
-        <translation type="obsolete">Образ успешно отмонтирован</translation>
+        <location filename="../gui/mainwindow.cpp" line="636"/>
+        <location filename="../gui/mainwindow.cpp" line="645"/>
+        <location filename="../gui/mainwindow.cpp" line="1214"/>
+        <location filename="../gui/mainwindow.cpp" line="1215"/>
+        <source>%1</source>
+        <translation type="unfinished">%1</translation>
     </message>
     <message>
-        <source>image unmount fail</source>
-        <translation type="obsolete">Ошибка размонтирования образа</translation>
+        <location filename="../gui/mainwindow.cpp" line="805"/>
+        <location filename="../gui/mainwindow.cpp" line="906"/>
+        <location filename="../gui/mainwindow.cpp" line="925"/>
+        <source>mount [%1]</source>
+        <translation type="unfinished">mount [%1]</translation>
     </message>
     <message>
+        <location filename="../gui/mainwindow.cpp" line="824"/>
+        <location filename="../gui/mainwindow.cpp" line="926"/>
+        <source>umount [%1]</source>
+        <translation type="unfinished">umount: [%1]</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="828"/>
+        <location filename="../gui/mainwindow.cpp" line="931"/>
+        <source>umount [none]</source>
+        <translation type="unfinished">umount [none]</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="930"/>
+        <source>mount [none]</source>
+        <translation type="unfinished">mount [none]</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1199"/>
+        <source>Select process priority</source>
+        <translation type="unfinished">Выбрать приоритет процесса</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1199"/>
+        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
+        <translation type="unfinished">&lt;p&gt;Значение приоритета может быть &lt;br&gt;от PRIO_MIN (-20)&lt;br&gt;до PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Смотри &quot;man renice&quot; для подробностей.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1224"/>
+        <source>reniceing...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1228"/>
+        <source>Renice fail fail</source>
+        <translation type="unfinished">Ошибка renice</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1303"/>
+        <source>Total process: %1</source>
+        <translation type="unfinished">Всего процессов: %1</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1318"/>
+        <source>There are other Fake drive installed in %1 prefix directory.&lt;br&gt;&lt;br&gt;Do you wish to REMOVE ALL FILES from prefix folder?</source>
+        <translation type="unfinished">Другой виртуальный диск установлен в директорию с префиксом %1 &lt;br&gt;&lt;br&gt; Хотите удалить все файлы из префиксной директории?</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1324"/>
+        <location filename="../gui/mainwindow.cpp" line="1466"/>
+        <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished">Удаление старого виртуального диска. &lt;br&gt; Это может занять много времени...</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1324"/>
+        <location filename="../gui/mainwindow.cpp" line="1466"/>
+        <source>Removing old fake drive</source>
+        <translation type="unfinished">Удаление старого виртуального диска</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1364"/>
+        <source>This action will send a TREM(-9) signal to all wine proccess with WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1379"/>
+        <source>This action will send a TREM(-9) signal to proccess &apos;%2&apos; pid: %1&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1385"/>
+        <source>Can&apos;t run: %1</source>
+        <translation type="unfinished">Не могу запустить: %1</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1412"/>
+        <source>Sorry, you can&apos;t delete Default prefix.</source>
+        <translation type="unfinished">Извините, нельзя удалить главный префикс.</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1417"/>
+        <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
+        <translation type="unfinished">Вы действительно хотите удалить префикс с названием &quot;%1&quot; и все ассоциированные пиктограммы?</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1445"/>
+        <source>Select file to import</source>
+        <translation type="unfinished">Выберите файл для импорта</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1445"/>
+        <location filename="../gui/mainwindow.cpp" line="1523"/>
+        <source>Images (*.tbz)</source>
+        <translation type="unfinished">Образы (*.tbz)</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1461"/>
+        <source>Do you really wish to delete all old prefix files?</source>
+        <translation type="unfinished">Вы действительно хотите удалить старые файлы префикса?</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1482"/>
+        <source>Importing prefix.&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished">Импорт префикса. &lt;br&gt; Это может занять много времени...</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1482"/>
+        <source>Importing prefix</source>
+        <translation type="unfinished">Импорт префикса</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1523"/>
+        <source>Select file to export</source>
+        <translation type="unfinished">Выберите файл для экспорта</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1545"/>
+        <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished">Экспорт префиса  %1.&lt;br&gt; Это может занять много времени...</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1545"/>
+        <source>Exporting prefix</source>
+        <translation type="unfinished">Экспорт префикса</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1731"/>
+        <location filename="../gui/mainwindow.cpp" line="2636"/>
+        <source>WIP</source>
+        <translation type="unfinished">WIP</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1731"/>
+        <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
+        <translation type="unfinished">Извините, мастер настройки будет реализован в версии 0.110.</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1747"/>
+        <source>Open image file</source>
+        <translation type="unfinished">Открыть файл изображения</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1747"/>
+        <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
+        <translation type="unfinished">Исполняемые файлы и библиотеки Win32 (*.exe *.dll);;Исполняемые файлы Win32 (*.exe);;Библиотеки Win32 (*.dll)</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1786"/>
+        <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished">Экспорт пиктограммы из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1786"/>
+        <source>Exporting icon</source>
+        <translation type="unfinished">Экспорт пиктограммы</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1795"/>
+        <source>%1/</source>
+        <translation type="unfinished">%1/</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1812"/>
+        <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished">Конвертация пиктограммы из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1812"/>
+        <source>Converting icon</source>
+        <translation type="unfinished">Ковертация пиктограммы</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1846"/>
+        <source>Stop current</source>
+        <translation type="unfinished">Остановить текущий</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1847"/>
+        <source>Send TERM signal to selected process</source>
+        <translation type="unfinished">Послать сигнал TERM выбранному процессу</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1850"/>
+        <source>Stop wine</source>
+        <translation type="unfinished">Остановить Wine</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1851"/>
+        <source>Send TERM signal to main wine process</source>
+        <translation type="unfinished">Послать сигнал TERM главному процессу Wine</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1854"/>
+        <source>Refresh list</source>
+        <translation type="unfinished">Обновить список</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1855"/>
+        <source>Refresh process list</source>
+        <translation type="unfinished">Обновить список процессов</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1858"/>
+        <source>Renice</source>
+        <translation type="unfinished">Изменить приоритет</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1859"/>
+        <source>Set process priority</source>
+        <translation type="unfinished">Установить приоритет процесса</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1866"/>
         <location filename="../uis/MainWindow.ui" line="439"/>
         <source>Run...</source>
         <translation>Запустить...</translation>
-    </message>
-    <message>
-        <source>Run application at current prefix</source>
-        <translation type="obsolete">Запустить приложение в текущем префиксе</translation>
     </message>
     <message>
         <location filename="../uis/MainWindow.ui" line="217"/>
@@ -3099,21 +1738,367 @@ p, li { white-space: pre-wrap; }
         <translation>О программе</translation>
     </message>
     <message>
-        <source>&lt;p&gt;It seems q4wine can not run kvm_openfiles.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Похоже, q4wine не может выполнить команду kvm_openfiles.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;It seems q4wine can not run kvm_getprocs.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Похоже, q4wine не может выполнить команду kvm_getprocs.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
-        <translation type="obsolete">Исполняемые файлы и библиотеки Win32 (*.exe *.dll);;Исполняемые файлы Win32 (*.exe);;Библиотеки Win32 (*.dll)</translation>
+        <location filename="../gui/mainwindow.cpp" line="235"/>
+        <location filename="../gui/mainwindow.cpp" line="2203"/>
+        <location filename="../gui/mainwindow.cpp" line="2361"/>
+        <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="303"/>
         <source>&lt;p&gt;Winetricks officaly NOT supported by q4wine.&lt;/p&gt;&lt;p&gt;There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine официально не поддерживает работы с Winetricks&lt;/p&gt;&lt;p&gt;Были некоторые сообщения об ошибках приводящих к не корректной работе wine при использовании winetricks через q4wine.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1867"/>
+        <source>Run application at current prefix</source>
+        <translation type="unfinished">Запустить приложение в текущем префиксе</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1870"/>
+        <location filename="../gui/mainwindow.cpp" line="1910"/>
+        <source>New</source>
+        <translation type="unfinished">Новый</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1871"/>
+        <source>Create new directory</source>
+        <translation type="unfinished">Создать новую директорию</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1874"/>
+        <location filename="../gui/mainwindow.cpp" line="1926"/>
+        <source>Rename</source>
+        <translation type="unfinished">Переименовать</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1875"/>
+        <source>Rename current directory</source>
+        <translation type="unfinished">Переименовать текущую директорию</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1878"/>
+        <location filename="../gui/mainwindow.cpp" line="1930"/>
+        <source>Delete</source>
+        <translation type="unfinished">Удалить</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1879"/>
+        <source>Delete current directory</source>
+        <translation type="unfinished">Удалить текущую директорию</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1882"/>
+        <source>Unmount cd drive</source>
+        <translation type="unfinished">Размонтировать CD дисковод</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1883"/>
+        <source>Unmounts cdrom drive</source>
+        <translation type="unfinished">Размонтировать дисковод CDROM</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1886"/>
+        <location filename="../gui/mainwindow.cpp" line="1946"/>
+        <source>mount ...</source>
+        <translation type="unfinished">mount ...</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1887"/>
+        <location filename="../gui/mainwindow.cpp" line="1947"/>
+        <source>Browse for other image</source>
+        <translation type="unfinished">Искать другой образ</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1890"/>
+        <source>Configure wine</source>
+        <translation type="unfinished">Настройка Wine</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1891"/>
+        <source>Configure Wine general settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1894"/>
+        <source>App install</source>
+        <translation type="unfinished">Установка приложения</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1895"/>
+        <source>Runs application install wizard for current prefix</source>
+        <translation type="unfinished">Запустить мастер установки приложений в текущем префиксе</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1898"/>
+        <source>App uninstall</source>
+        <translation type="unfinished">Удаление приложения</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1899"/>
+        <source>Runs application uninstall wizard for current prefix</source>
+        <translation type="unfinished">Запустить мастер удаления приложений в текущем префиксе</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1906"/>
+        <source>Run</source>
+        <translation type="unfinished">Запустить</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1907"/>
+        <location filename="../gui/mainwindow.cpp" line="1911"/>
+        <source>Create new icon</source>
+        <translation type="unfinished">Создать новую пиктограмму</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1914"/>
+        <source>Cut</source>
+        <translation type="unfinished">Вырезать</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1915"/>
+        <source>Cut selected icons to buffer</source>
+        <translation type="unfinished">Вырезать выбранные пиктограммы в буфер</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1918"/>
+        <source>Copy</source>
+        <translation type="unfinished">Копировать</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1919"/>
+        <source>Copy selected icons to buffer</source>
+        <translation type="unfinished">Копировать выбранные пиктограммы в буфер</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1922"/>
+        <source>Paste</source>
+        <translation type="unfinished">Вставить</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1923"/>
+        <source>Paste selected icons from buffer to selected folder</source>
+        <translation type="unfinished">Вставить выбранные пиктограммы из буфера в выбранную папаку</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1927"/>
+        <source>Rename current icon</source>
+        <translation type="unfinished">Переименовать текущую пиктограмму</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1931"/>
+        <source>Delete current icon</source>
+        <translation type="unfinished">Удалить текущую пиктограмму</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1935"/>
+        <source>Modify current icon options</source>
+        <translation type="unfinished">Изменить настройки текущей пиктограммы</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1938"/>
+        <source>mount</source>
+        <translation type="unfinished">mount</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1939"/>
+        <source>Mount image from icon options</source>
+        <translation type="unfinished">Монтировать образ из параметров пиктограммы</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1942"/>
+        <source>umount</source>
+        <translation type="unfinished">umount</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1943"/>
+        <source>Unmount image</source>
+        <translation type="unfinished">Размонтировать образ</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1954"/>
+        <location filename="../gui/mainwindow.cpp" line="1966"/>
+        <source>Open icon directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1955"/>
+        <location filename="../gui/mainwindow.cpp" line="1967"/>
+        <source>Open directory for current program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1958"/>
+        <location filename="../gui/mainwindow.cpp" line="1959"/>
+        <location filename="../gui/mainwindow.cpp" line="1970"/>
+        <location filename="../gui/mainwindow.cpp" line="1971"/>
+        <source>Open prefix directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1962"/>
+        <location filename="../gui/mainwindow.cpp" line="1974"/>
+        <source>Open mount point directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1963"/>
+        <location filename="../gui/mainwindow.cpp" line="1975"/>
+        <source>Open mount point directory for current prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1982"/>
+        <source>Create new</source>
+        <translation type="unfinished">Создать новый</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1983"/>
+        <source>Create new prefix</source>
+        <translation type="unfinished">Создать новый префикс</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1986"/>
+        <location filename="../gui/mainwindow.cpp" line="1987"/>
+        <source>Import prefix</source>
+        <translation type="unfinished">Импортировать префикс</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1991"/>
+        <location filename="../gui/mainwindow.cpp" line="1992"/>
+        <source>Export prefix</source>
+        <translation type="unfinished">Экспортировать префикс</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="1996"/>
+        <location filename="../gui/mainwindow.cpp" line="1997"/>
+        <source>Delete prefix</source>
+        <translation type="unfinished">Удалить префикс</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2001"/>
+        <location filename="../gui/mainwindow.cpp" line="2002"/>
+        <source>Edit prefix settings</source>
+        <translation type="unfinished">Редактировать настройки префикса</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2025"/>
+        <location filename="../gui/mainwindow.cpp" line="2075"/>
+        <source>Mount iso...</source>
+        <translation type="unfinished">Монтировать iso...</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2036"/>
+        <location filename="../gui/mainwindow.cpp" line="2067"/>
+        <location filename="../gui/mainwindow.cpp" line="2089"/>
+        <source>Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2041"/>
+        <location filename="../gui/mainwindow.cpp" line="2071"/>
+        <location filename="../gui/mainwindow.cpp" line="2093"/>
+        <source>Wine browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2107"/>
+        <source>%1/%2</source>
+        <translation type="unfinished">%1/%2</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2109"/>
+        <location filename="../gui/mainwindow.cpp" line="2112"/>
+        <source>:/%1</source>
+        <translation type="unfinished">:/%1</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2158"/>
+        <source>Delete Icon</source>
+        <translation type="unfinished">Удалить пиктограмму</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2158"/>
+        <source>Do you want to delete all selected icons?</source>
+        <translation type="unfinished">Удалить все выбранные пиктограммы?</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2199"/>
+        <source>Enter new icon name</source>
+        <translation type="unfinished">Введите новое название пиктограммы</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2199"/>
+        <source>Icon name:</source>
+        <translation type="unfinished">Название пиктограммы:</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2539"/>
+        <source>Enter new directory name</source>
+        <translation type="unfinished">Введите имя новой директории</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2539"/>
+        <location filename="../gui/mainwindow.cpp" line="2655"/>
+        <source>Directory name:</source>
+        <translation type="unfinished">Имя директории:</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2545"/>
+        <location filename="../gui/mainwindow.cpp" line="2554"/>
+        <source>Sorry, but directory named %1 already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2597"/>
+        <source>Open ISO or NRG Image file</source>
+        <translation type="unfinished">Открыть файл образов ISO или NRG</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2597"/>
+        <source>iso and nrg files (*.iso *.nrg)</source>
+        <translation type="unfinished">iso и nrg файлы (*.iso *.nrg)</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2601"/>
+        <source>Open ISO Image file</source>
+        <translation type="unfinished">Открыть файл образа ISO</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2601"/>
+        <source>iso files (*.iso)</source>
+        <translation type="unfinished">iso файлы (*.iso)</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2636"/>
+        <source>Sorry, no install wizard yet. It&apos;l implemented at v0.110.</source>
+        <translation type="unfinished">Извините, мастер настройки будет реализован в версии 0.110.</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2655"/>
+        <source>Enter new name for directory</source>
+        <translation type="unfinished">Введите новое имя для директории</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2659"/>
+        <source>Sorry. It seems directory already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2659"/>
+        <source>Sorry. It seems directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2681"/>
+        <source>Q4Wine</source>
+        <translation type="unfinished">Q4Wine</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="2681"/>
+        <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
+</source>
+        <translation type="unfinished">Вы действительно хотите удалить папку с названием &quot;%1&quot; и все ассоциированные пиктограммы?</translation>
     </message>
 </context>
 <context>
@@ -3246,14 +2231,6 @@ Note: leave it blank for default.</source>
         <source>Open Directory</source>
         <translation>Открыть папку</translation>
     </message>
-    <message>
-        <source>Sorry, i can&apos;t access to /etc/fstab</source>
-        <translation type="obsolete">Извините, я не могу получить доступ к /etc/fstab</translation>
-    </message>
-    <message>
-        <source>&lt;none&gt;</source>
-        <translation type="obsolete">&lt;none&gt;</translation>
-    </message>
 </context>
 <context>
     <name>Process</name>
@@ -3293,10 +2270,6 @@ Note: leave it blank for default.</source>
         <location filename="../gui/process.cpp" line="74"/>
         <source>It seems procces fail.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</source>
         <translation>Кажется, процесс завершился неудачно. &lt;br&gt;&lt;br&gt; Лог ошибок: &lt;br&gt;%1</translation>
-    </message>
-    <message>
-        <source>It seems procces fail.&lt;br&gt;&lt;br&gt;Cant read STDERR message.&lt;br&gt;%1</source>
-        <translation type="obsolete">Кажется, процесс завершился неудачно. &lt;br&gt;&lt;br&gt; Не могу прочитать сообщение STDERR. &lt;br&gt;%1</translation>
     </message>
     <message>
         <location filename="../gui/process.cpp" line="78"/>
@@ -3349,13 +2322,6 @@ Note: leave it blank for default.</source>
         <location filename="../gui/process.cpp" line="106"/>
         <source>Process: The last waitFor...() function timed out.</source>
         <translation></translation>
-    </message>
-</context>
-<context>
-    <name>QMessageBox</name>
-    <message>
-        <source>%1/.config/%2/db/generic.dat</source>
-        <translation type="obsolete">%1/.config/%2/db/generic.dat</translation>
     </message>
 </context>
 <context>
@@ -3430,14 +2396,6 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-lib/main.cpp" line="546"/>
         <source> WINESERVER=%1 </source>
         <translation> WINESERVER=%1 </translation>
-    </message>
-    <message>
-        <source>Version outdated</source>
-        <translation type="obsolete">Версия устарела</translation>
-    </message>
-    <message>
-        <source>Sorry, new wersion of q4wine require new files location.&lt;br&gt;&lt;br&gt;You must manually delete all old files at:&lt;br&gt;$HOME/.q4wine&lt;br&gt;$HOME/.config/Brezerk\ GNU\ Soft&lt;br&gt;&lt;br&gt;Note: new files location is:&lt;br&gt;~/.config/q4wine</source>
-        <translation type="obsolete">В новой версии Q4Wine расположение конфигов изменилось, и вы должны их удалить вручную из:&lt;br&gt;$HOME/.q4wine&lt;br&gt;$HOME/.config/Brezerk\ GNU\ Soft&lt;br&gt;&lt;br&gt;Note:Новое расположение файлов:&lt;br&gt;~/.config/q4wine</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="155"/>
@@ -3540,22 +2498,6 @@ Note: leave it blank for default.</source>
         <translation type="unfinished">Не могу запустить: %1</translation>
     </message>
     <message>
-        <source>[EE] Unable to create root directory %1.</source>
-        <translation type="obsolete">[EE] Не могу создать корневую директорию %1.</translation>
-    </message>
-    <message>
-        <source>[EE] Unable to create directory %1.</source>
-        <translation type="obsolete">[EE] Не могу создать директорию %1.</translation>
-    </message>
-    <message>
-        <source>[EE] Unable to load database.</source>
-        <translation type="obsolete">[EE] Не могу загрузить базу данных.</translation>
-    </message>
-    <message>
-        <source>[EE] Unable to create database.</source>
-        <translation type="obsolete">[EE] Не могу создать базу данных.</translation>
-    </message>
-    <message>
         <location filename="../core/database/initdb.h" line="43"/>
         <location filename="../core/database/initdb.h" line="51"/>
         <source>Critical error</source>
@@ -3581,6 +2523,341 @@ Note: leave it blank for default.</source>
         <location filename="../core/database/prefix.cpp" line="367"/>
         <location filename="../q4wine-lib/main.cpp" line="249"/>
         <source>&lt;none&gt;</source>
+        <translation type="unfinished">&lt;нет&gt;</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="144"/>
+        <source>Prefix named &quot;%1&quot; not exists. Run &quot;q4wine-cli -pl&quot; for prefix list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="219"/>
+        <location filename="../q4wine-cli/main.cpp" line="273"/>
+        <location filename="../q4wine-cli/main.cpp" line="285"/>
+        <location filename="../q4wine-cli/main.cpp" line="316"/>
+        <location filename="../q4wine-cli/main.cpp" line="330"/>
+        <location filename="../q4wine-cli/main.cpp" line="370"/>
+        <location filename="../q4wine-cli/main.cpp" line="420"/>
+        <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="224"/>
+        <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="229"/>
+        <source>Icon named &quot;%1&quot; not exists.  Run &quot;q4wine-cli -il&quot; for icon list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="243"/>
+        <source>Wine process list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="245"/>
+        <source>Wine process list for &quot;%1&quot; prefix</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="249"/>
+        <source>PID</source>
+        <translation type="unfinished">PID</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="249"/>
+        <source>Nice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="249"/>
+        <location filename="../q4wine-cli/main.cpp" line="262"/>
+        <location filename="../q4wine-cli/main.cpp" line="278"/>
+        <location filename="../q4wine-cli/main.cpp" line="300"/>
+        <location filename="../q4wine-cli/main.cpp" line="309"/>
+        <source>Name</source>
+        <translation type="unfinished">Название</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="249"/>
+        <source>Prefix path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="261"/>
+        <source>Prefix list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="262"/>
+        <location filename="../q4wine-cli/main.cpp" line="309"/>
+        <source>Path</source>
+        <translation type="unfinished">Путь</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="277"/>
+        <source>Prefix &quot;%1&quot; has following dir list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="290"/>
+        <source>Dir named &quot;%1&quot; not exists. Run &quot;q4wine-cli -dl&quot; for dir list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="296"/>
+        <source>Prefix &quot;%1&quot; has following icon list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="298"/>
+        <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="300"/>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="308"/>
+        <source>q4wine has following CD images in database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="320"/>
+        <source>Killing prefix &quot;%1&quot; wineserver.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="336"/>
+        <location filename="../q4wine-cli/main.cpp" line="376"/>
+        <location filename="../q4wine-cli/main.cpp" line="400"/>
+        <source>No mount point set in prefix configuration.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="342"/>
+        <source>No cdrom drive set in prefix configuration.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="345"/>
+        <source>Mounting drive &quot;%1&quot; into mount point &quot;%2&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="355"/>
+        <source>No CD iamge &quot;%1&quot; exists. Run &quot;q4wine-cli -cl&quot; for CD image list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="380"/>
+        <source>Umounting mount point &quot;%1&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="391"/>
+        <source>Mounted media list for all prefixes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="392"/>
+        <source>Prefix</source>
+        <translation type="unfinished">Префикс</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="392"/>
+        <location filename="../q4wine-cli/main.cpp" line="405"/>
+        <source>Mount point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="392"/>
+        <location filename="../q4wine-cli/main.cpp" line="405"/>
+        <source>Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="404"/>
+        <source>Mounted media list for prefix &quot;%1&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="410"/>
+        <source>q4wine-cli %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="411"/>
+        <source>(Copyright (C) 2008-2009, brezblock core team.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="412"/>
+        <source>License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="413"/>
+        <source>This is free software: you are free to change and redistribute it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="414"/>
+        <source>There is NO WARRANTY, to the extent permitted by law.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="416"/>
+        <source>Author: Malakhov Alexey aka John Brezerk.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="427"/>
+        <source>File &quot;%1&quot; not exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="450"/>
+        <source>Usage:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="451"/>
+        <source>  q4wine-cli [KEY]...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="452"/>
+        <source>  q4wine-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="453"/>
+        <source>  q4wine-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [args]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="454"/>
+        <source>Console utility for wine applications and prefixes management.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="455"/>
+        <source>KEYs list:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="456"/>
+        <source>display this help and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="457"/>
+        <source>output version information and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="458"/>
+        <source>output wine process list for current prefix or for all prefixes and exit </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="459"/>
+        <source>sets the current prefix name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="460"/>
+        <source>sets the current direcory name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="461"/>
+        <source>sets the current icon name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="462"/>
+        <source>sets the cd iamge name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="463"/>
+        <source>sets the path to windows binary for execute with current prefix settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="475"/>
+        <source> -1 if serious troubles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="464"/>
+        <source>sends -9 term signal to current prefix precess or for all prefixes processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="465"/>
+        <source>output all exesting prefixes names and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="466"/>
+        <source>output all exesting dir names for current prefix and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="467"/>
+        <source>output all exesting icon names for current prefix/directory and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="468"/>
+        <source>output all cd images list and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="469"/>
+        <source>output all mounted media for current prefix or all prefixes and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="470"/>
+        <source>mount an cd iamage or drive for current prefix and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="471"/>
+        <source>umount an cd iamage or drive for current prefix and exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="473"/>
+        <source>Exit status:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="474"/>
+        <source>  0 if OK,</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="477"/>
+        <source>Report q4wine bugs to brezerk@gmail.com</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="478"/>
+        <source>q4wine homepage: &lt;http://sourceforge.net/projects/q4wine/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="479"/>
+        <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4267,10 +3544,6 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation>Размер видеопамяти (Мб):</translation>
     </message>
     <message>
-        <source>D999999999; </source>
-        <translation type="obsolete">D999999999; </translation>
-    </message>
-    <message>
         <location filename="../uis/Wizard.ui" line="2359"/>
         <source>X11 Driver</source>
         <translation>X11 Driver</translation>
@@ -4786,34 +4059,6 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <translation></translation>
     </message>
     <message>
-        <source>Configure the general settings for Wine</source>
-        <translation type="obsolete">Настроить главные параметры Wine</translation>
-    </message>
-    <message>
-        <source>Wineconsole is similar to wine command wcmd</source>
-        <translation type="obsolete">Консоль wine похожа на wcmd</translation>
-    </message>
-    <message>
-        <source>Uninstall Windows programs under Wine properly</source>
-        <translation type="obsolete">Удалить windows-программы, установленные под Wine</translation>
-    </message>
-    <message>
-        <source>Wine registry editor</source>
-        <translation type="obsolete">Редактор реестра Wine</translation>
-    </message>
-    <message>
-        <source>Browse the files in the virtual Wine drive</source>
-        <translation type="obsolete">Смотреть файлы в виртульном диске Wine (файловый менеджер Wine)</translation>
-    </message>
-    <message>
-        <source>Wine CD eject tool</source>
-        <translation type="obsolete">утилита для извлечения дисков Wine</translation>
-    </message>
-    <message>
-        <source>Wine wordpad text editor</source>
-        <translation type="obsolete">Текстовый редактор Wine</translation>
-    </message>
-    <message>
         <location filename="../gui/wizard.cpp" line="787"/>
         <source>&lt;b&gt;First startup wizrd&lt;/b&gt;</source>
         <translation>&lt;b&gt;Мастер первого запуска&lt;/b&gt;</translation>
@@ -4899,10 +4144,6 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
         <location filename="../gui/wizard.cpp" line="945"/>
         <source>&lt;p&gt;All ready for fake drive creation. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create facke drive. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Все готово для созданяи виртуального диска. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Закончить&lt;/b&gt; для создания виртуадьного диска. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Sorry, i can&apos;t access to /etc/fstab</source>
-        <translation type="obsolete">Извините, я не могу получить доступ к /etc/fstab</translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1268"/>
@@ -4997,26 +4238,14 @@ Note: leave it blank if you don&apos;t nead it.</source>
         <translation>Загрузка и установка winetricks...</translation>
     </message>
     <message>
-        <source>Dialog</source>
-        <translation type="obsolete">Winetricks</translation>
-    </message>
-    <message>
         <location filename="../temporary/winetricks.ui" line="51"/>
         <source>Install Winetricks</source>
         <translation>Установить Winetricks</translation>
     </message>
     <message>
-        <source>Help</source>
-        <translation type="obsolete">Помощь</translation>
-    </message>
-    <message>
         <location filename="../temporary/winetricks.cpp" line="79"/>
         <source>Error</source>
         <translation>Ошибка</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;q4wine can&apos;t locate winetricks!&lt;/p&gt;&lt;p&gt;The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Or use &quot;Install winetricks&quot; button.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;q4wine не может найти winetricks!&lt;/p&gt;&lt;p&gt;Скрипт находится на хостинге Dan Kegel на http://kegel.com/wine/winetricks. Вы может скачать его, выполнив команду: &lt;/p&gt;&lt;p&gt; wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Или используя кнопку &quot;Установить Winetricks&quot;.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../temporary/winetricks.ui" line="30"/>
@@ -5037,12 +4266,6 @@ Note: leave it blank if you don&apos;t nead it.</source>
         <location filename="../temporary/winetricks.ui" line="14"/>
         <source>winetricks@q4wine</source>
         <translation></translation>
-    </message>
-    <message>
-        <source>Compatible with winetricks &gt;= 20090121
-Uses cabextract</source>
-        <translation type="obsolete">Совместимо с winetricks &gt;= 20090121
-Использует cabextract </translation>
     </message>
 </context>
 <context>

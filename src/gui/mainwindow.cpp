@@ -232,7 +232,7 @@ void MainWindow::startDrop(QList<QUrl> files){
 	  fileName=list1.last().left(list1.last().length() - list1.last().split(".").last().length() - 1);
 
 	  while (db_icon->isExistsByName(prefix_name, dir_name, fileName)){
-		fileName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please rename it, or cancel paste operation."), QLineEdit::Normal, iconBuffer.names.at(i) , &ok);
+		fileName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, iconBuffer.names.at(i) , &ok);
 		if (!ok){
 		  return;
 		}
@@ -418,7 +418,7 @@ void MainWindow::getSettings(){
 		settings.setValue("mount_drive_string", "%GUI_SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
 #endif
 #ifdef _OS_FREEBSD_
-		settings.setValue(("mount_drive_string", "%GUI_SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
+		settings.setValue("mount_drive_string", "%GUI_SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
 #endif
 		settings.endGroup();
 	}
@@ -1956,7 +1956,7 @@ void MainWindow::createMenuActions(){
   connect(xdgOpenIconDir, SIGNAL(triggered()), this, SLOT(xdgOpenIconDir_Click()));
 
   xdgOpenPrefixDir = new QAction(tr("Open prefix directory"), lstIcons);
-  xdgOpenPrefixDir->setStatusTip(tr("Open prefix directory for current program"));
+  xdgOpenPrefixDir->setStatusTip(tr("Open prefix directory"));
   connect(xdgOpenPrefixDir, SIGNAL(triggered()), this, SLOT(xdgOpenPrefixDir_Click()));
 
   xdgOpenMountDir = new QAction(tr("Open mount point directory"), lstIcons);
@@ -1964,11 +1964,11 @@ void MainWindow::createMenuActions(){
   connect(xdgOpenMountDir, SIGNAL(triggered()), this, SLOT(xdgOpenMountDir_Click()));
 
   winefileOpenIconDir = new QAction(tr("Open icon directory"), lstIcons);
-  winefileOpenIconDir->setStatusTip(tr("Open icon directory for current program"));
+  winefileOpenIconDir->setStatusTip(tr("Open directory for current program"));
   connect(winefileOpenIconDir, SIGNAL(triggered()), this, SLOT(winefileOpenIconDir_Click()));
 
   winefileOpenPrefixDir = new QAction(tr("Open prefix directory"), lstIcons);
-  winefileOpenPrefixDir->setStatusTip(tr("Open prefix directory for current program"));
+  winefileOpenPrefixDir->setStatusTip(tr("Open prefix directory"));
   connect(winefileOpenPrefixDir, SIGNAL(triggered()), this, SLOT(winefileOpenPrefixDir_Click()));
 
   winefileOpenMountDir = new QAction(tr("Open mount point directory"), lstIcons);
@@ -2200,7 +2200,7 @@ void MainWindow::iconRename_Click(void){
 
   if (ok && !newName.isEmpty()){
 	while (db_icon->isExistsByName(prefix_name, dir_name, newName)){
-	  newName = QInputDialog::getText(this, tr("Sorry. It seems file already exists."), tr("Sorry. It seems file already exists.<br>Please rename it, or cancel rename operation."), QLineEdit::Normal, newName, &ok);
+	  newName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, newName, &ok);
 	  if ((!ok) || (newName.isEmpty())){
 		return;
 	  }
@@ -2358,7 +2358,7 @@ void MainWindow::iconPaste_Click(void){
 	  }
 
 	  while (db_icon->isExistsByName(prefix_name, dir_name, newName)){
-		newName = QInputDialog::getText(this, tr("Sorry. It seems file already exists."), tr("Sorry. It seems file already exists.<br>Please rename it, or cancel paste operation."), QLineEdit::Normal, iconBuffer.names.at(i) , &ok);
+		newName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, iconBuffer.names.at(i) , &ok);
 		if (!ok){
 		  return;
 		}
@@ -2656,7 +2656,7 @@ void MainWindow::dirRename_Click(void){
 
 	if (ok && !newName.isEmpty()){
 	  while (db_dir->isExistsByName(treeItem->parent()->text(0), newName)){
-		newName = QInputDialog::getText(this, tr("Sorry. It seems directory already exists."), tr("Sorry. It seems directory already exists.<br>Please rename it, or cancel rename operation."), QLineEdit::Normal, newName, &ok);
+		newName = QInputDialog::getText(this, tr("Sorry. It seems directory already exists."), tr("Sorry. It seems directory already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, newName, &ok);
 		if ((!ok) || (newName.isEmpty())){
 		  return;
 		}

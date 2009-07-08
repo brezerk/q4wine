@@ -58,7 +58,31 @@ SOURCES += /src/core/registry.cpp \
 	/src/temporary/winetricks.cpp \
 	/src/temporary/winetrickshelp.cpp \
 	/src/wis/wisitem.cpp
-	
+
+HEADERS += /src/core/registry.h \
+	/src/core/winebinlauncher.h \
+	/src/core/database/db.h \
+	/src/core/database/dir.h \
+	/src/core/database/icon.h \
+	/src/core/database/image.h \
+	/src/core/database/initdb.h \
+	/src/core/database/prefix.h \
+	/src/gui/about.h \
+	/src/gui/appsettings.h \
+	/src/gui/draglistwidget.h \
+	/src/gui/iconsettings.h \
+	/src/gui/iconsview.h \
+	/src/gui/imagemanager.h \
+	/src/gui/mainwindow.h \
+	/src/gui/prefixsettings.h \
+	/src/gui/process.h \
+	/src/gui/run.h \
+	/src/gui/wizard.h \
+	/src/q4wine-cli/main.h \
+	/src/q4wine-lib/main.h \
+	/src/temporary/winetricks.h \
+	/src/temporary/winetrickshelp.h \
+	/src/wis/wisitem.h
 
 TRANSLATIONS += src/i18n/en_us.ts \
     src/i18n/ru_ru.ts \

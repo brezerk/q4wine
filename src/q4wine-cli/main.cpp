@@ -75,6 +75,53 @@ int main(int argc, char *argv[])
 	db_image = new Image();
 	db_prefix = new Prefix();
 
+
+	QTranslator*  qtt = new QTranslator ( 0 );
+
+	QString i18nPath;
+	   i18nPath.clear();
+	   i18nPath.append(APP_PREF);
+	   i18nPath.append("/share/");
+	   i18nPath.append(APP_SHORT_NAME);
+	   i18nPath.append("/i18n");
+
+	// Getting env LANG variable
+	QString lang = CoreLib->getSetting("app", "lang", FALSE).toString() ;
+	// This is hack for next QLocale bug:
+	//  http://bugs.gentoo.org/150745
+
+	if (lang.isEmpty()){
+		lang = setlocale(LC_ALL, "");
+		  if (lang.isEmpty()){
+			lang = setlocale(LC_MESSAGES, "");
+			    if (lang.isEmpty()){
+				 lang = getenv("LANG");
+			    }
+		  }
+		lang = lang.split(".").at(0).toLower();
+		lang.append(".qm");
+	}
+
+
+
+
+	if (!lang.isNull()){
+	   if (qtt->load(lang, i18nPath)){
+		app.installTranslator( qtt );
+	   } else {
+		qDebug()<<"[EE] Can't open user selected translation";
+		if (qtt->load("en_us.qm", i18nPath)){
+		   app.installTranslator( qtt );
+		} else {
+		   qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
+		}
+	   }
+	} else {
+	   qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
+	}
+
+	_ACTION=-1;
+
 	for (int i=1; i<argc; i++){
 		if ((app.arguments().at(i)=="--help") or (app.arguments().at(i)=="-h")){
 			_ACTION=-1;
@@ -94,7 +141,7 @@ int main(int argc, char *argv[])
 			if (i<argc)
 			_PREFIX=app.arguments().at(i);
 			if (!db_prefix->isExistsByName(_PREFIX)){
-				Qcout<<app.tr("Prefix named \"%1\" not exists. Run \"q4wine-cli -pl\" for prefix list.").arg(_PREFIX)<<endl;
+				Qcout<<QObject::tr("Prefix named \"%1\" not exists. Run \"q4wine-cli -pl\" for prefix list.").arg(_PREFIX)<<endl;
 				return -1;
 			}
 		}
@@ -145,11 +192,6 @@ int main(int argc, char *argv[])
 			_ACTION=8;
 		}
 
-		if ((app.arguments().at(i)=="--cdlist") or (app.arguments().at(i)=="-cl")){
-			_ACTION=9;
-			break;
-		}
-
 		if ((app.arguments().at(i)=="--mountlist") or (app.arguments().at(i)=="-ml")){
 			_ACTION=10;
 		}
@@ -166,27 +208,25 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	if ((_PREFIX.isEmpty()) && (_ICON.isEmpty()))
-		_ACTION=-1;
-
 	QList<QStringList> result;
 	QStringList sresult;
 
 	ExecObject execObj;
+
 	switch (_ACTION){
 		case 0:
 			if (_PREFIX.isEmpty()){
-				Qcout<<app.tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
+				Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 				return -1;
 			}
 
 			if (_ICON.isEmpty()){
-				Qcout<<app.tr("No current icon set. Set icon via \"-i <icon_name>\" key.")<<endl;
+				Qcout<<QObject::tr("No current icon set. Set icon via \"-i <icon_name>\" key.")<<endl;
 				return -1;
 			}
 
 			if (!db_icon->isExistsByName(_PREFIX, _DIR, _ICON)){
-				Qcout<<app.tr("Icon named \"%1\" not exists.  Run \"q4wine-cli -il\" for icon list.").arg(_ICON)<<endl;
+				Qcout<<QObject::tr("Icon named \"%1\" not exists.  Run \"q4wine-cli -il\" for icon list.").arg(_ICON)<<endl;
 				return -1;
 			}
 
@@ -200,83 +240,84 @@ int main(int argc, char *argv[])
 		case 1:
 			result = CoreLib->getWineProcessList();
 			if (_PREFIX.isEmpty()){
-				Qcout<<app.tr("Wine process list")<<endl;
+				Qcout<<QObject::tr("Wine process list")<<endl;
 			} else {
-				Qcout<<app.tr("Wine process list for \"%1\" prefix").arg(_PREFIX)<<endl;
+				Qcout<<QObject::tr("Wine process list for \"%1\" prefix").arg(_PREFIX)<<endl;
 				path = db_prefix->getPath(_PREFIX);
 			}
 			// Preccess QList items one by one
-			Qcout<<app.tr(" PID	  Nice	  Prefix path		  Name:")<<endl;
+			Qcout<<" "<<qSetFieldWidth(8)<<left<<QObject::tr("PID")<<qSetFieldWidth(6)<<left<<QObject::tr("Nice")<<qSetFieldWidth(20)<<left<<QObject::tr("Name")<<QObject::tr("Prefix path")<<qSetFieldWidth(0)<<endl;
 			for (int i = 0; i < result.size(); ++i) {
 				if (_PREFIX.isEmpty()){
-					Qcout<<" "<<result.at(i).at(0)<<"	  "<<result.at(i).at(2)<<"	  "<<result.at(i).at(3)<<"	  "<<result.at(i).at(1)<<endl;
+					Qcout<<" "<<qSetFieldWidth(8)<<left<<result.at(i).at(0)<<qSetFieldWidth(6)<<left<<result.at(i).at(2)<<qSetFieldWidth(20)<<left<<result.at(i).at(1)<<result.at(i).at(3)<<qSetFieldWidth(0)<<endl;
 				} else {
 					if (path==result.at(i).at(3))
-						Qcout<<" "<<result.at(i).at(0)<<"	  "<<result.at(i).at(2)<<"	  "<<result.at(i).at(3)<<"	  "<<result.at(i).at(1)<<endl;
+					   Qcout<<" "<<qSetFieldWidth(8)<<left<<result.at(i).at(0)<<qSetFieldWidth(6)<<left<<result.at(i).at(2)<<qSetFieldWidth(20)<<left<<result.at(i).at(1)<<result.at(i).at(3)<<qSetFieldWidth(0)<<endl;
 				}
 			}
 		break;
 		case 2:
 			result = db_prefix->getFields();
-			Qcout<<app.tr("Prefix list")<<endl;
-			Qcout<<app.tr(" Name:		Path:")<<endl;
+			Qcout<<QObject::tr("Prefix list")<<endl;
+			Qcout<<" "<<qSetFieldWidth(15)<<left<<QObject::tr("Name")<<QObject::tr("Path")<<qSetFieldWidth(0)<<endl;
 			for (int i = 0; i < result.size(); ++i) {
 				if (!result.at(i).at(2).isEmpty()){
-					Qcout<<" "<<result.at(i).at(1)<<"		"<<result.at(i).at(2)<<endl;
+					Qcout<<" "<<qSetFieldWidth(15)<<left<<result.at(i).at(1)<<result.at(i).at(2)<<qSetFieldWidth(0)<<endl;
 				} else {
-					Qcout<<" "<<result.at(i).at(1)<<"	"<<QDir::homePath()<<"/.wine/"<<endl;
+					Qcout<<" "<<qSetFieldWidth(15)<<left<<result.at(i).at(1)<<QDir::homePath()<<"/.wine/"<<qSetFieldWidth(0)<<endl;
 				}
 			}
 		break;
 		case 3:
 			if (_PREFIX.isEmpty()){
-				Qcout<<app.tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
+				Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 				return -1;
 			}
 			result = db_dir->getFieldsByPrefixName(_PREFIX);
-			Qcout<<app.tr("Prefix \"%1\" has following dir list").arg(_PREFIX)<<endl;
-			Qcout<<app.tr(" Name:")<<endl;
+			Qcout<<QObject::tr("Prefix \"%1\" has following dir list").arg(_PREFIX)<<endl;
+			Qcout<<" "<<QObject::tr("Name")<<endl;
 			for (int i = 0; i < result.size(); ++i) {
 				Qcout<<" "<<result.at(i).at(1)<<endl;
 			}
 		break;
 		case 4:
 			if (_PREFIX.isEmpty()){
-				Qcout<<app.tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
+				Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 				return -1;
 			}
 
 			if (! db_dir->isExistsByName(_PREFIX, _DIR)){
-				Qcout<<app.tr("Dir named \"%1\" not exists. Run \"q4wine-cli -dl\" for dir list.").arg(_DIR)<<endl;
+				Qcout<<QObject::tr("Dir named \"%1\" not exists. Run \"q4wine-cli -dl\" for dir list.").arg(_DIR)<<endl;
 				return -1;
 			}
 
 			result = db_icon->getByPrefixAndDirName(_PREFIX, _DIR);
 			if (_DIR.isEmpty()){
-				Qcout<<app.tr("Prefix \"%1\" has following icon list").arg(_PREFIX)<<endl;
+				Qcout<<QObject::tr("Prefix \"%1\" has following icon list").arg(_PREFIX)<<endl;
 			} else {
-				Qcout<<app.tr("Prefix \"%1\" has following icon list at \"%2\" directory").arg(_PREFIX).arg(_DIR)<<endl;
+				Qcout<<QObject::tr("Prefix \"%1\" has following icon list at \"%2\" directory").arg(_PREFIX).arg(_DIR)<<endl;
 			}
-			Qcout<<app.tr(" Name:		Description:")<<endl;
+			Qcout<<" "<<qSetFieldWidth(15)<<left<<QObject::tr("Name")<<QObject::tr("Description")<<qSetFieldWidth(0)<<endl;
+
 			for (int i = 0; i < result.size(); ++i) {
-				Qcout<<" "<<result.at(i).at(1)<<"	"<<result.at(i).at(2)<<endl;
+				Qcout<<" "<<qSetFieldWidth(15)<<left<<result.at(i).at(1)<<result.at(i).at(2)<<qSetFieldWidth(0)<<endl;
 			}
 		break;
 		case 5:
 			result = db_image->getFields();
-			Qcout<<app.tr("q4wine has following CD images at database")<<endl;
-			Qcout<<app.tr(" Name:					Path:")<<endl;
+			Qcout<<QObject::tr("q4wine has following CD images in database")<<endl;
+			Qcout<<" "<<qSetFieldWidth(25)<<left<<QObject::tr("Name")<<QObject::tr("Path")<<qSetFieldWidth(0)<<endl;
 			for (int i = 0; i < result.size(); ++i) {
-				Qcout<<" "<<result.at(i).at(0)<<"			"<<result.at(i).at(1)<<endl;
+				Qcout<<" "<<qSetFieldWidth(25)<<left<<result.at(i).at(0)<<result.at(i).at(1)<<qSetFieldWidth(0)<<endl;
 			}
 		break;
 		case 6:
 			if (_PREFIX.isEmpty()){
-				Qcout<<app.tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
+				Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 				return -1;
 			}
 			result = db_dir->getFieldsByPrefixName(_PREFIX);
-			Qcout<<app.tr("Killing prefix \"%1\" wineserver.").arg(_PREFIX)<<endl;
+			Qcout<<QObject::tr("Killing prefix \"%1\" wineserver.").arg(_PREFIX)<<endl;
 			if (CoreLib->killWineServer(db_prefix->getPath(_PREFIX))){
 				Qcout<<"Done"<<endl;
 			} else {
@@ -286,22 +327,22 @@ int main(int argc, char *argv[])
 		break;
 		case 7:
 			if (_PREFIX.isEmpty()){
-				Qcout<<app.tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
+				Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 				return -1;
 			}
 			sresult = db_prefix->getFieldsByPrefixName(_PREFIX);
 
 			if (sresult.at(6).isEmpty()){
-				Qcout<<app.tr("No mount point set in prefix configuration.")<<endl;
+				Qcout<<QObject::tr("No mount point set in prefix configuration.")<<endl;
 				return -1;
 			}
 
 			if (_IMAGE.isEmpty()){
 				if (sresult.at(7).isEmpty()){
-					Qcout<<app.tr("No cdrom drive set in prefix configuration.")<<endl;
+					Qcout<<QObject::tr("No cdrom drive set in prefix configuration.")<<endl;
 					return -1;
 				}
-				Qcout<<app.tr("Mounting drive \"%1\" into mount point \"%2\".").arg(sresult.at(7)).arg(sresult.at(6))<<endl;
+				Qcout<<QObject::tr("Mounting drive \"%1\" into mount point \"%2\".").arg(sresult.at(7)).arg(sresult.at(6))<<endl;
 				if (CoreLib->mountImage(sresult.at(7), _PREFIX)){
 					Qcout<<"Done"<<endl;
 				} else {
@@ -311,7 +352,7 @@ int main(int argc, char *argv[])
 			} else {
 				if (!QFile(_IMAGE).exists()){
 					if (!db_image->isExistsByName(_IMAGE)){
-						Qcout<<app.tr("No CD iamge \"%1\" exists. Run \"q4wine-cli -cl\" for CD image list.").arg(_IMAGE)<<endl;
+						Qcout<<QObject::tr("No CD iamge \"%1\" exists. Run \"q4wine-cli -cl\" for CD image list.").arg(_IMAGE)<<endl;
 						return -1;
 					}
 				}
@@ -326,17 +367,17 @@ int main(int argc, char *argv[])
 		break;
 		case 8:
 			if (_PREFIX.isEmpty()){
-				Qcout<<app.tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
+				Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 				return -1;
 			}
 			sresult = db_prefix->getFieldsByPrefixName(_PREFIX);
 
 			if (sresult.at(6).isEmpty()){
-				Qcout<<app.tr("No mount point set in prefix configuration.")<<endl;
+				Qcout<<QObject::tr("No mount point set in prefix configuration.")<<endl;
 				return -1;
 			}
 
-			Qcout<<app.tr("Un mounting mount point \"%1\".").arg(sresult.at(6))<<endl;
+			Qcout<<QObject::tr("Umounting mount point \"%1\".").arg(sresult.at(6))<<endl;
 			if (CoreLib->umountImage(_PREFIX)){
 				Qcout<<"Done"<<endl;
 			} else {
@@ -344,55 +385,46 @@ int main(int argc, char *argv[])
 				return -1;
 			}
 		break;
-		case 9:
-			result = db_image->getFields();
-			Qcout<<app.tr("Image list")<<endl;
-			Qcout<<app.tr(" Name:		Path:")<<endl;
-			for (int i = 0; i < result.size(); ++i) {
-				Qcout<<" "<<result.at(i).at(0)<<"		"<<result.at(i).at(1)<<endl;
-			}
-		break;
 		case 10:
 			if (_PREFIX.isEmpty()){
 				result = db_prefix->getFields();
-				Qcout<<app.tr("Mounted media list for all prefixes")<<endl;
-				Qcout<<app.tr(" Prefix:	  Mount point:		Media:")<<endl;
+				Qcout<<QObject::tr("Mounted media list for all prefixes")<<endl;
+				Qcout<<" "<<qSetFieldWidth(15)<<left<<QObject::tr("Prefix")<<qSetFieldWidth(25)<<left<<QObject::tr("Mount point")<<QObject::tr("Media")<<qSetFieldWidth(0)<<endl;
 				for (int i = 0; i < result.size(); ++i) {
-						Qcout<<" "<<result.at(i).at(1)<<"	  "<<result.at(i).at(7)<<"		"<<CoreLib->getMountedImages(result.at(i).at(7))<<endl;
+					Qcout<<" "<<qSetFieldWidth(15)<<left<<result.at(i).at(1)<<qSetFieldWidth(25)<<left<<result.at(i).at(7)<<CoreLib->getMountedImages(result.at(i).at(7))<<qSetFieldWidth(0)<<endl;
 				}
 			} else {
 				sresult = db_prefix->getFieldsByPrefixName(_PREFIX);
 
 				if (sresult.at(6).isEmpty()){
-				Qcout<<app.tr("No mount point set in prefix configuration.")<<endl;
+				Qcout<<QObject::tr("No mount point set in prefix configuration.")<<endl;
 				return -1;
 				}
 
-				Qcout<<app.tr("Mounted media list for prefix \"%1\"").arg(_PREFIX)<<endl;
-				Qcout<<app.tr(" Mount point:		Media:")<<endl;
-				Qcout<<" "<<sresult.at(6)<<"	  "<<CoreLib->getMountedImages(sresult.at(6))<<endl;
-
+				Qcout<<QObject::tr("Mounted media list for prefix \"%1\"").arg(_PREFIX)<<endl;
+				Qcout<<" "<<qSetFieldWidth(25)<<left<<QObject::tr("Mount point")<<QObject::tr("Media")<<qSetFieldWidth(0)<<endl;
+				Qcout<<" "<<qSetFieldWidth(25)<<left<<sresult.at(6)<<CoreLib->getMountedImages(sresult.at(6))<<qSetFieldWidth(0)<<endl;
 			}
 		break;
 		case 11:
-			Qcout<<app.tr("q4wine-cli %1").arg(APP_VERS)<<endl;
-			Qcout<<app.tr("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
-			Qcout<<app.tr("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
-			Qcout<<app.tr("This is free software: you are free to change and redistribute it.")<<endl;
-			Qcout<<app.tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
+			Qcout<<QObject::tr("q4wine-cli %1").arg(APP_VERS)<<endl;
+			Qcout<<QObject::tr("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
+			Qcout<<QObject::tr("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
+			Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
+			Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
 			Qcout<<endl;
-			Qcout<<app.tr("Author: Malakhov Alexey aka John Brezerk.")<<endl;
+			Qcout<<QObject::tr("Author: Malakhov Alexey aka John Brezerk.")<<endl;
 		break;
 		case 12:
 			if (_PREFIX.isEmpty()){
-				Qcout<<app.tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
+				Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 				return -1;
 			}
 
 			qDebug()<<_IMAGE;
 
 			if (!QFile(_IMAGE).exists()){
-				Qcout<<app.tr("File \"%1\" not exists.").arg(_IMAGE)<<endl;
+				Qcout<<QObject::tr("File \"%1\" not exists.").arg(_IMAGE)<<endl;
 				return -1;
 			}
 
@@ -415,36 +447,36 @@ int main(int argc, char *argv[])
 			}
 		break;
 		default:
-			Qcout<<app.tr("Usage:")<<endl;
-			Qcout<<app.tr("  q4wine-cli [KEY]...")<<endl;
-			Qcout<<app.tr("  q4wine-cli -p <prefix_name> [-d <dir_name>] -i <icon_name>")<<endl;
-			Qcout<<app.tr("  q4wine-cli -p <prefix_name> -b <windows_binary_path> [args]")<<endl;
-			Qcout<<app.tr("Console utility for wine applications and prefixes management.")<<endl<<endl;
-			Qcout<<app.tr("KEYs list:")<<endl;
-			Qcout<<app.tr("  -h,  --help		  display this help and exit")<<endl;
-			Qcout<<app.tr("  -v,  --version	  output version information and exit")<<endl;
-			Qcout<<app.tr("  -ps, --procs		  output wine process list for current prefix or for all prefixes and exit ")<<endl;
-			Qcout<<app.tr("  -p,  --prefix		  sets the current prefix name")<<endl;
-			Qcout<<app.tr("  -d,  --dir		  sets the current direcory name")<<endl;
-			Qcout<<app.tr("  -i,  --icon		  sets the current icon name")<<endl;
-			Qcout<<app.tr("  -cd, --cdimage	  sets the cd iamge name")<<endl;
-			Qcout<<app.tr("  -b, --binary	  sets the path to windows binary for execute with current prefix settings.")<<endl;
-			Qcout<<app.tr("  -k,  --kill		  sends -9 term signal to current prefix precess or for all prefixes processes")<<endl;
-			Qcout<<app.tr("  -pl, --prefixlist	  output all exesting prefixes names and exit")<<endl;
-			Qcout<<app.tr("  -dl, --dirlist	  output all exesting dir names for current prefix and exit")<<endl;
-			Qcout<<app.tr("  -il, --iconlist	  output all exesting icon names for current prefix/directory and exit")<<endl;
-			Qcout<<app.tr("  -cl, --cdlist		  output all cd images list and exit")<<endl;
-			Qcout<<app.tr("  -ml, --mountlist	  output all mounted media for current prefix or all prefixes and exit")<<endl;
-			Qcout<<app.tr("  -m,  --mount		  mount an cd iamage or drive for current prefix and exit")<<endl;
-			Qcout<<app.tr("  -u,  --umount		  umount an cd iamage or drive for current prefix and exit")<<endl;
+			Qcout<<QObject::tr("Usage:")<<endl;
+			Qcout<<QObject::tr("  q4wine-cli [KEY]...")<<endl;
+			Qcout<<QObject::tr("  q4wine-cli -p <prefix_name> [-d <dir_name>] -i <icon_name>")<<endl;
+			Qcout<<QObject::tr("  q4wine-cli -p <prefix_name> -b <windows_binary_path> [args]")<<endl;
+			Qcout<<QObject::tr("Console utility for wine applications and prefixes management.")<<endl<<endl;
+			Qcout<<QObject::tr("KEYs list:")<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -ps, --procs"<<QObject::tr("output wine process list for current prefix or for all prefixes and exit ")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -p,  --prefix"<<QObject::tr("sets the current prefix name")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -d,  --dir"<<QObject::tr("sets the current direcory name")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -i,  --icon"<<QObject::tr("sets the current icon name")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -cd, --cdimage"<<QObject::tr("sets the cd iamge name")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -b, --binary"<<QObject::tr("sets the path to windows binary for execute with current prefix settings")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -k,  --kill"<<QObject::tr("sends -9 term signal to current prefix precess or for all prefixes processes")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -pl, --prefixlist"<<QObject::tr("output all exesting prefixes names and exit")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -dl, --dirlist"<<QObject::tr("output all exesting dir names for current prefix and exit")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -il, --iconlist"<<QObject::tr("output all exesting icon names for current prefix/directory and exit")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -cl, --cdlist"<<QObject::tr("output all cd images list and exit")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -ml, --mountlist"<<QObject::tr("output all mounted media for current prefix or all prefixes and exit")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --mount"<<QObject::tr("mount an cd iamage or drive for current prefix and exit")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -u,  --umount"<<QObject::tr("umount an cd iamage or drive for current prefix and exit")<<qSetFieldWidth(0)<<endl;
 			Qcout<<endl;
-			Qcout<<app.tr("Exit status:")<<endl;
-			Qcout<<app.tr("  0 if OK,")<<endl;
-			Qcout<<app.tr("  -1 if serious troubles")<<endl;
+			Qcout<<QObject::tr("Exit status:")<<endl;
+			Qcout<<QObject::tr("  0 if OK,")<<endl;
+			Qcout<<QObject::tr(" -1 if serious troubles")<<endl;
 			Qcout<<endl;
-			Qcout<<app.tr("Report q4wine bugs to brezerk@gmail.com")<<endl;
-			Qcout<<app.tr("q4wine homepage: <http://sourceforge.net/projects/q4wine/>")<<endl;
-			Qcout<<app.tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
+			Qcout<<QObject::tr("Report q4wine bugs to brezerk@gmail.com")<<endl;
+			Qcout<<QObject::tr("q4wine homepage: <http://sourceforge.net/projects/q4wine/>")<<endl;
+			Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
 		break;
 	}
 
