@@ -52,6 +52,9 @@ Inheritance diagram for Dir:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">QList&lt; QStringList &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dir.html#06f17476fda218a09fae7666af386ebb">getFieldsByPrefixId</a> (const QString prefix_id) const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function gets all table fields by prefixId key value from table.  <a href="#06f17476fda218a09fae7666af386ebb"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">QList&lt; QStringList &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dir.html#3cab3839e46acbbe986471db4ab67d0d">getFieldsByPrefixName</a> (const QString prefix_name) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function gets all table fields by prefixName key value from table.  <a href="#3cab3839e46acbbe986471db4ab67d0d"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dir.html#4377f6c6c6f645003baa77b7c8d40eee">delDir</a> (const QString prefix_name, const QString dir_name=&quot;&quot;) const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function deletes all dirs fields by prefix_name keys value from table.  <a href="#4377f6c6c6f645003baa77b7c8d40eee"></a><br></td></tr>
@@ -61,6 +64,12 @@ Inheritance diagram for Dir:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dir.html#ff8fecc0c28a329cc3536296d77d274c">isExistsByName</a> (const QString prefix_name, const QString dir_name) const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function check is reccord exists by dir_name or not.  <a href="#ff8fecc0c28a329cc3536296d77d274c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dir.html#c48eaaad253aa034cd5ebc6ff331bc60">getId</a> (const QString dir_name, const QString prefix_name) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function gets prefix id by name.  <a href="#c48eaaad253aa034cd5ebc6ff331bc60"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dir.html#7f2c1c24f60ab49b61b03898297b443d">renameDir</a> (const QString dir_name, const QString prefix_name, const QString new_dir_name) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Rename dir.  <a href="#7f2c1c24f60ab49b61b03898297b443d"></a><br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 This class provide database functions for <a class="el" href="class_dir.html" title="This class provide database functions for Dir table.">Dir</a> table. 
@@ -102,7 +111,7 @@ This function add dir by name and prefix_name.
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>Return true if exists. </dd></dl>
 
-<p>Definition at line <a class="el" href="dir_8cpp-source.html#l00078">78</a> of file <a class="el" href="dir_8cpp-source.html">dir.cpp</a>.</p>
+<p>Definition at line <a class="el" href="dir_8cpp-source.html#l00102">102</a> of file <a class="el" href="dir_8cpp-source.html">dir.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -141,7 +150,7 @@ This function deletes all dirs fields by prefix_name keys value from table.
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>Return true on success. </dd></dl>
 
-<p>Definition at line <a class="el" href="dir_8cpp-source.html#l00061">61</a> of file <a class="el" href="dir_8cpp-source.html">dir.cpp</a>.</p>
+<p>Definition at line <a class="el" href="dir_8cpp-source.html#l00085">85</a> of file <a class="el" href="dir_8cpp-source.html">dir.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -174,6 +183,78 @@ This function gets all table fields by prefixId key value from table.
 <p>Reimplemented from <a class="el" href="class_prefix.html#7f2b8a02069e667b98172443f62663a1">Prefix</a>.</p>
 
 <p>Definition at line <a class="el" href="dir_8cpp-source.html#l00037">37</a> of file <a class="el" href="dir_8cpp-source.html">dir.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3cab3839e46acbbe986471db4ab67d0d"></a><!-- doxytag: member="Dir::getFieldsByPrefixName" ref="3cab3839e46acbbe986471db4ab67d0d" args="(const QString prefix_name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; QStringList &gt; Dir::getFieldsByPrefixName           </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>prefix_name</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This function gets all table fields by prefixName key value from table. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prefixName</em>&nbsp;</td><td><a class="el" href="class_prefix.html" title="This class provide database functions for prefix table.">Prefix</a> name key value. </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields value or -1 on error. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_prefix.html#cf3f3e702baeae9ee02bbcbf1691cb96">Prefix</a>.</p>
+
+<p>Definition at line <a class="el" href="dir_8cpp-source.html#l00061">61</a> of file <a class="el" href="dir_8cpp-source.html">dir.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="c48eaaad253aa034cd5ebc6ff331bc60"></a><!-- doxytag: member="Dir::getId" ref="c48eaaad253aa034cd5ebc6ff331bc60" args="(const QString dir_name, const QString prefix_name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Dir::getId           </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>dir_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>prefix_name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This function gets prefix id by name. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>dir_name</em>&nbsp;</td><td>A dir name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>prefix_name</em>&nbsp;</td><td>A prefix name value. </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return prefix id. </dd></dl>
+
+<p>Definition at line <a class="el" href="dir_8cpp-source.html#l00134">134</a> of file <a class="el" href="dir_8cpp-source.html">dir.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -213,14 +294,61 @@ This function check is reccord exists by dir_name or not.
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>Return true if exists. </dd></dl>
 
-<p>Definition at line <a class="el" href="dir_8cpp-source.html#l00091">91</a> of file <a class="el" href="dir_8cpp-source.html">dir.cpp</a>.</p>
+<p>Definition at line <a class="el" href="dir_8cpp-source.html#l00115">115</a> of file <a class="el" href="dir_8cpp-source.html">dir.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="7f2c1c24f60ab49b61b03898297b443d"></a><!-- doxytag: member="Dir::renameDir" ref="7f2c1c24f60ab49b61b03898297b443d" args="(const QString dir_name, const QString prefix_name, const QString new_dir_name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Dir::renameDir           </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>dir_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>prefix_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>new_dir_name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Rename dir. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prefix_name</em>&nbsp;</td><td>A prefix name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dir_name</em>&nbsp;</td><td>A dir name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>new_dir_name</em>&nbsp;</td><td>A icon name value. </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields. </dd></dl>
+
+<p>Definition at line <a class="el" href="dir_8cpp-source.html#l00157">157</a> of file <a class="el" href="dir_8cpp-source.html">dir.cpp</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li>src/core/database/<a class="el" href="dir_8h-source.html">dir.h</a><li>src/core/database/<a class="el" href="dir_8cpp-source.html">dir.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:21 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

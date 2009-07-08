@@ -21,51 +21,108 @@
   </div>
 <h1>src/temporary/winetrickshelp.cpp</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include "winetrickshelp.h"</span>
 <a name="l00002"></a>00002 <span class="preprocessor">#include "ui_winetrickshelp.h"</span>
-<a name="l00003"></a>00003 
-<a name="l00004"></a>00004 winetrickshelp::winetrickshelp(QWidget *parent) :
-<a name="l00005"></a>00005     QDialog(parent),
-<a name="l00006"></a>00006     m_ui(new Ui::winetrickshelp)
-<a name="l00007"></a>00007 {
-<a name="l00008"></a>00008     m_ui-&gt;setupUi(<span class="keyword">this</span>);
-<a name="l00009"></a>00009     <span class="comment">/*</span>
-<a name="l00010"></a>00010 <span class="comment">    QString WINETRICKS_FILE = QDir::homePath() + ".config/q4wine/winetricks";</span>
-<a name="l00011"></a>00011 <span class="comment">if (!QFile::exists(WINETRICKS_FILE)) {</span>
-<a name="l00012"></a>00012 <span class="comment">    QMessageBox msg;</span>
-<a name="l00013"></a>00013 <span class="comment">    msg.setText(tr("Please install winetricks: winetricks not found"));</span>
-<a name="l00014"></a>00014 <span class="comment">    msg.setIcon(QMessageBox::Critical);</span>
-<a name="l00015"></a>00015 <span class="comment">    msg.setWindowTitle(tr("winetricks not found"));</span>
-<a name="l00016"></a>00016 <span class="comment">    msg.show();</span>
-<a name="l00017"></a>00017 <span class="comment">this-&gt;close();</span>
-<a name="l00018"></a>00018 <span class="comment">return;</span>
-<a name="l00019"></a>00019 <span class="comment"></span>
-<a name="l00020"></a>00020 <span class="comment">}</span>
-<a name="l00021"></a>00021 <span class="comment">*/</span>
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023 }
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 winetrickshelp::~winetrickshelp()
-<a name="l00026"></a>00026 {
-<a name="l00027"></a>00027     <span class="keyword">delete</span> m_ui;
-<a name="l00028"></a>00028 }
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="keywordtype">void</span> winetrickshelp::changeEvent(QEvent *e)
-<a name="l00031"></a>00031 {
-<a name="l00032"></a>00032     <span class="keywordflow">switch</span> (e-&gt;type()) {
-<a name="l00033"></a>00033     <span class="keywordflow">case</span> QEvent::LanguageChange:
-<a name="l00034"></a>00034       m_ui-&gt;retranslateUi(<span class="keyword">this</span>);
-<a name="l00035"></a>00035       <span class="keywordflow">break</span>;
-<a name="l00036"></a>00036     <span class="keywordflow">default</span>:
-<a name="l00037"></a>00037       <span class="keywordflow">break</span>;
-<a name="l00038"></a>00038     }
-<a name="l00039"></a>00039 }
+<a name="l00003"></a>00003 <span class="preprocessor">#include &lt;QtDebug&gt;</span>
+<a name="l00004"></a>00004 
+<a name="l00005"></a>00005 winetrickshelp::winetrickshelp(QWidget *parent) :
+<a name="l00006"></a>00006     QDialog(parent),
+<a name="l00007"></a>00007     m_ui(new Ui::winetrickshelp)
+<a name="l00008"></a>00008 {
+<a name="l00009"></a>00009     m_ui-&gt;setupUi(<span class="keyword">this</span>);
+<a name="l00010"></a>00010     <span class="comment">/*</span>
+<a name="l00011"></a>00011 <span class="comment">    QString WINETRICKS_FILE = QDir::homePath() + ".config/q4wine/winetricks";</span>
+<a name="l00012"></a>00012 <span class="comment">if (!QFile::exists(WINETRICKS_FILE)) {</span>
+<a name="l00013"></a>00013 <span class="comment">    QMessageBox msg;</span>
+<a name="l00014"></a>00014 <span class="comment">    msg.setText(tr("Please install winetricks: winetricks not found"));</span>
+<a name="l00015"></a>00015 <span class="comment">    msg.setIcon(QMessageBox::Critical);</span>
+<a name="l00016"></a>00016 <span class="comment">    msg.setWindowTitle(tr("winetricks not found"));</span>
+<a name="l00017"></a>00017 <span class="comment">    msg.show();</span>
+<a name="l00018"></a>00018 <span class="comment">this-&gt;close();</span>
+<a name="l00019"></a>00019 <span class="comment">return;</span>
+<a name="l00020"></a>00020 <span class="comment"></span>
+<a name="l00021"></a>00021 <span class="comment">}</span>
+<a name="l00022"></a>00022 <span class="comment"></span>
+<a name="l00023"></a>00023 <span class="comment">      core = new CoreMethods ();</span>
+<a name="l00024"></a>00024 <span class="comment">      this-&gt;winetricks_bin.append(QDir::homePath());</span>
+<a name="l00025"></a>00025 <span class="comment">       this-&gt;winetricks_bin.append("/.config/");</span>
+<a name="l00026"></a>00026 <span class="comment">       this-&gt;winetricks_bin.append(APP_SHORT_NAME);</span>
+<a name="l00027"></a>00027 <span class="comment">       this-&gt;winetricks_bin.appen("/winetricks --kegelfuck"); //Kegel - idiot!</span>
+<a name="l00028"></a>00028 <span class="comment"></span>
+<a name="l00029"></a>00029 <span class="comment">       parse();</span>
+<a name="l00030"></a>00030 <span class="comment">       */</span>
+<a name="l00031"></a>00031 }
+<a name="l00032"></a>00032 <span class="keywordtype">void</span> winetrickshelp::addToList(QString arg) {
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 QStringList args = arg.split(<span class="stringliteral">" "</span>);
+<a name="l00035"></a>00035 QString name = args.at(0);
+<a name="l00036"></a>00036 <span class="keywordtype">int</span> pos = arg.count() - name.count();
+<a name="l00037"></a>00037 QString desc = arg.right(pos);
+<a name="l00038"></a>00038 qDebug() &lt;&lt; name &lt;&lt; desc;
+<a name="l00039"></a>00039 <span class="comment">//temp solution</span>
 <a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="keywordtype">void</span> winetrickshelp::on_buttonBox_clicked(QAbstractButton* button){
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043    <span class="keywordflow">return</span>;
-<a name="l00044"></a>00044 }
-<a name="l00045"></a>00045 
+<a name="l00041"></a>00041 }
+<a name="l00042"></a>00042 winetrickshelp::~winetrickshelp()
+<a name="l00043"></a>00043 {
+<a name="l00044"></a>00044     <span class="keyword">delete</span> m_ui;
+<a name="l00045"></a>00045 }
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 <span class="keywordtype">void</span> winetrickshelp::changeEvent(QEvent *e)
+<a name="l00048"></a>00048 {
+<a name="l00049"></a>00049     <span class="keywordflow">switch</span> (e-&gt;type()) {
+<a name="l00050"></a>00050     <span class="keywordflow">case</span> QEvent::LanguageChange:
+<a name="l00051"></a>00051       m_ui-&gt;retranslateUi(<span class="keyword">this</span>);
+<a name="l00052"></a>00052       <span class="keywordflow">break</span>;
+<a name="l00053"></a>00053     <span class="keywordflow">default</span>:
+<a name="l00054"></a>00054       <span class="keywordflow">break</span>;
+<a name="l00055"></a>00055     }
+<a name="l00056"></a>00056 }
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="keywordtype">void</span> winetrickshelp::on_buttonBox_clicked(QAbstractButton* button){
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060    <span class="keywordflow">return</span>;
+<a name="l00061"></a>00061 }
+<a name="l00062"></a>00062 <span class="keywordtype">void</span> winetrickshelp::parse() {
+<a name="l00063"></a>00063     <span class="comment">//create a Winetricks process</span>
+<a name="l00064"></a>00064       QProcess *p = <span class="keyword">new</span> QProcess (<span class="keyword">this</span>);
+<a name="l00065"></a>00065     QString pargs;
+<a name="l00066"></a>00066     pargs.append(winetricks_bin);
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069    p-&gt;start(pargs);
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071    p-&gt;waitForFinished();
+<a name="l00072"></a>00072      <span class="comment">//get output</span>
+<a name="l00073"></a>00073    QString lang;
+<a name="l00074"></a>00074    <span class="comment">// Getting env LANG variable</span>
+<a name="l00075"></a>00075    lang = getenv(<span class="stringliteral">"LANG"</span>);
+<a name="l00076"></a>00076   lang = lang.split(<span class="stringliteral">"."</span>).at(1);
+<a name="l00077"></a>00077  <span class="keywordflow">if</span> (lang.isNull())
+<a name="l00078"></a>00078   lang = <span class="stringliteral">"UTF8"</span>;
+<a name="l00079"></a>00079  <span class="comment">/* Fucking code because Kegel is MORON! */</span>
+<a name="l00080"></a>00080   QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+<a name="l00081"></a>00081   QString wOut = codec-&gt;toUnicode(p-&gt;readAllStandardOutput());
+<a name="l00082"></a>00082     <span class="keyword">delete</span> p;
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084     <span class="comment">//parse now</span>
+<a name="l00085"></a>00085 <span class="keywordtype">bool</span> isNowParse = <span class="keyword">false</span>;
+<a name="l00086"></a>00086 QStringList strs = wOut.split(<span class="stringliteral">"\n"</span>);
+<a name="l00087"></a>00087 QString str;
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089 <span class="keywordflow">foreach</span> (str, strs){
+<a name="l00090"></a>00090     str = str.trimmed();
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092   <span class="keywordflow">if</span> (str == <span class="stringliteral">"Apps:"</span> || str == <span class="stringliteral">"Pseudopackages:"</span>){<span class="keywordflow">continue</span>;}
+<a name="l00093"></a>00093   <span class="keywordflow">if</span> (str == <span class="stringliteral">"Packages:"</span>) {isNowParse = <span class="keyword">true</span>;
+<a name="l00094"></a>00094   <span class="keywordflow">continue</span>;
+<a name="l00095"></a>00095   }
+<a name="l00096"></a>00096   <span class="keywordflow">if</span> (isNowParse) {addToList(str);}
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099 }
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102 }
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -166,7 +166,7 @@
 <a name="l00145"></a>00145     }
 <a name="l00146"></a>00146 
 <a name="l00147"></a>00147 
-<a name="l00148"></a>00148     execObj.execcmd = txtProgramBin-&gt;text();
+<a name="l00148"></a>00148     execObj.<a class="code" href="struct_exec_object.html#0ba79954c28b34768905245673a44a82">execcmd</a> = txtProgramBin-&gt;text();
 <a name="l00149"></a>00149 
 <a name="l00150"></a>00150     QSqlQuery query;
 <a name="l00151"></a>00151     <span class="comment">//FIXME: Remove it please.</span>
@@ -175,23 +175,23 @@
 <a name="l00154"></a>00154     query.exec();
 <a name="l00155"></a>00155     query.first();
 <a name="l00156"></a>00156 
-<a name="l00157"></a>00157     execObj.prefixid = query.value(0).toString();
+<a name="l00157"></a>00157     execObj.<a class="code" href="struct_exec_object.html#7fa992b7ff73d48ceb8292b902129322">prefixid</a> = query.value(0).toString();
 <a name="l00158"></a>00158 
 <a name="l00159"></a>00159     query.clear();
 <a name="l00160"></a>00160 
 <a name="l00161"></a>00161 
 <a name="l00162"></a>00162     <span class="keywordflow">if</span> (cbUseConsole-&gt;checkState()==Qt::Checked){
-<a name="l00163"></a>00163         execObj.useconsole = <span class="stringliteral">"1"</span>;
+<a name="l00163"></a>00163         execObj.<a class="code" href="struct_exec_object.html#fdef979edd88a9275b3d3773f653b8ac">useconsole</a> = <span class="stringliteral">"1"</span>;
 <a name="l00164"></a>00164     } <span class="keywordflow">else</span> {
-<a name="l00165"></a>00165         execObj.useconsole = <span class="stringliteral">"0"</span>;
+<a name="l00165"></a>00165         execObj.<a class="code" href="struct_exec_object.html#fdef979edd88a9275b3d3773f653b8ac">useconsole</a> = <span class="stringliteral">"0"</span>;
 <a name="l00166"></a>00166     }
-<a name="l00167"></a>00167     execObj.cmdargs = txtCmdArgs-&gt;text();
-<a name="l00168"></a>00168     execObj.override = <span class="keyword">override</span>;
-<a name="l00169"></a>00169     execObj.winedebug = txtWinedebug-&gt;text();
-<a name="l00170"></a>00170     execObj.display = txtDisplay-&gt;text();
-<a name="l00171"></a>00171     execObj.wrkdir = txtWorkDir-&gt;text();
-<a name="l00172"></a>00172     execObj.nice = txtNice-&gt;text();
-<a name="l00173"></a>00173     execObj.desktop = txtDesktopSize-&gt;text();
+<a name="l00167"></a>00167     execObj.<a class="code" href="struct_exec_object.html#1f7f4e1457d62e39c780e84311e311a6">cmdargs</a> = txtCmdArgs-&gt;text();
+<a name="l00168"></a>00168     execObj.<a class="code" href="struct_exec_object.html#d9b08e4038b525db90763ceb5239a3d5">override</a> = <span class="keyword">override</span>;
+<a name="l00169"></a>00169     execObj.<a class="code" href="struct_exec_object.html#74922162243915b79900ec1d4b923eaf">winedebug</a> = txtWinedebug-&gt;text();
+<a name="l00170"></a>00170     execObj.<a class="code" href="struct_exec_object.html#45af739cd1d90a7bc65d6ed68934fa9d">display</a> = txtDisplay-&gt;text();
+<a name="l00171"></a>00171     execObj.<a class="code" href="struct_exec_object.html#03a77295d9240c2d274ccd90d93b5378">wrkdir</a> = txtWorkDir-&gt;text();
+<a name="l00172"></a>00172     execObj.<a class="code" href="struct_exec_object.html#fd4da1f8d6d61cbe48de5ec3d34b39b8">nice</a> = txtNice-&gt;text();
+<a name="l00173"></a>00173     execObj.<a class="code" href="struct_exec_object.html#e8f7cac49e4fb936176a952f41dcf9fe">desktop</a> = txtDesktopSize-&gt;text();
 <a name="l00174"></a>00174 
 <a name="l00175"></a>00175     accept();
 <a name="l00176"></a>00176     <span class="keywordflow">return</span>;
@@ -213,210 +213,192 @@
 <a name="l00192"></a>00192     <span class="keywordflow">return</span> <a class="code" href="class_run.html#3b18ca4c4092b8d736234471bacd9e1d" title="Event filter.">QWidget::eventFilter</a>(<span class="keywordtype">object</span>, event);
 <a name="l00193"></a>00193 }
 <a name="l00194"></a>00194 
-<a name="l00195"></a><a class="code" href="class_run.html#05bf259e7533d949f8252227347e81ee">00195</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#05bf259e7533d949f8252227347e81ee" title="Get wine dll list.">Run::getWineDlls</a>(QString winedll_path){
+<a name="l00195"></a><a class="code" href="class_run.html#05bf259e7533d949f8252227347e81ee">00195</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#05bf259e7533d949f8252227347e81ee" title="Get wine dll list.">Run::getWineDlls</a>(QString winelibs_path){
 <a name="l00196"></a>00196     <span class="comment">/*</span>
 <a name="l00197"></a>00197 <span class="comment">     * This function Builds Wine dll list for selected prefix</span>
 <a name="l00198"></a>00198 <span class="comment">     */</span>
 <a name="l00199"></a>00199 
 <a name="l00200"></a>00200     cboxDlls-&gt;clear();
-<a name="l00201"></a>00201 
-<a name="l00202"></a>00202     <span class="keywordflow">if</span> (winedll_path.isEmpty()){
-<a name="l00203"></a>00203         QSettings settings(APP_SHORT_NAME, <span class="stringliteral">"default"</span>);
-<a name="l00204"></a>00204         settings.beginGroup(<span class="stringliteral">"wine"</span>);
-<a name="l00205"></a>00205         winedll_path=settings.value(<span class="stringliteral">"WineLibs"</span>).toString();
-<a name="l00206"></a>00206         settings.endGroup();
-<a name="l00207"></a>00207     }
-<a name="l00208"></a>00208 
-<a name="l00209"></a>00209     QDir dir(winedll_path);
-<a name="l00210"></a>00210     dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+<a name="l00201"></a>00201     cboxDlls-&gt;addItems (CoreLib-&gt;<a class="code" href="classcorelib.html#a814e30d83df5294cf9e700071ad0d04" title="This function builds wine dlls list for prefix_lib_path.">getWineDlls</a>(winelibs_path));
+<a name="l00202"></a>00202     cboxDlls-&gt;setMaxVisibleItems (10);
+<a name="l00203"></a>00203 
+<a name="l00204"></a>00204     <span class="keywordflow">return</span>;
+<a name="l00205"></a>00205 }
+<a name="l00206"></a>00206 
+<a name="l00207"></a><a class="code" href="class_run.html#28522a4b4476fc55af30ec07c6f4d94b">00207</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#28522a4b4476fc55af30ec07c6f4d94b" title="Get exesting prefixes list.">Run::getPrefixes</a>(){
+<a name="l00208"></a>00208     <span class="comment">/*</span>
+<a name="l00209"></a>00209 <span class="comment">     * Getting prefixes and set default</span>
+<a name="l00210"></a>00210 <span class="comment">     */</span>
 <a name="l00211"></a>00211 
-<a name="l00212"></a>00212     QFileInfoList list = dir.entryInfoList();
-<a name="l00213"></a>00213     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; list.size(); ++i) {
-<a name="l00214"></a>00214         QFileInfo fileInfo = list.at(i);
-<a name="l00215"></a>00215         <span class="keywordflow">if</span> (fileInfo.fileName().indexOf(<span class="stringliteral">".dll.so"</span>)&gt;=0){
-<a name="l00216"></a>00216             cboxDlls-&gt;addItem ( fileInfo.fileName().left(fileInfo.fileName().length()-3));
-<a name="l00217"></a>00217         }
-<a name="l00218"></a>00218     }
-<a name="l00219"></a>00219 
-<a name="l00220"></a>00220     cboxDlls-&gt;setMaxVisibleItems (10);
-<a name="l00221"></a>00221 
-<a name="l00222"></a>00222     <span class="keywordflow">return</span>;
-<a name="l00223"></a>00223 }
-<a name="l00224"></a>00224 
-<a name="l00225"></a><a class="code" href="class_run.html#28522a4b4476fc55af30ec07c6f4d94b">00225</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#28522a4b4476fc55af30ec07c6f4d94b" title="Get exesting prefixes list.">Run::getPrefixes</a>(){
-<a name="l00226"></a>00226     <span class="comment">/*</span>
-<a name="l00227"></a>00227 <span class="comment">     * Getting prefixes and set default</span>
-<a name="l00228"></a>00228 <span class="comment">     */</span>
-<a name="l00229"></a>00229 
+<a name="l00212"></a>00212 
+<a name="l00213"></a>00213     QList&lt;QStringList&gt; result = <a class="code" href="class_run.html#293d8ed466743f5148c02083c130c9d8" title="Database prefix class defenition.">db_prefix</a>-&gt;<a class="code" href="class_prefix.html#9f47e3156098f4f45f266efac76a0a61" title="This function gets requested table fields from table.">getFields</a>();
+<a name="l00214"></a>00214     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; result.size(); ++i) {
+<a name="l00215"></a>00215         comboPrefixes-&gt;addItem(result.at(i).at(1));
+<a name="l00216"></a>00216         <span class="keywordflow">if</span> (result.at(i).at(1)==this-&gt;prefix_name){
+<a name="l00217"></a>00217             comboPrefixes-&gt;setCurrentIndex ( comboPrefixes-&gt;findText(result.at(i).at(1)) );
+<a name="l00218"></a>00218             <span class="keywordflow">if</span> (result.at(i).at(2).isEmpty()){
+<a name="l00219"></a>00219                 prefix_dir = QDir::homePath();
+<a name="l00220"></a>00220                 prefix_dir.append(<span class="stringliteral">"/.wine/drive_c/"</span>);
+<a name="l00221"></a>00221             } <span class="keywordflow">else</span> {
+<a name="l00222"></a>00222                 prefix_dir = result.at(i).at(2);
+<a name="l00223"></a>00223             }
+<a name="l00224"></a>00224             <a class="code" href="class_run.html#05bf259e7533d949f8252227347e81ee" title="Get wine dll list.">getWineDlls</a>(result.at(i).at(3));
+<a name="l00225"></a>00225         }
+<a name="l00226"></a>00226     }
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228     <span class="keywordflow">return</span>;
+<a name="l00229"></a>00229 }
 <a name="l00230"></a>00230 
-<a name="l00231"></a>00231     QList&lt;QStringList&gt; result = <a class="code" href="class_run.html#293d8ed466743f5148c02083c130c9d8" title="Database prefix class defenition.">db_prefix</a>-&gt;<a class="code" href="class_prefix.html#9f47e3156098f4f45f266efac76a0a61" title="This function gets requested table fields from table.">getFields</a>();
-<a name="l00232"></a>00232     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; result.size(); ++i) {
-<a name="l00233"></a>00233         comboPrefixes-&gt;addItem(result.at(i).at(1));
-<a name="l00234"></a>00234         <span class="keywordflow">if</span> (result.at(i).at(1)==this-&gt;prefix_name){
-<a name="l00235"></a>00235             comboPrefixes-&gt;setCurrentIndex ( comboPrefixes-&gt;findText(result.at(i).at(1)) );
-<a name="l00236"></a>00236             <span class="keywordflow">if</span> (result.at(i).at(2).isEmpty()){
-<a name="l00237"></a>00237                 prefix_dir = QDir::homePath();
-<a name="l00238"></a>00238                 prefix_dir.append(<span class="stringliteral">"/.wine/drive_c/"</span>);
-<a name="l00239"></a>00239             } <span class="keywordflow">else</span> {
-<a name="l00240"></a>00240                 prefix_dir = result.at(i).at(2);
-<a name="l00241"></a>00241             }
-<a name="l00242"></a>00242             <a class="code" href="class_run.html#05bf259e7533d949f8252227347e81ee" title="Get wine dll list.">getWineDlls</a>(result.at(i).at(3));
-<a name="l00243"></a>00243         }
-<a name="l00244"></a>00244     }
+<a name="l00231"></a><a class="code" href="class_run.html#b2c3f932ef7fd9ca0dd713013bffe7fa">00231</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#b2c3f932ef7fd9ca0dd713013bffe7fa" title="ComboxBox change slot.">Run::comboPrefixes_indexChanged</a> (<span class="keywordtype">int</span>){
+<a name="l00232"></a>00232     <span class="comment">/*</span>
+<a name="l00233"></a>00233 <span class="comment">     * If user select prefix -- rebuild wine dlls list</span>
+<a name="l00234"></a>00234 <span class="comment">     */</span>
+<a name="l00235"></a>00235     QStringList result = <a class="code" href="class_run.html#293d8ed466743f5148c02083c130c9d8" title="Database prefix class defenition.">db_prefix</a>-&gt;<a class="code" href="class_prefix.html#cf3f3e702baeae9ee02bbcbf1691cb96" title="This function gets all table fields by prefixName key value from table.">getFieldsByPrefixName</a>(comboPrefixes-&gt;currentText());
+<a name="l00236"></a>00236 
+<a name="l00237"></a>00237     <span class="keywordflow">if</span> (result.at(1).isEmpty()){
+<a name="l00238"></a>00238         prefix_dir = QDir::homePath();
+<a name="l00239"></a>00239         prefix_dir.append(<span class="stringliteral">"/.wine/drive_c/"</span>);
+<a name="l00240"></a>00240     } <span class="keywordflow">else</span> {
+<a name="l00241"></a>00241         prefix_dir = result.at(1);
+<a name="l00242"></a>00242     }
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244     <a class="code" href="class_run.html#05bf259e7533d949f8252227347e81ee" title="Get wine dll list.">getWineDlls</a>(result.at(2));
 <a name="l00245"></a>00245 
 <a name="l00246"></a>00246     <span class="keywordflow">return</span>;
 <a name="l00247"></a>00247 }
 <a name="l00248"></a>00248 
-<a name="l00249"></a><a class="code" href="class_run.html#b2c3f932ef7fd9ca0dd713013bffe7fa">00249</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#b2c3f932ef7fd9ca0dd713013bffe7fa" title="ComboxBox change slot.">Run::comboPrefixes_indexChanged</a> (<span class="keywordtype">int</span>){
-<a name="l00250"></a>00250     <span class="comment">/*</span>
-<a name="l00251"></a>00251 <span class="comment">     * If user select prefix -- rebuild wine dlls list</span>
-<a name="l00252"></a>00252 <span class="comment">     */</span>
-<a name="l00253"></a>00253     QStringList result = <a class="code" href="class_run.html#293d8ed466743f5148c02083c130c9d8" title="Database prefix class defenition.">db_prefix</a>-&gt;<a class="code" href="class_prefix.html#cf3f3e702baeae9ee02bbcbf1691cb96" title="This function gets all table fields by prefixName key value from table.">getFieldsByPrefixName</a>(comboPrefixes-&gt;currentText());
-<a name="l00254"></a>00254 
-<a name="l00255"></a>00255     <span class="keywordflow">if</span> (result.at(1).isEmpty()){
-<a name="l00256"></a>00256         prefix_dir = QDir::homePath();
-<a name="l00257"></a>00257         prefix_dir.append(<span class="stringliteral">"/.wine/drive_c/"</span>);
-<a name="l00258"></a>00258     } <span class="keywordflow">else</span> {
-<a name="l00259"></a>00259         prefix_dir = result.at(1);
-<a name="l00260"></a>00260     }
-<a name="l00261"></a>00261 
-<a name="l00262"></a>00262     <a class="code" href="class_run.html#05bf259e7533d949f8252227347e81ee" title="Get wine dll list.">getWineDlls</a>(result.at(2));
-<a name="l00263"></a>00263 
-<a name="l00264"></a>00264     <span class="keywordflow">return</span>;
-<a name="l00265"></a>00265 }
-<a name="l00266"></a>00266 
-<a name="l00267"></a>00267 <span class="comment">/*************************************************************\</span>
-<a name="l00268"></a>00268 <span class="comment">|       CheckBox Events                           |</span>
-<a name="l00269"></a>00269 <span class="comment">\*************************************************************/</span>
-<a name="l00270"></a>00270 
-<a name="l00271"></a><a class="code" href="class_run.html#817733b1fdbfd9a528b54537b318efdb">00271</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#817733b1fdbfd9a528b54537b318efdb" title="CheckBox change slot.">Run::cbUseConsole_stateChanged</a>(<span class="keywordtype">int</span>){
-<a name="l00272"></a>00272     <span class="keywordflow">switch</span>(cbUseConsole-&gt;checkState()){
-<a name="l00273"></a>00273         <span class="keywordflow">case</span> Qt::Checked:
-<a name="l00274"></a>00274             txtWinedebug-&gt;setEnabled(TRUE);
-<a name="l00275"></a>00275         <span class="keywordflow">break</span>;
-<a name="l00276"></a>00276         <span class="keywordflow">default</span>:
-<a name="l00277"></a>00277             txtWinedebug-&gt;setEnabled(FALSE);
-<a name="l00278"></a>00278         <span class="keywordflow">break</span>;
-<a name="l00279"></a>00279     }
-<a name="l00280"></a>00280 
-<a name="l00281"></a>00281     <span class="keywordflow">return</span>;
-<a name="l00282"></a>00282 }
-<a name="l00283"></a>00283 
-<a name="l00284"></a><a class="code" href="class_run.html#c0253c07130ee78f62d34ad6d4604989">00284</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#c0253c07130ee78f62d34ad6d4604989" title="Resize window content slot.">Run::ResizeContent</a>(<span class="keywordtype">int</span> TabIndex){
-<a name="l00285"></a>00285     <span class="keywordflow">switch</span> (TabIndex){
-<a name="l00286"></a>00286         <span class="keywordflow">case</span> 1:
-<a name="l00287"></a>00287             twDlls-&gt;resizeRowsToContents();
-<a name="l00288"></a>00288             twDlls-&gt;resizeColumnsToContents();
-<a name="l00289"></a>00289             twDlls-&gt;horizontalHeader()-&gt;setStretchLastSection(TRUE);
-<a name="l00290"></a>00290         <span class="keywordflow">break</span>;
-<a name="l00291"></a>00291     }
-<a name="l00292"></a>00292 
-<a name="l00293"></a>00293     <span class="keywordflow">return</span>;
-<a name="l00294"></a>00294 }
-<a name="l00295"></a>00295 
-<a name="l00296"></a><a class="code" href="class_run.html#75818acc059367abd34e7ea567327270">00296</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#75818acc059367abd34e7ea567327270" title="Get program slot.">Run::cmdGetProgram_Click</a>(){
-<a name="l00297"></a>00297 
-<a name="l00298"></a>00298     QString fileName;
-<a name="l00299"></a>00299     QString searchPath=prefix_dir;
-<a name="l00300"></a>00300 
-<a name="l00301"></a>00301     <span class="keywordflow">if</span> (!txtProgramBin-&gt;text().isEmpty()){
-<a name="l00302"></a>00302         <span class="keywordflow">if</span> (!txtWorkDir-&gt;text().isEmpty()){
-<a name="l00303"></a>00303         searchPath=txtWorkDir-&gt;text();
-<a name="l00304"></a>00304         } <span class="keywordflow">else</span> {
-<a name="l00305"></a>00305         searchPath=txtProgramBin-&gt;text().left(txtProgramBin-&gt;text().length() - txtProgramBin-&gt;text().split(<span class="stringliteral">"/"</span>).last().length());;
-<a name="l00306"></a>00306         }
-<a name="l00307"></a>00307     }
-<a name="l00308"></a>00308 
-<a name="l00309"></a>00309     <span class="keywordflow">if</span> ((!QDir(searchPath).exists()) or (searchPath.isEmpty())){
-<a name="l00310"></a>00310         <span class="keywordflow">if</span> (QDir(prefix_dir).exists()){
-<a name="l00311"></a>00311            searchPath=prefix_dir;
-<a name="l00312"></a>00312         } <span class="keywordflow">else</span> {
-<a name="l00313"></a>00313            searchPath=QDir::homePath();
-<a name="l00314"></a>00314         }
-<a name="l00315"></a>00315      }
-<a name="l00316"></a>00316 
-<a name="l00317"></a>00317     QList&lt;QUrl&gt; prefix_urls;
-<a name="l00318"></a>00318     <span class="comment">// Adding side bar urls for FileOpen dialogs</span>
-<a name="l00319"></a>00319     <span class="keywordflow">if</span> (QDir(prefix_dir).exists())
-<a name="l00320"></a>00320        prefix_urls &lt;&lt; QUrl::fromLocalFile(prefix_dir);
-<a name="l00321"></a>00321 
-<a name="l00322"></a>00322     <span class="keywordflow">if</span> ((searchPath != prefix_dir) &amp;&amp; (QDir(searchPath).exists()))
-<a name="l00323"></a>00323         prefix_urls &lt;&lt; QUrl::fromLocalFile(searchPath);
+<a name="l00249"></a>00249 <span class="comment">/*************************************************************\</span>
+<a name="l00250"></a>00250 <span class="comment">|       CheckBox Events                           |</span>
+<a name="l00251"></a>00251 <span class="comment">\*************************************************************/</span>
+<a name="l00252"></a>00252 
+<a name="l00253"></a><a class="code" href="class_run.html#817733b1fdbfd9a528b54537b318efdb">00253</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#817733b1fdbfd9a528b54537b318efdb" title="CheckBox change slot.">Run::cbUseConsole_stateChanged</a>(<span class="keywordtype">int</span>){
+<a name="l00254"></a>00254     <span class="keywordflow">switch</span>(cbUseConsole-&gt;checkState()){
+<a name="l00255"></a>00255         <span class="keywordflow">case</span> Qt::Checked:
+<a name="l00256"></a>00256             txtWinedebug-&gt;setEnabled(TRUE);
+<a name="l00257"></a>00257         <span class="keywordflow">break</span>;
+<a name="l00258"></a>00258         <span class="keywordflow">default</span>:
+<a name="l00259"></a>00259             txtWinedebug-&gt;setEnabled(FALSE);
+<a name="l00260"></a>00260         <span class="keywordflow">break</span>;
+<a name="l00261"></a>00261     }
+<a name="l00262"></a>00262 
+<a name="l00263"></a>00263     <span class="keywordflow">return</span>;
+<a name="l00264"></a>00264 }
+<a name="l00265"></a>00265 
+<a name="l00266"></a><a class="code" href="class_run.html#c0253c07130ee78f62d34ad6d4604989">00266</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#c0253c07130ee78f62d34ad6d4604989" title="Resize window content slot.">Run::ResizeContent</a>(<span class="keywordtype">int</span> TabIndex){
+<a name="l00267"></a>00267     <span class="keywordflow">switch</span> (TabIndex){
+<a name="l00268"></a>00268         <span class="keywordflow">case</span> 1:
+<a name="l00269"></a>00269             twDlls-&gt;resizeRowsToContents();
+<a name="l00270"></a>00270             twDlls-&gt;resizeColumnsToContents();
+<a name="l00271"></a>00271             twDlls-&gt;horizontalHeader()-&gt;setStretchLastSection(TRUE);
+<a name="l00272"></a>00272         <span class="keywordflow">break</span>;
+<a name="l00273"></a>00273     }
+<a name="l00274"></a>00274 
+<a name="l00275"></a>00275     <span class="keywordflow">return</span>;
+<a name="l00276"></a>00276 }
+<a name="l00277"></a>00277 
+<a name="l00278"></a><a class="code" href="class_run.html#75818acc059367abd34e7ea567327270">00278</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#75818acc059367abd34e7ea567327270" title="Get program slot.">Run::cmdGetProgram_Click</a>(){
+<a name="l00279"></a>00279 
+<a name="l00280"></a>00280     QString fileName;
+<a name="l00281"></a>00281     QString searchPath=prefix_dir;
+<a name="l00282"></a>00282 
+<a name="l00283"></a>00283     <span class="keywordflow">if</span> (!txtProgramBin-&gt;text().isEmpty()){
+<a name="l00284"></a>00284         <span class="keywordflow">if</span> (!txtWorkDir-&gt;text().isEmpty()){
+<a name="l00285"></a>00285         searchPath=txtWorkDir-&gt;text();
+<a name="l00286"></a>00286         } <span class="keywordflow">else</span> {
+<a name="l00287"></a>00287         searchPath=txtProgramBin-&gt;text().left(txtProgramBin-&gt;text().length() - txtProgramBin-&gt;text().split(<span class="stringliteral">"/"</span>).last().length());;
+<a name="l00288"></a>00288         }
+<a name="l00289"></a>00289     }
+<a name="l00290"></a>00290 
+<a name="l00291"></a>00291     <span class="keywordflow">if</span> ((!QDir(searchPath).exists()) or (searchPath.isEmpty())){
+<a name="l00292"></a>00292         <span class="keywordflow">if</span> (QDir(prefix_dir).exists()){
+<a name="l00293"></a>00293            searchPath=prefix_dir;
+<a name="l00294"></a>00294         } <span class="keywordflow">else</span> {
+<a name="l00295"></a>00295            searchPath=QDir::homePath();
+<a name="l00296"></a>00296         }
+<a name="l00297"></a>00297      }
+<a name="l00298"></a>00298 
+<a name="l00299"></a>00299     QList&lt;QUrl&gt; prefix_urls;
+<a name="l00300"></a>00300     <span class="comment">// Adding side bar urls for FileOpen dialogs</span>
+<a name="l00301"></a>00301     <span class="keywordflow">if</span> (QDir(prefix_dir).exists())
+<a name="l00302"></a>00302        prefix_urls &lt;&lt; QUrl::fromLocalFile(prefix_dir);
+<a name="l00303"></a>00303 
+<a name="l00304"></a>00304     <span class="keywordflow">if</span> ((searchPath != prefix_dir) &amp;&amp; (QDir(searchPath).exists()))
+<a name="l00305"></a>00305         prefix_urls &lt;&lt; QUrl::fromLocalFile(searchPath);
+<a name="l00306"></a>00306 
+<a name="l00307"></a>00307     prefix_urls &lt;&lt; QUrl::fromLocalFile(QDir::homePath());
+<a name="l00308"></a>00308     prefix_urls &lt;&lt; QUrl::fromLocalFile(QDir::rootPath());
+<a name="l00309"></a>00309 
+<a name="l00310"></a>00310     QFileDialog dialog(<span class="keyword">this</span>);
+<a name="l00311"></a>00311       dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
+<a name="l00312"></a>00312       dialog.setWindowTitle(tr(<span class="stringliteral">"Open Exe file"</span>));
+<a name="l00313"></a>00313       dialog.setDirectory(searchPath);
+<a name="l00314"></a>00314       dialog.setFileMode(QFileDialog::ExistingFile);
+<a name="l00315"></a>00315       dialog.setNameFilter(tr(<span class="stringliteral">"Exe files (*.exe)"</span>));
+<a name="l00316"></a>00316       dialog.setSidebarUrls(prefix_urls);
+<a name="l00317"></a>00317 
+<a name="l00318"></a>00318      <span class="keywordflow">if</span> (dialog.exec())
+<a name="l00319"></a>00319         fileName = dialog.selectedFiles().first();
+<a name="l00320"></a>00320 
+<a name="l00321"></a>00321     <span class="keywordflow">if</span>(!fileName.isEmpty()){
+<a name="l00322"></a>00322         QStringList list1 = fileName.split(<span class="stringliteral">"/"</span>);
+<a name="l00323"></a>00323         txtProgramBin-&gt;setText(fileName);
 <a name="l00324"></a>00324 
-<a name="l00325"></a>00325     prefix_urls &lt;&lt; QUrl::fromLocalFile(QDir::homePath());
-<a name="l00326"></a>00326     prefix_urls &lt;&lt; QUrl::fromLocalFile(QDir::rootPath());
-<a name="l00327"></a>00327 
-<a name="l00328"></a>00328     QFileDialog dialog(<span class="keyword">this</span>);
-<a name="l00329"></a>00329       dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
-<a name="l00330"></a>00330       dialog.setWindowTitle(tr(<span class="stringliteral">"Open Exe file"</span>));
-<a name="l00331"></a>00331       dialog.setDirectory(searchPath);
-<a name="l00332"></a>00332       dialog.setFileMode(QFileDialog::ExistingFile);
-<a name="l00333"></a>00333       dialog.setNameFilter(tr(<span class="stringliteral">"Exe files (*.exe)"</span>));
-<a name="l00334"></a>00334       dialog.setSidebarUrls(prefix_urls);
-<a name="l00335"></a>00335 
-<a name="l00336"></a>00336      <span class="keywordflow">if</span> (dialog.exec())
-<a name="l00337"></a>00337         fileName = dialog.selectedFiles().first();
-<a name="l00338"></a>00338 
-<a name="l00339"></a>00339     <span class="keywordflow">if</span>(!fileName.isEmpty()){
-<a name="l00340"></a>00340         QStringList list1 = fileName.split(<span class="stringliteral">"/"</span>);
-<a name="l00341"></a>00341         txtProgramBin-&gt;setText(fileName);
-<a name="l00342"></a>00342 
-<a name="l00343"></a>00343         QString wrkDir;
-<a name="l00344"></a>00344         wrkDir = fileName.left(fileName.length() - list1.last().length());
-<a name="l00345"></a>00345         txtWorkDir-&gt;setText(wrkDir);
-<a name="l00346"></a>00346     }
-<a name="l00347"></a>00347 
-<a name="l00348"></a>00348     <span class="keywordflow">return</span>;
-<a name="l00349"></a>00349 }
-<a name="l00350"></a>00350 
-<a name="l00351"></a><a class="code" href="class_run.html#cb982a409ab77a068c53010087e868e9">00351</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#cb982a409ab77a068c53010087e868e9" title="Get work dir slot.">Run::cmdGetWorkDir_Click</a>(){
-<a name="l00352"></a>00352     QString searchPath=prefix_dir;
-<a name="l00353"></a>00353     QString fileName;
-<a name="l00354"></a>00354 
-<a name="l00355"></a>00355     <span class="keywordflow">if</span> ((!txtProgramBin-&gt;text().isEmpty()) and (QDir().exists(txtProgramBin-&gt;text()))){
-<a name="l00356"></a>00356         searchPath=txtProgramBin-&gt;text().left(txtProgramBin-&gt;text().length() - txtProgramBin-&gt;text().split(<span class="stringliteral">"/"</span>).last().length());;
-<a name="l00357"></a>00357     }
-<a name="l00358"></a>00358 
-<a name="l00359"></a>00359     <span class="keywordflow">if</span> (!QDir(searchPath).exists()){
-<a name="l00360"></a>00360         <span class="keywordflow">if</span> (QDir(prefix_dir).exists()){
-<a name="l00361"></a>00361            searchPath=prefix_dir;
-<a name="l00362"></a>00362         } <span class="keywordflow">else</span> {
-<a name="l00363"></a>00363            searchPath=QDir::homePath();
-<a name="l00364"></a>00364         }
-<a name="l00365"></a>00365      }
-<a name="l00366"></a>00366 
-<a name="l00367"></a>00367     QList&lt;QUrl&gt; prefix_urls;
-<a name="l00368"></a>00368     <span class="comment">// Adding side bar urls for FileOpen dialogs</span>
-<a name="l00369"></a>00369     <span class="keywordflow">if</span> (QDir(prefix_dir).exists())
-<a name="l00370"></a>00370        prefix_urls &lt;&lt; QUrl::fromLocalFile(prefix_dir);
-<a name="l00371"></a>00371 
-<a name="l00372"></a>00372     <span class="keywordflow">if</span> ((searchPath != prefix_dir) &amp;&amp; (QDir(searchPath).exists()))
-<a name="l00373"></a>00373         prefix_urls &lt;&lt; QUrl::fromLocalFile(searchPath);
-<a name="l00374"></a>00374 
-<a name="l00375"></a>00375     prefix_urls &lt;&lt; QUrl::fromLocalFile(QDir::homePath());
-<a name="l00376"></a>00376     prefix_urls &lt;&lt; QUrl::fromLocalFile(QDir::rootPath());
-<a name="l00377"></a>00377 
-<a name="l00378"></a>00378     QFileDialog dialog(<span class="keyword">this</span>);
-<a name="l00379"></a>00379       dialog.setFilter(QDir::Dirs | QDir::Hidden);
-<a name="l00380"></a>00380 
-<a name="l00381"></a>00381       dialog.setFileMode(QFileDialog::Directory);
-<a name="l00382"></a>00382       dialog.setWindowTitle(tr(<span class="stringliteral">"Open Directory"</span>));
-<a name="l00383"></a>00383       dialog.setDirectory(searchPath);
-<a name="l00384"></a>00384           <span class="comment">// This option wirksonly it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time</span>
-<a name="l00385"></a>00385           <span class="comment">//dialog.setOption(QFileDialog::ShowDirsOnly, true);</span>
-<a name="l00386"></a>00386 
-<a name="l00387"></a>00387       dialog.setSidebarUrls(prefix_urls);
-<a name="l00388"></a>00388      <span class="keywordflow">if</span> (dialog.exec())
-<a name="l00389"></a>00389         fileName = dialog.selectedFiles().first();
-<a name="l00390"></a>00390 
-<a name="l00391"></a>00391     <span class="keywordflow">if</span>(!fileName.isEmpty()){
-<a name="l00392"></a>00392         txtWorkDir-&gt;setText(fileName);
-<a name="l00393"></a>00393     }
-<a name="l00394"></a>00394     <span class="keywordflow">return</span>;
-<a name="l00395"></a>00395 }
-<a name="l00396"></a>00396 
+<a name="l00325"></a>00325         QString wrkDir;
+<a name="l00326"></a>00326         wrkDir = fileName.left(fileName.length() - list1.last().length());
+<a name="l00327"></a>00327         txtWorkDir-&gt;setText(wrkDir);
+<a name="l00328"></a>00328     }
+<a name="l00329"></a>00329 
+<a name="l00330"></a>00330     <span class="keywordflow">return</span>;
+<a name="l00331"></a>00331 }
+<a name="l00332"></a>00332 
+<a name="l00333"></a><a class="code" href="class_run.html#cb982a409ab77a068c53010087e868e9">00333</a> <span class="keywordtype">void</span> <a class="code" href="class_run.html#cb982a409ab77a068c53010087e868e9" title="Get work dir slot.">Run::cmdGetWorkDir_Click</a>(){
+<a name="l00334"></a>00334     QString searchPath=prefix_dir;
+<a name="l00335"></a>00335     QString fileName;
+<a name="l00336"></a>00336 
+<a name="l00337"></a>00337     <span class="keywordflow">if</span> ((!txtProgramBin-&gt;text().isEmpty()) and (QDir().exists(txtProgramBin-&gt;text()))){
+<a name="l00338"></a>00338         searchPath=txtProgramBin-&gt;text().left(txtProgramBin-&gt;text().length() - txtProgramBin-&gt;text().split(<span class="stringliteral">"/"</span>).last().length());;
+<a name="l00339"></a>00339     }
+<a name="l00340"></a>00340 
+<a name="l00341"></a>00341     <span class="keywordflow">if</span> (!QDir(searchPath).exists()){
+<a name="l00342"></a>00342         <span class="keywordflow">if</span> (QDir(prefix_dir).exists()){
+<a name="l00343"></a>00343            searchPath=prefix_dir;
+<a name="l00344"></a>00344         } <span class="keywordflow">else</span> {
+<a name="l00345"></a>00345            searchPath=QDir::homePath();
+<a name="l00346"></a>00346         }
+<a name="l00347"></a>00347      }
+<a name="l00348"></a>00348 
+<a name="l00349"></a>00349     QList&lt;QUrl&gt; prefix_urls;
+<a name="l00350"></a>00350     <span class="comment">// Adding side bar urls for FileOpen dialogs</span>
+<a name="l00351"></a>00351     <span class="keywordflow">if</span> (QDir(prefix_dir).exists())
+<a name="l00352"></a>00352        prefix_urls &lt;&lt; QUrl::fromLocalFile(prefix_dir);
+<a name="l00353"></a>00353 
+<a name="l00354"></a>00354     <span class="keywordflow">if</span> ((searchPath != prefix_dir) &amp;&amp; (QDir(searchPath).exists()))
+<a name="l00355"></a>00355         prefix_urls &lt;&lt; QUrl::fromLocalFile(searchPath);
+<a name="l00356"></a>00356 
+<a name="l00357"></a>00357     prefix_urls &lt;&lt; QUrl::fromLocalFile(QDir::homePath());
+<a name="l00358"></a>00358     prefix_urls &lt;&lt; QUrl::fromLocalFile(QDir::rootPath());
+<a name="l00359"></a>00359 
+<a name="l00360"></a>00360     QFileDialog dialog(<span class="keyword">this</span>);
+<a name="l00361"></a>00361       dialog.setFilter(QDir::Dirs | QDir::Hidden);
+<a name="l00362"></a>00362 
+<a name="l00363"></a>00363       dialog.setFileMode(QFileDialog::Directory);
+<a name="l00364"></a>00364       dialog.setWindowTitle(tr(<span class="stringliteral">"Open Directory"</span>));
+<a name="l00365"></a>00365       dialog.setDirectory(searchPath);
+<a name="l00366"></a>00366           <span class="comment">// This option wirksonly it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time</span>
+<a name="l00367"></a>00367           <span class="comment">//dialog.setOption(QFileDialog::ShowDirsOnly, true);</span>
+<a name="l00368"></a>00368 
+<a name="l00369"></a>00369       dialog.setSidebarUrls(prefix_urls);
+<a name="l00370"></a>00370      <span class="keywordflow">if</span> (dialog.exec())
+<a name="l00371"></a>00371         fileName = dialog.selectedFiles().first();
+<a name="l00372"></a>00372 
+<a name="l00373"></a>00373     <span class="keywordflow">if</span>(!fileName.isEmpty()){
+<a name="l00374"></a>00374         txtWorkDir-&gt;setText(fileName);
+<a name="l00375"></a>00375     }
+<a name="l00376"></a>00376     <span class="keywordflow">return</span>;
+<a name="l00377"></a>00377 }
+<a name="l00378"></a>00378 
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

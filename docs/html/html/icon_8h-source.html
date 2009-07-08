@@ -51,52 +51,60 @@
 <a name="l00030"></a>00030 <span class="preprocessor">#ifndef ICON_H</span>
 <a name="l00031"></a>00031 <span class="preprocessor"></span><span class="preprocessor">#define ICON_H</span>
 <a name="l00032"></a>00032 <span class="preprocessor"></span>
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="preprocessor">#include "config.h"</span>
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037 <span class="preprocessor">#include "prefix.h"</span>
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039 <span class="preprocessor">#include &lt;QList&gt;</span>
-<a name="l00040"></a>00040 <span class="preprocessor">#include &lt;QString&gt;</span>
-<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;QStringList&gt;</span>
-<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;QSqlQuery&gt;</span>
-<a name="l00043"></a>00043 <span class="preprocessor">#include &lt;QSqlError&gt;</span>
-<a name="l00044"></a>00044 <span class="preprocessor">#include &lt;QDebug&gt;</span>
-<a name="l00045"></a>00045 <span class="preprocessor">#include &lt;QVariant&gt;</span>
-<a name="l00046"></a>00046 
-<a name="l00053"></a><a class="code" href="class_icon.html">00053</a> <span class="keyword">class </span><a class="code" href="class_icon.html" title="This class provide database functions for Icon table.">Icon</a> : <span class="keyword">public</span> <a class="code" href="class_prefix.html" title="This class provide database functions for prefix table.">Prefix</a>
-<a name="l00054"></a>00054 {
-<a name="l00055"></a>00055 <span class="keyword">public</span>:
-<a name="l00057"></a>00057     <a class="code" href="class_icon.html#2c06009b9034912dea464e9f3c3791f9" title="Class constructor.">Icon</a>();
-<a name="l00058"></a>00058 
-<a name="l00065"></a>00065     QList&lt;QStringList&gt; <a class="code" href="class_icon.html#0bc660596536bf60ab5809be84052738" title="This function gets all icons fields by prefix_id and dir_id key value from table...">getIconsInfo</a>(<span class="keyword">const</span> QString prefix_id, <span class="keyword">const</span> QString dir_id) <span class="keyword">const</span>;
-<a name="l00066"></a>00066 
-<a name="l00072"></a>00072     QList&lt;QStringList&gt; <a class="code" href="class_icon.html#0bc660596536bf60ab5809be84052738" title="This function gets all icons fields by prefix_id and dir_id key value from table...">getIconsInfo</a>(<span class="keyword">const</span> QString prefix_id) <span class="keyword">const</span>;
-<a name="l00073"></a>00073 
-<a name="l00081"></a>00081     QList&lt;QStringList&gt; <a class="code" href="class_icon.html#3d9ccf121c9e957c5b8b636cb9d1bcd4" title="This function gets all icons fields by prefix_name and dir_name (optional by icon...">getIconsInfoByNames</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString icon_name = <span class="stringliteral">""</span>) <span class="keyword">const</span>;
-<a name="l00082"></a>00082 
-<a name="l00089"></a>00089     QList&lt;QStringList&gt; <a class="code" href="class_icon.html#4bc35a51716d98134cceb1cd2eabe396" title="This function gets all icons fields by prefix_name (optional by icon name) keys value...">getIconsInfoByPrefixName</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString icon_name = <span class="stringliteral">""</span>) <span class="keyword">const</span>;
-<a name="l00090"></a>00090 
-<a name="l00096"></a>00096     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#a2c6f74713b94a326187383feb34eb69" title="This function deletes all icons fields by prefix_name keys value from table.">delIconsByPrefixName</a>(<span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
-<a name="l00097"></a>00097 
-<a name="l00103"></a>00103     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#a5ff52fdd1ada3b63f1814da1eddd9f5" title="This function delete icon field by prefix_name key value from table.">delIcon</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString icon_name) <span class="keyword">const</span>;
-<a name="l00104"></a>00104 
-<a name="l00111"></a>00111     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#a5ff52fdd1ada3b63f1814da1eddd9f5" title="This function delete icon field by prefix_name key value from table.">delIcon</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString icon_name) <span class="keyword">const</span>;
-<a name="l00112"></a>00112 
-<a name="l00119"></a>00119     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#897debf21acdd6676cce4ee6386c208b" title="This function check is reccord exists by icon_name or not.">isExistsByName</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString icon_name) <span class="keyword">const</span>;
-<a name="l00120"></a>00120 
-<a name="l00128"></a>00128     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#897debf21acdd6676cce4ee6386c208b" title="This function check is reccord exists by icon_name or not.">isExistsByName</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString icon_name) <span class="keyword">const</span>;
-<a name="l00129"></a>00129 
-<a name="l00141"></a>00141     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#3cb4eb98b1d2dfd0477559d60771ade9" title="This function add icon record.">addIcon</a>(<span class="keyword">const</span> QString cmdargs, <span class="keyword">const</span> QString exec, <span class="keyword">const</span> QString icon_path, <span class="keyword">const</span> QString desc, <span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString name, <span class="keyword">const</span> QString <span class="keyword">override</span>=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString winedebug=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString useconsole=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString display=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString wrkdir=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString desktop=<span class="stringliteral">""</span>, <span class="keyword">const</span> <span class="keywordtype">int</span> nice=0) <span class="keyword">const</span>;
-<a name="l00142"></a>00142 
-<a name="l00154"></a>00154     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#cade559c5481faf56714dd522e048a30" title="This function updates icon record by name, prefix_name and dir_name.">updateIcon</a>(<span class="keyword">const</span> QString cmdargs, <span class="keyword">const</span> QString exec, <span class="keyword">const</span> QString icon_path, <span class="keyword">const</span> QString desc, <span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString name, <span class="keyword">const</span> QString icon_name, <span class="keyword">const</span> QString <span class="keyword">override</span>=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString winedebug=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString useconsole=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString display=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString wrkdir=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString desktop=<span class="stringliteral">""</span>, <span class="keyword">const</span> <span class="keywordtype">int</span> nice=0) <span class="keyword">const</span>;
-<a name="l00155"></a>00155 
-<a name="l00156"></a>00156  };
-<a name="l00157"></a>00157 
-<a name="l00158"></a>00158 <span class="preprocessor">#endif // ICON_H</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#include "config.h"</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#include "prefix.h"</span>
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 <span class="preprocessor">#include &lt;QList&gt;</span>
+<a name="l00037"></a>00037 <span class="preprocessor">#include &lt;QString&gt;</span>
+<a name="l00038"></a>00038 <span class="preprocessor">#include &lt;QStringList&gt;</span>
+<a name="l00039"></a>00039 <span class="preprocessor">#include &lt;QSqlQuery&gt;</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#include &lt;QSqlError&gt;</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;QDebug&gt;</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;QVariant&gt;</span>
+<a name="l00043"></a>00043 
+<a name="l00050"></a><a class="code" href="class_icon.html">00050</a> <span class="keyword">class </span><a class="code" href="class_icon.html" title="This class provide database functions for Icon table.">Icon</a> : <span class="keyword">public</span> <a class="code" href="class_prefix.html" title="This class provide database functions for prefix table.">Prefix</a>
+<a name="l00051"></a>00051 {
+<a name="l00052"></a>00052 <span class="keyword">public</span>:
+<a name="l00054"></a>00054     <a class="code" href="class_icon.html#2c06009b9034912dea464e9f3c3791f9" title="Class constructor.">Icon</a>();
+<a name="l00055"></a>00055 
+<a name="l00062"></a>00062     QList&lt;QStringList&gt; <a class="code" href="class_icon.html#0bc660596536bf60ab5809be84052738" title="This function gets all icons fields by prefix_id and dir_id key value from table...">getIconsInfo</a>(<span class="keyword">const</span> QString prefix_id, <span class="keyword">const</span> QString dir_id) <span class="keyword">const</span>;
+<a name="l00063"></a>00063 
+<a name="l00069"></a>00069     QList&lt;QStringList&gt; <a class="code" href="class_icon.html#0bc660596536bf60ab5809be84052738" title="This function gets all icons fields by prefix_id and dir_id key value from table...">getIconsInfo</a>(<span class="keyword">const</span> QString prefix_id) <span class="keyword">const</span>;
+<a name="l00070"></a>00070 
+<a name="l00078"></a>00078     QList&lt;QStringList&gt; <a class="code" href="class_icon.html#3d9ccf121c9e957c5b8b636cb9d1bcd4" title="This function gets all icons fields by prefix_name and dir_name (optional by icon...">getIconsInfoByNames</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString icon_name = <span class="stringliteral">""</span>) <span class="keyword">const</span>;
+<a name="l00079"></a>00079 
+<a name="l00087"></a>00087     QStringList <a class="code" href="class_icon.html#105d3647762225d330dc5bc88ed0199f" title="This function gets icon fields by prefix_name, dir_name and icon name keys value...">getByName</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString icon_name = <span class="stringliteral">""</span>) <span class="keyword">const</span>;
+<a name="l00088"></a>00088     QList&lt;QStringList&gt; getByPrefixAndDirName(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name) <span class="keyword">const</span>;
+<a name="l00089"></a>00089 
+<a name="l00100"></a>00100     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#c63137ccb842ee9a33ddb8f856e0c0d6" title="Copy icon.">copyIcon</a>(<span class="keyword">const</span> QString icon_name, <span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString new_icon_name, <span class="keyword">const</span> QString new_prefix_name, <span class="keyword">const</span> QString new_dir_name) <span class="keyword">const</span>;
+<a name="l00101"></a>00101 
+<a name="l00110"></a>00110     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#dedb61c3e30d6c524aeb89f2c84588f2" title="Rename icon.">renameIcon</a>(<span class="keyword">const</span> QString icon_name, <span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString new_icon_name) <span class="keyword">const</span>;
+<a name="l00111"></a>00111 
+<a name="l00118"></a>00118     QList&lt;QStringList&gt; <a class="code" href="class_icon.html#4bc35a51716d98134cceb1cd2eabe396" title="This function gets all icons fields by prefix_name (optional by icon name) keys value...">getIconsInfoByPrefixName</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString icon_name = <span class="stringliteral">""</span>) <span class="keyword">const</span>;
+<a name="l00119"></a>00119 
+<a name="l00125"></a>00125     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#a2c6f74713b94a326187383feb34eb69" title="This function deletes all icons fields by prefix_name keys value from table.">delIconsByPrefixName</a>(<span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
+<a name="l00126"></a>00126 
+<a name="l00132"></a>00132     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#a5ff52fdd1ada3b63f1814da1eddd9f5" title="This function delete icon field by prefix_name key value from table.">delIcon</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString icon_name) <span class="keyword">const</span>;
+<a name="l00133"></a>00133 
+<a name="l00140"></a>00140     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#a5ff52fdd1ada3b63f1814da1eddd9f5" title="This function delete icon field by prefix_name key value from table.">delIcon</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString icon_name) <span class="keyword">const</span>;
+<a name="l00141"></a>00141 
+<a name="l00148"></a>00148     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#897debf21acdd6676cce4ee6386c208b" title="This function check is reccord exists by icon_name or not.">isExistsByName</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString icon_name) <span class="keyword">const</span>;
+<a name="l00149"></a>00149 
+<a name="l00157"></a>00157     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#897debf21acdd6676cce4ee6386c208b" title="This function check is reccord exists by icon_name or not.">isExistsByName</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString icon_name) <span class="keyword">const</span>;
+<a name="l00158"></a>00158 
+<a name="l00170"></a>00170     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#3cb4eb98b1d2dfd0477559d60771ade9" title="This function add icon record.">addIcon</a>(<span class="keyword">const</span> QString cmdargs, <span class="keyword">const</span> QString exec, <span class="keyword">const</span> QString icon_path, <span class="keyword">const</span> QString desc, <span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString name, <span class="keyword">const</span> QString <span class="keyword">override</span>=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString winedebug=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString useconsole=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString display=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString wrkdir=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString desktop=<span class="stringliteral">""</span>, <span class="keyword">const</span> <span class="keywordtype">int</span> nice=0) <span class="keyword">const</span>;
+<a name="l00171"></a>00171 
+<a name="l00183"></a>00183     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#cade559c5481faf56714dd522e048a30" title="This function updates icon record by name, prefix_name and dir_name.">updateIcon</a>(<span class="keyword">const</span> QString cmdargs, <span class="keyword">const</span> QString exec, <span class="keyword">const</span> QString icon_path, <span class="keyword">const</span> QString desc, <span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString name, <span class="keyword">const</span> QString icon_name, <span class="keyword">const</span> QString <span class="keyword">override</span>=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString winedebug=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString useconsole=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString display=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString wrkdir=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString desktop=<span class="stringliteral">""</span>, <span class="keyword">const</span> <span class="keywordtype">int</span> nice=0) <span class="keyword">const</span>;
+<a name="l00184"></a>00184 
+<a name="l00193"></a>00193     <span class="keywordtype">bool</span> <a class="code" href="class_icon.html#cade559c5481faf56714dd522e048a30" title="This function updates icon record by name, prefix_name and dir_name.">updateIcon</a>(<span class="keyword">const</span> QString icon_name, <span class="keyword">const</span> QString prefix_id, <span class="keyword">const</span> QString dir_id, <span class="keyword">const</span> QString old_prefix_id, <span class="keyword">const</span> QString old_dir_id, <span class="keyword">const</span> QString old_icon_name) <span class="keyword">const</span>;
+<a name="l00194"></a>00194 
+<a name="l00195"></a>00195 
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197  };
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199 <span class="preprocessor">#endif // ICON_H</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -69,17 +69,25 @@
 <a name="l00055"></a>00055     <a class="code" href="class_dir.html#115c8eedb11ea03f79338a780920ae84" title="Class constructor.">Dir</a>();
 <a name="l00056"></a>00056 
 <a name="l00062"></a>00062     QList&lt;QStringList&gt; <a class="code" href="class_dir.html#06f17476fda218a09fae7666af386ebb" title="This function gets all table fields by prefixId key value from table.">getFieldsByPrefixId</a>(<span class="keyword">const</span> QString prefix_id) <span class="keyword">const</span>;
-<a name="l00063"></a>00063 
-<a name="l00069"></a>00069     <span class="keywordtype">bool</span> <a class="code" href="class_dir.html#4377f6c6c6f645003baa77b7c8d40eee" title="This function deletes all dirs fields by prefix_name keys value from table.">delDir</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name = <span class="stringliteral">""</span>) <span class="keyword">const</span>;
-<a name="l00070"></a>00070 
-<a name="l00077"></a>00077     <span class="keywordtype">bool</span> <a class="code" href="class_dir.html#6313f2de0472c5d923f18102711c1ea5" title="This function add dir by name and prefix_name.">addDir</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name) <span class="keyword">const</span>;
-<a name="l00078"></a>00078 
-<a name="l00085"></a>00085     <span class="keywordtype">bool</span> <a class="code" href="class_dir.html#ff8fecc0c28a329cc3536296d77d274c" title="This function check is reccord exists by dir_name or not.">isExistsByName</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name) <span class="keyword">const</span>;
-<a name="l00086"></a>00086 };
+<a name="l00063"></a>00063     QList&lt;QStringList&gt; <a class="code" href="class_dir.html#3cab3839e46acbbe986471db4ab67d0d" title="This function gets all table fields by prefixName key value from table.">getFieldsByPrefixName</a>(<span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
+<a name="l00064"></a>00064 
+<a name="l00070"></a>00070     <span class="keywordtype">bool</span> <a class="code" href="class_dir.html#4377f6c6c6f645003baa77b7c8d40eee" title="This function deletes all dirs fields by prefix_name keys value from table.">delDir</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name = <span class="stringliteral">""</span>) <span class="keyword">const</span>;
+<a name="l00071"></a>00071 
+<a name="l00078"></a>00078     <span class="keywordtype">bool</span> <a class="code" href="class_dir.html#6313f2de0472c5d923f18102711c1ea5" title="This function add dir by name and prefix_name.">addDir</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name) <span class="keyword">const</span>;
+<a name="l00079"></a>00079 
+<a name="l00086"></a>00086     <span class="keywordtype">bool</span> <a class="code" href="class_dir.html#ff8fecc0c28a329cc3536296d77d274c" title="This function check is reccord exists by dir_name or not.">isExistsByName</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name) <span class="keyword">const</span>;
 <a name="l00087"></a>00087 
-<a name="l00088"></a>00088 <span class="preprocessor">#endif // DIR_H</span>
+<a name="l00094"></a>00094     QString <a class="code" href="class_dir.html#c48eaaad253aa034cd5ebc6ff331bc60" title="This function gets prefix id by name.">getId</a>(<span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
+<a name="l00095"></a>00095 
+<a name="l00103"></a>00103     <span class="keywordtype">bool</span> <a class="code" href="class_dir.html#7f2c1c24f60ab49b61b03898297b443d" title="Rename dir.">renameDir</a>(<span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString new_dir_name) <span class="keyword">const</span>;
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 };
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109 <span class="preprocessor">#endif // DIR_H</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

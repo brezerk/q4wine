@@ -53,44 +53,60 @@
 <a name="l00032"></a>00032 <span class="preprocessor"></span>
 <a name="l00033"></a>00033 <span class="preprocessor">#include "config.h"</span>
 <a name="l00034"></a>00034 <span class="preprocessor">#include "winetrickshelp.h"</span>
-<a name="l00035"></a>00035 <span class="preprocessor">#include &lt;ui_winetricks.h&gt;</span>
-<a name="l00036"></a>00036 <span class="preprocessor">#include &lt;QtGui/QDialog&gt;</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include "ui_winetricks.h"</span>
+<a name="l00036"></a>00036 
 <a name="l00037"></a>00037 <span class="preprocessor">#include &lt;QStringList&gt;</span>
 <a name="l00038"></a>00038 <span class="preprocessor">#include &lt;QProcess&gt;</span>
 <a name="l00039"></a>00039 <span class="preprocessor">#include &lt;QMessageBox&gt;</span>
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="preprocessor">#include "coremethods.h"</span>
+<a name="l00040"></a>00040 <span class="preprocessor">#include &lt;QtGui&gt;</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;QLibrary&gt;</span>
 <a name="l00042"></a>00042 <span class="preprocessor">#include "process.h"</span>
 <a name="l00043"></a>00043 
-<a name="l00044"></a>00044 <span class="keyword">class </span>winetricks : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::winetricks {
-<a name="l00045"></a>00045     Q_OBJECT
-<a name="l00046"></a>00046     Q_DISABLE_COPY(winetricks)
-<a name="l00047"></a>00047 public:
-<a name="l00048"></a>00048     winetricks(QString prefixName, QWidget * parent = 0, Qt::WFlags f = 0);
-<a name="l00049"></a>00049     virtual ~winetricks();
-<a name="l00050"></a>00050     QString _prefixName;
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052 protected:
-<a name="l00053"></a>00053     <span class="comment">//virtual void changeEvent(QEvent *e);</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#include "src/core/database/prefix.h"</span>
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 <span class="preprocessor">#include &lt;q4wine-lib/main.h&gt;</span>
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="keyword">class </span>winetricks : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::winetricks {
+<a name="l00049"></a>00049     Q_OBJECT
+<a name="l00050"></a>00050     Q_DISABLE_COPY(winetricks)
+<a name="l00051"></a>00051 public:
+<a name="l00052"></a>00052     winetricks(QString prefixName, QWidget * parent = 0, Qt::WFlags f = 0);
+<a name="l00053"></a>00053     QString _prefixName;
 <a name="l00054"></a>00054 
-<a name="l00055"></a>00055     private slots:
-<a name="l00056"></a>00056         <span class="keywordtype">void</span> run_winetricks();
-<a name="l00057"></a>00057         <span class="keywordtype">void</span> install_winetricks();
-<a name="l00058"></a>00058                 <span class="keywordtype">void</span> run_help();
-<a name="l00059"></a>00059     private:
-<a name="l00060"></a>00060         QString console_bin;
-<a name="l00061"></a>00061         QString console_args;
-<a name="l00062"></a>00062         QString prefix_path;
-<a name="l00063"></a>00063         QString winetricks_bin;
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065         <span class="keywordtype">void</span> downloadwinetricks();
-<a name="l00066"></a>00066         <span class="keywordtype">void</span> removefile(QString);
-<a name="l00067"></a>00067         CoreMethods *core;
-<a name="l00068"></a>00068 };
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070 <span class="preprocessor">#endif // WINETRICKS_H</span>
+<a name="l00055"></a>00055 protected:
+<a name="l00056"></a>00056     <span class="comment">//virtual void changeEvent(QEvent *e);</span>
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 private slots:
+<a name="l00059"></a>00059     <span class="keywordtype">void</span> on_lstMain_itemClicked(QListWidgetItem* item);
+<a name="l00060"></a>00060     <span class="keywordtype">void</span> run_winetricks();
+<a name="l00061"></a>00061     <span class="keywordtype">void</span> install_winetricks();
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 private:
+<a name="l00065"></a>00065     typedef <span class="keywordtype">void</span> *CoreLibPrototype (<span class="keywordtype">bool</span>);
+<a name="l00066"></a>00066         CoreLibPrototype *CoreLibClassPointer;
+<a name="l00067"></a>00067         <a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a> *CoreLib;
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069     QLibrary libq4wine;
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071     <a class="code" href="class_prefix.html" title="This class provide database functions for prefix table.">Prefix</a> *db_prefix;
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073     QString console_bin;
+<a name="l00074"></a>00074     QString console_args;
+<a name="l00075"></a>00075     QString prefix_path;
+<a name="l00076"></a>00076     QString winetricks_bin;
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078     <span class="keywordtype">void</span> downloadwinetricks();
+<a name="l00079"></a>00079     <span class="keywordtype">void</span> removefile(QString);
+<a name="l00080"></a>00080     <span class="keywordtype">void</span> parse();
+<a name="l00081"></a>00081     <span class="keywordtype">void</span> addToList (QString arg);
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083     QStringList names;
+<a name="l00084"></a>00084     QStringList descs;
+<a name="l00085"></a>00085 };
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 <span class="preprocessor">#endif // WINETRICKS_H</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

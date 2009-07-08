@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>605</width>
-    <height>517</height>
+    <width>603</width>
+    <height>515</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,75 +29,63 @@
        <attribute name="title">
         <string>Programs</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="1">
-         <widget class="QGroupBox" name="gbIcons">
-          <property name="title">
-           <string>Icons</string>
-          </property>
-         </widget>
+       <widget class="QTreeWidget" name="twPrograms">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>30</y>
+          <width>234</width>
+          <height>229</height>
+         </rect>
+        </property>
+        <property name="contextMenuPolicy">
+         <enum>Qt::CustomContextMenu</enum>
+        </property>
+        <property name="autoExpandDelay">
+         <number>0</number>
+        </property>
+        <property name="itemsExpandable">
+         <bool>true</bool>
+        </property>
+        <column>
+         <property name="text">
+          <string>Prefixes</string>
+         </property>
+        </column>
+        <item>
+         <property name="text">
+          <string>Default</string>
+         </property>
         </item>
-        <item row="1" column="0" colspan="2">
-         <widget class="QGroupBox" name="gbInfo">
-          <property name="title">
-           <string>Info</string>
-          </property>
-          <layout class="QGridLayout" name="_5">
-           <item row="0" column="0">
-            <widget class="QLabel" name="lblInfo">
-             <property name="text">
-              <string>Name:&lt;br&gt;Desctiption:</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QGroupBox" name="gbCategoryes">
-          <property name="minimumSize">
-           <size>
-            <width>250</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>250</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="title">
-           <string>Сategories</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="0">
-            <widget class="QTreeWidget" name="twPrograms">
-             <property name="contextMenuPolicy">
-              <enum>Qt::CustomContextMenu</enum>
-             </property>
-             <property name="autoExpandDelay">
-              <number>0</number>
-             </property>
-             <property name="itemsExpandable">
-              <bool>true</bool>
-             </property>
-             <column>
-              <property name="text">
-               <string>Prefixes</string>
-              </property>
-             </column>
-             <item>
-              <property name="text">
-               <string>Default</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-       </layout>
+       </widget>
+       <widget class="QGroupBox" name="gbInfo">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>345</y>
+          <width>234</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="title">
+         <string>Info</string>
+        </property>
+        <layout class="QGridLayout" name="_5">
+         <item row="0" column="0">
+          <widget class="QLabel" name="lblInfo">
+           <property name="text">
+            <string>Name:&lt;br&gt;Desctiption:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
@@ -404,8 +392,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>605</width>
-     <height>23</height>
+     <width>603</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">

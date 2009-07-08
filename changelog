@@ -21,6 +21,7 @@ Version 0.113
   - Added Drag support q4wine icons export;
   - Added Drop support for wine .exe and .com files;
   - Added Drop support for wine .bat files (Now autoadd wineconsole binary args);
+  - Added splitter for programs and icons lists;
 
  Fixed:
   - Linux: Improved wine process list build (thx Sergey Kishchenko (tilarids));

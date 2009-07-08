@@ -59,7 +59,7 @@
 <a name="l00038"></a>00038     QList&lt;QStringList&gt; valuelist;
 <a name="l00039"></a>00039 
 <a name="l00040"></a>00040     QSqlQuery query;
-<a name="l00041"></a>00041     query.prepare(<span class="stringliteral">"SELECT id, name, prefix_id FROM dir WHERE prefix_id=:prefix_id"</span>);
+<a name="l00041"></a>00041     query.prepare(<span class="stringliteral">"SELECT id, name FROM dir WHERE prefix_id=:prefix_id"</span>);
 <a name="l00042"></a>00042     query.bindValue(<span class="stringliteral">":prefix_id"</span>, prefix_id);
 <a name="l00043"></a>00043 
 <a name="l00044"></a>00044     <span class="keywordflow">if</span> (query.exec()){
@@ -79,56 +79,119 @@
 <a name="l00058"></a>00058     <span class="keywordflow">return</span> valuelist;
 <a name="l00059"></a>00059 }
 <a name="l00060"></a>00060 
-<a name="l00061"></a><a class="code" href="class_dir.html#4377f6c6c6f645003baa77b7c8d40eee">00061</a> <span class="keywordtype">bool</span>  <a class="code" href="class_dir.html#4377f6c6c6f645003baa77b7c8d40eee" title="This function deletes all dirs fields by prefix_name keys value from table.">Dir::delDir</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name)<span class="keyword"> const</span>{
-<a name="l00062"></a>00062     QSqlQuery query;
-<a name="l00063"></a>00063     <span class="keywordflow">if</span> (dir_name.isEmpty()){
-<a name="l00064"></a>00064         query.prepare(<span class="stringliteral">"DELETE FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)"</span>);
-<a name="l00065"></a>00065     } <span class="keywordflow">else</span> {
-<a name="l00066"></a>00066         query.prepare(<span class="stringliteral">"DELETE FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) and name=:dir_name"</span>);
-<a name="l00067"></a>00067         query.bindValue(<span class="stringliteral">":dir_name"</span>, dir_name);
-<a name="l00068"></a>00068     }
-<a name="l00069"></a>00069     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071     <span class="keywordflow">if</span> (!query.exec()){
-<a name="l00072"></a>00072         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
-<a name="l00073"></a>00073         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00074"></a>00074     }
-<a name="l00075"></a>00075     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00076"></a>00076 }
-<a name="l00077"></a>00077 
-<a name="l00078"></a><a class="code" href="class_dir.html#6313f2de0472c5d923f18102711c1ea5">00078</a> <span class="keywordtype">bool</span> <a class="code" href="class_dir.html#6313f2de0472c5d923f18102711c1ea5" title="This function add dir by name and prefix_name.">Dir::addDir</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name)<span class="keyword"> const</span>{
-<a name="l00079"></a>00079     QSqlQuery query;
-<a name="l00080"></a>00080     query.prepare(<span class="stringliteral">"INSERT INTO dir(name, prefix_id) VALUES(:name, (SELECT id FROM prefix WHERE name=:prefix_name))"</span>);
-<a name="l00081"></a>00081     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
-<a name="l00082"></a>00082     query.bindValue(<span class="stringliteral">":name"</span>, dir_name);
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084     <span class="keywordflow">if</span> (!query.exec()){
-<a name="l00085"></a>00085         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
-<a name="l00086"></a>00086         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00087"></a>00087     }
-<a name="l00088"></a>00088     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00089"></a>00089 }
-<a name="l00090"></a>00090 
-<a name="l00091"></a><a class="code" href="class_dir.html#ff8fecc0c28a329cc3536296d77d274c">00091</a> <span class="keywordtype">bool</span> <a class="code" href="class_dir.html#ff8fecc0c28a329cc3536296d77d274c" title="This function check is reccord exists by dir_name or not.">Dir::isExistsByName</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name)<span class="keyword"> const</span>{
-<a name="l00092"></a>00092     QSqlQuery query;
-<a name="l00093"></a>00093     query.prepare(<span class="stringliteral">"SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND name=:dir_name"</span>);
-<a name="l00094"></a>00094     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
-<a name="l00095"></a>00095     query.bindValue(<span class="stringliteral">":dir_name"</span>, dir_name);
-<a name="l00096"></a>00096 
-<a name="l00097"></a>00097     <span class="keywordflow">if</span> (!query.exec()){
-<a name="l00098"></a>00098         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
-<a name="l00099"></a>00099         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00100"></a>00100     }
+<a name="l00061"></a><a class="code" href="class_dir.html#3cab3839e46acbbe986471db4ab67d0d">00061</a> QList&lt;QStringList&gt; <a class="code" href="class_dir.html#3cab3839e46acbbe986471db4ab67d0d" title="This function gets all table fields by prefixName key value from table.">Dir::getFieldsByPrefixName</a>(<span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
+<a name="l00062"></a>00062     QList&lt;QStringList&gt; valuelist;
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064     QSqlQuery query;
+<a name="l00065"></a>00065     query.prepare(<span class="stringliteral">"SELECT id, name FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)"</span>);
+<a name="l00066"></a>00066     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068     <span class="keywordflow">if</span> (query.exec()){
+<a name="l00069"></a>00069         <span class="keywordflow">while</span> (query.next()) {
+<a name="l00070"></a>00070             QStringList values;
+<a name="l00071"></a>00071             <span class="keywordtype">int</span> i=0;
+<a name="l00072"></a>00072             <span class="keywordflow">while</span> (query.value(i).isValid()){
+<a name="l00073"></a>00073                 values.append(query.value(i).toString());
+<a name="l00074"></a>00074                 i++;
+<a name="l00075"></a>00075             }
+<a name="l00076"></a>00076             valuelist.append(values);
+<a name="l00077"></a>00077         }
+<a name="l00078"></a>00078     } <span class="keywordflow">else</span> {
+<a name="l00079"></a>00079         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError();
+<a name="l00080"></a>00080         valuelist.clear();
+<a name="l00081"></a>00081     }
+<a name="l00082"></a>00082     <span class="keywordflow">return</span> valuelist;
+<a name="l00083"></a>00083 }
+<a name="l00084"></a>00084 
+<a name="l00085"></a><a class="code" href="class_dir.html#4377f6c6c6f645003baa77b7c8d40eee">00085</a> <span class="keywordtype">bool</span>  <a class="code" href="class_dir.html#4377f6c6c6f645003baa77b7c8d40eee" title="This function deletes all dirs fields by prefix_name keys value from table.">Dir::delDir</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name)<span class="keyword"> const</span>{
+<a name="l00086"></a>00086     QSqlQuery query;
+<a name="l00087"></a>00087     <span class="keywordflow">if</span> (dir_name.isEmpty()){
+<a name="l00088"></a>00088         query.prepare(<span class="stringliteral">"DELETE FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)"</span>);
+<a name="l00089"></a>00089     } <span class="keywordflow">else</span> {
+<a name="l00090"></a>00090         query.prepare(<span class="stringliteral">"DELETE FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) and name=:dir_name"</span>);
+<a name="l00091"></a>00091         query.bindValue(<span class="stringliteral">":dir_name"</span>, dir_name);
+<a name="l00092"></a>00092     }
+<a name="l00093"></a>00093     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095     <span class="keywordflow">if</span> (!query.exec()){
+<a name="l00096"></a>00096         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
+<a name="l00097"></a>00097         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00098"></a>00098     }
+<a name="l00099"></a>00099     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00100"></a>00100 }
 <a name="l00101"></a>00101 
-<a name="l00102"></a>00102     query.first();
-<a name="l00103"></a>00103     <span class="keywordflow">if</span> (query.isValid()){
-<a name="l00104"></a>00104         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00105"></a>00105     }
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107     <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00108"></a>00108 }
+<a name="l00102"></a><a class="code" href="class_dir.html#6313f2de0472c5d923f18102711c1ea5">00102</a> <span class="keywordtype">bool</span> <a class="code" href="class_dir.html#6313f2de0472c5d923f18102711c1ea5" title="This function add dir by name and prefix_name.">Dir::addDir</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name)<span class="keyword"> const</span>{
+<a name="l00103"></a>00103     QSqlQuery query;
+<a name="l00104"></a>00104     query.prepare(<span class="stringliteral">"INSERT INTO dir(name, prefix_id) VALUES(:name, (SELECT id FROM prefix WHERE name=:prefix_name))"</span>);
+<a name="l00105"></a>00105     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00106"></a>00106     query.bindValue(<span class="stringliteral">":name"</span>, dir_name);
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108     <span class="keywordflow">if</span> (!query.exec()){
+<a name="l00109"></a>00109         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
+<a name="l00110"></a>00110         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00111"></a>00111     }
+<a name="l00112"></a>00112     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00113"></a>00113 }
+<a name="l00114"></a>00114 
+<a name="l00115"></a><a class="code" href="class_dir.html#ff8fecc0c28a329cc3536296d77d274c">00115</a> <span class="keywordtype">bool</span> <a class="code" href="class_dir.html#ff8fecc0c28a329cc3536296d77d274c" title="This function check is reccord exists by dir_name or not.">Dir::isExistsByName</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name)<span class="keyword"> const</span>{
+<a name="l00116"></a>00116     QSqlQuery query;
+<a name="l00117"></a>00117     query.prepare(<span class="stringliteral">"SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND name=:dir_name"</span>);
+<a name="l00118"></a>00118     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00119"></a>00119     query.bindValue(<span class="stringliteral">":dir_name"</span>, dir_name);
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121     <span class="keywordflow">if</span> (!query.exec()){
+<a name="l00122"></a>00122         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
+<a name="l00123"></a>00123         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00124"></a>00124     }
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126     query.first();
+<a name="l00127"></a>00127     <span class="keywordflow">if</span> (query.isValid()){
+<a name="l00128"></a>00128         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00129"></a>00129     }
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131     <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00132"></a>00132 }
+<a name="l00133"></a>00133 
+<a name="l00134"></a><a class="code" href="class_dir.html#c48eaaad253aa034cd5ebc6ff331bc60">00134</a> QString <a class="code" href="class_dir.html#c48eaaad253aa034cd5ebc6ff331bc60" title="This function gets prefix id by name.">Dir::getId</a>(<span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
+<a name="l00135"></a>00135     QString value;
+<a name="l00136"></a>00136     QSqlQuery query;
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138     query.prepare(<span class="stringliteral">"SELECT id FROM dir WHERE name=:dir_name and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)"</span>);
+<a name="l00139"></a>00139     query.bindValue(<span class="stringliteral">":dir_name"</span>, dir_name);
+<a name="l00140"></a>00140     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00141"></a>00141 
+<a name="l00142"></a>00142     <span class="keywordflow">if</span> (query.exec()){
+<a name="l00143"></a>00143         query.first();
+<a name="l00144"></a>00144         <span class="keywordflow">if</span> (query.isValid()){
+<a name="l00145"></a>00145         <span class="keywordtype">int</span> i=0;
+<a name="l00146"></a>00146             <span class="keywordflow">while</span> (query.value(i).isValid()){
+<a name="l00147"></a>00147                 value.append(query.value(i).toString());
+<a name="l00148"></a>00148                 i++;
+<a name="l00149"></a>00149             }
+<a name="l00150"></a>00150         }
+<a name="l00151"></a>00151     } <span class="keywordflow">else</span> {
+<a name="l00152"></a>00152         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError();
+<a name="l00153"></a>00153     }
+<a name="l00154"></a>00154     <span class="keywordflow">return</span> value;
+<a name="l00155"></a>00155 }
+<a name="l00156"></a>00156 
+<a name="l00157"></a><a class="code" href="class_dir.html#7f2c1c24f60ab49b61b03898297b443d">00157</a> <span class="keywordtype">bool</span> <a class="code" href="class_dir.html#7f2c1c24f60ab49b61b03898297b443d" title="Rename dir.">Dir::renameDir</a>(<span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString new_dir_name)<span class="keyword"> const</span>{
+<a name="l00158"></a>00158     QSqlQuery query;
+<a name="l00159"></a>00159     query.prepare(<span class="stringliteral">"UPDATE dir SET name=:new_dir_name WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)"</span>);
+<a name="l00160"></a>00160     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00161"></a>00161     query.bindValue(<span class="stringliteral">":new_dir_name"</span>, new_dir_name);
+<a name="l00162"></a>00162     query.bindValue(<span class="stringliteral">":dir_name"</span>, dir_name);
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164     <span class="keywordflow">if</span> (!query.exec()){
+<a name="l00165"></a>00165         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
+<a name="l00166"></a>00166         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00167"></a>00167     }
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00170"></a>00170 }
+<a name="l00171"></a>00171 
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

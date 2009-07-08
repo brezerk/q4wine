@@ -50,11 +50,100 @@
 <a name="l00029"></a>00029 
 <a name="l00030"></a>00030 <span class="preprocessor">#include "image.h"</span>
 <a name="l00031"></a>00031 
-<a name="l00032"></a>00032 Image::Image()
+<a name="l00032"></a><a class="code" href="class_image.html#58edd1c45b4faeb5f789b0d036d02313">00032</a> <a class="code" href="class_image.html#58edd1c45b4faeb5f789b0d036d02313" title="Class constructor.">Image::Image</a>()
 <a name="l00033"></a>00033 {
-<a name="l00034"></a>00034 }
+<a name="l00034"></a>00034     this-&gt;<a class="code" href="class_prefix.html#a74046d584c3299538fca16084b8361a" title="This variable defines which table is used by class.">_TABLE</a>=<span class="stringliteral">"image"</span>;
+<a name="l00035"></a>00035 }
+<a name="l00036"></a>00036 
+<a name="l00037"></a><a class="code" href="class_image.html#13ccb7bd5256a8d7ee38781e95946d97">00037</a> QList&lt;QStringList&gt; <a class="code" href="class_image.html#13ccb7bd5256a8d7ee38781e95946d97" title="Getting images list.">Image::getFields</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span>{
+<a name="l00038"></a>00038     QList&lt;QStringList&gt; valuelist;
+<a name="l00039"></a>00039     <span class="comment">//                      0     1</span>
+<a name="l00040"></a>00040     QSqlQuery query(<span class="stringliteral">"SELECT name, path FROM images ORDER BY name"</span>);
+<a name="l00041"></a>00041     <span class="keywordflow">if</span> (query.exec()){
+<a name="l00042"></a>00042         <span class="keywordflow">while</span> (query.next()) {
+<a name="l00043"></a>00043             QStringList values;
+<a name="l00044"></a>00044             <span class="keywordtype">int</span> i=0;
+<a name="l00045"></a>00045             <span class="keywordflow">while</span> (query.value(i).isValid()){
+<a name="l00046"></a>00046                 values.append(query.value(i).toString());
+<a name="l00047"></a>00047                 i++;
+<a name="l00048"></a>00048             }
+<a name="l00049"></a>00049             valuelist.append(values);
+<a name="l00050"></a>00050         }
+<a name="l00051"></a>00051     } <span class="keywordflow">else</span> {
+<a name="l00052"></a>00052         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError();
+<a name="l00053"></a>00053     }
+<a name="l00054"></a>00054     <span class="keywordflow">return</span> valuelist;
+<a name="l00055"></a>00055 }
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 
+<a name="l00058"></a><a class="code" href="class_image.html#ac5411f716044979911cf1a7a5222b93">00058</a> QString <a class="code" href="class_image.html#ac5411f716044979911cf1a7a5222b93" title="Getting file path reccord by image name.">Image::getPath</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>{
+<a name="l00059"></a>00059     QString result;
+<a name="l00060"></a>00060     QSqlQuery query(<span class="stringliteral">"SELECT path FROM images WHERE name=:name ORDER BY name"</span>);
+<a name="l00061"></a>00061     query.bindValue(<span class="stringliteral">":name"</span>, name);
+<a name="l00062"></a>00062     <span class="keywordflow">if</span> (query.exec()){
+<a name="l00063"></a>00063         query.next();
+<a name="l00064"></a>00064         result = query.value(0).toString();
+<a name="l00065"></a>00065     } <span class="keywordflow">else</span> {
+<a name="l00066"></a>00066         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError();
+<a name="l00067"></a>00067     }
+<a name="l00068"></a>00068     <span class="keywordflow">return</span> result;
+<a name="l00069"></a>00069 }
+<a name="l00070"></a>00070 
+<a name="l00071"></a><a class="code" href="class_image.html#83e6612084d228dac69ed18e1fd771ab">00071</a> <span class="keywordtype">bool</span> <a class="code" href="class_image.html#83e6612084d228dac69ed18e1fd771ab" title="Chek for image existance by name.">Image::isExistsByName</a>(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>{
+<a name="l00072"></a>00072     QSqlQuery query;
+<a name="l00073"></a>00073     query.prepare(<span class="stringliteral">"SELECT id FROM images WHERE name=:name"</span>);
+<a name="l00074"></a>00074     query.bindValue(<span class="stringliteral">":name"</span>, name);
+<a name="l00075"></a>00075     <span class="keywordflow">if</span> (!query.exec()){
+<a name="l00076"></a>00076         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
+<a name="l00077"></a>00077         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00078"></a>00078     }
+<a name="l00079"></a>00079     query.first();
+<a name="l00080"></a>00080     <span class="keywordflow">if</span> (query.isValid()){
+<a name="l00081"></a>00081         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00082"></a>00082     }
+<a name="l00083"></a>00083     <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00084"></a>00084 }
+<a name="l00085"></a>00085 
+<a name="l00086"></a><a class="code" href="class_image.html#cdfc3e36dfbc7b0cbdcc49822ce3bc58">00086</a> <span class="keywordtype">bool</span> <a class="code" href="class_image.html#cdfc3e36dfbc7b0cbdcc49822ce3bc58" title="Add image reccord.">Image::addImage</a>(<span class="keyword">const</span> QString name, <span class="keyword">const</span> QString path)<span class="keyword"> const</span>{
+<a name="l00087"></a>00087     QSqlQuery query;
+<a name="l00088"></a>00088     query.prepare(<span class="stringliteral">"INSERT INTO images(name, path) VALUES(:name, :path)"</span>);
+<a name="l00089"></a>00089     query.bindValue(<span class="stringliteral">"name"</span>, name);
+<a name="l00090"></a>00090     query.bindValue(<span class="stringliteral">"path"</span>, path);
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092     <span class="keywordflow">if</span> (!query.exec()){
+<a name="l00093"></a>00093         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
+<a name="l00094"></a>00094         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00095"></a>00095     }
+<a name="l00096"></a>00096     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00097"></a>00097 }
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099 <span class="keywordtype">bool</span> Image::renameImage(<span class="keyword">const</span> QString name, <span class="keyword">const</span> QString old_name)<span class="keyword"> const</span>{
+<a name="l00100"></a>00100     QSqlQuery query;
+<a name="l00101"></a>00101     query.prepare(<span class="stringliteral">"UPDATE images SET name=:name WHERE name=:old_name"</span>);
+<a name="l00102"></a>00102     query.bindValue(<span class="stringliteral">"name"</span>, name);
+<a name="l00103"></a>00103     query.bindValue(<span class="stringliteral">"old_name"</span>, old_name);
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105     <span class="keywordflow">if</span> (!query.exec()){
+<a name="l00106"></a>00106         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
+<a name="l00107"></a>00107         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00108"></a>00108     }
+<a name="l00109"></a>00109     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00110"></a>00110 }
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112 <span class="keywordtype">bool</span> Image::delImage(<span class="keyword">const</span> QString name)<span class="keyword"> const</span>{
+<a name="l00113"></a>00113     QSqlQuery query;
+<a name="l00114"></a>00114     query.prepare(<span class="stringliteral">"DELETE FROM images WHERE name=:name"</span>);
+<a name="l00115"></a>00115     query.bindValue(<span class="stringliteral">"name"</span>, name);
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117     <span class="keywordflow">if</span> (!query.exec()){
+<a name="l00118"></a>00118         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
+<a name="l00119"></a>00119         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00120"></a>00120     }
+<a name="l00121"></a>00121     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00122"></a>00122 }
+<a name="l00123"></a>00123 
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -54,132 +54,131 @@
 <a name="l00033"></a>00033 
 <a name="l00034"></a>00034 Process::Process (QStringList args, QString exec, QString dir, QString info, QString caption, QStringList env , QWidget * parent, Qt::WFlags f)
 <a name="l00035"></a>00035 {
-<a name="l00036"></a>00036     setupUi(<span class="keyword">this</span>);
+<a name="l00036"></a>00036       setupUi(<span class="keyword">this</span>);
 <a name="l00037"></a>00037 
-<a name="l00038"></a>00038     myProcess = <span class="keyword">new</span> QProcess(parent);
-<a name="l00039"></a>00039     myProcess-&gt;setEnvironment(env);
-<a name="l00040"></a>00040     connect(myProcess, SIGNAL(finished(<span class="keywordtype">int</span>, QProcess::ExitStatus)), <span class="keyword">this</span>, SLOT(slotFinished(<span class="keywordtype">int</span>, QProcess::ExitStatus)));
-<a name="l00041"></a>00041     connect(myProcess, SIGNAL(error(QProcess::ProcessError)), <span class="keyword">this</span>, SLOT(slotError(QProcess::ProcessError)));
-<a name="l00042"></a>00042     connect(cmdCancel, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(cmdCancel_clicked()));
+<a name="l00038"></a>00038       myProcess = <span class="keyword">new</span> QProcess(parent);
+<a name="l00039"></a>00039       myProcess-&gt;setEnvironment(env);
+<a name="l00040"></a>00040       connect(myProcess, SIGNAL(finished(<span class="keywordtype">int</span>, QProcess::ExitStatus)), <span class="keyword">this</span>, SLOT(slotFinished(<span class="keywordtype">int</span>, QProcess::ExitStatus)));
+<a name="l00041"></a>00041       connect(myProcess, SIGNAL(error(QProcess::ProcessError)), <span class="keyword">this</span>, SLOT(slotError(QProcess::ProcessError)));
+<a name="l00042"></a>00042       connect(cmdCancel, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(cmdCancel_clicked()));
 <a name="l00043"></a>00043 
-<a name="l00044"></a>00044     lblInfo-&gt;setText(info);
-<a name="l00045"></a>00045     setWindowTitle(caption);
+<a name="l00044"></a>00044       lblInfo-&gt;setText(info);
+<a name="l00045"></a>00045       setWindowTitle(caption);
 <a name="l00046"></a>00046 
-<a name="l00047"></a>00047     myProcess-&gt;setWorkingDirectory (dir);
-<a name="l00048"></a>00048     myProcess-&gt;start(exec, args);
+<a name="l00047"></a>00047       myProcess-&gt;setWorkingDirectory (dir);
+<a name="l00048"></a>00048       myProcess-&gt;start(exec, args);
 <a name="l00049"></a>00049 
-<a name="l00050"></a>00050     <span class="keywordflow">return</span>;
+<a name="l00050"></a>00050       <span class="keywordflow">return</span>;
 <a name="l00051"></a>00051 }
 <a name="l00052"></a>00052 
 <a name="l00053"></a>00053 <span class="keywordtype">void</span> Process::cmdCancel_clicked(<span class="keywordtype">void</span>){
-<a name="l00054"></a>00054     myProcess-&gt;kill();
-<a name="l00055"></a>00055     reject();
-<a name="l00056"></a>00056     <span class="keywordflow">return</span>;
+<a name="l00054"></a>00054       myProcess-&gt;kill();
+<a name="l00055"></a>00055       reject();
+<a name="l00056"></a>00056       <span class="keywordflow">return</span>;
 <a name="l00057"></a>00057 }
 <a name="l00058"></a>00058 
 <a name="l00059"></a>00059 <span class="keywordtype">void</span> Process::slotError(QProcess::ProcessError err){
-<a name="l00060"></a>00060     <span class="keywordflow">if</span> (myProcess-&gt;exitCode()!=0){
+<a name="l00060"></a>00060       <span class="keywordflow">if</span> (myProcess-&gt;exitCode()!=0){
 <a name="l00061"></a>00061 
-<a name="l00062"></a>00062         QString lang;
-<a name="l00063"></a>00063         <span class="comment">// Getting env LANG variable</span>
-<a name="l00064"></a>00064         lang = getenv(<span class="stringliteral">"LANG"</span>);
-<a name="l00065"></a>00065         lang = lang.split(<span class="stringliteral">"."</span>).at(1);
+<a name="l00062"></a>00062             QString lang;
+<a name="l00063"></a>00063             <span class="comment">// Getting env LANG variable</span>
+<a name="l00064"></a>00064             lang = getenv(<span class="stringliteral">"LANG"</span>);
+<a name="l00065"></a>00065             lang = lang.split(<span class="stringliteral">"."</span>).at(1);
 <a name="l00066"></a>00066 
-<a name="l00067"></a>00067         <span class="keywordflow">if</span> (lang.isNull())
-<a name="l00068"></a>00068             lang = <span class="stringliteral">"UTF8"</span>;
+<a name="l00067"></a>00067             <span class="keywordflow">if</span> (lang.isNull())
+<a name="l00068"></a>00068                   lang = <span class="stringliteral">"UTF8"</span>;
 <a name="l00069"></a>00069 
-<a name="l00070"></a>00070         QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
-<a name="l00071"></a>00071             QString <span class="keywordtype">string</span> = codec-&gt;toUnicode(myProcess-&gt;readAllStandardError());
+<a name="l00070"></a>00070             QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+<a name="l00071"></a>00071                   QString <span class="keywordtype">string</span> = codec-&gt;toUnicode(myProcess-&gt;readAllStandardError());
 <a name="l00072"></a>00072 
-<a name="l00073"></a>00073             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.isEmpty()){
-<a name="l00074"></a>00074                 QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"It seems procces fail.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1"</span>).arg(<span class="keywordtype">string</span>));
-<a name="l00075"></a>00075             } <span class="keywordflow">else</span> {
-<a name="l00076"></a>00076                     <span class="keywordflow">switch</span> (err){
-<a name="l00077"></a>00077                         <span class="keywordflow">case</span> 0:
-<a name="l00078"></a>00078                             QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program."</span>));
-<a name="l00079"></a>00079                         <span class="keywordflow">break</span>;
-<a name="l00080"></a>00080                         <span class="keywordflow">case</span> 1:
-<a name="l00081"></a>00081                             QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: The process crashed some time after starting successfully."</span>));
-<a name="l00082"></a>00082                         <span class="keywordflow">break</span>;
-<a name="l00083"></a>00083                         <span class="keywordflow">case</span> 2:
-<a name="l00084"></a>00084                             QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: The last waitFor...() function timed out."</span>));
-<a name="l00085"></a>00085                         <span class="keywordflow">break</span>;
-<a name="l00086"></a>00086                         <span class="keywordflow">case</span> 3:
-<a name="l00087"></a>00087                             QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: An error occurred when attempting to read from the process. For example, the process may not be running."</span>));
-<a name="l00088"></a>00088                         <span class="keywordflow">break</span>;
-<a name="l00089"></a>00089                         <span class="keywordflow">case</span> 4:
-<a name="l00090"></a>00090                             QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel."</span>));
-<a name="l00091"></a>00091                         <span class="keywordflow">break</span>;
-<a name="l00092"></a>00092                         <span class="keywordflow">case</span> 5:
-<a name="l00093"></a>00093                             QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: An unknown error occurred. This is the default return value of error()."</span>));
-<a name="l00094"></a>00094                         <span class="keywordflow">break</span>;
-<a name="l00095"></a>00095                     }
-<a name="l00096"></a>00096             }
-<a name="l00097"></a>00097     } <span class="keywordflow">else</span> {
-<a name="l00098"></a>00098         <span class="keywordflow">switch</span> (err){
-<a name="l00099"></a>00099             <span class="keywordflow">case</span> 0:
-<a name="l00100"></a>00100                 QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program."</span>));
-<a name="l00101"></a>00101             <span class="keywordflow">break</span>;
-<a name="l00102"></a>00102             <span class="keywordflow">case</span> 1:
-<a name="l00103"></a>00103                 QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: The process crashed some time after starting successfully."</span>));
-<a name="l00104"></a>00104             <span class="keywordflow">break</span>;
-<a name="l00105"></a>00105             <span class="keywordflow">case</span> 2:
-<a name="l00106"></a>00106                 QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: The last waitFor...() function timed out."</span>));
-<a name="l00107"></a>00107             <span class="keywordflow">break</span>;
-<a name="l00108"></a>00108             <span class="keywordflow">case</span> 3:
-<a name="l00109"></a>00109                 QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: An error occurred when attempting to read from the process. For example, the process may not be running."</span>));
-<a name="l00110"></a>00110             <span class="keywordflow">break</span>;
-<a name="l00111"></a>00111             <span class="keywordflow">case</span> 4:
-<a name="l00112"></a>00112                 QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel."</span>));
-<a name="l00113"></a>00113             <span class="keywordflow">break</span>;
-<a name="l00114"></a>00114             <span class="keywordflow">case</span> 5:
-<a name="l00115"></a>00115                 QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: An unknown error occurred. This is the default return value of error()."</span>));
-<a name="l00116"></a>00116                 <span class="keywordflow">break</span>;
-<a name="l00117"></a>00117         }
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119 
-<a name="l00120"></a>00120     reject ();
-<a name="l00121"></a>00121 
-<a name="l00122"></a>00122               }
-<a name="l00123"></a>00123     <span class="keywordflow">return</span>;
-<a name="l00124"></a>00124 }
-<a name="l00125"></a>00125 
-<a name="l00126"></a>00126 <span class="keywordtype">void</span> Process::slotFinished(<span class="keywordtype">int</span>, QProcess::ExitStatus exitc){
-<a name="l00127"></a>00127 
-<a name="l00128"></a>00128     <span class="comment">/*</span>
-<a name="l00129"></a>00129 <span class="comment">     * This piece of code try to catch error messages.</span>
-<a name="l00130"></a>00130 <span class="comment">     * In fact exitCode() not always can return error code</span>
-<a name="l00131"></a>00131 <span class="comment">     * (for example kdesu\gksu)</span>
-<a name="l00132"></a>00132 <span class="comment">     * So the beast way is to inform user about any STDERR messages.</span>
-<a name="l00133"></a>00133 <span class="comment">     */</span>
-<a name="l00134"></a>00134 
-<a name="l00135"></a>00135     <span class="comment">//      if (myProcess-&gt;exitCode()!=0){</span>
-<a name="l00136"></a>00136     <span class="comment">// Getting env LANG variable</span>
-<a name="l00137"></a>00137     QString lang;
-<a name="l00138"></a>00138        lang = getenv(<span class="stringliteral">"LANG"</span>);
-<a name="l00139"></a>00139        lang = lang.split(<span class="stringliteral">"."</span>).at(1);
-<a name="l00140"></a>00140 
-<a name="l00141"></a>00141     <span class="comment">// If in is empty -- set UTF8 locale</span>
-<a name="l00142"></a>00142     <span class="keywordflow">if</span> (lang.isEmpty())
-<a name="l00143"></a>00143        lang = <span class="stringliteral">"UTF8"</span>;
-<a name="l00144"></a>00144 
-<a name="l00145"></a>00145     <span class="comment">// Read STDERR with locale support</span>
-<a name="l00146"></a>00146     QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
-<a name="l00147"></a>00147     QString <span class="keywordtype">string</span> = codec-&gt;toUnicode(myProcess-&gt;readAllStandardError());
-<a name="l00148"></a>00148 
-<a name="l00149"></a>00149     <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.isEmpty()){
-<a name="l00150"></a>00150        <span class="keywordflow">if</span> (exitc == 0){
-<a name="l00151"></a>00151         QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Output"</span>), tr(<span class="stringliteral">"It seems the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1"</span>).arg(<span class="keywordtype">string</span>));
-<a name="l00152"></a>00152        } <span class="keywordflow">else</span> {
-<a name="l00153"></a>00153         QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Output"</span>), tr(<span class="stringliteral">"It seems the process crashed.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1"</span>).arg(<span class="keywordtype">string</span>));
-<a name="l00154"></a>00154        }
-<a name="l00155"></a>00155     }
-<a name="l00156"></a>00156     accept();
-<a name="l00157"></a>00157     <span class="keywordflow">return</span>;
-<a name="l00158"></a>00158 }
-<a name="l00159"></a>00159 
+<a name="l00073"></a>00073                   <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.isEmpty()){
+<a name="l00074"></a>00074                         QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"It seems procces fail.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1"</span>).arg(<span class="keywordtype">string</span>));
+<a name="l00075"></a>00075                   } <span class="keywordflow">else</span> {
+<a name="l00076"></a>00076                               <span class="keywordflow">switch</span> (err){
+<a name="l00077"></a>00077                                     <span class="keywordflow">case</span> 0:
+<a name="l00078"></a>00078                                           QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program."</span>));
+<a name="l00079"></a>00079                                     <span class="keywordflow">break</span>;
+<a name="l00080"></a>00080                                     <span class="keywordflow">case</span> 1:
+<a name="l00081"></a>00081                                           QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: The process crashed some time after starting successfully."</span>));
+<a name="l00082"></a>00082                                     <span class="keywordflow">break</span>;
+<a name="l00083"></a>00083                                     <span class="keywordflow">case</span> 2:
+<a name="l00084"></a>00084                                           QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: The last waitFor...() function timed out."</span>));
+<a name="l00085"></a>00085                                     <span class="keywordflow">break</span>;
+<a name="l00086"></a>00086                                     <span class="keywordflow">case</span> 3:
+<a name="l00087"></a>00087                                           QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: An error occurred when attempting to read from the process. For example, the process may not be running."</span>));
+<a name="l00088"></a>00088                                     <span class="keywordflow">break</span>;
+<a name="l00089"></a>00089                                     <span class="keywordflow">case</span> 4:
+<a name="l00090"></a>00090                                           QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel."</span>));
+<a name="l00091"></a>00091                                     <span class="keywordflow">break</span>;
+<a name="l00092"></a>00092                                     <span class="keywordflow">case</span> 5:
+<a name="l00093"></a>00093                                           QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: An unknown error occurred. This is the default return value of error()."</span>));
+<a name="l00094"></a>00094                                     <span class="keywordflow">break</span>;
+<a name="l00095"></a>00095                               }
+<a name="l00096"></a>00096                   }
+<a name="l00097"></a>00097       } <span class="keywordflow">else</span> {
+<a name="l00098"></a>00098             <span class="keywordflow">switch</span> (err){
+<a name="l00099"></a>00099                   <span class="keywordflow">case</span> 0:
+<a name="l00100"></a>00100                         QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program."</span>));
+<a name="l00101"></a>00101                   <span class="keywordflow">break</span>;
+<a name="l00102"></a>00102                   <span class="keywordflow">case</span> 1:
+<a name="l00103"></a>00103                         QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: The process crashed some time after starting successfully."</span>));
+<a name="l00104"></a>00104                   <span class="keywordflow">break</span>;
+<a name="l00105"></a>00105                   <span class="keywordflow">case</span> 2:
+<a name="l00106"></a>00106                         QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: The last waitFor...() function timed out."</span>));
+<a name="l00107"></a>00107                   <span class="keywordflow">break</span>;
+<a name="l00108"></a>00108                   <span class="keywordflow">case</span> 3:
+<a name="l00109"></a>00109                         QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: An error occurred when attempting to read from the process. For example, the process may not be running."</span>));
+<a name="l00110"></a>00110                   <span class="keywordflow">break</span>;
+<a name="l00111"></a>00111                   <span class="keywordflow">case</span> 4:
+<a name="l00112"></a>00112                         QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel."</span>));
+<a name="l00113"></a>00113                   <span class="keywordflow">break</span>;
+<a name="l00114"></a>00114                   <span class="keywordflow">case</span> 5:
+<a name="l00115"></a>00115                         QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Error"</span>), tr(<span class="stringliteral">"Process: An unknown error occurred. This is the default return value of error()."</span>));
+<a name="l00116"></a>00116                   <span class="keywordflow">break</span>;
+<a name="l00117"></a>00117             }
+<a name="l00118"></a>00118       reject ();
+<a name="l00119"></a>00119       }
+<a name="l00120"></a>00120       <span class="keywordflow">return</span>;
+<a name="l00121"></a>00121 }
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123 <span class="keywordtype">void</span> Process::slotFinished(<span class="keywordtype">int</span>, QProcess::ExitStatus exitc){
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125       <span class="comment">/*</span>
+<a name="l00126"></a>00126 <span class="comment">       * This piece of code try to catch error messages.</span>
+<a name="l00127"></a>00127 <span class="comment">       * In fact exitCode() not always can return error code</span>
+<a name="l00128"></a>00128 <span class="comment">       * (for example kdesu\gksu)</span>
+<a name="l00129"></a>00129 <span class="comment">       * So the beast way is to inform user about troubles is to show to him any STDERR messages.</span>
+<a name="l00130"></a>00130 <span class="comment">       */</span>
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132       QString lang;
+<a name="l00133"></a>00133          lang = getenv(<span class="stringliteral">"LANG"</span>);
+<a name="l00134"></a>00134          lang = lang.split(<span class="stringliteral">"."</span>).at(1);
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136       <span class="comment">// If in is empty -- set UTF8 locale</span>
+<a name="l00137"></a>00137       <span class="keywordflow">if</span> (lang.isEmpty())
+<a name="l00138"></a>00138          lang = <span class="stringliteral">"UTF8"</span>;
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140       <span class="comment">// Read STDERR with locale support</span>
+<a name="l00141"></a>00141       QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+<a name="l00142"></a>00142       QString <span class="keywordtype">string</span> = codec-&gt;toUnicode(myProcess-&gt;readAllStandardError());
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144       <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.isEmpty()){
+<a name="l00145"></a>00145          <span class="keywordflow">if</span> ((exitc == 0) &amp;&amp; (myProcess-&gt;exitCode() == 0)){
+<a name="l00146"></a>00146             QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Output"</span>), tr(<span class="stringliteral">"It seems the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1"</span>).arg(<span class="keywordtype">string</span>));
+<a name="l00147"></a>00147             accept();
+<a name="l00148"></a>00148          } <span class="keywordflow">else</span> {
+<a name="l00149"></a>00149             QMessageBox::warning(<span class="keyword">this</span>, tr(<span class="stringliteral">"Output"</span>), tr(<span class="stringliteral">"It seems the process crashed.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1"</span>).arg(<span class="keywordtype">string</span>));
+<a name="l00150"></a>00150             reject();
+<a name="l00151"></a>00151          }
+<a name="l00152"></a>00152       }
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154       accept();
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156       <span class="keywordflow">return</span>;
+<a name="l00157"></a>00157 }
+<a name="l00158"></a>00158 
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

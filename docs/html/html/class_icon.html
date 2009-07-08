@@ -58,6 +58,18 @@ Inheritance diagram for Icon:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">QList&lt; QStringList &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_icon.html#3d9ccf121c9e957c5b8b636cb9d1bcd4">getIconsInfoByNames</a> (const QString prefix_name, const QString dir_name, const QString icon_name=&quot;&quot;) const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function gets all icons fields by prefix_name and dir_name (optional by icon name) keys value from table.  <a href="#3d9ccf121c9e957c5b8b636cb9d1bcd4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">QStringList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_icon.html#105d3647762225d330dc5bc88ed0199f">getByName</a> (const QString prefix_name, const QString dir_name, const QString icon_name=&quot;&quot;) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function gets icon fields by prefix_name, dir_name and icon name keys value from table.  <a href="#105d3647762225d330dc5bc88ed0199f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="eed8f5cae6243d5a1099438915d0b988"></a><!-- doxytag: member="Icon::getByPrefixAndDirName" ref="eed8f5cae6243d5a1099438915d0b988" args="(const QString prefix_name, const QString dir_name) const " -->
+QList&lt; QStringList &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>getByPrefixAndDirName</b> (const QString prefix_name, const QString dir_name) const </td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_icon.html#c63137ccb842ee9a33ddb8f856e0c0d6">copyIcon</a> (const QString icon_name, const QString prefix_name, const QString dir_name, const QString new_icon_name, const QString new_prefix_name, const QString new_dir_name) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Copy icon.  <a href="#c63137ccb842ee9a33ddb8f856e0c0d6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_icon.html#dedb61c3e30d6c524aeb89f2c84588f2">renameIcon</a> (const QString icon_name, const QString prefix_name, const QString dir_name, const QString new_icon_name) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Rename icon.  <a href="#dedb61c3e30d6c524aeb89f2c84588f2"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">QList&lt; QStringList &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_icon.html#4bc35a51716d98134cceb1cd2eabe396">getIconsInfoByPrefixName</a> (const QString prefix_name, const QString icon_name=&quot;&quot;) const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function gets all icons fields by prefix_name (optional by icon name) keys value from table.  <a href="#4bc35a51716d98134cceb1cd2eabe396"></a><br></td></tr>
@@ -82,10 +94,13 @@ Inheritance diagram for Icon:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_icon.html#cade559c5481faf56714dd522e048a30">updateIcon</a> (const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString icon_name, const QString override=&quot;&quot;, const QString winedebug=&quot;&quot;, const QString useconsole=&quot;&quot;, const QString display=&quot;&quot;, const QString wrkdir=&quot;&quot;, const QString desktop=&quot;&quot;, const int nice=0) const </td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function updates icon record by name, prefix_name and dir_name.  <a href="#cade559c5481faf56714dd522e048a30"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_icon.html#b95d65d8d6ba04281fb22356ce0c0ec2">updateIcon</a> (const QString icon_name, const QString prefix_id, const QString dir_id, const QString old_prefix_id, const QString old_dir_id, const QString old_icon_name) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function updates name, prefix_name and dir_name by old_name.  <a href="#b95d65d8d6ba04281fb22356ce0c0ec2"></a><br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 This class provide database functions for <a class="el" href="class_icon.html" title="This class provide database functions for Icon table.">Icon</a> table. 
-<p>Definition at line <a class="el" href="icon_8h-source.html#l00053">53</a> of file <a class="el" href="icon_8h-source.html">icon.h</a>.</p>
+<p>Definition at line <a class="el" href="icon_8h-source.html#l00050">50</a> of file <a class="el" href="icon_8h-source.html">icon.h</a>.</p>
 <hr><h2>Member Function Documentation</h2>
 <a class="anchor" name="3cb4eb98b1d2dfd0477559d60771ade9"></a><!-- doxytag: member="Icon::addIcon" ref="3cb4eb98b1d2dfd0477559d60771ade9" args="(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString override=&quot;&quot;, const QString winedebug=&quot;&quot;, const QString useconsole=&quot;&quot;, const QString display=&quot;&quot;, const QString wrkdir=&quot;&quot;, const QString desktop=&quot;&quot;, const int nice=0) const " -->
 <div class="memitem">
@@ -200,7 +215,75 @@ This function add icon record.
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>Return true on success. </dd></dl>
 
-<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00237">237</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00306">306</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="c63137ccb842ee9a33ddb8f856e0c0d6"></a><!-- doxytag: member="Icon::copyIcon" ref="c63137ccb842ee9a33ddb8f856e0c0d6" args="(const QString icon_name, const QString prefix_name, const QString dir_name, const QString new_icon_name, const QString new_prefix_name, const QString new_dir_name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Icon::copyIcon           </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>icon_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>prefix_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>dir_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>new_icon_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>new_prefix_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>new_dir_name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Copy icon. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prefix_name</em>&nbsp;</td><td>A prefix name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dir_name</em>&nbsp;</td><td>A dir name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>icon_name</em>&nbsp;</td><td>A icon name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>new_prefix_name</em>&nbsp;</td><td>A prefix name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>new_dir_name</em>&nbsp;</td><td>A dir name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>new_icon_name</em>&nbsp;</td><td>A icon name value. </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields. </dd></dl>
+
+<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00418">418</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -246,7 +329,7 @@ This function delete icon field by prefix_name and dir_name key value from table
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>Return true on success. </dd></dl>
 
-<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00178">178</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00243">243</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -285,7 +368,7 @@ This function delete icon field by prefix_name key value from table.
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>Return true on success. </dd></dl>
 
-<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00165">165</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00230">230</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -315,7 +398,54 @@ This function deletes all icons fields by prefix_name keys value from table.
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>Return true on success. </dd></dl>
 
-<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00152">152</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00217">217</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="105d3647762225d330dc5bc88ed0199f"></a><!-- doxytag: member="Icon::getByName" ref="105d3647762225d330dc5bc88ed0199f" args="(const QString prefix_name, const QString dir_name, const QString icon_name=&quot;&quot;) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList Icon::getByName           </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>prefix_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>dir_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>icon_name</em> = <code>&quot;&quot;</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This function gets icon fields by prefix_name, dir_name and icon name keys value from table. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prefix_name</em>&nbsp;</td><td>A prefix name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dir_name</em>&nbsp;</td><td>A dir name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>icon_name</em>&nbsp;</td><td>A icon name value. </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields. </dd></dl>
+
+<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00154">154</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -343,7 +473,7 @@ This function gets all icons fields by prefixId key value from table.
     <tr><td valign="top"></td><td valign="top"><em>prefix_id</em>&nbsp;</td><td>A prefix id value. </td></tr>
   </table>
 </dl>
-<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields value or -1 on error. </dd></dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields. </dd></dl>
 
 <p>Definition at line <a class="el" href="icon_8cpp-source.html#l00063">63</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
 
@@ -383,7 +513,7 @@ This function gets all icons fields by prefix_id and dir_id key value from table
     <tr><td valign="top"></td><td valign="top"><em>dir_id</em>&nbsp;</td><td>A prefixid value. </td></tr>
   </table>
 </dl>
-<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields value or -1 on error. </dd></dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields. </dd></dl>
 
 <p>Definition at line <a class="el" href="icon_8cpp-source.html#l00037">37</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
 
@@ -430,7 +560,7 @@ This function gets all icons fields by prefix_name and dir_name (optional by ico
     <tr><td valign="top"></td><td valign="top"><em>icon_name</em>&nbsp;</td><td>A icon name value (optional). </td></tr>
   </table>
 </dl>
-<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields value or -1 on error. </dd></dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields. </dd></dl>
 
 <p>Definition at line <a class="el" href="icon_8cpp-source.html#l00088">88</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
 
@@ -470,9 +600,9 @@ This function gets all icons fields by prefix_name (optional by icon name) keys 
     <tr><td valign="top"></td><td valign="top"><em>icon_name</em>&nbsp;</td><td>A icon name value (optional). </td></tr>
   </table>
 </dl>
-<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields value or -1 on error. </dd></dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields value. </dd></dl>
 
-<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00121">121</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00186">186</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -519,7 +649,7 @@ This function check is reccord exists by icon_name or not.
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>Return true if exists. </dd></dl>
 
-<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00216">216</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00281">281</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -559,7 +689,127 @@ This function check is reccord exists by icon_name or not.
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>Return true if exists. </dd></dl>
 
-<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00197">197</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00262">262</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="dedb61c3e30d6c524aeb89f2c84588f2"></a><!-- doxytag: member="Icon::renameIcon" ref="dedb61c3e30d6c524aeb89f2c84588f2" args="(const QString icon_name, const QString prefix_name, const QString dir_name, const QString new_icon_name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Icon::renameIcon           </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>icon_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>prefix_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>dir_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>new_icon_name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Rename icon. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>prefix_name</em>&nbsp;</td><td>A prefix name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dir_name</em>&nbsp;</td><td>A dir name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>icon_name</em>&nbsp;</td><td>A icon name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>new_icon_name</em>&nbsp;</td><td>A icon name value. </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return a list of table fields. </dd></dl>
+
+<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00423">423</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="b95d65d8d6ba04281fb22356ce0c0ec2"></a><!-- doxytag: member="Icon::updateIcon" ref="b95d65d8d6ba04281fb22356ce0c0ec2" args="(const QString icon_name, const QString prefix_id, const QString dir_id, const QString old_prefix_id, const QString old_dir_id, const QString old_icon_name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Icon::updateIcon           </td>
+          <td>(</td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>icon_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>prefix_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>dir_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>old_prefix_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>old_dir_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString&nbsp;</td>
+          <td class="paramname"> <em>old_icon_name</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This function updates name, prefix_name and dir_name by old_name. 
+<p>
+<dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>icon_name</em>&nbsp;</td><td>A icon name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>prefix_name</em>&nbsp;</td><td>A dir name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dir_name</em>&nbsp;</td><td>A dir name value. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>old_icon_name</em>&nbsp;</td><td>A old icon name value. </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Returns:</b></dt><dd>Return true on success. </dd></dl>
+
+<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00395">395</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -682,14 +932,14 @@ This function updates icon record by name, prefix_name and dir_name.
 </dl>
 <dl class="return" compact><dt><b>Returns:</b></dt><dd>Return true on success. </dd></dl>
 
-<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00326">326</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
+<p>Definition at line <a class="el" href="icon_8cpp-source.html#l00444">444</a> of file <a class="el" href="icon_8cpp-source.html">icon.cpp</a>.</p>
 
 </div>
 </div><p>
 <hr>The documentation for this class was generated from the following files:<ul>
 <li>src/core/database/<a class="el" href="icon_8h-source.html">icon.h</a><li>src/core/database/<a class="el" href="icon_8cpp-source.html">icon.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:21 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

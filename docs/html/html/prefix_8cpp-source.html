@@ -166,70 +166,261 @@
 <a name="l00145"></a>00145     <span class="keywordflow">return</span> values;
 <a name="l00146"></a>00146 }
 <a name="l00147"></a>00147 
-<a name="l00148"></a>00148 
-<a name="l00149"></a><a class="code" href="class_prefix.html#7f2b8a02069e667b98172443f62663a1">00149</a> QStringList <a class="code" href="class_prefix.html#7f2b8a02069e667b98172443f62663a1" title="This function gets all table fields by prefix id key value from table.">Prefix::getFieldsByPrefixId</a>(<span class="keyword">const</span> QString prefix_id)<span class="keyword"> const</span>{
-<a name="l00150"></a>00150     QStringList values;
-<a name="l00151"></a>00151     QSqlQuery query;
-<a name="l00152"></a>00152     <span class="comment">//                    0   1     2             3            4            5          6            7</span>
-<a name="l00153"></a>00153     query.prepare(<span class="stringliteral">"SELECT id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive FROM prefix WHERE id=:prefix_id"</span>);
-<a name="l00154"></a>00154     query.bindValue(<span class="stringliteral">":prefix_id"</span>, prefix_id);
-<a name="l00155"></a>00155 
-<a name="l00156"></a>00156     <span class="keywordflow">if</span> (query.exec()){
-<a name="l00157"></a>00157         query.first();
-<a name="l00158"></a>00158         <span class="keywordflow">if</span> (query.isValid()){
-<a name="l00159"></a>00159         <span class="keywordtype">int</span> i=0;
-<a name="l00160"></a>00160             <span class="keywordflow">while</span> (query.value(i).isValid()){
-<a name="l00161"></a>00161                 values.append(query.value(i).toString());
-<a name="l00162"></a>00162                 i++;
-<a name="l00163"></a>00163             }
-<a name="l00164"></a>00164         }
-<a name="l00165"></a>00165     } <span class="keywordflow">else</span> {
-<a name="l00166"></a>00166         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError();
-<a name="l00167"></a>00167     }
-<a name="l00168"></a>00168     <span class="keywordflow">return</span> values;
-<a name="l00169"></a>00169 }
+<a name="l00148"></a><a class="code" href="class_prefix.html#27a5d79e4ac02f228d923b0b71ce0b3e">00148</a> QString <a class="code" href="class_prefix.html#27a5d79e4ac02f228d923b0b71ce0b3e" title="This function gets prefix id by name.">Prefix::getId</a>(<span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
+<a name="l00149"></a>00149     QString value;
+<a name="l00150"></a>00150     QSqlQuery query;
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152     query.prepare(<span class="stringliteral">"SELECT id FROM prefix WHERE name=:prefix_name"</span>);
+<a name="l00153"></a>00153     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00154"></a>00154 
+<a name="l00155"></a>00155     <span class="keywordflow">if</span> (query.exec()){
+<a name="l00156"></a>00156         query.first();
+<a name="l00157"></a>00157         <span class="keywordflow">if</span> (query.isValid()){
+<a name="l00158"></a>00158         <span class="keywordtype">int</span> i=0;
+<a name="l00159"></a>00159             <span class="keywordflow">while</span> (query.value(i).isValid()){
+<a name="l00160"></a>00160                 value.append(query.value(i).toString());
+<a name="l00161"></a>00161                 i++;
+<a name="l00162"></a>00162             }
+<a name="l00163"></a>00163         }
+<a name="l00164"></a>00164     } <span class="keywordflow">else</span> {
+<a name="l00165"></a>00165         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError();
+<a name="l00166"></a>00166     }
+<a name="l00167"></a>00167     <span class="keywordflow">return</span> value;
+<a name="l00168"></a>00168 }
+<a name="l00169"></a>00169 
 <a name="l00170"></a>00170 
-<a name="l00171"></a>00171 
-<a name="l00172"></a><a class="code" href="class_prefix.html#8a7e37fdcaf795d451983d074364a18c">00172</a> <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#8a7e37fdcaf795d451983d074364a18c" title="This function executes requested query.">Prefix::updateQuery</a>(QSqlQuery *sqlQuery)<span class="keyword"> const</span>{
-<a name="l00173"></a>00173     <span class="keywordflow">if</span> (!sqlQuery-&gt;exec()){
-<a name="l00174"></a>00174         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;sqlQuery-&gt;lastError();
-<a name="l00175"></a>00175         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00176"></a>00176     }
-<a name="l00177"></a>00177     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00178"></a>00178 }
-<a name="l00179"></a>00179 
-<a name="l00180"></a><a class="code" href="class_prefix.html#42cb131e66fec5ff40f929838ba17b56">00180</a> <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#42cb131e66fec5ff40f929838ba17b56" title="This function deletes all prefix fields by prefix_name keys value from table.">Prefix::delPrefixByPrefixName</a>(<span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
-<a name="l00181"></a>00181     QSqlQuery query;
-<a name="l00182"></a>00182     query.prepare(<span class="stringliteral">"DELETE FROM prefix WHERE id=(SELECT id FROM prefix WHERE name=:prefix_name )"</span>);
-<a name="l00183"></a>00183     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
-<a name="l00184"></a>00184 
-<a name="l00185"></a>00185     <span class="keywordflow">if</span> (!query.exec()){
-<a name="l00186"></a>00186         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
-<a name="l00187"></a>00187         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00188"></a>00188     }
-<a name="l00189"></a>00189     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00190"></a>00190 }
-<a name="l00191"></a>00191 
-<a name="l00192"></a><a class="code" href="class_prefix.html#5b7f44e69ce3188629cb39bce61b0fb2">00192</a> <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#5b7f44e69ce3188629cb39bce61b0fb2" title="This function check is reccord exists by prefix name or not.">Prefix::isExistsByName</a>(<span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
-<a name="l00193"></a>00193     QSqlQuery query;
-<a name="l00194"></a>00194     query.prepare(<span class="stringliteral">"SELECT id FROM prefix WHERE name=:prefix_name"</span>);
-<a name="l00195"></a>00195     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
-<a name="l00196"></a>00196 
-<a name="l00197"></a>00197     <span class="keywordflow">if</span> (!query.exec()){
-<a name="l00198"></a>00198         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
-<a name="l00199"></a>00199         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00200"></a>00200     }
-<a name="l00201"></a>00201     
-<a name="l00202"></a>00202     query.first();
-<a name="l00203"></a>00203     <span class="keywordflow">if</span> (query.isValid()){
-<a name="l00204"></a>00204         <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00205"></a>00205     }
-<a name="l00206"></a>00206 
-<a name="l00207"></a>00207     <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00208"></a>00208 }
-<a name="l00209"></a>00209 
+<a name="l00171"></a><a class="code" href="class_prefix.html#d985316d30e6f926fae4a9d0d59a08b3">00171</a> QString <a class="code" href="class_prefix.html#d985316d30e6f926fae4a9d0d59a08b3" title="This function gets prefix path by name.">Prefix::getPath</a>(<span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
+<a name="l00172"></a>00172     QString value;
+<a name="l00173"></a>00173     QSqlQuery query;
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175     query.prepare(<span class="stringliteral">"SELECT path FROM prefix WHERE name=:prefix_name"</span>);
+<a name="l00176"></a>00176     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178     <span class="keywordflow">if</span> (query.exec()){
+<a name="l00179"></a>00179         query.first();
+<a name="l00180"></a>00180         <span class="keywordflow">if</span> (query.isValid()){
+<a name="l00181"></a>00181             <span class="keywordflow">if</span> (query.value(0).toString().isEmpty()){
+<a name="l00182"></a>00182                 value = QDir::homePath();
+<a name="l00183"></a>00183                 value.append(<span class="stringliteral">"/.wine"</span>);
+<a name="l00184"></a>00184             } <span class="keywordflow">else</span> {
+<a name="l00185"></a>00185                 value.append(query.value(0).toString());
+<a name="l00186"></a>00186             }
+<a name="l00187"></a>00187         }
+<a name="l00188"></a>00188     } <span class="keywordflow">else</span> {
+<a name="l00189"></a>00189         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError();
+<a name="l00190"></a>00190     }
+<a name="l00191"></a>00191     <span class="keywordflow">return</span> value;
+<a name="l00192"></a>00192 }
+<a name="l00193"></a>00193 
+<a name="l00194"></a><a class="code" href="class_prefix.html#eb9f6c5c40bf83822d7c0317a49c6a4a">00194</a> QString <a class="code" href="class_prefix.html#eb9f6c5c40bf83822d7c0317a49c6a4a" title="This function gets prefix cdrom mount path by name.">Prefix::getMountPath</a>(<span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
+<a name="l00195"></a>00195     QString value;
+<a name="l00196"></a>00196     QSqlQuery query;
+<a name="l00197"></a>00197 
+<a name="l00198"></a>00198     query.prepare(<span class="stringliteral">"SELECT cdrom_mount FROM prefix WHERE name=:prefix_name"</span>);
+<a name="l00199"></a>00199     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201     <span class="keywordflow">if</span> (query.exec()){
+<a name="l00202"></a>00202         query.first();
+<a name="l00203"></a>00203         <span class="keywordflow">if</span> (query.isValid()){
+<a name="l00204"></a>00204             <span class="keywordflow">if</span> (query.value(0).toString().isEmpty()){
+<a name="l00205"></a>00205                 value = QDir::homePath();
+<a name="l00206"></a>00206                 value.append(<span class="stringliteral">"/.wine"</span>);
+<a name="l00207"></a>00207             } <span class="keywordflow">else</span> {
+<a name="l00208"></a>00208                 value.append(query.value(0).toString());
+<a name="l00209"></a>00209             }
+<a name="l00210"></a>00210         }
+<a name="l00211"></a>00211     } <span class="keywordflow">else</span> {
+<a name="l00212"></a>00212         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError();
+<a name="l00213"></a>00213     }
+<a name="l00214"></a>00214     <span class="keywordflow">return</span> value;
+<a name="l00215"></a>00215 }
+<a name="l00216"></a>00216 
+<a name="l00217"></a><a class="code" href="class_prefix.html#7f2b8a02069e667b98172443f62663a1">00217</a> QStringList <a class="code" href="class_prefix.html#7f2b8a02069e667b98172443f62663a1" title="This function gets all table fields by prefix id key value from table.">Prefix::getFieldsByPrefixId</a>(<span class="keyword">const</span> QString prefix_id)<span class="keyword"> const</span>{
+<a name="l00218"></a>00218     QStringList values;
+<a name="l00219"></a>00219     QSqlQuery query;
+<a name="l00220"></a>00220     <span class="comment">//                    0   1     2             3            4            5          6            7</span>
+<a name="l00221"></a>00221     query.prepare(<span class="stringliteral">"SELECT id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive FROM prefix WHERE id=:prefix_id"</span>);
+<a name="l00222"></a>00222     query.bindValue(<span class="stringliteral">":prefix_id"</span>, prefix_id);
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224     <span class="keywordflow">if</span> (query.exec()){
+<a name="l00225"></a>00225         query.first();
+<a name="l00226"></a>00226         <span class="keywordflow">if</span> (query.isValid()){
+<a name="l00227"></a>00227         <span class="keywordtype">int</span> i=0;
+<a name="l00228"></a>00228             <span class="keywordflow">while</span> (query.value(i).isValid()){
+<a name="l00229"></a>00229                 values.append(query.value(i).toString());
+<a name="l00230"></a>00230                 i++;
+<a name="l00231"></a>00231             }
+<a name="l00232"></a>00232         }
+<a name="l00233"></a>00233     } <span class="keywordflow">else</span> {
+<a name="l00234"></a>00234         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError();
+<a name="l00235"></a>00235     }
+<a name="l00236"></a>00236     <span class="keywordflow">return</span> values;
+<a name="l00237"></a>00237 }
+<a name="l00238"></a>00238 
+<a name="l00239"></a>00239 
+<a name="l00240"></a><a class="code" href="class_prefix.html#8a7e37fdcaf795d451983d074364a18c">00240</a> <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#8a7e37fdcaf795d451983d074364a18c" title="This function executes requested query.">Prefix::updateQuery</a>(QSqlQuery *sqlQuery)<span class="keyword"> const</span>{
+<a name="l00241"></a>00241     <span class="keywordflow">if</span> (!sqlQuery-&gt;exec()){
+<a name="l00242"></a>00242         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;sqlQuery-&gt;lastError();
+<a name="l00243"></a>00243         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00244"></a>00244     }
+<a name="l00245"></a>00245     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00246"></a>00246 }
+<a name="l00247"></a>00247 
+<a name="l00248"></a><a class="code" href="class_prefix.html#d790da04094933cb2d7b4da515a33dca">00248</a> <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#d790da04094933cb2d7b4da515a33dca" title="This function deletes all prefix fields by prefix_name keys value from table.">Prefix::delByName</a>(<span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
+<a name="l00249"></a>00249     QSqlQuery query;
+<a name="l00250"></a>00250     query.prepare(<span class="stringliteral">"DELETE FROM prefix WHERE id=(SELECT id FROM prefix WHERE name=:prefix_name )"</span>);
+<a name="l00251"></a>00251     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00252"></a>00252 
+<a name="l00253"></a>00253     <span class="keywordflow">if</span> (!query.exec()){
+<a name="l00254"></a>00254         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
+<a name="l00255"></a>00255         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00256"></a>00256     }
+<a name="l00257"></a>00257     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00258"></a>00258 }
+<a name="l00259"></a>00259 
+<a name="l00260"></a>00260 
+<a name="l00261"></a><a class="code" href="class_prefix.html#5cdd7950a50ade2a4fd0b636bc042f93">00261</a> <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#5cdd7950a50ade2a4fd0b636bc042f93" title="This function deletes all prefix fields by prefix_name keys value from table.">Prefix::addPrefix</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString prefix_path, <span class="keyword">const</span> QString wine_exec, <span class="keyword">const</span> QString wine_server, <span class="keyword">const</span> QString wine_loader, <span class="keyword">const</span> QString wine_dllpath, <span class="keyword">const</span> QString cdrom_mount, <span class="keyword">const</span> QString cdrom_drive)<span class="keyword"> const</span>{
+<a name="l00262"></a>00262     QSqlQuery query;
+<a name="l00263"></a>00263     query.prepare(<span class="stringliteral">"INSERT INTO prefix(name, path, wine_exec, wine_server, wine_loader, wine_dllpath, cdrom_mount, cdrom_drive) VALUES(:prefix_name, :prefix_path, :wine_exec, :wine_server, :wine_loader, :wine_dllpath, :cdrom_mount, :cdrom_drive);"</span>);
+<a name="l00264"></a>00264 
+<a name="l00265"></a>00265     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267     <span class="keywordflow">if</span> (prefix_path.isEmpty()){
+<a name="l00268"></a>00268         query.bindValue(<span class="stringliteral">":prefix_path"</span>, QVariant(QVariant::String));
+<a name="l00269"></a>00269     } <span class="keywordflow">else</span> {
+<a name="l00270"></a>00270         query.bindValue(<span class="stringliteral">":prefix_path"</span>, prefix_path);
+<a name="l00271"></a>00271     }
+<a name="l00272"></a>00272 
+<a name="l00273"></a>00273     <span class="keywordflow">if</span> (wine_exec.isEmpty()){
+<a name="l00274"></a>00274         query.bindValue(<span class="stringliteral">":wine_exec"</span>, QVariant(QVariant::String));
+<a name="l00275"></a>00275     } <span class="keywordflow">else</span> {
+<a name="l00276"></a>00276         query.bindValue(<span class="stringliteral">":wine_exec"</span>, wine_exec);
+<a name="l00277"></a>00277     }
+<a name="l00278"></a>00278 
+<a name="l00279"></a>00279     <span class="keywordflow">if</span> (wine_server.isEmpty()){
+<a name="l00280"></a>00280         query.bindValue(<span class="stringliteral">":wine_server"</span>, QVariant(QVariant::String));
+<a name="l00281"></a>00281     } <span class="keywordflow">else</span> {
+<a name="l00282"></a>00282         query.bindValue(<span class="stringliteral">":wine_server"</span>, wine_server);
+<a name="l00283"></a>00283     }
+<a name="l00284"></a>00284 
+<a name="l00285"></a>00285     <span class="keywordflow">if</span> (wine_loader.isEmpty()){
+<a name="l00286"></a>00286         query.bindValue(<span class="stringliteral">":wine_loader"</span>, QVariant(QVariant::String));
+<a name="l00287"></a>00287     } <span class="keywordflow">else</span> {
+<a name="l00288"></a>00288         query.bindValue(<span class="stringliteral">":wine_loader"</span>, wine_loader);
+<a name="l00289"></a>00289     }
+<a name="l00290"></a>00290 
+<a name="l00291"></a>00291     <span class="keywordflow">if</span> (wine_dllpath.isEmpty()){
+<a name="l00292"></a>00292         query.bindValue(<span class="stringliteral">":wine_dllpath"</span>, QVariant(QVariant::String));
+<a name="l00293"></a>00293     } <span class="keywordflow">else</span> {
+<a name="l00294"></a>00294         query.bindValue(<span class="stringliteral">":wine_dllpath"</span>, wine_dllpath);
+<a name="l00295"></a>00295     }
+<a name="l00296"></a>00296 
+<a name="l00297"></a>00297     <span class="keywordflow">if</span> (cdrom_mount.isEmpty()){
+<a name="l00298"></a>00298         query.bindValue(<span class="stringliteral">":cdrom_mount"</span>, QVariant(QVariant::String));
+<a name="l00299"></a>00299     } <span class="keywordflow">else</span> {
+<a name="l00300"></a>00300         query.bindValue(<span class="stringliteral">":cdrom_mount"</span>, cdrom_mount);
+<a name="l00301"></a>00301     }
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303     <span class="keywordflow">if</span> (cdrom_drive.isEmpty()){
+<a name="l00304"></a>00304         query.bindValue(<span class="stringliteral">":cdrom_drive"</span>, QVariant(QVariant::String));
+<a name="l00305"></a>00305     } <span class="keywordflow">else</span> {
+<a name="l00306"></a>00306         <span class="keywordflow">if</span> (cdrom_drive==QObject::tr(<span class="stringliteral">"&lt;none&gt;"</span>)){
+<a name="l00307"></a>00307             query.bindValue(<span class="stringliteral">":cdrom_drive"</span>, QVariant(QVariant::String));
+<a name="l00308"></a>00308         } <span class="keywordflow">else</span> {
+<a name="l00309"></a>00309             query.bindValue(<span class="stringliteral">":cdrom_drive"</span>, cdrom_drive);
+<a name="l00310"></a>00310         }
+<a name="l00311"></a>00311     }
+<a name="l00312"></a>00312 
+<a name="l00313"></a>00313     <span class="keywordflow">if</span> (!query.exec()){
+<a name="l00314"></a>00314         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
+<a name="l00315"></a>00315         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00316"></a>00316     }
+<a name="l00317"></a>00317 
+<a name="l00318"></a>00318     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00319"></a>00319 }
+<a name="l00320"></a>00320 
+<a name="l00321"></a><a class="code" href="class_prefix.html#52af1e154d9b38fdd47cd91f457173a9">00321</a> <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#52af1e154d9b38fdd47cd91f457173a9" title="This function deletes all prefix fields by prefix_name keys value from table.">Prefix::updatePrefix</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString prefix_path, <span class="keyword">const</span> QString wine_exec, <span class="keyword">const</span> QString wine_server, <span class="keyword">const</span> QString wine_loader, <span class="keyword">const</span> QString wine_dllpath, <span class="keyword">const</span> QString cdrom_mount, <span class="keyword">const</span> QString cdrom_drive, <span class="keyword">const</span> QString old_prefix_name)<span class="keyword"> const</span>{
+<a name="l00322"></a>00322     QSqlQuery query;
+<a name="l00323"></a>00323     query.prepare(<span class="stringliteral">"UPDATE prefix SET wine_dllpath=:wine_dllpath, wine_loader=:wine_loader, wine_server=:wine_server, wine_exec=:wine_exec, cdrom_mount=:cdrom_mount, cdrom_drive=:cdrom_drive, name=:prefix_name, path=:prefix_path WHERE name=:old_prefix_name"</span>);
+<a name="l00324"></a>00324 
+<a name="l00325"></a>00325     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00326"></a>00326     query.bindValue(<span class="stringliteral">":old_prefix_name"</span>, old_prefix_name);
+<a name="l00327"></a>00327 
+<a name="l00328"></a>00328     <span class="keywordflow">if</span> (prefix_path.isEmpty()){
+<a name="l00329"></a>00329         query.bindValue(<span class="stringliteral">":prefix_path"</span>, QVariant(QVariant::String));
+<a name="l00330"></a>00330     } <span class="keywordflow">else</span> {
+<a name="l00331"></a>00331         query.bindValue(<span class="stringliteral">":prefix_path"</span>, prefix_path);
+<a name="l00332"></a>00332     }
+<a name="l00333"></a>00333 
+<a name="l00334"></a>00334     <span class="keywordflow">if</span> (wine_exec.isEmpty()){
+<a name="l00335"></a>00335         query.bindValue(<span class="stringliteral">":wine_exec"</span>, QVariant(QVariant::String));
+<a name="l00336"></a>00336     } <span class="keywordflow">else</span> {
+<a name="l00337"></a>00337         query.bindValue(<span class="stringliteral">":wine_exec"</span>, wine_exec);
+<a name="l00338"></a>00338     }
+<a name="l00339"></a>00339 
+<a name="l00340"></a>00340     <span class="keywordflow">if</span> (wine_server.isEmpty()){
+<a name="l00341"></a>00341         query.bindValue(<span class="stringliteral">":wine_server"</span>, QVariant(QVariant::String));
+<a name="l00342"></a>00342     } <span class="keywordflow">else</span> {
+<a name="l00343"></a>00343         query.bindValue(<span class="stringliteral">":wine_server"</span>, wine_server);
+<a name="l00344"></a>00344     }
+<a name="l00345"></a>00345 
+<a name="l00346"></a>00346     <span class="keywordflow">if</span> (wine_loader.isEmpty()){
+<a name="l00347"></a>00347         query.bindValue(<span class="stringliteral">":wine_loader"</span>, QVariant(QVariant::String));
+<a name="l00348"></a>00348     } <span class="keywordflow">else</span> {
+<a name="l00349"></a>00349         query.bindValue(<span class="stringliteral">":wine_loader"</span>, wine_loader);
+<a name="l00350"></a>00350     }
+<a name="l00351"></a>00351 
+<a name="l00352"></a>00352     <span class="keywordflow">if</span> (wine_dllpath.isEmpty()){
+<a name="l00353"></a>00353         query.bindValue(<span class="stringliteral">":wine_dllpath"</span>, QVariant(QVariant::String));
+<a name="l00354"></a>00354     } <span class="keywordflow">else</span> {
+<a name="l00355"></a>00355         query.bindValue(<span class="stringliteral">":wine_dllpath"</span>, wine_dllpath);
+<a name="l00356"></a>00356     }
+<a name="l00357"></a>00357 
+<a name="l00358"></a>00358     <span class="keywordflow">if</span> (cdrom_mount.isEmpty()){
+<a name="l00359"></a>00359         query.bindValue(<span class="stringliteral">":cdrom_mount"</span>, QVariant(QVariant::String));
+<a name="l00360"></a>00360     } <span class="keywordflow">else</span> {
+<a name="l00361"></a>00361         query.bindValue(<span class="stringliteral">":cdrom_mount"</span>, cdrom_mount);
+<a name="l00362"></a>00362     }
+<a name="l00363"></a>00363 
+<a name="l00364"></a>00364     <span class="keywordflow">if</span> (cdrom_drive.isEmpty()){
+<a name="l00365"></a>00365         query.bindValue(<span class="stringliteral">":cdrom_drive"</span>, QVariant(QVariant::String));
+<a name="l00366"></a>00366     } <span class="keywordflow">else</span> {
+<a name="l00367"></a>00367         <span class="keywordflow">if</span> (cdrom_drive==QObject::tr(<span class="stringliteral">"&lt;none&gt;"</span>)){
+<a name="l00368"></a>00368             query.bindValue(<span class="stringliteral">":cdrom_drive"</span>, QVariant(QVariant::String));
+<a name="l00369"></a>00369         } <span class="keywordflow">else</span> {
+<a name="l00370"></a>00370             query.bindValue(<span class="stringliteral">":cdrom_drive"</span>, cdrom_drive);
+<a name="l00371"></a>00371         }
+<a name="l00372"></a>00372     }
+<a name="l00373"></a>00373 
+<a name="l00374"></a>00374     <span class="keywordflow">if</span> (!query.exec()){
+<a name="l00375"></a>00375         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
+<a name="l00376"></a>00376         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00377"></a>00377     }
+<a name="l00378"></a>00378 
+<a name="l00379"></a>00379     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00380"></a>00380 }
+<a name="l00381"></a>00381 
+<a name="l00382"></a>00382 
+<a name="l00383"></a><a class="code" href="class_prefix.html#5b7f44e69ce3188629cb39bce61b0fb2">00383</a> <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#5b7f44e69ce3188629cb39bce61b0fb2" title="This function check is reccord exists by prefix name or not.">Prefix::isExistsByName</a>(<span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
+<a name="l00384"></a>00384     QSqlQuery query;
+<a name="l00385"></a>00385     query.prepare(<span class="stringliteral">"SELECT id FROM prefix WHERE name=:prefix_name"</span>);
+<a name="l00386"></a>00386     query.bindValue(<span class="stringliteral">":prefix_name"</span>, prefix_name);
+<a name="l00387"></a>00387 
+<a name="l00388"></a>00388     <span class="keywordflow">if</span> (!query.exec()){
+<a name="l00389"></a>00389         qDebug()&lt;&lt;<span class="stringliteral">"SqlError: "</span>&lt;&lt;query.lastError()&lt;&lt;query.executedQuery();
+<a name="l00390"></a>00390         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00391"></a>00391     }
+<a name="l00392"></a>00392     
+<a name="l00393"></a>00393     query.first();
+<a name="l00394"></a>00394     <span class="keywordflow">if</span> (query.isValid()){
+<a name="l00395"></a>00395         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00396"></a>00396     }
+<a name="l00397"></a>00397 
+<a name="l00398"></a>00398     <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00399"></a>00399 }
+<a name="l00400"></a>00400 
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

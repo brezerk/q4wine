@@ -52,300 +52,845 @@
 <a name="l00031"></a>00031 
 <a name="l00032"></a><a class="code" href="classcorelib.html#061b046f60f7487de1fcd917b025a845">00032</a> <a class="code" href="classcorelib.html#061b046f60f7487de1fcd917b025a845" title="Create an mainlib class.">corelib::corelib</a>(<span class="keywordtype">bool</span> _GUI_MODE)
 <a name="l00033"></a>00033 {
-<a name="l00034"></a>00034     <span class="comment">// Setting gui mode, if false - cli mode else gui mode</span>
-<a name="l00035"></a>00035     this-&gt;_GUI_MODE=_GUI_MODE;
-<a name="l00036"></a>00036 }
-<a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="group__libq4wine.html#g4051dc94dee795040c78f914f07c6784">00038</a> <a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a>* <a class="code" href="group__libq4wine.html#g4051dc94dee795040c78f914f07c6784" title="This function returns a class of corelib type.">createCoreLib</a>(<span class="keywordtype">bool</span> _GUI_MODE){
-<a name="l00039"></a>00039     <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a>(_GUI_MODE);
-<a name="l00040"></a>00040 }
-<a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="classcorelib.html#b6ee10802744fe1c2016fedca2698509">00042</a> QList&lt;QStringList&gt; <a class="code" href="classcorelib.html#b6ee10802744fe1c2016fedca2698509" title="This function tries to get wine process list running in the current system.">corelib::getWineProcessList</a>(){
-<a name="l00043"></a>00043     QList&lt;QStringList&gt; proclist;
-<a name="l00044"></a>00044     QStringList procline;
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046     QString name, procstat, path, prefix, env_arg, nice;
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048 <span class="preprocessor">    #ifdef _OS_LINUX_</span>
-<a name="l00049"></a>00049 <span class="preprocessor"></span>        QString message = <span class="stringliteral">"&lt;p&gt;Process is unable access to /proc file system.&lt;/p&gt;&lt;p&gt;Access is necessary for displaying wine process information.&lt;/p&gt;&lt;p&gt;You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc&lt;/p&gt;"</span>;
-<a name="l00050"></a>00050 <span class="preprocessor">    #endif</span>
-<a name="l00051"></a>00051 <span class="preprocessor"></span>
-<a name="l00052"></a>00052 <span class="preprocessor">    #ifdef _OS_FREEBSD_</span>
-<a name="l00053"></a>00053 <span class="preprocessor"></span>        QString message = <span class="stringliteral">"&lt;p&gt;Process is unable access to /proc file system.&lt;/p&gt;&lt;p&gt;Access is necessary for displaying wine process information.&lt;/p&gt;&lt;p&gt;You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc&lt;/p&gt;"</span>;
-<a name="l00054"></a>00054 <span class="preprocessor">    #endif</span>
-<a name="l00055"></a>00055 <span class="preprocessor"></span>
-<a name="l00056"></a>00056     <span class="comment">// Check for /proc directory exists</span>
-<a name="l00057"></a>00057     QDir dir(<span class="stringliteral">"/proc"</span>);
-<a name="l00058"></a>00058     <span class="keywordflow">if</span> (!dir.exists()){
-<a name="l00059"></a>00059     <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcorelib.html#7b6a40d5011da1ed5d13985b40f87189" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(message, <span class="keyword">false</span>) == QMessageBox::Ignore){
-<a name="l00060"></a>00060         procline &lt;&lt; <span class="stringliteral">"-1"</span>;
-<a name="l00061"></a>00061         proclist &lt;&lt; procline;
-<a name="l00062"></a>00062             <span class="keywordflow">return</span> proclist;
-<a name="l00063"></a>00063         }
-<a name="l00064"></a>00064     }
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066     <span class="comment">/* On Linux:</span>
-<a name="l00067"></a>00067 <span class="comment">     * This is new engine for getting process info from /proc directory</span>
-<a name="l00068"></a>00068 <span class="comment">     * its fully wrighted with QT and might work more stable =)</span>
-<a name="l00069"></a>00069 <span class="comment">     */</span>
-<a name="l00070"></a>00070 <span class="preprocessor">    #ifdef _OS_LINUX_</span>
-<a name="l00071"></a>00071 <span class="preprocessor"></span>        dir.setFilter(QDir::Dirs | QDir::NoSymLinks);
-<a name="l00072"></a>00072         dir.setSorting(QDir::Name);
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074         QFileInfoList list = dir.entryInfoList();
-<a name="l00075"></a>00075 
-<a name="l00076"></a>00076         <span class="comment">// Getting directoryes one by one</span>
-<a name="l00077"></a>00077         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; list.size(); ++i) {
-<a name="l00078"></a>00078             QFileInfo fileInfo = list.at(i);
-<a name="l00079"></a>00079             path = <span class="stringliteral">"/proc/"</span>;
-<a name="l00080"></a>00080             path.append(fileInfo.fileName());
-<a name="l00081"></a>00081             path.append(<span class="stringliteral">"/stat"</span>);
-<a name="l00082"></a>00082             QFile file(path);
-<a name="l00083"></a>00083             <span class="comment">// Try to read stat file</span>
-<a name="l00084"></a>00084             <span class="keywordflow">if</span> (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-<a name="l00085"></a>00085                 QTextStream in(&amp;file);
-<a name="l00086"></a>00086                 QString line = in.readLine();
-<a name="l00087"></a>00087                 <span class="keywordflow">if</span> (!line.isNull()){
-<a name="l00088"></a>00088                      <span class="comment">// Getting nice and name of the process</span>
-<a name="l00089"></a>00089                      nice = line.section(<span class="charliteral">' '</span>, 18, 18);
-<a name="l00090"></a>00090                      name = line.section(<span class="charliteral">' '</span>, 1, 1);
-<a name="l00091"></a>00091                      name.remove(QChar(<span class="charliteral">'('</span>));
-<a name="l00092"></a>00092                      name.remove(QChar(<span class="charliteral">')'</span>));
-<a name="l00093"></a>00093                      name = name.toLower();
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095                     <span class="comment">// If name contains wine or .exe and not contains q4wine,</span>
-<a name="l00096"></a>00096                     <span class="comment">// then we try to get environ variables.</span>
-<a name="l00097"></a>00097                     <span class="keywordflow">if</span> ((name.contains(<span class="stringliteral">"wine"</span>) || name.contains(<span class="stringliteral">".exe"</span>)) &amp;&amp; !name.contains(APP_SHORT_NAME)){
-<a name="l00098"></a>00098                         path = <span class="stringliteral">"/proc/"</span>;
-<a name="l00099"></a>00099                         path.append(fileInfo.fileName());
-<a name="l00100"></a>00100                         path.append(<span class="stringliteral">"/environ"</span>);
-<a name="l00101"></a>00101                         QFile e_file(path);
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103                         <span class="comment">// Getting WINEPREFIX variable.</span>
-<a name="l00104"></a>00104                         <span class="keywordflow">if</span> (e_file.open(QIODevice::ReadOnly | QIODevice::Text)){
-<a name="l00105"></a>00105                             QTextStream e_in(&amp;e_file);
-<a name="l00106"></a>00106                             QString e_line = e_in.readLine();
-<a name="l00107"></a>00107                             <span class="keywordtype">int</span> index = e_line.indexOf(<span class="stringliteral">"WINEPREFIX="</span>);
-<a name="l00108"></a>00108                             prefix=<span class="stringliteral">""</span>;
-<a name="l00109"></a>00109                             <span class="keywordflow">if</span> (index!=-1)
-<a name="l00110"></a>00110                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=index+11; i&lt;=e_line.length(); i++){
-<a name="l00111"></a>00111                                      <span class="keywordflow">if</span> (e_line.mid(i, 1).data()-&gt;isPrint()){
-<a name="l00112"></a>00112                                            prefix.append(e_line.mid(i, 1));
-<a name="l00113"></a>00113                                      } <span class="keywordflow">else</span> {
-<a name="l00114"></a>00114                                            <span class="keywordflow">break</span>;
-<a name="l00115"></a>00115                                      }
-<a name="l00116"></a>00116                                 }
-<a name="l00117"></a>00117                         }
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119                         <span class="comment">// Puting all fields into QList&lt;QStringList&gt;</span>
-<a name="l00120"></a>00120                         procline.clear();
-<a name="l00121"></a>00121                         procline &lt;&lt; fileInfo.fileName() &lt;&lt; name &lt;&lt; nice &lt;&lt; prefix;
-<a name="l00122"></a>00122                         proclist &lt;&lt; procline;
-<a name="l00123"></a>00123 
-<a name="l00124"></a>00124                     }
-<a name="l00125"></a>00125                 }
-<a name="l00126"></a>00126             file.close();
-<a name="l00127"></a>00127             }
-<a name="l00128"></a>00128         }
-<a name="l00129"></a>00129 <span class="preprocessor">        #endif</span>
-<a name="l00130"></a>00130 <span class="preprocessor"></span>
-<a name="l00131"></a>00131         <span class="comment">/* On FreeBSD:</span>
-<a name="l00132"></a>00132 <span class="comment">         * This is new engine for getting process info from /proc directory and kmem interface</span>
-<a name="l00133"></a>00133 <span class="comment">         */</span>
-<a name="l00134"></a>00134 <span class="preprocessor">        #ifdef _OS_FREEBSD_</span>
-<a name="l00135"></a>00135 <span class="preprocessor"></span>            kvm_t *kd;
-<a name="l00136"></a>00136         <span class="keywordtype">int</span> cntproc, i, ni, ipid;
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138             <span class="keyword">struct </span>kinfo_proc *kp;
-<a name="l00139"></a>00139             <span class="keywordtype">char</span> buf[_POSIX2_LINE_MAX];
-<a name="l00140"></a>00140             <span class="keywordtype">char</span> **envs;
-<a name="l00141"></a>00141 
-<a name="l00142"></a>00142             kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
-<a name="l00143"></a>00143                 <span class="keywordflow">if</span> (!kd){
-<a name="l00144"></a>00144             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcorelib.html#7b6a40d5011da1ed5d13985b40f87189" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"&lt;p&gt;It seems q4wine can not run kvm_openfiles.&lt;/p&gt;"</span>), <span class="keyword">false</span>) == QMessageBox::Ignore){
-<a name="l00145"></a>00145                         procline &lt;&lt; <span class="stringliteral">"-1"</span>;
-<a name="l00146"></a>00146                         proclist &lt;&lt; procline;
-<a name="l00147"></a>00147                         <span class="keywordflow">return</span> proclist;
-<a name="l00148"></a>00148                     }
-<a name="l00149"></a>00149                     <span class="keywordflow">return</span> proclist;
-<a name="l00150"></a>00150                 }
-<a name="l00151"></a>00151             kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &amp;cntproc);
-<a name="l00152"></a>00152                 <span class="keywordflow">if</span> (!kp){
-<a name="l00153"></a>00153             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcorelib.html#7b6a40d5011da1ed5d13985b40f87189" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"&lt;p&gt;It seems q4wine can not run kvm_getprocs.&lt;/p&gt;"</span>), <span class="keyword">false</span>) == QMessageBox::Ignore){
-<a name="l00154"></a>00154                         procline &lt;&lt; <span class="stringliteral">"-1"</span>;
-<a name="l00155"></a>00155                         proclist &lt;&lt; procline;
-<a name="l00156"></a>00156                         <span class="keywordflow">return</span> proclist;
-<a name="l00157"></a>00157                     }
-<a name="l00158"></a>00158                     <span class="keywordflow">return</span> proclist;
-<a name="l00159"></a>00159                 }
-<a name="l00160"></a>00160 
-<a name="l00161"></a>00161             QStringList cur_pids;
-<a name="l00162"></a>00162             <span class="keywordflow">for</span> (i=0; i&lt;cntproc;i++){
-<a name="l00163"></a>00163                 prefix=<span class="stringliteral">""</span>;
-<a name="l00164"></a>00164                 ipid = kp[i].ki_pid;
-<a name="l00165"></a>00165 
-<a name="l00166"></a>00166                 <span class="keywordflow">if</span> (cur_pids.indexOf(QObject::tr(<span class="stringliteral">"%1"</span>).arg(ipid))==-1){
-<a name="l00167"></a>00167                     cur_pids &lt;&lt; QObject::tr(<span class="stringliteral">"%1"</span>).arg(ipid);
-<a name="l00168"></a>00168                     name = kp[i].ki_comm;
-<a name="l00169"></a>00169 
-<a name="l00170"></a>00170                     <span class="keywordflow">if</span> ((name.contains(<span class="stringliteral">"wine"</span>) || name.contains(<span class="stringliteral">".exe"</span>)) &amp;&amp; !name.contains(APP_SHORT_NAME)){
-<a name="l00171"></a>00171                          ni = kp[i].ki_nice;
-<a name="l00172"></a>00172                          nice = QObject::tr(<span class="stringliteral">"%1"</span>).arg(ni);
-<a name="l00173"></a>00173 
-<a name="l00174"></a>00174                          <span class="keywordflow">if</span> (name.contains(<span class="stringliteral">"pthread"</span>)){
-<a name="l00175"></a>00175                               envs = kvm_getargv(kd, (<span class="keyword">const</span> <span class="keyword">struct</span> kinfo_proc *) &amp;(kp[i]), 0);
-<a name="l00176"></a>00176                               <span class="keywordflow">if</span> (envs){
-<a name="l00177"></a>00177                                     name = envs[0];
-<a name="l00178"></a>00178                                     <span class="keywordflow">if</span> (name.isEmpty()){
-<a name="l00179"></a>00179                                          name = kp[i].ki_comm;
-<a name="l00180"></a>00180                                     } <span class="keywordflow">else</span> {
-<a name="l00181"></a>00181                                          name = name.split(<span class="charliteral">'\\'</span>).last();
-<a name="l00182"></a>00182                                     }
-<a name="l00183"></a>00183                                }
-<a name="l00184"></a>00184                           }
-<a name="l00185"></a>00185 
-<a name="l00186"></a>00186                           envs = kvm_getenvv(kd, (<span class="keyword">const</span> <span class="keyword">struct</span> kinfo_proc *) &amp;(kp[i]), 0);
-<a name="l00187"></a>00187                           <span class="keywordflow">if</span> (envs){
-<a name="l00188"></a>00188                                 <span class="keywordtype">int</span> j=0;
-<a name="l00189"></a>00189                                 <span class="keywordflow">while</span> (envs[j]){
-<a name="l00190"></a>00190                                      env_arg=envs[j];
-<a name="l00191"></a>00191                                      <span class="keywordtype">int</span> index = env_arg.indexOf(<span class="stringliteral">"WINEPREFIX="</span>);
-<a name="l00192"></a>00192                                      <span class="keywordflow">if</span> (index&gt;=0){
-<a name="l00193"></a>00193                                            prefix=env_arg.mid(11);
-<a name="l00194"></a>00194                                            <span class="keywordflow">break</span>;
-<a name="l00195"></a>00195                                      }
-<a name="l00196"></a>00196                                      j++;
-<a name="l00197"></a>00197                                 }
-<a name="l00198"></a>00198                           } <span class="keywordflow">else</span> {
-<a name="l00199"></a>00199                                  prefix=<span class="stringliteral">""</span>;
-<a name="l00200"></a>00200                           }
-<a name="l00201"></a>00201 
-<a name="l00202"></a>00202                           <span class="comment">// Puting all fields into QList&lt;QStringList&gt;</span>
-<a name="l00203"></a>00203                           procline.clear();
-<a name="l00204"></a>00204                           procline &lt;&lt; QObject::tr(<span class="stringliteral">"%1"</span>).arg(ipid) &lt;&lt; name &lt;&lt; nice &lt;&lt; prefix;
-<a name="l00205"></a>00205                           proclist &lt;&lt; procline;
-<a name="l00206"></a>00206                      }
-<a name="l00207"></a>00207                 }
-<a name="l00208"></a>00208            }
-<a name="l00209"></a>00209 <span class="preprocessor">        #endif</span>
-<a name="l00210"></a>00210 <span class="preprocessor"></span>
-<a name="l00211"></a>00211 
-<a name="l00212"></a>00212     <span class="keywordflow">return</span> proclist;
-<a name="l00213"></a>00213 }
-<a name="l00214"></a>00214 
-<a name="l00215"></a><a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10">00215</a> QVariant <a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">corelib::getSetting</a>(<span class="keyword">const</span> QString group, <span class="keyword">const</span> QString key, <span class="keyword">const</span> <span class="keywordtype">bool</span> checkExist, <span class="keyword">const</span> QVariant defaultVal)<span class="keyword"> const</span>{
-<a name="l00216"></a>00216     QVariant retVal;
-<a name="l00217"></a>00217     QSettings settings(APP_SHORT_NAME, <span class="stringliteral">"default"</span>);
-<a name="l00218"></a>00218 
-<a name="l00219"></a>00219     settings.beginGroup(group);
-<a name="l00220"></a>00220     retVal = settings.value(key, defaultVal);
-<a name="l00221"></a>00221     settings.endGroup();
-<a name="l00222"></a>00222     <span class="keywordflow">if</span> (checkExist==<span class="keyword">true</span>)
-<a name="l00223"></a>00223     <span class="keywordflow">if</span> (!QFileInfo(retVal.toString()).exists()){
-<a name="l00224"></a>00224         this-&gt;<a class="code" href="classcorelib.html#7b6a40d5011da1ed5d13985b40f87189" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"&lt;p&gt;Error while loading application settings by key: '%1'. File or path not exists: \"%2\"&lt;/p&gt;&lt;p&gt;Please, go to %3 options dialog and set it.&lt;/p&gt;"</span>).arg(key).arg(retVal.toString()).arg(APP_SHORT_NAME));
-<a name="l00225"></a>00225         retVal = QVariant();
-<a name="l00226"></a>00226     }
-<a name="l00227"></a>00227     <span class="keywordflow">return</span> retVal;
-<a name="l00228"></a>00228 }
+<a name="l00034"></a>00034       <span class="comment">// Setting gui mode, if false - cli mode else gui mode</span>
+<a name="l00035"></a>00035       this-&gt;_GUI_MODE=_GUI_MODE;
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037       <span class="comment">// Creating databases</span>
+<a name="l00038"></a>00038       db_icon = <span class="keyword">new</span> <a class="code" href="class_icon.html" title="This class provide database functions for Icon table.">Icon</a>();
+<a name="l00039"></a>00039       db_image = <span class="keyword">new</span> <a class="code" href="class_image.html" title="This class provide database functions for Image table.">Image</a>();
+<a name="l00040"></a>00040       db_prefix = <span class="keyword">new</span> <a class="code" href="class_prefix.html" title="This class provide database functions for prefix table.">Prefix</a>();
+<a name="l00041"></a>00041 }
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="group__libq4wine.html#g4051dc94dee795040c78f914f07c6784">00043</a> <a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a>* <a class="code" href="group__libq4wine.html#g4051dc94dee795040c78f914f07c6784" title="This function returns a class of corelib type.">createCoreLib</a>(<span class="keywordtype">bool</span> _GUI_MODE){
+<a name="l00044"></a>00044       <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a>(_GUI_MODE);
+<a name="l00045"></a>00045 }
+<a name="l00046"></a>00046 
+<a name="l00047"></a><a class="code" href="classcorelib.html#b6ee10802744fe1c2016fedca2698509">00047</a> QList&lt;QStringList&gt; <a class="code" href="classcorelib.html#b6ee10802744fe1c2016fedca2698509" title="This function tries to get wine process list running in the current system.">corelib::getWineProcessList</a>(){
+<a name="l00048"></a>00048       QList&lt;QStringList&gt; proclist;
+<a name="l00049"></a>00049       QStringList procline;
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051       QString name, procstat, path, prefix, env_arg, nice;
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="preprocessor">#ifdef _OS_LINUX_</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span>      QString message = <span class="stringliteral">"&lt;p&gt;Process is unable access to /proc file system.&lt;/p&gt;&lt;p&gt;Access is necessary for displaying wine process information.&lt;/p&gt;&lt;p&gt;You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc&lt;/p&gt;"</span>;
+<a name="l00055"></a>00055 <span class="preprocessor">#endif</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span>
+<a name="l00057"></a>00057 <span class="preprocessor">#ifdef _OS_FREEBSD_</span>
+<a name="l00058"></a>00058 <span class="preprocessor"></span>      QString message = <span class="stringliteral">"&lt;p&gt;Process is unable access to /proc file system.&lt;/p&gt;&lt;p&gt;Access is necessary for displaying wine process information.&lt;/p&gt;&lt;p&gt;You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc&lt;/p&gt;"</span>;
+<a name="l00059"></a>00059 <span class="preprocessor">#endif</span>
+<a name="l00060"></a>00060 <span class="preprocessor"></span>
+<a name="l00061"></a>00061       <span class="comment">// Check for /proc directory exists</span>
+<a name="l00062"></a>00062       QDir dir(<span class="stringliteral">"/proc"</span>);
+<a name="l00063"></a>00063       <span class="keywordflow">if</span> (!dir.exists()){
+<a name="l00064"></a>00064             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(message, <span class="keyword">false</span>) == QMessageBox::Ignore){
+<a name="l00065"></a>00065                   procline &lt;&lt; <span class="stringliteral">"-1"</span>;
+<a name="l00066"></a>00066                   proclist &lt;&lt; procline;
+<a name="l00067"></a>00067                   <span class="keywordflow">return</span> proclist;
+<a name="l00068"></a>00068             }
+<a name="l00069"></a>00069       }
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071       <span class="comment">/* On Linux:</span>
+<a name="l00072"></a>00072 <span class="comment">       * This is new engine for getting process info from /proc directory</span>
+<a name="l00073"></a>00073 <span class="comment">       * its fully wrighted with QT and might work more stable =)</span>
+<a name="l00074"></a>00074 <span class="comment">       */</span>
+<a name="l00075"></a>00075 <span class="preprocessor">#ifdef _OS_LINUX_</span>
+<a name="l00076"></a>00076 <span class="preprocessor"></span>      dir.setFilter(QDir::Dirs | QDir::NoSymLinks);
+<a name="l00077"></a>00077       dir.setSorting(QDir::Name);
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079       QFileInfoList list = dir.entryInfoList();
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081       <span class="comment">// Getting directoryes one by one</span>
+<a name="l00082"></a>00082       <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; list.size(); ++i) {
+<a name="l00083"></a>00083             QFileInfo fileInfo = list.at(i);
+<a name="l00084"></a>00084             path = <span class="stringliteral">"/proc/"</span>;
+<a name="l00085"></a>00085             path.append(fileInfo.fileName());
+<a name="l00086"></a>00086             path.append(<span class="stringliteral">"/stat"</span>);
+<a name="l00087"></a>00087             QFile file(path);
+<a name="l00088"></a>00088             path = <span class="stringliteral">"/proc/"</span>;
+<a name="l00089"></a>00089             path.append(fileInfo.fileName());
+<a name="l00090"></a>00090             path.append(<span class="stringliteral">"/exe"</span>);
+<a name="l00091"></a>00091             QFileInfo exelink(path);
+<a name="l00092"></a>00092             <span class="comment">// Try to read stat file</span>
+<a name="l00093"></a>00093             <span class="keywordflow">if</span> (exelink.isSymLink() &amp;&amp; (exelink.symLinkTarget().contains(<span class="stringliteral">"wineserver"</span>) || exelink.symLinkTarget().contains(<span class="stringliteral">"wine-preloader"</span>))){
+<a name="l00094"></a>00094                   <span class="keywordflow">if</span> (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+<a name="l00095"></a>00095                         QTextStream in(&amp;file);
+<a name="l00096"></a>00096                         QString line = in.readLine();
+<a name="l00097"></a>00097                         <span class="keywordflow">if</span> (!line.isNull()){
+<a name="l00098"></a>00098                               <span class="comment">// Getting nice and name of the process</span>
+<a name="l00099"></a>00099                               nice = line.section(<span class="charliteral">' '</span>, 18, 18);
+<a name="l00100"></a>00100                               name = line.section(<span class="charliteral">' '</span>, 1, 1);
+<a name="l00101"></a>00101                               name.remove(QChar(<span class="charliteral">'('</span>));
+<a name="l00102"></a>00102                               name.remove(QChar(<span class="charliteral">')'</span>));
+<a name="l00103"></a>00103                               name = name.toLower();
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105                               <span class="comment">// If name contains wine or .exe and not contains q4wine,</span>
+<a name="l00106"></a>00106                               <span class="comment">// then we try to get environ variables.</span>
+<a name="l00107"></a>00107                               <span class="comment">//if ((name.contains("wine") || name.contains(".exe")) &amp;&amp; !name.contains(APP_SHORT_NAME)){</span>
+<a name="l00108"></a>00108                                     path = <span class="stringliteral">"/proc/"</span>;
+<a name="l00109"></a>00109                                     path.append(fileInfo.fileName());
+<a name="l00110"></a>00110                                     path.append(<span class="stringliteral">"/environ"</span>);
+<a name="l00111"></a>00111                                     QFile e_file(path);
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113                                     <span class="comment">// Getting WINEPREFIX variable.</span>
+<a name="l00114"></a>00114                                     <span class="keywordflow">if</span> (e_file.open(QIODevice::ReadOnly | QIODevice::Text)){
+<a name="l00115"></a>00115                                           QTextStream e_in(&amp;e_file);
+<a name="l00116"></a>00116                                           QString e_line = e_in.readLine();
+<a name="l00117"></a>00117                                           <span class="keywordtype">int</span> index = e_line.indexOf(<span class="stringliteral">"WINEPREFIX="</span>);
+<a name="l00118"></a>00118                                           prefix=<span class="stringliteral">""</span>;
+<a name="l00119"></a>00119                                           <span class="keywordflow">if</span> (index!=-1)
+<a name="l00120"></a>00120                                                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=index+11; i&lt;=e_line.length(); i++){
+<a name="l00121"></a>00121                                                 <span class="keywordflow">if</span> (e_line.mid(i, 1).data()-&gt;isPrint()){
+<a name="l00122"></a>00122                                                       prefix.append(e_line.mid(i, 1));
+<a name="l00123"></a>00123                                                 } <span class="keywordflow">else</span> {
+<a name="l00124"></a>00124                                                       <span class="keywordflow">break</span>;
+<a name="l00125"></a>00125                                                 }
+<a name="l00126"></a>00126                                           }
+<a name="l00127"></a>00127                                     }
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129                                     <span class="comment">// Puting all fields into QList&lt;QStringList&gt;</span>
+<a name="l00130"></a>00130                                     procline.clear();
+<a name="l00131"></a>00131                                     procline &lt;&lt; fileInfo.fileName() &lt;&lt; name &lt;&lt; nice &lt;&lt; prefix;
+<a name="l00132"></a>00132                                     proclist &lt;&lt; procline;
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134                               <span class="comment">//}</span>
+<a name="l00135"></a>00135                         }
+<a name="l00136"></a>00136                         file.close();
+<a name="l00137"></a>00137                   }
+<a name="l00138"></a>00138             }
+<a name="l00139"></a>00139       }
+<a name="l00140"></a>00140 <span class="preprocessor">#endif</span>
+<a name="l00141"></a>00141 <span class="preprocessor"></span>
+<a name="l00142"></a>00142       <span class="comment">/* On FreeBSD:</span>
+<a name="l00143"></a>00143 <span class="comment">         * This is new engine for getting process info from /proc directory and kmem interface</span>
+<a name="l00144"></a>00144 <span class="comment">         */</span>
+<a name="l00145"></a>00145 <span class="preprocessor">#ifdef _OS_FREEBSD_</span>
+<a name="l00146"></a>00146 <span class="preprocessor"></span>      kvm_t *kd;
+<a name="l00147"></a>00147       <span class="keywordtype">int</span> cntproc, i, ni, ipid;
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149       <span class="keyword">struct </span>kinfo_proc *kp;
+<a name="l00150"></a>00150       <span class="keywordtype">char</span> buf[_POSIX2_LINE_MAX];
+<a name="l00151"></a>00151       <span class="keywordtype">char</span> **envs;
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153       kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
+<a name="l00154"></a>00154       <span class="keywordflow">if</span> (!kd){
+<a name="l00155"></a>00155             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"&lt;p&gt;It seems q4wine can not run kvm_openfiles.&lt;/p&gt;"</span>), <span class="keyword">false</span>) == QMessageBox::Ignore){
+<a name="l00156"></a>00156                   procline &lt;&lt; <span class="stringliteral">"-1"</span>;
+<a name="l00157"></a>00157                   proclist &lt;&lt; procline;
+<a name="l00158"></a>00158                   <span class="keywordflow">return</span> proclist;
+<a name="l00159"></a>00159             }
+<a name="l00160"></a>00160             <span class="keywordflow">return</span> proclist;
+<a name="l00161"></a>00161       }
+<a name="l00162"></a>00162       kp = kvm_getprocs(kd, KERN_PROC_ALL, 0, &amp;cntproc);
+<a name="l00163"></a>00163       <span class="keywordflow">if</span> (!kp){
+<a name="l00164"></a>00164             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"&lt;p&gt;It seems q4wine can not run kvm_getprocs.&lt;/p&gt;"</span>), <span class="keyword">false</span>) == QMessageBox::Ignore){
+<a name="l00165"></a>00165                   procline &lt;&lt; <span class="stringliteral">"-1"</span>;
+<a name="l00166"></a>00166                   proclist &lt;&lt; procline;
+<a name="l00167"></a>00167                   <span class="keywordflow">return</span> proclist;
+<a name="l00168"></a>00168             }
+<a name="l00169"></a>00169             <span class="keywordflow">return</span> proclist;
+<a name="l00170"></a>00170       }
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172       QStringList cur_pids;
+<a name="l00173"></a>00173       <span class="keywordflow">for</span> (i=0; i&lt;cntproc;i++){
+<a name="l00174"></a>00174             prefix=<span class="stringliteral">""</span>;
+<a name="l00175"></a>00175             ipid = kp[i].ki_pid;
+<a name="l00176"></a>00176 
+<a name="l00177"></a>00177             <span class="keywordflow">if</span> (cur_pids.indexOf(QObject::tr(<span class="stringliteral">"%1"</span>).arg(ipid))==-1){
+<a name="l00178"></a>00178                   cur_pids &lt;&lt; QObject::tr(<span class="stringliteral">"%1"</span>).arg(ipid);
+<a name="l00179"></a>00179                   name = kp[i].ki_comm;
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181                   <span class="keywordflow">if</span> ((name.contains(<span class="stringliteral">"wine"</span>) || name.contains(<span class="stringliteral">".exe"</span>)) &amp;&amp; !name.contains(APP_SHORT_NAME)){
+<a name="l00182"></a>00182                         ni = kp[i].ki_nice;
+<a name="l00183"></a>00183                         nice = QObject::tr(<span class="stringliteral">"%1"</span>).arg(ni);
+<a name="l00184"></a>00184 
+<a name="l00185"></a>00185                         <span class="keywordflow">if</span> (name.contains(<span class="stringliteral">"pthread"</span>)){
+<a name="l00186"></a>00186                               envs = kvm_getargv(kd, (<span class="keyword">const</span> <span class="keyword">struct</span> kinfo_proc *) &amp;(kp[i]), 0);
+<a name="l00187"></a>00187                               <span class="keywordflow">if</span> (envs){
+<a name="l00188"></a>00188                                     name = envs[0];
+<a name="l00189"></a>00189                                     <span class="keywordflow">if</span> (name.isEmpty()){
+<a name="l00190"></a>00190                                           name = kp[i].ki_comm;
+<a name="l00191"></a>00191                                     } <span class="keywordflow">else</span> {
+<a name="l00192"></a>00192                                           name = name.split(<span class="charliteral">'\\'</span>).last();
+<a name="l00193"></a>00193                                     }
+<a name="l00194"></a>00194                               }
+<a name="l00195"></a>00195                         }
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197                         envs = kvm_getenvv(kd, (<span class="keyword">const</span> <span class="keyword">struct</span> kinfo_proc *) &amp;(kp[i]), 0);
+<a name="l00198"></a>00198                         <span class="keywordflow">if</span> (envs){
+<a name="l00199"></a>00199                               <span class="keywordtype">int</span> j=0;
+<a name="l00200"></a>00200                               <span class="keywordflow">while</span> (envs[j]){
+<a name="l00201"></a>00201                                     env_arg=envs[j];
+<a name="l00202"></a>00202                                     <span class="keywordtype">int</span> index = env_arg.indexOf(<span class="stringliteral">"WINEPREFIX="</span>);
+<a name="l00203"></a>00203                                     <span class="keywordflow">if</span> (index&gt;=0){
+<a name="l00204"></a>00204                                           prefix=env_arg.mid(11);
+<a name="l00205"></a>00205                                           <span class="keywordflow">break</span>;
+<a name="l00206"></a>00206                                     }
+<a name="l00207"></a>00207                                     j++;
+<a name="l00208"></a>00208                               }
+<a name="l00209"></a>00209                         } <span class="keywordflow">else</span> {
+<a name="l00210"></a>00210                               prefix=<span class="stringliteral">""</span>;
+<a name="l00211"></a>00211                         }
+<a name="l00212"></a>00212 
+<a name="l00213"></a>00213                         <span class="comment">// Puting all fields into QList&lt;QStringList&gt;</span>
+<a name="l00214"></a>00214                         procline.clear();
+<a name="l00215"></a>00215                         procline &lt;&lt; QObject::tr(<span class="stringliteral">"%1"</span>).arg(ipid) &lt;&lt; name &lt;&lt; nice &lt;&lt; prefix;
+<a name="l00216"></a>00216                         proclist &lt;&lt; procline;
+<a name="l00217"></a>00217                   }
+<a name="l00218"></a>00218             }
+<a name="l00219"></a>00219       }
+<a name="l00220"></a>00220 <span class="preprocessor">#endif</span>
+<a name="l00221"></a>00221 <span class="preprocessor"></span>
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223       <span class="keywordflow">return</span> proclist;
+<a name="l00224"></a>00224 }
+<a name="l00225"></a>00225 
+<a name="l00226"></a><a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10">00226</a> QVariant <a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">corelib::getSetting</a>(<span class="keyword">const</span> QString group, <span class="keyword">const</span> QString key, <span class="keyword">const</span> <span class="keywordtype">bool</span> checkExist, <span class="keyword">const</span> QVariant defaultVal)<span class="keyword"> const</span>{
+<a name="l00227"></a>00227       QVariant retVal;
+<a name="l00228"></a>00228       QSettings settings(APP_SHORT_NAME, <span class="stringliteral">"default"</span>);
 <a name="l00229"></a>00229 
-<a name="l00230"></a><a class="code" href="classcorelib.html#1beaa1f4432307abbf7d852b58912164">00230</a> QStringList <a class="code" href="classcorelib.html#1beaa1f4432307abbf7d852b58912164" title="This function get cdrom devices from /etc/fstab file.">corelib::getCdromDevices</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span>{
-<a name="l00231"></a>00231     QStringList retVal;
-<a name="l00232"></a>00232 
-<a name="l00233"></a>00233     QFile file(<span class="stringliteral">"/etc/fstab"</span>);
-<a name="l00234"></a>00234     <span class="keywordflow">if</span> (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-<a name="l00235"></a>00235          this-&gt;<a class="code" href="classcorelib.html#7b6a40d5011da1ed5d13985b40f87189" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"Sorry, i can't access to /etc/fstab"</span>));
-<a name="l00236"></a>00236     }
-<a name="l00237"></a>00237 
-<a name="l00238"></a>00238     retVal&lt;&lt;QObject::tr(<span class="stringliteral">"&lt;none&gt;"</span>);
-<a name="l00239"></a>00239 
-<a name="l00240"></a>00240     <span class="keywordflow">while</span> (1) {
-<a name="l00241"></a>00241         QByteArray line = file.readLine();
-<a name="l00242"></a>00242 
-<a name="l00243"></a>00243         <span class="keywordflow">if</span> (line.isEmpty())
-<a name="l00244"></a>00244             <span class="keywordflow">break</span>;
-<a name="l00245"></a>00245 
-<a name="l00246"></a>00246         <span class="keywordflow">if</span> (line.indexOf(<span class="stringliteral">"cdrom"</span>)&gt;=0){
-<a name="l00247"></a>00247             QList&lt;QByteArray&gt; array = line.split(<span class="charliteral">' '</span>).at(0).split(<span class="charliteral">'\t'</span>);
-<a name="l00248"></a>00248                 retVal&lt;&lt;array.at(0);
-<a name="l00249"></a>00249         }
-<a name="l00250"></a>00250     }
-<a name="l00251"></a>00251 
-<a name="l00252"></a>00252     file.close();
+<a name="l00230"></a>00230       settings.beginGroup(group);
+<a name="l00231"></a>00231       retVal = settings.value(key, defaultVal);
+<a name="l00232"></a>00232       settings.endGroup();
+<a name="l00233"></a>00233       <span class="keywordflow">if</span> (checkExist==<span class="keyword">true</span>)
+<a name="l00234"></a>00234             <span class="keywordflow">if</span> (!QFileInfo(retVal.toString()).exists()){
+<a name="l00235"></a>00235             this-&gt;<a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"&lt;p&gt;Error while loading application settings by key: '%1'. File or path not exists: \"%2\"&lt;/p&gt;&lt;p&gt;Please, go to %3 options dialog and set it.&lt;/p&gt;"</span>).arg(key).arg(retVal.toString()).arg(APP_SHORT_NAME));
+<a name="l00236"></a>00236             retVal = QVariant();
+<a name="l00237"></a>00237       }
+<a name="l00238"></a>00238       <span class="keywordflow">return</span> retVal;
+<a name="l00239"></a>00239 }
+<a name="l00240"></a>00240 
+<a name="l00241"></a><a class="code" href="classcorelib.html#1beaa1f4432307abbf7d852b58912164">00241</a> QStringList <a class="code" href="classcorelib.html#1beaa1f4432307abbf7d852b58912164" title="This function get cdrom devices from /etc/fstab file.">corelib::getCdromDevices</a>(<span class="keywordtype">void</span>)<span class="keyword"> const</span>{
+<a name="l00242"></a>00242       QStringList retVal;
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244       QFile file(<span class="stringliteral">"/etc/fstab"</span>);
+<a name="l00245"></a>00245       <span class="keywordflow">if</span> (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+<a name="l00246"></a>00246             this-&gt;<a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"Sorry, i can't access to /etc/fstab"</span>));
+<a name="l00247"></a>00247       }
+<a name="l00248"></a>00248 
+<a name="l00249"></a>00249       retVal&lt;&lt;QObject::tr(<span class="stringliteral">"&lt;none&gt;"</span>);
+<a name="l00250"></a>00250 
+<a name="l00251"></a>00251       <span class="keywordflow">while</span> (1) {
+<a name="l00252"></a>00252             QByteArray line = file.readLine();
 <a name="l00253"></a>00253 
-<a name="l00254"></a>00254     <span class="keywordflow">return</span> retVal;
-<a name="l00255"></a>00255 }
+<a name="l00254"></a>00254             <span class="keywordflow">if</span> (line.isEmpty())
+<a name="l00255"></a>00255                   <span class="keywordflow">break</span>;
 <a name="l00256"></a>00256 
-<a name="l00257"></a><a class="code" href="classcorelib.html#a814e30d83df5294cf9e700071ad0d04">00257</a> QStringList <a class="code" href="classcorelib.html#a814e30d83df5294cf9e700071ad0d04" title="This function builds wine dlls list for prefix_lib_path.">corelib::getWineDlls</a>(QString prefix_lib_path)<span class="keyword"> const</span>{
-<a name="l00258"></a>00258     QStringList dllList;
-<a name="l00259"></a>00259     <span class="keywordflow">if</span> (prefix_lib_path.isEmpty()){
-<a name="l00260"></a>00260         prefix_lib_path=this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"wine"</span>, <span class="stringliteral">"WineLibs"</span>).toString();
-<a name="l00261"></a>00261     }
+<a name="l00257"></a>00257             <span class="keywordflow">if</span> (line.indexOf(<span class="stringliteral">"cdrom"</span>)&gt;=0){
+<a name="l00258"></a>00258                   QList&lt;QByteArray&gt; array = line.split(<span class="charliteral">' '</span>).at(0).split(<span class="charliteral">'\t'</span>);
+<a name="l00259"></a>00259                   retVal&lt;&lt;array.at(0);
+<a name="l00260"></a>00260             }
+<a name="l00261"></a>00261       }
 <a name="l00262"></a>00262 
-<a name="l00263"></a>00263     QDir dir(prefix_lib_path);
-<a name="l00264"></a>00264         dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
-<a name="l00265"></a>00265 
-<a name="l00266"></a>00266     QFileInfoList list = dir.entryInfoList();
-<a name="l00267"></a>00267     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; list.size(); ++i) {
-<a name="l00268"></a>00268         QFileInfo fileInfo = list.at(i);
-<a name="l00269"></a>00269         <span class="keywordflow">if</span> (fileInfo.fileName().indexOf(<span class="stringliteral">".dll.so"</span>)&gt;=0){
-<a name="l00270"></a>00270             dllList&lt;&lt;fileInfo.fileName().left(fileInfo.fileName().length()-3);
-<a name="l00271"></a>00271         }
-<a name="l00272"></a>00272     }
+<a name="l00263"></a>00263       file.close();
+<a name="l00264"></a>00264 
+<a name="l00265"></a>00265       <span class="keywordflow">return</span> retVal;
+<a name="l00266"></a>00266 }
+<a name="l00267"></a>00267 
+<a name="l00268"></a><a class="code" href="classcorelib.html#a814e30d83df5294cf9e700071ad0d04">00268</a> QStringList <a class="code" href="classcorelib.html#a814e30d83df5294cf9e700071ad0d04" title="This function builds wine dlls list for prefix_lib_path.">corelib::getWineDlls</a>(QString prefix_lib_path)<span class="keyword"> const</span>{
+<a name="l00269"></a>00269       QStringList dllList;
+<a name="l00270"></a>00270       <span class="keywordflow">if</span> (prefix_lib_path.isEmpty()){
+<a name="l00271"></a>00271             prefix_lib_path=this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"wine"</span>, <span class="stringliteral">"WineLibs"</span>).toString();
+<a name="l00272"></a>00272       }
 <a name="l00273"></a>00273 
-<a name="l00274"></a>00274     <span class="keywordflow">return</span> dllList;
-<a name="l00275"></a>00275 }
+<a name="l00274"></a>00274       QDir dir(prefix_lib_path);
+<a name="l00275"></a>00275       dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
 <a name="l00276"></a>00276 
-<a name="l00277"></a>00277 
-<a name="l00278"></a>00278 
-<a name="l00279"></a><a class="code" href="classcorelib.html#56c25d539c766b2751887eeed91b7ca0">00279</a> QString <a class="code" href="classcorelib.html#56c25d539c766b2751887eeed91b7ca0" title="This function get cdrom devices from /etc/fstab file.">corelib::getWhichOut</a>(QString fileName){
-<a name="l00280"></a>00280     <span class="comment">/*</span>
-<a name="l00281"></a>00281 <span class="comment">     * Getting 'which' output;</span>
-<a name="l00282"></a>00282 <span class="comment">     */</span>
-<a name="l00283"></a>00283 
-<a name="l00284"></a>00284     QProcess *proc;
-<a name="l00285"></a>00285 
-<a name="l00286"></a>00286     proc = <span class="keyword">new</span> QProcess();
+<a name="l00277"></a>00277       QFileInfoList list = dir.entryInfoList();
+<a name="l00278"></a>00278       <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; list.size(); ++i) {
+<a name="l00279"></a>00279             QFileInfo fileInfo = list.at(i);
+<a name="l00280"></a>00280             <span class="keywordflow">if</span> (fileInfo.fileName().indexOf(<span class="stringliteral">".dll.so"</span>)&gt;=0){
+<a name="l00281"></a>00281                   dllList&lt;&lt;fileInfo.fileName().left(fileInfo.fileName().length()-3);
+<a name="l00282"></a>00282             }
+<a name="l00283"></a>00283       }
+<a name="l00284"></a>00284 
+<a name="l00285"></a>00285       <span class="keywordflow">return</span> dllList;
+<a name="l00286"></a>00286 }
 <a name="l00287"></a>00287 
-<a name="l00288"></a>00288     QStringList args;
+<a name="l00288"></a>00288 
 <a name="l00289"></a>00289 
-<a name="l00290"></a>00290     args&lt;&lt;fileName;
-<a name="l00291"></a>00291 
-<a name="l00292"></a>00292     proc-&gt;setWorkingDirectory (QDir::homePath());
-<a name="l00293"></a>00293     proc-&gt;start(<span class="stringliteral">"which"</span>, args, QIODevice::ReadOnly);
-<a name="l00294"></a>00294     proc-&gt;waitForFinished();
-<a name="l00295"></a>00295 
-<a name="l00296"></a>00296     QString <span class="keywordtype">string</span> = proc-&gt;readAllStandardOutput();
-<a name="l00297"></a>00297     <span class="keyword">delete</span> proc;
+<a name="l00290"></a><a class="code" href="classcorelib.html#f1f44bb6cba054f1e3a3964ae1898bab">00290</a> QString <a class="code" href="classcorelib.html#f1f44bb6cba054f1e3a3964ae1898bab" title="This function get cdrom devices from /etc/fstab file.">corelib::getWhichOut</a>(<span class="keyword">const</span> QString fileName)<span class="keyword"> const</span>{
+<a name="l00291"></a>00291       <span class="comment">/*</span>
+<a name="l00292"></a>00292 <span class="comment">       * Getting 'which' output;</span>
+<a name="l00293"></a>00293 <span class="comment">       */</span>
+<a name="l00294"></a>00294 
+<a name="l00295"></a>00295       QProcess *proc;
+<a name="l00296"></a>00296 
+<a name="l00297"></a>00297       proc = <span class="keyword">new</span> QProcess();
 <a name="l00298"></a>00298 
-<a name="l00299"></a>00299     <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.isEmpty()){
-<a name="l00300"></a>00300         <span class="keywordflow">return</span> <span class="keywordtype">string</span>.trimmed();
-<a name="l00301"></a>00301     }
+<a name="l00299"></a>00299       QStringList args;
+<a name="l00300"></a>00300 
+<a name="l00301"></a>00301       args&lt;&lt;fileName;
 <a name="l00302"></a>00302 
-<a name="l00303"></a>00303     <span class="keywordflow">return</span> <span class="stringliteral">""</span>;
-<a name="l00304"></a>00304 }
-<a name="l00305"></a>00305 
+<a name="l00303"></a>00303       proc-&gt;setWorkingDirectory (QDir::homePath());
+<a name="l00304"></a>00304       proc-&gt;start(<span class="stringliteral">"which"</span>, args, QIODevice::ReadOnly);
+<a name="l00305"></a>00305       proc-&gt;waitForFinished();
 <a name="l00306"></a>00306 
-<a name="l00307"></a><a class="code" href="classcorelib.html#7b6a40d5011da1ed5d13985b40f87189">00307</a> <span class="keywordtype">int</span> <a class="code" href="classcorelib.html#7b6a40d5011da1ed5d13985b40f87189" title="Displays error message depending on _GUI_MODE variable value.">corelib::showError</a>(<span class="keyword">const</span> QString message, <span class="keyword">const</span> <span class="keywordtype">bool</span> info)<span class="keyword"> const</span>{
-<a name="l00308"></a>00308     <span class="keywordflow">switch</span> (this-&gt;<a class="code" href="classcorelib.html#d4e9818217d7a1d93d74d46323c67fbb" title="Define is library operate in CLI or GUI mode.">_GUI_MODE</a>){
-<a name="l00309"></a>00309     <span class="keywordflow">case</span> <span class="keyword">true</span>:
-<a name="l00310"></a>00310         <span class="keywordflow">switch</span> (info){
-<a name="l00311"></a>00311         <span class="keywordflow">case</span> <span class="keyword">true</span>:
-<a name="l00312"></a>00312             QMessageBox::warning(0, QObject::tr(<span class="stringliteral">"Error"</span>), message);
-<a name="l00313"></a>00313             <span class="keywordflow">return</span> 0;
-<a name="l00314"></a>00314         <span class="keywordflow">break</span>;
-<a name="l00315"></a>00315         <span class="keywordflow">case</span> <span class="keyword">false</span>:
-<a name="l00316"></a>00316             <span class="keywordflow">return</span> QMessageBox::warning(0, QObject::tr(<span class="stringliteral">"Error"</span>), message, QMessageBox::Retry, QMessageBox::Ignore);
-<a name="l00317"></a>00317         <span class="keywordflow">break</span>;
-<a name="l00318"></a>00318         }
-<a name="l00319"></a>00319     <span class="keywordflow">break</span>;
-<a name="l00320"></a>00320     <span class="keywordflow">case</span> <span class="keyword">false</span>:
-<a name="l00321"></a>00321         cout &lt;&lt; <span class="stringliteral">"test"</span>; <span class="comment">// message.toLatin1();</span>
-<a name="l00322"></a>00322     <span class="keywordflow">break</span>;
-<a name="l00323"></a>00323     }
-<a name="l00324"></a>00324     <span class="keywordflow">return</span> 0;
-<a name="l00325"></a>00325 }
+<a name="l00307"></a>00307       QString <span class="keywordtype">string</span> = proc-&gt;readAllStandardOutput();
+<a name="l00308"></a>00308       <span class="keyword">delete</span> proc;
+<a name="l00309"></a>00309 
+<a name="l00310"></a>00310       <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.isEmpty()){
+<a name="l00311"></a>00311             <span class="keywordflow">return</span> <span class="keywordtype">string</span>.trimmed();
+<a name="l00312"></a>00312       } <span class="keywordflow">else</span> {
+<a name="l00313"></a>00313             this-&gt;<a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"Can't find or execute '%1' binary. See INSTALL file for application depends."</span>).arg(fileName));
+<a name="l00314"></a>00314       }
+<a name="l00315"></a>00315 
+<a name="l00316"></a>00316       <span class="keywordflow">return</span> <span class="stringliteral">""</span>;
+<a name="l00317"></a>00317 }
+<a name="l00318"></a>00318 
+<a name="l00319"></a><a class="code" href="classcorelib.html#969b491657f2954af32edfe7f0251571">00319</a> QString <a class="code" href="classcorelib.html#969b491657f2954af32edfe7f0251571" title="This function gets mouted image or media.">corelib::getMountedImages</a>(<span class="keyword">const</span> QString cdrom_mount)<span class="keyword"> const</span>{
+<a name="l00320"></a>00320       QString image=<span class="stringliteral">""</span>;
+<a name="l00321"></a>00321       QStringList arguments;
+<a name="l00322"></a>00322 
+<a name="l00323"></a>00323 <span class="preprocessor">#ifdef _OS_LINUX_</span>
+<a name="l00324"></a>00324 <span class="preprocessor"></span>      arguments &lt;&lt; <span class="stringliteral">"-c"</span> &lt;&lt; QObject::tr(<span class="stringliteral">"%1 | grep %2"</span>).arg(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"mount"</span>).toString()).arg(cdrom_mount);
+<a name="l00325"></a>00325 <span class="preprocessor">#endif</span>
+<a name="l00326"></a>00326 <span class="preprocessor"></span><span class="preprocessor">#ifdef _OS_FREEBSD_</span>
+<a name="l00327"></a>00327 <span class="preprocessor"></span>      arguments &lt;&lt; <span class="stringliteral">"-c"</span> &lt;&lt; QObject::tr(<span class="stringliteral">"%1 | grep %2"</span>).arg(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"mount"</span>).toString()).arg(cdrom_mount);
+<a name="l00328"></a>00328 <span class="preprocessor">#endif</span>
+<a name="l00329"></a>00329 <span class="preprocessor"></span>
+<a name="l00330"></a>00330       QProcess *myProcess = <span class="keyword">new</span> QProcess();
+<a name="l00331"></a>00331       myProcess-&gt;start(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"sh"</span>).toString(), arguments);
+<a name="l00332"></a>00332       <span class="keywordflow">if</span> (!myProcess-&gt;waitForFinished()){
+<a name="l00333"></a>00333             qDebug() &lt;&lt; <span class="stringliteral">"Make failed:"</span> &lt;&lt; myProcess-&gt;errorString();
+<a name="l00334"></a>00334             <span class="keywordflow">return</span> QString();
+<a name="l00335"></a>00335       }
+<a name="l00336"></a>00336 
+<a name="l00337"></a>00337       image = myProcess-&gt;readAll();
+<a name="l00338"></a>00338       <span class="keywordflow">if</span> (!image.isEmpty()){
+<a name="l00339"></a>00339             image = image.split(<span class="stringliteral">" "</span>).first();
+<a name="l00340"></a>00340             <span class="keywordflow">if</span> (!image.isEmpty()){
+<a name="l00341"></a>00341 <span class="preprocessor">#ifdef _OS_LINUX_</span>
+<a name="l00342"></a>00342 <span class="preprocessor"></span>                  <span class="keywordflow">if</span> (image.contains(<span class="stringliteral">"loop"</span>)){
+<a name="l00343"></a>00343 <span class="preprocessor">#endif</span>
+<a name="l00344"></a>00344 <span class="preprocessor"></span><span class="preprocessor">#ifdef _OS_FREEBSD_</span>
+<a name="l00345"></a>00345 <span class="preprocessor"></span>                        <span class="keywordflow">if</span> (image.contains(<span class="stringliteral">"md"</span>)){
+<a name="l00346"></a>00346 <span class="preprocessor">#endif</span>
+<a name="l00347"></a>00347 <span class="preprocessor"></span>                              myProcess-&gt;close ();
+<a name="l00348"></a>00348                               arguments.clear();
+<a name="l00349"></a>00349 <span class="preprocessor">#ifdef _OS_LINUX_</span>
+<a name="l00350"></a>00350 <span class="preprocessor"></span>                              arguments &lt;&lt; <span class="stringliteral">"losetup"</span> &lt;&lt; image;
+<a name="l00351"></a>00351 <span class="preprocessor">#endif</span>
+<a name="l00352"></a>00352 <span class="preprocessor"></span><span class="preprocessor">#ifdef _OS_FREEBSD_</span>
+<a name="l00353"></a>00353 <span class="preprocessor"></span>                              arguments &lt;&lt; <span class="stringliteral">"mdconfig"</span> &lt;&lt;  <span class="stringliteral">"-l"</span> &lt;&lt; QObject::tr(<span class="stringliteral">"-u%1"</span>).arg(image.mid(7));
+<a name="l00354"></a>00354 <span class="preprocessor">#endif</span>
+<a name="l00355"></a>00355 <span class="preprocessor"></span>                              myProcess-&gt;start(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"sudo"</span>).toString(), arguments);
+<a name="l00356"></a>00356                               <span class="keywordflow">if</span> (!myProcess-&gt;waitForFinished()){
+<a name="l00357"></a>00357                                     qDebug() &lt;&lt; <span class="stringliteral">"Make failed:"</span> &lt;&lt; myProcess-&gt;errorString();
+<a name="l00358"></a>00358                                     <span class="keywordflow">return</span> QString();
+<a name="l00359"></a>00359                               } <span class="keywordflow">else</span> {
+<a name="l00360"></a>00360                                     image = myProcess-&gt;readAll();
+<a name="l00361"></a>00361 <span class="preprocessor">#ifdef _OS_LINUX_</span>
+<a name="l00362"></a>00362 <span class="preprocessor"></span>                                    image = image.split(<span class="stringliteral">"/"</span>).last().mid(0, image.split(<span class="stringliteral">"/"</span>).last().length()-2);
+<a name="l00363"></a>00363 <span class="preprocessor">#endif</span>
+<a name="l00364"></a>00364 <span class="preprocessor"></span><span class="preprocessor">#ifdef _OS_FREEBSD_</span>
+<a name="l00365"></a>00365 <span class="preprocessor"></span>                                    image = image.split(<span class="stringliteral">"/"</span>).last().mid(0, image.split(<span class="stringliteral">"/"</span>).last().length()-1);
+<a name="l00366"></a>00366 <span class="preprocessor">#endif</span>
+<a name="l00367"></a>00367 <span class="preprocessor"></span>                              }
+<a name="l00368"></a>00368                         }
+<a name="l00369"></a>00369                   } <span class="keywordflow">else</span> {
+<a name="l00370"></a>00370                         image = <span class="stringliteral">"none"</span>;
+<a name="l00371"></a>00371                   }
+<a name="l00372"></a>00372             } <span class="keywordflow">else</span> {
+<a name="l00373"></a>00373                   image = <span class="stringliteral">"none"</span>;
+<a name="l00374"></a>00374             }
+<a name="l00375"></a>00375             <span class="keywordflow">return</span> image;
+<a name="l00376"></a>00376       }
+<a name="l00377"></a>00377 
+<a name="l00378"></a><a class="code" href="classcorelib.html#39f24fc2b47035772656a35676a007b4">00378</a>       <span class="keywordtype">bool</span> <a class="code" href="classcorelib.html#39f24fc2b47035772656a35676a007b4" title="Prepare icon data for run wine.">corelib::runIcon</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString icon_name)<span class="keyword"> const</span>{
+<a name="l00379"></a>00379             QStringList result = db_icon-&gt;<a class="code" href="class_icon.html#105d3647762225d330dc5bc88ed0199f" title="This function gets icon fields by prefix_name, dir_name and icon name keys value...">getByName</a>(prefix_name, dir_name, icon_name);
+<a name="l00380"></a>00380             <span class="comment">//  0   1     2     3          4       5         6          7           8        9        10    11       12    13         14</span>
+<a name="l00381"></a>00381             <span class="comment">//  id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id</span>
+<a name="l00382"></a>00382             <a class="code" href="struct_exec_object.html" title="Exec obj struct.">ExecObject</a> execObj;
+<a name="l00383"></a>00383             execObj.<a class="code" href="struct_exec_object.html#03a77295d9240c2d274ccd90d93b5378">wrkdir</a> = result.at(4);
+<a name="l00384"></a>00384             execObj.<a class="code" href="struct_exec_object.html#d9b08e4038b525db90763ceb5239a3d5">override</a> = result.at(5);
+<a name="l00385"></a>00385             execObj.<a class="code" href="struct_exec_object.html#74922162243915b79900ec1d4b923eaf">winedebug</a> = result.at(6);
+<a name="l00386"></a>00386             execObj.<a class="code" href="struct_exec_object.html#fdef979edd88a9275b3d3773f653b8ac">useconsole</a> = result.at(7);
+<a name="l00387"></a>00387             execObj.<a class="code" href="struct_exec_object.html#45af739cd1d90a7bc65d6ed68934fa9d">display</a> = result.at(8);
+<a name="l00388"></a>00388             execObj.<a class="code" href="struct_exec_object.html#1f7f4e1457d62e39c780e84311e311a6">cmdargs</a> = result.at(9);
+<a name="l00389"></a>00389             execObj.<a class="code" href="struct_exec_object.html#0ba79954c28b34768905245673a44a82">execcmd</a> = result.at(10);
+<a name="l00390"></a>00390             execObj.<a class="code" href="struct_exec_object.html#e8f7cac49e4fb936176a952f41dcf9fe">desktop</a> = result.at(11);
+<a name="l00391"></a>00391             execObj.<a class="code" href="struct_exec_object.html#fd4da1f8d6d61cbe48de5ec3d34b39b8">nice</a> = result.at(12);
+<a name="l00392"></a>00392             execObj.<a class="code" href="struct_exec_object.html#7fa992b7ff73d48ceb8292b902129322">prefixid</a> = result.at(13);
+<a name="l00393"></a>00393             <span class="keywordflow">return</span> <a class="code" href="classcorelib.html#2548a7fba4debcad301034ac856dec18" title="Prepare icon data for run wine.">runWineBinary</a>(execObj);
+<a name="l00394"></a>00394       }
+<a name="l00395"></a>00395 
+<a name="l00396"></a><a class="code" href="classcorelib.html#2548a7fba4debcad301034ac856dec18">00396</a>       <span class="keywordtype">bool</span> <a class="code" href="classcorelib.html#2548a7fba4debcad301034ac856dec18" title="Prepare icon data for run wine.">corelib::runWineBinary</a>(<span class="keyword">const</span> <a class="code" href="struct_exec_object.html" title="Exec obj struct.">ExecObject</a> execObj)<span class="keyword"> const</span>{
+<a name="l00397"></a>00397             QStringList prefixList;
+<a name="l00398"></a>00398             <span class="comment">// 0   1     2             3            4            5          6            7</span>
+<a name="l00399"></a>00399             <span class="comment">// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive</span>
+<a name="l00400"></a>00400             prefixList = db_prefix-&gt;<a class="code" href="class_prefix.html#7f2b8a02069e667b98172443f62663a1" title="This function gets all table fields by prefix id key value from table.">getFieldsByPrefixId</a>(execObj.<a class="code" href="struct_exec_object.html#7fa992b7ff73d48ceb8292b902129322">prefixid</a>);
+<a name="l00401"></a>00401 
+<a name="l00402"></a>00402             QString exec;
+<a name="l00403"></a>00403             QStringList args;
+<a name="l00404"></a>00404             QString envargs;
+<a name="l00405"></a>00405 
+<a name="l00406"></a>00406             <span class="keywordflow">if</span> (execObj.<a class="code" href="struct_exec_object.html#fdef979edd88a9275b3d3773f653b8ac">useconsole</a> == <span class="stringliteral">"1"</span>){
+<a name="l00407"></a>00407                   <span class="comment">// If we gona use console output, so exec program is program specificed at CONSOLE global variable</span>
+<a name="l00408"></a>00408                   exec = this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"console"</span>, <span class="stringliteral">"bin"</span>).toString();
+<a name="l00409"></a>00409 
+<a name="l00410"></a>00410                   <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"console"</span>, <span class="stringliteral">"args"</span>, <span class="keyword">false</span>).toString().isEmpty()){
+<a name="l00411"></a>00411                         <span class="comment">// If we have any conslope parametres, we gona preccess them one by one</span>
+<a name="l00412"></a>00412                         QStringList cons_args = this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"console"</span>, <span class="stringliteral">"args"</span>, <span class="keyword">false</span>).toString().split(<span class="stringliteral">" "</span>);
+<a name="l00413"></a>00413                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;cons_args.count(); i++){
+<a name="l00414"></a>00414                               <span class="keywordflow">if</span> (!cons_args.at(i).isEmpty())
+<a name="l00415"></a>00415                                     args.append(cons_args.at(i));
+<a name="l00416"></a>00416                         }
+<a name="l00417"></a>00417                   }
+<a name="l00418"></a>00418 
+<a name="l00419"></a>00419                   args.append(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"sh"</span>).toString());
+<a name="l00420"></a>00420 
+<a name="l00421"></a>00421             } <span class="keywordflow">else</span> {
+<a name="l00422"></a>00422                   exec = this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"sh"</span>).toString();
+<a name="l00423"></a>00423             }
+<a name="l00424"></a>00424 
+<a name="l00425"></a>00425             args.append(<span class="stringliteral">"-c"</span>);
+<a name="l00426"></a>00426 
+<a name="l00427"></a>00427 
+<a name="l00428"></a>00428             <span class="keywordflow">if</span> ((execObj.<a class="code" href="struct_exec_object.html#fdef979edd88a9275b3d3773f653b8ac">useconsole</a> == <span class="stringliteral">"1"</span>) &amp;&amp; (!execObj.<a class="code" href="struct_exec_object.html#03a77295d9240c2d274ccd90d93b5378">wrkdir</a>.isNull())){
+<a name="l00429"></a>00429                   envargs.append(<span class="stringliteral">" cd '"</span>);
+<a name="l00430"></a>00430                   envargs.append(execObj.<a class="code" href="struct_exec_object.html#03a77295d9240c2d274ccd90d93b5378">wrkdir</a>);
+<a name="l00431"></a>00431                   envargs.append(<span class="stringliteral">"' &amp;&amp; "</span>);
+<a name="l00432"></a>00432             }
+<a name="l00433"></a>00433 
+<a name="l00434"></a>00434             <span class="keywordflow">if</span> (!prefixList.at(1).isEmpty()){
+<a name="l00435"></a>00435                   <span class="comment">//If icon has prefix -- add to args</span>
+<a name="l00436"></a>00436                   envargs.append(QObject::tr(<span class="stringliteral">" WINEPREFIX=%1 "</span>).arg(prefixList.at(1)));
+<a name="l00437"></a>00437             } <span class="keywordflow">else</span> {
+<a name="l00438"></a>00438                   <span class="comment">//Else use default prefix</span>
+<a name="l00439"></a>00439                   envargs.append(QObject::tr(<span class="stringliteral">" WINEPREFIX=%1/.wine "</span>).arg(QDir::homePath()));
+<a name="l00440"></a>00440             }
+<a name="l00441"></a>00441 
+<a name="l00442"></a>00442             <span class="keywordflow">if</span> (!prefixList.at(2).isEmpty()){
+<a name="l00443"></a>00443                   envargs.append(QObject::tr(<span class="stringliteral">" WINEDLLPATH=%1 "</span>).arg(prefixList.at(2)));
+<a name="l00444"></a>00444             } <span class="keywordflow">else</span> {
+<a name="l00445"></a>00445                   envargs.append(QObject::tr(<span class="stringliteral">" WINEDLLPATH=%1 "</span>).arg(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"wine"</span>, <span class="stringliteral">"WineLibs"</span>).toString()));
+<a name="l00446"></a>00446             }
+<a name="l00447"></a>00447 
+<a name="l00448"></a>00448             <span class="keywordflow">if</span> (!prefixList.at(3).isEmpty()){
+<a name="l00449"></a>00449                   envargs.append(QObject::tr(<span class="stringliteral">" WINELOADER=%1 "</span>).arg(prefixList.at(3)));
+<a name="l00450"></a>00450             } <span class="keywordflow">else</span> {
+<a name="l00451"></a>00451                   envargs.append(QObject::tr(<span class="stringliteral">" WINELOADER=%1 "</span>).arg(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"wine"</span>, <span class="stringliteral">"LoaderBin"</span>).toString()));
+<a name="l00452"></a>00452             }
+<a name="l00453"></a>00453 
+<a name="l00454"></a>00454             <span class="keywordflow">if</span> (!prefixList.at(4).isEmpty()){
+<a name="l00455"></a>00455                   envargs.append(QObject::tr(<span class="stringliteral">" WINESERVER=%1 "</span>).arg(prefixList.at(4)));
+<a name="l00456"></a>00456             } <span class="keywordflow">else</span> {
+<a name="l00457"></a>00457                   envargs.append(QObject::tr(<span class="stringliteral">" WINESERVER=%1 "</span>).arg(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"wine"</span>, <span class="stringliteral">"ServerBin"</span>).toString()));
+<a name="l00458"></a>00458             }
+<a name="l00459"></a>00459 
+<a name="l00460"></a>00460             <span class="keywordflow">if</span> (!execObj.<a class="code" href="struct_exec_object.html#d9b08e4038b525db90763ceb5239a3d5">override</a>.isEmpty()){
+<a name="l00461"></a>00461                   envargs.append(QObject::tr(<span class="stringliteral">" WINEDLLOVERRIDES='%1' "</span>).arg(execObj.<a class="code" href="struct_exec_object.html#d9b08e4038b525db90763ceb5239a3d5">override</a>));
+<a name="l00462"></a>00462             }
+<a name="l00463"></a>00463 
+<a name="l00464"></a>00464             <span class="keywordflow">if</span> (!execObj.<a class="code" href="struct_exec_object.html#74922162243915b79900ec1d4b923eaf">winedebug</a>.isEmpty() &amp;&amp; execObj.<a class="code" href="struct_exec_object.html#fdef979edd88a9275b3d3773f653b8ac">useconsole</a> == <span class="stringliteral">"1"</span>){
+<a name="l00465"></a>00465                   envargs.append(QObject::tr(<span class="stringliteral">" WINEDEBUG=%1 "</span>).arg(execObj.<a class="code" href="struct_exec_object.html#74922162243915b79900ec1d4b923eaf">winedebug</a>));
+<a name="l00466"></a>00466             }
+<a name="l00467"></a>00467 
+<a name="l00468"></a>00468             <span class="keywordflow">if</span> (!execObj.<a class="code" href="struct_exec_object.html#45af739cd1d90a7bc65d6ed68934fa9d">display</a>.isEmpty()){
+<a name="l00469"></a>00469                   envargs.append(QObject::tr(<span class="stringliteral">" DISPLAY=%1 "</span>).arg(execObj.<a class="code" href="struct_exec_object.html#45af739cd1d90a7bc65d6ed68934fa9d">display</a>));
+<a name="l00470"></a>00470             }
+<a name="l00471"></a>00471 
+<a name="l00472"></a>00472             QString exec_string = <span class="stringliteral">""</span>;
+<a name="l00473"></a>00473 
+<a name="l00474"></a>00474             exec_string.append(envargs);
+<a name="l00475"></a>00475             <span class="keywordflow">if</span>(!execObj.<a class="code" href="struct_exec_object.html#fd4da1f8d6d61cbe48de5ec3d34b39b8">nice</a>.isEmpty()){
+<a name="l00476"></a>00476                   exec_string.append(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"nice"</span>).toString());
+<a name="l00477"></a>00477                   exec_string.append(<span class="stringliteral">" -n "</span>);
+<a name="l00478"></a>00478                   exec_string.append(execObj.<a class="code" href="struct_exec_object.html#fd4da1f8d6d61cbe48de5ec3d34b39b8">nice</a>);
+<a name="l00479"></a>00479             }
+<a name="l00480"></a>00480 
+<a name="l00481"></a>00481             exec_string.append(<span class="stringliteral">" "</span>);
+<a name="l00482"></a>00482 
+<a name="l00483"></a>00483             <span class="keywordflow">if</span> (!prefixList.at(5).isEmpty()){
+<a name="l00484"></a>00484                   exec_string.append(prefixList.at(5));
+<a name="l00485"></a>00485             } <span class="keywordflow">else</span> {
+<a name="l00486"></a>00486                   exec_string.append(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"wine"</span>, <span class="stringliteral">"WineBin"</span>).toString());
+<a name="l00487"></a>00487             }
+<a name="l00488"></a>00488 
+<a name="l00489"></a>00489             exec_string.append(<span class="stringliteral">" "</span>);
+<a name="l00490"></a>00490 
+<a name="l00491"></a>00491             <span class="keywordflow">if</span> (!execObj.<a class="code" href="struct_exec_object.html#e8f7cac49e4fb936176a952f41dcf9fe">desktop</a>.isEmpty()){
+<a name="l00492"></a>00492                   exec_string.append(<span class="stringliteral">" explorer.exe /desktop="</span>);
+<a name="l00493"></a>00493                   exec_string.append(execObj.<a class="code" href="struct_exec_object.html#e8f7cac49e4fb936176a952f41dcf9fe">desktop</a>);
+<a name="l00494"></a>00494             }
+<a name="l00495"></a>00495 
+<a name="l00496"></a>00496             exec_string.append(<span class="stringliteral">" \""</span>);
+<a name="l00497"></a>00497             exec_string.append(execObj.<a class="code" href="struct_exec_object.html#0ba79954c28b34768905245673a44a82">execcmd</a>);
+<a name="l00498"></a>00498             exec_string.append(<span class="stringliteral">"\" "</span>);
+<a name="l00499"></a>00499             exec_string.append(execObj.<a class="code" href="struct_exec_object.html#1f7f4e1457d62e39c780e84311e311a6">cmdargs</a>);
+<a name="l00500"></a>00500 
+<a name="l00501"></a>00501             args.append(exec_string);
+<a name="l00502"></a>00502 
+<a name="l00503"></a>00503             QProcess *proc;
+<a name="l00504"></a>00504             proc = <span class="keyword">new</span> QProcess();
+<a name="l00505"></a>00505             <span class="keywordflow">return</span> proc-&gt;startDetached( exec, args, execObj.<a class="code" href="struct_exec_object.html#03a77295d9240c2d274ccd90d93b5378">wrkdir</a> );
+<a name="l00506"></a>00506       }
+<a name="l00507"></a>00507 
+<a name="l00508"></a>00508 
+<a name="l00509"></a>00509       <span class="keywordtype">bool</span> <a class="code" href="classcorelib.html#2548a7fba4debcad301034ac856dec18" title="Prepare icon data for run wine.">corelib::runWineBinary</a>(<span class="keyword">const</span> QString winebinary, <span class="keyword">const</span> QString cmdargs, <span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
+<a name="l00510"></a>00510             QStringList prefixList;
+<a name="l00511"></a>00511             <span class="comment">// 0   1     2             3            4            5          6            7</span>
+<a name="l00512"></a>00512             <span class="comment">// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive</span>
+<a name="l00513"></a>00513             prefixList = db_prefix-&gt;<a class="code" href="class_prefix.html#cf3f3e702baeae9ee02bbcbf1691cb96" title="This function gets all table fields by prefixName key value from table.">getFieldsByPrefixName</a>(prefix_name);
+<a name="l00514"></a>00514 
+<a name="l00515"></a>00515             QString exec;
+<a name="l00516"></a>00516             QStringList args;
+<a name="l00517"></a>00517             QString envargs;
+<a name="l00518"></a>00518 
+<a name="l00519"></a>00519             exec = this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"sh"</span>).toString();
+<a name="l00520"></a>00520 
+<a name="l00521"></a>00521             args.append(<span class="stringliteral">"-c"</span>);
+<a name="l00522"></a>00522 
+<a name="l00523"></a>00523             <span class="keywordflow">if</span> (!prefixList.at(1).isEmpty()){
+<a name="l00524"></a>00524                   <span class="comment">//If icon has prefix -- add to args</span>
+<a name="l00525"></a>00525                   envargs.append(QObject::tr(<span class="stringliteral">" WINEPREFIX=%1 "</span>).arg(prefixList.at(1)));
+<a name="l00526"></a>00526             } <span class="keywordflow">else</span> {
+<a name="l00527"></a>00527                   <span class="comment">//Else use default prefix</span>
+<a name="l00528"></a>00528                   envargs.append(QObject::tr(<span class="stringliteral">" WINEPREFIX=%1/.wine "</span>).arg(QDir::homePath()));
+<a name="l00529"></a>00529             }
+<a name="l00530"></a>00530 
+<a name="l00531"></a>00531             <span class="keywordflow">if</span> (!prefixList.at(2).isEmpty()){
+<a name="l00532"></a>00532                   envargs.append(QObject::tr(<span class="stringliteral">" WINEDLLPATH=%1 "</span>).arg(prefixList.at(2)));
+<a name="l00533"></a>00533             } <span class="keywordflow">else</span> {
+<a name="l00534"></a>00534                   envargs.append(QObject::tr(<span class="stringliteral">" WINEDLLPATH=%1 "</span>).arg(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"wine"</span>, <span class="stringliteral">"WineLibs"</span>).toString()));
+<a name="l00535"></a>00535             }
+<a name="l00536"></a>00536 
+<a name="l00537"></a>00537             <span class="keywordflow">if</span> (!prefixList.at(3).isEmpty()){
+<a name="l00538"></a>00538                   envargs.append(QObject::tr(<span class="stringliteral">" WINELOADER=%1 "</span>).arg(prefixList.at(3)));
+<a name="l00539"></a>00539             } <span class="keywordflow">else</span> {
+<a name="l00540"></a>00540                   envargs.append(QObject::tr(<span class="stringliteral">" WINELOADER=%1 "</span>).arg(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"wine"</span>, <span class="stringliteral">"LoaderBin"</span>).toString()));
+<a name="l00541"></a>00541             }
+<a name="l00542"></a>00542 
+<a name="l00543"></a>00543             <span class="keywordflow">if</span> (!prefixList.at(4).isEmpty()){
+<a name="l00544"></a>00544                   envargs.append(QObject::tr(<span class="stringliteral">" WINESERVER=%1 "</span>).arg(prefixList.at(4)));
+<a name="l00545"></a>00545             } <span class="keywordflow">else</span> {
+<a name="l00546"></a>00546                   envargs.append(QObject::tr(<span class="stringliteral">" WINESERVER=%1 "</span>).arg(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"wine"</span>, <span class="stringliteral">"ServerBin"</span>).toString()));
+<a name="l00547"></a>00547             }
+<a name="l00548"></a>00548 
+<a name="l00549"></a>00549             QString exec_string = <span class="stringliteral">""</span>;
+<a name="l00550"></a>00550             exec_string.append(envargs);
+<a name="l00551"></a>00551             exec_string.append(<span class="stringliteral">" "</span>);
+<a name="l00552"></a>00552 
+<a name="l00553"></a>00553             <span class="keywordflow">if</span> (!prefixList.at(5).isEmpty()){
+<a name="l00554"></a>00554                   exec_string.append(prefixList.at(5));
+<a name="l00555"></a>00555             } <span class="keywordflow">else</span> {
+<a name="l00556"></a>00556                   exec_string.append(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"wine"</span>, <span class="stringliteral">"WineBin"</span>).toString());
+<a name="l00557"></a>00557             }
+<a name="l00558"></a>00558             exec_string.append(<span class="stringliteral">" "</span>);
+<a name="l00559"></a>00559             exec_string.append(<span class="stringliteral">" \""</span>);
+<a name="l00560"></a>00560             exec_string.append(winebinary);
+<a name="l00561"></a>00561             exec_string.append(<span class="stringliteral">"\" "</span>);
+<a name="l00562"></a>00562             exec_string.append(cmdargs);
+<a name="l00563"></a>00563 
+<a name="l00564"></a>00564             args.append(exec_string);
+<a name="l00565"></a>00565 
+<a name="l00566"></a>00566             QProcess *proc;
+<a name="l00567"></a>00567             proc = <span class="keyword">new</span> QProcess();
+<a name="l00568"></a>00568             <span class="keywordflow">return</span> proc-&gt;startDetached(exec, args, QDir::homePath());
+<a name="l00569"></a>00569       }
+<a name="l00570"></a>00570 
+<a name="l00571"></a>00571       QString corelib::createDesktopFile(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString icon_name)<span class="keyword"> const</span>{
+<a name="l00572"></a>00572             QStringList result = db_icon-&gt;<a class="code" href="class_icon.html#105d3647762225d330dc5bc88ed0199f" title="This function gets icon fields by prefix_name, dir_name and icon name keys value...">getByName</a>(prefix_name, dir_name, icon_name);
+<a name="l00573"></a>00573 
+<a name="l00574"></a>00574             QString fileName = QDir::homePath();
+<a name="l00575"></a>00575             fileName.append(<span class="stringliteral">"/.config/"</span>);
+<a name="l00576"></a>00576             fileName.append(APP_SHORT_NAME);
+<a name="l00577"></a>00577             fileName.append(<span class="stringliteral">"/tmp/"</span>);
+<a name="l00578"></a>00578             fileName.append(result.at(1));
+<a name="l00579"></a>00579             fileName.append(<span class="stringliteral">".desktop"</span>);
+<a name="l00580"></a>00580 
+<a name="l00581"></a>00581             QFile file(fileName);
+<a name="l00582"></a>00582             file.open(QIODevice::Truncate | QIODevice::WriteOnly);
+<a name="l00583"></a>00583 
+<a name="l00584"></a>00584             QTextStream out(&amp;file);
+<a name="l00585"></a>00585             out&lt;&lt;<span class="stringliteral">"[Desktop Entry]"</span>&lt;&lt;endl;
+<a name="l00586"></a>00586             out&lt;&lt;<span class="stringliteral">"Exec=q4wine-cli -p \""</span>&lt;&lt;prefix_name&lt;&lt;<span class="stringliteral">"\" "</span>;
+<a name="l00587"></a>00587             <span class="keywordflow">if</span> (!dir_name.isEmpty())
+<a name="l00588"></a>00588                   out&lt;&lt;<span class="stringliteral">" -d \""</span>&lt;&lt;dir_name&lt;&lt;<span class="stringliteral">"\" "</span>;
+<a name="l00589"></a>00589             out&lt;&lt;<span class="stringliteral">" -i \""</span>&lt;&lt;icon_name&lt;&lt;<span class="stringliteral">"\" "</span>&lt;&lt;endl;
+<a name="l00590"></a>00590 
+<a name="l00591"></a>00591             <span class="keywordflow">if</span> (result.at(3).isEmpty()){
+<a name="l00592"></a>00592                   out&lt;&lt;<span class="stringliteral">"Icon=exec_wine"</span>&lt;&lt;endl;
+<a name="l00593"></a>00593             } <span class="keywordflow">else</span> {
+<a name="l00594"></a>00594                   out&lt;&lt;<span class="stringliteral">"Icon="</span>&lt;&lt;result.at(3)&lt;&lt;endl;
+<a name="l00595"></a>00595             }
+<a name="l00596"></a>00596             out&lt;&lt;<span class="stringliteral">"Type=Application"</span>&lt;&lt;endl;
+<a name="l00597"></a>00597             out&lt;&lt;<span class="stringliteral">"X-KDE-StartupNotify=true"</span>&lt;&lt;endl;
+<a name="l00598"></a>00598             out&lt;&lt;<span class="stringliteral">"GenericName="</span>&lt;&lt;result.at(2)&lt;&lt;endl;
+<a name="l00599"></a>00599             out&lt;&lt;<span class="stringliteral">"Name="</span>&lt;&lt;result.at(2)&lt;&lt;endl;
+<a name="l00600"></a>00600             out&lt;&lt;<span class="stringliteral">"Path="</span>&lt;&lt;result.at(4)&lt;&lt;endl;
+<a name="l00601"></a>00601 
+<a name="l00602"></a>00602             file.close();
+<a name="l00603"></a>00603 
+<a name="l00604"></a>00604             <span class="keywordflow">return</span> fileName;
+<a name="l00605"></a>00605       }
+<a name="l00606"></a>00606 
+<a name="l00607"></a>00607 
+<a name="l00608"></a><a class="code" href="classcorelib.html#20de68c82d78c918d904663b4af5bb5b">00608</a>       <span class="keywordtype">bool</span> <a class="code" href="classcorelib.html#20de68c82d78c918d904663b4af5bb5b" title="This function mount an image or drive to prefix mount point.">corelib::mountImage</a>(<span class="keyword">const</span> QString image_name, <span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
+<a name="l00609"></a>00609             QString mount_point=db_prefix-&gt;<a class="code" href="class_prefix.html#cf3f3e702baeae9ee02bbcbf1691cb96" title="This function gets all table fields by prefixName key value from table.">getFieldsByPrefixName</a>(prefix_name).at(6);
+<a name="l00610"></a>00610 
+<a name="l00611"></a>00611             <span class="keywordflow">if</span> (mount_point.isEmpty()){
+<a name="l00612"></a>00612                   this-&gt;<a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"It seems no mount point was set in prefix options.&lt;br&gt;You might need to set it manualy."</span>));
+<a name="l00613"></a>00613                   <span class="keywordflow">return</span> FALSE;
+<a name="l00614"></a>00614             }
+<a name="l00615"></a>00615             <span class="keywordflow">if</span> (image_name.isEmpty())
+<a name="l00616"></a>00616                   <span class="keywordflow">return</span> FALSE;
+<a name="l00617"></a>00617 
+<a name="l00618"></a>00618             QStringList args;
+<a name="l00619"></a>00619             QString mount_string;
+<a name="l00620"></a>00620 
+<a name="l00621"></a>00621 <span class="preprocessor">#ifdef _OS_FREEBSD_</span>
+<a name="l00622"></a>00622 <span class="preprocessor"></span>            <span class="keywordflow">if</span> (image_name.contains(<span class="stringliteral">"/"</span>)) {
+<a name="l00623"></a>00623                   mount_string=this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"advanced"</span>, <span class="stringliteral">"mount_drive_string"</span>, <span class="keyword">false</span>).toString();
+<a name="l00624"></a>00624                   mount_string.replace(<span class="stringliteral">"%MOUNT_DRIVE%"</span>, image_name);
+<a name="l00625"></a>00625             } <span class="keywordflow">else</span> {
+<a name="l00626"></a>00626                   mount_string=this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"advanced"</span>, <span class="stringliteral">"mount_image_string"</span>, <span class="keyword">false</span>).toString();
+<a name="l00627"></a>00627                   mount_string.replace(<span class="stringliteral">"%MOUNT_IMAGE%"</span>, this-&gt;db_image-&gt;<a class="code" href="class_image.html#ac5411f716044979911cf1a7a5222b93" title="Getting file path reccord by image name.">getPath</a>(image_name));
+<a name="l00628"></a>00628                   mount_string.replace(<span class="stringliteral">"%MDCONFIG_BIN%"</span>, <a class="code" href="classcorelib.html#f1f44bb6cba054f1e3a3964ae1898bab" title="This function get cdrom devices from /etc/fstab file.">getWhichOut</a>(<span class="stringliteral">"mdconfig"</span>));
+<a name="l00629"></a>00629             }
+<a name="l00630"></a>00630 
+<a name="l00631"></a>00631             mount_string.replace(<span class="stringliteral">"%GUI_SUDO%"</span>, <a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"gui_sudo"</span>).toString());
+<a name="l00632"></a>00632             mount_string.replace(<span class="stringliteral">"%MOUNT_BIN%"</span>, <a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"mount"</span>).toString());
+<a name="l00633"></a>00633             mount_string.replace(<span class="stringliteral">"%MOUNT_POINT%"</span>, mount_point);
+<a name="l00634"></a>00634 <span class="preprocessor">#endif</span>
+<a name="l00635"></a>00635 <span class="preprocessor"></span>
+<a name="l00636"></a>00636 <span class="preprocessor">#ifdef _OS_LINUX_</span>
+<a name="l00637"></a>00637 <span class="preprocessor"></span>            <span class="keywordflow">if</span> ((image_name.contains(<span class="stringliteral">"/"</span>) &amp;&amp; (!image_name.contains(<span class="stringliteral">".iso"</span>)) &amp;&amp; (!image_name.contains(<span class="stringliteral">".nrg"</span>)))) {
+<a name="l00638"></a>00638                   mount_string=this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"advanced"</span>, <span class="stringliteral">"mount_drive_string"</span>, <span class="keyword">false</span>).toString();
+<a name="l00639"></a>00639                   mount_string.replace(<span class="stringliteral">"%MOUNT_DRIVE%"</span>, image_name);
+<a name="l00640"></a>00640             } <span class="keywordflow">else</span> {
+<a name="l00641"></a>00641                 mount_string=this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"advanced"</span>, <span class="stringliteral">"mount_image_string"</span>, <span class="keyword">false</span>).toString();
+<a name="l00642"></a>00642 
+<a name="l00643"></a>00643                   <span class="keywordflow">if</span> (!QFile(image_name).exists()){
+<a name="l00644"></a>00644                         mount_string.replace(<span class="stringliteral">"%MOUNT_IMAGE%"</span>, this-&gt;db_image-&gt;<a class="code" href="class_image.html#ac5411f716044979911cf1a7a5222b93" title="Getting file path reccord by image name.">getPath</a>(image_name));
+<a name="l00645"></a>00645                   } <span class="keywordflow">else</span> {
+<a name="l00646"></a>00646                         mount_string.replace(<span class="stringliteral">"%MOUNT_IMAGE%"</span>, image_name);
+<a name="l00647"></a>00647                   }
+<a name="l00648"></a>00648 
+<a name="l00649"></a>00649                   mount_string.replace(<span class="stringliteral">"%MOUNT_IMAGE%"</span>, this-&gt;db_image-&gt;<a class="code" href="class_image.html#ac5411f716044979911cf1a7a5222b93" title="Getting file path reccord by image name.">getPath</a>(image_name));
+<a name="l00650"></a>00650                   <span class="keywordflow">if</span> (image_name.right(3)==<span class="stringliteral">"nrg"</span>){
+<a name="l00651"></a>00651                         mount_string.replace(<span class="stringliteral">"%MOUNT_OPTIONS%"</span>, <span class="stringliteral">"-o  loop,offset=307200"</span>);
+<a name="l00652"></a>00652                   } <span class="keywordflow">else</span> {
+<a name="l00653"></a>00653                         mount_string.replace(<span class="stringliteral">"%MOUNT_OPTIONS%"</span>, <span class="stringliteral">"-o  loop"</span>);
+<a name="l00654"></a>00654                   }
+<a name="l00655"></a>00655             }
+<a name="l00656"></a>00656 
+<a name="l00657"></a>00657             mount_string.replace(<span class="stringliteral">"%GUI_SUDO%"</span>, <a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"gui_sudo"</span>).toString());
+<a name="l00658"></a>00658             mount_string.replace(<span class="stringliteral">"%MOUNT_BIN%"</span>, <a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"mount"</span>).toString());
+<a name="l00659"></a>00659             mount_string.replace(<span class="stringliteral">"%MOUNT_POINT%"</span>, mount_point);
+<a name="l00660"></a>00660 <span class="preprocessor">#endif</span>
+<a name="l00661"></a>00661 <span class="preprocessor"></span>
+<a name="l00662"></a>00662             args.clear();
+<a name="l00663"></a>00663             args.append(<span class="stringliteral">"-c"</span>);
+<a name="l00664"></a>00664             args.append(mount_string);
+<a name="l00665"></a>00665 
+<a name="l00666"></a>00666 
+<a name="l00667"></a>00667             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcorelib.html#d4e9818217d7a1d93d74d46323c67fbb" title="Define is library operate in CLI or GUI mode.">_GUI_MODE</a>){
+<a name="l00668"></a>00668                   Process *proc;
+<a name="l00669"></a>00669                   proc = <span class="keyword">new</span> Process(args, this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"sh"</span>).toString(), QDir::homePath(), QObject::tr(<span class="stringliteral">"Mounting %1 into %2"</span>).arg(image_name).arg(mount_point), QObject::tr(<span class="stringliteral">"Mounting..."</span>));
+<a name="l00670"></a>00670                   <span class="keywordflow">if</span> (proc-&gt;exec()==QDialog::Accepted){
+<a name="l00671"></a>00671                      <span class="keywordflow">return</span> TRUE;
+<a name="l00672"></a>00672                  } <span class="keywordflow">else</span> {
+<a name="l00673"></a>00673                   <span class="keywordflow">return</span> FALSE;
+<a name="l00674"></a>00674                  }
+<a name="l00675"></a>00675             } <span class="keywordflow">else</span> {
+<a name="l00676"></a>00676                   <span class="keywordflow">return</span> (this-&gt;<a class="code" href="classcorelib.html#61ce7f45856d69f0e4e302b7976dd392" title="Runs process.">runProcess</a>(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"sh"</span>).toString(), args));
+<a name="l00677"></a>00677             }
+<a name="l00678"></a>00678       }
+<a name="l00679"></a>00679 
+<a name="l00680"></a><a class="code" href="classcorelib.html#c7882577e729ceda9b8cd54c42b2cbbc">00680</a>    <span class="keywordtype">bool</span> <a class="code" href="classcorelib.html#c7882577e729ceda9b8cd54c42b2cbbc" title="This function umount an image or drive from prefix mount point.">corelib::umountImage</a>(<span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
+<a name="l00681"></a>00681             QString mount_point=db_prefix-&gt;<a class="code" href="class_prefix.html#cf3f3e702baeae9ee02bbcbf1691cb96" title="This function gets all table fields by prefixName key value from table.">getFieldsByPrefixName</a>(prefix_name).at(6);
+<a name="l00682"></a>00682 
+<a name="l00683"></a>00683             <span class="keywordflow">if</span> (mount_point.isEmpty()){
+<a name="l00684"></a>00684                   this-&gt;<a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"It seems no mount point was set in prefix options.&lt;br&gt;You might need to set it manualy."</span>));
+<a name="l00685"></a>00685                   <span class="keywordflow">return</span> FALSE;
+<a name="l00686"></a>00686             }
+<a name="l00687"></a>00687 
+<a name="l00688"></a>00688             QStringList args;
+<a name="l00689"></a>00689             QString arg;
+<a name="l00690"></a>00690 
+<a name="l00691"></a>00691 <span class="preprocessor">#ifdef _OS_FREEBSD_</span>
+<a name="l00692"></a>00692 <span class="preprocessor"></span>            args.clear();
+<a name="l00693"></a>00693             args &lt;&lt; <span class="stringliteral">"-c"</span> &lt;&lt; tr(<span class="stringliteral">"%1 | grep %2"</span>).arg(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"mount"</span>).toString()).arg(mount_point);
+<a name="l00694"></a>00694 
+<a name="l00695"></a>00695             QProcess *myProcess = <span class="keyword">new</span> QProcess(<span class="keyword">this</span>);
+<a name="l00696"></a>00696             myProcess-&gt;start(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"sh"</span>).toString(), args);
+<a name="l00697"></a>00697             <span class="keywordflow">if</span> (!myProcess-&gt;waitForFinished()){
+<a name="l00698"></a>00698                   qDebug() &lt;&lt; <span class="stringliteral">"Make failed:"</span> &lt;&lt; myProcess-&gt;errorString();
+<a name="l00699"></a>00699                   <span class="keywordflow">return</span>;
+<a name="l00700"></a>00700             }
+<a name="l00701"></a>00701 
+<a name="l00702"></a>00702             QString devid = myProcess-&gt;readAll();
+<a name="l00703"></a>00703 <span class="preprocessor">#endif</span>
+<a name="l00704"></a>00704 <span class="preprocessor"></span>
+<a name="l00705"></a>00705             QString mount_string;
+<a name="l00706"></a>00706             mount_string=this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"advanced"</span>, <span class="stringliteral">"umount_string"</span>, <span class="keyword">false</span>).toString();
+<a name="l00707"></a>00707             mount_string.replace(<span class="stringliteral">"%GUI_SUDO%"</span>, <a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"gui_sudo"</span>).toString());
+<a name="l00708"></a>00708             mount_string.replace(<span class="stringliteral">"%UMOUNT_BIN%"</span>, <a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"umount"</span>).toString());
+<a name="l00709"></a>00709             mount_string.replace(<span class="stringliteral">"%MOUNT_POINT%"</span>, mount_point);
+<a name="l00710"></a>00710 
+<a name="l00711"></a>00711             args.clear();
+<a name="l00712"></a>00712             args.append(<span class="stringliteral">"-c"</span>);
+<a name="l00713"></a>00713             args.append(mount_string);
+<a name="l00714"></a>00714 
+<a name="l00715"></a>00715             <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcorelib.html#d4e9818217d7a1d93d74d46323c67fbb" title="Define is library operate in CLI or GUI mode.">_GUI_MODE</a>){
+<a name="l00716"></a>00716                   Process *proc;
+<a name="l00717"></a>00717                   proc = <span class="keyword">new</span> Process(args, this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"sh"</span>).toString(), QDir::homePath(), QObject::tr(<span class="stringliteral">"Mounting..."</span>), QObject::tr(<span class="stringliteral">"Mounting..."</span>));
+<a name="l00718"></a>00718                   <span class="keywordflow">return</span> (proc-&gt;exec());
+<a name="l00719"></a>00719             } <span class="keywordflow">else</span> {
+<a name="l00720"></a>00720                   <span class="keywordflow">return</span> (this-&gt;<a class="code" href="classcorelib.html#61ce7f45856d69f0e4e302b7976dd392" title="Runs process.">runProcess</a>(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"sh"</span>).toString(), args));
+<a name="l00721"></a>00721             }
+<a name="l00722"></a>00722 
+<a name="l00723"></a>00723 <span class="preprocessor">#ifdef _OS_FREEBSD_</span>
+<a name="l00724"></a>00724 <span class="preprocessor"></span>            <span class="keywordflow">if</span> (!devid.isEmpty()){
+<a name="l00725"></a>00725                   devid = devid.split(<span class="stringliteral">" "</span>).first();
+<a name="l00726"></a>00726                   <span class="keywordflow">if</span> (!devid.isEmpty()){
+<a name="l00727"></a>00727                         <span class="keywordflow">if</span> (devid.contains(<span class="stringliteral">"md"</span>)){
+<a name="l00728"></a>00728                               args.clear();
+<a name="l00729"></a>00729                               args &lt;&lt; <span class="stringliteral">"mdconfig"</span> &lt;&lt;  <span class="stringliteral">"-d"</span> &lt;&lt; tr(<span class="stringliteral">"-u%1"</span>).arg(devid.mid(7));
+<a name="l00730"></a>00730 
+<a name="l00731"></a>00731                               <span class="comment">//Fix args for kdesu\gksu\e.t.c.</span>
+<a name="l00732"></a>00732                               <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"gui_sudo"</span>).toString().contains(QRegExp(<span class="stringliteral">"/sudo$"</span>))){
+<a name="l00733"></a>00733                                     arg=args.join(<span class="stringliteral">" "</span>);
+<a name="l00734"></a>00734                                     args.clear();
+<a name="l00735"></a>00735                                     args&lt;&lt;arg;
+<a name="l00736"></a>00736                               }
+<a name="l00737"></a>00737 
+<a name="l00738"></a>00738                               <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classcorelib.html#d4e9818217d7a1d93d74d46323c67fbb" title="Define is library operate in CLI or GUI mode.">_GUI_MODE</a>){
+<a name="l00739"></a>00739                                     Process *proc;
+<a name="l00740"></a>00740                                     proc = <span class="keyword">new</span> Process(args, this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"gui_sudo"</span>).toString(), QDir::homePath(), QObject::tr(<span class="stringliteral">"Mounting..."</span>), QObject::tr(<span class="stringliteral">"Mounting..."</span>));
+<a name="l00741"></a>00741                                     <span class="keywordflow">return</span> (proc-&gt;exec());
+<a name="l00742"></a>00742                               } <span class="keywordflow">else</span> {
+<a name="l00743"></a>00743                                     <span class="keywordflow">return</span> (this-&gt;<a class="code" href="classcorelib.html#61ce7f45856d69f0e4e302b7976dd392" title="Runs process.">runProcess</a>(this-&gt;<a class="code" href="classcorelib.html#26fd64ce403fb692f6c581eb9805ff10" title="This function get application settings.">getSetting</a>(<span class="stringliteral">"system"</span>, <span class="stringliteral">"gui_sudo"</span>).toString(), args));
+<a name="l00744"></a>00744                               }
+<a name="l00745"></a>00745                         }
+<a name="l00746"></a>00746                   }
+<a name="l00747"></a>00747             }
+<a name="l00748"></a>00748 <span class="preprocessor">#endif</span>
+<a name="l00749"></a>00749 <span class="preprocessor"></span>
+<a name="l00750"></a>00750             <span class="keywordflow">return</span> TRUE;
+<a name="l00751"></a>00751       }
+<a name="l00752"></a>00752 
+<a name="l00753"></a><a class="code" href="classcorelib.html#c877461c6a3964bbaf8f8c5d0f94a8a6">00753</a>       <span class="keywordtype">bool</span> <a class="code" href="classcorelib.html#c877461c6a3964bbaf8f8c5d0f94a8a6" title="Open icon folder.">corelib::openIconDirectry</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString dir_name, <span class="keyword">const</span> QString icon_name)<span class="keyword"> const</span>{
+<a name="l00754"></a>00754             QStringList result = db_icon-&gt;<a class="code" href="class_icon.html#105d3647762225d330dc5bc88ed0199f" title="This function gets icon fields by prefix_name, dir_name and icon name keys value...">getByName</a>(prefix_name, dir_name, icon_name);
+<a name="l00755"></a>00755             QStringList args;
+<a name="l00756"></a>00756             args&lt;&lt;result.at(4);
+<a name="l00757"></a>00757             <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcorelib.html#61ce7f45856d69f0e4e302b7976dd392" title="Runs process.">runProcess</a>(this-&gt;<a class="code" href="classcorelib.html#f1f44bb6cba054f1e3a3964ae1898bab" title="This function get cdrom devices from /etc/fstab file.">getWhichOut</a>(<span class="stringliteral">"xdg-open"</span>), args, <span class="stringliteral">""</span>, FALSE);
+<a name="l00758"></a>00758       }
+<a name="l00759"></a>00759 
+<a name="l00760"></a><a class="code" href="classcorelib.html#d4d3895d1368ee3b83d69eb171cc01cf">00760</a>       <span class="keywordtype">bool</span> <a class="code" href="classcorelib.html#d4d3895d1368ee3b83d69eb171cc01cf" title="Open prefix folder.">corelib::openPrefixDirectry</a>(<span class="keyword">const</span> QString prefix_name)<span class="keyword"> const</span>{
+<a name="l00761"></a>00761             QStringList args;
+<a name="l00762"></a>00762             args&lt;&lt;db_prefix-&gt;<a class="code" href="class_prefix.html#d985316d30e6f926fae4a9d0d59a08b3" title="This function gets prefix path by name.">getPath</a>(prefix_name);
+<a name="l00763"></a>00763             <span class="keywordflow">return</span> this-&gt;<a class="code" href="classcorelib.html#61ce7f45856d69f0e4e302b7976dd392" title="Runs process.">runProcess</a>(this-&gt;<a class="code" href="classcorelib.html#f1f44bb6cba054f1e3a3964ae1898bab" title="This function get cdrom devices from /etc/fstab file.">getWhichOut</a>(<span class="stringliteral">"xdg-open"</span>), args, <span class="stringliteral">""</span>, FALSE);
+<a name="l00764"></a>00764       }
+<a name="l00765"></a>00765 
+<a name="l00766"></a>00766 
+<a name="l00767"></a>00767       QString corelib::getWinePath(<span class="keyword">const</span> QString path, <span class="keyword">const</span> QString option)<span class="keyword"> const</span>{
+<a name="l00768"></a>00768             QString output, exec;
+<a name="l00769"></a>00769             QStringList args;
+<a name="l00770"></a>00770 
+<a name="l00771"></a>00771             args.append(option);
+<a name="l00772"></a>00772             args.append(path);
+<a name="l00773"></a>00773             exec = this-&gt;<a class="code" href="classcorelib.html#f1f44bb6cba054f1e3a3964ae1898bab" title="This function get cdrom devices from /etc/fstab file.">getWhichOut</a>(<span class="stringliteral">"winepath"</span>);
+<a name="l00774"></a>00774 
+<a name="l00775"></a>00775             QProcess *myProcess;
+<a name="l00776"></a>00776             myProcess = <span class="keyword">new</span> QProcess();
+<a name="l00777"></a>00777             myProcess-&gt;setEnvironment(QProcess::systemEnvironment());
+<a name="l00778"></a>00778             myProcess-&gt;setWorkingDirectory (QDir::homePath());
+<a name="l00779"></a>00779             myProcess-&gt;start(exec, args);
+<a name="l00780"></a>00780 
+<a name="l00781"></a>00781             <span class="keywordflow">if</span> (myProcess-&gt;waitForFinished()){
+<a name="l00782"></a>00782                   output = myProcess-&gt;readAllStandardOutput().trimmed();
+<a name="l00783"></a>00783             }
+<a name="l00784"></a>00784             <span class="keywordflow">return</span> output;
+<a name="l00785"></a>00785       }
+<a name="l00786"></a>00786 
+<a name="l00787"></a><a class="code" href="classcorelib.html#61ce7f45856d69f0e4e302b7976dd392">00787</a>       <span class="keywordtype">bool</span> <a class="code" href="classcorelib.html#61ce7f45856d69f0e4e302b7976dd392" title="Runs process.">corelib::runProcess</a>(<span class="keyword">const</span> QString exec, <span class="keyword">const</span> QStringList args, QString dir, <span class="keywordtype">bool</span> showLog)<span class="keyword"> const</span>{
+<a name="l00788"></a>00788             <span class="keywordflow">if</span> (dir.isEmpty())
+<a name="l00789"></a>00789                   dir=QDir::homePath();
+<a name="l00790"></a>00790 
+<a name="l00791"></a>00791             QProcess *myProcess;
+<a name="l00792"></a>00792             myProcess = <span class="keyword">new</span> QProcess();
+<a name="l00793"></a>00793             myProcess-&gt;setEnvironment(QProcess::systemEnvironment());
+<a name="l00794"></a>00794             myProcess-&gt;setWorkingDirectory (dir);
+<a name="l00795"></a>00795             myProcess-&gt;start(exec, args);
+<a name="l00796"></a>00796 
+<a name="l00797"></a>00797             <span class="keywordflow">if</span> (!myProcess-&gt;waitForFinished())
+<a name="l00798"></a>00798                   <span class="keywordflow">return</span> FALSE;
+<a name="l00799"></a>00799 
+<a name="l00800"></a>00800             <span class="keywordflow">if</span> (showLog){
+<a name="l00801"></a>00801                   <span class="comment">// Getting env LANG variable</span>
+<a name="l00802"></a>00802                   QString lang=getenv(<span class="stringliteral">"LANG"</span>);
+<a name="l00803"></a>00803                   lang=lang.split(<span class="stringliteral">"."</span>).at(1);
+<a name="l00804"></a>00804 
+<a name="l00805"></a>00805                   <span class="comment">// If in is empty -- set UTF8 locale</span>
+<a name="l00806"></a>00806                   <span class="keywordflow">if</span> (lang.isEmpty())
+<a name="l00807"></a>00807                         lang = <span class="stringliteral">"UTF8"</span>;
+<a name="l00808"></a>00808 
+<a name="l00809"></a>00809                   <span class="comment">// Read STDERR with locale support</span>
+<a name="l00810"></a>00810                   QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+<a name="l00811"></a>00811                   QString <span class="keywordtype">string</span> = codec-&gt;toUnicode(myProcess-&gt;readAllStandardError());
+<a name="l00812"></a>00812 
+<a name="l00813"></a>00813                   <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.isEmpty()){
+<a name="l00814"></a>00814                         <a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"It seems the process crashed. STDERR log: %1"</span>).arg(<span class="keywordtype">string</span>));
+<a name="l00815"></a>00815                         <span class="keywordflow">return</span> FALSE;
+<a name="l00816"></a>00816                   }
+<a name="l00817"></a>00817             }
+<a name="l00818"></a>00818             <span class="keywordflow">return</span> TRUE;
+<a name="l00819"></a>00819       }
+<a name="l00820"></a>00820 
+<a name="l00821"></a><a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6">00821</a>       <span class="keywordtype">int</span> <a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6" title="Displays error message depending on _GUI_MODE variable value.">corelib::showError</a>(<span class="keyword">const</span> QString message, <span class="keyword">const</span> <span class="keywordtype">bool</span> info)<span class="keyword"> const</span>{
+<a name="l00822"></a>00822             <span class="keywordflow">switch</span> (this-&gt;<a class="code" href="classcorelib.html#d4e9818217d7a1d93d74d46323c67fbb" title="Define is library operate in CLI or GUI mode.">_GUI_MODE</a>){
+<a name="l00823"></a>00823             <span class="keywordflow">case</span> <span class="keyword">true</span>:
+<a name="l00824"></a>00824                   <span class="keywordflow">switch</span> (info){
+<a name="l00825"></a>00825                   <span class="keywordflow">case</span> <span class="keyword">true</span>:
+<a name="l00826"></a>00826                         QMessageBox::warning(0, QObject::tr(<span class="stringliteral">"Error"</span>), message);
+<a name="l00827"></a>00827                         <span class="keywordflow">return</span> 0;
+<a name="l00828"></a>00828                         <span class="keywordflow">break</span>;
+<a name="l00829"></a>00829                   <span class="keywordflow">case</span> <span class="keyword">false</span>:
+<a name="l00830"></a>00830                         <span class="keywordflow">return</span> QMessageBox::warning(0, QObject::tr(<span class="stringliteral">"Error"</span>), message, QMessageBox::Retry, QMessageBox::Ignore);
+<a name="l00831"></a>00831                         <span class="keywordflow">break</span>;
+<a name="l00832"></a>00832                   }
+<a name="l00833"></a>00833                   <span class="keywordflow">break</span>;
+<a name="l00834"></a>00834             <span class="keywordflow">case</span> <span class="keyword">false</span>:
+<a name="l00835"></a>00835                   cout &lt;&lt; <span class="stringliteral">"test"</span>; <span class="comment">// message.toLatin1();</span>
+<a name="l00836"></a>00836                   <span class="keywordflow">break</span>;
+<a name="l00837"></a>00837             }
+<a name="l00838"></a>00838             <span class="keywordflow">return</span> 0;
+<a name="l00839"></a>00839       }
+<a name="l00840"></a>00840 
+<a name="l00841"></a><a class="code" href="classcorelib.html#29db2f334a7ba2623f5065af17b21708">00841</a>       <span class="keywordtype">void</span> <a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6" title="Displays error message depending on _GUI_MODE variable value.">corelib::showError</a>(<span class="keyword">const</span> QString message)<span class="keyword"> const</span>{
+<a name="l00842"></a>00842             QTextStream Qcout(stdout);
+<a name="l00843"></a>00843             <span class="keywordflow">switch</span> (this-&gt;<a class="code" href="classcorelib.html#d4e9818217d7a1d93d74d46323c67fbb" title="Define is library operate in CLI or GUI mode.">_GUI_MODE</a>){
+<a name="l00844"></a>00844             <span class="keywordflow">case</span> <span class="keyword">true</span>:
+<a name="l00845"></a>00845                   QMessageBox::warning(0, QObject::tr(<span class="stringliteral">"Error"</span>), message);
+<a name="l00846"></a>00846                   <span class="keywordflow">break</span>;
+<a name="l00847"></a>00847             <span class="keywordflow">case</span> <span class="keyword">false</span>:
+<a name="l00848"></a>00848                   Qcout&lt;&lt;QObject::tr(<span class="stringliteral">"Error"</span>)&lt;&lt;endl&lt;&lt;message&lt;&lt;endl;
+<a name="l00849"></a>00849                   <span class="keywordflow">break</span>;
+<a name="l00850"></a>00850             }
+<a name="l00851"></a>00851             <span class="keywordflow">return</span>;
+<a name="l00852"></a>00852       }
+<a name="l00853"></a>00853 
+<a name="l00854"></a><a class="code" href="classcorelib.html#c2641b38269dfd00aedd92220d18dbde">00854</a>       <span class="keywordtype">bool</span> <a class="code" href="classcorelib.html#c2641b38269dfd00aedd92220d18dbde" title="This function kills wineserver.">corelib::killWineServer</a>(<span class="keyword">const</span> QString prefix_path)<span class="keyword"> const</span>{
+<a name="l00855"></a>00855             QString command;
+<a name="l00856"></a>00856 
+<a name="l00857"></a>00857             <span class="keywordflow">if</span> (!prefix_path.isEmpty()){
+<a name="l00858"></a>00858                   command=QObject::tr(<span class="stringliteral">"env WINEPREFIX=\"%1\" wineserver -kill"</span>).arg(prefix_path);
+<a name="l00859"></a>00859             } <span class="keywordflow">else</span> {
+<a name="l00860"></a>00860                   command=<span class="stringliteral">"wineserver -kill"</span>;
+<a name="l00861"></a>00861             }
+<a name="l00862"></a>00862 
+<a name="l00863"></a>00863 
+<a name="l00864"></a>00864             <span class="keywordflow">if</span> (system(command.toAscii().data())==-1){
+<a name="l00865"></a>00865                   this-&gt;<a class="code" href="classcorelib.html#2fa3ebc38acad53a58b592b2a03501a6" title="Displays error message depending on _GUI_MODE variable value.">showError</a>(QObject::tr(<span class="stringliteral">"Can't run: %1"</span>).arg(command.toAscii().data()));
+<a name="l00866"></a>00866                   <span class="keywordflow">return</span> FALSE;
+<a name="l00867"></a>00867             }
+<a name="l00868"></a>00868 
+<a name="l00869"></a>00869             <span class="keywordflow">return</span> TRUE;
+<a name="l00870"></a>00870       }
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

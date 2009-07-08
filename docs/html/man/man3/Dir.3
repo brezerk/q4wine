@@ -1,4 +1,4 @@
-.TH "Dir" 3 "15 Jun 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.TH "Dir" 3 "8 Jul 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -24,6 +24,10 @@ Inherits \fBPrefix\fP.
 .br
 .RI "\fIThis function gets all table fields by prefixId key value from table. \fP"
 .ti -1c
+.RI "QList< QStringList > \fBgetFieldsByPrefixName\fP (const QString prefix_name) const "
+.br
+.RI "\fIThis function gets all table fields by prefixName key value from table. \fP"
+.ti -1c
 .RI "bool \fBdelDir\fP (const QString prefix_name, const QString dir_name='') const "
 .br
 .RI "\fIThis function deletes all dirs fields by prefix_name keys value from table. \fP"
@@ -35,6 +39,14 @@ Inherits \fBPrefix\fP.
 .RI "bool \fBisExistsByName\fP (const QString prefix_name, const QString dir_name) const "
 .br
 .RI "\fIThis function check is reccord exists by dir_name or not. \fP"
+.ti -1c
+.RI "QString \fBgetId\fP (const QString dir_name, const QString prefix_name) const "
+.br
+.RI "\fIThis function gets prefix id by name. \fP"
+.ti -1c
+.RI "bool \fBrenameDir\fP (const QString dir_name, const QString prefix_name, const QString new_dir_name) const "
+.br
+.RI "\fIRename dir. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -61,7 +73,7 @@ Return true if exists.
 .PP
 
 .PP
-Definition at line 78 of file dir.cpp.
+Definition at line 102 of file dir.cpp.
 .SS "bool Dir::delDir (const QString prefix_name, const QString dir_name = \fC''\fP) const"
 .PP
 This function deletes all dirs fields by prefix_name keys value from table. 
@@ -78,7 +90,7 @@ Return true on success.
 .PP
 
 .PP
-Definition at line 61 of file dir.cpp.
+Definition at line 85 of file dir.cpp.
 .SS "QList< QStringList > Dir::getFieldsByPrefixId (const QString prefix_id) const"
 .PP
 This function gets all table fields by prefixId key value from table. 
@@ -98,6 +110,44 @@ Return a list of table fields value or -1 on error.
 Reimplemented from \fBPrefix\fP.
 .PP
 Definition at line 37 of file dir.cpp.
+.SS "QList< QStringList > Dir::getFieldsByPrefixName (const QString prefix_name) const"
+.PP
+This function gets all table fields by prefixName key value from table. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefixName\fP \fBPrefix\fP name key value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return a list of table fields value or -1 on error. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBPrefix\fP.
+.PP
+Definition at line 61 of file dir.cpp.
+.SS "QString Dir::getId (const QString dir_name, const QString prefix_name) const"
+.PP
+This function gets prefix id by name. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdir_name\fP A dir name value. 
+.br
+\fIprefix_name\fP A prefix name value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return prefix id. 
+.RE
+.PP
+
+.PP
+Definition at line 134 of file dir.cpp.
 .SS "bool Dir::isExistsByName (const QString prefix_name, const QString dir_name) const"
 .PP
 This function check is reccord exists by dir_name or not. 
@@ -116,7 +166,28 @@ Return true if exists.
 .PP
 
 .PP
-Definition at line 91 of file dir.cpp.
+Definition at line 115 of file dir.cpp.
+.SS "bool Dir::renameDir (const QString dir_name, const QString prefix_name, const QString new_dir_name) const"
+.PP
+Rename dir. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP A prefix name value. 
+.br
+\fIdir_name\fP A dir name value. 
+.br
+\fInew_dir_name\fP A icon name value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return a list of table fields. 
+.RE
+.PP
+
+.PP
+Definition at line 157 of file dir.cpp.
 
 .SH "Author"
 .PP 

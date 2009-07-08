@@ -1,0 +1,126 @@
+.TH "Image" 3 "8 Jul 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Image \- This class provide database functions for \fBImage\fP table.  
+
+.PP
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <src/core/database/image.h>\fP
+.PP
+Inherits \fBPrefix\fP.
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImage\fP ()"
+.br
+.RI "\fIClass constructor. \fP"
+.ti -1c
+.RI "QList< QStringList > \fBgetFields\fP (void) const "
+.br
+.RI "\fIGetting images list. \fP"
+.ti -1c
+.RI "QString \fBgetPath\fP (const QString name) const "
+.br
+.RI "\fIGetting file path reccord by image name. \fP"
+.ti -1c
+.RI "bool \fBisExistsByName\fP (const QString name) const "
+.br
+.RI "\fIChek for image existance by name. \fP"
+.ti -1c
+.RI "bool \fBaddImage\fP (const QString name, const QString path) const "
+.br
+.RI "\fIAdd image reccord. \fP"
+.ti -1c
+.RI "bool \fBdelImage\fP (const QString name) const "
+.br
+.ti -1c
+.RI "bool \fBrenameImage\fP (const QString name, const QString old_name) const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class provide database functions for \fBImage\fP table. 
+.PP
+Definition at line 50 of file image.h.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Image::addImage (const QString name, const QString path) const"
+.PP
+Add image reccord. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP image name 
+.br
+\fIpath\fP image file path 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If image exists -- returns true. 
+.RE
+.PP
+
+.PP
+Definition at line 86 of file image.cpp.
+.SS "QList< QStringList > Image::getFields (void) const"
+.PP
+Getting images list. 
+.PP
+\fBReturns:\fP
+.RS 4
+Return QList on QStringList containing images. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBPrefix\fP.
+.PP
+Definition at line 37 of file image.cpp.
+.SS "QString Image::getPath (const QString name) const"
+.PP
+Getting file path reccord by image name. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP image name 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return QList on QStringList containing images. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBPrefix\fP.
+.PP
+Definition at line 58 of file image.cpp.
+.SS "bool Image::isExistsByName (const QString name) const"
+.PP
+Chek for image existance by name. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP image name 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If image exists -- returns true. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBPrefix\fP.
+.PP
+Definition at line 71 of file image.cpp.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for q4wine from the source code.

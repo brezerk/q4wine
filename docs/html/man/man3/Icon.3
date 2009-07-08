@@ -1,4 +1,4 @@
-.TH "Icon" 3 "15 Jun 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.TH "Icon" 3 "8 Jul 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -32,6 +32,21 @@ Inherits \fBPrefix\fP.
 .br
 .RI "\fIThis function gets all icons fields by prefix_name and dir_name (optional by icon name) keys value from table. \fP"
 .ti -1c
+.RI "QStringList \fBgetByName\fP (const QString prefix_name, const QString dir_name, const QString icon_name='') const "
+.br
+.RI "\fIThis function gets icon fields by prefix_name, dir_name and icon name keys value from table. \fP"
+.ti -1c
+.RI "QList< QStringList > \fBgetByPrefixAndDirName\fP (const QString prefix_name, const QString dir_name) const "
+.br
+.ti -1c
+.RI "bool \fBcopyIcon\fP (const QString icon_name, const QString prefix_name, const QString dir_name, const QString new_icon_name, const QString new_prefix_name, const QString new_dir_name) const "
+.br
+.RI "\fICopy icon. \fP"
+.ti -1c
+.RI "bool \fBrenameIcon\fP (const QString icon_name, const QString prefix_name, const QString dir_name, const QString new_icon_name) const "
+.br
+.RI "\fIRename icon. \fP"
+.ti -1c
 .RI "QList< QStringList > \fBgetIconsInfoByPrefixName\fP (const QString prefix_name, const QString icon_name='') const "
 .br
 .RI "\fIThis function gets all icons fields by prefix_name (optional by icon name) keys value from table. \fP"
@@ -63,12 +78,16 @@ Inherits \fBPrefix\fP.
 .RI "bool \fBupdateIcon\fP (const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString icon_name, const QString override='', const QString winedebug='', const QString useconsole='', const QString display='', const QString wrkdir='', const QString desktop='', const int nice=0) const "
 .br
 .RI "\fIThis function updates icon record by name, prefix_name and dir_name. \fP"
+.ti -1c
+.RI "bool \fBupdateIcon\fP (const QString icon_name, const QString prefix_id, const QString dir_id, const QString old_prefix_id, const QString old_dir_id, const QString old_icon_name) const "
+.br
+.RI "\fIThis function updates name, prefix_name and dir_name by old_name. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
 This class provide database functions for \fBIcon\fP table. 
 .PP
-Definition at line 53 of file icon.h.
+Definition at line 50 of file icon.h.
 .SH "Member Function Documentation"
 .PP 
 .SS "bool Icon::addIcon (const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString override = \fC''\fP, const QString winedebug = \fC''\fP, const QString useconsole = \fC''\fP, const QString display = \fC''\fP, const QString wrkdir = \fC''\fP, const QString desktop = \fC''\fP, const int nice = \fC0\fP) const"
@@ -99,7 +118,34 @@ Return true on success.
 .PP
 
 .PP
-Definition at line 237 of file icon.cpp.
+Definition at line 306 of file icon.cpp.
+.SS "bool Icon::copyIcon (const QString icon_name, const QString prefix_name, const QString dir_name, const QString new_icon_name, const QString new_prefix_name, const QString new_dir_name) const"
+.PP
+Copy icon. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP A prefix name value. 
+.br
+\fIdir_name\fP A dir name value. 
+.br
+\fIicon_name\fP A icon name value. 
+.br
+\fInew_prefix_name\fP A prefix name value. 
+.br
+\fInew_dir_name\fP A dir name value. 
+.br
+\fInew_icon_name\fP A icon name value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return a list of table fields. 
+.RE
+.PP
+
+.PP
+Definition at line 418 of file icon.cpp.
 .SS "bool Icon::delIcon (const QString prefix_name, const QString dir_name, const QString icon_name) const"
 .PP
 This function delete icon field by prefix_name and dir_name key value from table. 
@@ -118,7 +164,7 @@ Return true on success.
 .PP
 
 .PP
-Definition at line 178 of file icon.cpp.
+Definition at line 243 of file icon.cpp.
 .SS "bool Icon::delIcon (const QString prefix_name, const QString icon_name) const"
 .PP
 This function delete icon field by prefix_name key value from table. 
@@ -135,7 +181,7 @@ Return true on success.
 .PP
 
 .PP
-Definition at line 165 of file icon.cpp.
+Definition at line 230 of file icon.cpp.
 .SS "bool Icon::delIconsByPrefixName (const QString prefix_name) const"
 .PP
 This function deletes all icons fields by prefix_name keys value from table. 
@@ -152,7 +198,28 @@ Return true on success.
 .PP
 
 .PP
-Definition at line 152 of file icon.cpp.
+Definition at line 217 of file icon.cpp.
+.SS "QStringList Icon::getByName (const QString prefix_name, const QString dir_name, const QString icon_name = \fC''\fP) const"
+.PP
+This function gets icon fields by prefix_name, dir_name and icon name keys value from table. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP A prefix name value. 
+.br
+\fIdir_name\fP A dir name value. 
+.br
+\fIicon_name\fP A icon name value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return a list of table fields. 
+.RE
+.PP
+
+.PP
+Definition at line 154 of file icon.cpp.
 .SS "QList< QStringList > Icon::getIconsInfo (const QString prefix_id) const"
 .PP
 This function gets all icons fields by prefixId key value from table. 
@@ -164,7 +231,7 @@ This function gets all icons fields by prefixId key value from table.
 .PP
 \fBReturns:\fP
 .RS 4
-Return a list of table fields value or -1 on error. 
+Return a list of table fields. 
 .RE
 .PP
 
@@ -183,7 +250,7 @@ This function gets all icons fields by prefix_id and dir_id key value from table
 .PP
 \fBReturns:\fP
 .RS 4
-Return a list of table fields value or -1 on error. 
+Return a list of table fields. 
 .RE
 .PP
 
@@ -204,7 +271,7 @@ This function gets all icons fields by prefix_name and dir_name (optional by ico
 .PP
 \fBReturns:\fP
 .RS 4
-Return a list of table fields value or -1 on error. 
+Return a list of table fields. 
 .RE
 .PP
 
@@ -223,12 +290,12 @@ This function gets all icons fields by prefix_name (optional by icon name) keys 
 .PP
 \fBReturns:\fP
 .RS 4
-Return a list of table fields value or -1 on error. 
+Return a list of table fields value. 
 .RE
 .PP
 
 .PP
-Definition at line 121 of file icon.cpp.
+Definition at line 186 of file icon.cpp.
 .SS "bool Icon::isExistsByName (const QString prefix_name, const QString dir_name, const QString icon_name) const"
 .PP
 This function check is reccord exists by icon_name or not. 
@@ -249,7 +316,7 @@ Return true if exists.
 .PP
 
 .PP
-Definition at line 216 of file icon.cpp.
+Definition at line 281 of file icon.cpp.
 .SS "bool Icon::isExistsByName (const QString prefix_name, const QString icon_name) const"
 .PP
 This function check is reccord exists by icon_name or not. 
@@ -268,7 +335,53 @@ Return true if exists.
 .PP
 
 .PP
-Definition at line 197 of file icon.cpp.
+Definition at line 262 of file icon.cpp.
+.SS "bool Icon::renameIcon (const QString icon_name, const QString prefix_name, const QString dir_name, const QString new_icon_name) const"
+.PP
+Rename icon. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP A prefix name value. 
+.br
+\fIdir_name\fP A dir name value. 
+.br
+\fIicon_name\fP A icon name value. 
+.br
+\fInew_icon_name\fP A icon name value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return a list of table fields. 
+.RE
+.PP
+
+.PP
+Definition at line 423 of file icon.cpp.
+.SS "bool Icon::updateIcon (const QString icon_name, const QString prefix_id, const QString dir_id, const QString old_prefix_id, const QString old_dir_id, const QString old_icon_name) const"
+.PP
+This function updates name, prefix_name and dir_name by old_name. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIicon_name\fP A icon name value. 
+.br
+\fIprefix_name\fP A dir name value. 
+.br
+\fIdir_name\fP A dir name value. 
+.br
+\fIold_icon_name\fP A old icon name value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return true on success. 
+.RE
+.PP
+
+.PP
+Definition at line 395 of file icon.cpp.
 .SS "bool Icon::updateIcon (const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString icon_name, const QString override = \fC''\fP, const QString winedebug = \fC''\fP, const QString useconsole = \fC''\fP, const QString display = \fC''\fP, const QString wrkdir = \fC''\fP, const QString desktop = \fC''\fP, const int nice = \fC0\fP) const"
 .PP
 This function updates icon record by name, prefix_name and dir_name. 
@@ -297,7 +410,7 @@ Return true on success.
 .PP
 
 .PP
-Definition at line 326 of file icon.cpp.
+Definition at line 444 of file icon.cpp.
 
 .SH "Author"
 .PP 

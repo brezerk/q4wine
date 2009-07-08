@@ -59,41 +59,53 @@
 <a name="l00038"></a>00038 <span class="preprocessor">#include &lt;QSqlQuery&gt;</span>
 <a name="l00039"></a>00039 <span class="preprocessor">#include &lt;QSqlError&gt;</span>
 <a name="l00040"></a>00040 <span class="preprocessor">#include &lt;QDebug&gt;</span>
-<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;QVariant&gt;</span>
-<a name="l00042"></a>00042 
+<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;QDir&gt;</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;QVariant&gt;</span>
 <a name="l00043"></a>00043 
-<a name="l00050"></a><a class="code" href="class_prefix.html">00050</a> <span class="keyword">class </span><a class="code" href="class_prefix.html" title="This class provide database functions for prefix table.">Prefix</a>
-<a name="l00051"></a>00051 {
-<a name="l00052"></a>00052   <span class="keyword">public</span>:
-<a name="l00055"></a>00055       <a class="code" href="class_prefix.html#b2ee31e5cf7f496ff51d5c41d282a857" title="This is calss constructor.">Prefix</a>();
-<a name="l00056"></a>00056   
-<a name="l00062"></a>00062       QList&lt;QStringList&gt; <a class="code" href="class_prefix.html#eb3b9fd0bd2b1dab0f79cc7b9f6d3bf7" title="This function get all fields from prefix table.">getFields</a>(<span class="keyword">const</span> QStringList fields) <span class="keyword">const</span>;
-<a name="l00063"></a>00063   
-<a name="l00071"></a>00071       QList&lt;QStringList&gt; <a class="code" href="class_prefix.html#e5e548c388a2d4f21e58823269f2d0b6" title="This function get requested table fields by keys value from table.">getFieldsByKey</a>(<span class="keyword">const</span> QStringList fields, <span class="keyword">const</span> QStringList keys,  <span class="keyword">const</span> QStringList vals) <span class="keyword">const</span>;
-<a name="l00072"></a>00072   
-<a name="l00079"></a>00079       QList&lt;QStringList&gt; <a class="code" href="class_prefix.html#e5e548c388a2d4f21e58823269f2d0b6" title="This function get requested table fields by keys value from table.">getFieldsByKey</a>(<span class="keyword">const</span> QString key, <span class="keyword">const</span> QString val) <span class="keyword">const</span>;
-<a name="l00080"></a>00080   
-<a name="l00085"></a>00085       QList&lt;QStringList&gt; <a class="code" href="class_prefix.html#eb3b9fd0bd2b1dab0f79cc7b9f6d3bf7" title="This function get all fields from prefix table.">getFields</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
-<a name="l00086"></a>00086 
-<a name="l00092"></a>00092       QStringList <a class="code" href="class_prefix.html#cf3f3e702baeae9ee02bbcbf1691cb96" title="This function gets all table fields by prefixName key value from table.">getFieldsByPrefixName</a>(<span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
-<a name="l00093"></a>00093 
-<a name="l00099"></a>00099       QStringList <a class="code" href="class_prefix.html#7f2b8a02069e667b98172443f62663a1" title="This function gets all table fields by prefix id key value from table.">getFieldsByPrefixId</a>(<span class="keyword">const</span> QString prefix_id) <span class="keyword">const</span>;
-<a name="l00100"></a>00100 
-<a name="l00106"></a>00106       <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#42cb131e66fec5ff40f929838ba17b56" title="This function deletes all prefix fields by prefix_name keys value from table.">delPrefixByPrefixName</a>(<span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
-<a name="l00107"></a>00107 
-<a name="l00113"></a>00113       <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#8a7e37fdcaf795d451983d074364a18c" title="This function executes requested query.">updateQuery</a>(QSqlQuery *sqlQuery) <span class="keyword">const</span>;
-<a name="l00114"></a>00114 
-<a name="l00120"></a>00120       <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#5b7f44e69ce3188629cb39bce61b0fb2" title="This function check is reccord exists by prefix name or not.">isExistsByName</a>(<span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
-<a name="l00121"></a>00121 
-<a name="l00122"></a>00122   <span class="keyword">protected</span>:
-<a name="l00123"></a>00123 
-<a name="l00124"></a>00124 
-<a name="l00126"></a><a class="code" href="class_prefix.html#a74046d584c3299538fca16084b8361a">00126</a>       QString <a class="code" href="class_prefix.html#a74046d584c3299538fca16084b8361a" title="This variable defines which table is used by class.">_TABLE</a>;
-<a name="l00127"></a>00127 };
-<a name="l00128"></a>00128 
-<a name="l00129"></a>00129 <span class="preprocessor">#endif // PREFIX_H</span>
+<a name="l00044"></a>00044 
+<a name="l00051"></a><a class="code" href="class_prefix.html">00051</a> <span class="keyword">class </span><a class="code" href="class_prefix.html" title="This class provide database functions for prefix table.">Prefix</a>
+<a name="l00052"></a>00052 {
+<a name="l00053"></a>00053   <span class="keyword">public</span>:
+<a name="l00056"></a>00056       <a class="code" href="class_prefix.html#b2ee31e5cf7f496ff51d5c41d282a857" title="This is calss constructor.">Prefix</a>();
+<a name="l00057"></a>00057   
+<a name="l00063"></a>00063       QList&lt;QStringList&gt; <a class="code" href="class_prefix.html#eb3b9fd0bd2b1dab0f79cc7b9f6d3bf7" title="This function get all fields from prefix table.">getFields</a>(<span class="keyword">const</span> QStringList fields) <span class="keyword">const</span>;
+<a name="l00064"></a>00064   
+<a name="l00072"></a>00072       QList&lt;QStringList&gt; <a class="code" href="class_prefix.html#e5e548c388a2d4f21e58823269f2d0b6" title="This function get requested table fields by keys value from table.">getFieldsByKey</a>(<span class="keyword">const</span> QStringList fields, <span class="keyword">const</span> QStringList keys,  <span class="keyword">const</span> QStringList vals) <span class="keyword">const</span>;
+<a name="l00073"></a>00073   
+<a name="l00080"></a>00080       QList&lt;QStringList&gt; <a class="code" href="class_prefix.html#e5e548c388a2d4f21e58823269f2d0b6" title="This function get requested table fields by keys value from table.">getFieldsByKey</a>(<span class="keyword">const</span> QString key, <span class="keyword">const</span> QString val) <span class="keyword">const</span>;
+<a name="l00081"></a>00081   
+<a name="l00086"></a>00086       QList&lt;QStringList&gt; <a class="code" href="class_prefix.html#eb3b9fd0bd2b1dab0f79cc7b9f6d3bf7" title="This function get all fields from prefix table.">getFields</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;
+<a name="l00087"></a>00087 
+<a name="l00093"></a>00093       QStringList <a class="code" href="class_prefix.html#cf3f3e702baeae9ee02bbcbf1691cb96" title="This function gets all table fields by prefixName key value from table.">getFieldsByPrefixName</a>(<span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
+<a name="l00094"></a>00094 
+<a name="l00100"></a>00100       QStringList <a class="code" href="class_prefix.html#7f2b8a02069e667b98172443f62663a1" title="This function gets all table fields by prefix id key value from table.">getFieldsByPrefixId</a>(<span class="keyword">const</span> QString prefix_id) <span class="keyword">const</span>;
+<a name="l00101"></a>00101 
+<a name="l00107"></a>00107       QString <a class="code" href="class_prefix.html#27a5d79e4ac02f228d923b0b71ce0b3e" title="This function gets prefix id by name.">getId</a>(<span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
+<a name="l00108"></a>00108 
+<a name="l00114"></a>00114       QString <a class="code" href="class_prefix.html#d985316d30e6f926fae4a9d0d59a08b3" title="This function gets prefix path by name.">getPath</a>(<span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
+<a name="l00115"></a>00115 
+<a name="l00121"></a>00121       QString <a class="code" href="class_prefix.html#eb9f6c5c40bf83822d7c0317a49c6a4a" title="This function gets prefix cdrom mount path by name.">getMountPath</a>(<span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
+<a name="l00122"></a>00122 
+<a name="l00128"></a>00128       <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#d790da04094933cb2d7b4da515a33dca" title="This function deletes all prefix fields by prefix_name keys value from table.">delByName</a>(<span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
+<a name="l00129"></a>00129 
+<a name="l00142"></a>00142       <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#5cdd7950a50ade2a4fd0b636bc042f93" title="This function deletes all prefix fields by prefix_name keys value from table.">addPrefix</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString prefix_path=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString wine_exec=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString wine_server=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString wine_loader=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString wine_dllpath=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString cdrom_mount=<span class="stringliteral">""</span>, <span class="keyword">const</span> QString cdrom_drive=<span class="stringliteral">""</span>) <span class="keyword">const</span>;
+<a name="l00143"></a>00143 
+<a name="l00157"></a>00157       <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#52af1e154d9b38fdd47cd91f457173a9" title="This function deletes all prefix fields by prefix_name keys value from table.">updatePrefix</a>(<span class="keyword">const</span> QString prefix_name, <span class="keyword">const</span> QString prefix_path, <span class="keyword">const</span> QString wine_exec, <span class="keyword">const</span> QString wine_server, <span class="keyword">const</span> QString wine_loader, <span class="keyword">const</span> QString wine_dllpath, <span class="keyword">const</span> QString cdrom_mount, <span class="keyword">const</span> QString cdrom_drive, <span class="keyword">const</span> QString old_prefix_name) <span class="keyword">const</span>;
+<a name="l00158"></a>00158 
+<a name="l00159"></a>00159 
+<a name="l00165"></a>00165       <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#8a7e37fdcaf795d451983d074364a18c" title="This function executes requested query.">updateQuery</a>(QSqlQuery *sqlQuery) <span class="keyword">const</span>;
+<a name="l00166"></a>00166 
+<a name="l00172"></a>00172       <span class="keywordtype">bool</span> <a class="code" href="class_prefix.html#5b7f44e69ce3188629cb39bce61b0fb2" title="This function check is reccord exists by prefix name or not.">isExistsByName</a>(<span class="keyword">const</span> QString prefix_name) <span class="keyword">const</span>;
+<a name="l00173"></a>00173 
+<a name="l00174"></a>00174   <span class="keyword">protected</span>:
+<a name="l00175"></a>00175 
+<a name="l00176"></a>00176 
+<a name="l00178"></a><a class="code" href="class_prefix.html#a74046d584c3299538fca16084b8361a">00178</a>       QString <a class="code" href="class_prefix.html#a74046d584c3299538fca16084b8361a" title="This variable defines which table is used by class.">_TABLE</a>;
+<a name="l00179"></a>00179 };
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181 <span class="preprocessor">#endif // PREFIX_H</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

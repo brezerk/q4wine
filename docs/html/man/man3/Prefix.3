@@ -1,4 +1,4 @@
-.TH "Prefix" 3 "15 Jun 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.TH "Prefix" 3 "8 Jul 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -10,7 +10,7 @@ Prefix \- This class provide database functions for prefix table.
 .PP
 \fC#include <src/core/database/prefix.h>\fP
 .PP
-Inherited by \fBDir\fP, \fBIcon\fP, and Image.
+Inherited by \fBDir\fP, \fBIcon\fP, and \fBImage\fP.
 .PP
 .SS "Public Member Functions"
 
@@ -44,7 +44,27 @@ Inherited by \fBDir\fP, \fBIcon\fP, and Image.
 .br
 .RI "\fIThis function gets all table fields by prefix id key value from table. \fP"
 .ti -1c
-.RI "bool \fBdelPrefixByPrefixName\fP (const QString prefix_name) const "
+.RI "QString \fBgetId\fP (const QString prefix_name) const "
+.br
+.RI "\fIThis function gets prefix id by name. \fP"
+.ti -1c
+.RI "QString \fBgetPath\fP (const QString prefix_name) const "
+.br
+.RI "\fIThis function gets prefix path by name. \fP"
+.ti -1c
+.RI "QString \fBgetMountPath\fP (const QString prefix_name) const "
+.br
+.RI "\fIThis function gets prefix cdrom mount path by name. \fP"
+.ti -1c
+.RI "bool \fBdelByName\fP (const QString prefix_name) const "
+.br
+.RI "\fIThis function deletes all prefix fields by prefix_name keys value from table. \fP"
+.ti -1c
+.RI "bool \fBaddPrefix\fP (const QString prefix_name, const QString prefix_path='', const QString wine_exec='', const QString wine_server='', const QString wine_loader='', const QString wine_dllpath='', const QString cdrom_mount='', const QString cdrom_drive='') const "
+.br
+.RI "\fIThis function deletes all prefix fields by prefix_name keys value from table. \fP"
+.ti -1c
+.RI "bool \fBupdatePrefix\fP (const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive, const QString old_prefix_name) const "
 .br
 .RI "\fIThis function deletes all prefix fields by prefix_name keys value from table. \fP"
 .ti -1c
@@ -68,10 +88,41 @@ Inherited by \fBDir\fP, \fBIcon\fP, and Image.
 .PP 
 This class provide database functions for prefix table. 
 .PP
-Definition at line 50 of file prefix.h.
+Definition at line 51 of file prefix.h.
 .SH "Member Function Documentation"
 .PP 
-.SS "bool Prefix::delPrefixByPrefixName (const QString prefix_name) const"
+.SS "bool Prefix::addPrefix (const QString prefix_name, const QString prefix_path = \fC''\fP, const QString wine_exec = \fC''\fP, const QString wine_server = \fC''\fP, const QString wine_loader = \fC''\fP, const QString wine_dllpath = \fC''\fP, const QString cdrom_mount = \fC''\fP, const QString cdrom_drive = \fC''\fP) const"
+.PP
+This function deletes all prefix fields by prefix_name keys value from table. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP A prefix name value. 
+.br
+\fIprefix_path\fP A prefix path value. 
+.br
+\fIwine_exec\fP A wine executable binary. 
+.br
+\fIwine_server\fP A wine server binary. 
+.br
+\fIwine_loader\fP A wine loader binary. 
+.br
+\fIwine_dllpath\fP A wine library directory. 
+.br
+\fIcdrom_mount\fP A cdrom mount directory. 
+.br
+\fIcdrom_drive\fP A cdrom drive. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return true on success. 
+.RE
+.PP
+
+.PP
+Definition at line 261 of file prefix.cpp.
+.SS "bool Prefix::delByName (const QString prefix_name) const"
 .PP
 This function deletes all prefix fields by prefix_name keys value from table. 
 .PP
@@ -87,7 +138,7 @@ Return true on success.
 .PP
 
 .PP
-Definition at line 180 of file prefix.cpp.
+Definition at line 248 of file prefix.cpp.
 .SS "QList< QStringList > Prefix::getFields (void) const"
 .PP
 This function get all fields from prefix table. 
@@ -98,6 +149,8 @@ Return a list of table fields value or -1 on error.
 .RE
 .PP
 
+.PP
+Reimplemented in \fBImage\fP.
 .PP
 Definition at line 66 of file prefix.cpp.
 .SS "QList< QStringList > Prefix::getFields (const QStringList fields) const"
@@ -173,7 +226,7 @@ Return a list of table fields value or -1 on error.
 .PP
 Reimplemented in \fBDir\fP.
 .PP
-Definition at line 149 of file prefix.cpp.
+Definition at line 217 of file prefix.cpp.
 .SS "QStringList Prefix::getFieldsByPrefixName (const QString prefix_name) const"
 .PP
 This function gets all table fields by prefixName key value from table. 
@@ -190,7 +243,62 @@ Return a list of table fields value or -1 on error.
 .PP
 
 .PP
+Reimplemented in \fBDir\fP.
+.PP
 Definition at line 126 of file prefix.cpp.
+.SS "QString Prefix::getId (const QString prefix_name) const"
+.PP
+This function gets prefix id by name. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP A prefix name value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return prefix id. 
+.RE
+.PP
+
+.PP
+Definition at line 148 of file prefix.cpp.
+.SS "QString Prefix::getMountPath (const QString prefix_name) const"
+.PP
+This function gets prefix cdrom mount path by name. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP A prefix name value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return prefix path. 
+.RE
+.PP
+
+.PP
+Definition at line 194 of file prefix.cpp.
+.SS "QString Prefix::getPath (const QString prefix_name) const"
+.PP
+This function gets prefix path by name. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP A prefix name value. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return prefix path. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBImage\fP.
+.PP
+Definition at line 171 of file prefix.cpp.
 .SS "bool Prefix::isExistsByName (const QString prefix_name) const"
 .PP
 This function check is reccord exists by prefix name or not. 
@@ -207,7 +315,42 @@ Return true if exists.
 .PP
 
 .PP
-Definition at line 192 of file prefix.cpp.
+Reimplemented in \fBImage\fP.
+.PP
+Definition at line 383 of file prefix.cpp.
+.SS "bool Prefix::updatePrefix (const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive, const QString old_prefix_name) const"
+.PP
+This function deletes all prefix fields by prefix_name keys value from table. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIprefix_name\fP A prefix name value. 
+.br
+\fIprefix_path\fP A prefix path value. 
+.br
+\fIwine_exec\fP A wine executable binary. 
+.br
+\fIwine_server\fP A wine server binary. 
+.br
+\fIwine_loader\fP A wine loader binary. 
+.br
+\fIwine_dllpath\fP A wine library directory. 
+.br
+\fIcdrom_mount\fP A cdrom mount directory. 
+.br
+\fIcdrom_drive\fP A cdrom drive. 
+.br
+\fIold_prefix_name\fP A cdrom drive. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Return true on success. 
+.RE
+.PP
+
+.PP
+Definition at line 321 of file prefix.cpp.
 .SS "bool Prefix::updateQuery (QSqlQuery * sqlQuery) const"
 .PP
 This function executes requested query. 
@@ -224,7 +367,7 @@ Return true on success
 .PP
 
 .PP
-Definition at line 172 of file prefix.cpp.
+Definition at line 240 of file prefix.cpp.
 
 .SH "Author"
 .PP 

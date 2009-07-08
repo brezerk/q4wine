@@ -68,52 +68,62 @@
 <a name="l00047"></a>00047 <span class="preprocessor">#include &lt;QSqlQuery&gt;</span>
 <a name="l00048"></a>00048 <span class="preprocessor">#include &lt;QSqlError&gt;</span>
 <a name="l00049"></a>00049 <span class="preprocessor">#include &lt;QFile&gt;</span>
-<a name="l00050"></a>00050 <span class="preprocessor">#include &lt;QInputDialog&gt;</span>
-<a name="l00051"></a>00051 <span class="preprocessor">#include &lt;QListWidgetItem&gt;</span>
-<a name="l00052"></a>00052 <span class="preprocessor">#include &lt;QSettings&gt;</span>
-<a name="l00053"></a>00053 <span class="preprocessor">#include &lt;QCheckBox&gt;</span>
-<a name="l00054"></a>00054 <span class="preprocessor">#include &lt;QDebug&gt;</span>
-<a name="l00055"></a>00055 <span class="preprocessor">#include &lt;QDir&gt;</span>
-<a name="l00056"></a>00056 <span class="preprocessor">#include &lt;QMenu&gt;</span>
-<a name="l00057"></a>00057 <span class="preprocessor">#include &lt;QHeaderView&gt;</span>
-<a name="l00058"></a>00058 <span class="preprocessor">#include &lt;QTableWidget&gt;</span>
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060 <span class="keyword">class </span>ImageManager : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::ImageManager
-<a name="l00061"></a>00061 {
-<a name="l00062"></a>00062     Q_OBJECT
-<a name="l00063"></a>00063     <span class="keyword">public</span>:
-<a name="l00064"></a>00064         ImageManager(QWidget * parent = 0, Qt::WFlags f = 0);
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066     <span class="keyword">private</span> slots:
-<a name="l00067"></a>00067         <span class="keywordtype">void</span> cmdOk_Click();
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069         <span class="keywordtype">void</span> actionAddImage(<span class="keywordtype">void</span>);
-<a name="l00070"></a>00070         <span class="keywordtype">void</span> actionRemoveImage(<span class="keywordtype">void</span>);
-<a name="l00071"></a>00071         <span class="keywordtype">void</span> actionRefreshImageList(<span class="keywordtype">void</span>);
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073         <span class="keywordtype">void</span> tableImage_showContextMenu(<span class="keyword">const</span> QPoint);
-<a name="l00074"></a>00074         <span class="keywordtype">void</span> update_lblPathInfo(<span class="keyword">const</span> QModelIndex);
-<a name="l00075"></a>00075         
-<a name="l00076"></a>00076     <span class="keyword">private</span>:
-<a name="l00077"></a>00077         QToolBar *managerToolBar;
-<a name="l00078"></a>00078         <span class="keywordtype">void</span> loadThemeIcons(QString themePath);
-<a name="l00079"></a>00079         <span class="keywordtype">void</span> createMenus(<span class="keywordtype">void</span>);
-<a name="l00080"></a>00080         QIcon loadIcon(QString iconName, QString themePath);
-<a name="l00081"></a>00081         <span class="keywordtype">void</span> getCDImages(<span class="keywordtype">void</span>);
-<a name="l00082"></a>00082         
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084         <span class="comment">//Tool bar acrtions</span>
-<a name="l00085"></a>00085         QAction *actionAdd;
-<a name="l00086"></a>00086         QAction *actionRemove;
-<a name="l00087"></a>00087         QAction *actionRefresh;
-<a name="l00088"></a>00088         
-<a name="l00089"></a>00089 };
-<a name="l00090"></a>00090 
-<a name="l00091"></a>00091 <span class="preprocessor">#endif</span>
-<a name="l00092"></a>00092 <span class="preprocessor"></span>
-<a name="l00093"></a>00093 
+<a name="l00050"></a>00050 <span class="preprocessor">#include &lt;QLibrary&gt;</span>
+<a name="l00051"></a>00051 <span class="preprocessor">#include &lt;QInputDialog&gt;</span>
+<a name="l00052"></a>00052 <span class="preprocessor">#include &lt;QListWidgetItem&gt;</span>
+<a name="l00053"></a>00053 <span class="preprocessor">#include &lt;QSettings&gt;</span>
+<a name="l00054"></a>00054 <span class="preprocessor">#include &lt;QCheckBox&gt;</span>
+<a name="l00055"></a>00055 <span class="preprocessor">#include &lt;QDebug&gt;</span>
+<a name="l00056"></a>00056 <span class="preprocessor">#include &lt;QDir&gt;</span>
+<a name="l00057"></a>00057 <span class="preprocessor">#include &lt;QMenu&gt;</span>
+<a name="l00058"></a>00058 <span class="preprocessor">#include &lt;QHeaderView&gt;</span>
+<a name="l00059"></a>00059 <span class="preprocessor">#include &lt;QTableWidget&gt;</span>
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 <span class="preprocessor">#include "src/core/database/image.h"</span>
+<a name="l00062"></a>00062 <span class="preprocessor">#include &lt;q4wine-lib/main.h&gt;</span>
+<a name="l00063"></a>00063 
+<a name="l00070"></a><a class="code" href="class_image_manager.html">00070</a> <span class="keyword">class </span><a class="code" href="class_image_manager.html" title="-">ImageManager</a> : <span class="keyword">public</span> QDialog, <span class="keyword">public</span> Ui::<a class="code" href="class_image_manager.html" title="-">ImageManager</a>
+<a name="l00071"></a>00071 {
+<a name="l00072"></a>00072     Q_OBJECT
+<a name="l00073"></a>00073     <span class="keyword">public</span>:
+<a name="l00075"></a>00075         <a class="code" href="class_image_manager.html#a577717bd3cffa9ba1bc66ecb1ab5d7f" title="Class constructor.">ImageManager</a>(QWidget * parent = 0, Qt::WFlags f = 0);
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077     <span class="keyword">private</span> slots:
+<a name="l00079"></a>00079         <span class="keywordtype">void</span> <a class="code" href="class_image_manager.html#df858e201bd6ffb9f7f34e572bc695e1" title="Ok button click slot.">cmdOk_Click</a>();
+<a name="l00081"></a>00081         <span class="keywordtype">void</span> <a class="code" href="class_image_manager.html#45577d1556940ec3f1deaaf3c3499f53" title="Image add slot.">actionAddImage</a>(<span class="keywordtype">void</span>);
+<a name="l00083"></a>00083         <span class="keywordtype">void</span> <a class="code" href="class_image_manager.html#0747625fcc10eec0672929154a86be47" title="Image rename slot.">actionRenameImage</a>(<span class="keywordtype">void</span>);
+<a name="l00085"></a>00085         <span class="keywordtype">void</span> <a class="code" href="class_image_manager.html#8299962607cfae097ec9f6d38b3d6b58" title="Image remove slot.">actionRemoveImage</a>(<span class="keywordtype">void</span>);
+<a name="l00087"></a>00087         <span class="keywordtype">void</span> <a class="code" href="class_image_manager.html#50ce815e7bac59283b9029f831e7e171" title="Image list refresh slot.">actionRefreshImageList</a>(<span class="keywordtype">void</span>);
+<a name="l00088"></a>00088 
+<a name="l00090"></a>00090         <span class="keywordtype">void</span> <a class="code" href="class_image_manager.html#6e0500116496c316cde7d40f46445943" title="Context menu show slot.">tableImage_showContextMenu</a>(<span class="keyword">const</span> QPoint);
+<a name="l00092"></a>00092         <span class="keywordtype">void</span> <a class="code" href="class_image_manager.html#bc88da76f62b12d01a6689978711be5a" title="Update lilPAthInfo slot.">update_lblPathInfo</a>(<span class="keyword">const</span> QModelIndex);
+<a name="l00093"></a>00093         
+<a name="l00094"></a>00094     <span class="keyword">private</span>:
+<a name="l00095"></a>00095         QToolBar *managerToolBar;
+<a name="l00097"></a>00097         <span class="keywordtype">void</span> <a class="code" href="class_image_manager.html#42dea8ac409f7268476faee4b4b887cb" title="Loading theme icons.">loadThemeIcons</a>(QString themePath);
+<a name="l00099"></a>00099         <span class="keywordtype">void</span> <a class="code" href="class_image_manager.html#a22e65be96c612c6ec4e7d0b97475dbf" title="Creating menus.">createMenus</a>(<span class="keywordtype">void</span>);
+<a name="l00101"></a>00101         QIcon <a class="code" href="class_image_manager.html#caf3588973febcf8d4a7995dfbed6145" title="Load icons.">loadIcon</a>(QString iconName, QString themePath);
+<a name="l00103"></a>00103         <span class="keywordtype">void</span> <a class="code" href="class_image_manager.html#35190dce8b4b9e26eeda2ecf2bbb3b07" title="Getting CD images list.">getCDImages</a>(<span class="keywordtype">void</span>);
+<a name="l00104"></a>00104         
+<a name="l00106"></a>00106         <span class="keyword">typedef</span> <span class="keywordtype">void</span> *<a class="code" href="class_image_manager.html#d93cc90384a6db999d52d997a09ff8a7" title="This is need for libq4wine-core.so import;.">CoreLibPrototype</a> (<span class="keywordtype">bool</span>);
+<a name="l00107"></a>00107         CoreLibPrototype *CoreLibClassPointer;
+<a name="l00108"></a>00108         <a class="code" href="classcorelib.html" title="This class provide general core functions for q4wine.">corelib</a> *CoreLib;
+<a name="l00109"></a>00109         QLibrary libq4wine;
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111         <a class="code" href="class_image.html" title="This class provide database functions for Image table.">Image</a> *db_image;
+<a name="l00112"></a>00112 
+<a name="l00114"></a><a class="code" href="class_image_manager.html#ac3b773fb88f9ea973526b837a4f957f">00114</a>         QAction *<a class="code" href="class_image_manager.html#ac3b773fb88f9ea973526b837a4f957f" title="Actions.">actionAdd</a>;
+<a name="l00115"></a>00115         QAction *actionRemove;
+<a name="l00116"></a>00116         QAction *actionRename;
+<a name="l00117"></a>00117         QAction *actionRefresh;
+<a name="l00118"></a>00118         
+<a name="l00119"></a>00119 };
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121 <span class="preprocessor">#endif</span>
+<a name="l00122"></a>00122 <span class="preprocessor"></span>
+<a name="l00123"></a>00123 
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Mon Jun 15 17:27:20 2009 for q4wine by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Jul 8 11:31:02 2009 for q4wine by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

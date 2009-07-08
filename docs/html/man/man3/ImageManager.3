@@ -1,0 +1,125 @@
+.TH "ImageManager" 3 "8 Jul 2009" "Version 0.113" "q4wine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ImageManager \- .IP "\(bu" 2
+
+.PP
+ 
+
+.PP
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <src/gui/imagemanager.h>\fP
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImageManager\fP (QWidget *parent=0, Qt::WFlags f=0)"
+.br
+.RI "\fIClass constructor. \fP"
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBcmdOk_Click\fP ()"
+.br
+.RI "\fIOk button click slot. \fP"
+.ti -1c
+.RI "void \fBactionAddImage\fP (void)"
+.br
+.RI "\fI\fBImage\fP add slot. \fP"
+.ti -1c
+.RI "void \fBactionRenameImage\fP (void)"
+.br
+.RI "\fI\fBImage\fP rename slot. \fP"
+.ti -1c
+.RI "void \fBactionRemoveImage\fP (void)"
+.br
+.RI "\fI\fBImage\fP remove slot. \fP"
+.ti -1c
+.RI "void \fBactionRefreshImageList\fP (void)"
+.br
+.RI "\fI\fBImage\fP list refresh slot. \fP"
+.ti -1c
+.RI "void \fBtableImage_showContextMenu\fP (const QPoint)"
+.br
+.RI "\fIContext menu show slot. \fP"
+.ti -1c
+.RI "void \fBupdate_lblPathInfo\fP (const QModelIndex)"
+.br
+.RI "\fIUpdate lilPAthInfo slot. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBloadThemeIcons\fP (QString themePath)"
+.br
+.RI "\fILoading theme icons. \fP"
+.ti -1c
+.RI "void \fBcreateMenus\fP (void)"
+.br
+.RI "\fICreating menus. \fP"
+.ti -1c
+.RI "QIcon \fBloadIcon\fP (QString iconName, QString themePath)"
+.br
+.RI "\fILoad icons. \fP"
+.ti -1c
+.RI "void \fBgetCDImages\fP (void)"
+.br
+.RI "\fIGetting CD images list. \fP"
+.ti -1c
+.RI "typedef void * \fBCoreLibPrototype\fP (bool)"
+.br
+.RI "\fIThis is need for libq4wine-core.so import;. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QToolBar * \fBmanagerToolBar\fP"
+.br
+.ti -1c
+.RI "CoreLibPrototype * \fBCoreLibClassPointer\fP"
+.br
+.ti -1c
+.RI "\fBcorelib\fP * \fBCoreLib\fP"
+.br
+.ti -1c
+.RI "QLibrary \fBlibq4wine\fP"
+.br
+.ti -1c
+.RI "\fBImage\fP * \fBdb_image\fP"
+.br
+.ti -1c
+.RI "QAction * \fBactionAdd\fP"
+.br
+.RI "\fIActions. \fP"
+.ti -1c
+.RI "QAction * \fBactionRemove\fP"
+.br
+.ti -1c
+.RI "QAction * \fBactionRename\fP"
+.br
+.ti -1c
+.RI "QAction * \fBactionRefresh\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+.IP "\(bu" 2
+
+.PP
+
+
+This class provide image manager dialog functions. 
+.PP
+Definition at line 70 of file imagemanager.h.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for q4wine from the source code.
