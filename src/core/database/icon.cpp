@@ -179,7 +179,7 @@ QStringList Icon::getByName(const QString prefix_name, const QString dir_name, c
 		valuelist.clear();
 	}
 
-	qDebug()<<"stage: "<<valuelist;
+	//qDebug()<<"stage: "<<valuelist;
 	return valuelist;
 }
 
