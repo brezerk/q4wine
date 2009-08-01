@@ -224,7 +224,7 @@ void MainWindow::startDrop(QList<QUrl> files){
 	dir_name = "";
   }
 
-  for (int i=0; i < files.length(); i++){
+  for (int i=0; i < files.count(); i++){
 	if (files.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive)){
 	  file = files.at(i).toLocalFile();
 
