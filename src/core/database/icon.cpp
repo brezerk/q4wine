@@ -31,7 +31,7 @@
 
 Icon::Icon()
 {
-  	this->_TABLE="icon";
+	this->_TABLE="icon";
 }
 
 QList<QStringList> Icon::getIconsInfo(const QString prefix_id, const QString dir_id) const{
@@ -167,17 +167,19 @@ QStringList Icon::getByName(const QString prefix_name, const QString dir_name, c
 
 	if (query.exec()){
 		query.first();
-			QStringList values;
+			//QStringList values;
 			int i=0;
 			while (query.value(i).isValid()){
-				values.append(query.value(i).toString());
+				valuelist.append(query.value(i).toString());
 				i++;
 			}
-			valuelist.append(values);
+			//valuelist.append(values);
 	} else {
 		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
 		valuelist.clear();
 	}
+
+	qDebug()<<"stage: "<<valuelist;
 	return valuelist;
 }
 
@@ -304,7 +306,7 @@ bool Icon::isExistsByName(const QString prefix_name, const QString dir_name, con
 }
 
 bool Icon::addIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString override, const QString winedebug, const QString useconsole, const QString display, const QString wrkdir, const QString desktop, const int nice) const{
-  	QSqlQuery query;
+	QSqlQuery query;
 	query.prepare("INSERT INTO icon(override, winedebug, useconsole, display, cmdargs, exec, icon_path, desc, dir_id, id, name, prefix_id, wrkdir, desktop, nice) VALUES(:override, :winedebug, :useconsole, :display, :cmdargs, :exec, :icon_path, :desc, (SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)), NULL, :name, (SELECT id FROM prefix WHERE name=:prefix_name), :wrkdir, :desktop, :nice);");
 
 	if (cmdargs.isEmpty()){
@@ -393,7 +395,7 @@ bool Icon::addIcon(const QString cmdargs, const QString exec, const QString icon
 }
 
 bool Icon::updateIcon(const QString icon_name, const QString prefix_id, const QString dir_id, const QString old_prefix_id, const QString old_dir_id, const QString old_icon_name) const{
-  	QSqlQuery query;
+	QSqlQuery query;
 	if (!old_dir_id.isEmpty()){
 		query.prepare("UPDATE icon SET name=:icon_name, prefix_id=:prefix_id, dir_id=:dir_id WHERE name=:old_icon_name and prefix_id=:old_prefix_id and dir_id=:old_dir_id");
 		query.bindValue(":old_dir_id", old_dir_id);
@@ -442,7 +444,7 @@ bool Icon::renameIcon(const QString icon_name, const QString prefix_name, const 
 }
 
 bool Icon::updateIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString icon_name, const QString override, const QString winedebug, const QString useconsole, const QString display, const QString wrkdir, const QString desktop, const int nice) const{
-  	QSqlQuery query;
+	QSqlQuery query;
 	if (!dir_name.isEmpty()){
 		query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice WHERE name=:icon_name and dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)) and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
 		query.bindValue(":prefix_dir_name", prefix_name);
