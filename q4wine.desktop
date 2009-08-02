@@ -19,4 +19,3 @@ StartupNotify=true
 Terminal=false
 TerminalOptions=
 Type=Application
-X-SuSE-translate=true
