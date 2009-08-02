@@ -114,25 +114,25 @@ IF (${WITH_WINETOOLS} MATCHES ON )
 	SET( SOURCES
 		${SOURCES}
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.cpp
-		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.cpp
+#		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.cpp
 	)
 
 	SET ( HEADERS
 		${HEADERS}
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
-		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
+#		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
 	)
 
 	SET ( MOC_HEADEDRS
 		${MOC_HEADEDRS}
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
-		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
+#		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
 	)
 
 	SET ( UIS
 		${UIS}
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.ui
-		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.ui
+#		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.ui
 
 	)
 ENDIF (${WITH_WINETOOLS} MATCHES ON )

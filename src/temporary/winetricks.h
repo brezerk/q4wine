@@ -31,7 +31,7 @@
 #define WINETRICKS_H
 
 #include "config.h"
-#include "winetrickshelp.h"
+// #include "winetrickshelp.h"
 #include "ui_winetricks.h"
 
 #include <QStringList>
