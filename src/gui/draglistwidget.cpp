@@ -38,7 +38,7 @@ void DragListWidget::dragEnterEvent(QDragEnterEvent *event){
   if (event->mimeData()->hasFormat("text/uri-list"))
   {
 	QList<QUrl> list = event->mimeData()->urls();
-	for (int i=0; i < list.length(); i++){
+	for (int i=0; i < list.count(); i++){
 	  //Accept only .exe, .bat or .com files
 	  if (list.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive)){
 		event->acceptProposedAction();
