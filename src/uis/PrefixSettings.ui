@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>718</width>
-    <height>323</height>
+    <height>349</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -204,7 +204,7 @@
       <item>
        <widget class="QTabWidget" name="twbGeneral">
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_4">
          <attribute name="title">
@@ -407,9 +407,18 @@
             <layout class="QVBoxLayout">
              <item>
               <widget class="QLabel" name="label_4">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="text">
                 <string>If you wish to use different wine versions, you may wish set custom wine paths here.
 Note: leave it blank for default.</string>
+               </property>
+               <property name="scaledContents">
+                <bool>false</bool>
                </property>
                <property name="wordWrap">
                 <bool>true</bool>
