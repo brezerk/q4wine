@@ -3,8 +3,19 @@ cmake_minimum_required(VERSION 2.6)
 PROJECT(q4wine)
 
 SET(CMAKE_VERBOSE_MAKEFILE ON)
+SET(APP_VERSION "0.113-rc1")
 
-SET(APP_VERSION "0.113-dev")
+# RPATH fixes
+# skip the full RPATH for the build tree
+#SET(CMAKE_SKIP_BUILD_RPATH  TRUE)
+# when building, use the install RPATH already
+# (so it doesn't need to relink when installing)
+#SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+# the RPATH to be used when installing
+# add the automatically determined parts of the RPATH
+# which point to directories outside the build tree to the install RPATH
+#SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
 
 SET( DESKTOP_ENTRY
 	${CMAKE_SOURCE_DIR}/q4wine.desktop
@@ -12,6 +23,9 @@ SET( DESKTOP_ENTRY
 
 SET( DESKTOP_PIXMAPS
 	${CMAKE_SOURCE_DIR}/src/icons/q4wine.png
+)
+
+SET( ICON_PIXMAPS
 	${CMAKE_SOURCE_DIR}/src/data/eject.png
 	${CMAKE_SOURCE_DIR}/src/data/explorer.png
 	${CMAKE_SOURCE_DIR}/src/data/exec_wine.png
@@ -31,7 +45,7 @@ SET( SOURCES
 	${CMAKE_SOURCE_DIR}/src/core/database/icon.cpp
 	${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
 	${CMAKE_SOURCE_DIR}/src/core/registry.cpp
-     ${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.cpp
+	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.cpp
 	${CMAKE_SOURCE_DIR}/src/gui/about.cpp
 	${CMAKE_SOURCE_DIR}/src/gui/appsettings.cpp
 	${CMAKE_SOURCE_DIR}/src/gui/iconsettings.cpp
@@ -208,34 +222,34 @@ MESSAGE("")
 SET(QT_MIN_VERSION "4.4.1")
 FIND_PACKAGE(Qt4 REQUIRED)
 	  IF(QT_FOUND)
-		    MESSAGE(STATUS "Found Qt. Using version: ${QTVERSION}")
-		    IF(QT_QTSQL_FOUND)
+			MESSAGE(STATUS "Found Qt. Using version: ${QTVERSION}")
+			IF(QT_QTSQL_FOUND)
 				SET(QT_USE_QTSQL 1)
-		    ELSE(QT_QTSQL_FOUND)
+			ELSE(QT_QTSQL_FOUND)
 				MESSAGE(FATAL ERROR "Qt SQL libraries missing.")
-		    ENDIF(QT_QTSQL_FOUND)
+			ENDIF(QT_QTSQL_FOUND)
 
-		    IF(QT_QTGUI_FOUND)
+			IF(QT_QTGUI_FOUND)
 				SET(QT_USE_QTGUI 1)
-		    ELSE(QT_QTGUI_FOUND)
+			ELSE(QT_QTGUI_FOUND)
 				MESSAGE(FATAL ERROR "Qt GUI libraries missing.")
-		    ENDIF(QT_QTGUI_FOUND)
+			ENDIF(QT_QTGUI_FOUND)
 
-		    IF(QT_QTNETWORK_FOUND)
+			IF(QT_QTNETWORK_FOUND)
 				SET(QT_USE_QTNETWORK 1)
-		    ELSE(QT_QTNETWORK_FOUND)
+			ELSE(QT_QTNETWORK_FOUND)
 				MESSAGE(FATAL ERROR "Qt NetWork libraries missing.")
-		    ENDIF(QT_QTNETWORK_FOUND)
+			ENDIF(QT_QTNETWORK_FOUND)
 
-		    IF(QT_QTCORE_FOUND)
+			IF(QT_QTCORE_FOUND)
 				SET(QT_USE_QTCORE 1)
-		    ELSE(QT_QTCORE_FOUND)
+			ELSE(QT_QTCORE_FOUND)
 				MESSAGE(FATAL ERROR "Qt Core libraries missing.")
-		    ENDIF(QT_QTCORE_FOUND)
+			ENDIF(QT_QTCORE_FOUND)
 
-		    INCLUDE(${QT_USE_FILE})
+			INCLUDE(${QT_USE_FILE})
 	  ELSE(QT_FOUND)
-		    MESSAGE(FATAL ERROR "Qt4 not found.")
+			MESSAGE(FATAL ERROR "Qt4 not found.")
 	  ENDIF(QT_FOUND)
 
 MESSAGE(STATUS "Build realm is: ${CMAKE_SYSTEM_NAME}")
@@ -310,10 +324,13 @@ QT4_ADD_TRANSLATION( QM_I18N ${I18N})
 INCLUDE_DIRECTORIES( ${HEADERS_DIR} )
 INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} )
 
+IF (NOT DEFINED SKIP_RPATH)
+	SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib/q4wine")
+ENDIF (NOT DEFINED SKIP_RPATH)
+
 ADD_LIBRARY( q4wine-core SHARED ${Q4WINE-LIB-SOURCES} ${LIB_UI_HEADERS} ${LIB_MOC_SRCS} ${Q4WINE-LIB-HEADERS} ${QM_I18N} )
 
 ADD_EXECUTABLE( q4wine-cli ${Q4WINE-CLI-SOURCES} ${Q4WINE-CLI-HEADERS} ${QM_I18N} ${LIB_UI_HEADERS} ${LIB_MOC_SRCS})
-
 ADD_EXECUTABLE( q4wine ${SOURCES} ${HEADERS} ${UI_HEADERS} ${MOC_SRCS} ${RCC_SRCS} ${QM_I18N} )
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
@@ -329,8 +346,9 @@ ENDIF(${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
 install(TARGETS q4wine-cli DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
 install(TARGETS q4wine DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
-install(TARGETS q4wine-core DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+install(TARGETS q4wine-core LIBRARY DESTINATION	${CMAKE_INSTALL_PREFIX}/lib/q4wine)
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/theme DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine)
+install(FILES ${ICON_PIXMAPS} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine/icons)
 install(FILES ${QM_I18N} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine/i18n)
 install(FILES ${DESKTOP_ENTRY} DESTINATION ${DESKTOP_ENTRY_PATH})
 install(FILES ${DESKTOP_PIXMAPS} DESTINATION ${PIXMAPS_ENTRY_PATH})

@@ -430,7 +430,7 @@ void MainWindow::getSettings(){
 		settings.setValue("mount_image_string", "%GUI_SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
 #endif
 #ifdef _OS_FREEBSD_
-		    settings.setValue("mount_image_string", "%GUI_SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %MOUNT_IMAGE%` %MOUNT_POINT%");
+			settings.setValue("mount_image_string", "%GUI_SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %MOUNT_IMAGE%` %MOUNT_POINT%");
 #endif
 		settings.endGroup();
 	}

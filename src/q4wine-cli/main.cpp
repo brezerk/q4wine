@@ -94,9 +94,9 @@ int main(int argc, char *argv[])
 		lang = setlocale(LC_ALL, "");
 		  if (lang.isEmpty()){
 			lang = setlocale(LC_MESSAGES, "");
-			    if (lang.isEmpty()){
+				if (lang.isEmpty()){
 				 lang = getenv("LANG");
-			    }
+				}
 		  }
 		lang = lang.split(".").at(0).toLower();
 		lang.append(".qm");
