@@ -745,7 +745,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../uis/IconSettings.ui" line="480"/>
         <source>Desktop size:</source>
-        <translation>Размер рабочего стола:</translation>
+        <translation>Рабочий стол:</translation>
     </message>
     <message>
         <location filename="../uis/IconSettings.ui" line="510"/>

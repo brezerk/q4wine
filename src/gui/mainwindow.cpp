@@ -174,6 +174,7 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 
   twPrograms->installEventFilter(this);
   lstIcons->installEventFilter(this);
+  installEventFilter(this);
 
   // FIXME: Move this into shared libaray
   runAutostart();
@@ -1056,6 +1057,12 @@ void MainWindow::closeEvent(QCloseEvent *event){
 bool MainWindow::eventFilter(QObject *obj, QEvent *event){
 
   // twPrograms events
+	if (obj == this){
+		if (event->type()==QEvent::Resize){
+			if (!this->isActiveWindow())
+				return false;
+		}
+	}
 
   if (obj == twPrograms) {
 	QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
