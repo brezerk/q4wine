@@ -583,7 +583,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			QTextStream out(&file);
 			out<<"[Desktop Entry]"<<endl;
-			out<<"Exec=q4wine-cli -p \""<<prefix_name<<"\" ";
+			out<<"Exec="<<APP_PREF<<"/bin/q4wine-cli -p \""<<prefix_name<<"\" ";
 			if (!dir_name.isEmpty())
 				  out<<" -d \""<<dir_name<<"\" ";
 			out<<" -i \""<<icon_name<<"\" "<<endl;

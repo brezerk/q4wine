@@ -156,6 +156,8 @@ int main(int argc, char *argv[])
 			i++;
 			if (i<argc)
 			_ICON=app.arguments().at(i);
+			if (_ACTION==-1)
+				_ACTION=0;
 		}
 
 		if ((app.arguments().at(i)=="--cdimage") or (app.arguments().at(i)=="-cd")){
@@ -215,6 +217,7 @@ int main(int argc, char *argv[])
 
 	switch (_ACTION){
 		case 0:
+		// Running selected icon
 			if (_PREFIX.isEmpty()){
 				Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 				return -1;
@@ -238,6 +241,7 @@ int main(int argc, char *argv[])
 			}
 		break;
 		case 1:
+		// Show wine process list
 			result = CoreLib->getWineProcessList();
 			if (_PREFIX.isEmpty()){
 				Qcout<<QObject::tr("Wine process list")<<endl;
