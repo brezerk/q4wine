@@ -762,10 +762,19 @@ void Wizard::cmdHelp_Click(){
 		case 1:
 		switch (Page){
 			case 3:
-			rawurl = "/firstrun.html";
+		   rawurl = "/firststartup.html#winepath";
+			break;
+			case 4:
+		   rawurl = "/firststartup.html#sysutils";
 			break;
 			default:
-			rawurl = "/firstrun.html";
+			case 5:
+		   rawurl = "/firststartup.html#userutils";
+			break;
+			case 6:
+		   rawurl = "/firststartup.html#proxy";
+			break;
+			rawurl = "/firststartup.html";
 			break;
 		}
 		break;

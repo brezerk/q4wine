@@ -10,8 +10,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>667</width>
-    <height>450</height>
+    <width>665</width>
+    <height>448</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1376,7 +1376,7 @@ p, li { white-space: pre-wrap; }
                 <item>
                  <widget class="QGroupBox" name="groupBox_6">
                   <property name="title">
-                   <string>Icotool</string>
+                   <string>Icoutils</string>
                   </property>
                   <layout class="QVBoxLayout" name="_30">
                    <item>
@@ -2767,16 +2767,16 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
            </widget>
            <zorder>widgetCreateFakeDrive3</zorder>
            <zorder>widgetCreatePrefix0</zorder>
-           <zorder>widgetFirstStartup3</zorder>
            <zorder>widgetCreateFakeDrive1</zorder>
-           <zorder>widgetCreatePrefix2</zorder>
            <zorder>widgetCreateFakeDrive2</zorder>
            <zorder>widgetInfo</zorder>
            <zorder>widgetCreateFakeDrive0</zorder>
            <zorder>widgetFirstStartup0</zorder>
            <zorder>widgetFirstStartup1</zorder>
-           <zorder>widgetFirstStartup2</zorder>
            <zorder>widgetCreatePrefix1</zorder>
+           <zorder>widgetCreatePrefix2</zorder>
+           <zorder>widgetFirstStartup3</zorder>
+           <zorder>widgetFirstStartup2</zorder>
           </widget>
          </item>
         </layout>
@@ -2809,9 +2809,6 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
          </property>
          <item>
           <widget class="QPushButton" name="cmdHelp">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
            <property name="text">
             <string>Help</string>
            </property>
