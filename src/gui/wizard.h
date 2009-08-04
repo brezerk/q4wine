@@ -87,6 +87,9 @@ class Wizard : public QDialog, public Ui::Wizard
 		//! \brief ComboBox change slot.
 		void comboProxyType_indexChanged(QString text);
 
+		//! \brief cmdHelo click slot.
+		void cmdHelp_Click();
+
 	private:
 		//! \brief Function for updateing scene elements.
 		void updateScena();

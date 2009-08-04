@@ -2,7 +2,7 @@ Installation
 ***********************************************
 See INSTALL file for details
 
-Changelog
+ChangeLog
 ***********************************************
 
 Version 0.113
@@ -22,6 +22,7 @@ Version 0.113
   - Added Drop support for wine .exe and .com files;
   - Added Drop support for wine .bat files (Now autoadd wineconsole binary args);
   - Added splitter for programs and icons lists;
+  - Added command line option for q4wine (See q4wine --help for details);
 
  Fixed:
   - Linux: Improved wine process list build (thx Sergey Kishchenko (tilarids));
@@ -32,6 +33,7 @@ Version 0.113
   - First steps for source code documentation via Doxygen....;
   - Total code reorganize;
   - Database engine rewrite;
+  - Many fixes for q4wine.desktop file (thx for Kyrill Detinov);
 
 Version 0.112-r1
  Fixed:

@@ -479,7 +479,7 @@ int main(int argc, char *argv[])
 			Qcout<<QObject::tr(" -1 if serious troubles")<<endl;
 			Qcout<<endl;
 			Qcout<<QObject::tr("Report q4wine bugs to brezerk@gmail.com")<<endl;
-			Qcout<<QObject::tr("q4wine homepage: <http://sourceforge.net/projects/q4wine/>")<<endl;
+			Qcout<<QObject::tr("q4wine homepage: <http://q4wine.brezblock.org.ua/>")<<endl;
 			Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
 		break;
 	}

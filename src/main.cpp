@@ -89,9 +89,9 @@ int main(int argc, char *argv[])
 		lang = setlocale(LC_ALL, "");
 		  if (lang.isEmpty()){
 			lang = setlocale(LC_MESSAGES, "");
-			    if (lang.isEmpty()){
+				if (lang.isEmpty()){
 				 lang = getenv("LANG");
-			    }
+				}
 		  }
 		lang = lang.split(".").at(0).toLower();
 		lang.append(".qm");
@@ -187,6 +187,37 @@ int main(int argc, char *argv[])
 		}
 	}
 
+	QTextStream Qcout(stdout);
+	int result, startState=0;
+
+	if (app.arguments().count()>1){
+		if ((app.arguments().at(1)=="-version") or (app.arguments().at(1)=="-v")){
+			Qcout<<QObject::tr("q4wine %1").arg(APP_VERS)<<endl;
+			Qcout<<QObject::tr("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
+			Qcout<<QObject::tr("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
+			Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
+			Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
+			Qcout<<endl;
+			Qcout<<QObject::tr("Author: Malakhov Alexey aka John Brezerk.")<<endl;
+			return 0;
+		} else if ((app.arguments().at(1)=="-minimize") or (app.arguments().at(1)=="-m")) {
+			startState = 1;
+		} else {
+			Qcout<<QObject::tr("Usage:")<<endl;
+			Qcout<<QObject::tr("  q4wine [KEY]...")<<endl;
+			Qcout<<QObject::tr("GUI utility for wine applications and prefixes management.")<<endl<<endl;
+			Qcout<<QObject::tr("KEYs list:")<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --minimize"<<QObject::tr("minimize q4wine main window on startup")<<qSetFieldWidth(0)<<endl;
+			Qcout<<endl;
+			Qcout<<QObject::tr("Report q4wine bugs to brezerk@gmail.com")<<endl;
+			Qcout<<QObject::tr("q4wine homepage: <http://q4wine.brezblock.org.ua/>")<<endl;
+			Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
+			return 0;
+		}
+	}
+
 	if (!initDb())
 	   return -1;
 
@@ -194,9 +225,11 @@ int main(int argc, char *argv[])
 	tables << "prefix" << "dir" << "icon" << "images";
 	if (!db.checkDb(tables))
 	   return -1;
-	MainWindow mainWin;
+
+	MainWindow mainWin(startState);
 	mainWin.show();
-	int result = app.exec();
+	result = app.exec();
+
 	db.close();
 
 	return result;

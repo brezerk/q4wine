@@ -151,6 +151,12 @@ public:
 	 */
 	QStringList getCdromDevices(void) const;
 
+	/*! \brief This function opens help url in xdg-open browser.
+	 *
+	 * \return Return nothing.
+	 */
+	void openHelpUrl(const QString url) const;
+
 	/*! \brief This function gets mouted image or media.
 	 *
 	 * \param  crom_mount	Mount point path.

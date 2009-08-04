@@ -884,3 +884,11 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			return TRUE;
 	  }
+
+	  void corelib::openHelpUrl(const QString url) const{
+			QStringList args;
+			args<<url;
+			this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
+			return;
+	  }
+

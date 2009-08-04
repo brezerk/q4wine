@@ -470,8 +470,8 @@ p, li { white-space: pre-wrap; }
              <rect>
               <x>-1</x>
               <y>0</y>
-              <width>510</width>
-              <height>320</height>
+              <width>520</width>
+              <height>279</height>
              </rect>
             </property>
             <property name="autoFillBackground">
@@ -483,9 +483,15 @@ p, li { white-space: pre-wrap; }
                <property name="title">
                 <string>Wine paths:</string>
                </property>
-               <layout class="QVBoxLayout" name="_6">
+               <layout class="QVBoxLayout" name="verticalLayout_10">
                 <item>
                  <widget class="QLabel" name="lblInfoPrefix1">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="text">
                    <string>If you wish to use different wine versions, you may wish set custom wine path here.
 
@@ -828,8 +834,8 @@ Note: leave it blank if you don't nead it.</string>
                    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Fixed [Misc]';&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Fixed [Misc]'; font-size:11pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="textInteractionFlags">
                    <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -866,7 +872,11 @@ p, li { white-space: pre-wrap; }
                 <item>
                  <widget class="QLabel" name="label_3">
                   <property name="text">
-                   <string>&lt;p&gt;Please set default system utils paths&lt;br&gt;&lt;/p&gt;</string>
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please set default system utils paths&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                  </widget>
                 </item>
@@ -1264,8 +1274,18 @@ p, li { white-space: pre-wrap; }
                <layout class="QVBoxLayout" name="_26">
                 <item>
                  <widget class="QLabel" name="label_5">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="text">
-                   <string>&lt;p&gt;Please set default user utils paths&lt;br&gt;&lt;/p&gt;</string>
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please set default user utils paths&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                  </widget>
                 </item>
@@ -2747,16 +2767,16 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
            </widget>
            <zorder>widgetCreateFakeDrive3</zorder>
            <zorder>widgetCreatePrefix0</zorder>
-           <zorder>widgetCreatePrefix1</zorder>
-           <zorder>widgetFirstStartup0</zorder>
-           <zorder>widgetFirstStartup2</zorder>
            <zorder>widgetFirstStartup3</zorder>
-           <zorder>widgetCreateFakeDrive0</zorder>
            <zorder>widgetCreateFakeDrive1</zorder>
            <zorder>widgetCreatePrefix2</zorder>
-           <zorder>widgetFirstStartup1</zorder>
            <zorder>widgetCreateFakeDrive2</zorder>
            <zorder>widgetInfo</zorder>
+           <zorder>widgetCreateFakeDrive0</zorder>
+           <zorder>widgetFirstStartup0</zorder>
+           <zorder>widgetFirstStartup1</zorder>
+           <zorder>widgetFirstStartup2</zorder>
+           <zorder>widgetCreatePrefix1</zorder>
           </widget>
          </item>
         </layout>
@@ -2787,6 +2807,16 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
          <property name="margin">
           <number>0</number>
          </property>
+         <item>
+          <widget class="QPushButton" name="cmdHelp">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Help</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <spacer>
            <property name="orientation">

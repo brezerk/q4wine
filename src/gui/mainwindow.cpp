@@ -32,7 +32,8 @@
 QTimer *timer = new QTimer();
 
 
-MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
+MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
+
   // Loading libq4wine-core.so
   libq4wine.setFileName("libq4wine-core");
 
@@ -54,6 +55,10 @@ MainWindow::MainWindow(QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
   clearTmp();
   // Base GUI setup
   setupUi(this);
+
+  if (startState == 1)
+	  this->showMinimized();
+
   setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
 
   lstIcons = new DragListWidget(tab);

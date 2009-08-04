@@ -40,6 +40,7 @@
 
 #define APP_NAME "Q4Wine"
 #define APP_SHORT_NAME "q4wine"
+#define APP_WEBSITTE "q4wine.brezblock.org.ua"
 
 #cmakedefine _OS_LINUX_
 #cmakedefine _OS_FREEBSD_

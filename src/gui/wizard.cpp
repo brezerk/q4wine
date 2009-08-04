@@ -272,7 +272,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(reject ()));
 	connect(cmdNext, SIGNAL(clicked()), this, SLOT(nextWizardPage()));
 	connect(cmdBack, SIGNAL(clicked()), this, SLOT(previosWizardPage()));
-
+	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 	connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
 
 	widgetCreatePrefix0->setVisible(FALSE);
@@ -755,6 +755,46 @@ void Wizard::nextWizardPage(){
 	return;
 }
 
+
+void Wizard::cmdHelp_Click(){
+	QString rawurl;
+	switch (Scena){
+		case 1:
+		switch (Page){
+			case 3:
+			rawurl = "/firstrun.html";
+			break;
+			default:
+			rawurl = "/firstrun.html";
+			break;
+		}
+		break;
+	}
+
+	QString lang = CoreLib->getSetting("", "", FALSE).toString();
+	if (lang.isEmpty()){
+		lang = setlocale(LC_ALL, "");
+		  if (lang.isEmpty()){
+			lang = setlocale(LC_MESSAGES, "");
+				if (lang.isEmpty()){
+				 lang = getenv("LANG");
+				}
+		  }
+		lang = lang.split(".").at(0).toLower();
+	}
+
+	qDebug()<<Scena<<Page;
+
+	QString url="http://";
+	url.append(APP_WEBSITTE);
+	url.append("/documentation/");
+	url.append(lang);
+	url.append(rawurl);
+	qDebug()<<url;
+
+	CoreLib->openHelpUrl(url);
+}
+
 void Wizard::previosWizardPage(){
 	/*
 		Back command function clicking
@@ -803,7 +843,8 @@ void Wizard::updateScena(){
 			widgetFirstStartup0->setVisible(FALSE);
 			widgetFirstStartup1->setVisible(FALSE);
 			widgetCreatePrefix1->setVisible(TRUE);
-			lblInfoPrefix1->setText(tr("<p>Please enter default wine settings.</p><br>"));
+			lblInfoPrefix1->setText(tr("<p>Please enter default wine settings.</p>"));
+
 			break;
 					case 4:
 			widgetCreatePrefix1->setVisible(FALSE);
