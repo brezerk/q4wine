@@ -31,534 +31,589 @@
 
 AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
-      setupUi(this);
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
 
-      setWindowTitle(tr("%1 settings").arg(APP_NAME));
-      lblCaption->setText(tr("%1 settings").arg(APP_NAME));
+	if (!libq4wine.load()){
+		libq4wine.load();
+	}
 
-      connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
-      connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib = (corelib *)CoreLibClassPointer(true);
 
-      connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
+	setupUi(this);
 
-      //Installing event filters for get buttuns
-      cmdGetWineBin->installEventFilter(this);
-      cmdGetWineServerBin->installEventFilter(this);
-      cmdGetWineLoaderBin->installEventFilter(this);
-      cmdGetWineLibs->installEventFilter(this);
-      cmdGetTarBin->installEventFilter(this);
-      cmdGetMountBin->installEventFilter(this);
-      cmdGetUmountBin->installEventFilter(this);
-      cmdGetSudoBin->installEventFilter(this);
-      cmdGetGuiSudoBin->installEventFilter(this);
-      cmdGetNiceBin->installEventFilter(this);
-      cmdGetReniceBin->installEventFilter(this);
-      cmdGetConsoleBin->installEventFilter(this);
-      cmdGetWrestoolBin->installEventFilter(this);
-      cmdGetIcotoolBin->installEventFilter(this);
-      cmdGetShBin->installEventFilter(this);
+	setWindowTitle(tr("%1 settings").arg(APP_NAME));
+	lblCaption->setText(tr("%1 settings").arg(APP_NAME));
 
-      QSettings settings(APP_SHORT_NAME, "default");
+	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
+	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
+	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
-      settings.beginGroup("wine");
-      txtWineBin->setText(settings.value("WineBin").toString());
-      txtWineServerBin->setText(settings.value("ServerBin").toString());
-      txtWineLoaderBin->setText(settings.value("LoaderBin").toString());
-      txtWineLibs->setText(settings.value("WineLibs").toString());
-      settings.endGroup();
+	connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
 
-      settings.beginGroup("app");
-      if (settings.value("showTrareyIcon").toInt()==1){
-            chShowTrarey->setCheckState(Qt::Checked);
-      } else {
-            chShowTrarey->setCheckState(Qt::Unchecked);
-      }
+	//Installing event filters for get buttuns
+	cmdGetWineBin->installEventFilter(this);
+	cmdGetWineServerBin->installEventFilter(this);
+	cmdGetWineLoaderBin->installEventFilter(this);
+	cmdGetWineLibs->installEventFilter(this);
+	cmdGetTarBin->installEventFilter(this);
+	cmdGetMountBin->installEventFilter(this);
+	cmdGetUmountBin->installEventFilter(this);
+	cmdGetSudoBin->installEventFilter(this);
+	cmdGetGuiSudoBin->installEventFilter(this);
+	cmdGetNiceBin->installEventFilter(this);
+	cmdGetReniceBin->installEventFilter(this);
+	cmdGetConsoleBin->installEventFilter(this);
+	cmdGetWrestoolBin->installEventFilter(this);
+	cmdGetIcotoolBin->installEventFilter(this);
+	cmdGetShBin->installEventFilter(this);
 
+	QSettings settings(APP_SHORT_NAME, "default");
 
-      listThemesView->clear();
+	settings.beginGroup("wine");
+	txtWineBin->setText(settings.value("WineBin").toString());
+	txtWineServerBin->setText(settings.value("ServerBin").toString());
+	txtWineLoaderBin->setText(settings.value("LoaderBin").toString());
+	txtWineLibs->setText(settings.value("WineLibs").toString());
+	settings.endGroup();
 
-      QListWidgetItem *iconItem;
-      iconItem = new QListWidgetItem(listThemesView, 0);
-      iconItem->setText("Default [Aughtor: Xavier Corredor Llano (xavier.corredor.llano@gmail.com); License: GPL v.2.1]");
-      iconItem->setIcon(QIcon(":data/wine.png"));
-      iconItem->setToolTip("Default");
-      listThemesView->setSelectionMode(QAbstractItemView::SingleSelection);
-
-
-
-      QString themeDir;
-      themeDir.clear();
-      themeDir.append(QDir::homePath());
-      themeDir.append("/.config/");
-      themeDir.append(APP_SHORT_NAME);
-      themeDir.append("/theme/");
+	settings.beginGroup("app");
+	if (settings.value("showTrareyIcon").toInt()==1){
+		chShowTrarey->setCheckState(Qt::Checked);
+	} else {
+		chShowTrarey->setCheckState(Qt::Unchecked);
+	}
 
 
-      getThemes(settings.value("theme").toString(), themeDir);
+	listThemesView->clear();
 
-      loadThemeIcons(settings.value("theme").toString());
+	QListWidgetItem *iconItem;
+	iconItem = new QListWidgetItem(listThemesView, 0);
+	iconItem->setText("Default [Aughtor: Xavier Corredor Llano (xavier.corredor.llano@gmail.com); License: GPL v.2.1]");
+	iconItem->setIcon(QIcon(":data/wine.png"));
+	iconItem->setToolTip("Default");
+	listThemesView->setSelectionMode(QAbstractItemView::SingleSelection);
 
-      if (settings.value("theme").toString()=="Default"){
-            listThemesView->setCurrentItem(iconItem);
-      }
 
-      themeDir.clear();
-      themeDir.append(APP_PREF);
-      themeDir.append("/share/");
-      themeDir.append(APP_SHORT_NAME);
-      themeDir.append("/theme");
 
-      getThemes(settings.value("theme").toString(), themeDir);
+	QString themeDir;
+	themeDir.clear();
+	themeDir.append(QDir::homePath());
+	themeDir.append("/.config/");
+	themeDir.append(APP_SHORT_NAME);
+	themeDir.append("/theme/");
 
-      getLangs();
 
-      if (settings.value("lang").toString().isEmpty()){
-            comboLangs->setCurrentIndex(comboLangs->findText(tr("System Default")));
-      } else {
-            comboLangs->setCurrentIndex(comboLangs->findText(settings.value("lang").toString()));
-      }
+	getThemes(settings.value("theme").toString(), themeDir);
 
-      settings.endGroup();
+	loadThemeIcons(settings.value("theme").toString());
 
-      settings.beginGroup("system");
-      txtTarBin->setText(settings.value("tar").toString());
-      txtMountBin->setText(settings.value("mount").toString());
-      txtUmountBin->setText(settings.value("umount").toString());
-      txtSudoBin->setText(settings.value("sudo").toString());
-      txtGuiSudoBin->setText(settings.value("gui_sudo").toString());
-      txtNiceBin->setText(settings.value("nice").toString());
-      txtReniceBin->setText(settings.value("renice").toString());
-      txtShBin->setText(settings.value("sh").toString());
-      settings.endGroup();
+	if (settings.value("theme").toString()=="Default"){
+		listThemesView->setCurrentItem(iconItem);
+	}
 
-      settings.beginGroup("console");
-      txtConsoleBin->setText(settings.value("bin").toString());
-      txtConsoleArgs->setText(settings.value("args").toString());
-      settings.endGroup();
+	themeDir.clear();
+	themeDir.append(APP_PREF);
+	themeDir.append("/share/");
+	themeDir.append(APP_SHORT_NAME);
+	themeDir.append("/theme");
 
-      settings.beginGroup("advanced");
-      txtMountString->setText(settings.value("mount_drive_string").toString());
-      txtMountImageString->setText(settings.value("mount_image_string").toString());
-      txtUmountString->setText(settings.value("umount_string").toString());
-      settings.endGroup();
+	getThemes(settings.value("theme").toString(), themeDir);
 
-      if (txtMountString->text().isEmpty()){
+	getLangs();
+
+	if (settings.value("lang").toString().isEmpty()){
+		comboLangs->setCurrentIndex(comboLangs->findText(tr("System Default")));
+	} else {
+		comboLangs->setCurrentIndex(comboLangs->findText(settings.value("lang").toString()));
+	}
+
+	settings.endGroup();
+
+	settings.beginGroup("system");
+	txtTarBin->setText(settings.value("tar").toString());
+	txtMountBin->setText(settings.value("mount").toString());
+	txtUmountBin->setText(settings.value("umount").toString());
+	txtSudoBin->setText(settings.value("sudo").toString());
+	txtGuiSudoBin->setText(settings.value("gui_sudo").toString());
+	txtNiceBin->setText(settings.value("nice").toString());
+	txtReniceBin->setText(settings.value("renice").toString());
+	txtShBin->setText(settings.value("sh").toString());
+	settings.endGroup();
+
+	settings.beginGroup("console");
+	txtConsoleBin->setText(settings.value("bin").toString());
+	txtConsoleArgs->setText(settings.value("args").toString());
+	settings.endGroup();
+
+	settings.beginGroup("advanced");
+	txtMountString->setText(settings.value("mount_drive_string").toString());
+	txtMountImageString->setText(settings.value("mount_image_string").toString());
+	txtUmountString->setText(settings.value("umount_string").toString());
+	settings.endGroup();
+
+	if (txtMountString->text().isEmpty()){
 #ifdef _OS_LINUX_
-            txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
+		txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
 #endif
 #ifdef _OS_FREEBSD_
-            txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
+		txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
 #endif
-      }
+	}
 
-      if (txtMountImageString->text().isEmpty()){
+	if (txtMountImageString->text().isEmpty()){
 #ifdef _OS_LINUX_
-            txtMountImageString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
+		txtMountImageString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
 #endif
 #ifdef _OS_FREEBSD_
-            txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
+		txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
 #endif
-      }
+	}
 
-      if (txtUmountString->text().isEmpty())
-            txtUmountString->setText("%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+	if (txtUmountString->text().isEmpty())
+		txtUmountString->setText("%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
 
 
 #ifndef WITHOUT_ICOTOOLS
-      settings.beginGroup("icotool");
-      txtWrestoolBin->setText(settings.value("wrestool").toString());
-      txtIcotoolBin->setText(settings.value("icotool").toString());
-      settings.endGroup();
+	settings.beginGroup("icotool");
+	txtWrestoolBin->setText(settings.value("wrestool").toString());
+	txtIcotoolBin->setText(settings.value("icotool").toString());
+	settings.endGroup();
 #else
-      txtWrestoolBin->setEnabled(false);
-      txtIcotoolBin->setEnabled(false);
-      cmdGetWrestoolBin->setEnabled(false);
-      cmdGetIcotoolBin->setEnabled(false);
+	txtWrestoolBin->setEnabled(false);
+	txtIcotoolBin->setEnabled(false);
+	cmdGetWrestoolBin->setEnabled(false);
+	cmdGetIcotoolBin->setEnabled(false);
 #endif
 
-      settings.beginGroup("network");
-      txtProxyHost->setText(settings.value("host").toString());
-      txtProxyPort->setText(settings.value("port").toString());
-      txtProxyUser->setText(settings.value("user").toString());
-      txtProxyPass->setText(settings.value("pass").toString());
+	settings.beginGroup("network");
+	txtProxyHost->setText(settings.value("host").toString());
+	txtProxyPort->setText(settings.value("port").toString());
+	txtProxyUser->setText(settings.value("user").toString());
+	txtProxyPass->setText(settings.value("pass").toString());
 
-      comboProxyType->setCurrentIndex(settings.value("type").toInt());
+	comboProxyType->setCurrentIndex(settings.value("type").toInt());
 
-      settings.endGroup();
+	settings.endGroup();
 
-      return;
+	return;
 }
 
 bool AppSettings::eventFilter(QObject *obj, QEvent *event){
-      /*
-            function for displaying file\dir dialog
-      */
+	  /*
+			function for displaying file\dir dialog
+	  */
 
-      if (event->type() == QEvent::MouseButtonPress) {
+	  if (event->type() == QEvent::MouseButtonPress) {
 
-            QString file;
+			QString file;
 
-            if (obj->objectName().right(3)=="Bin"){
-                  file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
-            } else {
-                  file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
-            }
+			if (obj->objectName().right(3)=="Bin"){
+				  file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
+			} else {
+				  file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
+			}
 
-            if (!file.isEmpty()){
-                  QString a;
+			if (!file.isEmpty()){
+				  QString a;
 
-                  a.append("txt");
-                  a.append(obj->objectName().right(obj->objectName().length()-6));
+				  a.append("txt");
+				  a.append(obj->objectName().right(obj->objectName().length()-6));
 
-                  QLineEdit *lineEdit = findChild<QLineEdit *>(a);
+				  QLineEdit *lineEdit = findChild<QLineEdit *>(a);
 
-                  if (lineEdit){
-                        lineEdit->setText(file);
-                  } else {
-                        qDebug("Error");
-                  }
-            }
-      }
+				  if (lineEdit){
+						lineEdit->setText(file);
+				  } else {
+						qDebug("Error");
+				  }
+			}
+	  }
 
-      return FALSE;
+	  return FALSE;
 }
 
 void AppSettings::comboProxyType_indexChanged(QString text){
-      if (text==tr("No Proxy")){
-            txtProxyHost->setEnabled(FALSE);
-            txtProxyPort->setEnabled(FALSE);
-            txtProxyUser->setEnabled(FALSE);
-            txtProxyPass->setEnabled(FALSE);
-      } else {
-            txtProxyHost->setEnabled(TRUE);
-            txtProxyPort->setEnabled(TRUE);
-            txtProxyUser->setEnabled(TRUE);
-            txtProxyPass->setEnabled(TRUE);
-      }
+	  if (text==tr("No Proxy")){
+			txtProxyHost->setEnabled(FALSE);
+			txtProxyPort->setEnabled(FALSE);
+			txtProxyUser->setEnabled(FALSE);
+			txtProxyPass->setEnabled(FALSE);
+	  } else {
+			txtProxyHost->setEnabled(TRUE);
+			txtProxyPort->setEnabled(TRUE);
+			txtProxyUser->setEnabled(TRUE);
+			txtProxyPass->setEnabled(TRUE);
+	  }
 
-      return;
+	  return;
 }
 
 void AppSettings::getLangs(){
 
-      QString themeDir;
+	  QString themeDir;
 
-      themeDir.clear();
-      themeDir.append(APP_PREF);
-      themeDir.append("/share/");
-      themeDir.append(APP_SHORT_NAME);
-      themeDir.append("/i18n");
+	  themeDir.clear();
+	  themeDir.append(APP_PREF);
+	  themeDir.append("/share/");
+	  themeDir.append(APP_SHORT_NAME);
+	  themeDir.append("/i18n");
 
-      QDir tmp(themeDir);
-      tmp.setFilter(QDir::Files | QDir::NoSymLinks);
+	  QDir tmp(themeDir);
+	  tmp.setFilter(QDir::Files | QDir::NoSymLinks);
 
-      QFileInfoList list = tmp.entryInfoList();
+	  QFileInfoList list = tmp.entryInfoList();
 
-      for (int i = 0; i < list.size(); ++i) {
-            QFileInfo fileInfo = list.at(i);
-            if (fileInfo.fileName().right(2)=="qm")
-                  comboLangs->addItem(fileInfo.fileName());
-      }
+	  for (int i = 0; i < list.size(); ++i) {
+			QFileInfo fileInfo = list.at(i);
+			if (fileInfo.fileName().right(2)=="qm")
+				  comboLangs->addItem(fileInfo.fileName());
+	  }
 
-      return;
+	  return;
 }
 
 void AppSettings::getThemes(QString selTheme, QString themeDir){
-      //Getting installed themes
+	  //Getting installed themes
 
-      QString aughtor;
-      QString license;
+	  QString aughtor;
+	  QString license;
 
-      QDir tmp(themeDir);
-      tmp.setFilter(QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
-      QFileInfoList list = tmp.entryInfoList();
+	  QDir tmp(themeDir);
+	  tmp.setFilter(QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
+	  QFileInfoList list = tmp.entryInfoList();
 
-      QListWidgetItem *iconItem;
+	  QListWidgetItem *iconItem;
 
-      // Getting converted icons from temp directory
-      for (int i = 0; i < list.size(); ++i) {
-            QFileInfo fileInfo = list.at(i);
-            iconItem = new QListWidgetItem(listThemesView, 0);
+	  // Getting converted icons from temp directory
+	  for (int i = 0; i < list.size(); ++i) {
+			QFileInfo fileInfo = list.at(i);
+			iconItem = new QListWidgetItem(listThemesView, 0);
 
 
-            QFile file(tr("%1/%2/theme.info").arg(themeDir).arg(fileInfo.fileName()));
-            if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-                  aughtor = file.readLine();
-                  aughtor.remove ( "\n" );
-                  license = file.readLine();
-            }
+			QFile file(tr("%1/%2/theme.info").arg(themeDir).arg(fileInfo.fileName()));
+			if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+				  aughtor = file.readLine();
+				  aughtor.remove ( "\n" );
+				  license = file.readLine();
+			}
 
-            if ((!aughtor.isEmpty()) and (!license.isEmpty())){
-                  iconItem->setText(tr("%1 [%2; %3]").arg(fileInfo.fileName()).arg(aughtor).arg(license));
-            } else {
-                  iconItem->setText(fileInfo.fileName());
-            }
-            iconItem->setToolTip(tr("%1/%2").arg(themeDir).arg(fileInfo.fileName()));
-            iconItem->setIcon(QIcon(tr("%1/%2/data/wine.png").arg(themeDir).arg(fileInfo.fileName())));
+			if ((!aughtor.isEmpty()) and (!license.isEmpty())){
+				  iconItem->setText(tr("%1 [%2; %3]").arg(fileInfo.fileName()).arg(aughtor).arg(license));
+			} else {
+				  iconItem->setText(fileInfo.fileName());
+			}
+			iconItem->setToolTip(tr("%1/%2").arg(themeDir).arg(fileInfo.fileName()));
+			iconItem->setIcon(QIcon(tr("%1/%2/data/wine.png").arg(themeDir).arg(fileInfo.fileName())));
 
-            if (!selTheme.isNull()){
-                  if (selTheme==fileInfo.filePath()){
+			if (!selTheme.isNull()){
+				  if (selTheme==fileInfo.filePath()){
 
-                        //Setting selection to selected theme
-                        listThemesView->setCurrentItem(iconItem);
+						//Setting selection to selected theme
+						listThemesView->setCurrentItem(iconItem);
 
-                        //Loading pixmaps from theme
-                        loadThemeIcons(fileInfo.filePath());
-                  }
-            }
-      }
+						//Loading pixmaps from theme
+						loadThemeIcons(fileInfo.filePath());
+				  }
+			}
+	  }
 
-      return;
+	  return;
 }
 
 
 void AppSettings::loadThemeIcons(QString themePath){
-      QPixmap pixmap;
+	  QPixmap pixmap;
 
-      if (!pixmap.load(tr("%1/data/exec.png").arg(themePath))){
-            pixmap.load(":data/exec.png");
-      }
+	  if (!pixmap.load(tr("%1/data/exec.png").arg(themePath))){
+			pixmap.load(":data/exec.png");
+	  }
 
-      lblLogo->setPixmap(pixmap);
+	  lblLogo->setPixmap(pixmap);
 
 
-      cmdGetWineBin->setIcon(loadIcon("data/folder.png", themePath));
-      cmdGetWineServerBin->setIcon(loadIcon("data/folder.png", themePath));
-      cmdGetWineLoaderBin->setIcon(loadIcon("data/folder.png", themePath));
-      cmdGetWineLibs->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetWineBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetWineServerBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetWineLoaderBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetWineLibs->setIcon(loadIcon("data/folder.png", themePath));
 
-      cmdGetTarBin->setIcon(loadIcon("data/folder.png", themePath));
-      cmdGetMountBin->setIcon(loadIcon("data/folder.png", themePath));
-      cmdGetUmountBin->setIcon(loadIcon("data/folder.png", themePath));
-      cmdGetSudoBin->setIcon(loadIcon("data/folder.png", themePath));
-      cmdGetGuiSudoBin->setIcon(loadIcon("data/folder.png", themePath));
-      cmdGetNiceBin->setIcon(loadIcon("data/folder.png", themePath));
-      cmdGetReniceBin->setIcon(loadIcon("data/folder.png", themePath));
-      cmdGetShBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetTarBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetMountBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetUmountBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetSudoBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetGuiSudoBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetNiceBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetReniceBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetShBin->setIcon(loadIcon("data/folder.png", themePath));
 
-      cmdGetConsoleBin->setIcon(loadIcon("data/folder.png", themePath));
-      cmdGetWrestoolBin->setIcon(loadIcon("data/folder.png", themePath));
-      cmdGetIcotoolBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetConsoleBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetWrestoolBin->setIcon(loadIcon("data/folder.png", themePath));
+	  cmdGetIcotoolBin->setIcon(loadIcon("data/folder.png", themePath));
 
-      return;
+	  return;
 }
 
 
 QIcon AppSettings::loadIcon(QString iconName, QString themePath){
-      // Function tryes to load icon image from theme dir
-      // If it fails -> load default from rsource file
+	  // Function tryes to load icon image from theme dir
+	  // If it fails -> load default from rsource file
 
-      QIcon icon;
+	  QIcon icon;
 
-      if ((!themePath.isEmpty()) and (themePath!="Default")){
-            icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
-            if (icon.isNull()){
-                  icon.addFile(tr(":/%1").arg(iconName));
-            }
-      } else {
-            icon.addFile(tr(":/%1").arg(iconName));
-      }
+	  if ((!themePath.isEmpty()) and (themePath!="Default")){
+			icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
+			if (icon.isNull()){
+				  icon.addFile(tr(":/%1").arg(iconName));
+			}
+	  } else {
+			icon.addFile(tr(":/%1").arg(iconName));
+	  }
 
-      return icon;
+	  return icon;
 }
 
 
 void AppSettings::cmdCancel_Click(){
-      reject();
-      return;
+	  reject();
+	  return;
 }
 
 void AppSettings::cmdOk_Click(){
 
-      if (!checkEntry(txtWineBin->text(), "wine"))
-            return;
+	  if (!checkEntry(txtWineBin->text(), "wine"))
+			return;
 
-      if (!checkEntry(txtWineServerBin->text(), "wine server"))
-            return;
+	  if (!checkEntry(txtWineServerBin->text(), "wine server"))
+			return;
 
-      if (!checkEntry(txtWineLoaderBin->text(), "wine loader"))
-            return;
+	  if (!checkEntry(txtWineLoaderBin->text(), "wine loader"))
+			return;
 
-      if (!checkEntry(txtWineLibs->text(), "wine library", FALSE))
-            return;
+	  if (!checkEntry(txtWineLibs->text(), "wine library", FALSE))
+			return;
 
-      if (!checkEntry(txtTarBin->text(), "tar"))
-            return;
+	  if (!checkEntry(txtTarBin->text(), "tar"))
+			return;
 
-      if (!checkEntry(txtMountBin->text(), "mount"))
-            return;
+	  if (!checkEntry(txtMountBin->text(), "mount"))
+			return;
 
-      if (!checkEntry(txtUmountBin->text(), "umount"))
-            return;
+	  if (!checkEntry(txtUmountBin->text(), "umount"))
+			return;
 
-      if (!checkEntry(txtSudoBin->text(), "sudo"))
-            return;
+	  if (!checkEntry(txtSudoBin->text(), "sudo"))
+			return;
 
-      if (!checkEntry(txtGuiSudoBin->text(), "gui_sudo"))
-            return;
+	  if (!checkEntry(txtGuiSudoBin->text(), "gui_sudo"))
+			return;
 
-      if (!checkEntry(txtUmountBin->text(), "nice"))
-            return;
+	  if (!checkEntry(txtUmountBin->text(), "nice"))
+			return;
 
-      if (!checkEntry(txtUmountBin->text(), "renice"))
-            return;
+	  if (!checkEntry(txtUmountBin->text(), "renice"))
+			return;
 
-      if (!checkEntry(txtUmountBin->text(), "sh"))
-            return;
+	  if (!checkEntry(txtUmountBin->text(), "sh"))
+			return;
 
-      if (!checkEntry(txtConsoleBin->text(), "console"))
-            return;
+	  if (!checkEntry(txtConsoleBin->text(), "console"))
+			return;
 
 #ifndef WITHOUT_ICOTOOLS
-      if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
-            return;
+	  if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
+			return;
 
-      if (!checkEntry(txtIcotoolBin->text(), "icotool"))
-            return;
+	  if (!checkEntry(txtIcotoolBin->text(), "icotool"))
+			return;
 #endif
 
-      if (comboProxyType->currentText()!=tr("No Proxy")){
-            if (txtProxyHost->text().isEmpty()){
-                  QMessageBox::warning(this, tr("Error"), tr("Sorry, specify proxy host."));
-                  return;
-            }
-            if (txtProxyPort->text().isEmpty()){
-                  QMessageBox::warning(this, tr("Error"), tr("Sorry, specify proxy port."));
-                  return;
-            }
-      }
+	  if (comboProxyType->currentText()!=tr("No Proxy")){
+			if (txtProxyHost->text().isEmpty()){
+				  QMessageBox::warning(this, tr("Error"), tr("Sorry, specify proxy host."));
+				  return;
+			}
+			if (txtProxyPort->text().isEmpty()){
+				  QMessageBox::warning(this, tr("Error"), tr("Sorry, specify proxy port."));
+				  return;
+			}
+	  }
 
-      QSettings settings(APP_SHORT_NAME, "default");
+	  QSettings settings(APP_SHORT_NAME, "default");
 
-      settings.beginGroup("wine");
-      settings.setValue("WineBin", txtWineBin->text());
-      settings.setValue("ServerBin", txtWineServerBin->text());
-      settings.setValue("LoaderBin", txtWineLoaderBin->text());
-      settings.setValue("WineLibs", txtWineLibs->text());
-      settings.endGroup();
+	  settings.beginGroup("wine");
+	  settings.setValue("WineBin", txtWineBin->text());
+	  settings.setValue("ServerBin", txtWineServerBin->text());
+	  settings.setValue("LoaderBin", txtWineLoaderBin->text());
+	  settings.setValue("WineLibs", txtWineLibs->text());
+	  settings.endGroup();
 
-      settings.beginGroup("app");
-      if (chShowTrarey->checkState()==Qt::Checked) {
-            settings.setValue("showTrareyIcon", 1);
-      } else {
-            settings.setValue("showTrareyIcon", 0);
-      }
+	  settings.beginGroup("app");
+	  if (chShowTrarey->checkState()==Qt::Checked) {
+			settings.setValue("showTrareyIcon", 1);
+	  } else {
+			settings.setValue("showTrareyIcon", 0);
+	  }
 
-      if (listThemesView->currentItem()){
-            settings.setValue("theme", listThemesView->currentItem()->toolTip());
-      } else {
-            settings.setValue("theme", "Default");
-      }
+	  if (listThemesView->currentItem()){
+			settings.setValue("theme", listThemesView->currentItem()->toolTip());
+	  } else {
+			settings.setValue("theme", "Default");
+	  }
 
 
-      if (comboLangs->currentText()==tr("System Default")){
-            settings.setValue("lang", "");
-      } else {
-            settings.setValue("lang", comboLangs->currentText());
-      }
+	  if (comboLangs->currentText()==tr("System Default")){
+			settings.setValue("lang", "");
+	  } else {
+			settings.setValue("lang", comboLangs->currentText());
+	  }
 
-      settings.endGroup();
-      settings.beginGroup("system");
-      settings.setValue("tar", txtTarBin->text());
-      settings.setValue("mount", txtMountBin->text());
-      settings.setValue("umount", txtUmountBin->text());
-      settings.setValue("sudo", txtSudoBin->text());
-      settings.setValue("gui_sudo", txtGuiSudoBin->text());
-      settings.setValue("nice", txtNiceBin->text());
-      settings.setValue("renice", txtReniceBin->text());
-      settings.setValue("sh", txtShBin->text());
-      settings.endGroup();
+	  settings.endGroup();
+	  settings.beginGroup("system");
+	  settings.setValue("tar", txtTarBin->text());
+	  settings.setValue("mount", txtMountBin->text());
+	  settings.setValue("umount", txtUmountBin->text());
+	  settings.setValue("sudo", txtSudoBin->text());
+	  settings.setValue("gui_sudo", txtGuiSudoBin->text());
+	  settings.setValue("nice", txtNiceBin->text());
+	  settings.setValue("renice", txtReniceBin->text());
+	  settings.setValue("sh", txtShBin->text());
+	  settings.endGroup();
 
-      settings.beginGroup("console");
-      settings.setValue("bin", txtConsoleBin->text());
-      settings.setValue("args", txtConsoleArgs->text());
-      settings.endGroup();
+	  settings.beginGroup("console");
+	  settings.setValue("bin", txtConsoleBin->text());
+	  settings.setValue("args", txtConsoleArgs->text());
+	  settings.endGroup();
 #ifndef WITHOUT_ICOTOOLS
-      settings.beginGroup("icotool");
-      settings.setValue("wrestool", txtWrestoolBin->text());
-      settings.setValue("icotool", txtIcotoolBin->text());
-      settings.endGroup();
+	  settings.beginGroup("icotool");
+	  settings.setValue("wrestool", txtWrestoolBin->text());
+	  settings.setValue("icotool", txtIcotoolBin->text());
+	  settings.endGroup();
 #endif
 
 
-            if (txtMountString->text().isEmpty()){
+			if (txtMountString->text().isEmpty()){
 #ifdef _OS_LINUX_
-            txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
+			txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
 #endif
 #ifdef _OS_FREEBSD_
-            txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
+			txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
 #endif
-      }
+	  }
 
-      if (txtMountImageString->text().isEmpty()){
+	  if (txtMountImageString->text().isEmpty()){
 #ifdef _OS_LINUX_
-            txtMountImageString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
+			txtMountImageString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
 #endif
 #ifdef _OS_FREEBSD_
-            txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
+			txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
 #endif
-      }
+	  }
 
-      if (txtUmountString->text().isEmpty())
-            txtUmountString->setText("%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+	  if (txtUmountString->text().isEmpty())
+			txtUmountString->setText("%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
 
 
 
-      settings.beginGroup("advanced");
-      settings.setValue("mount_drive_string", txtMountString->text());
-      settings.setValue("mount_image_string", txtMountImageString->text());
-      settings.setValue("umount_string", txtUmountString->text());
-      settings.endGroup();
+	  settings.beginGroup("advanced");
+	  settings.setValue("mount_drive_string", txtMountString->text());
+	  settings.setValue("mount_image_string", txtMountImageString->text());
+	  settings.setValue("umount_string", txtUmountString->text());
+	  settings.endGroup();
 
-      settings.beginGroup("network");
-      settings.setValue("host", txtProxyHost->text());
-      settings.setValue("port", txtProxyPort->text());
-      settings.setValue("user", txtProxyUser->text());
-      settings.setValue("pass", txtProxyPass->text());
-      if (comboProxyType->currentText()==tr("No Proxy")){
-            settings.setValue("type", 0);
-      } else {
-            if (comboProxyType->currentText()=="HTTP"){
-                  settings.setValue("type", 1);
-            } else {
-                  settings.setValue("type", 2);
-            }
-      }
+	  settings.beginGroup("network");
+	  settings.setValue("host", txtProxyHost->text());
+	  settings.setValue("port", txtProxyPort->text());
+	  settings.setValue("user", txtProxyUser->text());
+	  settings.setValue("pass", txtProxyPass->text());
+	  if (comboProxyType->currentText()==tr("No Proxy")){
+			settings.setValue("type", 0);
+	  } else {
+			if (comboProxyType->currentText()=="HTTP"){
+				  settings.setValue("type", 1);
+			} else {
+				  settings.setValue("type", 2);
+			}
+	  }
 
-      settings.endGroup();
-      accept();
-      return;
+	  settings.endGroup();
+	  accept();
+	  return;
 }
 
 bool AppSettings::checkEntry(QString fileName, QString info, bool isFile){
-      /*
-      *	This function check user entry
-      */
+	  /*
+	  *	This function check user entry
+	  */
 
-      if (fileName.isEmpty()){
-            switch (isFile){
-            case FALSE:
-                  QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 directory.").arg(info));
-                  break;
-            case TRUE:
-                  QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 binary.").arg(info));
-                  break;
-            }
-            return FALSE;
-      } else {
-            if (!QFile::exists(fileName)){
-                  switch (isFile){
-                  case FALSE:
-                        QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory not exists.").arg(info));
-                        break;
-                  case TRUE:
-                        QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary not exists.").arg(info));
-                        break;
-                  }
-                  return FALSE;
-            }
-      }
+	  if (fileName.isEmpty()){
+			switch (isFile){
+			case FALSE:
+				  QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 directory.").arg(info));
+				  break;
+			case TRUE:
+				  QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 binary.").arg(info));
+				  break;
+			}
+			return FALSE;
+	  } else {
+			if (!QFile::exists(fileName)){
+				  switch (isFile){
+				  case FALSE:
+						QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory not exists.").arg(info));
+						break;
+				  case TRUE:
+						QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary not exists.").arg(info));
+						break;
+				  }
+				  return FALSE;
+			}
+	  }
 
-      return TRUE;
+	  return TRUE;
 }
 
+void AppSettings::cmdHelp_Click(){
+	QString rawurl;
+	switch (twbGeneral->currentIndex()){
+	case 0:
+		rawurl = "/settings.html#general";
+	break;
+	case 1:
+		rawurl = "/settings.html#sysutils";
+	break;
+	case 2:
+		rawurl = "/settings.html#userutils";
+	break;
+	case 3:
+		rawurl = "/settings.html#customization";
+	break;
+	case 4:
+		rawurl = "/settings.html#network";
+	break;
+	case 5:
+		rawurl = "/settings.html#advanced";
+	break;
+	}
+
+	QString lang = CoreLib->getSetting("", "", FALSE).toString();
+	if (lang.isEmpty()){
+		lang = setlocale(LC_ALL, "");
+		if (lang.isEmpty()){
+			lang = setlocale(LC_MESSAGES, "");
+			if (lang.isEmpty()){
+				lang = getenv("LANG");
+			}
+		}
+		lang = lang.split(".").at(0).toLower();
+	}
+
+	QString url="http://";
+	url.append(APP_WEBSITTE);
+	url.append("/documentation/");
+	url.append(lang);
+	url.append(rawurl);
+
+	CoreLib->openHelpUrl(url);
+}

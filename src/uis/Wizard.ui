@@ -11,7 +11,7 @@
     <x>0</x>
     <y>0</y>
     <width>665</width>
-    <height>448</height>
+    <height>450</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -372,11 +372,7 @@ p, li { white-space: pre-wrap; }
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLineEdit" name="txtPrefixPath">
-                  <property name="readOnly">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
+                 <widget class="QLineEdit" name="txtPrefixPath"/>
                 </item>
                 <item>
                  <widget class="QPushButton" name="cmdGetPrefixPath">
@@ -493,9 +489,9 @@ p, li { white-space: pre-wrap; }
                    </sizepolicy>
                   </property>
                   <property name="text">
-                   <string>If you wish to use different wine versions, you may wish set custom wine path here.
+                   <string>If you wish to use different wine versions, you may wish to set custom wine settings here.
 
-Note: leave it blank for default.</string>
+Note: leave it blank for default value.</string>
                   </property>
                   <property name="wordWrap">
                    <bool>true</bool>
@@ -2766,17 +2762,17 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
             </layout>
            </widget>
            <zorder>widgetCreateFakeDrive3</zorder>
-           <zorder>widgetCreatePrefix0</zorder>
            <zorder>widgetCreateFakeDrive1</zorder>
-           <zorder>widgetCreateFakeDrive2</zorder>
            <zorder>widgetInfo</zorder>
            <zorder>widgetCreateFakeDrive0</zorder>
            <zorder>widgetFirstStartup0</zorder>
            <zorder>widgetFirstStartup1</zorder>
-           <zorder>widgetCreatePrefix1</zorder>
            <zorder>widgetCreatePrefix2</zorder>
            <zorder>widgetFirstStartup3</zorder>
            <zorder>widgetFirstStartup2</zorder>
+           <zorder>widgetCreateFakeDrive2</zorder>
+           <zorder>widgetCreatePrefix1</zorder>
+           <zorder>widgetCreatePrefix0</zorder>
           </widget>
          </item>
         </layout>

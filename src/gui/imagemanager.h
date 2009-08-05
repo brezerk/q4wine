@@ -90,7 +90,12 @@ class ImageManager : public QDialog, public Ui::ImageManager
 		void tableImage_showContextMenu(const QPoint);
 		//! Update lilPAthInfo slot
 		void update_lblPathInfo(const QModelIndex);
-		
+		/*!
+		 * \bref Help button click slot
+		 */
+		void cmdHelp_Click();
+
+
 	private:
 		QToolBar *managerToolBar;
 		//! Loading theme icons
@@ -101,7 +106,7 @@ class ImageManager : public QDialog, public Ui::ImageManager
 		QIcon loadIcon(QString iconName, QString themePath);
 		//! Getting CD images list
 		void getCDImages(void);
-		
+
 		 //! This is need for libq4wine-core.so import;
 		typedef void *CoreLibPrototype (bool);
 		CoreLibPrototype *CoreLibClassPointer;
@@ -115,7 +120,7 @@ class ImageManager : public QDialog, public Ui::ImageManager
 		QAction *actionRemove;
 		QAction *actionRename;
 		QAction *actionRefresh;
-		
+
 };
 
 #endif

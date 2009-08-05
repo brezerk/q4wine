@@ -759,22 +759,58 @@ void Wizard::nextWizardPage(){
 void Wizard::cmdHelp_Click(){
 	QString rawurl;
 	switch (Scena){
+		case 0:
+		switch (Page){
+		case 2:
+			rawurl = "/prefixwizard.html#general";
+			break;
+		case 3:
+			rawurl = "/prefixwizard.html#winepath";
+			break;
+		case 4:
+			rawurl = "/prefixwizard.html#quickmount";
+			break;
+		default:
+			rawurl = "/prefixwizard.html";
+			break;
+		}
+		break;
 		case 1:
 		switch (Page){
-			case 3:
-		   rawurl = "/firststartup.html#winepath";
+		case 3:
+			rawurl = "/firststartup.html#winepath";
 			break;
-			case 4:
-		   rawurl = "/firststartup.html#sysutils";
+		case 4:
+			rawurl = "/firststartup.html#sysutils";
 			break;
-			default:
-			case 5:
-		   rawurl = "/firststartup.html#userutils";
+
+		case 5:
+			rawurl = "/firststartup.html#userutils";
 			break;
-			case 6:
-		   rawurl = "/firststartup.html#proxy";
+		case 6:
+			rawurl = "/firststartup.html#proxy";
 			break;
+		default:
 			rawurl = "/firststartup.html";
+			break;
+		}
+		break;
+		case 2:
+		switch (Page){
+		case 2:
+			rawurl = "/fakedrivewizard.html#general";
+			break;
+		case 3:
+			rawurl = "/fakedrivewizard.html#winebrowsers";
+			break;
+		case 4:
+			rawurl = "/fakedrivewizard.html#direct";
+			break;
+		case 5:
+			rawurl = "/fakedrivewizard.html#x11";
+			break;
+		default:
+			rawurl = "/fakedrivewizard.html";
 			break;
 		}
 		break;
@@ -792,14 +828,11 @@ void Wizard::cmdHelp_Click(){
 		lang = lang.split(".").at(0).toLower();
 	}
 
-	qDebug()<<Scena<<Page;
-
 	QString url="http://";
 	url.append(APP_WEBSITTE);
 	url.append("/documentation/");
 	url.append(lang);
 	url.append(rawurl);
-	qDebug()<<url;
 
 	CoreLib->openHelpUrl(url);
 }

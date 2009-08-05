@@ -241,6 +241,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		typedef void *CoreLibPrototype (bool);
 			CoreLibPrototype *CoreLibClassPointer;
 			corelib *CoreLib;
+		QLibrary libq4wine;
 
 		//Classes
 		Prefix *db_prefix;
@@ -248,7 +249,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		Icon *db_icon;
 		Image *db_image;
 
-		QLibrary libq4wine;
+
 
 		// Proxy
 		QNetworkProxy proxy;

@@ -212,7 +212,7 @@ int main(int argc, char *argv[])
 			Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --minimize"<<QObject::tr("minimize q4wine main window on startup")<<qSetFieldWidth(0)<<endl;
 			Qcout<<endl;
 			Qcout<<QObject::tr("Report q4wine bugs to brezerk@gmail.com")<<endl;
-			Qcout<<QObject::tr("q4wine homepage: <http://q4wine.brezblock.org.ua/>")<<endl;
+			Qcout<<QObject::tr("q4wine homepage: <%1>").arg(APP_WEBSITTE)<<endl;
 			Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
 			return 0;
 		}

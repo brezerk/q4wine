@@ -33,10 +33,10 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 {
 	// Setup base UI
 	setupUi(this);
-	
+
 	// Setting class prefix name
 	this->prefix_name=prefix_name;
-	
+
 	// Loading libq4wine-core.so
 	libq4wine.setFileName("libq4wine-core");
 
@@ -58,7 +58,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 		return;
 
 	prefix_id=result.at(0);
-	
+
 	txtWineLibs->setText(result.at(2));
 	txtWineLoaderBin->setText(result.at(3));
 	txtWineServerBin->setText(result.at(4));
@@ -66,15 +66,15 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
 	//comboDeviceList
 	txtMountPoint->setText(result.at(6));
-	
+
 	if (prefix_name=="Default"){
 		txtPrefixName->setEnabled(FALSE);
 		txtPrefixPath->setEnabled(FALSE);
 		cmdGetPrefixPath->setEnabled(FALSE);
 	} else {
-		cmdGetPrefixPath->installEventFilter(this);	
+		cmdGetPrefixPath->installEventFilter(this);
 	}
-	
+
 	txtPrefixName->setText(prefix_name);
 	txtPrefixPath->setText(result.at(1));
 
@@ -83,14 +83,15 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
-	
+	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
+
 	cmdGetWineBin->installEventFilter(this);
 	cmdGetWineServerBin->installEventFilter(this);
 	cmdGetWineLoaderBin->installEventFilter(this);
 	cmdGetWineLibs->installEventFilter(this);
-	
+
 	cmdGetMountPoint->installEventFilter(this);
-	
+
 	return;
 }
 
@@ -98,13 +99,13 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
 void PrefixSettings::loadThemeIcons(QString themePath){
 	QPixmap pixmap;
-				
+
 	if (!pixmap.load(tr("%1/data/exec.png").arg(themePath))){
 		pixmap.load(":data/exec.png");
 	}
-				
+
 	lblLogo->setPixmap(pixmap);
-		
+
 	cmdGetWineBin->setIcon(loadIcon("data/folder.png", themePath));
 	cmdGetWineServerBin->setIcon(loadIcon("data/folder.png", themePath));
 	cmdGetWineLoaderBin->setIcon(loadIcon("data/folder.png", themePath));
@@ -112,7 +113,7 @@ void PrefixSettings::loadThemeIcons(QString themePath){
 
 	cmdGetMountPoint->setIcon(loadIcon("data/folder.png", themePath));
 	cmdGetPrefixPath->setIcon(loadIcon("data/folder.png", themePath));
-		
+
 	return;
 }
 
@@ -120,9 +121,9 @@ void PrefixSettings::loadThemeIcons(QString themePath){
 QIcon PrefixSettings::loadIcon(QString iconName, QString themePath){
 	// Function tryes to load icon image from theme dir
 	// If it fails -> load default from resource file
-	
+
 	QIcon icon;
-	
+
 	if ((!themePath.isEmpty()) and (themePath!="Default")){
 		icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
 		if (icon.isNull()){
@@ -132,12 +133,12 @@ QIcon PrefixSettings::loadIcon(QString iconName, QString themePath){
 		icon.addFile(tr(":/%1").arg(iconName));
 	}
 
-	return icon;	
+	return icon;
 }
 
 void PrefixSettings::cmdCancel_Click(){
 	reject();
-	return;	
+	return;
 }
 
 void PrefixSettings::cmdOk_Click(){
@@ -166,32 +167,63 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 	 */
 
 	if (event->type() == QEvent::MouseButtonPress) {
-		
+
 		QString file;
-		
+
 		if (obj->objectName().right(3)=="Bin"){
 			file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*.*)");
 		} else {
 			file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
 		}
-			
+
 		if (!file.isEmpty()){
 			QString a;
-			
+
 			a.append("txt");
 			a.append(obj->objectName().right(obj->objectName().length()-6));
-			
+
 			QLineEdit *lineEdit = findChild<QLineEdit *>(a);
-			
+
 			if (lineEdit){
 				lineEdit->setText(file);
 			} else {
-				qDebug("Error");	
+				qDebug("Error");
 			}
 		}
 	}
-	
-	return FALSE;	
+
+	return FALSE;
 }
 
+void PrefixSettings::cmdHelp_Click(){
+	QString rawurl;
+	switch (twbGeneral->currentIndex()){
+	case 0:
+		rawurl = "/prefixsettings.html#general";
+	break;
+	case 1:
+		rawurl = "/prefixsettings.html#winepath";
+	break;
+	}
+
+	QString lang = CoreLib->getSetting("", "", FALSE).toString();
+	if (lang.isEmpty()){
+		lang = setlocale(LC_ALL, "");
+		if (lang.isEmpty()){
+			lang = setlocale(LC_MESSAGES, "");
+			if (lang.isEmpty()){
+				lang = getenv("LANG");
+			}
+		}
+		lang = lang.split(".").at(0).toLower();
+	}
+
+	QString url="http://";
+	url.append(APP_WEBSITTE);
+	url.append("/documentation/");
+	url.append(lang);
+	url.append(rawurl);
+
+	CoreLib->openHelpUrl(url);
+}
 

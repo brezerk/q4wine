@@ -33,126 +33,128 @@
 
 Process::Process (QStringList args, QString exec, QString dir, QString info, QString caption, QStringList env , QWidget * parent, Qt::WFlags f)
 {
-      setupUi(this);
+	setupUi(this);
 
-      myProcess = new QProcess(parent);
-      myProcess->setEnvironment(env);
-      connect(myProcess, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(slotFinished(int, QProcess::ExitStatus)));
-      connect(myProcess, SIGNAL(error(QProcess::ProcessError)), this, SLOT(slotError(QProcess::ProcessError)));
-      connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_clicked()));
+	myProcess = new QProcess(parent);
+	myProcess->setEnvironment(env);
+	connect(myProcess, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(slotFinished(int, QProcess::ExitStatus)));
+	connect(myProcess, SIGNAL(error(QProcess::ProcessError)), this, SLOT(slotError(QProcess::ProcessError)));
+	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_clicked()));
 
-      lblInfo->setText(info);
-      setWindowTitle(caption);
+	lblInfo->setText(info);
+	setWindowTitle(caption);
 
-      myProcess->setWorkingDirectory (dir);
-      myProcess->start(exec, args);
+	myProcess->setWorkingDirectory (dir);
+	myProcess->start(exec, args);
 
-      return;
+	return;
 }
 
 void Process::cmdCancel_clicked(void){
-      myProcess->kill();
-      reject();
-      return;
+	myProcess->kill();
+	reject();
+	return;
 }
 
 void Process::slotError(QProcess::ProcessError err){
-      if (myProcess->exitCode()!=0){
+	if (myProcess->exitCode()!=0){
 
-            QString lang;
-            // Getting env LANG variable
-            lang = getenv("LANG");
-            lang = lang.split(".").at(1);
+		QString lang;
+		// Getting env LANG variable
+		lang = getenv("LANG");
+		lang = lang.split(".").at(1);
 
-            if (lang.isNull())
-                  lang = "UTF8";
+		if (lang.isNull())
+			lang = "UTF8";
 
-            QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
-                  QString string = codec->toUnicode(myProcess->readAllStandardError());
+		QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+		QString string = codec->toUnicode(myProcess->readAllStandardError());
 
-                  if (!string.isEmpty()){
-                        QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Error log:<br>%1").arg(string));
-                  } else {
-                              switch (err){
-                                    case 0:
-                                          QMessageBox::warning(this, tr("Error"), tr("Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program."));
-                                    break;
-                                    case 1:
-                                          QMessageBox::warning(this, tr("Error"), tr("Process: The process crashed some time after starting successfully."));
-                                    break;
-                                    case 2:
-                                          QMessageBox::warning(this, tr("Error"), tr("Process: The last waitFor...() function timed out."));
-                                    break;
-                                    case 3:
-                                          QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to read from the process. For example, the process may not be running."));
-                                    break;
-                                    case 4:
-                                          QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel."));
-                                    break;
-                                    case 5:
-                                          QMessageBox::warning(this, tr("Error"), tr("Process: An unknown error occurred. This is the default return value of error()."));
-                                    break;
-                              }
-                  }
-      } else {
-            switch (err){
-                  case 0:
-                        QMessageBox::warning(this, tr("Error"), tr("Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program."));
-                  break;
-                  case 1:
-                        QMessageBox::warning(this, tr("Error"), tr("Process: The process crashed some time after starting successfully."));
-                  break;
-                  case 2:
-                        QMessageBox::warning(this, tr("Error"), tr("Process: The last waitFor...() function timed out."));
-                  break;
-                  case 3:
-                        QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to read from the process. For example, the process may not be running."));
-                  break;
-                  case 4:
-                        QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel."));
-                  break;
-                  case 5:
-                        QMessageBox::warning(this, tr("Error"), tr("Process: An unknown error occurred. This is the default return value of error()."));
-                  break;
-            }
-      reject ();
-      }
-      return;
+		if (!string.isEmpty()){
+			QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Error log:<br>%1").arg(string));
+		} else {
+			switch (err){
+			case 0:
+				QMessageBox::warning(this, tr("Error"), tr("Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program."));
+				break;
+			case 1:
+				QMessageBox::warning(this, tr("Error"), tr("Process: The process crashed some time after starting successfully."));
+				break;
+			case 2:
+				QMessageBox::warning(this, tr("Error"), tr("Process: The last waitFor...() function timed out."));
+				break;
+			case 3:
+				QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to read from the process. For example, the process may not be running."));
+				break;
+			case 4:
+				QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel."));
+				break;
+			case 5:
+				QMessageBox::warning(this, tr("Error"), tr("Process: An unknown error occurred. This is the default return value of error()."));
+				break;
+			}
+		}
+	} else {
+		switch (err){
+			case 0:
+			QMessageBox::warning(this, tr("Error"), tr("Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program."));
+			break;
+			case 1:
+			QMessageBox::warning(this, tr("Error"), tr("Process: The process crashed some time after starting successfully."));
+			break;
+			case 2:
+			QMessageBox::warning(this, tr("Error"), tr("Process: The last waitFor...() function timed out."));
+			break;
+			case 3:
+			QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to read from the process. For example, the process may not be running."));
+			break;
+			case 4:
+			QMessageBox::warning(this, tr("Error"), tr("Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel."));
+			break;
+			case 5:
+			QMessageBox::warning(this, tr("Error"), tr("Process: An unknown error occurred. This is the default return value of error()."));
+			break;
+		}
+		reject ();
+	}
+	return;
 }
 
 void Process::slotFinished(int, QProcess::ExitStatus exitc){
 
-      /*
-       * This piece of code try to catch error messages.
-       * In fact exitCode() not always can return error code
-       * (for example kdesu\gksu)
-       * So the beast way is to inform user about troubles is to show to him any STDERR messages.
-       */
+	/*
+	   * This piece of code try to catch error messages.
+	   * In fact exitCode() not always can return error code
+	   * (for example kdesu\gksu)
+	   * So the beast way is to inform user about troubles is to show to him any STDERR messages.
+	   */
 
-      QString lang;
-         lang = getenv("LANG");
-         lang = lang.split(".").at(1);
+	QString lang;
+	lang = getenv("LANG");
+	lang = lang.split(".").at(1);
 
-      // If in is empty -- set UTF8 locale
-      if (lang.isEmpty())
-         lang = "UTF8";
+	// If in is empty -- set UTF8 locale
+	if (lang.isEmpty())
+		lang = "UTF8";
 
-      // Read STDERR with locale support
-      QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
-      QString string = codec->toUnicode(myProcess->readAllStandardError());
+	// Read STDERR with locale support
+	QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+	QString string = codec->toUnicode(myProcess->readAllStandardError());
 
-      if (!string.isEmpty()){
-         if ((exitc == 0) && (myProcess->exitCode() == 0)){
-            QMessageBox::warning(this, tr("Output"), tr("It seems the process exited normally.<br><br>STDERR log:<br>%1").arg(string));
-            accept();
-         } else {
-            QMessageBox::warning(this, tr("Output"), tr("It seems the process crashed.<br><br>STDERR log:<br>%1").arg(string));
-            reject();
-         }
-      }
+	if (!string.isEmpty()){
+		if ((exitc == 0) && (myProcess->exitCode() == 0)){
+			QMessageBox::warning(this, tr("Output"), tr("It seems the process exited normally.<br><br>STDERR log:<br>%1").arg(string));
+			accept();
+		} else {
+			QMessageBox::warning(this, tr("Output"), tr("It seems the process crashed.<br><br>STDERR log:<br>%1").arg(string));
+			reject();
+		}
+	}
 
-      accept();
+	accept();
 
-      return;
+	return;
 }
+
+
 

@@ -50,6 +50,7 @@ ImageManager::ImageManager(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	loadThemeIcons(CoreLib->getSetting("app", "theme", false).toString());
 
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
+	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 	connect(tableImage, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tableImage_showContextMenu(const QPoint &)));
 	connect(tableImage, SIGNAL(clicked(const QModelIndex &)), this, SLOT(update_lblPathInfo(const QModelIndex &)));
 
@@ -205,7 +206,7 @@ void ImageManager::actionAddImage(){
 }
 
 void ImageManager::actionRenameImage(){
-  	if (tableImage->currentRow()==-1)
+	if (tableImage->currentRow()==-1)
 		return;
 
 	bool ok;
@@ -249,5 +250,29 @@ QIcon ImageManager::loadIcon(QString iconName, QString themePath){
 		icon.addFile(tr(":/%1").arg(iconName));
 	}
 	return icon;
+}
+
+void ImageManager::cmdHelp_Click(){
+	QString rawurl = "/imagemanager.html";
+
+	QString lang = CoreLib->getSetting("", "", FALSE).toString();
+	if (lang.isEmpty()){
+		lang = setlocale(LC_ALL, "");
+		if (lang.isEmpty()){
+			lang = setlocale(LC_MESSAGES, "");
+			if (lang.isEmpty()){
+				lang = getenv("LANG");
+			}
+		}
+		lang = lang.split(".").at(0).toLower();
+	}
+
+	QString url="http://";
+	url.append(APP_WEBSITTE);
+	url.append("/documentation/");
+	url.append(lang);
+	url.append(rawurl);
+
+	CoreLib->openHelpUrl(url);
 }
 

@@ -66,7 +66,7 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
 		 * \param  prefix_name  Current prefix name.
 		 */
 		PrefixSettings(QString prefix_name, QWidget * parent = 0, Qt::WFlags f = 0);
-		
+
 	private:
 		/*! \brief This is an event filter.
 		 *
@@ -92,7 +92,7 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
 		 * Prefix id, and name
 		 */
 		QString prefix_id, prefix_name;
-		
+
 		//! Database prefix class defenition.
 		Prefix *db_prefix;
 
@@ -112,8 +112,13 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
 		 * \bref Ok button click slot
 		 */
 		void cmdOk_Click();
-		
-		
+
+		/*!
+		 * \bref Help button click slot
+		 */
+		void cmdHelp_Click();
+
+
 };
 
 #endif

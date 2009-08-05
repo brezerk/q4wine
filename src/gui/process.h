@@ -42,7 +42,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QTextCodec>
-
+#include <QLibrary>
 
 class Process : public QDialog, public Ui::Process
 {
@@ -50,12 +50,12 @@ class Process : public QDialog, public Ui::Process
 	public:
 		Process(QStringList args, QString exec, QString dir, QString info, QString caption, QStringList env = QProcess::systemEnvironment(), QWidget * parent = 0, Qt::WFlags f = 0);
 		QProcess *myProcess;
-		
+
 	private slots:
 		void slotFinished(int, QProcess::ExitStatus);
 		void cmdCancel_clicked(void);
 		void slotError(QProcess::ProcessError);
-		
+
 };
 
 #endif

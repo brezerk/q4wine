@@ -49,6 +49,8 @@
 #include <QDebug>
 #include <QDir>
 
+#include <q4wine-lib/main.h>
+
 class AppSettings : public QDialog, public Ui::AppSettings
 {
 	Q_OBJECT
@@ -59,7 +61,9 @@ class AppSettings : public QDialog, public Ui::AppSettings
 		void cmdCancel_Click();
 		void cmdOk_Click();
 		void comboProxyType_indexChanged(QString text);
-		
+		//! \brief cmdHelo click slot.
+		void cmdHelp_Click();
+
 	private:
 		bool eventFilter (QObject *object, QEvent *event);
 		void getThemes(QString selTheme, QString themeDir);
@@ -67,7 +71,13 @@ class AppSettings : public QDialog, public Ui::AppSettings
 		bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
 		void loadThemeIcons(QString themePath);
 		QIcon loadIcon(QString iconName, QString themePath);
-		
+
+		//! This is need for libq4wine-core.so import.
+		QLibrary libq4wine;
+		typedef void *CoreLibPrototype (bool);
+		CoreLibPrototype *CoreLibClassPointer;
+		corelib *CoreLib;
+
 };
 
 #endif
