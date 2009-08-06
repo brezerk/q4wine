@@ -170,7 +170,12 @@ void Run::cmdOk_Click(){
 	execObj.display = txtDisplay->text();
 	execObj.wrkdir = txtWorkDir->text();
 	execObj.nice = txtNice->text();
-	execObj.desktop = txtDesktopSize->text();
+
+	if (cboxDesktopSize->currentText()==tr("No virtual desktop")){
+		execObj.desktop="";
+	} else {
+		execObj.desktop=cboxDesktopSize->currentText();
+	}
 
 	accept();
 	return;
@@ -281,19 +286,19 @@ void Run::cmdGetProgram_Click(){
 	QString searchPath=prefix_dir;
 
 	if (!txtProgramBin->text().isEmpty()){
-	    if (!txtWorkDir->text().isEmpty()){
+		if (!txtWorkDir->text().isEmpty()){
 		searchPath=txtWorkDir->text();
-	    } else {
+		} else {
 		searchPath=txtProgramBin->text().left(txtProgramBin->text().length() - txtProgramBin->text().split("/").last().length());;
-	    }
+		}
 	}
 
 	if ((!QDir(searchPath).exists()) or (searchPath.isEmpty())){
-	    if (QDir(prefix_dir).exists()){
+		if (QDir(prefix_dir).exists()){
 		   searchPath=prefix_dir;
-	    } else {
+		} else {
 		   searchPath=QDir::homePath();
-	    }
+		}
 	 }
 
 	QList<QUrl> prefix_urls;
@@ -302,7 +307,7 @@ void Run::cmdGetProgram_Click(){
 	   prefix_urls << QUrl::fromLocalFile(prefix_dir);
 
 	if ((searchPath != prefix_dir) && (QDir(searchPath).exists()))
-	    prefix_urls << QUrl::fromLocalFile(searchPath);
+		prefix_urls << QUrl::fromLocalFile(searchPath);
 
 	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
 	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
@@ -316,7 +321,7 @@ void Run::cmdGetProgram_Click(){
 	  dialog.setSidebarUrls(prefix_urls);
 
 	 if (dialog.exec())
-	    fileName = dialog.selectedFiles().first();
+		fileName = dialog.selectedFiles().first();
 
 	if(!fileName.isEmpty()){
 		QStringList list1 = fileName.split("/");
@@ -339,11 +344,11 @@ void Run::cmdGetWorkDir_Click(){
 	}
 
 	if (!QDir(searchPath).exists()){
-	    if (QDir(prefix_dir).exists()){
+		if (QDir(prefix_dir).exists()){
 		   searchPath=prefix_dir;
-	    } else {
+		} else {
 		   searchPath=QDir::homePath();
-	    }
+		}
 	 }
 
 	QList<QUrl> prefix_urls;
@@ -352,7 +357,7 @@ void Run::cmdGetWorkDir_Click(){
 	   prefix_urls << QUrl::fromLocalFile(prefix_dir);
 
 	if ((searchPath != prefix_dir) && (QDir(searchPath).exists()))
-	    prefix_urls << QUrl::fromLocalFile(searchPath);
+		prefix_urls << QUrl::fromLocalFile(searchPath);
 
 	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
 	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
@@ -363,12 +368,12 @@ void Run::cmdGetWorkDir_Click(){
 	  dialog.setFileMode(QFileDialog::Directory);
 	  dialog.setWindowTitle(tr("Open Directory"));
 	  dialog.setDirectory(searchPath);
-          // This option wirksonly it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
-          //dialog.setOption(QFileDialog::ShowDirsOnly, true);
+		  // This option wirksonly it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
+		  //dialog.setOption(QFileDialog::ShowDirsOnly, true);
 
 	  dialog.setSidebarUrls(prefix_urls);
 	 if (dialog.exec())
-	    fileName = dialog.selectedFiles().first();
+		fileName = dialog.selectedFiles().first();
 
 	if(!fileName.isEmpty()){
 		txtWorkDir->setText(fileName);

@@ -109,6 +109,7 @@ struct ExecObject{
 	QString wrkdir;
 	QString desktop;
 	QString nice;
+	QString name;
 };
 
 class corelib {

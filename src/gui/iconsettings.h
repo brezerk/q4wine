@@ -111,6 +111,10 @@ class IconSettings : public QDialog, public Ui::IconSettings
 		 */
 		void cmdOk_Click();
 
+		/*! \brief This slot for help button.
+		 */
+		void cmdHelp_Click();
+
 	private:
 		QString prefix_name, dir_name, icon_name, prefix_path, iconPath;
 

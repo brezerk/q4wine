@@ -390,6 +390,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			execObj.desktop = result.at(11);
 			execObj.nice = result.at(12);
 			execObj.prefixid = result.at(13);
+			execObj.name = icon_name;
 			return runWineBinary(execObj);
 	  }
 
@@ -490,6 +491,8 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			if (!execObj.desktop.isEmpty()){
 				  exec_string.append(" explorer.exe /desktop=");
+				  exec_string.append(execObj.name);
+				  exec_string.append(",");
 				  exec_string.append(execObj.desktop);
 			}
 
@@ -650,7 +653,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 #endif
 
 #ifdef _OS_LINUX_
-			if ((image_name.contains("/") && (!image_name.contains(".iso")) && (!image_name.contains(".nrg")))) {
+			if ((image_name.contains("/") && (!image_name.contains(".iso", Qt::CaseInsensitive)) && (!image_name.contains(".nrg", Qt::CaseInsensitive)))) {
 				  mount_string=this->getSetting("advanced", "mount_drive_string", false).toString();
 				  mount_string.replace("%MOUNT_DRIVE%", image_name);
 			} else {

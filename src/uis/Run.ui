@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>431</height>
+    <width>718</width>
+    <height>429</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -388,7 +388,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_8">
             <property name="title">
-             <string>Desktop</string>
+             <string>Virtual desktop</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
@@ -412,12 +412,63 @@
                    </size>
                   </property>
                   <property name="text">
-                   <string>Desktop size:</string>
+                   <string>Size:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtDesktopSize"/>
+                 <widget class="QComboBox" name="cboxDesktopSize">
+                  <item>
+                   <property name="text">
+                    <string>No virtual desktop</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>320x240</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>640x480</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>800x600</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>1024x768</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>1600x1200</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>1440х900</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>1680х1050</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>1920x1200</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>2560x1600</string>
+                   </property>
+                  </item>
+                 </widget>
                 </item>
                </layout>
               </widget>

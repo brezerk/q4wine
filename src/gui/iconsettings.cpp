@@ -102,6 +102,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 	connect(cmdGetIcon, SIGNAL(clicked()), this, SLOT(cmdGetIcon_Click()));
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
+	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
 	connect(cbUseConsole, SIGNAL(stateChanged(int)), this, SLOT(cbUseConsole_stateChanged(int)));
 
@@ -195,7 +196,13 @@ void IconSettings::getIconReccord(){
 	txtDisplay->setText(iconRec.at(8));
 	txtWinedebug->setText(iconRec.at(6));
 	txtWorkDir->setText(iconRec.at(4));
-	txtDesktopSize->setText(iconRec.at(11));
+
+	if (iconRec.at(11).isEmpty()){
+		cboxDesktopSize->setCurrentIndex(0);
+	} else {
+		cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(iconRec.at(11)));
+	}
+
 	spinNice->setValue(iconRec.at(12).toInt());
 
 	if (iconRec.at(7)=="1"){
@@ -613,12 +620,17 @@ void IconSettings::cmdOk_Click(){
 		useconsole="0";
 	}
 
+	QString desktopSize=cboxDesktopSize->currentText();
+
+	if (desktopSize==tr("No virtual desktop"))
+		desktopSize="";
+
 	switch (this->icon_name.isEmpty()){
 		case TRUE:
-			db_icon->addIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), txtDesktopSize->text(), spinNice->value());
+			db_icon->addIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), desktopSize, spinNice->value());
 		break;
 		case FALSE:
-			db_icon->updateIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), icon_name, override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), txtDesktopSize->text(), spinNice->value());
+			db_icon->updateIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), icon_name, override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), desktopSize, spinNice->value());
 		break;
 	}
 
@@ -626,3 +638,40 @@ void IconSettings::cmdOk_Click(){
 
 	return;
 }
+
+
+void IconSettings::cmdHelp_Click(){
+	QString rawurl;
+	switch (twbGeneral->currentIndex()){
+	case 0:
+		rawurl = "/icondialog.html#general";
+	break;
+	case 1:
+		rawurl = "/icondialog.html#override";
+	break;
+	case 2:
+		rawurl = "/icondialog.html#advanced";
+	break;
+	}
+
+	QString lang = CoreLib->getSetting("", "", FALSE).toString();
+	if (lang.isEmpty()){
+		lang = setlocale(LC_ALL, "");
+		if (lang.isEmpty()){
+			lang = setlocale(LC_MESSAGES, "");
+			if (lang.isEmpty()){
+				lang = getenv("LANG");
+			}
+		}
+		lang = lang.split(".").at(0).toLower();
+	}
+
+	QString url="http://";
+	url.append(APP_WEBSITTE);
+	url.append("/documentation/");
+	url.append(lang);
+	url.append(rawurl);
+
+	CoreLib->openHelpUrl(url);
+}
+
