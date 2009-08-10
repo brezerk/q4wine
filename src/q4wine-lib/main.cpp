@@ -902,6 +902,9 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			  lang = lang.split(".").at(0).toLower();
 		  }
 
+		  if ((lang!="en_us") and (lang!="ru_ru") and (lang!="uk_ua"))
+			  lang = "en_us";
+
 		  QString url="http://";
 		  url.append(APP_WEBSITTE);
 		  url.append("/documentation/");
