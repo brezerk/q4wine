@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>718</width>
-    <height>429</height>
+    <width>640</width>
+    <height>420</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -773,6 +773,13 @@
       </item>
       <item>
        <layout class="QHBoxLayout">
+        <item>
+         <widget class="QPushButton" name="cmdHelp">
+          <property name="text">
+           <string>Help</string>
+          </property>
+         </widget>
+        </item>
         <item>
          <spacer>
           <property name="orientation">

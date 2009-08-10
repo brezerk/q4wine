@@ -888,10 +888,42 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			return TRUE;
 	  }
 
-	  void corelib::openHelpUrl(const QString url) const{
-			QStringList args;
-			args<<url;
-			this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
-			return;
+	  void corelib::openHelpUrl(const QString rawurl) const{
+
+		  QString lang = this->getSetting("", "", FALSE).toString();
+		  if (lang.isEmpty()){
+			  lang = setlocale(LC_ALL, "");
+			  if (lang.isEmpty()){
+				  lang = setlocale(LC_MESSAGES, "");
+				  if (lang.isEmpty()){
+					  lang = getenv("LANG");
+				  }
+			  }
+			  lang = lang.split(".").at(0).toLower();
+		  }
+
+		  QString url="http://";
+		  url.append(APP_WEBSITTE);
+		  url.append("/documentation/");
+		  url.append(lang);
+		  url.append("/");
+		  url.append(rawurl);
+
+		  QStringList args;
+		  args<<url;
+		  this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
+		  return;
+	  }
+
+	  void corelib::openUrl(const QString rawurl) const{
+		  QString url="http://";
+		  url.append(APP_WEBSITTE);
+		  url.append("/");
+		  url.append(rawurl);
+
+		  QStringList args;
+		  args<<url;
+		  this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
+		  return;
 	  }
 

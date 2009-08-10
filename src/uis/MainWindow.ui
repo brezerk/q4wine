@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>603</width>
-    <height>515</height>
+    <width>599</width>
+    <height>511</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -392,8 +392,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>603</width>
-     <height>25</height>
+     <width>599</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -411,10 +411,20 @@
     <property name="title">
      <string>Help</string>
     </property>
+    <widget class="QMenu" name="menuHandbook">
+     <property name="title">
+      <string>Handbook</string>
+     </property>
+     <addaction name="mainFirstSteps"/>
+     <addaction name="mainFAQ"/>
+     <addaction name="separator"/>
+     <addaction name="mainIndex"/>
+    </widget>
     <addaction name="mainAbout"/>
     <addaction name="mainAboutQt"/>
     <addaction name="separator"/>
-    <addaction name="mainHandbook"/>
+    <addaction name="menuHandbook"/>
+    <addaction name="mainWebsite"/>
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
@@ -456,17 +466,6 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+E</string>
-   </property>
-  </action>
-  <action name="mainHandbook">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="text">
-    <string>Handbook</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+R</string>
    </property>
   </action>
   <action name="mainAboutQt">
@@ -539,6 +538,26 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="mainFirstSteps">
+   <property name="text">
+    <string>First steps</string>
+   </property>
+  </action>
+  <action name="mainFAQ">
+   <property name="text">
+    <string>Short FAQ</string>
+   </property>
+  </action>
+  <action name="mainIndex">
+   <property name="text">
+    <string>Index</string>
+   </property>
+  </action>
+  <action name="mainWebsite">
+   <property name="text">
+    <string>Website</string>
    </property>
   </action>
  </widget>

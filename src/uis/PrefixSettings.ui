@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>718</width>
-    <height>359</height>
+    <width>652</width>
+    <height>402</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -210,7 +210,7 @@
          <attribute name="title">
           <string>General</string>
          </attribute>
-         <layout class="QVBoxLayout">
+         <layout class="QVBoxLayout" name="verticalLayout">
           <item>
            <widget class="QGroupBox" name="groupBox_5">
             <property name="title">
@@ -380,14 +380,14 @@
            </widget>
           </item>
           <item>
-           <spacer>
+           <spacer name="verticalSpacer">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>680</width>
-              <height>21</height>
+              <width>20</width>
+              <height>84</height>
              </size>
             </property>
            </spacer>
@@ -398,7 +398,7 @@
          <attribute name="title">
           <string>Wine settings</string>
          </attribute>
-         <layout class="QVBoxLayout">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="QGroupBox" name="groupBox">
             <property name="title">
@@ -605,14 +605,14 @@ Note: leave it blank for default.</string>
            </widget>
           </item>
           <item>
-           <spacer>
+           <spacer name="verticalSpacer_2">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>680</width>
-              <height>31</height>
+              <width>20</width>
+              <height>74</height>
              </size>
             </property>
            </spacer>

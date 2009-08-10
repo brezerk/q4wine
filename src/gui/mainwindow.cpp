@@ -135,6 +135,10 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
   connect(mainAbout, SIGNAL(triggered()), this, SLOT(mainAbout_Click()));
   connect(mainAboutQt, SIGNAL(triggered()), this, SLOT(mainAboutQt_Click()));
   connect(mainExportIcons, SIGNAL(triggered()), this, SLOT(mainExportIcons_Click()));
+  connect(mainFirstSteps, SIGNAL(triggered()), this, SLOT(mainFirstSteps_Click()));
+  connect(mainFAQ, SIGNAL(triggered()), this, SLOT(mainFAQ_Click()));
+  connect(mainIndex, SIGNAL(triggered()), this, SLOT(mainIndex_Click()));
+  connect(mainWebsite, SIGNAL(triggered()), this, SLOT(mainWebsite_Click()));
 
   connect(lstIcons, SIGNAL(startDrag ()), this, SLOT(startDrag()));
   connect(lstIcons, SIGNAL(startDrop(QList<QUrl>)), this, SLOT(startDrop(QList<QUrl>)));
@@ -1744,6 +1748,23 @@ void MainWindow::mainInstall_Click(){
 
   return;
 }
+
+void MainWindow::mainFirstSteps_Click(){
+	CoreLib->openHelpUrl("05-first-steps.html");
+}
+
+void MainWindow::mainFAQ_Click(){
+	CoreLib->openHelpUrl("00-short-faq.html");
+}
+
+void MainWindow::mainIndex_Click(){
+	CoreLib->openHelpUrl("index.html");
+}
+
+void MainWindow::mainWebsite_Click(){
+	CoreLib->openUrl("");
+}
+
 
 void MainWindow::mainExportIcons_Click(){
   /*

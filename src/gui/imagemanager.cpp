@@ -253,26 +253,6 @@ QIcon ImageManager::loadIcon(QString iconName, QString themePath){
 }
 
 void ImageManager::cmdHelp_Click(){
-	QString rawurl = "/imagemanager.html";
-
-	QString lang = CoreLib->getSetting("", "", FALSE).toString();
-	if (lang.isEmpty()){
-		lang = setlocale(LC_ALL, "");
-		if (lang.isEmpty()){
-			lang = setlocale(LC_MESSAGES, "");
-			if (lang.isEmpty()){
-				lang = getenv("LANG");
-			}
-		}
-		lang = lang.split(".").at(0).toLower();
-	}
-
-	QString url="http://";
-	url.append(APP_WEBSITTE);
-	url.append("/documentation/");
-	url.append(lang);
-	url.append(rawurl);
-
-	CoreLib->openHelpUrl(url);
+	CoreLib->openHelpUrl("09-image-manager.html");
 }
 

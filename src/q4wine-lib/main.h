@@ -156,7 +156,14 @@ public:
 	 *
 	 * \return Return nothing.
 	 */
-	void openHelpUrl(const QString url) const;
+	void openHelpUrl(const QString rawurl) const;
+
+	/*! \brief This function opens url in xdg-open browser.
+	 *
+	 * \return Return nothing.
+	 */
+	void openUrl(const QString rawurl) const;
+
 
 	/*! \brief This function gets mouted image or media.
 	 *

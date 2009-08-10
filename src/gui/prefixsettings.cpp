@@ -199,31 +199,13 @@ void PrefixSettings::cmdHelp_Click(){
 	QString rawurl;
 	switch (twbGeneral->currentIndex()){
 	case 0:
-		rawurl = "/prefixsettings.html#general";
+		rawurl = "10-prefix-settings.html#general";
 	break;
 	case 1:
-		rawurl = "/prefixsettings.html#winepath";
+		rawurl = "10-prefix-settings.html#winepath";
 	break;
 	}
 
-	QString lang = CoreLib->getSetting("", "", FALSE).toString();
-	if (lang.isEmpty()){
-		lang = setlocale(LC_ALL, "");
-		if (lang.isEmpty()){
-			lang = setlocale(LC_MESSAGES, "");
-			if (lang.isEmpty()){
-				lang = getenv("LANG");
-			}
-		}
-		lang = lang.split(".").at(0).toLower();
-	}
-
-	QString url="http://";
-	url.append(APP_WEBSITTE);
-	url.append("/documentation/");
-	url.append(lang);
-	url.append(rawurl);
-
-	CoreLib->openHelpUrl(url);
+	CoreLib->openHelpUrl(rawurl);
 }
 

@@ -644,34 +644,19 @@ void IconSettings::cmdHelp_Click(){
 	QString rawurl;
 	switch (twbGeneral->currentIndex()){
 	case 0:
-		rawurl = "/icondialog.html#general";
+		rawurl = "08-icon-dialog.html#general";
 	break;
 	case 1:
-		rawurl = "/icondialog.html#override";
+		rawurl = "08-icon-dialog.html#override";
 	break;
 	case 2:
-		rawurl = "/icondialog.html#advanced";
+		rawurl = "08-icon-dialog.html#advanced";
+	break;
+	default:
+		rawurl = "08-icon-dialog.html";
 	break;
 	}
 
-	QString lang = CoreLib->getSetting("", "", FALSE).toString();
-	if (lang.isEmpty()){
-		lang = setlocale(LC_ALL, "");
-		if (lang.isEmpty()){
-			lang = setlocale(LC_MESSAGES, "");
-			if (lang.isEmpty()){
-				lang = getenv("LANG");
-			}
-		}
-		lang = lang.split(".").at(0).toLower();
-	}
-
-	QString url="http://";
-	url.append(APP_WEBSITTE);
-	url.append("/documentation/");
-	url.append(lang);
-	url.append(rawurl);
-
-	CoreLib->openHelpUrl(url);
+	CoreLib->openHelpUrl(rawurl);
 }
 

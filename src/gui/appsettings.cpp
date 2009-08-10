@@ -578,42 +578,24 @@ void AppSettings::cmdHelp_Click(){
 	QString rawurl;
 	switch (twbGeneral->currentIndex()){
 	case 0:
-		rawurl = "/settings.html#general";
+		rawurl = "11-settings.html#general";
 	break;
 	case 1:
-		rawurl = "/settings.html#sysutils";
+		rawurl = "11-settings.html#sysutils";
 	break;
 	case 2:
-		rawurl = "/settings.html#userutils";
+		rawurl = "11-settings.html#userutils";
 	break;
 	case 3:
-		rawurl = "/settings.html#customization";
+		rawurl = "11-settings.html#customization";
 	break;
 	case 4:
-		rawurl = "/settings.html#network";
+		rawurl = "11-settings.html#network";
 	break;
 	case 5:
-		rawurl = "/settings.html#advanced";
+		rawurl = "11-settings.html#advanced";
 	break;
 	}
 
-	QString lang = CoreLib->getSetting("", "", FALSE).toString();
-	if (lang.isEmpty()){
-		lang = setlocale(LC_ALL, "");
-		if (lang.isEmpty()){
-			lang = setlocale(LC_MESSAGES, "");
-			if (lang.isEmpty()){
-				lang = getenv("LANG");
-			}
-		}
-		lang = lang.split(".").at(0).toLower();
-	}
-
-	QString url="http://";
-	url.append(APP_WEBSITTE);
-	url.append("/documentation/");
-	url.append(lang);
-	url.append(rawurl);
-
-	CoreLib->openHelpUrl(url);
+	CoreLib->openHelpUrl(rawurl);
 }

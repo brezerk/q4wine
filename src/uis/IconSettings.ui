@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>408</height>
+    <width>640</width>
+    <height>420</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -542,14 +542,14 @@
            </widget>
           </item>
           <item>
-           <spacer>
+           <spacer name="verticalSpacer">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>680</width>
-              <height>26</height>
+              <width>20</width>
+              <height>11</height>
              </size>
             </property>
            </spacer>

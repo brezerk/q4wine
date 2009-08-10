@@ -513,7 +513,7 @@ void Wizard::nextWizardPage(){
 			settings.endGroup();
 			settings.beginGroup("network");
 			settings.setValue("host", txtProxyHost->text());
-			settings.setValue("post", txtProxyPort->text());
+			settings.setValue("port", txtProxyPort->text());
 			settings.setValue("user", txtProxyUser->text());
 			settings.setValue("pass", txtProxyPass->text());
 
@@ -762,79 +762,61 @@ void Wizard::cmdHelp_Click(){
 		case 0:
 		switch (Page){
 		case 2:
-			rawurl = "/prefixwizard.html#general";
+			rawurl = "06-prefix-creation-wizard.html#general";
 			break;
 		case 3:
-			rawurl = "/prefixwizard.html#winepath";
+			rawurl = "06-prefix-creation-wizard.html#winepath";
 			break;
 		case 4:
-			rawurl = "/prefixwizard.html#quickmount";
+			rawurl = "06-prefix-creation-wizard.html#quickmount";
 			break;
 		default:
-			rawurl = "/prefixwizard.html";
+			rawurl = "06-prefix-creation-wizard.html";
 			break;
 		}
 		break;
 		case 1:
 		switch (Page){
 		case 3:
-			rawurl = "/firststartup.html#winepath";
+			rawurl = "03-first-startup-wizard.html#winepath";
 			break;
 		case 4:
-			rawurl = "/firststartup.html#sysutils";
+			rawurl = "03-first-startup-wizard.html#sysutils";
 			break;
 
 		case 5:
-			rawurl = "/firststartup.html#userutils";
+			rawurl = "03-first-startup-wizard.html#userutils";
 			break;
 		case 6:
-			rawurl = "/firststartup.html#proxy";
+			rawurl = "03-first-startup-wizard.html#proxy";
 			break;
 		default:
-			rawurl = "/firststartup.html";
+			rawurl = "03-first-startup-wizard.html";
 			break;
 		}
 		break;
 		case 2:
 		switch (Page){
 		case 2:
-			rawurl = "/fakedrivewizard.html#general";
+			rawurl = "07-fake-drive-wizard.html#general";
 			break;
 		case 3:
-			rawurl = "/fakedrivewizard.html#winebrowsers";
+			rawurl = "07-fake-drive-wizard.html#winebrowsers";
 			break;
 		case 4:
-			rawurl = "/fakedrivewizard.html#direct";
+			rawurl = "07-fake-drive-wizard.html#direct";
 			break;
 		case 5:
-			rawurl = "/fakedrivewizard.html#x11";
+			rawurl = "07-fake-drive-wizard.html#x11";
 			break;
 		default:
-			rawurl = "/fakedrivewizard.html";
+			rawurl = "07-fake-drive-wizard.html";
 			break;
 		}
 		break;
 	}
 
-	QString lang = CoreLib->getSetting("", "", FALSE).toString();
-	if (lang.isEmpty()){
-		lang = setlocale(LC_ALL, "");
-		  if (lang.isEmpty()){
-			lang = setlocale(LC_MESSAGES, "");
-				if (lang.isEmpty()){
-				 lang = getenv("LANG");
-				}
-		  }
-		lang = lang.split(".").at(0).toLower();
-	}
-
-	QString url="http://";
-	url.append(APP_WEBSITTE);
-	url.append("/documentation/");
-	url.append(lang);
-	url.append(rawurl);
-
-	CoreLib->openHelpUrl(url);
+	CoreLib->openHelpUrl(rawurl);
 }
 
 void Wizard::previosWizardPage(){
