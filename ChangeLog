@@ -7,6 +7,8 @@ ChangeLog
 
 Version 0.113
  Added:
+  - Online documentation;
+  - New website: http://q4wine.brezblock.org.ua/;
   - Now q4wine save last user selected prefix and dir;
   - Added "open directory" menu items via xdg-utils;
   - Added "open directory" menu items via winefile;
@@ -34,6 +36,7 @@ Version 0.113
   - Total code reorganize;
   - Database engine rewrite;
   - Many fixes for q4wine.desktop file (thx for Kyrill Detinov);
+  - Fixed compilation with Qt-4.4.X (thx for Kyrill Detinov);
 
 Version 0.112-r1
  Fixed:
