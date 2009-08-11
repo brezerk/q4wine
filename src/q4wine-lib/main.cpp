@@ -708,10 +708,12 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			QString arg;
 
 #ifdef _OS_FREEBSD_
-			args.clear();
-			args << "-c" << tr("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(mount_point);
 
-			QProcess *myProcess = new QProcess(this);
+			/*
+			args.clear();
+			args << "-c" << QObject::tr("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(mount_point);
+
+			QProcess *myProcess = new QProcess();
 			myProcess->start(this->getSetting("system", "sh").toString(), args);
 			if (!myProcess->waitForFinished()){
 				  qDebug() << "Make failed:" << myProcess->errorString();
@@ -719,6 +721,8 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			}
 
 			QString devid = myProcess->readAll();
+
+			*/
 #endif
 
 			QString mount_string;
@@ -740,6 +744,8 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			}
 
 #ifdef _OS_FREEBSD_
+			/*
+
 			if (!devid.isEmpty()){
 				  devid = devid.split(" ").first();
 				  if (!devid.isEmpty()){
@@ -764,6 +770,8 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 						}
 				  }
 			}
+
+			*/
 #endif
 
 			return TRUE;
