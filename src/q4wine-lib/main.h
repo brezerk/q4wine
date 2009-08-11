@@ -55,6 +55,8 @@
 
 #include "process.h"
 
+#include "config.h"
+
 // FreeBSD support
 #ifdef _OS_FREEBSD_
 		#include <kvm.h>
@@ -76,8 +78,6 @@
 		#include <limits.h>
 		#include <paths.h>
 #endif
-
-#include "config.h"
 
 #include "src/core/database/prefix.h"
 #include "src/core/database/icon.h"
