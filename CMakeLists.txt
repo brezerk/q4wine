@@ -234,6 +234,8 @@ MESSAGE(STATUS " * (C) 2008-2009, brezblock core team")
 MESSAGE(STATUS " * http://brezblock.org.ua/")
 MESSAGE("")
 
+MESSAGE(STATUS " System arch is: ${CMAKE_HOST_SYSTEM_PROCESSOR}")
+
 SET(QT_MIN_VERSION "4.4.1")
 FIND_PACKAGE(Qt4 REQUIRED)
 	  IF(QT_FOUND)
