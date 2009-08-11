@@ -61,10 +61,16 @@
 #include "core/database/db.h"
 #include "core/database/initdb.h"
 
+#include "qtsingleapplication.h"
+
 int main(int argc, char *argv[])
 {
 	DataBase db;
-	QApplication app(argc, argv);
+	//QApplication app(argc, argv);
+	QtSingleApplication app(argc, argv);
+	if (app.sendMessage(QObject::tr("Only one instance of q4wine can be runned at same time.")))
+		return 0;
+
 	QTranslator*  qtt = new QTranslator ( 0 );
 	QSettings settings(APP_SHORT_NAME, "default");
 
@@ -228,6 +234,12 @@ int main(int argc, char *argv[])
 
 	MainWindow mainWin(startState);
 	mainWin.show();
+
+	app.setActivationWindow(&mainWin);
+
+	QObject::connect(&app, SIGNAL(messageReceived(const QString&)), &mainWin, SLOT(messageReceived(const QString&)));
+
+
 	result = app.exec();
 
 	db.close();

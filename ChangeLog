@@ -7,6 +7,7 @@ ChangeLog
 
 Version 0.113
  Added:
+  - QtSingleApp integration. Now you can run only one instance of q4wine-gui;
   - Online documentation;
   - New website: http://q4wine.brezblock.org.ua/;
   - Now q4wine save last user selected prefix and dir;

@@ -2737,3 +2737,7 @@ void MainWindow::runAutostart(void){
   return;
 }
 
+void MainWindow::messageReceived(const QString message) const{
+	statusBar()->showMessage(message);
+	return;
+}

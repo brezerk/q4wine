@@ -117,6 +117,8 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		MainWindow(int startState, QWidget * parent = 0, Qt::WFlags f = 0);
 		// Icon copy\cyt structure
 		iconCopyBuffer iconBuffer;
+	public slots:
+		void messageReceived(const QString message) const;
 
 	private slots:
 

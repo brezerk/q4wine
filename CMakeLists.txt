@@ -36,7 +36,7 @@ SET( ICON_PIXMAPS
 	${CMAKE_SOURCE_DIR}/src/data/wineconsole.png
 )
 
-SET( SOURCES
+SET( Q4WINE_GUI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/gui/run.cpp
 	${CMAKE_SOURCE_DIR}/src/main.cpp
 	${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
@@ -59,17 +59,18 @@ SET( SOURCES
 	${CMAKE_SOURCE_DIR}/src/gui/draglistwidget.cpp
 )
 
-SET ( HEADERS_DIR
+SET ( Q4WINE_HEADERS_DIR
 	${CMAKE_SOURCE_DIR}
 	${CMAKE_SOURCE_DIR}/src
 	${CMAKE_SOURCE_DIR}/src/gui
 	${CMAKE_SOURCE_DIR}/src/core
 	${CMAKE_SOURCE_DIR}/src/temporary
 	${CMAKE_SOURCE_DIR}/src/wis
+	${CMAKE_SOURCE_DIR}/src/qtsingleapplication/
 )
 
 
-SET ( HEADERS
+SET ( Q4WINE_GUI_HEADERS
 	${CMAKE_SOURCE_DIR}/src/gui/run.h
 	${CMAKE_SOURCE_DIR}/src/core/registry.h
 	${CMAKE_SOURCE_DIR}/src/core/database/db.h
@@ -93,7 +94,7 @@ SET ( HEADERS
 	${CMAKE_SOURCE_DIR}/src/gui/draglistwidget.h
 )
 
-SET ( MOC_HEADEDRS
+SET ( Q4WINE_GUI_MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/core/registry.h
 	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.h
 	${CMAKE_SOURCE_DIR}/src/gui/appsettings.h
@@ -110,7 +111,7 @@ SET ( MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/gui/draglistwidget.h
 )
 
-SET ( UIS
+SET ( Q4WINE_GUI_UI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/uis/About.ui
 	${CMAKE_SOURCE_DIR}/src/uis/AppSettings.ui
 	${CMAKE_SOURCE_DIR}/src/uis/IconSettings.ui
@@ -125,42 +126,32 @@ SET ( UIS
 )
 
 IF (${WITH_WINETOOLS} MATCHES ON )
-	SET( SOURCES
-		${SOURCES}
+	SET( Q4WINE_GUI_SOURCES
+		${Q4WINE_GUI_SOURCES}
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.cpp
 #		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.cpp
 	)
 
-	SET ( HEADERS
-		${HEADERS}
+	SET ( Q4WINE_GUI_HEADERS
+		${Q4WINE_GUI_HEADERS}
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
 #		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
 	)
 
-	SET ( MOC_HEADEDRS
-		${MOC_HEADEDRS}
+	SET ( Q4WINE_GUI_MOC_HEADEDRS
+		${Q4WINE_GUI_MOC_HEADEDRS}
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
 #		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
 	)
 
-	SET ( UIS
-		${UIS}
+	SET ( Q4WINE_GUI_UI_SOURCES
+		${Q4WINE_GUI_UI_SOURCES}
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.ui
 #		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.ui
-
 	)
 ENDIF (${WITH_WINETOOLS} MATCHES ON )
 
-SET ( LIB_MOC_HEADEDRS
-	${CMAKE_SOURCE_DIR}/src/gui/process.h
-)
-
-SET ( LIB_UIS
-	${CMAKE_SOURCE_DIR}/src/uis/Process.ui
-)
-
-
-SET( Q4WINE-LIB-SOURCES
+SET( Q4WINE_LIB_SOURCES
 		${CMAKE_SOURCE_DIR}/src/q4wine-lib/main.cpp
 		${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
 		${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
@@ -169,7 +160,7 @@ SET( Q4WINE-LIB-SOURCES
 		${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
 )
 
-SET( Q4WINE-LIB-HEADERS
+SET( Q4WINE_LIB_HEADERS
 		${CMAKE_SOURCE_DIR}/src/q4wine-lib/main.h
 		${CMAKE_SOURCE_DIR}/config.h
 		${CMAKE_SOURCE_DIR}/src/core/database/db.h
@@ -179,7 +170,31 @@ SET( Q4WINE-LIB-HEADERS
 		${CMAKE_SOURCE_DIR}/src/core/database/image.h
 )
 
-SET( Q4WINE-CLI-SOURCES
+SET ( Q4WINE_LIB_MOC_HEADERS
+	${CMAKE_SOURCE_DIR}/src/gui/process.h
+)
+
+SET ( Q4WINE_LIB_UI_SOURCES
+	${CMAKE_SOURCE_DIR}/src/uis/Process.ui
+)
+
+
+SET( QSINGLEAPP_LIB_SOURCES
+	${CMAKE_SOURCE_DIR}/src/qtsingleapplication/qtsingleapplication.cpp
+	${CMAKE_SOURCE_DIR}/src/qtsingleapplication/qtlocalpeer.cpp
+)
+
+SET( QSINGLEAPP_LIB_HEADERS
+	${CMAKE_SOURCE_DIR}/src/qtsingleapplication/qtsingleapplication.h
+	${CMAKE_SOURCE_DIR}/src/qtsingleapplication/qtlocalpeer.h
+)
+
+SET( QSINGLEAPP_LIB_MOC_HEADERS
+	${CMAKE_SOURCE_DIR}/src/qtsingleapplication/qtsingleapplication.h
+	${CMAKE_SOURCE_DIR}/src/qtsingleapplication/qtlocalpeer.h
+)
+
+SET( Q4WINE_CLI_SOURCES
 		${CMAKE_SOURCE_DIR}/src/q4wine-cli/main.cpp
 		${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
 		${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
@@ -189,7 +204,7 @@ SET( Q4WINE-CLI-SOURCES
 		${CMAKE_SOURCE_DIR}/src/gui/process.cpp
 )
 
-SET( Q4WINE-CLI-HEADERS
+SET( Q4WINE_CLI_HEADERS
 		${CMAKE_SOURCE_DIR}/src/q4wine-lib/main.h
 		${CMAKE_SOURCE_DIR}/src/q4wine-cli/main.h
 		${CMAKE_SOURCE_DIR}/config.h
@@ -201,11 +216,11 @@ SET( Q4WINE-CLI-HEADERS
 		${CMAKE_SOURCE_DIR}/src/gui/process.h
 )
 
-SET ( RCCS
+SET ( Q4WINE_RESOURCE_SOURCES
 	${CMAKE_SOURCE_DIR}/src/q4wine.qrc
 )
 
-SET ( I18N
+SET ( Q4WINE_I18N_SOURCES
 	${CMAKE_SOURCE_DIR}/src/i18n/en_us.ts
 	${CMAKE_SOURCE_DIR}/src/i18n/ru_ru.ts
 	${CMAKE_SOURCE_DIR}/src/i18n/uk_ua.ts
@@ -312,16 +327,18 @@ file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_PREF \"${CMAKE_INSTALL_PRE
 	  MESSAGE("")
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
 
-QT4_WRAP_UI( UI_HEADERS ${UIS})
-QT4_WRAP_CPP( MOC_SRCS ${MOC_HEADEDRS} )
+QT4_WRAP_UI( Q4WINE_GUI_UI_HEADERS ${Q4WINE_GUI_UI_SOURCES})
+QT4_WRAP_CPP( Q4WINE_GUI_MOC_SOURCES ${Q4WINE_GUI_MOC_HEADEDRS} )
 
-QT4_WRAP_UI( LIB_UI_HEADERS ${LIB_UIS})
-QT4_WRAP_CPP( LIB_MOC_SRCS ${LIB_MOC_HEADEDRS} )
+QT4_WRAP_UI( Q4WINE_LIB_UI_HEADERS ${Q4WINE_LIB_UI_SOURCES})
+QT4_WRAP_CPP( Q4WINE_LIB_LIB_MOC_SOURCES ${Q4WINE_LIB_MOC_HEADERS} )
 
-QT4_ADD_RESOURCES( RCC_SRCS ${RCCS} )
-QT4_ADD_TRANSLATION( QM_I18N ${I18N})
+QT4_WRAP_CPP( QTSINGLEAPPLICATION-LIB-MOC-SRCS ${QSINGLEAPP_LIB_MOC_HEADERS} )
 
-INCLUDE_DIRECTORIES( ${HEADERS_DIR} )
+QT4_ADD_RESOURCES( RCC_SRCS ${Q4WINE_RESOURCE_SOURCES} )
+QT4_ADD_TRANSLATION( QM_I18N ${Q4WINE_I18N_SOURCES})
+
+INCLUDE_DIRECTORIES( ${Q4WINE_HEADERS_DIR} )
 INCLUDE_DIRECTORIES( ${CMAKE_BINARY_DIR} )
 
 IF (NOT DEFINED SKIP_RPATH)
@@ -330,13 +347,14 @@ ELSE (NOT DEFINED SKIP_RPATH)
 	MESSAGE(STATUS "NOTE: Skip for RPATH build!")
 ENDIF (NOT DEFINED SKIP_RPATH)
 
-ADD_LIBRARY( q4wine-core SHARED ${Q4WINE-LIB-SOURCES} ${LIB_UI_HEADERS} ${LIB_MOC_SRCS} ${Q4WINE-LIB-HEADERS} ${QM_I18N} )
+ADD_LIBRARY( q4wine-core SHARED ${Q4WINE_LIB_SOURCES} ${Q4WINE_LIB_UI_HEADERS} ${Q4WINE_LIB_LIB_MOC_SOURCES} ${Q4WINE_LIB_HEADERS} ${QM_I18N} )
+ADD_LIBRARY( qtsingleapp STATIC ${QSINGLEAPP_LIB_SOURCES} ${QSINGLEAPP_LIB_HEADERS} ${QTSINGLEAPPLICATION-LIB-MOC-SRCS}  )
 
-ADD_EXECUTABLE( q4wine-cli ${Q4WINE-CLI-SOURCES} ${Q4WINE-CLI-HEADERS} ${QM_I18N} ${LIB_UI_HEADERS} ${LIB_MOC_SRCS})
-ADD_EXECUTABLE( q4wine ${SOURCES} ${HEADERS} ${UI_HEADERS} ${MOC_SRCS} ${RCC_SRCS} ${QM_I18N} )
+ADD_EXECUTABLE( q4wine-cli ${Q4WINE_CLI_SOURCES} ${Q4WINE_CLI_HEADERS} ${QM_I18N} ${Q4WINE_LIB_UI_HEADERS} ${Q4WINE_LIB_LIB_MOC_SOURCES})
+ADD_EXECUTABLE( q4wine ${Q4WINE_GUI_SOURCES} ${Q4WINE_GUI_HEADERS} ${Q4WINE_GUI_UI_HEADERS} ${Q4WINE_GUI_MOC_SOURCES} ${RCC_SRCS} ${QM_I18N} )
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
-	TARGET_LINK_LIBRARIES( q4wine ${QT_LIBRARIES} q4wine-core)
+	TARGET_LINK_LIBRARIES( q4wine ${QT_LIBRARIES} q4wine-core qtsingleapp)
 	TARGET_LINK_LIBRARIES( q4wine-cli ${QT_LIBRARIES} q4wine-core)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES Linux)
 
