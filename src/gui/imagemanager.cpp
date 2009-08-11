@@ -211,10 +211,14 @@ void ImageManager::actionRenameImage(){
 
 	bool ok;
 	QString newName = QInputDialog::getText(this, tr("Enter new name"), tr("Enter new name:"), QLineEdit::Normal, tableImage->item(tableImage->currentRow(), 0)->text(), &ok);
-	while (db_image->isExistsByName(newName)){
-		newName = QInputDialog::getText(this, tr("Sorry. It seems CD iamge already exists."), tr("Sorry. It seems CD image file already exists.<br>Please rename it, or cancel add image operation."), QLineEdit::Normal, newName, &ok);
+	while (db_image->isExistsByName(newName) or (newName.isEmpty())){
 		if (!ok){
 			return;
+		}
+		if (newName.isEmpty()){
+			newName = QInputDialog::getText(this, tr("Sorry. CD iamge name can not be empty."), tr("Sorry. CD iamge name can not be empty.<br>Please enter new name, or cancel rename image operation."), QLineEdit::Normal, newName, &ok);
+		} else {
+			newName = QInputDialog::getText(this, tr("Sorry. It seems CD iamge already exists."), tr("Sorry. It seems CD image file already exists.<br>Please rename it, or cancel rename image operation."), QLineEdit::Normal, newName, &ok);
 		}
 	}
 	if (!db_image->renameImage(newName, tableImage->item(tableImage->currentRow(), 0)->text()))
