@@ -143,6 +143,10 @@ QList<QStringList> corelib::getWineProcessList(){
 		 * This is new engine for getting process info from /proc directory and kmem interface
 		 */
 #ifdef _OS_FREEBSD_
+
+
+	  qDebug()<< " ---- Start PS eteration ----- ";
+
 	  kvm_t *kd;
 	  int cntproc, i, ni, ipid;
 
@@ -178,8 +182,14 @@ QList<QStringList> corelib::getWineProcessList(){
 				  cur_pids << QObject::tr("%1").arg(ipid);
 				  name = kp[i].ki_comm;
 
+				  //struct extern_proc *xp = &kp->kp_proc;
+				  qDebug()<< " ---- Start Preoces ----- ";
 				  qDebug()<< kp[i].ki_comm;
-				  qDebug()<< (&kp->kp_proc)->p_comm;
+				  qDebug()<< kp[i].ki_ocomm;
+				  qDebug()<< kp[i].ki_emul;
+				  qDebug()<< kp[i].ki_pid;
+				  qDebug()<< kp[i].ki_ppid;
+				  qDebug()<< " ---- End Proces ----- ";
 
 				  if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
 						ni = kp[i].ki_nice;
@@ -222,6 +232,8 @@ QList<QStringList> corelib::getWineProcessList(){
 	  }
 
 	  kvm_close(kd);
+
+	  qDebug()<< " ---- END PS eteration ----- ";
 #endif
 
 
