@@ -179,7 +179,7 @@ QList<QStringList> corelib::getWineProcessList(){
 				  name = kp[i].ki_comm;
 
 				  qDebug()<< kp[i].ki_comm;
-				  qDebug()<< kp[i].kp_proc.p_comm;
+				  qDebug()<< (&kp->kp_proc)->p_comm;
 
 				  if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
 						ni = kp[i].ki_nice;
