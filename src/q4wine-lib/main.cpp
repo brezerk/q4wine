@@ -217,6 +217,8 @@ QList<QStringList> corelib::getWineProcessList(){
 				  }
 			}
 	  }
+
+	  kvm_close(kd);
 #endif
 
 
