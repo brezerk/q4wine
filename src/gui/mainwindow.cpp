@@ -1377,7 +1377,7 @@ void MainWindow::processKillWine_Click(){
 	QString prefixPath;
 	prefixPath = tableProc->item(rowNum, 3)->text();
 
-	if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a TREM(-9) signal to all wine proccess with WINEPREFIX='%1'<br><br>Do you really want to proceed?").arg(tableProc->item(rowNum, 3)->text()), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
+	if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to all wine proccess with WINEPREFIX='%1'<br><br>Do you really want to proceed?").arg(tableProc->item(rowNum, 3)->text()), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
 	  CoreLib->killWineServer(prefixPath);
 	}
   }
@@ -1392,7 +1392,7 @@ void MainWindow::processKillSelected_Click(){
 	QString procId;
 	procId = tableProc->item(rowNum, 0)->text();
 
-	if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a TREM(-9) signal to proccess '%2' pid: %1<br><br>It is HIGH risk to damage wine normal state.<br><br>Do you really want to proceed?").arg(tableProc->item(rowNum, 0)->text()) .arg(tableProc->item(rowNum, 1)->text()),                   QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
+	if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to proccess '%2' pid: %1<br><br>It is HIGH risk to damage wine normal state.<br><br>Do you really want to proceed?").arg(tableProc->item(rowNum, 0)->text()) .arg(tableProc->item(rowNum, 1)->text()),                   QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
 
 	  QString command;
 	  command="kill -9 ";

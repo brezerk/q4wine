@@ -1,0 +1,35 @@
+Usage:
+    
+    fuseiso [<options>] <image_file> <mountpoint> [<FUSE library options>]
+    
+mounts image, while fusermount shipped with FUSE library can be used to unmount:
+
+    fusermount -u <mountpoint>
+
+fuseiso options are:
+
+    -p              Maintain mountpoint. Create it if it does not exists on start, delete it on exit.
+    -n              Do NOT maintain ~/.mtab.fuseiso . This file have format of /etc/mtab and normally stores information about currently mounted iso images.
+    -c iocharset    Specify iocharset to use. Joliet filesystem store filenames in unicode and to show them properly they need to be converted to local charset. Default charset is a current locale charset.
+    
+fuseiso supports plain ISO images (created by mkisofs for example), BIN and NRG images 
+containing ISO9660 filesystem. Along with standard ISO9660 filesystem it support some common extensions: 
+
+Joliet              Common in windows world. Allow long filenames stored in unicode.
+RockRidge           Common in unix world. Allow long filenames, deep directories, symbolic links and permission bits to be stored.
+zisofs              Compressed filesystem, drastically increases capasity of standard CDROM.
+
+In fact i found what CCD (CloneCD) .IMG files along with .MDF (Alcohol 120%) images 
+can be mounted without problems because their format looks exactly as .BIN image file format. 
+So currently fuseiso supports disk images with following extensions: 
+
+.iso
+.img
+.bin
+.mdf
+.nrg
+
+Although, BIN images support have now major limitation -- fuseiso does not handle .CUE files in any way 
+and thus can work only with first track of the BIN image. I don`t know if this is important 
+to support .CUE files properly. Please email me if you need it. Support for other types of media  
+descriptors like .ccd and .mds looks more difficult task because no one know it`s format.

@@ -1,0 +1,8 @@
+2006-09-27
+        * Added support to maintain ~/.mtab.fuseiso, maintain mount point directory. Added support for iocharset.
+
+2006-09-26
+        * Added support to mounting NRG-image files.
+
+2006-09-25
+        * Added support to mounting BIN-image files. One-track only for now.

@@ -7,6 +7,8 @@ ChangeLog
 
 Version 0.113
  Added:
+  - Added embeded q4wine-mount (This is a copy of fuseiso + RH path);
+       Note: use this if you too lazy to compile fuseiso from SF and apply pathes;
   - fuseiso ( http://sourceforge.net/projects/fuseiso/ ) full support.
   - QtSingleApp integration. Now you can run only one instance of q4wine-gui;
   - Online documentation;
