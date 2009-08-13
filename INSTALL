@@ -34,6 +34,7 @@ wine
 >=qt-gui-4.4.0
 >=qt-core-4.4.0
 >=qt-network-4.4.0
+x11-misc/xdg-utils
 wget
 
 NOTE: qt-sql might have sqlite drivers support!
@@ -61,6 +62,11 @@ Installation
         | Note:
         | By default, q4wine not enable developer stuff;
         | If you wish to enable developer stuff add -DWITH_DEVELOP_STUFF=ON to cmake options
+
+	| Note:
+	| You can build embeded fuseiso (q4wine-mount) by adding this to cmake options
+	| -DWITH_EMBEDED_FUSEISO=ON
+	| Use this only if you too lazy to download it from SF and apply RH path's.
  
 6. $ make
 7. $ make install
