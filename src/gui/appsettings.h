@@ -64,6 +64,7 @@ class AppSettings : public QDialog, public Ui::AppSettings
 		//! \brief cmdHelo click slot.
 		void cmdHelp_Click();
 		void radioDefault_toggled(bool state);
+		void radioDefaultGui_toggled(bool state);
 		void radioFuse_toggled(bool state);
 		void radioEmbedded_toggled(bool state);
 

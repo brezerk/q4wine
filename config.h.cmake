@@ -49,7 +49,7 @@
 #cmakedefine WITH_ICOTOOLS
 #cmakedefine WITH_DEVELOP_STUFF
 #cmakedefine WITH_WINETOOLS
-#cmakedefine WITH_EMBEDED_FUSEISO
+#cmakedefine WITH_EMBEDDED_FUSEISO
 
 /*
  * Note APP_VERS and APP_PREF automatycaly generates by cmake

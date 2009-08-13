@@ -195,17 +195,14 @@ QList<QStringList> corelib::getWineProcessList(){
 						ni = kp[i].ki_nice;
 						nice = QObject::tr("%1").arg(ni);
 
-						if (name.contains("pthread")){
-							  envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
-							  if (envs){
-									name = envs[0];
-									if (name.isEmpty()){
-										  name = kp[i].ki_comm;
-									} else {
-										  name = name.split('\\').last();
-									}
-							  }
-						}
+						envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
+						if (envs){
+							name = envs[0];
+							if (name.isEmpty()){
+								name = kp[i].ki_comm;
+							} else {
+								name = name.split('\\').last();
+							}
 
 						envs = kvm_getenvv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 						if (envs){
@@ -383,7 +380,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 									image = image.split("/").last().mid(0, image.split("/").last().length()-1);
 #endif
 							  }
-						  } else if (image.contains("fuseiso")){
+						  } else if (image.contains("fuseiso") || image.contains("q4wine-mount")){
 							  QString filename;
 							  filename=QDir::homePath();
 							  filename.append("/.mtab.fuseiso");
@@ -672,25 +669,26 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 #ifdef _OS_FREEBSD_
 			if (image_name.contains("/")) {
-				  mount_string=this->getSetting("advanced", "mount_drive_string", false).toString();
+				  mount_string=this->getSetting("quickmount", "mount_drive_string", false).toString();
 				  mount_string.replace("%MOUNT_DRIVE%", image_name);
 			} else {
-				  mount_string=this->getSetting("advanced", "mount_image_string", false).toString();
+				  mount_string=this->getSetting("quickmount", "mount_image_string", false).toString();
 				  mount_string.replace("%MOUNT_IMAGE%", this->db_image->getPath(image_name));
 				  mount_string.replace("%MDCONFIG_BIN%", getWhichOut("mdconfig"));
 			}
 
 			mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());
+			mount_string.replace("%SUDO%", getSetting("system", "sudo").toString());
 			mount_string.replace("%MOUNT_BIN%", getSetting("system", "mount").toString());
 			mount_string.replace("%MOUNT_POINT%", mount_point);
 #endif
 
 #ifdef _OS_LINUX_
 			if ((image_name.contains("/") && (!image_name.contains(".iso", Qt::CaseInsensitive)) && (!image_name.contains(".nrg", Qt::CaseInsensitive)))) {
-				  mount_string=this->getSetting("advanced", "mount_drive_string", false).toString();
+				  mount_string=this->getSetting("quickmount", "mount_drive_string", false).toString();
 				  mount_string.replace("%MOUNT_DRIVE%", image_name);
 			} else {
-				mount_string=this->getSetting("advanced", "mount_image_string", false).toString();
+				mount_string=this->getSetting("quickmount", "mount_image_string", false).toString();
 
 				  if (!QFile(image_name).exists()){
 						mount_string.replace("%MOUNT_IMAGE%", this->db_image->getPath(image_name));
@@ -707,6 +705,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			}
 
 			mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());
+			mount_string.replace("%SUDO%", getSetting("system", "sudo").toString());
 			mount_string.replace("%MOUNT_BIN%", getSetting("system", "mount").toString());
 			mount_string.replace("%MOUNT_POINT%", mount_point);
 #endif
@@ -715,6 +714,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			args.append("-c");
 			args.append(mount_string);
 
+			qDebug()<<args;
 
 			if (this->_GUI_MODE){
 				  Process *proc;
@@ -759,8 +759,9 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 #endif
 
 			QString mount_string;
-			mount_string=this->getSetting("advanced", "umount_string", false).toString();
+			mount_string=this->getSetting("quickmount", "umount_string", false).toString();
 			mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());
+			mount_string.replace("%SUDO%", getSetting("system", "sudo").toString());
 			mount_string.replace("%UMOUNT_BIN%", getSetting("system", "umount").toString());
 			mount_string.replace("%MOUNT_POINT%", mount_point);
 
