@@ -660,7 +660,7 @@ void AppSettings::radioEmbedded_toggled(bool state){
 	if (!state)
 		return;
 
-#ifdef WITH_EMBEDED_FUSEISO
+#ifdef WITH_EMBEDDED_FUSEISO
 	QString format;
 	format=APP_PREF;
 	format.append("/q4wine-mount %MOUNT_DRIVE% %MOUNT_POINT%");
