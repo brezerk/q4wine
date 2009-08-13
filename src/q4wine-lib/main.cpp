@@ -327,7 +327,7 @@ QString corelib::getWhichOut(const QString fileName) const{
 	  if (!string.isEmpty()){
 			return string.trimmed();
 	  } else {
-			this->showError(QObject::tr("Can't find or execute '%1' binary. See INSTALL file for application depends.").arg(fileName));
+			this->showError(QObject::tr("Can't find or execute '%1' binary. Make shure this binary is available by search PATH variable and see also INSTALL file for application depends.").arg(fileName));
 	  }
 
 	  return "";

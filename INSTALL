@@ -30,14 +30,16 @@ wine
 >=which-2.19
 >=icoutils-0.26.0
 >=qt-4.4.0
->=qt-sql4.4.0
+>=qt-sql4.4.0       NOTE: qt-sql might have sqlite drivers support!
 >=qt-gui-4.4.0
 >=qt-core-4.4.0
 >=qt-network-4.4.0
-x11-misc/xdg-utils
+xdg-utils
 wget
 
-NOTE: qt-sql might have sqlite drivers support!
+Optional dependencies
+***********************************************
+fuseiso
  
 Installation
 ***********************************************
@@ -65,7 +67,7 @@ Installation
 
 	| Note:
 	| You can build embeded fuseiso (q4wine-mount) by adding this to cmake options
-	| -DWITH_EMBEDED_FUSEISO=ON
+	| -DWITH_EMBEDDED_FUSEISO=ON
 	| Use this only if you too lazy to download it from SF and apply RH path's.
  
 6. $ make
@@ -93,6 +95,11 @@ This will allow to run /sbin/losetup, which is used for building mounted iso's m
 with out prompting root password.
 
 Otherwise you can't get mount menu working =)
+
+Uninstall:
+***********************************************
+In q4wine build root run:
+xargs rm < install_manifest.txt
 
 Changelog
 ***********************************************

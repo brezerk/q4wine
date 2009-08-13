@@ -52,6 +52,9 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
 	connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
+	connect(radioDefault, SIGNAL(toggled(bool)), this, SLOT(radioDefault_toggled(bool)));
+	connect(radioFuse, SIGNAL(toggled(bool)), this, SLOT(radioFuse_toggled(bool)));
+	connect(radioEmbedded, SIGNAL(toggled(bool)), this, SLOT(radioEmbedded_toggled(bool)));
 
 	//Installing event filters for get buttuns
 	cmdGetWineBin->installEventFilter(this);
@@ -598,4 +601,83 @@ void AppSettings::cmdHelp_Click(){
 	}
 
 	CoreLib->openHelpUrl(rawurl);
+	return;
 }
+
+void AppSettings::radioDefault_toggled(bool state){
+	if (!state)
+		return;
+
+#ifdef _OS_LINUX_
+	txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+	txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
+#endif
+
+#ifdef _OS_LINUX_
+	txtMountImageString->setText("%GUI_SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+	txtMountString->setText("%GUI_SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
+#endif
+	txtUmountString->setText("%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+
+	return;
+}
+
+void AppSettings::radioFuse_toggled(bool state){
+	if (!state)
+		return;
+
+	QString format;
+	format=CoreLib->getWhichOut("fuseiso");
+	if (format.isEmpty()){
+		radioDefault->setChecked(true);
+		return;
+	}
+	format.append(" %MOUNT_DRIVE% %MOUNT_POINT%");
+	txtMountString->setText(format);
+	format=CoreLib->getWhichOut("fuseiso");
+	if (format.isEmpty()){
+		radioDefault->setChecked(true);
+		return;
+	}
+	format.append(" %MOUNT_IMAGE% %MOUNT_POINT%");
+	txtMountImageString->setText(format);
+	format=CoreLib->getWhichOut("fusermount");
+	if (format.isEmpty()){
+		radioDefault->setChecked(true);
+		return;
+	}
+	format.append(" -u %MOUNT_POINT%");
+	txtUmountString->setText(format);
+
+	return;
+}
+
+void AppSettings::radioEmbedded_toggled(bool state){
+	if (!state)
+		return;
+
+#ifdef WITH_EMBEDED_FUSEISO
+	QString format;
+	format=APP_PREF;
+	format.append("/q4wine-mount %MOUNT_DRIVE% %MOUNT_POINT%");
+	txtMountString->setText(format);
+	format=APP_PREF;
+	format.append("/q4wine-mount %MOUNT_IMAGE% %MOUNT_POINT%");
+	txtMountImageString->setText(format);
+	format=CoreLib->getWhichOut("fusermount");
+	if (format.isEmpty()){
+		radioDefault->setChecked(true);
+		return;
+	}
+	format.append(" -u %MOUNT_POINT%");
+	txtUmountString->setText(format);
+#else
+	QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without embedded FuseIso.</p><p>If you wish to compile q4wine with embedded FuseIso add:</p><p> \"-WITH_EMBEDED_FUSEISO=ON\" to cmake arguments.</p>"));
+#endif
+	return;
+}
+
