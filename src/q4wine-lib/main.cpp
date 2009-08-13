@@ -352,6 +352,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 	  }
 
 	  image = myProcess->readAll();
+
 	  if (!image.isEmpty()){
 			image = image.split(" ").first();
 			if (!image.isEmpty()){
@@ -382,7 +383,22 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 									image = image.split("/").last().mid(0, image.split("/").last().length()-1);
 #endif
 							  }
-						}
+						  } else if (image.contains("fuseiso")){
+							  QString filename;
+							  filename=QDir::homePath();
+							  filename.append("/.mtab.fuseiso");
+							  QFile file(filename);
+							  if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+								  QTextStream in(&file);
+								  while (!in.atEnd()) {
+									  QString line = in.readLine();
+									  if (line.contains(cdrom_mount))
+										  image = line.split(" ").first().split("/").last();
+								  }
+							  } else {
+								  image = "fuseiso [cant read $HOME/.mtab.fuseiso]";
+							  }
+						  }
 				  } else {
 						image = "none";
 				  }
