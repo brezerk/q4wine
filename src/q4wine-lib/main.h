@@ -133,7 +133,7 @@ public:
 	 * \param  checkExist  If true - then we need to check exists file or dir by value or not.
 	 * \return Return an a key value.
 	 */
-	QVariant getSetting(const QString group, const QString key, const bool checkExist = true, const QVariant defaultVal = QVariant()) const;
+	QVariant getSetting(const QString group, const QString key, const bool checkExist = TRUE, const QVariant defaultVal = QVariant()) const;
 
 	/*! \brief This function get cdrom devices from /etc/fstab file.
 	 *
@@ -144,7 +144,7 @@ public:
 	 *
 	 * \return Return the full path of binary.
 	 */
-	QString getWhichOut (const QString fileName) const;
+	QString getWhichOut (const QString fileName, bool showErr = TRUE) const;
 
 	/*! \brief This function get cdrom devices from /etc/fstab file.
 	 *
@@ -248,6 +248,24 @@ public:
 	 */
 	bool runProcess(const QString exec, const QStringList args, QString dir = "", bool showLog = TRUE) const;
 
+	/*! \brief Get's mount string based on QuikMount type profile
+	 *
+	 * \param profile	Profile type ID
+	 */
+	QString getMountString(const int profile) const;
+
+	/*! \brief Get's mount image string based on QuikMount type profile
+	 *
+	 * \param profile	Profile type ID
+	 */
+	QString getMountImageString(const int profile) const;
+
+	/*! \brief Get's umount string based on QuikMount type profile
+	 *
+	 * \param profile	Profile type ID
+	 */
+	QString getUmountString(const int profile) const;
+
 	private:
 	/*! Define is library operate in CLI or GUI mode.
 	 * \note This is typically need for error message display.
@@ -267,6 +285,8 @@ public:
 	 * \param  message     Error message.
 	 */
 	void showError(const QString message) const;
+
+
 
 	Prefix *db_prefix;
 	Image *db_image;

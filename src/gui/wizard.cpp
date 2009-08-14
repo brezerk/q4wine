@@ -90,8 +90,16 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		connect(radioFuse, SIGNAL(toggled(bool)), this, SLOT(radioFuse_toggled(bool)));
 		connect(radioEmbedded, SIGNAL(toggled(bool)), this, SLOT(radioEmbedded_toggled(bool)));
 
-		radioDefaultGui->setChecked(true);
-		radioDefault->setChecked(true);
+		if (CoreLib->getWhichOut("fuseiso", false).isEmpty()){
+#ifdef WITH_EMBEDDED_FUSEISO
+		   radioEmbedded->setChecked(true);
+#else
+		   radioDefaultGui->setChecked(true);
+		   radioDefault->setChecked(true);
+#endif
+		} else {
+		   radioFuse->setChecked(true);
+		}
 
 		break;
 	case 2:
@@ -1153,36 +1161,13 @@ void Wizard::updateScena(){
 	return;
 }
 
-
 void Wizard::radioDefault_toggled(bool state){
 	if (!state)
 		return;
 
-#ifdef _OS_LINUX_
-	txtMountString->setText("%SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
-#endif
-#ifdef _OS_FREEBSD_
-	txtMountString->setText("%SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
-#endif
-
-#ifdef _OS_LINUX_
-	txtMountImageString->setText("%SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
-#endif
-#ifdef _OS_FREEBSD_
-	txtMountString->setText("%SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
-#endif
-
-#ifdef _OS_LINUX_
-	txtUmountString->setText("%SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
-#endif
-#ifdef _OS_FREEBSD_
-	QString umount="%SUDO% ";
-	umount.append(APP_PREF);
-	umount.append("/share/q4wine/scripts/umount_freebsd.sh");
-	umount.append(" %UMOUNT_BIN% %MOUNT_POINT%");
-	txtUmountString->setText(umount);
-#endif
-
+	txtMountString->setText(CoreLib->getMountString(0));
+	txtMountImageString->setText(CoreLib->getMountImageString(0));
+	txtUmountString->setText(CoreLib->getUmountString(0));
 	return;
 }
 
@@ -1190,61 +1175,28 @@ void Wizard::radioDefaultGui_toggled(bool state){
 	if (!state)
 		return;
 
-#ifdef _OS_LINUX_
-	txtMountString->setText("%GUI_SUDO% \"%MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%\"");
-#endif
-#ifdef _OS_FREEBSD_
-	txtMountString->setText("%GUI_SUDO% \"%MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%\"");
-#endif
-
-#ifdef _OS_LINUX_
-	txtMountImageString->setText("%GUI_SUDO% \"%MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%\"");
-#endif
-#ifdef _OS_FREEBSD_
-	txtMountString->setText("%GUI_SUDO% \"%MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%\"");
-#endif
-
-#ifdef _OS_LINUX_
-	txtUmountString->setText("%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
-#endif
-#ifdef _OS_FREEBSD_
-	QString umount="%GUI_SUDO% ";
-	umount.append(APP_PREF);
-	umount.append("/share/q4wine/scripts/umount_freebsd.sh");
-	umount.append(" %UMOUNT_BIN% %MOUNT_POINT%");
-	txtUmountString->setText(umount);
-#endif
-
+	txtMountString->setText(CoreLib->getMountString(1));
+	txtMountImageString->setText(CoreLib->getMountImageString(1));
+	txtUmountString->setText(CoreLib->getUmountString(1));
 	return;
 }
 
 void Wizard::radioFuse_toggled(bool state){
 	if (!state)
-		return;
+	   return;
 
-	QString format;
-	format=CoreLib->getWhichOut("fuseiso");
-	if (format.isEmpty()){
-		radioDefault->setChecked(true);
-		return;
+	if (CoreLib->getWhichOut("fusermount").isEmpty()){
+	   radioDefault->setChecked(true);
+	   return;
 	}
-	format.append(" %MOUNT_DRIVE% %MOUNT_POINT%");
-	txtMountString->setText(format);
-	format=CoreLib->getWhichOut("fuseiso");
-	if (format.isEmpty()){
-		radioDefault->setChecked(true);
-		return;
+	if (CoreLib->getWhichOut("fuseiso").isEmpty()){
+	   radioDefault->setChecked(true);
+	   return;
 	}
-	format.append(" %MOUNT_IMAGE% %MOUNT_POINT%");
-	txtMountImageString->setText(format);
-	format=CoreLib->getWhichOut("fusermount");
-	if (format.isEmpty()){
-		radioDefault->setChecked(true);
-		return;
-	}
-	format.append(" -u %MOUNT_POINT%");
-	txtUmountString->setText(format);
 
+	txtMountString->setText(CoreLib->getMountString(2));
+	txtMountImageString->setText(CoreLib->getMountImageString(2));
+	txtUmountString->setText(CoreLib->getUmountString(2));
 	return;
 }
 
@@ -1253,24 +1205,17 @@ void Wizard::radioEmbedded_toggled(bool state){
 		return;
 
 #ifdef WITH_EMBEDDED_FUSEISO
-	QString format;
-	format=APP_PREF;
-	format.append("/bin/q4wine-mount %MOUNT_DRIVE% %MOUNT_POINT%");
-	txtMountString->setText(format);
-	format=APP_PREF;
-	format.append("/bin/q4wine-mount %MOUNT_IMAGE% %MOUNT_POINT%");
-	txtMountImageString->setText(format);
-	format=CoreLib->getWhichOut("fusermount");
-	if (format.isEmpty()){
-		radioDefault->setChecked(true);
-		return;
+	if (CoreLib->getWhichOut("fusermount").isEmpty()){
+	   radioDefault->setChecked(true);
+	   return;
 	}
-	format.append(" -u %MOUNT_POINT%");
-	txtUmountString->setText(format);
+
+	txtMountString->setText(CoreLib->getMountString(3));
+	txtMountImageString->setText(CoreLib->getMountImageString(3));
+	txtUmountString->setText(CoreLib->getUmountString(3));
 #else
 	QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without embedded FuseIso.</p><p>If you wish to compile q4wine with embedded FuseIso add:</p><p> \"-WITH_EMBEDDED_FUSEISO=ON\" to cmake arguments.</p>"));
 	radioDefault->setChecked(true);
 #endif
 	return;
 }
-

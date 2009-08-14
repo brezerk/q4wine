@@ -421,47 +421,28 @@ void MainWindow::getSettings(){
 
 
 
-	if (CoreLib->getSetting("advanced", "mount_drive_string", FALSE).toString().isEmpty()){
-		QSettings settings(APP_SHORT_NAME, "default");
-		settings.beginGroup("advanced");
-#ifdef _OS_LINUX_
-		settings.setValue("mount_drive_string", "%GUI_SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
-#endif
-#ifdef _OS_FREEBSD_
-		settings.setValue("mount_drive_string", "%GUI_SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
-#endif
-		settings.endGroup();
-	}
-
-	if (CoreLib->getSetting("quickmount", "type", FALSE).toString().isEmpty()){
+   if (CoreLib->getSetting("quickmount", "type", FALSE).toString().isEmpty()){
 		QSettings settings(APP_SHORT_NAME, "default");
 		settings.beginGroup("quickmount");
 
-		settings.setValue("type", 0);
-			  #ifdef _OS_LINUX_
-				   settings.setValue("mount_drive_string", "%SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
-			  #endif
-			  #ifdef _OS_FREEBSD_
-				   settings.setValue("mount_drive_string", "%SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
-			  #endif
-
-			  #ifdef _OS_LINUX_
-				  settings.setValue("mount_image_string", "%SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
-			  #endif
-			  #ifdef _OS_FREEBSD_
-				  settings.setValue("mount_image_string", "%SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
-			  #endif
-
-			  #ifdef _OS_LINUX_
-				  settings.setValue("umount_string", "%SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
-			  #endif
-			  #ifdef _OS_FREEBSD_
-				  QString umount="%SUDO% ";
-				  umount.append(APP_PREF);
-				  umount.append("/share/q4wine/scripts/umount_freebsd.sh");
-				  umount.append(" %UMOUNT_BIN% %MOUNT_POINT%");
-				  settings.setValue("umount_string", umount);
-			  #endif
+	   if (CoreLib->getWhichOut("fuseiso", false).isEmpty()){
+		   #ifdef WITH_EMBEDDED_FUSEISO
+			   settings.setValue("type", 3);
+			   settings.setValue("mount_drive_string", CoreLib->getMountString(3));
+			   settings.setValue("mount_image_string", CoreLib->getMountImageString(3));
+			   settings.setValue("umount_string", CoreLib->getUmountString(3));
+		   #else
+			   settings.setValue("type", 0);
+			   settings.setValue("mount_drive_string", CoreLib->getMountString(0));
+			   settings.setValue("mount_image_string", CoreLib->getMountImageString(0));
+			   settings.setValue("umount_string", CoreLib->getUmountString(0));
+		   #endif
+		} else {
+			   settings.setValue("type", 2);
+			   settings.setValue("mount_drive_string", CoreLib->getMountString(2));
+			   settings.setValue("mount_image_string", CoreLib->getMountImageString(2));
+			   settings.setValue("umount_string", CoreLib->getUmountString(2));
+		}
 		settings.endGroup();
 	}
 

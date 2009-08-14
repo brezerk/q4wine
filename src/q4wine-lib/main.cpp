@@ -292,7 +292,7 @@ QStringList corelib::getWineDlls(QString prefix_lib_path) const{
 
 
 
-QString corelib::getWhichOut(const QString fileName) const{
+QString corelib::getWhichOut(const QString fileName, bool showErr) const{
 	  /*
 	   * Getting 'which' output;
 	   */
@@ -315,7 +315,8 @@ QString corelib::getWhichOut(const QString fileName) const{
 	  if (!string.isEmpty()){
 			return string.trimmed();
 	  } else {
-			this->showError(QObject::tr("Can't find or execute '%1' binary. Make shure this binary is available by search PATH variable and see also INSTALL file for application depends.").arg(fileName));
+		if (showErr)
+		   this->showError(QObject::tr("Can't find or execute '%1' binary. Make shure this binary is available by search PATH variable and see also INSTALL file for application depends.").arg(fileName));
 	  }
 
 	  return "";
@@ -912,5 +913,105 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 		  args<<url;
 		  this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
 		  return;
+	  }
+
+	  QString corelib::getMountString(const int profile) const{
+		   QString string;
+		   switch (profile){
+			case 0:
+			   #ifdef _OS_LINUX_
+				   string="%SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%";
+			   #endif
+			   #ifdef _OS_FREEBSD_
+				   string="%SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%";
+			   #endif
+			break;
+			case 1:
+			   #ifdef _OS_LINUX_
+				   string="%GUI_SUDO% \"%MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%\"";
+			   #endif
+			   #ifdef _OS_FREEBSD_
+				   string="%GUI_SUDO% \"%MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%\"";
+			   #endif
+			break;
+			case 2:
+			   string=getWhichOut("fuseiso");
+			   string.append(" %MOUNT_DRIVE% %MOUNT_POINT%");
+			break;
+			case 3:
+			   string=APP_PREF;
+			   string.append("/bin/q4wine-mount %MOUNT_DRIVE% %MOUNT_POINT%");
+			break;
+		   }
+
+		   return string;
+	  }
+
+	  QString corelib::getMountImageString(const int profile) const{
+		   QString string;
+		   switch (profile){
+			case 0:
+			  #ifdef _OS_LINUX_
+				  string = "%SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%";
+			  #endif
+			  #ifdef _OS_FREEBSD_
+				  string = "%SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%";
+			  #endif
+			break;
+			case 1:
+			   #ifdef _OS_LINUX_
+				   string = "%GUI_SUDO% \"%MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%\"";
+			   #endif
+			   #ifdef _OS_FREEBSD_
+				   string = "%GUI_SUDO% \"%MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%\"";
+			   #endif
+			break;
+			case 2:
+			   string=getWhichOut("fuseiso");
+			   string.append(" %MOUNT_IMAGE% %MOUNT_POINT%");
+			break;
+			case 3:
+			   string=APP_PREF;
+			   string.append("/bin/q4wine-mount %MOUNT_IMAGE% %MOUNT_POINT%");
+			break;
+		   }
+		   return string;
+	  }
+
+	  QString corelib::getUmountString(const int profile) const{
+		   QString string;
+		   switch (profile){
+			case 0:
+			   #ifdef _OS_LINUX_
+				   string = "%SUDO% %UMOUNT_BIN% %MOUNT_POINT%";
+			   #endif
+			   #ifdef _OS_FREEBSD_
+				   string="%SUDO% ";
+				   string.append(APP_PREF);
+				   string.append("/share/q4wine/scripts/umount_freebsd.sh");
+				   string.append(" %UMOUNT_BIN% %MOUNT_POINT%");
+			   #endif
+			break;
+			case 1:
+			   #ifdef _OS_LINUX_
+				   string="%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%";
+			   #endif
+			   #ifdef _OS_FREEBSD_
+				   string = "%GUI_SUDO% ";
+				   string.append(APP_PREF);
+				   string.append("/share/q4wine/scripts/umount_freebsd.sh");
+				   string.append(" %UMOUNT_BIN% %MOUNT_POINT%");
+			   #endif
+			break;
+			case 2:
+			   string=getWhichOut("fusermount");
+			   string.append(" -u %MOUNT_POINT%");
+			break;
+			case 3:
+			   string=getWhichOut("fusermount");
+			   string.append(" -u %MOUNT_POINT%");
+			break;
+		   }
+		   return string;
 	  }
 
