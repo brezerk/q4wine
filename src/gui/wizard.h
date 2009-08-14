@@ -90,6 +90,18 @@ class Wizard : public QDialog, public Ui::Wizard
 		//! \brief cmdHelo click slot.
 		void cmdHelp_Click();
 
+		//! \brief raidioDefault toggled action slot.
+		void radioDefault_toggled(bool state);
+
+		//! \brief raidioDefaultGui toggled action slot.
+		void radioDefaultGui_toggled(bool state);
+
+		//! \brief raidioFuse toggled action slot.
+		void radioFuse_toggled(bool state);
+
+		//! \brief raidioEmbedded toggled action slot.
+		void radioEmbedded_toggled(bool state);
+
 	private:
 		//! \brief Function for updateing scene elements.
 		void updateScena();

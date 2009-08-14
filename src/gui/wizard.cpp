@@ -84,6 +84,14 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		txtIcotoolBin->setEnabled(false);
 #endif
 
+		connect(radioDefault, SIGNAL(toggled(bool)), this, SLOT(radioDefault_toggled(bool)));
+		connect(radioDefaultGui, SIGNAL(toggled(bool)), this, SLOT(radioDefaultGui_toggled(bool)));
+		connect(radioFuse, SIGNAL(toggled(bool)), this, SLOT(radioFuse_toggled(bool)));
+		connect(radioEmbedded, SIGNAL(toggled(bool)), this, SLOT(radioEmbedded_toggled(bool)));
+
+		radioDefaultGui->setChecked(true);
+		radioDefault->setChecked(true);
+
 		break;
 	case 2:
 		// Fake drive
@@ -177,7 +185,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		combSourceDevice->addItems(CoreLib->getCdromDevices());
 		break;
 	case 1:
-		TotalPage=7;
+		TotalPage=8;
 
 		setWindowTitle(tr("First startup wizard"));
 		lblCaption->setText(tr("<b>First startup wizard</b>"));
@@ -288,6 +296,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	widgetFirstStartup1->setVisible(FALSE);
 	widgetFirstStartup2->setVisible(FALSE);
 	widgetFirstStartup3->setVisible(FALSE);
+	widgetFirstStartup4->setVisible(FALSE);
 
 	widgetInfo->setVisible(FALSE);
 
@@ -346,19 +355,20 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 	if (this->widgetFrame->width()<=100)
 		return FALSE;
 
-	if (event->type() == QEvent::Resize){
+	if (event->type() == QEvent::Paint){
 		this->widgetInfo->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive0->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive1->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive2->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive3->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreatePrefix0->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreatePrefix1->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreatePrefix2->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetFirstStartup0->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetFirstStartup1->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetFirstStartup2->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetFirstStartup3->resize(this->widgetFrame->width(), this->widgetFrame->height());
+		this->widgetCreateFakeDrive0->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetCreateFakeDrive1->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetCreateFakeDrive2->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetCreateFakeDrive3->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetCreatePrefix0->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetCreatePrefix1->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetCreatePrefix2->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetFirstStartup0->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetFirstStartup1->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetFirstStartup2->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetFirstStartup3->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetFirstStartup4->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		return TRUE;
 	}
 
@@ -485,7 +495,7 @@ void Wizard::nextWizardPage(){
 				}
 			}
 			break;
-				case 7:
+				case 8:
 			QSettings settings(APP_SHORT_NAME, "default");
 			settings.beginGroup("wine");
 			settings.setValue("WineBin", txtWineBin->text());
@@ -528,6 +538,123 @@ void Wizard::nextWizardPage(){
 			}
 
 			settings.endGroup();
+
+
+
+			settings.beginGroup("quickmount");
+	  if (radioDefault->isChecked()){
+		  settings.setValue("type", 0);
+		  if (txtMountString->text().isEmpty()){
+			  #ifdef _OS_LINUX_
+				  txtMountString->setText("%SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
+			  #endif
+			  #ifdef _OS_FREEBSD_
+				  txtMountString->setText("%SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
+			  #endif
+		  }
+
+		  if (txtMountImageString->text().isEmpty()){
+			  #ifdef _OS_LINUX_
+				  txtMountImageString->setText("%SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
+			  #endif
+			  #ifdef _OS_FREEBSD_
+				  txtMountString->setText("%SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
+			  #endif
+		  }
+
+		  if (txtUmountString->text().isEmpty()){
+			  #ifdef _OS_LINUX_
+				  txtUmountString->setText("%SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+			  #endif
+			  #ifdef _OS_FREEBSD_
+				  QString umount="%SUDO% ";
+				  umount.append(APP_PREF);
+				  umount.append("/share/q4wine/scripts/umount_freebsd.sh");
+				  umount.append(" %UMOUNT_BIN% %MOUNT_POINT%");
+				  txtUmountString->setText(umount);
+			  #endif
+		  }
+
+	  }
+
+	  if (radioDefaultGui->isChecked()){
+		  settings.setValue("type", 1);
+		  if (txtMountString->text().isEmpty()){
+			  #ifdef _OS_LINUX_
+				  txtMountString->setText("%GUI_SUDO% \"%MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%\"");
+			  #endif
+			  #ifdef _OS_FREEBSD_
+				  txtMountString->setText("%GUI_SUDO% \"%MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%\"");
+			  #endif
+		  }
+
+		  if (txtMountImageString->text().isEmpty()){
+			  #ifdef _OS_LINUX_
+				  txtMountImageString->setText("%GUI_SUDO% \"%MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%\"");
+			  #endif
+			  #ifdef _OS_FREEBSD_
+				  txtMountString->setText("%GUI_SUDO% \"%MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%\"");
+			  #endif
+		  }
+
+		  if (txtUmountString->text().isEmpty()){
+			  #ifdef _OS_LINUX_
+				  txtUmountString->setText("%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+			  #endif
+			  #ifdef _OS_FREEBSD_
+				  QString umount="%GUI_SUDO% ";
+				  umount.append(APP_PREF);
+				  umount.append("/share/q4wine/scripts/umount_freebsd.sh");
+				  umount.append(" %UMOUNT_BIN% %MOUNT_POINT%");
+				  txtUmountString->setText(umount);
+			  #endif
+		  }
+	  }
+	  if (radioFuse->isChecked()){
+		  settings.setValue("type", 2);
+		  QString format;
+		  if (txtMountString->text().isEmpty()){
+			  format=CoreLib->getWhichOut("fuseiso");
+			  format.append(" %MOUNT_DRIVE% %MOUNT_POINT%");
+			  txtMountString->setText(format);
+		  }
+		  if (txtMountImageString->text().isEmpty()){
+			  format=CoreLib->getWhichOut("fuseiso");
+			  format.append(" %MOUNT_IMAGE% %MOUNT_POINT%");
+			  txtMountImageString->setText(format);
+		  }
+		  if (txtUmountString->text().isEmpty()){
+			  format=CoreLib->getWhichOut("fusermount");
+			  format.append(" -u %MOUNT_POINT%");
+			  txtUmountString->setText(format);
+		  }
+	  }
+	   if (radioEmbedded->isChecked()){
+		   QString format;
+		   settings.setValue("type", 3);
+		   if (txtMountString->text().isEmpty()){
+			   format=APP_PREF;
+			   format.append("/bin/q4wine-mount %MOUNT_DRIVE% %MOUNT_POINT%");
+			   txtMountString->setText(format);
+		   }
+		   if (txtMountImageString->text().isEmpty()){
+			   format=APP_PREF;
+			   format.append("/bin/q4wine-mount %MOUNT_IMAGE% %MOUNT_POINT%");
+			   txtMountImageString->setText(format);
+		   }
+		   if (txtUmountString->text().isEmpty()){
+			   format=CoreLib->getWhichOut("fusermount");
+			   format.append(" -u %MOUNT_POINT%");
+			   txtUmountString->setText(format);
+		   }
+	   }
+
+	  settings.setValue("mount_drive_string", txtMountString->text());
+	  settings.setValue("mount_image_string", txtMountImageString->text());
+	  settings.setValue("umount_string", txtUmountString->text());
+
+	  settings.endGroup();
+
 			accept();
 			break;
 		}
@@ -884,12 +1011,19 @@ void Wizard::updateScena(){
 			widgetFirstStartup1->setVisible(FALSE);
 			widgetFirstStartup2->setVisible(FALSE);
 			widgetFirstStartup3->setVisible(TRUE);
+			widgetFirstStartup4->setVisible(FALSE);
 			cmdNext->setText(tr("Next >"));
 			widgetInfo->setVisible(FALSE);
 			break;
 					case 7:
-			lblWizardInfo->setText(tr("<p>All ready for finishing %1 setup. </p><p>Please, press the <b>Finish</b> button to create finish setup process. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
 			widgetFirstStartup3->setVisible(FALSE);
+			widgetFirstStartup4->setVisible(TRUE);
+			cmdNext->setText(tr("Next >"));
+			widgetInfo->setVisible(FALSE);
+			break;
+								case 8:
+			lblWizardInfo->setText(tr("<p>All ready for finishing %1 setup. </p><p>Please, press the <b>Finish</b> button to create finish setup process. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
+			widgetFirstStartup4->setVisible(FALSE);
 			widgetInfo->setVisible(TRUE);
 			cmdNext->setText(tr("Finish"));
 			break;
@@ -1019,3 +1153,125 @@ void Wizard::updateScena(){
 	}
 	return;
 }
+
+
+void Wizard::radioDefault_toggled(bool state){
+	if (!state)
+		return;
+
+#ifdef _OS_LINUX_
+	txtMountString->setText("%SUDO% %MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+	txtMountString->setText("%SUDO% %MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%");
+#endif
+
+#ifdef _OS_LINUX_
+	txtMountImageString->setText("%SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+	txtMountString->setText("%SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
+#endif
+
+#ifdef _OS_LINUX_
+	txtUmountString->setText("%SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+	QString umount="%SUDO% ";
+	umount.append(APP_PREF);
+	umount.append("/share/q4wine/scripts/umount_freebsd.sh");
+	umount.append(" %UMOUNT_BIN% %MOUNT_POINT%");
+	txtUmountString->setText(umount);
+#endif
+
+	return;
+}
+
+void Wizard::radioDefaultGui_toggled(bool state){
+	if (!state)
+		return;
+
+#ifdef _OS_LINUX_
+	txtMountString->setText("%GUI_SUDO% \"%MOUNT_BIN% %MOUNT_DRIVE% %MOUNT_POINT%\"");
+#endif
+#ifdef _OS_FREEBSD_
+	txtMountString->setText("%GUI_SUDO% \"%MOUNT_BIN% -t cd9660 %MOUNT_DRIVE% %MOUNT_POINT%\"");
+#endif
+
+#ifdef _OS_LINUX_
+	txtMountImageString->setText("%GUI_SUDO% \"%MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%\"");
+#endif
+#ifdef _OS_FREEBSD_
+	txtMountString->setText("%GUI_SUDO% \"%MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%\"");
+#endif
+
+#ifdef _OS_LINUX_
+	txtUmountString->setText("%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+	QString umount="%GUI_SUDO% ";
+	umount.append(APP_PREF);
+	umount.append("/share/q4wine/scripts/umount_freebsd.sh");
+	umount.append(" %UMOUNT_BIN% %MOUNT_POINT%");
+	txtUmountString->setText(umount);
+#endif
+
+	return;
+}
+
+void Wizard::radioFuse_toggled(bool state){
+	if (!state)
+		return;
+
+	QString format;
+	format=CoreLib->getWhichOut("fuseiso");
+	if (format.isEmpty()){
+		radioDefault->setChecked(true);
+		return;
+	}
+	format.append(" %MOUNT_DRIVE% %MOUNT_POINT%");
+	txtMountString->setText(format);
+	format=CoreLib->getWhichOut("fuseiso");
+	if (format.isEmpty()){
+		radioDefault->setChecked(true);
+		return;
+	}
+	format.append(" %MOUNT_IMAGE% %MOUNT_POINT%");
+	txtMountImageString->setText(format);
+	format=CoreLib->getWhichOut("fusermount");
+	if (format.isEmpty()){
+		radioDefault->setChecked(true);
+		return;
+	}
+	format.append(" -u %MOUNT_POINT%");
+	txtUmountString->setText(format);
+
+	return;
+}
+
+void Wizard::radioEmbedded_toggled(bool state){
+	if (!state)
+		return;
+
+#ifdef WITH_EMBEDDED_FUSEISO
+	QString format;
+	format=APP_PREF;
+	format.append("/bin/q4wine-mount %MOUNT_DRIVE% %MOUNT_POINT%");
+	txtMountString->setText(format);
+	format=APP_PREF;
+	format.append("/bin/q4wine-mount %MOUNT_IMAGE% %MOUNT_POINT%");
+	txtMountImageString->setText(format);
+	format=CoreLib->getWhichOut("fusermount");
+	if (format.isEmpty()){
+		radioDefault->setChecked(true);
+		return;
+	}
+	format.append(" -u %MOUNT_POINT%");
+	txtUmountString->setText(format);
+#else
+	QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without embedded FuseIso.</p><p>If you wish to compile q4wine with embedded FuseIso add:</p><p> \"-WITH_EMBEDDED_FUSEISO=ON\" to cmake arguments.</p>"));
+	radioDefault->setChecked(true);
+#endif
+	return;
+}
+
