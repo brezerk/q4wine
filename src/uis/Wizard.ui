@@ -18,7 +18,7 @@
    <string>Wizard</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../q4wine.qrc">
     <normaloff>:/data/q4wine.png</normaloff>:/data/q4wine.png</iconset>
   </property>
   <property name="autoFillBackground">
@@ -583,6 +583,10 @@ Note: leave it blank for default value.</string>
                     <widget class="QPushButton" name="cmdGetWineServerBin">
                      <property name="text">
                       <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="../q4wine.qrc">
+                       <normaloff>:/data/folder.png</normaloff>:/data/folder.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -3144,6 +3148,8 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
   </layout>
  </widget>
  <layoutdefault spacing="2" margin="9"/>
- <resources/>
+ <resources>
+  <include location="../q4wine.qrc"/>
+ </resources>
  <connections/>
 </ui>

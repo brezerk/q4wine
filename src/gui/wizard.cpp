@@ -57,6 +57,7 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 			pixmap.load(":data/firstc.png");
 		}
 
+
 		lblPicture->setPixmap(pixmap);
 
 		cmdGetWineBin->setIcon(loadIcon("data/folder.png", themePath));
@@ -115,19 +116,17 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 QIcon Wizard::loadIcon(QString iconName, QString themePath){
 	// Function tryes to load icon image from theme dir
 	// If it fails -> load default from rsource file
+	  QIcon icon;
 
-	QIcon icon;
-
-	if ((!themePath.isEmpty()) and (themePath!="Default")){
-		icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
-		if (icon.isNull()){
+	  if ((!themePath.isEmpty()) and (themePath!="Default")){
+			icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
+			if (icon.isNull()){
+				  icon.addFile(tr(":/%1").arg(iconName));
+			}
+	  } else {
 			icon.addFile(tr(":/%1").arg(iconName));
-		}
-	} else {
-		icon.addFile(tr(":/%1").arg(iconName));
-	}
-
-	return icon;
+	  }
+	  return icon;
 }
 
 
@@ -357,10 +356,10 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 
 	if (event->type() == QEvent::Paint){
 		this->widgetInfo->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive0->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		this->widgetCreateFakeDrive1->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		this->widgetCreateFakeDrive2->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		this->widgetCreateFakeDrive3->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetCreateFakeDrive0->resize(this->widgetFrame->width(), this->widgetFrame->height());
+		this->widgetCreateFakeDrive1->resize(this->widgetFrame->width(), this->widgetFrame->height());
+		this->widgetCreateFakeDrive2->resize(this->widgetFrame->width(), this->widgetFrame->height());
+		this->widgetCreateFakeDrive3->resize(this->widgetFrame->width(), this->widgetFrame->height());
 		this->widgetCreatePrefix0->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		this->widgetCreatePrefix1->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		this->widgetCreatePrefix2->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
@@ -369,7 +368,7 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 		this->widgetFirstStartup2->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		this->widgetFirstStartup3->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		this->widgetFirstStartup4->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		return TRUE;
+		return FALSE;
 	}
 
 	if (obj->objectName()== "Wizard")

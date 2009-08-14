@@ -800,12 +800,15 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
   menuDirMount->clear();
   menuDirMount->setEnabled(FALSE);
 
-  if (!cdrom_drive.isEmpty() && !cdrom_mount.isEmpty()){
+  if (!cdrom_mount.isEmpty()){
 	menuDirMount->setEnabled(TRUE);
 	menuDirMountImages = menuDirMount->addMenu(tr("mount [%1]").arg(CoreLib->getMountedImages(cdrom_mount)));
 	if (!cdrom_drive.isEmpty()){
-	  menuDirMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
-	  menuDirMountImages->addSeparator();
+		menuDirMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
+		menuDirMountImages->addSeparator();
+	} else {
+		menuDirMountImages->addAction(QIcon(":/data/drive_menu.png"), tr("[none]"));
+		menuDirMountImages->addSeparator();
 	}
 
 	images = db_image->getFields();
@@ -836,6 +839,10 @@ void MainWindow::menuMountImages_triggered ( QAction * action ){
   /*
 	 * This slot process menuDirMountImages and menuIconMountImages triggered signal
 	 */
+
+ if (action->text()==tr("[none]"))
+	 return;
+
   bool ret;
   if (twPrograms->currentItem()){
 	if (twPrograms->currentItem()->parent()){
@@ -899,7 +906,7 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint & iPoint){
   menuIconMount->clear();
   menuIconMount->setEnabled(FALSE);
 
-  if (!cdrom_drive.isEmpty() && !cdrom_mount.isEmpty()){
+  if (!cdrom_mount.isEmpty()){
 	menuIconMount->setEnabled(TRUE);
 	QMenu* menuIconMountImages;
 	menuIconMountImages = new QMenu(this);
@@ -908,6 +915,9 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint & iPoint){
 	if (!cdrom_drive.isEmpty()){
 	  menuIconMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
 	  menuIconMountImages->addSeparator();
+	} else {
+		menuIconMountImages->addAction(QIcon(":/data/drive_menu.png"), tr("[none]"));
+		menuIconMountImages->addSeparator();
 	}
 
 	menuIconMount->addAction(iconUnmount);
