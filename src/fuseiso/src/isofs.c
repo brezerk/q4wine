@@ -325,7 +325,7 @@ void* isofs_real_init() {
 
 	if(context.block_size != 2048) {
 		// report unusual data block size
-		printf("Data block size: %d\n", context.block_size);
+		printf("Data block size: %Lu\n", context.block_size);
 	};
 
 	char buf[129];

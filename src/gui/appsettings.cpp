@@ -519,8 +519,19 @@ void AppSettings::cmdOk_Click(){
 			  #endif
 		  }
 
-		  if (txtUmountString->text().isEmpty())
-			  txtUmountString->setText("%SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+		  if (txtUmountString->text().isEmpty()){
+			  #ifdef _OS_LINUX_
+				  txtUmountString->setText("%SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+			  #endif
+			  #ifdef _OS_FREEBSD_
+				  QString umount="%SUDO% ";
+				  umount.append(APP_PREF);
+				  umount.append("/share/q4wine/scripts/umount_freebsd.sh");
+				  umount.append(" %UMOUNT_BIN% %MOUNT_POINT%");
+				  txtUmountString->setText(umount);
+			  #endif
+		  }
+
 	  }
 
 	  if (radioDefaultGui->isChecked()){
@@ -543,8 +554,18 @@ void AppSettings::cmdOk_Click(){
 			  #endif
 		  }
 
-		  if (txtUmountString->text().isEmpty())
-			  txtUmountString->setText("%GUI_SUDO% \"%UMOUNT_BIN% %MOUNT_POINT%\"");
+		  if (txtUmountString->text().isEmpty()){
+			  #ifdef _OS_LINUX_
+				  txtUmountString->setText("%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+			  #endif
+			  #ifdef _OS_FREEBSD_
+				  QString umount="%GUI_SUDO% ";
+				  umount.append(APP_PREF);
+				  umount.append("/share/q4wine/scripts/umount_freebsd.sh");
+				  umount.append(" %UMOUNT_BIN% %MOUNT_POINT%");
+				  txtUmountString->setText(umount);
+			  #endif
+		  }
 	  }
 	  if (radioFuse->isChecked()){
 		  settings.setValue("type", 2);
@@ -687,7 +708,17 @@ void AppSettings::radioDefault_toggled(bool state){
 #ifdef _OS_FREEBSD_
 	txtMountString->setText("%SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%");
 #endif
+
+#ifdef _OS_LINUX_
 	txtUmountString->setText("%SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+	QString umount="%SUDO% ";
+	umount.append(APP_PREF);
+	umount.append("/share/q4wine/scripts/umount_freebsd.sh");
+	umount.append(" %UMOUNT_BIN% %MOUNT_POINT%");
+	txtUmountString->setText(umount);
+#endif
 
 	return;
 }
@@ -709,7 +740,17 @@ void AppSettings::radioDefaultGui_toggled(bool state){
 #ifdef _OS_FREEBSD_
 	txtMountString->setText("%GUI_SUDO% \"%MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %%MOUNT_IMAGE%` %MOUNT_POINT%\"");
 #endif
-	txtUmountString->setText("%GUI_SUDO% \"%UMOUNT_BIN% %MOUNT_POINT%\"");
+
+#ifdef _OS_LINUX_
+	txtUmountString->setText("%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%");
+#endif
+#ifdef _OS_FREEBSD_
+	QString umount="%GUI_SUDO% ";
+	umount.append(APP_PREF);
+	umount.append("/share/q4wine/scripts/umount_freebsd.sh");
+	umount.append(" %UMOUNT_BIN% %MOUNT_POINT%");
+	txtUmountString->setText(umount);
+#endif
 
 	return;
 }

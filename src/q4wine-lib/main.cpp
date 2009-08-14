@@ -182,15 +182,6 @@ QList<QStringList> corelib::getWineProcessList(){
 				  cur_pids << QObject::tr("%1").arg(ipid);
 				  name = kp[i].ki_comm;
 
-				  //struct extern_proc *xp = &kp->kp_proc;
-				  qDebug()<< " ---- Start Preoces ----- ";
-				  qDebug()<< kp[i].ki_comm;
-				  qDebug()<< kp[i].ki_ocomm;
-				  qDebug()<< kp[i].ki_emul;
-				  qDebug()<< kp[i].ki_pid;
-				  qDebug()<< kp[i].ki_ppid;
-				  qDebug()<< " ---- End Proces ----- ";
-
 				  if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
 						ni = kp[i].ki_nice;
 						nice = QObject::tr("%1").arg(ni);
@@ -740,24 +731,6 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			QStringList args;
 			QString arg;
 
-#ifdef _OS_FREEBSD_
-
-			/*
-			args.clear();
-			args << "-c" << QObject::tr("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(mount_point);
-
-			QProcess *myProcess = new QProcess();
-			myProcess->start(this->getSetting("system", "sh").toString(), args);
-			if (!myProcess->waitForFinished()){
-				  qDebug() << "Make failed:" << myProcess->errorString();
-				  return;
-			}
-
-			QString devid = myProcess->readAll();
-
-			*/
-#endif
-
 			QString mount_string;
 			mount_string=this->getSetting("quickmount", "umount_string", false).toString();
 			mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());
@@ -776,37 +749,6 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			} else {
 				  return (this->runProcess(this->getSetting("system", "sh").toString(), args));
 			}
-
-#ifdef _OS_FREEBSD_
-			/*
-
-			if (!devid.isEmpty()){
-				  devid = devid.split(" ").first();
-				  if (!devid.isEmpty()){
-						if (devid.contains("md")){
-							  args.clear();
-							  args << "mdconfig" <<  "-d" << tr("-u%1").arg(devid.mid(7));
-
-							  //Fix args for kdesu\gksu\e.t.c.
-							  if (!this->getSetting("system", "gui_sudo").toString().contains(QRegExp("/sudo$"))){
-									arg=args.join(" ");
-									args.clear();
-									args<<arg;
-							  }
-
-							  if (this->_GUI_MODE){
-									Process *proc;
-									proc = new Process(args, this->getSetting("system", "gui_sudo").toString(), QDir::homePath(), QObject::tr("Mounting..."), QObject::tr("Mounting..."));
-									return (proc->exec());
-							  } else {
-									return (this->runProcess(this->getSetting("system", "gui_sudo").toString(), args));
-							  }
-						}
-				  }
-			}
-
-			*/
-#endif
 
 			return TRUE;
 	  }
