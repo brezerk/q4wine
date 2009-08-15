@@ -522,6 +522,8 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			args.append(exec_string);
 
+			qDebug()<<"runWineBinary [1]: "<<args;
+
 			QProcess *proc;
 			proc = new QProcess();
 			return proc->startDetached( exec, args, execObj.wrkdir );
@@ -584,6 +586,8 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			exec_string.append(cmdargs);
 
 			args.append(exec_string);
+
+			qDebug()<<"runWineBinary [2]: "<<args;
 
 			QProcess *proc;
 			proc = new QProcess();
