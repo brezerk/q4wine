@@ -40,13 +40,13 @@
 #            $2 -- mount point
 
 # Check is $2 a directory?
-if [[ ! -d $2 ]]; then
+if [ ! -d $2 ]; then
 	echo "Error: Can't get mount point directory."
 	exit 255
 fi
 
 # Check is $1 an executable bianry
-if [[ ! -x $1 ]]; then
+if [ ! -x $1 ]; then
 	echo "Error: $1 is not an executable file."
 	exit 255
 fi
@@ -56,22 +56,22 @@ device_name="$(mount | grep $2 | awk '{print $1}')"
 
 #Getting mdconfig binary and check is it executable binary or not.
 mdconfig="$(which mdconfig 2>&1)"
-if [[ ! -x "$mdconfig" ]]; then
+if [ ! -x "$mdconfig" ]; then
 	echo "Error: Can't find mdconfig binary. Does it accesible by PATH variable?"
 	exit 255
 fi
 
 #Now it's time to umount device
 $1 $2
-if [[ $? > 0 ]]; then
+if [ $? > 0 ]; then
 	echo "Error: \"$1 $2\" returns an a error."
 	exit 255
 fi
 
 #Now it's time to get: Is it md device or not? If yes -- use mdconfig to remove it.
-if [[ "$device_name" =~ md* ]]; then
+if [ "$device_name" =~ md* ]; then
 	$mdconfig -d -u$device_name
-	if [[ $? > 0 ]]; then
+	if [ $? > 0 ]; then
 		echo "Error: \"mdconfig -d -u$device_name\" returns an a error."
 		exit 255
 	fi

@@ -234,12 +234,14 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		txtUmountBin->setText(CoreLib->getWhichOut("umount"));
 		txtSudoBin->setText(CoreLib->getWhichOut("sudo"));
 
-		txtGuiSudoBin->setText(CoreLib->getWhichOut("kdesu"));
+		txtGuiSudoBin->setText(CoreLib->getWhichOut("kdesu", FALSE));
 		if (txtGuiSudoBin->text().isEmpty()){
-			txtGuiSudoBin->setText(CoreLib->getWhichOut("gksu"));
-		} else {
+			txtGuiSudoBin->setText(CoreLib->getWhichOut("gksudo", FALSE));
 			if (txtGuiSudoBin->text().isEmpty()){
-				txtGuiSudoBin->setText(CoreLib->getWhichOut("sudo"));
+				txtGuiSudoBin->setText(CoreLib->getWhichOut("gksu", FALSE));
+				if (txtGuiSudoBin->text().isEmpty()){
+					txtGuiSudoBin->setText(CoreLib->getWhichOut("sudo", FALSE));
+				}
 			}
 		}
 

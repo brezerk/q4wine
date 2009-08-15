@@ -3787,7 +3787,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
     <message>
         <location filename="../gui/wizard.cpp" line="549"/>
         <source>Sorry, prefix path is wrong! Directory not exists.</source>
-        <translation>Извините, путь к префику неправилен! Директория не существует.</translation>
+        <translation>Извините, путь к префиксу неправилен! Директория не существует.</translation>
     </message>
     <message>
         <location filename="../gui/wizard.cpp" line="553"/>

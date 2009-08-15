@@ -248,6 +248,13 @@ public:
 	 */
 	bool runProcess(const QString exec, const QStringList args, QString dir = "", bool showLog = TRUE) const;
 
+	/*! \brief Get's string with escaped special characters
+	 *
+	 * \param string	Base string
+	 */
+	QString getEscapeString(const QString string) const;
+
+
 	/*! \brief Get's mount string based on QuikMount type profile
 	 *
 	 * \param profile	Profile type ID
