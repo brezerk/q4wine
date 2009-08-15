@@ -189,6 +189,7 @@ QList<QStringList> corelib::getWineProcessList(){
 								name = kp[i].ki_comm;
 							} else {
 								name = name.split('\\').last();
+								name = name.split('/').last();
 							}
 						} else {
 							qDebug()<< "kvm_getargv failed: " << kvm_geterr(kd);
