@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>420</height>
+    <width>638</width>
+    <height>418</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -515,12 +515,12 @@
                   </item>
                   <item>
                    <property name="text">
-                    <string>1440х900</string>
+                    <string>1440x900</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>1680х1050</string>
+                    <string>1680x1050</string>
                    </property>
                   </item>
                   <item>

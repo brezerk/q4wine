@@ -510,7 +510,8 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			if (!execObj.desktop.isEmpty()){
 				  exec_string.append(" explorer.exe /desktop=");
-				  exec_string.append(execObj.name);
+				  QString repl = execObj.name;
+				  exec_string.append(repl.replace(" ", ""));
 				  exec_string.append(",");
 				  exec_string.append(execObj.desktop);
 			}
@@ -519,6 +520,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			exec_string.append(execObj.execcmd);
 			exec_string.append("\" ");
 			exec_string.append(execObj.cmdargs);
+			exec_string.append(" > /dev/null 2>&1");
 
 			args.append(exec_string);
 
@@ -584,10 +586,8 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			exec_string.append(winebinary);
 			exec_string.append("\" ");
 			exec_string.append(cmdargs);
-
+			exec_string.append(" > /dev/null 2>&1");
 			args.append(exec_string);
-
-			qDebug()<<"runWineBinary [2]: "<<args;
 
 			QProcess *proc;
 			proc = new QProcess();
