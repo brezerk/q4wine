@@ -244,6 +244,7 @@ QVariant corelib::getSetting(const QString group, const QString key, const bool 
 QStringList corelib::getCdromDevices(void) const{
 	  QStringList retVal;
 
+	  /*
 	  QFile file("/etc/fstab");
 	  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
 			this->showError(QObject::tr("Sorry, i can't access to /etc/fstab"));
@@ -264,8 +265,29 @@ QStringList corelib::getCdromDevices(void) const{
 	  }
 
 	  file.close();
+	   */
 
-	  return retVal;
+
+	QDir dir("/dev/");
+	dir.setFilter(QDir::Files | QDir::System);
+	dir.setSorting(QDir::Name);
+
+	QFileInfoList list = dir.entryInfoList();
+	for (int i = 0; i < list.size(); ++i) {
+	    QFileInfo fileInfo = list.at(i);
+
+	    if (fileInfo.fileName().contains("cdrom") or fileInfo.fileName().contains("sr") or fileInfo.fileName().contains("dvd")){
+		 if (fileInfo.isSymLink()){
+			if (!retVal.contains(fileInfo.symLinkTarget()))
+			   retVal.append(fileInfo.symLinkTarget());
+		 } else {
+			if (!retVal.contains(fileInfo.fileName()))
+			   retVal.append(fileInfo.fileName());
+		 }
+	    }
+	}
+
+	return retVal;
 }
 
 QStringList corelib::getWineDlls(QString prefix_lib_path) const{
