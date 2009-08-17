@@ -204,6 +204,12 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
 	settings.endGroup();
 
+#ifdef _OS_FREEBSD_
+	radioFuse->setEnabled(FALSE);
+	radioEmbedded->setEnabled(FALSE);
+#endif
+
+
 	return;
 }
 

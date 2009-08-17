@@ -79,7 +79,13 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 	txtPrefixPath->setText(result.at(1));
 
 	comboDeviceList->addItems(CoreLib->getCdromDevices());
-	comboDeviceList->setCurrentIndex (comboDeviceList->findText(result.at(7)));
+	if (!result.at(7).isEmpty()){
+		comboDeviceList->setCurrentIndex (comboDeviceList->findText(result.at(7)));
+		if (comboDeviceList->currentText().isEmpty())
+			comboDeviceList->setCurrentIndex (0);
+	} else {
+		comboDeviceList->setCurrentIndex (0);
+	}
 
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));

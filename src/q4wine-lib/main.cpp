@@ -244,47 +244,28 @@ QVariant corelib::getSetting(const QString group, const QString key, const bool 
 QStringList corelib::getCdromDevices(void) const{
 	  QStringList retVal;
 
-	  /*
-	  QFile file("/etc/fstab");
-	  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-			this->showError(QObject::tr("Sorry, i can't access to /etc/fstab"));
-	  }
-
-	  retVal<<QObject::tr("<none>");
-
-	  while (1) {
-			QByteArray line = file.readLine();
-
-			if (line.isEmpty())
-				  break;
-
-			if (line.indexOf("cdrom")>=0){
-				  QList<QByteArray> array = line.split(' ').at(0).split('\t');
-				  retVal<<array.at(0);
-			}
-	  }
-
-	  file.close();
-	   */
-
-
 	QDir dir("/dev/");
 	dir.setFilter(QDir::Files | QDir::System);
 	dir.setSorting(QDir::Name);
 
 	QFileInfoList list = dir.entryInfoList();
 	for (int i = 0; i < list.size(); ++i) {
-	    QFileInfo fileInfo = list.at(i);
+		QFileInfo fileInfo = list.at(i);
 
-	    if (fileInfo.fileName().contains("cdrom") or fileInfo.fileName().contains("sr") or fileInfo.fileName().contains("dvd")){
+#ifdef _OS_LINUX_
+		if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^sr")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
+#endif
+#ifdef _OS_FREEBSD_
+		if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^cd")) or fileInfo.fileName().contains(QRegExp("^acd")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
+#endif
 		 if (fileInfo.isSymLink()){
 			if (!retVal.contains(fileInfo.symLinkTarget()))
 			   retVal.append(fileInfo.symLinkTarget());
 		 } else {
-			if (!retVal.contains(fileInfo.fileName()))
-			   retVal.append(fileInfo.fileName());
+			if (!retVal.contains(fileInfo.absoluteFilePath()))
+			   retVal.append(fileInfo.absoluteFilePath());
 		 }
-	    }
+		}
 	}
 
 	return retVal;

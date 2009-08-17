@@ -90,6 +90,11 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		connect(radioFuse, SIGNAL(toggled(bool)), this, SLOT(radioFuse_toggled(bool)));
 		connect(radioEmbedded, SIGNAL(toggled(bool)), this, SLOT(radioEmbedded_toggled(bool)));
 
+#ifdef _OS_FREEBSD_
+		radioFuse->setEnabled(FALSE);
+		radioEmbedded->setEnabled(FALSE);
+#endif
+
 		if (CoreLib->getWhichOut("fuseiso", false).isEmpty()){
 #ifdef WITH_EMBEDDED_FUSEISO
 		   radioEmbedded->setChecked(true);
