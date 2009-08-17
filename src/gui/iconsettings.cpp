@@ -451,7 +451,7 @@ void IconSettings::cmdGetIcon_Click(){
 	  }
 	  dialog.setDirectory(searchPath);
 
-		#ifndef WITH_ICOTOOLS
+		#ifndef WITH_ICOUTILS
 		dialog.setNameFilter(tr("Image files (*.png *.jpg *.gif *.bmp *.xpm)"));
 		#else
 		dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)"));

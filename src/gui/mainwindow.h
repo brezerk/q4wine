@@ -89,7 +89,7 @@
 #include "appsettings.h"
 #include "run.h"
 
-#ifdef WITH_WINETOOLS
+#ifdef WITH_WINETRIKS
   #include "temporary/winetricks.h"
 #endif
 

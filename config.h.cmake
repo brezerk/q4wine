@@ -46,9 +46,9 @@
 #cmakedefine _OS_FREEBSD_
 #cmakedefine _OS_DARWIN_
 
-#cmakedefine WITH_ICOTOOLS
+#cmakedefine WITH_ICOUTILS
 #cmakedefine WITH_DEVELOP_STUFF
-#cmakedefine WITH_WINETOOLS
+#cmakedefine WITH_WINETRIKS
 #cmakedefine WITH_EMBEDDED_FUSEISO
 
 /*

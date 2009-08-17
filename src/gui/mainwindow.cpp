@@ -145,7 +145,7 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 
 
 
-#ifndef WITH_ICOTOOLS
+#ifndef WITH_ICOUTILS
   mainExportIcons->setEnabled(false);
 #endif
 
@@ -307,8 +307,8 @@ void MainWindow::cmdTestWis_Click(){
 }
 
 void MainWindow::cmdWinetricks_Click() {
-#ifndef WITH_WINETOOLS
-  QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without winetriks support.</p><p>If you wish to enable winetriks support add:</p><p> \"-DWITH_WINETOOLS=ON\" to cmake arguments.</p>"));
+#ifndef WITH_WINETRIKS
+  QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without winetriks support.</p><p>If you wish to enable winetriks support add:</p><p> \"-DWITH_WINETRIKS=ON\" to cmake arguments.</p>"));
 #else
   QMessageBox::warning(this, tr("Warning"), tr("<p>Winetricks officaly NOT supported by q4wine.</p><p>There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.</p>"));
 
@@ -412,7 +412,7 @@ void MainWindow::getSettings(){
   val = CoreLib->getSetting("console", "args", false);
   CONSOLE_ARGS=val.toString();
 
-#ifdef WITH_ICOTOOLS
+#ifdef WITH_ICOUTILS
   val = CoreLib->getSetting("icotool", "wrestool");
   WRESTOOL_BIN=val.toString();
   val = CoreLib->getSetting("icotool", "icotool");
@@ -822,6 +822,7 @@ void MainWindow::menuMountImages_triggered ( QAction * action ){
 	 */
 
  if (action->text()==tr("[none]"))
+	 QMessageBox::warning(this, tr("Error"),  tr("No device drive specified in prefix settings."), QMessageBox::Ok);
 	 return;
 
   bool ret;
@@ -2608,7 +2609,7 @@ void MainWindow::dirMountOther_Click(void){
 	Request for unmounting cdrom drve described at wine prefix settings
 	*/
 #ifdef _OS_LINUX_
-  QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO or NRG Image file"), HOME_PATH, tr("iso and nrg files (*.iso *.nrg)"));
+  QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO or NRG Image file"), HOME_PATH, tr("iso and nrg files (*.iso *.nrg *.img *.bin *.mdf)"));
 #endif
 
 #ifdef _OS_FREEBSD_

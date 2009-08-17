@@ -54,12 +54,12 @@ Installation
 	| By default, q4wine will install desktop files in to /usr/share/applications/
 	| You can change install path by adding -DDESKTOP_ENTRY_PATH=/usr/local/share/application to cmake options
 
-        | By default, q4wine need icotools to be installed;
-        | If you wish to disable icotools support add -DWITH_ICOTOOLS=OFF to cmake options
+        | By default, q4wine need icoutils to be installed;
+        | If you wish to disable icoutils support add -DWITH_ICOUTILS=OFF to cmake options
  
         | Note:
-        | By default, q4wine not support winetools;
-        | If you wish to enable winetools support add -DWITH_WINETOOLS=ON to cmake options
+        | By default, q4wine not support winetriks;
+        | If you wish to enable winetools support add -DWITH_WINETRIKS=ON to cmake options
  
         | Note:
         | By default, q4wine not enable developer stuff;
