@@ -48,13 +48,16 @@ class Process : public QDialog, public Ui::Process
 {
 	Q_OBJECT
 	public:
-		Process(QStringList args, QString exec, QString dir, QString info, QString caption, QStringList env = QProcess::systemEnvironment(), QWidget * parent = 0, Qt::WFlags f = 0);
+		Process(QStringList args, QString exec, QString dir, QString info, QString caption, bool showErr = TRUE, QStringList env = QProcess::systemEnvironment(), QWidget * parent = 0, Qt::WFlags f = 0);
 		QProcess *myProcess;
 
 	private slots:
 		void slotFinished(int, QProcess::ExitStatus);
 		void cmdCancel_clicked(void);
 		void slotError(QProcess::ProcessError);
+
+	private:
+		bool showErr;
 
 };
 

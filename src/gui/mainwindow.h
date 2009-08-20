@@ -127,6 +127,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void getWineProccessInfo(void);
 		void CoreFunction_ResizeContent(int tabIndex);
 		void menuMountImages_triggered ( QAction * action );
+		void menuMountRecentImages_triggered ( QAction * action );
 
 		/*
 		 * Icon tray slots
@@ -271,6 +272,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QMenu *menuIcon;
 		QMenu *menuIconVoid;
 		QMenu *menuIconMount;
+		QMenu *menuIconMountRecent;
 		QMenu *menuIconXdgOpendir;
 		QMenu *menuIconWineOpendir;
 

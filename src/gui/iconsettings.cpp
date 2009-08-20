@@ -318,19 +318,21 @@ void IconSettings::cmdGetWorkDir_Click(){
 		}
 	 }
 
+	/*
 	QList<QUrl> add_prefix_urls = this->prefix_urls;
 	if ((searchPath != this->prefix_path) && (QDir(searchPath).exists()))
 		add_prefix_urls << QUrl::fromLocalFile(searchPath);
+	*/
 
 	QFileDialog dialog(this);
-	  dialog.setFilter(QDir::Dirs | QDir::Hidden);
+	  dialog.setFilter(QDir::Dirs);
 
 	  dialog.setFileMode(QFileDialog::Directory);
 	  dialog.setWindowTitle(tr("Open Directory"));
 	  dialog.setDirectory(searchPath);
 	  // This option works only it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
 	  // dialog.setOption(QFileDialog::ShowDirsOnly, true);
-	  dialog.setSidebarUrls(add_prefix_urls);
+	  // dialog.setSidebarUrls(add_prefix_urls);
 
 	if (dialog.exec())
 		fileName = dialog.selectedFiles().first();
@@ -379,17 +381,19 @@ void IconSettings::cmdGetProgram_Click(){
 		}
 	 }
 
+	/*
 	QList<QUrl> add_prefix_urls = this->prefix_urls;
 	if ((searchPath != this->prefix_path) && (QDir(searchPath).exists()))
 		add_prefix_urls << QUrl::fromLocalFile(searchPath);
+	*/
 
 	QFileDialog dialog(this);
-	  dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
+	  dialog.setFilter(QDir::Dirs | QDir::Files );
 	  dialog.setWindowTitle(tr("Open Exe file"));
 	  dialog.setDirectory(searchPath);
 	  dialog.setFileMode(QFileDialog::ExistingFile);
 	  dialog.setNameFilter(tr("Exe files (*.exe)"));
-	  dialog.setSidebarUrls(add_prefix_urls);
+	  //dialog.setSidebarUrls(add_prefix_urls);
 
 	 if (dialog.exec())
 		fileName = dialog.selectedFiles().first();
@@ -422,6 +426,7 @@ void IconSettings::cmdGetIcon_Click(){
 		}
 	}
 
+	/*
 	QList<QUrl> add_prefix_urls = this->prefix_urls;
 	if ((searchPath != this->prefix_path) && (QDir(searchPath).exists()))
 		add_prefix_urls << QUrl::fromLocalFile(searchPath);
@@ -432,17 +437,18 @@ void IconSettings::cmdGetIcon_Click(){
 	addPath.append(APP_SHORT_NAME);
 	addPath.append("/icons");
 
-	if ((QDir(addPath).exists()))
-		add_prefix_urls << QUrl::fromLocalFile(addPath);
+	//if ((QDir(addPath).exists()))
+	//	add_prefix_urls << QUrl::fromLocalFile(addPath);
 
 	addPath=QDir::homePath();
 	addPath.append("/.local/share/icons/");
 
 	if ((QDir(addPath).exists()))
 		add_prefix_urls << QUrl::fromLocalFile(addPath);
+	*/
 
 	QFileDialog dialog(this);
-	  dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
+	  dialog.setFilter(QDir::Dirs | QDir::Files );
 	  dialog.setFileMode(QFileDialog::ExistingFile);
 	  dialog.setWindowTitle(tr("Open image file"));
 	  if ((!iconPath.isEmpty()) and (QFile(iconPath).exists())){
@@ -456,7 +462,7 @@ void IconSettings::cmdGetIcon_Click(){
 		#else
 		dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)"));
 		#endif
-	  dialog.setSidebarUrls(add_prefix_urls);
+	  //dialog.setSidebarUrls(add_prefix_urls);
 
 	 if (dialog.exec())
 		fileName = dialog.selectedFiles().first();
@@ -498,7 +504,7 @@ void IconSettings::cmdGetIcon_Click(){
 			args << "-o" << tmpDir;
 			args << fileName;
 
-			Process *exportProcess = new Process(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Exporting icon from binary file.<br>This can take a while..."), tr("Exporting icon"));
+			Process *exportProcess = new Process(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Exporting icon from binary file.<br>This can take a while..."), tr("Exporting icon"), FALSE);
 
 			if (exportProcess->exec()==QDialog::Accepted){
 			//icotool -x -o ./regedit.png --width=32 --height=32 ./regedit.exe_14_100_0.ico
@@ -522,7 +528,7 @@ void IconSettings::cmdGetIcon_Click(){
 				//Look here, this function checks is some icons found, or not. 5 -- is default number of arguments,
 				//if more -- then we have some ico file to convert
 				if (args.size()>=4){
-					exportProcess = new Process(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Convering icon from binary file.<br>This can take a while..."), tr("Converting icon"));
+					exportProcess = new Process(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Convering icon from binary file.<br>This can take a while..."), tr("Converting icon"), FALSE);
 					if (exportProcess->exec()==QDialog::Accepted){
 						IconsView *iconsView = new IconsView(tmpDir);
 						if (iconsView->exec()==QDialog::Accepted){

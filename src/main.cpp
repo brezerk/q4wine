@@ -228,21 +228,15 @@ int main(int argc, char *argv[])
 	   return -1;
 
 	QStringList tables;
-	tables << "prefix" << "dir" << "icon" << "images";
+	tables << "prefix" << "dir" << "icon" << "images" << "last_run_icon";
 	if (!db.checkDb(tables))
 	   return -1;
 
 	MainWindow mainWin(startState);
 	mainWin.show();
-
 	app.setActivationWindow(&mainWin);
-
 	QObject::connect(&app, SIGNAL(messageReceived(const QString&)), &mainWin, SLOT(messageReceived(const QString&)));
-
-
 	result = app.exec();
-
 	db.close();
-
 	return result;
 }

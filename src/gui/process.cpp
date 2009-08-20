@@ -31,9 +31,11 @@
 
 #include "process.h"
 
-Process::Process (QStringList args, QString exec, QString dir, QString info, QString caption, QStringList env , QWidget * parent, Qt::WFlags f)
+Process::Process (QStringList args, QString exec, QString dir, QString info, QString caption, bool showErr, QStringList env, QWidget * parent, Qt::WFlags f)
 {
 	setupUi(this);
+
+	this->showErr=showErr;
 
 	myProcess = new QProcess(parent);
 	myProcess->setEnvironment(env);
@@ -128,6 +130,9 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 	   * (for example kdesu\gksu)
 	   * So the beast way is to inform user about troubles is to show to him any STDERR messages.
 	   */
+
+	if (!showErr)
+		accept();
 
 	QString lang;
 	lang = getenv("LANG");

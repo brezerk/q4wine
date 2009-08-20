@@ -16,7 +16,20 @@ void DragListWidget::mousePressEvent(QMouseEvent *event){
 	   dragstarted=FALSE;
 	}
 
-	QListWidget::mousePressEvent(event);
+	if (QApplication::keyboardModifiers()==Qt::CTRL){
+		QListWidgetItem *item = this->itemAt(event->x(), event->y());
+
+		if (item){
+			QListWidget::itemClicked ( item );
+			if (!item->isSelected()){
+				item->setSelected(TRUE);
+			} else {
+				item->setSelected(FALSE);
+			}
+		}
+	} else {
+		QListWidget::mousePressEvent(event);
+	}
 }
 
 void DragListWidget::mouseMoveEvent(QMouseEvent *event){

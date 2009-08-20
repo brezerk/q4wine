@@ -36,9 +36,9 @@ DataBase::DataBase(){
 
 bool DataBase::checkDb(const QStringList tables) const{
    /*
-    * Checking database tables.
-    * If not exists, we try to create them.
-    */
+	* Checking database tables.
+	* If not exists, we try to create them.
+	*/
 
    QSqlDatabase db = QSqlDatabase::database();
    QSqlQuery query;
@@ -69,6 +69,10 @@ bool DataBase::checkDb(const QStringList tables) const{
 	   }
 	   if (table == "images"){
 		if(!query.exec("CREATE TABLE images (id INTEGER PRIMARY KEY, name TEXT, path TEXT);"))
+		   return FALSE;
+	   }
+	   if (table == "last_run_icon"){
+		if(!query.exec("CREATE TABLE last_run_icon (wrkdir TEXT, override TEXT, winedebug TEXT, useconsole NUMERIC, display TEXT, cmdargs TEXT, exec TEXT, desktop TEXT, nice TEXT, id INTEGER PRIMARY KEY);"))
 		   return FALSE;
 	   }
 	}

@@ -797,8 +797,26 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 	  menuDirMountImages->addAction(QIcon(":/data/cdrom_menu.png") , images.at(i).at(0));
 	}
 
+	menuDirMount->addSeparator();
+
+	QMenu* menuDirMountRecentImages;
+	menuDirMountRecentImages = new QMenu(this);
+	menuDirMountRecentImages = menuDirMount->addMenu(tr("mount ..."));
+
+	menuDirMountRecentImages->addAction(iconMountOther);
+	menuDirMountRecentImages->addSeparator();
+
+	QSettings settings(APP_SHORT_NAME, "default");
+	QStringList files = settings.value("recent_images").toStringList();
+
+	for (int i = 0; i < files.size(); ++i){
+		menuDirMountRecentImages->addAction(QIcon(":/data/cdrom_menu.png") , files.at(i).split("/").last());
+	}
+
+	connect (menuDirMountRecentImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountRecentImages_triggered(QAction*)));
+
+	menuDirMount->addSeparator();
 	menuDirMount->addAction(dirUnmount);
-	menuDirMount->addAction(dirMountOther);
 
 	connect (menuDirMountImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountImages_triggered(QAction*)));
   }
@@ -817,7 +835,7 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 }
 
 void MainWindow::menuMountImages_triggered ( QAction * action ){
-  /*
+	/*
 	 * This slot process menuDirMountImages and menuIconMountImages triggered signal
 	 */
 
@@ -839,6 +857,44 @@ void MainWindow::menuMountImages_triggered ( QAction * action ){
   } else {
 	statusBar()->showMessage(QObject::tr("Fail to mount %1.").arg(action->text()));
   }
+  return;
+}
+
+
+void MainWindow::menuMountRecentImages_triggered ( QAction * action ){
+	/*
+	 * This slot process menuDirMountImages and menuIconMountImages triggered signal
+	 */
+
+	if (!action)
+		return;
+
+	if (action->text().isEmpty())
+		return;
+
+	QSettings settings(APP_SHORT_NAME, "default");
+	QStringList files = settings.value("recent_images").toStringList();
+
+	for (int i = 0; i < files.size(); ++i){
+		if (files.at(i).contains(action->text().split("/").last())){
+			bool ret;
+			if (twPrograms->currentItem()){
+				if (twPrograms->currentItem()->parent()){
+					ret=CoreLib->mountImage(files.at(i), twPrograms->currentItem()->parent()->text(0));
+				} else {
+					ret=CoreLib->mountImage(files.at(i), twPrograms->currentItem()->text(0));
+				}
+			}
+
+			if (ret){
+				statusBar()->showMessage(QObject::tr("%1 successfully mounted.").arg(action->text()));
+			} else {
+				statusBar()->showMessage(QObject::tr("Fail to mount %1.").arg(action->text()));
+			}
+			break;
+		}
+	}
+
   return;
 }
 
@@ -902,8 +958,26 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint & iPoint){
 		menuIconMountImages->addSeparator();
 	}
 
+	menuIconMount->addSeparator();
+
+	QMenu* menuIconMountRecentImages;
+	menuIconMountRecentImages = new QMenu(this);
+	menuIconMountRecentImages = menuIconMount->addMenu(tr("mount ..."));
+
+	menuIconMountRecentImages->addAction(iconMountOther);
+	menuIconMountRecentImages->addSeparator();
+
+	QSettings settings(APP_SHORT_NAME, "default");
+	QStringList files = settings.value("recent_images").toStringList();
+
+	for (int i = 0; i < files.size(); ++i){
+		menuIconMountRecentImages->addAction(QIcon(":/data/cdrom_menu.png") , files.at(i).split("/").last());
+	}
+
+	connect (menuIconMountRecentImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountRecentImages_triggered(QAction*)));
+
+	menuIconMount->addSeparator();
 	menuIconMount->addAction(iconUnmount);
-	menuIconMount->addAction(iconMountOther);
 
 	images = db_image->getFields();
 	for (int i = 0; i < images.size(); ++i) {
@@ -1082,6 +1156,12 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event){
 		  dirDelete_Click();
 		return true;
 	  }
+
+	  if (keyEvent->key()==Qt::Key_F2){
+		if (twPrograms->currentItem())
+		  dirRename_Click();
+		return true;
+	  }
 	}
 
 	return false;
@@ -1118,6 +1198,12 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event){
 	  if (keyEvent->key()==Qt::Key_Delete){
 		if (lstIcons->currentItem())
 		  iconDelete_Click();
+		return true;
+	  }
+
+	  if (keyEvent->key()==Qt::Key_F2){
+		if (lstIcons->currentItem())
+		  iconRename_Click();
 		return true;
 	  }
 	}
@@ -1798,7 +1884,7 @@ void MainWindow::mainExportIcons_Click(){
   args << "-o" << tmpDir;
   args << fileName;
 
-  Process *exportProcess = new Process(args, WRESTOOL_BIN, HOME_PATH, tr("Exporting icon from binary file.<br>This can take a while..."), tr("Exporting icon"));
+  Process *exportProcess = new Process(args, WRESTOOL_BIN, HOME_PATH, tr("Exporting icon from binary file.<br>This can take a while..."), tr("Exporting icon"), FALSE);
 
   if (exportProcess->exec()==QDialog::Accepted){
 	//icotool -x -o ./regedit.png --width=32 --height=32 ./regedit.exe_14_100_0.ico
@@ -1824,7 +1910,7 @@ void MainWindow::mainExportIcons_Click(){
 	//if more -- then we have some ico file to convert
 	if (args.size()>=4){
 
-	  exportProcess = new Process(args, ICOTOOL_BIN, HOME_PATH, tr("Convering icon from binary file.<br>This can take a while..."), tr("Converting icon"));
+	  exportProcess = new Process(args, ICOTOOL_BIN, HOME_PATH, tr("Convering icon from binary file.<br>This can take a while..."), tr("Converting icon"), FALSE);
 
 	  if (exportProcess->exec()==QDialog::Accepted){
 		IconsView *iconsView = new IconsView(tmpDir);
@@ -1898,7 +1984,7 @@ void MainWindow::createMenuActions(){
   dirUnmount->setStatusTip(tr("Unmounts cdrom drive"));
   connect(dirUnmount, SIGNAL(triggered()), this, SLOT(dirUnmount_Click()));
 
-  dirMountOther = new QAction(tr("mount ..."), lstIcons);
+  dirMountOther = new QAction(QIcon(":/data/folder.png"), tr("Browse ..."), lstIcons);
   dirMountOther->setStatusTip(tr("Browse for other image"));
   connect(dirMountOther, SIGNAL(triggered()), this, SLOT(dirMountOther_Click()));
 
@@ -1952,13 +2038,12 @@ void MainWindow::createMenuActions(){
 
   iconMount = new QAction(tr("mount"), lstIcons);
   iconMount->setStatusTip(tr("Mount image from icon options"));
-  //connect(iconMount, SIGNAL(triggered()), this, SLOT(iconMount_Click()));
 
   iconUnmount = new QAction(tr("umount"), lstIcons);
   iconUnmount->setStatusTip(tr("Unmount image"));
   connect(iconUnmount, SIGNAL(triggered()), this, SLOT(iconUnmount_Click()));
 
-  iconMountOther = new QAction(tr("mount ..."), lstIcons);
+  iconMountOther = new QAction(QIcon(":/data/folder.png"), tr("Browse ..."), lstIcons);
   iconMountOther->setStatusTip(tr("Browse for other image"));
   connect(iconMountOther, SIGNAL(triggered()), this, SLOT(iconMountOther_Click()));
 
@@ -2185,8 +2270,7 @@ void MainWindow::iconDelete_Click(void){
 
 void MainWindow::iconRun_Click(void){
 
-  QListWidgetItem *iconItem;
-  iconItem=lstIcons->currentItem();
+  QListWidgetItem *iconItem=lstIcons->selectedItems().first();
   if (iconItem)
 	lstIcons_ItemDoubleClick(iconItem);
   return;
@@ -2194,7 +2278,7 @@ void MainWindow::iconRun_Click(void){
 
 void MainWindow::iconRename_Click(void){
   QTreeWidgetItem *treeItem=twPrograms->currentItem();
-  QListWidgetItem *iconItem=lstIcons->currentItem();
+  QListWidgetItem *iconItem=lstIcons->selectedItems().first();
   QString prefix_name, dir_name;
   bool ok;
 
@@ -2635,6 +2719,15 @@ void MainWindow::dirMountOther_Click(void){
 	statusBar()->showMessage(QObject::tr("Fail to mount %1.").arg(fileName));
   }
 
+  QSettings settings(APP_SHORT_NAME, "default");
+  QStringList files = settings.value("recent_images").toStringList();
+  files.removeAll(fileName);
+  files.prepend(fileName);
+  while (files.size() > 8)
+	  files.removeLast();
+
+  settings.setValue("recent_images", files);
+
   return;
 }
 
@@ -2645,7 +2738,7 @@ void MainWindow::dirConfigure_Click(void){
 }
 
 void MainWindow::dirInstall_Click(void){
-  //FIXME: Пока нету визарда, надо бы создать
+  //FIXME: no install wizard yet...
   //RunWineUtils("winecfg", twPrograms->currentItem());
 
   QMessageBox::warning(this, tr("WIP"), tr("Sorry, no install wizard yet. It'l implemented at v0.110."));

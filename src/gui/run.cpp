@@ -178,6 +178,9 @@ void Run::cmdOk_Click(){
 		execObj.desktop=cboxDesktopSize->currentText();
 	}
 
+
+
+
 	accept();
 	return;
 }
@@ -302,6 +305,7 @@ void Run::cmdGetProgram_Click(){
 		}
 	 }
 
+	/*
 	QList<QUrl> prefix_urls;
 	// Adding side bar urls for FileOpen dialogs
 	if (QDir(prefix_dir).exists())
@@ -312,14 +316,15 @@ void Run::cmdGetProgram_Click(){
 
 	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
 	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
+	*/
 
 	QFileDialog dialog(this);
-	  dialog.setFilter(QDir::Dirs | QDir::Hidden | QDir::Files );
+	  dialog.setFilter(QDir::Dirs | QDir::Files );
 	  dialog.setWindowTitle(tr("Open Exe file"));
 	  dialog.setDirectory(searchPath);
 	  dialog.setFileMode(QFileDialog::ExistingFile);
 	  dialog.setNameFilter(tr("Exe files (*.exe)"));
-	  dialog.setSidebarUrls(prefix_urls);
+	  //dialog.setSidebarUrls(prefix_urls);
 
 	 if (dialog.exec())
 		fileName = dialog.selectedFiles().first();
