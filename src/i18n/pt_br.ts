@@ -17,7 +17,7 @@
     <message>
         <location filename="../uis/About.ui" line="227"/>
         <source>Utility for wine applications and prefixes management.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilitário para aplicações wine e gerenciamento de prefixos.</translation>
     </message>
     <message>
         <location filename="../uis/About.ui" line="240"/>
@@ -79,7 +79,25 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;FreeBSD support fixes&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#55aa7f;&quot;&gt;amdmi3@amdmi3.ru&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Moscow, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Alexey S. Malakhov&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt; (John Brezerk)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Desenvolvedor principal, mantenedor&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#5f9ea0;&quot;&gt;brezerk@jabber.com.ua&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;brezerk@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Kiev, Ucrânia&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Pavel&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Zinin &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;(pashazz)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Desenvolvedor&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Sergiev Posad, Região de Moscou, Rússia&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Dmitry Marakasov&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Suporte as correções do FreeBSD&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#55aa7f;&quot;&gt;amdmi3@amdmi3.ru&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Moscou, Rússia&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../uis/About.ui" line="326"/>
@@ -106,7 +124,29 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;MiRacLe&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Slackware linux package maintainer&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Sergey V. Dyatko&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Mantenedor do porte para o FreeBSD&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;sergey.dyatko@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Minsk, Biolerrússia&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Markos Chandras &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;(hwoarang)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Mantenedor da empacotamento para Gentoo&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Web&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;http://hwoarang.silverarrow.gr&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Grécia&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Chris.Giles&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Mantenedor do pacote para o Arch linux&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Boris Savelev&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Mantenedor do pacote para o Alt linux&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;MiRacLe&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Mantenedor do pacote para o Slackware linux&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../uis/About.ui" line="377"/>
@@ -123,7 +163,19 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Russian translation&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Sergiev Posad, Moscow region, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Uriy O. Chornoivan&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Tradução para ucraniano&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;yurchor@ukr.net&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Kiev, Ucrânia&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Pavel Zinin&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt; (pashazz)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Tradução para russo&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Sergiev Posad, Região de Moscou, Rússia&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../uis/About.ui" line="409"/>
@@ -156,7 +208,30 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#5f9ea0;&quot;&gt;sspphheerraa@jabber.org&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;andrey.aleksandrovich@googlemail.com&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Kharkov, UA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Sergey V. Dyatko&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Suporte, assistência, teste e conselheiro do porte para o FreeBSD&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;sergey.dyatko@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Minsk, Biolerrússia&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Dmitry Marakasov&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Suporte, assistência, teste, envio e conselheiro do porte para o FreeBSD&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#55aa7f;&quot;&gt;amdmi3@amdmi3.ru&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Sergey Kishchenko (tilarids)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Testador, relate falhas&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#5f9ea0;&quot;&gt;void@jabber.com.ua&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;voidwrk@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Kharkov, Ucrânia&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Andrey A. Maloshtan&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Testador, relate falhas&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#5f9ea0;&quot;&gt;sspphheerraa@jabber.org&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;andrey.aleksandrovich@googlemail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Kharkov, Ucrânia&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message utf8="true">
         <location filename="../uis/About.ui" line="470"/>
@@ -350,7 +425,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;If the disclaimer of warranty and limitation of liability provided above cannot be given local legal effect according to their terms, reviewing courts shall apply local law that most closely approximates an absolute waiver of all civil liability in connection with the Program, unless a warranty or assumption of liability accompanies a copy of the Program in return for a fee.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;END OF TERMS AND CONDITIONS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -397,12 +472,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../uis/AppSettings.ui" line="414"/>
         <source>Tray Icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Ícone da bandeja</translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="420"/>
         <source>Use tray icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilizar ícone na bandeja</translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="447"/>
@@ -497,7 +572,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../uis/AppSettings.ui" line="1059"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Idioma:</translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="1081"/>
@@ -517,7 +592,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../uis/AppSettings.ui" line="1131"/>
         <source>Proxy type:</source>
-        <translation type="unfinished">Tipo de proxy:</translation>
+        <translation>Tipo de proxy:</translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="1289"/>
@@ -560,27 +635,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../uis/AppSettings.ui" line="1323"/>
         <source>Advanced</source>
-        <translation type="unfinished">Avançado</translation>
+        <translation>Avançado</translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="1329"/>
         <source>Advanced comand strings:</source>
-        <translation type="unfinished"></translation>
+        <translation>Strings de comando avançado:</translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="1353"/>
         <source>Mount:</source>
-        <translation type="unfinished"></translation>
+        <translation>Montar:</translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="1388"/>
         <source>Mount image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Montar imagem:</translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="1423"/>
         <source>Umount:</source>
-        <translation type="unfinished"></translation>
+        <translation>Desmontar:</translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="1462"/>
@@ -933,7 +1008,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/iconsettings.cpp" line="576"/>
         <source>No program name specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenhum nome de programa especificado.</translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="583"/>
@@ -949,12 +1024,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/iconsettings.cpp" line="448"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivos de imagem (*.png *.jpg *.gif *.bmp *.xpm)</translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="450"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivos de imagem e binários Win32</translation>
     </message>
     <message>
         <location filename="../gui/iconsettings.cpp" line="598"/>
@@ -1093,7 +1168,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/imagemanager.cpp" line="64"/>
         <source>File path: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Localização do arquivo: %1</translation>
     </message>
     <message>
         <location filename="../gui/imagemanager.cpp" line="111"/>
@@ -1114,7 +1189,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/imagemanager.cpp" line="159"/>
         <source>Rename image</source>
-        <translation type="unfinished"></translation>
+        <translation>Renomear imagem</translation>
     </message>
     <message>
         <location filename="../gui/imagemanager.cpp" line="164"/>
@@ -1141,12 +1216,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/imagemanager.cpp" line="212"/>
         <source>Enter new name</source>
-        <translation type="unfinished"></translation>
+        <translation>Digite um novo nome</translation>
     </message>
     <message>
         <location filename="../gui/imagemanager.cpp" line="212"/>
         <source>Enter new name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Digite um novo nome:</translation>
     </message>
     <message>
         <location filename="../gui/imagemanager.cpp" line="244"/>
@@ -1193,7 +1268,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/mainwindow.cpp" line="2203"/>
         <location filename="../gui/mainwindow.cpp" line="2361"/>
         <source>Sorry. It seems icon already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desculpe. Parece que o ícone já existe.</translation>
     </message>
     <message>
         <location filename="../uis/MainWindow.ui" line="30"/>
@@ -1471,24 +1546,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/mainwindow.cpp" line="535"/>
         <source>Starting %1 ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciando %1 ...</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="538"/>
         <location filename="../gui/mainwindow.cpp" line="544"/>
         <source>%1 started.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 iniciado.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="540"/>
         <location filename="../gui/mainwindow.cpp" line="546"/>
         <source>%1 fail to start.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 falhou ao iniciar.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="565"/>
         <source>Program: &lt;br&gt; Description:</source>
-        <translation type="unfinished">Programа: &lt;br&gt; Descrição:</translation>
+        <translation>Programа: &lt;br&gt; Descrição:</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="636"/>
@@ -1496,225 +1571,225 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/mainwindow.cpp" line="1214"/>
         <location filename="../gui/mainwindow.cpp" line="1215"/>
         <source>%1</source>
-        <translation type="unfinished">%1</translation>
+        <translation>%1</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="805"/>
         <location filename="../gui/mainwindow.cpp" line="906"/>
         <location filename="../gui/mainwindow.cpp" line="925"/>
         <source>mount [%1]</source>
-        <translation type="unfinished">mount [%1]</translation>
+        <translation>mount [%1]</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="824"/>
         <location filename="../gui/mainwindow.cpp" line="926"/>
         <source>umount [%1]</source>
-        <translation type="unfinished">umount: [%1]</translation>
+        <translation>umount: [%1]</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="828"/>
         <location filename="../gui/mainwindow.cpp" line="931"/>
         <source>umount [none]</source>
-        <translation type="unfinished">umount [none]</translation>
+        <translation>umount [none]</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="930"/>
         <source>mount [none]</source>
-        <translation type="unfinished">mount [none]</translation>
+        <translation>mount [none]</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1199"/>
         <source>Select process priority</source>
-        <translation type="unfinished">Selecionar prioridade do processo</translation>
+        <translation>Selecionar prioridade do processo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1199"/>
         <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;O valor da prioridade pode ser no&lt;br&gt;intervalo de PRIO_MIN (-20)&lt;br&gt;à PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Veja &quot;man renice&quot; para mais informações.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;O valor da prioridade pode estar na&lt;br&gt;faixa de PRIO_MIN (-20)&lt;br&gt;à PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Veja &quot;man renice&quot; para mais informações.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1224"/>
         <source>reniceing...</source>
-        <translation type="unfinished">Mudando prioridade...</translation>
+        <translation>Mudando prioridade...</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1228"/>
         <source>Renice fail fail</source>
-        <translation type="unfinished">Falha no renice</translation>
+        <translation>Falha no renice</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1303"/>
         <source>Total process: %1</source>
-        <translation type="unfinished">Total de processos: %1</translation>
+        <translation>Total de processos: %1</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1318"/>
         <source>There are other Fake drive installed in %1 prefix directory.&lt;br&gt;&lt;br&gt;Do you wish to REMOVE ALL FILES from prefix folder?</source>
-        <translation type="unfinished">Há outra unidade virtual instalada no diretório de prefixo %1.&lt;br&gt;&lt;br&gt;Você deseja remover todos os arquivos do diretório prefixo?</translation>
+        <translation>Há outra unidade virtual instalada no diretório de prefixo %1.&lt;br&gt;&lt;br&gt;Você deseja remover todos os arquivos do diretório prefixo?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1324"/>
         <location filename="../gui/mainwindow.cpp" line="1466"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished">Removendo unidade virtual antiga.&lt;br&gt;Isso pode demorar um pouco...</translation>
+        <translation>Removendo unidade virtual antiga.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1324"/>
         <location filename="../gui/mainwindow.cpp" line="1466"/>
         <source>Removing old fake drive</source>
-        <translation type="unfinished">Removendo unidade virtual antiga</translation>
+        <translation>Removendo unidade virtual antiga</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1364"/>
         <source>This action will send a TREM(-9) signal to all wine proccess with WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Essa ação enviará um sinal TERM(-9) para todos os processos wine com WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Você realmente deseja continuar?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1379"/>
         <source>This action will send a TREM(-9) signal to proccess &apos;%2&apos; pid: %1&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Essa ação enviará um sinal TERM(-9) para o processo &apos;%2&apos; de pid: %1&lt;br&gt;&lt;br&gt;É um alto risco para darmos ao estado normal de wine.&lt;br&gt; &lt;br&gt;Você realmente deseja continuar?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1385"/>
         <source>Can&apos;t run: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível executar: %1</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1412"/>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
-        <translation type="unfinished">Desculpe, você não pode excluir o prefixo Padrão.</translation>
+        <translation>Desculpe, você não pode excluir o prefixo Padrão.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1417"/>
         <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="unfinished">Você realmente deseja excluir o prefixo chamado &quot;%1&quot; e todos os ícones associados?</translation>
+        <translation>Você realmente deseja excluir o prefixo chamado &quot;%1&quot; e todos os ícones associados?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1445"/>
         <source>Select file to import</source>
-        <translation type="unfinished">Selecionar arquivo para importar</translation>
+        <translation>Selecionar um arquivo para importar</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1445"/>
         <location filename="../gui/mainwindow.cpp" line="1523"/>
         <source>Images (*.tbz)</source>
-        <translation type="unfinished">Imagens (*.tbz)</translation>
+        <translation>Imagens (*.tbz)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1461"/>
         <source>Do you really wish to delete all old prefix files?</source>
-        <translation type="unfinished">Você realmente deseja excluir todos os arquivos antigos do prefixo?</translation>
+        <translation>Você realmente deseja excluir todos os arquivos antigos do prefixo?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1482"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished">Importar prefixo.&lt;br&gt;Isso pode demorar um pouco...</translation>
+        <translation>Importar prefixo.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1482"/>
         <source>Importing prefix</source>
-        <translation type="unfinished">Importando prefixo</translation>
+        <translation>Importando prefixo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1523"/>
         <source>Select file to export</source>
-        <translation type="unfinished">Selecionar arquivo para exportar</translation>
+        <translation>Selecionar um arquivo para exportar</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1545"/>
         <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished">Exportando prefixo %1.&lt;br&gt; Isso pode demorar um pouco...</translation>
+        <translation>Exportando prefixo %1.&lt;br&gt; Isso pode demorar um pouco...</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1545"/>
         <source>Exporting prefix</source>
-        <translation type="unfinished">Exportando prefixo</translation>
+        <translation>Exportando prefixo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1731"/>
         <location filename="../gui/mainwindow.cpp" line="2636"/>
         <source>WIP</source>
-        <translation type="unfinished">WIP</translation>
+        <translation>WIP</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1731"/>
         <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
-        <translation type="unfinished">Desculpe, ainda não há assistente de instalação. Ele será implementado na versão 0.110.</translation>
+        <translation>Desculpe, ainda não há assistente de instalação. Ele será implementado na versão 0.110.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1747"/>
         <source>Open image file</source>
-        <translation type="unfinished">Abrir arquivo de imagem</translation>
+        <translation>Abrir arquivo de imagem</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1747"/>
         <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
-        <translation type="unfinished">Executável e bibliotecas compartilhadas Win32 (*.exe *.dll);;Executável Win32 (*.exe);;Bibliotecas compartilhadas Win32 (*.dll)</translation>
+        <translation>Executável e bibliotecas compartilhadas Win32 (*.exe *.dll);;Executável Win32 (*.exe);;Bibliotecas compartilhadas Win32 (*.dll)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1786"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished">Exportando ícone do arquivo binário.&lt;br&gt;Isso pode demorar um pouco...</translation>
+        <translation>Exportando ícone do arquivo binário.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1786"/>
         <source>Exporting icon</source>
-        <translation type="unfinished">Exportando ícone</translation>
+        <translation>Exportando ícone</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1795"/>
         <source>%1/</source>
-        <translation type="unfinished">%1/</translation>
+        <translation>%1/</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1812"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished">Convertendo ícone do arquivo binário.&lt;br&gt;Isso pode demorar um pouco...</translation>
+        <translation>Convertendo ícone do arquivo binário.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1812"/>
         <source>Converting icon</source>
-        <translation type="unfinished">Convertendo ícone</translation>
+        <translation>Convertendo ícone</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1846"/>
         <source>Stop current</source>
-        <translation type="unfinished">Parar atual</translation>
+        <translation>Parar atual</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1847"/>
         <source>Send TERM signal to selected process</source>
-        <translation type="unfinished">Enviar o sinal TERM para o processo selecionado</translation>
+        <translation>Enviar o sinal TERM para o processo selecionado</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1850"/>
         <source>Stop wine</source>
-        <translation type="unfinished">Parar Wine</translation>
+        <translation>Parar Wine</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1851"/>
         <source>Send TERM signal to main wine process</source>
-        <translation type="unfinished">Enviar o sinal TERM para o processo principal do Wine</translation>
+        <translation>Enviar o sinal TERM para o processo principal do Wine</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1854"/>
         <source>Refresh list</source>
-        <translation type="unfinished">Atualizar lista</translation>
+        <translation>Atualizar lista</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1855"/>
         <source>Refresh process list</source>
-        <translation type="unfinished">Atualizar a lista de processos</translation>
+        <translation>Atualizar a lista de processos</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1858"/>
         <source>Renice</source>
-        <translation type="unfinished">Alterar prioridade</translation>
+        <translation>Alterar prioridade</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1859"/>
         <source>Set process priority</source>
-        <translation type="unfinished">Definir a prioridade do processo</translation>
+        <translation>Definir a prioridade do processo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1866"/>
@@ -1742,7 +1817,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/mainwindow.cpp" line="2203"/>
         <location filename="../gui/mainwindow.cpp" line="2361"/>
         <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desculpe. Parce que o ícone já existe.&lt;br&gt;Por favor, escolha outro nome, ou cancele a operação.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="303"/>
@@ -1752,180 +1827,180 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/mainwindow.cpp" line="1867"/>
         <source>Run application at current prefix</source>
-        <translation type="unfinished">Executar aplicação no prefixo atual</translation>
+        <translation>Executar aplicação no prefixo atual</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1870"/>
         <location filename="../gui/mainwindow.cpp" line="1910"/>
         <source>New</source>
-        <translation type="unfinished">Novo</translation>
+        <translation>Novo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1871"/>
         <source>Create new directory</source>
-        <translation type="unfinished">Criar um novo diretório</translation>
+        <translation>Criar um novo diretório</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1874"/>
         <location filename="../gui/mainwindow.cpp" line="1926"/>
         <source>Rename</source>
-        <translation type="unfinished">Renomear</translation>
+        <translation>Renomear</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1875"/>
         <source>Rename current directory</source>
-        <translation type="unfinished">Renomear o diretório atual</translation>
+        <translation>Renomear o diretório atual</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1878"/>
         <location filename="../gui/mainwindow.cpp" line="1930"/>
         <source>Delete</source>
-        <translation type="unfinished">Excluir</translation>
+        <translation>Excluir</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1879"/>
         <source>Delete current directory</source>
-        <translation type="unfinished">Excluir o diretório atual</translation>
+        <translation>Excluir o diretório atual</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1882"/>
         <source>Unmount cd drive</source>
-        <translation type="unfinished">Desmontar unidade de CD</translation>
+        <translation>Desmontar unidade de CD</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1883"/>
         <source>Unmounts cdrom drive</source>
-        <translation type="unfinished">Desmontar unidades de CDROM</translation>
+        <translation>Desmontar unidades de CDROM</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1886"/>
         <location filename="../gui/mainwindow.cpp" line="1946"/>
         <source>mount ...</source>
-        <translation type="unfinished">mount ...</translation>
+        <translation>mount ...</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1887"/>
         <location filename="../gui/mainwindow.cpp" line="1947"/>
         <source>Browse for other image</source>
-        <translation type="unfinished">Procurar por outra imagem</translation>
+        <translation>Procurar por outra imagem</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1890"/>
         <source>Configure wine</source>
-        <translation type="unfinished">Configurar Wine</translation>
+        <translation>Configurar Wine</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1891"/>
         <source>Configure Wine general settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configure o Wine nas configurações gerais</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1894"/>
         <source>App install</source>
-        <translation type="unfinished">Instalar aplicações</translation>
+        <translation>Instalar aplicações</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1895"/>
         <source>Runs application install wizard for current prefix</source>
-        <translation type="unfinished">Executar assistente de instalação da aplicação para o prefixo atual</translation>
+        <translation>Executar assistente de instalação da aplicação para o prefixo atual</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1898"/>
         <source>App uninstall</source>
-        <translation type="unfinished">Desinstalar aplicações</translation>
+        <translation>Desinstalar aplicações</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1899"/>
         <source>Runs application uninstall wizard for current prefix</source>
-        <translation type="unfinished">Executar assistente de desinstalação da aplicação para o prefixo atual</translation>
+        <translation>Executar assistente de desinstalação da aplicação para o prefixo atual</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1906"/>
         <source>Run</source>
-        <translation type="unfinished">Executar</translation>
+        <translation>Executar</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1907"/>
         <location filename="../gui/mainwindow.cpp" line="1911"/>
         <source>Create new icon</source>
-        <translation type="unfinished">Criar um novo ícone</translation>
+        <translation>Criar um novo ícone</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1914"/>
         <source>Cut</source>
-        <translation type="unfinished">Cortar</translation>
+        <translation>Cortar</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1915"/>
         <source>Cut selected icons to buffer</source>
-        <translation type="unfinished">Cortar ícones selecionados</translation>
+        <translation>Cortar ícones selecionados</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1918"/>
         <source>Copy</source>
-        <translation type="unfinished">Copiar</translation>
+        <translation>Copiar</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1919"/>
         <source>Copy selected icons to buffer</source>
-        <translation type="unfinished">Copiar ícones selecionados</translation>
+        <translation>Copiar ícones selecionados</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1922"/>
         <source>Paste</source>
-        <translation type="unfinished">Colar</translation>
+        <translation>Colar</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1923"/>
         <source>Paste selected icons from buffer to selected folder</source>
-        <translation type="unfinished">Colar ícones para a pasta selecionada</translation>
+        <translation>Colar ícones para a pasta selecionada</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1927"/>
         <source>Rename current icon</source>
-        <translation type="unfinished">Renomear ícone atual</translation>
+        <translation>Renomear ícone atual</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1931"/>
         <source>Delete current icon</source>
-        <translation type="unfinished">Excluir o ícone atual</translation>
+        <translation>Excluir o ícone atual</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1935"/>
         <source>Modify current icon options</source>
-        <translation type="unfinished">Alterar opções do ícone atual</translation>
+        <translation>Alterar opções do ícone atual</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1938"/>
         <source>mount</source>
-        <translation type="unfinished">mount</translation>
+        <translation>mount</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1939"/>
         <source>Mount image from icon options</source>
-        <translation type="unfinished">Montar imagem das opções do ícone</translation>
+        <translation>Montar imagem das opções do ícone</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1942"/>
         <source>umount</source>
-        <translation type="unfinished">umount</translation>
+        <translation>umount</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1943"/>
         <source>Unmount image</source>
-        <translation type="unfinished">Desmontar imagem</translation>
+        <translation>Desmontar imagem</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1954"/>
         <location filename="../gui/mainwindow.cpp" line="1966"/>
         <source>Open icon directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir o diretório do ícone</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1955"/>
         <location filename="../gui/mainwindow.cpp" line="1967"/>
         <source>Open directory for current program</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir diretório para o programa atual</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1958"/>
@@ -1933,172 +2008,172 @@ p, li { white-space: pre-wrap; }
         <location filename="../gui/mainwindow.cpp" line="1970"/>
         <location filename="../gui/mainwindow.cpp" line="1971"/>
         <source>Open prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir diretório do prefixo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1962"/>
         <location filename="../gui/mainwindow.cpp" line="1974"/>
         <source>Open mount point directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir diretório do ponto de montagem</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1963"/>
         <location filename="../gui/mainwindow.cpp" line="1975"/>
         <source>Open mount point directory for current prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir diretório do ponto de montagem para o prefixo atual</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1982"/>
         <source>Create new</source>
-        <translation type="unfinished">Criar um novo</translation>
+        <translation>Criar um novo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1983"/>
         <source>Create new prefix</source>
-        <translation type="unfinished">Criar um novo prefixo</translation>
+        <translation>Criar um novo prefixo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1986"/>
         <location filename="../gui/mainwindow.cpp" line="1987"/>
         <source>Import prefix</source>
-        <translation type="unfinished">Importar prefixo</translation>
+        <translation>Importar prefixo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1991"/>
         <location filename="../gui/mainwindow.cpp" line="1992"/>
         <source>Export prefix</source>
-        <translation type="unfinished">Exportar prefixo</translation>
+        <translation>Exportar prefixo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="1996"/>
         <location filename="../gui/mainwindow.cpp" line="1997"/>
         <source>Delete prefix</source>
-        <translation type="unfinished">Excluir prefixo</translation>
+        <translation>Excluir prefixo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2001"/>
         <location filename="../gui/mainwindow.cpp" line="2002"/>
         <source>Edit prefix settings</source>
-        <translation type="unfinished">Editar as configurações do prefixo</translation>
+        <translation>Editar as configurações do prefixo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2025"/>
         <location filename="../gui/mainwindow.cpp" line="2075"/>
         <source>Mount iso...</source>
-        <translation type="unfinished">Montando iso...</translation>
+        <translation>Montando iso...</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2036"/>
         <location filename="../gui/mainwindow.cpp" line="2067"/>
         <location filename="../gui/mainwindow.cpp" line="2089"/>
         <source>Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Procurar</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2041"/>
         <location filename="../gui/mainwindow.cpp" line="2071"/>
         <location filename="../gui/mainwindow.cpp" line="2093"/>
         <source>Wine browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Procurar Wine</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2107"/>
         <source>%1/%2</source>
-        <translation type="unfinished">%1/%2</translation>
+        <translation>%1/%2</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2109"/>
         <location filename="../gui/mainwindow.cpp" line="2112"/>
         <source>:/%1</source>
-        <translation type="unfinished">:/%1</translation>
+        <translation>:/%1</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2158"/>
         <source>Delete Icon</source>
-        <translation type="unfinished">Excluir ícone</translation>
+        <translation>Excluir ícone</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2158"/>
         <source>Do you want to delete all selected icons?</source>
-        <translation type="unfinished">Você deseja excluir todos os ícones selecionados?</translation>
+        <translation>Você deseja excluir todos os ícones selecionados?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2199"/>
         <source>Enter new icon name</source>
-        <translation type="unfinished">Digite o novo nome do ícone</translation>
+        <translation>Digite o novo nome do ícone</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2199"/>
         <source>Icon name:</source>
-        <translation type="unfinished">Nome do ícone:</translation>
+        <translation>Nome do ícone:</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2539"/>
         <source>Enter new directory name</source>
-        <translation type="unfinished">Digite o nome do novo diretório</translation>
+        <translation>Digite o nome do novo diretório</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2539"/>
         <location filename="../gui/mainwindow.cpp" line="2655"/>
         <source>Directory name:</source>
-        <translation type="unfinished">Nome do diretório:</translation>
+        <translation>Nome do diretório:</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2545"/>
         <location filename="../gui/mainwindow.cpp" line="2554"/>
         <source>Sorry, but directory named %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desculpe, mas o diretório chamado %1 já existe.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2597"/>
         <source>Open ISO or NRG Image file</source>
-        <translation type="unfinished">Abrir arquivo de imagem ISO ou NRG</translation>
+        <translation>Abrir arquivo de imagem ISO ou NRG</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2597"/>
         <source>iso and nrg files (*.iso *.nrg)</source>
-        <translation type="unfinished">Arquivos iso ou nrg (*.iso *.nrg)</translation>
+        <translation>Arquivos iso ou nrg (*.iso *.nrg)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2601"/>
         <source>Open ISO Image file</source>
-        <translation type="unfinished">Abrir arquivo de imagem ISO</translation>
+        <translation>Abrir arquivo de imagem ISO</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2601"/>
         <source>iso files (*.iso)</source>
-        <translation type="unfinished">Arquivos iso (*.iso)</translation>
+        <translation>Arquivos iso (*.iso)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2636"/>
         <source>Sorry, no install wizard yet. It&apos;l implemented at v0.110.</source>
-        <translation type="unfinished">Desculpe, ainda não há assistente de instalação. Ele será implementado na versão 0.110.</translation>
+        <translation>Desculpe, ainda não há assistente de instalação. Ele será implementado na versão 0.110.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2655"/>
         <source>Enter new name for directory</source>
-        <translation type="unfinished">Digite um novo nome para o diretório</translation>
+        <translation>Digite um novo nome para o diretório</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2659"/>
         <source>Sorry. It seems directory already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desculpe. Parece que o diretório já existe.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2659"/>
         <source>Sorry. It seems directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desculpe. Parece que o diretório já existe.&lt;br&gt;Por favor, escolha um outro nome, ou cancele a operação.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2681"/>
         <source>Q4Wine</source>
-        <translation type="unfinished">Q4Wine</translation>
+        <translation>Q4Wine</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2681"/>
         <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
 </source>
-        <translation type="unfinished">Você realmente deseja excluir a pasta chamada &quot;%1&quot; e todos os ícones associados?
+        <translation>Você realmente deseja excluir a pasta chamada &quot;%1&quot; e todos os ícones associados?
 </translation>
     </message>
 </context>
@@ -2215,7 +2290,7 @@ Nota: deixe em branco para o padrão.</translation>
     <message>
         <location filename="../gui/prefixsettings.cpp" line="145"/>
         <source>Please, enter prefix name</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, digite o nome do prefixo</translation>
     </message>
     <message>
         <location filename="../gui/prefixsettings.cpp" line="151"/>
@@ -2331,23 +2406,23 @@ Nota: deixe em branco para o padrão.</translation>
         <location filename="../gui/mainwindow.cpp" line="849"/>
         <location filename="../gui/mainwindow.cpp" line="2618"/>
         <source>%1 successfully mounted.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 montada com sucesso.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="851"/>
         <location filename="../gui/mainwindow.cpp" line="2620"/>
         <source>Fail to mount %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha ao montar %1.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2585"/>
         <source>Drive successfully umounted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Drive desmontado com sucesso.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="2587"/>
         <source>Fail to umount drive.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha ao montar drive.</translation>
     </message>
     <message>
         <location filename="../core/registry.cpp" line="55"/>
@@ -2401,12 +2476,12 @@ Nota: deixe em branco para o padrão.</translation>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="155"/>
         <source>&lt;p&gt;It seems q4wine can not run kvm_openfiles.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;Parece que q4wine não pôde executar kvm_openfiles.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Parece que o q4wine não pôde executar kvm_openfiles.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="164"/>
         <source>&lt;p&gt;It seems q4wine can not run kvm_getprocs.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;Parece que q4wine não pôde executar kvm_getprocs.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Parece que o q4wine não pôde executar kvm_getprocs.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="177"/>
@@ -2414,71 +2489,71 @@ Nota: deixe em branco para o padrão.</translation>
         <location filename="../q4wine-lib/main.cpp" line="183"/>
         <location filename="../q4wine-lib/main.cpp" line="215"/>
         <source>%1</source>
-        <translation type="unfinished">%1</translation>
+        <translation>%1</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="235"/>
         <source>&lt;p&gt;Error while loading application settings by key: &apos;%1&apos;. File or path not exists: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Please, go to %3 options dialog and set it.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Erro ao carregar configurações da aplicação pela chave: &apos;%1&apos;. Arquivo ou local não existe: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Por favor, vá até %3 no diálogo das opções e defina-o.&lt;p&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="246"/>
         <source>Sorry, i can&apos;t access to /etc/fstab</source>
-        <translation type="unfinished"></translation>
+        <translation>Desculpe, eu não posso acessar /etc/fstab</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="313"/>
         <source>Can&apos;t find or execute &apos;%1&apos; binary. See INSTALL file for application depends.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível localizar ou executar o binário &apos;%1&apos;. Veja o arquivo INSTALL para as dependências da aplicação.</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="324"/>
         <location filename="../q4wine-lib/main.cpp" line="327"/>
         <source>%1 | grep %2</source>
-        <translation type="unfinished">%1 | grep %2</translation>
+        <translation>%1 | grep %2</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="353"/>
         <source>-u%1</source>
-        <translation type="unfinished">-u%1</translation>
+        <translation>-u%1</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="461"/>
         <source> WINEDLLOVERRIDES=&apos;%1&apos; </source>
-        <translation type="unfinished"></translation>
+        <translation> WINEDLLOVERRIDES=&apos;%1&apos; </translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="465"/>
         <source> WINEDEBUG=%1 </source>
-        <translation type="unfinished"> WINEDEBUG=%1 </translation>
+        <translation> WINEDEBUG=%1 </translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="469"/>
         <source> DISPLAY=%1 </source>
-        <translation type="unfinished"> DISPLAY=%1 </translation>
+        <translation> DISPLAY=%1 </translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="612"/>
         <location filename="../q4wine-lib/main.cpp" line="684"/>
         <source>It seems no mount point was set in prefix options.&lt;br&gt;You might need to set it manualy.</source>
-        <translation type="unfinished">Parece que nenhum ponto de montagem foi definido nas opções do prefixo.&lt;br&gt;Pode ser necessário defini-lo manualmente.</translation>
+        <translation>Parece que nenhum ponto de montagem foi definido nas opções do prefixo.&lt;br&gt;Pode ser necessário defini-lo manualmente.</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="669"/>
         <source>Mounting %1 into %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Montando %1 em %2</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="669"/>
         <location filename="../q4wine-lib/main.cpp" line="717"/>
         <location filename="../q4wine-lib/main.cpp" line="740"/>
         <source>Mounting...</source>
-        <translation type="unfinished">Montando...</translation>
+        <translation>Montando...</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="814"/>
         <source>It seems the process crashed. STDERR log: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Parece que o processo fechou abruptamente. Registro da saída de erro: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="826"/>
@@ -2491,12 +2566,12 @@ Nota: deixe em branco para o padrão.</translation>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="858"/>
         <source>env WINEPREFIX=&quot;%1&quot; wineserver -kill</source>
-        <translation type="unfinished">env WINEPREFIX=&quot;%1&quot; wineserver -kill</translation>
+        <translation>env WINEPREFIX=&quot;%1&quot; wineserver -kill</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="865"/>
         <source>Can&apos;t run: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível executar: %1</translation>
     </message>
     <message>
         <location filename="../core/database/initdb.h" line="43"/>
@@ -2524,12 +2599,12 @@ Nota: deixe em branco para o padrão.</translation>
         <location filename="../core/database/prefix.cpp" line="367"/>
         <location filename="../q4wine-lib/main.cpp" line="249"/>
         <source>&lt;none&gt;</source>
-        <translation type="unfinished">&lt;nenhum&gt;</translation>
+        <translation>&lt;nenhum&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="144"/>
         <source>Prefix named &quot;%1&quot; not exists. Run &quot;q4wine-cli -pl&quot; for prefix list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Prefixo chamado &quot;%1&quot; não existe. Executar q4wine-cli -pl&quot; para listar prefixo.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="219"/>
@@ -2540,37 +2615,37 @@ Nota: deixe em branco para o padrão.</translation>
         <location filename="../q4wine-cli/main.cpp" line="370"/>
         <location filename="../q4wine-cli/main.cpp" line="420"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenhum prefixo atual definido. Definir prefixo via chave &quot;-p &lt;nome_do_prefixo&gt;&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="224"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenhum ícone atual definido. Definir ícone via chave &quot;-i &lt;icon_name&gt;&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="229"/>
         <source>Icon named &quot;%1&quot; not exists.  Run &quot;q4wine-cli -il&quot; for icon list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ícone chamado &quot;%1&quot; não existe; Executar &quot;q4wine-cli -il&quot; para listar ícone.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="243"/>
         <source>Wine process list</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de processos Wine</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="245"/>
         <source>Wine process list for &quot;%1&quot; prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de processos do Wine para o prefixo &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="249"/>
         <source>PID</source>
-        <translation type="unfinished">PID</translation>
+        <translation>PID</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="249"/>
         <source>Nice</source>
-        <translation type="unfinished"></translation>
+        <translation>Prioridade</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="249"/>
@@ -2579,287 +2654,287 @@ Nota: deixe em branco para o padrão.</translation>
         <location filename="../q4wine-cli/main.cpp" line="300"/>
         <location filename="../q4wine-cli/main.cpp" line="309"/>
         <source>Name</source>
-        <translation type="unfinished">Nome</translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="249"/>
         <source>Prefix path</source>
-        <translation type="unfinished"></translation>
+        <translation>Local do prefixo</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="261"/>
         <source>Prefix list</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista do prefixo</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="262"/>
         <location filename="../q4wine-cli/main.cpp" line="309"/>
         <source>Path</source>
-        <translation type="unfinished">Caminho</translation>
+        <translation>Local</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="277"/>
         <source>Prefix &quot;%1&quot; has following dir list</source>
-        <translation type="unfinished"></translation>
+        <translation>O prefixo &quot;%1&quot; tem a seguinte lista de diretórios</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="290"/>
         <source>Dir named &quot;%1&quot; not exists. Run &quot;q4wine-cli -dl&quot; for dir list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diretório chamado &quot;%1&quot; não existe. Executar &quot;q4wine-cli -dl&quot; para listar diretório.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="296"/>
         <source>Prefix &quot;%1&quot; has following icon list</source>
-        <translation type="unfinished"></translation>
+        <translation>O prefixo &quot;%1&quot; tem a seguinte lista de ícones</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="298"/>
         <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
-        <translation type="unfinished"></translation>
+        <translation>O prefixo &quot;%1&quot; tem a seguinte lista de ícones para o diretório &quot;%2&quot;</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="300"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Descrição</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="308"/>
         <source>q4wine has following CD images in database</source>
-        <translation type="unfinished"></translation>
+        <translation>O q4wine tem as seguintes imagens de CD na base de dados</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="320"/>
         <source>Killing prefix &quot;%1&quot; wineserver.</source>
-        <translation type="unfinished"></translation>
+        <translation>Finalizando winesever de prefixo &quot;%1&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="336"/>
         <location filename="../q4wine-cli/main.cpp" line="376"/>
         <location filename="../q4wine-cli/main.cpp" line="400"/>
         <source>No mount point set in prefix configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenhum poonto de montagem definido na configuração do prefixo.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="342"/>
         <source>No cdrom drive set in prefix configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenhuma unidade de CD-ROM definida na configuração do prefixo.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="345"/>
         <source>Mounting drive &quot;%1&quot; into mount point &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Montando unidade &quot;%1&quot; no ponto de montagem &quot;%2&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="355"/>
         <source>No CD iamge &quot;%1&quot; exists. Run &quot;q4wine-cli -cl&quot; for CD image list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenhuma imagem de CD &quot;%1&quot; existe. Executar &quot;q4wine-cli -cl&quot; para listar imagem de CD.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="380"/>
         <source>Umounting mount point &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Desmontando ponto de montagem &quot;%1&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="391"/>
         <source>Mounted media list for all prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Listar mídia montada para todos os prefixos</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="392"/>
         <source>Prefix</source>
-        <translation type="unfinished">Prefixo</translation>
+        <translation>Prefixo</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="392"/>
         <location filename="../q4wine-cli/main.cpp" line="405"/>
         <source>Mount point</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponto de montagem</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="392"/>
         <location filename="../q4wine-cli/main.cpp" line="405"/>
         <source>Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Mídia</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="404"/>
         <source>Mounted media list for prefix &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Listar mídia montada para o prefixo &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="410"/>
         <source>q4wine-cli %1</source>
-        <translation type="unfinished"></translation>
+        <translation>q4wine-cli %1</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="411"/>
         <source>(Copyright (C) 2008-2009, brezblock core team.</source>
-        <translation type="unfinished"></translation>
+        <translation>(Copyright (C) 2008-2009, equipe central brezblock.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="412"/>
         <source>License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Licença GPLv3+: versão 3 ou superior da GPL &lt;http://gnu.org/licenses/gpl.html&gt;.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="413"/>
         <source>This is free software: you are free to change and redistribute it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isto é software livre: você é livre para mudar e redistribuí-lo.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="414"/>
         <source>There is NO WARRANTY, to the extent permitted by law.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não há qualquer garantia, na medida do permitido por lei.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="416"/>
         <source>Author: Malakhov Alexey aka John Brezerk.</source>
-        <translation type="unfinished"></translation>
+        <translation>Autor: Malakhov Alexey aka John Brezerk.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="427"/>
         <source>File &quot;%1&quot; not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo &quot;%1&quot; não existe.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="450"/>
         <source>Usage:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uso:</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="451"/>
         <source>  q4wine-cli [KEY]...</source>
-        <translation type="unfinished"></translation>
+        <translation>  q4wine-cli [KEY]...</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="452"/>
         <source>  q4wine-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>  q4wine-cli -p &lt;nome_do_prefixo&gt; [-d &lt;diretório&gt;] -i &lt;ícone&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="453"/>
         <source>  q4wine-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [args]</source>
-        <translation type="unfinished"></translation>
+        <translation>  q4wine-cli -p &lt;nome_do_prefixo&gt; -b &lt;local_do_binário_windows&gt; [args]</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="454"/>
         <source>Console utility for wine applications and prefixes management.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilitário do console para aplicações do Wine e gerenciamento de prefixos.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="455"/>
         <source>KEYs list:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de teclas:</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="456"/>
         <source>display this help and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar essa ajuda e sair</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="457"/>
         <source>output version information and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Saída da informação da versão e sair</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="458"/>
         <source>output wine process list for current prefix or for all prefixes and exit </source>
-        <translation type="unfinished"></translation>
+        <translation>Saida da lista de processos do wine para o prefixo atual ou para todos os prefixos e sair </translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="459"/>
         <source>sets the current prefix name</source>
-        <translation type="unfinished"></translation>
+        <translation>Definido o nome do prefixo atual</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="460"/>
         <source>sets the current direcory name</source>
-        <translation type="unfinished"></translation>
+        <translation>Definido o nome do diretório atual</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="461"/>
         <source>sets the current icon name</source>
-        <translation type="unfinished"></translation>
+        <translation>Definido o nome do ícone atual</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="462"/>
         <source>sets the cd iamge name</source>
-        <translation type="unfinished"></translation>
+        <translation>Definido o nome da imagem do CD</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="463"/>
         <source>sets the path to windows binary for execute with current prefix settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Definido o caminho para o binário windows para executar com as configurações do prefixo atual</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="475"/>
         <source> -1 if serious troubles</source>
-        <translation type="unfinished"></translation>
+        <translation> -1 se graves problemas</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="464"/>
         <source>sends -9 term signal to current prefix precess or for all prefixes processes</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviado o sinal term -9 para o processo do prefixo atual ou para todos os processos dos prefixos</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="465"/>
         <source>output all exesting prefixes names and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Saída de todos os nomes de prefixos existentes e sair</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="466"/>
         <source>output all exesting dir names for current prefix and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Saída de todos os nomes de diretórios existentes para o prefixo atual e sair</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="467"/>
         <source>output all exesting icon names for current prefix/directory and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Saída de todos os nomes de ícones existentes para o prefixo/dirtório e sair</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="468"/>
         <source>output all cd images list and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Saída de todas as listas de imagens de CD-ROM e sair</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="469"/>
         <source>output all mounted media for current prefix or all prefixes and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Saída de todas as mídias montadas para o prefixo atual ou todos os prefixos e sair</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="470"/>
         <source>mount an cd iamage or drive for current prefix and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Montar uma imagem ou unidade de CD-ROM para o prefixo atual e sair</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="471"/>
         <source>umount an cd iamage or drive for current prefix and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Desmontar uma imagem ou unidade de CD-ROM para o prefixo atual e sair</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="473"/>
         <source>Exit status:</source>
-        <translation type="unfinished"></translation>
+        <translation>Status da saída:</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="474"/>
         <source>  0 if OK,</source>
-        <translation type="unfinished"></translation>
+        <translation>  0 se OK,</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="477"/>
         <source>Report q4wine bugs to brezerk@gmail.com</source>
-        <translation type="unfinished"></translation>
+        <translation>Relate falhas de q4wine para brezerk@gmail.com</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="478"/>
         <source>q4wine homepage: &lt;http://sourceforge.net/projects/q4wine/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Página de q4wine: &lt;http://sourceforge.net/projects/q4wine/&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="479"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuda geral usando software GNU: &lt;http://www.gnu.org/gethelp/&gt;</translation>
     </message>
 </context>
 <context>
@@ -3199,7 +3274,11 @@ p, li { white-space: pre-wrap;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="863"/>
@@ -4282,12 +4361,12 @@ Note: deixe em brando se você não precisar dele.</translation>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="693"/>
         <source>%1 | grep %2</source>
-        <translation type="unfinished">%1 | grep %2</translation>
+        <translation>%1 | grep %2</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="729"/>
         <source>-u%1</source>
-        <translation type="unfinished">-u%1</translation>
+        <translation>-u%1</translation>
     </message>
 </context>
 <context>
@@ -4336,7 +4415,7 @@ Note: deixe em brando se você não precisar dele.</translation>
     <message>
         <location filename="../temporary/winetricks.ui" line="44"/>
         <source>Click on item to show help here</source>
-        <translation type="unfinished"></translation>
+        <translation>Clicar no item para mostrar ajuda aqui</translation>
     </message>
     <message>
         <location filename="../temporary/winetricks.ui" line="14"/>
@@ -4354,7 +4433,7 @@ Note: deixe em brando se você não precisar dele.</translation>
     <message>
         <location filename="../temporary/winetrickshelp.ui" line="36"/>
         <source>Select option from list to show help</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecionar a opção da lista para mostrar ajuda</translation>
     </message>
 </context>
 </TS>
