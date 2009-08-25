@@ -43,6 +43,7 @@ SET( Q4WINE_GUI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
 	${CMAKE_SOURCE_DIR}/src/core/database/dir.cpp
 	${CMAKE_SOURCE_DIR}/src/core/database/icon.cpp
+	${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.cpp
 	${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
 	${CMAKE_SOURCE_DIR}/src/core/registry.cpp
 	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.cpp
@@ -77,6 +78,7 @@ SET ( Q4WINE_GUI_HEADERS
 	${CMAKE_SOURCE_DIR}/src/core/database/prefix.h
 	${CMAKE_SOURCE_DIR}/src/core/database/dir.h
 	${CMAKE_SOURCE_DIR}/src/core/database/icon.h
+	${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.h
 	${CMAKE_SOURCE_DIR}/src/core/database/image.h
 	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.h
 	${CMAKE_SOURCE_DIR}/src/gui/about.h

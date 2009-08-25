@@ -10,6 +10,8 @@ Version 0.113
   - Added embeded q4wine-mount (This is a copy of fuseiso + RH path);
        Note: use this if you too lazy to compile fuseiso from SF and apply pathes;
   - fuseiso ( http://sourceforge.net/projects/fuseiso/ ) full support.
+  - q4wine now remembers 8 recent mounted images;
+  - q4wine now remembers 8 recent runned binaryes via Run dialog;
   - QtSingleApp integration. Now you can run only one instance of q4wine-gui;
   - Online documentation;
   - New website: http://q4wine.brezblock.org.ua/;

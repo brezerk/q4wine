@@ -48,6 +48,7 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
   // Creating database classes
   db_dir = new Dir();
   db_icon = new Icon();
+  db_last_run_icon = new Last_Run_Icon();
   db_image = new Image();
   db_prefix = new Prefix();
 
@@ -143,8 +144,6 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
   connect(lstIcons, SIGNAL(startDrag ()), this, SLOT(startDrag()));
   connect(lstIcons, SIGNAL(startDrop(QList<QUrl>)), this, SLOT(startDrop(QList<QUrl>)));
 
-
-
 #ifndef WITH_ICOUTILS
   mainExportIcons->setEnabled(false);
 #endif
@@ -192,7 +191,7 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 
   // FIXME: Remove this as replace for shared library
   //core = new CoreMethods();
-
+  connect (menuRun, SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
   return;
 }
 
@@ -732,106 +731,122 @@ void MainWindow::tableProc_ShowContextMenu(const QPoint point){
 }
 
 void MainWindow::twPrograms_ShowContextMenu(const QPoint){
-  /*
+	/*
 		Custom context menu for twPrograms
 	*/
 
-  QTreeWidgetItem *treeItem = twPrograms->currentItem();
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 
-  QString cdrom_drive, cdrom_mount;
-  QStringList result;
-  QList<QStringList> images;
+	QString cdrom_drive, cdrom_mount;
+	QStringList result;
+	QList<QStringList> images;
 
-  if (!treeItem)
-	return;
+	if (!treeItem)
+		return;
 
-  this->twPrograms_ItemClick(treeItem, 0);
+	this->twPrograms_ItemClick(treeItem, 0);
 
-  if (treeItem->parent()){
-	result = db_prefix->getFieldsByPrefixName(treeItem->parent()->text(0));
-  } else {
-	result = db_prefix->getFieldsByPrefixName(treeItem->text(0));
-  }
-
-  xdgOpenPrefixDir->setEnabled(TRUE);
-  winefileOpenPrefixDir->setEnabled(TRUE);
-
-  cdrom_drive = result.at(7);
-  cdrom_mount = result.at(6);
-
-  if (cdrom_mount.isEmpty()){
-	xdgOpenMountDir->setEnabled(FALSE);
-	winefileOpenMountDir->setEnabled(FALSE);
-  } else {
-	xdgOpenMountDir->setEnabled(TRUE);
-	winefileOpenMountDir->setEnabled(TRUE);
-  }
-
-  QMenu* menuDirMountImages;
-  menuDirMountImages = new QMenu(this);
-
-  if (!treeItem->parent()){
-	dirRename->setEnabled(FALSE);
-	dirDelete->setEnabled(FALSE);
-  } else {
-	dirRename->setEnabled(TRUE);
-	dirDelete->setEnabled(TRUE);
-  }
-
-  menuDirMount->clear();
-  menuDirMount->setEnabled(FALSE);
-
-  if (!cdrom_mount.isEmpty()){
-	menuDirMount->setEnabled(TRUE);
-	menuDirMountImages = menuDirMount->addMenu(tr("mount [%1]").arg(CoreLib->getMountedImages(cdrom_mount)));
-	if (!cdrom_drive.isEmpty()){
-		menuDirMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
-		menuDirMountImages->addSeparator();
+	if (treeItem->parent()){
+		result = db_prefix->getFieldsByPrefixName(treeItem->parent()->text(0));
 	} else {
-		menuDirMountImages->addAction(QIcon(":/data/drive_menu.png"), tr("[none]"));
-		menuDirMountImages->addSeparator();
+		result = db_prefix->getFieldsByPrefixName(treeItem->text(0));
 	}
 
-	images = db_image->getFields();
-	for (int i = 0; i < images.size(); ++i) {
-	  menuDirMountImages->addAction(QIcon(":/data/cdrom_menu.png") , images.at(i).at(0));
+	xdgOpenPrefixDir->setEnabled(TRUE);
+	winefileOpenPrefixDir->setEnabled(TRUE);
+
+	cdrom_drive = result.at(7);
+	cdrom_mount = result.at(6);
+
+	if (cdrom_mount.isEmpty()){
+		xdgOpenMountDir->setEnabled(FALSE);
+		winefileOpenMountDir->setEnabled(FALSE);
+	} else {
+		xdgOpenMountDir->setEnabled(TRUE);
+		winefileOpenMountDir->setEnabled(TRUE);
 	}
 
-	menuDirMount->addSeparator();
+	QMenu* menuDirMountImages;
+	menuDirMountImages = new QMenu(this);
 
-	QMenu* menuDirMountRecentImages;
-	menuDirMountRecentImages = new QMenu(this);
-	menuDirMountRecentImages = menuDirMount->addMenu(tr("mount ..."));
-
-	menuDirMountRecentImages->addAction(iconMountOther);
-	menuDirMountRecentImages->addSeparator();
-
-	QSettings settings(APP_SHORT_NAME, "default");
-	QStringList files = settings.value("recent_images").toStringList();
-
-	for (int i = 0; i < files.size(); ++i){
-		menuDirMountRecentImages->addAction(QIcon(":/data/cdrom_menu.png") , files.at(i).split("/").last());
+	if (!treeItem->parent()){
+		dirRename->setEnabled(FALSE);
+		dirDelete->setEnabled(FALSE);
+	} else {
+		dirRename->setEnabled(TRUE);
+		dirDelete->setEnabled(TRUE);
 	}
 
-	connect (menuDirMountRecentImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountRecentImages_triggered(QAction*)));
+	menuDirMount->clear();
+	menuDirMount->setEnabled(FALSE);
 
-	menuDirMount->addSeparator();
-	menuDirMount->addAction(dirUnmount);
+	if (!cdrom_mount.isEmpty()){
+		menuDirMount->setEnabled(TRUE);
+		menuDirMountImages = menuDirMount->addMenu(tr("mount [%1]").arg(CoreLib->getMountedImages(cdrom_mount)));
+		if (!cdrom_drive.isEmpty()){
+			menuDirMountImages->addAction(QIcon(":/data/drive_menu.png"), cdrom_drive);
+			menuDirMountImages->addSeparator();
+		} else {
+			menuDirMountImages->addAction(QIcon(":/data/drive_menu.png"), tr("[none]"));
+			menuDirMountImages->addSeparator();
+		}
 
-	connect (menuDirMountImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountImages_triggered(QAction*)));
-  }
-  if (!cdrom_mount.isEmpty()){
-	dirUnmount->setEnabled(TRUE);
-	dirMountOther->setEnabled(TRUE);
-	dirUnmount->setText(tr("umount [%1]").arg(cdrom_mount));
-  } else {
-	dirUnmount->setEnabled(FALSE);
-	dirMountOther->setEnabled(FALSE);
-	dirUnmount->setText(tr("umount [none]"));
-  }
+		images = db_image->getFields();
+		for (int i = 0; i < images.size(); ++i) {
+			menuDirMountImages->addAction(QIcon(":/data/cdrom_menu.png") , images.at(i).at(0));
+		}
 
-  menuDir->exec(QCursor::pos());
-  return;
+		menuDirMount->addSeparator();
+
+		QMenu* menuDirMountRecentImages;
+		menuDirMountRecentImages = new QMenu(this);
+		menuDirMountRecentImages = menuDirMount->addMenu(tr("mount ..."));
+
+		menuDirMountRecentImages->addAction(iconMountOther);
+		menuDirMountRecentImages->addSeparator();
+
+		QSettings settings(APP_SHORT_NAME, "default");
+		QStringList files = settings.value("recent_images").toStringList();
+
+		for (int i = 0; i < files.size(); ++i){
+			menuDirMountRecentImages->addAction(QIcon(":/data/cdrom_menu.png") , files.at(i).split("/").last());
+		}
+
+		connect (menuDirMountRecentImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountRecentImages_triggered(QAction*)));
+
+		menuDirMount->addSeparator();
+		menuDirMount->addAction(dirUnmount);
+
+		connect (menuDirMountImages, SIGNAL(triggered(QAction*)), this, SLOT(menuMountImages_triggered(QAction*)));
+	}
+	if (!cdrom_mount.isEmpty()){
+		dirUnmount->setEnabled(TRUE);
+		dirMountOther->setEnabled(TRUE);
+		dirUnmount->setText(tr("umount [%1]").arg(cdrom_mount));
+	} else {
+		dirUnmount->setEnabled(FALSE);
+		dirMountOther->setEnabled(FALSE);
+		dirUnmount->setText(tr("umount [none]"));
+	}
+
+	menuRun->addAction(dirRun);
+	menuRun->addSeparator();
+	result = db_last_run_icon->getIcons();
+
+	for (int i=0; i<result.size(); ++i){
+		if (i >= recentIconsList.size()){
+			QAction *lol = new QAction(result.at(i).split("/").last(), this);
+			lol->setStatusTip(result.at(i));
+			recentIconsList.append(lol);
+		} else {
+			recentIconsList.at(i)->setText(result.at(i).split("/").last());
+			recentIconsList.at(i)->setStatusTip(result.at(i));
+		}
+		menuRun->addAction(recentIconsList.at(i));
+	}
+
+	menuDir->exec(QCursor::pos());
+	return;
 }
 
 void MainWindow::menuMountImages_triggered ( QAction * action ){
@@ -896,6 +911,42 @@ void MainWindow::menuMountRecentImages_triggered ( QAction * action ){
 	}
 
   return;
+}
+
+void MainWindow::menuRun_triggered ( QAction * action ){
+
+	if (action->text().isEmpty())
+		return;
+
+	if (action->text()==tr("Browse ..."))
+		return;
+
+	QStringList result = db_last_run_icon->getByExec(action->statusTip());
+
+	if (!twPrograms->currentItem())
+		return;
+
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
+	QStringList dataList;
+
+	if (!isVisible())
+		setMeVisible(TRUE);
+
+	if (isMinimized ())
+		showNormal ();
+
+	Run *run;
+
+	if (treeItem->parent()){
+		run = new Run(treeItem->parent()->text(0), result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
+	} else {
+		run = new Run(treeItem->text(0), result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
+	}
+
+	if (run->exec()==QDialog::Accepted)
+		CoreLib->runWineBinary(run->execObj);
+
+	return;
 }
 
 void MainWindow::lstIcons_ShowContextMenu(const QPoint & iPoint){
@@ -1046,6 +1097,28 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint & iPoint){
   } else {
 	xdgOpenIconDir->setEnabled(FALSE);
 	winefileOpenIconDir->setEnabled(FALSE);
+
+	//menuRun = new QMenu();
+	//menuRun->deleteLater();
+
+
+
+	menuRun->addAction(dirRun);
+	menuRun->addSeparator();
+	result = db_last_run_icon->getIcons();
+
+	for (int i=0; i<result.size(); ++i){
+		if (i >= recentIconsList.size()){
+			QAction *lol = new QAction(result.at(i).split("/").last(), this);
+			lol->setStatusTip(result.at(i));
+			recentIconsList.append(lol);
+		} else {
+			recentIconsList.at(i)->setText(result.at(i).split("/").last());
+			recentIconsList.at(i)->setStatusTip(result.at(i));
+		}
+		menuRun->addAction(recentIconsList.at(i));
+	}
+
 	menuIconVoid->exec(QCursor::pos());
   }
   return;
@@ -1964,8 +2037,8 @@ void MainWindow::createMenuActions(){
 	 * Context menu for directory manage
 	 */
 
-  dirRun = new QAction(tr("Run..."), twPrograms);
-  dirRun->setStatusTip(tr("Run application at current prefix"));
+  dirRun = new QAction(QIcon(":/data/folder.png"), tr("Browse ..."), twPrograms);
+  dirRun->setStatusTip(tr("Bowse for application"));
   connect(dirRun, SIGNAL(triggered()), this, SLOT(mainRun_Click()));
 
   dirAdd = new QAction(tr("New"), twPrograms);
@@ -2152,7 +2225,9 @@ void MainWindow::createMenuActions(){
   menuIcon->addAction(iconAdd);
 
   menuIconVoid = new QMenu(this);
-  menuIconVoid->addAction(dirRun);
+  menuRun = new QMenu(tr("Run..."), this);
+
+  menuIconVoid->addMenu(menuRun);
   menuIconVoid->addSeparator();
   menuIconVoid->addAction(iconAdd);
   menuIconVoid->addSeparator();
@@ -2179,7 +2254,7 @@ void MainWindow::createMenuActions(){
   menuDir->addSeparator();
   menuDir->addMenu(menuDirMount);
   menuDir->addSeparator();
-  menuDir->addAction(dirRun);
+  menuDir->addMenu(menuRun);
   menuDir->addSeparator();
   menuDir->addAction(dirRename);
   menuDir->addSeparator();

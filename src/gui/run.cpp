@@ -29,9 +29,61 @@
 
 #include "run.h"
 
-Run::Run(QString prefix_name, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+Run::Run(QString prefix_name, QString wrkdir, QString override, QString winedebug, QString useconsole, QString display, QString cmdargs, QString desktop, int nice, QString exec, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
 	setupUi(this);
+
+	if (!wrkdir.isEmpty())
+		txtWorkDir->setText(wrkdir);
+
+	if (!winedebug.isEmpty())
+		txtWinedebug->setText(winedebug);
+
+	if (!display.isEmpty())
+		txtDisplay->setText(display);
+
+	if (!cmdargs.isEmpty())
+		txtCmdArgs->setText(cmdargs);
+
+	txtNice->setValue(nice);
+
+	if (!exec.isEmpty())
+		txtProgramBin->setText(exec);
+
+	if (useconsole=="1")
+		cbUseConsole->setChecked(TRUE);
+
+	if (!desktop.isEmpty())
+		cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(desktop));
+
+	if (!override.isEmpty()){
+	QStringList overrideS = override.split(";");
+
+	QString overrideorder;
+
+	for (int i=0; i<overrideS.count()-1; i++){
+
+		QStringList list2 = overrideS.at(i).split("=");
+			twDlls->insertRow (0);
+			QTableWidgetItem *newItem = new QTableWidgetItem(list2.at(0));
+			twDlls->setItem(0, 0, newItem);
+			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+
+			if (list2.at(1)=="n")
+				overrideorder = tr("Native");
+			if (list2.at(1)=="b")
+				overrideorder = tr("Buildin");
+			if (list2.at(1)=="n,b")
+				overrideorder = tr("Native, Buildin");
+			if (list2.at(1)=="b,n")
+				overrideorder = tr("Buildin, Native");
+
+
+			newItem = new QTableWidgetItem(overrideorder);
+			twDlls->setItem(0, 1, newItem);
+			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+	}
+}
 
 
 	this->prefix_name = prefix_name;
@@ -48,6 +100,7 @@ Run::Run(QString prefix_name, QWidget * parent, Qt::WFlags f) : QDialog(parent, 
 
 	// Creating database classes
 	db_prefix = new Prefix();
+	db_last_run_icon = new Last_Run_Icon();
 
 	loadThemeIcons(CoreLib->getSetting("app", "theme", false).toString());
 
@@ -145,7 +198,6 @@ void Run::cmdOk_Click(){
 			override.append("b,n;");
 	}
 
-
 	execObj.execcmd = txtProgramBin->text();
 
 	QSqlQuery query;
@@ -154,11 +206,8 @@ void Run::cmdOk_Click(){
 	query.bindValue(":name", comboPrefixes->currentText());
 	query.exec();
 	query.first();
-
 	execObj.prefixid = query.value(0).toString();
-
 	query.clear();
-
 
 	if (cbUseConsole->checkState()==Qt::Checked){
 		execObj.useconsole = "1";
@@ -178,8 +227,7 @@ void Run::cmdOk_Click(){
 		execObj.desktop=cboxDesktopSize->currentText();
 	}
 
-
-
+	db_last_run_icon->addIcon(execObj.cmdargs, execObj.execcmd, execObj.override, execObj.winedebug, execObj.useconsole, execObj.display, execObj.wrkdir, execObj.desktop, execObj.nice.toInt());
 
 	accept();
 	return;

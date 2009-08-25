@@ -73,6 +73,7 @@
 #include "src/core/database/prefix.h"
 #include "src/core/database/dir.h"
 #include "src/core/database/icon.h"
+#include "src/core/database/last_run_icon.h"
 #include "src/core/database/image.h"
 
 #include "draglistwidget.h"
@@ -128,6 +129,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void CoreFunction_ResizeContent(int tabIndex);
 		void menuMountImages_triggered ( QAction * action );
 		void menuMountRecentImages_triggered ( QAction * action );
+		void menuRun_triggered ( QAction * action );
 
 		/*
 		 * Icon tray slots
@@ -254,6 +256,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		Prefix *db_prefix;
 		Dir *db_dir;
 		Icon *db_icon;
+		Last_Run_Icon *db_last_run_icon;
 		Image *db_image;
 
 
@@ -275,6 +278,9 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		QMenu *menuIconMountRecent;
 		QMenu *menuIconXdgOpendir;
 		QMenu *menuIconWineOpendir;
+
+		QMenu *menuRun;
+		QList <QAction *> recentIconsList;
 
 		void createTrayIcon();
 		void setMeVisible(bool visible);

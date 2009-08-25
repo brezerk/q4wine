@@ -49,8 +49,7 @@
 #include "process.h"
 
 #include "src/core/database/prefix.h"
-#include "src/core/database/icon.h"
-#include "src/core/database/dir.h"
+#include "src/core/database/last_run_icon.h"
 
 #include <q4wine-lib/main.h>
 
@@ -68,7 +67,7 @@ class Run : public QDialog, public Ui::Run
 		 *
 		 * \param  prefix_name  Current user selected prefix name.
 		 */
-		Run(QString prefix_name, QWidget * parent = 0, Qt::WFlags f = 0);
+		Run(QString prefix_name, QString wrkdir="", QString override="", QString winedebug="", QString useconsole="", QString display="", QString cmdargs="", QString desktop="", int nice = 0, QString exec = "", QWidget * parent = 0, Qt::WFlags f = 0);
 		ExecObject execObj;
 	private slots:
 		//! \brief Cancel button click slot.
@@ -106,6 +105,7 @@ class Run : public QDialog, public Ui::Run
 
 		//! Database prefix class defenition.
 		Prefix *db_prefix;
+		Last_Run_Icon *db_last_run_icon;
 
 		//! This is need for libq4wine-core.so import.
 		QLibrary libq4wine;
