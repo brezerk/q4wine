@@ -7,15 +7,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>599</width>
-    <height>511</height>
+    <width>597</width>
+    <height>509</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>%1 :. Qt4 GUI for Wine v%2</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../q4wine.qrc">
     <normaloff>:/data/q4wine.png</normaloff>:/data/q4wine.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -392,7 +392,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>599</width>
+     <width>597</width>
      <height>23</height>
     </rect>
    </property>
@@ -415,6 +415,10 @@
      <property name="title">
       <string>Handbook</string>
      </property>
+     <property name="icon">
+      <iconset resource="../q4wine.qrc">
+       <normaloff>:/data/help.png</normaloff>:/data/help.png</iconset>
+     </property>
      <addaction name="mainFirstSteps"/>
      <addaction name="mainFAQ"/>
      <addaction name="separator"/>
@@ -425,6 +429,9 @@
     <addaction name="separator"/>
     <addaction name="menuHandbook"/>
     <addaction name="mainWebsite"/>
+    <addaction name="mainBugs"/>
+    <addaction name="separator"/>
+    <addaction name="mainDonate"/>
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
@@ -556,13 +563,37 @@
    </property>
   </action>
   <action name="mainWebsite">
+   <property name="icon">
+    <iconset resource="../q4wine.qrc">
+     <normaloff>:/data/go-home.png</normaloff>:/data/go-home.png</iconset>
+   </property>
    <property name="text">
     <string>Website</string>
    </property>
   </action>
+  <action name="mainDonate">
+   <property name="icon">
+    <iconset resource="../q4wine.qrc">
+     <normaloff>:/data/bookmark-new.png</normaloff>:/data/bookmark-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>Donate</string>
+   </property>
+  </action>
+  <action name="mainBugs">
+   <property name="icon">
+    <iconset resource="../q4wine.qrc">
+     <normaloff>:/data/tools-report-bug.png</normaloff>:/data/tools-report-bug.png</iconset>
+   </property>
+   <property name="text">
+    <string>Bugs</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="2" margin="3"/>
- <resources/>
+ <resources>
+  <include location="../q4wine.qrc"/>
+ </resources>
  <connections/>
  <designerdata>
   <property name="gridDeltaX">

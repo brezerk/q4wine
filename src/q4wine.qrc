@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="/" >
+    <file>data/tools-report-bug.png</file>
+    <file>data/bookmark-new.png</file>
+    <file>data/help.png</file>
     <file>data/drive_menu.png</file>
     <file>data/q4wine-128x128.png</file>
     <file>data/cdrom_menu.png</file>
@@ -32,5 +35,6 @@
     <file>data/wine.png</file>
     <file>data/wizard.png</file>
     <file>data/q4wine.png</file>
+    <file>data/go-home.png</file>
   </qresource>
 </RCC>

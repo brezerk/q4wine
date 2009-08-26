@@ -239,6 +239,8 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void mainFAQ_Click(void);
 		void mainIndex_Click(void);
 		void mainWebsite_Click(void);
+		void mainDonate_Click(void);
+		void mainBugs_Click(void);
 
 		void startDrag();
 		void startDrop(QList<QUrl> files);

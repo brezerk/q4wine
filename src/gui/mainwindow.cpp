@@ -140,6 +140,8 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
   connect(mainFAQ, SIGNAL(triggered()), this, SLOT(mainFAQ_Click()));
   connect(mainIndex, SIGNAL(triggered()), this, SLOT(mainIndex_Click()));
   connect(mainWebsite, SIGNAL(triggered()), this, SLOT(mainWebsite_Click()));
+  connect(mainDonate, SIGNAL(triggered()), this, SLOT(mainDonate_Click()));
+  connect(mainBugs, SIGNAL(triggered()), this, SLOT(mainBugs_Click()));
 
   connect(lstIcons, SIGNAL(startDrag ()), this, SLOT(startDrag()));
   connect(lstIcons, SIGNAL(startDrop(QList<QUrl>)), this, SLOT(startDrop(QList<QUrl>)));
@@ -1904,6 +1906,14 @@ void MainWindow::mainIndex_Click(){
 
 void MainWindow::mainWebsite_Click(){
 	CoreLib->openUrl("");
+}
+
+void MainWindow::mainDonate_Click(){
+	CoreLib->openUrl("donate/");
+}
+
+void MainWindow::mainBugs_Click(){
+	CoreLib->openUrl("bugs/");
 }
 
 
