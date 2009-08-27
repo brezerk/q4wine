@@ -254,12 +254,12 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		txtReniceBin->setText(CoreLib->getWhichOut("renice"));
 		txtShBin->setText(CoreLib->getWhichOut("sh"));
 
-		console_w = CoreLib->getWhichOut("konsole");
+		console_w = CoreLib->getWhichOut("konsole", FALSE);
 		if (!console_w.isEmpty()){
 			txtConsoleBin->setText(console_w);
 			txtConsoleArgs->setText("--noclose -e");
 		} else {
-			console_w = CoreLib->getWhichOut("xterm");
+			console_w = CoreLib->getWhichOut("xterm", FALSE);
 			if (!console_w.isEmpty()){
 				txtConsoleBin->setText(console_w);
 				txtConsoleArgs->setText("-e");
