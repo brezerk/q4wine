@@ -16,7 +16,6 @@ SET(APP_VERSION "0.113-rc3")
 # which point to directories outside the build tree to the install RPATH
 #SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
-
 SET( DESKTOP_ENTRY
 	${CMAKE_SOURCE_DIR}/q4wine.desktop
 )
@@ -324,6 +323,24 @@ ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
 
 IF (NOT DEFINED WITH_ICOUTILS)
 	SET(WITH_ICOUTILS "ON")
+
+	find_program( WRESTOOL NAMES wrestool )
+	find_program( ICOTOOL NAMES icotool )
+	MESSAGE(STATUS "Searching for icoutils binaries...")
+	IF (${WRESTOOL} MATCHES WRESTOOL-NOTFOUND)
+		MESSAGE(STATUS "wrestool: NOT FOUND!")
+		MESSAGE(FATAL_ERROR "Please install icoutils package or disable icoutils support by adding -DWITH_ICOUTILS="OFF" option to cmake")
+	ELSE (${WRESTOOL} MATCHES WRESTOOL-NOTFOUND)
+		MESSAGE(STATUS "wrestool: ${WRESTOOL}")
+	ENDIF (${WRESTOOL} MATCHES WRESTOOL-NOTFOUND)
+
+	IF (${ICOTOOL} MATCHES ICOTOOL-NOTFOUND)
+		MESSAGE(STATUS "icotool: NOT FOUND!")
+		MESSAGE(FATAL_ERROR "Please install icoutils package or disable icoutils support by adding -DWITH_ICOUTILS="OFF" option to cmake")
+	ELSE (${ICOTOOL} MATCHES ICOTOOL-NOTFOUND)
+		MESSAGE(STATUS "icotool: ${ICOTOOL}")
+	ENDIF (${ICOTOOL} MATCHES ICOTOOL-NOTFOUND)
+
 ENDIF (NOT DEFINED WITH_ICOUTILS)
 
 IF (NOT DEFINED WITH_WINETRIKS)

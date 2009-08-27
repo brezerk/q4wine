@@ -643,7 +643,7 @@ void AppSettings::cmdHelp_Click(){
 		rawurl = "11-settings.html#network";
 	break;
 	case 5:
-		rawurl = "11-settings.html#advanced";
+		rawurl = "11-settings.html#qmount";
 	break;
 	}
 

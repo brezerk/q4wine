@@ -931,6 +931,9 @@ void Wizard::cmdHelp_Click(){
 		case 6:
 			rawurl = "03-first-startup-wizard.html#proxy";
 			break;
+		case 7:
+			rawurl = "03-first-startup-wizard.html#qmount";
+			break;
 		default:
 			rawurl = "03-first-startup-wizard.html";
 			break;
