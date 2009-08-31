@@ -49,8 +49,6 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
 	this->winetricks_bin.append(APP_SHORT_NAME);
 	this->winetricks_bin.append("/winetricks");
 
-	qDebug()<<this->winetricks_bin;
-
 	this->prefix_path = db_prefix->getPath(prefixName);
 	this->console_bin = CoreLib->getSetting("console", "bin").toString();
 	this->console_args = CoreLib->getSetting("console", "args", FALSE).toString();
@@ -116,8 +114,6 @@ void winetricks::run_winetricks(){
 		arg.append(this->winetricks_bin);
 		arg.append(" ");
 		arg.append(lstMain->currentItem()->text());
-
-		qDebug()<<arg;
 
 	args.append(arg);
 
