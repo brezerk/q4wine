@@ -48,7 +48,7 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
 	this->winetricks_bin.append("/.config/");
 	this->winetricks_bin.append(APP_SHORT_NAME);
 	this->winetricks_bin.append("/winetricks");
-        
+
 	qDebug()<<this->winetricks_bin;
 
 	this->prefix_path = db_prefix->getPath(prefixName);
@@ -131,9 +131,9 @@ void winetricks::run_winetricks(){
 }
 
 void winetricks::downloadwinetricks () {
-        /*
-         * Downloading winetriks and installing it
-         */
+		/*
+		 * Downloading winetriks and installing it
+		 */
 
 	QStringList args;
 	if (!console_args.isEmpty()){
@@ -177,8 +177,8 @@ void winetricks::downloadwinetricks () {
 
 	Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
 
-        exportProcess->exec();
-        // setting help
+		exportProcess->exec();
+		// setting help
 
 
 
@@ -196,7 +196,7 @@ void winetricks::changeEvent(QEvent *e)
 		break;
 		default:
 		break;
-    }
+	}
 }
 */
 
@@ -210,42 +210,42 @@ descs.append(desc);
 
 }
 void winetricks::parse() {
-    //create a Winetricks process
-      QProcess *p = new QProcess (this);
-    QString pargs;
-    pargs.append(winetricks_bin);
-    pargs.append(" --kegelfuck");
+	//create a Winetricks process
+	  QProcess *p = new QProcess (this);
+	QString pargs;
+	pargs.append(winetricks_bin);
+	pargs.append(" --kegelfix");
 
    p->start(pargs);
 
    p->waitForFinished();
-     //get output
+	 //get output
    QString lang;
    // Getting env LANG variable
    lang = getenv("LANG");
   lang = lang.split(".").at(1);
  if (lang.isNull())
   lang = "UTF8";
- /* Fucking code because Kegel is MORON! */
+ /* Getting list */
   QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
   QString wOut = codec->toUnicode(p->readAllStandardOutput());
-    delete p;
+	delete p;
 
-    //parse now
+	//parse now
 bool isNowParse = false;
 QStringList strs = wOut.split("\n");
 QString str;
 
 foreach (str, strs){
-    str = str.trimmed();
+	if (!str.isEmpty()){
+		str = str.trimmed();
 
-  if (str == "Apps:" || str == "Pseudopackages:"){continue;}
-  if (str == "Packages:") {isNowParse = true;
-  continue;
-  }
-  if (isNowParse) {addToList(str);}
-
-
+		if (str == "Apps:" || str == "Pseudopackages:"){continue;}
+		if (str == "Packages:") {isNowParse = true;
+			continue;
+		}
+		if (isNowParse) {addToList(str);}
+	}
 }
 
 
@@ -256,10 +256,10 @@ foreach (str, strs){
 
 void winetricks::on_lstMain_itemClicked(QListWidgetItem* item)
 {
-    int i;
+	int i;
   for (i=0; i < descs.count() -1; ++i) {
    if (names.at(i) ==  item->text()){
-       label->setText (descs.at(i));
+	   label->setText (descs.at(i));
    }
   }
 }
