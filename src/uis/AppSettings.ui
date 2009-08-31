@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>652</width>
+    <width>650</width>
     <height>420</height>
    </rect>
   </property>
@@ -216,7 +216,7 @@
       <item>
        <widget class="QTabWidget" name="twbGeneral">
         <property name="currentIndex">
-         <number>5</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
