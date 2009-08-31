@@ -183,7 +183,7 @@ void ImageManager::actionAddImage(){
 	bool ok;
 	QString fileName, newName;
 	#ifdef _OS_LINUX_
-		fileName = QFileDialog::getOpenFileName(this, tr("Open ISO or NRG Image file"), QDir::homePath(), tr("iso and nrg files (*.iso *.nrg)"));
+		fileName = QFileDialog::getOpenFileName(this, tr("Open CD image file"), QDir::homePath(), tr("CD image files (*.iso *.nrg *.img *.bin *.mdf)"));
 	#endif
 
 	#ifdef _OS_FREEBSD_

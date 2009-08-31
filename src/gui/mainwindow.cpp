@@ -2778,7 +2778,7 @@ void MainWindow::dirMountOther_Click(void){
 	Request for unmounting cdrom drve described at wine prefix settings
 	*/
 #ifdef _OS_LINUX_
-  QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO or NRG Image file"), HOME_PATH, tr("iso and nrg files (*.iso *.nrg *.img *.bin *.mdf)"));
+  QString fileName = QFileDialog::getOpenFileName(this, tr("Open CD Image files"), HOME_PATH, tr("CD image files (*.iso *.nrg *.img *.bin *.mdf)"));
 #endif
 
 #ifdef _OS_FREEBSD_
