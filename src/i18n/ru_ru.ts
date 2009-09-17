@@ -3337,67 +3337,67 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../uis/Wizard.ui" line="1882"/>
         <source>Windows XP</source>
-        <translation>Windows XP</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1887"/>
         <source>Windows 2008</source>
-        <translation>Windows Server 2008</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1892"/>
         <source>Windows Vista</source>
-        <translation>Windows Vista</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1897"/>
         <source>Windows 2003</source>
-        <translation>Windows 2003</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1902"/>
         <source>Windows 2000</source>
-        <translation>Windows 2003</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1907"/>
         <source>Windows ME</source>
-        <translation>Windows ME</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1912"/>
         <source>Windows 98</source>
-        <translation>Windows 98</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1917"/>
         <source>Windows 95</source>
-        <translation>Windows 95</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1922"/>
         <source>Windows NT 4.0</source>
-        <translation>Windows NT 4.0</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1927"/>
         <source>Windows NT 3.5</source>
-        <translation>Windows NT 3.5</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1932"/>
         <source>Windows 3.1</source>
-        <translation>Windows 3.1</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1937"/>
         <source>Windows 3.0</source>
-        <translation>Windows 3.0</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1942"/>
         <source>Windows 2.0</source>
-        <translation>Windows 2.0</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1953"/>
