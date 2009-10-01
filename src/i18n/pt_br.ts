@@ -41,8 +41,8 @@
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -72,175 +72,9 @@ p, li { white-space: pre-wrap; }
         <translation>Agradecimentos</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Alexey S. Malakhov&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt; (John Brezerk)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Main developer, maintainer&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#5f9ea0;&quot;&gt;brezerk@jabber.com.ua&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;brezerk@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Kiev, UA&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Pavel&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Zinin &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;(pashazz)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Developer&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Sergiev Posad, Moscow region, RU&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Dmitry Marakasov&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;FreeBSD support fixes&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#55aa7f;&quot;&gt;amdmi3@amdmi3.ru&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Moscow, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Alexey S. Malakhov&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt; (John Brezerk)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Desenvolvedor principal, mantenedor&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#5f9ea0;&quot;&gt;brezerk@jabber.com.ua&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;brezerk@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Kiev, Ucrânia&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Pavel&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Zinin &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;(pashazz)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Desenvolvedor&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Sergiev Posad, Região de Moscou, Rússia&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Dmitry Marakasov&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Suporte as correções do FreeBSD&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#55aa7f;&quot;&gt;amdmi3@amdmi3.ru&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Moscou, Rússia&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Sergey V. Dyatko&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;FreeBSD port maintainer&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;sergey.dyatko@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Minsk, BY&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Markos Chandras &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;(hwoarang)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Gentoo ebuild maintainer&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Web&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;http://hwoarang.silverarrow.gr&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Greece&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Chris.Giles&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Arch linux package maintainer&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Boris Savelev&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Alt linux package maintainer&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;MiRacLe&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Slackware linux package maintainer&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Sergey V. Dyatko&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Mantenedor do porte para o FreeBSD&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;sergey.dyatko@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Minsk, Biolerrússia&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Markos Chandras &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;(hwoarang)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Mantenedor da empacotamento para Gentoo&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Web&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;http://hwoarang.silverarrow.gr&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Grécia&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Chris.Giles&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Mantenedor do pacote para o Arch linux&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Boris Savelev&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Mantenedor do pacote para o Alt linux&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;MiRacLe&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Mantenedor do pacote para o Slackware linux&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Uriy O. Chornoivan&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Ukrainian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;yurchor@ukr.net&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Kiev, UA&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Pavel Zinin&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt; (pashazz)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Russian translation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Sergiev Posad, Moscow region, RU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Uriy O. Chornoivan&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Tradução para ucraniano&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;yurchor@ukr.net&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Kiev, Ucrânia&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Pavel Zinin&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt; (pashazz)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Tradução para russo&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-Mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;pzinin@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Sergiev Posad, Região de Moscou, Rússia&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../uis/About.ui" line="369"/>
         <source>Special thanks</source>
         <translation>Agradecimentos especiais</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Sergey V. Dyatko&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Suppot, assistance, testing and advice for FreeBSD port&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;sergey.dyatko@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Minsk, BY&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Dmitry Marakasov&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Suppot, assistance, testing, commits and advice for FreeBSD port&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#55aa7f;&quot;&gt;amdmi3@amdmi3.ru&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Sergey Kishchenko (tilarids)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Testing, bug reports&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#5f9ea0;&quot;&gt;void@jabber.com.ua&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;voidwrk@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Kharkov, UA&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Andrey A. Maloshtan&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Testing, bug reports&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#5f9ea0;&quot;&gt;sspphheerraa@jabber.org&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;andrey.aleksandrovich@googlemail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Kharkov, UA&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Sergey V. Dyatko&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Suporte, assistência, teste e conselheiro do porte para o FreeBSD&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;sergey.dyatko@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Minsk, Biolerrússia&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600;&quot;&gt;Dmitry Marakasov&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#000000;&quot;&gt;Suporte, assistência, teste, envio e conselheiro do porte para o FreeBSD&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#55aa7f;&quot;&gt;amdmi3@amdmi3.ru&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Sergey Kishchenko (tilarids)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Testador, relate falhas&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#5f9ea0;&quot;&gt;void@jabber.com.ua&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;voidwrk@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Kharkov, Ucrânia&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; font-weight:600; color:#000000;&quot;&gt;Andrey A. Maloshtan&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Testador, relate falhas&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;Jabber&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#5f9ea0;&quot;&gt;sspphheerraa@jabber.org&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; color:#6495ed;&quot;&gt;E-mail&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt; text-decoration: underline; color:#5f9ea0;&quot;&gt;andrey.aleksandrovich@googlemail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Fixed [Misc]&apos;; font-size:12pt;&quot;&gt;Kharkov, Ucrânia&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -405,8 +239,14 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Icotool</source>
-        <translation type="obsolete">Icotool</translation>
+        <location filename="../uis/AppSettings.ui" line="1567"/>
+        <source>Run recent program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../uis/AppSettings.ui" line="1573"/>
+        <source>Open Run dialog.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="942"/>
@@ -459,9 +299,9 @@ p, li { white-space: pre-wrap; }
         <translation>Senha:</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="251"/>
-        <location filename="../gui/appsettings.cpp" line="444"/>
-        <location filename="../gui/appsettings.cpp" line="580"/>
+        <location filename="../gui/appsettings.cpp" line="258"/>
+        <location filename="../gui/appsettings.cpp" line="451"/>
+        <location filename="../gui/appsettings.cpp" line="587"/>
         <location filename="../uis/AppSettings.ui" line="1139"/>
         <source>No Proxy</source>
         <translation>Sem proxy</translation>
@@ -492,12 +332,9 @@ p, li { white-space: pre-wrap; }
         <translation>Usuário:</translation>
     </message>
     <message>
+        <location filename="../uis/AppSettings.ui" line="1561"/>
         <source>Advanced</source>
-        <translation type="obsolete">Avançado</translation>
-    </message>
-    <message>
-        <source>Advanced comand strings:</source>
-        <translation type="obsolete">Strings de comando avançado:</translation>
+        <translation type="unfinished">Avançado</translation>
     </message>
     <message>
         <location filename="../uis/AppSettings.ui" line="1457"/>
@@ -515,115 +352,115 @@ p, li { white-space: pre-wrap; }
         <translation>Desmontar:</translation>
     </message>
     <message>
-        <location filename="../uis/AppSettings.ui" line="1566"/>
+        <location filename="../uis/AppSettings.ui" line="1605"/>
         <source>Help</source>
         <translation>Ajuda</translation>
     </message>
     <message>
-        <location filename="../uis/AppSettings.ui" line="1586"/>
+        <location filename="../uis/AppSettings.ui" line="1625"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../uis/AppSettings.ui" line="1593"/>
+        <location filename="../uis/AppSettings.ui" line="1632"/>
         <source>Ok</source>
         <translation>Оk</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="226"/>
+        <location filename="../gui/appsettings.cpp" line="233"/>
         <source>Open File</source>
         <translation>Abrir Arquivo</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="228"/>
+        <location filename="../gui/appsettings.cpp" line="235"/>
         <source>Open Directory</source>
         <translation>Abrir Diretório</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="308"/>
+        <location filename="../gui/appsettings.cpp" line="315"/>
         <source>%1/%2/theme.info</source>
         <translation>%1/%2/theme.info</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="316"/>
+        <location filename="../gui/appsettings.cpp" line="323"/>
         <source>%1 [%2; %3]</source>
         <translation>%1 [%2; %3]</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="320"/>
-        <location filename="../gui/appsettings.cpp" line="378"/>
+        <location filename="../gui/appsettings.cpp" line="327"/>
+        <location filename="../gui/appsettings.cpp" line="385"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="321"/>
+        <location filename="../gui/appsettings.cpp" line="328"/>
         <source>%1/%2/data/wine.png</source>
         <translation>%1/%2/data/wine.png</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="342"/>
+        <location filename="../gui/appsettings.cpp" line="349"/>
         <source>%1/data/exec.png</source>
         <translation>%1/data/exec.png</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="380"/>
-        <location filename="../gui/appsettings.cpp" line="383"/>
+        <location filename="../gui/appsettings.cpp" line="387"/>
+        <location filename="../gui/appsettings.cpp" line="390"/>
         <source>:/%1</source>
         <translation>:/%1</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="446"/>
-        <location filename="../gui/appsettings.cpp" line="450"/>
-        <location filename="../gui/appsettings.cpp" line="603"/>
-        <location filename="../gui/appsettings.cpp" line="606"/>
-        <location filename="../gui/appsettings.cpp" line="614"/>
-        <location filename="../gui/appsettings.cpp" line="617"/>
+        <location filename="../gui/appsettings.cpp" line="453"/>
+        <location filename="../gui/appsettings.cpp" line="457"/>
+        <location filename="../gui/appsettings.cpp" line="620"/>
+        <location filename="../gui/appsettings.cpp" line="623"/>
+        <location filename="../gui/appsettings.cpp" line="631"/>
+        <location filename="../gui/appsettings.cpp" line="634"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="446"/>
+        <location filename="../gui/appsettings.cpp" line="453"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Desculpe, especifique o servidor proxy.</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="450"/>
+        <location filename="../gui/appsettings.cpp" line="457"/>
         <source>Sorry, specify proxy port.</source>
         <translation>Desculpe, especifique a porta do proxy.</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="603"/>
+        <location filename="../gui/appsettings.cpp" line="620"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Desculpe, especifique o diretório %1.</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="606"/>
+        <location filename="../gui/appsettings.cpp" line="623"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Desculpe, especifique o binário %1.</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="614"/>
+        <location filename="../gui/appsettings.cpp" line="631"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation>Desculpe, o diretório %1 especificado não existe.</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="617"/>
+        <location filename="../gui/appsettings.cpp" line="634"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation>Desculpe, o binário %1 especifiqcado não existe.</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="707"/>
+        <location filename="../gui/appsettings.cpp" line="724"/>
         <source>Warning</source>
         <translation type="unfinished">Aviso</translation>
     </message>
     <message>
-        <location filename="../gui/appsettings.cpp" line="707"/>
+        <location filename="../gui/appsettings.cpp" line="724"/>
         <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/appsettings.cpp" line="132"/>
-        <location filename="../gui/appsettings.cpp" line="478"/>
+        <location filename="../gui/appsettings.cpp" line="485"/>
         <location filename="../uis/AppSettings.ui" line="1067"/>
         <source>System Default</source>
         <translation>Sistema Padrão</translation>
@@ -678,14 +515,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../uis/IconSettings.ui" line="440"/>
         <source>Description:</source>
         <translation>Descrição:</translation>
-    </message>
-    <message>
-        <source>Desktop</source>
-        <translation type="obsolete">Área de Trabalho</translation>
-    </message>
-    <message>
-        <source>Desktop size:</source>
-        <translation type="obsolete">Tamanho do Área de Trabalho:</translation>
     </message>
     <message>
         <location filename="../uis/IconSettings.ui" line="561"/>
@@ -1128,6 +957,16 @@ p, li { white-space: pre-wrap; }
         <translation>Atualizar a lista de imagens</translation>
     </message>
     <message>
+        <location filename="../gui/imagemanager.cpp" line="186"/>
+        <source>Open CD image file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/imagemanager.cpp" line="186"/>
+        <source>CD image files (*.iso *.nrg *.img *.bin *.mdf)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../gui/imagemanager.cpp" line="196"/>
         <location filename="../gui/imagemanager.cpp" line="221"/>
         <source>Sorry. It seems CD iamge already exists.</source>
@@ -1175,16 +1014,6 @@ p, li { white-space: pre-wrap; }
         <translation>:/%1</translation>
     </message>
     <message>
-        <location filename="../gui/imagemanager.cpp" line="186"/>
-        <source>Open ISO or NRG Image file</source>
-        <translation>Abrir arquivo de imagem ISO ou NRG</translation>
-    </message>
-    <message>
-        <location filename="../gui/imagemanager.cpp" line="186"/>
-        <source>iso and nrg files (*.iso *.nrg)</source>
-        <translation>Arquivos iso ou nrg (*.iso *.nrg)</translation>
-    </message>
-    <message>
         <location filename="../gui/imagemanager.cpp" line="190"/>
         <source>Open ISO Image file</source>
         <translation>Abrir arquivo de imagem ISO</translation>
@@ -1205,8 +1034,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="246"/>
-        <location filename="../gui/mainwindow.cpp" line="2387"/>
-        <location filename="../gui/mainwindow.cpp" line="2545"/>
+        <location filename="../gui/mainwindow.cpp" line="2403"/>
+        <location filename="../gui/mainwindow.cpp" line="2561"/>
         <source>Sorry. It seems icon already exists.</source>
         <translation>Desculpe. Parece que o ícone já existe.</translation>
     </message>
@@ -1322,7 +1151,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2118"/>
+        <location filename="../gui/mainwindow.cpp" line="2134"/>
         <location filename="../uis/MainWindow.ui" line="201"/>
         <location filename="../uis/MainWindow.ui" line="536"/>
         <source>Options</source>
@@ -1399,10 +1228,6 @@ p, li { white-space: pre-wrap; }
         <translation>Orientações</translation>
     </message>
     <message>
-        <source>Ctrl+R</source>
-        <translation type="obsolete">Ctrl+R</translation>
-    </message>
-    <message>
         <location filename="../uis/MainWindow.ui" line="480"/>
         <source>About Qt</source>
         <translation>Sobre Qt</translation>
@@ -1455,27 +1280,23 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../gui/mainwindow.cpp" line="312"/>
         <location filename="../gui/mainwindow.cpp" line="314"/>
-        <location filename="../gui/mainwindow.cpp" line="1477"/>
-        <location filename="../gui/mainwindow.cpp" line="1523"/>
-        <location filename="../gui/mainwindow.cpp" line="1538"/>
-        <location filename="../gui/mainwindow.cpp" line="1575"/>
-        <location filename="../gui/mainwindow.cpp" line="1620"/>
+        <location filename="../gui/mainwindow.cpp" line="1493"/>
+        <location filename="../gui/mainwindow.cpp" line="1539"/>
+        <location filename="../gui/mainwindow.cpp" line="1554"/>
+        <location filename="../gui/mainwindow.cpp" line="1591"/>
+        <location filename="../gui/mainwindow.cpp" line="1636"/>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="317"/>
-        <location filename="../gui/mainwindow.cpp" line="860"/>
-        <location filename="../gui/mainwindow.cpp" line="1544"/>
-        <location filename="../gui/mainwindow.cpp" line="1570"/>
-        <location filename="../gui/mainwindow.cpp" line="2729"/>
-        <location filename="../gui/mainwindow.cpp" line="2738"/>
+        <location filename="../gui/mainwindow.cpp" line="861"/>
+        <location filename="../gui/mainwindow.cpp" line="1560"/>
+        <location filename="../gui/mainwindow.cpp" line="1586"/>
+        <location filename="../gui/mainwindow.cpp" line="2745"/>
+        <location filename="../gui/mainwindow.cpp" line="2754"/>
         <source>Error</source>
         <translation>Erro</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;q4wine was compiled without winetriks support.&lt;/p&gt;&lt;p&gt;If you wish to enable winetriks support add:&lt;/p&gt;&lt;p&gt; &quot;-DWITH_WINETOOLS=ON&quot; to cmake arguments.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;q4wine foi compilado sem suporte a winetriks.&lt;/p&gt;&lt;p&gt;Se você deseja habilitar o suporte a winetriks, adicione:&lt;/p&gt;&lt;p&gt; &quot;-DWITH_WINETOOLS=ON&quot; no argumento cmake.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../uis/MainWindow.ui" line="531"/>
@@ -1513,253 +1334,245 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;p&gt;Você não definiu o binário padrão do console.&lt;/p&gt;&lt;p&gt;Defini-lo dentro da opção q4wine.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="517"/>
+        <location filename="../gui/mainwindow.cpp" line="518"/>
         <source>Starting %1 ...</source>
         <translation>Iniciando %1 ...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="520"/>
-        <location filename="../gui/mainwindow.cpp" line="526"/>
+        <location filename="../gui/mainwindow.cpp" line="521"/>
+        <location filename="../gui/mainwindow.cpp" line="527"/>
         <source>%1 started.</source>
         <translation>%1 iniciado.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="522"/>
-        <location filename="../gui/mainwindow.cpp" line="528"/>
+        <location filename="../gui/mainwindow.cpp" line="523"/>
+        <location filename="../gui/mainwindow.cpp" line="529"/>
         <source>%1 fail to start.</source>
         <translation>%1 falhou ao iniciar.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="547"/>
+        <location filename="../gui/mainwindow.cpp" line="548"/>
         <source>Program: &lt;br&gt; Description:</source>
         <translation>Programа: &lt;br&gt; Descrição:</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="618"/>
-        <location filename="../gui/mainwindow.cpp" line="627"/>
-        <location filename="../gui/mainwindow.cpp" line="1373"/>
-        <location filename="../gui/mainwindow.cpp" line="1374"/>
+        <location filename="../gui/mainwindow.cpp" line="619"/>
+        <location filename="../gui/mainwindow.cpp" line="628"/>
+        <location filename="../gui/mainwindow.cpp" line="1389"/>
+        <location filename="../gui/mainwindow.cpp" line="1390"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="787"/>
-        <location filename="../gui/mainwindow.cpp" line="1004"/>
-        <location filename="../gui/mainwindow.cpp" line="1044"/>
+        <location filename="../gui/mainwindow.cpp" line="788"/>
+        <location filename="../gui/mainwindow.cpp" line="1020"/>
+        <location filename="../gui/mainwindow.cpp" line="1060"/>
         <source>mount [%1]</source>
         <translation>mount [%1]</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="827"/>
-        <location filename="../gui/mainwindow.cpp" line="1045"/>
+        <location filename="../gui/mainwindow.cpp" line="828"/>
+        <location filename="../gui/mainwindow.cpp" line="1061"/>
         <source>umount [%1]</source>
         <translation>umount: [%1]</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="831"/>
-        <location filename="../gui/mainwindow.cpp" line="1050"/>
+        <location filename="../gui/mainwindow.cpp" line="832"/>
+        <location filename="../gui/mainwindow.cpp" line="1066"/>
         <source>umount [none]</source>
         <translation>umount [none]</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1049"/>
+        <location filename="../gui/mainwindow.cpp" line="1065"/>
         <source>mount [none]</source>
         <translation>mount [none]</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1358"/>
+        <location filename="../gui/mainwindow.cpp" line="1374"/>
         <source>Select process priority</source>
         <translation>Selecionar prioridade do processo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1358"/>
+        <location filename="../gui/mainwindow.cpp" line="1374"/>
         <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
         <translation>&lt;p&gt;O valor da prioridade pode estar na&lt;br&gt;faixa de PRIO_MIN (-20)&lt;br&gt;à PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Veja &quot;man renice&quot; para mais informações.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1383"/>
+        <location filename="../gui/mainwindow.cpp" line="1399"/>
         <source>reniceing...</source>
         <translation>Mudando prioridade...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1387"/>
+        <location filename="../gui/mainwindow.cpp" line="1403"/>
         <source>Renice fail fail</source>
         <translation>Falha no renice</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1462"/>
+        <location filename="../gui/mainwindow.cpp" line="1478"/>
         <source>Total process: %1</source>
         <translation>Total de processos: %1</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1477"/>
+        <location filename="../gui/mainwindow.cpp" line="1493"/>
         <source>There are other Fake drive installed in %1 prefix directory.&lt;br&gt;&lt;br&gt;Do you wish to REMOVE ALL FILES from prefix folder?</source>
         <translation>Há outra unidade virtual instalada no diretório de prefixo %1.&lt;br&gt;&lt;br&gt;Você deseja remover todos os arquivos do diretório prefixo?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1483"/>
-        <location filename="../gui/mainwindow.cpp" line="1625"/>
+        <location filename="../gui/mainwindow.cpp" line="1499"/>
+        <location filename="../gui/mainwindow.cpp" line="1641"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>Removendo unidade virtual antiga.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1483"/>
-        <location filename="../gui/mainwindow.cpp" line="1625"/>
+        <location filename="../gui/mainwindow.cpp" line="1499"/>
+        <location filename="../gui/mainwindow.cpp" line="1641"/>
         <source>Removing old fake drive</source>
         <translation>Removendo unidade virtual antiga</translation>
     </message>
     <message>
-        <source>This action will send a TREM(-9) signal to all wine proccess with WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
-        <translation type="obsolete">Essa ação enviará um sinal TERM(-9) para todos os processos wine com WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Você realmente deseja continuar?</translation>
-    </message>
-    <message>
-        <source>This action will send a TREM(-9) signal to proccess &apos;%2&apos; pid: %1&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
-        <translation type="obsolete">Essa ação enviará um sinal TERM(-9) para o processo &apos;%2&apos; de pid: %1&lt;br&gt;&lt;br&gt;É um alto risco para darmos ao estado normal de wine.&lt;br&gt; &lt;br&gt;Você realmente deseja continuar?</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="1544"/>
+        <location filename="../gui/mainwindow.cpp" line="1560"/>
         <source>Can&apos;t run: %1</source>
         <translation>Não é possível executar: %1</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1571"/>
+        <location filename="../gui/mainwindow.cpp" line="1587"/>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
         <translation>Desculpe, você não pode excluir o prefixo Padrão.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1576"/>
+        <location filename="../gui/mainwindow.cpp" line="1592"/>
         <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
         <translation>Você realmente deseja excluir o prefixo chamado &quot;%1&quot; e todos os ícones associados?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1604"/>
+        <location filename="../gui/mainwindow.cpp" line="1620"/>
         <source>Select file to import</source>
         <translation>Selecionar um arquivo para importar</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1604"/>
-        <location filename="../gui/mainwindow.cpp" line="1682"/>
+        <location filename="../gui/mainwindow.cpp" line="1620"/>
+        <location filename="../gui/mainwindow.cpp" line="1698"/>
         <source>Images (*.tbz)</source>
         <translation>Imagens (*.tbz)</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1620"/>
+        <location filename="../gui/mainwindow.cpp" line="1636"/>
         <source>Do you really wish to delete all old prefix files?</source>
         <translation>Você realmente deseja excluir todos os arquivos antigos do prefixo?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1641"/>
+        <location filename="../gui/mainwindow.cpp" line="1657"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
         <translation>Importar prefixo.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1641"/>
+        <location filename="../gui/mainwindow.cpp" line="1657"/>
         <source>Importing prefix</source>
         <translation>Importando prefixo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1682"/>
+        <location filename="../gui/mainwindow.cpp" line="1698"/>
         <source>Select file to export</source>
         <translation>Selecionar um arquivo para exportar</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1704"/>
+        <location filename="../gui/mainwindow.cpp" line="1720"/>
         <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
         <translation>Exportando prefixo %1.&lt;br&gt; Isso pode demorar um pouco...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1704"/>
+        <location filename="../gui/mainwindow.cpp" line="1720"/>
         <source>Exporting prefix</source>
         <translation>Exportando prefixo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1890"/>
-        <location filename="../gui/mainwindow.cpp" line="2829"/>
+        <location filename="../gui/mainwindow.cpp" line="1906"/>
+        <location filename="../gui/mainwindow.cpp" line="2845"/>
         <source>WIP</source>
         <translation>WIP</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1890"/>
+        <location filename="../gui/mainwindow.cpp" line="1906"/>
         <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
         <translation>Desculpe, ainda não há assistente de instalação. Ele será implementado na versão 0.110.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1931"/>
+        <location filename="../gui/mainwindow.cpp" line="1947"/>
         <source>Open image file</source>
         <translation>Abrir arquivo de imagem</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1931"/>
+        <location filename="../gui/mainwindow.cpp" line="1947"/>
         <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
         <translation>Executável e bibliotecas compartilhadas Win32 (*.exe *.dll);;Executável Win32 (*.exe);;Bibliotecas compartilhadas Win32 (*.dll)</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1970"/>
+        <location filename="../gui/mainwindow.cpp" line="1986"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Exportando ícone do arquivo binário.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1970"/>
+        <location filename="../gui/mainwindow.cpp" line="1986"/>
         <source>Exporting icon</source>
         <translation>Exportando ícone</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1979"/>
+        <location filename="../gui/mainwindow.cpp" line="1995"/>
         <source>%1/</source>
         <translation>%1/</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1996"/>
+        <location filename="../gui/mainwindow.cpp" line="2012"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Convertendo ícone do arquivo binário.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1996"/>
+        <location filename="../gui/mainwindow.cpp" line="2012"/>
         <source>Converting icon</source>
         <translation>Convertendo ícone</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2030"/>
+        <location filename="../gui/mainwindow.cpp" line="2046"/>
         <source>Stop current</source>
         <translation>Parar atual</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2031"/>
+        <location filename="../gui/mainwindow.cpp" line="2047"/>
         <source>Send TERM signal to selected process</source>
         <translation>Enviar o sinal TERM para o processo selecionado</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2034"/>
+        <location filename="../gui/mainwindow.cpp" line="2050"/>
         <source>Stop wine</source>
         <translation>Parar Wine</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2035"/>
+        <location filename="../gui/mainwindow.cpp" line="2051"/>
         <source>Send TERM signal to main wine process</source>
         <translation>Enviar o sinal TERM para o processo principal do Wine</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2038"/>
+        <location filename="../gui/mainwindow.cpp" line="2054"/>
         <source>Refresh list</source>
         <translation>Atualizar lista</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2039"/>
+        <location filename="../gui/mainwindow.cpp" line="2055"/>
         <source>Refresh process list</source>
         <translation>Atualizar a lista de processos</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2042"/>
+        <location filename="../gui/mainwindow.cpp" line="2058"/>
         <source>Renice</source>
         <translation>Alterar prioridade</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2043"/>
+        <location filename="../gui/mainwindow.cpp" line="2059"/>
         <source>Set process priority</source>
         <translation>Definir a prioridade do processo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2238"/>
+        <location filename="../gui/mainwindow.cpp" line="2254"/>
         <location filename="../uis/MainWindow.ui" line="456"/>
         <source>Run...</source>
         <translation>Executar...</translation>
@@ -1781,8 +1594,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="246"/>
-        <location filename="../gui/mainwindow.cpp" line="2387"/>
-        <location filename="../gui/mainwindow.cpp" line="2545"/>
+        <location filename="../gui/mainwindow.cpp" line="2403"/>
+        <location filename="../gui/mainwindow.cpp" line="2561"/>
         <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
         <translation>Desculpe. Parce que o ícone já existe.&lt;br&gt;Por favor, escolha outro nome, ou cancele a operação.</translation>
     </message>
@@ -1792,55 +1605,51 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;p&gt;q4wine NÃO suporta oficialmente Winetricks&lt;/p&gt;&lt;p&gt;Houve alguns relatos sobre falhas, atrasos e erros em winetriks e q4wine, usados ao mesmo tempo.&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>Run application at current prefix</source>
-        <translation type="obsolete">Executar aplicação no prefixo atual</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2054"/>
-        <location filename="../gui/mainwindow.cpp" line="2094"/>
+        <location filename="../gui/mainwindow.cpp" line="2070"/>
+        <location filename="../gui/mainwindow.cpp" line="2110"/>
         <source>New</source>
         <translation>Novo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2055"/>
+        <location filename="../gui/mainwindow.cpp" line="2071"/>
         <source>Create new directory</source>
         <translation>Criar um novo diretório</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2058"/>
-        <location filename="../gui/mainwindow.cpp" line="2110"/>
+        <location filename="../gui/mainwindow.cpp" line="2074"/>
+        <location filename="../gui/mainwindow.cpp" line="2126"/>
         <source>Rename</source>
         <translation>Renomear</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2059"/>
+        <location filename="../gui/mainwindow.cpp" line="2075"/>
         <source>Rename current directory</source>
         <translation>Renomear o diretório atual</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2062"/>
-        <location filename="../gui/mainwindow.cpp" line="2114"/>
+        <location filename="../gui/mainwindow.cpp" line="2078"/>
+        <location filename="../gui/mainwindow.cpp" line="2130"/>
         <source>Delete</source>
         <translation>Excluir</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2063"/>
+        <location filename="../gui/mainwindow.cpp" line="2079"/>
         <source>Delete current directory</source>
         <translation>Excluir o diretório atual</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2066"/>
+        <location filename="../gui/mainwindow.cpp" line="2082"/>
         <source>Unmount cd drive</source>
         <translation>Desmontar unidade de CD</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2067"/>
+        <location filename="../gui/mainwindow.cpp" line="2083"/>
         <source>Unmounts cdrom drive</source>
         <translation>Desmontar unidades de CDROM</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="805"/>
-        <location filename="../gui/mainwindow.cpp" line="1018"/>
+        <location filename="../gui/mainwindow.cpp" line="806"/>
+        <location filename="../gui/mainwindow.cpp" line="1034"/>
         <source>mount ...</source>
         <translation>mount ...</translation>
     </message>
@@ -1850,337 +1659,333 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="792"/>
-        <location filename="../gui/mainwindow.cpp" line="859"/>
-        <location filename="../gui/mainwindow.cpp" line="1010"/>
+        <location filename="../gui/mainwindow.cpp" line="793"/>
+        <location filename="../gui/mainwindow.cpp" line="860"/>
+        <location filename="../gui/mainwindow.cpp" line="1026"/>
         <source>[none]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="860"/>
+        <location filename="../gui/mainwindow.cpp" line="861"/>
         <source>No device drive specified in prefix settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="923"/>
-        <location filename="../gui/mainwindow.cpp" line="2050"/>
-        <location filename="../gui/mainwindow.cpp" line="2070"/>
-        <location filename="../gui/mainwindow.cpp" line="2129"/>
+        <location filename="../gui/mainwindow.cpp" line="924"/>
+        <location filename="../gui/mainwindow.cpp" line="2066"/>
+        <location filename="../gui/mainwindow.cpp" line="2086"/>
+        <location filename="../gui/mainwindow.cpp" line="2145"/>
         <source>Browse ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1523"/>
+        <location filename="../gui/mainwindow.cpp" line="1539"/>
         <source>This action will send a KILL(-9) signal to all wine proccess with WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="1538"/>
+        <location filename="../gui/mainwindow.cpp" line="1554"/>
         <source>This action will send a KILL(-9) signal to proccess &apos;%2&apos; pid: %1&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2051"/>
+        <location filename="../gui/mainwindow.cpp" line="2067"/>
         <source>Bowse for application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2071"/>
-        <location filename="../gui/mainwindow.cpp" line="2130"/>
+        <location filename="../gui/mainwindow.cpp" line="2087"/>
+        <location filename="../gui/mainwindow.cpp" line="2146"/>
         <source>Browse for other image</source>
         <translation>Procurar por outra imagem</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2074"/>
+        <location filename="../gui/mainwindow.cpp" line="2090"/>
         <source>Configure wine</source>
         <translation>Configurar Wine</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2075"/>
+        <location filename="../gui/mainwindow.cpp" line="2091"/>
         <source>Configure Wine general settings</source>
         <translation>Configure o Wine nas configurações gerais</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2078"/>
+        <location filename="../gui/mainwindow.cpp" line="2094"/>
         <source>App install</source>
         <translation>Instalar aplicações</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2079"/>
+        <location filename="../gui/mainwindow.cpp" line="2095"/>
         <source>Runs application install wizard for current prefix</source>
         <translation>Executar assistente de instalação da aplicação para o prefixo atual</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2082"/>
+        <location filename="../gui/mainwindow.cpp" line="2098"/>
         <source>App uninstall</source>
         <translation>Desinstalar aplicações</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2083"/>
+        <location filename="../gui/mainwindow.cpp" line="2099"/>
         <source>Runs application uninstall wizard for current prefix</source>
         <translation>Executar assistente de desinstalação da aplicação para o prefixo atual</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2090"/>
+        <location filename="../gui/mainwindow.cpp" line="2106"/>
         <source>Run</source>
         <translation>Executar</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2091"/>
-        <location filename="../gui/mainwindow.cpp" line="2095"/>
+        <location filename="../gui/mainwindow.cpp" line="2107"/>
+        <location filename="../gui/mainwindow.cpp" line="2111"/>
         <source>Create new icon</source>
         <translation>Criar um novo ícone</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2098"/>
+        <location filename="../gui/mainwindow.cpp" line="2114"/>
         <source>Cut</source>
         <translation>Cortar</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2099"/>
+        <location filename="../gui/mainwindow.cpp" line="2115"/>
         <source>Cut selected icons to buffer</source>
         <translation>Cortar ícones selecionados</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2102"/>
+        <location filename="../gui/mainwindow.cpp" line="2118"/>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2103"/>
+        <location filename="../gui/mainwindow.cpp" line="2119"/>
         <source>Copy selected icons to buffer</source>
         <translation>Copiar ícones selecionados</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2106"/>
+        <location filename="../gui/mainwindow.cpp" line="2122"/>
         <source>Paste</source>
         <translation>Colar</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2107"/>
+        <location filename="../gui/mainwindow.cpp" line="2123"/>
         <source>Paste selected icons from buffer to selected folder</source>
         <translation>Colar ícones para a pasta selecionada</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2111"/>
+        <location filename="../gui/mainwindow.cpp" line="2127"/>
         <source>Rename current icon</source>
         <translation>Renomear ícone atual</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2115"/>
+        <location filename="../gui/mainwindow.cpp" line="2131"/>
         <source>Delete current icon</source>
         <translation>Excluir o ícone atual</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2119"/>
+        <location filename="../gui/mainwindow.cpp" line="2135"/>
         <source>Modify current icon options</source>
         <translation>Alterar opções do ícone atual</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2122"/>
+        <location filename="../gui/mainwindow.cpp" line="2138"/>
         <source>mount</source>
         <translation>mount</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2123"/>
+        <location filename="../gui/mainwindow.cpp" line="2139"/>
         <source>Mount image from icon options</source>
         <translation>Montar imagem das opções do ícone</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2125"/>
+        <location filename="../gui/mainwindow.cpp" line="2141"/>
         <source>umount</source>
         <translation>umount</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2126"/>
+        <location filename="../gui/mainwindow.cpp" line="2142"/>
         <source>Unmount image</source>
         <translation>Desmontar imagem</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2137"/>
-        <location filename="../gui/mainwindow.cpp" line="2149"/>
+        <location filename="../gui/mainwindow.cpp" line="2153"/>
+        <location filename="../gui/mainwindow.cpp" line="2165"/>
         <source>Open icon directory</source>
         <translation>Abrir o diretório do ícone</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2138"/>
-        <location filename="../gui/mainwindow.cpp" line="2150"/>
+        <location filename="../gui/mainwindow.cpp" line="2154"/>
+        <location filename="../gui/mainwindow.cpp" line="2166"/>
         <source>Open directory for current program</source>
         <translation>Abrir diretório para o programa atual</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2141"/>
-        <location filename="../gui/mainwindow.cpp" line="2142"/>
-        <location filename="../gui/mainwindow.cpp" line="2153"/>
-        <location filename="../gui/mainwindow.cpp" line="2154"/>
+        <location filename="../gui/mainwindow.cpp" line="2157"/>
+        <location filename="../gui/mainwindow.cpp" line="2158"/>
+        <location filename="../gui/mainwindow.cpp" line="2169"/>
+        <location filename="../gui/mainwindow.cpp" line="2170"/>
         <source>Open prefix directory</source>
         <translation>Abrir diretório do prefixo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2145"/>
-        <location filename="../gui/mainwindow.cpp" line="2157"/>
+        <location filename="../gui/mainwindow.cpp" line="2161"/>
+        <location filename="../gui/mainwindow.cpp" line="2173"/>
         <source>Open mount point directory</source>
         <translation>Abrir diretório do ponto de montagem</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2146"/>
-        <location filename="../gui/mainwindow.cpp" line="2158"/>
+        <location filename="../gui/mainwindow.cpp" line="2162"/>
+        <location filename="../gui/mainwindow.cpp" line="2174"/>
         <source>Open mount point directory for current prefix</source>
         <translation>Abrir diretório do ponto de montagem para o prefixo atual</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2165"/>
+        <location filename="../gui/mainwindow.cpp" line="2181"/>
         <source>Create new</source>
         <translation>Criar um novo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2166"/>
+        <location filename="../gui/mainwindow.cpp" line="2182"/>
         <source>Create new prefix</source>
         <translation>Criar um novo prefixo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2169"/>
-        <location filename="../gui/mainwindow.cpp" line="2170"/>
+        <location filename="../gui/mainwindow.cpp" line="2185"/>
+        <location filename="../gui/mainwindow.cpp" line="2186"/>
         <source>Import prefix</source>
         <translation>Importar prefixo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2174"/>
-        <location filename="../gui/mainwindow.cpp" line="2175"/>
+        <location filename="../gui/mainwindow.cpp" line="2190"/>
+        <location filename="../gui/mainwindow.cpp" line="2191"/>
         <source>Export prefix</source>
         <translation>Exportar prefixo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2179"/>
-        <location filename="../gui/mainwindow.cpp" line="2180"/>
+        <location filename="../gui/mainwindow.cpp" line="2195"/>
+        <location filename="../gui/mainwindow.cpp" line="2196"/>
         <source>Delete prefix</source>
         <translation>Excluir prefixo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2184"/>
-        <location filename="../gui/mainwindow.cpp" line="2185"/>
+        <location filename="../gui/mainwindow.cpp" line="2200"/>
+        <location filename="../gui/mainwindow.cpp" line="2201"/>
         <source>Edit prefix settings</source>
         <translation>Editar as configurações do prefixo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2208"/>
-        <location filename="../gui/mainwindow.cpp" line="2260"/>
+        <location filename="../gui/mainwindow.cpp" line="2224"/>
+        <location filename="../gui/mainwindow.cpp" line="2276"/>
         <source>Mount iso...</source>
         <translation>Montando iso...</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2219"/>
-        <location filename="../gui/mainwindow.cpp" line="2252"/>
-        <location filename="../gui/mainwindow.cpp" line="2274"/>
+        <location filename="../gui/mainwindow.cpp" line="2235"/>
+        <location filename="../gui/mainwindow.cpp" line="2268"/>
+        <location filename="../gui/mainwindow.cpp" line="2290"/>
         <source>Browser</source>
         <translation>Procurar</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2224"/>
-        <location filename="../gui/mainwindow.cpp" line="2256"/>
-        <location filename="../gui/mainwindow.cpp" line="2278"/>
+        <location filename="../gui/mainwindow.cpp" line="2240"/>
+        <location filename="../gui/mainwindow.cpp" line="2272"/>
+        <location filename="../gui/mainwindow.cpp" line="2294"/>
         <source>Wine browser</source>
         <translation>Procurar Wine</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2292"/>
+        <location filename="../gui/mainwindow.cpp" line="2308"/>
         <source>%1/%2</source>
         <translation>%1/%2</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2294"/>
-        <location filename="../gui/mainwindow.cpp" line="2297"/>
+        <location filename="../gui/mainwindow.cpp" line="2310"/>
+        <location filename="../gui/mainwindow.cpp" line="2313"/>
         <source>:/%1</source>
         <translation>:/%1</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2343"/>
+        <location filename="../gui/mainwindow.cpp" line="2359"/>
         <source>Delete Icon</source>
         <translation>Excluir ícone</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2343"/>
+        <location filename="../gui/mainwindow.cpp" line="2359"/>
         <source>Do you want to delete all selected icons?</source>
         <translation>Você deseja excluir todos os ícones selecionados?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2383"/>
+        <location filename="../gui/mainwindow.cpp" line="2399"/>
         <source>Enter new icon name</source>
         <translation>Digite o novo nome do ícone</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2383"/>
+        <location filename="../gui/mainwindow.cpp" line="2399"/>
         <source>Icon name:</source>
         <translation>Nome do ícone:</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2723"/>
+        <location filename="../gui/mainwindow.cpp" line="2739"/>
         <source>Enter new directory name</source>
         <translation>Digite o nome do novo diretório</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2723"/>
-        <location filename="../gui/mainwindow.cpp" line="2848"/>
+        <location filename="../gui/mainwindow.cpp" line="2739"/>
+        <location filename="../gui/mainwindow.cpp" line="2864"/>
         <source>Directory name:</source>
         <translation>Nome do diretório:</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2729"/>
-        <location filename="../gui/mainwindow.cpp" line="2738"/>
+        <location filename="../gui/mainwindow.cpp" line="2745"/>
+        <location filename="../gui/mainwindow.cpp" line="2754"/>
         <source>Sorry, but directory named %1 already exists.</source>
         <translation>Desculpe, mas o diretório chamado %1 já existe.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2781"/>
-        <source>Open ISO or NRG Image file</source>
-        <translation>Abrir arquivo de imagem ISO ou NRG</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="2781"/>
-        <source>iso and nrg files (*.iso *.nrg *.img *.bin *.mdf)</source>
+        <location filename="../gui/mainwindow.cpp" line="2797"/>
+        <source>Open CD Image files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>iso and nrg files (*.iso *.nrg)</source>
-        <translation type="obsolete">Arquivos iso ou nrg (*.iso *.nrg)</translation>
+        <location filename="../gui/mainwindow.cpp" line="2797"/>
+        <source>CD image files (*.iso *.nrg *.img *.bin *.mdf)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2785"/>
+        <location filename="../gui/mainwindow.cpp" line="2801"/>
         <source>Open ISO Image file</source>
         <translation>Abrir arquivo de imagem ISO</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2785"/>
+        <location filename="../gui/mainwindow.cpp" line="2801"/>
         <source>iso files (*.iso)</source>
         <translation>Arquivos iso (*.iso)</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2829"/>
+        <location filename="../gui/mainwindow.cpp" line="2845"/>
         <source>Sorry, no install wizard yet. It&apos;l implemented at v0.110.</source>
         <translation>Desculpe, ainda não há assistente de instalação. Ele será implementado na versão 0.110.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2848"/>
+        <location filename="../gui/mainwindow.cpp" line="2864"/>
         <source>Enter new name for directory</source>
         <translation>Digite um novo nome para o diretório</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2852"/>
+        <location filename="../gui/mainwindow.cpp" line="2868"/>
         <source>Sorry. It seems directory already exists.</source>
         <translation>Desculpe. Parece que o diretório já existe.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2852"/>
+        <location filename="../gui/mainwindow.cpp" line="2868"/>
         <source>Sorry. It seems directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
         <translation>Desculpe. Parece que o diretório já existe.&lt;br&gt;Por favor, escolha um outro nome, ou cancele a operação.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2874"/>
+        <location filename="../gui/mainwindow.cpp" line="2890"/>
         <source>Q4Wine</source>
         <translation>Q4Wine</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2874"/>
+        <location filename="../gui/mainwindow.cpp" line="2890"/>
         <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
 </source>
         <translation>Você realmente deseja excluir a pasta chamada &quot;%1&quot; e todos os ícones associados?
@@ -2418,26 +2223,26 @@ Nota: deixe em branco para o padrão.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="873"/>
-        <location filename="../gui/mainwindow.cpp" line="907"/>
-        <location filename="../gui/mainwindow.cpp" line="2802"/>
+        <location filename="../gui/mainwindow.cpp" line="874"/>
+        <location filename="../gui/mainwindow.cpp" line="908"/>
+        <location filename="../gui/mainwindow.cpp" line="2818"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 montada com sucesso.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="875"/>
-        <location filename="../gui/mainwindow.cpp" line="909"/>
-        <location filename="../gui/mainwindow.cpp" line="2804"/>
+        <location filename="../gui/mainwindow.cpp" line="876"/>
+        <location filename="../gui/mainwindow.cpp" line="910"/>
+        <location filename="../gui/mainwindow.cpp" line="2820"/>
         <source>Fail to mount %1.</source>
         <translation>Falha ao montar %1.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2769"/>
+        <location filename="../gui/mainwindow.cpp" line="2785"/>
         <source>Drive successfully umounted.</source>
         <translation>Drive desmontado com sucesso.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="2771"/>
+        <location filename="../gui/mainwindow.cpp" line="2787"/>
         <source>Fail to umount drive.</source>
         <translation>Falha ao montar drive.</translation>
     </message>
@@ -2512,14 +2317,6 @@ Nota: deixe em branco para o padrão.</translation>
         <location filename="../q4wine-lib/main.cpp" line="238"/>
         <source>&lt;p&gt;Error while loading application settings by key: &apos;%1&apos;. File or path not exists: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Please, go to %3 options dialog and set it.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Erro ao carregar configurações da aplicação pela chave: &apos;%1&apos;. Arquivo ou local não existe: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Por favor, vá até %3 no diálogo das opções e defina-o.&lt;p&gt;</translation>
-    </message>
-    <message>
-        <source>Sorry, i can&apos;t access to /etc/fstab</source>
-        <translation type="obsolete">Desculpe, eu não posso acessar /etc/fstab</translation>
-    </message>
-    <message>
-        <source>Can&apos;t find or execute &apos;%1&apos; binary. See INSTALL file for application depends.</source>
-        <translation type="obsolete">Não foi possível localizar ou executar o binário &apos;%1&apos;. Veja o arquivo INSTALL para as dependências da aplicação.</translation>
     </message>
     <message>
         <location filename="../q4wine-lib/main.cpp" line="320"/>
@@ -2950,10 +2747,6 @@ Nota: deixe em branco para o padrão.</translation>
         <translation>Relate falhas de q4wine para brezerk@gmail.com</translation>
     </message>
     <message>
-        <source>q4wine homepage: &lt;http://sourceforge.net/projects/q4wine/&gt;</source>
-        <translation type="obsolete">Página de q4wine: &lt;http://sourceforge.net/projects/q4wine/&gt;</translation>
-    </message>
-    <message>
         <location filename="../q4wine-cli/main.cpp" line="483"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
         <translation>Ajuda geral usando software GNU: &lt;http://www.gnu.org/gethelp/&gt;</translation>
@@ -3199,14 +2992,6 @@ Nota: deixe em branco para o padrão.</translation>
         <translation>Abrir Diretório</translation>
     </message>
     <message>
-        <source>Desktop</source>
-        <translation type="obsolete">Área de Trabalho</translation>
-    </message>
-    <message>
-        <source>Desktop size:</source>
-        <translation type="obsolete">Tamanho do Área de Trabalho:</translation>
-    </message>
-    <message>
         <location filename="../uis/Run.ui" line="710"/>
         <source>Nice level priority</source>
         <translation>Nível da prioridade nice</translation>
@@ -3365,25 +3150,9 @@ Note: leave it blank for default value.</source>
         <translation>Informação básica:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Fixed [Misc]&apos;;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../uis/Wizard.ui" line="878"/>
         <source>System utils</source>
         <translation>Utilitários do sistema</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Please set default system utils paths&lt;br&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Por favor, defina os caminhos padrão dos utilitários do sistema&lt;br&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="913"/>
@@ -3453,10 +3222,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../uis/Wizard.ui" line="1372"/>
         <source>Args:</source>
         <translation>Argumentos:</translation>
-    </message>
-    <message>
-        <source>Icotool</source>
-        <translation type="obsolete">Icotool</translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="1412"/>
@@ -4486,25 +4251,9 @@ DirectDrawRenderer&quot;=&quot;%1&quot;</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;p&gt;Please set default user utils paths&lt;br&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Por favor, defina o caminho padão para os utilitários do Wine&lt;br&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Please enter default wine settings.&lt;/p&gt;&lt;br&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Por favor, digite as configurações padrão do wine.&lt;br&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../gui/wizard.cpp" line="1042"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Pronto para concluir a instalação de %1. &lt;/p&gt;&lt;p&gt;Por favor, pressione o botão &lt;b&gt;Concluir&lt;/b&gt; para terminar o processo de instalação. Ou pressione o botão &lt;b&gt;Voltar&lt;/b&gt; para retornar.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>If you wish to use different wine versions, you may wish set custom wine path here.
-
-Note: leave it blank for default.</source>
-        <translation type="obsolete">Se você quiser usar diferentes versões de Wine, você pode definir a personalização do Wine aqui.
-
-Nota: deixe em branco para padrão.</translation>
     </message>
     <message>
         <location filename="../uis/Wizard.ui" line="724"/>
@@ -4562,36 +4311,25 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>corelib</name>
-    <message>
-        <source>%1 | grep %2</source>
-        <translation type="obsolete">%1 | grep %2</translation>
-    </message>
-    <message>
-        <source>-u%1</source>
-        <translation type="obsolete">-u%1</translation>
-    </message>
-</context>
-<context>
     <name>winetricks</name>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="79"/>
+        <location filename="../temporary/winetricks.cpp" line="77"/>
         <source>&lt;p&gt;q4wine can&apos;t locate winetricks at %1 path!&lt;/p&gt;&lt;p&gt;The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Or use &quot;Install winetricks&quot; button.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine não pôde localizar winetricks no caminho %1!&lt;/p&gt;&lt;p&gt;O script é mantido e hospedado por DanKegel em http://www.kegel.com/wine/winetricks. Você pode obtê-lo a partir da linha de comando com o comando:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Ou use o botão &quot;Instalar winetricks&quot;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="124"/>
+        <location filename="../temporary/winetricks.cpp" line="120"/>
         <source>Running winetricks...</source>
         <translation>Executando winetricks...</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="124"/>
-        <location filename="../temporary/winetricks.cpp" line="178"/>
+        <location filename="../temporary/winetricks.cpp" line="120"/>
+        <location filename="../temporary/winetricks.cpp" line="174"/>
         <source>Plz wait...</source>
         <translation>Por favor, aguarde...</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="178"/>
+        <location filename="../temporary/winetricks.cpp" line="174"/>
         <source>Downloading and installing winetricks...</source>
         <translation>Baixando e instalando winetricks...</translation>
     </message>
@@ -4601,7 +4339,7 @@ p, li { white-space: pre-wrap; }
         <translation>Instalar Winetricks</translation>
     </message>
     <message>
-        <location filename="../temporary/winetricks.cpp" line="79"/>
+        <location filename="../temporary/winetricks.cpp" line="77"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>

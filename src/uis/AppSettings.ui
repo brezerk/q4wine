@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>648</width>
+    <width>642</width>
     <height>420</height>
    </rect>
   </property>
@@ -1564,13 +1564,13 @@
           <item>
            <widget class="QGroupBox" name="groupBox_11">
             <property name="title">
-             <string>&quot;Run&quot; advanced option</string>
+             <string>Run recent program</string>
             </property>
             <layout class="QVBoxLayout" name="_6">
              <item>
               <widget class="QCheckBox" name="chOpenRunDialog">
                <property name="text">
-                <string>Open Run dialog while run recent icon entry.</string>
+                <string>Open Run dialog.</string>
                </property>
                <property name="checked">
                 <bool>false</bool>
