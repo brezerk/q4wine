@@ -209,6 +209,13 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	radioEmbedded->setEnabled(FALSE);
 #endif
 
+	settings.beginGroup("advanced");
+	if (settings.value("openRunDialog", 0).toInt()==0){
+		chOpenRunDialog->setChecked(false);
+	} else {
+		chOpenRunDialog->setChecked(true);
+	}
+	settings.endGroup();
 
 	return;
 }
@@ -588,6 +595,16 @@ void AppSettings::cmdOk_Click(){
 	  }
 
 	  settings.endGroup();
+
+	  settings.beginGroup("advanced");
+	  if (chOpenRunDialog->isChecked()){
+		  settings.setValue("openRunDialog", 1);
+	  } else {
+		  settings.setValue("openRunDialog", 0);
+	  }
+	  settings.endGroup();
+
+
 	  accept();
 	  return;
 }

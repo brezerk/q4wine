@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>650</width>
+    <width>648</width>
     <height>420</height>
    </rect>
   </property>
@@ -1550,6 +1550,45 @@
              <size>
               <width>20</width>
               <height>211</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_7">
+         <attribute name="title">
+          <string>Advanced</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QGroupBox" name="groupBox_11">
+            <property name="title">
+             <string>&quot;Run&quot; advanced option</string>
+            </property>
+            <layout class="QVBoxLayout" name="_6">
+             <item>
+              <widget class="QCheckBox" name="chOpenRunDialog">
+               <property name="text">
+                <string>Open Run dialog while run recent icon entry.</string>
+               </property>
+               <property name="checked">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>233</height>
              </size>
             </property>
            </spacer>

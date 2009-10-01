@@ -13,6 +13,38 @@ If you need help, ask the mailing lists at http://www.winehq.org/site/forums.
 If you want support, buy the commercial versions of wine: CodeWeavers CrossOver Office 
 http://www.codeweavers.com for Desktop Applications.
 
+Postinstall:
+***********************************************
+
+-NOTE-
+This instructions may be outdated, please see last version of this howto here:
+http://q4wine.brezblock.org.ua/documentation/en_us/02-post-installation.html
+------
+
+If you plan to use kdesu\gksu\xdg-su, then you might add folowing lines
+to /etc/sudoers (use visudo)
+
+#---------- Cut here -------------------------
+Cmnd_Alias Q4WINE_COMMS=/sbin/losetup
+User_Alias Q4WINE_USERS=%games,%users
+
+Q4WINE_USERS ALL=(ALL) NOPASSWD: Q4WINE_COMMS
+#---------- End of Cut -----------------------
+
+This will allow to run /sbin/losetup, which is used for building mounted iso's menu list,
+with out prompting root password.
+
+Otherwise you can't get mount menu working =)
+
+Uninstall:
+***********************************************
+In q4wine build root run:
+xargs rm < install_manifest.txt
+
+Changelog
+***********************************************
+See changelog file for details
+
 -- 
 Regards,
 

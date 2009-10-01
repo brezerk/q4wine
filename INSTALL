@@ -78,24 +78,6 @@ Installation
 PS: Is you install q4wine in non standart directory, and gets error "error while loading shared libraries: libq4wine-core.so"
 just run q4wine with LD_LIBRARY_PATH={$path_to_q4wine_prefix}/lib/ q4wine
 
-Postinstall:
-***********************************************
-
-If you plan to use kdesu\gksu\xdg-su, then you might add folowing lines
-to /etc/sudoers (use visudo)
-
-#---------- Cut here -------------------------
-Cmnd_Alias Q4WINE_COMMS=/sbin/losetup
-User_Alias Q4WINE_USERS=%games,%users
-
-Q4WINE_USERS ALL=(ALL) NOPASSWD: Q4WINE_COMMS
-#---------- End of Cut -----------------------
-
-This will allow to run /sbin/losetup, which is used for building mounted iso's menu list, 
-with out prompting root password.
-
-Otherwise you can't get mount menu working =)
-
 Uninstall:
 ***********************************************
 In q4wine build root run:

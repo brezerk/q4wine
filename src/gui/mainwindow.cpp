@@ -480,26 +480,27 @@ void MainWindow::getSettings(){
 
   switch (CoreLib->getSetting("network", "type", false).toInt()){
 		case 0:
-	proxy.setType(QNetworkProxy::NoProxy);
-	QNetworkProxy::setApplicationProxy(proxy);
-	break;
+	  proxy.setType(QNetworkProxy::NoProxy);
+	  QNetworkProxy::setApplicationProxy(proxy);
+	  break;
 		case 1:
-	proxy.setType(QNetworkProxy::HttpProxy);
-	proxy.setHostName(CoreLib->getSetting("network", "host", false).toString());
-	proxy.setPort(CoreLib->getSetting("network", "port", false).toInt());
-	proxy.setUser(CoreLib->getSetting("network", "user", false).toString());
-	proxy.setPassword(CoreLib->getSetting("network", "pass", false).toString());
-	QNetworkProxy::setApplicationProxy(proxy);
-	break;
+	  proxy.setType(QNetworkProxy::HttpProxy);
+	  proxy.setHostName(CoreLib->getSetting("network", "host", false).toString());
+	  proxy.setPort(CoreLib->getSetting("network", "port", false).toInt());
+	  proxy.setUser(CoreLib->getSetting("network", "user", false).toString());
+	  proxy.setPassword(CoreLib->getSetting("network", "pass", false).toString());
+	  QNetworkProxy::setApplicationProxy(proxy);
+	  break;
 		case 2:
-	proxy.setType(QNetworkProxy::Socks5Proxy);
-	proxy.setHostName(CoreLib->getSetting("network", "host", false).toString());
-	proxy.setPort(CoreLib->getSetting("network", "port", false).toInt());
-	proxy.setUser(CoreLib->getSetting("network", "user", false).toString());
-	proxy.setPassword(CoreLib->getSetting("network", "pass", false).toString());
-	QNetworkProxy::setApplicationProxy(proxy);
-	break;
+	  proxy.setType(QNetworkProxy::Socks5Proxy);
+	  proxy.setHostName(CoreLib->getSetting("network", "host", false).toString());
+	  proxy.setPort(CoreLib->getSetting("network", "port", false).toInt());
+	  proxy.setUser(CoreLib->getSetting("network", "user", false).toString());
+	  proxy.setPassword(CoreLib->getSetting("network", "pass", false).toString());
+	  QNetworkProxy::setApplicationProxy(proxy);
+	  break;
   }
+
   return;
 }
 
@@ -937,16 +938,31 @@ void MainWindow::menuRun_triggered ( QAction * action ){
 	if (isMinimized ())
 		showNormal ();
 
-	Run *run;
-
-	if (treeItem->parent()){
-		run = new Run(treeItem->parent()->text(0), result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
+	if (CoreLib->getSetting("advanced", "openRunDialog", false, 0).toInt()==0){
+		ExecObject execObj;
+		execObj.prefixid=db_prefix->getId(treeItem->parent()->text(0));
+		execObj.execcmd=action->statusTip();
+		execObj.wrkdir=result.at(0);
+		execObj.override=result.at(1);
+		execObj.winedebug=result.at(2);
+		execObj.useconsole=result.at(3);
+		execObj.display=result.at(4);
+		execObj.cmdargs=result.at(5);
+		execObj.desktop=result.at(6);
+		execObj.nice=result.at(7);
+		CoreLib->runWineBinary(execObj);
 	} else {
-		run = new Run(treeItem->text(0), result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
-	}
+		Run *run;
 
-	if (run->exec()==QDialog::Accepted)
-		CoreLib->runWineBinary(run->execObj);
+		if (treeItem->parent()){
+			run = new Run(treeItem->parent()->text(0), result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
+		} else {
+			run = new Run(treeItem->text(0), result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
+		}
+
+		if (run->exec()==QDialog::Accepted)
+			CoreLib->runWineBinary(run->execObj);
+	}
 
 	return;
 }
