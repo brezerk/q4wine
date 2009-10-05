@@ -895,7 +895,7 @@ void MainWindow::menuMountRecentImages_triggered ( QAction * action ){
 
 	for (int i = 0; i < files.size(); ++i){
 		if (files.at(i).contains(action->text().split("/").last())){
-			bool ret;
+			bool ret=false;
 			if (twPrograms->currentItem()){
 				if (twPrograms->currentItem()->parent()){
 					ret=CoreLib->mountImage(files.at(i), twPrograms->currentItem()->parent()->text(0));
@@ -2784,7 +2784,7 @@ void MainWindow::dirUnmount_Click(void){
 		Request for unmounting cdrom drve described at wine prefix settings
 	*/
 
-  bool ret;
+  bool ret=false;
   if (twPrograms->currentItem()){
 	if (twPrograms->currentItem()->parent()){
 	  ret=CoreLib->umountImage(twPrograms->currentItem()->parent()->text(0));
@@ -2817,7 +2817,7 @@ void MainWindow::dirMountOther_Click(void){
 	return;
   }
 
-  bool ret;
+  bool ret=false;
   if (twPrograms->currentItem()){
 	if (twPrograms->currentItem()->parent()){
 	  ret=CoreLib->mountImage(fileName, twPrograms->currentItem()->parent()->text(0));
