@@ -75,7 +75,7 @@ Installation
 8. $ q4wine
 6. Enjoy :)
 
-PS: Is you install q4wine in non standart directory, and gets error "error while loading shared libraries: libq4wine-core.so"
+PS: If you install q4wine in non standart directory, and gets error "error while loading shared libraries: libq4wine-core.so"
 just run q4wine with LD_LIBRARY_PATH={$path_to_q4wine_prefix}/lib/ q4wine
 
 Uninstall:
