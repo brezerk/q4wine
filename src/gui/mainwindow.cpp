@@ -929,8 +929,14 @@ void MainWindow::menuRun_triggered ( QAction * action ){
 	if (!twPrograms->currentItem())
 		return;
 
+
+
 	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 	QStringList dataList;
+
+
+	if (!treeItem)
+		return;
 
 	if (!isVisible())
 		setMeVisible(TRUE);
@@ -940,7 +946,11 @@ void MainWindow::menuRun_triggered ( QAction * action ){
 
 	if (CoreLib->getSetting("advanced", "openRunDialog", false, 0).toInt()==0){
 		ExecObject execObj;
-		execObj.prefixid=db_prefix->getId(treeItem->parent()->text(0));
+		if (treeItem->parent()){
+			execObj.prefixid=db_prefix->getId(treeItem->parent()->text(0));
+		} else {
+			execObj.prefixid=db_prefix->getId(treeItem->text(0));
+		}
 		execObj.execcmd=action->statusTip();
 		execObj.wrkdir=result.at(0);
 		execObj.override=result.at(1);
@@ -953,6 +963,8 @@ void MainWindow::menuRun_triggered ( QAction * action ){
 		CoreLib->runWineBinary(execObj);
 	} else {
 		Run *run;
+
+		return;
 
 		if (treeItem->parent()){
 			run = new Run(treeItem->parent()->text(0), result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());

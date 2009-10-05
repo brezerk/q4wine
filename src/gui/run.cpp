@@ -367,7 +367,7 @@ void Run::cmdGetProgram_Click(){
 	*/
 
 	QFileDialog dialog(this);
-	  dialog.setFilter(QDir::Dirs | QDir::Files );
+	  dialog.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden);
 	  dialog.setWindowTitle(tr("Open Exe file"));
 	  dialog.setDirectory(searchPath);
 	  dialog.setFileMode(QFileDialog::ExistingFile);
