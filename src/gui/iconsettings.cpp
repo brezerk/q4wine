@@ -325,7 +325,7 @@ void IconSettings::cmdGetWorkDir_Click(){
 	*/
 
 	QFileDialog dialog(this);
-	  dialog.setFilter(QDir::Dirs);
+	  dialog.setFilter(QDir::Dirs | QDir::Hidden);
 
 	  dialog.setFileMode(QFileDialog::Directory);
 	  dialog.setWindowTitle(tr("Open Directory"));
@@ -388,7 +388,7 @@ void IconSettings::cmdGetProgram_Click(){
 	*/
 
 	QFileDialog dialog(this);
-	  dialog.setFilter(QDir::Dirs | QDir::Files );
+	  dialog.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden );
 	  dialog.setWindowTitle(tr("Open Exe file"));
 	  dialog.setDirectory(searchPath);
 	  dialog.setFileMode(QFileDialog::ExistingFile);
@@ -448,7 +448,7 @@ void IconSettings::cmdGetIcon_Click(){
 	*/
 
 	QFileDialog dialog(this);
-	  dialog.setFilter(QDir::Dirs | QDir::Files );
+	  dialog.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden);
 	  dialog.setFileMode(QFileDialog::ExistingFile);
 	  dialog.setWindowTitle(tr("Open image file"));
 	  if ((!iconPath.isEmpty()) and (QFile(iconPath).exists())){
