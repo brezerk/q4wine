@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -26,7 +26,12 @@
  *   you do not wish to do so, delete this exception statement from        *
  *   your version.                                                         *
  ***************************************************************************/
- 
+
+/*!
+ * \defgroup registry Q4Wine registry core
+ * \brief Registry core pakage provide general registry functions like reading and wrighting for wine registry files.
+ */
+
 #ifndef REGISTRY_H
 #define REGISTRY_H
 
@@ -49,18 +54,55 @@
 
 #include "winebinlauncher.h"
 
+/*!
+ * \class Registry
+ * \ingroup registry
+ * \brief This class provide general registry functions for q4wine.
+ *
+ * This class can create registry files to export via wine regedit.
+ * Also this class can read keys value from wine registry.
+ *
+ */
 class Registry: public QObject
 {
-        Q_OBJECT
-	public:
-		Registry();
-		bool init();
-		void append(QString reg_keys);
-		bool exec(QObject *parent, QString prefix_name = "Default");
-		//QString import(void);
-	
-	private:
-		QString regfile_image;
+	Q_OBJECT
+public:
+	/*! \brief This is empty calss constructor.
+	  */
+	Registry();
+	/*! \brief This is calss constructor.
+	  * \param prefixPath Base prefix path. This is need to get wine system registry file path.
+	  */
+	Registry(QString prefixPath);
+
+	/*! \brief Creates heade information for  exported reg file.
+	  *
+	  * \return ture on success.
+	  */
+	bool init();
+
+	/*! \brief Appends path and keys to exported reg file.
+	  * \param reg_keys QString of keys and it's values.
+	  */
+	void append(QString reg_keys);
+
+	/*! \brief Executes regedit to import exported file into wine registry.
+	  *
+	  * \return ture on success.
+	  */
+	bool exec(QObject *parent, QString prefix_name = "Default");
+
+	/*! \brief Read registry keys value from regfile by path.
+	  * \param path Registry path.
+	  * \param keys List of kays to be readed from registry.
+	  *
+	  * \return List of readed key's value. Index of readed keys identical to requested keys.
+	  */
+	QStringList readKeys(const QString path, const QStringList keys) const;
+
+private:
+	QString regfile;
+	QString regfile_image;
 };
 
 #endif

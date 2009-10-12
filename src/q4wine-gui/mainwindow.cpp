@@ -294,7 +294,16 @@ void MainWindow::startDrag (){
 
 void MainWindow::cmdTestWis_Click(){
   // test block
-  /*
+
+	Registry test(db_prefix->getPath(cbPrefixes->currentText()));
+	QStringList keys;
+	keys.append("\"RegisteredOwner\"");
+	keys.append("\"RegisteredOrganization\"");
+
+
+	qDebug()<<test.readKeys("Software\\Microsoft\\Windows\\CurrentVersion", keys);
+
+	/*
 	WisItem wis;
 
 	QString path = HOME_PATH;

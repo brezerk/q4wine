@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -69,7 +69,7 @@ class WineBinLauncher : public QDialog, public Ui::Process
 	private:
 		wine_prefix prefix;
 		QString regfile_image;
-		
+
 		QString DEFAULT_WINE_BIN, WINE_APPEND, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS, SH_BIN;
 
 	private slots:

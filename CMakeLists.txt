@@ -36,7 +36,7 @@ SET( ICON_PIXMAPS
 )
 
 SET( Q4WINE_GUI_SOURCES
-	${CMAKE_SOURCE_DIR}/src/gui/run.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/run.cpp
 	${CMAKE_SOURCE_DIR}/src/main.cpp
 	${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
 	${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
@@ -46,23 +46,23 @@ SET( Q4WINE_GUI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
 	${CMAKE_SOURCE_DIR}/src/core/registry.cpp
 	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.cpp
-	${CMAKE_SOURCE_DIR}/src/gui/about.cpp
-	${CMAKE_SOURCE_DIR}/src/gui/appsettings.cpp
-	${CMAKE_SOURCE_DIR}/src/gui/iconsettings.cpp
-	${CMAKE_SOURCE_DIR}/src/gui/iconsview.cpp
-	${CMAKE_SOURCE_DIR}/src/gui/mainwindow.cpp
-	${CMAKE_SOURCE_DIR}/src/gui/prefixsettings.cpp
-	${CMAKE_SOURCE_DIR}/src/gui/process.cpp
-	${CMAKE_SOURCE_DIR}/src/gui/wizard.cpp
-	${CMAKE_SOURCE_DIR}/src/gui/imagemanager.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/about.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsettings.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsview.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/mainwindow.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/prefixsettings.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.cpp
 #	${CMAKE_SOURCE_DIR}/src/wis/wisitem.cpp
-	${CMAKE_SOURCE_DIR}/src/gui/draglistwidget.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/draglistwidget.cpp
 )
 
 SET ( Q4WINE_HEADERS_DIR
 	${CMAKE_SOURCE_DIR}
 	${CMAKE_SOURCE_DIR}/src
-	${CMAKE_SOURCE_DIR}/src/gui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui
 	${CMAKE_SOURCE_DIR}/src/core
 	${CMAKE_SOURCE_DIR}/src/temporary
 	${CMAKE_SOURCE_DIR}/src/wis
@@ -71,7 +71,7 @@ SET ( Q4WINE_HEADERS_DIR
 
 
 SET ( Q4WINE_GUI_HEADERS
-	${CMAKE_SOURCE_DIR}/src/gui/run.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/run.h
 	${CMAKE_SOURCE_DIR}/src/core/registry.h
 	${CMAKE_SOURCE_DIR}/src/core/database/db.h
 	${CMAKE_SOURCE_DIR}/src/core/database/prefix.h
@@ -80,50 +80,50 @@ SET ( Q4WINE_GUI_HEADERS
 	${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.h
 	${CMAKE_SOURCE_DIR}/src/core/database/image.h
 	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.h
-	${CMAKE_SOURCE_DIR}/src/gui/about.h
-	${CMAKE_SOURCE_DIR}/src/gui/appsettings.h
-	${CMAKE_SOURCE_DIR}/src/gui/iconsettings.h
-	${CMAKE_SOURCE_DIR}/src/gui/iconsview.h
-	${CMAKE_SOURCE_DIR}/src/gui/mainwindow.h
-	${CMAKE_SOURCE_DIR}/src/gui/prefixsettings.h
-	${CMAKE_SOURCE_DIR}/src/gui/process.h
-	${CMAKE_SOURCE_DIR}/src/gui/wizard.h
-	${CMAKE_SOURCE_DIR}/src/gui/imagemanager.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/about.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsettings.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsview.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/mainwindow.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/prefixsettings.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
 	${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
 	${CMAKE_SOURCE_DIR}/src/core/database/initdb.h
 	${CMAKE_SOURCE_DIR}/config.h
-	${CMAKE_SOURCE_DIR}/src/gui/draglistwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/draglistwidget.h
 )
 
 SET ( Q4WINE_GUI_MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/core/registry.h
 	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.h
-	${CMAKE_SOURCE_DIR}/src/gui/appsettings.h
-	${CMAKE_SOURCE_DIR}/src/gui/iconsettings.h
-	${CMAKE_SOURCE_DIR}/src/gui/iconsview.h
-	${CMAKE_SOURCE_DIR}/src/gui/mainwindow.h
-	${CMAKE_SOURCE_DIR}/src/gui/prefixsettings.h
-	${CMAKE_SOURCE_DIR}/src/gui/process.h
-	${CMAKE_SOURCE_DIR}/src/gui/about.h
-	${CMAKE_SOURCE_DIR}/src/gui/run.h
-	${CMAKE_SOURCE_DIR}/src/gui/wizard.h
-	${CMAKE_SOURCE_DIR}/src/gui/imagemanager.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsettings.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsview.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/mainwindow.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/prefixsettings.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/about.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/run.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
 	#${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
-	${CMAKE_SOURCE_DIR}/src/gui/draglistwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/draglistwidget.h
 )
 
 SET ( Q4WINE_GUI_UI_SOURCES
-	${CMAKE_SOURCE_DIR}/src/uis/About.ui
-	${CMAKE_SOURCE_DIR}/src/uis/AppSettings.ui
-	${CMAKE_SOURCE_DIR}/src/uis/IconSettings.ui
-	${CMAKE_SOURCE_DIR}/src/uis/IconsView.ui
-	${CMAKE_SOURCE_DIR}/src/uis/MainWindow.ui
-	${CMAKE_SOURCE_DIR}/src/uis/PrefixSettings.ui
-	${CMAKE_SOURCE_DIR}/src/uis/Process.ui
-	${CMAKE_SOURCE_DIR}/src/uis/Run.ui
-	${CMAKE_SOURCE_DIR}/src/uis/Wizard.ui
-	${CMAKE_SOURCE_DIR}/src/uis/IconSettings.ui
-	${CMAKE_SOURCE_DIR}/src/uis/ImageManager.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/About.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppSettings.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/IconSettings.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/IconsView.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/MainWindow.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/PrefixSettings.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/Process.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/Run.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/Wizard.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/IconSettings.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/ImageManager.ui
 )
 
 IF (${WITH_WINETRIKS} MATCHES ON )
@@ -172,11 +172,11 @@ SET( Q4WINE_LIB_HEADERS
 )
 
 SET ( Q4WINE_LIB_MOC_HEADERS
-	${CMAKE_SOURCE_DIR}/src/gui/process.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
 )
 
 SET ( Q4WINE_LIB_UI_SOURCES
-	${CMAKE_SOURCE_DIR}/src/uis/Process.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/Process.ui
 )
 
 
@@ -202,7 +202,7 @@ SET( Q4WINE_CLI_SOURCES
 		${CMAKE_SOURCE_DIR}/src/core/database/dir.cpp
 		${CMAKE_SOURCE_DIR}/src/core/database/icon.cpp
 		${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
-		${CMAKE_SOURCE_DIR}/src/gui/process.cpp
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.cpp
 )
 
 SET( Q4WINE_CLI_HEADERS
@@ -214,7 +214,7 @@ SET( Q4WINE_CLI_HEADERS
 		${CMAKE_SOURCE_DIR}/src/core/database/dir.h
 		${CMAKE_SOURCE_DIR}/src/core/database/icon.h
 		${CMAKE_SOURCE_DIR}/src/core/database/image.h
-		${CMAKE_SOURCE_DIR}/src/gui/process.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
 )
 
 SET ( Q4WINE_RESOURCE_SOURCES

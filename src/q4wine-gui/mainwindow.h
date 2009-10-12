@@ -90,6 +90,9 @@
 #include "appsettings.h"
 #include "run.h"
 
+
+#include "registry.h"
+
 #ifdef WITH_WINETRIKS
   #include "temporary/winetricks.h"
 #endif

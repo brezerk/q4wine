@@ -31,7 +31,6 @@
 
 void Wizard::loadThemeIcons(QString themePath, int Scene){
 	QPixmap pixmap;
-
 	switch (Scene){
 	case 0:
 		// Prefix creation
@@ -108,18 +107,19 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 
 		break;
 	case 2:
-		// Fake drive
+		// Fake drive create
 		if (!pixmap.load(tr("%1/data/firstc.png").arg(themePath))){
 			pixmap.load(":data/firstc.png");
 		}
 		lblPicture->setPixmap(pixmap);
 		break;
 	case 3:
-		// Fake drive
+		// Fake drive update
 		if (!pixmap.load(tr("%1/data/firstc.png").arg(themePath))){
 			pixmap.load(":data/firstc.png");
 		}
 		lblPicture->setPixmap(pixmap);
+
 		break;
 	}
 	return;
@@ -283,6 +283,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	case 3:
 		TotalPage=6;
 		this->var1=var1;
+		qDebug()<<var1;
 		setWindowTitle(tr("Fake drive update wizard"));
 		lblCaption->setText(tr("<b>Fake drive update wizard</b>"));
 		lblStep->setText(tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));

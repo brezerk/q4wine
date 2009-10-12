@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008,2009 by Malakhov Alexey                            *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -28,7 +28,7 @@
  ***************************************************************************/
 
 #include "winebinlauncher.h"
- 
+
 WineBinLauncher::WineBinLauncher(QString prefix_name, QWidget * parent, Qt::WFlags f): QDialog(parent, f){
 	// Getting prefix settings by prefix_name
 	setupUi(this);
@@ -37,7 +37,7 @@ WineBinLauncher::WineBinLauncher(QString prefix_name, QWidget * parent, Qt::WFla
 	this->setWindowTitle (tr("Please wait"));
 
 	QSqlQuery query;
-	
+
 	query.prepare("SELECT path, wine_dllpath, wine_loader, wine_exec, wine_server FROM prefix WHERE name=:prefix_name");
 	query.bindValue(":prefix_name", prefix_name);
 	if (!query.exec()){
@@ -45,7 +45,7 @@ WineBinLauncher::WineBinLauncher(QString prefix_name, QWidget * parent, Qt::WFla
 		return;
 	}
 	query.first();
-	
+
 	this->prefix.path = query.value(0).toString();
 	this->prefix.wine_dllpath = query.value(1).toString();
 	this->prefix.wine_loader = query.value(2).toString();
@@ -56,7 +56,7 @@ WineBinLauncher::WineBinLauncher(QString prefix_name, QWidget * parent, Qt::WFla
 
 	// Getting default patchs
 	QSettings settings(APP_SHORT_NAME, "default");
-	
+
 	settings.beginGroup("wine");
 		DEFAULT_WINE_BIN=settings.value("WineBin").toString();
 		DEFAULT_WINE_SERVER=settings.value("ServerBin").toString();
@@ -70,11 +70,11 @@ WineBinLauncher::WineBinLauncher(QString prefix_name, QWidget * parent, Qt::WFla
 
 
 	myProcess = new QProcess(parent);
-	
+
 	connect(myProcess, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(slotFinished(int, QProcess::ExitStatus)));
-	
+
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_clicked()));
-	
+
 	return;
 }
 
@@ -91,19 +91,19 @@ void WineBinLauncher::run_exec(QObject *parent, QString exe, QString exe_args, b
 	QString envargs;
 
 	args.append("-c");
-	
+
 	if (!this->prefix.path.isEmpty()){
 		envargs.append(QObject::tr(" WINEPREFIX=%1 ").arg(this->prefix.path));
 	} else {
-		envargs.append(QObject::tr(" WINEPREFIX=%1/.wine ").arg(QDir::homePath()));	
+		envargs.append(QObject::tr(" WINEPREFIX=%1/.wine ").arg(QDir::homePath()));
 	}
-		
+
 	if (!this->prefix.wine_dllpath.isEmpty()){
 		envargs.append(QObject::tr(" WINEDLLPATH=%1 ").arg(this->prefix.wine_dllpath));
 	} else {
 		envargs.append(QObject::tr(" WINEDLLPATH=%1 ").arg(DEFAULT_WINE_LIBS));
 	}
-		
+
 	if (!this->prefix.wine_loader.isEmpty()){
 		envargs.append(QObject::tr(" WINELOADER=%1 ").arg(this->prefix.wine_loader));
 	} else {
@@ -132,7 +132,7 @@ void WineBinLauncher::run_exec(QObject *parent, QString exe, QString exe_args, b
 	envargs.append(exe_args);
 
 	args.append(envargs);
-	
+
 	myProcess->setWorkingDirectory(QDir::homePath());
 	myProcess->start( SH_BIN, args);
 
@@ -147,28 +147,28 @@ void WineBinLauncher::cmdCancel_clicked(void){
 }
 
 void WineBinLauncher::slotFinished(int, QProcess::ExitStatus){
-		
-			if (myProcess->exitCode()!=0){
-	
-				QString lang;
-				// Getting env LANG variable
-				lang = getenv("LANG");
-				lang = lang.split(".").at(1);
-		
-				if (lang.isNull())
-					lang = "UTF8";
-				
-				QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
-				QString string = codec->toUnicode(myProcess->readAllStandardError());
-				if (!string.isEmpty()){
-					QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Error log:<br>%1").arg(string));
-				} else {
-					QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Cant read STDERR message.<br>%1").arg(string));
-					
-				}
-				reject ();
-				return;
-			}
+
+	if (myProcess->exitCode()!=0){
+
+		QString lang;
+		// Getting env LANG variable
+		lang = getenv("LANG");
+		lang = lang.split(".").at(1);
+
+		if (lang.isNull())
+			lang = "UTF8";
+
+		QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+		QString string = codec->toUnicode(myProcess->readAllStandardError());
+		if (!string.isEmpty()){
+			QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Error log:<br>%1").arg(string));
+		} else {
+			QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Cant read STDERR message.<br>%1").arg(string));
+
+		}
+		reject ();
+		return;
+	}
 	accept();
 	return;
 }

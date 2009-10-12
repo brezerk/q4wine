@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -26,10 +26,16 @@
  *   you do not wish to do so, delete this exception statement from        *
  *   your version.                                                         *
  ***************************************************************************/
- 
+
 #include "registry.h"
- 
+
 Registry::Registry(){
+	return;
+}
+
+Registry::Registry(QString prefixPath){
+	regfile = prefixPath;
+	regfile.append("/system.reg");
 	return;
 }
 
@@ -39,18 +45,18 @@ bool Registry::init(){
 }
 
 void Registry::append(QString reg_keys){
-	regfile_image.append(reg_keys);	
+	regfile_image.append(reg_keys);
 	return;
 }
 
 bool Registry::exec(QObject *parent, QString prefix_name){
 
-	//This function wrights regfile_image into file, then run regedit.exe and import this file. 
+	//This function wrights regfile_image into file, then run regedit.exe and import this file.
 	//Also, clean files before end
 
 	QTime midnight(0, 0, 0);
 	qsrand(midnight.secsTo(QTime::currentTime()));
-	
+
 	int file_name = qrand() % 10000;
 	QString full_file_path = QObject::tr("%1/.config/%2/tmp/%3.reg").arg(QDir::homePath()).arg(APP_SHORT_NAME).arg(file_name);
 
@@ -64,10 +70,46 @@ bool Registry::exec(QObject *parent, QString prefix_name){
 	launcher = new WineBinLauncher(prefix_name);
 	launcher->show();
 	launcher->run_exec(parent, "regedit.exe", full_file_path, TRUE);
-	
+
 	if (launcher->exec()==QDialog::Accepted){
 		return TRUE;
 	} else {
 		return FALSE;
 	}
 }
+
+QStringList Registry::readKeys(const QString path, const QStringList keys) const{
+	QStringList ret;
+	QString searchPath;
+
+	searchPath="[";
+	searchPath.append(path);
+	searchPath.append("]");
+	searchPath.replace("\\","\\\\");
+
+	QFile file(regfile);
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+	   return ret;
+
+	bool readFlag=false;
+
+	while (!file.atEnd()) {
+		QByteArray line = file.readLine();
+		if ((line.indexOf(searchPath)>-1) and (!readFlag)){
+			readFlag=true;
+		}
+
+		if (readFlag){
+			QList<QByteArray> key = line.trimmed().split('=');
+			int index = keys.indexOf(key.at(0));
+			if (index>-1){
+				ret.insert(index, key.at(1).mid(1, (key.at(1).length()-2)));
+			}
+		}
+
+		if (((line=="\n") or (line.isEmpty())) and (readFlag))
+			readFlag=false;
+	}
+	return ret;
+}
+

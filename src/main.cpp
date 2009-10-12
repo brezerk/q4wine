@@ -51,7 +51,7 @@
 #include <QGroupBox>
 #include <QLocale>
 
-#include "gui/mainwindow.h"
+#include "mainwindow.h"
 
 #include <stdlib.h>
 
