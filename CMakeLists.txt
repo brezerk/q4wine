@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.6)
 PROJECT(q4wine)
 
 SET(CMAKE_VERBOSE_MAKEFILE ON)
-SET(APP_VERSION "0.113")
+SET(APP_VERSION "0.114-dev")
 
 # RPATH fixes
 # skip the full RPATH for the build tree
