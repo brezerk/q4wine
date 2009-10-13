@@ -5,6 +5,10 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
+Version 0.114
+ Fixed:
+  - Fix for misfunctioning check wether or not to use ICOTOOLS. (thx 2 Impulze)
+
 Version 0.113
  Added:
   - Added embeded q4wine-mount (This is a copy of fuseiso + RH path);

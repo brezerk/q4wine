@@ -266,7 +266,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 			}
 		}
 
-#ifndef WITHOUT_ICOTOOLS
+#ifdef WITH_ICOUTILS
 		txtWrestoolBin->setText(CoreLib->getWhichOut("wrestool"));
 		txtIcotoolBin->setText(CoreLib->getWhichOut("icotool"));
 #endif
@@ -491,7 +491,7 @@ void Wizard::nextWizardPage(){
 				case 5:
 			if (!checkEntry(txtConsoleBin->text(), "console"))
 				return;
-#ifndef WITHOUT_ICOTOOLS
+#ifdef WITH_ICOUTILS
 			if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
 				return;
 			if (!checkEntry(txtIcotoolBin->text(), "icotool"))

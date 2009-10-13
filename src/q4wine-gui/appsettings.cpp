@@ -182,7 +182,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
 	settings.endGroup();
 
-#ifndef WITHOUT_ICOTOOLS
+#ifdef WITH_ICOUTILS
 	settings.beginGroup("icotool");
 	txtWrestoolBin->setText(settings.value("wrestool").toString());
 	txtIcotoolBin->setText(settings.value("icotool").toString());
@@ -440,7 +440,7 @@ void AppSettings::cmdOk_Click(){
 	  if (!checkEntry(txtConsoleBin->text(), "console"))
 			return;
 
-#ifndef WITHOUT_ICOTOOLS
+#ifdef WITH_ICOUTILS
 	  if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
 			return;
 
@@ -504,7 +504,7 @@ void AppSettings::cmdOk_Click(){
 	  settings.setValue("bin", txtConsoleBin->text());
 	  settings.setValue("args", txtConsoleArgs->text());
 	  settings.endGroup();
-#ifndef WITHOUT_ICOTOOLS
+#ifdef WITH_ICOUTILS
 	  settings.beginGroup("icotool");
 	  settings.setValue("wrestool", txtWrestoolBin->text());
 	  settings.setValue("icotool", txtIcotoolBin->text());
