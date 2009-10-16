@@ -54,6 +54,7 @@
 #include "src/core/database/prefix.h"
 #include "src/core/database/icon.h"
 #include "src/core/database/dir.h"
+#include "src/core/registry.h"
 
 #include <q4wine-lib/main.h>
 
@@ -121,6 +122,7 @@ class Wizard : public QDialog, public Ui::Wizard
 		typedef void *CoreLibPrototype (bool);
 		CoreLibPrototype *CoreLibClassPointer;
 		corelib *CoreLib;
+		Registry *reg;
 
 	protected:
 		//! \brief Event filter.

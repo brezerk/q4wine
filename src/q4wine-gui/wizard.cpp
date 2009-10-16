@@ -283,7 +283,14 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	case 3:
 		TotalPage=6;
 		this->var1=var1;
-		qDebug()<<var1;
+
+		reg = new Registry(var1);
+
+		QStringList list;
+		list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
+
+		qDebug()<<reg->readKeys("Software\Microsoft\Windows NT\CurrentVersion", list);
+
 		setWindowTitle(tr("Fake drive update wizard"));
 		lblCaption->setText(tr("<b>Fake drive update wizard</b>"));
 		lblStep->setText(tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));

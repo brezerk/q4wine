@@ -40,7 +40,7 @@ Registry::Registry(QString prefixPath){
 }
 
 bool Registry::init(){
-	regfile_image="WINE REGISTRY Version 2\n\n";
+	regfile_image="WINE Registry Version 2\n\n";
 	return TRUE;
 }
 
