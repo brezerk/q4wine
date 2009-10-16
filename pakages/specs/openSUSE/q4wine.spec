@@ -1,5 +1,5 @@
 #
-# spec file for package q4wine (Version 0.113rc3)
+# spec file for package q4wine (Version 0.113)
 #
 # Copyright (c) 2009 Kyrill Detinov
 # This file and all modifications and additions to the pristine
@@ -20,7 +20,7 @@ Source:		%{name}-%{version}.tar.bz2
 Group:		System/Emulators/PC
 Summary:	Qt4 GUI for WINE
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-BuildRequires:  libqt4-devel >= 4.4 cmake update-desktop-files fdupes
+BuildRequires:  libqt4-devel >= 4.4 cmake >= 2.6 update-desktop-files fdupes
 Requires:	wine sudo sqlite3 fuseiso
 %if %{with_icons}
 BuildRequires:  icoutils
@@ -32,13 +32,15 @@ Q4Wine is an Qt4-based GUI for WINE. It will help you to manage wine prefixes
 and installed applications.
 
 General features:
-- Works with different wine versions at same time;
-- Creating, deleting and managing prefixes (WINEPREFIX);
-- Easy controlling for wine process;
-- Easy installer wizard for wine applications; (Not yet. Wait for v. 0.120)
-- Autostart icons support;
-- Support of ISO images;
-- Icons can be extracted from PE files (.exe, .dll).
+- Can export Qt color theme into wine colors settings.
+- Can easy work with different wine versions at the same time.
+- Easy creating, deleting and managing prefixes (WINEPREFIX).
+- Easy controlling for wine process.
+- Autostart icons support.
+- Easy cd-image use.
+- You can extract icons from PE files (.exe .dll).
+- Easy backup and restore for managed prefixes.
+- Winetricks support.
 
 Authors:
 --------
@@ -77,6 +79,8 @@ popd
 %{_datadir}/pixmaps/%{name}.png
 
 %changelog
+* Thu Oct 15 2009 Kyrill Detinov <lazy.kent.suse@gmail.com> - 0.113
+- corrected description
 * Fri Oct 05 2009 Kyrill Detinov <lazy.kent.suse@gmail.com> - 0.113
 - update to 0.113
 - added choice to build with/without icoutils support
