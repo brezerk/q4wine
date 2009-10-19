@@ -98,7 +98,7 @@ public:
 	  *
 	  * \return List of readed key's value. Index of readed keys identical to requested keys.
 	  */
-	QStringList readKeys(const QString path, const QStringList keys) const;
+	QStringList readKeys(const QString sysfile, const QString path, const QStringList keys) const;
 
 private:
 	QString regfile;

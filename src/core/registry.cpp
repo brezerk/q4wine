@@ -34,8 +34,8 @@ Registry::Registry(){
 }
 
 Registry::Registry(QString prefixPath){
-	regfile = prefixPath;
-	regfile.append("/system.reg");
+	regfile.append(prefixPath);
+	regfile.append("/");
 	return;
 }
 
@@ -76,20 +76,31 @@ bool Registry::exec(QObject *parent, QString prefix_name){
 	} else {
 		return FALSE;
 	}
+
 }
 
-QStringList Registry::readKeys(const QString path, const QStringList keys) const{
+QStringList Registry::readKeys(const QString sysfile, const QString path, const QStringList keys) const{
 	QStringList ret;
 	QString searchPath;
+
+	for (int i=0; i<keys.count(); i++){
+		ret.append("");
+	}
 
 	searchPath="[";
 	searchPath.append(path);
 	searchPath.append("]");
 	searchPath.replace("\\","\\\\");
 
-	QFile file(regfile);
-	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-	   return ret;
+	QString sfile = regfile;
+	sfile.append(sysfile);
+	sfile.append(".reg");
+
+	QFile file(sfile);
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+		qDebug()<<" [EE] Can't open reg file: "<<regfile;
+		return ret;
+	}
 
 	bool readFlag=false;
 
@@ -103,7 +114,7 @@ QStringList Registry::readKeys(const QString path, const QStringList keys) const
 			QList<QByteArray> key = line.trimmed().split('=');
 			int index = keys.indexOf(key.at(0));
 			if (index>-1){
-				ret.insert(index, key.at(1).mid(1, (key.at(1).length()-2)));
+				ret.replace(index, key.at(1).mid(1, (key.at(1).length()-2)));
 			}
 		}
 

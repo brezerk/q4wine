@@ -273,7 +273,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 
 		break;
 	case 2:
-		TotalPage=6;
+		TotalPage=8;
 		this->var1=var1;
 		setWindowTitle(tr("Fake drive creation wizard"));
 		lblCaption->setText(tr("<b>Fake drive creation wizard</b>"));
@@ -281,15 +281,103 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		lblWizardInfo->setText(Wizard::tr("<p>Welcome to fake drive creation wizard.</p><p>This wizard helps you to make all necessary steps for successful fake drive creation.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>"));
 		break;
 	case 3:
-		TotalPage=6;
+		TotalPage=8;
 		this->var1=var1;
 
-		reg = new Registry(var1);
+		reg = new Registry(db_prefix->getPath(var1));
 
 		QStringList list;
 		list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
+		list = reg->readKeys("system", "Software\\Microsoft\\Windows NT\\CurrentVersion", list);
+		//HKEY_CURRENT_USER\\Software\\Wine]\n\"Version
 
-		qDebug()<<reg->readKeys("Software\Microsoft\Windows NT\CurrentVersion", list);
+		if (list.count()>0){
+			txtOrganization->setText(list.at(0));
+			txtOwner->setText(list.at(1));
+		}
+
+		list.clear();
+		list << "\"Browsers\"" << "\"Mailers\"";
+		list = reg->readKeys("user", "Software\\Wine\\WineBrowser", list);
+
+		if (list.count()>0){
+			txtFakeBrowsers->setText(list.at(0));
+			txtFakeMailers->setText(list.at(1));
+		}
+
+		list.clear();
+		list << "\"Multisampling\"" << "\"DirectDrawRenderer\"" << "\"RenderTargetLockMode\"" << "\"OffscreenRenderingMode\"" << "\"UseGLSL\"" << "\"VideoMemorySize\"" << "\"VideoDescription\"" << "\"VideoDriver\"" << "\"SoftwareEmulation\"" << "\"PixelShaderMode\"" << "\"VertexShaderMode\"";
+		list = reg->readKeys("user", "Software\\Wine\\Direct3D", list);
+
+		if (list.count()>0){
+			if (!list.at(0).isEmpty())
+				comboFakeD3D_Multi->setCurrentIndex(comboFakeD3D_Multi->findText(list.at(0)));
+
+			if (!list.at(1).isEmpty())
+				comboFakeD3D_Render->setCurrentIndex(comboFakeD3D_Render->findText(list.at(1)));
+
+			if (!list.at(2).isEmpty())
+				comboFakeD3D_LMode->setCurrentIndex(comboFakeD3D_LMode->findText(list.at(2)));
+
+			if (!list.at(3).isEmpty())
+				comboFakeD3D_Offscreen->setCurrentIndex(comboFakeD3D_Offscreen->findText(list.at(3)));
+
+			if (!list.at(4).isEmpty())
+				comboFakeD3D_GLSL->setCurrentIndex(comboFakeD3D_GLSL->findText(list.at(4)));
+
+			txtFakeVideoMemory->setText(list.at(5));
+			txtFakeVideoDescription->setText(list.at(6));
+			txtFakeVideoDriver->setText(list.at(7));
+
+			if (!list.at(8).isEmpty())
+				comboFakeSoftwareEmulation->setCurrentIndex(comboFakeSoftwareEmulation->findText(list.at(8)));
+
+			if (!list.at(9).isEmpty())
+				comboFakePixelShaderMode->setCurrentIndex(comboFakePixelShaderMode->findText(list.at(9)));
+
+			if (!list.at(10).isEmpty())
+				comboFakeVertexShaderMode->setCurrentIndex(comboFakeVertexShaderMode->findText(list.at(10)));
+
+		}
+
+		list.clear();
+		list << "\"DisabledExtensions\"";
+		list = reg->readKeys("user", "Software\\Wine\\OpenGL", list);
+
+		if (list.count()>0){
+			txtFakeDisabledExtensions->setText(list.at(0));
+		}
+
+		list.clear();
+		list << "\"MouseWarpOverride\"";
+		list = reg->readKeys("user", "Software\\Wine\\DirectInput", list);
+
+		if (list.count()>0){
+			if (!list.at(0).isEmpty())
+				comboFakeMouseWarp->setCurrentIndex(comboFakeMouseWarp->findText(list.at(0)));
+		}
+
+		list.clear();
+		list << "\"ClientSideWithRender\"" << "\"ClientSideAntiAliasWithRender\"" << "\"ClientSideAntiAliasWithCore\"" << "\"UseXRandR\"" << "\"UseXVidMode\"";
+		list = reg->readKeys("user", "Software\\Wine\\X11 Driver", list);
+
+		if (list.count()>0){
+			if (!list.at(0).isEmpty())
+				comboFakeX11_WR->setCurrentIndex(comboFakeX11_WR->findText(list.at(0)));
+
+			if (!list.at(1).isEmpty())
+				comboFakeX11_AAR->setCurrentIndex(comboFakeX11_AAR->findText(list.at(1)));
+
+			if (!list.at(2).isEmpty())
+				comboFakeX11_AAC->setCurrentIndex(comboFakeX11_AAC->findText(list.at(2)));
+
+			if (!list.at(3).isEmpty())
+				comboFakeX11_XRandr->setCurrentIndex(comboFakeX11_XRandr->findText(list.at(3)));
+
+			if (!list.at(4).isEmpty())
+				comboFakeX11_XVid->setCurrentIndex(comboFakeX11_XVid->findText(list.at(4)));
+		}
+
 
 		setWindowTitle(tr("Fake drive update wizard"));
 		lblCaption->setText(tr("<b>Fake drive update wizard</b>"));
@@ -313,6 +401,9 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	widgetCreateFakeDrive1->setVisible(FALSE);
 	widgetCreateFakeDrive2->setVisible(FALSE);
 	widgetCreateFakeDrive3->setVisible(FALSE);
+	widgetCreateFakeDrive4->setVisible(FALSE);
+	widgetCreateFakeDrive5->setVisible(FALSE);
+
 
 	widgetFirstStartup0->setVisible(FALSE);
 	widgetFirstStartup1->setVisible(FALSE);
@@ -391,6 +482,8 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 		this->widgetFirstStartup2->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		this->widgetFirstStartup3->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		this->widgetFirstStartup4->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetFirstStartup5->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
+		this->widgetFirstStartup6->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		return FALSE;
 	}
 
@@ -726,7 +819,7 @@ void Wizard::nextWizardPage(){
 		break;
 	case 2:
 		switch (Page){
-				case 6:
+				case 8:
 			QApplication::setOverrideCursor( Qt::BusyCursor );
 
 			//Set variables
@@ -800,8 +893,30 @@ void Wizard::nextWizardPage(){
 				if (comboFakeD3D_GLSL->currentText()!="default")
 					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"UseGLSL\"=\"%1\"").arg(comboFakeD3D_GLSL->currentText()));
 
-				if (!txtFakeD3D_VMem->text().isEmpty())
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"VideoMemorySize\"=\"%1\"").arg(txtFakeD3D_VMem->text()));
+				if (!txtFakeVideoMemory->text().isEmpty())
+					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"VideoMemorySize\"=\"%1\"").arg(txtFakeVideoMemory->text()));
+
+				if (!txtFakeVideoDescription->text().isEmpty())
+					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"VideoDescription\"=\"%1\"").arg(txtFakeVideoDescription->text()));
+
+				if (!txtFakeVideoDriver->text().isEmpty())
+					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"VideoDriver\"=\"%1\"").arg(txtFakeVideoDriver->text()));
+
+				if (comboFakeSoftwareEmulation->currentText()!="default")
+					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"SoftwareEmulation\"=\"%1\"").arg(comboFakeSoftwareEmulation->currentText()));
+
+				if (comboFakePixelShaderMode->currentText()!="default")
+					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"PixelShaderMode\"=\"%1\"").arg(comboFakePixelShaderMode->currentText()));
+
+				if (comboFakeVertexShaderMode->currentText()!="default")
+					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"VertexShaderMode\"=\"%1\"").arg(comboFakeVertexShaderMode->currentText()));
+
+				if (!txtFakeDisabledExtensions->text().isEmpty())
+					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\OpenGL]\n\"DisabledExtensions\"=\"%1\"").arg(txtFakeDisabledExtensions->text()));
+
+				if (comboFakeMouseWarp->currentText()!="default")
+					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\DirectInput]\n\"MouseWarpOverride\"=\"%1\"").arg(comboFakeMouseWarp->currentText()));
+
 
 				if (comboFakeX11_WR->currentText()!="default")
 					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver]\n\"ClientSideWithRender\"=\"%1\"").arg(comboFakeX11_WR->currentText()));
@@ -1075,13 +1190,11 @@ void Wizard::updateScena(){
 			widgetCreatePrefix1->setVisible(FALSE);
 			widgetCreatePrefix2->setVisible(FALSE);
 			cmdBack->setEnabled(TRUE);
-			//cmdNext->setText(tr("Next >"));
 			break;
 					case 3:
 			widgetCreatePrefix0->setVisible(FALSE);
 			widgetCreatePrefix1->setVisible(TRUE);
 			widgetCreatePrefix2->setVisible(FALSE);
-			//cmdNext->setText(tr("Next >"));
 			widgetInfo->setVisible(FALSE);
 			break;
 					case 4:
@@ -1092,8 +1205,8 @@ void Wizard::updateScena(){
 			widgetInfo->setVisible(FALSE);
 			break;
 					case 5:
-			QString info;
-			info = tr("<p>Please check parameters listed below before clicking <b>Next</b>:</p><p><b>Prefix name:</b> %1<br><b>Prefix path:</b> %2</p>").arg(txtPrefixName->text()).arg(txtPrefixPath->text());
+
+			QString info = tr("<p>Please check parameters listed below before clicking <b>Next</b>:</p><p><b>Prefix name:</b> %1<br><b>Prefix path:</b> %2</p>").arg(txtPrefixName->text()).arg(txtPrefixPath->text());
 			if (cbCreafeFake->checkState()==Qt::Checked){
 				info.append(tr("<p>Wine fake drive will be created.</p>"));
 			}
@@ -1135,6 +1248,7 @@ void Wizard::updateScena(){
 				*/
 		switch (Page){
 					case 1:
+			lblWizardInfo->setText(tr("<p>Welcome to fake drive creation wizard.</p><p>This wizard helps you to make all necessary steps for successful fake drive creation.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>"));
 			widgetCreateFakeDrive0->setVisible(FALSE);
 			widgetInfo->setVisible(TRUE);
 			cmdNext->setEnabled(TRUE);
@@ -1146,7 +1260,6 @@ void Wizard::updateScena(){
 			widgetInfo->setVisible(FALSE);
 			cmdNext->setEnabled(TRUE);
 			cmdBack->setEnabled(TRUE);
-			cmdNext->setText(tr("Next >"));
 			break;
 					case 3:
 			widgetCreateFakeDrive0->setVisible(FALSE);
@@ -1161,16 +1274,24 @@ void Wizard::updateScena(){
 					case 5:
 			widgetCreateFakeDrive2->setVisible(FALSE);
 			widgetCreateFakeDrive3->setVisible(TRUE);
+			widgetCreateFakeDrive4->setVisible(FALSE);
+			break;
+					case 6:
+			widgetCreateFakeDrive3->setVisible(FALSE);
+			widgetCreateFakeDrive4->setVisible(TRUE);
+			widgetCreateFakeDrive5->setVisible(FALSE);
+			break;
+					case 7:
+			widgetCreateFakeDrive4->setVisible(FALSE);
+			widgetCreateFakeDrive5->setVisible(TRUE);
 			widgetInfo->setVisible(FALSE);
 			cmdNext->setText(tr("Next >"));
 			break;
-					case 6:
-			QString info;
-			info = tr("<p>All ready for fake drive creation. </p><p>Please, press the <b>Finish</b> button to create facke drive. Or press <b>Back</b> button for return.</p>");
-			lblWizardInfo->setText(info);
+					case 8:
+			lblWizardInfo->setText(tr("<p>All ready for fake drive creation. </p><p>Please, press the <b>Finish</b> button to create facke drive. Or press <b>Back</b> button for return.</p>"));
 			widgetInfo->setVisible(TRUE);
-			widgetCreateFakeDrive2->setVisible(FALSE);
-			widgetCreateFakeDrive3->setVisible(FALSE);
+			widgetCreateFakeDrive4->setVisible(FALSE);
+			widgetCreateFakeDrive5->setVisible(FALSE);
 			cmdNext->setText(tr("Finish"));
 			break;
 		}
