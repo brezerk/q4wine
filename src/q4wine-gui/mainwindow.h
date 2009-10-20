@@ -147,6 +147,14 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void cmdUpdateFake_Click(void);
 		void cmdWinetricks_Click (void);
 		void cmdTestWis_Click (void);
+		void cmdClearFilter_Click (void);
+
+		/*
+		 * Combobox slouts
+		 */
+
+		void cbPrefixes_Change (const QString currentIndexText);
+		void comboFilter_editTextChanged(QString);
 
 		/*
 		 *Prefix tool bars action

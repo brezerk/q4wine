@@ -1743,8 +1743,8 @@ p, li { white-space: pre-wrap; }
              <rect>
               <x>-1</x>
               <y>0</y>
-              <width>510</width>
-              <height>320</height>
+              <width>482</width>
+              <height>340</height>
              </rect>
             </property>
             <property name="autoFillBackground">
@@ -1947,11 +1947,19 @@ p, li { white-space: pre-wrap; }
                   </layout>
                  </widget>
                 </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="groupBox_18">
+               <property name="title">
+                <string>Wine colors theme</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_14">
                 <item>
                  <widget class="QLabel" name="label_37">
                   <property name="text">
-                   <string>
-If you wish to use qt system colors in wine dialogs, select option below:</string>
+                   <string>To change color theme in wine dialogs, select one option below:</string>
                   </property>
                   <property name="wordWrap">
                    <bool>true</bool>
@@ -1959,41 +1967,27 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
                  </widget>
                 </item>
                 <item>
-                 <widget class="QWidget" name="widget_36" native="true">
-                  <layout class="QHBoxLayout" name="horizontalLayout">
-                   <property name="spacing">
-                    <number>6</number>
-                   </property>
-                   <property name="margin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QLabel" name="label_54">
-                     <property name="minimumSize">
-                      <size>
-                       <width>140</width>
-                       <height>0</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>140</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Colors:</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QCheckBox" name="cbUseQtColors">
-                     <property name="text">
-                      <string>Use QT palette</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
+                 <widget class="QRadioButton" name="rbColorsLeave">
+                  <property name="text">
+                   <string>Leave existing</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="rbColorsDefault">
+                  <property name="text">
+                   <string>Reset to default</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="rbColorsQt4">
+                  <property name="text">
+                   <string>Use current Qt4 colors</string>
+                  </property>
                  </widget>
                 </item>
                </layout>
@@ -2033,7 +2027,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
              <property name="rightMargin">
               <number>6</number>
              </property>
-             <item row="0" column="0">
+             <item row="1" column="0">
               <widget class="QGroupBox" name="groupBox_12">
                <property name="autoFillBackground">
                 <bool>false</bool>
@@ -2042,13 +2036,6 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
                 <string>Direct 3D settings</string>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_4">
-                <item>
-                 <widget class="QLabel" name="label_38">
-                  <property name="text">
-                   <string>Note: Leave empty for default</string>
-                  </property>
-                 </widget>
-                </item>
                 <item>
                  <widget class="QWidget" name="widget_40" native="true">
                   <layout class="QHBoxLayout" name="_43">
@@ -2307,7 +2294,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
                </layout>
               </widget>
              </item>
-             <item row="1" column="0">
+             <item row="2" column="0">
               <spacer>
                <property name="orientation">
                 <enum>Qt::Vertical</enum>
@@ -2319,6 +2306,13 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
                 </size>
                </property>
               </spacer>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_38">
+               <property name="text">
+                <string>Note: Leave empty for default</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>
@@ -2341,7 +2335,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
              <property name="rightMargin">
               <number>6</number>
              </property>
-             <item row="0" column="0">
+             <item row="1" column="0">
               <widget class="QGroupBox" name="groupBox_13">
                <property name="autoFillBackground">
                 <bool>false</bool>
@@ -2350,13 +2344,6 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
                 <string>X11 Driver</string>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_5">
-                <item>
-                 <widget class="QLabel" name="label_39">
-                  <property name="text">
-                   <string>Note: Leave empty for default</string>
-                  </property>
-                 </widget>
-                </item>
                 <item>
                  <widget class="QWidget" name="widget_45" native="true">
                   <layout class="QHBoxLayout" name="_49">
@@ -2595,7 +2582,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
                </layout>
               </widget>
              </item>
-             <item row="1" column="0">
+             <item row="2" column="0">
               <spacer>
                <property name="orientation">
                 <enum>Qt::Vertical</enum>
@@ -2607,6 +2594,13 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
                 </size>
                </property>
               </spacer>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_39">
+               <property name="text">
+                <string>Note: Leave empty for default</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>
@@ -2627,6 +2621,13 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
               <number>3</number>
              </property>
              <item>
+              <widget class="QLabel" name="label_41">
+               <property name="text">
+                <string>Note: Leave empty for default</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QGroupBox" name="groupBox_14">
                <property name="autoFillBackground">
                 <bool>false</bool>
@@ -2635,13 +2636,6 @@ If you wish to use qt system colors in wine dialogs, select option below:</strin
                 <string>Wine Browsers</string>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_7">
-                <item>
-                 <widget class="QLabel" name="label_41">
-                  <property name="text">
-                   <string>Note: Leave empty for default</string>
-                  </property>
-                 </widget>
-                </item>
                 <item>
                  <widget class="QWidget" name="widget_37" native="true">
                   <layout class="QHBoxLayout" name="_54">
@@ -3476,13 +3470,13 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
            <zorder>widgetFirstStartup1</zorder>
            <zorder>widgetFirstStartup2</zorder>
            <zorder>widgetFirstStartup3</zorder>
-           <zorder>widgetCreateFakeDrive0</zorder>
            <zorder>widgetFirstStartup4</zorder>
-           <zorder>widgetCreateFakeDrive2</zorder>
+           <zorder>widgetCreateFakeDrive0</zorder>
            <zorder>widgetCreateFakeDrive1</zorder>
-           <zorder>widgetCreateFakeDrive5</zorder>
+           <zorder>widgetCreateFakeDrive2</zorder>
            <zorder>widgetCreateFakeDrive3</zorder>
            <zorder>widgetCreateFakeDrive4</zorder>
+           <zorder>widgetCreateFakeDrive5</zorder>
           </widget>
          </item>
         </layout>

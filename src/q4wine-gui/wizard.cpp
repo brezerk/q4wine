@@ -358,6 +358,13 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		}
 
 		list.clear();
+		list << "\"MouseWarpOverride\"";
+		list = reg->readExcludedKeys("user", "Software\\Wine\\DirectInput", list, 1);
+
+		if (list.count()>0)
+			txtJoysticAxesMap->setText(list.at(0));
+
+		list.clear();
 		list << "\"ClientSideWithRender\"" << "\"ClientSideAntiAliasWithRender\"" << "\"ClientSideAntiAliasWithCore\"" << "\"UseXRandR\"" << "\"UseXVidMode\"";
 		list = reg->readKeys("user", "Software\\Wine\\X11 Driver", list);
 
@@ -474,6 +481,8 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 		this->widgetCreateFakeDrive1->resize(this->widgetFrame->width(), this->widgetFrame->height());
 		this->widgetCreateFakeDrive2->resize(this->widgetFrame->width(), this->widgetFrame->height());
 		this->widgetCreateFakeDrive3->resize(this->widgetFrame->width(), this->widgetFrame->height());
+		this->widgetCreateFakeDrive4->resize(this->widgetFrame->width(), this->widgetFrame->height());
+		this->widgetCreateFakeDrive5->resize(this->widgetFrame->width(), this->widgetFrame->height());
 		this->widgetCreatePrefix0->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		this->widgetCreatePrefix1->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		this->widgetCreatePrefix2->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
@@ -482,8 +491,6 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 		this->widgetFirstStartup2->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		this->widgetFirstStartup3->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		this->widgetFirstStartup4->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		this->widgetFirstStartup5->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		this->widgetFirstStartup6->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		return FALSE;
 	}
 
@@ -557,6 +564,7 @@ void Wizard::nextWizardPage(){
 	/*
 		Function for processing next\finish button click events
 	*/
+	QRegExp rx("^\".*\"=\".*\"$");
 	switch(Scena){
 	case 1:
 		switch (Page){
@@ -819,6 +827,14 @@ void Wizard::nextWizardPage(){
 		break;
 	case 2:
 		switch (Page){
+			case 6:
+			//qDebug()<<"ddddddd";
+			if (!txtJoysticAxesMap->text().isEmpty())
+				if (rx.indexIn(txtJoysticAxesMap->text())!=0){
+					QMessageBox::warning(this, tr("Error"), tr("Sorry, Joystic axes mappings might be defined as:\n\"joystic name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details."));
+					return;
+				}
+			break;
 				case 8:
 			QApplication::setOverrideCursor( Qt::BusyCursor );
 
@@ -870,119 +886,195 @@ void Wizard::nextWizardPage(){
 			Registry registry;
 
 			if (registry.init()){
-				registry.append(tr("[HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion]\n\"RegisteredOrganization\"=\"%1\"\n\"RegisteredOwner\"=\"%2\"\n\n[HKEY_CURRENT_USER\\Software\\Wine]\n\"Version\"=\"%3\"").arg(txtOrganization->text()).arg(txtOwner->text()).arg(version));
+				registry.set("Software\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOrganization", txtOrganization->text(), "HKEY_LOCAL_MACHINE");
+				registry.set("Software\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOwner", txtOwner->text(), "HKEY_LOCAL_MACHINE");
 
-				if (!txtFakeBrowsers->text().isEmpty())
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\WineBrowser]\n\"Browsers\"=\"%1\"").arg(txtFakeBrowsers->text()));
+				registry.set("Software\\Wine", "Version", version);
 
-				if (!txtFakeMailers->text().isEmpty())
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\WineBrowser]\n\"Mailers\"=\"%1\"").arg(txtFakeMailers->text()));
+				if (!txtFakeBrowsers->text().isEmpty()){
+					registry.set("Software\\Wine\\WineBrowser", "Browsers", txtFakeBrowsers->text());
+				} else {
+					registry.unset("Software\\Wine\\WineBrowser", "Browsers");
+				}
 
-				if (comboFakeD3D_Multi->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"Multisampling\"=\"%1\"").arg(comboFakeD3D_Multi->currentText()));
+				if (!txtFakeMailers->text().isEmpty()){
+					registry.set("Software\\Wine\\WineBrowser", "Mailers", txtFakeMailers->text());
+				} else {
+					registry.unset("Software\\Wine\\WineBrowser", "Mailers");
+				}
 
-				if (comboFakeD3D_Render->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"DirectDrawRenderer\"=\"%1\"").arg(comboFakeD3D_Render->currentText()));
+				if (comboFakeD3D_Multi->currentText()!="default"){
+					registry.set("Software\\Wine\\Direct3D", "Multisampling", comboFakeD3D_Multi->currentText());
+				} else {
+					registry.unset("Software\\Wine\\Direct3D", "Multisampling");
+				}
 
-				if (comboFakeD3D_LMode->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"RenderTargetLockMode\"=\"%1\"").arg(comboFakeD3D_LMode->currentText()));
+				if (comboFakeD3D_Render->currentText()!="default"){
+					registry.set("Software\\Wine\\Direct3D", "DirectDrawRenderer", comboFakeD3D_Render->currentText());
+				} else {
+					registry.unset("Software\\Wine\\Direct3D", "DirectDrawRenderer");
+				}
 
-				if (comboFakeD3D_Offscreen->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"OffscreenRenderingMode\"=\"%1\"").arg(comboFakeD3D_Offscreen->currentText()));
+				if (comboFakeD3D_LMode->currentText()!="default"){
+					registry.set("Software\\Wine\\Direct3D", "RenderTargetLockMode", comboFakeD3D_LMode->currentText());
+				} else {
+					registry.unset("Software\\Wine\\Direct3D", "RenderTargetLockMode");
+				}
 
-				if (comboFakeD3D_GLSL->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"UseGLSL\"=\"%1\"").arg(comboFakeD3D_GLSL->currentText()));
+				if (comboFakeD3D_Offscreen->currentText()!="default"){
+					registry.set("Software\\Wine\\Direct3D", "OffscreenRenderingMode", comboFakeD3D_Offscreen->currentText());
+				} else {
+					registry.unset("Software\\Wine\\Direct3D", "OffscreenRenderingMode");
+				}
 
-				if (!txtFakeVideoMemory->text().isEmpty())
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"VideoMemorySize\"=\"%1\"").arg(txtFakeVideoMemory->text()));
+				if (comboFakeD3D_Offscreen->currentText()!="default"){
+					registry.set("Software\\Wine\\Direct3D", "OffscreenRenderingMode", comboFakeD3D_Offscreen->currentText());
+				} else {
+					registry.unset("Software\\Wine\\Direct3D", "OffscreenRenderingMode");
+				}
 
-				if (!txtFakeVideoDescription->text().isEmpty())
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"VideoDescription\"=\"%1\"").arg(txtFakeVideoDescription->text()));
+				if (comboFakeD3D_GLSL->currentText()!="default"){
+					registry.set("Software\\Wine\\Direct3D", "UseGLSL", comboFakeD3D_GLSL->currentText());
+				} else {
+					registry.unset("Software\\Wine\\Direct3D", "UseGLSL");
+				}
 
-				if (!txtFakeVideoDriver->text().isEmpty())
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"VideoDriver\"=\"%1\"").arg(txtFakeVideoDriver->text()));
+				if (!txtFakeVideoMemory->text().isEmpty()){
+					registry.set("Software\\Wine\\Direct3D", "VideoMemorySize", txtFakeVideoMemory->text());
+				} else {
+					registry.unset("Software\\Wine\\Direct3D", "VideoMemorySize");
+				}
 
-				if (comboFakeSoftwareEmulation->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"SoftwareEmulation\"=\"%1\"").arg(comboFakeSoftwareEmulation->currentText()));
+				if (!txtFakeVideoDescription->text().isEmpty()){
+					registry.set("Software\\Wine\\Direct3D", "VideoDescription", txtFakeVideoDescription->text());
+				} else {
+					registry.unset("Software\\Wine\\Direct3D", "VideoDescription");
+				}
 
-				if (comboFakePixelShaderMode->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"PixelShaderMode\"=\"%1\"").arg(comboFakePixelShaderMode->currentText()));
+				if (!txtFakeVideoDriver->text().isEmpty()){
+					registry.set("Software\\Wine\\Direct3D", "VideoDriver", txtFakeVideoDriver->text());
+				} else {
+					registry.unset("Software\\Wine\\Direct3D", "VideoDriver");
+				}
 
-				if (comboFakeVertexShaderMode->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\Direct3D]\n\"VertexShaderMode\"=\"%1\"").arg(comboFakeVertexShaderMode->currentText()));
+				if (comboFakeSoftwareEmulation->currentText()!="default"){
+					registry.set("Software\\Wine\\Direct3D", "SoftwareEmulation", comboFakeSoftwareEmulation->currentText());
+				} else {
+					registry.unset("Software\\Wine\\Direct3D", "SoftwareEmulation");
+				}
 
-				if (!txtFakeDisabledExtensions->text().isEmpty())
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\OpenGL]\n\"DisabledExtensions\"=\"%1\"").arg(txtFakeDisabledExtensions->text()));
+				if (comboFakePixelShaderMode->currentText()!="default"){
+					registry.set("Software\\Wine\\Direct3D", "PixelShaderMode", comboFakePixelShaderMode->currentText());
+				} else {
+					registry.unset("Software\\Wine\\Direct3D", "PixelShaderMode");
+				}
 
-				if (comboFakeMouseWarp->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\DirectInput]\n\"MouseWarpOverride\"=\"%1\"").arg(comboFakeMouseWarp->currentText()));
+				if (comboFakeVertexShaderMode->currentText()!="default"){
+					registry.set("Software\\Wine\\Direct3D", "VertexShaderMode", comboFakeVertexShaderMode->currentText());
+				} else {
+					registry.unset("Software\\Wine\\Direct3D", "VertexShaderMode");
+				}
 
+				if (!txtFakeDisabledExtensions->text().isEmpty()){
+					registry.set("Software\\Wine\\OpenGL", "DisabledExtensions", txtFakeDisabledExtensions->text());
+				} else {
+					registry.unset("Software\\Wine\\OpenGL", "DisabledExtensions");
+				}
 
-				if (comboFakeX11_WR->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver]\n\"ClientSideWithRender\"=\"%1\"").arg(comboFakeX11_WR->currentText()));
+				registry.unsetPath("Software\\Wine\\DirectInput");
 
-				if (comboFakeX11_AAR->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver]\n\"ClientSideAntiAliasWithRender\"=\"%1\"").arg(comboFakeX11_AAR->currentText()));
+				if (!txtJoysticAxesMap->text().isEmpty()){
+					registry.set("Software\\Wine\\DirectInput", "", txtJoysticAxesMap->text());
+				}
 
-				if (comboFakeX11_AAC->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver]\n\"ClientSideAntiAliasWithCore\"=\"%1\"").arg(comboFakeX11_AAC->currentText()));
+				if (comboFakeMouseWarp->currentText()!="default"){
+					registry.set("Software\\Wine\\DirectInput", "MouseWarpOverride", comboFakeMouseWarp->currentText());
+				} else {
+					registry.unset("Software\\Wine\\DirectInput", "MouseWarpOverride");
+				}
 
-				if (comboFakeX11_XRandr->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver]\n\"UseXRandR\"=\"%1\"").arg(comboFakeX11_XRandr->currentText()));
+				if (comboFakeX11_WR->currentText()!="default"){
+					registry.set("Software\\Wine\\X11 Driver", "ClientSideWithRender", comboFakeX11_WR->currentText());
+				} else {
+					registry.unset("Software\\Wine\\X11 Driver", "ClientSideWithRender");
+				}
 
-				if (comboFakeX11_XVid->currentText()!="default")
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver]\n\"UseXVidMode\"=\"%1\"").arg(comboFakeX11_XVid->currentText()));
+				if (comboFakeX11_AAR->currentText()!="default"){
+					registry.set("Software\\Wine\\X11 Driver", "ClientSideAntiAliasWithRender", comboFakeX11_AAR->currentText());
+				} else {
+					registry.unset("Software\\Wine\\X11 Driver", "ClientSideAntiAliasWithRender");
+				}
 
-				if (cbUseQtColors->checkState()==Qt::Checked){
-					registry.append(tr("\n\n[HKEY_CURRENT_USER\\Control Panel\\Colors]\n"));
+				if (comboFakeX11_AAC->currentText()!="default"){
+					registry.set("Software\\Wine\\X11 Driver", "ClientSideAntiAliasWithCore", comboFakeX11_AAC->currentText());
+				} else {
+					registry.unset("Software\\Wine\\X11 Driver", "ClientSideAntiAliasWithCore");
+				}
 
+				if (comboFakeX11_XRandr->currentText()!="default"){
+					registry.set("Software\\Wine\\X11 Driver", "UseXRandR", comboFakeX11_XRandr->currentText());
+				} else {
+					registry.unset("Software\\Wine\\X11 Driver", "UseXRandR");
+				}
+
+				if (comboFakeX11_XVid->currentText()!="default"){
+					registry.set("Software\\Wine\\X11 Driver", "UseXVidMode", comboFakeX11_XVid->currentText());
+				} else {
+					registry.unset("Software\\Wine\\X11 Driver", "UseXVidMode");
+				}
+
+				if (rbColorsDefault->isChecked()){
+					registry.unsetPath("Control Panel\\Colors");
+				}
+
+				if (rbColorsQt4->isChecked()){
 					QColor color;
 					QPalette cur_palette;
 
 					cur_palette = qApp->palette();
 					color = cur_palette.color(QPalette::Base);
-					registry.append(tr("\"Window\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+					registry.set("Control Panel\\Colors", "Window", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::Window);
-					registry.append(tr("\"ActiveBorder\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
-					registry.append(tr("\"InactiveBorder\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
-					registry.append(tr("\"AppWorkSpace\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
-					registry.append(tr("\"Menu\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
-					registry.append(tr("\"MenuBar\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
-					registry.append(tr("\"Scrollbar\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
-					registry.append(tr("\"MenuHilight\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
-					registry.append(tr("\"ButtonFace\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+					registry.set("Control Panel\\Colors", "ActiveBorder", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "InactiveBorder", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "AppWorkSpace", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "Menu", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "MenuBar", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "Scrollbar", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "MenuHilight", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "ButtonFace", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::AlternateBase);
-					registry.append(tr("\"ButtonAlternateFace\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+					registry.set("Control Panel\\Colors", "ButtonAlternateFace", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::Dark);
-					registry.append(tr("\"ButtonDkShadow\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
-					registry.append(tr("\"ButtonShadow\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
-					registry.append(tr("\"GrayText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+					registry.set("Control Panel\\Colors", "ButtonDkShadow", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "ButtonShadow", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "GrayText", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::Light);
-					registry.append(tr("\"ButtonHilight\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+					registry.set("Control Panel\\Colors", "ButtonHilight", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::ButtonText);
-					registry.append(tr("\"ButtonText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+					registry.set("Control Panel\\Colors", "ButtonText", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::WindowText);
-					registry.append(tr("\"MenuText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
-					registry.append(tr("\"WindowFrame\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
-					registry.append(tr("\"WindowText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+					registry.set("Control Panel\\Colors", "MenuText", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "WindowFrame", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "WindowText", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::Highlight);
-					registry.append(tr("\"Hilight\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+					registry.set("Control Panel\\Colors", "Hilight", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::HighlightedText);
-					registry.append(tr("\"HilightText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+					registry.set("Control Panel\\Colors", "HilightText", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::ToolTipBase);
-					registry.append(tr("\"InfoWindow\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+					registry.set("Control Panel\\Colors", "InfoWindow", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::ToolTipText);
-					registry.append(tr("\"InfoText\"=\"%1 %2 %3\"\n").arg(QString::number ( color.red())).arg(QString::number ( color.green())).arg(QString::number ( color.blue())));
+					registry.set("Control Panel\\Colors", "InfoText", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 				}
 
 				if (registry.exec(this, prefix_name)){

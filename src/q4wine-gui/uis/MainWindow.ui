@@ -15,7 +15,7 @@
    <string>%1 :. Qt4 GUI for Wine v%2</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../q4wine.qrc">
+   <iconset resource="../../q4wine.qrc">
     <normaloff>:/data/q4wine.png</normaloff>:/data/q4wine.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -78,9 +78,68 @@
         </property>
         <layout class="QGridLayout" name="_5">
          <item row="0" column="0">
-          <widget class="QLabel" name="lblInfo">
+          <widget class="QLabel" name="lblIconInfo0">
            <property name="text">
             <string>Name:&lt;br&gt;Desctiption:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="lblIconInfo1">
+           <property name="text">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Runs in console:&lt;br /&gt;Desktop size:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="widgetFilter" native="true">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>285</y>
+          <width>461</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetMinimumSize</enum>
+         </property>
+         <property name="margin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="cmdClearFilter">
+           <property name="toolTip">
+            <string>Clear filter text</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../../q4wine.qrc">
+             <normaloff>:/data/filter.png</normaloff>:/data/filter.png</iconset>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboFilter">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="editable">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -416,7 +475,7 @@
       <string>Handbook</string>
      </property>
      <property name="icon">
-      <iconset resource="../q4wine.qrc">
+      <iconset resource="../../q4wine.qrc">
        <normaloff>:/data/help.png</normaloff>:/data/help.png</iconset>
      </property>
      <addaction name="mainFirstSteps"/>
@@ -564,7 +623,7 @@
   </action>
   <action name="mainWebsite">
    <property name="icon">
-    <iconset resource="../q4wine.qrc">
+    <iconset resource="../../q4wine.qrc">
      <normaloff>:/data/go-home.png</normaloff>:/data/go-home.png</iconset>
    </property>
    <property name="text">
@@ -573,7 +632,7 @@
   </action>
   <action name="mainDonate">
    <property name="icon">
-    <iconset resource="../q4wine.qrc">
+    <iconset resource="../../q4wine.qrc">
      <normaloff>:/data/bookmark-new.png</normaloff>:/data/bookmark-new.png</iconset>
    </property>
    <property name="text">
@@ -582,7 +641,7 @@
   </action>
   <action name="mainBugs">
    <property name="icon">
-    <iconset resource="../q4wine.qrc">
+    <iconset resource="../../q4wine.qrc">
      <normaloff>:/data/tools-report-bug.png</normaloff>:/data/tools-report-bug.png</iconset>
    </property>
    <property name="text">
@@ -592,7 +651,7 @@
  </widget>
  <layoutdefault spacing="2" margin="3"/>
  <resources>
-  <include location="../q4wine.qrc"/>
+  <include location="../../q4wine.qrc"/>
  </resources>
  <connections/>
  <designerdata>

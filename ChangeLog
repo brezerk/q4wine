@@ -6,8 +6,16 @@ ChangeLog
 ***********************************************
 
 Version 0.114
+ Added:
+  - New Registry read\write engine;
+  - New color option at Fake drive creation\update wizard;
+  - New wine settings in Fake drive creation\update wizard;
+  - Fake drive update wizard now can read saved registry configuration settings;
+
  Fixed:
   - Fix for misfunctioning check wether or not to use ICOTOOLS. (thx 2 Impulze)
+  - Prefix combobox change do not set right Prefix in Prefix tree view;
+  - Fake drive update wizard now remove registry key while user reset it to 'Default' state;
 
 Version 0.113
  Added:

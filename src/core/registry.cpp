@@ -36,16 +36,64 @@ Registry::Registry(){
 Registry::Registry(QString prefixPath){
 	regfile.append(prefixPath);
 	regfile.append("/");
+
 	return;
 }
 
 bool Registry::init(){
-	regfile_image="WINE Registry Version 2\n\n";
+	regfile_image="REGEDIT4";
 	return TRUE;
 }
 
 void Registry::append(QString reg_keys){
-	regfile_image.append(reg_keys);
+	//regfile_image.append(reg_keys);
+	return;
+}
+
+void Registry::set(QString path, const QString key, const QString value, const QString hkey){
+	QString regString;
+	regString.append("\n\n[");
+	regString.append(hkey);
+	regString.append("\\");
+	regString.append(path);
+	regString.append("]\n");
+	if (!key.isEmpty()){
+		regString.append("\"");
+		regString.append(key);
+		regString.append("\"=\"");
+		regString.append(value);
+		regString.append("\"");
+	} else {
+		regString.append(value);
+	}
+
+	regfile_image.append(regString);
+	return;
+}
+
+void Registry::unset(QString path, const QString key, const QString hkey){
+	QString regString;
+	regString.append("\n\n[");
+	regString.append(hkey);
+	regString.append("\\");
+	regString.append(path);
+	regString.append("]\n\"");
+	regString.append(key);
+	regString.append("\"=-");
+
+	regfile_image.append(regString);
+	return;
+}
+
+void Registry::unsetPath(QString path, const QString hkey){
+	QString regString;
+	regString.append("\n\n[-");
+	regString.append(hkey);
+	regString.append("\\");
+	regString.append(path);
+	regString.append("]");
+
+	regfile_image.append(regString);
 	return;
 }
 
@@ -65,6 +113,8 @@ bool Registry::exec(QObject *parent, QString prefix_name){
 	file.write(regfile_image.toAscii());        // write to stderr
 	file.close();
 
+
+	qDebug()<<regfile_image;
 	WineBinLauncher *launcher;
 
 	launcher = new WineBinLauncher(prefix_name);
@@ -124,3 +174,47 @@ QStringList Registry::readKeys(const QString sysfile, const QString path, const 
 	return ret;
 }
 
+QStringList Registry::readExcludedKeys(const QString sysfile, const QString path, const QStringList keys, const int count) const{
+	QStringList ret;
+	QString searchPath;
+
+	searchPath="[";
+	searchPath.append(path);
+	searchPath.append("]");
+	searchPath.replace("\\","\\\\");
+
+	QString sfile = regfile;
+	sfile.append(sysfile);
+	sfile.append(".reg");
+
+	QFile file(sfile);
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+		qDebug()<<" [EE] Can't open reg file: "<<regfile;
+		return ret;
+	}
+
+	bool readFlag=false;
+	int readed=1;
+
+	while (!file.atEnd()) {
+		QByteArray line = file.readLine();
+
+		if (readFlag){
+			QList<QByteArray> key = line.trimmed().split('=');
+			int index = keys.indexOf(key.at(0));
+			if (index==-1){
+				ret.append(line.trimmed());
+				readed++;
+				if (readed>count)
+					return ret;
+			}
+		} else {
+			if ((line.indexOf(searchPath)>-1) and (!readFlag))
+				readFlag=true;
+		}
+
+		if (((line=="\n") or (line.isEmpty())) and (readFlag))
+			readFlag=false;
+	}
+	return ret;
+}

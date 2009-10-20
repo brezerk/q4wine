@@ -86,6 +86,20 @@ public:
 	  */
 	void append(QString reg_keys);
 
+	/*! \brief Append setted key to exported reg file.
+	  * \param path  Registry path
+	  * \param key   Registry key name
+	  * \param value Keristry key value
+	  */
+	void set(QString path, const QString key, const QString value, const QString hkey = "HKEY_CURRENT_USER");
+
+	/*! \brief Append setted unsetkey to exported reg file.
+	  * \param path  Registry path
+	  * \param key   Registry key name
+	  */
+	void unset(QString path, const QString key, const QString hkey = "HKEY_CURRENT_USER");
+	void unsetPath(QString path, const QString hkey = "HKEY_CURRENT_USER");
+
 	/*! \brief Executes regedit to import exported file into wine registry.
 	  *
 	  * \return ture on success.
@@ -94,11 +108,21 @@ public:
 
 	/*! \brief Read registry keys value from regfile by path.
 	  * \param path Registry path.
-	  * \param keys List of kays to be readed from registry.
+	  * \param keys List of keys to be readed from registry.
 	  *
 	  * \return List of readed key's value. Index of readed keys identical to requested keys.
 	  */
 	QStringList readKeys(const QString sysfile, const QString path, const QStringList keys) const;
+
+	/*! \brief Read registry all keys (exclude of requested keys) value from regfile by path .
+	  * \param sysfile
+	  * \param path Registry path.
+	  * \param keys List of keys to be excluded readed from registry.
+	  * \param count Number of keys to be readed from registry.
+	  *
+	  * \return List of readed key's value. Index of readed keys identical to requested keys.
+	  */
+	QStringList readExcludedKeys(const QString sysfile, const QString path, const QStringList keys, const int count) const;
 
 private:
 	QString regfile;

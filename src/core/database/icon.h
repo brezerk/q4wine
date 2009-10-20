@@ -51,7 +51,7 @@ class Icon : public Prefix
 {
 public:
 	//! Class constructor
-    Icon();
+	Icon();
 
    /*! \brief This function gets all icons fields by prefix_id and dir_id key value from table.
 	*
@@ -85,7 +85,7 @@ public:
 	* \return Return a list of table fields.
 	*/
 	QStringList getByName(const QString prefix_name, const QString dir_name, const QString icon_name = "") const;
-	QList<QStringList> getByPrefixAndDirName(const QString prefix_name, const QString dir_name) const;
+	QList<QStringList> getByPrefixAndDirName(const QString prefix_name, const QString dir_name, const QString filter = "") const;
 
    /*! \brief Copy icon.
 	*
@@ -150,7 +150,7 @@ public:
 	/*! \brief This function check is reccord exists by icon_name or not.
 	 *
 	 * \param  prefix_name    A prefix name value.
-  	 * \param  dir_name		 A dir name value.
+	 * \param  dir_name		 A dir name value.
 	 * \param  icon_name    A name value.
 	 * \return Return true if exists.
 	 */
@@ -159,25 +159,25 @@ public:
 	/*! \brief This function add icon record.
 	 *
 	 * \param  cmdargs		A command line arguments value.
-  	 * \param  exec			A exec binary value.
+	 * \param  exec			A exec binary value.
 	 * \param  icon_path	A icon name or path value.
-  	 * \param  desc			A description value.
-  	 * \param  prefix_name  A dir name value.
-  	 * \param  dir_name		A dir name value.
-  	 * \param  name			A dir name value.
+	 * \param  desc			A description value.
+	 * \param  prefix_name  A dir name value.
+	 * \param  dir_name		A dir name value.
+	 * \param  name			A dir name value.
 	 * \return Return true on success.
 	 */
 	bool addIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0) const;
 
-  	/*! \brief This function updates icon record by name, prefix_name and dir_name.
+	/*! \brief This function updates icon record by name, prefix_name and dir_name.
 	 *
 	 * \param  cmdargs		A command line arguments value.
-  	 * \param  exec			A exec binary value.
+	 * \param  exec			A exec binary value.
 	 * \param  icon_path	A icon name or path value.
-  	 * \param  desc			A description value.
-  	 * \param  prefix_name  A dir name value.
-  	 * \param  dir_name		A dir name value.
-  	 * \param  name			A dir name value.
+	 * \param  desc			A description value.
+	 * \param  prefix_name  A dir name value.
+	 * \param  dir_name		A dir name value.
+	 * \param  name			A dir name value.
 	 * \return Return true on success.
 	 */
 	bool updateIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString icon_name, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0) const;
@@ -185,9 +185,9 @@ public:
 	/*! \brief This function updates name, prefix_name and dir_name by old_name.
 	 *
 	 * \param  icon_name		A icon name value.
-  	 * \param  prefix_name		A dir name value.
-  	 * \param  dir_name			A dir name value.
-  	 * \param  old_icon_name	A old icon name value.
+	 * \param  prefix_name		A dir name value.
+	 * \param  dir_name			A dir name value.
+	 * \param  old_icon_name	A old icon name value.
 	 * \return Return true on success.
 	 */
 	bool updateIcon(const QString icon_name, const QString prefix_id, const QString dir_id, const QString old_prefix_id, const QString old_dir_id, const QString old_icon_name) const;

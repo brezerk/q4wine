@@ -34,169 +34,169 @@ QTimer *timer = new QTimer();
 
 MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 
-  // Loading libq4wine-core.so
-  libq4wine.setFileName("libq4wine-core");
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
 
-  if (!libq4wine.load()){
-	libq4wine.load();
-  }
+	if (!libq4wine.load()){
+		libq4wine.load();
+	}
 
-  // Getting corelib calss pointer
-  CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-  CoreLib = (corelib *)CoreLibClassPointer(true);
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib = (corelib *)CoreLibClassPointer(true);
 
-  // Creating database classes
-  db_dir = new Dir();
-  db_icon = new Icon();
-  db_last_run_icon = new Last_Run_Icon();
-  db_image = new Image();
-  db_prefix = new Prefix();
-
-
-  clearTmp();
-  // Base GUI setup
-  setupUi(this);
-
-  if (startState == 1)
-	  this->showMinimized();
-
-  setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
-
-  lstIcons = new DragListWidget(tab);
-  lstIcons->setViewMode(QListView::IconMode);
-  lstIcons->setGridSize(QSize(86, 86));
-  lstIcons->setResizeMode(QListView::Adjust);
-  lstIcons->setWrapping(TRUE);
-  lstIcons->setWordWrap(TRUE);
-  lstIcons->setAcceptDrops(TRUE);
-  lstIcons->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
-  lstIcons->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
-  lstIcons->setMovement(QListView::Snap);
-  lstIcons->setDragDropMode(QAbstractItemView::InternalMove);
-  lstIcons->setSelectionMode(QAbstractItemView::ContiguousSelection);
-
-  /*QHBoxLayout *layout = new QHBoxLayout;
-  layout->addWidget(lstIcons);
-  layout->setMargin(3);
-  gbIcons->setLayout(layout);
-*/
-
-  splitter = new QSplitter(tab);
-  splitter->addWidget(twPrograms);
-  splitter->addWidget(lstIcons);
-
-  QVBoxLayout *vlayout = new QVBoxLayout;
-  vlayout->addWidget(splitter);
-  vlayout->addWidget(gbInfo);
-  vlayout->setMargin(3);
-  tab->setLayout(vlayout);
+	// Creating database classes
+	db_dir = new Dir();
+	db_icon = new Icon();
+	db_last_run_icon = new Last_Run_Icon();
+	db_image = new Image();
+	db_prefix = new Prefix();
 
 
-  // Updating database connected items
-  updateDtabaseConnectedItems();
+	clearTmp();
+	// Base GUI setup
+	setupUi(this);
 
-  // Getting settings from config file
-  this->getSettings();
+	if (startState == 1)
+		this->showMinimized();
 
-  // Timer flag to running
-  _IS_TIMER_RUNNING=TRUE;
+	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
 
-  // Connecting signals and slots
-  connect(timer, SIGNAL(timeout()), this, SLOT(getWineProccessInfo()));
-  connect(tbwGeneral, SIGNAL(currentChanged(int)), this, SLOT(CoreFunction_ResizeContent(int)));
-  connect(cmdManagePrefixes, SIGNAL(clicked()), this, SLOT(cmdManagePrefixes_Click()));
-  connect(cmdCreateFake, SIGNAL(clicked()), this, SLOT(cmdCreateFake_Click()));
-  connect(cmdUpdateFake, SIGNAL(clicked()), this, SLOT(cmdUpdateFake_Click()));
-  connect(cmdWinetricks, SIGNAL(clicked()), this, SLOT(cmdWinetricks_Click()));
-  connect(cmdTestWis, SIGNAL(clicked()), this, SLOT(cmdTestWis_Click()));
+	lstIcons = new DragListWidget(tab);
+	lstIcons->setViewMode(QListView::IconMode);
+	lstIcons->setGridSize(QSize(86, 86));
+	lstIcons->setResizeMode(QListView::Adjust);
+	lstIcons->setWrapping(TRUE);
+	lstIcons->setWordWrap(TRUE);
+	lstIcons->setAcceptDrops(TRUE);
+	lstIcons->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+	lstIcons->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
+	lstIcons->setMovement(QListView::Snap);
+	lstIcons->setDragDropMode(QAbstractItemView::InternalMove);
+	lstIcons->setSelectionMode(QAbstractItemView::ContiguousSelection);
 
-  // Signals commection for Icons and Folders
+	QWidget *wid = new QWidget(tab);
 
-  connect(twPrograms, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(twPrograms_ItemClick(QTreeWidgetItem *, int)));
-  connect(twPrograms, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(twPrograms_ShowContextMenu(const QPoint &)));
-  connect(lstIcons, SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(lstIcons_ItemDoubleClick(QListWidgetItem *)));
-  connect(lstIcons, SIGNAL(itemClicked(QListWidgetItem *)), this, SLOT(lstIcons_ItemClick(QListWidgetItem *)));
-  connect(lstIcons, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(lstIcons_ShowContextMenu(const QPoint &)));
+	QVBoxLayout *iconlayout = new QVBoxLayout;
+	iconlayout->addWidget(widgetFilter);
+	iconlayout->addWidget(lstIcons);
+	iconlayout->setMargin(0);
+	wid->setLayout(iconlayout);
 
-  // Signals for updating toolbars
-  connect(tableProc, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tableProc_ShowContextMenu(const QPoint &)));
-  connect(tableProc, SIGNAL(clicked(const QModelIndex &)), this, SLOT(tablePrefix_UpdateContentList(const QModelIndex &)));
+	splitter = new QSplitter(tab);
+	splitter->addWidget(twPrograms);
+	splitter->addWidget(wid);
 
-  // Init and connect SLOT & SIGNALS for context menus
-  connect(tablePrefix, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tablePrefix_ShowContextMenu(const QPoint &)));
-  connect(tablePrefix, SIGNAL(clicked(const QModelIndex &)), this, SLOT(tablePrefix_UpdateContentList(const QModelIndex &)));
+	QVBoxLayout *vlayout = new QVBoxLayout;
+	vlayout->addWidget(splitter);
+	vlayout->addWidget(gbInfo);
+	vlayout->setMargin(3);
+	tab->setLayout(vlayout);
 
-  //Main menu actions connection to slots
-  connect(mainRun, SIGNAL(triggered()), this, SLOT(mainRun_Click()));
-  connect(mainPrograms, SIGNAL(triggered()), this, SLOT(mainPrograms_Click()));
-  connect(mainProcess, SIGNAL(triggered()), this, SLOT(mainProcess_Click()));
-  connect(mainSetup, SIGNAL(triggered()), this, SLOT(mainSetup_Click()));
-  connect(mainPrefix, SIGNAL(triggered()), this, SLOT(mainPrefix_Click()));
-  connect(mainImageManage, SIGNAL(triggered()), this, SLOT(mainImageManager_Click()));
-  connect(mainAbout, SIGNAL(triggered()), this, SLOT(mainAbout_Click()));
-  connect(mainAboutQt, SIGNAL(triggered()), this, SLOT(mainAboutQt_Click()));
-  connect(mainExportIcons, SIGNAL(triggered()), this, SLOT(mainExportIcons_Click()));
-  connect(mainFirstSteps, SIGNAL(triggered()), this, SLOT(mainFirstSteps_Click()));
-  connect(mainFAQ, SIGNAL(triggered()), this, SLOT(mainFAQ_Click()));
-  connect(mainIndex, SIGNAL(triggered()), this, SLOT(mainIndex_Click()));
-  connect(mainWebsite, SIGNAL(triggered()), this, SLOT(mainWebsite_Click()));
-  connect(mainDonate, SIGNAL(triggered()), this, SLOT(mainDonate_Click()));
-  connect(mainBugs, SIGNAL(triggered()), this, SLOT(mainBugs_Click()));
+	// Updating database connected items
+	updateDtabaseConnectedItems();
 
-  connect(lstIcons, SIGNAL(startDrag ()), this, SLOT(startDrag()));
-  connect(lstIcons, SIGNAL(startDrop(QList<QUrl>)), this, SLOT(startDrop(QList<QUrl>)));
+	// Getting settings from config file
+	this->getSettings();
+
+	// Timer flag to running
+	_IS_TIMER_RUNNING=TRUE;
+
+	// Connecting signals and slots
+	connect(timer, SIGNAL(timeout()), this, SLOT(getWineProccessInfo()));
+	connect(tbwGeneral, SIGNAL(currentChanged(int)), this, SLOT(CoreFunction_ResizeContent(int)));
+	connect(cmdManagePrefixes, SIGNAL(clicked()), this, SLOT(cmdManagePrefixes_Click()));
+	connect(cmdCreateFake, SIGNAL(clicked()), this, SLOT(cmdCreateFake_Click()));
+	connect(cmdUpdateFake, SIGNAL(clicked()), this, SLOT(cmdUpdateFake_Click()));
+	connect(cmdWinetricks, SIGNAL(clicked()), this, SLOT(cmdWinetricks_Click()));
+	connect(cmdClearFilter, SIGNAL(clicked()), this, SLOT(cmdClearFilter_Click()));
+	connect(cmdTestWis, SIGNAL(clicked()), this, SLOT(cmdTestWis_Click()));
+	connect(cbPrefixes, SIGNAL(currentIndexChanged(QString)), this, SLOT(cbPrefixes_Change(QString)));
+
+	// Signals commection for Icons and Folders
+	connect(twPrograms, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(twPrograms_ItemClick(QTreeWidgetItem *, int)));
+	connect(twPrograms, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(twPrograms_ShowContextMenu(const QPoint &)));
+	connect(lstIcons, SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(lstIcons_ItemDoubleClick(QListWidgetItem *)));
+	connect(lstIcons, SIGNAL(itemClicked(QListWidgetItem *)), this, SLOT(lstIcons_ItemClick(QListWidgetItem *)));
+	connect(lstIcons, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(lstIcons_ShowContextMenu(const QPoint &)));
+
+	// Signals for updating toolbars
+	connect(tableProc, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tableProc_ShowContextMenu(const QPoint &)));
+	connect(tableProc, SIGNAL(clicked(const QModelIndex &)), this, SLOT(tablePrefix_UpdateContentList(const QModelIndex &)));
+
+	// Init and connect SLOT & SIGNALS for context menus
+	connect(tablePrefix, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tablePrefix_ShowContextMenu(const QPoint &)));
+	connect(tablePrefix, SIGNAL(clicked(const QModelIndex &)), this, SLOT(tablePrefix_UpdateContentList(const QModelIndex &)));
+
+	//Main menu actions connection to slots
+	connect(mainRun, SIGNAL(triggered()), this, SLOT(mainRun_Click()));
+	connect(mainPrograms, SIGNAL(triggered()), this, SLOT(mainPrograms_Click()));
+	connect(mainProcess, SIGNAL(triggered()), this, SLOT(mainProcess_Click()));
+	connect(mainSetup, SIGNAL(triggered()), this, SLOT(mainSetup_Click()));
+	connect(mainPrefix, SIGNAL(triggered()), this, SLOT(mainPrefix_Click()));
+	connect(mainImageManage, SIGNAL(triggered()), this, SLOT(mainImageManager_Click()));
+	connect(mainAbout, SIGNAL(triggered()), this, SLOT(mainAbout_Click()));
+	connect(mainAboutQt, SIGNAL(triggered()), this, SLOT(mainAboutQt_Click()));
+	connect(mainExportIcons, SIGNAL(triggered()), this, SLOT(mainExportIcons_Click()));
+	connect(mainFirstSteps, SIGNAL(triggered()), this, SLOT(mainFirstSteps_Click()));
+	connect(mainFAQ, SIGNAL(triggered()), this, SLOT(mainFAQ_Click()));
+	connect(mainIndex, SIGNAL(triggered()), this, SLOT(mainIndex_Click()));
+	connect(mainWebsite, SIGNAL(triggered()), this, SLOT(mainWebsite_Click()));
+	connect(mainDonate, SIGNAL(triggered()), this, SLOT(mainDonate_Click()));
+	connect(mainBugs, SIGNAL(triggered()), this, SLOT(mainBugs_Click()));
+	connect(lstIcons, SIGNAL(startDrag ()), this, SLOT(startDrag()));
+	connect(lstIcons, SIGNAL(startDrop(QList<QUrl>)), this, SLOT(startDrop(QList<QUrl>)));
+
+	connect(comboFilter, SIGNAL(editTextChanged(QString)), this, SLOT(comboFilter_editTextChanged(QString)));
 
 #ifndef WITH_ICOUTILS
-  mainExportIcons->setEnabled(false);
+	mainExportIcons->setEnabled(false);
 #endif
 
 #ifdef WITH_DEVELOP_STUFF
-  cmdTestWis->setEnabled(true);
+	cmdTestWis->setEnabled(true);
 #else
-  cmdTestWis->setEnabled(false);
+	cmdTestWis->setEnabled(false);
 #endif
 
-  connect(mainOptions, SIGNAL(triggered()), this, SLOT(mainOptions_Click()));
-  connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
-  connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
+	connect(mainOptions, SIGNAL(triggered()), this, SLOT(mainOptions_Click()));
+	connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
+	connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
 
-  // Setting context menu policy
-  tableProc->setContextMenuPolicy(Qt::CustomContextMenu);
-  twPrograms->setContextMenuPolicy(Qt::CustomContextMenu);
-  tablePrefix->setContextMenuPolicy(Qt::CustomContextMenu);
-  lstIcons->setContextMenuPolicy(Qt::CustomContextMenu);
+	// Setting context menu policy
+	tableProc->setContextMenuPolicy(Qt::CustomContextMenu);
+	twPrograms->setContextMenuPolicy(Qt::CustomContextMenu);
+	tablePrefix->setContextMenuPolicy(Qt::CustomContextMenu);
+	lstIcons->setContextMenuPolicy(Qt::CustomContextMenu);
 
-  // Creating actions for context menus & toolbars
-  createMenuActions();
-  createToolBarActions();
+	// Creating actions for context menus & toolbars
+	createMenuActions();
+	createToolBarActions();
 
-  // Enveropment path initialization
-  HOME_PATH = QDir::homePath();
-  ROOT_PATH = QDir::rootPath();
-  TEMP_PATH = QDir::tempPath();
+	// Enveropment path initialization
+	HOME_PATH = QDir::homePath();
+	ROOT_PATH = QDir::rootPath();
+	TEMP_PATH = QDir::tempPath();
+	WINE_DEFAULT_PREFIX.append(HOME_PATH);
+	WINE_DEFAULT_PREFIX.append("/.wine");
 
-  WINE_DEFAULT_PREFIX.append(HOME_PATH);
-  WINE_DEFAULT_PREFIX.append("/.wine");
+	// Setting default IconsSize for lstIcons (Wine-Programm-Menu) need for user settings
+	lstIcons->setIconSize(QSize(32, 32));
+	twPrograms->installEventFilter(this);
+	lstIcons->installEventFilter(this);
+	installEventFilter(this);
 
+	// FIXME: Move this into shared libaray
+	runAutostart();
+	createTrayIcon();
 
-  // Setting default IconsSize for lstIcons (Wine-Programm-Menu) nead for user settings
-  lstIcons->setIconSize(QSize(32, 32));
-
-  twPrograms->installEventFilter(this);
-  lstIcons->installEventFilter(this);
-  installEventFilter(this);
-
-  // FIXME: Move this into shared libaray
-  runAutostart();
-
-  createTrayIcon();
-
-  // FIXME: Remove this as replace for shared library
-  //core = new CoreMethods();
-  connect (menuRun, SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
-  return;
+	connect (menuRun, SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
+	return;
 }
 
+void MainWindow::comboFilter_editTextChanged(QString){
+	twPrograms_ItemClick(twPrograms->currentItem(), 0);
+}
 
 void MainWindow::clearTmp(){
   QString fileName = QDir::homePath();
@@ -333,6 +333,18 @@ void MainWindow::cmdWinetricks_Click() {
   return;
 }
 
+void MainWindow::cbPrefixes_Change(QString currentIndexText){
+	if (currentIndexText.isEmpty())
+		return;
+
+	if (tbwGeneral->currentIndex()==2){
+	QList<QTreeWidgetItem *> found = twPrograms->findItems(currentIndexText, Qt::MatchWildcard, 0);
+	if (found.count()>0)
+		twPrograms->setCurrentItem(found.at(0));
+}
+	return;
+}
+
 void MainWindow::trayIcon_Activate(QSystemTrayIcon::ActivationReason reason){
   if (reason==QSystemTrayIcon::Trigger){
 	if (!isVisible()){
@@ -367,7 +379,23 @@ void MainWindow::lstIcons_ItemClick(QListWidgetItem * item){
 	result=db_icon->getByName(treeItem->text(0), "", item->text());
   }
 
-  lblInfo->setText(tr("Program: %1<br> Description: %2").arg(result.at(1)) .arg(result.at(2)));
+  lblIconInfo0->setText(tr("Program: %1<br> Description: %2").arg(result.at(10).split('/').last().split('\\').last()) .arg(result.at(2)));
+
+  QString useconsole;
+  if (result.at(7)=="1"){
+	  useconsole=tr("Yes");
+  } else {
+	  useconsole=tr("No");
+  }
+
+  QString desktopsize;
+  if (result.at(11).isEmpty()){
+	  desktopsize = tr("Default");
+  } else {
+	  desktopsize = result.at(11);
+  }
+
+  lblIconInfo1->setText(tr("Runs in console: %1<br> Desktop size: %2").arg(useconsole) .arg(desktopsize));
   return;
 }
 
@@ -542,67 +570,6 @@ void MainWindow::lstIcons_ItemDoubleClick(QListWidgetItem * item){
   return;
 }
 
-void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
-
-  /*
-	 * This is check for root element, or not.
-	 * If yes -- show root-level Icons.
-	 * otherwise -- show children-level icons
-	 */
-
-  QListWidgetItem *iconItem;
-  QList<QStringList> iconsList;
-
-  lstIcons->clear();
-  lblInfo->setText(tr("Program: <br> Description:"));
-
-  if (!item)
-	return;
-
-  if (item->parent()){
-	iconsList=db_icon->getByPrefixAndDirName(item->parent()->text(0), item->text(0));
-	cbPrefixes->setCurrentIndex(cbPrefixes->findText(item->parent()->text(0), Qt::MatchExactly));
-  } else {
-	iconsList=db_icon->getByPrefixAndDirName(item->text(0), "");
-	cbPrefixes->setCurrentIndex(cbPrefixes->findText(item->text(0), Qt::MatchExactly));
-  }
-
-
-  for (int i = 0; i < iconsList.size(); ++i) {
-	iconItem = new QListWidgetItem(lstIcons, 0);
-	iconItem->setText(iconsList.at(i).at(1));
-
-	//Seting icon. If no icon or icon file not exists -- setting default
-	if (iconsList.at(i).at(3).isEmpty()){
-	  iconItem->setIcon(loadIcon("data/exec_wine.png"));
-	} else {
-	  if (QFile::exists (iconsList.at(i).at(3))){
-		iconItem->setIcon(QIcon(iconsList.at(i).at(3)));
-	  } else {
-		if (iconsList.at(i).at(3)=="wineconsole"){
-		  iconItem->setIcon(loadIcon("data/wineconsole.png"));
-		} else if (iconsList.at(i).at(3)=="regedit"){
-		  iconItem->setIcon(loadIcon("data/regedit.png"));
-		} else if (iconsList.at(i).at(3)=="wordpad"){
-		  iconItem->setIcon(loadIcon("data/notepad.png"));
-		} else if (iconsList.at(i).at(3)=="winecfg"){
-		  iconItem->setIcon(loadIcon("data/winecfg.png"));
-		} else if (iconsList.at(i).at(3)=="uninstaller"){
-		  iconItem->setIcon(loadIcon("data/uninstaller.png"));
-		} else if (iconsList.at(i).at(3)=="eject"){
-		  iconItem->setIcon(loadIcon("data/eject.png"));
-		} else if (iconsList.at(i).at(3)=="explorer"){
-		  iconItem->setIcon(loadIcon("data/explorer.png"));
-		} else {
-		  iconItem->setIcon(loadIcon("data/exec_wine.png"));
-		}
-	  }
-	}
-  }
-
-  return;
-}
-
 void MainWindow::updateDtabaseConnectedItems(int currentPrefix){
   /*
 		Function for updating objects content to database values
@@ -740,6 +707,68 @@ void MainWindow::tableProc_ShowContextMenu(const QPoint point){
   menuProc->exec(QCursor::pos());
   return;
 
+}
+
+void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
+
+  /*
+	 * This is check for root element, or not.
+	 * If yes -- show root-level Icons.
+	 * otherwise -- show children-level icons
+	 */
+
+  QListWidgetItem *iconItem;
+  QList<QStringList> iconsList;
+
+  lstIcons->clear();
+  lblIconInfo0->setText(tr("Program:<br> Description:"));
+  lblIconInfo1->setText(tr("Runs in console:<br> Desktop size:"));
+
+  if (!item)
+	return;
+
+  if (item->parent()){
+	iconsList=db_icon->getByPrefixAndDirName(item->parent()->text(0), item->text(0), comboFilter->currentText());
+	cbPrefixes->setCurrentIndex(cbPrefixes->findText(item->parent()->text(0), Qt::MatchExactly));
+  } else {
+	iconsList=db_icon->getByPrefixAndDirName(item->text(0), "", comboFilter->currentText());
+	cbPrefixes->setCurrentIndex(cbPrefixes->findText(item->text(0), Qt::MatchExactly));
+  }
+
+
+  for (int i = 0; i < iconsList.size(); ++i) {
+	iconItem = new QListWidgetItem(lstIcons, 0);
+	iconItem->setText(iconsList.at(i).at(1));
+
+	//Seting icon. If no icon or icon file not exists -- setting default
+	if (iconsList.at(i).at(3).isEmpty()){
+	  iconItem->setIcon(loadIcon("data/exec_wine.png"));
+	} else {
+	  if (QFile::exists (iconsList.at(i).at(3))){
+		iconItem->setIcon(QIcon(iconsList.at(i).at(3)));
+	  } else {
+		if (iconsList.at(i).at(3)=="wineconsole"){
+		  iconItem->setIcon(loadIcon("data/wineconsole.png"));
+		} else if (iconsList.at(i).at(3)=="regedit"){
+		  iconItem->setIcon(loadIcon("data/regedit.png"));
+		} else if (iconsList.at(i).at(3)=="wordpad"){
+		  iconItem->setIcon(loadIcon("data/notepad.png"));
+		} else if (iconsList.at(i).at(3)=="winecfg"){
+		  iconItem->setIcon(loadIcon("data/winecfg.png"));
+		} else if (iconsList.at(i).at(3)=="uninstaller"){
+		  iconItem->setIcon(loadIcon("data/uninstaller.png"));
+		} else if (iconsList.at(i).at(3)=="eject"){
+		  iconItem->setIcon(loadIcon("data/eject.png"));
+		} else if (iconsList.at(i).at(3)=="explorer"){
+		  iconItem->setIcon(loadIcon("data/explorer.png"));
+		} else {
+		  iconItem->setIcon(loadIcon("data/exec_wine.png"));
+		}
+	  }
+	}
+  }
+
+  return;
 }
 
 void MainWindow::twPrograms_ShowContextMenu(const QPoint){
@@ -1329,7 +1358,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event){
 
 void MainWindow::resizeEvent (QResizeEvent){
   /*
-		Function for hendle resize event: tableProc (ÓÍ ËÏÄ)
+		Function for hendle resize event: tableProc (ÑÐ¼ ÐºÐ¾Ð´)
 	*/
 
   CoreFunction_ResizeContent(1);
@@ -1546,6 +1575,11 @@ void MainWindow::cmdUpdateFake_Click(){
 	updateDtabaseConnectedItems(cbPrefixes->currentIndex());
   }
   return;
+}
+
+void MainWindow::cmdClearFilter_Click(){
+	comboFilter->clearEditText();
+	return;
 }
 
 void MainWindow::processKillWine_Click(){
@@ -2869,7 +2903,7 @@ void MainWindow::dirInstall_Click(void){
 }
 
 void MainWindow::dirUninstall_Click(void){
-  //FIXME: ðÅÒÅÄÅÌÁÔØ ÎÁ ÎÏ×ÙÊ ËÌÁÓÓ winebinlauncher
+  //FIXME: ÐŸÐµÑ€ÐµÐ´ÐµÐ»Ð°Ñ‚ÑŒ Ð½Ð° Ð½Ð¾Ð²Ñ‹Ð¹ ÐºÐ»Ð°ÑÑ winebinlauncher
   //RunWineUtils("uninstaller", twPrograms->currentItem());
   return;
 }
