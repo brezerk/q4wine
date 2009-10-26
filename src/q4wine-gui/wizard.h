@@ -45,6 +45,7 @@
 #include <QProgressDialog>
 #include <QListWidget>
 #include <QStringList>
+#include <QInputDialog>
 #include <QLibrary>
 
 #include <config.h>
@@ -91,6 +92,15 @@ class Wizard : public QDialog, public Ui::Wizard
 
 		//! \brief cmdHelo click slot.
 		void cmdHelp_Click();
+
+		//! \brief cmdJoysticEdit click slot.
+		void cmdJoysticEdit_Click();
+
+		//! \brief cmdJoysticAdd click slot.
+		void cmdJoysticAdd_Click();
+
+		//! \brief cmdJoysticDel click slot.
+		void cmdJoysticDel_Click();
 
 		//! \brief raidioDefault toggled action slot.
 		void radioDefault_toggled(bool state);

@@ -3151,7 +3151,7 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="cmdJoysticRemove">
+                    <widget class="QPushButton" name="cmdJoysticDel">
                      <property name="text">
                       <string>Remove</string>
                      </property>
@@ -3492,21 +3492,76 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
              </item>
             </layout>
            </widget>
-           <zorder>widgetCreatePrefix0</zorder>
-           <zorder>widgetInfo</zorder>
-           <zorder>widgetCreatePrefix1</zorder>
-           <zorder>widgetCreatePrefix2</zorder>
-           <zorder>widgetFirstStartup0</zorder>
-           <zorder>widgetFirstStartup1</zorder>
-           <zorder>widgetFirstStartup2</zorder>
-           <zorder>widgetFirstStartup3</zorder>
-           <zorder>widgetFirstStartup4</zorder>
-           <zorder>widgetCreateFakeDrive0</zorder>
-           <zorder>widgetCreateFakeDrive1</zorder>
-           <zorder>widgetCreateFakeDrive2</zorder>
-           <zorder>widgetCreateFakeDrive3</zorder>
-           <zorder>widgetCreateFakeDrive5</zorder>
-           <zorder>widgetCreateFakeDrive4</zorder>
+           <widget class="QWidget" name="widgetCreateFakeDrive6" native="true">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>482</width>
+              <height>321</height>
+             </rect>
+            </property>
+            <property name="autoFillBackground">
+             <bool>true</bool>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_5">
+             <property name="leftMargin">
+              <number>6</number>
+             </property>
+             <property name="rightMargin">
+              <number>6</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QGroupBox" name="groupBox_23">
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="title">
+                <string>Wine drives</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_19">
+                <item>
+                 <widget class="QListWidget" name="listWineDrives">
+                  <property name="textElideMode">
+                   <enum>Qt::ElideNone</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_10" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout_4">
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QPushButton" name="cmdWineDriveAdd">
+                     <property name="text">
+                      <string>Add</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="cmdWineDriveEdit">
+                     <property name="text">
+                      <string>Edit</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="cmdWineDriveDel">
+                     <property name="text">
+                      <string>Remove</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </widget>
          </item>
         </layout>
@@ -3593,8 +3648,6 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
   </layout>
  </widget>
  <layoutdefault spacing="2" margin="9"/>
- <resources>
-  <include location="../q4wine.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

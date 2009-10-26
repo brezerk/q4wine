@@ -112,6 +112,11 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 			pixmap.load(":data/firstc.png");
 		}
 		lblPicture->setPixmap(pixmap);
+
+		connect(cmdJoysticEdit, SIGNAL(clicked()), this, SLOT(cmdJoysticEdit_Click()));
+		connect(cmdJoysticAdd, SIGNAL(clicked()), this, SLOT(cmdJoysticAdd_Click()));
+		connect(cmdJoysticDel, SIGNAL(clicked()), this, SLOT(cmdJoysticDel_Click()));
+
 		break;
 	case 3:
 		// Fake drive update
@@ -119,6 +124,10 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 			pixmap.load(":data/firstc.png");
 		}
 		lblPicture->setPixmap(pixmap);
+
+		connect(cmdJoysticEdit, SIGNAL(clicked()), this, SLOT(cmdJoysticEdit_Click()));
+		connect(cmdJoysticAdd, SIGNAL(clicked()), this, SLOT(cmdJoysticAdd_Click()));
+		connect(cmdJoysticDel, SIGNAL(clicked()), this, SLOT(cmdJoysticDel_Click()));
 
 		break;
 	}
@@ -281,10 +290,16 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		lblWizardInfo->setText(Wizard::tr("<p>Welcome to fake drive creation wizard.</p><p>This wizard helps you to make all necessary steps for successful fake drive creation.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>"));
 		break;
 	case 3:
-		TotalPage=8;
+		TotalPage=9;
 		this->var1=var1;
 
-		reg = new Registry(db_prefix->getPath(var1));
+		QString prefixPath = db_prefix->getPath(var1);
+		if (prefixPath.isEmpty()){
+			qDebug()<<" [EE] Cant get prefix path: "<<var1;
+			return;
+		}
+
+		reg = new Registry(prefixPath);
 
 		QStringList list;
 		list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
@@ -386,6 +401,33 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 				comboFakeX11_XVid->setCurrentIndex(comboFakeX11_XVid->findText(list.at(4)));
 		}
 
+		QDir wineDriveDir;
+		wineDriveDir.setFilter(QDir::Dirs | QDir::Hidden | QDir::NoDotAndDotDot  );
+
+		prefixPath.append("/dosdevices/");
+		if (!wineDriveDir.cd(prefixPath)){
+			qDebug()<<"Cannot cd to prefix directory: "<<prefixPath;
+		} else {
+			QFileInfoList list = wineDriveDir.entryInfoList();
+			for (int i = 0; i < list.size(); ++i) {
+				QFileInfo fileInfo = list.at(i);
+				//QListWidgetItem *item = new QListWidget(loadIcon("data/folder.png", ""), tr("test"));
+				//item.setIcon(loadIcon("data/folder.png", ""));
+				//item.setText(fileInfo.fileName());
+				QString line = fileInfo.fileName().toUpper();
+				line.append(" ");
+				line.append(fileInfo.symLinkTarget());
+				line.append("\nType: A Serial: S1AFJDWQ529163 Label: Wine System Drive");
+
+				QListWidgetItem *item = new QListWidgetItem(loadIcon("data/folder.png", ""), line, listWineDrives);
+
+				//item.setText("test");
+
+				listWineDrives->addItem(item);
+				//qDebug()<<fileInfo.fileName();
+			}
+		}
+
 
 		setWindowTitle(tr("Fake drive update wizard"));
 		lblCaption->setText(tr("<b>Fake drive update wizard</b>"));
@@ -411,6 +453,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	widgetCreateFakeDrive3->setVisible(FALSE);
 	widgetCreateFakeDrive4->setVisible(FALSE);
 	widgetCreateFakeDrive5->setVisible(FALSE);
+	widgetCreateFakeDrive6->setVisible(FALSE);
 
 
 	widgetFirstStartup0->setVisible(FALSE);
@@ -780,6 +823,8 @@ void Wizard::nextWizardPage(){
 
 	  settings.endGroup();
 
+
+
 			accept();
 			break;
 		}
@@ -837,7 +882,7 @@ void Wizard::nextWizardPage(){
 				}
 			}
 			break;
-				case 8:
+				case 9:
 			QApplication::setOverrideCursor( Qt::BusyCursor );
 
 			//Set variables
@@ -1379,14 +1424,19 @@ void Wizard::updateScena(){
 					case 7:
 			widgetCreateFakeDrive4->setVisible(FALSE);
 			widgetCreateFakeDrive5->setVisible(TRUE);
+			widgetCreateFakeDrive6->setVisible(FALSE);
+			break;
+					case 8:
+			widgetCreateFakeDrive5->setVisible(FALSE);
+			widgetCreateFakeDrive6->setVisible(TRUE);
 			widgetInfo->setVisible(FALSE);
 			cmdNext->setText(tr("Next >"));
 			break;
-					case 8:
+					case 9:
 			lblWizardInfo->setText(tr("<p>All ready for fake drive creation. </p><p>Please, press the <b>Finish</b> button to create facke drive. Or press <b>Back</b> button for return.</p>"));
 			widgetInfo->setVisible(TRUE);
-			widgetCreateFakeDrive4->setVisible(FALSE);
 			widgetCreateFakeDrive5->setVisible(FALSE);
+			widgetCreateFakeDrive6->setVisible(FALSE);
 			cmdNext->setText(tr("Finish"));
 			break;
 		}
@@ -1453,3 +1503,37 @@ void Wizard::radioEmbedded_toggled(bool state){
 #endif
 	return;
 }
+
+void Wizard::cmdJoysticEdit_Click(){
+	QListWidgetItem *item = listJoysticAxesMappings->currentItem();
+	if (!item)
+		return;
+
+	bool ok;
+	QString text = QInputDialog::getText(this, tr("Joystic Axes Mappings"), tr("Joystic axes mappings might be defined as:\n\"joystic name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details."), QLineEdit::Normal,
+										  item->text(), &ok);
+	if (ok && !text.isEmpty()){
+		item->setText(text);
+	}
+	return;
+}
+
+void Wizard::cmdJoysticAdd_Click(){
+	bool ok;
+	QString text = QInputDialog::getText(this, tr("Joystic Axes Mappings"), tr("Joystic axes mappings might be defined as:\n\"joystic name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details."), QLineEdit::Normal,
+										  "", &ok);
+	if (ok && !text.isEmpty()){
+		listJoysticAxesMappings->addItem(text);
+	}
+	return;
+}
+
+void Wizard::cmdJoysticDel_Click(){
+	QListWidgetItem *item = listJoysticAxesMappings->currentItem();
+	if (!item)
+		return;
+
+	delete item;
+	return;
+}
+
