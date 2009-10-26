@@ -147,7 +147,7 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	connect(lstIcons, SIGNAL(startDrag ()), this, SLOT(startDrag()));
 	connect(lstIcons, SIGNAL(startDrop(QList<QUrl>)), this, SLOT(startDrop(QList<QUrl>)));
 
-	connect(comboFilter, SIGNAL(editTextChanged(QString)), this, SLOT(comboFilter_editTextChanged(QString)));
+	connect(txtIconFilter, SIGNAL(textChanged(QString)), this, SLOT(txtIconFilter_textChanged(QString)));
 
 #ifndef WITH_ICOUTILS
 	mainExportIcons->setEnabled(false);
@@ -184,7 +184,9 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	lstIcons->setIconSize(QSize(32, 32));
 	twPrograms->installEventFilter(this);
 	lstIcons->installEventFilter(this);
+	txtIconFilter->installEventFilter(this);
 	installEventFilter(this);
+	cmdClearFilter->installEventFilter(this);
 
 	// FIXME: Move this into shared libaray
 	runAutostart();
@@ -194,7 +196,7 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	return;
 }
 
-void MainWindow::comboFilter_editTextChanged(QString){
+void MainWindow::txtIconFilter_textChanged(QString){
 	twPrograms_ItemClick(twPrograms->currentItem(), 0);
 }
 
@@ -728,10 +730,10 @@ void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
 	return;
 
   if (item->parent()){
-	iconsList=db_icon->getByPrefixAndDirName(item->parent()->text(0), item->text(0), comboFilter->currentText());
+	iconsList=db_icon->getByPrefixAndDirName(item->parent()->text(0), item->text(0), txtIconFilter->text());
 	cbPrefixes->setCurrentIndex(cbPrefixes->findText(item->parent()->text(0), Qt::MatchExactly));
   } else {
-	iconsList=db_icon->getByPrefixAndDirName(item->text(0), "", comboFilter->currentText());
+	iconsList=db_icon->getByPrefixAndDirName(item->text(0), "", txtIconFilter->text());
 	cbPrefixes->setCurrentIndex(cbPrefixes->findText(item->text(0), Qt::MatchExactly));
   }
 
@@ -1326,7 +1328,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event){
 
 	if (event->type() == QEvent::KeyPress){
 	  if ((keyEvent->key()==Qt::Key_Tab)){
-		twPrograms->setFocus();
+		txtIconFilter->setFocus();
 		return true;
 	  }
 
@@ -1350,6 +1352,28 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event){
 	}
 
 	return false;
+  }
+
+  if (obj == txtIconFilter){
+	  QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+	  if (event->type() == QEvent::KeyPress){
+		  if ((keyEvent->key()==Qt::Key_Tab)){
+			  cmdClearFilter->setFocus();
+			  return true;
+		  }
+	  }
+	  return false;
+  }
+
+	if (obj == cmdClearFilter){
+	  QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+	  if (event->type() == QEvent::KeyPress){
+		  if ((keyEvent->key()==Qt::Key_Tab)){
+			  twPrograms->setFocus();
+			  return true;
+		  }
+	  }
+	  return false;
   }
 
   return QMainWindow::eventFilter(obj, event);
@@ -1578,7 +1602,7 @@ void MainWindow::cmdUpdateFake_Click(){
 }
 
 void MainWindow::cmdClearFilter_Click(){
-	comboFilter->clearEditText();
+	txtIconFilter->setText("");
 	return;
 }
 
@@ -2490,22 +2514,22 @@ void MainWindow::iconAdd_Click(void){
 }
 
 void MainWindow::iconMountOther_Click(void){
-  /*
+	/*
 		This function request mount of selected by user image
 	*/
 
-  dirMountOther_Click();
+	dirMountOther_Click();
 
-  return;
+	return;
 }
 
 void MainWindow::iconUnmount_Click(void){
-  /*
+	/*
 		This function requests unmount by mount point described in icon settings
 	*/
 
-  dirUnmount_Click();
-  return;
+	dirUnmount_Click();
+	return;
 }
 
 void MainWindow::iconCut_Click(void){
@@ -2522,7 +2546,7 @@ void MainWindow::iconCut_Click(void){
   QTreeWidgetItem *treeItem = twPrograms->currentItem();
 
   // If icon cutted -- set icon disabled style
-  // FIXME: It pice works fine, but we nead to usse pixmaps for grayscale, not Qt::ItemIsEnabled flag....
+  // FIXME: It pice works fine, but we nead to use pixmaps for grayscale, not Qt::ItemIsEnabled flag....
   // FIXME: It is optional, i don't work on it until release... ;)
   //icoList2 = lstIcons->findItems("*", Qt::MatchWrap | Qt::MatchWildcard);
 
@@ -2555,37 +2579,37 @@ void MainWindow::iconCut_Click(void){
 }
 
 void MainWindow::iconCopy_Click(void){
-  /*
-	This function fill iconBuffer with selected icons names
-	and sets other informations required for copy\cut
-
-	see struct iconCopyBuffer definition for details
+	/*
+	* This function fill iconBuffer with selected icons names
+	* and sets other informations required for copy\cut
+	*
+	* see struct iconCopyBuffer definition for details
 	*/
 
-  if (!twPrograms->currentItem())
+	if (!twPrograms->currentItem())
+		return;
+
+	QList<QListWidgetItem *> icoList = lstIcons->selectedItems();
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
+
+	// Clearing icon buffer
+	iconBuffer.names.clear();
+	iconBuffer.dir_name="";
+	iconBuffer.prefix_name="";
+	iconBuffer.move=false;
+
+	// Fiffing buffer with new items
+	for (int i=0; i<icoList.count(); i++){
+		iconBuffer.names.append(icoList.at(i)->text());
+	}
+	if (treeItem->parent()){
+		iconBuffer.prefix_name = treeItem->parent()->text(0);
+		iconBuffer.dir_name = treeItem->text(0);
+	} else {
+		iconBuffer.prefix_name = treeItem->text(0);
+		iconBuffer.dir_name = "";
+	}
 	return;
-
-  QList<QListWidgetItem *> icoList = lstIcons->selectedItems();
-  QTreeWidgetItem *treeItem = twPrograms->currentItem();
-
-  // Clearing icon buffer
-  iconBuffer.names.clear();
-  iconBuffer.dir_name="";
-  iconBuffer.prefix_name="";
-  iconBuffer.move=false;
-
-  // Fiffing buffer with new items
-  for (int i=0; i<icoList.count(); i++){
-	iconBuffer.names.append(icoList.at(i)->text());
-  }
-  if (treeItem->parent()){
-	iconBuffer.prefix_name = treeItem->parent()->text(0);
-	iconBuffer.dir_name = treeItem->text(0);
-  } else {
-	iconBuffer.prefix_name = treeItem->text(0);
-	iconBuffer.dir_name = "";
-  }
-  return;
 }
 
 void MainWindow::iconPaste_Click(void){

@@ -4162,12 +4162,12 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
     <message>
         <location filename="../gui/wizard.cpp" line="1161"/>
         <source>&lt;p&gt;All ready for fake drive creation. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create facke drive. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Все готово для созданяи виртуального диска. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Закончить&lt;/b&gt; для создания виртуадьного диска. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Все готово для созданяи виртуального диска. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Закончить&lt;/b&gt; для создания виртуального диска. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../gui/wizard.cpp" line="1227"/>
         <source>Warning</source>
-        <translation type="unfinished">Предупреждение</translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <location filename="../gui/wizard.cpp" line="1227"/>

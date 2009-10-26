@@ -199,7 +199,7 @@ QStringList Registry::readExcludedKeys(const QString sysfile, const QString path
 	while (!file.atEnd()) {
 		QByteArray line = file.readLine();
 
-		if (readFlag){
+		if ((readFlag) && (!line.trimmed().isEmpty())){
 			QList<QByteArray> key = line.trimmed().split('=');
 			int index = keys.indexOf(key.at(0));
 			if (index==-1){

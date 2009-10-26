@@ -43,6 +43,7 @@
 #include <QMessageBox>
 #include <QResizeEvent>
 #include <QProgressDialog>
+#include <QListWidget>
 #include <QStringList>
 #include <QLibrary>
 

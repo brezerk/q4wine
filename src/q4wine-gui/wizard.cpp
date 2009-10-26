@@ -359,10 +359,11 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 
 		list.clear();
 		list << "\"MouseWarpOverride\"";
-		list = reg->readExcludedKeys("user", "Software\\Wine\\DirectInput", list, 1);
+		list = reg->readExcludedKeys("user", "Software\\Wine\\DirectInput", list, 10);
 
-		if (list.count()>0)
-			txtJoysticAxesMap->setText(list.at(0));
+		if (list.count()>0){
+			listJoysticAxesMappings->insertItems (0, list);
+		}
 
 		list.clear();
 		list << "\"ClientSideWithRender\"" << "\"ClientSideAntiAliasWithRender\"" << "\"ClientSideAntiAliasWithCore\"" << "\"UseXRandR\"" << "\"UseXVidMode\"";
@@ -565,6 +566,7 @@ void Wizard::nextWizardPage(){
 		Function for processing next\finish button click events
 	*/
 	QRegExp rx("^\".*\"=\".*\"$");
+	QList<QListWidgetItem *> listItems = listJoysticAxesMappings->findItems(QString("*"), Qt::MatchWrap | Qt::MatchWildcard);
 	switch(Scena){
 	case 1:
 		switch (Page){
@@ -828,12 +830,12 @@ void Wizard::nextWizardPage(){
 	case 2:
 		switch (Page){
 			case 6:
-			//qDebug()<<"ddddddd";
-			if (!txtJoysticAxesMap->text().isEmpty())
-				if (rx.indexIn(txtJoysticAxesMap->text())!=0){
-					QMessageBox::warning(this, tr("Error"), tr("Sorry, Joystic axes mappings might be defined as:\n\"joystic name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details."));
+			for (int i=0; i < listItems.count(); i++){
+				if (rx.indexIn(listItems.at(i)->text())!=0){
+					QMessageBox::warning(this, tr("Error"), tr("Error in string:\n\n%1\n\nJoystic axes mappings might be defined as:\n\"joystic name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details.").arg(listItems.at(i)->text()));
 					return;
 				}
+			}
 			break;
 				case 8:
 			QApplication::setOverrideCursor( Qt::BusyCursor );
@@ -983,9 +985,10 @@ void Wizard::nextWizardPage(){
 
 				registry.unsetPath("Software\\Wine\\DirectInput");
 
+				/*
 				if (!txtJoysticAxesMap->text().isEmpty()){
 					registry.set("Software\\Wine\\DirectInput", "", txtJoysticAxesMap->text());
-				}
+				}*/
 
 				if (comboFakeMouseWarp->currentText()!="default"){
 					registry.set("Software\\Wine\\DirectInput", "MouseWarpOverride", comboFakeMouseWarp->currentText());

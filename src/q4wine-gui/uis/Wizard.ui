@@ -3010,8 +3010,8 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>480</width>
-              <height>320</height>
+              <width>482</width>
+              <height>321</height>
              </rect>
             </property>
             <property name="autoFillBackground">
@@ -3128,7 +3128,37 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtJoysticAxesMap"/>
+                 <widget class="QListWidget" name="listJoysticAxesMappings"/>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_9" native="true">
+                  <layout class="QHBoxLayout" name="horizontalLayout">
+                   <property name="margin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QPushButton" name="cmdJoysticAdd">
+                     <property name="text">
+                      <string>Add</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="cmdJoysticEdit">
+                     <property name="text">
+                      <string>Edit</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="cmdJoysticRemove">
+                     <property name="text">
+                      <string>Remove</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
                 </item>
                </layout>
               </widget>
@@ -3475,8 +3505,8 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
            <zorder>widgetCreateFakeDrive1</zorder>
            <zorder>widgetCreateFakeDrive2</zorder>
            <zorder>widgetCreateFakeDrive3</zorder>
-           <zorder>widgetCreateFakeDrive4</zorder>
            <zorder>widgetCreateFakeDrive5</zorder>
+           <zorder>widgetCreateFakeDrive4</zorder>
           </widget>
          </item>
         </layout>

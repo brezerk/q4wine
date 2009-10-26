@@ -154,7 +154,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		 */
 
 		void cbPrefixes_Change (const QString currentIndexText);
-		void comboFilter_editTextChanged(QString);
+		void txtIconFilter_textChanged(QString);
 
 		/*
 		 *Prefix tool bars action
