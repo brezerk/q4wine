@@ -408,23 +408,45 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		if (!wineDriveDir.cd(prefixPath)){
 			qDebug()<<"Cannot cd to prefix directory: "<<prefixPath;
 		} else {
-			QFileInfoList list = wineDriveDir.entryInfoList();
-			for (int i = 0; i < list.size(); ++i) {
-				QFileInfo fileInfo = list.at(i);
-				//QListWidgetItem *item = new QListWidget(loadIcon("data/folder.png", ""), tr("test"));
-				//item.setIcon(loadIcon("data/folder.png", ""));
-				//item.setText(fileInfo.fileName());
+			QFileInfoList drivelist = wineDriveDir.entryInfoList();
+			for (int i = 0; i < drivelist.size(); ++i) {
+				QFileInfo fileInfo = drivelist.at(i);
 				QString line = fileInfo.fileName().toUpper();
 				line.append(" ");
 				line.append(fileInfo.symLinkTarget());
-				line.append("\nType: A Serial: S1AFJDWQ529163 Label: Wine System Drive");
+				line.append(tr("\nType: "));
 
-				QListWidgetItem *item = new QListWidgetItem(loadIcon("data/folder.png", ""), line, listWineDrives);
+				list.clear();
+				list<<tr("\"%1\"").arg(fileInfo.fileName());
+				list = reg->readKeys("system", "Software\\Wine\\Drives", list);
 
-				//item.setText("test");
+				QString pic;
 
+				if (list.count()>0){
+				   if (list.at(0).isEmpty()){
+					line.append(tr("auto"));
+					pic = "data/drive_menu.png";
+				   } else {
+					if (list.at(0)=="hd"){
+					   pic = "data/drive_menu.png";
+					} else if (list.at(0)=="network"){
+					   pic = "data/drive_menu.png";
+					} else if (list.at(0)=="floppy"){
+					   pic = "data/drive_menu.png";
+					} else if (list.at(0)=="cdrom"){
+					   pic = "data/cdrom_menu.png";
+					} else {
+					   pic = "data/drive_menu.png";
+					}
+					line.append(list.at(0));
+				   }
+				} else {
+				   pic = "data/drive_menu.png";
+				   line.append(tr("auto"));
+				}
+
+				QListWidgetItem *item = new QListWidgetItem(loadIcon(pic, ""), line, listWineDrives);
 				listWineDrives->addItem(item);
-				//qDebug()<<fileInfo.fileName();
 			}
 		}
 
