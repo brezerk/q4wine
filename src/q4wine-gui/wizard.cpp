@@ -116,6 +116,9 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		connect(cmdJoysticEdit, SIGNAL(clicked()), this, SLOT(cmdJoysticEdit_Click()));
 		connect(cmdJoysticAdd, SIGNAL(clicked()), this, SLOT(cmdJoysticAdd_Click()));
 		connect(cmdJoysticDel, SIGNAL(clicked()), this, SLOT(cmdJoysticDel_Click()));
+		connect(cmdWineDriveEdit, SIGNAL(clicked()), this, SLOT(cmdWineDriveEdit_Click()));
+		connect(cmdWineDriveAdd, SIGNAL(clicked()), this, SLOT(cmdWineDriveAdd_Click()));
+		connect(cmdWineDriveDel, SIGNAL(clicked()), this, SLOT(cmdWineDriveDel_Click()));
 
 		break;
 	case 3:
@@ -128,6 +131,9 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		connect(cmdJoysticEdit, SIGNAL(clicked()), this, SLOT(cmdJoysticEdit_Click()));
 		connect(cmdJoysticAdd, SIGNAL(clicked()), this, SLOT(cmdJoysticAdd_Click()));
 		connect(cmdJoysticDel, SIGNAL(clicked()), this, SLOT(cmdJoysticDel_Click()));
+		connect(cmdWineDriveEdit, SIGNAL(clicked()), this, SLOT(cmdWineDriveEdit_Click()));
+		connect(cmdWineDriveAdd, SIGNAL(clicked()), this, SLOT(cmdWineDriveAdd_Click()));
+		connect(cmdWineDriveDel, SIGNAL(clicked()), this, SLOT(cmdWineDriveDel_Click()));
 
 		break;
 	}
@@ -449,7 +455,6 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 				listWineDrives->addItem(item);
 			}
 		}
-
 
 		setWindowTitle(tr("Fake drive update wizard"));
 		lblCaption->setText(tr("<b>Fake drive update wizard</b>"));
@@ -1552,6 +1557,23 @@ void Wizard::cmdJoysticAdd_Click(){
 
 void Wizard::cmdJoysticDel_Click(){
 	QListWidgetItem *item = listJoysticAxesMappings->currentItem();
+	if (!item)
+		return;
+
+	delete item;
+	return;
+}
+
+void Wizard::cmdWineDriveEdit_Click(){
+	return;
+}
+
+void Wizard::cmdWineDriveAdd_Click(){
+	return;
+}
+
+void Wizard::cmdWineDriveDel_Click(){
+	QListWidgetItem *item = listWineDrives->currentItem();
 	if (!item)
 		return;
 

@@ -102,6 +102,15 @@ class Wizard : public QDialog, public Ui::Wizard
 		//! \brief cmdJoysticDel click slot.
 		void cmdJoysticDel_Click();
 
+		//! \brief cmdEdit click slot.
+		void cmdWineDriveEdit_Click();
+
+		//! \brief cmdJoysticAdd click slot.
+		void cmdWineDriveAdd_Click();
+
+		//! \brief cmdJoysticDel click slot.
+		void cmdWineDriveDel_Click();
+
 		//! \brief raidioDefault toggled action slot.
 		void radioDefault_toggled(bool state);
 

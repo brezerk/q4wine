@@ -680,6 +680,9 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			mount_string.replace("%SUDO%", getSetting("system", "sudo").toString());
 			mount_string.replace("%MOUNT_BIN%", getSetting("system", "mount").toString());
 			mount_string.replace("%MOUNT_POINT%", this->getEscapeString(mount_point));
+
+			qDebug()<<"Try to find mdconfig: "<<getWhichOut("mdconfig");
+			qDebug()<<"mount_string"<<mount_string;
 #endif
 
 #ifdef _OS_LINUX_
