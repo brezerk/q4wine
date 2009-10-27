@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WineDriveDialog</class>
+ <widget class="QDialog" name="WineDriveDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>599</width>
+    <height>180</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Wine drive settings</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Wine drive</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QWidget" name="widget_14" native="true">
+        <layout class="QHBoxLayout" name="_5">
+         <property name="margin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Drive letter:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cbDriveLetter">
+           <item>
+            <property name="text">
+             <string>A:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>B:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>C:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>D:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>E:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>F:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>G:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>H:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>I:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>J:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>K:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>L:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>M:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>N:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>O:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>P:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Q:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>R:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>S:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>T:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>U:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>V:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>W:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>X:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Y:</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Z:</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_2" native="true">
+        <layout class="QHBoxLayout" name="_3">
+         <property name="margin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Path:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="txtDrivePath"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="cmdGetDrivePath">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>16</width>
+             <height>16</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_13" native="true">
+        <layout class="QHBoxLayout" name="_2">
+         <property name="margin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="minimumSize">
+            <size>
+             <width>140</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Type:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cbDriveType">
+           <item>
+            <property name="text">
+             <string>auto</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>hd</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>floppy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>network</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>cdrom</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout">
+     <item>
+      <spacer>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cmdCancel">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cmdOk">
+       <property name="text">
+        <string>Ok</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

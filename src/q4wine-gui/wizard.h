@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -57,6 +57,7 @@
 #include "src/core/database/icon.h"
 #include "src/core/database/dir.h"
 #include "src/core/registry.h"
+#include "winedrivedialog.h"
 
 #include <q4wine-lib/main.h>
 
@@ -143,6 +144,8 @@ class Wizard : public QDialog, public Ui::Wizard
 		CoreLibPrototype *CoreLibClassPointer;
 		corelib *CoreLib;
 		Registry *reg;
+
+		QString getDrivePic(QString driveType);
 
 	protected:
 		//! \brief Event filter.

@@ -120,6 +120,12 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		connect(cmdWineDriveAdd, SIGNAL(clicked()), this, SLOT(cmdWineDriveAdd_Click()));
 		connect(cmdWineDriveDel, SIGNAL(clicked()), this, SLOT(cmdWineDriveDel_Click()));
 
+		cmdGetWineDesktop->setIcon(loadIcon("data/folder.png", themePath));
+		cmdGetWineDesktopDoc->setIcon(loadIcon("data/folder.png", themePath));
+		cmdGetWineDesktopPic->setIcon(loadIcon("data/folder.png", themePath));
+		cmdGetWineDesktopMus->setIcon(loadIcon("data/folder.png", themePath));
+		cmdGetWineDesktopVid->setIcon(loadIcon("data/folder.png", themePath));
+
 		break;
 	case 3:
 		// Fake drive update
@@ -134,6 +140,12 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		connect(cmdWineDriveEdit, SIGNAL(clicked()), this, SLOT(cmdWineDriveEdit_Click()));
 		connect(cmdWineDriveAdd, SIGNAL(clicked()), this, SLOT(cmdWineDriveAdd_Click()));
 		connect(cmdWineDriveDel, SIGNAL(clicked()), this, SLOT(cmdWineDriveDel_Click()));
+
+		cmdGetWineDesktop->setIcon(loadIcon("data/folder.png", themePath));
+		cmdGetWineDesktopDoc->setIcon(loadIcon("data/folder.png", themePath));
+		cmdGetWineDesktopPic->setIcon(loadIcon("data/folder.png", themePath));
+		cmdGetWineDesktopMus->setIcon(loadIcon("data/folder.png", themePath));
+		cmdGetWineDesktopVid->setIcon(loadIcon("data/folder.png", themePath));
 
 		break;
 	}
@@ -294,9 +306,17 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		lblCaption->setText(tr("<b>Fake drive creation wizard</b>"));
 		lblStep->setText(tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
 		lblWizardInfo->setText(Wizard::tr("<p>Welcome to fake drive creation wizard.</p><p>This wizard helps you to make all necessary steps for successful fake drive creation.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>"));
+
+		cmdGetWineDesktop->installEventFilter(this);
+		cmdGetWineDesktopDoc->installEventFilter(this);
+		cmdGetWineDesktopPic->installEventFilter(this);
+		cmdGetWineDesktopMus->installEventFilter(this);
+		cmdGetWineDesktopVid->installEventFilter(this);
+
+
 		break;
 	case 3:
-		TotalPage=9;
+		TotalPage=10;
 		this->var1=var1;
 
 		QString prefixPath = db_prefix->getPath(var1);
@@ -427,28 +447,16 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 				list = reg->readKeys("system", "Software\\Wine\\Drives", list);
 
 				QString pic;
-
 				if (list.count()>0){
 				   if (list.at(0).isEmpty()){
 					line.append(tr("auto"));
-					pic = "data/drive_menu.png";
 				   } else {
-					if (list.at(0)=="hd"){
-					   pic = "data/drive_menu.png";
-					} else if (list.at(0)=="network"){
-					   pic = "data/drive_menu.png";
-					} else if (list.at(0)=="floppy"){
-					   pic = "data/drive_menu.png";
-					} else if (list.at(0)=="cdrom"){
-					   pic = "data/cdrom_menu.png";
-					} else {
-					   pic = "data/drive_menu.png";
-					}
 					line.append(list.at(0));
 				   }
+				   pic=this->getDrivePic(list.at(0));
 				} else {
-				   pic = "data/drive_menu.png";
 				   line.append(tr("auto"));
+				   pic=this->getDrivePic("auto");
 				}
 
 				QListWidgetItem *item = new QListWidgetItem(loadIcon(pic, ""), line, listWineDrives);
@@ -461,6 +469,12 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		lblStep->setText(tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
 		lblWizardInfo->setText(Wizard::tr("<p>Welcome to fake drive update wizard.</p><p>This wizard helps you to make all necessary steps for successful fake drive creation.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>"));
 		Scena=2;
+
+		cmdGetWineDesktop->installEventFilter(this);
+		cmdGetWineDesktopDoc->installEventFilter(this);
+		cmdGetWineDesktopPic->installEventFilter(this);
+		cmdGetWineDesktopMus->installEventFilter(this);
+		cmdGetWineDesktopVid->installEventFilter(this);
 		break;
 	}
 
@@ -481,6 +495,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	widgetCreateFakeDrive4->setVisible(FALSE);
 	widgetCreateFakeDrive5->setVisible(FALSE);
 	widgetCreateFakeDrive6->setVisible(FALSE);
+	widgetCreateFakeDrive7->setVisible(FALSE);
 
 
 	widgetFirstStartup0->setVisible(FALSE);
@@ -513,6 +528,26 @@ void Wizard::comboProxyType_indexChanged(QString text){
 	}
 
 	return;
+}
+
+QString Wizard::getDrivePic(QString driveType){
+	QString pic;
+	if (driveType.isEmpty()){
+		pic = "data/drive_menu.png";
+	} else {
+		if (driveType=="hd"){
+			pic = "data/drive_menu.png";
+		} else if (driveType=="network"){
+			pic = "data/drive_menu.png";
+		} else if (driveType=="floppy"){
+			pic = "data/drive_menu.png";
+		} else if (driveType=="cdrom"){
+			pic = "data/cdrom_menu.png";
+		} else {
+			pic = "data/drive_menu.png";
+		}
+	}
+	return pic;
 }
 
 void Wizard::changeBoxState(int state){
@@ -593,6 +628,12 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 				wrkDir = file.left(file.length() - list1.last().length());
 				txtWineServerBin->setText(tr("%1wineserver").arg(wrkDir));
 				txtWineLoaderBin->setText(tr("%1wine").arg(wrkDir));
+			}
+			if (obj==cmdGetWineDesktop){
+				txtWineDesktopDoc->setText(file);
+				txtWineDesktopPic->setText(file);
+				txtWineDesktopMus->setText(file);
+				txtWineDesktopVid->setText(file);
 			}
 		}
 	}
@@ -909,7 +950,30 @@ void Wizard::nextWizardPage(){
 				}
 			}
 			break;
-				case 9:
+			case 9:
+
+			if (!txtWineDesktop->text().isEmpty())
+				if (!checkEntry(txtWineDesktop->text(), "Desktop", FALSE))
+					return;
+
+			if (!txtWineDesktopDoc->text().isEmpty())
+				if (!checkEntry(txtWineDesktopDoc->text(), "My Documents", FALSE))
+					return;
+
+			if (!txtWineDesktopPic->text().isEmpty())
+				if (!checkEntry(txtWineDesktopPic->text(), "My Pictures", FALSE))
+					return;
+
+			if (!txtWineDesktopMus->text().isEmpty())
+				if (!checkEntry(txtWineDesktopMus->text(), "My Music", FALSE))
+					return;
+
+			if (!txtWineDesktopVid->text().isEmpty())
+				if (!checkEntry(txtWineDesktopVid->text(), "My Videos", FALSE))
+					return;
+
+			break;
+			case 10:
 			QApplication::setOverrideCursor( Qt::BusyCursor );
 
 			//Set variables
@@ -964,6 +1028,19 @@ void Wizard::nextWizardPage(){
 				registry.set("Software\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOwner", txtOwner->text(), "HKEY_LOCAL_MACHINE");
 
 				registry.set("Software\\Wine", "Version", version);
+
+				if (listWineDrives->count()>0){
+					for (int i=0; i<listWineDrives->count(); i++){
+						QString type = listWineDrives->item(i)->text().split("\n").at(1).split(":").at(1).trimmed();
+						QString letter = listWineDrives->item(i)->text().left(2).toLower();
+
+						if (type=="auto"){
+							registry.unset("Software\\Wine\\Drives", letter, "HKEY_LOCAL_MACHINE");
+						} else {
+							registry.set("Software\\Wine\\Drives", "", tr("\"%1\"=\"%2\"").arg(letter).arg(type), "HKEY_LOCAL_MACHINE");
+						}
+					}
+				}
 
 				if (!txtFakeBrowsers->text().isEmpty()){
 					registry.set("Software\\Wine\\WineBrowser", "Browsers", txtFakeBrowsers->text());
@@ -1057,10 +1134,11 @@ void Wizard::nextWizardPage(){
 
 				registry.unsetPath("Software\\Wine\\DirectInput");
 
-				/*
-				if (!txtJoysticAxesMap->text().isEmpty()){
-					registry.set("Software\\Wine\\DirectInput", "", txtJoysticAxesMap->text());
-				}*/
+				if (listJoysticAxesMappings->count()>0){
+					for (int i=0; i<listJoysticAxesMappings->count(); i++){
+						registry.set("Software\\Wine\\DirectInput", "", listJoysticAxesMappings->item(i)->text());
+					}
+				}
 
 				if (comboFakeMouseWarp->currentText()!="default"){
 					registry.set("Software\\Wine\\DirectInput", "MouseWarpOverride", comboFakeMouseWarp->currentText());
@@ -1169,8 +1247,47 @@ void Wizard::nextWizardPage(){
 					if (!db_dir->isExistsByName(prefix_name, "autostart"))
 						db_dir->addDir(prefix_name, "autostart");
 
-					QApplication::restoreOverrideCursor();
-					accept() ;
+					/*
+					*/
+
+					QStringList args;
+					args.clear();
+					args<<"-rdf";
+
+					QDir wineDriveDir;
+					wineDriveDir.setFilter(QDir::Dirs | QDir::Hidden | QDir::NoDotAndDotDot  );
+
+					QString prefixPath = db_prefix->getPath(var1);
+					prefixPath.append("/dosdevices/");
+
+					if (!wineDriveDir.cd(prefixPath)){
+						qDebug()<<"Cannot cd to prefix directory: "<<prefixPath;
+					} else {
+						QFileInfoList drivelist = wineDriveDir.entryInfoList();
+						for (int i = 0; i < drivelist.size(); ++i) {
+							QFileInfo fileInfo = drivelist.at(i);
+							if (fileInfo.isSymLink()){
+								args<<tr("%1%2").arg(prefixPath).arg(fileInfo.fileName());
+							}
+						}
+					}
+/* */
+					//Process *proc = new Process(args,CoreLib->getWhichOut("rm"), QDir::homePath(), tr("Removing wine dosdrives"), tr("Removing wine dosdrives"), true);
+					//proc->exec();
+
+				if (listWineDrives->count()>0){
+					for (int i=0; i<listWineDrives->count(); i++){
+						QString path = listWineDrives->item(i)->text().split("\n").at(0).split(":").at(1).trimmed();
+						QString letter = listWineDrives->item(i)->text().left(2).toLower();
+						QStringList args;
+						args<<"-sf"<<path<<letter;
+						Process *proc = new Process(args,CoreLib->getWhichOut("ln"), prefixPath, tr("Linking wine dosdrives"), tr("Linking wine dosdrives"), true);
+						proc->exec();
+					}
+				}
+
+
+
 				} else {
 					QApplication::restoreOverrideCursor();
 					reject();
@@ -1453,17 +1570,22 @@ void Wizard::updateScena(){
 			widgetCreateFakeDrive5->setVisible(TRUE);
 			widgetCreateFakeDrive6->setVisible(FALSE);
 			break;
-					case 8:
+				case 8:
 			widgetCreateFakeDrive5->setVisible(FALSE);
 			widgetCreateFakeDrive6->setVisible(TRUE);
+			widgetCreateFakeDrive7->setVisible(FALSE);
+			break;
+					case 9:
+			widgetCreateFakeDrive6->setVisible(FALSE);
+			widgetCreateFakeDrive7->setVisible(TRUE);
 			widgetInfo->setVisible(FALSE);
 			cmdNext->setText(tr("Next >"));
 			break;
-					case 9:
+					case 10:
 			lblWizardInfo->setText(tr("<p>All ready for fake drive creation. </p><p>Please, press the <b>Finish</b> button to create facke drive. Or press <b>Back</b> button for return.</p>"));
 			widgetInfo->setVisible(TRUE);
-			widgetCreateFakeDrive5->setVisible(FALSE);
 			widgetCreateFakeDrive6->setVisible(FALSE);
+			widgetCreateFakeDrive7->setVisible(FALSE);
 			cmdNext->setText(tr("Finish"));
 			break;
 		}
@@ -1565,10 +1687,42 @@ void Wizard::cmdJoysticDel_Click(){
 }
 
 void Wizard::cmdWineDriveEdit_Click(){
+	QListWidgetItem *item = listWineDrives->currentItem();
+	if (!item)
+		return;
+
+	QStringList drives;
+	drives.clear();
+	if (listWineDrives->count()>0){
+		for (int i=0; i<listWineDrives->count(); i++){
+			if (listWineDrives->item(i)!=item)
+				drives.append(listWineDrives->item(i)->text().left(2));
+		}
+	}
+
+	WineDriveDialog* drevedialog = new WineDriveDialog(drives, item->text().left(2), item->text().split("\n").at(0).split(":").at(1).trimmed(), item->text().split("\n").at(1).split(":").at(1).trimmed());
+	if (drevedialog->exec()==QDialog::Accepted){
+		item->setText(drevedialog->driveDesc);
+
+		item->setIcon(loadIcon(this->getDrivePic(drevedialog->driveType), ""));
+	}
 	return;
 }
 
 void Wizard::cmdWineDriveAdd_Click(){
+	QStringList drives;
+	drives.clear();
+	if (listWineDrives->count()>0){
+		for (int i=0; i<listWineDrives->count(); i++){
+				drives.append(listWineDrives->item(i)->text().left(2));
+		}
+	}
+
+	WineDriveDialog* drevedialog = new WineDriveDialog(drives);
+	if (drevedialog->exec()==QDialog::Accepted){
+		QListWidgetItem *item = new QListWidgetItem(loadIcon(this->getDrivePic(drevedialog->driveType), ""), drevedialog->driveDesc, listWineDrives);
+		listWineDrives->addItem(item);
+	}
 	return;
 }
 

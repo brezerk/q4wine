@@ -667,12 +667,16 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			QString mount_string;
 
 #ifdef _OS_FREEBSD_
-			if (image_name.contains("/")) {
+			if ((image_name.contains("/") && (!image_name.contains(".iso", Qt::CaseInsensitive)) && (!image_name.contains(".nrg", Qt::CaseInsensitive)))) {
 				  mount_string=this->getSetting("quickmount", "mount_drive_string", false).toString();
 				  mount_string.replace("%MOUNT_DRIVE%", this->getEscapeString(image_name));
 			} else {
 				  mount_string=this->getSetting("quickmount", "mount_image_string", false).toString();
-				  mount_string.replace("%MOUNT_IMAGE%",  this->getEscapeString(this->db_image->getPath(image_name)));
+				  if (!QFile(image_name).exists()){
+						mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(this->db_image->getPath(image_name)));
+				  } else {
+						mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(image_name));
+				  }
 				  mount_string.replace("%MDCONFIG_BIN%", getWhichOut("mdconfig"));
 			}
 
@@ -680,9 +684,6 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			mount_string.replace("%SUDO%", getSetting("system", "sudo").toString());
 			mount_string.replace("%MOUNT_BIN%", getSetting("system", "mount").toString());
 			mount_string.replace("%MOUNT_POINT%", this->getEscapeString(mount_point));
-
-			qDebug()<<"Try to find mdconfig: "<<getWhichOut("mdconfig");
-			qDebug()<<"mount_string"<<mount_string;
 #endif
 
 #ifdef _OS_LINUX_

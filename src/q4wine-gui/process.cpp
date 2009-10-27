@@ -49,6 +49,8 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 	myProcess->setWorkingDirectory (dir);
 	myProcess->start(exec, args);
 
+	qDebug()<<exec<<args;
+
 	return;
 }
 
@@ -145,6 +147,9 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 	// Read STDERR with locale support
 	QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
 	QString string = codec->toUnicode(myProcess->readAllStandardError());
+
+	qDebug()<<"STDERR"<<codec->toUnicode(myProcess->readAllStandardError());
+	qDebug()<<"STDOUT"<<codec->toUnicode(myProcess->readAllStandardOutput());
 
 	if (!string.isEmpty()){
 		if ((exitc == 0) && (myProcess->exitCode() == 0)){
