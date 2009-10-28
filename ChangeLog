@@ -12,6 +12,7 @@ Version 0.114
   - New wine settings in Fake drive creation\update wizard;
   - Fake drive update wizard now can read saved registry configuration settings;
   - Filter combobox for q4wine icons;
+  - New spanish translation (thx 2 Carlos Ignacio Ruax);
   
  Fixed:
   - Fix for misfunctioning check wether or not to use ICOTOOLS. (thx 2 Impulze)
