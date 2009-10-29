@@ -950,6 +950,24 @@ void Wizard::nextWizardPage(){
 				}
 			}
 			break;
+			case 8:
+				if (listWineDrives->count()>0){
+					QString tmppath=QDir::homePath();
+					bool tmpexists=FALSE;
+					tmppath.append("/.config/q4wine/tmp");
+					for (int i=0; i<listWineDrives->count(); i++){
+						QString path = listWineDrives->item(i)->text().split("\n").at(0).split(":").at(1).trimmed();
+
+						if (path==tmppath){
+							tmpexists=TRUE;
+							break;
+						}
+					}
+					if (!tmpexists){
+						QMessageBox::warning(this, tr("Warning"), tr("Can't find drive which is point to:\n\"%1\"\n\nMake shure, thet wine can access to q4wine temp directory.").arg(tmppath));
+					}
+				}
+			break;
 			case 9:
 
 			if (!txtWineDesktop->text().isEmpty())
@@ -1020,6 +1038,72 @@ void Wizard::nextWizardPage(){
 				reject();
 				return;
 			}
+
+			// --- Creating Dos drives ---
+
+			QString sh_cmd = "";
+			QStringList sh_line;
+
+			QDir wineDriveDir;
+			wineDriveDir.setFilter(QDir::Dirs | QDir::Hidden | QDir::NoDotAndDotDot  );
+
+			QString prefixPath = db_prefix->getPath(var1);
+			prefixPath.append("/dosdevices/");
+
+			if (!wineDriveDir.cd(prefixPath)){
+				qDebug()<<"Cannot cd to prefix directory: "<<prefixPath;
+			} else {
+				QFileInfoList drivelist = wineDriveDir.entryInfoList();
+				for (int i = 0; i < drivelist.size(); ++i) {
+					QFileInfo fileInfo = drivelist.at(i);
+					if (fileInfo.isSymLink()){
+						sh_cmd.clear();
+						sh_cmd.append(CoreLib->getWhichOut("rm"));
+						sh_cmd.append(" -f '");
+						sh_cmd.append(fileInfo.filePath());
+						sh_cmd.append("'");
+						sh_line.append(sh_cmd);
+					}
+				}
+			}
+
+			sh_cmd.clear();
+			sh_cmd.append("cd ");
+			sh_cmd.append(prefixPath);
+			sh_line.append(sh_cmd);
+
+			if (listWineDrives->count()>0){
+				for (int i=0; i<listWineDrives->count(); i++){
+					QString path = listWineDrives->item(i)->text().split("\n").at(0).split(":").at(1).trimmed();
+					QString letter = listWineDrives->item(i)->text().left(2).toLower();
+
+					sh_cmd.clear();
+					sh_cmd.append(CoreLib->getWhichOut("ln"));
+					sh_cmd.append(" -s '");
+					sh_cmd.append(path);
+					sh_cmd.append("' '");
+					sh_cmd.append(letter);
+					sh_cmd.append("'");
+					sh_line.append(sh_cmd);
+				}
+			}
+
+			sh_cmd.clear();
+			for (int i=0; i<sh_line.count(); i++){
+				sh_cmd.append(sh_line.at(i));
+				if (i!=(sh_line.count()-1))
+					sh_cmd.append(" && ");
+			}
+
+			QStringList args;
+			args<<"-c"<<sh_cmd;
+
+			Process *proc = new Process(args, CoreLib->getWhichOut("sh"), QDir::homePath(), tr("Updateing wine dosdrives"), tr("Updateing wine dosdrives"), true);
+			proc->exec();
+
+			// ---- End of Creating Dos drives ----
+
+
 
 			Registry registry;
 
@@ -1244,49 +1328,9 @@ void Wizard::nextWizardPage(){
 						db_icon->addIcon("", "eject.exe", "eject", "Wine CD eject tool", prefix_name, "system", "eject");
 						db_icon->addIcon("", "wordpad.exe", "wordpad", "Wine wordpad text editor", prefix_name, "system", "wordpad");
 					}
+
 					if (!db_dir->isExistsByName(prefix_name, "autostart"))
 						db_dir->addDir(prefix_name, "autostart");
-
-					/*
-					*/
-
-					QStringList args;
-					args.clear();
-					args<<"-rdf";
-
-					QDir wineDriveDir;
-					wineDriveDir.setFilter(QDir::Dirs | QDir::Hidden | QDir::NoDotAndDotDot  );
-
-					QString prefixPath = db_prefix->getPath(var1);
-					prefixPath.append("/dosdevices/");
-
-					if (!wineDriveDir.cd(prefixPath)){
-						qDebug()<<"Cannot cd to prefix directory: "<<prefixPath;
-					} else {
-						QFileInfoList drivelist = wineDriveDir.entryInfoList();
-						for (int i = 0; i < drivelist.size(); ++i) {
-							QFileInfo fileInfo = drivelist.at(i);
-							if (fileInfo.isSymLink()){
-								args<<tr("%1%2").arg(prefixPath).arg(fileInfo.fileName());
-							}
-						}
-					}
-/* */
-					//Process *proc = new Process(args,CoreLib->getWhichOut("rm"), QDir::homePath(), tr("Removing wine dosdrives"), tr("Removing wine dosdrives"), true);
-					//proc->exec();
-
-				if (listWineDrives->count()>0){
-					for (int i=0; i<listWineDrives->count(); i++){
-						QString path = listWineDrives->item(i)->text().split("\n").at(0).split(":").at(1).trimmed();
-						QString letter = listWineDrives->item(i)->text().left(2).toLower();
-						QStringList args;
-						args<<"-sf"<<path<<letter;
-						Process *proc = new Process(args,CoreLib->getWhichOut("ln"), prefixPath, tr("Linking wine dosdrives"), tr("Linking wine dosdrives"), true);
-						proc->exec();
-					}
-				}
-
-
 
 				} else {
 					QApplication::restoreOverrideCursor();
@@ -1659,8 +1703,7 @@ void Wizard::cmdJoysticEdit_Click(){
 		return;
 
 	bool ok;
-	QString text = QInputDialog::getText(this, tr("Joystic Axes Mappings"), tr("Joystic axes mappings might be defined as:\n\"joystic name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details."), QLineEdit::Normal,
-										  item->text(), &ok);
+	QString text = QInputDialog::getText(this, tr("Joystic Axes Mappings"), tr("Joystic axes mappings might be defined as:\n\"joystic name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details."), QLineEdit::Normal, item->text(), &ok);
 	if (ok && !text.isEmpty()){
 		item->setText(text);
 	}
@@ -1669,8 +1712,7 @@ void Wizard::cmdJoysticEdit_Click(){
 
 void Wizard::cmdJoysticAdd_Click(){
 	bool ok;
-	QString text = QInputDialog::getText(this, tr("Joystic Axes Mappings"), tr("Joystic axes mappings might be defined as:\n\"joystic name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details."), QLineEdit::Normal,
-										  "", &ok);
+	QString text = QInputDialog::getText(this, tr("Joystic Axes Mappings"), tr("Joystic axes mappings might be defined as:\n\"joystic name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details."), QLineEdit::Normal, "", &ok);
 	if (ok && !text.isEmpty()){
 		listJoysticAxesMappings->addItem(text);
 	}
@@ -1703,7 +1745,6 @@ void Wizard::cmdWineDriveEdit_Click(){
 	WineDriveDialog* drevedialog = new WineDriveDialog(drives, item->text().left(2), item->text().split("\n").at(0).split(":").at(1).trimmed(), item->text().split("\n").at(1).split(":").at(1).trimmed());
 	if (drevedialog->exec()==QDialog::Accepted){
 		item->setText(drevedialog->driveDesc);
-
 		item->setIcon(loadIcon(this->getDrivePic(drevedialog->driveType), ""));
 	}
 	return;
@@ -1734,4 +1775,3 @@ void Wizard::cmdWineDriveDel_Click(){
 	delete item;
 	return;
 }
-

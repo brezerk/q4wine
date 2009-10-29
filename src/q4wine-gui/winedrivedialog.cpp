@@ -40,8 +40,16 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter,
 
 	txtDrivePath->setText(drivePath);
 
+
 	if (cbDriveType->findText(driveType, Qt::MatchExactly)>=0){
 				cbDriveType->setCurrentIndex(cbDriveType->findText(driveType, Qt::MatchExactly));
+	}
+
+	if (driveLetter=="C:"){
+		cbDriveLetter->setEnabled(FALSE);
+		cbDriveType->setEnabled(FALSE);
+		cmdGetDrivePath->setEnabled(FALSE);
+		txtDrivePath->setEnabled(FALSE);
 	}
 
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
@@ -80,13 +88,23 @@ void WineDriveDialog::cmdOk_Click(){
 
 void WineDriveDialog::cmdGetDrivePath_Click(){
 	QString fileName;
+	QString searchPath=txtDrivePath->text();
 
 	QFileDialog dialog(this);
 	  dialog.setFilter(QDir::Dirs | QDir::Hidden);
 
 	  dialog.setFileMode(QFileDialog::Directory);
 	  dialog.setWindowTitle(tr("Open Directory"));
-	  // dialog.setDirectory(searchPath);
+	  if (!searchPath.isEmpty()){
+		  if (QDir(searchPath).exists()){
+			  dialog.setDirectory(searchPath);
+		  } else {
+			  dialog.setDirectory(QDir::homePath());
+		  }
+	  } else {
+		  dialog.setDirectory(QDir::homePath());
+	  }
+
 	  // This option works only it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
 	  // dialog.setOption(QFileDialog::ShowDirsOnly, true);
 	  // dialog.setSidebarUrls(add_prefix_urls);
