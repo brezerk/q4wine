@@ -964,7 +964,7 @@ void Wizard::nextWizardPage(){
 						}
 					}
 					if (!tmpexists){
-						QMessageBox::warning(this, tr("Warning"), tr("Can't find drive which is point to:\n\"%1\"\n\nMake shure, thet wine can access to q4wine temp directory.").arg(tmppath));
+						QMessageBox::warning(this, tr("Warning"), tr("Can't find drive which is point to:\n\"%1\"\n\nMake shure wine can access to q4wine temp directory.").arg(tmppath));
 					}
 				}
 			break;
@@ -1755,7 +1755,7 @@ void Wizard::cmdWineDriveAdd_Click(){
 	drives.clear();
 	if (listWineDrives->count()>0){
 		for (int i=0; i<listWineDrives->count(); i++){
-				drives.append(listWineDrives->item(i)->text().left(2));
+			drives.append(listWineDrives->item(i)->text().left(2));
 		}
 	}
 
@@ -1771,6 +1771,11 @@ void Wizard::cmdWineDriveDel_Click(){
 	QListWidgetItem *item = listWineDrives->currentItem();
 	if (!item)
 		return;
+
+	if (item->text().left(2)=="C:"){
+		QMessageBox::warning(this, tr("Error"), tr("Sorry, You can't delete or modify wine C: drive.<br>But You can change it in prefix settings dialog."));
+		return;
+	}
 
 	delete item;
 	return;
