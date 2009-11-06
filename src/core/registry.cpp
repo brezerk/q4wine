@@ -106,7 +106,7 @@ bool Registry::exec(QObject *parent, QString prefix_name){
 	qsrand(midnight.secsTo(QTime::currentTime()));
 
 	int file_name = qrand() % 10000;
-	QString full_file_path = QObject::tr("%1/.config/%2/tmp/%3.reg").arg(QDir::homePath()).arg(APP_SHORT_NAME).arg(file_name);
+	QString full_file_path = QString("%1/.config/%2/tmp/%3.reg").arg(QDir::homePath()).arg(APP_SHORT_NAME).arg(file_name);
 
 	QFile file(full_file_path);
 	file.open(QIODevice::WriteOnly);

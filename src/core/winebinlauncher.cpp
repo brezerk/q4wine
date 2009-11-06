@@ -93,27 +93,27 @@ void WineBinLauncher::run_exec(QObject *parent, QString exe, QString exe_args, b
 	args.append("-c");
 
 	if (!this->prefix.path.isEmpty()){
-		envargs.append(QObject::tr(" WINEPREFIX=%1 ").arg(this->prefix.path));
+		envargs.append(QString(" WINEPREFIX=%1 ").arg(this->prefix.path));
 	} else {
-		envargs.append(QObject::tr(" WINEPREFIX=%1/.wine ").arg(QDir::homePath()));
+		envargs.append(QString(" WINEPREFIX=%1/.wine ").arg(QDir::homePath()));
 	}
 
 	if (!this->prefix.wine_dllpath.isEmpty()){
-		envargs.append(QObject::tr(" WINEDLLPATH=%1 ").arg(this->prefix.wine_dllpath));
+		envargs.append(QString(" WINEDLLPATH=%1 ").arg(this->prefix.wine_dllpath));
 	} else {
-		envargs.append(QObject::tr(" WINEDLLPATH=%1 ").arg(DEFAULT_WINE_LIBS));
+		envargs.append(QString(" WINEDLLPATH=%1 ").arg(DEFAULT_WINE_LIBS));
 	}
 
 	if (!this->prefix.wine_loader.isEmpty()){
-		envargs.append(QObject::tr(" WINELOADER=%1 ").arg(this->prefix.wine_loader));
+		envargs.append(QString(" WINELOADER=%1 ").arg(this->prefix.wine_loader));
 	} else {
-		envargs.append(QObject::tr(" WINELOADER=%1 ").arg(DEFAULT_WINE_LOADER));
+		envargs.append(QString(" WINELOADER=%1 ").arg(DEFAULT_WINE_LOADER));
 	}
 
 	if (!this->prefix.wine_server.isEmpty()){
-		envargs.append(QObject::tr(" WINESERVER=%1 ").arg(this->prefix.wine_server));
+		envargs.append(QString(" WINESERVER=%1 ").arg(this->prefix.wine_server));
 	} else {
-		envargs.append(QObject::tr(" WINESERVER=%1 ").arg(DEFAULT_WINE_SERVER));
+		envargs.append(QString(" WINESERVER=%1 ").arg(DEFAULT_WINE_SERVER));
 	}
 
 	if (!this->prefix.wine_exec.isEmpty()){

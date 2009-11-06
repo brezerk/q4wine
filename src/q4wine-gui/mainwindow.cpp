@@ -594,7 +594,7 @@ void MainWindow::updateDtabaseConnectedItems(int currentPrefix){
   for (int i = 0; i < result.size(); ++i) {
 	// Inserting root items into programs tree view
 	prefixItem = new QTreeWidgetItem(twPrograms);
-	prefixItem->setText(0, tr("%1").arg(result.at(i).at(1)));
+	prefixItem->setText(0, QString("%1").arg(result.at(i).at(1)));
 	prefixItem->setIcon(0, loadIcon("data/wine.png"));
 	prefixItem->setExpanded (TRUE);
 	twPrograms->addTopLevelItem(prefixItem);
@@ -603,7 +603,7 @@ void MainWindow::updateDtabaseConnectedItems(int currentPrefix){
 	subresult = db_dir->getFieldsByPrefixId(result.at(i).at(0));
 	for (int j = 0; j < subresult.size(); ++j) {
 	  subPrefixItem = new QTreeWidgetItem(prefixItem, 0);
-	  subPrefixItem->setText(0, tr("%1").arg(subresult.at(j).at(1)));
+	  subPrefixItem->setText(0, QString("%1").arg(subresult.at(j).at(1)));
 	  subPrefixItem->setIcon(0, loadIcon("data/folder.png"));
 	}
 
@@ -2071,7 +2071,7 @@ void MainWindow::mainExportIcons_Click(){
 
 	args.clear();
 	args << "-x";
-	args << "-o" << tr("%1/").arg(tmpDir);
+	args << "-o" << QString("%1/").arg(tmpDir);
 
 	// Updating file index
 	list = tmp.entryInfoList();
@@ -2384,12 +2384,12 @@ QIcon MainWindow::loadIcon(QString iconName){
   QIcon icon;
 
   if ((!THEME_NAME.isEmpty()) and (THEME_NAME!="Default")){
-	icon.addFile(tr("%1/%2").arg(THEME_NAME).arg(iconName));
+	icon.addFile(QString("%1/%2").arg(THEME_NAME).arg(iconName));
 	if (icon.isNull()){
-	  icon.addFile(tr(":/%1").arg(iconName));
+	  icon.addFile(QString(":/%1").arg(iconName));
 	}
   } else {
-	icon.addFile(tr(":/%1").arg(iconName));
+	icon.addFile(QString(":/%1").arg(iconName));
   }
 
   return icon;

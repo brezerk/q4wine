@@ -16,6 +16,7 @@ Version 0.114
   - New Italian translation (thx 2 Ercole Carpanetto);
   
  Fixed:
+  - Removed _junk_ translation strings from source code and UI;
   - Fix for misfunctioning check wether or not to use ICOTOOLS. (thx 2 Impulze)
   - Prefix combobox change do not set right Prefix in Prefix tree view;
   - Fake drive update wizard now remove registry key while user reset it to 'Default' state;

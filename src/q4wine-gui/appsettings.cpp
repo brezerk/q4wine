@@ -312,7 +312,7 @@ void AppSettings::getThemes(QString selTheme, QString themeDir){
 			iconItem = new QListWidgetItem(listThemesView, 0);
 
 
-			QFile file(tr("%1/%2/theme.info").arg(themeDir).arg(fileInfo.fileName()));
+			QFile file(QString("%1/%2/theme.info").arg(themeDir).arg(fileInfo.fileName()));
 			if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
 				  aughtor = file.readLine();
 				  aughtor.remove ( "\n" );
@@ -320,12 +320,12 @@ void AppSettings::getThemes(QString selTheme, QString themeDir){
 			}
 
 			if ((!aughtor.isEmpty()) and (!license.isEmpty())){
-				  iconItem->setText(tr("%1 [%2; %3]").arg(fileInfo.fileName()).arg(aughtor).arg(license));
+				  iconItem->setText(QString("%1 [%2; %3]").arg(fileInfo.fileName()).arg(aughtor).arg(license));
 			} else {
 				  iconItem->setText(fileInfo.fileName());
 			}
-			iconItem->setToolTip(tr("%1/%2").arg(themeDir).arg(fileInfo.fileName()));
-			iconItem->setIcon(QIcon(tr("%1/%2/data/wine.png").arg(themeDir).arg(fileInfo.fileName())));
+			iconItem->setToolTip(QString("%1/%2").arg(themeDir).arg(fileInfo.fileName()));
+			iconItem->setIcon(QIcon(QString("%1/%2/data/wine.png").arg(themeDir).arg(fileInfo.fileName())));
 
 			if (!selTheme.isNull()){
 				  if (selTheme==fileInfo.filePath()){
@@ -346,7 +346,7 @@ void AppSettings::getThemes(QString selTheme, QString themeDir){
 void AppSettings::loadThemeIcons(QString themePath){
 	  QPixmap pixmap;
 
-	  if (!pixmap.load(tr("%1/data/exec.png").arg(themePath))){
+	  if (!pixmap.load(QString("%1/data/exec.png").arg(themePath))){
 			pixmap.load(":data/exec.png");
 	  }
 
@@ -382,12 +382,12 @@ QIcon AppSettings::loadIcon(QString iconName, QString themePath){
 	  QIcon icon;
 
 	  if ((!themePath.isEmpty()) and (themePath!="Default")){
-			icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
+			icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
 			if (icon.isNull()){
-				  icon.addFile(tr(":/%1").arg(iconName));
+				  icon.addFile(QString(":/%1").arg(iconName));
 			}
 	  } else {
-			icon.addFile(tr(":/%1").arg(iconName));
+			icon.addFile(QString(":/%1").arg(iconName));
 	  }
 
 	  return icon;

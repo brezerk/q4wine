@@ -246,12 +246,12 @@ QIcon ImageManager::loadIcon(QString iconName, QString themePath){
 	// If it fails -> load default from rsource file
 	QIcon icon;
 	if ((!themePath.isEmpty()) and (themePath!="Default")){
-		icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
+		icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
 		if (icon.isNull()){
-			icon.addFile(tr(":/%1").arg(iconName));
+			icon.addFile(QString(":/%1").arg(iconName));
 		}
 	} else {
-		icon.addFile(tr(":/%1").arg(iconName));
+		icon.addFile(QString(":/%1").arg(iconName));
 	}
 	return icon;
 }

@@ -411,7 +411,7 @@ int main(int argc, char *argv[])
 			}
 		break;
 		case 11:
-			Qcout<<QObject::tr("q4wine-cli %1").arg(APP_VERS)<<endl;
+			Qcout<<QString("q4wine-cli %1").arg(APP_VERS)<<endl;
 			Qcout<<QObject::tr("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
 			Qcout<<QObject::tr("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
 			Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;

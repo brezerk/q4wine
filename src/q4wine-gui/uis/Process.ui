@@ -1,86 +1,66 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>Process</class>
- <widget class="QDialog" name="Process" >
-  <property name="windowModality" >
+ <widget class="QDialog" name="Process">
+  <property name="windowModality">
    <enum>Qt::NonModal</enum>
   </property>
-  <property name="geometry" >
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>280</width>
-    <height>116</height>
+    <height>117</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Mounting image...</string>
   </property>
-  <property name="sizeGripEnabled" >
+  <property name="sizeGripEnabled">
    <bool>false</bool>
   </property>
-  <property name="modal" >
+  <property name="modal">
    <bool>false</bool>
   </property>
-  <layout class="QGridLayout" >
-   <property name="leftMargin" >
+  <layout class="QGridLayout">
+   <property name="margin">
     <number>6</number>
    </property>
-   <property name="topMargin" >
-    <number>6</number>
-   </property>
-   <property name="rightMargin" >
-    <number>6</number>
-   </property>
-   <property name="bottomMargin" >
-    <number>6</number>
-   </property>
-   <property name="horizontalSpacing" >
+   <property name="spacing">
     <number>3</number>
    </property>
-   <property name="verticalSpacing" >
-    <number>3</number>
-   </property>
-   <item row="0" column="0" colspan="2" >
-    <widget class="QGroupBox" name="groupBox" >
-     <property name="title" >
+   <item row="0" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
       <string/>
      </property>
-     <layout class="QVBoxLayout" >
-      <property name="spacing" >
+     <layout class="QVBoxLayout">
+      <property name="spacing">
        <number>3</number>
       </property>
-      <property name="leftMargin" >
-       <number>6</number>
-      </property>
-      <property name="topMargin" >
-       <number>6</number>
-      </property>
-      <property name="rightMargin" >
-       <number>6</number>
-      </property>
-      <property name="bottomMargin" >
+      <property name="margin">
        <number>6</number>
       </property>
       <item>
-       <widget class="QLabel" name="lblInfo" >
-        <property name="text" >
-         <string>src: /home/brezerk/cdrom.iso</string>
+       <widget class="QLabel" name="lblInfo">
+        <property name="text">
+         <string/>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="Line" name="line" >
-        <property name="orientation" >
+       <widget class="Line" name="line">
+        <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
       </item>
       <item>
        <spacer>
-        <property name="orientation" >
+        <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
           <height>40</height>
@@ -89,24 +69,24 @@
        </spacer>
       </item>
       <item>
-       <widget class="QProgressBar" name="progressBar" >
-        <property name="minimum" >
+       <widget class="QProgressBar" name="progressBar">
+        <property name="minimum">
          <number>0</number>
         </property>
-        <property name="maximum" >
+        <property name="maximum">
          <number>0</number>
         </property>
-        <property name="value" >
+        <property name="value">
          <number>-1</number>
         </property>
        </widget>
       </item>
       <item>
        <spacer>
-        <property name="orientation" >
+        <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
           <height>40</height>
@@ -117,12 +97,12 @@
      </layout>
     </widget>
    </item>
-   <item row="1" column="0" >
+   <item row="1" column="0">
     <spacer>
-     <property name="orientation" >
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>546</width>
        <height>20</height>
@@ -130,9 +110,9 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="1" >
-    <widget class="QPushButton" name="cmdCancel" >
-     <property name="text" >
+   <item row="1" column="1">
+    <widget class="QPushButton" name="cmdCancel">
+     <property name="text">
       <string>Cancel</string>
      </property>
     </widget>

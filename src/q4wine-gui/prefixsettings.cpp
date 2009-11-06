@@ -106,7 +106,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 void PrefixSettings::loadThemeIcons(QString themePath){
 	QPixmap pixmap;
 
-	if (!pixmap.load(tr("%1/data/exec.png").arg(themePath))){
+	if (!pixmap.load(QString("%1/data/exec.png").arg(themePath))){
 		pixmap.load(":data/exec.png");
 	}
 
@@ -131,12 +131,12 @@ QIcon PrefixSettings::loadIcon(QString iconName, QString themePath){
 	QIcon icon;
 
 	if ((!themePath.isEmpty()) and (themePath!="Default")){
-		icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
+		icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
 		if (icon.isNull()){
-			icon.addFile(tr(":/%1").arg(iconName));
+			icon.addFile(QString(":/%1").arg(iconName));
 		}
 	} else {
-		icon.addFile(tr(":/%1").arg(iconName));
+		icon.addFile(QString(":/%1").arg(iconName));
 	}
 
 	return icon;

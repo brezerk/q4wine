@@ -174,13 +174,13 @@ QList<QStringList> corelib::getWineProcessList(){
 			prefix="";
 			ipid = kp[i].ki_pid;
 
-			if (cur_pids.indexOf(QObject::tr("%1").arg(ipid))==-1){
-				  cur_pids << QObject::tr("%1").arg(ipid);
+			if (cur_pids.indexOf(QString("%1").arg(ipid))==-1){
+				  cur_pids << QString("%1").arg(ipid);
 				  name = kp[i].ki_comm;
 
 				  if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
 						ni = kp[i].ki_nice;
-						nice = QObject::tr("%1").arg(ni);
+						nice = QString("%1").arg(ni);
 
 						envs = kvm_getargv(kd, (const struct kinfo_proc *) &(kp[i]), 0);
 						if (envs){
@@ -213,7 +213,7 @@ QList<QStringList> corelib::getWineProcessList(){
 
 						// Puting all fields into QList<QStringList>
 						procline.clear();
-						procline << QObject::tr("%1").arg(ipid) << name << nice << prefix;
+						procline << QString("%1").arg(ipid) << name << nice << prefix;
 						proclist << procline;
 				  }
 			}
@@ -328,10 +328,10 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 	  QStringList arguments;
 
 #ifdef _OS_LINUX_
-	  arguments << "-c" << QObject::tr("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
+	  arguments << "-c" << QString("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
 #endif
 #ifdef _OS_FREEBSD_
-	  arguments << "-c" << QObject::tr("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
+	  arguments << "-c" << QString("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
 #endif
 
 	  QProcess *myProcess = new QProcess();
@@ -358,7 +358,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 							  arguments << "losetup" << image;
 #endif
 #ifdef _OS_FREEBSD_
-							  arguments << "mdconfig" <<  "-l" << QObject::tr("-u%1").arg(image.mid(7));
+							  arguments << "mdconfig" <<  "-l" << QString("-u%1").arg(image.mid(7));
 #endif
 							  myProcess->start(this->getSetting("system", "sudo").toString(), arguments);
 							  if (!myProcess->waitForFinished()){
@@ -457,40 +457,40 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			if (!prefixList.at(1).isEmpty()){
 				  //If icon has prefix -- add to args
-				  envargs.append(QObject::tr(" WINEPREFIX=%1 ").arg(prefixList.at(1)));
+				  envargs.append(QString(" WINEPREFIX=%1 ").arg(prefixList.at(1)));
 			} else {
 				  //Else use default prefix
-				  envargs.append(QObject::tr(" WINEPREFIX=%1/.wine ").arg(QDir::homePath()));
+				  envargs.append(QString(" WINEPREFIX=%1/.wine ").arg(QDir::homePath()));
 			}
 
 			if (!prefixList.at(2).isEmpty()){
-				  envargs.append(QObject::tr(" WINEDLLPATH=%1 ").arg(prefixList.at(2)));
+				  envargs.append(QString(" WINEDLLPATH=%1 ").arg(prefixList.at(2)));
 			} else {
-				  envargs.append(QObject::tr(" WINEDLLPATH=%1 ").arg(this->getSetting("wine", "WineLibs").toString()));
+				  envargs.append(QString(" WINEDLLPATH=%1 ").arg(this->getSetting("wine", "WineLibs").toString()));
 			}
 
 			if (!prefixList.at(3).isEmpty()){
-				  envargs.append(QObject::tr(" WINELOADER=%1 ").arg(prefixList.at(3)));
+				  envargs.append(QString(" WINELOADER=%1 ").arg(prefixList.at(3)));
 			} else {
-				  envargs.append(QObject::tr(" WINELOADER=%1 ").arg(this->getSetting("wine", "LoaderBin").toString()));
+				  envargs.append(QString(" WINELOADER=%1 ").arg(this->getSetting("wine", "LoaderBin").toString()));
 			}
 
 			if (!prefixList.at(4).isEmpty()){
-				  envargs.append(QObject::tr(" WINESERVER=%1 ").arg(prefixList.at(4)));
+				  envargs.append(QString(" WINESERVER=%1 ").arg(prefixList.at(4)));
 			} else {
-				  envargs.append(QObject::tr(" WINESERVER=%1 ").arg(this->getSetting("wine", "ServerBin").toString()));
+				  envargs.append(QString(" WINESERVER=%1 ").arg(this->getSetting("wine", "ServerBin").toString()));
 			}
 
 			if (!execObj.override.isEmpty()){
-				  envargs.append(QObject::tr(" WINEDLLOVERRIDES='%1' ").arg(execObj.override));
+				  envargs.append(QString(" WINEDLLOVERRIDES='%1' ").arg(execObj.override));
 			}
 
 			if (!execObj.winedebug.isEmpty() && execObj.useconsole == "1"){
-				  envargs.append(QObject::tr(" WINEDEBUG=%1 ").arg(execObj.winedebug));
+				  envargs.append(QString(" WINEDEBUG=%1 ").arg(execObj.winedebug));
 			}
 
 			if (!execObj.display.isEmpty()){
-				  envargs.append(QObject::tr(" DISPLAY=%1 ").arg(execObj.display));
+				  envargs.append(QString(" DISPLAY=%1 ").arg(execObj.display));
 			}
 
 			QString exec_string = "";
@@ -551,28 +551,28 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			if (!prefixList.at(1).isEmpty()){
 				  //If icon has prefix -- add to args
-				  envargs.append(QObject::tr(" WINEPREFIX=%1 ").arg(prefixList.at(1)));
+				  envargs.append(QString(" WINEPREFIX=%1 ").arg(prefixList.at(1)));
 			} else {
 				  //Else use default prefix
-				  envargs.append(QObject::tr(" WINEPREFIX=%1/.wine ").arg(QDir::homePath()));
+				  envargs.append(QString(" WINEPREFIX=%1/.wine ").arg(QDir::homePath()));
 			}
 
 			if (!prefixList.at(2).isEmpty()){
-				  envargs.append(QObject::tr(" WINEDLLPATH=%1 ").arg(prefixList.at(2)));
+				  envargs.append(QString(" WINEDLLPATH=%1 ").arg(prefixList.at(2)));
 			} else {
-				  envargs.append(QObject::tr(" WINEDLLPATH=%1 ").arg(this->getSetting("wine", "WineLibs").toString()));
+				  envargs.append(QString(" WINEDLLPATH=%1 ").arg(this->getSetting("wine", "WineLibs").toString()));
 			}
 
 			if (!prefixList.at(3).isEmpty()){
-				  envargs.append(QObject::tr(" WINELOADER=%1 ").arg(prefixList.at(3)));
+				  envargs.append(QString(" WINELOADER=%1 ").arg(prefixList.at(3)));
 			} else {
-				  envargs.append(QObject::tr(" WINELOADER=%1 ").arg(this->getSetting("wine", "LoaderBin").toString()));
+				  envargs.append(QString(" WINELOADER=%1 ").arg(this->getSetting("wine", "LoaderBin").toString()));
 			}
 
 			if (!prefixList.at(4).isEmpty()){
-				  envargs.append(QObject::tr(" WINESERVER=%1 ").arg(prefixList.at(4)));
+				  envargs.append(QString(" WINESERVER=%1 ").arg(prefixList.at(4)));
 			} else {
-				  envargs.append(QObject::tr(" WINESERVER=%1 ").arg(this->getSetting("wine", "ServerBin").toString()));
+				  envargs.append(QString(" WINESERVER=%1 ").arg(this->getSetting("wine", "ServerBin").toString()));
 			}
 
 			QString exec_string = "";
@@ -870,7 +870,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			QString command;
 
 			if (!prefix_path.isEmpty()){
-				  command=QObject::tr("env WINEPREFIX=\"%1\" wineserver -kill").arg(prefix_path);
+				  command=QString("env WINEPREFIX=\"%1\" wineserver -kill").arg(prefix_path);
 			} else {
 				  command="wineserver -kill";
 			}

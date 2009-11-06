@@ -34,7 +34,7 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 	switch (Scene){
 	case 0:
 		// Prefix creation
-		if (!pixmap.load(tr("%1/data/prefixc.png").arg(themePath))){
+		if (!pixmap.load(QString("%1/data/prefixc.png").arg(themePath))){
 			pixmap.load(":data/prefixc.png");
 		}
 
@@ -52,7 +52,8 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		break;
 	case 1:
 		// First startup
-		if (!pixmap.load(tr("%1/data/firstc.png").arg(themePath))){
+
+		if (!pixmap.load(QString("%1/data/firstc.png").arg(themePath))){
 			pixmap.load(":data/firstc.png");
 		}
 
@@ -108,7 +109,7 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		break;
 	case 2:
 		// Fake drive create
-		if (!pixmap.load(tr("%1/data/firstc.png").arg(themePath))){
+		if (!pixmap.load(QString("%1/data/firstc.png").arg(themePath))){
 			pixmap.load(":data/firstc.png");
 		}
 		lblPicture->setPixmap(pixmap);
@@ -129,7 +130,7 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		break;
 	case 3:
 		// Fake drive update
-		if (!pixmap.load(tr("%1/data/firstc.png").arg(themePath))){
+		if (!pixmap.load(QString("%1/data/firstc.png").arg(themePath))){
 			pixmap.load(":data/firstc.png");
 		}
 		lblPicture->setPixmap(pixmap);
@@ -159,12 +160,12 @@ QIcon Wizard::loadIcon(QString iconName, QString themePath){
 	  QIcon icon;
 
 	  if ((!themePath.isEmpty()) and (themePath!="Default")){
-			icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
+			icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
 			if (icon.isNull()){
-				  icon.addFile(tr(":/%1").arg(iconName));
+				  icon.addFile(QString(":/%1").arg(iconName));
 			}
 	  } else {
-			icon.addFile(tr(":/%1").arg(iconName));
+			icon.addFile(QString(":/%1").arg(iconName));
 	  }
 	  return icon;
 }
@@ -443,13 +444,13 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 				line.append(tr("\nType: "));
 
 				list.clear();
-				list<<tr("\"%1\"").arg(fileInfo.fileName());
+				list<<QString("\"%1\"").arg(fileInfo.fileName());
 				list = reg->readKeys("system", "Software\\Wine\\Drives", list);
 
 				QString pic;
 				if (list.count()>0){
 				   if (list.at(0).isEmpty()){
-					line.append(tr("auto"));
+					line.append("auto");
 				   } else {
 					line.append(list.at(0));
 				   }
@@ -626,8 +627,8 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 				QString wrkDir;
 				QStringList list1 = file.split("/");
 				wrkDir = file.left(file.length() - list1.last().length());
-				txtWineServerBin->setText(tr("%1wineserver").arg(wrkDir));
-				txtWineLoaderBin->setText(tr("%1wine").arg(wrkDir));
+				txtWineServerBin->setText(QString("%1wineserver").arg(wrkDir));
+				txtWineLoaderBin->setText(QString("%1wine").arg(wrkDir));
 			}
 			if (obj==cmdGetWineDesktop){
 				txtWineDesktopDoc->setText(file);
@@ -1121,7 +1122,7 @@ void Wizard::nextWizardPage(){
 						if (type=="auto"){
 							registry.unset("Software\\Wine\\Drives", letter, "HKEY_LOCAL_MACHINE");
 						} else {
-							registry.set("Software\\Wine\\Drives", "", tr("\"%1\"=\"%2\"").arg(letter).arg(type), "HKEY_LOCAL_MACHINE");
+							registry.set("Software\\Wine\\Drives", "", QString("\"%1\"=\"%2\"").arg(letter).arg(type), "HKEY_LOCAL_MACHINE");
 						}
 					}
 				}
@@ -1270,48 +1271,48 @@ void Wizard::nextWizardPage(){
 
 					cur_palette = qApp->palette();
 					color = cur_palette.color(QPalette::Base);
-					registry.set("Control Panel\\Colors", "Window", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "Window", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::Window);
-					registry.set("Control Panel\\Colors", "ActiveBorder", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
-					registry.set("Control Panel\\Colors", "InactiveBorder", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
-					registry.set("Control Panel\\Colors", "AppWorkSpace", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
-					registry.set("Control Panel\\Colors", "Menu", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
-					registry.set("Control Panel\\Colors", "MenuBar", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
-					registry.set("Control Panel\\Colors", "Scrollbar", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
-					registry.set("Control Panel\\Colors", "MenuHilight", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
-					registry.set("Control Panel\\Colors", "ButtonFace", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "ActiveBorder", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "InactiveBorder", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "AppWorkSpace", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "Menu", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "MenuBar", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "Scrollbar", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "MenuHilight", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "ButtonFace", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::AlternateBase);
-					registry.set("Control Panel\\Colors", "ButtonAlternateFace", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "ButtonAlternateFace", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::Dark);
-					registry.set("Control Panel\\Colors", "ButtonDkShadow", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
-					registry.set("Control Panel\\Colors", "ButtonShadow", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
-					registry.set("Control Panel\\Colors", "GrayText", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "ButtonDkShadow", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "ButtonShadow", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "GrayText", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::Light);
-					registry.set("Control Panel\\Colors", "ButtonHilight", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "ButtonHilight", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::ButtonText);
-					registry.set("Control Panel\\Colors", "ButtonText", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "ButtonText", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::WindowText);
-					registry.set("Control Panel\\Colors", "MenuText", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
-					registry.set("Control Panel\\Colors", "WindowFrame", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
-					registry.set("Control Panel\\Colors", "WindowText", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "MenuText", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "WindowFrame", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "WindowText", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::Highlight);
-					registry.set("Control Panel\\Colors", "Hilight", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "Hilight", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::HighlightedText);
-					registry.set("Control Panel\\Colors", "HilightText", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "HilightText", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::ToolTipBase);
-					registry.set("Control Panel\\Colors", "InfoWindow", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "InfoWindow", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
 					color = cur_palette.color(QPalette::ToolTipText);
-					registry.set("Control Panel\\Colors", "InfoText", tr("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+					registry.set("Control Panel\\Colors", "InfoText", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 				}
 
 				if (registry.exec(this, prefix_name)){

@@ -490,47 +490,47 @@
                   </item>
                   <item>
                    <property name="text">
-                    <string>320x240</string>
+                    <string notr="true">320x240</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>640x480</string>
+                    <string notr="true">640x480</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>800x600</string>
+                    <string notr="true">800x600</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>1024x768</string>
+                    <string notr="true">1024x768</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>1600x1200</string>
+                    <string notr="true">1600x1200</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>1440x900</string>
+                    <string notr="true">1440x900</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>1680x1050</string>
+                    <string notr="true">1680x1050</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>1920x1200</string>
+                    <string notr="true">1920x1200</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>2560x1600</string>
+                    <string notr="true">2560x1600</string>
                    </property>
                   </item>
                  </widget>

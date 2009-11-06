@@ -117,7 +117,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 void IconSettings::loadThemeIcons(QString themePath){
 	QPixmap pixmap;
 
-	if (!pixmap.load(tr("%1/data/exec.png").arg(themePath))){
+	if (!pixmap.load(QString("%1/data/exec.png").arg(themePath))){
 		pixmap.load(":data/exec.png");
 	}
 
@@ -139,12 +139,12 @@ QIcon IconSettings::loadIcon(QString iconName, QString themePath){
 	QIcon icon;
 
 	if ((!themePath.isEmpty()) and (themePath!="Default")){
-		icon.addFile(tr("%1/%2").arg(themePath).arg(iconName));
+		icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
 		if (icon.isNull()){
-			icon.addFile(tr(":/%1").arg(iconName));
+			icon.addFile(QString(":/%1").arg(iconName));
 		}
 	} else {
-		icon.addFile(tr(":/%1").arg(iconName));
+		icon.addFile(QString(":/%1").arg(iconName));
 	}
 
 	return icon;
@@ -521,7 +521,7 @@ void IconSettings::cmdGetIcon_Click(){
 						args << fileInfo.filePath();
 				}
 
-				args << "-o" << tr("%1/").arg(tmpDir);
+				args << "-o" << QString("%1/").arg(tmpDir);
 
 				//Converting ico files to png
 
@@ -608,7 +608,7 @@ void IconSettings::cmdOk_Click(){
 
 	QString override;
 	for (int i=1; i<=twDlls->rowCount(); i++){
-		override.append(tr("%1=").arg(twDlls->item(i-1, 0)->text()));
+		override.append(QString("%1=").arg(twDlls->item(i-1, 0)->text()));
 		if (twDlls->item(i-1, 1)->text()==tr("Native"))
 				override.append("n;");
 		if (twDlls->item(i-1, 1)->text()==tr("Buildin"))

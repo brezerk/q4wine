@@ -194,10 +194,10 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Fixed'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;wizard step title&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string notr="true">&lt;b&gt;wizard step title&lt;/b&gt;</string>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::AutoText</enum>
            </property>
            <property name="textInteractionFlags">
             <set>Qt::NoTextInteraction</set>
@@ -220,7 +220,7 @@ p, li { white-space: pre-wrap; }
          <item>
           <widget class="QLabel" name="lblStep">
            <property name="text">
-            <string>&lt;b&gt;Step 1 of 4&lt;/b&gt;</string>
+            <string notr="true">&lt;b&gt;Step 1 of 4&lt;/b&gt;</string>
            </property>
           </widget>
          </item>
@@ -449,13 +449,10 @@ p, li { white-space: pre-wrap; }
              <item row="0" column="0">
               <widget class="QLabel" name="lblWizardInfo">
                <property name="text">
-                <string>&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Fixed'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string notr="true"/>
                </property>
                <property name="textFormat">
-                <enum>Qt::RichText</enum>
+                <enum>Qt::AutoText</enum>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -840,11 +837,11 @@ Note: leave it blank if you don't nead it.</string>
                    <bool>true</bool>
                   </property>
                   <property name="html">
-                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+                   <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Fixed [Misc]';&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="textInteractionFlags">
                    <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -881,11 +878,10 @@ p, li { white-space: pre-wrap; }
                 <item>
                  <widget class="QLabel" name="label_3">
                   <property name="text">
-                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please set default system utils paths&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>Please set default system utils paths:</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::PlainText</enum>
                   </property>
                  </widget>
                 </item>
@@ -1290,11 +1286,10 @@ p, li { white-space: pre-wrap; }
                    </sizepolicy>
                   </property>
                   <property name="text">
-                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Please set default user utils paths&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>Please set default user utils paths:</string>
+                  </property>
+                  <property name="textFormat">
+                   <enum>Qt::PlainText</enum>
                   </property>
                  </widget>
                 </item>
@@ -1500,10 +1495,10 @@ p, li { white-space: pre-wrap; }
            <widget class="QWidget" name="widgetFirstStartup3" native="true">
             <property name="geometry">
              <rect>
-              <x>-1</x>
-              <y>0</y>
-              <width>510</width>
-              <height>320</height>
+              <x>-2</x>
+              <y>-1</y>
+              <width>511</width>
+              <height>321</height>
              </rect>
             </property>
             <property name="autoFillBackground">
@@ -1561,12 +1556,12 @@ p, li { white-space: pre-wrap; }
                      </item>
                      <item>
                       <property name="text">
-                       <string>HTTP</string>
+                       <string notr="true">HTTP</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Socks v5</string>
+                       <string notr="true">Socks v5</string>
                       </property>
                      </item>
                     </widget>
@@ -1605,7 +1600,7 @@ p, li { white-space: pre-wrap; }
                       <bool>false</bool>
                      </property>
                      <property name="inputMask">
-                      <string/>
+                      <string notr="true"/>
                      </property>
                     </widget>
                    </item>
@@ -1643,7 +1638,7 @@ p, li { white-space: pre-wrap; }
                       <bool>false</bool>
                      </property>
                      <property name="inputMask">
-                      <string>0000000000; </string>
+                      <string notr="true">0000000000; </string>
                      </property>
                     </widget>
                    </item>
@@ -1680,6 +1675,9 @@ p, li { white-space: pre-wrap; }
                      <property name="enabled">
                       <bool>false</bool>
                      </property>
+                     <property name="inputMask">
+                      <string notr="true"/>
+                     </property>
                     </widget>
                    </item>
                   </layout>
@@ -1714,6 +1712,9 @@ p, li { white-space: pre-wrap; }
                     <widget class="QLineEdit" name="txtProxyPass">
                      <property name="enabled">
                       <bool>false</bool>
+                     </property>
+                     <property name="inputMask">
+                      <string notr="true"/>
                      </property>
                     </widget>
                    </item>
@@ -1879,67 +1880,67 @@ p, li { white-space: pre-wrap; }
                     <widget class="QComboBox" name="comboFakeVersion">
                      <item>
                       <property name="text">
-                       <string>Windows XP</string>
+                       <string notr="true">Windows XP</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Windows 2008</string>
+                       <string notr="true">Windows 2008</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Windows Vista</string>
+                       <string notr="true">Windows Vista</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Windows 2003</string>
+                       <string notr="true">Windows 2003</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Windows 2000</string>
+                       <string notr="true">Windows 2000</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Windows ME</string>
+                       <string notr="true">Windows ME</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Windows 98</string>
+                       <string notr="true">Windows 98</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Windows 95</string>
+                       <string notr="true">Windows 95</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Windows NT 4.0</string>
+                       <string notr="true">Windows NT 4.0</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Windows NT 3.5</string>
+                       <string notr="true">Windows NT 3.5</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Windows 3.1</string>
+                       <string notr="true">Windows 3.1</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Windows 3.0</string>
+                       <string notr="true">Windows 3.0</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Windows 2.0</string>
+                       <string notr="true">Windows 2.0</string>
                       </property>
                      </item>
                     </widget>
@@ -2065,17 +2066,17 @@ p, li { white-space: pre-wrap; }
                     <widget class="QComboBox" name="comboFakeD3D_Multi">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>enabled</string>
+                       <string notr="true">enabled</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>disabled</string>
+                       <string notr="true">disabled</string>
                       </property>
                      </item>
                     </widget>
@@ -2112,17 +2113,17 @@ p, li { white-space: pre-wrap; }
                     <widget class="QComboBox" name="comboFakeD3D_Render">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>gdi</string>
+                       <string notr="true">gdi</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>opengl</string>
+                       <string notr="true">opengl</string>
                       </property>
                      </item>
                     </widget>
@@ -2159,32 +2160,32 @@ p, li { white-space: pre-wrap; }
                     <widget class="QComboBox" name="comboFakeD3D_LMode">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>disabled</string>
+                       <string notr="true">disabled</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>readdraw</string>
+                       <string notr="true">readdraw</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>readtex</string>
+                       <string notr="true">readtex</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>texdraw</string>
+                       <string notr="true">texdraw</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>textex</string>
+                       <string notr="true">textex</string>
                       </property>
                      </item>
                     </widget>
@@ -2221,22 +2222,22 @@ p, li { white-space: pre-wrap; }
                     <widget class="QComboBox" name="comboFakeD3D_Offscreen">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>backbuffer</string>
+                       <string notr="true">backbuffer</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>pbuffer</string>
+                       <string notr="true">pbuffer</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>fbo</string>
+                       <string notr="true">fbo</string>
                       </property>
                      </item>
                     </widget>
@@ -2273,17 +2274,17 @@ p, li { white-space: pre-wrap; }
                     <widget class="QComboBox" name="comboFakeD3D_GLSL">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>enabled</string>
+                       <string notr="true">enabled</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>disabled</string>
+                       <string notr="true">disabled</string>
                       </property>
                      </item>
                     </widget>
@@ -2373,17 +2374,17 @@ p, li { white-space: pre-wrap; }
                     <widget class="QComboBox" name="comboFakeX11_WR">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Y</string>
+                       <string notr="true">Y</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>N</string>
+                       <string notr="true">N</string>
                       </property>
                      </item>
                     </widget>
@@ -2420,17 +2421,17 @@ p, li { white-space: pre-wrap; }
                     <widget class="QComboBox" name="comboFakeX11_AAR">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Y</string>
+                       <string notr="true">Y</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>N</string>
+                       <string notr="true">N</string>
                       </property>
                      </item>
                     </widget>
@@ -2467,17 +2468,17 @@ p, li { white-space: pre-wrap; }
                     <widget class="QComboBox" name="comboFakeX11_AAC">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Y</string>
+                       <string notr="true">Y</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>N</string>
+                       <string notr="true">N</string>
                       </property>
                      </item>
                     </widget>
@@ -2514,17 +2515,17 @@ p, li { white-space: pre-wrap; }
                     <widget class="QComboBox" name="comboFakeX11_XRandr">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Y</string>
+                       <string notr="true">Y</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>N</string>
+                       <string notr="true">N</string>
                       </property>
                      </item>
                     </widget>
@@ -2561,17 +2562,17 @@ p, li { white-space: pre-wrap; }
                     <widget class="QComboBox" name="comboFakeX11_XVid">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Y</string>
+                       <string notr="true">Y</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>N</string>
+                       <string notr="true">N</string>
                       </property>
                      </item>
                     </widget>
@@ -3097,22 +3098,22 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
                     <widget class="QComboBox" name="comboFakeMouseWarp">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>enable</string>
+                       <string notr="true">enable</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>disable</string>
+                       <string notr="true">disable</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>force</string>
+                       <string notr="true">force</string>
                       </property>
                      </item>
                     </widget>
@@ -3343,17 +3344,17 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
                     <widget class="QComboBox" name="comboFakeSoftwareEmulation">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>enabled</string>
+                       <string notr="true">enabled</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>disabled</string>
+                       <string notr="true">disabled</string>
                       </property>
                      </item>
                     </widget>
@@ -3415,17 +3416,17 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
                     <widget class="QComboBox" name="comboFakePixelShaderMode">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>enabled</string>
+                       <string notr="true">enabled</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>disabled</string>
+                       <string notr="true">disabled</string>
                       </property>
                      </item>
                     </widget>
@@ -3462,17 +3463,17 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
                     <widget class="QComboBox" name="comboFakeVertexShaderMode">
                      <item>
                       <property name="text">
-                       <string>default</string>
+                       <string notr="true">default</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>hardware</string>
+                       <string notr="true">hardware</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>none</string>
+                       <string notr="true">none</string>
                       </property>
                      </item>
                     </widget>
@@ -3835,6 +3836,23 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
              </item>
             </layout>
            </widget>
+           <zorder>widgetCreateFakeDrive5</zorder>
+           <zorder>widgetCreatePrefix0</zorder>
+           <zorder>widgetFirstStartup4</zorder>
+           <zorder>widgetCreatePrefix2</zorder>
+           <zorder>widgetCreatePrefix1</zorder>
+           <zorder>widgetCreateFakeDrive7</zorder>
+           <zorder>widgetCreateFakeDrive6</zorder>
+           <zorder>widgetCreateFakeDrive4</zorder>
+           <zorder>widgetCreateFakeDrive3</zorder>
+           <zorder>widgetCreateFakeDrive2</zorder>
+           <zorder>widgetCreateFakeDrive1</zorder>
+           <zorder>widgetCreateFakeDrive0</zorder>
+           <zorder>widgetFirstStartup1</zorder>
+           <zorder>widgetInfo</zorder>
+           <zorder>widgetFirstStartup2</zorder>
+           <zorder>widgetFirstStartup3</zorder>
+           <zorder>widgetFirstStartup0</zorder>
           </widget>
          </item>
         </layout>

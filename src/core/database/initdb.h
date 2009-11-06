@@ -45,7 +45,7 @@ bool initDb(){
    }
 
    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-   db.setDatabaseName(QObject::tr("%1/.config/%2/db/generic.dat").arg(QDir::homePath()).arg(APP_SHORT_NAME));
+   db.setDatabaseName(QString("%1/.config/%2/db/generic.dat").arg(QDir::homePath()).arg(APP_SHORT_NAME));
 
    if (!db.open()){
 	QMessageBox::warning(0, QObject::tr("Critical error"), QObject::tr("Sorry, i can't open database file: %1/.config/%2/db/generic.dat ; Error is: %3").arg(QDir::homePath()).arg(APP_SHORT_NAME).arg(db.lastError().text()));
