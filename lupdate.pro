@@ -4,88 +4,83 @@
 
 TEMPLATE = app
 TARGET = q4wine
-DEPENDPATH += . \
-    src \
-    src/gui \
-    src/core \
-    src/i18n
-INCLUDEPATH += . \
-    src/gui \
-    src/core \
-    src
 
 warning("==============================================")
 warning(" Note: this file ONLY for locale gen!!!!!!!!! ")
 warning("==============================================")
  
-
 # Application source code
 
-FORMS += /src/uis/About.ui \
-        /src/uis/AppSettings.ui \
-        /src/uis/IconSettings.ui \
-        /src/uis/IconsView.ui \
-        /src/uis/ImageManager.ui \
-        /src/uis/MainWindow.ui \
-        /src/uis/PrefixSettings.ui \
-        /src/uis/Process.ui \
-        /src/uis/Run.ui \
-        /src/uis/Wizard.ui \
-        /src/temporary/winetricks.ui \
-        /src/temporary/winetrickshelp.ui
+FORMS += src/temporary/winetricks.ui \
+	src/q4wine-gui/uis/About.ui \
+	src/q4wine-gui/uis/PrefixSettings.ui \
+	src/q4wine-gui/uis/Run.ui \
+	src/q4wine-gui/uis/Wizard.ui \
+	src/q4wine-gui/uis/Process.ui \
+	src/q4wine-gui/uis/MainWindow.ui \
+	src/q4wine-gui/uis/IconSettings.ui \
+	src/q4wine-gui/uis/WineDriveDialog.ui \
+	src/q4wine-gui/uis/IconsView.ui \
+	src/q4wine-gui/uis/AppSettings.ui \
+	src/q4wine-gui/uis/ImageManager.ui
 
-SOURCES += /src/core/registry.cpp \
-	/src/core/winebinlauncher.cpp \
-	/src/core/database/db.cpp \
-	/src/core/database/dir.cpp \
-	/src/core/database/icon.cpp \
-	/src/core/database/image.cpp \
-	/src/core/database/initdb.h \
-	/src/core/database/prefix.cpp \
-	/src/gui/about.cpp \
-	/src/gui/appsettings.cpp \
-	/src/gui/draglistwidget.cpp \
-	/src/gui/iconsettings.cpp \
-	/src/gui/iconsview.cpp \
-	/src/gui/imagemanager.cpp \
-	/src/gui/mainwindow.cpp \
-	/src/gui/prefixsettings.cpp \
-	/src/gui/process.cpp \
-	/src/gui/run.cpp \
-	/src/gui/wizard.cpp \
-	/src/q4wine-cli/main.cpp \
-	/src/q4wine-lib/main.cpp \
-	/src/temporary/winetricks.cpp \
-	/src/temporary/winetrickshelp.cpp \
-	/src/wis/wisitem.cpp
+SOURCES += src/temporary/winetricks.cpp \
+	src/temporary/winetrickshelp.cpp \
+	src/wis/wisitem.cpp \
+	src/core/database/last_run_icon.cpp \
+	src/core/database/dir.cpp \
+	src/core/database/prefix.cpp \
+	src/core/database/icon.cpp \
+	src/core/database/db.cpp \
+	src/core/database/image.cpp \
+	src/core/winebinlauncher.cpp \
+	src/core/registry.cpp \
+	src/q4wine-cli/main.cpp \
+	src/q4wine-gui/iconsview.cpp \
+	src/q4wine-gui/process.cpp \
+	src/q4wine-gui/run.cpp \
+	src/q4wine-gui/iconsettings.cpp \
+	src/q4wine-gui/appsettings.cpp \
+	src/q4wine-gui/draglistwidget.cpp \
+	src/q4wine-gui/imagemanager.cpp \
+	src/q4wine-gui/about.cpp \
+	src/q4wine-gui/wizard.cpp \
+	src/q4wine-gui/winedrivedialog.cpp \
+	src/q4wine-gui/mainwindow.cpp \
+	src/q4wine-gui/prefixsettings.cpp \
+	src/q4wine-lib/main.cpp \
+	src/main.cpp
 
-HEADERS += /src/core/registry.h \
-	/src/core/winebinlauncher.h \
-	/src/core/database/db.h \
-	/src/core/database/dir.h \
-	/src/core/database/icon.h \
-	/src/core/database/image.h \
-	/src/core/database/initdb.h \
-	/src/core/database/prefix.h \
-	/src/gui/about.h \
-	/src/gui/appsettings.h \
-	/src/gui/draglistwidget.h \
-	/src/gui/iconsettings.h \
-	/src/gui/iconsview.h \
-	/src/gui/imagemanager.h \
-	/src/gui/mainwindow.h \
-	/src/gui/prefixsettings.h \
-	/src/gui/process.h \
-	/src/gui/run.h \
-	/src/gui/wizard.h \
-	/src/q4wine-cli/main.h \
-	/src/q4wine-lib/main.h \
-	/src/temporary/winetricks.h \
-	/src/temporary/winetrickshelp.h \
-	/src/wis/wisitem.h
+HEADERS += src/temporary/winetricks.h \
+	src/temporary/winetrickshelp.h \
+	src/wis/wisitem.h \
+	src/core/database/db.h \
+	src/core/database/dir.h \ 
+	src/core/database/icon.h \
+	src/core/database/prefix.h \
+	src/core/database/last_run_icon.h \
+	src/core/database/initdb.h \
+	src/core/database/image.h \
+	src/core/winebinlauncher.h \
+	src/core/registry.h \
+	src/q4wine-cli/main.h \
+	src/q4wine-gui/imagemanager.h \ 
+	src/q4wine-gui/mainwindow.h \
+	src/q4wine-gui/iconsview.h \
+	src/q4wine-gui/run.h \
+	src/q4wine-gui/appsettings.h \
+	src/q4wine-gui/about.h \
+	src/q4wine-gui/winedrivedialog.h \
+	src/q4wine-gui/process.h \
+	src/q4wine-gui/prefixsettings.h \
+	src/q4wine-gui/draglistwidget.h \
+	src/q4wine-gui/iconsettings.h \
+	src/q4wine-gui/wizard.h \
+	src/q4wine-lib/main.h 
 
 TRANSLATIONS += src/i18n/en_us.ts \
-    src/i18n/ru_ru.ts \
-    src/i18n/uk_ua.ts \
-    src/i18n/pt_br.ts \
-    src/i18n/es_es.ts
+    	src/i18n/ru_ru.ts \
+	src/i18n/uk_ua.ts \
+	src/i18n/pt_br.ts \
+	src/i18n/it_it.ts \
+	src/i18n/es_es.ts

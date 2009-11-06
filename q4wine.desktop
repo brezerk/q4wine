@@ -1,5 +1,6 @@
 [Desktop Entry]
 Categories=Qt;System;Emulator;
+Comment[it]=tool grafico di configurazione per Wine
 Comment[uk]=Графічна оболонка для налаштування Wine
 Comment=GUI configuration tool for Wine
 Comment[en]=GUI configuration tool for Wine
@@ -10,6 +11,7 @@ GenericName[uk]=Графічна оболонка для налаштуванн�
 GenericName=GUI configuration tool for Wine
 GenericName[en]=GUI configuration tool for Wine
 GenericName[ru]=Графическая оболочка для настройки Wine
+GenericName[it]=tool grafico di configurazione per Wine
 Icon=q4wine
 Name[uk]=Q4Wine
 Name=Q4Wine
