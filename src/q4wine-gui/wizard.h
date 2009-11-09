@@ -47,6 +47,7 @@
 #include <QStringList>
 #include <QInputDialog>
 #include <QLibrary>
+#include <QProcess>
 
 #include <config.h>
 #include "registry.h"

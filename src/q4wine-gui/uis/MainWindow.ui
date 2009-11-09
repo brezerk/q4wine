@@ -83,7 +83,7 @@
             <string/>
            </property>
            <property name="textFormat">
-            <enum>Qt::PlainText</enum>
+            <enum>Qt::AutoText</enum>
            </property>
           </widget>
          </item>
@@ -93,7 +93,7 @@
             <string/>
            </property>
            <property name="textFormat">
-            <enum>Qt::PlainText</enum>
+            <enum>Qt::AutoText</enum>
            </property>
           </widget>
          </item>

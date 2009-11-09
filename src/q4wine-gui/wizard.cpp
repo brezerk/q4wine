@@ -465,6 +465,48 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 			}
 		}
 
+		prefixPath.append("c:/users/");
+		prefixPath.append(getenv("USER"));
+
+		if (!wineDriveDir.cd(prefixPath)){
+			qDebug()<<"Cannot cd to prefix directory: "<<prefixPath;
+		} else {
+			QFileInfo fileinfo(QString("%1/Desktop").arg(prefixPath));
+			if (fileinfo.isSymLink()){
+				txtWineDesktop->setText(fileinfo.symLinkTarget());
+			} else {
+				txtWineDesktop->setText(fileinfo.filePath());
+			}
+
+			fileinfo.setFile(QString("%1/My Documents").arg(prefixPath));
+			if (fileinfo.isSymLink()){
+				txtWineDesktopDoc->setText(fileinfo.symLinkTarget());
+			} else {
+				txtWineDesktopDoc->setText(fileinfo.filePath());
+			}
+
+			fileinfo.setFile(QString("%1/My Music").arg(prefixPath));
+			if (fileinfo.isSymLink()){
+				txtWineDesktopMus->setText(fileinfo.symLinkTarget());
+			} else {
+				txtWineDesktopMus->setText(fileinfo.filePath());
+			}
+
+			fileinfo.setFile(QString("%1/My Pictures").arg(prefixPath));
+			if (fileinfo.isSymLink()){
+				txtWineDesktopPic->setText(fileinfo.symLinkTarget());
+			} else {
+				txtWineDesktopPic->setText(fileinfo.filePath());
+			}
+
+			fileinfo.setFile(QString("%1/My Videos").arg(prefixPath));
+			if (fileinfo.isSymLink()){
+				txtWineDesktopVid->setText(fileinfo.symLinkTarget());
+			} else {
+				txtWineDesktopVid->setText(fileinfo.filePath());
+			}
+		}
+
 		setWindowTitle(tr("Fake drive update wizard"));
 		lblCaption->setText(tr("<b>Fake drive update wizard</b>"));
 		lblStep->setText(tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
@@ -965,31 +1007,25 @@ void Wizard::nextWizardPage(){
 						}
 					}
 					if (!tmpexists){
-						QMessageBox::warning(this, tr("Warning"), tr("Can't find drive which is point to:\n\"%1\"\n\nMake shure wine can access to q4wine temp directory.").arg(tmppath));
+						QMessageBox::warning(this, tr("Warning"), tr("Can't find drive which is point to:\n\"%1\"\n\nMake shure wine can access q4wine temp directory.").arg(tmppath));
 					}
 				}
 			break;
-			case 9:
+		case 9:
+			if (!checkEntry(txtWineDesktop->text(), "Desktop", FALSE))
+				return;
 
-			if (!txtWineDesktop->text().isEmpty())
-				if (!checkEntry(txtWineDesktop->text(), "Desktop", FALSE))
-					return;
+			if (!checkEntry(txtWineDesktopDoc->text(), "My Documents", FALSE))
+				return;
 
-			if (!txtWineDesktopDoc->text().isEmpty())
-				if (!checkEntry(txtWineDesktopDoc->text(), "My Documents", FALSE))
-					return;
+			if (!checkEntry(txtWineDesktopPic->text(), "My Pictures", FALSE))
+				return;
 
-			if (!txtWineDesktopPic->text().isEmpty())
-				if (!checkEntry(txtWineDesktopPic->text(), "My Pictures", FALSE))
-					return;
+			if (!checkEntry(txtWineDesktopMus->text(), "My Music", FALSE))
+				return;
 
-			if (!txtWineDesktopMus->text().isEmpty())
-				if (!checkEntry(txtWineDesktopMus->text(), "My Music", FALSE))
-					return;
-
-			if (!txtWineDesktopVid->text().isEmpty())
-				if (!checkEntry(txtWineDesktopVid->text(), "My Videos", FALSE))
-					return;
+			if (!checkEntry(txtWineDesktopVid->text(), "My Videos", FALSE))
+				return;
 
 			break;
 			case 10:
@@ -1089,6 +1125,94 @@ void Wizard::nextWizardPage(){
 				}
 			}
 
+			prefixPath.append("c:/users/");
+			prefixPath.append(getenv("USER"));
+
+			sh_cmd.clear();
+			sh_cmd.append(CoreLib->getWhichOut("rm"));
+			sh_cmd.append(" -f '");
+			sh_cmd.append(QString("%1/Desktop").arg(prefixPath));
+			sh_cmd.append("'");
+			sh_line.append(sh_cmd);
+
+			sh_cmd.clear();
+			sh_cmd.append(CoreLib->getWhichOut("rm"));
+			sh_cmd.append(" -f '");
+			sh_cmd.append(QString("%1/My Documents").arg(prefixPath));
+			sh_cmd.append("'");
+			sh_line.append(sh_cmd);
+
+			sh_cmd.clear();
+			sh_cmd.append(CoreLib->getWhichOut("rm"));
+			sh_cmd.append(" -f '");
+			sh_cmd.append(QString("%1/My Music").arg(prefixPath));
+			sh_cmd.append("'");
+			sh_line.append(sh_cmd);
+
+			sh_cmd.clear();
+			sh_cmd.append(CoreLib->getWhichOut("rm"));
+			sh_cmd.append(" -f '");
+			sh_cmd.append(QString("%1/My Pictures").arg(prefixPath));
+			sh_cmd.append("'");
+			sh_line.append(sh_cmd);
+
+			sh_cmd.clear();
+			sh_cmd.append(CoreLib->getWhichOut("rm"));
+			sh_cmd.append(" -f '");
+			sh_cmd.append(QString("%1/My Videos").arg(prefixPath));
+			sh_cmd.append("'");
+			sh_line.append(sh_cmd);
+
+			sh_cmd.clear();
+			sh_cmd.append("cd ");
+			sh_cmd.append(prefixPath);
+			sh_line.append(sh_cmd);
+
+			sh_cmd.clear();
+			sh_cmd.append(CoreLib->getWhichOut("ln"));
+			sh_cmd.append(" -s '");
+			sh_cmd.append(txtWineDesktop->text());
+			sh_cmd.append("' '");
+			sh_cmd.append("Desktop");
+			sh_cmd.append("'");
+			sh_line.append(sh_cmd);
+
+			sh_cmd.clear();
+			sh_cmd.append(CoreLib->getWhichOut("ln"));
+			sh_cmd.append(" -s '");
+			sh_cmd.append(txtWineDesktopDoc->text());
+			sh_cmd.append("' '");
+			sh_cmd.append("My Documents");
+			sh_cmd.append("'");
+			sh_line.append(sh_cmd);
+
+			sh_cmd.clear();
+			sh_cmd.append(CoreLib->getWhichOut("ln"));
+			sh_cmd.append(" -s '");
+			sh_cmd.append(txtWineDesktopMus->text());
+			sh_cmd.append("' '");
+			sh_cmd.append("My Music");
+			sh_cmd.append("'");
+			sh_line.append(sh_cmd);
+
+			sh_cmd.clear();
+			sh_cmd.append(CoreLib->getWhichOut("ln"));
+			sh_cmd.append(" -s '");
+			sh_cmd.append(txtWineDesktopPic->text());
+			sh_cmd.append("' '");
+			sh_cmd.append("My Pictures");
+			sh_cmd.append("'");
+			sh_line.append(sh_cmd);
+
+			sh_cmd.clear();
+			sh_cmd.append(CoreLib->getWhichOut("ln"));
+			sh_cmd.append(" -s '");
+			sh_cmd.append(txtWineDesktopVid->text());
+			sh_cmd.append("' '");
+			sh_cmd.append("My Videos");
+			sh_cmd.append("'");
+			sh_line.append(sh_cmd);
+
 			sh_cmd.clear();
 			for (int i=0; i<sh_line.count(); i++){
 				sh_cmd.append(sh_line.at(i));
@@ -1103,8 +1227,6 @@ void Wizard::nextWizardPage(){
 			proc->exec();
 
 			// ---- End of Creating Dos drives ----
-
-
 
 			Registry registry;
 

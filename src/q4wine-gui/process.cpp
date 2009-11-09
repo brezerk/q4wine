@@ -49,7 +49,7 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 	myProcess->setWorkingDirectory (dir);
 	myProcess->start(exec, args);
 
-	qDebug()<<exec<<args;
+	// qDebug()<<exec<<args;
 
 	return;
 }

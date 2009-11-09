@@ -113,8 +113,6 @@ bool Registry::exec(QObject *parent, QString prefix_name){
 	file.write(regfile_image.toAscii());        // write to stderr
 	file.close();
 
-
-	qDebug()<<regfile_image;
 	WineBinLauncher *launcher;
 
 	launcher = new WineBinLauncher(prefix_name);
