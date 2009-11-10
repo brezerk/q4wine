@@ -204,6 +204,8 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 
 	loadThemeIcons(CoreLib->getSetting("app", "theme", false).toString(), Scena);
 
+	QListWidgetItem *item;
+	QString pic, line, prefixPath;
 
 	switch (Scena){
 	case 0:
@@ -314,13 +316,59 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		cmdGetWineDesktopMus->installEventFilter(this);
 		cmdGetWineDesktopVid->installEventFilter(this);
 
+		prefixPath = db_prefix->getPath(var1);
+		line = "C: ";
+		line.append(prefixPath);
+		line.append(tr("\nType: "));
+		line.append("auto");
+
+		pic=this->getDrivePic("auto");
+
+		item = new QListWidgetItem(loadIcon(pic, ""), line, listWineDrives);
+		listWineDrives->addItem(item);
+
+		if (!db_prefix->getMountPath(var1).isEmpty()){
+			line = "D: ";
+			line.append(db_prefix->getMountPath(var1));
+			line.append(tr("\nType: "));
+			line.append("cdrom");
+
+			pic=this->getDrivePic("cdrom");
+
+			item = new QListWidgetItem(loadIcon(pic, ""), line, listWineDrives);
+			listWineDrives->addItem(item);
+		}
+
+		line = "Z: /";
+		line.append(tr("\nType: "));
+		line.append("auto");
+
+		pic=this->getDrivePic("auto");
+
+		item = new QListWidgetItem(loadIcon(pic, ""), line, listWineDrives);
+		listWineDrives->addItem(item);
+
+		line = "H: /home/brezerk/.config/q4wine/tmp";
+		line.append(tr("\nType: "));
+		line.append("auto");
+
+		pic=this->getDrivePic("auto");
+
+		item = new QListWidgetItem(loadIcon(pic, ""), line, listWineDrives);
+		listWineDrives->addItem(item);
+
+		txtWineDesktop->setText(QString("%1/Desktop").arg(QDir::homePath()));
+		txtWineDesktopDoc->setText(QDir::homePath());
+		txtWineDesktopMus->setText(QDir::homePath());
+		txtWineDesktopPic->setText(QDir::homePath());
+		txtWineDesktopVid->setText(QDir::homePath());
 
 		break;
 	case 3:
 		TotalPage=10;
 		this->var1=var1;
 
-		QString prefixPath = db_prefix->getPath(var1);
+		prefixPath = db_prefix->getPath(var1);
 		if (prefixPath.isEmpty()){
 			qDebug()<<" [EE] Cant get prefix path: "<<var1;
 			return;
@@ -632,6 +680,8 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 		this->widgetCreateFakeDrive3->resize(this->widgetFrame->width(), this->widgetFrame->height());
 		this->widgetCreateFakeDrive4->resize(this->widgetFrame->width(), this->widgetFrame->height());
 		this->widgetCreateFakeDrive5->resize(this->widgetFrame->width(), this->widgetFrame->height());
+		this->widgetCreateFakeDrive6->resize(this->widgetFrame->width(), this->widgetFrame->height());
+		this->widgetCreateFakeDrive7->resize(this->widgetFrame->width(), this->widgetFrame->height());
 		this->widgetCreatePrefix0->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		this->widgetCreatePrefix1->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
 		this->widgetCreatePrefix2->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
@@ -1129,6 +1179,11 @@ void Wizard::nextWizardPage(){
 			prefixPath.append(getenv("USER"));
 
 			sh_cmd.clear();
+			sh_cmd.append("mkdir -p ");
+			sh_cmd.append(prefixPath);
+			sh_line.append(sh_cmd);
+
+			sh_cmd.clear();
 			sh_cmd.append(CoreLib->getWhichOut("rm"));
 			sh_cmd.append(" -f '");
 			sh_cmd.append(QString("%1/Desktop").arg(prefixPath));
@@ -1455,6 +1510,7 @@ void Wizard::nextWizardPage(){
 					if (!db_dir->isExistsByName(prefix_name, "autostart"))
 						db_dir->addDir(prefix_name, "autostart");
 
+					accept();
 				} else {
 					QApplication::restoreOverrideCursor();
 					reject();

@@ -49,7 +49,9 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 	myProcess->setWorkingDirectory (dir);
 	myProcess->start(exec, args);
 
-	// qDebug()<<exec<<args;
+#ifdef DEBUG
+	qDebug()<<"[ii] Process args: "<<exec<<args;
+#endif
 
 	return;
 }
@@ -125,42 +127,41 @@ void Process::slotError(QProcess::ProcessError err){
 }
 
 void Process::slotFinished(int, QProcess::ExitStatus exitc){
-
 	/*
-	   * This piece of code try to catch error messages.
-	   * In fact exitCode() not always can return error code
-	   * (for example kdesu\gksu)
-	   * So the beast way is to inform user about troubles is to show to him any STDERR messages.
-	   */
+	 * This piece of code try to catch error messages.
+	 * In fact exitCode() not always can return error code
+	 * (for example kdesu\gksu)
+	 * So the beast way is to inform user about troubles is to show to him any STDERR messages.
+	 */
 
-	if (!showErr)
-		accept();
+	if (showErr){
+		QString lang;
+		lang = getenv("LANG");
+		lang = lang.split(".").at(1);
 
-	QString lang;
-	lang = getenv("LANG");
-	lang = lang.split(".").at(1);
+		// If in is empty -- set UTF8 locale
+		if (lang.isEmpty())
+			lang = "UTF8";
 
-	// If in is empty -- set UTF8 locale
-	if (lang.isEmpty())
-		lang = "UTF8";
+		// Read STDERR with locale support
+		QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+		QString string = codec->toUnicode(myProcess->readAllStandardError());
 
-	// Read STDERR with locale support
-	QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
-	QString string = codec->toUnicode(myProcess->readAllStandardError());
+#ifdef DEBUG
+		qDebug()<<"[ii] Process::slotFinished STDERR: "<<codec->toUnicode(myProcess->readAllStandardError());
+		qDebug()<<"[ii] Process::slotFinished STDOUT: "<<codec->toUnicode(myProcess->readAllStandardOutput());
+#endif
 
-	qDebug()<<"STDERR"<<codec->toUnicode(myProcess->readAllStandardError());
-	qDebug()<<"STDOUT"<<codec->toUnicode(myProcess->readAllStandardOutput());
-
-	if (!string.isEmpty()){
-		if ((exitc == 0) && (myProcess->exitCode() == 0)){
-			QMessageBox::warning(this, tr("Output"), tr("It seems the process exited normally.<br><br>STDERR log:<br>%1").arg(string));
-			accept();
-		} else {
-			QMessageBox::warning(this, tr("Output"), tr("It seems the process crashed.<br><br>STDERR log:<br>%1").arg(string));
-			reject();
+		if (!string.isEmpty()){
+			if ((exitc == 0) && (myProcess->exitCode() == 0)){
+				QMessageBox::warning(this, tr("Output"), tr("It seems the process exited normally.<br><br>STDERR log:<br>%1").arg(string));
+				accept();
+			} else {
+				QMessageBox::warning(this, tr("Output"), tr("It seems the process crashed.<br><br>STDERR log:<br>%1").arg(string));
+				reject();
+			}
 		}
 	}
-
 	accept();
 
 	return;

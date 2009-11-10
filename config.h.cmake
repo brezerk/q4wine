@@ -51,6 +51,8 @@
 #cmakedefine WITH_WINETRIKS
 #cmakedefine WITH_EMBEDDED_FUSEISO
 
+#cmakedefine DEBUG
+
 /*
  * Note APP_VERS and APP_PREF automatycaly generates by cmake
  *

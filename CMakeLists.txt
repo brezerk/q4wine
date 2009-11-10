@@ -134,25 +134,21 @@ IF (${WITH_WINETRIKS} MATCHES ON )
 	SET( Q4WINE_GUI_SOURCES
 		${Q4WINE_GUI_SOURCES}
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.cpp
-#		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.cpp
 	)
 
 	SET ( Q4WINE_GUI_HEADERS
 		${Q4WINE_GUI_HEADERS}
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
-#		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
 	)
 
 	SET ( Q4WINE_GUI_MOC_HEADEDRS
 		${Q4WINE_GUI_MOC_HEADEDRS}
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
-#		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.h
 	)
 
 	SET ( Q4WINE_GUI_UI_SOURCES
 		${Q4WINE_GUI_UI_SOURCES}
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.ui
-#		${CMAKE_SOURCE_DIR}/src/temporary/winetrickshelp.ui
 	)
 ENDIF (${WITH_WINETRIKS} MATCHES ON )
 

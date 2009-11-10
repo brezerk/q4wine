@@ -320,19 +320,19 @@ void MainWindow::cmdTestWis_Click(){
 
 void MainWindow::cmdWinetricks_Click() {
 #ifndef WITH_WINETRIKS
-  QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without winetriks support.</p><p>If you wish to enable winetriks support add:</p><p> \"-DWITH_WINETRIKS=ON\" to cmake arguments.</p>"));
+	QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without winetriks support.</p><p>If you wish to enable winetriks support add:</p><p> \"-DWITH_WINETRIKS=ON\" to cmake arguments.</p>"));
 #else
-  QMessageBox::warning(this, tr("Warning"), tr("<p>Winetricks officaly NOT supported by q4wine.</p><p>There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.</p>"));
+	QMessageBox::warning(this, tr("Warning"), tr("<p>Winetricks officaly NOT supported by q4wine.</p><p>There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.</p>"));
 
-  if (CoreLib->getSetting("console", "bin").toString().isEmpty()){
-	QMessageBox::warning(this, tr("Error"), tr("<p>You do not set default console binary.</p><p>Set it into q4wine option dialog.</p>"));
-	return;
-  }
-  winetricks *w = new winetricks (cbPrefixes->currentText());
-  w->exec();
+	if (CoreLib->getSetting("console", "bin").toString().isEmpty()){
+		QMessageBox::warning(this, tr("Error"), tr("<p>You do not set default console binary.</p><p>Set it into q4wine option dialog.</p>"));
+		return;
+	}
+	winetricks *w = new winetricks (cbPrefixes->currentText());
+	w->exec();
 #endif
 
-  return;
+	return;
 }
 
 void MainWindow::cbPrefixes_Change(QString currentIndexText){
@@ -340,10 +340,12 @@ void MainWindow::cbPrefixes_Change(QString currentIndexText){
 		return;
 
 	if (tbwGeneral->currentIndex()==2){
-	QList<QTreeWidgetItem *> found = twPrograms->findItems(currentIndexText, Qt::MatchWildcard, 0);
-	if (found.count()>0)
-		twPrograms->setCurrentItem(found.at(0));
-}
+		QList<QTreeWidgetItem *> found = twPrograms->findItems(currentIndexText, Qt::MatchWildcard, 0);
+		if (found.count()>0){
+			twPrograms->setCurrentItem(found.at(0));
+			this->twPrograms_ItemClick(found.at(0), 0);
+		}
+	}
 	return;
 }
 
@@ -381,7 +383,8 @@ void MainWindow::lstIcons_ItemClick(QListWidgetItem * item){
 	result=db_icon->getByName(treeItem->text(0), "", item->text());
   }
 
-  lblIconInfo0->setText(tr("Program: %1<br> Description: %2").arg(result.at(10).split('/').last().split('\\').last()) .arg(result.at(2)));
+  lblIconInfo0->setText(tr("Program: %1<br> Args: %2").arg(result.at(10).split('/').last().split('\\').last()) .arg(result.at(9)));
+  lblIconInfo2->setText(tr("Description: %1").arg(result.at(2)));
 
   QString useconsole;
   if (result.at(7)=="1"){
@@ -723,8 +726,9 @@ void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
   QList<QStringList> iconsList;
 
   lstIcons->clear();
-  lblIconInfo0->setText(tr("Program:<br> Description:"));
+  lblIconInfo0->setText(tr("Program:<br> Args:"));
   lblIconInfo1->setText(tr("Runs in console:<br> Desktop size:"));
+  lblIconInfo2->setText(tr("Description:"));
 
   if (!item)
 	return;
@@ -1594,11 +1598,23 @@ void MainWindow::cmdCreateFake_Click(){
 
 
 void MainWindow::cmdUpdateFake_Click(){
-  Wizard *createFakeDriveWizard = new Wizard(3, cbPrefixes->currentText());
-  if (createFakeDriveWizard->exec()==QDialog::Accepted){
-	updateDtabaseConnectedItems(cbPrefixes->currentIndex());
-  }
-  return;
+	QString prefixPath = db_prefix->getPath(cbPrefixes->currentText());
+
+	QString sysregPath;
+	sysregPath.append(prefixPath);
+	sysregPath.append("/system.reg");
+
+	QFile sysreg_file (sysregPath);
+
+	if (!sysreg_file.exists()){
+		QMessageBox::warning(this, tr("Error"), tr("Sorry, no fake drive configuration found.<br>Create fake drive configuration before update it!"));
+	} else {
+		Wizard *createFakeDriveWizard = new Wizard(3, cbPrefixes->currentText());
+		if (createFakeDriveWizard->exec()==QDialog::Accepted){
+			updateDtabaseConnectedItems(cbPrefixes->currentIndex());
+		}
+	}
+	return;
 }
 
 void MainWindow::cmdClearFilter_Click(){

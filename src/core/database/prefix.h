@@ -54,14 +54,14 @@ class Prefix
 	 /*! \brief This is calss constructor.
 	  */
 	  Prefix();
-  
+
 	 /*! \brief This function gets requested table fields from table.
 	  *
 	  * \param  fields  List of table fields names.
 	  * \return Return QList of QStringList with selected value or -1 on error.
 	  */
 	  QList<QStringList> getFields(const QStringList fields) const;
-  
+
 	 /*! \brief This function get requested table fields by keys value from table.
 	  *
 	  * \param  fields  A table fields names.
@@ -70,7 +70,7 @@ class Prefix
 	  * \return Return a list of table fields value or -1 on error.
 	  */
 	  QList<QStringList> getFieldsByKey(const QStringList fields, const QStringList keys,  const QStringList vals) const;
-  
+
 	 /*! \brief This function gets all table fields by key value from table.
 	  *
 	  * \param  key    A table key field name.
@@ -78,7 +78,7 @@ class Prefix
 	  * \return Return a list of table fields value or -1 on error.
 	  */
 	  QList<QStringList> getFieldsByKey(const QString key, const QString val) const;
-  
+
 	 /*! \brief This function get all fields from prefix table.
 	  *
 	  * \return Return a list of table fields value or -1 on error.
@@ -141,7 +141,14 @@ class Prefix
 	  */
 	  bool addPrefix(const QString prefix_name, const QString prefix_path="", const QString wine_exec="", const QString wine_server="", const QString wine_loader="", const QString wine_dllpath="", const QString cdrom_mount="", const QString cdrom_drive="") const;
 
-	 /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
+	 /*! \brief This function check is reccord exists by prefix name or not.
+	  *
+	  * \param  name    A prefix name value.
+	  * \return Return true if exists.
+	  */
+	  bool isExistsByName(const QString prefix_name) const;
+
+	  /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
 	  *
 	  * \param  prefix_name        A prefix name value.
 	  * \param  prefix_path        A prefix path value.
@@ -156,26 +163,18 @@ class Prefix
 	  */
 	  bool updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive, const QString old_prefix_name) const;
 
+  protected:
+	 //! This variable defines which table is used by class
+	  QString _TABLE;
 
-	 /*! \brief This function executes requested query.
+	  /*! \brief This function executes requested query.
 	  *
 	  * \param  SQL Query
 	  * \return Return true on success
 	  */
 	  bool updateQuery(QSqlQuery *sqlQuery) const;
 
-	 /*! \brief This function check is reccord exists by prefix name or not.
-	  *
-	  * \param  name    A prefix name value.
-	  * \return Return true if exists.
-	  */
-	  bool isExistsByName(const QString prefix_name) const;
 
-  protected:
-
-
-	 //! This variable defines which table is used by class
-	  QString _TABLE;
 };
 
 #endif // PREFIX_H

@@ -33,7 +33,6 @@ WineBinLauncher::WineBinLauncher(QString prefix_name, QWidget * parent, Qt::WFla
 	// Getting prefix settings by prefix_name
 	setupUi(this);
 
-	lblInfo->setText(tr("Running wine tool..."));
 	this->setWindowTitle (tr("Please wait"));
 
 	QSqlQuery query;
@@ -89,6 +88,10 @@ void WineBinLauncher::run_exec(QObject *parent, QString exe, QString exe_args, b
 	// Exec an a wine binary
 	QStringList args;
 	QString envargs;
+
+	// qDebug()<<exe<<exe_args;
+
+	lblInfo->setText(tr("Running: %1 %2").arg(WINE_APPEND).arg(exe_args));
 
 	args.append("-c");
 

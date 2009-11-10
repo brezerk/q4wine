@@ -44,6 +44,8 @@
 #include <QTextCodec>
 #include <QLibrary>
 
+#include "config.h"
+
 class Process : public QDialog, public Ui::Process
 {
 	Q_OBJECT
