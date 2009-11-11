@@ -988,15 +988,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="248"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2482"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2640"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2498"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2656"/>
         <source>Sorry. It seems icon already exists.</source>
         <translation>Mi dispiace, sembra che l&apos;icona esistà già.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="248"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2482"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2640"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2498"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2656"/>
         <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
         <translation>Mi dispiace, sembra che l&apos;icona esistà già.
 Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
@@ -1007,19 +1007,19 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation>&lt;p&gt; q4wine è stato compilato senza il supporto a winetricks.&lt;/p&gt;&lt;p&gt;Se vuoi abilitare winetriks aggiungi:&lt;/p&gt;&lt;p&gt; &quot;-DWITH_WINETRIKS=ON&quot; agli argomenti di cmake.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="557"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="560"/>
         <source>Starting %1 ...</source>
         <translation>Inizio %1 ...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="560"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="566"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="563"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="569"/>
         <source>%1 started.</source>
         <translation>%1 iniziato.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="562"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="568"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="565"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="571"/>
         <source>%1 fail to start.</source>
         <translation>non riesco ad avviare %1.</translation>
     </message>
@@ -1028,191 +1028,196 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">Programma: &lt;br&gt; Descrizione:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1463"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1464"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1467"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1468"/>
         <source>%1</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="726"/>
-        <source>Program:&lt;br&gt; Description:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="727"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="730"/>
         <source>Runs in console:&lt;br&gt; Desktop size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="828"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1072"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1112"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="731"/>
+        <source>Description:</source>
+        <translation type="unfinished">Descrizione</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="832"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1076"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1116"/>
         <source>mount [%1]</source>
         <translation>montaggio [%1]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="833"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="900"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1078"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="837"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="904"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1082"/>
         <source>[none]</source>
         <translation>[nessuno]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="868"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1113"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="872"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1117"/>
         <source>umount [%1]</source>
         <translation>smontaggio [%1]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="872"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1118"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="876"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1122"/>
         <source>umount [none]</source>
         <translation>smontaggio [nessuno]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="901"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="905"/>
         <source>No device drive specified in prefix settings.</source>
         <translation>Nessun disco specificato nei prefissi di settaggio.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="964"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2145"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2165"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2224"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="968"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2161"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2181"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2240"/>
         <source>Browse ...</source>
         <translation>Esplora ...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1117"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1121"/>
         <source>mount [none]</source>
         <translation>montaggio [nessuno]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1448"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1452"/>
         <source>Select process priority</source>
         <translation>Seleziona la priorità del processo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1448"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1452"/>
         <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Il valore della priorità deve essere&lt;br&gt;nell&apos;intervallo da PRIO_MIN (-20)&lt;br&gt;a PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Vedi &quot;man renice&quot; per dettagli.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1473"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1477"/>
         <source>reniceing...</source>
         <translation>cambio della priorita...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1477"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1481"/>
         <source>Renice fail fail</source>
         <translation>Renice faillito </translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1552"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1556"/>
         <source>Total process: %1</source>
         <translation>Processi totali: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1567"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1571"/>
         <source>There are other Fake drive installed in %1 prefix directory.&lt;br&gt;&lt;br&gt;Do you wish to REMOVE ALL FILES from prefix folder?</source>
         <translation>Ce già un altro disco virtuale installato nella directory %1&lt;br&gt;&lt;br&gt;Vuoi RIMUOVERE TUTTI I FILE dalla directory?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1573"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1720"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1577"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1736"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>Rimozione dei vecchi dischi virtuali.&lt;br&gt;Ci può impiegare un po&apos; di tempo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1573"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1720"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1577"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1736"/>
         <source>Removing old fake drive</source>
         <translation>Rimozione vecchi dischi virtuali</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1639"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1610"/>
+        <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before update it!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1655"/>
         <source>Can&apos;t run: %1</source>
         <translation>Non posso eseguire: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1666"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1682"/>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
         <translation>Mi dispiace ma non puoi cancellare il prefisso di default</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1671"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1687"/>
         <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
         <translation>Vuoi veramente cancellare il prefisso chiamato &quot;%1&quot; e tutte le icone associate?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1699"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1715"/>
         <source>Select file to import</source>
         <translation>Selezione il file da importare</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1699"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1777"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1715"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1793"/>
         <source>Images (*.tbz)</source>
         <translation>Immagini (*.tbz)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1715"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1731"/>
         <source>Do you really wish to delete all old prefix files?</source>
         <translation>Vuoi veramente cancellare tutti i vecchi file di prefisso?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1736"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1752"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
         <translation>Importazione del prefisso.&lt;br&gt;Ci può volere un po&apos; di tempo...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1736"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1752"/>
         <source>Importing prefix</source>
         <translation>Importazione prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1777"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1793"/>
         <source>Select file to export</source>
         <translation>Selezionare il file da esportare</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1799"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1815"/>
         <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
         <translation>Esportazione del prefisso %1.&lt;br&gt;Ci può volere un po&apos; di tempo...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1799"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1815"/>
         <source>Exporting prefix</source>
         <translation>Esportazione prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1985"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2924"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2001"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2940"/>
         <source>WIP</source>
         <translation>WIP</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1985"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2001"/>
         <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
         <translation>Mi dispiace, non ci sono ancora i wizard di installazione. Saranno implementati dalla v.0.110.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2026"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2042"/>
         <source>Open image file</source>
         <translation>Apertura file immagine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2026"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2042"/>
         <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
         <translation>Eseguibili Win32 e Shared libraries (*.exe *.dll);;Eseguibili Win32  (*.exe);;Win32 Shared libraries (*.dll)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2065"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2081"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Esportare le icone dal file eseguibile.&lt;br&gt;Può impiegare un po&apos; di tempo...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2065"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2081"/>
         <source>Exporting icon</source>
         <translation>Esportazione icone</translation>
     </message>
@@ -1221,304 +1226,319 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">%1/</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2091"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2107"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Conversione di un icona da un file binario.&lt;br&gt;Può impiegare un po&apos; di tempo...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2091"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2107"/>
         <source>Converting icon</source>
         <translation>Conversione icona</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2125"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2141"/>
         <source>Stop current</source>
         <translation>Interrompi l&apos;operazione corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2126"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2142"/>
         <source>Send TERM signal to selected process</source>
         <translation>
 Invia un segnale TERM al processo selezionato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2129"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2145"/>
         <source>Stop wine</source>
         <translation>Ferma wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2130"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2146"/>
         <source>Send TERM signal to main wine process</source>
         <translation>Invia un segnale TERM al processo principale di wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2133"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2149"/>
         <source>Refresh list</source>
         <translation>Aggiorna lista</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2134"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2150"/>
         <source>Refresh process list</source>
         <translation>Aggiorna la lista dei processi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2137"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2153"/>
         <source>Renice</source>
         <translation>Renice</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2138"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2154"/>
         <source>Set process priority</source>
         <translation>Modifica priorità del processo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2149"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2189"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2165"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2205"/>
         <source>New</source>
         <translation>Nuovo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2150"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2166"/>
         <source>Create new directory</source>
         <translation>Crea una nuova directory</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2153"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2205"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2169"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2221"/>
         <source>Rename</source>
         <translation>Rinomina</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2154"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2170"/>
         <source>Rename current directory</source>
         <translation>Rinomina la directory corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2157"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2209"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2173"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2225"/>
         <source>Delete</source>
         <translation>Cancella</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2158"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2174"/>
         <source>Delete current directory</source>
         <translation>Cancella da directory corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2161"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2177"/>
         <source>Unmount cd drive</source>
         <translation>Smonta il CD</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2162"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2178"/>
         <source>Unmounts cdrom drive</source>
         <translation>Smonta il cdrom</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2876"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2892"/>
         <source>Open CD Image files</source>
         <translation>Apri il file immagine del CD</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2876"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2892"/>
         <source>CD image files (*.iso *.nrg *.img *.bin *.mdf)</source>
         <translation>File immagine di un CD (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="846"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1086"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="850"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1090"/>
         <source>mount ...</source>
         <translation>montaggio ...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="388"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="386"/>
+        <source>Program: %1&lt;br&gt; Args: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="387"/>
+        <source>Description: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="391"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="390"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="393"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="400"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="403"/>
         <source>Runs in console: %1&lt;br&gt; Desktop size: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1618"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="729"/>
+        <source>Program:&lt;br&gt; Args:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1634"/>
         <source>This action will send a KILL(-9) signal to all wine proccess with WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
         <translation>Questa azione invierà un KILL(-9) a tutti i precessi di wine con WINEPREFIX=&apos;%1&apos;&lt;br&gt;&lt;br&gt;Sei sicuro di voler procedere?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1633"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1649"/>
         <source>This action will send a KILL(-9) signal to proccess &apos;%2&apos; pid: %1&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
         <translation>Questa azione invierà un KILL(-9) al processo &apos;%2&apos; pid: %1&lt;br&gt;&lt;br&gt;E&apos; molto alto il rischio di danneggiare lo stato di wine.&lt;br&gt;&lt;br&gt;Sei sicuro di voler procedere?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2146"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2162"/>
         <source>Bowse for application</source>
         <translation>Cerca per programma</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2166"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2225"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2182"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2241"/>
         <source>Browse for other image</source>
         <translation>Cerca per altre immagini</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2169"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2185"/>
         <source>Configure wine</source>
         <translation>Configura wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2170"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2186"/>
         <source>Configure Wine general settings</source>
         <translation>Configura le impostazioni generali di wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2173"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2189"/>
         <source>App install</source>
         <translation>Installazione Applicazioni</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2174"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2190"/>
         <source>Runs application install wizard for current prefix</source>
         <translation>Esegui il wizard di installazione per il prefisso corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2177"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2193"/>
         <source>App uninstall</source>
         <translation>Disinstalla l&apos;apllicazione</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2178"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2194"/>
         <source>Runs application uninstall wizard for current prefix</source>
         <translation>Esegui il wizard di disinstallazione per il prefisso corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2185"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2201"/>
         <source>Run</source>
         <translation>Esegui</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2186"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2190"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2202"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2206"/>
         <source>Create new icon</source>
         <translation>Crea nuova icona</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2193"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2209"/>
         <source>Cut</source>
         <translation>Taglia</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2194"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2210"/>
         <source>Cut selected icons to buffer</source>
         <translation>Taglia l&apos;icona selezionata al buffer</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2197"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2213"/>
         <source>Copy</source>
         <translation>Copia</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2198"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2214"/>
         <source>Copy selected icons to buffer</source>
         <translation>Copia l&apos;icona selezionata nel buffer</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2201"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2217"/>
         <source>Paste</source>
         <translation>Incolla</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2202"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2218"/>
         <source>Paste selected icons from buffer to selected folder</source>
         <translation>Incolla l&apos;icona selezionata dal buffer alla directory selezionata</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2206"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2222"/>
         <source>Rename current icon</source>
         <translation>Rinomina l&apos;icona attuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2210"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2226"/>
         <source>Delete current icon</source>
         <translation>Cancella l&apos;icona attuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2213"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="252"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="587"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2229"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="259"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="594"/>
         <source>Options</source>
         <translation>Opzioni</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2947"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2963"/>
         <source>Sorry. It seems directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
         <translation>Mi dispiace sembra che la directory esista già.&lt;br&gt;Per favore selezionare un altro nome o cancellare l&apos;operazione</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2880"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2896"/>
         <source>Open ISO Image file</source>
         <translation>Apri l&apos;immagine ISO</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2880"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2896"/>
         <source>iso files (*.iso)</source>
         <translation>file iso (*.iso)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2924"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2940"/>
         <source>Sorry, no install wizard yet. It&apos;l implemented at v0.110.</source>
         <translation>Mi dispiace, non ci sono ancora i wizard di installazione. Saranno implementati alla versione 0.110.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2943"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2959"/>
         <source>Enter new name for directory</source>
         <translation>Introduci un nuovo nome per la directory</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2947"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2963"/>
         <source>Sorry. It seems directory already exists.</source>
         <translation>Mi spiace sembra che la directory esista già.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2969"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2985"/>
         <source>Q4Wine</source>
         <translation>Q4Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2969"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2985"/>
         <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
 </source>
         <translation>Vuoi veramente cancellare la cartella &quot;%1&quot; e tutte le icone associate?
 </translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="384"/>
         <source>Program: %1&lt;br&gt; Description: %2</source>
-        <translation>Programma: %1&lt;br&gt; Descrizione: %2</translation>
+        <translation type="obsolete">Programma: %1&lt;br&gt; Descrizione: %2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="323"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="325"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1567"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1618"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1633"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1670"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1715"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1571"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1634"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1649"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1686"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1731"/>
         <source>Warning</source>
         <translation>Attenzione</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="328"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="901"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1639"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="1665"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2824"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2833"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="905"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1610"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1655"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="1681"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2840"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2849"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
@@ -1528,8 +1548,8 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation>&lt;p&gt;Non hai settato l&apos;eseguibile di default per la console.&lt;/p&gt;&lt;p&gt;Puoi farlo nella finestra opzioni di q4wine.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2333"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="507"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2349"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="514"/>
         <source>Run...</source>
         <translation>Esegui...</translation>
     </message>
@@ -1540,19 +1560,19 @@ Invia un segnale TERM al processo selezionato</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="30"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="547"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="554"/>
         <source>Programs</source>
         <translation>Programmi</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="52"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="390"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="571"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="397"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="578"/>
         <source>Prefixes</source>
         <translation>Prefissi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="395"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="398"/>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="57"/>
         <source>Default</source>
         <translation>Default</translation>
@@ -1563,361 +1583,361 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation>Info</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="121"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="128"/>
         <source>Clear filter text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="143"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="555"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="150"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="562"/>
         <source>Process</source>
         <translation>Processi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="181"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="188"/>
         <source>PID</source>
         <translation>PID</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="186"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="425"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="193"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="432"/>
         <source>Name</source>
         <translation>Nome</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="191"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="198"/>
         <source>Ni</source>
         <translation>Ni</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="196"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="203"/>
         <source>Prefix</source>
         <translation>Prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="204"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="211"/>
         <source>Total procces:</source>
         <translation>Processi totali:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="215"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="563"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="222"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="570"/>
         <source>Setup</source>
         <translation>Setup</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="221"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="228"/>
         <source>Current Prefix</source>
         <translation>Prefisso attuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="228"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="235"/>
         <source>Default (Windows XP)</source>
         <translation>Default (Windows XP)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="242"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="249"/>
         <source>Manage</source>
         <translation>Gestisci</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="262"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="269"/>
         <source>Base setup</source>
         <translation>Settaggi di base</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="268"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="275"/>
         <source>This is the point where you have to start when creating new empty prefix. You can also create a new or update an old fake Windows drive.</source>
         <translation>Per creare un nuovo prefisso vuoto bisogna iniziare da qui. Puoi anche creare un nuovo o aggiornare un vecchio disco virtuale di Windows.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="281"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="288"/>
         <source>Create Fake Drive</source>
         <translation>Crea un disco virtuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="291"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="298"/>
         <source>Update Fake Drive</source>
         <translation>Aggiorna un disco virtuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="312"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="319"/>
         <source>System Software</source>
         <translation>Software di sistema</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="318"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="325"/>
         <source>It (temporary) implemented by winetricks</source>
         <translation>(temporaneamente) implementato da winetricks</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="325"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="332"/>
         <source>Run Winetricks</source>
         <translation>Esegui Winetricks</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="346"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="353"/>
         <source>Core fonts</source>
         <translation>Core fonts</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="352"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="359"/>
         <source>Hi. This is development area.</source>
         <translation>Ciao, questa à unare di sviluppo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="362"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="369"/>
         <source>Test WIS</source>
         <translation>Test WIS</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="430"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="437"/>
         <source>Path</source>
         <translation>Percorso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="452"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="459"/>
         <source>&amp;File</source>
         <translation>File</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="463"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="470"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="489"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="496"/>
         <source>Tools</source>
         <translation>Strumenti</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="510"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="517"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="515"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="522"/>
         <source>Quit</source>
         <translation>Esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="518"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="525"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="523"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="530"/>
         <source>About</source>
         <translation>Informazioni su</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="526"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="533"/>
         <source>Ctrl+E</source>
         <translation>Ctrl+E</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="603"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="610"/>
         <source>First steps</source>
         <translation>Primi passi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="608"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="615"/>
         <source>Short FAQ</source>
         <translation>FAQ brevi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="613"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="620"/>
         <source>Index</source>
         <translation>Indice</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="622"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="629"/>
         <source>Website</source>
         <translation>Sito</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="631"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="638"/>
         <source>Donate</source>
         <translation>Dona</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="640"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="647"/>
         <source>Bugs</source>
         <translation>Bugs</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="467"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="474"/>
         <source>Handbook</source>
         <translation>Manuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="531"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="538"/>
         <source>About Qt</source>
         <translation>Su Qt</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="539"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="546"/>
         <source>Instal wizard</source>
         <translation>Wizard di installazione</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="542"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="549"/>
         <source>Ctrl+X</source>
         <translation>Ctrl+X</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="550"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="557"/>
         <source>Ctrl+A</source>
         <translation>Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="558"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="565"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="566"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="573"/>
         <source>Ctrl+D</source>
         <translation>Ctrl+D</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="574"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="581"/>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="579"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="586"/>
         <source>Export icons</source>
         <translation>Esporta icone</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="582"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="589"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="590"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="597"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="595"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="602"/>
         <source>CD image manager</source>
         <translation>Gestore immagini CD</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="598"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="605"/>
         <source>Ctrl+V</source>
         <translation>Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2214"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2230"/>
         <source>Modify current icon options</source>
         <translation>Modifica le opzioni dell&apos;icona corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2217"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2233"/>
         <source>mount</source>
         <translation>monta</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2218"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2234"/>
         <source>Mount image from icon options</source>
         <translation>Monta un immagine dalle opzioni delle icone</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2220"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2236"/>
         <source>umount</source>
         <translation>smonta</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2221"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2237"/>
         <source>Unmount image</source>
         <translation>smonta un immagine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2232"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2244"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2248"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2260"/>
         <source>Open icon directory</source>
         <translation>Apri la directory delle icone</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2233"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2245"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2249"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2261"/>
         <source>Open directory for current program</source>
         <translation>Apri la directory del programma attuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2236"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2237"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2248"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2249"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2252"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2253"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2264"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2265"/>
         <source>Open prefix directory</source>
         <translation>Apri la directory dei prefissi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2240"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2252"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2256"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2268"/>
         <source>Open mount point directory</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2241"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2253"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2257"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2269"/>
         <source>Open mount point directory for current prefix</source>
         <translation>Apri la directory del punto di montaggio per il prefisso corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2260"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2276"/>
         <source>Create new</source>
         <translation>Crea nuovo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2261"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2277"/>
         <source>Create new prefix</source>
         <translation>Crea nuovo prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2264"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2265"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2280"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2281"/>
         <source>Import prefix</source>
         <translation>Importa prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2269"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2270"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2285"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2286"/>
         <source>Export prefix</source>
         <translation>Esporta prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2274"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2275"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2290"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2291"/>
         <source>Delete prefix</source>
         <translation>Cancella prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2279"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2280"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2295"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2296"/>
         <source>Edit prefix settings</source>
         <translation>Modifica impostazioni prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2303"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2355"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2319"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2371"/>
         <source>Mount iso...</source>
         <translation>Monta iso...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2314"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2347"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2369"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2330"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2363"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2385"/>
         <source>Browser</source>
         <translation>Browser</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2319"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2351"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2373"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2335"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2367"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2389"/>
         <source>Wine browser</source>
         <translation>Browser di wine</translation>
     </message>
@@ -1930,39 +1950,39 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation type="obsolete">:/%1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2438"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2454"/>
         <source>Delete Icon</source>
         <translation>Cancella icona</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2438"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2454"/>
         <source>Do you want to delete all selected icons?</source>
         <translation>Vuoi cancellare tutte le icone selezionate?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2478"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2494"/>
         <source>Enter new icon name</source>
         <translation>Entre un nuovo nome per l&apos;icona</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2478"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2494"/>
         <source>Icon name:</source>
         <translation>Nome icona:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2818"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2834"/>
         <source>Enter new directory name</source>
         <translation>Entra un nuovo nome per la directory</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2818"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2943"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2834"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2959"/>
         <source>Directory name:</source>
         <translation>Nome directory:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2824"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2833"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2840"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2849"/>
         <source>Sorry, but directory named %1 already exists.</source>
         <translation>Mi dispiace ma la directory %1 esiste già.</translation>
     </message>
@@ -2101,76 +2121,76 @@ Nota: lasciare in bianco per i default</translation>
 <context>
     <name>Process</name>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="78"/>
-        <location filename="../q4wine-gui/process.cpp" line="82"/>
-        <location filename="../q4wine-gui/process.cpp" line="85"/>
-        <location filename="../q4wine-gui/process.cpp" line="88"/>
-        <location filename="../q4wine-gui/process.cpp" line="91"/>
-        <location filename="../q4wine-gui/process.cpp" line="94"/>
-        <location filename="../q4wine-gui/process.cpp" line="97"/>
-        <location filename="../q4wine-gui/process.cpp" line="104"/>
-        <location filename="../q4wine-gui/process.cpp" line="107"/>
-        <location filename="../q4wine-gui/process.cpp" line="110"/>
-        <location filename="../q4wine-gui/process.cpp" line="113"/>
-        <location filename="../q4wine-gui/process.cpp" line="116"/>
-        <location filename="../q4wine-gui/process.cpp" line="119"/>
+        <location filename="../q4wine-gui/process.cpp" line="80"/>
+        <location filename="../q4wine-gui/process.cpp" line="84"/>
+        <location filename="../q4wine-gui/process.cpp" line="87"/>
+        <location filename="../q4wine-gui/process.cpp" line="90"/>
+        <location filename="../q4wine-gui/process.cpp" line="93"/>
+        <location filename="../q4wine-gui/process.cpp" line="96"/>
+        <location filename="../q4wine-gui/process.cpp" line="99"/>
+        <location filename="../q4wine-gui/process.cpp" line="106"/>
+        <location filename="../q4wine-gui/process.cpp" line="109"/>
+        <location filename="../q4wine-gui/process.cpp" line="112"/>
+        <location filename="../q4wine-gui/process.cpp" line="115"/>
+        <location filename="../q4wine-gui/process.cpp" line="118"/>
+        <location filename="../q4wine-gui/process.cpp" line="121"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="78"/>
+        <location filename="../q4wine-gui/process.cpp" line="80"/>
         <source>It seems procces fail.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</source>
         <translation>Sembra che il processo sia fallito.&lt;br&gt;&lt;br&gt;Log errori:&lt;br&gt;%1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="82"/>
-        <location filename="../q4wine-gui/process.cpp" line="104"/>
+        <location filename="../q4wine-gui/process.cpp" line="84"/>
+        <location filename="../q4wine-gui/process.cpp" line="106"/>
         <source>Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program.</source>
         <translation>Processo: il processo non è stato avviato. O il programma è mancante o non hai abbastanza permessi per eseguirlo.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="85"/>
-        <location filename="../q4wine-gui/process.cpp" line="107"/>
+        <location filename="../q4wine-gui/process.cpp" line="87"/>
+        <location filename="../q4wine-gui/process.cpp" line="109"/>
         <source>Process: The process crashed some time after starting successfully.</source>
         <translation>Processo: il precesso ha avuto un crash dopo essere stato avviato correttamente.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="91"/>
-        <location filename="../q4wine-gui/process.cpp" line="113"/>
+        <location filename="../q4wine-gui/process.cpp" line="93"/>
+        <location filename="../q4wine-gui/process.cpp" line="115"/>
         <source>Process: An error occurred when attempting to read from the process. For example, the process may not be running.</source>
         <translation>Processo: un errore si è verificato mentre si cercava di leggere dal processo. Ad esempio il processo potrebbe non essere in esecuzione.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="94"/>
-        <location filename="../q4wine-gui/process.cpp" line="116"/>
+        <location filename="../q4wine-gui/process.cpp" line="96"/>
+        <location filename="../q4wine-gui/process.cpp" line="118"/>
         <source>Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel.</source>
         <translation>Processo: un errore si è verificato tentando di scrivere al processo. Per esempio il processo potrebbe non essere in esecuzione o potrebbe avere il canale di input chiuso.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="97"/>
-        <location filename="../q4wine-gui/process.cpp" line="119"/>
+        <location filename="../q4wine-gui/process.cpp" line="99"/>
+        <location filename="../q4wine-gui/process.cpp" line="121"/>
         <source>Process: An unknown error occurred. This is the default return value of error().</source>
         <translation>Processo: si è verificato un errore sconosciuto. Questo è il valore di default di error().</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="156"/>
-        <location filename="../q4wine-gui/process.cpp" line="159"/>
+        <location filename="../q4wine-gui/process.cpp" line="157"/>
+        <location filename="../q4wine-gui/process.cpp" line="160"/>
         <source>Output</source>
         <translation>Output</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="156"/>
+        <location filename="../q4wine-gui/process.cpp" line="157"/>
         <source>It seems the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
         <translation>Sembra che il processo sia terminato normalmente.&lt;br&gt;&lt;br&gt;STDERR.log:&lt;br&gt;%1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="159"/>
+        <location filename="../q4wine-gui/process.cpp" line="160"/>
         <source>It seems the process crashed.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
         <translation>Sembra che il processo abbia subito un crash.&lt;br&gt;&lt;br&gt;STDERR.log:&lt;br&gt;%1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="88"/>
-        <location filename="../q4wine-gui/process.cpp" line="110"/>
+        <location filename="../q4wine-gui/process.cpp" line="90"/>
+        <location filename="../q4wine-gui/process.cpp" line="112"/>
         <source>Process: The last waitFor...() function timed out.</source>
         <translation>Processo: timeout dell&apos;ultima funzione waitFor...().</translation>
     </message>
@@ -2192,26 +2212,26 @@ Nota: lasciare in bianco per i default</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="914"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="948"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2897"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="918"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="952"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2913"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 montato con successo.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="916"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="950"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2899"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="920"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="954"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2915"/>
         <source>Fail to mount %1.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2864"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2880"/>
         <source>Drive successfully umounted.</source>
         <translation>Disco smontato con successo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="2866"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="2882"/>
         <source>Fail to umount drive.</source>
         <translation>Smontaggio del disco fallito.</translation>
     </message>
@@ -2256,34 +2276,34 @@ Nota: lasciare in bianco per i default</translation>
         <translation type="obsolete">DISPLAY=%1 </translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/main.cpp" line="660"/>
-        <location filename="../q4wine-lib/main.cpp" line="739"/>
+        <location filename="../q4wine-lib/main.cpp" line="671"/>
+        <location filename="../q4wine-lib/main.cpp" line="766"/>
         <source>It seems no mount point was set in prefix options.&lt;br&gt;You might need to set it manualy.</source>
         <translation>Sembra che nessun punto di montaggio sia settato nelle opzioni del prefisso.&lt;br&gt;Devi settarlo manualmente.</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/main.cpp" line="724"/>
+        <location filename="../q4wine-lib/main.cpp" line="749"/>
         <source>Mounting %1 into %2</source>
         <translation>Montaggio di %1 in %2</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/main.cpp" line="724"/>
-        <location filename="../q4wine-lib/main.cpp" line="759"/>
+        <location filename="../q4wine-lib/main.cpp" line="749"/>
+        <location filename="../q4wine-lib/main.cpp" line="792"/>
         <source>Mounting...</source>
         <translation>Montaggio...</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/main.cpp" line="829"/>
+        <location filename="../q4wine-lib/main.cpp" line="862"/>
         <source>It seems the process crashed. STDERR log: %1</source>
         <translation>Sembra che il processo abbia causato un crash. STDERR.log: %1</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="167"/>
         <location filename="../main.cpp" line="184"/>
-        <location filename="../q4wine-lib/main.cpp" line="841"/>
-        <location filename="../q4wine-lib/main.cpp" line="845"/>
-        <location filename="../q4wine-lib/main.cpp" line="860"/>
-        <location filename="../q4wine-lib/main.cpp" line="863"/>
+        <location filename="../q4wine-lib/main.cpp" line="874"/>
+        <location filename="../q4wine-lib/main.cpp" line="878"/>
+        <location filename="../q4wine-lib/main.cpp" line="893"/>
+        <location filename="../q4wine-lib/main.cpp" line="896"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
@@ -2292,7 +2312,7 @@ Nota: lasciare in bianco per i default</translation>
         <translation type="obsolete">env WINEPREFIX=&quot;%1&quot; wineserver -kill</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/main.cpp" line="880"/>
+        <location filename="../q4wine-lib/main.cpp" line="913"/>
         <source>Can&apos;t run: %1</source>
         <translation>Non posso eseguire: %1</translation>
     </message>
@@ -2323,164 +2343,174 @@ Nota: lasciare in bianco per i default</translation>
         <translation>&lt;nessuno&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="144"/>
+        <location filename="../q4wine-cli/main.cpp" line="141"/>
         <source>Prefix named &quot;%1&quot; not exists. Run &quot;q4wine-cli -pl&quot; for prefix list.</source>
         <translation>Il prefisso &quot;%1&quot; non esiste. Esegui &quot;q4wine-cli -pl&quot; per la lista dei prefissi.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="222"/>
-        <location filename="../q4wine-cli/main.cpp" line="277"/>
-        <location filename="../q4wine-cli/main.cpp" line="289"/>
-        <location filename="../q4wine-cli/main.cpp" line="320"/>
-        <location filename="../q4wine-cli/main.cpp" line="334"/>
-        <location filename="../q4wine-cli/main.cpp" line="374"/>
-        <location filename="../q4wine-cli/main.cpp" line="424"/>
+        <location filename="../q4wine-cli/main.cpp" line="219"/>
+        <location filename="../q4wine-cli/main.cpp" line="274"/>
+        <location filename="../q4wine-cli/main.cpp" line="286"/>
+        <location filename="../q4wine-cli/main.cpp" line="317"/>
+        <location filename="../q4wine-cli/main.cpp" line="331"/>
+        <location filename="../q4wine-cli/main.cpp" line="371"/>
+        <location filename="../q4wine-cli/main.cpp" line="421"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>Nessun prefisso impostato. Imposta un prefisso con &quot;-p &lt;nome prefisso&gt;&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="227"/>
+        <location filename="../q4wine-cli/main.cpp" line="224"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
         <translation>Nessuna icona selezionata. Selezione l&apos;icona con &quot;-i &lt;nome icona&gt;&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="232"/>
+        <location filename="../q4wine-cli/main.cpp" line="229"/>
         <source>Icon named &quot;%1&quot; not exists.  Run &quot;q4wine-cli -il&quot; for icon list.</source>
         <translation>L&apos;icona &quot;%1&quot; non esiste. Esegui &quot;q4wine-cli -il&quot; per la lista delle icone.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="247"/>
+        <location filename="../q4wine-cli/main.cpp" line="244"/>
         <source>Wine process list</source>
         <translation>Lista dei processi di Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="249"/>
+        <location filename="../q4wine-cli/main.cpp" line="246"/>
         <source>Wine process list for &quot;%1&quot; prefix</source>
         <translation>lista dei processi di wine per il prefisso &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="253"/>
+        <location filename="../q4wine-cli/main.cpp" line="250"/>
         <source>PID</source>
         <translation>PID</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="253"/>
+        <location filename="../q4wine-cli/main.cpp" line="250"/>
         <source>Nice</source>
         <translation>Nice</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="253"/>
-        <location filename="../q4wine-cli/main.cpp" line="266"/>
-        <location filename="../q4wine-cli/main.cpp" line="282"/>
-        <location filename="../q4wine-cli/main.cpp" line="304"/>
-        <location filename="../q4wine-cli/main.cpp" line="313"/>
+        <location filename="../q4wine-cli/main.cpp" line="250"/>
+        <location filename="../q4wine-cli/main.cpp" line="263"/>
+        <location filename="../q4wine-cli/main.cpp" line="279"/>
+        <location filename="../q4wine-cli/main.cpp" line="301"/>
+        <location filename="../q4wine-cli/main.cpp" line="310"/>
         <source>Name</source>
         <translation>Nome</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="253"/>
+        <location filename="../q4wine-cli/main.cpp" line="250"/>
         <source>Prefix path</source>
         <translation>Percorso del prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="265"/>
+        <location filename="../q4wine-cli/main.cpp" line="262"/>
         <source>Prefix list</source>
         <translation>Lista dei prefissi</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="266"/>
-        <location filename="../q4wine-cli/main.cpp" line="313"/>
+        <location filename="../q4wine-cli/main.cpp" line="263"/>
+        <location filename="../q4wine-cli/main.cpp" line="310"/>
         <source>Path</source>
         <translation>Percorso</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="281"/>
+        <location filename="../q4wine-cli/main.cpp" line="278"/>
         <source>Prefix &quot;%1&quot; has following dir list</source>
         <translation>Il prefisso &quot;%1&quot; ha la seguente lista di directory</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="294"/>
+        <location filename="../q4wine-cli/main.cpp" line="291"/>
         <source>Dir named &quot;%1&quot; not exists. Run &quot;q4wine-cli -dl&quot; for dir list.</source>
         <translation>La directory &quot;%1&quot; non esiste. Esegui &quot;q4wine-cli -dl&quot; per la lista delle directory.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="300"/>
+        <location filename="../q4wine-cli/main.cpp" line="297"/>
         <source>Prefix &quot;%1&quot; has following icon list</source>
         <translation>Il prefisso &quot;%1&quot; ha la seguente lista di icone</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="302"/>
+        <location filename="../q4wine-cli/main.cpp" line="299"/>
         <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
         <translation>Il prefisso &quot;%1&quot; ha la seguente lista di icone nella directory &quot;%2&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="304"/>
+        <location filename="../q4wine-cli/main.cpp" line="301"/>
         <source>Description</source>
         <translation>Descrizione</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="312"/>
+        <location filename="../q4wine-cli/main.cpp" line="309"/>
         <source>q4wine has following CD images in database</source>
         <translation>q4wine ha le seguenti immagini CD nel database</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="324"/>
+        <location filename="../q4wine-cli/main.cpp" line="321"/>
         <source>Killing prefix &quot;%1&quot; wineserver.</source>
         <translation>Sto terminado il wineserver con prefisso &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="340"/>
-        <location filename="../q4wine-cli/main.cpp" line="380"/>
-        <location filename="../q4wine-cli/main.cpp" line="404"/>
+        <location filename="../q4wine-cli/main.cpp" line="337"/>
+        <location filename="../q4wine-cli/main.cpp" line="377"/>
+        <location filename="../q4wine-cli/main.cpp" line="401"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>Nessun punto di montaggio impostato nella configurazione del prefisso.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="346"/>
+        <location filename="../q4wine-cli/main.cpp" line="343"/>
         <source>No cdrom drive set in prefix configuration.</source>
         <translation>Nessun cdrom impostato nella configurazione del prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="349"/>
+        <location filename="../q4wine-cli/main.cpp" line="346"/>
         <source>Mounting drive &quot;%1&quot; into mount point &quot;%2&quot;.</source>
         <translation>Montaggio del disco &quot;%1&quot; nel punto di montaggio &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="359"/>
+        <location filename="../q4wine-cli/main.cpp" line="356"/>
         <source>No CD iamge &quot;%1&quot; exists. Run &quot;q4wine-cli -cl&quot; for CD image list.</source>
         <translation>Non esiste nessuna immagine di CD &quot;%1&quot;. Esegui &quot;q4wine-cli -cli&quot; per la lista delle immagini di CD.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="384"/>
+        <location filename="../q4wine-cli/main.cpp" line="381"/>
         <source>Umounting mount point &quot;%1&quot;.</source>
         <translation>Smontaggio del punto di montaggio &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="395"/>
+        <location filename="../q4wine-cli/main.cpp" line="392"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Montata la lista dei dischi per tutti i prefissi.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="396"/>
+        <location filename="../q4wine-cli/main.cpp" line="393"/>
         <source>Prefix</source>
         <translation>Prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="396"/>
-        <location filename="../q4wine-cli/main.cpp" line="409"/>
+        <location filename="../q4wine-cli/main.cpp" line="393"/>
+        <location filename="../q4wine-cli/main.cpp" line="406"/>
         <source>Mount point</source>
         <translation>Punto di montaggio</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="396"/>
-        <location filename="../q4wine-cli/main.cpp" line="409"/>
+        <location filename="../q4wine-cli/main.cpp" line="393"/>
+        <location filename="../q4wine-cli/main.cpp" line="406"/>
         <source>Media</source>
         <translation>Disco</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="408"/>
+        <location filename="../q4wine-cli/main.cpp" line="405"/>
         <source>Mounted media list for prefix &quot;%1&quot;</source>
         <translation>Montata la lista di dischi per il prefisso &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="478"/>
+        <source>Report %1 bugs to brezerk@gmail.com</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="479"/>
+        <source>%1 homepage: &lt;%1&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>q4wine-cli %1</source>
@@ -2520,31 +2550,31 @@ Nota: lasciare in bianco per i default</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="202"/>
-        <location filename="../q4wine-cli/main.cpp" line="415"/>
+        <location filename="../q4wine-cli/main.cpp" line="412"/>
         <source>(Copyright (C) 2008-2009, brezblock core team.</source>
         <translation>(Copyright (C) 2008-2009, brezblock core team.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="203"/>
-        <location filename="../q4wine-cli/main.cpp" line="416"/>
+        <location filename="../q4wine-cli/main.cpp" line="413"/>
         <source>License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;.</source>
         <translation>Licenza GPLv3+: GNU GPL versione 3 o sucessiva &lt;http://gnu.org/licenses/gpl.html&gt;.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="204"/>
-        <location filename="../q4wine-cli/main.cpp" line="417"/>
+        <location filename="../q4wine-cli/main.cpp" line="414"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>Questo è free software: sei libero di modificarlo e ridistribuirlo.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="205"/>
-        <location filename="../q4wine-cli/main.cpp" line="418"/>
+        <location filename="../q4wine-cli/main.cpp" line="415"/>
         <source>There is NO WARRANTY, to the extent permitted by law.</source>
         <translation>Non c&apos;è nessuna GARANZIA, ne limite permesso dalla legge.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="207"/>
-        <location filename="../q4wine-cli/main.cpp" line="420"/>
+        <location filename="../q4wine-cli/main.cpp" line="417"/>
         <source>Author: Malakhov Alexey aka John Brezerk.</source>
         <translation>Autore: Malakhow Alexey aka Jon Brezerk</translation>
     </message>
@@ -2564,154 +2594,152 @@ Nota: lasciare in bianco per i default</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="431"/>
+        <location filename="../q4wine-cli/main.cpp" line="428"/>
         <source>File &quot;%1&quot; not exists.</source>
         <translation>Il file &quot;%1&quot; non esiste.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="212"/>
-        <location filename="../q4wine-cli/main.cpp" line="454"/>
+        <location filename="../q4wine-cli/main.cpp" line="451"/>
         <source>Usage:</source>
         <translation>Uso:</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="455"/>
+        <location filename="../q4wine-cli/main.cpp" line="452"/>
         <source>  q4wine-cli [KEY]...</source>
         <translation>  q4wine-cli [KEY]...</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="456"/>
+        <location filename="../q4wine-cli/main.cpp" line="453"/>
         <source>  q4wine-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
         <translation>  q4wine-cli -p &lt;nome_prefisso&gt; [-d &lt;nome_directory&gt;] -i &lt;nome_icona&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="457"/>
+        <location filename="../q4wine-cli/main.cpp" line="454"/>
         <source>  q4wine-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [args]</source>
         <translation>  q4wine-cli -p &lt;nome_prefisso&gt; -b &lt;percorso_eseguibile_windows&gt; [argomenti]</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="458"/>
+        <location filename="../q4wine-cli/main.cpp" line="455"/>
         <source>Console utility for wine applications and prefixes management.</source>
         <translation>Console per la gestione delle applicazioni wine e dei prefissi.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="215"/>
-        <location filename="../q4wine-cli/main.cpp" line="459"/>
+        <location filename="../q4wine-cli/main.cpp" line="456"/>
         <source>KEYs list:</source>
         <translation>Lista delle chiavi:</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="216"/>
-        <location filename="../q4wine-cli/main.cpp" line="460"/>
+        <location filename="../q4wine-cli/main.cpp" line="457"/>
         <source>display this help and exit</source>
         <translation>Mostra questo aiuto e esci</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="217"/>
-        <location filename="../q4wine-cli/main.cpp" line="461"/>
+        <location filename="../q4wine-cli/main.cpp" line="458"/>
         <source>output version information and exit</source>
         <translation>mostra informazioni sulla versione e esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="462"/>
+        <location filename="../q4wine-cli/main.cpp" line="459"/>
         <source>output wine process list for current prefix or for all prefixes and exit </source>
         <translation>mostra la lista dei processi wine per il prefisso corrente o per tutti i prefissi e esci </translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="463"/>
+        <location filename="../q4wine-cli/main.cpp" line="460"/>
         <source>sets the current prefix name</source>
         <translation>imposta il prefisso corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="464"/>
+        <location filename="../q4wine-cli/main.cpp" line="461"/>
         <source>sets the current direcory name</source>
         <translation>imposta la directory corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="465"/>
+        <location filename="../q4wine-cli/main.cpp" line="462"/>
         <source>sets the current icon name</source>
         <translation>imposta l&apos;icona corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="466"/>
+        <location filename="../q4wine-cli/main.cpp" line="463"/>
         <source>sets the cd iamge name</source>
         <translation>imposta l&apos;immagine del CD</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="467"/>
+        <location filename="../q4wine-cli/main.cpp" line="464"/>
         <source>sets the path to windows binary for execute with current prefix settings</source>
         <translation>imposta il percorso al file di windows per l&apos;esecuzione con le attuali impostazioni del prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="479"/>
+        <location filename="../q4wine-cli/main.cpp" line="476"/>
         <source> -1 if serious troubles</source>
         <translation>-1 se ci sono problemi gravi</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="221"/>
-        <location filename="../q4wine-cli/main.cpp" line="482"/>
         <source>q4wine homepage: &lt;%1&gt;</source>
         <translation>homepage di q4wine: &lt;%1&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="468"/>
+        <location filename="../q4wine-cli/main.cpp" line="465"/>
         <source>sends -9 term signal to current prefix precess or for all prefixes processes</source>
         <translation>invia un segnale -9 al processo del prefisso attuale o a tutti i processi di ogni prefisso.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="469"/>
+        <location filename="../q4wine-cli/main.cpp" line="466"/>
         <source>output all exesting prefixes names and exit</source>
         <translation>Mostra tutti i prefissi e esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="470"/>
+        <location filename="../q4wine-cli/main.cpp" line="467"/>
         <source>output all exesting dir names for current prefix and exit</source>
         <translation>mostra tutte le directory esistenti per il prefisso corrente e esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="471"/>
+        <location filename="../q4wine-cli/main.cpp" line="468"/>
         <source>output all exesting icon names for current prefix/directory and exit</source>
         <translation>mostra tutte le icone esistenti per il prefisso/directory corrente e esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="472"/>
+        <location filename="../q4wine-cli/main.cpp" line="469"/>
         <source>output all cd images list and exit</source>
         <translation>mostra la lista di tutte le immagini cd e esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="473"/>
+        <location filename="../q4wine-cli/main.cpp" line="470"/>
         <source>output all mounted media for current prefix or all prefixes and exit</source>
         <translation>mostra tutti i dischi montati per il profilo corrente o per tutti i profili ed esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="474"/>
+        <location filename="../q4wine-cli/main.cpp" line="471"/>
         <source>mount an cd iamage or drive for current prefix and exit</source>
         <translation>monta un immagine CD o un disco per il prefisso corrente ed esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="475"/>
+        <location filename="../q4wine-cli/main.cpp" line="472"/>
         <source>umount an cd iamage or drive for current prefix and exit</source>
         <translation>smonta un immagine cd o un disco per il prefisso corrente ed esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="477"/>
+        <location filename="../q4wine-cli/main.cpp" line="474"/>
         <source>Exit status:</source>
         <translation>Stato di uscita:</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="478"/>
+        <location filename="../q4wine-cli/main.cpp" line="475"/>
         <source>  0 if OK,</source>
         <translation>0 se Ok</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="220"/>
-        <location filename="../q4wine-cli/main.cpp" line="481"/>
         <source>Report q4wine bugs to brezerk@gmail.com</source>
         <translation>Segnala eventuali bug di q4wine a brezerk@gmail.com</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="222"/>
-        <location filename="../q4wine-cli/main.cpp" line="483"/>
+        <location filename="../q4wine-cli/main.cpp" line="480"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
         <translation>Aiuto generale sull&apos;uso di programmi GNU: &lt;http://www.gnu.org/gethelp/&gt;</translation>
     </message>
@@ -2955,28 +2983,32 @@ Nota: lasciare in bianco per i default</translation>
 <context>
     <name>WineBinLauncher</name>
     <message>
-        <location filename="../core/winebinlauncher.cpp" line="36"/>
         <source>Running wine tool...</source>
-        <translation>Esegui strumenti wine...</translation>
+        <translation type="obsolete">Esegui strumenti wine...</translation>
     </message>
     <message>
-        <location filename="../core/winebinlauncher.cpp" line="37"/>
+        <location filename="../core/winebinlauncher.cpp" line="36"/>
         <source>Please wait</source>
         <translation>Per favore attendi</translation>
     </message>
     <message>
-        <location filename="../core/winebinlauncher.cpp" line="164"/>
-        <location filename="../core/winebinlauncher.cpp" line="166"/>
+        <location filename="../core/winebinlauncher.cpp" line="96"/>
+        <source>Running: %1 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../core/winebinlauncher.cpp" line="173"/>
+        <location filename="../core/winebinlauncher.cpp" line="175"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
     <message>
-        <location filename="../core/winebinlauncher.cpp" line="164"/>
+        <location filename="../core/winebinlauncher.cpp" line="173"/>
         <source>It seems procces fail.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</source>
         <translation>Sembra che il processo sia fallito. &lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</translation>
     </message>
     <message>
-        <location filename="../core/winebinlauncher.cpp" line="166"/>
+        <location filename="../core/winebinlauncher.cpp" line="175"/>
         <source>It seems procces fail.&lt;br&gt;&lt;br&gt;Cant read STDERR message.&lt;br&gt;%1</source>
         <translation>Sembra che il processo sia fallito.&lt;br&gt;&lt;br&gt; Non posso leggere i messaggi STDERR.&lt;br&gt;%1</translation>
     </message>
@@ -3044,16 +3076,16 @@ Nota: lasciare in bianco per i default</translation>
     <name>Wizard</name>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="747"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="924"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="928"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1016"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1020"/>
         <source>&lt;none&gt;</source>
         <translation>&lt;nessuno&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1554"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="519"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="724"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="767"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="609"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="816"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="859"/>
         <source>No Proxy</source>
         <translation>Nessun Proxy</translation>
     </message>
@@ -3069,10 +3101,10 @@ Nota: lasciare in bianco per i default</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="3919"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1484"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1490"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1533"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1627"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1662"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1668"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1711"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1805"/>
         <source>Next &gt;</source>
         <translation>Prossimo &gt;</translation>
     </message>
@@ -3093,84 +3125,88 @@ Nota: lasciare in bianco per i default</translation>
         <translation type="obsolete">:/%1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="212"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="214"/>
         <source>New prefix creation wizard</source>
         <translation>Wizard per la creazione di un nuovo prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="213"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1507"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="215"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1685"/>
         <source>&lt;b&gt;Prefix creation wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Wizard per la creazione di prefissi &lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="214"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="232"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="308"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="470"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1439"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="216"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="234"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="310"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="560"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1617"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation>&lt;b&gt;Passo %1 di %2&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="230"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="232"/>
         <source>First startup wizard</source>
         <translation>Wizard per il primo avvio</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="231"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="233"/>
         <source>&lt;b&gt;First startup wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Wizard del primo avvio&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="306"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="308"/>
         <source>Fake drive creation wizard</source>
         <translation>Wizard per la creazione di un disco virtuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="307"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="309"/>
         <source>&lt;b&gt;Fake drive creation wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Wizard per la creazione di un disco virtuale&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="309"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1580"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="311"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1758"/>
         <source>&lt;p&gt;Welcome to fake drive creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Benvenuti nel wizard per la creazione di un disco virtuale.&lt;/p&gt;&lt;p&gt;Questo wizard ti aiuterà a fare tutti i passi necessari per la creazione di un disco virtuale.&lt;/p&gt;&lt;p&gt;Per favore premi il bottone &lt;b&gt;Prossimo&lt;/b&gt; per andare alla pagina sucessiva del wizard. O premi &lt;b&gt;Indietro&lt;/b&gt; per ritornare.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="444"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="322"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="333"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="343"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="352"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="492"/>
         <source>
 Type: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="459"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="507"/>
         <source>auto</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="468"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="558"/>
         <source>Fake drive update wizard</source>
         <translation>Wizard per l&apos;aggiornamento di un disco virtuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="469"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="559"/>
         <source>&lt;b&gt;Fake drive update wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Wizard per l&apos;aggiornamento di un disco virtuale&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="471"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="561"/>
         <source>&lt;p&gt;Welcome to fake drive update wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Benvenuti nel wizard per l&apos;aggiornamento di un disco virtuale.&lt;/p&gt;&lt;p&gt;Questo wizard ti aiuterà a fare tutti i passi necessari per l&apos;aggiornamento di un disco virtuale.&lt;/p&gt;&lt;p&gt;Per favore premi il bottone &lt;b&gt;Prossimo&lt;/b&gt; per andare alla pagina sucessiva del wizard. O premi &lt;b&gt;Indietro&lt;/b&gt; per ritornare.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="610"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="702"/>
         <source>Open File</source>
         <translation>Apri File</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="612"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="704"/>
         <source>Open Directory</source>
         <translation>Apri directory</translation>
     </message>
@@ -3183,92 +3219,100 @@ Type: </source>
         <translation type="obsolete">wine %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="652"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="655"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="663"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="666"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="726"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="730"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="905"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="909"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="915"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="919"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="925"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="929"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="949"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1777"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="744"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="747"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="755"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="758"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="818"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="822"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="997"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1001"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1007"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1011"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1017"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1021"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1041"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1955"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="652"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="744"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Spiacente, specifica %1 directory</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="655"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="747"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Spiacente, specifica %1 eseguibili</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="663"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="755"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation>Spiacente. la directory %1 non esiste.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="666"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="758"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation>Spiacente. l&apos;eseguibilie %1 non esiste.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="726"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="818"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Spiacente, specifica un proxy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="730"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="822"/>
         <source>Sorry, specify proxy port.</source>
         <translation>Spiacente, specifica una porta per il proxy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="905"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="997"/>
         <source>Enter prefix name first.</source>
         <translation>Devi prima inserire il prefisso.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="909"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1001"/>
         <source>Sorry. There is other prefix with same name.</source>
         <translation>Spiacente, esiste già un altro prefisso con lo stesso nome.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="915"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1007"/>
         <source>Sorry, prefix path is wrong! Directory not exists.</source>
         <translation>Spiacente, il percorso del prefisso è errato. La directory non esiste.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="919"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1011"/>
         <source>Select prefix directory first.</source>
         <translation>Selezione la directory del prefisso prima.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="925"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1017"/>
         <source>Sorry, specify mount point directory.</source>
         <translation>Spiacente, specifica la directory di montaggio.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="929"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1021"/>
         <source>Sorry, specify source device.</source>
         <translation>Spiacente, specifica il device sorgente.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1707"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1716"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1060"/>
+        <source>Can&apos;t find drive which is point to:
+&quot;%1&quot;
+
+Make shure wine can access q4wine temp directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/wizard.cpp" line="1885"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1894"/>
         <source>Joystic Axes Mappings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1707"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1716"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1885"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1894"/>
         <source>Joystic axes mappings might be defined as:
 &quot;joystic name&quot;=&quot;axes mapping&quot;
 
@@ -3279,7 +3323,7 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1777"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1955"/>
         <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3358,105 +3402,105 @@ See help for details.</source>
 &quot;OffscreenRenderingMode&quot;=&quot;%1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1447"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1625"/>
         <source>&lt;b&gt;First startup wizrd&lt;/b&gt;</source>
         <translation>&lt;b&gt;Wizard del primo avvio&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1448"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1626"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Benvenuti nel wizard per il primo avvio.&lt;/p&gt;&lt;p&gt;Questo wizard ti aiuterà a fare tutti i passi necessari per l&apos;installazione di %1.&lt;/p&gt;&lt;p&gt;Per favore premi il bottone &lt;b&gt;Prossimo&lt;/b&gt; per andare alla pagina sucessiva del wizard. O premi &lt;b&gt;Indietro&lt;/b&gt; per ritornare.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1455"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1633"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Malakhov Alexey aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General ideia comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts witch was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; inizialmente scritto da Malakhov Alexey aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;L&apos;idea generale è presa da &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; uno script scritto inizialmente da Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Inviare commenti, bugreports, etc. a [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: Il programma viene fornito assolutamente senza garanzie. Voil &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NON&lt;/span&gt;&lt;/b&gt; potete ottenere alcun support o aiuto per WineTools, Wine, installazione di programmi, Linux or Microsoft Windows dall&apos;autore.&lt;/p&gt;&lt;p&gt;Se &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;avete bisogno di aiuto &lt;/span&gt;, chiedete nella mailing lists  &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Se &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;volete supporto &lt;/span&gt;, acquistate la versione commerciale di wine : CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) per le applicazioni desktop/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1466"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1644"/>
         <source>&lt;p&gt;Please enter default wine settings.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Per favore inserisci le impostazioni di default di wine.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1497"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1570"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1634"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1675"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1748"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1812"/>
         <source>Finish</source>
         <translation>Finito</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1508"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1686"/>
         <source>&lt;p&gt;Welcome to prefix creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful Wine prefix creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Benvenuti nel wizard per la creazione di un prefisso.&lt;/p&gt;&lt;p&gt;Questo wizard ti aiuterà a fare tutti i passi necessari per la creazione di un prefisso di Wine.&lt;/p&gt;&lt;p&gt;Per favore premi il bottone &lt;b&gt;Prossimo&lt;/b&gt; per andare alla pagina sucessiva del wizard. O premi &lt;b&gt;Indietro&lt;/b&gt; per ritornare.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1538"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1716"/>
         <source>&lt;p&gt;Please check parameters listed below before clicking &lt;b&gt;Next&lt;/b&gt;:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Prefix name:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Prefix path:&lt;/b&gt; %2&lt;/p&gt;</source>
         <translation>&lt;p&gt;Per favore controlla i parametri elencati prima di cliccare &lt;b&gt;Avanti&lt;/b&gt;:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Nome Prefisso:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Percorso Prefisso:&lt;/b&gt; %2&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1540"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1718"/>
         <source>&lt;p&gt;Wine fake drive will be created.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Verra creato un disco virtuale di wine.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1543"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1721"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: %1</source>
         <translation>&lt;p&gt;&lt;b&gt;Eseguibile Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1545"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1723"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: Default</source>
         <translation>&lt;p&gt;&lt;b&gt;Eseguibile Wine&lt;/b&gt;: Default</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1548"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1726"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: %1</source>
         <translation>&lt;p&gt;&lt;b&gt;Server Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1550"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1728"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: Default</source>
         <translation>&lt;p&gt;&lt;b&gt;Server Wine&lt;/b&gt;: Default</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1553"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1731"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: %1</source>
         <translation>&lt;p&gt;&lt;b&gt;Caricatore Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1555"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1733"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: Default</source>
         <translation>&lt;p&gt;&lt;b&gt;Caricatore Wine&lt;/b&gt;: Default</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1558"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1736"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: %1</source>
         <translation>&lt;p&gt;&lt;b&gt;Percorso Dll Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1560"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1738"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: Default</source>
         <translation>&lt;p&gt;&lt;b&gt;Percorso Dll Wine&lt;/b&gt;: Default</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1563"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1741"/>
         <source>&lt;p&gt;&lt;b&gt;Quick mount options&lt;/b&gt; &lt;br&gt;&lt;b&gt;Device&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Mount point&lt;/b&gt;: %2&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Opzioni per il montaggio rapido&lt;/b&gt;&lt;br&gt;&lt;b&gt;Periferica&lt;/b&gt;:%1&lt;br&gt;&lt;b&gt;Punto di montaggio&lt;/b&gt;:%2&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1630"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1808"/>
         <source>&lt;p&gt;All ready for fake drive creation. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create facke drive. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Tutto pronto per la creazione del disco virtuale.&lt;/p&gt;&lt;p&gt;Premere il pulsante&lt;b&gt;Fine&lt;/b&gt; per creare il disco virtuale o premere &lt;b&gt; indietro&lt;/b&gt; per ritornare.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="968"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1695"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1060"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1873"/>
         <source>Warning</source>
         <translation>Attenzione</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="949"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1041"/>
         <source>Error in string:
 
 %1
@@ -3471,25 +3515,17 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="968"/>
-        <source>Can&apos;t find drive which is point to:
-&quot;%1&quot;
-
-Make shure wine can access to q4wine temp directory.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1102"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1281"/>
         <source>Updateing wine dosdrives</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1695"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1873"/>
         <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine è stato compilato senza integrare FuseIso .&lt;/p&gt;&lt;p&gt;Se vuoi compilare q4wine con integrato FuseIso aggiungi:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; agli argomenti di cmake.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1494"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1672"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Tutto pronto per finire il setup di %1.&lt;/p&gt;&lt;p&gt;Premere il pulsante&lt;b&gt;Fine&lt;/b&gt; per finire il setup o premere &lt;b&gt; indietro&lt;/b&gt; per ritornare.&lt;/p&gt;</translation>
     </message>
