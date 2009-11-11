@@ -102,9 +102,6 @@ int main(int argc, char *argv[])
 		lang.append(".qm");
 	}
 
-
-
-
 	if (!lang.isNull()){
 	   if (qtt->load(lang, i18nPath)){
 		app.installTranslator( qtt );
@@ -478,8 +475,8 @@ int main(int argc, char *argv[])
 			Qcout<<QObject::tr("  0 if OK,")<<endl;
 			Qcout<<QObject::tr(" -1 if serious troubles")<<endl;
 			Qcout<<endl;
-			Qcout<<QObject::tr("Report q4wine bugs to brezerk@gmail.com")<<endl;
-			Qcout<<QObject::tr("q4wine homepage: <%1>").arg(APP_WEBSITTE)<<endl;
+			Qcout<<QObject::tr("Report %1 bugs to brezerk@gmail.com").arg(APP_SHORT_NAME)<<endl;
+			Qcout<<QObject::tr("%1 homepage: <%1>").arg(APP_WEBSITTE).arg(APP_SHORT_NAME)<<endl;
 			Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
 		break;
 	}

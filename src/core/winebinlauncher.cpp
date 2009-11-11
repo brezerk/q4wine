@@ -89,7 +89,9 @@ void WineBinLauncher::run_exec(QObject *parent, QString exe, QString exe_args, b
 	QStringList args;
 	QString envargs;
 
-	// qDebug()<<exe<<exe_args;
+#ifdef DEBUG
+	qDebug()<<"[ii] WineBinLauncher::run_exec: arguments: "<<exe<<exe_args;
+#endif
 
 	lblInfo->setText(tr("Running: %1 %2").arg(WINE_APPEND).arg(exe_args));
 
@@ -135,6 +137,10 @@ void WineBinLauncher::run_exec(QObject *parent, QString exe, QString exe_args, b
 	envargs.append(exe_args);
 
 	args.append(envargs);
+
+#ifdef DEBUG
+	qDebug()<<"[ii] WineBinLauncher::run_exec: arguments: "<<args;
+#endif
 
 	myProcess->setWorkingDirectory(QDir::homePath());
 	myProcess->start( SH_BIN, args);

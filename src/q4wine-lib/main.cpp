@@ -529,6 +529,10 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			args.append(exec_string);
 
+#ifdef DEBUG
+			qDebug()<<"[ii] corelib::runWineBinary via ExecObj args: "<<exec<<args<<execObj.wrkdir;
+#endif
+
 			QProcess *proc;
 			proc = new QProcess();
 			return proc->startDetached( exec, args, execObj.wrkdir );
@@ -590,6 +594,10 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			exec_string.append("\" ");
 			exec_string.append(cmdargs);
 			args.append(exec_string);
+
+#ifdef DEBUG
+			qDebug()<<"[ii] corelib::runWineBinary via Requested args: "<<exec<<args<<QDir::homePath();
+#endif
 
 			QProcess *proc;
 			proc = new QProcess();
@@ -655,6 +663,9 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 	  bool corelib::mountImage(const QString image_name, const QString prefix_name) const{
 			QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
+#ifdef DEBUG
+			qDebug()<<"[ii] corelib::mountImage: mount point: "<<mount_point;
+#endif
 
 			if (mount_point.isEmpty()){
 				  this->showError(QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
@@ -669,9 +680,16 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 #ifdef _OS_FREEBSD_
 			if ((image_name.contains("/") && (!image_name.contains(".iso", Qt::CaseInsensitive)) && (!image_name.contains(".nrg", Qt::CaseInsensitive)))) {
 				  mount_string=this->getSetting("quickmount", "mount_drive_string", false).toString();
+#ifdef DEBUG
+				  qDebug()<<"[ii] corelib::mountImage:FreeBSD drive mount base string: "<<mount_string;
+#endif
 				  mount_string.replace("%MOUNT_DRIVE%", this->getEscapeString(image_name));
 			} else {
 				  mount_string=this->getSetting("quickmount", "mount_image_string", false).toString();
+#ifdef DEBUG
+				  qDebug()<<"[ii] corelib::mountImage:FreeBSD image mount base string: "<<mount_string;
+#endif
+
 				  if (!QFile(image_name).exists()){
 						mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(this->db_image->getPath(image_name)));
 				  } else {
@@ -688,23 +706,28 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 #ifdef _OS_LINUX_
 			if ((image_name.contains("/") && (!image_name.contains(".iso", Qt::CaseInsensitive)) && (!image_name.contains(".nrg", Qt::CaseInsensitive)))) {
-				  mount_string=this->getSetting("quickmount", "mount_drive_string", false).toString();
-				  mount_string.replace("%MOUNT_DRIVE%", this->getEscapeString(image_name));
+				mount_string=this->getSetting("quickmount", "mount_drive_string", false).toString();
+#ifdef DEBUG
+				qDebug()<<"[ii] corelib::mountImage:Linux drive mount base string: "<<mount_string;
+#endif
+				mount_string.replace("%MOUNT_DRIVE%", this->getEscapeString(image_name));
 			} else {
 				mount_string=this->getSetting("quickmount", "mount_image_string", false).toString();
+#ifdef DEBUG
+				qDebug()<<"[ii] corelib::mountImage:Linux image mount base string: "<<mount_string;
+#endif
 
-				  if (!QFile(image_name).exists()){
-						mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(this->db_image->getPath(image_name)));
-				  } else {
-						mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(image_name));
-				  }
+				if (!QFile(image_name).exists()){
+					mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(this->db_image->getPath(image_name)));
+				} else {
+					mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(image_name));
+				}
 
-				  mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(this->db_image->getPath(image_name)));
-				  if (image_name.right(3)=="nrg"){
-						mount_string.replace("%MOUNT_OPTIONS%", "-o  loop,offset=307200");
-				  } else {
-						mount_string.replace("%MOUNT_OPTIONS%", "-o  loop");
-				  }
+				if (image_name.right(3)=="nrg"){
+					mount_string.replace("%MOUNT_OPTIONS%", "-o  loop,offset=307200");
+				} else {
+					mount_string.replace("%MOUNT_OPTIONS%", "-o  loop");
+				}
 			}
 
 			mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());
@@ -717,7 +740,9 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			args.append("-c");
 			args.append(mount_string);
 
-			qDebug()<<args;
+#ifdef DEBUG
+			qDebug()<<"[ii] corelib::mountImage: mount args: "<<args;
+#endif
 
 			if (this->_GUI_MODE){
 				  Process *proc;
@@ -734,7 +759,9 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
    bool corelib::umountImage(const QString prefix_name) const{
 			QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
-
+#ifdef DEBUG
+			qDebug()<<"[ii] corelib::umountImage: mount point: "<<mount_point;
+#endif
 			if (mount_point.isEmpty()){
 				  this->showError(QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
 				  return FALSE;
@@ -745,6 +772,9 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			QString mount_string;
 			mount_string=this->getSetting("quickmount", "umount_string", false).toString();
+#ifdef DEBUG
+			qDebug()<<"[ii] corelib::umountImage: umount string: "<<mount_string;
+#endif
 			mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());
 			mount_string.replace("%SUDO%", getSetting("system", "sudo").toString());
 			mount_string.replace("%UMOUNT_BIN%", getSetting("system", "umount").toString());
@@ -753,6 +783,9 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			args.clear();
 			args.append("-c");
 			args.append(mount_string);
+#ifdef DEBUG
+			qDebug()<<"[ii] corelib::umountImage: umount args: "<<args;
+#endif
 
 			if (this->_GUI_MODE){
 				  Process *proc;
