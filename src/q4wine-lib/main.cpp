@@ -1003,7 +1003,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 				   string="";
 				   string.append(APP_PREF);
 				   string.append("/share/q4wine/scripts/mount_image.sh");
-				   string.append(" %MOUNT_IMAGE% %MOUNT_POINT%")
+				   string.append(" %MOUNT_IMAGE% %MOUNT_POINT%");
 			  #endif
 			break;
 			case 1:
@@ -1014,7 +1014,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 				   string="";
 				   string.append(APP_PREF);
 				   string.append("/share/q4wine/scripts/mount_image.sh");
-				   string.append(" %MOUNT_IMAGE% %MOUNT_POINT%")
+				   string.append(" %MOUNT_IMAGE% %MOUNT_POINT%");
 			   #endif
 			break;
 			case 2:
