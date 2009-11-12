@@ -2242,39 +2242,39 @@ Note: leave it blank for default.</source>
         <translation>Не можу знайти або виконати програму &apos;%1&apos;. Впевнитесь, чи доступна ця програма за змінною PATH, та перегляньте INSTALL файл щоб дізнатися про додаткові залежності.</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/main.cpp" line="671"/>
-        <location filename="../q4wine-lib/main.cpp" line="766"/>
+        <location filename="../q4wine-lib/main.cpp" line="672"/>
+        <location filename="../q4wine-lib/main.cpp" line="767"/>
         <source>It seems no mount point was set in prefix options.&lt;br&gt;You might need to set it manualy.</source>
         <translation>Здається, у параметрах префіксу не було вказано точки монтування.&lt;br&gt;Вам слід вказати її вручну.</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/main.cpp" line="749"/>
+        <location filename="../q4wine-lib/main.cpp" line="750"/>
         <source>Mounting %1 into %2</source>
         <translation>Монтуємо %1 до %2</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/main.cpp" line="749"/>
-        <location filename="../q4wine-lib/main.cpp" line="792"/>
+        <location filename="../q4wine-lib/main.cpp" line="750"/>
+        <location filename="../q4wine-lib/main.cpp" line="793"/>
         <source>Mounting...</source>
         <translation>Монтування...</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/main.cpp" line="862"/>
+        <location filename="../q4wine-lib/main.cpp" line="863"/>
         <source>It seems the process crashed. STDERR log: %1</source>
         <translation>Здається процес завершився невдало. STDERR зневадження: %1</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="135"/>
         <location filename="../main.cpp" line="152"/>
-        <location filename="../q4wine-lib/main.cpp" line="874"/>
-        <location filename="../q4wine-lib/main.cpp" line="878"/>
-        <location filename="../q4wine-lib/main.cpp" line="893"/>
-        <location filename="../q4wine-lib/main.cpp" line="896"/>
+        <location filename="../q4wine-lib/main.cpp" line="875"/>
+        <location filename="../q4wine-lib/main.cpp" line="879"/>
+        <location filename="../q4wine-lib/main.cpp" line="894"/>
+        <location filename="../q4wine-lib/main.cpp" line="897"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/main.cpp" line="913"/>
+        <location filename="../q4wine-lib/main.cpp" line="914"/>
         <source>Can&apos;t run: %1</source>
         <translation>Не можу виконати: %1</translation>
     </message>
@@ -3322,10 +3322,10 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="3919"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1662"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1619"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1625"/>
         <location filename="../q4wine-gui/wizard.cpp" line="1668"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1711"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1805"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1762"/>
         <source>Next &gt;</source>
         <translation>Вперед &gt;</translation>
     </message>
@@ -3341,7 +3341,7 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="215"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1685"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1642"/>
         <source>&lt;b&gt;Prefix creation wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер створення нового префікса&lt;/b&gt;</translation>
     </message>
@@ -3349,53 +3349,53 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
         <location filename="../q4wine-gui/wizard.cpp" line="216"/>
         <location filename="../q4wine-gui/wizard.cpp" line="234"/>
         <location filename="../q4wine-gui/wizard.cpp" line="310"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="560"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1617"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="562"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1574"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation>&lt;b&gt;Крок %1 з %2&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="704"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="706"/>
         <source>Open Directory</source>
         <translation>Відкрити каталог</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="744"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="747"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="755"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="758"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="818"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="822"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="997"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1001"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1007"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1011"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1017"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1021"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1041"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1955"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="746"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="749"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="757"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="760"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="820"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="824"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="954"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="958"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="964"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="968"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="974"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="978"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="998"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1912"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1011"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="968"/>
         <source>Select prefix directory first.</source>
         <translation>Спочатку оберіть каталог префікса.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1007"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="964"/>
         <source>Sorry, prefix path is wrong! Directory not exists.</source>
         <translation>Вибачте, ви вказали неправильний шлях префікса. Такого шляху не існує.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1686"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1643"/>
         <source>&lt;p&gt;Welcome to prefix creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful Wine prefix creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра створення префікса для Wine.&lt;/p&gt;&lt;p&gt;Цей майстер допоможе вам виконати усі кроки, необхідні для успішного створення префікса.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра, або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутись до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1675"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1748"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1812"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1632"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1705"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1769"/>
         <source>Finish</source>
         <translation>Завершити</translation>
     </message>
@@ -3405,17 +3405,17 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
         <translation>Створити фіктивний диск wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1716"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1673"/>
         <source>&lt;p&gt;Please check parameters listed below before clicking &lt;b&gt;Next&lt;/b&gt;:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Prefix name:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Prefix path:&lt;/b&gt; %2&lt;/p&gt;</source>
         <translation>&lt;p&gt;Будь ласка, перед тим, як натиснути кнопку &lt;b&gt;Далі&lt;/b&gt; перевірте параметри:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Назва префікса:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Шлях префікса:&lt;/b&gt; %2&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="997"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="954"/>
         <source>Enter prefix name first.</source>
         <translation>Спочатку введіть назву префікса.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1001"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="958"/>
         <source>Sorry. There is other prefix with same name.</source>
         <translation>Вибачте, але префікс з такою назвою вже існує.</translation>
     </message>
@@ -3456,8 +3456,8 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="747"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1016"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1020"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="973"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="977"/>
         <source>&lt;none&gt;</source>
         <translation>&lt;немає&gt;</translation>
     </message>
@@ -3570,9 +3570,9 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1554"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="609"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="816"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="859"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="611"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="818"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="861"/>
         <source>No Proxy</source>
         <translation>Без проксі-сервера</translation>
     </message>
@@ -3638,14 +3638,14 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
         <location filename="../q4wine-gui/wizard.cpp" line="322"/>
         <location filename="../q4wine-gui/wizard.cpp" line="333"/>
         <location filename="../q4wine-gui/wizard.cpp" line="343"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="352"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="492"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="354"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="494"/>
         <source>
 Type: </source>
         <translation>Тип:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="702"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="704"/>
         <source>Open File</source>
         <translation>Відкрити файл</translation>
     </message>
@@ -3658,47 +3658,47 @@ Type: </source>
         <translation type="obsolete">%1wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="744"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="746"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Будь ласка, вкажіть каталог %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="747"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="749"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Будь ласка, вкажіть виконуваний файл %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="755"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="757"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation>Вибачте, вказаного каталогу %1 не існує.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="758"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="760"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation>Вибачте, вказаного виконуваного файла %1 не існує.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="818"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="820"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Будь ласка, вкажіть вузол проксі-сервера.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="822"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="824"/>
         <source>Sorry, specify proxy port.</source>
         <translation>Будь ласка, вкажіть порт проксі-сервера.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1017"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="974"/>
         <source>Sorry, specify mount point directory.</source>
         <translation>Будь ласка, вкажіть каталог точки монтування.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1021"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="978"/>
         <source>Sorry, specify source device.</source>
         <translation>Будь ласка, вкажіть пристрій-джерело.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1041"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="998"/>
         <source>Error in string:
 
 %1
@@ -3723,79 +3723,90 @@ See help for details.</source>
 Скористайтесь допомогою для роз&apos;яснення.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1281"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1017"/>
+        <source>Can&apos;t find Wine Drive which is point to:
+&quot;%1&quot;
+
+Make shure wine can access %2 temp directory.</source>
+        <translation>Не можу знайти Wine диск, який вказує на:
+&quot;%1&quot;
+
+Впевнитесь що wine має допуск до тимчасового каталогу %2.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/wizard.cpp" line="1238"/>
         <source>Updateing wine dosdrives</source>
         <translation>Оновлення дисків wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1625"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1582"/>
         <source>&lt;b&gt;First startup wizrd&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер початкового налаштування&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1626"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1583"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра початкового налаштування.&lt;/p&gt;&lt;p&gt;За допомогою цього майстра ви зможете виконати всі кроки з початкового налаштування %1.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутися до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1633"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1590"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Malakhov Alexey aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General ideia comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts witch was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation>&lt;p&gt;Першим автором &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; був Олексій Малахов aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Загальну ідею було взято зі скриптів &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt;, автором яких є Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Програму випущено за умов дотримання &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Коментарі, повідомлення про вади, тощо, надсилайте за адресою [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Пам’ятайте&lt;/span&gt;&lt;/b&gt;: Це програмне забезпечення постачається без будь-яких гарантій. Автор &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;НЕ&lt;/span&gt;&lt;/b&gt; надає жодної підтримки або жодних довідок щодо WineTools, Wine, встановлення програм, Linux або Microsoft Windows.&lt;/p&gt;&lt;p&gt;Якщо вам &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;потрібна допомога&lt;/span&gt;, надішліть своє питання до списку розсилки за адресою &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Якщо вам &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;потрібна підтримка&lt;/span&gt;, придбайте комерційну версію wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1721"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1678"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: %1</source>
         <translation>&lt;p&gt;&lt;b&gt;Виконуваний файл Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1723"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1680"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: Default</source>
         <translation>&lt;p&gt;&lt;b&gt;Виконуваний файл Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1726"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1683"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Сервер Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1728"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1685"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Сервер Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1731"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1688"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Завантажувач Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1733"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1690"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Завантажувач Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1736"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1693"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Каталог dll Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1738"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1695"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Каталог dll Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1741"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1698"/>
         <source>&lt;p&gt;&lt;b&gt;Quick mount options&lt;/b&gt; &lt;br&gt;&lt;b&gt;Device&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Mount point&lt;/b&gt;: %2&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Параметри швидкого монтування&lt;/b&gt; &lt;br&gt;&lt;b&gt;Пристрій&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Точка монтування&lt;/b&gt;: %2&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1885"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1894"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1842"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1851"/>
         <source>Joystic Axes Mappings</source>
         <translation>Маппінг Вісей Джойстика</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1885"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1894"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1842"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1851"/>
         <source>Joystic axes mappings might be defined as:
 &quot;joystic name&quot;=&quot;axes mapping&quot;
 
@@ -3812,7 +3823,7 @@ See help for details.</source>
 Скористайтесь допомогою для роз&apos;яснення.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1955"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1912"/>
         <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
         <translation>Вибачте, Ви не можете видалити або змінити диск С:&lt;br&gt;Проте, Ви можете змінити його у диалогу налаштування Префіксу.</translation>
     </message>
@@ -3931,64 +3942,63 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="311"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1758"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1715"/>
         <source>&lt;p&gt;Welcome to fake drive creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра створення фіктивного диску.&lt;/p&gt;&lt;p&gt;Цей майстер допоможе вам виконати усі кроки, необхідні для успішного створення фіктивного диску.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра, або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутись до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="558"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="560"/>
         <source>Fake drive update wizard</source>
         <translation>Оновлення фіктивного диску</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="559"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="561"/>
         <source>&lt;b&gt;Fake drive update wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер оновлення існуючого фіктивного диску&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="561"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="563"/>
         <source>&lt;p&gt;Welcome to fake drive update wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра оновлення фіктивного диску.&lt;/p&gt;&lt;p&gt;Цей майстер допоможе вам виконати усі кроки, необхідні для успішного оновлення фіктивного диску.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра, або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутись до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1060"/>
         <source>Can&apos;t find drive which is point to:
 &quot;%1&quot;
 
 Make shure wine can access q4wine temp directory.</source>
-        <translation>Не можу знайти диск, який вказує на:
+        <translation type="obsolete">Не можу знайти диск, який вказує на:
 &quot;%1&quot;
 
 Впевнитесь що wine має допуск до тимчасового каталогу q4wine.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1644"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1601"/>
         <source>&lt;p&gt;Please enter default wine settings.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Будь ласка, встановіть типові шляхи до засобів wine.&lt;br&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1718"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1675"/>
         <source>&lt;p&gt;Wine fake drive will be created.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Буде створено фіктивний диск wine&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1808"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1765"/>
         <source>&lt;p&gt;All ready for fake drive creation. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create facke drive. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Все готово для створення фіктивного диску. &lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Завершити&lt;/b&gt; щоб створити фіктивний диск. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt; щоб повернутися і змінити обрані параметри.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1060"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1873"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1017"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1830"/>
         <source>Warning</source>
         <translation>Попередження</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1873"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1830"/>
         <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine було зібрано без підтримки вбудованного FuseIso.&lt;/p&gt;&lt;p&gt;Якщо ви бажаєте додати підтримку вбудованного FuseIso додайте:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO&quot; до аргументів cmake.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1672"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1629"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Все готово для завершення конфігурації %1. &lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Завершити&lt;/b&gt; щоб закінчити процес налаштування. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt; щоб повернутися і змінити обрані параметри.&lt;/p&gt;</translation>
     </message>
