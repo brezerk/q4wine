@@ -504,7 +504,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 				   }
 				   pic=this->getDrivePic(list.at(0));
 				} else {
-				   line.append(tr("auto"));
+				   line.append("auto");
 				   pic=this->getDrivePic("auto");
 				}
 

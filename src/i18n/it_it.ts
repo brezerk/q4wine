@@ -2298,8 +2298,8 @@ Nota: lasciare in bianco per i default.</translation>
         <translation>Sembra che il processo abbia causato un crash. STDERR.log: %1</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="167"/>
-        <location filename="../main.cpp" line="184"/>
+        <location filename="../main.cpp" line="135"/>
+        <location filename="../main.cpp" line="152"/>
         <location filename="../q4wine-lib/main.cpp" line="874"/>
         <location filename="../q4wine-lib/main.cpp" line="878"/>
         <location filename="../q4wine-lib/main.cpp" line="893"/>
@@ -2325,7 +2325,7 @@ Nota: lasciare in bianco per i default.</translation>
     <message>
         <location filename="../core/database/initdb.h" line="43"/>
         <source>Unable to load database SQLITE driver. You need to compile qt-sql with sqlite database support</source>
-        <translation>Impossibile caricare il driver del database SQLITE. Devi compilare qt-sql con il supporto al database sqlite.</translation>
+        <translation>Impossibile caricare il driver del database SQLITE. Devi compilare qt-sql con il supporto al database sqlite</translation>
     </message>
     <message>
         <source>%1/.config/%2/db/generic.dat</source>
@@ -2343,9 +2343,8 @@ Nota: lasciare in bianco per i default.</translation>
         <translation>&lt;nessuno&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="141"/>
         <source>Prefix named &quot;%1&quot; not exists. Run &quot;q4wine-cli -pl&quot; for prefix list.</source>
-        <translation>Il prefisso &quot;%1&quot; non esiste. Esegui &quot;q4wine-cli -pl&quot; per la lista dei prefissi.</translation>
+        <translation type="obsolete">Il prefisso &quot;%1&quot; non esiste. Esegui &quot;q4wine-cli -pl&quot; per la lista dei prefissi.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="219"/>
@@ -2364,9 +2363,8 @@ Nota: lasciare in bianco per i default.</translation>
         <translation>Nessuna icona selezionata. Selezione l&apos;icona con &quot;-i &lt;nome icona&gt;&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="229"/>
         <source>Icon named &quot;%1&quot; not exists.  Run &quot;q4wine-cli -il&quot; for icon list.</source>
-        <translation>L&apos;icona &quot;%1&quot; non esiste. Esegui &quot;q4wine-cli -il&quot; per la lista delle icone.</translation>
+        <translation type="obsolete">L&apos;icona &quot;%1&quot; non esiste. Esegui &quot;q4wine-cli -il&quot; per la lista delle icone.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="244"/>
@@ -2419,9 +2417,8 @@ Nota: lasciare in bianco per i default.</translation>
         <translation>Il prefisso &quot;%1&quot; ha la seguente lista di directory</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="291"/>
         <source>Dir named &quot;%1&quot; not exists. Run &quot;q4wine-cli -dl&quot; for dir list.</source>
-        <translation>La directory &quot;%1&quot; non esiste. Esegui &quot;q4wine-cli -dl&quot; per la lista delle directory.</translation>
+        <translation type="obsolete">La directory &quot;%1&quot; non esiste. Esegui &quot;q4wine-cli -dl&quot; per la lista delle directory.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="297"/>
@@ -2439,9 +2436,8 @@ Nota: lasciare in bianco per i default.</translation>
         <translation>Descrizione</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="309"/>
         <source>q4wine has following CD images in database</source>
-        <translation>q4wine ha le seguenti immagini CD nel database</translation>
+        <translation type="obsolete">q4wine ha le seguenti immagini CD nel database</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="321"/>
@@ -2466,9 +2462,8 @@ Nota: lasciare in bianco per i default.</translation>
         <translation>Montaggio del disco &quot;%1&quot; nel punto di montaggio &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="356"/>
         <source>No CD iamge &quot;%1&quot; exists. Run &quot;q4wine-cli -cl&quot; for CD image list.</source>
-        <translation>Non esiste nessuna immagine di CD &quot;%1&quot;. Esegui &quot;q4wine-cli -cli&quot; per la lista delle immagini di CD.</translation>
+        <translation type="obsolete">Non esiste nessuna immagine di CD &quot;%1&quot;. Esegui &quot;q4wine-cli -cli&quot; per la lista delle immagini di CD.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="381"/>
@@ -2478,7 +2473,7 @@ Nota: lasciare in bianco per i default.</translation>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="392"/>
         <source>Mounted media list for all prefixes</source>
-        <translation>Montata la lista dei dischi per tutti i prefissi.</translation>
+        <translation>Montata la lista dei dischi per tutti i prefissi</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="393"/>
@@ -2503,95 +2498,94 @@ Nota: lasciare in bianco per i default.</translation>
         <translation>Montata la lista di dischi per il prefisso &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="478"/>
         <source>Report %1 bugs to brezerk@gmail.com</source>
-        <translation>riporta i bug %1 a brezerk@gmail.com</translation>
+        <translation type="obsolete">riporta i bug %1 a brezerk@gmail.com</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="479"/>
         <source>%1 homepage: &lt;%1&gt;</source>
-        <translation>%1 homepage:&lt;%1&gt;</translation>
+        <translation type="obsolete">%1 homepage:&lt;%1&gt;</translation>
     </message>
     <message>
         <source>q4wine-cli %1</source>
         <translation type="obsolete">q4wine-cli %1</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="71"/>
         <source>Only one instance of q4wine can be runned at same time.</source>
-        <translation>Si può eseguire una sola istanza di q4wine per volta.</translation>
+        <translation type="obsolete">Si può eseguire una sola istanza di q4wine per volta.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="132"/>
-        <location filename="../main.cpp" line="148"/>
         <source>Version outdated</source>
-        <translation>Versione sorpassata</translation>
+        <translation type="obsolete">Versione sorpassata</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="132"/>
-        <location filename="../main.cpp" line="148"/>
         <source>Sorry, new wersion of q4wine require new files location.&lt;br&gt;&lt;br&gt;You must manually delete all old files at:&lt;br&gt;$HOME/.q4wine&lt;br&gt;$HOME/.config/Brezerk\ GNU\ Soft&lt;br&gt;&lt;br&gt;Note: new files location is:&lt;br&gt;~/.config/q4wine</source>
-        <translation>Spiacente, la nuove versione di q4wine richiede una nuova destinazione dei files&lt;br&gt;&lt;br&gt; Devi cancellare manualmente tutti i vecchi file a:&lt;br&gt;$HOME/.q4wine&lt;br&gt;$HOME/.config/Brezerk\ GNU\ Soft&lt;br&gt;&lt;br&gt;Attenzione la nuova posizione dei file è:&lt;br&gt;~/.config/q4wine</translation>
+        <translation type="obsolete">Spiacente, la nuove versione di q4wine richiede una nuova destinazione dei files&lt;br&gt;&lt;br&gt; Devi cancellare manualmente tutti i vecchi file a:&lt;br&gt;$HOME/.q4wine&lt;br&gt;$HOME/.config/Brezerk\ GNU\ Soft&lt;br&gt;&lt;br&gt;Attenzione la nuova posizione dei file è:&lt;br&gt;~/.config/q4wine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="167"/>
+        <location filename="../main.cpp" line="135"/>
         <source>[EE] Unable to create root directory %1.</source>
         <translation>[EE] Impossibile creare la directory di root %1.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="184"/>
+        <location filename="../main.cpp" line="152"/>
         <source>[EE] Unable to create directory %1.</source>
         <translation>[EE] Impossibile creare la directory %1.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="201"/>
         <source>q4wine %1</source>
-        <translation>q4wine %1</translation>
+        <translation type="obsolete">q4wine %1</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="202"/>
-        <location filename="../q4wine-cli/main.cpp" line="412"/>
+        <location filename="../main.cpp" line="71"/>
+        <source>Only one instance of %1 can be runned at same time.</source>
+        <translation>Si può eseguire una sola istanza di %1 per volta.</translation>
+    </message>
+    <message>
         <source>(Copyright (C) 2008-2009, brezblock core team.</source>
-        <translation>(Copyright (C) 2008-2009, brezblock core team.</translation>
+        <translation type="obsolete">(Copyright (C) 2008-2009, brezblock core team.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="203"/>
-        <location filename="../q4wine-cli/main.cpp" line="413"/>
         <source>License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;.</source>
-        <translation>Licenza GPLv3+: GNU GPL versione 3 o sucessiva &lt;http://gnu.org/licenses/gpl.html&gt;.</translation>
+        <translation type="obsolete">Licenza GPLv3+: GNU GPL versione 3 o sucessiva &lt;http://gnu.org/licenses/gpl.html&gt;.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="204"/>
+        <location filename="../main.cpp" line="172"/>
         <location filename="../q4wine-cli/main.cpp" line="414"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>Questo è free software: sei libero di modificarlo e ridistribuirlo.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="205"/>
+        <location filename="../main.cpp" line="173"/>
         <location filename="../q4wine-cli/main.cpp" line="415"/>
         <source>There is NO WARRANTY, to the extent permitted by law.</source>
         <translation>Non c&apos;è nessuna GARANZIA, ne limite permesso dalla legge.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="207"/>
-        <location filename="../q4wine-cli/main.cpp" line="417"/>
         <source>Author: Malakhov Alexey aka John Brezerk.</source>
-        <translation>Autore: Malakhow Alexey aka Jon Brezerk.</translation>
+        <translation type="obsolete">Autore: Malakhow Alexey aka Jon Brezerk.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="213"/>
+        <location filename="../main.cpp" line="181"/>
+        <source>  %1 [KEY]...</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="186"/>
+        <source>minimize %1 main window on startup</source>
+        <translation>minimizza la finestra principale di %1 all&apos;avvio</translation>
+    </message>
+    <message>
         <source>  q4wine [KEY]...</source>
-        <translation>q4wine [CHIAVE]...</translation>
+        <translation type="obsolete">q4wine [CHIAVE]...</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="214"/>
+        <location filename="../main.cpp" line="182"/>
         <source>GUI utility for wine applications and prefixes management.</source>
         <translation>Programma per gestire le applicazioni con Wine e i loro prefissi.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="218"/>
         <source>minimize q4wine main window on startup</source>
-        <translation>minimizza la finestra principale di q4wine all&apos;avvio</translation>
+        <translation type="obsolete">minimizza la finestra principale di q4wine all&apos;avvio</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="428"/>
@@ -2599,25 +2593,22 @@ Nota: lasciare in bianco per i default.</translation>
         <translation>Il file &quot;%1&quot; non esiste.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="212"/>
+        <location filename="../main.cpp" line="180"/>
         <location filename="../q4wine-cli/main.cpp" line="451"/>
         <source>Usage:</source>
         <translation>Uso:</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="452"/>
         <source>  q4wine-cli [KEY]...</source>
-        <translation>  q4wine-cli [KEY]...</translation>
+        <translation type="obsolete">  q4wine-cli [KEY]...</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="453"/>
         <source>  q4wine-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
-        <translation>  q4wine-cli -p &lt;nome_prefisso&gt; [-d &lt;nome_directory&gt;] -i &lt;nome_icona&gt;</translation>
+        <translation type="obsolete">  q4wine-cli -p &lt;nome_prefisso&gt; [-d &lt;nome_directory&gt;] -i &lt;nome_icona&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/main.cpp" line="454"/>
         <source>  q4wine-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [args]</source>
-        <translation>  q4wine-cli -p &lt;nome_prefisso&gt; -b &lt;percorso_eseguibile_windows&gt; [argomenti]</translation>
+        <translation type="obsolete">  q4wine-cli -p &lt;nome_prefisso&gt; -b &lt;percorso_eseguibile_windows&gt; [argomenti]</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="455"/>
@@ -2625,22 +2616,34 @@ Nota: lasciare in bianco per i default.</translation>
         <translation>Console per la gestione delle applicazioni wine e dei prefissi.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="215"/>
+        <location filename="../main.cpp" line="175"/>
+        <location filename="../q4wine-cli/main.cpp" line="417"/>
+        <source>Author: %1.</source>
+        <translation>Autore: %1.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="183"/>
         <location filename="../q4wine-cli/main.cpp" line="456"/>
         <source>KEYs list:</source>
         <translation>Lista delle chiavi:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="216"/>
+        <location filename="../main.cpp" line="184"/>
         <location filename="../q4wine-cli/main.cpp" line="457"/>
         <source>display this help and exit</source>
         <translation>Mostra questo aiuto e esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="217"/>
+        <location filename="../main.cpp" line="185"/>
         <location filename="../q4wine-cli/main.cpp" line="458"/>
         <source>output version information and exit</source>
         <translation>mostra informazioni sulla versione e esci</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="188"/>
+        <location filename="../q4wine-cli/main.cpp" line="478"/>
+        <source>Report %1 bugs to %2</source>
+        <translation>riporta i bug %1 a %2</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="459"/>
@@ -2678,14 +2681,53 @@ Nota: lasciare in bianco per i default.</translation>
         <translation>-1 se ci sono problemi gravi</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="221"/>
         <source>q4wine homepage: &lt;%1&gt;</source>
-        <translation>homepage di q4wine: &lt;%1&gt;</translation>
+        <translation type="obsolete">homepage di q4wine: &lt;%1&gt;</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="141"/>
+        <source>Prefix named &quot;%1&quot; not exists. Run &quot;%2-cli -pl&quot; for prefix list.</source>
+        <translation>Il prefisso &quot;%1&quot; non esiste. Esegui &quot;%2-cli -pl&quot; per la lista dei prefissi.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="229"/>
+        <source>Icon named &quot;%1&quot; not exists.  Run &quot;%2-cli -il&quot; for icon list.</source>
+        <translation>L&apos;icona &quot;%1&quot; non esiste. Esegui &quot;%2-cli -il&quot; per la lista delle icone.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="291"/>
+        <source>Dir named &quot;%1&quot; not exists. Run &quot;%2-cli -dl&quot; for dir list.</source>
+        <translation>La directory &quot;%1&quot; non esiste. Esegui &quot;%2-cli -dl&quot; per la lista delle directory.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="309"/>
+        <source>%1 has following CD images in database</source>
+        <translation>%1 ha le seguenti immagini CD nel database</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="356"/>
+        <source>No CD iamge &quot;%1&quot; exists. Run &quot;%2-cli -cl&quot; for CD image list.</source>
+        <translation>Non esiste nessuna immagine di CD &quot;%1&quot;. Esegui &quot;%2-cli -cli&quot; per la lista delle immagini di CD.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="452"/>
+        <source>  %1-cli [KEY]...</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="453"/>
+        <source>  %1-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-cli/main.cpp" line="454"/>
+        <source>  %1-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [args]</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="465"/>
         <source>sends -9 term signal to current prefix precess or for all prefixes processes</source>
-        <translation>invia un segnale -9 al processo del prefisso attuale o a tutti i processi di ogni prefisso.</translation>
+        <translation>invia un segnale -9 al processo del prefisso attuale o a tutti i processi di ogni prefisso</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/main.cpp" line="466"/>
@@ -2733,12 +2775,17 @@ Nota: lasciare in bianco per i default.</translation>
         <translation>0 se Ok</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="220"/>
-        <source>Report q4wine bugs to brezerk@gmail.com</source>
-        <translation>Segnala eventuali bug di q4wine a brezerk@gmail.com</translation>
+        <location filename="../main.cpp" line="189"/>
+        <location filename="../q4wine-cli/main.cpp" line="479"/>
+        <source>%1 homepage: &lt;%2&gt;</source>
+        <translation>%1 homepage:&lt;%2&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="222"/>
+        <source>Report q4wine bugs to brezerk@gmail.com</source>
+        <translation type="obsolete">Segnala eventuali bug di q4wine a brezerk@gmail.com</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="190"/>
         <location filename="../q4wine-cli/main.cpp" line="480"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
         <translation>Aiuto generale sull&apos;uso di programmi GNU: &lt;http://www.gnu.org/gethelp/&gt;</translation>
@@ -3181,9 +3228,8 @@ Type: </source>
         <translation>Tipo:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="507"/>
         <source>auto</source>
-        <translation>auto</translation>
+        <translation type="obsolete">auto</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="558"/>
@@ -3632,7 +3678,9 @@ p, li { white-space: pre-wrap; }
         <source>If you wish to use quick mount feature specify source device and mount point directory.
 
 Note: leave it blank if you don&apos;t nead it.</source>
-        <translation>Nota: lasciare in bianco se non servono</translation>
+        <translation>Se non voui usare la funzione di montaggio rapido specifica un disco di orgine e una directory dove montare.
+
+Nota: lasciare in bianco se non serve.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="733"/>

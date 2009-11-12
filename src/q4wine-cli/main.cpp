@@ -138,7 +138,7 @@ int main(int argc, char *argv[])
 			if (i<argc)
 			_PREFIX=app.arguments().at(i);
 			if (!db_prefix->isExistsByName(_PREFIX)){
-				Qcout<<QObject::tr("Prefix named \"%1\" not exists. Run \"q4wine-cli -pl\" for prefix list.").arg(_PREFIX)<<endl;
+				Qcout<<QObject::tr("Prefix named \"%1\" not exists. Run \"%2-cli -pl\" for prefix list.").arg(_PREFIX).arg(APP_SHORT_NAME)<<endl;
 				return -1;
 			}
 		}
@@ -226,7 +226,7 @@ int main(int argc, char *argv[])
 			}
 
 			if (!db_icon->isExistsByName(_PREFIX, _DIR, _ICON)){
-				Qcout<<QObject::tr("Icon named \"%1\" not exists.  Run \"q4wine-cli -il\" for icon list.").arg(_ICON)<<endl;
+				Qcout<<QObject::tr("Icon named \"%1\" not exists.  Run \"%2-cli -il\" for icon list.").arg(_ICON).arg(APP_SHORT_NAME)<<endl;
 				return -1;
 			}
 
@@ -288,7 +288,7 @@ int main(int argc, char *argv[])
 			}
 
 			if (! db_dir->isExistsByName(_PREFIX, _DIR)){
-				Qcout<<QObject::tr("Dir named \"%1\" not exists. Run \"q4wine-cli -dl\" for dir list.").arg(_DIR)<<endl;
+				Qcout<<QObject::tr("Dir named \"%1\" not exists. Run \"%2-cli -dl\" for dir list.").arg(_DIR).arg(APP_SHORT_NAME)<<endl;
 				return -1;
 			}
 
@@ -306,7 +306,7 @@ int main(int argc, char *argv[])
 		break;
 		case 5:
 			result = db_image->getFields();
-			Qcout<<QObject::tr("q4wine has following CD images in database")<<endl;
+			Qcout<<QObject::tr("%1 has following CD images in database").arg(APP_SHORT_NAME)<<endl;
 			Qcout<<" "<<qSetFieldWidth(25)<<left<<QObject::tr("Name")<<QObject::tr("Path")<<qSetFieldWidth(0)<<endl;
 			for (int i = 0; i < result.size(); ++i) {
 				Qcout<<" "<<qSetFieldWidth(25)<<left<<result.at(i).at(0)<<result.at(i).at(1)<<qSetFieldWidth(0)<<endl;
@@ -353,7 +353,7 @@ int main(int argc, char *argv[])
 			} else {
 				if (!QFile(_IMAGE).exists()){
 					if (!db_image->isExistsByName(_IMAGE)){
-						Qcout<<QObject::tr("No CD iamge \"%1\" exists. Run \"q4wine-cli -cl\" for CD image list.").arg(_IMAGE)<<endl;
+						Qcout<<QObject::tr("No CD iamge \"%1\" exists. Run \"%2-cli -cl\" for CD image list.").arg(_IMAGE).arg(APP_SHORT_NAME)<<endl;
 						return -1;
 					}
 				}
@@ -408,13 +408,13 @@ int main(int argc, char *argv[])
 			}
 		break;
 		case 11:
-			Qcout<<QString("q4wine-cli %1").arg(APP_VERS)<<endl;
-			Qcout<<QObject::tr("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
-			Qcout<<QObject::tr("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
+			Qcout<<QString("%1-cli %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
+			Qcout<<QString("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
+			Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
 			Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
 			Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
 			Qcout<<endl;
-			Qcout<<QObject::tr("Author: Malakhov Alexey aka John Brezerk.")<<endl;
+			Qcout<<QObject::tr("Author: %1.").arg("Malakhov Alexey aka John Brezerk")<<endl;
 		break;
 		case 12:
 			if (_PREFIX.isEmpty()){
@@ -449,9 +449,9 @@ int main(int argc, char *argv[])
 		break;
 		default:
 			Qcout<<QObject::tr("Usage:")<<endl;
-			Qcout<<QObject::tr("  q4wine-cli [KEY]...")<<endl;
-			Qcout<<QObject::tr("  q4wine-cli -p <prefix_name> [-d <dir_name>] -i <icon_name>")<<endl;
-			Qcout<<QObject::tr("  q4wine-cli -p <prefix_name> -b <windows_binary_path> [args]")<<endl;
+			Qcout<<QObject::tr("  %1-cli [KEY]...").arg(APP_SHORT_NAME)<<endl;
+			Qcout<<QObject::tr("  %1-cli -p <prefix_name> [-d <dir_name>] -i <icon_name>").arg(APP_SHORT_NAME)<<endl;
+			Qcout<<QObject::tr("  %1-cli -p <prefix_name> -b <windows_binary_path> [args]").arg(APP_SHORT_NAME)<<endl;
 			Qcout<<QObject::tr("Console utility for wine applications and prefixes management.")<<endl<<endl;
 			Qcout<<QObject::tr("KEYs list:")<<endl;
 			Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
@@ -475,8 +475,8 @@ int main(int argc, char *argv[])
 			Qcout<<QObject::tr("  0 if OK,")<<endl;
 			Qcout<<QObject::tr(" -1 if serious troubles")<<endl;
 			Qcout<<endl;
-			Qcout<<QObject::tr("Report %1 bugs to brezerk@gmail.com").arg(APP_SHORT_NAME)<<endl;
-			Qcout<<QObject::tr("%1 homepage: <%1>").arg(APP_WEBSITTE).arg(APP_SHORT_NAME)<<endl;
+			Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
+			Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_WEBSITTE).arg(APP_SHORT_NAME)<<endl;
 			Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
 		break;
 	}

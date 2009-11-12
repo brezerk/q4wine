@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 	DataBase db;
 	//QApplication app(argc, argv);
 	QtSingleApplication app(argc, argv);
-	if (app.sendMessage(QObject::tr("Only one instance of q4wine can be runned at same time.")))
+	if (app.sendMessage(QObject::tr("Only one instance of %1 can be runned at same time.").arg(APP_SHORT_NAME)))
 		return 0;
 
 	QTranslator*  qtt = new QTranslator ( 0 );
@@ -118,44 +118,12 @@ int main(int argc, char *argv[])
 	   qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
 	}
 
-	/* ============================================= *\
-	 This is back support test for v <=0.100
-	 plz remove it on v0.120
-	   --------------------------------------------- */
-
-	QDir dir;
-	QString rootConfPath;
-	   rootConfPath.append(QDir::homePath());
-	   rootConfPath.append("/.q4wine/");
-
-	if (dir.exists(rootConfPath)){
-	   QMessageBox::warning(0, QObject::tr("Version outdated"), QObject::tr("Sorry, new wersion of q4wine require new files location.<br><br>You must manually delete all old files at:<br>$HOME/.q4wine<br>$HOME/.config/Brezerk\\ GNU\\ Soft<br><br>Note: new files location is:<br>~/.config/q4wine"));
-	   return -1;
-	}
-
-	/* ============================================== */
-
-	/* ============================================= *\
-	 This is back support test for v <=0.110
-	 plz remove it on v0.120
-	   --------------------------------------------- */
-
-	rootConfPath.clear();
-	rootConfPath.append(QDir::homePath());
-	rootConfPath.append("/.config/Brezerk GNU Soft");
-
-	if (dir.exists(rootConfPath)){
-		QMessageBox::warning(0, QObject::tr("Version outdated"), QObject::tr("Sorry, new wersion of q4wine require new files location.<br><br>You must manually delete all old files at:<br>$HOME/.q4wine<br>$HOME/.config/Brezerk\\ GNU\\ Soft<br><br>Note: new files location is:<br>~/.config/q4wine"));
-		return -1;
-	}
-
-	/* ============================================= */
-
 	if (!settings.contains ("configure")){
 	   //If no key, we gona to start an First Run Wizard to setup q4wine
 	   Wizard *firstSetupWizard = new Wizard(1);
 	   if (firstSetupWizard->exec()==QDialog::Accepted){
-
+			QString rootConfPath;
+			QDir dir;
 			rootConfPath.clear();
 			rootConfPath.append(QDir::homePath());
 			rootConfPath.append("/.config/");
@@ -198,27 +166,27 @@ int main(int argc, char *argv[])
 
 	if (app.arguments().count()>1){
 		if ((app.arguments().at(1)=="-version") or (app.arguments().at(1)=="-v")){
-			Qcout<<QObject::tr("q4wine %1").arg(APP_VERS)<<endl;
-			Qcout<<QObject::tr("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
-			Qcout<<QObject::tr("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
+			Qcout<<QString("%1 %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
+			Qcout<<QString("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
+			Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
 			Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
 			Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
 			Qcout<<endl;
-			Qcout<<QObject::tr("Author: Malakhov Alexey aka John Brezerk.")<<endl;
+			Qcout<<QObject::tr("Author: %1.").arg("Malakhov Alexey aka John Brezerk")<<endl;
 			return 0;
 		} else if ((app.arguments().at(1)=="-minimize") or (app.arguments().at(1)=="-m")) {
 			startState = 1;
 		} else {
 			Qcout<<QObject::tr("Usage:")<<endl;
-			Qcout<<QObject::tr("  q4wine [KEY]...")<<endl;
+			Qcout<<QObject::tr("  %1 [KEY]...").arg(APP_SHORT_NAME)<<endl;
 			Qcout<<QObject::tr("GUI utility for wine applications and prefixes management.")<<endl<<endl;
 			Qcout<<QObject::tr("KEYs list:")<<endl;
 			Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
 			Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
-			Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --minimize"<<QObject::tr("minimize q4wine main window on startup")<<qSetFieldWidth(0)<<endl;
+			Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --minimize"<<QObject::tr("minimize %1 main window on startup").arg(APP_SHORT_NAME)<<qSetFieldWidth(0)<<endl;
 			Qcout<<endl;
-			Qcout<<QObject::tr("Report q4wine bugs to brezerk@gmail.com")<<endl;
-			Qcout<<QObject::tr("q4wine homepage: <%1>").arg(APP_WEBSITTE)<<endl;
+			Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
+			Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_SHORT_NAME).arg(APP_WEBSITTE)<<endl;
 			Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
 			return 0;
 		}
