@@ -348,7 +348,9 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		item = new QListWidgetItem(loadIcon(pic, ""), line, listWineDrives);
 		listWineDrives->addItem(item);
 
-		line = "H: /home/brezerk/.config/q4wine/tmp";
+		line = "H: ";
+		line.append(QDir::homePath());
+		line.append("/.config/q4wine/tmp");
 		line.append(tr("\nType: "));
 		line.append("auto");
 
@@ -1012,7 +1014,7 @@ void Wizard::nextWizardPage(){
 						}
 					}
 					if (!tmpexists){
-						QMessageBox::warning(this, tr("Warning"), tr("Can't find drive which is point to:\n\"%1\"\n\nMake shure wine can access q4wine temp directory.").arg(tmppath));
+						QMessageBox::warning(this, tr("Warning"), tr("Can't find drive which is point to:\n\"%1\"\n\nMake shure wine can access %2 temp directory.").arg(tmppath).arg(APP_SHORT_NAME));
 					}
 				}
 			break;
