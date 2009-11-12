@@ -434,7 +434,8 @@ ENDIF (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES x86_64)
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/theme DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine)
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
-install(FILES ${CMAKE_SOURCE_DIR}/src/freebsd/umount_freebsd.sh DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine/scripts)
+install(FILES ${CMAKE_SOURCE_DIR}/src/freebsd/mount_image.sh DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine/scripts)
+install(FILES ${CMAKE_SOURCE_DIR}/src/freebsd/umount.sh DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine/scripts)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
 install(FILES ${ICON_PIXMAPS} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine/icons)

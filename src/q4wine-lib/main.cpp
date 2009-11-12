@@ -539,7 +539,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 	  }
 
 
-	  bool corelib::runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name) const{
+	  bool corelib::runWineBinary(const QString windows_binary, const QString cmdargs, const QString prefix_name) const{
 			QStringList prefixList;
 			// 0   1     2             3            4            5          6            7
 			// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
@@ -588,9 +588,10 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			} else {
 				  exec_string.append(this->getSetting("wine", "WineBin").toString());
 			}
+
 			exec_string.append(" ");
 			exec_string.append(" \"");
-			exec_string.append(winebinary);
+			exec_string.append(windows_binary);
 			exec_string.append("\" ");
 			exec_string.append(cmdargs);
 			args.append(exec_string);
@@ -999,7 +1000,10 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 				  string = "%SUDO% %MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%";
 			  #endif
 			  #ifdef _OS_FREEBSD_
-				  string = "%SUDO% %MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %MOUNT_IMAGE%` %MOUNT_POINT%";
+				   string="";
+				   string.append(APP_PREF);
+				   string.append("/share/q4wine/scripts/mount_image.sh");
+				   string.append(" %MOUNT_IMAGE% %MOUNT_POINT%")
 			  #endif
 			break;
 			case 1:
@@ -1007,7 +1011,10 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 				   string = "%GUI_SUDO% \"%MOUNT_BIN% %MOUNT_OPTIONS% %MOUNT_IMAGE% %MOUNT_POINT%\"";
 			   #endif
 			   #ifdef _OS_FREEBSD_
-				   string = "%GUI_SUDO% \"%MOUNT_BIN% -t cd9660 /dev/`%MDCONFIG_BIN% -f %MOUNT_IMAGE%` %MOUNT_POINT%\"";
+				   string="";
+				   string.append(APP_PREF);
+				   string.append("/share/q4wine/scripts/mount_image.sh");
+				   string.append(" %MOUNT_IMAGE% %MOUNT_POINT%")
 			   #endif
 			break;
 			case 2:
@@ -1030,10 +1037,10 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 				   string = "%SUDO% %UMOUNT_BIN% %MOUNT_POINT%";
 			   #endif
 			   #ifdef _OS_FREEBSD_
-				   string="%SUDO% ";
+				   string="";
 				   string.append(APP_PREF);
-				   string.append("/share/q4wine/scripts/umount_freebsd.sh");
-				   string.append(" %UMOUNT_BIN% %MOUNT_POINT%");
+				   string.append("/share/q4wine/scripts/umount.sh");
+				   string.append(" %MOUNT_POINT%");
 			   #endif
 			break;
 			case 1:
@@ -1041,10 +1048,10 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 				   string="%GUI_SUDO% %UMOUNT_BIN% %MOUNT_POINT%";
 			   #endif
 			   #ifdef _OS_FREEBSD_
-				   string = "%GUI_SUDO% ";
+				   string = "";
 				   string.append(APP_PREF);
-				   string.append("/share/q4wine/scripts/umount_freebsd.sh");
-				   string.append(" %UMOUNT_BIN% %MOUNT_POINT%");
+				   string.append("/share/q4wine/scripts/umount.sh");
+				   string.append(" %MOUNT_POINT%");
 			   #endif
 			break;
 			case 2:
