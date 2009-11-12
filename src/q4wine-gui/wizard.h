@@ -95,22 +95,22 @@ class Wizard : public QDialog, public Ui::Wizard
 		//! \brief cmdHelo click slot.
 		void cmdHelp_Click();
 
-		//! \brief cmdJoysticEdit click slot.
-		void cmdJoysticEdit_Click();
+		//! \brief cmdJoystickEdit click slot.
+		void cmdJoystickEdit_Click();
 
-		//! \brief cmdJoysticAdd click slot.
-		void cmdJoysticAdd_Click();
+		//! \brief cmdJoystickAdd click slot.
+		void cmdJoystickAdd_Click();
 
-		//! \brief cmdJoysticDel click slot.
-		void cmdJoysticDel_Click();
+		//! \brief cmdJoystickDel click slot.
+		void cmdJoystickDel_Click();
 
 		//! \brief cmdEdit click slot.
 		void cmdWineDriveEdit_Click();
 
-		//! \brief cmdJoysticAdd click slot.
+		//! \brief cmdJoystickAdd click slot.
 		void cmdWineDriveAdd_Click();
 
-		//! \brief cmdJoysticDel click slot.
+		//! \brief cmdJoystickDel click slot.
 		void cmdWineDriveDel_Click();
 
 		//! \brief raidioDefault toggled action slot.

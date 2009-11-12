@@ -114,9 +114,9 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		}
 		lblPicture->setPixmap(pixmap);
 
-		connect(cmdJoysticEdit, SIGNAL(clicked()), this, SLOT(cmdJoysticEdit_Click()));
-		connect(cmdJoysticAdd, SIGNAL(clicked()), this, SLOT(cmdJoysticAdd_Click()));
-		connect(cmdJoysticDel, SIGNAL(clicked()), this, SLOT(cmdJoysticDel_Click()));
+		connect(cmdJoystickEdit, SIGNAL(clicked()), this, SLOT(cmdJoystickEdit_Click()));
+		connect(cmdJoystickAdd, SIGNAL(clicked()), this, SLOT(cmdJoystickAdd_Click()));
+		connect(cmdJoystickDel, SIGNAL(clicked()), this, SLOT(cmdJoystickDel_Click()));
 		connect(cmdWineDriveEdit, SIGNAL(clicked()), this, SLOT(cmdWineDriveEdit_Click()));
 		connect(cmdWineDriveAdd, SIGNAL(clicked()), this, SLOT(cmdWineDriveAdd_Click()));
 		connect(cmdWineDriveDel, SIGNAL(clicked()), this, SLOT(cmdWineDriveDel_Click()));
@@ -135,9 +135,9 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		}
 		lblPicture->setPixmap(pixmap);
 
-		connect(cmdJoysticEdit, SIGNAL(clicked()), this, SLOT(cmdJoysticEdit_Click()));
-		connect(cmdJoysticAdd, SIGNAL(clicked()), this, SLOT(cmdJoysticAdd_Click()));
-		connect(cmdJoysticDel, SIGNAL(clicked()), this, SLOT(cmdJoysticDel_Click()));
+		connect(cmdJoystickEdit, SIGNAL(clicked()), this, SLOT(cmdJoystickEdit_Click()));
+		connect(cmdJoystickAdd, SIGNAL(clicked()), this, SLOT(cmdJoystickAdd_Click()));
+		connect(cmdJoystickDel, SIGNAL(clicked()), this, SLOT(cmdJoystickDel_Click()));
 		connect(cmdWineDriveEdit, SIGNAL(clicked()), this, SLOT(cmdWineDriveEdit_Click()));
 		connect(cmdWineDriveAdd, SIGNAL(clicked()), this, SLOT(cmdWineDriveAdd_Click()));
 		connect(cmdWineDriveDel, SIGNAL(clicked()), this, SLOT(cmdWineDriveDel_Click()));
@@ -454,7 +454,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		list = reg->readExcludedKeys("user", "Software\\Wine\\DirectInput", list, 10);
 
 		if (list.count()>0){
-			listJoysticAxesMappings->insertItems (0, list);
+			listJoystickAxesMappings->insertItems (0, list);
 		}
 
 		list.clear();
@@ -772,7 +772,7 @@ void Wizard::nextWizardPage(){
 		Function for processing next\finish button click events
 	*/
 	QRegExp rx("^\".*\"=\".*\"$");
-	QList<QListWidgetItem *> listItems = listJoysticAxesMappings->findItems(QString("*"), Qt::MatchWrap | Qt::MatchWildcard);
+	QList<QListWidgetItem *> listItems = listJoystickAxesMappings->findItems(QString("*"), Qt::MatchWrap | Qt::MatchWildcard);
 	switch(Scena){
 	case 1:
 		switch (Page){
@@ -995,7 +995,7 @@ void Wizard::nextWizardPage(){
 			case 6:
 			for (int i=0; i < listItems.count(); i++){
 				if (rx.indexIn(listItems.at(i)->text())!=0){
-					QMessageBox::warning(this, tr("Error"), tr("Error in string:\n\n%1\n\nJoystic axes mappings might be defined as:\n\"joystic name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details.").arg(listItems.at(i)->text()));
+					QMessageBox::warning(this, tr("Error"), tr("Error in string:\n\n%1\n\nJoystick axes mappings might be defined as:\n\"Joystick name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details.").arg(listItems.at(i)->text()));
 					return;
 				}
 			}
@@ -1353,9 +1353,9 @@ void Wizard::nextWizardPage(){
 
 				registry.unsetPath("Software\\Wine\\DirectInput");
 
-				if (listJoysticAxesMappings->count()>0){
-					for (int i=0; i<listJoysticAxesMappings->count(); i++){
-						registry.set("Software\\Wine\\DirectInput", "", listJoysticAxesMappings->item(i)->text());
+				if (listJoystickAxesMappings->count()>0){
+					for (int i=0; i<listJoystickAxesMappings->count(); i++){
+						registry.set("Software\\Wine\\DirectInput", "", listJoystickAxesMappings->item(i)->text());
 					}
 				}
 
@@ -1467,6 +1467,7 @@ void Wizard::nextWizardPage(){
 					if (!db_dir->isExistsByName(prefix_name, "autostart"))
 						db_dir->addDir(prefix_name, "autostart");
 
+					QApplication::restoreOverrideCursor();
 					accept();
 				} else {
 					QApplication::restoreOverrideCursor();
@@ -1538,7 +1539,19 @@ void Wizard::cmdHelp_Click(){
 			rawurl = "07-fake-drive-wizard.html#direct";
 			break;
 		case 5:
+			rawurl = "07-fake-drive-wizard.html#video";
+			break;
+		case 6:
+			rawurl = "07-fake-drive-wizard.html#input";
+			break;
+		case 7:
 			rawurl = "07-fake-drive-wizard.html#x11";
+			break;
+		case 8:
+			rawurl = "07-fake-drive-wizard.html#winedrive";
+			break;
+		case 9:
+			rawurl = "07-fake-drive-wizard.html#desktop";
 			break;
 		default:
 			rawurl = "07-fake-drive-wizard.html";
@@ -1625,7 +1638,7 @@ void Wizard::updateScena(){
 			cmdNext->setText(tr("Next >"));
 			widgetInfo->setVisible(FALSE);
 			break;
-								case 8:
+					case 8:
 			lblWizardInfo->setText(tr("<p>All ready for finishing %1 setup. </p><p>Please, press the <b>Finish</b> button to create finish setup process. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
 			widgetFirstStartup4->setVisible(FALSE);
 			widgetInfo->setVisible(TRUE);
@@ -1707,8 +1720,8 @@ void Wizard::updateScena(){
 		}
 		break;
 			case 2:
-		/*
-					New fake drive creation
+			   /*
+				*	New fake drive creation
 				*/
 		switch (Page){
 					case 1:
@@ -1771,6 +1784,9 @@ void Wizard::updateScena(){
 		}
 		break;
 	}
+
+	cmdNext->setFocus(Qt::ActiveWindowFocusReason);
+
 	return;
 }
 
@@ -1833,30 +1849,30 @@ void Wizard::radioEmbedded_toggled(bool state){
 	return;
 }
 
-void Wizard::cmdJoysticEdit_Click(){
-	QListWidgetItem *item = listJoysticAxesMappings->currentItem();
+void Wizard::cmdJoystickEdit_Click(){
+	QListWidgetItem *item = listJoystickAxesMappings->currentItem();
 	if (!item)
 		return;
 
 	bool ok;
-	QString text = QInputDialog::getText(this, tr("Joystic Axes Mappings"), tr("Joystic axes mappings might be defined as:\n\"joystic name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details."), QLineEdit::Normal, item->text(), &ok);
+	QString text = QInputDialog::getText(this, tr("Joystick Axes Mappings"), tr("Joystick axes mappings might be defined as:\n\"Joystick name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details."), QLineEdit::Normal, item->text(), &ok);
 	if (ok && !text.isEmpty()){
 		item->setText(text);
 	}
 	return;
 }
 
-void Wizard::cmdJoysticAdd_Click(){
+void Wizard::cmdJoystickAdd_Click(){
 	bool ok;
-	QString text = QInputDialog::getText(this, tr("Joystic Axes Mappings"), tr("Joystic axes mappings might be defined as:\n\"joystic name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details."), QLineEdit::Normal, "", &ok);
+	QString text = QInputDialog::getText(this, tr("Joystick Axes Mappings"), tr("Joystick axes mappings might be defined as:\n\"Joystick name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details."), QLineEdit::Normal, "", &ok);
 	if (ok && !text.isEmpty()){
-		listJoysticAxesMappings->addItem(text);
+		listJoystickAxesMappings->addItem(text);
 	}
 	return;
 }
 
-void Wizard::cmdJoysticDel_Click(){
-	QListWidgetItem *item = listJoysticAxesMappings->currentItem();
+void Wizard::cmdJoystickDel_Click(){
+	QListWidgetItem *item = listJoystickAxesMappings->currentItem();
 	if (!item)
 		return;
 
