@@ -319,7 +319,9 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		prefixPath = db_prefix->getPath(var1);
 		line = "C: ";
 		line.append(prefixPath);
-		line.append(tr("\nType: "));
+		line.append("\n");
+		line.append(tr("Type"));
+		line.append(": ");
 		line.append("auto");
 
 		pic=this->getDrivePic("auto");
@@ -340,7 +342,9 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		}
 
 		line = "Z: /";
-		line.append(tr("\nType: "));
+		line.append("\n");
+		line.append(tr("Type"));
+		line.append(": ");
 		line.append("auto");
 
 		pic=this->getDrivePic("auto");
@@ -351,7 +355,9 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		line = "H: ";
 		line.append(QDir::homePath());
 		line.append("/.config/q4wine/tmp");
-		line.append(tr("\nType: "));
+		line.append("\n");
+		line.append(tr("Type"));
+		line.append(": ");
 		line.append("auto");
 
 		pic=this->getDrivePic("auto");
@@ -491,7 +497,9 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 				QString line = fileInfo.fileName().toUpper();
 				line.append(" ");
 				line.append(fileInfo.symLinkTarget());
-				line.append(tr("\nType: "));
+				line.append("\n");
+				line.append(tr("Type"));
+				line.append(": ");
 
 				list.clear();
 				list<<QString("\"%1\"").arg(fileInfo.fileName());

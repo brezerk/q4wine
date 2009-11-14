@@ -120,6 +120,7 @@ Run::Run(QString prefix_name, QString wrkdir, QString override, QString winedebu
 	cmdGetWorkDir->installEventFilter(this);
 
 	getPrefixes();
+	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 
 	return;
 }

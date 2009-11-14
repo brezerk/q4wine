@@ -21,6 +21,8 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QWidget * parent, Qt
 
 	cmdGetDrivePath->setIcon(QIcon(":data/folder.png"));
 
+	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
+
 }
 
 WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter, QString drivePath, QString driveType, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
@@ -57,6 +59,8 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter,
 	connect(cmdGetDrivePath, SIGNAL(clicked()), this, SLOT(cmdGetDrivePath_Click()));
 
 	cmdGetDrivePath->setIcon(QIcon(":data/folder.png"));
+
+	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 }
 
 void WineDriveDialog::cmdCancel_Click(){
@@ -81,7 +85,9 @@ void WineDriveDialog::cmdOk_Click(){
 	driveDesc.append(cbDriveLetter->currentText());
 	driveDesc.append(" ");
 	driveDesc.append(txtDrivePath->text());
-	driveDesc.append("\nType: ");
+	driveDesc.append("\n");
+	driveDesc.append(tr("Type"));
+	driveDesc.append(": ");
 	driveDesc.append(cbDriveType->currentText());
 	accept();
 }

@@ -111,6 +111,8 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 	cboxDlls->addItems(CoreLib->getWineDlls(db_prefix->getFieldsByPrefixName(prefix_name).at(2)));
 	cboxDlls->setMaxVisibleItems (10);
 
+	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
+
 	return;
 }
 

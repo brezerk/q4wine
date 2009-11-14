@@ -2834,7 +2834,12 @@ Note: leave it blank for default.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/winedrivedialog.cpp" line="97"/>
+        <location filename="../q4wine-gui/winedrivedialog.cpp" line="85"/>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/winedrivedialog.cpp" line="99"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2843,16 +2848,16 @@ Note: leave it blank for default.</source>
     <name>Wizard</name>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="747"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="973"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="977"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="981"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="985"/>
         <source>&lt;none&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1554"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="611"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="818"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="861"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="619"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="826"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="869"/>
         <source>No Proxy</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2867,11 +2872,16 @@ Note: leave it blank for default.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../q4wine-gui/uis/Wizard.ui" line="3127"/>
+        <source>Joystick axes mapping:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="3919"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1619"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1625"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1668"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1762"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1640"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1646"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1689"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1783"/>
         <source>Next &gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2882,7 +2892,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="215"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1642"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1663"/>
         <source>&lt;b&gt;Prefix creation wizard&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2890,8 +2900,8 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/wizard.cpp" line="216"/>
         <location filename="../q4wine-gui/wizard.cpp" line="234"/>
         <location filename="../q4wine-gui/wizard.cpp" line="310"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="562"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1574"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="570"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1595"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2917,134 +2927,138 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="311"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1715"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1736"/>
         <source>&lt;p&gt;Welcome to fake drive creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="322"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="333"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="343"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="354"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="494"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="323"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="346"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="359"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="501"/>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/wizard.cpp" line="335"/>
         <source>
 Type: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="560"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="568"/>
         <source>Fake drive update wizard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="561"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="569"/>
         <source>&lt;b&gt;Fake drive update wizard&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="563"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="571"/>
         <source>&lt;p&gt;Welcome to fake drive update wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="704"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="712"/>
         <source>Open File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="706"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="714"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="746"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="749"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="754"/>
         <location filename="../q4wine-gui/wizard.cpp" line="757"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="760"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="820"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="824"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="954"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="958"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="964"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="968"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="974"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="978"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="998"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1912"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="765"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="768"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="828"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="832"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="962"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="966"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="972"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="976"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="982"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="986"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1006"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1936"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="746"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="754"/>
         <source>Sorry, specify %1 directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="749"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="757"/>
         <source>Sorry, specify %1 binary.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="757"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="765"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="760"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="768"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="820"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="828"/>
         <source>Sorry, specify proxy host.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="824"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="832"/>
         <source>Sorry, specify proxy port.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="954"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="962"/>
         <source>Enter prefix name first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="958"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="966"/>
         <source>Sorry. There is other prefix with same name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="964"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="972"/>
         <source>Sorry, prefix path is wrong! Directory not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="968"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="976"/>
         <source>Select prefix directory first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="974"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="982"/>
         <source>Sorry, specify mount point directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="978"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="986"/>
         <source>Sorry, specify source device.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1842"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1851"/>
-        <source>Joystic Axes Mappings</source>
+        <location filename="../q4wine-gui/wizard.cpp" line="1866"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1875"/>
+        <source>Joystick Axes Mappings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1842"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1851"/>
-        <source>Joystic axes mappings might be defined as:
-&quot;joystic name&quot;=&quot;axes mapping&quot;
+        <location filename="../q4wine-gui/wizard.cpp" line="1866"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1875"/>
+        <source>Joystick axes mappings might be defined as:
+&quot;Joystick name&quot;=&quot;axes mapping&quot;
 
 For example:
 &quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
@@ -3053,17 +3067,32 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1912"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1936"/>
         <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1582"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1603"/>
         <source>&lt;b&gt;First startup wizrd&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1017"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1006"/>
+        <source>Error in string:
+
+%1
+
+Joystick axes mappings might be defined as:
+&quot;Joystick name&quot;=&quot;axes mapping&quot;
+
+For example:
+&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+
+See help for details.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/wizard.cpp" line="1025"/>
         <source>Can&apos;t find Wine Drive which is point to:
 &quot;%1&quot;
 
@@ -3071,125 +3100,110 @@ Make shure wine can access %2 temp directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1583"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1604"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1590"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1611"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Malakhov Alexey aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General ideia comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts witch was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1601"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1622"/>
         <source>&lt;p&gt;Please enter default wine settings.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1632"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1705"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1769"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1653"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1726"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1790"/>
         <source>Finish</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1643"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1664"/>
         <source>&lt;p&gt;Welcome to prefix creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful Wine prefix creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1673"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1694"/>
         <source>&lt;p&gt;Please check parameters listed below before clicking &lt;b&gt;Next&lt;/b&gt;:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Prefix name:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Prefix path:&lt;/b&gt; %2&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1675"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1696"/>
         <source>&lt;p&gt;Wine fake drive will be created.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1678"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1699"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1680"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1701"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1683"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1704"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1685"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1706"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1688"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1709"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1690"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1711"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1693"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1714"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1695"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1716"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1698"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1719"/>
         <source>&lt;p&gt;&lt;b&gt;Quick mount options&lt;/b&gt; &lt;br&gt;&lt;b&gt;Device&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Mount point&lt;/b&gt;: %2&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1765"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1786"/>
         <source>&lt;p&gt;All ready for fake drive creation. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create facke drive. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1017"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1830"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1025"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1854"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="998"/>
-        <source>Error in string:
-
-%1
-
-Joystic axes mappings might be defined as:
-&quot;joystic name&quot;=&quot;axes mapping&quot;
-
-For example:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
-
-See help for details.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1238"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1246"/>
         <source>Updateing wine dosdrives</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1830"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1854"/>
         <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1629"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1650"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3616,11 +3630,6 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="3093"/>
         <source>MouseWarpOverride:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3127"/>
-        <source>Joystic axes mapping:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

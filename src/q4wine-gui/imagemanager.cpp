@@ -55,6 +55,8 @@ ImageManager::ImageManager(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	connect(tableImage, SIGNAL(clicked(const QModelIndex &)), this, SLOT(update_lblPathInfo(const QModelIndex &)));
 
 	getCDImages();
+
+	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 	return;
 }
 

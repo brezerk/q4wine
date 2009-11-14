@@ -217,6 +217,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	}
 	settings.endGroup();
 
+	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 	return;
 }
 

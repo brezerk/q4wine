@@ -98,6 +98,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
 	cmdGetMountPoint->installEventFilter(this);
 
+	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 	return;
 }
 
