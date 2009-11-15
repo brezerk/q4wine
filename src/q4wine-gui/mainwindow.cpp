@@ -1712,7 +1712,7 @@ void MainWindow::prefixImport_Click(){
 	openpath.append("/prefixes/");
   }
 
-  QString fileName = QFileDialog::getOpenFileName(this, tr("Select file to import"), openpath , tr("Images (*.tbz)"));
+  QString fileName = QFileDialog::getOpenFileName(this, tr("Select file to import"), openpath , tr("Prefix archive images (*.tbz)"));
 
   if (!fileName.isEmpty()){
 	QDir dir;
@@ -1790,7 +1790,7 @@ void MainWindow::prefixExport_Click(){
   savepath.append(".tbz");
 
   //Request user for valid save path
-  QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to export"), savepath , tr("Images (*.tbz)"));
+  QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to export"), savepath , tr("Prefix archive images (*.tbz)"));
 
   if (!fileName.isEmpty()){
 	QStringList args;

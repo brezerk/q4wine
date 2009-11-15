@@ -78,7 +78,7 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		cmdGetWrestoolBin->setIcon(loadIcon("data/folder.png", themePath));
 		cmdGetIcotoolBin->setIcon(loadIcon("data/folder.png", themePath));
 
-#ifdef WITHOUT_ICOTOOLS
+#ifndef WITH_ICOUTILS
 		cmdGetWrestoolBin->setEnabled(false);
 		cmdGetIcotoolBin->setEnabled(false);
 		txtWrestoolBin->setEnabled(false);
@@ -248,8 +248,6 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		cmdGetShBin->installEventFilter(this);
 
 		cmdGetConsoleBin->installEventFilter(this);
-		cmdGetWrestoolBin->installEventFilter(this);
-		cmdGetIcotoolBin->installEventFilter(this);
 
 		txtWineBin->setText(CoreLib->getWhichOut("wine"));
 		txtWineServerBin->setText(CoreLib->getWhichOut("wineserver"));
@@ -299,6 +297,8 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 #ifdef WITH_ICOUTILS
 		txtWrestoolBin->setText(CoreLib->getWhichOut("wrestool"));
 		txtIcotoolBin->setText(CoreLib->getWhichOut("icotool"));
+		cmdGetWrestoolBin->installEventFilter(this);
+		cmdGetIcotoolBin->installEventFilter(this);
 #endif
 
 		break;

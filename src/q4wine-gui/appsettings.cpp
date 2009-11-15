@@ -70,8 +70,6 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	cmdGetNiceBin->installEventFilter(this);
 	cmdGetReniceBin->installEventFilter(this);
 	cmdGetConsoleBin->installEventFilter(this);
-	cmdGetWrestoolBin->installEventFilter(this);
-	cmdGetIcotoolBin->installEventFilter(this);
 	cmdGetShBin->installEventFilter(this);
 
 	QSettings settings(APP_SHORT_NAME, "default");
@@ -187,6 +185,8 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	txtWrestoolBin->setText(settings.value("wrestool").toString());
 	txtIcotoolBin->setText(settings.value("icotool").toString());
 	settings.endGroup();
+	cmdGetWrestoolBin->installEventFilter(this);
+	cmdGetIcotoolBin->installEventFilter(this);
 #else
 	txtWrestoolBin->setEnabled(false);
 	txtIcotoolBin->setEnabled(false);
