@@ -20,6 +20,8 @@ Version 0.114
   - Fix for misfunctioning check wether or not to use ICOTOOLS. (thx 2 Impulze)
   - Prefix combobox change do not set right Prefix in Prefix tree view;
   - Fake drive update wizard now remove registry key while user reset it to 'Default' state;
+  - Fix for prefix import and export; 
+  - And some small fixes for icoutils; 
 
 Version 0.113
  Added:
