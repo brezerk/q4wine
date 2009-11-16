@@ -318,8 +318,8 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 
 		prefixPath = db_prefix->getPath(var1);
 		line = "C: ";
-		line.append(prefixPath);
-		line.append("\n");
+		//line.append(prefixPath);
+		line.append("../drive_c\n");
 		line.append(tr("Type"));
 		line.append(": ");
 		line.append("auto");
@@ -1245,6 +1245,8 @@ void Wizard::nextWizardPage(){
 
 			Process *proc = new Process(args, CoreLib->getWhichOut("sh"), QDir::homePath(), tr("Updateing wine dosdrives"), tr("Updateing wine dosdrives"), true);
 			proc->exec();
+
+
 
 			// ---- End of Creating Dos drives ----
 

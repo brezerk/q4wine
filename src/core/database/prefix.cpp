@@ -35,20 +35,20 @@ Prefix::Prefix()
 }
 
 QList<QStringList> Prefix::getFields(const QStringList fields) const{
-    QList<QStringList> valuelist;
+	QList<QStringList> valuelist;
 	QSqlQuery query;
-    QString sqlquery="SELECT ";
+	QString sqlquery="SELECT ";
 
-    for (int i = 0; i < fields.size(); ++i){
+	for (int i = 0; i < fields.size(); ++i){
 	sqlquery.append(fields.at(i));
 	if (i < (fields.size() - 1))
-	    sqlquery.append(", ");
-    }
+		sqlquery.append(", ");
+	}
 	sqlquery.append(" FROM ");
 	sqlquery.append(this->_TABLE);
 	sqlquery.append(" ORDER BY id");
 
-    if (query.exec(sqlquery)){
+	if (query.exec(sqlquery)){
 		while (query.next()) {
 			QStringList values;
 			for (int i = 0; i < fields.size(); ++i){
@@ -56,11 +56,11 @@ QList<QStringList> Prefix::getFields(const QStringList fields) const{
 			}
 			valuelist.append(values);
 		}
-    } else {
+	} else {
 		qDebug()<<"SqlError: "<<query.lastError();
-    }
+	}
 
-    return valuelist;
+	return valuelist;
 }
 
 QList<QStringList> Prefix::getFields(void) const{
@@ -85,31 +85,31 @@ QList<QStringList> Prefix::getFields(void) const{
 }
 
 QList<QStringList> Prefix::getFieldsByKey(const QStringList fields, const QStringList keys,  const QStringList vals) const{
-    QList<QStringList> valuelist;
+	QList<QStringList> valuelist;
 	QSqlQuery query;
-    QString sqlquery="SELECT ";
+	QString sqlquery="SELECT ";
 
-    for (int i = 0; i < fields.size(); ++i){
+	for (int i = 0; i < fields.size(); ++i){
 	sqlquery.append(fields.at(i));
 	if (i < (fields.size() - 1))
-	    sqlquery.append(", ");
-    }
+		sqlquery.append(", ");
+	}
 
 	sqlquery.append(" FROM ");
 	sqlquery.append(this->_TABLE);
 	sqlquery.append(" WHERE ");
 
-    for (int i = 0; i < keys.size(); ++i){
+	for (int i = 0; i < keys.size(); ++i){
 	sqlquery.append(keys.at(i));
 	sqlquery.append("=");
 	sqlquery.append(vals.at(i));
 	if (i < (keys.size() - 1))
-	    sqlquery.append(", ");
-    }
+		sqlquery.append(", ");
+	}
 
-    sqlquery.append(" ORDER BY id");
+	sqlquery.append(" ORDER BY id");
 
-    if (query.exec(sqlquery)){
+	if (query.exec(sqlquery)){
 		while (query.next()) {
 			QStringList values;
 			for (int i = 0; i < fields.size(); ++i){
@@ -117,10 +117,10 @@ QList<QStringList> Prefix::getFieldsByKey(const QStringList fields, const QStrin
 			}
 			valuelist.append(values);
 		}
-    } else {
+	} else {
 		qDebug()<<"SqlError: "<<query.lastError();
-    }
-    return valuelist;
+	}
+	return valuelist;
 }
 
 QStringList Prefix::getFieldsByPrefixName(const QString prefix_name) const{
@@ -201,12 +201,7 @@ QString Prefix::getMountPath(const QString prefix_name) const{
 	if (query.exec()){
 		query.first();
 		if (query.isValid()){
-			if (query.value(0).toString().isEmpty()){
-				value = QDir::homePath();
-				value.append("/.wine");
-			} else {
-				value.append(query.value(0).toString());
-			}
+				value = query.value(0).toString();
 		}
 	} else {
 		qDebug()<<"SqlError: "<<query.lastError();
@@ -389,7 +384,7 @@ bool Prefix::isExistsByName(const QString prefix_name) const{
 		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
 		return false;
 	}
-	
+
 	query.first();
 	if (query.isValid()){
 		return true;
