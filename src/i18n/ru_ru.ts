@@ -753,7 +753,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/IconsView.ui" line="72"/>
         <source>Export icons to default place</source>
-        <translation>Экспортировать пиктограммы в место по умолчанию</translation>
+        <translation>Экспортировать пиктограммы в место по-умолчанию</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsview.cpp" line="110"/>
@@ -1056,7 +1056,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="235"/>
         <source>Default (Windows XP)</source>
-        <translation>По умолчанию (Windows XP)</translation>
+        <translation>По-умолчанию (Windows XP)</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="249"/>
@@ -1274,7 +1274,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="328"/>
         <source>&lt;p&gt;You do not set default console binary.&lt;/p&gt;&lt;p&gt;Set it into q4wine option dialog.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Вы не установили консоль по умолчанию.&lt;/p&gt;&lt;p&gt;Установите ее в диалоге настройки q4wine.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Вы не установили консоль по-умолчанию.&lt;/p&gt;&lt;p&gt;Установите ее в диалоге настройки q4wine.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="560"/>
@@ -2031,7 +2031,7 @@ p, li { white-space: pre-wrap; }
         <source>If you wish to use different wine versions, you may wish set custom wine paths here.
 Note: leave it blank for default.</source>
         <translation>Если вы хотите использовать разные версии Wine, вы можете установить дополнительные пути к wine здесь.
-Примечание: Оставьте их пустыми для настроек по умолчанию.</translation>
+Примечание: Оставьте их пустыми для настроек по-умолчанию.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="455"/>
@@ -3980,7 +3980,7 @@ Note: leave it blank if you don&apos;t nead it.</source>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1850"/>
         <source>Please select default fake drive version:</source>
-        <translation>Выберите версию по умолчанию для фиктивного диска:</translation>
+        <translation>Выберите версию по-умолчанию для фиктивного диска:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1957"/>
@@ -4024,7 +4024,7 @@ Note: leave it blank if you don&apos;t nead it.</source>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="3170"/>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="3490"/>
         <source>Note: Leave empty for default</source>
-        <translation>Примечание: Оставьте их пустыми для использования значений по умолчанию</translation>
+        <translation>Примечание: Оставьте их пустыми для использования значений по-умолчанию</translation>
     </message>
 </context>
 <context>

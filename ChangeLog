@@ -5,6 +5,12 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
+Version 0.114-r1
+ Fixed:
+  - Fixed wrong wine C: drive symlink while create new Fake Drive (thx 2 Kyrill Detinov);
+  - Fixed Russian spelling;
+  - Fixed some text layouts;
+
 Version 0.114
  Added:
   - New Registry read\write engine;
