@@ -1111,7 +1111,7 @@ void Wizard::nextWizardPage(){
 					if (fileInfo.isSymLink()){
 						sh_cmd.clear();
 						sh_cmd.append(CoreLib->getWhichOut("rm"));
-						sh_cmd.append(" -f '");
+						sh_cmd.append(" -fr '");
 						sh_cmd.append(fileInfo.filePath());
 						sh_cmd.append("'");
 						sh_line.append(sh_cmd);
@@ -1150,35 +1150,35 @@ void Wizard::nextWizardPage(){
 
 			sh_cmd.clear();
 			sh_cmd.append(CoreLib->getWhichOut("rm"));
-			sh_cmd.append(" -f '");
+			sh_cmd.append(" -fr '");
 			sh_cmd.append(QString("%1/Desktop").arg(prefixPath));
 			sh_cmd.append("'");
 			sh_line.append(sh_cmd);
 
 			sh_cmd.clear();
 			sh_cmd.append(CoreLib->getWhichOut("rm"));
-			sh_cmd.append(" -f '");
+			sh_cmd.append(" -fr '");
 			sh_cmd.append(QString("%1/My Documents").arg(prefixPath));
 			sh_cmd.append("'");
 			sh_line.append(sh_cmd);
 
 			sh_cmd.clear();
 			sh_cmd.append(CoreLib->getWhichOut("rm"));
-			sh_cmd.append(" -f '");
+			sh_cmd.append(" -fr '");
 			sh_cmd.append(QString("%1/My Music").arg(prefixPath));
 			sh_cmd.append("'");
 			sh_line.append(sh_cmd);
 
 			sh_cmd.clear();
 			sh_cmd.append(CoreLib->getWhichOut("rm"));
-			sh_cmd.append(" -f '");
+			sh_cmd.append(" -fr '");
 			sh_cmd.append(QString("%1/My Pictures").arg(prefixPath));
 			sh_cmd.append("'");
 			sh_line.append(sh_cmd);
 
 			sh_cmd.clear();
 			sh_cmd.append(CoreLib->getWhichOut("rm"));
-			sh_cmd.append(" -f '");
+			sh_cmd.append(" -fr '");
 			sh_cmd.append(QString("%1/My Videos").arg(prefixPath));
 			sh_cmd.append("'");
 			sh_line.append(sh_cmd);
@@ -1245,8 +1245,6 @@ void Wizard::nextWizardPage(){
 
 			Process *proc = new Process(args, CoreLib->getWhichOut("sh"), QDir::homePath(), tr("Updateing wine dosdrives"), tr("Updateing wine dosdrives"), true);
 			proc->exec();
-
-
 
 			// ---- End of Creating Dos drives ----
 

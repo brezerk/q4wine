@@ -30,22 +30,20 @@
 #include "config.h"
 
 #include "iconsview.h"
- 
+
 IconsView::IconsView(QString tmpDir, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
 	setupUi(this);
-
-	
 	tempDirectory=tmpDir;
-	
+
 	QDir tmp(tmpDir);
 	tmp.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
 	QFileInfoList list = tmp.entryInfoList();
-		
+
 	QListWidgetItem *iconItem;
 	lstIcons->clear();
 	lstIcons->setSelectionMode(QAbstractItemView::SingleSelection);
-	
+
 	// Getting converted icons from temp directory
 	for (int i = 0; i < list.size(); ++i) {
 		QFileInfo fileInfo = list.at(i);
@@ -55,40 +53,39 @@ IconsView::IconsView(QString tmpDir, QWidget * parent, Qt::WFlags f) : QDialog(p
 			iconItem->setIcon(QIcon(fileInfo.filePath()));
 		}
 	}
-	
+
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
-	
 	return;
 }
 
 void IconsView::cmdCancel_Click(){
 	reject();
-	return;	
+	return;
 }
 
 void IconsView::cmdOk_Click(){
 	//Getting selected icons
-	
+
 	//FIXME: For multiple icon export
 	//QList<QListWidgetItem *> icoList = lstIcons->selectedItems();
-		
+
 	//for (int i=0; i<icoList.count(); i++){
 	//		iconBuffer.names.append(icoList.at(i)->text());
 	//	}
-	
+
 	if (lstIcons->currentItem()){
 		QFile file;
-	
+
 		QString sourceFile, saveFile, saveFileName;
 		bool ok=FALSE;
-		
+
 		sourceFile.clear();
 		sourceFile.append(tempDirectory);
 		sourceFile.append("/");
 		sourceFile.append(lstIcons->currentItem()->text());
-		
-		
+
+
 		if (cbDefaultExport->checkState()==Qt::Checked){
 		saveFile.clear();
 		saveFile.append(QDir::homePath());
@@ -96,10 +93,10 @@ void IconsView::cmdOk_Click(){
 		saveFile.append(APP_SHORT_NAME);
 		saveFile.append("/icons/");
 		saveFile.append(lstIcons->currentItem()->text());
-		
+
 		saveFileName=lstIcons->currentItem()->text();
-		
-		
+
+
 		QMessageBox message;
 			message.setText(tr("Sorry. It seems file already exists.<br>Replace existent or rename current?"));
 			message.setWindowTitle(tr("Exporting icon"));
@@ -108,7 +105,7 @@ void IconsView::cmdOk_Click(){
 			message.addButton(tr("Use existing"), QMessageBox::ActionRole);
 			message.addButton(tr("Replace"), QMessageBox::DestructiveRole);
 			message.addButton(tr("Cancel"), QMessageBox::RejectRole);
-					
+
 			while (QFile::exists (saveFile)){
 				switch (message.exec()){
 					case 0:
@@ -147,9 +144,9 @@ void IconsView::cmdOk_Click(){
 						reject();
 						return;
 					break;
-				}		
+				}
 		}
-		
+
 		} else {
 			saveFile.clear();
 			saveFile.append(QDir::homePath());
@@ -157,21 +154,21 @@ void IconsView::cmdOk_Click(){
 			saveFile.append(APP_SHORT_NAME);
 			saveFile.append("/icons/");
 			saveFile = QFileDialog::getSaveFileName(this, tr("Select file to save"), saveFile , tr("Images (*.png)"));
-	
+
 			if (saveFile.isEmpty()){
 				reject();
 				return;
 			}
 		}
-		
+
 		if (!file.copy(sourceFile, saveFile)){
 			QMessageBox::warning(this, tr("Error"), tr("Sorry, i can't create file: <br>%1.").arg(saveFile), QMessageBox::Ok);
 		}
-		
+
 		selectedFile=saveFile;
 		accept();
 		return;
-		
+
 	} else {
 		reject();
 		return;

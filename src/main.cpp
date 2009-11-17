@@ -72,10 +72,10 @@ int main(int argc, char *argv[])
 		return 0;
 
 	QTranslator*  qtt = new QTranslator ( 0 );
-	if (!qtt){
-	   qDebug()<<"[EE] Can't create QTranslator";
-	return -1;
-   }
+	if (qtt == NULL){
+		qDebug()<<"[EE] Can't create QTranslator";
+		return -1;
+	}
 	QSettings settings(APP_SHORT_NAME, "default");
 
 	QString i18nPath;
@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
 	   i18nPath.append(APP_SHORT_NAME);
 	   i18nPath.append("/i18n");
 #ifdef DEBUG
-	qDebug()<<"[ii] i18n path: "<<i18nPath;
+	   qDebug()<<"[ii] i18n path: "<<i18nPath;
 #endif
 
 	// Getting env LANG variable
@@ -96,7 +96,6 @@ int main(int argc, char *argv[])
 
 	// This is hack for next QLocale bug:
 	//  http://bugs.gentoo.org/150745
-
 
 #ifdef DEBUG
 	qDebug()<<"[ii] Config lang: "<<lang;
@@ -148,6 +147,10 @@ int main(int argc, char *argv[])
 	if (!settings.contains ("configure")){
 	   //If no key, we gona to start an First Run Wizard to setup q4wine
 	   Wizard *firstSetupWizard = new Wizard(1);
+	   if (firstSetupWizard == NULL){
+		   qDebug()<<"[EE] Can't create Wizard";
+		   return -1;
+	   }
 	   if (firstSetupWizard->exec()==QDialog::Accepted){
 			QString rootConfPath;
 			QDir dir;
