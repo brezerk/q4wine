@@ -118,7 +118,11 @@ int main(int argc, char *argv[])
 #endif
 			}
 		  }
-		lang = lang.split(".").at(0).toLower();
+
+		   lang = lang.split(".").at(0).toLower();
+		    if (lang.contains("=")){
+			   lang = lang.split("=").last();
+		     }
 #ifdef DEBUG
 		qDebug()<<"[ii] Lang split: "<<lang;
 #endif
