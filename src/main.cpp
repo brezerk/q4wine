@@ -72,6 +72,10 @@ int main(int argc, char *argv[])
 		return 0;
 
 	QTranslator*  qtt = new QTranslator ( 0 );
+	if (!qtt){
+	   qDebug()<<"[EE] Can't create QTranslator";
+	return -1;
+   }
 	QSettings settings(APP_SHORT_NAME, "default");
 
 	QString i18nPath;
@@ -80,7 +84,9 @@ int main(int argc, char *argv[])
 	   i18nPath.append("/share/");
 	   i18nPath.append(APP_SHORT_NAME);
 	   i18nPath.append("/i18n");
-
+#ifdef DEBUG
+	qDebug()<<"[ii] i18n path: "<<i18nPath;
+#endif
 
 	// Getting env LANG variable
 	QString lang;
@@ -91,16 +97,37 @@ int main(int argc, char *argv[])
 	// This is hack for next QLocale bug:
 	//  http://bugs.gentoo.org/150745
 
+
+#ifdef DEBUG
+	qDebug()<<"[ii] Config lang: "<<lang;
+#endif
+
 	if (lang.isEmpty()){
 		lang = setlocale(LC_ALL, "");
+#ifdef DEBUG
+		qDebug()<<"[ii] LC_ALL: "<<lang;
+#endif
 		  if (lang.isEmpty()){
 			lang = setlocale(LC_MESSAGES, "");
-				if (lang.isEmpty()){
-				 lang = getenv("LANG");
-				}
+#ifdef DEBUG
+			qDebug()<<"[ii] LC_MESSAGES: "<<lang;
+#endif
+			if (lang.isEmpty()){
+			   lang = getenv("LANG");
+#ifdef DEBUG
+			   qDebug()<<"[ii] Env LANG: "<<lang;
+#endif
+			}
 		  }
 		lang = lang.split(".").at(0).toLower();
-		lang.append(".qm");
+#ifdef DEBUG
+		qDebug()<<"[ii] Lang split: "<<lang;
+#endif
+
+		//lang.append(".qm");
+#ifdef DEBUG
+		qDebug()<<"[ii] Lang to load: "<<lang;
+#endif
 	}
 
 	if (!lang.isNull()){

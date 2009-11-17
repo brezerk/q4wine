@@ -89,17 +89,36 @@ int main(int argc, char *argv[])
 	QString lang = CoreLib->getSetting("app", "lang", FALSE).toString() ;
 	// This is hack for next QLocale bug:
 	//  http://bugs.gentoo.org/150745
+#ifdef DEBUG
+	qDebug()<<"[ii] Config lang: "<<lang;
+#endif
 
 	if (lang.isEmpty()){
 		lang = setlocale(LC_ALL, "");
+#ifdef DEBUG
+		qDebug()<<"[ii] LC_ALL: "<<lang;
+#endif
 		  if (lang.isEmpty()){
 			lang = setlocale(LC_MESSAGES, "");
-				if (lang.isEmpty()){
-				 lang = getenv("LANG");
-				}
+#ifdef DEBUG
+			qDebug()<<"[ii] LC_MESSAGES: "<<lang;
+#endif
+			if (lang.isEmpty()){
+			   lang = getenv("LANG");
+#ifdef DEBUG
+			   qDebug()<<"[ii] Env LANG: "<<lang;
+#endif
+			}
 		  }
 		lang = lang.split(".").at(0).toLower();
-		lang.append(".qm");
+#ifdef DEBUG
+		qDebug()<<"[ii] Lang split: "<<lang;
+#endif
+
+		//lang.append(".qm");
+#ifdef DEBUG
+		qDebug()<<"[ii] Lang to load: "<<lang;
+#endif
 	}
 
 	if (!lang.isNull()){
