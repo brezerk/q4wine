@@ -79,19 +79,19 @@ int main(int argc, char *argv[])
 	QSettings settings(APP_SHORT_NAME, "default");
 
 	QString i18nPath;
-	   i18nPath.clear();
-	   i18nPath.append(APP_PREF);
-	   i18nPath.append("/share/");
-	   i18nPath.append(APP_SHORT_NAME);
-	   i18nPath.append("/i18n");
+	i18nPath.clear();
+	i18nPath.append(APP_PREF);
+	i18nPath.append("/share/");
+	i18nPath.append(APP_SHORT_NAME);
+	i18nPath.append("/i18n");
 #ifdef DEBUG
-	   qDebug()<<"[ii] i18n path: "<<i18nPath;
+	qDebug()<<"[ii] i18n path: "<<i18nPath;
 #endif
 
 	// Getting env LANG variable
 	QString lang;
 	settings.beginGroup("app");
-	   lang = settings.value("lang").toString();
+	lang = settings.value("lang").toString();
 	settings.endGroup();
 
 	// This is hack for next QLocale bug:
@@ -106,56 +106,55 @@ int main(int argc, char *argv[])
 #ifdef DEBUG
 		qDebug()<<"[ii] LC_ALL: "<<lang;
 #endif
-		  if (lang.isEmpty()){
+		if (lang.isEmpty()){
 			lang = setlocale(LC_MESSAGES, "");
 #ifdef DEBUG
 			qDebug()<<"[ii] LC_MESSAGES: "<<lang;
 #endif
 			if (lang.isEmpty()){
-			   lang = getenv("LANG");
+				lang = getenv("LANG");
 #ifdef DEBUG
-			   qDebug()<<"[ii] Env LANG: "<<lang;
+				qDebug()<<"[ii] Env LANG: "<<lang;
 #endif
 			}
-		  }
+		}
 
-		   lang = lang.split(".").at(0).toLower();
-		    if (lang.contains("=")){
-			   lang = lang.split("=").last();
-		     }
+		lang = lang.split(".").at(0).toLower();
+		if (lang.contains("=")){
+			lang = lang.split("=").last();
+		}
 #ifdef DEBUG
 		qDebug()<<"[ii] Lang split: "<<lang;
 #endif
 
-		//lang.append(".qm");
 #ifdef DEBUG
 		qDebug()<<"[ii] Lang to load: "<<lang;
 #endif
 	}
 
 	if (!lang.isNull()){
-	   if (qtt->load(lang, i18nPath)){
-		app.installTranslator( qtt );
-	   } else {
-		qDebug()<<"[EE] Can't open user selected translation";
-		if (qtt->load("en_us.qm", i18nPath)){
-		   app.installTranslator( qtt );
+		if (qtt->load(lang, i18nPath)){
+			app.installTranslator( qtt );
 		} else {
-		   qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
+			qDebug()<<"[EE] Can't open user selected translation";
+			if (qtt->load("en_us.qm", i18nPath)){
+				app.installTranslator( qtt );
+			} else {
+				qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
+			}
 		}
-	   }
 	} else {
-	   qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
+		qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
 	}
 
 	if (!settings.contains ("configure")){
-	   //If no key, we gona to start an First Run Wizard to setup q4wine
-	   Wizard *firstSetupWizard = new Wizard(1);
-	   if (firstSetupWizard == NULL){
-		   qDebug()<<"[EE] Can't create Wizard";
-		   return -1;
-	   }
-	   if (firstSetupWizard->exec()==QDialog::Accepted){
+		//If no key, we gona to start an First Run Wizard to setup q4wine
+		Wizard *firstSetupWizard = new Wizard(1);
+		if (firstSetupWizard == NULL){
+			qDebug()<<"[EE] Can't create Wizard";
+			return -1;
+		}
+		if (firstSetupWizard->exec()==QDialog::Accepted){
 			QString rootConfPath;
 			QDir dir;
 			rootConfPath.clear();
@@ -165,10 +164,10 @@ int main(int argc, char *argv[])
 
 			// Creating root folder
 			if (!dir.exists(rootConfPath)){
-			   if (!dir.mkdir(rootConfPath)){
-				QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create root directory %1.").arg(rootConfPath));
-				return -1;
-			   }
+				if (!dir.mkdir(rootConfPath)){
+					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create root directory %1.").arg(rootConfPath));
+					return -1;
+				}
 			}
 
 			// Creating sub folders
@@ -178,15 +177,15 @@ int main(int argc, char *argv[])
 			QString subDir;
 
 			for (int i=0; i<subDirs.size(); ++i){
-			   subDir=rootConfPath;
-			   subDir.append("/");
-			   subDir.append(subDirs.at(i).toLocal8Bit().constData());
-			   if (!dir.exists(subDir)){
-				if (!dir.mkdir(subDir)){
-				   QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
-				   return -1;
+				subDir=rootConfPath;
+				subDir.append("/");
+				subDir.append(subDirs.at(i).toLocal8Bit().constData());
+				if (!dir.exists(subDir)){
+					if (!dir.mkdir(subDir)){
+						QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
+						return -1;
+					}
 				}
-			   }
 			}
 
 			settings.setValue("configure", "yes");
@@ -227,12 +226,12 @@ int main(int argc, char *argv[])
 	}
 
 	if (!initDb())
-	   return -1;
+		return -1;
 
 	QStringList tables;
 	tables << "prefix" << "dir" << "icon" << "images" << "last_run_icon";
 	if (!db.checkDb(tables))
-	   return -1;
+		return -1;
 
 	MainWindow mainWin(startState);
 	mainWin.show();

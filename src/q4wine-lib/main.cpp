@@ -486,7 +486,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			}
 
 			if (!execObj.winedebug.isEmpty() && execObj.useconsole == "1"){
-				  envargs.append(QString(" WINEDEBUG=%1 ").arg(execObj.winedebug));
+				  envargs.append(QString(" WINEDEBUG='%1' ").arg(execObj.winedebug));
 			}
 
 			if (!execObj.display.isEmpty()){

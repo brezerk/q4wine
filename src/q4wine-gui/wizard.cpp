@@ -494,9 +494,15 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 			QFileInfoList drivelist = wineDriveDir.entryInfoList();
 			for (int i = 0; i < drivelist.size(); ++i) {
 				QFileInfo fileInfo = drivelist.at(i);
-				QString line = fileInfo.fileName().toUpper();
-				line.append(" ");
-				line.append(fileInfo.symLinkTarget());
+				QString line = "";
+				if (fileInfo.fileName().toUpper()=="C:"){
+					line = "C: ";
+					line.append("../drive_c");
+				} else {
+					line = fileInfo.fileName().toUpper();
+					line.append(" ");
+					line.append(fileInfo.symLinkTarget());
+				}
 				line.append("\n");
 				line.append(tr("Type"));
 				line.append(": ");

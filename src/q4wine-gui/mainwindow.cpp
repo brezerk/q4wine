@@ -973,11 +973,8 @@ void MainWindow::menuRun_triggered ( QAction * action ){
 	if (!twPrograms->currentItem())
 		return;
 
-
-
 	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 	QStringList dataList;
-
 
 	if (!treeItem)
 		return;
@@ -987,6 +984,10 @@ void MainWindow::menuRun_triggered ( QAction * action ){
 
 	if (isMinimized ())
 		showNormal ();
+
+#ifdef DEBUG
+	qDebug()<<"Config key: advanced.openRunDialog="<<CoreLib->getSetting("advanced", "openRunDialog", false, 0).toString();
+#endif
 
 	if (CoreLib->getSetting("advanced", "openRunDialog", false, 0).toInt()==0){
 		ExecObject execObj;
@@ -1008,8 +1009,6 @@ void MainWindow::menuRun_triggered ( QAction * action ){
 	} else {
 		Run *run;
 
-		return;
-
 		if (treeItem->parent()){
 			run = new Run(treeItem->parent()->text(0), result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
 		} else {
@@ -1024,8 +1023,8 @@ void MainWindow::menuRun_triggered ( QAction * action ){
 }
 
 void MainWindow::lstIcons_ShowContextMenu(const QPoint & iPoint){
-  /*
-		Function showing context menu
+   /*
+	*	Function showing context menu
 	*/
 
   QListWidgetItem *iconItem = lstIcons->itemAt(iPoint);
