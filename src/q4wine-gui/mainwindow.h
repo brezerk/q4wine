@@ -77,6 +77,7 @@
 #include "src/core/database/image.h"
 
 #include "draglistwidget.h"
+#include "appdbsearchwidget.h"
 
 #include "wisitem.h"
 #include "iconsview.h"

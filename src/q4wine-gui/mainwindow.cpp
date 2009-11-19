@@ -193,6 +193,28 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	createTrayIcon();
 
 	connect (menuRun, SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
+
+	QWidget *scrollMe = new QWidget();
+
+	QVBoxLayout *scrollMeLayout = new QVBoxLayout;
+
+	AppDBSearchWidget *AppDBWidget = new AppDBSearchWidget();
+	scrollMeLayout->addWidget(AppDBWidget);
+
+	AppDBWidget = new AppDBSearchWidget();
+	scrollMeLayout->addWidget(AppDBWidget);
+
+	AppDBWidget = new AppDBSearchWidget();
+	scrollMeLayout->addWidget(AppDBWidget);
+
+	scrollMeLayout->insertStretch(-1);
+
+	scrollMeLayout->setMargin(3);
+	scrollMe->setLayout(scrollMeLayout);
+
+	//AppDBWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+	appdbScrollArea->setWidget(scrollMe);
+
 	return;
 }
 

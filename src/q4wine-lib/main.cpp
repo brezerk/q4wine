@@ -457,40 +457,40 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			if (!prefixList.at(1).isEmpty()){
 				  //If icon has prefix -- add to args
-				  envargs.append(QString(" WINEPREFIX=%1 ").arg(prefixList.at(1)));
+				  envargs.append(QString(" WINEPREFIX=\"%1\" ").arg(prefixList.at(1)));
 			} else {
 				  //Else use default prefix
-				  envargs.append(QString(" WINEPREFIX=%1/.wine ").arg(QDir::homePath()));
+				  envargs.append(QString(" WINEPREFIX=\"%1/.wine\" ").arg(QDir::homePath()));
 			}
 
 			if (!prefixList.at(2).isEmpty()){
-				  envargs.append(QString(" WINEDLLPATH=%1 ").arg(prefixList.at(2)));
+				  envargs.append(QString(" WINEDLLPATH=\"%1\" ").arg(prefixList.at(2)));
 			} else {
-				  envargs.append(QString(" WINEDLLPATH=%1 ").arg(this->getSetting("wine", "WineLibs").toString()));
+				  envargs.append(QString(" WINEDLLPATH=\"%1\" ").arg(this->getSetting("wine", "WineLibs").toString()));
 			}
 
 			if (!prefixList.at(3).isEmpty()){
-				  envargs.append(QString(" WINELOADER=%1 ").arg(prefixList.at(3)));
+				  envargs.append(QString(" WINELOADER=\"%1\" ").arg(prefixList.at(3)));
 			} else {
-				  envargs.append(QString(" WINELOADER=%1 ").arg(this->getSetting("wine", "LoaderBin").toString()));
+				  envargs.append(QString(" WINELOADER=\"%1\" ").arg(this->getSetting("wine", "LoaderBin").toString()));
 			}
 
 			if (!prefixList.at(4).isEmpty()){
-				  envargs.append(QString(" WINESERVER=%1 ").arg(prefixList.at(4)));
+				  envargs.append(QString(" WINESERVER=\"%1\" ").arg(prefixList.at(4)));
 			} else {
-				  envargs.append(QString(" WINESERVER=%1 ").arg(this->getSetting("wine", "ServerBin").toString()));
+				  envargs.append(QString(" WINESERVER=\"%1\" ").arg(this->getSetting("wine", "ServerBin").toString()));
 			}
 
 			if (!execObj.override.isEmpty()){
-				  envargs.append(QString(" WINEDLLOVERRIDES='%1' ").arg(execObj.override));
+				  envargs.append(QString(" WINEDLLOVERRIDES=\"%1\" ").arg(execObj.override));
 			}
 
 			if (!execObj.winedebug.isEmpty() && execObj.useconsole == "1"){
-				  envargs.append(QString(" WINEDEBUG='%1' ").arg(execObj.winedebug));
+				  envargs.append(QString(" WINEDEBUG=\"%1\" ").arg(execObj.winedebug));
 			}
 
 			if (!execObj.display.isEmpty()){
-				  envargs.append(QString(" DISPLAY=%1 ").arg(execObj.display));
+				  envargs.append(QString(" DISPLAY=\"%1\" ").arg(execObj.display));
 			}
 
 			QString exec_string = "";
@@ -555,28 +555,28 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			if (!prefixList.at(1).isEmpty()){
 				  //If icon has prefix -- add to args
-				  envargs.append(QString(" WINEPREFIX=%1 ").arg(prefixList.at(1)));
+				  envargs.append(QString(" WINEPREFIX=\"%1\" ").arg(prefixList.at(1)));
 			} else {
 				  //Else use default prefix
-				  envargs.append(QString(" WINEPREFIX=%1/.wine ").arg(QDir::homePath()));
+				  envargs.append(QString(" WINEPREFIX=\"%1/.wine\" ").arg(QDir::homePath()));
 			}
 
 			if (!prefixList.at(2).isEmpty()){
-				  envargs.append(QString(" WINEDLLPATH=%1 ").arg(prefixList.at(2)));
+				  envargs.append(QString(" WINEDLLPATH=\"%1\" ").arg(prefixList.at(2)));
 			} else {
-				  envargs.append(QString(" WINEDLLPATH=%1 ").arg(this->getSetting("wine", "WineLibs").toString()));
+				  envargs.append(QString(" WINEDLLPATH=\"%1\" ").arg(this->getSetting("wine", "WineLibs").toString()));
 			}
 
 			if (!prefixList.at(3).isEmpty()){
-				  envargs.append(QString(" WINELOADER=%1 ").arg(prefixList.at(3)));
+				  envargs.append(QString(" WINELOADER=\"%1\" ").arg(prefixList.at(3)));
 			} else {
-				  envargs.append(QString(" WINELOADER=%1 ").arg(this->getSetting("wine", "LoaderBin").toString()));
+				  envargs.append(QString(" WINELOADER=\"%1\" ").arg(this->getSetting("wine", "LoaderBin").toString()));
 			}
 
 			if (!prefixList.at(4).isEmpty()){
-				  envargs.append(QString(" WINESERVER=%1 ").arg(prefixList.at(4)));
+				  envargs.append(QString(" WINESERVER=\"%1\" ").arg(prefixList.at(4)));
 			} else {
-				  envargs.append(QString(" WINESERVER=%1 ").arg(this->getSetting("wine", "ServerBin").toString()));
+				  envargs.append(QString(" WINESERVER=\"%1\" ").arg(this->getSetting("wine", "ServerBin").toString()));
 			}
 
 			QString exec_string = "";

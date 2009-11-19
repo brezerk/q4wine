@@ -58,6 +58,7 @@ SET( Q4WINE_GUI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.cpp
 #	${CMAKE_SOURCE_DIR}/src/wis/wisitem.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/draglistwidget.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appdbsearchwidget.cpp
 )
 
 SET ( Q4WINE_HEADERS_DIR
@@ -95,6 +96,7 @@ SET ( Q4WINE_GUI_HEADERS
 	${CMAKE_SOURCE_DIR}/src/core/database/initdb.h
 	${CMAKE_SOURCE_DIR}/config.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/draglistwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appdbsearchwidget.h
 )
 
 SET ( Q4WINE_GUI_MOC_HEADEDRS
@@ -113,6 +115,7 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
 	#${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/draglistwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appdbsearchwidget.h
 )
 
 SET ( Q4WINE_GUI_UI_SOURCES
@@ -128,6 +131,7 @@ SET ( Q4WINE_GUI_UI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/IconSettings.ui
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/ImageManager.ui
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/WineDriveDialog.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppDBSearchWidget.ui
 )
 
 IF (${WITH_WINETRIKS} MATCHES ON )
