@@ -195,16 +195,30 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	connect (menuRun, SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
 
 	QWidget *scrollMe = new QWidget();
-
 	QVBoxLayout *scrollMeLayout = new QVBoxLayout;
 
-	AppDBSearchWidget *AppDBWidget = new AppDBSearchWidget();
+	QList<QStringList> appvers;
+	QStringList ver;
+
+	appvers.clear();
+	ver.clear();
+	ver<<"1.0"<<"Gold"<<"0.9.21";
+	appvers<<ver;
+	ver.clear();
+	ver<<"1.1"<<"Garbage"<<"0.9.33";
+	appvers<<ver;
+
+	AppDBSearchWidget *AppDBWidget;
+
+	AppDBWidget = new AppDBSearchWidget("Test War", "Yet another John Dow Special! John's a goodly way into rewriting this rather excellent Jeff MintÂer shooter.", appvers, "a");
 	scrollMeLayout->addWidget(AppDBWidget);
 
-	AppDBWidget = new AppDBSearchWidget();
-	scrollMeLayout->addWidget(AppDBWidget);
+	appvers.clear();
+	ver.clear();
+	ver<<"1.3 Expansion"<<"Silver"<<"1.1.21";
+	appvers.append(ver);
 
-	AppDBWidget = new AppDBSearchWidget();
+	AppDBWidget = new AppDBSearchWidget("Star War", "Super puper game online.", appvers, "a");
 	scrollMeLayout->addWidget(AppDBWidget);
 
 	scrollMeLayout->insertStretch(-1);
@@ -317,27 +331,31 @@ void MainWindow::startDrag (){
 }
 
 void MainWindow::cmdTestWis_Click(){
-  // test block
-/*
-	Registry test(db_prefix->getPath(cbPrefixes->currentText()));
-	QStringList keys;
-	keys.append("\"RegisteredOwner\"");
-	keys.append("\"RegisteredOrganization\"");
 
+	QFile file("/home/brezerk/develop/q4wine/templates/app-search.xml");
 
-	//qDebug()<<test.readKeys("Software\\Microsoft\\Windows\\CurrentVersion", keys);
-*/
-	/*
-	WisItem wis;
+	if (!file.open(QIODevice::ReadOnly)) {
+		return;
+	}
 
-	QString path = HOME_PATH;
-	path.append("/.config/q4wine/sample.xml");
+	QXmlSimpleReader xmlReader;
+	QXmlInputSource *source = new QXmlInputSource(&file);
 
-	wis = core->getWisInfo(path); // test
-	  qDebug() << "it is name" << wis.name;
-	  qDebug () << "it is download" << wis.download;
-	*/
-  return;
+	/*Handler *handler = new Handler;
+	xmlReader.setContentHandler(handler);
+	xmlReader.setErrorHandler(handler);*/
+
+	bool ok = xmlReader.parse(source);
+
+	if (!ok){
+		qDebug() << "Parsing failed.";
+	} else {
+		qDebug() << "Ok!";
+	}
+
+	qDebug() << source->data();
+
+	file.close();
 }
 
 void MainWindow::cmdWinetricks_Click() {

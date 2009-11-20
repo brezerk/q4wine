@@ -63,6 +63,9 @@
 #include <QGroupBox>
 #include <QVariant>
 
+#include <QtXml>
+
+
 #include <QMimeData>
 #include <QDrag>
 

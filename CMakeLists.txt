@@ -57,18 +57,20 @@ SET( Q4WINE_GUI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.cpp
 #	${CMAKE_SOURCE_DIR}/src/wis/wisitem.cpp
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/draglistwidget.cpp
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appdbsearchwidget.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/draglistwidget.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbsearchwidget.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbappversionwidget.cpp
 )
 
 SET ( Q4WINE_HEADERS_DIR
 	${CMAKE_SOURCE_DIR}
 	${CMAKE_SOURCE_DIR}/src
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets
 	${CMAKE_SOURCE_DIR}/src/core
 	${CMAKE_SOURCE_DIR}/src/temporary
 	${CMAKE_SOURCE_DIR}/src/wis
-	${CMAKE_SOURCE_DIR}/src/qtsingleapplication/
+	${CMAKE_SOURCE_DIR}/src/qtsingleapplication
 )
 
 
@@ -92,11 +94,12 @@ SET ( Q4WINE_GUI_HEADERS
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
-	${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
+#	${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
 	${CMAKE_SOURCE_DIR}/src/core/database/initdb.h
 	${CMAKE_SOURCE_DIR}/config.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/draglistwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appdbsearchwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/draglistwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbsearchwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbappversionwidget.h
 )
 
 SET ( Q4WINE_GUI_MOC_HEADEDRS
@@ -113,9 +116,10 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
-	#${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/draglistwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appdbsearchwidget.h
+#	${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/draglistwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbsearchwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbappversionwidget.h
 )
 
 SET ( Q4WINE_GUI_UI_SOURCES
@@ -132,6 +136,7 @@ SET ( Q4WINE_GUI_UI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/ImageManager.ui
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/WineDriveDialog.ui
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppDBSearchWidget.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppDBAppVersionWidget.ui
 )
 
 IF (${WITH_WINETRIKS} MATCHES ON )
@@ -281,6 +286,12 @@ FIND_PACKAGE(Qt4 REQUIRED)
 			ELSE(QT_QTNETWORK_FOUND)
 				MESSAGE(FATAL ERROR "Qt NetWork libraries missing.")
 			ENDIF(QT_QTNETWORK_FOUND)
+
+			IF(QT_QTXML_FOUND)
+				SET(QT_USE_QTXML 1)
+			ELSE(QT_QTXML_FOUND)
+				MESSAGE(FATAL ERROR "Qt XML libraries missing.")
+			ENDIF(QT_QTXML_FOUND)
 
 			IF(QT_QTCORE_FOUND)
 				SET(QT_USE_QTCORE 1)

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appdb_export>
+  <version>0.1</version>
+  <action>1</action>
+  <page>
+    <current>$current_page</current>
+    <count>$pages_count</count>
+  </page>
+  <app-list>
+    <app id="1">
+      <name>Some App Name</name>
+      <desc>Some app shortest descriptions</desc>
+      <category>Games</category>
+      <url>url</url>
+      <version-list>
+	<version id="41">
+	  <app-ver>1.x</app-ver>
+	  <rating>1</rating>
+	  <wine-ver>0.9.21</wine-ver>
+	  <url>url</url>
+	</version>
+	<version id="43">
+	  <app-ver>1.1</app-ver>
+	  <rating>2</rating>
+	  <wine-ver>0.9.31</wine-ver>
+	  <url>url</url>
+	</version>
+	<version id="31">
+	  <app-ver>Expanstion 1.2</app-ver>
+	  <rating>4</rating>
+	  <wine-ver>0.9.10</wine-ver>
+	  <url>url</url>
+	</version>
+      </version-list>
+    </app>
+    <app id="310">
+      <name>Some Other App Name</name>
+      <desc>Some other app shortest descriptions</desc>
+      <category>Scince</category>
+      <url>url</url>
+      <version-list>
+	<version id="11">
+	  <app-ver>1.-</app-ver>
+	  <rating>3</rating>
+	  <wine-ver>1.1.31</wine-ver>
+	  <url>url</url>
+	</version>
+      </version-list>
+    </app>
+  </app-list>
+</appdb_export>
+      

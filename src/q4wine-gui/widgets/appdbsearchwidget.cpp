@@ -29,7 +29,55 @@
 
 #include "appdbsearchwidget.h"
 
-AppDBSearchWidget::AppDBSearchWidget(QWidget *parent) : QWidget(parent)
+AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, QList<QStringList> versions, QString url, QWidget *parent) : QWidget(parent)
 {
 	setupUi(this);
+	this->setAppName(name);
+	this->setAppDesc(desc);
+	this->_URL=url;
+
+	AppDBAppVersionWidget *version;
+	for (int i=0; i<versions.count(); i++){
+		version = new AppDBAppVersionWidget();
+		if (versions.at(i).count()==3){
+			version->setAppVersion(versions.at(i).at(0));
+			version->setAppRating(versions.at(i).at(1));
+			version->setWineVersion(versions.at(i).at(2));
+			verticalLayout_3->addWidget(version);
+		}
+	}
+
+	lblAppName->installEventFilter(this);
+	lblAppName->setCursor(Qt::PointingHandCursor);
+	return;
+}
+
+void AppDBSearchWidget::setAppName(QString name){
+	//FIXME: url might pint to web xml engine
+	lblAppName->setText(name);
+	return;
+}
+
+void AppDBSearchWidget::setAppDesc(QString desc){
+	if (desc.length()>=255){
+		lblAppDesc->setText(QString("%1...").arg(desc.left(100)));
+	} else {
+		lblAppDesc->setText(desc);
+	}
+	return;
+}
+
+bool AppDBSearchWidget::eventFilter(QObject *obj, QEvent *event){
+	// qDebug()<<obj->objectName();
+
+	if (event->type()==QEvent::Enter){
+		QPalette p(palette());
+		// Set colour
+		p.setColor(QPalette::WindowText, QPalette().color(QPalette::Highlight));
+		this->lblAppName->setPalette(p);
+	} else if (event->type()==QEvent::Leave){
+		// Restore default color
+		this->lblAppName->setPalette(QPalette());
+	}
+	return false;
 }

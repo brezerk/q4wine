@@ -27,10 +27,10 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#ifndef APPDBSEARCHWIDGET_H
-#define APPDBSEARCHWIDGET_H
+#ifndef APPDBAPPVERSIONWIDGET_H
+#define APPDBAPPVERSIONWIDGET_H
 
-#include <ui_AppDBSearchWidget.h>
+#include <ui_AppDBAppVersionWidget.h>
 
 #include "config.h"
 
@@ -51,11 +51,46 @@
 
 #include <q4wine-lib/main.h>
 
-class AppDBSearchWidget : public QWidget, public Ui::AppDBSearchWidget
+/*!
+ * \class AppDBAppVersionWidget
+ * \ingroup widgets
+ * \brief This class provide database functions for AppDB search widget.
+ *
+ */
+
+class AppDBAppVersionWidget : public QWidget, public Ui::AppDBAppVersionWidget
 {
 Q_OBJECT
 public:
-	AppDBSearchWidget(QWidget *parent = 0);
+	//! Class constructor
+	AppDBAppVersionWidget(QWidget *parent = 0);
+
+	/*! \brief sets application version
+	*
+	* \param  version      Application version.
+	* \return Nothing.
+	*/
+	void setAppVersion(QString version);
+
+	/*! \brief sets application version
+	*
+	* \param  status       Application test status.
+	* \return Nothing.
+	*/
+	void setAppRating(QString rating);
+
+	/*! \brief sets application version
+	*
+	* \param  version      wine test version.
+	* \return Nothing.
+	*/
+	void setWineVersion(QString version);
+private:
+	QString _RATING;
+protected:
+	//! \brief Event filter.
+	bool eventFilter(QObject *obj, QEvent *event);
+
 };
 
-#endif // APPDBSEARCHWIDGET_H
+#endif // APPDBAPPVERSIONWIDGET_H
