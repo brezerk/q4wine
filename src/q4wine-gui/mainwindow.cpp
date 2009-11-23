@@ -338,24 +338,93 @@ void MainWindow::cmdTestWis_Click(){
 		return;
 	}
 
-	QXmlSimpleReader xmlReader;
-	QXmlInputSource *source = new QXmlInputSource(&file);
+	QDomDocument doc;
+	if (doc.setContent(&file)) {
+		QDomElement root = doc.documentElement();
+		if (root.tagName() != "appdb_export") {
+			qDebug()<<"[EE] File is not a q4wine appdb export file";
+			return;
+		}
 
-	/*Handler *handler = new Handler;
-	xmlReader.setContentHandler(handler);
-	xmlReader.setErrorHandler(handler);*/
+		QDomNode node = root.firstChild();
+		while (!node.isNull()) {
+			//if (node.toElement().tagName() == "entry")
 
-	bool ok = xmlReader.parse(source);
+			qDebug()<<node.toElement().tagName();
+			parseEntry(node.toElement());
+			node = node.nextSibling();
+		}
 
-	if (!ok){
-		qDebug() << "Parsing failed.";
-	} else {
-		qDebug() << "Ok!";
 	}
 
-	qDebug() << source->data();
-
 	file.close();
+}
+
+void MainWindow::parseEntry(const QDomElement &element){
+	QDomNode node = element.firstChild();
+	while (!node.isNull()) {
+		qDebug()<<node.toElement().tagName()<<node.toElement().attribute("id");
+
+		if (node.toElement().tagName() == "app") {
+			parseEntry(node.toElement());
+		} else if (node.toElement().tagName() == "version-list") {
+			parseEntry(node.toElement());
+		} else if (node.toElement().tagName() == "version") {
+			parseEntry(node.toElement());
+		}
+
+		QDomNode childNode = node.firstChild();
+		//while (!childNode.isNull()) {
+			if (childNode.nodeType() == QDomNode::TextNode) {
+				qDebug()<<childNode.toText().data();
+			}
+		//}
+		/* QDomNode childNode = node.firstChild();
+	  while (!childNode.isNull()) {
+		QDomNode childNode = node.firstChild();
+	  while (!childNode.isNull()) {
+		if (childNode.nodeType() == QDomNode::TextNode) {
+		  QString page = childNode.toText().data();
+		  QString allPages = item->text(1);
+		  if (!allPages.isEmpty())
+			allPages += ", ";
+		  allPages += page;
+		  item->setText(1, allPages);
+		  break;
+		}
+		childNode = childNode.nextSibling();
+	  }
+		  QString page = childNode.toText().data();
+		  QString allPages = item->text(1);
+		  if (!allPages.isEmpty())
+			allPages += ", ";
+		  allPages += page;
+		  item->setText(1, allPages);
+		  break;
+		}
+		childNode = childNode.nextSibling();
+	  } */
+
+		/*
+		if (node.toElement().tagName() == "app") {
+			parseEntry(node.toElement());
+		} else if (node.toElement().tagName() == "page") {
+			QDomNode childNode = node.firstChild();
+			while (!childNode.isNull()) {
+				if (childNode.nodeType() == QDomNode::TextNode) {
+					QString page = childNode.toText().data();
+					QString allPages = item->text(1);
+					if (!allPages.isEmpty())
+						allPages += ", ";
+					allPages += page;
+					item->setText(1, allPages);
+					break;
+				}
+				childNode = childNode.nextSibling();
+			}
+		}*/
+		node = node.nextSibling();
+	}
 }
 
 void MainWindow::cmdWinetricks_Click() {

@@ -261,6 +261,8 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void startDrop(QList<QUrl> files);
 	private:
 
+		void parseEntry(const QDomElement &element);
+
 		DragListWidget *lstIcons;
 
 		//! This is need for libq4wine-core.so import;
