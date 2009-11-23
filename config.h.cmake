@@ -43,6 +43,8 @@
 #define APP_WEBSITTE "q4wine.brezblock.org.ua"
 #define APP_BUG_EMAIL "brezerk@gmail.com"
 
+#define APPDB_EXPORT_VERSION "0.1"
+
 #cmakedefine _OS_LINUX_
 #cmakedefine _OS_FREEBSD_
 #cmakedefine _OS_DARWIN_

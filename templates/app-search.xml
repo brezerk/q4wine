@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <appdb_export>
-  <version>0.1</version>
-  <action>1</action>
+  <export_version>0.1</export_version>
+  <export_action>1</export_action>
   <page>
     <current>$current_page</current>
     <count>$pages_count</count>

@@ -27,69 +27,56 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#include "appdbappversionwidget.h"
+#ifndef XMLPARSER_H
+#define XMLPARSER_H
 
-AppDBAppVersionWidget::AppDBAppVersionWidget(const WineAppDBVersionInfo &versioninfo, QWidget *parent) : QWidget(parent)
+#include <config.h>
+
+#include <unistd.h>
+
+#include <QString>
+#include <QStringList>
+#include <QVariant>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QDir>
+#include <QTime>
+#include <QProcess>
+#include <QDebug>
+#include <QObject>
+#include <QSettings>
+#include <QDomDocument>
+#include <QDomElement>
+#include <QDomNode>
+
+#include "appdbstructs.h"
+
+/*!
+ * \class Registry
+ * \ingroup registry
+ * \brief This class provide general registry functions for q4wine.
+ *
+ * This class can create registry files to export via wine regedit.
+ * Also this class can read keys value from wine registry.
+ *
+ */
+
+class XmlParser : public QObject
 {
-	setupUi(this);
-	setCursor(Qt::PointingHandCursor);
-	this->installEventFilter(this);
-	this->setAutoFillBackground(true);
+Q_OBJECT
+public:
+	XmlParser(QString fileName);
+	QList<WineAppDBInfo> _APPDB_SEARCH_INFO;
+private:
+	bool parseEntry(const QDomElement &element);
+	void parseApp(const QDomElement &element);
+	void parseAppVersionsList(const QDomElement &element, WineAppDBInfo &appinfo);
+	void parseAppVersion(const QDomElement &element, WineAppDBInfo &appinfo);
+	QString getChildNodeData(const QDomNode &childNode);
+	QString _ACTION;
+	QString _PAGE_CURRENT;
+	QString _PAGE_COUNT;
+};
 
-	this->setAppVersion(versioninfo.appver);
-	this->setAppRating(versioninfo.rating);
-	this->setWineVersion(versioninfo.winever);
-}
-
-AppDBAppVersionWidget::~AppDBAppVersionWidget(){
-	//nothig but...
-}
-
-void AppDBAppVersionWidget::setAppVersion(const QString version){
-	lblAppVersion->setText(QString(" %1").arg(version));
-	return;
-}
-
-void AppDBAppVersionWidget::setAppRating(const short int rating){
-	switch (rating){
-		case 1:
-		lblAppRating->setText("Platinum");
-		break;
-		case 2:
-		lblAppRating->setText("Gold");
-		break;
-		case 3:
-		lblAppRating->setText("Silver");
-		break;
-		case 4:
-		lblAppRating->setText("Bronze");
-		break;
-		case 5:
-		lblAppRating->setText("Garbage");
-		break;
-		default:
-		lblAppRating->setText("unexpected");
-		break;
-	}
-
-	return;
-}
-
-void AppDBAppVersionWidget::setWineVersion(const QString version){
-	lblWineVersion->setText(QString("Wine: %1").arg(version));
-	return;
-}
-
-bool AppDBAppVersionWidget::eventFilter(QObject *obj, QEvent *event){
-	if (event->type()==QEvent::Enter){
-		QPalette p(palette());
-		// Set colour
-		p.setColor(QPalette::Background, QPalette().color(QPalette::Highlight));
-		p.setColor(QPalette::WindowText, QPalette().color(QPalette::HighlightedText));
-		this->setPalette(p);
-	} else if (event->type()==QEvent::Leave){
-		// Reset default color
-		this->setPalette(QPalette());
-	}
-	return false;
-}
+#endif // XMLPARSER_H

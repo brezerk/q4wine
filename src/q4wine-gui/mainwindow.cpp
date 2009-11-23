@@ -194,41 +194,35 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 
 	connect (menuRun, SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
 
-	QWidget *scrollMe = new QWidget();
-	QVBoxLayout *scrollMeLayout = new QVBoxLayout;
+	appdbScrollAreaWidget = new QWidget();
 
-	QList<QStringList> appvers;
-	QStringList ver;
+	appdbScrollAreaWidget_Layout = new QVBoxLayout;
+	appdbScrollAreaWidget_Layout->setMargin(3);
 
-	appvers.clear();
-	ver.clear();
-	ver<<"1.0"<<"Gold"<<"0.9.21";
-	appvers<<ver;
-	ver.clear();
-	ver<<"1.1"<<"Garbage"<<"0.9.33";
-	appvers<<ver;
+	appdbScrollAreaWidget->setLayout(appdbScrollAreaWidget_Layout);
 
+	appdbScrollArea->setWidget(appdbScrollAreaWidget);
+
+	return;
+}
+
+void MainWindow::appdbScrollArea_addSearchWidget(WineAppDBInfo appinfo){
 	AppDBSearchWidget *AppDBWidget;
+	AppDBWidget = new AppDBSearchWidget(appinfo.name, appinfo.desc, appinfo.versions, appinfo.url);
+	qDebug()<<appdbScrollAreaWidget_Layout->objectName();
+	appdbScrollAreaWidget_Layout->addWidget(AppDBWidget);
+	return;
+}
 
-	AppDBWidget = new AppDBSearchWidget("Test War", "Yet another John Dow Special! John's a goodly way into rewriting this rather excellent Jeff MintÂer shooter.", appvers, "a");
-	scrollMeLayout->addWidget(AppDBWidget);
+void MainWindow::appdbScrollArea_reset(){
+	QList<QObject*> list = appdbScrollAreaWidget->children();
+	for (int i=0; i<list.count(); i++){
+		delete(list.at(i));
+	}
 
-	appvers.clear();
-	ver.clear();
-	ver<<"1.3 Expansion"<<"Silver"<<"1.1.21";
-	appvers.append(ver);
-
-	AppDBWidget = new AppDBSearchWidget("Star War", "Super puper game online.", appvers, "a");
-	scrollMeLayout->addWidget(AppDBWidget);
-
-	scrollMeLayout->insertStretch(-1);
-
-	scrollMeLayout->setMargin(3);
-	scrollMe->setLayout(scrollMeLayout);
-
-	//AppDBWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-	appdbScrollArea->setWidget(scrollMe);
-
+	appdbScrollAreaWidget_Layout = new QVBoxLayout;
+	appdbScrollAreaWidget_Layout->setMargin(3);
+	appdbScrollAreaWidget->setLayout(appdbScrollAreaWidget_Layout);
 	return;
 }
 
@@ -332,102 +326,21 @@ void MainWindow::startDrag (){
 
 void MainWindow::cmdTestWis_Click(){
 
-	QFile file("/home/brezerk/develop/q4wine/templates/app-search.xml");
+	appdbScrollArea_reset();
 
-	if (!file.open(QIODevice::ReadOnly)) {
-		return;
+	XmlParser *xmlparser = new XmlParser("/home/brezerk/develop/q4wine/templates/app-search.xml");
+
+	for (int i=0; i<xmlparser->_APPDB_SEARCH_INFO.count(); i++){
+		appdbScrollArea_addSearchWidget(xmlparser->_APPDB_SEARCH_INFO.at(i));
 	}
 
-	QDomDocument doc;
-	if (doc.setContent(&file)) {
-		QDomElement root = doc.documentElement();
-		if (root.tagName() != "appdb_export") {
-			qDebug()<<"[EE] File is not a q4wine appdb export file";
-			return;
-		}
-
-		QDomNode node = root.firstChild();
-		while (!node.isNull()) {
-			//if (node.toElement().tagName() == "entry")
-
-			qDebug()<<node.toElement().tagName();
-			parseEntry(node.toElement());
-			node = node.nextSibling();
-		}
-
-	}
-
-	file.close();
-}
-
-void MainWindow::parseEntry(const QDomElement &element){
-	QDomNode node = element.firstChild();
-	while (!node.isNull()) {
-		qDebug()<<node.toElement().tagName()<<node.toElement().attribute("id");
-
-		if (node.toElement().tagName() == "app") {
-			parseEntry(node.toElement());
-		} else if (node.toElement().tagName() == "version-list") {
-			parseEntry(node.toElement());
-		} else if (node.toElement().tagName() == "version") {
-			parseEntry(node.toElement());
-		}
-
-		QDomNode childNode = node.firstChild();
-		//while (!childNode.isNull()) {
-			if (childNode.nodeType() == QDomNode::TextNode) {
-				qDebug()<<childNode.toText().data();
-			}
-		//}
-		/* QDomNode childNode = node.firstChild();
-	  while (!childNode.isNull()) {
-		QDomNode childNode = node.firstChild();
-	  while (!childNode.isNull()) {
-		if (childNode.nodeType() == QDomNode::TextNode) {
-		  QString page = childNode.toText().data();
-		  QString allPages = item->text(1);
-		  if (!allPages.isEmpty())
-			allPages += ", ";
-		  allPages += page;
-		  item->setText(1, allPages);
-		  break;
-		}
-		childNode = childNode.nextSibling();
-	  }
-		  QString page = childNode.toText().data();
-		  QString allPages = item->text(1);
-		  if (!allPages.isEmpty())
-			allPages += ", ";
-		  allPages += page;
-		  item->setText(1, allPages);
-		  break;
-		}
-		childNode = childNode.nextSibling();
-	  } */
-
-		/*
-		if (node.toElement().tagName() == "app") {
-			parseEntry(node.toElement());
-		} else if (node.toElement().tagName() == "page") {
-			QDomNode childNode = node.firstChild();
-			while (!childNode.isNull()) {
-				if (childNode.nodeType() == QDomNode::TextNode) {
-					QString page = childNode.toText().data();
-					QString allPages = item->text(1);
-					if (!allPages.isEmpty())
-						allPages += ", ";
-					allPages += page;
-					item->setText(1, allPages);
-					break;
-				}
-				childNode = childNode.nextSibling();
-			}
-		}*/
-		node = node.nextSibling();
-	}
+	appdbScrollAreaWidget_Layout->insertStretch(-1);
 }
 
 void MainWindow::cmdWinetricks_Click() {
+		//delete(appdbScrollAreaWidget_Layout);
+		//appdbScrollAreaWidget_Layout->removeWidget();
+
 #ifndef WITH_WINETRIKS
 	QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without winetriks support.</p><p>If you wish to enable winetriks support add:</p><p> \"-DWITH_WINETRIKS=ON\" to cmake arguments.</p>"));
 #else

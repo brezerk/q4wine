@@ -38,20 +38,10 @@
 #include <QObject>
 #include <QWidget>
 #include <QString>
-#include <QLineEdit>
-#include <QMessageBox>
-#include <QFileDialog>
-#include <QStringList>
-#include <QListWidget>
-#include <QListWidgetItem>
-#include <QSettings>
-#include <QCheckBox>
 #include <QDebug>
-#include <QDir>
-
-#include <q4wine-lib/main.h>
 
 #include "appdbappversionwidget.h"
+#include "appdbstructs.h"
 
 /*!
  * \class AppDBSearchWidget
@@ -71,7 +61,10 @@ public:
 	* \param  url	       Application url to open.
 	*/
 
-	AppDBSearchWidget(QString name, QString desc, QList<QStringList> versions, QString url, QWidget *parent = 0);
+	AppDBSearchWidget(QString name, QString desc, QList<WineAppDBVersionInfo> &versions, QString url, QWidget *parent = 0);
+
+	//! \brief class destructor;
+	~AppDBSearchWidget();
 
 private:
 	/*! \brief sets general application Name

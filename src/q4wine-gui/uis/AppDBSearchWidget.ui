@@ -178,7 +178,7 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout_3">
+           <layout class="QVBoxLayout" name="AppVersionListerLayout">
             <property name="spacing">
              <number>0</number>
             </property>

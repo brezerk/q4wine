@@ -65,6 +65,7 @@
 
 #include <QtXml>
 
+#include <QLayoutIterator>
 
 #include <QMimeData>
 #include <QDrag>
@@ -78,6 +79,8 @@
 #include "src/core/database/icon.h"
 #include "src/core/database/last_run_icon.h"
 #include "src/core/database/image.h"
+
+#include "xmlparser.h"
 
 #include "draglistwidget.h"
 #include "appdbsearchwidget.h"
@@ -93,7 +96,6 @@
 #include "about.h"
 #include "appsettings.h"
 #include "run.h"
-
 
 #include "registry.h"
 
@@ -116,7 +118,6 @@ struct iconCopyBuffer {
 	bool move;
 	QStringList names;
 };
-
 
 class MainWindow : public QMainWindow, public Ui::MainWindow
 {
@@ -260,9 +261,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void startDrag();
 		void startDrop(QList<QUrl> files);
 	private:
-
-		void parseEntry(const QDomElement &element);
-
 		DragListWidget *lstIcons;
 
 		//! This is need for libq4wine-core.so import;
@@ -278,8 +276,8 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		Last_Run_Icon *db_last_run_icon;
 		Image *db_image;
 
-
-
+		QWidget *appdbScrollAreaWidget;
+		QVBoxLayout *appdbScrollAreaWidget_Layout;
 		// Proxy
 		QNetworkProxy proxy;
 		// Tray icon
@@ -366,6 +364,10 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		* \param  currentPrefix  Current user selected prefix id.
 		*/
 		void updateDtabaseConnectedItems(int currentPrefix = -1);
+
+
+		void appdbScrollArea_addSearchWidget(WineAppDBInfo appinfo);
+		void appdbScrollArea_reset();
 
 		//Events definition
 		void resizeEvent (QResizeEvent);

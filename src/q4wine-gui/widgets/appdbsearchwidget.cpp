@@ -29,7 +29,7 @@
 
 #include "appdbsearchwidget.h"
 
-AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, QList<QStringList> versions, QString url, QWidget *parent) : QWidget(parent)
+AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, QList<WineAppDBVersionInfo> &versions, QString url, QWidget *parent) : QWidget(parent)
 {
 	setupUi(this);
 	this->setAppName(name);
@@ -38,18 +38,17 @@ AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, QList<QStringLi
 
 	AppDBAppVersionWidget *version;
 	for (int i=0; i<versions.count(); i++){
-		version = new AppDBAppVersionWidget();
-		if (versions.at(i).count()==3){
-			version->setAppVersion(versions.at(i).at(0));
-			version->setAppRating(versions.at(i).at(1));
-			version->setWineVersion(versions.at(i).at(2));
-			verticalLayout_3->addWidget(version);
-		}
+		version = new AppDBAppVersionWidget(versions.at(i));
+		AppVersionListerLayout->addWidget(version);
 	}
 
 	lblAppName->installEventFilter(this);
 	lblAppName->setCursor(Qt::PointingHandCursor);
 	return;
+}
+
+AppDBSearchWidget::~AppDBSearchWidget(){
+	//nothig but...
 }
 
 void AppDBSearchWidget::setAppName(QString name){

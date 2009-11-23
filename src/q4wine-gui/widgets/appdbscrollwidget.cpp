@@ -27,69 +27,8 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#include "appdbappversionwidget.h"
+#include "appdbscrollwidget.h"
 
-AppDBAppVersionWidget::AppDBAppVersionWidget(const WineAppDBVersionInfo &versioninfo, QWidget *parent) : QWidget(parent)
+AppDBScrollWidget::AppDBScrollWidget(QWidget * parent) : QScrollArea(parent)
 {
-	setupUi(this);
-	setCursor(Qt::PointingHandCursor);
-	this->installEventFilter(this);
-	this->setAutoFillBackground(true);
-
-	this->setAppVersion(versioninfo.appver);
-	this->setAppRating(versioninfo.rating);
-	this->setWineVersion(versioninfo.winever);
-}
-
-AppDBAppVersionWidget::~AppDBAppVersionWidget(){
-	//nothig but...
-}
-
-void AppDBAppVersionWidget::setAppVersion(const QString version){
-	lblAppVersion->setText(QString(" %1").arg(version));
-	return;
-}
-
-void AppDBAppVersionWidget::setAppRating(const short int rating){
-	switch (rating){
-		case 1:
-		lblAppRating->setText("Platinum");
-		break;
-		case 2:
-		lblAppRating->setText("Gold");
-		break;
-		case 3:
-		lblAppRating->setText("Silver");
-		break;
-		case 4:
-		lblAppRating->setText("Bronze");
-		break;
-		case 5:
-		lblAppRating->setText("Garbage");
-		break;
-		default:
-		lblAppRating->setText("unexpected");
-		break;
-	}
-
-	return;
-}
-
-void AppDBAppVersionWidget::setWineVersion(const QString version){
-	lblWineVersion->setText(QString("Wine: %1").arg(version));
-	return;
-}
-
-bool AppDBAppVersionWidget::eventFilter(QObject *obj, QEvent *event){
-	if (event->type()==QEvent::Enter){
-		QPalette p(palette());
-		// Set colour
-		p.setColor(QPalette::Background, QPalette().color(QPalette::Highlight));
-		p.setColor(QPalette::WindowText, QPalette().color(QPalette::HighlightedText));
-		this->setPalette(p);
-	} else if (event->type()==QEvent::Leave){
-		// Reset default color
-		this->setPalette(QPalette());
-	}
-	return false;
 }

@@ -1,0 +1,7 @@
+
+
+===== TODO ==============
+
+1: Move all appdbScrollArea_* functions to CustomWidget based on QScrollArea;
+2. Make delete function for AppDbSearchWidget to delete all associated VersionWidgets;
+3. Have fun ;]

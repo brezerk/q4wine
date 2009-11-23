@@ -34,22 +34,12 @@
 
 #include "config.h"
 
-#include <QDialog>
 #include <QObject>
 #include <QWidget>
 #include <QString>
-#include <QLineEdit>
-#include <QMessageBox>
-#include <QFileDialog>
-#include <QStringList>
-#include <QListWidget>
-#include <QListWidgetItem>
-#include <QSettings>
-#include <QCheckBox>
 #include <QDebug>
-#include <QDir>
 
-#include <q4wine-lib/main.h>
+#include "appdbstructs.h"
 
 /*!
  * \class AppDBAppVersionWidget
@@ -63,30 +53,32 @@ class AppDBAppVersionWidget : public QWidget, public Ui::AppDBAppVersionWidget
 Q_OBJECT
 public:
 	//! Class constructor
-	AppDBAppVersionWidget(QWidget *parent = 0);
+	AppDBAppVersionWidget(const WineAppDBVersionInfo &versioninfo, QWidget *parent = 0);
 
+	//! Class destructor
+	~AppDBAppVersionWidget();
+
+private:
 	/*! \brief sets application version
 	*
 	* \param  version      Application version.
 	* \return Nothing.
 	*/
-	void setAppVersion(QString version);
+	void setAppVersion(const QString version);
 
 	/*! \brief sets application version
 	*
 	* \param  status       Application test status.
 	* \return Nothing.
 	*/
-	void setAppRating(QString rating);
+	void setAppRating(const short int rating);
 
 	/*! \brief sets application version
 	*
 	* \param  version      wine test version.
 	* \return Nothing.
 	*/
-	void setWineVersion(QString version);
-private:
-	QString _RATING;
+	void setWineVersion(const QString version);
 protected:
 	//! \brief Event filter.
 	bool eventFilter(QObject *obj, QEvent *event);
