@@ -69,6 +69,11 @@ void AppDBSearchWidget::setAppDesc(QString desc){
 bool AppDBSearchWidget::eventFilter(QObject *obj, QEvent *event){
 	// qDebug()<<obj->objectName();
 
+	if (event->type()==QEvent::MouseButtonRelease){
+		linkTrigged("Aaaaa");
+		qDebug()<<"Clock";
+	}
+
 	if (event->type()==QEvent::Enter){
 		QPalette p(palette());
 		// Set colour

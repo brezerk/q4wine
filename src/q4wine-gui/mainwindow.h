@@ -83,7 +83,10 @@
 #include "xmlparser.h"
 
 #include "draglistwidget.h"
+
+#include "appdbheaderwidget.h"
 #include "appdbsearchwidget.h"
+#include "appdbscrollwidget.h"
 
 #include "wisitem.h"
 #include "iconsview.h"
@@ -276,8 +279,9 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		Last_Run_Icon *db_last_run_icon;
 		Image *db_image;
 
-		QWidget *appdbScrollAreaWidget;
-		QVBoxLayout *appdbScrollAreaWidget_Layout;
+		AppDBScrollWidget *appdbScrollArea;
+		AppDBHeaderWidget *appdbHeader;
+
 		// Proxy
 		QNetworkProxy proxy;
 		// Tray icon
@@ -364,10 +368,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		* \param  currentPrefix  Current user selected prefix id.
 		*/
 		void updateDtabaseConnectedItems(int currentPrefix = -1);
-
-
-		void appdbScrollArea_addSearchWidget(WineAppDBInfo appinfo);
-		void appdbScrollArea_reset();
 
 		//Events definition
 		void resizeEvent (QResizeEvent);

@@ -68,15 +68,16 @@ Q_OBJECT
 public:
 	XmlParser(QString fileName);
 	QList<WineAppDBInfo> _APPDB_SEARCH_INFO;
+	short int _ACTION;
+	short int _PAGE_CURRENT;
+	short int _PAGE_COUNT;
 private:
 	bool parseEntry(const QDomElement &element);
 	void parseApp(const QDomElement &element);
 	void parseAppVersionsList(const QDomElement &element, WineAppDBInfo &appinfo);
 	void parseAppVersion(const QDomElement &element, WineAppDBInfo &appinfo);
 	QString getChildNodeData(const QDomNode &childNode);
-	QString _ACTION;
-	QString _PAGE_CURRENT;
-	QString _PAGE_COUNT;
+
 };
 
 #endif // XMLPARSER_H

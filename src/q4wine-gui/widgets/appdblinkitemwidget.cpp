@@ -27,66 +27,40 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#ifndef APPDBSEARCHWIDGET_H
-#define APPDBSEARCHWIDGET_H
+#include "appdblinkitemwidget.h"
 
-#include <ui_AppDBSearchWidget.h>
-
-#include "config.h"
-
-#include <QDialog>
-#include <QObject>
-#include <QWidget>
-#include <QString>
-#include <QDebug>
-
-#include "appdbappversionwidget.h"
-#include "appdbstructs.h"
-
-/*!
- * \class AppDBSearchWidget
- * \ingroup widgets
- * \brief This class provide database functions for AppDB search widget.
- *
- */
-class AppDBSearchWidget : public QWidget, public Ui::AppDBSearchWidget
+AppDBLinkItemWidget::AppDBLinkItemWidget(QString text, QString url, bool enabled, QWidget * parent) : QLabel(parent)
 {
-Q_OBJECT
-public:
-	/*! \brief class constructor
-	*
-	* \param  name         General application name.
-	* \param  desc  Short  Application description.
-	* \param  versions     An QList of QStringList witch describes tested app versions.
-	* \param  url	       Application url to open.
-	*/
+	this->setText(text);
 
-	AppDBSearchWidget(QString name, QString desc, QList<WineAppDBVersionInfo> &versions, QString url, QWidget *parent = 0);
+	QFont font;
+	font.setBold(true);
+	this->setFont(font);
 
-	//! \brief class destructor;
-	~AppDBSearchWidget();
-signals:
-	 void linkTrigged(QString url);
-private:
-	/*! \brief sets general application Name
-	*
-	* \param  name         General application name.
-	* \return Nothing.
-	*/
-	void setAppName(QString name);
+	if (enabled){
+		QPalette p(palette());
+		p.setColor(QPalette::WindowText, QPalette().color(QPalette::Link));
+		this->setPalette(p);
+		this->installEventFilter(this);
+		this->setCursor(Qt::PointingHandCursor);
+	}
 
-	/*! \brief sets general application description and trim it to 255 chars
-	*
-	* \param  desc  Short Application description.
-	* \return Nothing.
-	*/
-	void setAppDesc(QString desc);
+	this->_URL = url;
 
-	//! \brief This holds url description
-	QString _URL;
-protected:
-	//! \brief Event filter.
-	bool eventFilter(QObject *obj, QEvent *event);
-};
+	return;
+}
 
-#endif // APPDBSEARCHWIDGET_H
+bool AppDBLinkItemWidget::eventFilter(QObject *obj, QEvent *event){
+	if (event->type()==QEvent::Enter){
+		QPalette p(palette());
+		// Set colour
+		p.setColor(QPalette::WindowText, QPalette().color(QPalette::Highlight));
+		this->setPalette(p);
+	} else if (event->type()==QEvent::Leave){
+		QPalette p(palette());
+		// Restore default color
+		p.setColor(QPalette::WindowText, QPalette().color(QPalette::Link));
+		this->setPalette(p);
+	}
+	return false;
+}

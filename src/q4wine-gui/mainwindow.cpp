@@ -194,35 +194,12 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 
 	connect (menuRun, SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
 
-	appdbScrollAreaWidget = new QWidget();
+	// Creating AppDBScrollWidget and place it into frameAppDBWidget layout
+	appdbHeader = new AppDBHeaderWidget();
+	appdbScrollArea = new AppDBScrollWidget();
+	frameAppDBWidgetLayout->addWidget(appdbHeader);
+	frameAppDBWidgetLayout->addWidget(appdbScrollArea);
 
-	appdbScrollAreaWidget_Layout = new QVBoxLayout;
-	appdbScrollAreaWidget_Layout->setMargin(3);
-
-	appdbScrollAreaWidget->setLayout(appdbScrollAreaWidget_Layout);
-
-	appdbScrollArea->setWidget(appdbScrollAreaWidget);
-
-	return;
-}
-
-void MainWindow::appdbScrollArea_addSearchWidget(WineAppDBInfo appinfo){
-	AppDBSearchWidget *AppDBWidget;
-	AppDBWidget = new AppDBSearchWidget(appinfo.name, appinfo.desc, appinfo.versions, appinfo.url);
-	qDebug()<<appdbScrollAreaWidget_Layout->objectName();
-	appdbScrollAreaWidget_Layout->addWidget(AppDBWidget);
-	return;
-}
-
-void MainWindow::appdbScrollArea_reset(){
-	QList<QObject*> list = appdbScrollAreaWidget->children();
-	for (int i=0; i<list.count(); i++){
-		delete(list.at(i));
-	}
-
-	appdbScrollAreaWidget_Layout = new QVBoxLayout;
-	appdbScrollAreaWidget_Layout->setMargin(3);
-	appdbScrollAreaWidget->setLayout(appdbScrollAreaWidget_Layout);
 	return;
 }
 
@@ -326,21 +303,21 @@ void MainWindow::startDrag (){
 
 void MainWindow::cmdTestWis_Click(){
 
-	appdbScrollArea_reset();
+	appdbScrollArea->clear();
+	appdbHeader->clear();
 
 	XmlParser *xmlparser = new XmlParser("/home/brezerk/develop/q4wine/templates/app-search.xml");
 
+	appdbHeader->createPagesList(xmlparser->_PAGE_COUNT, xmlparser->_PAGE_CURRENT);
+
 	for (int i=0; i<xmlparser->_APPDB_SEARCH_INFO.count(); i++){
-		appdbScrollArea_addSearchWidget(xmlparser->_APPDB_SEARCH_INFO.at(i));
+		appdbScrollArea->addSearchWidget(xmlparser->_APPDB_SEARCH_INFO.at(i));
 	}
 
-	appdbScrollAreaWidget_Layout->insertStretch(-1);
+	appdbScrollArea->insertStretch();
 }
 
 void MainWindow::cmdWinetricks_Click() {
-		//delete(appdbScrollAreaWidget_Layout);
-		//appdbScrollAreaWidget_Layout->removeWidget();
-
 #ifndef WITH_WINETRIKS
 	QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without winetriks support.</p><p>If you wish to enable winetriks support add:</p><p> \"-DWITH_WINETRIKS=ON\" to cmake arguments.</p>"));
 #else

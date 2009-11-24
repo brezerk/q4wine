@@ -27,66 +27,39 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#ifndef APPDBSEARCHWIDGET_H
-#define APPDBSEARCHWIDGET_H
-
-#include <ui_AppDBSearchWidget.h>
+#ifndef APPDBHEADERWIDGET_H
+#define APPDBHEADERWIDGET_H
 
 #include "config.h"
 
-#include <QDialog>
 #include <QObject>
 #include <QWidget>
+#include <QFrame>
 #include <QString>
+#include <QLabel>
+#include <QEvent>
+#include <QVariant>
 #include <QDebug>
+#include <QVBoxLayout>
 
-#include "appdbappversionwidget.h"
-#include "appdbstructs.h"
+#include "appdblinkitemwidget.h"
 
-/*!
- * \class AppDBSearchWidget
- * \ingroup widgets
- * \brief This class provide database functions for AppDB search widget.
- *
- */
-class AppDBSearchWidget : public QWidget, public Ui::AppDBSearchWidget
+class AppDBHeaderWidget : public QFrame
 {
-Q_OBJECT
+	Q_OBJECT
 public:
-	/*! \brief class constructor
-	*
-	* \param  name         General application name.
-	* \param  desc  Short  Application description.
-	* \param  versions     An QList of QStringList witch describes tested app versions.
-	* \param  url	       Application url to open.
-	*/
+	AppDBHeaderWidget(QWidget * parent = 0);
+	void addLabel(QString info);
+	void addLink(QString info, QString url, bool enabled=true);
+	void setLayout(short int direction);
+	void insertStretch(short int place);
+	void createPagesList(short int count, short int current);
+	void clear(void);
 
-	AppDBSearchWidget(QString name, QString desc, QList<WineAppDBVersionInfo> &versions, QString url, QWidget *parent = 0);
-
-	//! \brief class destructor;
-	~AppDBSearchWidget();
-signals:
-	 void linkTrigged(QString url);
 private:
-	/*! \brief sets general application Name
-	*
-	* \param  name         General application name.
-	* \return Nothing.
-	*/
-	void setAppName(QString name);
+	QBoxLayout *contentLayout;
+	short int pages_len;
 
-	/*! \brief sets general application description and trim it to 255 chars
-	*
-	* \param  desc  Short Application description.
-	* \return Nothing.
-	*/
-	void setAppDesc(QString desc);
-
-	//! \brief This holds url description
-	QString _URL;
-protected:
-	//! \brief Event filter.
-	bool eventFilter(QObject *obj, QEvent *event);
 };
 
-#endif // APPDBSEARCHWIDGET_H
+#endif // APPDBHEADERWIDGET_H

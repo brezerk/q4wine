@@ -27,66 +27,91 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#ifndef APPDBSEARCHWIDGET_H
-#define APPDBSEARCHWIDGET_H
+#include "appdbheaderwidget.h"
 
-#include <ui_AppDBSearchWidget.h>
-
-#include "config.h"
-
-#include <QDialog>
-#include <QObject>
-#include <QWidget>
-#include <QString>
-#include <QDebug>
-
-#include "appdbappversionwidget.h"
-#include "appdbstructs.h"
-
-/*!
- * \class AppDBSearchWidget
- * \ingroup widgets
- * \brief This class provide database functions for AppDB search widget.
- *
- */
-class AppDBSearchWidget : public QWidget, public Ui::AppDBSearchWidget
+AppDBHeaderWidget::AppDBHeaderWidget(QWidget * parent) : QFrame(parent)
 {
-Q_OBJECT
-public:
-	/*! \brief class constructor
-	*
-	* \param  name         General application name.
-	* \param  desc  Short  Application description.
-	* \param  versions     An QList of QStringList witch describes tested app versions.
-	* \param  url	       Application url to open.
-	*/
+	this->setFrameShape(QFrame::StyledPanel);
+	this->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
 
-	AppDBSearchWidget(QString name, QString desc, QList<WineAppDBVersionInfo> &versions, QString url, QWidget *parent = 0);
+	pages_len=5;
 
-	//! \brief class destructor;
-	~AppDBSearchWidget();
-signals:
-	 void linkTrigged(QString url);
-private:
-	/*! \brief sets general application Name
-	*
-	* \param  name         General application name.
-	* \return Nothing.
-	*/
-	void setAppName(QString name);
+	contentLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
+	contentLayout->setMargin(3);
 
-	/*! \brief sets general application description and trim it to 255 chars
-	*
-	* \param  desc  Short Application description.
-	* \return Nothing.
-	*/
-	void setAppDesc(QString desc);
+	return;
+}
 
-	//! \brief This holds url description
-	QString _URL;
-protected:
-	//! \brief Event filter.
-	bool eventFilter(QObject *obj, QEvent *event);
-};
+void AppDBHeaderWidget::addLabel(QString info){
+	if (contentLayout){
+		QLabel *label = new QLabel(info);
+		contentLayout->addWidget(label);
+	}
+	return;
+}
 
-#endif // APPDBSEARCHWIDGET_H
+void AppDBHeaderWidget::addLink(QString info, QString url, bool enabled){
+	if (contentLayout){
+		AppDBLinkItemWidget *label = new AppDBLinkItemWidget(info, url, enabled);
+		contentLayout->addWidget(label);
+		//label->installEventFilter(this);
+	}
+	return;
+}
+
+void AppDBHeaderWidget::setLayout(short int direction){
+	return;
+}
+
+void AppDBHeaderWidget::insertStretch(short int place){
+	contentLayout->insertStretch(place);
+	return;
+}
+
+void AppDBHeaderWidget::createPagesList(short int count, short int current){
+
+	this->insertStretch(1);
+
+	if (current>pages_len){
+		addLink("<", "url");
+		for (int i=current-pages_len; i<current; i++){
+			addLink(QString("%1").arg(i), "url");
+		}
+	} else {
+		for (int i=1; i<current; i++){
+			addLink(QString("%1").arg(i), "url");
+		}
+	}
+
+	addLink(QString("%1").arg(current), "", false);
+
+	if (current+pages_len>count){
+		for (int i=current+1; i<=count; i++){
+			addLink(QString("%1").arg(i), "url");
+		}
+	} else {
+		for (int i=current+1; i<=current+pages_len; i++){
+			addLink(QString("%1").arg(i), "url");
+		}
+		addLink(">", "");
+	}
+
+	this->insertStretch(-1);
+
+	this->addLabel(tr("Page %1 of %2").arg(current).arg(count));
+	return;
+}
+
+void AppDBHeaderWidget::clear(){
+	if (this){
+		QList<QObject*> list = this->children();
+		for (int i=0; i<list.count(); i++){
+			list.at(i)->removeEventFilter(this);
+			delete(list.at(i));
+		}
+
+		contentLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
+		contentLayout->setMargin(3);
+	}
+	return;
+}

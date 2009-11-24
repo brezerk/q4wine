@@ -30,7 +30,6 @@
 #ifndef APPDBSCROLLWIDGET_H
 #define APPDBSCROLLWIDGET_H
 
-
 #include "config.h"
 
 #include <QDialog>
@@ -39,15 +38,27 @@
 #include <QString>
 #include <QDebug>
 #include <QScrollArea>
+#include <QVBoxLayout>
 
-#include "appdbappversionwidget.h"
 #include "appdbstructs.h"
+#include "appdbsearchwidget.h"
+#include "appdbappversionwidget.h"
 
 class AppDBScrollWidget : public QScrollArea
 {
 	Q_OBJECT
 public:
 	AppDBScrollWidget(QWidget * parent = 0);
+	void addSearchWidget(WineAppDBInfo appinfo);
+	void insertStretch(void);
+	void clear(void);
+
+public slots:
+	void linkTriggedA(QString url);
+
+private:
+	QWidget *contentWidget;
+	QVBoxLayout *contentLayout;
 };
 
 #endif // APPDBSCROLLWIDGET_H

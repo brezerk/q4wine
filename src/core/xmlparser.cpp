@@ -47,9 +47,6 @@ XmlParser::XmlParser(QString fileName)
 
 		QDomNode node = root.firstChild();
 		while (!node.isNull()) {
-			//if (node.toElement().tagName() == "entry")
-
-			qDebug()<<node.toElement().tagName();
 			if (!parseEntry(node.toElement())){
 				file.close();
 				return;
@@ -73,12 +70,12 @@ bool XmlParser::parseEntry(const QDomElement &element){
 				return false;
 			}
 		} else if (element.tagName() == "export_action"){
-			_ACTION=node.toText().data();
+			_ACTION=node.toText().data().toInt();
 		} else if (element.tagName() == "page"){
 			if (node.toElement().tagName()=="current"){
-				_PAGE_CURRENT=getChildNodeData(node.firstChild());
+				_PAGE_CURRENT=getChildNodeData(node.firstChild()).toInt();
 			} else if (node.toElement().tagName()=="count"){
-				_PAGE_COUNT=getChildNodeData(node.firstChild());
+				_PAGE_COUNT=getChildNodeData(node.firstChild()).toInt();
 			}
 		}
 

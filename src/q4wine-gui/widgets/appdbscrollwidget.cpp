@@ -31,4 +31,50 @@
 
 AppDBScrollWidget::AppDBScrollWidget(QWidget * parent) : QScrollArea(parent)
 {
+	this->setAutoFillBackground(true);
+	this->setFrameShape(QFrame::NoFrame);
+	this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+	this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+	this->setWidgetResizable(true);
+
+	contentWidget = new QWidget();
+	contentLayout = new QVBoxLayout(contentWidget);
+	contentLayout->setMargin(3);
+	this->setWidget(contentWidget);
+	return;
 }
+
+void AppDBScrollWidget::addSearchWidget(WineAppDBInfo appinfo){
+	if (contentLayout){
+		AppDBSearchWidget *AppDBWidget;
+		AppDBWidget = new AppDBSearchWidget(appinfo.name, appinfo.desc, appinfo.versions, appinfo.url);
+		contentLayout->addWidget(AppDBWidget);
+		connect(AppDBWidget, SIGNAL(linkTrigged(QString)), this, SLOT(linkTriggedA(QString)));
+	}
+	return;
+}
+
+void AppDBScrollWidget::clear(void){
+	if (contentWidget){
+		QList<QObject*> list = contentWidget->children();
+		for (int i=0; i<list.count(); i++){
+			list.at(i)->disconnect();
+			delete(list.at(i));
+		}
+
+		contentLayout = new QVBoxLayout(contentWidget);
+		contentLayout->setMargin(3);
+	}
+	return;
+}
+
+void AppDBScrollWidget::insertStretch(void){
+	if (contentLayout){
+		contentLayout->insertStretch(-1);
+	}
+}
+
+void AppDBScrollWidget::linkTriggedA(QString url){
+	qDebug()<<"url"<<url;
+}
+

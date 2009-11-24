@@ -27,66 +27,27 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#ifndef APPDBSEARCHWIDGET_H
-#define APPDBSEARCHWIDGET_H
-
-#include <ui_AppDBSearchWidget.h>
+#ifndef APPDBLINKITEMWIDGET_H
+#define APPDBLINKITEMWIDGET_H
 
 #include "config.h"
 
-#include <QDialog>
 #include <QObject>
 #include <QWidget>
 #include <QString>
+#include <QLabel>
+#include <QEvent>
 #include <QDebug>
 
-#include "appdbappversionwidget.h"
-#include "appdbstructs.h"
-
-/*!
- * \class AppDBSearchWidget
- * \ingroup widgets
- * \brief This class provide database functions for AppDB search widget.
- *
- */
-class AppDBSearchWidget : public QWidget, public Ui::AppDBSearchWidget
+class AppDBLinkItemWidget : public QLabel
 {
-Q_OBJECT
+	Q_OBJECT
 public:
-	/*! \brief class constructor
-	*
-	* \param  name         General application name.
-	* \param  desc  Short  Application description.
-	* \param  versions     An QList of QStringList witch describes tested app versions.
-	* \param  url	       Application url to open.
-	*/
-
-	AppDBSearchWidget(QString name, QString desc, QList<WineAppDBVersionInfo> &versions, QString url, QWidget *parent = 0);
-
-	//! \brief class destructor;
-	~AppDBSearchWidget();
-signals:
-	 void linkTrigged(QString url);
-private:
-	/*! \brief sets general application Name
-	*
-	* \param  name         General application name.
-	* \return Nothing.
-	*/
-	void setAppName(QString name);
-
-	/*! \brief sets general application description and trim it to 255 chars
-	*
-	* \param  desc  Short Application description.
-	* \return Nothing.
-	*/
-	void setAppDesc(QString desc);
-
-	//! \brief This holds url description
+	AppDBLinkItemWidget(QString text, QString url, bool enabled = true, QWidget * parent = 0);
 	QString _URL;
-protected:
+private:
 	//! \brief Event filter.
 	bool eventFilter(QObject *obj, QEvent *event);
 };
 
-#endif // APPDBSEARCHWIDGET_H
+#endif // APPDBLINKITEMWIDGET_H
