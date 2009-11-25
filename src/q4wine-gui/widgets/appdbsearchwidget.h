@@ -61,12 +61,13 @@ public:
 	* \param  url	       Application url to open.
 	*/
 
-	AppDBSearchWidget(QString name, QString desc, QList<WineAppDBVersionInfo> &versions, QString url, QWidget *parent = 0);
+	AppDBSearchWidget(QString name, QString desc, QList<WineAppDBVersionInfo> &versions, const int appid, QWidget *parent = 0);
 
 	//! \brief class destructor;
 	~AppDBSearchWidget();
 signals:
-	 void linkTrigged(QString url);
+	 void linkTrigged(short int action, QString search, int value);
+	 void versionTrigged(short int action, int appid, int verid);
 private:
 	/*! \brief sets general application Name
 	*
@@ -83,7 +84,7 @@ private:
 	void setAppDesc(QString desc);
 
 	//! \brief This holds url description
-	QString _URL;
+	int _APPID;
 protected:
 	//! \brief Event filter.
 	bool eventFilter(QObject *obj, QEvent *event);

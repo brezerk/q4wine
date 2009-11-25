@@ -32,6 +32,7 @@
 
 #include "config.h"
 
+#include <QTimer>
 #include <QDialog>
 #include <QObject>
 #include <QWidget>
@@ -40,7 +41,9 @@
 #include <QScrollArea>
 #include <QVBoxLayout>
 
+#include "xmlparser.h"
 #include "appdbstructs.h"
+#include "appdbheaderwidget.h"
 #include "appdbsearchwidget.h"
 #include "appdbappversionwidget.h"
 
@@ -48,17 +51,27 @@ class AppDBScrollWidget : public QScrollArea
 {
 	Q_OBJECT
 public:
-	AppDBScrollWidget(QWidget * parent = 0);
+	AppDBScrollWidget(AppDBHeaderWidget *appdbHeader, QWidget * parent = 0);
+	void startSearch(short int action, QString search);
+
+public slots:
+	void versionTrigged(short int action, int appid, int verid);
+	void linkTrigged(short int action, QString search, int value);
+
+private slots:
+	void update();
+
+private:
 	void addSearchWidget(WineAppDBInfo appinfo);
 	void insertStretch(void);
 	void clear(void);
-
-public slots:
-	void linkTriggedA(QString url);
-
-private:
+	QTimer *timer;
 	QWidget *contentWidget;
 	QVBoxLayout *contentLayout;
+	AppDBHeaderWidget *appdbHeader;
+
+	short int _ACTION;
+	QString _SEARCH;
 };
 
 #endif // APPDBSCROLLWIDGET_H

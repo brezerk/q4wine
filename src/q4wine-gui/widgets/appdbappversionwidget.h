@@ -53,7 +53,7 @@ class AppDBAppVersionWidget : public QWidget, public Ui::AppDBAppVersionWidget
 Q_OBJECT
 public:
 	//! Class constructor
-	AppDBAppVersionWidget(const WineAppDBVersionInfo &versioninfo, QWidget *parent = 0);
+	AppDBAppVersionWidget(const int appid, const WineAppDBVersionInfo &versioninfo, QWidget *parent = 0);
 
 	//! Class destructor
 	~AppDBAppVersionWidget();
@@ -79,6 +79,13 @@ private:
 	* \return Nothing.
 	*/
 	void setWineVersion(const QString version);
+
+	int _APPID;
+	int _VERID;
+
+signals:
+	void versionTrigged(short int action, int appid, int verid);
+
 protected:
 	//! \brief Event filter.
 	bool eventFilter(QObject *obj, QEvent *event);

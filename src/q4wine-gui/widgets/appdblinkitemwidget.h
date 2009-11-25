@@ -43,8 +43,14 @@ class AppDBLinkItemWidget : public QLabel
 {
 	Q_OBJECT
 public:
-	AppDBLinkItemWidget(QString text, QString url, bool enabled = true, QWidget * parent = 0);
-	QString _URL;
+	AppDBLinkItemWidget(QString text, bool enabled = true, short int action = 0, QString search = "", int value = 0, QWidget *parent = 0);
+	short int _ACTION;
+	int _VALUE;
+	QString _SEARCH;
+
+signals:
+	void linkTrigged(short int action, QString search, int value);
+
 private:
 	//! \brief Event filter.
 	bool eventFilter(QObject *obj, QEvent *event);

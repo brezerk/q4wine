@@ -29,7 +29,7 @@
 
 #include "appdblinkitemwidget.h"
 
-AppDBLinkItemWidget::AppDBLinkItemWidget(QString text, QString url, bool enabled, QWidget * parent) : QLabel(parent)
+AppDBLinkItemWidget::AppDBLinkItemWidget(QString text, bool enabled, short int action, QString search, int value, QWidget * parent) : QLabel(parent)
 {
 	this->setText(text);
 
@@ -45,13 +45,17 @@ AppDBLinkItemWidget::AppDBLinkItemWidget(QString text, QString url, bool enabled
 		this->setCursor(Qt::PointingHandCursor);
 	}
 
-	this->_URL = url;
+	this->_ACTION = action;
+	this->_SEARCH = search;
+	this->_VALUE = value;
 
 	return;
 }
 
 bool AppDBLinkItemWidget::eventFilter(QObject *obj, QEvent *event){
-	if (event->type()==QEvent::Enter){
+	if (event->type()==QEvent::MouseButtonRelease){
+		emit(linkTrigged(this->_ACTION, this->_SEARCH, this->_VALUE));
+	} else if (event->type()==QEvent::Enter){
 		QPalette p(palette());
 		// Set colour
 		p.setColor(QPalette::WindowText, QPalette().color(QPalette::Highlight));

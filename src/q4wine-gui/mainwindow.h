@@ -156,6 +156,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void cmdWinetricks_Click (void);
 		void cmdTestWis_Click (void);
 		void cmdClearFilter_Click (void);
+		void cmdAppDBSearch_Click (void);
 
 		/*
 		 * Combobox slouts

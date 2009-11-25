@@ -29,7 +29,7 @@
 
 #include "appdbappversionwidget.h"
 
-AppDBAppVersionWidget::AppDBAppVersionWidget(const WineAppDBVersionInfo &versioninfo, QWidget *parent) : QWidget(parent)
+AppDBAppVersionWidget::AppDBAppVersionWidget(const int appid, const WineAppDBVersionInfo &versioninfo, QWidget *parent) : QWidget(parent)
 {
 	setupUi(this);
 	setCursor(Qt::PointingHandCursor);
@@ -39,6 +39,9 @@ AppDBAppVersionWidget::AppDBAppVersionWidget(const WineAppDBVersionInfo &version
 	this->setAppVersion(versioninfo.appver);
 	this->setAppRating(versioninfo.rating);
 	this->setWineVersion(versioninfo.winever);
+
+	this->_APPID=appid;
+	this->_VERID=versioninfo.id;
 }
 
 AppDBAppVersionWidget::~AppDBAppVersionWidget(){
@@ -81,6 +84,10 @@ void AppDBAppVersionWidget::setWineVersion(const QString version){
 }
 
 bool AppDBAppVersionWidget::eventFilter(QObject *obj, QEvent *event){
+	if (event->type()==QEvent::MouseButtonRelease){
+		versionTrigged(4, this->_APPID, this->_VERID);
+	}
+
 	if (event->type()==QEvent::Enter){
 		QPalette p(palette());
 		// Set colour

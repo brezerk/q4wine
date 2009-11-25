@@ -50,10 +50,12 @@ void AppDBHeaderWidget::addLabel(QString info){
 	return;
 }
 
-void AppDBHeaderWidget::addLink(QString info, QString url, bool enabled){
+void AppDBHeaderWidget::addLink(QString text, bool enabled, short int action, QString search, int value){
 	if (contentLayout){
-		AppDBLinkItemWidget *label = new AppDBLinkItemWidget(info, url, enabled);
+		//
+		AppDBLinkItemWidget *label = new AppDBLinkItemWidget(text, enabled, action, search, value);
 		contentLayout->addWidget(label);
+		connect (label, SIGNAL(linkTrigged(short int, QString, int)), this, SIGNAL(linkTrigged(short int, QString, int)));
 		//label->installEventFilter(this);
 	}
 	return;
@@ -68,9 +70,33 @@ void AppDBHeaderWidget::insertStretch(short int place){
 	return;
 }
 
-void AppDBHeaderWidget::createPagesList(short int count, short int current){
-
+void AppDBHeaderWidget::createPagesList(short int count, short int current, QString search){
 	this->insertStretch(1);
+
+	/*short int start_page = current / 10 * 10 + 1;
+	short int end_page = start_page + 9;
+
+	if (end_page>count)
+		end_page=count;
+*/
+
+	short int start_page = current - 4;
+	if (start_page<=0)
+		start_page=1;
+
+	short int end_page = current + 4;
+	if (end_page>count)
+		end_page=count;
+
+	for (int i=start_page; i<=end_page; i++) {
+		if (i==current){
+			addLink(QString("%1").arg(i), false);
+		} else {
+			addLink(QString("%1").arg(i), true, 2, search, i);
+		}
+	}
+
+/*	this->insertStretch(1);
 
 	if (current>pages_len){
 		addLink("<", "url");
@@ -95,7 +121,7 @@ void AppDBHeaderWidget::createPagesList(short int count, short int current){
 		}
 		addLink(">", "");
 	}
-
+*/
 	this->insertStretch(-1);
 
 	this->addLabel(tr("Page %1 of %2").arg(current).arg(count));
@@ -106,6 +132,7 @@ void AppDBHeaderWidget::clear(){
 	if (this){
 		QList<QObject*> list = this->children();
 		for (int i=0; i<list.count(); i++){
+			list.at(i)->disconnect();
 			list.at(i)->removeEventFilter(this);
 			delete(list.at(i));
 		}

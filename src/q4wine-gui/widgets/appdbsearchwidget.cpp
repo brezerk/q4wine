@@ -29,17 +29,18 @@
 
 #include "appdbsearchwidget.h"
 
-AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, QList<WineAppDBVersionInfo> &versions, QString url, QWidget *parent) : QWidget(parent)
+AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, QList<WineAppDBVersionInfo> &versions, const int appid, QWidget *parent) : QWidget(parent)
 {
 	setupUi(this);
 	this->setAppName(name);
 	this->setAppDesc(desc);
-	this->_URL=url;
+	this->_APPID=appid;
 
 	AppDBAppVersionWidget *version;
 	for (int i=0; i<versions.count(); i++){
-		version = new AppDBAppVersionWidget(versions.at(i));
+		version = new AppDBAppVersionWidget(appid, versions.at(i));
 		AppVersionListerLayout->addWidget(version);
+		connect(version, SIGNAL(versionTrigged(short int, int, int)), this, SIGNAL(versionTrigged(short int, int, int)));
 	}
 
 	lblAppName->installEventFilter(this);
@@ -66,12 +67,12 @@ void AppDBSearchWidget::setAppDesc(QString desc){
 	return;
 }
 
+
 bool AppDBSearchWidget::eventFilter(QObject *obj, QEvent *event){
 	// qDebug()<<obj->objectName();
 
 	if (event->type()==QEvent::MouseButtonRelease){
-		linkTrigged("Aaaaa");
-		qDebug()<<"Clock";
+		emit(versionTrigged(3, this->_APPID, 0));
 	}
 
 	if (event->type()==QEvent::Enter){

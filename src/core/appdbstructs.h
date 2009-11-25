@@ -34,6 +34,7 @@
 #include <QList>
 
 struct WineAppDBVersionInfo {
+	int id;
 	QString appver;
 	QString winever;
 	short int rating;

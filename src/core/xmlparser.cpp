@@ -127,6 +127,7 @@ void XmlParser::parseAppVersion(const QDomElement &element, WineAppDBInfo &appin
 	while (!node.isNull()) {
 		if (node.toElement().tagName()=="app-ver"){
 			versioninfo.appver=getChildNodeData(node.firstChild());
+			versioninfo.id = element.attribute("id").toInt();
 		} else if (node.toElement().tagName()=="rating"){
 			versioninfo.rating=getChildNodeData(node.firstChild()).toInt();
 		} else if (node.toElement().tagName()=="wine-ver"){

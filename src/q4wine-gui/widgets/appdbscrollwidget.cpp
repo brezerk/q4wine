@@ -29,7 +29,7 @@
 
 #include "appdbscrollwidget.h"
 
-AppDBScrollWidget::AppDBScrollWidget(QWidget * parent) : QScrollArea(parent)
+AppDBScrollWidget::AppDBScrollWidget(AppDBHeaderWidget *appdbHeader, QWidget * parent) : QScrollArea(parent)
 {
 	this->setAutoFillBackground(true);
 	this->setFrameShape(QFrame::NoFrame);
@@ -41,15 +41,22 @@ AppDBScrollWidget::AppDBScrollWidget(QWidget * parent) : QScrollArea(parent)
 	contentLayout = new QVBoxLayout(contentWidget);
 	contentLayout->setMargin(3);
 	this->setWidget(contentWidget);
+	this->appdbHeader=appdbHeader;
+
+	timer = new QTimer(this);
+	connect(timer, SIGNAL(timeout()), this, SLOT(update()));
+	connect(appdbHeader, SIGNAL(linkTrigged(short int, QString, int)), this, SLOT(linkTrigged(short int, QString, int)));
+	timer->stop();
+
 	return;
 }
 
 void AppDBScrollWidget::addSearchWidget(WineAppDBInfo appinfo){
 	if (contentLayout){
 		AppDBSearchWidget *AppDBWidget;
-		AppDBWidget = new AppDBSearchWidget(appinfo.name, appinfo.desc, appinfo.versions, appinfo.url);
+		AppDBWidget = new AppDBSearchWidget(appinfo.name, appinfo.desc, appinfo.versions, appinfo.id);
 		contentLayout->addWidget(AppDBWidget);
-		connect(AppDBWidget, SIGNAL(linkTrigged(QString)), this, SLOT(linkTriggedA(QString)));
+		connect(AppDBWidget, SIGNAL(versionTrigged(short int, int, int)), this, SLOT(versionTrigged(short int, int, int)));
 	}
 	return;
 }
@@ -74,7 +81,48 @@ void AppDBScrollWidget::insertStretch(void){
 	}
 }
 
-void AppDBScrollWidget::linkTriggedA(QString url){
-	qDebug()<<"url"<<url;
+void AppDBScrollWidget::startSearch(short int action, QString search){
+#ifdef DEBUG
+	qDebug()<<"[ii] startSearch: "<<action<<search;
+#endif
+	this->_ACTION=action;
+	this->_SEARCH=search;
+	timer->start(3000);
 }
 
+void AppDBScrollWidget::linkTrigged(short int action, QString search, int value){
+#ifdef DEBUG
+	qDebug()<<"[ii] linkTrigged: "<<action<<search<<value;
+#endif
+	timer->start(3000);
+	return;
+}
+
+void AppDBScrollWidget::versionTrigged(short int action, int appid, int verid){
+#ifdef DEBUG
+	qDebug()<<"[ii] verTrigged: "<<action<<appid<<verid;
+#endif
+	timer->start(3000);
+	return;
+}
+
+void AppDBScrollWidget::update(void){
+	//appdbHeader->clear();
+	//this->clear();
+	switch (this->_ACTION){
+	case 1:
+		this->clear();
+		appdbHeader->clear();
+
+		XmlParser *xmlparser = new XmlParser("/home/brezerk/develop/q4wine/templates/app-search.xml");
+		appdbHeader->createPagesList(xmlparser->_PAGE_COUNT, xmlparser->_PAGE_CURRENT, this->_SEARCH);
+
+		for (int i=0; i<xmlparser->_APPDB_SEARCH_INFO.count(); i++){
+			this->addSearchWidget(xmlparser->_APPDB_SEARCH_INFO.at(i));
+		}
+
+		this->insertStretch();
+		break;
+	}
+	timer->stop();
+}

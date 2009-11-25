@@ -196,9 +196,11 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 
 	// Creating AppDBScrollWidget and place it into frameAppDBWidget layout
 	appdbHeader = new AppDBHeaderWidget();
-	appdbScrollArea = new AppDBScrollWidget();
+	appdbScrollArea = new AppDBScrollWidget(appdbHeader);
 	frameAppDBWidgetLayout->addWidget(appdbHeader);
 	frameAppDBWidgetLayout->addWidget(appdbScrollArea);
+
+	connect (cmdAppDBSearch, SIGNAL(clicked()), this, SLOT(cmdAppDBSearch_Click()));
 
 	return;
 }
@@ -302,19 +304,13 @@ void MainWindow::startDrag (){
 }
 
 void MainWindow::cmdTestWis_Click(){
+	return;
+}
 
-	appdbScrollArea->clear();
-	appdbHeader->clear();
-
-	XmlParser *xmlparser = new XmlParser("/home/brezerk/develop/q4wine/templates/app-search.xml");
-
-	appdbHeader->createPagesList(xmlparser->_PAGE_COUNT, xmlparser->_PAGE_CURRENT);
-
-	for (int i=0; i<xmlparser->_APPDB_SEARCH_INFO.count(); i++){
-		appdbScrollArea->addSearchWidget(xmlparser->_APPDB_SEARCH_INFO.at(i));
-	}
-
-	appdbScrollArea->insertStretch();
+void MainWindow::cmdAppDBSearch_Click(){
+	if (!cbSearchText->currentText().isEmpty())
+		appdbScrollArea->startSearch(1 , cbSearchText->currentText());
+	return;
 }
 
 void MainWindow::cmdWinetricks_Click() {
@@ -1590,7 +1586,7 @@ void MainWindow::cmdCreateFake_Click(){
   if (createFakeDriveWizard->exec()==QDialog::Accepted){
 	updateDtabaseConnectedItems(cbPrefixes->currentIndex());
   }
-
+  delete(createFakeDriveWizard);
   return;
 }
 
@@ -1611,6 +1607,7 @@ void MainWindow::cmdUpdateFake_Click(){
 		if (createFakeDriveWizard->exec()==QDialog::Accepted){
 			updateDtabaseConnectedItems(cbPrefixes->currentIndex());
 		}
+		delete(createFakeDriveWizard);
 	}
 	return;
 }
@@ -1667,9 +1664,9 @@ void MainWindow::prefixAdd_Click(){
   if (createPrefixWizard->exec()==QDialog::Accepted){
 	updateDtabaseConnectedItems();
   }
+  delete(createPrefixWizard);
 
   return;
-
 }
 
 void MainWindow::prefixDelete_Click(){
@@ -1735,6 +1732,7 @@ void MainWindow::prefixImport_Click(){
 		if (exportProcess->exec()!=QDialog::Accepted){
 		  return;
 		}
+		delete(exportProcess);
 	  } else {
 		return;
 	  }
@@ -1915,6 +1913,7 @@ void MainWindow::mainAbout_Click(){
 
   About *about = new About();
   about->exec();
+  delete(about);
   return;
 }
 
@@ -1946,6 +1945,7 @@ void MainWindow::mainRun_Click(){
   if (run->exec()==QDialog::Accepted)
 	CoreLib->runWineBinary(run->execObj);
 
+  delete(run);
   return;
 }
 
@@ -1956,8 +1956,9 @@ void MainWindow::mainImageManager_Click(){
 	 */
 
   ImageManager *manager = new ImageManager(0);
-
   manager->exec();
+
+  delete(manager);
   return;
 }
 
@@ -1978,6 +1979,8 @@ void MainWindow::mainOptions_Click(){
 	}
 
   }
+
+  delete(options);
   return;
 }
 
@@ -2114,6 +2117,7 @@ void MainWindow::mainExportIcons_Click(){
 	  iconsView->exec();
 	}
   }
+  delete(exportProcess);
 
   //Clearing temp files
   list = tmp.entryInfoList();
@@ -2523,6 +2527,7 @@ void MainWindow::iconAdd_Click(void){
 	// Updating icons view
 	twPrograms_ItemClick(treeItem, 0);
   }
+  delete(iconAddWizard);
 
   return;
 }
@@ -2700,6 +2705,7 @@ void MainWindow::iconOption_Click(void){
 	// Updating icons view
 	twPrograms_ItemClick(treeItem, 0);
   }
+  delete(iconAddWizard);
   return;
 }
 

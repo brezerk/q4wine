@@ -50,11 +50,14 @@ class AppDBHeaderWidget : public QFrame
 public:
 	AppDBHeaderWidget(QWidget * parent = 0);
 	void addLabel(QString info);
-	void addLink(QString info, QString url, bool enabled=true);
+	void addLink(QString text, bool enabled = true, short int action = 0, QString search = "", int value = 0);
 	void setLayout(short int direction);
 	void insertStretch(short int place);
-	void createPagesList(short int count, short int current);
+	void createPagesList(short int count, short int current, QString search);
 	void clear(void);
+
+signals:
+	void linkTrigged(short int action, QString search, int value);
 
 private:
 	QBoxLayout *contentLayout;
