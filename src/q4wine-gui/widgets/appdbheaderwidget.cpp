@@ -65,20 +65,16 @@ void AppDBHeaderWidget::setLayout(short int direction){
 	return;
 }
 
-void AppDBHeaderWidget::insertStretch(short int place){
-	contentLayout->insertStretch(place);
+void AppDBHeaderWidget::insertStretch(void){
+	//contentLayout->insertStretch(place);
+	QWidget *visibleStrech = new QWidget();
+	visibleStrech->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+	contentLayout->addWidget(visibleStrech);
 	return;
 }
 
 void AppDBHeaderWidget::createPagesList(short int count, short int current, QString search){
-	this->insertStretch(1);
-
-	/*short int start_page = current / 10 * 10 + 1;
-	short int end_page = start_page + 9;
-
-	if (end_page>count)
-		end_page=count;
-*/
+	this->insertStretch();
 
 	short int start_page = current - 4;
 	if (start_page<=0)
@@ -95,50 +91,24 @@ void AppDBHeaderWidget::createPagesList(short int count, short int current, QStr
 			addLink(QString("%1").arg(i), true, 2, search, i);
 		}
 	}
-
-/*	this->insertStretch(1);
-
-	if (current>pages_len){
-		addLink("<", "url");
-		for (int i=current-pages_len; i<current; i++){
-			addLink(QString("%1").arg(i), "url");
-		}
-	} else {
-		for (int i=1; i<current; i++){
-			addLink(QString("%1").arg(i), "url");
-		}
-	}
-
-	addLink(QString("%1").arg(current), "", false);
-
-	if (current+pages_len>count){
-		for (int i=current+1; i<=count; i++){
-			addLink(QString("%1").arg(i), "url");
-		}
-	} else {
-		for (int i=current+1; i<=current+pages_len; i++){
-			addLink(QString("%1").arg(i), "url");
-		}
-		addLink(">", "");
-	}
-*/
-	this->insertStretch(-1);
+	this->insertStretch();
 
 	this->addLabel(tr("Page %1 of %2").arg(current).arg(count));
 	return;
 }
 
 void AppDBHeaderWidget::clear(){
-	if (this){
-		QList<QObject*> list = this->children();
-		for (int i=0; i<list.count(); i++){
+	QList<QObject*> list = this->children();
+	// Start from 1 becouse of 0 -- is VBoxLayout
+	for (int i=1; i<list.count(); i++){
+#ifdef DEBUG
+		qDebug()<<"[ii] Shedule QObject for deletetion. object type is:"<<list.at(i)->metaObject()->className();
+#endif
+			list.at(i)->setProperty("visible", false);
 			list.at(i)->disconnect();
 			list.at(i)->removeEventFilter(this);
-			delete(list.at(i));
-		}
-
-		contentLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
-		contentLayout->setMargin(3);
+			list.at(i)->deleteLater();
 	}
+
 	return;
 }

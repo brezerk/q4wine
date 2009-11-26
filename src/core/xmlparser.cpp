@@ -29,12 +29,17 @@
 
 #include "xmlparser.h"
 
-XmlParser::XmlParser(QString fileName)
+XmlParser::XmlParser(void)
 {
+	return;
+}
+
+
+int XmlParser::parseIOSream(QString fileName){
 	QFile file(fileName);
 
 	if (!file.open(QIODevice::ReadOnly)) {
-		return;
+		return 1;
 	}
 
 	QDomDocument doc;
@@ -42,14 +47,14 @@ XmlParser::XmlParser(QString fileName)
 		QDomElement root = doc.documentElement();
 		if (root.tagName() != "appdb_export") {
 			qDebug()<<"[EE] File is not a q4wine appdb export file";
-			return;
+			return 2;
 		}
 
 		QDomNode node = root.firstChild();
 		while (!node.isNull()) {
 			if (!parseEntry(node.toElement())){
 				file.close();
-				return;
+				return 3;
 			}
 			node = node.nextSibling();
 		}
@@ -57,7 +62,7 @@ XmlParser::XmlParser(QString fileName)
 	}
 
 	file.close();
-	return;
+	return 0;
 }
 
 bool XmlParser::parseEntry(const QDomElement &element){

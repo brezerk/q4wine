@@ -66,7 +66,8 @@ class XmlParser : public QObject
 {
 Q_OBJECT
 public:
-	XmlParser(QString fileName);
+	XmlParser(void);
+	int parseIOSream(QString filename);
 	QList<WineAppDBInfo> _APPDB_SEARCH_INFO;
 	short int _ACTION;
 	short int _PAGE_CURRENT;

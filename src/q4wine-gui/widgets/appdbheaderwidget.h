@@ -52,9 +52,10 @@ public:
 	void addLabel(QString info);
 	void addLink(QString text, bool enabled = true, short int action = 0, QString search = "", int value = 0);
 	void setLayout(short int direction);
-	void insertStretch(short int place);
+	void insertStretch(void);
 	void createPagesList(short int count, short int current, QString search);
 	void clear(void);
+	void hideAll(void);
 
 signals:
 	void linkTrigged(short int action, QString search, int value);

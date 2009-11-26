@@ -30,14 +30,15 @@
 #ifndef APPDBAPPVERSIONWIDGET_H
 #define APPDBAPPVERSIONWIDGET_H
 
-#include <ui_AppDBAppVersionWidget.h>
-
 #include "config.h"
 
 #include <QObject>
 #include <QWidget>
 #include <QString>
 #include <QDebug>
+#include <QLabel>
+#include <QBoxLayout>
+#include <QEvent>
 
 #include "appdbstructs.h"
 
@@ -48,38 +49,21 @@
  *
  */
 
-class AppDBAppVersionWidget : public QWidget, public Ui::AppDBAppVersionWidget
+class AppDBAppVersionWidget : public QWidget
 {
 Q_OBJECT
 public:
 	//! Class constructor
-	AppDBAppVersionWidget(const int appid, const WineAppDBVersionInfo &versioninfo, QWidget *parent = 0);
+	AppDBAppVersionWidget(const int appid, QWidget *parent = 0);
 
 	//! Class destructor
 	~AppDBAppVersionWidget();
 
+	void addLabel(const QString text, const short int width=-1, const short int aligment=0, const bool worldwarp=false);
+	void  insertStretch(void);
+
 private:
-	/*! \brief sets application version
-	*
-	* \param  version      Application version.
-	* \return Nothing.
-	*/
-	void setAppVersion(const QString version);
-
-	/*! \brief sets application version
-	*
-	* \param  status       Application test status.
-	* \return Nothing.
-	*/
-	void setAppRating(const short int rating);
-
-	/*! \brief sets application version
-	*
-	* \param  version      wine test version.
-	* \return Nothing.
-	*/
-	void setWineVersion(const QString version);
-
+	QBoxLayout *contentLayout;
 	int _APPID;
 	int _VERID;
 

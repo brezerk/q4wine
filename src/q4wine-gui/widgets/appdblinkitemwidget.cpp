@@ -52,6 +52,13 @@ AppDBLinkItemWidget::AppDBLinkItemWidget(QString text, bool enabled, short int a
 	return;
 }
 
+AppDBLinkItemWidget::~AppDBLinkItemWidget(){
+#ifdef DEBUG
+	qDebug()<<"[ii] AppDBLinkItemWidget deleted";
+#endif
+	//nothing but...
+}
+
 bool AppDBLinkItemWidget::eventFilter(QObject *obj, QEvent *event){
 	if (event->type()==QEvent::MouseButtonRelease){
 		emit(linkTrigged(this->_ACTION, this->_SEARCH, this->_VALUE));

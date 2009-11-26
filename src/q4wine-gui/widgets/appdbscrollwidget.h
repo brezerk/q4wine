@@ -65,6 +65,7 @@ private:
 	void addSearchWidget(WineAppDBInfo appinfo);
 	void insertStretch(void);
 	void clear(void);
+	void hideAll(void);
 	QTimer *timer;
 	QWidget *contentWidget;
 	QVBoxLayout *contentLayout;

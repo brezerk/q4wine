@@ -29,25 +29,55 @@
 
 #include "appdbappversionwidget.h"
 
-AppDBAppVersionWidget::AppDBAppVersionWidget(const int appid, const WineAppDBVersionInfo &versioninfo, QWidget *parent) : QWidget(parent)
+AppDBAppVersionWidget::AppDBAppVersionWidget(const int appid, QWidget *parent) : QWidget(parent)
 {
-	setupUi(this);
 	setCursor(Qt::PointingHandCursor);
 	this->installEventFilter(this);
 	this->setAutoFillBackground(true);
 
-	this->setAppVersion(versioninfo.appver);
-	this->setAppRating(versioninfo.rating);
-	this->setWineVersion(versioninfo.winever);
+	contentLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
+	contentLayout->setMargin(0);
+	contentLayout->setSpacing(0);
 
 	this->_APPID=appid;
-	this->_VERID=versioninfo.id;
+	//this->_VERID=versioninfo.id;
 }
 
 AppDBAppVersionWidget::~AppDBAppVersionWidget(){
+#ifdef DEBUG
+	qDebug()<<"[ii] AppDBAppVersionWidget deleted";
+#endif
 	//nothig but...
 }
 
+void AppDBAppVersionWidget::addLabel(const QString text, const short int width, const short int aligment, const bool worldwarp){
+	QLabel *label = new QLabel(text, this);
+	if (width!=-1){
+		label->setMinimumWidth(width);
+	}
+	switch (aligment){
+		case 0:
+		label->setAlignment(Qt::AlignLeft);
+		break;
+		case 1:
+		label->setAlignment(Qt::AlignHCenter);
+		break;
+		case 2:
+		label->setAlignment(Qt::AlignRight);
+		break;
+	}
+	if (worldwarp){
+		label->setWordWrap(true);
+	}
+	contentLayout->addWidget(label);
+	return;
+}
+
+void AppDBAppVersionWidget:: insertStretch(void){
+	contentLayout->insertStretch(-1);
+}
+
+/*
 void AppDBAppVersionWidget::setAppVersion(const QString version){
 	lblAppVersion->setText(QString(" %1").arg(version));
 	return;
@@ -82,6 +112,7 @@ void AppDBAppVersionWidget::setWineVersion(const QString version){
 	lblWineVersion->setText(QString("Wine: %1").arg(version));
 	return;
 }
+*/
 
 bool AppDBAppVersionWidget::eventFilter(QObject *obj, QEvent *event){
 	if (event->type()==QEvent::MouseButtonRelease){

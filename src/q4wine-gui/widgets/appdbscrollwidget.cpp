@@ -42,6 +42,7 @@ AppDBScrollWidget::AppDBScrollWidget(AppDBHeaderWidget *appdbHeader, QWidget * p
 	contentLayout->setMargin(3);
 	this->setWidget(contentWidget);
 	this->appdbHeader=appdbHeader;
+	this->appdbHeader->addLabel("Status: Ready");
 
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(update()));
@@ -64,24 +65,32 @@ void AppDBScrollWidget::addSearchWidget(WineAppDBInfo appinfo){
 void AppDBScrollWidget::clear(void){
 	if (contentWidget){
 		QList<QObject*> list = contentWidget->children();
-		for (int i=0; i<list.count(); i++){
+		// Start from 1 becouse of 0 -- is VBoxLayout
+		for (int i=1; i<list.count(); i++){
+#ifdef DEBUG
+			qDebug()<<"[ii] Shedule QObject for deletetion. object type is:"<<list.at(i)->metaObject()->className();
+#endif
+			list.at(i)->setProperty("visible", false);
 			list.at(i)->disconnect();
-			delete(list.at(i));
+			list.at(i)->deleteLater();
 		}
-
-		contentLayout = new QVBoxLayout(contentWidget);
-		contentLayout->setMargin(3);
 	}
 	return;
 }
 
 void AppDBScrollWidget::insertStretch(void){
 	if (contentLayout){
-		contentLayout->insertStretch(-1);
+		QWidget *visibleStrech = new QWidget();
+		visibleStrech->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+		contentLayout->addWidget(visibleStrech);
 	}
 }
 
 void AppDBScrollWidget::startSearch(short int action, QString search){
+	this->appdbHeader->clear();
+	this->appdbHeader->addLabel("Status: Connecting to appqb.winehq.org...");
+	this->clear();
+
 #ifdef DEBUG
 	qDebug()<<"[ii] startSearch: "<<action<<search;
 #endif
@@ -94,6 +103,9 @@ void AppDBScrollWidget::linkTrigged(short int action, QString search, int value)
 #ifdef DEBUG
 	qDebug()<<"[ii] linkTrigged: "<<action<<search<<value;
 #endif
+	this->appdbHeader->clear();
+	this->clear();
+	this->appdbHeader->addLabel("Status: Connecting to appqb.winehq.org...");
 	timer->start(3000);
 	return;
 }
@@ -102,19 +114,33 @@ void AppDBScrollWidget::versionTrigged(short int action, int appid, int verid){
 #ifdef DEBUG
 	qDebug()<<"[ii] verTrigged: "<<action<<appid<<verid;
 #endif
+	this->appdbHeader->clear();
+	this->appdbHeader->addLabel("Status: Connecting to appqb.winehq.org...");
+	this->clear();
 	timer->start(3000);
 	return;
 }
 
 void AppDBScrollWidget::update(void){
-	//appdbHeader->clear();
-	//this->clear();
 	switch (this->_ACTION){
 	case 1:
-		this->clear();
 		appdbHeader->clear();
 
-		XmlParser *xmlparser = new XmlParser("/home/brezerk/develop/q4wine/templates/app-search.xml");
+		XmlParser *xmlparser = new XmlParser();
+		switch (xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-search.xml")){
+			case 1:
+			this->appdbHeader->addLabel("Error: can't read data from appqb.winehq.org.");
+			return;
+			break;
+			case 2:
+			this->appdbHeader->addLabel("Error: wrong or broken xml data. Try again later.");
+			return;
+			break;
+			case 3:
+			this->appdbHeader->addLabel("Error: xml parse error.");
+			return;
+			break;
+		}
 		appdbHeader->createPagesList(xmlparser->_PAGE_COUNT, xmlparser->_PAGE_CURRENT, this->_SEARCH);
 
 		for (int i=0; i<xmlparser->_APPDB_SEARCH_INFO.count(); i++){

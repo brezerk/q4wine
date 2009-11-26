@@ -44,6 +44,7 @@ class AppDBLinkItemWidget : public QLabel
 	Q_OBJECT
 public:
 	AppDBLinkItemWidget(QString text, bool enabled = true, short int action = 0, QString search = "", int value = 0, QWidget *parent = 0);
+	~AppDBLinkItemWidget();
 	short int _ACTION;
 	int _VALUE;
 	QString _SEARCH;
