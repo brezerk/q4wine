@@ -67,7 +67,7 @@ public:
 	~AppDBSearchWidget();
 signals:
 	 void linkTrigged(short int action, QString search, int value);
-	 void versionTrigged(short int action, int appid, int verid);
+	 void versionTrigged(short int action, int appid, int verid, int testid);
 private:
 	/*! \brief sets general application Name
 	*

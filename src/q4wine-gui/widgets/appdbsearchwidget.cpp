@@ -39,7 +39,7 @@ AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, QList<WineAppDB
 	QString rating_desc;
 	AppDBAppVersionWidget *version;
 	for (int i=0; i<versions.count(); i++){
-		version = new AppDBAppVersionWidget(appid);
+		version = new AppDBAppVersionWidget(4, appid, versions.at(i).id, 0);
 		version->addLabel(versions.at(i).appver);
 		switch (versions.at(i).rating){
 		case 1:
@@ -65,7 +65,7 @@ AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, QList<WineAppDB
 		version->addLabel(rating_desc, 120, 1);
 		version->addLabel(QString("Wine: %1").arg(versions.at(i).winever), 120, 1);
 		AppVersionListerLayout->addWidget(version);
-		connect(version, SIGNAL(versionTrigged(short int, int, int)), this, SIGNAL(versionTrigged(short int, int, int)));
+		connect(version, SIGNAL(versionTrigged(short int, int, int, int)), this, SIGNAL(versionTrigged(short int, int, int, int)));
 	}
 
 	lblAppName->installEventFilter(this);
@@ -97,7 +97,7 @@ bool AppDBSearchWidget::eventFilter(QObject *obj, QEvent *event){
 	// qDebug()<<obj->objectName();
 
 	if (event->type()==QEvent::MouseButtonRelease){
-		emit(versionTrigged(3, this->_APPID, 0));
+		emit(versionTrigged(3, this->_APPID, 0, 0));
 	}
 
 	if (event->type()==QEvent::Enter){

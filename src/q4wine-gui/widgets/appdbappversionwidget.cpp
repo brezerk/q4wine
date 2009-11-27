@@ -29,7 +29,7 @@
 
 #include "appdbappversionwidget.h"
 
-AppDBAppVersionWidget::AppDBAppVersionWidget(const int appid, QWidget *parent) : QWidget(parent)
+AppDBAppVersionWidget::AppDBAppVersionWidget(const short int action, const int appid, const int verid, const int testid, QWidget *parent) : QWidget(parent)
 {
 	setCursor(Qt::PointingHandCursor);
 	this->installEventFilter(this);
@@ -39,14 +39,13 @@ AppDBAppVersionWidget::AppDBAppVersionWidget(const int appid, QWidget *parent) :
 	contentLayout->setMargin(0);
 	contentLayout->setSpacing(0);
 
+	this->_ACTION=action;
 	this->_APPID=appid;
-	//this->_VERID=versioninfo.id;
+	this->_VERID=verid;
+	this->_TESTID=testid;
 }
 
 AppDBAppVersionWidget::~AppDBAppVersionWidget(){
-#ifdef DEBUG
-	qDebug()<<"[ii] AppDBAppVersionWidget deleted";
-#endif
 	//nothig but...
 }
 
@@ -77,46 +76,9 @@ void AppDBAppVersionWidget:: insertStretch(void){
 	contentLayout->insertStretch(-1);
 }
 
-/*
-void AppDBAppVersionWidget::setAppVersion(const QString version){
-	lblAppVersion->setText(QString(" %1").arg(version));
-	return;
-}
-
-void AppDBAppVersionWidget::setAppRating(const short int rating){
-	switch (rating){
-		case 1:
-		lblAppRating->setText("Platinum");
-		break;
-		case 2:
-		lblAppRating->setText("Gold");
-		break;
-		case 3:
-		lblAppRating->setText("Silver");
-		break;
-		case 4:
-		lblAppRating->setText("Bronze");
-		break;
-		case 5:
-		lblAppRating->setText("Garbage");
-		break;
-		default:
-		lblAppRating->setText("unexpected");
-		break;
-	}
-
-	return;
-}
-
-void AppDBAppVersionWidget::setWineVersion(const QString version){
-	lblWineVersion->setText(QString("Wine: %1").arg(version));
-	return;
-}
-*/
-
 bool AppDBAppVersionWidget::eventFilter(QObject *obj, QEvent *event){
 	if (event->type()==QEvent::MouseButtonRelease){
-		versionTrigged(4, this->_APPID, this->_VERID);
+		versionTrigged(this->_ACTION, this->_APPID, this->_VERID, this->_TESTID);
 	}
 
 	if (event->type()==QEvent::Enter){

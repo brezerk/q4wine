@@ -53,9 +53,6 @@ AppDBLinkItemWidget::AppDBLinkItemWidget(QString text, bool enabled, short int a
 }
 
 AppDBLinkItemWidget::~AppDBLinkItemWidget(){
-#ifdef DEBUG
-	qDebug()<<"[ii] AppDBLinkItemWidget deleted";
-#endif
 	//nothing but...
 }
 

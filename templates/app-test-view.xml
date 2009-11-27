@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appdb_export>
+  <export_version>0.1</export_version>
+  <export_action>2</export_action>
+  <app id='310'>
+        <name>Some App Name</name>
+        <desc>Some coool LONG app description! That may can contain html character or someithing else</desc>
+        <category>Games</category>
+        <url>url</url>
+        <test-results>
+            <app-ver>1.x</app-ver>
+            <rating>4</rating>
+            <wine-ver>0.9.21</wine-ver>
+            <works>All that I test and maybe some HTML? No?!</works>
+            <not-works>All tooo.</not-works>
+            <not-tested>Network play</not-tested>
+            <comment>Some more other comments</comment>
+            <test-list>
+                <test id="123">
+                    <current>1</current>
+                    <distrib>Gentoo</distrib>
+                    <date>Oct 24 2009</date>
+                    <wine>0.9.21</wine>
+                    <instal>1</instal>
+                    <run>0</run>
+                    <rating>4</rating>
+                </test>
+                <test id="123">
+                    <current>0</current>
+                    <distrib>Gentoo</distrib>
+                    <wine>1.1.41</wine>
+                    <date>Oct 14 2001</date>
+                    <instal>1</instal>
+                    <run>0</run>
+                    <rating>3</rating>
+                </test>
+                <test id="123">
+                    <current>0</current>
+                    <distrib>Gentoo</distrib>
+                    <date>Oct 3 2004</date>
+                    <wine>0.9.10</wine>
+                    <instal>1</instal>
+                    <run>1</run>
+                    <rating>1</rating>
+                </test>
+            </test-list>  
+        </test-results>
+        <bug-list>
+            <bug id="3141">
+                <desc>No sound in OSS driver</desc>
+                <status>1</status>
+                <resolution>2</resolution>
+            </bug>
+            <bug id="3121">
+                <desc>No sound in ALSE driver</desc>
+                <status>1</status>
+                <resolution>2</resolution>
+            </bug>
+            <bug id="151">
+                <desc>No sound in Linuh driver</desc>
+                <status>1</status>
+                <resolution>2</resolution>
+            </bug>
+        </bug-list>
+    </app>
+</appdb_export>

@@ -54,7 +54,7 @@ class AppDBAppVersionWidget : public QWidget
 Q_OBJECT
 public:
 	//! Class constructor
-	AppDBAppVersionWidget(const int appid, QWidget *parent = 0);
+	AppDBAppVersionWidget(const short int action, const int appid, const int verid=0, const int testid=0, QWidget *parent = 0);
 
 	//! Class destructor
 	~AppDBAppVersionWidget();
@@ -66,9 +66,11 @@ private:
 	QBoxLayout *contentLayout;
 	int _APPID;
 	int _VERID;
+	int _TESTID;
+	short int _ACTION;
 
 signals:
-	void versionTrigged(short int action, int appid, int verid);
+	void versionTrigged(short int action, int appid, int verid, int testid);
 
 protected:
 	//! \brief Event filter.

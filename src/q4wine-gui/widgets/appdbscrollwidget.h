@@ -55,7 +55,7 @@ public:
 	void startSearch(short int action, QString search);
 
 public slots:
-	void versionTrigged(short int action, int appid, int verid);
+	void versionTrigged(short int action, int appid, int verid, int testid);
 	void linkTrigged(short int action, QString search, int value);
 
 private slots:

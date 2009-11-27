@@ -57,7 +57,7 @@ void AppDBScrollWidget::addSearchWidget(WineAppDBInfo appinfo){
 		AppDBSearchWidget *AppDBWidget;
 		AppDBWidget = new AppDBSearchWidget(appinfo.name, appinfo.desc, appinfo.versions, appinfo.id);
 		contentLayout->addWidget(AppDBWidget);
-		connect(AppDBWidget, SIGNAL(versionTrigged(short int, int, int)), this, SLOT(versionTrigged(short int, int, int)));
+		connect(AppDBWidget, SIGNAL(versionTrigged(short int, int, int, int)), this, SLOT(versionTrigged(short int, int, int, int)));
 	}
 	return;
 }
@@ -110,9 +110,9 @@ void AppDBScrollWidget::linkTrigged(short int action, QString search, int value)
 	return;
 }
 
-void AppDBScrollWidget::versionTrigged(short int action, int appid, int verid){
+void AppDBScrollWidget::versionTrigged(short int action, int appid, int verid, int testid){
 #ifdef DEBUG
-	qDebug()<<"[ii] verTrigged: "<<action<<appid<<verid;
+	qDebug()<<"[ii] verTrigged: "<<action<<appid<<verid<<testid;
 #endif
 	this->appdbHeader->clear();
 	this->appdbHeader->addLabel("Status: Connecting to appqb.winehq.org...");
