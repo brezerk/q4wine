@@ -45,6 +45,7 @@
 #include "appdbstructs.h"
 #include "appdbheaderwidget.h"
 #include "appdbsearchwidget.h"
+#include "appdbtestviewwidget.h"
 #include "appdbappversionwidget.h"
 
 class AppDBScrollWidget : public QScrollArea
@@ -62,7 +63,8 @@ private slots:
 	void update();
 
 private:
-	void addSearchWidget(WineAppDBInfo appinfo);
+	void addSearchWidget(const WineAppDBInfo *appinfo);
+	void addTestWidget(const WineAppDBTestInfo *appversioninfo);
 	void insertStretch(void);
 	void clear(void);
 	void hideAll(void);
@@ -70,6 +72,7 @@ private:
 	QWidget *contentWidget;
 	QVBoxLayout *contentLayout;
 	AppDBHeaderWidget *appdbHeader;
+	XmlParser *xmlparser;
 
 	short int _ACTION;
 	QString _SEARCH;

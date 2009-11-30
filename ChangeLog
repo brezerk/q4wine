@@ -5,6 +5,15 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
+Version 0.115
+ Added:
+  - Wine AppDB support;
+ Fixed:
+  - Fixed crush while drop exesting icon;
+  - Fixed not critical error for fake C: symlink;
+  - Fixed white spaces chatch in wine app run engine;
+  - Fixed cmake: appprefix setting now overrides default icon and desktop places;
+
 Version 0.114-r1
  Fixed:
   - Fixed wrong wine C: drive symlink while create new Fake Drive (thx 2 Kyrill Detinov);

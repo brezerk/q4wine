@@ -69,16 +69,23 @@ public:
 	XmlParser(void);
 	int parseIOSream(QString filename);
 	QList<WineAppDBInfo> _APPDB_SEARCH_INFO;
+	WineAppDBTestInfo _APPDB_TEST_INFO;
+
 	short int _ACTION;
 	short int _PAGE_CURRENT;
 	short int _PAGE_COUNT;
 private:
 	bool parseEntry(const QDomElement &element);
 	void parseApp(const QDomElement &element);
+	void parseAppTest(const QDomElement &element);
+	void parseTestList(const QDomElement &element);
+	void parseTest(const QDomElement &element);
+	void parseBugList(const QDomElement &element);
+	void parseBug(const QDomElement &element);
 	void parseAppVersionsList(const QDomElement &element, WineAppDBInfo &appinfo);
 	void parseAppVersion(const QDomElement &element, WineAppDBInfo &appinfo);
 	QString getChildNodeData(const QDomNode &childNode);
-
+	void clear();
 };
 
 #endif // XMLPARSER_H

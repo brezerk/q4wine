@@ -226,50 +226,48 @@ void MainWindow::clearTmp(){
 }
 
 void MainWindow::startDrop(QList<QUrl> files){
-  //QList<QUrl> list = event->mimeData()->urls();
-  QTreeWidgetItem *treeItem = twPrograms->currentItem();
+	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 
-  if (!treeItem)
-	return;
+	if (!treeItem)
+		return;
 
-  bool ok;
-  QString file, fileName;
-  QStringList list1;
+	bool ok;
+	QString file, fileName;
+	QStringList list1;
 
-  QString dir_name, prefix_name;
+	QString dir_name, prefix_name;
 
-  if (treeItem->parent()){
-	prefix_name = treeItem->parent()->text(0);
-	dir_name = treeItem->text(0);
-  } else {
-	prefix_name = treeItem->text(0);
-	dir_name = "";
-  }
-
-  for (int i=0; i < files.count(); i++){
-	if (files.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive)){
-	  file = files.at(i).toLocalFile();
-
-	  list1 = file.split("/");
-	  fileName=list1.last().left(list1.last().length() - list1.last().split(".").last().length() - 1);
-
-	  while (db_icon->isExistsByName(prefix_name, dir_name, fileName)){
-		fileName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, iconBuffer.names.at(i) , &ok);
-		if (!ok){
-		  return;
-		}
-	  }
-
-	  if (files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive)){
-		file = "--backend=user ";
-		file.append(CoreLib->getWinePath(files.at(i).toLocalFile(), "-w"));
-		db_icon->addIcon(file, "wineconsole", "", "", prefix_name, dir_name, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
-	  } else {
-		db_icon->addIcon("", file, "", "", prefix_name, dir_name, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
-	  }
+	if (treeItem->parent()){
+		prefix_name = treeItem->parent()->text(0);
+		dir_name = treeItem->text(0);
+	} else {
+		prefix_name = treeItem->text(0);
+		dir_name = "";
 	}
-  }
-  twPrograms_ItemClick(treeItem, 0);
+
+	for (int i=0; i < files.count(); i++){
+		if (files.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive)){
+			file = files.at(i).toLocalFile();
+			list1 = file.split("/");
+			fileName=list1.last().left(list1.last().length() - list1.last().split(".").last().length() - 1);
+
+			while (db_icon->isExistsByName(prefix_name, dir_name, fileName)){
+				fileName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, fileName , &ok);
+				if (!ok){
+					return;
+				}
+			}
+
+			if (files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive)){
+				file = "--backend=user ";
+				file.append(CoreLib->getWinePath(files.at(i).toLocalFile(), "-w"));
+				db_icon->addIcon(file, "wineconsole", "", "", prefix_name, dir_name, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
+			} else {
+				db_icon->addIcon("", file, "", "", prefix_name, dir_name, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
+			}
+		}
+	}
+	twPrograms_ItemClick(treeItem, 0);
 }
 
 void MainWindow::startDrag (){

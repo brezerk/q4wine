@@ -50,5 +50,41 @@ struct WineAppDBInfo {
 	QList<WineAppDBVersionInfo> versions;
 };
 
+struct WineAppDBTestResult {
+	int id;
+	bool current;
+	QString distrib;
+	QString date;
+	QString winever;
+	bool run;
+	bool install;
+	short int rating;
+};
+
+struct WineAppDBBug {
+	int id;
+	QString desc;
+	short int status;
+	short int resolution;
+};
+
+struct WineAppDBTestInfo {
+	int id;
+	QString name;
+	QString desc;
+	QString category;
+	QString url;
+	QString appver;
+	QString winever;
+	QString rating;
+	QString works;
+	QString notworks;
+	QString nottested;
+	QString comment;
+	QString license;
+	QList<WineAppDBTestResult> tests;
+	QList<WineAppDBBug> bugs;
+};
+
 
 #endif // APPDBSTRUCTS_H

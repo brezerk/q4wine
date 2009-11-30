@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.6)
 PROJECT(q4wine)
 
 SET(CMAKE_VERBOSE_MAKEFILE ON)
-SET(APP_VERSION "0.114-r2")
+SET(APP_VERSION "0.115-dev")
 
 # RPATH fixes
 # skip the full RPATH for the build tree
@@ -64,6 +64,7 @@ SET( Q4WINE_GUI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbheaderwidget.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbsearchwidget.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbappversionwidget.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbtestviewwidget.cpp
 )
 
 SET ( Q4WINE_HEADERS_DIR
@@ -109,6 +110,7 @@ SET ( Q4WINE_GUI_HEADERS
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbscrollwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbheaderwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbappversionwidget.h
+	 ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbtestviewwidget.h
 )
 
 SET ( Q4WINE_GUI_MOC_HEADEDRS
@@ -133,6 +135,7 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbheaderwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbsearchwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbappversionwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbtestviewwidget.h
 )
 
 SET ( Q4WINE_GUI_UI_SOURCES
@@ -149,6 +152,7 @@ SET ( Q4WINE_GUI_UI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/ImageManager.ui
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/WineDriveDialog.ui
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppDBSearchWidget.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppDBTestViewWidget.ui
 )
 
 IF (${WITH_WINETRIKS} MATCHES ON )

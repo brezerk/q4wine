@@ -37,12 +37,15 @@ AppDBScrollWidget::AppDBScrollWidget(AppDBHeaderWidget *appdbHeader, QWidget * p
 	this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	this->setWidgetResizable(true);
 
+	xmlparser = new XmlParser();
+
 	contentWidget = new QWidget();
 	contentLayout = new QVBoxLayout(contentWidget);
 	contentLayout->setMargin(3);
 	this->setWidget(contentWidget);
 	this->appdbHeader=appdbHeader;
 	this->appdbHeader->addLabel("Status: Ready");
+
 
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(update()));
@@ -52,12 +55,22 @@ AppDBScrollWidget::AppDBScrollWidget(AppDBHeaderWidget *appdbHeader, QWidget * p
 	return;
 }
 
-void AppDBScrollWidget::addSearchWidget(WineAppDBInfo appinfo){
+void AppDBScrollWidget::addSearchWidget(const WineAppDBInfo *appinfo){
 	if (contentLayout){
 		AppDBSearchWidget *AppDBWidget;
-		AppDBWidget = new AppDBSearchWidget(appinfo.name, appinfo.desc, appinfo.versions, appinfo.id);
+		AppDBWidget = new AppDBSearchWidget(appinfo->name, appinfo->desc, appinfo->id, appinfo->versions);
 		contentLayout->addWidget(AppDBWidget);
 		connect(AppDBWidget, SIGNAL(versionTrigged(short int, int, int, int)), this, SLOT(versionTrigged(short int, int, int, int)));
+	}
+	return;
+}
+
+void AppDBScrollWidget::addTestWidget(const WineAppDBTestInfo *appversioninfo){
+	if (contentLayout){
+		AppDBTestViewWidget *AppDBTestWidget;
+		AppDBTestWidget = new AppDBTestViewWidget(appversioninfo);
+		contentLayout->addWidget(AppDBTestWidget);
+		//connect(AppDBWidget, SIGNAL(versionTrigged(short int, int, int, int)), this, SLOT(versionTrigged(short int, int, int, int)));
 	}
 	return;
 }
@@ -96,7 +109,7 @@ void AppDBScrollWidget::startSearch(short int action, QString search){
 #endif
 	this->_ACTION=action;
 	this->_SEARCH=search;
-	timer->start(3000);
+	timer->start(1000);
 }
 
 void AppDBScrollWidget::linkTrigged(short int action, QString search, int value){
@@ -106,7 +119,8 @@ void AppDBScrollWidget::linkTrigged(short int action, QString search, int value)
 	this->appdbHeader->clear();
 	this->clear();
 	this->appdbHeader->addLabel("Status: Connecting to appqb.winehq.org...");
-	timer->start(3000);
+	this->_ACTION=action;
+	timer->start(1000);
 	return;
 }
 
@@ -117,7 +131,8 @@ void AppDBScrollWidget::versionTrigged(short int action, int appid, int verid, i
 	this->appdbHeader->clear();
 	this->appdbHeader->addLabel("Status: Connecting to appqb.winehq.org...");
 	this->clear();
-	timer->start(3000);
+	this->_ACTION=action;
+	timer->start(1000);
 	return;
 }
 
@@ -125,8 +140,6 @@ void AppDBScrollWidget::update(void){
 	switch (this->_ACTION){
 	case 1:
 		appdbHeader->clear();
-
-		XmlParser *xmlparser = new XmlParser();
 		switch (xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-search.xml")){
 			case 1:
 			this->appdbHeader->addLabel("Error: can't read data from appqb.winehq.org.");
@@ -144,10 +157,30 @@ void AppDBScrollWidget::update(void){
 		appdbHeader->createPagesList(xmlparser->_PAGE_COUNT, xmlparser->_PAGE_CURRENT, this->_SEARCH);
 
 		for (int i=0; i<xmlparser->_APPDB_SEARCH_INFO.count(); i++){
-			this->addSearchWidget(xmlparser->_APPDB_SEARCH_INFO.at(i));
+			this->addSearchWidget(&xmlparser->_APPDB_SEARCH_INFO.at(i));
 		}
 
 		this->insertStretch();
+		break;
+		case 4:
+		appdbHeader->clear();
+		switch (xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-test-view.xml")){
+			case 1:
+			this->appdbHeader->addLabel("Error: can't read data from appqb.winehq.org.");
+			return;
+			break;
+			case 2:
+			this->appdbHeader->addLabel("Error: wrong or broken xml data. Try again later.");
+			return;
+			break;
+			case 3:
+			this->appdbHeader->addLabel("Error: xml parse error.");
+			return;
+			break;
+		}
+
+		this->addTestWidget(&xmlparser->_APPDB_TEST_INFO);
+
 		break;
 	}
 	timer->stop();

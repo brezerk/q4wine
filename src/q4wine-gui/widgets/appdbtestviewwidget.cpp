@@ -27,21 +27,81 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#include "appdbsearchwidget.h"
+#include "appdbtestviewwidget.h"
 
-AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, const int appid, QList<WineAppDBVersionInfo> versions, QWidget *parent) : QWidget(parent)
+AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBTestInfo *appinfo, QWidget *parent) : QWidget(parent)
 {
-	setupUi(this);
-	this->setAppName(name);
-	this->setAppDesc(desc);
-	this->_APPID=appid;
+		setupUi(this);
+		this->setAppName(QString("%1 - %2").arg(appinfo->name).arg(appinfo->appver));
+		this->setAppDesc(appinfo->desc);
+		this->_APPID=appinfo->id;
 
-	QString rating_desc;
+		lblWineVer->setText(appinfo->winever);
+		lblLicense->setText(appinfo->license);
+		lblRating->setText(appinfo->rating);
+		lblAddComments->setText(appinfo->comment);
+		lblWhatWorks->setText(appinfo->works);
+		lblWhatNotWorks->setText(appinfo->notworks);
+		lblWhatWasNotTested->setText(appinfo->nottested);
+
+		addTestResults(appinfo->tests);
+		addBugs(appinfo->bugs);
+		return;
+}
+
+void AppDBTestViewWidget::setAppName(QString name){
+	lblAppName->setText(name);
+	return;
+}
+
+void AppDBTestViewWidget::setAppDesc(QString desc){
+	lblAppDesc->setText(desc);
+	return;
+}
+
+void AppDBTestViewWidget::addBugs(QList<WineAppDBBug> bugs){
 	AppDBAppVersionWidget *version;
-	for (int i=0; i<versions.count(); i++){
-		version = new AppDBAppVersionWidget(4, appid, versions.at(i).id, 0);
-		version->addLabel(versions.at(i).appver);
-		switch (versions.at(i).rating){
+
+	for (int i=0; i<bugs.count(); i++){
+		version = new AppDBAppVersionWidget(4, 0, bugs.at(i).id, 0);
+
+		version->addLabel(QString("%1").arg(bugs.at(i).id), 70, 1);
+		version->addLabel(bugs.at(i).desc);
+		version->insertStretch();
+		version->addLabel(QString("%1").arg(bugs.at(i).status), 120, 1);
+		version->addLabel(QString("%1").arg(bugs.at(i).resolution), 120, 1);
+
+		BugsLayout->addWidget(version);
+	}
+	return;
+}
+
+void AppDBTestViewWidget::addTestResults(QList<WineAppDBTestResult> tests){
+	AppDBAppVersionWidget *version;
+	QString rating_desc;
+
+	for (int i=0; i<tests.count(); i++){
+		if (tests.at(i).current){
+			version = new AppDBAppVersionWidget(4, this->_APPID, tests.at(i).id, 0, false);
+		} else {
+			version = new AppDBAppVersionWidget(4, this->_APPID, tests.at(i).id, 0);
+		}
+
+		version->addLabel(QString(" %1").arg(tests.at(i).distrib), -1, 0, true);
+		version->insertStretch();
+		version->addLabel(tests.at(i).date, 120, 1);
+		version->addLabel(QString("%1").arg(tests.at(i).winever), 120, 1);
+		if (tests.at(i).install){
+			version->addLabel(tr("Installs"), 60, 1);
+		} else {
+			version->addLabel(tr(""), 60, 1);
+		}
+		if (tests.at(i).run){
+			version->addLabel(tr("Runs"), 60, 1);
+		} else {
+			version->addLabel(tr(""), 60, 1);
+		}
+		switch (tests.at(i).rating){
 		case 1:
 			rating_desc="Platinum";
 			break;
@@ -61,53 +121,8 @@ AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, const int appid
 			rating_desc="unexpected";
 			break;
 		}
-		version->insertStretch();
 		version->addLabel(rating_desc, 120, 1);
-		version->addLabel(QString("Wine: %1").arg(versions.at(i).winever), 120, 1);
-		AppVersionListerLayout->addWidget(version);
-		connect(version, SIGNAL(versionTrigged(short int, int, int, int)), this, SIGNAL(versionTrigged(short int, int, int, int)));
+
+		Top5ResultsLayout->addWidget(version);
 	}
-
-	lblAppName->installEventFilter(this);
-	lblAppName->setCursor(Qt::PointingHandCursor);
-	return;
-}
-
-AppDBSearchWidget::~AppDBSearchWidget(){
-	//nothig but...
-}
-
-void AppDBSearchWidget::setAppName(QString name){
-	//FIXME: url might pint to web xml engine
-	lblAppName->setText(name);
-	return;
-}
-
-void AppDBSearchWidget::setAppDesc(QString desc){
-	if (desc.length()>=255){
-		lblAppDesc->setText(QString("%1...").arg(desc.left(100)));
-	} else {
-		lblAppDesc->setText(desc);
-	}
-	return;
-}
-
-
-bool AppDBSearchWidget::eventFilter(QObject *obj, QEvent *event){
-	// qDebug()<<obj->objectName();
-
-	if (event->type()==QEvent::MouseButtonRelease){
-		emit(versionTrigged(3, this->_APPID, 0, 0));
-	}
-
-	if (event->type()==QEvent::Enter){
-		QPalette p(palette());
-		// Set colour
-		p.setColor(QPalette::WindowText, QPalette().color(QPalette::Highlight));
-		this->lblAppName->setPalette(p);
-	} else if (event->type()==QEvent::Leave){
-		// Restore default color
-		this->lblAppName->setPalette(QPalette());
-	}
-	return false;
 }

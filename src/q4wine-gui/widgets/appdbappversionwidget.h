@@ -39,6 +39,7 @@
 #include <QLabel>
 #include <QBoxLayout>
 #include <QEvent>
+#include <QFont>
 
 #include "appdbstructs.h"
 
@@ -54,19 +55,21 @@ class AppDBAppVersionWidget : public QWidget
 Q_OBJECT
 public:
 	//! Class constructor
-	AppDBAppVersionWidget(const short int action, const int appid, const int verid=0, const int testid=0, QWidget *parent = 0);
+	AppDBAppVersionWidget(const short int action, const int appid, const int verid=0, const int testid=0, const bool active=true, QWidget *parent = 0);
 
 	//! Class destructor
 	~AppDBAppVersionWidget();
 
 	void addLabel(const QString text, const short int width=-1, const short int aligment=0, const bool worldwarp=false);
-	void  insertStretch(void);
+	void insertStretch(void);
+	void setBold(void);
 
 private:
 	QBoxLayout *contentLayout;
 	int _APPID;
 	int _VERID;
 	int _TESTID;
+	bool _BOLD;
 	short int _ACTION;
 
 signals:

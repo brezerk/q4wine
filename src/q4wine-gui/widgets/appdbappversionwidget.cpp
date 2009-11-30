@@ -29,20 +29,23 @@
 
 #include "appdbappversionwidget.h"
 
-AppDBAppVersionWidget::AppDBAppVersionWidget(const short int action, const int appid, const int verid, const int testid, QWidget *parent) : QWidget(parent)
+AppDBAppVersionWidget::AppDBAppVersionWidget(const short int action, const int appid, const int verid, const int testid, const bool active, QWidget *parent) : QWidget(parent)
 {
-	setCursor(Qt::PointingHandCursor);
-	this->installEventFilter(this);
-	this->setAutoFillBackground(true);
+	if (active){
+		setCursor(Qt::PointingHandCursor);
+		installEventFilter(this);
+	}
+	setAutoFillBackground(true);
 
 	contentLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
 	contentLayout->setMargin(0);
 	contentLayout->setSpacing(0);
 
-	this->_ACTION=action;
-	this->_APPID=appid;
-	this->_VERID=verid;
-	this->_TESTID=testid;
+	_ACTION=action;
+	_APPID=appid;
+	_VERID=verid;
+	_TESTID=testid;
+	_BOLD=active;
 }
 
 AppDBAppVersionWidget::~AppDBAppVersionWidget(){
@@ -51,9 +54,13 @@ AppDBAppVersionWidget::~AppDBAppVersionWidget(){
 
 void AppDBAppVersionWidget::addLabel(const QString text, const short int width, const short int aligment, const bool worldwarp){
 	QLabel *label = new QLabel(text, this);
+
+	label->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
+
 	if (width!=-1){
 		label->setMinimumWidth(width);
 	}
+
 	switch (aligment){
 		case 0:
 		label->setAlignment(Qt::AlignLeft);
@@ -68,6 +75,14 @@ void AppDBAppVersionWidget::addLabel(const QString text, const short int width, 
 	if (worldwarp){
 		label->setWordWrap(true);
 	}
+
+	if (!_BOLD){
+		QPalette p(palette());
+		// Set colour
+		p.setColor(QPalette::Background, QPalette().color(QPalette::Base));
+		this->setPalette(p);
+	}
+
 	contentLayout->addWidget(label);
 	return;
 }

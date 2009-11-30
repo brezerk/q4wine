@@ -27,10 +27,10 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#ifndef APPDBSEARCHWIDGET_H
-#define APPDBSEARCHWIDGET_H
+#ifndef APPDBTESTVIEWWIDGET_H
+#define APPDBTESTVIEWWIDGET_H
 
-#include <ui_AppDBSearchWidget.h>
+#include <ui_AppDBTestViewWidget.h>
 
 #include "config.h"
 
@@ -40,34 +40,15 @@
 #include <QString>
 #include <QDebug>
 
-#include "appdbappversionwidget.h"
 #include "appdbstructs.h"
+#include "appdbappversionwidget.h"
 
-/*!
- * \class AppDBSearchWidget
- * \ingroup widgets
- * \brief This class provide database functions for AppDB search widget.
- *
- */
-class AppDBSearchWidget : public QWidget, public Ui::AppDBSearchWidget
+class AppDBTestViewWidget : public QWidget, public Ui::AppDBTestViewWidget
 {
 Q_OBJECT
 public:
-	/*! \brief class constructor
-	*
-	* \param  name         General application name.
-	* \param  desc  Short  Application description.
-	* \param  versions     An QList of QStringList witch describes tested app versions.
-	* \param  url	       Application url to open.
-	*/
+	AppDBTestViewWidget(const WineAppDBTestInfo *appinfo, QWidget *parent = 0);
 
-	AppDBSearchWidget(QString name, QString desc, const int appid, QList<WineAppDBVersionInfo> versions, QWidget *parent = 0);
-
-	//! \brief class destructor;
-	~AppDBSearchWidget();
-signals:
-	 void linkTrigged(short int action, QString search, int value);
-	 void versionTrigged(short int action, int appid, int verid, int testid);
 private:
 	/*! \brief sets general application Name
 	*
@@ -83,11 +64,9 @@ private:
 	*/
 	void setAppDesc(QString desc);
 
-	//! \brief This holds url description
+	void addTestResults(QList<WineAppDBTestResult> tests);
+	void addBugs(QList<WineAppDBBug> bugs);
 	int _APPID;
-protected:
-	//! \brief Event filter.
-	bool eventFilter(QObject *obj, QEvent *event);
 };
 
-#endif // APPDBSEARCHWIDGET_H
+#endif // APPDBTESTVIEWWIDGET_H
