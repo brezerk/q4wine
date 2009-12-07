@@ -41,6 +41,8 @@
 #include <QDebug>
 
 #include "appdbstructs.h"
+#include "appdblinkitemwidget.h"
+#include "appdbcommentwidget.h"
 #include "appdbappversionwidget.h"
 
 class AppDBTestViewWidget : public QWidget, public Ui::AppDBTestViewWidget
@@ -48,6 +50,9 @@ class AppDBTestViewWidget : public QWidget, public Ui::AppDBTestViewWidget
 Q_OBJECT
 public:
 	AppDBTestViewWidget(const WineAppDBTestInfo *appinfo, QWidget *parent = 0);
+
+signals:
+	void linkTrigged(short int action, QString search="", int val1=0, int val2=0);
 
 private:
 	/*! \brief sets general application Name
@@ -66,6 +71,7 @@ private:
 
 	void addTestResults(QList<WineAppDBTestResult> tests);
 	void addBugs(QList<WineAppDBBug> bugs);
+	void addComments(QList<WineAppDBComment> comments);
 	int _APPID;
 };
 

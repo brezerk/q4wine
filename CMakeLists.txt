@@ -65,6 +65,7 @@ SET( Q4WINE_GUI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbsearchwidget.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbappversionwidget.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbtestviewwidget.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbcommentwidget.cpp
 )
 
 SET ( Q4WINE_HEADERS_DIR
@@ -110,7 +111,8 @@ SET ( Q4WINE_GUI_HEADERS
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbscrollwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbheaderwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbappversionwidget.h
-	 ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbtestviewwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbtestviewwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbcommentwidget.h
 )
 
 SET ( Q4WINE_GUI_MOC_HEADEDRS
@@ -136,6 +138,7 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbsearchwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbappversionwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbtestviewwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbcommentwidget.h
 )
 
 SET ( Q4WINE_GUI_UI_SOURCES
@@ -153,6 +156,7 @@ SET ( Q4WINE_GUI_UI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/WineDriveDialog.ui
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppDBSearchWidget.ui
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppDBTestViewWidget.ui
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppDBCommentWidget.ui
 )
 
 IF (${WITH_WINETRIKS} MATCHES ON )
@@ -280,7 +284,6 @@ IF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
 	pkg_search_module(ZIP_LIB REQUIRED libzip)
 ENDIF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
 
-
 SET(QT_MIN_VERSION "4.4.1")
 FIND_PACKAGE(Qt4 REQUIRED)
 	  IF(QT_FOUND)
@@ -343,7 +346,6 @@ ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
 
 IF (NOT DEFINED WITH_ICOUTILS)
 	SET(WITH_ICOUTILS "ON")
-
 	find_program( WRESTOOL NAMES wrestool )
 	find_program( ICOTOOL NAMES icotool )
 	MESSAGE(STATUS "Searching for icoutils binaries...")
@@ -360,7 +362,6 @@ IF (NOT DEFINED WITH_ICOUTILS)
 	ELSE (${ICOTOOL} MATCHES ICOTOOL-NOTFOUND)
 		MESSAGE(STATUS "icotool: ${ICOTOOL}")
 	ENDIF (${ICOTOOL} MATCHES ICOTOOL-NOTFOUND)
-
 ENDIF (NOT DEFINED WITH_ICOUTILS)
 
 IF (NOT DEFINED WITH_WINETRIKS)
@@ -425,7 +426,6 @@ ADD_LIBRARY( qtsingleapp STATIC ${QSINGLEAPP_LIB_SOURCES} ${QSINGLEAPP_LIB_HEADE
 
 ADD_EXECUTABLE( q4wine-cli ${Q4WINE_CLI_SOURCES} ${Q4WINE_CLI_HEADERS} ${QM_I18N} ${Q4WINE_LIB_UI_HEADERS} ${Q4WINE_LIB_LIB_MOC_SOURCES})
 ADD_EXECUTABLE( q4wine ${Q4WINE_GUI_SOURCES} ${Q4WINE_GUI_HEADERS} ${Q4WINE_GUI_UI_HEADERS} ${Q4WINE_GUI_MOC_SOURCES} ${RCC_SRCS} ${QM_I18N} )
-
 
 IF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
 	ADD_EXECUTABLE( q4wine-mount ${Q4WINE_FUSEISO_SOURCES} ${Q4WINE_FUSEISO_HEADERS} )

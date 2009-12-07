@@ -42,6 +42,7 @@
 #include <QDebug>
 #include <QVBoxLayout>
 
+#include "appdbstructs.h"
 #include "appdblinkitemwidget.h"
 
 class AppDBHeaderWidget : public QFrame
@@ -54,11 +55,13 @@ public:
 	void setLayout(short int direction);
 	void insertStretch(void);
 	void createPagesList(short int count, short int current, QString search);
+	void createCategoryList(const QList<WineAppDBCategory> *category);
 	void clear(void);
 	void hideAll(void);
 
 signals:
-	void linkTrigged(short int action, QString search, int value);
+
+	void linkTrigged(short int action, QString search="", int val1=0, int val2=0);
 
 private:
 	QBoxLayout *contentLayout;

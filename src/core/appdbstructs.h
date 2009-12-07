@@ -61,6 +61,15 @@ struct WineAppDBTestResult {
 	short int rating;
 };
 
+struct WineAppDBComment {
+	int id;
+	QString topic;
+	QString date;
+	QString autor;
+	int padent_id;
+	QString message;
+};
+
 struct WineAppDBBug {
 	int id;
 	QString desc;
@@ -68,11 +77,15 @@ struct WineAppDBBug {
 	short int resolution;
 };
 
+struct WineAppDBCategory {
+	int id;
+	QString desc;
+};
+
 struct WineAppDBTestInfo {
 	int id;
 	QString name;
 	QString desc;
-	QString category;
 	QString url;
 	QString appver;
 	QString winever;
@@ -84,6 +97,8 @@ struct WineAppDBTestInfo {
 	QString license;
 	QList<WineAppDBTestResult> tests;
 	QList<WineAppDBBug> bugs;
+	QList<WineAppDBCategory> category;
+	QList<WineAppDBComment> comments;
 };
 
 

@@ -49,7 +49,7 @@ AppDBScrollWidget::AppDBScrollWidget(AppDBHeaderWidget *appdbHeader, QWidget * p
 
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(update()));
-	connect(appdbHeader, SIGNAL(linkTrigged(short int, QString, int)), this, SLOT(linkTrigged(short int, QString, int)));
+	connect(appdbHeader, SIGNAL(linkTrigged(short int, QString, int, int)), this, SLOT(linkTrigged(short int, QString, int, int)));
 	timer->stop();
 
 	return;
@@ -70,7 +70,7 @@ void AppDBScrollWidget::addTestWidget(const WineAppDBTestInfo *appversioninfo){
 		AppDBTestViewWidget *AppDBTestWidget;
 		AppDBTestWidget = new AppDBTestViewWidget(appversioninfo);
 		contentLayout->addWidget(AppDBTestWidget);
-		//connect(AppDBWidget, SIGNAL(versionTrigged(short int, int, int, int)), this, SLOT(versionTrigged(short int, int, int, int)));
+		connect(AppDBTestWidget, SIGNAL(linkTrigged(short int, QString, int, int)), this, SLOT(linkTrigged(short int, QString, int, int)));
 	}
 	return;
 }
@@ -112,9 +112,9 @@ void AppDBScrollWidget::startSearch(short int action, QString search){
 	timer->start(1000);
 }
 
-void AppDBScrollWidget::linkTrigged(short int action, QString search, int value){
+void AppDBScrollWidget::linkTrigged(short int action, QString search, int val1, int val2){
 #ifdef DEBUG
-	qDebug()<<"[ii] linkTrigged: "<<action<<search<<value;
+	qDebug()<<"[ii] linkTrigged: "<<action<<search<<val1<<val2;
 #endif
 	this->appdbHeader->clear();
 	this->clear();
@@ -180,6 +180,9 @@ void AppDBScrollWidget::update(void){
 		}
 
 		this->addTestWidget(&xmlparser->_APPDB_TEST_INFO);
+		appdbHeader->createCategoryList(&xmlparser->_APPDB_TEST_INFO.category);
+		appdbHeader->addLabel(xmlparser->_APPDB_TEST_INFO.appver);
+		appdbHeader->insertStretch();
 
 		break;
 	}

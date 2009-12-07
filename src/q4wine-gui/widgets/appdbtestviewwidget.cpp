@@ -44,8 +44,17 @@ AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBTestInfo *appinfo, QWidg
 		lblWhatNotWorks->setText(appinfo->notworks);
 		lblWhatWasNotTested->setText(appinfo->nottested);
 
+		if (!appinfo->url.isEmpty()){
+			AppDBLinkItemWidget *label = new AppDBLinkItemWidget(tr("Application web page"), 6);
+			label->setSearchUrl(appinfo->url);
+			label->setToolTip(appinfo->url);
+			connect (label, SIGNAL(linkTrigged(short int, QString, int)), this, SIGNAL(linkTrigged(short int, QString, int)));
+			AppDetailsLayout->addWidget(label);
+		}
+
 		addTestResults(appinfo->tests);
 		addBugs(appinfo->bugs);
+		addComments(appinfo->comments);
 		return;
 }
 
@@ -66,13 +75,24 @@ void AppDBTestViewWidget::addBugs(QList<WineAppDBBug> bugs){
 		version = new AppDBAppVersionWidget(4, 0, bugs.at(i).id, 0);
 
 		version->addLabel(QString("%1").arg(bugs.at(i).id), 70, 1);
-		version->addLabel(bugs.at(i).desc);
-		version->insertStretch();
+		version->addLabel(bugs.at(i).desc, -1, 3, true);
+		//version->insertStretch();
 		version->addLabel(QString("%1").arg(bugs.at(i).status), 120, 1);
 		version->addLabel(QString("%1").arg(bugs.at(i).resolution), 120, 1);
 
 		BugsLayout->addWidget(version);
 	}
+	return;
+}
+
+void AppDBTestViewWidget::addComments(QList<WineAppDBComment> comments){
+	AppDBCommentWidget *comment;
+
+	for (int i=0; i<comments.count(); i++){
+		comment = new AppDBCommentWidget(&comments.at(i));
+		TestLayout->addWidget(comment);
+	}
+
 	return;
 }
 
@@ -87,8 +107,9 @@ void AppDBTestViewWidget::addTestResults(QList<WineAppDBTestResult> tests){
 			version = new AppDBAppVersionWidget(4, this->_APPID, tests.at(i).id, 0);
 		}
 
-		version->addLabel(QString(" %1").arg(tests.at(i).distrib), -1, 0, true);
-		version->insertStretch();
+		version->addLabel(QString("%1").arg(tests.at(i).distrib), -1, 3, true);
+
+		//version->insertStretch();
 		version->addLabel(tests.at(i).date, 120, 1);
 		version->addLabel(QString("%1").arg(tests.at(i).winever), 120, 1);
 		if (tests.at(i).install){

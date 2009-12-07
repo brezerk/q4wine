@@ -29,25 +29,13 @@
 
 #include "appdblinkitemwidget.h"
 
-AppDBLinkItemWidget::AppDBLinkItemWidget(QString text, bool enabled, short int action, QString search, int value, QWidget * parent) : QLabel(parent)
+AppDBLinkItemWidget::AppDBLinkItemWidget(QString text, short int action, QWidget * parent) : QLabel(parent)
 {
 	this->setText(text);
+	//See setAction() for details =)
+	this->Action = action;
 
-	QFont font;
-	font.setBold(true);
-	this->setFont(font);
-
-	if (enabled){
-		QPalette p(palette());
-		p.setColor(QPalette::WindowText, QPalette().color(QPalette::Link));
-		this->setPalette(p);
-		this->installEventFilter(this);
-		this->setCursor(Qt::PointingHandCursor);
-	}
-
-	this->_ACTION = action;
-	this->_SEARCH = search;
-	this->_VALUE = value;
+	this->setEnabled(true);
 
 	return;
 }
@@ -56,9 +44,119 @@ AppDBLinkItemWidget::~AppDBLinkItemWidget(){
 	//nothing but...
 }
 
+
+void AppDBLinkItemWidget::setEnabled(bool enable){
+	// Sets item color to QT::Link color while item is enabled.
+	QPalette p(palette());
+
+	if (enable){
+		p.setColor(QPalette::WindowText, QPalette().color(QPalette::Link));
+		this->installEventFilter(this);
+		this->setCursor(Qt::PointingHandCursor);
+	} else {
+		p.setColor(QPalette::WindowText, QPalette().color(QPalette::WindowText));
+		this->removeEventFilter(this);
+		this->setCursor(Qt::ArrowCursor);
+	}
+	this->setPalette(p);
+	return;
+}
+
+void AppDBLinkItemWidget::setBold(bool enable){
+	// Sets item text bold state.
+	QFont font;
+
+	font.setBold(enable);
+	this->setFont(font);
+}
+
+void AppDBLinkItemWidget::setAction(short int action){
+	/*** Action codes ***
+	1: Search
+	2: Toggle search page
+	3: Show app
+	4: Show app version
+	5: Show category
+	6: Open url
+	7: Show parent comment
+	*****************/
+	Action=action;
+	return;
+}
+
+void AppDBLinkItemWidget::setSearchUrl(QString url){
+	/* Search Url
+		This might be used for saving user search text
+	*/
+	SearchUrl=url;
+	return;
+}
+
+void AppDBLinkItemWidget::setAppId(short int id){
+	/* App Id
+		Saveing App Id
+	*/
+	AppId=id;
+	return;
+}
+
+void AppDBLinkItemWidget::setVerId(short int id){
+	/* Version Id
+		Saveing Version Id
+	*/
+	VerId=id;
+	return;
+}
+
+void AppDBLinkItemWidget::setCatId(short int id){
+	/* Category Id
+		Saveing Category Id
+	*/
+	CatId=id;
+	return;
+}
+
+void AppDBLinkItemWidget::setPage(short int id){
+	/* Category Id
+		Saveing Category Id
+	*/
+	Page=id;
+	return;
+}
+
+void AppDBLinkItemWidget::setParentId(short int id){
+	/* Parent comment Id
+		Saveing id of parent comment
+	*/
+	ParentId=id;
+	return;
+}
+
 bool AppDBLinkItemWidget::eventFilter(QObject *obj, QEvent *event){
 	if (event->type()==QEvent::MouseButtonRelease){
-		emit(linkTrigged(this->_ACTION, this->_SEARCH, this->_VALUE));
+		switch (Action){
+  case 1:
+			emit(linkTrigged(1, SearchUrl));
+			break;
+  case 2:
+			emit(linkTrigged(2, SearchUrl, Page));
+			break;
+  case 3:
+			emit(linkTrigged(3, "", AppId));
+			break;
+  case 4:
+			emit(linkTrigged(4, "", AppId, VerId));
+			break;
+  case 5:
+			emit(linkTrigged(5, "", CatId));
+			break;
+  case 6:
+			emit(linkTrigged(6, SearchUrl));
+			break;
+  case 7:
+			emit(linkTrigged(7, "", ParentIdl));
+			break;
+		}
 	} else if (event->type()==QEvent::Enter){
 		QPalette p(palette());
 		// Set colour

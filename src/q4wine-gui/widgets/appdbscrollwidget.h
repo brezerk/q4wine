@@ -57,7 +57,7 @@ public:
 
 public slots:
 	void versionTrigged(short int action, int appid, int verid, int testid);
-	void linkTrigged(short int action, QString search, int value);
+	void linkTrigged(short int action, QString search="", int val1=0, int val2=0);
 
 private slots:
 	void update();

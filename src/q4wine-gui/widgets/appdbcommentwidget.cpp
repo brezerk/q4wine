@@ -27,95 +27,48 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#include "appdbappversionwidget.h"
+#include "appdbcommentwidget.h"
 
-AppDBAppVersionWidget::AppDBAppVersionWidget(const short int action, const int appid, const int verid, const int testid, const bool active, QWidget *parent) : QWidget(parent)
+AppDBCommentWidget::AppDBCommentWidget(const WineAppDBComment *comment, QWidget * parent) : QFrame(parent)
 {
-	if (active){
-		setCursor(Qt::PointingHandCursor);
-		installEventFilter(this);
-	}
-	setAutoFillBackground(true);
+	setupUi(this);
 
-	contentLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
-	contentLayout->setMargin(0);
-	contentLayout->setSpacing(0);
-
-	_ACTION=action;
-	_APPID=appid;
-	_VERID=verid;
-	_TESTID=testid;
-	_BOLD=active;
-}
-
-AppDBAppVersionWidget::~AppDBAppVersionWidget(){
-	//nothig but...
-}
-
-void AppDBAppVersionWidget::addLabel(const QString text, const short int width, const short int aligment, const bool worldwarp){
-	QLabel *label = new QLabel(this);
-
-	switch (aligment){
-		case 0:
-		label->setAlignment(Qt::AlignLeft);
-		break;
-		case 1:
-		label->setAlignment(Qt::AlignHCenter);
-		break;
-		case 2:
-		label->setAlignment(Qt::AlignRight);
-		break;
-		case 3:
-		label->setAlignment(Qt::AlignJustify);
-		break;
-	}
-//label->setAlignment(Qt::AlignLeft);
-
-
-	if (!_BOLD){
-		QPalette p(palette());
-		// Set colour
-		p.setColor(QPalette::Background, QPalette().color(QPalette::Base));
-		this->setPalette(p);
-	}
-
-	if (worldwarp){
-		label->setWordWrap(true);
-	}
-
-	if (width!=-1){
-		label->setMinimumWidth(width);
-		label->setMaximumWidth(width);
-	}
-
-
-	label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-
-	label->setText(text);
-contentLayout->addWidget(label);
-
-
+	setTopic(comment->topic);
+	setDate(comment->autor, comment->date);
+	setMessage(comment->message);
+	id=comment->id;
+	parent_id=comment->padent_id;
 	return;
 }
 
-void AppDBAppVersionWidget:: insertStretch(void){
-	contentLayout->insertStretch(-1);
+void AppDBCommentWidget::setTopic(QString topic){
+	//
+	AppDBLinkItemWidget *label = new AppDBLinkItemWidget(topic, 7);
+	label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+	label->setBold(true);
+	if (parent_id>0){
+		connect (label, SIGNAL(linkTrigged(short int, QString, int)), this, SIGNAL(linkTrigged(short int, QString, int)));
+	} else {
+		label->setEnabled(false);
+	}
+
+	widgetLabelLayout->addWidget(label);
+
+	QPalette p(palette());
+	//if (topic)
+	//FIXME: check for WARNING and HOWTO colors
+	p.setColor(QPalette::Background, QPalette().color(QPalette::Dark));
+	widgetLabel->setPalette(p);
+	widgetLabel->setAutoFillBackground(true);
+	return;
 }
 
-bool AppDBAppVersionWidget::eventFilter(QObject *obj, QEvent *event){
-	if (event->type()==QEvent::MouseButtonRelease){
-		versionTrigged(this->_ACTION, this->_APPID, this->_VERID, this->_TESTID);
-	}
+void AppDBCommentWidget::setDate(QString autor, QString date){
+	lblDate->setText(QString("by %1 on %2").arg(autor).arg(date));
+	return;
+}
 
-	if (event->type()==QEvent::Enter){
-		QPalette p(palette());
-		// Set colour
-		p.setColor(QPalette::Background, QPalette().color(QPalette::Highlight));
-		p.setColor(QPalette::WindowText, QPalette().color(QPalette::HighlightedText));
-		this->setPalette(p);
-	} else if (event->type()==QEvent::Leave){
-		// Reset default color
-		this->setPalette(QPalette());
-	}
-	return false;
+void AppDBCommentWidget::setMessage(QString message){
+	lblContent->setText(message);
+	return;
 }

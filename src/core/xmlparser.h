@@ -82,6 +82,10 @@ private:
 	void parseTest(const QDomElement &element);
 	void parseBugList(const QDomElement &element);
 	void parseBug(const QDomElement &element);
+	void parseCategoryList(const QDomElement &element);
+	void parseCategory(const QDomElement &element);
+	void parseCommentList(const QDomElement &element);
+	void parseComment(const QDomElement &element);
 	void parseAppVersionsList(const QDomElement &element, WineAppDBInfo &appinfo);
 	void parseAppVersion(const QDomElement &element, WineAppDBInfo &appinfo);
 	QString getChildNodeData(const QDomNode &childNode);

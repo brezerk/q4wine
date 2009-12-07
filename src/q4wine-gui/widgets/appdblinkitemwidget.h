@@ -43,14 +43,30 @@ class AppDBLinkItemWidget : public QLabel
 {
 	Q_OBJECT
 public:
-	AppDBLinkItemWidget(QString text, bool enabled = true, short int action = 0, QString search = "", int value = 0, QWidget *parent = 0);
+	AppDBLinkItemWidget(QString text, short int action = 0, QWidget *parent = 0);
 	~AppDBLinkItemWidget();
-	short int _ACTION;
-	int _VALUE;
-	QString _SEARCH;
+
+	void setEnabled(bool enable);
+	void setBold(bool enable);
+	void setAction(short int action);
+	void setSearchUrl(QString url);
+	void setAppId(short int id);
+	void setVerId(short int id);
+	void setCatId(short int id);
+	void setPage(short int id);
+	void setParentId(short int id);
+
+private:
+	short int Action;
+	int AppId;
+	int VerId;
+	int CatId;
+	int Page;
+	int ParentId;
+	QString SearchUrl;
 
 signals:
-	void linkTrigged(short int action, QString search, int value);
+	void linkTrigged(short int action, QString search="", int val1=0, int val2=0);
 
 private:
 	//! \brief Event filter.

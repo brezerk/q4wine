@@ -53,7 +53,12 @@ void AppDBHeaderWidget::addLabel(QString info){
 void AppDBHeaderWidget::addLink(QString text, bool enabled, short int action, QString search, int value){
 	if (contentLayout){
 		//
-		AppDBLinkItemWidget *label = new AppDBLinkItemWidget(text, enabled, action, search, value);
+		AppDBLinkItemWidget *label = new AppDBLinkItemWidget(text, action);
+		if (!enabled)
+			label->setEnabled(enabled);
+		label->setSearchUrl(search);
+		label->setPage(value);
+
 		contentLayout->addWidget(label);
 		connect (label, SIGNAL(linkTrigged(short int, QString, int)), this, SIGNAL(linkTrigged(short int, QString, int)));
 		//label->installEventFilter(this);
@@ -94,6 +99,14 @@ void AppDBHeaderWidget::createPagesList(short int count, short int current, QStr
 	this->insertStretch();
 
 	this->addLabel(tr("Page %1 of %2").arg(current).arg(count));
+	return;
+}
+
+void AppDBHeaderWidget::createCategoryList(const QList<WineAppDBCategory> *category){
+	for (int i=0; i<category->count(); i++){
+		this->addLink(category->at(i).desc, true, 3);
+		this->addLabel(">");
+	}
 	return;
 }
 

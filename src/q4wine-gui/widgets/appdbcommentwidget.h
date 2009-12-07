@@ -27,95 +27,34 @@
  *   your version.                                                         *
  ***************************************************************************/
 
+#ifndef APPDBCOMMENTWIDGET_H
+#define APPDBCOMMENTWIDGET_H
+
+#include <ui_AppDBCommentWidget.h>
+
+#include "config.h"
+
+#include <QFrame>
+#include <QObject>
+#include <QWidget>
+#include <QString>
+#include <QDebug>
+
+#include "appdbstructs.h"
+#include "appdblinkitemwidget.h"
 #include "appdbappversionwidget.h"
 
-AppDBAppVersionWidget::AppDBAppVersionWidget(const short int action, const int appid, const int verid, const int testid, const bool active, QWidget *parent) : QWidget(parent)
+class AppDBCommentWidget : public QFrame, public Ui::AppDBCommentWidget
 {
-	if (active){
-		setCursor(Qt::PointingHandCursor);
-		installEventFilter(this);
-	}
-	setAutoFillBackground(true);
+	Q_OBJECT
+public:
+	AppDBCommentWidget(const WineAppDBComment *comment, QWidget * parent = 0);
+	int id;
+	int parent_id;
+private:
+	void setTopic(QString topic);
+	void setDate(QString autor, QString date);
+	void setMessage(QString message);
+};
 
-	contentLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
-	contentLayout->setMargin(0);
-	contentLayout->setSpacing(0);
-
-	_ACTION=action;
-	_APPID=appid;
-	_VERID=verid;
-	_TESTID=testid;
-	_BOLD=active;
-}
-
-AppDBAppVersionWidget::~AppDBAppVersionWidget(){
-	//nothig but...
-}
-
-void AppDBAppVersionWidget::addLabel(const QString text, const short int width, const short int aligment, const bool worldwarp){
-	QLabel *label = new QLabel(this);
-
-	switch (aligment){
-		case 0:
-		label->setAlignment(Qt::AlignLeft);
-		break;
-		case 1:
-		label->setAlignment(Qt::AlignHCenter);
-		break;
-		case 2:
-		label->setAlignment(Qt::AlignRight);
-		break;
-		case 3:
-		label->setAlignment(Qt::AlignJustify);
-		break;
-	}
-//label->setAlignment(Qt::AlignLeft);
-
-
-	if (!_BOLD){
-		QPalette p(palette());
-		// Set colour
-		p.setColor(QPalette::Background, QPalette().color(QPalette::Base));
-		this->setPalette(p);
-	}
-
-	if (worldwarp){
-		label->setWordWrap(true);
-	}
-
-	if (width!=-1){
-		label->setMinimumWidth(width);
-		label->setMaximumWidth(width);
-	}
-
-
-	label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-
-	label->setText(text);
-contentLayout->addWidget(label);
-
-
-	return;
-}
-
-void AppDBAppVersionWidget:: insertStretch(void){
-	contentLayout->insertStretch(-1);
-}
-
-bool AppDBAppVersionWidget::eventFilter(QObject *obj, QEvent *event){
-	if (event->type()==QEvent::MouseButtonRelease){
-		versionTrigged(this->_ACTION, this->_APPID, this->_VERID, this->_TESTID);
-	}
-
-	if (event->type()==QEvent::Enter){
-		QPalette p(palette());
-		// Set colour
-		p.setColor(QPalette::Background, QPalette().color(QPalette::Highlight));
-		p.setColor(QPalette::WindowText, QPalette().color(QPalette::HighlightedText));
-		this->setPalette(p);
-	} else if (event->type()==QEvent::Leave){
-		// Reset default color
-		this->setPalette(QPalette());
-	}
-	return false;
-}
+#endif // APPDBCOMMENTWIDGET_H
