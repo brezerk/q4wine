@@ -39,6 +39,7 @@
 #include <QWidget>
 #include <QString>
 #include <QDebug>
+#include <QLabel>
 
 #include "appdbstructs.h"
 #include "appdblinkitemwidget.h"
@@ -49,12 +50,19 @@ class AppDBCommentWidget : public QFrame, public Ui::AppDBCommentWidget
 	Q_OBJECT
 public:
 	AppDBCommentWidget(const WineAppDBComment *comment, QWidget * parent = 0);
-	int id;
-	int parent_id;
+	void setId(int id);
+	void setParentId(int id);
+	bool isId(int id);
+
+signals:
+	void linkTrigged(short int action, QString search="", int val1=0, int val2=0);
+
 private:
 	void setTopic(QString topic);
 	void setDate(QString autor, QString date);
 	void setMessage(QString message);
+	int Id;
+	int ParentId;
 };
 
 #endif // APPDBCOMMENTWIDGET_H

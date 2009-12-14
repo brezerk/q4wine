@@ -39,7 +39,9 @@ AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, const int appid
 	QString rating_desc;
 	AppDBAppVersionWidget *version;
 	for (int i=0; i<versions.count(); i++){
-		version = new AppDBAppVersionWidget(4, appid, versions.at(i).id, 0);
+		version = new AppDBAppVersionWidget(4);
+		version->setAppId(appid);
+		version->setAppVerId(versions.at(i).id);
 		version->addLabel(versions.at(i).appver);
 		switch (versions.at(i).rating){
 		case 1:

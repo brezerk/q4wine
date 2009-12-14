@@ -29,23 +29,21 @@
 
 #include "appdbappversionwidget.h"
 
-AppDBAppVersionWidget::AppDBAppVersionWidget(const short int action, const int appid, const int verid, const int testid, const bool active, QWidget *parent) : QWidget(parent)
+AppDBAppVersionWidget::AppDBAppVersionWidget(const short int action, QWidget *parent) : QWidget(parent)
 {
-	if (active){
-		setCursor(Qt::PointingHandCursor);
-		installEventFilter(this);
-	}
+
+	setCursor(Qt::PointingHandCursor);
+	installEventFilter(this);
 	setAutoFillBackground(true);
 
 	contentLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
 	contentLayout->setMargin(0);
 	contentLayout->setSpacing(0);
 
-	_ACTION=action;
-	_APPID=appid;
-	_VERID=verid;
-	_TESTID=testid;
-	_BOLD=active;
+	this->Action=action;
+	this->AppID=0;
+	this->AppVerID=0;
+	this->TestId=0;
 }
 
 AppDBAppVersionWidget::~AppDBAppVersionWidget(){
@@ -70,14 +68,6 @@ void AppDBAppVersionWidget::addLabel(const QString text, const short int width, 
 		break;
 	}
 //label->setAlignment(Qt::AlignLeft);
-
-
-	if (!_BOLD){
-		QPalette p(palette());
-		// Set colour
-		p.setColor(QPalette::Background, QPalette().color(QPalette::Base));
-		this->setPalette(p);
-	}
 
 	if (worldwarp){
 		label->setWordWrap(true);
@@ -104,7 +94,7 @@ void AppDBAppVersionWidget:: insertStretch(void){
 
 bool AppDBAppVersionWidget::eventFilter(QObject *obj, QEvent *event){
 	if (event->type()==QEvent::MouseButtonRelease){
-		versionTrigged(this->_ACTION, this->_APPID, this->_VERID, this->_TESTID);
+		versionTrigged(this->Action, this->AppID, this->AppVerID, this->TestId);
 	}
 
 	if (event->type()==QEvent::Enter){
@@ -118,4 +108,40 @@ bool AppDBAppVersionWidget::eventFilter(QObject *obj, QEvent *event){
 		this->setPalette(QPalette());
 	}
 	return false;
+}
+
+void AppDBAppVersionWidget::setAction(short int action){
+	this->Action=action;
+	return;
+}
+
+void AppDBAppVersionWidget::setAppId(int id){
+	this->AppID=id;
+	return;
+}
+
+void AppDBAppVersionWidget::setAppVerId(int id){
+	this->AppVerID=id;
+	return;
+}
+
+void AppDBAppVersionWidget::setTestId(int id){
+	this->TestId=id;
+	return;
+}
+
+void AppDBAppVersionWidget::setEnabled(bool enabled){
+	QPalette p(palette());
+	if (!enabled){
+		setCursor(Qt::ArrowCursor);
+		removeEventFilter(this);
+		p.setColor(QPalette::Background, QPalette().color(QPalette::Base));
+	} else {
+		setCursor(Qt::PointingHandCursor);
+		installEventFilter(this);
+		p.setColor(QPalette::Background, QPalette().color(QPalette::Button));
+	}
+	this->setPalette(p);
+
+	return;
 }

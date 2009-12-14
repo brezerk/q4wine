@@ -104,7 +104,7 @@ void AppDBHeaderWidget::createPagesList(short int count, short int current, QStr
 
 void AppDBHeaderWidget::createCategoryList(const QList<WineAppDBCategory> *category){
 	for (int i=0; i<category->count(); i++){
-		this->addLink(category->at(i).desc, true, 3);
+		this->addLink(category->at(i).name, true, 3);
 		this->addLabel(">");
 	}
 	return;

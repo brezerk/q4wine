@@ -154,7 +154,7 @@ bool AppDBLinkItemWidget::eventFilter(QObject *obj, QEvent *event){
 			emit(linkTrigged(6, SearchUrl));
 			break;
   case 7:
-			emit(linkTrigged(7, "", ParentIdl));
+			emit(linkTrigged(7, "", ParentId));
 			break;
 		}
 	} else if (event->type()==QEvent::Enter){

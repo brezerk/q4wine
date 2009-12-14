@@ -55,7 +55,7 @@ class AppDBAppVersionWidget : public QWidget
 Q_OBJECT
 public:
 	//! Class constructor
-	AppDBAppVersionWidget(const short int action, const int appid, const int verid=0, const int testid=0, const bool active=true, QWidget *parent = 0);
+	AppDBAppVersionWidget(const short int action, QWidget *parent = 0);
 
 	//! Class destructor
 	~AppDBAppVersionWidget();
@@ -64,16 +64,21 @@ public:
 	void insertStretch(void);
 	void setBold(void);
 
+	void setAction(short int action);
+	void setAppId(int id);
+	void setAppVerId(int id);
+	void setTestId(int id);
+	void setEnabled(bool enable);
+
 private:
 	QBoxLayout *contentLayout;
-	int _APPID;
-	int _VERID;
-	int _TESTID;
-	bool _BOLD;
-	short int _ACTION;
+	int AppID;
+	int AppVerID;
+	int TestId;
+	short int Action;
 
 signals:
-	void versionTrigged(short int action, int appid, int verid, int testid);
+	void versionTrigged(short int action, int appid=0, int verid=0, int testid=0);
 
 protected:
 	//! \brief Event filter.

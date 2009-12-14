@@ -32,12 +32,14 @@
 AppDBCommentWidget::AppDBCommentWidget(const WineAppDBComment *comment, QWidget * parent) : QFrame(parent)
 {
 	setupUi(this);
-
+	this->setObjectName(QString("%1").arg(comment->id));
+	this->setId(comment->id);
+	this->setParentId(comment->padent_id);
 	setTopic(comment->topic);
 	setDate(comment->autor, comment->date);
 	setMessage(comment->message);
-	id=comment->id;
-	parent_id=comment->padent_id;
+
+
 	return;
 }
 
@@ -46,14 +48,15 @@ void AppDBCommentWidget::setTopic(QString topic){
 	AppDBLinkItemWidget *label = new AppDBLinkItemWidget(topic, 7);
 	label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 	label->setBold(true);
-	if (parent_id>0){
-		connect (label, SIGNAL(linkTrigged(short int, QString, int)), this, SIGNAL(linkTrigged(short int, QString, int)));
+	if (ParentId>0){
+		label->setEnabled(true);
+		label->setParentId(ParentId);
+		connect (label, SIGNAL(linkTrigged(short int, QString, int, int)), this, SIGNAL(linkTrigged(short int, QString, int, int)));
 	} else {
 		label->setEnabled(false);
 	}
 
 	widgetLabelLayout->addWidget(label);
-
 	QPalette p(palette());
 	//if (topic)
 	//FIXME: check for WARNING and HOWTO colors
@@ -64,7 +67,10 @@ void AppDBCommentWidget::setTopic(QString topic){
 }
 
 void AppDBCommentWidget::setDate(QString autor, QString date){
-	lblDate->setText(QString("by %1 on %2").arg(autor).arg(date));
+	QLabel *label = new QLabel();
+
+	label->setText(QString("by %1 on %2").arg(autor).arg(date));
+	widgetLabelLayout->addWidget(label);
 	return;
 }
 
@@ -72,3 +78,22 @@ void AppDBCommentWidget::setMessage(QString message){
 	lblContent->setText(message);
 	return;
 }
+
+void AppDBCommentWidget::setId(int id){
+	this->Id=id;
+	return;
+}
+
+void AppDBCommentWidget::setParentId(int id){
+	this->ParentId=id;
+	return;
+}
+
+bool AppDBCommentWidget::isId(int id){
+	if (Id==id){
+		return true;
+	} else {
+		return false;
+	}
+}
+

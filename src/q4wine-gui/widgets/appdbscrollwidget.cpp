@@ -67,12 +67,19 @@ void AppDBScrollWidget::addSearchWidget(const WineAppDBInfo *appinfo){
 
 void AppDBScrollWidget::addTestWidget(const WineAppDBTestInfo *appversioninfo){
 	if (contentLayout){
-		AppDBTestViewWidget *AppDBTestWidget;
 		AppDBTestWidget = new AppDBTestViewWidget(appversioninfo);
+		AppDBTestWidget->setObjectName("appViewTestWidget");
 		contentLayout->addWidget(AppDBTestWidget);
 		connect(AppDBTestWidget, SIGNAL(linkTrigged(short int, QString, int, int)), this, SLOT(linkTrigged(short int, QString, int, int)));
+		connect(AppDBTestWidget, SIGNAL(versionTrigged(short int, int, int, int)), this, SLOT(versionTrigged(short int, int, int, int)));
 	}
 	return;
+}
+
+void AppDBScrollWidget::gotoCommentId(int id){
+	int y_pos = AppDBTestWidget->selectParentCommentById(id);
+	if (y_pos>0)
+		this->ensureVisible(0, y_pos, 0, this->height()/3);
 }
 
 void AppDBScrollWidget::clear(void){
@@ -116,44 +123,73 @@ void AppDBScrollWidget::linkTrigged(short int action, QString search, int val1, 
 #ifdef DEBUG
 	qDebug()<<"[ii] linkTrigged: "<<action<<search<<val1<<val2;
 #endif
+	switch (action){
+ case 7:
+		//Get TestWidget....
+		gotoCommentId(val1);
+		break;
+ default:
 	this->appdbHeader->clear();
 	this->clear();
 	this->appdbHeader->addLabel("Status: Connecting to appqb.winehq.org...");
 	this->_ACTION=action;
 	timer->start(1000);
+break;
+}
 	return;
+
 }
 
 void AppDBScrollWidget::versionTrigged(short int action, int appid, int verid, int testid){
 #ifdef DEBUG
 	qDebug()<<"[ii] verTrigged: "<<action<<appid<<verid<<testid;
 #endif
-	this->appdbHeader->clear();
-	this->appdbHeader->addLabel("Status: Connecting to appqb.winehq.org...");
-	this->clear();
-	this->_ACTION=action;
-	timer->start(1000);
+	switch (action){
+ case 7:
+		//Get TestWidget....
+		break;
+ default:
+		this->appdbHeader->clear();
+		this->appdbHeader->addLabel("Status: Connecting to appqb.winehq.org...");
+		this->clear();
+		this->_ACTION=action;
+		timer->start(1000);
+		break;
+	}
+
+
 	return;
 }
 
 void AppDBScrollWidget::update(void){
+	int ret=0;
 	switch (this->_ACTION){
 	case 1:
 		appdbHeader->clear();
-		switch (xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-search.xml")){
-			case 1:
-			this->appdbHeader->addLabel("Error: can't read data from appqb.winehq.org.");
+		ret = xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-search.xml");
+		if (ret>0){
+			this->showXmlError(ret);
+			timer->stop();
 			return;
-			break;
-			case 2:
-			this->appdbHeader->addLabel("Error: wrong or broken xml data. Try again later.");
-			return;
-			break;
-			case 3:
-			this->appdbHeader->addLabel("Error: xml parse error.");
-			return;
-			break;
 		}
+		appdbHeader->createPagesList(xmlparser->getPageCount(), xmlparser->getPageCurrent(), this->_SEARCH);
+
+		for (int i=0; i<xmlparser->getAppSearchInfo().count(); i++){
+			this->addSearchWidget(&xmlparser->getAppSearchInfo().at(i));
+		}
+
+		this->insertStretch();
+		break;
+	case 3:
+		appdbHeader->clear();
+		ret = xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-category-view.xml");
+		if (ret>0){
+			this->showXmlError(ret);
+			timer->stop();
+			return;
+		}
+
+		/*
 		appdbHeader->createPagesList(xmlparser->_PAGE_COUNT, xmlparser->_PAGE_CURRENT, this->_SEARCH);
 
 		for (int i=0; i<xmlparser->_APPDB_SEARCH_INFO.count(); i++){
@@ -161,22 +197,15 @@ void AppDBScrollWidget::update(void){
 		}
 
 		this->insertStretch();
+		*/
 		break;
 		case 4:
 		appdbHeader->clear();
-		switch (xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-test-view.xml")){
-			case 1:
-			this->appdbHeader->addLabel("Error: can't read data from appqb.winehq.org.");
+		ret = xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-test-view.xml");
+		if (ret>0){
+			this->showXmlError(ret);
+			timer->stop();
 			return;
-			break;
-			case 2:
-			this->appdbHeader->addLabel("Error: wrong or broken xml data. Try again later.");
-			return;
-			break;
-			case 3:
-			this->appdbHeader->addLabel("Error: xml parse error.");
-			return;
-			break;
 		}
 
 		this->addTestWidget(&xmlparser->_APPDB_TEST_INFO);
@@ -187,4 +216,24 @@ void AppDBScrollWidget::update(void){
 		break;
 	}
 	timer->stop();
+}
+
+void AppDBScrollWidget::showXmlError(int id){
+	switch (id){
+		case 1:
+		this->appdbHeader->addLabel(tr("Error: can't read data from appqb.winehq.org."));
+		return;
+		break;
+		case 2:
+		this->appdbHeader->addLabel(tr("Error: wrong or broken xml data. Try again later."));
+		return;
+		break;
+		case 3:
+		this->appdbHeader->addLabel(tr("Error: wrong or broken appdb xml version. Application needs to be updated?"));
+		return;
+		case 4:
+		this->appdbHeader->addLabel(tr("Error: xml parse error."));
+		return;
+		break;
+	}
 }

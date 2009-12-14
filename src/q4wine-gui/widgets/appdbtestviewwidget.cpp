@@ -35,6 +35,7 @@ AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBTestInfo *appinfo, QWidg
 		this->setAppName(QString("%1 - %2").arg(appinfo->name).arg(appinfo->appver));
 		this->setAppDesc(appinfo->desc);
 		this->_APPID=appinfo->id;
+		this->_APPVERID=appinfo->ver_id;
 
 		lblWineVer->setText(appinfo->winever);
 		lblLicense->setText(appinfo->license);
@@ -48,7 +49,7 @@ AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBTestInfo *appinfo, QWidg
 			AppDBLinkItemWidget *label = new AppDBLinkItemWidget(tr("Application web page"), 6);
 			label->setSearchUrl(appinfo->url);
 			label->setToolTip(appinfo->url);
-			connect (label, SIGNAL(linkTrigged(short int, QString, int)), this, SIGNAL(linkTrigged(short int, QString, int)));
+			connect (label, SIGNAL(linkTrigged(short int, QString, int, int)), this, SIGNAL(linkTrigged(short int, QString, int, int)));
 			AppDetailsLayout->addWidget(label);
 		}
 
@@ -56,6 +57,25 @@ AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBTestInfo *appinfo, QWidg
 		addBugs(appinfo->bugs);
 		addComments(appinfo->comments);
 		return;
+}
+
+int AppDBTestViewWidget::selectParentCommentById(int id){
+	QList<QObject*> list = this->children();
+	QPalette p(palette());
+	int y_pos = -1;
+	// Start from 1 becouse of 0 -- is VBoxLayout
+	for (int i=1; i<list.count(); i++){
+		if (list.at(i)->objectName().toInt()==id){
+			p.setColor(QPalette::Window, QColor(255,0,0));
+			list.at(i)->setProperty("palette", p);
+			y_pos = list.at(i)->property("y").toInt();
+		} else {
+			p.setColor(QPalette::Window, QPalette().color(QPalette::Window));
+			list.at(i)->setProperty("palette", p);
+		}
+	}
+
+	return y_pos;
 }
 
 void AppDBTestViewWidget::setAppName(QString name){
@@ -72,15 +92,14 @@ void AppDBTestViewWidget::addBugs(QList<WineAppDBBug> bugs){
 	AppDBAppVersionWidget *version;
 
 	for (int i=0; i<bugs.count(); i++){
-		version = new AppDBAppVersionWidget(4, 0, bugs.at(i).id, 0);
-
+		version = new AppDBAppVersionWidget(7);
+		version->setAppId(bugs.at(i).id);
 		version->addLabel(QString("%1").arg(bugs.at(i).id), 70, 1);
 		version->addLabel(bugs.at(i).desc, -1, 3, true);
-		//version->insertStretch();
 		version->addLabel(QString("%1").arg(bugs.at(i).status), 120, 1);
 		version->addLabel(QString("%1").arg(bugs.at(i).resolution), 120, 1);
-
 		BugsLayout->addWidget(version);
+		connect(version, SIGNAL(versionTrigged(short int, int, int, int)), this, SIGNAL(versionTrigged(short int, int, int, int)));
 	}
 	return;
 }
@@ -91,6 +110,7 @@ void AppDBTestViewWidget::addComments(QList<WineAppDBComment> comments){
 	for (int i=0; i<comments.count(); i++){
 		comment = new AppDBCommentWidget(&comments.at(i));
 		TestLayout->addWidget(comment);
+		connect (comment, SIGNAL(linkTrigged(short int, QString, int, int)), this, SIGNAL(linkTrigged(short int, QString, int, int)));
 	}
 
 	return;
@@ -101,15 +121,16 @@ void AppDBTestViewWidget::addTestResults(QList<WineAppDBTestResult> tests){
 	QString rating_desc;
 
 	for (int i=0; i<tests.count(); i++){
+		version = new AppDBAppVersionWidget(4);
+		version->setAppId(this->_APPID);
+		version->setAppVerId(this->_APPVERID);
+		version->setTestId(tests.at(i).id);
+
 		if (tests.at(i).current){
-			version = new AppDBAppVersionWidget(4, this->_APPID, tests.at(i).id, 0, false);
-		} else {
-			version = new AppDBAppVersionWidget(4, this->_APPID, tests.at(i).id, 0);
+			version->setEnabled(false);
 		}
 
 		version->addLabel(QString("%1").arg(tests.at(i).distrib), -1, 3, true);
-
-		//version->insertStretch();
 		version->addLabel(tests.at(i).date, 120, 1);
 		version->addLabel(QString("%1").arg(tests.at(i).winever), 120, 1);
 		if (tests.at(i).install){
@@ -145,5 +166,6 @@ void AppDBTestViewWidget::addTestResults(QList<WineAppDBTestResult> tests){
 		version->addLabel(rating_desc, 120, 1);
 
 		Top5ResultsLayout->addWidget(version);
+		connect(version, SIGNAL(versionTrigged(short int, int, int, int)), this, SIGNAL(versionTrigged(short int, int, int, int)));
 	}
 }

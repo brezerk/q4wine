@@ -66,7 +66,7 @@ public:
 	//! \brief class destructor;
 	~AppDBSearchWidget();
 signals:
-	 void linkTrigged(short int action, QString search, int value);
+	 void linkTrigged(short int action, QString search="", int val1=0, int val2=0);
 	 void versionTrigged(short int action, int appid, int verid, int testid);
 private:
 	/*! \brief sets general application Name

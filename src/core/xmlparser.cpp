@@ -51,20 +51,167 @@ int XmlParser::parseIOSream(QString fileName){
 			return 2;
 		}
 
+		if (root.attribute("version") != APPDB_EXPORT_VERSION){
+			qDebug()<<QString("[EE] export_version mismatch! Expected %1, but got %2.").arg(APPDB_EXPORT_VERSION).arg(root.attribute("version"));
+			return 3;
+		}
+
+		action = root.attribute("action").toInt();
+
 		QDomNode node = root.firstChild();
 		while (!node.isNull()) {
-			if (!parseEntry(node.toElement())){
-				file.close();
-				return 3;
+			switch (action){
+				case 1:
+					  // Search action
+					  parseAppSearchEntry(node.toElement());
+				break;
+				case 4:
+					  // View test results
+					  parseAppTestResultsEntry(node.toElement());
+				break;
+
 			}
 			node = node.nextSibling();
 		}
-
 	}
 
 	file.close();
 	return 0;
 }
+
+short int XmlParser::getPageCount(void){
+	return page_count;
+}
+
+short int XmlParser::getPageCurrent(void){
+	return page_current;
+}
+
+QList<WineAppDBInfo> XmlParser::getAppSearchInfo(){
+	return _APPDB_SEARCH_INFO;
+}
+
+void XmlParser::parseAppSearchEntry(const QDomElement &element){
+	if (element.tagName() == "page"){
+		parsePages(element);
+	} else if (element.tagName() == "app-list"){
+		QDomNode node = element.firstChild();
+		while (!node.isNull()) {
+			parseApp(node.toElement());
+			node = node.nextSibling();
+		}
+	}
+	return;
+}
+
+ void XmlParser::parseAppTestResultsEntry(const QDomElement &element){
+	 qDebug()<<element.tagName();
+	/* if (element.tagName() == "page"){
+		 parsePages(element);
+	 } else if (element.tagName() == "app-list"){
+		 QDomNode node = element.firstChild();
+		 while (!node.isNull()) {
+			 parseApp(node.toElement());
+			 node = node.nextSibling();
+		 }
+	 }*/
+	 return;
+ }
+
+
+
+void XmlParser::parsePages(const QDomElement &element){
+	QDomNode node = element.firstChild();
+	while (!node.isNull()) {
+		if (node.toElement().tagName()=="current"){
+			page_current=getChildNodeData(node.firstChild()).toInt();
+		} else if (node.toElement().tagName()=="count"){
+			page_count=getChildNodeData(node.firstChild()).toInt();
+		}
+		node = node.nextSibling();
+	}
+	return;
+}
+
+void XmlParser::parseApp(const QDomElement &element){
+	QDomNode node = element.firstChild();
+	//QDomNode subnode;
+	WineAppDBInfo appinfo;
+
+	while (!node.isNull()) {
+		if (node.toElement().tagName()=="name"){
+			appinfo.name = getChildNodeData(node.firstChild());
+			appinfo.id = element.attribute("id").toInt();
+		} else if (node.toElement().tagName()=="desc"){
+			appinfo.desc = getChildNodeData(node.firstChild());
+		} else if (node.toElement().tagName()=="category"){
+			appinfo.category = getChildNodeData(node.firstChild());
+		} else if (node.toElement().tagName()=="version-list"){
+			QDomNode subnode = node.toElement().firstChild();
+			while (!subnode.isNull()) {
+				parseAppVersion(subnode.toElement(), appinfo);
+				subnode = subnode.nextSibling();
+			}
+		} else if (node.toElement().tagName()=="bug-list"){
+			//FIXME: need bug parse function
+			QDomNode subnode = node.toElement().firstChild();
+			while (!subnode.isNull()) {
+				parseAppVersion(subnode.toElement(), appinfo);
+				subnode = subnode.nextSibling();
+			}
+		}
+		node = node.nextSibling();
+	}
+	switch (action){
+		case 1:
+			  //Add to search struct
+			 _APPDB_SEARCH_INFO.append(appinfo);
+		break;
+	}
+}
+
+void XmlParser::parseAppVersion(const QDomElement &element, WineAppDBInfo &appinfo){
+	QDomNode node = element.firstChild();
+	WineAppDBVersionInfo versioninfo;
+
+	while (!node.isNull()) {
+		if (node.toElement().tagName()=="app-ver"){
+			versioninfo.appver=getChildNodeData(node.firstChild());
+			versioninfo.id = element.attribute("id").toInt();
+		} else if (node.toElement().tagName()=="rating"){
+			versioninfo.rating=getChildNodeData(node.firstChild()).toInt();
+		} else if (node.toElement().tagName()=="wine-ver"){
+			versioninfo.winever=getChildNodeData(node.firstChild());
+		} else if (node.toElement().tagName()=="url"){
+			versioninfo.url=getChildNodeData(node.firstChild());
+		}
+		node = node.nextSibling();
+	}
+	appinfo.versions.append(versioninfo);
+	return;
+}
+
+
+
+
+
+
+
+
+
+void XmlParser::parseAppVersionsList(const QDomElement &element, WineAppDBInfo &appinfo){
+	QDomNode node = element.firstChild();
+
+	while (!node.isNull()) {
+		if (node.toElement().tagName()=="version"){
+			parseAppVersion(node.toElement(), appinfo);
+		}
+		node = node.nextSibling();
+	}
+	return;
+}
+
+
 
 bool XmlParser::parseEntry(const QDomElement &element){
 	QDomNode node = element.firstChild();
@@ -76,13 +223,9 @@ bool XmlParser::parseEntry(const QDomElement &element){
 				return false;
 			}
 		} else if (element.tagName() == "export_action"){
-			_ACTION=node.toText().data().toInt();
+//			_ACTION=node.toText().data().toInt();
 		} else if (element.tagName() == "page"){
-			if (node.toElement().tagName()=="current"){
-				_PAGE_CURRENT=getChildNodeData(node.firstChild()).toInt();
-			} else if (node.toElement().tagName()=="count"){
-				_PAGE_COUNT=getChildNodeData(node.firstChild()).toInt();
-			}
+
 		}
 
 		if (element.tagName()=="app-list"){
@@ -93,6 +236,7 @@ bool XmlParser::parseEntry(const QDomElement &element){
 			if (node.toElement().tagName()=="name"){
 				_APPDB_TEST_INFO.name = getChildNodeData(node.firstChild());
 				_APPDB_TEST_INFO.id = element.attribute("id").toInt();
+				_APPDB_TEST_INFO.ver_id = element.attribute("verid").toInt();
 			} else if (node.toElement().tagName()=="desc"){
 				_APPDB_TEST_INFO.desc = getChildNodeData(node.firstChild());
 			} else if (node.toElement().tagName()=="url"){
@@ -121,6 +265,8 @@ bool XmlParser::parseEntry(const QDomElement &element){
 				parseCategoryList(node.toElement());
 			} else if (node.toElement().tagName()=="comment-list"){
 				parseCommentList(node.toElement());
+			} else if (node.toElement().tagName()=="test-result"){
+				parseCurrTestResults(node.toElement());
 			}
 		}
 
@@ -130,9 +276,9 @@ bool XmlParser::parseEntry(const QDomElement &element){
 }
 
 void XmlParser::clear(){
-	_ACTION=0;
-	_PAGE_CURRENT=0;
-	_PAGE_COUNT=0;
+	action=0;
+	page_current=0;
+	page_count=0;
 	_APPDB_SEARCH_INFO.clear();
 	_APPDB_TEST_INFO.appver="";
 	_APPDB_TEST_INFO.bugs.clear();
@@ -151,6 +297,28 @@ void XmlParser::clear(){
 	_APPDB_TEST_INFO.works="";
 	_APPDB_TEST_INFO.comments.clear();
 
+	return;
+}
+
+void XmlParser::parseCurrTestResults(const QDomElement &element){
+	QDomNode node = element.firstChild();
+	while (!node.isNull()) {
+		if (node.toElement().tagName()=="rating"){
+			_APPDB_TEST_INFO.rating = getChildNodeData(node.firstChild());
+			_APPDB_TEST_INFO.test_id = element.attribute("id").toInt();
+		} else if (node.toElement().tagName()=="wine-ver"){
+			_APPDB_TEST_INFO.winever = getChildNodeData(node.firstChild());
+		} else if (node.toElement().tagName()=="works"){
+			_APPDB_TEST_INFO.works = getChildNodeData(node.firstChild());
+		} else if (node.toElement().tagName()=="not-works"){
+			_APPDB_TEST_INFO.notworks = getChildNodeData(node.firstChild());
+		} else if (node.toElement().tagName()=="not-tested"){
+			_APPDB_TEST_INFO.nottested = getChildNodeData(node.firstChild());
+		} else if (node.toElement().tagName()=="comment"){
+			_APPDB_TEST_INFO.comment = getChildNodeData(node.firstChild());
+		}
+		node = node.nextSibling();
+	}
 	return;
 }
 
@@ -218,8 +386,8 @@ void XmlParser::parseCategory(const QDomElement &element){
 	QDomNode node = element.firstChild();
 
 	while (!node.isNull()) {
-		if (node.toElement().tagName()=="desc"){
-			category.desc = getChildNodeData(node.firstChild());
+		if (node.toElement().tagName()=="name"){
+			category.name = getChildNodeData(node.firstChild());
 			category.id = element.attribute("id").toInt();
 		}
 		node = node.nextSibling();
@@ -306,61 +474,6 @@ void XmlParser::parseTest(const QDomElement &element){
 	return;
 }
 
-void XmlParser::parseApp(const QDomElement &element){
-	QDomNode node = element.firstChild();
-	WineAppDBInfo appinfo;
-
-	while (!node.isNull()) {
-		if (node.toElement().tagName()=="name"){
-			appinfo.name = getChildNodeData(node.firstChild());
-			appinfo.id = element.attribute("id").toInt();
-		} else if (node.toElement().tagName()=="desc"){
-			appinfo.desc = getChildNodeData(node.firstChild());
-		} else if (node.toElement().tagName()=="category"){
-			appinfo.category = getChildNodeData(node.firstChild());
-		} else if (node.toElement().tagName()=="version-list"){
-			parseAppVersionsList(node.toElement(), appinfo);
-		} else if (node.toElement().tagName()=="bug-list"){
-			parseAppVersionsList(node.toElement(), appinfo);
-		}
-		node = node.nextSibling();
-	}
-
-	this->_APPDB_SEARCH_INFO.append(appinfo);
-}
-
-void XmlParser::parseAppVersionsList(const QDomElement &element, WineAppDBInfo &appinfo){
-	QDomNode node = element.firstChild();
-
-	while (!node.isNull()) {
-		if (node.toElement().tagName()=="version"){
-			parseAppVersion(node.toElement(), appinfo);
-		}
-		node = node.nextSibling();
-	}
-	return;
-}
-
-void XmlParser::parseAppVersion(const QDomElement &element, WineAppDBInfo &appinfo){
-	QDomNode node = element.firstChild();
-	WineAppDBVersionInfo versioninfo;
-
-	while (!node.isNull()) {
-		if (node.toElement().tagName()=="app-ver"){
-			versioninfo.appver=getChildNodeData(node.firstChild());
-			versioninfo.id = element.attribute("id").toInt();
-		} else if (node.toElement().tagName()=="rating"){
-			versioninfo.rating=getChildNodeData(node.firstChild()).toInt();
-		} else if (node.toElement().tagName()=="wine-ver"){
-			versioninfo.winever=getChildNodeData(node.firstChild());
-		} else if (node.toElement().tagName()=="url"){
-			versioninfo.url=getChildNodeData(node.firstChild());
-		}
-		node = node.nextSibling();
-	}
-	appinfo.versions.append(versioninfo);
-	return;
-}
 
 QString XmlParser::getChildNodeData(const QDomNode &childNode){
 	QString data;

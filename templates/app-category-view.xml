@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appdb_export>
+    <export_version>0.1</export_version>
+    <export_action>3</export_action>
+    <category-list>
+        <category id="1">
+             <desc>Main</desc>
+        </category>
+        <category id="4">
+             <desc>Games</desc>
+        </category>
+    </category-list>
+    <subctegory-list>        
+        <category id="6">
+             <namr>Strategy</name>
+             <desc>Build your army, conquer the world</desc>
+        </category>
+        <category id="12">
+             <name>Real-Time</name>
+             <desc>Professional sports, car racing, and more.</desc>
+        </category>
+        <category id="0">
+             <name>Some other App</name>
+             <desc>Misc. trols</desc>
+        </category>
+    </subctegory-list>
+    <app-list>
+        <app id='341'>
+             <name>Диверсанты</name>
+             <desc>Strategy on WW2</desc>
+        </app>
+        <app id='31'>
+             <name>ADoM</name>
+             <desc>Strategy</desc>
+        </app>
+        <app id='140'>
+             <name>Looop</name>
+             <desc>Strategy for looop</desc>
+        </app>
+        <app id='23'>
+             <name>Quirq</name>
+             <desc>Sport sux game</desc>
+        </app>
+    </app-list>
+</appdb_export>

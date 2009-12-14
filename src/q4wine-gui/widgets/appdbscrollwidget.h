@@ -65,6 +65,8 @@ private slots:
 private:
 	void addSearchWidget(const WineAppDBInfo *appinfo);
 	void addTestWidget(const WineAppDBTestInfo *appversioninfo);
+	void gotoCommentId(int id);
+	void showXmlError(int id);
 	void insertStretch(void);
 	void clear(void);
 	void hideAll(void);
@@ -72,6 +74,7 @@ private:
 	QWidget *contentWidget;
 	QVBoxLayout *contentLayout;
 	AppDBHeaderWidget *appdbHeader;
+	AppDBTestViewWidget *AppDBTestWidget;
 	XmlParser *xmlparser;
 
 	short int _ACTION;

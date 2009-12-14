@@ -50,9 +50,11 @@ class AppDBTestViewWidget : public QWidget, public Ui::AppDBTestViewWidget
 Q_OBJECT
 public:
 	AppDBTestViewWidget(const WineAppDBTestInfo *appinfo, QWidget *parent = 0);
+	int selectParentCommentById(int id);
 
 signals:
 	void linkTrigged(short int action, QString search="", int val1=0, int val2=0);
+	void versionTrigged(short int action, int appid, int verid, int testid);
 
 private:
 	/*! \brief sets general application Name
@@ -73,6 +75,7 @@ private:
 	void addBugs(QList<WineAppDBBug> bugs);
 	void addComments(QList<WineAppDBComment> comments);
 	int _APPID;
+	int _APPVERID;
 };
 
 #endif // APPDBTESTVIEWWIDGET_H

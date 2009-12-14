@@ -79,11 +79,14 @@ struct WineAppDBBug {
 
 struct WineAppDBCategory {
 	int id;
+	QString name;
 	QString desc;
 };
 
 struct WineAppDBTestInfo {
 	int id;
+	int test_id;
+	int ver_id;
 	QString name;
 	QString desc;
 	QString url;
