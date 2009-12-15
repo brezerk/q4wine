@@ -38,6 +38,7 @@ AppDBScrollWidget::AppDBScrollWidget(AppDBHeaderWidget *appdbHeader, QWidget * p
 	this->setWidgetResizable(true);
 
 	xmlparser = new XmlParser();
+	httpcore = new HttpCore();
 
 	contentWidget = new QWidget();
 	contentLayout = new QVBoxLayout(contentWidget);
@@ -65,9 +66,9 @@ void AppDBScrollWidget::addSearchWidget(const WineAppDBInfo *appinfo){
 	return;
 }
 
-void AppDBScrollWidget::addTestWidget(const WineAppDBTestInfo *appversioninfo){
+void AppDBScrollWidget::addTestWidget(const WineAppDBInfo *appinfo){
 	if (contentLayout){
-		AppDBTestWidget = new AppDBTestViewWidget(appversioninfo);
+		AppDBTestWidget = new AppDBTestViewWidget(appinfo);
 		AppDBTestWidget->setObjectName("appViewTestWidget");
 		contentLayout->addWidget(AppDBTestWidget);
 		connect(AppDBTestWidget, SIGNAL(linkTrigged(short int, QString, int, int)), this, SLOT(linkTrigged(short int, QString, int, int)));
@@ -150,7 +151,7 @@ void AppDBScrollWidget::versionTrigged(short int action, int appid, int verid, i
 		break;
  default:
 		this->appdbHeader->clear();
-		this->appdbHeader->addLabel("Status: Connecting to appqb.winehq.org...");
+		this->appdbHeader->addLabel(tr("Status: Connecting to %1...").arg(APPDB_HOSTNAME));
 		this->clear();
 		this->_ACTION=action;
 		timer->start(1000);
@@ -163,9 +164,14 @@ void AppDBScrollWidget::versionTrigged(short int action, int appid, int verid, i
 
 void AppDBScrollWidget::update(void){
 	int ret=0;
+
 	switch (this->_ACTION){
 	case 1:
 		appdbHeader->clear();
+		httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/app-search.xml");
+
+
+		/*
 		ret = xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-search.xml");
 		if (ret>0){
 			this->showXmlError(ret);
@@ -174,13 +180,31 @@ void AppDBScrollWidget::update(void){
 		}
 		appdbHeader->createPagesList(xmlparser->getPageCount(), xmlparser->getPageCurrent(), this->_SEARCH);
 
-		for (int i=0; i<xmlparser->getAppSearchInfo().count(); i++){
-			this->addSearchWidget(&xmlparser->getAppSearchInfo().at(i));
+		for (int i=0; i<xmlparser->getAppSearchInfoList().count(); i++){
+			this->addSearchWidget(&xmlparser->getAppSearchInfoList().at(i));
+		}
+
+		this->insertStretch();*/
+		break;
+
+	case 2:
+		appdbHeader->clear();
+		//Search Page trigged
+		ret = xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-search.xml");
+		if (ret>0){
+			this->showXmlError(ret);
+			timer->stop();
+			return;
+		}
+		appdbHeader->createPagesList(xmlparser->getPageCount(), xmlparser->getPageCurrent(), this->_SEARCH);
+
+		for (int i=0; i<xmlparser->getAppSearchInfoList().count(); i++){
+			this->addSearchWidget(&xmlparser->getAppSearchInfoList().at(i));
 		}
 
 		this->insertStretch();
 		break;
-	case 3:
+	case 5:
 		appdbHeader->clear();
 		ret = xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-category-view.xml");
 		if (ret>0){
@@ -188,6 +212,14 @@ void AppDBScrollWidget::update(void){
 			timer->stop();
 			return;
 		}
+
+		appdbHeader->createCategoryList(&xmlparser->getCategorysList());
+
+		this->addVersionFrame(xmlparser->getSubCategorysList(), tr("Sub categoryes"), 5);
+		this->addVersionFrame(xmlparser->getAppsList(), tr("Applications"), 3);
+
+		appdbHeader->insertStretch();
+		this->insertStretch();
 
 		/*
 		appdbHeader->createPagesList(xmlparser->_PAGE_COUNT, xmlparser->_PAGE_CURRENT, this->_SEARCH);
@@ -199,6 +231,20 @@ void AppDBScrollWidget::update(void){
 		this->insertStretch();
 		*/
 		break;
+		case 3:
+		appdbHeader->clear();
+		ret = xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-view-by-id.xml");
+		if (ret>0){
+			this->showXmlError(ret);
+			timer->stop();
+			return;
+		}
+		appdbHeader->createCategoryList(&xmlparser->getAppSearchInfo().categorys);
+		this->addSearchWidget(&xmlparser->getAppSearchInfo());
+		appdbHeader->insertStretch();
+		this->insertStretch();
+
+		break;
 		case 4:
 		appdbHeader->clear();
 		ret = xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-test-view.xml");
@@ -208,14 +254,33 @@ void AppDBScrollWidget::update(void){
 			return;
 		}
 
-		this->addTestWidget(&xmlparser->_APPDB_TEST_INFO);
-		appdbHeader->createCategoryList(&xmlparser->_APPDB_TEST_INFO.category);
-		appdbHeader->addLabel(xmlparser->_APPDB_TEST_INFO.appver);
+		this->addTestWidget(&xmlparser->getAppSearchInfo());
+		appdbHeader->createCategoryList(&xmlparser->getAppSearchInfo().categorys);
+		appdbHeader->addLabel(QString("- %1").arg(xmlparser->getAppSearchInfo().appver));
 		appdbHeader->insertStretch();
 
 		break;
 	}
 	timer->stop();
+}
+
+
+void AppDBScrollWidget::addVersionFrame(QList<WineAppDBCategory> list, QString frame_caption, short int action){
+	QGroupBox *frame = new QGroupBox(QString("%1:").arg(frame_caption));
+
+	QVBoxLayout *layout = new QVBoxLayout;
+	AppDBAppVersionWidget *version;
+	for (int i=0; i<xmlparser->getSubCategorysList().count(); i++){
+		version = new AppDBAppVersionWidget(action);
+		version->setAppId(list.at(i).id);
+		version->addLabel(list.at(i).name, 240, 3);
+		version->addLabel(list.at(i).desc, -1, 3, true);
+		layout->addWidget(version);
+		connect(version, SIGNAL(versionTrigged(short int, int, int, int)), this, SLOT(versionTrigged(short int, int, int, int)));
+	}
+	frame->setLayout(layout);
+	contentLayout->addWidget(frame);
+	return;
 }
 
 void AppDBScrollWidget::showXmlError(int id){

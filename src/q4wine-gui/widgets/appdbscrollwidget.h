@@ -38,8 +38,11 @@
 #include <QWidget>
 #include <QString>
 #include <QDebug>
+#include <QGroupBox>
 #include <QScrollArea>
 #include <QVBoxLayout>
+
+#include "httpcore.h"
 
 #include "xmlparser.h"
 #include "appdbstructs.h"
@@ -47,6 +50,8 @@
 #include "appdbsearchwidget.h"
 #include "appdbtestviewwidget.h"
 #include "appdbappversionwidget.h"
+
+#include <QHttp>
 
 class AppDBScrollWidget : public QScrollArea
 {
@@ -64,7 +69,8 @@ private slots:
 
 private:
 	void addSearchWidget(const WineAppDBInfo *appinfo);
-	void addTestWidget(const WineAppDBTestInfo *appversioninfo);
+	void addTestWidget(const WineAppDBInfo *appinfo);
+	void addVersionFrame(QList<WineAppDBCategory> list, QString frame_caption, short int action);
 	void gotoCommentId(int id);
 	void showXmlError(int id);
 	void insertStretch(void);
@@ -76,6 +82,7 @@ private:
 	AppDBHeaderWidget *appdbHeader;
 	AppDBTestViewWidget *AppDBTestWidget;
 	XmlParser *xmlparser;
+	HttpCore *httpcore;
 
 	short int _ACTION;
 	QString _SEARCH;

@@ -27,76 +27,29 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#ifndef APPDBSTRUCTS_H
-#define APPDBSTRUCTS_H
+#include "httpcore.h"
 
-#include <QString>
-#include <QList>
+HttpCore::HttpCore()
+{
+	http = new QHttp(this);
+	connect(http, SIGNAL(done(bool)), this, SLOT(readPage()));
+	//connect(http, SIGNAL(done(bool)), this, SLOT(readPage()));
+	//requestFinished
+}
 
-struct WineAppDBVersionInfo {
-	int id;
-	QString appver;
-	QString winever;
-	short int rating;
-	QString url;
-};
+void HttpCore::getWineAppDBXMLPage(QString host, short int port, QString page)
+{
 
-struct WineAppDBTestResult {
-	int id;
-	bool current;
-	QString distrib;
-	QString date;
-	QString winever;
-	bool run;
-	bool install;
-	short int rating;
-};
+  //http->setProxy("proxy.example.com", 3128);
+  http->setHost(host, QHttp::ConnectionModeHttp, port);
+#ifdef DEBUG
+  qDebug()<<"[ii] Connecting to"<<host<<":"<<port<<" reuested page is: "<<page;
+#endif
+  http->get(page);
+}
 
-struct WineAppDBComment {
-	int id;
-	QString topic;
-	QString date;
-	QString autor;
-	int padent_id;
-	QString message;
-};
-
-struct WineAppDBBug {
-	int id;
-	QString desc;
-	short int status;
-	short int resolution;
-};
-
-struct WineAppDBCategory {
-	int id;
-	QString name;
-	QString desc;
-	bool enabled;
-};
-
-struct WineAppDBInfo {
-	int id;
-	int test_id;
-	int ver_id;
-	QString name;
-	QString desc;
-	QString url;
-	QString appver;
-	QString winever;
-	QString rating;
-	QString works;
-	QString category;
-	QString notworks;
-	QString nottested;
-	QString comment;
-	QString license;
-	QList<WineAppDBTestResult> tests;
-	QList<WineAppDBBug> bugs;
-	QList<WineAppDBCategory> categorys;
-	QList<WineAppDBComment> comments;
-	QList<WineAppDBVersionInfo> versions;
-};
-
-
-#endif // APPDBSTRUCTS_H
+void HttpCore::readPage()
+{
+	qDebug()<<"Wooot: "<<http->error()<<http->errorString();
+   qDebug()<<http->readAll();
+}

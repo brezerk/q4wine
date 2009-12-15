@@ -57,8 +57,14 @@ void AppDBHeaderWidget::addLink(QString text, bool enabled, short int action, QS
 		if (!enabled)
 			label->setEnabled(enabled);
 		label->setSearchUrl(search);
+		switch (action){
+  case 5:
+		label->setCatId(value);;
+		break;
+  default:
 		label->setPage(value);
-
+		break;
+		}
 		contentLayout->addWidget(label);
 		connect (label, SIGNAL(linkTrigged(short int, QString, int)), this, SIGNAL(linkTrigged(short int, QString, int)));
 		//label->installEventFilter(this);
@@ -104,8 +110,13 @@ void AppDBHeaderWidget::createPagesList(short int count, short int current, QStr
 
 void AppDBHeaderWidget::createCategoryList(const QList<WineAppDBCategory> *category){
 	for (int i=0; i<category->count(); i++){
-		this->addLink(category->at(i).name, true, 3);
-		this->addLabel(">");
+		if (category->at(i).enabled){
+			this->addLink(category->at(i).name, true, 5, "", category->at(i).id);
+		} else {
+			this->addLabel(category->at(i).name);
+		}
+		if (i<category->count()-1)
+			this->addLabel(">");
 	}
 	return;
 }

@@ -27,76 +27,30 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#ifndef APPDBSTRUCTS_H
-#define APPDBSTRUCTS_H
+#ifndef HTTPCORE_H
+#define HTTPCORE_H
 
-#include <QString>
-#include <QList>
+#include <config.h>
 
-struct WineAppDBVersionInfo {
-	int id;
-	QString appver;
-	QString winever;
-	short int rating;
-	QString url;
+#include <QObject>
+#include <QHttp>
+#include <QDebug>
+
+class HttpCore : public QObject
+{
+Q_OBJECT
+public:
+	HttpCore();
+
+	void getWineAppDBXMLPage(QString host, short int port, QString page);
+
+signals:
+
+public slots:
+	void readPage();
+
+private:
+	QHttp *http;
 };
 
-struct WineAppDBTestResult {
-	int id;
-	bool current;
-	QString distrib;
-	QString date;
-	QString winever;
-	bool run;
-	bool install;
-	short int rating;
-};
-
-struct WineAppDBComment {
-	int id;
-	QString topic;
-	QString date;
-	QString autor;
-	int padent_id;
-	QString message;
-};
-
-struct WineAppDBBug {
-	int id;
-	QString desc;
-	short int status;
-	short int resolution;
-};
-
-struct WineAppDBCategory {
-	int id;
-	QString name;
-	QString desc;
-	bool enabled;
-};
-
-struct WineAppDBInfo {
-	int id;
-	int test_id;
-	int ver_id;
-	QString name;
-	QString desc;
-	QString url;
-	QString appver;
-	QString winever;
-	QString rating;
-	QString works;
-	QString category;
-	QString notworks;
-	QString nottested;
-	QString comment;
-	QString license;
-	QList<WineAppDBTestResult> tests;
-	QList<WineAppDBBug> bugs;
-	QList<WineAppDBCategory> categorys;
-	QList<WineAppDBComment> comments;
-	QList<WineAppDBVersionInfo> versions;
-};
-
-
-#endif // APPDBSTRUCTS_H
+#endif // HTTPCORE_H

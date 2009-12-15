@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<appdb_export>
-    <export_version>0.1</export_version>
-    <export_action>3</export_action>
+<appdb_export version="0.1" action="5">
     <category-list>
         <category id="1">
-             <desc>Main</desc>
+             <name>Main</name>
         </category>
         <category id="4">
-             <desc>Games</desc>
+             <name>Games</name>
+             <enabled>0</enabled>
         </category>
     </category-list>
     <subctegory-list>        
         <category id="6">
-             <namr>Strategy</name>
+             <name>Strategy</name>
              <desc>Build your army, conquer the world</desc>
         </category>
         <category id="12">

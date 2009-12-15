@@ -29,7 +29,7 @@
 
 #include "appdbtestviewwidget.h"
 
-AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBTestInfo *appinfo, QWidget *parent) : QWidget(parent)
+AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBInfo *appinfo, QWidget *parent) : QWidget(parent)
 {
 		setupUi(this);
 		this->setAppName(QString("%1 - %2").arg(appinfo->name).arg(appinfo->appver));

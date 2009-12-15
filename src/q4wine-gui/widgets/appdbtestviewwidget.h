@@ -49,7 +49,7 @@ class AppDBTestViewWidget : public QWidget, public Ui::AppDBTestViewWidget
 {
 Q_OBJECT
 public:
-	AppDBTestViewWidget(const WineAppDBTestInfo *appinfo, QWidget *parent = 0);
+	AppDBTestViewWidget(const WineAppDBInfo *appinfo, QWidget *parent = 0);
 	int selectParentCommentById(int id);
 
 signals:

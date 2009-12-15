@@ -69,11 +69,16 @@ public:
 	XmlParser(void);
 	int parseIOSream(QString filename);
 
-	WineAppDBTestInfo _APPDB_TEST_INFO;
-	QList<WineAppDBInfo> getAppSearchInfo();
+
+	QList<WineAppDBInfo> getAppSearchInfoList();
+	WineAppDBInfo getAppSearchInfo();
 
 	short int getPageCount(void);
 	short int getPageCurrent(void);
+
+	QList<WineAppDBCategory> getSubCategorysList(void);
+	QList<WineAppDBCategory> getCategorysList(void);
+	QList<WineAppDBCategory> getAppsList(void);
 
 private:
 	short int page_current;
@@ -81,29 +86,27 @@ private:
 	short int action;
 
 	QList<WineAppDBInfo> _APPDB_SEARCH_INFO;
+	WineAppDBInfo appdb_appinfo;
+
+	QList<WineAppDBCategory> appdb_subcategorys;
+	QList<WineAppDBCategory> appdb_categorys;
+	QList<WineAppDBCategory> appdb_apps;
 
 	void parseAppSearchEntry(const QDomElement &element);
+	void parseAppCategoryEntry(const QDomElement &element);
 	void parsePages(const QDomElement &element);
 
 	void parseApp(const QDomElement &element);
 	void parseAppVersion(const QDomElement &element, WineAppDBInfo &appinfo);
 
-	void parseAppTestResultsEntry(const QDomElement &element);
+	WineAppDBCategory parseCategory(const QDomElement &element);
+	void parseTestResults(const QDomElement &element, WineAppDBInfo &appinfo);
+	void parseBug(const QDomElement &element, WineAppDBInfo &appinfo);
+	void parseTest(const QDomElement &element, WineAppDBInfo &appinfo);
+	void parseComment(const QDomElement &element, WineAppDBInfo &appinfo);
 
-
-	bool parseEntry(const QDomElement &element);
-	void parseAppTest(const QDomElement &element);
-	void parseCurrTestResults(const QDomElement &element);
-	void parseTestList(const QDomElement &element);
-	void parseTest(const QDomElement &element);
-	void parseBugList(const QDomElement &element);
-	void parseBug(const QDomElement &element);
-	void parseCategoryList(const QDomElement &element);
-	void parseCategory(const QDomElement &element);
-	void parseCommentList(const QDomElement &element);
-	void parseComment(const QDomElement &element);
-	void parseAppVersionsList(const QDomElement &element, WineAppDBInfo &appinfo);
 	QString getChildNodeData(const QDomNode &childNode);
+
 	void clear();
 };
 

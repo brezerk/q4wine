@@ -47,6 +47,7 @@ SET( Q4WINE_GUI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/core/registry.cpp
 	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.cpp
 	${CMAKE_SOURCE_DIR}/src/core/xmlparser.cpp
+	${CMAKE_SOURCE_DIR}/src/core/httpcore.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/about.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsettings.cpp
@@ -92,6 +93,7 @@ SET ( Q4WINE_GUI_HEADERS
 	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.h
 	${CMAKE_SOURCE_DIR}/src/core/appdbstructs.h
 	${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
+	${CMAKE_SOURCE_DIR}/src/core/httpcore.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/about.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsettings.h
@@ -119,6 +121,7 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/core/registry.h
 	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.h
 	${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
+	${CMAKE_SOURCE_DIR}/src/core/httpcore.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsettings.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsview.h
