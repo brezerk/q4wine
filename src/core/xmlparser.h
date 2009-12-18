@@ -68,6 +68,7 @@ Q_OBJECT
 public:
 	XmlParser(void);
 	int parseIOSream(QString filename);
+	int parseIOSream2(QString file);
 
 
 	QList<WineAppDBInfo> getAppSearchInfoList();

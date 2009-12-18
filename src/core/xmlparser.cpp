@@ -86,6 +86,54 @@ int XmlParser::parseIOSream(QString fileName){
 	return 0;
 }
 
+
+int XmlParser::parseIOSream2(QString file){
+	clear();
+
+	file = file.trimmed();
+
+	QDomDocument doc;
+	if (doc.setContent(file)) {
+		QDomElement root = doc.documentElement();
+		if (root.tagName() != "appdb_export") {
+			qDebug()<<"[EE] File is not a q4wine appdb export format";
+			return 2;
+		}
+
+		if (root.attribute("version") != APPDB_EXPORT_VERSION){
+			qDebug()<<QString("[EE] export_version mismatch! Expected \"%1\", but got \"%2\".").arg(APPDB_EXPORT_VERSION).arg(root.attribute("version"));
+			return 3;
+		}
+
+		action = root.attribute("action").toInt();
+
+		QDomNode node = root.firstChild();
+		while (!node.isNull()) {
+			switch (action){
+				case 1:
+					  // Search action
+					  parseAppSearchEntry(node.toElement());
+				break;
+				case 5:
+					  parseAppCategoryEntry(node.toElement());
+				break;
+				case 4:
+					  // View test results
+					  parseApp(node.toElement());
+				break;
+				case 3:
+					 // View test results
+					 parseApp(node.toElement());
+				break;
+
+			}
+			node = node.nextSibling();
+		}
+	}
+
+	return 0;
+}
+
 short int XmlParser::getPageCount(void){
 	return page_count;
 }
@@ -408,7 +456,6 @@ void XmlParser::parseComment(const QDomElement &element, WineAppDBInfo &appinfo)
 
 QString XmlParser::getChildNodeData(const QDomNode &childNode){
 	QString data;
-
 	if (childNode.nodeType() == QDomNode::TextNode) {
 		data = childNode.toText().data();
 	}

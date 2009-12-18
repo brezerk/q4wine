@@ -37,7 +37,7 @@ HttpCore::HttpCore()
 	//requestFinished
 }
 
-void HttpCore::getWineAppDBXMLPage(QString host, short int port, QString page)
+QString HttpCore::getWineAppDBXMLPage(QString host, short int port, QString page)
 {
 
   //http->setProxy("proxy.example.com", 3128);
@@ -50,6 +50,7 @@ void HttpCore::getWineAppDBXMLPage(QString host, short int port, QString page)
 
 void HttpCore::readPage()
 {
-	qDebug()<<"Wooot: "<<http->error()<<http->errorString();
-   qDebug()<<http->readAll();
+	//qDebug()<<"Wooot: "<<http->error()<<http->errorString();
+	xmlreply=http->readAll();
+	emit(pageReaded());
 }

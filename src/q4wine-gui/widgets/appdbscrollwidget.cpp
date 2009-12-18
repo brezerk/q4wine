@@ -168,11 +168,8 @@ void AppDBScrollWidget::update(void){
 	switch (this->_ACTION){
 	case 1:
 		appdbHeader->clear();
-		httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/app-search.xml");
 
-
-		/*
-		ret = xmlparser->parseIOSream("/home/brezerk/develop/q4wine/templates/app-search.xml");
+		ret = xmlparser->parseIOSream2(httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php?action=1&search=star"));
 		if (ret>0){
 			this->showXmlError(ret);
 			timer->stop();
@@ -184,7 +181,8 @@ void AppDBScrollWidget::update(void){
 			this->addSearchWidget(&xmlparser->getAppSearchInfoList().at(i));
 		}
 
-		this->insertStretch();*/
+		this->insertStretch();
+
 		break;
 
 	case 2:

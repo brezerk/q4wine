@@ -43,14 +43,16 @@ public:
 	HttpCore();
 
 	void getWineAppDBXMLPage(QString host, short int port, QString page);
-
+	QString getXMLReply();
 signals:
+	void pageReaded();
 
 public slots:
 	void readPage();
 
 private:
 	QHttp *http;
+	QString xmlreply;
 };
 
 #endif // HTTPCORE_H

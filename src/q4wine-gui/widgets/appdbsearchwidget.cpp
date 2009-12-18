@@ -87,7 +87,7 @@ void AppDBSearchWidget::setAppName(QString name){
 
 void AppDBSearchWidget::setAppDesc(QString desc){
 	if (desc.length()>=255){
-		lblAppDesc->setText(QString("%1...").arg(desc.left(100)));
+		lblAppDesc->setText(QString("%1...").arg(desc.left(255)));
 	} else {
 		lblAppDesc->setText(desc);
 	}
