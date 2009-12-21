@@ -37,7 +37,7 @@ HttpCore::HttpCore()
 	//requestFinished
 }
 
-QString HttpCore::getWineAppDBXMLPage(QString host, short int port, QString page)
+void HttpCore::getWineAppDBXMLPage(QString host, short int port, QString page)
 {
 
   //http->setProxy("proxy.example.com", 3128);

@@ -169,7 +169,7 @@ void AppDBScrollWidget::update(void){
 	case 1:
 		appdbHeader->clear();
 
-		ret = xmlparser->parseIOSream2(httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php?action=1&search=star"));
+		/*ret = xmlparser->parseIOSream2(httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php?action=1&search=star"));
 		if (ret>0){
 			this->showXmlError(ret);
 			timer->stop();
@@ -182,7 +182,7 @@ void AppDBScrollWidget::update(void){
 		}
 
 		this->insertStretch();
-
+*/
 		break;
 
 	case 2:
