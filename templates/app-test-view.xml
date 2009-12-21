@@ -26,7 +26,7 @@
         <test-result id='312'>
            <rating>4</rating>
            <wine-ver>0.9.21</wine-ver>
-           <works>All that I test and maybe some HTML? No?!</works>
+           <works>&lt;br /&g;;;;;;;wedw;;!;</works>;
            <not-works>All tooo.</not-works>
            <not-tested>Network play</not-tested>
            <comment>Some more other comments</comment>

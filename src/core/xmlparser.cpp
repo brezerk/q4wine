@@ -183,7 +183,7 @@ void XmlParser::parseAppCategoryEntry(const QDomElement &element){
 				appdb_categorys.append(parseCategory(subnode.toElement()));
 			subnode = subnode.nextSibling();
 		}
-	} else if (element.tagName() == "subctegory-list"){
+	} else if (element.tagName() == "subcategory-list"){
 		QDomNode subnode = element.firstChild();
 		while (!subnode.isNull()) {
 			if (subnode.toElement().tagName()=="category")

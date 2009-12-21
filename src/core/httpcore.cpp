@@ -48,6 +48,10 @@ void HttpCore::getWineAppDBXMLPage(QString host, short int port, QString page)
   http->get(page);
 }
 
+QString HttpCore::getXMLReply(){
+	return xmlreply;
+}
+
 void HttpCore::readPage()
 {
 	//qDebug()<<"Wooot: "<<http->error()<<http->errorString();

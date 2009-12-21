@@ -87,13 +87,20 @@ void AppDBHeaderWidget::insertStretch(void){
 void AppDBHeaderWidget::createPagesList(short int count, short int current, QString search){
 	this->insertStretch();
 
+	if (current<=0)
+		current=1;
+
 	short int start_page = current - 4;
 	if (start_page<=0)
 		start_page=1;
 
+	if (start_page>1)
+		addLink("<", true, 2, search, start_page-1);
+
 	short int end_page = current + 4;
-	if (end_page>count)
+	if (end_page>count){
 		end_page=count;
+	}
 
 	for (int i=start_page; i<=end_page; i++) {
 		if (i==current){
@@ -102,6 +109,10 @@ void AppDBHeaderWidget::createPagesList(short int count, short int current, QStr
 			addLink(QString("%1").arg(i), true, 2, search, i);
 		}
 	}
+
+	if (end_page<count)
+		addLink(">", true, 2, search, end_page+1);
+
 	this->insertStretch();
 
 	this->addLabel(tr("Page %1 of %2").arg(current).arg(count));

@@ -1,5 +1,7 @@
+<?php
+
 /***************************************************************************
- *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
+ *   Copyright (C) 2009,2010 by Malakhov Alexey                            *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -27,72 +29,41 @@
  *   your version.                                                         *
  ***************************************************************************/
 
-#ifndef APPDBSCROLLWIDGET_H
-#define APPDBSCROLLWIDGET_H
+require_once("./cfg/config.inc");
 
-#include "config.h"
+Class MemChace { 
+	
+	private $memcache_timeout;
+	private $memcache;
 
-#include <QTimer>
-#include <QDialog>
-#include <QObject>
-#include <QWidget>
-#include <QString>
-#include <QDebug>
-#include <QGroupBox>
-#include <QScrollArea>
-#include <QVBoxLayout>
+   function __construct(){
+		/* MemChace class constructor */
 
-#include "httpcore.h"
-
-#include "xmlparser.h"
-#include "appdbstructs.h"
-#include "appdbheaderwidget.h"
-#include "appdbsearchwidget.h"
-#include "appdbtestviewwidget.h"
-#include "appdbappversionwidget.h"
-
-#include <QHttp>
-
-class AppDBScrollWidget : public QScrollArea
-{
-	Q_OBJECT
-public:
-	AppDBScrollWidget(AppDBHeaderWidget *appdbHeader, QWidget * parent = 0);
-	void startSearch(short int action, QString search);
-
-public slots:
-	void versionTrigged(short int action, int appid, int verid, int testid);
-	void linkTrigged(short int action, QString search="", int val1=0, int val2=0);
-	void pageReaded(void);
-
-private slots:
-	void update();
-
-private:
-	int appid;
-	int catid;
-	int verid;
-	int testid;
-	int page;
-
-	void addSearchWidget(const WineAppDBInfo *appinfo);
-	void addTestWidget(const WineAppDBInfo *appinfo);
-	void addVersionFrame(QList<WineAppDBCategory> list, QString frame_caption, short int action);
-	void gotoCommentId(int id);
-	void showXmlError(int id);
-	void insertStretch(void);
-	void clear(void);
-	void hideAll(void);
-	QTimer *timer;
-	QWidget *contentWidget;
-	QVBoxLayout *contentLayout;
-	AppDBHeaderWidget *appdbHeader;
-	AppDBTestViewWidget *AppDBTestWidget;
-	XmlParser *xmlparser;
-	HttpCore *httpcore;
-
-	short int _ACTION;
-	QString _SEARCH;
+		// Get config values from ./cfg/config.inc
+		global $memcache_host;
+		global $memcache_port;
+		global $memcache_timeout;
+		
+		$this->memcache_timeout=$memcache_timeout;
+				  
+		$this->memcache = new Memcache;
+		$this->memcache->connect($memcache_host, $memcache_port) or die ("Could not connect to memchace service");
+   }
+   
+   function setCache($object, $key){
+		if (!$object)
+			return;
+			
+		if (!$key)
+			return;
+		
+		$this->memcache->set($key, $object, flase, $this->memcache_timeout);
+	}
+	
+	function getCache($key){
+		return $this->memcache->get($key);
+	}
 };
 
-#endif // APPDBSCROLLWIDGET_H
+?>
+ 
