@@ -52,13 +52,26 @@ Class XMLExport {
 		return $ret;
 	}
 	
-	function createAppInfo($id, $name, $desc, $category, $url, $versions_list="", $category_list="", $test_results=""){
+	function createAppInfo($id, $verid, $name, $desc, $category, $url, $versions_list="", $category_list="", $test_results="", $comment_list="", $verinfo="", $bugs_list=""){
 		$ret = "
-	<app id=\"{$id}\">
-		<name>{$name}</name>
-		<desc>{$desc}</desc>
+	<app id=\"{$id}\"";
+		if ($verid>0)
+			$ret .= " verid=\"{$verid}\" ";
+		$ret .= ">
+		<name>" . $this->prepareString($name) . "</name>";
+		
+		if ($verinfo)
+				$ret .= $verinfo;
+		
+		$ret .= "\n		<desc>"; 
+		if ($test_results){
+			$ret .= $this->prepareString($desc, -1, 0);
+		} else {
+			$ret .= $this->prepareString($desc, 255);			
+		}
+		$ret .= "</desc>
 		<category>{$category}</category>
-		<url>{$url}</url>";
+		<url>" . $this->prepareString($url) . "</url>";
 		if ($versions_list){
 			$ret .= "\n		<version-list>";
 			$ret .= $versions_list;
@@ -69,9 +82,22 @@ Class XMLExport {
 			$ret .= $category_list;
 			$ret .= "\n		</category-list>";
 		}
-		
+				
 		if ($test_results)
 			$ret .= $test_results;
+		
+		if ($bugs_list){
+			$ret .= "\n		<bug-list>";
+			$ret .= $bugs_list;
+			$ret .= "\n		</bug-list>";
+		}
+		
+		if ($comment_list){
+			$ret .= "\n		<comment-list>";
+			$ret .= $comment_list;
+			$ret .= "\n		</comment-list>";
+		}
+			
 $ret .= "\n	</app>";
 		return $ret;
 	}
@@ -79,18 +105,20 @@ $ret .= "\n	</app>";
 	function createAppVersionInfo($verid, $appver, $rating, $winever){
 		$ret = "
 			<version id=\"{$verid}\">
-				<app-ver>{$appver}</app-ver>
+				<app-ver>" . $this->prepareString($appver) . "</app-ver>
 				<rating>{$rating}</rating>
-				<wine-ver>{$winever}</wine-ver>
+				<wine-ver>" . $this->prepareString($winever) . "</wine-ver>
 			</version>";
 		return $ret;
 	}
 	
-	function createAppTestingInfo($testid, $rating, $winever, $works, $notworks, $nottested, $comment){
+	function createAppTestingInfo($testid, $rating, $winever, $works, $notworks, $nottested, $comment, $vername, $lic){
 		$ret = "
+		<app-ver>" . $this->prepareString($vername) . "</app-ver>
+		<license>" . $this->prepareString($lic) . "</license>
 		<test-result id=\"{$testid}\">
 			<rating>{$rating}</rating>
-			<wine-ver>{$winever}</wine-ver>
+			<wine-ver>" . $this->prepareString($winever) . "</wine-ver>
 			<works>" . $this->prepareString($works, -1, 0) . "</works>;
 			<not-works>" . $this->prepareString($notworks, -1, 0) . "</not-works>
 			<not-tested>" . $this->prepareString($nottested, -1, 0) . "</not-tested>
@@ -99,11 +127,25 @@ $ret .= "\n	</app>";
 		return $ret;
 	}
 	
+	function createTop5TestResults($testid, $rating, $winever, $testdate, $distrib, $installs, $runs, $curr){
+		$ret = "
+			<test id=\"{$testid}\">
+				<current>{$curr}</current>
+				<distrib>" . $this->prepareString($distrib) . "</distrib>
+				<date>{$testdate}</date>
+				<wine>" . $this->prepareString($winever) . "</wine>
+				<instal>{$installs}</instal>
+				<run>{$runs}</run>
+				<rating>{$rating}</rating>
+			</test>";
+		return $ret;
+	}
+	
 	function createCategoryInfo($id, $name, $desc){
 		$ret = "
 			<category id=\"{$id}\">
-				<name>{$name}</name>
-				<desc>{$desc}</desc>
+				<name>" . $this->prepareString($name) . "</name>
+				<desc>" . $this->prepareString($desc, 60) . "</desc>
 			</category>";
 		return $ret;
 	}
@@ -111,30 +153,56 @@ $ret .= "\n	</app>";
 	function createCategoryAppInfo($id, $name, $desc){
 		$ret = "
 			<app id=\"{$id}\">
-				<name>{$name}</name>
-				<desc>{$desc}</desc>
+				<name>" . $this->prepareString($name) . "</name>
+				<desc>" . $this->prepareString($desc, 60) . "</desc>
 			</app>";
+		return $ret;
+	}
+	
+	function createComment($id, $parent, $user, $subject, $body, $time){
+		$ret = "
+			<comment id=\"{$id}\">
+				<topic>" . $this->prepareString($subject) . "</topic>
+				<date>{$time}</date>
+				<autor>" . $this->prepareString($user) . "</autor>
+				<message>" . $this->prepareString($body, -1, 0) . "</message>
+				<parent>{$parent}</parent>
+			</comment>";	
+		return $ret;
+	}
+	
+	function createBugList($bug_id, $bug_status, $resolution, $short_desc){
+		$ret = "
+			<bug id=\"{$bug_id}\">
+				<desc>" . $this->prepareString($short_desc) . "</desc>
+				<status>{$bug_status}</status>
+				<resolution>{$resolution}</resolution>
+			</bug> 
+		";
 		return $ret;
 	}
 	
 	function prepareString($string, $len = 0, $strip_html = 1){
 		/* This function will prepare string for xml format
 		 */
+			
+		$string = trim($string);
 				
-		//Remove stupid whitespaces
-		$string = trim(preg_replace("/\s+/", " ", $string));
-		
 		if ($strip_html==1){
 			$string = strip_tags($string);
+			//Remove stupid whitespaces
+			$string = preg_replace("/\s+/", " ", $string);
 		} else {
-			$string = strip_tags($string, "<p><a><br><pre><ul><li><b><i>");
+			$string = strip_tags($string, "<ul><li><b><i>");
+			//$string = preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', '<a href="$1">$1</a>', $string);
+			$string = preg_replace('/(http:\/\/[^\s]+)/', '<a href="$1">$1</a>', $string);
+			$string = nl2br ($string);
 		}
 		
 		if ($len > 0)
 			$string = substr($string, 0, $len);
 		
 		$string = str_replace("#", "", $string);
-		$string = str_replace("<br />", "", $string);
 		$string = str_replace("&", "&amp;", $string);
 		$string = str_replace(">", "&gt;", $string);
 		$string = str_replace("<", "&lt;", $string);	
