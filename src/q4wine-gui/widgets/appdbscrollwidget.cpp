@@ -70,6 +70,7 @@ void AppDBScrollWidget::addSearchWidget(const WineAppDBInfo *appinfo){
 void AppDBScrollWidget::addTestWidget(const WineAppDBInfo *appinfo){
 	if (contentLayout){
 		AppDBTestWidget = new AppDBTestViewWidget(appinfo);
+		//AppDBTestWidget->setVerId(appinfo->test_id)
 		AppDBTestWidget->setObjectName("appViewTestWidget");
 		contentLayout->addWidget(AppDBTestWidget);
 		connect(AppDBTestWidget, SIGNAL(linkTrigged(short int, QString, int, int)), this, SLOT(linkTrigged(short int, QString, int, int)));
@@ -262,6 +263,8 @@ void AppDBScrollWidget::pageReaded(void){
 
 	this->addTestWidget(&xmlparser->getAppSearchInfo());
 	appdbHeader->createCategoryList(&xmlparser->getAppSearchInfo().categorys);
+	appdbHeader->addLabel(">");
+	appdbHeader->addLink(xmlparser->getAppSearchInfo().name, true, 3, "", xmlparser->getAppSearchInfo().id);
 	appdbHeader->addLabel(QString("- %1").arg(xmlparser->getAppSearchInfo().appver));
 	appdbHeader->insertStretch();
 	break;

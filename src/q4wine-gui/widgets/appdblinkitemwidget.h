@@ -50,11 +50,11 @@ public:
 	void setBold(bool enable);
 	void setAction(short int action);
 	void setSearchUrl(QString url);
-	void setAppId(short int id);
-	void setVerId(short int id);
-	void setCatId(short int id);
+	void setAppId(int id);
+	void setVerId(int id);
+	void setCatId(int id);
 	void setPage(short int id);
-	void setParentId(short int id);
+	void setParentId(int id);
 
 private:
 	short int Action;

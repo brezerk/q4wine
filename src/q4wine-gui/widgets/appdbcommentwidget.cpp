@@ -48,6 +48,7 @@ void AppDBCommentWidget::setTopic(QString topic){
 	AppDBLinkItemWidget *label = new AppDBLinkItemWidget(topic, 7);
 	label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 	label->setBold(true);
+	label->setWordWrap(true);
 	if (ParentId>0){
 		label->setEnabled(true);
 		label->setParentId(ParentId);

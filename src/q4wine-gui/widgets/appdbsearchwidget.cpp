@@ -36,35 +36,15 @@ AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, const int appid
 	this->setAppDesc(desc);
 	this->_APPID=appid;
 
-	QString rating_desc;
 	AppDBAppVersionWidget *version;
 	for (int i=0; i<versions.count(); i++){
 		version = new AppDBAppVersionWidget(4);
 		version->setAppId(appid);
 		version->setAppVerId(versions.at(i).id);
 		version->addLabel(versions.at(i).appver);
-		switch (versions.at(i).rating){
-		case 1:
-			rating_desc="Platinum";
-			break;
-		case 2:
-			rating_desc="Gold";
-			break;
-		case 3:
-			rating_desc="Silver";
-			break;
-		case 4:
-			rating_desc="Bronze";
-			break;
-		case 5:
-			rating_desc="Garbage";
-			break;
-		default:
-			rating_desc="unexpected";
-			break;
-		}
+
 		version->insertStretch();
-		version->addLabel(rating_desc, 120, 1);
+		version->addLabel(versions.at(i).rating, 120, 1);
 		version->addLabel(QString("Wine: %1").arg(versions.at(i).winever), 120, 1);
 		AppVersionListerLayout->addWidget(version);
 		connect(version, SIGNAL(versionTrigged(short int, int, int, int)), this, SIGNAL(versionTrigged(short int, int, int, int)));

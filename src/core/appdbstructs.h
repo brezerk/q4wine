@@ -37,7 +37,7 @@ struct WineAppDBVersionInfo {
 	int id;
 	QString appver;
 	QString winever;
-	short int rating;
+	QString rating;
 	QString url;
 };
 
@@ -49,7 +49,7 @@ struct WineAppDBTestResult {
 	QString winever;
 	bool run;
 	bool install;
-	short int rating;
+	QString rating;
 };
 
 struct WineAppDBComment {
@@ -64,8 +64,8 @@ struct WineAppDBComment {
 struct WineAppDBBug {
 	int id;
 	QString desc;
-	short int status;
-	short int resolution;
+	QString status;
+	QString resolution;
 };
 
 struct WineAppDBCategory {

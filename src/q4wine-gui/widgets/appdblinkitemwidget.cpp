@@ -92,7 +92,7 @@ void AppDBLinkItemWidget::setSearchUrl(QString url){
 	return;
 }
 
-void AppDBLinkItemWidget::setAppId(short int id){
+void AppDBLinkItemWidget::setAppId(int id){
 	/* App Id
 		Saveing App Id
 	*/
@@ -100,7 +100,7 @@ void AppDBLinkItemWidget::setAppId(short int id){
 	return;
 }
 
-void AppDBLinkItemWidget::setVerId(short int id){
+void AppDBLinkItemWidget::setVerId(int id){
 	/* Version Id
 		Saveing Version Id
 	*/
@@ -108,7 +108,7 @@ void AppDBLinkItemWidget::setVerId(short int id){
 	return;
 }
 
-void AppDBLinkItemWidget::setCatId(short int id){
+void AppDBLinkItemWidget::setCatId(int id){
 	/* Category Id
 		Saveing Category Id
 	*/
@@ -124,7 +124,7 @@ void AppDBLinkItemWidget::setPage(short int id){
 	return;
 }
 
-void AppDBLinkItemWidget::setParentId(short int id){
+void AppDBLinkItemWidget::setParentId(int id){
 	/* Parent comment Id
 		Saveing id of parent comment
 	*/

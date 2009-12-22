@@ -222,6 +222,11 @@ void XmlParser::parseApp(const QDomElement &element){
 		if (node.toElement().tagName()=="name"){
 			appinfo.name = getChildNodeData(node.firstChild());
 			appinfo.id = element.attribute("id").toInt();
+			if (element.attribute("verid").toInt()>0){
+				appinfo.ver_id=element.attribute("verid").toInt();
+			} else {
+				appinfo.ver_id=0;
+			}
 		} else if (node.toElement().tagName()=="desc"){
 			appinfo.desc = getChildNodeData(node.firstChild());
 		} else if (node.toElement().tagName()=="category"){
@@ -307,7 +312,7 @@ void XmlParser::parseAppVersion(const QDomElement &element, WineAppDBInfo &appin
 			versioninfo.appver=getChildNodeData(node.firstChild());
 			versioninfo.id = element.attribute("id").toInt();
 		} else if (node.toElement().tagName()=="rating"){
-			versioninfo.rating=getChildNodeData(node.firstChild()).toInt();
+			versioninfo.rating=getChildNodeData(node.firstChild());
 		} else if (node.toElement().tagName()=="wine-ver"){
 			versioninfo.winever=getChildNodeData(node.firstChild());
 		} else if (node.toElement().tagName()=="url"){
@@ -374,9 +379,9 @@ void XmlParser::parseBug(const QDomElement &element, WineAppDBInfo &appinfo){
 			bug.desc = getChildNodeData(node.firstChild());
 			bug.id = element.attribute("id").toInt();
 		} else if (node.toElement().tagName()=="status"){
-				bug.status = getChildNodeData(node.firstChild()).toInt();
+				bug.status = getChildNodeData(node.firstChild());
 		} else if (node.toElement().tagName()=="resolution"){
-				bug.resolution = getChildNodeData(node.firstChild()).toInt();
+				bug.resolution = getChildNodeData(node.firstChild());
 		}
 
 		node = node.nextSibling();
@@ -418,7 +423,7 @@ void XmlParser::parseTest(const QDomElement &element, WineAppDBInfo &appinfo){
 				appresults.run = false;
 			}
 		} else if (node.toElement().tagName()=="rating"){
-				appresults.rating = getChildNodeData(node.firstChild()).toInt();
+				appresults.rating = getChildNodeData(node.firstChild());
 		}
 
 		node = node.nextSibling();

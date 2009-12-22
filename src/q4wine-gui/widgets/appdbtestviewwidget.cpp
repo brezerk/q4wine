@@ -36,6 +36,8 @@ AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBInfo *appinfo, QWidget *
 		this->setAppDesc(appinfo->desc);
 		this->_APPID=appinfo->id;
 		this->_APPVERID=appinfo->ver_id;
+		qDebug()<<"Settedddd:"<<this->_APPVERID;
+
 
 		lblWineVer->setText(appinfo->winever);
 		lblLicense->setText(appinfo->license);
@@ -96,8 +98,8 @@ void AppDBTestViewWidget::addBugs(QList<WineAppDBBug> bugs){
 		version->setAppId(bugs.at(i).id);
 		version->addLabel(QString("%1").arg(bugs.at(i).id), 70, 1);
 		version->addLabel(bugs.at(i).desc, -1, 3, true);
-		version->addLabel(QString("%1").arg(bugs.at(i).status), 120, 1);
-		version->addLabel(QString("%1").arg(bugs.at(i).resolution), 120, 1);
+		version->addLabel(bugs.at(i).status, 120, 1);
+		version->addLabel(bugs.at(i).resolution, 120, 1);
 		BugsLayout->addWidget(version);
 		connect(version, SIGNAL(versionTrigged(short int, int, int, int)), this, SIGNAL(versionTrigged(short int, int, int, int)));
 	}
@@ -118,7 +120,6 @@ void AppDBTestViewWidget::addComments(QList<WineAppDBComment> comments){
 
 void AppDBTestViewWidget::addTestResults(QList<WineAppDBTestResult> tests){
 	AppDBAppVersionWidget *version;
-	QString rating_desc;
 
 	for (int i=0; i<tests.count(); i++){
 		version = new AppDBAppVersionWidget(4);
@@ -143,27 +144,8 @@ void AppDBTestViewWidget::addTestResults(QList<WineAppDBTestResult> tests){
 		} else {
 			version->addLabel(tr(""), 60, 1);
 		}
-		switch (tests.at(i).rating){
-		case 1:
-			rating_desc="Platinum";
-			break;
-		case 2:
-			rating_desc="Gold";
-			break;
-		case 3:
-			rating_desc="Silver";
-			break;
-		case 4:
-			rating_desc="Bronze";
-			break;
-		case 5:
-			rating_desc="Garbage";
-			break;
-		default:
-			rating_desc="unexpected";
-			break;
-		}
-		version->addLabel(rating_desc, 120, 1);
+
+		version->addLabel(tests.at(i).rating, 120, 1);
 
 		Top5ResultsLayout->addWidget(version);
 		connect(version, SIGNAL(versionTrigged(short int, int, int, int)), this, SIGNAL(versionTrigged(short int, int, int, int)));

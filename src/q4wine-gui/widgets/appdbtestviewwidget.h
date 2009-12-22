@@ -76,6 +76,7 @@ private:
 	void addComments(QList<WineAppDBComment> comments);
 	int _APPID;
 	int _APPVERID;
+	int _APPTESTID;
 };
 
 #endif // APPDBTESTVIEWWIDGET_H
