@@ -15,16 +15,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "httpcore.h"
@@ -32,20 +22,37 @@
 HttpCore::HttpCore()
 {
 	http = new QHttp(this);
+	if (!http)
+		return;
+
 	connect(http, SIGNAL(done(bool)), this, SLOT(readPage()));
-	//connect(http, SIGNAL(done(bool)), this, SLOT(readPage()));
 	//requestFinished
+
+	//Create user_agent string
+	user_agent=QString("%1/%2 (X11; %3 %4) xmlparser/%5").arg(APP_SHORT_NAME).arg(APP_VERS).arg(APP_HOST).arg(APP_ARCH).arg(APPDB_EXPORT_VERSION);
 }
 
-void HttpCore::getWineAppDBXMLPage(QString host, short int port, QString page)
-{
+HttpCore::~HttpCore(){
+	delete http;
+}
 
-  //http->setProxy("proxy.example.com", 3128);
-  http->setHost(host, QHttp::ConnectionModeHttp, port);
+void HttpCore::getWineAppDBXMLPage(QString host, short int port, QString page, QString params)
+{
+	http->setHost(host, QHttp::ConnectionModeHttp, port);
+
+	QHttpRequestHeader header("POST", page);
+	header.setValue("Host", host);
+	header.setValue("Port", "80");
+	header.setContentType("application/x-www-form-urlencoded");
+	header.setValue("Accept-Encoding", "deflate");
+	header.setContentLength( params.toUtf8().length() );
+	header.setValue("User-Agent", user_agent);
+
 #ifdef DEBUG
-  qDebug()<<"[ii] Connecting to"<<host<<":"<<port<<" reuested page is: "<<page;
+	qDebug()<<"[ii] Connecting to"<<host<<":"<<port<<" reuested page is: "<<page<<params.toUtf8();
 #endif
-  http->get(page);
+
+	http->request(header, params.toUtf8());
 }
 
 QString HttpCore::getXMLReply(){
@@ -54,7 +61,11 @@ QString HttpCore::getXMLReply(){
 
 void HttpCore::readPage()
 {
-	//qDebug()<<"Wooot: "<<http->error()<<http->errorString();
 	xmlreply=http->readAll();
+
+#ifdef DEBUG
+	qDebug()<<"[ii] Recived page:"<<xmlreply;
+#endif
+
 	emit(pageReaded());
 }

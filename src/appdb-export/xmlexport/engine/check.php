@@ -21,39 +21,45 @@
 
 require_once("./cfg/config.inc");
 
-Class MemChace { 
-	
-	private $memcache_timeout;
-	private $memcache;
-
-   function __construct(){
-		/* MemChace class constructor */
-
-		// Get config values from ./cfg/config.inc
-		global $memcache_host;
-		global $memcache_port;
-		global $memcache_timeout;
-		
-		$this->memcache_timeout=$memcache_timeout;
-				  
-		$this->memcache = new Memcache;
-		$this->memcache->connect($memcache_host, $memcache_port) or die ("Could not connect to memchace service");
-   }
-   
-   function setCache($object, $key){
-		if (!$object)
-			return;
+function checkUserAgent($agent = ""){
+		if (!$agent)
+			$agent = $_SERVER['HTTP_USER_AGENT'];
 			
-		if (!$key)
-			return;
+		global $white_agents;
 		
-		$this->memcache->set($key, $object, flase, $this->memcache_timeout);
-	}
-	
-	function getCache($key){
-		return $this->memcache->get($key);
-	}
-};
+		if (count($white_agents)==0)
+			return 1;
+		
+		foreach ($white_agents as $white_agent){
+				if (eregi($white_agent, $agent)==1)
+					return 1;
+		}
+		
+		return 0;
+}
+
+function showAbout(){
+		$ret = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
+<html>
+	<head>
+		<title>Wine AppDB xmlexport script</title>
+		<meta http-equiv=Content-Type content=\"text/html; charset=utf8\">
+		<meta name=\"language\" content=\"English\">
+		<meta name=\"author\" content=\"Malakhov Alexey aka John Brezerk\">
+		<meta name=\"copyright\" content=\"All trademarks and copyrights on this page are owned by their respective owners. The Rest &#169 1997-2010 BrezBlock.\">
+		<meta name=\"robots\" content=\"noindex, nofollow\">
+	</head>
+	<body>
+		<h2>Wine AppDB xmlexport</h2>
+		<hr>
+		<p>Welcome to Wine AppDB xmlexport script page. This script provides xml view interface for Wine AppDB database.</p>
+		<p>Originally this script was created by Malakhov Alexey aka <a href='mailto: brezerk@gmail.com'>John Brezerk</a> for <a href='http://q4wine.brezblock.org.ua/'>q4wine</a> project.</p>
+		<p>Current licese is GPL v3.</p>
+		<hr>
+		<p>All trademarks and copyrights on this page are owned by their respective owners. The Rest &#169 1997-2010 BrezBlock.</p>
+	</body>
+</html>";
+		return $ret;
+}
 
 ?>
- 

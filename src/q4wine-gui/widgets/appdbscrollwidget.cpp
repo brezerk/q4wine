@@ -37,56 +37,57 @@ AppDBScrollWidget::AppDBScrollWidget(AppDBHeaderWidget *appdbHeader, QWidget * p
 	this->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 	this->setWidgetResizable(true);
 
-	xmlparser = new XmlParser();
-	httpcore = new HttpCore();
+	xmlparser.reset(new XmlParser());
+	httpcore.reset(new HttpCore());
+	timer.reset(new QTimer(this));
 
-	contentWidget = new QWidget();
-	contentLayout = new QVBoxLayout(contentWidget);
+	contentWidget.reset(new QWidget());
+	contentLayout.reset(new QVBoxLayout(contentWidget.get()));
 	contentLayout->setMargin(3);
-	this->setWidget(contentWidget);
+	this->setWidget(contentWidget.get());
+
+	//FIXME: See no 8 draft page 133-253
 	this->appdbHeader=appdbHeader;
 	this->appdbHeader->addLabel("Status: Ready");
 
-	//contentWidget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy:);
-	timer = new QTimer(this);
-	connect(timer, SIGNAL(timeout()), this, SLOT(update()));
+
+	connect(timer.get(), SIGNAL(timeout()), this, SLOT(update()));
 	connect(appdbHeader, SIGNAL(linkTrigged(short int, QString, int, int)), this, SLOT(linkTrigged(short int, QString, int, int)));
-	connect(httpcore, SIGNAL(pageReaded()), this, SLOT(pageReaded()));
+	connect(httpcore.get(), SIGNAL(pageReaded()), this, SLOT(pageReaded()));
 	timer->stop();
 
 	return;
 }
 
-void AppDBScrollWidget::addSearchWidget(const WineAppDBInfo *appinfo){
-	if (contentLayout){
-		AppDBSearchWidget *AppDBWidget;
-		AppDBWidget = new AppDBSearchWidget(appinfo->name, appinfo->desc, appinfo->id, appinfo->versions);
-		contentLayout->addWidget(AppDBWidget);
-		connect(AppDBWidget, SIGNAL(versionTrigged(short int, int, int, int)), this, SLOT(versionTrigged(short int, int, int, int)));
+void AppDBScrollWidget::addSearchWidget(const WineAppDBInfo appinfo){
+	if (contentLayout.get()){
+		std::auto_ptr<AppDBSearchWidget> AppDBWidget(new AppDBSearchWidget(appinfo.name, appinfo.desc, appinfo.id, appinfo.versions));
+		connect(AppDBWidget.get(), SIGNAL(versionTrigged(short int, int, int, int)), this, SLOT(versionTrigged(short int, int, int, int)));
+		contentLayout->addWidget(AppDBWidget.release());
 	}
 	return;
 }
 
 void AppDBScrollWidget::addTestWidget(const WineAppDBInfo *appinfo){
-	if (contentLayout){
-		AppDBTestWidget = new AppDBTestViewWidget(appinfo);
-		//AppDBTestWidget->setVerId(appinfo->test_id)
+	if (contentLayout.get()){
+		std::auto_ptr<AppDBTestViewWidget> AppDBTestWidget (new AppDBTestViewWidget(appinfo));
 		AppDBTestWidget->setObjectName("appViewTestWidget");
-		contentLayout->addWidget(AppDBTestWidget);
-		connect(AppDBTestWidget, SIGNAL(linkTrigged(short int, QString, int, int)), this, SLOT(linkTrigged(short int, QString, int, int)));
-		connect(AppDBTestWidget, SIGNAL(versionTrigged(short int, int, int, int)), this, SLOT(versionTrigged(short int, int, int, int)));
+		connect(AppDBTestWidget.get(), SIGNAL(linkTrigged(short int, QString, int, int)), this, SLOT(linkTrigged(short int, QString, int, int)));
+		connect(AppDBTestWidget.get(), SIGNAL(versionTrigged(short int, int, int, int)), this, SLOT(versionTrigged(short int, int, int, int)));
+		contentLayout->addWidget(AppDBTestWidget.release());
 	}
 	return;
 }
 
 void AppDBScrollWidget::gotoCommentId(int id){
-	int y_pos = AppDBTestWidget->selectParentCommentById(id);
-	if (y_pos>0)
-		this->ensureVisible(0, y_pos, 0, this->height()/3);
+	//FIXME: Use a signal\slot MODEL!!!!!!!!!!!!!!!!!!!
+	//int y_pos = AppDBTestWidget->selectParentCommentById(id);
+	//if (y_pos>0)
+	//	this->ensureVisible(0, y_pos, 0, this->height()/3);
 }
 
 void AppDBScrollWidget::clear(void){
-	if (contentWidget){
+	if (contentWidget.get()){
 		QList<QObject*> list = contentWidget->children();
 		// Start from 1 becouse of 0 -- is VBoxLayout
 		for (int i=1; i<list.count(); i++){
@@ -102,22 +103,22 @@ void AppDBScrollWidget::clear(void){
 }
 
 void AppDBScrollWidget::insertStretch(void){
-	if (contentLayout){
-		QWidget *visibleStrech = new QWidget();
+	if (contentLayout.get()){
+		std::auto_ptr<QWidget> visibleStrech(new QWidget());
 		visibleStrech->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
-		contentLayout->addWidget(visibleStrech);
+		contentLayout->addWidget(visibleStrech.release());
 	}
 }
 
-void AppDBScrollWidget::startSearch(short int action, QString search){
+void AppDBScrollWidget::startSearch(QString search){
 	this->appdbHeader->clear();
 	this->appdbHeader->addLabel("Status: Connecting to appqb.winehq.org...");
 	this->clear();
 
 #ifdef DEBUG
-	qDebug()<<"[ii] startSearch: "<<action<<search;
+	qDebug()<<"[ii] startSearch: "<<1<<search;
 #endif
-	this->_ACTION=action;
+	this->_ACTION=1;
 	this->_SEARCH=search;
 	timer->start(1000);
 }
@@ -179,28 +180,21 @@ void AppDBScrollWidget::versionTrigged(short int action, int appid, int verid, i
 }
 
 void AppDBScrollWidget::update(void){
-	int ret=0;
-
 	switch (this->_ACTION){
-	case 1:
-		appdbHeader->clear();
-		httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, QString("/xmlexport/index.php?action=1&search=%1").arg(this->_SEARCH));
+ case 1:
+		httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=1&search=%1").arg(this->_SEARCH));
 		break;
-	case 2:
-		appdbHeader->clear();
-		httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, QString("/xmlexport/index.php?action=1&search=%1&page=%2").arg(this->_SEARCH).arg(page));
+ case 2:
+		httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=1&search=%1&page=%2").arg(this->_SEARCH).arg(page));
 		break;
-	case 3:
-		appdbHeader->clear();
-		httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, QString("/xmlexport/index.php?action=3&appid=%1").arg(this->appid));
+ case 3:
+		httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=3&appid=%1").arg(this->appid));
 		break;
-	case 4:
-		appdbHeader->clear();
-		httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, QString("/xmlexport/index.php?action=4&appid=%1&verid=%2&testid=%3").arg(this->appid).arg(this->verid).arg(this->testid));
+ case 4:
+		httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=4&appid=%1&verid=%2&testid=%3").arg(this->appid).arg(this->verid).arg(this->testid));
 		break;
-	case 5:
-		appdbHeader->clear();
-		httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, QString("/xmlexport/index.php?action=5&catid=%1").arg(this->catid));
+ case 5:
+		httpcore->getWineAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=5&catid=%1").arg(this->catid));
 		break;
 	}
 	timer->stop();
@@ -209,79 +203,55 @@ void AppDBScrollWidget::update(void){
 
 void AppDBScrollWidget::pageReaded(void){
 	int ret=0;
+	QList<WineAppDBInfo> applist;
+	appdbHeader->clear();
+
+	ret = xmlparser->parseIOSream(httpcore->getXMLReply());
+	if (ret>0){
+		this->showXmlError(ret);
+		return;
+	}
+
 	switch (this->_ACTION){
 	case 1:
-		appdbHeader->clear();
-
-		ret = xmlparser->parseIOSream2(httpcore->getXMLReply());
-		if (ret>0){
-			this->showXmlError(ret);
-			timer->stop();
-			return;
-		}
 		appdbHeader->createPagesList(xmlparser->getPageCount(), xmlparser->getPageCurrent(), this->_SEARCH);
+		applist = xmlparser->getAppSearchInfoList();
 
-		for (int i=0; i<xmlparser->getAppSearchInfoList().count(); i++){
-			this->addSearchWidget(&xmlparser->getAppSearchInfoList().at(i));
+		for (int i=0; i<applist.count(); i++){
+			this->addSearchWidget(applist.at(i));
 		}
 		this->insertStretch();
-	break;
+		break;
 	case 2:
-		appdbHeader->clear();
-		ret = xmlparser->parseIOSream2(httpcore->getXMLReply());
-		if (ret>0){
-			this->showXmlError(ret);
-			timer->stop();
-			return;
-		}
 		appdbHeader->createPagesList(xmlparser->getPageCount(), xmlparser->getPageCurrent(), this->_SEARCH);
 
+		applist = xmlparser->getAppSearchInfoList();
 		for (int i=0; i<xmlparser->getAppSearchInfoList().count(); i++){
-			this->addSearchWidget(&xmlparser->getAppSearchInfoList().at(i));
+			this->addSearchWidget(applist.at(i));
 		}
 		this->insertStretch();
-	break;
+		break;
 	case 3:
-		ret = xmlparser->parseIOSream2(httpcore->getXMLReply());
-		if (ret>0){
-			this->showXmlError(ret);
-			timer->stop();
-			return;
-		}
 		appdbHeader->createCategoryList(&xmlparser->getAppSearchInfo().categorys);
-		this->addSearchWidget(&xmlparser->getAppSearchInfo());
+		this->addSearchWidget(xmlparser->getAppSearchInfo());
 		appdbHeader->insertStretch();
 		this->insertStretch();
-	break;
+		break;
 	case 4:
-	ret = xmlparser->parseIOSream2(httpcore->getXMLReply());
-	if (ret>0){
-		this->showXmlError(ret);
-		timer->stop();
-		return;
-	}
-
-	this->addTestWidget(&xmlparser->getAppSearchInfo());
-	appdbHeader->createCategoryList(&xmlparser->getAppSearchInfo().categorys);
-	appdbHeader->addLabel(">");
-	appdbHeader->addLink(xmlparser->getAppSearchInfo().name, true, 3, "", xmlparser->getAppSearchInfo().id);
-	appdbHeader->addLabel(QString("- %1").arg(xmlparser->getAppSearchInfo().appver));
-	appdbHeader->insertStretch();
-	break;
+		this->addTestWidget(&xmlparser->getAppSearchInfo());
+		appdbHeader->createCategoryList(&xmlparser->getAppSearchInfo().categorys);
+		appdbHeader->addLabel(">");
+		appdbHeader->addLink(xmlparser->getAppSearchInfo().name, true, 3, "", xmlparser->getAppSearchInfo().id);
+		appdbHeader->addLabel(QString("- %1").arg(xmlparser->getAppSearchInfo().appver));
+		appdbHeader->insertStretch();
+		break;
 	case 5:
-	ret = xmlparser->parseIOSream2(httpcore->getXMLReply());
-	if (ret>0){
-		this->showXmlError(ret);
-		timer->stop();
-		return;
-	}
-
-	appdbHeader->createCategoryList(&xmlparser->getCategorysList());
-	this->addVersionFrame(xmlparser->getSubCategorysList(), tr("Sub categoryes"), 5);
-	this->addVersionFrame(xmlparser->getAppsList(), tr("Applications"), 3);
-	appdbHeader->insertStretch();
-	this->insertStretch();
-	break;
+		appdbHeader->createCategoryList(&xmlparser->getCategorysList());
+		this->addVersionFrame(xmlparser->getSubCategorysList(), tr("Sub categoryes"), 5);
+		this->addVersionFrame(xmlparser->getAppsList(), tr("Applications"), 3);
+		appdbHeader->insertStretch();
+		this->insertStretch();
+		break;
 	}
 	return;
 }
@@ -290,22 +260,21 @@ void AppDBScrollWidget::addVersionFrame(QList<WineAppDBCategory> list, QString f
 	if (list.count()<=0)
 		return;
 
-	QGroupBox *frame = new QGroupBox(QString("%1:").arg(frame_caption));
+	std::auto_ptr<QGroupBox> frame(new QGroupBox(QString("%1:").arg(frame_caption)));
+	std::auto_ptr<QVBoxLayout> layout(new QVBoxLayout());
 
-	QVBoxLayout *layout = new QVBoxLayout;
-	AppDBAppVersionWidget *version;
 
 	for (int i=0; i<list.count(); i++){
-		version = new AppDBAppVersionWidget(action);
+		std::auto_ptr<AppDBAppVersionWidget> version(new AppDBAppVersionWidget(action));
 		version->setAppId(list.at(i).id);
 		version->addLabel(list.at(i).name, 240, 3);
 		version->addLabel(list.at(i).desc, -1, 3, true);
-		layout->addWidget(version);
-		connect(version, SIGNAL(versionTrigged(short int, int, int, int)), this, SLOT(versionTrigged(short int, int, int, int)));
+		connect(version.get(), SIGNAL(versionTrigged(short int, int, int, int)), this, SLOT(versionTrigged(short int, int, int, int)));
+		layout->addWidget(version.release());
 	}
 
-	frame->setLayout(layout);
-	contentLayout->addWidget(frame);
+	frame->setLayout(layout.release());
+	contentLayout->addWidget(frame.release());
 	return;
 }
 

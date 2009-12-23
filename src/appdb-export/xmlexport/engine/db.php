@@ -17,16 +17,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 require_once("./cfg/config.inc");
@@ -66,12 +56,11 @@ Class DB {
 		$this->bugzilla_dblink = mysql_pconnect($bugzilla_host, $bugzilla_user, $bugzilla_pass) or die("[ee] Could not connect to appdb database: " . mysql_error());
 		mysql_select_db($bugzilla_base, $this->bugzilla_dblink) or die("[ee] Could not select appdb database");
 		 
-	
 		$this->XML = new XMLExport();
-	  
+		return;
    }
       
-   function serachAppByName($search, $page = 1){
+   function exportAppByName($search, $page = 1){
 		/* This funct will search for a application name
 		 * 
 		 * TODO: Make more advanced search criterias like
@@ -80,8 +69,8 @@ Class DB {
 		
 		//Get only first 20 characters
 		//this will makes sql injection mode harder ;)
-		$search = substr($_GET['search'], 0, 20);
-		
+		$search = substr($search, 0, 20);
+				
 		$page = (int)$page;
 		if ($page <= 0){
 			$sql_page = 0;
@@ -91,10 +80,10 @@ Class DB {
 		
 		global $appdb_base;
 		
-		$xml_view = $this->XML->createHeader(1);
+		$xml_view = $this->XML->openHeader(1);
 		$search = mysql_real_escape_string($search, $this->appdb_dblink);
 		
-		$query = "SELECT COUNT(appId) FROM {$appdb_base}.appFamily WHERE appName LIKE '%${search}%' AND state='accepted'";
+		$query = "SELECT COUNT(appId) FROM {$appdb_base}.appFamily WHERE appName LIKE \"%${search}%\" AND state='accepted'";
 		$result = mysql_query($query, $this->appdb_dblink);
 			if (!$result) {
 				die("serachAppByName: Invalid query");
@@ -108,7 +97,7 @@ Class DB {
 			
 		mysql_free_result($result);
 		
-		$query = "SELECT appId, appName, description, catId, webPage FROM {$appdb_base}.appFamily WHERE appName LIKE '%${search}%' AND state='accepted' LIMIT ${sql_page}, 9";
+		$query = "SELECT appId, appName, description, catId, webPage FROM {$appdb_base}.appFamily WHERE appName LIKE \"%${search}%\" AND state='accepted' LIMIT ${sql_page}, 9";
 		$result = mysql_query($query, $this->appdb_dblink);
 			if (!$result) {
 				die("serachAppByName: Invalid query");
@@ -118,7 +107,7 @@ Class DB {
 			$xml_view .= "\n	<app-list>";
 			while ($row = mysql_fetch_assoc($result)) {
 				//Remove html tegs
-				$appver_list = $this->getVersionByAppId($row['appId']);
+				$appver_list = $this->getVersion($row['appId']);
 				$xml_view .= $this->XML->createAppInfo($row['appId'], 0, $row['appName'], $row['description'], $row['catId'], $row['webPage'], $appver_list);
 			}
 			$xml_view .= "\n	</app-list>";
@@ -130,25 +119,24 @@ Class DB {
 		// Free the resources associated with the result set
 		// This is done automatically at the end of the script
 		mysql_free_result($result);
-			
 		return $xml_view;
 	}
 	
-	function serachAppById($appid){
+	function exportAppById($appid){
 		/* This funct will search for a application by id
 		*/
 		$appid = (int)$appid;
 		if ($appid <= 0)
 			return;
 		
-		$xml_view = $this->XML->createHeader(3);
-		$xml_view .= $this->getAppById($appid);
+		$xml_view = $this->XML->openHeader(3);
+		$xml_view .= $this->getApp($appid);
 		$xml_view .= $this->XML->closeHeader();
 	
 		return $xml_view;
 	}
 	
-	function searchAppTestResults($appid, $verid = 0, $testid = 0){
+	function exportTestResults($appid, $verid = 0, $testid = 0){
 		$appid = (int)$appid;
 		if ($appid < 0)
 			return;
@@ -161,15 +149,15 @@ Class DB {
 		if ($testid < 0)
 			return;
 			
-		$xml_view = $this->XML->createHeader(4);
-		$xml_view .= $this->getAppById($appid, $verid, $testid);
+		$xml_view = $this->XML->openHeader(4);
+		$xml_view .= $this->getApp($appid, $verid, $testid);
 		$xml_view .= $this->XML->closeHeader();
 				
 		return $xml_view;
 	}
 	
 	
-	function serachCategoryById($catid){
+	function exportCategory($catid){
 		/* This funct will search for a application by id
 		*/
 		$catid = (int)$catid;
@@ -178,11 +166,11 @@ Class DB {
 		
 		global $appdb_base;
 		
-		$xml_view = $this->XML->createHeader(5);
+		$xml_view = $this->XML->openHeader(5);
 		$xml_view .= "\n		<category-list>";
 		$xml_view .= $this->XML->createCategoryInfo(0, "Main", "");
 		if ($catid>0)
-			$xml_view .= $this->getCategoryById($catid);
+			$xml_view .= $this->getCategory($catid);
 		$xml_view .= "\n		</category-list>";
 		
 		$query = "SELECT catId, catName, catDescription FROM {$appdb_base}.appCategory WHERE catParent={$catid}";
@@ -222,7 +210,7 @@ Class DB {
 		return $xml_view;
 	}
 	
-	function getVersionByAppId($appid){
+	function getVersion($appid){
 		$appid = (int)$appid;
 		if ($appid <= 0)
 			return;
@@ -233,7 +221,7 @@ Class DB {
 
 		$result = mysql_query($query, $this->appdb_dblink);
 			if (!$result) {
-				die("getVersionByAppId: Invalid query");
+				die("getVersion: Invalid query");
 			}
 		
 		if (mysql_num_rows($result) > 0){
@@ -245,11 +233,10 @@ Class DB {
 		// Free the resources associated with the result set
 		// This is done automatically at the end of the script
 		mysql_free_result($result);
-				
 		return $xml_view;
 	}
 	
-	function getAppById($appid, $verid=0, $testid=0){
+	function getApp($appid, $verid=0, $testid=0){
 		if ($appid <= 0)
 			return;
 			
@@ -258,19 +245,19 @@ Class DB {
 		$query = "SELECT appId, appName, description, catId, webPage FROM {$appdb_base}.appFamily WHERE appId={$appid} AND state='accepted' LIMIT 0, 1";
 		$result = mysql_query($query, $this->appdb_dblink);
 			if (!$result) {
-				die("getAppById: Invalid app info query");
+				die("getApp: Invalid app info query");
 			}
 				
 		if (mysql_num_rows($result) > 0){
 			$row = mysql_fetch_assoc($result);
 			
 			$category_list = $this->XML->createCategoryInfo(0, "Main", "");
-			$category_list .= $this->getCategoryById($row['catId']);
+			$category_list .= $this->getCategory($row['catId']);
 			
 			if ($verid<=0){		
-				$versions_list = $this->getVersionByAppId($row['appId']);
+				$versions_list = $this->getVersion($row['appId']);
 			} else {
-				$test_results = $this->getTestResultsByTestId($verid, $testid);
+				$test_results = $this->getTestResults($verid, $testid);
 				$comment_list = $this->getComments($verid);
 				$bugs_list = $this->getBugs($verid);
 			}
@@ -278,13 +265,11 @@ Class DB {
 			$xml_view .= $this->XML->createAppInfo($row['appId'], $verid, $row['appName'], $row['description'], $row['catId'], $row['webPage'], $versions_list, $category_list, $test_results, $comment_list, $verinfo, $bugs_list);
 		}
 		
-		//FIXME: Siple info about no app by this id
-		
 		mysql_free_result($result);
 		return $xml_view;
 	}
 	
-	function getTestResultsByTestId($verid, $testid){
+	function getTestResults($verid, $testid){
 		if (($testid <= 0) and ($verid <= 0))
 			return;
 
@@ -298,7 +283,7 @@ Class DB {
 		
 		$result = mysql_query($query, $this->appdb_dblink);
 			if (!$result) {
-				die("getTestResultsByTestId: Invalid app info query");
+				die("getTestResults: Invalid app info query");
 			}
 				
 		if (mysql_num_rows($result) > 0){
@@ -307,19 +292,21 @@ Class DB {
 			$query = "SELECT versionName, license FROM {$appdb_base}.appVersion WHERE versionId={$row[7]}";
 			$result = mysql_query($query, $this->appdb_dblink);
 			if (!$result) {
-				die("getTestResultsByTestId: Invalid app info query");
+				die("getTestResults: Invalid app info query");
 			}
 			if (mysql_num_rows($result) > 0){
 				$verrow = mysql_fetch_array($result);
 			}
 			
 			$xml_view = $this->XML->createAppTestingInfo($row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6], $verrow[0], $verrow[1]);
-			$xml_view .= $this->getTop5TestResults($verid, $row[0]);	
+			$xml_view .= $this->getTestResults_Top5($verid, $row[0]);	
 		}
+		
+		mysql_free_result($result);
 		return $xml_view;
 	}
 	
-	function getCategoryById($catid){
+	function getCategory($catid){
 		/* This function will gets category name and description by category id
 		 */
 		$catid = (int)$catid;
@@ -331,13 +318,13 @@ Class DB {
 		$query = "SELECT catId, catName, catDescription, catParent FROM {$appdb_base}.appCategory WHERE catId={$catid} LIMIT 0, 1";
 		$result = mysql_query($query, $this->appdb_dblink);
 			if (!$result) {
-				die("getCategoryById: Invalid category info query");
+				die("getCategory: Invalid category info query");
 			}
 		
 		if (mysql_num_rows($result) > 0){
 			$row = mysql_fetch_assoc($result);
 			if ($row['catParent']>0)
-				$xml_view .= $this->getCategoryById($row['catParent']);
+				$xml_view .= $this->getCategory($row['catParent']);
 			$xml_view .= $this->XML->createCategoryInfo($row['catId'], $row['catName'], $row['catDescription']);
 		}
 		
@@ -345,7 +332,7 @@ Class DB {
 		return $xml_view;
 	}
 	
-	function getTop5TestResults($verid, $curtest){
+	function getTestResults_Top5($verid, $curtest){
 		$verid = (int)$verid;
 		if ($verid < 0)
 			return;
@@ -359,7 +346,7 @@ Class DB {
 		
 		$result = mysql_query($query, $this->appdb_dblink);
 			if (!$result) {
-				die("getTop5TestResults: Invalid app info query!");
+				die("getTestResults_Top5: Invalid app info query!");
 			}
 				
 		if (mysql_num_rows($result) > 0){
@@ -373,10 +360,9 @@ Class DB {
 				$xml_view .= $this->XML->createTop5TestResults($row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $row[6], $curr);
 			}
 			$xml_view .= "\n		</test-list>";
-			//$xml_view .= $this->getTop5TestResults($verid, $row[0]);
-			
-			
 		}
+		
+		mysql_free_result($result);
 		return $xml_view;
 	}
 	
@@ -403,11 +389,9 @@ Class DB {
 				$xml_view .= $this->XML->createComment($row[0], $row[1], $row[2], $row[3], $row[4], $row[5]);
 				$xml_view .= $this->getComments($verid, $row[0]);
 			}
-			//$xml_view .= "\n		</test-list>";
-			//$xml_view .= $this->getTop5TestResults($verid, $row[0]);
-			
-			
 		}
+		
+		mysql_free_result($result);
 		return $xml_view;
 	}
 	
@@ -442,6 +426,7 @@ Class DB {
 			}
 		}
 
+		mysql_free_result($result);
 		return $xml_view;
 	}
 	

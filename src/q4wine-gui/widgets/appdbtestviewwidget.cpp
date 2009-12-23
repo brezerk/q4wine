@@ -36,8 +36,6 @@ AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBInfo *appinfo, QWidget *
 		this->setAppDesc(appinfo->desc);
 		this->_APPID=appinfo->id;
 		this->_APPVERID=appinfo->ver_id;
-		qDebug()<<"Settedddd:"<<this->_APPVERID;
-
 
 		lblWineVer->setText(appinfo->winever);
 		lblLicense->setText(appinfo->license);

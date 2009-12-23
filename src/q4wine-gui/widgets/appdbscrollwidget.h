@@ -30,6 +30,8 @@
 #ifndef APPDBSCROLLWIDGET_H
 #define APPDBSCROLLWIDGET_H
 
+#include <memory>
+
 #include "config.h"
 
 #include <QTimer>
@@ -38,7 +40,6 @@
 #include <QWidget>
 #include <QString>
 #include <QDebug>
-#include <QGroupBox>
 #include <QScrollArea>
 #include <QVBoxLayout>
 
@@ -51,14 +52,14 @@
 #include "appdbtestviewwidget.h"
 #include "appdbappversionwidget.h"
 
-#include <QHttp>
-
 class AppDBScrollWidget : public QScrollArea
 {
 	Q_OBJECT
 public:
 	AppDBScrollWidget(AppDBHeaderWidget *appdbHeader, QWidget * parent = 0);
-	void startSearch(short int action, QString search);
+
+	//FIXME: Use signal\slot model!!!
+	void startSearch(QString search);
 
 public slots:
 	void versionTrigged(short int action, int appid, int verid, int testid);
@@ -75,7 +76,7 @@ private:
 	int testid;
 	int page;
 
-	void addSearchWidget(const WineAppDBInfo *appinfo);
+	void addSearchWidget(const WineAppDBInfo appinfo);
 	void addTestWidget(const WineAppDBInfo *appinfo);
 	void addVersionFrame(QList<WineAppDBCategory> list, QString frame_caption, short int action);
 	void gotoCommentId(int id);
@@ -83,13 +84,17 @@ private:
 	void insertStretch(void);
 	void clear(void);
 	void hideAll(void);
-	QTimer *timer;
-	QWidget *contentWidget;
-	QVBoxLayout *contentLayout;
+
+	std::auto_ptr<QTimer> timer;
+	std::auto_ptr<QWidget> contentWidget;
+	std::auto_ptr<QVBoxLayout> contentLayout;
+
+	//FIXME: See no 8 draft page 133-253
+	//std::auto_ptr<AppDBHeaderWidget> appdbHeader;
 	AppDBHeaderWidget *appdbHeader;
-	AppDBTestViewWidget *AppDBTestWidget;
-	XmlParser *xmlparser;
-	HttpCore *httpcore;
+
+	std::auto_ptr<XmlParser> xmlparser;
+	std::auto_ptr<HttpCore> httpcore;
 
 	short int _ACTION;
 	QString _SEARCH;

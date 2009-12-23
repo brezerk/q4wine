@@ -380,6 +380,10 @@ ENDIF( NOT PIXMAPS_ENTRY_PATH )
 
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )
 
+
+file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_ARCH \"${CMAKE_HOST_SYSTEM_PROCESSOR}\"\n" )
+file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_HOST \"${CMAKE_SYSTEM_NAME}\"\n" )
+
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_VERS \"${APP_VERSION}\"\n")
 	  MESSAGE(STATUS "q4wine core version: ${APP_VERSION}")
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_PREF \"${CMAKE_INSTALL_PREFIX}\"\n" )

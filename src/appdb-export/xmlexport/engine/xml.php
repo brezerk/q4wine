@@ -17,22 +17,15 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
+require_once("./cfg/config.inc");
+
 Class XMLExport { 
-	function createHeader($action){
+	function openHeader($action){
+		global $xmlexport_version;
 		$ret = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>       
-<appdb_export version=\"0.1\" action=\"{$action}\">";
+<appdb_export version=\"{$xmlexport_version}\" action=\"{$action}\">";
 		return $ret;
 	}
 	
@@ -98,7 +91,7 @@ Class XMLExport {
 			$ret .= "\n		</comment-list>";
 		}
 			
-$ret .= "\n	</app>";
+		$ret .= "\n	</app>";
 		return $ret;
 	}
 	
@@ -194,7 +187,6 @@ $ret .= "\n	</app>";
 			$string = preg_replace("/\s+/", " ", $string);
 		} else {
 			$string = strip_tags($string, "<ul><li><b><i>");
-			//$string = preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.]*(\?\S+)?)?)?)@', '<a href="$1">$1</a>', $string);
 			$string = preg_replace('/(http:\/\/[^\s]+)/', '<a href="$1">$1</a>', $string);
 			$string = nl2br ($string);
 		}
@@ -206,10 +198,7 @@ $ret .= "\n	</app>";
 		$string = str_replace("&", "&amp;", $string);
 		$string = str_replace(">", "&gt;", $string);
 		$string = str_replace("<", "&lt;", $string);	
-		
-		//Remove for <br /> e.t.c.
-		
-		
+
 		return $string;
 	}
 

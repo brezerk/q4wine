@@ -307,7 +307,7 @@ void MainWindow::cmdTestWis_Click(){
 
 void MainWindow::cmdAppDBSearch_Click(){
 	if (!cbSearchText->currentText().isEmpty())
-		appdbScrollArea->startSearch(1 , cbSearchText->currentText());
+		appdbScrollArea->startSearch(cbSearchText->currentText());
 	return;
 }
 

@@ -15,16 +15,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "xmlparser.h"
@@ -34,60 +24,7 @@ XmlParser::XmlParser(void)
 	return;
 }
 
-
-int XmlParser::parseIOSream(QString fileName){
-	clear();
-	QFile file(fileName);
-
-	if (!file.open(QIODevice::ReadOnly)) {
-		return 1;
-	}
-
-	QDomDocument doc;
-	if (doc.setContent(&file)) {
-		QDomElement root = doc.documentElement();
-		if (root.tagName() != "appdb_export") {
-			qDebug()<<"[EE] File is not a q4wine appdb export format";
-			return 2;
-		}
-
-		if (root.attribute("version") != APPDB_EXPORT_VERSION){
-			qDebug()<<QString("[EE] export_version mismatch! Expected \"%1\", but got \"%2\".").arg(APPDB_EXPORT_VERSION).arg(root.attribute("version"));
-			return 3;
-		}
-
-		action = root.attribute("action").toInt();
-
-		QDomNode node = root.firstChild();
-		while (!node.isNull()) {
-			switch (action){
-				case 1:
-					  // Search action
-					  parseAppSearchEntry(node.toElement());
-				break;
-				case 5:
-					  parseAppCategoryEntry(node.toElement());
-				break;
-				case 4:
-					  // View test results
-					  parseApp(node.toElement());
-				break;
-				case 3:
-					 // View test results
-					 parseApp(node.toElement());
-				break;
-
-			}
-			node = node.nextSibling();
-		}
-	}
-
-	file.close();
-	return 0;
-}
-
-
-int XmlParser::parseIOSream2(QString file){
+int XmlParser::parseIOSream(QString file){
 	clear();
 
 	file = file.trimmed();
@@ -95,6 +32,7 @@ int XmlParser::parseIOSream2(QString file){
 	QDomDocument doc;
 	if (doc.setContent(file)) {
 		QDomElement root = doc.documentElement();
+
 		if (root.tagName() != "appdb_export") {
 			qDebug()<<"[EE] File is not a q4wine appdb export format";
 			return 2;
@@ -110,25 +48,27 @@ int XmlParser::parseIOSream2(QString file){
 		QDomNode node = root.firstChild();
 		while (!node.isNull()) {
 			switch (action){
-				case 1:
-					  // Search action
-					  parseAppSearchEntry(node.toElement());
+   case 1:
+				// Search action
+				parseAppSearchEntry(node.toElement());
 				break;
-				case 5:
-					  parseAppCategoryEntry(node.toElement());
+   case 5:
+				parseAppCategoryEntry(node.toElement());
 				break;
-				case 4:
-					  // View test results
-					  parseApp(node.toElement());
+   case 4:
+				// View test results
+				parseApp(node.toElement());
 				break;
-				case 3:
-					 // View test results
-					 parseApp(node.toElement());
+   case 3:
+				// View test results
+				parseApp(node.toElement());
 				break;
 
 			}
 			node = node.nextSibling();
 		}
+	} else {
+		return 2;
 	}
 
 	return 0;
