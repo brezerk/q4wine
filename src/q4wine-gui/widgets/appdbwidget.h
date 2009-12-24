@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008-2010 by Malakhov Alexey                            *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -17,47 +17,62 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef APPDBHEADERWIDGET_H
-#define APPDBHEADERWIDGET_H
+#ifndef APPDBWIDGET_H
+#define APPDBWIDGET_H
 
-#include "memory"
-
+#include <memory>
 #include "config.h"
 
+#include <QDebug>
+#include <QString>
+#include <QTimer>
 #include <QObject>
 #include <QWidget>
-#include <QFrame>
-#include <QString>
-#include <QLabel>
-#include <QEvent>
-#include <QVariant>
-#include <QDebug>
 #include <QVBoxLayout>
 
-#include "appdbstructs.h"
-#include "appdblinkitemwidget.h"
+#include "httpcore.h"
+#include "xmlparser.h"
 
-class AppDBHeaderWidget : public QFrame
+#include "appdbheaderwidget.h"
+#include "appdbscrollwidget.h"
+
+class AppDBWidget : public QWidget
 {
-	Q_OBJECT
+Q_OBJECT
 public:
-	AppDBHeaderWidget(QWidget * parent = 0);
-	void addLabel(QString info);
-	void addLink(QString text, bool enabled = true, short int action = 0, QString search = "", int value = 0);
-	void setLayout(short int direction);
-	void insertStretch(void);
-	void createPagesList(short int count, short int current, QString search);
-	void createCategoryList(const QList<WineAppDBCategory> category);
-	void clear(void);
-	void hideAll(void);
+	explicit AppDBWidget(QWidget *parent = 0);
+	void startSearch(short int action, QString search="");
 
-signals:
-	void itemTrigged(short int, QString, int, int, int);
+public slots:
+	void itemTrigged(short int action, QString search="", int val1=0, int val2=0, int val3=0);
+	void httpcore_pageDownloaded();
 
 private:
-	std::auto_ptr<QBoxLayout> contentLayout;
-	short int pages_len;
+	//! Functions
+	void showXmlError(int id);
 
+	//! AppDB core clases
+	std::auto_ptr<XmlParser> xmlparser;
+	std::auto_ptr<HttpCore> httpcore;
+
+	//! AppDB custom widgets
+	std::auto_ptr<AppDBScrollWidget> appdbScrollArea;
+	std::auto_ptr<AppDBHeaderWidget> appdbHeader;
+
+	//! Delay timer
+	std::auto_ptr<QTimer> timer;
+
+	//! State variables
+	QString search;
+	short int action;
+	int appid;
+	int catid;
+	int verid;
+	int testid;
+	int page;
+
+private slots:
+	void timer_timeout(void);
 };
 
-#endif // APPDBHEADERWIDGET_H
+#endif // APPDBWIDGET_H

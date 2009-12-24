@@ -32,6 +32,8 @@
 
 #include "config.h"
 
+#include "memory"
+
 #include <QObject>
 #include <QWidget>
 #include <QString>
@@ -71,14 +73,14 @@ public:
 	void setEnabled(bool enable);
 
 private:
-	QBoxLayout *contentLayout;
-	int AppID;
-	int AppVerID;
-	int TestId;
-	short int Action;
+	std::auto_ptr<QBoxLayout> contentLayout;
+	int appid;
+	int verid;
+	int testid;
+	short int action;
 
 signals:
-	void versionTrigged(short int action, int appid=0, int verid=0, int testid=0);
+	void itemTrigged(short int, QString, int, int, int);
 
 protected:
 	//! \brief Event filter.

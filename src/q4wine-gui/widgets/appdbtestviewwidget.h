@@ -49,12 +49,14 @@ class AppDBTestViewWidget : public QWidget, public Ui::AppDBTestViewWidget
 {
 Q_OBJECT
 public:
-	AppDBTestViewWidget(const WineAppDBInfo *appinfo, QWidget *parent = 0);
-	int selectParentCommentById(int id);
+	AppDBTestViewWidget(const WineAppDBInfo appinfo, QWidget *parent = 0);
+
+public slots:
+	void requestParentComment(int id);
 
 signals:
-	void linkTrigged(short int action, QString search="", int val1=0, int val2=0);
-	void versionTrigged(short int action, int appid, int verid, int testid);
+	void itemTrigged(short int, QString, int, int, int);
+	void scrollToPos(int);
 
 private:
 	/*! \brief sets general application Name
@@ -74,9 +76,9 @@ private:
 	void addTestResults(QList<WineAppDBTestResult> tests);
 	void addBugs(QList<WineAppDBBug> bugs);
 	void addComments(QList<WineAppDBComment> comments);
-	int _APPID;
-	int _APPVERID;
-	int _APPTESTID;
+	int appid;
+	int verid;
+	int testid;
 };
 
 #endif // APPDBTESTVIEWWIDGET_H

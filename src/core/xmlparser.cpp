@@ -52,18 +52,20 @@ int XmlParser::parseIOSream(QString file){
 				// Search action
 				parseAppSearchEntry(node.toElement());
 				break;
-   case 5:
-				parseAppCategoryEntry(node.toElement());
+   case 3:
+				// View test results
+				parseApp(node.toElement());
 				break;
    case 4:
 				// View test results
 				parseApp(node.toElement());
 				break;
-   case 3:
-				// View test results
-				parseApp(node.toElement());
+   case 5:
+				parseAppCategoryEntry(node.toElement());
 				break;
-
+   case 6:
+				return 6;
+				break;
 			}
 			node = node.nextSibling();
 		}
@@ -387,7 +389,7 @@ void XmlParser::parseComment(const QDomElement &element, WineAppDBInfo &appinfo)
 		} else if (node.toElement().tagName()=="autor"){
 			comment.autor = getChildNodeData(node.firstChild());
 		} else if (node.toElement().tagName()=="parent"){
-			comment.padent_id = getChildNodeData(node.firstChild()).toInt();
+			comment.parent_id = getChildNodeData(node.firstChild()).toInt();
 		} else if (node.toElement().tagName()=="message"){
 			comment.message = getChildNodeData(node.firstChild());
 		}

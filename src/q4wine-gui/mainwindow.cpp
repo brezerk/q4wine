@@ -15,16 +15,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "mainwindow.h"
@@ -195,10 +185,9 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	connect (menuRun, SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
 
 	// Creating AppDBScrollWidget and place it into frameAppDBWidget layout
-	appdbHeader = new AppDBHeaderWidget();
-	appdbScrollArea = new AppDBScrollWidget(appdbHeader);
-	frameAppDBWidgetLayout->addWidget(appdbHeader);
-	frameAppDBWidgetLayout->addWidget(appdbScrollArea);
+	appdbWidget.reset(new AppDBWidget());
+	connect (this, SIGNAL(appdbWidget_startSearch(short int, QString)), appdbWidget.get(), SLOT(itemTrigged(short int, QString)));
+	frameAppDBWidgetLayout->addWidget(appdbWidget.release());
 
 	connect (cmdAppDBSearch, SIGNAL(clicked()), this, SLOT(cmdAppDBSearch_Click()));
 
@@ -307,7 +296,8 @@ void MainWindow::cmdTestWis_Click(){
 
 void MainWindow::cmdAppDBSearch_Click(){
 	if (!cbSearchText->currentText().isEmpty())
-		appdbScrollArea->startSearch(cbSearchText->currentText());
+		emit(appdbWidget_startSearch(1, cbSearchText->currentText()));
+
 	return;
 }
 

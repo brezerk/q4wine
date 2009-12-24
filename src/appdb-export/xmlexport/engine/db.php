@@ -80,7 +80,6 @@ Class DB {
 		
 		global $appdb_base;
 		
-		$xml_view = $this->XML->openHeader(1);
 		$search = mysql_real_escape_string($search, $this->appdb_dblink);
 		
 		$query = "SELECT COUNT(appId) FROM {$appdb_base}.appFamily WHERE appName LIKE \"%${search}%\" AND state='accepted'";
@@ -90,9 +89,8 @@ Class DB {
 			}
 			if (mysql_num_rows($result) > 0){
 				$row = mysql_fetch_row($result);
+				$xml_view = $this->XML->openHeader(1);
 				$xml_view .= $this->XML->createPages($page, ceil($row[0]/10));
-			} else {
-				die("serachAppByName: Invalid result");
 			}
 			
 		mysql_free_result($result);
@@ -112,7 +110,8 @@ Class DB {
 			}
 			$xml_view .= "\n	</app-list>";
 		} else {
-			die("serachAppByName: Invalid result");
+			$xml_view = $this->XML->openHeader(6);
+			$xml_view .= "<message>No matches found</message>";
 		}
 		
 		$xml_view .= $this->XML->closeHeader();
@@ -377,7 +376,7 @@ Class DB {
 			
 		global $appdb_base;
 			
-		$query = "SELECT commentId, parentId, userId, subject, body, time FROM {$appdb_base}.appComments WHERE versionId={$verid} AND parentId={$parent} ORDER BY time DESC";
+		$query = "SELECT commentId, parentId, (SELECT realname FROM {$appdb_base}.user_list WHERE userid={$appdb_base}.appComments.userId), subject, body, time FROM {$appdb_base}.appComments WHERE versionId={$verid} AND parentId={$parent} ORDER BY time DESC";
 		$result = mysql_query($query, $this->appdb_dblink);
 			if (!$result) {
 				die("getComments: Invalid comments info query");

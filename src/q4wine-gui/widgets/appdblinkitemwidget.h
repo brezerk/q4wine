@@ -15,16 +15,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #ifndef APPDBLINKITEMWIDGET_H
@@ -57,16 +47,17 @@ public:
 	void setParentId(int id);
 
 private:
-	short int Action;
-	int AppId;
-	int VerId;
-	int CatId;
-	int Page;
-	int ParentId;
-	QString SearchUrl;
+	short int action;
+	int appid;
+	int verid;
+	int catid;
+	int page;
+	int parentid;
+	QString search;
 
 signals:
-	void linkTrigged(short int action, QString search="", int val1=0, int val2=0);
+	void itemTrigged(short int, QString, int, int, int);
+	void requestParentComment(int id);
 
 private:
 	//! \brief Event filter.

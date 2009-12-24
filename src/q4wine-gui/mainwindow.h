@@ -15,16 +15,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 /*!
@@ -84,9 +74,7 @@
 
 #include "draglistwidget.h"
 
-#include "appdbheaderwidget.h"
-#include "appdbsearchwidget.h"
-#include "appdbscrollwidget.h"
+#include "appdbwidget.h"
 
 #include "wisitem.h"
 #include "iconsview.h"
@@ -265,7 +253,9 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void startDrag();
 		void startDrop(QList<QUrl> files);
 	private:
+		//! Custom Widgets
 		DragListWidget *lstIcons;
+		std::auto_ptr<AppDBWidget> appdbWidget;
 
 		//! This is need for libq4wine-core.so import;
 		typedef void *CoreLibPrototype (bool);
@@ -280,8 +270,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		Last_Run_Icon *db_last_run_icon;
 		Image *db_image;
 
-		AppDBScrollWidget *appdbScrollArea;
-		AppDBHeaderWidget *appdbHeader;
+
 
 		// Proxy
 		QNetworkProxy proxy;
@@ -375,6 +364,10 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void clearTmp();
 
 		QSplitter *splitter;
+
+	signals:
+		void appdbWidget_startSearch(short int, QString);
+
 	protected:
 		// Event filter
 		bool eventFilter(QObject *obj, QEvent *event);

@@ -29,35 +29,32 @@
 
 #include "appdbcommentwidget.h"
 
-AppDBCommentWidget::AppDBCommentWidget(const WineAppDBComment *comment, QWidget * parent) : QFrame(parent)
+AppDBCommentWidget::AppDBCommentWidget(const WineAppDBComment comment, QWidget * parent) : QFrame(parent)
 {
 	setupUi(this);
-	this->setObjectName(QString("%1").arg(comment->id));
-	this->setId(comment->id);
-	this->setParentId(comment->padent_id);
-	setTopic(comment->topic);
-	setDate(comment->autor, comment->date);
-	setMessage(comment->message);
-
-
+	this->setObjectName(QString("%1").arg(comment.id));
+	this->setId(comment.id);
+	this->setParentId(comment.parent_id);
+	setTopic(comment.topic);
+	setDate(comment.autor, comment.date);
+	setMessage(comment.message);
 	return;
 }
 
 void AppDBCommentWidget::setTopic(QString topic){
-	//
-	AppDBLinkItemWidget *label = new AppDBLinkItemWidget(topic, 7);
+	std::auto_ptr<AppDBLinkItemWidget> label(new AppDBLinkItemWidget(topic, 8));
 	label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 	label->setBold(true);
 	label->setWordWrap(true);
-	if (ParentId>0){
+	if (parentid>0){
 		label->setEnabled(true);
-		label->setParentId(ParentId);
-		connect (label, SIGNAL(linkTrigged(short int, QString, int, int)), this, SIGNAL(linkTrigged(short int, QString, int, int)));
+		label->setParentId(parentid);
+		connect (label.get(), SIGNAL(requestParentComment(int)), this, SIGNAL(requestParentComment(int)));
 	} else {
 		label->setEnabled(false);
 	}
 
-	widgetLabelLayout->addWidget(label);
+	widgetLabelLayout->addWidget(label.release());
 	QPalette p(palette());
 	//if (topic)
 	//FIXME: check for WARNING and HOWTO colors
@@ -68,10 +65,9 @@ void AppDBCommentWidget::setTopic(QString topic){
 }
 
 void AppDBCommentWidget::setDate(QString autor, QString date){
-	QLabel *label = new QLabel();
-
+	std::auto_ptr<QLabel> label(new QLabel());
 	label->setText(QString("by %1 on %2").arg(autor).arg(date));
-	widgetLabelLayout->addWidget(label);
+	widgetLabelLayout->addWidget(label.release());
 	return;
 }
 
@@ -81,17 +77,17 @@ void AppDBCommentWidget::setMessage(QString message){
 }
 
 void AppDBCommentWidget::setId(int id){
-	this->Id=id;
+	this->id=id;
 	return;
 }
 
 void AppDBCommentWidget::setParentId(int id){
-	this->ParentId=id;
+	this->parentid=id;
 	return;
 }
 
 bool AppDBCommentWidget::isId(int id){
-	if (Id==id){
+	if (this->id==id){
 		return true;
 	} else {
 		return false;

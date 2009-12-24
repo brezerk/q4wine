@@ -36,7 +36,7 @@ HttpCore::~HttpCore(){
 	delete http;
 }
 
-void HttpCore::getWineAppDBXMLPage(QString host, short int port, QString page, QString params)
+void HttpCore::getAppDBXMLPage(QString host, short int port, QString page, QString params)
 {
 	http->setHost(host, QHttp::ConnectionModeHttp, port);
 
@@ -64,7 +64,7 @@ void HttpCore::readPage()
 	xmlreply=http->readAll();
 
 #ifdef DEBUG
-	qDebug()<<"[ii] Recived page:"<<xmlreply;
+	//qDebug()<<"[ii] Recived page:"<<xmlreply;
 #endif
 
 	emit(pageReaded());

@@ -35,7 +35,7 @@ public:
 	HttpCore();
 	~HttpCore();
 
-	void getWineAppDBXMLPage(QString host, short int port, QString page, QString params);
+	void getAppDBXMLPage(QString host, short int port, QString page, QString params);
 	QString getXMLReply();
 signals:
 	void pageReaded();

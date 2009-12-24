@@ -32,6 +32,8 @@
 
 #include <ui_AppDBCommentWidget.h>
 
+#include "memory"
+
 #include "config.h"
 
 #include <QFrame>
@@ -49,20 +51,21 @@ class AppDBCommentWidget : public QFrame, public Ui::AppDBCommentWidget
 {
 	Q_OBJECT
 public:
-	AppDBCommentWidget(const WineAppDBComment *comment, QWidget * parent = 0);
+	AppDBCommentWidget(const WineAppDBComment comment, QWidget * parent = 0);
 	void setId(int id);
 	void setParentId(int id);
 	bool isId(int id);
 
 signals:
-	void linkTrigged(short int action, QString search="", int val1=0, int val2=0);
+	void itemTrigged(short int, QString, int, int, int);
+	void requestParentComment(int id);
 
 private:
 	void setTopic(QString topic);
 	void setDate(QString autor, QString date);
 	void setMessage(QString message);
-	int Id;
-	int ParentId;
+	int id;
+	int parentid;
 };
 
 #endif // APPDBCOMMENTWIDGET_H

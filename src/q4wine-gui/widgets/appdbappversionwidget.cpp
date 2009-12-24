@@ -31,19 +31,18 @@
 
 AppDBAppVersionWidget::AppDBAppVersionWidget(const short int action, QWidget *parent) : QWidget(parent)
 {
-
 	setCursor(Qt::PointingHandCursor);
 	installEventFilter(this);
 	setAutoFillBackground(true);
 
-	contentLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
+	contentLayout.reset(new QBoxLayout(QBoxLayout::LeftToRight, this));
 	contentLayout->setMargin(0);
 	contentLayout->setSpacing(0);
 
-	this->Action=action;
-	this->AppID=0;
-	this->AppVerID=0;
-	this->TestId=0;
+	this->action=action;
+	this->appid=0;
+	this->verid=0;
+	this->testid=0;
 }
 
 AppDBAppVersionWidget::~AppDBAppVersionWidget(){
@@ -51,7 +50,7 @@ AppDBAppVersionWidget::~AppDBAppVersionWidget(){
 }
 
 void AppDBAppVersionWidget::addLabel(const QString text, const short int width, const short int aligment, const bool worldwarp){
-	QLabel *label = new QLabel(this);
+	std::auto_ptr<QLabel> label(new QLabel(this));
 
 	switch (aligment){
 		case 0:
@@ -67,7 +66,6 @@ void AppDBAppVersionWidget::addLabel(const QString text, const short int width, 
 		label->setAlignment(Qt::AlignJustify);
 		break;
 	}
-//label->setAlignment(Qt::AlignLeft);
 
 	if (worldwarp){
 		label->setWordWrap(true);
@@ -78,12 +76,10 @@ void AppDBAppVersionWidget::addLabel(const QString text, const short int width, 
 		label->setMaximumWidth(width);
 	}
 
-
 	label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 
 	label->setText(text);
-contentLayout->addWidget(label);
-
+	contentLayout->addWidget(label.release());
 
 	return;
 }
@@ -94,7 +90,7 @@ void AppDBAppVersionWidget:: insertStretch(void){
 
 bool AppDBAppVersionWidget::eventFilter(QObject *obj, QEvent *event){
 	if (event->type()==QEvent::MouseButtonRelease){
-		versionTrigged(this->Action, this->AppID, this->AppVerID, this->TestId);
+		emit(itemTrigged(this->action, "", this->appid, this->verid, this->testid));
 	}
 
 	if (event->type()==QEvent::Enter){
@@ -111,22 +107,22 @@ bool AppDBAppVersionWidget::eventFilter(QObject *obj, QEvent *event){
 }
 
 void AppDBAppVersionWidget::setAction(short int action){
-	this->Action=action;
+	this->action=action;
 	return;
 }
 
 void AppDBAppVersionWidget::setAppId(int id){
-	this->AppID=id;
+	this->appid=id;
 	return;
 }
 
 void AppDBAppVersionWidget::setAppVerId(int id){
-	this->AppVerID=id;
+	this->verid=id;
 	return;
 }
 
 void AppDBAppVersionWidget::setTestId(int id){
-	this->TestId=id;
+	this->testid=id;
 	return;
 }
 

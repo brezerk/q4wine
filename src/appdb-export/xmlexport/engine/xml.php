@@ -157,7 +157,15 @@ Class XMLExport {
 			<comment id=\"{$id}\">
 				<topic>" . $this->prepareString($subject) . "</topic>
 				<date>{$time}</date>
-				<autor>" . $this->prepareString($user) . "</autor>
+				<autor>"; 
+				
+		if ($user){
+			$ret .= $this->prepareString($user);
+		} else {
+			$ret .= "Anonymous";
+		}
+
+		$ret .= "</autor>
 				<message>" . $this->prepareString($body, -1, 0) . "</message>
 				<parent>{$parent}</parent>
 			</comment>";	
@@ -189,16 +197,18 @@ Class XMLExport {
 			$string = strip_tags($string, "<ul><li><b><i>");
 			$string = preg_replace('/(http:\/\/[^\s]+)/', '<a href="$1">$1</a>', $string);
 			$string = nl2br ($string);
+			$string = preg_replace("/(<br \/>\s+)+/", "<br /><br />", $string);
+			$string = preg_replace("/<br \/><br \/>$/", "", $string);
+
 		}
-		
+
 		if ($len > 0)
 			$string = substr($string, 0, $len);
 		
-		$string = str_replace("#", "", $string);
-		$string = str_replace("&", "&amp;", $string);
-		$string = str_replace(">", "&gt;", $string);
-		$string = str_replace("<", "&lt;", $string);	
 
+		$string = htmlentities($string);
+		
+		
 		return $string;
 	}
 

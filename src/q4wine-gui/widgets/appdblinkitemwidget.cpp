@@ -15,16 +15,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "appdblinkitemwidget.h"
@@ -32,18 +22,14 @@
 AppDBLinkItemWidget::AppDBLinkItemWidget(QString text, short int action, QWidget * parent) : QLabel(parent)
 {
 	this->setText(text);
-	//See setAction() for details =)
-	this->Action = action;
-
+	this->action = action;
 	this->setEnabled(true);
-
 	return;
 }
 
 AppDBLinkItemWidget::~AppDBLinkItemWidget(){
 	//nothing but...
 }
-
 
 void AppDBLinkItemWidget::setEnabled(bool enable){
 	// Sets item color to QT::Link color while item is enabled.
@@ -68,6 +54,7 @@ void AppDBLinkItemWidget::setBold(bool enable){
 
 	font.setBold(enable);
 	this->setFont(font);
+	return;
 }
 
 void AppDBLinkItemWidget::setAction(short int action){
@@ -80,7 +67,7 @@ void AppDBLinkItemWidget::setAction(short int action){
 	6: Open url
 	7: Show parent comment
 	*****************/
-	Action=action;
+	this->action=action;
 	return;
 }
 
@@ -88,7 +75,7 @@ void AppDBLinkItemWidget::setSearchUrl(QString url){
 	/* Search Url
 		This might be used for saving user search text
 	*/
-	SearchUrl=url;
+	this->search=url;
 	return;
 }
 
@@ -96,7 +83,7 @@ void AppDBLinkItemWidget::setAppId(int id){
 	/* App Id
 		Saveing App Id
 	*/
-	AppId=id;
+	this->appid=id;
 	return;
 }
 
@@ -104,7 +91,7 @@ void AppDBLinkItemWidget::setVerId(int id){
 	/* Version Id
 		Saveing Version Id
 	*/
-	VerId=id;
+	this->verid=id;
 	return;
 }
 
@@ -112,7 +99,7 @@ void AppDBLinkItemWidget::setCatId(int id){
 	/* Category Id
 		Saveing Category Id
 	*/
-	CatId=id;
+	this->catid=id;
 	return;
 }
 
@@ -120,7 +107,7 @@ void AppDBLinkItemWidget::setPage(short int id){
 	/* Category Id
 		Saveing Category Id
 	*/
-	Page=id;
+	this->page=id;
 	return;
 }
 
@@ -128,33 +115,30 @@ void AppDBLinkItemWidget::setParentId(int id){
 	/* Parent comment Id
 		Saveing id of parent comment
 	*/
-	ParentId=id;
+	this->parentid=id;
 	return;
 }
 
 bool AppDBLinkItemWidget::eventFilter(QObject *obj, QEvent *event){
 	if (event->type()==QEvent::MouseButtonRelease){
-		switch (Action){
-  case 1:
-			emit(linkTrigged(1, SearchUrl));
-			break;
+		switch (action){
   case 2:
-			emit(linkTrigged(2, SearchUrl, Page));
+			emit(itemTrigged(2, search, page, 0, 0));
 			break;
   case 3:
-			emit(linkTrigged(3, "", AppId));
-			break;
-  case 4:
-			emit(linkTrigged(4, "", AppId, VerId));
+			emit(itemTrigged(3, "", appid, 0, 0));
 			break;
   case 5:
-			emit(linkTrigged(5, "", CatId));
+			emit(itemTrigged(5, "", catid, 0, 0));
 			break;
   case 6:
-			emit(linkTrigged(6, SearchUrl));
+			emit(itemTrigged(6, search, 0, 0, 0));
 			break;
   case 7:
-			emit(linkTrigged(7, "", ParentId));
+			emit(itemTrigged(7, "", appid, 0, 0));
+			break;
+  case 8:
+			emit(requestParentComment(parentid));
 			break;
 		}
 	} else if (event->type()==QEvent::Enter){

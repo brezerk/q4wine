@@ -15,16 +15,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "appdbheaderwidget.h"
@@ -36,38 +26,38 @@ AppDBHeaderWidget::AppDBHeaderWidget(QWidget * parent) : QFrame(parent)
 
 	pages_len=5;
 
-	contentLayout = new QBoxLayout(QBoxLayout::LeftToRight, this);
+	contentLayout.reset(new QBoxLayout(QBoxLayout::LeftToRight, this));
 	contentLayout->setMargin(3);
-
 	return;
 }
 
 void AppDBHeaderWidget::addLabel(QString info){
-	if (contentLayout){
-		QLabel *label = new QLabel(info);
-		contentLayout->addWidget(label);
+	if (contentLayout.get()){
+		std::auto_ptr<QLabel> label(new QLabel(info));
+		contentLayout->addWidget(label.release());
 	}
 	return;
 }
 
 void AppDBHeaderWidget::addLink(QString text, bool enabled, short int action, QString search, int value){
-	if (contentLayout){
-		//
-		AppDBLinkItemWidget *label = new AppDBLinkItemWidget(text, action);
+	if (contentLayout.get()){
+
+		std::auto_ptr<AppDBLinkItemWidget> label(new AppDBLinkItemWidget(text, action));
 		if (!enabled)
 			label->setEnabled(enabled);
 		label->setSearchUrl(search);
 		switch (action){
+  case 3:
+			label->setAppId(value);
   case 5:
-		label->setCatId(value);;
-		break;
+			label->setCatId(value);
+			break;
   default:
-		label->setPage(value);
-		break;
+			label->setPage(value);
+			break;
 		}
-		contentLayout->addWidget(label);
-		connect (label, SIGNAL(linkTrigged(short int, QString, int)), this, SIGNAL(linkTrigged(short int, QString, int)));
-		//label->installEventFilter(this);
+		connect (label.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SIGNAL(itemTrigged(short int, QString, int, int, int)));
+		contentLayout->addWidget(label.release());
 	}
 	return;
 }
@@ -77,10 +67,9 @@ void AppDBHeaderWidget::setLayout(short int direction){
 }
 
 void AppDBHeaderWidget::insertStretch(void){
-	//contentLayout->insertStretch(place);
-	QWidget *visibleStrech = new QWidget();
+	std::auto_ptr<QWidget> visibleStrech(new QWidget());
 	visibleStrech->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
-	contentLayout->addWidget(visibleStrech);
+	contentLayout->addWidget(visibleStrech.release());
 	return;
 }
 
@@ -119,14 +108,14 @@ void AppDBHeaderWidget::createPagesList(short int count, short int current, QStr
 	return;
 }
 
-void AppDBHeaderWidget::createCategoryList(const QList<WineAppDBCategory> *category){
-	for (int i=0; i<category->count(); i++){
-		if (category->at(i).enabled){
-			this->addLink(category->at(i).name, true, 5, "", category->at(i).id);
+void AppDBHeaderWidget::createCategoryList(const QList<WineAppDBCategory> category){
+	for (int i=0; i<category.count(); i++){
+		if (category.at(i).enabled){
+			this->addLink(category.at(i).name, true, 5, "", category.at(i).id);
 		} else {
-			this->addLabel(category->at(i).name);
+			this->addLabel(category.at(i).name);
 		}
-		if (i<category->count()-1)
+		if (i<category.count()-1)
 			this->addLabel(">");
 	}
 	return;

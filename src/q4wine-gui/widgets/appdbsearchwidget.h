@@ -32,6 +32,8 @@
 
 #include <ui_AppDBSearchWidget.h>
 
+#include "memory"
+
 #include "config.h"
 
 #include <QDialog>
@@ -66,8 +68,8 @@ public:
 	//! \brief class destructor;
 	~AppDBSearchWidget();
 signals:
-	 void linkTrigged(short int action, QString search="", int val1=0, int val2=0);
-	 void versionTrigged(short int action, int appid, int verid, int testid);
+	 void itemTrigged(short int, QString, int, int, int);
+
 private:
 	/*! \brief sets general application Name
 	*
@@ -83,8 +85,7 @@ private:
 	*/
 	void setAppDesc(QString desc);
 
-	//! \brief This holds url description
-	int _APPID;
+	int appid;
 protected:
 	//! \brief Event filter.
 	bool eventFilter(QObject *obj, QEvent *event);

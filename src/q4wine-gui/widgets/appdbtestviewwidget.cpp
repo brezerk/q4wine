@@ -15,51 +15,41 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "appdbtestviewwidget.h"
 
-AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBInfo *appinfo, QWidget *parent) : QWidget(parent)
+AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBInfo appinfo, QWidget *parent) : QWidget(parent)
 {
 		setupUi(this);
-		this->setAppName(QString("%1 - %2").arg(appinfo->name).arg(appinfo->appver));
-		this->setAppDesc(appinfo->desc);
-		this->_APPID=appinfo->id;
-		this->_APPVERID=appinfo->ver_id;
+		this->setAppName(QString("%1 - %2").arg(appinfo.name).arg(appinfo.appver));
+		this->setAppDesc(appinfo.desc);
+		this->appid=appinfo.id;
+		this->verid=appinfo.ver_id;
 
-		lblWineVer->setText(appinfo->winever);
-		lblLicense->setText(appinfo->license);
-		lblRating->setText(appinfo->rating);
-		lblAddComments->setText(appinfo->comment);
-		lblWhatWorks->setText(appinfo->works);
-		lblWhatNotWorks->setText(appinfo->notworks);
-		lblWhatWasNotTested->setText(appinfo->nottested);
+		lblWineVer->setText(appinfo.winever);
+		lblLicense->setText(appinfo.license);
+		lblRating->setText(appinfo.rating);
+		lblAddComments->setText(appinfo.comment);
+		lblWhatWorks->setText(appinfo.works);
+		lblWhatNotWorks->setText(appinfo.notworks);
+		lblWhatWasNotTested->setText(appinfo.nottested);
 
-		if (!appinfo->url.isEmpty()){
-			AppDBLinkItemWidget *label = new AppDBLinkItemWidget(tr("Application web page"), 6);
-			label->setSearchUrl(appinfo->url);
-			label->setToolTip(appinfo->url);
-			connect (label, SIGNAL(linkTrigged(short int, QString, int, int)), this, SIGNAL(linkTrigged(short int, QString, int, int)));
-			AppDetailsLayout->addWidget(label);
+		if (!appinfo.url.isEmpty()){
+			std::auto_ptr<AppDBLinkItemWidget> label(new AppDBLinkItemWidget(tr("Application web page"), 6));
+			label->setSearchUrl(appinfo.url);
+			label->setToolTip(appinfo.url);
+			connect (label.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SIGNAL(itemTrigged(short int, QString, int, int, int)));
+			AppDetailsLayout->addWidget(label.release());
 		}
 
-		addTestResults(appinfo->tests);
-		addBugs(appinfo->bugs);
-		addComments(appinfo->comments);
+		addTestResults(appinfo.tests);
+		addBugs(appinfo.bugs);
+		addComments(appinfo.comments);
 		return;
 }
 
-int AppDBTestViewWidget::selectParentCommentById(int id){
+void AppDBTestViewWidget::requestParentComment(int id){
 	QList<QObject*> list = this->children();
 	QPalette p(palette());
 	int y_pos = -1;
@@ -75,7 +65,10 @@ int AppDBTestViewWidget::selectParentCommentById(int id){
 		}
 	}
 
-	return y_pos;
+	if (y_pos>0)
+		emit(scrollToPos(y_pos));
+
+	return;
 }
 
 void AppDBTestViewWidget::setAppName(QString name){
@@ -89,40 +82,34 @@ void AppDBTestViewWidget::setAppDesc(QString desc){
 }
 
 void AppDBTestViewWidget::addBugs(QList<WineAppDBBug> bugs){
-	AppDBAppVersionWidget *version;
-
 	for (int i=0; i<bugs.count(); i++){
-		version = new AppDBAppVersionWidget(7);
+		std::auto_ptr<AppDBAppVersionWidget> version(new AppDBAppVersionWidget(7));
 		version->setAppId(bugs.at(i).id);
 		version->addLabel(QString("%1").arg(bugs.at(i).id), 70, 1);
 		version->addLabel(bugs.at(i).desc, -1, 3, true);
 		version->addLabel(bugs.at(i).status, 120, 1);
 		version->addLabel(bugs.at(i).resolution, 120, 1);
-		BugsLayout->addWidget(version);
-		connect(version, SIGNAL(versionTrigged(short int, int, int, int)), this, SIGNAL(versionTrigged(short int, int, int, int)));
+		connect(version.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SIGNAL(itemTrigged(short int, QString, int, int, int)));
+		BugsLayout->addWidget(version.release());
 	}
 	return;
 }
 
 void AppDBTestViewWidget::addComments(QList<WineAppDBComment> comments){
-	AppDBCommentWidget *comment;
-
 	for (int i=0; i<comments.count(); i++){
-		comment = new AppDBCommentWidget(&comments.at(i));
-		TestLayout->addWidget(comment);
-		connect (comment, SIGNAL(linkTrigged(short int, QString, int, int)), this, SIGNAL(linkTrigged(short int, QString, int, int)));
+		std::auto_ptr<AppDBCommentWidget> comment (new AppDBCommentWidget(comments.at(i)));
+		connect(comment.get(), SIGNAL(requestParentComment(int)), this, SLOT(requestParentComment(int)));
+		TestLayout->addWidget(comment.release());
 	}
 
 	return;
 }
 
 void AppDBTestViewWidget::addTestResults(QList<WineAppDBTestResult> tests){
-	AppDBAppVersionWidget *version;
-
 	for (int i=0; i<tests.count(); i++){
-		version = new AppDBAppVersionWidget(4);
-		version->setAppId(this->_APPID);
-		version->setAppVerId(this->_APPVERID);
+		std::auto_ptr<AppDBAppVersionWidget> version (new AppDBAppVersionWidget(4));
+		version->setAppId(this->appid);
+		version->setAppVerId(this->verid);
 		version->setTestId(tests.at(i).id);
 
 		if (tests.at(i).current){
@@ -144,8 +131,7 @@ void AppDBTestViewWidget::addTestResults(QList<WineAppDBTestResult> tests){
 		}
 
 		version->addLabel(tests.at(i).rating, 120, 1);
-
-		Top5ResultsLayout->addWidget(version);
-		connect(version, SIGNAL(versionTrigged(short int, int, int, int)), this, SIGNAL(versionTrigged(short int, int, int, int)));
+		connect(version.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SIGNAL(itemTrigged(short int, QString, int, int, int)));
+		Top5ResultsLayout->addWidget(version.release());
 	}
 }
