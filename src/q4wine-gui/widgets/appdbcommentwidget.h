@@ -61,7 +61,7 @@ signals:
 	void requestParentComment(int id);
 
 private:
-	void setTopic(QString topic);
+	void setTopic(QString topic, int type);
 	void setDate(QString autor, QString date);
 	void setMessage(QString message);
 	int id;

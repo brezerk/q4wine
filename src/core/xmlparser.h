@@ -25,6 +25,7 @@
 #include <QString>
 #include <QList>
 #include <QDebug>
+#include <QRegExp>
 #include <QObject>
 #include <QDomDocument>
 #include <QDomElement>

@@ -82,6 +82,9 @@ void AppDBTestViewWidget::setAppDesc(QString desc){
 }
 
 void AppDBTestViewWidget::addBugs(QList<WineAppDBBug> bugs){
+	if (bugs.count()==0)
+		grpKnownBugs->setVisible(false);
+
 	for (int i=0; i<bugs.count(); i++){
 		std::auto_ptr<AppDBAppVersionWidget> version(new AppDBAppVersionWidget(7));
 		version->setAppId(bugs.at(i).id);
@@ -106,6 +109,9 @@ void AppDBTestViewWidget::addComments(QList<WineAppDBComment> comments){
 }
 
 void AppDBTestViewWidget::addTestResults(QList<WineAppDBTestResult> tests){
+	if (tests.count()==0)
+		grpTestResults->setVisible(false);
+
 	for (int i=0; i<tests.count(); i++){
 		std::auto_ptr<AppDBAppVersionWidget> version (new AppDBAppVersionWidget(4));
 		version->setAppId(this->appid);

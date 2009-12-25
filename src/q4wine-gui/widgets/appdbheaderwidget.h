@@ -50,6 +50,7 @@ public:
 	void createCategoryList(const QList<WineAppDBCategory> category);
 	void clear(void);
 	void hideAll(void);
+	void updateFirstLabelText(QString text);
 
 signals:
 	void itemTrigged(short int, QString, int, int, int);

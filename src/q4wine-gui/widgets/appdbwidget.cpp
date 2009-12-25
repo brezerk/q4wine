@@ -45,6 +45,8 @@ AppDBWidget::AppDBWidget(QWidget *parent) : QWidget(parent)
 	//Connect slots and signals
 	connect(timer.get(), SIGNAL(timeout()), this, SLOT(timer_timeout()));
 	connect(httpcore.get(), SIGNAL(pageReaded()), this, SLOT(httpcore_pageDownloaded()));
+	connect(httpcore.get(), SIGNAL(requestError(QString)), this, SLOT(requestError(QString)));
+	connect(httpcore.get(), SIGNAL(updateDataReadProgress(int, int)), this, SLOT(updateDataReadProgress(int, int)));
 
 	this->appdbHeader->addLabel(tr("Status: Ready"));
 	timer->stop();
@@ -121,9 +123,9 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		this->catid=val1;
 		this->appdbScrollArea->clear();
 		break;
- case 7:
+ case 6:
 		//FIXME: openurl!
-		qDebug()<<"[ii]"<<val1;
+		emit(xdgOpenUrl(search));
 		break;
 	}
 
@@ -232,4 +234,14 @@ void AppDBWidget::showXmlError(int id){
 		return;
 		break;
 	}
+}
+
+void AppDBWidget::requestError(QString error){
+	this->appdbHeader->clear();
+	this->appdbHeader->addLabel(tr("Error: %1").arg(error));
+}
+
+void AppDBWidget::updateDataReadProgress(int bytesRead, int totalBytes){
+	this->appdbHeader->updateFirstLabelText(QString("Downloaded: %1 of %2 bytes").arg(bytesRead).arg(totalBytes));
+	return;
 }

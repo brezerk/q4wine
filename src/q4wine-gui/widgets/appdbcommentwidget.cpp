@@ -32,16 +32,17 @@
 AppDBCommentWidget::AppDBCommentWidget(const WineAppDBComment comment, QWidget * parent) : QFrame(parent)
 {
 	setupUi(this);
-	this->setObjectName(QString("%1").arg(comment.id));
+	if (comment.id>0)
+		this->setObjectName(QString("%1").arg(comment.id));
 	this->setId(comment.id);
 	this->setParentId(comment.parent_id);
-	setTopic(comment.topic);
+	setTopic(comment.topic, comment.id);
 	setDate(comment.autor, comment.date);
 	setMessage(comment.message);
 	return;
 }
 
-void AppDBCommentWidget::setTopic(QString topic){
+void AppDBCommentWidget::setTopic(QString topic, int type){
 	std::auto_ptr<AppDBLinkItemWidget> label(new AppDBLinkItemWidget(topic, 8));
 	label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 	label->setBold(true);
@@ -56,9 +57,17 @@ void AppDBCommentWidget::setTopic(QString topic){
 
 	widgetLabelLayout->addWidget(label.release());
 	QPalette p(palette());
-	//if (topic)
-	//FIXME: check for WARNING and HOWTO colors
-	p.setColor(QPalette::Background, QPalette().color(QPalette::Dark));
+
+	if (type<=0){
+		//FIXME: check for WARNING and HOWTO colors
+		if (topic.contains("warning",  Qt::CaseInsensitive)){
+			p.setColor(QPalette::Background, QColor(190, 138, 138));
+		} else {
+			p.setColor(QPalette::Background, QColor(144, 160, 177));
+		}
+	} else {
+		p.setColor(QPalette::Background, QPalette().color(QPalette::Dark));
+	}
 	widgetLabel->setPalette(p);
 	widgetLabel->setAutoFillBackground(true);
 	return;

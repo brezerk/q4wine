@@ -44,7 +44,7 @@
 #define APP_BUG_EMAIL "brezerk@gmail.com"
 
 #define APPDB_EXPORT_VERSION "0.1"
-#define APPDB_HOSTNAME "appdb.uz.gov.ua"
+#define APPDB_HOSTNAME "appdb.winehq.org"
 #define APPDB_PORT 80
 
 #cmakedefine _OS_LINUX_

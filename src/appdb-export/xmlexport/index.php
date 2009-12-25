@@ -22,7 +22,7 @@
 require_once("./engine/check.php");
 
 //Check for walid useragent for details see config.inc file
-if (checkUserAgent("q4wine/0.115-dev (X11; Linux i686) xmlparser/0.1")==0){
+if (checkUserAgent()==0){
 	print showAbout();
 } else {
 	require_once("./engine/db.php");

@@ -187,6 +187,9 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	// Creating AppDBScrollWidget and place it into frameAppDBWidget layout
 	appdbWidget.reset(new AppDBWidget());
 	connect (this, SIGNAL(appdbWidget_startSearch(short int, QString)), appdbWidget.get(), SLOT(itemTrigged(short int, QString)));
+	connect (appdbWidget.get(), SIGNAL(xdgOpenUrl(QString)), this, SLOT(xdgOpenUrl(QString)));
+
+
 	frameAppDBWidgetLayout->addWidget(appdbWidget.release());
 
 	connect (cmdAppDBSearch, SIGNAL(clicked()), this, SLOT(cmdAppDBSearch_Click()));
@@ -503,17 +506,19 @@ void MainWindow::getSettings(){
 	}
   }
 
+  /*
   switch (CoreLib->getSetting("network", "type", false).toInt()){
 		case 0:
 	  proxy.setType(QNetworkProxy::NoProxy);
 	  QNetworkProxy::setApplicationProxy(proxy);
 	  break;
 		case 1:
-	  proxy.setType(QNetworkProxy::HttpProxy);
+	  proxy.setType(QNetworkProxy::HttpCachingProxy);
 	  proxy.setHostName(CoreLib->getSetting("network", "host", false).toString());
 	  proxy.setPort(CoreLib->getSetting("network", "port", false).toInt());
 	  proxy.setUser(CoreLib->getSetting("network", "user", false).toString());
 	  proxy.setPassword(CoreLib->getSetting("network", "pass", false).toString());
+	  proxy.setCapabilities(QNetworkProxy::CachingCapability);
 	  QNetworkProxy::setApplicationProxy(proxy);
 	  break;
 		case 2:
@@ -525,6 +530,7 @@ void MainWindow::getSettings(){
 	  QNetworkProxy::setApplicationProxy(proxy);
 	  break;
   }
+ */
 
   return;
 }
@@ -2717,6 +2723,14 @@ void MainWindow::xdgOpenIconDir_Click(void){
   CoreLib->runProcess(CoreLib->getWhichOut("xdg-open"), args, "", FALSE);
 
   return;
+}
+
+void MainWindow::xdgOpenUrl(QString url){
+	qDebug()<<"FUCK"<<url;
+	QStringList args;
+	args<<url;
+	CoreLib->runProcess(CoreLib->getWhichOut("xdg-open"), args, "", FALSE);
+	return;
 }
 
 void MainWindow::xdgOpenPrefixDir_Click(void){

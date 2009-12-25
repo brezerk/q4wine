@@ -2,6 +2,12 @@
 
 ===== TODO ==============
 
-1: Move all appdbScrollArea_* functions to CustomWidget based on QScrollArea;
-2. Make delete function for AppDbSearchWidget to delete all associated VersionWidgets;
-3. Have fun ;]
+1. A lot of Memory leak fixes.
+2. AppDB Search history.
+3. Category pics.
+4. Clean AppDB search\view results.
+5. Fix and test for whitespaces during run wine program, options, prefix config e.t.c.
+6. Custom Widget for Wizard "DriveSettings" dialog.
+7. CMake New configure info.
+8. Have fun ;]
+9. Conqueror the universe... ooops not this time. Sorry T_T

@@ -257,7 +257,8 @@ Class DB {
 				$versions_list = $this->getVersion($row['appId']);
 			} else {
 				$test_results = $this->getTestResults($verid, $testid);
-				$comment_list = $this->getComments($verid);
+				$comment_list = $this->getNotes($appid, $verid);
+				$comment_list .= $this->getComments($verid);
 				$bugs_list = $this->getBugs($verid);
 			}
 			
@@ -376,7 +377,7 @@ Class DB {
 			
 		global $appdb_base;
 			
-		$query = "SELECT commentId, parentId, (SELECT realname FROM {$appdb_base}.user_list WHERE userid={$appdb_base}.appComments.userId), subject, body, time FROM {$appdb_base}.appComments WHERE versionId={$verid} AND parentId={$parent} ORDER BY time DESC";
+		$query = "SELECT commentId, parentId, (SELECT realname FROM {$appdb_base}.user_list WHERE userid={$appdb_base}.appComments.userId), subject, body, DATE_FORMAT(time, '%e %b %Y %H:%i:%s') FROM {$appdb_base}.appComments WHERE versionId={$verid} AND parentId={$parent} ORDER BY time DESC";
 		$result = mysql_query($query, $this->appdb_dblink);
 			if (!$result) {
 				die("getComments: Invalid comments info query");
@@ -387,6 +388,34 @@ Class DB {
 			while ($row = mysql_fetch_array($result)){
 				$xml_view .= $this->XML->createComment($row[0], $row[1], $row[2], $row[3], $row[4], $row[5]);
 				$xml_view .= $this->getComments($verid, $row[0]);
+			}
+		}
+		
+		mysql_free_result($result);
+		return $xml_view;
+	}
+	
+	function getNotes($appid, $verid){
+		$appid = (int)$appid;
+		if ($appid <= 0)
+			return;
+		
+		$verid = (int)$verid;
+		if ($verid <= 0)
+			return;
+			
+		global $appdb_base;
+			
+		$query = "SELECT noteTitle, noteDesc, DATE_FORMAT(submitTime, '%e %b %Y %H:%i:%s'), (SELECT realname FROM {$appdb_base}.user_list WHERE userid={$appdb_base}.appNotes.submitterId) FROM {$appdb_base}.appNotes WHERE versionId={$verid} OR (appId={$appid} AND versionId=0) ORDER BY noteId";
+		$result = mysql_query($query, $this->appdb_dblink);
+			if (!$result) {
+				die("getComments: Invalid comments info query " . $query);
+			}
+				
+		if (mysql_num_rows($result) > 0){
+			//$xml_view = "\n		<test-list>";
+			while ($row = mysql_fetch_array($result)){
+				$xml_view .= $this->XML->createComment(0, 0, $row[5], $row[0], $row[1], $row[2]);
 			}
 		}
 		

@@ -22,11 +22,17 @@
 
 #include "config.h"
 
+#include "memory"
+
 #include <QUrl>
 #include <QHttp>
 #include <QHttpRequestHeader>
+#include <QNetworkProxy>
 #include <QDebug>
 #include <QObject>
+#include <QMessageBox>
+
+#include <q4wine-lib/main.h>
 
 class HttpCore : public QObject
 {
@@ -39,14 +45,20 @@ public:
 	QString getXMLReply();
 signals:
 	void pageReaded();
+	void requestError(QString);
+	void updateDataReadProgress(int, int);
 
-public slots:
-	void readPage();
+private slots:
+	void httpRequestFinished(int requestId, bool error);
+	void readResponseHeader(const QHttpResponseHeader &responseHeader);
 
 private:
-	QHttp *http;
+	std::auto_ptr<QHttp> http;
 	QString user_agent;
 	QString xmlreply;
+
+	int getId;
+	bool aborted;
 };
 
 #endif // HTTPCORE_H

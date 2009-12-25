@@ -5,14 +5,16 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
-Version 0.115
+Version 0.115-dev
  Added:
   - Wine AppDB support;
  Fixed:
+  - Fixed memory leaks repported by Valgrid;
   - Fixed crush while drop exesting icon;
   - Fixed not critical error for fake C: symlink;
   - Fixed white spaces chatch in wine app run engine;
   - Fixed cmake: appprefix setting now overrides default icon and desktop places;
+  - Fixed strage locale bug on some Slakware distros;
 
 Version 0.114-r1
  Fixed:

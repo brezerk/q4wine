@@ -136,3 +136,10 @@ void AppDBHeaderWidget::clear(){
 
 	return;
 }
+
+void AppDBHeaderWidget::updateFirstLabelText(QString text){
+	QList<QObject*> list = this->children();
+	if (list.count()>=3){
+		list.at(2)->setProperty("text", text);
+	}
+}

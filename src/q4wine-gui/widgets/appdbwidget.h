@@ -46,6 +46,11 @@ public:
 public slots:
 	void itemTrigged(short int action, QString search="", int val1=0, int val2=0, int val3=0);
 	void httpcore_pageDownloaded();
+	void requestError(QString error);
+	void updateDataReadProgress(int bytesRead, int totalBytes);
+
+signals:
+	void xdgOpenUrl(QString);
 
 private:
 	//! Functions

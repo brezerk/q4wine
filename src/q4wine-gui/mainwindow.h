@@ -119,11 +119,11 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		iconCopyBuffer iconBuffer;
 	public slots:
 		void messageReceived(const QString message) const;
+		void xdgOpenUrl(QString url);
 
 	private slots:
 
 		//void StartDrug(QDragEnterEvent * event);
-
 		void getWineProccessInfo(void);
 		void CoreFunction_ResizeContent(int tabIndex);
 		void menuMountImages_triggered ( QAction * action );

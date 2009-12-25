@@ -405,6 +405,10 @@ QString XmlParser::getChildNodeData(const QDomNode &childNode){
 	QString data;
 	if (childNode.nodeType() == QDomNode::TextNode) {
 		data = childNode.toText().data();
+		data.replace(QRegExp("(<br />\\s*)+"), "<br /><br />");
+		data.replace(QRegExp("&nbsp;"), "");
+		data.replace(QRegExp("(<br />)+\\s*$"), "");
+		data.replace(QRegExp("^\\s*(<br />)+"), "");
 	}
 	return data;
 }

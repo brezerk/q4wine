@@ -127,8 +127,20 @@ Class XMLExport {
 				<distrib>" . $this->prepareString($distrib) . "</distrib>
 				<date>{$testdate}</date>
 				<wine>" . $this->prepareString($winever) . "</wine>
-				<instal>{$installs}</instal>
-				<run>{$runs}</run>
+				<install>";
+				if ($installs=="Yes"){
+					$ret .= "1";
+				} else {
+					$ret .= "0";
+				}
+		$ret .= "</install>
+				<run>";
+				if ($runs=="Yes"){
+					$ret .= "1";
+				} else {
+					$ret .= "0";
+				}
+		$ret .= "</run>
 				<rating>{$rating}</rating>
 			</test>";
 		return $ret;
@@ -186,7 +198,6 @@ Class XMLExport {
 	function prepareString($string, $len = 0, $strip_html = 1){
 		/* This function will prepare string for xml format
 		 */
-			
 		$string = trim($string);
 				
 		if ($strip_html==1){
@@ -194,21 +205,15 @@ Class XMLExport {
 			//Remove stupid whitespaces
 			$string = preg_replace("/\s+/", " ", $string);
 		} else {
-			$string = strip_tags($string, "<ul><li><b><i>");
+			$string = strip_tags($string, "<ul><li><b><i><strong>");
 			$string = preg_replace('/(http:\/\/[^\s]+)/', '<a href="$1">$1</a>', $string);
 			$string = nl2br ($string);
-			$string = preg_replace("/(<br \/>\s+)+/", "<br /><br />", $string);
-			$string = preg_replace("/<br \/><br \/>$/", "", $string);
-
 		}
 
 		if ($len > 0)
 			$string = substr($string, 0, $len);
 		
-
 		$string = htmlentities($string);
-		
-		
 		return $string;
 	}
 
