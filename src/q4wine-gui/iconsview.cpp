@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -15,16 +15,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "config.h"
@@ -40,7 +30,6 @@ IconsView::IconsView(QString tmpDir, QWidget * parent, Qt::WFlags f) : QDialog(p
 	tmp.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
 	QFileInfoList list = tmp.entryInfoList();
 
-	QListWidgetItem *iconItem;
 	lstIcons->clear();
 	lstIcons->setSelectionMode(QAbstractItemView::SingleSelection);
 
@@ -48,9 +37,10 @@ IconsView::IconsView(QString tmpDir, QWidget * parent, Qt::WFlags f) : QDialog(p
 	for (int i = 0; i < list.size(); ++i) {
 		QFileInfo fileInfo = list.at(i);
 		if (fileInfo.fileName().right(3)=="png"){
-			iconItem = new QListWidgetItem(lstIcons, 0);
+			std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(lstIcons, 0));
 			iconItem->setText(fileInfo.fileName());
 			iconItem->setIcon(QIcon(fileInfo.filePath()));
+			iconItem.release();
 		}
 	}
 
@@ -85,7 +75,6 @@ void IconsView::cmdOk_Click(){
 		sourceFile.append("/");
 		sourceFile.append(lstIcons->currentItem()->text());
 
-
 		if (cbDefaultExport->checkState()==Qt::Checked){
 		saveFile.clear();
 		saveFile.append(QDir::homePath());
@@ -95,7 +84,6 @@ void IconsView::cmdOk_Click(){
 		saveFile.append(lstIcons->currentItem()->text());
 
 		saveFileName=lstIcons->currentItem()->text();
-
 
 		QMessageBox message;
 			message.setText(tr("Sorry. It seems file already exists.<br>Replace existent or rename current?"));
@@ -174,4 +162,3 @@ void IconsView::cmdOk_Click(){
 		return;
 	}
 }
-

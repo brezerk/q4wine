@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -15,41 +15,13 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
+
+#include "memory"
 
 #include <QApplication>
 #include <QTranslator>
 #include <QMessageBox>
-
-#include <QtGui>
-#include <QSqlError>
-#include <QStringList>
-#include <QSqlQuery>
-#include <QSqlRelation>
-#include <QSqlRelationalTableModel>
-
-#include <QTimer>
-#include <QTableWidget>
-#include <QTabWidget>
-#include <QLabel>
-#include <QString>
-#include <QMessageBox>
-#include <QChar>
-#include <QSize>
-#include <QToolBar>
-#include <QIcon>
-#include <QGroupBox>
-#include <QLocale>
 
 #include "mainwindow.h"
 
@@ -65,17 +37,13 @@
 
 int main(int argc, char *argv[])
 {
-	DataBase db;
-	//QApplication app(argc, argv);
 	QtSingleApplication app(argc, argv);
 	if (app.sendMessage(QObject::tr("Only one instance of %1 can be runned at same time.").arg(APP_SHORT_NAME)))
 		return 0;
 
-	QTranslator*  qtt = new QTranslator ( 0 );
-	if (qtt == NULL){
-		qDebug()<<"[EE] Can't create QTranslator";
-		return -1;
-	}
+	DataBase db;
+	QTranslator  qtt;
+
 	QSettings settings(APP_SHORT_NAME, "default");
 
 	QString i18nPath;
@@ -133,12 +101,12 @@ int main(int argc, char *argv[])
 	}
 
 	if (!lang.isNull()){
-		if (qtt->load(lang, i18nPath)){
-			app.installTranslator( qtt );
+		if (qtt.load(lang, i18nPath)){
+			app.installTranslator(&qtt );
 		} else {
 			qDebug()<<"[EE] Can't open user selected translation";
-			if (qtt->load("en_us.qm", i18nPath)){
-				app.installTranslator( qtt );
+			if (qtt.load("en_us.qm", i18nPath)){
+				app.installTranslator(&qtt );
 			} else {
 				qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
 			}
@@ -149,12 +117,9 @@ int main(int argc, char *argv[])
 
 	if (!settings.contains ("configure")){
 		//If no key, we gona to start an First Run Wizard to setup q4wine
-		Wizard *firstSetupWizard = new Wizard(1);
-		if (firstSetupWizard == NULL){
-			qDebug()<<"[EE] Can't create Wizard";
-			return -1;
-		}
-		if (firstSetupWizard->exec()==QDialog::Accepted){
+		Wizard firstSetupWizard(1);
+
+		if (firstSetupWizard.exec()==QDialog::Accepted){
 			QString rootConfPath;
 			QDir dir;
 			rootConfPath.clear();

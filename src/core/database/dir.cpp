@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -15,23 +15,13 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "dir.h"
 
 Dir::Dir()
 {
-  	this->_TABLE="dir";
+	this->_TABLE="dir";
 }
 
 QList<QStringList> Dir::getFieldsByPrefixId(const QString prefix_id) const{
@@ -142,7 +132,7 @@ QString Dir::getId(const QString dir_name, const QString prefix_name) const{
 	if (query.exec()){
 		query.first();
 		if (query.isValid()){
-		int i=0;
+			int i=0;
 			while (query.value(i).isValid()){
 				value.append(query.value(i).toString());
 				i++;
@@ -155,7 +145,7 @@ QString Dir::getId(const QString dir_name, const QString prefix_name) const{
 }
 
 bool Dir::renameDir(const QString dir_name, const QString prefix_name, const QString new_dir_name) const{
-  	QSqlQuery query;
+	QSqlQuery query;
 	query.prepare("UPDATE dir SET name=:new_dir_name WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
 	query.bindValue(":prefix_name", prefix_name);
 	query.bindValue(":new_dir_name", new_dir_name);

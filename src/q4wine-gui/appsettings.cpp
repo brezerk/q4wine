@@ -30,7 +30,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
 	// Getting corelib calss pointer
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib = (corelib *)CoreLibClassPointer(true);
+	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
 	setupUi(this);
 
@@ -78,20 +78,15 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 		chShowTrarey->setCheckState(Qt::Unchecked);
 	}
 
-
 	listThemesView->clear();
 
-	QListWidgetItem *iconItem;
-	iconItem = new QListWidgetItem(listThemesView, 0);
+	std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(listThemesView, 0));
 	iconItem->setText("Default [Aughtor: Xavier Corredor Llano (xavier.corredor.llano@gmail.com); License: GPL v.2.1]");
 	iconItem->setIcon(QIcon(":data/wine.png"));
 	iconItem->setToolTip("Default");
 	listThemesView->setSelectionMode(QAbstractItemView::SingleSelection);
 
-
-
-	QString themeDir;
-	themeDir.clear();
+	QString themeDir="";
 	themeDir.append(QDir::homePath());
 	themeDir.append("/.config/");
 	themeDir.append(APP_SHORT_NAME);
@@ -103,7 +98,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	loadThemeIcons(settings.value("theme").toString());
 
 	if (settings.value("theme").toString()=="Default"){
-		listThemesView->setCurrentItem(iconItem);
+		listThemesView->setCurrentItem(iconItem.release());
 	}
 
 	themeDir.clear();
@@ -145,18 +140,18 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	settings.beginGroup("quickmount");
 
 	switch (settings.value("type").toInt()){
-		case 0:
+ case 0:
 		//Fix for field update.
 		radioDefaultGui->setChecked(true);
 		radioDefault->setChecked(true);
 		break;
-		case 1:
+ case 1:
 		radioDefaultGui->setChecked(true);
 		break;
-		case 2:
+ case 2:
 		radioFuse->setChecked(true);
 		break;
-		case 3:
+ case 3:
 		radioEmbedded->setChecked(true);
 		break;
 	}
@@ -212,447 +207,435 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 }
 
 bool AppSettings::eventFilter(QObject *obj, QEvent *event){
-	  /*
+	/*
 			function for displaying file\dir dialog
 	  */
 
-	  if (event->type() == QEvent::MouseButtonPress) {
+	if (event->type() == QEvent::MouseButtonPress) {
 
-			QString file;
+		QString file="";
 
-			if (obj->objectName().right(3)=="Bin"){
-				  file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
+		if (obj->objectName().right(3)=="Bin"){
+			file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
+		} else {
+			file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
+		}
+
+		if (!file.isEmpty()){
+			QString a="";
+
+			a.append("txt");
+			a.append(obj->objectName().right(obj->objectName().length()-6));
+
+			std::auto_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
+
+			if (lineEdit.get()){
+				lineEdit->setText(file);
 			} else {
-				  file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
+				qDebug("Error getting lineEdit object");
 			}
 
-			if (!file.isEmpty()){
-				  QString a;
+			lineEdit.release();
+		}
+	}
 
-				  a.append("txt");
-				  a.append(obj->objectName().right(obj->objectName().length()-6));
-
-				  QLineEdit *lineEdit = findChild<QLineEdit *>(a);
-
-				  if (lineEdit){
-						lineEdit->setText(file);
-				  } else {
-						qDebug("Error");
-				  }
-			}
-	  }
-
-	  return FALSE;
+	return FALSE;
 }
 
 void AppSettings::comboProxyType_indexChanged(QString text){
-	  if (text==tr("No Proxy")){
-			txtProxyHost->setEnabled(FALSE);
-			txtProxyPort->setEnabled(FALSE);
-			txtProxyUser->setEnabled(FALSE);
-			txtProxyPass->setEnabled(FALSE);
-	  } else {
-			txtProxyHost->setEnabled(TRUE);
-			txtProxyPort->setEnabled(TRUE);
-			txtProxyUser->setEnabled(TRUE);
-			txtProxyPass->setEnabled(TRUE);
-	  }
+	if (text==tr("No Proxy")){
+		txtProxyHost->setEnabled(FALSE);
+		txtProxyPort->setEnabled(FALSE);
+		txtProxyUser->setEnabled(FALSE);
+		txtProxyPass->setEnabled(FALSE);
+	} else {
+		txtProxyHost->setEnabled(TRUE);
+		txtProxyPort->setEnabled(TRUE);
+		txtProxyUser->setEnabled(TRUE);
+		txtProxyPass->setEnabled(TRUE);
+	}
 
-	  return;
+	return;
 }
 
 void AppSettings::getLangs(){
+	QString themeDir="";
+	themeDir.append(APP_PREF);
+	themeDir.append("/share/");
+	themeDir.append(APP_SHORT_NAME);
+	themeDir.append("/i18n");
 
-	  QString themeDir;
+	QDir tmp(themeDir);
+	tmp.setFilter(QDir::Files | QDir::NoSymLinks);
 
-	  themeDir.clear();
-	  themeDir.append(APP_PREF);
-	  themeDir.append("/share/");
-	  themeDir.append(APP_SHORT_NAME);
-	  themeDir.append("/i18n");
+	QFileInfoList list = tmp.entryInfoList();
 
-	  QDir tmp(themeDir);
-	  tmp.setFilter(QDir::Files | QDir::NoSymLinks);
-
-	  QFileInfoList list = tmp.entryInfoList();
-
-	  for (int i = 0; i < list.size(); ++i) {
-			QFileInfo fileInfo = list.at(i);
-			if (fileInfo.fileName().right(2)=="qm")
-				  comboLangs->addItem(fileInfo.fileName());
-	  }
-
-	  return;
+	for (int i = 0; i < list.size(); ++i) {
+		QFileInfo fileInfo = list.at(i);
+		if (fileInfo.fileName().right(2)=="qm")
+			comboLangs->addItem(fileInfo.fileName());
+	}
+	return;
 }
 
 void AppSettings::getThemes(QString selTheme, QString themeDir){
-	  //Getting installed themes
+	//Getting installed themes
 
-	  QString aughtor;
-	  QString license;
+	QString aughtor="", license="";
 
-	  QDir tmp(themeDir);
-	  tmp.setFilter(QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
-	  QFileInfoList list = tmp.entryInfoList();
+	QDir tmp(themeDir);
+	tmp.setFilter(QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
+	QFileInfoList list = tmp.entryInfoList();
 
-	  QListWidgetItem *iconItem;
+	// Getting converted icons from temp directory
+	for (int i = 0; i < list.size(); ++i) {
+		QFileInfo fileInfo = list.at(i);
+		std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(listThemesView, 0));
 
-	  // Getting converted icons from temp directory
-	  for (int i = 0; i < list.size(); ++i) {
-			QFileInfo fileInfo = list.at(i);
-			iconItem = new QListWidgetItem(listThemesView, 0);
+		QFile file(QString("%1/%2/theme.info").arg(themeDir).arg(fileInfo.fileName()));
+		if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+			aughtor = file.readLine();
+			aughtor.remove ( "\n" );
+			license = file.readLine();
+		}
 
+		if ((!aughtor.isEmpty()) and (!license.isEmpty())){
+			iconItem->setText(QString("%1 [%2; %3]").arg(fileInfo.fileName()).arg(aughtor).arg(license));
+		} else {
+			iconItem->setText(fileInfo.fileName());
+		}
+		iconItem->setToolTip(QString("%1/%2").arg(themeDir).arg(fileInfo.fileName()));
+		iconItem->setIcon(QIcon(QString("%1/%2/data/wine.png").arg(themeDir).arg(fileInfo.fileName())));
 
-			QFile file(QString("%1/%2/theme.info").arg(themeDir).arg(fileInfo.fileName()));
-			if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-				  aughtor = file.readLine();
-				  aughtor.remove ( "\n" );
-				  license = file.readLine();
+		if (!selTheme.isNull()){
+			if (selTheme==fileInfo.filePath()){
+				//Setting selection to selected theme
+				listThemesView->setCurrentItem(iconItem.release());
+				//Loading pixmaps from theme
+				loadThemeIcons(fileInfo.filePath());
 			}
+		}
+	}
 
-			if ((!aughtor.isEmpty()) and (!license.isEmpty())){
-				  iconItem->setText(QString("%1 [%2; %3]").arg(fileInfo.fileName()).arg(aughtor).arg(license));
-			} else {
-				  iconItem->setText(fileInfo.fileName());
-			}
-			iconItem->setToolTip(QString("%1/%2").arg(themeDir).arg(fileInfo.fileName()));
-			iconItem->setIcon(QIcon(QString("%1/%2/data/wine.png").arg(themeDir).arg(fileInfo.fileName())));
-
-			if (!selTheme.isNull()){
-				  if (selTheme==fileInfo.filePath()){
-
-						//Setting selection to selected theme
-						listThemesView->setCurrentItem(iconItem);
-
-						//Loading pixmaps from theme
-						loadThemeIcons(fileInfo.filePath());
-				  }
-			}
-	  }
-
-	  return;
+	return;
 }
 
 
 void AppSettings::loadThemeIcons(QString themePath){
-	  QPixmap pixmap;
+	QPixmap pixmap;
 
-	  if (!pixmap.load(QString("%1/data/exec.png").arg(themePath))){
-			pixmap.load(":data/exec.png");
-	  }
+	if (!pixmap.load(QString("%1/data/exec.png").arg(themePath))){
+		pixmap.load(":data/exec.png");
+	}
 
-	  lblLogo->setPixmap(pixmap);
+	lblLogo->setPixmap(pixmap);
 
+	cmdGetWineBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetWineServerBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetWineLoaderBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetWineLibs->setIcon(loadIcon("data/folder.png", themePath));
 
-	  cmdGetWineBin->setIcon(loadIcon("data/folder.png", themePath));
-	  cmdGetWineServerBin->setIcon(loadIcon("data/folder.png", themePath));
-	  cmdGetWineLoaderBin->setIcon(loadIcon("data/folder.png", themePath));
-	  cmdGetWineLibs->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetTarBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetMountBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetUmountBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetSudoBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetGuiSudoBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetNiceBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetReniceBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetShBin->setIcon(loadIcon("data/folder.png", themePath));
 
-	  cmdGetTarBin->setIcon(loadIcon("data/folder.png", themePath));
-	  cmdGetMountBin->setIcon(loadIcon("data/folder.png", themePath));
-	  cmdGetUmountBin->setIcon(loadIcon("data/folder.png", themePath));
-	  cmdGetSudoBin->setIcon(loadIcon("data/folder.png", themePath));
-	  cmdGetGuiSudoBin->setIcon(loadIcon("data/folder.png", themePath));
-	  cmdGetNiceBin->setIcon(loadIcon("data/folder.png", themePath));
-	  cmdGetReniceBin->setIcon(loadIcon("data/folder.png", themePath));
-	  cmdGetShBin->setIcon(loadIcon("data/folder.png", themePath));
-
-	  cmdGetConsoleBin->setIcon(loadIcon("data/folder.png", themePath));
-	  cmdGetWrestoolBin->setIcon(loadIcon("data/folder.png", themePath));
-	  cmdGetIcotoolBin->setIcon(loadIcon("data/folder.png", themePath));
-
-	  return;
+	cmdGetConsoleBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetWrestoolBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetIcotoolBin->setIcon(loadIcon("data/folder.png", themePath));
+	return;
 }
 
 
 QIcon AppSettings::loadIcon(QString iconName, QString themePath){
-	  // Function tryes to load icon image from theme dir
-	  // If it fails -> load default from rsource file
+	// Function tryes to load icon image from theme dir
+	// If it fails -> load default from rsource file
 
-	  QIcon icon;
+	QIcon icon;
 
-	  if ((!themePath.isEmpty()) and (themePath!="Default")){
-			icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
-			if (icon.isNull()){
-				  icon.addFile(QString(":/%1").arg(iconName));
-			}
-	  } else {
+	if ((!themePath.isEmpty()) and (themePath!="Default")){
+		icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
+		if (icon.isNull()){
 			icon.addFile(QString(":/%1").arg(iconName));
-	  }
+		}
+	} else {
+		icon.addFile(QString(":/%1").arg(iconName));
+	}
 
-	  return icon;
+	return icon;
 }
 
-
 void AppSettings::cmdCancel_Click(){
-	  reject();
-	  return;
+	reject();
+	return;
 }
 
 void AppSettings::cmdOk_Click(){
 
-	  if (!checkEntry(txtWineBin->text(), "wine"))
-			return;
+	if (!checkEntry(txtWineBin->text(), "wine"))
+		return;
 
-	  if (!checkEntry(txtWineServerBin->text(), "wine server"))
-			return;
+	if (!checkEntry(txtWineServerBin->text(), "wine server"))
+		return;
 
-	  if (!checkEntry(txtWineLoaderBin->text(), "wine loader"))
-			return;
+	if (!checkEntry(txtWineLoaderBin->text(), "wine loader"))
+		return;
 
-	  if (!checkEntry(txtWineLibs->text(), "wine library", FALSE))
-			return;
+	if (!checkEntry(txtWineLibs->text(), "wine library", FALSE))
+		return;
 
-	  if (!checkEntry(txtTarBin->text(), "tar"))
-			return;
+	if (!checkEntry(txtTarBin->text(), "tar"))
+		return;
 
-	  if (!checkEntry(txtMountBin->text(), "mount"))
-			return;
+	if (!checkEntry(txtMountBin->text(), "mount"))
+		return;
 
-	  if (!checkEntry(txtUmountBin->text(), "umount"))
-			return;
+	if (!checkEntry(txtUmountBin->text(), "umount"))
+		return;
 
-	  if (!checkEntry(txtSudoBin->text(), "sudo"))
-			return;
+	if (!checkEntry(txtSudoBin->text(), "sudo"))
+		return;
 
-	  if (!checkEntry(txtGuiSudoBin->text(), "gui_sudo"))
-			return;
+	if (!checkEntry(txtGuiSudoBin->text(), "gui_sudo"))
+		return;
 
-	  if (!checkEntry(txtUmountBin->text(), "nice"))
-			return;
+	if (!checkEntry(txtUmountBin->text(), "nice"))
+		return;
 
-	  if (!checkEntry(txtUmountBin->text(), "renice"))
-			return;
+	if (!checkEntry(txtUmountBin->text(), "renice"))
+		return;
 
-	  if (!checkEntry(txtUmountBin->text(), "sh"))
-			return;
+	if (!checkEntry(txtUmountBin->text(), "sh"))
+		return;
 
-	  if (!checkEntry(txtConsoleBin->text(), "console"))
-			return;
+	if (!checkEntry(txtConsoleBin->text(), "console"))
+		return;
 
 #ifdef WITH_ICOUTILS
-	  if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
-			return;
+	if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
+		return;
 
-	  if (!checkEntry(txtIcotoolBin->text(), "icotool"))
-			return;
+	if (!checkEntry(txtIcotoolBin->text(), "icotool"))
+		return;
 #endif
 
-	  if (comboProxyType->currentText()!=tr("No Proxy")){
-			if (txtProxyHost->text().isEmpty()){
-				  QMessageBox::warning(this, tr("Error"), tr("Sorry, specify proxy host."));
-				  return;
-			}
-			if (txtProxyPort->text().isEmpty()){
-				  QMessageBox::warning(this, tr("Error"), tr("Sorry, specify proxy port."));
-				  return;
-			}
-	  }
+	if (comboProxyType->currentText()!=tr("No Proxy")){
+		if (txtProxyHost->text().isEmpty()){
+			QMessageBox::warning(this, tr("Error"), tr("Sorry, specify proxy host."));
+			return;
+		}
+		if (txtProxyPort->text().isEmpty()){
+			QMessageBox::warning(this, tr("Error"), tr("Sorry, specify proxy port."));
+			return;
+		}
+	}
 
-	  QSettings settings(APP_SHORT_NAME, "default");
+	QSettings settings(APP_SHORT_NAME, "default");
 
-	  settings.beginGroup("wine");
-	  settings.setValue("WineBin", txtWineBin->text());
-	  settings.setValue("ServerBin", txtWineServerBin->text());
-	  settings.setValue("LoaderBin", txtWineLoaderBin->text());
-	  settings.setValue("WineLibs", txtWineLibs->text());
-	  settings.endGroup();
+	settings.beginGroup("wine");
+	settings.setValue("WineBin", txtWineBin->text());
+	settings.setValue("ServerBin", txtWineServerBin->text());
+	settings.setValue("LoaderBin", txtWineLoaderBin->text());
+	settings.setValue("WineLibs", txtWineLibs->text());
+	settings.endGroup();
 
-	  settings.beginGroup("app");
-	  if (chShowTrarey->checkState()==Qt::Checked) {
-			settings.setValue("showTrareyIcon", 1);
-	  } else {
-			settings.setValue("showTrareyIcon", 0);
-	  }
+	settings.beginGroup("app");
+	if (chShowTrarey->checkState()==Qt::Checked) {
+		settings.setValue("showTrareyIcon", 1);
+	} else {
+		settings.setValue("showTrareyIcon", 0);
+	}
 
-	  if (listThemesView->currentItem()){
-			settings.setValue("theme", listThemesView->currentItem()->toolTip());
-	  } else {
-			settings.setValue("theme", "Default");
-	  }
+	if (listThemesView->currentItem()){
+		settings.setValue("theme", listThemesView->currentItem()->toolTip());
+	} else {
+		settings.setValue("theme", "Default");
+	}
 
 
-	  if (comboLangs->currentText()==tr("System Default")){
-			settings.setValue("lang", "");
-	  } else {
-			settings.setValue("lang", comboLangs->currentText());
-	  }
+	if (comboLangs->currentText()==tr("System Default")){
+		settings.setValue("lang", "");
+	} else {
+		settings.setValue("lang", comboLangs->currentText());
+	}
 
-	  settings.endGroup();
-	  settings.beginGroup("system");
-	  settings.setValue("tar", txtTarBin->text());
-	  settings.setValue("mount", txtMountBin->text());
-	  settings.setValue("umount", txtUmountBin->text());
-	  settings.setValue("sudo", txtSudoBin->text());
-	  settings.setValue("gui_sudo", txtGuiSudoBin->text());
-	  settings.setValue("nice", txtNiceBin->text());
-	  settings.setValue("renice", txtReniceBin->text());
-	  settings.setValue("sh", txtShBin->text());
-	  settings.endGroup();
+	settings.endGroup();
+	settings.beginGroup("system");
+	settings.setValue("tar", txtTarBin->text());
+	settings.setValue("mount", txtMountBin->text());
+	settings.setValue("umount", txtUmountBin->text());
+	settings.setValue("sudo", txtSudoBin->text());
+	settings.setValue("gui_sudo", txtGuiSudoBin->text());
+	settings.setValue("nice", txtNiceBin->text());
+	settings.setValue("renice", txtReniceBin->text());
+	settings.setValue("sh", txtShBin->text());
+	settings.endGroup();
 
-	  settings.beginGroup("console");
-	  settings.setValue("bin", txtConsoleBin->text());
-	  settings.setValue("args", txtConsoleArgs->text());
-	  settings.endGroup();
+	settings.beginGroup("console");
+	settings.setValue("bin", txtConsoleBin->text());
+	settings.setValue("args", txtConsoleArgs->text());
+	settings.endGroup();
 #ifdef WITH_ICOUTILS
-	  settings.beginGroup("icotool");
-	  settings.setValue("wrestool", txtWrestoolBin->text());
-	  settings.setValue("icotool", txtIcotoolBin->text());
-	  settings.endGroup();
+	settings.beginGroup("icotool");
+	settings.setValue("wrestool", txtWrestoolBin->text());
+	settings.setValue("icotool", txtIcotoolBin->text());
+	settings.endGroup();
 #endif
 
-	  settings.beginGroup("quickmount");
-	  if (radioDefault->isChecked()){
-		  settings.setValue("type", 0);
-		  if (txtMountString->text().isEmpty()){
+	settings.beginGroup("quickmount");
+	if (radioDefault->isChecked()){
+		settings.setValue("type", 0);
+		if (txtMountString->text().isEmpty()){
 			txtMountString->setText(CoreLib->getMountString(0));
-		  }
+		}
 
-		  if (txtMountImageString->text().isEmpty()){
+		if (txtMountImageString->text().isEmpty()){
 			txtMountImageString->setText(CoreLib->getMountImageString(0));
-		  }
+		}
 
-		  if (txtUmountString->text().isEmpty()){
+		if (txtUmountString->text().isEmpty()){
 			txtUmountString->setText(CoreLib->getUmountString(0));
-		  }
-	  }
+		}
+	}
 
-	  if (radioDefaultGui->isChecked()){
-		  settings.setValue("type", 1);
-		  if (txtMountString->text().isEmpty()){
+	if (radioDefaultGui->isChecked()){
+		settings.setValue("type", 1);
+		if (txtMountString->text().isEmpty()){
 			txtMountString->setText(CoreLib->getMountString(1));
-		  }
+		}
 
-		  if (txtMountImageString->text().isEmpty()){
+		if (txtMountImageString->text().isEmpty()){
 			txtMountImageString->setText(CoreLib->getMountImageString(1));
-		  }
+		}
 
-		  if (txtUmountString->text().isEmpty()){
+		if (txtUmountString->text().isEmpty()){
 			txtUmountString->setText(CoreLib->getUmountString(1));
-		  }
-	  }
+		}
+	}
 
-	  if (radioFuse->isChecked()){
-		  settings.setValue("type", 2);
-		  if (txtMountString->text().isEmpty()){
+	if (radioFuse->isChecked()){
+		settings.setValue("type", 2);
+		if (txtMountString->text().isEmpty()){
 			txtMountString->setText(CoreLib->getMountString(2));
-		  }
+		}
 
-		  if (txtMountImageString->text().isEmpty()){
+		if (txtMountImageString->text().isEmpty()){
 			txtMountImageString->setText(CoreLib->getMountImageString(2));
-		  }
+		}
 
-		  if (txtUmountString->text().isEmpty()){
+		if (txtUmountString->text().isEmpty()){
 			txtUmountString->setText(CoreLib->getUmountString(2));
-		  }
-	  }
+		}
+	}
 
-	  if (radioEmbedded->isChecked()){
-		  QString format;
-		  settings.setValue("type", 3);
-		  if (txtMountString->text().isEmpty()){
+	if (radioEmbedded->isChecked()){
+		QString format;
+		settings.setValue("type", 3);
+		if (txtMountString->text().isEmpty()){
 			txtMountString->setText(CoreLib->getMountString(3));
-		  }
+		}
 
-		  if (txtMountImageString->text().isEmpty()){
+		if (txtMountImageString->text().isEmpty()){
 			txtMountImageString->setText(CoreLib->getMountImageString(3));
-		  }
+		}
 
-		  if (txtUmountString->text().isEmpty()){
+		if (txtUmountString->text().isEmpty()){
 			txtUmountString->setText(CoreLib->getUmountString(3));
-		  }
-	  }
+		}
+	}
 
-	  settings.setValue("mount_drive_string", txtMountString->text());
-	  settings.setValue("mount_image_string", txtMountImageString->text());
-	  settings.setValue("umount_string", txtUmountString->text());
+	settings.setValue("mount_drive_string", txtMountString->text());
+	settings.setValue("mount_image_string", txtMountImageString->text());
+	settings.setValue("umount_string", txtUmountString->text());
 
-	  settings.endGroup();
+	settings.endGroup();
 
-	  settings.beginGroup("network");
-	  settings.setValue("host", txtProxyHost->text());
-	  settings.setValue("port", txtProxyPort->text());
-	  settings.setValue("user", txtProxyUser->text());
-	  settings.setValue("pass", txtProxyPass->text());
-	  if (comboProxyType->currentText()==tr("No Proxy")){
-			settings.setValue("type", 0);
-	  } else {
-			if (comboProxyType->currentText()=="HTTP"){
-				  settings.setValue("type", 1);
-			} else {
-				  settings.setValue("type", 2);
-			}
-	  }
+	settings.beginGroup("network");
+	settings.setValue("host", txtProxyHost->text());
+	settings.setValue("port", txtProxyPort->text());
+	settings.setValue("user", txtProxyUser->text());
+	settings.setValue("pass", txtProxyPass->text());
+	if (comboProxyType->currentText()==tr("No Proxy")){
+		settings.setValue("type", 0);
+	} else {
+		if (comboProxyType->currentText()=="HTTP"){
+			settings.setValue("type", 1);
+		} else {
+			settings.setValue("type", 2);
+		}
+	}
 
-	  settings.endGroup();
+	settings.endGroup();
 
-	  settings.beginGroup("advanced");
-	  if (chOpenRunDialog->isChecked()){
-		  settings.setValue("openRunDialog", 1);
-	  } else {
-		  settings.setValue("openRunDialog", 0);
-	  }
-	  settings.endGroup();
+	settings.beginGroup("advanced");
+	if (chOpenRunDialog->isChecked()){
+		settings.setValue("openRunDialog", 1);
+	} else {
+		settings.setValue("openRunDialog", 0);
+	}
+	settings.endGroup();
 
-
-	  accept();
-	  return;
+	accept();
+	return;
 }
 
 bool AppSettings::checkEntry(QString fileName, QString info, bool isFile){
-	  /*
+	/*
 	  *	This function check user entry
 	  */
 
-	  if (fileName.isEmpty()){
+	if (fileName.isEmpty()){
+		switch (isFile){
+  case FALSE:
+			QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 directory.").arg(info));
+			break;
+  case TRUE:
+			QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 binary.").arg(info));
+			break;
+		}
+		return FALSE;
+	} else {
+		if (!QFile::exists(fileName)){
 			switch (isFile){
-			case FALSE:
-				  QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 directory.").arg(info));
-				  break;
-			case TRUE:
-				  QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 binary.").arg(info));
-				  break;
+   case FALSE:
+				QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory not exists.").arg(info));
+				break;
+   case TRUE:
+				QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary not exists.").arg(info));
+				break;
 			}
 			return FALSE;
-	  } else {
-			if (!QFile::exists(fileName)){
-				  switch (isFile){
-				  case FALSE:
-						QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory not exists.").arg(info));
-						break;
-				  case TRUE:
-						QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary not exists.").arg(info));
-						break;
-				  }
-				  return FALSE;
-			}
-	  }
+		}
+	}
 
-	  return TRUE;
+	return TRUE;
 }
 
 void AppSettings::cmdHelp_Click(){
-	QString rawurl;
+	QString rawurl="";
 	switch (twbGeneral->currentIndex()){
-	case 0:
+ case 0:
 		rawurl = "11-settings.html#general";
-	break;
-	case 1:
+		break;
+ case 1:
 		rawurl = "11-settings.html#sysutils";
-	break;
-	case 2:
+		break;
+ case 2:
 		rawurl = "11-settings.html#userutils";
-	break;
-	case 3:
+		break;
+ case 3:
 		rawurl = "11-settings.html#customization";
-	break;
-	case 4:
+		break;
+ case 4:
 		rawurl = "11-settings.html#network";
-	break;
-	case 5:
+		break;
+ case 5:
 		rawurl = "11-settings.html#qmount";
-	break;
+		break;
 	}
 
 	CoreLib->openHelpUrl(rawurl);
@@ -681,15 +664,15 @@ void AppSettings::radioDefaultGui_toggled(bool state){
 
 void AppSettings::radioFuse_toggled(bool state){
 	if (!state)
-	   return;
+		return;
 
 	if (CoreLib->getWhichOut("fusermount").isEmpty()){
-	   radioDefault->setChecked(true);
-	   return;
+		radioDefault->setChecked(true);
+		return;
 	}
 	if (CoreLib->getWhichOut("fuseiso").isEmpty()){
-	   radioDefault->setChecked(true);
-	   return;
+		radioDefault->setChecked(true);
+		return;
 	}
 
 	txtMountString->setText(CoreLib->getMountString(2));
@@ -704,8 +687,8 @@ void AppSettings::radioEmbedded_toggled(bool state){
 
 #ifdef WITH_EMBEDDED_FUSEISO
 	if (CoreLib->getWhichOut("fusermount").isEmpty()){
-	   radioDefault->setChecked(true);
-	   return;
+		radioDefault->setChecked(true);
+		return;
 	}
 
 	txtMountString->setText(CoreLib->getMountString(3));

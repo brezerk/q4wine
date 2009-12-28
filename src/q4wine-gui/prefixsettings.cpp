@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -15,16 +15,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "prefixsettings.h"
@@ -46,14 +36,11 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
 	// Getting corelib calss pointer
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib = (corelib *)CoreLibClassPointer(true);
-
-	// Creating database classes
-	db_prefix = new Prefix();
+	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
 	this->loadThemeIcons(this->CoreLib->getSetting("app", "theme", false).toString());
 
-	QStringList result = db_prefix->getFieldsByPrefixName(prefix_name);
+	QStringList result = db_prefix.getFieldsByPrefixName(prefix_name);
 	if (result.at(0) == "-1")
 		return;
 
@@ -117,7 +104,6 @@ void PrefixSettings::loadThemeIcons(QString themePath){
 	cmdGetWineServerBin->setIcon(loadIcon("data/folder.png", themePath));
 	cmdGetWineLoaderBin->setIcon(loadIcon("data/folder.png", themePath));
 	cmdGetWineLibs->setIcon(loadIcon("data/folder.png", themePath));
-
 	cmdGetMountPoint->setIcon(loadIcon("data/folder.png", themePath));
 	cmdGetPrefixPath->setIcon(loadIcon("data/folder.png", themePath));
 
@@ -155,13 +141,13 @@ void PrefixSettings::cmdOk_Click(){
 	}
 
 	if (prefix_name!=txtPrefixName->text()){
-		if (db_prefix->isExistsByName(txtPrefixName->text())){
+		if (db_prefix.isExistsByName(txtPrefixName->text())){
 			QMessageBox::warning(this, tr("Error"), tr("Sorry, but prefix named %1 already exists.").arg(txtPrefixName->text()));
 			return;
 		}
 	}
 
-	if (!db_prefix->updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name))
+	if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name))
 		reject();
 
 	accept();
@@ -175,7 +161,7 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 
 	if (event->type() == QEvent::MouseButtonPress) {
 
-		QString file;
+		QString file="";
 
 		if (obj->objectName().right(3)=="Bin"){
 			file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*.*)");
@@ -184,18 +170,20 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 		}
 
 		if (!file.isEmpty()){
-			QString a;
+			QString a="";
 
 			a.append("txt");
 			a.append(obj->objectName().right(obj->objectName().length()-6));
 
-			QLineEdit *lineEdit = findChild<QLineEdit *>(a);
+			std::auto_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
 
-			if (lineEdit){
+			if (lineEdit.get()){
 				lineEdit->setText(file);
 			} else {
 				qDebug("Error");
 			}
+
+			lineEdit.release();
 		}
 	}
 

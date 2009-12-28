@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -15,16 +15,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "q4wine-cli/main.h"
@@ -40,14 +30,14 @@ int main(int argc, char *argv[])
 	//! This is need for libq4wine-core.so import;
 	typedef void *CoreLibPrototype (bool);
 	CoreLibPrototype *CoreLibClassPointer;
-	corelib *CoreLib;
+	std::auto_ptr<corelib> CoreLib;
 
 	//Classes
 	DataBase db;
-	Prefix *db_prefix;
-	Dir *db_dir;
-	Icon *db_icon;
-	Image *db_image;
+	Prefix db_prefix;
+	Dir db_dir;
+	Icon db_icon;
+	Image db_image;
 
 	if (!initDb())
 		return -1;
@@ -67,16 +57,9 @@ int main(int argc, char *argv[])
 
 	// Getting corelib calss pointer
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib = (corelib *)CoreLibClassPointer(false);
+	CoreLib.reset((corelib *)CoreLibClassPointer(false));
 
-	// Creating database classes
-	db_dir = new Dir();
-	db_icon = new Icon();
-	db_image = new Image();
-	db_prefix = new Prefix();
-
-
-	QTranslator*  qtt = new QTranslator ( 0 );
+	QTranslator qtt;
 
 	QString i18nPath;
 	i18nPath.clear();
@@ -124,12 +107,12 @@ int main(int argc, char *argv[])
 	}
 
 	if (!lang.isNull()){
-		if (qtt->load(lang, i18nPath)){
-			app.installTranslator( qtt );
+		if (qtt.load(lang, i18nPath)){
+			app.installTranslator( &qtt );
 		} else {
 			qDebug()<<"[EE] Can't open user selected translation";
-			if (qtt->load("en_us.qm", i18nPath)){
-				app.installTranslator( qtt );
+			if (qtt.load("en_us.qm", i18nPath)){
+				app.installTranslator( &qtt );
 			} else {
 				qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
 			}
@@ -158,7 +141,7 @@ int main(int argc, char *argv[])
 			i++;
 			if (i<argc)
 				_PREFIX=app.arguments().at(i);
-			if (!db_prefix->isExistsByName(_PREFIX)){
+			if (!db_prefix.isExistsByName(_PREFIX)){
 				Qcout<<QObject::tr("Prefix named \"%1\" not exists. Run \"%2-cli -pl\" for prefix list.").arg(_PREFIX).arg(APP_SHORT_NAME)<<endl;
 				return -1;
 			}
@@ -246,7 +229,7 @@ int main(int argc, char *argv[])
 			return -1;
 		}
 
-		if (!db_icon->isExistsByName(_PREFIX, _DIR, _ICON)){
+		if (!db_icon.isExistsByName(_PREFIX, _DIR, _ICON)){
 			Qcout<<QObject::tr("Icon named \"%1\" not exists.  Run \"%2-cli -il\" for icon list.").arg(_ICON).arg(APP_SHORT_NAME)<<endl;
 			return -1;
 		}
@@ -265,7 +248,7 @@ int main(int argc, char *argv[])
 			Qcout<<QObject::tr("Wine process list")<<endl;
 		} else {
 			Qcout<<QObject::tr("Wine process list for \"%1\" prefix").arg(_PREFIX)<<endl;
-			path = db_prefix->getPath(_PREFIX);
+			path = db_prefix.getPath(_PREFIX);
 		}
 		// Preccess QList items one by one
 		Qcout<<" "<<qSetFieldWidth(8)<<left<<QObject::tr("PID")<<qSetFieldWidth(6)<<left<<QObject::tr("Nice")<<qSetFieldWidth(20)<<left<<QObject::tr("Name")<<QObject::tr("Prefix path")<<qSetFieldWidth(0)<<endl;
@@ -279,7 +262,7 @@ int main(int argc, char *argv[])
 		}
 		break;
 	case 2:
-		result = db_prefix->getFields();
+		result = db_prefix.getFields();
 		Qcout<<QObject::tr("Prefix list")<<endl;
 		Qcout<<" "<<qSetFieldWidth(15)<<left<<QObject::tr("Name")<<QObject::tr("Path")<<qSetFieldWidth(0)<<endl;
 		for (int i = 0; i < result.size(); ++i) {
@@ -295,7 +278,7 @@ int main(int argc, char *argv[])
 			Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 			return -1;
 		}
-		result = db_dir->getFieldsByPrefixName(_PREFIX);
+		result = db_dir.getFieldsByPrefixName(_PREFIX);
 		Qcout<<QObject::tr("Prefix \"%1\" has following dir list").arg(_PREFIX)<<endl;
 		Qcout<<" "<<QObject::tr("Name")<<endl;
 		for (int i = 0; i < result.size(); ++i) {
@@ -308,12 +291,12 @@ int main(int argc, char *argv[])
 			return -1;
 		}
 
-		if (! db_dir->isExistsByName(_PREFIX, _DIR)){
+		if (! db_dir.isExistsByName(_PREFIX, _DIR)){
 			Qcout<<QObject::tr("Dir named \"%1\" not exists. Run \"%2-cli -dl\" for dir list.").arg(_DIR).arg(APP_SHORT_NAME)<<endl;
 			return -1;
 		}
 
-		result = db_icon->getByPrefixAndDirName(_PREFIX, _DIR);
+		result = db_icon.getByPrefixAndDirName(_PREFIX, _DIR);
 		if (_DIR.isEmpty()){
 			Qcout<<QObject::tr("Prefix \"%1\" has following icon list").arg(_PREFIX)<<endl;
 		} else {
@@ -326,7 +309,7 @@ int main(int argc, char *argv[])
 		}
 		break;
 	case 5:
-		result = db_image->getFields();
+		result = db_image.getFields();
 		Qcout<<QObject::tr("%1 has following CD images in database").arg(APP_SHORT_NAME)<<endl;
 		Qcout<<" "<<qSetFieldWidth(25)<<left<<QObject::tr("Name")<<QObject::tr("Path")<<qSetFieldWidth(0)<<endl;
 		for (int i = 0; i < result.size(); ++i) {
@@ -338,9 +321,9 @@ int main(int argc, char *argv[])
 			Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 			return -1;
 		}
-		result = db_dir->getFieldsByPrefixName(_PREFIX);
+		result = db_dir.getFieldsByPrefixName(_PREFIX);
 		Qcout<<QObject::tr("Killing prefix \"%1\" wineserver.").arg(_PREFIX)<<endl;
-		if (CoreLib->killWineServer(db_prefix->getPath(_PREFIX))){
+		if (CoreLib->killWineServer(db_prefix.getPath(_PREFIX))){
 			Qcout<<"Done"<<endl;
 		} else {
 			Qcout<<"Error"<<endl;
@@ -352,7 +335,7 @@ int main(int argc, char *argv[])
 			Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 			return -1;
 		}
-		sresult = db_prefix->getFieldsByPrefixName(_PREFIX);
+		sresult = db_prefix.getFieldsByPrefixName(_PREFIX);
 
 		if (sresult.at(6).isEmpty()){
 			Qcout<<QObject::tr("No mount point set in prefix configuration.")<<endl;
@@ -373,7 +356,7 @@ int main(int argc, char *argv[])
 			}
 		} else {
 			if (!QFile(_IMAGE).exists()){
-				if (!db_image->isExistsByName(_IMAGE)){
+				if (!db_image.isExistsByName(_IMAGE)){
 					Qcout<<QObject::tr("No CD iamge \"%1\" exists. Run \"%2-cli -cl\" for CD image list.").arg(_IMAGE).arg(APP_SHORT_NAME)<<endl;
 					return -1;
 				}
@@ -392,7 +375,7 @@ int main(int argc, char *argv[])
 			Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 			return -1;
 		}
-		sresult = db_prefix->getFieldsByPrefixName(_PREFIX);
+		sresult = db_prefix.getFieldsByPrefixName(_PREFIX);
 
 		if (sresult.at(6).isEmpty()){
 			Qcout<<QObject::tr("No mount point set in prefix configuration.")<<endl;
@@ -409,14 +392,14 @@ int main(int argc, char *argv[])
 		break;
 	case 10:
 		if (_PREFIX.isEmpty()){
-			result = db_prefix->getFields();
+			result = db_prefix.getFields();
 			Qcout<<QObject::tr("Mounted media list for all prefixes")<<endl;
 			Qcout<<" "<<qSetFieldWidth(15)<<left<<QObject::tr("Prefix")<<qSetFieldWidth(25)<<left<<QObject::tr("Mount point")<<QObject::tr("Media")<<qSetFieldWidth(0)<<endl;
 			for (int i = 0; i < result.size(); ++i) {
 				Qcout<<" "<<qSetFieldWidth(15)<<left<<result.at(i).at(1)<<qSetFieldWidth(25)<<left<<result.at(i).at(7)<<CoreLib->getMountedImages(result.at(i).at(7))<<qSetFieldWidth(0)<<endl;
 			}
 		} else {
-			sresult = db_prefix->getFieldsByPrefixName(_PREFIX);
+			sresult = db_prefix.getFieldsByPrefixName(_PREFIX);
 
 			if (sresult.at(6).isEmpty()){
 				Qcout<<QObject::tr("No mount point set in prefix configuration.")<<endl;
@@ -459,7 +442,7 @@ int main(int argc, char *argv[])
 		execObj.cmdargs = path;
 		execObj.cmdargs = "";
 		execObj.desktop = "";
-		execObj.prefixid = db_prefix->getId(_PREFIX);
+		execObj.prefixid = db_prefix.getId(_PREFIX);
 		execObj.execcmd=_IMAGE;
 		if (CoreLib->runWineBinary(execObj)){
 			Qcout<<"Done"<<endl;

@@ -42,10 +42,7 @@ ImageManager::ImageManager(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
 	// Getting corelib calss pointer
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib = (corelib *)CoreLibClassPointer(true);
-
-	// Creating database classes
-	db_image = new Image();
+	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
 	loadThemeIcons(CoreLib->getSetting("app", "theme", false).toString());
 
@@ -64,24 +61,24 @@ void ImageManager::update_lblPathInfo(const QModelIndex){
 
 	if (tableImage->currentRow()<0)
 		return;
-	lblPathInfo->setText(tr("File path: %1").arg(db_image->getPath(tableImage->item(tableImage->currentRow(), 0)->text())));
+	lblPathInfo->setText(tr("File path: %1").arg(db_image.getPath(tableImage->item(tableImage->currentRow(), 0)->text())));
 
 	return;
 }
 
 void ImageManager::tableImage_showContextMenu(const QPoint){
 	QMenu menu(this);
-	menu.addAction(actionAdd);
-	menu.addAction(actionRename);
+	menu.addAction(actionAdd.get());
+	menu.addAction(actionRename.get());
 	menu.addSeparator();
-	menu.addAction(actionRefresh);
+	menu.addAction(actionRefresh.get());
 	menu.addSeparator();
 	if (tableImage->currentRow()>=0){
 		actionRemove->setEnabled(TRUE);
 	} else {
 		actionRemove->setEnabled(FALSE);
 	}
-	menu.addAction(actionRemove);
+	menu.addAction(actionRemove.get());
 	menu.exec(QCursor::pos());
 	return;
 }
@@ -89,7 +86,7 @@ void ImageManager::tableImage_showContextMenu(const QPoint){
 
 void ImageManager::getCDImages(void){
 	qint64 size = 0;
-	QList<QStringList> result = db_image->getFields();
+	QList<QStringList> result = db_image.getFields();
 
 	int numRows = tableImage->rowCount();
 	int curRows = 0;
@@ -112,23 +109,23 @@ void ImageManager::getCDImages(void){
 		if (tableImage->item(curRows - 1, 0)){
 			tableImage->item(curRows - 1, 0)->setText(result.at(i).at(0));
 			tableImage->item(curRows - 1, 1)->setText(tr("%1 Mb").arg(size));
-				if (!file.exists ()){
-					tableImage->item(curRows - 1, 0)->setIcon (QIcon(":/data/important.png"));
-				} else {
-					tableImage->item(curRows - 1, 0)->setIcon (QIcon());
-				}
+			if (!file.exists ()){
+				tableImage->item(curRows - 1, 0)->setIcon (QIcon(":/data/important.png"));
+			} else {
+				tableImage->item(curRows - 1, 0)->setIcon (QIcon());
+			}
 		} else {
-			QTableWidgetItem *newItem = new QTableWidgetItem(result.at(i).at(0));
-			tableImage->setItem(curRows - 1, 0, newItem);
+			std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(result.at(i).at(0)));
 			if (!file.exists ()){
 				newItem->setIcon ( QIcon(":/data/important.png") );
 			} else {
 				newItem->setIcon ( QIcon() );
 			}
 			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-			newItem = new QTableWidgetItem(tr("%1 Mb").arg(size));
-			tableImage->setItem(curRows - 1, 1, newItem);
+			tableImage->setItem(curRows - 1, 0, newItem.release());
+			newItem.reset(new QTableWidgetItem(tr("%1 Mb").arg(size)));
 			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+			tableImage->setItem(curRows - 1, 1, newItem.release());
 		}
 	}
 
@@ -154,23 +151,23 @@ void ImageManager::loadThemeIcons(QString themePath){
 
 	lblLogo->setPixmap(pixmap);
 
-	managerToolBar = new QToolBar(tlbManager);
+	managerToolBar.reset(new QToolBar(tlbManager));
 
-	actionAdd = managerToolBar->addAction (loadIcon("data/add.png", themePath), tr("Add image"));
-	connect(actionAdd, SIGNAL(triggered()), this, SLOT(actionAddImage()));
+	actionAdd.reset(managerToolBar->addAction (loadIcon("data/add.png", themePath), tr("Add image")));
+	connect(actionAdd.get(), SIGNAL(triggered()), this, SLOT(actionAddImage()));
 
-	actionRename = managerToolBar->addAction (loadIcon("data/configure.png", themePath), tr("Rename image"));
-	connect(actionRename, SIGNAL(triggered()), this, SLOT(actionRenameImage()));
-
-	managerToolBar->addSeparator ();
-
-	actionRemove = managerToolBar->addAction (loadIcon("data/remove.png", themePath), tr("Remove image"));
-	connect(actionRemove, SIGNAL(triggered()), this, SLOT(actionRemoveImage()));
+	actionRename.reset(managerToolBar->addAction (loadIcon("data/configure.png", themePath), tr("Rename image")));
+	connect(actionRename.get(), SIGNAL(triggered()), this, SLOT(actionRenameImage()));
 
 	managerToolBar->addSeparator ();
 
-	actionRefresh = managerToolBar->addAction (loadIcon("data/reload.png", themePath), tr("Refresh image list"));
-	connect(actionRefresh, SIGNAL(triggered()), this, SLOT(actionRefreshImageList()));
+	actionRemove.reset(managerToolBar->addAction (loadIcon("data/remove.png", themePath), tr("Remove image")));
+	connect(actionRemove.get(), SIGNAL(triggered()), this, SLOT(actionRemoveImage()));
+
+	managerToolBar->addSeparator ();
+
+	actionRefresh.reset(managerToolBar->addAction (loadIcon("data/reload.png", themePath), tr("Refresh image list")));
+	connect(actionRefresh.get(), SIGNAL(triggered()), this, SLOT(actionRefreshImageList()));
 
 	return;
 }
@@ -184,23 +181,23 @@ void ImageManager::cmdOk_Click(){
 void ImageManager::actionAddImage(){
 	bool ok;
 	QString fileName, newName;
-	#ifdef _OS_LINUX_
-		fileName = QFileDialog::getOpenFileName(this, tr("Open CD image file"), QDir::homePath(), tr("CD image files (*.iso *.nrg *.img *.bin *.mdf)"));
-	#endif
+#ifdef _OS_LINUX_
+	fileName = QFileDialog::getOpenFileName(this, tr("Open CD image file"), QDir::homePath(), tr("CD image files (*.iso *.nrg *.img *.bin *.mdf)"));
+#endif
 
-	#ifdef _OS_FREEBSD_
-		fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), QDir::homePath(), tr("iso files (*.iso)"));
-	#endif
+#ifdef _OS_FREEBSD_
+	fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), QDir::homePath(), tr("iso files (*.iso)"));
+#endif
 
 	if(!fileName.isEmpty()){
 		newName = fileName.split("/").last();
-		while (db_image->isExistsByName(newName)){
+		while (db_image.isExistsByName(newName)){
 			newName = QInputDialog::getText(this, tr("Sorry. It seems CD iamge already exists."), tr("Sorry. It seems CD image file already exists.<br>Please rename it, or cancel add image operation."), QLineEdit::Normal, fileName.split("/").last() , &ok);
 			if (!ok){
 				return;
 			}
 		}
-		if (!db_image->addImage(newName, fileName))
+		if (!db_image.addImage(newName, fileName))
 			return;
 		actionRefreshImageList();
 	}
@@ -211,9 +208,9 @@ void ImageManager::actionRenameImage(){
 	if (tableImage->currentRow()==-1)
 		return;
 
-	bool ok;
+	bool ok=false;
 	QString newName = QInputDialog::getText(this, tr("Enter new name"), tr("Enter new name:"), QLineEdit::Normal, tableImage->item(tableImage->currentRow(), 0)->text(), &ok);
-	while (db_image->isExistsByName(newName) or (newName.isEmpty())){
+	while (db_image.isExistsByName(newName) or (newName.isEmpty())){
 		if (!ok){
 			return;
 		}
@@ -223,7 +220,7 @@ void ImageManager::actionRenameImage(){
 			newName = QInputDialog::getText(this, tr("Sorry. It seems CD iamge already exists."), tr("Sorry. It seems CD image file already exists.<br>Please rename it, or cancel rename image operation."), QLineEdit::Normal, newName, &ok);
 		}
 	}
-	if (!db_image->renameImage(newName, tableImage->item(tableImage->currentRow(), 0)->text()))
+	if (!db_image.renameImage(newName, tableImage->item(tableImage->currentRow(), 0)->text()))
 		return;
 	actionRefreshImageList();
 	return;
@@ -232,7 +229,7 @@ void ImageManager::actionRenameImage(){
 void ImageManager::actionRemoveImage(){
 	if (tableImage->currentRow()==-1)
 		return;
-	if (!db_image->delImage(tableImage->item(tableImage->currentRow(), 0)->text()))
+	if (!db_image.delImage(tableImage->item(tableImage->currentRow(), 0)->text()))
 		return;
 	actionRefreshImageList();
 	return;

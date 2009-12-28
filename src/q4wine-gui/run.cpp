@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -15,24 +15,45 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "run.h"
 
-Run::Run(QString prefix_name, QString wrkdir, QString override, QString winedebug, QString useconsole, QString display, QString cmdargs, QString desktop, int nice, QString exec, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+Run::Run(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
+	// Setup base UI
 	setupUi(this);
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
 
+	if (!libq4wine.load()){
+		libq4wine.load();
+	}
+
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib.reset((corelib *)CoreLibClassPointer(true));
+
+	loadThemeIcons(CoreLib->getSetting("app", "theme", false).toString());
+
+	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
+	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
+	connect(cmdGetProgramBin, SIGNAL(clicked()), this, SLOT(cmdGetProgram_Click()));
+	connect(cmdGetWorkDir, SIGNAL(clicked()), this, SLOT(cmdGetWorkDir_Click()));
+	connect(cmdAdd, SIGNAL(clicked()), this, SLOT(cmdAdd_Click()));
+	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
+	connect(comboPrefixes, SIGNAL(currentIndexChanged (int)), this, SLOT(comboPrefixes_indexChanged (int)));
+	connect(cbUseConsole, SIGNAL(stateChanged(int)), this, SLOT(cbUseConsole_stateChanged(int)));
+	connect(twbGeneral, SIGNAL(currentChanged(int)), this, SLOT(ResizeContent(int)));
+
+	cmdGetProgramBin->installEventFilter(this);
+	cmdGetWorkDir->installEventFilter(this);
+	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
+	return;
+}
+
+void Run::prepare(QString prefix_name, QString wrkdir, QString override, QString winedebug, QString useconsole, QString display, QString cmdargs, QString desktop, int nice, QString exec)
+{
 	if (!wrkdir.isEmpty())
 		txtWorkDir->setText(wrkdir);
 
@@ -57,17 +78,17 @@ Run::Run(QString prefix_name, QString wrkdir, QString override, QString winedebu
 		cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(desktop));
 
 	if (!override.isEmpty()){
-	QStringList overrideS = override.split(";");
+		QStringList overrideS = override.split(";");
 
-	QString overrideorder;
+		QString overrideorder;
 
-	for (int i=0; i<overrideS.count()-1; i++){
+		for (int i=0; i<overrideS.count()-1; i++){
 
-		QStringList list2 = overrideS.at(i).split("=");
+			QStringList list2 = overrideS.at(i).split("=");
 			twDlls->insertRow (0);
-			QTableWidgetItem *newItem = new QTableWidgetItem(list2.at(0));
-			twDlls->setItem(0, 0, newItem);
+			std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(list2.at(0)));
 			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+			twDlls->setItem(0, 0, newItem.release());
 
 			if (list2.at(1)=="n")
 				overrideorder = tr("Native");
@@ -78,54 +99,16 @@ Run::Run(QString prefix_name, QString wrkdir, QString override, QString winedebu
 			if (list2.at(1)=="b,n")
 				overrideorder = tr("Buildin, Native");
 
-
-			newItem = new QTableWidgetItem(overrideorder);
-			twDlls->setItem(0, 1, newItem);
+			newItem.reset(new QTableWidgetItem(overrideorder));
 			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+			twDlls->setItem(0, 1, newItem.release());
+		}
 	}
-}
-
 
 	this->prefix_name = prefix_name;
-	// Loading libq4wine-core.so
-	libq4wine.setFileName("libq4wine-core");
-
-	if (!libq4wine.load()){
-		libq4wine.load();
-	}
-
-	// Getting corelib calss pointer
-	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib = (corelib *)CoreLibClassPointer(true);
-
-	// Creating database classes
-	db_prefix = new Prefix();
-	db_last_run_icon = new Last_Run_Icon();
-
-	loadThemeIcons(CoreLib->getSetting("app", "theme", false).toString());
-
-	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
-	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
-	connect(cmdGetProgramBin, SIGNAL(clicked()), this, SLOT(cmdGetProgram_Click()));
-	connect(cmdGetWorkDir, SIGNAL(clicked()), this, SLOT(cmdGetWorkDir_Click()));
-	connect(cmdAdd, SIGNAL(clicked()), this, SLOT(cmdAdd_Click()));
-	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
-
-	connect(comboPrefixes, SIGNAL(currentIndexChanged (int)), this, SLOT(comboPrefixes_indexChanged (int)));
-	connect(cbUseConsole, SIGNAL(stateChanged(int)), this, SLOT(cbUseConsole_stateChanged(int)));
-
-	connect(twbGeneral, SIGNAL(currentChanged(int)), this, SLOT(ResizeContent(int)));
-
-	cmdGetProgramBin->installEventFilter(this);
-	cmdGetWorkDir->installEventFilter(this);
-
 	getPrefixes();
-	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
-
 	return;
 }
-
-
 
 void Run::loadThemeIcons(QString themePath){
 	QPixmap pixmap;
@@ -170,12 +153,12 @@ void Run::cmdCancel_Click(){
 void Run::cmdAdd_Click(){
 	if (!cboxDlls->currentText().isEmpty()){
 		twDlls->insertRow (0);
-		QTableWidgetItem *newItem = new QTableWidgetItem(cboxDlls->currentText());
-		twDlls->setItem(0, 0, newItem);
+		std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(cboxDlls->currentText()));
 		newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-		newItem = new QTableWidgetItem(cboxOveride->currentText());
-		twDlls->setItem(0, 1, newItem);
+		twDlls->setItem(0, 0, newItem.release());
+		newItem.reset(new QTableWidgetItem(cboxOveride->currentText()));
 		newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+		twDlls->setItem(0, 1, newItem.release());
 	}
 
 	twDlls->resizeRowsToContents();
@@ -186,7 +169,7 @@ void Run::cmdAdd_Click(){
 
 void Run::cmdOk_Click(){
 
-	QString override;
+	QString override="";
 	for (int i=1; i<=twDlls->rowCount(); i++){
 		override.append(QString("%1=").arg(twDlls->item(i-1, 0)->text()));
 		if (twDlls->item(i-1, 1)->text()==tr("Native"))
@@ -200,15 +183,7 @@ void Run::cmdOk_Click(){
 	}
 
 	execObj.execcmd = txtProgramBin->text();
-
-	QSqlQuery query;
-	//FIXME: Remove it please.
-	query.prepare("SELECT id FROM prefix WHERE name=:name");
-	query.bindValue(":name", comboPrefixes->currentText());
-	query.exec();
-	query.first();
-	execObj.prefixid = query.value(0).toString();
-	query.clear();
+	execObj.prefixid = db_prefix.getId(comboPrefixes->currentText());
 
 	if (cbUseConsole->checkState()==Qt::Checked){
 		execObj.useconsole = "1";
@@ -228,7 +203,7 @@ void Run::cmdOk_Click(){
 		execObj.desktop=cboxDesktopSize->currentText();
 	}
 
-	db_last_run_icon->addIcon(execObj.cmdargs, execObj.execcmd, execObj.override, execObj.winedebug, execObj.useconsole, execObj.display, execObj.wrkdir, execObj.desktop, execObj.nice.toInt());
+	db_last_run_icon.addIcon(execObj.cmdargs, execObj.execcmd, execObj.override, execObj.winedebug, execObj.useconsole, execObj.display, execObj.wrkdir, execObj.desktop, execObj.nice.toInt());
 
 	accept();
 	return;
@@ -236,14 +211,14 @@ void Run::cmdOk_Click(){
 
 bool Run::eventFilter( QObject *object, QEvent *event )
 {
-   //  firstly, check whether the object is the QTableWidget and if it's a mouse press event
+	//  firstly, check whether the object is the QTableWidget and if it's a mouse press event
 	if (object == twDlls)
 		if (event->type() == QEvent::KeyPress)
-	{   // if yes, we need to cast the event
-		QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+		{   // if yes, we need to cast the event
+		std::auto_ptr<QKeyEvent> keyEvent (static_cast<QKeyEvent*>(event));
 		if (keyEvent->key()==Qt::Key_Delete)
 			twDlls->removeRow(twDlls->currentRow());
-
+		keyEvent.release();
 		return true;
 	}
 
@@ -254,7 +229,6 @@ void Run::getWineDlls(QString winelibs_path){
 	/*
 	 * This function Builds Wine dll list for selected prefix
 	 */
-
 	cboxDlls->clear();
 	cboxDlls->addItems (CoreLib->getWineDlls(winelibs_path));
 	cboxDlls->setMaxVisibleItems (10);
@@ -266,9 +240,7 @@ void Run::getPrefixes(){
 	/*
 	 * Getting prefixes and set default
 	 */
-
-
-	QList<QStringList> result = db_prefix->getFields();
+	QList<QStringList> result = db_prefix.getFields();
 	for (int i = 0; i < result.size(); ++i) {
 		comboPrefixes->addItem(result.at(i).at(1));
 		if (result.at(i).at(1)==this->prefix_name){
@@ -290,7 +262,7 @@ void Run::comboPrefixes_indexChanged (int){
 	/*
 	 * If user select prefix -- rebuild wine dlls list
 	 */
-	QStringList result = db_prefix->getFieldsByPrefixName(comboPrefixes->currentText());
+	QStringList result = db_prefix.getFieldsByPrefixName(comboPrefixes->currentText());
 
 	if (result.at(1).isEmpty()){
 		prefix_dir = QDir::homePath();
@@ -310,11 +282,11 @@ void Run::comboPrefixes_indexChanged (int){
 
 void Run::cbUseConsole_stateChanged(int){
 	switch(cbUseConsole->checkState()){
-		case Qt::Checked:
-			txtWinedebug->setEnabled(TRUE);
+ case Qt::Checked:
+		txtWinedebug->setEnabled(TRUE);
 		break;
-		default:
-			txtWinedebug->setEnabled(FALSE);
+ default:
+		txtWinedebug->setEnabled(FALSE);
 		break;
 	}
 
@@ -323,10 +295,10 @@ void Run::cbUseConsole_stateChanged(int){
 
 void Run::ResizeContent(int TabIndex){
 	switch (TabIndex){
-		case 1:
-			twDlls->resizeRowsToContents();
-			twDlls->resizeColumnsToContents();
-			twDlls->horizontalHeader()->setStretchLastSection(TRUE);
+ case 1:
+		twDlls->resizeRowsToContents();
+		twDlls->resizeColumnsToContents();
+		twDlls->horizontalHeader()->setStretchLastSection(TRUE);
 		break;
 	}
 
@@ -335,54 +307,41 @@ void Run::ResizeContent(int TabIndex){
 
 void Run::cmdGetProgram_Click(){
 
-	QString fileName;
+	QString fileName="";
 	QString searchPath=prefix_dir;
 
 	if (!txtProgramBin->text().isEmpty()){
 		if (!txtWorkDir->text().isEmpty()){
-		searchPath=txtWorkDir->text();
+			searchPath=txtWorkDir->text();
 		} else {
-		searchPath=txtProgramBin->text().left(txtProgramBin->text().length() - txtProgramBin->text().split("/").last().length());;
+			searchPath=txtProgramBin->text().left(txtProgramBin->text().length() - txtProgramBin->text().split("/").last().length());;
 		}
 	}
 
 	if ((!QDir(searchPath).exists()) or (searchPath.isEmpty())){
 		if (QDir(prefix_dir).exists()){
-		   searchPath=prefix_dir;
+			searchPath=prefix_dir;
 		} else {
-		   searchPath=QDir::homePath();
+			searchPath=QDir::homePath();
 		}
-	 }
-
-	/*
-	QList<QUrl> prefix_urls;
-	// Adding side bar urls for FileOpen dialogs
-	if (QDir(prefix_dir).exists())
-	   prefix_urls << QUrl::fromLocalFile(prefix_dir);
-
-	if ((searchPath != prefix_dir) && (QDir(searchPath).exists()))
-		prefix_urls << QUrl::fromLocalFile(searchPath);
-
-	prefix_urls << QUrl::fromLocalFile(QDir::homePath());
-	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
-	*/
+	}
 
 	QFileDialog dialog(this);
-	  dialog.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden);
-	  dialog.setWindowTitle(tr("Open Exe file"));
-	  dialog.setDirectory(searchPath);
-	  dialog.setFileMode(QFileDialog::ExistingFile);
-	  dialog.setNameFilter(tr("Exe files (*.exe)"));
-	  //dialog.setSidebarUrls(prefix_urls);
+	dialog.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden);
+	dialog.setWindowTitle(tr("Open Exe file"));
+	dialog.setDirectory(searchPath);
+	dialog.setFileMode(QFileDialog::ExistingFile);
+	dialog.setNameFilter(tr("Exe files (*.exe)"));
+	//dialog.setSidebarUrls(prefix_urls);
 
-	 if (dialog.exec())
+	if (dialog.exec())
 		fileName = dialog.selectedFiles().first();
 
 	if(!fileName.isEmpty()){
 		QStringList list1 = fileName.split("/");
 		txtProgramBin->setText(fileName);
 
-		QString wrkDir;
+		QString wrkDir="";
 		wrkDir = fileName.left(fileName.length() - list1.last().length());
 		txtWorkDir->setText(wrkDir);
 	}
@@ -392,7 +351,7 @@ void Run::cmdGetProgram_Click(){
 
 void Run::cmdGetWorkDir_Click(){
 	QString searchPath=prefix_dir;
-	QString fileName;
+	QString fileName="";
 
 	if ((!txtProgramBin->text().isEmpty()) and (QDir().exists(txtProgramBin->text()))){
 		searchPath=txtProgramBin->text().left(txtProgramBin->text().length() - txtProgramBin->text().split("/").last().length());;
@@ -400,16 +359,16 @@ void Run::cmdGetWorkDir_Click(){
 
 	if (!QDir(searchPath).exists()){
 		if (QDir(prefix_dir).exists()){
-		   searchPath=prefix_dir;
+			searchPath=prefix_dir;
 		} else {
-		   searchPath=QDir::homePath();
+			searchPath=QDir::homePath();
 		}
-	 }
+	}
 
 	QList<QUrl> prefix_urls;
 	// Adding side bar urls for FileOpen dialogs
 	if (QDir(prefix_dir).exists())
-	   prefix_urls << QUrl::fromLocalFile(prefix_dir);
+		prefix_urls << QUrl::fromLocalFile(prefix_dir);
 
 	if ((searchPath != prefix_dir) && (QDir(searchPath).exists()))
 		prefix_urls << QUrl::fromLocalFile(searchPath);
@@ -418,16 +377,16 @@ void Run::cmdGetWorkDir_Click(){
 	prefix_urls << QUrl::fromLocalFile(QDir::rootPath());
 
 	QFileDialog dialog(this);
-	  dialog.setFilter(QDir::Dirs | QDir::Hidden);
+	dialog.setFilter(QDir::Dirs | QDir::Hidden);
 
-	  dialog.setFileMode(QFileDialog::Directory);
-	  dialog.setWindowTitle(tr("Open Directory"));
-	  dialog.setDirectory(searchPath);
-		  // This option wirksonly it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
-		  //dialog.setOption(QFileDialog::ShowDirsOnly, true);
+	dialog.setFileMode(QFileDialog::Directory);
+	dialog.setWindowTitle(tr("Open Directory"));
+	dialog.setDirectory(searchPath);
+	// This option wirksonly it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
+	//dialog.setOption(QFileDialog::ShowDirsOnly, true);
 
-	  dialog.setSidebarUrls(prefix_urls);
-	 if (dialog.exec())
+	dialog.setSidebarUrls(prefix_urls);
+	if (dialog.exec())
 		fileName = dialog.selectedFiles().first();
 
 	if(!fileName.isEmpty()){
@@ -437,17 +396,20 @@ void Run::cmdGetWorkDir_Click(){
 }
 
 void Run::cmdHelp_Click(){
-	QString rawurl;
+	QString rawurl="";
 	switch (twbGeneral->currentIndex()){
-	case 0:
+ case 0:
 		rawurl = "12-run-dialog.html#general";
-	break;
-	case 1:
+		break;
+ case 1:
 		rawurl = "12-run-dialog.html#override";
-	break;
-	case 2:
+		break;
+ case 2:
 		rawurl = "12-run-dialog.html#advanced";
-	break;
+		break;
+ default:
+		return;
+		break;
 	}
 
 	CoreLib->openHelpUrl(rawurl);

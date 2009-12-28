@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -15,16 +15,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "main.h"
@@ -33,11 +23,6 @@ corelib::corelib(bool _GUI_MODE)
 {
 	  // Setting gui mode, if false - cli mode else gui mode
 	  this->_GUI_MODE=_GUI_MODE;
-
-	  // Creating databases
-	  db_icon = new Icon();
-	  db_image = new Image();
-	  db_prefix = new Prefix();
 }
 
 corelib* createCoreLib(bool _GUI_MODE){
@@ -298,20 +283,16 @@ QString corelib::getWhichOut(const QString fileName, bool showErr) const{
 	   * Getting 'which' output;
 	   */
 
-	  QProcess *proc;
-
-	  proc = new QProcess();
-
+	  QProcess proc;
 	  QStringList args;
 
 	  args<<fileName;
 
-	  proc->setWorkingDirectory (QDir::homePath());
-	  proc->start("which", args, QIODevice::ReadOnly);
-	  proc->waitForFinished();
+	  proc.setWorkingDirectory (QDir::homePath());
+	  proc.start("which", args, QIODevice::ReadOnly);
+	  proc.waitForFinished();
 
-	  QString string = proc->readAllStandardOutput();
-	  delete proc;
+	  QString string = proc.readAllStandardOutput();
 
 	  if (!string.isEmpty()){
 			return string.trimmed();
@@ -334,14 +315,14 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 	  arguments << "-c" << QString("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
 #endif
 
-	  QProcess *myProcess = new QProcess();
-	  myProcess->start(this->getSetting("system", "sh").toString(), arguments);
-	  if (!myProcess->waitForFinished()){
-			qDebug() << "Make failed:" << myProcess->errorString();
+	  QProcess myProcess;
+	  myProcess.start(this->getSetting("system", "sh").toString(), arguments);
+	  if (!myProcess.waitForFinished()){
+			qDebug() << "Make failed:" << myProcess.errorString();
 			return QString();
 	  }
 
-	  image = myProcess->readAll();
+	  image = myProcess.readAll();
 
 	  if (!image.isEmpty()){
 			image = image.split(" ").first();
@@ -352,7 +333,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 #ifdef _OS_FREEBSD_
 						if (image.contains("md")){
 #endif
-							  myProcess->close ();
+							  myProcess.close ();
 							  arguments.clear();
 #ifdef _OS_LINUX_
 							  arguments << "losetup" << image;
@@ -360,12 +341,12 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 #ifdef _OS_FREEBSD_
 							  arguments << "mdconfig" <<  "-l" << QString("-u%1").arg(image.mid(7));
 #endif
-							  myProcess->start(this->getSetting("system", "sudo").toString(), arguments);
-							  if (!myProcess->waitForFinished()){
-									qDebug() << "Make failed:" << myProcess->errorString();
+							  myProcess.start(this->getSetting("system", "sudo").toString(), arguments);
+							  if (!myProcess.waitForFinished()){
+									qDebug() << "Make failed:" << myProcess.errorString();
 									return QString();
 							  } else {
-									image = myProcess->readAll();
+									image = myProcess.readAll();
 #ifdef _OS_LINUX_
 									image = image.split("/").last().mid(0, image.split("/").last().length()-2);
 #endif
@@ -399,7 +380,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 	  }
 
 	  bool corelib::runIcon(const QString prefix_name, const QString dir_name, const QString icon_name) const{
-			QStringList result = db_icon->getByName(prefix_name, dir_name, icon_name);
+			QStringList result = db_icon.getByName(prefix_name, dir_name, icon_name);
 			//  0   1     2     3          4       5         6          7           8        9        10    11       12    13         14
 			//	id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id
 			ExecObject execObj;
@@ -421,7 +402,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			QStringList prefixList;
 			// 0   1     2             3            4            5          6            7
 			// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
-			prefixList = db_prefix->getFieldsByPrefixId(execObj.prefixid);
+			prefixList = db_prefix.getFieldsByPrefixId(execObj.prefixid);
 
 			QString exec;
 			QStringList args;
@@ -533,9 +514,8 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			qDebug()<<"[ii] corelib::runWineBinary via ExecObj args: "<<exec<<args<<execObj.wrkdir;
 #endif
 
-			QProcess *proc;
-			proc = new QProcess();
-			return proc->startDetached( exec, args, execObj.wrkdir );
+			QProcess proc;
+			return proc.startDetached( exec, args, execObj.wrkdir );
 	  }
 
 
@@ -543,7 +523,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			QStringList prefixList;
 			// 0   1     2             3            4            5          6            7
 			// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
-			prefixList = db_prefix->getFieldsByPrefixName(prefix_name);
+			prefixList = db_prefix.getFieldsByPrefixName(prefix_name);
 
 			QString exec;
 			QStringList args;
@@ -600,13 +580,12 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			qDebug()<<"[ii] corelib::runWineBinary via Requested args: "<<exec<<args<<QDir::homePath();
 #endif
 
-			QProcess *proc;
-			proc = new QProcess();
-			return proc->startDetached(exec, args, QDir::homePath());
+			QProcess proc;
+			return proc.startDetached(exec, args, QDir::homePath());
 	  }
 
 	  QString corelib::createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const{
-			QStringList result = db_icon->getByName(prefix_name, dir_name, icon_name);
+			QStringList result = db_icon.getByName(prefix_name, dir_name, icon_name);
 
 			QString fileName = QDir::homePath();
 			fileName.append("/.config/");
@@ -663,7 +642,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 	  }
 
 	  bool corelib::mountImage(const QString image_name, const QString prefix_name) const{
-			QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
+			QString mount_point=db_prefix.getFieldsByPrefixName(prefix_name).at(6);
 #ifdef DEBUG
 			qDebug()<<"[ii] corelib::mountImage: mount point: "<<mount_point;
 #endif
@@ -719,7 +698,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 #endif
 
 				if (!QFile(image_name).exists()){
-					mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(this->db_image->getPath(image_name)));
+					mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(this->db_image.getPath(image_name)));
 				} else {
 					mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(image_name));
 				}
@@ -746,9 +725,8 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 #endif
 
 			if (this->_GUI_MODE){
-				  Process *proc;
-				  proc = new Process(args, this->getSetting("system", "sh").toString(), QDir::homePath(), QObject::tr("Mounting %1 into %2").arg(image_name).arg(mount_point), QObject::tr("Mounting..."));
-				  if (proc->exec()==QDialog::Accepted){
+				  Process proc(args, this->getSetting("system", "sh").toString(), QDir::homePath(), QObject::tr("Mounting %1 into %2").arg(image_name).arg(mount_point), QObject::tr("Mounting..."));
+				  if (proc.exec()==QDialog::Accepted){
 					 return TRUE;
 				 } else {
 				  return FALSE;
@@ -759,7 +737,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 	  }
 
    bool corelib::umountImage(const QString prefix_name) const{
-			QString mount_point=db_prefix->getFieldsByPrefixName(prefix_name).at(6);
+			QString mount_point=db_prefix.getFieldsByPrefixName(prefix_name).at(6);
 #ifdef DEBUG
 			qDebug()<<"[ii] corelib::umountImage: mount point: "<<mount_point;
 #endif
@@ -789,9 +767,8 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 #endif
 
 			if (this->_GUI_MODE){
-				  Process *proc;
-				  proc = new Process(args, this->getSetting("system", "sh").toString(), QDir::homePath(), QObject::tr("Mounting..."), QObject::tr("Mounting..."));
-				  return (proc->exec());
+				  Process proc(args, this->getSetting("system", "sh").toString(), QDir::homePath(), QObject::tr("Mounting..."), QObject::tr("Mounting..."));
+				  return (proc.exec());
 			} else {
 				  return (this->runProcess(this->getSetting("system", "sh").toString(), args));
 			}
@@ -800,7 +777,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 	  }
 
 	  bool corelib::openIconDirectry(const QString prefix_name, const QString dir_name, const QString icon_name) const{
-			QStringList result = db_icon->getByName(prefix_name, dir_name, icon_name);
+			QStringList result = db_icon.getByName(prefix_name, dir_name, icon_name);
 			QStringList args;
 			args<<result.at(4);
 			return this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
@@ -808,7 +785,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 	  bool corelib::openPrefixDirectry(const QString prefix_name) const{
 			QStringList args;
-			args<<db_prefix->getPath(prefix_name);
+			args<<db_prefix.getPath(prefix_name);
 			return this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
 	  }
 
@@ -821,14 +798,13 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			args.append(path);
 			exec = this->getWhichOut("winepath");
 
-			QProcess *myProcess;
-			myProcess = new QProcess();
-			myProcess->setEnvironment(QProcess::systemEnvironment());
-			myProcess->setWorkingDirectory (QDir::homePath());
-			myProcess->start(exec, args);
+			QProcess myProcess;
+			myProcess.setEnvironment(QProcess::systemEnvironment());
+			myProcess.setWorkingDirectory (QDir::homePath());
+			myProcess.start(exec, args);
 
-			if (myProcess->waitForFinished()){
-				  output = myProcess->readAllStandardOutput().trimmed();
+			if (myProcess.waitForFinished()){
+				  output = myProcess.readAllStandardOutput().trimmed();
 			}
 			return output;
 	  }
@@ -837,13 +813,12 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			if (dir.isEmpty())
 				  dir=QDir::homePath();
 
-			QProcess *myProcess;
-			myProcess = new QProcess();
-			myProcess->setEnvironment(QProcess::systemEnvironment());
-			myProcess->setWorkingDirectory (dir);
-			myProcess->start(exec, args);
+			QProcess myProcess;
+			myProcess.setEnvironment(QProcess::systemEnvironment());
+			myProcess.setWorkingDirectory (dir);
+			myProcess.start(exec, args);
 
-			if (!myProcess->waitForFinished())
+			if (!myProcess.waitForFinished())
 				  return FALSE;
 
 			if (showLog){
@@ -857,12 +832,14 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 				  // Read STDERR with locale support
 				  QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
-				  QString string = codec->toUnicode(myProcess->readAllStandardError());
+				  QString string = codec->toUnicode(myProcess.readAllStandardError());
 
 				  if (!string.isEmpty()){
 						showError(QObject::tr("It seems the process crashed. STDERR log: %1").arg(string));
+						delete (&codec);
 						return FALSE;
 				  }
+				  delete (&codec);
 			}
 			return TRUE;
 	  }

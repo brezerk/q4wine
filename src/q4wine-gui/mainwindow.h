@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -29,34 +29,20 @@
 #include <QContextMenuEvent>
 #include <QMenu>
 #include <QAction>
-#include <QObject>
 #include <QSystemTrayIcon>
-#include <QNetworkProxy>
 #include <QWidget>
 #include <QDir>
 #include <QSizePolicy>
-#include <QtGui>
-#include <QSqlError>
 #include <QStringList>
-
 #include <QTimer>
 #include <QTableWidget>
 #include <QTabWidget>
 #include <QLabel>
 #include <QString>
 #include <QMessageBox>
-#include <QChar>
-#include <QSize>
 #include <QToolBar>
 #include <QIcon>
 #include <QTreeWidgetItem>
-#include <QGroupBox>
-#include <QVariant>
-
-#include <QtXml>
-
-#include <QLayoutIterator>
-
 #include <QMimeData>
 #include <QDrag>
 
@@ -74,7 +60,9 @@
 
 #include "draglistwidget.h"
 
+#ifdef WITH_WINEAPPDB
 #include "appdbwidget.h"
+#endif
 
 #include "wisitem.h"
 #include "iconsview.h"
@@ -98,10 +86,6 @@
 #include <unistd.h>
 
 #include <q4wine-lib/main.h>
-
-class QAction;
-class QMenu;
-class QTextEdit;
 
 struct iconCopyBuffer {
 	QString dir_name;
@@ -252,98 +236,96 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 		void startDrag();
 		void startDrop(QList<QUrl> files);
+
 	private:
 		//! Custom Widgets
-		DragListWidget *lstIcons;
+		std::auto_ptr<DragListWidget> lstIcons;
 		std::auto_ptr<AppDBWidget> appdbWidget;
 
 		//! This is need for libq4wine-core.so import;
 		typedef void *CoreLibPrototype (bool);
 			CoreLibPrototype *CoreLibClassPointer;
-			corelib *CoreLib;
+			std::auto_ptr<corelib> CoreLib;
 		QLibrary libq4wine;
 
 		//Classes
-		Prefix *db_prefix;
-		Dir *db_dir;
-		Icon *db_icon;
-		Last_Run_Icon *db_last_run_icon;
-		Image *db_image;
+		Prefix db_prefix;
+		Dir db_dir;
+		Icon db_icon;
+		Last_Run_Icon db_last_run_icon;
+		Image db_image;
 
+		//Update timer
+		std::auto_ptr<QTimer> timer;
 
-
-		// Proxy
-		QNetworkProxy proxy;
 		// Tray icon
-		QSystemTrayIcon *trayIcon;
+		std::auto_ptr<QSystemTrayIcon> trayIcon;
 
-		QMenu *trayIconMenu;
-		QMenu *images;
-		QMenu *menuProc;
-		QMenu *menuPrefix;
-		QMenu *menuDir;
-		QMenu *menuDirMount;
-		QMenu *menuIcon;
-		QMenu *menuIconVoid;
-		QMenu *menuIconMount;
-		QMenu *menuIconMountRecent;
-		QMenu *menuIconXdgOpendir;
-		QMenu *menuIconWineOpendir;
+		std::auto_ptr<QMenu> trayIconMenu;
+		std::auto_ptr<QMenu> images;
+		std::auto_ptr<QMenu> menuProc;
+		std::auto_ptr<QMenu> menuPrefix;
+		std::auto_ptr<QMenu> menuDir;
+		std::auto_ptr<QMenu> menuDirMount;
+		std::auto_ptr<QMenu> menuIcon;
+		std::auto_ptr<QMenu> menuIconVoid;
+		std::auto_ptr<QMenu> menuIconMount;
+		std::auto_ptr<QMenu> menuIconMountRecent;
 
-		QMenu *menuRun;
+		std::auto_ptr<QMenu> menuRun;
 		QList <QAction *> recentIconsList;
 
 		void createTrayIcon();
 		void setMeVisible(bool visible);
 
-		QAction *processKillSelected;
-		QAction *processKillWine;
-		QAction *processRefresh;
-		QAction *processRenice;
+		std::auto_ptr<QAction> processKillSelected;
+		std::auto_ptr<QAction> processKillWine;
+		std::auto_ptr<QAction> processRefresh;
+		std::auto_ptr<QAction> processRenice;
 
 		// Prefix actions for context menu
-		QAction *prefixAdd;
-		QAction *prefixImport;
-		QAction *prefixExport;
-		QAction *prefixDelete;
-		QAction *prefixSettings;
+		std::auto_ptr<QAction> prefixAdd;
+		std::auto_ptr<QAction> prefixImport;
+		std::auto_ptr<QAction> prefixExport;
+		std::auto_ptr<QAction> prefixDelete;
+		std::auto_ptr<QAction> prefixSettings;
 
 		// Directories control for context menu
-		QAction *dirAdd;
-		QAction *dirRun;
-		QAction *dirRename;
-		QAction *dirDelete;
-		QAction *dirMountOther;
-		QAction *dirUnmount;
-		QAction *dirConfigure;
-		QAction *dirInstall;
-		QAction *dirUninstall;
+		std::auto_ptr<QAction> dirAdd;
+		std::auto_ptr<QAction> dirRun;
+		std::auto_ptr<QAction> dirRename;
+		std::auto_ptr<QAction> dirDelete;
+		std::auto_ptr<QAction> dirMountOther;
+		std::auto_ptr<QAction> dirUnmount;
+		std::auto_ptr<QAction> dirConfigure;
+		std::auto_ptr<QAction> dirInstall;
+		std::auto_ptr<QAction> dirUninstall;
 
 		//OpenDir
-		QAction *xdgOpenIconDir;
-		QAction *xdgOpenPrefixDir;
-		QAction *xdgOpenMountDir;
-		QAction *winefileOpenIconDir;
-		QAction *winefileOpenPrefixDir;
-		QAction *winefileOpenMountDir;
+		std::auto_ptr<QAction> xdgOpenIconDir;
+		std::auto_ptr<QAction> xdgOpenPrefixDir;
+		std::auto_ptr<QAction> xdgOpenMountDir;
+		std::auto_ptr<QAction> winefileOpenIconDir;
+		std::auto_ptr<QAction> winefileOpenPrefixDir;
+		std::auto_ptr<QAction> winefileOpenMountDir;
 
 		// Icons control for context menu
 		//QAction *iconOpenDirWinefile;
-		QAction *iconRun;
-		QAction *iconAdd;
-		QAction *iconRename;
-		QAction *iconDelete;
-		QAction *iconOptions;
-		QAction *iconCopy;
-		QAction *iconCut;
-		QAction *iconPaste;
-		QAction *iconMount;
-		QAction *iconUnmount;
-		QAction *iconMountOther;
+		std::auto_ptr<QAction> iconRun;
+		std::auto_ptr<QAction> iconAdd;
+		std::auto_ptr<QAction> iconRename;
+		std::auto_ptr<QAction> iconDelete;
+		std::auto_ptr<QAction> iconOptions;
+		std::auto_ptr<QAction> iconCopy;
+		std::auto_ptr<QAction> iconCut;
+		std::auto_ptr<QAction> iconPaste;
+		std::auto_ptr<QAction> iconMount;
+		std::auto_ptr<QAction> iconUnmount;
+		std::auto_ptr<QAction> iconMountOther;
 
 		// Toolbars
-		QToolBar *procToolBar;
-		QToolBar *prefixToolBar;
+		std::auto_ptr<QToolBar> procToolBar;
+		std::auto_ptr<QToolBar> prefixToolBar;
 
 		// Settings functions
 		void createMenuActions(void);
@@ -363,7 +345,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void resizeEvent (QResizeEvent);
 		void clearTmp();
 
-		QSplitter *splitter;
+		std::auto_ptr<QSplitter> splitter;
 
 	signals:
 		void appdbWidget_startSearch(short int, QString);

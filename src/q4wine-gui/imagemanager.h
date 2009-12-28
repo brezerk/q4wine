@@ -31,6 +31,8 @@
 
 #include <ui_ImageManager.h>
 
+#include "memory"
+
 #include "config.h"
 
 #include <QDialog>
@@ -44,8 +46,6 @@
 #include <QFileDialog>
 #include <QStringList>
 #include <QListWidget>
-#include <QSqlQuery>
-#include <QSqlError>
 #include <QFile>
 #include <QLibrary>
 #include <QInputDialog>
@@ -97,7 +97,7 @@ class ImageManager : public QDialog, public Ui::ImageManager
 
 
 	private:
-		QToolBar *managerToolBar;
+		std::auto_ptr<QToolBar> managerToolBar;
 		//! Loading theme icons
 		void loadThemeIcons(QString themePath);
 		//! Creating menus
@@ -110,17 +110,16 @@ class ImageManager : public QDialog, public Ui::ImageManager
 		 //! This is need for libq4wine-core.so import;
 		typedef void *CoreLibPrototype (bool);
 		CoreLibPrototype *CoreLibClassPointer;
-		corelib *CoreLib;
+		std::auto_ptr<corelib> CoreLib;
 		QLibrary libq4wine;
 
-		Image *db_image;
+		Image db_image;
 
 		//! Actions
-		QAction *actionAdd;
-		QAction *actionRemove;
-		QAction *actionRename;
-		QAction *actionRefresh;
-
+		std::auto_ptr<QAction> actionAdd;
+		std::auto_ptr<QAction> actionRemove;
+		std::auto_ptr<QAction> actionRename;
+		std::auto_ptr<QAction> actionRefresh;
 };
 
 #endif
