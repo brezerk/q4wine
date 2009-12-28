@@ -41,7 +41,7 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 
 	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
 
-	lstIcons.reset(new DragListWidget(tab));
+	std::auto_ptr<DragListWidget> lstIcons (new DragListWidget(tab));
 	lstIcons->setViewMode(QListView::IconMode);
 	lstIcons->setGridSize(QSize(86, 86));
 	lstIcons->setResizeMode(QListView::Adjust);
@@ -53,12 +53,14 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	lstIcons->setMovement(QListView::Snap);
 	lstIcons->setDragDropMode(QAbstractItemView::InternalMove);
 	lstIcons->setSelectionMode(QAbstractItemView::ContiguousSelection);
+	lstIcons->setIconSize(QSize(32, 32));
+	lstIcons->installEventFilter(this);
 
 	std::auto_ptr<QWidget> wid (new QWidget(tab));
 	std::auto_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
 
 	vlayout ->addWidget(widgetFilter);
-	vlayout ->addWidget(lstIcons.get());
+	vlayout ->addWidget(lstIcons.release());
 	vlayout ->setMargin(0);
 	wid->setLayout(vlayout.release());
 
@@ -96,9 +98,12 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	// Signals commection for Icons and Folders
 	connect(twPrograms, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(twPrograms_ItemClick(QTreeWidgetItem *, int)));
 	connect(twPrograms, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(twPrograms_ShowContextMenu(const QPoint &)));
-	connect(lstIcons.get(), SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(lstIcons_ItemDoubleClick(QListWidgetItem *)));
+	/*connect(lstIcons.get(), SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(lstIcons_ItemDoubleClick(QListWidgetItem *)));
 	connect(lstIcons.get(), SIGNAL(itemClicked(QListWidgetItem *)), this, SLOT(lstIcons_ItemClick(QListWidgetItem *)));
 	connect(lstIcons.get(), SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(lstIcons_ShowContextMenu(const QPoint &)));
+	connect(lstIcons.get(), SIGNAL(startDrag ()), this, SLOT(startDrag()));
+	connect(lstIcons.get(), SIGNAL(startDrop(QList<QUrl>)), this, SLOT(startDrop(QList<QUrl>)));
+	*/
 
 	// Signals for updating toolbars
 	connect(tableProc, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tableProc_ShowContextMenu(const QPoint &)));
@@ -124,8 +129,7 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	connect(mainWebsite, SIGNAL(triggered()), this, SLOT(mainWebsite_Click()));
 	connect(mainDonate, SIGNAL(triggered()), this, SLOT(mainDonate_Click()));
 	connect(mainBugs, SIGNAL(triggered()), this, SLOT(mainBugs_Click()));
-	connect(lstIcons.get(), SIGNAL(startDrag ()), this, SLOT(startDrag()));
-	connect(lstIcons.get(), SIGNAL(startDrop(QList<QUrl>)), this, SLOT(startDrop(QList<QUrl>)));
+
 
 	connect(txtIconFilter, SIGNAL(textChanged(QString)), this, SLOT(txtIconFilter_textChanged(QString)));
 
@@ -147,7 +151,7 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	tableProc->setContextMenuPolicy(Qt::CustomContextMenu);
 	twPrograms->setContextMenuPolicy(Qt::CustomContextMenu);
 	tablePrefix->setContextMenuPolicy(Qt::CustomContextMenu);
-	lstIcons->setContextMenuPolicy(Qt::CustomContextMenu);
+	//lstIcons->setContextMenuPolicy(Qt::CustomContextMenu);
 
 	// Creating actions for context menus & toolbars
 	createMenuActions();
@@ -161,9 +165,9 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	WINE_DEFAULT_PREFIX.append("/.wine");
 
 	// Setting default IconsSize for lstIcons (Wine-Programm-Menu) need for user settings
-	lstIcons->setIconSize(QSize(32, 32));
+
 	twPrograms->installEventFilter(this);
-	lstIcons->installEventFilter(this);
+
 	txtIconFilter->installEventFilter(this);
 	installEventFilter(this);
 	cmdClearFilter->installEventFilter(this);
@@ -253,6 +257,7 @@ void MainWindow::startDrop(QList<QUrl> files){
 }
 
 void MainWindow::startDrag (){
+	/*
 	QString fileName;
 	QList<QListWidgetItem *> items = lstIcons->selectedItems ();
 
@@ -281,6 +286,7 @@ void MainWindow::startDrag (){
 		drag.release();
 		treeItem.release();
 	}
+	*/
 	return;
 }
 
@@ -343,6 +349,7 @@ void MainWindow::lstIcons_ItemClick(QListWidgetItem * item){
 	 * icon informationm like path and description
 	 */
 
+	/*
 	if (!item)
 		return;
 
@@ -380,6 +387,7 @@ void MainWindow::lstIcons_ItemClick(QListWidgetItem * item){
 	}
 
 	lblIconInfo1->setText(tr("Runs in console: %1<br> Desktop size: %2").arg(useconsole) .arg(desktopsize));
+	*/
 	return;
 }
 
@@ -532,6 +540,8 @@ void MainWindow::lstIcons_ItemDoubleClick(QListWidgetItem * item){
 	/*
 	* This is function for getting icon settings and run associated program
 	*/
+
+	/*
 	std::auto_ptr<QTreeWidgetItem> treeItem(twPrograms->currentItem());
 
 	if (!twPrograms->currentItem()){
@@ -555,6 +565,7 @@ void MainWindow::lstIcons_ItemDoubleClick(QListWidgetItem * item){
 
 	}
 	treeItem.release();
+	*/
 	return;
 }
 
@@ -570,7 +581,7 @@ void MainWindow::updateDtabaseConnectedItems(int currentPrefix){
 	// Clearing widgets
 	cbPrefixes->clear();
 	twPrograms->clear();
-	lstIcons->clear();
+	//lstIcons->clear();
 
 	result = db_prefix.getFields();
 	for (int i = 0; i < result.size(); ++i) {
@@ -703,7 +714,7 @@ void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
 	 * otherwise -- show children-level icons
 	 */
 
-
+	/*
 	QList<QStringList> iconsList;
 
 	lstIcons->clear();
@@ -755,7 +766,7 @@ void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
 		}
 		iconItem.release();
 	}
-
+*/
 	return;
 }
 
@@ -764,6 +775,7 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 		Custom context menu for twPrograms
 	*/
 
+	/*
 	std::auto_ptr<QTreeWidgetItem> treeItem (twPrograms->currentItem());
 
 	QString cdrom_drive="", cdrom_mount="";
@@ -875,6 +887,7 @@ void MainWindow::twPrograms_ShowContextMenu(const QPoint){
 
 	menuDir->exec(QCursor::pos());
 	return;
+	*/
 }
 
 void MainWindow::menuMountImages_triggered ( QAction * action ){
@@ -882,6 +895,7 @@ void MainWindow::menuMountImages_triggered ( QAction * action ){
 	 * This slot process menuDirMountImages and menuIconMountImages triggered signal
 	 */
 
+	/*
 	if (action->text()==tr("[none]"))
 		QMessageBox::warning(this, tr("Error"),  tr("No device drive specified in prefix settings."), QMessageBox::Ok);
 	return;
@@ -901,6 +915,7 @@ void MainWindow::menuMountImages_triggered ( QAction * action ){
 		statusBar()->showMessage(QObject::tr("Fail to mount %1.").arg(action->text()));
 	}
 	return;
+	*/
 }
 
 
@@ -909,6 +924,7 @@ void MainWindow::menuMountRecentImages_triggered ( QAction * action ){
 	 * This slot process menuDirMountImages and menuIconMountImages triggered signal
 	 */
 
+	/*
 	if (!action)
 		return;
 
@@ -937,12 +953,12 @@ void MainWindow::menuMountRecentImages_triggered ( QAction * action ){
 			break;
 		}
 	}
-
+*/
 	return;
 }
 
 void MainWindow::menuRun_triggered ( QAction * action ){
-
+	/*
 	if (action->text().isEmpty())
 		return;
 
@@ -999,7 +1015,7 @@ void MainWindow::menuRun_triggered ( QAction * action ){
 			CoreLib->runWineBinary(run.execObj);
 	}
 	treeItem.release();
-
+*/
 	return;
 }
 
@@ -1008,6 +1024,7 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint & iPoint){
 	*	Function showing context menu
 	*/
 
+	/*
 	std::auto_ptr<QListWidgetItem> iconItem (lstIcons->itemAt(iPoint));
 	std::auto_ptr<QTreeWidgetItem> treeItem (twPrograms->currentItem());
 
@@ -1167,9 +1184,11 @@ void MainWindow::lstIcons_ShowContextMenu(const QPoint & iPoint){
 	treeItem.release();
 
 	return;
+	*/
 }
 
 void MainWindow::createTrayIcon(){
+	/*
 	trayIconMenu.reset(new QMenu(this));
 	trayIconMenu->addAction(mainRun);
 	trayIconMenu->addSeparator();
@@ -1199,9 +1218,11 @@ void MainWindow::createTrayIcon(){
 	}
 
 	connect(trayIcon.get(), SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(trayIcon_Activate(QSystemTrayIcon::ActivationReason)));
+	*/
 }
 
 void MainWindow::closeEvent(QCloseEvent *event){
+	/*
 	if (trayIcon->isVisible()) {
 		hide();
 		event->ignore();
@@ -1232,12 +1253,15 @@ void MainWindow::closeEvent(QCloseEvent *event){
 
 	treeItem.release();
 	settings.endGroup();
+	*/
 	return;
 }
 
 
 bool MainWindow::eventFilter(QObject *obj, QEvent *event){
 	// twPrograms events
+
+	/*
 	if (obj == this){
 		if (event->type()==QEvent::Resize){
 			if (!this->isActiveWindow())
@@ -1351,8 +1375,9 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *event){
 		}
 		return false;
 	}
-
+	*/
 	return QMainWindow::eventFilter(obj, event);
+
 }
 
 
@@ -2117,8 +2142,9 @@ void MainWindow::createMenuActions(){
 	 * Context menu for process manage
 	 */
 
-	std::auto_ptr<QMenu> submenuTemplate;
+	//std::auto_ptr<QMenu> submenuTemplate;
 
+	/*
 	processKillSelected.reset(new QAction(loadIcon("data/kill.png"), tr("Stop current"), tableProc));
 	processKillSelected->setStatusTip(tr("Send TERM signal to selected process"));
 	connect(processKillSelected.get(), SIGNAL(triggered()), this, SLOT(processKillSelected_Click()));
@@ -2134,11 +2160,13 @@ void MainWindow::createMenuActions(){
 	processRenice.reset(new QAction(tr("Renice"), tableProc));
 	processRenice->setStatusTip(tr("Set process priority"));
 	connect(processRenice.get(), SIGNAL(triggered()), this, SLOT(processRenice_Click()));
+	*/
 
 	/*
 	 * Context menu for directory manage
 	 */
 
+	/*
 	dirRun.reset(new QAction(QIcon(":/data/folder.png"), tr("Browse ..."), twPrograms));
 	dirRun->setStatusTip(tr("Bowse for application"));
 	connect(dirRun.get(), SIGNAL(triggered()), this, SLOT(mainRun_Click()));
@@ -2174,11 +2202,13 @@ void MainWindow::createMenuActions(){
 	dirUninstall.reset(new QAction(tr("App uninstall"), twPrograms));
 	dirUninstall->setStatusTip(tr("Runs application uninstall wizard for current prefix"));
 	connect(dirUninstall.get(), SIGNAL(triggered()), this, SLOT(dirUninstall_Click()));
+	*/
 
 	/*
 	 * Context menus for icon manage
 	 */
 
+	/*
 	iconRun.reset(new QAction(tr("Run"), lstIcons.get()));
 	iconRun->setStatusTip(tr("Create new icon"));
 	connect(iconRun.get(), SIGNAL(triggered()), this, SLOT(iconRun_Click()));
@@ -2221,11 +2251,13 @@ void MainWindow::createMenuActions(){
 	iconMountOther.reset(new QAction(QIcon(":/data/folder.png"), tr("Browse ..."), lstIcons.get()));
 	iconMountOther->setStatusTip(tr("Browse for other image"));
 	connect(iconMountOther.get(), SIGNAL(triggered()), this, SLOT(iconMountOther_Click()));
+	*/
 
 	/*
 	 * Folder open
 	 */
 
+	/*
 	xdgOpenIconDir.reset(new QAction(tr("Open icon directory"), lstIcons.get()));
 	xdgOpenIconDir->setStatusTip(tr("Open directory for current program"));
 	connect(xdgOpenIconDir.get(), SIGNAL(triggered()), this, SLOT(xdgOpenIconDir_Click()));
@@ -2249,11 +2281,13 @@ void MainWindow::createMenuActions(){
 	winefileOpenMountDir.reset(new QAction(tr("Open mount point directory"), lstIcons.get()));
 	winefileOpenMountDir->setStatusTip(tr("Open mount point directory for current prefix"));
 	connect(winefileOpenMountDir.get(), SIGNAL(triggered()), this, SLOT(winefileOpenMountDir_Click()));
+	*/
 
 	/*
 	 * Context menus for prefix manage
 	 */
 
+	/*
 	prefixAdd.reset(new QAction(loadIcon("data/wizard.png"), tr("Create new"), lstIcons.get()));
 	prefixAdd->setStatusTip(tr("Create new prefix"));
 	connect(prefixAdd.get(), SIGNAL(triggered()), this, SLOT(prefixAdd_Click()));
@@ -2307,7 +2341,8 @@ void MainWindow::createMenuActions(){
 	menuIcon->addMenu(menuIconMount.get());
 	menuIcon->addSeparator();
 	menuIcon->addAction(iconOptions.get());
-
+*/
+	/*
 	submenuTemplate.reset(menuIcon->addMenu(tr("Browser")));
 	submenuTemplate->addAction(xdgOpenIconDir.get());
 	submenuTemplate->addAction(xdgOpenMountDir.get());
@@ -2319,8 +2354,8 @@ void MainWindow::createMenuActions(){
 	submenuTemplate->addAction(winefileOpenIconDir.get());
 	submenuTemplate->addAction(winefileOpenMountDir.get());
 	submenuTemplate->addAction(winefileOpenPrefixDir.get());
-	submenuTemplate.release();
-
+	submenuTemplate.release();*/
+/*
 	menuIcon->addSeparator();
 	menuIcon->addAction(iconCut.get());
 	menuIcon->addAction(iconCopy.get());
@@ -2344,7 +2379,8 @@ void MainWindow::createMenuActions(){
 	menuIconVoid->addSeparator();
 	menuIconVoid->addMenu(menuIconMount.get());
 	menuIconVoid->addSeparator();
-
+*/
+	/*
 	submenuTemplate.reset(menuIconVoid->addMenu(tr("Browser")));
 	submenuTemplate->addAction(xdgOpenMountDir.get());
 	submenuTemplate->addAction(xdgOpenPrefixDir.get());
@@ -2354,7 +2390,8 @@ void MainWindow::createMenuActions(){
 	submenuTemplate->addAction(winefileOpenMountDir.get());
 	submenuTemplate->addAction(winefileOpenPrefixDir.get());
 	submenuTemplate.release();
-
+	*/
+/*
 	menuDirMount.reset(new QMenu(tr("Mount iso...")));
 
 	menuDir.reset(new QMenu(this));
@@ -2368,7 +2405,8 @@ void MainWindow::createMenuActions(){
 	menuDir->addSeparator();
 	menuDir->addAction(dirDelete.get());
 	menuDir->addSeparator();
-
+*/
+	/*
 	submenuTemplate.reset(menuDir->addMenu(tr("Browser")));
 	submenuTemplate->addAction(xdgOpenMountDir.get());
 	submenuTemplate->addAction(xdgOpenPrefixDir.get());
@@ -2378,6 +2416,7 @@ void MainWindow::createMenuActions(){
 	submenuTemplate->addAction(winefileOpenMountDir.get());
 	submenuTemplate->addAction(winefileOpenPrefixDir.get());
 	submenuTemplate.release();
+	*/
 
 	return;
 }
@@ -2402,6 +2441,7 @@ QIcon MainWindow::loadIcon(QString iconName){
 
 void MainWindow::createToolBarActions(){
 	// Toolbar creation function
+	/*
 	procToolBar.reset(new QToolBar(tlbProccess));
 	procToolBar->addAction(processKillSelected.get());
 	procToolBar->addAction(processKillWine.get());
@@ -2417,6 +2457,7 @@ void MainWindow::createToolBarActions(){
 	prefixToolBar->addAction(prefixSettings.get());
 	prefixToolBar->addSeparator ();
 	prefixToolBar->addAction(prefixDelete.get());
+	*/
 	return;
 }
 
@@ -2428,7 +2469,7 @@ void MainWindow::iconDelete_Click(void){
 	/*
 		This function delete add selected icons
 	*/
-
+	/*
 	QList<QListWidgetItem *> icoList = lstIcons->selectedItems();
 	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 
@@ -2447,18 +2488,21 @@ void MainWindow::iconDelete_Click(void){
 		}
 		twPrograms_ItemClick(treeItem, 0);
 	}
+	*/
 	return;
 }
 
 void MainWindow::iconRun_Click(void){
-
+	/*
 	QListWidgetItem *iconItem=lstIcons->selectedItems().first();
 	if (iconItem)
 		lstIcons_ItemDoubleClick(iconItem);
+	*/
 	return;
 }
 
 void MainWindow::iconRename_Click(void){
+	/*
 	QTreeWidgetItem *treeItem=twPrograms->currentItem();
 	QListWidgetItem *iconItem=lstIcons->selectedItems().first();
 	QString prefix_name, dir_name;
@@ -2490,6 +2534,7 @@ void MainWindow::iconRename_Click(void){
 	}
 
 	twPrograms_ItemClick(treeItem, 0);
+	*/
 	return;
 }
 
@@ -2542,6 +2587,8 @@ void MainWindow::iconCut_Click(void){
 
 		see struct iconCopyBuffer definition for details
 	*/
+
+	/*
 	if (!twPrograms->currentItem())
 		return;
 
@@ -2577,7 +2624,7 @@ void MainWindow::iconCut_Click(void){
 		iconBuffer.prefix_name = treeItem->text(0);
 		iconBuffer.dir_name = "";
 	}
-
+*/
 	return;
 }
 
@@ -2589,6 +2636,7 @@ void MainWindow::iconCopy_Click(void){
 	* see struct iconCopyBuffer definition for details
 	*/
 
+	/*
 	if (!twPrograms->currentItem())
 		return;
 
@@ -2612,11 +2660,12 @@ void MainWindow::iconCopy_Click(void){
 		iconBuffer.prefix_name = treeItem->text(0);
 		iconBuffer.dir_name = "";
 	}
+	*/
 	return;
 }
 
 void MainWindow::iconPaste_Click(void){
-
+	/*
 	if (!twPrograms->currentItem())
 		return;
 
@@ -2665,10 +2714,12 @@ void MainWindow::iconPaste_Click(void){
 	}
 
 	twPrograms_ItemClick(twPrograms->currentItem(), 0);
+	*/
 	return;
 }
 
 void MainWindow::iconOption_Click(void){
+	/*
 	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 	QListWidgetItem *iconItem = lstIcons->currentItem();
 
@@ -2690,10 +2741,12 @@ void MainWindow::iconOption_Click(void){
 		twPrograms_ItemClick(treeItem, 0);
 	}
 	delete(iconAddWizard);
+	*/
 	return;
 }
 
 void MainWindow::xdgOpenIconDir_Click(void){
+	/*
 	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 	QListWidgetItem *iconItem = lstIcons->currentItem();
 	QStringList result;
@@ -2711,7 +2764,7 @@ void MainWindow::xdgOpenIconDir_Click(void){
 	QStringList args;
 	args<<result.at(4);
 	CoreLib->runProcess(CoreLib->getWhichOut("xdg-open"), args, "", FALSE);
-
+*/
 	return;
 }
 
@@ -2765,6 +2818,7 @@ void MainWindow::xdgOpenMountDir_Click(void){
 
 
 void MainWindow::winefileOpenIconDir_Click(void){
+	/*
 	QTreeWidgetItem *treeItem = twPrograms->currentItem();
 	QListWidgetItem *iconItem = lstIcons->currentItem();
 	QStringList result;
@@ -2780,7 +2834,7 @@ void MainWindow::winefileOpenIconDir_Click(void){
 		result = db_icon.getByName(treeItem->text(0), "", iconItem->text());
 		CoreLib->runWineBinary("winefile", result.at(4) + "/", treeItem->text(0));
 	}
-
+*/
 	return;
 }
 

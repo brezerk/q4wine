@@ -1,3 +1,22 @@
+/***************************************************************************
+ *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   brezerk@gmail.com                                                     *
+ *                                                                         *
+ *   This program is free software: you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation, either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
+ *                                                                         *
+ ***************************************************************************/
+
 #include "draglistwidget.h"
 
 DragListWidget::DragListWidget(QWidget *parent) : QListWidget (parent)
@@ -17,16 +36,18 @@ void DragListWidget::mousePressEvent(QMouseEvent *event){
 	}
 
 	if (QApplication::keyboardModifiers()==Qt::CTRL){
-		QListWidgetItem *item = this->itemAt(event->x(), event->y());
+		std::auto_ptr<QListWidgetItem> item (this->itemAt(event->x(), event->y()));
 
-		if (item){
-			QListWidget::itemClicked ( item );
+		if (item.get()){
+			QListWidget::itemClicked ( item.get() );
 			if (!item->isSelected()){
 				item->setSelected(TRUE);
 			} else {
 				item->setSelected(FALSE);
 			}
 		}
+
+		item.release();
 	} else {
 		QListWidget::mousePressEvent(event);
 	}
@@ -62,20 +83,21 @@ void DragListWidget::dragEnterEvent(QDragEnterEvent *event){
 }
 
 void DragListWidget::dragMoveEvent(QDragMoveEvent *event){
-	  DragListWidget *source = qobject_cast<DragListWidget *>(event->source());
-	  if (source && source != this){
+	std::auto_ptr<DragListWidget> source (qobject_cast<DragListWidget *>(event->source()));
+	if (source.get() && source.get() != this){
 		event->setDropAction(Qt::MoveAction);
 		event->accept();
-	  }
+	}
+	source.release();
 }
 
 void DragListWidget::dropEvent(QDropEvent *event){
-	  DragListWidget *source = qobject_cast<DragListWidget *>(event->source());
-	  if (source && source != this){
+	  std::auto_ptr<DragListWidget> source (qobject_cast<DragListWidget *>(event->source()));
+	  if (source.get() && source.get() != this){
 		event->setDropAction(Qt::MoveAction);
 		event->accept();
 	  }
-
+	  source.release();
 	  emit(startDrop(event->mimeData()->urls()));
 }
 

@@ -45,6 +45,7 @@
 #include <QTreeWidgetItem>
 #include <QMimeData>
 #include <QDrag>
+#include <QSplitter>
 
 #include <ui_MainWindow.h>
 
@@ -239,7 +240,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 	private:
 		//! Custom Widgets
-		std::auto_ptr<DragListWidget> lstIcons;
+		//DragListWidget* lstIcons;
 		std::auto_ptr<AppDBWidget> appdbWidget;
 
 		//! This is need for libq4wine-core.so import;
