@@ -88,20 +88,13 @@
 
 #include <q4wine-lib/main.h>
 
-struct iconCopyBuffer {
-	QString dir_name;
-	QString prefix_name;
-	bool move;
-	QStringList names;
-};
-
 class MainWindow : public QMainWindow, public Ui::MainWindow
 {
 	Q_OBJECT
 	public:
 		MainWindow(int startState, QWidget * parent = 0, Qt::WFlags f = 0);
 		// Icon copy\cyt structure
-		iconCopyBuffer iconBuffer;
+
 	public slots:
 		void messageReceived(const QString message) const;
 		void xdgOpenUrl(QString url);
@@ -113,7 +106,8 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void CoreFunction_ResizeContent(int tabIndex);
 		void menuMountImages_triggered ( QAction * action );
 		void menuMountRecentImages_triggered ( QAction * action );
-		void menuRun_triggered ( QAction * action );
+
+		void changeStatusText(QString text);
 
 		/*
 		 * Icon tray slots
@@ -158,13 +152,12 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		 *
 		 * \param  item		an QListWidgetItem wich trigged an a slot
 		 */
-		void lstIcons_ItemClick(QListWidgetItem * item);
+		void lstIcons_ItemClick(QString program, QString args, QString desc, QString console, QString desktop);
 
 		/*! \brief This slot runs icon.
 		 *
 		 * \param  item		an QListWidgetItem wich trigged an a slot
 		 */
-		void lstIcons_ItemDoubleClick(QListWidgetItem * item);
 		void lstIcons_ShowContextMenu(const QPoint & iPoint);
 
 		/*! \brief This slot request programs icons by folder and\or prefix name.
@@ -204,14 +197,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void xdgOpenIconDir_Click(void);
 		void xdgOpenMountDir_Click(void);
 		void xdgOpenPrefixDir_Click(void);
-		void iconAdd_Click(void);
-		void iconRun_Click(void);
-		void iconCut_Click(void);
-		void iconCopy_Click(void);
-		void iconPaste_Click(void);
-		void iconRename_Click(void);
-		void iconOption_Click(void);
-		void iconDelete_Click(void);
+
 		void iconMountOther_Click(void);
 		void iconUnmount_Click(void);
 
@@ -273,7 +259,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		std::auto_ptr<QMenu> menuIconMount;
 		std::auto_ptr<QMenu> menuIconMountRecent;
 
-		std::auto_ptr<QMenu> menuRun;
 		QList <QAction *> recentIconsList;
 
 		void createTrayIcon();
@@ -312,14 +297,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 		// Icons control for context menu
 		//QAction *iconOpenDirWinefile;
-		std::auto_ptr<QAction> iconRun;
-		std::auto_ptr<QAction> iconAdd;
-		std::auto_ptr<QAction> iconRename;
-		std::auto_ptr<QAction> iconDelete;
-		std::auto_ptr<QAction> iconOptions;
-		std::auto_ptr<QAction> iconCopy;
-		std::auto_ptr<QAction> iconCut;
-		std::auto_ptr<QAction> iconPaste;
 		std::auto_ptr<QAction> iconMount;
 		std::auto_ptr<QAction> iconUnmount;
 		std::auto_ptr<QAction> iconMountOther;
@@ -350,6 +327,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 	signals:
 		void appdbWidget_startSearch(short int, QString);
+		void showFolderContents(QString, QString, QString);
 
 	protected:
 		// Event filter

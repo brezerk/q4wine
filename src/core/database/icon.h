@@ -114,13 +114,6 @@ public:
 	*/
 	bool delIconsByPrefixName(const QString prefix_name) const;
 
-   /*! \brief This function delete icon field by prefix_name key value from table.
-	*
-	* \param  prefix_name    A prefix name value.
-	* \return Return true on success.
-	*/
-	bool delIcon(const QString prefix_name, const QString icon_name) const;
-
    /*! \brief This function delete icon field by prefix_name and dir_name key value from table.
 	*
 	* \param  prefix_name    A prefix name value.

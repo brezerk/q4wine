@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -41,20 +41,10 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 
 	setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
 
-	std::auto_ptr<DragListWidget> lstIcons (new DragListWidget(tab));
-	lstIcons->setViewMode(QListView::IconMode);
-	lstIcons->setGridSize(QSize(86, 86));
-	lstIcons->setResizeMode(QListView::Adjust);
-	lstIcons->setWrapping(TRUE);
-	lstIcons->setWordWrap(TRUE);
-	lstIcons->setAcceptDrops(TRUE);
-	lstIcons->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
-	lstIcons->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
-	lstIcons->setMovement(QListView::Snap);
-	lstIcons->setDragDropMode(QAbstractItemView::InternalMove);
-	lstIcons->setSelectionMode(QAbstractItemView::ContiguousSelection);
-	lstIcons->setIconSize(QSize(32, 32));
-	lstIcons->installEventFilter(this);
+	std::auto_ptr<DragListWidget> lstIcons (new DragListWidget(THEME_NAME, tab));
+	connect(this, SIGNAL(showFolderContents(QString, QString, QString)), lstIcons.get(), SLOT(showFolderContents(QString, QString, QString)));
+	connect(lstIcons.get(), SIGNAL(iconItemClick(QString, QString, QString, QString, QString)), this, SLOT(lstIcons_ItemClick(QString, QString, QString, QString, QString)));
+	connect(lstIcons.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
 
 	std::auto_ptr<QWidget> wid (new QWidget(tab));
 	std::auto_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
@@ -175,8 +165,6 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	// FIXME: Move this into shared libaray
 	runAutostart();
 	createTrayIcon();
-
-	connect (menuRun.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
 
 	// Creating AppDBScrollWidget and place it into frameAppDBWidget layout
 	appdbWidget.reset(new AppDBWidget());
@@ -343,51 +331,31 @@ void MainWindow::trayIcon_Activate(QSystemTrayIcon::ActivationReason reason){
 	return;
 }
 
-void MainWindow::lstIcons_ItemClick(QListWidgetItem * item){
+void MainWindow::lstIcons_ItemClick(QString program, QString args, QString desc, QString console, QString desktop){
 	/*
 	 * This is function for selection icons, and displaying
 	 * icon informationm like path and description
 	 */
 
-	/*
-	if (!item)
-		return;
-
-	if (!twPrograms->currentItem()){
-		lstIcons->clear();
-		return;
-	}
-
-	std::auto_ptr<QTreeWidgetItem> treeItem (twPrograms->currentItem());
-	QStringList result;
-
-	if (treeItem->parent()){
-		result=db_icon.getByName(treeItem->parent()->text(0), treeItem->text(0), item->text());
-	} else {
-		result=db_icon.getByName(treeItem->text(0), "", item->text());
-	}
-
-	treeItem.release();
-
-	lblIconInfo0->setText(tr("Program: %1<br> Args: %2").arg(result.at(10).split('/').last().split('\\').last()) .arg(result.at(9)));
-	lblIconInfo2->setText(tr("Description: %1").arg(result.at(2)));
+	lblIconInfo0->setText(tr("Program: %1<br> Args: %2").arg(program) .arg(args));
+	lblIconInfo2->setText(tr("Description: %1").arg(desc));
 
 	QString useconsole="";
-	if (result.at(7)=="1"){
+	if (console=="1"){
 		useconsole=tr("Yes");
 	} else {
 		useconsole=tr("No");
 	}
 
 	QString desktopsize="";
-	if (result.at(11).isEmpty()){
+	if (desktop.isEmpty()){
 		desktopsize = tr("Default");
 	} else {
-		desktopsize = result.at(11);
+		desktopsize = desktop;
 	}
 
 	lblIconInfo1->setText(tr("Runs in console: %1<br> Desktop size: %2").arg(useconsole) .arg(desktopsize));
-	*/
+
 	return;
 }
 
@@ -536,37 +504,8 @@ void MainWindow::getSettings(){
 	return;
 }
 
-void MainWindow::lstIcons_ItemDoubleClick(QListWidgetItem * item){
-	/*
-	* This is function for getting icon settings and run associated program
-	*/
-
-	/*
-	std::auto_ptr<QTreeWidgetItem> treeItem(twPrograms->currentItem());
-
-	if (!twPrograms->currentItem()){
-		lstIcons->clear();
-		return;
-	}
-
-	statusBar()->showMessage(tr("Starting %1 ...").arg(item->text()));
-	if (treeItem->parent()){
-		if (CoreLib->runIcon(treeItem->parent()->text(0), treeItem->text(0), item->text())){
-			statusBar()->showMessage(tr("%1 started.").arg(item->text()));
-		} else {
-			statusBar()->showMessage(tr("%1 fail to start.").arg(item->text()));
-		}
-	} else {
-		if (CoreLib->runIcon(treeItem->text(0), "", item->text())){
-			statusBar()->showMessage(tr("%1 started.").arg(item->text()));
-		} else {
-			statusBar()->showMessage(tr("%1 fail to start.").arg(item->text()));
-		}
-
-	}
-	treeItem.release();
-	*/
-	return;
+void MainWindow::changeStatusText(QString text){
+	statusBar()->showMessage(text);
 }
 
 void MainWindow::updateDtabaseConnectedItems(int currentPrefix){
@@ -713,6 +652,15 @@ void MainWindow::twPrograms_ItemClick(QTreeWidgetItem * item, int){
 	 * If yes -- show root-level Icons.
 	 * otherwise -- show children-level icons
 	 */
+
+	if (!item)
+		return;
+
+	if (item->parent()){
+		emit(showFolderContents(item->parent()->text(0), item->text(0), txtIconFilter->text()));
+	} else {
+		emit(showFolderContents(item->text(0), "", txtIconFilter->text()));
+	}
 
 	/*
 	QList<QStringList> iconsList;
@@ -953,68 +901,6 @@ void MainWindow::menuMountRecentImages_triggered ( QAction * action ){
 			break;
 		}
 	}
-*/
-	return;
-}
-
-void MainWindow::menuRun_triggered ( QAction * action ){
-	/*
-	if (action->text().isEmpty())
-		return;
-
-	if (action->text()==tr("Browse ..."))
-		return;
-
-	QStringList result = db_last_run_icon.getByExec(action->statusTip());
-
-	if (!twPrograms->currentItem())
-		return;
-
-	std::auto_ptr<QTreeWidgetItem> treeItem (twPrograms->currentItem());
-	QStringList dataList;
-
-	if (!treeItem.get())
-		return;
-
-	if (!isVisible())
-		setMeVisible(TRUE);
-
-	if (isMinimized ())
-		showNormal ();
-
-#ifdef DEBUG
-	qDebug()<<"Config key: advanced.openRunDialog="<<CoreLib->getSetting("advanced", "openRunDialog", false, 0).toString();
-#endif
-
-	if (CoreLib->getSetting("advanced", "openRunDialog", false, 0).toInt()==0){
-		ExecObject execObj;
-		if (treeItem->parent()){
-			execObj.prefixid=db_prefix.getId(treeItem->parent()->text(0));
-		} else {
-			execObj.prefixid=db_prefix.getId(treeItem->text(0));
-		}
-		execObj.execcmd=action->statusTip();
-		execObj.wrkdir=result.at(0);
-		execObj.override=result.at(1);
-		execObj.winedebug=result.at(2);
-		execObj.useconsole=result.at(3);
-		execObj.display=result.at(4);
-		execObj.cmdargs=result.at(5);
-		execObj.desktop=result.at(6);
-		execObj.nice=result.at(7);
-		CoreLib->runWineBinary(execObj);
-	} else {
-		Run run;
-		if (treeItem->parent()){
-			run.prepare(treeItem->parent()->text(0), result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
-		} else {
-			run.prepare(treeItem->text(0), result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
-		}
-
-		if (run.exec()==QDialog::Accepted)
-			CoreLib->runWineBinary(run.execObj);
-	}
-	treeItem.release();
 */
 	return;
 }
@@ -2208,50 +2094,7 @@ void MainWindow::createMenuActions(){
 	 * Context menus for icon manage
 	 */
 
-	/*
-	iconRun.reset(new QAction(tr("Run"), lstIcons.get()));
-	iconRun->setStatusTip(tr("Create new icon"));
-	connect(iconRun.get(), SIGNAL(triggered()), this, SLOT(iconRun_Click()));
 
-	iconAdd.reset(new QAction(tr("New"), lstIcons.get()));
-	iconAdd->setStatusTip(tr("Create new icon"));
-	connect(iconAdd.get(), SIGNAL(triggered()), this, SLOT(iconAdd_Click()));
-
-	iconCut.reset(new QAction(tr("Cut"), lstIcons.get()));
-	iconCut->setStatusTip(tr("Cut selected icons to buffer"));
-	connect(iconCut.get(), SIGNAL(triggered()), this, SLOT(iconCut_Click()));
-
-	iconCopy.reset(new QAction(tr("Copy"), lstIcons.get()));
-	iconCopy->setStatusTip(tr("Copy selected icons to buffer"));
-	connect(iconCopy.get(), SIGNAL(triggered()), this, SLOT(iconCopy_Click()));
-
-	iconPaste.reset(new QAction(tr("Paste"), lstIcons.get()));
-	iconPaste->setStatusTip(tr("Paste selected icons from buffer to selected folder"));
-	connect(iconPaste.get(), SIGNAL(triggered()), this, SLOT(iconPaste_Click()));
-
-	iconRename.reset(new QAction(tr("Rename"), lstIcons.get()));
-	iconRename->setStatusTip(tr("Rename current icon"));
-	connect(iconRename.get(), SIGNAL(triggered()), this, SLOT(iconRename_Click()));
-
-	iconDelete.reset(new QAction(tr("Delete"), lstIcons.get()));
-	iconDelete->setStatusTip(tr("Delete current icon"));
-	connect(iconDelete.get(), SIGNAL(triggered()), this, SLOT(iconDelete_Click()));
-
-	iconOptions.reset(new QAction(tr("Options"), lstIcons.get()));
-	iconOptions->setStatusTip(tr("Modify current icon options"));
-	connect(iconOptions.get(), SIGNAL(triggered()), this, SLOT(iconOption_Click()));
-
-	iconMount.reset(new QAction(tr("mount"), lstIcons.get()));
-	iconMount->setStatusTip(tr("Mount image from icon options"));
-
-	iconUnmount.reset(new QAction(tr("umount"), lstIcons.get()));
-	iconUnmount->setStatusTip(tr("Unmount image"));
-	connect(iconUnmount.get(), SIGNAL(triggered()), this, SLOT(iconUnmount_Click()));
-
-	iconMountOther.reset(new QAction(QIcon(":/data/folder.png"), tr("Browse ..."), lstIcons.get()));
-	iconMountOther->setStatusTip(tr("Browse for other image"));
-	connect(iconMountOther.get(), SIGNAL(triggered()), this, SLOT(iconMountOther_Click()));
-	*/
 
 	/*
 	 * Folder open
@@ -2465,102 +2308,6 @@ void MainWindow::createToolBarActions(){
  *    CONTEXT MENU SLOTS    *
 \****************************/
 
-void MainWindow::iconDelete_Click(void){
-	/*
-		This function delete add selected icons
-	*/
-	/*
-	QList<QListWidgetItem *> icoList = lstIcons->selectedItems();
-	QTreeWidgetItem *treeItem = twPrograms->currentItem();
-
-	if (!treeItem)
-		return;
-	if (icoList.count()<0)
-		return;
-
-	if (QMessageBox::warning(this, tr("Delete Icon"), tr("Do you want to delete all selected icons?"),  QMessageBox::Yes, QMessageBox::No	)==QMessageBox::Yes){
-		for (int i=0; i<icoList.count(); i++){
-			if(!treeItem->parent()){
-				db_icon.delIcon(treeItem->text(0), icoList.at(i)->text());
-			}else{
-				db_icon.delIcon(treeItem->parent()->text(0), treeItem->text(0), icoList.at(i)->text());
-			}
-		}
-		twPrograms_ItemClick(treeItem, 0);
-	}
-	*/
-	return;
-}
-
-void MainWindow::iconRun_Click(void){
-	/*
-	QListWidgetItem *iconItem=lstIcons->selectedItems().first();
-	if (iconItem)
-		lstIcons_ItemDoubleClick(iconItem);
-	*/
-	return;
-}
-
-void MainWindow::iconRename_Click(void){
-	/*
-	QTreeWidgetItem *treeItem=twPrograms->currentItem();
-	QListWidgetItem *iconItem=lstIcons->selectedItems().first();
-	QString prefix_name, dir_name;
-	bool ok;
-
-	if (!treeItem)
-		return;
-	if (!iconItem)
-		return;
-
-	if (!treeItem->parent()){
-		prefix_name = treeItem->text(0);
-		dir_name = "";
-	} else {
-		prefix_name = treeItem->parent()->text(0);
-		dir_name = treeItem->text(0);
-	}
-
-	QString newName = QInputDialog::getText(this, tr("Enter new icon name"), tr("Icon name:"), QLineEdit::Normal, iconItem->text(), &ok);
-
-	if (ok && !newName.isEmpty()){
-		while (db_icon.isExistsByName(prefix_name, dir_name, newName)){
-			newName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, newName, &ok);
-			if ((!ok) || (newName.isEmpty())){
-				return;
-			}
-		}
-		db_icon.renameIcon(iconItem->text(), prefix_name, dir_name, newName);
-	}
-
-	twPrograms_ItemClick(treeItem, 0);
-	*/
-	return;
-}
-
-void MainWindow::iconAdd_Click(void){
-	QTreeWidgetItem *treeItem;
-	IconSettings *iconAddWizard;
-	treeItem = twPrograms->currentItem();
-
-	if (!treeItem)
-		return;
-
-	if (treeItem->parent()){
-		iconAddWizard = new IconSettings(treeItem->parent()->text(0), treeItem->text(0));
-	} else {
-		iconAddWizard = new IconSettings(treeItem->text(0), "");
-	}
-
-	if (iconAddWizard->exec() == QDialog::Accepted){
-		// Updating icons view
-		twPrograms_ItemClick(treeItem, 0);
-	}
-	delete(iconAddWizard);
-
-	return;
-}
-
 void MainWindow::iconMountOther_Click(void){
 	/*
 		This function request mount of selected by user image
@@ -2577,171 +2324,6 @@ void MainWindow::iconUnmount_Click(void){
 	*/
 
 	dirUnmount_Click();
-	return;
-}
-
-void MainWindow::iconCut_Click(void){
-	/*
-		This function fill iconBuffer with selected icons names
-		and sets other informations required for copy\cut
-
-		see struct iconCopyBuffer definition for details
-	*/
-
-	/*
-	if (!twPrograms->currentItem())
-		return;
-
-	QList<QListWidgetItem *> icoList = lstIcons->selectedItems();
-	QTreeWidgetItem *treeItem = twPrograms->currentItem();
-
-	// If icon cutted -- set icon disabled style
-	// FIXME: It pice works fine, but we nead to use pixmaps for grayscale, not Qt::ItemIsEnabled flag....
-	// FIXME: It is optional, i don't work on it until release... ;)
-	//icoList2 = lstIcons->findItems("*", Qt::MatchWrap | Qt::MatchWildcard);
-
-	//	for (int i=0; i<icoList2.count(); i++){
-	//		icoList2.at(i)->icon()->addPixmap(QPixmap.alphaChannel (), 0, 0);
-	//	}
-
-
-	// Clearing icon buffer
-	iconBuffer.names.clear();
-	iconBuffer.dir_name="";
-	iconBuffer.prefix_name="";
-	iconBuffer.move=true;
-
-	// Fiffing buffer with new items
-	for (int i=0; i<icoList.count(); i++){
-		iconBuffer.names.append(icoList.at(i)->text());
-		//icoList.at(i)->setFlags(Qt::ItemIsEnabled);
-	}
-
-	if (treeItem->parent()){
-		iconBuffer.prefix_name = treeItem->parent()->text(0);
-		iconBuffer.dir_name = treeItem->text(0);
-	} else {
-		iconBuffer.prefix_name = treeItem->text(0);
-		iconBuffer.dir_name = "";
-	}
-*/
-	return;
-}
-
-void MainWindow::iconCopy_Click(void){
-	/*
-	* This function fill iconBuffer with selected icons names
-	* and sets other informations required for copy\cut
-	*
-	* see struct iconCopyBuffer definition for details
-	*/
-
-	/*
-	if (!twPrograms->currentItem())
-		return;
-
-	QList<QListWidgetItem *> icoList = lstIcons->selectedItems();
-	QTreeWidgetItem *treeItem = twPrograms->currentItem();
-
-	// Clearing icon buffer
-	iconBuffer.names.clear();
-	iconBuffer.dir_name="";
-	iconBuffer.prefix_name="";
-	iconBuffer.move=false;
-
-	// Fiffing buffer with new items
-	for (int i=0; i<icoList.count(); i++){
-		iconBuffer.names.append(icoList.at(i)->text());
-	}
-	if (treeItem->parent()){
-		iconBuffer.prefix_name = treeItem->parent()->text(0);
-		iconBuffer.dir_name = treeItem->text(0);
-	} else {
-		iconBuffer.prefix_name = treeItem->text(0);
-		iconBuffer.dir_name = "";
-	}
-	*/
-	return;
-}
-
-void MainWindow::iconPaste_Click(void){
-	/*
-	if (!twPrograms->currentItem())
-		return;
-
-	QTreeWidgetItem *treeItem = twPrograms->currentItem();
-	bool fexists=FALSE, ok;
-	QString newName, prefix_name, dir_name;
-
-	if (iconBuffer.names.count()>0){
-		for (int i=0; i<iconBuffer.names.count(); i++){
-			// Checking for not unic names
-			newName = iconBuffer.names.at(i);
-			fexists=FALSE;
-			ok=FALSE;
-
-			if (!treeItem->parent()){
-				prefix_name = treeItem->text(0);
-				dir_name = "";
-			} else {
-				prefix_name = treeItem->parent()->text(0);
-				dir_name = treeItem->text(0);
-			}
-
-			while (db_icon.isExistsByName(prefix_name, dir_name, newName)){
-				newName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, iconBuffer.names.at(i) , &ok);
-				if (!ok){
-					return;
-				}
-			}
-
-			switch (iconBuffer.move){
-   case FALSE:
-				if (!db_icon.copyIcon(iconBuffer.names.at(i), iconBuffer.prefix_name, iconBuffer.dir_name, newName, prefix_name, dir_name))
-					return;
-				break;
-   case TRUE:
-				if (!db_icon.updateIcon(newName, db_prefix.getId(prefix_name), db_dir.getId(dir_name, prefix_name), db_prefix.getId(iconBuffer.prefix_name), db_dir.getId(iconBuffer.dir_name, iconBuffer.prefix_name), iconBuffer.names.at(i)))
-					return;
-				break;
-			}
-
-		}
-		iconBuffer.names.clear();
-		iconBuffer.dir_name="";
-		iconBuffer.prefix_name="";
-		iconBuffer.move=false;
-	}
-
-	twPrograms_ItemClick(twPrograms->currentItem(), 0);
-	*/
-	return;
-}
-
-void MainWindow::iconOption_Click(void){
-	/*
-	QTreeWidgetItem *treeItem = twPrograms->currentItem();
-	QListWidgetItem *iconItem = lstIcons->currentItem();
-
-	if (!treeItem)
-		return;
-	if (!iconItem)
-		return;
-
-	IconSettings *iconAddWizard;
-
-	if (treeItem->parent()){
-		iconAddWizard = new IconSettings(treeItem->parent()->text(0), treeItem->text(0), iconItem->text());
-	} else {
-		iconAddWizard = new IconSettings(treeItem->text(0), "", iconItem->text());
-	}
-
-	if (iconAddWizard->exec() == QDialog::Accepted){
-		// Updating icons view
-		twPrograms_ItemClick(treeItem, 0);
-	}
-	delete(iconAddWizard);
-	*/
 	return;
 }
 

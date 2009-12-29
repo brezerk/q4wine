@@ -227,7 +227,7 @@ bool Icon::delIconsByPrefixName(const QString prefix_name) const{
 	return true;
 }
 
-
+/*
 bool Icon::delIcon(const QString prefix_name, const QString icon_name) const{
 	QSqlQuery query;
 	query.prepare("DELETE FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id ISNULL AND name=:icon_name");
@@ -239,19 +239,25 @@ bool Icon::delIcon(const QString prefix_name, const QString icon_name) const{
 		return false;
 	}
 	return true;
-}
+}*/
 
 bool Icon::delIcon(const QString prefix_name, const QString dir_name, const QString icon_name) const{
 	QSqlQuery query;
-	if (!icon_name.isEmpty()){
-		query.prepare("DELETE FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id=(SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name1) AND name=:dir_name) AND name=:icon_name");
+	if (dir_name.isEmpty()){
+		query.prepare("DELETE FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id ISNULL AND name=:icon_name");
+		query.bindValue(":prefix_name", prefix_name);
 		query.bindValue(":icon_name", icon_name);
 	} else {
-		query.prepare("DELETE FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id=(SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name1) AND name=:dir_name)");
+		if (!icon_name.isEmpty()){
+			query.prepare("DELETE FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id=(SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name1) AND name=:dir_name) AND name=:icon_name");
+			query.bindValue(":icon_name", icon_name);
+		} else {
+			query.prepare("DELETE FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id=(SELECT id FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name1) AND name=:dir_name)");
+		}
+		query.bindValue(":prefix_name", prefix_name);
+		query.bindValue(":prefix_name1", prefix_name);
+		query.bindValue(":dir_name", dir_name);
 	}
-	query.bindValue(":prefix_name", prefix_name);
-	query.bindValue(":prefix_name1", prefix_name);
-	query.bindValue(":dir_name", dir_name);
 
 	if (!query.exec()){
 		qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
