@@ -59,7 +59,8 @@
 
 #include "xmlparser.h"
 
-#include "draglistwidget.h"
+#include "iconlistwidget.h"
+#include "prefixtreewidget.h"
 
 #ifdef WITH_WINEAPPDB
 #include "appdbwidget.h"
@@ -97,15 +98,12 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 	public slots:
 		void messageReceived(const QString message) const;
-		void xdgOpenUrl(QString url);
 
 	private slots:
 
 		//void StartDrug(QDragEnterEvent * event);
 		void getWineProccessInfo(void);
 		void CoreFunction_ResizeContent(int tabIndex);
-		void menuMountImages_triggered ( QAction * action );
-		void menuMountRecentImages_triggered ( QAction * action );
 
 		void changeStatusText(QString text);
 
@@ -131,6 +129,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 		void cbPrefixes_Change (const QString currentIndexText);
 		void txtIconFilter_textChanged(QString);
+		void updateIconDesc(QString program, QString args, QString desc, QString console, QString desktop);
 
 		/*
 		 *Prefix tool bars action
@@ -148,17 +147,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void processKillSelected_Click(void);
 		void processKillWine_Click(void);
 
-		/*! \brief This slot request icon description.
-		 *
-		 * \param  item		an QListWidgetItem wich trigged an a slot
-		 */
-		void lstIcons_ItemClick(QString program, QString args, QString desc, QString console, QString desktop);
 
-		/*! \brief This slot runs icon.
-		 *
-		 * \param  item		an QListWidgetItem wich trigged an a slot
-		 */
-		void lstIcons_ShowContextMenu(const QPoint & iPoint);
 
 		/*! \brief This slot request programs icons by folder and\or prefix name.
 		 *
@@ -167,7 +156,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		 * \param  item		an QTreeWidgetItem wich trigged an a slot
 		 */
 		void twPrograms_ItemClick(QTreeWidgetItem * item, int);
-		void twPrograms_ShowContextMenu(const QPoint);
 
 		/*
 		 *Prefix table slots
@@ -180,26 +168,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		/*
 		 * Context menu slots
 		 */
-		//Directory context
-		void winefileOpenIconDir_Click(void);
-		void winefileOpenMountDir_Click(void);
-		void winefileOpenPrefixDir_Click(void);
-		void dirAdd_Click(void);
-		void dirRename_Click(void);
-		void dirDelete_Click(void);
-		void dirUnmount_Click(void);
-		void dirMountOther_Click(void);
-		void dirConfigure_Click(void);
-		void dirInstall_Click(void);
-		void dirUninstall_Click(void);
-
-		//Icon context
-		void xdgOpenIconDir_Click(void);
-		void xdgOpenMountDir_Click(void);
-		void xdgOpenPrefixDir_Click(void);
-
-		void iconMountOther_Click(void);
-		void iconUnmount_Click(void);
 
 		//Main menu slots
 		void mainExit_Click(void);
@@ -221,8 +189,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void mainDonate_Click(void);
 		void mainBugs_Click(void);
 
-		void startDrag();
-		void startDrop(QList<QUrl> files);
+
 
 	private:
 		//! Custom Widgets
@@ -327,7 +294,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 	signals:
 		void appdbWidget_startSearch(short int, QString);
-		void showFolderContents(QString, QString, QString);
+		void updateDatabaseConnections(void);
 
 	protected:
 		// Event filter

@@ -152,7 +152,9 @@ public:
 	 *
 	 * \return Return nothing.
 	 */
+	void openHomeUrl(const QString rawurl) const;
 	void openUrl(const QString rawurl) const;
+	void updateRecentImagesList(const QString media) const;
 
 
 	/*! \brief This function gets mouted image or media.

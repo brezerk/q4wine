@@ -29,35 +29,6 @@
        <attribute name="title">
         <string>Programs</string>
        </attribute>
-       <widget class="QTreeWidget" name="twPrograms">
-        <property name="geometry">
-         <rect>
-          <x>150</x>
-          <y>30</y>
-          <width>234</width>
-          <height>229</height>
-         </rect>
-        </property>
-        <property name="contextMenuPolicy">
-         <enum>Qt::CustomContextMenu</enum>
-        </property>
-        <property name="autoExpandDelay">
-         <number>0</number>
-        </property>
-        <property name="itemsExpandable">
-         <bool>true</bool>
-        </property>
-        <column>
-         <property name="text">
-          <string>Prefixes</string>
-         </property>
-        </column>
-        <item>
-         <property name="text">
-          <string>Default</string>
-         </property>
-        </item>
-       </widget>
        <widget class="QGroupBox" name="gbInfo">
         <property name="geometry">
          <rect>

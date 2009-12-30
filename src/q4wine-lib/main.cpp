@@ -789,7 +789,6 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			return this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
 	  }
 
-
 	  QString corelib::getWinePath(const QString path, const QString option) const{
 			QString output, exec;
 			QStringList args;
@@ -925,7 +924,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 		  return;
 	  }
 
-	  void corelib::openUrl(const QString rawurl) const{
+	  void corelib::openHomeUrl(const QString rawurl) const{
 		  QString url="http://";
 		  url.append(APP_WEBSITTE);
 		  url.append("/");
@@ -933,6 +932,13 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 		  QStringList args;
 		  args<<url;
+		  this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
+		  return;
+	  }
+
+	  void corelib::openUrl(const QString rawurl) const{
+		  QStringList args;
+		  args<<rawurl;
 		  this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
 		  return;
 	  }
@@ -967,6 +973,18 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 		   }
 
 		   return string;
+	  }
+
+	  void corelib::updateRecentImagesList(const QString media) const{
+		  QSettings settings(APP_SHORT_NAME, "default");
+		  QStringList files = settings.value("recent_images").toStringList();
+		  files.removeAll(media);
+		  files.prepend(media);
+		  while (files.size() > 8)
+			  files.removeLast();
+
+		  settings.setValue("recent_images", files);
+		  return;
 	  }
 
 	  QString corelib::getMountImageString(const int profile) const{

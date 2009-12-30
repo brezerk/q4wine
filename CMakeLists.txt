@@ -59,7 +59,8 @@ SET( Q4WINE_GUI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.cpp
 #	${CMAKE_SOURCE_DIR}/src/wis/wisitem.cpp
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/draglistwidget.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbwidget.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdblinkitemwidget.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbscrollwidget.cpp
@@ -108,7 +109,8 @@ SET ( Q4WINE_GUI_HEADERS
 #	${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
 	${CMAKE_SOURCE_DIR}/src/core/database/initdb.h
 	${CMAKE_SOURCE_DIR}/config.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/draglistwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdblinkitemwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbsearchwidget.h
@@ -136,7 +138,8 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
 #	${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/draglistwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdblinkitemwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdbscrollwidget.h

@@ -17,9 +17,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "draglistwidget.h"
+#include "iconlistwidget.h"
 
-DragListWidget::DragListWidget(QString themeName, QWidget *parent) : QListWidget (parent)
+IconListWidget::IconListWidget(QString themeName, QWidget *parent) : QListWidget (parent)
 {
 	// Loading libq4wine-core.so
 	libq4wine.setFileName("libq4wine-core");
@@ -46,13 +46,19 @@ DragListWidget::DragListWidget(QString themeName, QWidget *parent) : QListWidget
 	setSelectionMode(QAbstractItemView::ContiguousSelection);
 	setIconSize(QSize(32, 32));
 
-	this->themeName=themeName;
-
 	connect(this, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(itemClicked (QListWidgetItem *)));
 	connect(this, SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(itemDoubleClicked (QListWidgetItem *)));
+	//connect(this, SIGNAL(startDrag()), this, SLOT(startDrag()));
+	//connect(this, SIGNAL(startDrop(QList<QUrl>)), this, SLOT(startDrop(QList<QUrl>)));
+
+	this->themeName=themeName;
+	this->dirName="";
+	this->prefixName="";
+	this->prefixMontPoint="";
+	this->prefixMediaDrive="";
 }
 
-void DragListWidget::showFolderContents(QString prefixName, QString dirName, QString filter){
+void IconListWidget::showFolderContents(QString prefixName, QString dirName, QString filter){
 	this->clear();
 	emit(iconItemClick("","","","",""));
 
@@ -93,10 +99,76 @@ void DragListWidget::showFolderContents(QString prefixName, QString dirName, QSt
 		}
 		iconItem.release();
 	}
+
+	QStringList result = db_prefix.getFieldsByPrefixName(this->prefixName);
+	this->prefixMediaDrive = result.at(7);
+	this->prefixMontPoint = result.at(6);
+
 	return;
 }
 
-void DragListWidget::itemClicked (QListWidgetItem *item){
+void IconListWidget::startDrag(){
+	if (this->prefixName.isEmpty())
+		return;
+
+	QList<QListWidgetItem *> items = this->selectedItems ();
+
+	if (items.count()>0){
+		QString fileName;
+		std::auto_ptr<QMimeData> mimeData(new QMimeData());
+		QList<QUrl> urls;
+
+		for (int i=0; i<items.count(); i++){
+			fileName = CoreLib->createDesktopFile(this->prefixName, this->dirName, items.at(i)->text());
+			urls<<QUrl::fromLocalFile(fileName);
+		}
+
+		mimeData->setUrls(urls);
+		std::auto_ptr<QDrag> drag(new QDrag(this));
+		drag->setMimeData(mimeData.release());
+		drag->setPixmap(items.at(0)->icon().pixmap(32));
+		drag->start(Qt::MoveAction);
+		drag.release();
+	}
+}
+
+void IconListWidget::startDrop(QList<QUrl> files){
+	if (this->prefixName.isEmpty())
+		return;
+
+	bool ok=false;
+
+	QStringList list1;
+
+	for (int i=0; i < files.count(); i++){
+		if (files.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive)){
+			QString file="", fileName="";
+			file = files.at(i).toLocalFile();
+			list1 = file.split("/");
+			fileName=list1.last().left(list1.last().length() - list1.last().split(".").last().length() - 1);
+
+			while (db_icon.isExistsByName(this->prefixName, this->dirName, fileName)){
+				fileName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, fileName , &ok);
+
+				if (!ok){
+					this->showFolderContents(this->prefixName, this->dirName, "");
+					return;
+				}
+			}
+
+			if (files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive)){
+				file = "--backend=user ";
+				file.append(CoreLib->getWinePath(files.at(i).toLocalFile(), "-w"));
+				db_icon.addIcon(file, "wineconsole", "", "", this->prefixName, this->dirName, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
+			} else {
+				db_icon.addIcon("", file, "", "", this->prefixName, this->dirName, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
+			}
+		}
+	}
+	this->showFolderContents(this->prefixName, this->dirName, "");
+}
+
+void IconListWidget::itemClicked (QListWidgetItem *item){
 	if (!item)
 		return;
 
@@ -104,7 +176,7 @@ void DragListWidget::itemClicked (QListWidgetItem *item){
 	emit(iconItemClick(result.at(10).split('/').last().split('\\').last(), result.at(9), result.at(2), result.at(7), result.at(11)));
 }
 
-void DragListWidget::itemDoubleClicked (QListWidgetItem *item){
+void IconListWidget::itemDoubleClicked (QListWidgetItem *item){
 	if (!item)
 		return;
 
@@ -117,7 +189,7 @@ void DragListWidget::itemDoubleClicked (QListWidgetItem *item){
 	return;
 }
 
-void DragListWidget::mousePressEvent(QMouseEvent *event){
+void IconListWidget::mousePressEvent(QMouseEvent *event){
 	if (itemAt(event->pos())){
 		if (event->button() == Qt::LeftButton)
 			startPos = event->pos();
@@ -143,7 +215,7 @@ void DragListWidget::mousePressEvent(QMouseEvent *event){
 	}
 }
 
-void DragListWidget::mouseMoveEvent(QMouseEvent *event){
+void IconListWidget::mouseMoveEvent(QMouseEvent *event){
 	if (itemAt(event->pos()) && dragstarted){
 		if (event->buttons() & Qt::LeftButton){
 			int distance = (event->pos() - startPos).manhattanLength();
@@ -158,7 +230,7 @@ void DragListWidget::mouseMoveEvent(QMouseEvent *event){
 	QListWidget::mouseMoveEvent(event);
 }
 
-void DragListWidget::dragEnterEvent(QDragEnterEvent *event){
+void IconListWidget::dragEnterEvent(QDragEnterEvent *event){
 	if (event->mimeData()->hasFormat("text/uri-list"))
 	{
 		QList<QUrl> list = event->mimeData()->urls();
@@ -172,8 +244,8 @@ void DragListWidget::dragEnterEvent(QDragEnterEvent *event){
 	}
 }
 
-void DragListWidget::dragMoveEvent(QDragMoveEvent *event){
-	std::auto_ptr<DragListWidget> source (qobject_cast<DragListWidget *>(event->source()));
+void IconListWidget::dragMoveEvent(QDragMoveEvent *event){
+	std::auto_ptr<IconListWidget> source (qobject_cast<IconListWidget *>(event->source()));
 	if (source.get() && source.get() != this){
 		event->setDropAction(Qt::MoveAction);
 		event->accept();
@@ -181,8 +253,8 @@ void DragListWidget::dragMoveEvent(QDragMoveEvent *event){
 	source.release();
 }
 
-void DragListWidget::dropEvent(QDropEvent *event){
-	std::auto_ptr<DragListWidget> source (qobject_cast<DragListWidget *>(event->source()));
+void IconListWidget::dropEvent(QDropEvent *event){
+	std::auto_ptr<IconListWidget> source (qobject_cast<IconListWidget *>(event->source()));
 	if (source.get() && source.get() != this){
 		event->setDropAction(Qt::MoveAction);
 		event->accept();
@@ -191,7 +263,10 @@ void DragListWidget::dropEvent(QDropEvent *event){
 	emit(startDrop(event->mimeData()->urls()));
 }
 
-void DragListWidget::contextMenuEvent (QContextMenuEvent * event){
+void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
+	if (this->prefixName.isEmpty())
+		return;
+
 	bool isItemSelected=false, isOnItemEvent=false;
 
 	std::auto_ptr<QListWidgetItem> item (this->itemAt(event->pos().x(), event->pos().y()));
@@ -211,14 +286,65 @@ void DragListWidget::contextMenuEvent (QContextMenuEvent * event){
 	std::auto_ptr<QMenu> menu (new QMenu(this));
 
 	std::auto_ptr<QMenu> menuMount (new QMenu(tr("Mount iso..."), this));
-	std::auto_ptr<QMenu> submenuMount (new QMenu(tr("Mount [none]"), this));
 
-	std::auto_ptr<QAction> entry (new QAction(tr("Run"), this));
-	entry->setStatusTip(tr("umount [drive]"));
-	connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconUmount_Click()));
-	submenuMount->addAction(entry.release());
+	if (this->prefixMontPoint.isEmpty()){
+		menuMount->setEnabled(false);
+	} else {
+		std::auto_ptr<QMenu> submenuMount (new QMenu(tr("Mount [%1]").arg(CoreLib->getMountedImages(this->prefixMontPoint)), this));
+		std::auto_ptr<QAction> entry;
 
-	menuMount->addMenu(submenuMount.release());
+		if (this->prefixMediaDrive.isEmpty()){
+			entry.reset (new QAction(loadIcon("/data/drive_menu.png"), tr("[none]"), this));
+			entry->setStatusTip(tr("No media was set in prefix settings."));
+			submenuMount->addAction(entry.release());
+		} else {
+			entry.reset (new QAction(loadIcon("/data/drive_menu.png"), this->prefixMediaDrive, this));
+			entry->setStatusTip(tr("Mount media drive."));
+			submenuMount->addAction(entry.release());
+		}
+
+		QList<QStringList> images = db_image.getFields();
+
+		if (images.size()>0)
+			submenuMount->addSeparator();
+
+		for (int i = 0; i < images.size(); ++i) {
+			entry.reset (new QAction(loadIcon("/data/cdrom_menu.png"), images.at(i).at(0), this));
+			entry->setStatusTip(tr("Mount media image."));
+			submenuMount->addAction(entry.release());
+		}
+
+		connect(submenuMount.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuMount_triggered(QAction*)));
+		menuMount->addMenu(submenuMount.release());
+		menuMount->addSeparator();
+
+		submenuMount.reset (new QMenu(tr("Mount ..."), this));
+
+		entry.reset (new QAction(loadIcon("/data/folder.png"), tr("Browse..."), this));
+		entry->setStatusTip(tr("Browse for media image."));
+		submenuMount->addAction(entry.release());
+
+		QStringList files = CoreLib->getSetting("", "recent_images", false).toStringList();
+
+		if (files.size()>0)
+			submenuMount->addSeparator();
+
+		for (int i = 0; i < files.size(); ++i){
+			entry.reset (new QAction(loadIcon("/data/cdrom_menu.png"),files.at(i).split("/").last(), this));
+			entry->setStatusTip(files.at(i));
+			submenuMount->addAction(entry.release());
+		}
+
+		connect(submenuMount.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuMount_triggered(QAction*)));
+		menuMount->addMenu(submenuMount.release());
+		menuMount->addSeparator();
+
+		entry.reset (new QAction(tr("Unmount [%1]").arg(this->prefixMontPoint), this));
+		entry->setStatusTip(tr("Unmount media."));
+		connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuUmount_Click()));
+		menuMount->addAction(entry.release());
+
+	}
 
 	if (isOnItemEvent){
 		std::auto_ptr<QAction> entry (new QAction(tr("Run"), this));
@@ -264,6 +390,51 @@ void DragListWidget::contextMenuEvent (QContextMenuEvent * event){
 		entry->setStatusTip(tr("Delete current icon"));
 		connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconDelete_Click()));
 		menu->addAction(entry.release());
+
+		std::auto_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
+
+		entry.reset(new QAction(tr("Open application directory"), this));
+		entry->setStatusTip(tr("Open application directory in system file browser"));
+		connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenIconDir_Click()));
+		subMenu->addAction(entry.release());
+
+		entry.reset(new QAction(tr("Open prefix directory"), this));
+		entry->setStatusTip(tr("Open prefix directory in system file browser"));
+		connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenPrefixDir_Click()));
+		subMenu->addAction(entry.release());
+
+		entry.reset(new QAction(tr("Open mount point directory"), this));
+		entry->setStatusTip(tr("Open mount point directory in system file browser"));
+		if (this->prefixMontPoint.isEmpty())
+			entry->setEnabled(false);
+		connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenMountDir_Click()));
+		subMenu->addAction(entry.release());
+
+		menu->addSeparator();
+		menu->addMenu(subMenu.release());
+
+		subMenu.reset(new QMenu(tr("Wine Browser"), this));
+
+		entry.reset(new QAction(tr("Open application directory"), this));
+		entry->setStatusTip(tr("Open application directory in wine file browser"));
+		connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenIconDir_Click()));
+		subMenu->addAction(entry.release());
+
+		entry.reset(new QAction(tr("Open prefix directory"), this));
+		entry->setStatusTip(tr("Open prefix directory in wine file browser"));
+		connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenPrefixDir_Click()));
+		subMenu->addAction(entry.release());
+
+		entry.reset(new QAction(tr("Open mount point directory"), this));
+		entry->setStatusTip(tr("Open mount point directory in wine file browser"));
+		if (this->prefixMontPoint.isEmpty())
+			entry->setEnabled(false);
+		connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenMountDir_Click()));
+		subMenu->addAction(entry.release());
+
+		menu->addMenu(subMenu.release());
+
+
 	} else {
 		// Default menu
 		std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
@@ -326,12 +497,78 @@ void DragListWidget::contextMenuEvent (QContextMenuEvent * event){
 		menu->addSeparator();
 		menu->addMenu(menuMount.release());
 
+		std::auto_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
+		entry.reset(new QAction(tr("Open prefix directory"), this));
+		entry->setStatusTip(tr("Open prefix directory in system file browser"));
+		connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenPrefixDir_Click()));
+		subMenu->addAction(entry.release());
+
+		entry.reset(new QAction(tr("Open mount point directory"), this));
+		entry->setStatusTip(tr("Open mount point directory in system file browser"));
+		if (this->prefixMontPoint.isEmpty())
+			entry->setEnabled(false);
+		connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenMountDir_Click()));
+		subMenu->addAction(entry.release());
+
+		menu->addSeparator();
+		menu->addMenu(subMenu.release());
+
+		subMenu.reset(new QMenu(tr("Wine Browser"), this));
+		entry.reset(new QAction(tr("Open prefix directory"), this));
+		entry->setStatusTip(tr("Open prefix directory in wine file browser"));
+		connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenPrefixDir_Click()));
+		subMenu->addAction(entry.release());
+
+		entry.reset(new QAction(tr("Open mount point directory"), this));
+		entry->setStatusTip(tr("Open mount point directory in wine file browser"));
+		if (this->prefixMontPoint.isEmpty())
+			entry->setEnabled(false);
+		connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenMountDir_Click()));
+		subMenu->addAction(entry.release());
+
+		menu->addMenu(subMenu.release());
+
 	}
 	menu->exec(QCursor::pos());
 	return;
 }
 
-QIcon DragListWidget::loadIcon(QString iconName){
+void IconListWidget::keyPressEvent (QKeyEvent * event){
+
+	if (event->type() == QEvent::KeyPress){
+		std::auto_ptr<QKeyEvent> keyEvent (static_cast<QKeyEvent*>(event));
+		if ((keyEvent->key()==Qt::Key_Tab)){
+			//FIXME: emmit change focus signal to mainwin
+			//txtIconFilter->setFocus();
+			//keyEvent.release();
+			return;
+		}
+
+		if (keyEvent->key()==Qt::Key_Return){
+			if (this->currentItem())
+				this->itemDoubleClicked(this->currentItem());
+			keyEvent.release();
+			return;
+		}
+
+		if (keyEvent->key()==Qt::Key_Delete){
+			if (this->currentItem())
+				this->iconDelete_Click();
+			keyEvent.release();
+			return;
+		}
+
+		if (keyEvent->key()==Qt::Key_F2){
+			if (this->currentItem())
+				this->iconRename_Click();
+			keyEvent.release();
+			return;
+		}
+	}
+	return;
+}
+
+QIcon IconListWidget::loadIcon(QString iconName){
 	// Function tryes to load icon image from theme dir
 	// If it fails -> load default from rsource file
 	QIcon icon;
@@ -346,7 +583,7 @@ QIcon DragListWidget::loadIcon(QString iconName){
 	return icon;
 }
 
-void DragListWidget::iconAdd_Click(void){
+void IconListWidget::iconAdd_Click(void){
 	IconSettings iconAddWizard(this->prefixName, this->dirName);
 	if (iconAddWizard.exec() == QDialog::Accepted){
 		this->showFolderContents(this->prefixName, this->dirName, "");
@@ -354,7 +591,7 @@ void DragListWidget::iconAdd_Click(void){
 	return;
 }
 
-void DragListWidget::iconRename_Click(void){
+void IconListWidget::iconRename_Click(void){
 	bool ok=false;
 
 	std::auto_ptr<QListWidgetItem> iconItem (selectedItems().first());
@@ -379,9 +616,9 @@ void DragListWidget::iconRename_Click(void){
 	return;
 }
 
-void DragListWidget::iconDelete_Click(void){
+void IconListWidget::iconDelete_Click(void){
 	/*
-		This function delete add selected icons
+	* This function delete add selected icons
 	*/
 	QList<QListWidgetItem *> icoList = this->selectedItems();
 
@@ -397,7 +634,7 @@ void DragListWidget::iconDelete_Click(void){
 	return;
 }
 
-void DragListWidget::iconRun_Click(void){
+void IconListWidget::iconRun_Click(void){
 	std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
 	if (iconItem.get())
 		this->itemDoubleClicked(iconItem.get());
@@ -406,7 +643,7 @@ void DragListWidget::iconRun_Click(void){
 	return;
 }
 
-void DragListWidget::iconCut_Click(void){
+void IconListWidget::iconCut_Click(void){
 	/*
 		This function fill iconBuffer with selected icons names
 		and sets other informations required for copy\cut
@@ -444,7 +681,7 @@ void DragListWidget::iconCut_Click(void){
 	return;
 }
 
-void DragListWidget::iconCopy_Click(void){
+void IconListWidget::iconCopy_Click(void){
 	/*
 	* This function fill iconBuffer with selected icons names
 	* and sets other informations required for copy\cut
@@ -472,7 +709,7 @@ void DragListWidget::iconCopy_Click(void){
 	return;
 }
 
-void DragListWidget::iconPaste_Click(void){
+void IconListWidget::iconPaste_Click(void){
 	bool fexists=false, ok=false;
 	QString newName="";
 
@@ -512,7 +749,7 @@ void DragListWidget::iconPaste_Click(void){
 	return;
 }
 
-void DragListWidget::iconOption_Click(void){
+void IconListWidget::iconOption_Click(void){
 	std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
 	if (!iconItem.get())
 		return;
@@ -525,7 +762,7 @@ void DragListWidget::iconOption_Click(void){
 	return;
 }
 
-void DragListWidget::menuRun_triggered(QAction* action){
+void IconListWidget::menuRun_triggered(QAction* action){
 	if (action->text().isEmpty())
 		return;
 
@@ -567,72 +804,123 @@ void DragListWidget::menuRun_triggered(QAction* action){
 	return;
 }
 
-//QMenu DragListWidget::createCustomMenu(){
+void IconListWidget::menuMount_triggered(QAction* action){
 	/*
-	// OpenDir
-	std::auto_ptr<QAction> xdgOpenIconDir;
-	std::auto_ptr<QAction> xdgOpenPrefixDir;
-	std::auto_ptr<QAction> xdgOpenMountDir;
-	std::auto_ptr<QAction> winefileOpenIconDir;
-	std::auto_ptr<QAction> winefileOpenPrefixDir;
-	std::auto_ptr<QAction> winefileOpenMountDir;
+	 * This slot process menuDirMountImages and menuIconMountImages triggered signal
+	 */
 
-	// Icons control for context menu
-	std::auto_ptr<QAction> iconRun;
-	std::auto_ptr<QAction> iconAdd;
-	std::auto_ptr<QAction> iconRename;
-	std::auto_ptr<QAction> iconDelete;
-	std::auto_ptr<QAction> iconOptions;
-	std::auto_ptr<QAction> iconCopy;
-	std::auto_ptr<QAction> iconCut;
-	std::auto_ptr<QAction> iconPaste;
-	std::auto_ptr<QAction> iconMount;
-	std::auto_ptr<QAction> iconUnmount;
-	std::auto_ptr<QAction> iconMountOther;
-   */
+	if (action->text()==tr("[none]")){
+		QMessageBox::warning(this, tr("Error"),  tr("No device drive specified in prefix settings."), QMessageBox::Ok);
+		return;
+	} else if (action->text()==tr("Browse...")) {
+		/*
+		Request for unmounting cdrom drve described at wine prefix settings
+		*/
+#ifdef _OS_LINUX_
+		QString fileName = QFileDialog::getOpenFileName(this, tr("Open CD Image files"), QDir::homePath(), tr("CD image files (*.iso *.nrg *.img *.bin *.mdf)"));
+#endif
 
-	/*
-	iconRun.reset(new QAction(tr("Run"), lstIcons.get()));
-	iconRun->setStatusTip(tr("Create new icon"));
-	connect(iconRun.get(), SIGNAL(triggered()), this, SLOT(iconRun_Click()));
+#ifdef _OS_FREEBSD_
+		QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), QDir::homePath(), tr("iso files (*.iso)"));
+#endif
 
-	iconAdd.reset(new QAction(tr("New"), lstIcons.get()));
-	iconAdd->setStatusTip(tr("Create new icon"));
-	connect(iconAdd.get(), SIGNAL(triggered()), this, SLOT(iconAdd_Click()));
+		if(fileName.isEmpty()){
+			return;
+		}
 
-	iconCut.reset(new QAction(tr("Cut"), lstIcons.get()));
-	iconCut->setStatusTip(tr("Cut selected icons to buffer"));
-	connect(iconCut.get(), SIGNAL(triggered()), this, SLOT(iconCut_Click()));
+		if (CoreLib->mountImage(fileName, this->prefixName)){
+			emit(changeStatusText(tr("%1 successfully mounted.").arg(fileName)));
+		} else {
+			emit(changeStatusText(tr("Fail to mount %1.").arg(fileName)));
+		}
 
-	iconCopy.reset(new QAction(tr("Copy"), lstIcons.get()));
-	iconCopy->setStatusTip(tr("Copy selected icons to buffer"));
-	connect(iconCopy.get(), SIGNAL(triggered()), this, SLOT(iconCopy_Click()));
+		CoreLib->updateRecentImagesList(fileName);
+		return;
+	}
 
-	iconPaste.reset(new QAction(tr("Paste"), lstIcons.get()));
-	iconPaste->setStatusTip(tr("Paste selected icons from buffer to selected folder"));
-	connect(iconPaste.get(), SIGNAL(triggered()), this, SLOT(iconPaste_Click()));
+	bool ret=false;
+	if (action->statusTip().contains("/")){
+		ret=CoreLib->mountImage(action->statusTip(), this->prefixName);
+	} else {
+		ret=CoreLib->mountImage(action->text(), this->prefixName);
+	}
 
-	iconRename.reset(new QAction(tr("Rename"), lstIcons.get()));
-	iconRename->setStatusTip(tr("Rename current icon"));
-	connect(iconRename.get(), SIGNAL(triggered()), this, SLOT(iconRename_Click()));
+	if (ret){
+		emit(changeStatusText(tr("%1 successfully mounted.").arg(action->text())));
+	} else {
+		emit(changeStatusText(tr("Fail to mount %1.").arg(action->text())));
+	}
+	return;
+}
 
-	iconDelete.reset(new QAction(tr("Delete"), lstIcons.get()));
-	iconDelete->setStatusTip(tr("Delete current icon"));
-	connect(iconDelete.get(), SIGNAL(triggered()), this, SLOT(iconDelete_Click()));
+void IconListWidget::menuUmount_Click(void){
+	if (CoreLib->umountImage(this->prefixName)){
+		emit(changeStatusText(tr("Drive successfully umounted.")));
+	} else {
+		emit(changeStatusText(tr("Fail to umount drive.")));
+	}
+	return;
+}
 
-	iconOptions.reset(new QAction(tr("Options"), lstIcons.get()));
-	iconOptions->setStatusTip(tr("Modify current icon options"));
-	connect(iconOptions.get(), SIGNAL(triggered()), this, SLOT(iconOption_Click()));
+void IconListWidget::xdgOpenPrefixDir_Click(void){
+	CoreLib->openPrefixDirectry(this->prefixName);
+	return;
+}
 
-	iconMount.reset(new QAction(tr("mount"), lstIcons.get()));
-	iconMount->setStatusTip(tr("Mount image from icon options"));
+void IconListWidget::xdgOpenMountDir_Click(void){
+	CoreLib->openUrl(this->prefixMontPoint);
+	return;
+}
 
-	iconUnmount.reset(new QAction(tr("umount"), lstIcons.get()));
-	iconUnmount->setStatusTip(tr("Unmount image"));
-	connect(iconUnmount.get(), SIGNAL(triggered()), this, SLOT(iconUnmount_Click()));
+void IconListWidget::xdgOpenIconDir_Click(void){
+	QCursor cur;
 
-	iconMountOther.reset(new QAction(QIcon(":/data/folder.png"), tr("Browse ..."), lstIcons.get()));
-	iconMountOther->setStatusTip(tr("Browse for other image"));
-	connect(iconMountOther.get(), SIGNAL(triggered()), this, SLOT(iconMountOther_Click()));
-	*/
-//}
+	std::auto_ptr<QListWidgetItem> item (this->currentItem());
+	if (!item.get()){
+		item.release();
+		return;
+	}
+
+	QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).at(4);
+
+	if (result.isEmpty()){
+		emit(changeStatusText(tr("Error: \"%1\" is an embedded wine binary.").arg(item->text())));
+	} else {
+		CoreLib->openUrl(result);
+	}
+
+	item.release();
+	return;
+}
+
+void IconListWidget::winefileOpenPrefixDir_Click(void){
+	QString result = db_prefix.getPath(this->prefixName);
+	CoreLib->runWineBinary("winefile", result + "/", this->prefixName);
+	return;
+}
+
+void IconListWidget::winefileOpenMountDir_Click(void){
+	CoreLib->runWineBinary("winefile", this->prefixMontPoint + "/", this->prefixName);
+	return;
+}
+
+void IconListWidget::winefileOpenIconDir_Click(void){
+	QCursor cur;
+
+	std::auto_ptr<QListWidgetItem> item (this->currentItem());
+	if (!item.get()){
+		item.release();
+		return;
+	}
+
+	QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).at(4);
+
+	if (result.isEmpty()){
+		emit(changeStatusText(tr("Error: \"%1\" is an embedded wine binary.").arg(item->text())));
+	} else {
+		CoreLib->runWineBinary("winefile", result + "/", this->prefixName);
+	}
+
+	item.release();
+	return;
+}

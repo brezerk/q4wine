@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                            *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -17,8 +17,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef DRAGLISTWIDGET_H
-#define DRAGLISTWIDGET_H
+#ifndef PREFIXTREEWIDGET_H
+#define PREFIXTREEWIDGET_H
 
 #include "memory"
 
@@ -33,7 +33,8 @@
 
 #include "iconsettings.h"
 
-#include <QListWidget>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
 #include <QMouseEvent>
 #include <QPoint>
 #include <QApplication>
@@ -41,50 +42,25 @@
 #include <QAction>
 #include <QMenu>
 #include <QLibrary>
+
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
 #include <q4wine-lib/main.h>
 
-struct iconCopyBuffer {
-	QString dir_name;
-	QString prefix_name;
-	bool move;
-	QStringList names;
-};
-
-class DragListWidget : public QListWidget
+class PrefixTreeWidget : public QTreeWidget
 {
-	Q_OBJECT
+Q_OBJECT
 public:
-	DragListWidget(QString themeName, QWidget *parent = 0);
-
-public slots:
-	void showFolderContents(QString prefixName, QString dirName, QString filter);
+	explicit PrefixTreeWidget(QString themeName, QWidget *parent = 0);
 
 private:
-	void mousePressEvent(QMouseEvent *event);
-	void mouseMoveEvent(QMouseEvent *event);
-	void dragEnterEvent(QDragEnterEvent *event);
-	void dragMoveEvent(QDragMoveEvent *event);
-	void dropEvent(QDropEvent *event);
 	void contextMenuEvent(QContextMenuEvent *event);
 
 	QIcon loadIcon(QString iconName);
 
-	QString themeName;
-	QPoint startPos;
-	bool drag, dragstarted;
-	QString prefixName, dirName;
-
-	// Database classes
-	Prefix db_prefix;
-	Dir db_dir;
-	Icon db_icon;
-
-	// Copy/Paste buffer
-	iconCopyBuffer iconBuffer;
+	QString themeName, prefixName, dirName, prefixMediaDrive, prefixMontPoint;
 
 	//! This is need for libq4wine-core.so import.
 	QLibrary libq4wine;
@@ -92,26 +68,34 @@ private:
 	CoreLibPrototype *CoreLibClassPointer;
 	std::auto_ptr<corelib> CoreLib;
 
+	// Database classes
+	Image db_image;
+	Prefix db_prefix;
+	Dir db_dir;
+
 private slots:
-	void itemClicked (QListWidgetItem *item);
-	void itemDoubleClicked (QListWidgetItem *item);
+	void itemClicked (QTreeWidgetItem *item, int);
 
-	void iconAdd_Click(void);
-	void iconRename_Click(void);
-	void iconDelete_Click(void);
-	void iconRun_Click(void);
-	void iconCut_Click(void);
-	void iconCopy_Click(void);
-	void iconPaste_Click(void);
-	void iconOption_Click(void);
-
+	void dirAdd_Click(void);
+	void dirRename_Click(void);
+	void dirDelete_Click(void);
 	void menuRun_triggered(QAction*);
+	void menuMount_triggered(QAction*);
+	void menuUmount_Click(void);
+
+	void xdgOpenPrefixDir_Click(void);
+	void xdgOpenMountDir_Click(void);
+
+	void winefileOpenPrefixDir_Click(void);
+	void winefileOpenMountDir_Click(void);
 
 signals:
-	void startDrag();
-	void startDrop(QList<QUrl> files);
-	void iconItemClick(QString, QString, QString, QString, QString);
+	void showFolderContents(QString, QString, QString);
 	void changeStatusText(QString);
+
+public slots:
+	void getPrefixes();
+
 };
 
-#endif // DRAGLISTWIDGET_H
+#endif // PREFIXTREEWIDGET_H
