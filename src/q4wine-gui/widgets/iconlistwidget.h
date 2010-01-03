@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                     *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -49,82 +49,85 @@
 #include <q4wine-lib/main.h>
 
 struct iconCopyBuffer {
-	QString dir_name;
-	QString prefix_name;
-	bool move;
-	QStringList names;
+      QString dir_name;
+      QString prefix_name;
+      bool move;
+      QStringList names;
 };
 
 class IconListWidget : public QListWidget
 {
-	Q_OBJECT
+      Q_OBJECT
 public:
-	explicit IconListWidget(QString themeName, QWidget *parent = 0);
+      explicit IconListWidget(QString themeName, QWidget *parent = 0);
 
 public slots:
-	void showFolderContents(QString prefixName, QString dirName, QString filter);
+      void showFolderContents(QString prefixName="", QString dirName="");
+      void setFilterString(QString filterString);
 
 private:
-	void mousePressEvent(QMouseEvent *event);
-	void mouseMoveEvent(QMouseEvent *event);
-	void dragEnterEvent(QDragEnterEvent *event);
-	void dragMoveEvent(QDragMoveEvent *event);
-	void dropEvent(QDropEvent *event);
-	void contextMenuEvent(QContextMenuEvent *event);
-	void keyPressEvent (QKeyEvent *event);
+      void mousePressEvent(QMouseEvent *event);
+      void mouseMoveEvent(QMouseEvent *event);
+      void dragEnterEvent(QDragEnterEvent *event);
+      void dragMoveEvent(QDragMoveEvent *event);
+      void dropEvent(QDropEvent *event);
+      void contextMenuEvent(QContextMenuEvent *event);
+      void keyPressEvent (QKeyEvent *event);
 
-	QIcon loadIcon(QString iconName);
+      QIcon loadIcon(QString iconName);
 
-	QString themeName, prefixName, dirName, prefixMediaDrive, prefixMontPoint;
-	QPoint startPos;
-	bool drag, dragstarted;
+      QString themeName, prefixName, dirName, prefixMediaDrive, prefixMontPoint, filterString;
+      QPoint startPos;
+      bool drag, dragstarted;
 
-	// Database classes
-	Prefix db_prefix;
-	Dir db_dir;
-	Icon db_icon;
-	Image db_image;
+      // Database classes
+      Prefix db_prefix;
+      Dir db_dir;
+      Icon db_icon;
+      Image db_image;
 
-	// Copy/Paste buffer
-	iconCopyBuffer iconBuffer;
+      // Copy/Paste buffer
+      iconCopyBuffer iconBuffer;
 
-	//! This is need for libq4wine-core.so import.
-	QLibrary libq4wine;
-	typedef void *CoreLibPrototype (bool);
-	CoreLibPrototype *CoreLibClassPointer;
-	std::auto_ptr<corelib> CoreLib;
+      //! This is need for libq4wine-core.so import.
+      QLibrary libq4wine;
+      typedef void *CoreLibPrototype (bool);
+      CoreLibPrototype *CoreLibClassPointer;
+      std::auto_ptr<corelib> CoreLib;
 
 private slots:
-	void startDrag();
-	void startDrop(QList<QUrl> files);
+      void showContents(QString filterString);
 
-	void itemClicked (QListWidgetItem *item);
-	void itemDoubleClicked (QListWidgetItem *item);
+      void startDrag();
+      void startDrop(QList<QUrl> files);
 
-	void iconAdd_Click(void);
-	void iconRename_Click(void);
-	void iconDelete_Click(void);
-	void iconRun_Click(void);
-	void iconCut_Click(void);
-	void iconCopy_Click(void);
-	void iconPaste_Click(void);
-	void iconOption_Click(void);
+      void itemClicked (QListWidgetItem *item);
+      void itemDoubleClicked (QListWidgetItem *item);
 
-	void menuRun_triggered(QAction*);
-	void menuMount_triggered(QAction*);
-	void menuUmount_Click(void);
+      void iconAdd_Click(void);
+      void iconRename_Click(void);
+      void iconDelete_Click(void);
+      void iconRun_Click(void);
+      void iconCut_Click(void);
+      void iconCopy_Click(void);
+      void iconPaste_Click(void);
+      void iconOption_Click(void);
 
-	void xdgOpenPrefixDir_Click(void);
-	void xdgOpenMountDir_Click(void);
-	void xdgOpenIconDir_Click(void);
+      void menuRun_triggered(QAction*);
+      void menuMount_triggered(QAction*);
+      void menuUmount_Click(void);
 
-	void winefileOpenPrefixDir_Click(void);
-	void winefileOpenMountDir_Click(void);
-	void winefileOpenIconDir_Click(void);
+      void xdgOpenPrefixDir_Click(void);
+      void xdgOpenMountDir_Click(void);
+      void xdgOpenIconDir_Click(void);
+
+      void winefileOpenPrefixDir_Click(void);
+      void winefileOpenMountDir_Click(void);
+      void winefileOpenIconDir_Click(void);
 
 signals:
-	void iconItemClick(QString, QString, QString, QString, QString);
-	void changeStatusText(QString);
+      void iconItemClick(QString, QString, QString, QString, QString);
+      void changeStatusText(QString);
 };
 
 #endif // ICONLISTWIDGET_H

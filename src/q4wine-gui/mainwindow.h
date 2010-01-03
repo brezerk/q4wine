@@ -91,233 +91,208 @@
 
 class MainWindow : public QMainWindow, public Ui::MainWindow
 {
-	Q_OBJECT
-	public:
-		MainWindow(int startState, QWidget * parent = 0, Qt::WFlags f = 0);
-		// Icon copy\cyt structure
+    Q_OBJECT
+    public:
+        MainWindow(int startState, QWidget * parent = 0, Qt::WFlags f = 0);
+        // Icon copy\cyt structure
 
-	public slots:
-		void messageReceived(const QString message) const;
+    public slots:
+        void messageReceived(const QString message) const;
+        void setcbPrefixesIndex(const QString text) const;
 
-	private slots:
+    private slots:
 
-		//void StartDrug(QDragEnterEvent * event);
-		void getWineProccessInfo(void);
-		void CoreFunction_ResizeContent(int tabIndex);
+        //void StartDrug(QDragEnterEvent * event);
+        void getWineProccessInfo(void);
+        void CoreFunction_ResizeContent(int tabIndex);
 
-		void changeStatusText(QString text);
+        void changeStatusText(QString text);
 
-		/*
-		 * Icon tray slots
-		 */
-		void trayIcon_Activate(QSystemTrayIcon::ActivationReason reason);
+        /*
+         * Icon tray slots
+         */
+        void trayIcon_Activate(QSystemTrayIcon::ActivationReason reason);
 
-		/*
-		 * Command buttons slots
-		 */
-		void cmdManagePrefixes_Click(void);
-		void cmdCreateFake_Click(void);
-		void cmdUpdateFake_Click(void);
-		void cmdWinetricks_Click (void);
-		void cmdTestWis_Click (void);
-		void cmdClearFilter_Click (void);
-		void cmdAppDBSearch_Click (void);
+        /*
+         * Command buttons slots
+         */
+        void cmdManagePrefixes_Click(void);
+        void cmdCreateFake_Click(void);
+        void cmdUpdateFake_Click(void);
+        void cmdWinetricks_Click (void);
+        void cmdTestWis_Click (void);
+        void cmdClearFilter_Click (void);
+        void cmdAppDBSearch_Click (void);
 
-		/*
-		 * Combobox slouts
-		 */
+        /*
+         * Combobox slouts
+         */
 
-		void cbPrefixes_Change (const QString currentIndexText);
-		void txtIconFilter_textChanged(QString);
-		void updateIconDesc(QString program, QString args, QString desc, QString console, QString desktop);
+        void updateIconDesc(QString program, QString args, QString desc, QString console, QString desktop);
 
-		/*
-		 *Prefix tool bars action
-		 */
-		void prefixAdd_Click(void);
-		void prefixDelete_Click(void);
-		void prefixExport_Click(void);
-		void prefixImport_Click(void);
-		void prefixSettings_Click(void);
+        /*
+         *Prefix tool bars action
+         */
+        void prefixAdd_Click(void);
+        void prefixDelete_Click(void);
+        void prefixExport_Click(void);
+        void prefixImport_Click(void);
+        void prefixSettings_Click(void);
 
-		/*
-		 *Process action slots
-		 */
-		void processRenice_Click(void);
-		void processKillSelected_Click(void);
-		void processKillWine_Click(void);
-
-
-
-		/*! \brief This slot request programs icons by folder and\or prefix name.
-		 *
-		 * When user click on directorym then q4wine displays
-		 * program icons belongs to this folder
-		 * \param  item		an QTreeWidgetItem wich trigged an a slot
-		 */
-		void twPrograms_ItemClick(QTreeWidgetItem * item, int);
-
-		/*
-		 *Prefix table slots
-		 */
-		void tablePrefix_ShowContextMenu(const QPoint);
-		void tablePrefix_UpdateContentList(const QModelIndex);
-		void tableProc_ShowContextMenu(const QPoint point);
-		void tableProc_UpdateContentList(const QModelIndex);
-
-		/*
-		 * Context menu slots
-		 */
-
-		//Main menu slots
-		void mainExit_Click(void);
-		void mainPrograms_Click(void);
-		void mainImageManager_Click(void);
-		void mainProcess_Click(void);
-		void mainSetup_Click(void);
-		void mainPrefix_Click(void);
-		void mainAbout_Click(void);
-		void mainAboutQt_Click(void);
-		void mainExportIcons_Click(void);
-		void mainRun_Click(void);
-		void mainOptions_Click(void);
-		void mainInstall_Click(void);
-		void mainFirstSteps_Click(void);
-		void mainFAQ_Click(void);
-		void mainIndex_Click(void);
-		void mainWebsite_Click(void);
-		void mainDonate_Click(void);
-		void mainBugs_Click(void);
+        /*
+         *Process action slots
+         */
+        void processRenice_Click(void);
+        void processKillSelected_Click(void);
+        void processKillWine_Click(void);
 
 
 
-	private:
-		//! Custom Widgets
-		//DragListWidget* lstIcons;
-		std::auto_ptr<AppDBWidget> appdbWidget;
+        /*! \brief This slot request programs icons by folder and\or prefix name.
+         *
+         * When user click on directorym then q4wine displays
+         * program icons belongs to this folder
+         * \param  item		an QTreeWidgetItem wich trigged an a slot
+         */
+        void twPrograms_ItemClick(QTreeWidgetItem * item, int);
 
-		//! This is need for libq4wine-core.so import;
-		typedef void *CoreLibPrototype (bool);
-			CoreLibPrototype *CoreLibClassPointer;
-			std::auto_ptr<corelib> CoreLib;
-		QLibrary libq4wine;
+        /*
+         *Prefix table slots
+         */
+        void tablePrefix_ShowContextMenu(const QPoint);
+        void tablePrefix_UpdateContentList(const QModelIndex);
+        void tableProc_ShowContextMenu(const QPoint point);
+        void tableProc_UpdateContentList(const QModelIndex);
 
-		//Classes
-		Prefix db_prefix;
-		Dir db_dir;
-		Icon db_icon;
-		Last_Run_Icon db_last_run_icon;
-		Image db_image;
+        /*
+         * Context menu slots
+         */
 
-		//Update timer
-		std::auto_ptr<QTimer> timer;
+        //Main menu slots
+        void mainExit_Click(void);
+        void mainPrograms_Click(void);
+        void mainImageManager_Click(void);
+        void mainProcess_Click(void);
+        void mainSetup_Click(void);
+        void mainPrefix_Click(void);
+        void mainAbout_Click(void);
+        void mainAboutQt_Click(void);
+        void mainExportIcons_Click(void);
+        void mainRun_Click(void);
+        void mainOptions_Click(void);
+        void mainInstall_Click(void);
+        void mainFirstSteps_Click(void);
+        void mainFAQ_Click(void);
+        void mainIndex_Click(void);
+        void mainWebsite_Click(void);
+        void mainDonate_Click(void);
+        void mainBugs_Click(void);
 
-		// Tray icon
-		std::auto_ptr<QSystemTrayIcon> trayIcon;
 
-		std::auto_ptr<QMenu> trayIconMenu;
-		std::auto_ptr<QMenu> images;
-		std::auto_ptr<QMenu> menuProc;
-		std::auto_ptr<QMenu> menuPrefix;
-		std::auto_ptr<QMenu> menuDir;
-		std::auto_ptr<QMenu> menuDirMount;
-		std::auto_ptr<QMenu> menuIcon;
-		std::auto_ptr<QMenu> menuIconVoid;
-		std::auto_ptr<QMenu> menuIconMount;
-		std::auto_ptr<QMenu> menuIconMountRecent;
 
-		QList <QAction *> recentIconsList;
+    private:
+        //! Custom Widgets
+        //DragListWidget* lstIcons;
+        std::auto_ptr<AppDBWidget> appdbWidget;
 
-		void createTrayIcon();
-		void setMeVisible(bool visible);
+        //! This is need for libq4wine-core.so import;
+        typedef void *CoreLibPrototype (bool);
+            CoreLibPrototype *CoreLibClassPointer;
+            std::auto_ptr<corelib> CoreLib;
+        QLibrary libq4wine;
 
-		std::auto_ptr<QAction> processKillSelected;
-		std::auto_ptr<QAction> processKillWine;
-		std::auto_ptr<QAction> processRefresh;
-		std::auto_ptr<QAction> processRenice;
+        //Classes
+        Prefix db_prefix;
+        Dir db_dir;
+        Icon db_icon;
+        Last_Run_Icon db_last_run_icon;
+        Image db_image;
 
-		// Prefix actions for context menu
-		std::auto_ptr<QAction> prefixAdd;
-		std::auto_ptr<QAction> prefixImport;
-		std::auto_ptr<QAction> prefixExport;
-		std::auto_ptr<QAction> prefixDelete;
-		std::auto_ptr<QAction> prefixSettings;
+        //Update timer
+        std::auto_ptr<QTimer> timer;
 
-		// Directories control for context menu
-		std::auto_ptr<QAction> dirAdd;
-		std::auto_ptr<QAction> dirRun;
-		std::auto_ptr<QAction> dirRename;
-		std::auto_ptr<QAction> dirDelete;
-		std::auto_ptr<QAction> dirMountOther;
-		std::auto_ptr<QAction> dirUnmount;
-		std::auto_ptr<QAction> dirConfigure;
-		std::auto_ptr<QAction> dirInstall;
-		std::auto_ptr<QAction> dirUninstall;
+        // Tray icon
+        std::auto_ptr<QSystemTrayIcon> trayIcon;
 
-		//OpenDir
-		std::auto_ptr<QAction> xdgOpenIconDir;
-		std::auto_ptr<QAction> xdgOpenPrefixDir;
-		std::auto_ptr<QAction> xdgOpenMountDir;
-		std::auto_ptr<QAction> winefileOpenIconDir;
-		std::auto_ptr<QAction> winefileOpenPrefixDir;
-		std::auto_ptr<QAction> winefileOpenMountDir;
+        std::auto_ptr<QMenu> trayIconMenu;
+        std::auto_ptr<QMenu> images;
+        std::auto_ptr<QMenu> menuProc;
+        std::auto_ptr<QMenu> menuPrefix;
+        std::auto_ptr<QMenu> menuDir;
+        std::auto_ptr<QMenu> menuDirMount;
+        std::auto_ptr<QMenu> menuIcon;
+        std::auto_ptr<QMenu> menuIconVoid;
+        std::auto_ptr<QMenu> menuIconMount;
+        std::auto_ptr<QMenu> menuIconMountRecent;
 
-		// Icons control for context menu
-		//QAction *iconOpenDirWinefile;
-		std::auto_ptr<QAction> iconMount;
-		std::auto_ptr<QAction> iconUnmount;
-		std::auto_ptr<QAction> iconMountOther;
+        QList <QAction *> recentIconsList;
 
-		// Toolbars
-		std::auto_ptr<QToolBar> procToolBar;
-		std::auto_ptr<QToolBar> prefixToolBar;
+        void createTrayIcon();
+        void setMeVisible(bool visible);
 
-		// Settings functions
-		void createMenuActions(void);
-		void createToolBarActions(void);
-		void getSettings(void);
+        std::auto_ptr<QAction> processKillSelected;
+        std::auto_ptr<QAction> processKillWine;
+        std::auto_ptr<QAction> processRefresh;
+        std::auto_ptr<QAction> processRenice;
 
-		void runAutostart(void);
-		void CoreFunction_SetProcNicePriority(int priority, int pid);
+        // Prefix actions for context menu
+        std::auto_ptr<QAction> prefixAdd;
+        std::auto_ptr<QAction> prefixImport;
+        std::auto_ptr<QAction> prefixExport;
+        std::auto_ptr<QAction> prefixDelete;
+        std::auto_ptr<QAction> prefixSettings;
 
-	   /*! \brief This function updates all database connectd widgets to current state.
-		*
-		* \param  currentPrefix  Current user selected prefix id.
-		*/
-		void updateDtabaseConnectedItems(int currentPrefix = -1);
+        // Toolbars
+        std::auto_ptr<QToolBar> procToolBar;
+        std::auto_ptr<QToolBar> prefixToolBar;
 
-		//Events definition
-		void resizeEvent (QResizeEvent);
-		void clearTmp();
+        // Settings functions
+        void createMenuActions(void);
+        void createToolBarActions(void);
+        void getSettings(void);
 
-		std::auto_ptr<QSplitter> splitter;
+        void runAutostart(void);
+        void CoreFunction_SetProcNicePriority(int priority, int pid);
 
-	signals:
-		void appdbWidget_startSearch(short int, QString);
-		void updateDatabaseConnections(void);
+       /*! \brief This function updates all database connectd widgets to current state.
+        *
+        * \param  currentPrefix  Current user selected prefix id.
+        */
+        void updateDtabaseConnectedItems(int currentPrefix = -1);
 
-	protected:
-		// Event filter
-		bool eventFilter(QObject *obj, QEvent *event);
-		void closeEvent(QCloseEvent *event);
+        //Events definition
+        void resizeEvent (QResizeEvent);
+        void clearTmp();
 
-		//Resource\theme loader
-		QIcon loadIcon(QString iconName);
+        std::auto_ptr<QSplitter> splitter;
 
-		QString HOME_PATH;
-		QString ROOT_PATH;
-		QString TEMP_PATH;
-		QString PREFIX_EI_PATH;
+    signals:
+        void appdbWidget_startSearch(short int, QString);
+        void updateDatabaseConnections(void);
+        void setDefaultFocus(QString, QString);
 
-		QString WINE_DEFAULT_PREFIX;
-		QString DEFAULT_WINE_BIN, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS;
-		QString WRESTOOL_BIN, ICOTOOL_BIN;
-		QString TAR_BIN, MOUNT_BIN, UMOUNT_BIN, SUDO_BIN, GUI_SUDO_BIN, NICE_BIN, RENICE_BIN, SH_BIN;
-		QString CONSOLE_BIN, CONSOLE_ARGS;
-		QString THEME_NAME;
+    protected:
+        // Event filter
+        bool eventFilter(QObject *obj, QEvent *event);
+        void closeEvent(QCloseEvent *event);
 
-		bool SHOW_TRAREY_ICON;
-		bool _IS_TIMER_RUNNING;
+        //Resource\theme loader
+        QIcon loadIcon(QString iconName);
+
+        QString HOME_PATH;
+        QString ROOT_PATH;
+        QString TEMP_PATH;
+        QString PREFIX_EI_PATH;
+
+        QString WINE_DEFAULT_PREFIX;
+        QString DEFAULT_WINE_BIN, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS;
+        QString WRESTOOL_BIN, ICOTOOL_BIN;
+        QString TAR_BIN, MOUNT_BIN, UMOUNT_BIN, SUDO_BIN, GUI_SUDO_BIN, NICE_BIN, RENICE_BIN, SH_BIN;
+        QString CONSOLE_BIN, CONSOLE_ARGS;
+        QString THEME_NAME;
+
+        bool SHOW_TRAREY_ICON;
+        bool _IS_TIMER_RUNNING;
 
 };
 

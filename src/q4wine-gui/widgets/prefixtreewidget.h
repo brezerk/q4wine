@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                            *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                     *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -53,48 +53,53 @@ class PrefixTreeWidget : public QTreeWidget
 {
 Q_OBJECT
 public:
-	explicit PrefixTreeWidget(QString themeName, QWidget *parent = 0);
+      explicit PrefixTreeWidget(QString themeName, QWidget *parent = 0);
+      ~PrefixTreeWidget();
 
 private:
-	void contextMenuEvent(QContextMenuEvent *event);
+      void contextMenuEvent(QContextMenuEvent *event);
 
-	QIcon loadIcon(QString iconName);
+      QIcon loadIcon(QString iconName);
 
-	QString themeName, prefixName, dirName, prefixMediaDrive, prefixMontPoint;
+      QString themeName, prefixName, dirName, prefixMediaDrive, prefixMontPoint;
 
-	//! This is need for libq4wine-core.so import.
-	QLibrary libq4wine;
-	typedef void *CoreLibPrototype (bool);
-	CoreLibPrototype *CoreLibClassPointer;
-	std::auto_ptr<corelib> CoreLib;
+      //! This is need for libq4wine-core.so import.
+      QLibrary libq4wine;
+      typedef void *CoreLibPrototype (bool);
+      CoreLibPrototype *CoreLibClassPointer;
+      std::auto_ptr<corelib> CoreLib;
 
-	// Database classes
-	Image db_image;
-	Prefix db_prefix;
-	Dir db_dir;
+      // Database classes
+      Image db_image;
+      Prefix db_prefix;
+      Dir db_dir;
+      Icon db_icon;
 
 private slots:
-	void itemClicked (QTreeWidgetItem *item, int);
+      void itemClicked (QTreeWidgetItem *item, int);
 
-	void dirAdd_Click(void);
-	void dirRename_Click(void);
-	void dirDelete_Click(void);
-	void menuRun_triggered(QAction*);
-	void menuMount_triggered(QAction*);
-	void menuUmount_Click(void);
+      void dirAdd_Click(void);
+      void dirRename_Click(void);
+      void dirDelete_Click(void);
+      void menuRun_triggered(QAction*);
+      void menuMount_triggered(QAction*);
+      void menuUmount_Click(void);
 
-	void xdgOpenPrefixDir_Click(void);
-	void xdgOpenMountDir_Click(void);
+      void xdgOpenPrefixDir_Click(void);
+      void xdgOpenMountDir_Click(void);
 
-	void winefileOpenPrefixDir_Click(void);
-	void winefileOpenMountDir_Click(void);
+      void winefileOpenPrefixDir_Click(void);
+      void winefileOpenMountDir_Click(void);
+
+      void setDefaultFocus(QString prefixName, QString dirName="");
 
 signals:
-	void showFolderContents(QString, QString, QString);
-	void changeStatusText(QString);
+      void showFolderContents(QString, QString);
+      void changeStatusText(QString);
+      void prefixIndexChanged(QString);
 
 public slots:
-	void getPrefixes();
+      void getPrefixes();
 
 };
 

@@ -25,7 +25,7 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tabPrograms">
        <attribute name="title">
         <string>Programs</string>
        </attribute>
@@ -116,79 +116,13 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="tabProcces">
        <attribute name="title">
         <string>Process</string>
        </attribute>
-       <layout class="QVBoxLayout">
-        <item>
-         <widget class="QFrame" name="tlbProccess">
-          <property name="minimumSize">
-           <size>
-            <width>16</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QTableWidget" name="tableProc">
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SingleSelection</enum>
-          </property>
-          <property name="selectionBehavior">
-           <enum>QAbstractItemView::SelectRows</enum>
-          </property>
-          <property name="sortingEnabled">
-           <bool>false</bool>
-          </property>
-          <column>
-           <property name="text">
-            <string>PID</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Name</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Ni</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Prefix</string>
-           </property>
-          </column>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="lblProcInfo">
-          <property name="text">
-           <string>Total procces:</string>
-          </property>
-          <property name="margin">
-           <number>3</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <layout class="QVBoxLayout" name="tabProccesLayout"/>
       </widget>
-      <widget class="QWidget" name="tab_3">
+      <widget class="QWidget" name="tabPrefixSeup">
        <attribute name="title">
         <string>Setup</string>
        </attribute>
@@ -375,7 +309,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_8">
+      <widget class="QWidget" name="tabPrefix">
        <attribute name="title">
         <string>Prefixes</string>
        </attribute>
@@ -424,7 +358,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_7">
+      <widget class="QWidget" name="tabAppDB">
        <attribute name="title">
         <string>Wine AppDB</string>
        </attribute>
@@ -497,7 +431,7 @@
      <x>0</x>
      <y>0</y>
      <width>597</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">

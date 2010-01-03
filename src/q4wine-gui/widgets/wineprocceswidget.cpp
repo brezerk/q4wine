@@ -16,3 +16,10 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+
+#include "wineprocceswidget.h"
+
+WineProccesWidget::WineProccesWidget(QWidget *parent) : QWidget(parent)
+{
+    qDebug()<<"Waaaaaaaaaaaaaaaaah!";
+}

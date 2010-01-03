@@ -16,3 +16,27 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+
+#ifndef WINEPROCCESWIDGET_H
+#define WINEPROCCESWIDGET_H
+
+#include "config.h"
+
+#include <QWidget>
+#ifdef DEBUG
+#include <QDebug>
+#endif
+
+class WineProccesWidget : public QWidget
+{
+Q_OBJECT
+public:
+    explicit WineProccesWidget(QWidget *parent = 0);
+
+signals:
+
+public slots:
+
+};
+
+#endif // WINEPROCCESVIEW_H
