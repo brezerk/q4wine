@@ -815,6 +815,11 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			QProcess myProcess;
 			myProcess.setEnvironment(QProcess::systemEnvironment());
 			myProcess.setWorkingDirectory (dir);
+
+#ifdef DEBUG
+		qDebug()<<"[ii] corelib::runProcess"<<exec<<args;
+#endif
+
 			myProcess.start(exec, args);
 
 			if (!myProcess.waitForFinished())
@@ -1059,5 +1064,18 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			break;
 		   }
 		   return string;
+	  }
+
+	  bool corelib::reniceProcces(const int pid, const int priority) const{
+		  QStringList args;
+		  args << this->getSetting("system", "renice").toString();
+		  args.append(QString("%1").arg(priority));
+		  args.append(QString("%1").arg(pid));
+
+		  if (this->runProcess(this->getSetting("system", "gui_sudo").toString(), args, QDir::homePath(), false)){
+			  return true;
+		  } else {
+			  return false;
+		  }
 	  }
 

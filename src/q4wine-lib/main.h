@@ -264,8 +264,9 @@ public:
 	 * \param profile	Profile type ID
 	 */
 	QString getUmountString(const int profile) const;
+	bool reniceProcces(const int pid, const int priority) const;
 
-	private:
+private:
 	/*! Define is library operate in CLI or GUI mode.
 	 * \note This is typically need for error message display.
 	 */

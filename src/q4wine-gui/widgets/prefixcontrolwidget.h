@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                     *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                            *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -17,49 +17,45 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef WINEPROCCESWIDGET_H
-#define WINEPROCCESWIDGET_H
+#ifndef PREFIXCONTROLWIDGET_H
+#define PREFIXCONTROLWIDGET_H
 
 #include "config.h"
 #include "memory"
+
+#include "src/core/database/prefix.h"
+#include "src/core/database/dir.h"
+#include "src/core/database/icon.h"
 
 #include <QWidget>
 #include <QToolBar>
 #include <QAction>
 #include <QMenu>
-#include <QIcon>
-#include <QVBoxLayout>
 #include <QTableView>
-#include <QTableWidget>
-#include <QLabel>
-#include <QTimer>
-#include <QInputDialog>
-#include <QStandardItemModel>
+#include <QSqlQueryModel>
+
+#include <QIcon>
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
 #include "wizard.h"
+#include "prefixsettings.h"
 
 #include <q4wine-lib/main.h>
 
-class WineProccesWidget : public QWidget
+class PrefixControlWidget : public QWidget
 {
 Q_OBJECT
 public:
-	explicit WineProccesWidget(QString themeName, QWidget *parent = 0);
+	explicit PrefixControlWidget(QString themeName, QWidget *parent = 0);
 
 signals:
 
 public slots:
-	void stopTimer(void);
-	void startTimer(void);
 
 private:
 	QString themeName;
-
-	std::auto_ptr<QTimer> timer;
-	std::auto_ptr<QStandardItemModel> model;
 
 	//! This is need for libq4wine-core.so import.
 	QLibrary libq4wine;
@@ -70,23 +66,35 @@ private:
 	void createActions();
 	QIcon loadIcon(QString iconName);
 
-	std::auto_ptr<QTableView> procTable;
-	std::auto_ptr<QLabel> lblInfo;
+	std::auto_ptr<QSqlQueryModel> model;
 
+	std::auto_ptr<QTableView> prefixTable;
 	std::auto_ptr<QMenu> menu;
-	std::auto_ptr<QAction> procKillSelected;
-	std::auto_ptr<QAction> procKillWine;
-	std::auto_ptr<QAction> procRefresh;
-	std::auto_ptr<QAction> procRenice;
+	std::auto_ptr<QAction> prefixAdd;
+	std::auto_ptr<QAction> prefixDelete;
+	std::auto_ptr<QAction> prefixSettings;
+	std::auto_ptr<QAction> prefixImport;
+	std::auto_ptr<QAction> prefixExport;
+
+	void updateTableModel(void);
+
+	// Database classes
+	Prefix db_prefix;
+	Dir db_dir;
+	Icon db_icon;
 
 private slots:
-	void getWineProccessInfo(void);
 	void customContextMenuRequested(const QPoint &pos);
-	void itemClicked(const QModelIndex &);
+	//void tableRowCountChanged (int, int);
 
-	void procKillSelected_Click(void);
-	void procKillWine_Click(void);
-	void procRenice_Click(void);
+	void prefixAdd_Click(void);
+	void prefixDelete_Click(void);
+	void prefixExport_Click(void);
+	void prefixImport_Click(void);
+	void prefixSettings_Click(void);
+
+signals:
+	void updateDatabaseConnections();
 };
 
-#endif // WINEPROCCESVIEW_H
+#endif // PREFIXCONTROLWIDGET_H
