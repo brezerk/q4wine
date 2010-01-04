@@ -41,6 +41,7 @@
 
 #include "wizard.h"
 #include "prefixsettings.h"
+#include "process.h"
 
 #include <q4wine-lib/main.h>
 
@@ -48,53 +49,53 @@ class PrefixControlWidget : public QWidget
 {
 Q_OBJECT
 public:
-	explicit PrefixControlWidget(QString themeName, QWidget *parent = 0);
+    explicit PrefixControlWidget(QString themeName, QWidget *parent = 0);
 
 signals:
 
 public slots:
 
 private:
-	QString themeName;
+    QString themeName;
 
-	//! This is need for libq4wine-core.so import.
-	QLibrary libq4wine;
-	typedef void *CoreLibPrototype (bool);
-	CoreLibPrototype *CoreLibClassPointer;
-	std::auto_ptr<corelib> CoreLib;
+    //! This is need for libq4wine-core.so import.
+    QLibrary libq4wine;
+    typedef void *CoreLibPrototype (bool);
+    CoreLibPrototype *CoreLibClassPointer;
+    std::auto_ptr<corelib> CoreLib;
 
-	void createActions();
-	QIcon loadIcon(QString iconName);
+    void createActions();
+    QIcon loadIcon(QString iconName);
 
-	std::auto_ptr<QSqlQueryModel> model;
+    std::auto_ptr<QSqlQueryModel> model;
 
-	std::auto_ptr<QTableView> prefixTable;
-	std::auto_ptr<QMenu> menu;
-	std::auto_ptr<QAction> prefixAdd;
-	std::auto_ptr<QAction> prefixDelete;
-	std::auto_ptr<QAction> prefixSettings;
-	std::auto_ptr<QAction> prefixImport;
-	std::auto_ptr<QAction> prefixExport;
+    std::auto_ptr<QTableView> prefixTable;
+    std::auto_ptr<QMenu> menu;
+    std::auto_ptr<QAction> prefixAdd;
+    std::auto_ptr<QAction> prefixDelete;
+    std::auto_ptr<QAction> prefixSettings;
+    std::auto_ptr<QAction> prefixImport;
+    std::auto_ptr<QAction> prefixExport;
 
-	void updateTableModel(void);
+    void updateTableModel(void);
 
-	// Database classes
-	Prefix db_prefix;
-	Dir db_dir;
-	Icon db_icon;
+    // Database classes
+    Prefix db_prefix;
+    Dir db_dir;
+    Icon db_icon;
 
 private slots:
-	void customContextMenuRequested(const QPoint &pos);
-	//void tableRowCountChanged (int, int);
+    void customContextMenuRequested(const QPoint &pos);
+    //void tableRowCountChanged (int, int);
 
-	void prefixAdd_Click(void);
-	void prefixDelete_Click(void);
-	void prefixExport_Click(void);
-	void prefixImport_Click(void);
-	void prefixSettings_Click(void);
+    void prefixAdd_Click(void);
+    void prefixDelete_Click(void);
+    void prefixExport_Click(void);
+    void prefixImport_Click(void);
+    void prefixSettings_Click(void);
 
 signals:
-	void updateDatabaseConnections();
+    void updateDatabaseConnections();
 };
 
 #endif // PREFIXCONTROLWIDGET_H
