@@ -29,6 +29,10 @@
 #include <QObject>
 #include <QWidget>
 #include <QVBoxLayout>
+#include <QLineEdit>
+#include <QToolBar>
+#include <QKeyEvent>
+#include <QAction>
 
 #include "httpcore.h"
 #include "xmlparser.h"
@@ -40,8 +44,7 @@ class AppDBWidget : public QWidget
 {
 Q_OBJECT
 public:
-	explicit AppDBWidget(QWidget *parent = 0);
-	void startSearch(short int action, QString search="");
+	explicit AppDBWidget(QString themeName, QWidget *parent = 0);
 
 public slots:
 	void itemTrigged(short int action, QString search="", int val1=0, int val2=0, int val3=0);
@@ -49,12 +52,11 @@ public slots:
 	void requestError(QString error);
 	void updateDataReadProgress(int bytesRead, int totalBytes);
 
-signals:
-	void xdgOpenUrl(QString);
-
 private:
 	//! Functions
 	void showXmlError(int id);
+	void createActions(void);
+	QIcon loadIcon(QString iconName);
 
 	//! AppDB core clases
 	std::auto_ptr<XmlParser> xmlparser;
@@ -66,9 +68,16 @@ private:
 
 	//! Delay timer
 	std::auto_ptr<QTimer> timer;
+	std::auto_ptr<QAction> appdbOpen;
+	std::auto_ptr<QAction> appdbAppPage;
+	std::auto_ptr<QAction> appdbClear;
+	std::auto_ptr<QAction> appdbClearSearch;
+	std::auto_ptr<QAction> appdbSearch;
+
+	std::auto_ptr<QLineEdit> searchField;
 
 	//! State variables
-	QString search;
+	QString search, themeName;
 	short int action;
 	int appid;
 	int catid;
@@ -76,8 +85,20 @@ private:
 	int testid;
 	int page;
 
+	//! This is need for libq4wine-core.so import.
+	QLibrary libq4wine;
+	typedef void *CoreLibPrototype (bool);
+	CoreLibPrototype *CoreLibClassPointer;
+	std::auto_ptr<corelib> CoreLib;
+
 private slots:
 	void timer_timeout(void);
+	void appdbOpen_Click(void);
+	void appdbAppPage_Click(void);
+	void appdbClear_Click(void);
+	void appdbClearSearch_Click(void);
+	void appdbSearch_Click(void);
+
 };
 
 #endif // APPDBWIDGET_H

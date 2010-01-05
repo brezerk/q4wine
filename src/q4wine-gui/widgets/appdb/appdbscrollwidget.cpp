@@ -49,6 +49,7 @@ void AppDBScrollWidget::addTestWidget(const WineAppDBInfo appinfo){
 		AppDBTestWidget->setObjectName("appViewTestWidget");
 		connect(AppDBTestWidget.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SIGNAL(itemTrigged(short int, QString, int, int, int)));
 		connect(AppDBTestWidget.get(), SIGNAL(scrollToPos(int)), this, SLOT(scrollToPos(int)));
+
 		contentLayout->addWidget(AppDBTestWidget.release());
 	}
 	return;

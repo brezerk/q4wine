@@ -183,7 +183,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	loadThemeIcons(CoreLib->getSetting("app", "theme", false).toString(), Scena);
 
 	QString pic="", line="", prefixPath="";
-	std::auto_ptr<QListWidgetItem> item;
+	std::auto_ptr<DriveListWidgetItem> item;
 
 	switch (Scena){
  case 0:
@@ -294,53 +294,22 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		cmdGetWineDesktopMus->installEventFilter(this);
 		cmdGetWineDesktopVid->installEventFilter(this);
 
-		prefixPath = db_prefix.getPath(var1);
-		line = "C: ";
-		//line.append(prefixPath);
-		line.append("../drive_c\n");
-		line.append(tr("Type"));
-		line.append(": ");
-		line.append("auto");
-
-		pic=this->getDrivePic("auto");
-
-		item.reset(new QListWidgetItem(loadIcon(pic, ""), line, listWineDrives));
+		item.reset(new DriveListWidgetItem("", listWineDrives));
+		item->setDrive("C:", "../drive_c", "auto");
 		listWineDrives->addItem(item.release());
 
 		if (!db_prefix.getMountPath(var1).isEmpty()){
-			line = "D: ";
-			line.append(db_prefix.getMountPath(var1));
-			line.append(tr("\nType: "));
-			line.append("cdrom");
-
-			pic=this->getDrivePic("cdrom");
-
-			item.reset(new QListWidgetItem(loadIcon(pic, ""), line, listWineDrives));
+			item.reset(new DriveListWidgetItem("", listWineDrives));
+			item->setDrive("D:", db_prefix.getMountPath(var1), "cdrom");
 			listWineDrives->addItem(item.release());
 		}
 
-		line = "Z: /";
-		line.append("\n");
-		line.append(tr("Type"));
-		line.append(": ");
-		line.append("auto");
-
-		pic=this->getDrivePic("auto");
-
-		item.reset(new QListWidgetItem(loadIcon(pic, ""), line, listWineDrives));
+		item.reset(new DriveListWidgetItem("", listWineDrives));
+		item->setDrive("Z:", "/", "auto");
 		listWineDrives->addItem(item.release());
 
-		line = "H: ";
-		line.append(QDir::homePath());
-		line.append("/.config/q4wine/tmp");
-		line.append("\n");
-		line.append(tr("Type"));
-		line.append(": ");
-		line.append("auto");
-
-		pic=this->getDrivePic("auto");
-
-		item.reset(new QListWidgetItem(loadIcon(pic, ""), line, listWineDrives));
+		item.reset(new DriveListWidgetItem("", listWineDrives));
+		item->setDrive("H:", QString("%1/.config/q4wine/tmp").arg(QDir::homePath()), "auto");
 		listWineDrives->addItem(item.release());
 
 		txtWineDesktop->setText(QString("%1/Desktop").arg(QDir::homePath()));
@@ -469,40 +438,23 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		if (!wineDriveDir.cd(prefixPath)){
 			qDebug()<<"Cannot cd to prefix directory: "<<prefixPath;
 		} else {
+
 			QFileInfoList drivelist = wineDriveDir.entryInfoList();
 			for (int i = 0; i < drivelist.size(); ++i) {
 				QFileInfo fileInfo = drivelist.at(i);
-				QString line = "";
+				QString path = "";
 				if (fileInfo.fileName().toUpper()=="C:"){
-					line = "C: ";
-					line.append("../drive_c");
+					path = "../drive_c";
 				} else {
-					line = fileInfo.fileName().toUpper();
-					line.append(" ");
-					line.append(fileInfo.symLinkTarget());
+					path = fileInfo.symLinkTarget();
 				}
-				line.append("\n");
-				line.append(tr("Type"));
-				line.append(": ");
 
 				list.clear();
 				list<<QString("\"%1\"").arg(fileInfo.fileName());
 				list = reg.readKeys("system", "Software\\Wine\\Drives", list);
 
-				QString pic="";
-				if (list.count()>0){
-					if (list.at(0).isEmpty()){
-						line.append("auto");
-					} else {
-						line.append(list.at(0));
-					}
-					pic=this->getDrivePic(list.at(0));
-				} else {
-					line.append("auto");
-					pic=this->getDrivePic("auto");
-				}
-
-				std::auto_ptr<QListWidgetItem> item (new QListWidgetItem(loadIcon(pic, ""), line, listWineDrives));
+				item.reset(new DriveListWidgetItem("", listWineDrives));
+				item->setDrive(fileInfo.fileName().toUpper(), path, list.at(0));
 				listWineDrives->addItem(item.release());
 			}
 		}
@@ -613,26 +565,6 @@ void Wizard::comboProxyType_indexChanged(QString text){
 	}
 
 	return;
-}
-
-QString Wizard::getDrivePic(QString driveType){
-	QString pic;
-	if (driveType.isEmpty()){
-		pic = "data/drive_menu.png";
-	} else {
-		if (driveType=="hd"){
-			pic = "data/drive_menu.png";
-		} else if (driveType=="network"){
-			pic = "data/drive_menu.png";
-		} else if (driveType=="floppy"){
-			pic = "data/drive_menu.png";
-		} else if (driveType=="cdrom"){
-			pic = "data/cdrom_menu.png";
-		} else {
-			pic = "data/drive_menu.png";
-		}
-	}
-	return pic;
 }
 
 void Wizard::changeBoxState(int state){
@@ -1109,17 +1041,19 @@ void Wizard::nextWizardPage(){
 
 			if (listWineDrives->count()>0){
 				for (int i=0; i<listWineDrives->count(); i++){
-					QString path = listWineDrives->item(i)->text().split("\n").at(0).split(":").at(1).trimmed();
-					QString letter = listWineDrives->item(i)->text().left(2).toLower();
+					std::auto_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->item(i)));
 
-					sh_cmd.clear();
-					sh_cmd.append(CoreLib->getWhichOut("ln"));
-					sh_cmd.append(" -s '");
-					sh_cmd.append(path);
-					sh_cmd.append("' '");
-					sh_cmd.append(letter);
-					sh_cmd.append("'");
-					sh_line.append(sh_cmd);
+					if (item.get()){
+						sh_cmd.clear();
+						sh_cmd.append(CoreLib->getWhichOut("ln"));
+						sh_cmd.append(" -s '");
+						sh_cmd.append(item->getPath());
+						sh_cmd.append("' '");
+						sh_cmd.append(item->getLetter().toLower());
+						sh_cmd.append("'");
+						sh_line.append(sh_cmd);
+					}
+					item.release();
 				}
 			}
 
@@ -1241,14 +1175,16 @@ void Wizard::nextWizardPage(){
 
 				if (listWineDrives->count()>0){
 					for (int i=0; i<listWineDrives->count(); i++){
-						QString type = listWineDrives->item(i)->text().split("\n").at(1).split(":").at(1).trimmed();
-						QString letter = listWineDrives->item(i)->text().left(2).toLower();
+						std::auto_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->item(i)));
 
-						if (type=="auto"){
-							registry.unset("Software\\Wine\\Drives", letter, "HKEY_LOCAL_MACHINE");
-						} else {
-							registry.set("Software\\Wine\\Drives", "", QString("\"%1\"=\"%2\"").arg(letter).arg(type), "HKEY_LOCAL_MACHINE");
+						if (item.get()){
+							if (item->getType()=="auto"){
+								registry.unset("Software\\Wine\\Drives", item->getLetter().toLower(), "HKEY_LOCAL_MACHINE");
+							} else {
+								registry.set("Software\\Wine\\Drives", "", QString("\"%1\"=\"%2\"").arg(item->getLetter().toLower()).arg(item->getType()), "HKEY_LOCAL_MACHINE");
+							}
 						}
+						item.release();
 					}
 				}
 
@@ -1872,7 +1808,8 @@ void Wizard::cmdJoystickDel_Click(){
 }
 
 void Wizard::cmdWineDriveEdit_Click(){
-	std::auto_ptr<QListWidgetItem> item (listWineDrives->currentItem());
+	std::auto_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->currentItem()));
+
 	if (!item.get())
 		return;
 
@@ -1885,10 +1822,9 @@ void Wizard::cmdWineDriveEdit_Click(){
 		}
 	}
 
-	WineDriveDialog drevedialog(drives, item->text().left(2), item->text().split("\n").at(0).split(":").at(1).trimmed(), item->text().split("\n").at(1).split(":").at(1).trimmed());
+	WineDriveDialog drevedialog(drives, item->getLetter(), item->getPath(), item->getType());
 	if (drevedialog.exec()==QDialog::Accepted){
-		item->setText(drevedialog.driveDesc);
-		item->setIcon(loadIcon(this->getDrivePic(drevedialog.driveType), ""));
+		item->setDrive(drevedialog.getLetter(), drevedialog.getPath(), drevedialog.getType());
 	}
 	item.release();
 	return;
@@ -1905,7 +1841,8 @@ void Wizard::cmdWineDriveAdd_Click(){
 
 	WineDriveDialog drevedialog(drives);
 	if (drevedialog.exec()==QDialog::Accepted){
-		std::auto_ptr<QListWidgetItem> item (new QListWidgetItem(loadIcon(this->getDrivePic(drevedialog.driveType), ""), drevedialog.driveDesc, listWineDrives));
+		std::auto_ptr<DriveListWidgetItem> item (new DriveListWidgetItem("", listWineDrives));
+		item->setDrive(drevedialog.getLetter(), drevedialog.getPath(), drevedialog.getType());
 		listWineDrives->addItem(item.release());
 	}
 	return;

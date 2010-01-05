@@ -19,14 +19,41 @@
 
 #include "appdbwidget.h"
 
-AppDBWidget::AppDBWidget(QWidget *parent) : QWidget(parent)
+AppDBWidget::AppDBWidget(QString themeName, QWidget *parent) : QWidget(parent)
 {
+
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
+
+	if (!libq4wine.load()){
+		  libq4wine.load();
+	}
+
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib.reset((corelib *)CoreLibClassPointer(true));
+
 	//Init AppDB Core Classes
 	xmlparser.reset(new XmlParser());
 	httpcore.reset(new HttpCore());
 
+	this->themeName=themeName;
 	//Init delay timer
 	timer.reset(new QTimer(this));
+
+	this->createActions();
+
+	std::auto_ptr<QToolBar> toolbar (new QToolBar());
+	toolbar->addAction(appdbOpen.get());
+	toolbar->addAction(appdbAppPage.get());
+	toolbar->addSeparator();
+	toolbar->addAction(appdbClear.get());
+	toolbar->addAction(appdbClearSearch.get());
+	searchField.reset (new QLineEdit(this));
+	connect(searchField.get(), SIGNAL(returnPressed()), this, SLOT(appdbSearch_Click()));
+
+	toolbar->addWidget(searchField.get());
+	toolbar->addAction(appdbSearch.get());
 
 	//Init custom widgets
 	appdbHeader.reset(new AppDBHeaderWidget());
@@ -38,6 +65,7 @@ AppDBWidget::AppDBWidget(QWidget *parent) : QWidget(parent)
 	std::auto_ptr<QVBoxLayout> contentLayout(new QVBoxLayout(this));
 	contentLayout->setMargin(0);
 	contentLayout->setSpacing(0);
+	contentLayout->addWidget(toolbar.release());
 	contentLayout->addWidget(appdbHeader.get());
 	contentLayout->addWidget(appdbScrollArea.get());
 	this->setLayout(contentLayout.release());
@@ -54,11 +82,6 @@ AppDBWidget::AppDBWidget(QWidget *parent) : QWidget(parent)
 	return;
 }
 
-void AppDBWidget::startSearch(short int action, QString search){
-	itemTrigged(action, search);
-	return;
-}
-
 void AppDBWidget::itemTrigged(short int action, QString search, int val1, int val2, int val3){
 #ifdef DEBUG
 	qDebug()<<"[ii] itemTrigged"<<action<<search<<val1<<val2<<val3;
@@ -69,6 +92,8 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 
 	switch (action){
  case 1:
+		appdbClear->setEnabled(false);
+		appdbAppPage->setEnabled(false);
 		this->appdbHeader->clear();
 		this->appdbHeader->addLabel(tr("Status: Connectiong to %1").arg(APPDB_HOSTNAME));
 		this->search=search;
@@ -78,8 +103,15 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		this->testid=0;
 		this->catid=0;
 		this->appdbScrollArea->clear();
+
+		if (searchField->text()!=search)
+			searchField->setText(search);
+
+		timer->start(1000);
 		break;
  case 2:
+		appdbClear->setEnabled(false);
+		appdbAppPage->setEnabled(false);
 		this->appdbHeader->clear();
 		this->appdbHeader->addLabel(tr("Status: Connectiong to %1").arg(APPDB_HOSTNAME));
 		this->search=search;
@@ -89,8 +121,11 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		this->testid=0;
 		this->catid=0;
 		this->appdbScrollArea->clear();
+		timer->start(1000);
 		break;
  case 3:
+		appdbClear->setEnabled(false);
+		appdbAppPage->setEnabled(false);
 		this->appdbHeader->clear();
 		this->appdbHeader->addLabel(tr("Status: Connectiong to %1").arg(APPDB_HOSTNAME));
 		this->search="";
@@ -100,8 +135,11 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		this->testid=0;
 		this->catid=0;
 		this->appdbScrollArea->clear();
+		timer->start(1000);
 		break;
  case 4:
+		appdbClear->setEnabled(false);
+		appdbAppPage->setEnabled(false);
 		this->appdbHeader->clear();
 		this->appdbHeader->addLabel(tr("Status: Connectiong to %1").arg(APPDB_HOSTNAME));
 		this->search="";
@@ -111,8 +149,11 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		this->testid=val3;
 		this->catid=0;
 		this->appdbScrollArea->clear();
+		timer->start(1000);
 		break;
  case 5:
+		appdbClear->setEnabled(false);
+		appdbAppPage->setEnabled(false);
 		this->appdbHeader->clear();
 		this->appdbHeader->addLabel(tr("Status: Connectiong to %1").arg(APPDB_HOSTNAME));
 		this->search="";
@@ -122,37 +163,17 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		this->testid=0;
 		this->catid=val1;
 		this->appdbScrollArea->clear();
+		timer->start(1000);
 		break;
  case 6:
-		//FIXME: openurl!
-		emit(xdgOpenUrl(search));
+		CoreLib->openUrl(search);
+		break;
+ case 7:
+		CoreLib->openUrl(QString("http://%1/show_bug.cgi?id=%2").arg(BUGS_HOSTNAME).arg(val1));
 		break;
 	}
 
-	//run delay timer
-	timer->start(1000);
 	return;
-}
-
-void AppDBWidget::timer_timeout(void){
-	switch (this->action){
- case 1:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=1&search=%1").arg(this->search));
-		break;
- case 2:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=1&search=%1&page=%2").arg(this->search).arg(page));
-		break;
- case 3:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=3&appid=%1").arg(this->appid));
-		break;
- case 4:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=4&appid=%1&verid=%2&testid=%3").arg(this->appid).arg(this->verid).arg(this->testid));
-		break;
- case 5:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=5&catid=%1").arg(this->catid));
-		break;
-	}
-	timer->stop();
 }
 
 void AppDBWidget::httpcore_pageDownloaded(void){
@@ -176,6 +197,7 @@ void AppDBWidget::httpcore_pageDownloaded(void){
 			this->appdbScrollArea->addSearchWidget(applist.at(i));
 		}
 		this->appdbScrollArea->insertStretch();
+		appdbClear->setEnabled(true);
 		break;
 	case 2:
 		appdbHeader->createPagesList(xmlparser->getPageCount(), xmlparser->getPageCurrent(), this->search);
@@ -185,6 +207,7 @@ void AppDBWidget::httpcore_pageDownloaded(void){
 			this->appdbScrollArea->addSearchWidget(applist.at(i));
 		}
 		this->appdbScrollArea->insertStretch();
+		appdbClear->setEnabled(true);
 		break;
 	case 3:
 		appinfo = xmlparser->getAppSearchInfo();
@@ -192,6 +215,8 @@ void AppDBWidget::httpcore_pageDownloaded(void){
 		appdbHeader->insertStretch();
 		this->appdbScrollArea->addSearchWidget(appinfo);
 		this->appdbScrollArea->insertStretch();
+		appdbClear->setEnabled(true);
+		appdbAppPage->setEnabled(true);
 		break;
 	case 4:
 		this->appdbHeader->createCategoryList(xmlparser->getAppSearchInfo().categorys);
@@ -200,6 +225,8 @@ void AppDBWidget::httpcore_pageDownloaded(void){
 		this->appdbHeader->addLabel(QString("- %1").arg(xmlparser->getAppSearchInfo().appver));
 		this->appdbHeader->insertStretch();
 		this->appdbScrollArea->addTestWidget(xmlparser->getAppSearchInfo());
+		appdbClear->setEnabled(true);
+		appdbAppPage->setEnabled(true);
 		break;
 	case 5:
 		this->appdbHeader->createCategoryList(xmlparser->getCategorysList());
@@ -207,6 +234,7 @@ void AppDBWidget::httpcore_pageDownloaded(void){
 		this->appdbScrollArea->addVersionFrame(xmlparser->getSubCategorysList(), tr("Sub categoryes"), 5);
 		this->appdbScrollArea->addVersionFrame(xmlparser->getAppsList(), tr("Applications"), 3);
 		this->appdbScrollArea->insertStretch();
+		appdbClear->setEnabled(true);
 		break;
 
 	}
@@ -234,14 +262,113 @@ void AppDBWidget::showXmlError(int id){
 		return;
 		break;
 	}
+	return;
+}
+
+void AppDBWidget::createActions(void){
+	appdbOpen.reset(new QAction(loadIcon("data/wineappdb.png"), tr("Open AppDB"), this));
+	appdbOpen->setStatusTip(tr("Open Wine AppDB web site"));
+	connect(appdbOpen.get(), SIGNAL(triggered()), this, SLOT(appdbOpen_Click()));
+
+	appdbAppPage.reset(new QAction(loadIcon("data/wineappdb-app.png"), tr("Open App page"), this));
+	appdbAppPage->setStatusTip(tr("Open current application page at Wine AppDB web site"));
+	appdbAppPage->setEnabled(false);
+	connect(appdbAppPage.get(), SIGNAL(triggered()), this, SLOT(appdbAppPage_Click()));
+
+	appdbClear.reset(new QAction(loadIcon("data/clear-list.png"), tr("Clear results"),this));
+	appdbClear->setStatusTip(tr("Clear results"));
+	appdbClear->setEnabled(false);
+	connect(appdbClear.get(), SIGNAL(triggered()), this, SLOT(appdbClear_Click()));
+
+	appdbClearSearch.reset(new QAction(loadIcon("data/clear-ltr.png"), tr("Clear search field"),this));
+	appdbClearSearch->setStatusTip(tr("Clear search field"));
+	connect(appdbClearSearch.get(), SIGNAL(triggered()), this, SLOT(appdbClearSearch_Click()));
+
+	appdbSearch.reset(new QAction(loadIcon("data/find.png"), tr("Search in appdb"),this));
+	appdbSearch->setStatusTip(tr("Search in wine appdb"));
+	connect(appdbSearch.get(), SIGNAL(triggered()), this, SLOT(appdbSearch_Click()));
+
+	return;
+}
+
+QIcon AppDBWidget::loadIcon(QString iconName){
+	  // Function tryes to load icon image from theme dir
+	  // If it fails -> load default from rsource file
+	  QIcon icon;
+	  if ((!this->themeName.isEmpty()) and (this->themeName!="Default")){
+			icon.addFile(QString("%1/%2").arg(this->themeName).arg(iconName));
+			if (icon.isNull()){
+				  icon.addFile(QString(":/%1").arg(iconName));
+			}
+	  } else {
+			icon.addFile(QString(":/%1").arg(iconName));
+	  }
+	  return icon;
 }
 
 void AppDBWidget::requestError(QString error){
 	this->appdbHeader->clear();
 	this->appdbHeader->addLabel(tr("Error: %1").arg(error));
+	return;
 }
 
 void AppDBWidget::updateDataReadProgress(int bytesRead, int totalBytes){
 	this->appdbHeader->updateFirstLabelText(QString("Downloaded: %1 of %2 bytes").arg(bytesRead).arg(totalBytes));
+	return;
+}
+
+void AppDBWidget::timer_timeout(void){
+	switch (this->action){
+ case 1:
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=1&search=%1").arg(this->search));
+		break;
+ case 2:
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=1&search=%1&page=%2").arg(this->search).arg(page));
+		break;
+ case 3:
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=3&appid=%1").arg(this->appid));
+		break;
+ case 4:
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=4&appid=%1&verid=%2&testid=%3").arg(this->appid).arg(this->verid).arg(this->testid));
+		break;
+ case 5:
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=5&catid=%1").arg(this->catid));
+		break;
+	}
+	timer->stop();
+}
+
+void AppDBWidget::appdbOpen_Click(void){
+	CoreLib->openUrl(QString("http://%1/").arg(APPDB_HOSTNAME));
+	return;
+}
+
+void AppDBWidget::appdbAppPage_Click(void){
+	if (this->verid==0){
+		CoreLib->openUrl(QString("http://%1/objectManager.php?sClass=application&iId=%2").arg(APPDB_HOSTNAME).arg(this->appid));
+	} else {
+		CoreLib->openUrl(QString("http://%1/objectManager.php?sClass=version&iId=%2").arg(APPDB_HOSTNAME).arg(this->verid));
+	}
+	return;
+}
+
+void AppDBWidget::appdbClear_Click(void){
+	appdbClear->setEnabled(false);
+	appdbAppPage->setEnabled(false);
+	searchField->clear();
+	this->appdbHeader->clear();
+	this->appdbHeader->addLabel(tr("Status: Ready"));
+	this->appdbScrollArea->clear();
+	return;
+}
+
+void AppDBWidget::appdbClearSearch_Click(void){
+	searchField->clear();
+	return;
+}
+
+void AppDBWidget::appdbSearch_Click(void){
+	if (!searchField->text().isEmpty())
+		this->itemTrigged(1, searchField->text());
 	return;
 }

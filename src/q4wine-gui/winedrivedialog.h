@@ -38,7 +38,7 @@
 class WineDriveDialog : public QDialog, public Ui::WineDriveDialog
 {
 	Q_OBJECT
-	public:
+public:
 	/*! \brief This is class constructor.
 	 *
 	 * \param  WizardType	Type of wizard scenario.
@@ -47,10 +47,11 @@ class WineDriveDialog : public QDialog, public Ui::WineDriveDialog
 	WineDriveDialog(QStringList removeLetters, QWidget * parent = 0, Qt::WFlags f = 0);
 	WineDriveDialog(QStringList removeLetters, QString driveLetter, QString drivePath, QString driveType, QWidget * parent = 0, Qt::WFlags f = 0);
 
-	//FIXME: Move to get methods
-	QString driveDesc;
-	QString driveType;
+	QString getLetter();
+	QString getPath();
+	QString getType();
 
+private:
 	private slots:
 	void cmdOk_Click();
 	void cmdCancel_Click();

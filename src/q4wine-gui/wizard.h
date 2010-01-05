@@ -40,6 +40,7 @@
 #include "registry.h"
 #include "process.h"
 #include "winebinlauncher.h"
+#include "drivelistwidgetitem.h"
 
 #include "src/core/database/prefix.h"
 #include "src/core/database/icon.h"
@@ -133,8 +134,6 @@ class Wizard : public QDialog, public Ui::Wizard
 		std::auto_ptr<corelib> CoreLib;
 
 		Registry reg;
-
-		QString getDrivePic(QString driveType);
 
 	protected:
 		//! \brief Event filter.

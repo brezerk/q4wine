@@ -47,12 +47,13 @@ HttpCore::HttpCore()
 	CoreLibClassPointer = (CoreLibPrototype*) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib*) CoreLibClassPointer(true));
 
-	QString proxyHost = CoreLib->getSetting("network", "host", false).toString();
+	int type = CoreLib->getSetting("network", "type", false).toInt();
 
-	if (!proxyHost.isEmpty()){
-		QString proxyUser, proxyPass;
+	if (type!=0){
+		QString proxyUser, proxyPass, proxyHost;
 		int proxyPort;
 
+		proxyHost = CoreLib->getSetting("network", "host", false).toString();
 		proxyPort = CoreLib->getSetting("network", "port", false).toInt();
 		proxyUser = CoreLib->getSetting("network", "user", false).toString();
 		proxyPass = CoreLib->getSetting("network", "pass", false).toString();
@@ -106,9 +107,8 @@ void HttpCore::httpRequestFinished(int requestId, bool error){
 		xmlreply=http->readAll();
 
 #ifdef DEBUG
-		qDebug()<<"[ii] Recived page:"<<xmlreply;
+		//qDebug()<<"[ii] Recived page:"<<xmlreply;
 #endif
-
 		emit(pageReaded());
 	}
 

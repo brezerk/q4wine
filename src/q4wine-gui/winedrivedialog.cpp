@@ -82,6 +82,18 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter,
 	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 }
 
+QString WineDriveDialog::getLetter(){
+	return cbDriveLetter->currentText();
+}
+
+QString WineDriveDialog::getPath(){
+	return txtDrivePath->text();
+}
+
+QString WineDriveDialog::getType(){
+	return cbDriveType->currentText();
+}
+
 void WineDriveDialog::cmdCancel_Click(){
 	reject();
 }
@@ -98,16 +110,6 @@ void WineDriveDialog::cmdOk_Click(){
 		return;
 	}
 
-	driveType=cbDriveType->currentText();
-
-	driveDesc.clear();
-	driveDesc.append(cbDriveLetter->currentText());
-	driveDesc.append(" ");
-	driveDesc.append(txtDrivePath->text());
-	driveDesc.append("\n");
-	driveDesc.append(tr("Type"));
-	driveDesc.append(": ");
-	driveDesc.append(cbDriveType->currentText());
 	accept();
 }
 

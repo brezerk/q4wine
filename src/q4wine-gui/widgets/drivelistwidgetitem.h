@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
+ *   Copyright (C) 2008-2010 by Malakhov Alexey                            *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -17,51 +17,36 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef APPDBSCROLLWIDGET_H
-#define APPDBSCROLLWIDGET_H
-
-#include <memory>
+#ifndef DRIVELISTWIDGETITEM_H
+#define DRIVELISTWIDGETITEM_H
 
 #include "config.h"
 
-#include <QDialog>
-#include <QObject>
-#include <QWidget>
-#include <QString>
+#include <QIcon>
+#include <QListWidget>
 #include <QDebug>
-#include <QScrollArea>
-#include <QVBoxLayout>
+#include <QString>
+#include <QListWidgetItem>
 
-#include "appdbstructs.h"
-#include "appdbsearchwidget.h"
-#include "appdbtestviewwidget.h"
-#include "appdbappversionwidget.h"
-
-class AppDBScrollWidget : public QScrollArea
+class DriveListWidgetItem : public QObject, public QListWidgetItem
 {
-	Q_OBJECT
+Q_OBJECT
 public:
-	AppDBScrollWidget(QWidget * parent = 0);
-	void addSearchWidget(const WineAppDBInfo appinfo);
-	void addTestWidget(const WineAppDBInfo appinfo);
-	void addVersionFrame(QList<WineAppDBCategory> list, QString frame_caption, short int action);
-	void insertStretch(void);
-	void clear(void);
+	DriveListWidgetItem(QString themeName, QListWidget * parent = 0, int type = QListWidgetItem::UserType);
+
+	void setDrive(QString letter, QString path, QString type);
+	QString getLetter();
+	QString getPath();
+	QString getType();
+signals:
 
 public slots:
-	void scrollToPos(int id);
-
-signals:
-	void itemTrigged(short int, QString, int, int, int);
-	void openCommentPage(void);
 
 private:
-	void gotoCommentId(int id);
-	void hideAll(void);
-
-	std::auto_ptr<QWidget> contentWidget;
-	std::auto_ptr<QVBoxLayout> contentLayout;
+	QString themeName, letter, path, type;
+	QString getDrivePic(QString driveType);
+	QIcon loadIcon(QString iconName);
 
 };
 
-#endif // APPDBSCROLLWIDGET_H
+#endif // DRIVELISTWIDGETITEM_H

@@ -63,7 +63,7 @@ WineProccesWidget::WineProccesWidget(QString themeName, QWidget *parent) : QWidg
 	procTable->setSelectionMode(QAbstractItemView::SingleSelection);
 
 	lblInfo.reset(new QLabel(tr("Total procces count: %1").arg(0), this));
-	lblInfo->setContentsMargins(4,4,4,4);
+	lblInfo->setContentsMargins(2,2,2,2);
 
 
 	std::auto_ptr<QVBoxLayout> layout (new QVBoxLayout(this));
