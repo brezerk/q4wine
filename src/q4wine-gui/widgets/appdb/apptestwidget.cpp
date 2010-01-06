@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -17,9 +17,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "appdbtestviewwidget.h"
+#include "apptestwidget.h"
 
-AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBInfo appinfo, QWidget *parent) : QWidget(parent)
+AppTestWidget::AppTestWidget(const WineAppDBInfo appinfo, QWidget *parent) : QWidget(parent)
 {
 		setupUi(this);
 		this->setAppName(QString("%1 - %2").arg(appinfo.name).arg(appinfo.appver));
@@ -36,7 +36,7 @@ AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBInfo appinfo, QWidget *p
 		lblWhatWasNotTested->setText(appinfo.nottested);
 
 		if (!appinfo.url.isEmpty()){
-			std::auto_ptr<AppDBLinkItemWidget> label(new AppDBLinkItemWidget(tr("Application web page"), 6));
+			std::auto_ptr<LinkItemWidget> label(new LinkItemWidget(tr("Application web page"), 6));
 			label->setSearchUrl(appinfo.url);
 			label->setToolTip(appinfo.url);
 			connect (label.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SIGNAL(itemTrigged(short int, QString, int, int, int)));
@@ -49,7 +49,7 @@ AppDBTestViewWidget::AppDBTestViewWidget(const WineAppDBInfo appinfo, QWidget *p
 		return;
 }
 
-void AppDBTestViewWidget::requestParentComment(int id){
+void AppTestWidget::requestParentComment(int id){
 	QList<QObject*> list = this->children();
 	QPalette p(palette());
 	int y_pos = -1;
@@ -71,22 +71,22 @@ void AppDBTestViewWidget::requestParentComment(int id){
 	return;
 }
 
-void AppDBTestViewWidget::setAppName(QString name){
+void AppTestWidget::setAppName(QString name){
 	lblAppName->setText(name);
 	return;
 }
 
-void AppDBTestViewWidget::setAppDesc(QString desc){
+void AppTestWidget::setAppDesc(QString desc){
 	lblAppDesc->setText(desc);
 	return;
 }
 
-void AppDBTestViewWidget::addBugs(QList<WineAppDBBug> bugs){
+void AppTestWidget::addBugs(QList<WineAppDBBug> bugs){
 	if (bugs.count()==0)
 		grpKnownBugs->setVisible(false);
 
 	for (int i=0; i<bugs.count(); i++){
-		std::auto_ptr<AppDBAppVersionWidget> version(new AppDBAppVersionWidget(7));
+		std::auto_ptr<LineItemWidget> version(new LineItemWidget(7));
 		version->setAppId(bugs.at(i).id);
 		version->addLabel(QString("%1").arg(bugs.at(i).id), 70, 1);
 		version->addLabel(bugs.at(i).desc, -1, 3, true);
@@ -98,9 +98,9 @@ void AppDBTestViewWidget::addBugs(QList<WineAppDBBug> bugs){
 	return;
 }
 
-void AppDBTestViewWidget::addComments(QList<WineAppDBComment> comments){
+void AppTestWidget::addComments(QList<WineAppDBComment> comments){
 	for (int i=0; i<comments.count(); i++){
-		std::auto_ptr<AppDBCommentWidget> comment (new AppDBCommentWidget(comments.at(i)));
+		std::auto_ptr<CommentWidget> comment (new CommentWidget(comments.at(i)));
 		connect(comment.get(), SIGNAL(requestParentComment(int)), this, SLOT(requestParentComment(int)));
 		TestLayout->addWidget(comment.release());
 	}
@@ -108,12 +108,12 @@ void AppDBTestViewWidget::addComments(QList<WineAppDBComment> comments){
 	return;
 }
 
-void AppDBTestViewWidget::addTestResults(QList<WineAppDBTestResult> tests){
+void AppTestWidget::addTestResults(QList<WineAppDBTestResult> tests){
 	if (tests.count()==0)
 		grpTestResults->setVisible(false);
 
 	for (int i=0; i<tests.count(); i++){
-		std::auto_ptr<AppDBAppVersionWidget> version (new AppDBAppVersionWidget(4));
+		std::auto_ptr<LineItemWidget> version (new LineItemWidget(4));
 		version->setAppId(this->appid);
 		version->setAppVerId(this->verid);
 		version->setTestId(tests.at(i).id);

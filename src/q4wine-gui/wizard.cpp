@@ -996,15 +996,7 @@ void Wizard::nextWizardPage(){
 			if (comboFakeVersion->currentText()=="Windows 2.0")
 				version = "win20";
 
-			WineBinLauncher launcher(prefix_name);
-			launcher.appendWineExe("prefixcreate");
-			launcher.run_exec(this, "", "-w", TRUE);
-			if (launcher.exec()!=QDialog::Accepted){
-				QApplication::restoreOverrideCursor();
-				qDebug()<<"Error while run WineExe: ";
-				reject();
-				return;
-			}
+			CoreLib->runWineBinary("", "-u -i", prefix_name, "boot", false);
 
 			// --- Creating Dos drives ---
 

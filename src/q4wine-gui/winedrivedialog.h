@@ -22,8 +22,6 @@
 
 #include <ui_WineDriveDialog.h>
 
-#include <QDebug>
-#include <QDir>
 #include <QMessageBox>
 #include <QFileDialog>
 

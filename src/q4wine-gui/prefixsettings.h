@@ -21,16 +21,12 @@
 #ifndef PREFIXSETTINGS_H
 #define PREFIXSETTINGS_H
 
-#include "memory"
+#include <memory>
 
 #include <ui_PrefixSettings.h>
 
 #include <QFileDialog>
 #include <QMessageBox>
-#include <QString>
-#include <QLibrary>
-#include <QDebug>
-#include <QStringList>
 
 #include "config.h"
 #include "src/core/database/prefix.h"

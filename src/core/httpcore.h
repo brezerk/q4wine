@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -22,15 +22,17 @@
 
 #include "config.h"
 
-#include "memory"
+#include <memory>
 
 #include <QUrl>
 #include <QHttp>
 #include <QHttpRequestHeader>
 #include <QNetworkProxy>
-#include <QDebug>
-#include <QObject>
 #include <QMessageBox>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 #include <q4wine-lib/main.h>
 

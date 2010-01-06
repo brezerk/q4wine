@@ -28,7 +28,6 @@ struct WineAppDBVersionInfo {
 	QString appver;
 	QString winever;
 	QString rating;
-	QString url;
 };
 
 struct WineAppDBTestResult {
@@ -76,7 +75,6 @@ struct WineAppDBInfo {
 	QString winever;
 	QString rating;
 	QString works;
-	QString category;
 	QString notworks;
 	QString nottested;
 	QString comment;

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Malakhov Alexey                            *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                            *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -20,25 +20,29 @@
 #ifndef APPDBWIDGET_H
 #define APPDBWIDGET_H
 
+//System
 #include <memory>
+
+//Global config
 #include "config.h"
 
-#include <QDebug>
-#include <QString>
-#include <QTimer>
-#include <QObject>
-#include <QWidget>
-#include <QVBoxLayout>
-#include <QLineEdit>
-#include <QToolBar>
-#include <QKeyEvent>
-#include <QAction>
-
+//Core classes
 #include "httpcore.h"
 #include "xmlparser.h"
 
+//Widgets
 #include "appdbheaderwidget.h"
 #include "appdbscrollwidget.h"
+
+//Qt includes
+#include <QToolBar>
+#include <QTimer>
+#include <QLineEdit>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
+
 
 class AppDBWidget : public QWidget
 {
@@ -70,6 +74,7 @@ private:
 	std::auto_ptr<QTimer> timer;
 	std::auto_ptr<QAction> appdbOpen;
 	std::auto_ptr<QAction> appdbAppPage;
+	std::auto_ptr<QAction> appdbCat;
 	std::auto_ptr<QAction> appdbClear;
 	std::auto_ptr<QAction> appdbClearSearch;
 	std::auto_ptr<QAction> appdbSearch;
@@ -98,6 +103,7 @@ private slots:
 	void appdbClear_Click(void);
 	void appdbClearSearch_Click(void);
 	void appdbSearch_Click(void);
+	void appdbCat_Click(void);
 
 };
 

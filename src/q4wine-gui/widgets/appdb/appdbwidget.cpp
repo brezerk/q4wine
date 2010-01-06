@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Malakhov Alexey                            *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                            *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -46,6 +46,8 @@ AppDBWidget::AppDBWidget(QString themeName, QWidget *parent) : QWidget(parent)
 	std::auto_ptr<QToolBar> toolbar (new QToolBar());
 	toolbar->addAction(appdbOpen.get());
 	toolbar->addAction(appdbAppPage.get());
+	toolbar->addSeparator();
+	toolbar->addAction(appdbCat.get());
 	toolbar->addSeparator();
 	toolbar->addAction(appdbClear.get());
 	toolbar->addAction(appdbClearSearch.get());
@@ -288,6 +290,10 @@ void AppDBWidget::createActions(void){
 	appdbSearch->setStatusTip(tr("Search in wine appdb"));
 	connect(appdbSearch.get(), SIGNAL(triggered()), this, SLOT(appdbSearch_Click()));
 
+	appdbCat.reset(new QAction(loadIcon("data/list.png"), tr("Appdb categoryes list"),this));
+	appdbCat->setStatusTip(tr("View wine appdb categoryes list"));
+	connect(appdbCat.get(), SIGNAL(triggered()), this, SLOT(appdbCat_Click()));
+
 	return;
 }
 
@@ -370,5 +376,10 @@ void AppDBWidget::appdbClearSearch_Click(void){
 void AppDBWidget::appdbSearch_Click(void){
 	if (!searchField->text().isEmpty())
 		this->itemTrigged(1, searchField->text());
+	return;
+}
+
+void AppDBWidget::appdbCat_Click(void){
+	this->itemTrigged(5, "", 0);
 	return;
 }

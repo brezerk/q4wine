@@ -445,7 +445,11 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 			menu->addSeparator();
 			entry.reset(new QAction(tr("Search in Wine AppDB"), this));
 			entry->setStatusTip(tr("Search for application name in wine AppDB"));
+#ifdef WITH_WINEAPPDB
 			connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconSearchAppDB_Click()));
+#else
+			entry->setEnabled(false);
+#endif
 			menu->addAction(entry.release());
 
 

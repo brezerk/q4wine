@@ -20,32 +20,30 @@
 #ifndef ICONLISTWIDGET_H
 #define ICONLISTWIDGET_H
 
-#include "memory"
+//System
+#include <memory>
 
+//Global config
 #include "config.h"
 
+//Database
 #include "src/core/database/prefix.h"
 #include "src/core/database/dir.h"
 #include "src/core/database/icon.h"
 #include "src/core/database/last_run_icon.h"
 
+//Windows
 #include "run.h"
-
 #include "iconsettings.h"
 
-#include <QListWidget>
-#include <QMouseEvent>
-#include <QPoint>
-#include <QApplication>
-#include <QUrl>
-#include <QAction>
+//Qt includes
 #include <QMenu>
-#include <QLibrary>
 
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
+//q4ine lib
 #include <q4wine-lib/main.h>
 
 struct iconCopyBuffer {

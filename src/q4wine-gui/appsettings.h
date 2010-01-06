@@ -17,7 +17,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "memory"
+#include <memory>
 
 #ifndef APPSETTINGS_H
 #define APPSETTINGS_H
@@ -25,21 +25,6 @@
 #include <ui_AppSettings.h>
 
 #include "config.h"
-
-#include <QDialog>
-#include <QObject>
-#include <QWidget>
-#include <QString>
-#include <QLineEdit>
-#include <QMessageBox>
-#include <QFileDialog>
-#include <QStringList>
-#include <QListWidget>
-#include <QListWidgetItem>
-#include <QSettings>
-#include <QCheckBox>
-#include <QDebug>
-#include <QDir>
 
 #include <q4wine-lib/main.h>
 

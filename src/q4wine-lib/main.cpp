@@ -519,7 +519,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 	  }
 
 
-	  bool corelib::runWineBinary(const QString windows_binary, const QString cmdargs, const QString prefix_name) const{
+	  bool corelib::runWineBinary(const QString windows_binary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin, const bool releaseProc) const{
 			QStringList prefixList;
 			// 0   1     2             3            4            5          6            7
 			// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
@@ -569,10 +569,16 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 				  exec_string.append(this->getSetting("wine", "WineBin").toString());
 			}
 
+			if (!wineAppendBin.isEmpty())
+				exec_string.append(wineAppendBin);
+
 			exec_string.append(" ");
-			exec_string.append(" \"");
-			exec_string.append(windows_binary);
-			exec_string.append("\" ");
+			if (!windows_binary.isEmpty()){
+				exec_string.append(" \"");
+				exec_string.append(windows_binary);
+				exec_string.append("\" ");
+			}
+
 			exec_string.append(cmdargs);
 			args.append(exec_string);
 
@@ -580,8 +586,13 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			qDebug()<<"[ii] corelib::runWineBinary via Requested args: "<<exec<<args<<QDir::homePath();
 #endif
 
-			QProcess proc;
-			return proc.startDetached(exec, args, QDir::homePath());
+			if (releaseProc){
+				QProcess proc;
+				return proc.startDetached(exec, args, QDir::homePath());
+			} else {
+				this->runProcess(args, QObject::tr("Running wine binary"), QObject::tr("Please wait..."));
+			}
+			return false;
 	  }
 
 	  QString corelib::createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const{
@@ -649,10 +660,10 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			if (mount_point.isEmpty()){
 				  this->showError(QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
-				  return FALSE;
+				  return false;
 			}
 			if (image_name.isEmpty())
-				  return FALSE;
+				  return false;
 
 			QStringList args;
 			QString mount_string;
@@ -723,17 +734,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 #ifdef DEBUG
 			qDebug()<<"[ii] corelib::mountImage: mount args: "<<args;
 #endif
-
-			if (this->_GUI_MODE){
-				  Process proc(args, this->getSetting("system", "sh").toString(), QDir::homePath(), QObject::tr("Mounting %1 into %2").arg(image_name).arg(mount_point), QObject::tr("Mounting..."));
-				  if (proc.exec()==QDialog::Accepted){
-					 return TRUE;
-				 } else {
-				  return FALSE;
-				 }
-			} else {
-				  return (this->runProcess(this->getSetting("system", "sh").toString(), args));
-			}
+			return this->runProcess(args, QObject::tr("Mounting..."),  QObject::tr("Mounting %1 into %2").arg(image_name).arg(mount_point));
 	  }
 
    bool corelib::umountImage(const QString prefix_name) const{
@@ -743,7 +744,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 #endif
 			if (mount_point.isEmpty()){
 				  this->showError(QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
-				  return FALSE;
+				  return false;
 			}
 
 			QStringList args;
@@ -766,27 +767,37 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			qDebug()<<"[ii] corelib::umountImage: umount args: "<<args;
 #endif
 
-			if (this->_GUI_MODE){
-				  Process proc(args, this->getSetting("system", "sh").toString(), QDir::homePath(), QObject::tr("Mounting..."), QObject::tr("Mounting..."));
-				  return (proc.exec());
-			} else {
-				  return (this->runProcess(this->getSetting("system", "sh").toString(), args));
-			}
+			return this->runProcess(args, QObject::tr("Umounting..."), QObject::tr("Umounting point: %1").arg(mount_point));
 
-			return TRUE;
+			return true;
 	  }
+
+   bool corelib::runProcess(const QStringList args, const QString caption, const QString message) const{
+
+#ifdef DEBUG
+			qDebug()<<"[ii] corelib::runProcess: args: "<<args;
+#endif
+
+	   if (this->_GUI_MODE){
+			 Process proc(args, this->getSetting("system", "sh").toString(), QDir::homePath(), message, caption, false);
+			 return (proc.exec());
+	   } else {
+			 return (this->runProcess(this->getSetting("system", "sh").toString(), args));
+	   }
+	   return true;
+   }
 
 	  bool corelib::openIconDirectry(const QString prefix_name, const QString dir_name, const QString icon_name) const{
 			QStringList result = db_icon.getByName(prefix_name, dir_name, icon_name);
 			QStringList args;
 			args<<result.at(4);
-			return this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
+			return this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
 	  }
 
 	  bool corelib::openPrefixDirectry(const QString prefix_name) const{
 			QStringList args;
 			args<<db_prefix.getPath(prefix_name);
-			return this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
+			return this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
 	  }
 
 	  QString corelib::getWinePath(const QString path, const QString option) const{
@@ -823,7 +834,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 			myProcess.start(exec, args);
 
 			if (!myProcess.waitForFinished())
-				  return FALSE;
+				  return false;
 
 			if (showLog){
 				  // Getting env LANG variable
@@ -841,11 +852,11 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 				  if (!string.isEmpty()){
 						showError(QObject::tr("It seems the process crashed. STDERR log: %1").arg(string));
 						delete (&codec);
-						return FALSE;
+						return false;
 				  }
 				  delete (&codec);
 			}
-			return TRUE;
+			return true;
 	  }
 
 	  int corelib::showError(const QString message, const bool info) const{
@@ -893,15 +904,15 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 			if (system(command.toAscii().data())==-1){
 				  this->showError(QObject::tr("Can't run: %1").arg(command.toAscii().data()));
-				  return FALSE;
+				  return false;
 			}
 
-			return TRUE;
+			return true;
 	  }
 
 	  void corelib::openHelpUrl(const QString rawurl) const{
 
-		  QString lang = this->getSetting("", "", FALSE).toString();
+		  QString lang = this->getSetting("", "", false).toString();
 		  if (lang.isEmpty()){
 			  lang = setlocale(LC_ALL, "");
 			  if (lang.isEmpty()){
@@ -925,7 +936,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 		  QStringList args;
 		  args<<url;
-		  this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
+		  this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
 		  return;
 	  }
 
@@ -937,14 +948,14 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 
 		  QStringList args;
 		  args<<url;
-		  this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
+		  this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
 		  return;
 	  }
 
 	  void corelib::openUrl(const QString rawurl) const{
 		  QStringList args;
 		  args<<rawurl;
-		  this->runProcess(this->getWhichOut("xdg-open"), args, "", FALSE);
+		  this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
 		  return;
 	  }
 
@@ -1066,11 +1077,19 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 		   return string;
 	  }
 
-	  bool corelib::reniceProcces(const int pid, const int priority) const{
+	  bool corelib::reniceProcess(const int pid, const int priority) const{
 		  QStringList args;
 		  args << this->getSetting("system", "renice").toString();
 		  args.append(QString("%1").arg(priority));
 		  args.append(QString("%1").arg(pid));
+
+		  QString sudobin = this->getSetting("system", "gui_sudo").toString();
+
+		  if (!sudobin.contains(QRegExp("/sudo$"))){
+			  QString arg =args.join(" ");
+			  args.clear();
+			  args.append(arg);
+		  }
 
 		  if (this->runProcess(this->getSetting("system", "gui_sudo").toString(), args, QDir::homePath(), false)){
 			  return true;
@@ -1079,3 +1098,15 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 		  }
 	  }
 
+	  void corelib::runAutostart(void){
+		  QList<QStringList> iconsList, prefixList;
+
+		  prefixList = db_prefix.getFields();
+		  for (int i = 0; i < prefixList.size(); ++i) {
+			  iconsList = db_icon.getByPrefixAndDirName(prefixList.at(i).at(1), "autostart");
+			  for (int j = 0; j < iconsList.size(); ++j) {
+				  this->runIcon(prefixList.at(i).at(1), "autostart", iconsList.at(j).at(1));
+			  }
+		  }
+		  return;
+	  }

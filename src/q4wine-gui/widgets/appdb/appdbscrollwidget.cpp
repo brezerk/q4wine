@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -36,7 +36,7 @@ AppDBScrollWidget::AppDBScrollWidget(QWidget *parent) : QScrollArea(parent)
 
 void AppDBScrollWidget::addSearchWidget(const WineAppDBInfo appinfo){
 	if (contentLayout.get()){
-		std::auto_ptr<AppDBSearchWidget> AppDBWidget(new AppDBSearchWidget(appinfo.name, appinfo.desc, appinfo.id, appinfo.versions));
+		std::auto_ptr<AppInfoWidget> AppDBWidget(new AppInfoWidget(appinfo.name, appinfo.desc, appinfo.id, appinfo.versions));
 		connect(AppDBWidget.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SIGNAL(itemTrigged(short int, QString, int, int, int)));
 		contentLayout->addWidget(AppDBWidget.release());
 	}
@@ -45,7 +45,7 @@ void AppDBScrollWidget::addSearchWidget(const WineAppDBInfo appinfo){
 
 void AppDBScrollWidget::addTestWidget(const WineAppDBInfo appinfo){
 	if (contentLayout.get()){
-		std::auto_ptr<AppDBTestViewWidget> AppDBTestWidget (new AppDBTestViewWidget(appinfo));
+		std::auto_ptr<AppTestWidget> AppDBTestWidget (new AppTestWidget(appinfo));
 		AppDBTestWidget->setObjectName("appViewTestWidget");
 		connect(AppDBTestWidget.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SIGNAL(itemTrigged(short int, QString, int, int, int)));
 		connect(AppDBTestWidget.get(), SIGNAL(scrollToPos(int)), this, SLOT(scrollToPos(int)));
@@ -94,7 +94,7 @@ void AppDBScrollWidget::addVersionFrame(QList<WineAppDBCategory> list, QString f
 	std::auto_ptr<QVBoxLayout> layout(new QVBoxLayout());
 
 	for (int i=0; i<list.count(); i++){
-		std::auto_ptr<AppDBAppVersionWidget> version(new AppDBAppVersionWidget(action));
+		std::auto_ptr<LineItemWidget> version(new LineItemWidget(action));
 		version->setAppId(list.at(i).id);
 		version->addLabel(list.at(i).name, 240, 3);
 		version->addLabel(list.at(i).desc, -1, 3, true);

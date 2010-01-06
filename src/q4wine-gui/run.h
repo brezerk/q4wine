@@ -20,17 +20,15 @@
 #ifndef RUN_H
 #define RUN_H
 
-#include "memory"
+#include <memory>
 
 #include <ui_Run.h>
 
-#include <QLibrary>
 #include <QFileDialog>
 #include <QMessageBox>
-#include <QUrl>
+#include <QEvent>
 #include <QKeyEvent>
-#include <QHeaderView>
-#include <QTableWidget>
+#include <QUrl>
 
 #include "config.h"
 #include "process.h"

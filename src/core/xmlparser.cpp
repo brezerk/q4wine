@@ -34,12 +34,16 @@ int XmlParser::parseIOSream(QString file){
 		QDomElement root = doc.documentElement();
 
 		if (root.tagName() != "appdb_export") {
+#ifdef DEBUG
 			qDebug()<<"[EE] File is not a q4wine appdb export format";
+#endif
 			return 2;
 		}
 
 		if (root.attribute("version") != APPDB_EXPORT_VERSION){
+#ifdef DEBUG
 			qDebug()<<QString("[EE] export_version mismatch! Expected \"%1\", but got \"%2\".").arg(APPDB_EXPORT_VERSION).arg(root.attribute("version"));
+#endif
 			return 3;
 		}
 
@@ -171,8 +175,6 @@ void XmlParser::parseApp(const QDomElement &element){
 			}
 		} else if (node.toElement().tagName()=="desc"){
 			appinfo.desc = getChildNodeData(node.firstChild());
-		} else if (node.toElement().tagName()=="category"){
-			appinfo.category = getChildNodeData(node.firstChild());
 		} else if (node.toElement().tagName()=="version-list"){
 			QDomNode subnode = node.toElement().firstChild();
 			while (!subnode.isNull()) {
@@ -257,8 +259,6 @@ void XmlParser::parseAppVersion(const QDomElement &element, WineAppDBInfo &appin
 			versioninfo.rating=getChildNodeData(node.firstChild());
 		} else if (node.toElement().tagName()=="wine-ver"){
 			versioninfo.winever=getChildNodeData(node.firstChild());
-		} else if (node.toElement().tagName()=="url"){
-			versioninfo.url=getChildNodeData(node.firstChild());
 		}
 		node = node.nextSibling();
 	}

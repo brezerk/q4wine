@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -16,58 +16,50 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
-#ifndef WINEBINLAUNCHER_H
-#define WINEBINLAUNCHER_H
 
-#include <config.h>
+#ifndef LINKITEMWIDGET_H
+#define LINKITEMWIDGET_H
 
-#include "memory"
+//Global config
+#include "config.h"
 
-#include <QString>
-#include <QStringList>
-#include <QVariant>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QSqlQuery>
-#include <QDir>
-#include <QTime>
-#include <QProcess>
-#include <QDebug>
-#include <QObject>
-#include <QProgressDialog>
-#include <QMessageBox>
-#include <QTextCodec>
-#include <QSettings>
+//Qt inc
+#include <QLabel>
+#include <QEvent>
 
-#include <ui_Process.h>
-
-struct wine_prefix{
-	QString path;
-	QString wine_dllpath;
-	QString wine_loader;
-	QString wine_exec;
-	QString wine_server;
-};
-
-class WineBinLauncher : public QDialog, public Ui::Process
+class LinkItemWidget : public QLabel
 {
 	Q_OBJECT
-	public:
-		WineBinLauncher(QString prefix_name = "Default", QWidget * parent = 0, Qt::WFlags f = 0);
-		void run_exec(QObject *parent, QString exe, QString args = "", bool KeepRunning = FALSE);
-		void appendWineExe(QString wine_append);
-		std::auto_ptr<QProcess> myProcess;
+public:
+	LinkItemWidget(QString text, short int action = 0, QWidget *parent = 0);
+	~LinkItemWidget();
 
-	private:
-		wine_prefix prefix;
-		QString regfile_image;
+	void setEnabled(bool enable);
+	void setBold(bool enable);
+	void setAction(short int action);
+	void setSearchUrl(QString url);
+	void setAppId(int id);
+	void setVerId(int id);
+	void setCatId(int id);
+	void setPage(short int id);
+	void setParentId(int id);
 
-		QString DEFAULT_WINE_BIN, WINE_APPEND, DEFAULT_WINE_SERVER, DEFAULT_WINE_LOADER, DEFAULT_WINE_LIBS, SH_BIN;
+private:
+	short int action;
+	int appid;
+	int verid;
+	int catid;
+	int page;
+	int parentid;
+	QString search;
 
-	private slots:
-		void slotFinished(int, QProcess::ExitStatus);
-		void cmdCancel_clicked(void);
+signals:
+	void itemTrigged(short int, QString, int, int, int);
+	void requestParentComment(int id);
 
+private:
+	//! \brief Event filter.
+	bool eventFilter(QObject *obj, QEvent *event);
 };
 
-#endif
+#endif // LINKITEMWIDGET_H

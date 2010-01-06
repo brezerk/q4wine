@@ -17,39 +17,40 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef WINEPROCCESWIDGET_H
-#define WINEPROCCESWIDGET_H
+#ifndef WINEPROCESSWIDGET_H
+#define WINEPROCESSWIDGET_H
 
+//System
+#include <memory>
+
+//Global config
 #include "config.h"
-#include "memory"
 
-#include <QWidget>
-#include <QToolBar>
-#include <QAction>
-#include <QMenu>
-#include <QIcon>
-#include <QVBoxLayout>
-#include <QTableView>
-#include <QTableWidget>
-#include <QLabel>
-#include <QTimer>
-#include <QInputDialog>
+//Windows
+#include "wizard.h"
+
+//Qt includes
 #include <QStandardItemModel>
+#include <QTableView>
+#include <QToolBar>
+#include <QTimer>
+#include <QMenu>
+
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
-#include "wizard.h"
-
+//q4wine lib
 #include <q4wine-lib/main.h>
 
-class WineProccesWidget : public QWidget
+class WineProcessWidget : public QWidget
 {
 Q_OBJECT
 public:
-	explicit WineProccesWidget(QString themeName, QWidget *parent = 0);
+	explicit WineProcessWidget(QString themeName, QWidget *parent = 0);
 
 signals:
+	void changeStatusText(QString);
 
 public slots:
 	void stopTimer(void);
@@ -80,7 +81,7 @@ private:
 	std::auto_ptr<QAction> procRenice;
 
 private slots:
-	void getWineProccessInfo(void);
+	void getWineProcesssInfo(void);
 	void customContextMenuRequested(const QPoint &pos);
 	void itemClicked(const QModelIndex &);
 
@@ -89,4 +90,4 @@ private slots:
 	void procRenice_Click(void);
 };
 
-#endif // WINEPROCCESVIEW_H
+#endif // WINEPROCESSVIEW_H

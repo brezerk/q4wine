@@ -20,18 +20,21 @@
 #ifndef PROCESS_H
 #define PROCESS_H
 
-#include "memory"
+#include <memory>
+
+#include "config.h"
 
 #include <ui_Process.h>
 
-#include <QDebug>
 #include <QProcess>
 #include <QFileDialog>
 #include <QMessageBox>
-#include <QTextCodec>
 #include <QLibrary>
+#include <QTextCodec>
 
-#include "config.h"
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 class Process : public QDialog, public Ui::Process
 {

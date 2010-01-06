@@ -20,29 +20,33 @@
 #ifndef PREFIXCONTROLWIDGET_H
 #define PREFIXCONTROLWIDGET_H
 
-#include "config.h"
-#include "memory"
+//System
+#include <memory>
 
+//Global config
+#include "config.h"
+
+//Database
 #include "src/core/database/prefix.h"
 #include "src/core/database/dir.h"
 #include "src/core/database/icon.h"
 
-#include <QWidget>
-#include <QToolBar>
-#include <QAction>
-#include <QMenu>
-#include <QTableView>
+//Qt includes
 #include <QSqlQueryModel>
+#include <QTableView>
+#include <QToolBar>
+#include <QMenu>
 
-#include <QIcon>
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
+//Windows
 #include "wizard.h"
 #include "prefixsettings.h"
 #include "process.h"
 
+//q4wine lib
 #include <q4wine-lib/main.h>
 
 class PrefixControlWidget : public QWidget

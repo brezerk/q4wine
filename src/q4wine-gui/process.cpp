@@ -122,7 +122,7 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 	 * So the beast way is to inform user about troubles is to show to him any STDERR messages.
 	 */
 
-	if (showErr){
+
 		QString lang;
 		lang = getenv("LANG");
 		lang = lang.split(".").at(1);
@@ -136,20 +136,23 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 		QString string = codec->toUnicode(myProcess->readAllStandardError());
 
 #ifdef DEBUG
-		qDebug()<<"[ii] Process::slotFinished STDERR: "<<codec->toUnicode(myProcess->readAllStandardError());
-		qDebug()<<"[ii] Process::slotFinished STDOUT: "<<codec->toUnicode(myProcess->readAllStandardOutput());
+		qDebug()<<"[ii] Process::slotFinished exitstatus:"<<exitc<<"exitcode:"<<myProcess->exitCode();
+		qDebug()<<"[ii] Process::slotFinished STDERR:"<<codec->toUnicode(myProcess->readAllStandardError());
+		qDebug()<<"[ii] Process::slotFinished STDOUT:"<<codec->toUnicode(myProcess->readAllStandardOutput());
 #endif
 
 		if (!string.isEmpty()){
 			if ((exitc == 0) && (myProcess->exitCode() == 0)){
-				QMessageBox::warning(this, tr("Output"), tr("It seems the process exited normally.<br><br>STDERR log:<br>%1").arg(string));
+				if (showErr){
+					QMessageBox::warning(this, tr("Output"), tr("It seems the process exited normally.<br><br>STDERR log:<br>%1").arg(string));
+				}
 				accept();
 			} else {
 				QMessageBox::warning(this, tr("Output"), tr("It seems the process crashed.<br><br>STDERR log:<br>%1").arg(string));
 				reject();
 			}
 		}
-	}
+
 	accept();
 
 	return;

@@ -84,10 +84,11 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	connect(cbPrefixes.get(), SIGNAL(currentIndexChanged(QString)), twPrograms.get(), SLOT(setDefaultFocus(QString)));
 	connect(twPrograms.get(), SIGNAL(prefixIndexChanged(QString)), this, SLOT(setcbPrefixesIndex(QString)));
 
-	std::auto_ptr<WineProccesWidget> procWidget (new WineProccesWidget(THEME_NAME, tabProcces));
+	std::auto_ptr<WineProcessWidget> procWidget (new WineProcessWidget(THEME_NAME, tabProcess));
 	connect(this, SIGNAL(stopProcTimer()), procWidget.get(), SLOT(stopTimer()));
 	connect(this, SIGNAL(startProcTimer()), procWidget.get(), SLOT(startTimer()));
-	tabProccesLayout->addWidget(procWidget.release());
+	connect(procWidget.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
+	tabProcessLayout->addWidget(procWidget.release());
 
 	std::auto_ptr<PrefixControlWidget> prefixWidget (new PrefixControlWidget(THEME_NAME, tabPrefix));
 	connect(prefixWidget.get(), SIGNAL(updateDatabaseConnections()), twPrograms.get(), SLOT(getPrefixes()));
@@ -116,27 +117,13 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	updateDtabaseConnectedItems();
 
 	// Getting settings from config file
+	this->createTrayIcon();
 	this->getSettings();
 
-	connect(tbwGeneral, SIGNAL(currentChanged(int)), this, SLOT(CoreFunction_ResizeContent(int)));
-	//connect(cmdManagePrefixes, SIGNAL(clicked()), this, SLOT(cmdManagePrefixes_Click()));
+	connect(tbwGeneral, SIGNAL(currentChanged(int)), this, SLOT(tbwGeneral_CurrentTabChange(int)));
 	connect(cmdCreateFake, SIGNAL(clicked()), this, SLOT(cmdCreateFake_Click()));
 	connect(cmdUpdateFake, SIGNAL(clicked()), this, SLOT(cmdUpdateFake_Click()));
-	//connect(cmdWinetricks, SIGNAL(clicked()), this, SLOT(cmdWinetricks_Click()));
 	connect(cmdClearFilter, SIGNAL(clicked()), this, SLOT(cmdClearFilter_Click()));
-	//connect(cmdTestWis, SIGNAL(clicked()), this, SLOT(cmdTestWis_Click()));
-
-	// Signals commection for Icons and Folders
-	//connect(twPrograms.get(), SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(twPrograms_ItemClick(QTreeWidgetItem *, int)));
-	//connect(twPrograms.get(), SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(twPrograms_ShowContextMenu(const QPoint &)));
-
-	// Signals for updating toolbars
-	//connect(tableProc, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tableProc_ShowContextMenu(const QPoint &)));
-	//connect(tableProc, SIGNAL(clicked(const QModelIndex &)), this, SLOT(tablePrefix_UpdateContentList(const QModelIndex &)));
-
-	// Init and connect SLOT & SIGNALS for context menus
-	//connect(tablePrefix, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tablePrefix_ShowContextMenu(const QPoint &)));
-	//connect(tablePrefix, SIGNAL(clicked(const QModelIndex &)), this, SLOT(tablePrefix_UpdateContentList(const QModelIndex &)));
 
 	//Main menu actions connection to slots
 	connect(mainRun, SIGNAL(triggered()), this, SLOT(mainRun_Click()));
@@ -154,59 +141,27 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	connect(mainWebsite, SIGNAL(triggered()), this, SLOT(mainWebsite_Click()));
 	connect(mainDonate, SIGNAL(triggered()), this, SLOT(mainDonate_Click()));
 	connect(mainBugs, SIGNAL(triggered()), this, SLOT(mainBugs_Click()));
+	connect(mainOptions, SIGNAL(triggered()), this, SLOT(mainOptions_Click()));
+	connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
+	connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
 
-
-
+	// FIXME: Move this into shared libaray
+	CoreLib->runAutostart();
 
 #ifndef WITH_ICOUTILS
 	mainExportIcons->setEnabled(false);
 #endif
 
-	/*
-#ifdef WITH_DEVELOP_STUFF
-	cmdTestWis->setEnabled(true);
+#ifndef WITH_WINEAPPDB
+	mainAppDB->setEnabled(false);
+	tabAppDB->deleteLater();
 #else
-	cmdTestWis->setEnabled(false);
-#endif
-*/
-
-	connect(mainOptions, SIGNAL(triggered()), this, SLOT(mainOptions_Click()));
-	connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
-	connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
-
-	// Setting context menu policy
-	//tableProc->setContextMenuPolicy(Qt::CustomContextMenu);
-	//twPrograms->setContextMenuPolicy(Qt::CustomContextMenu);
-   // tablePrefix->setContextMenuPolicy(Qt::CustomContextMenu);
-	//lstIcons->setContextMenuPolicy(Qt::CustomContextMenu);
-
-
-
-	// Enveropment path initialization
-	HOME_PATH = QDir::homePath();
-	ROOT_PATH = QDir::rootPath();
-	TEMP_PATH = QDir::tempPath();
-
-	// Setting default IconsSize for lstIcons (Wine-Programm-Menu) need for user settings
-
-	//twPrograms->installEventFilter(this);
-
-	txtIconFilter->installEventFilter(this);
-	installEventFilter(this);
-	cmdClearFilter->installEventFilter(this);
-
-	// FIXME: Move this into shared libaray
-	runAutostart();
-	createTrayIcon();
-
+	connect(mainAppDB, SIGNAL(triggered()), this, SLOT(mainAppDB_Click()));
 	// Creating AppDBScrollWidget and place it into frameAppDBWidget layout
 	appdbWidget.reset(new AppDBWidget(THEME_NAME));
 	connect (this, SIGNAL(appdbWidget_startSearch(short int, QString)), appdbWidget.get(), SLOT(itemTrigged(short int, QString)));
-	//connect (appdbWidget.get(), SIGNAL(xdgOpenUrl(QString)), this, SLOT(xdgOpenUrl(QString)));
-
 	tabAppDBLayout->addWidget(appdbWidget.release());
-
-	//connect (cmdAppDBSearch, SIGNAL(clicked()), this, SLOT(cmdAppDBSearch_Click()));
+#endif
 
 	return;
 }
@@ -300,18 +255,13 @@ void MainWindow::getSettings(){
 
 	splitter->setSizes(a);
 
-	val = CoreLib->getSetting("wine", "WineBin");
-	DEFAULT_WINE_BIN=val.toString();
-	val = CoreLib->getSetting("wine", "ServerBin");
-	DEFAULT_WINE_SERVER=val.toString();
-	val = CoreLib->getSetting("wine", "LoaderBin");
-	DEFAULT_WINE_LOADER=val.toString();
-	val = CoreLib->getSetting("wine", "WineLibs");
-	DEFAULT_WINE_LIBS=val.toString();
+	if (CoreLib->getSetting("app", "showTrareyIcon", false).toBool()){
+		trayIcon->show();
+	} else {
+		trayIcon->hide();
+	}
 
-	val = CoreLib->getSetting("app", "showTrareyIcon", false);
-	SHOW_TRAREY_ICON=val.toBool();
-
+	/* Check for settiings
 	val = CoreLib->getSetting("system", "tar");
 	TAR_BIN=val.toString();
 	val = CoreLib->getSetting("system", "mount");
@@ -334,13 +284,14 @@ void MainWindow::getSettings(){
 	val = CoreLib->getSetting("console", "args", false);
 	CONSOLE_ARGS=val.toString();
 
+
 #ifdef WITH_ICOUTILS
 	val = CoreLib->getSetting("icotool", "wrestool");
 	WRESTOOL_BIN=val.toString();
 	val = CoreLib->getSetting("icotool", "icotool");
 	ICOTOOL_BIN=val.toString();
 #endif
-
+*/
 
 
 	if (CoreLib->getSetting("quickmount", "type", FALSE).toString().isEmpty()){
@@ -405,8 +356,7 @@ void MainWindow::prefixManage_Click(){
 }
 
 void MainWindow::createTrayIcon(){
-	/*
-	trayIconMenu.reset(new QMenu(this));
+	std::auto_ptr<QMenu> trayIconMenu(new QMenu(this));
 	trayIconMenu->addAction(mainRun);
 	trayIconMenu->addSeparator();
 	trayIconMenu->addAction(mainExportIcons);
@@ -417,180 +367,46 @@ void MainWindow::createTrayIcon(){
 	trayIconMenu->addAction(mainProcess);
 	trayIconMenu->addAction(mainSetup);
 	trayIconMenu->addAction(mainPrefix);
+	trayIconMenu->addAction(mainAppDB);
 	trayIconMenu->addSeparator();
 	trayIconMenu->addAction(mainExit);
 
 	trayIcon.reset(new QSystemTrayIcon(this));
-	trayIcon->setContextMenu(trayIconMenu.get());
+	trayIcon->setContextMenu(trayIconMenu.release());
 
 	QIcon icon = loadIcon("data/q4wine.png");
 
 	trayIcon->setIcon(icon);
 	setWindowIcon(icon);
 
-	if (SHOW_TRAREY_ICON){
+
+	if (CoreLib->getSetting("app", "showTrareyIcon", false).toBool()){
 		trayIcon->show();
 	} else {
 		trayIcon->hide();
 	}
 
 	connect(trayIcon.get(), SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(trayIcon_Activate(QSystemTrayIcon::ActivationReason)));
-	*/
+	return;
 }
 
 void MainWindow::closeEvent(QCloseEvent *event){
-	/*if (trayIcon->isVisible()) {
+	if (trayIcon->isVisible()) {
 		hide();
 		event->ignore();
-	}*/
-
-	QSettings settings(APP_SHORT_NAME, "default");
-	settings.beginGroup("MainWindow");
-	settings.setValue("size", size());
-	settings.setValue("pos", pos());
-	settings.setValue("splitterSize0", splitter->sizes().at(0));
-	settings.setValue("splitterSize1", splitter->sizes().at(1));
-	settings.endGroup();
-
+	} else {
+		QSettings settings(APP_SHORT_NAME, "default");
+		settings.beginGroup("MainWindow");
+		settings.setValue("size", size());
+		settings.setValue("pos", pos());
+		settings.setValue("splitterSize0", splitter->sizes().at(0));
+		settings.setValue("splitterSize1", splitter->sizes().at(1));
+		settings.endGroup();
+	}
 	return;
 }
 
-
-bool MainWindow::eventFilter(QObject *obj, QEvent *event){
-	// twPrograms events
-
-	/*
-	if (obj == this){
-		if (event->type()==QEvent::Resize){
-			if (!this->isActiveWindow())
-				return false;
-		}
-	}
-
-	if (obj == twPrograms) {
-		std::auto_ptr<QKeyEvent> keyEvent (static_cast<QKeyEvent*>(event));
-		if (event->type() == QEvent::KeyRelease) {
-			if ((keyEvent->key()==Qt::Key_Up) or (keyEvent->key()==Qt::Key_Down)){
-				if (twPrograms->currentItem())
-					twPrograms_ItemClick(twPrograms->currentItem(), 0);
-				keyEvent.release();
-				return true;
-			}
-		}
-
-		if (event->type() == QEvent::KeyPress){
-			if ((keyEvent->key()==Qt::Key_Tab)){
-				lstIcons->setFocus();
-				if (lstIcons->currentItem())
-					lstIcons_ItemClick(lstIcons->currentItem());
-				keyEvent.release();
-				return true;
-			}
-
-			if (keyEvent->key()==Qt::Key_Delete){
-				if (twPrograms->currentItem())
-					dirDelete_Click();
-				keyEvent.release();
-				return true;
-			}
-
-			if (keyEvent->key()==Qt::Key_F2){
-				if (twPrograms->currentItem())
-					dirRename_Click();
-				keyEvent.release();
-				return true;
-			}
-		}
-		keyEvent.release();
-		return false;
-
-	}
-
-	// lstIcons events
-
-	if (obj == lstIcons.get()){
-		std::auto_ptr<QKeyEvent> keyEvent (static_cast<QKeyEvent*>(event));
-
-		if (event->type() == QEvent::KeyRelease) {
-			if ((keyEvent->key()==Qt::Key_Up) or (keyEvent->key()==Qt::Key_Down) or (keyEvent->key()==Qt::Key_Left) or (keyEvent->key()==Qt::Key_Right)){
-				if (lstIcons->currentItem())
-					lstIcons_ItemClick(lstIcons->currentItem());
-				keyEvent.release();
-				return true;
-			}
-		}
-
-		if (event->type() == QEvent::KeyPress){
-			if ((keyEvent->key()==Qt::Key_Tab)){
-				txtIconFilter->setFocus();
-				keyEvent.release();
-				return true;
-			}
-
-			if (keyEvent->key()==Qt::Key_Return){
-				if (lstIcons->currentItem())
-					lstIcons_ItemDoubleClick(lstIcons->currentItem());
-				keyEvent.release();
-				return true;
-			}
-
-			if (keyEvent->key()==Qt::Key_Delete){
-				if (lstIcons->currentItem())
-					iconDelete_Click();
-				keyEvent.release();
-				return true;
-			}
-
-			if (keyEvent->key()==Qt::Key_F2){
-				if (lstIcons->currentItem())
-					iconRename_Click();
-				keyEvent.release();
-				return true;
-			}
-		}
-		keyEvent.release();
-		return false;
-	}
-
-	if (obj == txtIconFilter){
-		QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
-		if (event->type() == QEvent::KeyPress){
-			if ((keyEvent->key()==Qt::Key_Tab)){
-				cmdClearFilter->setFocus();
-				return true;
-			}
-		}
-		return false;
-	}
-
-	if (obj == cmdClearFilter){
-		QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
-		if (event->type() == QEvent::KeyPress){
-			if ((keyEvent->key()==Qt::Key_Tab)){
-				twPrograms->setFocus();
-				return true;
-			}
-		}
-		return false;
-	}
-	*/
-	return QMainWindow::eventFilter(obj, event);
-
-}
-
-
-void MainWindow::resizeEvent (QResizeEvent){
-	/*
-		Function for hendle resize event: tableProc (см код)
-	*/
-
-	CoreFunction_ResizeContent(1);
-	CoreFunction_ResizeContent(3);
-
-	return;
-}
-
-void MainWindow::CoreFunction_ResizeContent(int tabIndex){
+void MainWindow::tbwGeneral_CurrentTabChange(int tabIndex){
 	switch (tabIndex){
  case 1:
 		//Initiate /proc reading
@@ -620,9 +436,9 @@ void MainWindow::cmdCreateFake_Click(){
 			args << "-rdf";
 			args << prefixPath;
 
-			Process *exportProcess = new Process(args, "/bin/rm", HOME_PATH, tr("Removing old fake drive.<br>This can take a while..."), tr("Removing old fake drive"));
+			Process exportProcess(args, "/bin/rm", QDir::homePath(), tr("Removing old fake drive.<br>This can take a while..."), tr("Removing old fake drive"));
 
-			if (exportProcess->exec()!=QDialog::Accepted){
+			if (exportProcess.exec()!=QDialog::Accepted){
 				return;
 			}
 		} else {
@@ -634,11 +450,11 @@ void MainWindow::cmdCreateFake_Click(){
 	if (!fakeDir.exists())
 		fakeDir.mkdir(prefixPath);
 
-	Wizard *createFakeDriveWizard = new Wizard(2, cbPrefixes->currentText());
-	if (createFakeDriveWizard->exec()==QDialog::Accepted){
+	Wizard createFakeDriveWizard(2, cbPrefixes->currentText());
+	if (createFakeDriveWizard.exec()==QDialog::Accepted){
 		updateDtabaseConnectedItems();
 	}
-	delete(createFakeDriveWizard);
+
 	return;
 }
 
@@ -655,11 +471,10 @@ void MainWindow::cmdUpdateFake_Click(){
 	if (!sysreg_file.exists()){
 		QMessageBox::warning(this, tr("Error"), tr("Sorry, no fake drive configuration found.<br>Create fake drive configuration before update it!"));
 	} else {
-		Wizard *createFakeDriveWizard = new Wizard(3, cbPrefixes->currentText());
-		if (createFakeDriveWizard->exec()==QDialog::Accepted){
+		Wizard createFakeDriveWizard(3, cbPrefixes->currentText());
+		if (createFakeDriveWizard.exec()==QDialog::Accepted){
 			updateDtabaseConnectedItems();
 		}
-		delete(createFakeDriveWizard);
 	}
 	return;
 }
@@ -764,9 +579,9 @@ void MainWindow::mainAbout_Click(){
 	if (isMinimized ())
 		showNormal ();
 
-	About *about = new About();
-	about->exec();
-	delete(about);
+	About about;
+	about.exec();
+
 	return;
 }
 
@@ -774,31 +589,21 @@ void MainWindow::mainRun_Click(){
 	/*
 	 * main Menu shows Run dialog
 	 */
-
-//	if (!twPrograms->currentItem())
+	if (cbPrefixes->currentText().isEmpty())
 		return;
 
-//	QTreeWidgetItem *treeItem = twPrograms->currentItem();
-		/*
-	QStringList dataList;
-
 	if (!isVisible())
-		setMeVisible(TRUE);
+		setMeVisible(true);
 
 	if (isMinimized ())
 		showNormal ();
 
 	Run run;
-
-	if (treeItem->parent()){
-		run.prepare(treeItem->parent()->text(0));
-	} else {
-		run.prepare(treeItem->text(0));
-	}
+	run.prepare(cbPrefixes->currentText());
 
 	if (run.exec()==QDialog::Accepted)
 		CoreLib->runWineBinary(run.execObj);
-*/
+
 	return;
 }
 
@@ -808,10 +613,15 @@ void MainWindow::mainImageManager_Click(){
 	 * CD Image Manager
 	 */
 
-	ImageManager *manager = new ImageManager(0);
-	manager->exec();
+	if (!isVisible())
+		setMeVisible(true);
 
-	delete(manager);
+	if (isMinimized ())
+		showNormal ();
+
+	ImageManager manager(0);
+	manager.exec();
+
 	return;
 }
 
@@ -824,14 +634,6 @@ void MainWindow::mainOptions_Click(){
 
 	if (options.exec()==QDialog::Accepted){
 		getSettings();
-
-		/*
-		if (SHOW_TRAREY_ICON){
-			trayIcon->show();
-		} else {
-			trayIcon->hide();
-		}*/
-
 	}
 
 	return;
@@ -859,28 +661,44 @@ void MainWindow::mainInstall_Click(){
 
 void MainWindow::mainFirstSteps_Click(){
 	CoreLib->openHelpUrl("05-first-steps.html");
+	return;
 }
 
 void MainWindow::mainFAQ_Click(){
 	CoreLib->openHelpUrl("00-short-faq.html");
+	return;
 }
 
 void MainWindow::mainIndex_Click(){
 	CoreLib->openHelpUrl("index.html");
+	return;
 }
 
 void MainWindow::mainWebsite_Click(){
 	CoreLib->openHomeUrl("");
+	return;
 }
 
 void MainWindow::mainDonate_Click(){
 	CoreLib->openHomeUrl("donate/");
+	return;
 }
 
 void MainWindow::mainBugs_Click(){
 	CoreLib->openHomeUrl("bugs/");
+	return;
 }
 
+void MainWindow::mainAppDB_Click(){
+	if (!isVisible())
+		setMeVisible(TRUE);
+
+	if (isMinimized ())
+		showNormal ();
+
+	tbwGeneral->setCurrentIndex ( 4 );
+	return;
+}
 
 void MainWindow::mainExportIcons_Click(){
 	/*
@@ -932,9 +750,9 @@ void MainWindow::mainExportIcons_Click(){
 	args << "-o" << tmpDir;
 	args << fileName;
 
-	Process *exportProcess = new Process(args, WRESTOOL_BIN, HOME_PATH, tr("Exporting icon from binary file.<br>This can take a while..."), tr("Exporting icon"), FALSE);
+	Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Exporting icon from binary file.<br>This can take a while..."), tr("Exporting icon"), FALSE);
 
-	if (exportProcess->exec()==QDialog::Accepted){
+	if (exportProcess.exec()==QDialog::Accepted){
 		//icotool -x -o ./regedit.png --width=32 --height=32 ./regedit.exe_14_100_0.ico
 
 
@@ -958,19 +776,18 @@ void MainWindow::mainExportIcons_Click(){
 		//if more -- then we have some ico file to convert
 		if (args.size()>=4){
 
-			exportProcess = new Process(args, ICOTOOL_BIN, HOME_PATH, tr("Convering icon from binary file.<br>This can take a while..."), tr("Converting icon"), FALSE);
+			Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Convering icon from binary file.<br>This can take a while..."), tr("Converting icon"), FALSE);
 
-			if (exportProcess->exec()==QDialog::Accepted){
-				IconsView *iconsView = new IconsView(tmpDir);
-				iconsView->exec();
+			if (exportProcess.exec()==QDialog::Accepted){
+				IconsView iconsView(tmpDir);
+				iconsView.exec();
 			}
 
 		} else {
-			IconsView *iconsView = new IconsView(tmpDir);
-			iconsView->exec();
+			IconsView iconsView(tmpDir);
+			iconsView.exec();
 		}
 	}
-	delete(exportProcess);
 
 	//Clearing temp files
 	list = tmp.entryInfoList();
@@ -1004,19 +821,6 @@ QIcon MainWindow::loadIcon(QString iconName){
 	}
 
 	return icon;
-}
-
-void MainWindow::runAutostart(void){
-	QList<QStringList> iconsList, prefixList;
-
-	prefixList = db_prefix.getFields();
-	for (int i = 0; i < prefixList.size(); ++i) {
-		iconsList = db_icon.getByPrefixAndDirName(prefixList.at(i).at(1), "autostart");
-		for (int j = 0; j < iconsList.size(); ++j) {
-			CoreLib->runIcon(prefixList.at(i).at(1), "autostart", iconsList.at(j).at(1));
-		}
-	}
-	return;
 }
 
 void MainWindow::messageReceived(const QString message) const{

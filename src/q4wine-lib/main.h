@@ -211,7 +211,9 @@ public:
 	 * \return Return true on success.
 	 */
 	bool runWineBinary(const ExecObject execObj) const;
-	bool runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name) const;
+	bool runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin="", const bool releaseProc = true) const;
+
+
 
 	QString createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const;
 
@@ -239,6 +241,7 @@ public:
 	 * \return True on success.
 	 */
 	bool runProcess(const QString exec, const QStringList args, QString dir = "", bool showLog = TRUE) const;
+	bool runProcess(const QStringList args, const QString caption, const QString message) const;
 
 	/*! \brief Get's string with escaped special characters
 	 *
@@ -264,7 +267,8 @@ public:
 	 * \param profile	Profile type ID
 	 */
 	QString getUmountString(const int profile) const;
-	bool reniceProcces(const int pid, const int priority) const;
+	bool reniceProcess(const int pid, const int priority) const;
+	void runAutostart(void);
 
 private:
 	/*! Define is library operate in CLI or GUI mode.

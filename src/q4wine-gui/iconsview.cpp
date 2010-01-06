@@ -17,8 +17,6 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "config.h"
-
 #include "iconsview.h"
 
 IconsView::IconsView(QString tmpDir, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)

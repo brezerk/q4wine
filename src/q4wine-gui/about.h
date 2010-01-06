@@ -24,11 +24,6 @@
 
 #include <ui_About.h>
 
-#include <QDialog>
-#include <QObject>
-#include <QWidget>
-#include <QDebug>
-
 class About : public QDialog, public Ui::About
 {
 	Q_OBJECT

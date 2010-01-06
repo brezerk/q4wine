@@ -1,6 +1,8 @@
 /***************************************************************************
  *   Copyright (C) 2009 by Pavel Zinin (pashazz)                              *
  *   pzinin@gmail.com                                                     *
+ *   Copyright (C) 2010 by Malakhov Alexey                           *
+ *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -15,16 +17,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
 #include "winetricks.h"
@@ -40,16 +32,14 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
 
 	// Getting corelib calss pointer
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib = (corelib *)CoreLibClassPointer(true);
-
-	db_prefix = new Prefix();
+	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
 	this->winetricks_bin.append(QDir::homePath());
 	this->winetricks_bin.append("/.config/");
 	this->winetricks_bin.append(APP_SHORT_NAME);
 	this->winetricks_bin.append("/winetricks");
 
-	this->prefix_path = db_prefix->getPath(prefixName);
+	this->prefix_path = db_prefix.getPath(prefixName);
 	this->console_bin = CoreLib->getSetting("console", "bin").toString();
 	this->console_args = CoreLib->getSetting("console", "args", FALSE).toString();
 
@@ -117,9 +107,8 @@ void winetricks::run_winetricks(){
 
 	args.append(arg);
 
-	Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Running winetricks..."), tr("Plz wait..."));
-
-	if (exportProcess->exec()==QDialog::Accepted){
+	Process exportProcess ( args, console_bin, QDir::homePath(), tr("Running winetricks..."), tr("Plz wait..."));
+	if (exportProcess.exec()==QDialog::Accepted){
 		return;
 	}
 
@@ -171,9 +160,9 @@ void winetricks::downloadwinetricks () {
 
 	args.append(arg);
 
-	Process *exportProcess = new Process( args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
+	Process exportProcess(args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
 
-		exportProcess->exec();
+		exportProcess.exec();
 		// setting help
 
 
@@ -207,14 +196,14 @@ descs.append(desc);
 }
 void winetricks::parse() {
 	//create a Winetricks process
-	  QProcess *p = new QProcess (this);
+	  QProcess p(this);
 	QString pargs;
 	pargs.append(winetricks_bin);
 	pargs.append(" --kegelfix");
 
-   p->start(pargs);
+   p.start(pargs);
 
-   p->waitForFinished();
+   p.waitForFinished();
 	 //get output
    QString lang;
    // Getting env LANG variable
@@ -224,8 +213,7 @@ void winetricks::parse() {
   lang = "UTF8";
  /* Getting list */
   QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
-  QString wOut = codec->toUnicode(p->readAllStandardOutput());
-	delete p;
+  QString wOut = codec->toUnicode(p.readAllStandardOutput());
 
 	//parse now
 bool isNowParse = false;

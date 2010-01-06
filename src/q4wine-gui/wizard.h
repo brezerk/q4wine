@@ -24,22 +24,18 @@
 
 #include <ui_Wizard.h>
 
-#include <QDebug>
 #include <QFileDialog>
 #include <QProcess>
 #include <QTextCodec>
 #include <QMessageBox>
 #include <QResizeEvent>
 #include <QProgressDialog>
-#include <QListWidget>
-#include <QStringList>
 #include <QInputDialog>
 #include <QLibrary>
 
 #include <config.h>
 #include "registry.h"
 #include "process.h"
-#include "winebinlauncher.h"
 #include "drivelistwidgetitem.h"
 
 #include "src/core/database/prefix.h"

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -15,48 +15,54 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
-#ifndef APPDBTESTVIEWWIDGET_H
-#define APPDBTESTVIEWWIDGET_H
+#ifndef APPINFOWIDGET_H
+#define APPINFOWIDGET_H
 
-#include <ui_AppDBTestViewWidget.h>
+#include <ui_AppInfoWidget.h>
 
+//System
+#include <memory>
+
+//Global config
 #include "config.h"
 
-#include <QDialog>
-#include <QObject>
-#include <QWidget>
-#include <QString>
-#include <QDebug>
+//Widgets
+#include "lineitemwidget.h"
 
+//Struct
 #include "appdbstructs.h"
-#include "appdblinkitemwidget.h"
-#include "appdbcommentwidget.h"
-#include "appdbappversionwidget.h"
 
-class AppDBTestViewWidget : public QWidget, public Ui::AppDBTestViewWidget
+//Qt inicludes
+#ifdef DEBUG
+#include <QDebug>
+#endif
+
+/*!
+ * \class AppInfoWidget
+ * \ingroup widgets
+ * \brief This class provide database functions for AppDB search widget.
+ *
+ */
+class AppInfoWidget : public QWidget, public Ui::AppInfoWidget
 {
 Q_OBJECT
 public:
-	AppDBTestViewWidget(const WineAppDBInfo appinfo, QWidget *parent = 0);
+	/*! \brief class constructor
+	*
+	* \param  name         General application name.
+	* \param  desc  Short  Application description.
+	* \param  versions     An QList of QStringList witch describes tested app versions.
+	* \param  url	       Application url to open.
+	*/
 
-public slots:
-	void requestParentComment(int id);
+	AppInfoWidget(QString name, QString desc, const int appid, QList<WineAppDBVersionInfo> versions, QWidget *parent = 0);
 
+	//! \brief class destructor;
+	~AppInfoWidget();
 signals:
-	void itemTrigged(short int, QString, int, int, int);
-	void scrollToPos(int);
+	 void itemTrigged(short int, QString, int, int, int);
 
 private:
 	/*! \brief sets general application Name
@@ -73,12 +79,10 @@ private:
 	*/
 	void setAppDesc(QString desc);
 
-	void addTestResults(QList<WineAppDBTestResult> tests);
-	void addBugs(QList<WineAppDBBug> bugs);
-	void addComments(QList<WineAppDBComment> comments);
 	int appid;
-	int verid;
-	int testid;
+protected:
+	//! \brief Event filter.
+	bool eventFilter(QObject *obj, QEvent *event);
 };
 
-#endif // APPDBTESTVIEWWIDGET_H
+#endif // APPINFOWIDGET_H

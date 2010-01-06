@@ -8,7 +8,14 @@ ChangeLog
 Version 0.115-dev
  Added:
   - Wine AppDB support;
+  - A lot of GUI improvements;
+
  Fixed:
+  - A lot of fixes and speedups;
+  - Removed _junk_ WineBinaryLauncher class;
+  - Removed _junk_ includes;
+  - MainWindow class cleanup;
+  - Deprecated wineprefixcreate command was replaced by wineboot;
   - Fixed memory leaks repported by Valgrid;
   - Fixed crush while drop exesting icon;
   - Fixed not critical error for fake C: symlink;

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -20,19 +20,15 @@
 #ifndef ICONSVIEW_H
 #define ICONSVIEW_H
 
-#include "memory"
+#include <memory>
+
+#include "config.h"
 
 #include <ui_IconsView.h>
 
-#include <QDialog>
-#include <QObject>
-#include <QWidget>
-#include <QDebug>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QInputDialog>
-#include <QSizePolicy>
-#include <QTableWidget>
 
 class IconsView : public QDialog, public Ui::IconsView
 {

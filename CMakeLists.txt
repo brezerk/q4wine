@@ -45,7 +45,6 @@ SET( Q4WINE_GUI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.cpp
 	${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
 	${CMAKE_SOURCE_DIR}/src/core/registry.cpp
-	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.cpp
 	${CMAKE_SOURCE_DIR}/src/core/xmlparser.cpp
 	${CMAKE_SOURCE_DIR}/src/core/httpcore.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/about.cpp
@@ -58,20 +57,11 @@ SET( Q4WINE_GUI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.cpp
-#	${CMAKE_SOURCE_DIR}/src/wis/wisitem.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.cpp
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocceswidget.cpp
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocesswidget.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.cpp
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.cpp
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbwidget.cpp
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdblinkitemwidget.cpp
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbscrollwidget.cpp
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbheaderwidget.cpp
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbsearchwidget.cpp
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbappversionwidget.cpp
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbtestviewwidget.cpp
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbcommentwidget.cpp
 )
 
 SET ( Q4WINE_HEADERS_DIR
@@ -86,7 +76,6 @@ SET ( Q4WINE_HEADERS_DIR
 	${CMAKE_SOURCE_DIR}/src/qtsingleapplication
 )
 
-
 SET ( Q4WINE_GUI_HEADERS
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/run.h
 	${CMAKE_SOURCE_DIR}/src/core/registry.h
@@ -96,7 +85,6 @@ SET ( Q4WINE_GUI_HEADERS
 	${CMAKE_SOURCE_DIR}/src/core/database/icon.h
 	${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.h
 	${CMAKE_SOURCE_DIR}/src/core/database/image.h
-	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.h
 	${CMAKE_SOURCE_DIR}/src/core/appdbstructs.h
 	${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
 	${CMAKE_SOURCE_DIR}/src/core/httpcore.h
@@ -110,27 +98,17 @@ SET ( Q4WINE_GUI_HEADERS
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
-#	${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
 	${CMAKE_SOURCE_DIR}/src/core/database/initdb.h
 	${CMAKE_SOURCE_DIR}/config.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocceswidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocesswidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdblinkitemwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbsearchwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbscrollwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbheaderwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbappversionwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbtestviewwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbcommentwidget.h
 )
 
 SET ( Q4WINE_GUI_MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/core/registry.h
-	${CMAKE_SOURCE_DIR}/src/core/winebinlauncher.h
 	${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
 	${CMAKE_SOURCE_DIR}/src/core/httpcore.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.h
@@ -144,20 +122,11 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
-#	${CMAKE_SOURCE_DIR}/src/wis/wisitem.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocceswidget.h
+	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocesswidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.h
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdblinkitemwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbscrollwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbheaderwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbsearchwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbappversionwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbtestviewwidget.h
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbcommentwidget.h
 )
 
 SET ( Q4WINE_GUI_UI_SOURCES
@@ -173,9 +142,6 @@ SET ( Q4WINE_GUI_UI_SOURCES
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/IconSettings.ui
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/ImageManager.ui
 	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/WineDriveDialog.ui
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppDBSearchWidget.ui
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppDBTestViewWidget.ui
-	${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppDBCommentWidget.ui
 )
 
 IF (${WITH_WINETRIKS} MATCHES ON )
@@ -199,6 +165,51 @@ IF (${WITH_WINETRIKS} MATCHES ON )
 		${CMAKE_SOURCE_DIR}/src/temporary/winetricks.ui
 	)
 ENDIF (${WITH_WINETRIKS} MATCHES ON )
+
+IF (${WITH_WINEAPPDB} MATCHES ON )
+	SET( Q4WINE_GUI_SOURCES
+		${Q4WINE_GUI_SOURCES}
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbwidget.cpp
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/linkitemwidget.cpp
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbscrollwidget.cpp
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbheaderwidget.cpp
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appinfowidget.cpp
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/lineitemwidget.cpp
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/apptestwidget.cpp
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/commentwidget.cpp
+	)
+
+	SET ( Q4WINE_GUI_HEADERS
+		${Q4WINE_GUI_HEADERS}
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbwidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/linkitemwidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbscrollwidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbheaderwidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appinfowidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/lineitemwidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/apptestwidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/commentwidget.h
+	)
+
+	SET ( Q4WINE_GUI_MOC_HEADEDRS
+		${Q4WINE_GUI_MOC_HEADEDRS}
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbwidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/linkitemwidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbscrollwidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbheaderwidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appinfowidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/lineitemwidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/apptestwidget.h
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/commentwidget.h
+	)
+
+	SET ( Q4WINE_GUI_UI_SOURCES
+		${Q4WINE_GUI_UI_SOURCES}
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppInfoWidget.ui
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppTestWidget.ui
+		${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/CommentWidget.ui
+	)
+ENDIF (${WITH_WINEAPPDB} MATCHES ON )
 
 SET( Q4WINE_LIB_SOURCES
 		${CMAKE_SOURCE_DIR}/src/q4wine-lib/main.cpp
@@ -371,10 +382,6 @@ IF (NOT DEFINED WITH_EMBEDDED_FUSEISO)
 	SET(WITH_EMBEDDED_FUSEISO "OFF")
 ENDIF (NOT DEFINED WITH_EMBEDDED_FUSEISO)
 
-IF (NOT DEFINED WITH_DEVELOP_STUFF)
-	SET(WITH_DEVELOP_STUFF "OFF")
-ENDIF (NOT DEFINED WITH_DEVELOP_STUFF)
-
 IF (NOT DEFINED WITH_WINEAPPDB)
 	SET(WITH_WINEAPPDB "ON")
 ENDIF (NOT DEFINED WITH_WINEAPPDB)
@@ -405,7 +412,6 @@ file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
 	MESSAGE(STATUS "WITH_WINETRIKS                : ${WITH_WINETRIKS}")
 	MESSAGE(STATUS "WITH_EMBEDDED_FUSEISO         : ${WITH_EMBEDDED_FUSEISO}")
 	MESSAGE(STATUS "WITH_WINEAPPDB                : ${WITH_WINEAPPDB}")
-	MESSAGE(STATUS "WITH_DEVELOP_STUFF            : ${WITH_DEVELOP_STUFF}\n")
 
 MESSAGE(STATUS "See INSTALL file for details and more info --\n")
 

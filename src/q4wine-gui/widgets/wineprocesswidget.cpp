@@ -17,9 +17,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "wineprocceswidget.h"
+#include "wineprocesswidget.h"
 
-WineProccesWidget::WineProccesWidget(QString themeName, QWidget *parent) : QWidget(parent)
+WineProcessWidget::WineProcessWidget(QString themeName, QWidget *parent) : QWidget(parent)
 {
 	// Loading libq4wine-core.so
 	libq4wine.setFileName("libq4wine-core");
@@ -62,7 +62,7 @@ WineProccesWidget::WineProccesWidget(QString themeName, QWidget *parent) : QWidg
 	procTable->setSelectionBehavior(QAbstractItemView::SelectRows);
 	procTable->setSelectionMode(QAbstractItemView::SingleSelection);
 
-	lblInfo.reset(new QLabel(tr("Total procces count: %1").arg(0), this));
+	lblInfo.reset(new QLabel(tr("Total process count: %1").arg(0), this));
 	lblInfo->setContentsMargins(2,2,2,2);
 
 
@@ -79,21 +79,21 @@ WineProccesWidget::WineProccesWidget(QString themeName, QWidget *parent) : QWidg
 	timer->start(1000);
 
 	// Connecting signals and slots
-	connect(timer.get(), SIGNAL(timeout()), this, SLOT(getWineProccessInfo()));
+	connect(timer.get(), SIGNAL(timeout()), this, SLOT(getWineProcesssInfo()));
 	return;
 }
 
-void WineProccesWidget::stopTimer(void){
+void WineProcessWidget::stopTimer(void){
 	timer->stop();
 	return;
 }
 
-void WineProccesWidget::startTimer(void){
+void WineProcessWidget::startTimer(void){
 	timer->start();
 	return;
 }
 
-void WineProccesWidget::createActions(){
+void WineProcessWidget::createActions(){
 	procKillSelected.reset(new QAction(loadIcon("data/kill.png"), tr("Stop current"), this));
 	procKillSelected->setStatusTip(tr("Send TERM signal to selected process"));
 	procKillSelected->setEnabled(false);
@@ -106,7 +106,7 @@ void WineProccesWidget::createActions(){
 
 	procRefresh.reset(new QAction(loadIcon("data/reload.png"), tr("Refresh list"),this));
 	procRefresh->setStatusTip(tr("Refresh process list"));
-	connect(procRefresh.get(), SIGNAL(triggered()), this, SLOT(getWineProccessInfo()));
+	connect(procRefresh.get(), SIGNAL(triggered()), this, SLOT(getWineProcesssInfo()));
 
 	procRenice.reset(new QAction(tr("Renice"), this));
 	procRenice->setStatusTip(tr("Set process priority"));
@@ -124,7 +124,7 @@ void WineProccesWidget::createActions(){
 	return;
 }
 
-QIcon WineProccesWidget::loadIcon(QString iconName){
+QIcon WineProcessWidget::loadIcon(QString iconName){
 	  // Function tryes to load icon image from theme dir
 	  // If it fails -> load default from rsource file
 	  QIcon icon;
@@ -139,7 +139,7 @@ QIcon WineProccesWidget::loadIcon(QString iconName){
 	  return icon;
 }
 
-void WineProccesWidget::getWineProccessInfo(void){
+void WineProcessWidget::getWineProcesssInfo(void){
 	QList<QStringList> proclist = CoreLib->getWineProcessList();
 
 	if (proclist.count()<=0){
@@ -178,7 +178,7 @@ void WineProccesWidget::getWineProccessInfo(void){
 	return;
 }
 
-void WineProccesWidget::customContextMenuRequested(const QPoint &pos){
+void WineProcessWidget::customContextMenuRequested(const QPoint &pos){
 	if (procTable->currentIndex().isValid()){
 		procKillSelected->setEnabled(true);
 		procKillWine->setEnabled(true);
@@ -193,7 +193,7 @@ void WineProccesWidget::customContextMenuRequested(const QPoint &pos){
 	return;
 }
 
-void WineProccesWidget::itemClicked(const QModelIndex &){
+void WineProcessWidget::itemClicked(const QModelIndex &){
 	if (procTable->currentIndex().isValid()){
 		procKillSelected->setEnabled(true);
 		procKillWine->setEnabled(true);
@@ -206,7 +206,7 @@ void WineProccesWidget::itemClicked(const QModelIndex &){
 	return;
 }
 
-void WineProccesWidget::procKillSelected_Click(void){
+void WineProcessWidget::procKillSelected_Click(void){
 	if (!procTable->currentIndex().isValid())
 		return;
 
@@ -222,17 +222,20 @@ void WineProccesWidget::procKillSelected_Click(void){
 	if (procName.isEmpty())
 		return;
 
-	if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to proccess '%1' pid: %2<br><br>It is HIGH risk to damage wine normal state.<br><br>Do you really want to proceed?").arg(procName) .arg(procPID), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
+	if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to process '%1' pid: %2<br><br>It is HIGH risk to damage wine normal state.<br><br>Do you really want to proceed?").arg(procName) .arg(procPID), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
 		QString cmd = QString("kill -9 %1").arg(procPID);
 
-		if (system(cmd.toAscii().data())==-1)
+		if (system(cmd.toAscii().data())==-1){
 			QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(cmd.toAscii().data()), QMessageBox::Ok);
+		} else {
+			emit(changeStatusText(tr("It seems process %1 killed successfully.").arg(procName)));
+		}
 	}
 
 	return;
 }
 
-void WineProccesWidget::procKillWine_Click(void){
+void WineProcessWidget::procKillWine_Click(void){
 	if (!procTable->currentIndex().isValid())
 		return;
 
@@ -244,13 +247,15 @@ void WineProccesWidget::procKillWine_Click(void){
 	if (procPrefix.isEmpty())
 		return;
 
-	if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to all wine proccess with WINEPREFIX='%1'<br><br>Do you really want to proceed?").arg(procPrefix), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
-		CoreLib->killWineServer(procPrefix);
+	if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to all wine Processs with WINEPREFIX='%1'<br><br>Do you really want to proceed?").arg(procPrefix), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
+		if (CoreLib->killWineServer(procPrefix)){
+			emit(changeStatusText(tr("It seems \"wineserver -kill\" for prefix executed successfully.")));
+		}
 	}
 	return;
 }
 
-void WineProccesWidget::procRenice_Click(void){
+void WineProcessWidget::procRenice_Click(void){
 	if (!procTable->currentIndex().isValid())
 		return;
 
@@ -267,8 +272,11 @@ void WineProccesWidget::procRenice_Click(void){
 	bool ok=false;
 	int newNice = QInputDialog::getInteger(this, tr("Select process priority"), tr("<p>Priority value can be in<br>the range from PRIO_MIN (-20)<br>to PRIO_MAX (20).</p><p>See \"man renice\" for details.</p>"), curNice, -20, 20, 1, &ok);
 
-	if (ok)
-		CoreLib->reniceProcces(procPID, newNice);
+	if (ok){
+		if (CoreLib->reniceProcess(procPID, newNice)){
+			emit(changeStatusText(tr("It seems process renice end successfully.")));
+		}
+	}
 
 	return;
 }

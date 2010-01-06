@@ -25,26 +25,16 @@
 #ifndef REGISTRY_H
 #define REGISTRY_H
 
-#include "memory"
+#include <memory>
 
 #include <config.h>
 
 #include <unistd.h>
 
-#include <QString>
-#include <QStringList>
-#include <QVariant>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QSqlQuery>
-#include <QDir>
 #include <QTime>
-#include <QProcess>
-#include <QDebug>
-#include <QObject>
-#include <QSettings>
 
-#include "winebinlauncher.h"
+//q4wine lib
+#include <q4wine-lib/main.h>
 
 /*!
  * \class Registry
@@ -117,6 +107,12 @@ public:
 	QStringList readExcludedKeys(const QString sysfile, const QString path, const QStringList keys, const int count) const;
 
 private:
+	//! This is need for libq4wine-core.so import;
+	typedef void *CoreLibPrototype (bool);
+		CoreLibPrototype *CoreLibClassPointer;
+		std::auto_ptr<corelib> CoreLib;
+	QLibrary libq4wine;
+
 	QString regfile;
 	QString regfile_image;
 };

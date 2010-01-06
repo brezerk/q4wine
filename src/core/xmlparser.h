@@ -22,14 +22,15 @@
 
 #include "config.h"
 
-#include <QString>
-#include <QList>
-#include <QDebug>
-#include <QRegExp>
 #include <QObject>
+#include <QRegExp>
 #include <QDomDocument>
 #include <QDomElement>
 #include <QDomNode>
+
+#ifdef DEBUG
+#include <QDebug>
+#endif
 
 #include "appdbstructs.h"
 

@@ -17,18 +17,17 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "appdbsearchwidget.h"
+#include "appinfowidget.h"
 
-AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, const int appid, QList<WineAppDBVersionInfo> versions, QWidget *parent) : QWidget(parent)
+AppInfoWidget::AppInfoWidget(QString name, QString desc, const int appid, QList<WineAppDBVersionInfo> versions, QWidget *parent) : QWidget(parent)
 {
 	setupUi(this);
 	this->setAppName(name);
 	this->setAppDesc(desc);
 	this->appid=appid;
 
-
 	for (int i=0; i<versions.count(); i++){
-		std::auto_ptr<AppDBAppVersionWidget> version(new AppDBAppVersionWidget(4));
+		std::auto_ptr<LineItemWidget> version(new LineItemWidget(4));
 		version->setAppId(appid);
 		version->setAppVerId(versions.at(i).id);
 		version->addLabel(versions.at(i).appver);
@@ -45,17 +44,17 @@ AppDBSearchWidget::AppDBSearchWidget(QString name, QString desc, const int appid
 	return;
 }
 
-AppDBSearchWidget::~AppDBSearchWidget(){
+AppInfoWidget::~AppInfoWidget(){
 	//nothig but...
 }
 
-void AppDBSearchWidget::setAppName(QString name){
+void AppInfoWidget::setAppName(QString name){
 	//FIXME: url might pint to web xml engine
 	lblAppName->setText(name);
 	return;
 }
 
-void AppDBSearchWidget::setAppDesc(QString desc){
+void AppInfoWidget::setAppDesc(QString desc){
 	if (desc.length()>=255){
 		lblAppDesc->setText(QString("%1...").arg(desc.left(255)));
 	} else {
@@ -65,7 +64,7 @@ void AppDBSearchWidget::setAppDesc(QString desc){
 }
 
 
-bool AppDBSearchWidget::eventFilter(QObject *obj, QEvent *event){
+bool AppInfoWidget::eventFilter(QObject *obj, QEvent *event){
 
 	if (event->type()==QEvent::MouseButtonRelease){
 		emit(itemTrigged(3, "", this->appid, 0, 0));

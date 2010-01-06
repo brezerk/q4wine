@@ -20,6 +20,16 @@
 #include "registry.h"
 
 Registry::Registry(){
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
+
+	if (!libq4wine.load()){
+		libq4wine.load();
+	}
+
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 	return;
 }
 
@@ -103,6 +113,9 @@ bool Registry::exec(QObject *parent, QString prefix_name){
 	file.write(regfile_image.toAscii());        // write to stderr
 	file.close();
 
+	return CoreLib->runWineBinary("regedit.exe", full_file_path, prefix_name, "", false);
+
+	/*
 	std::auto_ptr<WineBinLauncher> launcher (new WineBinLauncher(prefix_name));
 	launcher->show();
 	launcher->run_exec(parent, "regedit.exe", full_file_path, TRUE);
@@ -111,7 +124,7 @@ bool Registry::exec(QObject *parent, QString prefix_name){
 		return TRUE;
 	} else {
 		return FALSE;
-	}
+	}*/
 
 }
 

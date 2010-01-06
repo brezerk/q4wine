@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -17,9 +17,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "appdblinkitemwidget.h"
+#include "linkitemwidget.h"
 
-AppDBLinkItemWidget::AppDBLinkItemWidget(QString text, short int action, QWidget * parent) : QLabel(parent)
+LinkItemWidget::LinkItemWidget(QString text, short int action, QWidget * parent) : QLabel(parent)
 {
 	this->setText(text);
 	this->action = action;
@@ -27,11 +27,11 @@ AppDBLinkItemWidget::AppDBLinkItemWidget(QString text, short int action, QWidget
 	return;
 }
 
-AppDBLinkItemWidget::~AppDBLinkItemWidget(){
+LinkItemWidget::~LinkItemWidget(){
 	//nothing but...
 }
 
-void AppDBLinkItemWidget::setEnabled(bool enable){
+void LinkItemWidget::setEnabled(bool enable){
 	// Sets item color to QT::Link color while item is enabled.
 	QPalette p(palette());
 
@@ -48,7 +48,7 @@ void AppDBLinkItemWidget::setEnabled(bool enable){
 	return;
 }
 
-void AppDBLinkItemWidget::setBold(bool enable){
+void LinkItemWidget::setBold(bool enable){
 	// Sets item text bold state.
 	QFont font;
 
@@ -57,7 +57,7 @@ void AppDBLinkItemWidget::setBold(bool enable){
 	return;
 }
 
-void AppDBLinkItemWidget::setAction(short int action){
+void LinkItemWidget::setAction(short int action){
 	/*** Action codes ***
 	1: Search
 	2: Toggle search page
@@ -71,7 +71,7 @@ void AppDBLinkItemWidget::setAction(short int action){
 	return;
 }
 
-void AppDBLinkItemWidget::setSearchUrl(QString url){
+void LinkItemWidget::setSearchUrl(QString url){
 	/* Search Url
 		This might be used for saving user search text
 	*/
@@ -79,7 +79,7 @@ void AppDBLinkItemWidget::setSearchUrl(QString url){
 	return;
 }
 
-void AppDBLinkItemWidget::setAppId(int id){
+void LinkItemWidget::setAppId(int id){
 	/* App Id
 		Saveing App Id
 	*/
@@ -87,7 +87,7 @@ void AppDBLinkItemWidget::setAppId(int id){
 	return;
 }
 
-void AppDBLinkItemWidget::setVerId(int id){
+void LinkItemWidget::setVerId(int id){
 	/* Version Id
 		Saveing Version Id
 	*/
@@ -95,7 +95,7 @@ void AppDBLinkItemWidget::setVerId(int id){
 	return;
 }
 
-void AppDBLinkItemWidget::setCatId(int id){
+void LinkItemWidget::setCatId(int id){
 	/* Category Id
 		Saveing Category Id
 	*/
@@ -103,7 +103,7 @@ void AppDBLinkItemWidget::setCatId(int id){
 	return;
 }
 
-void AppDBLinkItemWidget::setPage(short int id){
+void LinkItemWidget::setPage(short int id){
 	/* Category Id
 		Saveing Category Id
 	*/
@@ -111,7 +111,7 @@ void AppDBLinkItemWidget::setPage(short int id){
 	return;
 }
 
-void AppDBLinkItemWidget::setParentId(int id){
+void LinkItemWidget::setParentId(int id){
 	/* Parent comment Id
 		Saveing id of parent comment
 	*/
@@ -119,7 +119,7 @@ void AppDBLinkItemWidget::setParentId(int id){
 	return;
 }
 
-bool AppDBLinkItemWidget::eventFilter(QObject *obj, QEvent *event){
+bool LinkItemWidget::eventFilter(QObject *obj, QEvent *event){
 	if (event->type()==QEvent::MouseButtonRelease){
 		switch (action){
   case 2:

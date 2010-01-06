@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -15,16 +15,6 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 #include "imagemanager.h"
 
@@ -151,7 +141,8 @@ void ImageManager::loadThemeIcons(QString themePath){
 
 	lblLogo->setPixmap(pixmap);
 
-	managerToolBar.reset(new QToolBar(tlbManager));
+	std::auto_ptr<QToolBar> managerToolBar (new QToolBar(tlbManager));
+
 
 	actionAdd.reset(managerToolBar->addAction (loadIcon("data/add.png", themePath), tr("Add image")));
 	connect(actionAdd.get(), SIGNAL(triggered()), this, SLOT(actionAddImage()));
@@ -168,6 +159,13 @@ void ImageManager::loadThemeIcons(QString themePath){
 
 	actionRefresh.reset(managerToolBar->addAction (loadIcon("data/reload.png", themePath), tr("Refresh image list")));
 	connect(actionRefresh.get(), SIGNAL(triggered()), this, SLOT(actionRefreshImageList()));
+
+	std::auto_ptr<QBoxLayout> layout (new QBoxLayout(QBoxLayout::TopToBottom));
+	layout->addWidget(managerToolBar.release());
+	layout->setMargin(0);
+	layout->setSpacing(0);
+
+	tlbManager->setLayout(layout.release());
 
 	return;
 }

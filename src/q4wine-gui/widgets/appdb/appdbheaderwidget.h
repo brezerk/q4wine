@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -20,22 +20,26 @@
 #ifndef APPDBHEADERWIDGET_H
 #define APPDBHEADERWIDGET_H
 
-#include "memory"
+//System
+#include <memory>
 
+//Global config
 #include "config.h"
 
-#include <QObject>
-#include <QWidget>
+//Qt inc
 #include <QFrame>
-#include <QString>
-#include <QLabel>
-#include <QEvent>
+#include <QBoxLayout>
 #include <QVariant>
-#include <QDebug>
-#include <QVBoxLayout>
 
+#ifdef DEBUG
+#include <QDebug>
+#endif
+
+//Structs
 #include "appdbstructs.h"
-#include "appdblinkitemwidget.h"
+
+//Widgets
+#include "linkitemwidget.h"
 
 class AppDBHeaderWidget : public QFrame
 {

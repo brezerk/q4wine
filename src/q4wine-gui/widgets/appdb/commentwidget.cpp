@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -15,21 +15,11 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
- *   In addition, as a special exception, the copyright holders give       *
- *   permission to link the code of this program with any edition of       *
- *   the Qt library by Trolltech AS, Norway (or with modified versions     *
- *   of Qt that use the same license as Qt), and distribute linked         *
- *   combinations including the two.  You must obey the GNU General        *
- *   Public License in all respects for all of the code used other than    *
- *   Qt.  If you modify this file, you may extend this exception to        *
- *   your version of the file, but you are not obligated to do so.  If     *
- *   you do not wish to do so, delete this exception statement from        *
- *   your version.                                                         *
  ***************************************************************************/
 
-#include "appdbcommentwidget.h"
+#include "commentwidget.h"
 
-AppDBCommentWidget::AppDBCommentWidget(const WineAppDBComment comment, QWidget * parent) : QFrame(parent)
+CommentWidget::CommentWidget(const WineAppDBComment comment, QWidget * parent) : QFrame(parent)
 {
 	setupUi(this);
 	if (comment.id>0)
@@ -42,8 +32,8 @@ AppDBCommentWidget::AppDBCommentWidget(const WineAppDBComment comment, QWidget *
 	return;
 }
 
-void AppDBCommentWidget::setTopic(QString topic, int type){
-	std::auto_ptr<AppDBLinkItemWidget> label(new AppDBLinkItemWidget(topic, 8));
+void CommentWidget::setTopic(QString topic, int type){
+	std::auto_ptr<LinkItemWidget> label(new LinkItemWidget(topic, 8));
 	label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 	label->setBold(true);
 	label->setWordWrap(true);
@@ -73,29 +63,29 @@ void AppDBCommentWidget::setTopic(QString topic, int type){
 	return;
 }
 
-void AppDBCommentWidget::setDate(QString autor, QString date){
+void CommentWidget::setDate(QString autor, QString date){
 	std::auto_ptr<QLabel> label(new QLabel());
 	label->setText(QString("by %1 on %2").arg(autor).arg(date));
 	widgetLabelLayout->addWidget(label.release());
 	return;
 }
 
-void AppDBCommentWidget::setMessage(QString message){
+void CommentWidget::setMessage(QString message){
 	lblContent->setText(message);
 	return;
 }
 
-void AppDBCommentWidget::setId(int id){
+void CommentWidget::setId(int id){
 	this->id=id;
 	return;
 }
 
-void AppDBCommentWidget::setParentId(int id){
+void CommentWidget::setParentId(int id){
 	this->parentid=id;
 	return;
 }
 
-bool AppDBCommentWidget::isId(int id){
+bool CommentWidget::isId(int id){
 	if (this->id==id){
 		return true;
 	} else {

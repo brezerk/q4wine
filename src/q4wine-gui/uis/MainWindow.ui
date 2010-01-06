@@ -143,11 +143,11 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="tabProcces">
+      <widget class="QWidget" name="tabProcess">
        <attribute name="title">
         <string>Process</string>
        </attribute>
-       <layout class="QVBoxLayout" name="tabProccesLayout">
+       <layout class="QVBoxLayout" name="tabProcessLayout">
         <property name="spacing">
          <number>0</number>
         </property>
@@ -353,6 +353,7 @@
     <addaction name="mainProcess"/>
     <addaction name="mainSetup"/>
     <addaction name="mainPrefix"/>
+    <addaction name="mainAppDB"/>
     <addaction name="separator"/>
     <addaction name="mainExportIcons"/>
     <addaction name="separator"/>
@@ -499,6 +500,11 @@
    </property>
    <property name="text">
     <string>Bugs</string>
+   </property>
+  </action>
+  <action name="mainAppDB">
+   <property name="text">
+    <string>Wine AppDB browser</string>
    </property>
   </action>
  </widget>

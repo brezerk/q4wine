@@ -20,30 +20,29 @@
 #ifndef ICONSETTINGS_H
 #define ICONSETTINGS_H
 
-#include "memory"
+#include <memory>
 
 #include <ui_IconSettings.h>
 
-#include <QDialog>
-#include <QObject>
-#include <QWidget>
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QKeyEvent>
-#include <QLibrary>
-#include <QUrl>
-#include <QHeaderView>
-#include <QTableWidget>
-
+//Global config
 #include "config.h"
+
+//Windows
 #include "iconsview.h"
 #include "process.h"
 
+//Db
 #include "src/core/database/prefix.h"
 #include "src/core/database/icon.h"
 
-#include <q4wine-lib/main.h>
+//Qt inc
 
+#include <QUrl>
+#include <QEvent>
+#include <QResizeEvent>
+#include <QKeyEvent>
+
+#include <q4wine-lib/main.h>
 
 /*!
  * \class IconSettings

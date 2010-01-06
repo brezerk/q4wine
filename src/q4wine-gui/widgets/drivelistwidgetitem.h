@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2010 by Malakhov Alexey                            *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                            *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -20,12 +20,10 @@
 #ifndef DRIVELISTWIDGETITEM_H
 #define DRIVELISTWIDGETITEM_H
 
+//Global config
 #include "config.h"
 
-#include <QIcon>
-#include <QListWidget>
-#include <QDebug>
-#include <QString>
+//Qt inc
 #include <QListWidgetItem>
 
 class DriveListWidgetItem : public QObject, public QListWidgetItem

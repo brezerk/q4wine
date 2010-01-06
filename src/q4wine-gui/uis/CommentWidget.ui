@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AppDBCommentWidget</class>
- <widget class="QFrame" name="AppDBCommentWidget">
+ <class>CommentWidget</class>
+ <widget class="QFrame" name="CommentWidget">
   <property name="geometry">
    <rect>
     <x>0</x>

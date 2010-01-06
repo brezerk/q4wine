@@ -35,8 +35,8 @@
 
 #define APPDB_EXPORT_VERSION "0.1"
 
-#define APPDB_HOSTNAME "appdb.winehq.org"
-//#define APPDB_HOSTNAME "appdb.uz.gov.ua"
+//#define APPDB_HOSTNAME "appdb.winehq.org"
+#define APPDB_HOSTNAME "appdb.uz.gov.ua"
 #define BUGS_HOSTNAME "bugs.winehq.org"
 
 #define APPDB_PORT 80
@@ -46,7 +46,6 @@
 #cmakedefine _OS_DARWIN_
 
 #cmakedefine WITH_ICOUTILS
-#cmakedefine WITH_DEVELOP_STUFF
 #cmakedefine WITH_WINETRIKS
 #cmakedefine WITH_EMBEDDED_FUSEISO
 #cmakedefine WITH_WINEAPPDB

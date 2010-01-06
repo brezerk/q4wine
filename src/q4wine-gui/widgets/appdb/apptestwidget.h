@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -17,51 +17,61 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef APPDBLINKITEMWIDGET_H
-#define APPDBLINKITEMWIDGET_H
+#ifndef APPTESTWIDGET_H
+#define APPTESTWIDGET_H
 
+#include <ui_AppTestWidget.h>
+
+//Global config
 #include "config.h"
 
-#include <QObject>
-#include <QWidget>
-#include <QString>
-#include <QLabel>
-#include <QEvent>
+//structs
+#include "appdbstructs.h"
+
+//widgets
+#include "linkitemwidget.h"
+#include "commentwidget.h"
+#include "lineitemwidget.h"
+
+//Qt inc
+#ifdef DEBUG
 #include <QDebug>
+#endif
 
-class AppDBLinkItemWidget : public QLabel
+class AppTestWidget : public QWidget, public Ui::AppTestWidget
 {
-	Q_OBJECT
+Q_OBJECT
 public:
-	AppDBLinkItemWidget(QString text, short int action = 0, QWidget *parent = 0);
-	~AppDBLinkItemWidget();
+	AppTestWidget(const WineAppDBInfo appinfo, QWidget *parent = 0);
 
-	void setEnabled(bool enable);
-	void setBold(bool enable);
-	void setAction(short int action);
-	void setSearchUrl(QString url);
-	void setAppId(int id);
-	void setVerId(int id);
-	void setCatId(int id);
-	void setPage(short int id);
-	void setParentId(int id);
-
-private:
-	short int action;
-	int appid;
-	int verid;
-	int catid;
-	int page;
-	int parentid;
-	QString search;
+public slots:
+	void requestParentComment(int id);
 
 signals:
 	void itemTrigged(short int, QString, int, int, int);
-	void requestParentComment(int id);
+	void scrollToPos(int);
 
 private:
-	//! \brief Event filter.
-	bool eventFilter(QObject *obj, QEvent *event);
+	/*! \brief sets general application Name
+	*
+	* \param  name         General application name.
+	* \return Nothing.
+	*/
+	void setAppName(QString name);
+
+	/*! \brief sets general application description and trim it to 255 chars
+	*
+	* \param  desc  Short Application description.
+	* \return Nothing.
+	*/
+	void setAppDesc(QString desc);
+
+	void addTestResults(QList<WineAppDBTestResult> tests);
+	void addBugs(QList<WineAppDBBug> bugs);
+	void addComments(QList<WineAppDBComment> comments);
+	int appid;
+	int verid;
+	int testid;
 };
 
-#endif // APPDBLINKITEMWIDGET_H
+#endif // APPTESTWIDGET_H

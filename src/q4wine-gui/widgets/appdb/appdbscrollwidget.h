@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -20,22 +20,22 @@
 #ifndef APPDBSCROLLWIDGET_H
 #define APPDBSCROLLWIDGET_H
 
+//System
 #include <memory>
 
+//Global config
 #include "config.h"
 
-#include <QDialog>
-#include <QObject>
-#include <QWidget>
-#include <QString>
-#include <QDebug>
-#include <QScrollArea>
-#include <QVBoxLayout>
-
+//Structs
 #include "appdbstructs.h"
-#include "appdbsearchwidget.h"
-#include "appdbtestviewwidget.h"
-#include "appdbappversionwidget.h"
+
+//Widgets
+#include "appinfowidget.h"
+#include "apptestwidget.h"
+#include "lineitemwidget.h"
+
+//Qt inc
+#include <QScrollArea>
 
 class AppDBScrollWidget : public QScrollArea
 {
@@ -53,7 +53,6 @@ public slots:
 
 signals:
 	void itemTrigged(short int, QString, int, int, int);
-	void openCommentPage(void);
 
 private:
 	void gotoCommentId(int id);
