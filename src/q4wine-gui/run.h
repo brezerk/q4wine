@@ -29,6 +29,7 @@
 #include <QEvent>
 #include <QKeyEvent>
 #include <QUrl>
+#include <QHeaderView>
 
 #include "config.h"
 #include "process.h"
