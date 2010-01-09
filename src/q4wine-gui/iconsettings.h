@@ -41,6 +41,7 @@
 #include <QEvent>
 #include <QResizeEvent>
 #include <QKeyEvent>
+#include <QHeaderView>
 
 #include <q4wine-lib/main.h>
 
