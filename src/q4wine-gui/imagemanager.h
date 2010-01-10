@@ -31,6 +31,7 @@
 #include <QToolBar>
 #include <QMenu>
 #include <QBoxLayout>
+#include <QHeaderView>
 
 #include "src/core/database/image.h"
 #include <q4wine-lib/main.h>
