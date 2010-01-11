@@ -36,6 +36,7 @@
 #include <QTableView>
 #include <QToolBar>
 #include <QMenu>
+#include <QHeaderView>
 
 #ifdef DEBUG
 #include <QDebug>
