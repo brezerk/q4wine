@@ -35,8 +35,8 @@
 
 #define APPDB_EXPORT_VERSION "0.1"
 
-//#define APPDB_HOSTNAME "appdb.winehq.org"
-#define APPDB_HOSTNAME "appdb.uz.gov.ua"
+#define APPDB_HOSTNAME "appdb.winehq.org"
+//#define APPDB_HOSTNAME "appdb.uz.gov.ua"
 #define BUGS_HOSTNAME "bugs.winehq.org"
 
 #define APPDB_PORT 80
