@@ -21,25 +21,33 @@
 
 require_once("./cfg/config.inc");
 
+//! Function wich cheks for allowed user agent
+/*!
+  \param agent		current user agen (for test purposes), default empty
+
+  \return 1		on valid user agent
+  \return 0		on not valid user agent
+*/
 function checkUserAgent($agent = ""){
-		if (!$agent)
-			$agent = $_SERVER['HTTP_USER_AGENT'];
-			
-		global $white_agents;
-		
-		if (count($white_agents)==0)
+	if (!$agent)
+		$agent = $_SERVER['HTTP_USER_AGENT'];
+	
+	global $white_agents;
+
+	if (count($white_agents)==0)
+		return 1;
+
+	foreach ($white_agents as $white_agent){
+		if (eregi($white_agent, $agent)==1)
 			return 1;
+	}
 		
-		foreach ($white_agents as $white_agent){
-				if (eregi($white_agent, $agent)==1)
-					return 1;
-		}
-		
-		return 0;
+	return 0;
 }
 
+//! Function to show about text
 function showAbout(){
-		$ret = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
+	$ret = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">
 <html>
 	<head>
 		<title>Wine AppDB xmlexport script</title>
@@ -59,7 +67,7 @@ function showAbout(){
 		<p>All trademarks and copyrights on this page are owned by their respective owners. The Rest &#169 1997-2010 BrezBlock.</p>
 	</body>
 </html>";
-		return $ret;
+	return $ret;
 }
 
 ?>

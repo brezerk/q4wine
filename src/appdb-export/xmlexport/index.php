@@ -21,37 +21,36 @@
 
 require_once("./engine/check.php");
 
-//Check for walid useragent for details see config.inc file
+//! Check for walid useragent for details see config.inc file
 if (checkUserAgent()==0){
 	print showAbout();
 } else {
 	require_once("./engine/db.php");
-	require_once("./engine/memcache.php");
 
 	$DB = new DB();
 
-	//Getting action value
+	//! Getting action value
 	$action = (int)$_POST['action'];
 		 
 	switch ($action){
 		case 1:
-			//Export results of searching application by search string
+			//! Export results of searching application by search string
 			print $DB->exportAppByName($_POST['search'], $_POST['page']);
 		break;
 		case 3:
-			//Export application by id
+			//! Export application by id
 			print $DB->exportAppById($_POST['appid']);
 		break;
 		case 4:
-			//Export application test results
+			//! Export application test results
 			print $DB->exportTestResults($_POST['appid'], $_POST['verid'], $_POST['testid']);
 		break;
 		case 5:
-			//Export category view
+			//! Export category view
 			print $DB->exportCategory($_POST['catid']);		  
 		break;
 		default:
-			//Just show about page
+			//! Just show about page
 			print showAbout();
 		break;
 	}

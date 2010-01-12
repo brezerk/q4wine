@@ -18,48 +18,49 @@
  *                                                                         *
  ***************************************************************************/	
 
-	 //General xmlexport settings
- 
-	 /*You can select memcache usage level
-	   Valid levels are: 0, 1, 2, 3, 4
-	 
-		0 -- Turn off memcache engine;
-		1 -- Cache only app version array;
-		2 -- Cache app version array and app top5 results array;
-		3 -- Cache app version array, app top5 results array and comments array;
-		4 -- Cache app info;
-		5 -- Cache search results;
-	 
-	 */
-	 $memcache_level=5;
-	 
-	 //How long memcache will store chaced object in seconds
-	 $memcache_timeout=43200;
+	//General xmlexport settings
 
-    //Wine Appdb database connection settings
-    $appdb_host="localhost";
-    $appdb_base="apidb";
-    $appdb_user="root";
-    $appdb_pass="uahss85";
+	/** @name Wine Appdb database connection settings */
+	///@{
+	//! Wine Appdb MySQL host
+	$appdb_host="localhost";
+	//! Wine Appdb MySQL base
+	$appdb_base="apidb";
+	//! Wine Appdb MySQL user
+	//! \warning Please: <b>DO NOT</b> give write priveleges to this script!
+	$appdb_user="";
+	//! Wine Appdb MySQL passord
+	//! \warning Please: <b>DO NOT</b> give write priveleges to this script!
+	$appdb_pass="";
+	///@}
+	
+	/** @name Wine Bugzilla database connection settings */
+	///@{
+	//! Wine Bugzilla MySQL host
+	$bugzilla_host="localhost";
+	//! Wine Bugzilla MySQL base
+	$bugzilla_base="bugs";
+	//! Wine Bugzilla MySQL user
+	//! \warning Please: <b>DO NOT</b> give write priveleges to this script!
+	$bugzilla_user="";
+	//! Wine Bugzilla MySQL user
+	//! \warning Please: <b>DO NOT</b> give write priveleges to this script!
+	$bugzilla_pass="";
+	///@}
 
-    //Wine Bugzilla database connection settings
-    $bugzilla_host="localhost";
-    $bugzilla_base="bugs";
-    $bugzilla_user="root";
-    $bugzilla_pass="uahss85";
-    
-    /*We can filter for client header
-      It will make ddos a little bit harder ;)
-            
-      Leave it blank to disable this feature
-     */
-     
-    $white_agents = array();
-    $white_agents[0] = "^q4wine/[0-1].[1-9]{3}([ ]|-[0-9a-zA-Z]+[ ])\([0-9a-zA-Z]+; [0-9a-zA-Z]+ [0-9a-zA-Z]+) xmlparser/[0-9].[0-9]$";
-	 
-    $xmlexport_version = "0.1";
+	/*!
+	  We can filter for client header.
+	  It will make ddos a little bit harder ;)
+	*/
+	$white_agents = array();
 
-    //MemChace connection settings
-    $memcache_host="localhost";
-    $memcache_port=11211;
+	/*!
+	  Default filter is set to q4wine user-agent
+	  You can make it blank to disable this feature
+	*/
+	$white_agents[0] = "^q4wine/[0-1].[1-9]{3}([ ]|-[0-9a-zA-Z]+[ ])\([0-9a-zA-Z]+; [0-9a-zA-Z]+ [0-9a-zA-Z]+) xmlparser/[0-9].[0-9]$";
+
+	//! define xmlexport version
+	$xmlexport_version = "0.1";
+
 ?>

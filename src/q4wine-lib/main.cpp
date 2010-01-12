@@ -590,7 +590,7 @@ QString corelib::getMountedImages(const QString cdrom_mount) const{
 				QProcess proc;
 				return proc.startDetached(exec, args, QDir::homePath());
 			} else {
-				this->runProcess(args, QObject::tr("Running wine binary"), QObject::tr("Please wait..."));
+				return this->runProcess(args, QObject::tr("Running wine binary"), QObject::tr("Please wait..."));
 			}
 			return false;
 	  }

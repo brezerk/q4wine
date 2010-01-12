@@ -107,7 +107,7 @@ void HttpCore::httpRequestFinished(int requestId, bool error){
 		xmlreply=http->readAll();
 
 #ifdef DEBUG
-		//qDebug()<<"[ii] Recived page:"<<xmlreply;
+		qDebug()<<"[ii] Recived page:"<<xmlreply;
 #endif
 		emit(pageReaded());
 	}

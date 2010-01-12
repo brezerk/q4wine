@@ -21,14 +21,46 @@
 
 require_once("./cfg/config.inc");
 
-Class XMLExport { 
+/*!
+  \class XMLExport
+  \brief General XML export calss
+
+  This class provides general xml view generation
+  functions
+
+  \author Malakhov Alexey
+  \file xml.php
+*/
+
+class XMLExport {
+	public:
+	/*!
+		\brief Function wich open XML header
+		This function will open XML header
+		and set header information
+
+		\param action		XML export action description
+		\param action		1 -- search app by name or toggle page
+		\param action		3 -- view app by id
+		\param action		4 -- view app test results by id
+		\param action		5 -- view category info
+
+		\return ret		string containg full XML view
+	*/
 	function openHeader($action){
 		global $xmlexport_version;
-		$ret = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>       
+		$ret = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <appdb_export version=\"{$xmlexport_version}\" action=\"{$action}\">";
 		return $ret;
 	}
-	
+
+	//! Function wich creates page list
+	/*!
+	  \param page		current page
+	  \param page_count	total page count
+
+	  \return ret		string containg full XML view
+	*/
 	function createPages($page, $page_count){
 		$ret = "
 	<page>
@@ -38,13 +70,30 @@ Class XMLExport {
 		return $ret;
 	}
 	
-	
+	//! Function to close XML export header
 	function closeHeader(){
 		$ret = "
 </appdb_export>";
 		return $ret;
 	}
-	
+
+	//! Function wich creates application XML info
+	/*!
+	  \param id				application id
+	  \param verid			application version id
+	  \param name			application name
+	  \param desc			application desc
+	  \param category		application category
+	  \param url			application web page url
+	  \param versions_list	application versions list, defalut empty
+	  \param category_list	application category list, defalut empty
+	  \param test_results	application test results list list, defalut empty
+	  \param comment_list	application comment list, defalut empty
+	  \param verinfo		application version info, defalut empty
+	  \param bugs_list		application bugs list, defalut empty
+
+	  \return ret		string containg full XML view
+	*/
 	function createAppInfo($id, $verid, $name, $desc, $category, $url, $versions_list="", $category_list="", $test_results="", $comment_list="", $verinfo="", $bugs_list=""){
 		$ret = "
 	<app id=\"{$id}\"";
@@ -56,11 +105,11 @@ Class XMLExport {
 		if ($verinfo)
 				$ret .= $verinfo;
 		
-		$ret .= "\n		<desc>"; 
+		$ret .= "\n		<desc>";
 		if ($test_results){
 			$ret .= $this->prepareString($desc, -1, 0);
 		} else {
-			$ret .= $this->prepareString($desc, 255);			
+			$ret .= $this->prepareString($desc, 255);
 		}
 		$ret .= "</desc>
 		<category>{$category}</category>
@@ -94,7 +143,16 @@ Class XMLExport {
 		$ret .= "\n	</app>";
 		return $ret;
 	}
-	
+
+	//! Function wich creates app version XML view
+	/*!
+	  \param verid			application version id
+	  \param appver			application id
+	  \param rating			application test rating
+	  \param winever		wine version
+
+	  \return ret		string containg full XML view
+	*/
 	function createAppVersionInfo($verid, $appver, $rating, $winever){
 		$ret = "
 			<version id=\"{$verid}\">
@@ -104,7 +162,21 @@ Class XMLExport {
 			</version>";
 		return $ret;
 	}
-	
+
+	//! Function wich creates app version XML view
+	/*!
+	  \param testid			application test id
+	  \param rating			application test rating
+	  \param winever		wine test version
+	  \param works			what works
+	  \param notworks		what not works
+	  \param nottested		what not tested
+	  \param comment		comment
+	  \param vername		version name
+	  \param lic			license
+
+	  \return ret		string containg full XML view
+	*/
 	function createAppTestingInfo($testid, $rating, $winever, $works, $notworks, $nottested, $comment, $vername, $lic){
 		$ret = "
 		<app-ver>" . $this->prepareString($vername) . "</app-ver>
@@ -119,7 +191,20 @@ Class XMLExport {
 		</test-result>";
 		return $ret;
 	}
-	
+
+	//! Function wich gets top 5 test results XML view
+	/*!
+	  \param testid			application test id
+	  \param rating			application test rating
+	  \param winever		wine test version
+	  \param testdate		test date
+	  \param distrib		distribution
+	  \param installs		did installs?
+	  \param runs			did runs?
+	  \param curr			is current test?
+
+	  \return ret		string containg full XML view
+	*/
 	function createTop5TestResults($testid, $rating, $winever, $testdate, $distrib, $installs, $runs, $curr){
 		$ret = "
 			<test id=\"{$testid}\">
@@ -145,7 +230,15 @@ Class XMLExport {
 			</test>";
 		return $ret;
 	}
-	
+
+	//! Function wich gets category XML view
+	/*!
+	\param id			application id
+	\param name			application name
+	\param desc			application description
+
+	\return ret		string containg full XML view
+	*/
 	function createCategoryInfo($id, $name, $desc){
 		$ret = "
 			<category id=\"{$id}\">
@@ -154,7 +247,15 @@ Class XMLExport {
 			</category>";
 		return $ret;
 	}
-	
+
+	//! Function wich gets category appinfo XML view
+	/*!
+	  \param id			application id
+	  \param name		application name
+	  \param desc		application description
+
+	  \return ret		string containg full XML view
+	*/
 	function createCategoryAppInfo($id, $name, $desc){
 		$ret = "
 			<app id=\"{$id}\">
@@ -163,13 +264,24 @@ Class XMLExport {
 			</app>";
 		return $ret;
 	}
-	
+
+	//! Function wich gets comment XML view
+	/*!
+	  \param id			comment id
+	  \param parent		comment parent id
+	  \param user		commented user
+	  \param subject	comment subject
+	  \param body		comment body
+	  \param time		comment time
+
+	  \return ret		string containg full XML view
+	*/
 	function createComment($id, $parent, $user, $subject, $body, $time){
 		$ret = "
 			<comment id=\"{$id}\">
 				<topic>" . $this->prepareString($subject) . "</topic>
 				<date>{$time}</date>
-				<autor>"; 
+				<autor>";
 				
 		if ($user){
 			$ret .= $this->prepareString($user);
@@ -180,42 +292,69 @@ Class XMLExport {
 		$ret .= "</autor>
 				<message>" . $this->prepareString($body, -1, 0) . "</message>
 				<parent>{$parent}</parent>
-			</comment>";	
+			</comment>";
 		return $ret;
 	}
-	
+
+	//! Function wich gets bugs XML view
+	/*!
+	  \param bug_id			bug id
+	  \param bug_status		bug status
+	  \param resolution		bug resolution
+	  \param short_desc		bug short description
+
+	  \return ret		string containg full XML view
+	*/
 	function createBugList($bug_id, $bug_status, $resolution, $short_desc){
 		$ret = "
 			<bug id=\"{$bug_id}\">
 				<desc>" . $this->prepareString($short_desc) . "</desc>
 				<status>{$bug_status}</status>
 				<resolution>{$resolution}</resolution>
-			</bug> 
+			</bug>
 		";
 		return $ret;
 	}
-	
-	function prepareString($string, $len = 0, $strip_html = 1){
-		/* This function will prepare string for xml format
-		 */
-		$string = trim($string);
-				
-		if ($strip_html==1){
-			$string = strip_tags($string);
-			//Remove stupid whitespaces
-			$string = preg_replace("/\s+/", " ", $string);
-		} else {
-			$string = strip_tags($string, "<ul><li><b><i><strong>");
-			$string = preg_replace('/(http:\/\/[^\s]+)/', '<a href="$1">$1</a>', $string);
-			$string = nl2br ($string);
-		}
 
-		if ($len > 0)
-			$string = substr($string, 0, $len);
-		
-		$string = htmlentities($string);
-		return $string;
-	}
+	private:
+		//! Function wich prepare strings for XML view
+		/*!
+		  In fact, appdb site allows users to add html tegs into comments, appinfo, name e.t.c.
+		  and this will breakes XML parser and formatting, so I need to process strings before
+		  add them into xml view
+
+		  \param string			income string
+		  \param len			max output string len, default 0
+		  \param strip_html		strip html or not?
+
+		  \return string		formatted string
+		*/
+		function prepareString($string, $len = 0, $strip_html = 1){
+			/* This function will prepare string for xml format
+			*/
+			$string = trim($string);
+
+			if ($strip_html==1){
+				//! remove html tags
+				$string = strip_tags($string);
+				//! remove stupid whitespaces
+				$string = preg_replace("/\s+/", " ", $string);
+			} else {
+				//! strip html tags except <ul><li><b><i><strong>
+				$string = strip_tags($string, "<ul><li><b><i><strong>");
+				//! Fix for urls
+				$string = preg_replace('/(http:\/\/[^\s]+)/', '<a href="$1">$1</a>', $string);
+				//! replace new lines into br
+				$string = nl2br ($string);
+			}
+
+			if ($len > 0)
+				$string = substr($string, 0, $len);
+
+			//! confert characters into html elements
+			$string = htmlentities($string);
+			return $string;
+		}
 
 };
 
