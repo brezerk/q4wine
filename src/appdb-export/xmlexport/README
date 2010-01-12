@@ -1,0 +1,18 @@
+Wine AppDB XML export
+***********************************************
+ 
+This script provides xml view interface for Wine AppDB database.
+Originally this script was created by Malakhov Alexey aka John Brezerk for q4wine ( http://q4wine.brezblock.org.ua/ ) project.
+
+This Software is published under the terms of the GNU GPL V3 and comes
+without any warranty. Feel free to change or distribute this software.
+
+-- 
+Regards,
+
+Malakhov Alexey
+OpenXlout, q4wine ( http://sourceforge.net/projects/q4wine ) main developer.
+BrezBlock ( http://brezblock.org.ua ) maintainer
+e-mail: brezerk@gmail.com
+web: http://brezblock.org.ua
+BrezBlock, Kiev, Ukraine

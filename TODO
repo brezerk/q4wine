@@ -3,13 +3,10 @@
 ===== TODO ==============
 
 1. Fix\Test for whitespaces;
-2. Corelib preget xdg-utils .e.t.c.
+2. Corelib preget xdg-utils .e.t.c.;
 2.1 As a part of 2. -- Move get\check config to corelib?
-8. CD Image dialog -> SQL Query model
-9. Wine AppDB dpxygen sources;
-12. -v shows compile time variables (like Cmake)
-13. Display buffer for wine appdb scrollwidget
-8. Have fun ;]
-9. Conqueror the universe... ooops not this time. Sorry T_T
-14. Who cares?
-15. global world emerge.
+3. CD Image dialog -> SQL Query model;
+
+x. Have fun ;]
+x. Conqueror the universe... ooops not this time. Sorry T_T;
+x. Who cares?

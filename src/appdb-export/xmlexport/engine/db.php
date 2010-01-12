@@ -44,7 +44,6 @@ class DB {
 	//! \brief XML class link
 	private $XML;
 
-public:
 	/*!
 	  \brief Database class constructor
 	
@@ -293,7 +292,6 @@ public:
 		return $xml_view;
 	}
 
-private:
 	//! Function for getting app versions info form database
 	/*!
 	  This function will get app versions info data by appid

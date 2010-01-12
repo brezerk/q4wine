@@ -30,7 +30,9 @@ AppDBScrollWidget::AppDBScrollWidget(QWidget *parent) : QScrollArea(parent)
 	contentWidget.reset(new QWidget());
 	contentLayout.reset(new QVBoxLayout(contentWidget.get()));
 	contentLayout->setMargin(3);
+
 	this->setWidget(contentWidget.get());
+
 	return;
 }
 

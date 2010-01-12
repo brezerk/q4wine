@@ -33,7 +33,6 @@ require_once("./cfg/config.inc");
 */
 
 class XMLExport {
-	public:
 	/*!
 		\brief Function wich open XML header
 		This function will open XML header
@@ -316,7 +315,6 @@ class XMLExport {
 		return $ret;
 	}
 
-	private:
 		//! Function wich prepare strings for XML view
 		/*!
 		  In fact, appdb site allows users to add html tegs into comments, appinfo, name e.t.c.

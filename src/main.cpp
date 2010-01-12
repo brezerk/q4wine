@@ -170,6 +170,33 @@ int main(int argc, char *argv[])
 			Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
 			Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
 			Qcout<<endl;
+			Qcout<<QObject::tr("Buildtime flags are:")<<endl;
+#ifdef DEBUG
+			Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+			Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
+#ifdef WITH_ICOUTILS
+			Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+			Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
+#ifdef WITH_WINETRIKS
+			Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINETRIKS"<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+			Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINETRIKS"<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
+#ifdef WITH_EMBEDDED_FUSEISO
+			Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+			Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
+#ifdef WITH_WINEAPPDB
+			Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+			Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
+			Qcout<<endl;
 			Qcout<<QObject::tr("Author: %1.").arg("Malakhov Alexey aka John Brezerk")<<endl;
 			return 0;
 		} else if ((app.arguments().at(1)=="-minimize") or (app.arguments().at(1)=="-m")) {
