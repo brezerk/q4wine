@@ -165,9 +165,10 @@ void IconListWidget::startDrop(QList<QUrl> files){
 				  }
 
 				  if (files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive)){
+					  QString localfile=files.at(i).toLocalFile();
 						file = "--backend=user ";
-						file.append(CoreLib->getWinePath(files.at(i).toLocalFile(), "-w"));
-						db_icon.addIcon(file, "wineconsole", "", "", this->prefixName, this->dirName, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
+						file.append(localfile.split("/").last());
+						db_icon.addIcon(file, "wineconsole", "", "", this->prefixName, this->dirName, fileName, "", "", "", "", localfile.left(localfile.length() - localfile.split("/").last().length()), "", 0);
 				  } else {
 						db_icon.addIcon("", file, "", "", this->prefixName, this->dirName, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
 				  }

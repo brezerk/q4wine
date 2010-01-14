@@ -12,6 +12,8 @@ Version 0.115-dev
 
  Fixed:
   - A lot of fixes and speedups;
+  - Fixed GUI issue with qtcurve theme engine;
+  - Fixed *.bat files drop;
   - Removed _junk_ WineBinaryLauncher class;
   - Removed _junk_ includes;
   - MainWindow class cleanup;

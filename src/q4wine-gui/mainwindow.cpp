@@ -49,7 +49,6 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	toolbar->addWidget(label.release());
 	toolbar->addWidget(cbPrefixes.get());
 
-
 	std::auto_ptr<QAction> action (new QAction(loadIcon("data/configure.png"), tr("Manage prefixes"), this));
 	action->setStatusTip(tr("Manage prefixes"));
 	connect(action.get(), SIGNAL(triggered()), this, SLOT(prefixManage_Click()));
@@ -69,6 +68,8 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	vlayout->setMargin(0);
 	vlayout->setSpacing(0);
 	tabPrefixSeup->setLayout(vlayout.release());
+
+	frame->setAutoFillBackground(true);
 
 	std::auto_ptr<IconListWidget> lstIcons (new IconListWidget(THEME_NAME, tabPrograms));
 	connect(lstIcons.get(), SIGNAL(iconItemClick(QString, QString, QString, QString, QString)), this, SLOT(updateIconDesc(QString, QString, QString, QString, QString)));
