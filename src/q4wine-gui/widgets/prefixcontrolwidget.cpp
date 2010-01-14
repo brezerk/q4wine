@@ -69,6 +69,29 @@ PrefixControlWidget::PrefixControlWidget(QString themeName, QWidget *parent) :
 	return;
 }
 
+void PrefixControlWidget::setDefaultFocus(QString prefixName){
+	if (prefixName.isEmpty())
+		return;
+
+	int i=0;
+	while (1){
+		QModelIndex newIndex  = model->index(i, 0);
+		if (!newIndex.isValid())
+			break;
+
+		if (newIndex.data().toString()==prefixName){
+			prefixTable->setCurrentIndex(newIndex);
+			prefixDelete->setEnabled(true);
+			prefixImport->setEnabled(true);
+			prefixExport->setEnabled(true);
+			prefixSettings->setEnabled(true);
+			break;
+		}
+		i++;
+	}
+	return;
+}
+
 void PrefixControlWidget::createActions(){
 	prefixAdd.reset(new QAction(loadIcon("data/wizard.png"), tr("Create new"), this));
 	prefixAdd->setStatusTip(tr("Create new prefix"));
@@ -145,12 +168,14 @@ void PrefixControlWidget::itemClicked(const QModelIndex &){
 		prefixImport->setEnabled(true);
 		prefixExport->setEnabled(true);
 		prefixSettings->setEnabled(true);
+		emit (prefixIndexChanged(model->index(prefixTable->currentIndex().row(), 0).data().toString()));
 	} else {
 		prefixDelete->setEnabled(false);
 		prefixImport->setEnabled(false);
 		prefixExport->setEnabled(false);
 		prefixSettings->setEnabled(false);
 	}
+
 	return;
 }
 
@@ -161,6 +186,7 @@ void PrefixControlWidget::prefixAdd_Click(){
 	if (createPrefixWizard.exec()==QDialog::Accepted){
 		this->updateTableModel();
 		emit(updateDatabaseConnections());
+		emit(prefixIndexChanged(createPrefixWizard.getPrefixName()));
 	}
 
 	return;
@@ -281,6 +307,7 @@ void PrefixControlWidget::prefixSettings_Click(){
 	if (settings.exec()==QDialog::Accepted){
 		this->updateTableModel();
 		emit(updateDatabaseConnections());
+		emit(prefixIndexChanged(settings.getPrefixName()));
 	}
 
 	return;

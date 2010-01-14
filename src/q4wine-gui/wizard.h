@@ -62,6 +62,7 @@ class Wizard : public QDialog, public Ui::Wizard
 		 * \param  var1			This variable used for different scenarion actions.
 		 */
 		Wizard(int WizardType, QString var1 = "", QWidget * parent = 0, Qt::WFlags f = 0);
+		QString getPrefixName();
 
 	private slots:
 		//! \brief Next page button click slot.

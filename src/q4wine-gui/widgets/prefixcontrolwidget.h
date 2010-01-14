@@ -59,6 +59,7 @@ public:
 signals:
 
 public slots:
+	void setDefaultFocus(QString prefixName);
 
 private:
 	QString themeName;
@@ -101,6 +102,7 @@ private slots:
 
 signals:
 	void updateDatabaseConnections();
+	void prefixIndexChanged(QString);
 };
 
 #endif // PREFIXCONTROLWIDGET_H

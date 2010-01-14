@@ -89,7 +89,7 @@ private slots:
 	  void winefileOpenPrefixDir_Click(void);
 	  void winefileOpenMountDir_Click(void);
 
-	  void setDefaultFocus(QString prefixName, QString dirName="");
+
 
 signals:
 	  void showFolderContents(QString, QString);
@@ -98,6 +98,7 @@ signals:
 
 public slots:
 	  void getPrefixes();
+	  void setDefaultFocus(QString prefixName, QString dirName="");
 
 };
 

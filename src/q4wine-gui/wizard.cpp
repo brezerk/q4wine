@@ -551,6 +551,10 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 }
 
 
+QString Wizard::getPrefixName(){
+	return txtPrefixName->text();
+}
+
 void Wizard::comboProxyType_indexChanged(QString text){
 	if (text==tr("No Proxy")){
 		txtProxyHost->setEnabled(FALSE);

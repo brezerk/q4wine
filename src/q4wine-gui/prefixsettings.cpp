@@ -89,7 +89,9 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 	return;
 }
 
-
+QString PrefixSettings::getPrefixName(){
+	return txtPrefixName->text();
+}
 
 void PrefixSettings::loadThemeIcons(QString themePath){
 	QPixmap pixmap;

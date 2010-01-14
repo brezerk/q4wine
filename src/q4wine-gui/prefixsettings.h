@@ -48,6 +48,7 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
 		 * \param  prefix_name  Current prefix name.
 		 */
 		PrefixSettings(QString prefix_name, QWidget * parent = 0, Qt::WFlags f = 0);
+		QString getPrefixName();
 
 	private:
 		/*! \brief This is an event filter.
