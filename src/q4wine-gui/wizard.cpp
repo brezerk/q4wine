@@ -1147,6 +1147,10 @@ void Wizard::nextWizardPage(){
 			sh_line.append(sh_cmd);
 
 			sh_cmd.clear();
+
+#ifdef DEBUG
+			qDebug()<<"[ii] Wizard::Creating sh_line";
+#endif
 			for (int i=0; i<sh_line.count(); i++){
 				sh_cmd.append(sh_line.at(i));
 				if (i!=(sh_line.count()-1))
@@ -1155,6 +1159,11 @@ void Wizard::nextWizardPage(){
 
 			QStringList args;
 			args<<"-c"<<sh_cmd;
+
+#ifdef DEBUG
+			qDebug()<<"[ii] Wizard::Updateing wine dosdrives";
+#endif
+
 
 			Process proc(args, CoreLib->getWhichOut("sh"), QDir::homePath(), tr("Updateing wine dosdrives"), tr("Updateing wine dosdrives"), true);
 			proc.exec();
@@ -1170,9 +1179,16 @@ void Wizard::nextWizardPage(){
 				registry.set("Software\\Wine", "Version", version);
 
 				if (listWineDrives->count()>0){
+
+#ifdef DEBUG
+			qDebug()<<"[ii] Wizard::Create wine drive config";
+#endif
+
 					for (int i=0; i<listWineDrives->count(); i++){
 						std::auto_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->item(i)));
-
+#ifdef DEBUG
+			qDebug()<<"[ii] Wizard::get DriveListWidgetItem for "<<listWineDrives->item(i)->text();
+#endif
 						if (item.get()){
 							if (item->getType()=="auto"){
 								registry.unset("Software\\Wine\\Drives", item->getLetter().toLower(), "HKEY_LOCAL_MACHINE");
@@ -1183,6 +1199,10 @@ void Wizard::nextWizardPage(){
 						item.release();
 					}
 				}
+
+#ifdef DEBUG
+			qDebug()<<"[ii] Wizard::creating registry cfg";
+#endif
 
 				if (!txtFakeBrowsers->text().isEmpty()){
 					registry.set("Software\\Wine\\WineBrowser", "Browsers", txtFakeBrowsers->text());
@@ -1277,10 +1297,19 @@ void Wizard::nextWizardPage(){
 				registry.unsetPath("Software\\Wine\\DirectInput");
 
 				if (listJoystickAxesMappings->count()>0){
+#ifdef DEBUG
+			qDebug()<<"[ii] Wizard::creating registry cfg for joystik";
+#endif
+
 					for (int i=0; i<listJoystickAxesMappings->count(); i++){
 						registry.set("Software\\Wine\\DirectInput", "", listJoystickAxesMappings->item(i)->text());
 					}
 				}
+
+#ifdef DEBUG
+			qDebug()<<"[ii] Wizard::creating registry cfg";
+#endif
+
 
 				if (comboFakeMouseWarp->currentText()!="default"){
 					registry.set("Software\\Wine\\DirectInput", "MouseWarpOverride", comboFakeMouseWarp->currentText());
@@ -1323,6 +1352,12 @@ void Wizard::nextWizardPage(){
 				}
 
 				if (rbColorsQt4->isChecked()){
+
+#ifdef DEBUG
+			qDebug()<<"[ii] Wizard::creating registry cfg for color";
+#endif
+
+
 					QColor color;
 					QPalette cur_palette;
 
@@ -1372,7 +1407,17 @@ void Wizard::nextWizardPage(){
 					registry.set("Control Panel\\Colors", "InfoText", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 				}
 
+#ifdef DEBUG
+			qDebug()<<"[ii] Wizard::run registry import";
+#endif
+
+
 				if (registry.exec(this, prefix_name)){
+
+#ifdef DEBUG
+			qDebug()<<"[ii] Wizard::creating icons";
+#endif
+
 					QString dir_id;
 					//Is settings directory exists?
 					if (!db_dir.isExistsByName(prefix_name, "system")){
@@ -1391,6 +1436,11 @@ void Wizard::nextWizardPage(){
 						db_dir.addDir(prefix_name, "autostart");
 
 					QApplication::restoreOverrideCursor();
+
+#ifdef DEBUG
+			qDebug()<<"[ii] Wizard::done";
+#endif
+
 					accept();
 				} else {
 					QApplication::restoreOverrideCursor();

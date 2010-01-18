@@ -89,6 +89,7 @@ void WineProcessWidget::stopTimer(void){
 }
 
 void WineProcessWidget::startTimer(void){
+	this->getWineProcesssInfo();
 	timer->start();
 	return;
 }
