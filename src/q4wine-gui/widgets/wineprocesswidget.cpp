@@ -19,7 +19,7 @@
 
 #include "wineprocesswidget.h"
 
-WineProcessWidget::WineProcessWidget(QString themeName, QWidget *parent) : QWidget(parent)
+WineProcessWidget::WineProcessWidget(QWidget *parent) : QWidget(parent)
 {
 	// Loading libq4wine-core.so
 	libq4wine.setFileName("libq4wine-core");
@@ -32,7 +32,6 @@ WineProcessWidget::WineProcessWidget(QString themeName, QWidget *parent) : QWidg
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-	this->themeName=themeName;
 	this->createActions();
 
 	std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
@@ -95,17 +94,17 @@ void WineProcessWidget::startTimer(void){
 }
 
 void WineProcessWidget::createActions(){
-	procKillSelected.reset(new QAction(loadIcon("data/kill.png"), tr("Stop current"), this));
+	procKillSelected.reset(new QAction(CoreLib->loadIcon("data/kill.png"), tr("Stop current"), this));
 	procKillSelected->setStatusTip(tr("Send TERM signal to selected process"));
 	procKillSelected->setEnabled(false);
 	connect(procKillSelected.get(), SIGNAL(triggered()), this, SLOT(procKillSelected_Click()));
 
-	procKillWine.reset(new QAction(loadIcon("data/stop.png"), tr("Stop wine"), this));
+	procKillWine.reset(new QAction(CoreLib->loadIcon("data/stop.png"), tr("Stop wine"), this));
 	procKillWine->setStatusTip(tr("Send TERM signal to main wine process"));
 	procKillWine->setEnabled(false);
 	connect(procKillWine.get(), SIGNAL(triggered()), this, SLOT(procKillWine_Click()));
 
-	procRefresh.reset(new QAction(loadIcon("data/reload.png"), tr("Refresh list"),this));
+	procRefresh.reset(new QAction(CoreLib->loadIcon("data/reload.png"), tr("Refresh list"),this));
 	procRefresh->setStatusTip(tr("Refresh process list"));
 	connect(procRefresh.get(), SIGNAL(triggered()), this, SLOT(getWineProcesssInfo()));
 
@@ -123,21 +122,6 @@ void WineProcessWidget::createActions(){
 	menu->addAction(procRefresh.get());
 
 	return;
-}
-
-QIcon WineProcessWidget::loadIcon(QString iconName){
-	  // Function tryes to load icon image from theme dir
-	  // If it fails -> load default from rsource file
-	  QIcon icon;
-	  if ((!this->themeName.isEmpty()) and (this->themeName!="Default")){
-			icon.addFile(QString("%1/%2").arg(this->themeName).arg(iconName));
-			if (icon.isNull()){
-				  icon.addFile(QString(":/%1").arg(iconName));
-			}
-	  } else {
-			icon.addFile(QString(":/%1").arg(iconName));
-	  }
-	  return icon;
 }
 
 void WineProcessWidget::getWineProcesssInfo(void){

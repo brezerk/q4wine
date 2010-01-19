@@ -19,7 +19,7 @@
 
 #include "iconlistwidget.h"
 
-IconListWidget::IconListWidget(QString themeName, QWidget *parent) : QListWidget (parent)
+IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
 {
 	  // Loading libq4wine-core.so
 	  libq4wine.setFileName("libq4wine-core");
@@ -49,7 +49,6 @@ IconListWidget::IconListWidget(QString themeName, QWidget *parent) : QListWidget
 	  connect(this, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(itemClicked (QListWidgetItem *)));
 	  connect(this, SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(itemDoubleClicked (QListWidgetItem *)));
 
-	  this->themeName=themeName;
 	  this->dirName="";
 	  this->prefixName="";
 	  this->prefixMontPoint="";
@@ -77,27 +76,27 @@ void IconListWidget::showContents(QString filterString){
 
 			//Seting icon. If no icon or icon file not exists -- setting default
 			if (iconsList.at(i).at(3).isEmpty()){
-				  iconItem->setIcon(loadIcon("data/exec_wine.png"));
+				  iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
 			} else {
 				  if (QFile::exists (iconsList.at(i).at(3))){
 						iconItem->setIcon(QIcon(iconsList.at(i).at(3)));
 				  } else {
 						if (iconsList.at(i).at(3)=="wineconsole"){
-							  iconItem->setIcon(loadIcon("data/wineconsole.png"));
+							  iconItem->setIcon(CoreLib->loadIcon("data/wineconsole.png"));
 						} else if (iconsList.at(i).at(3)=="regedit"){
-							  iconItem->setIcon(loadIcon("data/regedit.png"));
+							  iconItem->setIcon(CoreLib->loadIcon("data/regedit.png"));
 						} else if (iconsList.at(i).at(3)=="wordpad"){
-							  iconItem->setIcon(loadIcon("data/notepad.png"));
+							  iconItem->setIcon(CoreLib->loadIcon("data/notepad.png"));
 						} else if (iconsList.at(i).at(3)=="winecfg"){
-							  iconItem->setIcon(loadIcon("data/winecfg.png"));
+							  iconItem->setIcon(CoreLib->loadIcon("data/winecfg.png"));
 						} else if (iconsList.at(i).at(3)=="uninstaller"){
-							  iconItem->setIcon(loadIcon("data/uninstaller.png"));
+							  iconItem->setIcon(CoreLib->loadIcon("data/uninstaller.png"));
 						} else if (iconsList.at(i).at(3)=="eject"){
-							  iconItem->setIcon(loadIcon("data/eject.png"));
+							  iconItem->setIcon(CoreLib->loadIcon("data/eject.png"));
 						} else if (iconsList.at(i).at(3)=="explorer"){
-							  iconItem->setIcon(loadIcon("data/explorer.png"));
+							  iconItem->setIcon(CoreLib->loadIcon("data/explorer.png"));
 						} else {
-							  iconItem->setIcon(loadIcon("data/exec_wine.png"));
+							  iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
 						}
 				  }
 			}
@@ -303,11 +302,11 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 			std::auto_ptr<QAction> entry;
 
 			if (this->prefixMediaDrive.isEmpty()){
-				  entry.reset (new QAction(loadIcon("/data/drive_menu.png"), tr("[none]"), this));
+				  entry.reset (new QAction(CoreLib->loadIcon("/data/drive_menu.png"), tr("[none]"), this));
 				  entry->setStatusTip(tr("No media was set in prefix settings."));
 				  submenuMount->addAction(entry.release());
 			} else {
-				  entry.reset (new QAction(loadIcon("/data/drive_menu.png"), this->prefixMediaDrive, this));
+				  entry.reset (new QAction(CoreLib->loadIcon("/data/drive_menu.png"), this->prefixMediaDrive, this));
 				  entry->setStatusTip(tr("Mount media drive."));
 				  submenuMount->addAction(entry.release());
 			}
@@ -318,7 +317,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 				  submenuMount->addSeparator();
 
 			for (int i = 0; i < images.size(); ++i) {
-				  entry.reset (new QAction(loadIcon("/data/cdrom_menu.png"), images.at(i).at(0), this));
+				  entry.reset (new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"), images.at(i).at(0), this));
 				  entry->setStatusTip(tr("Mount media image."));
 				  submenuMount->addAction(entry.release());
 			}
@@ -329,7 +328,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
 			submenuMount.reset (new QMenu(tr("Mount ..."), this));
 
-			entry.reset (new QAction(loadIcon("/data/folder.png"), tr("Browse..."), this));
+			entry.reset (new QAction(CoreLib->loadIcon("/data/folder.png"), tr("Browse..."), this));
 			entry->setStatusTip(tr("Browse for media image."));
 			submenuMount->addAction(entry.release());
 
@@ -339,7 +338,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 				  submenuMount->addSeparator();
 
 			for (int i = 0; i < files.size(); ++i){
-				  entry.reset (new QAction(loadIcon("/data/cdrom_menu.png"),files.at(i).split("/").last(), this));
+				  entry.reset (new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"),files.at(i).split("/").last(), this));
 				  entry->setStatusTip(files.at(i));
 				  submenuMount->addAction(entry.release());
 			}
@@ -458,7 +457,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 			// Default menu
 			std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
 
-			std::auto_ptr<QAction> entry (new QAction(loadIcon("data/folder.png"), tr("Browse ..."), this));
+			std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("data/folder.png"), tr("Browse ..."), this));
 			entry->setStatusTip(tr("Browse for other image"));
 
 			connect(menuRun.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
@@ -580,21 +579,6 @@ void IconListWidget::keyPressEvent (QKeyEvent * event){
 	}
 
 	return;
-}
-
-QIcon IconListWidget::loadIcon(QString iconName){
-	  // Function tryes to load icon image from theme dir
-	  // If it fails -> load default from rsource file
-	  QIcon icon;
-	  if ((!this->themeName.isEmpty()) and (this->themeName!="Default")){
-			icon.addFile(QString("%1/%2").arg(this->themeName).arg(iconName));
-			if (icon.isNull()){
-				  icon.addFile(QString(":/%1").arg(iconName));
-			}
-	  } else {
-			icon.addFile(QString(":/%1").arg(iconName));
-	  }
-	  return icon;
 }
 
 void IconListWidget::iconAdd_Click(void){

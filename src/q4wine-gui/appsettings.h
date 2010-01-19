@@ -50,15 +50,13 @@ class AppSettings : public QDialog, public Ui::AppSettings
 		void getThemes(QString selTheme, QString themeDir);
 		void getLangs();
 		bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
-		void loadThemeIcons(QString themePath);
-		QIcon loadIcon(QString iconName, QString themePath);
+		void loadThemeIcons();
 
 		//! This is need for libq4wine-core.so import.
 		QLibrary libq4wine;
 		typedef void *CoreLibPrototype (bool);
 		CoreLibPrototype *CoreLibClassPointer;
 		std::auto_ptr<corelib> CoreLib;
-
 };
 
 #endif

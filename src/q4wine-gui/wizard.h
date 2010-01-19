@@ -138,10 +138,7 @@ class Wizard : public QDialog, public Ui::Wizard
 		QString var1;
 
 		//! \brief Load icon themes.
-		void loadThemeIcons(QString themePath, int Scene);
-
-		//! \brief Load icon themes.
-		QIcon loadIcon(QString iconName, QString themePath);
+		void loadThemeIcons(int Scene);
 };
 
 #endif

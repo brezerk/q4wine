@@ -125,6 +125,11 @@ public:
 	 */
 	QVariant getSetting(const QString group, const QString key, const bool checkExist = TRUE, const QVariant defaultVal = QVariant()) const;
 
+	void checkSettings(void);
+
+	QIcon loadIcon(QString iconName);
+	QPixmap loadPixmap(QString pixmapName);
+
 	/*! \brief This function get cdrom devices from /etc/fstab file.
 	 *
 	 * \return Return an list of cdrom devices.

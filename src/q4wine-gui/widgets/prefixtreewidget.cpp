@@ -19,7 +19,7 @@
 
 #include "prefixtreewidget.h"
 
-PrefixTreeWidget::PrefixTreeWidget(QString themeName, QWidget *parent) :
+PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) :
 	  QTreeWidget(parent)
 {
 	  // Loading libq4wine-core.so
@@ -37,7 +37,6 @@ PrefixTreeWidget::PrefixTreeWidget(QString themeName, QWidget *parent) :
 
 	  connect(this, SIGNAL(itemClicked (QTreeWidgetItem *, int)), this, SLOT(itemClicked (QTreeWidgetItem *, int)));
 
-	  this->themeName=themeName;
 	  this->dirName="";
 	  this->prefixName="";
 	  this->prefixMontPoint="";
@@ -113,7 +112,7 @@ void PrefixTreeWidget::dirAdd_Click(void){
 			}
 			std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem->parent()));
 			prefixItem->setText(0, dirname);
-			prefixItem->setIcon(0, loadIcon("data/folder.png"));
+			prefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
 			prefixItem.release();
 	  }
 	  treeItem.release();
@@ -176,7 +175,7 @@ void PrefixTreeWidget::getPrefixes(){
 			// Inserting root items into programs tree view
 			std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(this));
 			prefixItem->setText(0, QString("%1").arg(result.at(i).at(1)));
-			prefixItem->setIcon(0, loadIcon("data/wine.png"));
+			prefixItem->setIcon(0, CoreLib->loadIcon("data/wine.png"));
 			prefixItem->setExpanded (TRUE);
 			this->addTopLevelItem(prefixItem.get());
 
@@ -185,7 +184,7 @@ void PrefixTreeWidget::getPrefixes(){
 			for (int j = 0; j < subresult.size(); ++j) {
 				  std::auto_ptr<QTreeWidgetItem> subPrefixItem (new QTreeWidgetItem(prefixItem.get(), 0));
 				  subPrefixItem->setText(0, QString("%1").arg(subresult.at(j).at(1)));
-				  subPrefixItem->setIcon(0, loadIcon("data/folder.png"));
+				  subPrefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
 				  subPrefixItem.release();
 			}
 			prefixItem.release();
@@ -209,11 +208,11 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 			std::auto_ptr<QAction> entry;
 
 			if (this->prefixMediaDrive.isEmpty()){
-				  entry.reset (new QAction(loadIcon("/data/drive_menu.png"), tr("[none]"), this));
+				  entry.reset (new QAction(CoreLib->loadIcon("/data/drive_menu.png"), tr("[none]"), this));
 				  entry->setStatusTip(tr("No media was set in prefix settings."));
 				  submenuMount->addAction(entry.release());
 			} else {
-				  entry.reset (new QAction(loadIcon("/data/drive_menu.png"), this->prefixMediaDrive, this));
+				  entry.reset (new QAction(CoreLib->loadIcon("/data/drive_menu.png"), this->prefixMediaDrive, this));
 				  entry->setStatusTip(tr("Mount media drive."));
 				  submenuMount->addAction(entry.release());
 			}
@@ -224,7 +223,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 				  submenuMount->addSeparator();
 
 			for (int i = 0; i < images.size(); ++i) {
-				  entry.reset (new QAction(loadIcon("/data/cdrom_menu.png"), images.at(i).at(0), this));
+				  entry.reset (new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"), images.at(i).at(0), this));
 				  entry->setStatusTip(tr("Mount media image."));
 				  submenuMount->addAction(entry.release());
 			}
@@ -235,7 +234,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 
 			submenuMount.reset (new QMenu(tr("Mount ..."), this));
 
-			entry.reset (new QAction(loadIcon("/data/folder.png"), tr("Browse..."), this));
+			entry.reset (new QAction(CoreLib->loadIcon("/data/folder.png"), tr("Browse..."), this));
 			entry->setStatusTip(tr("Browse for media image."));
 			submenuMount->addAction(entry.release());
 
@@ -245,7 +244,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 				  submenuMount->addSeparator();
 
 			for (int i = 0; i < files.size(); ++i){
-				  entry.reset (new QAction(loadIcon("/data/cdrom_menu.png"),files.at(i).split("/").last(), this));
+				  entry.reset (new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"),files.at(i).split("/").last(), this));
 				  entry->setStatusTip(files.at(i));
 				  submenuMount->addAction(entry.release());
 			}
@@ -264,7 +263,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 	  // Default menu
 			std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
 
-			std::auto_ptr<QAction> entry (new QAction(loadIcon("data/folder.png"), tr("Browse ..."), this));
+			std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("data/folder.png"), tr("Browse ..."), this));
 			entry->setStatusTip(tr("Browse for other image"));
 
 			connect(menuRun.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
@@ -342,21 +341,6 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 
 	  menu->exec(QCursor::pos());
 	  return;
-}
-
-QIcon PrefixTreeWidget::loadIcon(QString iconName){
-	  // Function tryes to load icon image from theme dir
-	  // If it fails -> load default from rsource file
-	  QIcon icon;
-	  if ((!this->themeName.isEmpty()) and (this->themeName!="Default")){
-			icon.addFile(QString("%1/%2").arg(this->themeName).arg(iconName));
-			if (icon.isNull()){
-				  icon.addFile(QString(":/%1").arg(iconName));
-			}
-	  } else {
-			icon.addFile(QString(":/%1").arg(iconName));
-	  }
-	  return icon;
 }
 
 void PrefixTreeWidget::menuRun_triggered(QAction* action){

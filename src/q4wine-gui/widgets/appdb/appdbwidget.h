@@ -48,7 +48,7 @@ class AppDBWidget : public QWidget
 {
 Q_OBJECT
 public:
-	explicit AppDBWidget(QString themeName, QWidget *parent = 0);
+	explicit AppDBWidget(QWidget *parent = 0);
 
 public slots:
 	void itemTrigged(short int action, QString search="", int val1=0, int val2=0, int val3=0);
@@ -60,7 +60,6 @@ private:
 	//! Functions
 	void showXmlError(int id);
 	void createActions(void);
-	QIcon loadIcon(QString iconName);
 
 	//! AppDB core clases
 	std::auto_ptr<XmlParser> xmlparser;
@@ -82,7 +81,7 @@ private:
 	std::auto_ptr<QLineEdit> searchField;
 
 	//! State variables
-	QString search, themeName;
+	QString search;
 	short int action;
 	int appid;
 	int catid;

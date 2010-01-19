@@ -73,11 +73,9 @@ class ImageManager : public QDialog, public Ui::ImageManager
 
 	private:
 		//! Loading theme icons
-		void loadThemeIcons(QString themePath);
+		void loadThemeIcons();
 		//! Creating menus
 		void createMenus(void);
-		//! Load icons
-		QIcon loadIcon(QString iconName, QString themePath);
 		//! Getting CD images list
 		void getCDImages(void);
 

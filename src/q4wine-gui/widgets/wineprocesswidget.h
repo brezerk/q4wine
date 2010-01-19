@@ -48,7 +48,7 @@ class WineProcessWidget : public QWidget
 {
 Q_OBJECT
 public:
-	explicit WineProcessWidget(QString themeName, QWidget *parent = 0);
+	explicit WineProcessWidget(QWidget *parent = 0);
 
 signals:
 	void changeStatusText(QString);
@@ -58,8 +58,6 @@ public slots:
 	void startTimer(void);
 
 private:
-	QString themeName;
-
 	std::auto_ptr<QTimer> timer;
 	std::auto_ptr<QStandardItemModel> model;
 
@@ -70,7 +68,6 @@ private:
 	std::auto_ptr<corelib> CoreLib;
 
 	void createActions();
-	QIcon loadIcon(QString iconName);
 
 	std::auto_ptr<QTableView> procTable;
 	std::auto_ptr<QLabel> lblInfo;

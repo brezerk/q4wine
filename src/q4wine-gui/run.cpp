@@ -34,7 +34,7 @@ Run::Run(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-	loadThemeIcons(CoreLib->getSetting("app", "theme", false).toString());
+	loadThemeIcons();
 
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
@@ -110,40 +110,13 @@ void Run::prepare(QString prefix_name, QString wrkdir, QString override, QString
 	return;
 }
 
-void Run::loadThemeIcons(QString themePath){
-	QPixmap pixmap;
+void Run::loadThemeIcons(){
+	lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
 
-	if (!pixmap.load(QString("%1/data/exec.png").arg(themePath))){
-		pixmap.load(":data/exec.png");
-	}
-
-	lblLogo->setPixmap(pixmap);
-
-	cmdGetProgramBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetWorkDir->setIcon(loadIcon("data/folder.png", themePath));
-
+	cmdGetProgramBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetWorkDir->setIcon(CoreLib->loadIcon("data/folder.png"));
 	return;
 }
-
-
-QIcon Run::loadIcon(QString iconName, QString themePath){
-	// Function tryes to load icon image from theme dir
-	// If it fails -> load default from rsource file
-
-	QIcon icon;
-
-	if ((!themePath.isEmpty()) and (themePath!="Default")){
-		icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
-		if (icon.isNull()){
-			icon.addFile(QString(":/%1").arg(iconName));
-		}
-	} else {
-		icon.addFile(QString(":/%1").arg(iconName));
-	}
-
-	return icon;
-}
-
 
 void Run::cmdCancel_Click(){
 	reject();

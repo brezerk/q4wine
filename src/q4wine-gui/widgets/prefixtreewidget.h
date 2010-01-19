@@ -51,15 +51,13 @@ class PrefixTreeWidget : public QTreeWidget
 {
 Q_OBJECT
 public:
-	  explicit PrefixTreeWidget(QString themeName, QWidget *parent = 0);
+	  explicit PrefixTreeWidget(QWidget *parent = 0);
 	  ~PrefixTreeWidget();
 
 private:
 	  void contextMenuEvent(QContextMenuEvent *event);
 
-	  QIcon loadIcon(QString iconName);
-
-	  QString themeName, prefixName, dirName, prefixMediaDrive, prefixMontPoint;
+	  QString prefixName, dirName, prefixMediaDrive, prefixMontPoint;
 
 	  //! This is need for libq4wine-core.so import.
 	  QLibrary libq4wine;
@@ -88,8 +86,6 @@ private slots:
 
 	  void winefileOpenPrefixDir_Click(void);
 	  void winefileOpenMountDir_Click(void);
-
-
 
 signals:
 	  void showFolderContents(QString, QString);

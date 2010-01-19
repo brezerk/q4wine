@@ -34,7 +34,7 @@ ImageManager::ImageManager(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-	loadThemeIcons(CoreLib->getSetting("app", "theme", false).toString());
+	loadThemeIcons();
 
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
@@ -132,32 +132,27 @@ void ImageManager::getCDImages(void){
 	return;
 }
 
-void ImageManager::loadThemeIcons(QString themePath){
-	QPixmap pixmap;
+void ImageManager::loadThemeIcons(){
 
-	if (!pixmap.load(tr("%1/data/iso_manager.png").arg(themePath))){
-		pixmap.load(":data/iso_manager.png");
-	}
-
-	lblLogo->setPixmap(pixmap);
+	lblLogo->setPixmap(CoreLib->loadPixmap("data/iso_manager.png"));
 
 	std::auto_ptr<QToolBar> managerToolBar (new QToolBar(tlbManager));
 
 
-	actionAdd.reset(managerToolBar->addAction (loadIcon("data/add.png", themePath), tr("Add image")));
+	actionAdd.reset(managerToolBar->addAction (CoreLib->loadIcon("data/add.png"), tr("Add image")));
 	connect(actionAdd.get(), SIGNAL(triggered()), this, SLOT(actionAddImage()));
 
-	actionRename.reset(managerToolBar->addAction (loadIcon("data/configure.png", themePath), tr("Rename image")));
+	actionRename.reset(managerToolBar->addAction (CoreLib->loadIcon("data/configure.png"), tr("Rename image")));
 	connect(actionRename.get(), SIGNAL(triggered()), this, SLOT(actionRenameImage()));
 
 	managerToolBar->addSeparator ();
 
-	actionRemove.reset(managerToolBar->addAction (loadIcon("data/remove.png", themePath), tr("Remove image")));
+	actionRemove.reset(managerToolBar->addAction (CoreLib->loadIcon("data/remove.png"), tr("Remove image")));
 	connect(actionRemove.get(), SIGNAL(triggered()), this, SLOT(actionRemoveImage()));
 
 	managerToolBar->addSeparator ();
 
-	actionRefresh.reset(managerToolBar->addAction (loadIcon("data/reload.png", themePath), tr("Refresh image list")));
+	actionRefresh.reset(managerToolBar->addAction (CoreLib->loadIcon("data/reload.png"), tr("Refresh image list")));
 	connect(actionRefresh.get(), SIGNAL(triggered()), this, SLOT(actionRefreshImageList()));
 
 	std::auto_ptr<QBoxLayout> layout (new QBoxLayout(QBoxLayout::TopToBottom));
@@ -236,21 +231,6 @@ void ImageManager::actionRemoveImage(){
 void ImageManager::actionRefreshImageList(){
 	getCDImages();
 	return;
-}
-
-QIcon ImageManager::loadIcon(QString iconName, QString themePath){
-	// Function tryes to load icon image from theme dir
-	// If it fails -> load default from rsource file
-	QIcon icon;
-	if ((!themePath.isEmpty()) and (themePath!="Default")){
-		icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
-		if (icon.isNull()){
-			icon.addFile(QString(":/%1").arg(iconName));
-		}
-	} else {
-		icon.addFile(QString(":/%1").arg(iconName));
-	}
-	return icon;
 }
 
 void ImageManager::cmdHelp_Click(){

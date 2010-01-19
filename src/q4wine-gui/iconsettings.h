@@ -109,8 +109,7 @@ class IconSettings : public QDialog, public Ui::IconSettings
 		void resizeEvent (QResizeEvent);
 		bool eventFilter (QObject *object, QEvent *event);
 
-		void loadThemeIcons(QString themePath);
-		QIcon loadIcon(QString iconName, QString themePath);
+		void loadThemeIcons();
 
 		//! Side bar URLs list.
 		QList<QUrl> prefix_urls;

@@ -95,7 +95,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
 	getThemes(settings.value("theme").toString(), themeDir);
 
-	loadThemeIcons(settings.value("theme").toString());
+	loadThemeIcons();
 
 	if (settings.value("theme").toString()=="Default"){
 		listThemesView->setCurrentItem(iconItem.release());
@@ -134,8 +134,6 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	txtConsoleBin->setText(settings.value("bin").toString());
 	txtConsoleArgs->setText(settings.value("args").toString());
 	settings.endGroup();
-
-
 
 	settings.beginGroup("quickmount");
 
@@ -312,7 +310,7 @@ void AppSettings::getThemes(QString selTheme, QString themeDir){
 				//Setting selection to selected theme
 				listThemesView->setCurrentItem(iconItem.release());
 				//Loading pixmaps from theme
-				loadThemeIcons(fileInfo.filePath());
+				//loadThemeIcons(fileInfo.filePath());
 			}
 		}
 	}
@@ -321,52 +319,27 @@ void AppSettings::getThemes(QString selTheme, QString themeDir){
 }
 
 
-void AppSettings::loadThemeIcons(QString themePath){
-	QPixmap pixmap;
+void AppSettings::loadThemeIcons(){
+	lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
 
-	if (!pixmap.load(QString("%1/data/exec.png").arg(themePath))){
-		pixmap.load(":data/exec.png");
-	}
+	cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetWineLibs->setIcon(CoreLib->loadIcon("data/folder.png"));
 
-	lblLogo->setPixmap(pixmap);
+	cmdGetTarBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetMountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetUmountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetSudoBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetGuiSudoBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetNiceBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetReniceBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetShBin->setIcon(CoreLib->loadIcon("data/folder.png"));
 
-	cmdGetWineBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetWineServerBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetWineLoaderBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetWineLibs->setIcon(loadIcon("data/folder.png", themePath));
-
-	cmdGetTarBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetMountBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetUmountBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetSudoBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetGuiSudoBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetNiceBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetReniceBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetShBin->setIcon(loadIcon("data/folder.png", themePath));
-
-	cmdGetConsoleBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetWrestoolBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetIcotoolBin->setIcon(loadIcon("data/folder.png", themePath));
+	cmdGetConsoleBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetWrestoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetIcotoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
 	return;
-}
-
-
-QIcon AppSettings::loadIcon(QString iconName, QString themePath){
-	// Function tryes to load icon image from theme dir
-	// If it fails -> load default from rsource file
-
-	QIcon icon;
-
-	if ((!themePath.isEmpty()) and (themePath!="Default")){
-		icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
-		if (icon.isNull()){
-			icon.addFile(QString(":/%1").arg(iconName));
-		}
-	} else {
-		icon.addFile(QString(":/%1").arg(iconName));
-	}
-
-	return icon;
 }
 
 void AppSettings::cmdCancel_Click(){

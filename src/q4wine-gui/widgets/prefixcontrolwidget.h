@@ -54,7 +54,7 @@ class PrefixControlWidget : public QWidget
 {
 Q_OBJECT
 public:
-	explicit PrefixControlWidget(QString themeName, QWidget *parent = 0);
+	explicit PrefixControlWidget(QWidget *parent = 0);
 
 signals:
 
@@ -62,8 +62,6 @@ public slots:
 	void setDefaultFocus(QString prefixName);
 
 private:
-	QString themeName;
-
 	//! This is need for libq4wine-core.so import.
 	QLibrary libq4wine;
 	typedef void *CoreLibPrototype (bool);
@@ -71,7 +69,6 @@ private:
 	std::auto_ptr<corelib> CoreLib;
 
 	void createActions();
-	QIcon loadIcon(QString iconName);
 
 	std::auto_ptr<QSqlQueryModel> model;
 

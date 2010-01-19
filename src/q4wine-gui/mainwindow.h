@@ -159,11 +159,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		// Events
 		void closeEvent(QCloseEvent *event);
 
-		//Resource\theme loader
-		//FIXME: Move to corelib
-		QIcon loadIcon(QString iconName);
-
-		QString THEME_NAME;
 };
 
 #endif

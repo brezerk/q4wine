@@ -19,7 +19,7 @@
 
 #include "appdbwidget.h"
 
-AppDBWidget::AppDBWidget(QString themeName, QWidget *parent) : QWidget(parent)
+AppDBWidget::AppDBWidget(QWidget *parent) : QWidget(parent)
 {
 
 	// Loading libq4wine-core.so
@@ -37,7 +37,6 @@ AppDBWidget::AppDBWidget(QString themeName, QWidget *parent) : QWidget(parent)
 	xmlparser.reset(new XmlParser());
 	httpcore.reset(new HttpCore());
 
-	this->themeName=themeName;
 	//Init delay timer
 	timer.reset(new QTimer(this));
 
@@ -268,48 +267,33 @@ void AppDBWidget::showXmlError(int id){
 }
 
 void AppDBWidget::createActions(void){
-	appdbOpen.reset(new QAction(loadIcon("data/wineappdb.png"), tr("Open AppDB"), this));
+	appdbOpen.reset(new QAction(CoreLib->loadIcon("data/wineappdb.png"), tr("Open AppDB"), this));
 	appdbOpen->setStatusTip(tr("Open Wine AppDB web site"));
 	connect(appdbOpen.get(), SIGNAL(triggered()), this, SLOT(appdbOpen_Click()));
 
-	appdbAppPage.reset(new QAction(loadIcon("data/wineappdb-app.png"), tr("Open App page"), this));
+	appdbAppPage.reset(new QAction(CoreLib->loadIcon("data/wineappdb-app.png"), tr("Open App page"), this));
 	appdbAppPage->setStatusTip(tr("Open current application page at Wine AppDB web site"));
 	appdbAppPage->setEnabled(false);
 	connect(appdbAppPage.get(), SIGNAL(triggered()), this, SLOT(appdbAppPage_Click()));
 
-	appdbClear.reset(new QAction(loadIcon("data/clear-list.png"), tr("Clear results"),this));
+	appdbClear.reset(new QAction(CoreLib->loadIcon("data/clear-list.png"), tr("Clear results"),this));
 	appdbClear->setStatusTip(tr("Clear results"));
 	appdbClear->setEnabled(false);
 	connect(appdbClear.get(), SIGNAL(triggered()), this, SLOT(appdbClear_Click()));
 
-	appdbClearSearch.reset(new QAction(loadIcon("data/clear-ltr.png"), tr("Clear search field"),this));
+	appdbClearSearch.reset(new QAction(CoreLib->loadIcon("data/clear-ltr.png"), tr("Clear search field"),this));
 	appdbClearSearch->setStatusTip(tr("Clear search field"));
 	connect(appdbClearSearch.get(), SIGNAL(triggered()), this, SLOT(appdbClearSearch_Click()));
 
-	appdbSearch.reset(new QAction(loadIcon("data/find.png"), tr("Search in appdb"),this));
+	appdbSearch.reset(new QAction(CoreLib->loadIcon("data/find.png"), tr("Search in appdb"),this));
 	appdbSearch->setStatusTip(tr("Search in wine appdb"));
 	connect(appdbSearch.get(), SIGNAL(triggered()), this, SLOT(appdbSearch_Click()));
 
-	appdbCat.reset(new QAction(loadIcon("data/list.png"), tr("Appdb categoryes list"),this));
+	appdbCat.reset(new QAction(CoreLib->loadIcon("data/list.png"), tr("Appdb categoryes list"),this));
 	appdbCat->setStatusTip(tr("View wine appdb categoryes list"));
 	connect(appdbCat.get(), SIGNAL(triggered()), this, SLOT(appdbCat_Click()));
 
 	return;
-}
-
-QIcon AppDBWidget::loadIcon(QString iconName){
-	  // Function tryes to load icon image from theme dir
-	  // If it fails -> load default from rsource file
-	  QIcon icon;
-	  if ((!this->themeName.isEmpty()) and (this->themeName!="Default")){
-			icon.addFile(QString("%1/%2").arg(this->themeName).arg(iconName));
-			if (icon.isNull()){
-				  icon.addFile(QString(":/%1").arg(iconName));
-			}
-	  } else {
-			icon.addFile(QString(":/%1").arg(iconName));
-	  }
-	  return icon;
 }
 
 void AppDBWidget::requestError(QString error){

@@ -226,6 +226,93 @@ QVariant corelib::getSetting(const QString group, const QString key, const bool 
 	  return retVal;
 }
 
+void corelib::checkSettings(){
+	/*
+	 * Getting application settings
+	 */
+
+	this->getSetting("system", "tar");
+	this->getSetting("system", "mount");
+	this->getSetting("system", "umount");
+	this->getSetting("system", "sudo");
+	this->getSetting("system", "gui_sudo");
+	this->getSetting("system", "nice");
+	this->getSetting("system", "renice");
+	this->getSetting("system", "sh");
+	this->getSetting("console", "bin");
+	this->getSetting("console", "args", false);
+
+#ifdef WITH_ICOUTILS
+	this->getSetting("icotool", "wrestool");
+	this->getSetting("icotool", "icotool");
+#endif
+
+	if (this->getSetting("quickmount", "type", FALSE).toString().isEmpty()){
+		QSettings settings(APP_SHORT_NAME, "default");
+		settings.beginGroup("quickmount");
+
+		if (this->getWhichOut("fuseiso", false).isEmpty()){
+#ifdef WITH_EMBEDDED_FUSEISO
+			settings.setValue("type", 3);
+			settings.setValue("mount_drive_string", this->getMountString(3));
+			settings.setValue("mount_image_string", this->getMountImageString(3));
+			settings.setValue("umount_string", this->getUmountString(3));
+#else
+			settings.setValue("type", 0);
+			settings.setValue("mount_drive_string", this->getMountString(0));
+			settings.setValue("mount_image_string", this->getMountImageString(0));
+			settings.setValue("umount_string", this->getUmountString(0));
+#endif
+		} else {
+			settings.setValue("type", 2);
+			settings.setValue("mount_drive_string", this->getMountString(2));
+			settings.setValue("mount_image_string", this->getMountImageString(2));
+			settings.setValue("umount_string", this->getUmountString(2));
+		}
+		settings.endGroup();
+	}
+
+	return;
+}
+
+QIcon corelib::loadIcon(QString iconName){
+	// Function tryes to load icon image from theme dir
+	// If it fails -> load default from rsource file
+
+	QIcon icon;
+	QString themeName = this->getSetting("app", "theme", false, "Default").toString();
+
+	if ((!themeName.isEmpty()) and (themeName!="Default")){
+		icon.addFile(QString("%1/%2").arg(themeName).arg(iconName));
+		if (icon.isNull()){
+			icon.addFile(QString(":/%1").arg(iconName));
+		}
+	} else {
+		icon.addFile(QString(":/%1").arg(iconName));
+	}
+
+	return icon;
+}
+
+QPixmap corelib::loadPixmap(QString iconName){
+	// Function tryes to load icon image from theme dir
+	// If it fails -> load default from rsource file
+
+	QPixmap pixmap;
+	QString themeName = this->getSetting("app", "theme", false, "Default").toString();
+
+	if ((!themeName.isEmpty()) and (themeName!="Default")){
+		pixmap.load(QString("%1/%2").arg(themeName).arg(iconName));
+		if (pixmap.isNull()){
+			pixmap.load(QString(":/%1").arg(iconName));
+		}
+	} else {
+		pixmap.load(QString(":/%1").arg(iconName));
+	}
+
+	return pixmap;
+}
+
 QStringList corelib::getCdromDevices(void) const{
 	  QStringList retVal;
 

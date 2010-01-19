@@ -19,7 +19,7 @@
 
 #include "prefixcontrolwidget.h"
 
-PrefixControlWidget::PrefixControlWidget(QString themeName, QWidget *parent) :
+PrefixControlWidget::PrefixControlWidget(QWidget *parent) :
 	QWidget(parent)
 {
 	// Loading libq4wine-core.so
@@ -33,7 +33,6 @@ PrefixControlWidget::PrefixControlWidget(QString themeName, QWidget *parent) :
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-	this->themeName=themeName;
 	this->createActions();
 
 	std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
@@ -93,26 +92,26 @@ void PrefixControlWidget::setDefaultFocus(QString prefixName){
 }
 
 void PrefixControlWidget::createActions(){
-	prefixAdd.reset(new QAction(loadIcon("data/wizard.png"), tr("Create new"), this));
+	prefixAdd.reset(new QAction(CoreLib->loadIcon("data/wizard.png"), tr("Create new"), this));
 	prefixAdd->setStatusTip(tr("Create new prefix"));
 	connect(prefixAdd.get(), SIGNAL(triggered()), this, SLOT(prefixAdd_Click()));
 
-	prefixImport.reset(new QAction(loadIcon("data/down.png"), tr("Import prefix"), this));
+	prefixImport.reset(new QAction(CoreLib->loadIcon("data/down.png"), tr("Import prefix"), this));
 	prefixImport->setStatusTip(tr("Import prefix"));
 	connect(prefixImport.get(), SIGNAL(triggered()), this, SLOT(prefixImport_Click()));
 	prefixImport->setEnabled(FALSE);
 
-	prefixExport.reset(new QAction(loadIcon("data/up.png"), tr("Export prefix"), this));
+	prefixExport.reset(new QAction(CoreLib->loadIcon("data/up.png"), tr("Export prefix"), this));
 	prefixExport->setStatusTip(tr("Export prefix"));
 	connect(prefixExport.get(), SIGNAL(triggered()), this, SLOT(prefixExport_Click()));
 	prefixExport->setEnabled(FALSE);
 
-	prefixDelete.reset(new QAction(loadIcon("data/kill.png"), tr("Delete prefix"), this));
+	prefixDelete.reset(new QAction(CoreLib->loadIcon("data/kill.png"), tr("Delete prefix"), this));
 	prefixDelete->setStatusTip(tr("Delete prefix"));
 	connect(prefixDelete.get(), SIGNAL(triggered()), this, SLOT(prefixDelete_Click()));
 	prefixDelete->setEnabled(FALSE);
 
-	prefixSettings.reset(new QAction(loadIcon("data/configure.png"), tr("Edit prefix settings"), this));
+	prefixSettings.reset(new QAction(CoreLib->loadIcon("data/configure.png"), tr("Edit prefix settings"), this));
 	prefixSettings->setStatusTip(tr("Edit prefix settings"));
 	connect(prefixSettings.get(), SIGNAL(triggered()), this, SLOT(prefixSettings_Click()));
 	prefixSettings->setEnabled(FALSE);
@@ -128,21 +127,6 @@ void PrefixControlWidget::createActions(){
 	menu->addAction(prefixSettings.get());
 
 	return;
-}
-
-QIcon PrefixControlWidget::loadIcon(QString iconName){
-	  // Function tryes to load icon image from theme dir
-	  // If it fails -> load default from rsource file
-	  QIcon icon;
-	  if ((!this->themeName.isEmpty()) and (this->themeName!="Default")){
-			icon.addFile(QString("%1/%2").arg(this->themeName).arg(iconName));
-			if (icon.isNull()){
-				  icon.addFile(QString(":/%1").arg(iconName));
-			}
-	  } else {
-			icon.addFile(QString(":/%1").arg(iconName));
-	  }
-	  return icon;
 }
 
 void PrefixControlWidget::customContextMenuRequested(const QPoint &pos){

@@ -62,14 +62,7 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
 		 *
 		 * \param themePath is a path to user selected theme ;)
 		 */
-		void loadThemeIcons(QString themePath);
-
-		/*! \brief This function returns load theme image item by user selected theme
-		 *
-		 * \param iconName icon name
-		 * \param themePath is a path to user selected theme ;)
-		 */
-		QIcon loadIcon(QString iconName, QString themePath);
+		void loadThemeIcons();
 
 		/*!
 		 * Prefix id, and name

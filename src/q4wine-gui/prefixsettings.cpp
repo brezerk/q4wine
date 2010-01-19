@@ -38,7 +38,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-	this->loadThemeIcons(this->CoreLib->getSetting("app", "theme", false).toString());
+	this->loadThemeIcons();
 
 	QStringList result = db_prefix.getFieldsByPrefixName(prefix_name);
 	if (result.at(0) == "-1")
@@ -93,42 +93,16 @@ QString PrefixSettings::getPrefixName(){
 	return txtPrefixName->text();
 }
 
-void PrefixSettings::loadThemeIcons(QString themePath){
-	QPixmap pixmap;
+void PrefixSettings::loadThemeIcons(){
+	lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
 
-	if (!pixmap.load(QString("%1/data/exec.png").arg(themePath))){
-		pixmap.load(":data/exec.png");
-	}
-
-	lblLogo->setPixmap(pixmap);
-
-	cmdGetWineBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetWineServerBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetWineLoaderBin->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetWineLibs->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetMountPoint->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetPrefixPath->setIcon(loadIcon("data/folder.png", themePath));
-
+	cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetWineLibs->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetMountPoint->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetPrefixPath->setIcon(CoreLib->loadIcon("data/folder.png"));
 	return;
-}
-
-
-QIcon PrefixSettings::loadIcon(QString iconName, QString themePath){
-	// Function tryes to load icon image from theme dir
-	// If it fails -> load default from resource file
-
-	QIcon icon;
-
-	if ((!themePath.isEmpty()) and (themePath!="Default")){
-		icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
-		if (icon.isNull()){
-			icon.addFile(QString(":/%1").arg(iconName));
-		}
-	} else {
-		icon.addFile(QString(":/%1").arg(iconName));
-	}
-
-	return icon;
 }
 
 void PrefixSettings::cmdCancel_Click(){

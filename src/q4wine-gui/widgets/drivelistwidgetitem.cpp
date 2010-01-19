@@ -19,11 +19,20 @@
 
 #include "drivelistwidgetitem.h"
 
-DriveListWidgetItem::DriveListWidgetItem(QString themeName, QListWidget *parent, int type): QObject( parent), QListWidgetItem(parent, type)
+DriveListWidgetItem::DriveListWidgetItem(QListWidget *parent, int type): QObject( parent), QListWidgetItem(parent, type)
 {
-	this->themeName=themeName;
-}
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
 
+	if (!libq4wine.load()){
+		  libq4wine.load();
+	}
+
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib.reset((corelib *)CoreLibClassPointer(true));
+	return;
+}
 
 void DriveListWidgetItem::setDrive(QString letter, QString path, QString type){
 	this->letter=letter;
@@ -34,7 +43,7 @@ void DriveListWidgetItem::setDrive(QString letter, QString path, QString type){
 		this->type=type;
 	}
 	this->setText(QString("%1 %2\nType: %3").arg(letter).arg(path).arg(this->type));
-	this->setIcon(loadIcon(this->getDrivePic(type)));
+	this->setIcon(CoreLib->loadIcon(this->getDrivePic(type)));
 	return;
 }
 
@@ -69,19 +78,3 @@ QString DriveListWidgetItem::getDrivePic(QString driveType){
 	}
 	return pic;
 }
-
-QIcon DriveListWidgetItem::loadIcon(QString iconName){
-	  // Function tryes to load icon image from theme dir
-	  // If it fails -> load default from rsource file
-	  QIcon icon;
-	  if ((!this->themeName.isEmpty()) and (this->themeName!="Default")){
-			icon.addFile(QString("%1/%2").arg(this->themeName).arg(iconName));
-			if (icon.isNull()){
-				  icon.addFile(QString(":/%1").arg(iconName));
-			}
-	  } else {
-			icon.addFile(QString(":/%1").arg(iconName));
-	  }
-	  return icon;
-}
-

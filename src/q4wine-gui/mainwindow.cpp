@@ -49,14 +49,14 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	toolbar->addWidget(label.release());
 	toolbar->addWidget(cbPrefixes.get());
 
-	std::auto_ptr<QAction> action (new QAction(loadIcon("data/configure.png"), tr("Manage prefixes"), this));
+	std::auto_ptr<QAction> action (new QAction(CoreLib->loadIcon("data/configure.png"), tr("Manage prefixes"), this));
 	action->setStatusTip(tr("Manage prefixes"));
 	connect(action.get(), SIGNAL(triggered()), this, SLOT(prefixManage_Click()));
 
 	toolbar->addAction(action.release());
 	toolbar->addSeparator();
 
-	action.reset(new QAction(loadIcon("data/regedit.png"), tr("Run winetriks"), this));
+	action.reset(new QAction(CoreLib->loadIcon("data/regedit.png"), tr("Run winetriks"), this));
 	action->setStatusTip(tr("Run winetriks utility created by DanKegel"));
 	connect(action.get(), SIGNAL(triggered()), this, SLOT(prefixRunWinetriks_Click()));
 
@@ -71,13 +71,13 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 
 	frame->setAutoFillBackground(true);
 
-	std::auto_ptr<IconListWidget> lstIcons (new IconListWidget(THEME_NAME, tabPrograms));
+	std::auto_ptr<IconListWidget> lstIcons (new IconListWidget(tabPrograms));
 	connect(lstIcons.get(), SIGNAL(iconItemClick(QString, QString, QString, QString, QString)), this, SLOT(updateIconDesc(QString, QString, QString, QString, QString)));
 	connect(lstIcons.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
 	connect(txtIconFilter, SIGNAL(textChanged(QString)), lstIcons.get(), SLOT(setFilterString(QString)));
 	connect(lstIcons.get(), SIGNAL(searchRequest(QString)), this, SLOT(searchRequest(QString)));
 
-	std::auto_ptr<PrefixTreeWidget> twPrograms (new PrefixTreeWidget(THEME_NAME, tabPrograms));
+	std::auto_ptr<PrefixTreeWidget> twPrograms (new PrefixTreeWidget(tabPrograms));
 	connect(this, SIGNAL(updateDatabaseConnections()), twPrograms.get(), SLOT(getPrefixes()));
 	connect(twPrograms.get(), SIGNAL(showFolderContents(QString, QString)), lstIcons.get(), SLOT(showFolderContents(QString, QString)));
 	connect(twPrograms.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
@@ -85,13 +85,13 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	connect(cbPrefixes.get(), SIGNAL(currentIndexChanged(QString)), twPrograms.get(), SLOT(setDefaultFocus(QString)));
 	connect(twPrograms.get(), SIGNAL(prefixIndexChanged(QString)), this, SLOT(setcbPrefixesIndex(QString)));
 
-	std::auto_ptr<WineProcessWidget> procWidget (new WineProcessWidget(THEME_NAME, tabProcess));
+	std::auto_ptr<WineProcessWidget> procWidget (new WineProcessWidget(tabProcess));
 	connect(this, SIGNAL(stopProcTimer()), procWidget.get(), SLOT(stopTimer()));
 	connect(this, SIGNAL(startProcTimer()), procWidget.get(), SLOT(startTimer()));
 	connect(procWidget.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
 	tabProcessLayout->addWidget(procWidget.release());
 
-	std::auto_ptr<PrefixControlWidget> prefixWidget (new PrefixControlWidget(THEME_NAME, tabPrefix));
+	std::auto_ptr<PrefixControlWidget> prefixWidget (new PrefixControlWidget(tabPrefix));
 	connect(prefixWidget.get(), SIGNAL(updateDatabaseConnections()), twPrograms.get(), SLOT(getPrefixes()));
 	connect(prefixWidget.get(), SIGNAL(updateDatabaseConnections()), this, SLOT(updateDtabaseConnectedItems()));
 	connect(cbPrefixes.get(), SIGNAL(currentIndexChanged(QString)), prefixWidget.get(), SLOT(setDefaultFocus(QString)));
@@ -148,7 +148,6 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
 	connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
 
-	// FIXME: Move this into shared libaray
 	CoreLib->runAutostart();
 
 #ifndef WITH_ICOUTILS
@@ -161,7 +160,7 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 #else
 	connect(mainAppDB, SIGNAL(triggered()), this, SLOT(mainAppDB_Click()));
 	// Creating AppDBScrollWidget and place it into frameAppDBWidget layout
-	appdbWidget.reset(new AppDBWidget(THEME_NAME));
+	appdbWidget.reset(new AppDBWidget(this));
 	connect (this, SIGNAL(appdbWidget_startSearch(short int, QString)), appdbWidget.get(), SLOT(itemTrigged(short int, QString)));
 	tabAppDBLayout->addWidget(appdbWidget.release());
 #endif
@@ -264,65 +263,7 @@ void MainWindow::getSettings(){
 		trayIcon->hide();
 	}
 
-	/* Check for settiings
-	val = CoreLib->getSetting("system", "tar");
-	TAR_BIN=val.toString();
-	val = CoreLib->getSetting("system", "mount");
-	MOUNT_BIN=val.toString();
-	val = CoreLib->getSetting("system", "umount");
-	UMOUNT_BIN=val.toString();
-	val = CoreLib->getSetting("system", "sudo");
-	SUDO_BIN=val.toString();
-	val = CoreLib->getSetting("system", "gui_sudo");
-	GUI_SUDO_BIN=val.toString();
-	val = CoreLib->getSetting("system", "nice");
-	NICE_BIN=val.toString();
-	val = CoreLib->getSetting("system", "renice");
-	RENICE_BIN=val.toString();
-	val = CoreLib->getSetting("system", "sh");
-	SH_BIN=val.toString();
-
-	val = CoreLib->getSetting("console", "bin");
-	CONSOLE_BIN=val.toString();
-	val = CoreLib->getSetting("console", "args", false);
-	CONSOLE_ARGS=val.toString();
-
-
-#ifdef WITH_ICOUTILS
-	val = CoreLib->getSetting("icotool", "wrestool");
-	WRESTOOL_BIN=val.toString();
-	val = CoreLib->getSetting("icotool", "icotool");
-	ICOTOOL_BIN=val.toString();
-#endif
-*/
-
-
-	if (CoreLib->getSetting("quickmount", "type", FALSE).toString().isEmpty()){
-		QSettings settings(APP_SHORT_NAME, "default");
-		settings.beginGroup("quickmount");
-
-		if (CoreLib->getWhichOut("fuseiso", false).isEmpty()){
-#ifdef WITH_EMBEDDED_FUSEISO
-			settings.setValue("type", 3);
-			settings.setValue("mount_drive_string", CoreLib->getMountString(3));
-			settings.setValue("mount_image_string", CoreLib->getMountImageString(3));
-			settings.setValue("umount_string", CoreLib->getUmountString(3));
-#else
-			settings.setValue("type", 0);
-			settings.setValue("mount_drive_string", CoreLib->getMountString(0));
-			settings.setValue("mount_image_string", CoreLib->getMountImageString(0));
-			settings.setValue("umount_string", CoreLib->getUmountString(0));
-#endif
-		} else {
-			settings.setValue("type", 2);
-			settings.setValue("mount_drive_string", CoreLib->getMountString(2));
-			settings.setValue("mount_image_string", CoreLib->getMountImageString(2));
-			settings.setValue("umount_string", CoreLib->getUmountString(2));
-		}
-		settings.endGroup();
-	}
-
-	emit(setDefaultFocus(CoreLib->getSetting("LastPrefix", "prefix", false).toString(), CoreLib->getSetting("LastPrefix", "dir", false).toString()));
+	CoreLib->checkSettings();
 
 	return;
 }
@@ -377,7 +318,7 @@ void MainWindow::createTrayIcon(){
 	trayIcon.reset(new QSystemTrayIcon(this));
 	trayIcon->setContextMenu(trayIconMenu.release());
 
-	QIcon icon = loadIcon("data/q4wine.png");
+	QIcon icon = CoreLib->loadIcon("data/q4wine.png");
 
 	trayIcon->setIcon(icon);
 	setWindowIcon(icon);
@@ -636,7 +577,7 @@ void MainWindow::mainOptions_Click(){
 	AppSettings options;
 
 	if (options.exec()==QDialog::Accepted){
-		getSettings();
+		CoreLib->checkSettings();
 	}
 
 	return;
@@ -806,24 +747,6 @@ void MainWindow::mainExportIcons_Click(){
 		qDebug()<<"[EE] - Can't delete tmp dir: "<<tmpDir;
 
 	return;
-}
-
-QIcon MainWindow::loadIcon(QString iconName){
-	// Function tryes to load icon image from theme dir
-	// If it fails -> load default from rsource file
-
-	QIcon icon;
-
-	if ((!THEME_NAME.isEmpty()) and (THEME_NAME!="Default")){
-		icon.addFile(QString("%1/%2").arg(THEME_NAME).arg(iconName));
-		if (icon.isNull()){
-			icon.addFile(QString(":/%1").arg(iconName));
-		}
-	} else {
-		icon.addFile(QString(":/%1").arg(iconName));
-	}
-
-	return icon;
 }
 
 void MainWindow::messageReceived(const QString message) const{

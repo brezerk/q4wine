@@ -86,9 +86,7 @@ class Run : public QDialog, public Ui::Run
 		void getPrefixes (void);
 
 		//! \brief Load theme images.
-		void loadThemeIcons(QString themePath);
-		//! \brief Load icon.
-		QIcon loadIcon(QString iconName, QString themePath);
+		void loadThemeIcons();
 
 		//! Database prefix class defenition.
 		Prefix db_prefix;

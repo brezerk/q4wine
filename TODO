@@ -4,8 +4,8 @@
 
 1. Fix\Test for whitespaces;
 2. Corelib preget xdg-utils .e.t.c.;
-2.1 As a part of 2. -- Move get\check config to corelib?
-3. CD Image dialog -> SQL Query model;
+3. Move xmlexport into appdb upstream (change DB engine to appdb)
+4. Icons Load to CoreLib;
 
 x. Have fun ;]
 x. Conqueror the universe... ooops not this time. Sorry T_T;

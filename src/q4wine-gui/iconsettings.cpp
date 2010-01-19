@@ -67,7 +67,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 	  if (QDir().exists(cd_mount))
 		  prefix_urls << QUrl::fromLocalFile(cd_mount);
 
-	this->loadThemeIcons(this->CoreLib->getSetting("app", "theme", false).toString());
+	this->loadThemeIcons();
 
 	switch (icon_name.isEmpty()){
 		case TRUE:
@@ -102,38 +102,13 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 	return;
 }
 
-void IconSettings::loadThemeIcons(QString themePath){
-	QPixmap pixmap;
-
-	if (!pixmap.load(QString("%1/data/exec.png").arg(themePath))){
-		pixmap.load(":data/exec.png");
-	}
-
-	lblLogo->setPixmap(pixmap);
-	cmdGetProgram->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetWorkDir->setIcon(loadIcon("data/folder.png", themePath));
-	cmdGetIcon->setIcon(loadIcon("data/exec_wine.png", themePath));
+void IconSettings::loadThemeIcons(){
+	lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
+	cmdGetProgram->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetWorkDir->setIcon(CoreLib->loadIcon("data/folder.png"));
+	cmdGetIcon->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
 
 	return;
-}
-
-
-QIcon IconSettings::loadIcon(QString iconName, QString themePath){
-	// Function tryes to load icon image from theme dir
-	// If it fails -> load default from rsource file
-
-	QIcon icon;
-
-	if ((!themePath.isEmpty()) and (themePath!="Default")){
-		icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
-		if (icon.isNull()){
-			icon.addFile(QString(":/%1").arg(iconName));
-		}
-	} else {
-		icon.addFile(QString(":/%1").arg(iconName));
-	}
-
-	return icon;
 }
 
 void IconSettings::getIconReccord(){
@@ -158,21 +133,21 @@ void IconSettings::getIconReccord(){
 		} else {
 			iconPath=iconRec.at(3);
 			if (iconPath=="wineconsole"){
-				cmdGetIcon->setIcon(loadIcon("data/wineconsole.png", this->CoreLib->getSetting("app", "theme", false).toString()));
+				cmdGetIcon->setIcon(CoreLib->loadIcon("data/wineconsole.png"));
 			} else if (iconPath=="regedit"){
-				cmdGetIcon->setIcon(loadIcon("data/regedit.png", this->CoreLib->getSetting("app", "theme", false).toString()));
+				cmdGetIcon->setIcon(CoreLib->loadIcon("data/regedit.png"));
 			} else if (iconPath=="wordpad"){
-				cmdGetIcon->setIcon(loadIcon("data/notepad.png", this->CoreLib->getSetting("app", "theme", false).toString()));
+				cmdGetIcon->setIcon(CoreLib->loadIcon("data/notepad.png"));
 			} else if (iconPath=="winecfg"){
-				cmdGetIcon->setIcon(loadIcon("data/winecfg.png", this->CoreLib->getSetting("app", "theme", false).toString()));
+				cmdGetIcon->setIcon(CoreLib->loadIcon("data/winecfg.png"));
 			} else if (iconPath=="uninstaller"){
-				cmdGetIcon->setIcon(loadIcon("data/uninstaller.png", this->CoreLib->getSetting("app", "theme", false).toString()));
+				cmdGetIcon->setIcon(CoreLib->loadIcon("data/uninstaller.png"));
 			} else if (iconPath=="eject"){
-				cmdGetIcon->setIcon(loadIcon("data/eject.png", this->CoreLib->getSetting("app", "theme", false).toString()));
+				cmdGetIcon->setIcon(CoreLib->loadIcon("data/eject.png"));
 			} else if (iconPath=="explorer"){
-				cmdGetIcon->setIcon(loadIcon("data/explorer.png", this->CoreLib->getSetting("app", "theme", false).toString()));
+				cmdGetIcon->setIcon(CoreLib->loadIcon("data/explorer.png"));
 			} else {
-				cmdGetIcon->setIcon(loadIcon("data/exec_wine.png", this->CoreLib->getSetting("app", "theme", false).toString()));
+				cmdGetIcon->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
 				iconPath="";
 			}
 		}

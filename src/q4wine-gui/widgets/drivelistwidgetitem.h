@@ -26,11 +26,14 @@
 //Qt inc
 #include <QListWidgetItem>
 
+//q4ine lib
+#include <q4wine-lib/main.h>
+
 class DriveListWidgetItem : public QObject, public QListWidgetItem
 {
 Q_OBJECT
 public:
-	DriveListWidgetItem(QString themeName, QListWidget * parent = 0, int type = QListWidgetItem::UserType);
+	DriveListWidgetItem(QListWidget * parent = 0, int type = QListWidgetItem::UserType);
 
 	void setDrive(QString letter, QString path, QString type);
 	QString getLetter();
@@ -43,7 +46,12 @@ public slots:
 private:
 	QString themeName, letter, path, type;
 	QString getDrivePic(QString driveType);
-	QIcon loadIcon(QString iconName);
+
+	//! This is need for libq4wine-core.so import.
+	QLibrary libq4wine;
+	typedef void *CoreLibPrototype (bool);
+	CoreLibPrototype *CoreLibClassPointer;
+	std::auto_ptr<corelib> CoreLib;
 
 };
 

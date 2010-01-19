@@ -19,49 +19,40 @@
 
 #include "wizard.h"
 
-void Wizard::loadThemeIcons(QString themePath, int Scene){
+void Wizard::loadThemeIcons(int Scene){
 	QPixmap pixmap;
 	switch (Scene){
  case 0:
 		// Prefix creation
-		if (!pixmap.load(QString("%1/data/prefixc.png").arg(themePath))){
-			pixmap.load(":data/prefixc.png");
-		}
+		lblPicture->setPixmap(CoreLib->loadPixmap("data/prefixc.png"));
 
-		lblPicture->setPixmap(pixmap);
-
-		cmdGetWineBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineServerBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineLoaderBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineDllPath->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetPrefixPath->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetMountPoint->setIcon(loadIcon("data/folder.png", themePath));
+		cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineDllPath->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetPrefixPath->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetMountPoint->setIcon(CoreLib->loadIcon("data/folder.png"));
 
 		break;
 	case 1:
 		// First startup
+		lblPicture->setPixmap(CoreLib->loadPixmap("data/firstc.png"));
 
-		if (!pixmap.load(QString("%1/data/firstc.png").arg(themePath))){
-			pixmap.load(":data/firstc.png");
-		}
-
-		lblPicture->setPixmap(pixmap);
-
-		cmdGetWineBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineServerBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineLoaderBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineDllPath->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetTarBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetMountBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetUmountBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetSudoBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetGuiSudoBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetNiceBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetReniceBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetShBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetConsoleBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWrestoolBin->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetIcotoolBin->setIcon(loadIcon("data/folder.png", themePath));
+		cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineDllPath->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetTarBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetMountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetUmountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetSudoBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetGuiSudoBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetNiceBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetReniceBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetShBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetConsoleBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWrestoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetIcotoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
 
 #ifndef WITH_ICOUTILS
 		cmdGetWrestoolBin->setEnabled(false);
@@ -94,10 +85,7 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		break;
 	case 2:
 		// Fake drive create
-		if (!pixmap.load(QString("%1/data/firstc.png").arg(themePath))){
-			pixmap.load(":data/firstc.png");
-		}
-		lblPicture->setPixmap(pixmap);
+		lblPicture->setPixmap(CoreLib->loadPixmap("data/firstc.png"));
 
 		connect(cmdJoystickEdit, SIGNAL(clicked()), this, SLOT(cmdJoystickEdit_Click()));
 		connect(cmdJoystickAdd, SIGNAL(clicked()), this, SLOT(cmdJoystickAdd_Click()));
@@ -105,19 +93,16 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		connect(cmdWineDriveEdit, SIGNAL(clicked()), this, SLOT(cmdWineDriveEdit_Click()));
 		connect(cmdWineDriveAdd, SIGNAL(clicked()), this, SLOT(cmdWineDriveAdd_Click()));
 		connect(cmdWineDriveDel, SIGNAL(clicked()), this, SLOT(cmdWineDriveDel_Click()));
-		cmdGetWineDesktop->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineDesktopDoc->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineDesktopPic->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineDesktopMus->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineDesktopVid->setIcon(loadIcon("data/folder.png", themePath));
+		cmdGetWineDesktop->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineDesktopDoc->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineDesktopPic->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineDesktopMus->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineDesktopVid->setIcon(CoreLib->loadIcon("data/folder.png"));
 
 		break;
 	case 3:
 		// Fake drive update
-		if (!pixmap.load(QString("%1/data/firstc.png").arg(themePath))){
-			pixmap.load(":data/firstc.png");
-		}
-		lblPicture->setPixmap(pixmap);
+		lblPicture->setPixmap(CoreLib->loadPixmap("data/firstc.png"));
 
 		connect(cmdJoystickEdit, SIGNAL(clicked()), this, SLOT(cmdJoystickEdit_Click()));
 		connect(cmdJoystickAdd, SIGNAL(clicked()), this, SLOT(cmdJoystickAdd_Click()));
@@ -125,35 +110,16 @@ void Wizard::loadThemeIcons(QString themePath, int Scene){
 		connect(cmdWineDriveEdit, SIGNAL(clicked()), this, SLOT(cmdWineDriveEdit_Click()));
 		connect(cmdWineDriveAdd, SIGNAL(clicked()), this, SLOT(cmdWineDriveAdd_Click()));
 		connect(cmdWineDriveDel, SIGNAL(clicked()), this, SLOT(cmdWineDriveDel_Click()));
-		cmdGetWineDesktop->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineDesktopDoc->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineDesktopPic->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineDesktopMus->setIcon(loadIcon("data/folder.png", themePath));
-		cmdGetWineDesktopVid->setIcon(loadIcon("data/folder.png", themePath));
+		cmdGetWineDesktop->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineDesktopDoc->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineDesktopPic->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineDesktopMus->setIcon(CoreLib->loadIcon("data/folder.png"));
+		cmdGetWineDesktopVid->setIcon(CoreLib->loadIcon("data/folder.png"));
 
 		break;
 	}
 	return;
 }
-
-
-QIcon Wizard::loadIcon(QString iconName, QString themePath){
-	// Function tryes to load icon image from theme dir
-	// If it fails -> load default from rsource file
-	QIcon icon;
-
-	if ((!themePath.isEmpty()) and (themePath!="Default")){
-		icon.addFile(QString("%1/%2").arg(themePath).arg(iconName));
-		if (icon.isNull()){
-			icon.addFile(QString(":/%1").arg(iconName));
-		}
-	} else {
-		icon.addFile(QString(":/%1").arg(iconName));
-	}
-	return icon;
-}
-
-
 
 Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
@@ -180,7 +146,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	Page=1;
 	QString console_w;
 
-	loadThemeIcons(CoreLib->getSetting("app", "theme", false).toString(), Scena);
+	loadThemeIcons(Scena);
 
 	QString pic="", line="", prefixPath="";
 	std::auto_ptr<DriveListWidgetItem> item;
@@ -294,21 +260,21 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		cmdGetWineDesktopMus->installEventFilter(this);
 		cmdGetWineDesktopVid->installEventFilter(this);
 
-		item.reset(new DriveListWidgetItem("", listWineDrives));
+		item.reset(new DriveListWidgetItem(listWineDrives));
 		item->setDrive("C:", "../drive_c", "auto");
 		listWineDrives->addItem(item.release());
 
 		if (!db_prefix.getMountPath(var1).isEmpty()){
-			item.reset(new DriveListWidgetItem("", listWineDrives));
+			item.reset(new DriveListWidgetItem(listWineDrives));
 			item->setDrive("D:", db_prefix.getMountPath(var1), "cdrom");
 			listWineDrives->addItem(item.release());
 		}
 
-		item.reset(new DriveListWidgetItem("", listWineDrives));
+		item.reset(new DriveListWidgetItem(listWineDrives));
 		item->setDrive("Z:", "/", "auto");
 		listWineDrives->addItem(item.release());
 
-		item.reset(new DriveListWidgetItem("", listWineDrives));
+		item.reset(new DriveListWidgetItem(listWineDrives));
 		item->setDrive("H:", QString("%1/.config/q4wine/tmp").arg(QDir::homePath()), "auto");
 		listWineDrives->addItem(item.release());
 
@@ -453,7 +419,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 				list<<QString("\"%1\"").arg(fileInfo.fileName());
 				list = reg.readKeys("system", "Software\\Wine\\Drives", list);
 
-				item.reset(new DriveListWidgetItem("", listWineDrives));
+				item.reset(new DriveListWidgetItem(listWineDrives));
 				item->setDrive(fileInfo.fileName().toUpper(), path, list.at(0));
 				listWineDrives->addItem(item.release());
 			}
@@ -1887,7 +1853,7 @@ void Wizard::cmdWineDriveAdd_Click(){
 
 	WineDriveDialog drevedialog(drives);
 	if (drevedialog.exec()==QDialog::Accepted){
-		std::auto_ptr<DriveListWidgetItem> item (new DriveListWidgetItem("", listWineDrives));
+		std::auto_ptr<DriveListWidgetItem> item (new DriveListWidgetItem(listWineDrives));
 		item->setDrive(drevedialog.getLetter(), drevedialog.getPath(), drevedialog.getType());
 		listWineDrives->addItem(item.release());
 	}

@@ -57,7 +57,7 @@ class IconListWidget : public QListWidget
 {
 	  Q_OBJECT
 public:
-	  explicit IconListWidget(QString themeName, QWidget *parent = 0);
+	  explicit IconListWidget(QWidget *parent = 0);
 
 public slots:
 	  void showFolderContents(QString prefixName="", QString dirName="");
@@ -72,9 +72,7 @@ private:
 	  void contextMenuEvent(QContextMenuEvent *event);
 	  void keyPressEvent (QKeyEvent *event);
 
-	  QIcon loadIcon(QString iconName);
-
-	  QString themeName, prefixName, dirName, prefixMediaDrive, prefixMontPoint, filterString;
+	  QString prefixName, dirName, prefixMediaDrive, prefixMontPoint, filterString;
 	  QPoint startPos;
 	  bool drag, dragstarted;
 
