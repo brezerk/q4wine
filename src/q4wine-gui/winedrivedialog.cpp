@@ -22,6 +22,18 @@
 WineDriveDialog::WineDriveDialog(QStringList removeLetters, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
 	setupUi(this);
+
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
+
+	if (!libq4wine.load()){
+		libq4wine.load();
+	}
+
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib.reset((corelib *)CoreLibClassPointer(true));
+
 	if (removeLetters.count()>0){
 		for (int i=0; i<removeLetters.count(); i++){
 			if (cbDriveLetter->findText(removeLetters.at(i), Qt::MatchExactly)>=0){
@@ -38,7 +50,7 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QWidget * parent, Qt
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 	connect(cmdGetDrivePath, SIGNAL(clicked()), this, SLOT(cmdGetDrivePath_Click()));
 
-	cmdGetDrivePath->setIcon(QIcon(":data/folder.png"));
+	cmdGetDrivePath->setIcon(CoreLib->loadIcon("data/folder.png"));
 
 	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 
@@ -47,6 +59,18 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QWidget * parent, Qt
 WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter, QString drivePath, QString driveType, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
 	setupUi(this);
+
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
+
+	if (!libq4wine.load()){
+		libq4wine.load();
+	}
+
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib.reset((corelib *)CoreLibClassPointer(true));
+
 	if (removeLetters.count()>0){
 		for (int i=0; i<removeLetters.count(); i++){
 			if (cbDriveLetter->findText(removeLetters.at(i), Qt::MatchExactly)>=0){
@@ -77,7 +101,7 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter,
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 	connect(cmdGetDrivePath, SIGNAL(clicked()), this, SLOT(cmdGetDrivePath_Click()));
 
-	cmdGetDrivePath->setIcon(QIcon(":data/folder.png"));
+	cmdGetDrivePath->setIcon(CoreLib->loadIcon("data/folder.png"));
 
 	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 }
@@ -99,6 +123,10 @@ void WineDriveDialog::cmdCancel_Click(){
 }
 
 void WineDriveDialog::cmdOk_Click(){
+	if (cbDriveLetter->currentText()=="C:"){
+		accept();
+		return;
+	}
 
 	if (txtDrivePath->text().isEmpty()){
 		QMessageBox::warning(this, tr("Error"), tr("Sorry, you need to set existing drive directory."), QMessageBox::Ok);

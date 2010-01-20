@@ -24,8 +24,12 @@
 
 #include <QMessageBox>
 #include <QFileDialog>
+#include <QLibrary>
 
 #include <config.h>
+
+//q4wine lib
+#include <q4wine-lib/main.h>
 
 /*!
  * \class WineDriveDialog
@@ -49,11 +53,17 @@ public:
 	QString getPath();
 	QString getType();
 
-private:
-	private slots:
+private slots:
 	void cmdOk_Click();
 	void cmdCancel_Click();
 	void cmdGetDrivePath_Click();
+
+private:
+	//! This is need for libq4wine-core.so import;
+	typedef void *CoreLibPrototype (bool);
+		CoreLibPrototype *CoreLibClassPointer;
+		std::auto_ptr<corelib> CoreLib;
+	QLibrary libq4wine;
 };
 
 #endif // WINEDRIVEDIALOG_H

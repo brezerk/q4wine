@@ -73,9 +73,6 @@
 #include "src/core/database/icon.h"
 #include "src/core/database/image.h"
 
-#include <iostream>
-using namespace std;
-
 /*!
  * \class corelib
  * \ingroup libq4wine
@@ -276,6 +273,8 @@ public:
 	QString getUmountString(const int profile) const;
 	bool reniceProcess(const int pid, const int priority) const;
 	void runAutostart(void);
+
+
 
 private:
 	/*! Define is library operate in CLI or GUI mode.
