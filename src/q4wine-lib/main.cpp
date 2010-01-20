@@ -17,7 +17,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "main.h"
+#include "q4wine-lib/main.h"
 
 corelib::corelib(bool _GUI_MODE)
 {
@@ -311,6 +311,51 @@ QPixmap corelib::loadPixmap(QString iconName){
 	}
 
 	return pixmap;
+}
+
+QString  corelib::getLang(){
+	QString lang=this->getSetting("app", "lang", false).toString();
+
+	if (!lang.isEmpty()){
+#ifdef DEBUG
+		qDebug()<<"[ii] Get lang from settings:"<<lang;
+#endif
+		return lang;
+	}
+
+	// This is hack for next QLocale bug:
+	//  http://bugs.gentoo.org/150745
+
+	lang = setlocale(LC_ALL, "");
+#ifdef DEBUG
+	qDebug()<<"[ii] LC_ALL: "<<lang;
+#endif
+	if (lang.isEmpty()){
+		lang = setlocale(LC_MESSAGES, "");
+#ifdef DEBUG
+		qDebug()<<"[ii] LC_MESSAGES: "<<lang;
+#endif
+		if (lang.isEmpty()){
+			lang = getenv("LANG");
+#ifdef DEBUG
+			qDebug()<<"[ii] Env LANG: "<<lang;
+#endif
+		}
+	}
+
+#ifdef DEBUG
+		qDebug()<<"[ii] Lang before split: "<<lang;
+#endif
+
+	lang = lang.split(".").at(0).toLower();
+	if (lang.contains("=")){
+		lang = lang.split("=").last();
+	}
+
+#ifdef DEBUG
+	qDebug()<<"[ii] Lang to load: "<<lang;
+#endif
+	return lang;
 }
 
 QStringList corelib::getCdromDevices(void) const{

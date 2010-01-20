@@ -22,6 +22,8 @@
 #include <QApplication>
 #include <QTranslator>
 #include <QMessageBox>
+#include <QDebug>
+#include <QLibrary>
 
 #include "mainwindow.h"
 
@@ -35,11 +37,36 @@
 
 #include "qtsingleapplication.h"
 
+//q4wine lib
+#include <q4wine-lib/main.h>
+
 int main(int argc, char *argv[])
 {
 	QtSingleApplication app(argc, argv);
 	if (app.sendMessage(QObject::tr("Only one instance of %1 can be runned at same time.").arg(APP_SHORT_NAME)))
 		return 0;
+
+	//! This is need for libq4wine-core.so import;
+	typedef void *CoreLibPrototype (bool);
+		CoreLibPrototype *CoreLibClassPointer;
+		std::auto_ptr<corelib> CoreLib;
+	QLibrary libq4wine;
+
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
+
+	if (!libq4wine.load()){
+		libq4wine.load();
+	}
+
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib.reset((corelib *)CoreLibClassPointer(true));
+
+	if (!CoreLib.get()){
+		qDebug()<<"[ee] Can't load shared library";
+		return -1;
+	}
 
 	DataBase db;
 	QTranslator  qtt;
@@ -56,49 +83,7 @@ int main(int argc, char *argv[])
 	qDebug()<<"[ii] i18n path: "<<i18nPath;
 #endif
 
-	// Getting env LANG variable
-	QString lang;
-	settings.beginGroup("app");
-	lang = settings.value("lang").toString();
-	settings.endGroup();
-
-	// This is hack for next QLocale bug:
-	//  http://bugs.gentoo.org/150745
-
-#ifdef DEBUG
-	qDebug()<<"[ii] Config lang: "<<lang;
-#endif
-
-	if (lang.isEmpty()){
-		lang = setlocale(LC_ALL, "");
-#ifdef DEBUG
-		qDebug()<<"[ii] LC_ALL: "<<lang;
-#endif
-		if (lang.isEmpty()){
-			lang = setlocale(LC_MESSAGES, "");
-#ifdef DEBUG
-			qDebug()<<"[ii] LC_MESSAGES: "<<lang;
-#endif
-			if (lang.isEmpty()){
-				lang = getenv("LANG");
-#ifdef DEBUG
-				qDebug()<<"[ii] Env LANG: "<<lang;
-#endif
-			}
-		}
-
-		lang = lang.split(".").at(0).toLower();
-		if (lang.contains("=")){
-			lang = lang.split("=").last();
-		}
-#ifdef DEBUG
-		qDebug()<<"[ii] Lang split: "<<lang;
-#endif
-
-#ifdef DEBUG
-		qDebug()<<"[ii] Lang to load: "<<lang;
-#endif
-	}
+	QString lang = CoreLib->getLang();
 
 	if (!lang.isNull()){
 		if (qtt.load(lang, i18nPath)){

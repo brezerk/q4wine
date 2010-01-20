@@ -25,6 +25,8 @@
 #ifndef Q4WINELIB_H
 #define Q4WINELIB_H
 
+#include "config.h"
+
 #include <QObject>
 #include <QList>
 #include <QVariant>
@@ -44,8 +46,6 @@
 #include <QTextCodec>
 
 #include "process.h"
-
-#include "config.h"
 
 // FreeBSD support
 #ifdef _OS_FREEBSD_
@@ -129,6 +129,8 @@ public:
 
 	QIcon loadIcon(QString iconName);
 	QPixmap loadPixmap(QString pixmapName);
+
+	QString getLang();
 
 	/*! \brief This function get cdrom devices from /etc/fstab file.
 	 *

@@ -53,15 +53,17 @@ void Process::cmdCancel_clicked(void){
 void Process::slotError(QProcess::ProcessError err){
 	if (myProcess->exitCode()!=0){
 
-		QString lang;
-		// Getting env LANG variable
-		lang = getenv("LANG");
-		lang = lang.split(".").at(1);
-
-		if (lang.isNull())
-			lang = "UTF8";
+		QTextStream stdErr(stderr);
+		QString lang = this->getLocale();
 
 		QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+		if (!codec){
+			stdErr<<"[ee] Can't setup codec for \""<<lang<<"\""<<endl;
+			stdErr<<"[ee] Aborting current operation!"<<endl;
+			reject();
+			return;
+		}
+
 		QString string = codec->toUnicode(myProcess->readAllStandardError());
 
 		if (!string.isEmpty()){
@@ -122,18 +124,18 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 	 * So the beast way is to inform user about troubles is to show to him any STDERR messages.
 	 */
 
-
-		QString lang;
-		lang = getenv("LANG");
-		lang = lang.split(".").at(1);
-
-		// If in is empty -- set UTF8 locale
-		if (lang.isEmpty())
-			lang = "UTF8";
+		QTextStream stdErr(stderr);
+		QString lang = this->getLocale();
+		QString string="";
 
 		// Read STDERR with locale support
 		QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
-		QString string = codec->toUnicode(myProcess->readAllStandardError());
+		if (!codec){
+			stdErr<<"[ee] Can't setup codec for \""<<lang<<"\""<<endl;
+			stdErr<<"[ee] Aborting current operation!"<<endl;
+			reject();
+			return;
+		}
 
 #ifdef DEBUG
 		qDebug()<<"[ii] Process::slotFinished exitstatus:"<<exitc<<"exitcode:"<<myProcess->exitCode();
@@ -158,5 +160,46 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 	return;
 }
 
+QString  Process::getLocale(){
+	QString lang;
 
+	// This is hack for next QLocale bug:
+	//  http://bugs.gentoo.org/150745
 
+	lang = setlocale(LC_ALL, "");
+#ifdef DEBUG
+	qDebug()<<"[ii] LC_ALL: "<<lang;
+#endif
+	if (lang.isEmpty()){
+		lang = setlocale(LC_MESSAGES, "");
+#ifdef DEBUG
+		qDebug()<<"[ii] LC_MESSAGES: "<<lang;
+#endif
+		if (lang.isEmpty()){
+			lang = getenv("LANG");
+#ifdef DEBUG
+			qDebug()<<"[ii] Env LANG: "<<lang;
+#endif
+		}
+	}
+
+#ifdef DEBUG
+		qDebug()<<"[ii] Lang before split: "<<lang;
+#endif
+
+	QStringList langSplit = lang.split(".");
+
+	if (langSplit.size()>1){
+		lang = langSplit.at(1);
+	} else {
+		lang = "UTF-8";
+	}
+
+	if (lang.isEmpty())
+		lang = "UTF-8";
+
+#ifdef DEBUG
+	qDebug()<<"[ii] Locale to use: "<<lang;
+#endif
+	return lang;
+}
