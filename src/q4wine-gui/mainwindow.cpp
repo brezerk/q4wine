@@ -265,6 +265,8 @@ void MainWindow::getSettings(){
 
 	CoreLib->checkSettings();
 
+	emit(setDefaultFocus(CoreLib->getSetting("LastPrefix", "prefix", false).toString(), CoreLib->getSetting("LastPrefix", "dir", false).toString()));
+
 	return;
 }
 

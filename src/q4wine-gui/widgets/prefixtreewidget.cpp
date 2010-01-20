@@ -465,6 +465,9 @@ void PrefixTreeWidget::winefileOpenMountDir_Click(void){
 }
 
 void PrefixTreeWidget::setDefaultFocus(QString prefixName, QString dirName){
+	if (prefixName.isEmpty())
+		prefixName="Default";
+
 	if (prefixName==this->prefixName)
 		return;
 

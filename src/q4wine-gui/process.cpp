@@ -126,7 +126,6 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 
 		QTextStream stdErr(stderr);
 		QString lang = this->getLocale();
-		QString string="";
 
 		// Read STDERR with locale support
 		QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
@@ -136,6 +135,8 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 			reject();
 			return;
 		}
+
+		QString string = codec->toUnicode(myProcess->readAllStandardError());
 
 #ifdef DEBUG
 		qDebug()<<"[ii] Process::slotFinished exitstatus:"<<exitc<<"exitcode:"<<myProcess->exitCode();
