@@ -99,7 +99,7 @@ struct ExecObject{
 	QString name;
 };
 
-class corelib {
+class corelib{
 public:
 	//! Create an mainlib class
 	corelib(bool _GUI_MODE);
@@ -138,7 +138,7 @@ public:
 	 *
 	 * \return Return the full path of binary.
 	 */
-	QString getWhichOut (const QString fileName, bool showErr = TRUE) const;
+	QString getWhichOut (const QString fileName, bool showErr = TRUE);
 
 	/*! \brief This function get cdrom devices from /etc/fstab file.
 	 *
@@ -150,14 +150,14 @@ public:
 	 *
 	 * \return Return nothing.
 	 */
-	void openHelpUrl(const QString rawurl) const;
+	void openHelpUrl(const QString rawurl);
 
 	/*! \brief This function opens url in xdg-open browser.
 	 *
 	 * \return Return nothing.
 	 */
-	void openHomeUrl(const QString rawurl) const;
-	void openUrl(const QString rawurl) const;
+	void openHomeUrl(const QString rawurl);
+	void openUrl(const QString rawurl);
 	void updateRecentImagesList(const QString media) const;
 
 
@@ -197,7 +197,7 @@ public:
 	 * \param  icon_name	Icon name.
 	 * \return Return true on success.
 	 */
-	bool openIconDirectry(const QString prefix_name, const QString dir_name, const QString icon_name) const;
+	bool openIconDirectry(const QString prefix_name, const QString dir_name, const QString icon_name);
 
 	/*! \brief Prepare icon data for run wine.
 	 *
@@ -221,14 +221,14 @@ public:
 
 	QString createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const;
 
-	QString getWinePath(const QString path, const QString option) const;
+	QString getWinePath(const QString path, const QString option);
 
 	/*! \brief Open prefix folder.
 	 *
 	 * \param  prefix_name	Prefix name.
 	 * \return Return true on success.
 	 */
-	bool openPrefixDirectry(const QString prefix_name) const;
+	bool openPrefixDirectry(const QString prefix_name);
 
 	/*! \brief This function builds wine dlls list for prefix_lib_path.
 	 *
@@ -258,19 +258,19 @@ public:
 	 *
 	 * \param profile	Profile type ID
 	 */
-	QString getMountString(const int profile) const;
+	QString getMountString(const int profile);
 
 	/*! \brief Get's mount image string based on QuikMount type profile
 	 *
 	 * \param profile	Profile type ID
 	 */
-	QString getMountImageString(const int profile) const;
+	QString getMountImageString(const int profile);
 
 	/*! \brief Get's umount string based on QuikMount type profile
 	 *
 	 * \param profile	Profile type ID
 	 */
-	QString getUmountString(const int profile) const;
+	QString getUmountString(const int profile);
 	bool reniceProcess(const int pid, const int priority) const;
 	void runAutostart(void);
 
@@ -281,6 +281,8 @@ private:
 	 * \note This is typically need for error message display.
 	 */
 	bool _GUI_MODE;
+
+	QString xdg_open, mdconfig, fuseiso, fusermount, ln, rm, sh;
 
 	/*! \brief Displays error message depending on _GUI_MODE variable value
 	 *

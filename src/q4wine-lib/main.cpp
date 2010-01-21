@@ -23,6 +23,10 @@ corelib::corelib(bool _GUI_MODE)
 {
 	// Setting gui mode, if false - cli mode else gui mode
 	this->_GUI_MODE=_GUI_MODE;
+	this->xdg_open="";
+	this->mdconfig="";
+	this->fuseiso="";
+	this->fusermount="";
 }
 
 corelib* createCoreLib(bool _GUI_MODE){
@@ -358,6 +362,71 @@ QString  corelib::getLang(){
 	return lang;
 }
 
+QString corelib::getWhichOut(const QString fileName, bool showErr){
+	/*
+   * Getting 'which' output;
+   */
+
+	if (fileName=="xdg-open"){
+		if (!xdg_open.isEmpty())
+			return xdg_open;
+	} else if  (fileName=="mdconfig"){
+		if (!mdconfig.isEmpty())
+			return mdconfig;
+	} else if  (fuseiso=="fuseiso"){
+		if (!fuseiso.isEmpty())
+			return fuseiso;
+	} else if  (fileName=="fusermount"){
+		if (!fusermount.isEmpty())
+			return fusermount;
+	} else if  (fileName=="ln"){
+		if (!ln.isEmpty())
+			return ln;
+	} else if  (fileName=="rm"){
+		if (!rm.isEmpty())
+			return rm;
+	} else if  (fileName=="sh"){
+		if (!sh.isEmpty())
+			return sh;
+	}
+
+	QProcess proc;
+	QStringList args;
+
+	args<<fileName;
+
+	proc.setWorkingDirectory (QDir::homePath());
+	proc.start("which", args, QIODevice::ReadOnly);
+	proc.waitForFinished();
+
+	QString string = proc.readAllStandardOutput();
+
+	if (!string.isEmpty()){
+		if (fileName=="xdg-open"){
+			xdg_open=string.trimmed();
+		} else if (fileName=="mdconfig"){
+			mdconfig=string.trimmed();
+		} else if (fileName=="fuseiso"){
+			fuseiso=string.trimmed();
+		} else if (fileName=="fusermount"){
+			fusermount=string.trimmed();
+		} else if (fileName=="ln"){
+			ln=string.trimmed();
+		} else if (fileName=="rm"){
+			rm=string.trimmed();
+		} else if (fileName=="sh"){
+			sh=string.trimmed();
+		}
+
+		return string.trimmed();
+	} else {
+		if (showErr)
+			this->showError(QObject::tr("Can't find or execute '%1' binary. Make shure this binary is available by search PATH variable and see also INSTALL file for application depends.").arg(fileName));
+	}
+
+	return "";
+}
+
 QStringList corelib::getCdromDevices(void) const{
 	QStringList retVal;
 
@@ -406,56 +475,6 @@ QStringList corelib::getCdromDevices(void) const{
 		}
 
 		return dllList;
-	}
-
-	QString corelib::getWhichOut(const QString fileName, bool showErr) const{
-		/*
-	   * Getting 'which' output;
-	   */
-
-		/*	if (fileName=="xdg-util"){
-		if (!xdg_util.isEmpty())
-			return xdg_util;
-	} else if  (fileName=="mdconfig"){
-		if (!mdconfig.isEmpty())
-			return mdconfig;
-	} else if  (fuseiso=="fuseiso"){
-		if (!fuseiso.isEmpty())
-			return fuseiso;
-	} else if  (fileName=="fusermount"){
-		if (!fusermount.isEmpty())
-			return fusermount;
-	}*/
-
-		QProcess proc;
-		QStringList args;
-
-		args<<fileName;
-
-		proc.setWorkingDirectory (QDir::homePath());
-		proc.start("which", args, QIODevice::ReadOnly);
-		proc.waitForFinished();
-
-		QString string = proc.readAllStandardOutput();
-
-		if (!string.isEmpty()){
-			/*if (fileName=="xdg-util"){
-			xdg_util="dd";
-		} else if (fileName=="mdconfig"){
-			mdconfig=string.trimmed();
-		} else if (fileName=="fuseiso"){
-			fuseiso=string.trimmed();
-		} else if (fileName=="fusermount"){
-			fusermount=string.trimmed();
-		}*/
-
-			return string.trimmed();
-		} else {
-			if (showErr)
-				this->showError(QObject::tr("Can't find or execute '%1' binary. Make shure this binary is available by search PATH variable and see also INSTALL file for application depends.").arg(fileName));
-		}
-
-		return "";
 	}
 
 	QString corelib::getMountedImages(const QString cdrom_mount) const{
@@ -939,20 +958,20 @@ QStringList corelib::getCdromDevices(void) const{
 			return true;
 		}
 
-		bool corelib::openIconDirectry(const QString prefix_name, const QString dir_name, const QString icon_name) const{
+		bool corelib::openIconDirectry(const QString prefix_name, const QString dir_name, const QString icon_name){
 			QStringList result = db_icon.getByName(prefix_name, dir_name, icon_name);
 			QStringList args;
 			args<<result.at(4);
 			return this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
 		}
 
-		bool corelib::openPrefixDirectry(const QString prefix_name) const{
+		bool corelib::openPrefixDirectry(const QString prefix_name){
 			QStringList args;
 			args<<db_prefix.getPath(prefix_name);
 			return this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
 		}
 
-		QString corelib::getWinePath(const QString path, const QString option) const{
+		QString corelib::getWinePath(const QString path, const QString option) {
 			QString output, exec;
 			QStringList args;
 
@@ -1063,7 +1082,7 @@ QStringList corelib::getCdromDevices(void) const{
 			return true;
 		}
 
-		void corelib::openHelpUrl(const QString rawurl) const{
+		void corelib::openHelpUrl(const QString rawurl){
 
 			QString lang = this->getSetting("", "", false).toString();
 			if (lang.isEmpty()){
@@ -1093,7 +1112,7 @@ QStringList corelib::getCdromDevices(void) const{
 			return;
 		}
 
-		void corelib::openHomeUrl(const QString rawurl) const{
+		void corelib::openHomeUrl(const QString rawurl){
 			QString url="http://";
 			url.append(APP_WEBSITTE);
 			url.append("/");
@@ -1105,14 +1124,14 @@ QStringList corelib::getCdromDevices(void) const{
 			return;
 		}
 
-		void corelib::openUrl(const QString rawurl) const{
+		void corelib::openUrl(const QString rawurl){
 			QStringList args;
 			args<<rawurl;
 			this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
 			return;
 		}
 
-		QString corelib::getMountString(const int profile) const{
+		QString corelib::getMountString(const int profile){
 			QString string;
 			switch (profile){
    case 0:
@@ -1156,7 +1175,7 @@ QStringList corelib::getCdromDevices(void) const{
 			return;
 		}
 
-		QString corelib::getMountImageString(const int profile) const{
+		QString corelib::getMountImageString(const int profile){
 			QString string;
 			switch (profile){
    case 0:
@@ -1193,7 +1212,7 @@ QStringList corelib::getCdromDevices(void) const{
 			return string;
 		}
 
-		QString corelib::getUmountString(const int profile) const{
+		QString corelib::getUmountString(const int profile){
 			QString string;
 			switch (profile){
    case 0:

@@ -31,6 +31,7 @@
 #include <QMessageBox>
 #include <QLibrary>
 #include <QTextCodec>
+#include <QTextStream>
 
 #ifdef DEBUG
 #include <QDebug>
