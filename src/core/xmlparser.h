@@ -64,7 +64,7 @@ public:
 private:
 	short int page_current;
 	short int page_count;
-	short int action;
+	QString action;
 
 	QList<WineAppDBInfo> _APPDB_SEARCH_INFO;
 	WineAppDBInfo appdb_appinfo;

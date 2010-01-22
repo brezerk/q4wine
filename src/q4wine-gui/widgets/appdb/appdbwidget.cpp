@@ -310,19 +310,19 @@ void AppDBWidget::updateDataReadProgress(int bytesRead, int totalBytes){
 void AppDBWidget::timer_timeout(void){
 	switch (this->action){
  case 1:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=1&search=%1").arg(this->search));
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport.php", QString("sAction=searchApp&sSearchWords=%1").arg(this->search));
 		break;
  case 2:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=1&search=%1&page=%2").arg(this->search).arg(page));
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport.php", QString("sAction=searchApp&sSearchWords=%1&iPage=%2").arg(this->search).arg(page));
 		break;
  case 3:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=3&appid=%1").arg(this->appid));
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport.php", QString("sAction=viewApp&iAppId=%1").arg(this->appid));
 		break;
  case 4:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=4&appid=%1&verid=%2&testid=%3").arg(this->appid).arg(this->verid).arg(this->testid));
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport.php", QString("sAction=viewTest&iAppId=%1&iVerId=%2&iTestId=%3").arg(this->appid).arg(this->verid).arg(this->testid));
 		break;
  case 5:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport/index.php", QString("action=5&catid=%1").arg(this->catid));
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport.php", QString("sAction=viewCategory&iCatId=%1").arg(this->catid));
 		break;
 	}
 	timer->stop();

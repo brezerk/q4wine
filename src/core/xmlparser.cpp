@@ -47,29 +47,23 @@ int XmlParser::parseIOSream(QString file){
 			return 3;
 		}
 
-		action = root.attribute("action").toInt();
+		action = root.attribute("action");
 
 		QDomNode node = root.firstChild();
 		while (!node.isNull()) {
-			switch (action){
-   case 1:
+			if (action=="searchApp"){
 				// Search action
 				parseAppSearchEntry(node.toElement());
-				break;
-   case 3:
+			} else if (action=="viewApp") {
+				// View app
+				parseApp(node.toElement());
+			} else if (action=="viewTest") {
 				// View test results
 				parseApp(node.toElement());
-				break;
-   case 4:
-				// View test results
-				parseApp(node.toElement());
-				break;
-   case 5:
+			} else if (action=="viewCategory") {
 				parseAppCategoryEntry(node.toElement());
-				break;
-   case 6:
+			} else if (action=="viewError") {
 				return 6;
-				break;
 			}
 			node = node.nextSibling();
 		}
@@ -233,17 +227,15 @@ void XmlParser::parseApp(const QDomElement &element){
 		}
 		node = node.nextSibling();
 	}
-	switch (action){
-		case 1:
-			  //Add to search struct
-			 _APPDB_SEARCH_INFO.append(appinfo);
-		break;
-		case 3:
-			 appdb_appinfo = appinfo;
-		break;
-		case 4:
-			 appdb_appinfo = appinfo;
-		break;
+
+	if (action=="searchApp"){
+		// Search action
+		_APPDB_SEARCH_INFO.append(appinfo);
+	} else if (action=="viewApp") {
+		// View app
+		appdb_appinfo = appinfo;
+	} else if (action=="viewTest") {
+		appdb_appinfo = appinfo;
 	}
 }
 
@@ -414,7 +406,7 @@ QString XmlParser::getChildNodeData(const QDomNode &childNode){
 }
 
 void XmlParser::clear(){
-	action=0;
+	action="";
 	page_current=0;
 	page_count=0;
 
