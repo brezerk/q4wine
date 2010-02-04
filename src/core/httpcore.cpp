@@ -27,6 +27,8 @@ HttpCore::HttpCore()
 				 this, SLOT(httpRequestFinished(int, bool)));
 	connect(http.get(), SIGNAL(dataReadProgress(int, int)),
 				 this, SIGNAL(updateDataReadProgress(int, int)));
+	connect(http.get(), SIGNAL(stateChanged(int)),
+				 this, SIGNAL(stateChanged(int)));
 	connect(http.get(), SIGNAL(responseHeaderReceived(const QHttpResponseHeader &)),
 				 this, SLOT(readResponseHeader(const QHttpResponseHeader &)));
 
@@ -68,25 +70,24 @@ HttpCore::~HttpCore(){
 	//Nothing but...
 }
 
-void HttpCore::getAppDBXMLPage(QString host, short int port, QString page, QString params)
+void HttpCore::getAppDBXMLPage(QString host, short int port, QString page)
 {
 	http->setHost(host, QHttp::ConnectionModeHttp, port);
 
 	QHttpRequestHeader header("POST", page);
 	header.setValue("Host", host);
-	header.setValue("Port", "80");
+	header.setValue("Port", "8000");
 	header.setContentType("application/x-www-form-urlencoded");
 	header.setValue("Accept-Encoding", "deflate");
-	header.setContentLength( params.toUtf8().length() );
 	header.setValue("User-Agent", user_agent);
 
 #ifdef DEBUG
-	qDebug()<<"[ii] Connecting to"<<host<<":"<<port<<" reuested page is: "<<page<<params.toUtf8();
+	qDebug()<<"[ii] Connecting to"<<host<<":"<<port<<" reuested page is: "<<page;
 #endif
 
 	this->xmlreply="";
 	this->aborted=false;
-	this->getId = http->request(header, params.toUtf8());
+	this->getId = http->request(header, "");
 }
 
 QString HttpCore::getXMLReply(){

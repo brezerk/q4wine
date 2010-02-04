@@ -76,6 +76,7 @@ AppDBWidget::AppDBWidget(QWidget *parent) : QWidget(parent)
 	connect(httpcore.get(), SIGNAL(pageReaded()), this, SLOT(httpcore_pageDownloaded()));
 	connect(httpcore.get(), SIGNAL(requestError(QString)), this, SLOT(requestError(QString)));
 	connect(httpcore.get(), SIGNAL(updateDataReadProgress(int, int)), this, SLOT(updateDataReadProgress(int, int)));
+	connect(httpcore.get(), SIGNAL(stateChanged(int)), this, SLOT(stateChanged(int)));
 
 	this->appdbHeader->addLabel(tr("Status: Ready"));
 	timer->stop();
@@ -93,10 +94,11 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 
 	switch (action){
  case 1:
+		this->setCursor(QCursor(Qt::WaitCursor));
 		appdbClear->setEnabled(false);
 		appdbAppPage->setEnabled(false);
 		this->appdbHeader->clear();
-		this->appdbHeader->addLabel(tr("Status: Connectiong to %1").arg(APPDB_HOSTNAME));
+		this->appdbHeader->addLabel(tr("Status: Connecting to %1").arg(APPDB_HOSTNAME));
 		this->search=search;
 		this->page=0;
 		this->appid=0;
@@ -111,10 +113,11 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		timer->start(1000);
 		break;
  case 2:
+		this->setCursor(QCursor(Qt::WaitCursor));
 		appdbClear->setEnabled(false);
 		appdbAppPage->setEnabled(false);
 		this->appdbHeader->clear();
-		this->appdbHeader->addLabel(tr("Status: Connectiong to %1").arg(APPDB_HOSTNAME));
+		this->appdbHeader->addLabel(tr("Status: Connecting to %1").arg(APPDB_HOSTNAME));
 		this->search=search;
 		this->page=val1;
 		this->appid=0;
@@ -125,10 +128,11 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		timer->start(1000);
 		break;
  case 3:
+		this->setCursor(QCursor(Qt::WaitCursor));
 		appdbClear->setEnabled(false);
 		appdbAppPage->setEnabled(false);
 		this->appdbHeader->clear();
-		this->appdbHeader->addLabel(tr("Status: Connectiong to %1").arg(APPDB_HOSTNAME));
+		this->appdbHeader->addLabel(tr("Status: Connecting to %1").arg(APPDB_HOSTNAME));
 		this->search="";
 		this->page=0;
 		this->appid=val1;
@@ -139,10 +143,11 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		timer->start(1000);
 		break;
  case 4:
+		this->setCursor(QCursor(Qt::WaitCursor));
 		appdbClear->setEnabled(false);
 		appdbAppPage->setEnabled(false);
 		this->appdbHeader->clear();
-		this->appdbHeader->addLabel(tr("Status: Connectiong to %1").arg(APPDB_HOSTNAME));
+		this->appdbHeader->addLabel(tr("Status: Connecting to %1").arg(APPDB_HOSTNAME));
 		this->search="";
 		this->page=0;
 		this->appid=val1;
@@ -153,10 +158,11 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		timer->start(1000);
 		break;
  case 5:
+		this->setCursor(QCursor(Qt::WaitCursor));
 		appdbClear->setEnabled(false);
 		appdbAppPage->setEnabled(false);
 		this->appdbHeader->clear();
-		this->appdbHeader->addLabel(tr("Status: Connectiong to %1").arg(APPDB_HOSTNAME));
+		this->appdbHeader->addLabel(tr("Status: Connecting to %1").arg(APPDB_HOSTNAME));
 		this->search="";
 		this->page=0;
 		this->appid=0;
@@ -239,30 +245,32 @@ void AppDBWidget::httpcore_pageDownloaded(void){
 		break;
 
 	}
+	this->setCursor(QCursor(Qt::ArrowCursor));
 	return;
 }
 
 void AppDBWidget::showXmlError(int id){
 	switch (id){
- case 1:
+	case 1:
 		this->appdbHeader->addLabel(tr("Error: can't read data from appqb.winehq.org."));
-		return;
 		break;
- case 2:
+	case 2:
 		this->appdbHeader->addLabel(tr("Error: wrong or broken xml data. Try again later."));
-		return;
 		break;
- case 3:
+	case 3:
 		this->appdbHeader->addLabel(tr("Error: wrong or broken appdb xml version. Application needs to be updated?"));
-		return;
- case 4:
+		break;
+	case 4:
 		this->appdbHeader->addLabel(tr("Error: xml parse error."));
-		return;
- case 6:
-		this->appdbHeader->addLabel(tr("No matches found"));
-		return;
+		break;
+	case 6:
+		this->appdbHeader->addLabel(tr("Error: unexpected error."));
+		break;
+	case 404:
+		this->appdbHeader->addLabel(tr("Search: No matches found"));
 		break;
 	}
+	this->setCursor(QCursor(Qt::ArrowCursor));
 	return;
 }
 
@@ -310,22 +318,44 @@ void AppDBWidget::updateDataReadProgress(int bytesRead, int totalBytes){
 void AppDBWidget::timer_timeout(void){
 	switch (this->action){
  case 1:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport.php", QString("sAction=searchApp&sSearchWords=%1").arg(this->search));
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, QString("/xmlexport/searchApp/%1/").arg(this->search));
 		break;
  case 2:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport.php", QString("sAction=searchApp&sSearchWords=%1&iPage=%2").arg(this->search).arg(page));
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, QString("/xmlexport/searchApp/%1/%2/").arg(this->search).arg(page));
 		break;
  case 3:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport.php", QString("sAction=viewApp&iAppId=%1").arg(this->appid));
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, QString("/xmlexport/viewApp/%1/").arg(this->appid));
 		break;
  case 4:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport.php", QString("sAction=viewTest&iAppId=%1&iVerId=%2&iTestId=%3").arg(this->appid).arg(this->verid).arg(this->testid));
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, QString("/xmlexport/viewTest/%1/%2/%3/").arg(this->appid).arg(this->verid).arg(this->testid));
 		break;
  case 5:
-		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, "/xmlexport.php", QString("sAction=viewCategory&iCatId=%1").arg(this->catid));
+		httpcore->getAppDBXMLPage(APPDB_HOSTNAME, APPDB_PORT, QString("/xmlexport/viewCategory/%1/").arg(this->catid));
 		break;
 	}
 	timer->stop();
+}
+
+void AppDBWidget::stateChanged (int state){
+	switch (state){
+	case 2:
+		this->appdbHeader->updateFirstLabelText(tr("Status: Connecting to %1").arg(APPDB_HOSTNAME));
+		break;
+	case 3:
+		this->appdbHeader->updateFirstLabelText(tr("Status: Sending request to the server."));
+		break;
+	case 4:
+		this->appdbHeader->updateFirstLabelText(tr("Status: Reading server's response."));
+		break;
+	case 6:
+		this->appdbHeader->updateFirstLabelText(tr("Status: Closing down connection."));
+		break;
+	case 0:
+		this->appdbHeader->updateFirstLabelText(tr("Status: Not connected."));
+		break;
+	}
+
+	return;
 }
 
 void AppDBWidget::appdbOpen_Click(void){

@@ -141,6 +141,15 @@ void Run::cmdAdd_Click(){
 }
 
 void Run::cmdOk_Click(){
+	if (txtProgramBin->text().isEmpty()){
+		QMessageBox::warning(this, tr("Error"), tr("No program name specified."));
+		return;
+	}
+
+	if (!QDir(txtWorkDir->text()).exists()){
+		QMessageBox::warning(this, tr("Error"), tr("Selected working direcotory not exists."));
+		return;
+	}
 
 	QString override="";
 	for (int i=1; i<=twDlls->rowCount(); i++){

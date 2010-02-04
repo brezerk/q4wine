@@ -33,10 +33,9 @@
 #define APP_WEBSITTE "q4wine.brezblock.org.ua"
 #define APP_BUG_EMAIL "brezerk@gmail.com"
 
-#define APPDB_EXPORT_VERSION "0.1"
+#define APPDB_EXPORT_VERSION "1.0"
 
-//#define APPDB_HOSTNAME "appdb.winehq.org"
-#define APPDB_HOSTNAME "appdb.uz.gov.ua"
+#define APPDB_HOSTNAME "q4wine.brezblock.org.ua"
 #define BUGS_HOSTNAME "bugs.winehq.org"
 
 #define APPDB_PORT 80

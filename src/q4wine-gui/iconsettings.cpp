@@ -501,7 +501,12 @@ void IconSettings::cmdCancel_Click(){
 void IconSettings::cmdOk_Click(){
 
   if (txtProgramPath->text().isEmpty()){
-	  QMessageBox::warning(this, tr("Error"), tr("No executiable program selected."));
+	  QMessageBox::warning(this, tr("Error"), tr("No program selected."));
+	  return;
+  }
+
+  if (!QDir(txtWorkDir->text()).exists()){
+	  QMessageBox::warning(this, tr("Error"), tr("Selected working direcotory not exists."));
 	  return;
   }
 

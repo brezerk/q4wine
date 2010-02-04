@@ -43,12 +43,13 @@ public:
 	HttpCore();
 	~HttpCore();
 
-	void getAppDBXMLPage(QString host, short int port, QString page, QString params);
+	void getAppDBXMLPage(QString host, short int port, QString page);
 	QString getXMLReply();
 signals:
 	void pageReaded();
 	void requestError(QString);
 	void updateDataReadProgress(int, int);
+	void stateChanged (int);
 
 private slots:
 	void httpRequestFinished(int requestId, bool error);

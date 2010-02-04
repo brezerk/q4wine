@@ -55,6 +55,7 @@ public slots:
 	void httpcore_pageDownloaded();
 	void requestError(QString error);
 	void updateDataReadProgress(int bytesRead, int totalBytes);
+	void stateChanged(int state);
 
 private:
 	//! Functions

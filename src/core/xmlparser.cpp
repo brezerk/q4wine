@@ -64,6 +64,8 @@ int XmlParser::parseIOSream(QString file){
 				parseAppCategoryEntry(node.toElement());
 			} else if (action=="viewError") {
 				return 6;
+			} else if (action=="viewMessage") {
+				return parseMessageEntry(node.toElement());
 			}
 			node = node.nextSibling();
 		}
@@ -139,6 +141,16 @@ void XmlParser::parseAppCategoryEntry(const QDomElement &element){
 		}
 	}
 	return;
+}
+
+int XmlParser::parseMessageEntry(const QDomElement &element){
+	QDomNode node = element.firstChild();
+
+	if (element.tagName() == "code"){
+		return getChildNodeData(element.firstChild()).toInt();
+	}
+
+	return 6;
 }
 
 void XmlParser::parsePages(const QDomElement &element){

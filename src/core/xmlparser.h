@@ -75,6 +75,7 @@ private:
 
 	void parseAppSearchEntry(const QDomElement &element);
 	void parseAppCategoryEntry(const QDomElement &element);
+	int parseMessageEntry(const QDomElement &element);
 	void parsePages(const QDomElement &element);
 
 	void parseApp(const QDomElement &element);
@@ -85,6 +86,8 @@ private:
 	void parseBug(const QDomElement &element, WineAppDBInfo &appinfo);
 	void parseTest(const QDomElement &element, WineAppDBInfo &appinfo);
 	void parseComment(const QDomElement &element, WineAppDBInfo &appinfo);
+
+
 
 	QString getChildNodeData(const QDomNode &childNode);
 
