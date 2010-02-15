@@ -34,7 +34,7 @@
 #include <QDebug>
 #endif
 
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 class HttpCore : public QObject
 {

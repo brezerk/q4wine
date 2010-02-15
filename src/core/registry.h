@@ -34,7 +34,7 @@
 #include <QTime>
 
 //q4wine lib
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 /*!
  * \class Registry

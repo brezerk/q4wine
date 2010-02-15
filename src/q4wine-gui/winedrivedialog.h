@@ -26,10 +26,10 @@
 #include <QFileDialog>
 #include <QLibrary>
 
-#include <config.h>
+#include "config.h"
 
 //q4wine lib
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 /*!
  * \class WineDriveDialog

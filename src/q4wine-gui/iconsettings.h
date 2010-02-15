@@ -32,8 +32,8 @@
 #include "process.h"
 
 //Db
-#include "src/core/database/prefix.h"
-#include "src/core/database/icon.h"
+#include "prefix.h"
+#include "icon.h"
 
 //Qt inc
 
@@ -43,7 +43,7 @@
 #include <QKeyEvent>
 #include <QHeaderView>
 
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 /*!
  * \class IconSettings

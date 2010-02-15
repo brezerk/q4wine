@@ -27,9 +27,9 @@
 #include "config.h"
 
 //Database
-#include "src/core/database/prefix.h"
-#include "src/core/database/dir.h"
-#include "src/core/database/icon.h"
+#include "prefix.h"
+#include "dir.h"
+#include "icon.h"
 
 //Qt includes
 #include <QSqlQueryModel>
@@ -48,7 +48,7 @@
 #include "process.h"
 
 //q4wine lib
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 class PrefixControlWidget : public QWidget
 {

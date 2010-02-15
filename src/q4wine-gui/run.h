@@ -34,10 +34,10 @@
 #include "config.h"
 #include "process.h"
 
-#include "src/core/database/prefix.h"
-#include "src/core/database/last_run_icon.h"
+#include "prefix.h"
+#include "last_run_icon.h"
 
-#include <q4wine-lib/main.h>
+#include <q4wine-lib.h>
 
 /*!
  * \class Run

@@ -35,7 +35,7 @@
 #include "config.h"
 
 //Database
-#include "src/core/database/prefix.h"
+#include "prefix.h"
 
 //Widgets
 #include "iconlistwidget.h"
@@ -57,7 +57,7 @@
 #include "run.h"
 
 #ifdef WITH_WINETRIKS
-#include "temporary/winetricks.h"
+#include "winetricks.h"
 #endif
 
 //System
@@ -66,7 +66,7 @@
 #include <memory>
 
 //q4wine lib
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 class MainWindow : public QMainWindow, public Ui::MainWindow
 {

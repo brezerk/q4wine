@@ -1,0 +1,12 @@
+build/
+qt-creator/
+*~
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+*.qm
+*.o
+*.so
+*.ccx
+*.a

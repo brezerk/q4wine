@@ -31,7 +31,7 @@
 #include "config.h"
 #include "src/core/database/prefix.h"
 
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 /*!
  * \class PrefixSettings

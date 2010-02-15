@@ -33,8 +33,8 @@
 #include <QBoxLayout>
 #include <QHeaderView>
 
-#include "src/core/database/image.h"
-#include <q4wine-lib/main.h>
+#include "image.h"
+#include "q4wine-lib.h"
 
 /*!
  * \class ImageManager

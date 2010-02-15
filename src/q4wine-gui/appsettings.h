@@ -26,7 +26,7 @@
 
 #include "config.h"
 
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 class AppSettings : public QDialog, public Ui::AppSettings
 {

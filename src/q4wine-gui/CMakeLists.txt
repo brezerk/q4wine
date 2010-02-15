@@ -1,0 +1,204 @@
+cmake_minimum_required(VERSION 2.6)
+
+SET( DESKTOP_GUI_ENTRY
+    ${CMAKE_SOURCE_DIR}/q4wine.desktop
+)
+
+SET ( Q4WINE_RESOURCE_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/q4wine.qrc
+)
+
+SET( Q4WINE_GUI_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/run.cpp
+    ${CMAKE_SOURCE_DIR}/src/main.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/dir.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/icon.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/registry.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/xmlparser.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/httpcore.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/about.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsettings.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsview.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/mainwindow.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/prefixsettings.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocesswidget.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.cpp
+)
+
+SET ( Q4WINE_GUI_HEADERS
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/run.h
+    ${CMAKE_SOURCE_DIR}/src/core/registry.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/db.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/prefix.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/dir.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/icon.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/image.h
+    ${CMAKE_SOURCE_DIR}/src/core/appdbstructs.h
+    ${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
+    ${CMAKE_SOURCE_DIR}/src/core/httpcore.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/about.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsettings.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsview.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/mainwindow.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/prefixsettings.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/initdb.h
+    ${CMAKE_SOURCE_DIR}/config.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocesswidget.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.h
+)
+
+SET ( Q4WINE_GUI_MOC_HEADEDRS
+    ${CMAKE_SOURCE_DIR}/src/core/registry.h
+    ${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
+    ${CMAKE_SOURCE_DIR}/src/core/httpcore.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsettings.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsview.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/mainwindow.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/prefixsettings.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/about.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/run.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocesswidget.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.h
+)
+
+SET ( Q4WINE_GUI_UI_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/About.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppSettings.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/IconSettings.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/IconsView.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/MainWindow.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/PrefixSettings.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/Process.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/Run.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/Wizard.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/IconSettings.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/ImageManager.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/WineDriveDialog.ui
+)
+
+IF (${WITH_WINETRIKS} MATCHES ON )
+    SET( Q4WINE_GUI_SOURCES
+        ${Q4WINE_GUI_SOURCES}
+        ${CMAKE_SOURCE_DIR}/src/temporary/winetricks.cpp
+    )
+
+    SET ( Q4WINE_GUI_HEADERS
+        ${Q4WINE_GUI_HEADERS}
+        ${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
+    )
+
+    SET ( Q4WINE_GUI_MOC_HEADEDRS
+        ${Q4WINE_GUI_MOC_HEADEDRS}
+        ${CMAKE_SOURCE_DIR}/src/temporary/winetricks.h
+    )
+
+    SET ( Q4WINE_GUI_UI_SOURCES
+        ${Q4WINE_GUI_UI_SOURCES}
+        ${CMAKE_SOURCE_DIR}/src/temporary/winetricks.ui
+    )
+ENDIF (${WITH_WINETRIKS} MATCHES ON )
+
+IF (${WITH_WINEAPPDB} MATCHES ON )
+    SET( Q4WINE_GUI_SOURCES
+        ${Q4WINE_GUI_SOURCES}
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbwidget.cpp
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/linkitemwidget.cpp
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbscrollwidget.cpp
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbheaderwidget.cpp
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appinfowidget.cpp
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/lineitemwidget.cpp
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/apptestwidget.cpp
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/commentwidget.cpp
+    )
+
+    SET ( Q4WINE_GUI_HEADERS
+        ${Q4WINE_GUI_HEADERS}
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbwidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/linkitemwidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbscrollwidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbheaderwidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appinfowidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/lineitemwidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/apptestwidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/commentwidget.h
+    )
+
+    SET ( Q4WINE_GUI_MOC_HEADEDRS
+        ${Q4WINE_GUI_MOC_HEADEDRS}
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbwidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/linkitemwidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbscrollwidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appdbheaderwidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/appinfowidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/lineitemwidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/apptestwidget.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/commentwidget.h
+    )
+
+    SET ( Q4WINE_GUI_UI_SOURCES
+        ${Q4WINE_GUI_UI_SOURCES}
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppInfoWidget.ui
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/AppTestWidget.ui
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/CommentWidget.ui
+    )
+ENDIF (${WITH_WINEAPPDB} MATCHES ON )
+
+QT4_ADD_RESOURCES( RCC_SRCS ${Q4WINE_RESOURCE_SOURCES} )
+QT4_WRAP_UI( Q4WINE_GUI_UI_HEADERS ${Q4WINE_GUI_UI_SOURCES})
+QT4_WRAP_CPP( Q4WINE_GUI_MOC_SOURCES ${Q4WINE_GUI_MOC_HEADEDRS} )
+
+SET ( Q4WINE_I18N_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/i18n/en_us.ts
+    ${CMAKE_SOURCE_DIR}/src/i18n/ru_ru.ts
+    ${CMAKE_SOURCE_DIR}/src/i18n/uk_ua.ts
+    ${CMAKE_SOURCE_DIR}/src/i18n/pt_br.ts
+    ${CMAKE_SOURCE_DIR}/src/i18n/es_es.ts
+    ${CMAKE_SOURCE_DIR}/src/i18n/it_it.ts
+) 
+
+QT4_ADD_TRANSLATION( QM_I18N ${Q4WINE_I18N_SOURCES})
+install(FILES ${QM_I18N} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine/i18n)
+
+
+ADD_EXECUTABLE( q4wine ${Q4WINE_GUI_SOURCES} ${Q4WINE_GUI_HEADERS} ${Q4WINE_GUI_UI_HEADERS} ${Q4WINE_GUI_MOC_SOURCES} ${RCC_SRCS} ${QM_I18N} )
+
+IF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
+    TARGET_LINK_LIBRARIES( q4wine ${QT_LIBRARIES} q4wine-core qtsingleapp)
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES Linux)
+
+IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
+    SET(BSD_LIBS -lkvm)
+    TARGET_LINK_LIBRARIES( q4wine ${QT_LIBRARIES} ${BSD_LIBS} q4wine-core qtsingleapp)
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
+
+install(TARGETS q4wine DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+install(FILES ${DESKTOP_GUI_ENTRY} DESTINATION ${DESKTOP_ENTRY_PATH})

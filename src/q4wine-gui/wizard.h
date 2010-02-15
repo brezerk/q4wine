@@ -33,7 +33,7 @@
 #include <QInputDialog>
 #include <QLibrary>
 
-#include <config.h>
+#include "config.h"
 #include "registry.h"
 #include "process.h"
 #include "drivelistwidgetitem.h"
@@ -44,7 +44,7 @@
 #include "src/core/registry.h"
 #include "winedrivedialog.h"
 
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 /*!
  * \class Wizard

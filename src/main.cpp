@@ -32,13 +32,13 @@
 #include "stdio.h"
 #include <locale.h>
 
-#include "core/database/db.h"
-#include "core/database/initdb.h"
+#include "db.h"
+#include "initdb.h"
 
 #include "qtsingleapplication.h"
 
 //q4wine lib
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 int main(int argc, char *argv[])
 {

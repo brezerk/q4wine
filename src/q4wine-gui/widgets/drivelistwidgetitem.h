@@ -27,7 +27,7 @@
 #include <QListWidgetItem>
 
 //q4ine lib
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 class DriveListWidgetItem : public QObject, public QListWidgetItem
 {

@@ -27,10 +27,10 @@
 #include "config.h"
 
 //Database
-#include "src/core/database/prefix.h"
-#include "src/core/database/dir.h"
-#include "src/core/database/icon.h"
-#include "src/core/database/last_run_icon.h"
+#include "prefix.h"
+#include "dir.h"
+#include "icon.h"
+#include "last_run_icon.h"
 
 //Windows
 #include "run.h"
@@ -45,7 +45,7 @@
 #endif
 
 //q4wine lib
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 class PrefixTreeWidget : public QTreeWidget
 {

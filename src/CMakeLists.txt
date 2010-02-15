@@ -1,0 +1,215 @@
+cmake_minimum_required(VERSION 2.6)
+
+PROJECT(q4wine)
+
+SET(CMAKE_VERBOSE_MAKEFILE ON)
+SET(APP_VERSION "0.115-dev-rc1")
+
+# RPATH fixes
+# skip the full RPATH for the build tree
+#SET(CMAKE_SKIP_BUILD_RPATH  TRUE)
+# when building, use the install RPATH already
+# (so it doesn't need to relink when installing)
+#SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+# the RPATH to be used when installing
+# add the automatically determined parts of the RPATH
+# which point to directories outside the build tree to the install RPATH
+#SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+
+IF (NOT DEFINED WITH_ICOUTILS)
+    SET(WITH_ICOUTILS "ON")
+ENDIF (NOT DEFINED WITH_ICOUTILS)
+
+IF (NOT DEFINED WITH_WINETRIKS)
+    SET(WITH_WINETRIKS "OFF")
+ENDIF (NOT DEFINED WITH_WINETRIKS)
+
+IF (NOT DEFINED DEBUG)
+    SET(DEBUG "OFF")
+ENDIF (NOT DEFINED DEBUG)
+
+IF (NOT DEFINED WITH_EMBEDDED_FUSEISO)
+    SET(WITH_EMBEDDED_FUSEISO "OFF")
+ENDIF (NOT DEFINED WITH_EMBEDDED_FUSEISO)
+
+IF (NOT DEFINED WITH_WINEAPPDB)
+    SET(WITH_WINEAPPDB "ON")
+ENDIF (NOT DEFINED WITH_WINEAPPDB)
+
+MESSAGE("\n * Utility for management wine applications and prefixes")
+MESSAGE(" * (C) 2008-2010, brezblock core team")
+MESSAGE(" * http://brezblock.org.ua/\n")
+
+MESSAGE(STATUS "Q4Wine build enveropment -- \n")
+
+SET(QT_MIN_VERSION "4.4.1")
+FIND_PACKAGE(Qt4 REQUIRED)
+      IF(QT_FOUND)
+            MESSAGE("\n-- Found Qt version : ${QTVERSION}")
+            IF(QT_QTSQL_FOUND)
+                SET(QT_USE_QTSQL 1)
+            ELSE(QT_QTSQL_FOUND)
+                MESSAGE(FATAL ERROR "Qt SQL libraries missing.")
+            ENDIF(QT_QTSQL_FOUND)
+
+            IF(QT_QTGUI_FOUND)
+                SET(QT_USE_QTGUI 1)
+            ELSE(QT_QTGUI_FOUND)
+                MESSAGE(FATAL ERROR "Qt GUI libraries missing.")
+            ENDIF(QT_QTGUI_FOUND)
+
+            IF(QT_QTNETWORK_FOUND)
+                SET(QT_USE_QTNETWORK 1)
+            ELSE(QT_QTNETWORK_FOUND)
+                MESSAGE(FATAL ERROR "Qt NetWork libraries missing.")
+            ENDIF(QT_QTNETWORK_FOUND)
+
+            IF(QT_QTXML_FOUND)
+                SET(QT_USE_QTXML 1)
+            ELSE(QT_QTXML_FOUND)
+                MESSAGE(FATAL ERROR "Qt XML libraries missing.")
+            ENDIF(QT_QTXML_FOUND)
+
+            IF(QT_QTCORE_FOUND)
+                SET(QT_USE_QTCORE 1)
+            ELSE(QT_QTCORE_FOUND)
+                MESSAGE(FATAL ERROR "Qt Core libraries missing.")
+            ENDIF(QT_QTCORE_FOUND)
+
+            INCLUDE(${QT_USE_FILE})
+      ELSE(QT_FOUND)
+            MESSAGE(FATAL ERROR "Qt4 not found.")
+      ENDIF(QT_FOUND)
+
+MESSAGE(STATUS "Build realm is   : ${CMAKE_SYSTEM_NAME} ${CMAKE_HOST_SYSTEM_PROCESSOR}\n")
+
+IF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
+    SET(_OS_LINUX_ 1)
+    ADD_DEFINITIONS(-Wall -g)
+ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
+
+IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
+      SET(_OS_FREEBSD_ 1)
+    ADD_DEFINITIONS(-Wall -g -DKERNEL)
+ENDIF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
+
+IF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
+    MESSAGE("")
+    MESSAGE(" Warning: Darwin was not tested, and not supported!")
+    MESSAGE(" You can mail test nad bugs to us")
+    MESSAGE("")
+      SET(_OS_DARWIN_ 1)
+    ADD_DEFINITIONS(-Wall -g -DKERNEL)
+ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
+
+IF (NOT DEFINED SKIP_RPATH)
+    IF (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES x86_64)
+        SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib64/q4wine")
+    ELSE (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES x86_64)
+        SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib/q4wine")
+    ENDIF (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES x86_64)
+ELSE (NOT DEFINED SKIP_RPATH)
+    MESSAGE(STATUS "NOTE: Skip for RPATH build!")
+ENDIF (NOT DEFINED SKIP_RPATH)
+
+IF( NOT DESKTOP_ENTRY_PATH )
+    SET( DESKTOP_ENTRY_PATH ${CMAKE_INSTALL_PREFIX}/share/applications/ )
+ENDIF( NOT DESKTOP_ENTRY_PATH )
+IF( NOT PIXMAPS_ENTRY_PATH )
+    SET( PIXMAPS_ENTRY_PATH ${CMAKE_INSTALL_PREFIX}/share/pixmaps/ )
+ENDIF( NOT PIXMAPS_ENTRY_PATH )
+
+configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )
+
+MESSAGE(STATUS "Q4Wine build options --\n")
+file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_ARCH \"${CMAKE_HOST_SYSTEM_PROCESSOR}\"\n" )
+file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_HOST \"${CMAKE_SYSTEM_NAME}\"\n" )
+
+file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_VERS \"${APP_VERSION}\"\n")
+      MESSAGE(STATUS "Version                       : ${APP_VERSION}")
+file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_PREF \"${CMAKE_INSTALL_PREFIX}\"\n" )
+    MESSAGE(STATUS "CMAKE_INSTALL_PREFIX          : ${CMAKE_INSTALL_PREFIX}")
+    MESSAGE(STATUS "DESKTOP_ENTRY_PATH            : ${DESKTOP_ENTRY_PATH}")
+    MESSAGE(STATUS "PIXMAPS_ENTRY_PATH            : ${PIXMAPS_ENTRY_PATH}\n")
+file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
+
+    MESSAGE(STATUS "DEBUG                         : ${DEBUG}")
+    MESSAGE(STATUS "WITH_ICOUTILS                 : ${WITH_ICOUTILS}")
+    MESSAGE(STATUS "WITH_WINETRIKS                : ${WITH_WINETRIKS}")
+    MESSAGE(STATUS "WITH_EMBEDDED_FUSEISO         : ${WITH_EMBEDDED_FUSEISO}")
+    MESSAGE(STATUS "WITH_WINEAPPDB                : ${WITH_WINEAPPDB}")
+
+MESSAGE(STATUS "See INSTALL file for details and more info --\n")
+
+find_program( XDG_UTILS NAMES xdg-open )
+MESSAGE(STATUS "Searching for xdg binaries --\n")
+IF (${XDG_UTILS} MATCHES XDG_UTILS-NOTFOUND)
+    MESSAGE(STATUS "    xdg-open : NOT FOUND!")
+    MESSAGE(FATAL_ERROR "Please install xdg-utils package")
+ELSE (${XDG_UTILS} MATCHES XDG_UTILS-NOTFOUND)
+    MESSAGE(STATUS "    xdg-open : ${XDG_UTILS}\n")
+ENDIF (${XDG_UTILS} MATCHES XDG_UTILS-NOTFOUND)    
+
+IF (WITH_ICOUTILS MATCHES ON)
+    find_program( WRESTOOL NAMES wrestool )
+    find_program( ICOTOOL NAMES icotool )
+    MESSAGE(STATUS "Searching for icoutils binaries (WITH_ICOUTILS=ON) --\n")
+    IF (${WRESTOOL} MATCHES WRESTOOL-NOTFOUND)
+        MESSAGE(STATUS "    wrestool : NOT FOUND!")
+        MESSAGE(FATAL_ERROR "Please install icoutils package or disable icoutils support by adding -DWITH_ICOUTILS="OFF" option to cmake")
+    ELSE (${WRESTOOL} MATCHES WRESTOOL-NOTFOUND)
+        MESSAGE(STATUS "    wrestool : ${WRESTOOL}")
+    ENDIF (${WRESTOOL} MATCHES WRESTOOL-NOTFOUND)
+
+    IF (${ICOTOOL} MATCHES ICOTOOL-NOTFOUND)
+        MESSAGE(STATUS "    icotool  : NOT FOUND!\n")
+        MESSAGE(FATAL_ERROR "Please install icoutils package or disable icoutils support by adding -DWITH_ICOUTILS="OFF" option to cmake")
+    ELSE (${ICOTOOL} MATCHES ICOTOOL-NOTFOUND)
+        MESSAGE(STATUS "    icotool  : ${ICOTOOL}\n")
+    ENDIF (${ICOTOOL} MATCHES ICOTOOL-NOTFOUND)
+ENDIF (WITH_ICOUTILS MATCHES ON)
+
+IF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
+    MESSAGE(STATUS "Searching for glib-2.0, fuse, libzip pakages (WITH_EMBEDDED_FUSEISO=ON) --\n")
+        FIND_PACKAGE(PkgConfig REQUIRED)
+
+    pkg_search_module(GLIB_LIB REQUIRED glib-2.0)
+    pkg_search_module(FUSE_LIB REQUIRED fuse)
+    pkg_search_module(ZIP_LIB REQUIRED libzip)
+    MESSAGE("\n")
+ENDIF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
+
+SET ( Q4WINE_HEADERS_DIR
+    ${CMAKE_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/src/core
+    ${CMAKE_SOURCE_DIR}/src/core/database
+    ${CMAKE_SOURCE_DIR}/src/q4wine-cli
+    ${CMAKE_SOURCE_DIR}/src/q4wine-lib
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb
+    ${CMAKE_SOURCE_DIR}/src/temporary
+    ${CMAKE_SOURCE_DIR}/src/wis
+    ${CMAKE_SOURCE_DIR}/src/qtsingleapplication
+)
+
+INCLUDE_DIRECTORIES( ${Q4WINE_HEADERS_DIR} ${CMAKE_BINARY_DIR} )
+
+add_subdirectory(i18n)
+add_subdirectory(q4wine-lib)
+add_subdirectory(q4wine-cli)
+
+IF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
+    add_subdirectory(fuseiso/src)
+ENDIF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
+
+add_subdirectory(qtsingleapplication)
+add_subdirectory(q4wine-gui)
+add_subdirectory(data)
+add_subdirectory(theme)
+
+IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
+    add_subdirectory(freebsd)
+ENDIF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
