@@ -18,5 +18,4 @@ Name=Q4Wine
 Path=
 StartupNotify=true
 Terminal=false
-TerminalOptions=
 Type=Application
