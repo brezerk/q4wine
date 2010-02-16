@@ -11,3 +11,8 @@ cmake_install.cmake
 *.ccx
 *.a
 *.cxx
+ui_*.h
+config.h
+q4wine-mount
+q4wine-cli
+q4wine
