@@ -362,6 +362,43 @@ QString  corelib::getLang(){
 	return lang;
 }
 
+QString  corelib::getLocale(){
+    QString lang;
+        lang = setlocale(LC_ALL, "");
+#ifdef DEBUG
+        qDebug()<<"[ii] LC_ALL: "<<lang;
+#endif
+        if (lang.isEmpty()){
+                lang = setlocale(LC_MESSAGES, "");
+#ifdef DEBUG
+                qDebug()<<"[ii] LC_MESSAGES: "<<lang;
+#endif
+                if (lang.isEmpty()){
+                        lang = getenv("LANG");
+#ifdef DEBUG
+                        qDebug()<<"[ii] Env LANG: "<<lang;
+#endif
+                }
+        }
+
+#ifdef DEBUG
+        qDebug()<<"[ii] Lang before split: "<<lang;
+#endif
+
+        QStringList loc = lang.split(".");
+qDebug()<<loc.count();
+        if (loc.count()==2){
+            lang = loc.at(1).toLower();
+        } else {
+            lang = "utf8";
+        }
+
+#ifdef DEBUG
+        qDebug()<<"[ii] Lang to load: "<<lang;
+#endif
+        return lang;
+}
+
 QString corelib::getWhichOut(const QString fileName, bool showErr){
 	/*
    * Getting 'which' output;

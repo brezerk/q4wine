@@ -205,7 +205,10 @@ void winetricks::parse() {
 
    p.waitForFinished();
 	 //get output
-   QString lang = CoreLib->getLang();
+   QString lang = CoreLib->getLocale();
+#ifdef DEBUG
+   qDebug()<<lang;
+#endif
 
    /* Getting list */
   QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());

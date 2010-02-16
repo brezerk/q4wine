@@ -128,6 +128,7 @@ public:
 	QPixmap loadPixmap(QString pixmapName);
 
 	QString getLang();
+        QString getLocale();
 
 	/*! \brief This function get cdrom devices from /etc/fstab file.
 	 *
