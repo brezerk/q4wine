@@ -401,6 +401,38 @@ QString  corelib::getLocale(){
         return lang;
 }
 
+void corelib::getBuildFlags(){
+    QTextStream Qcout(stdout);
+    Qcout<<QObject::tr("Buildtime flags are:")<<endl<<endl;
+    Qcout<<qSetFieldWidth(25)<<left<<" CMAKE_INSTALL_PREFIX"<<APP_PREF<<qSetFieldWidth(0)<<endl<<endl;
+#ifdef DEBUG
+    Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+    Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
+#ifdef WITH_ICOUTILS
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
+#ifdef WITH_WINETRIKS
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINETRIKS"<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINETRIKS"<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
+#ifdef WITH_EMBEDDED_FUSEISO
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
+#ifdef WITH_WINEAPPDB
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
+    Qcout<<endl;
+}
+
 QString corelib::getWhichOut(const QString fileName, bool showErr){
 	/*
    * Getting 'which' output;

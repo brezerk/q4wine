@@ -359,15 +359,15 @@ void AppDBWidget::stateChanged (int state){
 }
 
 void AppDBWidget::appdbOpen_Click(void){
-	CoreLib->openUrl(QString("http://%1/").arg(APPDB_HOSTNAME));
+        CoreLib->openUrl(QString("http://%1/").arg("appdb.winehq.org"));
 	return;
 }
 
 void AppDBWidget::appdbAppPage_Click(void){
 	if (this->verid==0){
-		CoreLib->openUrl(QString("http://%1/objectManager.php?sClass=application&iId=%2").arg(APPDB_HOSTNAME).arg(this->appid));
+                CoreLib->openUrl(QString("http://%1/objectManager.php?sClass=application&iId=%2").arg("appdb.winehq.org").arg(this->appid));
 	} else {
-		CoreLib->openUrl(QString("http://%1/objectManager.php?sClass=version&iId=%2").arg(APPDB_HOSTNAME).arg(this->verid));
+                CoreLib->openUrl(QString("http://%1/objectManager.php?sClass=version&iId=%2").arg("appdb.winehq.org").arg(this->verid));
 	}
 	return;
 }

@@ -19,7 +19,7 @@
 
 #include "mainwindow.h"
 
-MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
+MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 
 	// Loading libq4wine-core.so
 	libq4wine.setFileName("libq4wine-core");
@@ -165,6 +165,8 @@ MainWindow::MainWindow(int startState, QWidget * parent, Qt::WFlags f) : QMainWi
 	tabAppDBLayout->addWidget(appdbWidget.release());
 #endif
 
+        if (!run_binary.isEmpty())
+            messageReceived(run_binary);
 	return;
 }
 
@@ -752,7 +754,24 @@ void MainWindow::mainExportIcons_Click(){
 }
 
 void MainWindow::messageReceived(const QString message) const{
-	statusBar()->showMessage(message);
+        if (message.isEmpty()){
+                statusBar()->showMessage(QObject::tr("Only one instance of %1 can be runned at same time.").arg(APP_SHORT_NAME));
+        } else  {
+            if (!QFile(message).exists()){
+                    statusBar()->showMessage(QObject::tr("Binary %1 not exists.").arg(message));
+                } else {
+
+                    if (cbPrefixes->currentText().isEmpty())
+                            return;
+
+                    Run run;
+                    run.prepare(cbPrefixes->currentText(), "", "", "", "", "", "", "", 0, message);
+
+                    if (run.exec()==QDialog::Accepted)
+                              CoreLib->runWineBinary(run.execObj);
+                }
+        }
+
 	return;
 }
 

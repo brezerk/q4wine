@@ -44,6 +44,7 @@
 #include <QProcess>
 #include <QRegExp>
 #include <QTextCodec>
+#include <QTextStream>
 
 #include "process.h"
 
@@ -129,6 +130,7 @@ public:
 
 	QString getLang();
         QString getLocale();
+        void getBuildFlags();
 
 	/*! \brief This function get cdrom devices from /etc/fstab file.
 	 *

@@ -33,4 +33,3 @@
 #include "dir.h"
 #include "icon.h"
 #include "image.h"
-

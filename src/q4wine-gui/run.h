@@ -22,6 +22,8 @@
 
 #include <memory>
 
+#include "config.h"
+
 #include <ui_Run.h>
 
 #include <QFileDialog>
@@ -29,15 +31,14 @@
 #include <QEvent>
 #include <QKeyEvent>
 #include <QUrl>
+#include <QDialog>
 #include <QHeaderView>
-
-#include "config.h"
 #include "process.h"
 
 #include "prefix.h"
 #include "last_run_icon.h"
 
-#include <q4wine-lib.h>
+#include "q4wine-lib.h"
 
 /*!
  * \class Run

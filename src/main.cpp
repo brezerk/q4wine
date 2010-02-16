@@ -23,6 +23,7 @@
 #include <QTranslator>
 #include <QMessageBox>
 #include <QDebug>
+#include <QString>
 #include <QLibrary>
 
 #include "mainwindow.h"
@@ -43,7 +44,17 @@
 int main(int argc, char *argv[])
 {
 	QtSingleApplication app(argc, argv);
-	if (app.sendMessage(QObject::tr("Only one instance of %1 can be runned at same time.").arg(APP_SHORT_NAME)))
+        QString exec_binary;
+
+        if (app.arguments().count()>2){
+                if ((app.arguments().at(1)=="--binary") or (app.arguments().at(1)=="-b")){
+                        exec_binary = app.arguments().at(2);
+                        if (app.sendMessage(exec_binary))
+                                return 0;
+                }
+            }
+
+        if (app.sendMessage(""))
 		return 0;
 
 	//! This is need for libq4wine-core.so import;
@@ -148,51 +159,28 @@ int main(int argc, char *argv[])
 	int result, startState=0;
 
 	if (app.arguments().count()>1){
-		if ((app.arguments().at(1)=="-version") or (app.arguments().at(1)=="-v")){
+                if ((app.arguments().at(1)=="--version") or (app.arguments().at(1)=="-v")){
 			Qcout<<QString("%1 %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
 			Qcout<<QString("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
 			Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
 			Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
 			Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
-			Qcout<<endl;
-			Qcout<<QObject::tr("Buildtime flags are:")<<endl;
-#ifdef DEBUG
-			Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"ON"<<qSetFieldWidth(0)<<endl;
-#else
-			Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"OFF"<<qSetFieldWidth(0)<<endl;
-#endif
-#ifdef WITH_ICOUTILS
-			Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"ON"<<qSetFieldWidth(0)<<endl;
-#else
-			Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"OFF"<<qSetFieldWidth(0)<<endl;
-#endif
-#ifdef WITH_WINETRIKS
-			Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINETRIKS"<<"ON"<<qSetFieldWidth(0)<<endl;
-#else
-			Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINETRIKS"<<"OFF"<<qSetFieldWidth(0)<<endl;
-#endif
-#ifdef WITH_EMBEDDED_FUSEISO
-			Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"ON"<<qSetFieldWidth(0)<<endl;
-#else
-			Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"OFF"<<qSetFieldWidth(0)<<endl;
-#endif
-#ifdef WITH_WINEAPPDB
-			Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"ON"<<qSetFieldWidth(0)<<endl;
-#else
-			Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"OFF"<<qSetFieldWidth(0)<<endl;
-#endif
-			Qcout<<endl;
+                        CoreLib->getBuildFlags();
 			Qcout<<QObject::tr("Author: %1.").arg("Malakhov Alexey aka John Brezerk")<<endl;
 			return 0;
-		} else if ((app.arguments().at(1)=="-minimize") or (app.arguments().at(1)=="-m")) {
+                } else if ((app.arguments().at(1)=="--minimize") or (app.arguments().at(1)=="-m")) {
 			startState = 1;
-		} else {
+                } else if ((app.arguments().at(1)=="--binary") or (app.arguments().at(1)=="-b")) {
+                        //startState = 1;
+                } else {
 			Qcout<<QObject::tr("Usage:")<<endl;
-			Qcout<<QObject::tr("  %1 [KEY]...").arg(APP_SHORT_NAME)<<endl;
+                        Qcout<<QObject::tr("  %1 -b <unix_path_to_windown_binary>").arg(APP_SHORT_NAME)<<endl;
+                        Qcout<<QObject::tr("  %1 [KEY]...").arg(APP_SHORT_NAME)<<endl;
 			Qcout<<QObject::tr("GUI utility for wine applications and prefixes management.")<<endl<<endl;
 			Qcout<<QObject::tr("KEYs list:")<<endl;
 			Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
 			Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
+                        Qcout<<qSetFieldWidth(25)<<left<<"  -b,  --binary"<<QObject::tr("Open q4wine run dialog for windows binary")<<qSetFieldWidth(0)<<endl;
 			Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --minimize"<<QObject::tr("minimize %1 main window on startup").arg(APP_SHORT_NAME)<<qSetFieldWidth(0)<<endl;
 			Qcout<<endl;
 			Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
@@ -210,7 +198,7 @@ int main(int argc, char *argv[])
 	if (!db.checkDb(tables))
 		return -1;
 
-	MainWindow mainWin(startState);
+        MainWindow mainWin(startState, exec_binary);
 	mainWin.show();
 	app.setActivationWindow(&mainWin);
 	QObject::connect(&app, SIGNAL(messageReceived(const QString&)), &mainWin, SLOT(messageReceived(const QString&)));
