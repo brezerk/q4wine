@@ -6,9 +6,21 @@
 
 echo "Run: make clean";
 make clean;
-echo "Removing cmake tmp";
-rm -rdf CMakeCache.txt CMakeFiles config.h cmake_install.cmake Makefile build install_manifest.txt qtcreator-build qtc-gdbmacros CMakeLists.txt.user q4wine.cbp;
-echo "Removing *~ fiels";
-find ./ -name '*~' -delete;
-find ./ -name '*.qm' -delete;
+
+names="CMakeCache.txt config.h cmake_install.cmake Makefile install_manifest.txt CMakeLists.txt.user *.cbp *~ *.ccx ui_*.h *.so *.a"
+
+for name in $names
+do
+    echo "Removing files: ${name}"
+    find ./ -name ${name} -type f -delete;
+done
+
+tmp_dirs="CMakeFiles build qtcreator-build"
+
+for tmp_dir in $tmp_dirs
+do
+    echo "Removing tmp dirs: ${tmp_dir}"
+    find ./ -name ${tmp_dir} -type d -exec rm -rdf '{}' \;
+done
+
 echo "Done";
