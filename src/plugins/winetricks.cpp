@@ -205,13 +205,9 @@ void winetricks::parse() {
 
    p.waitForFinished();
 	 //get output
-   QString lang;
-   // Getting env LANG variable
-   lang = getenv("LANG");
-  lang = lang.split(".").at(1);
- if (lang.isNull())
-  lang = "UTF8";
- /* Getting list */
+   QString lang = CoreLib->getLang();
+
+   /* Getting list */
   QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
   QString wOut = codec->toUnicode(p.readAllStandardOutput());
 
