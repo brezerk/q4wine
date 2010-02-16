@@ -5,6 +5,11 @@ PROJECT(q4wine)
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 SET(APP_VERSION "0.115-dev-rc1")
 
+if(POLICY CMP0011)
+  cmake_policy(SET CMP0011 NEW)
+endif(POLICY CMP0011)
+
+
 # RPATH fixes
 # skip the full RPATH for the build tree
 #SET(CMAKE_SKIP_BUILD_RPATH  TRUE)
@@ -190,14 +195,13 @@ SET ( Q4WINE_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb
-    ${CMAKE_SOURCE_DIR}/src/temporary
-    ${CMAKE_SOURCE_DIR}/src/wis
+    ${CMAKE_SOURCE_DIR}/src/plugins
     ${CMAKE_SOURCE_DIR}/src/qtsingleapplication
 )
 
 INCLUDE_DIRECTORIES( ${Q4WINE_HEADERS_DIR} ${CMAKE_BINARY_DIR} )
 
-add_subdirectory(i18n)
+include(i18n/CMakeLists.txt)
 add_subdirectory(q4wine-lib)
 add_subdirectory(q4wine-cli)
 
@@ -206,6 +210,11 @@ IF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
 ENDIF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
 
 add_subdirectory(qtsingleapplication)
+
+IF (${WITH_WINETRIKS} MATCHES ON )
+    include(plugins/CMakeLists.txt)
+ENDIF (${WITH_WINETRIKS} MATCHES ON )
+
 add_subdirectory(q4wine-gui)
 add_subdirectory(data)
 add_subdirectory(theme)

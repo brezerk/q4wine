@@ -24,7 +24,7 @@
 
 #include "config.h"
 
-#include "ui_winetricks.h"
+#include "src/q4wine-gui/ui_winetricks.h"
 
 #include <QStringList>
 #include <QProcess>
@@ -32,9 +32,9 @@
 #include <QLibrary>
 #include "process.h"
 
-#include "src/core/database/prefix.h"
+#include "prefix.h"
 
-#include <q4wine-lib/main.h>
+#include "q4wine-lib.h"
 
 class winetricks : public QDialog, public Ui::winetricks {
 	Q_OBJECT
