@@ -22,7 +22,7 @@
 
 #include <memory>
 
-#include <ui_IconSettings.h>
+#include <src/q4wine-gui/ui_IconSettings.h>
 
 //Global config
 #include "config.h"

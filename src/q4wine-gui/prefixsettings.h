@@ -23,7 +23,7 @@
 
 #include <memory>
 
-#include <ui_PrefixSettings.h>
+#include <src/q4wine-gui/ui_PrefixSettings.h>
 
 #include <QFileDialog>
 #include <QMessageBox>

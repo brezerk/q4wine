@@ -19,7 +19,7 @@
 #ifndef IMAGEMANAGER_H
 #define IMAGEMANAGER_H
 
-#include <ui_ImageManager.h>
+#include <src/q4wine-gui/ui_ImageManager.h>
 
 #include <memory>
 

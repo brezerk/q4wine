@@ -20,7 +20,7 @@
 #ifndef APPTESTWIDGET_H
 #define APPTESTWIDGET_H
 
-#include <ui_AppTestWidget.h>
+#include <src/q4wine-gui/ui_AppTestWidget.h>
 
 //Global config
 #include "config.h"

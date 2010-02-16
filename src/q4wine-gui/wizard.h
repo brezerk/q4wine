@@ -22,7 +22,7 @@
 
 #include "memory"
 
-#include <ui_Wizard.h>
+#include <src/q4wine-gui/ui_Wizard.h>
 
 #include <QFileDialog>
 #include <QProcess>

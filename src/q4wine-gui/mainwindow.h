@@ -25,7 +25,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <ui_MainWindow.h>
+#include <src/q4wine-gui/ui_MainWindow.h>
 
 //Qt includes
 #include <QSystemTrayIcon>

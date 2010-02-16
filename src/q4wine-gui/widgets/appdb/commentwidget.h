@@ -20,7 +20,7 @@
 #ifndef COMMENTWIDGET_H
 #define COMMENTWIDGET_H
 
-#include <ui_CommentWidget.h>
+#include <src/q4wine-gui/ui_CommentWidget.h>
 
 //System
 #include <memory>

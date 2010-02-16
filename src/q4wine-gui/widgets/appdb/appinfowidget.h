@@ -20,7 +20,7 @@
 #ifndef APPINFOWIDGET_H
 #define APPINFOWIDGET_H
 
-#include <ui_AppInfoWidget.h>
+#include <src/q4wine-gui/ui_AppInfoWidget.h>
 
 //System
 #include <memory>

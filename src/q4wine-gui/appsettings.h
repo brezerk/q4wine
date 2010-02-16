@@ -22,7 +22,7 @@
 #ifndef APPSETTINGS_H
 #define APPSETTINGS_H
 
-#include <ui_AppSettings.h>
+#include <src/q4wine-gui/ui_AppSettings.h>
 
 #include "config.h"
 

@@ -22,7 +22,7 @@
 
 #include "config.h"
 
-#include <ui_About.h>
+#include <src/q4wine-gui/ui_About.h>
 
 class About : public QDialog, public Ui::About
 {

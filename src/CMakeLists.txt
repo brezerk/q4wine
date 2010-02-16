@@ -197,6 +197,8 @@ SET ( Q4WINE_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb
     ${CMAKE_SOURCE_DIR}/src/plugins
     ${CMAKE_SOURCE_DIR}/src/qtsingleapplication
+    /src/q4wine-gui
+    src/q4wine-gui
 )
 
 INCLUDE_DIRECTORIES( ${Q4WINE_HEADERS_DIR} ${CMAKE_BINARY_DIR} )

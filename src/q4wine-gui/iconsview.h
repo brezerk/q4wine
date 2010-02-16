@@ -24,7 +24,7 @@
 
 #include "config.h"
 
-#include <ui_IconsView.h>
+#include <src/q4wine-gui/ui_IconsView.h>
 
 #include <QFileDialog>
 #include <QMessageBox>

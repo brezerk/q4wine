@@ -20,7 +20,7 @@
 #ifndef WINEDRIVEDIALOG_H
 #define WINEDRIVEDIALOG_H
 
-#include <ui_WineDriveDialog.h>
+#include <src/q4wine-gui/ui_WineDriveDialog.h>
 
 #include <QMessageBox>
 #include <QFileDialog>

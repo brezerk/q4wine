@@ -24,7 +24,7 @@
 
 #include "config.h"
 
-#include <ui_Process.h>
+#include "src/q4wine-lib/ui_Process.h"
 
 #include <QProcess>
 #include <QFileDialog>
