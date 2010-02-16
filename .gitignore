@@ -16,3 +16,5 @@ config.h
 q4wine-mount
 q4wine-cli
 q4wine
+*.cbp
+*.user
