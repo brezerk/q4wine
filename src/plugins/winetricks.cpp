@@ -51,24 +51,25 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
 
 	parse();
 	//fill list
-	QString str;
-	foreach (str, names) {
-		lstMain->addItem(str);
-	}
 }
 
 void winetricks::install_winetricks() {
 	downloadwinetricks ();
+        parse();
 }
 
 void winetricks::run_winetricks(){
 
-	if (!QFile(this->winetricks_bin).exists()){
-		QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
-		return;
-	}
+    if (!lstMain->currentItem()){
+        this->parse();
+        return;
+    }
 
-	QStringList args;
+#ifdef DEBUG
+    qDebug()<<"[plugin] run item";
+#endif
+
+    QStringList args;
 	if (!console_args.isEmpty()){
 		// If we have any conslope parametres, we gona preccess them one by one
 		QStringList cons_args = console_args.split(" ");
@@ -130,6 +131,7 @@ void winetricks::downloadwinetricks () {
 		}
 	}
 
+
 	args.append(CoreLib->getSetting("system", "sh").toString());
 	args.append("-c");
 	QString arg;
@@ -160,11 +162,15 @@ void winetricks::downloadwinetricks () {
 
 	args.append(arg);
 
-	Process exportProcess(args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
+    Process exportProcess(args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
 
 		exportProcess.exec();
 		// setting help
 
+#ifdef DEBUG
+    qDebug()<<"[plugin] download done";
+#endif
+    return;
 
 
 }
@@ -186,15 +192,32 @@ void winetricks::changeEvent(QEvent *e)
 */
 
 void winetricks::addToList(QString arg) {
+#ifdef DEBUG
+    qDebug()<<"[plugin] add to list";
+#endif
 QStringList args = arg.split(" ");
 QString name = args.at(0);
 int pos = arg.count() - name.count();
 QString desc = arg.right(pos);
 names.append(name);
 descs.append(desc);
-
+#ifdef DEBUG
+    qDebug()<<"[plugin] add to list end";
+#endif
 }
+
+
 void winetricks::parse() {
+
+#ifdef DEBUG
+    qDebug()<<"[plugin] parsing winetriks output";
+#endif
+
+    if (!QFile(this->winetricks_bin).exists()){
+            QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
+            return;
+    }
+
 	//create a Winetricks process
 	  QProcess p(this);
 	QString pargs;
@@ -231,6 +254,19 @@ foreach (str, strs){
 	}
 }
 
+#ifdef DEBUG
+    qDebug()<<"[plugin] parsing winetriks output done";
+#endif
+
+
+str.clear();
+foreach (str, names) {
+        lstMain->addItem(str);
+}
+
+#ifdef DEBUG
+    qDebug()<<"[plugin] add to list done";
+#endif
 
 }
 
@@ -239,10 +275,11 @@ foreach (str, strs){
 
 void winetricks::on_lstMain_itemClicked(QListWidgetItem* item)
 {
+
 	int i;
   for (i=0; i < descs.count() -1; ++i) {
    if (names.at(i) ==  item->text()){
-	   label->setText (descs.at(i));
+           label->setText (descs.at(i).trimmed());
    }
   }
 }
