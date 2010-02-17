@@ -894,7 +894,7 @@ QStringList corelib::getCdromDevices(void) const{
 			return QRegExp::escape(string).replace(" ", "\\ ");
 		}
 
-		bool corelib::mountImage(const QString image_name, const QString prefix_name) const{
+                bool corelib::mountImage(const QString image_name, const QString prefix_name){
 			QString mount_point=db_prefix.getFieldsByPrefixName(prefix_name).at(6);
 #ifdef DEBUG
 			qDebug()<<"[ii] corelib::mountImage: mount point: "<<mount_point;
@@ -928,7 +928,7 @@ QStringList corelib::getCdromDevices(void) const{
 				} else {
 					mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(image_name));
 				}
-				mount_string.replace("%MDCONFIG_BIN%", getWhichOut("mdconfig"));
+                                mount_string.replace("%MDCONFIG_BIN%", this->getWhichOut("mdconfig"));
 			}
 
 			mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());

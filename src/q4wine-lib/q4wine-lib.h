@@ -177,7 +177,7 @@ public:
 	 * \param  prefix_name	Prefix name.
 	 * \return Return an list of cdrom devices.
 	 */
-	bool mountImage(QString image_name, const QString prefix_name) const;
+        bool mountImage(QString image_name, const QString prefix_name);
 
 	/*! \brief This function umount an image or drive from prefix mount point.
 	 *
