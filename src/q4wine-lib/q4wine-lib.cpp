@@ -895,6 +895,9 @@ QStringList corelib::getCdromDevices(void) const{
 		}
 
                 bool corelib::mountImage(const QString image_name, const QString prefix_name){
+
+                        this->umountImage(prefix_name);
+
 			QString mount_point=db_prefix.getFieldsByPrefixName(prefix_name).at(6);
 #ifdef DEBUG
 			qDebug()<<"[ii] corelib::mountImage: mount point: "<<mount_point;
@@ -981,6 +984,10 @@ QStringList corelib::getCdromDevices(void) const{
 
 		bool corelib::umountImage(const QString prefix_name) const{
 			QString mount_point=db_prefix.getFieldsByPrefixName(prefix_name).at(6);
+
+                        if (this->getMountedImages(mount_point)=="none")
+                            return true;
+
 #ifdef DEBUG
 			qDebug()<<"[ii] corelib::umountImage: mount point: "<<mount_point;
 #endif

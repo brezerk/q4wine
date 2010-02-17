@@ -278,7 +278,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		item->setDrive("H:", QString("%1/.config/q4wine/tmp").arg(QDir::homePath()), "auto");
 		listWineDrives->addItem(item.release());
 
-		txtWineDesktop->setText(QString("%1/Desktop").arg(QDir::homePath()));
+                txtWineDesktop->setText(QDesktopServices::storageLocation(QDesktopServices::DesktopLocation));
 		txtWineDesktopDoc->setText(QDir::homePath());
 		txtWineDesktopMus->setText(QDir::homePath());
 		txtWineDesktopPic->setText(QDir::homePath());

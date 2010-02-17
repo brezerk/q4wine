@@ -32,6 +32,7 @@
 #include <QProgressDialog>
 #include <QInputDialog>
 #include <QLibrary>
+#include <QDesktopServices>
 
 #include "config.h"
 #include "registry.h"
