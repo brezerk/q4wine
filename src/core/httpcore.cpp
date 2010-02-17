@@ -74,15 +74,17 @@ void HttpCore::getAppDBXMLPage(QString host, short int port, QString page)
 {
 	http->setHost(host, QHttp::ConnectionModeHttp, port);
 
-	QHttpRequestHeader header("POST", page);
+        QByteArray enc_page = QUrl::toPercentEncoding(page, "/");
+
+        QHttpRequestHeader header("POST", enc_page);
 	header.setValue("Host", host);
-	header.setValue("Port", "8000");
+        header.setValue("Port", QString("%1").arg(port));
 	header.setContentType("application/x-www-form-urlencoded");
 	header.setValue("Accept-Encoding", "deflate");
 	header.setValue("User-Agent", user_agent);
 
 #ifdef DEBUG
-	qDebug()<<"[ii] Connecting to"<<host<<":"<<port<<" reuested page is: "<<page;
+        qDebug()<<"[ii] Connecting to"<<host<<":"<<port<<" reuested page is: "<<enc_page;
 #endif
 
 	this->xmlreply="";
