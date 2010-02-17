@@ -924,7 +924,7 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 
 				if (!QFile(image_name).exists()){
-					mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(this->db_image->getPath(image_name)));
+                                        mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(db_image.getPath(image_name)));
 				} else {
 					mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(image_name));
 				}
