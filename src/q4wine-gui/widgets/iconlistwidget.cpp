@@ -146,7 +146,7 @@ void IconListWidget::startDrop(QList<QUrl> files){
 			return;
 
 	  for (int i=0; i < files.count(); i++){
-			if (files.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive)){
+            if (files.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive)){
 				  QString file="", fileName="";
 				  QStringList list1;
 				  file = files.at(i).toLocalFile();
@@ -171,7 +171,16 @@ void IconListWidget::startDrop(QList<QUrl> files){
 				  } else {
 						db_icon.addIcon("", file, "", "", this->prefixName, this->dirName, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
 				  }
-			}
+            } else if (files.at(i).toLocalFile().contains(".iso", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".mdf", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".nrg", Qt::CaseInsensitive)){
+
+                if (CoreLib->mountImage(files.at(i).toLocalFile(), this->prefixName)){
+                    emit(changeStatusText(tr("%1 successfully mounted.").arg(files.at(i).toLocalFile())));
+                } else {
+                    emit(changeStatusText(tr("Fail to mount %1.").arg(files.at(i).toLocalFile())));
+                }
+
+                CoreLib->updateRecentImagesList(files.at(i).toLocalFile());
+            }
 	  }
 	  this->showContents("");
 }
@@ -244,7 +253,7 @@ void IconListWidget::dragEnterEvent(QDragEnterEvent *event){
 			QList<QUrl> list = event->mimeData()->urls();
 			for (int i=0; i < list.count(); i++){
 				  //Accept only .exe, .bat or .com files
-				  if (list.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive)){
+                  if (list.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".iso", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".mdf", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".nrg", Qt::CaseInsensitive)){
 						event->acceptProposedAction();
 						break;
 				  }
