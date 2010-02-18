@@ -327,10 +327,11 @@ void MainWindow::createTrayIcon(){
 	trayIcon->setIcon(icon);
 	setWindowIcon(icon);
 
-
 	if (CoreLib->getSetting("app", "showTrareyIcon", false).toBool()){
+        QApplication::setQuitOnLastWindowClosed(false);
 		trayIcon->show();
 	} else {
+        QApplication::setQuitOnLastWindowClosed(true);
 		trayIcon->hide();
 	}
 
@@ -339,7 +340,7 @@ void MainWindow::createTrayIcon(){
 }
 
 void MainWindow::closeEvent(QCloseEvent *event){
-	if (trayIcon->isVisible()) {
+    if (trayIcon->isVisible()) {
 		hide();
 		event->ignore();
 	} else {
@@ -521,12 +522,6 @@ void MainWindow::mainAbout_Click(){
 	 * main Menu shows About dialog
 	 */
 
-	if (!isVisible())
-		setMeVisible(TRUE);
-
-	if (isMinimized ())
-		showNormal ();
-
 	About about;
 	about.exec();
 
@@ -539,12 +534,6 @@ void MainWindow::mainRun_Click(){
 	 */
 	if (cbPrefixes->currentText().isEmpty())
 		return;
-
-	if (!isVisible())
-		setMeVisible(true);
-
-	if (isMinimized ())
-		showNormal ();
 
 	Run run;
 	run.prepare(cbPrefixes->currentText());
@@ -561,12 +550,6 @@ void MainWindow::mainImageManager_Click(){
 	 * CD Image Manager
 	 */
 
-	if (!isVisible())
-		setMeVisible(true);
-
-	if (isMinimized ())
-		showNormal ();
-
 	ImageManager manager(0);
 	manager.exec();
 
@@ -582,6 +565,14 @@ void MainWindow::mainOptions_Click(){
 
 	if (options.exec()==QDialog::Accepted){
 		CoreLib->checkSettings();
+
+        if (CoreLib->getSetting("app", "showTrareyIcon", false).toBool()){
+            QApplication::setQuitOnLastWindowClosed(false);
+            trayIcon->show();
+        } else {
+            QApplication::setQuitOnLastWindowClosed(true);
+            trayIcon->hide();
+        }
 	}
 
 	return;
@@ -652,9 +643,6 @@ void MainWindow::mainExportIcons_Click(){
 	/*
 	 * main Menu allow export icons
 	 */
-
-	if (!isVisible())
-		setMeVisible(TRUE);
 
 	QString fileName, tmpDir;
 	QStringList args;
@@ -753,27 +741,36 @@ void MainWindow::mainExportIcons_Click(){
 	return;
 }
 
-void MainWindow::messageReceived(const QString message) const{
-        if (message.isEmpty()){
-                statusBar()->showMessage(QObject::tr("Only one instance of %1 can be runned at same time.").arg(APP_SHORT_NAME));
-        } else  {
-            if (!QFile(message).exists()){
-                    statusBar()->showMessage(QObject::tr("Binary %1 not exists.").arg(message));
-                } else {
+void MainWindow::messageReceived(const QString message){
+    if (message.isEmpty()){
+        if (!isVisible())
+            this->setMeVisible(TRUE);
 
-                    if (cbPrefixes->currentText().isEmpty())
-                            return;
+        if (isMinimized())
+            this->showNormal ();
 
-                    QString wrkDir;
-                    wrkDir = message.left(fileName.length() - list1.last().length());
+        statusBar()->showMessage(tr("Only one instance of %1 can be runned at same time.").arg(APP_SHORT_NAME));
+    } else  {
+        if (!QFile(message).exists()){
+            if (!trayIcon->isVisible()){
+                statusBar()->showMessage(tr("Binary %1 not exists.").arg(message));
+            } else {
+                trayIcon->showMessage(tr("Can't run binary"), tr("Binary \"%1\" do not exists.").arg(message));
+            }
+        } else {
+            if (cbPrefixes->currentText().isEmpty())
+                return;
 
-                    Run run;
-                    run.prepare(cbPrefixes->currentText(), wrkDir, "", "", "", "", "", "", 0, message);
+            QString wrkDir;
+            wrkDir = message.left(message.length() - QStringList(message.split("/")).last().length());
 
-                    if (run.exec()==QDialog::Accepted)
-                              CoreLib->runWineBinary(run.execObj);
-                }
+            Run run;
+            run.prepare(cbPrefixes->currentText(), wrkDir, "", "", "", "", "", "", 0, message);
+
+            if (run.exec()==QDialog::Accepted)
+                CoreLib->runWineBinary(run.execObj);
         }
+    }
 
 	return;
 }

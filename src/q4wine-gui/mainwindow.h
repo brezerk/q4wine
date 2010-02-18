@@ -75,7 +75,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
                 MainWindow(int startState, QString run_binary, QWidget * parent = 0, Qt::WFlags f = 0);
 
 	public slots:
-		void messageReceived(const QString message) const;
+        void messageReceived(const QString message);
 		void setcbPrefixesIndex(const QString text) const;
 		void updateDtabaseConnectedItems(void);
 		void searchRequest(QString search);
