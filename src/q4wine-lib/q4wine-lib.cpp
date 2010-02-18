@@ -23,7 +23,6 @@ corelib::corelib(bool _GUI_MODE)
 {
 	// Setting gui mode, if false - cli mode else gui mode
 	this->_GUI_MODE=_GUI_MODE;
-	this->xdg_open="";
 	this->mdconfig="";
 	this->fuseiso="";
 	this->fusermount="";
@@ -438,10 +437,7 @@ QString corelib::getWhichOut(const QString fileName, bool showErr){
    * Getting 'which' output;
    */
 
-	if (fileName=="xdg-open"){
-		if (!xdg_open.isEmpty())
-			return xdg_open;
-	} else if  (fileName=="mdconfig"){
+    if  (fileName=="mdconfig"){
 		if (!mdconfig.isEmpty())
 			return mdconfig;
 	} else if  (fuseiso=="fuseiso"){
@@ -473,9 +469,7 @@ QString corelib::getWhichOut(const QString fileName, bool showErr){
 	QString string = proc.readAllStandardOutput();
 
 	if (!string.isEmpty()){
-		if (fileName=="xdg-open"){
-			xdg_open=string.trimmed();
-		} else if (fileName=="mdconfig"){
+        if (fileName=="mdconfig"){
 			mdconfig=string.trimmed();
 		} else if (fileName=="fuseiso"){
 			fuseiso=string.trimmed();
@@ -1036,19 +1030,6 @@ QStringList corelib::getCdromDevices(void) const{
 			return true;
 		}
 
-		bool corelib::openIconDirectry(const QString prefix_name, const QString dir_name, const QString icon_name){
-			QStringList result = db_icon.getByName(prefix_name, dir_name, icon_name);
-			QStringList args;
-			args<<result.at(4);
-			return this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
-		}
-
-		bool corelib::openPrefixDirectry(const QString prefix_name){
-			QStringList args;
-			args<<db_prefix.getPath(prefix_name);
-			return this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
-		}
-
 		QString corelib::getWinePath(const QString path, const QString option) {
 			QString output, exec;
 			QStringList args;
@@ -1161,32 +1142,14 @@ QStringList corelib::getCdromDevices(void) const{
 		}
 
 		void corelib::openHelpUrl(const QString rawurl){
-
-			QString lang = this->getSetting("", "", false).toString();
-			if (lang.isEmpty()){
-				lang = setlocale(LC_ALL, "");
-				if (lang.isEmpty()){
-					lang = setlocale(LC_MESSAGES, "");
-					if (lang.isEmpty()){
-						lang = getenv("LANG");
-					}
-				}
-				lang = lang.split(".").at(0).toLower();
-			}
-
-			if ((lang!="en_us") and (lang!="ru_ru") and (lang!="uk_ua"))
-				lang = "en_us";
-
-			QString url="http://";
+            QString url="http://";
 			url.append(APP_WEBSITTE);
 			url.append("/documentation/");
-			url.append(lang);
+            url.append(this->getLang());
 			url.append("/");
 			url.append(rawurl);
 
-			QStringList args;
-			args<<url;
-			this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
+            this->openUrl(url);
 			return;
 		}
 
@@ -1196,16 +1159,12 @@ QStringList corelib::getCdromDevices(void) const{
 			url.append("/");
 			url.append(rawurl);
 
-			QStringList args;
-			args<<url;
-			this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
+            this->openUrl(url);
 			return;
 		}
 
-		void corelib::openUrl(const QString rawurl){
-			QStringList args;
-			args<<rawurl;
-			this->runProcess(this->getWhichOut("xdg-open"), args, "", false);
+        void corelib::openUrl(const QString url){
+            QDesktopServices::openUrl(QUrl(url, QUrl::TolerantMode));
 			return;
 		}
 

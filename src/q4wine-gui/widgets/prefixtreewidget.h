@@ -39,6 +39,7 @@
 //Qt includes
 #include <QTreeWidgetItem>
 #include <QMenu>
+#include <QDesktopServices>
 
 #ifdef DEBUG
 #include <QDebug>

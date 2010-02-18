@@ -296,7 +296,7 @@ p, li { white-space: pre-wrap; }
          <attribute name="title">
           <string>Packages Authors</string>
          </attribute>
-         <layout class="QGridLayout" name="gridLayout">
+         <layout class="QGridLayout" name="gridLayout_1">
           <item row="0" column="0">
            <widget class="QGroupBox" name="groupBox_4">
             <property name="title">

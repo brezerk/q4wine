@@ -444,13 +444,13 @@ void PrefixTreeWidget::menuUmount_Click(void){
 }
 
 void PrefixTreeWidget::xdgOpenPrefixDir_Click(void){
-	  CoreLib->openPrefixDirectry(this->prefixName);
-	  return;
+    QDesktopServices::openUrl(QUrl(QString("file://%1").arg(db_prefix.getPath(this->prefixName)), QUrl::TolerantMode));
+    return;
 }
 
 void PrefixTreeWidget::xdgOpenMountDir_Click(void){
-	  CoreLib->openUrl(this->prefixMontPoint);
-	  return;
+    QDesktopServices::openUrl(QUrl(QString("file://%1").arg(this->prefixMontPoint), QUrl::TolerantMode));
+    return;
 }
 
 void PrefixTreeWidget::winefileOpenPrefixDir_Click(void){

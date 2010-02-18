@@ -38,6 +38,7 @@
 #include <QToolBar>
 #include <QTimer>
 #include <QLineEdit>
+#include <QDesktopServices>
 
 #ifdef DEBUG
 #include <QDebug>

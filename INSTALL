@@ -30,11 +30,10 @@ wine
 >=which-2.19
 >=icoutils-0.26.0
 >=qt-4.4.0
->=qt-sql4.4.0       NOTE: qt-sql might have sqlite drivers support!
+>=qt-sql-4.4.0       NOTE: qt-sql might have sqlite drivers support!
 >=qt-gui-4.4.0
 >=qt-core-4.4.0
 >=qt-network-4.4.0
-xdg-utils
 wget
 
 Optional dependencies
@@ -49,27 +48,31 @@ Installation
 4. $ cd build
 5. $ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
  
-  | Note:
+   q4wine build options:
 
-	| By default, q4wine will install desktop files in to /usr/share/applications/
-	| You can change install path by adding -DDESKTOP_ENTRY_PATH=/usr/local/share/application to cmake options
+       By default, q4wine will install allfile into this directoryes:
 
-        | By default, q4wine need icoutils to be installed;
-        | If you wish to disable icoutils support add -DWITH_ICOUTILS=OFF to cmake options
- 
-        | Note:
-        | By default, q4wine not support winetriks;
-        | If you wish to enable winetools support add -DWITH_WINETRIKS=ON to cmake options
- 
-        | Note:
-        | By default, q4wine not enable developer stuff;
-        | If you wish to enable developer stuff add -DWITH_DEVELOP_STUFF=ON to cmake options
+       CMAKE_INSTALL_PREFIX      : /usr/local
+       DESKTOP_ENTRY_PATH        : /usr/local/share/applications/
+       PIXMAPS_ENTRY_PATH        : /usr/local/share/pixmaps/
 
-	| Note:
-	| You can build embeded fuseiso (q4wine-mount) by adding this to cmake options
-	| -DWITH_EMBEDDED_FUSEISO=ON
-	| Use this only if you too lazy to download it from SF and apply RH path's.
- 
+       Optional buils falgs:     : Default | Possible
+
+       DEBUG                     : OFF | ON
+       WITH_ICOUTILS             : ON  | OFF
+       WITH_WINETRIKS            : OFF | ON
+       WITH_EMBEDDED_FUSEISO     : OFF | ON
+       WITH_WINEAPPDB            : ON  | OFF
+
+       DEBUG                     : If ON, then q4wine will write debug messages into STDOUT
+                                 : use it in debug or bug report cases;
+       WITH_ICOUTILS             : If ON, then build q4wine with icoutils support;
+       WITH_WINETRIKS            : If ON, then build q4wine with winetriks plugin support;
+       WITH_EMBEDDED_FUSEISO     : If ON, then build embedded fuseiso (q4wine-mount) binary
+                                 : please DONT USE this, if you have native fuseiso pakage for you
+                                 : system avalible! See: http://fuseiso.sourceforge.net/ ;
+       WITH_WINEAPPDB            : If ON, then build q4wine with wine appdb browser support;
+
 6. $ make
 7. $ make install
 8. $ q4wine

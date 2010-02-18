@@ -173,10 +173,10 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		timer->start(1000);
 		break;
  case 6:
-		CoreLib->openUrl(search);
+        QDesktopServices::openUrl(QUrl(search, QUrl::TolerantMode));
 		break;
  case 7:
-		CoreLib->openUrl(QString("http://%1/show_bug.cgi?id=%2").arg(BUGS_HOSTNAME).arg(val1));
+        QDesktopServices::openUrl(QUrl(QString("http://%1/").arg("appdb.winehq.org"), QUrl::TolerantMode));
 		break;
 	}
 
@@ -359,15 +359,15 @@ void AppDBWidget::stateChanged (int state){
 }
 
 void AppDBWidget::appdbOpen_Click(void){
-        CoreLib->openUrl(QString("http://%1/").arg("appdb.winehq.org"));
+    QDesktopServices::openUrl(QUrl(QString("http://%1/").arg("appdb.winehq.org"), QUrl::TolerantMode));
 	return;
 }
 
 void AppDBWidget::appdbAppPage_Click(void){
 	if (this->verid==0){
-                CoreLib->openUrl(QString("http://%1/objectManager.php?sClass=application&iId=%2").arg("appdb.winehq.org").arg(this->appid));
+        QDesktopServices::openUrl(QUrl(QString("http://%1/objectManager.php?sClass=application&iId=%2").arg("appdb.winehq.org").arg(this->appid), QUrl::TolerantMode));
 	} else {
-                CoreLib->openUrl(QString("http://%1/objectManager.php?sClass=version&iId=%2").arg("appdb.winehq.org").arg(this->verid));
+        QDesktopServices::openUrl(QUrl(QString("http://%1/objectManager.php?sClass=version&iId=%2").arg("appdb.winehq.org").arg(this->verid), QUrl::TolerantMode));
 	}
 	return;
 }

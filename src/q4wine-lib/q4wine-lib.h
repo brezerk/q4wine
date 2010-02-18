@@ -45,6 +45,8 @@
 #include <QRegExp>
 #include <QTextCodec>
 #include <QTextStream>
+#include <QDesktopServices>
+#include <QUrl>
 
 #include "process.h"
 
@@ -193,15 +195,6 @@ public:
 	 */
 	bool killWineServer(const QString prefix_path) const;
 
-	/*! \brief Open icon folder.
-	 *
-	 * \param  prefix_name	Prefix name.
-	 * \param  dir_name		Dir name.
-	 * \param  icon_name	Icon name.
-	 * \return Return true on success.
-	 */
-	bool openIconDirectry(const QString prefix_name, const QString dir_name, const QString icon_name);
-
 	/*! \brief Prepare icon data for run wine.
 	 *
 	 * \param  prefix_name	Prefix name.
@@ -225,13 +218,6 @@ public:
 	QString createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const;
 
 	QString getWinePath(const QString path, const QString option);
-
-	/*! \brief Open prefix folder.
-	 *
-	 * \param  prefix_name	Prefix name.
-	 * \return Return true on success.
-	 */
-	bool openPrefixDirectry(const QString prefix_name);
 
 	/*! \brief This function builds wine dlls list for prefix_lib_path.
 	 *
@@ -285,7 +271,7 @@ private:
 	 */
 	bool _GUI_MODE;
 
-	QString xdg_open, mdconfig, fuseiso, fusermount, ln, rm, sh;
+    QString mdconfig, fuseiso, fusermount, ln, rm, sh;
 
 	/*! \brief Displays error message depending on _GUI_MODE variable value
 	 *

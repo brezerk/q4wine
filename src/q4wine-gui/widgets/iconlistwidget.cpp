@@ -871,13 +871,13 @@ void IconListWidget::menuUmount_Click(void){
 }
 
 void IconListWidget::xdgOpenPrefixDir_Click(void){
-	  CoreLib->openPrefixDirectry(this->prefixName);
+     QDesktopServices::openUrl(QUrl(QString("file://%1").arg(db_prefix.getPath(this->prefixName)), QUrl::TolerantMode));
 	  return;
 }
 
 void IconListWidget::xdgOpenMountDir_Click(void){
-	  CoreLib->openUrl(this->prefixMontPoint);
-	  return;
+    QDesktopServices::openUrl(QUrl(QString("file://%1").arg(this->prefixMontPoint), QUrl::TolerantMode));
+    return;
 }
 
 void IconListWidget::xdgOpenIconDir_Click(void){
@@ -892,9 +892,9 @@ void IconListWidget::xdgOpenIconDir_Click(void){
 	  QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).at(4);
 
 	  if (result.isEmpty()){
-			emit(changeStatusText(tr("Error: \"%1\" is an embedded wine binary.").arg(item->text())));
+          emit(changeStatusText(tr("Error: \"%1\" is an embedded wine binary.").arg(item->text())));
 	  } else {
-			CoreLib->openUrl(result);
+          QDesktopServices::openUrl(QUrl(QString("file://%1").arg(result), QUrl::TolerantMode));
 	  }
 
 	  item.release();

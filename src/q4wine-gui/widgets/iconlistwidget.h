@@ -38,6 +38,7 @@
 
 //Qt includes
 #include <QMenu>
+#include <QDesktopServices>
 
 #ifdef DEBUG
 #include <QDebug>
