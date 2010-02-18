@@ -227,6 +227,7 @@ ENDIF (${WITH_WINETRIKS} MATCHES ON )
 add_subdirectory(q4wine-gui)
 add_subdirectory(data)
 add_subdirectory(theme)
+add_subdirectory(icons)
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     add_subdirectory(freebsd)
