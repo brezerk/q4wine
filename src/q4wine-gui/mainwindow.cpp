@@ -764,8 +764,11 @@ void MainWindow::messageReceived(const QString message) const{
                     if (cbPrefixes->currentText().isEmpty())
                             return;
 
+                    QString wrkDir;
+                    wrkDir = message.left(fileName.length() - list1.last().length());
+
                     Run run;
-                    run.prepare(cbPrefixes->currentText(), "", "", "", "", "", "", "", 0, message);
+                    run.prepare(cbPrefixes->currentText(), wrkDir, "", "", "", "", "", "", 0, message);
 
                     if (run.exec()==QDialog::Accepted)
                               CoreLib->runWineBinary(run.execObj);
