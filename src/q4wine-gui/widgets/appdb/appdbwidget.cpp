@@ -176,7 +176,7 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
         QDesktopServices::openUrl(QUrl(search, QUrl::TolerantMode));
 		break;
  case 7:
-        QDesktopServices::openUrl(QUrl(QString("http://%1/").arg("appdb.winehq.org"), QUrl::TolerantMode));
+        QDesktopServices::openUrl(QUrl(QString("http://%1/show_bug.cgi?id=%2").arg(BUGS_HOSTNAME).arg(val1), QUrl::TolerantMode));
 		break;
 	}
 
