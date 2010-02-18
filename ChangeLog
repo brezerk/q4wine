@@ -9,8 +9,20 @@ Version 0.115-dev
  Added:
   - Wine AppDB support;
   - A lot of GUI improvements;
+  - You can mount iso images just by droping them into q4wine icons list space;
+  - Automatic unmounting for mouned media before mount new one;
+  - Q4Wine now can be associated with application/x-ms-dos-executable mime type files;
 
  Fixed:
+  - CMake now do check for fuseiso;
+  - CMake now make more verbous output;
+  - Total rewrite of CMake rules;
+  - A lot of fixes in Fake drive creation\update wizard;
+  - Fixed locale detection bugs;
+  - Fixes in tray icon support;
+  - Fixes in winetriks plugin;
+  - A lot fixes in q4wine.desktop file;
+  - Removed xdg-utils dependency;
   - A lot of fixes and speedups;
   - Fixed GUI issue with qtcurve theme engine;
   - Fixed *.bat files drop;
