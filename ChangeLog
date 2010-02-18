@@ -12,6 +12,7 @@ Version 0.115-dev
   - You can mount iso images just by droping them into q4wine icons list space;
   - Automatic unmounting for mouned media before mount new one;
   - Q4Wine now can be associated with application/x-ms-dos-executable mime type files;
+  - Added AUTHORS file;
 
  Fixed:
   - CMake now do check for fuseiso;
