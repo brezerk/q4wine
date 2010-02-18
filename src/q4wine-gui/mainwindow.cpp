@@ -56,8 +56,8 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	toolbar->addAction(action.release());
 	toolbar->addSeparator();
 
-	action.reset(new QAction(CoreLib->loadIcon("data/regedit.png"), tr("Run winetriks"), this));
-	action->setStatusTip(tr("Run winetriks utility created by DanKegel"));
+    action.reset(new QAction(CoreLib->loadIcon("data/regedit.png"), tr("Run winetriks plugin"), this));
+    action->setStatusTip(tr("Run winetriks plugin (wine manage utility created by DanKegel)"));
 	connect(action.get(), SIGNAL(triggered()), this, SLOT(prefixRunWinetriks_Click()));
 
 	toolbar->addAction(action.release());
