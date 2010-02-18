@@ -5,7 +5,6 @@ Comment[uk]=Графічна оболонка для налаштування Wi
 Comment=GUI configuration tool for Wine
 Comment[en]=GUI configuration tool for Wine
 Comment[ru]=Графическая оболочка для настройки Wine
-Encoding=UTF-8
 Exec=q4wine -b %u
 GenericName[uk]=Графічна оболонка для налаштування Wine
 GenericName=GUI configuration tool for Wine
