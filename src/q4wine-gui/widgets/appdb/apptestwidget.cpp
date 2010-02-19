@@ -36,7 +36,7 @@ AppTestWidget::AppTestWidget(const WineAppDBInfo appinfo, QWidget *parent) : QWi
 		lblWhatWasNotTested->setText(appinfo.nottested);
 
 		if (!appinfo.url.isEmpty()){
-			std::auto_ptr<LinkItemWidget> label(new LinkItemWidget(tr("Application web page"), 6));
+            std::auto_ptr<LinkItemWidget> label(new LinkItemWidget("App web page", 6));
 			label->setSearchUrl(appinfo.url);
 			label->setToolTip(appinfo.url);
 			connect (label.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SIGNAL(itemTrigged(short int, QString, int, int, int)));
@@ -126,14 +126,14 @@ void AppTestWidget::addTestResults(QList<WineAppDBTestResult> tests){
 		version->addLabel(tests.at(i).date, 120, 1);
 		version->addLabel(QString("%1").arg(tests.at(i).winever), 120, 1);
 		if (tests.at(i).install){
-			version->addLabel(tr("Installs"), 60, 1);
+            version->addLabel("Installs", 60, 1);
 		} else {
-			version->addLabel(tr(""), 60, 1);
+            version->addLabel("", 60, 1);
 		}
 		if (tests.at(i).run){
-			version->addLabel(tr("Runs"), 60, 1);
+            version->addLabel("Runs", 60, 1);
 		} else {
-			version->addLabel(tr(""), 60, 1);
+            version->addLabel("", 60, 1);
 		}
 
 		version->addLabel(tests.at(i).rating, 120, 1);

@@ -753,7 +753,7 @@ void MainWindow::messageReceived(const QString message){
     } else  {
         if (!QFile(message).exists()){
             if (!trayIcon->isVisible()){
-                statusBar()->showMessage(tr("Binary %1 not exists.").arg(message));
+                statusBar()->showMessage(tr("Binary \"%1\" do not exists.").arg(message));
             } else {
                 trayIcon->showMessage(tr("Can't run binary"), tr("Binary \"%1\" do not exists.").arg(message));
             }

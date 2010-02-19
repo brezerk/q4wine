@@ -144,7 +144,7 @@ void WineProcessWidget::getWineProcesssInfo(void){
 		model->setData(model->index(i, 3, QModelIndex()), proclist.at(i).at(3), Qt::DisplayRole);
 	}
 
-	lblInfo->setText(tr("Total process: %1").arg(proclist.size()));
+    lblInfo->setText(tr("Total process count: %1").arg(proclist.size()));
 
 	procTable->resizeColumnsToContents();
 	procTable->resizeRowsToContents();

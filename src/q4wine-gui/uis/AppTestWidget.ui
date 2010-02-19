@@ -16,9 +16,6 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
   <layout class="QVBoxLayout" name="TestLayout">
    <item>
     <widget class="QWidget" name="widget_2" native="true">
@@ -51,7 +48,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Some App Name - retail Expanstion on 5 dvd v  3.1</string>
+         <string notr="true">Some App Name - retail Expanstion on 5 dvd v  3.1</string>
         </property>
         <property name="textFormat">
          <enum>Qt::PlainText</enum>
@@ -83,7 +80,7 @@
    <item>
     <widget class="QLabel" name="lblAppDesc">
      <property name="text">
-      <string>Some App Name description which might be fulland contain html. may be?</string>
+      <string notr="true">Some App Name description which might be fulland contain html. may be?</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -117,7 +114,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>License:</string>
+         <string notr="true">License:</string>
         </property>
        </widget>
       </item>
@@ -130,7 +127,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>EULA</string>
+         <string notr="true">EULA</string>
         </property>
        </widget>
       </item>
@@ -159,7 +156,7 @@
       </sizepolicy>
      </property>
      <property name="title">
-      <string>Selected test results:</string>
+      <string notr="true">Selected test results:</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
@@ -180,7 +177,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Wine:</string>
+            <string notr="true">Wine:</string>
            </property>
           </widget>
          </item>
@@ -193,7 +190,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>3.1.14</string>
+            <string notr="true">3.1.14</string>
            </property>
           </widget>
          </item>
@@ -219,7 +216,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Rating:</string>
+            <string notr="true">Rating:</string>
            </property>
           </widget>
          </item>
@@ -232,7 +229,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Gold</string>
+            <string notr="true">Gold</string>
            </property>
           </widget>
          </item>
@@ -248,7 +245,7 @@
          </font>
         </property>
         <property name="text">
-         <string>What works:</string>
+         <string notr="true">What works:</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -264,7 +261,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>The game itself installs and runs fine.  I mounted the ISO and used winecfg to abstract that loopback mount as a drive.  I had to use both the SMP fix as well as the network patch.</string>
+         <string notr="true">The game itself installs and runs fine.  I mounted the ISO and used winecfg to abstract that loopback mount as a drive.  I had to use both the SMP fix as well as the network patch.</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
@@ -283,7 +280,7 @@
          </font>
         </property>
         <property name="text">
-         <string>What does not:</string>
+         <string notr="true">What does not:</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -299,7 +296,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Edge detection of the mouse is an issue.   In the game to scroll the screen you are suppose to move the mouse to the edge of it. owever it's very easy to move off the screen  which causes the screen not to scroll.</string>
+         <string notr="true">Edge detection of the mouse is an issue.   In the game to scroll the screen you are suppose to move the mouse to the edge of it. owever it's very easy to move off the screen  which causes the screen not to scroll.</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
@@ -318,7 +315,7 @@
          </font>
         </property>
         <property name="text">
-         <string>What was not tested:</string>
+         <string notr="true">What was not tested:</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -334,7 +331,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Multiplayer.</string>
+         <string notr="true">Multiplayer.</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
@@ -353,7 +350,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Additional Comments:</string>
+         <string notr="true">Additional Comments:</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -369,7 +366,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Mouse control issues, but overall works well.</string>
+         <string notr="true">Mouse control issues, but overall works well.</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
@@ -391,7 +388,7 @@
       </sizepolicy>
      </property>
      <property name="title">
-      <string>Top 5 test results:</string>
+      <string notr="true">Top 5 test results:</string>
      </property>
      <layout class="QGridLayout" name="Top5ResultsLayout">
       <property name="margin">
@@ -412,7 +409,7 @@
       </sizepolicy>
      </property>
      <property name="title">
-      <string>Known bugs:</string>
+      <string notr="true">Known bugs:</string>
      </property>
      <layout class="QGridLayout" name="BugsLayout">
       <property name="margin">

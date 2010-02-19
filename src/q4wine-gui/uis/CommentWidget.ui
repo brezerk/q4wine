@@ -16,9 +16,6 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="windowTitle">
-   <string>Frame</string>
-  </property>
   <property name="frameShape">
    <enum>QFrame::StyledPanel</enum>
   </property>
@@ -68,7 +65,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Test message.</string>
+      <string notr="true">Test message.</string>
      </property>
      <property name="textFormat">
       <enum>Qt::RichText</enum>

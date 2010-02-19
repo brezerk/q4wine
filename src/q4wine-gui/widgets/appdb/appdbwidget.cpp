@@ -238,7 +238,7 @@ void AppDBWidget::httpcore_pageDownloaded(void){
 	case 5:
 		this->appdbHeader->createCategoryList(xmlparser->getCategorysList());
 		this->appdbHeader->insertStretch();
-		this->appdbScrollArea->addVersionFrame(xmlparser->getSubCategorysList(), tr("Sub categoryes"), 5);
+        this->appdbScrollArea->addVersionFrame(xmlparser->getSubCategorysList(), tr("Subcategories"), 5);
 		this->appdbScrollArea->addVersionFrame(xmlparser->getAppsList(), tr("Applications"), 3);
 		this->appdbScrollArea->insertStretch();
 		appdbClear->setEnabled(true);
@@ -252,7 +252,7 @@ void AppDBWidget::httpcore_pageDownloaded(void){
 void AppDBWidget::showXmlError(int id){
 	switch (id){
 	case 1:
-		this->appdbHeader->addLabel(tr("Error: can't read data from appqb.winehq.org."));
+        this->appdbHeader->addLabel(tr("Error: can't read data from %1.").arg(APP_WEBSITTE));
 		break;
 	case 2:
 		this->appdbHeader->addLabel(tr("Error: wrong or broken xml data. Try again later."));

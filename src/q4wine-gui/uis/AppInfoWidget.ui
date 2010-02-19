@@ -16,9 +16,6 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <property name="margin">
     <number>0</number>
@@ -53,7 +50,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string/>
+         <string notr="true"/>
         </property>
         <property name="pixmap">
          <pixmap resource="../../q4wine.qrc">:/data/winecfg.png</pixmap>
@@ -117,8 +114,23 @@
                 <bold>true</bold>
                </font>
               </property>
+              <property name="toolTip">
+               <string notr="true"/>
+              </property>
+              <property name="statusTip">
+               <string notr="true"/>
+              </property>
+              <property name="whatsThis">
+               <string notr="true"/>
+              </property>
+              <property name="accessibleName">
+               <string notr="true"/>
+              </property>
+              <property name="accessibleDescription">
+               <string notr="true"/>
+              </property>
               <property name="text">
-               <string>Some App Name</string>
+               <string notr="true">Some App Name</string>
               </property>
               <property name="textFormat">
                <enum>Qt::PlainText</enum>
@@ -163,7 +175,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Some App Name description which might be not more then 255 characters longer...</string>
+            <string notr="true">Some App Name description which might be not more then 255 characters longer...</string>
            </property>
            <property name="textFormat">
             <enum>Qt::PlainText</enum>

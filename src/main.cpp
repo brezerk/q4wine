@@ -174,7 +174,7 @@ int main(int argc, char *argv[])
             //startState = 1;
         } else {
 			Qcout<<QObject::tr("Usage:")<<endl;
-            Qcout<<QObject::tr("  %1 -b <unix_path_to_windown_binary>").arg(APP_SHORT_NAME)<<endl;
+            Qcout<<QString("  %1 -b <unix_path_to_windown_binary>").arg(APP_SHORT_NAME)<<endl;
             Qcout<<QObject::tr("  %1 [KEY]...").arg(APP_SHORT_NAME)<<endl;
 			Qcout<<QObject::tr("GUI utility for wine applications and prefixes management.")<<endl<<endl;
 			Qcout<<QObject::tr("KEYs list:")<<endl;

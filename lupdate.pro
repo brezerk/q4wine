@@ -11,31 +11,34 @@ warning("==============================================")
  
 # Application source code
 
-FORMS += src/temporary/winetricks.ui \
-	src/q4wine-gui/uis/About.ui \
-	src/q4wine-gui/uis/PrefixSettings.ui \
-	src/q4wine-gui/uis/Run.ui \
-	src/q4wine-gui/uis/Wizard.ui \
-	src/q4wine-gui/uis/Process.ui \
-	src/q4wine-gui/uis/MainWindow.ui \
-	src/q4wine-gui/uis/IconSettings.ui \
-	src/q4wine-gui/uis/WineDriveDialog.ui \
-	src/q4wine-gui/uis/IconsView.ui \
-	src/q4wine-gui/uis/AppSettings.ui \
-	src/q4wine-gui/uis/ImageManager.ui
+FORMS += src/plugins/winetricks.ui \
+    src/q4wine-gui/uis/About.ui \
+    src/q4wine-gui/uis/AppSettings.ui \
+    src/q4wine-gui/uis/IconSettings.ui \
+    src/q4wine-gui/uis/IconsView.ui \
+    src/q4wine-gui/uis/MainWindow.ui \
+    src/q4wine-gui/uis/PrefixSettings.ui \
+    src/q4wine-gui/uis/Process.ui \
+    src/q4wine-gui/uis/Run.ui \
+    src/q4wine-gui/uis/Wizard.ui \
+    src/q4wine-gui/uis/IconSettings.ui \
+    src/q4wine-gui/uis/ImageManager.ui \
+    src/q4wine-gui/uis/WineDriveDialog.ui \
+    src/q4wine-gui/uis/AppInfoWidget.ui \ 
+    src/q4wine-gui/uis/AppTestWidget.ui \
+    src/q4wine-gui/uis/CommentWidget.ui
 
-SOURCES += src/temporary/winetricks.cpp \
-	src/temporary/winetrickshelp.cpp \
-	src/wis/wisitem.cpp \
+SOURCES += src/plugins/winetricks.cpp \
 	src/core/database/last_run_icon.cpp \
 	src/core/database/dir.cpp \
 	src/core/database/prefix.cpp \
 	src/core/database/icon.cpp \
 	src/core/database/db.cpp \
 	src/core/database/image.cpp \
-	src/core/winebinlauncher.cpp \
 	src/core/registry.cpp \
-	src/q4wine-cli/main.cpp \
+    src/core/xmlparser.cpp \
+    src/core/httpcore.cpp \
+	src/q4wine-cli/q4wine-cli.cpp \
 	src/q4wine-gui/iconsview.cpp \
 	src/q4wine-gui/process.cpp \
 	src/q4wine-gui/run.cpp \
@@ -48,38 +51,24 @@ SOURCES += src/temporary/winetricks.cpp \
 	src/q4wine-gui/winedrivedialog.cpp \
 	src/q4wine-gui/mainwindow.cpp \
 	src/q4wine-gui/prefixsettings.cpp \
-	src/q4wine-lib/main.cpp \
+    src/q4wine-gui/widgets/iconlistwidget.cpp \
+    src/q4wine-gui/widgets/prefixtreewidget.cpp \
+    src/q4wine-gui/widgets/wineprocesswidget.cpp \
+    src/q4wine-gui/widgets/prefixcontrolwidget.cpp \
+    src/q4wine-gui/widgets/drivelistwidgetitem.cpp \
+    src/q4wine-gui/widgets/appdb/appdbwidget.cpp \
+    src/q4wine-gui/widgets/appdb/linkitemwidget.cpp \
+    src/q4wine-gui/widgets/appdb/appdbscrollwidget.cpp \
+    src/q4wine-gui/widgets/appdb/appdbheaderwidget.cpp \
+    src/q4wine-gui/widgets/appdb/appinfowidget.cpp \
+    src/q4wine-gui/widgets/appdb/lineitemwidget.cpp \
+    src/q4wine-gui/widgets/appdb/apptestwidget.cpp \
+    src/q4wine-gui/widgets/appdb/commentwidget.cpp \
+	src/q4wine-lib/q4wine-lib.cpp \
 	src/main.cpp
 
-HEADERS += src/temporary/winetricks.h \
-	src/temporary/winetrickshelp.h \
-	src/wis/wisitem.h \
-	src/core/database/db.h \
-	src/core/database/dir.h \ 
-	src/core/database/icon.h \
-	src/core/database/prefix.h \
-	src/core/database/last_run_icon.h \
-	src/core/database/initdb.h \
-	src/core/database/image.h \
-	src/core/winebinlauncher.h \
-	src/core/registry.h \
-	src/q4wine-cli/main.h \
-	src/q4wine-gui/imagemanager.h \ 
-	src/q4wine-gui/mainwindow.h \
-	src/q4wine-gui/iconsview.h \
-	src/q4wine-gui/run.h \
-	src/q4wine-gui/appsettings.h \
-	src/q4wine-gui/about.h \
-	src/q4wine-gui/winedrivedialog.h \
-	src/q4wine-gui/process.h \
-	src/q4wine-gui/prefixsettings.h \
-	src/q4wine-gui/draglistwidget.h \
-	src/q4wine-gui/iconsettings.h \
-	src/q4wine-gui/wizard.h \
-	src/q4wine-lib/main.h 
-
 TRANSLATIONS += src/i18n/en_us.ts \
-    	src/i18n/ru_ru.ts \
+    src/i18n/ru_ru.ts \
 	src/i18n/uk_ua.ts \
 	src/i18n/pt_br.ts \
 	src/i18n/it_it.ts \

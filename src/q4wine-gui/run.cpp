@@ -147,7 +147,7 @@ void Run::cmdOk_Click(){
 	}
 
 	if (!QDir(txtWorkDir->text()).exists()){
-		QMessageBox::warning(this, tr("Error"), tr("Selected working direcotory not exists."));
+        QMessageBox::warning(this, tr("Error"), tr("Selected working directory not exists."));
 		return;
 	}
 
