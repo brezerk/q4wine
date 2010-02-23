@@ -1581,6 +1581,104 @@
            </widget>
           </item>
           <item>
+           <widget class="QGroupBox" name="groupBox_13">
+            <property name="title">
+             <string>Default virtual desktop</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_9">
+             <item>
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>Default virtual desktop size will be used for &quot;Icon creation&quot; and &quot;Run&quot; dialogs.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_15" native="true">
+               <layout class="QHBoxLayout" name="_7">
+                <property name="margin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_7">
+                  <property name="minimumSize">
+                   <size>
+                    <width>140</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>140</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Size:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="cboxDesktopSize">
+                  <item>
+                   <property name="text">
+                    <string>No virtual desktop</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">320x240</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">640x480</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">800x600</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1024x768</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1600x1200</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1440x900</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1680x1050</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1920x1200</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">2560x1600</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
            <spacer name="verticalSpacer_6">
             <property name="orientation">
              <enum>Qt::Vertical</enum>

@@ -69,10 +69,19 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 
 	this->loadThemeIcons();
 
+
+    QString res;
 	switch (icon_name.isEmpty()){
 		case TRUE:
 			lblCaption->setText(tr("Adding new icon"));
 			setWindowTitle(tr("Adding new icon"));
+
+            res = CoreLib->getSetting("advanced", "defaultDesktopSize", false, "").toString();
+            if (res.isEmpty()){
+                cboxDesktopSize->setCurrentIndex(0);
+            } else {
+                cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(res));
+            }
 		break;
 		case FALSE:
 			lblCaption->setText(tr("Icon settings"));

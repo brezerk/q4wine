@@ -453,7 +453,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_8">
             <property name="title">
-             <string>Virtua desktop</string>
+             <string>Virtual desktop</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>

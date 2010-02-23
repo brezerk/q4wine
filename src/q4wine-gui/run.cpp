@@ -46,6 +46,13 @@ Run::Run(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	connect(cbUseConsole, SIGNAL(stateChanged(int)), this, SLOT(cbUseConsole_stateChanged(int)));
 	connect(twbGeneral, SIGNAL(currentChanged(int)), this, SLOT(ResizeContent(int)));
 
+    QString res = CoreLib->getSetting("advanced", "defaultDesktopSize", false, "").toString();
+    if (res.isEmpty()){
+        cboxDesktopSize->setCurrentIndex(0);
+    } else {
+        cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(res));
+    }
+
 	cmdGetProgramBin->installEventFilter(this);
 	cmdGetWorkDir->installEventFilter(this);
 	cmdOk->setFocus(Qt::ActiveWindowFocusReason);

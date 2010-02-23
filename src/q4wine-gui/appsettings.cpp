@@ -198,6 +198,14 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	} else {
 		chOpenRunDialog->setChecked(true);
 	}
+
+    QString res = settings.value("defaultDesktopSize").toString();
+    if (res.isEmpty()){
+        cboxDesktopSize->setCurrentIndex(0);
+    } else {
+        cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(res));
+    }
+
 	settings.endGroup();
 
 	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
@@ -506,7 +514,6 @@ void AppSettings::cmdOk_Click(){
 	}
 
 	if (radioEmbedded->isChecked()){
-		QString format;
 		settings.setValue("type", 3);
 		if (txtMountString->text().isEmpty()){
 			txtMountString->setText(CoreLib->getMountString(3));
@@ -550,6 +557,13 @@ void AppSettings::cmdOk_Click(){
 	} else {
 		settings.setValue("openRunDialog", 0);
 	}
+
+    QString desktopSize=cboxDesktopSize->currentText();
+    if (desktopSize==tr("No virtual desktop"))
+        desktopSize="";
+
+    settings.setValue("defaultDesktopSize", desktopSize);
+
 	settings.endGroup();
 
 	accept();
