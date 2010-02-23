@@ -366,6 +366,10 @@ void MainWindow::closeEvent(QCloseEvent *event){
 
 void MainWindow::tbwGeneral_CurrentTabChange(int tabIndex){
 	switch (tabIndex){
+    case 0:
+        emit(stopProcTimer());
+        setSearchFocus();
+        break;
  case 1:
 		//Initiate /proc reading
 		emit(startProcTimer());
