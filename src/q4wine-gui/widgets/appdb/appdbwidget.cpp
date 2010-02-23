@@ -358,6 +358,11 @@ void AppDBWidget::stateChanged (int state){
 	return;
 }
 
+void AppDBWidget::setFocus(void){
+    this->searchField->setFocus(Qt::OtherFocusReason);
+    return;
+}
+
 void AppDBWidget::appdbOpen_Click(void){
     QDesktopServices::openUrl(QUrl(QString("http://%1/").arg("appdb.winehq.org"), QUrl::TolerantMode));
 	return;

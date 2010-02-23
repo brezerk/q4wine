@@ -78,7 +78,10 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
         void messageReceived(const QString message);
 		void setcbPrefixesIndex(const QString text) const;
 		void updateDtabaseConnectedItems(void);
+
+#ifdef WITH_WINEAPPDB
 		void searchRequest(QString search);
+#endif
 
 	private slots:
 		void tbwGeneral_CurrentTabChange(int tabIndex);
@@ -149,7 +152,10 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		std::auto_ptr<QSplitter> splitter;
 
 	signals:
-		void appdbWidget_startSearch(short int, QString);
+#ifdef WITH_WINEAPPDB
+        void appdbWidget_startSearch(short int, QString);
+        void setAppDBFocus();
+#endif
 		void updateDatabaseConnections(void);
 		void setDefaultFocus(QString, QString);
 		void stopProcTimer(void);

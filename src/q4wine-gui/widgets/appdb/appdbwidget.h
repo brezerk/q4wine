@@ -57,6 +57,7 @@ public slots:
 	void requestError(QString error);
 	void updateDataReadProgress(int bytesRead, int totalBytes);
 	void stateChanged(int state);
+    void setFocus(void);
 
 private:
 	//! Functions

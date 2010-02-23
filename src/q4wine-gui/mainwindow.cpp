@@ -162,7 +162,8 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	// Creating AppDBScrollWidget and place it into frameAppDBWidget layout
 	appdbWidget.reset(new AppDBWidget(this));
 	connect (this, SIGNAL(appdbWidget_startSearch(short int, QString)), appdbWidget.get(), SLOT(itemTrigged(short int, QString)));
-	tabAppDBLayout->addWidget(appdbWidget.release());
+    connect (this, SIGNAL(setAppDBFocus()), appdbWidget.get(), SLOT(setFocus()));
+	tabAppDBLayout->addWidget(appdbWidget.release());   
 #endif
 
         if (!run_binary.isEmpty())
@@ -293,10 +294,12 @@ void MainWindow::updateDtabaseConnectedItems(){
 	return;
 }
 
+#ifdef WITH_WINEAPPDB
 void MainWindow::searchRequest(QString search){
 	tbwGeneral->setCurrentIndex (4);
 	emit(appdbWidget_startSearch(1, search));
 }
+#endif
 
 void MainWindow::prefixManage_Click(){
 	tbwGeneral->setCurrentIndex (3);
@@ -361,6 +364,12 @@ void MainWindow::tbwGeneral_CurrentTabChange(int tabIndex){
 		//Initiate /proc reading
 		emit(startProcTimer());
 		break;
+#ifdef WITH_WINEAPPDB
+    case 4:
+        emit(stopProcTimer());
+        emit(setAppDBFocus());
+        break;
+#endif
  default:
 		emit(stopProcTimer());
 		break;
