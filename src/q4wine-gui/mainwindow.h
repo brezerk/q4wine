@@ -78,6 +78,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
         void messageReceived(const QString message);
 		void setcbPrefixesIndex(const QString text) const;
 		void updateDtabaseConnectedItems(void);
+        void setSearchFocus(void);
 
 #ifdef WITH_WINEAPPDB
 		void searchRequest(QString search);

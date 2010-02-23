@@ -92,6 +92,7 @@ signals:
 	  void showFolderContents(QString, QString);
 	  void changeStatusText(QString);
 	  void prefixIndexChanged(QString);
+      void setSearchFocus(void);
 
 public slots:
 	  void getPrefixes();

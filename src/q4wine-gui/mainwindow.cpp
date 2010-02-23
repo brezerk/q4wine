@@ -79,8 +79,9 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 
 	std::auto_ptr<PrefixTreeWidget> twPrograms (new PrefixTreeWidget(tabPrograms));
 	connect(this, SIGNAL(updateDatabaseConnections()), twPrograms.get(), SLOT(getPrefixes()));
-	connect(twPrograms.get(), SIGNAL(showFolderContents(QString, QString)), lstIcons.get(), SLOT(showFolderContents(QString, QString)));
-	connect(twPrograms.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
+    connect(twPrograms.get(), SIGNAL(showFolderContents(QString, QString)), lstIcons.get(), SLOT(showFolderContents(QString, QString)));
+    connect(twPrograms.get(), SIGNAL(setSearchFocus()), this, SLOT(setSearchFocus()));
+    connect(twPrograms.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
 	connect(this, SIGNAL(setDefaultFocus(QString, QString)), twPrograms.get(), SLOT(setDefaultFocus(QString, QString)));
 	connect(cbPrefixes.get(), SIGNAL(currentIndexChanged(QString)), twPrograms.get(), SLOT(setDefaultFocus(QString)));
 	connect(twPrograms.get(), SIGNAL(prefixIndexChanged(QString)), this, SLOT(setcbPrefixesIndex(QString)));
@@ -169,6 +170,11 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
         if (!run_binary.isEmpty())
             messageReceived(run_binary);
 	return;
+}
+
+void MainWindow::setSearchFocus(){
+    txtIconFilter->setFocus(Qt::OtherFocusReason);
+    return;
 }
 
 void MainWindow::clearTmp(){

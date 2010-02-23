@@ -84,6 +84,7 @@ void PrefixTreeWidget::itemClicked (QTreeWidgetItem *item, int){
 
 	  emit(showFolderContents(this->prefixName, this->dirName));
 	  emit(prefixIndexChanged(this->prefixName));
+      emit(setSearchFocus());
 	  return;
 }
 
