@@ -202,7 +202,7 @@ public:
 	 * \param  icon_name	Icon name.
 	 * \return Return true on success.
 	 */
-	bool runIcon(const QString prefix_name, const QString dir_name, const QString icon_name) const;
+    bool runIcon(const QString prefix_name, const QString dir_name, const QString icon_name);
 
 	/*! \brief Prepare icon data for run wine.
 	 *
@@ -210,9 +210,9 @@ public:
 	 * \param  prefix_name	Prefix name.
 	 * \return Return true on success.
 	 */
-	bool runWineBinary(const ExecObject execObj) const;
-	bool runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin="", const bool releaseProc = true) const;
-
+    bool runWineBinary(const ExecObject execObj);
+    bool runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin="", const bool releaseProc = true);
+    bool checkFileExists(QString path);
 
 
 	QString createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const;

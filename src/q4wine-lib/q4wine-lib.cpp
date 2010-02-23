@@ -617,7 +617,7 @@ QStringList corelib::getCdromDevices(void) const{
 			return image;
 		}
 
-		bool corelib::runIcon(const QString prefix_name, const QString dir_name, const QString icon_name) const{
+        bool corelib::runIcon(const QString prefix_name, const QString dir_name, const QString icon_name){
 			QStringList result = db_icon.getByName(prefix_name, dir_name, icon_name);
 			//  0   1     2     3          4       5         6          7           8        9        10    11       12    13         14
 			//	id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id
@@ -636,8 +636,57 @@ QStringList corelib::getCdromDevices(void) const{
 			return runWineBinary(execObj);
 		}
 
-		bool corelib::runWineBinary(const ExecObject execObj) const{
-			QStringList prefixList;
+        bool corelib::checkFileExists(QString path){
+            QString u_path;
+
+            if (path.length()<=0){
+                /* if (this->_GUI_MODE){
+                    qDebug()<<"[EE] No binary passed sSsssssssssssSSSSSSSSSSSs ============"<<path;
+                    QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("No binary passed to function"));
+                } else {
+                    qDebug()<<"[EE] No binary passed";
+                } */
+                return true;
+            }
+
+            if (path.mid(0,1)=="/"){
+                if (!QFile(path).exists()){
+                    if (this->_GUI_MODE){
+                        QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" do not exists.").arg(path));
+                    } else {
+                        qDebug()<<"[EE] Binary \""<<path<<"\" do not exists. Abort.";
+                    }
+                    return false;
+                }
+            } else if (path.mid(1,2)==":\\"){
+                u_path = this->getWinePath(path, "-u");
+                if (u_path.isEmpty()){
+                    if (this->_GUI_MODE){
+                        QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Can't get unix path for \"%1\".").arg(path));
+                    } else {
+                        qDebug()<<"[EE] Binary \""<<path<<"\" do not exists. Abort.";
+                    }
+                    return false;
+                } else {
+                    if (!QFile(u_path).exists()){
+                        if (this->_GUI_MODE){
+                            QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" do not exists.").arg(u_path));
+                        } else {
+                            qDebug()<<"[EE] Binary \""<<u_path<<"\" do not exists. Abort.";
+                        }
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        bool corelib::runWineBinary(const ExecObject execObj){
+
+            if (!checkFileExists(execObj.execcmd))
+                return false;
+
+            QStringList prefixList;
 			// 0   1     2             3            4            5          6            7
 			// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
 			prefixList = db_prefix.getFieldsByPrefixId(execObj.prefixid);
@@ -756,7 +805,11 @@ QStringList corelib::getCdromDevices(void) const{
 			return proc.startDetached( exec, args, execObj.wrkdir );
 		}
 
-		bool corelib::runWineBinary(const QString windows_binary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin, const bool releaseProc) const{
+        bool corelib::runWineBinary(const QString windows_binary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin, const bool releaseProc){
+
+            if (!checkFileExists(windows_binary))
+                return false;
+
 			QStringList prefixList;
 			// 0   1     2             3            4            5          6            7
 			// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
