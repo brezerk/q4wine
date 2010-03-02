@@ -20,7 +20,6 @@
 #include "mainwindow.h"
 
 MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
-
 	// Loading libq4wine-core.so
 	libq4wine.setFileName("libq4wine-core");
 
@@ -169,6 +168,10 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 
         if (!run_binary.isEmpty())
             messageReceived(run_binary);
+
+        if (!trayIcon->isVisible())
+            show();
+
 	return;
 }
 

@@ -199,7 +199,6 @@ int main(int argc, char *argv[])
 		return -1;
 
     MainWindow mainWin(startState, exec_binary);
-	mainWin.show();
 	app.setActivationWindow(&mainWin);
 	QObject::connect(&app, SIGNAL(messageReceived(const QString&)), &mainWin, SLOT(messageReceived(const QString&)));
 	result = app.exec();

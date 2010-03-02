@@ -72,7 +72,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 {
 	Q_OBJECT
 	public:
-                MainWindow(int startState, QString run_binary, QWidget * parent = 0, Qt::WFlags f = 0);
+        MainWindow(int startState, QString run_binary, QWidget * parent = 0, Qt::WFlags f = 0);
 
 	public slots:
         void messageReceived(const QString message);
