@@ -19,8 +19,12 @@
 
 #include "wineobject.h"
 
-WineObject::WineObject(QString prefixName, QObject *parent) : QObject(parent)
+WineObject::WineObject(QObject *parent) : QObject(parent)
 {
+    return;
+}
+
+void WineObject::setPrefix(QString prefixName){
     QStringList prefix;
 
     if (!prefixName.isEmpty()){
@@ -41,9 +45,7 @@ WineObject::WineObject(QString prefixName, QObject *parent) : QObject(parent)
             this->prefixServer.clear();
             this->prefixBinary.clear();
         }
-
     }
-    return;
 }
 
 void WineObject::setProgramBinary(QString binary){

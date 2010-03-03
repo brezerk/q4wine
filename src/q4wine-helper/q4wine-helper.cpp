@@ -62,7 +62,17 @@ int main(int argc, char *argv[])
     }
 
     QTextStream Qcout(stdout);
+    WineObject wineObject;
 
+    for (int i=1; i<argc; i++){
+        if ((app.arguments().at(i)=="--prefix") or (app.arguments().at(i)=="-d")){
+            i++;
+            if (i<argc)
+                wineObject.setPrefix(app.arguments().at(i));
+        }
+    }
+
+/*
     if (app.arguments().count()>1){
         if ((app.arguments().at(1)=="--version") or (app.arguments().at(1)=="-v")){
             Qcout<<QString("%1-helper %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
@@ -92,6 +102,7 @@ int main(int argc, char *argv[])
             return 0;
         }
     }
+*/
 
     return 0;
 }

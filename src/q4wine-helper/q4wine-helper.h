@@ -7,6 +7,7 @@
 #include "config.h"
 
 #include "q4wine-lib.h"
+#include "wineobject.h"
 
 #include "db.h"
 #include "prefix.h"

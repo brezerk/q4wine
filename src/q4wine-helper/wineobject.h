@@ -34,7 +34,9 @@ class WineObject : public QObject
 {
 Q_OBJECT
 public:
-    explicit WineObject(QString prefixName = "Default", QObject *parent = 0);
+    explicit WineObject(QObject *parent = 0);
+
+    void setPrefix(QString prefixName);
 
     void setProgramBinary(QString binary);
     void setProgramArgs(QString args);
