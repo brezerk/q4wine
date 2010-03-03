@@ -17,75 +17,81 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef Q4WINE_HELPER_H
-#define Q4WINE_HELPER_H
+#include "q4wine-helper.h"
 
-#include <memory>
-#include "config.h"
-
-#include <QObject>
-
-#include "prefix.h"
-#include "icon.h"
-
-#include "q4wine-lib.h"
-
-class WineObject : public QObject
+int main(int argc, char *argv[])
 {
-Q_OBJECT
-public:
-    explicit WineObject(QString prefixName = "Default", QObject *parent = 0);
+    QCoreApplication app(argc, argv);
+    QTextStream QErr(stderr);
 
-    void setProgramBinary(QString binary);
-    void setProgramArgs(QString args);
-    void setProgramDir(QString dir);
-    void setProgramDisplay(QString dislpay);
-    void setProgramNice(QString dir);
+     //! This is need for libq4wine-core.so import;
+    typedef void *CoreLibPrototype (bool);
+    CoreLibPrototype *CoreLibClassPointer;
+    std::auto_ptr<corelib> CoreLib;
+    QLibrary libq4wine;
 
-    void setProgramDesktop(QString desktop);
-    void setUseConsole(bool console);
+    // Loading libq4wine-core.so
+    libq4wine.setFileName("libq4wine-core");
 
-private:
-    Prefix db_prefix;
+    if (!libq4wine.load()){
+        libq4wine.load();
+    }
 
-    QString prefixName;
-    QString prefixPath;
-    QString prefixDllPath;
-    QString prefixLoader;
-    QString prefixServer;
-    QString prefixBinary;
+    // Getting corelib calss pointer
+    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLib.reset((corelib *)CoreLibClassPointer(false));
 
-    QString programBinary;
-    QString programArgs;
-    QString programDir;
-    QString programDisplay;
-    int programNice;
-    QString programDesktop;
+    if (!CoreLib.get()){
+        QErr<<"[EE] Can't load shared library."<<endl;
+        return -1;
+    }
 
-    bool useConsole;
+    DataBase db;
+    if (!db.checkDb()){
+        QErr<<"[EE] Can't init database engine."<<endl;
+        return -1;
+    }
 
+    QTranslator qtt;
+    qtt.load(CoreLib->getTranslationLang(), QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME));
+    app.installTranslator(&qtt);
 
- /*
-struct ExecObject{
-    QString runcmd;
-    QString useconsole;
-    QString cmdargs;
-    QString override;
-    QString winedebug;
-    QString display;
-    QString wrkdir;
-    QString desktop;
-    QString nice;
-    QString name;
-};
-*/
+    if (!CoreLib->isConfigured()){
+       QErr<<"[EE] App not configured! Re run wizard, or delete q4wine broken config files."<<endl;
+       return -1;
+    }
 
-signals:
+    QTextStream Qcout(stdout);
 
+    if (app.arguments().count()>1){
+        if ((app.arguments().at(1)=="--version") or (app.arguments().at(1)=="-v")){
+            Qcout<<QString("%1-helper %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
+            Qcout<<QString("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
+            Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
+            Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
+            Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
+            CoreLib->getBuildFlags();
+            Qcout<<QObject::tr("Author: %1.").arg("Malakhov Alexey aka John Brezerk")<<endl;
+            return 0;
+        } else if ((app.arguments().at(1)=="--binary") or (app.arguments().at(1)=="-b")) {
+            //startState = 1;
+        } else {
+            Qcout<<QObject::tr("Usage:")<<endl;
+            Qcout<<QString("  %1 -b <unix_path_to_windown_binary>").arg(APP_SHORT_NAME)<<endl;
+            Qcout<<QObject::tr("  %1 [KEY]...").arg(APP_SHORT_NAME)<<endl;
+            Qcout<<QObject::tr("GUI utility for wine applications and prefixes management.")<<endl<<endl;
+            Qcout<<QObject::tr("KEYs list:")<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -b,  --binary"<<QObject::tr("Open q4wine run dialog for windows binary")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --minimize"<<QObject::tr("minimize %1 main window on startup").arg(APP_SHORT_NAME)<<qSetFieldWidth(0)<<endl;
+            Qcout<<endl;
+            Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
+            Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_SHORT_NAME).arg(APP_WEBSITTE)<<endl;
+            Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
+            return 0;
+        }
+    }
 
-
-public slots:
-
-};
-
-#endif // Q4WINE_HELPER_H
+    return 0;
+}

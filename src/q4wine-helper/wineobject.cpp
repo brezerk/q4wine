@@ -62,7 +62,7 @@ void WineObject::setProgramDir(QString dir){
 }
 
 void WineObject::setProgramDisplay(QString dislpay){
-    this->programDisplay=display;
+    this->programDisplay=dislpay;
     return;
 }
 
@@ -71,7 +71,7 @@ void WineObject::setProgramNice(int nice){
     return;
 }
 
-void WineObject::setDesktop(QString desktop){
+void WineObject::setProgramDesktop(QString desktop){
     this->programDesktop=desktop;
     return;
 }

@@ -25,6 +25,7 @@ SET( Q4WINE_LIB_SOURCES
         ${CMAKE_SOURCE_DIR}/src/core/database/dir.cpp
         ${CMAKE_SOURCE_DIR}/src/core/database/icon.cpp
         ${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.cpp
 )
 
 SET( Q4WINE_LIB_HEADERS
@@ -35,11 +36,13 @@ SET( Q4WINE_LIB_HEADERS
         ${CMAKE_SOURCE_DIR}/src/core/database/dir.h
         ${CMAKE_SOURCE_DIR}/src/core/database/icon.h
         ${CMAKE_SOURCE_DIR}/src/core/database/image.h
+        ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
 )
 
 SET ( Q4WINE_LIB_MOC_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
     ${CMAKE_SOURCE_DIR}/src/core/database/db.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
 )
 
 SET ( Q4WINE_LIB_UI_SOURCES

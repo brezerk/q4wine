@@ -40,7 +40,7 @@ public:
     void setProgramArgs(QString args);
     void setProgramDir(QString dir);
     void setProgramDisplay(QString dislpay);
-    void setProgramNice(QString dir);
+    void setProgramNice(int nice);
 
     void setProgramDesktop(QString desktop);
     void setUseConsole(bool console);
