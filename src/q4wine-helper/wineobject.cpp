@@ -82,3 +82,9 @@ void WineObject::setUseConsole(bool console){
     this->useConsole=console;
     return;
 }
+
+void WineObject::run(){
+    if (prefixName.isEmpty())
+        this->setPrefix("Default");
+    qDebug()<<this->prefixName<<this->prefixPath;
+}

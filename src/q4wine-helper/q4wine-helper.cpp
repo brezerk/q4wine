@@ -65,12 +65,14 @@ int main(int argc, char *argv[])
     WineObject wineObject;
 
     for (int i=1; i<argc; i++){
-        if ((app.arguments().at(i)=="--prefix") or (app.arguments().at(i)=="-d")){
+        if ((app.arguments().at(i)=="--prefix") or (app.arguments().at(i)=="-p")){
             i++;
             if (i<argc)
                 wineObject.setPrefix(app.arguments().at(i));
         }
     }
+
+    wineObject.run();
 
 /*
     if (app.arguments().count()>1){

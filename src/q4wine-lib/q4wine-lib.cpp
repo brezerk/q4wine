@@ -1001,9 +1001,9 @@ QStringList corelib::getCdromDevices(void) const{
 
         QString corelib::getEscapeString(const QString string, const bool spaces) const{
             if (spaces){
-                return QRegExp::escape(string).replace(" ", "\\ ").replace("'", "\'");
+                return QRegExp::escape(string).replace(" ", "\\ ").replace("'", "\\'").replace("\"", "\\\"");
             } else {
-                return QRegExp::escape(string).replace("'", "\'");
+                return QRegExp::escape(string).replace("'", "\\'").replace("\"", "\\\"");
             }
 		}
 

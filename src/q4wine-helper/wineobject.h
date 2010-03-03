@@ -47,6 +47,8 @@ public:
     void setProgramDesktop(QString desktop);
     void setUseConsole(bool console);
 
+    void run();
+
 private:
     Prefix db_prefix;
 
