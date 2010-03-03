@@ -225,6 +225,7 @@ IF (${WITH_WINETRIKS} MATCHES ON )
 ENDIF (${WITH_WINETRIKS} MATCHES ON )
 
 add_subdirectory(q4wine-gui)
+#add_subdirectory(q4wine-helper)
 add_subdirectory(data)
 add_subdirectory(theme)
 add_subdirectory(icons)

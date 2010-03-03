@@ -22,7 +22,9 @@
 int main(int argc, char *argv[])
 {
 	QCoreApplication app(argc, argv);
+
 	QTextStream Qcout(stdout);
+    QTextStream QErr(stderr);
 	QString _PREFIX, _DIR, _ICON, _IMAGE;
 	QString path;
 	int _ACTION=0;
@@ -32,59 +34,37 @@ int main(int argc, char *argv[])
 	CoreLibPrototype *CoreLibClassPointer;
 	std::auto_ptr<corelib> CoreLib;
 
+    // Loading libq4wine-core.so
+    QLibrary libq4wine;
+    libq4wine.setFileName("libq4wine-core");
+
+    if (!libq4wine.load()){
+        return -1;
+    }
+
 	//Classes
-	DataBase db;
-	Prefix db_prefix;
-	Dir db_dir;
-	Icon db_icon;
-	Image db_image;
+    DataBase db;
 
-	if (!initDb())
+    if (!db.checkDb())
 		return -1;
 
-	QStringList tables;
-	tables << "prefix" << "dir" << "icon" << "images";
-	if (!db.checkDb(tables))
-		return -1;
-
-	// Loading libq4wine-core.so
-	QLibrary libq4wine;
-	libq4wine.setFileName("libq4wine-core");
-
-	if (!libq4wine.load()){
-		return -1;
-	}
+    Prefix db_prefix;
+    Dir db_dir;
+    Icon db_icon;
+    Image db_image;
 
 	// Getting corelib calss pointer
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib *)CoreLibClassPointer(false));
 
-	QTranslator qtt;
+    QTranslator qtt;
+    qtt.load(CoreLib->getTranslationLang(), QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME));
+    app.installTranslator(&qtt);
 
-	QString i18nPath;
-	i18nPath.clear();
-	i18nPath.append(APP_PREF);
-	i18nPath.append("/share/");
-	i18nPath.append(APP_SHORT_NAME);
-	i18nPath.append("/i18n");
-
-	// Getting env LANG variable
-	QString lang = CoreLib->getLang();
-
-	if (!lang.isNull()){
-		if (qtt.load(lang, i18nPath)){
-			app.installTranslator( &qtt );
-		} else {
-			qDebug()<<"[EE] Can't open user selected translation";
-			if (qtt.load("en_us.qm", i18nPath)){
-				app.installTranslator( &qtt );
-			} else {
-				qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
-			}
-		}
-	} else {
-		qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
-	}
+    if (!CoreLib->isConfigured()){
+        QErr<<"[EE] App not configured! Re run wizard, or delete q4wine broken config files."<<endl;
+        return -1;
+    }
 
 	_ACTION=-1;
 

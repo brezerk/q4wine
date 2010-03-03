@@ -17,32 +17,75 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef INITDB_H
-#define INITDB_H
+#ifndef WINEOBJECT_H
+#define WINEOBJECT_H
 
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QMessageBox>
+#include <memory>
+#include "config.h"
 
-bool initDb(){
-   /*
-   * DataBase engine init
-   */
+#include <QObject>
 
-   if (!QSqlDatabase::drivers().contains("QSQLITE")){
-	QMessageBox::warning(0, QObject::tr("Critical error"), QObject::tr("Unable to load database SQLITE driver. You need to compile qt-sql with sqlite database support"));
-	return FALSE;
-   }
+#include "prefix.h"
+#include "icon.h"
 
-   QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-   db.setDatabaseName(QString("%1/.config/%2/db/generic.dat").arg(QDir::homePath()).arg(APP_SHORT_NAME));
+#include "q4wine-lib.h"
 
-   if (!db.open()){
-	QMessageBox::warning(0, QObject::tr("Critical error"), QObject::tr("Sorry, i can't open database file: %1/.config/%2/db/generic.dat ; Error is: %3").arg(QDir::homePath()).arg(APP_SHORT_NAME).arg(db.lastError().text()));
-	return FALSE;
-   }
+class WineObject : public QObject
+{
+Q_OBJECT
+public:
+    explicit WineObject(QString prefixName = "Default", QObject *parent = 0);
 
-   return TRUE;
-}
+    void setProgramBinary(QString binary);
+    void setProgramArgs(QString args);
+    void setProgramDir(QString dir);
+    void setProgramDisplay(QString dislpay);
+    void setProgramNice(QString dir);
 
-#endif
+    void setProgramDesktop(QString desktop);
+    void setUseConsole(bool console);
+
+private:
+    Prefix db_prefix;
+
+    QString prefixName;
+    QString prefixPath;
+    QString prefixDllPath;
+    QString prefixLoader;
+    QString prefixServer;
+    QString prefixBinary;
+
+    QString programBinary;
+    QString programArgs;
+    QString programDir;
+    QString programDisplay;
+    int programNice;
+    QString programDesktop;
+
+    bool useConsole;
+
+
+ /*
+struct ExecObject{
+    QString runcmd;
+    QString useconsole;
+    QString cmdargs;
+    QString override;
+    QString winedebug;
+    QString display;
+    QString wrkdir;
+    QString desktop;
+    QString nice;
+    QString name;
+};
+*/
+
+signals:
+
+
+
+public slots:
+
+};
+
+#endif // WINEOBJECT_H

@@ -59,7 +59,6 @@ SET ( Q4WINE_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
-    ${CMAKE_SOURCE_DIR}/src/core/database/initdb.h
     ${CMAKE_SOURCE_DIR}/config.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.h
@@ -88,6 +87,7 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocesswidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/db.h
 )
 
 SET ( Q4WINE_GUI_UI_SOURCES

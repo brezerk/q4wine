@@ -39,6 +39,7 @@ SET( Q4WINE_LIB_HEADERS
 
 SET ( Q4WINE_LIB_MOC_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/db.h
 )
 
 SET ( Q4WINE_LIB_UI_SOURCES

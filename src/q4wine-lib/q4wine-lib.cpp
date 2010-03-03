@@ -316,6 +316,34 @@ QPixmap corelib::loadPixmap(QString iconName){
 	return pixmap;
 }
 
+QString corelib::getTranslationLang(){
+    QTranslator qtt;
+
+    QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
+
+#ifdef DEBUG
+    qDebug()<<"[ii] i18n path: "<<i18nPath;
+#endif
+
+    QString lang = this->getLang();
+
+    if (!lang.isNull()){
+        if (qtt.load(lang, i18nPath)){
+            return lang;
+        } else {
+            qDebug()<<"[EE] Can't open user selected translation";
+            if (qtt.load("en_us", i18nPath)){
+                return "en_us";
+            } else {
+                qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
+            }
+        }
+    } else {
+        qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
+    }
+    return "";
+}
+
 QString  corelib::getLang(){
 	QString lang=this->getSetting("app", "lang", false).toString();
 
@@ -398,6 +426,40 @@ QString  corelib::getLocale(){
         qDebug()<<"[ii] Lang to load: "<<lang;
 #endif
         return lang;
+}
+
+bool corelib::isConfigured(){
+    if (this->getSetting("", "configure", false, "").toString()=="yes")
+        return true;
+    return false;
+}
+
+bool corelib::checkDirs(){
+    QStringList subDirs;
+    subDirs << "db" << "icons" << "prefixes" << "tmp" << "theme";
+
+    QTextStream QErr(stderr);
+    QDir dir;
+    QString rootConfPath = QString("%1/.config/%2").arg(QDir::homePath()).arg(APP_SHORT_NAME);
+
+    for (int i=0; i<subDirs.size(); ++i){
+        QString subDir=rootConfPath;
+        subDir.append("/");
+        subDir.append(subDirs.at(i).toLocal8Bit().constData());
+
+#ifdef DEBUG
+        qDebug()<<"[ii] Check for directory: "<<subDir;
+#endif
+
+        if (!dir.exists(subDir)){
+            if (!dir.mkdir(subDir)){
+                QErr<<"[EE] "<<"Unable to create directory "<<subDir;
+                return false;
+            }
+        }
+    }
+
+    return true;
 }
 
 void corelib::getBuildFlags(){
@@ -791,7 +853,7 @@ QStringList corelib::getCdromDevices(void) const{
 			exec_string.append(" \"");
 			exec_string.append(execObj.execcmd);
 			exec_string.append("\" ");
-			exec_string.append(execObj.cmdargs);
+            exec_string.append(this->getEscapeString(execObj.cmdargs, false));
 			if (execObj.useconsole != "1")
 				exec_string.append(" > /dev/null 2>&1");
 
@@ -869,7 +931,7 @@ QStringList corelib::getCdromDevices(void) const{
 				exec_string.append("\" ");
 			}
 
-			exec_string.append(cmdargs);
+            exec_string.append(this->getEscapeString(cmdargs, false));
 			args.append(exec_string);
 
 #ifdef DEBUG
@@ -937,8 +999,12 @@ QStringList corelib::getCdromDevices(void) const{
 			return fileName;
 		}
 
-		QString corelib::getEscapeString(const QString string) const{
-			return QRegExp::escape(string).replace(" ", "\\ ");
+        QString corelib::getEscapeString(const QString string, const bool spaces) const{
+            if (spaces){
+                return QRegExp::escape(string).replace(" ", "\\ ");
+            } else {
+                return QRegExp::escape(string);
+            }
 		}
 
         bool corelib::mountImage(const QString image_name, const QString prefix_name){

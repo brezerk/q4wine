@@ -22,7 +22,12 @@
 #include <QApplication>
 #include <QTranslator>
 #include <QMessageBox>
+#include <QTextStream>
+
+#ifdef DEBUG
 #include <QDebug>
+#endif
+
 #include <QString>
 #include <QLibrary>
 
@@ -34,7 +39,6 @@
 #include <locale.h>
 
 #include "db.h"
-#include "initdb.h"
 
 #include "qtsingleapplication.h"
 
@@ -44,6 +48,7 @@
 int main(int argc, char *argv[])
 {
 	QtSingleApplication app(argc, argv);
+    QTextStream QErr(stderr);
 
     QString exec_binary;
     if (app.arguments().count()>2){
@@ -75,85 +80,32 @@ int main(int argc, char *argv[])
 	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
 	if (!CoreLib.get()){
-		qDebug()<<"[ee] Can't load shared library";
+        QErr<<"[EE] Can't load shared library."<<endl;
 		return -1;
 	}
 
 	DataBase db;
-	QTranslator  qtt;
 
-	QSettings settings(APP_SHORT_NAME, "default");
+    if (!db.checkDb()){
+        QErr<<"[EE] Can't init database engine."<<endl;
+        return -1;
+    }
 
-	QString i18nPath;
-	i18nPath.clear();
-	i18nPath.append(APP_PREF);
-	i18nPath.append("/share/");
-	i18nPath.append(APP_SHORT_NAME);
-	i18nPath.append("/i18n");
-#ifdef DEBUG
-	qDebug()<<"[ii] i18n path: "<<i18nPath;
-#endif
+    QTranslator qtt;
+    qtt.load(CoreLib->getTranslationLang(), QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME));
+    app.installTranslator(&qtt);
 
-	QString lang = CoreLib->getLang();
+    if (!CoreLib->isConfigured()){
+        Wizard firstSetupWizard(1);
+        if (firstSetupWizard.exec()==QDialog::Rejected){
+            QErr<<"[EE] App not configured! Re run wizard, or delete q4wine broken config files."<<endl;
+            return -1;
+        }
+    }
 
-	if (!lang.isNull()){
-		if (qtt.load(lang, i18nPath)){
-			app.installTranslator(&qtt );
-		} else {
-			qDebug()<<"[EE] Can't open user selected translation";
-			if (qtt.load("en_us.qm", i18nPath)){
-				app.installTranslator(&qtt );
-			} else {
-				qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
-			}
-		}
-	} else {
-		qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
-	}
-
-	if (!settings.contains ("configure")){
-		//If no key, we gona to start an First Run Wizard to setup q4wine
-		Wizard firstSetupWizard(1);
-
-		if (firstSetupWizard.exec()==QDialog::Accepted){
-			QString rootConfPath;
-			QDir dir;
-			rootConfPath.clear();
-			rootConfPath.append(QDir::homePath());
-			rootConfPath.append("/.config/");
-			rootConfPath.append(APP_SHORT_NAME);
-
-			// Creating root folder
-			if (!dir.exists(rootConfPath)){
-				if (!dir.mkdir(rootConfPath)){
-					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create root directory %1.").arg(rootConfPath));
-					return -1;
-				}
-			}
-
-			// Creating sub folders
-			QStringList subDirs;
-			subDirs << "db" << "icons" << "prefixes" << "tmp" << "theme";
-
-			QString subDir;
-
-			for (int i=0; i<subDirs.size(); ++i){
-				subDir=rootConfPath;
-				subDir.append("/");
-				subDir.append(subDirs.at(i).toLocal8Bit().constData());
-				if (!dir.exists(subDir)){
-					if (!dir.mkdir(subDir)){
-						QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("[EE] Unable to create directory %1.").arg(subDir));
-						return -1;
-					}
-				}
-			}
-
-			settings.setValue("configure", "yes");
-		} else {
-			return -1;
-		}
-	}
+    if (!CoreLib->checkDirs()){
+        return -1;
+    }
 
 	QTextStream Qcout(stdout);
 	int result, startState=0;
@@ -189,14 +141,6 @@ int main(int argc, char *argv[])
 			return 0;
 		}
 	}
-
-	if (!initDb())
-		return -1;
-
-	QStringList tables;
-	tables << "prefix" << "dir" << "icon" << "images" << "last_run_icon";
-	if (!db.checkDb(tables))
-		return -1;
 
     MainWindow mainWin(startState, exec_binary);
 	app.setActivationWindow(&mainWin);

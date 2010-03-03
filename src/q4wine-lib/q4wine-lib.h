@@ -47,6 +47,7 @@
 #include <QTextStream>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QTranslator>
 
 #include "process.h"
 
@@ -130,9 +131,14 @@ public:
 	QIcon loadIcon(QString iconName);
 	QPixmap loadPixmap(QString pixmapName);
 
+    QString getTranslationLang();
 	QString getLang();
-        QString getLocale();
-        void getBuildFlags();
+    QString getLocale();
+
+    bool isConfigured();
+    bool checkDirs();
+
+    void getBuildFlags();
 
 	/*! \brief This function get cdrom devices from /etc/fstab file.
 	 *
@@ -240,7 +246,7 @@ public:
 	 *
 	 * \param string	Base string
 	 */
-	QString getEscapeString(const QString string) const;
+    QString getEscapeString(const QString string, const bool spaces = true) const;
 
 
 	/*! \brief Get's mount string based on QuikMount type profile
@@ -290,6 +296,7 @@ private:
 	Prefix db_prefix;
 	Image db_image;
 	Icon db_icon;
+
 }; // end of class corelib
 
 /*! \ingroup libq4wine

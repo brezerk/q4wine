@@ -724,6 +724,7 @@ void Wizard::nextWizardPage(){
 			break;
 				case 8:
 			QSettings settings(APP_SHORT_NAME, "default");
+            settings.setValue("configure", "yes");
 			settings.beginGroup("wine");
 			settings.setValue("WineBin", txtWineBin->text());
 			settings.setValue("ServerBin", txtWineServerBin->text());

@@ -17,56 +17,75 @@
  *                                                                         *
  ***************************************************************************/
 
-/*!
- * \defgroup database Q4Wine database core
- * \brief Database core pakage provide general database functions for q4wine.
- */
+#ifndef Q4WINE_HELPER_H
+#define Q4WINE_HELPER_H
 
-#ifndef DB_H
-#define DB_H
-
-#include <QSqlDatabase>
-#include <QSqlRecord>
-#include <QStringList>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QTextStream>
-#include <QString>
-#include <QVariant>
-#include <QDebug>
-#include <QDir>
-#include <QObject>
-
+#include <memory>
 #include "config.h"
 
-/*!
- * \class DataBase
- * \ingroup database
- * \brief This class provide general database functions for q4wine.
- *
- * It is not useful by itself, but it creates database connections
- * and provides basic database check.
- *
- */
-class DataBase : public QObject
+#include <QObject>
+
+#include "prefix.h"
+#include "icon.h"
+
+#include "q4wine-lib.h"
+
+class WineObject : public QObject
 {
-    Q_OBJECT
+Q_OBJECT
 public:
-    //! Constructor
-    DataBase(QObject * parent = 0);
+    explicit WineObject(QString prefixName = "Default", QObject *parent = 0);
 
-    /*! \brief This function tries to check database structure.
-	*
-	* It gets process values: pid, name, nice priority and WINEPREFIX environment variable.
-	* \param  tables  List of tables name.
-	* \return Return true on success otherwise false.
-	*/
-    bool checkDb();
+    void setProgramBinary(QString binary);
+    void setProgramArgs(QString args);
+    void setProgramDir(QString dir);
+    void setProgramDisplay(QString dislpay);
+    void setProgramNice(QString dir);
 
-    /*! \brief This function close database connection.
-	*/
-    void close();
+    void setProgramDesktop(QString desktop);
+    void setUseConsole(bool console);
+
+private:
+    Prefix db_prefix;
+
+    QString prefixName;
+    QString prefixPath;
+    QString prefixDllPath;
+    QString prefixLoader;
+    QString prefixServer;
+    QString prefixBinary;
+
+    QString programBinary;
+    QString programArgs;
+    QString programDir;
+    QString programDisplay;
+    int programNice;
+    QString programDesktop;
+
+    bool useConsole;
+
+
+ /*
+struct ExecObject{
+    QString runcmd;
+    QString useconsole;
+    QString cmdargs;
+    QString override;
+    QString winedebug;
+    QString display;
+    QString wrkdir;
+    QString desktop;
+    QString nice;
+    QString name;
+};
+*/
+
+signals:
+
+
+
+public slots:
 
 };
 
-#endif // DB_H
+#endif // Q4WINE_HELPER_H

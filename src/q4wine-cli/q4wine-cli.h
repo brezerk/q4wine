@@ -27,7 +27,6 @@
 
 #include "q4wine-lib.h"
 
-#include "initdb.h"
 #include "db.h"
 #include "prefix.h"
 #include "dir.h"
