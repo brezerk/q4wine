@@ -35,6 +35,7 @@ SET( Q4WINE_GUI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocesswidget.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/loggingwidget.cpp
 )
 
 SET ( Q4WINE_GUI_HEADERS
@@ -65,6 +66,7 @@ SET ( Q4WINE_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocesswidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/loggingwidget.h
 )
 
 SET ( Q4WINE_GUI_MOC_HEADEDRS
@@ -87,6 +89,7 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/wineprocesswidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/loggingwidget.h
     ${CMAKE_SOURCE_DIR}/src/core/database/db.h
 )
 

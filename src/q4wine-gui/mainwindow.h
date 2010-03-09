@@ -30,6 +30,8 @@
 //Qt includes
 #include <QSystemTrayIcon>
 #include <QSplitter>
+#include <QLocalServer>
+#include <QLocalSocket>
 
 //Global config
 #include "config.h"
@@ -38,6 +40,7 @@
 #include "prefix.h"
 
 //Widgets
+#include "loggingwidget.h"
 #include "iconlistwidget.h"
 #include "prefixtreewidget.h"
 #include "wineprocesswidget.h"
@@ -125,13 +128,18 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void mainBugs_Click(void);
 		void mainAppDB_Click(void);
 
-	private:
+        void newConnection();
+
+        void test();
+
+private:
 		//! Custom Widgets
 		//DragListWidget* lstIcons;
 #ifdef WITH_WINEAPPDB
 		std::auto_ptr<AppDBWidget> appdbWidget;
 #endif
 		std::auto_ptr<QComboBox> cbPrefixes;
+        std::auto_ptr<QLocalServer> serverSoket;
 
 		//! This is need for libq4wine-core.so import;
 		typedef void *CoreLibPrototype (bool);
@@ -144,6 +152,12 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 		// Tray icon
 		std::auto_ptr<QSystemTrayIcon> trayIcon;
+
+
+
+        bool createSocket();
+
+
 
 		void createTrayIcon();
 		void setMeVisible(bool visible);

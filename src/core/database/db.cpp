@@ -58,7 +58,7 @@ bool DataBase::checkDb(){
     QTextStream QErr(stderr);
 
     QStringList tables;
-    tables << "prefix" << "dir" << "icon" << "images" << "last_run_icon";
+    tables << "prefix" << "dir" << "icon" << "images" << "last_run_icon"<<"logging";
 
     QSqlDatabase db = QSqlDatabase::database();
     
@@ -102,6 +102,10 @@ bool DataBase::checkDb(){
             }
             if (table == "last_run_icon"){
                 if(!query.exec("CREATE TABLE last_run_icon (wrkdir TEXT, override TEXT, winedebug TEXT, useconsole NUMERIC, display TEXT, cmdargs TEXT, exec TEXT, desktop TEXT, nice TEXT, id INTEGER PRIMARY KEY);"))
+                    return false;
+            }
+            if (table == "logging"){
+                if(!query.exec("CREATE TABLE logging (id INTEGER PRIMARY KEY, name TEXT, exit NUMERIC, stdout TEXT, prefix_id NUMERIC);"))
                     return false;
             }
         }

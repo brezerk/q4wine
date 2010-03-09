@@ -24,11 +24,20 @@
 #include "config.h"
 
 #include <QObject>
+#include <QLocalSocket>
 
 #include "prefix.h"
 #include "icon.h"
 
 #include "q4wine-lib.h"
+
+#include <unistd.h>
+#include <sys/wait.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <fcntl.h>
+
+#define MAX 8192
 
 class WineObject : public QObject
 {
@@ -47,7 +56,12 @@ public:
     void setProgramDesktop(QString desktop);
     void setUseConsole(bool console);
 
-    void run();
+    void setOverrideDll(QString dll_list);
+
+    void runSys();
+    void runQt();
+
+    void printOut();
 
 private:
     Prefix db_prefix;
@@ -65,6 +79,7 @@ private:
     QString programDisplay;
     int programNice;
     QString programDesktop;
+    QString overrideDllList;
 
     bool useConsole;
 

@@ -19,7 +19,7 @@
 
 #include "q4wine-lib.h"
 
-corelib::corelib(bool _GUI_MODE)
+corelib::corelib(bool _GUI_MODE, QObject *parent) : QObject(parent)
 {
 	// Setting gui mode, if false - cli mode else gui mode
 	this->_GUI_MODE=_GUI_MODE;
@@ -233,6 +233,8 @@ void corelib::checkSettings(){
 	/*
 	 * Getting application settings
 	 */
+
+    emit(test());
 
 	this->getSetting("system", "tar");
 	this->getSetting("system", "mount");

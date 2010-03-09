@@ -24,32 +24,8 @@ WineObject::WineObject(QObject *parent) : QObject(parent)
     return;
 }
 
-void WineObject::setPrefix(QString prefixName){
-    QStringList prefix;
-
-    if (!prefixName.isEmpty()){
-        prefix = db_prefix.getFieldsByPrefixName(prefixName);
-
-        if (prefix.count() > 0){
-            this->prefixName = prefixName;
-            this->prefixPath = prefix.at(1);
-            this->prefixDllPath = prefix.at(2);
-            this->prefixLoader = prefix.at(3);
-            this->prefixServer = prefix.at(4);
-            this->prefixBinary = prefix.at(5);
-        } else {
-            this->prefixName.clear();
-            this->prefixPath.clear();
-            this->prefixDllPath.clear();
-            this->prefixLoader.clear();
-            this->prefixServer.clear();
-            this->prefixBinary.clear();
-        }
-    }
-}
-
 void WineObject::setProgramBinary(QString binary){
-    this->prefixBinary=binary;
+    this->programBinary=binary;
     return;
 }
 
@@ -83,8 +59,110 @@ void WineObject::setUseConsole(bool console){
     return;
 }
 
-void WineObject::run(){
-    if (prefixName.isEmpty())
-        this->setPrefix("Default");
-    qDebug()<<this->prefixName<<this->prefixPath;
+void WineObject::runSys(){
+    qDebug()<<this->programBinary;
+    if (this->programBinary.isEmpty())
+        return;
+
+    QString stdout;
+    QString message;
+
+    FILE *fp;
+    int status;
+    char path[PATH_MAX];
+
+
+    fp = popen(QString("%1 2>&1").arg(this->programBinary).toAscii().data(), "r");
+    if (fp == NULL)
+        /* Handle error */;
+
+    while (fgets(path, PATH_MAX, fp) != NULL){
+        stdout.append(path);
+    }
+
+    qDebug()<<"out"<<stdout;
+
+    status = pclose(fp);
+
+
+    QLocalSocket socket(this);
+    socket.connectToServer( "/tmp/q4wine-brezerk.sock" , QIODevice::WriteOnly );
+
+    if (socket.waitForConnected()){
+        qDebug()<<"Connected!";
+
+        QByteArray block;
+        QDataStream out(&block, QIODevice::WriteOnly);
+        out.setVersion(QDataStream::Qt_4_0);
+        out << (quint16)0;
+        out << QString("%1\n%2\n%3").arg(this->programBinary).arg(status).arg(stdout);
+        out.device()->seek(0);
+        out << (quint16)(block.size() - sizeof(quint16));
+
+        socket.write(block);
+        socket.flush();
+        socket.disconnectFromServer();
+
+    } else {
+        qDebug()<<"Not connected!";
+    }
+
+    qDebug()<<"Exit status:"<<status;
+
+
+    /*
+    FILE *f = popen("VAR1=bla VAR2=foo ./child", "r");
+
+    char buffer[MAX];
+*/
+    /*
+    QProcess proc(this);
+
+    QStringList env = proc.systemEnvironment();
+    env << "WINEPREFIX=/home/brezerk/ddddd";
+    proc.setEnvironment(env);
+
+    qDebug()<<proc.environment();
+
+    proc.start("winecfg");
+    proc.waitForFinished();
+
+    qDebug()<<proc.readAll();
+*/
+    //qDebug()<<proc.environment();
+
+
+}
+
+void WineObject::runQt(){
+
+    QProcess proc(this);
+
+    //connect(proc, SIGNAL(readyReadStandardError ()), this, printOut());
+    //connect(proc, SIGNAL(readyReadStandardOutput ()), this, printOut());
+
+    /*QStringList env = proc.systemEnvironment();
+    env << "WINEPREFIX=/home/brezerk/ddddd";
+    proc.setEnvironment(env);*/
+
+    //qDebug()<<proc.environment();
+
+    proc.execute("winecfg");
+    //proc.waitForFinished();
+    qDebug()<<proc.readAll();
+    qDebug()<<proc.exitCode();
+    qDebug()<<proc.exitStatus();
+
+    //qDebug()<<proc.environment();
+
+    return;
+}
+
+void WineObject::printOut(){
+
+    return;
+}
+
+void WineObject::setOverrideDll(QString dll_list){
+    this->overrideDllList = dll_list;
 }

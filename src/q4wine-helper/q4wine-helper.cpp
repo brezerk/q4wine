@@ -65,14 +65,26 @@ int main(int argc, char *argv[])
     WineObject wineObject;
 
     for (int i=1; i<argc; i++){
-        if ((app.arguments().at(i)=="--prefix") or (app.arguments().at(i)=="-p")){
+        if (app.arguments().at(i)=="--desktop"){
             i++;
             if (i<argc)
-                wineObject.setPrefix(app.arguments().at(i));
+                wineObject.setProgramDesktop(app.arguments().at(i));
+        }  else if (app.arguments().at(i)=="--program-bin") {
+            i++;
+            if (i<argc)
+                wineObject.setProgramBinary(app.arguments().at(i));
+        } else if (app.arguments().at(i)=="--program-args") {
+            i++;
+            if (i<argc)
+                wineObject.setProgramArgs(app.arguments().at(i));
+        } else if (app.arguments().at(i)=="--program-dir") {
+            i++;
+            if (i<argc)
+                wineObject.setProgramDir(app.arguments().at(i));
         }
     }
 
-    wineObject.run();
+    wineObject.runSys();
 
 /*
     if (app.arguments().count()>1){

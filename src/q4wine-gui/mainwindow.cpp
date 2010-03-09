@@ -20,6 +20,7 @@
 #include "mainwindow.h"
 
 MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
+
 	// Loading libq4wine-core.so
 	libq4wine.setFileName("libq4wine-core");
 
@@ -31,9 +32,16 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
+        connect (CoreLib.get(), SIGNAL(test()), this, SLOT(test()));
+
 	clearTmp();
 	// Base GUI setup
 	setupUi(this);
+
+    if (!this->createSocket()){
+        this->close();
+        return;
+     }
 
 	if (startState == 1)
 		this->showMinimized();
@@ -69,6 +77,9 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	tabPrefixSeup->setLayout(vlayout.release());
 
 	frame->setAutoFillBackground(true);
+
+    std::auto_ptr<LoggingWidget> logWidget (new LoggingWidget(tabLogging));
+    logLayout->addWidget(logWidget.release());
 
 	std::auto_ptr<IconListWidget> lstIcons (new IconListWidget(tabPrograms));
 	connect(lstIcons.get(), SIGNAL(iconItemClick(QString, QString, QString, QString, QString)), this, SLOT(updateIconDesc(QString, QString, QString, QString, QString)));
@@ -148,6 +159,8 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
 	connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
 
+
+
 	CoreLib->runAutostart();
 
 #ifndef WITH_ICOUTILS
@@ -172,7 +185,13 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
         if (!trayIcon->isVisible())
             show();
 
+
+
 	return;
+}
+
+void MainWindow::test(){
+    qDebug()<<"Waaaaah";
 }
 
 void MainWindow::setSearchFocus(){
@@ -315,6 +334,66 @@ void MainWindow::prefixManage_Click(){
 	return;
 }
 
+bool MainWindow::createSocket(){
+    serverSoket.reset(new QLocalServer(this));
+#ifdef DEBUG
+    qDebug()<<"[ii] Creating q4wine socket";
+#endif
+
+    char *user = getenv("USER");
+
+    if (!serverSoket->listen(QString("/tmp/q4wine-%1.sock").arg(user))){
+        QTextStream QErr(stderr);
+        QErr<<"[EE] Can't create q4wine socket: "<<serverSoket->errorString()<<endl;
+        return false;
+    }
+
+
+
+    connect (serverSoket.get(), SIGNAL(newConnection()), this, SLOT(newConnection()));
+
+    return true;
+}
+
+void MainWindow::newConnection (){
+    quint16 blockSize = 0;
+
+    if (serverSoket->hasPendingConnections ()){
+        std::auto_ptr<QLocalSocket> localSocket;
+        localSocket.reset(serverSoket->nextPendingConnection ());
+
+       connect(localSocket.get(), SIGNAL(disconnected()), localSocket.get(), SLOT(deleteLater()));
+
+       if (localSocket->waitForReadyRead()){
+
+           if(localSocket->waitForDisconnected()){
+
+
+           QDataStream in(localSocket.get());
+           in.setVersion(QDataStream::Qt_4_0);
+
+           if (blockSize == 0) {
+               if (localSocket->bytesAvailable() < (int)sizeof(quint16))
+                   return;
+               in >> blockSize;
+           }
+
+           if (in.atEnd())
+               return;
+
+           QString nextFortune;
+           in >> nextFortune;
+
+
+           qDebug()<<"zzzzzzz"<<nextFortune;
+       }
+       }
+
+
+    }
+    qDebug()<<"Wooot!";
+}
+
 void MainWindow::createTrayIcon(){
 	std::auto_ptr<QMenu> trayIconMenu(new QMenu(this));
 	trayIconMenu->addAction(mainRun);
@@ -363,6 +442,8 @@ void MainWindow::closeEvent(QCloseEvent *event){
 		settings.setValue("splitterSize0", splitter->sizes().at(0));
 		settings.setValue("splitterSize1", splitter->sizes().at(1));
 		settings.endGroup();
+
+        serverSoket->close();
 	}
 	return;
 }
@@ -465,6 +546,8 @@ void MainWindow::mainExit_Click(){
 	settings.setValue("size", size());
 	settings.setValue("pos", pos());
 	settings.endGroup();
+
+    serverSoket->close();
 
 	qApp->quit();
 	return;
