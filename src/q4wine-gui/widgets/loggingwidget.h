@@ -46,7 +46,6 @@ private slots:
 
     void treeWidget_itemClicked (QTreeWidgetItem * item, int colum);
     void treeWidget_currentItemChanged (QTreeWidgetItem *item, QTreeWidgetItem *);
-    void treeWidget_keyPressEvent ( QKeyEvent * event );
 
 private:
     //! This is need for libq4wine-core.so import.
@@ -68,6 +67,10 @@ private:
 
     void createActions(void);
     void clearLogs(void);
+
+protected:
+    bool eventFilter(QObject *obj, QEvent *ev);
+
 };
 
 #endif // LOGGINGWIDGET_H

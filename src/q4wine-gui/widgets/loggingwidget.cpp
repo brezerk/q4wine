@@ -28,9 +28,11 @@ LoggingWidget::LoggingWidget(QWidget *parent) :
 
     connect (treeWidget.get(), SIGNAL(itemActivated (QTreeWidgetItem *, int)), this, SLOT(treeWidget_itemClicked (QTreeWidgetItem *, int)));
     connect (treeWidget.get(), SIGNAL(currentItemChanged (QTreeWidgetItem *, QTreeWidgetItem *)), this, SLOT(treeWidget_currentItemChanged (QTreeWidgetItem *, QTreeWidgetItem *)));
-    connect (treeWidget.get(), SIGNAL(keyPressEvent ( QKeyEvent *)), this, SLOT(treeWidget_keyPressEvent ( QKeyEvent *)));
+
+    treeWidget->installEventFilter(this);
 
     listWidget.reset(new QListWidget(this));
+
 
     splitter.reset(new QSplitter(this));
 
@@ -171,11 +173,6 @@ void LoggingWidget::treeWidget_currentItemChanged (QTreeWidgetItem *item, QTreeW
     return;
 }
 
-void LoggingWidget::treeWidget_keyPressEvent ( QKeyEvent * event){
-    qDebug()<<event->key();
-}
-
-
 void LoggingWidget::logClear_Click(){
     this->treeWidget->clear();
     this->listWidget->clear();
@@ -271,3 +268,22 @@ void LoggingWidget::getLogRecords(void){
     }
     return;
 }
+
+bool LoggingWidget::eventFilter(QObject *obj, QEvent *event)
+ {
+     if (obj == this->treeWidget.get()) {
+         if (event->type() == QEvent::KeyPress) {
+             QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+
+             if (keyEvent->matches(QKeySequence::Delete)){
+                 this->logDelete_Click();
+                 return true;
+             }
+         } else {
+             return false;
+         }
+     } else {
+         // pass the event on to the parent class
+         return QWidget::eventFilter(obj, event);
+     }
+ }
