@@ -21,55 +21,26 @@
 
 Dir::Dir()
 {
-	this->_TABLE="dir";
 }
 
-QList<QStringList> Dir::getFieldsByPrefixId(const QString prefix_id) const{
-	QList<QStringList> valuelist;
+QStringList Dir::getDirList(const QString prefix_name) const{
+    QStringList valuelist;
 
-	QSqlQuery query;
-	query.prepare("SELECT id, name FROM dir WHERE prefix_id=:prefix_id");
-	query.bindValue(":prefix_id", prefix_id);
+    QSqlQuery query;
+    query.prepare("SELECT name FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
+    query.bindValue(":prefix_name", prefix_name);
 
-	if (query.exec()){
-		while (query.next()) {
-			QStringList values;
-			int i=0;
-			while (query.value(i).isValid()){
-				values.append(query.value(i).toString());
-				i++;
-			}
-			valuelist.append(values);
-		}
-	} else {
-		qDebug()<<"SqlError: "<<query.lastError();
-		valuelist.clear();
-	}
-	return valuelist;
-}
-
-QList<QStringList> Dir::getFieldsByPrefixName(const QString prefix_name) const{
-	QList<QStringList> valuelist;
-
-	QSqlQuery query;
-	query.prepare("SELECT id, name FROM dir WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
-	query.bindValue(":prefix_name", prefix_name);
-
-	if (query.exec()){
-		while (query.next()) {
-			QStringList values;
-			int i=0;
-			while (query.value(i).isValid()){
-				values.append(query.value(i).toString());
-				i++;
-			}
-			valuelist.append(values);
-		}
-	} else {
-		qDebug()<<"SqlError: "<<query.lastError();
-		valuelist.clear();
-	}
-	return valuelist;
+    if (query.exec()){
+        while (query.next()) {
+            if (query.value(0).isValid()){
+                valuelist.append(query.value(0).toString());
+            }
+        }
+    } else {
+        qDebug()<<"SqlError: "<<query.lastError();
+        valuelist.clear();
+    }
+    return valuelist;
 }
 
 bool  Dir::delDir(const QString prefix_name, const QString dir_name) const{

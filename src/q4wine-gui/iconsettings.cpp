@@ -45,7 +45,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 	this->prefix_name = prefix_name;
 	this->dir_name = dir_name;
 	this->icon_name = icon_name;
-	this->prefix_path = db_prefix.getFieldsByPrefixName(this->prefix_name).at(1);
+    this->prefix_path = db_prefix.getByName(this->prefix_name).value("path");
 	if (this->prefix_path.isEmpty()){
 		  this->prefix_path = QDir::homePath();
 		  this->prefix_path.append("/.wine/drive_c/");
@@ -61,7 +61,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 	if (QDir(this->prefix_path).exists())
 	   prefix_urls << QUrl::fromLocalFile(this->prefix_path);
 
-	QString cd_mount = db_prefix.getFieldsByPrefixName(this->prefix_name).at(6);
+    QString cd_mount = db_prefix.getMountPoint(this->prefix_name);
 
 	if (!cd_mount.isEmpty())
 	  if (QDir().exists(cd_mount))
@@ -103,7 +103,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 
 	twDlls->installEventFilter(this);
 
-	cboxDlls->addItems(CoreLib->getWineDlls(db_prefix.getFieldsByPrefixName(prefix_name).at(2)));
+    cboxDlls->addItems(CoreLib->getWineDlls(db_prefix.getByName(prefix_name).value("libs")));
 	cboxDlls->setMaxVisibleItems (10);
 
 	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
@@ -121,26 +121,20 @@ void IconSettings::loadThemeIcons(){
 }
 
 void IconSettings::getIconReccord(){
-	QStringList iconRec;
+    QHash<QString, QString> iconRec;
 
-	if (this->dir_name.isEmpty()){
-		iconRec = db_icon.getByName(this->prefix_name, this->dir_name, this->icon_name);
-	} else {
-		iconRec = db_icon.getByName(this->prefix_name, this->dir_name, this->icon_name);
-	}
+    iconRec = db_icon.getByName(this->prefix_name, this->dir_name, this->icon_name);
 
-	txtName->setText(iconRec.at(1));
-	txtCmdArgs->setText(iconRec.at(9));
-	txtProgramPath->setText(iconRec.at(10));
+    txtName->setText(iconRec.value("name"));
+    txtCmdArgs->setText(iconRec.value("cmdargs"));
+    txtProgramPath->setText(iconRec.value("exec"));
 
-	iconPath.clear();
+    iconPath = iconRec.value("icon_path");
 
-	if (!iconRec.at(3).isEmpty()){
-		if (QFile(iconRec.at(3)).exists()){
-			cmdGetIcon->setIcon (QIcon(iconRec.at(3)));
-			iconPath=iconRec.at(3);
+    if (!iconPath.isEmpty()){
+        if (QFile(iconPath).exists()){
+            cmdGetIcon->setIcon (QIcon(iconPath));
 		} else {
-			iconPath=iconRec.at(3);
 			if (iconPath=="wineconsole"){
 				cmdGetIcon->setIcon(CoreLib->loadIcon("data/wineconsole.png"));
 			} else if (iconPath=="regedit"){
@@ -162,20 +156,20 @@ void IconSettings::getIconReccord(){
 		}
 	}
 
-	txtDesc->setText(iconRec.at(2));
-	txtDisplay->setText(iconRec.at(8));
-	txtWinedebug->setText(iconRec.at(6));
-	txtWorkDir->setText(iconRec.at(4));
+    txtDesc->setText(iconRec.value("desc"));
+    txtDisplay->setText(iconRec.value("display"));
+    txtWinedebug->setText(iconRec.value("winedebug"));
+    txtWorkDir->setText(iconRec.value("wrkdir"));
 
-	if (iconRec.at(11).isEmpty()){
+    if (iconRec.value("desktop").isEmpty()){
 		cboxDesktopSize->setCurrentIndex(0);
 	} else {
-		cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(iconRec.at(11)));
+        cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(iconRec.value("desktop")));
 	}
 
-	spinNice->setValue(iconRec.at(12).toInt());
+    spinNice->setValue(iconRec.value("nice").toInt());
 
-	if (iconRec.at(7)=="1"){
+    if (iconRec.value("useconsole")=="1"){
 		cbUseConsole->setCheckState(Qt::Checked);
 		txtWinedebug->setEnabled(TRUE);
 	} else {
@@ -183,12 +177,10 @@ void IconSettings::getIconReccord(){
 		txtWinedebug->setEnabled(FALSE);
 	}
 
-	QStringList override = iconRec.at(5).split(";");
-
+    QStringList override = iconRec.value("override").split(";");
 	QString overrideorder="";
 
 	for (int i=0; i<override.count()-1; i++){
-
 		QStringList list2 = override.at(i).split("=");
 			twDlls->insertRow (0);
 			std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(list2.at(0)));

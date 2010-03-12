@@ -264,9 +264,9 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		item->setDrive("C:", "../drive_c", "auto");
 		listWineDrives->addItem(item.release());
 
-		if (!db_prefix.getMountPath(var1).isEmpty()){
+        if (!db_prefix.getMountPoint(var1).isEmpty()){
 			item.reset(new DriveListWidgetItem(listWineDrives));
-			item->setDrive("D:", db_prefix.getMountPath(var1), "cdrom");
+            item->setDrive("D:", db_prefix.getMountPoint(var1), "cdrom");
 			listWineDrives->addItem(item.release());
 		}
 
@@ -967,9 +967,15 @@ void Wizard::nextWizardPage(){
 			if (comboFakeVersion->currentText()=="Windows 2.0")
 				version = "win20";
 
-			CoreLib->runWineBinary("", "-u -i", prefix_name, "boot", false);
+            ExecObject execObj;
+            execObj.cmdargs = "-u -i";
+            execObj.execcmd = "wineboot";
 
-			// --- Creating Dos drives ---
+            if (!CoreLib->runWineBinary(execObj, prefix_name, false)){
+                QApplication::restoreOverrideCursor();
+                reject();
+                return;
+            }
 
 			QString sh_cmd = "";
 			QStringList sh_line;
@@ -979,6 +985,8 @@ void Wizard::nextWizardPage(){
 
 			QString prefixPath = db_prefix.getPath(var1);
 			prefixPath.append("/dosdevices/");
+
+            prefixPath = CoreLib->getEscapeString(prefixPath, false);
 
 			if (!wineDriveDir.cd(prefixPath)){
 				qDebug()<<"Cannot cd to prefix directory: "<<prefixPath;
@@ -998,8 +1006,9 @@ void Wizard::nextWizardPage(){
 			}
 
 			sh_cmd.clear();
-			sh_cmd.append("cd ");
+            sh_cmd.append("cd \'");
 			sh_cmd.append(prefixPath);
+            sh_cmd.append("\'");
 			sh_line.append(sh_cmd);
 
 			if (listWineDrives->count()>0){
@@ -1007,6 +1016,13 @@ void Wizard::nextWizardPage(){
 					std::auto_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->item(i)));
 
 					if (item.get()){
+                        sh_cmd.clear();
+                        sh_cmd.append(CoreLib->getWhichOut("rm"));
+                        sh_cmd.append(" -f '");
+                        sh_cmd.append(item->getLetter().toLower());
+                        sh_cmd.append("'");
+                        sh_line.append(sh_cmd);
+
 						sh_cmd.clear();
 						sh_cmd.append(CoreLib->getWhichOut("ln"));
 						sh_cmd.append(" -s '");
@@ -1024,8 +1040,9 @@ void Wizard::nextWizardPage(){
 			prefixPath.append(getenv("USER"));
 
 			sh_cmd.clear();
-			sh_cmd.append("mkdir -p ");
+            sh_cmd.append("mkdir -p \'");
 			sh_cmd.append(prefixPath);
+            sh_cmd.append("\'");
 			sh_line.append(sh_cmd);
 
 			sh_cmd.clear();
@@ -1064,8 +1081,9 @@ void Wizard::nextWizardPage(){
 			sh_line.append(sh_cmd);
 
 			sh_cmd.clear();
-			sh_cmd.append("cd ");
+            sh_cmd.append("cd \'");
 			sh_cmd.append(prefixPath);
+            sh_cmd.append("\'");
 			sh_line.append(sh_cmd);
 
 			sh_cmd.clear();
@@ -1075,7 +1093,7 @@ void Wizard::nextWizardPage(){
 			sh_cmd.append("' '");
 			sh_cmd.append("Desktop");
 			sh_cmd.append("'");
-			sh_line.append(sh_cmd);
+            sh_line.append(sh_cmd);
 
 			sh_cmd.clear();
 			sh_cmd.append(CoreLib->getWhichOut("ln"));
@@ -1377,7 +1395,6 @@ void Wizard::nextWizardPage(){
 #ifdef DEBUG
 			qDebug()<<"[ii] Wizard::run registry import";
 #endif
-
 
 				if (registry.exec(this, prefix_name)){
 

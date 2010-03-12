@@ -105,7 +105,7 @@ bool DataBase::checkDb(){
                     return false;
             }
             if (table == "logging"){
-                if(!query.exec("CREATE TABLE logging (id INTEGER PRIMARY KEY, name TEXT, exit NUMERIC, stdout TEXT, prefix_id NUMERIC);"))
+                if(!query.exec("CREATE TABLE logging (id INTEGER PRIMARY KEY, name TEXT, exit NUMERIC, stdout TEXT, prefix_id NUMERIC, date NUMERIC);"))
                     return false;
             }
         }

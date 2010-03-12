@@ -21,7 +21,6 @@
 #define IMAGE_H
 
 #include "config.h"
-#include "prefix.h"
 
 #include <QList>
 #include <QString>
@@ -37,7 +36,7 @@
  * \brief This class provide database functions for Image table.
  *
  */
-class Image : public Prefix
+class Image
 {
 public:
 	//! Class constructor

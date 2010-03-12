@@ -22,9 +22,6 @@
 
 #include "config.h"
 
-#include "prefix.h"
-
-#include <QList>
 #include <QString>
 #include <QStringList>
 #include <QSqlQuery>
@@ -38,7 +35,7 @@
  * \brief This class provide database functions for Dir table.
  *
  */
-class Dir : public Prefix
+class Dir
 {
 public:
    //! Class constructor
@@ -49,8 +46,7 @@ public:
 	* \param  prefixId    A prefixid value.
 	* \return Return a list of table fields value or -1 on error.
 	*/
-	QList<QStringList> getFieldsByPrefixId(const QString prefix_id) const;
-	QList<QStringList> getFieldsByPrefixName(const QString prefix_name) const;
+    QStringList getDirList(const QString prefix_name) const;
 
    /*! \brief This function deletes all dirs fields by prefix_name keys value from table.
 	*
@@ -81,7 +77,7 @@ public:
 	 * \param  prefix_name    A prefix name value.
 	 * \return Return prefix id.
 	 */
-	QString getId(const QString dir_name, const QString prefix_name) const;
+    QString getId(const QString dir_name, const QString prefix_name) const;
 
    /*! \brief Rename dir.
 	*

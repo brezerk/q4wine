@@ -682,22 +682,20 @@ QStringList corelib::getCdromDevices(void) const{
 		}
 
         bool corelib::runIcon(const QString prefix_name, const QString dir_name, const QString icon_name){
-			QStringList result = db_icon.getByName(prefix_name, dir_name, icon_name);
-			//  0   1     2     3          4       5         6          7           8        9        10    11       12    13         14
-			//	id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id
+            QHash<QString, QString> result = db_icon.getByName(prefix_name, dir_name, icon_name);
 			ExecObject execObj;
-			execObj.wrkdir = result.at(4);
-			execObj.override = result.at(5);
-			execObj.winedebug = result.at(6);
-			execObj.useconsole = result.at(7);
-			execObj.display = result.at(8);
-			execObj.cmdargs = result.at(9);
-			execObj.execcmd = result.at(10);
-			execObj.desktop = result.at(11);
-			execObj.nice = result.at(12);
-			execObj.prefixid = result.at(13);
+            execObj.wrkdir = result.value("wrkdir");
+            execObj.override = result.value("override");
+            execObj.winedebug = result.value("winedebug");
+            execObj.useconsole = result.value("useconsole");
+            execObj.display = result.value("display");
+            execObj.cmdargs = result.value("cmdargs");
+            execObj.execcmd = result.value("exec");
+            execObj.desktop = result.value("desktop");
+            execObj.nice = result.value("nice");
 			execObj.name = icon_name;
-			return runWineBinary(execObj);
+
+            return runWineBinary(execObj, prefix_name);
 		}
 
         bool corelib::checkFileExists(QString path){
@@ -745,8 +743,69 @@ QStringList corelib::getCdromDevices(void) const{
             return true;
         }
 
-        bool corelib::runWineBinary(const ExecObject execObj){
+        bool corelib::runWineBinary(const ExecObject execObj, QString prefix_name, bool detach){
+            QString binary = QString("%1/bin/q4wine-helper").arg(APP_PREF);
+            QStringList args;
 
+            args.append("--prefix");
+            args.append(prefix_name);
+
+            if (execObj.nice>0){
+                args.append("--nice");
+                args.append(execObj.nice);
+            }
+
+            if (!execObj.desktop.isEmpty()){
+                args.append("--desktop");
+                args.append(execObj.desktop);
+            }
+
+            if (execObj.useconsole == "1"){
+                args.append("--console");
+                args.append(execObj.useconsole);
+            }
+
+            if (!execObj.winedebug.isEmpty()){
+                args.append("--wine-debug");
+                args.append(execObj.winedebug);
+            }
+
+            if (!execObj.display.isEmpty()){
+                args.append("--display");
+                args.append(execObj.display);
+            }
+
+            if (!execObj.cmdargs.isEmpty()){
+                args.append("--program-args");
+                args.append(execObj.cmdargs);
+            }
+
+            if (!execObj.execcmd.isEmpty()){
+                args.append("--program-bin");
+                args.append(execObj.execcmd);
+            }
+
+            QString wrkdir = execObj.wrkdir;
+
+            if (wrkdir.isEmpty())
+                wrkdir = QDir::homePath();
+
+
+            if (detach){
+                QProcess proc(this);
+                return proc.startDetached(binary, args, wrkdir);
+            } else {
+                Process proc(args, binary, wrkdir, tr("Running binary: \"%1\"").arg(execObj.execcmd), tr("Running binary..."), false);
+                return proc.exec();
+            }
+
+
+
+            //--prefix %1").arg(prefix_name)
+
+            //proc.se
+
+            /*
             if (!checkFileExists(execObj.execcmd))
                 return false;
 
@@ -867,10 +926,12 @@ QStringList corelib::getCdromDevices(void) const{
 
 			QProcess proc;
 			return proc.startDetached( exec, args, execObj.wrkdir );
+            */
+            return false;
 		}
 
-        bool corelib::runWineBinary(const QString windows_binary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin, const bool releaseProc){
-
+        //bool corelib::runWineBinary(const QString windows_binary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin, const bool releaseProc){
+            /*
             if (!checkFileExists(windows_binary))
                 return false;
 
@@ -945,18 +1006,18 @@ QStringList corelib::getCdromDevices(void) const{
 				return proc.startDetached(exec, args, QDir::homePath());
 			} else {
 				return this->runProcess(args, QObject::tr("Running wine binary"), QObject::tr("Please wait..."));
-			}
-			return false;
+            }
+        return false;
 		}
-
+*/
 		QString corelib::createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const{
-			QStringList result = db_icon.getByName(prefix_name, dir_name, icon_name);
+            QHash<QString, QString> result = db_icon.getByName(prefix_name, dir_name, icon_name);
 
 			QString fileName = QDir::homePath();
 			fileName.append("/.config/");
 			fileName.append(APP_SHORT_NAME);
 			fileName.append("/tmp/");
-			fileName.append(result.at(1));
+            fileName.append(result.value("name"));
 			fileName.append(".desktop");
 
 			QFile file(fileName);
@@ -969,36 +1030,38 @@ QStringList corelib::getCdromDevices(void) const{
 				out<<" -d \""<<dir_name<<"\" ";
 			out<<" -i \""<<icon_name<<"\" "<<endl;
 
-			if (result.at(3).isEmpty()){
+            QString icon_path = result.value("icon_path");
+
+            if (icon_path.isEmpty()){
 				out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/exec_wine.png"<<endl;
 			} else {
-				if (result.at(3)=="winecfg"){
+                if (icon_name=="winecfg"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/winecfg.png"<<endl;
-				} else if (result.at(3)=="wineconsole"){
+                } else if (icon_name=="wineconsole"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/wineconsole.png"<<endl;
-				} else if (result.at(3)=="uninstaller"){
+                } else if (icon_name=="uninstaller"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/uninstaller.png"<<endl;
-				} else if (result.at(3)=="regedit"){
+                } else if (icon_name=="regedit"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/regedit.png"<<endl;
-				} else if (result.at(3)=="explorer"){
+                } else if (icon_name=="explorer"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/explorer.png"<<endl;
-				} else if (result.at(3)=="eject"){
+                } else if (icon_name=="eject"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/eject.png"<<endl;
-				} else if (result.at(3)=="wordpad"){
+                } else if (icon_name=="wordpad"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/notepad.png"<<endl;
 				} else {
-					out<<"Icon="<<result.at(3)<<endl;
+                    out<<"Icon="<<icon_path<<endl;
 				}
 			}
 			out<<"Type=Application"<<endl;
 			out<<"X-KDE-StartupNotify=true"<<endl;
-			out<<"GenericName="<<result.at(2)<<endl;
-			out<<"Name="<<result.at(2)<<endl;
-			out<<"Path="<<result.at(4)<<endl;
+            out<<"GenericName="<<result.value("name")<<endl;
+            out<<"Name="<<result.value("name")<<endl;
+            out<<"Path="<<result.value("wrkdir")<<endl;
 
 			file.close();
 
-			return fileName;
+            return fileName;
 		}
 
         QString corelib::getEscapeString(const QString string, const bool spaces) const{
@@ -1013,7 +1076,7 @@ QStringList corelib::getCdromDevices(void) const{
 
             this->umountImage(prefix_name);
 
-			QString mount_point=db_prefix.getFieldsByPrefixName(prefix_name).at(6);
+            QString mount_point=db_prefix.getMountPoint(prefix_name);
 #ifdef DEBUG
 			qDebug()<<"[ii] corelib::mountImage: mount point: "<<mount_point;
 #endif
@@ -1098,7 +1161,7 @@ QStringList corelib::getCdromDevices(void) const{
 		}
 
 		bool corelib::umountImage(const QString prefix_name) const{
-			QString mount_point=db_prefix.getFieldsByPrefixName(prefix_name).at(6);
+            QString mount_point=db_prefix.getMountPoint(prefix_name);
 
                         if (this->getMountedImages(mount_point)=="none")
                             return true;
@@ -1429,13 +1492,14 @@ QStringList corelib::getCdromDevices(void) const{
 		}
 
 		void corelib::runAutostart(void){
-			QList<QStringList> iconsList, prefixList;
+            QStringList iconsList, prefixList;
 
-			prefixList = db_prefix.getFields();
+            prefixList = db_prefix.getPrefixList();
 			for (int i = 0; i < prefixList.size(); ++i) {
-				iconsList = db_icon.getByPrefixAndDirName(prefixList.at(i).at(1), "autostart");
+                iconsList = db_icon.getIconsList(prefixList.at(i), "autostart", "");
 				for (int j = 0; j < iconsList.size(); ++j) {
-					this->runIcon(prefixList.at(i).at(1), "autostart", iconsList.at(j).at(1));
+                    qDebug()<<iconsList.at(j);
+                    this->runIcon(prefixList.at(i), "autostart", iconsList.at(j));
 				}
 			}
 			return;

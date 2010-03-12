@@ -113,7 +113,12 @@ bool Registry::exec(QObject *parent, QString prefix_name){
 	file.write(regfile_image.toAscii());        // write to stderr
 	file.close();
 
-	return CoreLib->runWineBinary("regedit.exe", full_file_path, prefix_name, "", false);
+
+    ExecObject execObj;
+    execObj.cmdargs = full_file_path;
+    execObj.execcmd = "regedit.exe";
+
+    return CoreLib->runWineBinary(execObj, prefix_name, false);
 
 	/*
 	std::auto_ptr<WineBinLauncher> launcher (new WineBinLauncher(prefix_name));

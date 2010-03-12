@@ -31,7 +31,7 @@
 
 Image::Image()
 {
-  	this->_TABLE="image";
+
 }
 
 QList<QStringList> Image::getFields(void) const{

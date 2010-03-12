@@ -25,9 +25,10 @@
 
 #include <QObject>
 #include <QLocalSocket>
+#include <QTime>
 
 #include "prefix.h"
-#include "icon.h"
+#include "logging.h"
 
 #include "q4wine-lib.h"
 
@@ -45,63 +46,56 @@ Q_OBJECT
 public:
     explicit WineObject(QObject *parent = 0);
 
-    void setPrefix(QString prefixName);
+    void setPrefix(QString prefix);
 
     void setProgramBinary(QString binary);
     void setProgramArgs(QString args);
-    void setProgramDir(QString dir);
     void setProgramDisplay(QString dislpay);
+    void setProgramDebug(QString debug);
     void setProgramNice(int nice);
-
     void setProgramDesktop(QString desktop);
-    void setUseConsole(bool console);
 
+    void setUseConsole(int console);
     void setOverrideDll(QString dll_list);
 
     void runSys();
-    void runQt();
-
-    void printOut();
 
 private:
+
+    //! This is need for libq4wine-core.so import;
+    typedef void *CoreLibPrototype (bool);
+        CoreLibPrototype *CoreLibClassPointer;
+        std::auto_ptr<corelib> CoreLib;
+    QLibrary libq4wine;
+
+    QString createEnvString(void);
+    void sendMessage(QString message);
+
     Prefix db_prefix;
+    Logging db_logging;
 
     QString prefixName;
     QString prefixPath;
     QString prefixDllPath;
+    int prefixId;
     QString prefixLoader;
     QString prefixServer;
     QString prefixBinary;
 
     QString programBinary;
+    QString programBinaryName;
     QString programArgs;
-    QString programDir;
     QString programDisplay;
+    QString programDebug;
     int programNice;
     QString programDesktop;
     QString overrideDllList;
 
     bool useConsole;
 
-
- /*
-struct ExecObject{
-    QString runcmd;
-    QString useconsole;
-    QString cmdargs;
-    QString override;
-    QString winedebug;
-    QString display;
-    QString wrkdir;
-    QString desktop;
-    QString nice;
-    QString name;
-};
-*/
+    char *user;
 
 signals:
-
-
 
 public slots:
 

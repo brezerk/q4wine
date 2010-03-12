@@ -40,19 +40,19 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
 	this->loadThemeIcons();
 
-	QStringList result = db_prefix.getFieldsByPrefixName(prefix_name);
-	if (result.at(0) == "-1")
+    QHash<QString,QString> result = db_prefix.getByName(prefix_name);
+    if (result.value("id").isEmpty())
 		return;
 
-	prefix_id=result.at(0);
+    prefix_id=result.value("id");
 
-	txtWineLibs->setText(result.at(2));
-	txtWineLoaderBin->setText(result.at(3));
-	txtWineServerBin->setText(result.at(4));
-	txtWineBin->setText(result.at(5));
+    txtWineLibs->setText(result.value("libs"));
+    txtWineLoaderBin->setText(result.value("loader"));
+    txtWineServerBin->setText(result.value("server"));
+    txtWineBin->setText(result.value("bin"));
 
 	//comboDeviceList
-	txtMountPoint->setText(result.at(6));
+    txtMountPoint->setText(result.value("mount"));
 
 	if (prefix_name=="Default"){
 		txtPrefixName->setEnabled(FALSE);
@@ -63,11 +63,11 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 	}
 
 	txtPrefixName->setText(prefix_name);
-	txtPrefixPath->setText(result.at(1));
+    txtPrefixPath->setText(result.value("path"));
 
 	comboDeviceList->addItems(CoreLib->getCdromDevices());
-	if (!result.at(7).isEmpty()){
-		comboDeviceList->setCurrentIndex (comboDeviceList->findText(result.at(7)));
+    if (!result.value("drive").isEmpty()){
+        comboDeviceList->setCurrentIndex (comboDeviceList->findText(result.value("drive")));
 		if (comboDeviceList->currentText().isEmpty())
 			comboDeviceList->setCurrentIndex (0);
 	} else {

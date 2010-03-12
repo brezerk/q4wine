@@ -217,8 +217,8 @@ public:
 	 * \param  prefix_name	Prefix name.
 	 * \return Return true on success.
 	 */
-    bool runWineBinary(const ExecObject execObj);
-    bool runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin="", const bool releaseProc = true);
+    bool runWineBinary(const ExecObject execObj, const QString prefix_name, bool detach=true);
+    //bool runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin="", const bool releaseProc = true);
     bool checkFileExists(QString path);
 
 

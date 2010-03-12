@@ -79,6 +79,10 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	frame->setAutoFillBackground(true);
 
     std::auto_ptr<LoggingWidget> logWidget (new LoggingWidget(tabLogging));
+    connect (this, SIGNAL(reloadLogData()), logWidget.get(), SLOT(getLogRecords()));
+
+    logWidget->getLogRecords();
+
     logLayout->addWidget(logWidget.release());
 
 	std::auto_ptr<IconListWidget> lstIcons (new IconListWidget(tabPrograms));
@@ -111,9 +115,9 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	std::auto_ptr<QWidget> wid (new QWidget(tabPrograms));
 
 	vlayout.reset(new QVBoxLayout);
-	vlayout ->addWidget(widgetFilter);
-	vlayout ->addWidget(lstIcons.release());
-	vlayout ->setMargin(0);
+    vlayout->addWidget(widgetFilter);
+    vlayout->addWidget(lstIcons.release());
+    vlayout->setMargin(0);
 	wid->setLayout(vlayout.release());
 
 	splitter.reset(new QSplitter(tabPrograms));
@@ -309,9 +313,9 @@ void MainWindow::updateDtabaseConnectedItems(){
 	QString curPrefix =  cbPrefixes->currentText();
 
 	cbPrefixes->clear();
-	QList<QStringList> result = db_prefix.getFields();
-	for (int i = 0; i < result.size(); ++i) {
-		cbPrefixes->addItem (result.at(i).at(1));
+    QStringList list = db_prefix.getPrefixList();
+    for (int i = 0; i < list.size(); ++i) {
+        cbPrefixes->addItem (list.at(i));
 	}
 
 	emit(updateDatabaseConnections());
@@ -348,50 +352,113 @@ bool MainWindow::createSocket(){
         return false;
     }
 
-
-
     connect (serverSoket.get(), SIGNAL(newConnection()), this, SLOT(newConnection()));
 
     return true;
 }
 
 void MainWindow::newConnection (){
-    quint16 blockSize = 0;
 
     if (serverSoket->hasPendingConnections ()){
         std::auto_ptr<QLocalSocket> localSocket;
         localSocket.reset(serverSoket->nextPendingConnection ());
 
-       connect(localSocket.get(), SIGNAL(disconnected()), localSocket.get(), SLOT(deleteLater()));
+        connect(localSocket.get(), SIGNAL(disconnected()), localSocket.get(), SLOT(deleteLater()));
 
-       if (localSocket->waitForReadyRead()){
-
-           if(localSocket->waitForDisconnected()){
-
-
-           QDataStream in(localSocket.get());
-           in.setVersion(QDataStream::Qt_4_0);
-
-           if (blockSize == 0) {
-               if (localSocket->bytesAvailable() < (int)sizeof(quint16))
-                   return;
-               in >> blockSize;
-           }
-
-           if (in.atEnd())
-               return;
-
-           QString nextFortune;
-           in >> nextFortune;
+        while (localSocket->waitForReadyRead()){
+            QDataStream in(localSocket.get());
+            in.setVersion(QDataStream::Qt_4_0);
 
 
-           qDebug()<<"zzzzzzz"<<nextFortune;
-       }
-       }
+            quint16 blockSize = 0;
+            if (blockSize == 0) {
+                if (localSocket->bytesAvailable() < (int)sizeof(quint16))
+                    return;
+                in >> blockSize;
+            }
 
+            if (in.atEnd())
+                return;
 
+            QString message;
+            in >> message;
+
+            QStringList list = message.split("/");
+
+            if (list.count()>1){
+                if (list.at(0)=="start"){
+                    if (list.count()==3){
+                        this->changeStatusText(tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+
+                        if ((!this->isVisible()) and (trayIcon->isVisible())){
+                            trayIcon->showMessage(tr("q4wine-helper"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                        }
+
+                        emit(reloadLogData());
+
+                    } else {
+                        this->showSocketError(message);
+                    }
+                } else if (list.at(0)=="console"){
+                    if (list.count()==3){
+                        this->changeStatusText(tr("Console started fine for Application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+
+                        if ((!this->isVisible()) and (trayIcon->isVisible())){
+                            trayIcon->showMessage(tr("q4wine-helper"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                        }
+
+                        emit(reloadLogData());
+
+                    } else {
+                        this->showSocketError(message);
+                    }
+                } else if (list.at(0)=="finish"){
+                    if (list.count()==4){
+                        this->changeStatusText(tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
+                        if ((!this->isVisible()) and (trayIcon->isVisible())){
+                            trayIcon->showMessage(tr("q4wine-helper"), tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
+                        }
+
+                        emit(reloadLogData());
+                    } else {
+                        this->showSocketError(message);
+                    }
+                } else if (list.at(0)=="error"){
+                    if (list.count()==3){
+                        this->changeStatusText(tr("Can't start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                        if ((!this->isVisible()) and (trayIcon->isVisible())){
+                            trayIcon->showMessage(tr("q4wine-helper"), tr("Can't start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                        }
+                    } else {
+                        this->showSocketError(message);
+                    }
+                } else if (list.at(0)=="console_error"){
+                    if (list.count()==3){
+                        this->changeStatusText(tr("Can't start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                        if ((!this->isVisible()) and (trayIcon->isVisible())){
+                            trayIcon->showMessage(tr("q4wine-helper"), tr("Can't start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                        }
+                    } else {
+                        this->showSocketError(message);
+                    }
+                }
+            } else {
+                this->showSocketError(message);
+            }
+
+#ifdef DEBUG
+            qDebug()<<"[ii] Socket message:"<<message;
+#endif
+        }
     }
-    qDebug()<<"Wooot!";
+    return;
+}
+
+void MainWindow::showSocketError(QString message){
+    QTextStream QErr(stderr);
+    QErr<<"[ee] Unexpected socket message: "<<message;
+    this->changeStatusText(tr("Unexpected socket message recived."));
+    return;
 }
 
 void MainWindow::createTrayIcon(){
@@ -435,14 +502,15 @@ void MainWindow::closeEvent(QCloseEvent *event){
 		hide();
 		event->ignore();
 	} else {
-		QSettings settings(APP_SHORT_NAME, "default");
-		settings.beginGroup("MainWindow");
-		settings.setValue("size", size());
-		settings.setValue("pos", pos());
-		settings.setValue("splitterSize0", splitter->sizes().at(0));
-		settings.setValue("splitterSize1", splitter->sizes().at(1));
-		settings.endGroup();
-
+        if (splitter->sizes().at(0) != splitter->sizes().at(1)){
+            QSettings settings(APP_SHORT_NAME, "default");
+            settings.beginGroup("MainWindow");
+            settings.setValue("size", size());
+            settings.setValue("pos", pos());
+            settings.setValue("splitterSize0", splitter->sizes().at(0));
+            settings.setValue("splitterSize1", splitter->sizes().at(1));
+            settings.endGroup();
+        }
         serverSoket->close();
 	}
 	return;
@@ -644,7 +712,7 @@ void MainWindow::mainRun_Click(){
 	run.prepare(cbPrefixes->currentText());
 
 	if (run.exec()==QDialog::Accepted)
-		CoreLib->runWineBinary(run.execObj);
+        CoreLib->runWineBinary(run.execObj, cbPrefixes->currentText());
 
 	return;
 }
@@ -873,7 +941,7 @@ void MainWindow::messageReceived(const QString message){
             run.prepare(cbPrefixes->currentText(), wrkDir, "", "", "", "", "", "", 0, message);
 
             if (run.exec()==QDialog::Accepted)
-                CoreLib->runWineBinary(run.execObj);
+                CoreLib->runWineBinary(run.execObj, cbPrefixes->currentText());
         }
     }
 

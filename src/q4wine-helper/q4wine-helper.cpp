@@ -65,7 +65,27 @@ int main(int argc, char *argv[])
     WineObject wineObject;
 
     for (int i=1; i<argc; i++){
-        if (app.arguments().at(i)=="--desktop"){
+        if (app.arguments().at(i)=="--prefix"){
+            i++;
+            if (i<argc)
+                wineObject.setPrefix(app.arguments().at(i));
+        }  else if (app.arguments().at(i)=="--wine-debug"){
+            i++;
+            if (i<argc)
+                wineObject.setProgramDebug(app.arguments().at(i));
+        }  else if (app.arguments().at(i)=="--console"){
+            i++;
+            if (i<argc)
+                wineObject.setUseConsole(app.arguments().at(i).toInt());
+        }  else if (app.arguments().at(i)=="--display"){
+            i++;
+            if (i<argc)
+                wineObject.setProgramDisplay(app.arguments().at(i));
+        }  else if (app.arguments().at(i)=="--nice"){
+            i++;
+            if (i<argc)
+                wineObject.setProgramNice(app.arguments().at(i).toInt());
+        }  else if (app.arguments().at(i)=="--desktop"){
             i++;
             if (i<argc)
                 wineObject.setProgramDesktop(app.arguments().at(i));
@@ -77,10 +97,6 @@ int main(int argc, char *argv[])
             i++;
             if (i<argc)
                 wineObject.setProgramArgs(app.arguments().at(i));
-        } else if (app.arguments().at(i)=="--program-dir") {
-            i++;
-            if (i<argc)
-                wineObject.setProgramDir(app.arguments().at(i));
         }
     }
 

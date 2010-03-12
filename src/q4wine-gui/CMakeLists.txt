@@ -17,6 +17,7 @@ SET( Q4WINE_GUI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/core/database/icon.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/logging.cpp
     ${CMAKE_SOURCE_DIR}/src/core/registry.cpp
     ${CMAKE_SOURCE_DIR}/src/core/xmlparser.cpp
     ${CMAKE_SOURCE_DIR}/src/core/httpcore.cpp
@@ -47,6 +48,7 @@ SET ( Q4WINE_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/core/database/icon.h
     ${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.h
     ${CMAKE_SOURCE_DIR}/src/core/database/image.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/logging.h
     ${CMAKE_SOURCE_DIR}/src/core/appdbstructs.h
     ${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
     ${CMAKE_SOURCE_DIR}/src/core/httpcore.h

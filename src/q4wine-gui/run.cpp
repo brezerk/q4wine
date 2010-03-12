@@ -229,18 +229,13 @@ void Run::getPrefixes(){
 	/*
 	 * Getting prefixes and set default
 	 */
-	QList<QStringList> result = db_prefix.getFields();
-	for (int i = 0; i < result.size(); ++i) {
-		comboPrefixes->addItem(result.at(i).at(1));
-		if (result.at(i).at(1)==this->prefix_name){
-			comboPrefixes->setCurrentIndex ( comboPrefixes->findText(result.at(i).at(1)) );
-			if (result.at(i).at(2).isEmpty()){
-				prefix_dir = QDir::homePath();
-				prefix_dir.append("/.wine/drive_c/");
-			} else {
-				prefix_dir = result.at(i).at(2);
-			}
-			getWineDlls(result.at(i).at(3));
+    QStringList list = db_prefix.getPrefixList();
+    for (int i = 0; i < list.size(); ++i) {
+        comboPrefixes->addItem(list.at(i));
+        if (list.at(i)==this->prefix_name){
+            comboPrefixes->setCurrentIndex ( comboPrefixes->findText(list.at(i)) );
+            prefix_dir = db_prefix.getPath(list.at(i));
+            getWineDlls(db_prefix.getLibsPath(list.at(i)));
 		}
 	}
 
@@ -251,16 +246,16 @@ void Run::comboPrefixes_indexChanged (int){
 	/*
 	 * If user select prefix -- rebuild wine dlls list
 	 */
-	QStringList result = db_prefix.getFieldsByPrefixName(comboPrefixes->currentText());
+    QHash<QString,QString> result = db_prefix.getByName(comboPrefixes->currentText());
 
-	if (result.at(1).isEmpty()){
+    if (result.value("path").isEmpty()){
 		prefix_dir = QDir::homePath();
 		prefix_dir.append("/.wine/drive_c/");
 	} else {
-		prefix_dir = result.at(1);
+        prefix_dir = result.value("path");
 	}
 
-	getWineDlls(result.at(2));
+    getWineDlls(result.value("libs"));
 
 	return;
 }

@@ -21,11 +21,43 @@
 
 WineObject::WineObject(QObject *parent) : QObject(parent)
 {
+    // Loading libq4wine-core.so
+    libq4wine.setFileName("libq4wine-core");
+
+    if (!libq4wine.load()){
+        libq4wine.load();
+    }
+
+    // Getting corelib calss pointer
+    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+
+    this->programNice = 0;
+    this->prefixId = 0;
+    this->useConsole=false;
+
+    this->user = getenv("USER");
+
+    return;
+}
+
+void WineObject::setPrefix(QString prefix){
+    QHash<QString, QString> prefix_info = db_prefix.getByName(prefix);
+
+    this->prefixId=prefix_info.value("id").toInt();
+    this->prefixName=prefix_info.value("name");
+    this->prefixBinary=prefix_info.value("bin");
+    this->prefixDllPath=prefix_info.value("libs");
+    this->prefixLoader=prefix_info.value("loader");
+    this->prefixPath=prefix_info.value("path");
+    this->prefixServer=prefix_info.value("server");
+
     return;
 }
 
 void WineObject::setProgramBinary(QString binary){
     this->programBinary=binary;
+    this->programBinaryName=binary.split("/").last().split("\\").last();
     return;
 }
 
@@ -34,13 +66,13 @@ void WineObject::setProgramArgs(QString args){
     return;
 }
 
-void WineObject::setProgramDir(QString dir){
-    this->programDir=dir;
+void WineObject::setProgramDisplay(QString dislpay){
+    this->programDisplay=dislpay;
     return;
 }
 
-void WineObject::setProgramDisplay(QString dislpay){
-    this->programDisplay=dislpay;
+void WineObject::setProgramDebug(QString debug){
+    this->programDebug=debug;
     return;
 }
 
@@ -54,39 +86,133 @@ void WineObject::setProgramDesktop(QString desktop){
     return;
 }
 
-void WineObject::setUseConsole(bool console){
-    this->useConsole=console;
+void WineObject::setUseConsole(int console){
+    if (console==1){
+        this->useConsole=true;
+    } else {
+        this->useConsole=false;
+    }
     return;
 }
 
+QString WineObject::createEnvString(){
+    QString env;
+    if (this->prefixName.isEmpty())
+        this->setPrefix("Default");
+
+    env.append(QString(" WINEPREFIX=\"%1\" ").arg(CoreLib->getEscapeString(this->prefixPath, false)));
+    env.append(QString(" WINESERVER=\"%1\" ").arg(CoreLib->getEscapeString(this->prefixServer, false)));
+    env.append(QString(" WINELOADER=\"%1\" ").arg(CoreLib->getEscapeString(this->prefixLoader, false)));
+    env.append(QString(" WINEDLLPATH=\"%1\" ").arg(CoreLib->getEscapeString(this->prefixDllPath, false)));
+
+    if (!this->programDebug.isEmpty())
+        env.append(QString(" WINEDEBUG=\"%1\" ").arg(this->programDebug));
+
+    if (!this->programDisplay.isEmpty())
+        env.append(QString(" DISPLAY=\"%1\" ").arg(this->programDisplay));
+
+    return env;
+}
+
 void WineObject::runSys(){
-    qDebug()<<this->programBinary;
     if (this->programBinary.isEmpty())
         return;
 
-    QString stdout;
-    QString message;
+    QString env = this->createEnvString();
+    QString stdout, app_stdout;
+
+    QTextCodec *codec = QTextCodec::codecForName(CoreLib->getLocale().toAscii());
 
     FILE *fp;
     int status;
     char path[PATH_MAX];
 
+    QString run_string="";
 
-    fp = popen(QString("%1 2>&1").arg(this->programBinary).toAscii().data(), "r");
-    if (fp == NULL)
+    if (this->useConsole){
+        // If we gona use console output, so exec program is program specificed at CONSOLE global variable
+        run_string = QString(" %1 ").arg(CoreLib->getSetting("console", "bin").toString());
+
+        if (!CoreLib->getSetting("console", "args", false).toString().isEmpty()){
+            // If we have any conslope parametres, we gona preccess them one by one
+            run_string.append(CoreLib->getSetting("console", "args", false).toString());
+        }
+    }
+
+    //Setting enveropment variables
+    if (!env.isEmpty()){
+        run_string.append(" env ");
+        run_string.append(env);
+    }
+
+    if (this->programNice != 0){
+        run_string.append(QString(" %1 -n %2 ").arg(CoreLib->getSetting("system", "nice", false).toString()).arg(this->programNice));
+    }
+
+    run_string.append(QString(" %1 ").arg(this->prefixBinary));
+
+    if (!this->programDesktop.isEmpty()){
+        QString deskname = this->programBinaryName;
+        deskname.replace(" ", "");
+        run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(this->programDesktop));
+    }
+
+    run_string.append(QString(" \"%1\" %2 ").arg(this->programBinary).arg(CoreLib->getEscapeString(this->programArgs, false)));
+    run_string.append(" 2>&1 ");
+
+#ifdef DEBUG
+    qDebug()<<run_string;
+#endif
+    stdout.append(tr("Exec string:"));
+    stdout.append("\n");
+    stdout.append(run_string.trimmed());
+    stdout.append("\n");
+
+    fp = popen(run_string.toAscii().data(), "r");
+    if (fp == NULL){
+        this->sendMessage(QString("error/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
+    } else {
+        if (this->useConsole){
+            this->sendMessage(QString("console/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
+        } else {
+            this->sendMessage(QString("start/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
+        }
+    }
         /* Handle error */;
 
     while (fgets(path, PATH_MAX, fp) != NULL){
-        stdout.append(path);
+        app_stdout.append(codec->toUnicode(path));
     }
-
-    qDebug()<<"out"<<stdout;
 
     status = pclose(fp);
 
+    stdout.append(tr("Exit code:"));
+    stdout.append("\n");
+    stdout.append(QString("%1").arg(status));
+    stdout.append("\n");
+    stdout.append(tr("App STDOUT and STDERR output:"));
+    stdout.append("\n");
+    stdout.append(app_stdout);
 
+    if (!this->useConsole){
+        uint date = QDateTime::currentDateTime ().toTime_t();
+        db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
+
+        this->sendMessage(QString("finish/%1/%2/%3").arg(this->programBinaryName).arg(this->prefixName).arg(status));
+    } else {
+        if (status!=0){
+            uint date = QDateTime::currentDateTime ().toTime_t();
+            db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
+            this->sendMessage(QString("console_error/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
+        }
+    }
+
+    return;
+}
+
+void WineObject::sendMessage(QString message){
     QLocalSocket socket(this);
-    socket.connectToServer( "/tmp/q4wine-brezerk.sock" , QIODevice::WriteOnly );
+    socket.connectToServer( QString("/tmp/q4wine-%1.sock").arg(this->user) , QIODevice::WriteOnly );
 
     if (socket.waitForConnected()){
         qDebug()<<"Connected!";
@@ -95,71 +221,17 @@ void WineObject::runSys(){
         QDataStream out(&block, QIODevice::WriteOnly);
         out.setVersion(QDataStream::Qt_4_0);
         out << (quint16)0;
-        out << QString("%1\n%2\n%3").arg(this->programBinary).arg(status).arg(stdout);
+        out << message;
         out.device()->seek(0);
         out << (quint16)(block.size() - sizeof(quint16));
 
         socket.write(block);
         socket.flush();
-        socket.disconnectFromServer();
 
+        socket.disconnectFromServer();
     } else {
         qDebug()<<"Not connected!";
     }
-
-    qDebug()<<"Exit status:"<<status;
-
-
-    /*
-    FILE *f = popen("VAR1=bla VAR2=foo ./child", "r");
-
-    char buffer[MAX];
-*/
-    /*
-    QProcess proc(this);
-
-    QStringList env = proc.systemEnvironment();
-    env << "WINEPREFIX=/home/brezerk/ddddd";
-    proc.setEnvironment(env);
-
-    qDebug()<<proc.environment();
-
-    proc.start("winecfg");
-    proc.waitForFinished();
-
-    qDebug()<<proc.readAll();
-*/
-    //qDebug()<<proc.environment();
-
-
-}
-
-void WineObject::runQt(){
-
-    QProcess proc(this);
-
-    //connect(proc, SIGNAL(readyReadStandardError ()), this, printOut());
-    //connect(proc, SIGNAL(readyReadStandardOutput ()), this, printOut());
-
-    /*QStringList env = proc.systemEnvironment();
-    env << "WINEPREFIX=/home/brezerk/ddddd";
-    proc.setEnvironment(env);*/
-
-    //qDebug()<<proc.environment();
-
-    proc.execute("winecfg");
-    //proc.waitForFinished();
-    qDebug()<<proc.readAll();
-    qDebug()<<proc.exitCode();
-    qDebug()<<proc.exitStatus();
-
-    //qDebug()<<proc.environment();
-
-    return;
-}
-
-void WineObject::printOut(){
-
     return;
 }
 

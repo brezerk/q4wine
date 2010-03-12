@@ -45,5 +45,9 @@
         <file>data/clear-list.png</file>
         <file>data/wineappdb-app.png</file>
         <file>data/list.png</file>
+        <file>data/date.png</file>
+        <file>data/ok.png</file>
+        <file>data/fail.png</file>
+        <file>data/down_log.png</file>
     </qresource>
 </RCC>

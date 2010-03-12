@@ -21,7 +21,6 @@
 #define ICON_H
 
 #include "config.h"
-#include "prefix.h"
 
 #include <QList>
 #include <QString>
@@ -37,26 +36,26 @@
  * \brief This class provide database functions for Icon table.
  *
  */
-class Icon : public Prefix
+class Icon
 {
 public:
 	//! Class constructor
 	Icon();
 
-   /*! \brief This function gets all icons fields by prefix_id and dir_id key value from table.
-	*
-	* \param  prefix_id    A prefixid value.
-	* \param  dir_id	   A prefixid value.
-	* \return Return a list of table fields.
-	*/
-	QList<QStringList> getIconsInfo(const QString prefix_id, const QString dir_id) const;
+    QStringList getIconsList(const QString prefix, const QString dir, const QString filter);
+    QString getPixmapIcon(const QString prefix, const QString dir, const QString name);
+
+    QHash<QString, QString> getByName(const QString prefix_name, const QString dir_name, const QString icon_name) const;
+
+
+    //QList<QStringList> getIconsInfo(const QString prefix_id, const QString dir_id) const;
 
    /*! \brief This function gets all icons fields by prefixId key value from table.
 	*
 	* \param  prefix_id      A prefix id value.
 	* \return Return a list of table fields.
 	*/
-	QList<QStringList> getIconsInfo(const QString prefix_id) const;
+    //QList<QStringList> getIconsInfo(const QString prefix_id) const;
 
    /*! \brief This function gets all icons fields by prefix_name and dir_name (optional by icon name) keys value from table.
 	*
@@ -65,7 +64,7 @@ public:
 	* \param  icon_name      A icon name value (optional).
 	* \return Return a list of table fields.
 	*/
-	QList<QStringList> getIconsInfoByNames(const QString prefix_name, const QString dir_name, const QString icon_name = "") const;
+    //QList<QStringList> getIconsInfoByNames(const QString prefix_name, const QString dir_name, const QString icon_name = "") const;
 
    /*! \brief This function gets icon fields by prefix_name, dir_name and icon name keys value from table.
 	*
@@ -74,8 +73,8 @@ public:
 	* \param  icon_name      A icon name value.
 	* \return Return a list of table fields.
 	*/
-	QStringList getByName(const QString prefix_name, const QString dir_name, const QString icon_name = "") const;
-	QList<QStringList> getByPrefixAndDirName(const QString prefix_name, const QString dir_name, const QString filter = "") const;
+    //QStringList getByName(const QString prefix_name, const QString dir_name, const QString icon_name = "") const;
+    //QList<QStringList> getByPrefixAndDirName(const QString prefix_name, const QString dir_name, const QString filter = "") const;
 
    /*! \brief Copy icon.
 	*
@@ -105,7 +104,7 @@ public:
 	* \param  icon_name      A icon name value (optional).
 	* \return Return a list of table fields value.
 	*/
-	QList<QStringList> getIconsInfoByPrefixName(const QString prefix_name, const QString icon_name = "") const;
+    //QList<QStringList> getIconsInfoByPrefixName(const QString prefix_name, const QString icon_name = "") const;
 
    /*! \brief This function deletes all icons fields by prefix_name keys value from table.
 	*

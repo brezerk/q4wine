@@ -21,7 +21,6 @@
 
 Last_Run_Icon::Last_Run_Icon()
 {
-	this->_TABLE="last_run_icon";
 }
 
 QStringList Last_Run_Icon::getByExec(const QString exec) const{

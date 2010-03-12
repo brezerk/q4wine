@@ -22,6 +22,8 @@
 
 #include <config.h>
 
+#include <memory>
+
 #include <QList>
 #include <QString>
 #include <QStringList>
@@ -30,6 +32,7 @@
 #include <QDebug>
 #include <QDir>
 #include <QVariant>
+#include <QSettings>
 
 /*!
  * \class Prefix
@@ -39,75 +42,36 @@
  */
 class Prefix
 {
+
   public:
 	 /*! \brief This is calss constructor.
 	  */
 	  Prefix();
 
-	 /*! \brief This function gets requested table fields from table.
-	  *
-	  * \param  fields  List of table fields names.
-	  * \return Return QList of QStringList with selected value or -1 on error.
-	  */
-	  QList<QStringList> getFields(const QStringList fields) const;
-
-	 /*! \brief This function get requested table fields by keys value from table.
-	  *
-	  * \param  fields  A table fields names.
-	  * \param  keys    A table key fields names.
-	  * \param  vals    A table key fields values.
-	  * \return Return a list of table fields value or -1 on error.
-	  */
-	  QList<QStringList> getFieldsByKey(const QStringList fields, const QStringList keys,  const QStringList vals) const;
-
-	 /*! \brief This function gets all table fields by key value from table.
-	  *
-	  * \param  key    A table key field name.
-	  * \param  val    A table key field value.
-	  * \return Return a list of table fields value or -1 on error.
-	  */
-	  QList<QStringList> getFieldsByKey(const QString key, const QString val) const;
-
-	 /*! \brief This function get all fields from prefix table.
-	  *
-	  * \return Return a list of table fields value or -1 on error.
-	  */
-	  QList<QStringList> getFields(void) const;
-
-	 /*! \brief This function gets all table fields by prefixName key value from table.
-	  *
-	  * \param  prefixName Prefix name key value.
-	  * \return Return a list of table fields value or -1 on error.
-	  */
-	  QStringList getFieldsByPrefixName(const QString prefix_name) const;
-
-	 /*! \brief This function gets all table fields by prefix id key value from table.
+     /*! \brief This function gets all table fields by prefix id key value from table.
 	  *
 	  * \param  prefix_id Prefix id key value.
 	  * \return Return a list of table fields value or -1 on error.
 	  */
-	  QStringList getFieldsByPrefixId(const QString prefix_id) const;
+      QHash<QString,QString> getByName(const QString prefix_name) const;
+      QString getMountPoint(const QString prefix_name) const;
+      QString getMountDrive(const QString prefix_name) const;
+      QString getLibsPath(const QString prefix_name) const;
+      QStringList getPrefixList(void) const;
 
 	 /*! \brief This function gets prefix id by name.
 	  *
 	  * \param  prefix_name    A prefix name value.
 	  * \return Return prefix id.
 	  */
-	  QString getId(const QString prefix_name) const;
+     QString getId(const QString prefix_name) const;
 
 	 /*! \brief This function gets prefix path by name.
 	  *
 	  * \param  prefix_name    A prefix name value.
 	  * \return Return prefix path.
 	  */
-	  QString getPath(const QString prefix_name) const;
-
-	 /*! \brief This function gets prefix cdrom mount path by name.
-	  *
-	  * \param  prefix_name    A prefix name value.
-	  * \return Return prefix path.
-	  */
-	  QString getMountPath(const QString prefix_name) const;
+      QString getPath(const QString prefix_name) const;
 
 	 /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
 	  *
@@ -152,17 +116,13 @@ class Prefix
 	  */
 	  bool updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive, const QString old_prefix_name) const;
 
-  protected:
-	 //! This variable defines which table is used by class
-	  QString _TABLE;
-
+protected:
 	  /*! \brief This function executes requested query.
 	  *
 	  * \param  SQL Query
 	  * \return Return true on success
 	  */
 	  bool updateQuery(QSqlQuery *sqlQuery) const;
-
 
 };
 

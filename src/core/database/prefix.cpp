@@ -21,118 +21,7 @@
 
 Prefix::Prefix()
 {
-	this->_TABLE="prefix";
-}
 
-QList<QStringList> Prefix::getFields(const QStringList fields) const{
-	QList<QStringList> valuelist;
-	QSqlQuery query;
-	QString sqlquery="SELECT ";
-
-	for (int i = 0; i < fields.size(); ++i){
-		sqlquery.append(fields.at(i));
-		if (i < (fields.size() - 1))
-			sqlquery.append(", ");
-	}
-	sqlquery.append(" FROM ");
-	sqlquery.append(this->_TABLE);
-	sqlquery.append(" ORDER BY id");
-
-	if (query.exec(sqlquery)){
-		while (query.next()) {
-			QStringList values;
-			for (int i = 0; i < fields.size(); ++i){
-				values.append(query.value(i).toString());
-			}
-			valuelist.append(values);
-		}
-	} else {
-		qDebug()<<"SqlError: "<<query.lastError();
-	}
-
-	return valuelist;
-}
-
-QList<QStringList> Prefix::getFields(void) const{
-	QList<QStringList> valuelist;
-	//                      0   1     2     3             4            5            6          7            8
-	QSqlQuery query("SELECT id, name, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive FROM prefix ORDER BY id");
-	if (query.exec()){
-		while (query.next()) {
-			QStringList values;
-			int i=0;
-			while (query.value(i).isValid()){
-				values.append(query.value(i).toString());
-				i++;
-			}
-			valuelist.append(values);
-		}
-	} else {
-		qDebug()<<"SqlError: "<<query.lastError();
-	}
-
-	return valuelist;
-}
-
-QList<QStringList> Prefix::getFieldsByKey(const QStringList fields, const QStringList keys,  const QStringList vals) const{
-	QList<QStringList> valuelist;
-	QSqlQuery query;
-	QString sqlquery="SELECT ";
-
-	for (int i = 0; i < fields.size(); ++i){
-		sqlquery.append(fields.at(i));
-		if (i < (fields.size() - 1))
-			sqlquery.append(", ");
-	}
-
-	sqlquery.append(" FROM ");
-	sqlquery.append(this->_TABLE);
-	sqlquery.append(" WHERE ");
-
-	for (int i = 0; i < keys.size(); ++i){
-		sqlquery.append(keys.at(i));
-		sqlquery.append("=");
-		sqlquery.append(vals.at(i));
-		if (i < (keys.size() - 1))
-			sqlquery.append(", ");
-	}
-
-	sqlquery.append(" ORDER BY id");
-
-	if (query.exec(sqlquery)){
-		while (query.next()) {
-			QStringList values;
-			for (int i = 0; i < fields.size(); ++i){
-				values.append(query.value(i).toString());
-			}
-			valuelist.append(values);
-		}
-	} else {
-		qDebug()<<"SqlError: "<<query.lastError();
-	}
-	return valuelist;
-}
-
-QStringList Prefix::getFieldsByPrefixName(const QString prefix_name) const{
-	QStringList values;
-	QSqlQuery query;
-	//                    0   1     2             3            4            5          6            7
-	query.prepare("SELECT id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive FROM prefix WHERE name=:prefix_name");
-	query.bindValue(":prefix_name", prefix_name);
-
-	if (query.exec()){
-		query.first();
-		if (query.isValid()){
-			int i=0;
-			while (query.value(i).isValid()){
-				values.append(query.value(i).toString());
-				i++;
-			}
-		}
-	} else {
-		qDebug()<<"SqlError: "<<query.lastError();
-	}
-	return values;
 }
 
 QString Prefix::getId(const QString prefix_name) const{
@@ -154,6 +43,7 @@ QString Prefix::getId(const QString prefix_name) const{
 	} else {
 		qDebug()<<"SqlError: "<<query.lastError();
 	}
+    query.clear();
 	return value;
 }
 
@@ -177,49 +67,136 @@ QString Prefix::getPath(const QString prefix_name) const{
 	} else {
 		qDebug()<<"SqlError: "<<query.lastError();
 	}
+    query.clear();
 	return value;
 }
 
-QString Prefix::getMountPath(const QString prefix_name) const{
-	QString value;
-	QSqlQuery query;
+QHash<QString,QString> Prefix::getByName(const QString prefix_name) const{
+    QHash<QString,QString> values;
 
-	query.prepare("SELECT cdrom_mount FROM prefix WHERE name=:prefix_name");
-	query.bindValue(":prefix_name", prefix_name);
+    QSqlQuery query;
+    QSettings settings(APP_SHORT_NAME, "default");
+    settings.beginGroup("wine");
+
+    query.prepare("SELECT path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive, id, name FROM prefix WHERE name=:prefix_name");
+    query.bindValue(":prefix_name", prefix_name);
 
 	if (query.exec()){
 		query.first();
 		if (query.isValid()){
-			value = query.value(0).toString();
+            if (query.value(0).toString().isEmpty()){
+                values.insert("path", QString("%1/.wine").arg(QDir::homePath()));
+            } else {
+                values.insert("path", query.value(0).toString());
+            }
+            if (!query.value(1).toString().isEmpty()){
+                values.insert("libs", query.value(1).toString());
+            } else {
+                values.insert("libs", settings.value("WineLibs", "").toString());
+            }
+            if (!query.value(2).toString().isEmpty()){
+                values.insert("loader", query.value(2).toString());
+            } else {
+                values.insert("loader", settings.value("LoaderBin", "").toString());
+            }
+            if (!query.value(3).toString().isEmpty()){
+                values.insert("server", query.value(3).toString());
+            } else {
+                values.insert("server", settings.value("ServerBin", "").toString());
+            }
+            if (!query.value(4).toString().isEmpty()){
+                values.insert("bin", query.value(4).toString());
+            } else {
+                values.insert("bin", settings.value("WineBin", "").toString());
+            }
+            values.insert("mount", query.value(5).toString());
+            values.insert("drive", query.value(6).toString());
+            values.insert("id", query.value(7).toString());
+            values.insert("name", query.value(8).toString());
 		}
 	} else {
 		qDebug()<<"SqlError: "<<query.lastError();
 	}
-	return value;
-}
+    settings.endGroup();
+    query.clear();
 
-QStringList Prefix::getFieldsByPrefixId(const QString prefix_id) const{
-	QStringList values;
-	QSqlQuery query;
-	//                    0   1     2             3            4            5          6            7
-	query.prepare("SELECT id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive FROM prefix WHERE id=:prefix_id");
-	query.bindValue(":prefix_id", prefix_id);
-
-	if (query.exec()){
-		query.first();
-		if (query.isValid()){
-			int i=0;
-			while (query.value(i).isValid()){
-				values.append(query.value(i).toString());
-				i++;
-			}
-		}
-	} else {
-		qDebug()<<"SqlError: "<<query.lastError();
-	}
 	return values;
 }
 
+QString Prefix::getMountPoint(const QString prefix_name) const{
+    QString value;
+    QSqlQuery query;
+
+    query.prepare("SELECT cdrom_mount FROM prefix WHERE name=:prefix_name");
+    query.bindValue(":prefix_name", prefix_name);
+
+    if (query.exec()){
+        query.first();
+        if (query.isValid()){
+            value = query.value(0).toString();
+        }
+    } else {
+        qDebug()<<"SqlError: "<<query.lastError();
+    }
+    query.clear();
+    return value;
+}
+
+QString Prefix::getMountDrive(const QString prefix_name) const{
+    QString value;
+    QSqlQuery query;
+
+    query.prepare("SELECT cdrom_drive FROM prefix WHERE name=:prefix_name");
+    query.bindValue(":prefix_name", prefix_name);
+
+    if (query.exec()){
+        query.first();
+        if (query.isValid()){
+            value = query.value(0).toString();
+        }
+    } else {
+        qDebug()<<"SqlError: "<<query.lastError();
+    }
+    query.clear();
+    return value;
+}
+
+QString Prefix::getLibsPath(const QString prefix_name) const{
+    QString value;
+    QSqlQuery query;
+
+    query.prepare("SELECT wine_dllpath FROM prefix WHERE name=:prefix_name");
+    query.bindValue(":prefix_name", prefix_name);
+
+    if (query.exec()){
+        query.first();
+        if (query.isValid()){
+            value = query.value(0).toString();
+        }
+    } else {
+        qDebug()<<"SqlError: "<<query.lastError();
+    }
+    query.clear();
+    return value;
+}
+
+QStringList Prefix::getPrefixList(void) const{
+    QStringList value;
+    QSqlQuery query;
+
+    query.prepare("SELECT name FROM prefix");
+
+    if (query.exec()){
+        while (query.next()) {
+            if (query.value(0).isValid())
+                value.append(query.value(0).toString());
+        }
+    } else {
+        qDebug()<<"SqlError: "<<query.lastError();
+    }
+    query.clear();
+    return value;
+}
 
 bool Prefix::updateQuery(QSqlQuery *sqlQuery) const{
 	if (!sqlQuery->exec()){
@@ -379,4 +356,3 @@ bool Prefix::isExistsByName(const QString prefix_name) const{
 
 	return false;
 }
-

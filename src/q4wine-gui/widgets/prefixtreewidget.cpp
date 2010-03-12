@@ -35,7 +35,9 @@ PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) :
 
 	  this->setHeaderLabel("Current prefixes list");
 
-	  connect(this, SIGNAL(itemClicked (QTreeWidgetItem *, int)), this, SLOT(itemClicked (QTreeWidgetItem *, int)));
+      //QTreeWidget::itemActivated ( QTreeWidgetItem * item, int column )
+
+      connect(this, SIGNAL(itemActivated (QTreeWidgetItem *, int)), this, SLOT(itemClicked (QTreeWidgetItem *, int)));
 
 	  this->dirName="";
 	  this->prefixName="";
@@ -78,9 +80,8 @@ void PrefixTreeWidget::itemClicked (QTreeWidgetItem *item, int){
 			this->dirName="";
 	  }
 
-	  QStringList result = db_prefix.getFieldsByPrefixName(this->prefixName);
-	  this->prefixMediaDrive = result.at(7);
-	  this->prefixMontPoint = result.at(6);
+      this->prefixMediaDrive = db_prefix.getMountDrive(this->prefixName);
+      this->prefixMontPoint = db_prefix.getMountPoint(this->prefixName);
 
 	  emit(showFolderContents(this->prefixName, this->dirName));
 	  emit(prefixIndexChanged(this->prefixName));
@@ -171,20 +172,20 @@ void PrefixTreeWidget::dirDelete_Click(void){
 void PrefixTreeWidget::getPrefixes(){
 	  this->clear();
 
-	  QList<QStringList> result = db_prefix.getFields();
-	  for (int i = 0; i < result.size(); ++i) {
+      QStringList list = db_prefix.getPrefixList();
+      for (int i = 0; i < list.size(); ++i) {
 			// Inserting root items into programs tree view
 			std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(this));
-			prefixItem->setText(0, QString("%1").arg(result.at(i).at(1)));
+            prefixItem->setText(0, QString("%1").arg(list.at(i)));
 			prefixItem->setIcon(0, CoreLib->loadIcon("data/wine.png"));
 			prefixItem->setExpanded (TRUE);
 			this->addTopLevelItem(prefixItem.get());
 
 			// Inserting subfolders items into programs tree view
-			QList<QStringList> subresult = db_dir.getFieldsByPrefixId(result.at(i).at(0));
+            QStringList subresult = db_dir.getDirList(list.at(i));
 			for (int j = 0; j < subresult.size(); ++j) {
 				  std::auto_ptr<QTreeWidgetItem> subPrefixItem (new QTreeWidgetItem(prefixItem.get(), 0));
-				  subPrefixItem->setText(0, QString("%1").arg(subresult.at(j).at(1)));
+                  subPrefixItem->setText(0, QString("%1").arg(subresult.at(j)));
 				  subPrefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
 				  subPrefixItem.release();
 			}
@@ -353,7 +354,7 @@ void PrefixTreeWidget::menuRun_triggered(QAction* action){
 			run.prepare(this->prefixName);
 
 			if (run.exec()==QDialog::Accepted)
-				  CoreLib->runWineBinary(run.execObj);
+                  CoreLib->runWineBinary(run.execObj, this->prefixName);
 			return;
 	  }
 
@@ -366,7 +367,6 @@ void PrefixTreeWidget::menuRun_triggered(QAction* action){
 
 	  if (CoreLib->getSetting("advanced", "openRunDialog", false, 0).toInt()==0){
 			ExecObject execObj;
-			execObj.prefixid=db_prefix.getId(this->prefixName);
 			execObj.execcmd=action->statusTip();
 			execObj.wrkdir=result.at(0);
 			execObj.override=result.at(1);
@@ -376,12 +376,12 @@ void PrefixTreeWidget::menuRun_triggered(QAction* action){
 			execObj.cmdargs=result.at(5);
 			execObj.desktop=result.at(6);
 			execObj.nice=result.at(7);
-			CoreLib->runWineBinary(execObj);
+            CoreLib->runWineBinary(execObj, this->prefixName);
 	  } else {
 			Run run;
 			run.prepare(this->prefixName, result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
 			if (run.exec()==QDialog::Accepted)
-				  CoreLib->runWineBinary(run.execObj);
+                  CoreLib->runWineBinary(run.execObj, this->prefixName);
 	  }
 	  return;
 }
@@ -456,13 +456,23 @@ void PrefixTreeWidget::xdgOpenMountDir_Click(void){
 
 void PrefixTreeWidget::winefileOpenPrefixDir_Click(void){
 	  QString result = db_prefix.getPath(this->prefixName);
-	  CoreLib->runWineBinary("winefile", result + "/", this->prefixName);
+      result.append("/");
+
+      ExecObject execObj;
+      execObj.cmdargs = result;
+      execObj.execcmd = "winefile";
+
+      CoreLib->runWineBinary(execObj, this->prefixName);
 	  return;
 }
 
 void PrefixTreeWidget::winefileOpenMountDir_Click(void){
-	  CoreLib->runWineBinary("winefile", this->prefixMontPoint + "/", this->prefixName);
-	  return;
+    ExecObject execObj;
+    execObj.cmdargs = this->prefixMontPoint + "/";
+    execObj.execcmd = "winefile";
+
+    CoreLib->runWineBinary(execObj, this->prefixName);
+    return;
 }
 
 void PrefixTreeWidget::setDefaultFocus(QString prefixName, QString dirName){

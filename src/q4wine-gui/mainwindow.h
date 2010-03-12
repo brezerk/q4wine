@@ -153,11 +153,8 @@ private:
 		// Tray icon
 		std::auto_ptr<QSystemTrayIcon> trayIcon;
 
-
-
         bool createSocket();
-
-
+        void showSocketError(QString message);
 
 		void createTrayIcon();
 		void setMeVisible(bool visible);
@@ -176,6 +173,8 @@ private:
 		void stopProcTimer(void);
 		void startProcTimer(void);
 
+        void reloadLogData(void);
+
 	protected:
 		// Events
 		void closeEvent(QCloseEvent *event);
@@ -183,5 +182,3 @@ private:
 };
 
 #endif
-
-

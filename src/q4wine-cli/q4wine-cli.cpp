@@ -156,6 +156,30 @@ int main(int argc, char *argv[])
 		}
 	}
 
+
+
+
+    if (_ACTION==2){
+        QStringList list = db_prefix.getPrefixList();
+        Qcout<<QObject::tr("Prefix list")<<endl;
+        Qcout<<" "<<qSetFieldWidth(15)<<left<<QObject::tr("Name")<<QObject::tr("Path")<<qSetFieldWidth(0)<<endl;
+        for (int i = 0; i < list.size(); ++i) {
+            QString path = db_prefix.getPath(list.at(i));
+            if (!path.isEmpty()){
+                Qcout<<" "<<qSetFieldWidth(15)<<left<<list.at(i)<<path<<qSetFieldWidth(0)<<endl;
+            } else {
+                Qcout<<" "<<qSetFieldWidth(15)<<left<<list.at(i)<<QDir::homePath()<<"/.wine/"<<qSetFieldWidth(0)<<endl;
+            }
+        }
+        return 0;
+    }
+
+
+
+
+
+
+
 	QList<QStringList> result;
 	QStringList sresult;
 
@@ -206,29 +230,18 @@ int main(int argc, char *argv[])
 			}
 		}
 		break;
-	case 2:
-		result = db_prefix.getFields();
-		Qcout<<QObject::tr("Prefix list")<<endl;
-		Qcout<<" "<<qSetFieldWidth(15)<<left<<QObject::tr("Name")<<QObject::tr("Path")<<qSetFieldWidth(0)<<endl;
-		for (int i = 0; i < result.size(); ++i) {
-			if (!result.at(i).at(2).isEmpty()){
-				Qcout<<" "<<qSetFieldWidth(15)<<left<<result.at(i).at(1)<<result.at(i).at(2)<<qSetFieldWidth(0)<<endl;
-			} else {
-				Qcout<<" "<<qSetFieldWidth(15)<<left<<result.at(i).at(1)<<QDir::homePath()<<"/.wine/"<<qSetFieldWidth(0)<<endl;
-			}
-		}
-		break;
 	case 3:
 		if (_PREFIX.isEmpty()){
 			Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 			return -1;
-		}
-		result = db_dir.getFieldsByPrefixName(_PREFIX);
-		Qcout<<QObject::tr("Prefix \"%1\" has following dir list").arg(_PREFIX)<<endl;
-		Qcout<<" "<<QObject::tr("Name")<<endl;
-		for (int i = 0; i < result.size(); ++i) {
-			Qcout<<" "<<result.at(i).at(1)<<endl;
-		}
+        } else {
+            QStringList list = db_dir.getDirList(_PREFIX);
+            Qcout<<QObject::tr("Prefix \"%1\" has following dir list").arg(_PREFIX)<<endl;
+            Qcout<<" "<<QObject::tr("Name")<<endl;
+            for (int i = 0; i < list.size(); ++i) {
+                Qcout<<" "<<list.at(i)<<endl;
+            }
+        }
 		break;
 	case 4:
 		if (_PREFIX.isEmpty()){
@@ -239,19 +252,19 @@ int main(int argc, char *argv[])
 		if (! db_dir.isExistsByName(_PREFIX, _DIR)){
 			Qcout<<QObject::tr("Dir named \"%1\" not exists. Run \"%2-cli -dl\" for dir list.").arg(_DIR).arg(APP_SHORT_NAME)<<endl;
 			return -1;
-		}
+        } else {
+            QStringList list = db_icon.getIconsList(_PREFIX, _DIR, "");
+            if (_DIR.isEmpty()){
+                Qcout<<QObject::tr("Prefix \"%1\" has following icon list").arg(_PREFIX)<<endl;
+            } else {
+                Qcout<<QObject::tr("Prefix \"%1\" has following icon list at \"%2\" directory").arg(_PREFIX).arg(_DIR)<<endl;
+            }
+            Qcout<<" "<<qSetFieldWidth(15)<<left<<QObject::tr("Name")<<QObject::tr("Description")<<qSetFieldWidth(0)<<endl;
 
-		result = db_icon.getByPrefixAndDirName(_PREFIX, _DIR);
-		if (_DIR.isEmpty()){
-			Qcout<<QObject::tr("Prefix \"%1\" has following icon list").arg(_PREFIX)<<endl;
-		} else {
-			Qcout<<QObject::tr("Prefix \"%1\" has following icon list at \"%2\" directory").arg(_PREFIX).arg(_DIR)<<endl;
-		}
-		Qcout<<" "<<qSetFieldWidth(15)<<left<<QObject::tr("Name")<<QObject::tr("Description")<<qSetFieldWidth(0)<<endl;
-
-		for (int i = 0; i < result.size(); ++i) {
-			Qcout<<" "<<qSetFieldWidth(15)<<left<<result.at(i).at(1)<<result.at(i).at(2)<<qSetFieldWidth(0)<<endl;
-		}
+            for (int i = 0; i < result.size(); ++i) {
+                Qcout<<" "<<qSetFieldWidth(15)<<left<<list.at(i)<<db_icon.getByName(_PREFIX, _DIR, list.at(i)).value("desc")<<qSetFieldWidth(0)<<endl;
+            }
+        }
 		break;
 	case 5:
 		result = db_image.getFields();
@@ -265,95 +278,99 @@ int main(int argc, char *argv[])
 		if (_PREFIX.isEmpty()){
 			Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 			return -1;
-		}
-		result = db_dir.getFieldsByPrefixName(_PREFIX);
-		Qcout<<QObject::tr("Killing prefix \"%1\" wineserver.").arg(_PREFIX)<<endl;
-		if (CoreLib->killWineServer(db_prefix.getPath(_PREFIX))){
-			Qcout<<"Done"<<endl;
-		} else {
-			Qcout<<"Error"<<endl;
-			return -1;
-		}
+        } else {
+            Qcout<<QObject::tr("Killing prefix \"%1\" wineserver.").arg(_PREFIX)<<endl;
+            if (CoreLib->killWineServer(db_prefix.getPath(_PREFIX))){
+                Qcout<<"Done"<<endl;
+            } else {
+                Qcout<<"Error"<<endl;
+                return -1;
+            }
+        }
 		break;
 	case 7:
 		if (_PREFIX.isEmpty()){
 			Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 			return -1;
-		}
-		sresult = db_prefix.getFieldsByPrefixName(_PREFIX);
+        } else {
+            QString mount = db_prefix.getMountPoint(_PREFIX);
 
-		if (sresult.at(6).isEmpty()){
-			Qcout<<QObject::tr("No mount point set in prefix configuration.")<<endl;
-			return -1;
-		}
+            if (mount.isEmpty()){
+                Qcout<<QObject::tr("No mount point set in prefix configuration.")<<endl;
+                return -1;
+            }
 
-		if (_IMAGE.isEmpty()){
-			if (sresult.at(7).isEmpty()){
-				Qcout<<QObject::tr("No cdrom drive set in prefix configuration.")<<endl;
-				return -1;
-			}
-			Qcout<<QObject::tr("Mounting drive \"%1\" into mount point \"%2\".").arg(sresult.at(7)).arg(sresult.at(6))<<endl;
-			if (CoreLib->mountImage(sresult.at(7), _PREFIX)){
-				Qcout<<"Done"<<endl;
-			} else {
-				Qcout<<"Error"<<endl;
-				return -1;
-			}
-		} else {
-			if (!QFile(_IMAGE).exists()){
-				if (!db_image.isExistsByName(_IMAGE)){
-					Qcout<<QObject::tr("No CD iamge \"%1\" exists. Run \"%2-cli -cl\" for CD image list.").arg(_IMAGE).arg(APP_SHORT_NAME)<<endl;
-					return -1;
-				}
-			}
+            if (_IMAGE.isEmpty()){
+                QString drive = db_prefix.getMountDrive(_PREFIX);
+                if (drive.isEmpty()){
+                    Qcout<<QObject::tr("No cdrom drive set in prefix configuration.")<<endl;
+                    return -1;
+                }
+                Qcout<<QObject::tr("Mounting drive \"%1\" into mount point \"%2\".").arg(drive).arg(mount)<<endl;
+                if (CoreLib->mountImage(drive, _PREFIX)){
+                    Qcout<<"Done"<<endl;
+                } else {
+                    Qcout<<"Error"<<endl;
+                    return -1;
+                }
+            } else {
+                if (!QFile(_IMAGE).exists()){
+                    if (!db_image.isExistsByName(_IMAGE)){
+                        Qcout<<QObject::tr("No CD iamge \"%1\" exists. Run \"%2-cli -cl\" for CD image list.").arg(_IMAGE).arg(APP_SHORT_NAME)<<endl;
+                        return -1;
+                    }
+                }
 
-			if (CoreLib->mountImage(_IMAGE, _PREFIX)){
-				Qcout<<"Done"<<endl;
-			} else {
-				Qcout<<"Error"<<endl;
-				return -1;
-			}
-		}
+                if (CoreLib->mountImage(_IMAGE, _PREFIX)){
+                    Qcout<<"Done"<<endl;
+                } else {
+                    Qcout<<"Error"<<endl;
+                    return -1;
+                }
+            }
+        }
 		break;
 	case 8:
 		if (_PREFIX.isEmpty()){
 			Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
 			return -1;
-		}
-		sresult = db_prefix.getFieldsByPrefixName(_PREFIX);
+        } else {
+            QString mount = db_prefix.getMountPoint(_PREFIX);
 
-		if (sresult.at(6).isEmpty()){
-			Qcout<<QObject::tr("No mount point set in prefix configuration.")<<endl;
-			return -1;
-		}
+            if (mount.isEmpty()){
+                Qcout<<QObject::tr("No mount point set in prefix configuration.")<<endl;
+                return -1;
+            }
 
-		Qcout<<QObject::tr("Umounting mount point \"%1\".").arg(sresult.at(6))<<endl;
-		if (CoreLib->umountImage(_PREFIX)){
-			Qcout<<"Done"<<endl;
-		} else {
-			Qcout<<"Error"<<endl;
-			return -1;
-		}
+            Qcout<<QObject::tr("Umounting mount point \"%1\".").arg(mount)<<endl;
+            if (CoreLib->umountImage(_PREFIX)){
+                Qcout<<"Done"<<endl;
+            } else {
+                Qcout<<"Error"<<endl;
+                return -1;
+            }
+        }
 		break;
 	case 10:
 		if (_PREFIX.isEmpty()){
-			result = db_prefix.getFields();
+            QStringList list = db_prefix.getPrefixList();
 			Qcout<<QObject::tr("Mounted media list for all prefixes")<<endl;
 			Qcout<<" "<<qSetFieldWidth(15)<<left<<QObject::tr("Prefix")<<qSetFieldWidth(25)<<left<<QObject::tr("Mount point")<<QObject::tr("Media")<<qSetFieldWidth(0)<<endl;
-			for (int i = 0; i < result.size(); ++i) {
-				Qcout<<" "<<qSetFieldWidth(15)<<left<<result.at(i).at(1)<<qSetFieldWidth(25)<<left<<result.at(i).at(7)<<CoreLib->getMountedImages(result.at(i).at(7))<<qSetFieldWidth(0)<<endl;
+            for (int i = 0; i < list.size(); ++i) {
+                QString mount = db_prefix.getMountPoint(list.at(i));
+                Qcout<<" "<<qSetFieldWidth(15)<<left<<list.at(i)<<qSetFieldWidth(25)<<left<<mount<<CoreLib->getMountedImages(mount)<<qSetFieldWidth(0)<<endl;
 			}
 		} else {
-			sresult = db_prefix.getFieldsByPrefixName(_PREFIX);
+            QString mount = db_prefix.getMountPoint(_PREFIX);
 
-			if (sresult.at(6).isEmpty()){
+            if (mount.isEmpty()){
 				Qcout<<QObject::tr("No mount point set in prefix configuration.")<<endl;
 				return -1;
 			}
 
 			Qcout<<QObject::tr("Mounted media list for prefix \"%1\"").arg(_PREFIX)<<endl;
 			Qcout<<" "<<qSetFieldWidth(25)<<left<<QObject::tr("Mount point")<<QObject::tr("Media")<<qSetFieldWidth(0)<<endl;
-			Qcout<<" "<<qSetFieldWidth(25)<<left<<sresult.at(6)<<CoreLib->getMountedImages(sresult.at(6))<<qSetFieldWidth(0)<<endl;
+            Qcout<<" "<<qSetFieldWidth(25)<<left<<mount<<CoreLib->getMountedImages(mount)<<qSetFieldWidth(0)<<endl;
 		}
 		break;
 	case 11:
@@ -387,9 +404,8 @@ int main(int argc, char *argv[])
 		execObj.cmdargs = path;
 		execObj.cmdargs = "";
 		execObj.desktop = "";
-		execObj.prefixid = db_prefix.getId(_PREFIX);
 		execObj.execcmd=_IMAGE;
-		if (CoreLib->runWineBinary(execObj)){
+        if (CoreLib->runWineBinary(execObj, _PREFIX)){
 			Qcout<<"Done"<<endl;
 		} else {
 			Qcout<<"Error"<<endl;

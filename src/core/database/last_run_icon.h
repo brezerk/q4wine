@@ -21,7 +21,6 @@
 #define LAST_RUN_ICON_H
 
 #include "config.h"
-#include "prefix.h"
 
 #include <QList>
 #include <QString>
@@ -37,7 +36,7 @@
  * \brief This class provide database functions for Icon table.
  *
  */
-class Last_Run_Icon : public Prefix
+class Last_Run_Icon
 {
 public:
 	//! Class constructor

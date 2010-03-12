@@ -65,35 +65,38 @@ void IconListWidget::showFolderContents(QString prefixName, QString dirName){
 }
 
 void IconListWidget::showContents(QString filterString){
+
 	  this->clear();
 	  emit(iconItemClick("","","","",""));
 
-	  QList<QStringList> iconsList=db_icon.getByPrefixAndDirName(this->prefixName, this->dirName, filterString);
+      QStringList iconsList=db_icon.getIconsList(this->prefixName, this->dirName, filterString);
 
 	  for (int i = 0; i < iconsList.size(); ++i) {
 			std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(this, 0));
-			iconItem->setText(iconsList.at(i).at(1));
+            iconItem->setText(iconsList.at(i));
+
 
 			//Seting icon. If no icon or icon file not exists -- setting default
-			if (iconsList.at(i).at(3).isEmpty()){
+            QString icon_path = db_icon.getPixmapIcon(this->prefixName, this->dirName, iconsList.at(i));
+            if (icon_path.isEmpty()){
 				  iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
 			} else {
-				  if (QFile::exists (iconsList.at(i).at(3))){
-						iconItem->setIcon(QIcon(iconsList.at(i).at(3)));
+                  if (QFile::exists (icon_path)){
+                        iconItem->setIcon(QIcon(icon_path));
 				  } else {
-						if (iconsList.at(i).at(3)=="wineconsole"){
+                        if (iconsList.at(i)=="wineconsole"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/wineconsole.png"));
-						} else if (iconsList.at(i).at(3)=="regedit"){
+                        } else if (iconsList.at(i)=="regedit"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/regedit.png"));
-						} else if (iconsList.at(i).at(3)=="wordpad"){
+                        } else if (iconsList.at(i)=="wordpad"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/notepad.png"));
-						} else if (iconsList.at(i).at(3)=="winecfg"){
+                        } else if (iconsList.at(i)=="winecfg"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/winecfg.png"));
-						} else if (iconsList.at(i).at(3)=="uninstaller"){
+                        } else if (iconsList.at(i)=="uninstaller"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/uninstaller.png"));
-						} else if (iconsList.at(i).at(3)=="eject"){
+                        } else if (iconsList.at(i)=="eject"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/eject.png"));
-						} else if (iconsList.at(i).at(3)=="explorer"){
+                        } else if (iconsList.at(i)=="explorer"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/explorer.png"));
 						} else {
 							  iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
@@ -103,9 +106,8 @@ void IconListWidget::showContents(QString filterString){
 			iconItem.release();
 	  }
 
-	  QStringList result = db_prefix.getFieldsByPrefixName(this->prefixName);
-	  this->prefixMediaDrive = result.at(7);
-	  this->prefixMontPoint = result.at(6);
+      this->prefixMediaDrive = db_prefix.getMountDrive(this->prefixName);
+      this->prefixMontPoint = db_prefix.getMountPoint(this->prefixName);
 
 	  return;
 }
@@ -189,8 +191,8 @@ void IconListWidget::itemClicked (QListWidgetItem *item){
 	  if (!item)
 			return;
 
-	  QStringList result=db_icon.getByName(this->prefixName, this->dirName, item->text());
-	  emit(iconItemClick(result.at(10).split('/').last().split('\\').last(), result.at(9), result.at(2), result.at(7), result.at(11)));
+      QHash<QString, QString> result=db_icon.getByName(this->prefixName, this->dirName, item->text());
+      emit(iconItemClick(result.value("exec").split('/').last().split('\\').last(), result.value("cmdargs"), result.value("desc"), result.value("useconsole"), result.value("desktop")));
 }
 
 void IconListWidget::itemDoubleClicked (QListWidgetItem *item){
@@ -199,9 +201,9 @@ void IconListWidget::itemDoubleClicked (QListWidgetItem *item){
 
 	  emit(changeStatusText(tr("Prepare to run wine binary...")));
 	  if (CoreLib->runIcon(this->prefixName, this->dirName, item->text())){
-			emit(changeStatusText(tr("%1 started.").arg(item->text())));
+            emit(changeStatusText(tr("Try to run \"%1\"...").arg(item->text())));
 	  } else {
-			emit(changeStatusText(tr("%1 fail to start.").arg(item->text())));
+            emit(changeStatusText(tr("\"%1\" fail to start.").arg(item->text())));
 	  }
 	  return;
 }
@@ -788,7 +790,7 @@ void IconListWidget::menuRun_triggered(QAction* action){
 			run.prepare(this->prefixName);
 
 			if (run.exec()==QDialog::Accepted)
-				  CoreLib->runWineBinary(run.execObj);
+                  CoreLib->runWineBinary(run.execObj, this->prefixName);
 			return;
 	  }
 
@@ -801,7 +803,6 @@ void IconListWidget::menuRun_triggered(QAction* action){
 
 	  if (CoreLib->getSetting("advanced", "openRunDialog", false, 0).toInt()==0){
 			ExecObject execObj;
-			execObj.prefixid=db_prefix.getId(this->prefixName);
 			execObj.execcmd=action->statusTip();
 			execObj.wrkdir=result.at(0);
 			execObj.override=result.at(1);
@@ -811,12 +812,12 @@ void IconListWidget::menuRun_triggered(QAction* action){
 			execObj.cmdargs=result.at(5);
 			execObj.desktop=result.at(6);
 			execObj.nice=result.at(7);
-			CoreLib->runWineBinary(execObj);
+            CoreLib->runWineBinary(execObj, this->prefixName);
 	  } else {
 			Run run;
 			run.prepare(this->prefixName, result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
 			if (run.exec()==QDialog::Accepted)
-				  CoreLib->runWineBinary(run.execObj);
+                  CoreLib->runWineBinary(run.execObj, this->prefixName);
 	  }
 	  return;
 }
@@ -898,7 +899,7 @@ void IconListWidget::xdgOpenIconDir_Click(void){
 			return;
 	  }
 
-	  QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).at(4);
+      QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).value("wrkdir");
 
 	  if (result.isEmpty()){
           emit(changeStatusText(tr("Error: \"%1\" is an embedded wine binary.").arg(item->text())));
@@ -912,13 +913,23 @@ void IconListWidget::xdgOpenIconDir_Click(void){
 
 void IconListWidget::winefileOpenPrefixDir_Click(void){
 	  QString result = db_prefix.getPath(this->prefixName);
-	  CoreLib->runWineBinary("winefile", result + "/", this->prefixName);
-	  return;
+      result.append("/");
+
+      ExecObject execObj;
+      execObj.cmdargs = result;
+      execObj.execcmd = "winefile";
+
+      CoreLib->runWineBinary(execObj, this->prefixName);
+       return;
 }
 
 void IconListWidget::winefileOpenMountDir_Click(void){
-	  CoreLib->runWineBinary("winefile", this->prefixMontPoint + "/", this->prefixName);
-	  return;
+    ExecObject execObj;
+    execObj.cmdargs = this->prefixMontPoint + "/";
+    execObj.execcmd = "winefile";
+
+    CoreLib->runWineBinary(execObj, this->prefixName);
+    return;
 }
 
 void IconListWidget::winefileOpenIconDir_Click(void){
@@ -930,12 +941,16 @@ void IconListWidget::winefileOpenIconDir_Click(void){
 			return;
 	  }
 
-	  QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).at(4);
+      QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).value("wrkdir");
 
 	  if (result.isEmpty()){
-			emit(changeStatusText(tr("Error: \"%1\" is an embedded wine binary.").arg(item->text())));
+          emit(changeStatusText(tr("Error: \"%1\" is an embedded wine binary.").arg(item->text())));
 	  } else {
-			CoreLib->runWineBinary("winefile", result + "/", this->prefixName);
+          ExecObject execObj;
+          execObj.cmdargs = result + "/";
+          execObj.execcmd = "winefile";
+
+          CoreLib->runWineBinary(execObj, this->prefixName);
 	  }
 
 	  item.release();
