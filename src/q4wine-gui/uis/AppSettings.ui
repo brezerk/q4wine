@@ -417,7 +417,7 @@
              <item>
               <widget class="QCheckBox" name="chShowTrarey">
                <property name="text">
-                <string>Use tray icon</string>
+                <string>Use tray icon.</string>
                </property>
                <property name="checked">
                 <bool>true</bool>
@@ -1550,6 +1550,49 @@
              <size>
               <width>20</width>
               <height>211</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_8">
+         <attribute name="title">
+          <string>Logging</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <item>
+           <widget class="QGroupBox" name="groupBox_12">
+            <property name="title">
+             <string>Logging subsystem:</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_10">
+             <item>
+              <widget class="QCheckBox" name="chEnableLogging">
+               <property name="text">
+                <string>Enable loggin sybsystem.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="chClearLogs">
+               <property name="text">
+                <string>Clear logs at startup.</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>210</height>
              </size>
             </property>
            </spacer>

@@ -71,12 +71,30 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	txtWineLibs->setText(settings.value("WineLibs").toString());
 	settings.endGroup();
 
+    settings.beginGroup("logging");
+    if (settings.value("enable", 1).toInt()==1){
+        chEnableLogging->setCheckState(Qt::Checked);
+    } else {
+        chEnableLogging->setCheckState(Qt::Unchecked);
+    }
+
+    connect (chEnableLogging, SIGNAL(stateChanged (int)), this, SLOT(chEnableLogging_stateChanged (int)));
+
+    if (settings.value("autoClear", 1).toInt()==1){
+        chClearLogs->setCheckState(Qt::Checked);
+    } else {
+        chClearLogs->setCheckState(Qt::Unchecked);
+    }
+    settings.endGroup();
+
 	settings.beginGroup("app");
 	if (settings.value("showTrareyIcon").toInt()==1){
 		chShowTrarey->setCheckState(Qt::Checked);
 	} else {
 		chShowTrarey->setCheckState(Qt::Unchecked);
 	}
+
+
 
 	listThemesView->clear();
 
@@ -424,12 +442,29 @@ void AppSettings::cmdOk_Click(){
 	settings.setValue("WineLibs", txtWineLibs->text());
 	settings.endGroup();
 
+    settings.beginGroup("logging");
+    if (chEnableLogging->checkState()==Qt::Checked) {
+        settings.setValue("enable", 1);
+    } else {
+        settings.setValue("enable", 0);
+    }
+
+    if ((chClearLogs->checkState()==Qt::Checked) and (chEnableLogging->checkState()==Qt::Checked)) {
+        settings.setValue("autoClear", 1);
+    } else {
+        settings.setValue("autoClear", 0);
+    }
+
 	settings.beginGroup("app");
 	if (chShowTrarey->checkState()==Qt::Checked) {
 		settings.setValue("showTrareyIcon", 1);
 	} else {
 		settings.setValue("showTrareyIcon", 0);
 	}
+
+
+
+
 
 	if (listThemesView->currentItem()){
 		settings.setValue("theme", listThemesView->currentItem()->toolTip());
@@ -686,5 +721,13 @@ void AppSettings::radioEmbedded_toggled(bool state){
 	radioDefault->setChecked(true);
 #endif
 	return;
+}
+
+void AppSettings::chEnableLogging_stateChanged ( int state ){
+    if (state==0){
+        chClearLogs->setEnabled(false);
+    } else {
+        chClearLogs->setEnabled(true);
+    }
 }
 

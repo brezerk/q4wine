@@ -118,6 +118,8 @@ void WineObject::runSys(){
     if (this->programBinary.isEmpty())
         return;
 
+    bool logEnabled = false;
+
     QString env = this->createEnvString();
     QString stdout, app_stdout;
 
@@ -186,6 +188,11 @@ void WineObject::runSys(){
 
     status = pclose(fp);
 
+    if (CoreLib->getSetting("logging", "enable", false, 1).toInt()==1)
+        logEnabled = true;
+
+
+
     stdout.append(tr("Exit code:"));
     stdout.append("\n");
     stdout.append(QString("%1").arg(status));
@@ -195,14 +202,17 @@ void WineObject::runSys(){
     stdout.append(app_stdout);
 
     if (!this->useConsole){
-        uint date = QDateTime::currentDateTime ().toTime_t();
-        db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
-
+        if (logEnabled){
+            uint date = QDateTime::currentDateTime ().toTime_t();
+            db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
+        }
         this->sendMessage(QString("finish/%1/%2/%3").arg(this->programBinaryName).arg(this->prefixName).arg(status));
     } else {
         if (status!=0){
-            uint date = QDateTime::currentDateTime ().toTime_t();
-            db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
+            if (logEnabled){
+                uint date = QDateTime::currentDateTime ().toTime_t();
+                db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
+            }
             this->sendMessage(QString("console_error/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
         }
     }

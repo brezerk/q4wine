@@ -81,9 +81,13 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     std::auto_ptr<LoggingWidget> logWidget (new LoggingWidget(tabLogging));
     connect (this, SIGNAL(reloadLogData()), logWidget.get(), SLOT(getLogRecords()));
 
-    logWidget->getLogRecords();
+     if (CoreLib->getSetting("logging", "enable", false, 1).toInt()==1){
+         logWidget->getLogRecords();
+     } else {
+         tabLogging->setEnabled(false);
+     }
 
-    logLayout->addWidget(logWidget.release());
+     logLayout->addWidget(logWidget.release());
 
 	std::auto_ptr<IconListWidget> lstIcons (new IconListWidget(tabPrograms));
 	connect(lstIcons.get(), SIGNAL(iconItemClick(QString, QString, QString, QString, QString)), this, SLOT(updateIconDesc(QString, QString, QString, QString, QString)));
@@ -502,16 +506,7 @@ void MainWindow::closeEvent(QCloseEvent *event){
 		hide();
 		event->ignore();
 	} else {
-        if (splitter->sizes().at(0) != splitter->sizes().at(1)){
-            QSettings settings(APP_SHORT_NAME, "default");
-            settings.beginGroup("MainWindow");
-            settings.setValue("size", size());
-            settings.setValue("pos", pos());
-            settings.setValue("splitterSize0", splitter->sizes().at(0));
-            settings.setValue("splitterSize1", splitter->sizes().at(1));
-            settings.endGroup();
-        }
-        serverSoket->close();
+        this->mainExit_Click();
 	}
 	return;
 }
@@ -613,6 +608,10 @@ void MainWindow::mainExit_Click(){
 	settings.beginGroup("MainWindow");
 	settings.setValue("size", size());
 	settings.setValue("pos", pos());
+    if (splitter->sizes().at(0) != splitter->sizes().at(1)){
+        settings.setValue("splitterSize0", splitter->sizes().at(0));
+        settings.setValue("splitterSize1", splitter->sizes().at(1));
+    }
 	settings.endGroup();
 
     serverSoket->close();
@@ -745,6 +744,13 @@ void MainWindow::mainOptions_Click(){
         } else {
             QApplication::setQuitOnLastWindowClosed(true);
             trayIcon->hide();
+        }
+
+        if (CoreLib->getSetting("logging", "enable", false, 1).toInt()==1){
+            emit(reloadLogData());
+            tabLogging->setEnabled(true);
+        } else {
+            tabLogging->setEnabled(false);
         }
 	}
 

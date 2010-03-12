@@ -44,6 +44,7 @@ class AppSettings : public QDialog, public Ui::AppSettings
 		void radioDefaultGui_toggled(bool state);
 		void radioFuse_toggled(bool state);
 		void radioEmbedded_toggled(bool state);
+        void chEnableLogging_stateChanged ( int state );
 
 	private:
 		bool eventFilter (QObject *object, QEvent *event);
@@ -51,6 +52,7 @@ class AppSettings : public QDialog, public Ui::AppSettings
 		void getLangs();
 		bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
 		void loadThemeIcons();
+
 
 		//! This is need for libq4wine-core.so import.
 		QLibrary libq4wine;

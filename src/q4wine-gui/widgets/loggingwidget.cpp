@@ -53,7 +53,9 @@ LoggingWidget::LoggingWidget(QWidget *parent) :
 
     splitter->setSizes(a);
 
-    //this->clearLogs();
+    if ((CoreLib->getSetting("logging", "autoClear", false, 1).toInt()==1) and ((CoreLib->getSetting("logging", "autoClear", false, 1).toInt()==1))){
+        this->clearLogs();
+    }
 }
 
 LoggingWidget::~LoggingWidget(){
@@ -282,8 +284,7 @@ bool LoggingWidget::eventFilter(QObject *obj, QEvent *event)
          } else {
              return false;
          }
-     } else {
-         // pass the event on to the parent class
-         return QWidget::eventFilter(obj, event);
      }
+     // pass the event on to the parent class
+     return QWidget::eventFilter(obj, event);
  }
