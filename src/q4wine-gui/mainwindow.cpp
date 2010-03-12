@@ -32,8 +32,6 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-        connect (CoreLib.get(), SIGNAL(test()), this, SLOT(test()));
-
 	clearTmp();
 	// Base GUI setup
 	setupUi(this);
@@ -198,10 +196,6 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	return;
 }
 
-void MainWindow::test(){
-    qDebug()<<"Waaaaah";
-}
-
 void MainWindow::setSearchFocus(){
     txtIconFilter->setFocus(Qt::OtherFocusReason);
     return;
@@ -350,7 +344,19 @@ bool MainWindow::createSocket(){
 
     char *user = getenv("USER");
 
-    if (!serverSoket->listen(QString("/tmp/q4wine-%1.sock").arg(user))){
+    QString soketFile = QString("/tmp/q4wine-%1.sock").arg(user);
+
+    if (QFile(soketFile).exists()){
+        QMessageBox msgBox;
+        msgBox.setText(tr("Socket file \"%1\" already exists!").arg(soketFile));
+        msgBox.setInformativeText("It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you want to remove it?");
+        msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+        msgBox.setDefaultButton(QMessageBox::Cancel);
+        if (msgBox.exec() == QMessageBox::Ok)
+            QFile(soketFile).remove();
+    }
+
+    if (!serverSoket->listen(soketFile)){
         QTextStream QErr(stderr);
         QErr<<"[EE] Can't create q4wine socket: "<<serverSoket->errorString()<<endl;
         return false;

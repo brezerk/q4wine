@@ -130,8 +130,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
         void newConnection();
 
-        void test();
-
 private:
 		//! Custom Widgets
 		//DragListWidget* lstIcons;
