@@ -215,6 +215,9 @@
      <layout class="QVBoxLayout">
       <item>
        <widget class="QTabWidget" name="twbGeneral">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="currentIndex">
          <number>0</number>
         </property>
