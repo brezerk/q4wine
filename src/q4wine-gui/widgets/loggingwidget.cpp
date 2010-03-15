@@ -212,6 +212,63 @@ void LoggingWidget::logDelete_Click(){
 }
 
 void LoggingWidget::logExport_Click(){
+    if (!this->treeWidget->currentItem())
+        return;
+
+    std::auto_ptr<QTreeWidgetItem> item (this->treeWidget->currentItem());
+
+    if (!item.get()){
+        logExport->setEnabled(false);
+        logDelete->setEnabled(false);
+        item.release();
+        return;
+    }
+
+    QString program, prefix, date;
+    if (!item->parent()){
+        logExport->setEnabled(false);
+        logDelete->setEnabled(true);
+        item.release();
+        return;
+    } else {
+        std::auto_ptr<QTreeWidgetItem> p_item (item->parent());
+        if (!p_item->parent()){
+            p_item.release();
+            logExport->setEnabled(false);
+            logDelete->setEnabled(true);
+            item.release();
+            return;
+        } else {
+            QString fileName = QFileDialog::getSaveFileName(this, tr("Save log file"), QDir::homePath(), tr("Log Files (*.log)"));
+
+            if (fileName.isEmpty()){
+                item.release();
+                return;
+            }
+
+            program = p_item->text(0);
+            prefix = p_item->parent()->text(0);
+            date = item->text(0);
+            QString list = db_log.getLogs(prefix, program, date);
+
+            if (list.isEmpty()){
+                item.release();
+                return;
+            }
+
+            QFile file(fileName);
+            if (!file.open(QIODevice::WriteOnly | QIODevice::Text)){
+                item.release();
+                return;
+            }
+
+            file.write(list.toAscii().data(), qstrlen(list.toAscii().data()));
+
+            file.close();
+        }
+        p_item.release();
+    }
+    item.release();
     return;
 }
 
