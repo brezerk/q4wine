@@ -135,7 +135,7 @@ void IconSettings::getIconReccord(){
         if (QFile(iconPath).exists()){
             cmdGetIcon->setIcon (QIcon(iconPath));
 		} else {
-			if (iconPath=="wineconsole"){
+            if (iconPath=="console"){
 				cmdGetIcon->setIcon(CoreLib->loadIcon("data/wineconsole.png"));
 			} else if (iconPath=="regedit"){
 				cmdGetIcon->setIcon(CoreLib->loadIcon("data/regedit.png"));
