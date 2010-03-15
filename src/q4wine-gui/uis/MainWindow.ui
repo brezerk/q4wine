@@ -25,6 +25,9 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
+      <property name="movable">
+       <bool>false</bool>
+      </property>
       <widget class="QWidget" name="tabPrograms">
        <attribute name="title">
         <string>Programs</string>
@@ -163,16 +166,6 @@
         <property name="spacing">
          <number>0</number>
         </property>
-        <property name="margin">
-         <number>0</number>
-        </property>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tabLogging">
-       <attribute name="title">
-        <string>Logging</string>
-       </attribute>
-       <layout class="QGridLayout" name="logLayout">
         <property name="margin">
          <number>0</number>
         </property>
@@ -317,6 +310,16 @@
         </property>
        </layout>
       </widget>
+      <widget class="QWidget" name="tabLogging">
+       <attribute name="title">
+        <string>Logging</string>
+       </attribute>
+       <layout class="QGridLayout" name="logLayout">
+        <property name="margin">
+         <number>0</number>
+        </property>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -373,10 +376,10 @@
     </property>
     <addaction name="mainPrograms"/>
     <addaction name="mainProcess"/>
-    <addaction name="mainLogging"/>
     <addaction name="mainSetup"/>
     <addaction name="mainPrefix"/>
     <addaction name="mainAppDB"/>
+    <addaction name="mainLogging"/>
     <addaction name="separator"/>
     <addaction name="mainExportIcons"/>
     <addaction name="separator"/>

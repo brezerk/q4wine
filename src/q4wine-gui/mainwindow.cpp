@@ -91,7 +91,9 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	connect(lstIcons.get(), SIGNAL(iconItemClick(QString, QString, QString, QString, QString)), this, SLOT(updateIconDesc(QString, QString, QString, QString, QString)));
 	connect(lstIcons.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
 	connect(txtIconFilter, SIGNAL(textChanged(QString)), lstIcons.get(), SLOT(setFilterString(QString)));
+#ifdef WITH_WINEAPPDB
 	connect(lstIcons.get(), SIGNAL(searchRequest(QString)), this, SLOT(searchRequest(QString)));
+#endif
 
 	std::auto_ptr<PrefixTreeWidget> twPrograms (new PrefixTreeWidget(tabPrograms));
 	connect(this, SIGNAL(updateDatabaseConnections()), twPrograms.get(), SLOT(getPrefixes()));
@@ -191,7 +193,6 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 
         if (!trayIcon->isVisible())
             show();
-
 
 
 	return;
@@ -482,10 +483,10 @@ void MainWindow::createTrayIcon(){
 	trayIconMenu->addSeparator();
 	trayIconMenu->addAction(mainPrograms);
 	trayIconMenu->addAction(mainProcess);
-    trayIconMenu->addAction(mainLogging);
 	trayIconMenu->addAction(mainSetup);
 	trayIconMenu->addAction(mainPrefix);
 	trayIconMenu->addAction(mainAppDB);
+    trayIconMenu->addAction(mainLogging);
 	trayIconMenu->addSeparator();
 	trayIconMenu->addAction(mainExit);
 
@@ -678,7 +679,7 @@ void MainWindow::mainSetup_Click(){
 	if (isMinimized ())
 		showNormal ();
 
-    tbwGeneral->setCurrentIndex ( 3 );
+    tbwGeneral->setCurrentIndex ( 2 );
 	return;
 }
 
@@ -693,7 +694,11 @@ void MainWindow::mainLogging_Click(){
     if (isMinimized ())
         showNormal ();
 
-    tbwGeneral->setCurrentIndex ( 2 );
+#ifndef WITH_WINEAPPDB
+    tbwGeneral->setCurrentIndex ( 4 );
+#else
+    tbwGeneral->setCurrentIndex ( 5 );
+#endif
     return;
 }
 
@@ -708,7 +713,7 @@ void MainWindow::mainPrefix_Click(){
 	if (isMinimized ())
 		showNormal ();
 
-    tbwGeneral->setCurrentIndex ( 4 );
+    tbwGeneral->setCurrentIndex ( 3 );
 	return;
 }
 
@@ -837,7 +842,7 @@ void MainWindow::mainAppDB_Click(){
 	if (isMinimized ())
 		showNormal ();
 
-    tbwGeneral->setCurrentIndex ( 5 );
+    tbwGeneral->setCurrentIndex ( 4 );
 	return;
 }
 

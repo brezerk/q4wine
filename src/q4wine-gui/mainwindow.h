@@ -32,6 +32,7 @@
 #include <QSplitter>
 #include <QLocalServer>
 #include <QLocalSocket>
+#include <QTabWidget>
 
 //Global config
 #include "config.h"
