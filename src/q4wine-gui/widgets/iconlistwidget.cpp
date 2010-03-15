@@ -84,7 +84,7 @@ void IconListWidget::showContents(QString filterString){
                   if (QFile::exists (icon_path)){
                         iconItem->setIcon(QIcon(icon_path));
 				  } else {
-                        if (iconsList.at(i)=="wineconsole"){
+                        if (iconsList.at(i)=="console"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/wineconsole.png"));
                         } else if (iconsList.at(i)=="regedit"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/regedit.png"));
