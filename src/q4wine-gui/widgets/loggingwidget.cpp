@@ -24,18 +24,20 @@ LoggingWidget::LoggingWidget(QWidget *parent) :
 
     treeWidget.reset(new QTreeWidget(this));
     treeWidget->setColumnCount(1);
+    treeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     treeWidget->setHeaderLabel("Logging list");
 
     connect (treeWidget.get(), SIGNAL(itemActivated (QTreeWidgetItem *, int)), this, SLOT(treeWidget_itemClicked (QTreeWidgetItem *, int)));
     connect (treeWidget.get(), SIGNAL(currentItemChanged (QTreeWidgetItem *, QTreeWidgetItem *)), this, SLOT(treeWidget_currentItemChanged (QTreeWidgetItem *, QTreeWidgetItem *)));
+    connect (treeWidget.get(), SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(customContextMenuRequested(const QPoint &)));
 
     treeWidget->installEventFilter(this);
 
     listWidget.reset(new QListWidget(this));
-
+    listWidget->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect (listWidget.get(), SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(customContextMenuRequested(const QPoint &)));
 
     splitter.reset(new QSplitter(this));
-
     splitter->addWidget(treeWidget.get());
     splitter->addWidget(listWidget.get());
 
@@ -87,17 +89,14 @@ void LoggingWidget::createActions(){
     connect(logExport.get(), SIGNAL(triggered()), this, SLOT(logExport_Click()));
     logExport->setEnabled(false);
 
-    /*
+
     menu.reset(new QMenu(this));
-    menu->addAction(prefixAdd.get());
+    menu->addAction(logClear.get());
     menu->addSeparator();
-    menu->addAction(prefixImport.get());
-    menu->addAction(prefixExport.get());
+    menu->addAction(logDelete.get());
     menu->addSeparator();
-    menu->addAction(prefixDelete.get());
-    menu->addSeparator();
-    menu->addAction(prefixSettings.get());
-*/
+    menu->addAction(logExport.get());
+
     return;
 }
 
@@ -349,3 +348,8 @@ bool LoggingWidget::eventFilter(QObject *obj, QEvent *event)
      // pass the event on to the parent class
      return QWidget::eventFilter(obj, event);
  }
+
+void LoggingWidget::customContextMenuRequested(const QPoint &pos){
+    menu->exec(QCursor::pos());
+    return;
+}

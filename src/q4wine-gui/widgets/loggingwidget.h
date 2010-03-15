@@ -18,6 +18,7 @@
 #include <QDateTime>
 #include <QBrush>
 #include <QPalette>
+#include <QMenu>
 #include <QKeyEvent>
 
 #include "logging.h"
@@ -47,6 +48,8 @@ private slots:
     void treeWidget_itemClicked (QTreeWidgetItem * item, int colum);
     void treeWidget_currentItemChanged (QTreeWidgetItem *item, QTreeWidgetItem *);
 
+    void customContextMenuRequested(const QPoint &pos);
+
 private:
     //! This is need for libq4wine-core.so import.
     QLibrary libq4wine;
@@ -64,6 +67,8 @@ private:
     std::auto_ptr<QTreeWidget> treeWidget;
     std::auto_ptr<QListWidget> listWidget;
     std::auto_ptr<QSplitter> splitter;
+
+    std::auto_ptr<QMenu> menu;
 
     void createActions(void);
     void clearLogs(void);
