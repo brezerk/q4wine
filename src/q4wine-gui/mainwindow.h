@@ -113,6 +113,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void mainImageManager_Click(void);
 		void mainProcess_Click(void);
 		void mainSetup_Click(void);
+        void mainLogging_Click(void);
 		void mainPrefix_Click(void);
 		void mainAbout_Click(void);
 		void mainAboutQt_Click(void);

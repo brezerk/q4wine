@@ -790,6 +790,9 @@ QStringList corelib::getCdromDevices(void) const{
             if (wrkdir.isEmpty())
                 wrkdir = QDir::homePath();
 
+#ifdef DEBUG
+            qDebug()<<"[ii] corelib::runWineBinary: "<<binary<<args<<" at: "<<wrkdir;
+#endif
 
             if (detach){
                 QProcess proc(this);

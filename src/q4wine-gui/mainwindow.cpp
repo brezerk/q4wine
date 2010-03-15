@@ -148,6 +148,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	//Main menu actions connection to slots
 	connect(mainRun, SIGNAL(triggered()), this, SLOT(mainRun_Click()));
 	connect(mainPrograms, SIGNAL(triggered()), this, SLOT(mainPrograms_Click()));
+    connect(mainLogging, SIGNAL(triggered()), this, SLOT(mainLogging_Click()));
 	connect(mainProcess, SIGNAL(triggered()), this, SLOT(mainProcess_Click()));
 	connect(mainSetup, SIGNAL(triggered()), this, SLOT(mainSetup_Click()));
 	connect(mainPrefix, SIGNAL(triggered()), this, SLOT(mainPrefix_Click()));
@@ -528,7 +529,7 @@ void MainWindow::tbwGeneral_CurrentTabChange(int tabIndex){
 		emit(startProcTimer());
 		break;
 #ifdef WITH_WINEAPPDB
-    case 4:
+    case 5:
         emit(stopProcTimer());
         emit(setAppDBFocus());
         break;
@@ -676,8 +677,23 @@ void MainWindow::mainSetup_Click(){
 	if (isMinimized ())
 		showNormal ();
 
-	tbwGeneral->setCurrentIndex ( 2 );
+    tbwGeneral->setCurrentIndex ( 3 );
 	return;
+}
+
+void MainWindow::mainLogging_Click(){
+    /*
+     * main Menu go Prefix Setup tool
+     */
+
+    if (!isVisible())
+        setMeVisible(TRUE);
+
+    if (isMinimized ())
+        showNormal ();
+
+    tbwGeneral->setCurrentIndex ( 2 );
+    return;
 }
 
 void MainWindow::mainPrefix_Click(){
@@ -691,7 +707,7 @@ void MainWindow::mainPrefix_Click(){
 	if (isMinimized ())
 		showNormal ();
 
-	tbwGeneral->setCurrentIndex ( 3 );
+    tbwGeneral->setCurrentIndex ( 4 );
 	return;
 }
 
@@ -820,7 +836,7 @@ void MainWindow::mainAppDB_Click(){
 	if (isMinimized ())
 		showNormal ();
 
-	tbwGeneral->setCurrentIndex ( 4 );
+    tbwGeneral->setCurrentIndex ( 5 );
 	return;
 }
 

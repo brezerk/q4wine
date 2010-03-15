@@ -23,7 +23,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tbwGeneral">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tabPrograms">
        <attribute name="title">
@@ -170,7 +170,7 @@
       </widget>
       <widget class="QWidget" name="tabLogging">
        <attribute name="title">
-        <string>Action logging</string>
+        <string>Logging</string>
        </attribute>
        <layout class="QGridLayout" name="logLayout">
         <property name="margin">
@@ -373,6 +373,7 @@
     </property>
     <addaction name="mainPrograms"/>
     <addaction name="mainProcess"/>
+    <addaction name="mainLogging"/>
     <addaction name="mainSetup"/>
     <addaction name="mainPrefix"/>
     <addaction name="mainAppDB"/>
@@ -530,6 +531,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="mainLogging">
+   <property name="text">
+    <string>Logging</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
    </property>
   </action>
  </widget>
