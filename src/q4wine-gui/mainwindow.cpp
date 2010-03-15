@@ -482,6 +482,7 @@ void MainWindow::createTrayIcon(){
 	trayIconMenu->addSeparator();
 	trayIconMenu->addAction(mainPrograms);
 	trayIconMenu->addAction(mainProcess);
+    trayIconMenu->addAction(mainLogging);
 	trayIconMenu->addAction(mainSetup);
 	trayIconMenu->addAction(mainPrefix);
 	trayIconMenu->addAction(mainAppDB);
