@@ -1037,7 +1037,7 @@ QStringList corelib::getCdromDevices(void) const{
 			} else {
                 if (icon_name=="winecfg"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/winecfg.png"<<endl;
-                } else if (icon_name=="wineconsole"){
+                } else if (icon_name=="console"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/wineconsole.png"<<endl;
                 } else if (icon_name=="uninstaller"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/uninstaller.png"<<endl;
