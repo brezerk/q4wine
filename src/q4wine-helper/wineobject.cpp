@@ -100,10 +100,10 @@ QString WineObject::createEnvString(){
     if (this->prefixName.isEmpty())
         this->setPrefix("Default");
 
-    env.append(QString(" WINEPREFIX=\"%1\" ").arg(CoreLib->getEscapeString(this->prefixPath, false)));
-    env.append(QString(" WINESERVER=\"%1\" ").arg(CoreLib->getEscapeString(this->prefixServer, false)));
-    env.append(QString(" WINELOADER=\"%1\" ").arg(CoreLib->getEscapeString(this->prefixLoader, false)));
-    env.append(QString(" WINEDLLPATH=\"%1\" ").arg(CoreLib->getEscapeString(this->prefixDllPath, false)));
+    env.append(QString(" WINEPREFIX=\"%1\" ").arg(this->prefixPath));
+    env.append(QString(" WINESERVER=\"%1\" ").arg(this->prefixServer));
+    env.append(QString(" WINELOADER=\"%1\" ").arg(this->prefixLoader));
+    env.append(QString(" WINEDLLPATH=\"%1\" ").arg(this->prefixDllPath));
 
     if (!this->programDebug.isEmpty())
         env.append(QString(" WINEDEBUG=\"%1\" ").arg(this->programDebug));
