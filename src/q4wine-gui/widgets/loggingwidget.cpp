@@ -266,6 +266,10 @@ void LoggingWidget::getLogRecords(void){
                 appItem.release();
             }
             prefixItem.release();
+        } else {
+            logClear->setEnabled(false);
+            logExport->setEnabled(false);
+            logDelete->setEnabled(false);
         }
     }
     return;

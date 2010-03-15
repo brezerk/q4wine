@@ -34,8 +34,8 @@ SET( Q4WINE_HELPER_HEADERS
 )
 
 SET ( Q4WINE_HELPER_MOC_HEADERS
-    ${CMAKE_SOURCE_DIR}/src/q4wine-helper/q4wine-helper.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-helper/wineobject.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
 )
 
 QT4_WRAP_CPP( Q4WINE_HELPER_LIB_MOC_SOURCES ${Q4WINE_HELPER_MOC_HEADERS} )

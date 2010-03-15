@@ -9,7 +9,6 @@ if(POLICY CMP0011)
   cmake_policy(SET CMP0011 NEW)
 endif(POLICY CMP0011)
 
-
 # RPATH fixes
 # skip the full RPATH for the build tree
 #SET(CMAKE_SKIP_BUILD_RPATH  TRUE)
@@ -20,7 +19,6 @@ endif(POLICY CMP0011)
 # add the automatically determined parts of the RPATH
 # which point to directories outside the build tree to the install RPATH
 #SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
-
 
 IF (NOT DEFINED WITH_ICOUTILS)
     SET(WITH_ICOUTILS "ON")

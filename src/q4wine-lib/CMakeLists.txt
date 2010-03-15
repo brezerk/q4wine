@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 2.6) 
 
-
 SET ( Q4WINE_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/src
@@ -16,7 +15,6 @@ SET ( Q4WINE_HEADERS_DIR
 )
 
 INCLUDE_DIRECTORIES( ${Q4WINE_HEADERS_DIR} ${CMAKE_BINARY_DIR} )
-
 
 SET( Q4WINE_LIB_SOURCES
         ${CMAKE_SOURCE_DIR}/src/q4wine-lib/q4wine-lib.cpp
@@ -42,7 +40,6 @@ SET( Q4WINE_LIB_HEADERS
 SET ( Q4WINE_LIB_MOC_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
     ${CMAKE_SOURCE_DIR}/src/core/database/db.h
-    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-lib/q4wine-lib.h
 )
 
