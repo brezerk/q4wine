@@ -25,9 +25,6 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <property name="movable">
-       <bool>false</bool>
-      </property>
       <widget class="QWidget" name="tabPrograms">
        <attribute name="title">
         <string>Programs</string>
