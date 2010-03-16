@@ -168,8 +168,6 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
 	connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
 
-
-
 	CoreLib->runAutostart();
 
 #ifndef WITH_ICOUTILS
@@ -193,7 +191,6 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 
         if (!trayIcon->isVisible())
             show();
-
 
 	return;
 }

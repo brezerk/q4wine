@@ -108,11 +108,8 @@ void winetricks::run_winetricks(){
 
 	args.append(arg);
 
-	Process exportProcess ( args, console_bin, QDir::homePath(), tr("Running winetricks..."), tr("Plz wait..."));
-	if (exportProcess.exec()==QDialog::Accepted){
-		return;
-	}
-
+    QProcess proc(this);
+    proc.startDetached(console_bin, args, QDir::homePath());
 	return;
 }
 

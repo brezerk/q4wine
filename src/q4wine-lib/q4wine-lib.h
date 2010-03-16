@@ -103,11 +103,10 @@ struct ExecObject{
 	QString name;
 };
 
-class corelib : public QObject{
-    Q_OBJECT
+class corelib {
 public:
 	//! Create an mainlib class
-    corelib(bool _GUI_MODE, QObject *parent = 0);
+    corelib(bool _GUI_MODE);
 
 	/*! \brief This function tries to get wine process list running in the current system.
 	 *
@@ -269,9 +268,6 @@ public:
 	QString getUmountString(const int profile);
 	bool reniceProcess(const int pid, const int priority) const;
 	void runAutostart(void);
-
-signals:
-    void test(void);
 
 private:
 	/*! Define is library operate in CLI or GUI mode.

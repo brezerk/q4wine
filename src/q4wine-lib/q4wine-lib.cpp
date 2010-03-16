@@ -19,7 +19,7 @@
 
 #include "q4wine-lib.h"
 
-corelib::corelib(bool _GUI_MODE, QObject *parent) : QObject(parent)
+corelib::corelib(bool _GUI_MODE)
 {
 	// Setting gui mode, if false - cli mode else gui mode
 	this->_GUI_MODE=_GUI_MODE;
@@ -233,8 +233,6 @@ void corelib::checkSettings(){
 	/*
 	 * Getting application settings
 	 */
-
-    emit(test());
 
 	this->getSetting("system", "tar");
 	this->getSetting("system", "mount");
@@ -795,10 +793,10 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 
             if (detach){
-                QProcess proc(this);
+                QProcess proc(0);
                 return proc.startDetached(binary, args, wrkdir);
             } else {
-                Process proc(args, binary, wrkdir, tr("Running binary: \"%1\"").arg(execObj.execcmd), tr("Running binary..."), false);
+                Process proc(args, binary, wrkdir, QObject::tr("Running binary: \"%1\"").arg(execObj.execcmd), QObject::tr("Running binary..."), false);
                 return proc.exec();
             }
 
