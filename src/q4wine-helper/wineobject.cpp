@@ -170,7 +170,7 @@ void WineObject::runSys(){
     stdout.append(run_string.trimmed());
     stdout.append("\n");
 
-    fp = popen(run_string.toAscii().data(), "r");
+    fp = popen(codec->fromUnicode(run_string).data(), "r");
     if (fp == NULL){
         this->sendMessage(QString("error/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
     } else {
