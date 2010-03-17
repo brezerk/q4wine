@@ -49,5 +49,6 @@
         <file>data/ok.png</file>
         <file>data/fail.png</file>
         <file>data/down_log.png</file>
+        <file>data/love.png</file>
     </qresource>
 </RCC>

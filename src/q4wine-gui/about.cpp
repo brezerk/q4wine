@@ -210,10 +210,8 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
 	txtThanks->setHtml("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\"><html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">p, li { white-space: pre-wrap; }</style></head><body>" \
 
-							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-								   "Irina Radchuk" \
-							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-								   "Thanks for patience, love and countenance =]" \
+                            "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/data/love.png\" />" \
+                                   " Irina Radchuk<br>Thanks for patience, love and countenance =]" \
 
 							"</p><p style=\"margin: 0px\"> </p>" \
 
