@@ -112,10 +112,20 @@ void PrefixTreeWidget::dirAdd_Click(void){
 				  treeItem.release();
 				  return;
 			}
-			std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem->parent()));
-			prefixItem->setText(0, dirname);
-			prefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
-			prefixItem.release();
+
+            if (treeItem->parent()){
+                std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem->parent()));
+                prefixItem->setText(0, dirname);
+                prefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
+                prefixItem.release();
+            } else {
+                std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem.get()));
+                prefixItem->setText(0, dirname);
+                prefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
+                prefixItem.release();
+            }
+
+
 	  }
 	  treeItem.release();
 	  return;

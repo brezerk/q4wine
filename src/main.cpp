@@ -84,13 +84,6 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-	DataBase db;
-
-    if (!db.checkDb()){
-        QErr<<"[EE] Can't init database engine."<<endl;
-        return -1;
-    }
-
     QTranslator qtt;
     qtt.load(CoreLib->getTranslationLang(), QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME));
     app.installTranslator(&qtt);
@@ -104,6 +97,13 @@ int main(int argc, char *argv[])
     }
 
     if (!CoreLib->checkDirs()){
+        return -1;
+    }
+
+	DataBase db;
+
+    if (!db.checkDb()){
+        QErr<<"[EE] Can't init database engine."<<endl;
         return -1;
     }
 
