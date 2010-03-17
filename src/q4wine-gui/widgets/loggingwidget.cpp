@@ -322,6 +322,7 @@ void LoggingWidget::getLogRecords(void){
                 appItem.release();
             }
             prefixItem.release();;
+        }
     }
     return;
 }
