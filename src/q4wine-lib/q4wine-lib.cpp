@@ -758,6 +758,11 @@ QStringList corelib::getCdromDevices(void) const{
                 args.append(execObj.desktop);
             }
 
+            if (!execObj.override.isEmpty()){
+                args.append("--override");
+                args.append(execObj.override);
+            }
+
             if (execObj.useconsole == "1"){
                 args.append("--console");
                 args.append(execObj.useconsole);

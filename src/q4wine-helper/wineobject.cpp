@@ -86,6 +86,10 @@ void WineObject::setProgramDesktop(QString desktop){
     return;
 }
 
+void WineObject::setProgramOverride(QString override){
+    this->overrideDllList = override;
+}
+
 void WineObject::setUseConsole(int console){
     if (console==1){
         this->useConsole=true;
@@ -110,6 +114,9 @@ QString WineObject::createEnvString(){
 
     if (!this->programDisplay.isEmpty())
         env.append(QString(" DISPLAY=\"%1\" ").arg(this->programDisplay));
+
+    if (!this->overrideDllList.isEmpty())
+         env.append(QString(" WINEDLLOVERRIDES=\"%1\" ").arg(this->overrideDllList));
 
     return env;
 }

@@ -54,6 +54,7 @@ public:
     void setProgramDebug(QString debug);
     void setProgramNice(int nice);
     void setProgramDesktop(QString desktop);
+    void setProgramOverride(QString override);
 
     void setUseConsole(int console);
     void setOverrideDll(QString dll_list);

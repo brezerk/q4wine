@@ -97,6 +97,10 @@ int main(int argc, char *argv[])
             i++;
             if (i<argc)
                 wineObject.setProgramArgs(app.arguments().at(i));
+        } else if (app.arguments().at(i)=="--override") {
+            i++;
+            if (i<argc)
+                wineObject.setProgramOverride(app.arguments().at(i));
         }
     }
 
