@@ -986,8 +986,6 @@ void Wizard::nextWizardPage(){
 			QString prefixPath = db_prefix.getPath(var1);
 			prefixPath.append("/dosdevices/");
 
-            prefixPath = CoreLib->getEscapeString(prefixPath, false);
-
 			if (!wineDriveDir.cd(prefixPath)){
 				qDebug()<<"Cannot cd to prefix directory: "<<prefixPath;
 			} else {
