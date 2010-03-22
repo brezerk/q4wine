@@ -3858,7 +3858,6 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
            <zorder>widgetFirstStartup2</zorder>
            <zorder>widgetFirstStartup3</zorder>
            <zorder>widgetFirstStartup0</zorder>
-           <zorder>widgetCreateFakeDrive0</zorder>
            <zorder>widgetCreateFakeDrive1</zorder>
            <zorder>widgetCreateFakeDrive2</zorder>
            <zorder>widgetCreateFakeDrive3</zorder>
@@ -3868,6 +3867,7 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
            <zorder>widgetCreateFakeDrive7</zorder>
            <zorder>widgetCreatePrefix0</zorder>
            <zorder>widgetCreatePrefix1</zorder>
+           <zorder>widgetCreateFakeDrive0</zorder>
           </widget>
          </item>
         </layout>

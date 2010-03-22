@@ -940,32 +940,35 @@ void Wizard::nextWizardPage(){
 
 			//Getting versions
 			QString version;
-			if (comboFakeVersion->currentText()=="Windows XP")
+            if (comboFakeVersion->currentText()=="Windows XP"){
 				version = "winxp";
-			if (comboFakeVersion->currentText()=="Windows 2008")
+            } else if (comboFakeVersion->currentText()=="Windows 2008"){
 				version = "win2008";
-			if (comboFakeVersion->currentText()=="Windows Vista")
+            } else if (comboFakeVersion->currentText()=="Windows 7"){
 				version = "vista";
-			if (comboFakeVersion->currentText()=="Windows 2003")
+            } else  if (comboFakeVersion->currentText()=="Windows Vista"){
+                version = "vista";
+            } else if (comboFakeVersion->currentText()=="Windows 2003"){
 				version = "win2003";
-			if (comboFakeVersion->currentText()=="Windows 2000")
+            } else if (comboFakeVersion->currentText()=="Windows 2000"){
 				version = "win2k";
-			if (comboFakeVersion->currentText()=="Windows ME")
+            } else if (comboFakeVersion->currentText()=="Windows ME"){
 				version = "winme";
-			if (comboFakeVersion->currentText()=="Windows 98")
+            } else if (comboFakeVersion->currentText()=="Windows 98"){
 				version = "win98";
-			if (comboFakeVersion->currentText()=="Windows 95")
+            } else if (comboFakeVersion->currentText()=="Windows 95"){
 				version = "win95";
-			if (comboFakeVersion->currentText()=="Windows NT 4.0")
+            } else if (comboFakeVersion->currentText()=="Windows NT 4.0"){
 				version = "nt40";
-			if (comboFakeVersion->currentText()=="Windows NT 3.0")
+            } else if (comboFakeVersion->currentText()=="Windows NT 3.0"){
 				version = "nt351";
-			if (comboFakeVersion->currentText()=="Windows 3.1")
+            } else if (comboFakeVersion->currentText()=="Windows 3.1"){
 				version = "win31";
-			if (comboFakeVersion->currentText()=="Windows 3.0")
+            } else if (comboFakeVersion->currentText()=="Windows 3.0"){
 				version = "win30";
-			if (comboFakeVersion->currentText()=="Windows 2.0")
+            } else if (comboFakeVersion->currentText()=="Windows 2.0"){
 				version = "win20";
+            }
 
             ExecObject execObj;
             execObj.cmdargs = "-u -i";
