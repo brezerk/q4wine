@@ -46,20 +46,41 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
     prefix_id=result.value("id");
 
-    txtWineLibs->setText(result.value("libs"));
-    txtWineLoaderBin->setText(result.value("loader"));
-    txtWineServerBin->setText(result.value("server"));
-    txtWineBin->setText(result.value("bin"));
-
 	//comboDeviceList
     txtMountPoint->setText(result.value("mount"));
 
 	if (prefix_name=="Default"){
 		txtPrefixName->setEnabled(FALSE);
 		txtPrefixPath->setEnabled(FALSE);
+
 		cmdGetPrefixPath->setEnabled(FALSE);
+
+        txtWineLibs->setEnabled(FALSE);
+        txtWineLoaderBin->setEnabled(FALSE);
+        txtWineServerBin->setEnabled(FALSE);
+        txtWineBin->setEnabled(FALSE);
+
+        cmdGetWineLibs->setEnabled(FALSE);
+        cmdGetWineLoaderBin->setEnabled(FALSE);
+        cmdGetWineServerBin->setEnabled(FALSE);
+        cmdGetWineBin->setEnabled(FALSE);
+
+        txtWineLibs->setText("");
+        txtWineLoaderBin->setText("");
+        txtWineServerBin->setText("");
+        txtWineBin->setText("");
 	} else {
+
 		cmdGetPrefixPath->installEventFilter(this);
+        cmdGetWineBin->installEventFilter(this);
+        cmdGetWineServerBin->installEventFilter(this);
+        cmdGetWineLoaderBin->installEventFilter(this);
+        cmdGetWineLibs->installEventFilter(this);
+
+        txtWineLibs->setText(result.value("libs"));
+        txtWineLoaderBin->setText(result.value("loader"));
+        txtWineServerBin->setText(result.value("server"));
+        txtWineBin->setText(result.value("bin"));
 	}
 
 	txtPrefixName->setText(prefix_name);
@@ -78,10 +99,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
-	cmdGetWineBin->installEventFilter(this);
-	cmdGetWineServerBin->installEventFilter(this);
-	cmdGetWineLoaderBin->installEventFilter(this);
-	cmdGetWineLibs->installEventFilter(this);
+
 
 	cmdGetMountPoint->installEventFilter(this);
 
