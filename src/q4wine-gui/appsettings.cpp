@@ -454,6 +454,7 @@ void AppSettings::cmdOk_Click(){
     } else {
         settings.setValue("autoClear", 0);
     }
+    settings.endGroup();
 
 	settings.beginGroup("app");
 	if (chShowTrarey->checkState()==Qt::Checked) {
