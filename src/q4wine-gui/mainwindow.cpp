@@ -79,7 +79,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     std::auto_ptr<LoggingWidget> logWidget (new LoggingWidget(tabLogging));
     connect (this, SIGNAL(reloadLogData()), logWidget.get(), SLOT(getLogRecords()));
 
-     if (CoreLib->getSetting("logging", "enable", false, 1).toInt()==1){
+     if (CoreLib->getSetting("logging", "enable", false, 0).toInt()==1){
          logWidget->getLogRecords();
      } else {
          tabLogging->setEnabled(false);

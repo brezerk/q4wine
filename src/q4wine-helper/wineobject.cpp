@@ -195,7 +195,7 @@ void WineObject::runSys(){
 
     status = pclose(fp);
 
-    if (CoreLib->getSetting("logging", "enable", false, 1).toInt()==1)
+    if (CoreLib->getSetting("logging", "enable", false, 0).toInt()==1)
         logEnabled = true;
 
 

@@ -72,7 +72,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	settings.endGroup();
 
     settings.beginGroup("logging");
-    if (settings.value("enable", 1).toInt()==1){
+    if (settings.value("enable", 0).toInt()==1){
         chEnableLogging->setCheckState(Qt::Checked);
     } else {
         chEnableLogging->setCheckState(Qt::Unchecked);
