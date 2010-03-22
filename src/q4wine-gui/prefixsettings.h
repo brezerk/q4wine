@@ -48,6 +48,7 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
 		 * \param  prefix_name  Current prefix name.
 		 */
 		PrefixSettings(QString prefix_name, QWidget * parent = 0, Qt::WFlags f = 0);
+        PrefixSettings(QWidget * parent = 0, Qt::WFlags f = 0);
 		QString getPrefixName();
 
 	private:
@@ -77,6 +78,8 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
 		typedef void *CoreLibPrototype (bool);
 		CoreLibPrototype *CoreLibClassPointer;
 		std::auto_ptr<corelib> CoreLib;
+
+        bool addNew;
 
 	private slots:
 		/*!

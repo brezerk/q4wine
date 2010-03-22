@@ -37,13 +37,13 @@
 #include <QToolBar>
 #include <QMenu>
 #include <QHeaderView>
+#include <QDate>
 
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
 //Windows
-#include "wizard.h"
 #include "prefixsettings.h"
 #include "process.h"
 

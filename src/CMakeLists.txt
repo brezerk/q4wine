@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.6)
 PROJECT(q4wine)
 
 SET(CMAKE_VERBOSE_MAKEFILE ON)
-SET(APP_VERSION "0.117-r5")
+SET(APP_VERSION "0.117-r6")
 
 if(POLICY CMP0011)
   cmake_policy(SET CMP0011 NEW)

@@ -1584,6 +1584,16 @@
                </property>
               </widget>
              </item>
+             <item>
+              <widget class="QLabel" name="label_8">
+               <property name="text">
+                <string>Note: Because of sqlite engine specific, large amount of logging data can reduce q4wine performance. Use it with care. You have been warned.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
             </layout>
            </widget>
           </item>

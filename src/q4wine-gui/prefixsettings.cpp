@@ -38,6 +38,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
+    this->addNew=false;
 	this->loadThemeIcons();
 
     QHash<QString,QString> result = db_prefix.getByName(prefix_name);
@@ -98,12 +99,50 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
-
-
 	cmdGetMountPoint->installEventFilter(this);
 
 	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 	return;
+}
+
+PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+{
+    // Setup base UI
+    setupUi(this);
+
+    this->setWindowTitle(tr("Add new Prefix"));
+    this->lblCaption->setText(tr("Add new Prefix"));
+    this->addNew=true;
+
+    // Loading libq4wine-core.so
+    libq4wine.setFileName("libq4wine-core");
+
+    if (!libq4wine.load()){
+        libq4wine.load();
+    }
+
+    // Getting corelib calss pointer
+    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+
+    this->loadThemeIcons();
+
+    cmdGetPrefixPath->installEventFilter(this);
+    cmdGetWineBin->installEventFilter(this);
+    cmdGetWineServerBin->installEventFilter(this);
+    cmdGetWineLoaderBin->installEventFilter(this);
+    cmdGetWineLibs->installEventFilter(this);
+    cmdGetMountPoint->installEventFilter(this);
+
+    comboDeviceList->addItems(CoreLib->getCdromDevices());
+    comboDeviceList->setCurrentIndex (0);
+
+    connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
+    connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
+    connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
+
+    cmdCancel->setFocus(Qt::ActiveWindowFocusReason);
+    return;
 }
 
 QString PrefixSettings::getPrefixName(){
@@ -140,8 +179,13 @@ void PrefixSettings::cmdOk_Click(){
 		}
 	}
 
-	if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name))
-		reject();
+    if (this->addNew){
+        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText()))
+            reject();
+    } else {
+        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name))
+            reject();
+    }
 
 	accept();
 	return;
@@ -177,6 +221,11 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 			}
 
 			lineEdit.release();
+
+            if (obj->objectName()=="cmdGetPrefixPath"){
+                txtPrefixName->setText(txtPrefixPath->text().split("/").last());
+            }
+
 		}
 	}
 

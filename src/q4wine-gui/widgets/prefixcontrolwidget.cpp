@@ -166,12 +166,12 @@ void PrefixControlWidget::itemClicked(const QModelIndex &){
 void PrefixControlWidget::prefixAdd_Click(){
 	// Prefix creation function
 
-	Wizard createPrefixWizard(0);
-	if (createPrefixWizard.exec()==QDialog::Accepted){
-		this->updateTableModel();
-		emit(updateDatabaseConnections());
-		emit(prefixIndexChanged(createPrefixWizard.getPrefixName()));
-	}
+    PrefixSettings settings;
+    if (settings.exec()==QDialog::Accepted){
+        this->updateTableModel();
+        emit(updateDatabaseConnections());
+        emit(prefixIndexChanged(settings.getPrefixName()));
+    }
 
 	return;
 }
