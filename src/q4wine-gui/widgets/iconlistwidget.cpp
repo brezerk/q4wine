@@ -744,14 +744,15 @@ void IconListWidget::iconPaste_Click(void){
    case true:
 						if (!db_icon.updateIcon(newName, db_prefix.getId(this->prefixName), db_dir.getId(this->dirName, this->prefixName), db_prefix.getId(iconBuffer.prefix_name), db_dir.getId(iconBuffer.dir_name, iconBuffer.prefix_name), iconBuffer.names.at(i)))
 							  return;
+
+                        iconBuffer.names.clear();
+                        iconBuffer.dir_name="";
+                        iconBuffer.prefix_name="";
+                        iconBuffer.move=false;
 						break;
 				  }
 
 			}
-			iconBuffer.names.clear();
-			iconBuffer.dir_name="";
-			iconBuffer.prefix_name="";
-			iconBuffer.move=false;
 	  }
 
 	  this->showContents("");
