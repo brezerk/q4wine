@@ -400,7 +400,7 @@ void MainWindow::newConnection (){
                         this->changeStatusText(tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
 
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
-                            trayIcon->showMessage(tr("q4wine-helper"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
 
                         emit(reloadLogData());
@@ -413,7 +413,7 @@ void MainWindow::newConnection (){
                         this->changeStatusText(tr("Console started fine for Application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
 
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
-                            trayIcon->showMessage(tr("q4wine-helper"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
 
                         emit(reloadLogData());
@@ -425,7 +425,7 @@ void MainWindow::newConnection (){
                     if (list.count()==4){
                         this->changeStatusText(tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
-                            trayIcon->showMessage(tr("q4wine-helper"), tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
+                            trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
                         }
 
                         emit(reloadLogData());
@@ -436,7 +436,7 @@ void MainWindow::newConnection (){
                     if (list.count()==3){
                         this->changeStatusText(tr("Can't start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
-                            trayIcon->showMessage(tr("q4wine-helper"), tr("Can't start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Can't start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
                     } else {
                         this->showSocketError(message);
@@ -445,7 +445,7 @@ void MainWindow::newConnection (){
                     if (list.count()==3){
                         this->changeStatusText(tr("Can't start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
-                            trayIcon->showMessage(tr("q4wine-helper"), tr("Can't start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Can't start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
                     } else {
                         this->showSocketError(message);

@@ -64,8 +64,22 @@ int main(int argc, char *argv[])
     QTextStream Qcout(stdout);
     WineObject wineObject;
 
+    if (argc==1){
+        app.arguments().append("-h");
+        argc++;
+    }
+
     for (int i=1; i<argc; i++){
-        if (app.arguments().at(i)=="--prefix"){
+        if ((app.arguments().at(1)=="--version") or (app.arguments().at(1)=="-v")){
+            Qcout<<QString("%1-helper %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
+            Qcout<<QString("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
+            Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
+            Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
+            Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
+            CoreLib->getBuildFlags();
+            Qcout<<QObject::tr("Author: %1.").arg("Malakhov Alexey aka John Brezerk")<<endl;
+            return 0;
+        } else if (app.arguments().at(i)=="--prefix"){
             i++;
             if (i<argc)
                 wineObject.setPrefix(app.arguments().at(i));
@@ -101,11 +115,27 @@ int main(int argc, char *argv[])
             i++;
             if (i<argc)
                 wineObject.setProgramOverride(app.arguments().at(i));
+        } else {
+            Qcout<<QObject::tr("Usage:")<<endl;
+            Qcout<<QObject::tr("  %1-helper [KEYs]...").arg(APP_SHORT_NAME)<<endl;
+            Qcout<<QObject::tr("Console utility for q4wine which helps to handle wine application exit status and it's stdout\\stderr output logging.")<<endl<<endl;
+            Qcout<<QObject::tr("KEYs list:")<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --prefix"<<QObject::tr("sets the current prefix name")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --wine-debug"<<QObject::tr("sets WINEDEBUG variable")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --console"<<QObject::tr("run with output in console")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --display"<<QObject::tr("sets DISPLAY variable")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --program-bin"<<QObject::tr("sets program binary")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --program-args"<<QObject::tr("sets program args")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --override"<<QObject::tr("sets WINEDLLOVERRIDES variable")<<qSetFieldWidth(0)<<endl;
+            Qcout<<endl;
+            Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
+            Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_SHORT_NAME).arg(APP_WEBSITTE)<<endl;
+            Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
+            return 0;
         }
     }
 
     wineObject.runSys();
-
 /*
     if (app.arguments().count()>1){
         if ((app.arguments().at(1)=="--version") or (app.arguments().at(1)=="-v")){

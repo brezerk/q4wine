@@ -137,19 +137,24 @@ void LoggingWidget::treeWidget_itemClicked (QTreeWidgetItem * item, int colum){
                     if (!rows.at(j).isEmpty()){
 
                         std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(this->listWidget.get(), 0));
-                        iconItem->setText(rows.at(j));
+
 
                         if( j & 1 ){
                             QPalette pal;
                             iconItem->setBackground(pal.midlight() );
                         }
 
-                        if (rows.at(j) == tr("Exec string:")){
+                        if (rows.at(j) == "Exec string:"){
+                             iconItem->setText(tr("Exec string:"));
                              iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
-                         } else if (rows.at(j) == tr("Exit code:")){
+                         } else if (rows.at(j) == "Exit code:"){
+                             iconItem->setText(tr("Exit code:"));
                              iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
-                         } else if (rows.at(j) == tr("App STDOUT and STDERR output:")){
+                         } else if (rows.at(j) == "App STDOUT and STDERR output:"){
+                             iconItem->setText(tr("App STDOUT and STDERR output:"));
                              iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
+                         } else {
+                              iconItem->setText(rows.at(j));
                          }
 
                         iconItem.release();
@@ -238,7 +243,7 @@ void LoggingWidget::logExport_Click(){
             item.release();
             return;
         } else {
-            QString fileName = QFileDialog::getSaveFileName(this, tr("Save log file"), QDir::homePath(), tr("Log Files (*.log)"));
+            QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to save"), QDir::homePath(), tr("Log Files (*.log)"));
 
             if (fileName.isEmpty()){
                 item.release();

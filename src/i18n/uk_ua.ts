@@ -93,7 +93,7 @@ p, li { white-space: pre-wrap; }
     <name>AppDBWidget</name>
     <message>
         <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="81"/>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="380"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="385"/>
         <source>Status: Ready</source>
         <translation>Статус: Готовий</translation>
     </message>
@@ -236,291 +236,336 @@ p, li { white-space: pre-wrap; }
         <translation>Налаштування %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="223"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="226"/>
         <source>General</source>
         <translation>Загальні</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="229"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="232"/>
         <source>Wine settings</source>
         <translation>Параметри Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="253"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="858"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="256"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="861"/>
         <source>Bin:</source>
         <translation>Вик. файл:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="297"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="300"/>
         <source>Server:</source>
         <translation>Сервер:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="341"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="344"/>
         <source>Loader:</source>
         <translation>Завантажувач:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="385"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="388"/>
         <source>Libs:</source>
         <translation>Бібліотеки:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="414"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="417"/>
         <source>Tray Icon</source>
         <translation>Піктограма у лотку</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="420"/>
         <source>Use tray icon</source>
-        <translation>Використовувати піктограму у лотку</translation>
+        <translation type="obsolete">Використовувати піктограму у лотку</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="447"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="450"/>
         <source>System</source>
         <translation>Система</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="453"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="456"/>
         <source>System utils</source>
         <translation>Системні засоби</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="477"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="480"/>
         <source>tar:</source>
         <translation>tar:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="521"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="524"/>
         <source>mount:</source>
         <translation>mount:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="565"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="568"/>
         <source>umount:</source>
         <translation>umount:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="609"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="612"/>
         <source>sudo:</source>
         <translation>sudo:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="653"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="656"/>
         <source>gui sudo:</source>
         <translation>gui sudo:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="697"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="700"/>
         <source>nice:</source>
         <translation>nice:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="741"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="744"/>
         <source>renice:</source>
         <translation>renice:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="785"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="788"/>
         <source>sh:</source>
         <translation>sh:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="828"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="831"/>
         <source>Utils</source>
         <translation>Утиліти</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="834"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="837"/>
         <source>Console</source>
         <translation>Консоль</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="902"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="905"/>
         <source>Args:</source>
         <translation>Параметри:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="918"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="921"/>
         <source>Icoutils</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1323"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1326"/>
         <source>Quick Mount</source>
         <translation>Швидке Монтування</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1329"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1332"/>
         <source>Quick Mount profiles</source>
         <translation>Профілі швидкого монтування</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1335"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1338"/>
         <source>Select active Quick Mount profile.</source>
         <translation>Оберіть активний профіль швидкого монтування.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1354"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1357"/>
         <source>sudo</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1377"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1380"/>
         <source>gui sudo</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1400"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1403"/>
         <source>FuseISO</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1420"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1423"/>
         <source>Embedded FuseISO</source>
         <translation>Вбудованний FuseISO</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1433"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1436"/>
         <source>Quick Mount strings</source>
         <translation>Командні рядки швидкого монтування</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1567"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1564"/>
+        <source>Logging</source>
+        <translation>Журналювання</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1570"/>
+        <source>Logging subsystem:</source>
+        <translation>Підсистема журналювання:</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1576"/>
+        <source>Enable loggin sybsystem.</source>
+        <translation>Увімкнути підсистему журналювання.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1583"/>
+        <source>Clear logs at startup.</source>
+        <translation>Очищати журнали під час старту.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1613"/>
         <source>Run recent program</source>
         <translation>Запуск нещодавних програм</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1573"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1619"/>
         <source>Open Run dialog.</source>
         <translation>Відкривати диалог запуску.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="942"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="945"/>
         <source>wrestool:</source>
         <translation>wrestool:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="986"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="423"/>
+        <source>Use tray icon.</source>
+        <translation>Використовувати піктограму у лотку.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="989"/>
         <source>icotool:</source>
         <translation>icotool:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1029"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1032"/>
         <source>Customize</source>
         <translation>Налаштувати</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1035"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1038"/>
         <source>Language</source>
         <translation>Мова</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1059"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1062"/>
         <source>Language:</source>
         <translation>Мова:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1081"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1084"/>
         <source>Themes</source>
         <translation>Теми</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1101"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1104"/>
         <source>Network</source>
         <translation>Мережа</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1107"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1110"/>
         <source>Proxy settings</source>
         <translation>Параметри проксі</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1131"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1134"/>
         <source>Proxy type:</source>
         <translation>Тип проксі-сервера:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1289"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1292"/>
         <source>Password:</source>
         <translation>Пароль:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1139"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="244"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="399"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="535"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1142"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="270"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="425"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="577"/>
         <source>No Proxy</source>
         <translation>Без проксі</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1144"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1147"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1149"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1152"/>
         <source>Socks v5</source>
         <translation>Socks v5</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1178"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1181"/>
         <source>Host:</source>
         <translation>Вузол:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1216"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1219"/>
         <source>Port:</source>
         <translation>Порт:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1254"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1257"/>
         <source>Username:</source>
         <translation>Користувач:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1561"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1607"/>
         <source>Advanced</source>
         <translation>Додатково</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1457"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1460"/>
         <source>Mount:</source>
         <translation>Монтування:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1492"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1495"/>
         <source>Mount image:</source>
         <translation>Монтування образів КД:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1527"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1530"/>
         <source>Umount:</source>
         <translation>Демонтування:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1605"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1632"/>
+        <source>Default virtual desktop</source>
+        <translation>Типова віртуальна стільниця</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1638"/>
+        <source>Default virtual desktop size will be used for &quot;Icon creation&quot; and &quot;Run&quot; dialogs.</source>
+        <translation>Типовий розмір віртуальної стільниці буде використано для діалогів &quot;Запуску&quot;, та &quot;Додавання нової піктограми&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1663"/>
+        <source>Size:</source>
+        <translation>Розмір:</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1671"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="597"/>
+        <source>No virtual desktop</source>
+        <translation>Немає віртуальної стільниці</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1749"/>
         <source>Help</source>
         <translation>Довідка</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1625"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1769"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1632"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1776"/>
         <source>Ok</source>
         <translation>Гаразд</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="217"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="243"/>
         <source>Open File</source>
         <translation>Відкрити файл</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="219"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="245"/>
         <source>Open Directory</source>
         <translation>Відкрити каталог</translation>
     </message>
@@ -549,61 +594,80 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">:/%1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="401"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="405"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="567"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="570"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="578"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="581"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="427"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="431"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="616"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="619"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="627"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="630"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="401"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="427"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Будь ласка, вкажіть вузол проксі-сервера.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="405"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="431"/>
         <source>Sorry, specify proxy port.</source>
         <translation>Будь ласка, вкажіть порт проксі-сервера.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="567"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="616"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Будь ласка, вкажіть теку %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="570"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="619"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Будь ласка, вкажіть виконуваний файл %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="578"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="627"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation>Вибачте, вказана тека %1 не існує.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="581"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="630"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation>Вибачте, вказаного виконуваного файла %1 не існує.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="671"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="720"/>
         <source>Warning</source>
         <translation>Попередження</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="671"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="720"/>
         <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine було зібрано без підтримки вбудованного FuseIso.&lt;/p&gt;&lt;p&gt;Якщо ви бажаєте додати підтримку вбудованного FuseIso додайте:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO&quot; до аргументів cmake.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1067"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="115"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="433"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1070"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="133"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="476"/>
         <source>System Default</source>
         <translation>Системна локаль</translation>
+    </message>
+</context>
+<context>
+    <name>DataBase</name>
+    <message>
+        <location filename="../core/database/db.cpp" line="32"/>
+        <location filename="../core/database/db.cpp" line="45"/>
+        <source>Critical error</source>
+        <translation>Критична помилка</translation>
+    </message>
+    <message>
+        <location filename="../core/database/db.cpp" line="45"/>
+        <source>Can not open database file: %1/.config/%2/db/generic.dat ; Error is: %3</source>
+        <translation>Не можливо завантажити файл бази даних: %1/.config/%2/db/generic.dat ; Помилка: %3</translation>
+    </message>
+    <message>
+        <location filename="../core/database/db.cpp" line="66"/>
+        <source>No database loaded. Aborting...</source>
+        <translation>Не завантажено жодної бази даних. Виходимо...</translation>
     </message>
 </context>
 <context>
@@ -617,351 +681,359 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>IconListWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="158"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="613"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="731"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="160"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="615"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="733"/>
         <source>Sorry. It seems icon already exists.</source>
         <translation>Вибачте, здається, піктограма з такою назвою вже є.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="158"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="613"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="731"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="160"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="615"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="733"/>
         <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
         <translation>Вибачте. Здаєтся піктограма вже існує.&lt;br&gt;Будь ласка оберіть інше ім&apos;я, або скасуйте дію.</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="177"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="849"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="866"/>
-        <source>%1 successfully mounted.</source>
-        <translation>%1 вдало змонтовано.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="179"/>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="851"/>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="868"/>
+        <source>%1 successfully mounted.</source>
+        <translation>%1 вдало змонтовано.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="181"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="853"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="870"/>
         <source>Fail to mount %1.</source>
         <translation>Не вдалося змонтувати %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="200"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="202"/>
         <source>Prepare to run wine binary...</source>
         <translation>Готуємся до запуску бінарного файлу wine...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="202"/>
         <source>%1 started.</source>
-        <translation>%1 вдало запущено.</translation>
+        <translation type="obsolete">%1 вдало запущено.</translation>
+    </message>
+    <message>
+        <source>%1 fail to start.</source>
+        <translation type="obsolete">Не вдалося запустити %1.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="204"/>
-        <source>%1 fail to start.</source>
-        <translation>Не вдалося запустити %1.</translation>
+        <source>Try to run &quot;%1&quot;...</source>
+        <translation>Пробуємо запустити &quot;%1&quot;...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="305"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="206"/>
+        <source>&quot;%1&quot; fail to start.</source>
+        <translation>Не вдалося запустити &quot;%1&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="307"/>
         <source>Mount iso...</source>
         <translation>Змонтувати iso...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="310"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="312"/>
         <source>Mount [%1]</source>
         <translation>Змонтувати [%1]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="314"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="829"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="316"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="831"/>
         <source>[none]</source>
         <translation>[немає]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="315"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="317"/>
         <source>No media was set in prefix settings.</source>
         <translation>В конфігурації префікса не вказано пристрій для монтування.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="319"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="321"/>
         <source>Mount media drive.</source>
         <translation>Змонтувати пристрій КД.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="330"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="332"/>
         <source>Mount media image.</source>
         <translation>Змонтувати образ КД.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="338"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="340"/>
         <source>Mount ...</source>
         <translation>Змонтувати...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="340"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="832"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="342"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="834"/>
         <source>Browse...</source>
         <translation>Пошук...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="341"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="343"/>
         <source>Browse for media image.</source>
         <translation>Пошук образу КД.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="359"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="361"/>
         <source>Unmount [%1]</source>
         <translation>Демонтувати [%1]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="360"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="362"/>
         <source>Unmount media.</source>
         <translation>Демонтувати пристрій.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="367"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="369"/>
         <source>Run</source>
         <translatorcomment>Виконати</translatorcomment>
         <translation>Запустити</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="368"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="370"/>
         <source>Run current icon</source>
         <translation>Виконати поточну піктограму</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="374"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="376"/>
         <source>Options</source>
         <translation>Параметри</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="375"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="377"/>
         <source>Modify current icon options</source>
         <translation>Змінити параметри поточної піктограми</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="381"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="496"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="383"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="498"/>
         <source>Cut</source>
         <translation>Вирізати</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="382"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="497"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="384"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="499"/>
         <source>Cut selected icons to buffer</source>
         <translation>Вирізати вибрані піктограми до буфера</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="386"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="502"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="388"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="504"/>
         <source>Copy</source>
         <translation>Копіювати</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="387"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="503"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="389"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="505"/>
         <source>Copy selected icons to buffer</source>
         <translation>Копіювати вибрані піктограми до буфера</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="391"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="508"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="393"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="510"/>
         <source>Paste</source>
         <translation>Вставити</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="392"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="509"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="394"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="511"/>
         <source>Paste selected icons from buffer to selected folder</source>
         <translation>Вставити скопійовані або вирізані піктограми з буфера до поточної теки</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="401"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="403"/>
         <source>Rename</source>
         <translation>Перейменувати</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="402"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="404"/>
         <source>Rename current icon</source>
         <translation>Перейменувати поточну піктограму</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="406"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="518"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="408"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="520"/>
         <source>Delete</source>
         <translation>Вилучити</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="407"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="519"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="409"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="521"/>
         <source>Delete current icon</source>
         <translation>Вилучити поточну піктограму</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="411"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="527"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="413"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="529"/>
         <source>Browser</source>
         <translation>Навігатор</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="413"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="435"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="415"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="437"/>
         <source>Open application directory</source>
         <translation>Відкрити теку програми</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="414"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="416"/>
         <source>Open application directory in system file browser</source>
         <translation>Відкрити теку програми за допомогою системного навігатора</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="418"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="440"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="528"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="544"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="420"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="442"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="530"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="546"/>
         <source>Open prefix directory</source>
         <translation>Відкрити теку префіксу</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="419"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="529"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="421"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="531"/>
         <source>Open prefix directory in system file browser</source>
         <translation>Відкрити теку префіксу за допомогою системного навігатора</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="423"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="445"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="533"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="549"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="425"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="447"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="535"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="551"/>
         <source>Open mount point directory</source>
         <translation>Відкрити точку монтування</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="424"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="534"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="426"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="536"/>
         <source>Open mount point directory in system file browser</source>
         <translation>Відкрити точку монтування за допомогою системного навігатора</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="433"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="543"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="435"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="545"/>
         <source>Wine Browser</source>
         <translation>Навігатор Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="436"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="438"/>
         <source>Open application directory in wine file browser</source>
         <translation>Відкрити теку програми за допомогою навігатора wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="441"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="545"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="443"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="547"/>
         <source>Open prefix directory in wine file browser</source>
         <translation>Відкрити теку префіксу за допомогою навігатора wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="446"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="550"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="448"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="552"/>
         <source>Open mount point directory in wine file browser</source>
         <translation>Відкрити точку монтування за допомогою навігатора wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="455"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="457"/>
         <source>Search in Wine AppDB</source>
         <translation>Шукати по базі AppDB</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="456"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="458"/>
         <source>Search for application name in wine AppDB</source>
         <translation>Шукати по назві програми у базі AppDB</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="467"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="469"/>
         <source>Run...</source>
         <translation>Виконати...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="469"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="786"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="471"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="789"/>
         <source>Browse ...</source>
         <translation>Шукати...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="470"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="472"/>
         <source>Browse for other image</source>
         <translation>Пошук іншого образу КД</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="490"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="492"/>
         <source>New</source>
         <translation>Створити</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="491"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="493"/>
         <source>Create new icon</source>
         <translation>Створити нову піктограму</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="610"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="612"/>
         <source>Enter new icon name</source>
         <translation>Введіть нову назву піктограми</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="610"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="612"/>
         <source>Icon name:</source>
         <translation>Назва піктограми:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="635"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="637"/>
         <source>Delete Icon</source>
         <translation>Вилучити піктограму</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="635"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="637"/>
         <source>Do you want to delete all selected icons?</source>
         <translation>Ви справді бажаєте вилучити всі обрані піктограми?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="830"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="832"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="830"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="832"/>
         <source>No device drive specified in prefix settings.</source>
         <translation>В конфігурації префікса не вказано пристрій для монтування.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="837"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="839"/>
         <source>Open CD Image files</source>
         <translation>Відкрити файл образу КД</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="837"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="839"/>
         <source>CD image files (*.iso *.nrg *.img *.bin *.mdf)</source>
         <translation>Файли КД (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="841"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="843"/>
         <source>Open ISO Image file</source>
         <translation>Відкрити файл образу ISO</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="841"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="843"/>
         <source>iso files (*.iso)</source>
         <translation>Файли ISO (*.iso)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="875"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="877"/>
         <source>Drive successfully umounted.</source>
         <translation>Пристрій вдало демонтовано.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="877"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="879"/>
         <source>Fail to umount drive.</source>
         <translation>Не вдалося демонтувати пристрій.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="904"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="936"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="906"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="948"/>
         <source>Error: &quot;%1&quot; is an embedded wine binary.</source>
         <translation>Вибачте, %1 є вбудованою командою wine.</translation>
     </message>
@@ -970,8 +1042,8 @@ p, li { white-space: pre-wrap; }
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="78"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="79"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="87"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="88"/>
         <source>Icon settings</source>
         <translation>Параметри піктограм</translation>
     </message>
@@ -1017,8 +1089,12 @@ p, li { white-space: pre-wrap; }
         <translation>Опис:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="456"/>
         <source>Virtua desktop</source>
+        <translation type="obsolete">Віртуальна стільниця</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="456"/>
+        <source>Virtual desktop</source>
         <translation>Віртуальна стільниця</translation>
     </message>
     <message>
@@ -1038,29 +1114,29 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="606"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="190"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="535"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="191"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="536"/>
         <source>Native</source>
         <translation>Рідні</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="611"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="192"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="537"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="193"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="538"/>
         <source>Buildin</source>
         <translation>Вбудовані</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="616"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="194"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="539"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="195"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="540"/>
         <source>Native, Buildin</source>
         <translation>Рідні, вбудовані</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="621"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="196"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="541"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="197"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="542"/>
         <source>Buildin, Native</source>
         <translation>Вбудовані, рідні</translation>
     </message>
@@ -1125,8 +1201,8 @@ p, li { white-space: pre-wrap; }
         <translation>Гаразд</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="74"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="75"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="76"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="77"/>
         <source>Adding new icon</source>
         <translation>Додавання нової піктограми</translation>
     </message>
@@ -1143,47 +1219,47 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">:/%1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="285"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="286"/>
         <source>Open Directory</source>
         <translation>Відкрити каталог</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="336"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="337"/>
         <source>Open Exe file</source>
         <translation>Відкрити файл exe</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="339"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="340"/>
         <source>Exe files (*.exe)</source>
         <translation>Файли exe (*.exe)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="373"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="374"/>
         <source>Open image file</source>
         <translation>Відкрити файл зображення</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="381"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="382"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="383"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="384"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="427"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="428"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Експорт піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="427"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="428"/>
         <source>Exporting icon</source>
         <translation>Експорт піктограми</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="509"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="510"/>
         <source>Selected working directory not exists.</source>
         <translation>Вказана робоча тека не існує.</translation>
     </message>
@@ -1192,26 +1268,26 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">%1/</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="451"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="452"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Перетворення піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="451"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="452"/>
         <source>Converting icon</source>
         <translation>Перетворення піктограми</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="504"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="509"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="514"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="521"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="526"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="505"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="510"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="515"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="522"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="527"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="504"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="505"/>
         <source>No program selected.</source>
         <translation>Не обрано жодної програми.</translation>
     </message>
@@ -1220,19 +1296,19 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Вказана робоча тека не існує.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="514"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="515"/>
         <source>No program name specified.</source>
         <translation>Не вказано і&apos;мя програми.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="521"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="526"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="522"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="527"/>
         <source>Sorry, but icon named %1 already exists.</source>
         <translation>Вибачте, але піктограма з назвою %1 вже існує.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="488"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="554"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="555"/>
         <source>No virtual desktop</source>
         <translation>Немає віртуальної стільниці</translation>
     </message>
@@ -1480,21 +1556,79 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>LoggingWidget</name>
+    <message>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="77"/>
+        <source>Clear logs</source>
+        <translation>Очистити журнали</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="78"/>
+        <source>Clear logs database</source>
+        <translation>Очистити журнали</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="82"/>
+        <source>Delete log</source>
+        <translation>Видалити запис з журналу</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="83"/>
+        <source>Delete current log</source>
+        <translation>Видалити запис з журналу</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="87"/>
+        <source>Export log</source>
+        <translation>Експортувати запис журналу</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="88"/>
+        <source>Export current log to file</source>
+        <translation>Експортувати запис журналу до файла</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="148"/>
+        <source>Exec string:</source>
+        <translation>Строка запуску:</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="151"/>
+        <source>Exit code:</source>
+        <translation>Код завершення:</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="154"/>
+        <source>App STDOUT and STDERR output:</source>
+        <translation>Вивід STDOUT та STDERR:</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="246"/>
+        <source>Select file to save</source>
+        <translation>Виберіть файл, який слід зберегти</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="246"/>
+        <source>Log Files (*.log)</source>
+        <translation>Файли журналів (*.log)</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="30"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="409"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="432"/>
         <source>Programs</source>
         <translation>Програми</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="274"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="433"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="286"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="456"/>
         <source>Prefixes</source>
         <translation>Префікси</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="235"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="265"/>
         <source>Default</source>
         <translation>Типові</translation>
     </message>
@@ -1528,8 +1662,8 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Загалом процесів:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="161"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="425"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="173"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="448"/>
         <source>Setup</source>
         <translation>Налаштувати</translation>
     </message>
@@ -1546,57 +1680,57 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Керувати</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="465"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="488"/>
         <source>First steps</source>
         <translation>Перші кроки</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="470"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="493"/>
         <source>Short FAQ</source>
         <translation>Короткий FAQ</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="475"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="498"/>
         <source>Index</source>
         <translation>Індекс</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="484"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="507"/>
         <source>Website</source>
         <translation>Веб сторінка</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="493"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="516"/>
         <source>Donate</source>
         <translation>Пожертва</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="502"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="525"/>
         <source>Bugs</source>
         <translation>Помилки</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="449"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="472"/>
         <source>Options</source>
         <translation>Параметри</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="189"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="201"/>
         <source>Base setup</source>
         <translation>Базове налаштування</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="208"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="220"/>
         <source>Create Fake Drive</source>
         <translation>Створити фіктивний диск</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="218"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="230"/>
         <source>Update Fake Drive</source>
         <translation>Оновити фіктивний диск</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="239"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="251"/>
         <source>System Software</source>
         <translation>Програми системи</translation>
     </message>
@@ -1609,12 +1743,12 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Шлях</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="313"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="335"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="324"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="346"/>
         <source>Help</source>
         <translation>Довідка</translation>
     </message>
@@ -1627,21 +1761,21 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Вибачте. Здается піктограма вже існує.&lt;br&gt;Будь ласка оберіть інше ім&apos;я, або відмініть операцію.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="196"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="421"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="226"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="593"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="191"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="193"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="382"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="221"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="223"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="554"/>
         <source>Warning</source>
         <translation>Попередження</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="15"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="42"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="47"/>
         <source>%1 :. Qt4 GUI for Wine v%2</source>
         <translation>%1 : Графічна оболонка на Qt4 для Wine версії %2</translation>
     </message>
@@ -1650,112 +1784,128 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Назва:&lt;br&gt;Опис:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="148"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="417"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="160"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="440"/>
         <source>Process</source>
         <translation>Процес</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="350"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="372"/>
         <source>Tools</source>
         <translation>Інструменти</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="372"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="395"/>
         <source>Ctrl+Z</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="380"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="403"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="388"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="411"/>
         <source>Ctrl+E</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="328"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="350"/>
         <source>Handbook</source>
         <translation>Підручник</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="245"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="257"/>
         <source>WIS scripts support is not emplemented right now. I will be iplemented in future releases. For now You can use wineriks support (see current tab toolbar actions).</source>
         <translation>На жаль, підтримка WIS сценаріїв, ще не доступна. Вона буде доступна у наступних версіях програми. Зарази ві можете скористатися додатком winetrks (дивитеся панель інструментів поточної вкладки).</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="287"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="299"/>
         <source>Wine AppDB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="393"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="312"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="538"/>
+        <source>Logging</source>
+        <translation>Журналювання</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="416"/>
         <source>About Qt</source>
         <translation>Про Qt</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="401"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="424"/>
         <source>Instal wizard</source>
         <translation>Майстер встановлення</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="404"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="427"/>
         <source>Ctrl+X</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="412"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="435"/>
         <source>Ctrl+A</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="420"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="443"/>
         <source>Ctrl+S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="428"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="451"/>
         <source>Ctrl+D</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="436"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="459"/>
         <source>Ctrl+F</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="441"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="464"/>
         <source>Export icons</source>
         <translation>Експортувати піктограми</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="460"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="483"/>
         <source>Ctrl+V</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="507"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="530"/>
         <source>Wine AppDB browser</source>
         <translation>Навігатор по Wine AppDB</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="533"/>
+        <source>Ctrl+B</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="541"/>
+        <source>Ctrl+L</source>
+        <translation></translation>
     </message>
     <message>
         <source>Program: %1&lt;br&gt; Description: %2</source>
         <translation type="obsolete">Програма: %1&lt;br&gt; Опис: %2</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="444"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="467"/>
         <source>Ctrl+C</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="452"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="475"/>
         <source>Ctrl+W</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="457"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="480"/>
         <source>CD image manager</source>
         <translation>Менеджер образів КД</translation>
     </message>
@@ -1776,7 +1926,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Тестувати WIS</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="196"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="226"/>
         <source>&lt;p&gt;You do not set default console binary.&lt;/p&gt;&lt;p&gt;Set it into q4wine option dialog.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ви не обрали консольну програму.&lt;/p&gt;&lt;p&gt;Перейдіть до діалогу опцій q4wine та встановіть її.&lt;/p&gt;</translation>
     </message>
@@ -1801,12 +1951,12 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Змонтувати [%1]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="223"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="253"/>
         <source>Program: %1&lt;br&gt; Args: %2</source>
         <translation>Програма: %1&lt;br&gt; Аргументи: %2</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="224"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="254"/>
         <source>Description: %1</source>
         <translation>Опис: %1</translation>
     </message>
@@ -1847,17 +1997,17 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Загалом процесів: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="382"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="554"/>
         <source>There are other Fake drive installed in %1 prefix directory.&lt;br&gt;&lt;br&gt;Do you wish to REMOVE ALL FILES from prefix folder?</source>
         <translation>Вказана тека префікса %1 вже містить Фіктивний диск.&lt;br&gt;&lt;br&gt;Ви дійсно бажаєте ЗНИЩІТИ ВСІ ФАЙЛИ з теки префіксу?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="388"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="560"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>Знищуємо старий фіктивний диск.&lt;br&gt;Це може зайняти деякий час...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="388"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="560"/>
         <source>Removing old fake drive</source>
         <translation>Знищуємо старий фіктивний диск</translation>
     </message>
@@ -1906,58 +2056,98 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Експорт префікса</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="47"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="52"/>
         <source> Current prefix: </source>
         <translation>Поточний префікс:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="52"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="53"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="57"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="58"/>
         <source>Manage prefixes</source>
         <translation>Керування префіксами</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="59"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="64"/>
         <source>Run winetriks plugin</source>
         <translation>Запуск додатку winetricks</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="60"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="65"/>
         <source>Run winetriks plugin (wine manage utility created by DanKegel)</source>
         <translation>Запуск додатку winetricks (приладдя для налаштування wine створене DanKegel)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="596"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="350"/>
+        <source>Socket file &quot;%1&quot; already exists!</source>
+        <translation>Файл сокету &quot;%1&quot; вже існує!</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="400"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="403"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="416"/>
+        <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
+        <translation>Програму: &quot;%1&quot; вдало запущено для префіксу: &quot;%2&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="413"/>
+        <source>Console started fine for Application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
+        <translation>Консоль вдало запущено для програми: &quot;%1&quot; у префіксу: &quot;%2&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="426"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="428"/>
+        <source>Application: &quot;%1&quot; finished for prefix: &quot;%2&quot;. Exit code is: &quot;%3&quot;.</source>
+        <translation>Програму: &quot;%1&quot; завершено для префіксу: &quot;%2&quot;. Код завершення: &quot;%3&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="437"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="439"/>
+        <source>Can&apos;t start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
+        <translation>Не можу запустити програму: &quot;%1&quot; для префіксу: &quot;%2&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="446"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="448"/>
+        <source>Can&apos;t start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
+        <translation>Не можу запустити консоль для програми: &quot;%1&quot; у префіксу: &quot;%2&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="469"/>
+        <source>Unexpected socket message recived.</source>
+        <translation>Отримано несподіване повідомлення від сокету.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="800"/>
         <source>WIP</source>
         <translation>Незавершений проект</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="596"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="800"/>
         <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
         <translation>Вибачте, майстра встановлення ще немає. Його буде реалізовано у версії 0.110.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="650"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="854"/>
         <source>Open image file</source>
         <translation>Відкрити файл зображення</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="650"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="854"/>
         <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
         <translation>Виконувані файли та бібліотеки Win32 (*.exe *.dll);;Виконувані файли Win32 (*.exe);;Бібліотеки Win32 (*.dll)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="689"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="893"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Експорт піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="689"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="893"/>
         <source>Exporting icon</source>
         <translation>Експорт піктограми</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="752"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="956"/>
         <source>Only one instance of %1 can be runned at same time.</source>
         <translation>Одночасно може бути запущена тільки одна копія %1.</translation>
     </message>
@@ -1966,13 +2156,13 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Виконуваний файл &quot;%1&quot; не існує.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="758"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="962"/>
         <source>Can&apos;t run binary</source>
         <translation>Не можу виконати</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="756"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="758"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="960"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="962"/>
         <source>Binary &quot;%1&quot; do not exists.</source>
         <translation>Виконуваний файл &quot;%1&quot; не існує.</translation>
     </message>
@@ -1981,12 +2171,12 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">%1/</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="715"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="919"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Перетворення піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="715"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="919"/>
         <source>Converting icon</source>
         <translation>Перетворення піктограми</translation>
     </message>
@@ -2023,27 +2213,27 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Встановити пріоритет процесу</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="369"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="392"/>
         <source>Run...</source>
         <translation>Виконати...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="195"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="207"/>
         <source>This is the point where you have to start when creating new empty prefix. You can also create a new or update an old fake Windows drive.</source>
         <translation>Це - початкова точка, з якої Вам потрібно розпочати процес налаштування нового префіксу. Ви також можете тут створити новий, або оновити існуючий фіктивний диск Windows.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="377"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="400"/>
         <source>Quit</source>
         <translation>Вийти</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="385"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="408"/>
         <source>About</source>
         <translation>Про програму</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="193"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="223"/>
         <source>&lt;p&gt;Winetricks officaly NOT supported by q4wine.&lt;/p&gt;&lt;p&gt;There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine офіційно не підтримеє працю з Winetricks.&lt;/p&gt;&lt;p&gt;Було декілька повідомлень що до помилок які вели до помилок в роботі wine.&lt;/p&gt;</translation>
     </message>
@@ -2084,22 +2274,22 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Змонтувати...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="191"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="221"/>
         <source>&lt;p&gt;q4wine was compiled without winetriks support.&lt;/p&gt;&lt;p&gt;If you wish to enable winetriks support add:&lt;/p&gt;&lt;p&gt; &quot;-DWITH_WINETRIKS=ON&quot; to cmake arguments.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine було зібрано без підтримки winetriks.&lt;/p&gt;&lt;p&gt;Якщо ви бажаєте додати підтримку winetriks додайте:&lt;/p&gt;&lt;p&gt; &quot;-DWITH_WINETRIKS=ON&quot; до аргументів cmake.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="228"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="258"/>
         <source>Yes</source>
         <translation>Так</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="230"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="260"/>
         <source>No</source>
         <translation>Ні</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="240"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="270"/>
         <source>Runs in console: %1&lt;br&gt; Desktop size: %2</source>
         <translation>Запуск у терміналі: %1&lt;br&gt; Стільниця: %2</translation>
     </message>
@@ -2124,7 +2314,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Відкрити...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="421"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="593"/>
         <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before update it!</source>
         <translation>Вибачте. Не знайдено конфігурації Фіктивного диску.&lt;br&gt;Створіть Фіктивний диск перед тим, як його оновлювати!</translation>
     </message>
@@ -2620,239 +2810,239 @@ Note: leave it blank for default.</source>
 <context>
     <name>PrefixTreeWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="92"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="94"/>
         <source>Enter new directory name</source>
         <translation>Введіть нову назву теки</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="92"/>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="130"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="94"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="142"/>
         <source>Directory name:</source>
         <translation>Назва теки:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="102"/>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="134"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="104"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="146"/>
         <source>Sorry. It seems directory already exists.</source>
         <translation>Вибачте, здається, тека з такою назвою вже є.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="102"/>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="134"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="104"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="146"/>
         <source>Sorry. It seems directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
         <translation>Вибачте. Здается тека вже існує.&lt;br&gt;Будь ласка оберіть інше ім&apos;я, або скасуйте дію.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="130"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="142"/>
         <source>Enter new name for directory</source>
         <translation>Введіть нову назву теки</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="157"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="169"/>
         <source>Q4Wine</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="157"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="169"/>
         <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
 </source>
         <translation>Ви справді бажаєте вилучити теку з назвою &quot;%1&quot; і всі відповідні піктограми?
 </translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="202"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="214"/>
         <source>Mount iso...</source>
         <translation>Змонтувати iso...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="207"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="219"/>
         <source>Mount [%1]</source>
         <translation>Змонтувати [%1]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="211"/>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="393"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="223"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="404"/>
         <source>[none]</source>
         <translation>[немає]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="212"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="224"/>
         <source>No media was set in prefix settings.</source>
         <translation>В конфігурації префікса не вказано пристрій для монтування.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="216"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="228"/>
         <source>Mount media drive.</source>
         <translation>Змонтувати пристрій КД.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="227"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="239"/>
         <source>Mount media image.</source>
         <translation>Змонтувати образ КД.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="235"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="247"/>
         <source>Mount ...</source>
         <translation>Змонтувати...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="237"/>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="396"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="249"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="407"/>
         <source>Browse...</source>
         <translation>Шукати...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="238"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="250"/>
         <source>Browse for media image.</source>
         <translation>Пошук образу КД.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="256"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="268"/>
         <source>Unmount [%1]</source>
         <translation>Демонтувати [%1]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="257"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="269"/>
         <source>Unmount media.</source>
         <translation>Демонтувати пристрій.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="264"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="276"/>
         <source>Run...</source>
         <translation>Виконати...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="266"/>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="350"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="278"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="362"/>
         <source>Browse ...</source>
         <translation>Пошук...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="267"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="279"/>
         <source>Browse for other image</source>
         <translation>Пошук іншого образу</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="287"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="299"/>
         <source>New</source>
         <translation>Створити</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="288"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="300"/>
         <source>Create new directory</source>
         <translation>Створити нову теку</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="298"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="310"/>
         <source>Rename</source>
         <translation>Перейменувати</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="299"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="311"/>
         <source>Rename current directory</source>
         <translation>Перейменувати поточну теку</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="305"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="317"/>
         <source>Delete</source>
         <translation>Вилучити</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="306"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="318"/>
         <source>Delete current directory</source>
         <translation>Вилучити поточну теку</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="311"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="323"/>
         <source>Browser</source>
         <translation>Навігатор</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="312"/>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="328"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="324"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="340"/>
         <source>Open prefix directory</source>
         <translation>Відкрити теку префіксу</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="313"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="325"/>
         <source>Open prefix directory in system file browser</source>
         <translation>Відкрити теку префіксу за допомогою системного навігатора</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="317"/>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="333"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="329"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="345"/>
         <source>Open mount point directory</source>
         <translation>Відкрити точку монтування</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="318"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="330"/>
         <source>Open mount point directory in system file browser</source>
         <translation>Відкрити точку монтування за допомогою системного навігатора</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="327"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="339"/>
         <source>Wine Browser</source>
         <translation>Навігатор Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="329"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="341"/>
         <source>Open prefix directory in wine file browser</source>
         <translation>Відкрити теку префіксу за допомогою навігатора wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="334"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="346"/>
         <source>Open mount point directory in wine file browser</source>
         <translation>Відкрити точку монтування за допомогою навігатора wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="394"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="405"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="394"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="405"/>
         <source>No device drive specified in prefix settings.</source>
         <translation>В конфігурації префікса не вказано пристрій для монтування.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="401"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="412"/>
         <source>Open CD Image files</source>
         <translation>Відкрити файл образу КД</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="401"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="412"/>
         <source>CD image files (*.iso *.nrg *.img *.bin *.mdf)</source>
         <translation>Файли КД (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="405"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="416"/>
         <source>Open ISO Image file</source>
         <translation>Відкрити файл образу ISO</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="405"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="416"/>
         <source>iso files (*.iso)</source>
         <translation>Файли ISO (*.iso)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="413"/>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="430"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="424"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="441"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 вдало змонтовано.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="415"/>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="432"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="426"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="443"/>
         <source>Fail to mount %1.</source>
         <translation>Не вдалося змонтувати %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="439"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="450"/>
         <source>Drive successfully umounted.</source>
         <translation>Пристрій вдало демонтовано.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="441"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="452"/>
         <source>Fail to umount drive.</source>
         <translation>Не вдалося демонтувати пристрій.</translation>
     </message>
@@ -2967,85 +3157,64 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Не вдалося демонтувати пристрій.</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="143"/>
         <source>&lt;p&gt;It seems q4wine can not run kvm_openfiles.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Схоже, що q4wine не може виконати команду kvm_openfiles.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;Схоже, що q4wine не може виконати команду kvm_openfiles.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="152"/>
         <source>&lt;p&gt;It seems q4wine can not run kvm_getprocs.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Схоже, що q4wine не може виконати команду kvm_getprocs.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;Схоже, що q4wine не може виконати команду kvm_getprocs.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="226"/>
         <source>&lt;p&gt;Error while loading application settings by key: &apos;%1&apos;. File or path not exists: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Please, go to %3 options dialog and set it.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Помилка при завантажені налаштувань за ключем: &apos;%1&apos;. Файл або шлях не існує: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Будь ласка, встановіть вірний параметер у налаштуваннях %3.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;Помилка при завантажені налаштувань за ключем: &apos;%1&apos;. Файл або шлях не існує: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Будь ласка, встановіть вірний параметер у налаштуваннях %3.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="405"/>
         <source>Buildtime flags are:</source>
-        <translation>Параметри компіляції:</translation>
+        <translation type="obsolete">Параметри компіляції:</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="489"/>
         <source>Can&apos;t find or execute &apos;%1&apos; binary. Make shure this binary is available by search PATH variable and see also INSTALL file for application depends.</source>
-        <translation>Не можу знайти або виконати програму &apos;%1&apos;. Впевнитесь, чи доступна ця програма за змінною PATH, та перегляньте INSTALL файл щоб дізнатися про додаткові залежності.</translation>
+        <translation type="obsolete">Не можу знайти або виконати програму &apos;%1&apos;. Впевнитесь, чи доступна ця програма за змінною PATH, та перегляньте INSTALL файл щоб дізнатися про додаткові залежності.</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="830"/>
         <source>Running wine binary</source>
-        <translation>Запуск програми wine</translation>
+        <translation type="obsolete">Запуск програми wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="830"/>
         <source>Please wait...</source>
-        <translation>Зачекайте...</translation>
+        <translation type="obsolete">Зачекайте...</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="901"/>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="989"/>
         <source>It seems no mount point was set in prefix options.&lt;br&gt;You might need to set it manualy.</source>
-        <translation>Здається, у параметрах префіксу не було вказано точки монтування.&lt;br&gt;Вам слід вказати її вручну.</translation>
+        <translation type="obsolete">Здається, у параметрах префіксу не було вказано точки монтування.&lt;br&gt;Вам слід вказати її вручну.</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="976"/>
         <source>Mounting %1 into %2</source>
-        <translation>Монтуємо %1 до %2</translation>
+        <translation type="obsolete">Монтуємо %1 до %2</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="976"/>
         <source>Mounting...</source>
-        <translation>Монтування...</translation>
+        <translation type="obsolete">Монтування...</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="1013"/>
         <source>Umounting...</source>
-        <translation>Демонтування...</translation>
+        <translation type="obsolete">Демонтування...</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="1013"/>
         <source>Umounting point: %1</source>
-        <translation>Демонтуемо %1</translation>
+        <translation type="obsolete">Демонтуемо %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="1083"/>
         <source>It seems the process crashed. STDERR log: %1</source>
-        <translation>Здається процес завершився невдало. STDERR зневадження: %1</translation>
+        <translation type="obsolete">Здається процес завершився невдало. STDERR зневадження: %1</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="129"/>
-        <location filename="../main.cpp" line="146"/>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="1097"/>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="1101"/>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="1117"/>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="1120"/>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation type="obsolete">Помилка</translation>
     </message>
     <message>
-        <location filename="../q4wine-lib/q4wine-lib.cpp" line="1137"/>
         <source>Can&apos;t run: %1</source>
-        <translation>Не можу виконати: %1</translation>
+        <translation type="obsolete">Не можу виконати: %1</translation>
     </message>
     <message>
         <source>Critical error</source>
@@ -3056,8 +3225,8 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Неможливо завантажити SQLITE драйвер. Вам потрібно зібрати qt-sql з підтримкою sqlite</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="289"/>
-        <location filename="../core/database/prefix.cpp" line="350"/>
+        <location filename="../core/database/prefix.cpp" line="266"/>
+        <location filename="../core/database/prefix.cpp" line="327"/>
         <source>&lt;none&gt;</source>
         <translation>&lt;немає&gt;</translation>
     </message>
@@ -3066,18 +3235,18 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Префікса  з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;q4wine-cli -pl&quot; що б отримати список існуючих префіксів.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="188"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="243"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="255"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="286"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="300"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="340"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="390"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="192"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="235"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="248"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="279"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="293"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="335"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="387"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>Не вказано поточний префікс. Вкажіть поточний префікс ключем &quot;-p &lt;prefix_name&gt;&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="193"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="197"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
         <translation>Не вказано поточну піктограму. Вкажіть поточну піктограму за допомогою ключа &quot;-i &lt;icon_name&gt;&quot;.</translation>
     </message>
@@ -3086,52 +3255,52 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Піктограма  з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;q4wine-cli -il&quot; що б отримати список існуючих піктограм.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="213"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="217"/>
         <source>Wine process list</source>
         <translation>Список процессів wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="215"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="219"/>
         <source>Wine process list for &quot;%1&quot; prefix</source>
         <translation>Список процессів wine для префіксу &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="219"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="223"/>
         <source>PID</source>
         <translation>PID</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="219"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="223"/>
         <source>Nice</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="219"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="232"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="248"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="270"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="279"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="165"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="223"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="240"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="262"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="272"/>
         <source>Name</source>
         <translation>Назва</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="219"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="223"/>
         <source>Prefix path</source>
         <translation>Шлях префікса</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="231"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="164"/>
         <source>Prefix list</source>
         <translation>Список префіксів</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="232"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="279"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="165"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="272"/>
         <source>Path</source>
         <translation>Шлях</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="247"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="239"/>
         <source>Prefix &quot;%1&quot; has following dir list</source>
         <translation>Префікс &quot;%1&quot; має наступний список директорій</translation>
     </message>
@@ -3140,17 +3309,17 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Директорії з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;q4wine-cli -dl&quot; що б отримати список існуючих директорій.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="266"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="258"/>
         <source>Prefix &quot;%1&quot; has following icon list</source>
         <translation>Префікс &quot;%1&quot; має наступний список піктограм</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="268"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="260"/>
         <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
         <translation>Префікс &quot;%1&quot; має наступний список піктограм у директорії &quot;%2&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="270"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="262"/>
         <source>Description</source>
         <translation>Опис</translation>
     </message>
@@ -3159,24 +3328,24 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">q4wine має наступні образи КД занесені до бази данних</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="290"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="282"/>
         <source>Killing prefix &quot;%1&quot; wineserver.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="306"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="346"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="370"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="299"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="341"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="367"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>В конфігурації префікса не вказано директорію монтування.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="312"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="306"/>
         <source>No cdrom drive set in prefix configuration.</source>
         <translation>В конфігурації префікса не вказано і&apos;мя пристрою для монтування.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="315"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="309"/>
         <source>Mounting drive &quot;%1&quot; into mount point &quot;%2&quot;.</source>
         <translation>Монтую пристрій &quot;%1&quot; до &quot;%2&quot;.</translation>
     </message>
@@ -3185,34 +3354,34 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">КД образ з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;q4wine-cli -сl&quot; що б отримати список існуючих образів КД.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="350"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="345"/>
         <source>Umounting mount point &quot;%1&quot;.</source>
         <translation>Демонтуемо &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="361"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="357"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Списк змонтованих носіїв для усіх префіксів</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="362"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="358"/>
         <source>Prefix</source>
         <translation>Префікс</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="362"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="375"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="358"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="372"/>
         <source>Mount point</source>
         <translation>Точка монтування</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="362"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="375"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="358"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="372"/>
         <source>Media</source>
         <translation>Пристрій</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="374"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="371"/>
         <source>Mounted media list for prefix &quot;%1&quot;</source>
         <translation>Списк змонтованих носіїв для префіксу &quot;%1&quot;</translation>
     </message>
@@ -3233,14 +3402,12 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Версія застаріла</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="129"/>
         <source>[EE] Unable to create root directory %1.</source>
-        <translation>[EE] Не можу створити кореневу теку %1.</translation>
+        <translation type="obsolete">[EE] Не можу створити кореневу теку %1.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="146"/>
         <source>[EE] Unable to create directory %1.</source>
-        <translation>[EE] Не можу створити теку %1.</translation>
+        <translation type="obsolete">[EE] Не можу створити теку %1.</translation>
     </message>
     <message>
         <source>Only one instance of %1 can be runned at same time.</source>
@@ -3251,14 +3418,16 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Ліцензія GPLv3+: GNU GPL версії 3 або пізніше &lt;http://gnu.org/licenses/gpl.html&gt;.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="166"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="383"/>
+        <location filename="../main.cpp" line="118"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="380"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="77"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="167"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="384"/>
+        <location filename="../main.cpp" line="119"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="381"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="78"/>
         <source>There is NO WARRANTY, to the extent permitted by law.</source>
         <translation></translation>
     </message>
@@ -3267,17 +3436,17 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Автор: Malakhov Alexey aka John Brezerk.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="178"/>
+        <location filename="../main.cpp" line="130"/>
         <source>  %1 [KEY]...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="184"/>
+        <location filename="../main.cpp" line="136"/>
         <source>minimize %1 main window on startup</source>
         <translation>Згортати головне вікно %1 при запуску</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="179"/>
+        <location filename="../main.cpp" line="131"/>
         <source>GUI utility for wine applications and prefixes management.</source>
         <translation>Графічна оболонка для налаштування Wine.</translation>
     </message>
@@ -3286,88 +3455,93 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Згортати головне вікно q4wine при запуску</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="397"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="394"/>
         <source>File &quot;%1&quot; not exists.</source>
         <translation>Файл &quot;%1&quot; не існує.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="176"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="420"/>
+        <location filename="../main.cpp" line="128"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="416"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="119"/>
         <source>Usage:</source>
         <translation>Використання:</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="424"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="420"/>
         <source>Console utility for wine applications and prefixes management.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="169"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="386"/>
+        <location filename="../main.cpp" line="121"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="383"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="80"/>
         <source>Author: %1.</source>
         <translation>Автор: %1.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="180"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="425"/>
+        <location filename="../main.cpp" line="132"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="421"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="122"/>
         <source>KEYs list:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="181"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="426"/>
+        <location filename="../main.cpp" line="133"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="422"/>
         <source>display this help and exit</source>
         <translation>показати цю довідку та вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="182"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="427"/>
+        <location filename="../main.cpp" line="134"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="423"/>
         <source>output version information and exit</source>
         <translation>показати інформацію про версію та вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="183"/>
+        <location filename="../main.cpp" line="135"/>
         <source>Open q4wine run dialog for windows binary</source>
         <translation>Відкрити діалог запуску для програми wine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="186"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="447"/>
+        <location filename="../main.cpp" line="138"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="443"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="131"/>
         <source>Report %1 bugs to %2</source>
         <translation>Надсилайте помилки та пропозиції щодо %1 на адресу %2</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="428"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="424"/>
         <source>output wine process list for current prefix or for all prefixes and exit </source>
         <translation>показати список процесів wine для поточного префіксу або для усіх префіксів та вийти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="429"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="425"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="123"/>
         <source>sets the current prefix name</source>
         <translation>встановити поточне ім&apos;я префікса</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="430"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="426"/>
         <source>sets the current direcory name</source>
         <translation>встановити поточне ім&apos;я каталогу</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="431"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="427"/>
         <source>sets the current icon name</source>
         <translation>встановити поточне ім&apos;я піктограми</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="432"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="428"/>
         <source>sets the cd iamge name</source>
         <translation>встановити поточне ім&apos;я образу КД</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="433"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="429"/>
         <source>sets the path to windows binary for execute with current prefix settings</source>
         <translation>встановити шлях до виконуваного файла windows який буде виконано з налаштуваннями поточного префіксу</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="445"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="441"/>
         <source> -1 if serious troubles</source>
         <translation></translation>
     </message>
@@ -3376,98 +3550,99 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Домашня сторінка q4wine: &lt;%1&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="110"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="90"/>
         <source>Prefix named &quot;%1&quot; not exists. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>Префікса  з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;%2-cli -pl&quot; що б отримати список існуючих префіксів.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="198"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="202"/>
         <source>Icon named &quot;%1&quot; not exists.  Run &quot;%2-cli -il&quot; for icon list.</source>
         <translation>Піктограма  з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;%2-cli -il&quot; що б отримати список існуючих піктограм.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="260"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="253"/>
         <source>Dir named &quot;%1&quot; not exists. Run &quot;%2-cli -dl&quot; for dir list.</source>
         <translation>Директорії з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;%2-cli -dl&quot; що б отримати список існуючих директорій.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="278"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="271"/>
         <source>%1 has following CD images in database</source>
         <translation>%1 має наступні образи КД занесені до бази данних</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="325"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="319"/>
         <source>No CD iamge &quot;%1&quot; exists. Run &quot;%2-cli -cl&quot; for CD image list.</source>
         <translation>КД образ з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;%2-cli -сl&quot; що б отримати список існуючих образів КД.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="421"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="417"/>
         <source>  %1-cli [KEY]...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="422"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="418"/>
         <source>  %1-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="423"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="419"/>
         <source>  %1-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [args]</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="434"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="430"/>
         <source>sends -9 term signal to current prefix precess or for all prefixes processes</source>
         <translation>надіслати -9 term сигнал поточному процесу, або процесам поточного префіксу</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="435"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="431"/>
         <source>output all exesting prefixes names and exit</source>
         <translation>показати список префіксів та вийти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="436"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="432"/>
         <source>output all exesting dir names for current prefix and exit</source>
         <translation>показати список директорій для поточного префіксіу та вийти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="437"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="433"/>
         <source>output all exesting icon names for current prefix/directory and exit</source>
         <translation>показати список піктограм для поточного префікса/директорія та вийти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="438"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="434"/>
         <source>output all cd images list and exit</source>
         <translation>показати список образів КД та вийти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="439"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="435"/>
         <source>output all mounted media for current prefix or all prefixes and exit</source>
         <translation>показати список змонтованих пристроїв для поточного префіксу або усіх префіксів</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="440"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="436"/>
         <source>mount an cd iamage or drive for current prefix and exit</source>
         <translation>змонтовати образ КД або пристрій для поточного префіксу та вийти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="441"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="437"/>
         <source>umount an cd iamage or drive for current prefix and exit</source>
         <translation>демонтовати образ КД або пристрій для поточного префіксу та вийти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="443"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="439"/>
         <source>Exit status:</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="444"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="440"/>
         <source>  0 if OK,</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="187"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="448"/>
+        <location filename="../main.cpp" line="139"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="444"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="132"/>
         <source>%1 homepage: &lt;%2&gt;</source>
         <translation>%1 сторінка q4wine: &lt;%2&gt;</translation>
     </message>
@@ -3476,10 +3651,55 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Надсилайте помилки та пропозиції щодо q4wine на адресу brezerk@gmail.com</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="188"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="449"/>
+        <location filename="../main.cpp" line="140"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="445"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="133"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="120"/>
+        <source>  %1-helper [KEYs]...</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="124"/>
+        <source>sets WINEDEBUG variable</source>
+        <translation>встановлює змінну WINEDEBUG</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="121"/>
+        <source>Console utility for q4wine which helps to handle wine application exit status and it&apos;s stdout\stderr output logging.</source>
+        <translation>Консольна програма для q4wine що допомагає отримувати код завершення програми wine та заносити її зневадження до журналу.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="125"/>
+        <source>run with output in console</source>
+        <translation>виконати з зневадженням до консолі</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="126"/>
+        <source>sets DISPLAY variable</source>
+        <translation>встановлює змінну DISPLAY</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="127"/>
+        <source>sets program binary</source>
+        <translation>встановлює виконуваний файл програми</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="128"/>
+        <source>sets program args</source>
+        <translation>встановлює аргументи програми</translation>
+    </message>
+    <message>
+        <source>setsprogram args</source>
+        <translation type="obsolete">встановлює аргументи програми</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="129"/>
+        <source>sets WINEDLLOVERRIDES variable</source>
+        <translation>встановлює змінну WINEDLLOVERRIDES</translation>
     </message>
 </context>
 <context>
@@ -3543,29 +3763,29 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="538"/>
-        <location filename="../q4wine-gui/run.cpp" line="94"/>
-        <location filename="../q4wine-gui/run.cpp" line="157"/>
+        <location filename="../q4wine-gui/run.cpp" line="101"/>
+        <location filename="../q4wine-gui/run.cpp" line="164"/>
         <source>Native</source>
         <translation>Рідні</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="543"/>
-        <location filename="../q4wine-gui/run.cpp" line="96"/>
-        <location filename="../q4wine-gui/run.cpp" line="159"/>
+        <location filename="../q4wine-gui/run.cpp" line="103"/>
+        <location filename="../q4wine-gui/run.cpp" line="166"/>
         <source>Buildin</source>
         <translation>Вбудовані</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="548"/>
-        <location filename="../q4wine-gui/run.cpp" line="98"/>
-        <location filename="../q4wine-gui/run.cpp" line="161"/>
+        <location filename="../q4wine-gui/run.cpp" line="105"/>
+        <location filename="../q4wine-gui/run.cpp" line="168"/>
         <source>Native, Buildin</source>
         <translation>Рідні, вбудовані</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="553"/>
-        <location filename="../q4wine-gui/run.cpp" line="100"/>
-        <location filename="../q4wine-gui/run.cpp" line="163"/>
+        <location filename="../q4wine-gui/run.cpp" line="107"/>
+        <location filename="../q4wine-gui/run.cpp" line="170"/>
         <source>Buildin, Native</source>
         <translation>Вбудовані, рідні</translation>
     </message>
@@ -3652,18 +3872,18 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="420"/>
-        <location filename="../q4wine-gui/run.cpp" line="182"/>
+        <location filename="../q4wine-gui/run.cpp" line="189"/>
         <source>No virtual desktop</source>
         <translation>Немає віртуальної стільниці</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/run.cpp" line="145"/>
-        <location filename="../q4wine-gui/run.cpp" line="150"/>
+        <location filename="../q4wine-gui/run.cpp" line="152"/>
+        <location filename="../q4wine-gui/run.cpp" line="157"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/run.cpp" line="145"/>
+        <location filename="../q4wine-gui/run.cpp" line="152"/>
         <source>No program name specified.</source>
         <translation>Не вказано і&apos;мя програми.</translation>
     </message>
@@ -3672,22 +3892,22 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Вказана робоча тека не існує.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/run.cpp" line="150"/>
+        <location filename="../q4wine-gui/run.cpp" line="157"/>
         <source>Selected working directory not exists.</source>
         <translation>Вказана робоча тека не існує.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/run.cpp" line="313"/>
+        <location filename="../q4wine-gui/run.cpp" line="315"/>
         <source>Open Exe file</source>
         <translation>Відкрити файл exe</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/run.cpp" line="316"/>
+        <location filename="../q4wine-gui/run.cpp" line="318"/>
         <source>Exe files (*.exe)</source>
         <translation>Файли exe (*.exe)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/run.cpp" line="365"/>
+        <location filename="../q4wine-gui/run.cpp" line="367"/>
         <source>Open Directory</source>
         <translation>Відкрити каталог</translation>
     </message>
@@ -4224,10 +4444,10 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="3934"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1571"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1577"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1620"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1714"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1590"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1596"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1639"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1733"/>
         <source>Next &gt;</source>
         <translation>Вперед &gt;</translation>
     </message>
@@ -4243,7 +4463,7 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="159"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1594"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1613"/>
         <source>&lt;b&gt;Prefix creation wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер створення нового префікса&lt;/b&gt;</translation>
     </message>
@@ -4252,7 +4472,7 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
         <location filename="../q4wine-gui/wizard.cpp" line="178"/>
         <location filename="../q4wine-gui/wizard.cpp" line="254"/>
         <location filename="../q4wine-gui/wizard.cpp" line="472"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1526"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1545"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation>&lt;b&gt;Крок %1 з %2&lt;/b&gt;</translation>
     </message>
@@ -4272,29 +4492,29 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
         <location filename="../q4wine-gui/wizard.cpp" line="656"/>
         <location filename="../q4wine-gui/wizard.cpp" line="716"/>
         <location filename="../q4wine-gui/wizard.cpp" line="720"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="850"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="854"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="860"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="864"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="870"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="874"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="894"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1869"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="851"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="855"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="861"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="865"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="871"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="875"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="895"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1888"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="864"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="865"/>
         <source>Select prefix directory first.</source>
         <translation>Спочатку оберіть каталог префікса.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="860"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="861"/>
         <source>Sorry, prefix path is wrong! Directory not exists.</source>
         <translation>Вибачте, ви вказали неправильний шлях префікса. Такого шляху не існує.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="894"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="895"/>
         <source>Error in string:
 
 %1
@@ -4319,14 +4539,14 @@ See help for details.</source>
 Скористайтесь допомогою для роз&apos;яснення.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1595"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1614"/>
         <source>&lt;p&gt;Welcome to prefix creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful Wine prefix creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра створення префікса для Wine.&lt;/p&gt;&lt;p&gt;Цей майстер допоможе вам виконати усі кроки, необхідні для успішного створення префікса.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра, або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутись до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1584"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1657"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1721"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1603"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1676"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1740"/>
         <source>Finish</source>
         <translation>Завершити</translation>
     </message>
@@ -4336,17 +4556,17 @@ See help for details.</source>
         <translation>Створити фіктивний диск wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1625"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1644"/>
         <source>&lt;p&gt;Please check parameters listed below before clicking &lt;b&gt;Next&lt;/b&gt;:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Prefix name:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Prefix path:&lt;/b&gt; %2&lt;/p&gt;</source>
         <translation>&lt;p&gt;Будь ласка, перед тим, як натиснути кнопку &lt;b&gt;Далі&lt;/b&gt; перевірте параметри:&lt;/p&gt;&lt;p&gt;&lt;b&gt;Назва префікса:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Шлях префікса:&lt;/b&gt; %2&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="850"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="851"/>
         <source>Enter prefix name first.</source>
         <translation>Спочатку введіть назву префікса.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="854"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="855"/>
         <source>Sorry. There is other prefix with same name.</source>
         <translation>Вибачте, але префікс з такою назвою вже існує.</translation>
     </message>
@@ -4387,8 +4607,8 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="747"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="869"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="873"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="870"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="874"/>
         <source>&lt;none&gt;</source>
         <translation>&lt;немає&gt;</translation>
     </message>
@@ -4503,7 +4723,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1554"/>
         <location filename="../q4wine-gui/wizard.cpp" line="525"/>
         <location filename="../q4wine-gui/wizard.cpp" line="714"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="757"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="758"/>
         <source>No Proxy</source>
         <translation>Без проксі-сервера</translation>
     </message>
@@ -4619,12 +4839,12 @@ Type: </source>
         <translation>Будь ласка, вкажіть порт проксі-сервера.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="870"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="871"/>
         <source>Sorry, specify mount point directory.</source>
         <translation>Будь ласка, вкажіть каталог точки монтування.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="874"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="875"/>
         <source>Sorry, specify source device.</source>
         <translation>Будь ласка, вкажіть пристрій-джерело.</translation>
     </message>
@@ -4653,7 +4873,7 @@ See help for details.</source>
 Скористайтесь допомогою для роз&apos;яснення.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="913"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="914"/>
         <source>Can&apos;t find Wine Drive which is point to:
 &quot;%1&quot;
 
@@ -4664,79 +4884,79 @@ Make shure wine can access %2 temp directory.</source>
 Впевнитесь що wine має допуск до тимчасового каталогу %2.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1134"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1154"/>
         <source>Updateing wine dosdrives</source>
         <translation>Оновлення дисків wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1534"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1553"/>
         <source>&lt;b&gt;First startup wizrd&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер початкового налаштування&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1535"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1554"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра початкового налаштування.&lt;/p&gt;&lt;p&gt;За допомогою цього майстра ви зможете виконати всі кроки з початкового налаштування %1.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутися до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1542"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1561"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Malakhov Alexey aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General ideia comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts witch was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation>&lt;p&gt;Першим автором &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; був Олексій Малахов aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Загальну ідею було взято зі скриптів &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt;, автором яких є Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Програму випущено за умов дотримання &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Коментарі, повідомлення про вади, тощо, надсилайте за адресою [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Пам’ятайте&lt;/span&gt;&lt;/b&gt;: Це програмне забезпечення постачається без будь-яких гарантій. Автор &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;НЕ&lt;/span&gt;&lt;/b&gt; надає жодної підтримки або жодних довідок щодо WineTools, Wine, встановлення програм, Linux або Microsoft Windows.&lt;/p&gt;&lt;p&gt;Якщо вам &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;потрібна допомога&lt;/span&gt;, надішліть своє питання до списку розсилки за адресою &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Якщо вам &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;потрібна підтримка&lt;/span&gt;, придбайте комерційну версію wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1630"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1649"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: %1</source>
         <translation>&lt;p&gt;&lt;b&gt;Виконуваний файл Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1632"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1651"/>
         <source>&lt;p&gt;&lt;b&gt;Wine Bin&lt;/b&gt;: Default</source>
         <translation>&lt;p&gt;&lt;b&gt;Виконуваний файл Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1635"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1654"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Сервер Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1637"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1656"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Server&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Сервер Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1640"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1659"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Завантажувач Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1642"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1661"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Loader&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Завантажувач Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1645"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1664"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: %1</source>
         <translation>&lt;br&gt;&lt;b&gt;Каталог dll Wine&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1647"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1666"/>
         <source>&lt;br&gt;&lt;b&gt;Wine Dll Path&lt;/b&gt;: Default</source>
         <translation>&lt;br&gt;&lt;b&gt;Каталог dll Wine&lt;/b&gt;: Типовий</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1650"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1669"/>
         <source>&lt;p&gt;&lt;b&gt;Quick mount options&lt;/b&gt; &lt;br&gt;&lt;b&gt;Device&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Mount point&lt;/b&gt;: %2&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Параметри швидкого монтування&lt;/b&gt; &lt;br&gt;&lt;b&gt;Пристрій&lt;/b&gt;: %1&lt;br&gt;&lt;b&gt;Точка монтування&lt;/b&gt;: %2&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1797"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1806"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1816"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1825"/>
         <source>Joystick Axes Mappings</source>
         <translation>Маппінг Вісей Джойстика</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1797"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1806"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1816"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1825"/>
         <source>Joystick axes mappings might be defined as:
 &quot;Joystick name&quot;=&quot;axes mapping&quot;
 
@@ -4773,7 +4993,7 @@ See help for details.</source>
 Скористайтесь допомогою для роз&apos;яснення.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1869"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1888"/>
         <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
         <translation>Вибачте, Ви не можете видалити або змінити диск С:&lt;br&gt;Проте, Ви можете змінити його у диалогу налаштування Префіксу.</translation>
     </message>
@@ -4892,7 +5112,7 @@ If you wish to use qt system colors in wine dialogs, select option below:</sourc
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="255"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1667"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1686"/>
         <source>&lt;p&gt;Welcome to fake drive creation wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful fake drive creation.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Ласкаво просимо до майстра створення фіктивного диску.&lt;/p&gt;&lt;p&gt;Цей майстер допоможе вам виконати усі кроки, необхідні для успішного створення фіктивного диску.&lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Далі&lt;/b&gt;, щоб перейти до наступної сторінки майстра, або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt;, щоб повернутись до попередньої сторінки.&lt;/p&gt;</translation>
     </message>
@@ -4922,33 +5142,33 @@ Make shure wine can access q4wine temp directory.</source>
 Впевнитесь що wine має допуск до тимчасового каталогу q4wine.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1553"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1572"/>
         <source>&lt;p&gt;Please enter default wine settings.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Будь ласка, встановіть типові шляхи до засобів wine.&lt;br&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1627"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1646"/>
         <source>&lt;p&gt;Wine fake drive will be created.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Буде створено фіктивний диск wine&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1717"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1736"/>
         <source>&lt;p&gt;All ready for fake drive creation. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create facke drive. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Все готово для створення фіктивного диску. &lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Завершити&lt;/b&gt; щоб створити фіктивний диск. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt; щоб повернутися і змінити обрані параметри.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="913"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="1785"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="914"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1804"/>
         <source>Warning</source>
         <translation>Попередження</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1785"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1804"/>
         <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine було зібрано без підтримки вбудованного FuseIso.&lt;/p&gt;&lt;p&gt;Якщо ви бажаєте додати підтримку вбудованного FuseIso додайте:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO&quot; до аргументів cmake.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="1581"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="1600"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Все готово для завершення конфігурації %1. &lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Завершити&lt;/b&gt; щоб закінчити процес налаштування. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt; щоб повернутися і змінити обрані параметри.&lt;/p&gt;</translation>
     </message>
@@ -4984,23 +5204,21 @@ Note: leave it blank if you don&apos;t nead it.</source>
 <context>
     <name>winetricks</name>
     <message>
-        <location filename="../plugins/winetricks.cpp" line="217"/>
+        <location filename="../plugins/winetricks.cpp" line="214"/>
         <source>&lt;p&gt;q4wine can&apos;t locate winetricks at %1 path!&lt;/p&gt;&lt;p&gt;The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Or use &quot;Install winetricks&quot; button.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine не може знайти winetricks за шляхом %1!&lt;/p&gt;&lt;p&gt;Цей скрипт розробляєтся DanKegel та розміщується за адрессою: http://www.kegel.com/wine/winetricks.  Ви можете завантажити його з терміналу:&lt;/p&gt;&lt;p&gt;wget http://www.kegel.com/wine/winetricks&lt;/p&gt;&lt;p&gt;Або використати кнопку &quot;Встановити winetricks&quot;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.cpp" line="111"/>
         <source>Running winetricks...</source>
-        <translation>Запуск Winetricks...</translation>
+        <translation type="obsolete">Запуск Winetricks...</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.cpp" line="111"/>
-        <location filename="../plugins/winetricks.cpp" line="165"/>
+        <location filename="../plugins/winetricks.cpp" line="162"/>
         <source>Plz wait...</source>
         <translation>Зачекайте...</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.cpp" line="165"/>
+        <location filename="../plugins/winetricks.cpp" line="162"/>
         <source>Downloading and installing winetricks...</source>
         <translation>Качаємо та встановлюємо winetricks...</translation>
     </message>
@@ -5010,7 +5228,7 @@ Note: leave it blank if you don&apos;t nead it.</source>
         <translation>Встановлюю Winetricks</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.cpp" line="217"/>
+        <location filename="../plugins/winetricks.cpp" line="214"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>

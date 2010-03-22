@@ -172,7 +172,7 @@ void WineObject::runSys(){
 #ifdef DEBUG
     qDebug()<<run_string;
 #endif
-    stdout.append(tr("Exec string:"));
+    stdout.append("Exec string:");
     stdout.append("\n");
     stdout.append(run_string.trimmed());
     stdout.append("\n");
@@ -200,11 +200,11 @@ void WineObject::runSys(){
 
 
 
-    stdout.append(tr("Exit code:"));
+    stdout.append("Exit code:");
     stdout.append("\n");
     stdout.append(QString("%1").arg(status));
     stdout.append("\n");
-    stdout.append(tr("App STDOUT and STDERR output:"));
+    stdout.append("App STDOUT and STDERR output:");
     stdout.append("\n");
     stdout.append(app_stdout);
 

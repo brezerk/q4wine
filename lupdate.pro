@@ -11,61 +11,63 @@ warning("==============================================")
  
 # Application source code
 
-FORMS += src/plugins/winetricks.ui \
+FORMS += src/q4wine-gui/uis/AppInfoWidget.ui \
     src/q4wine-gui/uis/About.ui \
-    src/q4wine-gui/uis/AppSettings.ui \
-    src/q4wine-gui/uis/IconSettings.ui \
-    src/q4wine-gui/uis/IconsView.ui \
-    src/q4wine-gui/uis/MainWindow.ui \
     src/q4wine-gui/uis/PrefixSettings.ui \
-    src/q4wine-gui/uis/Process.ui \
     src/q4wine-gui/uis/Run.ui \
     src/q4wine-gui/uis/Wizard.ui \
-    src/q4wine-gui/uis/IconSettings.ui \
-    src/q4wine-gui/uis/ImageManager.ui \
-    src/q4wine-gui/uis/WineDriveDialog.ui \
-    src/q4wine-gui/uis/AppInfoWidget.ui \ 
     src/q4wine-gui/uis/AppTestWidget.ui \
-    src/q4wine-gui/uis/CommentWidget.ui
+    src/q4wine-gui/uis/Process.ui \ 
+    src/q4wine-gui/uis/MainWindow.ui \
+    src/q4wine-gui/uis/CommentWidget.ui \
+    src/q4wine-gui/uis/IconSettings.ui \
+    src/q4wine-gui/uis/WineDriveDialog.ui \
+    src/q4wine-gui/uis/IconsView.ui \
+    src/q4wine-gui/uis/AppSettings.ui \
+    src/q4wine-gui/uis/ImageManager.ui \
+    src/plugins/winetricks.ui
 
-SOURCES += src/plugins/winetricks.cpp \
-	src/core/database/last_run_icon.cpp \
-	src/core/database/dir.cpp \
-	src/core/database/prefix.cpp \
-	src/core/database/icon.cpp \
-	src/core/database/db.cpp \
-	src/core/database/image.cpp \
-	src/core/registry.cpp \
+SOURCES += src/core/database/last_run_icon.cpp \
+    src/core/database/dir.cpp \
+    src/core/database/prefix.cpp \
+    src/core/database/icon.cpp \
+    src/core/database/db.cpp \
+    src/core/database/image.cpp \
+    src/core/database/logging.cpp \
     src/core/xmlparser.cpp \
     src/core/httpcore.cpp \
-	src/q4wine-cli/q4wine-cli.cpp \
-	src/q4wine-gui/iconsview.cpp \
-	src/q4wine-gui/process.cpp \
-	src/q4wine-gui/run.cpp \
-	src/q4wine-gui/iconsettings.cpp \
-	src/q4wine-gui/appsettings.cpp \
-	src/q4wine-gui/draglistwidget.cpp \
-	src/q4wine-gui/imagemanager.cpp \
-	src/q4wine-gui/about.cpp \
-	src/q4wine-gui/wizard.cpp \
-	src/q4wine-gui/winedrivedialog.cpp \
-	src/q4wine-gui/mainwindow.cpp \
-	src/q4wine-gui/prefixsettings.cpp \
-    src/q4wine-gui/widgets/iconlistwidget.cpp \
-    src/q4wine-gui/widgets/prefixtreewidget.cpp \
+    src/core/registry.cpp \
+    src/q4wine-helper/q4wine-helper.cpp \
+    src/q4wine-helper/wineobject.cpp \
+    src/q4wine-cli/q4wine-cli.cpp \
+    src/q4wine-gui/iconsview.cpp \
+    src/q4wine-gui/process.cpp \
+    src/q4wine-gui/run.cpp \
+    src/q4wine-gui/iconsettings.cpp \
+    src/q4wine-gui/appsettings.cpp \
+    src/q4wine-gui/imagemanager.cpp \
+    src/q4wine-gui/about.cpp \
+    src/q4wine-gui/wizard.cpp \
+    src/q4wine-gui/winedrivedialog.cpp \
     src/q4wine-gui/widgets/wineprocesswidget.cpp \
-    src/q4wine-gui/widgets/prefixcontrolwidget.cpp \
-    src/q4wine-gui/widgets/drivelistwidgetitem.cpp \
-    src/q4wine-gui/widgets/appdb/appdbwidget.cpp \
-    src/q4wine-gui/widgets/appdb/linkitemwidget.cpp \
-    src/q4wine-gui/widgets/appdb/appdbscrollwidget.cpp \
-    src/q4wine-gui/widgets/appdb/appdbheaderwidget.cpp \
-    src/q4wine-gui/widgets/appdb/appinfowidget.cpp \
-    src/q4wine-gui/widgets/appdb/lineitemwidget.cpp \
     src/q4wine-gui/widgets/appdb/apptestwidget.cpp \
     src/q4wine-gui/widgets/appdb/commentwidget.cpp \
-	src/q4wine-lib/q4wine-lib.cpp \
-	src/main.cpp
+    src/q4wine-gui/widgets/appdb/appdbwidget.cpp \
+    src/q4wine-gui/widgets/appdb/appdbheaderwidget.cpp \
+    src/q4wine-gui/widgets/appdb/appdbscrollwidget.cpp \
+    src/q4wine-gui/widgets/appdb/linkitemwidget.cpp \
+    src/q4wine-gui/widgets/appdb/lineitemwidget.cpp \
+    src/q4wine-gui/widgets/appdb/appinfowidget.cpp \
+    src/q4wine-gui/widgets/prefixcontrolwidget.cpp \
+    src/q4wine-gui/widgets/loggingwidget.cpp \
+    src/q4wine-gui/widgets/prefixtreewidget.cpp \
+    src/q4wine-gui/widgets/drivelistwidgetitem.cpp \
+    src/q4wine-gui/widgets/iconlistwidget.cpp \
+    src/q4wine-gui/mainwindow.cpp \
+    src/q4wine-gui/prefixsettings.cpp \
+    src/q4wine-lib/q4wine-lib.cp \
+    src/main.cpp \
+    src/plugins/winetricks.cpp 
 
 TRANSLATIONS += src/i18n/en_us.ts \
     src/i18n/ru_ru.ts \
