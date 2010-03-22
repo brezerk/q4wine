@@ -351,6 +351,18 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 
 			menu->addMenu(subMenu.release());
 
+            menu->addSeparator();
+
+            entry.reset(new QAction(CoreLib->loadIcon("data/eject.png"), tr("Setup prefix"), this));
+            entry->setStatusTip(tr("Setup prefix fake drive and applications"));
+            connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuSetupPrefix_Click()));
+            menu->addAction(entry.release());
+
+            entry.reset(new QAction(CoreLib->loadIcon("data/configure.png"), tr("Edit prefix settings"), this));
+            entry->setStatusTip(tr("Edit prefix settings"));
+            connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuConfigurePrefix_Click()));
+            menu->addAction(entry.release());
+
 	  menu->exec(QCursor::pos());
 	  return;
 }
@@ -452,6 +464,16 @@ void PrefixTreeWidget::menuUmount_Click(void){
 			emit(changeStatusText(tr("Fail to umount drive.")));
 	  }
 	  return;
+}
+
+void PrefixTreeWidget::menuConfigurePrefix_Click(void){
+    emit (setTabIndex (3));
+    return;
+}
+
+void PrefixTreeWidget::menuSetupPrefix_Click(void){
+    emit (setTabIndex (2));
+    return;
 }
 
 void PrefixTreeWidget::xdgOpenPrefixDir_Click(void){

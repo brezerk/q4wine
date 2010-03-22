@@ -88,11 +88,15 @@ private slots:
 	  void winefileOpenPrefixDir_Click(void);
 	  void winefileOpenMountDir_Click(void);
 
+      void menuSetupPrefix_Click(void);
+      void menuConfigurePrefix_Click(void);
+
 signals:
 	  void showFolderContents(QString, QString);
 	  void changeStatusText(QString);
 	  void prefixIndexChanged(QString);
       void setSearchFocus(void);
+      void setTabIndex (int);
 
 public slots:
 	  void getPrefixes();

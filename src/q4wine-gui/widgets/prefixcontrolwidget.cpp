@@ -44,6 +44,8 @@ PrefixControlWidget::PrefixControlWidget(QWidget *parent) :
 	toolBar->addAction(prefixDelete.get());
 	toolBar->addSeparator ();
 	toolBar->addAction(prefixSettings.get());
+    toolBar->addSeparator ();
+    toolBar->addAction(prefixSetup.get());
 
 	prefixTable.reset(new QTableView(this));
 	connect(prefixTable.get(), SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(customContextMenuRequested(const QPoint &)));
@@ -83,7 +85,8 @@ void PrefixControlWidget::setDefaultFocus(QString prefixName){
 			prefixDelete->setEnabled(true);
 			prefixImport->setEnabled(true);
 			prefixExport->setEnabled(true);
-			prefixSettings->setEnabled(true);
+            prefixSettings->setEnabled(true);
+            prefixSetup->setEnabled(true);
 			break;
 		}
 		i++;
@@ -116,6 +119,11 @@ void PrefixControlWidget::createActions(){
 	connect(prefixSettings.get(), SIGNAL(triggered()), this, SLOT(prefixSettings_Click()));
 	prefixSettings->setEnabled(FALSE);
 
+    prefixSetup.reset(new QAction(CoreLib->loadIcon("data/eject.png"), tr("Setup prefix fake drive"), this));
+    prefixSetup->setStatusTip(tr("Setup prefix fake drive and applications"));
+    connect(prefixSetup.get(), SIGNAL(triggered()), this, SLOT(prefixSetup_Click()));
+    prefixSetup->setEnabled(FALSE);
+
 	menu.reset(new QMenu(this));
 	menu->addAction(prefixAdd.get());
 	menu->addSeparator();
@@ -125,6 +133,8 @@ void PrefixControlWidget::createActions(){
 	menu->addAction(prefixDelete.get());
 	menu->addSeparator();
 	menu->addAction(prefixSettings.get());
+    menu->addSeparator();
+    menu->addAction(prefixSetup.get());
 
 	return;
 }
@@ -135,11 +145,13 @@ void PrefixControlWidget::customContextMenuRequested(const QPoint &pos){
 		prefixImport->setEnabled(true);
 		prefixExport->setEnabled(true);
 		prefixSettings->setEnabled(true);
+        prefixSetup->setEnabled(true);
 	} else {
 		prefixDelete->setEnabled(false);
 		prefixImport->setEnabled(false);
 		prefixExport->setEnabled(false);
 		prefixSettings->setEnabled(false);
+        prefixSetup->setEnabled(false);
 	}
 
 	menu->exec(QCursor::pos());
@@ -152,12 +164,14 @@ void PrefixControlWidget::itemClicked(const QModelIndex &){
 		prefixImport->setEnabled(true);
 		prefixExport->setEnabled(true);
 		prefixSettings->setEnabled(true);
+        prefixSetup->setEnabled(true);
 		emit (prefixIndexChanged(model->index(prefixTable->currentIndex().row(), 0).data().toString()));
 	} else {
 		prefixDelete->setEnabled(false);
 		prefixImport->setEnabled(false);
 		prefixExport->setEnabled(false);
 		prefixSettings->setEnabled(false);
+        prefixSetup->setEnabled(false);
 	}
 
 	return;
@@ -342,32 +356,11 @@ void PrefixControlWidget::prefixExport_Click(){
 		Process exportProcess(args, CoreLib->getSetting("system", "tar").toString(), prefixPath, tr("Exporting %1 prefix.<br>This can take a while...").arg(prefixName), tr("Exporting prefix"));
 		exportProcess.exec();
 	}
-	/*
-	if (!fileName.isEmpty()){
-		QStringList args;
 
-		args << "-cjf";
-		args << fileName;
-
-
-		QString prefix_path = tablePrefix->item(tablePrefix->currentRow(), 1)->text();
-
-		if (prefix_path.isEmpty()){
-			prefix_path.clear();
-			prefix_path.append(HOME_PATH);
-			prefix_path.append("/.wine/");
-		}
-
-		args << "-C";
-		args << prefix_path;
-		args << "./";
-
-		//Creating process dialog
-		Process *exportProcess = new Process(args, TAR_BIN, prefix_path, tr("Exporting %1 prefix.<br>This can take a while...").arg(tablePrefix->item(tablePrefix->currentRow(), 0)->text()), tr("Exporting prefix"));
-
-		exportProcess->show();
-	}
-
-	*/
 	return;
+}
+
+void PrefixControlWidget::prefixSetup_Click(){
+    emit (setTabIndex (2));
+    return;
 }

@@ -79,6 +79,7 @@ private:
 	std::auto_ptr<QAction> prefixSettings;
 	std::auto_ptr<QAction> prefixImport;
 	std::auto_ptr<QAction> prefixExport;
+    std::auto_ptr<QAction> prefixSetup;
 
 	void updateTableModel(void);
 
@@ -96,10 +97,12 @@ private slots:
 	void prefixExport_Click(void);
 	void prefixImport_Click(void);
 	void prefixSettings_Click(void);
+    void prefixSetup_Click(void);
 
 signals:
 	void updateDatabaseConnections();
 	void prefixIndexChanged(QString);
+    void setTabIndex (int);
 };
 
 #endif // PREFIXCONTROLWIDGET_H

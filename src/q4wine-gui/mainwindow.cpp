@@ -103,6 +103,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	connect(this, SIGNAL(setDefaultFocus(QString, QString)), twPrograms.get(), SLOT(setDefaultFocus(QString, QString)));
 	connect(cbPrefixes.get(), SIGNAL(currentIndexChanged(QString)), twPrograms.get(), SLOT(setDefaultFocus(QString)));
 	connect(twPrograms.get(), SIGNAL(prefixIndexChanged(QString)), this, SLOT(setcbPrefixesIndex(QString)));
+    connect(twPrograms.get(), SIGNAL(setTabIndex (int)), tbwGeneral, SLOT(setCurrentIndex (int)));
 
 	std::auto_ptr<WineProcessWidget> procWidget (new WineProcessWidget(tabProcess));
 	connect(this, SIGNAL(stopProcTimer()), procWidget.get(), SLOT(stopTimer()));
@@ -115,6 +116,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	connect(prefixWidget.get(), SIGNAL(updateDatabaseConnections()), this, SLOT(updateDtabaseConnectedItems()));
 	connect(cbPrefixes.get(), SIGNAL(currentIndexChanged(QString)), prefixWidget.get(), SLOT(setDefaultFocus(QString)));
 	connect(prefixWidget.get(), SIGNAL(prefixIndexChanged(QString)), this, SLOT(setcbPrefixesIndex(QString)));
+    connect(prefixWidget.get(), SIGNAL(setTabIndex (int)), tbwGeneral, SLOT(setCurrentIndex (int)));
 
 	std::auto_ptr<QWidget> wid (new QWidget(tabPrograms));
 
