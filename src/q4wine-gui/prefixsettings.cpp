@@ -70,7 +70,6 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
         txtWineServerBin->setText("");
         txtWineBin->setText("");
 	} else {
-
 		cmdGetPrefixPath->installEventFilter(this);
         cmdGetWineBin->installEventFilter(this);
         cmdGetWineServerBin->installEventFilter(this);

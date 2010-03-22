@@ -838,7 +838,7 @@ void Wizard::nextWizardPage(){
 
 			settings.endGroup();
 
-
+            CoreLib->openHelpUrl("05-first-steps.html");
 
 			accept();
 			break;

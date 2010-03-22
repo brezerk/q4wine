@@ -349,9 +349,11 @@ void AppDBWidget::stateChanged (int state){
 		break;
 	case 6:
 		this->appdbHeader->updateFirstLabelText(tr("Status: Closing down connection."));
+        this->setCursor(QCursor(Qt::ArrowCursor));
 		break;
 	case 0:
 		this->appdbHeader->updateFirstLabelText(tr("Status: Not connected."));
+        this->setCursor(QCursor(Qt::ArrowCursor));
 		break;
 	}
 
