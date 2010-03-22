@@ -261,7 +261,7 @@ int main(int argc, char *argv[])
             }
             Qcout<<" "<<qSetFieldWidth(15)<<left<<QObject::tr("Name")<<QObject::tr("Description")<<qSetFieldWidth(0)<<endl;
 
-            for (int i = 0; i < result.size(); ++i) {
+            for (int i = 0; i < list.size(); ++i) {
                 Qcout<<" "<<qSetFieldWidth(15)<<left<<list.at(i)<<db_icon.getByName(_PREFIX, _DIR, list.at(i)).value("desc")<<qSetFieldWidth(0)<<endl;
             }
         }
