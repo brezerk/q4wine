@@ -321,12 +321,12 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 			}
 
 			std::auto_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
-			entry.reset(new QAction(tr("Open prefix directory"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Open prefix directory"), this));
 			entry->setStatusTip(tr("Open prefix directory in system file browser"));
 			connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenPrefixDir_Click()));
 			subMenu->addAction(entry.release());
 
-			entry.reset(new QAction(tr("Open mount point directory"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("data/cdrom_menu.png"), tr("Open mount point directory"), this));
 			entry->setStatusTip(tr("Open mount point directory in system file browser"));
 			if (this->prefixMontPoint.isEmpty())
 				  entry->setEnabled(false);
@@ -337,12 +337,12 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 			menu->addMenu(subMenu.release());
 
 			subMenu.reset(new QMenu(tr("Wine Browser"), this));
-			entry.reset(new QAction(tr("Open prefix directory"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Open prefix directory"), this));
 			entry->setStatusTip(tr("Open prefix directory in wine file browser"));
 			connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenPrefixDir_Click()));
 			subMenu->addAction(entry.release());
 
-			entry.reset(new QAction(tr("Open mount point directory"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("data/cdrom_menu.png"), tr("Open mount point directory"), this));
 			entry->setStatusTip(tr("Open mount point directory in wine file browser"));
 			if (this->prefixMontPoint.isEmpty())
 				  entry->setEnabled(false);
