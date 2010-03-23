@@ -247,7 +247,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 
 		break;
 	case 2:
-		TotalPage=8;
+        TotalPage=10;
 		this->var1=var1;
 		setWindowTitle(tr("Fake drive creation wizard"));
 		lblCaption->setText(tr("<b>Fake drive creation wizard</b>"));
