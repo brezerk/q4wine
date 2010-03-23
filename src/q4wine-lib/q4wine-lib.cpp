@@ -793,6 +793,9 @@ QStringList corelib::getCdromDevices(void) const{
             if (wrkdir.isEmpty())
                 wrkdir = QDir::homePath();
 
+            args.append("--wrkdir");
+            args.append(execObj.wrkdir);
+
 #ifdef DEBUG
             qDebug()<<"[ii] corelib::runWineBinary: "<<binary<<args<<" at: "<<wrkdir;
 #endif
@@ -804,8 +807,6 @@ QStringList corelib::getCdromDevices(void) const{
                 Process proc(args, binary, wrkdir, QObject::tr("Running binary: \"%1\"").arg(execObj.execcmd), QObject::tr("Running binary..."), false);
                 return proc.exec();
             }
-
-
 
             //--prefix %1").arg(prefix_name)
 

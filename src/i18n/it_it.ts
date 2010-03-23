@@ -3542,7 +3542,7 @@ Nota: lasciare in bianco per i default.</translation>
     <message>
         <location filename="../main.cpp" line="128"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="416"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="119"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="123"/>
         <source>Usage:</source>
         <translation>Uso:</translation>
     </message>
@@ -3573,7 +3573,7 @@ Nota: lasciare in bianco per i default.</translation>
     <message>
         <location filename="../main.cpp" line="132"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="421"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="122"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="126"/>
         <source>KEYs list:</source>
         <translation>Lista delle chiavi:</translation>
     </message>
@@ -3597,7 +3597,7 @@ Nota: lasciare in bianco per i default.</translation>
     <message>
         <location filename="../main.cpp" line="138"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="443"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="131"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="136"/>
         <source>Report %1 bugs to %2</source>
         <translation>riporta i bug %1 a %2</translation>
     </message>
@@ -3608,7 +3608,7 @@ Nota: lasciare in bianco per i default.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="425"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="123"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="127"/>
         <source>sets the current prefix name</source>
         <translation>imposta il prefisso corrente</translation>
     </message>
@@ -3734,7 +3734,7 @@ Nota: lasciare in bianco per i default.</translation>
     <message>
         <location filename="../main.cpp" line="139"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="444"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="132"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="137"/>
         <source>%1 homepage: &lt;%2&gt;</source>
         <translation>%1 homepage:&lt;%2&gt;</translation>
     </message>
@@ -3745,47 +3745,52 @@ Nota: lasciare in bianco per i default.</translation>
     <message>
         <location filename="../main.cpp" line="140"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="445"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="133"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="138"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
         <translation>Aiuto generale sull&apos;uso di programmi GNU: &lt;http://www.gnu.org/gethelp/&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="120"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="124"/>
         <source>  %1-helper [KEYs]...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="124"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="128"/>
         <source>sets WINEDEBUG variable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="121"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="125"/>
         <source>Console utility for q4wine which helps to handle wine application exit status and it&apos;s stdout\stderr output logging.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="125"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="129"/>
         <source>run with output in console</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="126"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="130"/>
         <source>sets DISPLAY variable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="127"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="131"/>
         <source>sets program binary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="128"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="132"/>
         <source>sets program args</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="129"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="133"/>
+        <source>sets program working directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="134"/>
         <source>sets WINEDLLOVERRIDES variable</source>
         <translation type="unfinished"></translation>
     </message>

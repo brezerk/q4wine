@@ -90,6 +90,11 @@ void WineObject::setProgramOverride(QString override){
     this->overrideDllList = override;
 }
 
+void WineObject::setProgramWrkdir(QString wrkdir){
+    this->programWrkDir = wrkdir;
+}
+
+
 void WineObject::setUseConsole(int console){
     if (console==1){
         this->useConsole=true;
@@ -146,6 +151,12 @@ void WineObject::runSys(){
             // If we have any conslope parametres, we gona preccess them one by one
             run_string.append(CoreLib->getSetting("console", "args", false).toString());
         }
+
+        run_string.append(" /bin/sh -c \"cd ");
+        run_string.append(this->programWrkDir);
+        run_string.append(" && ");
+    } else {
+        chdir(codec->fromUnicode(this->programWrkDir).data());
     }
 
     //Setting enveropment variables
@@ -168,6 +179,10 @@ void WineObject::runSys(){
 
     run_string.append(QString(" \"%1\" %2 ").arg(this->programBinary).arg(CoreLib->getEscapeString(this->programArgs, false)));
     run_string.append(" 2>&1 ");
+
+     if (this->useConsole){
+         run_string.append(" \"");
+     }
 
 #ifdef DEBUG
     qDebug()<<run_string;
