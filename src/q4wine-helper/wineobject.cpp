@@ -109,19 +109,19 @@ QString WineObject::createEnvString(){
     if (this->prefixName.isEmpty())
         this->setPrefix("Default");
 
-    env.append(QString(" WINEPREFIX=\"%1\" ").arg(this->prefixPath));
-    env.append(QString(" WINESERVER=\"%1\" ").arg(this->prefixServer));
-    env.append(QString(" WINELOADER=\"%1\" ").arg(this->prefixLoader));
-    env.append(QString(" WINEDLLPATH=\"%1\" ").arg(this->prefixDllPath));
+    env.append(QString(" WINEPREFIX=\'%1\' ").arg(this->prefixPath));
+    env.append(QString(" WINESERVER=\'%1\' ").arg(this->prefixServer));
+    env.append(QString(" WINELOADER=\'%1\' ").arg(this->prefixLoader));
+    env.append(QString(" WINEDLLPATH=\'%1\' ").arg(this->prefixDllPath));
 
     if (!this->programDebug.isEmpty())
-        env.append(QString(" WINEDEBUG=\"%1\" ").arg(this->programDebug));
+        env.append(QString(" WINEDEBUG=\'%1\' ").arg(this->programDebug));
 
     if (!this->programDisplay.isEmpty())
-        env.append(QString(" DISPLAY=\"%1\" ").arg(this->programDisplay));
+        env.append(QString(" DISPLAY=\'%1\' ").arg(this->programDisplay));
 
     if (!this->overrideDllList.isEmpty())
-         env.append(QString(" WINEDLLOVERRIDES=\"%1\" ").arg(this->overrideDllList));
+         env.append(QString(" WINEDLLOVERRIDES=\'%1\' ").arg(this->overrideDllList));
 
     return env;
 }
@@ -152,9 +152,9 @@ void WineObject::runSys(){
             run_string.append(CoreLib->getSetting("console", "args", false).toString());
         }
 
-        run_string.append(" /bin/sh -c \"cd ");
+        run_string.append(" /bin/sh -c \"cd \'");
         run_string.append(this->programWrkDir);
-        run_string.append(" && ");
+        run_string.append("\' && ");
     } else {
         chdir(codec->fromUnicode(this->programWrkDir).data());
     }
@@ -177,7 +177,7 @@ void WineObject::runSys(){
         run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(this->programDesktop));
     }
 
-    run_string.append(QString(" \"%1\" %2 ").arg(this->programBinary).arg(CoreLib->getEscapeString(this->programArgs, false)));
+    run_string.append(QString(" \'%1\' %2 ").arg(this->programBinary).arg(CoreLib->getEscapeString(this->programArgs, false)));
     run_string.append(" 2>&1 ");
 
      if (this->useConsole){
