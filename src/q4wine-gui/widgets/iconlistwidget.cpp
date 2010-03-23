@@ -307,7 +307,8 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 	  std::auto_ptr<QMenu> menuMount (new QMenu(tr("Mount iso..."), this));
 
 	  if (this->prefixMontPoint.isEmpty()){
-			menuMount->setEnabled(false);
+            menuMount->setEnabled(false);
+            emit(changeStatusText(tr("No mount point set in prefix configuration.")));
 	  } else {
 			std::auto_ptr<QMenu> submenuMount (new QMenu(tr("Mount [%1]").arg(CoreLib->getMountedImages(this->prefixMontPoint)), this));
 			std::auto_ptr<QAction> entry;

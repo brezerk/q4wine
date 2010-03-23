@@ -132,6 +132,7 @@ void WineProcessWidget::getWineProcesssInfo(void){
 		procKillWine->setEnabled(false);
 		procRenice->setEnabled(false);
 		model->setRowCount(0);
+        lblInfo->setText(tr("Total process count: %1").arg(0));
 		return;
 	}
 
