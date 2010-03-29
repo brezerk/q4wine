@@ -450,27 +450,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1564"/>
         <source>Logging</source>
-        <translation type="unfinished"></translation>
+        <translation>Registro</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1570"/>
         <source>Logging subsystem:</source>
-        <translation type="unfinished"></translation>
+        <translation>Subsistema de registro:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1576"/>
         <source>Enable loggin sybsystem.</source>
-        <translation type="unfinished"></translation>
+        <translation>Activar subsistema de registro.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1583"/>
         <source>Clear logs at startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar registros al iniciar.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1590"/>
         <source>Note: Because of sqlite engine specific, large amount of logging data can reduce q4wine performance. Use it with care. You have been warned.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: Debido al motor de sqlite, grandes cantidades de datos registrados pueden reducir la performance de q4wine. Uselo con cuidado. Ha sido advertido.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1623"/>
@@ -594,12 +594,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1642"/>
         <source>Default virtual desktop</source>
-        <translation type="unfinished"></translation>
+        <translation>Escritorio virtual por defecto</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1648"/>
         <source>Default virtual desktop size will be used for &quot;Icon creation&quot; and &quot;Run&quot; dialogs.</source>
-        <translation type="unfinished"></translation>
+        <translation>El tamaño del escritorio virtual por defecto sera usado por los dialogos &quot;Creación de iconos&quot; y &quot;Ejecutar&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1673"/>
@@ -639,12 +639,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../core/database/db.cpp" line="45"/>
         <source>Can not open database file: %1/.config/%2/db/generic.dat ; Error is: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede abrir el archivo de la base de datos: %1/.config/%2/db/generic.dat ; El error es %3</translation>
     </message>
     <message>
         <location filename="../core/database/db.cpp" line="66"/>
         <source>No database loaded. Aborting...</source>
-        <translation type="unfinished"></translation>
+        <translation>No se cargo una base de datos. Cancelando...</translation>
     </message>
 </context>
 <context>
@@ -701,7 +701,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="204"/>
         <source>Try to run &quot;%1&quot;...</source>
-        <translation type="unfinished"></translation>
+        <translation>Intentando ejecutar &quot;%1&quot;...</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="206"/>
@@ -1509,47 +1509,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="77"/>
         <source>Clear logs</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar registros</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="78"/>
         <source>Clear logs database</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar base de datos de los registros</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="82"/>
         <source>Delete log</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar registro</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="83"/>
         <source>Delete current log</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar registro actual</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="87"/>
         <source>Export log</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar registro</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="88"/>
         <source>Export current log to file</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar registro actual a un archivo</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="148"/>
         <source>Exec string:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cadena de ejecucion:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="151"/>
         <source>Exit code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Codigo de salida:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="154"/>
         <source>App STDOUT and STDERR output:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="246"/>
@@ -1559,7 +1559,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="246"/>
         <source>Log Files (*.log)</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivos de registro (*.log)</translation>
     </message>
 </context>
 <context>
@@ -1735,42 +1735,42 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="352"/>
         <source>Socket file &quot;%1&quot; already exists!</source>
-        <translation type="unfinished"></translation>
+        <translation>El archivo socket: &quot;%1&quot; ya existe!</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="402"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="405"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="418"/>
         <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>La aplicacion: &quot;%1&quot; comenzo exitosamente para el prefijo: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="415"/>
         <source>Console started fine for Application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>La consola se inicio exitosamete para la aplicación: &quot;%1&quot; en el prefijo: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="428"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="430"/>
         <source>Application: &quot;%1&quot; finished for prefix: &quot;%2&quot;. Exit code is: &quot;%3&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>La aplicación: &quot;%1&quot; finalizo para el prefijo: &quot;%2&quot;. El codigo de salida es &quot;%3&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="439"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="441"/>
         <source>Can&apos;t start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede iniciar aplicacion: &quot;%1&quot; para el prefijo &quot;%2&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="448"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="450"/>
         <source>Can&apos;t start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede iniciar aplicación en consola: &quot;%1&quot; en el prefijo: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="471"/>
         <source>Unexpected socket message recived.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se recivio un mensaje de socket no esperado.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="802"/>
@@ -2291,7 +2291,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="312"/>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="538"/>
         <source>Logging</source>
-        <translation type="unfinished"></translation>
+        <translation>Registro</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="416"/>
@@ -2497,12 +2497,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="122"/>
         <source>Setup prefix fake drive</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar el disco virtual del prefijo</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="123"/>
         <source>Setup prefix fake drive and applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar el disco virtual y aplicaciones del prefijo</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="195"/>
@@ -2903,12 +2903,12 @@ Nota: deje en blanco para valores por defecto.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="356"/>
         <source>Setup prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar prefijo</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="357"/>
         <source>Setup prefix fake drive and applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar el disco virtual y aplicaciones del prefijo</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="361"/>
@@ -3586,47 +3586,47 @@ Nota: deje en blanco para valores por defecto.</translation>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="124"/>
         <source>  %1-helper [KEYs]...</source>
-        <translation type="unfinished"></translation>
+        <translation>  %1 ayuda [TECLAs]...</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="125"/>
         <source>Console utility for q4wine which helps to handle wine application exit status and it&apos;s stdout\stderr output logging.</source>
-        <translation type="unfinished"></translation>
+        <translation>Utilidad de consola para q4wine que ayuda a manejar los estados de salida de las aplicaciones de wine para su registro.</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="128"/>
         <source>sets WINEDEBUG variable</source>
-        <translation type="unfinished"></translation>
+        <translation>configura la variable WINEDEBUG</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="129"/>
         <source>run with output in console</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejecutar con salida en la consola</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="130"/>
         <source>sets DISPLAY variable</source>
-        <translation type="unfinished"></translation>
+        <translation>configura la variable DISPLAY</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="131"/>
         <source>sets program binary</source>
-        <translation type="unfinished"></translation>
+        <translation>configura el binario del programa</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="132"/>
         <source>sets program args</source>
-        <translation type="unfinished"></translation>
+        <translation>configura los argumentos del programa</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="133"/>
         <source>sets program working directory</source>
-        <translation type="unfinished"></translation>
+        <translation>configura la carpeta de trabajo del programa</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="134"/>
         <source>sets WINEDLLOVERRIDES variable</source>
-        <translation type="unfinished"></translation>
+        <translation>configura la variable WINEDLLOVERRIDES</translation>
     </message>
 </context>
 <context>
@@ -3977,7 +3977,7 @@ Nota: deje en blanco para valores por defecto.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="111"/>
         <source>Renice</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambiar prioridad (renice)</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
@@ -4037,7 +4037,7 @@ Nota: deje en blanco para valores por defecto.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="263"/>
         <source>It seems process renice end successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>El cambio de prioridad finalizo exitosamente.</translation>
     </message>
 </context>
 <context>
