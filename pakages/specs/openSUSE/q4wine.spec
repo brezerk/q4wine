@@ -1,7 +1,7 @@
 #
-# spec file for package q4wine (Version 0.113)
+# spec file for package q4wine (Version 0.118)
 #
-# Copyright (c) 2009 Kyrill Detinov
+# Copyright (c) 2009, 2010 Kyrill Detinov
 # This file and all modifications and additions to the pristine
 # package are under the same license as the package itself.
 #
@@ -12,7 +12,7 @@
 %define with_icons 1
 
 Name:           q4wine
-Version:	0.113
+Version:	0.118
 Release:	0
 URL:		http://q4wine.brezblock.org.ua/
 License:	GPLv3
@@ -20,7 +20,7 @@ Source:		%{name}-%{version}.tar.bz2
 Group:		System/Emulators/PC
 Summary:	Qt4 GUI for WINE
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-BuildRequires:  libqt4-devel >= 4.4 cmake >= 2.6 update-desktop-files fdupes
+BuildRequires:  libqt4-devel >= 4.4.1 cmake >= 2.6 update-desktop-files fdupes
 Requires:	wine sudo sqlite3 fuseiso
 %if %{with_icons}
 BuildRequires:  icoutils
@@ -37,9 +37,11 @@ General features:
 - Easy creating, deleting and managing prefixes (WINEPREFIX).
 - Easy controlling for wine process.
 - Autostart icons support.
-- Easy cd-image use.
+- Easy CD-image use.
 - You can extract icons from PE files (.exe .dll).
 - Easy backup and restore for managed prefixes.
+- Wine AppDB browser.
+- Logging subsystem.
 - Winetricks support.
 
 Authors:
@@ -67,11 +69,11 @@ popd
 %suse_update_desktop_file -i %{name}
 
 %clean
-[ "%{buildroot}" != "/" ] && %{__rm} -rf %{buildroot}
+[ %{buildroot} != "/" ] && %{__rm} -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc ChangeLog README
+%doc AUTHORS ChangeLog README
 %{_datadir}/%{name}
 %{_bindir}/*
 %{_libdir}/%{name}
@@ -79,19 +81,3 @@ popd
 %{_datadir}/pixmaps/%{name}.png
 
 %changelog
-* Thu Oct 15 2009 Kyrill Detinov <lazy.kent.suse@gmail.com> - 0.113
-- corrected description
-* Fri Oct 05 2009 Kyrill Detinov <lazy.kent.suse@gmail.com> - 0.113
-- update to 0.113
-- added choice to build with/without icoutils support
-- added fuseiso to Requires
-- removed INSTALL from docs
-- corrected Summary
-* Sat Jun 20 2009 Kyrill Detinov <lazy.kent.suse@gmail.com> - 0.112r1
-- change compiling outside of the source tree
-* Sun May 17 2009 Kyrill Detinov <lazy.kent.suse@gmail.com> - 0.112r1
-- compilied with winetricks support
-* Fri May 15 2009 Kyrill Detinov <lazy.kent.suse@gmail.com> - 0.112r1
-- desktop file updated
-* Wed May 06 2009 Kyrill Detinov <lazy.kent.suse@gmail.com> - 0.112r1
-- updated to v0.112r1
