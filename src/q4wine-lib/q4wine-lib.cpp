@@ -1172,9 +1172,9 @@ QStringList corelib::getCdromDevices(void) const{
 
             if (this->getMountedImages(mount_point)=="none"){
 #ifdef DEBUG
-                qDebug()<<"[ii] corelib::umountImage: no moounted images found in mount point: "<<mount_point;
+                qDebug()<<"[ii] corelib::umountImage: no mounted images found in mount point: "<<mount_point;
 #endif
-                return true;
+                return false;
             }
 
 #ifdef DEBUG
