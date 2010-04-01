@@ -608,6 +608,11 @@ QStringList corelib::getCdromDevices(void) const{
 		QString image="";
 		QStringList arguments;
 
+#ifdef DEBUG
+        qDebug()<<"corelib::getMountedImages("<<cdrom_mount<<")";
+#endif
+
+
 #ifdef _OS_LINUX_
 		arguments << "-c" << QString("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
 #endif
@@ -623,6 +628,10 @@ QStringList corelib::getCdromDevices(void) const{
 		}
 
 		image = myProcess.readAll();
+
+#ifdef DEBUG
+        qDebug()<<"corelib::getMountedImages:image"<<image;
+#endif
 
 		if (!image.isEmpty()){
 			image = image.split(" ").first();
@@ -655,6 +664,9 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 						}
 					} else if (image.contains("fuseiso") || image.contains("q4wine-mount")){
+#ifdef DEBUG
+        qDebug()<<"corelib::getMountedImages fuseiso sub"<<image;
+#endif
 						QString filename;
 						filename=QDir::homePath();
 						filename.append("/.mtab.fuseiso");
@@ -663,6 +675,9 @@ QStringList corelib::getCdromDevices(void) const{
 							QTextStream in(&file);
 							while (!in.atEnd()) {
 								QString line = in.readLine();
+#ifdef DEBUG
+        qDebug()<<"corelib::getMountedImages:line"<<line;
+#endif
 								if (line.contains(cdrom_mount))
 									image = line.split(" ").first().split("/").last();
 							}
