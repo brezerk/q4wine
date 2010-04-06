@@ -1,0 +1,116 @@
+.TH "q4wine-cli" "1" "06 Apr 2010" "Q4Wine Manual" "Q4Wine Manual"
+.SH "NAME"
+q4wine-cli \- console utility for wine applications and prefixes management.
+.SH SYNOPSIS
+\fBq4wine-cli\fR [\fBKEY\fR] ...
+.br
+.B q4wine-cli
+-p <prefix_name> [-d <dir_name>] -i <icon_name>
+.br
+.B q4wine-cli
+-p <prefix_name> -b <windows_binary_path> [args]
+.SH "DESCRIPTION"
+q4wine-cli is a pert of Q4Wine progect. It provide console interface to q4wine database and it's core functions.
+.br
+.SH "OPTIONS"
+.RB "A summary of options is included below."
+.TP
+.BR "\-ps, \-\-procs"
+output wine process list for current prefix or for all prefixes and exit
+.TP
+.BR "\-p,  \-\-prefix"
+sets the current prefix name
+.TP
+.BR "\-d,  \-\-dir"
+sets the current direcory name
+.TP
+.BR "\-i,  \-\-icon"
+sets the current icon name
+.TP
+.BR "\-cd, \-\-cdimage"
+sets the cd iamge name
+.TP
+.BR "\-b, \-\-binary"
+sets the path to windows binary for execute with current prefix settings
+.TP
+.BR "\-k,  \-\-kill"
+sends -9 term signal to current prefix precess or for all prefixes processes
+.TP
+.BR "\-pl, \-\-prefixlist"
+output all exesting prefixes names and exit
+.TP
+.BR "\-dl, \-\-dirlist"
+output all exesting dir names for current prefix and exit
+.TP
+.BR "\-il, \-\-iconlist"
+output all exesting icon names for current prefix/directory and exit
+.TP
+.BR "\-cl, \-\-cdlist"
+output all cd images list and exit
+.TP
+.BR "\-ml, \-\-mountlist"
+output all mounted media for current prefix or all prefixes and exit
+.TP
+.BR "\-m,  \-\-mount"
+mount an cd iamage or drive for current prefix and exit
+.TP
+.BR "\-u,  \-\-umount"
+umount an cd iamage or drive for current prefix and exit
+.TP
+.BR "\-h,  \-\-help"
+display help and exit
+.TP
+.BR "\-v,  \-\-version"
+output version information and exit
+.SH "EXIT STATUS"
+\fB0\fR if OK or \fB\-1\fR if serious troubles
+.SH "AUTHORS"
+.SS Thans to all:
+Q4Wine is available thanks to the work of many to all people, who was
+involved in development process, testing, bugreporting, packaging or 
+translation creation. For a full listing of the authors, please see 
+the file AUTHORS in the top-level directory of the source distribution.
+
+.SS Active developers:
+.TP
+Alexey Malakhov (John Brezerk) <\fBbrezerk at gmail.com\fR>
+Project maintainer, main developer, web site designer and developer, 
+project documentation, support e.t.c ;)
+
+.SS Inactive developers:
+.TP
+Pavel Zinin (pashazz) <\fBpzinin at gmail.com\fR>
+Winetriks plugin developer
+
+.TP
+Dmitry Marakasov (amdmi3) <\fBamdmi3 at amdmi3.ru\fR>
+FreeBSD support fixes
+
+.SH "COPYRIGHT"
+Q4Wine can be distributed under the terms of the GPLv3 license. 
+A copy of the license is in the file LICENSE in the top-level 
+directory of the source distribution.
+
+.SH "AVAILABILITY"
+The most recent \fBpublic\fR version of wine can be downloaded from 
+.I http://q4wine.brezblock.org.ua/download/
+
+The latest snapshot of the code may be obtained via GIT. For information on how to do this, please see 
+.I http://q4wine.brezblock.org.ua/download/#git
+
+Q4Wine, development headquarters, is at 
+.I http://q4wine.brezblock.org.ua
+This website contains a great deal of information about Q4Wine.
+
+.SH "BUGS"
+If you find a bug in Q4Wine please report it to
+.B <\fBbrezerk@gmail.com\fR> or directly to Q4Wine 
+bug tracker 
+.I https://sourceforge.net/projects/q4wine/
+.PP
+.SH "SEE ALSO"
+.PP 
+\fBq4wine\fR(1),
+\fBq4wine-helper\fR(1),
+\fBwine\fR(1),
+\fBwineserver\fR(1)\&

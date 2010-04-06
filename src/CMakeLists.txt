@@ -145,6 +145,15 @@ file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
 
 MESSAGE(STATUS "See INSTALL file for details and more info --\n")
 
+find_program( GZIP_BIN NAMES gzip )
+MESSAGE(STATUS "Searching for gzip binary --\n")
+IF (${GZIP_BIN} MATCHES GZIP_BIN-NOTFOUND)
+    MESSAGE(STATUS "    gzip : NOT FOUND!\n")
+    MESSAGE(FATAL_ERROR "Please install gzip package!")
+ELSE (${GZIP_BIN} MATCHES GZIP_BIN-NOTFOUND)
+    MESSAGE(STATUS "    gzip : ${GZIP_BIN}\n")
+ENDIF (${GZIP_BIN} MATCHES GZIP_BIN-NOTFOUND)
+
 find_program( FUSEISO_BIN NAMES fuseiso )
 MESSAGE(STATUS "Searching for fuseiso binary --\n")
 IF (${FUSEISO_BIN} MATCHES FUSEISO_BIN-NOTFOUND)
@@ -227,6 +236,7 @@ add_subdirectory(q4wine-helper)
 add_subdirectory(data)
 add_subdirectory(theme)
 add_subdirectory(icons)
+add_subdirectory(man1)
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     add_subdirectory(freebsd)

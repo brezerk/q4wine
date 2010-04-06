@@ -614,10 +614,10 @@ QStringList corelib::getCdromDevices(void) const{
 
 
 #ifdef _OS_LINUX_
-		arguments << "-c" << QString("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
+        arguments << "-c" << QString("%1 | grep \"%2\"").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
 #endif
 #ifdef _OS_FREEBSD_
-		arguments << "-c" << QString("%1 | grep %2").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
+        arguments << "-c" << QString("%1 | grep \"%2\"").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
 #endif
 
 		QProcess myProcess;
