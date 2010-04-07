@@ -64,8 +64,33 @@ display help and exit
 output version information and exit
 .SH "EXIT STATUS"
 \fB0\fR if OK or \fB\-1\fR if serious troubles
+.SH "FILES"
+.TP
+.I /usr/bin/q4wine
+The
+.B Q4Wine
+main gui program
+.TP
+.I /usr/bin/q4wine-cli
+The
+.B Q4Wine
+command line interface program
+.TP
+.I /usr/bin/q4wine-helper
+The
+.B Q4Wine
+runner helper program
+.TP
+.I /usr/lib/q4wine
+Directory containing 
+.B Q4Wine's
+shared libraries
+.TP
+.I $HOME/.config/q4wine
+Directory containing q4wine config, icons, database and temporary files.
+
 .SH "AUTHORS"
-.SS Thans to all:
+.SS Thanks to all:
 Q4Wine is available thanks to the work of many to all people, who was
 involved in development process, testing, bugreporting, packaging or 
 translation creation. For a full listing of the authors, please see 
@@ -104,7 +129,7 @@ This website contains a great deal of information about Q4Wine.
 
 .SH "BUGS"
 If you find a bug in Q4Wine please report it to
-.B <\fBbrezerk@gmail.com\fR> or directly to Q4Wine 
+<\fBbrezerk at gmail.com\fR> or directly to Q4Wine 
 bug tracker 
 .I https://sourceforge.net/projects/q4wine/
 .PP
