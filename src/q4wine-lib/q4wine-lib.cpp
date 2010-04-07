@@ -623,8 +623,10 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
                 if (line.contains(cdrom_mount)){
                     image = line.split(" ").first();
-                    //.split("/").last();
                     if (image.contains("fuseiso") || image.contains("q4wine-mount")){
+#ifdef DEBUG
+                        qDebug()<<"corelib::fuseiso image found: "<<image;
+#endif
                         filename=QDir::homePath();
                         filename.append("/.mtab.fuseiso");
                         QFile file(filename);
@@ -639,6 +641,9 @@ QStringList corelib::getCdromDevices(void) const{
                                     return line.split(" ").first().split("/").last();
                             }
                         } else {
+#ifdef DEBUG
+                        qDebug()<<"corelib::fuseiso cant read mtab.fuseiso"<<image;
+#endif
                             return QString("cant read %1").arg(filename);
                         }
                     }
