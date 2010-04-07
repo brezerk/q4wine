@@ -612,7 +612,77 @@ QStringList corelib::getCdromDevices(void) const{
         qDebug()<<"corelib::getMountedImages("<<cdrom_mount<<")";
 #endif
 
+        QString filename="/etc/mtab";
+        QFile file(filename);
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+            QTextStream in(&file);
+            while (!in.atEnd()) {
+                QString line = in.readLine();
+#ifdef DEBUG
+                qDebug()<<"corelib::/etc/mtab:line"<<line;
+#endif
+                if (line.contains(cdrom_mount)){
+                    image = line.split(" ").first();
+                    //.split("/").last();
+                    if (image.contains("fuseiso") || image.contains("q4wine-mount")){
+                        filename=QDir::homePath();
+                        filename.append("/.mtab.fuseiso");
+                        QFile file(filename);
+                        if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+                            QTextStream in(&file);
+                            while (!in.atEnd()) {
+                                QString line = in.readLine();
+#ifdef DEBUG
+                                qDebug()<<"corelib::getMountedImages:line"<<line;
+#endif
+                                if (line.contains(cdrom_mount))
+                                    return line.split(" ").first().split("/").last();
+                            }
+                        } else {
+                            return QString("cant read %1").arg(filename);
+                        }
+                    }
 
+#ifdef _OS_LINUX_
+                else if (image.contains("loop")){
+#endif
+#ifdef _OS_FREEBSD_
+                else if (image.contains("md")){
+#endif
+#ifdef _OS_LINUX_
+                        arguments << "losetup" << image;
+#endif
+#ifdef _OS_FREEBSD_
+                        arguments << "mdconfig" <<  "-l" << QString("-u%1").arg(image.mid(7));
+#endif
+                        QProcess myProcess;
+                        myProcess.start(this->getSetting("system", "sudo").toString(), arguments);
+                        if (!myProcess.waitForFinished()){
+                            qDebug() << "Make failed:" << myProcess.errorString();
+                            return QString("can't run %1").arg(arguments.at(0));
+                        } else {
+                            image = myProcess.readAll();
+                            qDebug()<<"www"<<arguments;
+#ifdef _OS_LINUX_
+                            return image.split("/").last().mid(0, image.split("/").last().length()-2);
+#endif
+#ifdef _OS_FREEBSD_
+                            return image.split("/").last().mid(0, image.split("/").last().length()-1);
+#endif
+                        }
+
+                    } else {
+                        return image;
+                    }
+    }
+        }
+            } else {
+                return "cant read /etc/mtab";
+            }
+
+        return "none";
+
+/*
 #ifdef _OS_LINUX_
         arguments << "-c" << QString("%1 | grep \"%2\"").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
 #endif
@@ -691,7 +761,7 @@ QStringList corelib::getCdromDevices(void) const{
 			} else {
 				image = "none";
 			}
-			return image;
+            return image;*/
 		}
 
         bool corelib::runIcon(const QString prefix_name, const QString dir_name, const QString icon_name){
