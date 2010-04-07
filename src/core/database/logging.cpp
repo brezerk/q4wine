@@ -7,7 +7,13 @@ Logging::Logging()
 void Logging::clearLogs(void){
     QSqlQuery query;
     query.exec("DELETE FROM logging");
+    if (!query.exec()){
+        qDebug()<<"clearLogs.SqlError: "<<query.lastError()<<query.executedQuery();
+    }
     query.exec("VACUUM");
+    if (!query.exec()){
+        qDebug()<<"clearLogs.SqlError: "<<query.lastError()<<query.executedQuery();
+    }
     return;
 }
 
