@@ -19,3 +19,4 @@ q4wine-cli
 q4wine
 *.cbp
 *.user
+*.gz

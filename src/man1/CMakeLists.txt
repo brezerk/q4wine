@@ -13,7 +13,7 @@ foreach ( MAN_PAGE ${MAN_PAGES})
     OUTPUT_FILE ${MAN_PAGE}.gz
     COMMAND "${GZIP_BIN}" -9
     INPUT_FILE ${MAN_PAGE}
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/src/man/)
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/src/man1/)
 
     MESSAGE(STATUS "    gzip page ${MAN_PAGE}")
 endforeach()
