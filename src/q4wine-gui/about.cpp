@@ -110,7 +110,7 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Boris Pek" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-								   "Debian GNU/Linux Sid package maintainer" \
+                                   "Debian GNU/Linux and Ubuntu package maintainer" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">tehnick-8@mail.ru</span>" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \

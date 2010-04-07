@@ -7,6 +7,7 @@ Logging::Logging()
 void Logging::clearLogs(void){
     QSqlQuery query;
     query.exec("DELETE FROM logging");
+    query.exec("VACUUM");
     return;
 }
 
