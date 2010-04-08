@@ -18,5 +18,7 @@ foreach ( MAN_PAGE ${MAN_PAGES})
     MESSAGE(STATUS "    gzip page ${MAN_PAGE}")
 endforeach()
 
-install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/man1 DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man FILES_MATCHING PATTERN "*.1.gz")
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/man1 DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/share/man FILES_MATCHING PATTERN "*.1.gz" 
+    PATTERN "CMakeFiles" EXCLUDE)
 
