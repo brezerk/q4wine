@@ -86,7 +86,7 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 							"</p><p style=\"margin: 0px\"> </p>" \
 
 							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-								   "Kyrill Detinov (lazy_kent)" \
+                                   "Kyrill Detinov (Lazy_Kent)" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "openSUSE package maintainer" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \

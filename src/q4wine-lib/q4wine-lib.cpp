@@ -604,7 +604,12 @@ QStringList corelib::getCdromDevices(void) const{
 		return dllList;
 	}
 
-	QString corelib::getMountedImages(const QString cdrom_mount) const{
+    QString corelib::getMountedImages(QString cdrom_mount){
+
+        if (cdrom_mount.right(1)=="/"){
+            cdrom_mount=cdrom_mount.left(cdrom_mount.length()-1);
+        }
+
 		QString image="";
 		QStringList arguments;
 
@@ -1257,7 +1262,7 @@ QStringList corelib::getCdromDevices(void) const{
 			return this->runProcess(args, QObject::tr("Mounting..."),  QObject::tr("Mounting %1 into %2").arg(image_name).arg(mount_point));
 		}
 
-		bool corelib::umountImage(const QString prefix_name) const{
+        bool corelib::umountImage(const QString prefix_name){
             QString mount_point=db_prefix.getMountPoint(prefix_name);
 
             if (this->getMountedImages(mount_point)=="none"){

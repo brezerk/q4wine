@@ -177,7 +177,7 @@ public:
 	 * \param  crom_mount	Mount point path.
 	 * \return Return an list of cdrom devices.
 	 */
-	QString getMountedImages(const QString cdrom_mount) const;
+    QString getMountedImages(QString cdrom_mount);
 
 	/*! \brief This function mount an image or drive to prefix mount point.
 	 *
@@ -192,7 +192,7 @@ public:
 	 * \param  prefix_name	Prefix name.
 	 * \return Return an list of cdrom devices.
 	 */
-	bool umountImage(const QString prefix_name) const;
+    bool umountImage(const QString prefix_name);
 
 	/*! \brief This function kills wineserver.
 	 *

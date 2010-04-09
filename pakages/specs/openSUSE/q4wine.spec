@@ -77,6 +77,7 @@ popd
 %{_datadir}/%{name}
 %{_bindir}/*
 %{_libdir}/%{name}
+%{_mandir}/man1/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
 
