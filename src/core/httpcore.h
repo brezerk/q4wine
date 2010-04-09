@@ -29,6 +29,7 @@
 #include <QHttpRequestHeader>
 #include <QNetworkProxy>
 #include <QMessageBox>
+ #include <QCryptographicHash>
 
 #ifdef DEBUG
 #include <QDebug>
@@ -59,9 +60,18 @@ private:
 	std::auto_ptr<QHttp> http;
 	QString user_agent;
 	QString xmlreply;
+    QString page;
 
 	int getId;
 	bool aborted;
+    bool getCacheFile(QString page);
+
+    //! This is need for libq4wine-core.so import;
+    typedef void *CoreLibPrototype (bool);
+    CoreLibPrototype *CoreLibClassPointer;
+    std::auto_ptr<corelib> CoreLib;
+    QLibrary libq4wine;
+
 };
 
 #endif // HTTPCORE_H

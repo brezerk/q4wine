@@ -436,7 +436,7 @@ bool corelib::isConfigured(){
 
 bool corelib::checkDirs(){
     QStringList subDirs;
-    subDirs << "db" << "icons" << "prefixes" << "tmp" << "theme";
+    subDirs << "db" << "icons" << "prefixes" << "tmp" << "theme" << "tmp/cache";
 
     QTextStream QErr(stderr);
     QDir dir;

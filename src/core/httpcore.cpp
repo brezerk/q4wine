@@ -32,12 +32,6 @@ HttpCore::HttpCore()
 	connect(http.get(), SIGNAL(responseHeaderReceived(const QHttpResponseHeader &)),
 				 this, SLOT(readResponseHeader(const QHttpResponseHeader &)));
 
-	//! This is need for libq4wine-core.so import;
-	typedef void *CoreLibPrototype (bool);
-	CoreLibPrototype *CoreLibClassPointer;
-	std::auto_ptr<corelib> CoreLib;
-	QLibrary libq4wine;
-
 	// Loading libq4wine-core.so
 	libq4wine.setFileName("libq4wine-core");
 
@@ -72,27 +66,71 @@ HttpCore::~HttpCore(){
 
 void HttpCore::getAppDBXMLPage(QString host, short int port, QString page)
 {
-	http->setHost(host, QHttp::ConnectionModeHttp, port);
+    this->page = page;
+    if (!this->getCacheFile(page)){
+
+        http->setHost(host, QHttp::ConnectionModeHttp, port);
 
         QByteArray enc_page = QUrl::toPercentEncoding(page, "/");
 
         QHttpRequestHeader header("POST", enc_page);
-	header.setValue("Host", host);
+        header.setValue("Host", host);
         header.setValue("Port", QString("%1").arg(port));
-	header.setContentType("application/x-www-form-urlencoded");
-	header.setValue("Accept-Encoding", "deflate");
-	header.setValue("User-Agent", user_agent);
+        header.setContentType("application/x-www-form-urlencoded");
+        header.setValue("Accept-Encoding", "deflate");
+        header.setValue("User-Agent", user_agent);
 
 #ifdef DEBUG
         qDebug()<<"[ii] Connecting to"<<host<<":"<<port<<" reuested page is: "<<enc_page;
 #endif
 
-	this->xmlreply="";
-	this->aborted=false;
-	this->getId = http->request(header, "");
+        this->xmlreply="";
+        this->aborted=false;
+        this->getId = http->request(header, "");
+    } else {
+#ifdef DEBUG
+        qDebug()<<"[ii] Cache hit";
+#endif
+        emit(pageReaded());
+    }
+}
+
+bool HttpCore::getCacheFile(QString page){
+    QString cache_file = QDir::homePath();
+    cache_file.append("/.config/");
+    cache_file.append(APP_SHORT_NAME);
+    cache_file.append("/tmp/cache/");
+    cache_file.append(QCryptographicHash::hash(page.toUtf8().constData(), QCryptographicHash::Md4).toHex());
+
+    QFile file(cache_file);
+    if (file.exists()){
+        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+            return false;
+
+        QTextStream in(&file);
+        this->xmlreply.clear();
+        while (!in.atEnd()) {
+            xmlreply.append(in.readLine());
+        }
+        return true;
+    }
+
+    return false;
 }
 
 QString HttpCore::getXMLReply(){
+    QString cache_file = QDir::homePath();
+    cache_file.append("/.config/");
+    cache_file.append(APP_SHORT_NAME);
+    cache_file.append("/tmp/cache/");
+    cache_file.append(QCryptographicHash::hash(this->page.toUtf8().constData(), QCryptographicHash::Md4).toHex());
+
+    QFile file(cache_file);
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text)){
+         QTextStream out(&file);
+         out << xmlreply;
+     }
+    file.close();
 	return xmlreply;
 }
 
