@@ -63,6 +63,8 @@ Installation
        WITH_WINETRIKS            : OFF | ON
        WITH_EMBEDDED_FUSEISO     : OFF | ON
        WITH_WINEAPPDB            : ON  | OFF
+       USE_BZIP2                 : OFF | ON
+       USE_GZIP                  : OFF | ON
 
        DEBUG                     : If ON, then q4wine will write debug messages into STDOUT
                                  : use it in debug or bug report cases;
@@ -72,6 +74,8 @@ Installation
                                  : please DONT USE this, if you have native fuseiso pakage for you
                                  : system avalible! See: http://fuseiso.sourceforge.net/ ;
        WITH_WINEAPPDB            : If ON, then build q4wine with wine appdb browser support;
+       USE_BZIP2                 : Use bzip2 to compress man pages;
+       USE_GZIP                  : use gzip to compress man pages;
 
 6. $ make
 7. $ make install

@@ -40,6 +40,15 @@ IF (NOT DEFINED WITH_WINEAPPDB)
     SET(WITH_WINEAPPDB "ON")
 ENDIF (NOT DEFINED WITH_WINEAPPDB)
 
+IF (NOT DEFINED USE_BZIP2)
+    SET(USE_BZIP2 "OFF")
+ENDIF (NOT DEFINED USE_BZIP2)
+
+IF (NOT DEFINED USE_GZIP)
+    SET(USE_GZIP "OFF")
+ENDIF (NOT DEFINED USE_GZIP)
+
+
 MESSAGE("\n * Utility for management wine applications and prefixes")
 MESSAGE(" * (C) 2008-2010, brezblock core team")
 MESSAGE(" * http://brezblock.org.ua/\n")
@@ -142,17 +151,10 @@ file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
     MESSAGE(STATUS "WITH_WINETRIKS                : ${WITH_WINETRIKS}")
     MESSAGE(STATUS "WITH_EMBEDDED_FUSEISO         : ${WITH_EMBEDDED_FUSEISO}")
     MESSAGE(STATUS "WITH_WINEAPPDB                : ${WITH_WINEAPPDB}")
+    MESSAGE(STATUS "USE_BZIP2                     : ${USE_BZIP2}")
+    MESSAGE(STATUS "USE_GZIP                      : ${USE_GZIP}")
 
 MESSAGE(STATUS "See INSTALL file for details and more info --\n")
-
-find_program( GZIP_BIN NAMES gzip )
-MESSAGE(STATUS "Searching for gzip binary --\n")
-IF (${GZIP_BIN} MATCHES GZIP_BIN-NOTFOUND)
-    MESSAGE(STATUS "    gzip : NOT FOUND!\n")
-    MESSAGE(FATAL_ERROR "Please install gzip package!")
-ELSE (${GZIP_BIN} MATCHES GZIP_BIN-NOTFOUND)
-    MESSAGE(STATUS "    gzip : ${GZIP_BIN}\n")
-ENDIF (${GZIP_BIN} MATCHES GZIP_BIN-NOTFOUND)
 
 find_program( FUSEISO_BIN NAMES fuseiso )
 MESSAGE(STATUS "Searching for fuseiso binary --\n")

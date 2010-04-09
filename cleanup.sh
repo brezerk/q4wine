@@ -7,7 +7,7 @@
 echo "Run: make clean";
 make clean;
 
-names="CMakeCache.txt config.h cmake_install.cmake Makefile install_manifest.txt CMakeLists.txt.user *.cbp *~ *.ccx ui_*.h *.so *.a *.gz"
+names="CMakeCache.txt config.h cmake_install.cmake Makefile install_manifest.txt CMakeLists.txt.user *.cbp *~ *.ccx ui_*.h *.so *.a *.gz *.bz2"
 
 for name in $names
 do
