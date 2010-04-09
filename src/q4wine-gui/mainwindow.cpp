@@ -215,6 +215,18 @@ void MainWindow::clearTmp(){
 	for (int i = 0; i < list.size(); ++i) {
 		QFile(list.at(i).absoluteFilePath()).remove();
 	}
+
+    fileName = QDir::homePath();
+    fileName.append("/.config/");
+    fileName.append(APP_SHORT_NAME);
+    fileName.append("/tmp/cache/");
+
+    dir.setPath(fileName);
+
+    list = dir.entryInfoList();
+    for (int i = 0; i < list.size(); ++i) {
+        QFile(list.at(i).absoluteFilePath()).remove();
+    }
 	return;
 }
 

@@ -617,6 +617,8 @@ QStringList corelib::getCdromDevices(void) const{
         qDebug()<<"corelib::getMountedImages("<<cdrom_mount<<")";
 #endif
 
+
+#ifdef _OS_LINUX_
         QString filename="/etc/mtab";
         QFile file(filename);
         if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
@@ -647,24 +649,12 @@ QStringList corelib::getCdromDevices(void) const{
                             }
                         } else {
 #ifdef DEBUG
-                        qDebug()<<"corelib::fuseiso cant read mtab.fuseiso"<<image;
+                            qDebug()<<"corelib::fuseiso cant read mtab.fuseiso"<<image;
 #endif
                             return QString("cant read %1").arg(filename);
                         }
-                    }
-
-#ifdef _OS_LINUX_
-                else if (image.contains("loop")){
-#endif
-#ifdef _OS_FREEBSD_
-                else if (image.contains("md")){
-#endif
-#ifdef _OS_LINUX_
+                    } else if (image.contains("loop")){
                         arguments << "losetup" << image;
-#endif
-#ifdef _OS_FREEBSD_
-                        arguments << "mdconfig" <<  "-l" << QString("-u%1").arg(image.mid(7));
-#endif
                         QProcess myProcess;
                         myProcess.start(this->getSetting("system", "sudo").toString(), arguments);
                         if (!myProcess.waitForFinished()){
@@ -673,32 +663,22 @@ QStringList corelib::getCdromDevices(void) const{
                         } else {
                             image = myProcess.readAll();
                             qDebug()<<"www"<<arguments;
-#ifdef _OS_LINUX_
                             return image.split("/").last().mid(0, image.split("/").last().length()-2);
-#endif
-#ifdef _OS_FREEBSD_
-                            return image.split("/").last().mid(0, image.split("/").last().length()-1);
-#endif
                         }
 
                     } else {
                         return image;
                     }
-    }
-        }
-            } else {
-                return "cant read /etc/mtab";
+                }
             }
+        } else {
+            return "cant read /etc/mtab";
+        }
 
         return "none";
-
-/*
-#ifdef _OS_LINUX_
-        arguments << "-c" << QString("%1 | grep \"%2\"").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
 #endif
 #ifdef _OS_FREEBSD_
         arguments << "-c" << QString("%1 | grep \"%2\"").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
-#endif
 
 		QProcess myProcess;
 		myProcess.start(this->getSetting("system", "sh").toString(), arguments);
@@ -716,32 +696,17 @@ QStringList corelib::getCdromDevices(void) const{
 		if (!image.isEmpty()){
 			image = image.split(" ").first();
 			if (!image.isEmpty()){
-#ifdef _OS_LINUX_
-				if (image.contains("loop")){
-#endif
-#ifdef _OS_FREEBSD_
 					if (image.contains("md")){
-#endif
 						myProcess.close ();
 						arguments.clear();
-#ifdef _OS_LINUX_
-						arguments << "losetup" << image;
-#endif
-#ifdef _OS_FREEBSD_
 						arguments << "mdconfig" <<  "-l" << QString("-u%1").arg(image.mid(7));
-#endif
 						myProcess.start(this->getSetting("system", "sudo").toString(), arguments);
 						if (!myProcess.waitForFinished()){
 							qDebug() << "Make failed:" << myProcess.errorString();
 							return QString();
 						} else {
 							image = myProcess.readAll();
-#ifdef _OS_LINUX_
-							image = image.split("/").last().mid(0, image.split("/").last().length()-2);
-#endif
-#ifdef _OS_FREEBSD_
 							image = image.split("/").last().mid(0, image.split("/").last().length()-1);
-#endif
 						}
 					} else if (image.contains("fuseiso") || image.contains("q4wine-mount")){
 #ifdef DEBUG
@@ -771,7 +736,9 @@ QStringList corelib::getCdromDevices(void) const{
 			} else {
 				image = "none";
 			}
-            return image;*/
+#endif
+
+            return image;
 		}
 
         bool corelib::runIcon(const QString prefix_name, const QString dir_name, const QString icon_name){
