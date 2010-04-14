@@ -350,9 +350,27 @@ void IconSettings::cmdGetProgram_Click(){
 			QString wrkDir;
 			wrkDir = fileName.left(fileName.length() - list1.last().length());
 			txtWorkDir->setText(wrkDir);
+
+            getProgramIcon(txtName->text().toLower());
 	}
 
 	return;
+}
+
+void IconSettings::getProgramIcon(QString name){
+    QString local_path = QDir::homePath();
+    local_path.append("/.local/share/icons/");
+
+    QDir dir(local_path, QString("*_%1.*").arg(name));
+    dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
+
+    QFileInfoList list = dir.entryInfoList();
+    if (list.size()>0){
+        cmdGetIcon->setIcon (QIcon(list.at(0).filePath()));
+    } else {
+        cmdGetIcon->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
+    }
+    return;
 }
 
 void IconSettings::cmdGetIcon_Click(){

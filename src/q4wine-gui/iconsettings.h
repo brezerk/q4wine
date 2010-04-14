@@ -100,6 +100,8 @@ class IconSettings : public QDialog, public Ui::IconSettings
 		 */
 		void cmdHelp_Click();
 
+        void getProgramIcon(QString name);
+
 	private:
 		QString prefix_name, dir_name, icon_name, prefix_path, iconPath;
 
