@@ -297,7 +297,7 @@ void AppSettings::getLangs(){
 	for (int i = 0; i < list.size(); ++i) {
 		QFileInfo fileInfo = list.at(i);
 		if (fileInfo.fileName().right(2)=="qm")
-			comboLangs->addItem(fileInfo.fileName());
+            comboLangs->addItem(fileInfo.fileName().split(".").at(0));
 	}
 	return;
 }
@@ -659,6 +659,12 @@ void AppSettings::cmdHelp_Click(){
  case 5:
 		rawurl = "11-settings.html#qmount";
 		break;
+    case 6:
+           rawurl = "11-settings.html#logging";
+           break;
+    case 7:
+           rawurl = "11-settings.html#advanced";
+           break;
 	}
 
 	CoreLib->openHelpUrl(rawurl);

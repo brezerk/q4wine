@@ -366,6 +366,8 @@
     <addaction name="mainBugs"/>
     <addaction name="separator"/>
     <addaction name="mainDonate"/>
+    <addaction name="separator"/>
+    <addaction name="menuHelpThisTab"/>
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
@@ -539,6 +541,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="menuHelpThisTab">
+   <property name="text">
+    <string>Help this tab</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
    </property>
   </action>
  </widget>

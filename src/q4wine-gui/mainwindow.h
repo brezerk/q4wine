@@ -129,6 +129,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void mainDonate_Click(void);
 		void mainBugs_Click(void);
 		void mainAppDB_Click(void);
+        void mainHelpThisTab_Click(void);
 
         void newConnection();
 

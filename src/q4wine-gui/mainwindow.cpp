@@ -169,6 +169,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 	connect(mainOptions, SIGNAL(triggered()), this, SLOT(mainOptions_Click()));
 	connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
 	connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
+    connect(menuHelpThisTab, SIGNAL(triggered()), this, SLOT(mainHelpThisTab_Click()));
 
 	CoreLib->runAutostart();
 
@@ -957,6 +958,32 @@ void MainWindow::mainExportIcons_Click(){
 		qDebug()<<"[EE] - Can't delete tmp dir: "<<tmpDir;
 
 	return;
+}
+
+void MainWindow::mainHelpThisTab_Click(){
+    QString rawurl="";
+    switch (tbwGeneral->currentIndex()){
+case 0:
+       rawurl = "04-general-gui-description.html#programs";
+       break;
+case 1:
+       rawurl = "04-general-gui-description.html#process";
+       break;
+case 2:
+       rawurl = "04-general-gui-description.html#setup";
+       break;
+case 3:
+       rawurl = "04-general-gui-description.html#prefixes";
+       break;
+case 4:
+       rawurl = "04-general-gui-description.html#appdb";
+       break;
+case 5:
+       rawurl = "04-general-gui-description.html#logging";
+       break;
+   }
+
+    CoreLib->openHelpUrl(rawurl);
 }
 
 void MainWindow::messageReceived(const QString message){
