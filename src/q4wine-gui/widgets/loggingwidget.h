@@ -20,6 +20,7 @@
 #include <QPalette>
 #include <QMenu>
 #include <QKeyEvent>
+#include <QClipboard>
 
 #include "logging.h"
 #include "prefix.h"
@@ -45,10 +46,14 @@ private slots:
     void logDelete_Click(void);
     void logExport_Click(void);
 
+    void logCopy_Click(void);
+    void logSelectAll_Click(void);
+
     void treeWidget_itemClicked (QTreeWidgetItem * item, int colum);
     void treeWidget_currentItemChanged (QTreeWidgetItem *item, QTreeWidgetItem *);
 
-    void customContextMenuRequested(const QPoint &pos);
+    void treeWidget_customContextMenuRequested(const QPoint &pos);
+    void listWidget_customContextMenuRequested(const QPoint &pos);
 
 private:
     //! This is need for libq4wine-core.so import.
@@ -64,11 +69,14 @@ private:
     std::auto_ptr<QAction> logDelete;
     std::auto_ptr<QAction> logExport;
 
+    std::auto_ptr<QAction> logSelectAll;
+    std::auto_ptr<QAction> logCopy;
+
     std::auto_ptr<QTreeWidget> treeWidget;
     std::auto_ptr<QListWidget> listWidget;
     std::auto_ptr<QSplitter> splitter;
 
-    std::auto_ptr<QMenu> menu;
+    //std::auto_ptr<QMenu> menu;
 
     void createActions(void);
     void clearLogs(void);

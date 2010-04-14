@@ -29,13 +29,14 @@ LoggingWidget::LoggingWidget(QWidget *parent) :
 
     connect (treeWidget.get(), SIGNAL(itemActivated (QTreeWidgetItem *, int)), this, SLOT(treeWidget_itemClicked (QTreeWidgetItem *, int)));
     connect (treeWidget.get(), SIGNAL(currentItemChanged (QTreeWidgetItem *, QTreeWidgetItem *)), this, SLOT(treeWidget_currentItemChanged (QTreeWidgetItem *, QTreeWidgetItem *)));
-    connect (treeWidget.get(), SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(customContextMenuRequested(const QPoint &)));
+    connect (treeWidget.get(), SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(treeWidget_customContextMenuRequested(const QPoint &)));
 
     treeWidget->installEventFilter(this);
 
     listWidget.reset(new QListWidget(this));
     listWidget->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect (listWidget.get(), SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(customContextMenuRequested(const QPoint &)));
+    listWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
+    connect (listWidget.get(), SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(listWidget_customContextMenuRequested(const QPoint &)));
 
     splitter.reset(new QSplitter(this));
     splitter->addWidget(treeWidget.get());
@@ -89,13 +90,16 @@ void LoggingWidget::createActions(){
     connect(logExport.get(), SIGNAL(triggered()), this, SLOT(logExport_Click()));
     logExport->setEnabled(false);
 
+    logSelectAll.reset(new QAction(tr("Select all"), this));
+    logSelectAll->setStatusTip(tr("Select all log rows"));
+    connect(logSelectAll.get(), SIGNAL(triggered()), this, SLOT(logSelectAll_Click()));
+    logSelectAll->setEnabled(true);
 
-    menu.reset(new QMenu(this));
-    menu->addAction(logClear.get());
-    menu->addSeparator();
-    menu->addAction(logDelete.get());
-    menu->addSeparator();
-    menu->addAction(logExport.get());
+    logCopy.reset(new QAction(tr("Copy selected"), this));
+    logCopy->setStatusTip(tr("Copy selection into copy buffer"));
+    connect(logCopy.get(), SIGNAL(triggered()), this, SLOT(logCopy_Click()));
+    logCopy->setEnabled(false);
+
 
     return;
 }
@@ -276,6 +280,27 @@ void LoggingWidget::logExport_Click(){
     return;
 }
 
+void LoggingWidget::logCopy_Click(){
+    QClipboard *clipboard = QApplication::clipboard();
+    QList<QListWidgetItem *> items =	listWidget->selectedItems ();
+
+    if (items.count()>0){
+        QString buffer;
+        for (int i=0; i<items.count(); i++){
+            buffer.append(items.at(i)->text());
+            buffer.append("\n");
+        }
+        clipboard->setText(buffer);
+    }
+
+    return;
+}
+
+void LoggingWidget::logSelectAll_Click(){
+    listWidget->selectAll();
+    return;
+}
+
 void LoggingWidget::getLogRecords(void){
 
     this->treeWidget->clear();
@@ -350,7 +375,35 @@ bool LoggingWidget::eventFilter(QObject *obj, QEvent *event)
      return QWidget::eventFilter(obj, event);
  }
 
-void LoggingWidget::customContextMenuRequested(const QPoint &pos){
-    menu->exec(QCursor::pos());
+void LoggingWidget::treeWidget_customContextMenuRequested(const QPoint &pos){
+
+    QMenu menu;
+    menu.addAction(logClear.get());
+    menu.addSeparator();
+    menu.addAction(logDelete.get());
+    menu.addSeparator();
+    menu.addAction(logExport.get());
+    menu.exec(QCursor::pos());
+
+    return;
+}
+
+void LoggingWidget::listWidget_customContextMenuRequested(const QPoint &pos){
+
+    QList<QListWidgetItem *> items =	listWidget->selectedItems ();
+
+    if (items.count()>0){
+        logCopy->setEnabled(true);
+    } else {
+        logCopy->setEnabled(false);
+    }
+
+    QMenu menu;
+    menu.addAction(logSelectAll.get());
+    menu.addSeparator();
+    menu.addAction(logCopy.get());
+
+    menu.exec(QCursor::pos());
+
     return;
 }

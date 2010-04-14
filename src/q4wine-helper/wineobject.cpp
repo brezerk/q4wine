@@ -247,7 +247,9 @@ void WineObject::sendMessage(QString message){
     socket.connectToServer( QString("/tmp/q4wine-%1.sock").arg(this->user) , QIODevice::WriteOnly );
 
     if (socket.waitForConnected()){
-        qDebug()<<"Connected!";
+#ifdef DEBUG
+        qDebug()<<"helper:sendMessage Connected!";
+#endif
 
         QByteArray block;
         QDataStream out(&block, QIODevice::WriteOnly);
@@ -261,9 +263,12 @@ void WineObject::sendMessage(QString message){
         socket.flush();
 
         socket.disconnectFromServer();
-    } else {
-        qDebug()<<"Not connected!";
     }
+#ifdef DEBUG
+    else {
+        qDebug()<<"[ii] helper:sendMessage Not connected!";
+    }
+#endif
     return;
 }
 
