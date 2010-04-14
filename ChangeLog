@@ -5,14 +5,17 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
-Version 0.115-dev
+Version 0.118
  Added:
   - Wine AppDB support;
+  - Helper binary and Application logger subsystem;
   - A lot of GUI improvements;
   - You can mount iso images just by droping them into q4wine icons list space;
   - Automatic unmounting for mouned media before mount new one;
   - Q4Wine now can be associated with application/x-ms-dos-executable mime type files;
   - Added AUTHORS file;
+  - Added man pages;
+  - Try to get program's icon from ~/.local/share/icons by it's name;
 
  Fixed:
   - CMake now do check for fuseiso;
