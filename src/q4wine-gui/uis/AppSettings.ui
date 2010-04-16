@@ -1735,6 +1735,25 @@
            </widget>
           </item>
           <item>
+           <widget class="QGroupBox" name="groupBox_14">
+            <property name="title">
+             <string>Program icons</string>
+            </property>
+            <layout class="QVBoxLayout" name="_8">
+             <item>
+              <widget class="QCheckBox" name="chUseSingleClick">
+               <property name="text">
+                <string>Single-click to run program icons.</string>
+               </property>
+               <property name="checked">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
            <spacer name="verticalSpacer_6">
             <property name="orientation">
              <enum>Qt::Vertical</enum>

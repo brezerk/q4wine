@@ -87,7 +87,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     }
     settings.endGroup();
 
-	settings.beginGroup("app");
+    settings.beginGroup("app");
 	if (settings.value("showTrareyIcon").toInt()==1){
 		chShowTrarey->setCheckState(Qt::Checked);
 	} else {
@@ -216,6 +216,13 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	} else {
 		chOpenRunDialog->setChecked(true);
 	}
+
+    if (settings.value("useSingleClick", 0).toInt()==0){
+        chUseSingleClick->setChecked(false);
+    } else {
+        chUseSingleClick->setChecked(true);
+    }
+
 
     QString res = settings.value("defaultDesktopSize").toString();
     if (res.isEmpty()){
@@ -593,6 +600,14 @@ void AppSettings::cmdOk_Click(){
 	} else {
 		settings.setValue("openRunDialog", 0);
 	}
+
+    if (chUseSingleClick->isChecked()){
+        settings.setValue("useSingleClick", 1);
+    } else {
+        settings.setValue("useSingleClick", 0);
+    }
+
+
 
     QString desktopSize=cboxDesktopSize->currentText();
     if (desktopSize==tr("No virtual desktop"))

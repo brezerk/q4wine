@@ -193,6 +193,11 @@ void IconListWidget::itemClicked (QListWidgetItem *item){
 
       QHash<QString, QString> result=db_icon.getByName(this->prefixName, this->dirName, item->text());
       emit(iconItemClick(result.value("exec").split('/').last().split('\\').last(), result.value("cmdargs"), result.value("desc"), result.value("useconsole"), result.value("desktop")));
+
+      if (CoreLib->getSetting("advanced", "useSingleClick", false, 0).toInt()==1)
+          itemDoubleClicked (item);
+
+      return;
 }
 
 void IconListWidget::itemDoubleClicked (QListWidgetItem *item){

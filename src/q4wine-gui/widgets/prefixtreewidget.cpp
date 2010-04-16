@@ -38,6 +38,7 @@ PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) :
       //QTreeWidget::itemActivated ( QTreeWidgetItem * item, int column )
 
       connect(this, SIGNAL(itemActivated (QTreeWidgetItem *, int)), this, SLOT(itemClicked (QTreeWidgetItem *, int)));
+      connect(this, SIGNAL(itemClicked (QTreeWidgetItem *, int)), this, SLOT(itemClicked (QTreeWidgetItem *, int)));
 
 	  this->dirName="";
 	  this->prefixName="";
