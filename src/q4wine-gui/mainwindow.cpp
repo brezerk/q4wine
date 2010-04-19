@@ -195,6 +195,8 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
         if (!trayIcon->isVisible())
             show();
 
+       importIcons("/home/brezerk/.local/share/applications/wine/");
+
 	return;
 }
 
@@ -1024,3 +1026,219 @@ void MainWindow::setcbPrefixesIndex(const QString text) const{
 	cbPrefixes->setCurrentIndex(cbPrefixes->findText(text));
 	return;
 }
+
+void MainWindow::importIcons(QString folder){
+#ifdef DEBUG
+    qDebug()<<"[ii] enter folder: "<<folder;
+#endif
+    QDir dir(folder);
+
+    if (!dir.exists())
+        return;
+
+    dir.setFilter(QDir::Files | QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
+
+
+
+    QFileInfoList list = dir.entryInfoList();
+    for (int i = 0; i < list.size(); ++i) {
+        if (list.at(i).isDir()){
+            this->importIcons(list.at(i).absoluteFilePath());
+        } else {
+            if (list.at(i).fileName().right(8)==".desktop"){
+                parseDesktopFile(list.at(i).absoluteFilePath(), dir.dirName());
+            }
+        }
+    }
+    return;
+}
+
+void MainWindow::parseDesktopFile(QString filePath, QString dirName){
+
+#ifdef DEBUG
+    qDebug()<<"* [ii] Parsing file: "<<filePath;
+#endif
+
+    QString name, path, type, icon, exec, args, prefix_path;
+
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        if (line.contains(QRegExp("^Name=*"))){
+            name=dirName;
+            name.append(" - ");
+            name.append(line.right(line.length()-5));
+        } else if (line.contains(QRegExp("^Type=*"))){
+            type=line.right(line.length()-5);
+        } else if (line.contains(QRegExp("^Path=*"))){
+            path=line.right(line.length()-5);
+        } else if (line.contains(QRegExp("^Icon=*"))){
+            icon=line.right(line.length()-5);
+        } else if (line.contains(QRegExp("^Exec=*"))){    
+            QStringList split = line.right(line.length()-5).split("\"");
+
+            qDebug()<<split.count();
+            qDebug()<<split;
+
+            if (split.count()>3){
+                prefix_path = split.at(1);
+                exec = split.at(3);
+
+                if (split.count()>4){
+                    args="\"";
+                    for (int i=4; i<split.count(); i++){
+                        args.append(split.at(i));
+                    }
+                    args.append("\"");
+                } else if (split.count()==4) {
+                    args=split.at(4).trimmed();
+                }
+            }
+        }
+    }
+
+    file.close();
+
+#ifdef DEBUG
+    qDebug()<<"= [ii] =======================================================";
+    qDebug()<<"type: "<<type;
+    qDebug()<<"name: "<<name;
+    qDebug()<<"path: "<<path;
+    qDebug()<<"exec: "<<exec;
+    qDebug()<<"args: "<<args;
+    qDebug()<<"prefix_path: "<<prefix_path;
+    qDebug()<<"icon: "<<icon;
+    qDebug()<<"= [ii] =======================================================";
+#endif
+
+
+    QString prefix_name = db_prefix.getName(prefix_path);
+    if (prefix_name.isEmpty())
+        return;
+
+    if (!db_dir.isExistsByName(prefix_name, "import"))
+        if (!db_dir.addDir(prefix_name, "import")){
+             qDebug()<<"Can't create dir:"<<"\"import\""<<" for prefix:"<<prefix_name;
+             return;
+        }
+
+    if (!db_icon.isExistsByName(prefix_name, "import", name))
+        db_icon.addIcon(args, exec, icon, "", prefix_name, "import", name, "", "", "", "", path);
+
+    return;
+}
+
+/*
+void MainWindow::getWineMenuIcons(void){
+    QStringList prefixList;
+    QStringList keyList;
+
+
+    QTextCodec *codec = QTextCodec::codecForName("UTF-16BE");
+    keyList << "\"Common Programs\"";
+
+    prefixList = db_prefix.getPrefixList();
+    for (int z = 0; z < prefixList.size(); ++z) {
+        Registry registry(db_prefix.getPath(prefixList.at(z)));
+
+        QString dir, lnkdir;
+
+        QStringList val = registry.readKeys("system", "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders", keyList);
+        if (val.count()>0){
+#ifdef DEBUG
+            qDebug()<<"[ii] prefix:"<<prefixList.at(z)<<" system.reg path: "<<val.at(0);
+#endif
+
+            QStringList dirs = val.at(0).split("\\\\");
+             for (int i=dirs.count()-2; i<dirs.count(); i++){
+                 QStringList parts = dirs.at(i).split("\\");
+                 if (parts.count()>1){
+                     for (int j=0; j<parts.count(); j++){
+                         if (parts.at(j).left(1)=="x"){
+                             QString test = QString("0%1").arg(parts.at(j).left(4));
+                             QByteArray temp = QByteArray::fromHex(test.toAscii().data());
+                             dir.append(codec->toUnicode(temp));
+                         }
+
+                          if (parts.at(j).length()>4)
+                               dir.append(parts.at(j).right(parts.at(j).length()-4));
+
+                     }
+                     dir.append("/");
+                 } else {
+                     dir.append(dirs.at(i));
+                     dir.append("/");
+                 }
+             }
+        }
+
+#ifdef DEBUG
+                 qDebug()<<"[ii] dir: "<<dir;
+#endif
+                 lnkdir.append(db_prefix.getPath(prefixList.at(z)));
+                 lnkdir.append("/dosdevices/c:/users/");
+                 lnkdir.append(getenv("USER"));
+                 lnkdir.append("/");
+                 lnkdir.append(dir);
+
+                 qDebug()<<lnkdir;
+
+    }
+    parseIcons();
+
+}
+
+void MainWindow::parseIcons(){
+
+
+    //QString qwe = QFileDialog::getOpenFileName(this, tr("Open Image"), "/mnt/stuff/winedrive/drive_c/users/brezerk/Start Menu/Programs/", tr("Image Files (*.lnk)"));
+    QString qwe = "/mnt/stuff/a.txt.lnk";
+
+    QFile file(qwe);
+    qDebug()<<file.exists();
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+
+    QByteArray bb;
+
+    qDebug()<<"reading";
+
+
+    qDebug()<<"4: Always 4C 00 00 00"<<file.read(4).toHex();
+    qDebug()<<"16: GUID for shortcut files"<<file.read(16).toHex();
+    qDebug()<<"4 Shortcut flags: "<<file.read(4).toHex();
+    qDebug()<<"4 Target file flags: "<<file.read(4).toHex();
+    qDebug()<<"8 Creation time: "<<file.read(8).toHex();
+    qDebug()<<"8 Last access time: "<<file.read(8).toHex();
+    qDebug()<<"8 Modification time: "<<file.read(8).toHex();
+    qDebug()<<"4 File length: "<<file.read(4).toHex();
+    qDebug()<<"4 Icon number: "<<file.read(4).toHex();
+    qDebug()<<"4 Show Window: "<<file.read(4).toHex();
+    qDebug()<<"4 Hot key: "<<file.read(4).toHex();
+    qDebug()<<"4 Reserved: "<<file.read(4).toHex();
+    qDebug()<<"4 Reserved: "<<file.read(4).toHex();
+
+    qDebug()<<"2 Size of item id list: "<<file.read(2).toHex();
+    qDebug()<<"2 This length value: "<<file.read(2).toHex();
+    qDebug()<<"2 ???? "<<file.read(2).toHex();
+
+    qDebug()<<"4 Reserved: "<<file.read(4).toHex();
+    qDebug()<<"4 Reserved: "<<file.read(4).toHex();
+    qDebug()<<"4 Reserved: "<<file.read(4).toHex();
+    qDebug()<<"4 Reserved: "<<file.read(4).toHex();
+    qDebug()<<"4 Reserved: "<<file.read(4).toHex();
+    qDebug()<<"4 Reserved: "<<file.read(4).toHex();
+    qDebug()<<"4 Reserved: "<<file.read(4).toHex();
+
+    qDebug()<<"2 Reserved: "<<file.read(38).toHex();
+
+    file.close();
+
+    return;
+}
+
+*/

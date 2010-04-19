@@ -39,6 +39,8 @@
 
 //Database
 #include "prefix.h"
+#include "dir.h"
+#include "icon.h"
 
 //Widgets
 #include "loggingwidget.h"
@@ -71,6 +73,8 @@
 
 //q4wine lib
 #include "q4wine-lib.h"
+
+#include "src/core/registry.h"
 
 class MainWindow : public QMainWindow, public Ui::MainWindow
 {
@@ -150,6 +154,8 @@ private:
 
 		//Classes
 		Prefix db_prefix;
+        Dir db_dir;
+        Icon db_icon;
 
 		// Tray icon
 		std::auto_ptr<QSystemTrayIcon> trayIcon;
@@ -163,6 +169,11 @@ private:
 		void clearTmp();
 
 		std::auto_ptr<QSplitter> splitter;
+
+        void importIcons(QString folder);
+        void parseDesktopFile(QString file, QString dirName);
+//        void getWineMenuIcons(void);
+//        void parseIcons(void);
 
 	signals:
 #ifdef WITH_WINEAPPDB

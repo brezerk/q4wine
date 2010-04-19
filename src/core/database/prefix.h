@@ -72,6 +72,7 @@ class Prefix
 	  * \return Return prefix path.
 	  */
       QString getPath(const QString prefix_name) const;
+      QString getName(const QString prefix_path) const;
 
 	 /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
 	  *

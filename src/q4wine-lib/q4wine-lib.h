@@ -269,6 +269,8 @@ public:
 	bool reniceProcess(const int pid, const int priority) const;
 	void runAutostart(void);
 
+    void getWineMenuIcons(void);
+
 private:
 	/*! Define is library operate in CLI or GUI mode.
 	 * \note This is typically need for error message display.

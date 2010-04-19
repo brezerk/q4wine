@@ -1577,3 +1577,4 @@ QStringList corelib::getCdromDevices(void) const{
 			}
 			return;
 		}
+

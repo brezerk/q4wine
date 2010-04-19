@@ -71,6 +71,28 @@ QString Prefix::getPath(const QString prefix_name) const{
 	return value;
 }
 
+QString Prefix::getName(const QString prefix_path) const{
+    QString value;
+
+    if (prefix_path==QString("%1/.wine").arg(QDir::homePath()))
+        return "Default";
+
+    QSqlQuery query;
+    query.prepare("SELECT name FROM prefix WHERE path=:prefix_path");
+    query.bindValue(":prefix_path", prefix_path);
+
+    if (query.exec()){
+        query.first();
+        if (query.isValid()){
+            value.append(query.value(0).toString());
+        }
+    } else {
+        qDebug()<<"SqlError: "<<query.lastError();
+    }
+    query.clear();
+    return value;
+}
+
 QHash<QString,QString> Prefix::getByName(const QString prefix_name) const{
     QHash<QString,QString> values;
 
