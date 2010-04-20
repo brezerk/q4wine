@@ -117,12 +117,20 @@ void PrefixTreeWidget::dirAdd_Click(void){
             if (treeItem->parent()){
                 std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem->parent()));
                 prefixItem->setText(0, dirname);
-                prefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
+                if (dirname=="import"){
+                    prefixItem->setIcon(0, CoreLib->loadIcon("data/folder-import.png"));
+                } else {
+                    prefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
+                }
                 prefixItem.release();
             } else {
                 std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem.get()));
                 prefixItem->setText(0, dirname);
-                prefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
+                if (dirname=="import"){
+                    prefixItem->setIcon(0, CoreLib->loadIcon("data/folder-import.png"));
+                } else {
+                    prefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
+                }
                 prefixItem.release();
             }
 
@@ -197,7 +205,11 @@ void PrefixTreeWidget::getPrefixes(){
 			for (int j = 0; j < subresult.size(); ++j) {
 				  std::auto_ptr<QTreeWidgetItem> subPrefixItem (new QTreeWidgetItem(prefixItem.get(), 0));
                   subPrefixItem->setText(0, QString("%1").arg(subresult.at(j)));
-				  subPrefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
+                  if (subresult.at(j)=="import"){
+                      subPrefixItem->setIcon(0, CoreLib->loadIcon("data/folder-import.png"));
+                  } else {
+                      subPrefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
+                  }
 				  subPrefixItem.release();
 			}
 			prefixItem.release();

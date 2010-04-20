@@ -50,5 +50,6 @@
         <file>data/fail.png</file>
         <file>data/down_log.png</file>
         <file>data/love.png</file>
+        <file>data/folder-import.png</file>
     </qresource>
 </RCC>

@@ -23,6 +23,8 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 {
 	setupUi(this);
 
+
+
 	this->showErr=showErr;
 
 	myProcess.reset(new QProcess(parent));
@@ -42,6 +44,15 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 #endif
 
 	return;
+}
+
+Process::Process (QString info, QString caption, QWidget * parent, Qt::WFlags f)
+{
+    setupUi(this);
+    lblInfo->setText(info);
+    setWindowTitle(caption);
+
+    return;
 }
 
 void Process::cmdCancel_clicked(void){

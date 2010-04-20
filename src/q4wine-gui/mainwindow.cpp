@@ -21,7 +21,7 @@
 
 MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
 
-    // Loading libq4wine-core.so
+     // Loading libq4wine-core.so
     libq4wine.setFileName("libq4wine-core");
 
     if (!libq4wine.load()){
@@ -34,6 +34,8 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 
     clearTmp();
     importIcons(QString("%1/.local/share/applications/wine/").arg(QDir::homePath()));
+
+    //exportProcess.close();
     // Base GUI setup
     setupUi(this);
 

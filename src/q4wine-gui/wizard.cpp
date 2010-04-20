@@ -1420,6 +1420,10 @@ void Wizard::nextWizardPage(){
 					if (!db_dir.isExistsByName(prefix_name, "autostart"))
 						db_dir.addDir(prefix_name, "autostart");
 
+                    if (!db_dir.isExistsByName(prefix_name, "import"))
+                        db_dir.addDir(prefix_name, "import");
+
+
 					QApplication::restoreOverrideCursor();
 
 #ifdef DEBUG
