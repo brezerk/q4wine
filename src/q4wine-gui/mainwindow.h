@@ -45,6 +45,7 @@
 //Widgets
 #include "loggingwidget.h"
 #include "iconlistwidget.h"
+#include "iconlisttoolbar.h"
 #include "prefixtreewidget.h"
 #include "wineprocesswidget.h"
 #include "prefixcontrolwidget.h"
@@ -105,7 +106,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
 		void cmdCreateFake_Click(void);
 		void cmdUpdateFake_Click(void);
-		void cmdClearFilter_Click (void);
 
 		void prefixManage_Click(void);
 		void prefixRunWinetriks_Click (void);

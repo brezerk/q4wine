@@ -93,7 +93,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     std::auto_ptr<IconListWidget> lstIcons (new IconListWidget(tabPrograms));
     connect(lstIcons.get(), SIGNAL(iconItemClick(QString, QString, QString, QString, QString)), this, SLOT(updateIconDesc(QString, QString, QString, QString, QString)));
     connect(lstIcons.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
-    connect(txtIconFilter, SIGNAL(textChanged(QString)), lstIcons.get(), SLOT(setFilterString(QString)));
+
 #ifdef WITH_WINEAPPDB
     connect(lstIcons.get(), SIGNAL(searchRequest(QString)), this, SLOT(searchRequest(QString)));
 #endif
@@ -121,22 +121,35 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(prefixWidget.get(), SIGNAL(prefixIndexChanged(QString)), this, SLOT(setcbPrefixesIndex(QString)));
     connect(prefixWidget.get(), SIGNAL(setTabIndex (int)), tbwGeneral, SLOT(setCurrentIndex (int)));
 
-    std::auto_ptr<QWidget> wid (new QWidget(tabPrograms));
+    std::auto_ptr<IconListToolbar> iconToolBar (new IconListToolbar(tabPrograms));
+    connect(iconToolBar.get(), SIGNAL(searchFilterChange(QString)), lstIcons.get(), SLOT(setFilterString(QString)));
+    connect(iconToolBar.get(), SIGNAL(changeView(int)), lstIcons.get(), SLOT(changeView(int)));
 
     vlayout.reset(new QVBoxLayout);
-    vlayout->addWidget(widgetFilter);
-    vlayout->addWidget(lstIcons.release());
-    vlayout->setMargin(0);
+    vlayout->addWidget(twPrograms.release());
+    vlayout->setContentsMargins(0,3,0,0);
+    std::auto_ptr<QWidget> wid (new QWidget(tabPrograms));
     wid->setLayout(vlayout.release());
 
     splitter.reset(new QSplitter(tabPrograms));
-    splitter->addWidget(twPrograms.release());
+    splitter->addWidget(wid.release());
+
+    vlayout.reset(new QVBoxLayout);
+    vlayout->addWidget(iconToolBar.release());
+    vlayout->addWidget(lstIcons.release());
+    vlayout->setMargin(0);
+    vlayout->setSpacing(0);
+    //vlayout->setContentsMargins(0,0,0,0);
+    wid.reset(new QWidget(tabPrograms));
+    wid->setLayout(vlayout.release());
+
     splitter->addWidget(wid.release());
 
     vlayout.reset(new QVBoxLayout);
     vlayout->addWidget(splitter.get());
     vlayout->addWidget(gbInfo);
-    vlayout->setMargin(3);
+
+    vlayout->setContentsMargins(3,0,3,3);
     tabPrograms->setLayout(vlayout.release());
     tabPrefixLayout->addWidget(prefixWidget.release());
 
@@ -150,7 +163,6 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(tbwGeneral, SIGNAL(currentChanged(int)), this, SLOT(tbwGeneral_CurrentTabChange(int)));
     connect(cmdCreateFake, SIGNAL(clicked()), this, SLOT(cmdCreateFake_Click()));
     connect(cmdUpdateFake, SIGNAL(clicked()), this, SLOT(cmdUpdateFake_Click()));
-    connect(cmdClearFilter, SIGNAL(clicked()), this, SLOT(cmdClearFilter_Click()));
 
     //Main menu actions connection to slots
     connect(mainRun, SIGNAL(triggered()), this, SLOT(mainRun_Click()));
@@ -202,7 +214,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 }
 
 void MainWindow::setSearchFocus(){
-    txtIconFilter->setFocus(Qt::OtherFocusReason);
+//    txtIconFilter->setFocus(Qt::OtherFocusReason);
     return;
 }
 
@@ -268,7 +280,14 @@ void MainWindow::updateIconDesc(QString program, QString args, QString desc, QSt
      * icon informationm like path and description
      */
 
-    lblIconInfo0->setText(tr("Program: %1<br> Args: %2").arg(program) .arg(args));
+    if (args.length()>45){
+        QString strip_arg = args.left(20);
+        strip_arg.append(" ... ");
+        strip_arg.append(args.right(20));
+        args=strip_arg;
+    }
+
+    lblIconInfo0->setText(tr("Program: %1<br> Args: %2 ").arg(program) .arg(args));
     lblIconInfo2->setText(tr("Description: %1").arg(desc));
 
     QString useconsole="";
@@ -615,11 +634,6 @@ void MainWindow::cmdUpdateFake_Click(){
             updateDtabaseConnectedItems();
         }
     }
-    return;
-}
-
-void MainWindow::cmdClearFilter_Click(){
-    txtIconFilter->setText("");
     return;
 }
 

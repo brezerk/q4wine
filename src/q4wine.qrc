@@ -51,5 +51,9 @@
         <file>data/down_log.png</file>
         <file>data/love.png</file>
         <file>data/folder-import.png</file>
+        <file>data/zoom-in.png</file>
+        <file>data/zoom-out.png</file>
+        <file>data/view-list-icons.png</file>
+        <file>data/view-list-details.png</file>
     </qresource>
 </RCC>

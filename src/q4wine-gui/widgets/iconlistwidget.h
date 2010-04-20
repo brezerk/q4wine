@@ -59,10 +59,12 @@ class IconListWidget : public QListWidget
 	  Q_OBJECT
 public:
 	  explicit IconListWidget(QWidget *parent = 0);
+      ~IconListWidget();
 
 public slots:
 	  void showFolderContents(QString prefixName="", QString dirName="");
 	  void setFilterString(QString filterString);
+      void changeView(int action);
 
 private:
 	  void mousePressEvent(QMouseEvent *event);
@@ -72,6 +74,8 @@ private:
 	  void dropEvent(QDropEvent *event);
 	  void contextMenuEvent(QContextMenuEvent *event);
 	  void keyPressEvent (QKeyEvent *event);
+
+      void setDisplayType(bool icon=true);
 
 	  QString prefixName, dirName, prefixMediaDrive, prefixMontPoint, filterString;
 	  QPoint startPos;

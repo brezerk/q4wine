@@ -33,18 +33,19 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
 	  CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
 	  setAcceptDrops(true);
-	  setViewMode(QListView::IconMode);
-	  setGridSize(QSize(86, 86));
-	  setResizeMode(QListView::Adjust);
-	  setWrapping(true);
-	  setWordWrap(true);
+      setResizeMode(QListView::Adjust);
 	  setAcceptDrops(true);
-	  setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+      setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
 	  setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
-	  setMovement(QListView::Snap);
+      setMovement(QListView::Snap);
 	  setDragDropMode(QAbstractItemView::InternalMove);
 	  setSelectionMode(QAbstractItemView::ContiguousSelection);
-	  setIconSize(QSize(32, 32));
+
+      if (CoreLib->getSetting("IconWidget", "ViewMode", false, "IconMode").toString()=="ListMode"){
+          setDisplayType(false);
+      } else {
+          setDisplayType(true);
+      }
 
 	  connect(this, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(itemClicked (QListWidgetItem *)));
 	  connect(this, SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(itemDoubleClicked (QListWidgetItem *)));
@@ -54,6 +55,18 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
 	  this->prefixMontPoint="";
 	  this->prefixMediaDrive="";
 	  this->filterString="";
+}
+
+IconListWidget::~IconListWidget(){
+    QSettings settings(APP_SHORT_NAME, "default");
+    settings.beginGroup("IconWidget");
+    if (viewMode()==QListView::IconMode){
+        settings.setValue("ViewMode", "IconMode");
+    } else {
+        settings.setValue("ViewMode", "ListMode");
+    }
+    settings.setValue("IconSize",  iconSize().height());
+    settings.endGroup();
 }
 
 void IconListWidget::showFolderContents(QString prefixName, QString dirName){
@@ -74,6 +87,7 @@ void IconListWidget::showContents(QString filterString){
 	  for (int i = 0; i < iconsList.size(); ++i) {
 			std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(this, 0));
             iconItem->setText(iconsList.at(i));
+            iconItem->setToolTip(iconsList.at(i));
 
 
 			//Seting icon. If no icon or icon file not exists -- setting default
@@ -116,6 +130,56 @@ void IconListWidget::setFilterString(QString filterString){
 	this->filterString=filterString;
 	this->showContents(filterString);
 	return;
+}
+
+void IconListWidget::changeView(int action){
+    if (action==0){
+        setDisplayType(false);
+    } else if (action==1){
+        setDisplayType(true);
+    } else if (action==2){
+        if (iconSize().height()<64){
+            int nSize = iconSize().height()+8;
+            setIconSize(QSize(nSize, nSize));
+            if (viewMode()==QListView::IconMode){
+                setGridSize(QSize(nSize+54, nSize+54));
+            } else {
+                setGridSize(QSize(nSize, nSize));
+            }
+        }
+    } else if (action==3){
+        if (iconSize().height()>16){
+            int nSize = iconSize().height()-8;
+            setIconSize(QSize(nSize, nSize));
+            if (viewMode()==QListView::IconMode){
+                setGridSize(QSize(nSize+54, nSize+54));
+            } else {
+                setGridSize(QSize(nSize, nSize));
+            }
+        }
+    }
+
+    return;
+}
+
+void IconListWidget::setDisplayType(bool icon){
+
+    int nSize = CoreLib->getSetting("IconWidget", "IconSize", false, 32).toInt();
+
+    if (icon){
+        setViewMode(QListView::IconMode);
+        setGridSize(QSize(nSize+54, nSize+54));
+        setIconSize(QSize(nSize, nSize));
+        setWrapping(true);
+        setWordWrap(true);
+    } else {
+        setViewMode(QListView::ListMode);
+        setGridSize(QSize(nSize, nSize));
+        setIconSize(QSize(nSize, nSize));
+        setWrapping(false);
+        setWordWrap(false);
+    }
+    return;
 }
 
 void IconListWidget::startDrag(){
