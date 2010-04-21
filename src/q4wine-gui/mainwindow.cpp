@@ -1011,6 +1011,7 @@ case 5:
 void MainWindow::mainImportWineIcons_Click(){
     Progress progress(0);
     progress.exec();
+    updateDtabaseConnectedItems();
     return;
 }
 
