@@ -343,6 +343,7 @@
     <addaction name="mainLogging"/>
     <addaction name="separator"/>
     <addaction name="mainExportIcons"/>
+    <addaction name="mainImportWineIcons"/>
     <addaction name="separator"/>
     <addaction name="mainImageManage"/>
    </widget>
@@ -425,7 +426,10 @@
   </action>
   <action name="mainExportIcons">
    <property name="text">
-    <string>Import icons</string>
+    <string>Extract images from PE files</string>
+   </property>
+   <property name="statusTip">
+    <string>Extract images from PE files using icoutils.</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+C</string>
@@ -511,6 +515,20 @@
    </property>
    <property name="shortcut">
     <string>F1</string>
+   </property>
+  </action>
+  <action name="mainImportWineIcons">
+   <property name="text">
+    <string>Import wine desktop files</string>
+   </property>
+   <property name="iconText">
+    <string>Import wine desktop files</string>
+   </property>
+   <property name="toolTip">
+    <string>Scan for wine desktop files and import into q4wine icon's view.</string>
+   </property>
+   <property name="statusTip">
+    <string>Scan for wine desktop files and import into q4wine icon's view.</string>
    </property>
   </action>
  </widget>

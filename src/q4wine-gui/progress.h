@@ -17,8 +17,8 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef PROCESS_H
-#define PROCESS_H
+#ifndef PROGRESS_H
+#define PROGRESS_H
 
 #include <memory>
 
@@ -26,33 +26,59 @@
 
 #include "src/q4wine-lib/ui_Process.h"
 
-#include <QProcess>
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QLibrary>
-#include <QTextCodec>
-#include <QTextStream>
+#include <QDialog>
+#include <QWidget>
+#include <QDir>
+#include <QString>
+#include <QStringList>
+#include <QTimer>
 
 #ifdef DEBUG
 #include <QDebug>
 #endif
 
-class Process : public QDialog, public Ui::Process
+#include "prefix.h"
+#include "icon.h"
+#include "dir.h"
+
+//q4wine lib
+#include "q4wine-lib.h"
+
+class Progress : public QDialog, public Ui::Process
 {
-	Q_OBJECT
-	public:
-		Process(QStringList args, QString exec, QString dir, QString info, QString caption, bool showErr = TRUE, QStringList env = QProcess::systemEnvironment(), QWidget * parent = 0, Qt::WFlags f = 0);
+Q_OBJECT
+public:
+    explicit Progress(int action, QWidget * parent = 0, Qt::WFlags f = 0);
 
-	private slots:
-		void slotFinished(int, QProcess::ExitStatus);
-		void cmdCancel_clicked(void);
-		void slotError(QProcess::ProcessError);
+signals:
 
-	private:
-		bool showErr;
-		std::auto_ptr<QProcess> myProcess;
+public slots:
 
-		QString getLocale();
+private:
+    int action, max, current;
+
+    QLibrary libq4wine;
+    typedef void *CoreLibPrototype (bool);
+    CoreLibPrototype *CoreLibClassPointer;
+    std::auto_ptr<corelib> CoreLib;
+
+    Dir db_dir;
+    Icon db_icon;
+    Prefix db_prefix;
+
+    int importIcons(QString folder);
+    void removeEmptyFolders(QString folder);
+    void parseDesktopFile(QString file, QString dirName);
+    QStringList iconDirs;
+    QStringList iconFiles;
+
+    std::auto_ptr<QTimer> t;
+
+private slots:
+    void runAction();
+    void cmdCancel_Click();
+
 };
 
-#endif
+#endif // PROGRESS_H
+

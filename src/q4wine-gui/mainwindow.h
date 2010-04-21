@@ -58,6 +58,7 @@
 #include "iconsview.h"
 #include "wizard.h"
 #include "process.h"
+#include "progress.h"
 #include "imagemanager.h"
 #include "about.h"
 #include "appsettings.h"
@@ -134,6 +135,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void mainBugs_Click(void);
 		void mainAppDB_Click(void);
         void mainHelpThisTab_Click(void);
+        void mainImportWineIcons_Click(void);
 
         void newConnection();
 
@@ -170,8 +172,6 @@ private:
 
 		std::auto_ptr<QSplitter> splitter;
 
-        void importIcons(QString folder);
-        void parseDesktopFile(QString file, QString dirName);
 //        void getWineMenuIcons(void);
 //        void parseIcons(void);
 

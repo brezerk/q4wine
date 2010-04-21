@@ -28,6 +28,7 @@ SET( Q4WINE_GUI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/mainwindow.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/prefixsettings.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/progress.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.cpp
@@ -60,6 +61,7 @@ SET ( Q4WINE_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/mainwindow.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/prefixsettings.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/progress.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
@@ -83,6 +85,7 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/mainwindow.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/prefixsettings.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/progress.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/about.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/run.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h

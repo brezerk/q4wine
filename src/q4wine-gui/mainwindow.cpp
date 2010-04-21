@@ -33,7 +33,10 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
     clearTmp();
-    importIcons(QString("%1/.local/share/applications/wine/").arg(QDir::homePath()));
+    Progress progress(0);
+    progress.exec();
+
+  //  importIcons(QString("%1/.local/share/applications/wine/").arg(QDir::homePath()));
 
     //exportProcess.close();
     // Base GUI setup
@@ -185,6 +188,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
     connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
     connect(menuHelpThisTab, SIGNAL(triggered()), this, SLOT(mainHelpThisTab_Click()));
+    connect(mainImportWineIcons, SIGNAL(triggered()), this, SLOT(mainImportWineIcons_Click()));
 
     CoreLib->runAutostart();
 
@@ -1001,6 +1005,13 @@ case 5:
    }
 
     CoreLib->openHelpUrl(rawurl);
+    return;
+}
+
+void MainWindow::mainImportWineIcons_Click(){
+    Progress progress(0);
+    progress.exec();
+    return;
 }
 
 void MainWindow::messageReceived(const QString message){
@@ -1042,119 +1053,7 @@ void MainWindow::setcbPrefixesIndex(const QString text) const{
     return;
 }
 
-void MainWindow::importIcons(QString folder){
-#ifdef DEBUG
-    qDebug()<<"[ii] enter folder: "<<folder;
-#endif
-    QDir dir(folder);
 
-    if (!dir.exists())
-        return;
-
-    dir.setFilter(QDir::Files | QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
-
-    QFileInfoList list = dir.entryInfoList();
-    for (int i = 0; i < list.size(); ++i) {
-        if (list.at(i).isDir()){
-            this->importIcons(list.at(i).absoluteFilePath());
-        } else {
-            if (list.at(i).fileName().right(8)==".desktop"){
-                parseDesktopFile(list.at(i).absoluteFilePath(), dir.dirName());
-            }
-        }
-    }
-
-#ifdef DEBUG
-    qDebug()<<"[ii] Dir removed: "<<dir.rmdir(dir.path());
-#else
-    dir.rmdir(dir.path());
-#endif
-
-    return;
-}
-
-void MainWindow::parseDesktopFile(QString filePath, QString dirName){
-
-#ifdef DEBUG
-    qDebug()<<"* [ii] Parsing file: "<<filePath;
-#endif
-
-    QString name, path, type, icon, exec, args, prefix_path;
-
-    QFile file(filePath);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
-
-    QTextStream in(&file);
-    while (!in.atEnd()) {
-        QString line = in.readLine();
-        if (line.contains(QRegExp("^Name=*"))){
-            name=dirName;
-            name.append(" - ");
-            name.append(line.right(line.length()-5));
-        } else if (line.contains(QRegExp("^Type=*"))){
-            type=line.right(line.length()-5);
-        } else if (line.contains(QRegExp("^Path=*"))){
-            path=line.right(line.length()-5);
-        } else if (line.contains(QRegExp("^Icon=*"))){
-            icon=line.right(line.length()-5);
-        } else if (line.contains(QRegExp("^Exec=*"))){
-            QStringList split = line.right(line.length()-5).split("\"");
-
-            qDebug()<<split.count();
-            qDebug()<<split;
-
-            if (split.count()>3){
-                prefix_path = split.at(1);
-                exec = split.at(3);
-
-                if (split.count()>4){
-                    for (int i=4; i<split.count(); i++){
-                        args.append(split.at(i));
-                    }
-                } else if (split.count()==4) {
-                    args=split.at(4).trimmed();
-                }
-            }
-        }
-    }
-
-    file.close();
-
-#ifdef DEBUG
-    qDebug()<<"= [ii] =======================================================";
-    qDebug()<<"type: "<<type;
-    qDebug()<<"name: "<<name;
-    qDebug()<<"path: "<<path;
-    qDebug()<<"exec: "<<exec;
-    qDebug()<<"args: "<<args;
-    qDebug()<<"prefix_path: "<<prefix_path;
-    qDebug()<<"icon: "<<icon;
-    qDebug()<<"= [ii] =======================================================";
-#endif
-
-    QString prefix_name = db_prefix.getName(prefix_path);
-    if (prefix_name.isEmpty())
-        return;
-
-    if (!db_dir.isExistsByName(prefix_name, "import"))
-        if (!db_dir.addDir(prefix_name, "import")){
-             qDebug()<<"Can't create dir:"<<"\"import\""<<" for prefix:"<<prefix_name;
-             return;
-        }
-
-    if (!db_icon.isExistsByName(prefix_name, "import", name)){
-        QString res = CoreLib->getSetting("advanced", "defaultDesktopSize", false, "").toString();
-        db_icon.addIcon(args, exec, icon, "", prefix_name, "import", name, "", "", "", "", path, res);
-    }
-
-#ifdef DEBUG
-    qDebug()<<"[ii] removed: "<<file.remove();
-#else
-    file.remove();
-#endif
-    return;
-}
 
 /*
 void MainWindow::getWineMenuIcons(void){

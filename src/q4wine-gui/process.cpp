@@ -46,15 +46,6 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 	return;
 }
 
-Process::Process (QString info, QString caption, QWidget * parent, Qt::WFlags f)
-{
-    setupUi(this);
-    lblInfo->setText(info);
-    setWindowTitle(caption);
-
-    return;
-}
-
 void Process::cmdCancel_clicked(void){
 	myProcess->kill();
 	reject();
