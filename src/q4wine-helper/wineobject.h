@@ -60,7 +60,7 @@ public:
     void setUseConsole(int console);
     void setOverrideDll(QString dll_list);
 
-    void runSys();
+    int runSys();
 
 private:
 

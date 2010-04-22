@@ -140,7 +140,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    wineObject.runSys();
+    return wineObject.runSys();
 /*
     if (app.arguments().count()>1){
         if ((app.arguments().at(1)=="--version") or (app.arguments().at(1)=="-v")){
@@ -172,6 +172,4 @@ int main(int argc, char *argv[])
         }
     }
 */
-
-    return 0;
 }

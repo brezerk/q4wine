@@ -126,9 +126,9 @@ QString WineObject::createEnvString(){
     return env;
 }
 
-void WineObject::runSys(){
+int WineObject::runSys(){
     if (this->programBinary.isEmpty())
-        return;
+        return -1;
 
     bool logEnabled = false;
 
@@ -239,7 +239,14 @@ void WineObject::runSys(){
         }
     }
 
-    return;
+    if (status>0){
+        QTextStream QErr(stderr);
+        QErr<<stdout;
+
+        status=-1;
+    }
+
+    return status;
 }
 
 void WineObject::sendMessage(QString message){

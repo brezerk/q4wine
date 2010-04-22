@@ -91,6 +91,7 @@ void Process::slotError(QProcess::ProcessError err){
 				QMessageBox::warning(this, tr("Error"), tr("Process: An unknown error occurred. This is the default return value of error()."));
 				break;
 			}
+            reject ();
 		}
 	} else {
 		switch (err){
@@ -152,9 +153,11 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 					QMessageBox::warning(this, tr("Output"), tr("It seems the process exited normally.<br><br>STDERR log:<br>%1").arg(string));
 				}
 				accept();
+                return;
 			} else {
 				QMessageBox::warning(this, tr("Output"), tr("It seems the process crashed.<br><br>STDERR log:<br>%1").arg(string));
 				reject();
+                return;
 			}
 		}
 
