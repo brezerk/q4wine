@@ -65,6 +65,7 @@ public slots:
 	  void showFolderContents(QString prefixName="", QString dirName="");
 	  void setFilterString(QString filterString);
       void changeView(int action);
+      void iconPaste_Click(void);
 
 private:
 	  void mousePressEvent(QMouseEvent *event);
@@ -73,14 +74,13 @@ private:
 	  void dragMoveEvent(QDragMoveEvent *event);
 	  void dropEvent(QDropEvent *event);
 	  void contextMenuEvent(QContextMenuEvent *event);
-      void keyReleaseEvent (QKeyEvent * event );
       void keyPressEvent (QKeyEvent * event );
 
       void setDisplayType(bool icon=true);
 
 	  QString prefixName, dirName, prefixMediaDrive, prefixMontPoint, filterString;
 	  QPoint startPos;
-      bool drag, dragstarted, controlKey;
+      bool drag, dragstarted;
 
 	  // Database classes
 	  Prefix db_prefix;
@@ -112,7 +112,6 @@ private slots:
 	  void iconRun_Click(void);
 	  void iconCut_Click(void);
 	  void iconCopy_Click(void);
-	  void iconPaste_Click(void);
 	  void iconOption_Click(void);
 	  void iconSearchAppDB_Click(void);
 

@@ -396,9 +396,6 @@
    <property name="text">
     <string>Programs</string>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+A</string>
-   </property>
   </action>
   <action name="mainProcess">
    <property name="text">
@@ -431,9 +428,6 @@
    <property name="statusTip">
     <string>Extract images from PE files using icoutils.</string>
    </property>
-   <property name="shortcut">
-    <string>Ctrl+C</string>
-   </property>
   </action>
   <action name="mainOptions">
    <property name="text">
@@ -446,9 +440,6 @@
   <action name="mainImageManage">
    <property name="text">
     <string>CD image manager</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+V</string>
    </property>
   </action>
   <action name="mainFirstSteps">

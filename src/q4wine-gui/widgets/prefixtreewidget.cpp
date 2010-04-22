@@ -380,11 +380,15 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 void PrefixTreeWidget::keyReleaseEvent ( QKeyEvent * event ){
     if (event->key()==Qt::Key_F2){
         dirRename_Click();
+    } else if (event->key() == Qt::Key_V && event->modifiers() & Qt::ControlModifier) {
+       emit(pasteAction());
     } else if (event->key()==Qt::Key_Delete){
         dirDelete_Click();
     } else if (event->key()==Qt::Key_Return){
         if (this->selectedItems().count()>0)
             this->itemClicked(this->selectedItems().at(0), 0);
+    } else {
+        QTreeWidget::keyPressEvent(event);
     }
 }
 

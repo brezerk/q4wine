@@ -34,7 +34,6 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
 
 	  setAcceptDrops(true);
       setResizeMode(QListView::Adjust);
-	  setAcceptDrops(true);
       setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
 	  setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
       setMovement(QListView::Snap);
@@ -55,7 +54,6 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
 	  this->prefixMontPoint="";
 	  this->prefixMediaDrive="";
 	  this->filterString="";
-      this->controlKey=false;
 }
 
 IconListWidget::~IconListWidget(){
@@ -633,35 +631,25 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 	  return;
 }
 
-void IconListWidget::keyReleaseEvent (QKeyEvent * event){
-	if (event->key()==Qt::Key_Tab){
-		//FIXME: emmit change focus signal to mainwin
-		//txtIconFilter->setFocus();
-		//keyEvent.release();
-		return;
-    } else if (event->key()==Qt::Key_Delete){
-		if (this->currentItem())
-			this->iconDelete_Click();
-    } else if (event->key()==Qt::Key_F2){
-		if (this->currentItem())
-			this->iconRename_Click();
-    } else if (event->key()==Qt::Key_Control){
-        this->controlKey=false;
-    } else if (event->key()==Qt::Key_A){
-        if ( this->controlKey)
-            this->selectAll();
-    }
-	return;
-}
-
 void IconListWidget::keyPressEvent (QKeyEvent * event ){
-    if (event->key()==Qt::Key_Control){
-            this->controlKey=true;
-    } else if (event->key()==Qt::Key_Return){
+    if (event->key()==Qt::Key_Return){
         if (this->currentItem())
             this->itemDoubleClicked(this->currentItem());
+    } else if (event->key()==Qt::Key_Delete){
+        if (this->currentItem())
+            this->iconDelete_Click();
+    } else if (event->key()==Qt::Key_F2){
+        if (this->currentItem())
+            this->iconRename_Click();
+    } else if (event->key() == Qt::Key_C && event->modifiers() & Qt::ControlModifier) {
+        this->iconCopy_Click();
+    } else if (event->key() == Qt::Key_V && event->modifiers() & Qt::ControlModifier) {
+        this->iconPaste_Click();
+    } else if (event->key() == Qt::Key_X && event->modifiers() & Qt::ControlModifier) {
+        this->iconCut_Click();
+    } else {
+        QListWidget::keyPressEvent(event);
     }
-    return;
 }
 
 void IconListWidget::iconAdd_Click(void){

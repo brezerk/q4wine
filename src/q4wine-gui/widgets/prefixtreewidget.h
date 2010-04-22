@@ -98,6 +98,7 @@ signals:
 	  void prefixIndexChanged(QString);
       void setSearchFocus(void);
       void setTabIndex (int);
+      void pasteAction(void);
 
 public slots:
 	  void getPrefixes();

@@ -111,6 +111,9 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(twPrograms.get(), SIGNAL(prefixIndexChanged(QString)), this, SLOT(setcbPrefixesIndex(QString)));
     connect(twPrograms.get(), SIGNAL(setTabIndex (int)), tbwGeneral, SLOT(setCurrentIndex (int)));
 
+    connect(twPrograms.get(), SIGNAL(pasteAction()), lstIcons.get(), SLOT(iconPaste_Click()));
+
+
     std::auto_ptr<WineProcessWidget> procWidget (new WineProcessWidget(tabProcess));
     connect(this, SIGNAL(stopProcTimer()), procWidget.get(), SLOT(stopTimer()));
     connect(this, SIGNAL(startProcTimer()), procWidget.get(), SLOT(startTimer()));
