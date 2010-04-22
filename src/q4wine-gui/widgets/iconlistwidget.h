@@ -73,13 +73,14 @@ private:
 	  void dragMoveEvent(QDragMoveEvent *event);
 	  void dropEvent(QDropEvent *event);
 	  void contextMenuEvent(QContextMenuEvent *event);
-	  void keyPressEvent (QKeyEvent *event);
+      void keyReleaseEvent (QKeyEvent * event );
+      void keyPressEvent (QKeyEvent * event );
 
       void setDisplayType(bool icon=true);
 
 	  QString prefixName, dirName, prefixMediaDrive, prefixMontPoint, filterString;
 	  QPoint startPos;
-	  bool drag, dragstarted;
+      bool drag, dragstarted, controlKey;
 
 	  // Database classes
 	  Prefix db_prefix;

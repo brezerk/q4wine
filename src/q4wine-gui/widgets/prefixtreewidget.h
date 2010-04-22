@@ -57,6 +57,7 @@ public:
 
 private:
 	  void contextMenuEvent(QContextMenuEvent *event);
+      void keyReleaseEvent ( QKeyEvent * event );
 
 	  QString prefixName, dirName, prefixMediaDrive, prefixMontPoint;
 

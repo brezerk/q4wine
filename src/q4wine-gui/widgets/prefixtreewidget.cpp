@@ -35,9 +35,6 @@ PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) :
 
 	  this->setHeaderLabel("Current prefixes list");
 
-      //QTreeWidget::itemActivated ( QTreeWidgetItem * item, int column )
-
-      connect(this, SIGNAL(itemActivated (QTreeWidgetItem *, int)), this, SLOT(itemClicked (QTreeWidgetItem *, int)));
       connect(this, SIGNAL(itemClicked (QTreeWidgetItem *, int)), this, SLOT(itemClicked (QTreeWidgetItem *, int)));
 
 	  this->dirName="";
@@ -378,6 +375,17 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 
 	  menu->exec(QCursor::pos());
 	  return;
+}
+
+void PrefixTreeWidget::keyReleaseEvent ( QKeyEvent * event ){
+    if (event->key()==Qt::Key_F2){
+        dirRename_Click();
+    } else if (event->key()==Qt::Key_Delete){
+        dirDelete_Click();
+    } else if (event->key()==Qt::Key_Return){
+        if (this->selectedItems().count()>0)
+            this->itemClicked(this->selectedItems().at(0), 0);
+    }
 }
 
 void PrefixTreeWidget::menuRun_triggered(QAction* action){
