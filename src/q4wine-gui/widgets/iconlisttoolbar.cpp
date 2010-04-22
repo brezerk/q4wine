@@ -64,11 +64,11 @@ void IconListToolbar::createActions(){
     searchClear->setStatusTip(tr("Clear search field"));
     connect(searchClear.get(), SIGNAL(triggered()), this, SLOT(searchClear_Click()));
 
-    viewIcon.reset(new QAction(CoreLib->loadIcon("data/view-list-details.png"), tr("Delete log"), this));
+    viewIcon.reset(new QAction(CoreLib->loadIcon("data/view-list-icons.png"), tr("Delete log"), this));
     viewIcon->setStatusTip(tr("Delete current log"));
     connect(viewIcon.get(), SIGNAL(triggered()), this, SLOT(viewIcon_Click()));
 
-    viewList.reset(new QAction(CoreLib->loadIcon("data/view-list-icons.png"), tr("Export log"), this));
+    viewList.reset(new QAction(CoreLib->loadIcon("data/view-list-details.png"), tr("Export log"), this));
     viewList->setStatusTip(tr("Export current log to file"));
     connect(viewList.get(), SIGNAL(triggered()), this, SLOT(viewList_Click()));
 
@@ -88,11 +88,11 @@ void IconListToolbar::searchClear_Click(){
 }
 
 void IconListToolbar::viewIcon_Click(){
-    emit(changeView(0));
+    emit(changeView(1));
 }
 
 void IconListToolbar::viewList_Click(){
-    emit(changeView(1));
+    emit(changeView(0));
 }
 
 void IconListToolbar::zoomIn_Click(){
