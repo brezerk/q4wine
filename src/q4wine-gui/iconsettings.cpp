@@ -286,6 +286,10 @@ void IconSettings::cmdGetWorkDir_Click(){
 	  dialog.setWindowTitle(tr("Open Directory"));
 	  dialog.setDirectory(searchPath);
 
+      if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1){
+          dialog.setOptions(QFileDialog::DontUseNativeDialog);
+      }
+
 	if (dialog.exec())
 		fileName = dialog.selectedFiles().first();
 
@@ -313,7 +317,6 @@ void IconSettings::cmdAdd_Click(){
 }
 
 void IconSettings::cmdGetProgram_Click(){
-
 	QString fileName, searchPath = this->prefix_path;
 
 	if (!txtProgramPath->text().isEmpty()){
@@ -338,6 +341,10 @@ void IconSettings::cmdGetProgram_Click(){
 	  dialog.setDirectory(searchPath);
 	  dialog.setFileMode(QFileDialog::ExistingFile);
 	  dialog.setNameFilter(tr("Exe files (*.exe)"));
+
+      if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1){
+          dialog.setOptions(QFileDialog::DontUseNativeDialog);
+      }
 
 	 if (dialog.exec())
 		fileName = dialog.selectedFiles().first();
@@ -390,6 +397,11 @@ void IconSettings::cmdGetIcon_Click(){
 	  dialog.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden);
 	  dialog.setFileMode(QFileDialog::ExistingFile);
 	  dialog.setWindowTitle(tr("Open image file"));
+
+      if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1){
+          dialog.setOptions(QFileDialog::DontUseNativeDialog);
+      }
+
 	  if ((!iconPath.isEmpty()) and (QFile(iconPath).exists())){
 		  QStringList list = iconPath.split("/");
 		  searchPath = iconPath.left(iconPath.length() - list.last().length());

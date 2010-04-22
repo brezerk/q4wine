@@ -1754,6 +1754,25 @@
            </widget>
           </item>
           <item>
+           <widget class="QGroupBox" name="groupBox_15">
+            <property name="title">
+             <string>File dialogs</string>
+            </property>
+            <layout class="QVBoxLayout" name="_9">
+             <item>
+              <widget class="QCheckBox" name="chDontUseNativeDialog">
+               <property name="text">
+                <string>Don't use the native file dialogs. By default, the native file dialog will be used.</string>
+               </property>
+               <property name="checked">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
            <spacer name="verticalSpacer_6">
             <property name="orientation">
              <enum>Qt::Vertical</enum>

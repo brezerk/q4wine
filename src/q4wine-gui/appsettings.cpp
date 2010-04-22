@@ -223,6 +223,11 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
         chUseSingleClick->setChecked(true);
     }
 
+    if (settings.value("dontUseNativeFileDialog", 0).toInt()==0){
+        chDontUseNativeDialog->setChecked(false);
+    } else {
+        chDontUseNativeDialog->setChecked(true);
+    }
 
     QString res = settings.value("defaultDesktopSize").toString();
     if (res.isEmpty()){
@@ -246,10 +251,15 @@ bool AppSettings::eventFilter(QObject *obj, QEvent *event){
 
 		QString file="";
 
+        QFileDialog::Options options;
+
+        if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+                options = QFileDialog::DontUseNativeDialog | QFileDialog::DontResolveSymlinks;
+
 		if (obj->objectName().right(3)=="Bin"){
-			file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)", 0, options);
 		} else {
-			file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),  options );
 		}
 
 		if (!file.isEmpty()){
@@ -607,6 +617,11 @@ void AppSettings::cmdOk_Click(){
         settings.setValue("useSingleClick", 0);
     }
 
+    if (chDontUseNativeDialog->isChecked()){
+        settings.setValue("dontUseNativeFileDialog", 1);
+    } else {
+        settings.setValue("dontUseNativeFileDialog", 0);
+    }
 
 
     QString desktopSize=cboxDesktopSize->currentText();
