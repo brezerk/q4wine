@@ -639,10 +639,6 @@ void IconListWidget::keyReleaseEvent (QKeyEvent * event){
 		//txtIconFilter->setFocus();
 		//keyEvent.release();
 		return;
-    } else if (event->key()==Qt::Key_Return){
-		if (this->currentItem())
-			this->itemDoubleClicked(this->currentItem());
-		return;
     } else if (event->key()==Qt::Key_Delete){
 		if (this->currentItem())
 			this->iconDelete_Click();
@@ -661,6 +657,9 @@ void IconListWidget::keyReleaseEvent (QKeyEvent * event){
 void IconListWidget::keyPressEvent (QKeyEvent * event ){
     if (event->key()==Qt::Key_Control){
             this->controlKey=true;
+    } else if (event->key()==Qt::Key_Return){
+        if (this->currentItem())
+            this->itemDoubleClicked(this->currentItem());
     }
     return;
 }
@@ -675,6 +674,9 @@ void IconListWidget::iconAdd_Click(void){
 
 void IconListWidget::iconRename_Click(void){
 	  bool ok=false;
+
+      if (selectedItems().count()<=0)
+          return;
 
 	  std::auto_ptr<QListWidgetItem> iconItem (selectedItems().first());
 	  if (!iconItem.get()){
@@ -704,7 +706,7 @@ void IconListWidget::iconDelete_Click(void){
 	  */
 	  QList<QListWidgetItem *> icoList = this->selectedItems();
 
-	  if (icoList.count()<0)
+      if (icoList.count()<=0)
 			return;
 
 	  if (QMessageBox::warning(this, tr("Delete Icon"), tr("Do you want to delete all selected icons?"),  QMessageBox::Yes, QMessageBox::No	)==QMessageBox::Yes){
