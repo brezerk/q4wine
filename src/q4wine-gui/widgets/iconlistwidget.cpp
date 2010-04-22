@@ -819,22 +819,26 @@ void IconListWidget::iconPaste_Click(void){
    case true:
 						if (!db_icon.updateIcon(newName, db_prefix.getId(this->prefixName), db_dir.getId(this->dirName, this->prefixName), db_prefix.getId(iconBuffer.prefix_name), db_dir.getId(iconBuffer.dir_name, iconBuffer.prefix_name), iconBuffer.names.at(i)))
 							  return;
-
-                        iconBuffer.names.clear();
-                        iconBuffer.dir_name="";
-                        iconBuffer.prefix_name="";
-                        iconBuffer.move=false;
-						break;
 				  }
 
 			}
 	  }
+
+      if (iconBuffer.move){
+          iconBuffer.names.clear();
+          iconBuffer.dir_name="";
+          iconBuffer.prefix_name="";
+          iconBuffer.move=false;
+      }
 
 	  this->showContents("");
 	  return;
 }
 
 void IconListWidget::iconOption_Click(void){
+    if (selectedItems().count()<=0)
+        return;
+
 	  std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
 	  if (!iconItem.get())
 			return;
@@ -848,6 +852,9 @@ void IconListWidget::iconOption_Click(void){
 }
 
 void IconListWidget::iconSearchAppDB_Click(void){
+    if (selectedItems().count()<=0)
+        return;
+
 	std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
 	if (!iconItem.get())
 		  return;
