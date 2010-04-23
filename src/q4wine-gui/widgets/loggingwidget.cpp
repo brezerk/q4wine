@@ -247,7 +247,16 @@ void LoggingWidget::logExport_Click(){
             item.release();
             return;
         } else {
+#ifdef _QT45_AVALIBLE_
+            QFileDialog::Options options;
+
+            if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+                options = QFileDialog::DontUseNativeDialog;
+
+            QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to save"), QDir::homePath(), tr("Log Files (*.log)"), 0, options);
+#else
             QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to save"), QDir::homePath(), tr("Log Files (*.log)"));
+#endif
 
             if (fileName.isEmpty()){
                 item.release();

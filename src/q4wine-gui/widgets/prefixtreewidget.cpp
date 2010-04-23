@@ -211,6 +211,7 @@ void PrefixTreeWidget::getPrefixes(){
 			}
 			prefixItem.release();
 	  }
+
 	  return;
 }
 
@@ -445,12 +446,24 @@ void PrefixTreeWidget::menuMount_triggered(QAction* action){
 			/*
 			Request for unmounting cdrom drve described at wine prefix settings
 			*/
+
+          QString fileFilter;
 #ifdef _OS_LINUX_
-			QString fileName = QFileDialog::getOpenFileName(this, tr("Open CD Image files"), QDir::homePath(), tr("CD image files (*.iso *.nrg *.img *.bin *.mdf)"));
+    fileFilter = tr("CD image files (*.iso *.nrg *.img *.bin *.mdf)");
+#endif
+#ifdef _OS_FREEBSD_
+    fileFilter =  tr("iso files (*.iso)");
 #endif
 
-#ifdef _OS_FREEBSD_
-			QString fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), QDir::homePath(), tr("iso files (*.iso)"));
+#ifdef _QT45_AVALIBLE_
+    QFileDialog::Options options;
+
+    if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+        options = QFileDialog::DontUseNativeDialog;
+
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open CD Image files"), QDir::homePath(), fileFilter, 0, options);
+#else
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open CD Image files"), QDir::homePath(), fileFilter);
 #endif
 
 			if(fileName.isEmpty()){

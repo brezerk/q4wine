@@ -201,9 +201,27 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 		QString file="";
 
 		if (obj->objectName().right(3)=="Bin"){
-			file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*.*)");
+#ifdef _QT45_AVALIBLE_
+            QFileDialog::Options options;
+
+            if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+                options = QFileDialog::DontUseNativeDialog;
+
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*.*)", 0, options);
+#else
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*.*)");
+#endif
 		} else {
-			file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
+#ifdef _QT45_AVALIBLE_
+            QFileDialog::Options options;
+
+            if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+                options = QFileDialog::DontUseNativeDialog;
+
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(), options);
+#else
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(), QFileDialog::DontResolveSymlinks);
+#endif
 		}
 
 		if (!file.isEmpty()){

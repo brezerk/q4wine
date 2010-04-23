@@ -256,7 +256,16 @@ void PrefixControlWidget::prefixImport_Click(){
 	openpath.append(APP_SHORT_NAME);
 	openpath.append("/prefixes/");
 
+#ifdef _QT45_AVALIBLE_
+    QFileDialog::Options options;
+
+    if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+        options = QFileDialog::DontUseNativeDialog;
+
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Select file to import"), openpath , tr("Prefix archive images (*.tbz)"), 0, options);
+#else
 	QString fileName = QFileDialog::getOpenFileName(this, tr("Select file to import"), openpath , tr("Prefix archive images (*.tbz)"));
+#endif
 
 	if (!fileName.isEmpty()){
 		QDir dir;
@@ -342,7 +351,16 @@ void PrefixControlWidget::prefixExport_Click(){
 	savepath.append(".tbz");
 
 	//Request user for valid save path
-	QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to export"), savepath , tr("Prefix archive images (*.tbz)"));
+#ifdef _QT45_AVALIBLE_
+    QFileDialog::Options options;
+
+    if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+        options = QFileDialog::DontUseNativeDialog;
+
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to export"), savepath , tr("Prefix archive images (*.tbz)"), 0, options);
+#else
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to export"), savepath , tr("Prefix archive images (*.tbz)"));
+#endif
 
 	if (!fileName.isEmpty()){
 		QStringList args;

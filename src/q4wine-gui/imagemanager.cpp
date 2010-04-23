@@ -173,14 +173,27 @@ void ImageManager::cmdOk_Click(){
 
 void ImageManager::actionAddImage(){
 	bool ok;
-	QString fileName, newName;
+    QString fileName, newName, fileFilter;
+
 #ifdef _OS_LINUX_
-	fileName = QFileDialog::getOpenFileName(this, tr("Open CD image file"), QDir::homePath(), tr("CD image files (*.iso *.nrg *.img *.bin *.mdf)"));
+    fileFilter = tr("CD image files (*.iso *.nrg *.img *.bin *.mdf)");
+#endif
+#ifdef _OS_FREEBSD_
+    fileFilter =  tr("iso files (*.iso)");
 #endif
 
-#ifdef _OS_FREEBSD_
-	fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), QDir::homePath(), tr("iso files (*.iso)"));
+#ifdef _QT45_AVALIBLE_
+    QFileDialog::Options options;
+
+    if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+        options = QFileDialog::DontUseNativeDialog;
+
+    fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), QDir::homePath(), fileFilter, 0, options);
+#else
+    fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), QDir::homePath(), fileFilter);
 #endif
+
+
 
 	if(!fileName.isEmpty()){
 		newName = fileName.split("/").last();

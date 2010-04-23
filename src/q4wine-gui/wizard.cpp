@@ -594,11 +594,25 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 
 	if (event->type() == QEvent::MouseButtonPress) {
 		QString file;
-		if (obj->objectName().right(3)=="Bin"){
-			file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
-		} else {
-			file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),   QFileDialog::DontResolveSymlinks);
-		}
+
+#ifdef _QT45_AVALIBLE_
+        QFileDialog::Options options;
+
+        if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+                options = QFileDialog::DontUseNativeDialog | QFileDialog::DontResolveSymlinks;
+
+        if (obj->objectName().right(3)=="Bin"){
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)", 0, options);
+        } else {
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),  options);
+        }
+#else
+        if (obj->objectName().right(3)=="Bin"){
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
+        } else {
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath());
+        }
+#endif
 
 		if (!file.isEmpty()){
 			QString a;

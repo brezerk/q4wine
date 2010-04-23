@@ -21,6 +21,17 @@
 
 IconsView::IconsView(QString tmpDir, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
+    // Loading libq4wine-core.so
+   libq4wine.setFileName("libq4wine-core");
+
+   if (!libq4wine.load()){
+       libq4wine.load();
+   }
+
+   // Getting corelib calss pointer
+   CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+   CoreLib.reset((corelib *)CoreLibClassPointer(true));
+
 	setupUi(this);
 	tempDirectory=tmpDir;
 
@@ -139,7 +150,17 @@ void IconsView::cmdOk_Click(){
 			saveFile.append("/.config/");
 			saveFile.append(APP_SHORT_NAME);
 			saveFile.append("/icons/");
-			saveFile = QFileDialog::getSaveFileName(this, tr("Select file to save"), saveFile , tr("Images (*.png)"));
+
+#ifdef _QT45_AVALIBLE_
+        QFileDialog::Options options;
+
+        if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+                options = QFileDialog::DontUseNativeDialog;
+
+        saveFile = QFileDialog::getSaveFileName(this, tr("Select file to save"), saveFile , tr("Images (*.png)"), 0, options);
+#else
+        saveFile = QFileDialog::getSaveFileName(this, tr("Select file to save"), saveFile , tr("Images (*.png)"));
+#endif
 
 			if (saveFile.isEmpty()){
 				reject();

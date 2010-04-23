@@ -318,6 +318,12 @@ void Run::cmdGetProgram_Click(){
 	dialog.setNameFilter(tr("Exe files (*.exe)"));
 	//dialog.setSidebarUrls(prefix_urls);
 
+#ifdef _QT45_AVALIBLE_
+      if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1){
+          dialog.setOptions(QFileDialog::DontUseNativeDialog);
+      }
+#endif
+
 	if (dialog.exec())
 		fileName = dialog.selectedFiles().first();
 
@@ -368,6 +374,12 @@ void Run::cmdGetWorkDir_Click(){
 	dialog.setDirectory(searchPath);
 	// This option wirksonly it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
 	//dialog.setOption(QFileDialog::ShowDirsOnly, true);
+
+#ifdef _QT45_AVALIBLE_
+      if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1){
+          dialog.setOptions(QFileDialog::DontUseNativeDialog);
+      }
+#endif
 
 	dialog.setSidebarUrls(prefix_urls);
 	if (dialog.exec())

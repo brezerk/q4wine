@@ -29,6 +29,11 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QInputDialog>
+#include <QAbstractItemView>
+#include <QDialog>
+
+//q4wine lib
+#include "q4wine-lib.h"
 
 class IconsView : public QDialog, public Ui::IconsView
 {
@@ -42,6 +47,12 @@ class IconsView : public QDialog, public Ui::IconsView
 		void cmdOk_Click();
 
 	private:
+        //! This is need for libq4wine-core.so import;
+        typedef void *CoreLibPrototype (bool);
+            CoreLibPrototype *CoreLibClassPointer;
+            std::auto_ptr<corelib> CoreLib;
+        QLibrary libq4wine;
+
 		QString tempDirectory;
 };
 
