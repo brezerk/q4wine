@@ -223,11 +223,16 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
         chUseSingleClick->setChecked(true);
     }
 
+#ifdef _QT45_AVALIBLE_
     if (settings.value("dontUseNativeFileDialog", 0).toInt()==0){
         chDontUseNativeDialog->setChecked(false);
     } else {
         chDontUseNativeDialog->setChecked(true);
     }
+#else
+    chDontUseNativeDialog->setEnabled(false);
+#endif
+
 
     QString res = settings.value("defaultDesktopSize").toString();
     if (res.isEmpty()){
@@ -251,6 +256,7 @@ bool AppSettings::eventFilter(QObject *obj, QEvent *event){
 
 		QString file="";
 
+#ifdef _QT45_AVALIBLE_
         QFileDialog::Options options;
 
         if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
@@ -259,8 +265,15 @@ bool AppSettings::eventFilter(QObject *obj, QEvent *event){
 		if (obj->objectName().right(3)=="Bin"){
             file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)", 0, options);
 		} else {
-            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),  options );
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),  options);
 		}
+#else
+        if (obj->objectName().right(3)=="Bin"){
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
+        } else {
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath());
+        }
+#endif
 
 		if (!file.isEmpty()){
 			QString a="";
@@ -617,12 +630,13 @@ void AppSettings::cmdOk_Click(){
         settings.setValue("useSingleClick", 0);
     }
 
+#ifdef _QT45_AVALIBLE_
     if (chDontUseNativeDialog->isChecked()){
         settings.setValue("dontUseNativeFileDialog", 1);
     } else {
         settings.setValue("dontUseNativeFileDialog", 0);
     }
-
+#endif
 
     QString desktopSize=cboxDesktopSize->currentText();
     if (desktopSize==tr("No virtual desktop"))

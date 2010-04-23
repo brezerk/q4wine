@@ -51,6 +51,8 @@
 
 #cmakedefine DEBUG
 
+#cmakedefine _QT45_AVALIBLE_
+
 /*
  * Note APP_VERS and APP_PREF automatycaly generates by cmake
  *
