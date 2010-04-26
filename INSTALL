@@ -75,7 +75,7 @@ Installation
                                  : system avalible! See: http://fuseiso.sourceforge.net/ ;
        WITH_WINEAPPDB            : If ON, then build q4wine with wine appdb browser support;
        USE_BZIP2                 : Use bzip2 to compress man pages;
-       USE_GZIP                  : use gzip to compress man pages;
+       USE_GZIP                  : Use gzip to compress man pages;
 
 6. $ make
 7. $ make install

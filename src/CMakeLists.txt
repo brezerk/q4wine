@@ -20,33 +20,13 @@ endif(POLICY CMP0011)
 # which point to directories outside the build tree to the install RPATH
 #SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
-IF (NOT DEFINED WITH_ICOUTILS)
-    SET(WITH_ICOUTILS "ON")
-ENDIF (NOT DEFINED WITH_ICOUTILS)
-
-IF (NOT DEFINED WITH_WINETRIKS)
-    SET(WITH_WINETRIKS "OFF")
-ENDIF (NOT DEFINED WITH_WINETRIKS)
-
-IF (NOT DEFINED DEBUG)
-    SET(DEBUG "OFF")
-ENDIF (NOT DEFINED DEBUG)
-
-IF (NOT DEFINED WITH_EMBEDDED_FUSEISO)
-    SET(WITH_EMBEDDED_FUSEISO "OFF")
-ENDIF (NOT DEFINED WITH_EMBEDDED_FUSEISO)
-
-IF (NOT DEFINED WITH_WINEAPPDB)
-    SET(WITH_WINEAPPDB "ON")
-ENDIF (NOT DEFINED WITH_WINEAPPDB)
-
-IF (NOT DEFINED USE_BZIP2)
-    SET(USE_BZIP2 "OFF")
-ENDIF (NOT DEFINED USE_BZIP2)
-
-IF (NOT DEFINED USE_GZIP)
-    SET(USE_GZIP "OFF")
-ENDIF (NOT DEFINED USE_GZIP)
+option(DEBUG "If ON, then build q4wine with icoutils support use it in debug or bug report cases" "OFF")
+option(WITH_ICOUTILS "If ON, then build q4wine with icoutils support" "ON")
+option(WITH_WINETRIKS "If ON, then build q4wine with winetriks plugin support" "OFF")
+option(WITH_EMBEDDED_FUSEISO "If ON, then build embedded fuseiso (q4wine-mount) binary" "OFF")
+option(WITH_WINEAPPDB "If ON, then build q4wine with wine appdb browser support" "ON")
+option(USE_BZIP2 "Use bzip2 to compress man pages" "OFF")
+option(USE_GZIP "Use gzip to compress man pages" "OFF")
 
 MESSAGE("\n * Utility for management wine applications and prefixes")
 MESSAGE(" * (C) 2008-2010, brezblock core team")
