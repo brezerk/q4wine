@@ -201,7 +201,7 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 		QString file="";
 
 		if (obj->objectName().right(3)=="Bin"){
-#ifdef _QT45_AVALIBLE_
+#if QT_VERSION >= 0x040500
             QFileDialog::Options options;
 
             if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
@@ -212,7 +212,7 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
             file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*.*)");
 #endif
 		} else {
-#ifdef _QT45_AVALIBLE_
+#if QT_VERSION >= 0x040500
             QFileDialog::Options options;
 
             if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)

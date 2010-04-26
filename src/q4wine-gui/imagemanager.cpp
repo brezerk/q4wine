@@ -182,7 +182,7 @@ void ImageManager::actionAddImage(){
     fileFilter =  tr("iso files (*.iso)");
 #endif
 
-#ifdef _QT45_AVALIBLE_
+#if QT_VERSION >= 0x040500
     QFileDialog::Options options;
 
     if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)

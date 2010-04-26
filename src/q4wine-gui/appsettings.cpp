@@ -223,7 +223,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
         chUseSingleClick->setChecked(true);
     }
 
-#ifdef _QT45_AVALIBLE_
+#if QT_VERSION >= 0x040500
     if (settings.value("dontUseNativeFileDialog", 0).toInt()==0){
         chDontUseNativeDialog->setChecked(false);
     } else {
@@ -256,7 +256,7 @@ bool AppSettings::eventFilter(QObject *obj, QEvent *event){
 
 		QString file="";
 
-#ifdef _QT45_AVALIBLE_
+#if QT_VERSION >= 0x040500
         QFileDialog::Options options;
 
         if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
@@ -630,7 +630,7 @@ void AppSettings::cmdOk_Click(){
         settings.setValue("useSingleClick", 0);
     }
 
-#ifdef _QT45_AVALIBLE_
+#if QT_VERSION >= 0x040500
     if (chDontUseNativeDialog->isChecked()){
         settings.setValue("dontUseNativeFileDialog", 1);
     } else {

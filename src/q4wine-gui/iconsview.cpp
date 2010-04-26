@@ -151,7 +151,7 @@ void IconsView::cmdOk_Click(){
 			saveFile.append(APP_SHORT_NAME);
 			saveFile.append("/icons/");
 
-#ifdef _QT45_AVALIBLE_
+#if QT_VERSION >= 0x040500
         QFileDialog::Options options;
 
         if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)

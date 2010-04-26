@@ -256,7 +256,7 @@ void PrefixControlWidget::prefixImport_Click(){
 	openpath.append(APP_SHORT_NAME);
 	openpath.append("/prefixes/");
 
-#ifdef _QT45_AVALIBLE_
+#if QT_VERSION >= 0x040500
     QFileDialog::Options options;
 
     if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
@@ -351,7 +351,7 @@ void PrefixControlWidget::prefixExport_Click(){
 	savepath.append(".tbz");
 
 	//Request user for valid save path
-#ifdef _QT45_AVALIBLE_
+#if QT_VERSION >= 0x040500
     QFileDialog::Options options;
 
     if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)

@@ -247,7 +247,7 @@ void LoggingWidget::logExport_Click(){
             item.release();
             return;
         } else {
-#ifdef _QT45_AVALIBLE_
+#if QT_VERSION >= 0x040500
             QFileDialog::Options options;
 
             if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)

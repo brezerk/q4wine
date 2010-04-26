@@ -148,7 +148,7 @@ void WineDriveDialog::cmdGetDrivePath_Click(){
 	QFileDialog dialog(this);
 	  dialog.setFilter(QDir::Dirs | QDir::Hidden);
 
-#ifdef _QT45_AVALIBLE_
+#if QT_VERSION >= 0x040500
       if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1){
           dialog.setOptions(QFileDialog::DontUseNativeDialog);
       }
