@@ -621,6 +621,11 @@
                  <string>Buildin, Native</string>
                 </property>
                </item>
+               <item>
+                <property name="text">
+                 <string>Disabled</string>
+                </property>
+               </item>
               </widget>
              </item>
              <item>

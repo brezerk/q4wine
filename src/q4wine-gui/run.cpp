@@ -163,6 +163,8 @@ void Run::cmdOk_Click(){
 		override.append(QString("%1=").arg(twDlls->item(i-1, 0)->text()));
 		if (twDlls->item(i-1, 1)->text()==tr("Native"))
 			override.append("n;");
+        if (twDlls->item(i-1, 1)->text()==tr("Disabled"))
+            override.append("'';");
 		if (twDlls->item(i-1, 1)->text()==tr("Buildin"))
 			override.append("b;");
 		if (twDlls->item(i-1, 1)->text()==tr("Native, Buildin"))
