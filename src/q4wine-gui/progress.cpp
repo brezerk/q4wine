@@ -41,7 +41,7 @@ Progress::Progress(int action, QWidget * parent, Qt::WFlags f)
     if (action==0){
         QString path = QString("%1/.local/share/applications/wine/").arg(QDir::homePath());
 
-        lblInfo->setText(tr("Importing wine desktop icons from:<br>\"%1\"<br><br>This can take a while...").arg(path));
+        lblInfo->setText(tr("Importing wine desktop icons from:<br>\"%1\"<br><br>This can take a while...<br><br><b>Note:</b> To remove processed files see q4wine options dialog.").arg(path));
         setWindowTitle(tr("Importing wine desktop icons: %1 of %2 ").arg(0).arg(max));
 
         this->max =  importIcons(path) - 1;
@@ -179,21 +179,16 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
         } else if (line.contains(QRegExp("^Icon=*"))){
             icon=line.right(line.length()-5);
         } else if (line.contains(QRegExp("^Exec=*"))){
-            QStringList split = line.right(line.length()-5).split("\"");
-
-            qDebug()<<split.count();
-            qDebug()<<split;
-
-            if (split.count()>3){
-                prefix_path = split.at(1);
-                exec = split.at(3);
-
-                if (split.count()>4){
-                    for (int i=4; i<split.count(); i++){
-                        args.append(split.at(i));
+            //Parse exec string
+            QRegExp rxlen("env WINEPREFIX=\"(.+)\" wine \"(.+)\"( .*)");
+            if (rxlen.indexIn(line) != -1){
+                QStringList cap = rxlen.capturedTexts();
+                if (cap.count()>=3){
+                    prefix_path = cap.at(1);
+                    exec = cap.at(2);
+                    if (cap.count()>=4){
+                        args = cap.at(3).trimmed();
                     }
-                } else if (split.count()==4) {
-                    args=split.at(4).trimmed();
                 }
             }
         }
@@ -229,9 +224,9 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
     }
 
 #ifdef DEBUG
-    qDebug()<<"[ii] removed: "<<file.remove();
+   // qDebug()<<"[ii] removed: "<<file.remove();
 #else
-    file.remove();
+   // file.remove();
 #endif
     return;
 }
