@@ -229,8 +229,8 @@
        <rect>
         <x>290</x>
         <y>10</y>
-        <width>431</width>
-        <height>301</height>
+        <width>370</width>
+        <height>360</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -2092,7 +2092,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="tab_42">
            <attribute name="title">
@@ -2309,7 +2309,7 @@
               <property name="sizeHint" stdset="0">
                <size>
                 <width>20</width>
-                <height>186</height>
+                <height>245</height>
                </size>
               </property>
              </spacer>
@@ -2320,6 +2320,46 @@
            <attribute name="title">
             <string>Wine desktop import</string>
            </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QGroupBox" name="groupBox_72">
+              <property name="title">
+               <string>Wine desktop import</string>
+              </property>
+              <layout class="QVBoxLayout" name="_158">
+               <item>
+                <widget class="QCheckBox" name="chRemoveDesktopFiles">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Remove processed wine desktop files.</string>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>245</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>

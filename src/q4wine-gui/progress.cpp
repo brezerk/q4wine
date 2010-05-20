@@ -115,13 +115,6 @@ int Progress::importIcons(QString folder){
         }
     }
 
-    /*
-#ifdef DEBUG
-    qDebug()<<"[ii] Dir removed: "<<dir.rmdir(dir.path());
-#else
-    dir.rmdir(dir.path());
-#endif
-*/
     return files;
 }
 
@@ -143,13 +136,13 @@ void Progress::removeEmptyFolders(QString folder){
         }
     }
 
-
+    if (CoreLib->getSetting("advanced", "removeDesktopFiles", false, 0)==1){
 #ifdef DEBUG
-    qDebug()<<"[ii] Dir removed: "<<dir.rmdir(dir.path());
+        qDebug()<<"[ii] Dir removed: "<<dir.rmdir(dir.path());
 #else
-    dir.rmdir(dir.path());
+        dir.rmdir(dir.path());
 #endif
-
+    }
     return;
 }
 
@@ -223,10 +216,12 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
         db_icon.addIcon(args, exec, icon, "", prefix_name, "import", name, "", "", "", "", path, res);
     }
 
+    if (CoreLib->getSetting("advanced", "removeDesktopFiles", false, 0)==1){
 #ifdef DEBUG
-   // qDebug()<<"[ii] removed: "<<file.remove();
+        qDebug()<<"[ii] removed: "<<file.remove();
 #else
-   // file.remove();
+        file.remove();
 #endif
+    }
     return;
 }
