@@ -598,7 +598,7 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 #if QT_VERSION >= 0x040500
         QFileDialog::Options options;
 
-        if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+        if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog | QFileDialog::DontResolveSymlinks;
 
         if (obj->objectName().right(3)=="Bin"){

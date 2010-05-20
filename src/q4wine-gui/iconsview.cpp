@@ -154,7 +154,7 @@ void IconsView::cmdOk_Click(){
 #if QT_VERSION >= 0x040500
         QFileDialog::Options options;
 
-        if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+        if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
         saveFile = QFileDialog::getSaveFileName(this, tr("Select file to save"), saveFile , tr("Images (*.png)"), 0, options);

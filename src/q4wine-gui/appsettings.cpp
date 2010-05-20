@@ -34,8 +34,25 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
 	setupUi(this);
 
+    splitter.reset(new QSplitter(widgetContent));
+    splitter->addWidget(optionsTreeWidget);
+    splitter->addWidget(optionsStack);
+
+    QList<int> size;
+    size << 150 << 150;
+
+    splitter->setSizes(size);
+
+    std::auto_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
+    vlayout->addWidget(splitter.release());
+    vlayout->setMargin(0);
+    vlayout->setSpacing(0);
+    widgetContent->setLayout(vlayout.release());
+
 	setWindowTitle(tr("%1 settings").arg(APP_NAME));
 	lblCaption->setText(tr("%1 settings").arg(APP_NAME));
+
+    connect(optionsTree, SIGNAL(itemClicked (QTreeWidgetItem *, int)), this, SLOT(optionsTree_itemClicked ( QTreeWidgetItem *, int)));
 
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
@@ -93,8 +110,6 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	} else {
 		chShowTrarey->setCheckState(Qt::Unchecked);
 	}
-
-
 
 	listThemesView->clear();
 
@@ -224,15 +239,14 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     }
 
 #if QT_VERSION >= 0x040500
-    if (settings.value("dontUseNativeFileDialog", 0).toInt()==0){
-        chDontUseNativeDialog->setChecked(false);
+    if (settings.value("useNativeFileDialog", 1).toInt()==1){
+        chUseNativeDialog->setChecked(false);
     } else {
-        chDontUseNativeDialog->setChecked(true);
+        chUseNativeDialog->setChecked(true);
     }
 #else
-    chDontUseNativeDialog->setEnabled(false);
+    chUseNativeDialog->setEnabled(false);
 #endif
-
 
     QString res = settings.value("defaultDesktopSize").toString();
     if (res.isEmpty()){
@@ -243,8 +257,85 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
 	settings.endGroup();
 
+    QList<QTreeWidgetItem *> items = optionsTree->findItems (tr("General"), Qt::MatchExactly);
+    if (items.count()>0){
+        items.at(0)->setExpanded(true);
+        optionsTree->setCurrentItem(items.at(0));
+        optionsStack->setCurrentIndex(0);
+        tabwGeneral->setCurrentIndex(0);
+    }
+
 	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 	return;
+}
+
+void AppSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
+    if (!item)
+        return;
+
+    item->setExpanded(true);
+
+    QString itemText = item->text(0);
+
+    if (itemText==tr("General")){
+        optionsStack->setCurrentIndex(0);
+        tabwGeneral->setCurrentIndex(0);
+    } else if (itemText==tr("System")){
+        optionsStack->setCurrentIndex(0);
+        tabwGeneral->setCurrentIndex(1);
+    } else if (itemText==tr("Utils")){
+        optionsStack->setCurrentIndex(0);
+        tabwGeneral->setCurrentIndex(2);
+    } else if (itemText==tr("Network")){
+        optionsStack->setCurrentIndex(0);
+        tabwGeneral->setCurrentIndex(3);
+    } else if (itemText==tr("Quick Mount")){
+        optionsStack->setCurrentIndex(0);
+        tabwGeneral->setCurrentIndex(4);
+    } else if (itemText==tr("Interface")){
+        optionsStack->setCurrentIndex(1);
+        tabwInterface->setCurrentIndex(0);
+    } else if (itemText==tr("Language")){
+        optionsStack->setCurrentIndex(1);
+        tabwInterface->setCurrentIndex(0);
+    } else if (itemText==tr("Themes")){
+        optionsStack->setCurrentIndex(1);
+        tabwInterface->setCurrentIndex(1);
+    } else if (itemText==tr("Subsystems")){
+        optionsStack->setCurrentIndex(2);
+        tabwInterface->setCurrentIndex(0);
+    } else if (itemText==tr("Logging")){
+        optionsStack->setCurrentIndex(2);
+        tabwSubsystems->setCurrentIndex(0);
+    } else if (itemText==tr("AppDb browser")){
+        optionsStack->setCurrentIndex(2);
+        tabwSubsystems->setCurrentIndex(1);
+    } else if (itemText==tr("Plugins")){
+        optionsStack->setCurrentIndex(3);
+        tabwPlugins->setCurrentIndex(1);
+    } else if (itemText==tr("Winetriks")){
+        optionsStack->setCurrentIndex(3);
+        tabwPlugins->setCurrentIndex(1);
+    } else if (itemText==tr("Advanced")){
+        optionsStack->setCurrentIndex(4);
+        pabwAdvanced->setCurrentIndex(0);
+    } else if (itemText==tr("Defaults")){
+        optionsStack->setCurrentIndex(4);
+        pabwAdvanced->setCurrentIndex(0);
+    } else if (itemText==tr("Run recent program")){
+        optionsStack->setCurrentIndex(4);
+        pabwAdvanced->setCurrentIndex(0);
+    } else if (itemText==tr("Defaults")){
+        optionsStack->setCurrentIndex(4);
+        pabwAdvanced->setCurrentIndex(0);
+    } else if (itemText==tr("Run dialog")){
+        optionsStack->setCurrentIndex(4);
+        pabwAdvanced->setCurrentIndex(1);
+    } else if (itemText==tr("Wine desktop import")){
+        optionsStack->setCurrentIndex(4);
+        pabwAdvanced->setCurrentIndex(2);
+    }
+
 }
 
 bool AppSettings::eventFilter(QObject *obj, QEvent *event){
@@ -252,14 +343,14 @@ bool AppSettings::eventFilter(QObject *obj, QEvent *event){
 			function for displaying file\dir dialog
 	  */
 
-	if (event->type() == QEvent::MouseButtonPress) {
+    if (event->type() == QEvent::MouseButtonRelease) {
 
 		QString file="";
 
 #if QT_VERSION >= 0x040500
         QFileDialog::Options options;
 
-        if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+        if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog | QFileDialog::DontResolveSymlinks;
 
 		if (obj->objectName().right(3)=="Bin"){
@@ -631,10 +722,10 @@ void AppSettings::cmdOk_Click(){
     }
 
 #if QT_VERSION >= 0x040500
-    if (chDontUseNativeDialog->isChecked()){
-        settings.setValue("dontUseNativeFileDialog", 1);
+    if (chUseNativeDialog->isChecked()){
+        settings.setValue("useNativeFileDialog", 1);
     } else {
-        settings.setValue("dontUseNativeFileDialog", 0);
+        settings.setValue("useNativeFileDialog", 0);
     }
 #endif
 
@@ -684,7 +775,7 @@ bool AppSettings::checkEntry(QString fileName, QString info, bool isFile){
 
 void AppSettings::cmdHelp_Click(){
 	QString rawurl="";
-	switch (twbGeneral->currentIndex()){
+    switch (tabwGeneral->currentIndex()){
  case 0:
 		rawurl = "11-settings.html#general";
 		break;

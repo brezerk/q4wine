@@ -259,7 +259,7 @@ void PrefixControlWidget::prefixImport_Click(){
 #if QT_VERSION >= 0x040500
     QFileDialog::Options options;
 
-    if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+    if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
         options = QFileDialog::DontUseNativeDialog;
 
     QString fileName = QFileDialog::getOpenFileName(this, tr("Select file to import"), openpath , tr("Prefix archive images (*.tbz)"), 0, options);
@@ -354,7 +354,7 @@ void PrefixControlWidget::prefixExport_Click(){
 #if QT_VERSION >= 0x040500
     QFileDialog::Options options;
 
-    if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+    if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
         options = QFileDialog::DontUseNativeDialog;
 
     QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to export"), savepath , tr("Prefix archive images (*.tbz)"), 0, options);

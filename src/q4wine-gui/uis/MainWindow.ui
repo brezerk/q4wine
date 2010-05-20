@@ -521,6 +521,9 @@
    <property name="statusTip">
     <string>Scan for wine desktop files and import into q4wine icon's view.</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
   </action>
  </widget>
  <layoutdefault spacing="2" margin="3"/>

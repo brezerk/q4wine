@@ -204,7 +204,7 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 #if QT_VERSION >= 0x040500
             QFileDialog::Options options;
 
-            if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+            if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
             file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*.*)", 0, options);
@@ -215,7 +215,7 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 #if QT_VERSION >= 0x040500
             QFileDialog::Options options;
 
-            if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+            if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
             file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(), options);

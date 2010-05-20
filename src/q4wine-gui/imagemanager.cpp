@@ -185,7 +185,7 @@ void ImageManager::actionAddImage(){
 #if QT_VERSION >= 0x040500
     QFileDialog::Options options;
 
-    if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1)
+    if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
         options = QFileDialog::DontUseNativeDialog;
 
     fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), QDir::homePath(), fileFilter, 0, options);

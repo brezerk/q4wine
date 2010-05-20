@@ -28,6 +28,8 @@
 
 #include "q4wine-lib.h"
 
+#include <QSplitter>
+
 class AppSettings : public QDialog, public Ui::AppSettings
 {
 	Q_OBJECT
@@ -46,6 +48,8 @@ class AppSettings : public QDialog, public Ui::AppSettings
 		void radioEmbedded_toggled(bool state);
         void chEnableLogging_stateChanged ( int state );
 
+        void optionsTree_itemClicked ( QTreeWidgetItem *item, int);
+
 	private:
 		bool eventFilter (QObject *object, QEvent *event);
 		void getThemes(QString selTheme, QString themeDir);
@@ -53,6 +57,7 @@ class AppSettings : public QDialog, public Ui::AppSettings
 		bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
 		void loadThemeIcons();
 
+        std::auto_ptr<QSplitter> splitter;
 
 		//! This is need for libq4wine-core.so import.
 		QLibrary libq4wine;

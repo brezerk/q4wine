@@ -287,7 +287,7 @@ void IconSettings::cmdGetWorkDir_Click(){
 	  dialog.setDirectory(searchPath);
 
 #if QT_VERSION >= 0x040500
-      if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1){
+      if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
           dialog.setOptions(QFileDialog::DontUseNativeDialog);
       }
 #endif
@@ -345,7 +345,7 @@ void IconSettings::cmdGetProgram_Click(){
 	  dialog.setNameFilter(tr("Exe files (*.exe)"));
 
 #if QT_VERSION >= 0x040500
-      if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1){
+      if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
           dialog.setOptions(QFileDialog::DontUseNativeDialog);
       }
 #endif
@@ -403,7 +403,7 @@ void IconSettings::cmdGetIcon_Click(){
 	  dialog.setWindowTitle(tr("Open image file"));
 
 #if QT_VERSION >= 0x040500
-      if (CoreLib->getSetting("advanced", "dontUseNativeFileDialog", false, 0)==1){
+      if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
           dialog.setOptions(QFileDialog::DontUseNativeDialog);
       }
 #endif
