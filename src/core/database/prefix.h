@@ -117,6 +117,7 @@ class Prefix
 	  */
 	  bool updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive, const QString old_prefix_name) const;
 
+      void fixPrefixPath();
 protected:
 	  /*! \brief This function executes requested query.
 	  *

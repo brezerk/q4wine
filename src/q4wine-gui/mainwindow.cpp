@@ -34,12 +34,14 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 
     clearTmp();
 
+    db_prefix.fixPrefixPath();
+
     if (CoreLib->getSetting("DesktopImport", "importAtStartup", false, 0)==1){
         Progress progress(0);
         progress.exec();
     }
 
-  //  importIcons(QString("%1/.local/share/applications/wine/").arg(QDir::homePath()));
+    //  importIcons(QString("%1/.local/share/applications/wine/").arg(QDir::homePath()));
 
     //exportProcess.close();
     // Base GUI setup

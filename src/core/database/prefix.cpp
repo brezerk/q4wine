@@ -24,6 +24,34 @@ Prefix::Prefix()
 
 }
 
+void Prefix::fixPrefixPath(){
+    QSqlQuery query;
+    query.prepare("SELECT id, path FROM prefix");
+
+    if (query.exec()){
+        while (query.next()) {
+            if (query.value(0).isValid()){
+                QString path = query.value(1).toString();
+                if (path.length()>1){
+                    if (path.right(1)=="/"){
+                        path = path.left(path.length()-1);
+                        QSqlQuery fixquery;
+                        fixquery.prepare("UPDATE prefix SET path=:path WHERE id=:id");
+                        fixquery.bindValue(":path", path);
+                        fixquery.bindValue(":id", query.value(0).toString());
+                        if (!fixquery.exec()){
+                            qDebug()<<"SqlError: "<<fixquery.lastError();
+                        }
+                    }
+                }
+            }
+        }
+    } else {
+        qDebug()<<"SqlError: "<<query.lastError();
+    }
+    query.clear();
+}
+
 QString Prefix::getId(const QString prefix_name) const{
 	QString value;
 	QSqlQuery query;

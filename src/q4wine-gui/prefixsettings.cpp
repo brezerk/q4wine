@@ -179,6 +179,12 @@ void PrefixSettings::cmdOk_Click(){
 		}
 	}
 
+    QString path = txtPrefixPath->text();
+    if (path.right(1)=="/"){
+        path=path.left(path.length()-1);
+        txtPrefixPath->setText(path);
+    }
+
     if (this->addNew){
         if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText()))
             reject();
@@ -196,7 +202,7 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 	 * Select folder dialog
 	 */
 
-	if (event->type() == QEvent::MouseButtonPress) {
+    if (event->type() == QEvent::MouseButtonRelease) {
 
 		QString file="";
 
@@ -225,6 +231,10 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 		}
 
 		if (!file.isEmpty()){
+            if (file.right(1)=="/"){
+                file=file.left(file.length()-1);
+            }
+
 			QString a="";
 
 			a.append("txt");
