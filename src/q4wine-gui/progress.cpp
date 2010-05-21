@@ -136,7 +136,7 @@ void Progress::removeEmptyFolders(QString folder){
         }
     }
 
-    if (CoreLib->getSetting("advanced", "removeDesktopFiles", false, 0)==1){
+    if (CoreLib->getSetting("DesktopImport", "remove", false, 0)==1){
 #ifdef DEBUG
         qDebug()<<"[ii] Dir removed: "<<dir.rmdir(dir.path());
 #else
@@ -216,7 +216,7 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
         db_icon.addIcon(args, exec, icon, "", prefix_name, "import", name, "", "", "", "", path, res);
     }
 
-    if (CoreLib->getSetting("advanced", "removeDesktopFiles", false, 0)==1){
+    if (CoreLib->getSetting("DesktopImport", "remove", false, 0)==1){
 #ifdef DEBUG
         qDebug()<<"[ii] removed: "<<file.remove();
 #else

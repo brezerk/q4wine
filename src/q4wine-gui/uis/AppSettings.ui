@@ -2328,6 +2328,13 @@
               </property>
               <layout class="QVBoxLayout" name="_158">
                <item>
+                <widget class="QCheckBox" name="chImportDesktopFilesAtStartup">
+                 <property name="text">
+                  <string>Import wine desktop files at q4wine startup.</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <widget class="QCheckBox" name="chRemoveDesktopFiles">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Minimum">

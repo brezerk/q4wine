@@ -33,8 +33,11 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
     clearTmp();
-    Progress progress(0);
-    progress.exec();
+
+    if (CoreLib->getSetting("DesktopImport", "importAtStartup", false, 0)==1){
+        Progress progress(0);
+        progress.exec();
+    }
 
   //  importIcons(QString("%1/.local/share/applications/wine/").arg(QDir::homePath()));
 

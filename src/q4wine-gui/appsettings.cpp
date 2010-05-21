@@ -238,12 +238,6 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
         chUseSingleClick->setChecked(true);
     }
 
-    if (settings.value("removeDesktopFiles", 0).toInt()==0){
-        chRemoveDesktopFiles->setChecked(false);
-    } else {
-        chRemoveDesktopFiles->setChecked(true);
-    }
-
 #if QT_VERSION >= 0x040500
     if (settings.value("useNativeFileDialog", 1).toInt()==1){
         chUseNativeDialog->setChecked(false);
@@ -262,6 +256,23 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     }
 
 	settings.endGroup();
+
+
+    settings.beginGroup("DesktopImport");
+    if (settings.value("remove", 0).toInt()==0){
+        chRemoveDesktopFiles->setChecked(false);
+    } else {
+        chRemoveDesktopFiles->setChecked(true);
+    }
+
+    if (settings.value("importAtStartup", 0).toInt()==0){
+        chImportDesktopFilesAtStartup->setChecked(false);
+    } else {
+        chImportDesktopFilesAtStartup->setChecked(true);
+    }
+    settings.endGroup();
+
+
 
     QList<QTreeWidgetItem *> items = optionsTree->findItems (tr("General"), Qt::MatchExactly);
     if (items.count()>0){
@@ -735,12 +746,6 @@ void AppSettings::cmdOk_Click(){
     }
 #endif
 
-    if (chRemoveDesktopFiles->isChecked()){
-        settings.setValue("removeDesktopFiles", 1);
-    } else {
-        settings.setValue("removeDesktopFiles", 0);
-    }
-
     QString desktopSize=cboxDesktopSize->currentText();
     if (desktopSize==tr("No virtual desktop"))
         desktopSize="";
@@ -748,6 +753,20 @@ void AppSettings::cmdOk_Click(){
     settings.setValue("defaultDesktopSize", desktopSize);
 
 	settings.endGroup();
+
+    settings.beginGroup("DesktopImport");
+    if (chRemoveDesktopFiles->isChecked()){
+        settings.setValue("remove", 1);
+    } else {
+        settings.setValue("remove", 0);
+    }
+
+    if (chImportDesktopFilesAtStartup->isChecked()){
+        settings.setValue("importAtStartup", 1);
+    } else {
+        settings.setValue("importAtStartup", 0);
+    }
+    settings.endGroup();
 
 	accept();
 	return;
