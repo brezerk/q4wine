@@ -64,20 +64,20 @@ void IconListToolbar::createActions(){
     searchClear->setStatusTip(tr("Clear search field"));
     connect(searchClear.get(), SIGNAL(triggered()), this, SLOT(searchClear_Click()));
 
-    viewIcon.reset(new QAction(CoreLib->loadIcon("data/view-list-icons.png"), tr("Delete log"), this));
-    viewIcon->setStatusTip(tr("Delete current log"));
+    viewIcon.reset(new QAction(CoreLib->loadIcon("data/view-list-icons.png"), tr("Icons view mode"), this));
+    viewIcon->setStatusTip(tr("Icons view mode"));
     connect(viewIcon.get(), SIGNAL(triggered()), this, SLOT(viewIcon_Click()));
 
-    viewList.reset(new QAction(CoreLib->loadIcon("data/view-list-details.png"), tr("Export log"), this));
-    viewList->setStatusTip(tr("Export current log to file"));
+    viewList.reset(new QAction(CoreLib->loadIcon("data/view-list-details.png"), tr("Details view mode"), this));
+    viewList->setStatusTip(tr("Details view mode"));
     connect(viewList.get(), SIGNAL(triggered()), this, SLOT(viewList_Click()));
 
-    zoomIn.reset(new QAction(CoreLib->loadIcon("data/zoom-in.png"), tr("Export log"), this));
-    zoomIn->setStatusTip(tr("Export current log to file"));
+    zoomIn.reset(new QAction(CoreLib->loadIcon("data/zoom-in.png"), tr("Zoom In"), this));
+    zoomIn->setStatusTip(tr("Zoom In"));
     connect(zoomIn.get(), SIGNAL(triggered()), this, SLOT(zoomIn_Click()));
 
-    zoomOut.reset(new QAction(CoreLib->loadIcon("data/zoom-out.png"), tr("Export log"), this));
-    zoomOut->setStatusTip(tr("Export current log to file"));
+    zoomOut.reset(new QAction(CoreLib->loadIcon("data/zoom-out.png"), tr("Zoom Out"), this));
+    zoomOut->setStatusTip(tr("Zoom Out"));
     connect(zoomOut.get(), SIGNAL(triggered()), this, SLOT(zoomOut_Click()));
 
     return;
