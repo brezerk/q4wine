@@ -177,9 +177,6 @@ int WineObject::runSys(){
         run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(this->programDesktop));
     }
 
-    //Fix for start.exe note, we must do escape string, but how? :\
-    //in fact we mast bypass some arguments just by it avalible
-    //run_string.append(QString(" \'%1\' %2 ").arg(this->programBinary).arg(CoreLib->getEscapeString(this->programArgs, false)));
     run_string.append(QString(" \'%1\' %2 ").arg(this->programBinary).arg(programArgs));
     run_string.append(" 2>&1 ");
 

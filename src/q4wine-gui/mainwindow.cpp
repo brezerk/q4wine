@@ -60,7 +60,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     cbPrefixes.reset(new QComboBox(tabPrefixSeup));
     cbPrefixes->setMinimumWidth(180);
     std::auto_ptr<QToolBar> toolbar (new QToolBar(tabPrefixSeup));
-    std::auto_ptr<QLabel> label (new QLabel(tr(" Current prefix: ")));
+    std::auto_ptr<QLabel> label (new QLabel(QString(" %1 ").arg(tr("Current prefix:"))));
 
     toolbar->addWidget(label.release());
     toolbar->addWidget(cbPrefixes.get());
