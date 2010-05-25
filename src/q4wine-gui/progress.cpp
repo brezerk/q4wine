@@ -202,6 +202,10 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
 #endif
 
     QString prefix_name = db_prefix.getName(prefix_path);
+#ifdef DEBUG
+    qDebug()<<" [ii] Get prefix by path: "<<prefix_path<<" name is: "<<prefix_name;
+#endif
+
     if (prefix_name.isEmpty())
         return;
 
@@ -212,6 +216,9 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
         }
 
     if (!db_icon.isExistsByName(prefix_name, "import", name)){
+#ifdef DEBUG
+        qDebug()<<" [ii] adding icon...";
+#endif
         QString res = CoreLib->getSetting("advanced", "defaultDesktopSize", false, "").toString();
         db_icon.addIcon(args, exec, icon, "", prefix_name, "import", name, "", "", "", "", path, res);
     }
