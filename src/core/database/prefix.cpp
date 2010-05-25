@@ -101,10 +101,6 @@ QString Prefix::getPath(const QString prefix_name) const{
 
 QString Prefix::getName(const QString prefix_path) const{
     QString value;
-
-    if (prefix_path==QString("%1/.wine").arg(QDir::homePath()))
-        return "Default";
-
     QSqlQuery query;
     query.prepare("SELECT name FROM prefix WHERE path=:prefix_path");
     query.bindValue(":prefix_path", prefix_path);
