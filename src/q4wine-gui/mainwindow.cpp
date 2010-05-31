@@ -258,13 +258,18 @@ void MainWindow::clearTmp(){
     return;
 }
 
-void MainWindow::prefixRunWinetriks_Click() {
-    QMessageBox::warning(this, tr("Warning"), tr("<p>Winetricks officaly NOT supported by q4wine.</p><p>There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.</p>"));
-
+void MainWindow::prefixRunWinetriks_Click() {  
     if (CoreLib->getSetting("console", "bin").toString().isEmpty()){
         QMessageBox::warning(this, tr("Error"), tr("<p>You do not set default console binary.</p><p>Set it into q4wine option dialog.</p>"));
         return;
     }
+
+    if (CoreLib->getSetting("DialogFlags", "winetriksPlugin", false, 0).toInt()==0){
+        InfoDialog info(0);
+        if (info.exec()==QDialog::Rejected)
+            return;
+    }
+
     winetricks triks(cbPrefixes->currentText());
     triks.exec();
     return;
