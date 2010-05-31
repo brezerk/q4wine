@@ -22,18 +22,6 @@
 void Wizard::loadThemeIcons(int Scene){
 	QPixmap pixmap;
 	switch (Scene){
- case 0:
-		// Prefix creation
-		lblPicture->setPixmap(CoreLib->loadPixmap("data/prefixc.png"));
-
-		cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetWineDllPath->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetPrefixPath->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetMountPoint->setIcon(CoreLib->loadIcon("data/folder.png"));
-
-		break;
 	case 1:
 		// First startup
 		lblPicture->setPixmap(CoreLib->loadPixmap("data/firstc.png"));
@@ -140,8 +128,6 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-	widgetCreatePrefix0->setVisible(FALSE);
-
 	Scena=WizardType;
 	Page=1;
 	QString console_w;
@@ -152,24 +138,6 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	std::auto_ptr<DriveListWidgetItem> item;
 
 	switch (Scena){
- case 0:
-		TotalPage=5;
-
-		setWindowTitle(tr("New prefix creation wizard"));
-		lblCaption->setText(tr("<b>Prefix creation wizard</b>"));
-		lblStep->setText(tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
-
-		connect (cbCreafeFake, SIGNAL(stateChanged (int)), this, SLOT(changeBoxState(int)));
-
-		cmdGetPrefixPath->installEventFilter(this);
-		cmdGetWineBin->installEventFilter(this);
-		cmdGetWineServerBin->installEventFilter(this);
-		cmdGetWineLoaderBin->installEventFilter(this);
-		cmdGetWineDllPath->installEventFilter(this);
-		cmdGetMountPoint->installEventFilter(this);
-
-		combSourceDevice->addItems(CoreLib->getCdromDevices());
-		break;
  case 1:
 		TotalPage=8;
 
@@ -487,38 +455,11 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 	connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
 
-	widgetCreatePrefix0->setVisible(FALSE);
-	widgetCreatePrefix1->setVisible(FALSE);
-	widgetCreatePrefix2->setVisible(FALSE);
-
-	widgetCreateFakeDrive0->setVisible(FALSE);
-	widgetCreateFakeDrive1->setVisible(FALSE);
-	widgetCreateFakeDrive2->setVisible(FALSE);
-	widgetCreateFakeDrive3->setVisible(FALSE);
-	widgetCreateFakeDrive4->setVisible(FALSE);
-	widgetCreateFakeDrive5->setVisible(FALSE);
-	widgetCreateFakeDrive6->setVisible(FALSE);
-	widgetCreateFakeDrive7->setVisible(FALSE);
-
-
-	widgetFirstStartup0->setVisible(FALSE);
-	widgetFirstStartup1->setVisible(FALSE);
-	widgetFirstStartup2->setVisible(FALSE);
-	widgetFirstStartup3->setVisible(FALSE);
-	widgetFirstStartup4->setVisible(FALSE);
-
-	widgetInfo->setVisible(FALSE);
-
-	updateScena();
+    updateScena();
 
 	this->installEventFilter(this);
 
 	return;
-}
-
-
-QString Wizard::getPrefixName(){
-	return txtPrefixName->text();
 }
 
 void Wizard::comboProxyType_indexChanged(QString text){
@@ -565,34 +506,11 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 	/*
 		User select folder dialog function
 	*/
-	if (this->widgetFrame->width()<=100)
-		return FALSE;
-
-	if (event->type() == QEvent::Paint){
-		this->widgetInfo->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive0->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive1->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive2->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive3->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive4->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive5->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive6->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreateFakeDrive7->resize(this->widgetFrame->width(), this->widgetFrame->height());
-		this->widgetCreatePrefix0->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		this->widgetCreatePrefix1->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		this->widgetCreatePrefix2->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		this->widgetFirstStartup0->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		this->widgetFirstStartup1->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		this->widgetFirstStartup2->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		this->widgetFirstStartup3->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		this->widgetFirstStartup4->resize(this->widgetFrame->width()+10, this->widgetFrame->height());
-		return FALSE;
-	}
 
 	if (obj->objectName()== "Wizard")
 		return FALSE;
 
-	if (event->type() == QEvent::MouseButtonPress) {
+    if (event->type() == QEvent::MouseButtonRelease) {
 		QString file;
 
 #if QT_VERSION >= 0x040500
@@ -858,50 +776,7 @@ void Wizard::nextWizardPage(){
 			break;
 		}
 		break;
-	case 0:
-		switch (Page){
-  case 2:
-			if (txtPrefixName->text().isEmpty()){
-				QMessageBox::warning(this, tr("Error"), tr("Enter prefix name first."));
-				return;
-			} else {
-				if (db_prefix.isExistsByName(txtPrefixName->text())){
-					QMessageBox::warning(this, tr("Error"), tr("Sorry. There is other prefix with same name."));
-					return;
-				}
-			}
-			if (!txtPrefixPath->text().isEmpty()){
-				if (!QDir(txtPrefixPath->text()).exists()){
-					QMessageBox::warning(this, tr("Error"), tr("Sorry, prefix path is wrong! Directory not exists."));
-					return;
-				}
-			} else {
-				QMessageBox::warning(this, tr("Error"), tr("Select prefix directory first."));
-				return;
-			}
-			break;
-				case 4:
-			if ((txtMountPoint->text().isEmpty()) and (combSourceDevice->currentText()!=tr("<none>"))){
-				QMessageBox::warning(this, tr("Error"), tr("Sorry, specify mount point directory."));
-				return;
-			}
-			if ((!txtMountPoint->text().isEmpty()) and (combSourceDevice->currentText()==tr("<none>"))){
-				QMessageBox::warning(this, tr("Error"), tr("Sorry, specify source device."));
-				return;
-			}
-			break;
-				case 5:
-			if (!db_prefix.addPrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineDllPath->text(), txtMountPoint->text(), combSourceDevice->currentText()))
-				reject();
-			if (cbCreafeFake->checkState()==Qt::Checked){
-				Wizard createFakeDriveWizard(2, txtPrefixName->text());
-				createFakeDriveWizard.exec();
-			}
-			accept();
-			break;
-		}
-		break;
-	case 2:
+    case 2:
 		switch (Page){
   case 6:
 			for (int i=0; i < listItems.count(); i++){
@@ -1569,191 +1444,85 @@ void Wizard::updateScena(){
   case 1:
             lblCaption->setText(Wizard::tr("<b>First startup wizrad</b>"));
 			lblWizardInfo->setText(Wizard::tr("<p>Welcome to first startup wizard.</p><p>This wizard helps you to make all necessary steps for successful %1 setup.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
-			widgetFirstStartup0->setVisible(FALSE);
-			widgetInfo->setVisible(TRUE);
+            stkWizards->setCurrentIndex(0);
 			cmdNext->setEnabled(TRUE);
 			cmdBack->setEnabled(FALSE);
 			break;
   case 2:
             txtInfo->setText(tr("<p><b><span style='font-weight:600; color:#6495ed;'>%1</span></b> was initially written by Malakhov Alexey aka John Brezerk  [<a href='mailto:brezerk@gmail.com'>brezerk@gmail.com</a>]</p><p>General idea comes from <b><span style='font-weight:600; color:#6495ed;'>WineTools</span></b> scripts which was initially written by Frank Hendriksen [<a href='mailto:frank@frankscorner.org'>frank@frankscorner.org</a>]</p><p>It is licensed under the <b><span style='font-weight:600; color:#6495ed;'>GPL v3</span></b>.</p><p>Send comments, bugreports, etc. to [<a href='mailto:brezerk@gmail.com'>brezerk@gmail.com</a>]</p><p><b><span style='font-weight:600; color:#6495ed;'>Note</span></b>: This software comes with absolutely no warranty. You will <b><span style='font-weight:600; color:#7D1D10;'>NOT</span></b> get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.</p><p>If you <span style='font-weight:600; color:#6495ed;'>need help</span>, ask the mailing lists at <a href='http://www.winehq.org/site/forums'>http://www.winehq.org/site/forums</a>.</p><p>If you <span style='font-weight:600; color:#6495ed;'>want support</span>, buy the commercial versions of wine: CodeWeavers CrossOver Office (<a href='http://www.codeweavers.com'>http://www.codeweavers.com</a>) for Desktop Applications</p>").arg(APP_NAME));
-			widgetCreatePrefix1->setVisible(FALSE);
-			widgetInfo->setVisible(FALSE);
-			widgetFirstStartup0->setVisible(TRUE);
+            stkWizards->setCurrentIndex(1);
 			cmdNext->setEnabled(TRUE);
 			cmdBack->setEnabled(TRUE);
 			break;
   case 3:
-			widgetFirstStartup0->setVisible(FALSE);
-			widgetFirstStartup1->setVisible(FALSE);
-			widgetCreatePrefix1->setVisible(TRUE);
-			lblInfoPrefix1->setText(tr("<p>Please enter default wine settings.</p>"));
-
+            stkWizards->setCurrentIndex(2);
+            stkFirstStartup->setCurrentIndex(0);
 			break;
   case 4:
-			widgetCreatePrefix1->setVisible(FALSE);
-			widgetFirstStartup2->setVisible(FALSE);
-			widgetFirstStartup1->setVisible(TRUE);
+            stkFirstStartup->setCurrentIndex(1);
 			break;
   case 5:
-			widgetFirstStartup1->setVisible(FALSE);
-			widgetFirstStartup3->setVisible(FALSE);
-			widgetFirstStartup2->setVisible(TRUE);
+            stkFirstStartup->setCurrentIndex(2);
 			break;
   case 6:
-			widgetFirstStartup1->setVisible(FALSE);
-			widgetFirstStartup2->setVisible(FALSE);
-			widgetFirstStartup3->setVisible(TRUE);
-			widgetFirstStartup4->setVisible(FALSE);
-			cmdNext->setText(tr("Next >"));
-			widgetInfo->setVisible(FALSE);
+            stkFirstStartup->setCurrentIndex(3);
+            cmdNext->setText(tr("Next >"));
 			break;
   case 7:
-			widgetFirstStartup3->setVisible(FALSE);
-			widgetFirstStartup4->setVisible(TRUE);
+            stkFirstStartup->setCurrentIndex(4);
+            stkWizards->setCurrentIndex(2);
 			cmdNext->setText(tr("Next >"));
-			widgetInfo->setVisible(FALSE);
 			break;
   case 8:
-			lblWizardInfo->setText(tr("<p>All ready for finishing %1 setup. </p><p>Please, press the <b>Finish</b> button to create finish setup process. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
-			widgetFirstStartup4->setVisible(FALSE);
-			widgetInfo->setVisible(TRUE);
+            stkWizards->setCurrentIndex(0);
+            lblWizardInfo->setText(tr("<p>All ready for finishing %1 setup. </p><p>Please, press the <b>Finish</b> button to create finish setup process. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
 			cmdNext->setText(tr("Finish"));
 			break;
 		}
 		break;
-			case 0:
-		/*
-					New prefix creation
-				*/
-		switch (Page){
-  case 1:
-			lblCaption->setText(tr("<b>Prefix creation wizard</b>"));
-			lblWizardInfo->setText(tr("<p>Welcome to prefix creation wizard.</p><p>This wizard helps you to make all necessary steps for successful Wine prefix creation.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>"));
-			widgetCreatePrefix0->setVisible(FALSE);
-			widgetCreatePrefix1->setVisible(FALSE);
-			widgetCreatePrefix2->setVisible(FALSE);
-			widgetInfo->setVisible(TRUE);
-			cmdNext->setEnabled(TRUE);
-			cmdBack->setEnabled(FALSE);
-			break;
-  case 2:
-			widgetInfo->setVisible(FALSE);
-			widgetCreatePrefix0->setVisible(TRUE);
-			widgetCreatePrefix1->setVisible(FALSE);
-			widgetCreatePrefix2->setVisible(FALSE);
-			cmdBack->setEnabled(TRUE);
-			break;
-  case 3:
-			widgetCreatePrefix0->setVisible(FALSE);
-			widgetCreatePrefix1->setVisible(TRUE);
-			widgetCreatePrefix2->setVisible(FALSE);
-			widgetInfo->setVisible(FALSE);
-			break;
-  case 4:
-			widgetCreatePrefix0->setVisible(FALSE);
-			widgetCreatePrefix1->setVisible(FALSE);
-			widgetCreatePrefix2->setVisible(TRUE);
-			cmdNext->setText(tr("Next >"));
-			widgetInfo->setVisible(FALSE);
-			break;
-  case 5:
-
-			QString info = tr("<p>Please check parameters listed below before clicking <b>Next</b>:</p><p><b>Prefix name:</b> %1<br><b>Prefix path:</b> %2</p>").arg(txtPrefixName->text()).arg(txtPrefixPath->text());
-			if (cbCreafeFake->checkState()==Qt::Checked){
-				info.append(tr("<p>Wine fake drive will be created.</p>"));
-			}
-			if (!txtWineBin->text().isEmpty()){
-				info.append(tr("<p><b>Wine Bin</b>: %1").arg(txtWineBin->text()));
-			} else {
-				info.append(tr("<p><b>Wine Bin</b>: Default"));
-			}
-			if (!txtWineServerBin->text().isEmpty()){
-				info.append(tr("<br><b>Wine Server</b>: %1").arg(txtWineServerBin->text()));
-			} else {
-				info.append(tr("<br><b>Wine Server</b>: Default"));
-			}
-			if (!txtWineLoaderBin->text().isEmpty()){
-				info.append(tr("<br><b>Wine Loader</b>: %1").arg(txtWineLoaderBin->text()));
-			} else {
-				info.append(tr("<br><b>Wine Loader</b>: Default"));
-			}
-			if (!txtWineDllPath->text().isEmpty()){
-				info.append(tr("<br><b>Wine Dll Path</b>: %1").arg(txtWineDllPath->text()));
-			} else {
-				info.append(tr("<br><b>Wine Dll Path</b>: Default"));
-			}
-			if (!txtMountPoint->text().isEmpty()){
-				info.append(tr("<p><b>Quick mount options</b> <br><b>Device</b>: %1<br><b>Mount point</b>: %2</p>").arg(txtMountPoint->text()) .arg(combSourceDevice->currentText()));
-			}
-			lblWizardInfo->setText(info);
-			widgetInfo->setVisible(TRUE);
-			widgetCreatePrefix0->setVisible(FALSE);
-			widgetCreatePrefix1->setVisible(FALSE);
-			widgetCreatePrefix2->setVisible(FALSE);
-			cmdNext->setText(tr("Finish"));
-			break;
-		}
-		break;
-			case 2:
+case 2:
 		/*
 				*	New fake drive creation
 				*/
 		switch (Page){
   case 1:
 			lblWizardInfo->setText(tr("<p>Welcome to fake drive creation wizard.</p><p>This wizard helps you to make all necessary steps for successful fake drive creation.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>"));
-			widgetCreateFakeDrive0->setVisible(FALSE);
-			widgetInfo->setVisible(TRUE);
+            stkWizards->setCurrentIndex(0);
 			cmdNext->setEnabled(TRUE);
 			cmdBack->setEnabled(FALSE);
 			break;
   case 2:
-			widgetCreateFakeDrive0->setVisible(TRUE);
-			widgetCreateFakeDrive1->setVisible(FALSE);
-			widgetInfo->setVisible(FALSE);
+            stkWizards->setCurrentIndex(3);
+            stkFakeDrive->setCurrentIndex(0);
 			cmdNext->setEnabled(TRUE);
 			cmdBack->setEnabled(TRUE);
 			break;
   case 3:
-			widgetCreateFakeDrive0->setVisible(FALSE);
-			widgetCreateFakeDrive1->setVisible(TRUE);
-			widgetCreateFakeDrive2->setVisible(FALSE);
+            stkFakeDrive->setCurrentIndex(1);
 			break;
   case 4:
-			widgetCreateFakeDrive1->setVisible(FALSE);
-			widgetCreateFakeDrive3->setVisible(FALSE);
-			widgetCreateFakeDrive2->setVisible(TRUE);
+            stkFakeDrive->setCurrentIndex(2);
 			break;
   case 5:
-			widgetCreateFakeDrive2->setVisible(FALSE);
-			widgetCreateFakeDrive3->setVisible(TRUE);
-			widgetCreateFakeDrive4->setVisible(FALSE);
+            stkFakeDrive->setCurrentIndex(3);
 			break;
   case 6:
-			widgetCreateFakeDrive3->setVisible(FALSE);
-			widgetCreateFakeDrive4->setVisible(TRUE);
-			widgetCreateFakeDrive5->setVisible(FALSE);
+            stkFakeDrive->setCurrentIndex(4);
 			break;
   case 7:
-			widgetCreateFakeDrive4->setVisible(FALSE);
-			widgetCreateFakeDrive5->setVisible(TRUE);
-			widgetCreateFakeDrive6->setVisible(FALSE);
+            stkFakeDrive->setCurrentIndex(5);
 			break;
   case 8:
-			widgetCreateFakeDrive5->setVisible(FALSE);
-			widgetCreateFakeDrive6->setVisible(TRUE);
-			widgetCreateFakeDrive7->setVisible(FALSE);
+            stkFakeDrive->setCurrentIndex(6);
 			break;
   case 9:
-			widgetCreateFakeDrive6->setVisible(FALSE);
-			widgetCreateFakeDrive7->setVisible(TRUE);
-			widgetInfo->setVisible(FALSE);
+            stkWizards->setCurrentIndex(3);
+            stkFakeDrive->setCurrentIndex(7);
 			cmdNext->setText(tr("Next >"));
 			break;
   case 10:
 			lblWizardInfo->setText(tr("<p>All ready for fake drive creation. </p><p>Please, press the <b>Finish</b> button to create facke drive. Or press <b>Back</b> button for return.</p>"));
-			widgetInfo->setVisible(TRUE);
-			widgetCreateFakeDrive6->setVisible(FALSE);
-			widgetCreateFakeDrive7->setVisible(FALSE);
+            stkWizards->setCurrentIndex(0);
 			cmdNext->setText(tr("Finish"));
 			break;
 		}

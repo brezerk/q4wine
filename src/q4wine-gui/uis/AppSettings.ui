@@ -234,7 +234,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QGridLayout" name="gridLayout">
@@ -253,7 +253,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>4</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tab_9">
            <attribute name="title">
@@ -294,7 +294,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtWineBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -304,7 +304,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetWineBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -351,7 +351,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtWineServerBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -361,7 +361,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetWineServerBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -408,7 +408,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtWineLoaderBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -418,7 +418,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetWineLoaderBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -465,7 +465,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtWineLibs">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -475,7 +475,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetWineLibs">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -576,7 +576,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtTarBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -586,7 +586,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetTarBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -633,7 +633,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtMountBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -643,7 +643,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetMountBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -690,7 +690,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtUmountBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -700,7 +700,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetUmountBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -747,7 +747,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtSudoBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -757,7 +757,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetSudoBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -804,7 +804,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtGuiSudoBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -814,7 +814,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetGuiSudoBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -861,7 +861,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtNiceBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -871,7 +871,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetNiceBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -918,7 +918,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtReniceBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -928,7 +928,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetReniceBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -975,7 +975,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtShBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -985,7 +985,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetShBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1061,7 +1061,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtConsoleBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1071,7 +1071,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetConsoleBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1118,7 +1118,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtConsoleArgs">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1165,7 +1165,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtWrestoolBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1175,7 +1175,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetWrestoolBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1222,7 +1222,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtIcotoolBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1232,7 +1232,7 @@
                   <item>
                    <widget class="QPushButton" name="cmdGetIcotoolBin">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1308,7 +1308,7 @@
                   <item>
                    <widget class="QComboBox" name="comboProxyType">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1364,7 +1364,7 @@
                      <bool>false</bool>
                     </property>
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1408,7 +1408,7 @@
                      <bool>false</bool>
                     </property>
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1452,7 +1452,7 @@
                      <bool>false</bool>
                     </property>
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1493,7 +1493,7 @@
                      <bool>false</bool>
                     </property>
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1697,7 +1697,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtMountString">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1744,7 +1744,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtMountImageString">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1788,7 +1788,7 @@
                   <item>
                    <widget class="QLineEdit" name="txtUmountString">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
@@ -1973,7 +1973,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tab_30">
            <attribute name="title">
@@ -2143,7 +2143,7 @@
                   <item>
                    <widget class="QComboBox" name="cboxDesktopSize">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
