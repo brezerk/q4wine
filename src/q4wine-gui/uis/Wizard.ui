@@ -11,7 +11,7 @@
     <x>0</x>
     <y>0</y>
     <width>669</width>
-    <height>434</height>
+    <height>437</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -415,7 +415,7 @@
          <item>
           <widget class="QStackedWidget" name="stkWizards">
            <property name="currentIndex">
-            <number>3</number>
+            <number>2</number>
            </property>
            <widget class="QWidget" name="pageInfo">
             <layout class="QGridLayout" name="gridLayout_3">
@@ -493,7 +493,7 @@ p, li { white-space: pre-wrap; }
              <item row="0" column="0">
               <widget class="QStackedWidget" name="stkFirstStartup">
                <property name="currentIndex">
-                <number>0</number>
+                <number>4</number>
                </property>
                <widget class="QWidget" name="pageWinePath">
                 <layout class="QVBoxLayout" name="verticalLayout_20">
@@ -1793,7 +1793,7 @@ p, li { white-space: pre-wrap; }
                     <bool>false</bool>
                    </property>
                    <property name="title">
-                    <string>Select quick mount profile.</string>
+                    <string>Select quick mount profile</string>
                    </property>
                    <layout class="QVBoxLayout" name="_57">
                     <property name="margin">
@@ -1951,7 +1951,7 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QGroupBox" name="groupBox_15">
                       <property name="title">
-                       <string>Profiles strings:</string>
+                       <string>Profile strings:</string>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_11">
                        <property name="margin">

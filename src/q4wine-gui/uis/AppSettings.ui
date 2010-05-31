@@ -234,7 +234,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QGridLayout" name="gridLayout">
@@ -253,19 +253,25 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>4</number>
           </property>
-          <widget class="QWidget" name="tab_9">
+          <widget class="QWidget" name="tabGeneral">
            <attribute name="title">
             <string>General</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_12">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_16">
               <property name="title">
                <string>Wine settings</string>
               </property>
               <layout class="QVBoxLayout" name="_10">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QWidget" name="widget_5" native="true">
                  <layout class="QHBoxLayout" name="_11">
@@ -499,14 +505,23 @@
             </item>
             <item>
              <widget class="QGroupBox" name="groupBox_17">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="title">
                <string>Tray Icon</string>
               </property>
               <layout class="QVBoxLayout" name="_15">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QCheckBox" name="chShowTrarey">
                  <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
@@ -537,17 +552,23 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_10">
+          <widget class="QWidget" name="tabSystem">
            <attribute name="title">
             <string>System</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_13">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_18">
               <property name="title">
                <string>System utils</string>
               </property>
               <layout class="QVBoxLayout" name="_16">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QWidget" name="widget_36" native="true">
                  <layout class="QHBoxLayout" name="_17">
@@ -1022,17 +1043,23 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_11">
+          <widget class="QWidget" name="tabUtils">
            <attribute name="title">
             <string>Utils</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_14">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_19">
               <property name="title">
                <string>Console</string>
               </property>
               <layout class="QVBoxLayout" name="_25">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QWidget" name="widget_44" native="true">
                  <layout class="QHBoxLayout" name="_26">
@@ -1137,6 +1164,9 @@
                <string>Icoutils</string>
               </property>
               <layout class="QVBoxLayout" name="_28">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QWidget" name="widget_46" native="true">
                  <layout class="QHBoxLayout" name="_29">
@@ -1269,17 +1299,23 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_13">
+          <widget class="QWidget" name="tabNetwork">
            <attribute name="title">
             <string>Network</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_15">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_23">
               <property name="title">
                <string>Proxy settings</string>
               </property>
               <layout class="QVBoxLayout" name="_35">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QWidget" name="widget_49" native="true">
                  <layout class="QHBoxLayout" name="_36">
@@ -1521,24 +1557,23 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_14">
+          <widget class="QWidget" name="tabMount">
            <attribute name="title">
             <string>Quick Mount</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_16">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_24">
               <property name="title">
-               <string>Quick Mount profiles</string>
+               <string>Select quick mount profile</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_17">
-               <item>
-                <widget class="QLabel" name="label_52">
-                 <property name="text">
-                  <string>Select active Quick Mount profile.</string>
-                 </property>
-                </widget>
-               </item>
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QWidget" name="widget_8" native="true">
                  <property name="sizePolicy">
@@ -1666,9 +1701,12 @@
             <item>
              <widget class="QGroupBox" name="groupBox_25">
               <property name="title">
-               <string>Quick Mount strings</string>
+               <string>Profile strings:</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_18">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QWidget" name="widget_54" native="true">
                  <layout class="QHBoxLayout" name="_41">
@@ -1843,19 +1881,25 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
-          <widget class="QWidget" name="tab_25">
+          <widget class="QWidget" name="tabLanguage">
            <attribute name="title">
             <string>Language</string>
            </attribute>
            <layout class="QVBoxLayout" name="_99">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_44">
               <property name="title">
                <string>Language</string>
               </property>
               <layout class="QVBoxLayout" name="_100">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QWidget" name="widget_98" native="true">
                  <layout class="QHBoxLayout" name="_101">
@@ -1920,17 +1964,23 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_26">
+          <widget class="QWidget" name="tabThemes">
            <attribute name="title">
             <string>Themes</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_2">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item row="0" column="0">
              <widget class="QGroupBox" name="groupBox_45">
               <property name="title">
                <string>Themes</string>
               </property>
               <layout class="QVBoxLayout" name="_102">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QListWidget" name="listThemesView">
                  <property name="sizePolicy">
@@ -1973,19 +2023,25 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
-          <widget class="QWidget" name="tab_30">
+          <widget class="QWidget" name="tabLogging">
            <attribute name="title">
             <string>Logging</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_38">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_51">
               <property name="title">
                <string>Logging subsystem:</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_39">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QCheckBox" name="chEnableLogging">
                  <property name="sizePolicy">
@@ -2040,11 +2096,15 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_31">
+          <widget class="QWidget" name="tabAppDB">
            <attribute name="title">
             <string>AppDB Browser</string>
            </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout_40"/>
+           <layout class="QVBoxLayout" name="verticalLayout_40">
+            <property name="margin">
+             <number>3</number>
+            </property>
+           </layout>
           </widget>
          </widget>
         </item>
@@ -2066,7 +2126,7 @@
           <property name="currentIndex">
            <number>0</number>
           </property>
-          <widget class="QWidget" name="tab_34">
+          <widget class="QWidget" name="tabWineTriks">
            <attribute name="title">
             <string>WineTricks</string>
            </attribute>
@@ -2094,17 +2154,23 @@
           <property name="currentIndex">
            <number>2</number>
           </property>
-          <widget class="QWidget" name="tab_42">
+          <widget class="QWidget" name="tabDefaults">
            <attribute name="title">
             <string>Defaults</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_54">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_69">
               <property name="title">
                <string>Default virtual desktop</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_55">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QLabel" name="label_142">
                  <property name="text">
@@ -2212,6 +2278,9 @@
                <string>Program icons</string>
               </property>
               <layout class="QVBoxLayout" name="_156">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QCheckBox" name="chUseSingleClick">
                  <property name="sizePolicy">
@@ -2237,6 +2306,9 @@
                <string>File dialogs</string>
               </property>
               <layout class="QVBoxLayout" name="_157">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QCheckBox" name="chUseNativeDialog">
                  <property name="sizePolicy">
@@ -2271,17 +2343,23 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab">
+          <widget class="QWidget" name="tabRunDialog">
            <attribute name="title">
             <string>Run dialog</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_68">
               <property name="title">
                <string>Run recent program</string>
               </property>
               <layout class="QVBoxLayout" name="_154">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QCheckBox" name="chOpenRunDialog">
                  <property name="sizePolicy">
@@ -2316,17 +2394,23 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_2">
+          <widget class="QWidget" name="tabDImport">
            <attribute name="title">
             <string>Wine desktop import</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_72">
               <property name="title">
                <string>Wine desktop import</string>
               </property>
               <layout class="QVBoxLayout" name="_158">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QCheckBox" name="chImportDesktopFilesAtStartup">
                  <property name="text">
