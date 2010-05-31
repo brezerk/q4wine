@@ -22,7 +22,6 @@ endif(POLICY CMP0011)
 
 option(DEBUG "If ON, then build q4wine with icoutils support use it in debug or bug report cases" "OFF")
 option(WITH_ICOUTILS "If ON, then build q4wine with icoutils support" "ON")
-option(WITH_WINETRIKS "If ON, then build q4wine with winetriks plugin support" "OFF")
 option(WITH_EMBEDDED_FUSEISO "If ON, then build embedded fuseiso (q4wine-mount) binary" "OFF")
 option(WITH_WINEAPPDB "If ON, then build q4wine with wine appdb browser support" "ON")
 option(USE_BZIP2 "Use bzip2 to compress man pages" "OFF")
@@ -128,7 +127,6 @@ file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
 
     MESSAGE(STATUS "DEBUG                         : ${DEBUG}")
     MESSAGE(STATUS "WITH_ICOUTILS                 : ${WITH_ICOUTILS}")
-    MESSAGE(STATUS "WITH_WINETRIKS                : ${WITH_WINETRIKS}")
     MESSAGE(STATUS "WITH_EMBEDDED_FUSEISO         : ${WITH_EMBEDDED_FUSEISO}")
     MESSAGE(STATUS "WITH_WINEAPPDB                : ${WITH_WINEAPPDB}")
     MESSAGE(STATUS "USE_BZIP2                     : ${USE_BZIP2}")
@@ -209,9 +207,7 @@ ENDIF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
 
 add_subdirectory(qtsingleapplication)
 
-IF (${WITH_WINETRIKS} MATCHES ON )
-    include(plugins/CMakeLists.txt)
-ENDIF (${WITH_WINETRIKS} MATCHES ON )
+include(plugins/CMakeLists.txt)
 
 add_subdirectory(q4wine-gui)
 add_subdirectory(q4wine-helper)

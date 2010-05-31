@@ -476,11 +476,6 @@ void corelib::getBuildFlags(){
 #else
     Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"OFF"<<qSetFieldWidth(0)<<endl;
 #endif
-#ifdef WITH_WINETRIKS
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINETRIKS"<<"ON"<<qSetFieldWidth(0)<<endl;
-#else
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINETRIKS"<<"OFF"<<qSetFieldWidth(0)<<endl;
-#endif
 #ifdef WITH_EMBEDDED_FUSEISO
     Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"ON"<<qSetFieldWidth(0)<<endl;
 #else

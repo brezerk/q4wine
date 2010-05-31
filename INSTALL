@@ -69,7 +69,6 @@ Installation
        DEBUG                     : If ON, then q4wine will write debug messages into STDOUT
                                  : use it in debug or bug report cases;
        WITH_ICOUTILS             : If ON, then build q4wine with icoutils support;
-       WITH_WINETRIKS            : If ON, then build q4wine with winetriks plugin support;
        WITH_EMBEDDED_FUSEISO     : If ON, then build embedded fuseiso (q4wine-mount) binary
                                  : please DONT USE this, if you have native fuseiso pakage for you
                                  : system avalible! See: http://fuseiso.sourceforge.net/ ;

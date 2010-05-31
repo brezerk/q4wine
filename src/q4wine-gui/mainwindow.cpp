@@ -259,9 +259,6 @@ void MainWindow::clearTmp(){
 }
 
 void MainWindow::prefixRunWinetriks_Click() {
-#ifndef WITH_WINETRIKS
-    QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without winetriks support.</p><p>If you wish to enable winetriks support add:</p><p> \"-DWITH_WINETRIKS=ON\" to cmake arguments.</p>"));
-#else
     QMessageBox::warning(this, tr("Warning"), tr("<p>Winetricks officaly NOT supported by q4wine.</p><p>There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.</p>"));
 
     if (CoreLib->getSetting("console", "bin").toString().isEmpty()){
@@ -270,8 +267,6 @@ void MainWindow::prefixRunWinetriks_Click() {
     }
     winetricks triks(cbPrefixes->currentText());
     triks.exec();
-#endif
-
     return;
 }
 

@@ -64,9 +64,7 @@
 #include "appsettings.h"
 #include "run.h"
 
-#ifdef WITH_WINETRIKS
 #include "winetricks.h"
-#endif
 
 //System
 #include <stdlib.h>

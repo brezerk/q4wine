@@ -1437,8 +1437,8 @@ void Wizard::updateScena(){
 	lblStep->setText(Wizard::tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
 	switch(Scena){
  case 1:
-		/*
-				New prefix creation
+               /*
+                * New prefix creation
 				*/
 		switch (Page){
   case 1:
