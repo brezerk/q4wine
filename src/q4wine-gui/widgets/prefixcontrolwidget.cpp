@@ -227,6 +227,8 @@ void PrefixControlWidget::prefixDelete_Click(){
 		emit(updateDatabaseConnections());
 	}
 
+    emit (prefixIndexChanged(model->index(prefixTable->currentIndex().row(), 0).data().toString()));
+
 	return;
 }
 
