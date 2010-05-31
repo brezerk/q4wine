@@ -31,6 +31,7 @@
 
 //Qt includes
 #include <QStandardItemModel>
+#include <QTableWidgetItem>
 #include <QTableView>
 #include <QToolBar>
 #include <QTimer>
