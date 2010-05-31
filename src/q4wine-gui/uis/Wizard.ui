@@ -415,7 +415,7 @@
          <item>
           <widget class="QStackedWidget" name="stkWizards">
            <property name="currentIndex">
-            <number>0</number>
+            <number>3</number>
            </property>
            <widget class="QWidget" name="pageInfo">
             <layout class="QGridLayout" name="gridLayout_3">
@@ -493,7 +493,7 @@ p, li { white-space: pre-wrap; }
              <item row="0" column="0">
               <widget class="QStackedWidget" name="stkFirstStartup">
                <property name="currentIndex">
-                <number>4</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="pageWinePath">
                 <layout class="QVBoxLayout" name="verticalLayout_20">
@@ -506,6 +506,9 @@ p, li { white-space: pre-wrap; }
                     <string>Default Wine paths:</string>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_10">
+                    <property name="margin">
+                     <number>3</number>
+                    </property>
                     <item>
                      <widget class="QWidget" name="widget_15" native="true">
                       <layout class="QHBoxLayout" name="_7">
@@ -769,6 +772,9 @@ p, li { white-space: pre-wrap; }
                     <string>System utils paths:</string>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_3">
+                    <property name="margin">
+                     <number>3</number>
+                    </property>
                     <item>
                      <widget class="QWidget" name="widget_14" native="true">
                       <layout class="QHBoxLayout" name="_17">
@@ -1270,6 +1276,9 @@ p, li { white-space: pre-wrap; }
                     <string>media-gfx/icoutils settings:</string>
                    </property>
                    <layout class="QVBoxLayout" name="_30">
+                    <property name="margin">
+                     <number>3</number>
+                    </property>
                     <item>
                      <widget class="QWidget" name="widget_26" native="true">
                       <layout class="QHBoxLayout" name="_31">
@@ -1393,6 +1402,9 @@ p, li { white-space: pre-wrap; }
                     <string>Console application settings:</string>
                    </property>
                    <layout class="QVBoxLayout" name="_27">
+                    <property name="margin">
+                     <number>3</number>
+                    </property>
                     <item>
                      <widget class="QWidget" name="widget_12" native="true">
                       <layout class="QHBoxLayout" name="_28">
@@ -1507,6 +1519,9 @@ p, li { white-space: pre-wrap; }
                     <string>Network settings</string>
                    </property>
                    <layout class="QVBoxLayout" name="_34">
+                    <property name="margin">
+                     <number>3</number>
+                    </property>
                     <item>
                      <widget class="QWidget" name="widget_30" native="true">
                       <layout class="QHBoxLayout" name="_35">
@@ -1781,6 +1796,9 @@ p, li { white-space: pre-wrap; }
                     <string>Select quick mount profile.</string>
                    </property>
                    <layout class="QVBoxLayout" name="_57">
+                    <property name="margin">
+                     <number>3</number>
+                    </property>
                     <item>
                      <widget class="QLabel" name="label_6">
                       <property name="sizePolicy">
@@ -1803,6 +1821,9 @@ p, li { white-space: pre-wrap; }
                        <string>Profiles:</string>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_12">
+                       <property name="margin">
+                        <number>3</number>
+                       </property>
                        <item>
                         <widget class="QWidget" name="widget_8" native="true">
                          <property name="sizePolicy">
@@ -1933,6 +1954,9 @@ p, li { white-space: pre-wrap; }
                        <string>Profiles strings:</string>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_11">
+                       <property name="margin">
+                        <number>3</number>
+                       </property>
                        <item>
                         <widget class="QWidget" name="widget_51" native="true">
                          <layout class="QHBoxLayout" name="_6">
@@ -2760,7 +2784,7 @@ p, li { white-space: pre-wrap; }
                    <property name="sizeHint" stdset="0">
                     <size>
                      <width>470</width>
-                     <height>100</height>
+                     <height>89</height>
                     </size>
                    </property>
                   </spacer>
@@ -3075,7 +3099,7 @@ p, li { white-space: pre-wrap; }
                    <property name="sizeHint" stdset="0">
                     <size>
                      <width>470</width>
-                     <height>52</height>
+                     <height>41</height>
                     </size>
                    </property>
                   </spacer>
