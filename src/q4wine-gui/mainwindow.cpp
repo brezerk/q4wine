@@ -567,26 +567,27 @@ void MainWindow::closeEvent(QCloseEvent *event){
 }
 
 void MainWindow::tbwGeneral_CurrentTabChange(int tabIndex){
-    switch (tabIndex){
-    case 0:
+
+    if (tabIndex==0){
         emit(stopProcTimer());
         setSearchFocus();
-        break;
- case 1:
+    } else if (tabIndex==1){
         //Initiate /proc reading
         emit(startProcTimer());
-        break;
+    }
 #ifdef WITH_WINEAPPDB
-    case 5:
+    else if (tabIndex==4){
+        if (CoreLib->getSetting("DialogFlags", "appdbBrowser", false, 0).toInt()==0){
+            InfoDialog info(1);
+            info.exec();
+        }
         emit(stopProcTimer());
         emit(setAppDBFocus());
-        break;
-#endif
- default:
-        emit(stopProcTimer());
-        break;
     }
-
+#endif
+    else {
+        emit(stopProcTimer());
+    }   
     return;
 }
 

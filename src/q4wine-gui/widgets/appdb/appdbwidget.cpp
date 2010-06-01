@@ -144,7 +144,7 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		break;
  case 4:
         if (CoreLib->getSetting("AppDB", "useSystemBrowser", false, 1)==1){
-                QDesktopServices::openUrl(QUrl(QString("http://%1/objectManager.php?sClass=version&iId=%2").arg("appdb.winehq.org").arg(val2), QUrl::TolerantMode));
+            QDesktopServices::openUrl(QUrl(QString("http://%1/objectManager.php?sClass=version&iId=%2").arg("appdb.winehq.org").arg(val2), QUrl::TolerantMode));
         } else {
             this->setCursor(QCursor(Qt::WaitCursor));
             appdbClear->setEnabled(false);

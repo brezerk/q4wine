@@ -20,6 +20,17 @@ InfoDialog::InfoDialog(int action, QWidget *parent, Qt::WFlags f) :  QDialog(par
                                <p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p> \
                                <p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">NOTE: q4wine</span> officially do not support <span style=\" font-weight:600;\">winetriks</span>, so repport all bugs directly to <span style=\" font-weight:600;\">winetriks</span> developers.</p></body></html>");
         break;
+    case 1:
+        this->setWindowTitle(tr("AppDB browser notification"));
+        this->txtInfo->setHtml("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\"> \
+                               <html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\"> \
+                               p, li { white-space: pre-wrap; } \
+                               </style></head><body><p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">AppDB browser</span> allows you to browse <a href=\"http://appdb.winehq.org/\"><span style=\" text-decoration: underline; color:#0057ae;\">wine AppDB database</span></a>.</p> \
+                               <p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Note:</span> Unfortunately, <a href=\"http://old.nabble.com/Re:-Wine-AppDB-xmlexport-script-td27137399.html\"><span style=\" text-decoration: underline; color:#0057ae;\">almost no one of wine devels not interested in my xml export script</span></a>. Also I don't get any answer on my letter about hosting request at winehq.com host site. (Before creating script, I ask for a hosting in <a href=\"mailto:appdb@winehq.org\"><span style=\" text-decoration: underline; color:#0057ae;\">appdb@winehq.org</span></a> maillist and Alexander N. Sørnes says that it can be done. But...).</p> \
+                               <p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">For now, I port xml export script to <a href=\"http://www.djangoproject.com/\"><span style=\" text-decoration: underline; color:#0057ae;\">django framework</span></a> and thx to <a href=\"mailto:opium@jabber.com.ua\"><span style=\" text-decoration: underline; color:#0057ae;\">Opium</span></a>, we can host it on <a href=\"http://q4wine.brezblock.org.ua/\"><span style=\" text-decoration: underline; color:#0057ae;\">q4wine hosting site</span></a>.</p> \
+                               <p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Note</span>: Because we have <span style=\" color:#aa0000;\">no direct access</span> to appdb database, we can't use it actual copy.</p> \
+                               <p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Note</span>: In case, if you wish to add my xmlexport code to appdb engine, I can provide information and support, just feel free to contact <a href=\"mailto:brezerk@gmail.com\"><span style=\" text-decoration: underline; color:#0057ae;\">me</span></a>.</p></body></html>");
+        break;
     }
 
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_clicked()));
@@ -33,6 +44,9 @@ void InfoDialog::cmdOk_clicked(){
     switch(this->action){
     case 0:
         settings.setValue("winetriksPlugin", 1);
+        break;
+    case 1:
+        settings.setValue("appdbBrowser", 1);
         break;
     }
     settings.endGroup();
