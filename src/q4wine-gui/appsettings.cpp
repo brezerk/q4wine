@@ -90,25 +90,25 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
     settings.beginGroup("logging");
     if (settings.value("enable", 0).toInt()==1){
-        chEnableLogging->setCheckState(Qt::Checked);
+        cbEnableLogging->setCheckState(Qt::Checked);
     } else {
-        chEnableLogging->setCheckState(Qt::Unchecked);
+        cbEnableLogging->setCheckState(Qt::Unchecked);
     }
 
-    connect (chEnableLogging, SIGNAL(stateChanged (int)), this, SLOT(chEnableLogging_stateChanged (int)));
+    connect (cbEnableLogging, SIGNAL(stateChanged (int)), this, SLOT(cbEnableLogging_stateChanged (int)));
 
     if (settings.value("autoClear", 1).toInt()==1){
-        chClearLogs->setCheckState(Qt::Checked);
+        cbClearLogs->setCheckState(Qt::Checked);
     } else {
-        chClearLogs->setCheckState(Qt::Unchecked);
+        cbClearLogs->setCheckState(Qt::Unchecked);
     }
     settings.endGroup();
 
     settings.beginGroup("app");
 	if (settings.value("showTrareyIcon").toInt()==1){
-		chShowTrarey->setCheckState(Qt::Checked);
+        cbShowTrarey->setCheckState(Qt::Checked);
 	} else {
-		chShowTrarey->setCheckState(Qt::Unchecked);
+        cbShowTrarey->setCheckState(Qt::Unchecked);
 	}
 
 	listThemesView->clear();
@@ -227,25 +227,25 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
 	settings.beginGroup("advanced");
 	if (settings.value("openRunDialog", 0).toInt()==0){
-		chOpenRunDialog->setChecked(false);
+        cbOpenRunDialog->setChecked(false);
 	} else {
-		chOpenRunDialog->setChecked(true);
+        cbOpenRunDialog->setChecked(true);
 	}
 
     if (settings.value("useSingleClick", 0).toInt()==0){
-        chUseSingleClick->setChecked(false);
+        cbUseSingleClick->setChecked(false);
     } else {
-        chUseSingleClick->setChecked(true);
+        cbUseSingleClick->setChecked(true);
     }
 
 #if QT_VERSION >= 0x040500
     if (settings.value("useNativeFileDialog", 1).toInt()==1){
-        chUseNativeDialog->setChecked(false);
+        cbUseNativeDialog->setChecked(false);
     } else {
-        chUseNativeDialog->setChecked(true);
+        cbUseNativeDialog->setChecked(true);
     }
 #else
-    chUseNativeDialog->setEnabled(false);
+    cbUseNativeDialog->setEnabled(false);
 #endif
 
     QString res = settings.value("defaultDesktopSize").toString();
@@ -260,18 +260,25 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
     settings.beginGroup("DesktopImport");
     if (settings.value("remove", 0).toInt()==0){
-        chRemoveDesktopFiles->setChecked(false);
+        cbRemoveDesktopFiles->setChecked(false);
     } else {
-        chRemoveDesktopFiles->setChecked(true);
+        cbRemoveDesktopFiles->setChecked(true);
     }
 
     if (settings.value("importAtStartup", 0).toInt()==0){
-        chImportDesktopFilesAtStartup->setChecked(false);
+        cbImportDesktopFilesAtStartup->setChecked(false);
     } else {
-        chImportDesktopFilesAtStartup->setChecked(true);
+        cbImportDesktopFilesAtStartup->setChecked(true);
     }
     settings.endGroup();
 
+    settings.beginGroup("AppDB");
+    if (settings.value("useSystemBrowser", 1).toInt()==1){
+        cbUseSystemBrowser->setChecked(true);
+    } else {
+        cbUseSystemBrowser->setChecked(false);
+    }
+    settings.endGroup();
 
 
     QList<QTreeWidgetItem *> items = optionsTree->findItems (tr("General"), Qt::MatchExactly);
@@ -581,13 +588,13 @@ void AppSettings::cmdOk_Click(){
 	settings.endGroup();
 
     settings.beginGroup("logging");
-    if (chEnableLogging->checkState()==Qt::Checked) {
+    if (cbEnableLogging->checkState()==Qt::Checked) {
         settings.setValue("enable", 1);
     } else {
         settings.setValue("enable", 0);
     }
 
-    if ((chClearLogs->checkState()==Qt::Checked) and (chEnableLogging->checkState()==Qt::Checked)) {
+    if ((cbClearLogs->checkState()==Qt::Checked) and (cbEnableLogging->checkState()==Qt::Checked)) {
         settings.setValue("autoClear", 1);
     } else {
         settings.setValue("autoClear", 0);
@@ -595,7 +602,7 @@ void AppSettings::cmdOk_Click(){
     settings.endGroup();
 
 	settings.beginGroup("app");
-	if (chShowTrarey->checkState()==Qt::Checked) {
+    if (cbShowTrarey->checkState()==Qt::Checked) {
 		settings.setValue("showTrareyIcon", 1);
 	} else {
 		settings.setValue("showTrareyIcon", 0);
@@ -726,20 +733,20 @@ void AppSettings::cmdOk_Click(){
 	settings.endGroup();
 
 	settings.beginGroup("advanced");
-	if (chOpenRunDialog->isChecked()){
+    if (cbOpenRunDialog->isChecked()){
 		settings.setValue("openRunDialog", 1);
 	} else {
 		settings.setValue("openRunDialog", 0);
 	}
 
-    if (chUseSingleClick->isChecked()){
+    if (cbUseSingleClick->isChecked()){
         settings.setValue("useSingleClick", 1);
     } else {
         settings.setValue("useSingleClick", 0);
     }
 
 #if QT_VERSION >= 0x040500
-    if (chUseNativeDialog->isChecked()){
+    if (cbUseNativeDialog->isChecked()){
         settings.setValue("useNativeFileDialog", 1);
     } else {
         settings.setValue("useNativeFileDialog", 0);
@@ -755,19 +762,25 @@ void AppSettings::cmdOk_Click(){
 	settings.endGroup();
 
     settings.beginGroup("DesktopImport");
-    if (chRemoveDesktopFiles->isChecked()){
+    if (cbRemoveDesktopFiles->isChecked()){
         settings.setValue("remove", 1);
     } else {
         settings.setValue("remove", 0);
     }
 
-    if (chImportDesktopFilesAtStartup->isChecked()){
+    if (cbImportDesktopFilesAtStartup->isChecked()){
         settings.setValue("importAtStartup", 1);
     } else {
         settings.setValue("importAtStartup", 0);
     }
     settings.endGroup();
 
+    settings.beginGroup("AppDB");
+    if (cbUseSystemBrowser->isChecked()){
+        settings.setValue("useSystemBrowser", 1);
+    } else {
+        settings.setValue("useSystemBrowser", 0);
+    }
 	accept();
 	return;
 }
@@ -896,11 +909,11 @@ void AppSettings::radioEmbedded_toggled(bool state){
 	return;
 }
 
-void AppSettings::chEnableLogging_stateChanged ( int state ){
+void AppSettings::cbEnableLogging_stateChanged ( int state ){
     if (state==0){
-        chClearLogs->setEnabled(false);
+        cbClearLogs->setEnabled(false);
     } else {
-        chClearLogs->setEnabled(true);
+        cbClearLogs->setEnabled(true);
     }
 }
 

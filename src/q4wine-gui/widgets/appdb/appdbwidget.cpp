@@ -143,19 +143,23 @@ void AppDBWidget::itemTrigged(short int action, QString search, int val1, int va
 		timer->start(1000);
 		break;
  case 4:
-		this->setCursor(QCursor(Qt::WaitCursor));
-		appdbClear->setEnabled(false);
-		appdbAppPage->setEnabled(false);
-		this->appdbHeader->clear();
-		this->appdbHeader->addLabel(tr("Status: Connecting to %1").arg(APPDB_HOSTNAME));
-		this->search="";
-		this->page=0;
-		this->appid=val1;
-		this->verid=val2;
-		this->testid=val3;
-		this->catid=0;
-		this->appdbScrollArea->clear();
-		timer->start(1000);
+        if (CoreLib->getSetting("AppDB", "useSystemBrowser", false, 1)==1){
+                QDesktopServices::openUrl(QUrl(QString("http://%1/objectManager.php?sClass=version&iId=%2").arg("appdb.winehq.org").arg(val2), QUrl::TolerantMode));
+        } else {
+            this->setCursor(QCursor(Qt::WaitCursor));
+            appdbClear->setEnabled(false);
+            appdbAppPage->setEnabled(false);
+            this->appdbHeader->clear();
+            this->appdbHeader->addLabel(tr("Status: Connecting to %1").arg(APPDB_HOSTNAME));
+            this->search="";
+            this->page=0;
+            this->appid=val1;
+            this->verid=val2;
+            this->testid=val3;
+            this->catid=0;
+            this->appdbScrollArea->clear();
+            timer->start(1000);
+        }
 		break;
  case 5:
 		this->setCursor(QCursor(Qt::WaitCursor));
