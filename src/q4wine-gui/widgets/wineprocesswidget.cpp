@@ -59,7 +59,7 @@ WineProcessWidget::WineProcessWidget(QWidget *parent) : QWidget(parent)
 	procTable->resizeRowsToContents();
 	procTable->horizontalHeader()->setStretchLastSection(true);
 	procTable->setSelectionBehavior(QAbstractItemView::SelectRows);
-	procTable->setSelectionMode(QAbstractItemView::SingleSelection);
+    procTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
 	lblInfo.reset(new QLabel(tr("Total process count: %1").arg(0), this));
 	lblInfo->setContentsMargins(2,2,2,2);
@@ -193,76 +193,97 @@ void WineProcessWidget::itemClicked(const QModelIndex &){
 }
 
 void WineProcessWidget::procKillSelected_Click(void){
-	if (!procTable->currentIndex().isValid())
-		return;
+    if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to selected processes<br><br>It is HIGH risk to damage wine normal state.<br><br>Do you really want to proceed?"), QMessageBox::Yes, QMessageBox::No)==QMessageBox::No)
+        return;
+    
+    QItemSelectionModel *selectionModel = procTable->selectionModel();
 
-	if(procTable->currentIndex().row()<0)
-		return;
+    QModelIndexList indexes = selectionModel->selectedIndexes();
+    QModelIndex index;
+    QList<int> procList;
 
-	QString procName = model->index(procTable->currentIndex().row(), 1, QModelIndex()).data().toString();
-	int procPID = model->index(procTable->currentIndex().row(), 0, QModelIndex()).data().toInt();
+    foreach(index, indexes) {
+        if (index.column()==0)
+            procList.append(model->index(index.row(), 0, QModelIndex()).data().toInt());
+    }
 
-	if (procPID<=0)
-		return;
+    if (procList.count()<=0)
+        return;
 
-	if (procName.isEmpty())
-		return;
+    for (int i=0; i<procList.count(); i++){
+        QString cmd = QString("kill -9 %1").arg(procList.at(i));
 
-	if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to process '%1' pid: %2<br><br>It is HIGH risk to damage wine normal state.<br><br>Do you really want to proceed?").arg(procName) .arg(procPID), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
-		QString cmd = QString("kill -9 %1").arg(procPID);
+        if (system(cmd.toAscii().data())==-1){
+            QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(cmd.toAscii().data()), QMessageBox::Ok);
+#ifdef DEBUG
+            qDebug()<<"[EE] Fail to run: "<<cmd;
+#endif
+        } else {
+            emit(changeStatusText(tr("It seems process %1 killed successfully.").arg(procList.at(i))));
+#ifdef DEBUG
+            qDebug()<<"[ii] Run OK: "<<cmd;
+#endif
+        }
+    }
 
-		if (system(cmd.toAscii().data())==-1){
-			QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(cmd.toAscii().data()), QMessageBox::Ok);
-		} else {
-			emit(changeStatusText(tr("It seems process %1 killed successfully.").arg(procName)));
-		}
-	}
-
-	return;
+    return;
 }
 
 void WineProcessWidget::procKillWine_Click(void){
-	if (!procTable->currentIndex().isValid())
-		return;
+    if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to all wine processes for selected prefixes<br><br>Do you really want to proceed?"), QMessageBox::Yes, QMessageBox::No)==QMessageBox::No)
+        return;
 
-	if(procTable->currentIndex().row()<0)
-		return;
+    QItemSelectionModel *selectionModel = procTable->selectionModel();
 
-	QString procPrefix = model->index(procTable->currentIndex().row(), 3, QModelIndex()).data().toString();
+    QModelIndexList indexes = selectionModel->selectedIndexes();
+    QModelIndex index;
+    QList<QString> prefixList;
 
-	if (procPrefix.isEmpty())
-		return;
+    foreach(index, indexes) {
+        if (index.column()==3){
+            QString path = model->index(index.row(), 3, QModelIndex()).data().toString();
+            if (prefixList.indexOf(path, 0)<0)
+                prefixList.append(path);
+        }
+    }
 
-	if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to all wine Processs with WINEPREFIX='%1'<br><br>Do you really want to proceed?").arg(procPrefix), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
-		if (CoreLib->killWineServer(procPrefix)){
-			emit(changeStatusText(tr("It seems \"wineserver -kill\" for prefix executed successfully.")));
-		}
-	}
+    if (prefixList.count()<=0)
+        return;
+
+    for (int i=0; i<prefixList.count(); i++){
+        if (CoreLib->killWineServer(prefixList.at(i))){
+            emit(changeStatusText(tr("It seems \"wineserver -kill\" for prefix: %1 executed successfully.").arg(prefixList.at(i))));
+        }
+    }
+
 	return;
 }
 
 void WineProcessWidget::procRenice_Click(void){
-	if (!procTable->currentIndex().isValid())
-		return;
+    bool ok=false;
+    int newNice = QInputDialog::getInteger(this, tr("Select process priority"), tr("<p>Priority value can be in<br>the range from PRIO_MIN (-20)<br>to PRIO_MAX (20).</p><p>See \"man renice\" for details.</p>"), 0, -20, 20, 1, &ok);
+    if (!ok)
+        return;
 
-	if(procTable->currentIndex().row()<0)
-		return;
+    QItemSelectionModel *selectionModel = procTable->selectionModel();
 
-	int procPID = model->index(procTable->currentIndex().row(), 0, QModelIndex()).data().toInt();
+    QModelIndexList indexes = selectionModel->selectedIndexes();
+    QModelIndex index;
+    QList<int> procList;
 
-	if (procPID<=0)
-		return;
+    foreach(index, indexes) {
+        if (index.column()==0)
+            procList.append(model->index(index.row(), 0, QModelIndex()).data().toInt());
+    }
 
-	int curNice = model->index(procTable->currentIndex().row(), 2, QModelIndex()).data().toInt();
+    if (procList.count()<=0)
+        return;
 
-	bool ok=false;
-	int newNice = QInputDialog::getInteger(this, tr("Select process priority"), tr("<p>Priority value can be in<br>the range from PRIO_MIN (-20)<br>to PRIO_MAX (20).</p><p>See \"man renice\" for details.</p>"), curNice, -20, 20, 1, &ok);
+    for (int i=0; i<procList.count(); i++){
+        if (CoreLib->reniceProcess(procList.at(i), newNice)){
+            emit(changeStatusText(tr("It seems process %1 renice to %2 end successfully.").arg(procList.at(i)).arg(newNice)));
+        }
+    }
 
-	if (ok){
-		if (CoreLib->reniceProcess(procPID, newNice)){
-			emit(changeStatusText(tr("It seems process renice end successfully.")));
-		}
-	}
-
-	return;
+    return;
 }

@@ -31,11 +31,13 @@
 
 //Qt includes
 #include <QStandardItemModel>
+#include <QTableWidgetItem>
 #include <QTableView>
 #include <QToolBar>
 #include <QTimer>
 #include <QMenu>
 #include <QHeaderView>
+#include <QInputDialog>
 
 #ifdef DEBUG
 #include <QDebug>

@@ -35,6 +35,8 @@
 //Windows
 #include "run.h"
 #include "iconsettings.h"
+#include "prefixsettings.h"
+#include "fakedrivesettings.h"
 
 //Qt includes
 #include <QTreeWidgetItem>
@@ -96,6 +98,7 @@ signals:
 	  void showFolderContents(QString, QString);
 	  void changeStatusText(QString);
 	  void prefixIndexChanged(QString);
+      void updateDatabaseConnections();
       void setSearchFocus(void);
       void setTabIndex (int);
       void pasteAction(void);

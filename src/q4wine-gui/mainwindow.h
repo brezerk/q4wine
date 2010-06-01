@@ -63,10 +63,10 @@
 #include "about.h"
 #include "appsettings.h"
 #include "run.h"
+#include "infodialog.h"
+#include "fakedrivesettings.h"
 
-#ifdef WITH_WINETRIKS
 #include "winetricks.h"
-#endif
 
 //System
 #include <stdlib.h>

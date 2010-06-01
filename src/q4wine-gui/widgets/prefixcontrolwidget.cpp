@@ -227,6 +227,8 @@ void PrefixControlWidget::prefixDelete_Click(){
 		emit(updateDatabaseConnections());
 	}
 
+    emit (prefixIndexChanged(model->index(prefixTable->currentIndex().row(), 0).data().toString()));
+
 	return;
 }
 
@@ -318,6 +320,10 @@ void PrefixControlWidget::prefixSettings_Click(){
 	}
 
 	return;
+}
+
+void PrefixControlWidget::updateDtabaseItems(){
+    this->updateTableModel();
 }
 
 void PrefixControlWidget::prefixExport_Click(){

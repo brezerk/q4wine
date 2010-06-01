@@ -60,6 +60,7 @@ signals:
 
 public slots:
 	void setDefaultFocus(QString prefixName);
+    void updateDtabaseItems();
 
 private:
 	//! This is need for libq4wine-core.so import.

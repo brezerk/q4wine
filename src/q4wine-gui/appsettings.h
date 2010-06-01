@@ -17,11 +17,10 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <memory>
-
 #ifndef APPSETTINGS_H
 #define APPSETTINGS_H
 
+#include <memory>
 #include <src/q4wine-gui/ui_AppSettings.h>
 
 #include "config.h"
@@ -46,7 +45,7 @@ class AppSettings : public QDialog, public Ui::AppSettings
 		void radioDefaultGui_toggled(bool state);
 		void radioFuse_toggled(bool state);
 		void radioEmbedded_toggled(bool state);
-        void chEnableLogging_stateChanged ( int state );
+        void cbEnableLogging_stateChanged ( int state );
 
         void optionsTree_itemClicked ( QTreeWidgetItem *item, int);
 

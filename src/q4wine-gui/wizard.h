@@ -30,20 +30,16 @@
 #include <QMessageBox>
 #include <QResizeEvent>
 #include <QProgressDialog>
-#include <QInputDialog>
 #include <QLibrary>
 #include <QDesktopServices>
 
 #include "config.h"
-#include "registry.h"
 #include "process.h"
-#include "drivelistwidgetitem.h"
 
 #include "src/core/database/prefix.h"
 #include "src/core/database/icon.h"
 #include "src/core/database/dir.h"
-#include "src/core/registry.h"
-#include "winedrivedialog.h"
+
 
 #include "q4wine-lib.h"
 
@@ -81,24 +77,6 @@ class Wizard : public QDialog, public Ui::Wizard
 		//! \brief cmdHelo click slot.
 		void cmdHelp_Click();
 
-		//! \brief cmdJoystickEdit click slot.
-		void cmdJoystickEdit_Click();
-
-		//! \brief cmdJoystickAdd click slot.
-		void cmdJoystickAdd_Click();
-
-		//! \brief cmdJoystickDel click slot.
-		void cmdJoystickDel_Click();
-
-		//! \brief cmdEdit click slot.
-		void cmdWineDriveEdit_Click();
-
-		//! \brief cmdJoystickAdd click slot.
-		void cmdWineDriveAdd_Click();
-
-		//! \brief cmdJoystickDel click slot.
-		void cmdWineDriveDel_Click();
-
 		//! \brief raidioDefault toggled action slot.
 		void radioDefault_toggled(bool state);
 
@@ -130,8 +108,6 @@ class Wizard : public QDialog, public Ui::Wizard
 		typedef void *CoreLibPrototype (bool);
 		CoreLibPrototype *CoreLibClassPointer;
 		std::auto_ptr<corelib> CoreLib;
-
-		Registry reg;
 
 	protected:
 		//! \brief Event filter.

@@ -45,7 +45,6 @@
 #cmakedefine _OS_DARWIN_
 
 #cmakedefine WITH_ICOUTILS
-#cmakedefine WITH_WINETRIKS
 #cmakedefine WITH_EMBEDDED_FUSEISO
 #cmakedefine WITH_WINEAPPDB
 

@@ -378,6 +378,7 @@ void IconSettings::getProgramIcon(QString name){
     QFileInfoList list = dir.entryInfoList();
     if (list.size()>0){
         cmdGetIcon->setIcon (QIcon(list.at(0).filePath()));
+        this->iconPath=list.at(0).filePath();
     } else {
         cmdGetIcon->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
     }

@@ -107,6 +107,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 #endif
 
     std::auto_ptr<PrefixTreeWidget> twPrograms (new PrefixTreeWidget(tabPrograms));
+    connect(twPrograms.get(), SIGNAL(updateDatabaseConnections()), this, SLOT(updateDtabaseConnectedItems()));
     connect(this, SIGNAL(updateDatabaseConnections()), twPrograms.get(), SLOT(getPrefixes()));
     connect(twPrograms.get(), SIGNAL(showFolderContents(QString, QString)), lstIcons.get(), SLOT(showFolderContents(QString, QString)));
     connect(twPrograms.get(), SIGNAL(setSearchFocus()), this, SLOT(setSearchFocus()));
@@ -131,6 +132,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(cbPrefixes.get(), SIGNAL(currentIndexChanged(QString)), prefixWidget.get(), SLOT(setDefaultFocus(QString)));
     connect(prefixWidget.get(), SIGNAL(prefixIndexChanged(QString)), this, SLOT(setcbPrefixesIndex(QString)));
     connect(prefixWidget.get(), SIGNAL(setTabIndex (int)), tbwGeneral, SLOT(setCurrentIndex (int)));
+    connect(twPrograms.get(), SIGNAL(updateDatabaseConnections()), prefixWidget.get(), SLOT(updateDtabaseItems()));
 
     std::auto_ptr<IconListToolbar> iconToolBar (new IconListToolbar(tabPrograms));
     connect(iconToolBar.get(), SIGNAL(searchFilterChange(QString)), lstIcons.get(), SLOT(setFilterString(QString)));
@@ -258,20 +260,20 @@ void MainWindow::clearTmp(){
     return;
 }
 
-void MainWindow::prefixRunWinetriks_Click() {
-#ifndef WITH_WINETRIKS
-    QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without winetriks support.</p><p>If you wish to enable winetriks support add:</p><p> \"-DWITH_WINETRIKS=ON\" to cmake arguments.</p>"));
-#else
-    QMessageBox::warning(this, tr("Warning"), tr("<p>Winetricks officaly NOT supported by q4wine.</p><p>There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.</p>"));
-
+void MainWindow::prefixRunWinetriks_Click() {  
     if (CoreLib->getSetting("console", "bin").toString().isEmpty()){
         QMessageBox::warning(this, tr("Error"), tr("<p>You do not set default console binary.</p><p>Set it into q4wine option dialog.</p>"));
         return;
     }
+
+    if (CoreLib->getSetting("DialogFlags", "winetriksPlugin", false, 0).toInt()==0){
+        InfoDialog info(0);
+        if (info.exec()==QDialog::Rejected)
+            return;
+    }
+
     winetricks triks(cbPrefixes->currentText());
     triks.exec();
-#endif
-
     return;
 }
 
@@ -567,26 +569,27 @@ void MainWindow::closeEvent(QCloseEvent *event){
 }
 
 void MainWindow::tbwGeneral_CurrentTabChange(int tabIndex){
-    switch (tabIndex){
-    case 0:
+
+    if (tabIndex==0){
         emit(stopProcTimer());
         setSearchFocus();
-        break;
- case 1:
+    } else if (tabIndex==1){
         //Initiate /proc reading
         emit(startProcTimer());
-        break;
+    }
 #ifdef WITH_WINEAPPDB
-    case 5:
+    else if (tabIndex==4){
+        if (CoreLib->getSetting("DialogFlags", "appdbBrowser", false, 0).toInt()==0){
+            InfoDialog info(1);
+            info.exec();
+        }
         emit(stopProcTimer());
         emit(setAppDBFocus());
-        break;
-#endif
- default:
-        emit(stopProcTimer());
-        break;
     }
-
+#endif
+    else {
+        emit(stopProcTimer());
+    }   
     return;
 }
 
@@ -620,14 +623,15 @@ void MainWindow::cmdCreateFake_Click(){
     if (!fakeDir.exists())
         fakeDir.mkdir(prefixPath);
 
-    Wizard createFakeDriveWizard(2, cbPrefixes->currentText());
-    if (createFakeDriveWizard.exec()==QDialog::Accepted){
+    FakeDriveSettings settings(cbPrefixes->currentText());
+    settings.loadDefaultPrefixSettings();
+
+    if (settings.exec()==QDialog::Accepted){
         updateDtabaseConnectedItems();
     }
 
     return;
 }
-
 
 void MainWindow::cmdUpdateFake_Click(){
     QString prefixPath = db_prefix.getPath(cbPrefixes->currentText());
@@ -641,8 +645,10 @@ void MainWindow::cmdUpdateFake_Click(){
     if (!sysreg_file.exists()){
         QMessageBox::warning(this, tr("Error"), tr("Sorry, no fake drive configuration found.<br>Create fake drive configuration before update it!"));
     } else {
-        Wizard createFakeDriveWizard(3, cbPrefixes->currentText());
-        if (createFakeDriveWizard.exec()==QDialog::Accepted){
+        FakeDriveSettings settings(cbPrefixes->currentText());
+        settings.loadPrefixSettings();
+
+        if (settings.exec()==QDialog::Accepted){
             updateDtabaseConnectedItems();
         }
     }

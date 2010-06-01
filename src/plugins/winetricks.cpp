@@ -54,8 +54,9 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
 }
 
 void winetricks::install_winetricks() {
+    lstMain->clear();
 	downloadwinetricks ();
-        parse();
+    parse();
 }
 
 void winetricks::run_winetricks(){
@@ -205,18 +206,19 @@ descs.append(desc);
 
 
 void winetricks::parse() {
-
+    names.clear();
+    descs.clear();
 #ifdef DEBUG
     qDebug()<<"[plugin] parsing winetriks output";
 #endif
 
     if (!QFile(this->winetricks_bin).exists()){
-            QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
+            //QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
             return;
     }
 
 	//create a Winetricks process
-	  QProcess p(this);
+    QProcess p(this);
 	QString pargs;
 	pargs.append(winetricks_bin);
 	pargs.append(" --kegelfix");
