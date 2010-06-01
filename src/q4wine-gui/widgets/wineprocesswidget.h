@@ -37,6 +37,7 @@
 #include <QTimer>
 #include <QMenu>
 #include <QHeaderView>
+#include <QInputDialog>
 
 #ifdef DEBUG
 #include <QDebug>

@@ -64,6 +64,7 @@
 #include "appsettings.h"
 #include "run.h"
 #include "infodialog.h"
+#include "fakedrivesettings.h"
 
 #include "winetricks.h"
 

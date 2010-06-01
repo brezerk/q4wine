@@ -17,11 +17,10 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <memory>
-
 #ifndef APPSETTINGS_H
 #define APPSETTINGS_H
 
+#include <memory>
 #include <src/q4wine-gui/ui_AppSettings.h>
 
 #include "config.h"

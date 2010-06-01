@@ -107,6 +107,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 #endif
 
     std::auto_ptr<PrefixTreeWidget> twPrograms (new PrefixTreeWidget(tabPrograms));
+    connect(twPrograms.get(), SIGNAL(updateDatabaseConnections()), this, SLOT(updateDtabaseConnectedItems()));
     connect(this, SIGNAL(updateDatabaseConnections()), twPrograms.get(), SLOT(getPrefixes()));
     connect(twPrograms.get(), SIGNAL(showFolderContents(QString, QString)), lstIcons.get(), SLOT(showFolderContents(QString, QString)));
     connect(twPrograms.get(), SIGNAL(setSearchFocus()), this, SLOT(setSearchFocus()));
@@ -131,6 +132,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(cbPrefixes.get(), SIGNAL(currentIndexChanged(QString)), prefixWidget.get(), SLOT(setDefaultFocus(QString)));
     connect(prefixWidget.get(), SIGNAL(prefixIndexChanged(QString)), this, SLOT(setcbPrefixesIndex(QString)));
     connect(prefixWidget.get(), SIGNAL(setTabIndex (int)), tbwGeneral, SLOT(setCurrentIndex (int)));
+    connect(twPrograms.get(), SIGNAL(updateDatabaseConnections()), prefixWidget.get(), SLOT(updateDtabaseItems()));
 
     std::auto_ptr<IconListToolbar> iconToolBar (new IconListToolbar(tabPrograms));
     connect(iconToolBar.get(), SIGNAL(searchFilterChange(QString)), lstIcons.get(), SLOT(setFilterString(QString)));
@@ -621,14 +623,15 @@ void MainWindow::cmdCreateFake_Click(){
     if (!fakeDir.exists())
         fakeDir.mkdir(prefixPath);
 
-    Wizard createFakeDriveWizard(2, cbPrefixes->currentText());
-    if (createFakeDriveWizard.exec()==QDialog::Accepted){
+    FakeDriveSettings settings(cbPrefixes->currentText());
+    settings.loadDefaultPrefixSettings();
+
+    if (settings.exec()==QDialog::Accepted){
         updateDtabaseConnectedItems();
     }
 
     return;
 }
-
 
 void MainWindow::cmdUpdateFake_Click(){
     QString prefixPath = db_prefix.getPath(cbPrefixes->currentText());
@@ -642,8 +645,10 @@ void MainWindow::cmdUpdateFake_Click(){
     if (!sysreg_file.exists()){
         QMessageBox::warning(this, tr("Error"), tr("Sorry, no fake drive configuration found.<br>Create fake drive configuration before update it!"));
     } else {
-        Wizard createFakeDriveWizard(3, cbPrefixes->currentText());
-        if (createFakeDriveWizard.exec()==QDialog::Accepted){
+        FakeDriveSettings settings(cbPrefixes->currentText());
+        settings.loadPrefixSettings();
+
+        if (settings.exec()==QDialog::Accepted){
             updateDtabaseConnectedItems();
         }
     }

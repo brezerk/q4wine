@@ -364,14 +364,14 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 
             menu->addSeparator();
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/eject.png"), tr("Setup prefix"), this));
-            entry->setStatusTip(tr("Setup prefix fake drive and applications"));
-            connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuSetupPrefix_Click()));
-            menu->addAction(entry.release());
-
-            entry.reset(new QAction(CoreLib->loadIcon("data/configure.png"), tr("Edit prefix settings"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("data/configure.png"), tr("Configure prefix settings"), this));
             entry->setStatusTip(tr("Edit prefix settings"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuConfigurePrefix_Click()));
+            menu->addAction(entry.release());
+
+            entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Configure fake drive settings"), this));
+            entry->setStatusTip(tr("Setup prefix fake drive and applications"));
+            connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuSetupPrefix_Click()));
             menu->addAction(entry.release());
 
 	  menu->exec(QCursor::pos());
@@ -505,12 +505,33 @@ void PrefixTreeWidget::menuUmount_Click(void){
 }
 
 void PrefixTreeWidget::menuConfigurePrefix_Click(void){
-    emit (setTabIndex (3));
+    PrefixSettings settings(this->prefixName);
+    if (settings.exec()==QDialog::Accepted){
+        emit(updateDatabaseConnections());
+        emit(prefixIndexChanged(settings.getPrefixName()));
+    }
     return;
 }
 
 void PrefixTreeWidget::menuSetupPrefix_Click(void){
-    emit (setTabIndex (2));
+    QString sysregPath, prefixPath;
+    prefixPath = db_prefix.getPath(this->prefixName);
+
+    sysregPath.append(prefixPath);
+    sysregPath.append("/system.reg");
+
+    FakeDriveSettings settings(this->prefixName);
+
+    QFile sysreg_file (sysregPath);
+    if (sysreg_file.exists()){
+        settings.loadPrefixSettings();
+    } else {
+        settings.loadDefaultPrefixSettings();
+    }
+
+    if (settings.exec()==QDialog::Accepted){
+        emit(updateDatabaseConnections());
+    }
     return;
 }
 

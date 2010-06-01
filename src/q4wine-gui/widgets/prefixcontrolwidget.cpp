@@ -322,6 +322,10 @@ void PrefixControlWidget::prefixSettings_Click(){
 	return;
 }
 
+void PrefixControlWidget::updateDtabaseItems(){
+    this->updateTableModel();
+}
+
 void PrefixControlWidget::prefixExport_Click(){
 	/*
 	 * Function for exporting preefix to file
