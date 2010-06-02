@@ -173,7 +173,24 @@ int WineObject::runSys(){
 
     if (!this->programDesktop.isEmpty()){
         QString deskname = this->programBinaryName;
-        deskname.replace(" ", "");
+        deskname.replace(" ", ".");
+        deskname.replace("&", ".");
+        deskname.replace("!", ".");
+        deskname.replace("$", ".");
+        deskname.replace("*", ".");
+        deskname.replace("(", ".");
+        deskname.replace(")", ".");
+        deskname.replace("[", ".");
+        deskname.replace("]", ".");
+        deskname.replace(";", ".");
+        deskname.replace("'", ".");
+        deskname.replace("\"", ".");
+        deskname.replace("|", ".");
+        deskname.replace("`", ".");
+        deskname.replace("\\", ".");
+        deskname.replace("/", ".");
+        deskname.replace(">", ".");
+        deskname.replace("<", ".");
         run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(this->programDesktop));
     }
 
