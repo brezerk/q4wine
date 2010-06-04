@@ -96,6 +96,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     }
 
     connect (cbEnableLogging, SIGNAL(stateChanged (int)), this, SLOT(cbEnableLogging_stateChanged (int)));
+    connect (cbShowTrarey, SIGNAL(stateChanged (int)), this, SLOT(cbShowTrarey_stateChanged (int)));
 
     if (settings.value("autoClear", 1).toInt()==1){
         cbClearLogs->setCheckState(Qt::Checked);
@@ -105,11 +106,17 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     settings.endGroup();
 
     settings.beginGroup("app");
-	if (settings.value("showTrareyIcon").toInt()==1){
+    if (settings.value("showTrareyIcon", 0).toInt()==1){
         cbShowTrarey->setCheckState(Qt::Checked);
 	} else {
         cbShowTrarey->setCheckState(Qt::Unchecked);
 	}
+
+    if (settings.value("showNotifications", 1).toInt()==1){
+        cbShowNotifications->setCheckState(Qt::Checked);
+    } else {
+        cbShowNotifications->setCheckState(Qt::Unchecked);
+    }
 
 	listThemesView->clear();
 
@@ -608,9 +615,11 @@ void AppSettings::cmdOk_Click(){
 		settings.setValue("showTrareyIcon", 0);
 	}
 
-
-
-
+    if (cbShowNotifications->checkState()==Qt::Checked) {
+        settings.setValue("showNotifications", 1);
+    } else {
+        settings.setValue("showNotifications", 0);
+    }
 
 	if (listThemesView->currentItem()){
 		settings.setValue("theme", listThemesView->currentItem()->toolTip());
@@ -914,6 +923,14 @@ void AppSettings::cbEnableLogging_stateChanged ( int state ){
         cbClearLogs->setEnabled(false);
     } else {
         cbClearLogs->setEnabled(true);
+    }
+}
+
+void AppSettings::cbShowTrarey_stateChanged ( int state ){
+    if (state==0){
+        cbShowNotifications->setEnabled(false);
+    } else {
+        cbShowNotifications->setEnabled(true);
     }
 }
 
