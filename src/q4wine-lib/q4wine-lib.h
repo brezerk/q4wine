@@ -270,7 +270,6 @@ public:
 	void runAutostart(void);
 
     QString createWineString(QString prefixName, QString dirName, QString iconName);
-    QString createQ4WineString(QString prefixName, QString dirName, QString iconName);
 
 private:
 	/*! Define is library operate in CLI or GUI mode.

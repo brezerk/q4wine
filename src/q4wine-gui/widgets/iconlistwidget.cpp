@@ -549,13 +549,13 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
             subMenu->addSeparator();
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/wineconsole.png"), tr("Wine cmd"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("data/wineconsole.png"), tr("wine cmd"), this));
             entry->setStatusTip(tr("Copy wine cmd line for current application"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyWineCmd_Click()));
             subMenu->addAction(entry.release());
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/q4wine.png"), tr("Q4wine-helper cmd"), this));
-            entry->setStatusTip(tr("Copy q4wine-helper cmd for current application"));
+            entry.reset(new QAction(CoreLib->loadIcon("data/q4wine.png"), tr("q4wine-cli cmd"), this));
+            entry->setStatusTip(tr("Copy q4wine-cli cmd for current application"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyQ4WineCmd_Click()));
             subMenu->addAction(entry.release());
 
@@ -946,12 +946,23 @@ void IconListWidget::iconCopyQ4WineCmd_Click(){
     if (!iconItem.get())
           return;
 
-    QString text = CoreLib->createQ4WineString(this->prefixName, this->dirName, iconItem->text());
-    qDebug()<<text;
-    if (!text.isEmpty()){
-        QClipboard *clipboard = QApplication::clipboard();
-        clipboard->setText(text);
+    QString run_string = QString("%1/bin/q4wine-cli ").arg(APP_PREF);
+    run_string.append(" -p \"");
+    run_string.append(this->prefixName);
+    run_string.append("\"");
+
+    if (!this->dirName.isEmpty()){
+        run_string.append(" -d \"");
+        run_string.append(this->dirName);
+        run_string.append("\" ");
     }
+
+    run_string.append(" -i \"");
+    run_string.append(iconItem->text());
+    run_string.append("\"");
+
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(run_string);
     iconItem.release();
 
     return;
