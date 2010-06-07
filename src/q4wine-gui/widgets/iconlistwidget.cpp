@@ -910,7 +910,6 @@ void IconListWidget::iconCopyProgramPath_Click(){
           return;
 
     QHash<QString, QString> info = db_icon.getByName(this->prefixName, this->dirName, iconItem->text());
-
     iconItem.release();
 
     if (!info["exec"].isEmpty()){
@@ -929,7 +928,6 @@ void IconListWidget::iconCopyWineCmd_Click(){
           return;
 
     QString text = CoreLib->createWineString(this->prefixName, this->dirName, iconItem->text());
-    qDebug()<<text;
     if (!text.isEmpty()){
         QClipboard *clipboard = QApplication::clipboard();
         clipboard->setText(text);
