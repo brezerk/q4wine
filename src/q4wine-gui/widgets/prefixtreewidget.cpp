@@ -41,6 +41,8 @@ PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) :
 	  this->prefixName="";
 	  this->prefixMontPoint="";
 	  this->prefixMediaDrive="";
+
+      this->setAcceptDrops(true);
 }
 
 PrefixTreeWidget::~PrefixTreeWidget(){
@@ -392,6 +394,52 @@ void PrefixTreeWidget::keyReleaseEvent ( QKeyEvent * event ){
         QTreeWidget::keyPressEvent(event);
     }
 }
+
+/*
+bool PrefixTreeWidget::dropMimeData(QTreeWidgetItem *parent, int index, const QMimeData *data, Qt::DropAction action)
+{
+    QList<QUrl> urlList;
+    QTreeWidgetItem *item;
+
+    urlList = data->urls(); // retrieve list of urls
+
+    foreach(QUrl url, urlList) // iterate over list
+    {
+        qDebug()<<"ddd"<<url;
+        // make new QTreeWidgetItem and set its text
+        // if parent is null - add top level item (this parent)
+
+        if (parent == NULL) item = new QTreeWidgetItem(this);
+        else
+        // else add QTreeWidgetItem with parent and expand parent
+        {
+            item = new QTreeWidgetItem(parent);
+            parent->setExpanded( true );
+        }
+
+        // set item text
+        item->setText( 0, url.toLocalFile() );
+
+    }
+
+    return true;
+}
+
+
+QStringList PrefixTreeWidget::mimeTypes () const
+{
+    QStringList qstrList;
+    // list of accepted mime types for drop
+    qstrList.append("text/uri-list");
+    return qstrList;
+}
+
+Qt::DropActions PrefixTreeWidget::supportedDropActions () const
+{
+    // returns what actions are supported when dropping
+    return Qt::CopyAction;
+}
+*/
 
 void PrefixTreeWidget::menuRun_triggered(QAction* action){
 	  if (action->text().isEmpty())

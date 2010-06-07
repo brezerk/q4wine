@@ -532,6 +532,35 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 #endif
 			menu->addAction(entry.release());
 
+            menu->addSeparator();
+            // -- Clipboad functions --
+
+            subMenu.reset(new QMenu(tr("Copy to clipboard"), this));
+
+            entry.reset(new QAction(tr("Directory path"), this));
+            entry->setStatusTip(tr("Copy application directory path to system's' clipboard"));
+            connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyWrkDir_Click()));
+            subMenu->addAction(entry.release());
+
+            entry.reset(new QAction(tr("Application path"), this));
+            entry->setStatusTip(tr("Copy full application path to system's' clipboard"));
+            connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyProgramPath_Click()));
+            subMenu->addAction(entry.release());
+
+            subMenu->addSeparator();
+
+            entry.reset(new QAction(CoreLib->loadIcon("data/wineconsole.png"), tr("Wine cmd"), this));
+            entry->setStatusTip(tr("Copy wine cmd line for current application"));
+            connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyWineCmd_Click()));
+            subMenu->addAction(entry.release());
+
+            entry.reset(new QAction(CoreLib->loadIcon("data/q4wine.png"), tr("Q4wine-helper cmd"), this));
+            entry->setStatusTip(tr("Copy q4wine-helper cmd for current application"));
+            connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyQ4WineCmd_Click()));
+            subMenu->addAction(entry.release());
+
+            menu->addMenu(subMenu.release());
+            // End of clipboard meny
 
 	  } else {
 			// Default menu
@@ -851,6 +880,82 @@ void IconListWidget::iconSearchAppDB_Click(void){
 	iconItem.release();
 	return;
 }
+
+void IconListWidget::iconCopyWrkDir_Click(){
+    if (selectedItems().count()<=0)
+        return;
+
+    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+    if (!iconItem.get())
+          return;
+
+    QHash<QString, QString> info = db_icon.getByName(this->prefixName, this->dirName, iconItem->text());
+
+    iconItem.release();
+
+    if (!info["wrkdir"].isEmpty()){
+        QClipboard *clipboard = QApplication::clipboard();
+        clipboard->setText(info["wrkdir"]);
+    }
+    
+    return;
+}
+
+void IconListWidget::iconCopyProgramPath_Click(){
+    if (selectedItems().count()<=0)
+        return;
+
+    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+    if (!iconItem.get())
+          return;
+
+    QHash<QString, QString> info = db_icon.getByName(this->prefixName, this->dirName, iconItem->text());
+
+    iconItem.release();
+
+    if (!info["exec"].isEmpty()){
+        QClipboard *clipboard = QApplication::clipboard();
+        clipboard->setText(info["exec"]);
+    }
+    return;
+}
+
+void IconListWidget::iconCopyWineCmd_Click(){
+    if (selectedItems().count()<=0)
+        return;
+
+    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+    if (!iconItem.get())
+          return;
+
+    QString text = CoreLib->createWineString(this->prefixName, this->dirName, iconItem->text());
+    qDebug()<<text;
+    if (!text.isEmpty()){
+        QClipboard *clipboard = QApplication::clipboard();
+        clipboard->setText(text);
+    }
+    iconItem.release();
+    return;
+}
+
+void IconListWidget::iconCopyQ4WineCmd_Click(){
+    if (selectedItems().count()<=0)
+        return;
+
+    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+    if (!iconItem.get())
+          return;
+
+    QString text = CoreLib->createQ4WineString(this->prefixName, this->dirName, iconItem->text());
+    qDebug()<<text;
+    if (!text.isEmpty()){
+        QClipboard *clipboard = QApplication::clipboard();
+        clipboard->setText(text);
+    }
+    iconItem.release();
+
+    return;
+};
 
 void IconListWidget::menuRun_triggered(QAction* action){
 	  if (action->text().isEmpty())

@@ -61,6 +61,11 @@ private:
 	  void contextMenuEvent(QContextMenuEvent *event);
       void keyReleaseEvent ( QKeyEvent * event );
 
+
+/*      virtual bool dropMimeData(QTreeWidgetItem *parent, int index, const QMimeData *data, Qt::DropAction action);
+      QStringList mimeTypes() const;
+      Qt::DropActions supportedDropActions () const;  */
+
 	  QString prefixName, dirName, prefixMediaDrive, prefixMontPoint;
 
 	  //! This is need for libq4wine-core.so import.
