@@ -45,6 +45,19 @@ PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) :
       this->setAcceptDrops(true);
 }
 
+void PrefixTreeWidget::saveFocus(){
+    this->savePrefixName=this->prefixName;
+    this->saveDirName=this->dirName;
+    return;
+}
+
+void PrefixTreeWidget::restoreFocus(){
+    this->prefixName=this->savePrefixName;
+    this->dirName=this->saveDirName;
+    this->setDefaultFocus(this->prefixName, this->dirName);
+    return;
+}
+
 PrefixTreeWidget::~PrefixTreeWidget(){
 	std::auto_ptr<QTreeWidgetItem> treeItem (this->currentItem());
 
@@ -395,36 +408,79 @@ void PrefixTreeWidget::keyReleaseEvent ( QKeyEvent * event ){
     }
 }
 
-/*
 bool PrefixTreeWidget::dropMimeData(QTreeWidgetItem *parent, int index, const QMimeData *data, Qt::DropAction action)
 {
     QList<QUrl> urlList;
-    QTreeWidgetItem *item;
 
     urlList = data->urls(); // retrieve list of urls
 
     foreach(QUrl url, urlList) // iterate over list
     {
         qDebug()<<"ddd"<<url;
-        // make new QTreeWidgetItem and set its text
-        // if parent is null - add top level item (this parent)
 
-        if (parent == NULL) item = new QTreeWidgetItem(this);
-        else
-        // else add QTreeWidgetItem with parent and expand parent
-        {
-            item = new QTreeWidgetItem(parent);
-            parent->setExpanded( true );
+        if (!parent)
+              return false;
+
+        if (parent->parent()){
+              moveDesktopFile(url, parent->parent()->text(0), parent->text(0));
+        } else {
+              moveDesktopFile(url, parent->text(0), "");
         }
-
-        // set item text
-        item->setText( 0, url.toLocalFile() );
-
     }
+
+    if (this->selectedItems().count()>0)
+        this->itemClicked(this->selectedItems().at(0), 0);
 
     return true;
 }
 
+void PrefixTreeWidget::moveDesktopFile(QUrl url, QString prefixName, QString dirName){
+
+    QFile file(url.path());
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+
+    QString prefix="", dir="", icon="";
+
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        if (line.contains(QRegExp("^Exec=.*q4wine-cli.* "))){
+            QStringList parse = line.split(" ");
+            for (int i=1; i<parse.count(); i++){
+                if (parse.at(i)=="-p"){
+                    prefix=parse.at(++i);
+                    prefix.replace("\"", "");
+                } else if (parse.at(i)=="-d"){
+                    dir=parse.at(++i);
+                    dir.replace("\"", "");
+                } else if (parse.at(i)=="-i"){
+                    icon=parse.at(++i);
+                    icon.replace("\"", "");
+                }
+            }
+        }
+    }
+
+    if (icon.isEmpty())
+        return;
+
+    if (prefix.isEmpty())
+        return;
+
+    bool ok=false;
+    QString newName = icon;
+
+    while (db_icon.isExistsByName(prefixName, dirName, newName)){
+          newName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, icon , &ok);
+          if (!ok){
+                return;
+          }
+    }
+          
+    if (!db_icon.updateIcon(newName, db_prefix.getId(prefixName), db_dir.getId(dirName, prefixName), db_prefix.getId(prefix), db_dir.getId(dir, prefix), icon))
+        return;
+
+}
 
 QStringList PrefixTreeWidget::mimeTypes () const
 {
@@ -439,7 +495,6 @@ Qt::DropActions PrefixTreeWidget::supportedDropActions () const
     // returns what actions are supported when dropping
     return Qt::CopyAction;
 }
-*/
 
 void PrefixTreeWidget::menuRun_triggered(QAction* action){
 	  if (action->text().isEmpty())

@@ -371,6 +371,7 @@ void MainWindow::updateDtabaseConnectedItems(){
     if (!curPrefix.isEmpty()){
         cbPrefixes->setCurrentIndex(cbPrefixes->findText(curPrefix));
     }
+
     return;
 }
 

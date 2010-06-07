@@ -56,17 +56,20 @@ Q_OBJECT
 public:
 	  explicit PrefixTreeWidget(QWidget *parent = 0);
 	  ~PrefixTreeWidget();
+      void saveFocus();
+      void restoreFocus();
 
 private:
 	  void contextMenuEvent(QContextMenuEvent *event);
       void keyReleaseEvent ( QKeyEvent * event );
 
 
-/*      virtual bool dropMimeData(QTreeWidgetItem *parent, int index, const QMimeData *data, Qt::DropAction action);
+      virtual bool dropMimeData(QTreeWidgetItem *parent, int index, const QMimeData *data, Qt::DropAction action);
       QStringList mimeTypes() const;
-      Qt::DropActions supportedDropActions () const;  */
+      Qt::DropActions supportedDropActions () const;
+      void moveDesktopFile(QUrl url, QString prefixName, QString dirName);
 
-	  QString prefixName, dirName, prefixMediaDrive, prefixMontPoint;
+      QString prefixName, dirName, prefixMediaDrive, prefixMontPoint, savePrefixName, saveDirName;
 
 	  //! This is need for libq4wine-core.so import.
 	  QLibrary libq4wine;
