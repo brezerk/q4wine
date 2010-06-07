@@ -362,9 +362,7 @@ void MainWindow::updateDtabaseConnectedItems(){
 
     cbPrefixes->clear();
     QStringList list = db_prefix.getPrefixList();
-    for (int i = 0; i < list.size(); ++i) {
-        cbPrefixes->addItem (list.at(i));
-    }
+    cbPrefixes->addItems (list);
 
     emit(updateDatabaseConnections());
 

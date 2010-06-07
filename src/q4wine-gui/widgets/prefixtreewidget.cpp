@@ -45,19 +45,6 @@ PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) :
       this->setAcceptDrops(true);
 }
 
-void PrefixTreeWidget::saveFocus(){
-    this->savePrefixName=this->prefixName;
-    this->saveDirName=this->dirName;
-    return;
-}
-
-void PrefixTreeWidget::restoreFocus(){
-    this->prefixName=this->savePrefixName;
-    this->dirName=this->saveDirName;
-    this->setDefaultFocus(this->prefixName, this->dirName);
-    return;
-}
-
 PrefixTreeWidget::~PrefixTreeWidget(){
 	std::auto_ptr<QTreeWidgetItem> treeItem (this->currentItem());
 
@@ -670,6 +657,9 @@ void PrefixTreeWidget::winefileOpenMountDir_Click(void){
 }
 
 void PrefixTreeWidget::setDefaultFocus(QString prefixName, QString dirName){
+
+    qDebug()<<"wahoooo!";
+
 	if (prefixName.isEmpty())
 		prefixName="Default";
 
