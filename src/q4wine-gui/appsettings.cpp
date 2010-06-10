@@ -247,9 +247,9 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
 #if QT_VERSION >= 0x040500
     if (settings.value("useNativeFileDialog", 1).toInt()==1){
-        cbUseNativeDialog->setChecked(false);
-    } else {
         cbUseNativeDialog->setChecked(true);
+    } else {
+        cbUseNativeDialog->setChecked(false);
     }
 #else
     cbUseNativeDialog->setEnabled(false);
