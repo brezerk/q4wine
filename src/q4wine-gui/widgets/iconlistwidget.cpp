@@ -314,7 +314,7 @@ void IconListWidget::mouseMoveEvent(QMouseEvent *event){
 				  return;
 			}
 	  }
-	  QListWidget::mouseMoveEvent(event);
+      //QListWidget::mouseMoveEvent(event);
 }
 
 void IconListWidget::dragEnterEvent(QDragEnterEvent *event){

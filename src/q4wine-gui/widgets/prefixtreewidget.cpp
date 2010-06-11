@@ -403,8 +403,6 @@ bool PrefixTreeWidget::dropMimeData(QTreeWidgetItem *parent, int index, const QM
 
     foreach(QUrl url, urlList) // iterate over list
     {
-        qDebug()<<"ddd"<<url;
-
         if (!parent)
               return false;
 
@@ -478,7 +476,9 @@ QStringList PrefixTreeWidget::mimeTypes () const
 }
 
 void PrefixTreeWidget::dragEnterEvent(QDragEnterEvent *event){
+#ifdef DEBUG
     qDebug()<<"[ii] mime"<<event->mimeData()->formats();
+#endif
     if (event->mimeData()->hasFormat("text/uri-list"))
         event->acceptProposedAction();
 }
