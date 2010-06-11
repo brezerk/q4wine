@@ -414,7 +414,7 @@ QString  corelib::getLocale(){
 
         QStringList loc = lang.split(".");
 #ifdef DEBUG
-        qDebug()<<loc.count();
+        qDebug()<<"[ii] loc.count(): "<<loc.count();
 #endif
         if (loc.count()==2){
             lang = loc.at(1).toLower();

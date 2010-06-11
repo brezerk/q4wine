@@ -477,6 +477,12 @@ QStringList PrefixTreeWidget::mimeTypes () const
     return qstrList;
 }
 
+void PrefixTreeWidget::dragEnterEvent(QDragEnterEvent *event){
+    qDebug()<<"[ii] mime"<<event->mimeData()->formats();
+    if (event->mimeData()->hasFormat("text/uri-list"))
+        event->acceptProposedAction();
+}
+
 Qt::DropActions PrefixTreeWidget::supportedDropActions () const
 {
     // returns what actions are supported when dropping

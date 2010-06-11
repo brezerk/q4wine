@@ -66,6 +66,7 @@ private:
       QStringList mimeTypes() const;
       Qt::DropActions supportedDropActions () const;
       void moveDesktopFile(QUrl url, QString prefixName, QString dirName);
+      void dragEnterEvent(QDragEnterEvent *event);
 
       QString prefixName, dirName, prefixMediaDrive, prefixMontPoint;
 

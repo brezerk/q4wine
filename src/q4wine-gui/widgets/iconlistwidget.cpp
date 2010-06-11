@@ -37,7 +37,7 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
       setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
 	  setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
       setMovement(QListView::Snap);
-	  setDragDropMode(QAbstractItemView::InternalMove);
+      setDragDropMode(QAbstractItemView::NoDragDrop);
 	  setSelectionMode(QAbstractItemView::ContiguousSelection);
 
       if (CoreLib->getSetting("IconWidget", "ViewMode", false, "IconMode").toString()=="ListMode"){
