@@ -362,15 +362,14 @@ void MainWindow::updateDtabaseConnectedItems(){
 
     cbPrefixes->clear();
     QStringList list = db_prefix.getPrefixList();
-    for (int i = 0; i < list.size(); ++i) {
-        cbPrefixes->addItem (list.at(i));
-    }
+    cbPrefixes->addItems (list);
 
     emit(updateDatabaseConnections());
 
     if (!curPrefix.isEmpty()){
         cbPrefixes->setCurrentIndex(cbPrefixes->findText(curPrefix));
     }
+
     return;
 }
 
@@ -450,7 +449,8 @@ void MainWindow::newConnection (){
                     if (list.count()==3){
                         this->changeStatusText(tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
 
-                        if ((!this->isVisible()) and (trayIcon->isVisible())){
+                        if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
+                            if ((!this->isVisible()) and (trayIcon->isVisible())){
                             trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
 
@@ -463,6 +463,7 @@ void MainWindow::newConnection (){
                     if (list.count()==3){
                         this->changeStatusText(tr("Console started fine for Application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
 
+                        if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
                             trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
@@ -475,6 +476,7 @@ void MainWindow::newConnection (){
                 } else if (list.at(0)=="finish"){
                     if (list.count()==4){
                         this->changeStatusText(tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
+                        if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
                             trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
                         }
@@ -486,6 +488,7 @@ void MainWindow::newConnection (){
                 } else if (list.at(0)=="error"){
                     if (list.count()==3){
                         this->changeStatusText(tr("Can't start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                        if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
                             trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Can't start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
@@ -495,6 +498,7 @@ void MainWindow::newConnection (){
                 } else if (list.at(0)=="console_error"){
                     if (list.count()==3){
                         this->changeStatusText(tr("Can't start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                        if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
                             trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Can't start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
@@ -1052,7 +1056,8 @@ void MainWindow::messageReceived(const QString message){
             if (!trayIcon->isVisible()){
                 statusBar()->showMessage(tr("Binary \"%1\" do not exists.").arg(message));
             } else {
-                trayIcon->showMessage(tr("Can't run binary"), tr("Binary \"%1\" do not exists.").arg(message));
+                if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
+                    trayIcon->showMessage(tr("Can't run binary"), tr("Binary \"%1\" do not exists.").arg(message));
             }
         } else {
             if (cbPrefixes->currentText().isEmpty())

@@ -414,7 +414,7 @@ QString  corelib::getLocale(){
 
         QStringList loc = lang.split(".");
 #ifdef DEBUG
-        qDebug()<<loc.count();
+        qDebug()<<"[ii] loc.count(): "<<loc.count();
 #endif
         if (loc.count()==2){
             lang = loc.at(1).toLower();
@@ -817,7 +817,7 @@ QStringList corelib::getCdromDevices(void) const{
 
             if (!execObj.override.isEmpty()){
                 args.append("--override");
-                args.append(execObj.override);
+                args.append(QString("\"%1\"").arg(execObj.override));
             }
 
             if (execObj.useconsole == "1"){
@@ -851,7 +851,7 @@ QStringList corelib::getCdromDevices(void) const{
                 wrkdir = QDir::homePath();
 
             args.append("--wrkdir");
-            args.append(execObj.wrkdir);
+            args.append(wrkdir);
 
 #ifdef DEBUG
             qDebug()<<"[ii] corelib::runWineBinary: "<<binary<<args<<" at: "<<wrkdir;
@@ -865,216 +865,10 @@ QStringList corelib::getCdromDevices(void) const{
                 return proc.exec();
             }
 
-            //--prefix %1").arg(prefix_name)
-
-            //proc.se
-
-            /*
-            if (!checkFileExists(execObj.execcmd))
-                return false;
-
-            QStringList prefixList;
-			// 0   1     2             3            4            5          6            7
-			// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
-			prefixList = db_prefix.getFieldsByPrefixId(execObj.prefixid);
-
-			QString exec;
-			QStringList args;
-			QString envargs;
-
-			if (execObj.useconsole == "1"){
-				// If we gona use console output, so exec program is program specificed at CONSOLE global variable
-				exec = this->getSetting("console", "bin").toString();
-
-				if (!this->getSetting("console", "args", false).toString().isEmpty()){
-					// If we have any conslope parametres, we gona preccess them one by one
-					QStringList cons_args = this->getSetting("console", "args", false).toString().split(" ");
-					for (int i=0; i<cons_args.count(); i++){
-						if (!cons_args.at(i).isEmpty())
-							args.append(cons_args.at(i));
-					}
-				}
-
-				args.append(this->getSetting("system", "sh").toString());
-
-			} else {
-				exec = this->getSetting("system", "sh").toString();
-			}
-
-			args.append("-c");
-
-
-			if ((execObj.useconsole == "1") && (!execObj.wrkdir.isNull())){
-				envargs.append(" cd '");
-				envargs.append(execObj.wrkdir);
-				envargs.append("' && ");
-			}
-
-			if (!prefixList.at(1).isEmpty()){
-				//If icon has prefix -- add to args
-				envargs.append(QString(" WINEPREFIX=\"%1\" ").arg(prefixList.at(1)));
-			} else {
-				//Else use default prefix
-				envargs.append(QString(" WINEPREFIX=\"%1/.wine\" ").arg(QDir::homePath()));
-			}
-
-			if (!prefixList.at(2).isEmpty()){
-				envargs.append(QString(" WINEDLLPATH=\"%1\" ").arg(prefixList.at(2)));
-			} else {
-				envargs.append(QString(" WINEDLLPATH=\"%1\" ").arg(this->getSetting("wine", "WineLibs").toString()));
-			}
-
-			if (!prefixList.at(3).isEmpty()){
-				envargs.append(QString(" WINELOADER=\"%1\" ").arg(prefixList.at(3)));
-			} else {
-				envargs.append(QString(" WINELOADER=\"%1\" ").arg(this->getSetting("wine", "LoaderBin").toString()));
-			}
-
-			if (!prefixList.at(4).isEmpty()){
-				envargs.append(QString(" WINESERVER=\"%1\" ").arg(prefixList.at(4)));
-			} else {
-				envargs.append(QString(" WINESERVER=\"%1\" ").arg(this->getSetting("wine", "ServerBin").toString()));
-			}
-
-			if (!execObj.override.isEmpty()){
-				envargs.append(QString(" WINEDLLOVERRIDES=\"%1\" ").arg(execObj.override));
-			}
-
-			if (!execObj.winedebug.isEmpty() && execObj.useconsole == "1"){
-				envargs.append(QString(" WINEDEBUG=\"%1\" ").arg(execObj.winedebug));
-			}
-
-			if (!execObj.display.isEmpty()){
-				envargs.append(QString(" DISPLAY=\"%1\" ").arg(execObj.display));
-			}
-
-			QString exec_string = "";
-
-			exec_string.append(envargs);
-			if(!execObj.nice.isEmpty()){
-				exec_string.append(this->getSetting("system", "nice").toString());
-				exec_string.append(" -n ");
-				exec_string.append(execObj.nice);
-			}
-
-			exec_string.append(" ");
-
-			if (!prefixList.at(5).isEmpty()){
-				exec_string.append(prefixList.at(5));
-			} else {
-				exec_string.append(this->getSetting("wine", "WineBin").toString());
-			}
-
-			exec_string.append(" ");
-
-			if (!execObj.desktop.isEmpty()){
-				exec_string.append(" explorer.exe /desktop=");
-				QString repl = execObj.name;
-				exec_string.append(repl.replace(" ", ""));
-				exec_string.append(",");
-				exec_string.append(execObj.desktop);
-			}
-
-			exec_string.append(" \"");
-			exec_string.append(execObj.execcmd);
-			exec_string.append("\" ");
-            exec_string.append(this->getEscapeString(execObj.cmdargs, false));
-			if (execObj.useconsole != "1")
-				exec_string.append(" > /dev/null 2>&1");
-
-			args.append(exec_string);
-
-#ifdef DEBUG
-			qDebug()<<"[ii] corelib::runWineBinary via ExecObj args: "<<exec<<args<<execObj.wrkdir;
-#endif
-
-			QProcess proc;
-			return proc.startDetached( exec, args, execObj.wrkdir );
-            */
-            return false;
+                  return false;
 		}
 
-        //bool corelib::runWineBinary(const QString windows_binary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin, const bool releaseProc){
-            /*
-            if (!checkFileExists(windows_binary))
-                return false;
-
-			QStringList prefixList;
-			// 0   1     2             3            4            5          6            7
-			// id, path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive
-			prefixList = db_prefix.getFieldsByPrefixName(prefix_name);
-
-			QString exec;
-			QStringList args;
-			QString envargs;
-
-			exec = this->getSetting("system", "sh").toString();
-
-			args.append("-c");
-
-			if (!prefixList.at(1).isEmpty()){
-				//If icon has prefix -- add to args
-				envargs.append(QString(" WINEPREFIX=\"%1\" ").arg(prefixList.at(1)));
-			} else {
-				//Else use default prefix
-				envargs.append(QString(" WINEPREFIX=\"%1/.wine\" ").arg(QDir::homePath()));
-			}
-
-			if (!prefixList.at(2).isEmpty()){
-				envargs.append(QString(" WINEDLLPATH=\"%1\" ").arg(prefixList.at(2)));
-			} else {
-				envargs.append(QString(" WINEDLLPATH=\"%1\" ").arg(this->getSetting("wine", "WineLibs").toString()));
-			}
-
-			if (!prefixList.at(3).isEmpty()){
-				envargs.append(QString(" WINELOADER=\"%1\" ").arg(prefixList.at(3)));
-			} else {
-				envargs.append(QString(" WINELOADER=\"%1\" ").arg(this->getSetting("wine", "LoaderBin").toString()));
-			}
-
-			if (!prefixList.at(4).isEmpty()){
-				envargs.append(QString(" WINESERVER=\"%1\" ").arg(prefixList.at(4)));
-			} else {
-				envargs.append(QString(" WINESERVER=\"%1\" ").arg(this->getSetting("wine", "ServerBin").toString()));
-			}
-
-			QString exec_string = "";
-			exec_string.append(envargs);
-			exec_string.append(" ");
-
-			if (!prefixList.at(5).isEmpty()){
-				exec_string.append(prefixList.at(5));
-			} else {
-				exec_string.append(this->getSetting("wine", "WineBin").toString());
-			}
-
-			if (!wineAppendBin.isEmpty())
-				exec_string.append(wineAppendBin);
-
-			exec_string.append(" ");
-			if (!windows_binary.isEmpty()){
-				exec_string.append(" \"");
-				exec_string.append(windows_binary);
-				exec_string.append("\" ");
-			}
-
-            exec_string.append(this->getEscapeString(cmdargs, false));
-			args.append(exec_string);
-
-#ifdef DEBUG
-			qDebug()<<"[ii] corelib::runWineBinary via Requested args: "<<exec<<args<<QDir::homePath();
-#endif
-
-			if (releaseProc){
-				QProcess proc;
-				return proc.startDetached(exec, args, QDir::homePath());
-			} else {
-				return this->runProcess(args, QObject::tr("Running wine binary"), QObject::tr("Please wait..."));
-            }
-        return false;
-		}
-*/
-		QString corelib::createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const{
+        QString corelib::createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const{
             QHash<QString, QString> result = db_icon.getByName(prefix_name, dir_name, icon_name);
 
 			QString fileName = QDir::homePath();
@@ -1573,3 +1367,86 @@ QStringList corelib::getCdromDevices(void) const{
 			return;
 		}
 
+        QString corelib::createWineString(QString prefixName, QString dirName, QString iconName){
+            QHash<QString, QString> icon = db_icon.getByName(prefixName, dirName, iconName);
+            QHash<QString,QString> prefix = db_prefix.getByName(prefixName);
+
+            QString env;
+
+            env.append(QString(" WINEPREFIX=\'%1\' ").arg(prefix["path"]));
+            env.append(QString(" WINESERVER=\'%1\' ").arg(prefix["server"]));
+            env.append(QString(" WINELOADER=\'%1\' ").arg(prefix["loader"]));
+            env.append(QString(" WINEDLLPATH=\'%1\' ").arg(prefix["libs"]));
+
+            if (!icon["winedebug"].isEmpty())
+                env.append(QString(" WINEDEBUG=\'%1\' ").arg(icon["winedebug"]));
+
+            if (!icon["display"].isEmpty())
+                env.append(QString(" DISPLAY=\'%1\' ").arg(icon["display"]));
+
+            if (!icon["override"].isEmpty())
+                 env.append(QString(" WINEDLLOVERRIDES=\'%1\' ").arg(icon["override"]));
+
+            QString run_string="";
+
+            if (icon["useconsole"]=="1"){
+                // If we gona use console output, so exec program is program specificed at CONSOLE global variable
+                run_string = QString(" %1 ").arg(this->getSetting("console", "bin").toString());
+
+                if (!this->getSetting("console", "args", false).toString().isEmpty()){
+                    // If we have any conslope parametres, we gona preccess them one by one
+                    run_string.append(this->getSetting("console", "args", false).toString());
+                }
+
+                run_string.append(" /bin/sh -c \"cd \'");
+                run_string.append(icon["wrkdir"]);
+                run_string.append("\' && ");
+            } else {
+                 QTextCodec *codec = QTextCodec::codecForName(this->getLocale().toAscii());
+                chdir(codec->fromUnicode(icon["wrkdir"]).data());
+            }
+
+            //Setting enveropment variables
+            if (!env.isEmpty()){
+                run_string.append(" env ");
+                run_string.append(env);
+            }
+
+            if (icon["nice"] != "0"){
+                run_string.append(QString(" %1 -n %2 ").arg(this->getSetting("system", "nice", false).toString()).arg(icon["nice"]));
+            }
+
+            run_string.append(QString(" %1 ").arg(prefix["bin"]));
+
+            if (!icon["desktop"].isEmpty()){
+                QString deskname = icon["exec"].split("/").last().split("\\").last();
+                deskname.replace(" ", ".");
+                deskname.replace("&", ".");
+                deskname.replace("!", ".");
+                deskname.replace("$", ".");
+                deskname.replace("*", ".");
+                deskname.replace("(", ".");
+                deskname.replace(")", ".");
+                deskname.replace("[", ".");
+                deskname.replace("]", ".");
+                deskname.replace(";", ".");
+                deskname.replace("'", ".");
+                deskname.replace("\"", ".");
+                deskname.replace("|", ".");
+                deskname.replace("`", ".");
+                deskname.replace("\\", ".");
+                deskname.replace("/", ".");
+                deskname.replace(">", ".");
+                deskname.replace("<", ".");
+                run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(icon["desktop"]));
+            }
+
+            run_string.append(QString(" \'%1\' %2 ").arg(icon["exec"]).arg(icon["cmdargs"]));
+            run_string.append(" 2>&1 ");
+
+            if (icon["useconsole"]=="1"){
+                run_string.append(" \"");
+            }
+
+            return run_string;
+        }

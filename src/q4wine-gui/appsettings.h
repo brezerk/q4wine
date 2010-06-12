@@ -46,6 +46,7 @@ class AppSettings : public QDialog, public Ui::AppSettings
 		void radioFuse_toggled(bool state);
 		void radioEmbedded_toggled(bool state);
         void cbEnableLogging_stateChanged ( int state );
+        void cbShowTrarey_stateChanged ( int state );
 
         void optionsTree_itemClicked ( QTreeWidgetItem *item, int);
 

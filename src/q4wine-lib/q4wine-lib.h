@@ -269,7 +269,7 @@ public:
 	bool reniceProcess(const int pid, const int priority) const;
 	void runAutostart(void);
 
-    void getWineMenuIcons(void);
+    QString createWineString(QString prefixName, QString dirName, QString iconName);
 
 private:
 	/*! Define is library operate in CLI or GUI mode.

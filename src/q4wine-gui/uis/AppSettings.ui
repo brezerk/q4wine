@@ -234,7 +234,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QGridLayout" name="gridLayout">
@@ -253,7 +253,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>4</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tabGeneral">
            <attribute name="title">
@@ -531,6 +531,13 @@
                  </property>
                  <property name="checked">
                   <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="cbShowNotifications">
+                 <property name="text">
+                  <string>Show notifications.</string>
                  </property>
                 </widget>
                </item>

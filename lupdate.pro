@@ -25,7 +25,9 @@ FORMS += src/q4wine-gui/uis/AppInfoWidget.ui \
     src/q4wine-gui/uis/IconsView.ui \
     src/q4wine-gui/uis/AppSettings.ui \
     src/q4wine-gui/uis/ImageManager.ui \
-    src/plugins/winetricks.ui
+    src/q4wine-gui/uis/InfoDialog.ui \
+    src/q4wine-gui/uis/FakeDriveSettings.ui
+    src/plugins/winetricks.ui \
 
 SOURCES += src/core/database/last_run_icon.cpp \
     src/core/database/dir.cpp \
@@ -64,6 +66,8 @@ SOURCES += src/core/database/last_run_icon.cpp \
     src/q4wine-gui/widgets/drivelistwidgetitem.cpp \
     src/q4wine-gui/widgets/iconlistwidget.cpp \
     src/q4wine-gui/mainwindow.cpp \
+    src/q4wine-gui/infodialog.cpp \
+    src/q4wine-gui/fakedrivesettings.cpp \
     src/q4wine-gui/prefixsettings.cpp \
     src/q4wine-lib/q4wine-lib.cp \
     src/main.cpp \
