@@ -876,7 +876,12 @@ void IconListWidget::iconSearchAppDB_Click(void){
 	if (!iconItem.get())
 		  return;
 
-	emit(searchRequest(iconItem->text()));
+    QString iconText = iconItem->text();
+
+    if (this->dirName=="import")
+        iconText = iconText.split(" - ").last();
+
+    emit(searchRequest(iconText));
 	iconItem.release();
 	return;
 }
