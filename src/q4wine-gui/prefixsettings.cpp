@@ -188,6 +188,26 @@ void PrefixSettings::cmdOk_Click(){
     if (this->addNew){
         if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText()))
             reject();
+
+        QString prefixName = txtPrefixName->text();
+        //Is settings directory exists?
+        if (!db_dir.isExistsByName(prefixName, "system")){
+            db_dir.addDir(prefixName, "system");
+            //Adding icons
+            db_icon.addIcon("", "winecfg.exe", "winecfg", "Configure the general settings for Wine", prefixName, "system", "winecfg");
+            db_icon.addIcon("--backend=user cmd", "wineconsole", "wineconsole", "Wineconsole is similar to wine command wcmd", prefixName, "system", "console");
+            db_icon.addIcon("", "uninstaller.exe", "uninstaller", "Uninstall Windows programs under Wine properly", prefixName, "system", "uninstaller");
+            db_icon.addIcon("", "regedit.exe", "regedit", "Wine registry editor", prefixName, "system", "regedit");
+            db_icon.addIcon("", "explorer.exe", "explorer", "Browse the files in the virtual Wine drive", prefixName, "system", "explorer");
+            db_icon.addIcon("", "eject.exe", "eject", "Wine CD eject tool", prefixName, "system", "eject");
+            db_icon.addIcon("", "wordpad.exe", "wordpad", "Wine wordpad text editor", prefixName, "system", "wordpad");
+        }
+
+        if (!db_dir.isExistsByName(prefixName, "autostart"))
+            db_dir.addDir(prefixName, "autostart");
+
+        if (!db_dir.isExistsByName(prefixName, "import"))
+            db_dir.addDir(prefixName, "import");
     } else {
         if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name))
             reject();

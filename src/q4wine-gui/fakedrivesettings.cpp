@@ -703,11 +703,9 @@ void FakeDriveSettings::cmdOk_Click(){
 #endif
 
     if (registry.exec(this, prefixName)){
-
 #ifdef DEBUG
         qDebug()<<"[ii] Wizard::creating icons";
 #endif
-
             //Is settings directory exists?
             if (!db_dir.isExistsByName(prefixName, "system")){
                 db_dir.addDir(prefixName, "system");
