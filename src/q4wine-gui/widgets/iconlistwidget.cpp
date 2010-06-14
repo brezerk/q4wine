@@ -878,8 +878,17 @@ void IconListWidget::iconSearchAppDB_Click(void){
 
     QString iconText = iconItem->text();
 
-    if (this->dirName=="import")
-        iconText = iconText.split(" - ").last();
+    if (this->dirName=="import"){
+        QStringList list = iconText.split(" - ");
+        iconText.clear();
+        if (list.count()>1){
+            for (int i=1; i<list.count(); i++){
+                iconText.append(list.at(i));
+                if (i<list.count()-1)
+                    iconText.append(" - ");
+            }
+        }
+    }
 
     emit(searchRequest(iconText));
 	iconItem.release();
