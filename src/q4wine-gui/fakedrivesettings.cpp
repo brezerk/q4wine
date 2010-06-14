@@ -1144,6 +1144,8 @@ void FakeDriveSettings::loadSettings(){
 }
 
 void FakeDriveSettings::loadDefaultSettings(){
+    txtOwner->setText(getenv("USER"));
+
     std::auto_ptr<DriveListWidgetItem> item;
     item.reset(new DriveListWidgetItem(listWineDrives));
     item->setDrive("C:", "../drive_c", "auto");
