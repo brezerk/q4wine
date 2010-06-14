@@ -48,9 +48,29 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
 	connect (cmdInstall, SIGNAL (clicked()), this, SLOT(run_winetricks()));
 	connect (cmdExit, SIGNAL (clicked()), this, SLOT(accept()));
 	connect (cmdInstWinetricks, SIGNAL (clicked()), this, SLOT (install_winetricks()));
+    connect(lstMain, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(lstMain_itemClicked(QListWidgetItem*)));
+
+    lstMain->installEventFilter(this);
 
 	parse();
 	//fill list
+}
+
+bool winetricks::eventFilter( QObject *object, QEvent *event )
+{
+   //  firstly, check whether the object is the QTableWidget and if it's a mouse press event
+    if (object == lstMain)
+        if (event->type() == QEvent::KeyRelease)
+        {
+        // if yes, we need to cast the event
+        std::auto_ptr<QKeyEvent> keyEvent (static_cast<QKeyEvent*>(event));
+        if ((keyEvent->key()==Qt::Key_Up) || (keyEvent->key()==Qt::Key_Down))
+            this->lstMain_itemClicked(lstMain->currentItem());
+
+        keyEvent.release();
+        }
+
+    return QWidget::eventFilter(object, event);
 }
 
 void winetricks::install_winetricks() {
@@ -161,8 +181,7 @@ void winetricks::downloadwinetricks () {
 	args.append(arg);
 
     Process exportProcess(args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
-
-		exportProcess.exec();
+    exportProcess.exec();
 		// setting help
 
 #ifdef DEBUG
@@ -208,6 +227,9 @@ descs.append(desc);
 void winetricks::parse() {
     names.clear();
     descs.clear();
+
+    this->cmdInstall->setEnabled(false);
+
 #ifdef DEBUG
     qDebug()<<"[plugin] parsing winetriks output";
 #endif
@@ -267,12 +289,15 @@ foreach (str, names) {
     qDebug()<<"[plugin] add to list done";
 #endif
 
+    if (this->lstMain->count()>0)
+        this->cmdInstall->setEnabled(true);
+
 }
 
 
 
 
-void winetricks::on_lstMain_itemClicked(QListWidgetItem* item)
+void winetricks::lstMain_itemClicked(QListWidgetItem* item)
 {
 
 	int i;
