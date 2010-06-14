@@ -74,18 +74,15 @@ void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("Video")){
         optionsStack->setCurrentIndex(1);
         tabwVideo->setCurrentIndex(0);
-    } else if (itemText==tr("Direct 3D")){
+    } else if (itemText==tr("Direct 3D") && item->parent()->text(0)==tr("Video")){
         optionsStack->setCurrentIndex(1);
         tabwVideo->setCurrentIndex(1);
-    } else if (itemText==tr("Direct input")){
-        optionsStack->setCurrentIndex(1);
-        tabwVideo->setCurrentIndex(2);
     } else if (itemText==tr("OpenGL")){
         optionsStack->setCurrentIndex(1);
-        tabwVideo->setCurrentIndex(3);
-    } else if (itemText==tr("X11 driver")){
+        tabwVideo->setCurrentIndex(2);
+    } else if (itemText==tr("X11 driver") && item->parent()->text(0)==tr("Video")){
         optionsStack->setCurrentIndex(1);
-        tabwVideo->setCurrentIndex(4);
+        tabwVideo->setCurrentIndex(3);
     } else if (itemText==tr("File system")){
         optionsStack->setCurrentIndex(3);
         tabwFileSystem->setCurrentIndex(0);
@@ -104,9 +101,18 @@ void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("Alsa driver")){
         optionsStack->setCurrentIndex(2);
         tabwAudio->setCurrentIndex(1);
-    } else if (itemText==tr("Misc")){
+    } else if (itemText==tr("Misc audio")){
         optionsStack->setCurrentIndex(2);
         tabwAudio->setCurrentIndex(2);
+    } else if (itemText==tr("Input")){
+        optionsStack->setCurrentIndex(4);
+        tabwInput->setCurrentIndex(0);
+    } else if (itemText==tr("Direct 3D") && item->parent()->text(0)==tr("Input")){
+        optionsStack->setCurrentIndex(4);
+        tabwInput->setCurrentIndex(0);
+    } else if (itemText==tr("X11 driver") && item->parent()->text(0)==tr("Input")){
+        optionsStack->setCurrentIndex(4);
+        tabwInput->setCurrentIndex(1);
     }
 }
 
@@ -514,6 +520,18 @@ void FakeDriveSettings::cmdOk_Click(){
         registry.set("Software\\Wine\\OpenGL", "DisabledExtensions", txtFakeDisabledExtensions->text());
     } else {
         registry.unset("Software\\Wine\\OpenGL", "DisabledExtensions");
+    }
+
+    if (sboxFakeInput_scroll->value()>0){
+        registry.set("Control Panel\\Desktop", "WheelScrollLines", QString("%1").arg(sboxFakeInput_scroll->value()));
+    } else {
+        registry.unset("Control Panel\\Desktop", "WheelScrollLines");
+    }
+
+    if (comboFakeInput_selection->currentText()!="default"){
+        registry.set("Software\\Wine\\X11 Driver", "UsePrimarySelection", comboFakeInput_selection->currentText());
+    } else {
+        registry.unset("Software\\Wine\\X11 Driver", "UsePrimarySelection");
     }
 
     registry.unsetPath("Software\\Wine\\DirectInput");
@@ -977,6 +995,24 @@ void FakeDriveSettings::loadSettings(){
 
     if (list.count()>0){
         listJoystickAxesMappings->insertItems (0, list);
+    }
+
+    list.clear();
+    list << "\"WheelScrollLines\"";
+    list = reg.readKeys("user", "Control Panel\\Desktop", list);
+
+    if (list.count()>0){
+        if (!list.at(0).isEmpty())
+            sboxFakeInput_scroll->setValue(list.at(0).toInt());
+    }
+
+    list.clear();
+    list << "\"UsePrimarySelection\"";
+    list = reg.readKeys("user", "Software\\Wine\\X11 Driver", list);
+
+    if (list.count()>0){
+        if (!list.at(0).isEmpty())
+            comboFakeInput_selection->setCurrentIndex(comboFakeInput_selection->findText(list.at(0)));
     }
 
     list.clear();
