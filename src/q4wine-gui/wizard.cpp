@@ -419,10 +419,7 @@ void Wizard::nextWizardPage(){
 					settings.setValue("type", 2);
 				}
 			}
-
 			settings.endGroup();
-
-
 
 			settings.beginGroup("quickmount");
 			if (radioDefault->isChecked()){
@@ -458,7 +455,6 @@ void Wizard::nextWizardPage(){
 
 			if (radioFuse->isChecked()){
 				settings.setValue("type", 2);
-				QString format;
 				if (txtMountString->text().isEmpty()){
 					txtMountString->setText(CoreLib->getMountString(2));
 				}
@@ -472,7 +468,6 @@ void Wizard::nextWizardPage(){
 				}
 			}
 			if (radioEmbedded->isChecked()){
-				QString format;
 				settings.setValue("type", 3);
 				if (txtMountString->text().isEmpty()){
 					txtMountString->setText(CoreLib->getMountString(3));
@@ -494,6 +489,8 @@ void Wizard::nextWizardPage(){
 			settings.endGroup();
 
             CoreLib->openHelpUrl("05-first-steps.html");
+
+            CoreLib->createPrefixDBStructure("Default");
 
 			accept();
 			break;
