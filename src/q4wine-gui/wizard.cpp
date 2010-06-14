@@ -282,12 +282,6 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 				txtWineServerBin->setText(QString("%1wineserver").arg(wrkDir));
 				txtWineLoaderBin->setText(QString("%1wine").arg(wrkDir));
 			}
-			if (obj==cmdGetWineDesktop){
-				txtWineDesktopDoc->setText(file);
-				txtWineDesktopPic->setText(file);
-				txtWineDesktopMus->setText(file);
-				txtWineDesktopVid->setText(file);
-			}
 		}
 	}
 	return FALSE;

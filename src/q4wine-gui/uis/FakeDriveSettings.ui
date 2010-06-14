@@ -358,7 +358,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -531,7 +531,7 @@
                     </item>
                     <item>
                      <property name="text">
-                      <string>Windows 7</string>
+                      <string notr="true">Windows 7</string>
                      </property>
                     </item>
                     <item>
@@ -614,7 +614,7 @@
                <item>
                 <widget class="QCheckBox" name="cbCrashDialog">
                  <property name="text">
-                  <string>Disabling graphical crash dialog.</string>
+                  <string>Disable graphical crash dialog.</string>
                  </property>
                  <property name="checked">
                   <bool>false</bool>
@@ -1005,7 +1005,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Software emultaion:</string>
+                     <string notr="true">Software emultaion:</string>
                     </property>
                    </widget>
                   </item>
@@ -1067,7 +1067,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Pixel Shader Mode:</string>
+                     <string notr="true">Pixel Shader Mode:</string>
                     </property>
                    </widget>
                   </item>
@@ -1114,7 +1114,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Vertex Shader Mode:</string>
+                     <string notr="true">Vertex Shader Mode:</string>
                     </property>
                    </widget>
                   </item>
@@ -1206,7 +1206,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Multisampling:</string>
+                     <string notr="true">Multisampling:</string>
                     </property>
                    </widget>
                   </item>
@@ -1253,7 +1253,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>DDraw Renderer:</string>
+                     <string notr="true">DDraw Renderer:</string>
                     </property>
                    </widget>
                   </item>
@@ -1300,7 +1300,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Lock Mode:</string>
+                     <string notr="true">Lock Mode:</string>
                     </property>
                    </widget>
                   </item>
@@ -1362,7 +1362,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>StrictDrawOrdering:</string>
+                     <string notr="true">StrictDrawOrdering:</string>
                     </property>
                    </widget>
                   </item>
@@ -1409,7 +1409,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Offscreen Mode:</string>
+                     <string notr="true">Offscreen Mode:</string>
                     </property>
                    </widget>
                   </item>
@@ -1461,7 +1461,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Use GLSL:</string>
+                     <string notr="true">Use GLSL:</string>
                     </property>
                    </widget>
                   </item>
@@ -1508,7 +1508,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Nonpower2Mode:</string>
+                     <string notr="true">Nonpower2Mode:</string>
                     </property>
                    </widget>
                   </item>
@@ -1640,7 +1640,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>WithRender:</string>
+                     <string notr="true">WithRender:</string>
                     </property>
                    </widget>
                   </item>
@@ -1687,7 +1687,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>AA WithRender:</string>
+                     <string notr="true">AA WithRender:</string>
                     </property>
                    </widget>
                   </item>
@@ -1734,7 +1734,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>AA WithCore:</string>
+                     <string notr="true">AA WithCore:</string>
                     </property>
                    </widget>
                   </item>
@@ -1781,7 +1781,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>UseXRandR:</string>
+                     <string notr="true">UseXRandR:</string>
                     </property>
                    </widget>
                   </item>
@@ -1828,7 +1828,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>UseXVidMode:</string>
+                     <string notr="true">UseXVidMode:</string>
                     </property>
                    </widget>
                   </item>
@@ -1878,10 +1878,16 @@
       </widget>
       <widget class="QWidget" name="pageAudio">
        <layout class="QVBoxLayout" name="verticalLayout_36">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>6</number>
+        </property>
         <item>
          <widget class="QTabWidget" name="tabwAudio">
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tab_11">
            <attribute name="title">
@@ -1944,42 +1950,42 @@
                     </item>
                     <item>
                      <property name="text">
-                      <string>alsa</string>
+                      <string notr="true">alsa</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>audioio</string>
+                      <string notr="true">audioio</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>coreaudio</string>
+                      <string notr="true">coreaudio</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>esd</string>
+                      <string notr="true">esd</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>jack</string>
+                      <string notr="true">jack</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>nas</string>
+                      <string notr="true">nas</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>oss</string>
+                      <string notr="true">oss</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>disabled</string>
+                      <string notr="true">disabled</string>
                      </property>
                     </item>
                    </widget>
@@ -2053,7 +2059,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>AutoScanCards:</string>
+                     <string notr="true">AutoScanCards:</string>
                     </property>
                    </widget>
                   </item>
@@ -2066,12 +2072,12 @@
                     </item>
                     <item>
                      <property name="text">
-                      <string>Y</string>
+                      <string notr="true">Y</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>N</string>
+                      <string notr="true">N</string>
                      </property>
                     </item>
                    </widget>
@@ -2100,7 +2106,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>AutoScanDevices:</string>
+                     <string notr="true">AutoScanDevices:</string>
                     </property>
                    </widget>
                   </item>
@@ -2113,12 +2119,12 @@
                     </item>
                     <item>
                      <property name="text">
-                      <string>Y</string>
+                      <string notr="true">Y</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>N</string>
+                      <string notr="true">N</string>
                      </property>
                     </item>
                    </widget>
@@ -2147,7 +2153,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>DeviceCount:</string>
+                     <string notr="true">DeviceCount:</string>
                     </property>
                    </widget>
                   </item>
@@ -2182,7 +2188,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>DeviceCTLn:</string>
+                     <string notr="true">DeviceCTLn:</string>
                     </property>
                    </widget>
                   </item>
@@ -2213,7 +2219,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>DevicePCMn:</string>
+                     <string notr="true">DevicePCMn:</string>
                     </property>
                    </widget>
                   </item>
@@ -2244,7 +2250,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>UseDirectHW:</string>
+                     <string notr="true">UseDirectHW:</string>
                     </property>
                    </widget>
                   </item>
@@ -2257,12 +2263,12 @@
                     </item>
                     <item>
                      <property name="text">
-                      <string>Y</string>
+                      <string notr="true">Y</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>N</string>
+                      <string notr="true">N</string>
                      </property>
                     </item>
                    </widget>
@@ -2340,7 +2346,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>MaxShadowSize:</string>
+                     <string notr="true">MaxShadowSize:</string>
                     </property>
                    </widget>
                   </item>
@@ -2390,7 +2396,7 @@
         <item row="0" column="0">
          <widget class="QTabWidget" name="tabwFileSystem">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tab_9">
            <attribute name="title">
@@ -2753,12 +2759,24 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page">
+      <widget class="QWidget" name="pageInput">
        <layout class="QVBoxLayout" name="verticalLayout_43">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>6</number>
+        </property>
+        <property name="bottomMargin">
+         <number>6</number>
+        </property>
         <item>
          <widget class="QTabWidget" name="tabwInput">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tab_16">
            <attribute name="title">
@@ -2805,7 +2823,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>MouseWarpOverride:</string>
+                     <string notr="true">MouseWarpOverride:</string>
                     </property>
                    </widget>
                   </item>
@@ -2857,7 +2875,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>WheelScrollLines:</string>
+                     <string notr="true">WheelScrollLines:</string>
                     </property>
                    </widget>
                   </item>
@@ -2987,8 +3005,14 @@
                       <height>16777215</height>
                      </size>
                     </property>
+                    <property name="accessibleName">
+                     <string notr="true"/>
+                    </property>
+                    <property name="accessibleDescription">
+                     <string notr="true"/>
+                    </property>
                     <property name="text">
-                     <string>UsePrimarySelection:</string>
+                     <string notr="true">UsePrimarySelection:</string>
                     </property>
                    </widget>
                   </item>
@@ -3001,12 +3025,12 @@
                     </item>
                     <item>
                      <property name="text">
-                      <string>Y</string>
+                      <string notr="true">Y</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string>N</string>
+                      <string notr="true">N</string>
                      </property>
                     </item>
                    </widget>
