@@ -20,6 +20,9 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout">
+    <property name="margin">
+     <number>3</number>
+    </property>
     <item row="0" column="0">
      <widget class="QTabWidget" name="tbwGeneral">
       <property name="currentIndex">

@@ -264,12 +264,18 @@
           <string>Authors</string>
          </attribute>
          <layout class="QGridLayout">
+          <property name="margin">
+           <number>3</number>
+          </property>
           <item row="0" column="0">
            <widget class="QGroupBox" name="groupBox">
             <property name="title">
              <string>Authors</string>
             </property>
             <layout class="QGridLayout">
+             <property name="margin">
+              <number>3</number>
+             </property>
              <item row="0" column="0">
               <widget class="QTextEdit" name="txtAuthors">
                <property name="readOnly">
@@ -297,12 +303,18 @@ p, li { white-space: pre-wrap; }
           <string>Packages Authors</string>
          </attribute>
          <layout class="QGridLayout" name="gridLayout_1">
+          <property name="margin">
+           <number>3</number>
+          </property>
           <item row="0" column="0">
            <widget class="QGroupBox" name="groupBox_4">
             <property name="title">
              <string>Authors</string>
             </property>
             <layout class="QGridLayout" name="_2">
+             <property name="margin">
+              <number>3</number>
+             </property>
              <item row="0" column="0">
               <widget class="QTextEdit" name="txtPAuthors">
                <property name="readOnly">
@@ -330,12 +342,18 @@ p, li { white-space: pre-wrap; }
           <string>Translation</string>
          </attribute>
          <layout class="QGridLayout">
+          <property name="margin">
+           <number>3</number>
+          </property>
           <item row="0" column="0">
            <widget class="QGroupBox" name="groupBox_3">
             <property name="title">
              <string>Authors</string>
             </property>
             <layout class="QGridLayout">
+             <property name="margin">
+              <number>3</number>
+             </property>
              <item row="0" column="0">
               <widget class="QTextEdit" name="txtTranslation">
                <property name="readOnly">
@@ -363,12 +381,18 @@ p, li { white-space: pre-wrap; }
           <string>Thanks</string>
          </attribute>
          <layout class="QGridLayout" name="gridLayout_2">
+          <property name="margin">
+           <number>3</number>
+          </property>
           <item row="0" column="0">
            <widget class="QGroupBox" name="groupBox_5">
             <property name="title">
              <string>Special thanks</string>
             </property>
             <layout class="QGridLayout" name="_3">
+             <property name="margin">
+              <number>3</number>
+             </property>
              <item row="0" column="0">
               <widget class="QTextEdit" name="txtThanks">
                <property name="readOnly">
@@ -396,12 +420,18 @@ p, li { white-space: pre-wrap; }
           <string>License agreement</string>
          </attribute>
          <layout class="QGridLayout">
+          <property name="margin">
+           <number>3</number>
+          </property>
           <item row="0" column="0">
            <widget class="QGroupBox" name="groupBox_2">
             <property name="title">
              <string>License agreement</string>
             </property>
             <layout class="QGridLayout">
+             <property name="margin">
+              <number>3</number>
+             </property>
              <item row="0" column="0">
               <widget class="QTextEdit" name="txtLicense">
                <property name="readOnly">

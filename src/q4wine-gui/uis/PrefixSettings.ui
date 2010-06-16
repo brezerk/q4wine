@@ -211,12 +211,18 @@
           <string>General</string>
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="margin">
+           <number>3</number>
+          </property>
           <item>
            <widget class="QGroupBox" name="groupBox_5">
             <property name="title">
              <string>Prefix settings</string>
             </property>
             <layout class="QVBoxLayout">
+             <property name="margin">
+              <number>3</number>
+             </property>
              <item>
               <widget class="QWidget" name="widget_16" native="true">
                <layout class="QHBoxLayout">
@@ -301,6 +307,9 @@
              <string>Quick mount</string>
             </property>
             <layout class="QVBoxLayout">
+             <property name="margin">
+              <number>3</number>
+             </property>
              <item>
               <widget class="QWidget" name="widget_17" native="true">
                <layout class="QHBoxLayout">
@@ -405,12 +414,18 @@
           <string>Wine settings</string>
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="margin">
+           <number>3</number>
+          </property>
           <item>
            <widget class="QGroupBox" name="groupBox">
             <property name="title">
              <string>Wine settings</string>
             </property>
             <layout class="QVBoxLayout">
+             <property name="margin">
+              <number>3</number>
+             </property>
              <item>
               <widget class="QLabel" name="label_4">
                <property name="sizePolicy">

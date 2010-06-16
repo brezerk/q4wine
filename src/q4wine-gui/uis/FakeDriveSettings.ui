@@ -358,7 +358,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -377,13 +377,16 @@
         <item>
          <widget class="QTabWidget" name="tabwGeneral">
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="tab">
            <attribute name="title">
             <string>General</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_2">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_10">
               <property name="autoFillBackground">
@@ -644,6 +647,9 @@
             <string>Color theme</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_18">
               <property name="title">
@@ -710,6 +716,9 @@
             <string>Wine browsers</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_5">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_41">
               <property name="text">
@@ -848,6 +857,9 @@
             <string>Video</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_9">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_70">
               <property name="text">
@@ -1163,6 +1175,9 @@
             <string>Direct 3D</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_8">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_38">
               <property name="text">
@@ -1552,6 +1567,9 @@
             <string>OpenGL</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_10">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_17">
               <property name="autoFillBackground">
@@ -1597,6 +1615,9 @@
             <string>X11 driver</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_16">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_39">
               <property name="text">
@@ -1887,13 +1908,16 @@
         <item>
          <widget class="QTabWidget" name="tabwAudio">
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="tab_11">
            <attribute name="title">
             <string>Sound driver</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_25">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_71">
               <property name="text">
@@ -2016,6 +2040,9 @@
             <string>Alsa driver</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_28">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_56">
               <property name="text">
@@ -2299,6 +2326,9 @@
             <string>Misc</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_30">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_74">
               <property name="text">
@@ -2403,6 +2433,9 @@
             <string>Wine drives</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_20">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_23">
               <property name="autoFillBackground">
@@ -2492,6 +2525,9 @@
             <string>Desktop paths</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_22">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_20">
               <property name="title">
@@ -2783,6 +2819,9 @@
             <string>Direct 3D</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_37">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_97">
               <property name="text">
@@ -2966,6 +3005,9 @@
             <string>X11 driver</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_11">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_103">
               <property name="text">
