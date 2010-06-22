@@ -176,6 +176,7 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
             QRegExp rxlen("env WINEPREFIX=\"(.+)\" wine \"(.+)\"( .*)");
             if (rxlen.indexIn(line) != -1){
                 QStringList cap = rxlen.capturedTexts();
+                qDebug()<<"[DEBUG]: :"<<cap;
                 if (cap.count()>=3){
                     prefix_path = cap.at(1);
                     exec = cap.at(2);

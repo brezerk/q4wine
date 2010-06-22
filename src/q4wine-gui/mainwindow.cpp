@@ -342,6 +342,7 @@ void MainWindow::getSettings(){
 
     if (CoreLib->getSetting("app", "showTrareyIcon", false).toBool()){
         trayIcon->show();
+        this->setHidden(CoreLib->getSetting("MainWindow", "hidden", false).toBool());
     } else {
         trayIcon->hide();
     }
@@ -672,6 +673,7 @@ void MainWindow::mainExit_Click(){
         settings.setValue("splitterSize0", splitter->sizes().at(0));
         settings.setValue("splitterSize1", splitter->sizes().at(1));
     }
+    settings.setValue("hidden", this->isHidden());
     settings.endGroup();
 
     serverSoket->close();
