@@ -36,9 +36,11 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
       setResizeMode(QListView::Adjust);
       setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
 	  setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
-      setMovement(QListView::Snap);
+      setMovement(QListView::Static);
       setDragDropMode(QAbstractItemView::NoDragDrop);
-	  setSelectionMode(QAbstractItemView::ContiguousSelection);
+      setSelectionMode(QAbstractItemView::ContiguousSelection);
+
+      this->setDragEnabled(false);
 
       if (CoreLib->getSetting("IconWidget", "ViewMode", false, "IconMode").toString()=="ListMode"){
           setDisplayType(false);
@@ -182,7 +184,7 @@ void IconListWidget::setDisplayType(bool icon){
 }
 
 void IconListWidget::startDrag(){
-	  if (this->prefixName.isEmpty())
+    if (this->prefixName.isEmpty())
 			return;
 
 	  QList<QListWidgetItem *> items = this->selectedItems ();
@@ -297,9 +299,9 @@ void IconListWidget::mousePressEvent(QMouseEvent *event){
 				  }
 			}
 			item.release();
-	  } else {
-			QListWidget::mousePressEvent(event);
-	  }
+            return;
+      }
+      QListWidget::mousePressEvent(event);
 }
 
 void IconListWidget::mouseMoveEvent(QMouseEvent *event){
@@ -314,7 +316,8 @@ void IconListWidget::mouseMoveEvent(QMouseEvent *event){
 				  return;
 			}
 	  }
-      //QListWidget::mouseMoveEvent(event);
+
+      QListWidget::mouseMoveEvent(event);
 }
 
 void IconListWidget::dragEnterEvent(QDragEnterEvent *event){
