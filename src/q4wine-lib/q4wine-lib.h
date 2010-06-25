@@ -273,6 +273,8 @@ public:
     QString createWineString(QString prefixName, QString dirName, QString iconName);
     void createPrefixDBStructure(QString prefixName);
 
+    QString decodeRegString(QString string);
+
 private:
 	/*! Define is library operate in CLI or GUI mode.
 	 * \note This is typically need for error message display.

@@ -52,6 +52,12 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
         tabwGeneral->setCurrentIndex(0);
     }
 
+    cmdGetWineDesktop->installEventFilter(this);
+    cmdGetWineDesktopDoc->installEventFilter(this);
+    cmdGetWineDesktopPic->installEventFilter(this);
+    cmdGetWineDesktopMus->installEventFilter(this);
+    cmdGetWineDesktopVid->installEventFilter(this);
+
 }
 
 void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
@@ -199,6 +205,25 @@ void FakeDriveSettings::cmdOk_Click(){
         return;
     }
 
+    Registry reg(db_prefix.getPath(prefixName));
+    QStringList list;
+    list << "\"Desktop\""<<"\"My Music\""<<"\"My Pictures\""<<"\"My Videos\""<<"\"Personal\"";
+    list = reg.readKeys("user", "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders", list);
+
+    if (list.count()==5){
+        desktopFolder = CoreLib->decodeRegString(list.at(0).split("\\\\").last());
+        desktopDocuments = CoreLib->decodeRegString(list.at(1).split("\\\\").last());
+        desktopMusic = CoreLib->decodeRegString(list.at(2).split("\\\\").last());
+        desktopPictures = CoreLib->decodeRegString(list.at(3).split("\\\\").last());
+        desktopVideos = CoreLib->decodeRegString(list.at(4).split("\\\\").last());
+    } else {
+         QMessageBox::warning(this, tr("Error"), tr("Can't read desktop paths!"));
+        this->reject();
+        return;
+    }
+
+     qDebug()<<desktopFolder<<desktopDocuments<<desktopMusic<<desktopPictures<<desktopVideos;
+
     QString sh_cmd = "";
     QStringList sh_line;
 
@@ -268,35 +293,35 @@ void FakeDriveSettings::cmdOk_Click(){
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("rm"));
     sh_cmd.append(" -fr '");
-    sh_cmd.append(QString("%1/Desktop").arg(prefixPath));
+    sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopFolder));
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("rm"));
     sh_cmd.append(" -fr '");
-    sh_cmd.append(QString("%1/My Documents").arg(prefixPath));
+    sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopDocuments));
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("rm"));
     sh_cmd.append(" -fr '");
-    sh_cmd.append(QString("%1/My Music").arg(prefixPath));
+    sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopMusic));
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("rm"));
     sh_cmd.append(" -fr '");
-    sh_cmd.append(QString("%1/My Pictures").arg(prefixPath));
+    sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopPictures));
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("rm"));
     sh_cmd.append(" -fr '");
-    sh_cmd.append(QString("%1/My Videos").arg(prefixPath));
+    sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopVideos));
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
 
@@ -311,45 +336,91 @@ void FakeDriveSettings::cmdOk_Click(){
     sh_cmd.append(" -s '");
     sh_cmd.append(txtWineDesktop->text());
     sh_cmd.append("' '");
-    sh_cmd.append("Desktop");
+    sh_cmd.append(desktopFolder);
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
+
+    QDir dir (txtWineDesktop->text());
+    if (!dir.exists())
+        if (!dir.mkpath(dir.path())){
+        QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
+#ifdef DEBUG
+        qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
+#endif
+    }
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("ln"));
     sh_cmd.append(" -s '");
     sh_cmd.append(txtWineDesktopDoc->text());
     sh_cmd.append("' '");
-    sh_cmd.append("My Documents");
+    sh_cmd.append(desktopDocuments);
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
+
+    dir.setPath (txtWineDesktopDoc->text());
+    if (!dir.exists())
+        if (!dir.mkpath(dir.path())){
+        QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
+#ifdef DEBUG
+        qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
+#endif
+    }
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("ln"));
     sh_cmd.append(" -s '");
     sh_cmd.append(txtWineDesktopMus->text());
     sh_cmd.append("' '");
-    sh_cmd.append("My Music");
+    sh_cmd.append(desktopMusic);
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
+
+    dir.setPath (txtWineDesktopMus->text());
+    if (!dir.exists())
+        if (!dir.mkpath(dir.path())){
+        QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
+#ifdef DEBUG
+        qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
+#endif
+    }
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("ln"));
     sh_cmd.append(" -s '");
     sh_cmd.append(txtWineDesktopPic->text());
     sh_cmd.append("' '");
-    sh_cmd.append("My Pictures");
+    sh_cmd.append(desktopPictures);
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
+
+    dir.setPath (txtWineDesktopPic->text());
+    if (!dir.exists())
+        if (!dir.mkpath(dir.path())){
+        QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
+#ifdef DEBUG
+        qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
+#endif
+    }
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("ln"));
     sh_cmd.append(" -s '");
     sh_cmd.append(txtWineDesktopVid->text());
     sh_cmd.append("' '");
-    sh_cmd.append("My Videos");
+    sh_cmd.append(desktopVideos);
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
+
+
+    dir.setPath(txtWineDesktopVid->text());
+    if (!dir.exists())
+        if (!dir.mkpath(dir.path())){
+        QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
+#ifdef DEBUG
+        qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
+#endif
+    }
 
     sh_cmd.clear();
 
@@ -846,6 +917,40 @@ void FakeDriveSettings::loadSettings(){
     Registry reg(prefixPath);
 
     QStringList list;
+    /*
+    list << "\"Desktop\"", "\"My Music\"", "\"My Pictures\"", "\"My Videos\"", "\"Personal\"";
+    list = reg.readKeys("user", "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders", list);
+
+    if (list.count()>5){
+        desktopFolder = CoreLib->decodeRegString(list.at(0).split("\\\\").last());
+        desktopDocuments = CoreLib->decodeRegString(list.at(1).split("\\\\").last());
+        desktopMusic = CoreLib->decodeRegString(list.at(2).split("\\\\").last());
+        desktopPictures = CoreLib->decodeRegString(list.at(3).split("\\\\").last());
+        desktopVideos = CoreLib->decodeRegString(list.at(4).split("\\\\").last());
+    }*/
+
+    /*
+    QTextCodec *codec = QTextCodec::codecForName("UTF-16BE");
+    QString dir;
+    QString folder = list.at(0).split("\\\\").last();
+    QStringList parts = folder.split("\\");
+    if (parts.count()>1){
+        for (int j=0; j<parts.count(); j++){
+            if (parts.at(j).left(1)=="x"){
+                QString test = QString("0%1").arg(parts.at(j).left(4));
+                QByteArray temp = QByteArray::fromHex(test.toAscii().data());
+                dir.append(codec->toUnicode(temp));
+            }
+
+             if (parts.at(j).length()>4)
+                  dir.append(parts.at(j).right(parts.at(j).length()-4));
+
+        }
+    } else {
+        dir.append(folder);
+    }*/
+
+    list.clear();
     list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
     list = reg.readKeys("system", "Software\\Microsoft\\Windows NT\\CurrentVersion", list);
     //HKEY_CURRENT_USER\\Software\\Wine]\n\"Version
@@ -1123,6 +1228,18 @@ void FakeDriveSettings::loadSettings(){
 }
 
 void FakeDriveSettings::loadDefaultSettings(){
+
+    ExecObject execObj;
+    execObj.cmdargs = "-u -i";
+    execObj.execcmd = "wineboot";
+
+    if (!CoreLib->runWineBinary(execObj, prefixName, false)){
+        QApplication::restoreOverrideCursor();
+        reject();
+        return;
+    }
+
+
     txtOwner->setText(getenv("USER"));
 
     std::auto_ptr<DriveListWidgetItem> item;
@@ -1144,9 +1261,74 @@ void FakeDriveSettings::loadDefaultSettings(){
     item->setDrive("H:", QString("%1/.config/q4wine/tmp").arg(QDir::homePath()), "auto");
     listWineDrives->addItem(item.release());
 
+    /*
     txtWineDesktop->setText(QDesktopServices::storageLocation(QDesktopServices::DesktopLocation));
     txtWineDesktopDoc->setText(QDir::homePath());
     txtWineDesktopMus->setText(QDir::homePath());
     txtWineDesktopPic->setText(QDir::homePath());
     txtWineDesktopVid->setText(QDir::homePath());
+    */
+
+    QString prefixPath = db_prefix.getPath(this->prefixName);
+
+    txtWineDesktop->setText(QString("%1/desktop-integration/Desktop").arg(prefixPath));
+    txtWineDesktopDoc->setText(QString("%1/desktop-integration/").arg(prefixPath));
+    txtWineDesktopMus->setText(QString("%1/desktop-integration/").arg(prefixPath));
+    txtWineDesktopPic->setText(QString("%1/desktop-integration/").arg(prefixPath));
+    txtWineDesktopVid->setText(QString("%1/desktop-integration/").arg(prefixPath));
+
+}
+
+bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
+    /*
+        User select folder dialog function
+    */
+
+    if (obj->objectName()== "FakeDriveSettings")
+        return FALSE;
+
+    if (event->type() == QEvent::MouseButtonRelease) {
+        QString file;
+
+#if QT_VERSION >= 0x040500
+        QFileDialog::Options options;
+
+        if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
+                options = QFileDialog::DontUseNativeDialog | QFileDialog::DontResolveSymlinks;
+
+        if (obj->objectName().right(3)=="Bin"){
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)", 0, options);
+        } else {
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),  options);
+        }
+#else
+        if (obj->objectName().right(3)=="Bin"){
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
+        } else {
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath());
+        }
+#endif
+
+        if (!file.isEmpty()){
+            QString a;
+            a.append("txt");
+            a.append(obj->objectName().right(obj->objectName().length()-6));
+
+            std::auto_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
+            if (lineEdit.get()){
+                lineEdit->setText(file);
+            } else {
+                qDebug("Error");
+            }
+            lineEdit.release();
+
+            if (obj==cmdGetWineDesktop){
+                txtWineDesktopDoc->setText(file);
+                txtWineDesktopPic->setText(file);
+                txtWineDesktopMus->setText(file);
+                txtWineDesktopVid->setText(file);
+            }
+        }
+    }
+    return FALSE;
 }

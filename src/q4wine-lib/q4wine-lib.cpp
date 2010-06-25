@@ -1480,3 +1480,26 @@ QStringList corelib::getCdromDevices(void) const{
             qDebug()<<"[ii] Wizard::done";
 #endif
         }
+
+        QString corelib::decodeRegString(QString string){
+            QTextCodec *codec = QTextCodec::codecForName("UTF-16BE");
+            QString ret;
+            QStringList parts = string.split("\\");
+            if (parts.count()>1){
+                for (int j=0; j<parts.count(); j++){
+                    if (parts.at(j).left(1)=="x"){
+                        QString test = QString("0%1").arg(parts.at(j).left(4));
+                        QByteArray temp = QByteArray::fromHex(test.toAscii().data());
+                        ret.append(codec->toUnicode(temp));
+                    }
+
+                    if (parts.at(j).length()>4)
+                        ret.append(parts.at(j).right(parts.at(j).length()-4));
+
+                }
+            } else {
+                ret.append(string);
+            }
+
+            return ret;
+        }

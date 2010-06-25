@@ -62,8 +62,10 @@ private slots:
 
 private:
     QString prefixName;
+    QString desktopFolder, desktopDocuments, desktopMusic, desktopPictures, desktopVideos;
    // bool eventFilter (QObject *object, QEvent *event);
     void loadThemeIcons();
+   bool eventFilter(QObject *obj, QEvent *event);
 
     std::auto_ptr<QSplitter> splitter;
 
