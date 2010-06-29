@@ -142,16 +142,16 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		txtUmountBin->setText(CoreLib->getWhichOut("umount"));
 		txtSudoBin->setText(CoreLib->getWhichOut("sudo"));
 
-		txtGuiSudoBin->setText(CoreLib->getWhichOut("kdesu", FALSE));
-		if (txtGuiSudoBin->text().isEmpty()){
-			txtGuiSudoBin->setText(CoreLib->getWhichOut("gksudo", FALSE));
-			if (txtGuiSudoBin->text().isEmpty()){
-				txtGuiSudoBin->setText(CoreLib->getWhichOut("gksu", FALSE));
-				if (txtGuiSudoBin->text().isEmpty()){
-					txtGuiSudoBin->setText(CoreLib->getWhichOut("sudo", FALSE));
-				}
-			}
-		}
+        QStringList guisudo;
+        guisudo << "kdesudo" << "kdesu" << "gksudo" << "gksu" << "sudo";
+
+        foreach (QString bin, guisudo){
+            QString path = CoreLib->getWhichOut(bin, FALSE);
+            if (!path.isEmpty()){
+                txtGuiSudoBin->setText(path);
+                break;
+            }
+        }
 
 		txtNiceBin->setText(CoreLib->getWhichOut("nice"));
 		txtReniceBin->setText(CoreLib->getWhichOut("renice"));
