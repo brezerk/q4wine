@@ -917,38 +917,23 @@ void FakeDriveSettings::loadSettings(){
     Registry reg(prefixPath);
 
     QStringList list;
-    /*
-    list << "\"Desktop\"", "\"My Music\"", "\"My Pictures\"", "\"My Videos\"", "\"Personal\"";
+
+    list.clear();
+    list << "\"Desktop\""<<"\"My Music\""<<"\"My Pictures\""<<"\"My Videos\""<<"\"Personal\"";
     list = reg.readKeys("user", "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders", list);
 
-    if (list.count()>5){
+    if (list.count()==5){
         desktopFolder = CoreLib->decodeRegString(list.at(0).split("\\\\").last());
         desktopDocuments = CoreLib->decodeRegString(list.at(1).split("\\\\").last());
         desktopMusic = CoreLib->decodeRegString(list.at(2).split("\\\\").last());
         desktopPictures = CoreLib->decodeRegString(list.at(3).split("\\\\").last());
         desktopVideos = CoreLib->decodeRegString(list.at(4).split("\\\\").last());
-    }*/
-
-    /*
-    QTextCodec *codec = QTextCodec::codecForName("UTF-16BE");
-    QString dir;
-    QString folder = list.at(0).split("\\\\").last();
-    QStringList parts = folder.split("\\");
-    if (parts.count()>1){
-        for (int j=0; j<parts.count(); j++){
-            if (parts.at(j).left(1)=="x"){
-                QString test = QString("0%1").arg(parts.at(j).left(4));
-                QByteArray temp = QByteArray::fromHex(test.toAscii().data());
-                dir.append(codec->toUnicode(temp));
-            }
-
-             if (parts.at(j).length()>4)
-                  dir.append(parts.at(j).right(parts.at(j).length()-4));
-
-        }
     } else {
-        dir.append(folder);
-    }*/
+        QMessageBox::warning(this, tr("Error"), tr("Can't read desktop paths!"));
+        this->reject();
+        return;
+    }
+
 
     list.clear();
     list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
@@ -1190,35 +1175,35 @@ void FakeDriveSettings::loadSettings(){
     if (!wineDriveDir.cd(prefixPath)){
         qDebug()<<"Cannot cd to prefix directory: "<<prefixPath;
     } else {
-        QFileInfo fileinfo(QString("%1/Desktop").arg(prefixPath));
+        QFileInfo fileinfo(QString("%1/%2").arg(prefixPath).arg(desktopFolder));
         if (fileinfo.isSymLink()){
             txtWineDesktop->setText(fileinfo.symLinkTarget());
         } else {
             txtWineDesktop->setText(fileinfo.filePath());
         }
 
-        fileinfo.setFile(QString("%1/My Documents").arg(prefixPath));
+        fileinfo.setFile(QString("%1/%2").arg(prefixPath).arg(this->desktopDocuments));
         if (fileinfo.isSymLink()){
             txtWineDesktopDoc->setText(fileinfo.symLinkTarget());
         } else {
             txtWineDesktopDoc->setText(fileinfo.filePath());
         }
 
-        fileinfo.setFile(QString("%1/My Music").arg(prefixPath));
+        fileinfo.setFile(QString("%1/%2").arg(prefixPath).arg(this->desktopMusic));
         if (fileinfo.isSymLink()){
             txtWineDesktopMus->setText(fileinfo.symLinkTarget());
         } else {
             txtWineDesktopMus->setText(fileinfo.filePath());
         }
 
-        fileinfo.setFile(QString("%1/My Pictures").arg(prefixPath));
+        fileinfo.setFile(QString("%1/%2").arg(prefixPath).arg(this->desktopPictures));
         if (fileinfo.isSymLink()){
             txtWineDesktopPic->setText(fileinfo.symLinkTarget());
         } else {
             txtWineDesktopPic->setText(fileinfo.filePath());
         }
 
-        fileinfo.setFile(QString("%1/My Videos").arg(prefixPath));
+        fileinfo.setFile(QString("%1/%2").arg(prefixPath).arg(this->desktopVideos));
         if (fileinfo.isSymLink()){
             txtWineDesktopVid->setText(fileinfo.symLinkTarget());
         } else {

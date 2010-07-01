@@ -37,7 +37,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     db_prefix.fixPrefixPath();
 
     if (CoreLib->getSetting("DesktopImport", "importAtStartup", false, 0)==1){
-        Progress progress(0);
+        Progress progress(0, "");
         progress.exec();
     }
 
@@ -1038,8 +1038,29 @@ case 5:
 }
 
 void MainWindow::mainImportWineIcons_Click(){
-    Progress progress(0);
-    progress.exec();
+    foreach (QString prefixName, db_prefix.getPrefixList()){
+        QString prefixPath = db_prefix.getPath(prefixName);
+        QString path;
+        Registry reg(prefixPath);
+        QStringList list;
+        list << "\"Desktop\"";
+        list = reg.readKeys("user", "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders", list);
+
+
+        prefixPath.append("/dosdevices/c:/users/");
+        prefixPath.append(getenv("USER"));
+
+        QFileInfo fileinfo(QString("%1/%2").arg(prefixPath).arg(CoreLib->decodeRegString(list.at(0).split("\\\\").last())));
+        if (fileinfo.isSymLink()){
+            path = fileinfo.symLinkTarget();
+        } else {
+            path = fileinfo.filePath();
+        }
+
+        Progress progress(0, path);
+        progress.exec();
+    }
+
     updateDtabaseConnectedItems();
     return;
 }

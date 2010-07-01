@@ -11,7 +11,7 @@
     <x>0</x>
     <y>0</y>
     <width>700</width>
-    <height>440</height>
+    <height>503</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1774,19 +1774,6 @@ p, li { white-space: pre-wrap; }
                  <property name="margin">
                   <number>3</number>
                  </property>
-                 <item row="1" column="0">
-                  <spacer>
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>470</width>
-                     <height>16</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
                  <item row="0" column="0">
                   <widget class="QGroupBox" name="groupBox_11">
                    <property name="autoFillBackground">
@@ -2085,6 +2072,19 @@ p, li { white-space: pre-wrap; }
                     </item>
                    </layout>
                   </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <spacer>
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>470</width>
+                     <height>16</height>
+                    </size>
+                   </property>
+                  </spacer>
                  </item>
                 </layout>
                </widget>

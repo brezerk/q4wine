@@ -358,7 +358,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -2537,22 +2537,6 @@
                <property name="margin">
                 <number>3</number>
                </property>
-               <item>
-                <widget class="QLabel" name="lblInfoPrefix1_2">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>Note: leave it blank for default value.</string>
-                 </property>
-                 <property name="wordWrap">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
                <item>
                 <widget class="QWidget" name="widget_36" native="true">
                  <layout class="QHBoxLayout" name="_60">
