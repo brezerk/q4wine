@@ -143,17 +143,6 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
 	txtTranslation->setHtml("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\"><html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">p, li { white-space: pre-wrap; }</style></head><body>" \
 							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-								   "Uriy O. Chornoivan" \
-							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-								   "Ukrainian translation" \
-							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-								   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">yurchor@ukr.net</span>" \
-							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-								   "Kiev, Ukraine" \
-
-							"</p><p style=\"margin: 0px\"> </p>" \
-
-							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Alexey S. Malakhov (John Brezerk)" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Ukrainian translation" \
@@ -161,7 +150,6 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 								   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">brezerk@gmail</span>" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Kiev, Ukraine" \
-
 							"</p><p style=\"margin: 0px\"> </p>" \
 
 							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
@@ -172,7 +160,6 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 								   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">ignacioruax@gmail.com</span>" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Spain" \
-
 							"</p><p style=\"margin: 0px\"> </p>" \
 
 							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
@@ -183,8 +170,10 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 								   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">ercole69@gmail.com</span>" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Italia" \
-
 							"</p><p style=\"margin: 0px\"> </p>" \
+
+
+
 
 							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Márcio Moraes" \
@@ -205,6 +194,26 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 								   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">pzinin@gmail.com</span>" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Sergiev Posad, Moscow region, Russia" \
+							"</p><p style=\"margin: 0px\"> </p>" \
+
+							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+								   "Steven Panek (Espreon)" \
+							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+								   "English fixes and translation" \
+							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+								   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">majora700@gmail.com</span>" \
+							"</p><p style=\"margin: 0px\"> </p>" \
+
+
+							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+								   "Uriy O. Chornoivan" \
+							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+								   "Ukrainian translation" \
+							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+								   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">yurchor@ukr.net</span>" \
+							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+								   "Kiev, Ukraine" \
+
 
 							"</p></body></html>");
 
