@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Prefix settings</string>
+   <string>Prefix Settings</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -435,7 +435,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>If you wish to use different wine versions, you may wish set custom wine paths here.
+                <string>If you wish to use different Wine versions, you may wish set custom Wine paths here.
 Note: leave it blank for default.</string>
                </property>
                <property name="scaledContents">
@@ -674,7 +674,7 @@ Note: leave it blank for default.</string>
         <item>
          <widget class="QPushButton" name="cmdOk">
           <property name="text">
-           <string>Ok</string>
+           <string>OK</string>
           </property>
          </widget>
         </item>

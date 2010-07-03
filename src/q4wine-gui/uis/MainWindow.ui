@@ -122,7 +122,7 @@
       </widget>
       <widget class="QWidget" name="tabProcess">
        <attribute name="title">
-        <string>Process</string>
+        <string>Processes</string>
        </attribute>
        <layout class="QVBoxLayout" name="tabProcessLayout">
         <property name="spacing">
@@ -219,7 +219,7 @@
              <item>
               <widget class="QLabel" name="label_2">
                <property name="text">
-                <string>WIS scripts support is not emplemented right now. I will be iplemented in future releases. For now You can use wineriks support (see current tab toolbar actions).</string>
+                <string>Support for WIS scripts has not yet been implemented; however, this application is capable of using winetricks (see the current tab's toolbar actions).</string>
                </property>
                <property name="wordWrap">
                 <bool>true</bool>
@@ -389,7 +389,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Instal wizard</string>
+    <string>Installation Wizard</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+X</string>
@@ -426,7 +426,7 @@
   </action>
   <action name="mainExportIcons">
    <property name="text">
-    <string>Extract images from PE files</string>
+    <string>Extract Images from PE Files</string>
    </property>
    <property name="statusTip">
     <string>Extract images from PE files using icoutils.</string>
@@ -442,12 +442,12 @@
   </action>
   <action name="mainImageManage">
    <property name="text">
-    <string>CD image manager</string>
+    <string>Disc Image Manager</string>
    </property>
   </action>
   <action name="mainFirstSteps">
    <property name="text">
-    <string>First steps</string>
+    <string>First Steps</string>
    </property>
   </action>
   <action name="mainFAQ">
@@ -489,7 +489,7 @@
   </action>
   <action name="mainAppDB">
    <property name="text">
-    <string>Wine AppDB browser</string>
+    <string>Wine AppDB Browser</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+B</string>
@@ -505,7 +505,7 @@
   </action>
   <action name="menuHelpThisTab">
    <property name="text">
-    <string>Help this tab</string>
+    <string>Help for This Tab</string>
    </property>
    <property name="shortcut">
     <string>F1</string>
@@ -513,16 +513,16 @@
   </action>
   <action name="mainImportWineIcons">
    <property name="text">
-    <string>Import wine desktop files</string>
+    <string>Import Wine Desktop Files</string>
    </property>
    <property name="iconText">
-    <string>Import wine desktop files</string>
+    <string>Import Wine Desktop Files</string>
    </property>
    <property name="toolTip">
-    <string>Scan for wine desktop files and import into q4wine icon's view.</string>
+    <string>Scan for Wine desktop files and import them into q4wine's icon view.</string>
    </property>
    <property name="statusTip">
-    <string>Scan for wine desktop files and import into q4wine icon's view.</string>
+    <string>Scan for Wine desktop files and import them into q4wine's icon view.</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+I</string>

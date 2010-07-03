@@ -176,10 +176,10 @@ void ImageManager::actionAddImage(){
     QString fileName, newName, fileFilter;
 
 #ifdef _OS_LINUX_
-    fileFilter = tr("CD image files (*.iso *.nrg *.img *.bin *.mdf)");
+    fileFilter = tr("Disc image files (*.iso *.nrg *.img *.bin *.mdf)");
 #endif
 #ifdef _OS_FREEBSD_
-    fileFilter =  tr("iso files (*.iso)");
+    fileFilter =  tr("ISO image files (*.iso)");
 #endif
 
 #if QT_VERSION >= 0x040500
@@ -188,9 +188,9 @@ void ImageManager::actionAddImage(){
     if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
         options = QFileDialog::DontUseNativeDialog;
 
-    fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), QDir::homePath(), fileFilter, 0, options);
+    fileName = QFileDialog::getOpenFileName(this, tr("Open ISO image file"), QDir::homePath(), fileFilter, 0, options);
 #else
-    fileName = QFileDialog::getOpenFileName(this, tr("Open ISO Image file"), QDir::homePath(), fileFilter);
+    fileName = QFileDialog::getOpenFileName(this, tr("Open ISO image file"), QDir::homePath(), fileFilter);
 #endif
 
 

@@ -543,7 +543,7 @@ QString corelib::getWhichOut(const QString fileName, bool showErr){
 		return string.trimmed();
 	} else {
 		if (showErr)
-			this->showError(QObject::tr("Can't find or execute '%1' binary. Make shure this binary is available by search PATH variable and see also INSTALL file for application depends.").arg(fileName));
+			this->showError(QObject::tr("Can't find or execute the '%1' binary. Make sure that this binary is available by search PATH variable and see also INSTALL file for application depends.").arg(fileName));
 	}
 
 	return "";

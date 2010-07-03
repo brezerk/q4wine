@@ -260,12 +260,12 @@
           </item>
           <item>
            <property name="text">
-            <string>Color theme</string>
+            <string>Color Theme</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Wine browsers</string>
+            <string>Wine Browsers</string>
            </property>
           </item>
          </item>
@@ -290,7 +290,7 @@
           </item>
           <item>
            <property name="text">
-            <string>X11 driver</string>
+            <string>X11 Driver</string>
            </property>
           </item>
          </item>
@@ -305,7 +305,7 @@
           </item>
           <item>
            <property name="text">
-            <string>X11 driver</string>
+            <string>X11 Driver</string>
            </property>
           </item>
          </item>
@@ -320,27 +320,27 @@
           </item>
           <item>
            <property name="text">
-            <string>Alsa driver</string>
+            <string>ALSA Driver</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Misc audio</string>
+            <string>Misc Audio</string>
            </property>
           </item>
          </item>
          <item>
           <property name="text">
-           <string>File system</string>
+           <string>File System</string>
           </property>
           <item>
            <property name="text">
-            <string>Wine drives</string>
+            <string>Wine Drives</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Desktop paths</string>
+            <string>Desktop Paths</string>
            </property>
           </item>
          </item>
@@ -941,7 +941,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Memory (Mb):</string>
+                     <string>Memory (MB):</string>
                     </property>
                    </widget>
                   </item>
@@ -1017,7 +1017,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string notr="true">Software emultaion:</string>
+                     <string notr="true">Software emulation:</string>
                     </property>
                    </widget>
                   </item>
@@ -1612,7 +1612,7 @@
           </widget>
           <widget class="QWidget" name="tab_8">
            <attribute name="title">
-            <string>X11 driver</string>
+            <string>X11 Driver</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_16">
             <property name="margin">
@@ -1669,17 +1669,17 @@
                    <widget class="QComboBox" name="comboFakeX11_WR">
                     <item>
                      <property name="text">
-                      <string notr="true">default</string>
+                      <string notr="true">Default</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string notr="true">Y</string>
+                      <string notr="true">Yes</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string notr="true">N</string>
+                      <string notr="true">No</string>
                      </property>
                     </item>
                    </widget>
@@ -1716,17 +1716,17 @@
                    <widget class="QComboBox" name="comboFakeX11_AAR">
                     <item>
                      <property name="text">
-                      <string notr="true">default</string>
+                      <string notr="true">Default</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string notr="true">Y</string>
+                      <string notr="true">Yes</string>
                      </property>
                     </item>
                     <item>
                      <property name="text">
-                      <string notr="true">N</string>
+                      <string notr="true">No</string>
                      </property>
                     </item>
                    </widget>
@@ -3140,7 +3140,7 @@
       <item>
        <widget class="QPushButton" name="cmdOk">
         <property name="text">
-         <string>Ok</string>
+         <string>OK</string>
         </property>
        </widget>
       </item>

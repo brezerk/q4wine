@@ -224,7 +224,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 	  this->itemClicked (this->currentItem(), 0);
 
 	  std::auto_ptr<QMenu> menu (new QMenu(this));
-	  std::auto_ptr<QMenu> menuMount (new QMenu(tr("Mount iso..."), this));
+	  std::auto_ptr<QMenu> menuMount (new QMenu(tr("Mount ISO..."), this));
 
 	  if (this->prefixMontPoint.isEmpty()){
 			menuMount->setEnabled(false);
@@ -461,7 +461,7 @@ void PrefixTreeWidget::moveDesktopFile(QUrl url, QString prefixName, QString dir
                 return;
           }
     }
-          
+
     if (!db_icon.updateIcon(newName, db_prefix.getId(prefixName), db_dir.getId(dirName, prefixName), db_prefix.getId(prefix), db_dir.getId(dir, prefix), icon))
         return;
 
@@ -545,10 +545,10 @@ void PrefixTreeWidget::menuMount_triggered(QAction* action){
 
           QString fileFilter;
 #ifdef _OS_LINUX_
-    fileFilter = tr("CD image files (*.iso *.nrg *.img *.bin *.mdf)");
+    fileFilter = tr("Disc image files (*.iso *.nrg *.img *.bin *.mdf)");
 #endif
 #ifdef _OS_FREEBSD_
-    fileFilter =  tr("iso files (*.iso)");
+    fileFilter =  tr("ISO image files (*.iso)");
 #endif
 
 #if QT_VERSION >= 0x040500
@@ -557,9 +557,9 @@ void PrefixTreeWidget::menuMount_triggered(QAction* action){
     if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
         options = QFileDialog::DontUseNativeDialog;
 
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open CD Image files"), QDir::homePath(), fileFilter, 0, options);
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Disc Image Files"), QDir::homePath(), fileFilter, 0, options);
 #else
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open CD Image files"), QDir::homePath(), fileFilter);
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Disc Image Files"), QDir::homePath(), fileFilter);
 #endif
 
 			if(fileName.isEmpty()){

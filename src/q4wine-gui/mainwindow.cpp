@@ -72,9 +72,9 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     toolbar->addAction(action.release());
     toolbar->addSeparator();
 
-    action.reset(new QAction(CoreLib->loadIcon("data/regedit.png"), tr("Run winetriks plugin"), this));
-    action->setStatusTip(tr("Run winetriks plugin (wine manage utility created by DanKegel)"));
-    connect(action.get(), SIGNAL(triggered()), this, SLOT(prefixRunWinetriks_Click()));
+    action.reset(new QAction(CoreLib->loadIcon("data/regedit.png"), tr("Run Winetricks plugin"), this));
+    action->setStatusTip(tr("Run Winetricks plugin"));
+    connect(action.get(), SIGNAL(triggered()), this, SLOT(prefixRunWinetricks_Click()));
 
     toolbar->addAction(action.release());
 
@@ -260,20 +260,20 @@ void MainWindow::clearTmp(){
     return;
 }
 
-void MainWindow::prefixRunWinetriks_Click() {  
+void MainWindow::prefixRunWinetricks_Click() {
     if (CoreLib->getSetting("console", "bin").toString().isEmpty()){
         QMessageBox::warning(this, tr("Error"), tr("<p>You do not set default console binary.</p><p>Set it into q4wine option dialog.</p>"));
         return;
     }
 
-    if (CoreLib->getSetting("DialogFlags", "winetriksPlugin", false, 0).toInt()==0){
+    if (CoreLib->getSetting("DialogFlags", "winetricksPlugin", false, 0).toInt()==0){
         InfoDialog info(0);
         if (info.exec()==QDialog::Rejected)
             return;
     }
 
-    winetricks triks(cbPrefixes->currentText());
-    triks.exec();
+    winetricks tricks(cbPrefixes->currentText());
+    tricks.exec();
     return;
 }
 
@@ -594,7 +594,7 @@ void MainWindow::tbwGeneral_CurrentTabChange(int tabIndex){
 #endif
     else {
         emit(stopProcTimer());
-    }   
+    }
     return;
 }
 
@@ -608,13 +608,13 @@ void MainWindow::cmdCreateFake_Click(){
     QFile sysreg_file (sysregPath);
 
     if (sysreg_file.exists()){
-        if (QMessageBox::warning(this, tr("Warning"), tr("There are other Fake drive installed in %1 prefix directory.<br><br>Do you wish to REMOVE ALL FILES from prefix folder?").arg(prefixPath), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
+        if (QMessageBox::warning(this, tr("Warning"), tr("A fake drive already exists within <b>%1</b>.<br><br>Do you wish to remove <b>all</b> files from this prefix?").arg(prefixPath), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
 
             QStringList args;
             args << "-rdf";
             args << prefixPath;
 
-            Process exportProcess(args, "/bin/rm", QDir::homePath(), tr("Removing old fake drive.<br>This can take a while..."), tr("Removing old fake drive"));
+            Process exportProcess(args, "/bin/rm", QDir::homePath(), tr("Removing old fake drive.<br>This may take awhile..."), tr("Removing old fake drive"));
 
             if (exportProcess.exec()!=QDialog::Accepted){
                 return;
@@ -800,7 +800,7 @@ void MainWindow::mainRun_Click(){
 
 void MainWindow::mainImageManager_Click(){
     /*
-     * CD Image Manager
+     * Disc Image Manager
      */
 
     ImageManager manager(0);

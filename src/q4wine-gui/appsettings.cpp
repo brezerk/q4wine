@@ -344,7 +344,7 @@ void AppSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("Plugins")){
         optionsStack->setCurrentIndex(3);
         tabwPlugins->setCurrentIndex(1);
-    } else if (itemText==tr("Winetriks")){
+    } else if (itemText==tr("Winetricks")){
         optionsStack->setCurrentIndex(3);
         tabwPlugins->setCurrentIndex(1);
     } else if (itemText==tr("Advanced")){

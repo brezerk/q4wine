@@ -268,7 +268,7 @@ int main(int argc, char *argv[])
 		break;
 	case 5:
 		result = db_image.getFields();
-		Qcout<<QObject::tr("%1 has following CD images in database").arg(APP_SHORT_NAME)<<endl;
+		Qcout<<QObject::tr("%1 has the following disc images in the database").arg(APP_SHORT_NAME)<<endl;
 		Qcout<<" "<<qSetFieldWidth(25)<<left<<QObject::tr("Name")<<QObject::tr("Path")<<qSetFieldWidth(0)<<endl;
 		for (int i = 0; i < result.size(); ++i) {
 			Qcout<<" "<<qSetFieldWidth(25)<<left<<result.at(i).at(0)<<result.at(i).at(1)<<qSetFieldWidth(0)<<endl;
@@ -316,7 +316,7 @@ int main(int argc, char *argv[])
             } else {
                 if (!QFile(_IMAGE).exists()){
                     if (!db_image.isExistsByName(_IMAGE)){
-                        Qcout<<QObject::tr("No CD iamge \"%1\" exists. Run \"%2-cli -cl\" for CD image list.").arg(_IMAGE).arg(APP_SHORT_NAME)<<endl;
+                        Qcout<<QObject::tr("No disc image \"%1\" exists. Run \"%2-cli -cl\" for disc image list.").arg(_IMAGE).arg(APP_SHORT_NAME)<<endl;
                         return -1;
                     }
                 }

@@ -109,7 +109,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 		void cmdUpdateFake_Click(void);
 
 		void prefixManage_Click(void);
-		void prefixRunWinetriks_Click (void);
+		void prefixRunWinetricks_Click (void);
 
 		void updateIconDesc(QString program, QString args, QString desc, QString console, QString desktop);
 

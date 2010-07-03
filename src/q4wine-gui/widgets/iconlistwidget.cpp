@@ -243,7 +243,7 @@ void IconListWidget::startDrop(QList<QUrl> files){
                 if (CoreLib->mountImage(files.at(i).toLocalFile(), this->prefixName)){
                     emit(changeStatusText(tr("%1 successfully mounted.").arg(files.at(i).toLocalFile())));
                 } else {
-                    emit(changeStatusText(tr("Fail to mount %1.").arg(files.at(i).toLocalFile())));
+                    emit(changeStatusText(tr("Failed to mount %1.").arg(files.at(i).toLocalFile())));
                 }
 
                 CoreLib->updateRecentImagesList(files.at(i).toLocalFile());
@@ -269,11 +269,11 @@ void IconListWidget::itemDoubleClicked (QListWidgetItem *item){
 	  if (!item)
 			return;
 
-	  emit(changeStatusText(tr("Prepare to run wine binary...")));
+	  emit(changeStatusText(tr("Preparing to run the Wine binary...")));
 	  if (CoreLib->runIcon(this->prefixName, this->dirName, item->text())){
-            emit(changeStatusText(tr("Try to run \"%1\"...").arg(item->text())));
+            emit(changeStatusText(tr("Trying to run \"%1\"...").arg(item->text())));
 	  } else {
-            emit(changeStatusText(tr("\"%1\" fail to start.").arg(item->text())));
+            emit(changeStatusText(tr("\"%1\" failed to start.").arg(item->text())));
 	  }
 	  return;
 }
@@ -375,7 +375,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
 	  std::auto_ptr<QMenu> menu (new QMenu(this));
 
-	  std::auto_ptr<QMenu> menuMount (new QMenu(tr("Mount iso..."), this));
+	  std::auto_ptr<QMenu> menuMount (new QMenu(tr("Mount ISO..."), this));
 
 	  if (this->prefixMontPoint.isEmpty()){
             menuMount->setEnabled(false);
@@ -409,7 +409,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 			menuMount->addMenu(submenuMount.release());
 			menuMount->addSeparator();
 
-			submenuMount.reset (new QMenu(tr("Mount ..."), this));
+			submenuMount.reset (new QMenu(tr("Mount..."), this));
 
 			entry.reset (new QAction(CoreLib->loadIcon("/data/folder.png"), tr("Browse..."), this));
 			entry->setStatusTip(tr("Browse for media image."));
@@ -569,7 +569,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 			// Default menu
 			std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
 
-			std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("data/folder.png"), tr("Browse ..."), this));
+			std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("data/folder.png"), tr("Browse..."), this));
 			entry->setStatusTip(tr("Browse for other image"));
 
 			connect(menuRun.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
@@ -729,7 +729,7 @@ void IconListWidget::iconDelete_Click(void){
       if (icoList.count()<=0)
 			return;
 
-	  if (QMessageBox::warning(this, tr("Delete Icon"), tr("Do you want to delete all selected icons?"),  QMessageBox::Yes, QMessageBox::No	)==QMessageBox::Yes){
+	  if (QMessageBox::warning(this, tr("Delete Icon"), tr("Do you wish to delete all of the selected icons?"),  QMessageBox::Yes, QMessageBox::No	)==QMessageBox::Yes){
 			for (int i=0; i<icoList.count(); i++){
 				  db_icon.delIcon(this->prefixName, this->dirName, icoList.at(i)->text());
 			}
@@ -914,7 +914,7 @@ void IconListWidget::iconCopyWrkDir_Click(){
         QClipboard *clipboard = QApplication::clipboard();
         clipboard->setText(info["wrkdir"]);
     }
-    
+
     return;
 }
 
@@ -1038,10 +1038,10 @@ void IconListWidget::menuMount_triggered(QAction* action){
 			*/
           QString fileFilter;
 #ifdef _OS_LINUX_
-    fileFilter = tr("CD image files (*.iso *.nrg *.img *.bin *.mdf)");
+    fileFilter = tr("Disc image files (*.iso *.nrg *.img *.bin *.mdf)");
 #endif
 #ifdef _OS_FREEBSD_
-    fileFilter =  tr("iso files (*.iso)");
+    fileFilter =  tr("ISO image files (*.iso)");
 #endif
 
 #if QT_VERSION >= 0x040500
@@ -1050,9 +1050,9 @@ void IconListWidget::menuMount_triggered(QAction* action){
     if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
         options = QFileDialog::DontUseNativeDialog;
 
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open CD Image files"), QDir::homePath(), fileFilter, 0, options);
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Disc Image Files"), QDir::homePath(), fileFilter, 0, options);
 #else
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open CD Image files"), QDir::homePath(), fileFilter);
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Disc Image Files"), QDir::homePath(), fileFilter);
 #endif
 
 			if(fileName.isEmpty()){
@@ -1115,7 +1115,7 @@ void IconListWidget::xdgOpenIconDir_Click(void){
       QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).value("wrkdir");
 
 	  if (result.isEmpty()){
-          emit(changeStatusText(tr("Error: \"%1\" is an embedded wine binary.").arg(item->text())));
+          emit(changeStatusText(tr("Error: \"%1\" is an embedded Wine binary.").arg(item->text())));
 	  } else {
           QDesktopServices::openUrl(QUrl(QString("file://%1").arg(result), QUrl::TolerantMode));
 	  }
@@ -1157,7 +1157,7 @@ void IconListWidget::winefileOpenIconDir_Click(void){
       QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).value("wrkdir");
 
 	  if (result.isEmpty()){
-          emit(changeStatusText(tr("Error: \"%1\" is an embedded wine binary.").arg(item->text())));
+          emit(changeStatusText(tr("Error: \"%1\" is an embedded Wine binary.").arg(item->text())));
 	  } else {
           ExecObject execObj;
           execObj.cmdargs = result + "/";

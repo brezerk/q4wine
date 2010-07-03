@@ -136,7 +136,7 @@ void winetricks::run_winetricks(){
 
 void winetricks::downloadwinetricks () {
 		/*
-		 * Downloading winetriks and installing it
+		 * Downloading winetricks and installing it
 		 */
 
 	QStringList args;
@@ -231,7 +231,7 @@ void winetricks::parse() {
     this->cmdInstall->setEnabled(false);
 
 #ifdef DEBUG
-    qDebug()<<"[plugin] parsing winetriks output";
+    qDebug()<<"[plugin] parsing winetricks output";
 #endif
 
     if (!QFile(this->winetricks_bin).exists()){
@@ -276,7 +276,7 @@ foreach (str, strs){
 }
 
 #ifdef DEBUG
-    qDebug()<<"[plugin] parsing winetriks output done";
+    qDebug()<<"[plugin] parsing winetricks output done";
 #endif
 
 

@@ -2162,9 +2162,9 @@
           <property name="currentIndex">
            <number>0</number>
           </property>
-          <widget class="QWidget" name="tabWineTriks">
+          <widget class="QWidget" name="tabWineTricks">
            <attribute name="title">
-            <string>WineTricks</string>
+            <string>Winetricks</string>
            </attribute>
           </widget>
          </widget>
@@ -2591,7 +2591,7 @@
           </property>
           <item>
            <property name="text">
-            <string>Winetriks</string>
+            <string>Winetricks</string>
            </property>
           </item>
          </item>
@@ -2672,7 +2672,7 @@
       <item>
        <widget class="QPushButton" name="cmdOk">
         <property name="text">
-         <string>Ok</string>
+         <string>OK</string>
         </property>
        </widget>
       </item>

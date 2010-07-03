@@ -156,7 +156,7 @@ void FakeDriveSettings::cmdOk_Click(){
             }
         }
         if (!tmpexists){
-            QMessageBox::warning(this, tr("Warning"), tr("Can't find Wine Drive which is point to:\n\"%1\"\n\nMake shure wine can access %2 temp directory.").arg(tmppath).arg(APP_SHORT_NAME));
+            QMessageBox::warning(this, tr("Warning"), tr("Can't find Wine drive at:\n\"%1\"\n\nMake sure that Wine can access %2 temp directory.").arg(tmppath).arg(APP_SHORT_NAME));
         }
     }
 

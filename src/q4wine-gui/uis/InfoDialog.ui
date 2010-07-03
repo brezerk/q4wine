@@ -98,7 +98,7 @@ p, li { white-space: pre-wrap; }
    <item row="1" column="3">
     <widget class="QPushButton" name="cmdOk">
      <property name="text">
-      <string>Ok</string>
+      <string>OK</string>
      </property>
     </widget>
    </item>

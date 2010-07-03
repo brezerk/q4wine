@@ -41,7 +41,7 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Pavel Zinin (pashazz)" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-								   "Winetriks support, fixes" \
+								   "Winetricks support, fixes" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">pzinin@gmail.com</span>" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
