@@ -71,10 +71,10 @@ void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     if (itemText==tr("General")){
         optionsStack->setCurrentIndex(0);
         tabwGeneral->setCurrentIndex(0);
-    } else if (itemText==tr("Color theme")){
+    } else if (itemText==tr("Color Theme")){
         optionsStack->setCurrentIndex(0);
         tabwGeneral->setCurrentIndex(1);
-    } else if (itemText==tr("Wine browsers")){
+    } else if (itemText==tr("Wine Browsers")){
         optionsStack->setCurrentIndex(0);
         tabwGeneral->setCurrentIndex(2);
     } else if (itemText==tr("Video")){
@@ -86,28 +86,28 @@ void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("OpenGL")){
         optionsStack->setCurrentIndex(1);
         tabwVideo->setCurrentIndex(2);
-    } else if (itemText==tr("X11 driver") && item->parent()->text(0)==tr("Video")){
+    } else if (itemText==tr("X11 Driver") && item->parent()->text(0)==tr("Video")){
         optionsStack->setCurrentIndex(1);
         tabwVideo->setCurrentIndex(3);
-    } else if (itemText==tr("File system")){
+    } else if (itemText==tr("File System")){
         optionsStack->setCurrentIndex(3);
         tabwFileSystem->setCurrentIndex(0);
-    } else if (itemText==tr("Wine drives")){
+    } else if (itemText==tr("Wine Drives")){
         optionsStack->setCurrentIndex(3);
         tabwFileSystem->setCurrentIndex(0);
-    } else if (itemText==tr("Desktop paths")){
+    } else if (itemText==tr("Desktop Paths")){
         optionsStack->setCurrentIndex(3);
         tabwFileSystem->setCurrentIndex(1);
     } else if (itemText==tr("Audio")){
         optionsStack->setCurrentIndex(2);
         tabwAudio->setCurrentIndex(0);
-    } else if (itemText==tr("Sound driver")){
+    } else if (itemText==tr("Sound Driver")){
         optionsStack->setCurrentIndex(2);
         tabwAudio->setCurrentIndex(0);
-    } else if (itemText==tr("Alsa driver")){
+    } else if (itemText==tr("ALSA Driver")){
         optionsStack->setCurrentIndex(2);
         tabwAudio->setCurrentIndex(1);
-    } else if (itemText==tr("Misc audio")){
+    } else if (itemText==tr("Misc Audio")){
         optionsStack->setCurrentIndex(2);
         tabwAudio->setCurrentIndex(2);
     } else if (itemText==tr("Input")){
@@ -116,7 +116,7 @@ void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("Direct 3D") && item->parent()->text(0)==tr("Input")){
         optionsStack->setCurrentIndex(4);
         tabwInput->setCurrentIndex(0);
-    } else if (itemText==tr("X11 driver") && item->parent()->text(0)==tr("Input")){
+    } else if (itemText==tr("X11 Driver") && item->parent()->text(0)==tr("Input")){
         optionsStack->setCurrentIndex(4);
         tabwInput->setCurrentIndex(1);
     }

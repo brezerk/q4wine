@@ -17,6 +17,7 @@ config.h
 q4wine-mount
 q4wine-cli
 q4wine
+q4wine-helper
 *.cbp
 *.user
 *.gz

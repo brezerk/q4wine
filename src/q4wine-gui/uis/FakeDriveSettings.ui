@@ -315,7 +315,7 @@
           </property>
           <item>
            <property name="text">
-            <string>Sound driver</string>
+            <string>Sound Driver</string>
            </property>
           </item>
           <item>
@@ -353,12 +353,12 @@
        <rect>
         <x>300</x>
         <y>10</y>
-        <width>442</width>
-        <height>462</height>
+        <width>360</width>
+        <height>310</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -644,7 +644,7 @@
           </widget>
           <widget class="QWidget" name="tab_2">
            <attribute name="title">
-            <string>Color theme</string>
+            <string>Color Theme</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_4">
             <property name="margin">
@@ -713,7 +713,7 @@
           </widget>
           <widget class="QWidget" name="tab_3">
            <attribute name="title">
-            <string>Wine browsers</string>
+            <string>Wine Browsers</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_5">
             <property name="margin">
@@ -1908,11 +1908,11 @@
         <item>
          <widget class="QTabWidget" name="tabwAudio">
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tab_11">
            <attribute name="title">
-            <string>Sound driver</string>
+            <string>Sound Driver</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_25">
             <property name="margin">
@@ -2037,7 +2037,7 @@
           </widget>
           <widget class="QWidget" name="tab_12">
            <attribute name="title">
-            <string>Alsa driver</string>
+            <string>ALSA Driver</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_28">
             <property name="margin">
@@ -2323,7 +2323,7 @@
           </widget>
           <widget class="QWidget" name="tab_13">
            <attribute name="title">
-            <string>Misc</string>
+            <string>Misc Audio</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_30">
             <property name="margin">
@@ -2426,11 +2426,11 @@
         <item row="0" column="0">
          <widget class="QTabWidget" name="tabwFileSystem">
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tab_9">
            <attribute name="title">
-            <string>Wine drives</string>
+            <string>Wine Drives</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_20">
             <property name="margin">
@@ -2522,7 +2522,7 @@
           </widget>
           <widget class="QWidget" name="tab_10">
            <attribute name="title">
-            <string>Desktop paths</string>
+            <string>Desktop Paths</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_22">
             <property name="margin">
@@ -2986,7 +2986,7 @@
           </widget>
           <widget class="QWidget" name="tab_7">
            <attribute name="title">
-            <string>X11 driver</string>
+            <string>X11 Driver</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_11">
             <property name="margin">
