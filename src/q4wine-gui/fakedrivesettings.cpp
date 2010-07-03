@@ -52,6 +52,12 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
         tabwGeneral->setCurrentIndex(0);
     }
 
+    cmdGetWineDesktop->installEventFilter(this);
+    cmdGetWineDesktopDoc->installEventFilter(this);
+    cmdGetWineDesktopPic->installEventFilter(this);
+    cmdGetWineDesktopMus->installEventFilter(this);
+    cmdGetWineDesktopVid->installEventFilter(this);
+
 }
 
 void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
@@ -74,27 +80,45 @@ void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("Video")){
         optionsStack->setCurrentIndex(1);
         tabwVideo->setCurrentIndex(0);
-    } else if (itemText==tr("Direct 3D")){
+    } else if (itemText==tr("Direct 3D") && item->parent()->text(0)==tr("Video")){
         optionsStack->setCurrentIndex(1);
         tabwVideo->setCurrentIndex(1);
-    } else if (itemText==tr("Direct input")){
-        optionsStack->setCurrentIndex(1);
-        tabwVideo->setCurrentIndex(2);
     } else if (itemText==tr("OpenGL")){
         optionsStack->setCurrentIndex(1);
-        tabwVideo->setCurrentIndex(3);
-    } else if (itemText==tr("X11 driver")){
+        tabwVideo->setCurrentIndex(2);
+    } else if (itemText==tr("X11 driver") && item->parent()->text(0)==tr("Video")){
         optionsStack->setCurrentIndex(1);
-        tabwVideo->setCurrentIndex(4);
+        tabwVideo->setCurrentIndex(3);
     } else if (itemText==tr("File system")){
-        optionsStack->setCurrentIndex(2);
+        optionsStack->setCurrentIndex(3);
         tabwFileSystem->setCurrentIndex(0);
     } else if (itemText==tr("Wine drives")){
-        optionsStack->setCurrentIndex(2);
+        optionsStack->setCurrentIndex(3);
         tabwFileSystem->setCurrentIndex(0);
     } else if (itemText==tr("Desktop paths")){
-        optionsStack->setCurrentIndex(2);
+        optionsStack->setCurrentIndex(3);
         tabwFileSystem->setCurrentIndex(1);
+    } else if (itemText==tr("Audio")){
+        optionsStack->setCurrentIndex(2);
+        tabwAudio->setCurrentIndex(0);
+    } else if (itemText==tr("Sound driver")){
+        optionsStack->setCurrentIndex(2);
+        tabwAudio->setCurrentIndex(0);
+    } else if (itemText==tr("Alsa driver")){
+        optionsStack->setCurrentIndex(2);
+        tabwAudio->setCurrentIndex(1);
+    } else if (itemText==tr("Misc audio")){
+        optionsStack->setCurrentIndex(2);
+        tabwAudio->setCurrentIndex(2);
+    } else if (itemText==tr("Input")){
+        optionsStack->setCurrentIndex(4);
+        tabwInput->setCurrentIndex(0);
+    } else if (itemText==tr("Direct 3D") && item->parent()->text(0)==tr("Input")){
+        optionsStack->setCurrentIndex(4);
+        tabwInput->setCurrentIndex(0);
+    } else if (itemText==tr("X11 driver") && item->parent()->text(0)==tr("Input")){
+        optionsStack->setCurrentIndex(4);
+        tabwInput->setCurrentIndex(1);
     }
 }
 
@@ -146,7 +170,7 @@ void FakeDriveSettings::cmdOk_Click(){
     } else if (comboFakeVersion->currentText()=="Windows 2008"){
         version = "win2008";
     } else if (comboFakeVersion->currentText()=="Windows 7"){
-        version = "vista";
+        version = "win7";
     } else  if (comboFakeVersion->currentText()=="Windows Vista"){
         version = "vista";
     } else if (comboFakeVersion->currentText()=="Windows 2003"){
@@ -180,6 +204,25 @@ void FakeDriveSettings::cmdOk_Click(){
         reject();
         return;
     }
+
+    Registry reg(db_prefix.getPath(prefixName));
+    QStringList list;
+    list << "\"Desktop\""<<"\"My Music\""<<"\"My Pictures\""<<"\"My Videos\""<<"\"Personal\"";
+    list = reg.readKeys("user", "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders", list);
+
+    if (list.count()==5){
+        desktopFolder = CoreLib->decodeRegString(list.at(0).split("\\\\").last());
+        desktopDocuments = CoreLib->decodeRegString(list.at(1).split("\\\\").last());
+        desktopMusic = CoreLib->decodeRegString(list.at(2).split("\\\\").last());
+        desktopPictures = CoreLib->decodeRegString(list.at(3).split("\\\\").last());
+        desktopVideos = CoreLib->decodeRegString(list.at(4).split("\\\\").last());
+    } else {
+         QMessageBox::warning(this, tr("Error"), tr("Can't read desktop paths!"));
+        this->reject();
+        return;
+    }
+
+     qDebug()<<desktopFolder<<desktopDocuments<<desktopMusic<<desktopPictures<<desktopVideos;
 
     QString sh_cmd = "";
     QStringList sh_line;
@@ -250,35 +293,35 @@ void FakeDriveSettings::cmdOk_Click(){
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("rm"));
     sh_cmd.append(" -fr '");
-    sh_cmd.append(QString("%1/Desktop").arg(prefixPath));
+    sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopFolder));
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("rm"));
     sh_cmd.append(" -fr '");
-    sh_cmd.append(QString("%1/My Documents").arg(prefixPath));
+    sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopDocuments));
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("rm"));
     sh_cmd.append(" -fr '");
-    sh_cmd.append(QString("%1/My Music").arg(prefixPath));
+    sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopMusic));
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("rm"));
     sh_cmd.append(" -fr '");
-    sh_cmd.append(QString("%1/My Pictures").arg(prefixPath));
+    sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopPictures));
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("rm"));
     sh_cmd.append(" -fr '");
-    sh_cmd.append(QString("%1/My Videos").arg(prefixPath));
+    sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopVideos));
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
 
@@ -293,45 +336,91 @@ void FakeDriveSettings::cmdOk_Click(){
     sh_cmd.append(" -s '");
     sh_cmd.append(txtWineDesktop->text());
     sh_cmd.append("' '");
-    sh_cmd.append("Desktop");
+    sh_cmd.append(desktopFolder);
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
+
+    QDir dir (txtWineDesktop->text());
+    if (!dir.exists())
+        if (!dir.mkpath(dir.path())){
+        QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
+#ifdef DEBUG
+        qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
+#endif
+    }
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("ln"));
     sh_cmd.append(" -s '");
     sh_cmd.append(txtWineDesktopDoc->text());
     sh_cmd.append("' '");
-    sh_cmd.append("My Documents");
+    sh_cmd.append(desktopDocuments);
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
+
+    dir.setPath (txtWineDesktopDoc->text());
+    if (!dir.exists())
+        if (!dir.mkpath(dir.path())){
+        QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
+#ifdef DEBUG
+        qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
+#endif
+    }
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("ln"));
     sh_cmd.append(" -s '");
     sh_cmd.append(txtWineDesktopMus->text());
     sh_cmd.append("' '");
-    sh_cmd.append("My Music");
+    sh_cmd.append(desktopMusic);
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
+
+    dir.setPath (txtWineDesktopMus->text());
+    if (!dir.exists())
+        if (!dir.mkpath(dir.path())){
+        QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
+#ifdef DEBUG
+        qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
+#endif
+    }
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("ln"));
     sh_cmd.append(" -s '");
     sh_cmd.append(txtWineDesktopPic->text());
     sh_cmd.append("' '");
-    sh_cmd.append("My Pictures");
+    sh_cmd.append(desktopPictures);
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
+
+    dir.setPath (txtWineDesktopPic->text());
+    if (!dir.exists())
+        if (!dir.mkpath(dir.path())){
+        QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
+#ifdef DEBUG
+        qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
+#endif
+    }
 
     sh_cmd.clear();
     sh_cmd.append(CoreLib->getWhichOut("ln"));
     sh_cmd.append(" -s '");
     sh_cmd.append(txtWineDesktopVid->text());
     sh_cmd.append("' '");
-    sh_cmd.append("My Videos");
+    sh_cmd.append(desktopVideos);
     sh_cmd.append("'");
     sh_line.append(sh_cmd);
+
+
+    dir.setPath(txtWineDesktopVid->text());
+    if (!dir.exists())
+        if (!dir.mkpath(dir.path())){
+        QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
+#ifdef DEBUG
+        qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
+#endif
+    }
 
     sh_cmd.clear();
 
@@ -368,6 +457,13 @@ void FakeDriveSettings::cmdOk_Click(){
     registry.set("Software\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOwner", txtOwner->text(), "HKEY_LOCAL_MACHINE");
 
     registry.set("Software\\Wine", "Version", version);
+
+
+    if (cbCrashDialog->isChecked()){
+        registry.set("Software\\Wine\\WineDbg", "ShowCrashDialog", "dword:00000000");
+    } else {
+        registry.unset("Software\\Wine\\WineDbg", "ShowCrashDialog");
+    }
 
     if (listWineDrives->count()>0){
 
@@ -425,6 +521,12 @@ void FakeDriveSettings::cmdOk_Click(){
         registry.unset("Software\\Wine\\Direct3D", "RenderTargetLockMode");
     }
 
+    if (comboFakeD3D_SDOrder->currentText()!="default"){
+        registry.set("Software\\Wine\\Direct3D", "StrictDrawOrdering", comboFakeD3D_SDOrder->currentText());
+    } else {
+        registry.unset("Software\\Wine\\Direct3D", "StrictDrawOrdering");
+    }
+
     if (comboFakeD3D_Offscreen->currentText()!="default"){
         registry.set("Software\\Wine\\Direct3D", "OffscreenRenderingMode", comboFakeD3D_Offscreen->currentText());
     } else {
@@ -441,6 +543,12 @@ void FakeDriveSettings::cmdOk_Click(){
         registry.set("Software\\Wine\\Direct3D", "UseGLSL", comboFakeD3D_GLSL->currentText());
     } else {
         registry.unset("Software\\Wine\\Direct3D", "UseGLSL");
+    }
+
+    if (comboFakeD3D_N2M->currentText()!="default"){
+        registry.set("Software\\Wine\\Direct3D", "Nonpower2Mode", comboFakeD3D_N2M->currentText());
+    } else {
+        registry.unset("Software\\Wine\\Direct3D", "Nonpower2Mode");
     }
 
     if (!txtFakeVideoMemory->text().isEmpty()){
@@ -483,6 +591,18 @@ void FakeDriveSettings::cmdOk_Click(){
         registry.set("Software\\Wine\\OpenGL", "DisabledExtensions", txtFakeDisabledExtensions->text());
     } else {
         registry.unset("Software\\Wine\\OpenGL", "DisabledExtensions");
+    }
+
+    if (sboxFakeInput_scroll->value()>0){
+        registry.set("Control Panel\\Desktop", "WheelScrollLines", QString("%1").arg(sboxFakeInput_scroll->value()));
+    } else {
+        registry.unset("Control Panel\\Desktop", "WheelScrollLines");
+    }
+
+    if (comboFakeInput_selection->currentText()!="default"){
+        registry.set("Software\\Wine\\X11 Driver", "UsePrimarySelection", comboFakeInput_selection->currentText());
+    } else {
+        registry.unset("Software\\Wine\\X11 Driver", "UsePrimarySelection");
     }
 
     registry.unsetPath("Software\\Wine\\DirectInput");
@@ -538,6 +658,58 @@ void FakeDriveSettings::cmdOk_Click(){
         registry.unset("Software\\Wine\\X11 Driver", "UseXVidMode");
     }
 
+    if (comboFakeSound_Driver->currentText()!="default"){
+        if (comboFakeSound_Driver->currentText()=="disabled"){
+            registry.set("Software\\Wine\\Drivers", "Audio", "");
+        } else {
+            registry.set("Software\\Wine\\Drivers", "Audio", comboFakeSound_Driver->currentText());
+        }
+    } else {
+        registry.unset("Software\\Wine\\Drivers", "Audio");
+    }
+
+    if (comboFakeAlsa_asCards->currentText()!="default"){
+        registry.set("Software\\Wine\\Alsa Driver", "AutoScanCards", comboFakeAlsa_asCards->currentText());
+    } else {
+        registry.unset("Software\\Wine\\Alsa Driver", "AutoScanCards");
+    }
+
+    if (comboFakeAlsa_asDevices->currentText()!="default"){
+        registry.set("Software\\Wine\\Alsa Driver", "AutoScanDevices", comboFakeAlsa_asDevices->currentText());
+    } else {
+        registry.unset("Software\\Wine\\Alsa Driver", "AutoScanDevices");
+    }
+
+    if (sboxFakeAlsa_devCount->value()>0){
+        registry.set("Software\\Wine\\Alsa Driver", "DeviceCount", QString("%1").arg(sboxFakeAlsa_devCount->value()));
+    } else {
+        registry.unset("Software\\Wine\\Alsa Driver", "DeviceCount");
+    }
+
+    if (!txtFakeAlsa_CTLn->text().isEmpty()){
+        registry.set("Software\\Wine\\Alsa Driver", "DeviceCTLn", txtFakeAlsa_CTLn->text());
+    } else {
+        registry.unset("Software\\Wine\\Alsa Driver", "DeviceCTLn");
+    }
+
+    if (!txtFakeAlsa_PCMn->text().isEmpty()){
+        registry.set("Software\\Wine\\Alsa Driver", "DevicePCMn", txtFakeAlsa_PCMn->text());
+    } else {
+        registry.unset("Software\\Wine\\Alsa Driver", "DevicePCMn");
+    }
+
+    if (comboFakeAlsa_DirectHW->currentText()!="default"){
+        registry.set("Software\\Wine\\Alsa Driver", "UseDirectHW", comboFakeAlsa_DirectHW->currentText());
+    } else {
+        registry.unset("Software\\Wine\\Alsa Driver", "UseDirectHW");
+    }
+
+    if (sboxFakeSound_shadow->value()>-1){
+        registry.set("Software\\Wine\\DirectSound", "MaxShadowSize", QString("%1").arg(sboxFakeSound_shadow->value()));
+    } else {
+        registry.unset("Software\\Wine\\DirectSound", "MaxShadowSize");
+    }
+
     if (rbColorsDefault->isChecked()){
         registry.unsetPath("Control Panel\\Colors");
     }
@@ -547,7 +719,6 @@ void FakeDriveSettings::cmdOk_Click(){
 #ifdef DEBUG
         qDebug()<<"[ii] Wizard::creating registry cfg for color";
 #endif
-
 
         QColor color;
         QPalette cur_palette;
@@ -603,31 +774,7 @@ void FakeDriveSettings::cmdOk_Click(){
 #endif
 
     if (registry.exec(this, prefixName)){
-
-#ifdef DEBUG
-        qDebug()<<"[ii] Wizard::creating icons";
-#endif
-
-            QString dir_id;
-            //Is settings directory exists?
-            if (!db_dir.isExistsByName(prefixName, "system")){
-                db_dir.addDir(prefixName, "system");
-                //Adding icons
-                db_icon.addIcon("", "winecfg.exe", "winecfg", "Configure the general settings for Wine", prefixName, "system", "winecfg");
-                db_icon.addIcon("--backend=user cmd", "wineconsole", "wineconsole", "Wineconsole is similar to wine command wcmd", prefixName, "system", "console");
-                db_icon.addIcon("", "uninstaller.exe", "uninstaller", "Uninstall Windows programs under Wine properly", prefixName, "system", "uninstaller");
-                db_icon.addIcon("", "regedit.exe", "regedit", "Wine registry editor", prefixName, "system", "regedit");
-                db_icon.addIcon("", "explorer.exe", "explorer", "Browse the files in the virtual Wine drive", prefixName, "system", "explorer");
-                db_icon.addIcon("", "eject.exe", "eject", "Wine CD eject tool", prefixName, "system", "eject");
-                db_icon.addIcon("", "wordpad.exe", "wordpad", "Wine wordpad text editor", prefixName, "system", "wordpad");
-            }
-
-            if (!db_dir.isExistsByName(prefixName, "autostart"))
-                db_dir.addDir(prefixName, "autostart");
-
-            if (!db_dir.isExistsByName(prefixName, "import"))
-                db_dir.addDir(prefixName, "import");
-
+        CoreLib->createPrefixDBStructure(prefixName);
 #ifdef DEBUG
     qDebug()<<"[ii] Wizard::done";
 #endif
@@ -770,6 +917,25 @@ void FakeDriveSettings::loadSettings(){
     Registry reg(prefixPath);
 
     QStringList list;
+
+    list.clear();
+    list << "\"Desktop\""<<"\"My Music\""<<"\"My Pictures\""<<"\"My Videos\""<<"\"Personal\"";
+    list = reg.readKeys("user", "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders", list);
+
+    if (list.count()==5){
+        desktopFolder = CoreLib->decodeRegString(list.at(0).split("\\\\").last());
+        desktopDocuments = CoreLib->decodeRegString(list.at(1).split("\\\\").last());
+        desktopMusic = CoreLib->decodeRegString(list.at(2).split("\\\\").last());
+        desktopPictures = CoreLib->decodeRegString(list.at(3).split("\\\\").last());
+        desktopVideos = CoreLib->decodeRegString(list.at(4).split("\\\\").last());
+    } else {
+        QMessageBox::warning(this, tr("Error"), tr("Can't read desktop paths!"));
+        this->reject();
+        return;
+    }
+
+
+    list.clear();
     list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
     list = reg.readKeys("system", "Software\\Microsoft\\Windows NT\\CurrentVersion", list);
     //HKEY_CURRENT_USER\\Software\\Wine]\n\"Version
@@ -777,6 +943,51 @@ void FakeDriveSettings::loadSettings(){
     if (list.count()>0){
         txtOrganization->setText(list.at(0));
         txtOwner->setText(list.at(1));
+    }
+
+    list.clear();
+    list << "\"Version\"";
+    list = reg.readKeys("user", "Software\\Wine", list);
+    if (list.count()>0){
+        QString version = list.at(0);
+        if (version == "win7"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 7"));
+        } else if (version == "winxp"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows XP"));
+        } else if (version == "win2008"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 2008"));
+        } else if (version == "vista"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows Vista"));
+        } else if (version == "win2003"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 2003"));
+        } else if (version == "win2k"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 2000"));
+        } else if (version == "winme"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows ME"));
+        } else if (version == "win98"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 98"));
+        } else if (version == "win95"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 95"));
+        } else if (version == "nt40"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows NT 4.0"));
+        } else if (version == "nt351"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows NT 3.0"));
+        } else if (version == "win31"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 3.1"));
+        } else if (version == "win30"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 3.0"));
+        } else if (version == "win20"){
+            comboFakeVersion->setCurrentIndex(comboFakeVersion->findText("Windows 2.0"));
+        }
+    }
+
+    list.clear();
+    list << "\"ShowCrashDialog\"";
+    list = reg.readKeys("user", "Software\\Wine\\WineDbg", list);
+
+    if (list.count()>0){
+        if (!list.at(0).isEmpty())
+            cbCrashDialog->setChecked(true);
     }
 
     list.clear();
@@ -789,7 +1000,7 @@ void FakeDriveSettings::loadSettings(){
     }
 
     list.clear();
-    list << "\"Multisampling\"" << "\"DirectDrawRenderer\"" << "\"RenderTargetLockMode\"" << "\"OffscreenRenderingMode\"" << "\"UseGLSL\"" << "\"VideoMemorySize\"" << "\"VideoDescription\"" << "\"VideoDriver\"" << "\"SoftwareEmulation\"" << "\"PixelShaderMode\"" << "\"VertexShaderMode\"";
+    list << "\"Multisampling\"" << "\"DirectDrawRenderer\"" << "\"RenderTargetLockMode\"" << "\"OffscreenRenderingMode\"" << "\"UseGLSL\"" << "\"VideoMemorySize\"" << "\"VideoDescription\"" << "\"VideoDriver\"" << "\"SoftwareEmulation\"" << "\"PixelShaderMode\"" << "\"VertexShaderMode\""<< "\"StrictDrawOrdering\""<< "\"Nonpower2Mode\"";
     list = reg.readKeys("user", "Software\\Wine\\Direct3D", list);
 
     if (list.count()>0){
@@ -821,6 +1032,11 @@ void FakeDriveSettings::loadSettings(){
         if (!list.at(10).isEmpty())
             comboFakeVertexShaderMode->setCurrentIndex(comboFakeVertexShaderMode->findText(list.at(10)));
 
+        if (!list.at(11).isEmpty())
+            comboFakeD3D_SDOrder->setCurrentIndex(comboFakeD3D_SDOrder->findText(list.at(11)));
+
+        if (!list.at(12).isEmpty())
+            comboFakeD3D_N2M->setCurrentIndex(comboFakeD3D_N2M->findText(list.at(12)));
     }
 
     list.clear();
@@ -849,6 +1065,24 @@ void FakeDriveSettings::loadSettings(){
     }
 
     list.clear();
+    list << "\"WheelScrollLines\"";
+    list = reg.readKeys("user", "Control Panel\\Desktop", list);
+
+    if (list.count()>0){
+        if (!list.at(0).isEmpty())
+            sboxFakeInput_scroll->setValue(list.at(0).toInt());
+    }
+
+    list.clear();
+    list << "\"UsePrimarySelection\"";
+    list = reg.readKeys("user", "Software\\Wine\\X11 Driver", list);
+
+    if (list.count()>0){
+        if (!list.at(0).isEmpty())
+            comboFakeInput_selection->setCurrentIndex(comboFakeInput_selection->findText(list.at(0)));
+    }
+
+    list.clear();
     list << "\"ClientSideWithRender\"" << "\"ClientSideAntiAliasWithRender\"" << "\"ClientSideAntiAliasWithCore\"" << "\"UseXRandR\"" << "\"UseXVidMode\"";
     list = reg.readKeys("user", "Software\\Wine\\X11 Driver", list);
 
@@ -867,6 +1101,44 @@ void FakeDriveSettings::loadSettings(){
 
         if (!list.at(4).isEmpty())
             comboFakeX11_XVid->setCurrentIndex(comboFakeX11_XVid->findText(list.at(4)));
+    }
+
+    list.clear();
+    list << "\"Audio\"";
+    list = reg.readKeys("user", "Software\\Wine\\Drivers", list);
+    if (list.count()>0){
+        if (!list.at(0).isEmpty()){
+            comboFakeSound_Driver->setCurrentIndex(comboFakeSound_Driver->findText(list.at(0)));
+        } else {
+            comboFakeSound_Driver->setCurrentIndex(comboFakeSound_Driver->findText("disabled"));
+        }
+    }
+
+    list.clear();
+    list << "\"AutoScanCards\"" << "\"AutoScanDevices\"" << "\"DeviceCount\"" << "\"DeviceCTLn\"" << "\"DevicePCMn\"" << "\"UseDirectHW\"";
+    list = reg.readKeys("user", "Software\\Wine\\Alsa Driver", list);
+
+    if (list.count()>0){
+        if (!list.at(0).isEmpty())
+            comboFakeAlsa_asCards->setCurrentIndex(comboFakeAlsa_asCards->findText(list.at(0)));
+
+        if (!list.at(1).isEmpty())
+            comboFakeAlsa_asDevices->setCurrentIndex(comboFakeAlsa_asDevices->findText(list.at(1)));
+
+        sboxFakeAlsa_devCount->setValue(list.at(2).toInt());
+        txtFakeAlsa_CTLn->setText(list.at(3));
+        txtFakeAlsa_PCMn->setText(list.at(4));
+
+        if (!list.at(5).isEmpty())
+            comboFakeAlsa_DirectHW->setCurrentIndex(comboFakeAlsa_DirectHW->findText(list.at(5)));
+    }
+
+    list.clear();
+    list << "\"MaxShadowSize\"";
+    list = reg.readKeys("user", "Software\\Wine\\DirectSound", list);
+    if (list.count()>0){
+        if (!list.at(0).isEmpty())
+            sboxFakeSound_shadow->setValue(list.at(0).toInt());
     }
 
     QDir wineDriveDir;
@@ -903,35 +1175,35 @@ void FakeDriveSettings::loadSettings(){
     if (!wineDriveDir.cd(prefixPath)){
         qDebug()<<"Cannot cd to prefix directory: "<<prefixPath;
     } else {
-        QFileInfo fileinfo(QString("%1/Desktop").arg(prefixPath));
+        QFileInfo fileinfo(QString("%1/%2").arg(prefixPath).arg(desktopFolder));
         if (fileinfo.isSymLink()){
             txtWineDesktop->setText(fileinfo.symLinkTarget());
         } else {
             txtWineDesktop->setText(fileinfo.filePath());
         }
 
-        fileinfo.setFile(QString("%1/My Documents").arg(prefixPath));
+        fileinfo.setFile(QString("%1/%2").arg(prefixPath).arg(this->desktopDocuments));
         if (fileinfo.isSymLink()){
             txtWineDesktopDoc->setText(fileinfo.symLinkTarget());
         } else {
             txtWineDesktopDoc->setText(fileinfo.filePath());
         }
 
-        fileinfo.setFile(QString("%1/My Music").arg(prefixPath));
+        fileinfo.setFile(QString("%1/%2").arg(prefixPath).arg(this->desktopMusic));
         if (fileinfo.isSymLink()){
             txtWineDesktopMus->setText(fileinfo.symLinkTarget());
         } else {
             txtWineDesktopMus->setText(fileinfo.filePath());
         }
 
-        fileinfo.setFile(QString("%1/My Pictures").arg(prefixPath));
+        fileinfo.setFile(QString("%1/%2").arg(prefixPath).arg(this->desktopPictures));
         if (fileinfo.isSymLink()){
             txtWineDesktopPic->setText(fileinfo.symLinkTarget());
         } else {
             txtWineDesktopPic->setText(fileinfo.filePath());
         }
 
-        fileinfo.setFile(QString("%1/My Videos").arg(prefixPath));
+        fileinfo.setFile(QString("%1/%2").arg(prefixPath).arg(this->desktopVideos));
         if (fileinfo.isSymLink()){
             txtWineDesktopVid->setText(fileinfo.symLinkTarget());
         } else {
@@ -941,6 +1213,20 @@ void FakeDriveSettings::loadSettings(){
 }
 
 void FakeDriveSettings::loadDefaultSettings(){
+
+    ExecObject execObj;
+    execObj.cmdargs = "-u -i";
+    execObj.execcmd = "wineboot";
+
+    if (!CoreLib->runWineBinary(execObj, prefixName, false)){
+        QApplication::restoreOverrideCursor();
+        reject();
+        return;
+    }
+
+
+    txtOwner->setText(getenv("USER"));
+
     std::auto_ptr<DriveListWidgetItem> item;
     item.reset(new DriveListWidgetItem(listWineDrives));
     item->setDrive("C:", "../drive_c", "auto");
@@ -960,46 +1246,74 @@ void FakeDriveSettings::loadDefaultSettings(){
     item->setDrive("H:", QString("%1/.config/q4wine/tmp").arg(QDir::homePath()), "auto");
     listWineDrives->addItem(item.release());
 
+    /*
     txtWineDesktop->setText(QDesktopServices::storageLocation(QDesktopServices::DesktopLocation));
     txtWineDesktopDoc->setText(QDir::homePath());
     txtWineDesktopMus->setText(QDir::homePath());
     txtWineDesktopPic->setText(QDir::homePath());
     txtWineDesktopVid->setText(QDir::homePath());
+    */
+
+    QString prefixPath = db_prefix.getPath(this->prefixName);
+
+    txtWineDesktop->setText(QString("%1/desktop-integration/Desktop").arg(prefixPath));
+    txtWineDesktopDoc->setText(QString("%1/desktop-integration/").arg(prefixPath));
+    txtWineDesktopMus->setText(QString("%1/desktop-integration/").arg(prefixPath));
+    txtWineDesktopPic->setText(QString("%1/desktop-integration/").arg(prefixPath));
+    txtWineDesktopVid->setText(QString("%1/desktop-integration/").arg(prefixPath));
+
 }
 
+bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
+    /*
+        User select folder dialog function
+    */
 
+    if (obj->objectName()== "FakeDriveSettings")
+        return FALSE;
 
+    if (event->type() == QEvent::MouseButtonRelease) {
+        QString file;
 
+#if QT_VERSION >= 0x040500
+        QFileDialog::Options options;
 
+        if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
+                options = QFileDialog::DontUseNativeDialog | QFileDialog::DontResolveSymlinks;
 
-/*
+        if (obj->objectName().right(3)=="Bin"){
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)", 0, options);
+        } else {
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),  options);
+        }
+#else
+        if (obj->objectName().right(3)=="Bin"){
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
+        } else {
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath());
+        }
+#endif
 
-        switch (Page){
-  case 6:
-            for (int i=0; i < listItems.count(); i++){
-                if (rx.indexIn(listItems.at(i)->text())!=0){
-                    QMessageBox::warning(this, tr("Error"), tr("Error in string:\n\n%1\n\nJoystick axes mappings might be defined as:\n\"Joystick name\"=\"axes mapping\"\n\nFor example:\n\"Logitech Logitech Dual Action\"=\"X,Y,Rz,Slider1,POV1\"\n\nSee help for details.").arg(listItems.at(i)->text()));
-                    return;
-                }
+        if (!file.isEmpty()){
+            QString a;
+            a.append("txt");
+            a.append(obj->objectName().right(obj->objectName().length()-6));
+
+            std::auto_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
+            if (lineEdit.get()){
+                lineEdit->setText(file);
+            } else {
+                qDebug("Error");
             }
-            break;
-            case 8:
-            if (listWineDrives->count()>0){
-                QString tmppath=QDir::homePath();
-                bool tmpexists=FALSE;
-                tmppath.append("/.config/q4wine/tmp");
-                for (int i=0; i<listWineDrives->count(); i++){
-                    QString path = listWineDrives->item(i)->text().split("\n").at(0).split(":").at(1).trimmed();
+            lineEdit.release();
 
-                    if (path==tmppath){
-                        tmpexists=TRUE;
-                        break;
-                    }
-                }
-                if (!tmpexists){
-                    QMessageBox::warning(this, tr("Warning"), tr("Can't find Wine Drive which is point to:\n\"%1\"\n\nMake shure wine can access %2 temp directory.").arg(tmppath).arg(APP_SHORT_NAME));
-                }
+            if (obj==cmdGetWineDesktop){
+                txtWineDesktopDoc->setText(file);
+                txtWineDesktopPic->setText(file);
+                txtWineDesktopMus->setText(file);
+                txtWineDesktopVid->setText(file);
             }
-            break;
-        case 9:
-            */
+        }
+    }
+    return FALSE;
+}

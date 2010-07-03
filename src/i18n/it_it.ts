@@ -30,18 +30,18 @@
     </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="264"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="270"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="303"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="336"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="273"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="312"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="351"/>
         <source>Authors</source>
         <translation>Autori</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="279"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="312"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="345"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="378"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="411"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="285"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="324"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="363"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="402"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="441"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -54,33 +54,33 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="297"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="303"/>
         <source>Packages Authors</source>
         <translation>Autori dei pacchetti</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="330"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="342"/>
         <source>Translation</source>
         <translation>Traduzioni</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="363"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="381"/>
         <source>Thanks</source>
         <translation>Ringraziamenti</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="369"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="390"/>
         <source>Special thanks</source>
         <translation>Ringraziamenti speciali</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="396"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="402"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="420"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="429"/>
         <source>License agreement</source>
         <translation>Accordi di licenza</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="447"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="477"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
@@ -360,7 +360,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="540"/>
         <source>Show notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra notifiche.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="564"/>
@@ -607,12 +607,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1578"/>
         <source>Select quick mount profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Selezione profilo di montaggio rapido</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1711"/>
         <source>Profile strings:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stringa del profilo:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1738"/>
@@ -632,22 +632,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2108"/>
         <source>AppDB browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Browser AppDB</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2117"/>
         <source>AppDB browser subsystem:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sottosistema del browser di AppDB:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2123"/>
         <source>Open application details in system browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri il dettaglio dell&apos;applicazione nel browser di sistema</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2167"/>
         <source>WineTricks</source>
-        <translation type="unfinished"></translation>
+        <translation>WineTricks</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2195"/>
@@ -655,34 +655,34 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/appsettings.cpp" line="353"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="359"/>
         <source>Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Defaults</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2314"/>
         <source>Program icons</source>
-        <translation type="unfinished"></translation>
+        <translation>Icone del programma</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2329"/>
         <source>Use single-click to run program icons.</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa un click singolo per eseguire il programma.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2342"/>
         <source>File dialogs</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra dei file</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2357"/>
         <source>Use the native file dialogs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa la finestra dei file nativa.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2384"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2609"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="362"/>
         <source>Run dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Esegui finestra</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2435"/>
@@ -690,47 +690,47 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2614"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="365"/>
         <source>Wine desktop import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importa il desktop di Wine</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2453"/>
         <source>Import wine desktop files at q4wine startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importa i file del desktop di wine all&apos;avvio di q4wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2466"/>
         <source>Remove processed wine desktop files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimuovi i file del desktop di wine processati.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2560"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="326"/>
         <source>Interface</source>
-        <translation type="unfinished"></translation>
+        <translation>Interfaccia</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2575"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="335"/>
         <source>Subsystems</source>
-        <translation type="unfinished"></translation>
+        <translation>Sottosistema</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2584"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="341"/>
         <source>AppDb browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Browser AppDB</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2590"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="344"/>
         <source>Plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Plugins</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2594"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="347"/>
         <source>Winetriks</source>
-        <translation type="unfinished"></translation>
+        <translation>WineTricks</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2600"/>
@@ -799,376 +799,462 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished">Finestra</translation>
+        <translation>Finestra</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="166"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="35"/>
         <source>Fake drive settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Settaggi del disco virtuale</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="249"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="254"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="258"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="354"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="384"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="47"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="65"/>
         <source>General</source>
-        <translation type="unfinished">Generale</translation>
+        <translation>Generale</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="263"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="582"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="647"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="68"/>
         <source>Color theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Colori del tema</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="268"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="648"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="716"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="71"/>
         <source>Wine browsers</source>
-        <translation type="unfinished"></translation>
+        <translation>Browser Wine</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="274"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="278"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="786"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="857"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="74"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="77"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="83"/>
         <source>Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Video</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="283"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1101"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="303"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1175"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2819"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="77"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="110"/>
         <source>Direct 3D</source>
-        <translation type="unfinished"></translation>
+        <translation>Direct 3D</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="288"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1401"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1567"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1579"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="80"/>
-        <source>Direct input</source>
-        <translation type="unfinished"></translation>
+        <source>OpenGL</source>
+        <translation>OpenGL</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="293"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1538"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1547"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="83"/>
-        <source>OpenGL</source>
-        <translation type="unfinished">OpenGL</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="298"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1583"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="86"/>
-        <source>X11 driver</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="304"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="89"/>
-        <source>File system</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="308"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1877"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1886"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="92"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1615"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="3005"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="83"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="113"/>
+        <source>X11 driver</source>
+        <translation>Driver X11</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="334"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="86"/>
+        <source>File system</source>
+        <translation>Filesystem</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="338"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2433"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2445"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="89"/>
         <source>Wine drives</source>
-        <translation type="unfinished">Dischi di Wine</translation>
+        <translation>Dischi di Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="313"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1966"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="95"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="343"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2525"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="92"/>
         <source>Desktop paths</source>
-        <translation type="unfinished"></translation>
+        <translation>Percorso del desktop</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="363"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="396"/>
         <source>General settings</source>
-        <translation type="unfinished">Impostazioni generali</translation>
+        <translation>Impostazioni generali</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="372"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="405"/>
         <source>Please enter user registration information:</source>
-        <translation type="unfinished">Per favore inserisci le informazioni di registrazione dell&apos;utente:</translation>
+        <translation>Per favore inserisci le informazioni di registrazione dell&apos;utente:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="397"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="430"/>
         <source>Owner:</source>
-        <translation type="unfinished">Propietario:</translation>
+        <translation>Propietario:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="441"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="474"/>
         <source>Organization:</source>
-        <translation type="unfinished">Organizzazione:</translation>
+        <translation>Organizzazione:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="461"/>
         <source>Please select default fake drive version:</source>
-        <translation type="unfinished">Selezione la versione di default del disco virtuale:</translation>
+        <translation type="obsolete">Selezione la versione di default del disco virtuale:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="486"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="524"/>
         <source>Version:</source>
-        <translation type="unfinished">Versione:</translation>
+        <translation>Versione:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="588"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="611"/>
+        <source>Misc:</source>
+        <translation>Varie:</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="656"/>
         <source>Wine colors theme</source>
-        <translation type="unfinished">Tema di colori di wine</translation>
+        <translation>Tema di colori di wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="597"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="665"/>
         <source>To change color theme in wine dialogs, select one option below:</source>
-        <translation type="unfinished">Per cambiare il tema di colore nelle finestre di wine, seleziona  un opzione qui sotto:</translation>
+        <translation>Per cambiare il tema di colore nelle finestre di wine, seleziona una delle opzioni qui sotto:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="607"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="675"/>
         <source>Leave existing</source>
-        <translation type="unfinished">Lascia le esistenti</translation>
+        <translation>Lascia le esistenti</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="617"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="685"/>
         <source>Reset to default</source>
-        <translation type="unfinished">Reset ai default</translation>
+        <translation>Reset ai default</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="624"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="692"/>
         <source>Use current Qt4 colors</source>
-        <translation type="unfinished">Usa i colori di Qt4</translation>
+        <translation>Usa i colori di Qt4</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="654"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="792"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1107"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1407"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1589"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="725"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="866"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1184"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1624"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2049"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2335"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2828"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="3014"/>
         <source>Note: Leave empty for default</source>
-        <translation type="unfinished">Nota: lasciare in bianco per i default</translation>
+        <translation>Nota: lasciare in bianco per i default</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="667"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="738"/>
         <source>Wine Browsers</source>
-        <translation type="unfinished">Browser Wine</translation>
+        <translation>Browser Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="694"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="765"/>
         <source>Browsers:</source>
-        <translation type="unfinished">Browser:</translation>
+        <translation>Browser:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="732"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="803"/>
         <source>Mailers:</source>
-        <translation type="unfinished">Programma di posta:</translation>
+        <translation>Programma di posta:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="805"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="879"/>
         <source>Video card settings</source>
-        <translation type="unfinished">Settaggi scheda video</translation>
+        <translation>Settaggi scheda video</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="832"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="906"/>
         <source>Description:</source>
-        <translation type="unfinished">Descrizione:</translation>
+        <translation>Descrizione:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="870"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="944"/>
         <source>Memory (Mb):</source>
-        <translation type="unfinished">Memoria (Mb):</translation>
+        <translation>Memoria (Mb):</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="908"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="982"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1964"/>
         <source>Driver:</source>
-        <translation type="unfinished">Driver:</translation>
+        <translation>Driver:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="946"/>
         <source>Software emultaion:</source>
-        <translation type="unfinished">Emulazione software:</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="981"/>
-        <source>Shaders</source>
-        <translation type="unfinished">Shaders</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1008"/>
-        <source>Pixel Shader Mode:</source>
-        <translation type="unfinished">Pixel Shader Mode:</translation>
+        <translation type="obsolete">Emulazione software:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1055"/>
+        <source>Shaders</source>
+        <translation>Shaders</translation>
+    </message>
+    <message>
+        <source>Pixel Shader Mode:</source>
+        <translation type="obsolete">Pixel Shader Mode:</translation>
+    </message>
+    <message>
         <source>Vertex Shader Mode:</source>
-        <translation type="unfinished">Vertex Shader Mode:</translation>
+        <translation type="obsolete">Vertex Shader Mode:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1120"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1197"/>
         <source>Direct 3D settings</source>
-        <translation type="unfinished">Impostazioni Direct 3D</translation>
+        <translation>Impostazioni Direct 3D</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1147"/>
-        <source>Multisampling:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1194"/>
         <source>DDraw Renderer:</source>
-        <translation type="unfinished">DDraw Renderer:</translation>
+        <translation type="obsolete">DDraw Renderer:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1241"/>
         <source>Lock Mode:</source>
-        <translation type="unfinished">Lock Mode:</translation>
+        <translation type="obsolete">Lock Mode:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1303"/>
         <source>Offscreen Mode:</source>
-        <translation type="unfinished">Offscreen Mode:</translation>
+        <translation type="obsolete">Offscreen Mode:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1355"/>
         <source>Use GLSL:</source>
-        <translation type="unfinished">Usa GLSL:</translation>
+        <translation type="obsolete">Usa GLSL:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1420"/>
         <source>Direct Input</source>
-        <translation type="unfinished">Input diretto</translation>
+        <translation type="obsolete">Input diretto</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1447"/>
         <source>MouseWarpOverride:</source>
-        <translation type="unfinished">MouseWarpOverride:</translation>
+        <translation type="obsolete">MouseWarpOverride:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1481"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2946"/>
         <source>Joystick axes mapping:</source>
-        <translation type="unfinished">Mappatura assi joystick:</translation>
+        <translation>Mappatura assi joystick:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1497"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1926"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2485"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2964"/>
         <source>Add</source>
-        <translation type="unfinished">Aggiungi</translation>
+        <translation>Aggiungi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1504"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1939"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2498"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2971"/>
         <source>Edit</source>
-        <translation type="unfinished">Modifica</translation>
+        <translation>Modifica</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1511"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1952"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2511"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2978"/>
         <source>Remove</source>
-        <translation type="unfinished">Rimuovi</translation>
+        <translation>Rimuovi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1556"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1588"/>
         <source>Disabled extensions:</source>
-        <translation type="unfinished">Estensioni disabilitate:</translation>
+        <translation>Estensioni disabilitate:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1602"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="299"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="107"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="110"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="113"/>
+        <source>Input</source>
+        <translation>Input</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="314"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="95"/>
+        <source>Audio</source>
+        <translation>Audio</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="318"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1915"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="98"/>
+        <source>Sound driver</source>
+        <translation>Driver audio</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="323"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2040"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="101"/>
+        <source>Alsa driver</source>
+        <translation>Driver Alsa</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="328"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="104"/>
+        <source>Misc audio</source>
+        <translation>Varie Audio</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="497"/>
+        <source>Fake drive version:</source>
+        <translation>Versione del disco virtuale:</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="620"/>
+        <source>Disable graphical crash dialog.</source>
+        <translation>Disabilita i messaggi di crash dell&apos;ambiente grafico.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1637"/>
         <source>X11 Driver</source>
-        <translation type="unfinished">Driver X11</translation>
+        <translation>Driver X11</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1629"/>
         <source>WithRender:</source>
-        <translation type="unfinished">WithRender:</translation>
+        <translation type="obsolete">WithRender:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1676"/>
         <source>AA WithRender:</source>
-        <translation type="unfinished">AA WithRender:</translation>
+        <translation type="obsolete">AA WithRender:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1723"/>
         <source>AA WithCore:</source>
-        <translation type="unfinished">AA WithCore:</translation>
+        <translation type="obsolete">AA WithCore:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1770"/>
         <source>UseXRandR:</source>
-        <translation type="unfinished">Usa XRandR:</translation>
+        <translation type="obsolete">Usa XRandR:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1817"/>
         <source>UseXVidMode:</source>
-        <translation type="unfinished">Usa XVidMode:</translation>
+        <translation type="obsolete">Usa XVidMode:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1972"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1924"/>
+        <source>Note: Q4Wine do not check is selected driver avalible for current wine build or not. Use this option with care.</source>
+        <translation>Nota: Q4Winde non verifica se il driver selezionato è disponibile per la versione di wine attuale. Usate questa opzione con cautela.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1937"/>
+        <source>Current sound driver</source>
+        <translation>Driver audio attuali</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation type="obsolete">Disabilitato</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2062"/>
+        <source>Alsa driver settings</source>
+        <translation>Settaggi dei driver Alsa</translation>
+    </message>
+    <message>
+        <source>Y</source>
+        <translation type="obsolete">S</translation>
+    </message>
+    <message>
+        <source>N</source>
+        <translation type="obsolete">N</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2326"/>
+        <source>Misc</source>
+        <translation>Varie</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2345"/>
+        <source>Misc options:</source>
+        <translation>Opzioni varie:</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2354"/>
+        <source>DirectSound workaround for bug #9612</source>
+        <translation>Workaruond per il bug #9612 di DirectSound</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2534"/>
         <source>Wine desktop paths:</source>
-        <translation type="unfinished">Percorso al desktop di Wine:</translation>
+        <translation>Percorso al desktop di Wine:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1987"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2549"/>
         <source>Note: leave it blank for default value.</source>
-        <translation type="unfinished">Nota: lascia in bianco per i valori di default.</translation>
+        <translation>Nota: lascia in bianco per i valori di default.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2015"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2577"/>
         <source>Desktop:</source>
-        <translation type="unfinished">Desktop:</translation>
+        <translation>Desktop:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2059"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2621"/>
         <source>My Documents:</source>
-        <translation type="unfinished">Documenti:</translation>
+        <translation>Documenti:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2103"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2665"/>
         <source>My Pictures:</source>
-        <translation type="unfinished">Immagini:</translation>
+        <translation>Immagini:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2147"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2709"/>
         <source>My Music:</source>
-        <translation type="unfinished">Musica:</translation>
+        <translation>Musica:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2191"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2753"/>
         <source>My Videos:</source>
-        <translation type="unfinished">Video:</translation>
+        <translation>Video:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2263"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2838"/>
+        <source>Mouse</source>
+        <translation>Mouse</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="3024"/>
+        <source>Clipboard</source>
+        <translation>Appunti</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="3132"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2283"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="3152"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancella</translation>
+        <translation>Cancella</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2290"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="3159"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="36"/>
         <source>Fake drive settings for prefix &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Settaggi del disco virtuale per il prefisso &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="117"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="752"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="135"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="828"/>
         <source>Error</source>
-        <translation type="unfinished">Errore</translation>
+        <translation>Errore</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="117"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="135"/>
         <source>Error in string:
 
 %1
@@ -1180,11 +1266,11 @@ For example:
 &quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
 
 See help for details.</source>
-        <translation type="unfinished">Errore nella stringa:
+        <translation>Errore nella stringa:
 
 %1
 
-Gli assi del Joystic deve essere definito come :
+Gli assi del Joystic devono essere definiti come :
 &quot;nome del joystic&quot;=&quot;mappa degli assi&quot;
 
 Per esempio:
@@ -1193,35 +1279,35 @@ Per esempio:
 Vedi l&apos;help per dettagli.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="135"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="153"/>
         <source>Warning</source>
-        <translation type="unfinished">Attenzione</translation>
+        <translation>Attenzione</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="135"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="153"/>
         <source>Can&apos;t find Wine Drive which is point to:
 &quot;%1&quot;
 
 Make shure wine can access %2 temp directory.</source>
-        <translation type="unfinished">Non posso trovare il disco che punta a :
+        <translation>Non posso trovare il disco che punta a :
 &quot;%1&quot;
 
-Accertati che wine possa accedere la directory temporanea di %2.</translation>
+Accertati che wine possa accedere la directory temporanea %2.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="355"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="373"/>
         <source>Updateing wine dosdrives</source>
-        <translation type="unfinished">Aggiornamento del disco dos di wine</translation>
+        <translation>Aggiornamento del disco dos di wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="679"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="689"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="755"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="765"/>
         <source>Joystick Axes Mappings</source>
-        <translation type="unfinished">Mappatura degli assi dei Joystic</translation>
+        <translation>Mappatura degli assi dei Joystick</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="679"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="689"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="755"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="765"/>
         <source>Joystick axes mappings might be defined as:
 &quot;Joystick name&quot;=&quot;axes mapping&quot;
 
@@ -1229,7 +1315,7 @@ For example:
 &quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
 
 See help for details.</source>
-        <translation type="unfinished">Le mappature degli assi dei Joystick devono essere definiti come:
+        <translation>Le mappature degli assi dei Joystick devono essere definiti come:
 &quot;nome del joystick&quot;=&quot;mappatura degli assi&quot;
 
 Per esempio:
@@ -1238,9 +1324,9 @@ Per esempio:
 Vedi l&apos;help per gli esempi.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="752"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="828"/>
         <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
-        <translation type="unfinished">Mi spiace, non puoi cancellare o modificare il disco C: di wine.&lt;br&gt;Ma puoi cambiarlo nei settaggi dei prefessi.</translation>
+        <translation>Mi spiace, non puoi cancellare o modificare il disco C: di wine.&lt;br&gt;Ma puoi cambiarlo nei settaggi dei prefessi.</translation>
     </message>
 </context>
 <context>
@@ -1270,15 +1356,15 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="242"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1046"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1063"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1060"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1077"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 montato con successo.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="244"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1048"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1065"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1062"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1079"/>
         <source>Fail to mount %1.</source>
         <translation>Errore nel montaggio %1.</translation>
     </message>
@@ -1322,7 +1408,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="385"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1015"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1029"/>
         <source>[none]</source>
         <translation>[nessuno]</translation>
     </message>
@@ -1348,7 +1434,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="411"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1018"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1032"/>
         <source>Browse...</source>
         <translation>Esplora ...</translation>
     </message>
@@ -1526,47 +1612,47 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="538"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia negli appunti</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="540"/>
         <source>Directory path</source>
-        <translation type="unfinished"></translation>
+        <translation>Percorso della directory</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="541"/>
         <source>Copy application directory path to system&apos;s&apos; clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia il percorso della directory dell&apos;applicazione negli appunti di sistema</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="545"/>
         <source>Application path</source>
-        <translation type="unfinished"></translation>
+        <translation>Percorso applicazione</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="546"/>
         <source>Copy full application path to system&apos;s&apos; clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>copia il percorso completo dell&apos;applicazione negli appunti di sistema</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="552"/>
         <source>wine cmd</source>
-        <translation type="unfinished"></translation>
+        <translation>cmd di wine</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="553"/>
         <source>Copy wine cmd line for current application</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia la linea di cmd di wine dell&apos;applicazione attuale</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="557"/>
         <source>q4wine-cli cmd</source>
-        <translation type="unfinished"></translation>
+        <translation>q4wine-cli-cmd</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="558"/>
         <source>Copy q4wine-cli cmd for current application</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia il comando di q4wine dell&apos;applicazione attuale</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="567"/>
@@ -1575,7 +1661,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="569"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="973"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="987"/>
         <source>Browse ...</source>
         <translation>Esplora ...</translation>
     </message>
@@ -1615,23 +1701,23 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation>Vuoi cancellare tutte le icone selezionate?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1016"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1030"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1016"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1030"/>
         <source>No device drive specified in prefix settings.</source>
         <translation>Nessun disco specificato nei settaggi dei prefissi.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1036"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1038"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1050"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1052"/>
         <source>Open CD Image files</source>
         <translation>Apri il file immagine del CD</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1024"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1038"/>
         <source>CD image files (*.iso *.nrg *.img *.bin *.mdf)</source>
         <translation>File immagine di un CD (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
@@ -1640,23 +1726,23 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">Apri l&apos;immagine ISO</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1027"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1041"/>
         <source>iso files (*.iso)</source>
         <translation>file iso (*.iso)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1072"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1086"/>
         <source>Drive successfully umounted.</source>
         <translation>Disco smontato con successo.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1074"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1088"/>
         <source>Fail to umount drive.</source>
         <translation>Smontaggio del disco fallito.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1101"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1143"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1115"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1157"/>
         <source>Error: &quot;%1&quot; is an embedded wine binary.</source>
         <translation>Errore: &quot;%1&quot; è un binario di wine embebbed.</translation>
     </message>
@@ -1671,33 +1757,33 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation>Settaggio icone</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="456"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="465"/>
         <source>Virtual desktop</source>
         <translation>Desktop virtuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="606"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="624"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="191"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="573"/>
         <source>Native</source>
         <translation>Nativo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="611"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="629"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="193"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="577"/>
         <source>Buildin</source>
         <translation>Incorporato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="616"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="634"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="195"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="579"/>
         <source>Native, Buildin</source>
         <translation>Nativo, incorporato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="621"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="639"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="197"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="581"/>
         <source>Buildin, Native</source>
@@ -1806,7 +1892,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation>Mi dispiace ma l&apos;icona %1 esiste già.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="488"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="500"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="594"/>
         <source>No virtual desktop</source>
         <translation>Nessun desktop virtuale</translation>
@@ -1826,37 +1912,37 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="217"/>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="223"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="226"/>
         <source>General</source>
         <translation>Generale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="247"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="253"/>
         <source>Program:</source>
         <translation>Programma:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="291"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="297"/>
         <source>Cmd Args:</source>
         <translation>Argomenti comando:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="322"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="328"/>
         <source>Working dir:</source>
         <translation>Directory di lavoro:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="351"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="357"/>
         <source>Icon options</source>
         <translation>Opzioni icone</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="375"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="384"/>
         <source>Name:</source>
         <translation>Nome:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="440"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="449"/>
         <source>Description:</source>
         <translation>Descrizione:</translation>
     </message>
@@ -1865,7 +1951,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">Desktop virtuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="480"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="492"/>
         <source>Size:</source>
         <translation>Dimensione:</translation>
     </message>
@@ -1906,93 +1992,93 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">2560x1600</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="561"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="573"/>
         <source>Override Dll</source>
         <translation>Override Dll</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="567"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="582"/>
         <source>Present wine dlls</source>
         <translation>dll di wine in uso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="626"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="644"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="575"/>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Disabilitato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="634"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="652"/>
         <source>Add</source>
         <translation>Aggiungi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="644"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="662"/>
         <source>Overrided dlls</source>
         <translation>Overrided Dll</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="660"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="681"/>
         <source>Dll name</source>
         <translation>Nome Dll</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="665"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="686"/>
         <source>Override algorithm</source>
         <translation>Algoritmo di override</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="677"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="698"/>
         <source>Advanced</source>
         <translation>Avanzate</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="683"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="707"/>
         <source>Display</source>
         <translation>Display</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="710"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="737"/>
         <source>DISPLAY:</source>
         <translation>Display:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="726"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="753"/>
         <source>Debug options</source>
         <translation>Opzioni di debug</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="735"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="762"/>
         <source>Run with output in console</source>
         <translation>Esegui con l&apos;output in console</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="760"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="787"/>
         <source>WINEDEBUG:</source>
         <translation>WINEDEBUG:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="780"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="807"/>
         <source>Nice level priority</source>
         <translation>Priorità di livello nice</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="807"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="834"/>
         <source>Priority:</source>
         <translation>Priorità:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="849"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="876"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="869"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="896"/>
         <source>Cancel</source>
         <translation>Cancella</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="876"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="903"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
@@ -2000,7 +2086,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
 <context>
     <name>IconsView</name>
     <message>
-        <location filename="../q4wine-gui/uis/IconsView.ui" line="100"/>
+        <location filename="../q4wine-gui/uis/IconsView.ui" line="107"/>
         <location filename="../q4wine-gui/iconsview.cpp" line="104"/>
         <source>Cancel</source>
         <translation>Cancella</translation>
@@ -2069,22 +2155,22 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation>Mi dispiace, non posso creare il file: &lt;br&gt;%1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconsView.ui" line="13"/>
+        <location filename="../q4wine-gui/uis/IconsView.ui" line="14"/>
         <source>Icons Export</source>
         <translation>Esporta icone</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconsView.ui" line="23"/>
+        <location filename="../q4wine-gui/uis/IconsView.ui" line="27"/>
         <source>Avalible icons:</source>
         <translation>Icone disponibili:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconsView.ui" line="72"/>
+        <location filename="../q4wine-gui/uis/IconsView.ui" line="79"/>
         <source>Export icons to default place</source>
         <translation>Esporta le icone nel posto di default</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconsView.ui" line="107"/>
+        <location filename="../q4wine-gui/uis/IconsView.ui" line="114"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
@@ -2227,32 +2313,32 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/uis/InfoDialog.ui" line="27"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/InfoDialog.ui" line="74"/>
         <source>Don&apos;t show this dialog next time</source>
-        <translation type="unfinished"></translation>
+        <translation>Non mostrare più questa finestra</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/InfoDialog.ui" line="94"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancella</translation>
+        <translation>Cancella</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/InfoDialog.ui" line="101"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/infodialog.cpp" line="11"/>
         <source>Winetriks plugin notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Notifica dei plugin di winetricks</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/infodialog.cpp" line="24"/>
         <source>AppDB browser notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Notifiche del browser di AppDB</translation>
     </message>
 </context>
 <context>
@@ -2290,22 +2376,22 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="93"/>
         <source>Select all</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona tutto</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="94"/>
         <source>Select all log rows</source>
-        <translation type="unfinished"></translation>
+        <translation>Selezione tutte le righe del log</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="98"/>
         <source>Copy selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia i selezionati</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="99"/>
         <source>Copy selection into copy buffer</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia la selezione nel buffer di copia</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="152"/>
@@ -2520,7 +2606,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="304"/>
         <source>Program: %1&lt;br&gt; Args: %2 </source>
-        <translation type="unfinished">Programma:%1&lt;br&gt; Argomenti:%2  {1&lt;?}</translation>
+        <translation>Programma:%1&lt;br&gt; Argomenti:%2 </translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="400"/>
@@ -2810,7 +2896,7 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation type="obsolete">Cancella l&apos;icona attuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="434"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="437"/>
         <source>Options</source>
         <translation>Opzioni</translation>
     </message>
@@ -2869,7 +2955,7 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation>&lt;p&gt;Non hai settato l&apos;eseguibile di default per la console.&lt;/p&gt;&lt;p&gt;Puoi farlo nella finestra opzioni di q4wine.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="357"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="360"/>
         <source>Run...</source>
         <translation>Esegui...</translation>
     </message>
@@ -2878,14 +2964,14 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation type="obsolete">&lt;p&gt;Winetricks non è ufficialmente supportato da q4wine.&lt;/p&gt;&lt;p&gt;Ci sono alcuni report relativi a bug, rallentamenti e errori legati all&apos;uso di q4wine e winetriks insieme.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="30"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="397"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="33"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="400"/>
         <source>Programs</source>
         <translation>Programmi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="248"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="418"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="251"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="421"/>
         <source>Prefixes</source>
         <translation>Prefissi</translation>
     </message>
@@ -2903,8 +2989,8 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation type="obsolete">Cancella filtro</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="122"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="402"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="125"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="405"/>
         <source>Process</source>
         <translation>Processi</translation>
     </message>
@@ -2929,8 +3015,8 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation type="obsolete">Processi totali:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="135"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="410"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="138"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="413"/>
         <source>Setup</source>
         <translation>Setup</translation>
     </message>
@@ -2947,27 +3033,27 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation type="obsolete">Gestisci</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="163"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="166"/>
         <source>Base setup</source>
         <translation>Settaggi di base</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="169"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="172"/>
         <source>This is the point where you have to start when creating new empty prefix. You can also create a new or update an old fake Windows drive.</source>
         <translation>Per creare un nuovo prefisso vuoto bisogna iniziare da qui. Puoi anche creare un nuovo o aggiornare un vecchio disco virtuale di Windows.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="182"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="185"/>
         <source>Create Fake Drive</source>
         <translation>Crea un disco virtuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="192"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="195"/>
         <source>Update Fake Drive</source>
         <translation>Aggiorna un disco virtuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="213"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="216"/>
         <source>System Software</source>
         <translation>Software di sistema</translation>
     </message>
@@ -2996,149 +3082,149 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation type="obsolete">Percorso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="297"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="300"/>
         <source>&amp;File</source>
         <translation>&amp;File</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="308"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="311"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="336"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="339"/>
         <source>Tools</source>
         <translation>Strumenti</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="360"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="363"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="365"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="368"/>
         <source>Quit</source>
         <translation>Esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="368"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="371"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="373"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="376"/>
         <source>About</source>
         <translation>Informazioni su</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="376"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="379"/>
         <source>Ctrl+E</source>
         <translation>Ctrl+E</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="426"/>
-        <source>Extract images from PE files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="429"/>
-        <source>Extract images from PE files using icoutils.</source>
-        <translation type="unfinished"></translation>
+        <source>Extract images from PE files</source>
+        <translation>Estrai le immagini dai file PE</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="505"/>
-        <source>Help this tab</source>
-        <translation type="unfinished"></translation>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="432"/>
+        <source>Extract images from PE files using icoutils.</source>
+        <translation>Estrai le immagini dai file PE usando icoutils.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="508"/>
+        <source>Help this tab</source>
+        <translation>Aiuto su questo tab</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="511"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="513"/>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="516"/>
-        <source>Import wine desktop files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="519"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="522"/>
-        <source>Scan for wine desktop files and import into q4wine icon&apos;s view.</source>
-        <translation type="unfinished"></translation>
+        <source>Import wine desktop files</source>
+        <translation>Importa i file di desktop di wine</translation>
     </message>
     <message>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="522"/>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="525"/>
+        <source>Scan for wine desktop files and import into q4wine icon&apos;s view.</source>
+        <translation>Cerca i file desktop di wine e importali nella vista a icone di q4wine.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="528"/>
         <source>Ctrl+I</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <source>Import icons</source>
         <translation type="obsolete">Importa icone</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="447"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="450"/>
         <source>First steps</source>
         <translation>Primi passi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="452"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="455"/>
         <source>Short FAQ</source>
         <translation>FAQ brevi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="457"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="460"/>
         <source>Index</source>
         <translation>Indice</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="466"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="469"/>
         <source>Website</source>
         <translation>Sito</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="475"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="478"/>
         <source>Donate</source>
         <translation>Dona</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="484"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="487"/>
         <source>Bugs</source>
         <translation>Bugs</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="312"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="315"/>
         <source>Handbook</source>
         <translation>Manuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="219"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="222"/>
         <source>WIS scripts support is not emplemented right now. I will be iplemented in future releases. For now You can use wineriks support (see current tab toolbar actions).</source>
         <translation>Il supporto agli script WIS non è ancora implementato. Sarà implementato in future release. Per adesso puoi usare il supporto a Winetricks (guarda la toolbar corrente).</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="261"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="264"/>
         <source>Wine AppDB</source>
         <translation>Wine AppDB</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="274"/>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="497"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="277"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="500"/>
         <source>Logging</source>
         <translation>Logging</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="381"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="384"/>
         <source>About Qt</source>
         <translation>Su Qt</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="389"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="392"/>
         <source>Instal wizard</source>
         <translation>Wizard di installazione</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="392"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="395"/>
         <source>Ctrl+X</source>
         <translation>Ctrl+X</translation>
     </message>
@@ -3147,17 +3233,17 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation type="obsolete">Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="405"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="408"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="413"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="416"/>
         <source>Ctrl+D</source>
         <translation>Ctrl+D</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="421"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="424"/>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
@@ -3170,12 +3256,12 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation type="obsolete">Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="437"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="440"/>
         <source>Ctrl+W</source>
         <translation>Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="442"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="445"/>
         <source>CD image manager</source>
         <translation>Gestore immagini CD</translation>
     </message>
@@ -3184,17 +3270,17 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation type="obsolete">Ctrl+V</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="489"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="492"/>
         <source>Wine AppDB browser</source>
         <translation>Browser del AppDB di Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="492"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="495"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="500"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="503"/>
         <source>Ctrl+L</source>
         <translation>Ctrl+L</translation>
     </message>
@@ -3477,21 +3563,21 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation>Mi dispiace il prefisso %1 esiste già.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="216"/>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="218"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="220"/>
         <source>Open File</source>
         <translation>Apri file</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="227"/>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="229"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="231"/>
         <source>Open Directory</source>
         <translation>Apri directory</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="14"/>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="164"/>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="217"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="220"/>
         <source>Prefix settings</source>
         <translation>Impostazioni prefissi</translation>
     </message>
@@ -3501,80 +3587,80 @@ Invia un segnale TERM al processo selezionato</translation>
         <translation>Generale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="285"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="291"/>
         <source>Name:</source>
         <translation>Nome:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="241"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="247"/>
         <source>Prefix path:</source>
         <translation>Percorso prefisso:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="301"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="307"/>
         <source>Quick mount</source>
         <translation>Montaggio rapido</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="325"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="334"/>
         <source>Device:</source>
         <translation>Device:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="333"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="342"/>
         <source>&lt;none&gt;</source>
         <translation>&lt;nessuno&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="362"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="371"/>
         <source>Mount point:</source>
         <translation>Punto di montaggio:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="405"/>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="411"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="414"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="423"/>
         <source>Wine settings</source>
         <translation>Impostazioni Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="423"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="438"/>
         <source>If you wish to use different wine versions, you may wish set custom wine paths here.
 Note: leave it blank for default.</source>
         <translation>Se vuoi usare una versione diversa di wine, puoi voler settare diversi percorsi per wine qui.
 Nota: lasciare in bianco per i default.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="455"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="470"/>
         <source>Bin:</source>
         <translation>Bin:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="499"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="514"/>
         <source>Server:</source>
         <translation>Server:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="543"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="558"/>
         <source>Loader:</source>
         <translation>Caricatore:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="587"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="602"/>
         <source>Libs:</source>
         <translation>Librerie:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="635"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="650"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="655"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="670"/>
         <source>Cancel</source>
         <translation>Cancella</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="662"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="677"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
@@ -3783,22 +3869,22 @@ Nota: lasciare in bianco per i default.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="369"/>
         <source>Configure prefix settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configura il settaggio dei prefissi</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="374"/>
         <source>Configure fake drive settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configura il disco virtuale</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="459"/>
         <source>Sorry. It seems icon already exists.</source>
-        <translation type="unfinished">Mi dispiace, sembra che l&apos;icona esistà già.</translation>
+        <translation>Mi dispiace, sembra che l&apos;icona esistà già.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="459"/>
         <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation type="unfinished">Mi dispiace, sembra che l&apos;icona esistà già.
+        <translation>Mi dispiace, sembra che l&apos;icona esistà già.
 Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
@@ -4542,7 +4628,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="133"/>
         <source>sets program working directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostare la directory di lavoro del programma</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="134"/>
@@ -4553,28 +4639,28 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
 <context>
     <name>Run</name>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="538"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="553"/>
         <location filename="../q4wine-gui/run.cpp" line="101"/>
         <location filename="../q4wine-gui/run.cpp" line="164"/>
         <source>Native</source>
         <translation>Nativo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="543"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="558"/>
         <location filename="../q4wine-gui/run.cpp" line="103"/>
         <location filename="../q4wine-gui/run.cpp" line="168"/>
         <source>Buildin</source>
         <translation>Incorporato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="548"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="563"/>
         <location filename="../q4wine-gui/run.cpp" line="105"/>
         <location filename="../q4wine-gui/run.cpp" line="170"/>
         <source>Native, Buildin</source>
         <translation>Nativo, Incorporato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="553"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="568"/>
         <location filename="../q4wine-gui/run.cpp" line="107"/>
         <location filename="../q4wine-gui/run.cpp" line="172"/>
         <source>Buildin, Native</source>
@@ -4597,7 +4683,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">%1=</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="420"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="429"/>
         <location filename="../q4wine-gui/run.cpp" line="191"/>
         <source>No virtual desktop</source>
         <translation>Nessun desktop virtuale</translation>
@@ -4641,42 +4727,42 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="214"/>
-        <location filename="../q4wine-gui/uis/Run.ui" line="260"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="266"/>
         <source>General</source>
         <translation>Generale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="220"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="223"/>
         <source>Prefix</source>
         <translation>Prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="244"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="250"/>
         <source>Name:</source>
         <translation>Nome:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="284"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="293"/>
         <source>Program:</source>
         <translation>Programma:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="328"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="337"/>
         <source>Cmd Args:</source>
         <translation>Argomenti comando:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="359"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="368"/>
         <source>Working dir:</source>
         <translation>Directory di lavoro:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="388"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="397"/>
         <source>Virtual desktop</source>
         <translation>Desktop virtual</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="412"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="421"/>
         <source>Size:</source>
         <translation>Dimensione:</translation>
     </message>
@@ -4717,93 +4803,93 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">2560x1600</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="493"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="502"/>
         <source>Override Dll</source>
         <translation>Override Dll</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="499"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="511"/>
         <source>Present wine dlls</source>
         <translation>dll di wine presenti</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="558"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="573"/>
         <location filename="../q4wine-gui/run.cpp" line="166"/>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Disabilitato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="566"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="581"/>
         <source>Add</source>
         <translation>Aggiungi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="576"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="591"/>
         <source>Overrided dlls</source>
         <translation>Overrided Dll</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="592"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="610"/>
         <source>Dll name</source>
         <translation>Nome Dll</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="597"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="615"/>
         <source>Override algoritm</source>
         <translation>Algoritmo di override</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="609"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="627"/>
         <source>Advanced</source>
         <translation>Avanzate</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="615"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="636"/>
         <source>Display</source>
         <translation>Display</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="642"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="666"/>
         <source>DISPLAY:</source>
         <translation>Display:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="658"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="682"/>
         <source>Debug options</source>
         <translation>Opzioni di debug</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="667"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="691"/>
         <source>Run with output in console</source>
         <translation>Esegui con l&apos;output in console</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="692"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="716"/>
         <source>WINEDEBUG:</source>
         <translation>WINEDEBUG:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="712"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="736"/>
         <source>Nice level priority</source>
         <translation>Priorità di livello nice</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="739"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="763"/>
         <source>Priority:</source>
         <translation>Priorità:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="781"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="805"/>
         <source>Help</source>
         <translation>Aituo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="801"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="825"/>
         <source>Cancel</source>
         <translation>Cancella</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="808"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="832"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
@@ -4843,32 +4929,32 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="20"/>
+        <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="23"/>
         <source>Wine drive</source>
         <translation>Disco di wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="59"/>
+        <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="53"/>
         <source>Drive letter:</source>
         <translation>Lettera del disco:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="221"/>
+        <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="215"/>
         <source>Path:</source>
         <translation>Percorso:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="265"/>
+        <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="259"/>
         <source>Type:</source>
         <translation>Tipo:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="335"/>
+        <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="329"/>
         <source>Cancel</source>
         <translation>Cancella</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="342"/>
+        <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="336"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
@@ -4970,22 +5056,22 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="196"/>
         <source>This action will send a KILL(-9) signal to selected processes&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Questa azione manda un segnale KILL(-9) ai processi selezionati&lt;br&gt;&lt;br&gt;il rischio di danneggiare lo stato di wine è MOLTO ALTO. &lt;br&gt;&lt;br&gt;Vuoi veramente procedere?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="233"/>
         <source>This action will send a KILL(-9) signal to all wine processes for selected prefixes&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Questa azione invierà un KILL(-9) a tutti i processi di wine con il prefisso selezionato&lt;br&gt;&lt;br&gt;Sei sicuro di voler procedere?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="255"/>
         <source>It seems &quot;wineserver -kill&quot; for prefix: %1 executed successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>sembra che &quot;wineserver -kill&quot; per il prefisso %1 sia stato eseguito con successo.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="284"/>
         <source>It seems process %1 renice to %2 end successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sembra che il renice del processo %1 a %2 sia andato a buon fine.</translation>
     </message>
     <message>
         <source>Total process: %1</source>
@@ -5048,30 +5134,27 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1560"/>
         <location filename="../q4wine-gui/wizard.cpp" line="196"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="375"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="419"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="369"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="413"/>
         <source>No Proxy</source>
         <translation>Nessun Proxy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2589"/>
         <source>DDraw Renderer:</source>
-        <translation>DDraw Renderer:</translation>
+        <translation type="obsolete">DDraw Renderer:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2636"/>
         <source>Lock Mode:</source>
-        <translation>Lock Mode:</translation>
+        <translation type="obsolete">Lock Mode:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3216"/>
         <source>Joystick axes mapping:</source>
-        <translation>Mappatura assi joystick:</translation>
+        <translation type="obsolete">Mappatura assi joystick:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3962"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="616"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="621"/>
+        <location filename="../q4wine-gui/uis/Wizard.ui" line="2158"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="607"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="612"/>
         <source>Next &gt;</source>
         <translation>Prossimo &gt;</translation>
     </message>
@@ -5101,7 +5184,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="109"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="584"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="575"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation>&lt;b&gt;Passo %1 di %2&lt;/b&gt;</translation>
     </message>
@@ -5173,54 +5256,54 @@ Type: </source>
         <translation type="obsolete">wine %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="304"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="307"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="315"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="318"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="377"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="381"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="298"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="301"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="309"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="312"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="371"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="375"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="304"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="298"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Spiacente, specifica %1 directory.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="307"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="301"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Spiacente, specifica %1 eseguibili.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="315"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="309"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation>Spiacente. la directory %1 non esiste.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="318"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="312"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation>Spiacente. l&apos;eseguibilie %1 non esiste.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="377"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="371"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Spiacente, specifica un proxy.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="381"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="375"/>
         <source>Sorry, specify proxy port.</source>
         <translation>Spiacente, specifica una porta per il proxy.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="592"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="583"/>
         <source>&lt;b&gt;First startup wizrad&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt; Prima esecuzione del wizrad&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="599"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="590"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Alexey S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; e&apos; stato inizialmente scritto da Alexey S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;L&apos;idea generale arriva da &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt;, uno scripts che è stato scritto inizialmente da Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;E&apos; licenziato secondo la &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Inviate commenti, report di bug ecc. a [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Nota&lt;/span&gt;&lt;/b&gt;: Questo software è rilasciato assolutamente senza garanzie.&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NON&lt;/span&gt;&lt;/b&gt; otterrete alcuna aiuto per WineTools, Wine, installazione del software, Linux o Microsoft Windows dall&apos;autore.&lt;/p&gt;&lt;p&gt;Se &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;vi serve aiuto&lt;/span&gt;, chiedete nella mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Se &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;volete un supporto &lt;/span&gt;, acquistate la versione commerciale di wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) per applicazioni Desktop&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Enter prefix name first.</source>
@@ -5383,7 +5466,7 @@ Vedi l&apos;help per dettagli.</translation>
         <translation type="obsolete">&lt;b&gt;Wizard del primo avvio&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="593"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="584"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Benvenuti nel wizard per il primo avvio.&lt;/p&gt;&lt;p&gt;Questo wizard ti aiuterà a fare tutti i passi necessari per l&apos;installazione di %1.&lt;/p&gt;&lt;p&gt;Per favore premi il bottone &lt;b&gt;Prossimo&lt;/b&gt; per andare alla pagina sucessiva del wizard. O premi &lt;b&gt;Indietro&lt;/b&gt; per ritornare.&lt;/p&gt;</translation>
     </message>
@@ -5396,7 +5479,7 @@ Vedi l&apos;help per dettagli.</translation>
         <translation type="obsolete">&lt;p&gt;Per favore inserisci le impostazioni di default di wine.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="626"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="617"/>
         <source>Finish</source>
         <translation>Finito</translation>
     </message>
@@ -5473,7 +5556,7 @@ Per esempio:
 Vedi l&apos;help per gli esempi.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="690"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="681"/>
         <source>Warning</source>
         <translation>Attenzione</translation>
     </message>
@@ -5516,12 +5599,12 @@ Accertati che wine possa accedere la directory temporanea di %2.</translation>
         <translation type="obsolete">Aggiornamento del disco dos di wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="690"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="681"/>
         <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine è stato compilato senza integrare FuseIso .&lt;/p&gt;&lt;p&gt;Se vuoi compilare q4wine con integrato FuseIso aggiungi:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; agli argomenti di cmake.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="625"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="616"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Tutto pronto per finire il setup di %1.&lt;/p&gt;&lt;p&gt;Premere il pulsante&lt;b&gt;Fine&lt;/b&gt; per finire il setup o premere &lt;b&gt; indietro&lt;/b&gt; per ritornare.&lt;/p&gt;</translation>
     </message>
@@ -5579,24 +5662,20 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Percorsi di Wine:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="533"/>
         <source>wine bin:</source>
-        <translation>Eseguibile Wine:</translation>
+        <translation type="obsolete">Eseguibile Wine:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="590"/>
         <source>wine server:</source>
-        <translation>Server Wine:</translation>
+        <translation type="obsolete">Server Wine:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="647"/>
         <source>wine loader:</source>
-        <translation>Caricatore Wine:</translation>
+        <translation type="obsolete">Caricatore Wine:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="704"/>
         <source>wine libs:</source>
-        <translation>Librerie Wine:</translation>
+        <translation type="obsolete">Librerie Wine:</translation>
     </message>
     <message>
         <source>If you wish to use quick mount feature specify source device and mount point directory.
@@ -5632,44 +5711,16 @@ Nota: lasciare in bianco se non serve.</translation>
         <translation type="obsolete">Per favore setta i percorsi delle utility di sistema:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="799"/>
         <source>tar:</source>
-        <translation>tar:</translation>
+        <translation type="obsolete">tar:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="856"/>
         <source>mount:</source>
-        <translation>mount:</translation>
+        <translation type="obsolete">mount:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="913"/>
-        <source>umount:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="970"/>
         <source>sudo:</source>
-        <translation>sudo:</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="1027"/>
-        <source>gui sudo:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="1084"/>
-        <source>nice:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="1141"/>
-        <source>renice:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="1198"/>
-        <source>sh:</source>
-        <translation></translation>
+        <translation type="obsolete">sudo:</translation>
     </message>
     <message>
         <source>User utils</source>
@@ -5742,14 +5793,12 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">icoutils</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="1303"/>
         <source>wrestool:</source>
-        <translation>wrestool:</translation>
+        <translation type="obsolete">wrestool:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="1360"/>
         <source>icotool:</source>
-        <translation>icotool:</translation>
+        <translation type="obsolete">icotool:</translation>
     </message>
     <message>
         <source>Network</source>
@@ -5786,34 +5835,28 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2116"/>
         <source>General settings</source>
-        <translation>Impostazioni generali</translation>
+        <translation type="obsolete">Impostazioni generali</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2125"/>
         <source>Please enter user registration information:</source>
-        <translation>Per favore inserisci le informazioni di registrazione dell&apos;utente:</translation>
+        <translation type="obsolete">Per favore inserisci le informazioni di registrazione dell&apos;utente:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2150"/>
         <source>Owner:</source>
-        <translation>Propietario:</translation>
+        <translation type="obsolete">Propietario:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2188"/>
         <source>Organization:</source>
-        <translation>Organizzazione:</translation>
+        <translation type="obsolete">Organizzazione:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2208"/>
         <source>Please select default fake drive version:</source>
-        <translation>Selezione la versione di default del disco virtuale:</translation>
+        <translation type="obsolete">Selezione la versione di default del disco virtuale:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2233"/>
         <source>Version:</source>
-        <translation>Versione:</translation>
+        <translation type="obsolete">Versione:</translation>
     </message>
     <message>
         <source>
@@ -5830,48 +5873,32 @@ Se vuoi usare i colori di default di qt in wine selezione l&apos;opzione qui sot
         <translation type="obsolete">Usa palette di QT</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2515"/>
         <source>Direct 3D settings</source>
-        <translation>Impostazioni Direct 3D</translation>
+        <translation type="obsolete">Impostazioni Direct 3D</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2381"/>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2502"/>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2802"/>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3117"/>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3266"/>
         <source>Note: Leave empty for default</source>
-        <translation>Nota: lasciare in bianco per i default</translation>
+        <translation type="obsolete">Nota: lasciare in bianco per i default</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2542"/>
-        <source>Multisampling:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2315"/>
         <source>Wine colors theme</source>
-        <translation>Tema di colori di wine</translation>
+        <translation type="obsolete">Tema di colori di wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2324"/>
         <source>To change color theme in wine dialogs, select one option below:</source>
-        <translation>Per cambiare il tema di colore nelle finestre di wine, seleziona  un opzione qui sotto:</translation>
+        <translation type="obsolete">Per cambiare il tema di colore nelle finestre di wine, seleziona  un opzione qui sotto:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2334"/>
         <source>Leave existing</source>
-        <translation>Lascia le esistenti</translation>
+        <translation type="obsolete">Lascia le esistenti</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2344"/>
         <source>Reset to default</source>
-        <translation>Reset ai default</translation>
+        <translation type="obsolete">Reset ai default</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2351"/>
         <source>Use current Qt4 colors</source>
-        <translation>Usa i colori di Qt4</translation>
+        <translation type="obsolete">Usa i colori di Qt4</translation>
     </message>
     <message>
         <source>enabled</source>
@@ -5890,28 +5917,24 @@ Se vuoi usare i colori di default di qt in wine selezione l&apos;opzione qui sot
         <translation type="obsolete">LockMode:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2698"/>
         <source>Offscreen Mode:</source>
-        <translation>Offscreen Mode:</translation>
+        <translation type="obsolete">Offscreen Mode:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2750"/>
         <source>Use GLSL:</source>
-        <translation>Usa GLSL:</translation>
+        <translation type="obsolete">Usa GLSL:</translation>
     </message>
     <message>
         <source>VMemory (Mb):</source>
         <translation type="obsolete">VMemory (Mb):</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3279"/>
         <source>X11 Driver</source>
-        <translation>Driver X11</translation>
+        <translation type="obsolete">Driver X11</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3306"/>
         <source>WithRender:</source>
-        <translation>WithRender:</translation>
+        <translation type="obsolete">WithRender:</translation>
     </message>
     <message>
         <source>Y</source>
@@ -5922,39 +5945,32 @@ Se vuoi usare i colori di default di qt in wine selezione l&apos;opzione qui sot
         <translation type="obsolete">N</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3353"/>
         <source>AA WithRender:</source>
-        <translation>AA WithRender:</translation>
+        <translation type="obsolete">AA WithRender:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3400"/>
         <source>AA WithCore:</source>
-        <translation>AA WithCore:</translation>
+        <translation type="obsolete">AA WithCore:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3447"/>
         <source>UseXRandR:</source>
-        <translation>Usa XRandR:</translation>
+        <translation type="obsolete">Usa XRandR:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3494"/>
         <source>UseXVidMode:</source>
-        <translation>Usa XVidMode:</translation>
+        <translation type="obsolete">Usa XVidMode:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2394"/>
         <source>Wine Browsers</source>
-        <translation>Browser Wine</translation>
+        <translation type="obsolete">Browser Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2421"/>
         <source>Browsers:</source>
-        <translation>Browser:</translation>
+        <translation type="obsolete">Browser:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2459"/>
         <source>Mailers:</source>
-        <translation>Programma di posta:</translation>
+        <translation type="obsolete">Programma di posta:</translation>
     </message>
     <message>
         <source>Quick Mount profile </source>
@@ -5975,223 +5991,190 @@ La funzione di montaggio rapido permette di montare/smontare le immagini CD e di
         <translation type="obsolete">Seleziona il profilo attivo di montaggio rapido.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="1848"/>
         <source>sudo</source>
-        <translation>sudo</translation>
+        <translation type="obsolete">sudo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="1880"/>
         <source>gui sudo</source>
-        <translation>gui sudo</translation>
+        <translation type="obsolete">gui sudo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="1912"/>
         <source>FuseISO</source>
-        <translation>FuseISO</translation>
+        <translation type="obsolete">FuseISO</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="1941"/>
         <source>Embedded FuseISO</source>
-        <translation>FuseISO integrato</translation>
+        <translation type="obsolete">FuseISO integrato</translation>
     </message>
     <message>
         <source>Quick Mount strings</source>
         <translation type="obsolete">Stringa di montaggio rapido</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="1981"/>
         <source>Mount:</source>
-        <translation>Mount:</translation>
+        <translation type="obsolete">Mount:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2022"/>
         <source>Mount image:</source>
-        <translation>Immagine da montare:</translation>
+        <translation type="obsolete">Immagine da montare:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2063"/>
         <source>Umount:</source>
-        <translation>umount:</translation>
+        <translation type="obsolete">umount:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3130"/>
         <source>OpenGL</source>
-        <translation>OpenGL</translation>
+        <translation type="obsolete">OpenGL</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3139"/>
         <source>Disabled extensions:</source>
-        <translation>Estensioni disabilitate:</translation>
+        <translation type="obsolete">Estensioni disabilitate:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3155"/>
         <source>Direct Input</source>
-        <translation>Input diretto</translation>
+        <translation type="obsolete">Input diretto</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3182"/>
         <source>MouseWarpOverride:</source>
-        <translation>MouseWarpOverride:</translation>
+        <translation type="obsolete">MouseWarpOverride:</translation>
     </message>
     <message>
         <source>Joystic axes mapping:</source>
         <translation type="obsolete">Mappatura assi joystick:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3232"/>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3589"/>
         <source>Add</source>
-        <translation>Aggiungi</translation>
+        <translation type="obsolete">Aggiungi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3239"/>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3602"/>
         <source>Edit</source>
-        <translation>Modifica</translation>
+        <translation type="obsolete">Modifica</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3246"/>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3615"/>
         <source>Remove</source>
-        <translation>Rimuovi</translation>
+        <translation type="obsolete">Rimuovi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2815"/>
         <source>Video card settings</source>
-        <translation>Settaggi scheda video</translation>
+        <translation type="obsolete">Settaggi scheda video</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="506"/>
         <source>Default Wine paths:</source>
-        <translation type="unfinished"></translation>
+        <translation>Percorso di default di Wine:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="772"/>
         <source>System utils paths:</source>
-        <translation type="unfinished"></translation>
+        <translation>Percorso delle utility di sistema:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1276"/>
         <source>media-gfx/icoutils settings:</source>
-        <translation type="unfinished"></translation>
+        <translation>settaggi media-gfx/icoutils:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1402"/>
         <source>Console application settings:</source>
-        <translation type="unfinished"></translation>
+        <translation>Settaggi applicazione di console:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1519"/>
         <source>Network settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Settaggi di rete</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1796"/>
         <source>Select quick mount profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona il profilo di montaggio rapido</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1811"/>
         <source>Quick mount feature allows you to mountumount cd images and drivers via context menu entry.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il montaggio rapido consente di montare/smontare immagini dei cd e dischi attraverso il menu contestuale.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1821"/>
         <source>Profiles:</source>
-        <translation type="unfinished"></translation>
+        <translation>Profili:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1954"/>
         <source>Profile strings:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parametri del profilo:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2842"/>
         <source>Description:</source>
-        <translation>Descrizione:</translation>
+        <translation type="obsolete">Descrizione:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2880"/>
         <source>Memory (Mb):</source>
-        <translation>Memoria (Mb):</translation>
+        <translation type="obsolete">Memoria (Mb):</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2918"/>
         <source>Driver:</source>
-        <translation>Driver:</translation>
+        <translation type="obsolete">Driver:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2956"/>
         <source>Software emultaion:</source>
-        <translation>Emulazione software:</translation>
+        <translation type="obsolete">Emulazione software:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="2991"/>
         <source>Shaders</source>
-        <translation>Shaders</translation>
+        <translation type="obsolete">Shaders</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3018"/>
         <source>Pixel Shader Mode:</source>
-        <translation>Pixel Shader Mode:</translation>
+        <translation type="obsolete">Pixel Shader Mode:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3065"/>
         <source>Vertex Shader Mode:</source>
-        <translation>Vertex Shader Mode:</translation>
+        <translation type="obsolete">Vertex Shader Mode:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3549"/>
         <source>Wine drives</source>
-        <translation>Dischi di Wine</translation>
+        <translation type="obsolete">Dischi di Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3635"/>
         <source>Wine desktop paths:</source>
-        <translation>Percorso al desktop di Wine:</translation>
+        <translation type="obsolete">Percorso al desktop di Wine:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3650"/>
         <source>Note: leave it blank for default value.</source>
-        <translation>Nota: lascia in bianco per i valori di default.</translation>
+        <translation type="obsolete">Nota: lascia in bianco per i valori di default.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3678"/>
         <source>Desktop:</source>
-        <translation>Desktop:</translation>
+        <translation type="obsolete">Desktop:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3722"/>
         <source>My Documents:</source>
-        <translation>Documenti:</translation>
+        <translation type="obsolete">Documenti:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3766"/>
         <source>My Pictures:</source>
-        <translation>Immagini:</translation>
+        <translation type="obsolete">Immagini:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3810"/>
         <source>My Music:</source>
-        <translation>Musica:</translation>
+        <translation type="obsolete">Musica:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3854"/>
         <source>My Videos:</source>
-        <translation>Video:</translation>
+        <translation type="obsolete">Video:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3932"/>
+        <location filename="../q4wine-gui/uis/Wizard.ui" line="2128"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3955"/>
+        <location filename="../q4wine-gui/uis/Wizard.ui" line="2151"/>
         <source>&lt; Back</source>
         <translation>&lt; Indietro</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="3972"/>
+        <location filename="../q4wine-gui/uis/Wizard.ui" line="2168"/>
         <source>Cancel</source>
         <translation>Cancella</translation>
     </message>
@@ -6207,12 +6190,12 @@ La funzione di montaggio rapido permette di montare/smontare le immagini CD e di
         <translation type="obsolete">Eseguo winetricks...</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.cpp" line="163"/>
+        <location filename="../plugins/winetricks.cpp" line="183"/>
         <source>Plz wait...</source>
         <translation>Attendere...</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.cpp" line="163"/>
+        <location filename="../plugins/winetricks.cpp" line="183"/>
         <source>Downloading and installing winetricks...</source>
         <translation>Scaricamento e installazione di winetricks...</translation>
     </message>

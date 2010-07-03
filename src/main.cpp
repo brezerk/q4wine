@@ -88,23 +88,23 @@ int main(int argc, char *argv[])
     qtt.load(CoreLib->getTranslationLang(), QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME));
     app.installTranslator(&qtt);
 
+    if (!CoreLib->checkDirs()){
+        return -1;
+    }
+
+    DataBase db;
+
+    if (!db.checkDb()){
+        QErr<<"[EE] Can't init database engine."<<endl;
+        return -1;
+    }
+
     if (!CoreLib->isConfigured()){
         Wizard firstSetupWizard(1);
         if (firstSetupWizard.exec()==QDialog::Rejected){
             QErr<<"[EE] App not configured! Re run wizard, or delete q4wine broken config files."<<endl;
             return -1;
         }
-    }
-
-    if (!CoreLib->checkDirs()){
-        return -1;
-    }
-
-	DataBase db;
-
-    if (!db.checkDb()){
-        QErr<<"[EE] Can't init database engine."<<endl;
-        return -1;
     }
 
 	QTextStream Qcout(stdout);

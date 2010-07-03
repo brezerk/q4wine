@@ -48,7 +48,7 @@ class Progress : public QDialog, public Ui::Process
 {
 Q_OBJECT
 public:
-    explicit Progress(int action, QWidget * parent = 0, Qt::WFlags f = 0);
+    explicit Progress(int action, QString path, QWidget * parent = 0, Qt::WFlags f = 0);
 
 signals:
 
@@ -66,8 +66,10 @@ private:
     Icon db_icon;
     Prefix db_prefix;
 
+    QString path;
+
     int importIcons(QString folder);
-    void removeEmptyFolders(QString folder);
+    //void removeEmptyFolders(QString folder);
     void parseDesktopFile(QString file, QString dirName);
     QStringList iconDirs;
     QStringList iconFiles;

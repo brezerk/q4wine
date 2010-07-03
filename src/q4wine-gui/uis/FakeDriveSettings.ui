@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>783</width>
-    <height>460</height>
+    <width>700</width>
+    <height>440</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -285,17 +285,47 @@
           </item>
           <item>
            <property name="text">
-            <string>Direct input</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
             <string>OpenGL</string>
            </property>
           </item>
           <item>
            <property name="text">
             <string>X11 driver</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>Input</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Direct 3D</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>X11 driver</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>Audio</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Sound driver</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Alsa driver</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Misc audio</string>
            </property>
           </item>
          </item>
@@ -323,12 +353,12 @@
        <rect>
         <x>300</x>
         <y>10</y>
-        <width>451</width>
-        <height>341</height>
+        <width>442</width>
+        <height>462</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -347,13 +377,16 @@
         <item>
          <widget class="QTabWidget" name="tabwGeneral">
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="tab">
            <attribute name="title">
             <string>General</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_2">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_10">
               <property name="autoFillBackground">
@@ -455,13 +488,18 @@
                  </layout>
                 </widget>
                </item>
-               <item>
-                <widget class="QLabel" name="label_36">
-                 <property name="text">
-                  <string>Please select default fake drive version:</string>
-                 </property>
-                </widget>
-               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox">
+              <property name="title">
+               <string>Fake drive version:</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_23">
+               <property name="margin">
+                <number>3</number>
+               </property>
                <item>
                 <widget class="QWidget" name="widget_33" native="true">
                  <layout class="QHBoxLayout" name="_42">
@@ -492,6 +530,11 @@
                     <item>
                      <property name="text">
                       <string notr="true">Windows XP</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">Windows 7</string>
                      </property>
                     </item>
                     <item>
@@ -563,6 +606,28 @@
              </widget>
             </item>
             <item>
+             <widget class="QGroupBox" name="groupBox_2">
+              <property name="title">
+               <string>Misc:</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_24">
+               <property name="margin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QCheckBox" name="cbCrashDialog">
+                 <property name="text">
+                  <string>Disable graphical crash dialog.</string>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
              <spacer name="verticalSpacer">
               <property name="orientation">
                <enum>Qt::Vertical</enum>
@@ -582,6 +647,9 @@
             <string>Color theme</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_18">
               <property name="title">
@@ -648,6 +716,9 @@
             <string>Wine browsers</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_5">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_41">
               <property name="text">
@@ -779,13 +850,16 @@
         <item row="0" column="0">
          <widget class="QTabWidget" name="tabwVideo">
           <property name="currentIndex">
-           <number>4</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="tab_6">
            <attribute name="title">
             <string>Video</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_9">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_70">
               <property name="text">
@@ -943,7 +1017,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Software emultaion:</string>
+                     <string notr="true">Software emultaion:</string>
                     </property>
                    </widget>
                   </item>
@@ -1005,7 +1079,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Pixel Shader Mode:</string>
+                     <string notr="true">Pixel Shader Mode:</string>
                     </property>
                    </widget>
                   </item>
@@ -1052,7 +1126,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Vertex Shader Mode:</string>
+                     <string notr="true">Vertex Shader Mode:</string>
                     </property>
                    </widget>
                   </item>
@@ -1101,6 +1175,9 @@
             <string>Direct 3D</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_8">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_38">
               <property name="text">
@@ -1144,7 +1221,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Multisampling:</string>
+                     <string notr="true">Multisampling:</string>
                     </property>
                    </widget>
                   </item>
@@ -1191,7 +1268,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>DDraw Renderer:</string>
+                     <string notr="true">DDraw Renderer:</string>
                     </property>
                    </widget>
                   </item>
@@ -1238,7 +1315,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Lock Mode:</string>
+                     <string notr="true">Lock Mode:</string>
                     </property>
                    </widget>
                   </item>
@@ -1280,6 +1357,53 @@
                 </widget>
                </item>
                <item>
+                <widget class="QWidget" name="widget_51" native="true">
+                 <layout class="QHBoxLayout" name="_56">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_55">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string notr="true">StrictDrawOrdering:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboFakeD3D_SDOrder">
+                    <item>
+                     <property name="text">
+                      <string notr="true">default</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">disabled</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">enabled</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
                 <widget class="QWidget" name="widget_43" native="true">
                  <layout class="QHBoxLayout" name="_46">
                   <property name="margin">
@@ -1300,7 +1424,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Offscreen Mode:</string>
+                     <string notr="true">Offscreen Mode:</string>
                     </property>
                    </widget>
                   </item>
@@ -1352,7 +1476,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>Use GLSL:</string>
+                     <string notr="true">Use GLSL:</string>
                     </property>
                    </widget>
                   </item>
@@ -1378,6 +1502,48 @@
                  </layout>
                 </widget>
                </item>
+               <item>
+                <widget class="QWidget" name="widget_50" native="true">
+                 <layout class="QHBoxLayout" name="_48">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_54">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string notr="true">Nonpower2Mode:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboFakeD3D_N2M">
+                    <item>
+                     <property name="text">
+                      <string notr="true">default</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">repack</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
               </layout>
              </widget>
             </item>
@@ -1396,148 +1562,14 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_7">
-           <attribute name="title">
-            <string>Direct input</string>
-           </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout_11">
-            <item>
-             <widget class="QLabel" name="label_59">
-              <property name="text">
-               <string>Note: Leave empty for default</string>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QGroupBox" name="groupBox_19">
-              <property name="autoFillBackground">
-               <bool>false</bool>
-              </property>
-              <property name="title">
-               <string>Direct Input</string>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_15">
-               <property name="margin">
-                <number>3</number>
-               </property>
-               <item>
-                <widget class="QWidget" name="widget_55" native="true">
-                 <layout class="QHBoxLayout" name="_61">
-                  <property name="margin">
-                   <number>0</number>
-                  </property>
-                  <item>
-                   <widget class="QLabel" name="label_62">
-                    <property name="minimumSize">
-                     <size>
-                      <width>140</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>140</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>MouseWarpOverride:</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QComboBox" name="comboFakeMouseWarp">
-                    <item>
-                     <property name="text">
-                      <string notr="true">default</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string notr="true">enable</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string notr="true">disable</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string notr="true">force</string>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_61">
-                 <property name="text">
-                  <string>Joystick axes mapping:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QListWidget" name="listJoystickAxesMappings"/>
-               </item>
-               <item>
-                <widget class="QWidget" name="widget_9" native="true">
-                 <layout class="QHBoxLayout" name="horizontalLayout_2">
-                  <property name="margin">
-                   <number>0</number>
-                  </property>
-                  <item>
-                   <widget class="QPushButton" name="cmdJoystickAdd">
-                    <property name="text">
-                     <string>Add</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="cmdJoystickEdit">
-                    <property name="text">
-                     <string>Edit</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="cmdJoystickDel">
-                    <property name="text">
-                     <string>Remove</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <spacer name="verticalSpacer_7">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </widget>
           <widget class="QWidget" name="tab_5">
            <attribute name="title">
             <string>OpenGL</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_10">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_17">
               <property name="autoFillBackground">
@@ -1583,6 +1615,9 @@
             <string>X11 driver</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_16">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QLabel" name="label_39">
               <property name="text">
@@ -1626,7 +1661,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>WithRender:</string>
+                     <string notr="true">WithRender:</string>
                     </property>
                    </widget>
                   </item>
@@ -1673,7 +1708,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>AA WithRender:</string>
+                     <string notr="true">AA WithRender:</string>
                     </property>
                    </widget>
                   </item>
@@ -1720,7 +1755,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>AA WithCore:</string>
+                     <string notr="true">AA WithCore:</string>
                     </property>
                    </widget>
                   </item>
@@ -1767,7 +1802,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>UseXRandR:</string>
+                     <string notr="true">UseXRandR:</string>
                     </property>
                    </widget>
                   </item>
@@ -1814,7 +1849,7 @@
                      </size>
                     </property>
                     <property name="text">
-                     <string>UseXVidMode:</string>
+                     <string notr="true">UseXVidMode:</string>
                     </property>
                    </widget>
                   </item>
@@ -1862,6 +1897,527 @@
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="pageAudio">
+       <layout class="QVBoxLayout" name="verticalLayout_36">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QTabWidget" name="tabwAudio">
+          <property name="currentIndex">
+           <number>2</number>
+          </property>
+          <widget class="QWidget" name="tab_11">
+           <attribute name="title">
+            <string>Sound driver</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_25">
+            <property name="margin">
+             <number>3</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_71">
+              <property name="text">
+               <string>Note: Q4Wine do not check is selected driver avalible for current wine build or not. Use this option with care.</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_25">
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="title">
+               <string>Current sound driver</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_27">
+               <property name="margin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QWidget" name="widget_76" native="true">
+                 <layout class="QHBoxLayout" name="_83">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_88">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Driver:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboFakeSound_Driver">
+                    <item>
+                     <property name="text">
+                      <string notr="true">default</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">alsa</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">audioio</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">coreaudio</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">esd</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">jack</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">nas</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">oss</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">disabled</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_12">
+           <attribute name="title">
+            <string>Alsa driver</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_28">
+            <property name="margin">
+             <number>3</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_56">
+              <property name="text">
+               <string>Note: Leave empty for default</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_15">
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="title">
+               <string>Alsa driver settings</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_29">
+               <property name="margin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QWidget" name="widget_52" native="true">
+                 <layout class="QHBoxLayout" name="_57">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_57">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string notr="true">AutoScanCards:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboFakeAlsa_asCards">
+                    <item>
+                     <property name="text">
+                      <string notr="true">default</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">Y</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">N</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_53" native="true">
+                 <layout class="QHBoxLayout" name="_58">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_58">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string notr="true">AutoScanDevices:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboFakeAlsa_asDevices">
+                    <item>
+                     <property name="text">
+                      <string notr="true">default</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">Y</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">N</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_59" native="true">
+                 <layout class="QHBoxLayout" name="_59">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_66">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string notr="true">DeviceCount:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="sboxFakeAlsa_devCount">
+                    <property name="minimum">
+                     <number>0</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_60" native="true">
+                 <layout class="QHBoxLayout" name="_62">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_68">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string notr="true">DeviceCTLn:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="txtFakeAlsa_CTLn"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_61" native="true">
+                 <layout class="QHBoxLayout" name="_67">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_69">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string notr="true">DevicePCMn:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="txtFakeAlsa_PCMn"/>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_62" native="true">
+                 <layout class="QHBoxLayout" name="_68">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_72">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string notr="true">UseDirectHW:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboFakeAlsa_DirectHW">
+                    <item>
+                     <property name="text">
+                      <string notr="true">default</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">Y</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">N</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>71</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_13">
+           <attribute name="title">
+            <string>Misc</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_30">
+            <property name="margin">
+             <number>3</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_74">
+              <property name="text">
+               <string>Note: Leave empty for default</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_3">
+              <property name="title">
+               <string>Misc options:</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_26">
+               <property name="margin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label">
+                 <property name="text">
+                  <string>DirectSound workaround for bug #9612</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_63" native="true">
+                 <layout class="QHBoxLayout" name="_69">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_73">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string notr="true">MaxShadowSize:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="sboxFakeSound_shadow">
+                    <property name="minimum">
+                     <number>-1</number>
+                    </property>
+                    <property name="maximum">
+                     <number>255</number>
+                    </property>
+                    <property name="value">
+                     <number>-1</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_10">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>305</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="pageFileSystem">
        <layout class="QGridLayout" name="gridLayout_2">
         <property name="leftMargin">
@@ -1877,6 +2433,9 @@
             <string>Wine drives</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_20">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_23">
               <property name="autoFillBackground">
@@ -1966,6 +2525,9 @@
             <string>Desktop paths</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_22">
+            <property name="margin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_20">
               <property name="title">
@@ -1975,22 +2537,6 @@
                <property name="margin">
                 <number>3</number>
                </property>
-               <item>
-                <widget class="QLabel" name="lblInfoPrefix1_2">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>Note: leave it blank for default value.</string>
-                 </property>
-                 <property name="wordWrap">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
                <item>
                 <widget class="QWidget" name="widget_36" native="true">
                  <layout class="QHBoxLayout" name="_60">
@@ -2223,6 +2769,313 @@
                <size>
                 <width>420</width>
                 <height>81</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageInput">
+       <layout class="QVBoxLayout" name="verticalLayout_43">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>6</number>
+        </property>
+        <property name="bottomMargin">
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QTabWidget" name="tabwInput">
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="tab_16">
+           <attribute name="title">
+            <string>Direct 3D</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_37">
+            <property name="margin">
+             <number>3</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_97">
+              <property name="text">
+               <string>Note: Leave empty for default</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_4">
+              <property name="title">
+               <string>Mouse</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_31">
+               <property name="margin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QWidget" name="widget_84" native="true">
+                 <layout class="QHBoxLayout" name="_90">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_98">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string notr="true">MouseWarpOverride:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboFakeMouseWarp">
+                    <item>
+                     <property name="text">
+                      <string notr="true">default</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">enable</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">disable</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">force</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_85" native="true">
+                 <layout class="QHBoxLayout" name="_91">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_99">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string notr="true">WheelScrollLines:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="sboxFakeInput_scroll">
+                    <property name="minimum">
+                     <number>-1</number>
+                    </property>
+                    <property name="maximum">
+                     <number>255</number>
+                    </property>
+                    <property name="value">
+                     <number>-1</number>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_27">
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="title">
+               <string>Joystick axes mapping:</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_38">
+               <property name="margin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QListWidget" name="listJoystickAxesMappings"/>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_11" native="true">
+                 <layout class="QHBoxLayout" name="horizontalLayout_3">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QPushButton" name="cmdJoystickAdd">
+                    <property name="text">
+                     <string>Add</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="cmdJoystickEdit">
+                    <property name="text">
+                     <string>Edit</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="cmdJoystickDel">
+                    <property name="text">
+                     <string>Remove</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_13">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_7">
+           <attribute name="title">
+            <string>X11 driver</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <property name="margin">
+             <number>3</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_103">
+              <property name="text">
+               <string>Note: Leave empty for default</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_5">
+              <property name="title">
+               <string>Clipboard</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_32">
+               <property name="margin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QWidget" name="widget_86" native="true">
+                 <layout class="QHBoxLayout" name="_93">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_101">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="accessibleName">
+                     <string notr="true"/>
+                    </property>
+                    <property name="accessibleDescription">
+                     <string notr="true"/>
+                    </property>
+                    <property name="text">
+                     <string notr="true">UsePrimarySelection:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="comboFakeInput_selection">
+                    <item>
+                     <property name="text">
+                      <string notr="true">default</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">Y</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">N</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>324</height>
                </size>
               </property>
              </spacer>

@@ -436,7 +436,7 @@ bool corelib::isConfigured(){
 
 bool corelib::checkDirs(){
     QStringList subDirs;
-    subDirs << "db" << "icons" << "prefixes" << "tmp" << "theme" << "tmp/cache";
+    subDirs << "" << "db" << "icons" << "prefixes" << "tmp" << "theme" << "tmp/cache";
 
     QTextStream QErr(stderr);
     QDir dir;
@@ -649,18 +649,19 @@ QStringList corelib::getCdromDevices(void) const{
                             return QString("cant read %1").arg(filename);
                         }
                     } else if (image.contains("loop")){
-                        arguments << "losetup" << image;
-                        QProcess myProcess;
-                        myProcess.start(this->getSetting("system", "sudo").toString(), arguments);
-                        if (!myProcess.waitForFinished()){
-                            qDebug() << "Make failed:" << myProcess.errorString();
-                            return QString("can't run %1").arg(arguments.at(0));
-                        } else {
-                            image = myProcess.readAll();
-                            qDebug()<<"www"<<arguments;
-                            return image.split("/").last().mid(0, image.split("/").last().length()-2);
+                        if (!this->getSetting("system", "sudo").toString().isEmpty()){
+                            arguments << "losetup" << image;
+                            QProcess myProcess;
+                            myProcess.start(this->getSetting("system", "sudo").toString(), arguments);
+                            if (!myProcess.waitForFinished()){
+                                qDebug() << "Make failed:" << myProcess.errorString();
+                                return QString("can't run %1").arg(arguments.at(0));
+                            } else {
+                                image = myProcess.readAll();
+                                qDebug()<<"[ii] loop: "<<arguments;
+                                return image.split("/").last().mid(0, image.split("/").last().length()-2);
+                            }
                         }
-
                     } else {
                         return image;
                     }
@@ -1449,4 +1450,57 @@ QStringList corelib::getCdromDevices(void) const{
             }
 
             return run_string;
+        }
+
+        void corelib::createPrefixDBStructure(QString prefixName){
+#ifdef DEBUG
+            qDebug()<<"[ii] Wizard::creating icons";
+#endif
+
+
+            //Is settings directory exists?
+            if (!db_dir.isExistsByName(prefixName, "system")){
+                db_dir.addDir(prefixName, "system");
+                //Adding icons
+                db_icon.addIcon("", "winecfg.exe", "winecfg", "Configure the general settings for Wine", prefixName, "system", "winecfg");
+                db_icon.addIcon("--backend=user cmd", "wineconsole", "wineconsole", "Wineconsole is similar to wine command wcmd", prefixName, "system", "console");
+                db_icon.addIcon("", "uninstaller.exe", "uninstaller", "Uninstall Windows programs under Wine properly", prefixName, "system", "uninstaller");
+                db_icon.addIcon("", "regedit.exe", "regedit", "Wine registry editor", prefixName, "system", "regedit");
+                db_icon.addIcon("", "explorer.exe", "explorer", "Browse the files in the virtual Wine drive", prefixName, "system", "explorer");
+                db_icon.addIcon("", "eject.exe", "eject", "Wine CD eject tool", prefixName, "system", "eject");
+                db_icon.addIcon("", "wordpad.exe", "wordpad", "Wine wordpad text editor", prefixName, "system", "wordpad");
+            }
+
+            if (!db_dir.isExistsByName(prefixName, "autostart"))
+                db_dir.addDir(prefixName, "autostart");
+
+            if (!db_dir.isExistsByName(prefixName, "import"))
+                db_dir.addDir(prefixName, "import");
+
+#ifdef DEBUG
+            qDebug()<<"[ii] Wizard::done";
+#endif
+        }
+
+        QString corelib::decodeRegString(QString string){
+            QTextCodec *codec = QTextCodec::codecForName("UTF-16BE");
+            QString ret;
+            QStringList parts = string.split("\\");
+            if (parts.count()>1){
+                for (int j=0; j<parts.count(); j++){
+                    if (parts.at(j).left(1)=="x"){
+                        QString test = QString("0%1").arg(parts.at(j).left(4));
+                        QByteArray temp = QByteArray::fromHex(test.toAscii().data());
+                        ret.append(codec->toUnicode(temp));
+                    }
+
+                    if (parts.at(j).length()>4)
+                        ret.append(parts.at(j).right(parts.at(j).length()-4));
+
+                }
+            } else {
+                ret.append(string);
+            }
+
+            return ret;
         }

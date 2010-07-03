@@ -142,16 +142,16 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 		txtUmountBin->setText(CoreLib->getWhichOut("umount"));
 		txtSudoBin->setText(CoreLib->getWhichOut("sudo"));
 
-		txtGuiSudoBin->setText(CoreLib->getWhichOut("kdesu", FALSE));
-		if (txtGuiSudoBin->text().isEmpty()){
-			txtGuiSudoBin->setText(CoreLib->getWhichOut("gksudo", FALSE));
-			if (txtGuiSudoBin->text().isEmpty()){
-				txtGuiSudoBin->setText(CoreLib->getWhichOut("gksu", FALSE));
-				if (txtGuiSudoBin->text().isEmpty()){
-					txtGuiSudoBin->setText(CoreLib->getWhichOut("sudo", FALSE));
-				}
-			}
-		}
+        QStringList guisudo;
+        guisudo << "kdesudo" << "kdesu" << "gksudo" << "gksu" << "sudo";
+
+        foreach (QString bin, guisudo){
+            QString path = CoreLib->getWhichOut(bin, FALSE);
+            if (!path.isEmpty()){
+                txtGuiSudoBin->setText(path);
+                break;
+            }
+        }
 
 		txtNiceBin->setText(CoreLib->getWhichOut("nice"));
 		txtReniceBin->setText(CoreLib->getWhichOut("renice"));
@@ -281,12 +281,6 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 				wrkDir = file.left(file.length() - list1.last().length());
 				txtWineServerBin->setText(QString("%1wineserver").arg(wrkDir));
 				txtWineLoaderBin->setText(QString("%1wine").arg(wrkDir));
-			}
-			if (obj==cmdGetWineDesktop){
-				txtWineDesktopDoc->setText(file);
-				txtWineDesktopPic->setText(file);
-				txtWineDesktopMus->setText(file);
-				txtWineDesktopVid->setText(file);
 			}
 		}
 	}
@@ -425,10 +419,7 @@ void Wizard::nextWizardPage(){
 					settings.setValue("type", 2);
 				}
 			}
-
 			settings.endGroup();
-
-
 
 			settings.beginGroup("quickmount");
 			if (radioDefault->isChecked()){
@@ -464,7 +455,6 @@ void Wizard::nextWizardPage(){
 
 			if (radioFuse->isChecked()){
 				settings.setValue("type", 2);
-				QString format;
 				if (txtMountString->text().isEmpty()){
 					txtMountString->setText(CoreLib->getMountString(2));
 				}
@@ -478,7 +468,6 @@ void Wizard::nextWizardPage(){
 				}
 			}
 			if (radioEmbedded->isChecked()){
-				QString format;
 				settings.setValue("type", 3);
 				if (txtMountString->text().isEmpty()){
 					txtMountString->setText(CoreLib->getMountString(3));
@@ -500,6 +489,8 @@ void Wizard::nextWizardPage(){
 			settings.endGroup();
 
             CoreLib->openHelpUrl("05-first-steps.html");
+
+            CoreLib->createPrefixDBStructure("Default");
 
 			accept();
 			break;

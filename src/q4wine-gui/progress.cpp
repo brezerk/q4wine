@@ -19,7 +19,7 @@
 
 #include "progress.h"
 
-Progress::Progress(int action, QWidget * parent, Qt::WFlags f)
+Progress::Progress(int action, QString path, QWidget * parent, Qt::WFlags f)
 {
     setupUi(this);
 
@@ -37,19 +37,18 @@ Progress::Progress(int action, QWidget * parent, Qt::WFlags f)
     this->max=0;
     this->current=0;
     this->action=action;
+    this->path=path;
 
     if (action==0){
-        QString path = QString("%1/.local/share/applications/wine/").arg(QDir::homePath());
-
         lblInfo->setText(tr("Importing wine desktop icons from:<br>\"%1\"<br><br>This can take a while...<br><br><b>Note:</b> To remove processed files see q4wine options dialog.").arg(path));
         setWindowTitle(tr("Importing wine desktop icons: %1 of %2 ").arg(0).arg(max));
 
-        this->max =  importIcons(path) - 1;
+        this->max = importIcons(path);
 
-        if (this->max==0){
+/*        if (this->max==0){
             this->accept();
             return;
-        }
+        }*/
     }
 
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
@@ -65,7 +64,10 @@ Progress::Progress(int action, QWidget * parent, Qt::WFlags f)
 void Progress::cmdCancel_Click(){
     t->stop();
     if (action==0){
-        removeEmptyFolders(QString("%1/.local/share/applications/wine/").arg(QDir::homePath()));
+        /* becouse, of desktop folder can contains user subdirs, DO NOT REMOVE this folders
+        if (CoreLib->getSetting("DesktopImport", "remove", false, 0)==1)
+            removeEmptyFolders(this->path);
+        */
     }
     this->accept();
     return;
@@ -73,9 +75,15 @@ void Progress::cmdCancel_Click(){
 
 void Progress::runAction(){
     if (action==0){
-        if (current>max){
+
+        qDebug()<<current<<max;
+
+        if ((current>=max) or (max==0)){
             t->stop();
-            removeEmptyFolders(QString("%1/.local/share/applications/wine/").arg(QDir::homePath()));
+            /* becouse, of desktop folder can contains user subdirs, DO NOT REMOVE this folders
+            if (CoreLib->getSetting("DesktopImport", "remove", false, 0)==1)
+                removeEmptyFolders(this->path);
+            */
             this->accept();
             return;
         }
@@ -118,6 +126,7 @@ int Progress::importIcons(QString folder){
     return files;
 }
 
+/*
 void Progress::removeEmptyFolders(QString folder){
 #ifdef DEBUG
     qDebug()<<"[ii] enter folder: "<<folder;
@@ -136,15 +145,15 @@ void Progress::removeEmptyFolders(QString folder){
         }
     }
 
-    if (CoreLib->getSetting("DesktopImport", "remove", false, 0)==1){
+
 #ifdef DEBUG
         qDebug()<<"[ii] Dir removed: "<<dir.rmdir(dir.path());
 #else
         dir.rmdir(dir.path());
 #endif
-    }
     return;
 }
+*/
 
 void Progress::parseDesktopFile(QString filePath, QString dirName){
 
@@ -173,12 +182,15 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
             icon=line.right(line.length()-5);
         } else if (line.contains(QRegExp("^Exec=*"))){
             //Parse exec string
-            QRegExp rxlen("env WINEPREFIX=\"(.+)\" wine \"(.+)\"( .*)");
+            QRegExp rxlen("env WINEPREFIX=\"(.+)\" wine (.*)");
             if (rxlen.indexIn(line) != -1){
                 QStringList cap = rxlen.capturedTexts();
+#ifdef DEBUG
+                qDebug()<<"[ii] Captured Texts :"<<cap;
+#endif
                 if (cap.count()>=3){
-                    prefix_path = cap.at(1);
-                    exec = cap.at(2);
+                    prefix_path = cap.at(1).trimmed();
+                    exec = cap.at(2).trimmed().replace("\\\\ ", " ").replace("\\\\\\\\", "\\");
                     if (cap.count()>=4){
                         args = cap.at(3).trimmed();
                     }
@@ -220,15 +232,21 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
         qDebug()<<" [ii] adding icon...";
 #endif
         QString res = CoreLib->getSetting("advanced", "defaultDesktopSize", false, "").toString();
-        db_icon.addIcon(args, exec, icon, "", prefix_name, "import", name, "", "", "", "", path, res);
+        if (db_icon.addIcon(args, exec, icon, "", prefix_name, "import", name, "", "", "", "", path, res)){
+#ifdef DEBUG
+            qDebug()<<" [ii] adding icon OK.";
+#endif
+            if (CoreLib->getSetting("DesktopImport", "remove", false, 0)==1){
+#ifdef DEBUG
+                qDebug()<<"[ii] removed: "<<file.remove();
+#else
+                file.remove();
+#endif
+            }
+
+        }
     }
 
-    if (CoreLib->getSetting("DesktopImport", "remove", false, 0)==1){
-#ifdef DEBUG
-        qDebug()<<"[ii] removed: "<<file.remove();
-#else
-        file.remove();
-#endif
-    }
+
     return;
 }

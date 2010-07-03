@@ -74,6 +74,7 @@
 #endif
 
 #include "src/core/database/prefix.h"
+#include "src/core/database/dir.h"
 #include "src/core/database/icon.h"
 #include "src/core/database/image.h"
 
@@ -270,6 +271,9 @@ public:
 	void runAutostart(void);
 
     QString createWineString(QString prefixName, QString dirName, QString iconName);
+    void createPrefixDBStructure(QString prefixName);
+
+    QString decodeRegString(QString string);
 
 private:
 	/*! Define is library operate in CLI or GUI mode.
@@ -296,6 +300,7 @@ private:
 	Prefix db_prefix;
 	Image db_image;
 	Icon db_icon;
+    Dir db_dir;
 
 }; // end of class corelib
 

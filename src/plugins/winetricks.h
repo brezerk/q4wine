@@ -30,6 +30,8 @@
 #include <QProcess>
 #include <QMessageBox>
 #include <QLibrary>
+#include <QKeyEvent>
+#include <QEvent>
 #include "process.h"
 
 #include "prefix.h"
@@ -44,10 +46,10 @@ public:
 	QString _prefixName;
 
 protected:
-	//virtual void changeEvent(QEvent *e);
+    bool eventFilter(QObject *obj, QEvent *event);
 
 private slots:
-	void on_lstMain_itemClicked(QListWidgetItem* item);
+    void lstMain_itemClicked(QListWidgetItem* item);
 	void run_winetricks();
 	void install_winetricks();
 
@@ -73,6 +75,7 @@ private:
 
 	QStringList names;
 	QStringList descs;
+
 };
 
 #endif // WINETRICKS_H
