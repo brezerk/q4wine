@@ -33,20 +33,20 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
 	  CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
 	  setAcceptDrops(true);
-      setResizeMode(QListView::Adjust);
-      setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+	  setResizeMode(QListView::Adjust);
+	  setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
 	  setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
-      setMovement(QListView::Static);
-      setDragDropMode(QAbstractItemView::NoDragDrop);
-      setSelectionMode(QAbstractItemView::ContiguousSelection);
+	  setMovement(QListView::Static);
+	  setDragDropMode(QAbstractItemView::NoDragDrop);
+	  setSelectionMode(QAbstractItemView::ContiguousSelection);
 
-      this->setDragEnabled(false);
+	  this->setDragEnabled(false);
 
-      if (CoreLib->getSetting("IconWidget", "ViewMode", false, "IconMode").toString()=="ListMode"){
-          setDisplayType(false);
-      } else {
-          setDisplayType(true);
-      }
+	  if (CoreLib->getSetting("IconWidget", "ViewMode", false, "IconMode").toString()=="ListMode"){
+		  setDisplayType(false);
+	  } else {
+		  setDisplayType(true);
+	  }
 
 	  connect(this, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(itemClicked (QListWidgetItem *)));
 	  connect(this, SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(itemDoubleClicked (QListWidgetItem *)));
@@ -59,15 +59,15 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
 }
 
 IconListWidget::~IconListWidget(){
-    QSettings settings(APP_SHORT_NAME, "default");
-    settings.beginGroup("IconWidget");
-    if (viewMode()==QListView::IconMode){
-        settings.setValue("ViewMode", "IconMode");
-    } else {
-        settings.setValue("ViewMode", "ListMode");
-    }
-    settings.setValue("IconSize",  iconSize().height());
-    settings.endGroup();
+	QSettings settings(APP_SHORT_NAME, "default");
+	settings.beginGroup("IconWidget");
+	if (viewMode()==QListView::IconMode){
+		settings.setValue("ViewMode", "IconMode");
+	} else {
+		settings.setValue("ViewMode", "ListMode");
+	}
+	settings.setValue("IconSize",  iconSize().height());
+	settings.endGroup();
 }
 
 void IconListWidget::showFolderContents(QString prefixName, QString dirName){
@@ -83,35 +83,35 @@ void IconListWidget::showContents(QString filterString){
 	  this->clear();
 	  emit(iconItemClick("","","","",""));
 
-      QStringList iconsList=db_icon.getIconsList(this->prefixName, this->dirName, filterString);
+	  QStringList iconsList=db_icon.getIconsList(this->prefixName, this->dirName, filterString);
 
 	  for (int i = 0; i < iconsList.size(); ++i) {
 			std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(this, 0));
-            iconItem->setText(iconsList.at(i));
-            iconItem->setToolTip(iconsList.at(i));
+			iconItem->setText(iconsList.at(i));
+			iconItem->setToolTip(iconsList.at(i));
 
 
 			//Seting icon. If no icon or icon file not exists -- setting default
-            QString icon_path = db_icon.getPixmapIcon(this->prefixName, this->dirName, iconsList.at(i));
-            if (icon_path.isEmpty()){
+			QString icon_path = db_icon.getPixmapIcon(this->prefixName, this->dirName, iconsList.at(i));
+			if (icon_path.isEmpty()){
 				  iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
 			} else {
-                  if (QFile::exists (icon_path)){
-                        iconItem->setIcon(QIcon(icon_path));
+				  if (QFile::exists (icon_path)){
+						iconItem->setIcon(QIcon(icon_path));
 				  } else {
-                        if (iconsList.at(i)=="console"){
+						if (iconsList.at(i)=="console"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/wineconsole.png"));
-                        } else if (iconsList.at(i)=="regedit"){
+						} else if (iconsList.at(i)=="regedit"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/regedit.png"));
-                        } else if (iconsList.at(i)=="wordpad"){
+						} else if (iconsList.at(i)=="wordpad"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/notepad.png"));
-                        } else if (iconsList.at(i)=="winecfg"){
+						} else if (iconsList.at(i)=="winecfg"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/winecfg.png"));
-                        } else if (iconsList.at(i)=="uninstaller"){
+						} else if (iconsList.at(i)=="uninstaller"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/uninstaller.png"));
-                        } else if (iconsList.at(i)=="eject"){
+						} else if (iconsList.at(i)=="eject"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/eject.png"));
-                        } else if (iconsList.at(i)=="explorer"){
+						} else if (iconsList.at(i)=="explorer"){
 							  iconItem->setIcon(CoreLib->loadIcon("data/explorer.png"));
 						} else {
 							  iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
@@ -121,8 +121,8 @@ void IconListWidget::showContents(QString filterString){
 			iconItem.release();
 	  }
 
-      this->prefixMediaDrive = db_prefix.getMountDrive(this->prefixName);
-      this->prefixMontPoint = db_prefix.getMountPoint(this->prefixName);
+	  this->prefixMediaDrive = db_prefix.getMountDrive(this->prefixName);
+	  this->prefixMontPoint = db_prefix.getMountPoint(this->prefixName);
 
 	  return;
 }
@@ -134,57 +134,57 @@ void IconListWidget::setFilterString(QString filterString){
 }
 
 void IconListWidget::changeView(int action){
-    if (action==0){
-        setDisplayType(false);
-    } else if (action==1){
-        setDisplayType(true);
-    } else if (action==2){
-        if (iconSize().height()<64){
-            int nSize = iconSize().height()+8;
-            setIconSize(QSize(nSize, nSize));
-            if (viewMode()==QListView::IconMode){
-                setGridSize(QSize(nSize+54, nSize+54));
-            } else {
-                setGridSize(QSize(nSize, nSize));
-            }
-        }
-    } else if (action==3){
-        if (iconSize().height()>16){
-            int nSize = iconSize().height()-8;
-            setIconSize(QSize(nSize, nSize));
-            if (viewMode()==QListView::IconMode){
-                setGridSize(QSize(nSize+54, nSize+54));
-            } else {
-                setGridSize(QSize(nSize, nSize));
-            }
-        }
-    }
+	if (action==0){
+		setDisplayType(false);
+	} else if (action==1){
+		setDisplayType(true);
+	} else if (action==2){
+		if (iconSize().height()<64){
+			int nSize = iconSize().height()+8;
+			setIconSize(QSize(nSize, nSize));
+			if (viewMode()==QListView::IconMode){
+				setGridSize(QSize(nSize+54, nSize+54));
+			} else {
+				setGridSize(QSize(nSize, nSize));
+			}
+		}
+	} else if (action==3){
+		if (iconSize().height()>16){
+			int nSize = iconSize().height()-8;
+			setIconSize(QSize(nSize, nSize));
+			if (viewMode()==QListView::IconMode){
+				setGridSize(QSize(nSize+54, nSize+54));
+			} else {
+				setGridSize(QSize(nSize, nSize));
+			}
+		}
+	}
 
-    return;
+	return;
 }
 
 void IconListWidget::setDisplayType(bool icon){
 
-    int nSize = CoreLib->getSetting("IconWidget", "IconSize", false, 32).toInt();
+	int nSize = CoreLib->getSetting("IconWidget", "IconSize", false, 32).toInt();
 
-    if (icon){
-        setViewMode(QListView::IconMode);
-        setGridSize(QSize(nSize+54, nSize+54));
-        setIconSize(QSize(nSize, nSize));
-        setWrapping(true);
-        setWordWrap(true);
-    } else {
-        setViewMode(QListView::ListMode);
-        setGridSize(QSize(nSize, nSize));
-        setIconSize(QSize(nSize, nSize));
-        setWrapping(false);
-        setWordWrap(false);
-    }
-    return;
+	if (icon){
+		setViewMode(QListView::IconMode);
+		setGridSize(QSize(nSize+54, nSize+54));
+		setIconSize(QSize(nSize, nSize));
+		setWrapping(true);
+		setWordWrap(true);
+	} else {
+		setViewMode(QListView::ListMode);
+		setGridSize(QSize(nSize, nSize));
+		setIconSize(QSize(nSize, nSize));
+		setWrapping(false);
+		setWordWrap(false);
+	}
+	return;
 }
 
 void IconListWidget::startDrag(){
-    if (this->prefixName.isEmpty())
+	if (this->prefixName.isEmpty())
 			return;
 
 	  QList<QListWidgetItem *> items = this->selectedItems ();
@@ -213,7 +213,7 @@ void IconListWidget::startDrop(QList<QUrl> files){
 			return;
 
 	  for (int i=0; i < files.count(); i++){
-            if (files.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive)){
+			if (files.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive)){
 				  QString file="", fileName="";
 				  QStringList list1;
 				  file = files.at(i).toLocalFile();
@@ -238,16 +238,16 @@ void IconListWidget::startDrop(QList<QUrl> files){
 				  } else {
 						db_icon.addIcon("", file, "", "", this->prefixName, this->dirName, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
 				  }
-            } else if (files.at(i).toLocalFile().contains(".iso", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".mdf", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".nrg", Qt::CaseInsensitive)){
+			} else if (files.at(i).toLocalFile().contains(".iso", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".mdf", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".nrg", Qt::CaseInsensitive)){
 
-                if (CoreLib->mountImage(files.at(i).toLocalFile(), this->prefixName)){
-                    emit(changeStatusText(tr("%1 successfully mounted.").arg(files.at(i).toLocalFile())));
-                } else {
-                    emit(changeStatusText(tr("Failed to mount %1.").arg(files.at(i).toLocalFile())));
-                }
+				if (CoreLib->mountImage(files.at(i).toLocalFile(), this->prefixName)){
+					emit(changeStatusText(tr("%1 successfully mounted.").arg(files.at(i).toLocalFile())));
+				} else {
+					emit(changeStatusText(tr("Failed to mount %1.").arg(files.at(i).toLocalFile())));
+				}
 
-                CoreLib->updateRecentImagesList(files.at(i).toLocalFile());
-            }
+				CoreLib->updateRecentImagesList(files.at(i).toLocalFile());
+			}
 	  }
 	  this->showContents("");
 }
@@ -256,13 +256,13 @@ void IconListWidget::itemClicked (QListWidgetItem *item){
 	  if (!item)
 			return;
 
-      QHash<QString, QString> result=db_icon.getByName(this->prefixName, this->dirName, item->text());
-      emit(iconItemClick(result.value("exec").split('/').last().split('\\').last(), result.value("cmdargs"), result.value("desc"), result.value("useconsole"), result.value("desktop")));
+	  QHash<QString, QString> result=db_icon.getByName(this->prefixName, this->dirName, item->text());
+	  emit(iconItemClick(result.value("exec").split('/').last().split('\\').last(), result.value("cmdargs"), result.value("desc"), result.value("useconsole"), result.value("desktop")));
 
-      if (CoreLib->getSetting("advanced", "useSingleClick", false, 0).toInt()==1)
-          itemDoubleClicked (item);
+	  if (CoreLib->getSetting("advanced", "useSingleClick", false, 0).toInt()==1)
+		  itemDoubleClicked (item);
 
-      return;
+	  return;
 }
 
 void IconListWidget::itemDoubleClicked (QListWidgetItem *item){
@@ -271,9 +271,9 @@ void IconListWidget::itemDoubleClicked (QListWidgetItem *item){
 
 	  emit(changeStatusText(tr("Preparing to run the Wine binary...")));
 	  if (CoreLib->runIcon(this->prefixName, this->dirName, item->text())){
-            emit(changeStatusText(tr("Trying to run \"%1\"...").arg(item->text())));
+			emit(changeStatusText(tr("Trying to run \"%1\"...").arg(item->text())));
 	  } else {
-            emit(changeStatusText(tr("\"%1\" failed to start.").arg(item->text())));
+			emit(changeStatusText(tr("\"%1\" failed to start.").arg(item->text())));
 	  }
 	  return;
 }
@@ -299,9 +299,9 @@ void IconListWidget::mousePressEvent(QMouseEvent *event){
 				  }
 			}
 			item.release();
-            return;
-      }
-      QListWidget::mousePressEvent(event);
+			return;
+	  }
+	  QListWidget::mousePressEvent(event);
 }
 
 void IconListWidget::mouseMoveEvent(QMouseEvent *event){
@@ -317,7 +317,7 @@ void IconListWidget::mouseMoveEvent(QMouseEvent *event){
 			}
 	  }
 
-      QListWidget::mouseMoveEvent(event);
+	  QListWidget::mouseMoveEvent(event);
 }
 
 void IconListWidget::dragEnterEvent(QDragEnterEvent *event){
@@ -326,7 +326,7 @@ void IconListWidget::dragEnterEvent(QDragEnterEvent *event){
 			QList<QUrl> list = event->mimeData()->urls();
 			for (int i=0; i < list.count(); i++){
 				  //Accept only .exe, .bat or .com files
-                  if (list.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".iso", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".mdf", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".nrg", Qt::CaseInsensitive)){
+				  if (list.at(i).toLocalFile().contains(".exe", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".bat", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".com", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".iso", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".mdf", Qt::CaseInsensitive) || list.at(i).toLocalFile().contains(".nrg", Qt::CaseInsensitive)){
 						event->acceptProposedAction();
 						break;
 				  }
@@ -378,8 +378,8 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 	  std::auto_ptr<QMenu> menuMount (new QMenu(tr("Mount ISO..."), this));
 
 	  if (this->prefixMontPoint.isEmpty()){
-            menuMount->setEnabled(false);
-            emit(changeStatusText(tr("No mount point set in prefix configuration.")));
+			menuMount->setEnabled(false);
+			emit(changeStatusText(tr("No mount point set in prefix configuration.")));
 	  } else {
 			std::auto_ptr<QMenu> submenuMount (new QMenu(tr("Mount [%1]").arg(CoreLib->getMountedImages(this->prefixMontPoint)), this));
 			std::auto_ptr<QAction> entry;
@@ -484,17 +484,17 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
 			std::auto_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/fileopen.png"), tr("Open application directory"), this));
+			entry.reset(new QAction(CoreLib->loadIcon("data/fileopen.png"), tr("Open application directory"), this));
 			entry->setStatusTip(tr("Open application directory in system file browser"));
 			connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenIconDir_Click()));
 			subMenu->addAction(entry.release());
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Open prefix directory"), this));
+			entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Open prefix directory"), this));
 			entry->setStatusTip(tr("Open prefix directory in system file browser"));
 			connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenPrefixDir_Click()));
 			subMenu->addAction(entry.release());
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/cdrom_menu.png"), tr("Open mount point directory"), this));
+			entry.reset(new QAction(CoreLib->loadIcon("data/cdrom_menu.png"), tr("Open mount point directory"), this));
 			entry->setStatusTip(tr("Open mount point directory in system file browser"));
 			if (this->prefixMontPoint.isEmpty())
 				  entry->setEnabled(false);
@@ -506,17 +506,17 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
 			subMenu.reset(new QMenu(tr("Wine Browser"), this));
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/fileopen.png"), tr("Open application directory"), this));
+			entry.reset(new QAction(CoreLib->loadIcon("data/fileopen.png"), tr("Open application directory"), this));
 			entry->setStatusTip(tr("Open application directory in wine file browser"));
 			connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenIconDir_Click()));
 			subMenu->addAction(entry.release());
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Open prefix directory"), this));
-            entry->setStatusTip(tr("Open prefix directory in wine file browser"));
+			entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Open prefix directory"), this));
+			entry->setStatusTip(tr("Open prefix directory in wine file browser"));
 			connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenPrefixDir_Click()));
 			subMenu->addAction(entry.release());
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/cdrom_menu.png"), tr("Open mount point directory"), this));
+			entry.reset(new QAction(CoreLib->loadIcon("data/cdrom_menu.png"), tr("Open mount point directory"), this));
 			entry->setStatusTip(tr("Open mount point directory in wine file browser"));
 			if (this->prefixMontPoint.isEmpty())
 				  entry->setEnabled(false);
@@ -535,35 +535,35 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 #endif
 			menu->addAction(entry.release());
 
-            menu->addSeparator();
-            // -- Clipboad functions --
+			menu->addSeparator();
+			// -- Clipboad functions --
 
-            subMenu.reset(new QMenu(tr("Copy to clipboard"), this));
+			subMenu.reset(new QMenu(tr("Copy to clipboard"), this));
 
-            entry.reset(new QAction(tr("Directory path"), this));
-            entry->setStatusTip(tr("Copy application directory path to system's' clipboard"));
-            connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyWrkDir_Click()));
-            subMenu->addAction(entry.release());
+			entry.reset(new QAction(tr("Directory path"), this));
+			entry->setStatusTip(tr("Copy application directory path to system's' clipboard"));
+			connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyWrkDir_Click()));
+			subMenu->addAction(entry.release());
 
-            entry.reset(new QAction(tr("Application path"), this));
-            entry->setStatusTip(tr("Copy full application path to system's' clipboard"));
-            connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyProgramPath_Click()));
-            subMenu->addAction(entry.release());
+			entry.reset(new QAction(tr("Application path"), this));
+			entry->setStatusTip(tr("Copy full application path to system's' clipboard"));
+			connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyProgramPath_Click()));
+			subMenu->addAction(entry.release());
 
-            subMenu->addSeparator();
+			subMenu->addSeparator();
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/wineconsole.png"), tr("wine cmd"), this));
-            entry->setStatusTip(tr("Copy wine cmd line for current application"));
-            connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyWineCmd_Click()));
-            subMenu->addAction(entry.release());
+			entry.reset(new QAction(CoreLib->loadIcon("data/wineconsole.png"), tr("wine cmd"), this));
+			entry->setStatusTip(tr("Copy wine cmd line for current application"));
+			connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyWineCmd_Click()));
+			subMenu->addAction(entry.release());
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/q4wine.png"), tr("q4wine-cli cmd"), this));
-            entry->setStatusTip(tr("Copy q4wine-cli cmd for current application"));
-            connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyQ4WineCmd_Click()));
-            subMenu->addAction(entry.release());
+			entry.reset(new QAction(CoreLib->loadIcon("data/q4wine.png"), tr("q4wine-cli cmd"), this));
+			entry->setStatusTip(tr("Copy q4wine-cli cmd for current application"));
+			connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyQ4WineCmd_Click()));
+			subMenu->addAction(entry.release());
 
-            menu->addMenu(subMenu.release());
-            // End of clipboard meny
+			menu->addMenu(subMenu.release());
+			// End of clipboard meny
 
 	  } else {
 			// Default menu
@@ -628,12 +628,12 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 			menu->addMenu(menuMount.release());
 
 			std::auto_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
-            entry.reset(new QAction(CoreLib->loadIcon("/data/drive_menu.png"), tr("Open prefix directory"), this));
+			entry.reset(new QAction(CoreLib->loadIcon("/data/drive_menu.png"), tr("Open prefix directory"), this));
 			entry->setStatusTip(tr("Open prefix directory in system file browser"));
 			connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenPrefixDir_Click()));
 			subMenu->addAction(entry.release());
 
-            entry.reset(new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"), tr("Open mount point directory"), this));
+			entry.reset(new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"), tr("Open mount point directory"), this));
 			entry->setStatusTip(tr("Open mount point directory in system file browser"));
 			if (this->prefixMontPoint.isEmpty())
 				  entry->setEnabled(false);
@@ -644,12 +644,12 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 			menu->addMenu(subMenu.release());
 
 			subMenu.reset(new QMenu(tr("Wine Browser"), this));
-            entry.reset(new QAction(CoreLib->loadIcon("/data/drive_menu.png"), tr("Open prefix directory"), this));
+			entry.reset(new QAction(CoreLib->loadIcon("/data/drive_menu.png"), tr("Open prefix directory"), this));
 			entry->setStatusTip(tr("Open prefix directory in wine file browser"));
 			connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenPrefixDir_Click()));
 			subMenu->addAction(entry.release());
 
-            entry.reset(new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"), tr("Open mount point directory"), this));
+			entry.reset(new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"), tr("Open mount point directory"), this));
 			entry->setStatusTip(tr("Open mount point directory in wine file browser"));
 			if (this->prefixMontPoint.isEmpty())
 				  entry->setEnabled(false);
@@ -664,24 +664,24 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 }
 
 void IconListWidget::keyPressEvent (QKeyEvent * event ){
-    if (event->key()==Qt::Key_Return){
-        if (this->currentItem())
-            this->itemDoubleClicked(this->currentItem());
-    } else if (event->key()==Qt::Key_Delete){
-        if (this->currentItem())
-            this->iconDelete_Click();
-    } else if (event->key()==Qt::Key_F2){
-        if (this->currentItem())
-            this->iconRename_Click();
-    } else if (event->key() == Qt::Key_C && event->modifiers() & Qt::ControlModifier) {
-        this->iconCopy_Click();
-    } else if (event->key() == Qt::Key_V && event->modifiers() & Qt::ControlModifier) {
-        this->iconPaste_Click();
-    } else if (event->key() == Qt::Key_X && event->modifiers() & Qt::ControlModifier) {
-        this->iconCut_Click();
-    } else {
-        QListWidget::keyPressEvent(event);
-    }
+	if (event->key()==Qt::Key_Return){
+		if (this->currentItem())
+			this->itemDoubleClicked(this->currentItem());
+	} else if (event->key()==Qt::Key_Delete){
+		if (this->currentItem())
+			this->iconDelete_Click();
+	} else if (event->key()==Qt::Key_F2){
+		if (this->currentItem())
+			this->iconRename_Click();
+	} else if (event->key() == Qt::Key_C && event->modifiers() & Qt::ControlModifier) {
+		this->iconCopy_Click();
+	} else if (event->key() == Qt::Key_V && event->modifiers() & Qt::ControlModifier) {
+		this->iconPaste_Click();
+	} else if (event->key() == Qt::Key_X && event->modifiers() & Qt::ControlModifier) {
+		this->iconCut_Click();
+	} else {
+		QListWidget::keyPressEvent(event);
+	}
 }
 
 void IconListWidget::iconAdd_Click(void){
@@ -695,8 +695,8 @@ void IconListWidget::iconAdd_Click(void){
 void IconListWidget::iconRename_Click(void){
 	  bool ok=false;
 
-      if (selectedItems().count()<=0)
-          return;
+	  if (selectedItems().count()<=0)
+		  return;
 
 	  std::auto_ptr<QListWidgetItem> iconItem (selectedItems().first());
 	  if (!iconItem.get()){
@@ -726,7 +726,7 @@ void IconListWidget::iconDelete_Click(void){
 	  */
 	  QList<QListWidgetItem *> icoList = this->selectedItems();
 
-      if (icoList.count()<=0)
+	  if (icoList.count()<=0)
 			return;
 
 	  if (QMessageBox::warning(this, tr("Delete Icon"), tr("Do you wish to delete all of the selected icons?"),  QMessageBox::Yes, QMessageBox::No	)==QMessageBox::Yes){
@@ -844,20 +844,20 @@ void IconListWidget::iconPaste_Click(void){
 			}
 	  }
 
-      if (iconBuffer.move){
-          iconBuffer.names.clear();
-          iconBuffer.dir_name="";
-          iconBuffer.prefix_name="";
-          iconBuffer.move=false;
-      }
+	  if (iconBuffer.move){
+		  iconBuffer.names.clear();
+		  iconBuffer.dir_name="";
+		  iconBuffer.prefix_name="";
+		  iconBuffer.move=false;
+	  }
 
 	  this->showContents("");
 	  return;
 }
 
 void IconListWidget::iconOption_Click(void){
-    if (selectedItems().count()<=0)
-        return;
+	if (selectedItems().count()<=0)
+		return;
 
 	  std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
 	  if (!iconItem.get())
@@ -872,135 +872,141 @@ void IconListWidget::iconOption_Click(void){
 }
 
 void IconListWidget::iconSearchAppDB_Click(void){
-    if (selectedItems().count()<=0)
-        return;
+	if (selectedItems().count()<=0)
+		return;
 
 	std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
 	if (!iconItem.get())
 		  return;
 
-    QString iconText = iconItem->text();
+	QString iconText = iconItem->text();
 
-    if (this->dirName=="import"){
-        QStringList list = iconText.split(" - ");
-        iconText.clear();
-        if (list.count()>1){
-            for (int i=1; i<list.count(); i++){
-                iconText.append(list.at(i));
-                if (i<list.count()-1)
-                    iconText.append(" - ");
-            }
-        }
-    }
+	if (this->dirName=="import"){
+		QStringList list = iconText.split(" - ");
+		iconText.clear();
+		if (list.count()>1){
+			for (int i=1; i<list.count(); i++){
+				iconText.append(list.at(i));
+				if (i<list.count()-1)
+					iconText.append(" - ");
+			}
+		}
+	}
 
-    emit(searchRequest(iconText));
+	emit(searchRequest(iconText));
 	iconItem.release();
 	return;
 }
 
 void IconListWidget::iconCopyWrkDir_Click(){
-    if (selectedItems().count()<=0)
-        return;
+	if (selectedItems().count()<=0)
+		return;
 
-    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
-    if (!iconItem.get())
-          return;
+	std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+	if (!iconItem.get())
+		  return;
 
-    QHash<QString, QString> info = db_icon.getByName(this->prefixName, this->dirName, iconItem->text());
+	QHash<QString, QString> info = db_icon.getByName(this->prefixName, this->dirName, iconItem->text());
 
-    iconItem.release();
+	iconItem.release();
 
-    if (!info["wrkdir"].isEmpty()){
-        QClipboard *clipboard = QApplication::clipboard();
-        clipboard->setText(info["wrkdir"]);
-    }
+	if (!info["wrkdir"].isEmpty()){
+		QClipboard *clipboard = QApplication::clipboard();
+		clipboard->setText(info["wrkdir"]);
+	}
 
-    return;
+	return;
 }
 
 void IconListWidget::iconCopyProgramPath_Click(){
-    if (selectedItems().count()<=0)
-        return;
+	if (selectedItems().count()<=0)
+		return;
 
-    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
-    if (!iconItem.get())
-          return;
+	std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+	if (!iconItem.get())
+		  return;
 
-    QHash<QString, QString> info = db_icon.getByName(this->prefixName, this->dirName, iconItem->text());
-    iconItem.release();
+	QHash<QString, QString> info = db_icon.getByName(this->prefixName, this->dirName, iconItem->text());
+	iconItem.release();
 
-    if (!info["exec"].isEmpty()){
-        QClipboard *clipboard = QApplication::clipboard();
-        clipboard->setText(info["exec"]);
-    }
-    return;
+	if (!info["exec"].isEmpty()){
+		QClipboard *clipboard = QApplication::clipboard();
+		clipboard->setText(info["exec"]);
+	}
+	return;
 }
 
 void IconListWidget::iconCopyWineCmd_Click(){
-    if (selectedItems().count()<=0)
-        return;
+	if (selectedItems().count()<=0)
+		return;
 
-    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
-    if (!iconItem.get())
-          return;
+	std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+	if (!iconItem.get())
+		  return;
 
-    QString text = CoreLib->createWineString(this->prefixName, this->dirName, iconItem->text());
-    if (!text.isEmpty()){
-        QClipboard *clipboard = QApplication::clipboard();
-        clipboard->setText(text);
-    }
-    iconItem.release();
-    return;
+	QString text = CoreLib->createWineString(this->prefixName, this->dirName, iconItem->text());
+	if (!text.isEmpty()){
+		QClipboard *clipboard = QApplication::clipboard();
+		clipboard->setText(text);
+	}
+	iconItem.release();
+	return;
 }
 
 void IconListWidget::iconCopyQ4WineCmd_Click(){
-    if (selectedItems().count()<=0)
-        return;
+	if (selectedItems().count()<=0)
+		return;
 
-    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
-    if (!iconItem.get())
-          return;
+	std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+	if (!iconItem.get())
+		  return;
 
-    QString run_string = QString("%1/bin/q4wine-cli ").arg(APP_PREF);
-    run_string.append(" -p \"");
-    run_string.append(this->prefixName);
-    run_string.append("\"");
+	QString run_string = QString("%1/bin/q4wine-cli ").arg(APP_PREF);
+	run_string.append(" -p \"");
+	run_string.append(this->prefixName);
+	run_string.append("\"");
 
-    if (!this->dirName.isEmpty()){
-        run_string.append(" -d \"");
-        run_string.append(this->dirName);
-        run_string.append("\" ");
-    }
+	if (!this->dirName.isEmpty()){
+		run_string.append(" -d \"");
+		run_string.append(this->dirName);
+		run_string.append("\" ");
+	}
 
-    run_string.append(" -i \"");
-    run_string.append(iconItem->text());
-    run_string.append("\"");
+	run_string.append(" -i \"");
+	run_string.append(iconItem->text());
+	run_string.append("\"");
 
-    QClipboard *clipboard = QApplication::clipboard();
-    clipboard->setText(run_string);
-    iconItem.release();
+	QClipboard *clipboard = QApplication::clipboard();
+	clipboard->setText(run_string);
+	iconItem.release();
 
-    return;
+	return;
 };
 
 void IconListWidget::menuRun_triggered(QAction* action){
 	  if (action->text().isEmpty())
 			return;
 
-	  if (action->text()==tr("Browse ...")){
+	  if (action->text()==tr("Browse...")){
 			Run run;
 			run.prepare(this->prefixName);
 
 			if (run.exec()==QDialog::Accepted)
-                  CoreLib->runWineBinary(run.execObj, this->prefixName);
+				  CoreLib->runWineBinary(run.execObj, this->prefixName);
 			return;
 	  }
 
 	  Last_Run_Icon db_last_run_icon;
 	  QStringList result = db_last_run_icon.getByExec(action->statusTip());
 
+	  if (result.count()<=0){
 #ifdef DEBUG
-	  qDebug()<<"Config key: advanced.openRunDialog="<<CoreLib->getSetting("advanced", "openRunDialog", false, 0).toString();
+		  qDebug()<<"[ee] db_last_run_icon.getByExec return an enpty result";
+#endif
+		  return;
+	  }
+#ifdef DEBUG
+	  qDebug()<<"[ii] Config key: advanced.openRunDialog="<<CoreLib->getSetting("advanced", "openRunDialog", false, 0).toString();
 #endif
 
 	  if (CoreLib->getSetting("advanced", "openRunDialog", false, 0).toInt()==0){
@@ -1014,12 +1020,12 @@ void IconListWidget::menuRun_triggered(QAction* action){
 			execObj.cmdargs=result.at(5);
 			execObj.desktop=result.at(6);
 			execObj.nice=result.at(7);
-            CoreLib->runWineBinary(execObj, this->prefixName);
+			CoreLib->runWineBinary(execObj, this->prefixName);
 	  } else {
 			Run run;
 			run.prepare(this->prefixName, result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
 			if (run.exec()==QDialog::Accepted)
-                  CoreLib->runWineBinary(run.execObj, this->prefixName);
+				  CoreLib->runWineBinary(run.execObj, this->prefixName);
 	  }
 	  return;
 }
@@ -1036,23 +1042,23 @@ void IconListWidget::menuMount_triggered(QAction* action){
 			/*
 			Request for unmounting cdrom drve described at wine prefix settings
 			*/
-          QString fileFilter;
+		  QString fileFilter;
 #ifdef _OS_LINUX_
-    fileFilter = tr("Disc image files (*.iso *.nrg *.img *.bin *.mdf)");
+	fileFilter = tr("Disc image files (*.iso *.nrg *.img *.bin *.mdf)");
 #endif
 #ifdef _OS_FREEBSD_
-    fileFilter =  tr("ISO image files (*.iso)");
+	fileFilter =  tr("ISO image files (*.iso)");
 #endif
 
 #if QT_VERSION >= 0x040500
-    QFileDialog::Options options;
+	QFileDialog::Options options;
 
-    if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
-        options = QFileDialog::DontUseNativeDialog;
+	if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
+		options = QFileDialog::DontUseNativeDialog;
 
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Disc Image Files"), QDir::homePath(), fileFilter, 0, options);
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Disc Image Files"), QDir::homePath(), fileFilter, 0, options);
 #else
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Disc Image Files"), QDir::homePath(), fileFilter);
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Open Disc Image Files"), QDir::homePath(), fileFilter);
 #endif
 
 			if(fileName.isEmpty()){
@@ -1094,13 +1100,13 @@ void IconListWidget::menuUmount_Click(void){
 }
 
 void IconListWidget::xdgOpenPrefixDir_Click(void){
-     QDesktopServices::openUrl(QUrl(QString("file://%1").arg(db_prefix.getPath(this->prefixName)), QUrl::TolerantMode));
+	 QDesktopServices::openUrl(QUrl(QString("file://%1").arg(db_prefix.getPath(this->prefixName)), QUrl::TolerantMode));
 	  return;
 }
 
 void IconListWidget::xdgOpenMountDir_Click(void){
-    QDesktopServices::openUrl(QUrl(QString("file://%1").arg(this->prefixMontPoint), QUrl::TolerantMode));
-    return;
+	QDesktopServices::openUrl(QUrl(QString("file://%1").arg(this->prefixMontPoint), QUrl::TolerantMode));
+	return;
 }
 
 void IconListWidget::xdgOpenIconDir_Click(void){
@@ -1112,12 +1118,12 @@ void IconListWidget::xdgOpenIconDir_Click(void){
 			return;
 	  }
 
-      QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).value("wrkdir");
+	  QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).value("wrkdir");
 
 	  if (result.isEmpty()){
-          emit(changeStatusText(tr("Error: \"%1\" is an embedded Wine binary.").arg(item->text())));
+		  emit(changeStatusText(tr("Error: \"%1\" is an embedded Wine binary.").arg(item->text())));
 	  } else {
-          QDesktopServices::openUrl(QUrl(QString("file://%1").arg(result), QUrl::TolerantMode));
+		  QDesktopServices::openUrl(QUrl(QString("file://%1").arg(result), QUrl::TolerantMode));
 	  }
 
 	  item.release();
@@ -1126,23 +1132,23 @@ void IconListWidget::xdgOpenIconDir_Click(void){
 
 void IconListWidget::winefileOpenPrefixDir_Click(void){
 	  QString result = db_prefix.getPath(this->prefixName);
-      result.append("/");
+	  result.append("/");
 
-      ExecObject execObj;
-      execObj.cmdargs = result;
-      execObj.execcmd = "winefile";
+	  ExecObject execObj;
+	  execObj.cmdargs = result;
+	  execObj.execcmd = "winefile";
 
-      CoreLib->runWineBinary(execObj, this->prefixName);
-       return;
+	  CoreLib->runWineBinary(execObj, this->prefixName);
+	   return;
 }
 
 void IconListWidget::winefileOpenMountDir_Click(void){
-    ExecObject execObj;
-    execObj.cmdargs = this->prefixMontPoint + "/";
-    execObj.execcmd = "winefile";
+	ExecObject execObj;
+	execObj.cmdargs = this->prefixMontPoint + "/";
+	execObj.execcmd = "winefile";
 
-    CoreLib->runWineBinary(execObj, this->prefixName);
-    return;
+	CoreLib->runWineBinary(execObj, this->prefixName);
+	return;
 }
 
 void IconListWidget::winefileOpenIconDir_Click(void){
@@ -1154,16 +1160,16 @@ void IconListWidget::winefileOpenIconDir_Click(void){
 			return;
 	  }
 
-      QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).value("wrkdir");
+	  QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).value("wrkdir");
 
 	  if (result.isEmpty()){
-          emit(changeStatusText(tr("Error: \"%1\" is an embedded Wine binary.").arg(item->text())));
+		  emit(changeStatusText(tr("Error: \"%1\" is an embedded Wine binary.").arg(item->text())));
 	  } else {
-          ExecObject execObj;
-          execObj.cmdargs = result + "/";
-          execObj.execcmd = "winefile";
+		  ExecObject execObj;
+		  execObj.cmdargs = result + "/";
+		  execObj.execcmd = "winefile";
 
-          CoreLib->runWineBinary(execObj, this->prefixName);
+		  CoreLib->runWineBinary(execObj, this->prefixName);
 	  }
 
 	  item.release();
