@@ -795,7 +795,65 @@ void FakeDriveSettings::cmdCancel_Click(){
 }
 
 void FakeDriveSettings::cmdHelp_Click(){
-	return;
+    QString rawurl;
+
+    std::auto_ptr<QTreeWidgetItem> item (optionsTree->currentItem());
+    if (!item.get()){
+         item.release();
+         return;
+    }
+
+    QString itemText = item->text(0);
+
+    if (itemText==tr("General")){
+        rawurl = "07-fake-drive-settings.html#general";
+    } else if (itemText==tr("Color Theme")){
+        rawurl = "07-fake-drive-settings.html#colors";
+    } else if (itemText==tr("Wine Browsers")){
+        rawurl = "07-fake-drive-settings.html#winebrowsers";
+    } else if (itemText==tr("Video")){
+        rawurl = "07-fake-drive-settings.html#video";
+    } else if (itemText==tr("Direct 3D") && item->parent()->text(0)==tr("Video")){
+        rawurl = "07-fake-drive-settings.html#direct";
+    } else if (itemText==tr("OpenGL")){
+        rawurl = "07-fake-drive-settings.html#opengl";
+    } else if (itemText==tr("X11 Driver") && item->parent()->text(0)==tr("Video")){
+        rawurl = "07-fake-drive-settings.html#x11-video";
+    } else if (itemText==tr("File System")){
+        rawurl = "07-fake-drive-settings.html#winedrive";
+    } else if (itemText==tr("Wine Drives")){
+        rawurl = "07-fake-drive-settings.html#winedrive";
+    } else if (itemText==tr("Desktop Paths")){
+        rawurl = "07-fake-drive-settings.html#desktop";
+    } else if (itemText==tr("Audio")){
+        rawurl = "07-fake-drive-settings.html#sound";
+    } else if (itemText==tr("Sound Driver")){
+        rawurl = "07-fake-drive-settings.html#sound";
+    } else if (itemText==tr("ALSA Driver")){
+        rawurl = "07-fake-drive-settings.html#alsa";
+    } else if (itemText==tr("Misc Audio")){
+        rawurl = "07-fake-drive-settings.html#sound-misc";
+    } else if (itemText==tr("Input")){
+        rawurl = "07-fake-drive-settings.html#d3d-input";
+    } else if (itemText==tr("Direct 3D") && item->parent()->text(0)==tr("Input")){
+        rawurl = "07-fake-drive-settings.html#d3d-input";
+    } else if (itemText==tr("X11 Driver") && item->parent()->text(0)==tr("Input")){
+        rawurl = "07-fake-drive-settings.html#x11-input";
+    }
+
+    item.release();
+    /*
+    switch (twbGeneral->currentIndex()){
+    case 0:
+            rawurl = "10-prefix-settings.html#general";
+    break;
+    case 1:
+            rawurl = "10-prefix-settings.html#winepath";
+    break;
+    }*/
+
+    CoreLib->openHelpUrl(rawurl);
+    return;
 }
 
 void FakeDriveSettings::loadThemeIcons(){
