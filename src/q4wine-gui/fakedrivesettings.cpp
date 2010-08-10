@@ -150,29 +150,6 @@ void FakeDriveSettings::cmdOk_Click(){
 		}
 	}
 
-#ifdef DEBUG
-	qDebug()<<"[ii] Check wine drives";
-#endif
-
-	if (listWineDrives->count()>0){
-		QString tmppath=QDir::homePath();
-		bool tmpexists=FALSE;
-		tmppath.append("/.config/q4wine/tmp");
-		for (int i=0; i<listWineDrives->count(); i++){
-			std::auto_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->item(i)));
-			QString path = item->getPath();
-			item.release();
-
-			if (path==tmppath){
-				tmpexists=TRUE;
-				break;
-			}
-		}
-		if (!tmpexists){
-			QMessageBox::warning(this, tr("Warning"), tr("Can't find Wine drive at:\n\"%1\"\n\nMake sure that Wine can access %2 temp directory.").arg(tmppath).arg(APP_SHORT_NAME));
-		}
-	}
-
 	QApplication::setOverrideCursor( Qt::BusyCursor );
 	this->setEnabled(false);
 
@@ -794,7 +771,7 @@ void FakeDriveSettings::cmdOk_Click(){
 	qDebug()<<"[ii] Wizard::run registry import";
 #endif
 
-	if (registry.exec(this, prefixName)){
+        if (registry.exec(this, db_prefix.getPath(prefixName), prefixName)){
 		CoreLib->createPrefixDBStructure(prefixName);
 #ifdef DEBUG
 	qDebug()<<"[ii] Wizard::done";

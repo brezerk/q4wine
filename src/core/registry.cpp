@@ -97,28 +97,46 @@ void Registry::unsetPath(QString path, const QString hkey){
 	return;
 }
 
-bool Registry::exec(QObject *parent, QString prefix_name){
+bool Registry::exec(QObject *parent, QString prefix_path, QString prefix_name){
 
 	//This function wrights regfile_image into file, then run regedit.exe and import this file.
 	//Also, clean files before end
+
+        QDir dir(prefix_path);
+
+        if (!dir.exists()){
+            qDebug()<<"[ee] Fake drive dir do not exists!";
+            return false;
+        } else {
+            dir.setPath(QString("%1/drive_c/temp").arg(dir.path()));
+            if (!dir.exists()){
+                if (!dir.mkdir(dir.path())){
+                    qDebug()<<"[ee] Can't create tmp dir for fake drive dir!";
+                    return false;
+                }
+            }
+        }
 
 	QTime midnight(0, 0, 0);
 	qsrand(midnight.secsTo(QTime::currentTime()));
 
 	int file_name = qrand() % 10000;
-	QString full_file_path = QString("%1/.config/%2/tmp/%3.reg").arg(QDir::homePath()).arg(APP_SHORT_NAME).arg(file_name);
+        QString full_file_path = QString("%1/%2.reg").arg(dir.path()).arg(file_name);
 
 	QFile file(full_file_path);
 	file.open(QIODevice::WriteOnly);
 	file.write(regfile_image.toAscii());        // write to stderr
 	file.close();
 
-
     ExecObject execObj;
     execObj.cmdargs = full_file_path;
     execObj.execcmd = "regedit.exe";
 
-    return CoreLib->runWineBinary(execObj, prefix_name, false);
+    bool ret = CoreLib->runWineBinary(execObj, prefix_name, false);
+
+    file.remove();
+
+    return ret;
 
 	/*
 	std::auto_ptr<WineBinLauncher> launcher (new WineBinLauncher(prefix_name));
