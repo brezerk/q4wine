@@ -5,6 +5,23 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
+Version 0.119
+ Added:
+  - New Fake Drive settings dialog (Wizard now obsolete);
+  - Added a lot of new Fake Drive options;
+  - Desktop integraion;
+  - Wine .desktop files import;
+  - Sync fake drive settings to head wine version;
+  - Various user interface enhancement; 
+  - Updated Ukrainian, Italian and Spanish translations;
+  - Updated online documentation;
+
+ Fixed:
+  - Some fixes for GUI layout;
+  - Winetriks plugin improvement;
+  - Fixed bugs reported by users;
+  - Fixed some of English spellings;
+
 Version 0.118
  Added:
   - Wine AppDB support;
