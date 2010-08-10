@@ -1131,20 +1131,20 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="141"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="220"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="346"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="364"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="382"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="400"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="419"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="899"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="932"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="148"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="239"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="367"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="385"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="403"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="421"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="440"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="920"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="953"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="141"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="148"/>
         <source>Error in string:
 
 %1
@@ -1159,12 +1159,12 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="159"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="172"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="159"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="172"/>
         <source>Can&apos;t find Wine drive at:
 &quot;%1&quot;
 
@@ -1172,46 +1172,46 @@ Make sure that Wine can access %2 temp directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="220"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="932"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="239"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="953"/>
         <source>Can&apos;t read desktop paths!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="346"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="364"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="382"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="400"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="419"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="367"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="385"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="403"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="421"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="440"/>
         <source>Can&apos;t create dir: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1285"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1291"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1306"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1312"/>
         <source>Open File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1287"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1293"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1308"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1314"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="444"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="465"/>
         <source>Updateing wine dosdrives</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="826"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="836"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="847"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="857"/>
         <source>Joystick Axes Mappings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="826"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="836"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="847"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="857"/>
         <source>Joystick axes mappings might be defined as:
 &quot;Joystick name&quot;=&quot;axes mapping&quot;
 
@@ -1222,7 +1222,7 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="899"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="920"/>
         <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1253,30 +1253,30 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="244"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1063"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1080"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1069"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1086"/>
         <source>%1 successfully mounted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1041"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1047"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1044"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1050"/>
         <source>ISO image files (*.iso)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1053"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1055"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1059"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1061"/>
         <source>Open Disc Image Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1065"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1082"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1071"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1088"/>
         <source>Fail to mount %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1292,7 +1292,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="388"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1032"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1038"/>
         <source>[none]</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1314,7 +1314,8 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="414"/>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="572"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1035"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="990"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1041"/>
         <source>Browse...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1545,13 +1546,8 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="990"/>
-        <source>Browse ...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1118"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1160"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1124"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1166"/>
         <source>Error: &quot;%1&quot; is an embedded Wine binary.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1616,22 +1612,22 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1033"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1039"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1033"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1039"/>
         <source>No device drive specified in prefix settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1089"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1095"/>
         <source>Drive successfully umounted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1091"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1097"/>
         <source>Fail to umount drive.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3284,8 +3280,8 @@ Note: leave it blank for default.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/database/prefix.cpp" line="312"/>
-        <location filename="../core/database/prefix.cpp" line="373"/>
+        <location filename="../core/database/prefix.cpp" line="323"/>
+        <location filename="../core/database/prefix.cpp" line="384"/>
         <source>&lt;none&gt;</source>
         <translation type="unfinished"></translation>
     </message>
