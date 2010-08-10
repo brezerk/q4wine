@@ -842,15 +842,6 @@ void FakeDriveSettings::cmdHelp_Click(){
     }
 
     item.release();
-    /*
-    switch (twbGeneral->currentIndex()){
-    case 0:
-            rawurl = "10-prefix-settings.html#general";
-    break;
-    case 1:
-            rawurl = "10-prefix-settings.html#winepath";
-    break;
-    }*/
 
     CoreLib->openHelpUrl(rawurl);
     return;
