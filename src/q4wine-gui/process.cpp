@@ -193,7 +193,7 @@ QString  Process::getLocale(){
 		qDebug()<<"[ii] Lang before split: "<<lang;
 #endif
 
-	QStringList langSplit = lang.split(".");
+        QStringList langSplit = lang.split(".");
 
 	if (langSplit.size()>1){
 		lang = langSplit.at(1);
@@ -203,6 +203,9 @@ QString  Process::getLocale(){
 
 	if (lang.isEmpty())
 		lang = "UTF-8";
+
+        if (lang.contains(";"))
+            lang = lang.split(";").first();
 
 #ifdef DEBUG
 	qDebug()<<"[ii] Locale to use: "<<lang;

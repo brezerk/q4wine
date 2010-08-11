@@ -422,6 +422,9 @@ QString  corelib::getLocale(){
             lang = "utf8";
         }
 
+        if (lang.contains(";"))
+            lang = lang.split(";").first();
+
 #ifdef DEBUG
         qDebug()<<"[ii] Lang to load: "<<lang;
 #endif
