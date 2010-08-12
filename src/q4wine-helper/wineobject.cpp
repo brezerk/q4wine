@@ -109,20 +109,36 @@ QString WineObject::createEnvString(){
     if (this->prefixName.isEmpty())
         this->setPrefix("Default");
 
-    env.append(QString(" WINEPREFIX=\"%1\" ").arg(this->prefixPath));
-    env.append(QString(" WINESERVER=\"%1\" ").arg(this->prefixServer));
-    env.append(QString(" WINELOADER=\"%1\" ").arg(this->prefixLoader));
-    env.append(QString(" WINEDLLPATH=\"%1\" ").arg(this->prefixDllPath));
+    if (this->useConsole){
+        env.append(QString(" WINEPREFIX=\\\"%1\\\" ").arg(this->prefixPath));
+        env.append(QString(" WINESERVER=\\\"%1\\\" ").arg(this->prefixServer));
+        env.append(QString(" WINELOADER=\\\"%1\\\" ").arg(this->prefixLoader));
+        env.append(QString(" WINEDLLPATH=\\\"%1\\\" ").arg(this->prefixDllPath));
 
-    if (!this->programDebug.isEmpty())
-        env.append(QString(" WINEDEBUG=\"%1\" ").arg(this->programDebug));
+        if (!this->programDebug.isEmpty())
+            env.append(QString(" WINEDEBUG=\\\"%1\\\" ").arg(this->programDebug));
 
-    if (!this->programDisplay.isEmpty())
-        env.append(QString(" DISPLAY=\"%1\" ").arg(this->programDisplay));
+        if (!this->programDisplay.isEmpty())
+            env.append(QString(" DISPLAY=\\\"%1\\\" ").arg(this->programDisplay));
 
-    if (!this->overrideDllList.isEmpty())
-         env.append(QString(" WINEDLLOVERRIDES=\"%1\" ").arg(this->overrideDllList));
+        if (!this->overrideDllList.isEmpty())
+             env.append(QString(" WINEDLLOVERRIDES=%1 ").arg(this->overrideDllList.replace("\"","\\\"")));
+    } else {
+        env.append(QString(" WINEPREFIX=\"%1\" ").arg(this->prefixPath));
+        env.append(QString(" WINESERVER=\"%1\" ").arg(this->prefixServer));
+        env.append(QString(" WINELOADER=\"%1\" ").arg(this->prefixLoader));
+        env.append(QString(" WINEDLLPATH=\"%1\" ").arg(this->prefixDllPath));
 
+        if (!this->programDebug.isEmpty())
+            env.append(QString(" WINEDEBUG=\"%1\" ").arg(this->programDebug));
+
+        if (!this->programDisplay.isEmpty())
+            env.append(QString(" DISPLAY=\"%1\" ").arg(this->programDisplay));
+
+        if (!this->overrideDllList.isEmpty())
+             env.append(QString(" WINEDLLOVERRIDES=%1 ").arg(this->overrideDllList));
+
+    }
     return env;
 }
 
