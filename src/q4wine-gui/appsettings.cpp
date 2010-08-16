@@ -353,12 +353,6 @@ void AppSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("Defaults")){
         optionsStack->setCurrentIndex(4);
         pabwAdvanced->setCurrentIndex(0);
-    } else if (itemText==tr("Run recent program")){
-        optionsStack->setCurrentIndex(4);
-        pabwAdvanced->setCurrentIndex(0);
-    } else if (itemText==tr("Defaults")){
-        optionsStack->setCurrentIndex(4);
-        pabwAdvanced->setCurrentIndex(0);
     } else if (itemText==tr("Run dialog")){
         optionsStack->setCurrentIndex(4);
         pabwAdvanced->setCurrentIndex(1);
@@ -827,36 +821,56 @@ bool AppSettings::checkEntry(QString fileName, QString info, bool isFile){
 }
 
 void AppSettings::cmdHelp_Click(){
-	QString rawurl="";
-    switch (tabwGeneral->currentIndex()){
- case 0:
-		rawurl = "11-settings.html#general";
-		break;
- case 1:
-		rawurl = "11-settings.html#sysutils";
-		break;
- case 2:
-		rawurl = "11-settings.html#userutils";
-		break;
- case 3:
-		rawurl = "11-settings.html#customization";
-		break;
- case 4:
-		rawurl = "11-settings.html#network";
-		break;
- case 5:
-		rawurl = "11-settings.html#qmount";
-		break;
-    case 6:
-           rawurl = "11-settings.html#logging";
-           break;
-    case 7:
-           rawurl = "11-settings.html#advanced";
-           break;
-	}
+    QString rawurl;
 
-	CoreLib->openHelpUrl(rawurl);
-	return;
+    std::auto_ptr<QTreeWidgetItem> item (optionsTree->currentItem());
+    if (!item.get()){
+         item.release();
+         return;
+    }
+
+    QString itemText = item->text(0);
+
+    if (itemText==tr("General")){
+        rawurl = "11-settings.html#general";
+    } else if (itemText==tr("System")){
+        rawurl = "11-settings.html#sysutils";
+    } else if (itemText==tr("Utils")){
+        rawurl = "11-settings.html#userutils";
+    } else if (itemText==tr("Network")){
+        rawurl = "11-settings.html#network";
+    } else if (itemText==tr("Quick Mount")){
+        rawurl = "11-settings.html#qmount";
+    } else if (itemText==tr("Interface")){
+        rawurl = "11-settings.html#interface";
+    } else if (itemText==tr("Language")){
+        rawurl = "11-settings.html#interface";
+    } else if (itemText==tr("Themes")){
+        rawurl = "11-settings.html#interface";
+    } else if (itemText==tr("Subsystems")){
+        rawurl = "11-settings.html#logging";
+    } else if (itemText==tr("Logging")){
+        rawurl = "11-settings.html#logging";
+    } else if (itemText==tr("AppDb browser")){
+        rawurl = "11-settings.html#appdb";
+    } else if (itemText==tr("Plugins")){
+        rawurl = "11-settings.html";
+    } else if (itemText==tr("Winetricks")){
+        rawurl = "11-settings.html";
+    } else if (itemText==tr("Advanced")){
+        rawurl = "11-settings.html#defaults";
+    } else if (itemText==tr("Defaults")){
+        rawurl = "11-settings.html#defaults";
+    } else if (itemText==tr("Run dialog")){
+        rawurl = "11-settings.html#rundialog";
+    } else if (itemText==tr("Wine desktop import")){
+        rawurl = "11-settings.html#wineimport";
+    }
+
+    item.release();
+
+    CoreLib->openHelpUrl(rawurl);
+    return;
 }
 
 void AppSettings::radioDefault_toggled(bool state){
