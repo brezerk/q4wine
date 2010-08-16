@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
