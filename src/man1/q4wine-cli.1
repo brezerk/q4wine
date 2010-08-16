@@ -5,10 +5,10 @@ q4wine-cli \- console utility for wine applications and prefixes management.
 \fBq4wine-cli\fR [\fBKEY\fR] ...
 .br
 .B q4wine-cli
--p <prefix_name> [-d <dir_name>] -i <icon_name>
+\-p <prefix_name> [\-d <dir_name>] \-i <icon_name>
 .br
 .B q4wine-cli
--p <prefix_name> -b <windows_binary_path> [args]
+\-p <prefix_name> \-b <windows_binary_path> [args]
 .SH "DESCRIPTION"
 q4wine-cli is a pert of Q4Wine progect. It provide console interface to q4wine database and it's core functions.
 .br
@@ -34,7 +34,7 @@ sets the cd iamge name
 sets the path to windows binary for execute with current prefix settings
 .TP
 .BR "\-k,  \-\-kill"
-sends -9 term signal to current prefix precess or for all prefixes processes
+sends \-9 term signal to current prefix precess or for all prefixes processes
 .TP
 .BR "\-pl, \-\-prefixlist"
 output all exesting prefixes names and exit
