@@ -360,7 +360,6 @@ void AppSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
         optionsStack->setCurrentIndex(4);
         pabwAdvanced->setCurrentIndex(2);
     }
-
 }
 
 bool AppSettings::eventFilter(QObject *obj, QEvent *event){

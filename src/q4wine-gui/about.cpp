@@ -220,7 +220,7 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 	txtThanks->setHtml("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\"><html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">p, li { white-space: pre-wrap; }</style></head><body>" \
 
                             "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><img src=\":/data/love.png\" />" \
-                                   " Irina Radchuk<br>Thanks for patience, love and countenance =]" \
+                                   " Irina V. Malakhova<br>Thanks for patience, love and countenance =]" \
 
 							"</p><p style=\"margin: 0px\"> </p>" \
 
@@ -234,6 +234,19 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 								   "Minsk, Republic of Belarus" \
 
 							"</p><p style=\"margin: 0px\"> </p>" \
+
+                                                        "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                                   "Boris Pek" \
+                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                        "Bug reports, testing" \
+                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                                   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">tehnick-8@mail.ru</span>" \
+                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                                   "<span style=\" color:#6495ed;\">Web</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">http://tehnick-8.narod.ru/</span>" \
+                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                                   "Ukraine" \
+
+                                                        "</p><p style=\"margin: 0px\"> </p>" \
 
 							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Dmitry Marakasov (amdmi3)" \
