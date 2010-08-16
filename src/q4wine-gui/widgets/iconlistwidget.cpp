@@ -760,7 +760,7 @@ void IconListWidget::iconCut_Click(void){
 			return;
 
 	  // If icon cutted -- set icon disabled style
-	  // FIXME: It pice works fine, but we nead to use pixmaps for grayscale, not Qt::ItemIsEnabled flag....
+          // FIXME: It pice works fine, but we need to use pixmaps for grayscale, not Qt::ItemIsEnabled flag....
 	  // FIXME: It is optional, i don't work on it until release... ;)
 	  //icoList2 = lstIcons->findItems("*", Qt::MatchWrap | Qt::MatchWildcard);
 

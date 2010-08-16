@@ -9,15 +9,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
-    <height>440</height>
+    <width>698</width>
+    <height>438</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Icon settings</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../../q4wine.qrc">
     <normaloff>:/data/q4wine.png</normaloff>:/data/q4wine.png</iconset>
   </property>
   <layout class="QVBoxLayout">
@@ -210,7 +210,7 @@
       <item>
        <widget class="QTabWidget" name="twbGeneral">
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
@@ -683,7 +683,7 @@
                </column>
                <column>
                 <property name="text">
-                 <string>Override algorithm</string>
+                 <string>Override Algorithm</string>
                 </property>
                </column>
               </widget>
@@ -911,6 +911,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../q4wine.qrc"/>
+ </resources>
  <connections/>
 </ui>

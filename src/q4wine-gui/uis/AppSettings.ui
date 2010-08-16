@@ -9,15 +9,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
-    <height>440</height>
+    <width>698</width>
+    <height>438</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>%1 settings</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../../q4wine.qrc">
     <normaloff>:/data/q4wine.png</normaloff>:/data/q4wine.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -234,7 +234,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QGridLayout" name="gridLayout">
@@ -2030,7 +2030,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tabLogging">
            <attribute name="title">
@@ -2058,7 +2058,7 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>Enable loggin sybsystem.</string>
+                  <string>Enable logging sybsystem.</string>
                  </property>
                 </widget>
                </item>
@@ -2681,6 +2681,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../q4wine.qrc"/>
+ </resources>
  <connections/>
 </ui>
