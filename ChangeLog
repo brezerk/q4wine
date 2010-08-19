@@ -5,6 +5,18 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
+Version 0.119-r1
+ Added:
+  - Updated Russian translation (thx to Boris Pek)
+  - Settings dialog online documenatation;
+
+ Fixed:
+  - Some of english spell errors; 
+  - hyphen-used-as-minus-sign errors for man pages;
+  - bug with dll override app run (q4wine-Bugs-3043548);
+  - bug with user console wine app run; 
+  - strange locale bug reported by Taras Rozbitskiy;
+
 Version 0.119
  Added:
   - New Fake Drive settings dialog (Wizard now obsolete);
