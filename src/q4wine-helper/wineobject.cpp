@@ -172,7 +172,10 @@ int WineObject::runSys(){
         run_string.append(this->programWrkDir);
         run_string.append("\' && ");
     } else {
-        chdir(codec->fromUnicode(this->programWrkDir).data());
+        if (chdir(codec->fromUnicode(this->programWrkDir).data()) != 0){
+            qDebug()<<"[EE] chdir to:"<<codec->fromUnicode(this->programWrkDir).data()<<"fail";
+            return -1;
+        }
     }
 
     //Setting enveropment variables

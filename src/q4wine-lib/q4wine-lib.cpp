@@ -1407,7 +1407,10 @@ QStringList corelib::getCdromDevices(void) const{
                 run_string.append("\' && ");
             } else {
                  QTextCodec *codec = QTextCodec::codecForName(this->getLocale().toAscii());
-                chdir(codec->fromUnicode(icon["wrkdir"]).data());
+                 if (chdir(codec->fromUnicode(icon["wrkdir"]).data()) != 0){
+                     qDebug()<<"[EE] chdir to:"<<codec->fromUnicode(icon["wrkdir"]).data()<<"fail";
+                     return "";
+                 }
             }
 
             //Setting enveropment variables
