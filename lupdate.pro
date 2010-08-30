@@ -78,4 +78,5 @@ TRANSLATIONS += src/i18n/en_us.ts \
 	src/i18n/uk_ua.ts \
 	src/i18n/pt_br.ts \
 	src/i18n/it_it.ts \
-	src/i18n/es_es.ts
+	src/i18n/es_es.ts \
+	src/i18n/cs_cz.ts

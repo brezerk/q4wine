@@ -5,6 +5,13 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
+Version 0.119-r2
+ Added:
+  - Czech translation (thx to Pavel Fric)
+
+ Fixed:
+  - warning: ignoring return value of ‘int chdir(const char*)’, declared with attribute warn_unused_result 
+
 Version 0.119-r1
  Added:
   - Updated Russian translation (thx to Boris Pek)
