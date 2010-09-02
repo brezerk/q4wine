@@ -130,7 +130,7 @@ QList<QStringList> corelib::getWineProcessList(){
 	/* On FreeBSD:
 		 * This is new engine for getting process info from /proc directory and kmem interface
 		 */
-#ifdef _OS_FREEBSD_
+#if defined(_OS_FREEBSD_) || defined(_OS_DARWIN_)
 	kvm_t *kd;
 	int cntproc, i, ni, ipid;
 
@@ -317,31 +317,31 @@ QPixmap corelib::loadPixmap(QString iconName){
 }
 
 QString corelib::getTranslationLang(){
-    QTranslator qtt;
+	QTranslator qtt;
 
-    QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
+	QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
 
 #ifdef DEBUG
-    qDebug()<<"[ii] i18n path: "<<i18nPath;
+	qDebug()<<"[ii] i18n path: "<<i18nPath;
 #endif
 
-    QString lang = this->getLang();
+	QString lang = this->getLang();
 
-    if (!lang.isNull()){
-        if (qtt.load(lang, i18nPath)){
-            return lang;
-        } else {
-            qDebug()<<"[EE] Can't open user selected translation";
-            if (qtt.load("en_us", i18nPath)){
-                return "en_us";
-            } else {
-                qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
-            }
-        }
-    } else {
-        qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
-    }
-    return "";
+	if (!lang.isNull()){
+		if (qtt.load(lang, i18nPath)){
+			return lang;
+		} else {
+			qDebug()<<"[EE] Can't open user selected translation";
+			if (qtt.load("en_us", i18nPath)){
+				return "en_us";
+			} else {
+				qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
+			}
+		}
+	} else {
+		qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
+	}
+	return "";
 }
 
 QString  corelib::getLang(){
@@ -390,106 +390,106 @@ QString  corelib::getLang(){
 }
 
 QString  corelib::getLocale(){
-    QString lang;
-        lang = setlocale(LC_ALL, "");
+	QString lang;
+		lang = setlocale(LC_ALL, "");
 #ifdef DEBUG
-        qDebug()<<"[ii] LC_ALL: "<<lang;
+		qDebug()<<"[ii] LC_ALL: "<<lang;
 #endif
-        if (lang.isEmpty()){
-                lang = setlocale(LC_MESSAGES, "");
+		if (lang.isEmpty()){
+				lang = setlocale(LC_MESSAGES, "");
 #ifdef DEBUG
-                qDebug()<<"[ii] LC_MESSAGES: "<<lang;
+				qDebug()<<"[ii] LC_MESSAGES: "<<lang;
 #endif
-                if (lang.isEmpty()){
-                        lang = getenv("LANG");
+				if (lang.isEmpty()){
+						lang = getenv("LANG");
 #ifdef DEBUG
-                        qDebug()<<"[ii] Env LANG: "<<lang;
+						qDebug()<<"[ii] Env LANG: "<<lang;
 #endif
-                }
-        }
+				}
+		}
 
 #ifdef DEBUG
-        qDebug()<<"[ii] Lang before split: "<<lang;
+		qDebug()<<"[ii] Lang before split: "<<lang;
 #endif
 
-        QStringList loc = lang.split(".");
+		QStringList loc = lang.split(".");
 #ifdef DEBUG
-        qDebug()<<"[ii] loc.count(): "<<loc.count();
+		qDebug()<<"[ii] loc.count(): "<<loc.count();
 #endif
-        if (loc.count()==2){
-            lang = loc.at(1).toLower();
-        } else {
-            lang = "utf8";
-        }
+		if (loc.count()==2){
+			lang = loc.at(1).toLower();
+		} else {
+			lang = "utf8";
+		}
 
-        if (lang.contains(";"))
-            lang = lang.split(";").first();
+		if (lang.contains(";"))
+			lang = lang.split(";").first();
 
 #ifdef DEBUG
-        qDebug()<<"[ii] Lang to load: "<<lang;
+		qDebug()<<"[ii] Lang to load: "<<lang;
 #endif
-        return lang;
+		return lang;
 }
 
 bool corelib::isConfigured(){
-    if (this->getSetting("", "configure", false, "").toString()=="yes")
-        return true;
-    return false;
+	if (this->getSetting("", "configure", false, "").toString()=="yes")
+		return true;
+	return false;
 }
 
 bool corelib::checkDirs(){
-    QStringList subDirs;
-    subDirs << "" << "db" << "icons" << "prefixes" << "tmp" << "theme" << "tmp/cache";
+	QStringList subDirs;
+	subDirs << "" << "db" << "icons" << "prefixes" << "tmp" << "theme" << "tmp/cache";
 
-    QTextStream QErr(stderr);
-    QDir dir;
-    QString rootConfPath = QString("%1/.config/%2").arg(QDir::homePath()).arg(APP_SHORT_NAME);
+	QTextStream QErr(stderr);
+	QDir dir;
+	QString rootConfPath = QString("%1/.config/%2").arg(QDir::homePath()).arg(APP_SHORT_NAME);
 
-    for (int i=0; i<subDirs.size(); ++i){
-        QString subDir=rootConfPath;
-        subDir.append("/");
-        subDir.append(subDirs.at(i).toLocal8Bit().constData());
+	for (int i=0; i<subDirs.size(); ++i){
+		QString subDir=rootConfPath;
+		subDir.append("/");
+		subDir.append(subDirs.at(i).toLocal8Bit().constData());
 
 #ifdef DEBUG
-        qDebug()<<"[ii] Check for directory: "<<subDir;
+		qDebug()<<"[ii] Check for directory: "<<subDir;
 #endif
 
-        if (!dir.exists(subDir)){
-            if (!dir.mkdir(subDir)){
-                QErr<<"[EE] "<<"Unable to create directory "<<subDir;
-                return false;
-            }
-        }
-    }
+		if (!dir.exists(subDir)){
+			if (!dir.mkdir(subDir)){
+				QErr<<"[EE] "<<"Unable to create directory "<<subDir;
+				return false;
+			}
+		}
+	}
 
-    return true;
+	return true;
 }
 
 void corelib::getBuildFlags(){
-    QTextStream Qcout(stdout);
-    Qcout<<QObject::tr("Buildtime flags are:")<<endl<<endl;
-    Qcout<<qSetFieldWidth(25)<<left<<" CMAKE_INSTALL_PREFIX"<<APP_PREF<<qSetFieldWidth(0)<<endl<<endl;
+	QTextStream Qcout(stdout);
+	Qcout<<QObject::tr("Buildtime flags are:")<<endl<<endl;
+	Qcout<<qSetFieldWidth(25)<<left<<" CMAKE_INSTALL_PREFIX"<<APP_PREF<<qSetFieldWidth(0)<<endl<<endl;
 #ifdef DEBUG
-    Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"ON"<<qSetFieldWidth(0)<<endl;
+	Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"ON"<<qSetFieldWidth(0)<<endl;
 #else
-    Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"OFF"<<qSetFieldWidth(0)<<endl;
+	Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"OFF"<<qSetFieldWidth(0)<<endl;
 #endif
 #ifdef WITH_ICOUTILS
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"ON"<<qSetFieldWidth(0)<<endl;
+	Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"ON"<<qSetFieldWidth(0)<<endl;
 #else
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"OFF"<<qSetFieldWidth(0)<<endl;
+	Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"OFF"<<qSetFieldWidth(0)<<endl;
 #endif
 #ifdef WITH_EMBEDDED_FUSEISO
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"ON"<<qSetFieldWidth(0)<<endl;
+	Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"ON"<<qSetFieldWidth(0)<<endl;
 #else
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"OFF"<<qSetFieldWidth(0)<<endl;
+	Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"OFF"<<qSetFieldWidth(0)<<endl;
 #endif
 #ifdef WITH_WINEAPPDB
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"ON"<<qSetFieldWidth(0)<<endl;
+	Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"ON"<<qSetFieldWidth(0)<<endl;
 #else
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"OFF"<<qSetFieldWidth(0)<<endl;
+	Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"OFF"<<qSetFieldWidth(0)<<endl;
 #endif
-    Qcout<<endl;
+	Qcout<<endl;
 }
 
 QString corelib::getWhichOut(const QString fileName, bool showErr){
@@ -497,7 +497,7 @@ QString corelib::getWhichOut(const QString fileName, bool showErr){
    * Getting 'which' output;
    */
 
-    if  (fileName=="mdconfig"){
+	if  (fileName=="mdconfig"){
 		if (!mdconfig.isEmpty())
 			return mdconfig;
 	} else if  (fuseiso=="fuseiso"){
@@ -529,7 +529,7 @@ QString corelib::getWhichOut(const QString fileName, bool showErr){
 	QString string = proc.readAllStandardOutput();
 
 	if (!string.isEmpty()){
-        if (fileName=="mdconfig"){
+		if (fileName=="mdconfig"){
 			mdconfig=string.trimmed();
 		} else if (fileName=="fuseiso"){
 			fuseiso=string.trimmed();
@@ -602,82 +602,82 @@ QStringList corelib::getCdromDevices(void) const{
 		return dllList;
 	}
 
-    QString corelib::getMountedImages(QString cdrom_mount){
+	QString corelib::getMountedImages(QString cdrom_mount){
 
-        if (cdrom_mount.right(1)=="/"){
-            cdrom_mount=cdrom_mount.left(cdrom_mount.length()-1);
-        }
+		if (cdrom_mount.right(1)=="/"){
+			cdrom_mount=cdrom_mount.left(cdrom_mount.length()-1);
+		}
 
 		QString image="";
 		QStringList arguments;
 
 #ifdef DEBUG
-        qDebug()<<"corelib::getMountedImages("<<cdrom_mount<<")";
+		qDebug()<<"corelib::getMountedImages("<<cdrom_mount<<")";
 #endif
 
 
 #ifdef _OS_LINUX_
-        QString filename="/etc/mtab";
-        QFile file(filename);
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-            QTextStream in(&file);
-            while (!in.atEnd()) {
-                QString line = in.readLine();
+		QString filename="/etc/mtab";
+		QFile file(filename);
+		if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+			QTextStream in(&file);
+			while (!in.atEnd()) {
+				QString line = in.readLine();
 #ifdef DEBUG
-                qDebug()<<"corelib::/etc/mtab:line"<<line;
+				qDebug()<<"corelib::/etc/mtab:line"<<line;
 #endif
-                if (line.contains(cdrom_mount)){
-                    image = line.split(" ").first();
-                    if (image.contains("fuseiso") || image.contains("q4wine-mount")){
+				if (line.contains(cdrom_mount)){
+					image = line.split(" ").first();
+					if (image.contains("fuseiso") || image.contains("q4wine-mount")){
 #ifdef DEBUG
-                        qDebug()<<"corelib::fuseiso image found: "<<image;
+						qDebug()<<"corelib::fuseiso image found: "<<image;
 #endif
-                        filename=QDir::homePath();
-                        filename.append("/.mtab.fuseiso");
-                        QFile file(filename);
-                        if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-                            QTextStream in(&file);
-                            while (!in.atEnd()) {
-                                QString line = in.readLine();
+						filename=QDir::homePath();
+						filename.append("/.mtab.fuseiso");
+						QFile file(filename);
+						if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+							QTextStream in(&file);
+							while (!in.atEnd()) {
+								QString line = in.readLine();
 #ifdef DEBUG
-                                qDebug()<<"corelib::getMountedImages:line"<<line;
+								qDebug()<<"corelib::getMountedImages:line"<<line;
 #endif
-                                if (line.contains(cdrom_mount))
-                                    return line.split(" ").first().split("/").last();
-                            }
-                        } else {
+								if (line.contains(cdrom_mount))
+									return line.split(" ").first().split("/").last();
+							}
+						} else {
 #ifdef DEBUG
-                            qDebug()<<"corelib::fuseiso cant read mtab.fuseiso"<<image;
+							qDebug()<<"corelib::fuseiso cant read mtab.fuseiso"<<image;
 #endif
-                            return QString("cant read %1").arg(filename);
-                        }
-                    } else if (image.contains("loop")){
-                        if (!this->getSetting("system", "sudo").toString().isEmpty()){
-                            arguments << "losetup" << image;
-                            QProcess myProcess;
-                            myProcess.start(this->getSetting("system", "sudo").toString(), arguments);
-                            if (!myProcess.waitForFinished()){
-                                qDebug() << "Make failed:" << myProcess.errorString();
-                                return QString("can't run %1").arg(arguments.at(0));
-                            } else {
-                                image = myProcess.readAll();
-                                qDebug()<<"[ii] loop: "<<arguments;
-                                return image.split("/").last().mid(0, image.split("/").last().length()-2);
-                            }
-                        }
-                    } else {
-                        return image;
-                    }
-                }
-            }
-        } else {
-            return "cant read /etc/mtab";
-        }
+							return QString("cant read %1").arg(filename);
+						}
+					} else if (image.contains("loop")){
+						if (!this->getSetting("system", "sudo").toString().isEmpty()){
+							arguments << "losetup" << image;
+							QProcess myProcess;
+							myProcess.start(this->getSetting("system", "sudo").toString(), arguments);
+							if (!myProcess.waitForFinished()){
+								qDebug() << "Make failed:" << myProcess.errorString();
+								return QString("can't run %1").arg(arguments.at(0));
+							} else {
+								image = myProcess.readAll();
+								qDebug()<<"[ii] loop: "<<arguments;
+								return image.split("/").last().mid(0, image.split("/").last().length()-2);
+							}
+						}
+					} else {
+						return image;
+					}
+				}
+			}
+		} else {
+			return "cant read /etc/mtab";
+		}
 
-        return "none";
+		return "none";
 #endif
 #ifdef _OS_FREEBSD_
-        arguments << "-c" << QString("%1 | grep \"%2\"").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
+		arguments << "-c" << QString("%1 | grep \"%2\"").arg(this->getSetting("system", "mount").toString()).arg(cdrom_mount);
 
 		QProcess myProcess;
 		myProcess.start(this->getSetting("system", "sh").toString(), arguments);
@@ -689,7 +689,7 @@ QStringList corelib::getCdromDevices(void) const{
 		image = myProcess.readAll();
 
 #ifdef DEBUG
-        qDebug()<<"corelib::getMountedImages:image"<<image;
+		qDebug()<<"corelib::getMountedImages:image"<<image;
 #endif
 
 		if (!image.isEmpty()){
@@ -709,7 +709,7 @@ QStringList corelib::getCdromDevices(void) const{
 						}
 					} else if (image.contains("fuseiso") || image.contains("q4wine-mount")){
 #ifdef DEBUG
-        qDebug()<<"corelib::getMountedImages fuseiso sub"<<image;
+		qDebug()<<"corelib::getMountedImages fuseiso sub"<<image;
 #endif
 						QString filename;
 						filename=QDir::homePath();
@@ -720,7 +720,7 @@ QStringList corelib::getCdromDevices(void) const{
 							while (!in.atEnd()) {
 								QString line = in.readLine();
 #ifdef DEBUG
-        qDebug()<<"corelib::getMountedImages:line"<<line;
+		qDebug()<<"corelib::getMountedImages:line"<<line;
 #endif
 								if (line.contains(cdrom_mount))
 									image = line.split(" ").first().split("/").last();
@@ -737,149 +737,149 @@ QStringList corelib::getCdromDevices(void) const{
 			}
 #endif
 
-            return image;
+			return image;
 		}
 
-        bool corelib::runIcon(const QString prefix_name, const QString dir_name, const QString icon_name){
-            QHash<QString, QString> result = db_icon.getByName(prefix_name, dir_name, icon_name);
+		bool corelib::runIcon(const QString prefix_name, const QString dir_name, const QString icon_name){
+			QHash<QString, QString> result = db_icon.getByName(prefix_name, dir_name, icon_name);
 			ExecObject execObj;
-            execObj.wrkdir = result.value("wrkdir");
-            execObj.override = result.value("override");
-            execObj.winedebug = result.value("winedebug");
-            execObj.useconsole = result.value("useconsole");
-            execObj.display = result.value("display");
-            execObj.cmdargs = result.value("cmdargs");
-            execObj.execcmd = result.value("exec");
-            execObj.desktop = result.value("desktop");
-            execObj.nice = result.value("nice");
+			execObj.wrkdir = result.value("wrkdir");
+			execObj.override = result.value("override");
+			execObj.winedebug = result.value("winedebug");
+			execObj.useconsole = result.value("useconsole");
+			execObj.display = result.value("display");
+			execObj.cmdargs = result.value("cmdargs");
+			execObj.execcmd = result.value("exec");
+			execObj.desktop = result.value("desktop");
+			execObj.nice = result.value("nice");
 			execObj.name = icon_name;
 
-            return runWineBinary(execObj, prefix_name);
+			return runWineBinary(execObj, prefix_name);
 		}
 
-        bool corelib::checkFileExists(QString path){
-            QString u_path;
+		bool corelib::checkFileExists(QString path){
+			QString u_path;
 
-            if (path.length()<=0){
-                /* if (this->_GUI_MODE){
-                    qDebug()<<"[EE] No binary passed sSsssssssssssSSSSSSSSSSSs ============"<<path;
-                    QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("No binary passed to function"));
-                } else {
-                    qDebug()<<"[EE] No binary passed";
-                } */
-                return true;
-            }
+			if (path.length()<=0){
+				/* if (this->_GUI_MODE){
+					qDebug()<<"[EE] No binary passed sSsssssssssssSSSSSSSSSSSs ============"<<path;
+					QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("No binary passed to function"));
+				} else {
+					qDebug()<<"[EE] No binary passed";
+				} */
+				return true;
+			}
 
-            if (path.mid(0,1)=="/"){
-                if (!QFile(path).exists()){
-                    if (this->_GUI_MODE){
-                        QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" do not exists.").arg(path));
-                    } else {
-                        qDebug()<<"[EE] Binary \""<<path<<"\" do not exists. Abort.";
-                    }
-                    return false;
-                }
-            } else if (path.mid(1,2)==":\\"){
-                u_path = this->getWinePath(path, "-u");
-                if (u_path.isEmpty()){
-                    if (this->_GUI_MODE){
-                        QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Can't get unix path for \"%1\".").arg(path));
-                    } else {
-                        qDebug()<<"[EE] Binary \""<<path<<"\" do not exists. Abort.";
-                    }
-                    return false;
-                } else {
-                    if (!QFile(u_path).exists()){
-                        if (this->_GUI_MODE){
-                            QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" do not exists.").arg(u_path));
-                        } else {
-                            qDebug()<<"[EE] Binary \""<<u_path<<"\" do not exists. Abort.";
-                        }
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
+			if (path.mid(0,1)=="/"){
+				if (!QFile(path).exists()){
+					if (this->_GUI_MODE){
+						QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" do not exists.").arg(path));
+					} else {
+						qDebug()<<"[EE] Binary \""<<path<<"\" do not exists. Abort.";
+					}
+					return false;
+				}
+			} else if (path.mid(1,2)==":\\"){
+				u_path = this->getWinePath(path, "-u");
+				if (u_path.isEmpty()){
+					if (this->_GUI_MODE){
+						QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Can't get unix path for \"%1\".").arg(path));
+					} else {
+						qDebug()<<"[EE] Binary \""<<path<<"\" do not exists. Abort.";
+					}
+					return false;
+				} else {
+					if (!QFile(u_path).exists()){
+						if (this->_GUI_MODE){
+							QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" do not exists.").arg(u_path));
+						} else {
+							qDebug()<<"[EE] Binary \""<<u_path<<"\" do not exists. Abort.";
+						}
+						return false;
+					}
+				}
+			}
+			return true;
+		}
 
-        bool corelib::runWineBinary(const ExecObject execObj, QString prefix_name, bool detach){
-            QString binary = QString("%1/bin/q4wine-helper").arg(APP_PREF);
-            QStringList args;
+		bool corelib::runWineBinary(const ExecObject execObj, QString prefix_name, bool detach){
+			QString binary = QString("%1/bin/q4wine-helper").arg(APP_PREF);
+			QStringList args;
 
-            args.append("--prefix");
-            args.append(prefix_name);
+			args.append("--prefix");
+			args.append(prefix_name);
 
-            if (execObj.nice>0){
-                args.append("--nice");
-                args.append(execObj.nice);
-            }
+			if (execObj.nice>0){
+				args.append("--nice");
+				args.append(execObj.nice);
+			}
 
-            if (!execObj.desktop.isEmpty()){
-                args.append("--desktop");
-                args.append(execObj.desktop);
-            }
+			if (!execObj.desktop.isEmpty()){
+				args.append("--desktop");
+				args.append(execObj.desktop);
+			}
 
-            if (!execObj.override.isEmpty()){
-                args.append("--override");
-                args.append(QString("\"%1\"").arg(execObj.override));
-            }
+			if (!execObj.override.isEmpty()){
+				args.append("--override");
+				args.append(QString("\"%1\"").arg(execObj.override));
+			}
 
-            if (execObj.useconsole == "1"){
-                args.append("--console");
-                args.append(execObj.useconsole);
-            }
+			if (execObj.useconsole == "1"){
+				args.append("--console");
+				args.append(execObj.useconsole);
+			}
 
-            if (!execObj.winedebug.isEmpty()){
-                args.append("--wine-debug");
-                args.append(execObj.winedebug);
-            }
+			if (!execObj.winedebug.isEmpty()){
+				args.append("--wine-debug");
+				args.append(execObj.winedebug);
+			}
 
-            if (!execObj.display.isEmpty()){
-                args.append("--display");
-                args.append(execObj.display);
-            }
+			if (!execObj.display.isEmpty()){
+				args.append("--display");
+				args.append(execObj.display);
+			}
 
-            if (!execObj.cmdargs.isEmpty()){
-                args.append("--program-args");
-                args.append(execObj.cmdargs);
-            }
+			if (!execObj.cmdargs.isEmpty()){
+				args.append("--program-args");
+				args.append(execObj.cmdargs);
+			}
 
-            if (!execObj.execcmd.isEmpty()){
-                args.append("--program-bin");
-                args.append(execObj.execcmd);
-            }
+			if (!execObj.execcmd.isEmpty()){
+				args.append("--program-bin");
+				args.append(execObj.execcmd);
+			}
 
-            QString wrkdir = execObj.wrkdir;
+			QString wrkdir = execObj.wrkdir;
 
-            if (wrkdir.isEmpty())
-                wrkdir = QDir::homePath();
+			if (wrkdir.isEmpty())
+				wrkdir = QDir::homePath();
 
-            args.append("--wrkdir");
-            args.append(wrkdir);
+			args.append("--wrkdir");
+			args.append(wrkdir);
 
 #ifdef DEBUG
-            qDebug()<<"[ii] corelib::runWineBinary: "<<binary<<args<<" at: "<<wrkdir;
+			qDebug()<<"[ii] corelib::runWineBinary: "<<binary<<args<<" at: "<<wrkdir;
 #endif
 
-            if (detach){
-                QProcess proc(0);
-                return proc.startDetached(binary, args, wrkdir);
-            } else {
-                Process proc(args, binary, wrkdir, QObject::tr("Running binary: \"%1\"").arg(execObj.execcmd), QObject::tr("Running binary..."), false);
-                return proc.exec();
-            }
+			if (detach){
+				QProcess proc(0);
+				return proc.startDetached(binary, args, wrkdir);
+			} else {
+				Process proc(args, binary, wrkdir, QObject::tr("Running binary: \"%1\"").arg(execObj.execcmd), QObject::tr("Running binary..."), false);
+				return proc.exec();
+			}
 
-                  return false;
+				  return false;
 		}
 
-        QString corelib::createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const{
-            QHash<QString, QString> result = db_icon.getByName(prefix_name, dir_name, icon_name);
+		QString corelib::createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const{
+			QHash<QString, QString> result = db_icon.getByName(prefix_name, dir_name, icon_name);
 
 			QString fileName = QDir::homePath();
 			fileName.append("/.config/");
 			fileName.append(APP_SHORT_NAME);
 			fileName.append("/tmp/");
-            fileName.append(result.value("name"));
+			fileName.append(result.value("name"));
 			fileName.append(".desktop");
 
 			QFile file(fileName);
@@ -892,53 +892,53 @@ QStringList corelib::getCdromDevices(void) const{
 				out<<" -d \""<<dir_name<<"\" ";
 			out<<" -i \""<<icon_name<<"\" "<<endl;
 
-            QString icon_path = result.value("icon_path");
+			QString icon_path = result.value("icon_path");
 
-            if (icon_path.isEmpty()){
+			if (icon_path.isEmpty()){
 				out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/exec_wine.png"<<endl;
 			} else {
-                if (icon_name=="winecfg"){
+				if (icon_name=="winecfg"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/winecfg.png"<<endl;
-                } else if (icon_name=="console"){
+				} else if (icon_name=="console"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/wineconsole.png"<<endl;
-                } else if (icon_name=="uninstaller"){
+				} else if (icon_name=="uninstaller"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/uninstaller.png"<<endl;
-                } else if (icon_name=="regedit"){
+				} else if (icon_name=="regedit"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/regedit.png"<<endl;
-                } else if (icon_name=="explorer"){
+				} else if (icon_name=="explorer"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/explorer.png"<<endl;
-                } else if (icon_name=="eject"){
+				} else if (icon_name=="eject"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/eject.png"<<endl;
-                } else if (icon_name=="wordpad"){
+				} else if (icon_name=="wordpad"){
 					out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/notepad.png"<<endl;
 				} else {
-                    out<<"Icon="<<icon_path<<endl;
+					out<<"Icon="<<icon_path<<endl;
 				}
 			}
 			out<<"Type=Application"<<endl;
 			out<<"X-KDE-StartupNotify=true"<<endl;
-            out<<"GenericName="<<result.value("name")<<endl;
-            out<<"Name="<<result.value("name")<<endl;
-            out<<"Path="<<result.value("wrkdir")<<endl;
+			out<<"GenericName="<<result.value("name")<<endl;
+			out<<"Name="<<result.value("name")<<endl;
+			out<<"Path="<<result.value("wrkdir")<<endl;
 
 			file.close();
 
-            return fileName;
+			return fileName;
 		}
 
-        QString corelib::getEscapeString(const QString string, const bool spaces) const{
-            if (spaces){
-                return QRegExp::escape(string).replace(" ", "\\ ").replace("'", "\\'").replace("\"", "\\\"");
-            } else {
-                return QRegExp::escape(string).replace("'", "\\'").replace("\"", "\\\"");
-            }
+		QString corelib::getEscapeString(const QString string, const bool spaces) const{
+			if (spaces){
+				return QRegExp::escape(string).replace(" ", "\\ ").replace("'", "\\'").replace("\"", "\\\"");
+			} else {
+				return QRegExp::escape(string).replace("'", "\\'").replace("\"", "\\\"");
+			}
 		}
 
-        bool corelib::mountImage(const QString image_name, const QString prefix_name){
+		bool corelib::mountImage(const QString image_name, const QString prefix_name){
 
-            this->umountImage(prefix_name);
+			this->umountImage(prefix_name);
 
-            QString mount_point=db_prefix.getMountPoint(prefix_name);
+			QString mount_point=db_prefix.getMountPoint(prefix_name);
 #ifdef DEBUG
 			qDebug()<<"[ii] corelib::mountImage: mount point: "<<mount_point;
 #endif
@@ -967,11 +967,11 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 
 				if (!QFile(image_name).exists()){
-                    mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(db_image.getPath(image_name)));
+					mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(db_image.getPath(image_name)));
 				} else {
 					mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(image_name));
 				}
-                mount_string.replace("%MDCONFIG_BIN%", this->getWhichOut("mdconfig"));
+				mount_string.replace("%MDCONFIG_BIN%", this->getWhichOut("mdconfig"));
 			}
 
 			mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());
@@ -1022,15 +1022,15 @@ QStringList corelib::getCdromDevices(void) const{
 			return this->runProcess(args, QObject::tr("Mounting..."),  QObject::tr("Mounting %1 into %2").arg(image_name).arg(mount_point));
 		}
 
-        bool corelib::umountImage(const QString prefix_name){
-            QString mount_point=db_prefix.getMountPoint(prefix_name);
+		bool corelib::umountImage(const QString prefix_name){
+			QString mount_point=db_prefix.getMountPoint(prefix_name);
 
-            if (this->getMountedImages(mount_point)=="none"){
+			if (this->getMountedImages(mount_point)=="none"){
 #ifdef DEBUG
-                qDebug()<<"[ii] corelib::umountImage: no mounted images found in mount point: "<<mount_point;
+				qDebug()<<"[ii] corelib::umountImage: no mounted images found in mount point: "<<mount_point;
 #endif
-                return false;
-            }
+				return false;
+			}
 
 #ifdef DEBUG
 			qDebug()<<"[ii] corelib::umountImage: mount point: "<<mount_point;
@@ -1192,14 +1192,14 @@ QStringList corelib::getCdromDevices(void) const{
 		}
 
 		void corelib::openHelpUrl(const QString rawurl){
-            QString url="http://";
+			QString url="http://";
 			url.append(APP_WEBSITTE);
 			url.append("/documentation/");
-            url.append(this->getLang());
+			url.append(this->getLang());
 			url.append("/");
 			url.append(rawurl);
 
-            this->openUrl(url);
+			this->openUrl(url);
 			return;
 		}
 
@@ -1209,12 +1209,12 @@ QStringList corelib::getCdromDevices(void) const{
 			url.append("/");
 			url.append(rawurl);
 
-            this->openUrl(url);
+			this->openUrl(url);
 			return;
 		}
 
-        void corelib::openUrl(const QString url){
-            QDesktopServices::openUrl(QUrl(url, QUrl::TolerantMode));
+		void corelib::openUrl(const QString url){
+			QDesktopServices::openUrl(QUrl(url, QUrl::TolerantMode));
 			return;
 		}
 
@@ -1358,155 +1358,155 @@ QStringList corelib::getCdromDevices(void) const{
 		}
 
 		void corelib::runAutostart(void){
-            QStringList iconsList, prefixList;
+			QStringList iconsList, prefixList;
 
-            prefixList = db_prefix.getPrefixList();
+			prefixList = db_prefix.getPrefixList();
 			for (int i = 0; i < prefixList.size(); ++i) {
-                iconsList = db_icon.getIconsList(prefixList.at(i), "autostart", "");
+				iconsList = db_icon.getIconsList(prefixList.at(i), "autostart", "");
 				for (int j = 0; j < iconsList.size(); ++j) {
-                    qDebug()<<iconsList.at(j);
-                    this->runIcon(prefixList.at(i), "autostart", iconsList.at(j));
+					qDebug()<<iconsList.at(j);
+					this->runIcon(prefixList.at(i), "autostart", iconsList.at(j));
 				}
 			}
 			return;
 		}
 
-        QString corelib::createWineString(QString prefixName, QString dirName, QString iconName){
-            QHash<QString, QString> icon = db_icon.getByName(prefixName, dirName, iconName);
-            QHash<QString,QString> prefix = db_prefix.getByName(prefixName);
+		QString corelib::createWineString(QString prefixName, QString dirName, QString iconName){
+			QHash<QString, QString> icon = db_icon.getByName(prefixName, dirName, iconName);
+			QHash<QString,QString> prefix = db_prefix.getByName(prefixName);
 
-            QString env;
+			QString env;
 
-            env.append(QString(" WINEPREFIX=\'%1\' ").arg(prefix["path"]));
-            env.append(QString(" WINESERVER=\'%1\' ").arg(prefix["server"]));
-            env.append(QString(" WINELOADER=\'%1\' ").arg(prefix["loader"]));
-            env.append(QString(" WINEDLLPATH=\'%1\' ").arg(prefix["libs"]));
+			env.append(QString(" WINEPREFIX=\'%1\' ").arg(prefix["path"]));
+			env.append(QString(" WINESERVER=\'%1\' ").arg(prefix["server"]));
+			env.append(QString(" WINELOADER=\'%1\' ").arg(prefix["loader"]));
+			env.append(QString(" WINEDLLPATH=\'%1\' ").arg(prefix["libs"]));
 
-            if (!icon["winedebug"].isEmpty())
-                env.append(QString(" WINEDEBUG=\'%1\' ").arg(icon["winedebug"]));
+			if (!icon["winedebug"].isEmpty())
+				env.append(QString(" WINEDEBUG=\'%1\' ").arg(icon["winedebug"]));
 
-            if (!icon["display"].isEmpty())
-                env.append(QString(" DISPLAY=\'%1\' ").arg(icon["display"]));
+			if (!icon["display"].isEmpty())
+				env.append(QString(" DISPLAY=\'%1\' ").arg(icon["display"]));
 
-            if (!icon["override"].isEmpty())
-                 env.append(QString(" WINEDLLOVERRIDES=\'%1\' ").arg(icon["override"]));
+			if (!icon["override"].isEmpty())
+				 env.append(QString(" WINEDLLOVERRIDES=\'%1\' ").arg(icon["override"]));
 
-            QString run_string="";
+			QString run_string="";
 
-            if (icon["useconsole"]=="1"){
-                // If we gona use console output, so exec program is program specificed at CONSOLE global variable
-                run_string = QString(" %1 ").arg(this->getSetting("console", "bin").toString());
+			if (icon["useconsole"]=="1"){
+				// If we gona use console output, so exec program is program specificed at CONSOLE global variable
+				run_string = QString(" %1 ").arg(this->getSetting("console", "bin").toString());
 
-                if (!this->getSetting("console", "args", false).toString().isEmpty()){
-                    // If we have any conslope parametres, we gona preccess them one by one
-                    run_string.append(this->getSetting("console", "args", false).toString());
-                }
+				if (!this->getSetting("console", "args", false).toString().isEmpty()){
+					// If we have any conslope parametres, we gona preccess them one by one
+					run_string.append(this->getSetting("console", "args", false).toString());
+				}
 
-                run_string.append(" /bin/sh -c \"cd \'");
-                run_string.append(icon["wrkdir"]);
-                run_string.append("\' && ");
-            } else {
-                 QTextCodec *codec = QTextCodec::codecForName(this->getLocale().toAscii());
-                 if (chdir(codec->fromUnicode(icon["wrkdir"]).data()) != 0){
-                     qDebug()<<"[EE] chdir to:"<<codec->fromUnicode(icon["wrkdir"]).data()<<"fail";
-                     return "";
-                 }
-            }
+				run_string.append(" /bin/sh -c \"cd \'");
+				run_string.append(icon["wrkdir"]);
+				run_string.append("\' && ");
+			} else {
+				 QTextCodec *codec = QTextCodec::codecForName(this->getLocale().toAscii());
+				 if (chdir(codec->fromUnicode(icon["wrkdir"]).data()) != 0){
+					 qDebug()<<"[EE] chdir to:"<<codec->fromUnicode(icon["wrkdir"]).data()<<"fail";
+					 return "";
+				 }
+			}
 
-            //Setting enveropment variables
-            if (!env.isEmpty()){
-                run_string.append(" env ");
-                run_string.append(env);
-            }
+			//Setting enveropment variables
+			if (!env.isEmpty()){
+				run_string.append(" env ");
+				run_string.append(env);
+			}
 
-            if (icon["nice"] != "0"){
-                run_string.append(QString(" %1 -n %2 ").arg(this->getSetting("system", "nice", false).toString()).arg(icon["nice"]));
-            }
+			if (icon["nice"] != "0"){
+				run_string.append(QString(" %1 -n %2 ").arg(this->getSetting("system", "nice", false).toString()).arg(icon["nice"]));
+			}
 
-            run_string.append(QString(" %1 ").arg(prefix["bin"]));
+			run_string.append(QString(" %1 ").arg(prefix["bin"]));
 
-            if (!icon["desktop"].isEmpty()){
-                QString deskname = icon["exec"].split("/").last().split("\\").last();
-                deskname.replace(" ", ".");
-                deskname.replace("&", ".");
-                deskname.replace("!", ".");
-                deskname.replace("$", ".");
-                deskname.replace("*", ".");
-                deskname.replace("(", ".");
-                deskname.replace(")", ".");
-                deskname.replace("[", ".");
-                deskname.replace("]", ".");
-                deskname.replace(";", ".");
-                deskname.replace("'", ".");
-                deskname.replace("\"", ".");
-                deskname.replace("|", ".");
-                deskname.replace("`", ".");
-                deskname.replace("\\", ".");
-                deskname.replace("/", ".");
-                deskname.replace(">", ".");
-                deskname.replace("<", ".");
-                run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(icon["desktop"]));
-            }
+			if (!icon["desktop"].isEmpty()){
+				QString deskname = icon["exec"].split("/").last().split("\\").last();
+				deskname.replace(" ", ".");
+				deskname.replace("&", ".");
+				deskname.replace("!", ".");
+				deskname.replace("$", ".");
+				deskname.replace("*", ".");
+				deskname.replace("(", ".");
+				deskname.replace(")", ".");
+				deskname.replace("[", ".");
+				deskname.replace("]", ".");
+				deskname.replace(";", ".");
+				deskname.replace("'", ".");
+				deskname.replace("\"", ".");
+				deskname.replace("|", ".");
+				deskname.replace("`", ".");
+				deskname.replace("\\", ".");
+				deskname.replace("/", ".");
+				deskname.replace(">", ".");
+				deskname.replace("<", ".");
+				run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(icon["desktop"]));
+			}
 
-            run_string.append(QString(" \'%1\' %2 ").arg(icon["exec"]).arg(icon["cmdargs"]));
-            run_string.append(" 2>&1 ");
+			run_string.append(QString(" \'%1\' %2 ").arg(icon["exec"]).arg(icon["cmdargs"]));
+			run_string.append(" 2>&1 ");
 
-            if (icon["useconsole"]=="1"){
-                run_string.append(" \"");
-            }
+			if (icon["useconsole"]=="1"){
+				run_string.append(" \"");
+			}
 
-            return run_string;
-        }
+			return run_string;
+		}
 
-        void corelib::createPrefixDBStructure(QString prefixName){
+		void corelib::createPrefixDBStructure(QString prefixName){
 #ifdef DEBUG
-            qDebug()<<"[ii] Wizard::creating icons";
+			qDebug()<<"[ii] Wizard::creating icons";
 #endif
 
 
-            //Is settings directory exists?
-            if (!db_dir.isExistsByName(prefixName, "system")){
-                db_dir.addDir(prefixName, "system");
-                //Adding icons
-                db_icon.addIcon("", "winecfg.exe", "winecfg", "Configure the general settings for Wine", prefixName, "system", "winecfg");
-                db_icon.addIcon("--backend=user cmd", "wineconsole", "wineconsole", "Wineconsole is similar to wine command wcmd", prefixName, "system", "console");
-                db_icon.addIcon("", "uninstaller.exe", "uninstaller", "Uninstall Windows programs under Wine properly", prefixName, "system", "uninstaller");
-                db_icon.addIcon("", "regedit.exe", "regedit", "Wine registry editor", prefixName, "system", "regedit");
-                db_icon.addIcon("", "explorer.exe", "explorer", "Browse the files in the virtual Wine drive", prefixName, "system", "explorer");
-                db_icon.addIcon("", "eject.exe", "eject", "Wine CD eject tool", prefixName, "system", "eject");
-                db_icon.addIcon("", "wordpad.exe", "wordpad", "Wine wordpad text editor", prefixName, "system", "wordpad");
-            }
+			//Is settings directory exists?
+			if (!db_dir.isExistsByName(prefixName, "system")){
+				db_dir.addDir(prefixName, "system");
+				//Adding icons
+				db_icon.addIcon("", "winecfg.exe", "winecfg", "Configure the general settings for Wine", prefixName, "system", "winecfg");
+				db_icon.addIcon("--backend=user cmd", "wineconsole", "wineconsole", "Wineconsole is similar to wine command wcmd", prefixName, "system", "console");
+				db_icon.addIcon("", "uninstaller.exe", "uninstaller", "Uninstall Windows programs under Wine properly", prefixName, "system", "uninstaller");
+				db_icon.addIcon("", "regedit.exe", "regedit", "Wine registry editor", prefixName, "system", "regedit");
+				db_icon.addIcon("", "explorer.exe", "explorer", "Browse the files in the virtual Wine drive", prefixName, "system", "explorer");
+				db_icon.addIcon("", "eject.exe", "eject", "Wine CD eject tool", prefixName, "system", "eject");
+				db_icon.addIcon("", "wordpad.exe", "wordpad", "Wine wordpad text editor", prefixName, "system", "wordpad");
+			}
 
-            if (!db_dir.isExistsByName(prefixName, "autostart"))
-                db_dir.addDir(prefixName, "autostart");
+			if (!db_dir.isExistsByName(prefixName, "autostart"))
+				db_dir.addDir(prefixName, "autostart");
 
-            if (!db_dir.isExistsByName(prefixName, "import"))
-                db_dir.addDir(prefixName, "import");
+			if (!db_dir.isExistsByName(prefixName, "import"))
+				db_dir.addDir(prefixName, "import");
 
 #ifdef DEBUG
-            qDebug()<<"[ii] Wizard::done";
+			qDebug()<<"[ii] Wizard::done";
 #endif
-        }
+		}
 
-        QString corelib::decodeRegString(QString string){
-            QTextCodec *codec = QTextCodec::codecForName("UTF-16BE");
-            QString ret;
-            QStringList parts = string.split("\\");
-            if (parts.count()>1){
-                for (int j=0; j<parts.count(); j++){
-                    if (parts.at(j).left(1)=="x"){
-                        QString test = QString("0%1").arg(parts.at(j).left(4));
-                        QByteArray temp = QByteArray::fromHex(test.toAscii().data());
-                        ret.append(codec->toUnicode(temp));
-                    }
+		QString corelib::decodeRegString(QString string){
+			QTextCodec *codec = QTextCodec::codecForName("UTF-16BE");
+			QString ret;
+			QStringList parts = string.split("\\");
+			if (parts.count()>1){
+				for (int j=0; j<parts.count(); j++){
+					if (parts.at(j).left(1)=="x"){
+						QString test = QString("0%1").arg(parts.at(j).left(4));
+						QByteArray temp = QByteArray::fromHex(test.toAscii().data());
+						ret.append(codec->toUnicode(temp));
+					}
 
-                    if (parts.at(j).length()>4)
-                        ret.append(parts.at(j).right(parts.at(j).length()-4));
+					if (parts.at(j).length()>4)
+						ret.append(parts.at(j).right(parts.at(j).length()-4));
 
-                }
-            } else {
-                ret.append(string);
-            }
+				}
+			} else {
+				ret.append(string);
+			}
 
-            return ret;
-        }
+			return ret;
+		}

@@ -65,12 +65,18 @@
 // Experimental Darwin support (no test were preformed)
 #ifdef _OS_DARWIN_
 		#include <kvm.h>
+		#include <fcntl.h>
+		#include <sys/kinfo.h>
+		#include <sys/kinfo_proc.h>
+		#include <paths.h>
+
+
 		#include <sys/param.h>
 		#include <sys/user.h>
 		#include <sys/file.h>
 		#include <sys/sysctl.h>
 		#include <limits.h>
-		#include <paths.h>
+
 #endif
 
 #include "src/core/database/prefix.h"
@@ -107,7 +113,7 @@ struct ExecObject{
 class corelib {
 public:
 	//! Create an mainlib class
-    corelib(bool _GUI_MODE);
+	corelib(bool _GUI_MODE);
 
 	/*! \brief This function tries to get wine process list running in the current system.
 	 *
@@ -132,14 +138,14 @@ public:
 	QIcon loadIcon(QString iconName);
 	QPixmap loadPixmap(QString pixmapName);
 
-    QString getTranslationLang();
+	QString getTranslationLang();
 	QString getLang();
-    QString getLocale();
+	QString getLocale();
 
-    bool isConfigured();
-    bool checkDirs();
+	bool isConfigured();
+	bool checkDirs();
 
-    void getBuildFlags();
+	void getBuildFlags();
 
 	/*! \brief This function get cdrom devices from /etc/fstab file.
 	 *
@@ -178,7 +184,7 @@ public:
 	 * \param  crom_mount	Mount point path.
 	 * \return Return an list of cdrom devices.
 	 */
-    QString getMountedImages(QString cdrom_mount);
+	QString getMountedImages(QString cdrom_mount);
 
 	/*! \brief This function mount an image or drive to prefix mount point.
 	 *
@@ -186,14 +192,14 @@ public:
 	 * \param  prefix_name	Prefix name.
 	 * \return Return an list of cdrom devices.
 	 */
-        bool mountImage(QString image_name, const QString prefix_name);
+		bool mountImage(QString image_name, const QString prefix_name);
 
 	/*! \brief This function umount an image or drive from prefix mount point.
 	 *
 	 * \param  prefix_name	Prefix name.
 	 * \return Return an list of cdrom devices.
 	 */
-    bool umountImage(const QString prefix_name);
+	bool umountImage(const QString prefix_name);
 
 	/*! \brief This function kills wineserver.
 	 *
@@ -209,7 +215,7 @@ public:
 	 * \param  icon_name	Icon name.
 	 * \return Return true on success.
 	 */
-    bool runIcon(const QString prefix_name, const QString dir_name, const QString icon_name);
+	bool runIcon(const QString prefix_name, const QString dir_name, const QString icon_name);
 
 	/*! \brief Prepare icon data for run wine.
 	 *
@@ -217,9 +223,9 @@ public:
 	 * \param  prefix_name	Prefix name.
 	 * \return Return true on success.
 	 */
-    bool runWineBinary(const ExecObject execObj, const QString prefix_name, bool detach=true);
-    //bool runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin="", const bool releaseProc = true);
-    bool checkFileExists(QString path);
+	bool runWineBinary(const ExecObject execObj, const QString prefix_name, bool detach=true);
+	//bool runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin="", const bool releaseProc = true);
+	bool checkFileExists(QString path);
 
 
 	QString createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const;
@@ -247,7 +253,7 @@ public:
 	 *
 	 * \param string	Base string
 	 */
-    QString getEscapeString(const QString string, const bool spaces = true) const;
+	QString getEscapeString(const QString string, const bool spaces = true) const;
 
 
 	/*! \brief Get's mount string based on QuikMount type profile
@@ -270,10 +276,10 @@ public:
 	bool reniceProcess(const int pid, const int priority) const;
 	void runAutostart(void);
 
-    QString createWineString(QString prefixName, QString dirName, QString iconName);
-    void createPrefixDBStructure(QString prefixName);
+	QString createWineString(QString prefixName, QString dirName, QString iconName);
+	void createPrefixDBStructure(QString prefixName);
 
-    QString decodeRegString(QString string);
+	QString decodeRegString(QString string);
 
 private:
 	/*! Define is library operate in CLI or GUI mode.
@@ -281,7 +287,7 @@ private:
 	 */
 	bool _GUI_MODE;
 
-    QString mdconfig, fuseiso, fusermount, ln, rm, sh;
+	QString mdconfig, fuseiso, fusermount, ln, rm, sh;
 
 	/*! \brief Displays error message depending on _GUI_MODE variable value
 	 *
@@ -300,7 +306,7 @@ private:
 	Prefix db_prefix;
 	Image db_image;
 	Icon db_icon;
-    Dir db_dir;
+	Dir db_dir;
 
 }; // end of class corelib
 
