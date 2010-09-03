@@ -616,8 +616,12 @@ QStringList corelib::getCdromDevices(void) const{
 			cdrom_mount=cdrom_mount.left(cdrom_mount.length()-1);
 		}
 
+
+
 		QString image="";
 		QStringList arguments;
+
+#ifndef _OS_DARWIN_SUX_
 
 #ifdef DEBUG
 		qDebug()<<"corelib::getMountedImages("<<cdrom_mount<<")";
@@ -744,7 +748,7 @@ QStringList corelib::getCdromDevices(void) const{
 				image = "none";
 			}
 #endif
-
+#endif  // !MACOS
 			return image;
 		}
 
