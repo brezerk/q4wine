@@ -91,7 +91,7 @@ IF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
 	MESSAGE(" Warning: Darwin was not tested, and not supported!")
 	MESSAGE(" You can mail test nad bugs to us")
 	MESSAGE("")
-	  SET(_OS_DARWIN_ 1)
+          SET(_OS_DARWIN_SUX_ 1)
 	ADD_DEFINITIONS(-Wall -g -DKERNEL)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
 
