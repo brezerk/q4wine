@@ -36,14 +36,14 @@ QList<QStringList> corelib::getWineProcessList(){
 	QList<QStringList> proclist;
 	QStringList procline;
 
-        QString message, name, procstat, path, prefix, env_arg, nice;
+	QString name, procstat, path, prefix, env_arg, nice;
 
 #ifdef _OS_LINUX_
-        message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
+	QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
 #endif
 
 #ifdef _OS_FREEBSD_
-        message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
+	QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
 #endif
 
 	// Check for /proc directory exists
@@ -553,12 +553,8 @@ QString corelib::getWhichOut(const QString fileName, bool showErr){
 }
 
 QStringList corelib::getCdromDevices(void) const{
-
-
-
 	QStringList retVal;
 
-#ifndef _OS_DARWIN_SUX_
 	QDir dir("/dev/");
 	dir.setFilter(QDir::Files | QDir::System);
 	dir.setSorting(QDir::Name);
@@ -566,8 +562,6 @@ QStringList corelib::getCdromDevices(void) const{
 	QFileInfoList list = dir.entryInfoList();
 	for (int i = 0; i < list.size(); ++i) {
 		QFileInfo fileInfo = list.at(i);
-// ^^
-
 
 #ifdef _OS_LINUX_
 		if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^sr")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
@@ -584,10 +578,8 @@ QStringList corelib::getCdromDevices(void) const{
 				}
 			}
 		}
-#endif //_OS_DARWIN_SUX_
 
 		return retVal;
-
 	}
 
 	QStringList corelib::getWineDlls(QString prefix_lib_path) const{
@@ -616,12 +608,8 @@ QStringList corelib::getCdromDevices(void) const{
 			cdrom_mount=cdrom_mount.left(cdrom_mount.length()-1);
 		}
 
-
-
 		QString image="";
 		QStringList arguments;
-
-#ifndef _OS_DARWIN_SUX_
 
 #ifdef DEBUG
 		qDebug()<<"corelib::getMountedImages("<<cdrom_mount<<")";
@@ -748,7 +736,7 @@ QStringList corelib::getCdromDevices(void) const{
 				image = "none";
 			}
 #endif
-#endif  // !MACOS
+
 			return image;
 		}
 
@@ -877,10 +865,8 @@ QStringList corelib::getCdromDevices(void) const{
 				QProcess proc(0);
 				return proc.startDetached(binary, args, wrkdir);
 			} else {
-#ifndef _OS_DARWIN_SUX_
 				Process proc(args, binary, wrkdir, QObject::tr("Running binary: \"%1\"").arg(execObj.execcmd), QObject::tr("Running binary..."), false);
 				return proc.exec();
-#endif
 			}
 
 				  return false;
@@ -949,7 +935,7 @@ QStringList corelib::getCdromDevices(void) const{
 		}
 
 		bool corelib::mountImage(const QString image_name, const QString prefix_name){
-#ifndef _OS_DARWIN_SUX_
+
 			this->umountImage(prefix_name);
 
 			QString mount_point=db_prefix.getMountPoint(prefix_name);
@@ -1076,8 +1062,6 @@ QStringList corelib::getCdromDevices(void) const{
 
 			return this->runProcess(args, QObject::tr("Umounting..."), QObject::tr("Umounting point: %1").arg(mount_point));
 
-#endif
-
 			return true;
 		}
 
@@ -1088,10 +1072,8 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 
 			if (this->_GUI_MODE){
-#ifndef _OS_DARWIN_SUX_
 				Process proc(args, this->getSetting("system", "sh").toString(), QDir::homePath(), message, caption, false);
 				return (proc.exec());
-#endif
 			} else {
 				return (this->runProcess(this->getSetting("system", "sh").toString(), args));
 			}

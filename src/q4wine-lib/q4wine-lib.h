@@ -48,11 +48,8 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <QTranslator>
-#include <QIcon>
 
-#ifndef _OS_DARWIN_SUX_
 #include "process.h"
-#endif
 
 // FreeBSD support
 #ifdef _OS_FREEBSD_
