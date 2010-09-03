@@ -36,14 +36,14 @@ QList<QStringList> corelib::getWineProcessList(){
 	QList<QStringList> proclist;
 	QStringList procline;
 
-	QString name, procstat, path, prefix, env_arg, nice;
+        QString message, name, procstat, path, prefix, env_arg, nice;
 
 #ifdef _OS_LINUX_
-	QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
+        message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
 #endif
 
 #ifdef _OS_FREEBSD_
-	QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
+        message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
 #endif
 
 	// Check for /proc directory exists
