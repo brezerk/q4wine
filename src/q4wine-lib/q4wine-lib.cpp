@@ -553,8 +553,12 @@ QString corelib::getWhichOut(const QString fileName, bool showErr){
 }
 
 QStringList corelib::getCdromDevices(void) const{
+
+
+
 	QStringList retVal;
 
+#ifndef _OS_DARWIN_SUX_
 	QDir dir("/dev/");
 	dir.setFilter(QDir::Files | QDir::System);
 	dir.setSorting(QDir::Name);
@@ -563,9 +567,7 @@ QStringList corelib::getCdromDevices(void) const{
 	for (int i = 0; i < list.size(); ++i) {
 		QFileInfo fileInfo = list.at(i);
 // ^^
-#ifdef _OS_DARWIN_SUX_
-      if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^sr")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
-#endif
+
 
 #ifdef _OS_LINUX_
 		if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^sr")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
@@ -582,8 +584,10 @@ QStringList corelib::getCdromDevices(void) const{
 				}
 			}
 		}
+#endif
 
 		return retVal;
+
 	}
 
 	QStringList corelib::getWineDlls(QString prefix_lib_path) const{
