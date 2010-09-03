@@ -43,6 +43,7 @@
 #cmakedefine _OS_LINUX_
 #cmakedefine _OS_FREEBSD_
 #cmakedefine _OS_DARWIN_
+#cmakedefine _OS_DARWIN_SUX_
 
 #cmakedefine WITH_ICOUTILS
 #cmakedefine WITH_EMBEDDED_FUSEISO
