@@ -558,7 +558,7 @@ QStringList corelib::getCdromDevices(void) const{
 
 	QStringList retVal;
 
-#ifdef _TEST_
+#ifndef _OS_DARWIN_SUX_
 	QDir dir("/dev/");
 	dir.setFilter(QDir::Files | QDir::System);
 	dir.setSorting(QDir::Name);
@@ -621,7 +621,7 @@ QStringList corelib::getCdromDevices(void) const{
 		QString image="";
 		QStringList arguments;
 
-#ifdef _TEST_
+#ifndef _OS_DARWIN_SUX_
 
 #ifdef DEBUG
 		qDebug()<<"corelib::getMountedImages("<<cdrom_mount<<")";
@@ -877,8 +877,10 @@ QStringList corelib::getCdromDevices(void) const{
 				QProcess proc(0);
 				return proc.startDetached(binary, args, wrkdir);
 			} else {
+#ifndef _OS_DARWIN_SUX_
 				Process proc(args, binary, wrkdir, QObject::tr("Running binary: \"%1\"").arg(execObj.execcmd), QObject::tr("Running binary..."), false);
 				return proc.exec();
+#endif
 			}
 
 				  return false;
@@ -947,7 +949,7 @@ QStringList corelib::getCdromDevices(void) const{
 		}
 
 		bool corelib::mountImage(const QString image_name, const QString prefix_name){
-#ifdef TEST
+#ifndef _OS_DARWIN_SUX_
 			this->umountImage(prefix_name);
 
 			QString mount_point=db_prefix.getMountPoint(prefix_name);
@@ -1086,8 +1088,10 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 
 			if (this->_GUI_MODE){
+#ifndef _OS_DARWIN_SUX_
 				Process proc(args, this->getSetting("system", "sh").toString(), QDir::homePath(), message, caption, false);
 				return (proc.exec());
+#endif
 			} else {
 				return (this->runProcess(this->getSetting("system", "sh").toString(), args));
 			}
