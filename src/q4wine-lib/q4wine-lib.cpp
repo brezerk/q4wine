@@ -198,7 +198,7 @@ QList<QStringList> corelib::getWineProcessList(){
 						j++;
 					}
 				} else {
-                                     prefix = QObject::tr("Can't read process info from /rpoc or API is changed.");
+                                     prefix = QObject::tr("Can't read process info from /proc or API is changed.");
 #ifdef DEBUG
                                      qDebug()<< "kvm_getenvv failed: " << kvm_geterr(kd);
 #endif
