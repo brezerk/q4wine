@@ -56,8 +56,13 @@ void WineObject::setPrefix(QString prefix){
 }
 
 void WineObject::setProgramBinary(QString binary){
-    this->programBinary=binary;
     this->programBinaryName=binary.split("/").last().split("\\").last();
+
+    binary.replace("\"", "\\\"");
+    binary.replace("\'", "\\\'");
+    binary.replace("`", "\\`");
+    this->programBinary=binary;
+
     return;
 }
 
@@ -91,6 +96,9 @@ void WineObject::setProgramOverride(QString override){
 }
 
 void WineObject::setProgramWrkdir(QString wrkdir){
+    wrkdir.replace("\"", "\\\"");
+    wrkdir.replace("\'", "\\\'");
+    wrkdir.replace("`", "\\`");
     this->programWrkDir = wrkdir;
 }
 
@@ -183,7 +191,7 @@ int WineObject::runSys(){
     run_string.append(" /bin/sh -c \"");
 
     if (!this->programWrkDir.isEmpty()){
-        run_string.append(QString(" cd \\\"%1\\\" && ").arg(this->programWrkDir));
+        run_string.append(QString(" cd \'%1\' && ").arg(this->programWrkDir));
     }
 
     if (this->programNice != 0){
@@ -215,7 +223,7 @@ int WineObject::runSys(){
         run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(this->programDesktop));
     }
 
-    run_string.append(QString(" \\\"%1\\\" %2 ").arg(this->programBinary).arg(programArgs));
+    run_string.append(QString(" \'%1\' %2 ").arg(this->programBinary).arg(programArgs));
     run_string.append(" 2>&1 \"");
 
     /*
