@@ -196,7 +196,8 @@ QList<QStringList> corelib::getWineProcessList(){
 						j++;
 					}
 				} else {
-					qDebug()<< "kvm_getenvv failed: " << kvm_geterr(kd);
+                                     prefix = tr("Can't read process info from /rpoc or API is changed.");
+                                     qDebug()<< "kvm_getenvv failed: " << kvm_geterr(kd);
 				}
 
 				// Puting all fields into QList<QStringList>
