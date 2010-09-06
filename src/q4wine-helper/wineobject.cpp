@@ -21,371 +21,371 @@
 
 WineObject::WineObject(QObject *parent) : QObject(parent)
 {
-    // Loading libq4wine-core.so
-    libq4wine.setFileName("libq4wine-core");
+	// Loading libq4wine-core.so
+	libq4wine.setFileName("libq4wine-core");
 
-    if (!libq4wine.load()){
-        libq4wine.load();
-    }
+	if (!libq4wine.load()){
+		libq4wine.load();
+	}
 
-    // Getting corelib calss pointer
-    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+	// Getting corelib calss pointer
+	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-    this->programNice = 0;
-    this->prefixId = 0;
-    this->useConsole=false;
+	this->programNice = 0;
+	this->prefixId = 0;
+	this->useConsole=false;
 
-    this->user = getenv("USER");
+	this->user = getenv("USER");
 
-    return;
+	return;
 }
 
 void WineObject::setPrefix(QString prefix){
-    QHash<QString, QString> prefix_info = db_prefix.getByName(prefix);
+	QHash<QString, QString> prefix_info = db_prefix.getByName(prefix);
 
-    this->prefixId=prefix_info.value("id").toInt();
-    this->prefixName=prefix_info.value("name");
-    this->prefixBinary=prefix_info.value("bin");
-    this->prefixDllPath=prefix_info.value("libs");
-    this->prefixLoader=prefix_info.value("loader");
-    this->prefixPath=prefix_info.value("path");
-    this->prefixServer=prefix_info.value("server");
+	this->prefixId=prefix_info.value("id").toInt();
+	this->prefixName=prefix_info.value("name");
+	this->prefixBinary=prefix_info.value("bin");
+	this->prefixDllPath=prefix_info.value("libs");
+	this->prefixLoader=prefix_info.value("loader");
+	this->prefixPath=prefix_info.value("path");
+	this->prefixServer=prefix_info.value("server");
 
-    return;
+	return;
 }
 
 void WineObject::setProgramBinary(QString binary){
-    this->programBinaryName=binary.split("/").last().split("\\").last();
+	this->programBinaryName=binary.split("/").last().split("\\").last();
 
-    binary.replace("\"", "\\\"");
-    binary.replace("\'", "\\\'");
-    binary.replace("`", "\\`");
-    this->programBinary=binary;
+	binary.replace("\"", "\\\"");
+	binary.replace("`", "\\`");
+	binary.replace("'", "'\\''");
+	this->programBinary=binary;
 
-    return;
+	return;
 }
 
 void WineObject::setProgramArgs(QString args){
-    this->programArgs=args;
-    return;
+	this->programArgs=args;
+	return;
 }
 
 void WineObject::setProgramDisplay(QString dislpay){
-    this->programDisplay=dislpay;
-    return;
+	this->programDisplay=dislpay;
+	return;
 }
 
 void WineObject::setProgramDebug(QString debug){
-    this->programDebug=debug;
-    return;
+	this->programDebug=debug;
+	return;
 }
 
 void WineObject::setProgramNice(int nice){
-    this->programNice = nice;
-    return;
+	this->programNice = nice;
+	return;
 }
 
 void WineObject::setProgramDesktop(QString desktop){
-    this->programDesktop=desktop;
-    return;
+	this->programDesktop=desktop;
+	return;
 }
 
 void WineObject::setProgramOverride(QString override){
-    this->overrideDllList = override;
+	this->overrideDllList = override;
 }
 
 void WineObject::setProgramWrkdir(QString wrkdir){
-    wrkdir.replace("\"", "\\\"");
-    wrkdir.replace("\'", "\\\'");
-    wrkdir.replace("`", "\\`");
-    this->programWrkDir = wrkdir;
+	wrkdir.replace("\"", "\\\"");
+	wrkdir.replace("`", "\\`");
+	wrkdir.replace("'", "'\\''");
+	this->programWrkDir = wrkdir;
 }
 
 
 void WineObject::setUseConsole(int console){
-    if (console==1){
-        this->useConsole=true;
-    } else {
-        this->useConsole=false;
-    }
-    return;
+	if (console==1){
+		this->useConsole=true;
+	} else {
+		this->useConsole=false;
+	}
+	return;
 }
 
 QString WineObject::createEnvString(){
-    QString env;
-    if (this->prefixName.isEmpty())
-        this->setPrefix("Default");
+	QString env;
+	if (this->prefixName.isEmpty())
+		this->setPrefix("Default");
 
-    /*
-    if (this->useConsole){
-        env.append(QString(" WINEPREFIX=\\\"%1\\\" ").arg(this->prefixPath));
-        env.append(QString(" WINESERVER=\\\"%1\\\" ").arg(this->prefixServer));
-        env.append(QString(" WINELOADER=\\\"%1\\\" ").arg(this->prefixLoader));
-        env.append(QString(" WINEDLLPATH=\\\"%1\\\" ").arg(this->prefixDllPath));
+	/*
+	if (this->useConsole){
+		env.append(QString(" WINEPREFIX=\\\"%1\\\" ").arg(this->prefixPath));
+		env.append(QString(" WINESERVER=\\\"%1\\\" ").arg(this->prefixServer));
+		env.append(QString(" WINELOADER=\\\"%1\\\" ").arg(this->prefixLoader));
+		env.append(QString(" WINEDLLPATH=\\\"%1\\\" ").arg(this->prefixDllPath));
 
-        if (!this->programDebug.isEmpty())
-            env.append(QString(" WINEDEBUG=\\\"%1\\\" ").arg(this->programDebug));
+		if (!this->programDebug.isEmpty())
+			env.append(QString(" WINEDEBUG=\\\"%1\\\" ").arg(this->programDebug));
 
-        if (!this->programDisplay.isEmpty())
-            env.append(QString(" DISPLAY=\\\"%1\\\" ").arg(this->programDisplay));
+		if (!this->programDisplay.isEmpty())
+			env.append(QString(" DISPLAY=\\\"%1\\\" ").arg(this->programDisplay));
 
-        if (!this->overrideDllList.isEmpty())
-             env.append(QString(" WINEDLLOVERRIDES=%1 ").arg(this->overrideDllList.replace("\"","\\\"")));
-    } else {*/
-        env.append(QString(" WINEPREFIX=\"%1\" ").arg(this->prefixPath));
-        env.append(QString(" WINESERVER=\"%1\" ").arg(this->prefixServer));
-        env.append(QString(" WINELOADER=\"%1\" ").arg(this->prefixLoader));
-        env.append(QString(" WINEDLLPATH=\"%1\" ").arg(this->prefixDllPath));
+		if (!this->overrideDllList.isEmpty())
+			 env.append(QString(" WINEDLLOVERRIDES=%1 ").arg(this->overrideDllList.replace("\"","\\\"")));
+	} else {*/
+		env.append(QString(" WINEPREFIX=\"%1\" ").arg(this->prefixPath));
+		env.append(QString(" WINESERVER=\"%1\" ").arg(this->prefixServer));
+		env.append(QString(" WINELOADER=\"%1\" ").arg(this->prefixLoader));
+		env.append(QString(" WINEDLLPATH=\"%1\" ").arg(this->prefixDllPath));
 
-        if (!this->programDebug.isEmpty())
-            env.append(QString(" WINEDEBUG=\"%1\" ").arg(this->programDebug));
+		if (!this->programDebug.isEmpty())
+			env.append(QString(" WINEDEBUG=\"%1\" ").arg(this->programDebug));
 
-        if (!this->programDisplay.isEmpty())
-            env.append(QString(" DISPLAY=\"%1\" ").arg(this->programDisplay));
+		if (!this->programDisplay.isEmpty())
+			env.append(QString(" DISPLAY=\"%1\" ").arg(this->programDisplay));
 
-        if (!this->overrideDllList.isEmpty())
-             env.append(QString(" WINEDLLOVERRIDES=%1 ").arg(this->overrideDllList));
+		if (!this->overrideDllList.isEmpty())
+			 env.append(QString(" WINEDLLOVERRIDES=%1 ").arg(this->overrideDllList));
 
-    //}
-    return env;
+	//}
+	return env;
 }
 
 int WineObject::runSys(){
-    if (this->programBinary.isEmpty())
-        return -1;
+	if (this->programBinary.isEmpty())
+		return -1;
 
-    bool logEnabled = false;
+	bool logEnabled = false;
 
-    QString env = this->createEnvString();
-    QString stdout, app_stdout;
+	QString env = this->createEnvString();
+	QString stdout, app_stdout;
 
-    QTextCodec *codec = QTextCodec::codecForName(CoreLib->getLocale().toAscii());
+	QTextCodec *codec = QTextCodec::codecForName(CoreLib->getLocale().toAscii());
 
-    FILE *fp;
-    int status;
-    char path[PATH_MAX];
+	FILE *fp;
+	int status;
+	char path[PATH_MAX];
 
-    QString run_string="";
+	QString run_string="";
 
-    /*
-     * We need to trim wrk dir path from binary path
-     */
-    this->programBinary = this->programBinary.replace(this->programWrkDir, "").replace("/", "");
+	/*
+	 * We need to trim wrk dir path from binary path
+	 */
+	this->programBinary = this->programBinary.replace(this->programWrkDir, "").replace("/", "");
 
-    if (!env.isEmpty()){
-        run_string.append(" env ");
-        run_string.append(env);
-    }
+	if (!env.isEmpty()){
+		run_string.append(" env ");
+		run_string.append(env);
+	}
 
-    if (this->useConsole){
-        // If we gona use console output, so exec program is program specificed at CONSOLE global variable
-        run_string.append(QString(" %1 ").arg(CoreLib->getSetting("console", "bin").toString()));
+	if (this->useConsole){
+		// If we gona use console output, so exec program is program specificed at CONSOLE global variable
+		run_string.append(QString(" %1 ").arg(CoreLib->getSetting("console", "bin").toString()));
 
-        if (!CoreLib->getSetting("console", "args", false).toString().isEmpty()){
-            // If we have any conslope parametres, we gona preccess them one by one
-            run_string.append(CoreLib->getSetting("console", "args", false).toString());
-        }
-    }
+		if (!CoreLib->getSetting("console", "args", false).toString().isEmpty()){
+			// If we have any conslope parametres, we gona preccess them one by one
+			run_string.append(CoreLib->getSetting("console", "args", false).toString());
+		}
+	}
 
-    run_string.append(" /bin/sh -c \"");
+	run_string.append(" /bin/sh -c \"");
 
-    if (!this->programWrkDir.isEmpty()){
-        run_string.append(QString(" cd \'%1\' && ").arg(this->programWrkDir));
-    }
+	if (!this->programWrkDir.isEmpty()){
+		run_string.append(QString(" cd \'%1\' && ").arg(this->programWrkDir));
+	}
 
-    if (this->programNice != 0){
-        run_string.append(QString(" %1 -n %2 ").arg(CoreLib->getSetting("system", "nice", false).toString()).arg(this->programNice));
-    }
+	if (this->programNice != 0){
+		run_string.append(QString(" %1 -n %2 ").arg(CoreLib->getSetting("system", "nice", false).toString()).arg(this->programNice));
+	}
 
-    run_string.append(QString(" %1 ").arg(this->prefixBinary));
+	run_string.append(QString(" %1 ").arg(this->prefixBinary));
 
-    if (!this->programDesktop.isEmpty()){
-        QString deskname = this->programBinaryName;
-        deskname.replace(" ", ".");
-        deskname.replace("&", ".");
-        deskname.replace("!", ".");
-        deskname.replace("$", ".");
-        deskname.replace("*", ".");
-        deskname.replace("(", ".");
-        deskname.replace(")", ".");
-        deskname.replace("[", ".");
-        deskname.replace("]", ".");
-        deskname.replace(";", ".");
-        deskname.replace("'", ".");
-        deskname.replace("\"", ".");
-        deskname.replace("|", ".");
-        deskname.replace("`", ".");
-        deskname.replace("\\", ".");
-        deskname.replace("/", ".");
-        deskname.replace(">", ".");
-        deskname.replace("<", ".");
-        run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(this->programDesktop));
-    }
+	if (!this->programDesktop.isEmpty()){
+		QString deskname = this->programBinaryName;
+		deskname.replace(" ", ".");
+		deskname.replace("&", ".");
+		deskname.replace("!", ".");
+		deskname.replace("$", ".");
+		deskname.replace("*", ".");
+		deskname.replace("(", ".");
+		deskname.replace(")", ".");
+		deskname.replace("[", ".");
+		deskname.replace("]", ".");
+		deskname.replace(";", ".");
+		deskname.replace("'", ".");
+		deskname.replace("\"", ".");
+		deskname.replace("|", ".");
+		deskname.replace("`", ".");
+		deskname.replace("\\", ".");
+		deskname.replace("/", ".");
+		deskname.replace(">", ".");
+		deskname.replace("<", ".");
+		run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(this->programDesktop));
+	}
 
-    run_string.append(QString(" \'%1\' %2 ").arg(this->programBinary).arg(programArgs));
-    run_string.append(" 2>&1 \"");
+	run_string.append(QString(" \'%1\' %2 ").arg(this->programBinary).arg(programArgs));
+	run_string.append(" 2>&1 \"");
 
-    /*
-    if (this->useConsole){
-        // If we gona use console output, so exec program is program specificed at CONSOLE global variable
-        run_string = QString(" %1 ").arg(CoreLib->getSetting("console", "bin").toString());
+	/*
+	if (this->useConsole){
+		// If we gona use console output, so exec program is program specificed at CONSOLE global variable
+		run_string = QString(" %1 ").arg(CoreLib->getSetting("console", "bin").toString());
 
-        if (!CoreLib->getSetting("console", "args", false).toString().isEmpty()){
-            // If we have any conslope parametres, we gona preccess them one by one
-            run_string.append(CoreLib->getSetting("console", "args", false).toString());
-        }
+		if (!CoreLib->getSetting("console", "args", false).toString().isEmpty()){
+			// If we have any conslope parametres, we gona preccess them one by one
+			run_string.append(CoreLib->getSetting("console", "args", false).toString());
+		}
 
-        run_string.append(" /bin/sh -c \"cd \'");
-        run_string.append(this->programWrkDir);
-        run_string.append("\' && ");
-    } else {
-        if (chdir(codec->fromUnicode(this->programWrkDir).data()) != 0){
-            qDebug()<<"[EE] chdir to:"<<codec->fromUnicode(this->programWrkDir).data()<<"fail";
-            return -1;
-        } else {
-            qDebug()<<"wooot";
-        }
-    }
+		run_string.append(" /bin/sh -c \"cd \'");
+		run_string.append(this->programWrkDir);
+		run_string.append("\' && ");
+	} else {
+		if (chdir(codec->fromUnicode(this->programWrkDir).data()) != 0){
+			qDebug()<<"[EE] chdir to:"<<codec->fromUnicode(this->programWrkDir).data()<<"fail";
+			return -1;
+		} else {
+			qDebug()<<"wooot";
+		}
+	}
 
-    //Setting enveropment variables
-    if (!env.isEmpty()){
-        run_string.append(" env ");
-        run_string.append(env);
-    }
+	//Setting enveropment variables
+	if (!env.isEmpty()){
+		run_string.append(" env ");
+		run_string.append(env);
+	}
 
-    if (this->programNice != 0){
-        run_string.append(QString(" %1 -n %2 ").arg(CoreLib->getSetting("system", "nice", false).toString()).arg(this->programNice));
-    }
+	if (this->programNice != 0){
+		run_string.append(QString(" %1 -n %2 ").arg(CoreLib->getSetting("system", "nice", false).toString()).arg(this->programNice));
+	}
 
-    run_string.append(QString(" %1 ").arg(this->prefixBinary));
+	run_string.append(QString(" %1 ").arg(this->prefixBinary));
 
-    if (!this->programDesktop.isEmpty()){
-        QString deskname = this->programBinaryName;
-        deskname.replace(" ", ".");
-        deskname.replace("&", ".");
-        deskname.replace("!", ".");
-        deskname.replace("$", ".");
-        deskname.replace("*", ".");
-        deskname.replace("(", ".");
-        deskname.replace(")", ".");
-        deskname.replace("[", ".");
-        deskname.replace("]", ".");
-        deskname.replace(";", ".");
-        deskname.replace("'", ".");
-        deskname.replace("\"", ".");
-        deskname.replace("|", ".");
-        deskname.replace("`", ".");
-        deskname.replace("\\", ".");
-        deskname.replace("/", ".");
-        deskname.replace(">", ".");
-        deskname.replace("<", ".");
-        run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(this->programDesktop));
-    }
+	if (!this->programDesktop.isEmpty()){
+		QString deskname = this->programBinaryName;
+		deskname.replace(" ", ".");
+		deskname.replace("&", ".");
+		deskname.replace("!", ".");
+		deskname.replace("$", ".");
+		deskname.replace("*", ".");
+		deskname.replace("(", ".");
+		deskname.replace(")", ".");
+		deskname.replace("[", ".");
+		deskname.replace("]", ".");
+		deskname.replace(";", ".");
+		deskname.replace("'", ".");
+		deskname.replace("\"", ".");
+		deskname.replace("|", ".");
+		deskname.replace("`", ".");
+		deskname.replace("\\", ".");
+		deskname.replace("/", ".");
+		deskname.replace(">", ".");
+		deskname.replace("<", ".");
+		run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(this->programDesktop));
+	}
 
-    run_string.append(QString(" \"%1\" %2 ").arg(this->programBinary).arg(programArgs));
-    run_string.append(" 2>&1 ");
+	run_string.append(QString(" \"%1\" %2 ").arg(this->programBinary).arg(programArgs));
+	run_string.append(" 2>&1 ");
 
-     if (this->useConsole){
-         run_string.append(" \"");
-     }
-    */
+	 if (this->useConsole){
+		 run_string.append(" \"");
+	 }
+	*/
 
 #ifdef DEBUG
-    qDebug()<<run_string;
+	qDebug()<<run_string;
 #endif
-    stdout.append("Exec string:");
-    stdout.append("\n");
-    stdout.append(run_string.trimmed());
-    stdout.append("\n");
+	stdout.append("Exec string:");
+	stdout.append("\n");
+	stdout.append(run_string.trimmed());
+	stdout.append("\n");
 
-    fp = popen(codec->fromUnicode(run_string).data(), "r");
-    if (fp == NULL){
-        this->sendMessage(QString("error/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
-    } else {
-        if (this->useConsole){
-            this->sendMessage(QString("console/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
-        } else {
-            this->sendMessage(QString("start/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
-        }
-    }
-        /* Handle error */;
+	fp = popen(codec->fromUnicode(run_string).data(), "r");
+	if (fp == NULL){
+		this->sendMessage(QString("error/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
+	} else {
+		if (this->useConsole){
+			this->sendMessage(QString("console/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
+		} else {
+			this->sendMessage(QString("start/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
+		}
+	}
+		/* Handle error */;
 
-    while (fgets(path, PATH_MAX, fp) != NULL){
-        app_stdout.append(codec->toUnicode(path));
-    }
+	while (fgets(path, PATH_MAX, fp) != NULL){
+		app_stdout.append(codec->toUnicode(path));
+	}
 
-    status = pclose(fp);
+	status = pclose(fp);
 
-    if (CoreLib->getSetting("logging", "enable", false, 0).toInt()==1)
-        logEnabled = true;
+	if (CoreLib->getSetting("logging", "enable", false, 0).toInt()==1)
+		logEnabled = true;
 
 
 
-    stdout.append("Exit code:");
-    stdout.append("\n");
-    stdout.append(QString("%1").arg(status));
-    stdout.append("\n");
-    stdout.append("App STDOUT and STDERR output:");
-    stdout.append("\n");
-    stdout.append(app_stdout);
+	stdout.append("Exit code:");
+	stdout.append("\n");
+	stdout.append(QString("%1").arg(status));
+	stdout.append("\n");
+	stdout.append("App STDOUT and STDERR output:");
+	stdout.append("\n");
+	stdout.append(app_stdout);
 
-    if (!this->useConsole){
-        if (logEnabled){
-            uint date = QDateTime::currentDateTime ().toTime_t();
-            db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
-        }
-        this->sendMessage(QString("finish/%1/%2/%3").arg(this->programBinaryName).arg(this->prefixName).arg(status));
-    } else {
-        if (status!=0){
-            if (logEnabled){
-                uint date = QDateTime::currentDateTime ().toTime_t();
-                db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
-            }
-            this->sendMessage(QString("console_error/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
-        }
-    }
+	if (!this->useConsole){
+		if (logEnabled){
+			uint date = QDateTime::currentDateTime ().toTime_t();
+			db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
+		}
+		this->sendMessage(QString("finish/%1/%2/%3").arg(this->programBinaryName).arg(this->prefixName).arg(status));
+	} else {
+		if (status!=0){
+			if (logEnabled){
+				uint date = QDateTime::currentDateTime ().toTime_t();
+				db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
+			}
+			this->sendMessage(QString("console_error/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
+		}
+	}
 
-    if (status>0){
-        QTextStream QErr(stderr);
-        QErr<<stdout;
+	if (status>0){
+		QTextStream QErr(stderr);
+		QErr<<stdout;
 
-        status=-1;
-    }
+		status=-1;
+	}
 
-    return status;
+	return status;
 }
 
 void WineObject::sendMessage(QString message){
-    QLocalSocket socket(this);
-    socket.connectToServer( QString("/tmp/q4wine-%1.sock").arg(this->user) , QIODevice::WriteOnly );
+	QLocalSocket socket(this);
+	socket.connectToServer( QString("/tmp/q4wine-%1.sock").arg(this->user) , QIODevice::WriteOnly );
 
-    if (socket.waitForConnected()){
+	if (socket.waitForConnected()){
 #ifdef DEBUG
-        qDebug()<<"helper:sendMessage Connected!";
+		qDebug()<<"helper:sendMessage Connected!";
 #endif
 
-        QByteArray block;
-        QDataStream out(&block, QIODevice::WriteOnly);
-        out.setVersion(QDataStream::Qt_4_0);
-        out << (quint16)0;
-        out << message;
-        out.device()->seek(0);
-        out << (quint16)(block.size() - sizeof(quint16));
+		QByteArray block;
+		QDataStream out(&block, QIODevice::WriteOnly);
+		out.setVersion(QDataStream::Qt_4_0);
+		out << (quint16)0;
+		out << message;
+		out.device()->seek(0);
+		out << (quint16)(block.size() - sizeof(quint16));
 
-        socket.write(block);
-        socket.flush();
+		socket.write(block);
+		socket.flush();
 
-        socket.disconnectFromServer();
-    }
+		socket.disconnectFromServer();
+	}
 #ifdef DEBUG
-    else {
-        qDebug()<<"[ii] helper:sendMessage Not connected!";
-    }
+	else {
+		qDebug()<<"[ii] helper:sendMessage Not connected!";
+	}
 #endif
-    return;
+	return;
 }
 
 void WineObject::setOverrideDll(QString dll_list){
-    this->overrideDllList = dll_list;
+	this->overrideDllList = dll_list;
 }
