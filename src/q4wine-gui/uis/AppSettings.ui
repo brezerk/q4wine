@@ -234,7 +234,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QGridLayout" name="gridLayout">
@@ -2052,7 +2052,7 @@
                <item>
                 <widget class="QCheckBox" name="cbEnableLogging">
                  <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
@@ -2065,7 +2065,7 @@
                <item>
                 <widget class="QCheckBox" name="cbClearLogs">
                  <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
@@ -2077,6 +2077,12 @@
                </item>
                <item>
                 <widget class="QLabel" name="label_111">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="text">
                   <string>Note: Because of sqlite engine specific, large amount of logging data can reduce q4wine performance. Use it with care. You have been warned.</string>
                  </property>
@@ -2320,7 +2326,7 @@
                <item>
                 <widget class="QCheckBox" name="cbUseSingleClick">
                  <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
@@ -2348,7 +2354,7 @@
                <item>
                 <widget class="QCheckBox" name="cbUseNativeDialog">
                  <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
