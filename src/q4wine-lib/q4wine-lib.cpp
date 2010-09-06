@@ -127,9 +127,9 @@ QList<QStringList> corelib::getWineProcessList(){
 	}
 #endif
 
-	/* On FreeBSD:
-		 * This is new engine for getting process info from /proc directory and kmem interface
-		 */
+/* On FreeBSD:
+* This is new engine for getting process info from /proc directory and kmem interface
+*/
 #if defined(_OS_FREEBSD_) || defined(_OS_DARWIN_)
 	kvm_t *kd;
 	int cntproc, i, ni, ipid;
@@ -214,8 +214,6 @@ QList<QStringList> corelib::getWineProcessList(){
 
 	kvm_close(kd);
 #endif
-
-
 	return proclist;
 }
 
