@@ -30,13 +30,24 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Alexey S. Malakhov (John Brezerk)" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-								   "Project maintainer, main developer, web site designer and developer, project documentation, support e.t.c ;)" \
+                                                                   "Project maintainer, main developer, website designer and developer, project documentation, support e.t.c ;)" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">brezerk@gmail</span>" \
 							"</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Kiev, Ukraine" \
 
 							"</p><p style=\"margin: 0px\"> </p>" \
+
+                                                        "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                                   "Sergey Skrypnic (opium)" \
+                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                                   "Website developer, hosting administration" \
+                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                                   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">opium@jabber.com.ua</span>" \
+                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                                   "Kharkov, Ukraine" \
+
+                                                        "</p><p style=\"margin: 0px\"> </p>" \
 
 							"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
 								   "Pavel Zinin (pashazz)" \
@@ -254,6 +265,17 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 								   "Minsk, Republic of Belarus" \
 
 							"</p><p style=\"margin: 0px\"> </p>" \
+
+                                                        "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                                   "Sergey Skrypnic (opium)" \
+                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                                   "Website developer, hosting administration" \
+                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                                   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">opium@jabber.com.ua</span>" \
+                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                                                   "Kharkov, Ukraine" \
+
+                                                        "</p><p style=\"margin: 0px\"> </p>" \
 
                                                         "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
                                                                    "Boris Pek" \
