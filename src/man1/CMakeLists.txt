@@ -6,7 +6,6 @@ SET ( MAN_PAGES
     ${CMAKE_SOURCE_DIR}/src/man1/q4wine-helper.1
 )
 
-
 MESSAGE(STATUS "Process man pages --")
 
 IF (USE_GZIP MATCHES ON)
@@ -40,7 +39,7 @@ IF (ARC)
     endforeach()
 
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/man1 DESTINATION
-    ${CMAKE_INSTALL_PREFIX}/share/man FILES_MATCHING PATTERN "*.1.${ARC_SUFF}"
+    ${MANPAGE_ENTRY_PATH} FILES_MATCHING PATTERN "*.1.${ARC_SUFF}"
     PATTERN "CMakeFiles" EXCLUDE)
 
  ELSE (ARC)
@@ -48,6 +47,6 @@ IF (ARC)
     MESSAGE(STATUS "Installing not compressed man pages --\n")
 
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/man1 DESTINATION
-    ${CMAKE_INSTALL_PREFIX}/share/man FILES_MATCHING PATTERN "*.1"
+    ${MANPAGE_ENTRY_PATH} FILES_MATCHING PATTERN "*.1"
     PATTERN "CMakeFiles" EXCLUDE)
  ENDIF (ARC)

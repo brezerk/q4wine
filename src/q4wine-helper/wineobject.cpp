@@ -109,6 +109,7 @@ QString WineObject::createEnvString(){
     if (this->prefixName.isEmpty())
         this->setPrefix("Default");
 
+    /*
     if (this->useConsole){
         env.append(QString(" WINEPREFIX=\\\"%1\\\" ").arg(this->prefixPath));
         env.append(QString(" WINESERVER=\\\"%1\\\" ").arg(this->prefixServer));
@@ -123,7 +124,7 @@ QString WineObject::createEnvString(){
 
         if (!this->overrideDllList.isEmpty())
              env.append(QString(" WINEDLLOVERRIDES=%1 ").arg(this->overrideDllList.replace("\"","\\\"")));
-    } else {
+    } else {*/
         env.append(QString(" WINEPREFIX=\"%1\" ").arg(this->prefixPath));
         env.append(QString(" WINESERVER=\"%1\" ").arg(this->prefixServer));
         env.append(QString(" WINELOADER=\"%1\" ").arg(this->prefixLoader));
@@ -138,7 +139,7 @@ QString WineObject::createEnvString(){
         if (!this->overrideDllList.isEmpty())
              env.append(QString(" WINEDLLOVERRIDES=%1 ").arg(this->overrideDllList));
 
-    }
+    //}
     return env;
 }
 
@@ -159,6 +160,65 @@ int WineObject::runSys(){
 
     QString run_string="";
 
+    /*
+     * We need to trim wrk dir path from binary path
+     */
+    this->programBinary = this->programBinary.replace(this->programWrkDir, "").replace("/", "");
+
+    if (!env.isEmpty()){
+        run_string.append(" env ");
+        run_string.append(env);
+    }
+
+    if (this->useConsole){
+        // If we gona use console output, so exec program is program specificed at CONSOLE global variable
+        run_string.append(QString(" %1 ").arg(CoreLib->getSetting("console", "bin").toString()));
+
+        if (!CoreLib->getSetting("console", "args", false).toString().isEmpty()){
+            // If we have any conslope parametres, we gona preccess them one by one
+            run_string.append(CoreLib->getSetting("console", "args", false).toString());
+        }
+    }
+
+    run_string.append(" /bin/sh -c \"");
+
+    if (!this->programWrkDir.isEmpty()){
+        run_string.append(QString(" cd \\\"%1\\\" && ").arg(this->programWrkDir));
+    }
+
+    if (this->programNice != 0){
+        run_string.append(QString(" %1 -n %2 ").arg(CoreLib->getSetting("system", "nice", false).toString()).arg(this->programNice));
+    }
+
+    run_string.append(QString(" %1 ").arg(this->prefixBinary));
+
+    if (!this->programDesktop.isEmpty()){
+        QString deskname = this->programBinaryName;
+        deskname.replace(" ", ".");
+        deskname.replace("&", ".");
+        deskname.replace("!", ".");
+        deskname.replace("$", ".");
+        deskname.replace("*", ".");
+        deskname.replace("(", ".");
+        deskname.replace(")", ".");
+        deskname.replace("[", ".");
+        deskname.replace("]", ".");
+        deskname.replace(";", ".");
+        deskname.replace("'", ".");
+        deskname.replace("\"", ".");
+        deskname.replace("|", ".");
+        deskname.replace("`", ".");
+        deskname.replace("\\", ".");
+        deskname.replace("/", ".");
+        deskname.replace(">", ".");
+        deskname.replace("<", ".");
+        run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(this->programDesktop));
+    }
+
+    run_string.append(QString(" \\\"%1\\\" %2 ").arg(this->programBinary).arg(programArgs));
+    run_string.append(" 2>&1 \"");
+
+    /*
     if (this->useConsole){
         // If we gona use console output, so exec program is program specificed at CONSOLE global variable
         run_string = QString(" %1 ").arg(CoreLib->getSetting("console", "bin").toString());
@@ -175,6 +235,8 @@ int WineObject::runSys(){
         if (chdir(codec->fromUnicode(this->programWrkDir).data()) != 0){
             qDebug()<<"[EE] chdir to:"<<codec->fromUnicode(this->programWrkDir).data()<<"fail";
             return -1;
+        } else {
+            qDebug()<<"wooot";
         }
     }
 
@@ -213,12 +275,13 @@ int WineObject::runSys(){
         run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(this->programDesktop));
     }
 
-    run_string.append(QString(" \'%1\' %2 ").arg(this->programBinary).arg(programArgs));
+    run_string.append(QString(" \"%1\" %2 ").arg(this->programBinary).arg(programArgs));
     run_string.append(" 2>&1 ");
 
      if (this->useConsole){
          run_string.append(" \"");
      }
+    */
 
 #ifdef DEBUG
     qDebug()<<run_string;
