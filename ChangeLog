@@ -8,9 +8,14 @@ ChangeLog
 Version 0.119-r2
  Added:
   - Czech translation (thx to Pavel Fric)
+  - Added cmake option MANPAGE_ENTRY_PATH;
 
  Fixed:
-  - warning: ignoring return value of ‘int chdir(const char*)’, declared with attribute warn_unused_result 
+  - warning: ignoring return value of ‘int chdir(const char*)’, declared with attribute warn_unused_result;
+  - Fixed unescaped characters in q4wine-helper (q4wine-Bugs-3059156);
+  - Fixed bug in q4wine-helper while run games like: Fallout 1\2, Truck Simulator e.t.c.
+  - Fixed some typo and gui layouts;
+  - FreeBSD: report error while can't read process info from /proc fs;
 
 Version 0.119-r1
  Added:
