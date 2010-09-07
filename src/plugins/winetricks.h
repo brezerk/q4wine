@@ -52,7 +52,7 @@ private slots:
     void lstMain_itemClicked(QListWidgetItem* item);
 	void run_winetricks();
 	void install_winetricks();
-
+    void parse();
 private:
 	//! This is need for libq4wine-core.so import;
 	typedef void *CoreLibPrototype (bool);
@@ -70,7 +70,7 @@ private:
 
 	void downloadwinetricks();
 	void removefile(QString);
-	void parse();
+
 	void addToList (QString arg);
 
 	QStringList names;

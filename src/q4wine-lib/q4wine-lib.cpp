@@ -1253,6 +1253,50 @@ QStringList corelib::getCdromDevices(void) const{
 			return string;
 		}
 
+                void corelib::openConsole(const QString path, const QString prefix_name){
+                    QString console = this->getSetting("console", "bin").toString();
+                    QStringList args;
+
+                    if (!console.isEmpty()){
+                        args = this->getSetting("console", "args", false).toString().split(" ");
+                    } else {
+                #ifdef DEBUG
+                        qDebug()<<"[EE] No console binary set";
+                #endif
+                        return;
+                    }
+
+
+
+                    QString shell = getenv("SHELL");
+                    if (shell.isEmpty()){
+                #ifdef DEBUG
+                        qDebug()<<"[EE] Can't get user shell";
+                #endif
+                        return;
+                    }
+
+                    QHash<QString, QString> prefix_info = db_prefix.getByName(prefix_name);
+
+                    args << "env";
+                    args << QString("WINEPREFIX=%1").arg(prefix_info.value("path"));
+                    args << QString("WINEDLLPATH=%1").arg(prefix_info.value("libs"));
+                    args << QString("WINELOADER=%1").arg(prefix_info.value("loader"));
+                    args << QString("WINESERVER=%1").arg(prefix_info.value("server"));
+
+                    QString prefix_path=prefix_info.value("path");
+                    prefix_path.replace("'", "'\\''");
+
+                    args << "/bin/sh" << "-c" << QString("cd \'%1\' && echo \'\' && echo \' [ii] wine environment variables are set to \"%2\" prefix settings.\' && echo \'\' && %3 ").arg(prefix_path).arg(prefix_name).arg(shell);
+
+#ifdef DEBUG
+                    qDebug()<<"[ii] Open console args:"<<args;
+#endif
+
+                    QProcess proc;
+                    proc.startDetached(console, args, "/mnt");
+                }
+
 		void corelib::updateRecentImagesList(const QString media) const{
 			QSettings settings(APP_SHORT_NAME, "default");
 			QStringList files = settings.value("recent_images").toStringList();

@@ -55,5 +55,6 @@
         <file>data/zoom-out.png</file>
         <file>data/view-list-icons.png</file>
         <file>data/view-list-details.png</file>
+        <file>data/terminal.png</file>
     </qresource>
 </RCC>

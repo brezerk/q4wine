@@ -95,11 +95,14 @@ private slots:
 	  void xdgOpenPrefixDir_Click(void);
 	  void xdgOpenMountDir_Click(void);
 
-	  void winefileOpenPrefixDir_Click(void);
-	  void winefileOpenMountDir_Click(void);
+          void winefileOpenPrefixDir_Click(void);
+          void winefileOpenMountDir_Click(void);
 
       void menuSetupPrefix_Click(void);
       void menuConfigurePrefix_Click(void);
+
+      void consoleToPrefixDir_Click(void);
+      void consoleToMountDir_Click(void);
 
 signals:
 	  void showFolderContents(QString, QString);

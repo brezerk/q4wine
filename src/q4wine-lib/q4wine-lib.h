@@ -176,6 +176,7 @@ public:
 	 */
 	void openHomeUrl(const QString rawurl);
 	void openUrl(const QString rawurl);
+        void openConsole(const QString path, const QString prefix_name);
 	void updateRecentImagesList(const QString media) const;
 
 

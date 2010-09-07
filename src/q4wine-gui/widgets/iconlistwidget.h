@@ -134,6 +134,10 @@ private slots:
 	  void winefileOpenMountDir_Click(void);
 	  void winefileOpenIconDir_Click(void);
 
+          void consoleToPrefixDir_Click(void);
+          void consoleToMountDir_Click(void);
+          void consoleToIconDir_Click(void);
+
 signals:
 	  void iconItemClick(QString, QString, QString, QString, QString);
 	  void changeStatusText(QString);

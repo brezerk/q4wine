@@ -364,6 +364,23 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 
 			menu->addMenu(subMenu.release());
 
+                        subMenu.reset(new QMenu(tr("Console"), this));
+
+                        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in prefix directory"), this));
+                        entry->setStatusTip(tr("Open system console in prefix directory"));
+                        connect(entry.get(), SIGNAL(triggered()), this, SLOT(consoleToPrefixDir_Click()));
+                        subMenu->addAction(entry.release());
+
+                        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in mount point directory"), this));
+                        entry->setStatusTip(tr("Open system console in mount point directory"));
+                        if (this->prefixMontPoint.isEmpty())
+                                  entry->setEnabled(false);
+                        connect(entry.get(), SIGNAL(triggered()), this, SLOT(consoleToMountDir_Click()));
+                        subMenu->addAction(entry.release());
+
+                        menu->addMenu(subMenu.release());
+
+
             menu->addSeparator();
 
             entry.reset(new QAction(CoreLib->loadIcon("data/configure.png"), tr("Configure prefix settings"), this));
@@ -659,6 +676,29 @@ void PrefixTreeWidget::winefileOpenMountDir_Click(void){
     execObj.execcmd = "winefile";
 
     CoreLib->runWineBinary(execObj, this->prefixName);
+    return;
+}
+
+void PrefixTreeWidget::consoleToPrefixDir_Click(void){
+    if (this->prefixName.isEmpty())
+        return;
+
+    QString prefix_path = db_prefix.getPath(this->prefixName);
+
+    if (prefix_path.isEmpty()){
+        qDebug()<<"[EE] Can't get prefix path";
+    } else {
+        CoreLib->openConsole(prefix_path, this->prefixName);
+    }
+
+    return;
+}
+
+void PrefixTreeWidget::consoleToMountDir_Click(void){
+    if (this->prefixMontPoint.isEmpty())
+        return;
+
+    CoreLib->openConsole(this->prefixMontPoint, this->prefixName);
     return;
 }
 

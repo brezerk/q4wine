@@ -525,6 +525,27 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
 			menu->addMenu(subMenu.release());
 
+                        subMenu.reset(new QMenu(tr("Console"), this));
+
+                        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in application directory"), this));
+                        entry->setStatusTip(tr("Open system console in application directory"));
+                        connect(entry.get(), SIGNAL(triggered()), this, SLOT(consoleToIconDir_Click()));
+                        subMenu->addAction(entry.release());
+
+                        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in prefix directory"), this));
+                        entry->setStatusTip(tr("Open system console in prefix directory"));
+                        connect(entry.get(), SIGNAL(triggered()), this, SLOT(consoleToPrefixDir_Click()));
+                        subMenu->addAction(entry.release());
+
+                        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in mount point directory"), this));
+                        entry->setStatusTip(tr("Open system console in mount point directory"));
+                        if (this->prefixMontPoint.isEmpty())
+                                  entry->setEnabled(false);
+                        connect(entry.get(), SIGNAL(triggered()), this, SLOT(consoleToMountDir_Click()));
+                        subMenu->addAction(entry.release());
+
+                        menu->addMenu(subMenu.release());
+
 			menu->addSeparator();
 			entry.reset(new QAction(tr("Search in Wine AppDB"), this));
 			entry->setStatusTip(tr("Search for application name in wine AppDB"));
@@ -1174,4 +1195,46 @@ void IconListWidget::winefileOpenIconDir_Click(void){
 
 	  item.release();
 	  return;
+}
+
+void IconListWidget::consoleToPrefixDir_Click(void){
+    if (this->prefixName.isEmpty())
+        return;
+
+    QString prefix_path = db_prefix.getPath(this->prefixName);
+
+    if (prefix_path.isEmpty()){
+        qDebug()<<"[EE] Can't get prefix path";
+    } else {
+        CoreLib->openConsole(prefix_path, this->prefixName);
+    }
+
+    return;
+}
+
+void IconListWidget::consoleToMountDir_Click(void){
+    if (this->prefixMontPoint.isEmpty())
+        return;
+
+    CoreLib->openConsole(this->prefixMontPoint, this->prefixName);
+    return;
+}
+
+void IconListWidget::consoleToIconDir_Click(void){
+    std::auto_ptr<QListWidgetItem> item (this->currentItem());
+    if (!item.get()){
+                  item.release();
+                  return;
+    }
+
+    QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).value("wrkdir");
+
+    if (result.isEmpty()){
+            emit(changeStatusText(tr("Error: \"%1\" is an embedded Wine binary.").arg(item->text())));
+    } else {
+            CoreLib->openConsole(result, this->prefixName);
+    }
+
+    item.release();
+    return;
 }

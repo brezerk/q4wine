@@ -59,7 +59,8 @@ void WineObject::setProgramBinary(QString binary){
 	this->programBinaryName=binary.split("/").last().split("\\").last();
 
 	binary.replace("\"", "\\\"");
-	binary.replace("`", "\\`");
+        binary.replace("`", "\\`");
+        binary.replace("$", "\\$");
 	binary.replace("'", "'\\''");
 	this->programBinary=binary;
 
@@ -97,7 +98,8 @@ void WineObject::setProgramOverride(QString override){
 
 void WineObject::setProgramWrkdir(QString wrkdir){
 	wrkdir.replace("\"", "\\\"");
-	wrkdir.replace("`", "\\`");
+        wrkdir.replace("`", "\\`");
+        wrkdir.replace("$", "\\$");
 	wrkdir.replace("'", "'\\''");
 	this->programWrkDir = wrkdir;
 }

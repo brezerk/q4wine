@@ -48,6 +48,7 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
 	connect (cmdInstall, SIGNAL (clicked()), this, SLOT(run_winetricks()));
 	connect (cmdExit, SIGNAL (clicked()), this, SLOT(accept()));
 	connect (cmdInstWinetricks, SIGNAL (clicked()), this, SLOT (install_winetricks()));
+        connect (cmdRefresh, SIGNAL (clicked()), this, SLOT(parse()));
     connect(lstMain, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(lstMain_itemClicked(QListWidgetItem*)));
 
     lstMain->installEventFilter(this);
@@ -75,8 +76,7 @@ bool winetricks::eventFilter( QObject *object, QEvent *event )
 
 void winetricks::install_winetricks() {
     lstMain->clear();
-	downloadwinetricks ();
-    parse();
+    downloadwinetricks ();
 }
 
 void winetricks::run_winetricks(){
@@ -90,47 +90,31 @@ void winetricks::run_winetricks(){
     qDebug()<<"[plugin] run item";
 #endif
 
-    QStringList args;
-	if (!console_args.isEmpty()){
-		// If we have any conslope parametres, we gona preccess them one by one
-		QStringList cons_args = console_args.split(" ");
-		for (int i=0; i<cons_args.count(); i++){
-			if (!cons_args.at(i).isEmpty())
-				args.append(cons_args.at(i));
-		}
-	}
+   QStringList args;
+        if (!console_args.isEmpty()){
+                // If we have any conslope parametres, we gona preccess them one by one
+                QStringList cons_args = console_args.split(" ");
+                for (int i=0; i<cons_args.count(); i++){
+                        if (!cons_args.at(i).isEmpty())
+                                args.append(cons_args.at(i));
+                }
+        }
 
-	args.append(CoreLib->getSetting("system", "sh").toString());
-	args.append("-c");
+        QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
+        if (!proxy_host.isEmpty()){
+            args.append("env");
+            args.append(QString("HTTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+            args.append(QString("FTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+            args.append(QString("WINEPREFIX=%1").arg(this->prefix_path));
+        }
 
-	QString arg;
-		if (!CoreLib->getSetting("network", "host", false).toString().isEmpty()){
-			arg.append("http_proxy=\"http://");
-			arg.append(CoreLib->getSetting("network", "host", false).toString());
-			if (!CoreLib->getSetting("network", "port", false).toString().isEmpty()){
-				arg.append(":");
-				arg.append(CoreLib->getSetting("network", "port", false).toString());
-			}
-			arg.append("\" ftp_proxy=\"http://");
-			arg.append(CoreLib->getSetting("network", "host", false).toString());
-			if (!CoreLib->getSetting("network", "port", false).toString().isEmpty()){
-				arg.append(":");
-				arg.append(CoreLib->getSetting("network", "port", false).toString());
-			}
-			arg.append("\" ");
-		}
+        args.append(CoreLib->getWhichOut("sh"));
+        args.append("-c");
+        args.append(QString("%1 %2").arg(this->winetricks_bin).arg(lstMain->currentItem()->text()));
 
-		arg.append("WINEPREFIX=");
-		arg.append(this->prefix_path);
-		arg.append(" ");
-		arg.append(this->winetricks_bin);
-		arg.append(" ");
-		arg.append(lstMain->currentItem()->text());
-
-	args.append(arg);
-
-    QProcess proc(this);
+    QProcess proc;
     proc.startDetached(console_bin, args, QDir::homePath());
+
 	return;
 }
 
@@ -149,40 +133,28 @@ void winetricks::downloadwinetricks () {
 		}
 	}
 
+        QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
+        if (!proxy_host.isEmpty()){
+            args.append("env");
+            args.append(QString("HTTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+            args.append(QString("FTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+        }
 
-	args.append(CoreLib->getSetting("system", "sh").toString());
-	args.append("-c");
-	QString arg;
+        args.append(CoreLib->getWhichOut("sh"));
+        args.append("-c");
 
-		if (!CoreLib->getSetting("network", "host", false).toString().isEmpty()){
-			arg.append("http_proxy=\"http://");
-			arg.append(CoreLib->getSetting("network", "host", false).toString());
-			if (!CoreLib->getSetting("network", "port", false).toString().isEmpty()){
-				arg.append(":");
-				arg.append(CoreLib->getSetting("network", "port", false).toString());
-			}
-			arg.append("\" ftp_proxy=\"http://");
-			arg.append(CoreLib->getSetting("network", "host", false).toString());
-			if (!CoreLib->getSetting("network", "port", false).toString().isEmpty()){
-				arg.append(":");
-				arg.append(CoreLib->getSetting("network", "port", false).toString());
-			}
-			arg.append("\" ");
-		}
+        QString arg;
+            arg.append(CoreLib->getWhichOut("wget"));
+            arg.append(" http://kegel.com/wine/winetricks -O ");
+            arg.append(this->winetricks_bin);
+            arg.append(" && ");
+            arg.append(CoreLib->getWhichOut("chmod"));
+            arg.append(" +x ");
+            arg.append(this->winetricks_bin);
+        args.append(arg);
 
-		arg.append(CoreLib->getWhichOut("wget"));
-		arg.append(" http://kegel.com/wine/winetricks -O ");
-		arg.append(this->winetricks_bin);
-		arg.append(" && ");
-		arg.append(CoreLib->getWhichOut("chmod"));
-		arg.append(" +x ");
-		arg.append(this->winetricks_bin);
-
-	args.append(arg);
-
-    Process exportProcess(args, console_bin, QDir::homePath(), tr("Downloading and installing winetricks..."), tr("Plz wait..."));
-    exportProcess.exec();
-		// setting help
+    QProcess proc;
+    proc.startDetached(console_bin, args, QDir::homePath());
 
 #ifdef DEBUG
     qDebug()<<"[plugin] download done";
@@ -225,6 +197,7 @@ descs.append(desc);
 
 
 void winetricks::parse() {
+
     names.clear();
     descs.clear();
 
