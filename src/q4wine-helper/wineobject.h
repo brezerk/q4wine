@@ -78,6 +78,7 @@ private:
 
     QString prefixName;
     QString prefixPath;
+    QString prefixArch;
     QString prefixDllPath;
     int prefixId;
     QString prefixLoader;

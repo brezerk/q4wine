@@ -277,7 +277,6 @@ public:
 	bool reniceProcess(const int pid, const int priority) const;
 	void runAutostart(void);
 
-	QString createWineString(QString prefixName, QString dirName, QString iconName);
 	void createPrefixDBStructure(QString prefixName);
 
 	QString decodeRegString(QString string);

@@ -111,11 +111,22 @@ bool DataBase::checkDb(){
         }
     }
 
-    return true;
+    return fixup();
 }
 
 void DataBase::close(){
    QSqlDatabase db = QSqlDatabase::database();
    db.close();
    return;
+}
+
+bool DataBase::fixup(){
+    QSqlQuery query;
+    if (!query.exec("SELECT arch FROM prefix")){
+        if (!query.exec("ALTER TABLE prefix ADD COLUMN arch TEXT")){
+            qDebug()<<"[EE] Can't alter table";
+            return false;
+        }
+    }
+    return true;
 }

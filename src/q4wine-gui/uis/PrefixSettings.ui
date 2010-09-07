@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
-    <height>440</height>
+    <width>696</width>
+    <height>436</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Prefix Settings</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../../q4wine.qrc">
     <normaloff>:/data/q4wine.png</normaloff>:/data/q4wine.png</iconset>
   </property>
   <layout class="QVBoxLayout">
@@ -184,7 +184,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>:/data/exec.png</pixmap>
+         <pixmap resource="../../q4wine.qrc">:/data/exec.png</pixmap>
         </property>
        </widget>
       </item>
@@ -294,6 +294,53 @@
                 </item>
                 <item>
                  <widget class="QLineEdit" name="txtPrefixName"/>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_19" native="true">
+               <layout class="QHBoxLayout" name="_2">
+                <property name="margin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_18">
+                  <property name="minimumSize">
+                   <size>
+                    <width>140</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>140</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Architecture:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="comboArchList">
+                  <item>
+                   <property name="text">
+                    <string>Default</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">win32</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">win64</string>
+                   </property>
+                  </item>
+                 </widget>
                 </item>
                </layout>
               </widget>
@@ -685,6 +732,8 @@ Note: leave it blank for default.</string>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../q4wine.qrc"/>
+ </resources>
  <connections/>
 </ui>

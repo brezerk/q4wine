@@ -66,6 +66,7 @@ public:
     /*! \brief This function close database connection.
 	*/
     void close();
+    bool fixup();
 
 };
 

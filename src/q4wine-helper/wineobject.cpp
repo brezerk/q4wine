@@ -51,7 +51,7 @@ void WineObject::setPrefix(QString prefix){
 	this->prefixLoader=prefix_info.value("loader");
 	this->prefixPath=prefix_info.value("path");
 	this->prefixServer=prefix_info.value("server");
-
+        this->prefixArch=prefix_info.value("arch");
 	return;
 }
 
@@ -139,6 +139,8 @@ QString WineObject::createEnvString(){
 		env.append(QString(" WINESERVER=\"%1\" ").arg(this->prefixServer));
 		env.append(QString(" WINELOADER=\"%1\" ").arg(this->prefixLoader));
 		env.append(QString(" WINEDLLPATH=\"%1\" ").arg(this->prefixDllPath));
+                if (!this->prefixArch.isEmpty())
+                    env.append(QString(" WINEARCH=\"%1\" ").arg(this->prefixArch));
 
 		if (!this->programDebug.isEmpty())
 			env.append(QString(" WINEDEBUG=\"%1\" ").arg(this->programDebug));

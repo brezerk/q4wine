@@ -1180,7 +1180,15 @@ QStringList corelib::getCdromDevices(void) const{
 			QString command;
 
 			if (!prefix_path.isEmpty()){
-				command=QString("env WINEPREFIX=\"%1\" wineserver -kill").arg(prefix_path);
+                                QString prefix_name = db_prefix.getName(prefix_path);
+                                QHash<QString, QString> prefix_info = db_prefix.getByName(prefix_name);
+
+                                command = "env ";
+                                command.append(QString(" WINEPREFIX=\"%1\" ").arg(prefix_info.value("path")));
+                                if (!prefix_info.value("arch").isEmpty())
+                                    command.append(QString(" WINEARCH=\"%1\" ").arg(prefix_info.value("arch")));
+
+                                command.append(" wineserver -kill ");
 			} else {
 				command="wineserver -kill";
 			}
@@ -1283,8 +1291,10 @@ QStringList corelib::getCdromDevices(void) const{
                     args << QString("WINEDLLPATH=%1").arg(prefix_info.value("libs"));
                     args << QString("WINELOADER=%1").arg(prefix_info.value("loader"));
                     args << QString("WINESERVER=%1").arg(prefix_info.value("server"));
+                    if (!prefix_info.value("arch").isEmpty())
+                        args << QString("WINEARCH=%1").arg(prefix_info.value("arch"));
 
-                    QString prefix_path=prefix_info.value("path");
+                    QString prefix_path=path;
                     prefix_path.replace("'", "'\\''");
 
                     args << "/bin/sh" << "-c" << QString("cd \'%1\' && echo \'\' && echo \' [ii] wine environment variables are set to \"%2\" prefix settings.\' && echo \'\' && %3 ").arg(prefix_path).arg(prefix_name).arg(shell);
@@ -1294,7 +1304,7 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 
                     QProcess proc;
-                    proc.startDetached(console, args, "/mnt");
+                    proc.startDetached(console, args, QDir::homePath());
                 }
 
 		void corelib::updateRecentImagesList(const QString media) const{
@@ -1416,93 +1426,6 @@ QStringList corelib::getCdromDevices(void) const{
 				}
 			}
 			return;
-		}
-
-		QString corelib::createWineString(QString prefixName, QString dirName, QString iconName){
-			QHash<QString, QString> icon = db_icon.getByName(prefixName, dirName, iconName);
-			QHash<QString,QString> prefix = db_prefix.getByName(prefixName);
-
-			QString env;
-
-			env.append(QString(" WINEPREFIX=\'%1\' ").arg(prefix["path"]));
-			env.append(QString(" WINESERVER=\'%1\' ").arg(prefix["server"]));
-			env.append(QString(" WINELOADER=\'%1\' ").arg(prefix["loader"]));
-			env.append(QString(" WINEDLLPATH=\'%1\' ").arg(prefix["libs"]));
-
-			if (!icon["winedebug"].isEmpty())
-				env.append(QString(" WINEDEBUG=\'%1\' ").arg(icon["winedebug"]));
-
-			if (!icon["display"].isEmpty())
-				env.append(QString(" DISPLAY=\'%1\' ").arg(icon["display"]));
-
-			if (!icon["override"].isEmpty())
-				 env.append(QString(" WINEDLLOVERRIDES=\'%1\' ").arg(icon["override"]));
-
-			QString run_string="";
-
-			if (icon["useconsole"]=="1"){
-				// If we gona use console output, so exec program is program specificed at CONSOLE global variable
-				run_string = QString(" %1 ").arg(this->getSetting("console", "bin").toString());
-
-				if (!this->getSetting("console", "args", false).toString().isEmpty()){
-					// If we have any conslope parametres, we gona preccess them one by one
-					run_string.append(this->getSetting("console", "args", false).toString());
-				}
-
-				run_string.append(" /bin/sh -c \"cd \'");
-				run_string.append(icon["wrkdir"]);
-				run_string.append("\' && ");
-			} else {
-				 QTextCodec *codec = QTextCodec::codecForName(this->getLocale().toAscii());
-				 if (chdir(codec->fromUnicode(icon["wrkdir"]).data()) != 0){
-					 qDebug()<<"[EE] chdir to:"<<codec->fromUnicode(icon["wrkdir"]).data()<<"fail";
-					 return "";
-				 }
-			}
-
-			//Setting enveropment variables
-			if (!env.isEmpty()){
-				run_string.append(" env ");
-				run_string.append(env);
-			}
-
-			if (icon["nice"] != "0"){
-				run_string.append(QString(" %1 -n %2 ").arg(this->getSetting("system", "nice", false).toString()).arg(icon["nice"]));
-			}
-
-			run_string.append(QString(" %1 ").arg(prefix["bin"]));
-
-			if (!icon["desktop"].isEmpty()){
-				QString deskname = icon["exec"].split("/").last().split("\\").last();
-				deskname.replace(" ", ".");
-				deskname.replace("&", ".");
-				deskname.replace("!", ".");
-				deskname.replace("$", ".");
-				deskname.replace("*", ".");
-				deskname.replace("(", ".");
-				deskname.replace(")", ".");
-				deskname.replace("[", ".");
-				deskname.replace("]", ".");
-				deskname.replace(";", ".");
-				deskname.replace("'", ".");
-				deskname.replace("\"", ".");
-				deskname.replace("|", ".");
-				deskname.replace("`", ".");
-				deskname.replace("\\", ".");
-				deskname.replace("/", ".");
-				deskname.replace(">", ".");
-				deskname.replace("<", ".");
-				run_string.append(QString(" explorer.exe /desktop=%1,%2 ").arg(deskname).arg(icon["desktop"]));
-			}
-
-			run_string.append(QString(" \'%1\' %2 ").arg(icon["exec"]).arg(icon["cmdargs"]));
-			run_string.append(" 2>&1 ");
-
-			if (icon["useconsole"]=="1"){
-				run_string.append(" \"");
-			}
-
-			return run_string;
 		}
 
 		void corelib::createPrefixDBStructure(QString prefixName){

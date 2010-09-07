@@ -573,11 +573,6 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
 			subMenu->addSeparator();
 
-			entry.reset(new QAction(CoreLib->loadIcon("data/wineconsole.png"), tr("wine cmd"), this));
-			entry->setStatusTip(tr("Copy wine cmd line for current application"));
-			connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyWineCmd_Click()));
-			subMenu->addAction(entry.release());
-
 			entry.reset(new QAction(CoreLib->loadIcon("data/q4wine.png"), tr("q4wine-cli cmd"), this));
 			entry->setStatusTip(tr("Copy q4wine-cli cmd for current application"));
 			connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyQ4WineCmd_Click()));
@@ -585,7 +580,6 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
 			menu->addMenu(subMenu.release());
 			// End of clipboard meny
-
 	  } else {
 			// Default menu
 			std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
@@ -954,23 +948,6 @@ void IconListWidget::iconCopyProgramPath_Click(){
 		QClipboard *clipboard = QApplication::clipboard();
 		clipboard->setText(info["exec"]);
 	}
-	return;
-}
-
-void IconListWidget::iconCopyWineCmd_Click(){
-	if (selectedItems().count()<=0)
-		return;
-
-	std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
-	if (!iconItem.get())
-		  return;
-
-	QString text = CoreLib->createWineString(this->prefixName, this->dirName, iconItem->text());
-	if (!text.isEmpty()){
-		QClipboard *clipboard = QApplication::clipboard();
-		clipboard->setText(text);
-	}
-	iconItem.release();
 	return;
 }
 

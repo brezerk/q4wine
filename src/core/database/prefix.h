@@ -93,7 +93,7 @@ class Prefix
 	  * \param  cdrom_drive    A cdrom drive.
 	  * \return Return true on success.
 	  */
-	  bool addPrefix(const QString prefix_name, const QString prefix_path="", const QString wine_exec="", const QString wine_server="", const QString wine_loader="", const QString wine_dllpath="", const QString cdrom_mount="", const QString cdrom_drive="") const;
+          bool addPrefix(const QString prefix_name, const QString prefix_path="", const QString wine_exec="", const QString wine_server="", const QString wine_loader="", const QString wine_dllpath="", const QString cdrom_mount="", const QString cdrom_drive="", const QString arch="") const;
 
 	 /*! \brief This function check is reccord exists by prefix name or not.
 	  *
@@ -115,7 +115,7 @@ class Prefix
 	  * \param  old_prefix_name	   A cdrom drive.
 	  * \return Return true on success.
 	  */
-	  bool updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive, const QString old_prefix_name) const;
+          bool updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive, const QString old_prefix_name, const QString arch) const;
 
       void fixPrefixPath();
 protected:

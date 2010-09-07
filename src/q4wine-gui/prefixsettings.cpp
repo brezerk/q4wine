@@ -81,6 +81,8 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
         txtWineLoaderBin->setText(result.value("loader"));
         txtWineServerBin->setText(result.value("server"));
         txtWineBin->setText(result.value("bin"));
+        if (!result.value("arch").isEmpty())
+            comboArchList->setCurrentIndex (comboArchList->findText(result.value("arch")));
 	}
 
 	txtPrefixName->setText(prefix_name);
@@ -98,6 +100,8 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
+
+       // comboArchList->setEnabled(false);
 
 	cmdGetMountPoint->installEventFilter(this);
 
@@ -136,6 +140,8 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent,
 
     comboDeviceList->addItems(CoreLib->getCdromDevices());
     comboDeviceList->setCurrentIndex (0);
+
+    //comboArchList->setEnabled(true);
 
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
@@ -186,12 +192,12 @@ void PrefixSettings::cmdOk_Click(){
     }
 
     if (this->addNew){
-        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText()))
+        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), comboArchList->currentText()))
             reject();
 
         CoreLib->createPrefixDBStructure(txtPrefixName->text());
     } else {
-        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name))
+        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name, comboArchList->currentText()))
             reject();
     }
 
