@@ -137,18 +137,6 @@ bool Registry::exec(QObject *parent, QString prefix_path, QString prefix_name){
     file.remove();
 
     return ret;
-
-	/*
-	std::auto_ptr<WineBinLauncher> launcher (new WineBinLauncher(prefix_name));
-	launcher->show();
-	launcher->run_exec(parent, "regedit.exe", full_file_path, TRUE);
-
-	if (launcher->exec()==QDialog::Accepted){
-		return TRUE;
-	} else {
-		return FALSE;
-	}*/
-
 }
 
 QStringList Registry::readKeys(const QString sysfile, const QString path, const QStringList keys) const{

@@ -275,6 +275,7 @@ void FakeDriveSettings::cmdOk_Click(){
                                 QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(item->getPath()).arg(driveLink));
                                 QApplication::restoreOverrideCursor();
                                 reject();
+                                return;
                             }
 			}
 			item.release();
@@ -287,6 +288,7 @@ void FakeDriveSettings::cmdOk_Click(){
                 QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(prefixPath));
                 QApplication::restoreOverrideCursor();
                 reject();
+                return;
             }
         }
 
@@ -297,6 +299,7 @@ void FakeDriveSettings::cmdOk_Click(){
                 QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopFolder));
                 QApplication::restoreOverrideCursor();
                 reject();
+                return;
             }
         }
 
@@ -304,6 +307,7 @@ void FakeDriveSettings::cmdOk_Click(){
             QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktop->text()).arg(desktopFolder));
             QApplication::restoreOverrideCursor();
             reject();
+            return;
         }
 
         // Doc folder
@@ -313,6 +317,7 @@ void FakeDriveSettings::cmdOk_Click(){
                 QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopDocuments));
                 QApplication::restoreOverrideCursor();
                 reject();
+                return;
             }
         }
 
@@ -320,6 +325,7 @@ void FakeDriveSettings::cmdOk_Click(){
             QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopDoc->text()).arg(desktopDocuments));
             QApplication::restoreOverrideCursor();
             reject();
+            return;
         }
 
         // Music folder
@@ -329,6 +335,7 @@ void FakeDriveSettings::cmdOk_Click(){
                 QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopMusic));
                 QApplication::restoreOverrideCursor();
                 reject();
+                return;
             }
         }
 
@@ -336,6 +343,7 @@ void FakeDriveSettings::cmdOk_Click(){
             QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopMus->text()).arg(desktopMusic));
             QApplication::restoreOverrideCursor();
             reject();
+            return;
         }
 
         // Pic folder
@@ -345,6 +353,7 @@ void FakeDriveSettings::cmdOk_Click(){
                 QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopPictures));
                 QApplication::restoreOverrideCursor();
                 reject();
+                return;
             }
         }
 
@@ -352,6 +361,7 @@ void FakeDriveSettings::cmdOk_Click(){
             QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopPic->text()).arg(desktopPictures));
             QApplication::restoreOverrideCursor();
             reject();
+            return;
         }
 
         // Vid folder
@@ -361,6 +371,7 @@ void FakeDriveSettings::cmdOk_Click(){
                 QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopVideos));
                 QApplication::restoreOverrideCursor();
                 reject();
+                return;
             }
         }
 
@@ -368,6 +379,7 @@ void FakeDriveSettings::cmdOk_Click(){
             QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopVid->text()).arg(desktopVideos));
             QApplication::restoreOverrideCursor();
             reject();
+            return;
         }
 
 	// ---- End of Creating Dos drives ----
