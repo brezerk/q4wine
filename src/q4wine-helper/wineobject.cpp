@@ -46,29 +46,23 @@ void WineObject::setPrefix(QString prefix){
 
 	this->prefixId=prefix_info.value("id").toInt();
 	this->prefixName=prefix_info.value("name");
-	this->prefixBinary=prefix_info.value("bin");
-	this->prefixDllPath=prefix_info.value("libs");
-	this->prefixLoader=prefix_info.value("loader");
-	this->prefixPath=prefix_info.value("path");
-	this->prefixServer=prefix_info.value("server");
+        this->prefixBinary=CoreLib->getStrictEscapeString(prefix_info.value("bin"));
+        this->prefixDllPath=CoreLib->getStrictEscapeString(prefix_info.value("libs"));
+        this->prefixLoader=CoreLib->getStrictEscapeString(prefix_info.value("loader"));
+        this->prefixPath=CoreLib->getStrictEscapeString(prefix_info.value("path"));
+        this->prefixServer=CoreLib->getStrictEscapeString(prefix_info.value("server"));
         this->prefixArch=prefix_info.value("arch");
 	return;
 }
 
 void WineObject::setProgramBinary(QString binary){
 	this->programBinaryName=binary.split("/").last().split("\\").last();
-
-	binary.replace("\"", "\\\"");
-        binary.replace("`", "\\`");
-        binary.replace("$", "\\$");
-	binary.replace("'", "'\\''");
-	this->programBinary=binary;
-
+	this->programBinary=CoreLib->getShellEscapeString(binary);
 	return;
 }
 
 void WineObject::setProgramArgs(QString args){
-	this->programArgs=args;
+        this->programArgs=args;
 	return;
 }
 
@@ -97,11 +91,7 @@ void WineObject::setProgramOverride(QString override){
 }
 
 void WineObject::setProgramWrkdir(QString wrkdir){
-	wrkdir.replace("\"", "\\\"");
-        wrkdir.replace("`", "\\`");
-        wrkdir.replace("$", "\\$");
-	wrkdir.replace("'", "'\\''");
-	this->programWrkDir = wrkdir;
+	this->programWrkDir = CoreLib->getShellEscapeString(wrkdir);
 }
 
 
@@ -135,18 +125,18 @@ QString WineObject::createEnvString(){
 		if (!this->overrideDllList.isEmpty())
 			 env.append(QString(" WINEDLLOVERRIDES=%1 ").arg(this->overrideDllList.replace("\"","\\\"")));
 	} else {*/
-		env.append(QString(" WINEPREFIX=\"%1\" ").arg(this->prefixPath));
-		env.append(QString(" WINESERVER=\"%1\" ").arg(this->prefixServer));
-		env.append(QString(" WINELOADER=\"%1\" ").arg(this->prefixLoader));
-		env.append(QString(" WINEDLLPATH=\"%1\" ").arg(this->prefixDllPath));
+                env.append(QString(" WINEPREFIX='%1' ").arg(this->prefixPath));
+                env.append(QString(" WINESERVER='%1' ").arg(this->prefixServer));
+                env.append(QString(" WINELOADER='%1' ").arg(this->prefixLoader));
+                env.append(QString(" WINEDLLPATH='%1' ").arg(this->prefixDllPath));
                 if (!this->prefixArch.isEmpty())
-                    env.append(QString(" WINEARCH=\"%1\" ").arg(this->prefixArch));
+                    env.append(QString(" WINEARCH='%1' ").arg(this->prefixArch));
 
 		if (!this->programDebug.isEmpty())
-			env.append(QString(" WINEDEBUG=\"%1\" ").arg(this->programDebug));
+                        env.append(QString(" WINEDEBUG='%1'' ").arg(this->programDebug));
 
 		if (!this->programDisplay.isEmpty())
-			env.append(QString(" DISPLAY=\"%1\" ").arg(this->programDisplay));
+                        env.append(QString(" DISPLAY='%1'' ").arg(this->programDisplay));
 
 		if (!this->overrideDllList.isEmpty())
 			 env.append(QString(" WINEDLLOVERRIDES=%1 ").arg(this->overrideDllList));

@@ -129,7 +129,7 @@ bool Registry::exec(QObject *parent, QString prefix_path, QString prefix_name){
 	file.close();
 
     ExecObject execObj;
-    execObj.cmdargs = full_file_path;
+    execObj.cmdargs = QString("C:/temp/%1.reg").arg(file_name);
     execObj.execcmd = "regedit.exe";
 
     bool ret = CoreLib->runWineBinary(execObj, prefix_name, false);

@@ -210,27 +210,24 @@ void FakeDriveSettings::cmdOk_Click(){
 		version = "winxp";
 	}
 
-	ExecObject execObj;
-	execObj.cmdargs = "-u -i";
-	execObj.execcmd = "wineboot";
-
-	if (!CoreLib->runWineBinary(execObj, prefixName, false)){
-		QApplication::restoreOverrideCursor();
-		reject();
-		return;
-	}
-
 	Registry reg(db_prefix.getPath(prefixName));
 	QStringList list;
 	list << "\"Desktop\""<<"\"My Music\""<<"\"My Pictures\""<<"\"My Videos\""<<"\"Personal\"";
 	list = reg.readKeys("user", "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders", list);
 
+        QString prefixPath = db_prefix.getPath(prefixName);
+
+        QString userDir = prefixPath;
+        userDir.append("/drive_c/users/");
+        userDir.append(getenv("USER"));
+
+
 	if (list.count()==5){
-		desktopFolder = CoreLib->decodeRegString(list.at(0).split("\\\\").last());
-		desktopDocuments = CoreLib->decodeRegString(list.at(1).split("\\\\").last());
-		desktopMusic = CoreLib->decodeRegString(list.at(2).split("\\\\").last());
-		desktopPictures = CoreLib->decodeRegString(list.at(3).split("\\\\").last());
-		desktopVideos = CoreLib->decodeRegString(list.at(4).split("\\\\").last());
+                desktopFolder = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(0).split("\\\\").last()));
+                desktopDocuments = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(1).split("\\\\").last()));
+                desktopMusic = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(2).split("\\\\").last()));
+                desktopPictures = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(3).split("\\\\").last()));
+                desktopVideos = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(4).split("\\\\").last()));
 	} else {
 		 QMessageBox::warning(this, tr("Error"), tr("Can't read desktop paths!"));
 		this->reject();
@@ -238,228 +235,140 @@ void FakeDriveSettings::cmdOk_Click(){
 	}
 
 #ifdef DEBUG
-	qDebug()<<"[ii] Localizad folders names: "<<desktopFolder<<desktopDocuments<<desktopMusic<<desktopPictures<<desktopVideos;
+        qDebug()<<"[ii] Localizad folders path: "<<desktopFolder<<desktopDocuments<<desktopMusic<<desktopPictures<<desktopVideos;
 #endif
 
 	QString sh_cmd = "";
 	QStringList sh_line;
 
-	QDir wineDriveDir;
-	wineDriveDir.setFilter(QDir::Dirs | QDir::Hidden | QDir::NoDotAndDotDot  );
+        QDir dir;
+        QFile file;
+        QFileInfo fileInfo;
 
-	QString prefixPath = db_prefix.getPath(prefixName);
-	prefixPath.append("/dosdevices/");
+        dir.setFilter(QDir::Dirs | QDir::Hidden | QDir::NoDotAndDotDot  );
 
-	if (!wineDriveDir.cd(prefixPath)){
+        prefixPath.append("/dosdevices/");
+        if (!dir.cd(prefixPath)){
 		qDebug()<<"[ee] Cannot cd to prefix directory: "<<prefixPath;
 	} else {
-		QFileInfoList drivelist = wineDriveDir.entryInfoList();
+                QFileInfoList drivelist = dir.entryInfoList();
+                QFile file;
 		for (int i = 0; i < drivelist.size(); ++i) {
 			QFileInfo fileInfo = drivelist.at(i);
 			if (fileInfo.isSymLink()){
-				sh_cmd.clear();
-				sh_cmd.append(CoreLib->getWhichOut("rm"));
-				sh_cmd.append(" -fr '");
-				sh_cmd.append(fileInfo.filePath());
-				sh_cmd.append("'");
-				sh_line.append(sh_cmd);
+                            if (!file.remove(fileInfo.filePath())){
+                                QMessageBox::warning(this, tr("Error"), tr("Can't remove symlink: %1").arg(fileInfo.filePath()));
+                                QApplication::restoreOverrideCursor();
+                                reject();
+                            }
 			}
 		}
 	}
-
-	sh_cmd.clear();
-	sh_cmd.append("cd \'");
-	sh_cmd.append(prefixPath);
-	sh_cmd.append("\'");
-	sh_line.append(sh_cmd);
 
 	if (listWineDrives->count()>0){
 		for (int i=0; i<listWineDrives->count(); i++){
 			std::auto_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->item(i)));
 
 			if (item.get()){
-				sh_cmd.clear();
-				sh_cmd.append(CoreLib->getWhichOut("rm"));
-				sh_cmd.append(" -f '");
-				sh_cmd.append(item->getLetter().toLower());
-				sh_cmd.append("'");
-				sh_line.append(sh_cmd);
-
-				sh_cmd.clear();
-				sh_cmd.append(CoreLib->getWhichOut("ln"));
-				sh_cmd.append(" -s '");
-				sh_cmd.append(item->getPath());
-				sh_cmd.append("' '");
-				sh_cmd.append(item->getLetter().toLower());
-				sh_cmd.append("'");
-				sh_line.append(sh_cmd);
+                            QString driveLink = QString("%1/%2").arg(prefixPath).arg(item->getLetter().toLower());
+                            if (!file.link(item->getPath(), driveLink)){
+                                QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(item->getPath()).arg(driveLink));
+                                QApplication::restoreOverrideCursor();
+                                reject();
+                            }
 			}
 			item.release();
 		}
 	}
 
-	prefixPath.append("c:/users/");
-	prefixPath.append(getenv("USER"));
+        // Check and create user path
+        if (!dir.exists(prefixPath)){
+            if (!dir.mkdir(prefixPath)){
+                QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(prefixPath));
+                QApplication::restoreOverrideCursor();
+                reject();
+            }
+        }
 
-	sh_cmd.clear();
-	sh_cmd.append("mkdir -p \'");
-	sh_cmd.append(prefixPath);
-	sh_cmd.append("\'");
-	sh_line.append(sh_cmd);
+        // Desktop foolder
+        fileInfo.setFile(desktopFolder);
+        if (fileInfo.isSymLink() || fileInfo.exists()){
+            if (!dir.remove(desktopFolder)){
+                QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopFolder));
+                QApplication::restoreOverrideCursor();
+                reject();
+            }
+        }
 
-	sh_cmd.clear();
-	sh_cmd.append(CoreLib->getWhichOut("rm"));
-	sh_cmd.append(" -fr '");
-	sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopFolder));
-	sh_cmd.append("'");
-	sh_line.append(sh_cmd);
+        if (!file.link(txtWineDesktop->text(), desktopFolder)){
+            QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktop->text()).arg(desktopFolder));
+            QApplication::restoreOverrideCursor();
+            reject();
+        }
 
-	sh_cmd.clear();
-	sh_cmd.append(CoreLib->getWhichOut("rm"));
-	sh_cmd.append(" -fr '");
-	sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopDocuments));
-	sh_cmd.append("'");
-	sh_line.append(sh_cmd);
+        // Doc folder
+        fileInfo.setFile(desktopDocuments);
+        if (fileInfo.isSymLink() || fileInfo.exists()){
+            if (!dir.remove(desktopDocuments)){
+                QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopDocuments));
+                QApplication::restoreOverrideCursor();
+                reject();
+            }
+        }
 
-	sh_cmd.clear();
-	sh_cmd.append(CoreLib->getWhichOut("rm"));
-	sh_cmd.append(" -fr '");
-	sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopMusic));
-	sh_cmd.append("'");
-	sh_line.append(sh_cmd);
+        if (!file.link(txtWineDesktopDoc->text(), desktopDocuments)){
+            QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopDoc->text()).arg(desktopDocuments));
+            QApplication::restoreOverrideCursor();
+            reject();
+        }
 
-	sh_cmd.clear();
-	sh_cmd.append(CoreLib->getWhichOut("rm"));
-	sh_cmd.append(" -fr '");
-	sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopPictures));
-	sh_cmd.append("'");
-	sh_line.append(sh_cmd);
+        // Music folder
+        fileInfo.setFile(desktopMusic);
+        if (fileInfo.isSymLink() || fileInfo.exists()){
+            if (!dir.remove(desktopMusic)){
+                QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopMusic));
+                QApplication::restoreOverrideCursor();
+                reject();
+            }
+        }
 
-	sh_cmd.clear();
-	sh_cmd.append(CoreLib->getWhichOut("rm"));
-	sh_cmd.append(" -fr '");
-	sh_cmd.append(QString("%1/%2").arg(prefixPath).arg(desktopVideos));
-	sh_cmd.append("'");
-	sh_line.append(sh_cmd);
+        if (!file.link(txtWineDesktopMus->text(), desktopMusic)){
+            QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopMus->text()).arg(desktopMusic));
+            QApplication::restoreOverrideCursor();
+            reject();
+        }
 
-	sh_cmd.clear();
-	sh_cmd.append("cd \'");
-	sh_cmd.append(prefixPath);
-	sh_cmd.append("\'");
-	sh_line.append(sh_cmd);
+        // Pic folder
+        fileInfo.setFile(desktopPictures);
+        if (fileInfo.isSymLink() || fileInfo.exists()){
+            if (!dir.remove(desktopPictures)){
+                QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopPictures));
+                QApplication::restoreOverrideCursor();
+                reject();
+            }
+        }
 
-	sh_cmd.clear();
-	sh_cmd.append(CoreLib->getWhichOut("ln"));
-	sh_cmd.append(" -s '");
-	sh_cmd.append(txtWineDesktop->text());
-	sh_cmd.append("' '");
-	sh_cmd.append(desktopFolder);
-	sh_cmd.append("'");
-	sh_line.append(sh_cmd);
+        if (!file.link(txtWineDesktopPic->text(), desktopPictures)){
+            QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopPic->text()).arg(desktopPictures));
+            QApplication::restoreOverrideCursor();
+            reject();
+        }
 
-	QDir dir (txtWineDesktop->text());
-	if (!dir.exists())
-		if (!dir.mkpath(dir.path())){
-		QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
-#ifdef DEBUG
-		qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
-#endif
-	}
+        // Vid folder
+        fileInfo.setFile(desktopVideos);
+        if (fileInfo.isSymLink() || fileInfo.exists()){
+            if (!dir.remove(desktopVideos)){
+                QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopVideos));
+                QApplication::restoreOverrideCursor();
+                reject();
+            }
+        }
 
-	sh_cmd.clear();
-	sh_cmd.append(CoreLib->getWhichOut("ln"));
-	sh_cmd.append(" -s '");
-	sh_cmd.append(txtWineDesktopDoc->text());
-	sh_cmd.append("' '");
-	sh_cmd.append(desktopDocuments);
-	sh_cmd.append("'");
-	sh_line.append(sh_cmd);
-
-	dir.setPath (txtWineDesktopDoc->text());
-	if (!dir.exists())
-		if (!dir.mkpath(dir.path())){
-		QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
-#ifdef DEBUG
-		qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
-#endif
-	}
-
-	sh_cmd.clear();
-	sh_cmd.append(CoreLib->getWhichOut("ln"));
-	sh_cmd.append(" -s '");
-	sh_cmd.append(txtWineDesktopMus->text());
-	sh_cmd.append("' '");
-	sh_cmd.append(desktopMusic);
-	sh_cmd.append("'");
-	sh_line.append(sh_cmd);
-
-	dir.setPath (txtWineDesktopMus->text());
-	if (!dir.exists())
-		if (!dir.mkpath(dir.path())){
-		QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
-#ifdef DEBUG
-		qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
-#endif
-	}
-
-	sh_cmd.clear();
-	sh_cmd.append(CoreLib->getWhichOut("ln"));
-	sh_cmd.append(" -s '");
-	sh_cmd.append(txtWineDesktopPic->text());
-	sh_cmd.append("' '");
-	sh_cmd.append(desktopPictures);
-	sh_cmd.append("'");
-	sh_line.append(sh_cmd);
-
-	dir.setPath (txtWineDesktopPic->text());
-	if (!dir.exists())
-		if (!dir.mkpath(dir.path())){
-		QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
-#ifdef DEBUG
-		qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
-#endif
-	}
-
-	sh_cmd.clear();
-	sh_cmd.append(CoreLib->getWhichOut("ln"));
-	sh_cmd.append(" -s '");
-	sh_cmd.append(txtWineDesktopVid->text());
-	sh_cmd.append("' '");
-	sh_cmd.append(desktopVideos);
-	sh_cmd.append("'");
-	sh_line.append(sh_cmd);
-
-
-	dir.setPath(txtWineDesktopVid->text());
-	if (!dir.exists())
-		if (!dir.mkpath(dir.path())){
-		QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(dir.path()));
-#ifdef DEBUG
-		qDebug()<<"[ii] Wizard::can't create dir: "<<dir.path();
-#endif
-	}
-
-	sh_cmd.clear();
-
-#ifdef DEBUG
-	qDebug()<<"[ii] Wizard::Creating sh_line";
-#endif
-	for (int i=0; i<sh_line.count(); i++){
-		sh_cmd.append(sh_line.at(i));
-		if (i!=(sh_line.count()-1))
-			sh_cmd.append(" && ");
-	}
-
-	QStringList args;
-	args<<"-c"<<sh_cmd;
-
-#ifdef DEBUG
-	qDebug()<<"[ii] Wizard::Updateing wine dosdrives";
-#endif
-
-
-	Process proc(args, CoreLib->getWhichOut("sh"), QDir::homePath(), tr("Updateing wine dosdrives"), tr("Updateing wine dosdrives"), true);
-	proc.exec();
+        if (!file.link(txtWineDesktopVid->text(), desktopVideos)){
+            QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopVid->text()).arg(desktopVideos));
+            QApplication::restoreOverrideCursor();
+            reject();
+        }
 
 	// ---- End of Creating Dos drives ----
 
@@ -806,6 +715,18 @@ void FakeDriveSettings::cmdOk_Click(){
 void FakeDriveSettings::waitForWineEnd(){
 	QApplication::restoreOverrideCursor();
 	this->accept();
+}
+
+void FakeDriveSettings::waitForWine(){
+    QString prefixPath = db_prefix.getPath(this->prefixName);
+    QFile file;
+
+    if (file.exists(QString("%1/%2").arg(prefixPath).arg("system.reg")) && file.exists(QString("%1/%2").arg(prefixPath).arg("user.reg"))){
+        QApplication::restoreOverrideCursor();
+        this->setEnabled(true);
+    } else {
+        QTimer::singleShot(1000, this, SLOT(waitForWine()));
+    }
 }
 
 void FakeDriveSettings::cmdCancel_Click(){
@@ -1279,6 +1200,8 @@ void FakeDriveSettings::loadSettings(){
 }
 
 void FakeDriveSettings::loadDefaultSettings(){
+        this->setEnabled(false);
+        QApplication::setOverrideCursor( Qt::BusyCursor );
 
 	ExecObject execObj;
 	execObj.cmdargs = "-u -i";
@@ -1289,7 +1212,6 @@ void FakeDriveSettings::loadDefaultSettings(){
 		reject();
 		return;
 	}
-
 
 	txtOwner->setText(getenv("USER"));
 
@@ -1312,14 +1234,6 @@ void FakeDriveSettings::loadDefaultSettings(){
 	item->setDrive("H:", QString("%1/.config/q4wine/tmp").arg(QDir::homePath()), "auto");
 	listWineDrives->addItem(item.release());
 
-	/*
-	txtWineDesktop->setText(QDesktopServices::storageLocation(QDesktopServices::DesktopLocation));
-	txtWineDesktopDoc->setText(QDir::homePath());
-	txtWineDesktopMus->setText(QDir::homePath());
-	txtWineDesktopPic->setText(QDir::homePath());
-	txtWineDesktopVid->setText(QDir::homePath());
-	*/
-
 	QString prefixPath = db_prefix.getPath(this->prefixName);
 
 	txtWineDesktop->setText(QString("%1/desktop-integration/Desktop").arg(prefixPath));
@@ -1328,6 +1242,26 @@ void FakeDriveSettings::loadDefaultSettings(){
 	txtWineDesktopPic->setText(QString("%1/desktop-integration/").arg(prefixPath));
 	txtWineDesktopVid->setText(QString("%1/desktop-integration/").arg(prefixPath));
 
+        QDir dir;
+
+        if (!dir.exists(txtWineDesktopDoc->text())){
+            if (!dir.mkdir(txtWineDesktopDoc->text())){
+                QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(prefixPath));
+                QApplication::restoreOverrideCursor();
+                reject();
+            }
+        }
+
+        if (!dir.exists(txtWineDesktop->text())){
+            if (!dir.mkdir(txtWineDesktop->text())){
+                QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(prefixPath));
+                QApplication::restoreOverrideCursor();
+                reject();
+            }
+        }
+
+        // We need to wait for wine while it writes .reg files....
+        QTimer::singleShot(1000, this, SLOT(waitForWine()));
 }
 
 bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){

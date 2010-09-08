@@ -613,7 +613,6 @@ void MainWindow::cmdCreateFake_Click(){
             QStringList args;
             args << "-rdf";
             args << prefixPath;
-
             Process exportProcess(args, "/bin/rm", QDir::homePath(), tr("Removing old fake drive.<br>This may take awhile..."), tr("Removing old fake drive"));
 
             if (exportProcess.exec()!=QDialog::Accepted){

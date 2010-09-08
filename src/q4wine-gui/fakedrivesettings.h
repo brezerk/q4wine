@@ -51,6 +51,7 @@ public:
 
 private slots:
     void waitForWineEnd();
+    void waitForWine();
 
     void optionsTree_itemClicked ( QTreeWidgetItem *item, int);
 

@@ -937,6 +937,20 @@ QStringList corelib::getCdromDevices(void) const{
 			}
 		}
 
+                QString corelib::getShellEscapeString(QString string){
+                    string.replace("\"", "\\\"");
+                    string.replace("`", "\\`");
+                    string.replace("$", "\\$");
+                    string.replace("'", "'\\''");
+                    return string;
+                }
+
+                QString corelib::getStrictEscapeString(QString string){
+                    string.replace("\"", "\\\"");
+                    string.replace("'", "'\\''");
+                    return string;
+                }
+
 		bool corelib::mountImage(const QString image_name, const QString prefix_name){
 
 			this->umountImage(prefix_name);

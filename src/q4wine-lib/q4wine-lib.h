@@ -256,6 +256,9 @@ public:
 	 */
 	QString getEscapeString(const QString string, const bool spaces = true) const;
 
+        QString getShellEscapeString(QString string);
+        QString getStrictEscapeString(QString string);
+
 
 	/*! \brief Get's mount string based on QuikMount type profile
 	 *
