@@ -5,7 +5,7 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
-Version 0.119-r2
+Version 0.120
  Added:
   - Czech translation (thx to Pavel Fric)
   - Added cmake option MANPAGE_ENTRY_PATH;
@@ -17,6 +17,7 @@ Version 0.119-r2
   - Fixed unescaped characters in q4wine-helper (q4wine-Bugs-3059156);
   - Fixed bug in q4wine-helper while run games like: Fallout 1\2, Truck Simulator e.t.c.
   - Fixed some typo and gui layouts;
+  - Fixed fakedrivesettings.cpp rewrite sh scripts in to C++\Qt code;
   - FreeBSD: report error while can't read process info from /proc fs;
 
 Version 0.119-r1
