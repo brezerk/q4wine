@@ -522,17 +522,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="546"/>
         <source>Minimize to tray at startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Згортати головне вікно при запуску.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="562"/>
         <source>Minimize to tray at application icon startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Згортати головне вікно при запуску піктограми програми.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="572"/>
         <source>Show tray icon notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Показувати сповіщення піктограми у лотку.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1398"/>
@@ -1355,7 +1355,7 @@ Make sure that Wine can access %2 temp directory.</source>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="260"/>
         <source>Can&apos;t remove symlink: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Неможливо вилучити посилання: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="275"/>
@@ -1365,7 +1365,7 @@ Make sure that Wine can access %2 temp directory.</source>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="361"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="379"/>
         <source>Can&apos;t symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можу створити посилання &quot;%1&quot; до &quot;%2&quot;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="288"/>
@@ -1381,7 +1381,7 @@ Make sure that Wine can access %2 temp directory.</source>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="353"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="371"/>
         <source>Can&apos;t remove dir: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можу вилучити каталог: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1297"/>
