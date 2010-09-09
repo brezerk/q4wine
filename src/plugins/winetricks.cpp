@@ -23,38 +23,38 @@
 
 winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
-	// Loading libq4wine-core.so
-	libq4wine.setFileName("libq4wine-core");
+    // Loading libq4wine-core.so
+    libq4wine.setFileName("libq4wine-core");
 
-	if (!libq4wine.load()){
-		libq4wine.load();
-	}
+    if (!libq4wine.load()){
+        libq4wine.load();
+    }
 
-	// Getting corelib calss pointer
-	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    // Getting corelib calss pointer
+    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-	this->winetricks_bin.append(QDir::homePath());
-	this->winetricks_bin.append("/.config/");
-	this->winetricks_bin.append(APP_SHORT_NAME);
-	this->winetricks_bin.append("/winetricks");
+    this->winetricks_bin.append(QDir::homePath());
+    this->winetricks_bin.append("/.config/");
+    this->winetricks_bin.append(APP_SHORT_NAME);
+    this->winetricks_bin.append("/winetricks");
 
-	this->prefix_path = db_prefix.getPath(prefixName);
-	this->console_bin = CoreLib->getSetting("console", "bin").toString();
-	this->console_args = CoreLib->getSetting("console", "args", FALSE).toString();
+    this->prefix_name = prefixName;
+    this->console_bin = CoreLib->getSetting("console", "bin").toString();
+    this->console_args = CoreLib->getSetting("console", "args", FALSE).toString();
 
-	setupUi(this);
+    setupUi(this);
 
-	connect (cmdInstall, SIGNAL (clicked()), this, SLOT(run_winetricks()));
-	connect (cmdExit, SIGNAL (clicked()), this, SLOT(accept()));
-	connect (cmdInstWinetricks, SIGNAL (clicked()), this, SLOT (install_winetricks()));
-        connect (cmdRefresh, SIGNAL (clicked()), this, SLOT(parse()));
+    connect (cmdInstall, SIGNAL (clicked()), this, SLOT(run_winetricks()));
+    connect (cmdExit, SIGNAL (clicked()), this, SLOT(accept()));
+    connect (cmdInstWinetricks, SIGNAL (clicked()), this, SLOT (install_winetricks()));
+    connect (cmdRefresh, SIGNAL (clicked()), this, SLOT(parse()));
     connect(lstMain, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(lstMain_itemClicked(QListWidgetItem*)));
 
     lstMain->installEventFilter(this);
 
-	parse();
-	//fill list
+    parse();
+    //fill list
 }
 
 bool winetricks::eventFilter( QObject *object, QEvent *event )
@@ -101,12 +101,22 @@ void winetricks::run_winetricks(){
         }
 
         QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
+
+        args.append("env");
+
         if (!proxy_host.isEmpty()){
-            args.append("env");
             args.append(QString("HTTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
             args.append(QString("FTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
-            args.append(QString("WINEPREFIX=%1").arg(this->prefix_path));
         }
+
+        QHash<QString, QString> prefix_info = db_prefix.getByName(this->prefix_name);
+
+        args << QString("WINEPREFIX=%1").arg(prefix_info.value("path"));
+        args << QString("WINEDLLPATH=%1").arg(prefix_info.value("libs"));
+        args << QString("WINELOADER=%1").arg(prefix_info.value("loader"));
+        args << QString("WINESERVER=%1").arg(prefix_info.value("server"));
+        if (!prefix_info.value("arch").isEmpty())
+            args << QString("WINEARCH=%1").arg(prefix_info.value("arch"));
 
         args.append(CoreLib->getWhichOut("sh"));
         args.append("-c");
@@ -115,23 +125,23 @@ void winetricks::run_winetricks(){
     QProcess proc;
     proc.startDetached(console_bin, args, QDir::homePath());
 
-	return;
+    return;
 }
 
 void winetricks::downloadwinetricks () {
-		/*
-		 * Downloading winetricks and installing it
-		 */
+        /*
+         * Downloading winetricks and installing it
+         */
 
-	QStringList args;
-	if (!console_args.isEmpty()){
-		// If we have any conslope parametres, we gona preccess them one by one
-		QStringList cons_args = console_args.split(" ");
-		for (int i=0; i<cons_args.count(); i++){
-			if (!cons_args.at(i).isEmpty())
-				args.append(cons_args.at(i));
-		}
-	}
+    QStringList args;
+    if (!console_args.isEmpty()){
+        // If we have any conslope parametres, we gona preccess them one by one
+        QStringList cons_args = console_args.split(" ");
+        for (int i=0; i<cons_args.count(); i++){
+            if (!cons_args.at(i).isEmpty())
+                args.append(cons_args.at(i));
+        }
+    }
 
         QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
         if (!proxy_host.isEmpty()){
@@ -170,13 +180,13 @@ void winetricks::downloadwinetricks () {
 Not needed right now...
 void winetricks::changeEvent(QEvent *e)
 {
-	switch (e->type()) {
-		case QEvent::LanguageChange:
-			retranslateUi(this);
-		break;
-		default:
-		break;
-	}
+    switch (e->type()) {
+        case QEvent::LanguageChange:
+            retranslateUi(this);
+        break;
+        default:
+        break;
+    }
 }
 */
 
@@ -212,16 +222,16 @@ void winetricks::parse() {
             return;
     }
 
-	//create a Winetricks process
+    //create a Winetricks process
     QProcess p(this);
-	QString pargs;
-	pargs.append(winetricks_bin);
-	pargs.append(" --kegelfix");
+    QString pargs;
+    pargs.append(winetricks_bin);
+    pargs.append(" --kegelfix");
 
    p.start(pargs);
 
    p.waitForFinished();
-	 //get output
+     //get output
    QString lang = CoreLib->getLocale();
 #ifdef DEBUG
    qDebug()<<lang;
@@ -231,21 +241,21 @@ void winetricks::parse() {
   QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
   QString wOut = codec->toUnicode(p.readAllStandardOutput());
 
-	//parse now
+    //parse now
 bool isNowParse = false;
 QStringList strs = wOut.split("\n");
 QString str;
 
 foreach (str, strs){
-	if (!str.isEmpty()){
-		str = str.trimmed();
+    if (!str.isEmpty()){
+        str = str.trimmed();
 
-		if (str == "Apps:" || str == "Pseudopackages:"){continue;}
-		if (str == "Packages:") {isNowParse = true;
-			continue;
-		}
-		if (isNowParse) {addToList(str);}
-	}
+        if (str == "Apps:" || str == "Pseudopackages:"){continue;}
+        if (str == "Packages:") {isNowParse = true;
+            continue;
+        }
+        if (isNowParse) {addToList(str);}
+    }
 }
 
 #ifdef DEBUG
@@ -273,7 +283,7 @@ foreach (str, names) {
 void winetricks::lstMain_itemClicked(QListWidgetItem* item)
 {
 
-	int i;
+    int i;
   for (i=0; i < descs.count() -1; ++i) {
    if (names.at(i) ==  item->text()){
            label->setText (descs.at(i).trimmed());
