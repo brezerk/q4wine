@@ -101,6 +101,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     std::auto_ptr<IconListWidget> lstIcons (new IconListWidget(tabPrograms));
     connect(lstIcons.get(), SIGNAL(iconItemClick(QString, QString, QString, QString, QString)), this, SLOT(updateIconDesc(QString, QString, QString, QString, QString)));
     connect(lstIcons.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
+    connect(lstIcons.get(), SIGNAL(appRunned(bool)), this, SLOT(setMeVisible(bool)));
 
 #ifdef WITH_WINEAPPDB
     connect(lstIcons.get(), SIGNAL(searchRequest(QString)), this, SLOT(searchRequest(QString)));
@@ -342,7 +343,11 @@ void MainWindow::getSettings(){
 
     if (CoreLib->getSetting("app", "showTrareyIcon", false).toBool()){
         trayIcon->show();
-        this->setHidden(CoreLib->getSetting("MainWindow", "hidden", false).toBool());
+        if (CoreLib->getSetting("app", "minimizeToTray", false).toBool()){
+            this->setHidden(true);
+        } else {
+            this->setHidden(CoreLib->getSetting("MainWindow", "hidden", false).toBool());
+        }
     } else {
         trayIcon->hide();
     }

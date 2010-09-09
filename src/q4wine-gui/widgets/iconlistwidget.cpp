@@ -271,7 +271,10 @@ void IconListWidget::itemDoubleClicked (QListWidgetItem *item){
 
 	  emit(changeStatusText(tr("Preparing to run the Wine binary...")));
 	  if (CoreLib->runIcon(this->prefixName, this->dirName, item->text())){
-			emit(changeStatusText(tr("Trying to run \"%1\"...").arg(item->text())));
+              if (CoreLib->getSetting("app", "showTrareyIcon", false).toBool())
+                  if (CoreLib->getSetting("app", "minimizeToTrayAtAppStart", false).toBool())
+                      emit(appRunned(false));
+              emit(changeStatusText(tr("Trying to run \"%1\"...").arg(item->text())));
 	  } else {
 			emit(changeStatusText(tr("\"%1\" failed to start.").arg(item->text())));
 	  }

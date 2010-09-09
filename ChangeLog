@@ -11,6 +11,8 @@ Version 0.120
   - Added cmake option MANPAGE_ENTRY_PATH;
   - User now can open system terminal from q4wine programs tab menu for selected dir;
   - Winetriks plugin updates;
+  - Added minimize to tray at startup option;
+  - Added minimize to tray at application icon startup option;
 
  Fixed:
   - warning: ignoring return value of ‘int chdir(const char*)’, declared with attribute warn_unused_result;

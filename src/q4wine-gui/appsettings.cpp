@@ -96,7 +96,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     }
 
     connect (cbEnableLogging, SIGNAL(stateChanged (int)), this, SLOT(cbEnableLogging_stateChanged (int)));
-    connect (cbShowTrarey, SIGNAL(stateChanged (int)), this, SLOT(cbShowTrarey_stateChanged (int)));
+    connect (cbShowTray, SIGNAL(stateChanged (int)), this, SLOT(cbShowTray_stateChanged (int)));
 
     if (settings.value("autoClear", 1).toInt()==1){
         cbClearLogs->setCheckState(Qt::Checked);
@@ -107,9 +107,9 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
     settings.beginGroup("app");
     if (settings.value("showTrareyIcon", 0).toInt()==1){
-        cbShowTrarey->setCheckState(Qt::Checked);
+        cbShowTray->setCheckState(Qt::Checked);
 	} else {
-        cbShowTrarey->setCheckState(Qt::Unchecked);
+        cbShowTray->setCheckState(Qt::Unchecked);
 	}
 
     if (settings.value("showNotifications", 1).toInt()==1){
@@ -118,7 +118,19 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
         cbShowNotifications->setCheckState(Qt::Unchecked);
     }
 
-	listThemesView->clear();
+    if (settings.value("minimizeToTray", 0).toInt()==1){
+        cbMinimizeToTray->setCheckState(Qt::Checked);
+    } else {
+        cbMinimizeToTray->setCheckState(Qt::Unchecked);
+    }
+
+    if (settings.value("minimizeToTrayAtAppStart", 0).toInt()==1){
+        cbMinimizeToTrayApp->setCheckState(Qt::Checked);
+    } else {
+        cbMinimizeToTrayApp->setCheckState(Qt::Unchecked);
+    }
+    
+    	listThemesView->clear();
 
 	std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(listThemesView, 0));
 	iconItem->setText("Default [Aughtor: Xavier Corredor Llano (xavier.corredor.llano@gmail.com); License: GPL v.2.1]");
@@ -602,11 +614,23 @@ void AppSettings::cmdOk_Click(){
     settings.endGroup();
 
 	settings.beginGroup("app");
-    if (cbShowTrarey->checkState()==Qt::Checked) {
-		settings.setValue("showTrareyIcon", 1);
-	} else {
-		settings.setValue("showTrareyIcon", 0);
-	}
+    if (cbShowTray->checkState()==Qt::Checked) {
+        settings.setValue("showTrareyIcon", 1);
+    } else {
+        settings.setValue("showTrareyIcon", 0);
+    }
+
+    if (cbMinimizeToTray->checkState()==Qt::Checked) {
+        settings.setValue("minimizeToTray", 1);
+    } else {
+        settings.setValue("minimizeToTray", 0);
+    }
+
+    if (cbMinimizeToTrayApp->checkState()==Qt::Checked) {
+        settings.setValue("minimizeToTrayAtAppStart", 1);
+    } else {
+        settings.setValue("minimizeToTrayAtAppStart", 0);
+    }
 
     if (cbShowNotifications->checkState()==Qt::Checked) {
         settings.setValue("showNotifications", 1);
@@ -939,7 +963,7 @@ void AppSettings::cbEnableLogging_stateChanged ( int state ){
     }
 }
 
-void AppSettings::cbShowTrarey_stateChanged ( int state ){
+void AppSettings::cbShowTray_stateChanged ( int state ){
     if (state==0){
         cbShowNotifications->setEnabled(false);
     } else {

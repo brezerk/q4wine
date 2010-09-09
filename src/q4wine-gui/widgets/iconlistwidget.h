@@ -141,6 +141,7 @@ signals:
 	  void iconItemClick(QString, QString, QString, QString, QString);
 	  void changeStatusText(QString);
 	  void searchRequest(QString);
+          void appRunned(bool state);
 };
 
 #endif // ICONLISTWIDGET_H

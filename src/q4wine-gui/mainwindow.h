@@ -85,10 +85,11 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
         MainWindow(int startState, QString run_binary, QWidget * parent = 0, Qt::WFlags f = 0);
 
 	public slots:
-        void messageReceived(const QString message);
-		void setcbPrefixesIndex(const QString text) const;
-		void updateDtabaseConnectedItems(void);
-        void setSearchFocus(void);
+            void messageReceived(const QString message);
+            void setcbPrefixesIndex(const QString text) const;
+            void updateDtabaseConnectedItems(void);
+            void setSearchFocus(void);
+            void setMeVisible(bool visible);
 
 #ifdef WITH_WINEAPPDB
 		void searchRequest(QString search);
@@ -166,7 +167,7 @@ private:
         void showSocketError(QString message);
 
 		void createTrayIcon();
-		void setMeVisible(bool visible);
+
 		void getSettings(void);
 		void clearTmp();
 
