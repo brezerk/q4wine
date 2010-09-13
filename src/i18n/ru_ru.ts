@@ -287,7 +287,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="515"/>
         <source>Tray Icon</source>
-        <translation>Пиктограмма в трее</translation>
+        <translation>Пиктограмма в системном лотке</translation>
     </message>
     <message>
         <source>Use tray icon</source>
@@ -458,7 +458,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="530"/>
         <source>Use tray icon.</source>
-        <translation>Использовать иконку в трее.</translation>
+        <translation>Показывать пиктограмму в системном лотке.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1287"/>
@@ -526,17 +526,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="546"/>
         <source>Minimize to tray at startup.</source>
-        <translation>Cворачивать в трей при запуске.</translation>
+        <translation>Cворачивать в системный лоток при запуске.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="562"/>
         <source>Minimize to tray at application icon startup.</source>
-        <translation>Cворачивать в трей при запуске пиктограммы приложения.</translation>
+        <translation>Cворачивать в системный лоток при запуске пиктограммы приложения.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="572"/>
         <source>Show tray icon notifications.</source>
-        <translation>Показывать в трее оповещения.</translation>
+        <translation>Показывать оповещения на пиктограмме в системном лотке.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1398"/>
