@@ -624,17 +624,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="546"/>
         <source>Minimize to tray at startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimizar a la bandeja el comenzar.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="562"/>
         <source>Minimize to tray at application icon startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Minimizar a la bandeja al iniciar la aplicación.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="572"/>
         <source>Show tray icon notifications.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>Mostrar notificacionesde iconos en la bandeja.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1403"/>
@@ -1044,7 +1045,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="129"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="786"/>
         <source>Misc Audio</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>same Revisar</translatorcomment>
+        <translation></translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="334"/>
@@ -1365,12 +1367,14 @@ Asegurese de que wine pueda acceder al directorio temporal %2.</translation>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="232"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="931"/>
         <source>Can&apos;t read desktop paths!</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>Error en las rutas!</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="260"/>
         <source>Can&apos;t remove symlink: %1</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>No se puede quitar el enlace simbolico: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="275"/>
@@ -1380,14 +1384,16 @@ Asegurese de que wine pueda acceder al directorio temporal %2.</translation>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="361"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="379"/>
         <source>Can&apos;t symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>No se puede enlazar: &quot;%1&quot; a &quot;%2&quot;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="288"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1261"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1269"/>
         <source>Can&apos;t create dir: %1</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>No se puede crear una carpeta: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="299"/>
@@ -1396,7 +1402,8 @@ Asegurese de que wine pueda acceder al directorio temporal %2.</translation>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="353"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="371"/>
         <source>Can&apos;t remove dir: %1</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>No se puede quitar la carpeta: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1297"/>
@@ -1773,37 +1780,37 @@ Vea la ayuda para mas detalles.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="531"/>
         <source>Console</source>
-        <translation type="unfinished">Consola</translation>
+        <translation>Consola</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="533"/>
         <source>Open console in application directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir consola en la carpeta de la aplicación</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="534"/>
         <source>Open system console in application directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir consola del sistema en la carpeta de la aplicación</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="538"/>
         <source>Open console in prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir consola en la carpeta del prefijo</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="539"/>
         <source>Open system console in prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir consola del sistema en la carpeta del prefijo</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="543"/>
         <source>Open console in mount point directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir consola en la carpeta del punto de montaje</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="544"/>
         <source>Open system console in mount point directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir consola del sistema en la carpeta del punto de montaje</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="553"/>
@@ -3652,7 +3659,8 @@ Vea la ayuda para mas detalles.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="196"/>
         <source>Architecture</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>Arquitectura</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="197"/>
@@ -3803,12 +3811,13 @@ Vea la ayuda para mas detalles.</translation>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="322"/>
         <source>Architecture:</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>Arquitectura:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="330"/>
         <source>Default</source>
-        <translation type="unfinished">Por defecto</translation>
+        <translation>Por defecto</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="354"/>
@@ -4080,27 +4089,27 @@ Nota: deje en blanco para valores por defecto.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="367"/>
         <source>Console</source>
-        <translation type="unfinished">Consola</translation>
+        <translation>Consola</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="369"/>
         <source>Open console in prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir consola en la carpeta del prefijo</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="370"/>
         <source>Open system console in prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir consola del sistema en la carpeta del prefijo</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="374"/>
         <source>Open console in mount point directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir consola en la carpeta del punto de montaje</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="375"/>
         <source>Open system console in mount point directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir consola del sistema en la carpeta del punto de montaje</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="565"/>
@@ -4390,7 +4399,7 @@ Nota: deje en blanco para valores por defecto.</translation>
         <location filename="../core/database/prefix.cpp" line="331"/>
         <location filename="../core/database/prefix.cpp" line="398"/>
         <source>Default</source>
-        <translation type="unfinished">Por defecto</translation>
+        <translation>Por defecto</translation>
     </message>
     <message>
         <source>Prefix named &quot;%1&quot; not exists. Run &quot;q4wine-cli -pl&quot; for prefix list.</source>
