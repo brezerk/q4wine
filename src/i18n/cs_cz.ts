@@ -581,17 +581,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="546"/>
         <source>Minimize to tray at startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Při spuštění zmenšit do oznamovací oblasti panelu.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="562"/>
         <source>Minimize to tray at application icon startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Při spuštění ikony programu zmenšit do oznamovací oblasti panelu.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="572"/>
         <source>Show tray icon notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat oznámení ikony v oznamovací oblasti panelu.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1403"/>
@@ -1245,7 +1245,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="260"/>
         <source>Can&apos;t remove symlink: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze odstranit symbolický odkaz: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="275"/>
@@ -1255,7 +1255,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="361"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="379"/>
         <source>Can&apos;t symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze symbolicky odkázat &quot;%1&quot; na &quot;%2&quot;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="288"/>
@@ -1271,7 +1271,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="353"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="371"/>
         <source>Can&apos;t remove dir: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze odstranit adresář: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1297"/>
@@ -1575,37 +1575,37 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="531"/>
         <source>Console</source>
-        <translation type="unfinished">Konzole</translation>
+        <translation>Konzole</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="533"/>
         <source>Open console in application directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít konzoli v adresáři s programem</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="534"/>
         <source>Open system console in application directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít systémovou konzoli v adresáři s programem</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="538"/>
         <source>Open console in prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít konzoli v adresáři s předponou</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="539"/>
         <source>Open system console in prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít systémovou konzoli v adresáři s předponou</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="543"/>
         <source>Open console in mount point directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít konzoli v adresáři s přípojným bodem</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="544"/>
         <source>Open system console in mount point directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít systémovou konzoli v adresáři s přípojným bodem</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="553"/>
@@ -2846,7 +2846,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="196"/>
         <source>Architecture</source>
-        <translation type="unfinished"></translation>
+        <translation>Architektura</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="197"/>
@@ -2995,12 +2995,12 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="322"/>
         <source>Architecture:</source>
-        <translation type="unfinished"></translation>
+        <translation>Architektura:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="330"/>
         <source>Default</source>
-        <translation type="unfinished">Výchozí</translation>
+        <translation>Výchozí</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="354"/>
@@ -3255,27 +3255,27 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="367"/>
         <source>Console</source>
-        <translation type="unfinished">Konzole</translation>
+        <translation>Konzole</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="369"/>
         <source>Open console in prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít konzoli v adresáři s předponou</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="370"/>
         <source>Open system console in prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít systémovou konzoli v adresáři s předponou</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="374"/>
         <source>Open console in mount point directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít konzoli v adresáři s přípojným bodem</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="375"/>
         <source>Open system console in mount point directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít systémovou konzoli v adresáři s přípojným bodem</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="392"/>
@@ -3460,7 +3460,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location filename="../core/database/prefix.cpp" line="331"/>
         <location filename="../core/database/prefix.cpp" line="398"/>
         <source>Default</source>
-        <translation type="unfinished">Výchozí</translation>
+        <translation>Výchozí</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="192"/>
