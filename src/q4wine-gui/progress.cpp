@@ -19,7 +19,7 @@
 
 #include "progress.h"
 
-Progress::Progress(int action, QString path, QWidget * parent, Qt::WFlags f)
+Progress::Progress(int action, QString path, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
     setupUi(this);
 
@@ -39,24 +39,30 @@ Progress::Progress(int action, QString path, QWidget * parent, Qt::WFlags f)
     this->action=action;
     this->path=path;
 
+    t.reset(new QTimer(this));
+    connect(t.get(), SIGNAL(timeout()), this, SLOT(runAction()));
+    connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
+
     if (action==0){
         lblInfo->setText(tr("Importing wine desktop icons from:<br>\"%1\"<br><br>This can take a while...<br><br><b>Note:</b> To remove processed files see q4wine options dialog.").arg(path));
         setWindowTitle(tr("Importing wine desktop icons: %1 of %2 ").arg(0).arg(max));
 
         this->max = importIcons(path);
 
-/*        if (this->max==0){
-            this->accept();
-            return;
-        }*/
+        t->start(0);
+    } else if (action==1){
+        this->max = 0;
+        int cur = CoreLib->getWineProcessList(path).count();
+        lblInfo->setText(QString("%1<br>%2<br><br>%3").arg(tr("Waiting for wine process finish.")).arg(tr("There are %1 process running for prefix %2").arg(cur).arg(path)).arg(tr("While process keep running -- end them manually.")));
+        setWindowTitle(tr("Running process: %1").arg(cur));
+        t->start(1000);
     }
 
-    connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
+
     progressBar->setMaximum(this->max);
 
-    t.reset(new QTimer(this));
-    connect(t.get(), SIGNAL(timeout()), this, SLOT(runAction()));
-    t->start(0);
+
+
 
     return;
 }
@@ -69,7 +75,7 @@ void Progress::cmdCancel_Click(){
             removeEmptyFolders(this->path);
         */
     }
-    this->accept();
+    this->reject();
     return;
 }
 
@@ -94,6 +100,15 @@ void Progress::runAction(){
         progressBar->setValue(index);
 
         current++;
+    } else if (action==1){
+        int count = CoreLib->getWineProcessList(path).count();
+        if (count == 0){
+            this->accept();
+            return;
+        } else {
+            lblInfo->setText(QString("%1<br>%2<br><br>%3").arg(tr("Waiting for wine process finish.")).arg(tr("There are %1 process running for prefix %2").arg(count).arg(this->path)).arg(tr("While process keep running -- end them manually.")));
+            setWindowTitle(tr("Running process: %1").arg(count));
+        }
     }
 }
 

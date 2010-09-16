@@ -32,9 +32,15 @@ corelib* createCoreLib(bool _GUI_MODE){
     return new corelib(_GUI_MODE);
 }
 
-QList<QStringList> corelib::getWineProcessList(){
+QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
     QList<QStringList> proclist;
     QStringList procline;
+
+
+    QString prefix_path;
+
+    if (!prefix_name.isEmpty())
+        prefix_path = db_prefix.getPath(prefix_name);
 
     QString name, procstat, path, prefix, env_arg, nice;
 
@@ -116,8 +122,17 @@ QList<QStringList> corelib::getWineProcessList(){
 
                     // Puting all fields into QList<QStringList>
                     procline.clear();
-                    procline << fileInfo.fileName() << name << nice << prefix;
-                    proclist << procline;
+
+
+                    if (!prefix_path.isNull()){
+                        if (prefix_path == prefix){
+                            procline << fileInfo.fileName() << name << nice << prefix;
+                            proclist << procline;
+                        }
+                    } else {
+                        procline << fileInfo.fileName() << name << nice << prefix;
+                        proclist << procline;
+                    }
 
                     //}
                 }

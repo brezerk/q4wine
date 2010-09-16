@@ -48,7 +48,7 @@ class Progress : public QDialog, public Ui::Process
 {
 Q_OBJECT
 public:
-    explicit Progress(int action, QString path, QWidget * parent = 0, Qt::WFlags f = 0);
+    explicit Progress(int action, QString path = "", QWidget * parent = 0, Qt::WFlags f = 0);
 
 signals:
 

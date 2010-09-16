@@ -28,6 +28,7 @@
 #include "registry.h"
 #include "q4wine-lib.h"
 
+#include "progress.h"
 #include "winedrivedialog.h"
 #include "drivelistwidgetitem.h"
 
