@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
-    <height>440</height>
+    <width>698</width>
+    <height>438</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -2005,6 +2005,11 @@
                     <item>
                      <property name="text">
                       <string notr="true">oss</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string notr="true">pulse</string>
                      </property>
                     </item>
                     <item>
