@@ -54,6 +54,10 @@
 #include "appdbwidget.h"
 #endif
 
+#ifdef WITH_DBUS
+#include <QDBusInterface>
+#endif
+
 //Windows
 #include "iconsview.h"
 #include "wizard.h"
@@ -80,11 +84,11 @@
 
 class MainWindow : public QMainWindow, public Ui::MainWindow
 {
-	Q_OBJECT
-	public:
+    Q_OBJECT
+    public:
         MainWindow(int startState, QString run_binary, QWidget * parent = 0, Qt::WFlags f = 0);
 
-	public slots:
+    public slots:
             void messageReceived(const QString message);
             void setcbPrefixesIndex(const QString text) const;
             void updateDtabaseConnectedItems(void);
@@ -92,105 +96,105 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
             void setMeVisible(bool visible);
 
 #ifdef WITH_WINEAPPDB
-		void searchRequest(QString search);
+        void searchRequest(QString search);
 #endif
 
-	private slots:
-		void tbwGeneral_CurrentTabChange(int tabIndex);
+    private slots:
+        void tbwGeneral_CurrentTabChange(int tabIndex);
 
-		void changeStatusText(QString text);
+        void changeStatusText(QString text);
 
-		void trayIcon_Activate(QSystemTrayIcon::ActivationReason reason);
+        void trayIcon_Activate(QSystemTrayIcon::ActivationReason reason);
 
-		/*
-		 * Command buttons slots
-		 */
+        /*
+         * Command buttons slots
+         */
 
-		void cmdCreateFake_Click(void);
-		void cmdUpdateFake_Click(void);
+        void cmdCreateFake_Click(void);
+        void cmdUpdateFake_Click(void);
 
-		void prefixManage_Click(void);
-		void prefixRunWinetricks_Click (void);
+        void prefixManage_Click(void);
+        void prefixRunWinetricks_Click (void);
 
-		void updateIconDesc(QString program, QString args, QString desc, QString console, QString desktop);
+        void updateIconDesc(QString program, QString args, QString desc, QString console, QString desktop);
 
-		//Main menu slots
-		void mainExit_Click(void);
-		void mainPrograms_Click(void);
-		void mainImageManager_Click(void);
-		void mainProcess_Click(void);
-		void mainSetup_Click(void);
+        //Main menu slots
+        void mainExit_Click(void);
+        void mainPrograms_Click(void);
+        void mainImageManager_Click(void);
+        void mainProcess_Click(void);
+        void mainSetup_Click(void);
         void mainLogging_Click(void);
-		void mainPrefix_Click(void);
-		void mainAbout_Click(void);
-		void mainAboutQt_Click(void);
-		void mainExportIcons_Click(void);
-		void mainRun_Click(void);
-		void mainOptions_Click(void);
-		void mainInstall_Click(void);
-		void mainFirstSteps_Click(void);
-		void mainFAQ_Click(void);
-		void mainIndex_Click(void);
-		void mainWebsite_Click(void);
-		void mainDonate_Click(void);
-		void mainBugs_Click(void);
-		void mainAppDB_Click(void);
+        void mainPrefix_Click(void);
+        void mainAbout_Click(void);
+        void mainAboutQt_Click(void);
+        void mainExportIcons_Click(void);
+        void mainRun_Click(void);
+        void mainOptions_Click(void);
+        void mainInstall_Click(void);
+        void mainFirstSteps_Click(void);
+        void mainFAQ_Click(void);
+        void mainIndex_Click(void);
+        void mainWebsite_Click(void);
+        void mainDonate_Click(void);
+        void mainBugs_Click(void);
+        void mainAppDB_Click(void);
         void mainHelpThisTab_Click(void);
         void mainImportWineIcons_Click(void);
 
         void newConnection();
 
 private:
-		//! Custom Widgets
-		//DragListWidget* lstIcons;
+        //! Custom Widgets
+        //DragListWidget* lstIcons;
 #ifdef WITH_WINEAPPDB
-		std::auto_ptr<AppDBWidget> appdbWidget;
+        std::auto_ptr<AppDBWidget> appdbWidget;
 #endif
-		std::auto_ptr<QComboBox> cbPrefixes;
+        std::auto_ptr<QComboBox> cbPrefixes;
         std::auto_ptr<QLocalServer> serverSoket;
 
-		//! This is need for libq4wine-core.so import;
-		typedef void *CoreLibPrototype (bool);
-			CoreLibPrototype *CoreLibClassPointer;
-			std::auto_ptr<corelib> CoreLib;
-		QLibrary libq4wine;
+        //! This is need for libq4wine-core.so import;
+        typedef void *CoreLibPrototype (bool);
+            CoreLibPrototype *CoreLibClassPointer;
+            std::auto_ptr<corelib> CoreLib;
+        QLibrary libq4wine;
 
-		//Classes
-		Prefix db_prefix;
+        //Classes
+        Prefix db_prefix;
         Dir db_dir;
         Icon db_icon;
 
-		// Tray icon
-		std::auto_ptr<QSystemTrayIcon> trayIcon;
+        // Tray icon
+        std::auto_ptr<QSystemTrayIcon> trayIcon;
 
         bool createSocket();
         void showSocketError(QString message);
 
-		void createTrayIcon();
+        void createTrayIcon();
 
-		void getSettings(void);
-		void clearTmp();
+        void getSettings(void);
+        void clearTmp();
 
-		std::auto_ptr<QSplitter> splitter;
+        std::auto_ptr<QSplitter> splitter;
 
 //        void getWineMenuIcons(void);
 //        void parseIcons(void);
 
-	signals:
+    signals:
 #ifdef WITH_WINEAPPDB
         void appdbWidget_startSearch(short int, QString);
         void setAppDBFocus();
 #endif
-		void updateDatabaseConnections(void);
-		void setDefaultFocus(QString, QString);
-		void stopProcTimer(void);
-		void startProcTimer(void);
+        void updateDatabaseConnections(void);
+        void setDefaultFocus(QString, QString);
+        void stopProcTimer(void);
+        void startProcTimer(void);
 
         void reloadLogData(void);
 
-	protected:
-		// Events
-		void closeEvent(QCloseEvent *event);
+    protected:
+        // Events
+        void closeEvent(QCloseEvent *event);
 
 };
 

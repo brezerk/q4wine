@@ -50,6 +50,8 @@
 
 #cmakedefine DEBUG
 
+#cmakedefine WITH_DBUS
+
 
 
 /*

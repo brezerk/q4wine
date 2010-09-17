@@ -507,6 +507,11 @@ void corelib::getBuildFlags(){
 #else
     Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"OFF"<<qSetFieldWidth(0)<<endl;
 #endif
+#ifdef WITH_DBUS
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_DBUS"<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_DBUS"<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
     Qcout<<endl;
 }
 

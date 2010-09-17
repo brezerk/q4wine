@@ -225,6 +225,26 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
         if (!trayIcon->isVisible())
             show();
 
+#ifdef WITH_DBUS
+        QVariantList args;
+        args << QString(APP_NAME);             // application name, optional
+        args << QVariant(QVariant::UInt);     // notification id, optional
+        args << QVariant("q4wine");   // application icon, optional
+        args << tr("%1 requests your attention").arg(APP_NAME);   // summary text
+        args << QString("Internet Society (ISOC): A professional society responsible for general, high-level activities related to the management, development and promotion of the Internet.");               // detailed text
+        args << QStringList();                // actions
+        args << QVariantMap();                // hints, optional
+        args << 3000;             // timeout in milliseconds
+
+        QDBusInterface * pNotify = new QDBusInterface("org.freedesktop.Notifications","/org/freedesktop/Notifications","org.freedesktop.Notifications",QDBusConnection::sessionBus(),this);
+        QDBusMessage reply = pNotify->callWithArgumentList(QDBus::Block,"Notify",args);
+        if(reply.type() == QDBusMessage::ErrorMessage)
+        {
+            QDBusError err = reply;
+            qDebug("KNotify DBus error\nID: %u\nName: %s\nMessage: %s\n",reply.arguments().first().toUInt(),qPrintable(err.name()),qPrintable(err.message()));
+        }
+#endif
+
     return;
 }
 
