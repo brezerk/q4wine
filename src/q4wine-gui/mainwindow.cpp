@@ -1080,7 +1080,7 @@ void MainWindow::showNotifycation(const QString header, const QString message){
     args << message;
     args << QStringList();
     args << QVariantMap();
-    args << 3000;
+    args << 5000;
 
     QDBusInterface * pNotify = new QDBusInterface("org.freedesktop.Notifications","/org/freedesktop/Notifications","org.freedesktop.Notifications",QDBusConnection::sessionBus(),this);
     QDBusMessage reply = pNotify->callWithArgumentList(QDBus::Block,"Notify",args);
