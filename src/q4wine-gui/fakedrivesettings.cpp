@@ -945,11 +945,23 @@ void FakeDriveSettings::loadSettings(){
     list.clear();
     list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
     list = reg.readKeys("system", "Software\\Microsoft\\Windows NT\\CurrentVersion", list);
+
     //HKEY_CURRENT_USER\\Software\\Wine]\n\"Version
 
     if (list.count()>0){
         txtOrganization->setText(list.at(0));
         txtOwner->setText(list.at(1));
+    }
+
+    if (txtOrganization->text().isEmpty() && txtOwner->text().isEmpty()){
+        list.clear();
+        list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
+        list = reg.readKeys("system", "Software\\Wow6432Node\\Software\\Microsoft\\Windows NT\\CurrentVersion", list);
+
+        if (list.count()>0){
+            txtOrganization->setText(list.at(0));
+            txtOwner->setText(list.at(1));
+        }
     }
 
     list.clear();
