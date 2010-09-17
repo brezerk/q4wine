@@ -267,7 +267,7 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
                             "</p><p style=\"margin: 0px\"> </p>" \
 
                             "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-                                   "Sergey (bartlab)" \
+                                   "Sergey Golivets (B@RT)" \
                             "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
                                    "Testing, bugreports and feature requests" \
                             "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
