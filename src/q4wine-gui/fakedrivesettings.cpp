@@ -946,7 +946,7 @@ void FakeDriveSettings::loadSettings(){
 
     list.clear();
     list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
-    list = reg.readKeys("system", "Software\\Wow6432Node\\Software\\Microsoft\\Windows NT\\CurrentVersion", list);
+    list = reg.readKeys("system", "Software\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion", list);
 
     if (list.count()>0){
         txtOrganization->setText(list.at(0));
