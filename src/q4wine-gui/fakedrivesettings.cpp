@@ -404,9 +404,15 @@ void FakeDriveSettings::cmdOk_Click(){
     }
 
     if (this->wine64){
+#ifdef DEBUG
+        qDebug()<<"[ii] Writedown wine64 settings.";
+#endif
         registry.set("Software\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOrganization", txtOrganization->text(), "HKEY_LOCAL_MACHINE");
         registry.set("Software\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOwner", txtOwner->text(), "HKEY_LOCAL_MACHINE");
     } else {
+#ifdef DEBUG
+        qDebug()<<"[ii] Writedown wine32 settings.";
+#endif
         registry.set("Software\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOrganization", txtOrganization->text(), "HKEY_LOCAL_MACHINE");
         registry.set("Software\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOwner", txtOwner->text(), "HKEY_LOCAL_MACHINE");
     }
@@ -970,12 +976,12 @@ void FakeDriveSettings::loadSettings(){
         }
         this->wine64=false;
 #ifdef DEBUG
-        qDebug()<<"[ii] wine32 settings detected!!!";
+        qDebug()<<"[ii] wine32 settings detected.";
 #endif
     } else {
         this->wine64=true;
 #ifdef DEBUG
-        qDebug()<<"[ii] wine64 settings detected!!!";
+        qDebug()<<"[ii] wine64 settings detected.";
 #endif
     }
 
