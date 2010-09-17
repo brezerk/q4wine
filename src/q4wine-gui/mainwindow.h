@@ -174,6 +174,7 @@ private:
 
         void getSettings(void);
         void clearTmp();
+        void showNotifycation(const QString header, const QString message);
 
         std::auto_ptr<QSplitter> splitter;
 

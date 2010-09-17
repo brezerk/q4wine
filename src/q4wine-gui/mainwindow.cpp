@@ -225,26 +225,6 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
         if (!trayIcon->isVisible())
             show();
 
-#ifdef WITH_DBUS
-        QVariantList args;
-        args << QString(APP_NAME);             // application name, optional
-        args << QVariant(QVariant::UInt);     // notification id, optional
-        args << QVariant("q4wine");   // application icon, optional
-        args << tr("%1 requests your attention").arg(APP_NAME);   // summary text
-        args << QString("Internet Society (ISOC): A professional society responsible for general, high-level activities related to the management, development and promotion of the Internet.");               // detailed text
-        args << QStringList();                // actions
-        args << QVariantMap();                // hints, optional
-        args << 3000;             // timeout in milliseconds
-
-        QDBusInterface * pNotify = new QDBusInterface("org.freedesktop.Notifications","/org/freedesktop/Notifications","org.freedesktop.Notifications",QDBusConnection::sessionBus(),this);
-        QDBusMessage reply = pNotify->callWithArgumentList(QDBus::Block,"Notify",args);
-        if(reply.type() == QDBusMessage::ErrorMessage)
-        {
-            QDBusError err = reply;
-            qDebug("KNotify DBus error\nID: %u\nName: %s\nMessage: %s\n",reply.arguments().first().toUInt(),qPrintable(err.name()),qPrintable(err.message()));
-        }
-#endif
-
     return;
 }
 
@@ -477,7 +457,7 @@ void MainWindow::newConnection (){
 
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                             if ((!this->isVisible()) and (trayIcon->isVisible())){
-                            trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            this->showNotifycation(tr("helper notifycation"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
 
                         emit(reloadLogData());
@@ -491,7 +471,7 @@ void MainWindow::newConnection (){
 
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
-                            trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            this->showNotifycation(tr("helper notifycation"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
 
                         emit(reloadLogData());
@@ -504,7 +484,7 @@ void MainWindow::newConnection (){
                         this->changeStatusText(tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
-                            trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
+                            this->showNotifycation(tr("helper notifycation"), tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
                         }
 
                         emit(reloadLogData());
@@ -516,7 +496,7 @@ void MainWindow::newConnection (){
                         this->changeStatusText(tr("Can't start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
-                            trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Can't start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            this->showNotifycation(tr("helper notifycation"), tr("Can't start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
                     } else {
                         this->showSocketError(message);
@@ -526,7 +506,8 @@ void MainWindow::newConnection (){
                         this->changeStatusText(tr("Can't start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                         if ((!this->isVisible()) and (trayIcon->isVisible())){
-                            trayIcon->showMessage(QString("%1-helper").arg(APP_SHORT_NAME), tr("Can't start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            this->showNotifycation(tr("helper notifycation"), tr("Can't start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+
                         }
                     } else {
                         this->showSocketError(message);
@@ -1089,6 +1070,30 @@ void MainWindow::mainImportWineIcons_Click(){
     return;
 }
 
+void MainWindow::showNotifycation(const QString header, const QString message){
+#ifdef WITH_DBUS
+    QVariantList args;
+    args << QString(APP_NAME);
+    args << QVariant(QVariant::UInt);
+    args << QVariant("q4wine");
+    args << tr("%1: %2").arg(APP_NAME).arg(header);
+    args << message;
+    args << QStringList();
+    args << QVariantMap();
+    args << 3000;
+
+    QDBusInterface * pNotify = new QDBusInterface("org.freedesktop.Notifications","/org/freedesktop/Notifications","org.freedesktop.Notifications",QDBusConnection::sessionBus(),this);
+    QDBusMessage reply = pNotify->callWithArgumentList(QDBus::Block,"Notify",args);
+    if(reply.type() == QDBusMessage::ErrorMessage)
+    {
+        QDBusError err = reply;
+        qDebug("[ee] DBus error\nID: %u\nName: %s\nMessage: %s\n",reply.arguments().first().toUInt(),qPrintable(err.name()),qPrintable(err.message()));
+    }
+#else
+    trayIcon->showMessage(header, message);
+#endif
+}
+
 void MainWindow::messageReceived(const QString message){
     if (message.isEmpty()){
         if (!isVisible())
@@ -1104,7 +1109,7 @@ void MainWindow::messageReceived(const QString message){
                 statusBar()->showMessage(tr("Binary \"%1\" do not exists.").arg(message));
             } else {
                 if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
-                    trayIcon->showMessage(tr("Can't run binary"), tr("Binary \"%1\" do not exists.").arg(message));
+                    this->showNotifycation(tr("Can't run binary"), tr("Binary \"%1\" do not exists.").arg(message));
             }
         } else {
             if (cbPrefixes->currentText().isEmpty())
