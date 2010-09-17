@@ -33,6 +33,7 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
     this->prefixName=prefixName;
+    wine64=false;
 
     setupUi(this);
 
@@ -76,6 +77,8 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
     cmdGetWineDesktopPic->installEventFilter(this);
     cmdGetWineDesktopMus->installEventFilter(this);
     cmdGetWineDesktopVid->installEventFilter(this);
+
+
 
 }
 
@@ -941,27 +944,25 @@ void FakeDriveSettings::loadSettings(){
         return;
     }
 
-
     list.clear();
     list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
-    list = reg.readKeys("system", "Software\\Microsoft\\Windows NT\\CurrentVersion", list);
-
-    //HKEY_CURRENT_USER\\Software\\Wine]\n\"Version
+    list = reg.readKeys("system", "Software\\Wow6432Node\\Software\\Microsoft\\Windows NT\\CurrentVersion", list);
 
     if (list.count()>0){
         txtOrganization->setText(list.at(0));
         txtOwner->setText(list.at(1));
-    }
-
-    if (txtOrganization->text().isEmpty() && txtOwner->text().isEmpty()){
+        this->wine64=true;
+    } else {
         list.clear();
         list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
-        list = reg.readKeys("system", "Software\\Wow6432Node\\Software\\Microsoft\\Windows NT\\CurrentVersion", list);
+        list = reg.readKeys("system", "Software\\Microsoft\\Windows NT\\CurrentVersion", list);
 
         if (list.count()>0){
             txtOrganization->setText(list.at(0));
             txtOwner->setText(list.at(1));
         }
+
+        this->wine64=false;
     }
 
     list.clear();

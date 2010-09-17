@@ -87,6 +87,7 @@ private:
    // bool eventFilter (QObject *object, QEvent *event);
     void loadThemeIcons();
    bool eventFilter(QObject *obj, QEvent *event);
+   bool wine64;
 
     std::auto_ptr<QSplitter> splitter;
 
