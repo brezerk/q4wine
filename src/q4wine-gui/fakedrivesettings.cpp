@@ -402,8 +402,14 @@ void FakeDriveSettings::cmdOk_Click(){
         this->reject();
         return;
     }
-    registry.set("Software\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOrganization", txtOrganization->text(), "HKEY_LOCAL_MACHINE");
-    registry.set("Software\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOwner", txtOwner->text(), "HKEY_LOCAL_MACHINE");
+
+    if (this->wine64){
+        registry.set("Software\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOrganization", txtOrganization->text(), "HKEY_LOCAL_MACHINE");
+        registry.set("Software\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOwner", txtOwner->text(), "HKEY_LOCAL_MACHINE");
+    } else {
+        registry.set("Software\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOrganization", txtOrganization->text(), "HKEY_LOCAL_MACHINE");
+        registry.set("Software\\Microsoft\\Windows NT\\CurrentVersion", "RegisteredOwner", txtOwner->text(), "HKEY_LOCAL_MACHINE");
+    }
 
     registry.set("Software\\Wine", "Version", version);
 
@@ -951,12 +957,7 @@ void FakeDriveSettings::loadSettings(){
     if (list.count()>0){
         txtOrganization->setText(list.at(0));
         txtOwner->setText(list.at(1));
-        this->wine64=true;
-#ifdef DEBUG
-        qDebug()<<"[ii] wine64 settings detected!!!";
-#endif
     }
-
 
     if (txtOrganization->text().isEmpty() && txtOwner->text().isEmpty()){
         list.clear();
@@ -970,6 +971,11 @@ void FakeDriveSettings::loadSettings(){
         this->wine64=false;
 #ifdef DEBUG
         qDebug()<<"[ii] wine32 settings detected!!!";
+#endif
+    } else {
+        this->wine64=true;
+#ifdef DEBUG
+        qDebug()<<"[ii] wine64 settings detected!!!";
 #endif
     }
 
