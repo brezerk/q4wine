@@ -34,6 +34,7 @@ wine
 >=qt-gui-4.4.0
 >=qt-core-4.4.0
 >=qt-network-4.4.0
+>=qt-dbus-4.4.0
 wget
 
 Optional dependencies
@@ -65,6 +66,8 @@ Installation
        WITH_WINEAPPDB            : ON  | OFF
        USE_BZIP2                 : OFF | ON
        USE_GZIP                  : OFF | ON
+       USE_GZIP                  : OFF | ON
+       WITH_DBUS                 : ON  | OFF
 
        DEBUG                     : If ON, then q4wine will write debug messages into STDOUT
                                  : use it in debug or bug report cases;
@@ -75,6 +78,7 @@ Installation
        WITH_WINEAPPDB            : If ON, then build q4wine with wine appdb browser support;
        USE_BZIP2                 : Use bzip2 to compress man pages;
        USE_GZIP                  : Use gzip to compress man pages;
+       WITH_DBUS                 : If ON, then build q4wine with QtDBUS notifycation support;
 
 6. $ make
 7. $ make install
@@ -103,8 +107,3 @@ e-mail: brezerk@gmail.com
 web: http://brezblock.org.ua
 BrezBlock, Kiev, Ukraine
 
-Zinin Pavel
-q4wine developer.
-allunix.ru forum moderator
-e-mail: pzinin@gmail.com
-web: http://pashazz.blogspot.com
