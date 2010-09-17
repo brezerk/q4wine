@@ -952,7 +952,13 @@ void FakeDriveSettings::loadSettings(){
         txtOrganization->setText(list.at(0));
         txtOwner->setText(list.at(1));
         this->wine64=true;
-    } else {
+#ifdef DEBUG
+        qDebug()<<"[ii] wine64 settings detected!!!";
+#endif
+    }
+
+
+    if (txtOrganization->text().isEmpty() && txtOwner->text().isEmpty())
         list.clear();
         list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
         list = reg.readKeys("system", "Software\\Microsoft\\Windows NT\\CurrentVersion", list);
@@ -961,8 +967,10 @@ void FakeDriveSettings::loadSettings(){
             txtOrganization->setText(list.at(0));
             txtOwner->setText(list.at(1));
         }
-
         this->wine64=false;
+#ifdef DEBUG
+        qDebug()<<"[ii] wine32 settings detected!!!";
+#endif
     }
 
     list.clear();
