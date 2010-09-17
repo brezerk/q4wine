@@ -958,7 +958,7 @@ void FakeDriveSettings::loadSettings(){
     }
 
 
-    if (txtOrganization->text().isEmpty() && txtOwner->text().isEmpty())
+    if (txtOrganization->text().isEmpty() && txtOwner->text().isEmpty()){
         list.clear();
         list << "\"RegisteredOrganization\"" << "\"RegisteredOwner\"";
         list = reg.readKeys("system", "Software\\Microsoft\\Windows NT\\CurrentVersion", list);
