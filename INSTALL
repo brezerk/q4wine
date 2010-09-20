@@ -66,7 +66,6 @@ Installation
        WITH_WINEAPPDB            : ON  | OFF
        USE_BZIP2                 : OFF | ON
        USE_GZIP                  : OFF | ON
-       USE_GZIP                  : OFF | ON
        WITH_DBUS                 : ON  | OFF
 
        DEBUG                     : If ON, then q4wine will write debug messages into STDOUT
