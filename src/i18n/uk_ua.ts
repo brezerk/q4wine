@@ -3172,7 +3172,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/mainwindow.cpp" line="499"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="509"/>
         <source>helper notifycation</source>
-        <translation type="unfinished"></translation>
+        <translation>сповіщення від помічника</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="470"/>
