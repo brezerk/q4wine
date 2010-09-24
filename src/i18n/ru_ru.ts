@@ -21,7 +21,7 @@
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="227"/>
         <source>Utility for Wine applications and prefixes management.</source>
-        <translation>Программа для настройки приложений и управление префиксами Wine.</translation>
+        <translation>Программа для настройки приложений и управления префиксами Wine.</translation>
     </message>
     <message utf8="true">
         <location filename="../q4wine-gui/uis/About.ui" line="240"/>
