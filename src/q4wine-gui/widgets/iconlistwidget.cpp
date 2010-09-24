@@ -676,6 +676,22 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
         menu->addMenu(subMenu.release());
 
+        subMenu.reset(new QMenu(tr("Console"), this));
+
+        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in prefix directory"), this));
+        entry->setStatusTip(tr("Open system console in prefix directory"));
+        connect(entry.get(), SIGNAL(triggered()), this, SLOT(consoleToPrefixDir_Click()));
+        subMenu->addAction(entry.release());
+
+        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in mount point directory"), this));
+        entry->setStatusTip(tr("Open system console in mount point directory"));
+        if (this->prefixMontPoint.isEmpty())
+            entry->setEnabled(false);
+        connect(entry.get(), SIGNAL(triggered()), this, SLOT(consoleToMountDir_Click()));
+        subMenu->addAction(entry.release());
+
+        menu->addMenu(subMenu.release());
+
     }
     menu->exec(QCursor::pos());
     return;
