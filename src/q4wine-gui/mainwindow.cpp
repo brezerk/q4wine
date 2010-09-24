@@ -1076,7 +1076,7 @@ void MainWindow::showNotifycation(const QString header, const QString message){
     args << QString(APP_NAME);
     args << QVariant(QVariant::UInt);
     args << QVariant("q4wine");
-    args << tr("%1: %2").arg(APP_NAME).arg(header);
+    args << QString("%1: %2").arg(APP_NAME).arg(header);
     args << message;
     args << QStringList();
     args << QVariantMap();
