@@ -1283,9 +1283,11 @@ void FakeDriveSettings::loadDefaultSettings(){
     item->setDrive("Z:", "/", "auto");
     listWineDrives->addItem(item.release());
 
+    /*
     item.reset(new DriveListWidgetItem(listWineDrives));
     item->setDrive("H:", QString("%1/.config/q4wine/tmp").arg(QDir::homePath()), "auto");
     listWineDrives->addItem(item.release());
+    */
 
     QString prefixPath = db_prefix.getPath(this->prefixName);
 
