@@ -1007,9 +1007,7 @@ void IconListWidget::menuRun_triggered(QAction* action){
     if (action->text()==tr("Browse...")){
         Run run;
         run.prepare(this->prefixName);
-
-        if (run.exec()==QDialog::Accepted)
-            CoreLib->runWineBinary(run.execObj, this->prefixName);
+        run.exec();
         return;
     }
 
@@ -1041,8 +1039,8 @@ void IconListWidget::menuRun_triggered(QAction* action){
     } else {
         Run run;
         run.prepare(this->prefixName, result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
-        if (run.exec()==QDialog::Accepted)
-            CoreLib->runWineBinary(run.execObj, this->prefixName);
+        run.exec();
+        return;
     }
     return;
 }
