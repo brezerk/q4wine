@@ -1210,26 +1210,13 @@ QStringList corelib::getCdromDevices(void) const{
             return;
         }
 
-        bool corelib::killWineServer(const QString prefix_path) const{
-            QString command;
+        bool corelib::killWineServer(const QString prefix_path){
 
-            if (!prefix_path.isEmpty()){
-                                QString prefix_name = db_prefix.getName(prefix_path);
-                                QHash<QString, QString> prefix_info = db_prefix.getByName(prefix_name);
+            ExecObject execObj;
+            execObj.cmdargs = "-kill";
+            execObj.execcmd = "wineserver";
 
-                                command = "env ";
-                                command.append(QString(" WINEPREFIX=\"%1\" ").arg(prefix_info.value("path")));
-                                if (!prefix_info.value("arch").isEmpty())
-                                    command.append(QString(" WINEARCH=\"%1\" ").arg(prefix_info.value("arch")));
-
-                                command.append(" wineserver -kill ");
-            } else {
-                command="wineserver -kill";
-            }
-
-
-            if (system(command.toAscii().data())==-1){
-                this->showError(QObject::tr("Can't run: %1").arg(command.toAscii().data()));
+            if (!this->runWineBinary(execObj, db_prefix.getName(prefix_path), false)){
                 return false;
             }
 

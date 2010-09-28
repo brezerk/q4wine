@@ -1136,7 +1136,7 @@ void IconListWidget::xdgOpenIconDir_Click(void){
     QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).value("wrkdir");
 
     if (result.isEmpty()){
-        emit(changeStatusText(tr("Error: \"%1\" is an embedded Wine binary.").arg(item->text())));
+        this->xdgOpenPrefixDir_Click();
     } else {
         QDesktopServices::openUrl(QUrl(QString("file://%1").arg(result), QUrl::TolerantMode));
     }
@@ -1178,7 +1178,7 @@ void IconListWidget::winefileOpenIconDir_Click(void){
     QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).value("wrkdir");
 
     if (result.isEmpty()){
-        emit(changeStatusText(tr("Error: \"%1\" is an embedded Wine binary.").arg(item->text())));
+        this->winefileOpenPrefixDir_Click();
     } else {
         ExecObject execObj;
         execObj.cmdargs = result + "/";
@@ -1224,7 +1224,7 @@ void IconListWidget::consoleToIconDir_Click(void){
     QString result = db_icon.getByName(this->prefixName, this->dirName, item->text()).value("wrkdir");
 
     if (result.isEmpty()){
-        emit(changeStatusText(tr("Error: \"%1\" is an embedded Wine binary.").arg(item->text())));
+        this->consoleToPrefixDir_Click();
     } else {
         CoreLib->openConsole(result, this->prefixName);
     }
