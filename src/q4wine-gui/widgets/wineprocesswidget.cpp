@@ -21,181 +21,181 @@
 
 WineProcessWidget::WineProcessWidget(QWidget *parent) : QWidget(parent)
 {
-	// Loading libq4wine-core.so
-	libq4wine.setFileName("libq4wine-core");
+    // Loading libq4wine-core.so
+    libq4wine.setFileName("libq4wine-core");
 
-	if (!libq4wine.load()){
-		  libq4wine.load();
-	}
+    if (!libq4wine.load()){
+          libq4wine.load();
+    }
 
-	// Getting corelib calss pointer
-	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    // Getting corelib calss pointer
+    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-	this->createActions();
+    this->createActions();
 
-	std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
-	toolBar->addAction(procKillSelected.get());
-	toolBar->addAction(procKillWine.get());
-	toolBar->addSeparator();
-	toolBar->addAction(procRefresh.get());
+    std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
+    toolBar->addAction(procKillSelected.get());
+    toolBar->addAction(procKillWine.get());
+    toolBar->addSeparator();
+    toolBar->addAction(procRefresh.get());
 
-	procTable.reset(new QTableView(this));
+    procTable.reset(new QTableView(this));
 
-	model.reset(new QStandardItemModel());
-	model->setColumnCount(4);
-	model->setHeaderData(0, Qt::Horizontal, tr("PID"), Qt::DisplayRole);
-	model->setHeaderData(1, Qt::Horizontal, tr("Name"), Qt::DisplayRole);
-	model->setHeaderData(2, Qt::Horizontal, tr("Ni"), Qt::DisplayRole);
-	model->setHeaderData(3, Qt::Horizontal, tr("Prefix path"), Qt::DisplayRole);
+    model.reset(new QStandardItemModel());
+    model->setColumnCount(4);
+    model->setHeaderData(0, Qt::Horizontal, tr("PID"), Qt::DisplayRole);
+    model->setHeaderData(1, Qt::Horizontal, tr("Name"), Qt::DisplayRole);
+    model->setHeaderData(2, Qt::Horizontal, tr("Ni"), Qt::DisplayRole);
+    model->setHeaderData(3, Qt::Horizontal, tr("Prefix path"), Qt::DisplayRole);
 
-	procTable->setContextMenuPolicy(Qt::CustomContextMenu);
-	procTable->setModel(model.get());
+    procTable->setContextMenuPolicy(Qt::CustomContextMenu);
+    procTable->setModel(model.get());
 
-	connect(procTable.get(), SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(customContextMenuRequested(const QPoint &)));
-	connect(procTable.get(), SIGNAL(clicked(const QModelIndex &)), this, SLOT(itemClicked(const QModelIndex &)));
+    connect(procTable.get(), SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(customContextMenuRequested(const QPoint &)));
+    connect(procTable.get(), SIGNAL(clicked(const QModelIndex &)), this, SLOT(itemClicked(const QModelIndex &)));
 
-	procTable->resizeColumnsToContents();
-	procTable->resizeRowsToContents();
-	procTable->horizontalHeader()->setStretchLastSection(true);
-	procTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+    procTable->resizeColumnsToContents();
+    procTable->resizeRowsToContents();
+    procTable->horizontalHeader()->setStretchLastSection(true);
+    procTable->setSelectionBehavior(QAbstractItemView::SelectRows);
     procTable->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
-	lblInfo.reset(new QLabel(tr("Total process count: %1").arg(0), this));
-	lblInfo->setContentsMargins(2,2,2,2);
+    lblInfo.reset(new QLabel(tr("Total process count: %1").arg(0), this));
+    lblInfo->setContentsMargins(2,2,2,2);
 
 
-	std::auto_ptr<QVBoxLayout> layout (new QVBoxLayout(this));
-	layout->setSpacing(0);
-	layout->setContentsMargins(0,0,0,0);
-	layout->addWidget(toolBar.release());
-	layout->addWidget(procTable.get());
-	layout->addWidget(lblInfo.get());
+    std::auto_ptr<QVBoxLayout> layout (new QVBoxLayout(this));
+    layout->setSpacing(0);
+    layout->setContentsMargins(0,0,0,0);
+    layout->addWidget(toolBar.release());
+    layout->addWidget(procTable.get());
+    layout->addWidget(lblInfo.get());
 
-	this->setLayout(layout.release());
+    this->setLayout(layout.release());
 
-	timer.reset(new QTimer());
-	timer->start(1000);
+    timer.reset(new QTimer());
+    timer->start(1000);
 
-	// Connecting signals and slots
-	connect(timer.get(), SIGNAL(timeout()), this, SLOT(getWineProcesssInfo()));
-	return;
+    // Connecting signals and slots
+    connect(timer.get(), SIGNAL(timeout()), this, SLOT(getWineProcesssInfo()));
+    return;
 }
 
 void WineProcessWidget::stopTimer(void){
-	timer->stop();
-	return;
+    timer->stop();
+    return;
 }
 
 void WineProcessWidget::startTimer(void){
-	this->getWineProcesssInfo();
-	timer->start();
-	return;
+    this->getWineProcesssInfo();
+    timer->start();
+    return;
 }
 
 void WineProcessWidget::createActions(){
-	procKillSelected.reset(new QAction(CoreLib->loadIcon("data/kill.png"), tr("Stop current"), this));
-	procKillSelected->setStatusTip(tr("Send TERM signal to selected process"));
-	procKillSelected->setEnabled(false);
-	connect(procKillSelected.get(), SIGNAL(triggered()), this, SLOT(procKillSelected_Click()));
+    procKillSelected.reset(new QAction(CoreLib->loadIcon("data/kill.png"), tr("Stop current"), this));
+    procKillSelected->setStatusTip(tr("Send TERM signal to selected process"));
+    procKillSelected->setEnabled(false);
+    connect(procKillSelected.get(), SIGNAL(triggered()), this, SLOT(procKillSelected_Click()));
 
-	procKillWine.reset(new QAction(CoreLib->loadIcon("data/stop.png"), tr("Stop wine"), this));
-	procKillWine->setStatusTip(tr("Send TERM signal to main wine process"));
-	procKillWine->setEnabled(false);
-	connect(procKillWine.get(), SIGNAL(triggered()), this, SLOT(procKillWine_Click()));
+    procKillWine.reset(new QAction(CoreLib->loadIcon("data/stop.png"), tr("Stop wine"), this));
+    procKillWine->setStatusTip(tr("Send TERM signal to main wine process"));
+    procKillWine->setEnabled(false);
+    connect(procKillWine.get(), SIGNAL(triggered()), this, SLOT(procKillWine_Click()));
 
-	procRefresh.reset(new QAction(CoreLib->loadIcon("data/reload.png"), tr("Refresh list"),this));
-	procRefresh->setStatusTip(tr("Refresh process list"));
-	connect(procRefresh.get(), SIGNAL(triggered()), this, SLOT(getWineProcesssInfo()));
+    procRefresh.reset(new QAction(CoreLib->loadIcon("data/reload.png"), tr("Refresh list"),this));
+    procRefresh->setStatusTip(tr("Refresh process list"));
+    connect(procRefresh.get(), SIGNAL(triggered()), this, SLOT(getWineProcesssInfo()));
 
-	procRenice.reset(new QAction(tr("Renice"), this));
-	procRenice->setStatusTip(tr("Set process priority"));
-	procRenice->setEnabled(false);
-	connect(procRenice.get(), SIGNAL(triggered()), this, SLOT(procRenice_Click()));
+    procRenice.reset(new QAction(tr("Renice"), this));
+    procRenice->setStatusTip(tr("Set process priority"));
+    procRenice->setEnabled(false);
+    connect(procRenice.get(), SIGNAL(triggered()), this, SLOT(procRenice_Click()));
 
-	menu.reset(new QMenu(this));
-	menu->addAction(procKillSelected.get());
-	menu->addAction(procKillWine.get());
-	menu->addSeparator();
-	menu->addAction(procRenice.get());
-	menu->addSeparator();
-	menu->addAction(procRefresh.get());
+    menu.reset(new QMenu(this));
+    menu->addAction(procKillSelected.get());
+    menu->addAction(procKillWine.get());
+    menu->addSeparator();
+    menu->addAction(procRenice.get());
+    menu->addSeparator();
+    menu->addAction(procRefresh.get());
 
-	return;
+    return;
 }
 
 void WineProcessWidget::getWineProcesssInfo(void){
-	QList<QStringList> proclist = CoreLib->getWineProcessList();
+    QList<QStringList> proclist = CoreLib->getWineProcessList();
 
-	if (proclist.count()<=0){
-		procKillSelected->setEnabled(false);
-		procKillWine->setEnabled(false);
-		procRenice->setEnabled(false);
-		model->setRowCount(0);
+    if (proclist.count()<=0){
+        procKillSelected->setEnabled(false);
+        procKillWine->setEnabled(false);
+        procRenice->setEnabled(false);
+        model->setRowCount(0);
         lblInfo->setText(tr("Total process count: %1").arg(0));
-		return;
-	}
+        return;
+    }
 
-	model->setRowCount(proclist.size());
+    model->setRowCount(proclist.size());
 
-	for (int i = 0; i < proclist.size(); ++i) {
-		model->setData(model->index(i, 0, QModelIndex()), proclist.at(i).at(0), Qt::DisplayRole);
-		model->setData(model->index(i, 1, QModelIndex()), proclist.at(i).at(1), Qt::DisplayRole);
-		model->setData(model->index(i, 2, QModelIndex()), proclist.at(i).at(2), Qt::DisplayRole);
-		model->setData(model->index(i, 3, QModelIndex()), proclist.at(i).at(3), Qt::DisplayRole);
-	}
+    for (int i = 0; i < proclist.size(); ++i) {
+        model->setData(model->index(i, 0, QModelIndex()), proclist.at(i).at(0), Qt::DisplayRole);
+        model->setData(model->index(i, 1, QModelIndex()), proclist.at(i).at(1), Qt::DisplayRole);
+        model->setData(model->index(i, 2, QModelIndex()), proclist.at(i).at(2), Qt::DisplayRole);
+        model->setData(model->index(i, 3, QModelIndex()), proclist.at(i).at(3), Qt::DisplayRole);
+    }
 
     lblInfo->setText(tr("Total process count: %1").arg(proclist.size()));
 
-	procTable->resizeColumnsToContents();
-	procTable->resizeRowsToContents();
-	procTable->horizontalHeader()->setStretchLastSection(true);
+    procTable->resizeColumnsToContents();
+    procTable->resizeRowsToContents();
+    procTable->horizontalHeader()->setStretchLastSection(true);
 
-	if (procTable->currentIndex().isValid()){
-		procKillSelected->setEnabled(true);
-		procKillWine->setEnabled(true);
-		procRenice->setEnabled(true);
-	} else {
-		procKillSelected->setEnabled(false);
-		procKillWine->setEnabled(false);
-		procRenice->setEnabled(false);
-	}
+    if (procTable->currentIndex().isValid()){
+        procKillSelected->setEnabled(true);
+        procKillWine->setEnabled(true);
+        procRenice->setEnabled(true);
+    } else {
+        procKillSelected->setEnabled(false);
+        procKillWine->setEnabled(false);
+        procRenice->setEnabled(false);
+    }
 
-	return;
+    return;
 }
 
 void WineProcessWidget::customContextMenuRequested(const QPoint &pos){
-	if (procTable->currentIndex().isValid()){
-		procKillSelected->setEnabled(true);
-		procKillWine->setEnabled(true);
-		procRenice->setEnabled(true);
-	} else {
-		procKillSelected->setEnabled(false);
-		procKillWine->setEnabled(false);
-		procRenice->setEnabled(false);
-	}
+    if (procTable->currentIndex().isValid()){
+        procKillSelected->setEnabled(true);
+        procKillWine->setEnabled(true);
+        procRenice->setEnabled(true);
+    } else {
+        procKillSelected->setEnabled(false);
+        procKillWine->setEnabled(false);
+        procRenice->setEnabled(false);
+    }
 
-	menu->exec(QCursor::pos());
-	return;
+    menu->exec(QCursor::pos());
+    return;
 }
 
 void WineProcessWidget::itemClicked(const QModelIndex &){
-	if (procTable->currentIndex().isValid()){
-		procKillSelected->setEnabled(true);
-		procKillWine->setEnabled(true);
-		procRenice->setEnabled(true);
-	} else {
-		procKillSelected->setEnabled(false);
-		procKillWine->setEnabled(false);
-		procRenice->setEnabled(false);
-	}
-	return;
+    if (procTable->currentIndex().isValid()){
+        procKillSelected->setEnabled(true);
+        procKillWine->setEnabled(true);
+        procRenice->setEnabled(true);
+    } else {
+        procKillSelected->setEnabled(false);
+        procKillWine->setEnabled(false);
+        procRenice->setEnabled(false);
+    }
+    return;
 }
 
 void WineProcessWidget::procKillSelected_Click(void){
     if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to selected processes<br><br>It is HIGH risk to damage wine normal state.<br><br>Do you really want to proceed?"), QMessageBox::Yes, QMessageBox::No)==QMessageBox::No)
         return;
-    
+
     QItemSelectionModel *selectionModel = procTable->selectionModel();
 
     QModelIndexList indexes = selectionModel->selectedIndexes();
@@ -251,12 +251,10 @@ void WineProcessWidget::procKillWine_Click(void){
         return;
 
     for (int i=0; i<prefixList.count(); i++){
-        if (CoreLib->killWineServer(prefixList.at(i))){
-            emit(changeStatusText(tr("It seems \"wineserver -kill\" for prefix: %1 executed successfully.").arg(prefixList.at(i))));
-        }
+        CoreLib->killWineServer(prefixList.at(i));
     }
 
-	return;
+    return;
 }
 
 void WineProcessWidget::procRenice_Click(void){
