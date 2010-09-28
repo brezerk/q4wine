@@ -673,7 +673,7 @@ void PrefixTreeWidget::menuDeletePrefix_Click(void){
         return;
     }
 
-    if(QMessageBox::warning(this, tr("Warning"),	tr("Do you really wish to delete prefix named \"%1\" and all associated icons?").arg(prefixName), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
+    if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete prefix named \"%1\" and all associated icons?").arg(prefixName), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
         if (db_icon.delIconsByPrefixName(this->prefixName))
             if(db_dir.delDir(this->prefixName))
                 db_prefix.delByName(this->prefixName);
