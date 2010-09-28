@@ -42,6 +42,7 @@
 #include <QResizeEvent>
 #include <QKeyEvent>
 #include <QHeaderView>
+#include <QTableWidgetItem>
 
 #include "q4wine-lib.h"
 
@@ -53,78 +54,78 @@
  */
 class IconSettings : public QDialog, public Ui::IconSettings
 {
-	Q_OBJECT
-	public:
-		/*! \brief This is class constructor.
-		 *
-		 * \param  prefix_name  Current prefix name.
-		 * \param  dir_name		Current directory name.
-		 * \param  icon_name	Current directory name.
-		 */
-		IconSettings(QString prefix_name, QString dir_name, QString icon_name = "", QWidget * parent = 0, Qt::WFlags f = 0);
+    Q_OBJECT
+    public:
+        /*! \brief This is class constructor.
+         *
+         * \param  prefix_name  Current prefix name.
+         * \param  dir_name		Current directory name.
+         * \param  icon_name	Current directory name.
+         */
+        IconSettings(QString prefix_name, QString dir_name, QString icon_name = "", QWidget * parent = 0, Qt::WFlags f = 0);
 
-	private slots:
-		/*! \brief This slot function resize dialog content.
-		 */
-		void ResizeContent(int);
+    private slots:
+        /*! \brief This slot function resize dialog content.
+         */
+        void ResizeContent(int);
 
-		/*! \brief This slot function adds selected dll to override list.
-		 */
-		void cmdAdd_Click();
+        /*! \brief This slot function adds selected dll to override list.
+         */
+        void cmdAdd_Click();
 
-		/*! \brief This slot function gets path to executable win32 binary.
-		 */
-		void cmdGetProgram_Click();
+        /*! \brief This slot function gets path to executable win32 binary.
+         */
+        void cmdGetProgram_Click();
 
-		/*! \brief This slot function gets and\or extract icons.
-		 */
-		void cmdGetIcon_Click();
+        /*! \brief This slot function gets and\or extract icons.
+         */
+        void cmdGetIcon_Click();
 
-		/*! \brief This slot function gets work directory.
-		 */
-		void cmdGetWorkDir_Click();
+        /*! \brief This slot function gets work directory.
+         */
+        void cmdGetWorkDir_Click();
 
-		/*! \brief This slot function trigger use console state.
-		 */
-		void cbUseConsole_stateChanged(int);
+        /*! \brief This slot function trigger use console state.
+         */
+        void cbUseConsole_stateChanged(int);
 
-		/*! \brief This slot for cancel button.
-		 */
-		void cmdCancel_Click();
+        /*! \brief This slot for cancel button.
+         */
+        void cmdCancel_Click();
 
-		/*! \brief This slot for ok button.
-		 */
-		void cmdOk_Click();
+        /*! \brief This slot for ok button.
+         */
+        void cmdOk_Click();
 
-		/*! \brief This slot for help button.
-		 */
-		void cmdHelp_Click();
+        /*! \brief This slot for help button.
+         */
+        void cmdHelp_Click();
 
         void getProgramIcon(QString name);
 
-	private:
-		QString prefix_name, dir_name, icon_name, prefix_path, iconPath;
+    private:
+        QString prefix_name, dir_name, icon_name, prefix_path, iconPath;
 
-		/*! \brief This function gets icon parms from database.
-		 */
-		void getIconReccord();
-		void resizeEvent (QResizeEvent);
-		bool eventFilter (QObject *object, QEvent *event);
+        /*! \brief This function gets icon parms from database.
+         */
+        void getIconReccord();
+        void resizeEvent (QResizeEvent);
+        bool eventFilter (QObject *object, QEvent *event);
 
-		void loadThemeIcons();
+        void loadThemeIcons();
 
-		//! Side bar URLs list.
-		QList<QUrl> prefix_urls;
+        //! Side bar URLs list.
+        QList<QUrl> prefix_urls;
 
-		//! Database prefix class defenition.
-		Prefix db_prefix;
-		Icon db_icon;
+        //! Database prefix class defenition.
+        Prefix db_prefix;
+        Icon db_icon;
 
-		//! This is need for libq4wine-core.so import.
-		QLibrary libq4wine;
-		typedef void *CoreLibPrototype (bool);
-		CoreLibPrototype *CoreLibClassPointer;
-		std::auto_ptr<corelib> CoreLib;
+        //! This is need for libq4wine-core.so import.
+        QLibrary libq4wine;
+        typedef void *CoreLibPrototype (bool);
+        CoreLibPrototype *CoreLibClassPointer;
+        std::auto_ptr<corelib> CoreLib;
 };
 
 #endif

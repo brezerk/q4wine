@@ -244,7 +244,7 @@ void PrefixControlWidget::prefixImport_Click(){
         return;
 
     QString prefixName = model->index(prefixTable->currentIndex().row(), 0, QModelIndex()).data().toString();
-    QString targetDir = model->index(prefixTable->currentIndex().row(), 1, QModelIndex()).data().toString();
+    QString targetDir = model->index(prefixTable->currentIndex().row(), 2, QModelIndex()).data().toString();
 
     if (prefixName.isEmpty())
         return;
@@ -338,7 +338,7 @@ void PrefixControlWidget::prefixExport_Click(){
         return;
 
     QString prefixName = model->index(prefixTable->currentIndex().row(), 0, QModelIndex()).data().toString();
-    QString prefixPath = model->index(prefixTable->currentIndex().row(), 1, QModelIndex()).data().toString();
+    QString prefixPath = model->index(prefixTable->currentIndex().row(), 2, QModelIndex()).data().toString();
 
     if (prefixName.isEmpty())
         return;
