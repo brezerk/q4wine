@@ -21,40 +21,40 @@
 
 PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
-	// Setup base UI
-	setupUi(this);
+    // Setup base UI
+    setupUi(this);
 
-	// Setting class prefix name
-	this->prefix_name=prefix_name;
+    // Setting class prefix name
+    this->prefix_name=prefix_name;
 
-	// Loading libq4wine-core.so
-	libq4wine.setFileName("libq4wine-core");
+    // Loading libq4wine-core.so
+    libq4wine.setFileName("libq4wine-core");
 
-	if (!libq4wine.load()){
-		libq4wine.load();
-	}
+    if (!libq4wine.load()){
+        libq4wine.load();
+    }
 
-	// Getting corelib calss pointer
-	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    // Getting corelib calss pointer
+    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
     this->addNew=false;
-	this->loadThemeIcons();
+    this->loadThemeIcons();
 
     QHash<QString,QString> result = db_prefix.getByName(prefix_name);
     if (result.value("id").isEmpty())
-		return;
+        return;
 
     prefix_id=result.value("id");
 
-	//comboDeviceList
+    //comboDeviceList
     txtMountPoint->setText(result.value("mount"));
 
-	if (prefix_name=="Default"){
-		txtPrefixName->setEnabled(FALSE);
-		txtPrefixPath->setEnabled(FALSE);
+    if (prefix_name=="Default"){
+        txtPrefixName->setEnabled(FALSE);
+        txtPrefixPath->setEnabled(FALSE);
 
-		cmdGetPrefixPath->setEnabled(FALSE);
+        cmdGetPrefixPath->setEnabled(FALSE);
 
         txtWineLibs->setEnabled(FALSE);
         txtWineLoaderBin->setEnabled(FALSE);
@@ -70,8 +70,8 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
         txtWineLoaderBin->setText("");
         txtWineServerBin->setText("");
         txtWineBin->setText("");
-	} else {
-		cmdGetPrefixPath->installEventFilter(this);
+    } else {
+        cmdGetPrefixPath->installEventFilter(this);
         cmdGetWineBin->installEventFilter(this);
         cmdGetWineServerBin->installEventFilter(this);
         cmdGetWineLoaderBin->installEventFilter(this);
@@ -81,32 +81,33 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
         txtWineLoaderBin->setText(result.value("loader"));
         txtWineServerBin->setText(result.value("server"));
         txtWineBin->setText(result.value("bin"));
-        if (!result.value("arch").isEmpty())
-            comboArchList->setCurrentIndex (comboArchList->findText(result.value("arch")));
-	}
+    }
 
-	txtPrefixName->setText(prefix_name);
+    if (!result.value("arch").isEmpty())
+        comboArchList->setCurrentIndex (comboArchList->findText(result.value("arch")));
+
+    txtPrefixName->setText(prefix_name);
     txtPrefixPath->setText(result.value("path"));
 
-	comboDeviceList->addItems(CoreLib->getCdromDevices());
+    comboDeviceList->addItems(CoreLib->getCdromDevices());
     if (!result.value("drive").isEmpty()){
         comboDeviceList->setCurrentIndex (comboDeviceList->findText(result.value("drive")));
-		if (comboDeviceList->currentText().isEmpty())
-			comboDeviceList->setCurrentIndex (0);
-	} else {
-		comboDeviceList->setCurrentIndex (0);
-	}
+        if (comboDeviceList->currentText().isEmpty())
+            comboDeviceList->setCurrentIndex (0);
+    } else {
+        comboDeviceList->setCurrentIndex (0);
+    }
 
-	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
-	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
-	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
+    connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
+    connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
+    connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
        // comboArchList->setEnabled(false);
 
-	cmdGetMountPoint->installEventFilter(this);
+    cmdGetMountPoint->installEventFilter(this);
 
-	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
-	return;
+    cmdOk->setFocus(Qt::ActiveWindowFocusReason);
+    return;
 }
 
 PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
@@ -152,38 +153,38 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent,
 }
 
 QString PrefixSettings::getPrefixName(){
-	return txtPrefixName->text();
+    return txtPrefixName->text();
 }
 
 void PrefixSettings::loadThemeIcons(){
-	lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
+    lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
 
-	cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-	cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-	cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-	cmdGetWineLibs->setIcon(CoreLib->loadIcon("data/folder.png"));
-	cmdGetMountPoint->setIcon(CoreLib->loadIcon("data/folder.png"));
-	cmdGetPrefixPath->setIcon(CoreLib->loadIcon("data/folder.png"));
-	return;
+    cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetWineLibs->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetMountPoint->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetPrefixPath->setIcon(CoreLib->loadIcon("data/folder.png"));
+    return;
 }
 
 void PrefixSettings::cmdCancel_Click(){
-	reject();
-	return;
+    reject();
+    return;
 }
 
 void PrefixSettings::cmdOk_Click(){
-	if (txtPrefixName->text().isEmpty()){
-		 QMessageBox::warning(this, tr("Error"), tr("Please, enter prefix name"));
-		  return;
-	}
+    if (txtPrefixName->text().isEmpty()){
+         QMessageBox::warning(this, tr("Error"), tr("Please, enter prefix name"));
+          return;
+    }
 
-	if (prefix_name!=txtPrefixName->text()){
-		if (db_prefix.isExistsByName(txtPrefixName->text())){
-			QMessageBox::warning(this, tr("Error"), tr("Sorry, but prefix named %1 already exists.").arg(txtPrefixName->text()));
-			return;
-		}
-	}
+    if (prefix_name!=txtPrefixName->text()){
+        if (db_prefix.isExistsByName(txtPrefixName->text())){
+            QMessageBox::warning(this, tr("Error"), tr("Sorry, but prefix named %1 already exists.").arg(txtPrefixName->text()));
+            return;
+        }
+    }
 
     QString path = txtPrefixPath->text();
     if (path.right(1)=="/"){
@@ -201,20 +202,20 @@ void PrefixSettings::cmdOk_Click(){
             reject();
     }
 
-	accept();
-	return;
+    accept();
+    return;
 }
 
 bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
-	/*
-	 * Select folder dialog
-	 */
+    /*
+     * Select folder dialog
+     */
 
     if (event->type() == QEvent::MouseButtonRelease) {
 
-		QString file="";
+        QString file="";
 
-		if (obj->objectName().right(3)=="Bin"){
+        if (obj->objectName().right(3)=="Bin"){
 #if QT_VERSION >= 0x040500
             QFileDialog::Options options;
 
@@ -225,7 +226,7 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 #else
             file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*.*)");
 #endif
-		} else {
+        } else {
 #if QT_VERSION >= 0x040500
             QFileDialog::Options options;
 
@@ -236,49 +237,49 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 #else
             file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(), QFileDialog::DontResolveSymlinks);
 #endif
-		}
+        }
 
-		if (!file.isEmpty()){
+        if (!file.isEmpty()){
             if (file.right(1)=="/"){
                 file=file.left(file.length()-1);
             }
 
-			QString a="";
+            QString a="";
 
-			a.append("txt");
-			a.append(obj->objectName().right(obj->objectName().length()-6));
+            a.append("txt");
+            a.append(obj->objectName().right(obj->objectName().length()-6));
 
-			std::auto_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
+            std::auto_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
 
-			if (lineEdit.get()){
-				lineEdit->setText(file);
-			} else {
-				qDebug("Error");
-			}
+            if (lineEdit.get()){
+                lineEdit->setText(file);
+            } else {
+                qDebug("Error");
+            }
 
-			lineEdit.release();
+            lineEdit.release();
 
             if (obj->objectName()=="cmdGetPrefixPath"){
                 txtPrefixName->setText(txtPrefixPath->text().split("/").last());
             }
 
-		}
-	}
+        }
+    }
 
-	return FALSE;
+    return FALSE;
 }
 
 void PrefixSettings::cmdHelp_Click(){
-	QString rawurl;
-	switch (twbGeneral->currentIndex()){
-	case 0:
-		rawurl = "10-prefix-settings.html#general";
-	break;
-	case 1:
-		rawurl = "10-prefix-settings.html#winepath";
-	break;
-	}
+    QString rawurl;
+    switch (twbGeneral->currentIndex()){
+    case 0:
+        rawurl = "10-prefix-settings.html#general";
+    break;
+    case 1:
+        rawurl = "10-prefix-settings.html#winepath";
+    break;
+    }
 
-	CoreLib->openHelpUrl(rawurl);
+    CoreLib->openHelpUrl(rawurl);
 }
 
