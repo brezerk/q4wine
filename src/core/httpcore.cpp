@@ -21,47 +21,47 @@
 
 HttpCore::HttpCore()
 {
-	http.reset(new QHttp(this));
+    http.reset(new QHttp(this));
 
-	connect(http.get(), SIGNAL(requestFinished(int, bool)),
-				 this, SLOT(httpRequestFinished(int, bool)));
-	connect(http.get(), SIGNAL(dataReadProgress(int, int)),
-				 this, SIGNAL(updateDataReadProgress(int, int)));
-	connect(http.get(), SIGNAL(stateChanged(int)),
-				 this, SIGNAL(stateChanged(int)));
-	connect(http.get(), SIGNAL(responseHeaderReceived(const QHttpResponseHeader &)),
-				 this, SLOT(readResponseHeader(const QHttpResponseHeader &)));
+    connect(http.get(), SIGNAL(requestFinished(int, bool)),
+                 this, SLOT(httpRequestFinished(int, bool)));
+    connect(http.get(), SIGNAL(dataReadProgress(int, int)),
+                 this, SIGNAL(updateDataReadProgress(int, int)));
+    connect(http.get(), SIGNAL(stateChanged(int)),
+                 this, SIGNAL(stateChanged(int)));
+    connect(http.get(), SIGNAL(responseHeaderReceived(const QHttpResponseHeader &)),
+                 this, SLOT(readResponseHeader(const QHttpResponseHeader &)));
 
-	// Loading libq4wine-core.so
-	libq4wine.setFileName("libq4wine-core");
+    // Loading libq4wine-core.so
+    libq4wine.setFileName("libq4wine-core");
 
-	if (!libq4wine.load()){
-		libq4wine.load();
-	}
+    if (!libq4wine.load()){
+        libq4wine.load();
+    }
 
-	// Getting corelib calss pointer
-	CoreLibClassPointer = (CoreLibPrototype*) libq4wine.resolve("createCoreLib");
-	CoreLib.reset((corelib*) CoreLibClassPointer(true));
+    // Getting corelib calss pointer
+    CoreLibClassPointer = (CoreLibPrototype*) libq4wine.resolve("createCoreLib");
+    CoreLib.reset((corelib*) CoreLibClassPointer(true));
 
-	int type = CoreLib->getSetting("network", "type", false).toInt();
+    int type = CoreLib->getSetting("network", "type", false).toInt();
 
-	if (type!=0){
-		QString proxyUser, proxyPass, proxyHost;
-		int proxyPort;
+    if (type!=0){
+        QString proxyUser, proxyPass, proxyHost;
+        int proxyPort;
 
-		proxyHost = CoreLib->getSetting("network", "host", false).toString();
-		proxyPort = CoreLib->getSetting("network", "port", false).toInt();
-		proxyUser = CoreLib->getSetting("network", "user", false).toString();
-		proxyPass = CoreLib->getSetting("network", "pass", false).toString();
-		http->setProxy(proxyHost, proxyPort, proxyUser, proxyPass);
-	}
+        proxyHost = CoreLib->getSetting("network", "host", false).toString();
+        proxyPort = CoreLib->getSetting("network", "port", false).toInt();
+        proxyUser = CoreLib->getSetting("network", "user", false).toString();
+        proxyPass = CoreLib->getSetting("network", "pass", false).toString();
+        http->setProxy(proxyHost, proxyPort, proxyUser, proxyPass);
+    }
 
-	//Create user_agent string
-	user_agent=QString("%1/%2 (X11; %3 %4) xmlparser/%5").arg(APP_SHORT_NAME).arg(APP_VERS).arg(APP_HOST).arg(APP_ARCH).arg(APPDB_EXPORT_VERSION);
+    //Create user_agent string
+    user_agent=QString("%1/%2 (X11; %3 %4) xmlparser/%5").arg(APP_SHORT_NAME).arg(APP_VERS).arg(APP_HOST).arg(APP_ARCH).arg(APPDB_EXPORT_VERSION);
 }
 
 HttpCore::~HttpCore(){
-	//Nothing but...
+    //Nothing but...
 }
 
 void HttpCore::getAppDBXMLPage(QString host, short int port, QString page)
@@ -131,45 +131,45 @@ QString HttpCore::getXMLReply(){
          out << xmlreply;
      }
     file.close();
-	return xmlreply;
+    return xmlreply;
 }
 
 void HttpCore::httpRequestFinished(int requestId, bool error){
-	if (this->aborted)
-		return;
+    if (this->aborted)
+        return;
 
-	if (this->getId!=requestId)
-		return;
+    if (this->getId!=requestId)
+        return;
 
-	if (error){
-		xmlreply="";
-		emit(requestError(http->errorString()));
-	} else {
-		xmlreply=http->readAll();
+    if (error){
+        xmlreply="";
+        emit(requestError(http->errorString()));
+    } else {
+        xmlreply=http->readAll();
 
 #ifdef DEBUG
-		qDebug()<<"[ii] Recived page:"<<xmlreply;
+        qDebug()<<"[ii] Recived page:"<<xmlreply;
 #endif
-		emit(pageReaded());
-	}
+        emit(pageReaded());
+    }
 
-	return;
+    return;
 }
 
 void HttpCore::readResponseHeader(const QHttpResponseHeader &responseHeader){
-	switch (responseHeader.statusCode()) {
-		 case 200:                   // Ok
-		 case 301:                   // Moved Permanently
-		 case 303:                   // See Other
-		 case 307:                   // Temporary Redirect
-			 // these are not error conditions
-			 break;
+    switch (responseHeader.statusCode()) {
+         case 200:                   // Ok
+         case 301:                   // Moved Permanently
+         case 303:                   // See Other
+         case 307:                   // Temporary Redirect
+             // these are not error conditions
+             break;
 
-		 default:
-			 emit(requestError(tr("Download failed: %1.").arg(responseHeader.reasonPhrase())));;
-			 this->aborted=true;
-			 http->abort();
-		 }
-	return;
+         default:
+             emit(requestError(tr("Download failed: %1.").arg(responseHeader.reasonPhrase())));;
+             this->aborted=true;
+             http->abort();
+         }
+    return;
 }
 

@@ -383,6 +383,11 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 
             menu->addSeparator();
 
+            entry.reset(new QAction(CoreLib->loadIcon("data/wizard.png"), tr("Create new prefix"), this));
+            entry->setStatusTip(tr("Create new prefix"));
+            connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuCreatePrefix_Click()));
+            menu->addAction(entry.release());
+
             entry.reset(new QAction(CoreLib->loadIcon("data/configure.png"), tr("Configure prefix settings"), this));
             entry->setStatusTip(tr("Edit prefix settings"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuConfigurePrefix_Click()));
@@ -391,6 +396,13 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
             entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Configure fake drive settings"), this));
             entry->setStatusTip(tr("Setup prefix fake drive and applications"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuSetupPrefix_Click()));
+            menu->addAction(entry.release());
+
+            menu->addSeparator();
+
+            entry.reset(new QAction(CoreLib->loadIcon("data/kill.png"), tr("Delete prefix"), this));
+            entry->setStatusTip(tr("Delete prefix"));
+            connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuDeletePrefix_Click()));
             menu->addAction(entry.release());
 
       menu->exec(QCursor::pos());
@@ -615,6 +627,15 @@ void PrefixTreeWidget::menuUmount_Click(void){
       return;
 }
 
+void PrefixTreeWidget::menuCreatePrefix_Click(void){
+    PrefixSettings settings;
+    if (settings.exec()==QDialog::Accepted){
+        emit(updateDatabaseConnections());
+        emit(prefixIndexChanged(settings.getPrefixName()));
+    }
+    return;
+}
+
 void PrefixTreeWidget::menuConfigurePrefix_Click(void){
     PrefixSettings settings(this->prefixName);
     if (settings.exec()==QDialog::Accepted){
@@ -644,6 +665,22 @@ void PrefixTreeWidget::menuSetupPrefix_Click(void){
         emit(updateDatabaseConnections());
     }
     return;
+}
+
+void PrefixTreeWidget::menuDeletePrefix_Click(void){
+    if (this->prefixName=="Default"){
+        QMessageBox::warning(this, tr("Error"), tr("Sorry, you can't delete Default prefix."), QMessageBox::Ok);
+        return;
+    }
+
+    if(QMessageBox::warning(this, tr("Warning"),	tr("Do you really wish to delete prefix named \"%1\" and all associated icons?").arg(prefixName), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
+        if (db_icon.delIconsByPrefixName(this->prefixName))
+            if(db_dir.delDir(this->prefixName))
+                db_prefix.delByName(this->prefixName);
+
+        emit(updateDatabaseConnections());
+    }
+    emit(prefixIndexChanged("Default"));
 }
 
 void PrefixTreeWidget::xdgOpenPrefixDir_Click(void){
