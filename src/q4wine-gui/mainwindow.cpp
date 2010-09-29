@@ -795,10 +795,7 @@ void MainWindow::mainRun_Click(){
 
     Run run;
     run.prepare(cbPrefixes->currentText());
-
-    if (run.exec()==QDialog::Accepted)
-        CoreLib->runWineBinary(run.execObj, cbPrefixes->currentText());
-
+    run.exec();
     return;
 }
 
