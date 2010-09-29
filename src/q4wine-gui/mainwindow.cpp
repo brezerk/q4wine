@@ -1120,9 +1120,7 @@ void MainWindow::messageReceived(const QString message){
 
             Run run;
             run.prepare(cbPrefixes->currentText(), wrkDir, "", "", "", "", "", "", 0, message);
-
-            if (run.exec()==QDialog::Accepted)
-                CoreLib->runWineBinary(run.execObj, cbPrefixes->currentText());
+            run.exec();
         }
     }
 
