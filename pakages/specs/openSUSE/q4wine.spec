@@ -1,31 +1,31 @@
 #
-# spec file for package q4wine (Version 0.118)
+# spec file for package q4wine (Version 0.120)
 #
 # Copyright (c) 2009, 2010 Kyrill Detinov
 # This file and all modifications and additions to the pristine
 # package are under the same license as the package itself.
 #
 
-# norootforbuild
-
-# Do we use icoutils to extract icons from M$ .exe and .dll files? [0,1]
-%define with_icons 1
-
 Name:           q4wine
-Version:	0.118
-Release:	0
-URL:		http://q4wine.brezblock.org.ua/
-License:	GPLv3
-Source:		%{name}-%{version}.tar.bz2
-Group:		System/Emulators/PC
-Summary:	Qt4 GUI for WINE
+Version:        0.120
+Release:        0
+URL:            http://q4wine.brezblock.org.ua/
+License:        GPLv3
+Source:         %{name}-%{version}.tar.bz2
+Group:          System/Emulators/PC
+Summary:        Qt4 GUI for WINE
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-BuildRequires:  libqt4-devel >= 4.4.1 cmake >= 2.6 update-desktop-files fdupes
-Requires:	wine sudo sqlite3 fuseiso
-%if %{with_icons}
+BuildRequires:  libqt4-devel
+BuildRequires:  cmake
+BuildRequires:  fuseiso
 BuildRequires:  icoutils
-Requires:	icoutils
-%endif
+BuildRequires:  update-desktop-files
+BuildRequires:  fdupes
+Requires:       wine
+Requires:       sudo
+Requires:       sqlite3
+Requires:       fuseiso
+Requires:       icoutils
 
 %description
 Q4Wine is an Qt4-based GUI for WINE. It will help you to manage wine prefixes
@@ -37,12 +37,14 @@ General features:
 - Easy creating, deleting and managing prefixes (WINEPREFIX).
 - Easy controlling for wine process.
 - Autostart icons support.
-- Easy CD-image use.
+- Easy cd-image use.
 - You can extract icons from PE files (.exe .dll).
 - Easy backup and restore for managed prefixes.
 - Wine AppDB browser.
 - Logging subsystem.
 - Winetricks support.
+
+
 
 Authors:
 --------
@@ -54,22 +56,18 @@ Authors:
 %build
 %{__mkdir} build
 cd build
-%if %{with_icons}
-cmake .. -DCMAKE_INSTALL_PREFIX:PATH=/usr -DWITH_WINETRIKS=ON
-%else
-cmake .. -DCMAKE_INSTALL_PREFIX:PATH=/usr -DWITH_WINETRIKS=ON -DWITH_ICOTOOLS=OFF
-%endif
-%{__make} %{?jobs:-j %jobs}
+cmake .. -DCMAKE_INSTALL_PREFIX=%{_prefix} -DWITH_WINETRIKS=ON
+%{__make} %{?_smp_mflags}
 
 %install
 pushd build
 %{makeinstall}
 popd
 %fdupes -s %{buildroot}
-%suse_update_desktop_file -i %{name}
+%suse_update_desktop_file %{name}
 
 %clean
-[ %{buildroot} != "/" ] && %{__rm} -rf %{buildroot}
+%{__rm} -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
@@ -77,8 +75,10 @@ popd
 %{_datadir}/%{name}
 %{_bindir}/*
 %{_libdir}/%{name}
-%{_mandir}/man1/*
+%doc %{_mandir}/man1/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
 
 %changelog
+
+# kate: space-indent on; indent-width 4;
