@@ -191,10 +191,10 @@ void PrefixControlWidget::prefixAdd_Click(){
 }
 
 void PrefixControlWidget::updateTableModel(){
-        model->setQuery("SELECT name, arch, path FROM prefix");
+    model->setQuery("SELECT name, arch, path FROM prefix ORDER BY name");
     model->setHeaderData(0, Qt::Horizontal, tr("Name"));
-        model->setHeaderData(1, Qt::Horizontal, tr("Architecture"));
-        model->setHeaderData(2, Qt::Horizontal, tr("Path"));
+    model->setHeaderData(1, Qt::Horizontal, tr("Architecture"));
+    model->setHeaderData(2, Qt::Horizontal, tr("Path"));
     prefixTable->setModel(model.get());
     prefixTable->resizeColumnsToContents();
     prefixTable->resizeRowsToContents();
