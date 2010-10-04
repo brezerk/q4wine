@@ -1,7 +1,6 @@
-%define	       version1 0.117-r6
 Name:          q4wine
-Version:       0.117_r6
-Release:       1mamba
+Version:       0.120
+Release:       2mamba
 Summary:       Q4Wine is a qt4 GUI for wine.
 Summary(it):   Q4Wine è un interfaccia grafica per wine
 Group:         Graphical Desktop/Applications/Utilities
@@ -10,13 +9,13 @@ Distribution:  openmamba
 Packager:      Ercole 'ercolinux' Carpanetto <ercole69@gmail.com>
 URL:           http://q4wine.brezblock.org.ua/
 #Source:	       http://q4wine.brezblock.org.ua/media/rc/q4wine-%{version}-rc1.tar.bz2
-Source:        http://ignum.dl.sourceforge.net/project/q4wine/q4wine/q4wine%20%{version1}/q4wine-%{version1}.tar.bz2 
+Source:        http://ignum.dl.sourceforge.net/project/q4wine/q4wine/q4wine%20%{version}/q4wine-%{version}.tar.bz2 
 #Source1:       it_it.ts
 #Source2:       q4wine.desktop
 #Source3:       en_us.ts
 License:       GPL
 BuildRequires: cmake
-BuildRoot:     %{_tmppath}/%{name}-%{version1}-root
+BuildRoot:     %{_tmppath}/%{name}-%{version}-root
 ## AUTOBUILDREQ-BEGIN
 BuildRequires: glibc-devel
 BuildRequires: libfontconfig-devel
@@ -71,7 +70,7 @@ Q4Wine è un'interfaccia grafica per wine. Permette di gestire i prefissi di win
     * e molto altro... Esploratelo! ;)
 
 %prep
-%setup -q -n %{name}-%{version1}
+%setup -q -n %{name}-%{version}
 #cp %{SOURCE1} src/i18n/
 #cp %{SOURCE3} src/i18n/
 #cp %{SOURCE2} ./
@@ -99,11 +98,13 @@ cmake -d build -DWITH_WINETRIKS=ON -DWITH_APPSDB=ON -DWITH_EMBEDDED_FUSEISO=ON -
 %{_datadir}/q4wine/i18n/*.qm
 %{_datadir}/q4wine/icons/*.png
 %{_datadir}/q4wine/theme/nuvola/data/*.png
-#%{_datadir}/q4wine/theme/nuvola/data/theme.info
-
+%{_mandir}/man1/*.1.gz
 %doc ChangeLog LICENSE README
 
 %changelog
+* Mon Oct 04 2010 Ercole 'ercolinux' Carpanetto <ercole69@gmail.com> 0.120-2mamba
+- ... add a changelog entry
+
 * Mon Mar 22 2010 Ercole 'ercolinux' Carpanetto <ercole69@gmail.com> 0.117-r6-1mamba
 - update to 0117-r6
 
