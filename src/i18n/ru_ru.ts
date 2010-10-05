@@ -245,7 +245,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/appsettings.cpp" line="52"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="53"/>
         <source>%1 settings</source>
-        <translation>%1 параметров</translation>
+        <translation>Параметры %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="260"/>
