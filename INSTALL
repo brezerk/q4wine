@@ -54,8 +54,10 @@ Installation
        By default, q4wine will install allfile into this directoryes:
 
        CMAKE_INSTALL_PREFIX      : /usr/local
-       DESKTOP_ENTRY_PATH        : /usr/local/share/applications/
-       PIXMAPS_ENTRY_PATH        : /usr/local/share/pixmaps/
+       DESKTOP_ENTRY_PATH        : /usr/local/share/applications
+       PIXMAPS_ENTRY_PATH        : /usr/local/share/pixmaps
+       MANPAGE_ENTRY_PATH        : /usr/local/share/man
+       LIBS_ENTRY_PATH           : /usr/local/lib/q4wine
 
        Optional buils falgs:     : Default | Possible
 
