@@ -57,7 +57,8 @@ Installation
        DESKTOP_ENTRY_PATH        : /usr/local/share/applications
        PIXMAPS_ENTRY_PATH        : /usr/local/share/pixmaps
        MANPAGE_ENTRY_PATH        : /usr/local/share/man
-       LIBS_ENTRY_PATH           : /usr/local/lib/q4wine
+       LIBS_ENTRY_PATH           : /usr/local/lib/q4wine   (for x86    systems)
+       LIBS_ENTRY_PATH           : /usr/local/lib64/q4wine (for x86_64 systems)
 
        Optional buils falgs:     : Default | Possible
 
