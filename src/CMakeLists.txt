@@ -28,7 +28,7 @@ option(WITH_WINEAPPDB "If ON, then build q4wine with wine appdb browser support"
 option(USE_BZIP2 "Use bzip2 to compress man pages" "OFF")
 option(USE_GZIP "Use gzip to compress man pages" "OFF")
 option(WITH_DBUS "If ON, then build q4wine with QtDBUS notifycation support" "ON")
-option(LANGUAGES "Language list" "en_us;ru_ru;uk_ua;pt_br;es_es;it_it;cs_cz")
+option(LINGUAS "Language list" "en_us;ru_ru;uk_ua;pt_br;es_es;it_it;cs_cz")
 
 MESSAGE("\n * Utility for management wine applications and prefixes")
 MESSAGE(" * (C) 2008-2010, brezblock core team")
@@ -132,9 +132,9 @@ IF( NOT LIBS_ENTRY_PATH )
     ENDIF (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES x86_64)
 ENDIF( NOT LIBS_ENTRY_PATH )
 
-IF( NOT LANGUAGES )
-    SET ( LANGUAGES en_us ru_ru uk_ua pt_br es_es it_it cs_cz )
-ENDIF( NOT LANGUAGES )
+IF( NOT LINGUAS )
+    SET ( LINGUAS en_us ru_ru uk_ua pt_br es_es it_it cs_cz )
+ENDIF( NOT LINGUAS )
 
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )
 
@@ -160,7 +160,7 @@ file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
     MESSAGE(STATUS "USE_GZIP                      : ${USE_GZIP}")
     MESSAGE(STATUS "WITH_DBUS                     : ${WITH_DBUS}\n")
 
-    MESSAGE(STATUS "LANGUAGES                     : ${LANGUAGES}\n")
+    MESSAGE(STATUS "LINGUAS                       : ${LINGUAS}\n")
 
 MESSAGE(STATUS "See INSTALL file for details and more info --\n")
 
