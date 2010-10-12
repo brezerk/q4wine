@@ -886,8 +886,8 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Explorador de Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="274"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="278"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="289"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="293"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="857"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="102"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="105"/>
@@ -900,8 +900,8 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="283"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="303"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="298"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="318"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1175"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2808"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="105"/>
@@ -913,7 +913,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="288"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="303"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1567"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1579"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="108"/>
@@ -1024,7 +1024,7 @@ p, li { white-space: pre-wrap; }
         <translation>Tema de color</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="318"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="333"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1915"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="126"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="805"/>
@@ -1032,7 +1032,7 @@ p, li { white-space: pre-wrap; }
         <translation>Driver de sonido</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="323"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="338"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2045"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="129"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="807"/>
@@ -1040,7 +1040,7 @@ p, li { white-space: pre-wrap; }
         <translation>Driver de ALSA</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="328"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="343"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2331"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="132"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="809"/>
@@ -1049,14 +1049,14 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="334"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="274"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="114"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="797"/>
         <source>File System</source>
         <translation>Sistema de archivos</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="338"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="278"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2438"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="117"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="799"/>
@@ -1064,7 +1064,7 @@ p, li { white-space: pre-wrap; }
         <translation>Dispositivos de Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="343"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="283"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2530"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="120"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="801"/>
@@ -1160,7 +1160,7 @@ p, li { white-space: pre-wrap; }
         <translation>Extensiones deshabilitadas:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="299"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="314"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="135"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="138"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="141"/>
@@ -1172,7 +1172,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="314"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="329"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="123"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="803"/>
         <source>Audio</source>
@@ -1194,8 +1194,8 @@ p, li { white-space: pre-wrap; }
         <translation>Deshabilitar cuadro de dialogo de cuelgue.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="293"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="308"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="323"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1615"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1637"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2994"/>

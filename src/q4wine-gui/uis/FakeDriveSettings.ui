@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>698</width>
-    <height>438</height>
+    <width>696</width>
+    <height>436</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -271,6 +271,21 @@
          </item>
          <item>
           <property name="text">
+           <string>File System</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Wine Drives</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Desktop Paths</string>
+           </property>
+          </item>
+         </item>
+         <item>
+          <property name="text">
            <string>Video</string>
           </property>
           <item>
@@ -326,21 +341,6 @@
           <item>
            <property name="text">
             <string>Misc Audio</string>
-           </property>
-          </item>
-         </item>
-         <item>
-          <property name="text">
-           <string>File System</string>
-          </property>
-          <item>
-           <property name="text">
-            <string>Wine Drives</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Desktop Paths</string>
            </property>
           </item>
          </item>
