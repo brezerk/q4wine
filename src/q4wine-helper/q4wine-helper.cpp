@@ -53,7 +53,14 @@ int main(int argc, char *argv[])
     }
 
     QTranslator qtt;
-    qtt.load(CoreLib->getTranslationLang(), QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME));
+
+#ifdef RELEASE
+    QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
+#else
+    QString i18nPath = QString("%1/i18n").arg(APP_BUILD);
+#endif
+
+    qtt.load(CoreLib->getTranslationLang(), i18nPath);
     app.installTranslator(&qtt);
 
     if (!CoreLib->isConfigured()){
