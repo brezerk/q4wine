@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.6)
 
 SET( Q4WINE_CLI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-cli/q4wine-cli.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-cli/q4wine-cli.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/dir.cpp
@@ -9,6 +10,7 @@ SET( Q4WINE_CLI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.cpp
 )
+
 
 SET( Q4WINE_CLI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-lib/q4wine-lib.h
@@ -19,7 +21,7 @@ SET( Q4WINE_CLI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/core/database/dir.h
     ${CMAKE_SOURCE_DIR}/src/core/database/icon.h
     ${CMAKE_SOURCE_DIR}/src/core/database/image.h
-    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h  
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
 )
 
 ADD_EXECUTABLE( q4wine-cli ${Q4WINE_CLI_SOURCES} ${Q4WINE_CLI_HEADERS} ${QM_I18N} ${Q4WINE_LIB_UI_HEADERS} ${Q4WINE_LIB_LIB_MOC_SOURCES} )

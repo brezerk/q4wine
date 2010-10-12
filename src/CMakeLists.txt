@@ -28,6 +28,7 @@ option(WITH_WINEAPPDB "If ON, then build q4wine with wine appdb browser support"
 option(USE_BZIP2 "Use bzip2 to compress man pages" "OFF")
 option(USE_GZIP "Use gzip to compress man pages" "OFF")
 option(WITH_DBUS "If ON, then build q4wine with QtDBUS notifycation support" "ON")
+option(LANGUAGES "Language list" "en_us;ru_ru;uk_ua;pt_br;es_es;it_it;cs_cz")
 
 MESSAGE("\n * Utility for management wine applications and prefixes")
 MESSAGE(" * (C) 2008-2010, brezblock core team")
@@ -131,6 +132,10 @@ IF( NOT LIBS_ENTRY_PATH )
     ENDIF (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES x86_64)
 ENDIF( NOT LIBS_ENTRY_PATH )
 
+IF( NOT LANGUAGES )
+    SET ( LANGUAGES en_us ru_ru uk_ua pt_br es_es it_it cs_cz )
+ENDIF( NOT LANGUAGES )
+
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )
 
 MESSAGE(STATUS "Q4Wine build options --\n")
@@ -153,7 +158,9 @@ file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
     MESSAGE(STATUS "WITH_WINEAPPDB                : ${WITH_WINEAPPDB}")
     MESSAGE(STATUS "USE_BZIP2                     : ${USE_BZIP2}")
     MESSAGE(STATUS "USE_GZIP                      : ${USE_GZIP}")
-    MESSAGE(STATUS "WITH_DBUS                     : ${WITH_DBUS}")
+    MESSAGE(STATUS "WITH_DBUS                     : ${WITH_DBUS}\n")
+
+    MESSAGE(STATUS "LANGUAGES                     : ${LANGUAGES}\n")
 
 MESSAGE(STATUS "See INSTALL file for details and more info --\n")
 
@@ -240,3 +247,27 @@ add_subdirectory(man1)
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     add_subdirectory(freebsd)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
+
+get_directory_property(Q4WINE_CLI_SOURCES DIRECTORY q4wine-cli DEFINITION Q4WINE_CLI_SOURCES)
+get_directory_property(Q4WINE_GUI_UI_SOURCES DIRECTORY q4wine-gui DEFINITION Q4WINE_GUI_UI_SOURCES)
+get_directory_property(Q4WINE_GUI_SOURCES DIRECTORY q4wine-gui DEFINITION Q4WINE_GUI_SOURCES)
+get_directory_property(Q4WINE_HELPER_SOURCES DIRECTORY q4wine-helper DEFINITION Q4WINE_HELPER_SOURCES)
+get_directory_property(Q4WINE_LIB_SOURCES DIRECTORY q4wine-helper DEFINITION Q4WINE_LIB_SOURCES)
+
+add_custom_target (
+    translations
+    COMMAND ${QT_LUPDATE_EXECUTABLE}
+    ${Q4WINE_GUI_SOURCES} ${Q4WINE_GUI_UI_SOURCES}
+    ${PLUGINS_GUI_SOURCES} ${PLUGINS_GUI_UI_SOURCES}
+    ${Q4WINE_CLI_SOURCES}
+    ${Q4WINE_HELPER_SOURCES}
+    -ts ${Q4WINE_I18N_SOURCES} -I${CMAKE_CURRENT_BINARY_DIR}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+add_custom_command (
+    TARGET translations
+    COMMAND ${QT_LRELEASE_EXECUTABLE} ${Q4WINE_I18N_SOURCES}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
