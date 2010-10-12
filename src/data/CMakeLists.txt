@@ -11,4 +11,6 @@ SET( ICON_PIXMAPS
     ${CMAKE_SOURCE_DIR}/src/data/wineconsole.png
 )
 
-install(FILES ${ICON_PIXMAPS} DESTINATION  ${CMAKE_INSTALL_PREFIX}/share/q4wine/icons)
+IF( RELEASE )
+    install(FILES ${ICON_PIXMAPS} DESTINATION  ${CMAKE_INSTALL_PREFIX}/share/q4wine/icons)
+ENDIF( RELEASE )

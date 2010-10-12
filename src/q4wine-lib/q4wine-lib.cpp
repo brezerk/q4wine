@@ -337,7 +337,13 @@ QPixmap corelib::loadPixmap(QString iconName){
 QString corelib::getTranslationLang(){
     QTranslator qtt;
 
+#ifdef RELEASE
     QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
+#else
+    QString i18nPath = QString("%1/i18n").arg(APP_BUILD);
+#endif
+
+
 
 #ifdef DEBUG
     qDebug()<<"[ii] i18n path: "<<i18nPath;
@@ -826,7 +832,11 @@ QStringList corelib::getCdromDevices(void) const{
         }
 
         bool corelib::runWineBinary(const ExecObject execObj, QString prefix_name, bool detach){
+#ifdef RELEASE
             QString binary = QString("%1/bin/q4wine-helper").arg(APP_PREF);
+#else
+            QString binary = QString("%1/q4wine-helper/q4wine-helper").arg(APP_BUILD);
+#endif
             QStringList args;
 
             args.append("--prefix");

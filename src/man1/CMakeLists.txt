@@ -38,15 +38,20 @@ IF (ARC)
          MESSAGE(STATUS "    ${ARC} page ${MAN_PAGE}")
     endforeach()
 
+IF( RELEASE )
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/man1 DESTINATION
     ${MANPAGE_ENTRY_PATH} FILES_MATCHING PATTERN "*.1.${ARC_SUFF}"
     PATTERN "CMakeFiles" EXCLUDE)
+ENDIF( RELEASE )
 
  ELSE (ARC)
     MESSAGE(STATUS "Compresser flags (USE_BZIP2 or USE_GZIP) not set --\n")
     MESSAGE(STATUS "Installing not compressed man pages --\n")
 
+IF( RELEASE )
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/man1 DESTINATION
     ${MANPAGE_ENTRY_PATH} FILES_MATCHING PATTERN "*.1"
     PATTERN "CMakeFiles" EXCLUDE)
+ENDIF( RELEASE )
+
  ENDIF (ARC)

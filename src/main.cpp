@@ -47,7 +47,7 @@
 
 int main(int argc, char *argv[])
 {
-	QtSingleApplication app(argc, argv);
+    QtSingleApplication app(argc, argv);
     QTextStream QErr(stderr);
 
     QString exec_binary;
@@ -60,32 +60,40 @@ int main(int argc, char *argv[])
     }
 
     if (app.sendMessage(""))
-		return 0;
+        return 0;
 
-	//! This is need for libq4wine-core.so import;
-	typedef void *CoreLibPrototype (bool);
+    //! This is need for libq4wine-core.so import;
+    typedef void *CoreLibPrototype (bool);
     CoreLibPrototype *CoreLibClassPointer;
     std::auto_ptr<corelib> CoreLib;
-	QLibrary libq4wine;
+    QLibrary libq4wine;
 
-	// Loading libq4wine-core.so
-	libq4wine.setFileName("libq4wine-core");
+    // Loading libq4wine-core.so
+    libq4wine.setFileName("libq4wine-core");
 
-	if (!libq4wine.load()){
-		libq4wine.load();
-	}
+    if (!libq4wine.load()){
+        libq4wine.load();
+    }
 
-	// Getting corelib calss pointer
-	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    // Getting corelib calss pointer
+    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-	if (!CoreLib.get()){
+    if (!CoreLib.get()){
         QErr<<"[EE] Can't load shared library."<<endl;
-		return -1;
-	}
+        return -1;
+    }
 
     QTranslator qtt;
-    qtt.load(CoreLib->getTranslationLang(), QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME));
+
+#ifdef RELEASE
+    QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
+#else
+    QString i18nPath = QString("%1/i18n").arg(APP_BUILD);
+#endif
+
+
+    qtt.load(CoreLib->getTranslationLang(), i18nPath);
     app.installTranslator(&qtt);
 
     if (!CoreLib->checkDirs()){
@@ -107,45 +115,45 @@ int main(int argc, char *argv[])
         }
     }
 
-	QTextStream Qcout(stdout);
-	int result, startState=0;
+    QTextStream Qcout(stdout);
+    int result, startState=0;
 
-	if (app.arguments().count()>1){
+    if (app.arguments().count()>1){
         if ((app.arguments().at(1)=="--version") or (app.arguments().at(1)=="-v")){
-			Qcout<<QString("%1 %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
-			Qcout<<QString("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
-			Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
-			Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
-			Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
+            Qcout<<QString("%1 %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
+            Qcout<<QString("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
+            Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
+            Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
+            Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
             CoreLib->getBuildFlags();
-			Qcout<<QObject::tr("Author: %1.").arg("Malakhov Alexey aka John Brezerk")<<endl;
-			return 0;
+            Qcout<<QObject::tr("Author: %1.").arg("Malakhov Alexey aka John Brezerk")<<endl;
+            return 0;
         } else if ((app.arguments().at(1)=="--minimize") or (app.arguments().at(1)=="-m")) {
-			startState = 1;
+            startState = 1;
         } else if ((app.arguments().at(1)=="--binary") or (app.arguments().at(1)=="-b")) {
             //startState = 1;
         } else {
-			Qcout<<QObject::tr("Usage:")<<endl;
+            Qcout<<QObject::tr("Usage:")<<endl;
             Qcout<<QString("  %1 -b <unix_path_to_windown_binary>").arg(APP_SHORT_NAME)<<endl;
             Qcout<<QObject::tr("  %1 [KEY]...").arg(APP_SHORT_NAME)<<endl;
-			Qcout<<QObject::tr("GUI utility for wine applications and prefixes management.")<<endl<<endl;
-			Qcout<<QObject::tr("KEYs list:")<<endl;
-			Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
-			Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<QObject::tr("GUI utility for wine applications and prefixes management.")<<endl<<endl;
+            Qcout<<QObject::tr("KEYs list:")<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  -b,  --binary"<<QObject::tr("Open q4wine run dialog for windows binary")<<qSetFieldWidth(0)<<endl;
-			Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --minimize"<<QObject::tr("minimize %1 main window on startup").arg(APP_SHORT_NAME)<<qSetFieldWidth(0)<<endl;
-			Qcout<<endl;
-			Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
-			Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_SHORT_NAME).arg(APP_WEBSITTE)<<endl;
-			Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
-			return 0;
-		}
-	}
+            Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --minimize"<<QObject::tr("minimize %1 main window on startup").arg(APP_SHORT_NAME)<<qSetFieldWidth(0)<<endl;
+            Qcout<<endl;
+            Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
+            Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_SHORT_NAME).arg(APP_WEBSITTE)<<endl;
+            Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
+            return 0;
+        }
+    }
 
     MainWindow mainWin(startState, exec_binary);
-	app.setActivationWindow(&mainWin);
-	QObject::connect(&app, SIGNAL(messageReceived(const QString&)), &mainWin, SLOT(messageReceived(const QString&)));
-	result = app.exec();
-	db.close();
-	return result;
+    app.setActivationWindow(&mainWin);
+    QObject::connect(&app, SIGNAL(messageReceived(const QString&)), &mainWin, SLOT(messageReceived(const QString&)));
+    result = app.exec();
+    db.close();
+    return result;
 }

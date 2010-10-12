@@ -21,7 +21,8 @@ endif(POLICY CMP0011)
 # which point to directories outside the build tree to the install RPATH
 #SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
-option(DEBUG "If ON, then build q4wine with icoutils support use it in debug or bug report cases" "OFF")
+option(DEBUG "If ON, then build q4wine with icoutils support. Use it in debug or bug report cases" "OFF")
+option(RELEASE "If OFF, then force q4wine to use APP_BUILD as root. Use it development cases" "ON")
 option(WITH_ICOUTILS "If ON, then build q4wine with icoutils support" "ON")
 option(WITH_EMBEDDED_FUSEISO "If ON, then build embedded fuseiso (q4wine-mount) binary" "OFF")
 option(WITH_WINEAPPDB "If ON, then build q4wine with wine appdb browser support" "ON")
@@ -143,7 +144,7 @@ file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_ARCH \"${CMAKE_HOST_SYSTEM
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_HOST \"${CMAKE_SYSTEM_NAME}\"\n" )
 
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_VERS \"${APP_VERSION}\"\n")
-      MESSAGE(STATUS "Version                       : ${APP_VERSION}")
+    MESSAGE(STATUS "Version                       : ${APP_VERSION}")
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_PREF \"${CMAKE_INSTALL_PREFIX}\"\n" )
     MESSAGE(STATUS "CMAKE_INSTALL_PREFIX          : ${CMAKE_INSTALL_PREFIX}")
     MESSAGE(STATUS "DESKTOP_ENTRY_PATH            : ${DESKTOP_ENTRY_PATH}")
@@ -153,6 +154,10 @@ file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_PREF \"${CMAKE_INSTALL_PRE
 file(APPEND ${CMAKE_SOURCE_DIR}/config.h "\n#endif\n" )
 
     MESSAGE(STATUS "DEBUG                         : ${DEBUG}")
+    MESSAGE(STATUS "RELEASE                       : ${RELEASE}")
+IF( NOT RELEASE )
+    file(APPEND ${CMAKE_SOURCE_DIR}/config.h "#define APP_BUILD \"${CMAKE_CURRENT_BINARY_DIR}\"\n" )
+ENDIF ( NOT RELEASE )
     MESSAGE(STATUS "WITH_ICOUTILS                 : ${WITH_ICOUTILS}")
     MESSAGE(STATUS "WITH_EMBEDDED_FUSEISO         : ${WITH_EMBEDDED_FUSEISO}")
     MESSAGE(STATUS "WITH_WINEAPPDB                : ${WITH_WINEAPPDB}")
@@ -225,7 +230,7 @@ SET ( Q4WINE_HEADERS_DIR
 
 INCLUDE_DIRECTORIES( ${Q4WINE_HEADERS_DIR} ${CMAKE_BINARY_DIR} )
 
-include(i18n/CMakeLists.txt)
+#include(i18n/CMakeLists.txt)
 add_subdirectory(q4wine-lib)
 add_subdirectory(q4wine-cli)
 
@@ -243,31 +248,8 @@ add_subdirectory(data)
 add_subdirectory(theme)
 add_subdirectory(icons)
 add_subdirectory(man1)
+add_subdirectory(i18n)
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     add_subdirectory(freebsd)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
-
-get_directory_property(Q4WINE_CLI_SOURCES DIRECTORY q4wine-cli DEFINITION Q4WINE_CLI_SOURCES)
-get_directory_property(Q4WINE_GUI_UI_SOURCES DIRECTORY q4wine-gui DEFINITION Q4WINE_GUI_UI_SOURCES)
-get_directory_property(Q4WINE_GUI_SOURCES DIRECTORY q4wine-gui DEFINITION Q4WINE_GUI_SOURCES)
-get_directory_property(Q4WINE_HELPER_SOURCES DIRECTORY q4wine-helper DEFINITION Q4WINE_HELPER_SOURCES)
-get_directory_property(Q4WINE_LIB_SOURCES DIRECTORY q4wine-helper DEFINITION Q4WINE_LIB_SOURCES)
-
-add_custom_target (
-    translations
-    COMMAND ${QT_LUPDATE_EXECUTABLE}
-    ${Q4WINE_GUI_SOURCES} ${Q4WINE_GUI_UI_SOURCES}
-    ${PLUGINS_GUI_SOURCES} ${PLUGINS_GUI_UI_SOURCES}
-    ${Q4WINE_CLI_SOURCES}
-    ${Q4WINE_HELPER_SOURCES}
-    -ts ${Q4WINE_I18N_SOURCES} -I${CMAKE_CURRENT_BINARY_DIR}
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-)
-
-add_custom_command (
-    TARGET translations
-    COMMAND ${QT_LRELEASE_EXECUTABLE} ${Q4WINE_I18N_SOURCES}
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-)
-

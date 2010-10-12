@@ -49,15 +49,17 @@
 #cmakedefine WITH_WINEAPPDB
 
 #cmakedefine DEBUG
+#cmakedefine RELEASE
 
 #cmakedefine WITH_DBUS
 
 
 
 /*
- * Note APP_VERS and APP_PREF automatycaly generates by cmake
+ * Note APP_VERS, APP_PREF and APP_BUILD automatycaly generates by cmake
  *
- * APP_VERS -- Application version
- * APP_PREF -- Application install prefix (Used for trak translations, help and thems files)
+ * APP_VERS  -- Application version
+ * APP_PREF  -- Application install prefix (Used for trak translations, help and thems files)
+ * APP_BUILD -- Application build root (Used for trak translations and themes while RELEASE flag not set)
  */
 
