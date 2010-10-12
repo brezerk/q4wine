@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 2.6)
 
 SET( Q4WINE_CLI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-cli/q4wine-cli.cpp
-    ${CMAKE_SOURCE_DIR}/src/q4wine-cli/q4wine-cli.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/dir.cpp

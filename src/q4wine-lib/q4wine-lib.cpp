@@ -493,6 +493,11 @@ void corelib::getBuildFlags(){
     QTextStream Qcout(stdout);
     Qcout<<QObject::tr("Buildtime flags are:")<<endl<<endl;
     Qcout<<qSetFieldWidth(25)<<left<<" CMAKE_INSTALL_PREFIX"<<APP_PREF<<qSetFieldWidth(0)<<endl<<endl;
+#ifdef RELEASE
+    Qcout<<qSetFieldWidth(25)<<left<<" RELEASE"<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+    Qcout<<qSetFieldWidth(25)<<left<<" RELEASE"<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
 #ifdef DEBUG
     Qcout<<qSetFieldWidth(25)<<left<<" DEBUG"<<"ON"<<qSetFieldWidth(0)<<endl;
 #else
