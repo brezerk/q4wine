@@ -314,11 +314,20 @@ void FakeDriveSettings::cmdOk_Click(){
             }
         }
 
-        if (!file.link(txtWineDesktop->text(), desktopFolder)){
-            QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktop->text()).arg(desktopFolder));
-            QApplication::restoreOverrideCursor();
-            reject();
-            return;
+        if (txtWineDesktop->text().isEmpty()){
+            if (!file.open(QIODevice::WriteOnly)){
+                QMessageBox::warning(this, tr("Error"), tr("Can't create file \"%1\"").arg(desktopFolder));
+                QApplication::restoreOverrideCursor();
+                reject();
+                return;
+            }
+        } else {
+            if (!file.link(txtWineDesktop->text(), desktopFolder)){
+                QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktop->text()).arg(desktopFolder));
+                QApplication::restoreOverrideCursor();
+                reject();
+                return;
+            }
         }
 
         // Doc folder
@@ -1219,35 +1228,40 @@ void FakeDriveSettings::loadSettings(){
         if (fileinfo.isSymLink()){
             txtWineDesktop->setText(fileinfo.symLinkTarget());
         } else {
-            txtWineDesktop->setText(fileinfo.filePath());
+            //txtWineDesktop->setText(fileinfo.filePath());
+            txtWineDesktop->setText("");
         }
 
         fileinfo.setFile(QString("%1/%2").arg(prefixPath).arg(this->desktopDocuments));
         if (fileinfo.isSymLink()){
             txtWineDesktopDoc->setText(fileinfo.symLinkTarget());
         } else {
-            txtWineDesktopDoc->setText(fileinfo.filePath());
+            //txtWineDesktopDoc->setText(fileinfo.filePath());
+            txtWineDesktopDoc->setText("");
         }
 
         fileinfo.setFile(QString("%1/%2").arg(prefixPath).arg(this->desktopMusic));
         if (fileinfo.isSymLink()){
             txtWineDesktopMus->setText(fileinfo.symLinkTarget());
         } else {
-            txtWineDesktopMus->setText(fileinfo.filePath());
+            //txtWineDesktopMus->setText(fileinfo.filePath());
+            txtWineDesktopMus->setText("");
         }
 
         fileinfo.setFile(QString("%1/%2").arg(prefixPath).arg(this->desktopPictures));
         if (fileinfo.isSymLink()){
             txtWineDesktopPic->setText(fileinfo.symLinkTarget());
         } else {
-            txtWineDesktopPic->setText(fileinfo.filePath());
+            //txtWineDesktopPic->setText(fileinfo.filePath());
+            txtWineDesktopPic->setText("");
         }
 
         fileinfo.setFile(QString("%1/%2").arg(prefixPath).arg(this->desktopVideos));
         if (fileinfo.isSymLink()){
             txtWineDesktopVid->setText(fileinfo.symLinkTarget());
         } else {
-            txtWineDesktopVid->setText(fileinfo.filePath());
+            //txtWineDesktopVid->setText(fileinfo.filePath());
+            txtWineDesktopVid->setText("");
         }
     }
 }

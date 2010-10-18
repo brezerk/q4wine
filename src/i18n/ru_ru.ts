@@ -875,7 +875,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="384"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="67"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="93"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="783"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="792"/>
         <source>General</source>
         <translation>Основные</translation>
     </message>
@@ -886,9 +886,9 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="102"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="105"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="111"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="789"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="791"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="795"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="798"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="800"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="804"/>
         <source>Video</source>
         <translation>Видео</translation>
     </message>
@@ -899,8 +899,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2808"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="105"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="138"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="791"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="813"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="800"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="822"/>
         <source>Direct 3D</source>
         <translation>Direct 3D</translation>
     </message>
@@ -909,7 +909,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1567"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1579"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="108"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="793"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="802"/>
         <source>OpenGL</source>
         <translation>OpenGL</translation>
     </message>
@@ -994,7 +994,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="716"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="738"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="99"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="787"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="796"/>
         <source>Wine Browsers</source>
         <translation>Браузеры Wine</translation>
     </message>
@@ -1002,7 +1002,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="263"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="647"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="96"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="785"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="794"/>
         <source>Color Theme</source>
         <translation>Цветовая схема</translation>
     </message>
@@ -1010,7 +1010,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="333"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1915"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="126"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="805"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="814"/>
         <source>Sound Driver</source>
         <translation>Звуковой драйвер</translation>
     </message>
@@ -1018,7 +1018,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="338"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2045"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="129"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="807"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="816"/>
         <source>ALSA Driver</source>
         <translation>Драйвер ALSA</translation>
     </message>
@@ -1026,14 +1026,14 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="343"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2331"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="132"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="809"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="818"/>
         <source>Misc Audio</source>
         <translation>Другое аудио</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="274"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="114"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="797"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="806"/>
         <source>File System</source>
         <translation>Файловая система</translation>
     </message>
@@ -1041,7 +1041,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="278"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2438"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="117"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="799"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="808"/>
         <source>Wine Drives</source>
         <translation>Диски wine</translation>
     </message>
@@ -1049,7 +1049,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="283"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2530"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="120"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="801"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="810"/>
         <source>Desktop Paths</source>
         <translation>Пути к рабочим столам</translation>
     </message>
@@ -1168,16 +1168,16 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="135"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="138"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="141"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="811"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="813"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="815"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="820"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="822"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="824"/>
         <source>Input</source>
         <translation>Ввод</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="329"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="123"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="803"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="812"/>
         <source>Audio</source>
         <translation>Аудио</translation>
     </message>
@@ -1199,8 +1199,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2994"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="111"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="141"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="795"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="815"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="804"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="824"/>
         <source>X11 Driver</source>
         <translation>X11 Driver</translation>
     </message>
@@ -1327,19 +1327,20 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="286"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="299"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="310"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="318"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="328"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="336"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="346"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="354"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="364"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="372"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="382"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="390"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="921"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="954"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1304"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1312"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="319"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="326"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="337"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="345"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="355"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="363"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="373"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="381"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="391"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="399"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="930"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="963"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1318"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1326"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
@@ -1374,7 +1375,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="243"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="954"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="963"/>
         <source>Can&apos;t read desktop paths!</source>
         <translation>Не могу получить пути рабочего стола!</translation>
     </message>
@@ -1385,39 +1386,44 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="286"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="318"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="336"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="354"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="372"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="390"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="326"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="345"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="363"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="381"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="399"/>
         <source>Can&apos;t symlink &quot;%1&quot; to &quot;%2&quot;</source>
         <translation>Не могу создать символьную ссылку с &quot;%1&quot; на &quot;%2&quot;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="299"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1304"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1312"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1318"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1326"/>
         <source>Can&apos;t create dir: %1</source>
         <translation>Не могу создать каталог: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="310"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="328"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="346"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="364"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="382"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="337"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="355"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="373"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="391"/>
         <source>Can&apos;t remove dir: %1</source>
         <translation>Не могу удалить каталог: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1340"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1346"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="319"/>
+        <source>Can&apos;t create file &quot;%1&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1354"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1360"/>
         <source>Open File</source>
         <translation>Открыть файл</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1342"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1348"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1356"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1362"/>
         <source>Open Directory</source>
         <translation>Открыть каталог</translation>
     </message>
@@ -1435,14 +1441,14 @@ Make shure wine can access %2 temp directory.</source>
         <translation type="obsolete">Обновление дисков Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="848"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="858"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="857"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="867"/>
         <source>Joystick Axes Mappings</source>
         <translation>Карты осей джойстика</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="848"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="858"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="857"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="867"/>
         <source>Joystick axes mappings might be defined as:
 &quot;Joystick name&quot;=&quot;axes mapping&quot;
 
@@ -1459,7 +1465,7 @@ See help for details.</source>
 Смотрите помощь для получения информации.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="921"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="930"/>
         <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
         <translation>Извините, Вы не можете удалить или изменить диск C:. &lt;br&gt; Но вы можете сменить его в диалоге настройки префикса.</translation>
     </message>
