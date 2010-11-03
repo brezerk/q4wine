@@ -133,10 +133,10 @@ QString WineObject::createEnvString(){
                     env.append(QString(" WINEARCH='%1' ").arg(this->prefixArch));
 
         if (!this->programDebug.isEmpty())
-                        env.append(QString(" WINEDEBUG='%1'' ").arg(this->programDebug));
+                        env.append(QString(" WINEDEBUG='%1' ").arg(this->programDebug));
 
         if (!this->programDisplay.isEmpty())
-                        env.append(QString(" DISPLAY='%1'' ").arg(this->programDisplay));
+                        env.append(QString(" DISPLAY='%1' ").arg(this->programDisplay));
 
         if (!this->overrideDllList.isEmpty())
              env.append(QString(" WINEDLLOVERRIDES=%1 ").arg(this->overrideDllList));

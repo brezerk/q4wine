@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
     if (app.arguments().count()>1){
         if ((app.arguments().at(1)=="--version") or (app.arguments().at(1)=="-v")){
             Qcout<<QString("%1 %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
-            Qcout<<QString("(Copyright (C) 2008-2009, brezblock core team.")<<endl;
+            Qcout<<QString("(Copyright (C) 2008-2010, brezblock core team.")<<endl;
             Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
             Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
             Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
