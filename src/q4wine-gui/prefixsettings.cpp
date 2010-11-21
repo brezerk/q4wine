@@ -84,7 +84,9 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
     }
 
     if (!result.value("arch").isEmpty())
-        comboArchList->setCurrentIndex (comboArchList->findText(result.value("arch")));
+        comboArchList->setCurrentIndex(comboArchList->findText(result.value("arch")));
+    if (!result.value("mountpoint_windrive").isEmpty())
+        comboWinDrive->setCurrentIndex(comboWinDrive->findText(result.value("mountpoint_windrive")));
 
     txtPrefixName->setText(prefix_name);
     txtPrefixPath->setText(result.value("path"));
