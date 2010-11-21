@@ -1153,8 +1153,6 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 
             return this->runProcess(args, QObject::tr("Umounting..."), QObject::tr("Umounting point: %1").arg(mount_point));
-
-            return true;
         }
 
         bool corelib::runProcess(const QStringList args, const QString caption, const QString message) const{
