@@ -193,13 +193,12 @@ void PrefixSettings::cmdOk_Click(){
     }
 
     if (this->addNew){
-        // FIXME: insert the correct value
-        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), comboArchList->currentText(), ""))
+        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), comboArchList->currentText(), this->comboWinDrive->currentText()))
             reject();
 
         CoreLib->createPrefixDBStructure(txtPrefixName->text());
     } else {
-        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name, comboArchList->currentText(), ""))
+        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name, comboArchList->currentText(), this->comboWinDrive->currentText()))
             reject();
     }
 
