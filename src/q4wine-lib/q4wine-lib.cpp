@@ -1034,7 +1034,7 @@ QStringList corelib::getCdromDevices(void) const{
             mount_string.replace("%MOUNT_BIN%", getSetting("system", "mount").toString());
             mount_string.replace("%MOUNT_POINT%", this->getEscapeString(mount_point));
 #endif
-            QFile imageFile = QFile(image_name);
+            QFile imageFile(image_name);
 
 #ifdef _OS_LINUX_
             if ((image_name.contains("/") && (!image_name.contains(".iso", Qt::CaseInsensitive)) && (!image_name.contains(".nrg", Qt::CaseInsensitive)))) {
@@ -1049,9 +1049,9 @@ QStringList corelib::getCdromDevices(void) const{
                 qDebug()<<"[ii] corelib::mountImage:Linux image mount base string: "<<mount_string;
 #endif
                 if (!imageFile.exists()){
-                    QString imagePath = this->getEscapeString(this->db_image.getPath(image_name);
-                    mount_string.replace("%MOUNT_IMAGE%", imagePath);
-                    imageFile = QFile(imagePath);
+                    QString imagePath = this->db_image.getPath(image_name);
+                    mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(imagePath));
+                    imageFile.setFileName(imagePath);
                 } else {
                     mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(image_name));
                 }
@@ -1088,7 +1088,7 @@ QStringList corelib::getCdromDevices(void) const{
                     return success; //don't create the link, return true
                 }
                 //drive letter plus two colons links to the actual physical device (in this case the image)
-                QFile physicalDriveLink = QFile(prefixPath + '/' + "dosdevices/" + winDrive.toLower() + "::");
+                QFile physicalDriveLink(prefixPath + '/' + "dosdevices/" + winDrive.toLower() + "::");
                 if (physicalDriveLink.exists()){
                     if (!physicalDriveLink.remove()) {
                         //failed to delete, this is an error
@@ -1100,7 +1100,7 @@ QStringList corelib::getCdromDevices(void) const{
                 physicalDriveLink.link(imageFile.fileName());
                 
                 //make sure the drive points to the mountpoint
-                QFile mountPointLink = QFile(prefixPath + "/dosdevices/" + winDrive.toLower() + ":");
+                QFile mountPointLink(prefixPath + "/dosdevices/" + winDrive.toLower() + ":");
                 if (mountPointLink.exists() && mountPointLink.symLinkTarget() != mount_point){
                     if (!mountPointLink.remove()) {
                         //failed to delete, this is an error
