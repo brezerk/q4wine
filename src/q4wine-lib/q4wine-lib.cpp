@@ -988,8 +988,11 @@ QStringList corelib::getCdromDevices(void) const{
 
         bool corelib::mountImage(const QString image_name, const QString prefix_name){
 
-            this->umountImage(prefix_name);
-
+            if (!this->umountImage(prefix_name)){
+                this->showError(QObject::tr("Failed to unmount previously mounted image."));
+                //TODO: allow ignoring this
+                return false;
+            }
             QString mount_point=db_prefix.getMountPoint(prefix_name);
 #ifdef DEBUG
             qDebug()<<"[ii] corelib::mountImage: mount point: "<<mount_point;
