@@ -1121,7 +1121,7 @@ QStringList corelib::getCdromDevices(void) const{
 #ifdef DEBUG
                 qDebug()<<"[ii] corelib::umountImage: no mounted images found in mount point: "<<mount_point;
 #endif
-                return false;
+                return true;
             }
 
 #ifdef DEBUG
@@ -1205,8 +1205,9 @@ QStringList corelib::getCdromDevices(void) const{
 
             if (!myProcess.waitForFinished())
                 return false;
-
-            if (showLog){
+            int exitcode = myProcess.exitCode();
+            QProcess::ExitStatus exitStatus = myProcess.exitStatus();
+            if (showLog && exitcode != 0 || exitStatus == QProcess::CrashExit){
                 // Getting env LANG variable
                 QString lang=getenv("LANG");
                 lang=lang.split(".").at(1);
@@ -1222,9 +1223,9 @@ QStringList corelib::getCdromDevices(void) const{
                 if (!string.isEmpty()){
                     showError(QObject::tr("It seems the process crashed. STDERR log: %1").arg(string));
                     delete (&codec);
-                    return false;
                 }
                 delete (&codec);
+                return false;
             }
             return true;
         }
