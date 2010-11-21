@@ -1031,6 +1031,7 @@ QStringList corelib::getCdromDevices(void) const{
             mount_string.replace("%MOUNT_BIN%", getSetting("system", "mount").toString());
             mount_string.replace("%MOUNT_POINT%", this->getEscapeString(mount_point));
 #endif
+            QFile imageFile = QFile(image_name);
 
 #ifdef _OS_LINUX_
             if ((image_name.contains("/") && (!image_name.contains(".iso", Qt::CaseInsensitive)) && (!image_name.contains(".nrg", Qt::CaseInsensitive)))) {
@@ -1044,9 +1045,10 @@ QStringList corelib::getCdromDevices(void) const{
 #ifdef DEBUG
                 qDebug()<<"[ii] corelib::mountImage:Linux image mount base string: "<<mount_string;
 #endif
-
-                if (!QFile(image_name).exists()){
-                    mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(this->db_image.getPath(image_name)));
+                if (!imageFile.exists()){
+                    QString imagePath = this->getEscapeString(this->db_image.getPath(image_name);
+                    mount_string.replace("%MOUNT_IMAGE%", imagePath);
+                    imageFile = QFile(imagePath);
                 } else {
                     mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(image_name));
                 }
@@ -1071,7 +1073,42 @@ QStringList corelib::getCdromDevices(void) const{
 #ifdef DEBUG
             qDebug()<<"[ii] corelib::mountImage: mount args: "<<args;
 #endif
-            return this->runProcess(args, QObject::tr("Mounting..."),  QObject::tr("Mounting %1 into %2").arg(image_name).arg(mount_point));
+            bool success = this->runProcess(args, QObject::tr("Mounting..."),  QObject::tr("Mounting %1 into %2").arg(image_name).arg(mount_point));
+            if (success){
+                //create the symlink to the iso so that wine recognises the mountpoint as a CD-ROM
+                QString prefixPath = db_prefix.getPath(prefix_name);
+                QChar winDrive = db_prefix.getMountPointWindrive(prefix_name);
+                if (winDrive.isNull()){
+#ifdef DEBUG
+                    qDebug()<<"[ii] Prefix '" << prefix_name << "' does not have a Windows drive set for the mount operation";
+#endif
+                    return success; //don't create the link, return true
+                }
+                //drive letter plus two colons links to the actual physical device (in this case the image)
+                QFile physicalDriveLink = QFile(prefixPath + '/' + "dosdevices/" + winDrive.toLower() + "::");
+                if (physicalDriveLink.exists()){
+                    if (!physicalDriveLink.remove()) {
+                        //failed to delete, this is an error
+                        qDebug()<<"[EE] failed to remove drive symlink";
+                        return false;
+                    }
+                }
+                //drive link has been removed or didn't exist -> we can create the link now
+                physicalDriveLink.link(imageFile.fileName());
+                
+                //make sure the drive points to the mountpoint
+                QFile mountPointLink = QFile(prefixPath + "/dosdevices/" + winDrive.toLower() + ":");
+                if (mountPointLink.exists() && mountPointLink.symLinkTarget() != mount_point){
+                    if (!mountPointLink.remove()) {
+                        //failed to delete, this is an error
+                        qDebug()<<"[EE] failed to remove mountpoint drive symlink";
+                        return false;
+                    }
+                }
+                //drive link has been removed or didn't exist -> we can create the link now
+                mountPointLink.link(mount_point);
+            }
+            return success;
         }
 
         bool corelib::umountImage(const QString prefix_name){
