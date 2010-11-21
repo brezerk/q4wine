@@ -214,6 +214,7 @@ QChar Prefix::getMountPointWindrive(const QString prefix_name) const{
         }
     } else {
         qDebug()<<"SqlError: "<<query.lastError();
+		return QChar();
     }
     query.clear();
     return value[0];
