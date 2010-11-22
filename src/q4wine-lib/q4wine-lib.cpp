@@ -686,19 +686,8 @@ QStringList corelib::getCdromDevices(void) const{
                             return QString("cant read %1").arg(filename);
                         }
                     } else if (image.contains("loop")){
-                        if (!this->getSetting("system", "sudo").toString().isEmpty()){
-                            arguments << "losetup" << image;
-                            QProcess myProcess;
-                            myProcess.start(this->getSetting("system", "sudo").toString(), arguments);
-                            if (!myProcess.waitForFinished()){
-                                qDebug() << "Make failed:" << myProcess.errorString();
-                                return QString("can't run %1").arg(arguments.at(0));
-                            } else {
-                                image = myProcess.readAll();
-                                qDebug()<<"[ii] loop: "<<arguments;
-                                return image.split("/").last().mid(0, image.split("/").last().length()-2);
-                            }
-                        }
+                        //FIXME: find a better solution
+                        return "loop";
                     } else {
                         return image;
                     }
