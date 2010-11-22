@@ -1077,7 +1077,7 @@ QStringList corelib::getCdromDevices(void) const{
                     return success; //don't create the link, return true
                 }
                 //drive letter plus two colons links to the actual physical device (in this case the image)
-                QFile physicalDriveLink(prefixPath + '/' + "dosdevices/" + winDrive.toLower() + "::");
+                QFile physicalDriveLink(prefixPath + "/dosdevices/" + winDrive.toLower() + "::");
                 if (physicalDriveLink.exists()){
                     if (!physicalDriveLink.remove()) {
                         //failed to delete, this is an error
