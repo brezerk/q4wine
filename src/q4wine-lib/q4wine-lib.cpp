@@ -1057,9 +1057,9 @@ QStringList corelib::getCdromDevices(void) const{
                 }
 
                 if (image_name.right(3)=="nrg"){
-                    mount_string.replace("%MOUNT_OPTIONS%", "-o  loop,offset=307200");
+                    mount_string.replace("%MOUNT_OPTIONS%", "-o ro,loop,offset=307200");
                 } else {
-                    mount_string.replace("%MOUNT_OPTIONS%", "-o  loop");
+                    mount_string.replace("%MOUNT_OPTIONS%", "-o ro,loop");
                 }
             }
 
