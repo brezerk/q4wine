@@ -2983,36 +2983,36 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
 <context>
     <name>PrefixSettings</name>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="118"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="119"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="120"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="121"/>
         <source>Add new Prefix</source>
         <translation>Přidat novou předponu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="178"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="184"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="180"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="186"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="178"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="180"/>
         <source>Please, enter prefix name</source>
         <translation>Zadejte, prosím, název předpony</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="184"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="186"/>
         <source>Sorry, but prefix named %1 already exists.</source>
         <translation>Promiňte, ale předpona s názvem %1 již existuje.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="225"/>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="227"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="229"/>
         <source>Open File</source>
         <translation>Otevřít soubor</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="236"/>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="238"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="240"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
@@ -3059,6 +3059,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="381"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="418"/>
         <source>Device:</source>
         <translation>Zařízení:</translation>
     </message>
@@ -3068,55 +3069,170 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>&lt;žádné&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="418"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="426"/>
+        <source>D:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="431"/>
+        <source>E:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="436"/>
+        <source>F:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="441"/>
+        <source>G:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="446"/>
+        <source>H:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="451"/>
+        <source>I:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="456"/>
+        <source>J:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="461"/>
+        <source>K:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="466"/>
+        <source>L:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="471"/>
+        <source>M:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="476"/>
+        <source>N:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="481"/>
+        <source>O:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="486"/>
+        <source>P:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="491"/>
+        <source>Q:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="496"/>
+        <source>R:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="501"/>
+        <source>S:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="506"/>
+        <source>T:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="511"/>
+        <source>U:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="516"/>
+        <source>V:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="521"/>
+        <source>W:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="526"/>
+        <source>X:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="531"/>
+        <source>Y:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="536"/>
+        <source>Z:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="565"/>
         <source>Mount point:</source>
         <translation>Přípojný bod:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="461"/>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="470"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="608"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="617"/>
         <source>Wine settings</source>
         <translation>Nastavení wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="485"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="632"/>
         <source>If you wish to use different Wine versions, you may wish set custom Wine paths here.
 Note: leave it blank for default.</source>
         <translation>Pokud chcete použít jiné verze wine, můžete nastavit vlastní cesty k wine zde.
 Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="724"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="871"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="517"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="664"/>
         <source>Bin:</source>
         <translation>Spustitelný soubor:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="561"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="708"/>
         <source>Server:</source>
         <translation>Server:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="605"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="752"/>
         <source>Loader:</source>
         <translation>Zavaděč:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="649"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="796"/>
         <source>Libs:</source>
         <translation>Knihovny:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="697"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="844"/>
         <source>Help</source>
         <translation>Nápověda</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="717"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="864"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
@@ -3571,14 +3687,14 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/database/prefix.cpp" line="324"/>
-        <location filename="../core/database/prefix.cpp" line="391"/>
+        <location filename="../core/database/prefix.cpp" line="345"/>
+        <location filename="../core/database/prefix.cpp" line="418"/>
         <source>&lt;none&gt;</source>
         <translation>&lt;žádný&gt;</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="331"/>
-        <location filename="../core/database/prefix.cpp" line="398"/>
+        <location filename="../core/database/prefix.cpp" line="352"/>
+        <location filename="../core/database/prefix.cpp" line="425"/>
         <source>Default</source>
         <translation>Výchozí</translation>
     </message>
