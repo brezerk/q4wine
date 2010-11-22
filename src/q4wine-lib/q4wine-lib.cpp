@@ -1086,7 +1086,7 @@ QStringList corelib::getCdromDevices(void) const{
                     }
                 }
                 //drive link has been removed or didn't exist -> we can create the link now
-                physicalDriveLink.link(imageFile.fileName());
+                imageFile.link(physicalDriveLink.fileName());
                 
                 //make sure the drive points to the mountpoint
                 QFile mountPointLink(prefixPath + "/dosdevices/" + winDrive.toLower() + ":");
@@ -1098,7 +1098,7 @@ QStringList corelib::getCdromDevices(void) const{
                     }
                 }
                 //drive link has been removed or didn't exist -> we can create the link now
-                mountPointLink.link(mount_point);
+                QFile::link(mount_point, mountPointLink.fileName());
             }
             return success;
         }
