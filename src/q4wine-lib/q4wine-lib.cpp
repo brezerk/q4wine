@@ -1196,7 +1196,7 @@ QStringList corelib::getCdromDevices(void) const{
                 return false;
             int exitcode = myProcess.exitCode();
             QProcess::ExitStatus exitStatus = myProcess.exitStatus();
-            if (showLog && exitcode != 0 || exitStatus == QProcess::CrashExit){
+            if (showLog && (exitcode != 0 || exitStatus == QProcess::CrashExit)){
                 // Getting env LANG variable
                 QString lang=getenv("LANG");
                 lang=lang.split(".").at(1);
