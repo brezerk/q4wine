@@ -243,6 +243,10 @@ IF (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
     IF (QTSINGLEAPPLIB_INCLUDE_DIR AND QTSINGLEAPPLIB )
         MESSAGE(STATUS "     library : ${QTSINGLEAPPLIB}")
         MESSAGE(STATUS " include dir : ${QTSINGLEAPPLIB_INCLUDE_DIR}")
+        SET ( Q4WINE_HEADERS_DIR
+            ${Q4WINE_HEADERS_DIR}
+            ${QTSINGLEAPPLIB_INCLUDE_DIR}
+        )
     ELSE (QTSINGLEAPPLIB_INCLUDE_DIR AND QTSINGLEAPPLIB )
         MESSAGE(STATUS "     library : NOT FOUND!\n")
         MESSAGE(FATAL_ERROR "Please install SingleApplication Library or disable system qtsingleapp support by adding -DWITH_SYSTEM_SINGLEAPP="OFF" option to cmake")
