@@ -40,7 +40,7 @@
 
 #include "db.h"
 
-#include "qtsingleapplication.h"
+#include "QtSingleApplication"
 
 //q4wine lib
 #include "q4wine-lib.h"

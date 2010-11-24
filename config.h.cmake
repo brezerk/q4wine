@@ -46,6 +46,7 @@
 
 #cmakedefine WITH_ICOUTILS
 #cmakedefine WITH_EMBEDDED_FUSEISO
+#cmakedefine WITH_SYSTEM_SINGLEAPP
 #cmakedefine WITH_WINEAPPDB
 
 #cmakedefine DEBUG

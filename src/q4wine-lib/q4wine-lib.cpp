@@ -513,6 +513,11 @@ void corelib::getBuildFlags(){
 #else
     Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"OFF"<<qSetFieldWidth(0)<<endl;
 #endif
+#ifdef WITH_SYSTEM_SINGLEAPP
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_SYSTEM_SINGLEAPP"<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_SYSTEM_SINGLEAPP"<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
 #ifdef WITH_WINEAPPDB
     Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"ON"<<qSetFieldWidth(0)<<endl;
 #else

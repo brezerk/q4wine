@@ -11,8 +11,20 @@ SET ( Q4WINE_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb
     ${CMAKE_SOURCE_DIR}/src/plugins
-    ${CMAKE_SOURCE_DIR}/src/qtsingleapplication
+
 )
+
+IF (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
+    SET ( Q4WINE_HEADERS_DIR
+        ${Q4WINE_HEADERS_DIR}
+        ${QTSINGLEAPPLIB_INCLUDE_DIR}
+    )
+ELSE (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
+    SET ( Q4WINE_HEADERS_DIR
+        ${Q4WINE_HEADERS_DIR}
+        ${CMAKE_SOURCE_DIR}/src/qtsingleapplication
+    )
+ENDIF (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
 
 INCLUDE_DIRECTORIES( ${Q4WINE_HEADERS_DIR} ${CMAKE_BINARY_DIR} )
 
