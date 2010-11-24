@@ -17,7 +17,7 @@ If you need help, ask the mailing lists at http://www.winehq.org/site/forums.
 If you want support, buy the commercial versions of wine: CodeWeavers CrossOver Office
 http://www.codeweavers.com for Desktop Applications.
  
-q4wine was initially written by Malakhov Alexey aka John Brezerk.
+q4wine was initially written by Alexey S. Malakhov aka John Brezerk.
  
 General ideia comes from WineTools scripts witch was initially written by Frank Hendriksen.
 It is licensed under the terms GPL v3 license.
@@ -66,6 +66,7 @@ Installation
        WITH_ICOUTILS             : ON  | OFF
        WITH_WINETRIKS            : OFF | ON
        WITH_EMBEDDED_FUSEISO     : OFF | ON
+       SYSTEM_QTSINGLEAPP        : OFF | ON
        WITH_WINEAPPDB            : ON  | OFF
        USE_BZIP2                 : OFF | ON
        USE_GZIP                  : OFF | ON
@@ -102,8 +103,8 @@ See changelog file for details
 -- 
 Regards,
  
-Malakhov Alexey
-OpenXlout, q4wine ( http://sourceforge.net/projects/q4wine ) main developer.
+Alexey S. Malakhov
+OpenXlout, q4wine ( http://q4wine.brezblock.org.ua ) main developer.
 BrezBlock ( http://brezblock.org.ua ) maintainer
 e-mail: brezerk@gmail.com
 web: http://brezblock.org.ua
