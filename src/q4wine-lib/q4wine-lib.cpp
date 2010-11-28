@@ -691,19 +691,8 @@ QStringList corelib::getCdromDevices(void) const{
                             return QString("cant read %1").arg(filename);
                         }
                     } else if (image.contains("loop")){
-                        if (!this->getSetting("system", "sudo").toString().isEmpty()){
-                            arguments << "losetup" << image;
-                            QProcess myProcess;
-                            myProcess.start(this->getSetting("system", "sudo").toString(), arguments);
-                            if (!myProcess.waitForFinished()){
-                                qDebug() << "Make failed:" << myProcess.errorString();
-                                return QString("can't run %1").arg(arguments.at(0));
-                            } else {
-                                image = myProcess.readAll();
-                                qDebug()<<"[ii] loop: "<<arguments;
-                                return image.split("/").last().mid(0, image.split("/").last().length()-2);
-                            }
-                        }
+                        //FIXME: find a better solution
+                        return "loop";
                     } else {
                         return image;
                     }
@@ -993,8 +982,11 @@ QStringList corelib::getCdromDevices(void) const{
 
         bool corelib::mountImage(const QString image_name, const QString prefix_name){
 
-            this->umountImage(prefix_name);
-
+            if (!this->umountImage(prefix_name)){
+                this->showError(QObject::tr("Failed to unmount previously mounted image."));
+                //TODO: allow ignoring this
+                return false;
+            }
             QString mount_point=db_prefix.getMountPoint(prefix_name);
 #ifdef DEBUG
             qDebug()<<"[ii] corelib::mountImage: mount point: "<<mount_point;
@@ -1036,6 +1028,7 @@ QStringList corelib::getCdromDevices(void) const{
             mount_string.replace("%MOUNT_BIN%", getSetting("system", "mount").toString());
             mount_string.replace("%MOUNT_POINT%", this->getEscapeString(mount_point));
 #endif
+            QFile imageFile(image_name);
 
 #ifdef _OS_LINUX_
             if ((image_name.contains("/") && (!image_name.contains(".iso", Qt::CaseInsensitive)) && (!image_name.contains(".nrg", Qt::CaseInsensitive)))) {
@@ -1049,17 +1042,18 @@ QStringList corelib::getCdromDevices(void) const{
 #ifdef DEBUG
                 qDebug()<<"[ii] corelib::mountImage:Linux image mount base string: "<<mount_string;
 #endif
-
-                if (!QFile(image_name).exists()){
-                    mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(this->db_image.getPath(image_name)));
+                if (!imageFile.exists()){
+                    QString imagePath = this->db_image.getPath(image_name);
+                    mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(imagePath));
+                    imageFile.setFileName(imagePath);
                 } else {
                     mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(image_name));
                 }
 
                 if (image_name.right(3)=="nrg"){
-                    mount_string.replace("%MOUNT_OPTIONS%", "-o  loop,offset=307200");
+                    mount_string.replace("%MOUNT_OPTIONS%", "-o ro,loop,offset=307200");
                 } else {
-                    mount_string.replace("%MOUNT_OPTIONS%", "-o  loop");
+                    mount_string.replace("%MOUNT_OPTIONS%", "-o ro,loop");
                 }
             }
 
@@ -1076,7 +1070,42 @@ QStringList corelib::getCdromDevices(void) const{
 #ifdef DEBUG
             qDebug()<<"[ii] corelib::mountImage: mount args: "<<args;
 #endif
-            return this->runProcess(args, QObject::tr("Mounting..."),  QObject::tr("Mounting %1 into %2").arg(image_name).arg(mount_point));
+            bool success = this->runProcess(args, QObject::tr("Mounting..."),  QObject::tr("Mounting %1 into %2").arg(image_name).arg(mount_point));
+            if (success){
+                //create the symlink to the iso so that wine recognises the mountpoint as a CD-ROM
+                QString prefixPath = db_prefix.getPath(prefix_name);
+                QChar winDrive = db_prefix.getMountPointWindrive(prefix_name);
+                if (winDrive.isNull()){
+#ifdef DEBUG
+                    qDebug()<<"[ii] Prefix '" << prefix_name << "' does not have a Windows drive set for the mount operation";
+#endif
+                    return success; //don't create the link, return true
+                }
+                //drive letter plus two colons links to the actual physical device (in this case the image)
+                QFile physicalDriveLink(prefixPath + "/dosdevices/" + winDrive.toLower() + "::");
+                if (physicalDriveLink.exists()){
+                    if (!physicalDriveLink.remove()) {
+                        //failed to delete, this is an error
+                        qDebug()<<"[EE] failed to remove drive symlink";
+                        return false;
+                    }
+                }
+                //drive link has been removed or didn't exist -> we can create the link now
+                imageFile.link(physicalDriveLink.fileName());
+                
+                //make sure the drive points to the mountpoint
+                QFile mountPointLink(prefixPath + "/dosdevices/" + winDrive.toLower() + ":");
+                if (mountPointLink.exists() && mountPointLink.symLinkTarget() != mount_point){
+                    if (!mountPointLink.remove()) {
+                        //failed to delete, this is an error
+                        qDebug()<<"[EE] failed to remove mountpoint drive symlink";
+                        return false;
+                    }
+                }
+                //drive link has been removed or didn't exist -> we can create the link now
+                QFile::link(mount_point, mountPointLink.fileName());
+            }
+            return success;
         }
 
         bool corelib::umountImage(const QString prefix_name){
@@ -1086,7 +1115,7 @@ QStringList corelib::getCdromDevices(void) const{
 #ifdef DEBUG
                 qDebug()<<"[ii] corelib::umountImage: no mounted images found in mount point: "<<mount_point;
 #endif
-                return false;
+                return true;
             }
 
 #ifdef DEBUG
@@ -1118,8 +1147,6 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 
             return this->runProcess(args, QObject::tr("Umounting..."), QObject::tr("Umounting point: %1").arg(mount_point));
-
-            return true;
         }
 
         bool corelib::runProcess(const QStringList args, const QString caption, const QString message) const{
@@ -1172,8 +1199,9 @@ QStringList corelib::getCdromDevices(void) const{
 
             if (!myProcess.waitForFinished())
                 return false;
-
-            if (showLog){
+            int exitcode = myProcess.exitCode();
+            QProcess::ExitStatus exitStatus = myProcess.exitStatus();
+            if (showLog && (exitcode != 0 || exitStatus == QProcess::CrashExit)){
                 // Getting env LANG variable
                 QString lang=getenv("LANG");
                 lang=lang.split(".").at(1);
@@ -1189,9 +1217,9 @@ QStringList corelib::getCdromDevices(void) const{
                 if (!string.isEmpty()){
                     showError(QObject::tr("It seems the process crashed. STDERR log: %1").arg(string));
                     delete (&codec);
-                    return false;
                 }
                 delete (&codec);
+                return false;
             }
             return true;
         }

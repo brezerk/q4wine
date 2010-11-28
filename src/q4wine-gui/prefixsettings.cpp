@@ -84,7 +84,9 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
     }
 
     if (!result.value("arch").isEmpty())
-        comboArchList->setCurrentIndex (comboArchList->findText(result.value("arch")));
+        comboArchList->setCurrentIndex(comboArchList->findText(result.value("arch")));
+    if (!result.value("mountpoint_windrive").isEmpty())
+        comboWinDrive->setCurrentIndex(comboWinDrive->findText(result.value("mountpoint_windrive")));
 
     txtPrefixName->setText(prefix_name);
     txtPrefixPath->setText(result.value("path"));
@@ -193,12 +195,12 @@ void PrefixSettings::cmdOk_Click(){
     }
 
     if (this->addNew){
-        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), comboArchList->currentText()))
+        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), comboArchList->currentText(), this->comboWinDrive->currentText()))
             reject();
 
         CoreLib->createPrefixDBStructure(txtPrefixName->text());
     } else {
-        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name, comboArchList->currentText()))
+        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name, comboArchList->currentText(), this->comboWinDrive->currentText()))
             reject();
     }
 

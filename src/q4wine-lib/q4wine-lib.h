@@ -198,7 +198,7 @@ public:
     /*! \brief This function umount an image or drive from prefix mount point.
      *
      * \param  prefix_name	Prefix name.
-     * \return Return an list of cdrom devices.
+     * \return @c true on success or @c false on error.
      */
     bool umountImage(const QString prefix_name);
 

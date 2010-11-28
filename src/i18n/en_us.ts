@@ -2939,36 +2939,36 @@ See help for details.</source>
 <context>
     <name>PrefixSettings</name>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="118"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="119"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="120"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="121"/>
         <source>Add new Prefix</source>
         <translation>Add New Prefix</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="178"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="184"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="180"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="186"/>
         <source>Error</source>
         <translation type="unfinished">Error</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="178"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="180"/>
         <source>Please, enter prefix name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="184"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="186"/>
         <source>Sorry, but prefix named %1 already exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="225"/>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="227"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="229"/>
         <source>Open File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="236"/>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="238"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="240"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3015,6 +3015,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="381"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="418"/>
         <source>Device:</source>
         <translation>Device:</translation>
     </message>
@@ -3024,55 +3025,170 @@ See help for details.</source>
         <translation>&lt;none&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="418"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="426"/>
+        <source>D:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="431"/>
+        <source>E:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="436"/>
+        <source>F:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="441"/>
+        <source>G:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="446"/>
+        <source>H:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="451"/>
+        <source>I:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="456"/>
+        <source>J:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="461"/>
+        <source>K:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="466"/>
+        <source>L:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="471"/>
+        <source>M:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="476"/>
+        <source>N:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="481"/>
+        <source>O:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="486"/>
+        <source>P:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="491"/>
+        <source>Q:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="496"/>
+        <source>R:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="501"/>
+        <source>S:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="506"/>
+        <source>T:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="511"/>
+        <source>U:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="516"/>
+        <source>V:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="521"/>
+        <source>W:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="526"/>
+        <source>X:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="531"/>
+        <source>Y:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="536"/>
+        <source>Z:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="565"/>
         <source>Mount point:</source>
         <translation>Mount point:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="461"/>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="470"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="608"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="617"/>
         <source>Wine settings</source>
         <translation>Wine Settings</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="485"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="632"/>
         <source>If you wish to use different Wine versions, you may wish set custom Wine paths here.
 Note: leave it blank for default.</source>
         <translation>If you wish to use different Wine versions, you may wish to set custom Wine paths here.
 Note: leave it blank for default.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="724"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="871"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="517"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="664"/>
         <source>Bin:</source>
         <translation>Binary:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="561"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="708"/>
         <source>Server:</source>
         <translation>Server:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="605"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="752"/>
         <source>Loader:</source>
         <translation>Loader:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="649"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="796"/>
         <source>Libs:</source>
         <translation>Libraries:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="697"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="844"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="717"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="864"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
@@ -3527,14 +3643,14 @@ Note: leave it blank for default.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/database/prefix.cpp" line="324"/>
-        <location filename="../core/database/prefix.cpp" line="391"/>
+        <location filename="../core/database/prefix.cpp" line="345"/>
+        <location filename="../core/database/prefix.cpp" line="418"/>
         <source>&lt;none&gt;</source>
         <translation type="unfinished">&lt;none&gt;</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="331"/>
-        <location filename="../core/database/prefix.cpp" line="398"/>
+        <location filename="../core/database/prefix.cpp" line="352"/>
+        <location filename="../core/database/prefix.cpp" line="425"/>
         <source>Default</source>
         <translation type="unfinished">Default</translation>
     </message>

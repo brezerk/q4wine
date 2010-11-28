@@ -395,6 +395,153 @@
               </widget>
              </item>
              <item>
+              <widget class="QWidget" name="widget_3" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <property name="margin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_19">
+                  <property name="minimumSize">
+                   <size>
+                    <width>140</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>140</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Device:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="comboWinDrive">
+                  <item>
+                   <property name="text">
+                    <string>D:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>E:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>F:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>G:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>H:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>I:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>J:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>K:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>L:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>M:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>N:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>O:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>P:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Q:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>R:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>S:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>T:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>U:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>V:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>W:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>X:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Y:</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Z:</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
               <widget class="QWidget" name="widget_18" native="true">
                <layout class="QHBoxLayout">
                 <property name="margin">

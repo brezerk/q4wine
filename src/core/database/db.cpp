@@ -128,5 +128,11 @@ bool DataBase::fixup(){
             return false;
         }
     }
+    if (!query.exec("SELECT mountpoint_windrive FROM prefix")){
+        if (!query.exec("ALTER TABLE prefix ADD COLUMN mountpoint_windrive TEXT")){
+            qDebug()<<"[EE] Can't alter table";
+            return false;
+        }
+    }
     return true;
 }
