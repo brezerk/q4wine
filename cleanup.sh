@@ -20,7 +20,7 @@ tmp_dirs="CMakeFiles build qtcreator-build"
 for tmp_dir in $tmp_dirs
 do
     echo "Removing tmp dirs: ${tmp_dir}"
-    find ./ -name ${tmp_dir} -type d -exec rm -rdf '{}' \;
+    find ./ -name ${tmp_dir} -type d -exec rm -rf '{}' \;
 done
 
 echo "Done";
