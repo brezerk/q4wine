@@ -247,8 +247,8 @@ public:
      * \param  dir	  Exec directory.
      * \return True on success.
      */
-    bool runProcess(const QString exec, const QStringList args, QString dir = "", bool showLog = TRUE) const;
-    bool runProcess(const QStringList args, const QString caption, const QString message) const;
+    bool runProcess(const QString exec, const QStringList args, QString dir = "", bool showLog = TRUE);
+    bool runProcess(const QStringList args, const QString caption, const QString message);
 
     /*! \brief Get's string with escaped special characters
      *
@@ -277,7 +277,7 @@ public:
      * \param profile	Profile type ID
      */
     QString getUmountString(const int profile);
-    bool reniceProcess(const int pid, const int priority) const;
+    bool reniceProcess(const int pid, const int priority);
     void runAutostart(void);
 
     void createPrefixDBStructure(QString prefixName);

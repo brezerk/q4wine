@@ -450,7 +450,7 @@ QString  corelib::getLocale(){
             lang = lang.split(";").first();
 
 #ifdef DEBUG
-        qDebug()<<"[ii] Lang to load: "<<lang;
+        qDebug()<<"[ii] Locale to use: "<<lang;
 #endif
         return lang;
 }
@@ -1163,7 +1163,7 @@ QStringList corelib::getCdromDevices(void) const{
             return this->runProcess(args, QObject::tr("Umounting..."), QObject::tr("Umounting point: %1").arg(mount_point));
         }
 
-        bool corelib::runProcess(const QStringList args, const QString caption, const QString message) const{
+        bool corelib::runProcess(const QStringList args, const QString caption, const QString message){
 
 #ifdef DEBUG
             qDebug()<<"[ii] corelib::runProcess: args: "<<args;
@@ -1197,7 +1197,7 @@ QStringList corelib::getCdromDevices(void) const{
             return output;
         }
 
-        bool corelib::runProcess(const QString exec, const QStringList args, QString dir, bool showLog) const{
+        bool corelib::runProcess(const QString exec, const QStringList args, QString dir, bool showLog){
             if (dir.isEmpty())
                 dir=QDir::homePath();
 
@@ -1217,12 +1217,7 @@ QStringList corelib::getCdromDevices(void) const{
             QProcess::ExitStatus exitStatus = myProcess.exitStatus();
             if (showLog && (exitcode != 0 || exitStatus == QProcess::CrashExit)){
                 // Getting env LANG variable
-                QString lang=getenv("LANG");
-                lang=lang.split(".").at(1);
-
-                // If in is empty -- set UTF8 locale
-                if (lang.isEmpty())
-                    lang = "UTF8";
+                QString lang=this->getLocale();
 
                 // Read STDERR with locale support
                 QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
@@ -1476,7 +1471,7 @@ QStringList corelib::getCdromDevices(void) const{
             return string;
         }
 
-        bool corelib::reniceProcess(const int pid, const int priority) const{
+        bool corelib::reniceProcess(const int pid, const int priority){
             QStringList args;
             args << this->getSetting("system", "renice").toString();
             args.append(QString("%1").arg(priority));
