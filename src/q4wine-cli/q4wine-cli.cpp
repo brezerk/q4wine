@@ -307,20 +307,7 @@ int main(int argc, char *argv[])
                 return -1;
             }
 
-            if (_IMAGE.isEmpty()){
-                QString drive = db_prefix.getMountDrive(_PREFIX);
-                if (drive.isEmpty()){
-                    Qcout<<QObject::tr("No cdrom drive set in prefix configuration.")<<endl;
-                    return -1;
-                }
-                Qcout<<QObject::tr("Mounting drive \"%1\" into mount point \"%2\".").arg(drive).arg(mount)<<endl;
-                if (CoreLib->mountImage(drive, _PREFIX)){
-                    Qcout<<"Done"<<endl;
-                } else {
-                    Qcout<<"Error"<<endl;
-                    return -1;
-                }
-            } else {
+            if (!_IMAGE.isEmpty()){
                 if (!QFile(_IMAGE).exists()){
                     if (!db_image.isExistsByName(_IMAGE)){
                         Qcout<<QObject::tr("No disc image \"%1\" exists. Run \"%2-cli -cl\" for disc image list.").arg(_IMAGE).arg(APP_SHORT_NAME)<<endl;

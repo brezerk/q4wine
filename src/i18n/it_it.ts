@@ -4677,8 +4677,8 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">&lt;nessuno&gt;</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="342"/>
-        <location filename="../core/database/prefix.cpp" line="405"/>
+        <location filename="../core/database/prefix.cpp" line="323"/>
+        <location filename="../core/database/prefix.cpp" line="386"/>
         <source>Default</source>
         <translation>Default</translation>
     </message>
@@ -4692,8 +4692,8 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="255"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="286"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="300"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="342"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="394"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="329"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="381"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>Nessun prefisso impostato. Imposta un prefisso con &quot;-p &lt;nome prefisso&gt;&quot;.</translation>
     </message>
@@ -4786,54 +4786,52 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="306"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="348"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="374"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="335"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="361"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>Nessun punto di montaggio impostato nella configurazione del prefisso.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="313"/>
         <source>No cdrom drive set in prefix configuration.</source>
-        <translation>Nessun cdrom impostato nella configurazione del prefisso.</translation>
+        <translation type="obsolete">Nessun cdrom impostato nella configurazione del prefisso.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="316"/>
         <source>Mounting drive &quot;%1&quot; into mount point &quot;%2&quot;.</source>
-        <translation>Montaggio del disco &quot;%1&quot; nel punto di montaggio &quot;%2&quot;.</translation>
+        <translation type="obsolete">Montaggio del disco &quot;%1&quot; nel punto di montaggio &quot;%2&quot;.</translation>
     </message>
     <message>
         <source>No CD iamge &quot;%1&quot; exists. Run &quot;q4wine-cli -cl&quot; for CD image list.</source>
         <translation type="obsolete">Non esiste nessuna immagine di CD &quot;%1&quot;. Esegui &quot;q4wine-cli -cli&quot; per la lista delle immagini di CD.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="352"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="339"/>
         <source>Umounting mount point &quot;%1&quot;.</source>
         <translation>Smontaggio del punto di montaggio &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="364"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="351"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Montata la lista dei dischi per tutti i prefissi</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="365"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="352"/>
         <source>Prefix</source>
         <translation>Prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="365"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="379"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="352"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="366"/>
         <source>Mount point</source>
         <translation>Punto di montaggio</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="365"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="379"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="352"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="366"/>
         <source>Media</source>
         <translation>Disco</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="378"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="365"/>
         <source>Mounted media list for prefix &quot;%1&quot;</source>
         <translation>Montata la lista di dischi per il prefisso &quot;%1&quot;</translation>
     </message>
@@ -4887,14 +4885,14 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="126"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="387"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="374"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="84"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>Questo è free software: sei libero di modificarlo e ridistribuirlo.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="127"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="388"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="375"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="85"/>
         <source>There is NO WARRANTY, to the extent permitted by law.</source>
         <translation>Non c&apos;è nessuna GARANZIA, ne limite permesso dalla legge.</translation>
@@ -4927,13 +4925,13 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">minimizza la finestra principale di q4wine all&apos;avvio</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="401"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="388"/>
         <source>File &quot;%1&quot; not exists.</source>
         <translation>Il file &quot;%1&quot; non esiste.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="136"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="423"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="410"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="130"/>
         <source>Usage:</source>
         <translation>Uso:</translation>
@@ -4951,33 +4949,33 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">  q4wine-cli -p &lt;nome_prefisso&gt; -b &lt;percorso_eseguibile_windows&gt; [argomenti]</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="427"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="414"/>
         <source>Console utility for wine applications and prefixes management.</source>
         <translation>Console per la gestione delle applicazioni wine e dei prefissi.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="129"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="390"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="377"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="87"/>
         <source>Author: %1.</source>
         <translation>Autore: %1.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="140"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="428"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="415"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="133"/>
         <source>KEYs list:</source>
         <translation>Lista delle chiavi:</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="141"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="429"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="416"/>
         <source>display this help and exit</source>
         <translation>Mostra questo aiuto e esci</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="142"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="430"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="417"/>
         <source>output version information and exit</source>
         <translation>mostra informazioni sulla versione e esci</translation>
     </message>
@@ -4988,44 +4986,44 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="146"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="450"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="437"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="143"/>
         <source>Report %1 bugs to %2</source>
         <translation>riporta i bug %1 a %2</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="431"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="418"/>
         <source>output wine process list for current prefix or for all prefixes and exit </source>
         <translation>mostra la lista dei processi wine per il prefisso corrente o per tutti i prefissi e esci </translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="432"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="419"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="134"/>
         <source>sets the current prefix name</source>
         <translation>imposta il prefisso corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="433"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="420"/>
         <source>sets the current direcory name</source>
         <translation>imposta la directory corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="434"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="421"/>
         <source>sets the current icon name</source>
         <translation>imposta l&apos;icona corrente</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="435"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="422"/>
         <source>sets the cd iamge name</source>
         <translation>imposta l&apos;immagine del CD</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="436"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="423"/>
         <source>sets the path to windows binary for execute with current prefix settings</source>
         <translation>imposta il percorso al file di windows per l&apos;esecuzione con le attuali impostazioni del prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="448"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="435"/>
         <source> -1 if serious troubles</source>
         <translation>-1 se ci sono problemi gravi</translation>
     </message>
@@ -5062,78 +5060,78 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation>%1 ha le seguenti immagini CD nel database</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="326"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="313"/>
         <source>No disc image &quot;%1&quot; exists. Run &quot;%2-cli -cl&quot; for disc image list.</source>
         <translation>Non esiste nessuna immagine di CD &quot;%1&quot;. Esegui &quot;%2-cli -cli&quot; per la lista delle immagini di CD.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="424"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="411"/>
         <source>  %1-cli [KEY]...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="425"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="412"/>
         <source>  %1-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="426"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="413"/>
         <source>  %1-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [args]</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="437"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="424"/>
         <source>sends -9 term signal to current prefix precess or for all prefixes processes</source>
         <translation>invia un segnale -9 al processo del prefisso attuale o a tutti i processi di ogni prefisso</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="438"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="425"/>
         <source>output all exesting prefixes names and exit</source>
         <translation>Mostra tutti i prefissi e esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="439"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="426"/>
         <source>output all exesting dir names for current prefix and exit</source>
         <translation>mostra tutte le directory esistenti per il prefisso corrente e esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="440"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="427"/>
         <source>output all exesting icon names for current prefix/directory and exit</source>
         <translation>mostra tutte le icone esistenti per il prefisso/directory corrente e esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="441"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="428"/>
         <source>output all cd images list and exit</source>
         <translation>mostra la lista di tutte le immagini cd e esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="442"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="429"/>
         <source>output all mounted media for current prefix or all prefixes and exit</source>
         <translation>mostra tutti i dischi montati per il profilo corrente o per tutti i profili ed esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="443"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="430"/>
         <source>mount an cd iamage or drive for current prefix and exit</source>
         <translation>monta un immagine CD o un disco per il prefisso corrente ed esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="444"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="431"/>
         <source>umount an cd iamage or drive for current prefix and exit</source>
         <translation>smonta un immagine cd o un disco per il prefisso corrente ed esci</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="446"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="433"/>
         <source>Exit status:</source>
         <translation>Stato di uscita:</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="447"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="434"/>
         <source>  0 if OK,</source>
         <translation>0 se Ok</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="147"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="451"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="438"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="144"/>
         <source>%1 homepage: &lt;%2&gt;</source>
         <translation>%1 homepage:&lt;%2&gt;</translation>
@@ -5144,7 +5142,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="148"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="452"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="439"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="145"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
         <translation>Aiuto generale sull&apos;uso di programmi GNU: &lt;http://www.gnu.org/gethelp/&gt;</translation>

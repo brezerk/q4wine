@@ -131,7 +131,7 @@ QHash<QString,QString> Prefix::getByName(const QString prefix_name) const{
     QSettings settings(APP_SHORT_NAME, "default");
     settings.beginGroup("wine");
 
-        query.prepare("SELECT path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, cdrom_drive, id, name, arch, mountpoint_windrive FROM prefix WHERE name=:prefix_name");
+        query.prepare("SELECT path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, id, name, arch, mountpoint_windrive FROM prefix WHERE name=:prefix_name");
     query.bindValue(":prefix_name", prefix_name);
 
     if (query.exec()){
@@ -219,25 +219,6 @@ QChar Prefix::getMountPointWindrive(const QString prefix_name) const{
     }
     query.clear();
     return value[0];
-}
-
-QString Prefix::getMountDrive(const QString prefix_name) const{
-    QString value;
-    QSqlQuery query;
-
-    query.prepare("SELECT cdrom_drive FROM prefix WHERE name=:prefix_name");
-    query.bindValue(":prefix_name", prefix_name);
-
-    if (query.exec()){
-        query.first();
-        if (query.isValid()){
-            value = query.value(0).toString();
-        }
-    } else {
-        qDebug()<<"SqlError: "<<query.lastError();
-    }
-    query.clear();
-    return value;
 }
 
 QString Prefix::getLibsPath(const QString prefix_name) const{
