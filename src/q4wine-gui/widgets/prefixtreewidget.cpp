@@ -40,9 +40,10 @@ PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) :
       this->dirName="";
       this->prefixName="";
       this->prefixMontPoint="";
-      this->prefixMediaDrive="";
 
       this->setAcceptDrops(true);
+
+      this->cdromDevices=CoreLib->getCdromDevices();
 }
 
 PrefixTreeWidget::~PrefixTreeWidget(){
@@ -80,7 +81,6 @@ void PrefixTreeWidget::itemClicked (QTreeWidgetItem *item, int){
             this->dirName="";
       }
 
-      this->prefixMediaDrive = db_prefix.getMountDrive(this->prefixName);
       this->prefixMontPoint = db_prefix.getMountPoint(this->prefixName);
 
       emit(showFolderContents(this->prefixName, this->dirName));
@@ -232,14 +232,18 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
             std::auto_ptr<QMenu> submenuMount (new QMenu(tr("Mount [%1]").arg(CoreLib->getMountedImages(this->prefixMontPoint)), this));
             std::auto_ptr<QAction> entry;
 
-            if (this->prefixMediaDrive.isEmpty()){
-                  entry.reset (new QAction(CoreLib->loadIcon("/data/drive_menu.png"), tr("[none]"), this));
-                  entry->setStatusTip(tr("No media was set in prefix settings."));
-                  submenuMount->addAction(entry.release());
+
+            if (this->cdromDevices.count() > 0){
+                QString drive;
+                foreach (drive, this->cdromDevices){
+                    entry.reset (new QAction(CoreLib->loadIcon("/data/drive_menu.png"), drive, this));
+                    entry->setStatusTip(tr("Mount media drive."));
+                    submenuMount->addAction(entry.release());
+                }
             } else {
-                  entry.reset (new QAction(CoreLib->loadIcon("/data/drive_menu.png"), this->prefixMediaDrive, this));
-                  entry->setStatusTip(tr("Mount media drive."));
-                  submenuMount->addAction(entry.release());
+                entry.reset (new QAction(CoreLib->loadIcon("/data/drive_menu.png"), tr("[none]"), this));
+                entry->setStatusTip(tr("No media drives detected."));
+                submenuMount->addAction(entry.release());
             }
 
             QList<QStringList> images = db_image.getFields();

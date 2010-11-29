@@ -68,7 +68,8 @@ private:
       void moveDesktopFile(QUrl url, QString prefixName, QString dirName);
       void dragEnterEvent(QDragEnterEvent *event);
 
-      QString prefixName, dirName, prefixMediaDrive, prefixMontPoint;
+      QString prefixName, dirName, prefixMontPoint;
+      QStringList cdromDevices;
 
       //! This is need for libq4wine-core.so import.
       QLibrary libq4wine;
