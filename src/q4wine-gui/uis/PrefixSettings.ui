@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>696</width>
-    <height>436</height>
+    <width>694</width>
+    <height>434</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -357,43 +357,6 @@
              <property name="margin">
               <number>3</number>
              </property>
-             <item>
-              <widget class="QWidget" name="widget_17" native="true">
-               <layout class="QHBoxLayout">
-                <property name="margin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QLabel" name="label_16">
-                  <property name="minimumSize">
-                   <size>
-                    <width>140</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>140</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>Device:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QComboBox" name="comboDeviceList">
-                  <item>
-                   <property name="text">
-                    <string>&lt;none&gt;</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
              <item>
               <widget class="QWidget" name="widget_3" native="true">
                <layout class="QHBoxLayout" name="horizontalLayout">

@@ -47,7 +47,6 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
     prefix_id=result.value("id");
 
-    //comboDeviceList
     txtMountPoint->setText(result.value("mount"));
 
     if (prefix_name=="Default"){
@@ -91,15 +90,6 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
     txtPrefixName->setText(prefix_name);
     txtPrefixPath->setText(result.value("path"));
 
-    comboDeviceList->addItems(CoreLib->getCdromDevices());
-    if (!result.value("drive").isEmpty()){
-        comboDeviceList->setCurrentIndex (comboDeviceList->findText(result.value("drive")));
-        if (comboDeviceList->currentText().isEmpty())
-            comboDeviceList->setCurrentIndex (0);
-    } else {
-        comboDeviceList->setCurrentIndex (0);
-    }
-
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
     connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
@@ -140,9 +130,6 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent,
     cmdGetWineLoaderBin->installEventFilter(this);
     cmdGetWineLibs->installEventFilter(this);
     cmdGetMountPoint->installEventFilter(this);
-
-    comboDeviceList->addItems(CoreLib->getCdromDevices());
-    comboDeviceList->setCurrentIndex (0);
 
     //comboArchList->setEnabled(true);
 
@@ -195,12 +182,12 @@ void PrefixSettings::cmdOk_Click(){
     }
 
     if (this->addNew){
-        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), comboArchList->currentText(), this->comboWinDrive->currentText()))
+        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), "FIXME: remove me", comboArchList->currentText(), this->comboWinDrive->currentText()))
             reject();
 
         CoreLib->createPrefixDBStructure(txtPrefixName->text());
     } else {
-        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboDeviceList->currentText(), this->prefix_name, comboArchList->currentText(), this->comboWinDrive->currentText()))
+        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), "FIXME: remove me", this->prefix_name, comboArchList->currentText(), this->comboWinDrive->currentText()))
             reject();
     }
 
