@@ -215,7 +215,7 @@ QChar Prefix::getMountPointWindrive(const QString prefix_name) const{
         }
     } else {
         qDebug()<<"SqlError: "<<query.lastError();
-		return QChar();
+        return QChar();
     }
     query.clear();
     return value[0];
@@ -297,9 +297,9 @@ bool Prefix::delByName(const QString prefix_name) const{
     return true;
 }
 
-bool Prefix::addPrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive, const QString arch, const QString mountpoint_windrive) const{
+bool Prefix::addPrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString arch, const QString mountpoint_windrive) const{
     QSqlQuery query;
-        query.prepare("INSERT INTO prefix(name, path, wine_exec, wine_server, wine_loader, wine_dllpath, cdrom_mount, cdrom_drive, arch, mountpoint_windrive) VALUES(:prefix_name, :prefix_path, :wine_exec, :wine_server, :wine_loader, :wine_dllpath, :cdrom_mount, :cdrom_drive, :arch, :mountpoint_windrive);");
+        query.prepare("INSERT INTO prefix(name, path, wine_exec, wine_server, wine_loader, wine_dllpath, cdrom_mount, arch, mountpoint_windrive) VALUES(:prefix_name, :prefix_path, :wine_exec, :wine_server, :wine_loader, :wine_dllpath, :cdrom_mount, :arch, :mountpoint_windrive);");
 
     query.bindValue(":prefix_name", prefix_name);
 
@@ -339,21 +339,11 @@ bool Prefix::addPrefix(const QString prefix_name, const QString prefix_path, con
         query.bindValue(":cdrom_mount", cdrom_mount);
     }
 
-    if (cdrom_drive.isEmpty()){
-        query.bindValue(":cdrom_drive", QVariant(QVariant::String));
+    if (arch == QObject::tr("Default")){
+        query.bindValue(":arch", QVariant(QVariant::String));
     } else {
-        if (cdrom_drive==QObject::tr("<none>")){
-            query.bindValue(":cdrom_drive", QVariant(QVariant::String));
-        } else {
-            query.bindValue(":cdrom_drive", cdrom_drive);
-        }
+        query.bindValue(":arch", arch);
     }
-
-        if (arch == QObject::tr("Default")){
-                query.bindValue(":arch", QVariant(QVariant::String));
-        } else {
-                query.bindValue(":arch", arch);
-        }
 
     if (mountpoint_windrive.isEmpty()){
         query.bindValue(":mountpoint_windrive", QVariant(QVariant::String));
@@ -369,9 +359,9 @@ bool Prefix::addPrefix(const QString prefix_name, const QString prefix_path, con
     return true;
 }
 
-bool Prefix::updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive, const QString old_prefix_name, const QString arch, const QString mountpoint_windrive) const{
+bool Prefix::updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString old_prefix_name, const QString arch, const QString mountpoint_windrive) const{
     QSqlQuery query;
-        query.prepare("UPDATE prefix SET wine_dllpath=:wine_dllpath, wine_loader=:wine_loader, wine_server=:wine_server, wine_exec=:wine_exec, cdrom_mount=:cdrom_mount, arch=:arch, cdrom_drive=:cdrom_drive, name=:prefix_name, mountpoint_windrive=:mountpoint_windrive, path=:prefix_path WHERE name=:old_prefix_name");
+        query.prepare("UPDATE prefix SET wine_dllpath=:wine_dllpath, wine_loader=:wine_loader, wine_server=:wine_server, wine_exec=:wine_exec, cdrom_mount=:cdrom_mount, arch=:arch, name=:prefix_name, mountpoint_windrive=:mountpoint_windrive, path=:prefix_path WHERE name=:old_prefix_name");
 
     query.bindValue(":prefix_name", prefix_name);
     query.bindValue(":old_prefix_name", old_prefix_name);
@@ -412,21 +402,11 @@ bool Prefix::updatePrefix(const QString prefix_name, const QString prefix_path, 
         query.bindValue(":cdrom_mount", cdrom_mount);
     }
 
-    if (cdrom_drive.isEmpty()){
-        query.bindValue(":cdrom_drive", QVariant(QVariant::String));
+    if (arch == QObject::tr("Default")){
+        query.bindValue(":arch", QVariant(QVariant::String));
     } else {
-        if (cdrom_drive==QObject::tr("<none>")){
-            query.bindValue(":cdrom_drive", QVariant(QVariant::String));
-        } else {
-            query.bindValue(":cdrom_drive", cdrom_drive);
-        }
+        query.bindValue(":arch", arch);
     }
-
-        if (arch == QObject::tr("Default")){
-                query.bindValue(":arch", QVariant(QVariant::String));
-        } else {
-                query.bindValue(":arch", arch);
-        }
 
     if (mountpoint_windrive.isEmpty()){
         query.bindValue(":mountpoint_windrive", QVariant(QVariant::String));

@@ -4673,14 +4673,12 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">Mi spiace non posso aprire il database: %1/.config/%2/db/generic.dat ; L&apos;errore è: %3</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="345"/>
-        <location filename="../core/database/prefix.cpp" line="418"/>
         <source>&lt;none&gt;</source>
-        <translation>&lt;nessuno&gt;</translation>
+        <translation type="obsolete">&lt;nessuno&gt;</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="352"/>
-        <location filename="../core/database/prefix.cpp" line="425"/>
+        <location filename="../core/database/prefix.cpp" line="342"/>
+        <location filename="../core/database/prefix.cpp" line="405"/>
         <source>Default</source>
         <translation>Default</translation>
     </message>

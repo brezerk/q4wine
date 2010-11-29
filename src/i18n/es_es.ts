@@ -4517,14 +4517,12 @@ Nota: deje en blanco para valores por defecto.</translation>
         <translation type="obsolete">Lo siento, no puedo abrir el archivo de bases de datos: %1/.config/%2/db/generic.dat ;El error es: %3</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="345"/>
-        <location filename="../core/database/prefix.cpp" line="418"/>
         <source>&lt;none&gt;</source>
-        <translation>&lt;Ninguno&gt;</translation>
+        <translation type="obsolete">&lt;Ninguno&gt;</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="352"/>
-        <location filename="../core/database/prefix.cpp" line="425"/>
+        <location filename="../core/database/prefix.cpp" line="342"/>
+        <location filename="../core/database/prefix.cpp" line="405"/>
         <source>Default</source>
         <translation>Por defecto</translation>
     </message>

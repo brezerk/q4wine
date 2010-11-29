@@ -44,89 +44,89 @@ class Prefix
 {
 
   public:
-	 /*! \brief This is calss constructor.
-	  */
-	  Prefix();
+     /*! \brief This is calss constructor.
+      */
+      Prefix();
 
      /*! \brief This function gets all table fields by prefix id key value from table.
-	  *
-	  * \param  prefix_id Prefix id key value.
-	  * \return Return a list of table fields value or -1 on error.
-	  */
+      *
+      * \param  prefix_id Prefix id key value.
+      * \return Return a list of table fields value or -1 on error.
+      */
       QHash<QString,QString> getByName(const QString prefix_name) const;
       QString getMountPoint(const QString prefix_name) const;
-	  QChar getMountPointWindrive(const QString prefix_name) const;
+      QChar getMountPointWindrive(const QString prefix_name) const;
       QString getMountDrive(const QString prefix_name) const;
       QString getLibsPath(const QString prefix_name) const;
       QStringList getPrefixList(void) const;
 
-	 /*! \brief This function gets prefix id by name.
-	  *
-	  * \param  prefix_name    A prefix name value.
-	  * \return Return prefix id.
-	  */
+     /*! \brief This function gets prefix id by name.
+      *
+      * \param  prefix_name    A prefix name value.
+      * \return Return prefix id.
+      */
      QString getId(const QString prefix_name) const;
 
-	 /*! \brief This function gets prefix path by name.
-	  *
-	  * \param  prefix_name    A prefix name value.
-	  * \return Return prefix path.
-	  */
+     /*! \brief This function gets prefix path by name.
+      *
+      * \param  prefix_name    A prefix name value.
+      * \return Return prefix path.
+      */
       QString getPath(const QString prefix_name) const;
       QString getName(const QString prefix_path) const;
 
-	 /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
-	  *
-	  * \param  prefix_name    A prefix name value.
-	  * \return Return true on success.
-	  */
-	  bool delByName(const QString prefix_name) const;
+     /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
+      *
+      * \param  prefix_name    A prefix name value.
+      * \return Return true on success.
+      */
+      bool delByName(const QString prefix_name) const;
 
-	 /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
-	  *
-	  * \param  prefix_name    A prefix name value.
-	  * \param  prefix_path    A prefix path value.
-	  * \param  wine_exec	   A wine executable binary.
-	  * \param  wine_server    A wine server binary.
-	  * \param  wine_loader    A wine loader binary.
-	  * \param  wine_dllpath   A wine library directory.
-	  * \param  cdrom_mount    A cdrom mount directory.
-	  * \param  cdrom_drive    A cdrom drive.
-	  * \return Return true on success.
-	  */
-          bool addPrefix(const QString prefix_name, const QString prefix_path="", const QString wine_exec="", const QString wine_server="", const QString wine_loader="", const QString wine_dllpath="", const QString cdrom_mount="", const QString cdrom_drive="", const QString arch="", const QString mountpoint_windrive = "") const;
+     /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
+      *
+      * \param  prefix_name    A prefix name value.
+      * \param  prefix_path    A prefix path value.
+      * \param  wine_exec	   A wine executable binary.
+      * \param  wine_server    A wine server binary.
+      * \param  wine_loader    A wine loader binary.
+      * \param  wine_dllpath   A wine library directory.
+      * \param  cdrom_mount    A cdrom mount directory.
+      * \param  cdrom_drive    A cdrom drive.
+      * \return Return true on success.
+      */
+          bool addPrefix(const QString prefix_name, const QString prefix_path="", const QString wine_exec="", const QString wine_server="", const QString wine_loader="", const QString wine_dllpath="", const QString cdrom_mount="", const QString arch="", const QString mountpoint_windrive = "") const;
 
-	 /*! \brief This function check is reccord exists by prefix name or not.
-	  *
-	  * \param  name    A prefix name value.
-	  * \return Return true if exists.
-	  */
-	  bool isExistsByName(const QString prefix_name) const;
+     /*! \brief This function check is reccord exists by prefix name or not.
+      *
+      * \param  name    A prefix name value.
+      * \return Return true if exists.
+      */
+      bool isExistsByName(const QString prefix_name) const;
 
-	  /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
-	  *
-	  * \param  prefix_name        A prefix name value.
-	  * \param  prefix_path        A prefix path value.
-	  * \param  wine_exec	       A wine executable binary.
-	  * \param  wine_server        A wine server binary.
-	  * \param  wine_loader        A wine loader binary.
-	  * \param  wine_dllpath       A wine library directory.
-	  * \param  cdrom_mount        A cdrom mount directory.
-	  * \param  cdrom_drive		   A cdrom drive.
-	  * \param  old_prefix_name	   A cdrom drive.
-	  * \param  mountpoint_windrive The windows drive to use for this mountpoint
-	  * \return Return true on success.
-	  */
-          bool updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString cdrom_drive, const QString old_prefix_name, const QString arch, const QString mountpoint_windrive) const;
+      /*! \brief This function deletes all prefix fields by prefix_name keys value from table.
+      *
+      * \param  prefix_name        A prefix name value.
+      * \param  prefix_path        A prefix path value.
+      * \param  wine_exec	       A wine executable binary.
+      * \param  wine_server        A wine server binary.
+      * \param  wine_loader        A wine loader binary.
+      * \param  wine_dllpath       A wine library directory.
+      * \param  cdrom_mount        A cdrom mount directory.
+      * \param  cdrom_drive		   A cdrom drive.
+      * \param  old_prefix_name	   A cdrom drive.
+      * \param  mountpoint_windrive The windows drive to use for this mountpoint
+      * \return Return true on success.
+      */
+          bool updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString old_prefix_name, const QString arch, const QString mountpoint_windrive) const;
 
       void fixPrefixPath();
 protected:
-	  /*! \brief This function executes requested query.
-	  *
-	  * \param  SQL Query
-	  * \return Return true on success
-	  */
-	  bool updateQuery(QSqlQuery *sqlQuery) const;
+      /*! \brief This function executes requested query.
+      *
+      * \param  SQL Query
+      * \return Return true on success
+      */
+      bool updateQuery(QSqlQuery *sqlQuery) const;
 
 };
 

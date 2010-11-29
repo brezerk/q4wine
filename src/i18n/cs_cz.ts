@@ -3578,14 +3578,12 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/database/prefix.cpp" line="345"/>
-        <location filename="../core/database/prefix.cpp" line="418"/>
         <source>&lt;none&gt;</source>
-        <translation>&lt;žádný&gt;</translation>
+        <translation type="obsolete">&lt;žádný&gt;</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="352"/>
-        <location filename="../core/database/prefix.cpp" line="425"/>
+        <location filename="../core/database/prefix.cpp" line="342"/>
+        <location filename="../core/database/prefix.cpp" line="405"/>
         <source>Default</source>
         <translation>Výchozí</translation>
     </message>

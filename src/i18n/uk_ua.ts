@@ -4560,14 +4560,12 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Неможливо завантажити SQLITE драйвер. Вам потрібно зібрати qt-sql з підтримкою sqlite</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="345"/>
-        <location filename="../core/database/prefix.cpp" line="418"/>
         <source>&lt;none&gt;</source>
-        <translation>&lt;немає&gt;</translation>
+        <translation type="obsolete">&lt;немає&gt;</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="352"/>
-        <location filename="../core/database/prefix.cpp" line="425"/>
+        <location filename="../core/database/prefix.cpp" line="342"/>
+        <location filename="../core/database/prefix.cpp" line="405"/>
         <source>Default</source>
         <translation>Типова</translation>
     </message>

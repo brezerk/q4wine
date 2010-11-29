@@ -4563,14 +4563,12 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">%1/.config/%2/db/generic.dat</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="345"/>
-        <location filename="../core/database/prefix.cpp" line="418"/>
         <source>&lt;none&gt;</source>
-        <translation>&lt;нет&gt;</translation>
+        <translation type="obsolete">&lt;нет&gt;</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="352"/>
-        <location filename="../core/database/prefix.cpp" line="425"/>
+        <location filename="../core/database/prefix.cpp" line="342"/>
+        <location filename="../core/database/prefix.cpp" line="405"/>
         <source>Default</source>
         <translation>Умолчания</translation>
     </message>
