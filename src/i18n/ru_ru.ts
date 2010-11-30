@@ -287,11 +287,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="515"/>
         <source>Tray Icon</source>
-        <translation>Пиктограмма в системном лотке</translation>
+        <translation>Иконка в системном лотке</translation>
     </message>
     <message>
         <source>Use tray icon</source>
-        <translation type="obsolete">Использовать пиктограмму в трее</translation>
+        <translation type="obsolete">Использовать иконку в системном лотке</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="596"/>
@@ -458,7 +458,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="530"/>
         <source>Use tray icon.</source>
-        <translation>Показывать пиктограмму в системном лотке.</translation>
+        <translation>Показывать иконку в системном лотке.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1287"/>
@@ -531,12 +531,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="562"/>
         <source>Minimize to tray at application icon startup.</source>
-        <translation>Cворачивать в системный лоток при запуске пиктограммы приложения.</translation>
+        <translation>Cворачивать в системный лоток при запуске иконки приложения.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="572"/>
         <source>Show tray icon notifications.</source>
-        <translation>Показывать оповещения на пиктограмме в системном лотке.</translation>
+        <translation>Показывать оповещения на иконке в системном лотке.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1398"/>
@@ -1413,7 +1413,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="319"/>
         <source>Can&apos;t create file &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу создать файл &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1351"/>
@@ -1484,31 +1484,31 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="63"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="64"/>
         <source>Clear search field</source>
-        <translation type="unfinished">Очистить поле поиска</translation>
+        <translation>Очистить поле поиска</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="67"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="68"/>
         <source>Icons view mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим просмотра иконок</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="71"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="72"/>
         <source>Details view mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Детальный режим просмотра</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="75"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="76"/>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>Увеличить</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="79"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="80"/>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Уменьшить</translation>
     </message>
 </context>
 <context>
@@ -1596,7 +1596,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="399"/>
         <source>No media drives detected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дисководы не обнаружены.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="410"/>
@@ -1945,7 +1945,7 @@ See help for details.</source>
     </message>
     <message>
         <source>Do you want to delete all selected icons?</source>
-        <translation type="obsolete">Удалить все выбранные пиктограммы?</translation>
+        <translation type="obsolete">Удалить все выбранные иконки?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1057"/>
@@ -1991,12 +1991,12 @@ See help for details.</source>
         <location filename="../q4wine-gui/iconsettings.cpp" line="87"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="88"/>
         <source>Icon settings</source>
-        <translation>Параметры пиктограмм</translation>
+        <translation>Параметры иконок</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="167"/>
         <source>Iconn settings</source>
-        <translation>Параметры пиктограмм</translation>
+        <translation>Параметры иконок</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="217"/>
@@ -2022,7 +2022,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="357"/>
         <source>Icon options</source>
-        <translation>Параметры пиктограммы</translation>
+        <translation>Параметры иконок</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="384"/>
@@ -2175,7 +2175,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/iconsettings.cpp" line="76"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="77"/>
         <source>Adding new icon</source>
-        <translation>Добавить новую пиктограмму</translation>
+        <translation>Добавить новую иконку</translation>
     </message>
     <message>
         <source>%1/data/exec.png</source>
@@ -2222,12 +2222,12 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/iconsettings.cpp" line="465"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation>Экспорт пиктограммы из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
+        <translation>Экспорт иконки из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsettings.cpp" line="465"/>
         <source>Exporting icon</source>
-        <translation>Экспорт пиктограммы</translation>
+        <translation>Экспорт иконки</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsettings.cpp" line="547"/>
@@ -2241,12 +2241,12 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/iconsettings.cpp" line="489"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation>Конвертация пиктограммы из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
+        <translation>Конвертация иконки из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsettings.cpp" line="489"/>
         <source>Converting icon</source>
-        <translation>Ковертация пиктограммы</translation>
+        <translation>Ковертация иконки</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsettings.cpp" line="542"/>
@@ -2275,7 +2275,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/iconsettings.cpp" line="559"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="564"/>
         <source>Sorry, but icon named %1 already exists.</source>
-        <translation>Извините, но пиктограмма %1 уже существует.</translation>
+        <translation>Извините, но иконка %1 уже существует.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="500"/>
@@ -2301,17 +2301,17 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/uis/IconsView.ui" line="14"/>
         <source>Icons Export</source>
-        <translation>Экпорт пиктограмм</translation>
+        <translation>Экпорт иконки</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconsView.ui" line="27"/>
         <source>Avalible icons:</source>
-        <translation>Имеющиеся пиктограммы:</translation>
+        <translation>Имеющиеся иконки:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconsView.ui" line="79"/>
         <source>Export icons to default place</source>
-        <translation>Экспортировать пиктограммы в место по-умолчанию</translation>
+        <translation>Экспортировать иконки в место по-умолчанию</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconsView.ui" line="107"/>
@@ -2336,7 +2336,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/iconsview.cpp" line="99"/>
         <source>Exporting icon</source>
-        <translation>Экспорт пиктограммы</translation>
+        <translation>Экспорт иконки</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsview.cpp" line="101"/>
@@ -2676,7 +2676,7 @@ See help for details.</source>
     </message>
     <message>
         <source>Sorry. It seems icon already exists.</source>
-        <translation type="obsolete">Извините, кажется пиктограмма уже существует.</translation>
+        <translation type="obsolete">Извините, кажется иконка уже существует.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="33"/>
@@ -2960,7 +2960,7 @@ See help for details.</source>
     </message>
     <message>
         <source>Export icons</source>
-        <translation type="obsolete">Экпортировать пиктограмму</translation>
+        <translation type="obsolete">Экпортировать иконку</translation>
     </message>
     <message>
         <source>Wine AppDB browser</source>
@@ -3109,7 +3109,7 @@ See help for details.</source>
     </message>
     <message>
         <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="obsolete">Вы действительно хотите удалить префикс с названием &quot;%1&quot; и все ассоциированные пиктограммы?</translation>
+        <translation type="obsolete">Вы действительно хотите удалить префикс с названием &quot;%1&quot; и все ассоциированные иконки?</translation>
     </message>
     <message>
         <source>Select file to import</source>
@@ -3261,12 +3261,12 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="960"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation>Экспорт пиктограммы из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
+        <translation>Экспорт иконки из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="960"/>
         <source>Exporting icon</source>
-        <translation>Экспорт пиктограммы</translation>
+        <translation>Экспорт иконки</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="1102"/>
@@ -3291,12 +3291,12 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="986"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation>Конвертация пиктограммы из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
+        <translation>Конвертация иконки из бинарного файла.&lt;br&gt;Это может занять много времени...</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="986"/>
         <source>Converting icon</source>
-        <translation>Ковертация пиктограммы</translation>
+        <translation>Ковертация иконки</translation>
     </message>
     <message>
         <source>Stop current</source>
@@ -3352,7 +3352,7 @@ See help for details.</source>
     </message>
     <message>
         <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation type="obsolete">Извините, кажется пиктограмма уже существует.&lt;br&gt; Пожалуйста, выберете другое имя, или отмените операцию.</translation>
+        <translation type="obsolete">Извините, кажется иконка уже существует.&lt;br&gt; Пожалуйста, выберете другое имя, или отмените операцию.</translation>
     </message>
     <message>
         <source>&lt;p&gt;Winetricks officaly NOT supported by q4wine.&lt;/p&gt;&lt;p&gt;There was some repports about bugs, slows and errors on winetriks and q4wine usage at same time.&lt;/p&gt;</source>
@@ -3488,7 +3488,7 @@ See help for details.</source>
     </message>
     <message>
         <source>Create new icon</source>
-        <translation type="obsolete">Создать новую пиктограмму</translation>
+        <translation type="obsolete">Создать новую иконку</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -3496,7 +3496,7 @@ See help for details.</source>
     </message>
     <message>
         <source>Cut selected icons to buffer</source>
-        <translation type="obsolete">Вырезать выбранные пиктограммы в буфер</translation>
+        <translation type="obsolete">Вырезать выбранные иконки в буфер</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -3504,7 +3504,7 @@ See help for details.</source>
     </message>
     <message>
         <source>Copy selected icons to buffer</source>
-        <translation type="obsolete">Копировать выбранные пиктограммы в буфер</translation>
+        <translation type="obsolete">Копировать выбранные иконки в буфер</translation>
     </message>
     <message>
         <source>Paste</source>
@@ -3512,19 +3512,19 @@ See help for details.</source>
     </message>
     <message>
         <source>Paste selected icons from buffer to selected folder</source>
-        <translation type="obsolete">Вставить выбранные пиктограммы из буфера в выбранную папаку</translation>
+        <translation type="obsolete">Вставить выбранные иконки из буфера в выбранную папаку</translation>
     </message>
     <message>
         <source>Rename current icon</source>
-        <translation type="obsolete">Переименовать текущую пиктограмму</translation>
+        <translation type="obsolete">Переименовать текущую иконку</translation>
     </message>
     <message>
         <source>Delete current icon</source>
-        <translation type="obsolete">Удалить текущую пиктограмму</translation>
+        <translation type="obsolete">Удалить текущую иконку</translation>
     </message>
     <message>
         <source>Modify current icon options</source>
-        <translation type="obsolete">Изменить настройки текущей пиктограммы</translation>
+        <translation type="obsolete">Изменить настройки текущей иконки</translation>
     </message>
     <message>
         <source>mount</source>
@@ -3532,7 +3532,7 @@ See help for details.</source>
     </message>
     <message>
         <source>Mount image from icon options</source>
-        <translation type="obsolete">Монтировать образ из параметров пиктограммы</translation>
+        <translation type="obsolete">Монтировать образ из параметров иконки</translation>
     </message>
     <message>
         <source>umount</source>
@@ -3544,7 +3544,7 @@ See help for details.</source>
     </message>
     <message>
         <source>Open icon directory</source>
-        <translation type="obsolete">Открыть папку с пиктограммами</translation>
+        <translation type="obsolete">Открыть папку с иконками</translation>
     </message>
     <message>
         <source>Open directory for current program</source>
@@ -3608,19 +3608,19 @@ See help for details.</source>
     </message>
     <message>
         <source>Delete Icon</source>
-        <translation type="obsolete">Удалить пиктограмму</translation>
+        <translation type="obsolete">Удалить иконку</translation>
     </message>
     <message>
         <source>Do you want to delete all selected icons?</source>
-        <translation type="obsolete">Удалить все выбранные пиктограммы?</translation>
+        <translation type="obsolete">Удалить все выбранные иконки?</translation>
     </message>
     <message>
         <source>Enter new icon name</source>
-        <translation type="obsolete">Введите новое название пиктограммы</translation>
+        <translation type="obsolete">Введите новое название иконки</translation>
     </message>
     <message>
         <source>Icon name:</source>
-        <translation type="obsolete">Название пиктограммы:</translation>
+        <translation type="obsolete">Название иконки:</translation>
     </message>
     <message>
         <source>Enter new directory name</source>
@@ -3673,7 +3673,7 @@ See help for details.</source>
     <message>
         <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
 </source>
-        <translation type="obsolete">Вы действительно хотите удалить папку с названием &quot;%1&quot; и все ассоциированные пиктограммы?</translation>
+        <translation type="obsolete">Вы действительно хотите удалить папку с названием &quot;%1&quot; и все ассоциированные иконки?</translation>
     </message>
 </context>
 <context>
@@ -4045,7 +4045,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="245"/>
         <source>No media drives detected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дисководы не обнаружены.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="256"/>
@@ -4195,7 +4195,7 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="390"/>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="391"/>
         <source>Create new prefix</source>
-        <translation type="unfinished">Создать новый префикс</translation>
+        <translation>Создать новый префикс</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="401"/>
@@ -4206,7 +4206,7 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="407"/>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="408"/>
         <source>Delete prefix</source>
-        <translation type="unfinished">Удалить префикс</translation>
+        <translation>Удалить префикс</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="579"/>
@@ -4227,17 +4227,17 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="676"/>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
-        <translation type="unfinished"></translation>
+        <translation>Извините, нельзя удалить главный префикс.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="680"/>
         <source>Warning</source>
-        <translation type="unfinished">Предупреждение</translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="680"/>
         <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы действительно хотите удалить префикс с названием &quot;%1&quot; и все ассоциированные иконки?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="396"/>
@@ -4415,41 +4415,41 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="47"/>
         <source>Importing wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see q4wine options dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортируются десктоные файлы wine из:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Это может занять какое-то время...&lt;br&gt;&lt;br&gt;&lt;b&gt;Примечание:&lt;/b&gt; для удаления обработанных файлов см. диалог настроек q4wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="48"/>
         <source>Importing wine desktop icons: %1 of %2 </source>
-        <translation type="unfinished"></translation>
+        <translation>Импортируются десктопые файлы wine: %1 из %2 </translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="56"/>
         <location filename="../q4wine-gui/progress.cpp" line="109"/>
         <source>Waiting for wine process finish.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ожидание завершения процесса wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="56"/>
         <location filename="../q4wine-gui/progress.cpp" line="109"/>
         <source>There are %1 process running for prefix %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Для префикса %2 запущено процессов: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="56"/>
         <location filename="../q4wine-gui/progress.cpp" line="109"/>
         <source>While process keep running -- end them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Когда процесс продолжает выполняться -- завершить его вручную.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="57"/>
         <location filename="../q4wine-gui/progress.cpp" line="110"/>
         <source>Running process: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Выполняется процесс: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="98"/>
         <source>Importing desktop icons: %1 of %2 </source>
-        <translation type="unfinished"></translation>
+        <translation>Импортируются десктопые иконки: %1 из %2 </translation>
     </message>
 </context>
 <context>
@@ -4586,7 +4586,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="204"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
-        <translation>Пиктограмма не установлена. Укажите пиктограмму, запустив приложение с ключом &quot;-i &lt;имя_пиктограммы&gt;&quot;.</translation>
+        <translation>Иконка не установлена. Укажите иконку, запустив приложение с ключом &quot;-i &lt;имя_иконки&gt;&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="224"/>
@@ -4641,12 +4641,12 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="265"/>
         <source>Prefix &quot;%1&quot; has following icon list</source>
-        <translation>Префикс &quot;%1&quot; содержит следующий список пиктограмм</translation>
+        <translation>Префикс &quot;%1&quot; содержит следующий список иконок</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="267"/>
         <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
-        <translation>Префикс &quot;%1&quot; содержит следующий список пиктограмм в каталоге &quot;%2&quot;</translation>
+        <translation>Префикс &quot;%1&quot; содержит следующий список иконок в каталоге &quot;%2&quot;</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="269"/>
@@ -4834,7 +4834,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="421"/>
         <source>sets the current icon name</source>
-        <translation>установить имя текущей пиктограммы</translation>
+        <translation>установить имя текущей иконки</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="422"/>
@@ -4859,7 +4859,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="209"/>
         <source>Icon named &quot;%1&quot; not exists.  Run &quot;%2-cli -il&quot; for icon list.</source>
-        <translation>Пиктограмма, названная &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка пиктограмм.</translation>
+        <translation>Иконка, названная &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка иконок.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="260"/>
@@ -4882,7 +4882,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="412"/>
         <source>  %1-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
-        <translation>  %1-cli -p &lt;префикс&gt; [-d &lt;каталог&gt;] -i &lt;пиктограмма&gt;</translation>
+        <translation>  %1-cli -p &lt;префикс&gt; [-d &lt;каталог&gt;] -i &lt;иконка&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="413"/>
@@ -4907,7 +4907,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="427"/>
         <source>output all exesting icon names for current prefix/directory and exit</source>
-        <translation>вывести список пиктограмм для текущего префикса/каталога и выйти</translation>
+        <translation>вывести список иконок для текущего префикса/каталога и выйти</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="428"/>
@@ -6420,7 +6420,7 @@ Note: leave it blank if you don&apos;t nead it.</source>
     <message>
         <location filename="../plugins/winetricks.ui" line="47"/>
         <source>Install Winetricks</source>
-        <translation type="unfinished">Установить Winetricks</translation>
+        <translation>Установить Winetricks</translation>
     </message>
     <message>
         <source>Error</source>
@@ -6429,27 +6429,27 @@ Note: leave it blank if you don&apos;t nead it.</source>
     <message>
         <location filename="../plugins/winetricks.ui" line="14"/>
         <source>winetricks plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Дополнение winetricks</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="30"/>
         <source>Install</source>
-        <translation type="unfinished">Установить</translation>
+        <translation>Установить</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="54"/>
         <source>Exit</source>
-        <translation type="unfinished">Выход</translation>
+        <translation>Выход</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="61"/>
         <source>Refresh list</source>
-        <translation type="unfinished">Обновить список</translation>
+        <translation>Обновить список</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="37"/>
         <source>Click on item to show help here</source>
-        <translation type="unfinished">Щелкните на элементе, чтобы показать
+        <translation>Щелкните на элементе, чтобы показать
 помощь здесь</translation>
     </message>
 </context>
