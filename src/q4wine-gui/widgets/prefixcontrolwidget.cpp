@@ -276,7 +276,7 @@ void PrefixControlWidget::prefixImport_Click(){
         if (dir.exists(targetDir)){
             if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete all old prefix files?"), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
                 QStringList args;
-                args << "-rdf";
+                args << "-rf";
                 args << targetDir;
 
                 Process exportProcess(args, CoreLib->getWhichOut("rm"), QDir::homePath(), tr("Removing old fake drive.<br>This can take a while..."), tr("Removing old fake drive"));
