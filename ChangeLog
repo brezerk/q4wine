@@ -5,6 +5,31 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
+Varsion 0.121
+ Added:
+  - q4wine now will create new symlinks when mounting $WINEPREFIX/dosdevices/${DRIVE}:
+    pointing to the mountpoint and $WINEPREFIX/dosdevices/${DRIVE}:: pointing to
+    the Image file;
+    Apparently this is needed so that the images are recognised as a proper
+    cd/dvd drive;
+	                                                                         by aleric
+  - Added cmake option WITH_SYSTEM_SINGLEAPP to compile q4wine with system
+	installed QtSingleAppliaction library; 
+  - Added cmake option RELEASE for translation and developing purposes;
+  - Added cmake option LINGUAS which specify languages to build;
+  - "make translations" target; Use it for translation updates;
+  - Added cmake option LIBS_ENTRY_PATH to allow override for libs install directory; 
+  - Implementation for feature request 3079649 (Prefixes list sorting);
+ 
+ Fixed:
+  - mount images in read only mode (ro); by aleric
+  - removed media drive option in prefix settings dialog;
+  - Fixed quote bugs for WINEDEBUG and DISPLAY variables, reported by Carlos Ignacio Ruax; 
+  - English fixes by Steven Panek; 
+  - Fake drive can create unlinked desktop folders; 
+  - Move File System item upper in Fake Drive Settings dialog;
+  - 
+
 Version 0.120
  Added:
   - Czech translation (thx to Pavel Fric);

@@ -51,9 +51,9 @@ DataBase::DataBase(QObject * parent): QObject(parent){
 
 bool DataBase::checkDb(){
     /*
-	* Checking database tables.
-	* If not exists, we try to create them.
-	*/
+    * Checking database tables.
+    * If not exists, we try to create them.
+    */
 
     QTextStream QErr(stderr);
 
@@ -61,12 +61,12 @@ bool DataBase::checkDb(){
     tables << "prefix" << "dir" << "icon" << "images" << "last_run_icon"<<"logging";
 
     QSqlDatabase db = QSqlDatabase::database();
-    
+
     if (!db.isValid()){
         QErr<<"[EE] "<<tr("No database loaded. Aborting...");
         return false;
     }
-    
+
     QSqlQuery query;
 
     for (int i=0; i<tables.size(); ++i){
@@ -78,7 +78,7 @@ bool DataBase::checkDb(){
 
         if (db.record(table).isEmpty()){
             if (table == "prefix"){
-                if(!query.exec("CREATE TABLE prefix (wine_dllpath TEXT, wine_loader TEXT, wine_server TEXT, wine_exec TEXT, cdrom_mount TEXT, cdrom_drive TEXT, id INTEGER PRIMARY KEY, name TEXT, path TEXT, version TEXT);"))
+                if(!query.exec("CREATE TABLE prefix (wine_dllpath TEXT, wine_loader TEXT, wine_server TEXT, wine_exec TEXT, cdrom_mount TEXT, id INTEGER PRIMARY KEY, name TEXT, path TEXT, version TEXT);"))
                     return false;
 
                 // Creating default prefix reccord

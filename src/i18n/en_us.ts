@@ -1199,8 +1199,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="399"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="930"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="963"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1318"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1326"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1315"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1323"/>
         <source>Error</source>
         <translation type="unfinished">Error</translation>
     </message>
@@ -1242,8 +1242,8 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="299"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1318"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1326"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1315"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1323"/>
         <source>Can&apos;t create dir: %1</source>
         <translation>Cannot create directory: %1</translation>
     </message>
@@ -1262,14 +1262,14 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1354"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1360"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1351"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1357"/>
         <source>Open File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1356"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1362"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1353"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1359"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3530,8 +3530,8 @@ Note: leave it blank for default.</translation>
         <translation type="obsolete">&lt;none&gt;</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="323"/>
-        <location filename="../core/database/prefix.cpp" line="386"/>
+        <location filename="../core/database/prefix.cpp" line="322"/>
+        <location filename="../core/database/prefix.cpp" line="385"/>
         <source>Default</source>
         <translation type="unfinished">Default</translation>
     </message>

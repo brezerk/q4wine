@@ -1287,21 +1287,18 @@ void FakeDriveSettings::loadDefaultSettings(){
     item->setDrive("C:", "../drive_c", "auto");
     listWineDrives->addItem(item.release());
 
-    if (!db_prefix.getMountPoint(prefixName).isEmpty()){
+    QString mount_point = db_prefix.getMountPoint(prefixName);
+    QString mount_point_windrive = db_prefix.getMountPointWindrive(prefixName);
+
+    if ((!mount_point.isEmpty()) and (!mount_point_windrive.isEmpty())){
         item.reset(new DriveListWidgetItem(listWineDrives));
-        item->setDrive("D:", db_prefix.getMountPoint(prefixName), "cdrom");
+        item->setDrive(QString("%1:").arg(mount_point_windrive), mount_point, "cdrom");
         listWineDrives->addItem(item.release());
     }
 
     item.reset(new DriveListWidgetItem(listWineDrives));
     item->setDrive("Z:", "/", "auto");
     listWineDrives->addItem(item.release());
-
-    /*
-    item.reset(new DriveListWidgetItem(listWineDrives));
-    item->setDrive("H:", QString("%1/.config/q4wine/tmp").arg(QDir::homePath()), "auto");
-    listWineDrives->addItem(item.release());
-    */
 
     QString prefixPath = db_prefix.getPath(this->prefixName);
 

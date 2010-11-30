@@ -131,7 +131,7 @@ QHash<QString,QString> Prefix::getByName(const QString prefix_name) const{
     QSettings settings(APP_SHORT_NAME, "default");
     settings.beginGroup("wine");
 
-        query.prepare("SELECT path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, id, name, arch, mountpoint_windrive FROM prefix WHERE name=:prefix_name");
+    query.prepare("SELECT path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, id, name, arch, mountpoint_windrive FROM prefix WHERE name=:prefix_name");
     query.bindValue(":prefix_name", prefix_name);
 
     if (query.exec()){
@@ -167,11 +167,10 @@ QHash<QString,QString> Prefix::getByName(const QString prefix_name) const{
                 values.insert("bin", settings.value("WineBin", "").toString());
             }
             values.insert("mount", query.value(5).toString());
-            values.insert("drive", query.value(6).toString());
-            values.insert("id", query.value(7).toString());
-            values.insert("name", query.value(8).toString());
-            values.insert("arch", query.value(9).toString());
-            values.insert("mountpoint_windrive", query.value(10).toString());
+            values.insert("id", query.value(6).toString());
+            values.insert("name", query.value(7).toString());
+            values.insert("arch", query.value(8).toString());
+            values.insert("mountpoint_windrive", query.value(9).toString());
         }
     } else {
         qDebug()<<"SqlError: "<<query.lastError();

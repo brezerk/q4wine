@@ -46,12 +46,12 @@ void WineObject::setPrefix(QString prefix){
 
     this->prefixId=prefix_info.value("id").toInt();
     this->prefixName=prefix_info.value("name");
-        this->prefixBinary=CoreLib->getStrictEscapeString(prefix_info.value("bin"));
-        this->prefixDllPath=CoreLib->getStrictEscapeString(prefix_info.value("libs"));
-        this->prefixLoader=CoreLib->getStrictEscapeString(prefix_info.value("loader"));
-        this->prefixPath=CoreLib->getStrictEscapeString(prefix_info.value("path"));
-        this->prefixServer=CoreLib->getStrictEscapeString(prefix_info.value("server"));
-        this->prefixArch=prefix_info.value("arch");
+    this->prefixBinary=CoreLib->getStrictEscapeString(prefix_info.value("bin"));
+    this->prefixDllPath=CoreLib->getStrictEscapeString(prefix_info.value("libs"));
+    this->prefixLoader=CoreLib->getStrictEscapeString(prefix_info.value("loader"));
+    this->prefixPath=CoreLib->getStrictEscapeString(prefix_info.value("path"));
+    this->prefixServer=CoreLib->getStrictEscapeString(prefix_info.value("server"));
+    this->prefixArch=prefix_info.value("arch");
     return;
 }
 

@@ -1207,8 +1207,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="399"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="930"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="963"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1318"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1326"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1315"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1323"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
@@ -1260,8 +1260,8 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="299"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1318"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1326"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1315"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1323"/>
         <source>Can&apos;t create dir: %1</source>
         <translation>Nelze vytvořit adresář: %1</translation>
     </message>
@@ -1280,14 +1280,14 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1354"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1360"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1351"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1357"/>
         <source>Open File</source>
         <translation>Otevřít soubor</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1356"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1362"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1353"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1359"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
@@ -3582,8 +3582,8 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation type="obsolete">&lt;žádný&gt;</translation>
     </message>
     <message>
-        <location filename="../core/database/prefix.cpp" line="323"/>
-        <location filename="../core/database/prefix.cpp" line="386"/>
+        <location filename="../core/database/prefix.cpp" line="322"/>
+        <location filename="../core/database/prefix.cpp" line="385"/>
         <source>Default</source>
         <translation>Výchozí</translation>
     </message>
