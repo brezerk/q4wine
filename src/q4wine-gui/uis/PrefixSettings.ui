@@ -494,11 +494,6 @@
                     <string notr="true">Y:</string>
                    </property>
                   </item>
-                  <item>
-                   <property name="text">
-                    <string notr="true">Z:</string>
-                   </property>
-                  </item>
                  </widget>
                 </item>
                </layout>
