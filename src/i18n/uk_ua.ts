@@ -3875,7 +3875,7 @@ See help for details.</source>
         <translation>Швидке монтування</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="381"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="425"/>
         <source>Device:</source>
         <translation>Пристрій:</translation>
     </message>
@@ -3884,25 +3884,25 @@ See help for details.</source>
         <translation type="obsolete">&lt;немає&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="528"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="381"/>
         <source>Mount point:</source>
         <translation>Точка монтування:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="571"/>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="580"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="566"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="575"/>
         <source>Wine settings</source>
         <translation>Параметри Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="595"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="590"/>
         <source>If you wish to use different Wine versions, you may wish set custom Wine paths here.
 Note: leave it blank for default.</source>
         <translation>Якщо ви маєте намір використовувати декілька версій wine, вам слід вказати тут нетипові шляхи для wine.
 Зауваження: не заповнюйте, якщо не збираєтеся цього робити.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="834"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="829"/>
         <source>OK</source>
         <translation>Гаразд</translation>
     </message>
@@ -3913,32 +3913,32 @@ Note: leave it blank for default.</source>
 Зауваження: не заповнюйте, якщо не збираєтеся цього робити.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="627"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="622"/>
         <source>Bin:</source>
         <translation>Вик.файл:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="671"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="666"/>
         <source>Server:</source>
         <translation>Сервер:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="715"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="710"/>
         <source>Loader:</source>
         <translation>Завантажувач:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="759"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="754"/>
         <source>Libs:</source>
         <translation>Бібліотеки:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="807"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="802"/>
         <source>Help</source>
         <translation>Довідка</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="827"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="822"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
@@ -3955,36 +3955,36 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">:/%1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="110"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="111"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="115"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="116"/>
         <source>Add new Prefix</source>
         <translation>Додати новий префікс</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="167"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="173"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="172"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="178"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="167"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="172"/>
         <source>Please, enter prefix name</source>
         <translation>Будь ласка, введіть назву префікса</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="173"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="178"/>
         <source>Sorry, but prefix named %1 already exists.</source>
         <translation>Вибачте, але префікс з назвою %1 вже існує.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="214"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="216"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="219"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="221"/>
         <source>Open File</source>
         <translation>Відкрити файл</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="225"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="227"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="230"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="232"/>
         <source>Open Directory</source>
         <translation>Відкрити каталог</translation>
     </message>

@@ -3801,37 +3801,37 @@ Vea la ayuda para mas detalles.</translation>
 <context>
     <name>PrefixSettings</name>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="110"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="111"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="115"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="116"/>
         <source>Add new Prefix</source>
         <translation>Añadir nuevo prefijo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="167"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="173"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="172"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="178"/>
         <source>Error</source>
         <translatorcomment>same</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="167"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="172"/>
         <source>Please, enter prefix name</source>
         <translation>Por favor, ingrese el nombre del prefijo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="173"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="178"/>
         <source>Sorry, but prefix named %1 already exists.</source>
         <translation>Disculpe, el prefijo %1 ya existe.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="214"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="216"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="219"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="221"/>
         <source>Open File</source>
         <translation>Abrir archivo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="225"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="227"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="230"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="232"/>
         <source>Open Directory</source>
         <translation>Abrir carpeta</translation>
     </message>
@@ -3879,7 +3879,7 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Montado rápido</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="381"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="425"/>
         <source>Device:</source>
         <translation>Dispositivo:</translation>
     </message>
@@ -3888,18 +3888,18 @@ Vea la ayuda para mas detalles.</translation>
         <translation type="obsolete">&lt;Ninguno&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="528"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="381"/>
         <source>Mount point:</source>
         <translation>Punto de montaje:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="571"/>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="580"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="566"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="575"/>
         <source>Wine settings</source>
         <translation>Ajustes de wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="595"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="590"/>
         <source>If you wish to use different Wine versions, you may wish set custom Wine paths here.
 Note: leave it blank for default.</source>
         <translation>Si desea utilizar diferentes versiones de wine, puede configurarlo aqui.
@@ -3907,7 +3907,7 @@ Note: leave it blank for default.</source>
 Nota: deje en blanco para valores por defecto.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="834"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="829"/>
         <source>OK</source>
         <translation>Aceptar</translation>
     </message>
@@ -3919,32 +3919,32 @@ Note: leave it blank for default.</source>
 Nota: deje en blanco para valores por defecto.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="627"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="622"/>
         <source>Bin:</source>
         <translation>Ejecutable:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="671"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="666"/>
         <source>Server:</source>
         <translation>Servidor:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="715"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="710"/>
         <source>Loader:</source>
         <translation>Cargador:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="759"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="754"/>
         <source>Libs:</source>
         <translation>Librerias:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="807"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="802"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="827"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="822"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>

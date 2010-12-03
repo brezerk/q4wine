@@ -3826,7 +3826,7 @@ Veja ajuda para detalhes.</translation>
         <translation>Montagem rápida</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="381"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="425"/>
         <source>Device:</source>
         <translation>Dispositivo:</translation>
     </message>
@@ -3835,24 +3835,24 @@ Veja ajuda para detalhes.</translation>
         <translation type="obsolete">&lt;nenhum&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="528"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="381"/>
         <source>Mount point:</source>
         <translation>Ponto de montagem:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="571"/>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="580"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="566"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="575"/>
         <source>Wine settings</source>
         <translation>Definições do Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="595"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="590"/>
         <source>If you wish to use different Wine versions, you may wish set custom Wine paths here.
 Note: leave it blank for default.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="834"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="829"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3863,33 +3863,33 @@ Note: leave it blank for default.</source>
 Nota: deixe em branco para usar os valores padrões.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="627"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="622"/>
         <source>Bin:</source>
         <translation>Binário:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="671"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="666"/>
         <source>Server:</source>
         <translation>Servidor:
 </translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="715"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="710"/>
         <source>Loader:</source>
         <translation>Carregador:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="759"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="754"/>
         <source>Libs:</source>
         <translation>Bibliotecas:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="807"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="802"/>
         <source>Help</source>
         <translation>Ajuda</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="827"/>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="822"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -3910,36 +3910,36 @@ Nota: deixe em branco para usar os valores padrões.</translation>
         <translation type="obsolete">:/%1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="110"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="111"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="115"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="116"/>
         <source>Add new Prefix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="167"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="173"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="172"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="178"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="167"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="172"/>
         <source>Please, enter prefix name</source>
         <translation>Por favor, digite o nome do prefixo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="173"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="178"/>
         <source>Sorry, but prefix named %1 already exists.</source>
         <translation>Desculpe, mas o prefixo chamado %1 já existe.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="214"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="216"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="219"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="221"/>
         <source>Open File</source>
         <translation>Abrir Arquivo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="225"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="227"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="230"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="232"/>
         <source>Open Directory</source>
         <translation>Abrir Diretório</translation>
     </message>

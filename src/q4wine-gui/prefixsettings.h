@@ -43,64 +43,68 @@
  */
 class PrefixSettings : public QDialog, public Ui::PrefixSettings
 {
-	Q_OBJECT
-	public:
-		/*! \brief This is class constructor.
-		 *
-		 * \param  prefix_name  Current prefix name.
-		 */
-		PrefixSettings(QString prefix_name, QWidget * parent = 0, Qt::WFlags f = 0);
+    Q_OBJECT
+    public:
+        /*! \brief This is class constructor.
+         *
+         * \param  prefix_name  Current prefix name.
+         */
+        PrefixSettings(QString prefix_name, QWidget * parent = 0, Qt::WFlags f = 0);
         PrefixSettings(QWidget * parent = 0, Qt::WFlags f = 0);
-		QString getPrefixName();
+        QString getPrefixName();
 
-	private:
-		/*! \brief This is an event filter.
-		 *
-		 * This event filter hendle button click events
-		 * \param  prefix_name  Current prefix name.
-		 */
-		bool eventFilter(QObject *obj, QEvent *event);
+    private:
+        /*! \brief This is an event filter.
+         *
+         * This event filter hendle button click events
+         * \param  prefix_name  Current prefix name.
+         */
+        bool eventFilter(QObject *obj, QEvent *event);
 
-		/*! \brief This function loads theme images to widgets.
-		 *
-		 * \param themePath is a path to user selected theme ;)
-		 */
-		void loadThemeIcons();
+        /*! \brief This function loads theme images to widgets.
+         *
+         * \param themePath is a path to user selected theme ;)
+         */
+        void loadThemeIcons();
 
-		/*!
-		 * Prefix id, and name
-		 */
-		QString prefix_id, prefix_name;
+        /*!
+         * Prefix id, and name
+         */
+        QString prefix_id, prefix_name;
 
-		//! Database prefix class defenition.
-		Prefix db_prefix;
+        //! Database prefix class defenition.
+        Prefix db_prefix;
         Icon db_icon;
         Dir db_dir;
 
-		//! This is need for libq4wine-core.so import.
-		QLibrary libq4wine;
-		typedef void *CoreLibPrototype (bool);
-		CoreLibPrototype *CoreLibClassPointer;
-		std::auto_ptr<corelib> CoreLib;
+        //! This is need for libq4wine-core.so import.
+        QLibrary libq4wine;
+        typedef void *CoreLibPrototype (bool);
+        CoreLibPrototype *CoreLibClassPointer;
+        std::auto_ptr<corelib> CoreLib;
 
         bool addNew;
 
-	private slots:
-		/*!
-		 * \bref Cancle button click slot
-		 */
-		void cmdCancel_Click();
+    private slots:
+        /*!
+         * \bref Cancle button click slot
+         */
+        void cmdCancel_Click();
 
-		/*!
-		 * \bref Ok button click slot
-		 */
-		void cmdOk_Click();
+        /*!
+         * \bref Ok button click slot
+         */
+        void cmdOk_Click();
 
-		/*!
-		 * \bref Help button click slot
-		 */
-		void cmdHelp_Click();
+        /*!
+         * \bref Help button click slot
+         */
+        void cmdHelp_Click();
 
+        /*!
+         * \brief Get wine cdrom letter
+         */
+        void getWineCdromLetter();
 
 };
 

@@ -49,6 +49,8 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
     txtMountPoint->setText(result.value("mount"));
 
+    connect(txtMountPoint, SIGNAL(editingFinished()), this, SLOT(getWineCdromLetter()));
+
     if (prefix_name=="Default"){
         txtPrefixName->setEnabled(FALSE);
         txtPrefixPath->setEnabled(FALSE);
@@ -84,8 +86,11 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
     if (!result.value("arch").isEmpty())
         comboArchList->setCurrentIndex(comboArchList->findText(result.value("arch")));
-    if (!result.value("mountpoint_windrive").isEmpty())
+    if (!result.value("mountpoint_windrive").isEmpty()){
         comboWinDrive->setCurrentIndex(comboWinDrive->findText(result.value("mountpoint_windrive")));
+    } else {
+        this->getWineCdromLetter();
+    }
 
     txtPrefixName->setText(prefix_name);
     txtPrefixPath->setText(result.value("path"));
@@ -252,6 +257,10 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
                 txtPrefixName->setText(txtPrefixPath->text().split("/").last());
             }
 
+            if (obj->objectName()=="cmdGetMountPoint"){
+                this->getWineCdromLetter();
+            }
+
         }
     }
 
@@ -272,3 +281,11 @@ void PrefixSettings::cmdHelp_Click(){
     CoreLib->openHelpUrl(rawurl);
 }
 
+void PrefixSettings::getWineCdromLetter(){
+    if (!txtMountPoint->text().isEmpty()){
+        QChar letter = CoreLib->getCdromWineDrive(db_prefix.getPath(prefix_name), txtMountPoint->text());
+        if (!letter.isNull()){
+            comboWinDrive->setCurrentIndex(comboWinDrive->findText(QString("%1:").arg(letter.toUpper())));
+        }
+    }
+}
