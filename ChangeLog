@@ -5,30 +5,30 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
-Varsion 0.121
+Version 0.121
  Added:
   - q4wine now will create new symlinks when mounting $WINEPREFIX/dosdevices/${DRIVE}:
     pointing to the mountpoint and $WINEPREFIX/dosdevices/${DRIVE}:: pointing to
     the Image file;
-    Apparently this is needed so that the images are recognised as a proper
+    Apparently this is needed so that the images are recognized as a proper
     cd/dvd drive;
 	                                                                         by aleric
   - Added cmake option WITH_SYSTEM_SINGLEAPP to compile q4wine with system
-	installed QtSingleAppliaction library; 
+	installed QtSingleAppliaction library;
   - Added cmake option RELEASE for translation and developing purposes;
   - Added cmake option LINGUAS which specify languages to build;
   - "make translations" target; Use it for translation updates;
-  - Added cmake option LIBS_ENTRY_PATH to allow override for libs install directory; 
+  - Added cmake option LIBS_ENTRY_PATH to allow override for libs install directory;
   - Implementation for feature request 3079649 (Prefixes list sorting);
- 
+
  Fixed:
   - mount images in read only mode (ro); by aleric
   - removed media drive option in prefix settings dialog;
-  - Fixed quote bugs for WINEDEBUG and DISPLAY variables, reported by Carlos Ignacio Ruax; 
-  - English fixes by Steven Panek; 
-  - Fake drive can create unlinked desktop folders; 
+  - Fixed quote bugs for WINEDEBUG and DISPLAY variables, reported by Carlos Ignacio Ruax;
+  - English fixes by Steven Panek;
+  - Fake drive can create unlinked desktop folders;
   - Move File System item upper in Fake Drive Settings dialog;
-  - 
+  -
 
 Version 0.120
  Added:
@@ -49,7 +49,7 @@ Version 0.120
   - Fixed some typo and gui layouts;
   - Fixed fakedrivesettings.cpp rewrite sh scripts in to C++\Qt code;
   - FreeBSD: report error while can't read process info from /proc fs;
-  - Fixed $HOME/.config/q4wine/tmp not requeired any more, we use $WINEPREFIX/tmp instead; 
+  - Fixed $HOME/.config/q4wine/tmp not requeired any more, we use $WINEPREFIX/tmp instead;
   - Desktop file updates;
 
 Version 0.119-r1
@@ -58,10 +58,10 @@ Version 0.119-r1
   - Settings dialog online documenatation;
 
  Fixed:
-  - Some of english spell errors; 
+  - Some of english spell errors;
   - hyphen-used-as-minus-sign errors for man pages;
   - bug with dll override app run (q4wine-Bugs-3043548);
-  - bug with user console wine app run; 
+  - bug with user console wine app run;
   - strange locale bug reported by Taras Rozbitskiy;
 
 Version 0.119
@@ -71,7 +71,7 @@ Version 0.119
   - Desktop integraion;
   - Wine .desktop files import;
   - Sync fake drive settings to head wine version;
-  - Various user interface enhancement; 
+  - Various user interface enhancement;
   - Updated Ukrainian, Italian and Spanish translations;
   - Updated online documentation;
 
@@ -133,14 +133,14 @@ Version 0.114
   - New Spanish translation (thx 2 Carlos Ignacio Ruax);
   - New Italian translation (thx 2 Ercole Carpanetto);
   - New FreeBSD mount and umount scripts (thx 2 Sergey V. Dyatko);
-  
+
  Fixed:
   - Removed _junk_ translation strings from source code and UI;
   - Fix for misfunctioning check wether or not to use ICOTOOLS. (thx 2 Impulze);
   - Prefix combobox change do not set right Prefix in Prefix tree view;
   - Fake drive update wizard now remove registry key while user reset it to 'Default' state;
-  - Fix for prefix import and export; 
-  - And some small fixes for icoutils; 
+  - Fix for prefix import and export;
+  - And some small fixes for icoutils;
 
 Version 0.113
  Added:
