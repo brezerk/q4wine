@@ -164,6 +164,16 @@ public:
      */
     QStringList getCdromDevices(void) const;
 
+    /*! \brief This function get cdrom wine device name
+     *         by mount point path.
+     *
+     * \param prefix_path Prefix path :)
+     * \param mount_point Mount point path
+     *
+     * \return Return an drive letter on success or null on fail
+     */
+    QChar getCdromWineDrive(QString prefix_path, QString mount_point);
+
     /*! \brief This function opens help url in xdg-open browser.
      *
      * \return Return nothing.

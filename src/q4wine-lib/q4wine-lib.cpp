@@ -621,6 +621,26 @@ QStringList corelib::getCdromDevices(void) const{
         return retVal;
     }
 
+    QChar corelib::getCdromWineDrive(QString prefix_path, QString mount_point){
+        QDir wineDriveDir;
+        wineDriveDir.setFilter(QDir::Dirs | QDir::Hidden | QDir::NoDotAndDotDot  );
+
+        prefix_path.append("/dosdevices/");
+        if (!wineDriveDir.cd(prefix_path)){
+            qDebug()<<"[EE] Cannot cd to prefix directory: "<<prefix_path;
+        } else {
+            QFileInfoList drivelist = wineDriveDir.entryInfoList();
+            for (int i = 0; i < drivelist.size(); ++i) {
+                QFileInfo fileInfo = drivelist.at(i);
+                if (fileInfo.symLinkTarget() == mount_point){
+                    return fileInfo.fileName()[0];
+                }
+            }
+        }
+
+        return QChar();
+    }
+
     QStringList corelib::getWineDlls(QString prefix_lib_path) const{
         QStringList dllList;
         if (prefix_lib_path.isEmpty()){
@@ -1090,10 +1110,13 @@ QStringList corelib::getCdromDevices(void) const{
                 QString prefixPath = db_prefix.getPath(prefix_name);
                 QChar winDrive = db_prefix.getMountPointWindrive(prefix_name);
                 if (winDrive.isNull()){
+                    winDrive = this->getCdromWineDrive(db_prefix.getPath(prefix_name), mount_point);
+                    if (winDrive.isNull()){
 #ifdef DEBUG
-                    qDebug()<<"[ii] Prefix '" << prefix_name << "' does not have a Windows drive set for the mount operation";
+                        qDebug()<<"[ii] Prefix '" << prefix_name << "' does not have a Windows drive set for the mount operation";
 #endif
-                    return success; //don't create the link, return true
+                        return success; //don't create the link, return true
+                    }
                 }
                 //drive letter plus two colons links to the actual physical device (in this case the image)
                 QFile physicalDriveLink(prefixPath + "/dosdevices/" + winDrive.toLower() + "::");
