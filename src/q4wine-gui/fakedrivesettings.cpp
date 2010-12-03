@@ -1288,9 +1288,9 @@ void FakeDriveSettings::loadDefaultSettings(){
     listWineDrives->addItem(item.release());
 
     QString mount_point = db_prefix.getMountPoint(prefixName);
-    QString mount_point_windrive = db_prefix.getMountPointWindrive(prefixName);
+    QChar mount_point_windrive = db_prefix.getMountPointWindrive(prefixName);
 
-    if ((!mount_point.isEmpty()) and (!mount_point_windrive.isEmpty())){
+    if ((!mount_point.isEmpty()) and (!mount_point_windrive.isNull())){
         item.reset(new DriveListWidgetItem(listWineDrives));
         item->setDrive(QString("%1:").arg(mount_point_windrive), mount_point, "cdrom");
         listWineDrives->addItem(item.release());
