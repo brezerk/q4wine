@@ -809,12 +809,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/appsettings.cpp" line="841"/>
         <source>Warning</source>
-        <translation type="unfinished">Предупреждение</translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/appsettings.cpp" line="841"/>
         <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;q4wine был собран без встроенного FuseISO.&lt;/p&gt;&lt;p&gt;Если вы хотите собрать q4wine с встроенным FuseISO, добавьте:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; в качестве аргумента cmake.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;q4wine был собран без встроенного FuseISO.&lt;/p&gt;&lt;p&gt;Если вы хотите собрать q4wine с встроенным FuseISO, добавьте:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; в качестве аргумента cmake.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1887"/>
