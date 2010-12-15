@@ -59,10 +59,6 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
     connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
-    connect(radioDefault, SIGNAL(toggled(bool)), this, SLOT(radioDefault_toggled(bool)));
-    connect(radioDefaultGui, SIGNAL(toggled(bool)), this, SLOT(radioDefaultGui_toggled(bool)));
-    connect(radioFuse, SIGNAL(toggled(bool)), this, SLOT(radioFuse_toggled(bool)));
-    connect(radioEmbedded, SIGNAL(toggled(bool)), this, SLOT(radioEmbedded_toggled(bool)));
 
     //Installing event filters for get buttuns
     cmdGetWineBin->installEventFilter(this);
@@ -189,22 +185,8 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
     settings.beginGroup("quickmount");
 
-    switch (settings.value("type").toInt()){
- case 0:
-        //Fix for field update.
-        radioDefaultGui->setChecked(true);
-        radioDefault->setChecked(true);
-        break;
- case 1:
-        radioDefaultGui->setChecked(true);
-        break;
- case 2:
-        radioFuse->setChecked(true);
-        break;
- case 3:
-        radioEmbedded->setChecked(true);
-        break;
-    }
+    comboMountProfiles->setCurrentIndex(settings.value("type", 0).toInt());
+    connect(comboMountProfiles, SIGNAL(currentIndexChanged(int)), this, SLOT(comboMountProfiles_currentIndexChanged(int)));
 
     if (!settings.value("mount_drive_string").toString().isEmpty())
         txtMountString->setText(settings.value("mount_drive_string").toString());
@@ -679,66 +661,8 @@ void AppSettings::cmdOk_Click(){
 #endif
 
     settings.beginGroup("quickmount");
-    if (radioDefault->isChecked()){
-        settings.setValue("type", 0);
-        if (txtMountString->text().isEmpty()){
-            txtMountString->setText(CoreLib->getMountString(0));
-        }
 
-        if (txtMountImageString->text().isEmpty()){
-            txtMountImageString->setText(CoreLib->getMountImageString(0));
-        }
-
-        if (txtUmountString->text().isEmpty()){
-            txtUmountString->setText(CoreLib->getUmountString(0));
-        }
-    }
-
-    if (radioDefaultGui->isChecked()){
-        settings.setValue("type", 1);
-        if (txtMountString->text().isEmpty()){
-            txtMountString->setText(CoreLib->getMountString(1));
-        }
-
-        if (txtMountImageString->text().isEmpty()){
-            txtMountImageString->setText(CoreLib->getMountImageString(1));
-        }
-
-        if (txtUmountString->text().isEmpty()){
-            txtUmountString->setText(CoreLib->getUmountString(1));
-        }
-    }
-
-    if (radioFuse->isChecked()){
-        settings.setValue("type", 2);
-        if (txtMountString->text().isEmpty()){
-            txtMountString->setText(CoreLib->getMountString(2));
-        }
-
-        if (txtMountImageString->text().isEmpty()){
-            txtMountImageString->setText(CoreLib->getMountImageString(2));
-        }
-
-        if (txtUmountString->text().isEmpty()){
-            txtUmountString->setText(CoreLib->getUmountString(2));
-        }
-    }
-
-    if (radioEmbedded->isChecked()){
-        settings.setValue("type", 3);
-        if (txtMountString->text().isEmpty()){
-            txtMountString->setText(CoreLib->getMountString(3));
-        }
-
-        if (txtMountImageString->text().isEmpty()){
-            txtMountImageString->setText(CoreLib->getMountImageString(3));
-        }
-
-        if (txtUmountString->text().isEmpty()){
-            txtUmountString->setText(CoreLib->getUmountString(3));
-        }
-    }
-
+    settings.setValue("type", this->comboMountProfiles->currentIndex());
     settings.setValue("mount_drive_string", txtMountString->text());
     settings.setValue("mount_image_string", txtMountImageString->text());
     settings.setValue("umount_string", txtUmountString->text());
@@ -900,63 +824,30 @@ void AppSettings::cmdHelp_Click(){
     return;
 }
 
-void AppSettings::radioDefault_toggled(bool state){
-    if (!state)
+void AppSettings::comboMountProfiles_currentIndexChanged(int index){
+    switch (index){
+    case 2:
+        if (CoreLib->getWhichOut("fusermount").isEmpty()){
+            this->comboMountProfiles->setCurrentIndex(0);
+            return;
+        }
+        if (CoreLib->getWhichOut("fuseiso").isEmpty()){
+            this->comboMountProfiles->setCurrentIndex(0);
+            return;
+        }
+        break;
+    case 3:
+#ifndef WITH_EMBEDDED_FUSEISO
+        QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without embedded FuseIso.</p><p>If you wish to compile q4wine with embedded FuseIso add:</p><p> \"-WITH_EMBEDDED_FUSEISO=ON\" to cmake arguments.</p>"));
+        this->comboMountProfiles->setCurrentIndex(0);
         return;
-
-    txtMountString->setText(CoreLib->getMountString(0));
-    txtMountImageString->setText(CoreLib->getMountImageString(0));
-    txtUmountString->setText(CoreLib->getUmountString(0));
-    return;
-}
-
-void AppSettings::radioDefaultGui_toggled(bool state){
-    if (!state)
-        return;
-
-    txtMountString->setText(CoreLib->getMountString(1));
-    txtMountImageString->setText(CoreLib->getMountImageString(1));
-    txtUmountString->setText(CoreLib->getUmountString(1));
-    return;
-}
-
-void AppSettings::radioFuse_toggled(bool state){
-    if (!state)
-        return;
-
-    if (CoreLib->getWhichOut("fusermount").isEmpty()){
-        radioDefault->setChecked(true);
-        return;
-    }
-    if (CoreLib->getWhichOut("fuseiso").isEmpty()){
-        radioDefault->setChecked(true);
-        return;
-    }
-
-    txtMountString->setText(CoreLib->getMountString(2));
-    txtMountImageString->setText(CoreLib->getMountImageString(2));
-    txtUmountString->setText(CoreLib->getUmountString(2));
-    return;
-}
-
-void AppSettings::radioEmbedded_toggled(bool state){
-    if (!state)
-        return;
-
-#ifdef WITH_EMBEDDED_FUSEISO
-    if (CoreLib->getWhichOut("fusermount").isEmpty()){
-        radioDefault->setChecked(true);
-        return;
-    }
-
-    txtMountString->setText(CoreLib->getMountString(3));
-    txtMountImageString->setText(CoreLib->getMountImageString(3));
-    txtUmountString->setText(CoreLib->getUmountString(3));
-#else
-    QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without embedded FuseIso.</p><p>If you wish to compile q4wine with embedded FuseIso add:</p><p> \"-WITH_EMBEDDED_FUSEISO=ON\" to cmake arguments.</p>"));
-    radioDefault->setChecked(true);
 #endif
-    return;
+        break;
+    }
+
+    txtMountString->setText(CoreLib->getMountString(index));
+    txtMountImageString->setText(CoreLib->getMountImageString(index));
+    txtUmountString->setText(CoreLib->getUmountString(index));
 }
 
 void AppSettings::cbEnableLogging_stateChanged ( int state ){
@@ -966,6 +857,7 @@ void AppSettings::cbEnableLogging_stateChanged ( int state ){
         cbClearLogs->setEnabled(true);
     }
 }
+
 
 void AppSettings::cbShowTray_stateChanged ( int state ){
     if (state==0){

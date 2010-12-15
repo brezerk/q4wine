@@ -31,39 +31,43 @@
 
 class AppSettings : public QDialog, public Ui::AppSettings
 {
-	Q_OBJECT
-	public:
-		AppSettings(QWidget * parent = 0, Qt::WFlags f = 0);
+    Q_OBJECT
+    public:
+        AppSettings(QWidget * parent = 0, Qt::WFlags f = 0);
 
-	private slots:
-		void cmdCancel_Click();
-		void cmdOk_Click();
-		void comboProxyType_indexChanged(QString text);
-		//! \brief cmdHelo click slot.
-		void cmdHelp_Click();
-		void radioDefault_toggled(bool state);
-		void radioDefaultGui_toggled(bool state);
-		void radioFuse_toggled(bool state);
-		void radioEmbedded_toggled(bool state);
+    private slots:
+        void cmdCancel_Click();
+        void cmdOk_Click();
+        void comboProxyType_indexChanged(QString text);
+        //! \brief cmdHelo click slot.
+        void cmdHelp_Click();
+
+        void comboMountProfiles_currentIndexChanged(int index);
+        /*
+        void radioDefault_toggled(bool state);
+        void radioDefaultGui_toggled(bool state);
+        void radioFuse_toggled(bool state);
+        void radioEmbedded_toggled(bool state);
+        */
         void cbEnableLogging_stateChanged ( int state );
         void cbShowTray_stateChanged ( int state );
 
         void optionsTree_itemClicked ( QTreeWidgetItem *item, int);
 
-	private:
-		bool eventFilter (QObject *object, QEvent *event);
-		void getThemes(QString selTheme, QString themeDir);
-		void getLangs();
-		bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
-		void loadThemeIcons();
+    private:
+        bool eventFilter (QObject *object, QEvent *event);
+        void getThemes(QString selTheme, QString themeDir);
+        void getLangs();
+        bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
+        void loadThemeIcons();
 
         std::auto_ptr<QSplitter> splitter;
 
-		//! This is need for libq4wine-core.so import.
-		QLibrary libq4wine;
-		typedef void *CoreLibPrototype (bool);
-		CoreLibPrototype *CoreLibClassPointer;
-		std::auto_ptr<corelib> CoreLib;
+        //! This is need for libq4wine-core.so import.
+        QLibrary libq4wine;
+        typedef void *CoreLibPrototype (bool);
+        CoreLibPrototype *CoreLibClassPointer;
+        std::auto_ptr<corelib> CoreLib;
 };
 
 #endif
