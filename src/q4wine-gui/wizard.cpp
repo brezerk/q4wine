@@ -20,127 +20,105 @@
 #include "wizard.h"
 
 void Wizard::loadThemeIcons(int Scene){
-	QPixmap pixmap;
-	switch (Scene){
-	case 1:
-		// First startup
-		lblPicture->setPixmap(CoreLib->loadPixmap("data/firstc.png"));
+    QPixmap pixmap;
+    switch (Scene){
+    case 1:
+        // First startup
+        lblPicture->setPixmap(CoreLib->loadPixmap("data/firstc.png"));
 
-		cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetWineDllPath->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetTarBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetMountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetUmountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetSudoBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetGuiSudoBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetNiceBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetReniceBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetShBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetConsoleBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetWrestoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-		cmdGetIcotoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-
-#ifndef WITH_ICOUTILS
-		cmdGetWrestoolBin->setEnabled(false);
-		cmdGetIcotoolBin->setEnabled(false);
-		txtWrestoolBin->setEnabled(false);
-		txtIcotoolBin->setEnabled(false);
-#endif
-
-		connect(radioDefault, SIGNAL(toggled(bool)), this, SLOT(radioDefault_toggled(bool)));
-		connect(radioDefaultGui, SIGNAL(toggled(bool)), this, SLOT(radioDefaultGui_toggled(bool)));
-		connect(radioFuse, SIGNAL(toggled(bool)), this, SLOT(radioFuse_toggled(bool)));
-		connect(radioEmbedded, SIGNAL(toggled(bool)), this, SLOT(radioEmbedded_toggled(bool)));
-
-#ifdef _OS_FREEBSD_
-		radioFuse->setEnabled(FALSE);
-		radioEmbedded->setEnabled(FALSE);
-#endif
-
-		if (CoreLib->getWhichOut("fuseiso", false).isEmpty()){
-#ifdef WITH_EMBEDDED_FUSEISO
-			radioEmbedded->setChecked(true);
-#else
-			radioDefaultGui->setChecked(true);
-			radioDefault->setChecked(true);
-#endif
-		} else {
-			radioFuse->setChecked(true);
-		}
-
-		break;
+        cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetWineDllPath->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetTarBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetMountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetUmountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetSudoBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetGuiSudoBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetNiceBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetReniceBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetShBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetConsoleBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetWrestoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetIcotoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        break;
     }
-	return;
+    return;
 }
 
 Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
-	/*
-		Note: var1 is optional data, used for different scene actions ;)
-	*/
+    /*
+        Note: var1 is optional data, used for different scene actions ;)
+    */
 
-	setupUi(this);
+    setupUi(this);
 
-	// Loading libq4wine-core.so
-	libq4wine.setFileName("libq4wine-core");
+    // Loading libq4wine-core.so
+    libq4wine.setFileName("libq4wine-core");
 
-	if (!libq4wine.load()){
-		libq4wine.load();
-	}
+    if (!libq4wine.load()){
+        libq4wine.load();
+    }
 
-	// Getting corelib calss pointer
-	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    // Getting corelib calss pointer
+    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-	Scena=WizardType;
-	Page=1;
-	QString console_w;
+    Scena=WizardType;
+    Page=1;
+    QString console_w;
 
-	loadThemeIcons(Scena);
+    loadThemeIcons(Scena);
 
-	switch (Scena){
+    connect(cmdCancel, SIGNAL(clicked()), this, SLOT(reject ()));
+    connect(cmdNext, SIGNAL(clicked()), this, SLOT(nextWizardPage()));
+    connect(cmdBack, SIGNAL(clicked()), this, SLOT(previosWizardPage()));
+    connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
+    connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
+    connect(comboMountProfiles, SIGNAL(currentIndexChanged(int)), this, SLOT(comboMountProfiles_currentIndexChanged(int)));
+
+    switch (Scena){
  case 1:
-		TotalPage=8;
+        TotalPage=8;
 
-		setWindowTitle(tr("First startup wizard"));
-		lblCaption->setText(tr("<b>First startup wizard</b>"));
-		lblStep->setText(tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
+        setWindowTitle(tr("First startup wizard"));
+        lblCaption->setText(tr("<b>First startup wizard</b>"));
+        lblStep->setText(tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
 
-		cmdGetWineBin->installEventFilter(this);
-		cmdGetWineServerBin->installEventFilter(this);
-		cmdGetWineLoaderBin->installEventFilter(this);
-		cmdGetWineDllPath->installEventFilter(this);
+        cmdGetWineBin->installEventFilter(this);
+        cmdGetWineServerBin->installEventFilter(this);
+        cmdGetWineLoaderBin->installEventFilter(this);
+        cmdGetWineDllPath->installEventFilter(this);
 
-		cmdGetTarBin->installEventFilter(this);
-		cmdGetMountBin->installEventFilter(this);
-		cmdGetUmountBin->installEventFilter(this);
-		cmdGetSudoBin->installEventFilter(this);
-		cmdGetGuiSudoBin->installEventFilter(this);
-		cmdGetNiceBin->installEventFilter(this);
-		cmdGetReniceBin->installEventFilter(this);
-		cmdGetShBin->installEventFilter(this);
+        cmdGetTarBin->installEventFilter(this);
+        cmdGetMountBin->installEventFilter(this);
+        cmdGetUmountBin->installEventFilter(this);
+        cmdGetSudoBin->installEventFilter(this);
+        cmdGetGuiSudoBin->installEventFilter(this);
+        cmdGetNiceBin->installEventFilter(this);
+        cmdGetReniceBin->installEventFilter(this);
+        cmdGetShBin->installEventFilter(this);
 
-		cmdGetConsoleBin->installEventFilter(this);
+        cmdGetConsoleBin->installEventFilter(this);
 
-		txtWineBin->setText(CoreLib->getWhichOut("wine"));
-		txtWineServerBin->setText(CoreLib->getWhichOut("wineserver"));
-		txtWineLoaderBin->setText(CoreLib->getWhichOut("wine"));
+        txtWineBin->setText(CoreLib->getWhichOut("wine"));
+        txtWineServerBin->setText(CoreLib->getWhichOut("wineserver"));
+        txtWineLoaderBin->setText(CoreLib->getWhichOut("wine"));
 
-		if (QDir("/usr/lib/wine").exists())
-			txtWineDllPath->setText("/usr/lib/wine");
+        if (QDir("/usr/lib/wine").exists())
+            txtWineDllPath->setText("/usr/lib/wine");
 
-		if (QDir("/local/usr/lib/wine").exists())
-			txtWineDllPath->setText("/local/usr/lib/wine");
+        if (QDir("/local/usr/lib/wine").exists())
+            txtWineDllPath->setText("/local/usr/lib/wine");
 
-		if (QDir("/usr/local/lib/wine").exists())
-			txtWineDllPath->setText("/usr/local/lib/wine");
+        if (QDir("/usr/local/lib/wine").exists())
+            txtWineDllPath->setText("/usr/local/lib/wine");
 
-		txtTarBin->setText(CoreLib->getWhichOut("tar"));
-		txtMountBin->setText(CoreLib->getWhichOut("mount"));
-		txtUmountBin->setText(CoreLib->getWhichOut("umount"));
-		txtSudoBin->setText(CoreLib->getWhichOut("sudo"));
+        txtTarBin->setText(CoreLib->getWhichOut("tar"));
+        txtMountBin->setText(CoreLib->getWhichOut("mount"));
+        txtUmountBin->setText(CoreLib->getWhichOut("umount"));
+        txtSudoBin->setText(CoreLib->getWhichOut("sudo"));
 
         QStringList guisudo;
         guisudo << "kdesudo" << "kdesu" << "gksudo" << "gksu" << "sudo";
@@ -153,95 +131,104 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
             }
         }
 
-		txtNiceBin->setText(CoreLib->getWhichOut("nice"));
-		txtReniceBin->setText(CoreLib->getWhichOut("renice"));
-		txtShBin->setText(CoreLib->getWhichOut("sh"));
+        txtNiceBin->setText(CoreLib->getWhichOut("nice"));
+        txtReniceBin->setText(CoreLib->getWhichOut("renice"));
+        txtShBin->setText(CoreLib->getWhichOut("sh"));
 
-		console_w = CoreLib->getWhichOut("konsole", FALSE);
-		if (!console_w.isEmpty()){
-			txtConsoleBin->setText(console_w);
-			txtConsoleArgs->setText("--noclose -e");
-		} else {
-			console_w = CoreLib->getWhichOut("xterm", FALSE);
-			if (!console_w.isEmpty()){
-				txtConsoleBin->setText(console_w);
-				txtConsoleArgs->setText("-e");
-			}
-		}
+        console_w = CoreLib->getWhichOut("konsole", FALSE);
+        if (!console_w.isEmpty()){
+            txtConsoleBin->setText(console_w);
+            txtConsoleArgs->setText("--noclose -e");
+        } else {
+            console_w = CoreLib->getWhichOut("xterm", FALSE);
+            if (!console_w.isEmpty()){
+                txtConsoleBin->setText(console_w);
+                txtConsoleArgs->setText("-e");
+            }
+        }
 
 #ifdef WITH_ICOUTILS
-		txtWrestoolBin->setText(CoreLib->getWhichOut("wrestool"));
-		txtIcotoolBin->setText(CoreLib->getWhichOut("icotool"));
-		cmdGetWrestoolBin->installEventFilter(this);
-		cmdGetIcotoolBin->installEventFilter(this);
+        txtWrestoolBin->setText(CoreLib->getWhichOut("wrestool"));
+        txtIcotoolBin->setText(CoreLib->getWhichOut("icotool"));
+        cmdGetWrestoolBin->installEventFilter(this);
+        cmdGetIcotoolBin->installEventFilter(this);
+#else
+        cmdGetWrestoolBin->setEnabled(false);
+        cmdGetIcotoolBin->setEnabled(false);
+        txtWrestoolBin->setEnabled(false);
+        txtIcotoolBin->setEnabled(false);
 #endif
 
-		break;
-	}
+        if (CoreLib->getWhichOut("fuseiso", false).isEmpty()){
+#ifdef WITH_EMBEDDED_FUSEISO
+            this->comboMountProfiles->setCurrentIndex(3);
+#else
+            this->comboMountProfiles->setCurrentIndex(0);
+#endif
+        } else {
+            this->comboMountProfiles->setCurrentIndex(2);
+        }
 
-	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(reject ()));
-	connect(cmdNext, SIGNAL(clicked()), this, SLOT(nextWizardPage()));
-	connect(cmdBack, SIGNAL(clicked()), this, SLOT(previosWizardPage()));
-	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
-	connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
+        break;
+    }
 
     updateScena();
 
-	this->installEventFilter(this);
+    this->installEventFilter(this);
 
-	return;
+    return;
 }
 
 void Wizard::comboProxyType_indexChanged(QString text){
-	if (text==tr("No Proxy")){
-		txtProxyHost->setEnabled(FALSE);
-		txtProxyPort->setEnabled(FALSE);
-		txtProxyUser->setEnabled(FALSE);
-		txtProxyPass->setEnabled(FALSE);
-	} else {
-		txtProxyHost->setEnabled(TRUE);
-		txtProxyPort->setEnabled(TRUE);
-		txtProxyUser->setEnabled(TRUE);
-		txtProxyPass->setEnabled(TRUE);
-	}
+    if (text==tr("No Proxy")){
+        txtProxyHost->setEnabled(FALSE);
+        txtProxyPort->setEnabled(FALSE);
+        txtProxyUser->setEnabled(FALSE);
+        txtProxyPass->setEnabled(FALSE);
+    } else {
+        txtProxyHost->setEnabled(TRUE);
+        txtProxyPort->setEnabled(TRUE);
+        txtProxyUser->setEnabled(TRUE);
+        txtProxyPass->setEnabled(TRUE);
+    }
 
-	return;
+    return;
 }
 
 void Wizard::changeBoxState(int state){
-	/*
-		Checkbox selecting event
-	*/
+    /*
+        Checkbox selecting event
+    */
 
-	/*
-	switch(Scena){
-		case 0:
-			switch (Page){
-				case 2:
-					if (state==Qt::Checked){
-						cbFakeVersion->setEnabled(TRUE);
-					} else {
-						cbFakeVersion->setEnabled(FALSE);
-					}
-				break;
-			}
-		break;
-	}
-	*/
+    /*
+    switch(Scena){
+        case 0:
+            switch (Page){
+                case 2:
+                    if (state==Qt::Checked){
+                        cbFakeVersion->setEnabled(TRUE);
+                    } else {
+                        cbFakeVersion->setEnabled(FALSE);
+                    }
+                break;
+            }
+        break;
+    }
+    */
 
-	return;
+    return;
 }
 
 bool Wizard::eventFilter(QObject *obj, QEvent *event){
-	/*
-		User select folder dialog function
-	*/
+    /*
+        User select folder dialog function
+    */
 
-	if (obj->objectName()== "Wizard")
-		return FALSE;
+    if (obj->objectName()== "Wizard")
+        return FALSE;
 
     if (event->type() == QEvent::MouseButtonRelease) {
-		QString file;
+        QString file;
 
 #if QT_VERSION >= 0x040500
         QFileDialog::Options options;
@@ -262,425 +249,333 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
         }
 #endif
 
-		if (!file.isEmpty()){
-			QString a;
-			a.append("txt");
-			a.append(obj->objectName().right(obj->objectName().length()-6));
+        if (!file.isEmpty()){
+            QString a;
+            a.append("txt");
+            a.append(obj->objectName().right(obj->objectName().length()-6));
 
-			std::auto_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
-			if (lineEdit.get()){
-				lineEdit->setText(file);
-			} else {
-				qDebug("Error");
-			}
-			lineEdit.release();
+            std::auto_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
+            if (lineEdit.get()){
+                lineEdit->setText(file);
+            } else {
+                qDebug("Error");
+            }
+            lineEdit.release();
 
-			if (obj==cmdGetWineBin){
-				QString wrkDir;
-				QStringList list1 = file.split("/");
-				wrkDir = file.left(file.length() - list1.last().length());
-				txtWineServerBin->setText(QString("%1wineserver").arg(wrkDir));
-				txtWineLoaderBin->setText(QString("%1wine").arg(wrkDir));
-			}
-		}
-	}
-	return FALSE;
+            if (obj==cmdGetWineBin){
+                QString wrkDir;
+                QStringList list1 = file.split("/");
+                wrkDir = file.left(file.length() - list1.last().length());
+                txtWineServerBin->setText(QString("%1wineserver").arg(wrkDir));
+                txtWineLoaderBin->setText(QString("%1wine").arg(wrkDir));
+            }
+        }
+    }
+    return FALSE;
 }
 
 bool Wizard::checkEntry(QString fileName, QString info, bool isFile){
-	/*
-	 *	This function check user entry
-	 */
+    /*
+     *	This function check user entry
+     */
 
-	if (fileName.isEmpty()){
-		switch (isFile){
+    if (fileName.isEmpty()){
+        switch (isFile){
   case FALSE:
-			QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 directory.").arg(info));
-			break;
+            QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 directory.").arg(info));
+            break;
   case TRUE:
-			QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 binary.").arg(info));
-			break;
-		}
-		return FALSE;
-	} else {
-		if (!QFile::exists(fileName)){
-			switch (isFile){
+            QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 binary.").arg(info));
+            break;
+        }
+        return FALSE;
+    } else {
+        if (!QFile::exists(fileName)){
+            switch (isFile){
    case FALSE:
-				QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory not exists.").arg(info));
-				break;
+                QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory not exists.").arg(info));
+                break;
    case TRUE:
-				QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary not exists.").arg(info));
-				break;
-			}
-			return FALSE;
-		}
-	}
+                QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary not exists.").arg(info));
+                break;
+            }
+            return FALSE;
+        }
+    }
 
-	return TRUE;
+    return TRUE;
 }
 
 void Wizard::nextWizardPage(){
-	/*
-		Function for processing next\finish button click events
-	*/
+    /*
+        Function for processing next\finish button click events
+    */
 
-	switch(Scena){
+    switch(Scena){
  case 1:
-		switch (Page){
+        switch (Page){
   case 3:
-			if (!checkEntry(txtWineBin->text(), "wine"))
-				return;
-			if (!checkEntry(txtWineServerBin->text(), "wine server"))
-				return;
-			if (!checkEntry(txtWineLoaderBin->text(), "wine loader"))
-				return;
-			if (!checkEntry(txtWineDllPath->text(), "wine library", FALSE))
-				return;
-			break;
+            if (!checkEntry(txtWineBin->text(), "wine"))
+                return;
+            if (!checkEntry(txtWineServerBin->text(), "wine server"))
+                return;
+            if (!checkEntry(txtWineLoaderBin->text(), "wine loader"))
+                return;
+            if (!checkEntry(txtWineDllPath->text(), "wine library", FALSE))
+                return;
+            break;
   case 4:
-			if (!checkEntry(txtTarBin->text(), "tar"))
-				return;
-			if (!checkEntry(txtMountBin->text(), "mount"))
-				return;
-			if (!checkEntry(txtUmountBin->text(), "umount"))
-				return;
-			if (!checkEntry(txtSudoBin->text(), "sudo"))
-				return;
-			if (!checkEntry(txtGuiSudoBin->text(), "GUI sudo"))
-				return;
-			if (!checkEntry(txtUmountBin->text(), "nice"))
-				return;
-			if (!checkEntry(txtUmountBin->text(), "renice"))
-				return;
-			if (!checkEntry(txtUmountBin->text(), "sh"))
-				return;
-			break;
+            if (!checkEntry(txtTarBin->text(), "tar"))
+                return;
+            if (!checkEntry(txtMountBin->text(), "mount"))
+                return;
+            if (!checkEntry(txtUmountBin->text(), "umount"))
+                return;
+            if (!checkEntry(txtSudoBin->text(), "sudo"))
+                return;
+            if (!checkEntry(txtGuiSudoBin->text(), "GUI sudo"))
+                return;
+            if (!checkEntry(txtUmountBin->text(), "nice"))
+                return;
+            if (!checkEntry(txtUmountBin->text(), "renice"))
+                return;
+            if (!checkEntry(txtUmountBin->text(), "sh"))
+                return;
+            break;
   case 5:
-			if (!checkEntry(txtConsoleBin->text(), "console"))
-				return;
+            if (!checkEntry(txtConsoleBin->text(), "console"))
+                return;
 #ifdef WITH_ICOUTILS
-			if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
-				return;
-			if (!checkEntry(txtIcotoolBin->text(), "icotool"))
-				return;
+            if (!checkEntry(txtWrestoolBin->text(), "wrestool"))
+                return;
+            if (!checkEntry(txtIcotoolBin->text(), "icotool"))
+                return;
 #endif
-			break;
+            break;
   case 6:
-			if (comboProxyType->currentText()!=tr("No Proxy")){
-				if (txtProxyHost->text().isEmpty()){
-					QMessageBox::warning(this, tr("Error"), tr("Sorry, specify proxy host."));
-					return;
-				}
-				if (txtProxyPort->text().isEmpty()){
-					QMessageBox::warning(this, tr("Error"), tr("Sorry, specify proxy port."));
-					return;
-				}
-			}
-			break;
-				case 8:
-			QSettings settings(APP_SHORT_NAME, "default");
+            if (comboProxyType->currentText()!=tr("No Proxy")){
+                if (txtProxyHost->text().isEmpty()){
+                    QMessageBox::warning(this, tr("Error"), tr("Sorry, specify proxy host."));
+                    return;
+                }
+                if (txtProxyPort->text().isEmpty()){
+                    QMessageBox::warning(this, tr("Error"), tr("Sorry, specify proxy port."));
+                    return;
+                }
+            }
+            break;
+                case 8:
+            QSettings settings(APP_SHORT_NAME, "default");
             settings.setValue("configure", "yes");
-			settings.beginGroup("wine");
-			settings.setValue("WineBin", txtWineBin->text());
-			settings.setValue("ServerBin", txtWineServerBin->text());
-			settings.setValue("LoaderBin", txtWineLoaderBin->text());
-			settings.setValue("WineLibs", txtWineDllPath->text());
-			settings.endGroup();
-			settings.beginGroup("system");
-			settings.setValue("tar", txtTarBin->text());
-			settings.setValue("mount", txtMountBin->text());
-			settings.setValue("umount", txtUmountBin->text());
-			settings.setValue("sudo", txtSudoBin->text());
-			settings.setValue("gui_sudo", txtGuiSudoBin->text());
-			settings.setValue("nice", txtNiceBin->text());
-			settings.setValue("renice", txtReniceBin->text());
-			settings.setValue("sh", txtShBin->text());
-			settings.endGroup();
-			settings.beginGroup("console");
-			settings.setValue("bin", txtConsoleBin->text());
-			settings.setValue("args", txtConsoleArgs->text());
-			settings.endGroup();
-			settings.beginGroup("icotool");
-			settings.setValue("wrestool", txtWrestoolBin->text());
-			settings.setValue("icotool", txtIcotoolBin->text());
-			settings.endGroup();
-			settings.beginGroup("network");
-			settings.setValue("host", txtProxyHost->text());
-			settings.setValue("port", txtProxyPort->text());
-			settings.setValue("user", txtProxyUser->text());
-			settings.setValue("pass", txtProxyPass->text());
+            settings.beginGroup("wine");
+            settings.setValue("WineBin", txtWineBin->text());
+            settings.setValue("ServerBin", txtWineServerBin->text());
+            settings.setValue("LoaderBin", txtWineLoaderBin->text());
+            settings.setValue("WineLibs", txtWineDllPath->text());
+            settings.endGroup();
+            settings.beginGroup("system");
+            settings.setValue("tar", txtTarBin->text());
+            settings.setValue("mount", txtMountBin->text());
+            settings.setValue("umount", txtUmountBin->text());
+            settings.setValue("sudo", txtSudoBin->text());
+            settings.setValue("gui_sudo", txtGuiSudoBin->text());
+            settings.setValue("nice", txtNiceBin->text());
+            settings.setValue("renice", txtReniceBin->text());
+            settings.setValue("sh", txtShBin->text());
+            settings.endGroup();
+            settings.beginGroup("console");
+            settings.setValue("bin", txtConsoleBin->text());
+            settings.setValue("args", txtConsoleArgs->text());
+            settings.endGroup();
+            settings.beginGroup("icotool");
+            settings.setValue("wrestool", txtWrestoolBin->text());
+            settings.setValue("icotool", txtIcotoolBin->text());
+            settings.endGroup();
+            settings.beginGroup("network");
+            settings.setValue("host", txtProxyHost->text());
+            settings.setValue("port", txtProxyPort->text());
+            settings.setValue("user", txtProxyUser->text());
+            settings.setValue("pass", txtProxyPass->text());
 
-			if (comboProxyType->currentText()==tr("No Proxy")){
-				settings.setValue("type", 0);
-			} else {
-				if (comboProxyType->currentText()=="HTTP"){
-					settings.setValue("type", 1);
-				} else {
-					settings.setValue("type", 2);
-				}
-			}
-			settings.endGroup();
+            if (comboProxyType->currentText()==tr("No Proxy")){
+                settings.setValue("type", 0);
+            } else {
+                if (comboProxyType->currentText()=="HTTP"){
+                    settings.setValue("type", 1);
+                } else {
+                    settings.setValue("type", 2);
+                }
+            }
+            settings.endGroup();
 
-			settings.beginGroup("quickmount");
-			if (radioDefault->isChecked()){
-				settings.setValue("type", 0);
-				if (txtMountString->text().isEmpty()){
-					txtMountString->setText(CoreLib->getMountString(0));
-				}
+            settings.beginGroup("quickmount");
 
-				if (txtMountImageString->text().isEmpty()){
-					txtMountImageString->setText(CoreLib->getMountImageString(0));
-				}
+            settings.setValue("type", this->comboMountProfiles->currentIndex());
+            settings.setValue("mount_drive_string", txtMountString->text());
+            settings.setValue("mount_image_string", txtMountImageString->text());
+            settings.setValue("umount_string", txtUmountString->text());
 
-				if (txtUmountString->text().isEmpty()){
-					txtUmountString->setText(CoreLib->getUmountString(0));
-				}
-
-			}
-
-			if (radioDefaultGui->isChecked()){
-				settings.setValue("type", 1);
-				if (txtMountString->text().isEmpty()){
-					txtMountString->setText(CoreLib->getMountString(1));
-				}
-
-				if (txtMountImageString->text().isEmpty()){
-					txtMountImageString->setText(CoreLib->getMountImageString(1));
-				}
-
-				if (txtUmountString->text().isEmpty()){
-					txtUmountString->setText(CoreLib->getUmountString(1));
-				}
-			}
-
-			if (radioFuse->isChecked()){
-				settings.setValue("type", 2);
-				if (txtMountString->text().isEmpty()){
-					txtMountString->setText(CoreLib->getMountString(2));
-				}
-
-				if (txtMountImageString->text().isEmpty()){
-					txtMountImageString->setText(CoreLib->getMountImageString(2));
-				}
-
-				if (txtUmountString->text().isEmpty()){
-					txtUmountString->setText(CoreLib->getUmountString(2));
-				}
-			}
-			if (radioEmbedded->isChecked()){
-				settings.setValue("type", 3);
-				if (txtMountString->text().isEmpty()){
-					txtMountString->setText(CoreLib->getMountString(3));
-				}
-
-				if (txtMountImageString->text().isEmpty()){
-					txtMountImageString->setText(CoreLib->getMountImageString(3));
-				}
-
-				if (txtUmountString->text().isEmpty()){
-					txtUmountString->setText(CoreLib->getUmountString(3));
-				}
-			}
-
-			settings.setValue("mount_drive_string", txtMountString->text());
-			settings.setValue("mount_image_string", txtMountImageString->text());
-			settings.setValue("umount_string", txtUmountString->text());
-
-			settings.endGroup();
+            settings.endGroup();
 
             CoreLib->openHelpUrl("05-first-steps.html");
 
             CoreLib->createPrefixDBStructure("Default");
 
-			accept();
-			break;
-		}
-		break;
-	}
+            accept();
+            break;
+        }
+        break;
+    }
 
-	Page++;
-	updateScena();
-	return;
+    Page++;
+    updateScena();
+    return;
 }
 
 
 void Wizard::cmdHelp_Click(){
-	QString rawurl;
-	switch (Scena){
+    QString rawurl;
+    switch (Scena){
  case 0:
-		switch (Page){
+        switch (Page){
   case 2:
-			rawurl = "06-prefix-creation-wizard.html#general";
-			break;
+            rawurl = "06-prefix-creation-wizard.html#general";
+            break;
   case 3:
-			rawurl = "06-prefix-creation-wizard.html#winepath";
-			break;
+            rawurl = "06-prefix-creation-wizard.html#winepath";
+            break;
   case 4:
-			rawurl = "06-prefix-creation-wizard.html#quickmount";
-			break;
+            rawurl = "06-prefix-creation-wizard.html#quickmount";
+            break;
   default:
-			rawurl = "06-prefix-creation-wizard.html";
-			break;
-		}
-		break;
-		case 1:
-		switch (Page){
+            rawurl = "06-prefix-creation-wizard.html";
+            break;
+        }
+        break;
+        case 1:
+        switch (Page){
   case 3:
-			rawurl = "03-first-startup-wizard.html#winepath";
-			break;
+            rawurl = "03-first-startup-wizard.html#winepath";
+            break;
   case 4:
-			rawurl = "03-first-startup-wizard.html#sysutils";
-			break;
+            rawurl = "03-first-startup-wizard.html#sysutils";
+            break;
 
   case 5:
-			rawurl = "03-first-startup-wizard.html#userutils";
-			break;
+            rawurl = "03-first-startup-wizard.html#userutils";
+            break;
   case 6:
-			rawurl = "03-first-startup-wizard.html#proxy";
-			break;
+            rawurl = "03-first-startup-wizard.html#proxy";
+            break;
   case 7:
-			rawurl = "03-first-startup-wizard.html#qmount";
-			break;
+            rawurl = "03-first-startup-wizard.html#qmount";
+            break;
   default:
-			rawurl = "03-first-startup-wizard.html";
-			break;
-		}
-		break;
-	}
+            rawurl = "03-first-startup-wizard.html";
+            break;
+        }
+        break;
+    }
 
-	CoreLib->openHelpUrl(rawurl);
+    CoreLib->openHelpUrl(rawurl);
 }
 
 void Wizard::previosWizardPage(){
-	/*
-		Back command function clicking
-	*/
+    /*
+        Back command function clicking
+    */
 
-	/*	switch(Scena){
-			case 0:
-				switch (Page){
-					case 1:
+    /*	switch(Scena){
+            case 0:
+                switch (Page){
+                    case 1:
 
-					break;
-				}
-			break;
-		}
-	*/
-	Page--;
-	updateScena();
-	return;
+                    break;
+                }
+            break;
+        }
+    */
+    Page--;
+    updateScena();
+    return;
 }
 
 void Wizard::updateScena(){
-	lblStep->setText(Wizard::tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
-	switch(Scena){
+    lblStep->setText(Wizard::tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
+    switch(Scena){
  case 1:
                /*
                 * New prefix creation
-				*/
-		switch (Page){
+                */
+        switch (Page){
   case 1:
             lblCaption->setText(Wizard::tr("<b>First startup wizrad</b>"));
-			lblWizardInfo->setText(Wizard::tr("<p>Welcome to first startup wizard.</p><p>This wizard helps you to make all necessary steps for successful %1 setup.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
+            lblWizardInfo->setText(Wizard::tr("<p>Welcome to first startup wizard.</p><p>This wizard helps you to make all necessary steps for successful %1 setup.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
             stkWizards->setCurrentIndex(0);
-			cmdNext->setEnabled(TRUE);
-			cmdBack->setEnabled(FALSE);
-			break;
+            cmdNext->setEnabled(TRUE);
+            cmdBack->setEnabled(FALSE);
+            break;
   case 2:
             txtInfo->setText(tr("<p><b><span style='font-weight:600; color:#6495ed;'>%1</span></b> was initially written by Alexey S. Malakhov aka John Brezerk  [<a href='mailto:brezerk@gmail.com'>brezerk@gmail.com</a>]</p><p>General idea comes from <b><span style='font-weight:600; color:#6495ed;'>WineTools</span></b> scripts which was initially written by Frank Hendriksen [<a href='mailto:frank@frankscorner.org'>frank@frankscorner.org</a>]</p><p>It is licensed under the <b><span style='font-weight:600; color:#6495ed;'>GPL v3</span></b>.</p><p>Send comments, bugreports, etc. to [<a href='mailto:brezerk@gmail.com'>brezerk@gmail.com</a>]</p><p><b><span style='font-weight:600; color:#6495ed;'>Note</span></b>: This software comes with absolutely no warranty. You will <b><span style='font-weight:600; color:#7D1D10;'>NOT</span></b> get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.</p><p>If you <span style='font-weight:600; color:#6495ed;'>need help</span>, ask the mailing lists at <a href='http://www.winehq.org/site/forums'>http://www.winehq.org/site/forums</a>.</p><p>If you <span style='font-weight:600; color:#6495ed;'>want support</span>, buy the commercial versions of wine: CodeWeavers CrossOver Office (<a href='http://www.codeweavers.com'>http://www.codeweavers.com</a>) for Desktop Applications</p>").arg(APP_NAME));
             stkWizards->setCurrentIndex(1);
-			cmdNext->setEnabled(TRUE);
-			cmdBack->setEnabled(TRUE);
-			break;
+            cmdNext->setEnabled(TRUE);
+            cmdBack->setEnabled(TRUE);
+            break;
   case 3:
             stkWizards->setCurrentIndex(2);
             stkFirstStartup->setCurrentIndex(0);
-			break;
+            break;
   case 4:
             stkFirstStartup->setCurrentIndex(1);
-			break;
+            break;
   case 5:
             stkFirstStartup->setCurrentIndex(2);
-			break;
+            break;
   case 6:
             stkFirstStartup->setCurrentIndex(3);
             cmdNext->setText(tr("Next >"));
-			break;
+            break;
   case 7:
             stkFirstStartup->setCurrentIndex(4);
             stkWizards->setCurrentIndex(2);
-			cmdNext->setText(tr("Next >"));
-			break;
+            cmdNext->setText(tr("Next >"));
+            break;
   case 8:
             stkWizards->setCurrentIndex(0);
             lblWizardInfo->setText(tr("<p>All ready for finishing %1 setup. </p><p>Please, press the <b>Finish</b> button to create finish setup process. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
-			cmdNext->setText(tr("Finish"));
-			break;
-		}
-		break;
-	}
+            cmdNext->setText(tr("Finish"));
+            break;
+        }
+        break;
+    }
 
-	cmdNext->setFocus(Qt::ActiveWindowFocusReason);
+    cmdNext->setFocus(Qt::ActiveWindowFocusReason);
 
-	return;
+    return;
 }
 
-void Wizard::radioDefault_toggled(bool state){
-	if (!state)
-		return;
-
-	txtMountString->setText(CoreLib->getMountString(0));
-	txtMountImageString->setText(CoreLib->getMountImageString(0));
-	txtUmountString->setText(CoreLib->getUmountString(0));
-	return;
-}
-
-void Wizard::radioDefaultGui_toggled(bool state){
-	if (!state)
-		return;
-
-	txtMountString->setText(CoreLib->getMountString(1));
-	txtMountImageString->setText(CoreLib->getMountImageString(1));
-	txtUmountString->setText(CoreLib->getUmountString(1));
-	return;
-}
-
-void Wizard::radioFuse_toggled(bool state){
-	if (!state)
-		return;
-
-	if (CoreLib->getWhichOut("fusermount").isEmpty()){
-		radioDefault->setChecked(true);
-		return;
-	}
-	if (CoreLib->getWhichOut("fuseiso").isEmpty()){
-		radioDefault->setChecked(true);
-		return;
-	}
-
-	txtMountString->setText(CoreLib->getMountString(2));
-	txtMountImageString->setText(CoreLib->getMountImageString(2));
-	txtUmountString->setText(CoreLib->getUmountString(2));
-	return;
-}
-
-void Wizard::radioEmbedded_toggled(bool state){
-	if (!state)
-		return;
-
-#ifdef WITH_EMBEDDED_FUSEISO
-	if (CoreLib->getWhichOut("fusermount").isEmpty()){
-		radioDefault->setChecked(true);
-		return;
-	}
-
-	txtMountString->setText(CoreLib->getMountString(3));
-	txtMountImageString->setText(CoreLib->getMountImageString(3));
-	txtUmountString->setText(CoreLib->getUmountString(3));
-#else
-	QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without embedded FuseIso.</p><p>If you wish to compile q4wine with embedded FuseIso add:</p><p> \"-WITH_EMBEDDED_FUSEISO=ON\" to cmake arguments.</p>"));
-	radioDefault->setChecked(true);
+void Wizard::comboMountProfiles_currentIndexChanged(int index){
+    switch (index){
+    case 2:
+        if (CoreLib->getWhichOut("fusermount").isEmpty()){
+            this->comboMountProfiles->setCurrentIndex(0);
+            return;
+        }
+        if (CoreLib->getWhichOut("fuseiso").isEmpty()){
+            this->comboMountProfiles->setCurrentIndex(0);
+            return;
+        }
+        break;
+    case 3:
+#ifndef WITH_EMBEDDED_FUSEISO
+        QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without embedded FuseIso.</p><p>If you wish to compile q4wine with embedded FuseIso add:</p><p> \"-WITH_EMBEDDED_FUSEISO=ON\" to cmake arguments.</p>"));
+        this->comboMountProfiles->setCurrentIndex(0);
+        return;
 #endif
-	return;
-}
+        break;
+    }
 
+    txtMountString->setText(CoreLib->getMountString(index));
+    txtMountImageString->setText(CoreLib->getMountImageString(index));
+    txtUmountString->setText(CoreLib->getUmountString(index));
+}

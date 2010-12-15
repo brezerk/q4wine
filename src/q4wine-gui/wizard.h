@@ -51,71 +51,62 @@
  */
 class Wizard : public QDialog, public Ui::Wizard
 {
-	Q_OBJECT
-	public:
-		/*! \brief This is class constructor.
-		 *
-		 * \param  WizardType	Type of wizard scenario.
-		 * \param  var1			This variable used for different scenarion actions.
-		 */
-		Wizard(int WizardType, QString var1 = "", QWidget * parent = 0, Qt::WFlags f = 0);
-		QString getPrefixName();
+    Q_OBJECT
+    public:
+        /*! \brief This is class constructor.
+         *
+         * \param  WizardType	Type of wizard scenario.
+         * \param  var1			This variable used for different scenarion actions.
+         */
+        Wizard(int WizardType, QString var1 = "", QWidget * parent = 0, Qt::WFlags f = 0);
+        QString getPrefixName();
 
-	private slots:
-		//! \brief Next page button click slot.
-		void nextWizardPage();
+    private slots:
+        //! \brief Next page button click slot.
+        void nextWizardPage();
 
-		//! \brief Previos page button click slot.
-		void previosWizardPage();
+        //! \brief Previos page button click slot.
+        void previosWizardPage();
 
-		//! \brief ChekBox change slot.
-		void changeBoxState(int state);
+        //! \brief ChekBox change slot.
+        void changeBoxState(int state);
 
-		//! \brief ComboBox change slot.
-		void comboProxyType_indexChanged(QString text);
+        //! \brief ComboBox change slot.
+        void comboProxyType_indexChanged(QString text);
 
-		//! \brief cmdHelo click slot.
-		void cmdHelp_Click();
+        //! \brief cmdHelo click slot.
+        void cmdHelp_Click();
 
-		//! \brief raidioDefault toggled action slot.
-		void radioDefault_toggled(bool state);
+        //! \brief mounts profile combobox index cahnge slot
+        void comboMountProfiles_currentIndexChanged(int index);
 
-		//! \brief raidioDefaultGui toggled action slot.
-		void radioDefaultGui_toggled(bool state);
+    private:
+        //! \brief Function for updateing scene elements.
+        void updateScena();
 
-		//! \brief raidioFuse toggled action slot.
-		void radioFuse_toggled(bool state);
+        int Scena, Page, TotalPage;
 
-		//! \brief raidioEmbedded toggled action slot.
-		void radioEmbedded_toggled(bool state);
+        //! \brief Function for checking user selected elements.
+        bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
 
-	private:
-		//! \brief Function for updateing scene elements.
-		void updateScena();
+        //! Database prefix class defenition.
+        Prefix db_prefix;
+        Icon db_icon;
+        Dir db_dir;
 
-		int Scena, Page, TotalPage;
+        //! This is need for libq4wine-core.so import.
+        QLibrary libq4wine;
+        typedef void *CoreLibPrototype (bool);
+        CoreLibPrototype *CoreLibClassPointer;
+        std::auto_ptr<corelib> CoreLib;
 
-		//! \brief Function for checking user selected elements.
-		bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
+    protected:
+        //! \brief Event filter.
+        bool eventFilter(QObject *obj, QEvent *event);
+        QString var1;
 
-		//! Database prefix class defenition.
-		Prefix db_prefix;
-		Icon db_icon;
-		Dir db_dir;
-
-		//! This is need for libq4wine-core.so import.
-		QLibrary libq4wine;
-		typedef void *CoreLibPrototype (bool);
-		CoreLibPrototype *CoreLibClassPointer;
-		std::auto_ptr<corelib> CoreLib;
-
-	protected:
-		//! \brief Event filter.
-		bool eventFilter(QObject *obj, QEvent *event);
-		QString var1;
-
-		//! \brief Load icon themes.
-		void loadThemeIcons(int Scene);
+        //! \brief Load icon themes.
+        void loadThemeIcons(int Scene);
 };
 
 #endif
