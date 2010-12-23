@@ -5,7 +5,7 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
-Version 0.121
+Version 0.120-r1
  Added:
   - q4wine now will create new symlinks when mounting $WINEPREFIX/dosdevices/${DRIVE}:
     pointing to the mountpoint and $WINEPREFIX/dosdevices/${DRIVE}:: pointing to
