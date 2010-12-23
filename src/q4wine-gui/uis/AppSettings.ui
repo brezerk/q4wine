@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>694</width>
-    <height>434</height>
+    <width>692</width>
+    <height>432</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1630,16 +1630,6 @@
                  <item>
                   <property name="text">
                    <string notr="true">Embedded FuseISO</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string notr="true">CDemu cli interface</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string notr="true">CDemu dbus interface</string>
                   </property>
                  </item>
                 </widget>
