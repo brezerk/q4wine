@@ -298,12 +298,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/appsettings.cpp" line="841"/>
         <source>Warning</source>
-        <translation type="unfinished">Varování</translation>
+        <translation>Varování</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/appsettings.cpp" line="841"/>
         <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;q4wine bylo sestaveno bez vloženého FuseIso.&lt;/p&gt;&lt;p&gt;Pokud si přejete q4wine sestavit s vloženým FuseIso přidejte:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; do  argumentů cmake.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;q4wine bylo sestaveno bez vloženého FuseIso.&lt;/p&gt;&lt;p&gt;Pokud si přejete q4wine sestavit s vloženým FuseIso přidejte:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; do argumentů cmake.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1877"/>
@@ -1273,7 +1273,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="319"/>
         <source>Can&apos;t create file &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze vytvořit soubor &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1351"/>
@@ -1335,31 +1335,31 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="63"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="64"/>
         <source>Clear search field</source>
-        <translation type="unfinished">Smazat vyhledávací pole</translation>
+        <translation>Smazat vyhledávací pole</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="67"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="68"/>
         <source>Icons view mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režim s ikonami</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="71"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="72"/>
         <source>Details view mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režim s podrobnostmi</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="75"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="76"/>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>Přiblížit</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="79"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="80"/>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Oddálit</translation>
     </message>
 </context>
 <context>
@@ -1435,7 +1435,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="399"/>
         <source>No media drives detected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nezjištěny žádné diskové jednotky.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="410"/>
@@ -2445,7 +2445,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location filename="../q4wine-gui/mainwindow.cpp" line="499"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="509"/>
         <source>helper notifycation</source>
-        <translation type="unfinished"></translation>
+        <translation>Oznámení nápovědy</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="470"/>
@@ -3184,7 +3184,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="245"/>
         <source>No media drives detected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nezjištěny žádné diskové jednotky.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="256"/>
@@ -3334,7 +3334,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="390"/>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="391"/>
         <source>Create new prefix</source>
-        <translation type="unfinished">Vytvořit novou předponu</translation>
+        <translation>Vytvořit novou předponu</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="401"/>
@@ -3345,7 +3345,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="407"/>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="408"/>
         <source>Delete prefix</source>
-        <translation type="unfinished">Smazat předponu</translation>
+        <translation>Smazat předponu</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="579"/>
@@ -3366,17 +3366,17 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="676"/>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
-        <translation type="unfinished">Promiňte, ale nelze smazat výchozí předponu.</translation>
+        <translation>Promiňte, ale nelze smazat výchozí předponu.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="680"/>
         <source>Warning</source>
-        <translation type="unfinished">Varování</translation>
+        <translation>Varování</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="680"/>
         <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="unfinished">Opravdu chcete smazat předponu s názvem &quot;%1&quot; a všechny přiřazené ikony?</translation>
+        <translation>Opravdu chcete smazat předponu s názvem &quot;%1&quot; a všechny přiřazené ikony?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="396"/>
@@ -3534,41 +3534,41 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="47"/>
         <source>Importing wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see q4wine options dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavádí se ikony plochy wine z:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Může to chvíli trvat...&lt;br&gt;&lt;br&gt;&lt;b&gt;Poznámka:&lt;/b&gt; Pro odstranění zpracovaných souborů se podívejte na dialog s volbami q4wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="48"/>
         <source>Importing wine desktop icons: %1 of %2 </source>
-        <translation type="unfinished"></translation>
+        <translation>Zavádí se ikony plochy wine: %1 z %2 </translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="56"/>
         <location filename="../q4wine-gui/progress.cpp" line="109"/>
         <source>Waiting for wine process finish.</source>
-        <translation type="unfinished"></translation>
+        <translation>Čeká se na dokončení procesu wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="56"/>
         <location filename="../q4wine-gui/progress.cpp" line="109"/>
         <source>There are %1 process running for prefix %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Pro předponu %2 běží %1 procesů</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="56"/>
         <location filename="../q4wine-gui/progress.cpp" line="109"/>
         <source>While process keep running -- end them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatímco proces dále běží -- ukončit je ručně.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="57"/>
         <location filename="../q4wine-gui/progress.cpp" line="110"/>
         <source>Running process: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Běžící proces: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="98"/>
         <source>Importing desktop icons: %1 of %2 </source>
-        <translation type="unfinished"></translation>
+        <translation>Zavádí se ikony plochy: %1 z %2 </translation>
     </message>
 </context>
 <context>
@@ -4622,32 +4622,32 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../plugins/winetricks.ui" line="14"/>
         <source>winetricks plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Přídavný modul Kouzla wine</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="30"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalovat</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="37"/>
         <source>Click on item to show help here</source>
-        <translation type="unfinished"></translation>
+        <translation>Klepněte na položku, aby se zde ukázala nápověda</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="47"/>
         <source>Install Winetricks</source>
-        <translation type="unfinished"></translation>
+        <translation>NainstalovatKouzla wine</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="54"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukončit</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="61"/>
         <source>Refresh list</source>
-        <translation type="unfinished">Obnovit seznam</translation>
+        <translation>Obnovit seznam</translation>
     </message>
 </context>
 </TS>
