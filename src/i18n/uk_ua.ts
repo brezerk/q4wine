@@ -801,12 +801,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/appsettings.cpp" line="841"/>
         <source>Warning</source>
-        <translation type="unfinished">Попередження</translation>
+        <translation>Попередження</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/appsettings.cpp" line="841"/>
         <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;q4wine було зібрано без підтримки вбудованного FuseIso.&lt;/p&gt;&lt;p&gt;Якщо ви бажаєте додати підтримку вбудованного FuseIso додайте:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO&quot; до аргументів cmake.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;q4wine було зібрано без підтримки вбудованного FuseIso.&lt;/p&gt;&lt;p&gt;Якщо ви бажаєте додати підтримку вбудованного FuseIso додайте:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO&quot; до аргументів cmake.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1877"/>
@@ -1371,7 +1371,7 @@ Make sure that Wine can access %2 temp directory.</source>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="319"/>
         <source>Can&apos;t create file &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можу створити файл: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1351"/>
@@ -1449,25 +1449,25 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="67"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="68"/>
         <source>Icons view mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим перегляду піктограм</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="71"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="72"/>
         <source>Details view mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим докладного перегляду</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="75"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="76"/>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>Збільшити</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="79"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="80"/>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Зменшити</translation>
     </message>
 </context>
 <context>
@@ -1887,7 +1887,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="399"/>
         <source>No media drives detected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не знайдено жодного пристрою.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="418"/>
@@ -4046,7 +4046,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="245"/>
         <source>No media drives detected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не знайдено жодного пристрою.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="256"/>
@@ -4196,13 +4196,13 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="390"/>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="391"/>
         <source>Create new prefix</source>
-        <translation type="unfinished">Створити новий префікс</translation>
+        <translation>Створити новий префікс</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="407"/>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="408"/>
         <source>Delete prefix</source>
-        <translation type="unfinished">Вилучити префікс</translation>
+        <translation>Вилучити префікс</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="579"/>
@@ -4223,17 +4223,17 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="676"/>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
-        <translation type="unfinished">Вибачте, типовий префікс не можна вилучати.</translation>
+        <translation>Вибачте, типовий префікс не можна вилучати.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="680"/>
         <source>Warning</source>
-        <translation type="unfinished">Попередження</translation>
+        <translation>Попередження</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="680"/>
         <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви справді бажаєте вилучити префікс з назвою «%1» і всі відповідні піктограми?</translation>
     </message>
     <message>
         <source>Setup prefix</source>
@@ -4420,41 +4420,41 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="47"/>
         <source>Importing wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see q4wine options dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортую піктограми програм wine з:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Це може зайняти трохи часу...&lt;br&gt;&lt;br&gt;&lt;b&gt;Зауваження:&lt;/b&gt;Щоб автоматично відаляти оброблені файли, подивитись у налаштування q4wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="48"/>
         <source>Importing wine desktop icons: %1 of %2 </source>
-        <translation type="unfinished"></translation>
+        <translation>Імпортую десктопні файли wine: %1 з %2 </translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="56"/>
         <location filename="../q4wine-gui/progress.cpp" line="109"/>
         <source>Waiting for wine process finish.</source>
-        <translation type="unfinished"></translation>
+        <translation>Очікуємо завершення процесів wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="56"/>
         <location filename="../q4wine-gui/progress.cpp" line="109"/>
         <source>There are %1 process running for prefix %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Залишилося %1 процесів які запущено для префіксу %2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="56"/>
         <location filename="../q4wine-gui/progress.cpp" line="109"/>
         <source>While process keep running -- end them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Якщо процеси не завершаться самі -- прибийте їх самі.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="57"/>
         <location filename="../q4wine-gui/progress.cpp" line="110"/>
         <source>Running process: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Запущено процесів: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="98"/>
         <source>Importing desktop icons: %1 of %2 </source>
-        <translation type="unfinished"></translation>
+        <translation>Імпортую десктопні файли wine: %1 з %2 </translation>
     </message>
 </context>
 <context>
@@ -6429,7 +6429,7 @@ Note: leave it blank if you don&apos;t nead it.</source>
     <message>
         <location filename="../plugins/winetricks.ui" line="47"/>
         <source>Install Winetricks</source>
-        <translation type="unfinished">Встановлюю Winetricks</translation>
+        <translation>Встановлюю Winetricks</translation>
     </message>
     <message>
         <source>Error</source>
@@ -6438,27 +6438,27 @@ Note: leave it blank if you don&apos;t nead it.</source>
     <message>
         <location filename="../plugins/winetricks.ui" line="14"/>
         <source>winetricks plugin</source>
-        <translation type="unfinished">Додаток winetricks</translation>
+        <translation>Додаток winetricks</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="30"/>
         <source>Install</source>
-        <translation type="unfinished">Встановити</translation>
+        <translation>Встановити</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="54"/>
         <source>Exit</source>
-        <translation type="unfinished">Вийти</translation>
+        <translation>Вийти</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="61"/>
         <source>Refresh list</source>
-        <translation type="unfinished">Оновити список</translation>
+        <translation>Оновити список</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="37"/>
         <source>Click on item to show help here</source>
-        <translation type="unfinished">Клацніть на елемент winetriks щоб отримати допомогу</translation>
+        <translation>Клацніть на елемент winetriks щоб отримати допомогу</translation>
     </message>
 </context>
 <context>
