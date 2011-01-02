@@ -59,7 +59,7 @@ Run::Run(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     return;
 }
 
-void Run::prepare(QString prefix_name, QString wrkdir, QString override, QString winedebug, QString useconsole, QString display, QString cmdargs, QString desktop, int nice, QString exec)
+void Run::prepare(QString prefix_name, QString wrkdir, QString override, QString winedebug, QString useconsole, QString display, QString cmdargs, QString desktop, int nice, QString exec, QString lang)
 {
     if (!wrkdir.isEmpty())
         txtWorkDir->setText(wrkdir);
@@ -72,6 +72,9 @@ void Run::prepare(QString prefix_name, QString wrkdir, QString override, QString
 
     if (!cmdargs.isEmpty())
         txtCmdArgs->setText(cmdargs);
+
+    if (!lang.isEmpty())
+        txtEnvLang->setText(lang);
 
     txtNice->setValue(nice);
 
@@ -186,6 +189,7 @@ void Run::cmdOk_Click(){
     execObj.display = txtDisplay->text();
     execObj.wrkdir = txtWorkDir->text();
     execObj.nice = txtNice->text();
+    execObj.lang = txtEnvLang->text();
 
     if (cboxDesktopSize->currentText()==tr("No virtual desktop")){
         execObj.desktop="";
@@ -193,7 +197,7 @@ void Run::cmdOk_Click(){
         execObj.desktop=cboxDesktopSize->currentText();
     }
 
-    db_last_run_icon.addIcon(execObj.cmdargs, execObj.execcmd, execObj.override, execObj.winedebug, execObj.useconsole, execObj.display, execObj.wrkdir, execObj.desktop, execObj.nice.toInt());
+    db_last_run_icon.addIcon(execObj.cmdargs, execObj.execcmd, execObj.override, execObj.winedebug, execObj.useconsole, execObj.display, execObj.wrkdir, execObj.desktop, execObj.nice.toInt(), execObj.lang);
 
     CoreLib->runWineBinary(execObj, comboPrefixes->currentText());
 

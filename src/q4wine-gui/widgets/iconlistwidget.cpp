@@ -1038,10 +1038,11 @@ void IconListWidget::menuRun_triggered(QAction* action){
         execObj.cmdargs=result.at(5);
         execObj.desktop=result.at(6);
         execObj.nice=result.at(7);
+        execObj.lang=result.at(8);
         CoreLib->runWineBinary(execObj, this->prefixName);
     } else {
         Run run;
-        run.prepare(this->prefixName, result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip());
+        run.prepare(this->prefixName, result.at(0), result.at(1), result.at(2), result.at(3), result.at(4), result.at(5), result.at(6), result.at(7).toInt(), action->statusTip(), result.at(8));
         run.exec();
         return;
     }

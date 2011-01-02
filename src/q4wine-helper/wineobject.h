@@ -56,6 +56,7 @@ public:
     void setProgramDesktop(QString desktop);
     void setProgramOverride(QString override);
     void setProgramWrkdir(QString wrkdir);
+    void setProgramLang(QString lang);
 
     void setUseConsole(int console);
     void setOverrideDll(QString dll_list);
@@ -94,6 +95,8 @@ private:
     int programNice;
     QString programDesktop;
     QString overrideDllList;
+
+    QString programLang;
 
     bool useConsole;
 

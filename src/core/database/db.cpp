@@ -124,13 +124,26 @@ bool DataBase::fixup(){
     QSqlQuery query;
     if (!query.exec("SELECT arch FROM prefix")){
         if (!query.exec("ALTER TABLE prefix ADD COLUMN arch TEXT")){
-            qDebug()<<"[EE] Can't alter table";
+            qDebug()<<"[EE] Can't alter prefix table";
             return false;
         }
     }
     if (!query.exec("SELECT mountpoint_windrive FROM prefix")){
         if (!query.exec("ALTER TABLE prefix ADD COLUMN mountpoint_windrive TEXT")){
-            qDebug()<<"[EE] Can't alter table";
+            qDebug()<<"[EE] Can't alter prefix table";
+            return false;
+        }
+    }
+    if (!query.exec("SELECT lang FROM icon")){
+        if (!query.exec("ALTER TABLE icon ADD COLUMN lang TEXT")){
+            qDebug()<<"[EE] Can't alter icon table";
+            return false;
+        }
+    }
+
+    if (!query.exec("SELECT lang FROM last_run_icon")){
+        if (!query.exec("ALTER TABLE last_run_icon ADD COLUMN lang TEXT")){
+            qDebug()<<"[EE] Can't alter last_run_icon table";
             return false;
         }
     }

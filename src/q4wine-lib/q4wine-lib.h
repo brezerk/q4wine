@@ -108,6 +108,7 @@ struct ExecObject{
     QString desktop;
     QString nice;
     QString name;
+    QString lang;
 };
 
 class corelib {

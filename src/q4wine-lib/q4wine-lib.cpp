@@ -815,6 +815,7 @@ QStringList corelib::getCdromDevices(void) const{
             execObj.desktop = result.value("desktop");
             execObj.nice = result.value("nice");
             execObj.name = icon_name;
+            execObj.lang = result.value("lang");
 
             return runWineBinary(execObj, prefix_name);
         }
@@ -913,6 +914,11 @@ QStringList corelib::getCdromDevices(void) const{
             if (!execObj.execcmd.isEmpty()){
                 args.append("--program-bin");
                 args.append(execObj.execcmd);
+            }
+
+            if (!execObj.lang.isEmpty()){
+                args.append("--program-lang");
+                args.append(execObj.lang);
             }
 
             QString wrkdir = execObj.wrkdir;

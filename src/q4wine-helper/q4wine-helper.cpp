@@ -122,6 +122,10 @@ int main(int argc, char *argv[])
             i++;
             if (i<argc)
                 wineObject.setProgramWrkdir(app.arguments().at(i));
+        } else if (app.arguments().at(i)=="--program-lang") {
+            i++;
+            if (i<argc)
+                wineObject.setProgramLang(app.arguments().at(i));
         } else if (app.arguments().at(i)=="--override") {
             i++;
             if (i<argc)
@@ -135,9 +139,12 @@ int main(int argc, char *argv[])
             Qcout<<qSetFieldWidth(25)<<left<<"  --wine-debug"<<QObject::tr("sets WINEDEBUG variable")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --console"<<QObject::tr("run with output in console")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --display"<<QObject::tr("sets DISPLAY variable")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --nice"<<QObject::tr("sets program nicenes")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --desktop"<<QObject::tr("sets program virtual desktop resolution")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --program-bin"<<QObject::tr("sets program binary")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --program-args"<<QObject::tr("sets program args")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --wrkdir"<<QObject::tr("sets program working directory")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --program-lang"<<QObject::tr("sets program LANG variable")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --override"<<QObject::tr("sets WINEDLLOVERRIDES variable")<<qSetFieldWidth(0)<<endl;
             Qcout<<endl;
             Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;

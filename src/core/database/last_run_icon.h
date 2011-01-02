@@ -39,34 +39,34 @@
 class Last_Run_Icon
 {
 public:
-	//! Class constructor
-	Last_Run_Icon();
+    //! Class constructor
+    Last_Run_Icon();
 
    /*! \brief This function gets all icons fields by prefix_name (optional by icon name) keys value from table.
-	*
-	* \param  exec			A exec binary value.
-	* \return Return a list of table fields value.
-	*/
-	QStringList getByExec(const QString exec) const;
+    *
+    * \param  exec			A exec binary value.
+    * \return Return a list of table fields value.
+    */
+    QStringList getByExec(const QString exec) const;
 
-	/*! \brief This function add icon record.
-	 *
-	 * \param  cmdargs		A command line arguments value.
-	 * \param  exec			A exec binary value.
-	 * \param  icon_path	A icon name or path value.
-	 * \param  desc			A description value.
-	 * \param  prefix_name  A dir name value.
-	 * \param  dir_name		A dir name value.
-	 * \param  name			A dir name value.
-	 * \return Return true on success.
-	 */
-	bool addIcon(const QString cmdargs, const QString exec, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0) const;
+    /*! \brief This function add icon record.
+     *
+     * \param  cmdargs		A command line arguments value.
+     * \param  exec			A exec binary value.
+     * \param  icon_path	A icon name or path value.
+     * \param  desc			A description value.
+     * \param  prefix_name  A dir name value.
+     * \param  dir_name		A dir name value.
+     * \param  name			A dir name value.
+     * \return Return true on success.
+     */
+    bool addIcon(const QString cmdargs, const QString exec, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0, const QString lang="") const;
 
-	/*! \brief This function reurns list of recent runned icons.
-	 *
-	 * \return Return list of last runned icons.
-	 */
-	QStringList getIcons();
+    /*! \brief This function reurns list of recent runned icons.
+     *
+     * \return Return list of last runned icons.
+     */
+    QStringList getIcons();
 
  };
 
