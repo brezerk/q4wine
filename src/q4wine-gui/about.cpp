@@ -207,15 +207,27 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
                                    "Italy" \
                             "</p><p style=\"margin: 0px\"> </p>" \
 
-                                                        "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-                                                                   "Pavel Fric" \
-                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-                                                                   "Czech translation" \
-                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-                                                                   "<span style=\" color:#6495ed;\">Web</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">http://fripohled.blogspot.com/</span>" \
-                                                        "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-                                                                   "Czech Republic" \
-                                                        "</p><p style=\"margin: 0px\"> </p>" \
+                            "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                    "Yaron Shahrabani" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                    "Hebrew translation" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                    "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">sh.yaron@gmail.com</span>" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                     "<span style=\" color:#6495ed;\">Web</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">https://launchpad.net/~sh-yaron</span>" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                    "Misgav, Israel" \
+                            "</p><p style=\"margin: 0px\"> </p>" \
+
+                            "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                    "Pavel Fric" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                    "Czech translation" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                    "<span style=\" color:#6495ed;\">Web</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">http://fripohled.blogspot.com/</span>" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                    "Czech Republic" \
+                            "</p><p style=\"margin: 0px\"> </p>" \
 
                             "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
                                    "Pavel Zinin (pashazz)" \

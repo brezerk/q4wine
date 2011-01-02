@@ -5,10 +5,14 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
+Version 0.120-r2
+ Added:
+  - Hebrew translation by Yaron Shahrabani;
+
 Version 0.120-r1
  Added:
   - q4wine now will create new symlinks when mounting $WINEPREFIX/dosdevices/${DRIVE}:
-    pointing to the mountpoint and $WINEPREFIX/dosdevices/${DRIVE}:: pointing to
+    pointing to the mount point and $WINEPREFIX/dosdevices/${DRIVE}:: pointing to
     the Image file;
     Apparently this is needed so that the images are recognized as a proper
     cd/dvd drive;
