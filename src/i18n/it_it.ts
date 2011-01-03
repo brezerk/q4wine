@@ -330,9 +330,9 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="260"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2460"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2465"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2469"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2539"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2544"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2548"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="285"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="305"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="785"/>
@@ -376,7 +376,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="596"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2474"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2553"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="308"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="787"/>
         <source>System</source>
@@ -429,7 +429,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1087"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2479"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2558"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="311"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="789"/>
         <source>Utils</source>
@@ -447,7 +447,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1601"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2489"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2568"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="317"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="793"/>
         <source>Quick Mount</source>
@@ -459,7 +459,7 @@ p, li { white-space: pre-wrap; }
         <translation>Abilita sottosistema di log.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2610"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2689"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
@@ -493,7 +493,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1969"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2514"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2593"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="332"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="803"/>
         <source>Logging</source>
@@ -520,19 +520,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2105"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2529"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2608"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="341"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="809"/>
         <source>Winetricks</source>
         <translation>WineTricks</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2331"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2410"/>
         <source>Run recent program</source>
         <translation>Esegui programmi recenti</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2346"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2425"/>
         <source>Open Run dialog.</source>
         <translation>Apri finestra di esecuzione.</translation>
     </message>
@@ -553,7 +553,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1827"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1836"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2499"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2578"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="323"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="797"/>
         <source>Language</source>
@@ -562,7 +562,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1908"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1917"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2504"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2583"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="326"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="799"/>
         <source>Themes</source>
@@ -570,7 +570,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1343"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2484"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2563"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="314"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="791"/>
         <source>Network</source>
@@ -696,82 +696,82 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2133"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2539"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2618"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="347"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="813"/>
         <source>Defaults</source>
         <translation>Defaults</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2252"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2331"/>
         <source>Program icons</source>
         <translation>Icone del programma</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2267"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2346"/>
         <source>Use single-click to run program icons.</source>
         <translation>Usa un click singolo per eseguire il programma.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2280"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2359"/>
         <source>File dialogs</source>
         <translation>Finestra dei file</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2295"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2374"/>
         <source>Use the native file dialogs.</source>
         <translation>Usa la finestra dei file nativa.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2322"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2544"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2401"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2623"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="350"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="815"/>
         <source>Run dialog</source>
         <translation>Esegui finestra</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2373"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2382"/>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2549"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2452"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2461"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2628"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="353"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="817"/>
         <source>Wine desktop import</source>
         <translation>Importa il desktop di Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2391"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2470"/>
         <source>Import wine desktop files at q4wine startup.</source>
         <translation>Importa i file del desktop di wine all&apos;avvio di q4wine.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2404"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2483"/>
         <source>Remove processed wine desktop files.</source>
         <translation>Rimuovi i file del desktop di wine processati.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2495"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2574"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="320"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="795"/>
         <source>Interface</source>
         <translation>Interfaccia</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2510"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2589"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="329"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="801"/>
         <source>Subsystems</source>
         <translation>Sottosistema</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2519"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2598"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="335"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="805"/>
         <source>AppDb browser</source>
         <translation>Browser AppDB</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2525"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2604"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="338"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="807"/>
         <source>Plugins</source>
@@ -782,7 +782,7 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">WineTricks</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2535"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2614"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="344"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="811"/>
         <source>Advanced</source>
@@ -804,18 +804,18 @@ p, li { white-space: pre-wrap; }
         <translation>Dimensione:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2193"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2187"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="711"/>
         <source>No virtual desktop</source>
         <translation>Nessun desktop virtuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2583"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2662"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2603"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="2682"/>
         <source>Cancel</source>
         <translation>Cancella</translation>
     </message>
@@ -2053,28 +2053,28 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation>Desktop virtuale</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="624"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="709"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="192"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="574"/>
         <source>Native</source>
         <translation>Nativo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="629"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="714"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="194"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="578"/>
         <source>Buildin</source>
         <translation>Incorporato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="634"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="719"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="196"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="580"/>
         <source>Native, Buildin</source>
         <translation>Nativo, incorporato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="639"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="724"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="198"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="582"/>
         <source>Buildin, Native</source>
@@ -2283,33 +2283,33 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">2560x1600</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="573"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="658"/>
         <source>Override Dll</source>
         <translation>Override Dll</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="582"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="667"/>
         <source>Present wine dlls</source>
         <translation>dll di wine in uso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="644"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="729"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="576"/>
         <source>Disabled</source>
         <translation>Disabilitato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="652"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="737"/>
         <source>Add</source>
         <translation>Aggiungi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="662"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="747"/>
         <source>Overrided dlls</source>
         <translation>Overrided Dll</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="681"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="766"/>
         <source>Dll name</source>
         <translation>Nome Dll</translation>
     </message>
@@ -2318,17 +2318,17 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">Algoritmo di override</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="686"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="771"/>
         <source>Override Algorithm</source>
         <translation>Algoritmo di override</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="698"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="783"/>
         <source>Advanced</source>
         <translation>Avanzate</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="707"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="792"/>
         <source>Display</source>
         <translation>Display</translation>
     </message>
@@ -2337,12 +2337,12 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">Display:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="753"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="838"/>
         <source>Debug options</source>
         <translation>Opzioni di debug</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="762"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="847"/>
         <source>Run with output in console</source>
         <translation>Esegui con l&apos;output in console</translation>
     </message>
@@ -2351,32 +2351,32 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">WINEDEBUG:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="807"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="892"/>
         <source>Nice level priority</source>
         <translation>Priorità di livello nice</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="834"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="919"/>
         <source>Priority:</source>
         <translation>Priorità:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="857"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="942"/>
         <source>Locale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="922"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="1007"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="942"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="1027"/>
         <source>Cancel</source>
         <translation>Cancella</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="949"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="1034"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
@@ -5210,7 +5210,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
 <context>
     <name>Run</name>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="553"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="638"/>
         <location filename="../q4wine-gui/run.cpp" line="104"/>
         <location filename="../q4wine-gui/run.cpp" line="167"/>
         <source>Native</source>
@@ -5377,13 +5377,13 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">dll di wine presenti</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="573"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="658"/>
         <location filename="../q4wine-gui/run.cpp" line="169"/>
         <source>Disabled</source>
         <translation>Disabilitato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="581"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="666"/>
         <source>Add</source>
         <translation>Aggiungi</translation>
     </message>
@@ -5410,52 +5410,52 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation>Directory di lavoro:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="502"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="587"/>
         <source>Override DLL</source>
         <translation>Override Dll</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="511"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="596"/>
         <source>Present Wine DLLs</source>
         <translation>dll di wine in uso</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="558"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="643"/>
         <source>Built-in</source>
         <translation>Incorporato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="563"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="648"/>
         <source>Native, Built-in</source>
         <translation>Nativo, incorporato</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="568"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="653"/>
         <source>Built-in, Native</source>
         <translation>Incorporato, nativo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="591"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="676"/>
         <source>Overridden DLLs</source>
         <translation>Override Dll</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="610"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="695"/>
         <source>DLL Name</source>
         <translation>Nome Dll</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="615"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="700"/>
         <source>Override Algorithm</source>
         <translation>Algoritmo di override</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="627"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="712"/>
         <source>Advanced</source>
         <translation>Avanzate</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="636"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="721"/>
         <source>Display</source>
         <translation>Display</translation>
     </message>
@@ -5464,12 +5464,12 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">Display:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="682"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="767"/>
         <source>Debug options</source>
         <translation>Opzioni di debug</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="691"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="776"/>
         <source>Run with output in console</source>
         <translation>Esegui con l&apos;output in console</translation>
     </message>
@@ -5478,32 +5478,32 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">WINEDEBUG:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="736"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="821"/>
         <source>Nice level priority</source>
         <translation>Priorità di livello nice</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="763"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="848"/>
         <source>Priority:</source>
         <translation>Priorità:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="786"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="871"/>
         <source>Locale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="851"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="936"/>
         <source>Help</source>
         <translation>Aituo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="871"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="956"/>
         <source>Cancel</source>
         <translation>Cancella</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="878"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="963"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>

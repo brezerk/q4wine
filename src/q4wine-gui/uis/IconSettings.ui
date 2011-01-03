@@ -522,7 +522,47 @@
                   </item>
                   <item>
                    <property name="text">
-                    <string notr="true">1600x1200</string>
+                    <string notr="true">1152x864</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1280x600</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1280x720</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1280x768</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1280x800</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1280x854</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1280x960</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1280x1024</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1360x768</string>
                    </property>
                   </item>
                   <item>
@@ -532,7 +572,22 @@
                   </item>
                   <item>
                    <property name="text">
+                    <string notr="true">1600x900</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1600x1200</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
                     <string notr="true">1680x1050</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">1680x1080</string>
                    </property>
                   </item>
                   <item>
@@ -542,7 +597,37 @@
                   </item>
                   <item>
                    <property name="text">
+                    <string notr="true">1920x1080</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">2048x872</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">2048x1152</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">2048x1536</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">2048x1556</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
                     <string notr="true">2560x1600</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string notr="true">4096x1556</string>
                    </property>
                   </item>
                  </widget>
