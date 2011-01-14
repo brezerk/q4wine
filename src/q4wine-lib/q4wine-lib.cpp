@@ -52,14 +52,19 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
     QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
 #endif
 
+#ifdef _OS_DARWIN_
+    QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
+#endif
+
     // Check for /proc directory exists
     QDir dir("/proc");
     if (!dir.exists()){
-        if (this->showError(message, false) == QMessageBox::Ignore){
-            procline << "-1";
-            proclist << procline;
-            return proclist;
-        }
+        //if (this->showError(message, false) == QMessageBox::Ignore){
+        //    procline << "-1";
+        //    proclist << procline;
+        proclist.clear();
+        return proclist;
+        //}
     }
 
     /* On Linux:
@@ -145,7 +150,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
 /* On FreeBSD:
 * This is new engine for getting process info from /proc directory and kmem interface
 */
-#if defined(_OS_FREEBSD_) || defined(_OS_DARWIN_)
+#if defined(_OS_FREEBSD_)
     kvm_t *kd;
     int cntproc, i, ni, ipid;
 
@@ -606,6 +611,9 @@ QStringList corelib::getCdromDevices(void) const{
         if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^sr")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
 #endif
 #ifdef _OS_FREEBSD_
+            if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^cd")) or fileInfo.fileName().contains(QRegExp("^acd")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
+#endif
+#ifdef _OS_DARWIN_
             if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^cd")) or fileInfo.fileName().contains(QRegExp("^acd")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
 #endif
                 if (fileInfo.isSymLink()){

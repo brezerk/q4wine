@@ -22,7 +22,11 @@
 DriveListWidgetItem::DriveListWidgetItem(QListWidget *parent, int type): QObject( parent), QListWidgetItem(parent, type)
 {
 	// Loading libq4wine-core.so
-	libq4wine.setFileName("libq4wine-core");
+#ifdef RELEASE
+    libq4wine.setFileName("libq4wine-core");
+#else
+    libq4wine.setFileName("../q4wine-lib/libq4wine-core");
+#endif
 
 	if (!libq4wine.load()){
 		  libq4wine.load();

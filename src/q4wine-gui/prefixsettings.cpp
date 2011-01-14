@@ -28,8 +28,11 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
     this->prefix_name=prefix_name;
 
     // Loading libq4wine-core.so
+#ifdef RELEASE
     libq4wine.setFileName("libq4wine-core");
-
+#else
+    libq4wine.setFileName("../q4wine-lib/libq4wine-core");
+#endif
     if (!libq4wine.load()){
         libq4wine.load();
     }

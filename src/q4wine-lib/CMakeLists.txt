@@ -41,7 +41,7 @@ SET( Q4WINE_LIB_SOURCES
 SET( Q4WINE_LIB_HEADERS
         ${CMAKE_SOURCE_DIR}/src/q4wine-lib/q4wine-lib.h
         ${CMAKE_SOURCE_DIR}/config.h
-        ${CMAKE_SOURCE_DIR}/src/core/database/db.h
+        ${CMAKE_SOURCE_DIR}/src/core/database/db.h#
         ${CMAKE_SOURCE_DIR}/src/core/database/prefix.h
         ${CMAKE_SOURCE_DIR}/src/core/database/dir.h
         ${CMAKE_SOURCE_DIR}/src/core/database/icon.h
@@ -61,7 +61,8 @@ SET ( Q4WINE_LIB_UI_SOURCES
 QT4_WRAP_UI( Q4WINE_LIB_UI_HEADERS ${Q4WINE_LIB_UI_SOURCES} )
 QT4_WRAP_CPP( Q4WINE_LIB_LIB_MOC_SOURCES ${Q4WINE_LIB_MOC_HEADERS} )
 
-ADD_LIBRARY( q4wine-core SHARED ${Q4WINE_LIB_SOURCES} ${Q4WINE_LIB_UI_HEADERS} ${Q4WINE_LIB_LIB_MOC_SOURCES} ${Q4WINE_LIB_HEADERS} ${QM_I18N} )
+ADD_LIBRARY( q4wine-core SHARED ${QT_LIBRARIES} ${Q4WINE_LIB_UI_SOURCES}  ${Q4WINE_LIB_MOC_HEADERS} ${Q4WINE_LIB_SOURCES} ${Q4WINE_LIB_UI_HEADERS} ${Q4WINE_LIB_LIB_MOC_SOURCES} ${Q4WINE_LIB_HEADERS} ${QM_I18N} )
+target_link_libraries( q4wine-core ${QT_LIBRARIES})
 add_dependencies( q4wine-core translations )
 
 IF( RELEASE )

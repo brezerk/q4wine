@@ -38,7 +38,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
-#define MAX 8192
+#define WTF_MAX 8192
 
 class WineObject : public QObject
 {

@@ -64,25 +64,20 @@
 
 // Experimental Darwin support (no test were preformed)
 #ifdef _OS_DARWIN_
-        #include <kvm.h>
         #include <fcntl.h>
-        #include <sys/kinfo.h>
-        #include <sys/kinfo_proc.h>
         #include <paths.h>
-
 
         #include <sys/param.h>
         #include <sys/user.h>
         #include <sys/file.h>
         #include <sys/sysctl.h>
         #include <limits.h>
-
 #endif
 
-#include "src/core/database/prefix.h"
-#include "src/core/database/dir.h"
-#include "src/core/database/icon.h"
-#include "src/core/database/image.h"
+#include "prefix.h"
+#include "dir.h"
+#include "icon.h"
+#include "image.h"
 
 /*!
  * \class corelib
