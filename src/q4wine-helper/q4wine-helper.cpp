@@ -31,7 +31,11 @@ int main(int argc, char *argv[])
     QLibrary libq4wine;
 
     // Loading libq4wine-core.so
+#ifdef RELEASE
     libq4wine.setFileName("libq4wine-core");
+#else
+    libq4wine.setFileName(QString("%1/q4wine-lib/libq4wine-core").arg(APP_BUILD));
+#endif
 
     if (!libq4wine.load()){
         libq4wine.load();
@@ -77,6 +81,7 @@ int main(int argc, char *argv[])
     }
 
     for (int i=1; i<argc; i++){
+        qDebug()<<app.arguments().at(i);
         if ((app.arguments().at(1)=="--version") or (app.arguments().at(1)=="-v")){
             Qcout<<QString("%1-helper %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
             Qcout<<QString("(Copyright (C) 2008-2009, brezblock core team.")<<endl;

@@ -22,7 +22,11 @@
 WineObject::WineObject(QObject *parent) : QObject(parent)
 {
     // Loading libq4wine-core.so
+#ifdef RELEASE
     libq4wine.setFileName("libq4wine-core");
+#else
+    libq4wine.setFileName(QString("%1/q4wine-lib/libq4wine-core").arg(APP_BUILD));
+#endif
 
     if (!libq4wine.load()){
         libq4wine.load();
@@ -216,6 +220,15 @@ int WineObject::runSys(){
     }
     run_string.append(" 2>&1 \"");
 
+ /*   QStringList argss;
+    argss<<"-c"<<run_string;
+
+    QProcess *proc = new QProcess(0);
+    proc->start("/bin/sh", argss);
+
+    if (!proc->waitForStarted(90000))
+             return -1;
+    return 0;*/
     /*
     if (this->useConsole){
         // If we gona use console output, so exec program is program specificed at CONSOLE global variable

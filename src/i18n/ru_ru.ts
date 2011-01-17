@@ -4721,14 +4721,14 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../main.cpp" line="130"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="374"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="84"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="89"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>Это свободное программное обеспечение. Вы можете изменять и распространять его.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="131"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="375"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="85"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="90"/>
         <source>There is NO WARRANTY, to the extent permitted by law.</source>
         <translation>Не существует никаких гарантий в рамках закона.</translation>
     </message>
@@ -4739,7 +4739,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../main.cpp" line="133"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="377"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="87"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="92"/>
         <source>Author: %1.</source>
         <translation>Автор: %1.</translation>
     </message>
@@ -4751,7 +4751,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../main.cpp" line="150"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="437"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="150"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="155"/>
         <source>Report %1 bugs to %2</source>
         <translation>Отправляйте сообщения об ошибках %1 к %2</translation>
     </message>
@@ -4778,7 +4778,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../main.cpp" line="140"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="410"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="134"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="139"/>
         <source>Usage:</source>
         <translation>Использование:</translation>
     </message>
@@ -4790,7 +4790,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../main.cpp" line="144"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="415"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="137"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="142"/>
         <source>KEYs list:</source>
         <translation>Ключи:</translation>
     </message>
@@ -4813,7 +4813,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="419"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="138"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="143"/>
         <source>sets the current prefix name</source>
         <translation>установить имя префикса</translation>
     </message>
@@ -4933,74 +4933,74 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../main.cpp" line="151"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="438"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="151"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="156"/>
         <source>%1 homepage: &lt;%2&gt;</source>
         <translation>веб-сайт %1: &lt;%2&gt;</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="152"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="439"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="152"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="157"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
         <translation>Помощь при использовании программ GNU: &lt;http://www.gnu.org/gethelp/&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="135"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="140"/>
         <source>  %1-helper [KEYs]...</source>
         <translation>  %1-helper [KEYs]...</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="139"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="144"/>
         <source>sets WINEDEBUG variable</source>
         <translation>установить переменную WINEDEBUG</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="136"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="141"/>
         <source>Console utility for q4wine which helps to handle wine application exit status and it&apos;s stdout\stderr output logging.</source>
         <translation>Консольная утилита для q4wine, которая помогает получать код завершения программы wine и заносит ее уведомления в журнал.</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="140"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="145"/>
         <source>run with output in console</source>
         <translation>выполнить с отладкой в консоли</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="141"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="146"/>
         <source>sets DISPLAY variable</source>
         <translation>устанавить переменную DISPLAY</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="142"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="147"/>
         <source>sets program nicenes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="143"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="148"/>
         <source>sets program virtual desktop resolution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="144"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="149"/>
         <source>sets program binary</source>
         <translation>устанавить исполняемую программу</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="145"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="150"/>
         <source>sets program args</source>
         <translation>установить аргументы программы</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="146"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="151"/>
         <source>sets program working directory</source>
         <translation>установить рабочий каталог программы</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="147"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="152"/>
         <source>sets program LANG variable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="148"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="153"/>
         <source>sets WINEDLLOVERRIDES variable</source>
         <translation>установить переменную WINEDLLOVERRIDES</translation>
     </message>

@@ -36,7 +36,11 @@ int main(int argc, char *argv[])
 
     // Loading libq4wine-core.so
     QLibrary libq4wine;
+#ifdef RELEASE
     libq4wine.setFileName("libq4wine-core");
+#else
+    libq4wine.setFileName(QString("%1/q4wine-lib/libq4wine-core").arg(APP_BUILD));
+#endif
 
     if (!libq4wine.load()){
         return -1;

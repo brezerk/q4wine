@@ -877,7 +877,11 @@ QStringList corelib::getCdromDevices(void) const{
 #ifdef RELEASE
             QString binary = QString("%1/bin/q4wine-helper").arg(APP_PREF);
 #else
+#ifdef _OS_DARWIN
             QString binary = QString("%1/q4wine-helper/q4wine-helper").arg(APP_BUILD);
+#else
+            QString binary = QString("%1/q4wine-helper/q4wine-helper.app/Contents/MacOS/q4wine-helper").arg(APP_BUILD);
+#endif
 #endif
             QStringList args;
 
