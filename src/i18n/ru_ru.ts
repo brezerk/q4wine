@@ -4564,100 +4564,100 @@ Note: leave it blank for default.</source>
         <translation>Умолчания</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="199"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="242"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="255"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="286"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="300"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="329"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="381"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="203"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="246"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="259"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="290"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="304"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="333"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="385"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>Префикс не установлен. Установите префикс, запустив приложение с ключом &quot;-p &lt;имя_префикса&gt;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="204"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="208"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
         <translation>Иконка не установлена. Укажите иконку, запустив приложение с ключом &quot;-i &lt;имя_иконки&gt;&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="224"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="228"/>
         <source>Wine process list</source>
         <translation>Список процессов Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="226"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="230"/>
         <source>Wine process list for &quot;%1&quot; prefix</source>
         <translation>Список процессов Wine для префикса &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="230"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="234"/>
         <source>PID</source>
         <translation>PID</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="230"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="234"/>
         <source>Nice</source>
         <translation>Приоритет</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="172"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="230"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="247"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="269"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="279"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="176"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="234"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="251"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="273"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="283"/>
         <source>Name</source>
         <translation>Название</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="230"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="234"/>
         <source>Prefix path</source>
         <translation>Путь к префиксу</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="171"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="175"/>
         <source>Prefix list</source>
         <translation>Список префиксов</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="172"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="279"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="176"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="283"/>
         <source>Path</source>
         <translation>Путь</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="246"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="250"/>
         <source>Prefix &quot;%1&quot; has following dir list</source>
         <translation>Префикс &quot;%1&quot; содержит следующий список каталогов</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="265"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="269"/>
         <source>Prefix &quot;%1&quot; has following icon list</source>
         <translation>Префикс &quot;%1&quot; содержит следующий список иконок</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="267"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="271"/>
         <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
         <translation>Префикс &quot;%1&quot; содержит следующий список иконок в каталоге &quot;%2&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="269"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="273"/>
         <source>Description</source>
         <translation>Описание</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="278"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="282"/>
         <source>%1 has the following disc images in the database</source>
         <translation>У %1 есть следующие дисковые образы в базе данных</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="289"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="293"/>
         <source>Killing prefix &quot;%1&quot; wineserver.</source>
         <translation>Завершаю Wine в префиксе &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="306"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="335"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="361"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="310"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="339"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="365"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>В настройках префикса не установлено точки монтирования.</translation>
     </message>
@@ -4670,39 +4670,39 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Монтирую диск &quot;%1&quot; в точку монтирования &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="313"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="317"/>
         <source>No disc image &quot;%1&quot; exists. Run &quot;%2-cli -cl&quot; for disc image list.</source>
         <translation>Образ &quot;%1&quot; не существует. Выполните &quot;%2-cli -сl&quot; для получения списка дисковых образов.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="339"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="343"/>
         <source>Umounting mount point &quot;%1&quot;.</source>
         <translation>Размонтирование точки &quot;%1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="351"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="355"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Список примонтированных дисков для всех префиксов</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="352"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="356"/>
         <source>Prefix</source>
         <translation>Префикс</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="352"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="366"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="356"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="370"/>
         <source>Mount point</source>
         <translation>Точка монтирования</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="352"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="366"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="356"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="370"/>
         <source>Media</source>
         <translation>Диск</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="365"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="369"/>
         <source>Mounted media list for prefix &quot;%1&quot;</source>
         <translation>Список примонтированных дисков для префикса &quot;%1&quot;</translation>
     </message>
@@ -4720,14 +4720,14 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../main.cpp" line="130"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="374"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="378"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="89"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>Это свободное программное обеспечение. Вы можете изменять и распространять его.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="131"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="375"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="379"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="90"/>
         <source>There is NO WARRANTY, to the extent permitted by law.</source>
         <translation>Не существует никаких гарантий в рамках закона.</translation>
@@ -4738,7 +4738,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../main.cpp" line="133"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="377"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="381"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="92"/>
         <source>Author: %1.</source>
         <translation>Автор: %1.</translation>
@@ -4750,7 +4750,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../main.cpp" line="150"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="437"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="441"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="155"/>
         <source>Report %1 bugs to %2</source>
         <translation>Отправляйте сообщения об ошибках %1 к %2</translation>
@@ -4771,89 +4771,89 @@ Note: leave it blank for default.</source>
         <translation>Графическая утилита для управления приложениями и префиксами (песочницами) Wine.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="388"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="392"/>
         <source>File &quot;%1&quot; not exists.</source>
         <translation>Файл &quot;%1&quot; не существует.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="140"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="410"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="414"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="139"/>
         <source>Usage:</source>
         <translation>Использование:</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="414"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="418"/>
         <source>Console utility for wine applications and prefixes management.</source>
         <translation>Консольная утилита для управления приложениями и префиксами (песочницами) Wine.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="144"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="415"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="419"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="142"/>
         <source>KEYs list:</source>
         <translation>Ключи:</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="145"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="416"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="420"/>
         <source>display this help and exit</source>
         <translation>показать это сообщение и выйти</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="146"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="417"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="421"/>
         <source>output version information and exit</source>
         <translation>показать информацию о версии и выйти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="418"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="422"/>
         <source>output wine process list for current prefix or for all prefixes and exit </source>
         <translation>показать все процессы Wine для данного префикса или для всех и выйти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="419"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="423"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="143"/>
         <source>sets the current prefix name</source>
         <translation>установить имя префикса</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="420"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="424"/>
         <source>sets the current direcory name</source>
         <translation>установить имя текущего каталога</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="421"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="425"/>
         <source>sets the current icon name</source>
         <translation>установить имя текущей иконки</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="422"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="426"/>
         <source>sets the cd iamge name</source>
         <translation>установить имя CD/DVD образа</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="423"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="427"/>
         <source>sets the path to windows binary for execute with current prefix settings</source>
         <translation>путь к программе Windows(tm) для запуска с текущими настройками (префикса)</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="435"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="439"/>
         <source> -1 if serious troubles</source>
         <translation>-1, если серьезные неприятности</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="97"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="101"/>
         <source>Prefix named &quot;%1&quot; not exists. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>Префикс, названный &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка префиксов.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="209"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="213"/>
         <source>Icon named &quot;%1&quot; not exists.  Run &quot;%2-cli -il&quot; for icon list.</source>
         <translation>Иконка, названная &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка иконок.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="260"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="264"/>
         <source>Dir named &quot;%1&quot; not exists. Run &quot;%2-cli -dl&quot; for dir list.</source>
         <translation>Каталог, названный &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка каталогов.</translation>
     </message>
@@ -4866,80 +4866,80 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Образ &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка образов CD/DVD.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="411"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="415"/>
         <source>  %1-cli [KEY]...</source>
         <translation>%1-cli [КЛЮЧ]...</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="412"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="416"/>
         <source>  %1-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
         <translation>  %1-cli -p &lt;префикс&gt; [-d &lt;каталог&gt;] -i &lt;иконка&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="413"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="417"/>
         <source>  %1-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [args]</source>
         <translation>  %1-cli -p &lt;префикс&gt; -b &lt;путь_к_программе_windows&gt; [args]</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="424"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="428"/>
         <source>sends -9 term signal to current prefix precess or for all prefixes processes</source>
         <translation>Посылает сигнал завершения (-9) процессам в текущем префиксе, или во всех префиксах</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="425"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="429"/>
         <source>output all exesting prefixes names and exit</source>
         <translation>вывести список всех префиксов и выйти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="426"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="430"/>
         <source>output all exesting dir names for current prefix and exit</source>
         <translation>вывести список всех каталогов (для текущего префикса) и выйти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="427"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="431"/>
         <source>output all exesting icon names for current prefix/directory and exit</source>
         <translation>вывести список иконок для текущего префикса/каталога и выйти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="428"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="432"/>
         <source>output all cd images list and exit</source>
         <translation>вывести список всех образов CD/DVD и выйти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="429"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="433"/>
         <source>output all mounted media for current prefix or all prefixes and exit</source>
         <translation>вывести все смонтированные ресурсы для текущего префикса или всех префиксов и выйти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="430"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="434"/>
         <source>mount an cd iamage or drive for current prefix and exit</source>
         <translation>примонтировать образ или дисковод CD/DVD для текущего префикса и выйти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="431"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="435"/>
         <source>umount an cd iamage or drive for current prefix and exit</source>
         <translation>размонтировать образ/дисковод CD/DVD для текущего префикса и выйти</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="433"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="437"/>
         <source>Exit status:</source>
         <translation>Код завершения:</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="434"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="438"/>
         <source>  0 if OK,</source>
         <translation>0, если все хорошо,</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="151"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="438"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="442"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="156"/>
         <source>%1 homepage: &lt;%2&gt;</source>
         <translation>веб-сайт %1: &lt;%2&gt;</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="152"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="439"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="443"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="157"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
         <translation>Помощь при использовании программ GNU: &lt;http://www.gnu.org/gethelp/&gt;</translation>

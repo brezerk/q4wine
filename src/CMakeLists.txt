@@ -135,7 +135,7 @@ IF( NOT LIBS_ENTRY_PATH )
 ENDIF( NOT LIBS_ENTRY_PATH )
 
 IF( NOT LINGUAS )
-    SET ( LINGUAS en_us ru_ru uk_ua pt_br es_es it_it cs_cz he_il )
+    SET ( LINGUAS en_us ru_ru uk_ua pt_br es_es it_it cs_cz he_il pl_pl )
 ENDIF( NOT LINGUAS )
 
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )
