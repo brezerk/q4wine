@@ -106,7 +106,7 @@ void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("Video")){
         optionsStack->setCurrentIndex(1);
         tabwVideo->setCurrentIndex(0);
-    } else if (itemText==tr("Direct 3D") && item->parent()->text(0)==tr("Video")){
+    } else if (itemText==tr("Direct3D") && item->parent()->text(0)==tr("Video")){
         optionsStack->setCurrentIndex(1);
         tabwVideo->setCurrentIndex(1);
     } else if (itemText==tr("OpenGL")){
@@ -139,7 +139,7 @@ void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("Input")){
         optionsStack->setCurrentIndex(4);
         tabwInput->setCurrentIndex(0);
-    } else if (itemText==tr("Direct 3D") && item->parent()->text(0)==tr("Input")){
+    } else if (itemText==tr("Direct3D") && item->parent()->text(0)==tr("Input")){
         optionsStack->setCurrentIndex(4);
         tabwInput->setCurrentIndex(0);
     } else if (itemText==tr("X11 Driver") && item->parent()->text(0)==tr("Input")){
@@ -801,7 +801,7 @@ void FakeDriveSettings::cmdHelp_Click(){
         rawurl = "07-fake-drive-settings.html#winebrowsers";
     } else if (itemText==tr("Video")){
         rawurl = "07-fake-drive-settings.html#video";
-    } else if (itemText==tr("Direct 3D") && item->parent()->text(0)==tr("Video")){
+    } else if (itemText==tr("Direct3D") && item->parent()->text(0)==tr("Video")){
         rawurl = "07-fake-drive-settings.html#direct";
     } else if (itemText==tr("OpenGL")){
         rawurl = "07-fake-drive-settings.html#opengl";
@@ -823,7 +823,7 @@ void FakeDriveSettings::cmdHelp_Click(){
         rawurl = "07-fake-drive-settings.html#sound-misc";
     } else if (itemText==tr("Input")){
         rawurl = "07-fake-drive-settings.html#d3d-input";
-    } else if (itemText==tr("Direct 3D") && item->parent()->text(0)==tr("Input")){
+    } else if (itemText==tr("Direct3D") && item->parent()->text(0)==tr("Input")){
         rawurl = "07-fake-drive-settings.html#d3d-input";
     } else if (itemText==tr("X11 Driver") && item->parent()->text(0)==tr("Input")){
         rawurl = "07-fake-drive-settings.html#x11-input";

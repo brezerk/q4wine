@@ -241,9 +241,6 @@
          <attribute name="headerVisible">
           <bool>false</bool>
          </attribute>
-         <attribute name="headerVisible">
-          <bool>false</bool>
-         </attribute>
          <column>
           <property name="text">
            <string>General</string>
@@ -295,7 +292,7 @@
           </item>
           <item>
            <property name="text">
-            <string>Direct 3D</string>
+            <string>Direct3D</string>
            </property>
           </item>
           <item>
@@ -315,7 +312,7 @@
           </property>
           <item>
            <property name="text">
-            <string>Direct 3D</string>
+            <string>Direct3D</string>
            </property>
           </item>
           <item>
