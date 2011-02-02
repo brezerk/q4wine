@@ -2141,7 +2141,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="942"/>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Локаль</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1007"/>
@@ -4972,12 +4972,12 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="147"/>
         <source>sets program nicenes</source>
-        <translation type="unfinished"></translation>
+        <translation>установить приоритет программы</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="148"/>
         <source>sets program virtual desktop resolution</source>
-        <translation type="unfinished"></translation>
+        <translation>установить виртуальное разрешение экрана для программы</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="149"/>
@@ -4997,7 +4997,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="152"/>
         <source>sets program LANG variable</source>
-        <translation type="unfinished"></translation>
+        <translation>установить переменную LANG для программы</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="153"/>
@@ -5171,7 +5171,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="871"/>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Локаль</translation>
     </message>
     <message>
         <source>DISPLAY:</source>
