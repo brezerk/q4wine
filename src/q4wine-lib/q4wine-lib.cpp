@@ -42,18 +42,18 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
     if (!prefix_name.isEmpty())
         prefix_path = db_prefix.getPath(prefix_name);
 
-    QString name, procstat, path, prefix, env_arg, nice;
+    QString name, procstat, path, prefix, env_arg, nice, message;
 
 #ifdef _OS_LINUX_
-    QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
+    message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
 #endif
 
 #ifdef _OS_FREEBSD_
-    QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
+    message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
 #endif
 
 #ifdef _OS_DARWIN_
-    QString message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
+    message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
 #endif
 
     // Check for /proc directory exists
@@ -609,12 +609,12 @@ QStringList corelib::getCdromDevices(void) const{
 
 #ifdef _OS_LINUX_
         if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^sr")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
-#endif
-#ifdef _OS_FREEBSD_
-            if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^cd")) or fileInfo.fileName().contains(QRegExp("^acd")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
-#endif
-#ifdef _OS_DARWIN_
-            if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^cd")) or fileInfo.fileName().contains(QRegExp("^acd")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
+#elif _OS_FREEBSD_
+        if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^cd")) or fileInfo.fileName().contains(QRegExp("^acd")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
+#elif _OS_DARWIN_
+        if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^cd")) or fileInfo.fileName().contains(QRegExp("^acd")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
+#else
+        if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^sr")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
 #endif
                 if (fileInfo.isSymLink()){
                     if (!retVal.contains(fileInfo.symLinkTarget()))

@@ -4356,22 +4356,22 @@ Note: leave it blank for default.</source>
     <name>Wizard</name>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1560"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="195"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="368"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="412"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="193"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="366"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="410"/>
         <source>No Proxy</source>
         <translation>ללא מתווך</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="2061"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="548"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="553"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="546"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="551"/>
         <source>Next &gt;</source>
         <translation>הבא &gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="91"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="516"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="514"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation>&lt;b&gt;שלב %1 מתוך %2&lt;/b&gt;</translation>
     </message>
@@ -4386,89 +4386,89 @@ Note: leave it blank for default.</source>
         <translation>&lt;b&gt;אשף ההפעלה הראשונה&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="252"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="258"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="250"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="256"/>
         <source>Open File</source>
         <translation>פתיחת קובץ</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="254"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="260"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="252"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="258"/>
         <source>Open Directory</source>
         <translation>פתיחת תיקייה</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="297"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="300"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="308"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="311"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="370"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="374"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="295"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="298"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="306"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="309"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="368"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="372"/>
         <source>Error</source>
         <translation>שגיאה</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="297"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="295"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>נא לציין תיקיית %1, עמך הסליחה.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="300"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="298"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>נא לציין קובץ בינרי %1, עמך הסליחה.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="308"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="306"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation>תיקיית ה־%1 שצוינה אינה קיימת, עמך הסליחה.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="311"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="309"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation>הקובץ הבינרי %1 שצוין אינו קיים, עמך הסליחה.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="370"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="368"/>
         <source>Sorry, specify proxy host.</source>
         <translation>נא לציין את מארח המתווך, עמך הסליחה.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="374"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="372"/>
         <source>Sorry, specify proxy port.</source>
         <translation>נא לציין את הפתחה במתווך, עמך הסליחה.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="524"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="522"/>
         <source>&lt;b&gt;First startup wizrad&lt;/b&gt;</source>
         <translation>&lt;b&gt;אשף ההפעלה הראשונה&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="531"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="529"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Alexey S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; נוצר בתחילה על ידי Alexey S. Malakhov הידוע גם בשם John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;הרעיון הכללי הגיע בעקבות הסקריפטים בשם &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; שנכתבו לראשונה על ידי Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;רישוי התכנה כפוף לרישיון &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL גרסה v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;ניתן לשלוח תגובות, דיווחי באגים וכו׳ אל [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;לתשומת לבך&lt;/span&gt;&lt;/b&gt;: תכנית זו מגיעה ללא שום אחריות. היוצר &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;לא&lt;/span&gt;&lt;/b&gt; יספק תמיכה בתחומי WineTools, Wine, התקנת תכנה, לינוקס או Microsoft Windows.&lt;/p&gt;&lt;p&gt;אם &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;יש לך צורך בעזרה&lt;/span&gt;, ניתן לשאול ברשימות הדיוור בכתובת &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;אם ברצונך לקבל &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;תמיכה מקצועית&lt;/span&gt;, באפשרותך לרכוש את הגרסה המסחרית של wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) ליישומי שולחן העבודה&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="525"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="523"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;ברוך בואך לאשף ההפעלה הראשונית.&lt;/p&gt;&lt;p&gt;אשף זה יסייע לך לבצע את כל השלבים הנחוצים להתקנת %1 כראוי.&lt;/p&gt;&lt;p&gt;נא ללחוץ על הלחצן &lt;b&gt;הבא&lt;/b&gt; כדי לעבור לעמוד הבא באשף. או על הלחצן &lt;b&gt;חזרה&lt;/b&gt; כדי לחזור.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="558"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="556"/>
         <source>Finish</source>
         <translation>סיום</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="583"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="581"/>
         <source>Warning</source>
         <translation>אזהרה</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="583"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="581"/>
         <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
         <translation>&lt;p&gt;התכנית q4wine הודרה ללא הטמעה של FuseIso.&lt;/p&gt;&lt;p&gt;אם ברצונך להדר את q4wine עם הטמעת FuseIso נא להוסיף את:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; לארגומנטים של cmake.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="557"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="555"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;הכול מוכן לסיום התקנת %1. &lt;/p&gt;&lt;p&gt;נא ללחוץ על הלחצן &lt;b&gt;סיום&lt;/b&gt; כדי לסיים את תהליך ההתקנה. או ללחוץ על &lt;b&gt;חזרה&lt;/b&gt; כדי לחזור.&lt;/p&gt;</translation>
     </message>

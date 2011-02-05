@@ -5743,9 +5743,9 @@ Nota: deixe em branco para usar os valores padrões.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1560"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="195"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="368"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="412"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="193"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="366"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="410"/>
         <source>No Proxy</source>
         <translation>Sem proxy</translation>
     </message>
@@ -6190,8 +6190,8 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="2061"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="548"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="553"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="546"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="551"/>
         <source>Next &gt;</source>
         <translation>Próximo &gt;</translation>
     </message>
@@ -6226,7 +6226,7 @@ Quick mount feature allows you to mountumount cd images and drivers via context 
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="91"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="516"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="514"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation>&lt;b&gt;Etapa %1 de %2&lt;/b&gt;</translation>
     </message>
@@ -6279,14 +6279,14 @@ Tipo: </translation>
         <translation type="obsolete">&lt;p&gt;Bem vindo ao assisente de atualização da unidade virtual.&lt;/p&gt;&lt;p&gt;Este assistente lhe guiará por todas as etapas necessárias na criação da unidade virtual.&lt;/p&gt;&lt;p&gt;Por favor, pressione o botão &lt;b&gt;Próximo&lt;/b&gt; para ir para a próxima página do assistente. Ou pressione o botão &lt;b&gt;Voltar&lt;/b&gt; para retornar.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="252"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="258"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="250"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="256"/>
         <source>Open File</source>
         <translation>Abrir arquivo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="254"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="260"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="252"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="258"/>
         <source>Open Directory</source>
         <translation>Abrir diretório</translation>
     </message>
@@ -6299,52 +6299,52 @@ Tipo: </translation>
         <translation type="obsolete">%1wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="297"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="300"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="308"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="311"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="370"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="374"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="295"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="298"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="306"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="309"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="368"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="372"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="297"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="295"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Desculpe, especifique o diretório %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="300"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="298"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Desculpe, especifique o binário %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="308"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="306"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation>Desculpe, o diretório %1 especificado não existe.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="311"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="309"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation>Desculpe, o binário %1 especificado não existe.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="370"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="368"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Desculpe, especifique o servidor proxy.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="374"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="372"/>
         <source>Sorry, specify proxy port.</source>
         <translation>Desculpe, especifique a porta do proxy.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="524"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="522"/>
         <source>&lt;b&gt;First startup wizrad&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="531"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="529"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Alexey S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6697,7 +6697,7 @@ DirectDrawRenderer&quot;=&quot;%1&quot;</translation>
         <translation type="obsolete">&lt;b&gt;Primeiro início do assistente&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="525"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="523"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Bem-vindo ao primeiro início do assitente&lt;/p&gt;&lt;p&gt;Este assistente lhe guiará por todas as etapas necessárias na configuração de %1.&lt;/p&gt;&lt;p&gt;Por favor, pressione o botão &lt;b&gt;Próximo&lt;/b&gt; para ir para a próxima página do assistente. Ou pressione o botão &lt;b&gt;Voltar&lt;/b&gt; para retornar.&lt;/p&gt;</translation>
     </message>
@@ -6710,7 +6710,7 @@ DirectDrawRenderer&quot;=&quot;%1&quot;</translation>
         <translation type="obsolete">&lt;p&gt;Por favor, digite as definições padrões de wine&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="558"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="556"/>
         <source>Finish</source>
         <translation>Concluir</translation>
     </message>
@@ -6787,7 +6787,7 @@ Por exemplo:
 Veja ajuda para detalhes.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="583"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="581"/>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
@@ -6830,12 +6830,12 @@ Certifique-se que wine pode acessar o diretório temporário de %2.</translation
         <translation type="obsolete">Atualizando dosdrivers de wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="583"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="581"/>
         <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
         <translation>&lt;p&gt;q4wine foi compilado sem FuseIso incorporado.&lt;/p&gt;&lt;p&gt;Se você precisa compilar q4wine com FuseIso incorporado, adicione:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot;aos argumentos cmake.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="557"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="555"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Pronto para concluir a instalação de %1. &lt;/p&gt;&lt;p&gt;Por favor, pressione o botão &lt;b&gt;Concluir&lt;/b&gt; para terminar o processo de instalação. Ou pressione o botão &lt;b&gt;Voltar&lt;/b&gt; para retornar.&lt;/p&gt;</translation>
     </message>
