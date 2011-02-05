@@ -226,8 +226,8 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     settings.endGroup();
 
 #ifdef _OS_FREEBSD_
-    radioFuse->setEnabled(FALSE);
-    radioEmbedded->setEnabled(FALSE);
+    this->comboMountProfiles->removeItem(3);
+    this->comboMountProfiles->removeItem(2);
 #endif
 
     settings.beginGroup("advanced");

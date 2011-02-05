@@ -178,6 +178,12 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 
     updateScena();
 
+#ifdef _OS_FREEBSD_
+    this->comboMountProfiles->removeItem(3);
+    this->comboMountProfiles->removeItem(2);
+#endif
+
+
     this->installEventFilter(this);
 
     return;

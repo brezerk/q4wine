@@ -43,12 +43,7 @@ class AppSettings : public QDialog, public Ui::AppSettings
         void cmdHelp_Click();
 
         void comboMountProfiles_currentIndexChanged(int index);
-        /*
-        void radioDefault_toggled(bool state);
-        void radioDefaultGui_toggled(bool state);
-        void radioFuse_toggled(bool state);
-        void radioEmbedded_toggled(bool state);
-        */
+
         void cbEnableLogging_stateChanged ( int state );
         void cbShowTray_stateChanged ( int state );
 
