@@ -31,6 +31,7 @@ option(USE_BZIP2 "Use bzip2 to compress man pages" "OFF")
 option(USE_GZIP "Use gzip to compress man pages" "OFF")
 option(WITH_DBUS "If ON, then build q4wine with QtDBUS notifycation support" "ON")
 option(LINGUAS "Language list" "en_us;ru_ru;uk_ua;pt_br;es_es;it_it;cs_cz;he_il")
+option(LIBS_ENTRY_PATH "Destination directory for q4wine-core library")
 
 MESSAGE("\n * Utility for management wine applications and prefixes")
 MESSAGE(" * (C) 2008-2010, brezblock core team")
