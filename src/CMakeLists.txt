@@ -10,17 +10,6 @@ if(POLICY CMP0011)
     cmake_policy(SET CMP0011 NEW)
 endif(POLICY CMP0011)
 
-# RPATH fixes
-# skip the full RPATH for the build tree
-#SET(CMAKE_SKIP_BUILD_RPATH  TRUE)
-# when building, use the install RPATH already
-# (so it doesn't need to relink when installing)
-#SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
-# the RPATH to be used when installing
-# add the automatically determined parts of the RPATH
-# which point to directories outside the build tree to the install RPATH
-#SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
-
 option(DEBUG "If ON, then build q4wine with icoutils support. Use it in debug or bug report cases" "OFF")
 option(RELEASE "If OFF, then force q4wine to use APP_BUILD as root. Use it development cases" "ON")
 option(WITH_ICOUTILS "If ON, then build q4wine with icoutils support" "ON")
@@ -108,16 +97,6 @@ IF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
     ADD_DEFINITIONS(-Wall -g -DKERNEL)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
 
-IF (NOT DEFINED SKIP_RPATH)
-    IF (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES x86_64)
-        SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib64/q4wine")
-    ELSE (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES x86_64)
-        SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib/q4wine")
-    ENDIF (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES x86_64)
-ELSE (NOT DEFINED SKIP_RPATH)
-    MESSAGE(STATUS "NOTE: Skip for RPATH build!")
-ENDIF (NOT DEFINED SKIP_RPATH)
-
 IF( NOT DESKTOP_ENTRY_PATH )
     SET( DESKTOP_ENTRY_PATH ${CMAKE_INSTALL_PREFIX}/share/applications )
 ENDIF( NOT DESKTOP_ENTRY_PATH )
@@ -133,7 +112,27 @@ IF( NOT LIBS_ENTRY_PATH )
     ELSE (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES x86_64)
         SET( LIBS_ENTRY_PATH ${CMAKE_INSTALL_PREFIX}/lib/q4wine)
     ENDIF (${CMAKE_HOST_SYSTEM_PROCESSOR} MATCHES x86_64)
+ELSE( NOT LIBS_ENTRY_PATH )
+    SET( SKIP_RPATH TRUE)
 ENDIF( NOT LIBS_ENTRY_PATH )
+
+# RPATH fixes
+# skip the full RPATH for the build tree
+#SET(CMAKE_SKIP_BUILD_RPATH  TRUE)
+# when building, use the install RPATH already
+# (so it doesn't need to relink when installing)
+#SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+# the RPATH to be used when installing
+# add the automatically determined parts of the RPATH
+# which point to directories outside the build tree to the install RPATH
+#SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+IF (NOT DEFINED SKIP_RPATH)
+    SET(CMAKE_INSTALL_RPATH "${LIBS_ENTRY_PATH}")
+ELSE (NOT DEFINED SKIP_RPATH)
+    MESSAGE(STATUS "NOTE: Skip for RPATH build!")
+    SET(CMAKE_SKIP_BUILD_RPATH  TRUE)
+ENDIF (NOT DEFINED SKIP_RPATH)
 
 IF( NOT LINGUAS )
     SET ( LINGUAS en_us ru_ru uk_ua pt_br es_es it_it cs_cz he_il pl_pl )
