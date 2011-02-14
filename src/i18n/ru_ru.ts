@@ -1043,7 +1043,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="804"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="826"/>
         <source>Direct3D</source>
-        <translation type="unfinished"></translation>
+        <translation>Direct3D</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="762"/>
