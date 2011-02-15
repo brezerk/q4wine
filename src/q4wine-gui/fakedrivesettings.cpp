@@ -230,12 +230,20 @@ void FakeDriveSettings::cmdOk_Click(){
     list << "\"Desktop\""<<"\"My Music\""<<"\"My Pictures\""<<"\"My Videos\""<<"\"Personal\"";
     list = reg.readKeys("user", "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders", list);
 
-        QString prefixPath = db_prefix.getPath(prefixName);
+    QString prefixPath = db_prefix.getPath(prefixName);
 
-        QString userDir = prefixPath;
-        userDir.append("/drive_c/users/");
-        userDir.append(getenv("USER"));
+    /*
+     * Wine wan't create prefix for different ARCH while empty directory exists
+     * so we try to delete empty directory.
+     *
+     * Note: This will not delete an un empty directory
+     */
 
+    QDir::remove(prefix_path);
+
+    QString userDir = prefixPath;
+    userDir.append("/drive_c/users/");
+    userDir.append(getenv("USER"));
 
     if (list.count()==5){
                 desktopFolder = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(0).split("\\\\").last()));
