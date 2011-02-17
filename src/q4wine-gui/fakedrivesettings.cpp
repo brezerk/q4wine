@@ -239,7 +239,11 @@ void FakeDriveSettings::cmdOk_Click(){
      * Note: This will not delete an un empty directory
      */
 
-    QDir::remove(prefix_path);
+    QDir dir;
+    QFile file;
+    QFileInfo fileInfo;
+
+    dir.remove(prefixPath);
 
     QString userDir = prefixPath;
     userDir.append("/drive_c/users/");
@@ -264,9 +268,7 @@ void FakeDriveSettings::cmdOk_Click(){
     QString sh_cmd = "";
     QStringList sh_line;
 
-        QDir dir;
-        QFile file;
-        QFileInfo fileInfo;
+
 
         dir.setFilter(QDir::Dirs | QDir::Hidden | QDir::NoDotAndDotDot  );
 
