@@ -607,19 +607,24 @@ QStringList corelib::getCdromDevices(void) const{
     for (int i = 0; i < list.size(); ++i) {
         QFileInfo fileInfo = list.at(i);
 
-// #elif don't compiles on MacOS, #elseif don't compiles on gcc, so we gona to use this hack ;)
-#ifdef _OS_LINUX_
-        if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^sr")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
+#if defined(_OS_LINUX_)
+        if (fileInfo.fileName().contains(QRegExp("^cdrom")) or
+            fileInfo.fileName().contains(QRegExp("^sr")) or
+            fileInfo.fileName().contains(QRegExp("^dvd"))){
+#elif defined(_OS_FREEBSD_)
+        if (fileInfo.fileName().contains(QRegExp("^cdrom")) or
+            fileInfo.fileName().contains(QRegExp("^cd")) or
+            fileInfo.fileName().contains(QRegExp("^acd")) or
+            fileInfo.fileName().contains(QRegExp("^dvd"))){
+#elif defined(_OS_DARWIN_)
+        if (fileInfo.fileName().contains(QRegExp("^cdrom")) or
+            fileInfo.fileName().contains(QRegExp("^cd")) or
+            fileInfo.fileName().contains(QRegExp("^acd")) or
+            fileInfo.fileName().contains(QRegExp("^dvd"))){
 #else
-    #ifdef _OS_FREEBSD_
-            if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^cd")) or fileInfo.fileName().contains(QRegExp("^acd")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
-    #else
-        #ifdef _OS_DARWIN_
-                if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^cd")) or fileInfo.fileName().contains(QRegExp("^acd")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
-        #else
-                if (fileInfo.fileName().contains(QRegExp("^cdrom")) or fileInfo.fileName().contains(QRegExp("^sr")) or fileInfo.fileName().contains(QRegExp("^dvd"))){
-        #endif
-    #endif
+        if (fileInfo.fileName().contains(QRegExp("^cdrom")) or
+            fileInfo.fileName().contains(QRegExp("^sr")) or
+            fileInfo.fileName().contains(QRegExp("^dvd"))){
 #endif
                 if (fileInfo.isSymLink()){
                     if (!retVal.contains(fileInfo.symLinkTarget()))
