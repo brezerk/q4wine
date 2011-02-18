@@ -632,10 +632,6 @@ void MainWindow::cmdCreateFake_Click(){
         }
     }
 
-    QDir fakeDir (prefixPath);
-    if (!fakeDir.exists())
-        fakeDir.mkdir(prefixPath);
-
     FakeDriveSettings settings(cbPrefixes->currentText());
     settings.loadDefaultPrefixSettings();
 
