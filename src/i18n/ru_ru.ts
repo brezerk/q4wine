@@ -552,6 +552,11 @@ p, li { white-space: pre-wrap; }
         <translation>Пользователь:</translation>
     </message>
     <message>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1848"/>
+        <source>Expand prefix tree items on startup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2667"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="356"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="834"/>
@@ -590,11 +595,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1833"/>
         <source>Prefix tree view</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1848"/>
-        <source>Expand prefix tree on startup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

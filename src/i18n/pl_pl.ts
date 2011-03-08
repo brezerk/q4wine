@@ -632,11 +632,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1848"/>
-        <source>Expand prefix tree on startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2041"/>
         <source>Enable logging sybsystem.</source>
         <translation>Włącz podsystem logowania.</translation>
@@ -752,6 +747,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2190"/>
         <source>Default virtual desktop</source>
         <translation>Domyślny pulpit wirtualny</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1848"/>
+        <source>Expand prefix tree items on startup.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2199"/>

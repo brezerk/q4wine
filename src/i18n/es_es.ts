@@ -454,6 +454,11 @@ p, li { white-space: pre-wrap; }
         <translation>Montaje rápido</translation>
     </message>
     <message>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1848"/>
+        <source>Expand prefix tree items on startup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2742"/>
         <source>OK</source>
         <translation>Aceptar</translation>
@@ -664,11 +669,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1833"/>
         <source>Prefix tree view</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="1848"/>
-        <source>Expand prefix tree on startup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

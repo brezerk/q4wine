@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>690</width>
-    <height>430</height>
+    <width>688</width>
+    <height>428</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1845,7 +1845,7 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>Expand prefix tree on startup</string>
+                  <string>Expand prefix tree items on startup.</string>
                  </property>
                  <property name="checked">
                   <bool>false</bool>
