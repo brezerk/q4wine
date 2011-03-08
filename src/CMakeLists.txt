@@ -133,7 +133,7 @@ ELSE (NOT DEFINED SKIP_RPATH)
 ENDIF (NOT DEFINED SKIP_RPATH)
 
 IF( NOT LINGUAS )
-    SET ( LINGUAS en_us ru_ru uk_ua pt_br es_es it_it cs_cz he_il pl_pl )
+    SET ( LINGUAS en_us ru_ru uk_ua pt_br es_es it_it cs_cz he_il pl_pl de_de )
 ENDIF( NOT LINGUAS )
 
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )
