@@ -7,7 +7,17 @@ ChangeLog
 
 Version 0.120-r2
  Added:
+  - Interoperability of wineprefixes between q4wine, wibom, vineyard, and
+  winetricks (and maybe playonlinux) (WIP)
+  - German translation by Ron;
+  - experemental build support for MaxOS X;
+  - extended virtual desktop resolution list [3150062];
+  - request for language locale support [3144001 and 3149056];
   - Hebrew translation by Yaron Shahrabani;
+
+ Fixed:
+  - build on Hurd;
+  - build on FreeBSD;
 
 Version 0.120-r1
  Added:
