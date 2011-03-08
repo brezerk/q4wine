@@ -37,7 +37,7 @@ PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) :
       CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
       CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-      this->setHeaderLabel("Current prefixes list");
+      this->setHeaderLabel(tr("Current prefixes list"));
 
       connect(this, SIGNAL(itemClicked (QTreeWidgetItem *, int)), this, SLOT(itemClicked (QTreeWidgetItem *, int)));
 

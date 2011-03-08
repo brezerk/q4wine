@@ -48,7 +48,7 @@ LoggingWidget::LoggingWidget(QWidget *parent) :
     treeWidget.reset(new QTreeWidget(this));
     treeWidget->setColumnCount(1);
     treeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
-    treeWidget->setHeaderLabel("Logging list");
+    treeWidget->setHeaderLabel(tr("Logging list"));
 
     connect (treeWidget.get(), SIGNAL(itemActivated (QTreeWidgetItem *, int)), this, SLOT(treeWidget_itemClicked (QTreeWidgetItem *, int)));
     connect (treeWidget.get(), SIGNAL(currentItemChanged (QTreeWidgetItem *, QTreeWidgetItem *)), this, SLOT(treeWidget_currentItemChanged (QTreeWidgetItem *, QTreeWidgetItem *)));
