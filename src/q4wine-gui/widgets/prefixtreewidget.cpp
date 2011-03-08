@@ -200,7 +200,11 @@ void PrefixTreeWidget::getPrefixes(){
             std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(this));
             prefixItem->setText(0, QString("%1").arg(list.at(i)));
             prefixItem->setIcon(0, CoreLib->loadIcon("data/wine.png"));
-            prefixItem->setExpanded (TRUE);
+            if (CoreLib->getSetting("Interface", "expandPrefixTree", false, 1).toInt()==1){
+                prefixItem->setExpanded (TRUE);
+            } else {
+                prefixItem->setExpanded (FALSE);
+            }
             this->addTopLevelItem(prefixItem.get());
 
             // Inserting subfolders items into programs tree view
@@ -766,6 +770,7 @@ void PrefixTreeWidget::setDefaultFocus(QString prefixName, QString dirName){
             if (item->text(0)==prefixName){
                 if (dirName.isEmpty()){
                     this->setCurrentItem(item.get());
+                    this->topLevelItem(i)->setExpanded(TRUE);
                     this->itemClicked(item.get(), 0);
                     item.release();
                     break;
