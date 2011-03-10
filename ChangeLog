@@ -8,7 +8,7 @@ ChangeLog
 Version 0.120-r2
  Added:
   - option to make Prefix view unexpanded at startup;
-  - Polish translation by Frank (nobange) 
+  - Polish translation by Frank (nobange)
   - Interoperability of wineprefixes between q4wine, wibom, vineyard, and
   winetricks (and maybe playonlinux) (WIP)
   - German translation by Ron;
@@ -18,7 +18,6 @@ Version 0.120-r2
   - Hebrew translation by Yaron Shahrabani;
 
  Fixed:
-  - build on Hurd;
   - build on FreeBSD;
 
 Version 0.120-r1

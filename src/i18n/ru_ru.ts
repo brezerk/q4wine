@@ -554,7 +554,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1848"/>
         <source>Expand prefix tree items on startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Раскрывать дерево префиксов при запуске.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2667"/>
@@ -595,7 +595,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1833"/>
         <source>Prefix tree view</source>
-        <translation type="unfinished"></translation>
+        <translation>Просмотр дерева префиксов</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2041"/>
@@ -2598,7 +2598,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="51"/>
         <source>Logging list</source>
-        <translation type="unfinished"></translation>
+        <translation>Регистрация списка</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="101"/>
@@ -3197,7 +3197,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="410"/>
         <source>It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you want to remove it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вероятно, запущен другой экзепляр q4wine или q4wine некорректно завершен. Вы хотите его отключить?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="459"/>
@@ -4264,7 +4264,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="40"/>
         <source>Current prefixes list</source>
-        <translation type="unfinished"></translation>
+        <translation>Текущий список префксов</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="235"/>
