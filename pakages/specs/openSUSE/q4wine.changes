@@ -1,4 +1,20 @@
 -------------------------------------------------------------------
+Tue Apr  5 18:02:32 UTC 2011 - lazy.kent@opensuse.org
+
+- requires libqt4-sql-sqlite
+- added LICENSE and TODO to docs
+
+-------------------------------------------------------------------
+Tue Dec 28 11:28:08 UTC 2010 - lazy.kent@opensuse.org
+
+- update to 0.120+r1
+
+-------------------------------------------------------------------
+Fri Oct  1 19:38:55 UTC 2010 - lazy.kent.suse@gmail.com
+
+- added rpm build opt flags
+
+-------------------------------------------------------------------
 Fri Oct  1 16:25:43 UTC 2010 - lazy.kent.suse@gmail.com
 
 - update to 0.120
