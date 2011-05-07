@@ -53,11 +53,16 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
     connect (cmdExit, SIGNAL (clicked()), this, SLOT(accept()));
     connect (cmdInstWinetricks, SIGNAL (clicked()), this, SLOT (install_winetricks()));
     connect (cmdRefresh, SIGNAL (clicked()), this, SLOT(parse()));
+    connect (cbCategories, SIGNAL (currentIndexChanged(QString)), this, SLOT(parse()));
     connect(lstMain, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(lstMain_itemClicked(QListWidgetItem*)));
 
     lstMain->installEventFilter(this);
 
-    parse();
+   // if (parse()){
+     //   if (lstMain->count()<=0){
+            parse();
+       // }
+    //}
     //fill list
 }
 
@@ -210,10 +215,11 @@ descs.append(desc);
 }
 
 
-void winetricks::parse() {
+bool winetricks::parse() {
 
     names.clear();
     descs.clear();
+    this->lstMain->clear();
 
     this->cmdInstall->setEnabled(false);
 
@@ -223,15 +229,22 @@ void winetricks::parse() {
 
     if (!QFile(this->winetricks_bin).exists()){
             //QMessageBox::warning(this, tr("Error"), tr("<p>q4wine can't locate winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
-            return;
+            return false;
     }
 
     //create a Winetricks process
     QProcess p(this);
     QString pargs;
     pargs.append(winetricks_bin);
-    pargs.append(" --kegelfix");
 
+   // if (category.isEmpty()){
+     //   pargs.append(" --kegelfix");
+    //} else {
+        pargs.append(" ");
+        pargs.append(cbCategories->currentText());
+        pargs.append(" list");
+   // }
+qDebug()<<pargs;
    p.start(pargs);
 
    p.waitForFinished();
@@ -246,7 +259,6 @@ void winetricks::parse() {
   QString wOut = codec->toUnicode(p.readAllStandardOutput());
 
     //parse now
-bool isNowParse = false;
 QStringList strs = wOut.split("\n");
 QString str;
 
@@ -254,11 +266,7 @@ foreach (str, strs){
     if (!str.isEmpty()){
         str = str.trimmed();
 
-        if (str == "Apps:" || str == "Pseudopackages:"){continue;}
-        if (str == "Packages:") {isNowParse = true;
-            continue;
-        }
-        if (isNowParse) {addToList(str);}
+        addToList(str);
     }
 }
 
@@ -279,6 +287,7 @@ foreach (str, names) {
     if (this->lstMain->count()>0)
         this->cmdInstall->setEnabled(true);
 
+    return true;
 }
 
 

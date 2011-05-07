@@ -5,12 +5,13 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
-Version 0.120-r2
+Version 0.121
  Added:
+  - updated winetriks plugin;
   - option to make Prefix view unexpanded at startup;
-  - Polish translation by Frank (nobange)
-  - Interoperability of wineprefixes between q4wine, wibom, vineyard, and
-  winetricks (and maybe playonlinux) (WIP)
+  - Polish translation by Frank (nobange);
+  - interoperability of wineprefixes between q4wine, wibom, vineyard, and
+  winetricks (and maybe playonlinux) http://wiki.winehq.org/BottleSpec;
   - German translation by Ron;
   - experemental build support for MaxOS X;
   - extended virtual desktop resolution list [3150062];

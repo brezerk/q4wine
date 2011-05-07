@@ -290,6 +290,22 @@ public:
 
     QString decodeRegString(QString string);
 
+    /*! \brief This function is used to export prefix info.
+     *
+     * This function will export q4wine prefixes information according with http://wiki.winehq.org/BottleSpec
+     *
+     * \return true on success.
+     */
+    bool exportPrefixesConfiguration(void);
+
+    /*! \brief This function is used to import prefix info.
+     *
+     * This function will import wine's prefixes information according with http://wiki.winehq.org/BottleSpec
+     *
+     * \return true on success.
+     */
+    QStringList importPrefixesConfiguration(void);
+
 private:
     /*! Define is library operate in CLI or GUI mode.
      * \note This is typically need for error message display.

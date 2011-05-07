@@ -56,5 +56,9 @@
         <file>data/view-list-icons.png</file>
         <file>data/view-list-details.png</file>
         <file>data/terminal.png</file>
+        <file>data/expand.png</file>
+        <file>data/collapse.png</file>
+        <file>data/export.png</file>
+        <file>data/import.png</file>
     </qresource>
 </RCC>

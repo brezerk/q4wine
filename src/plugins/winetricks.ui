@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>535</width>
-    <height>352</height>
+    <width>581</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>winetricks plugin</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" rowspan="5">
+   <item row="1" column="0" rowspan="5">
     <widget class="QListWidget" name="lstMain">
      <property name="toolTip">
       <string/>
@@ -24,14 +24,7 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="1">
-    <widget class="QPushButton" name="cmdInstall">
-     <property name="text">
-      <string>Install</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
+   <item row="6" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
       <string>Click on item to show help here</string>
@@ -41,21 +34,62 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="1">
+   <item row="6" column="1">
     <widget class="QPushButton" name="cmdInstWinetricks">
      <property name="text">
       <string>Install Winetricks</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="1">
+   <item row="2" column="1">
     <widget class="QPushButton" name="cmdExit">
      <property name="text">
       <string>Exit</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="1">
+   <item row="0" column="0">
+    <widget class="QComboBox" name="cbCategories">
+     <item>
+      <property name="text">
+       <string>apps</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>benchmarks</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>dlls</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>fonts</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>games</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>settings</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="cmdInstall">
+     <property name="text">
+      <string>Install</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
     <widget class="QPushButton" name="cmdRefresh">
      <property name="text">
       <string>Refresh list</string>

@@ -888,9 +888,9 @@ QStringList corelib::getCdromDevices(void) const{
             QString binary = QString("%1/bin/q4wine-helper").arg(APP_PREF);
 #else
 #ifdef _OS_DARWIN
-            QString binary = QString("%1/q4wine-helper/q4wine-helper").arg(APP_BUILD);
-#else
             QString binary = QString("%1/q4wine-helper/q4wine-helper.app/Contents/MacOS/q4wine-helper").arg(APP_BUILD);
+#else
+            QString binary = QString("%1/q4wine-helper/q4wine-helper").arg(APP_BUILD);
 #endif
 #endif
             QStringList args;
@@ -1608,4 +1608,98 @@ QStringList corelib::getCdromDevices(void) const{
             }
 
             return ret;
+        }
+
+
+
+        bool corelib::exportPrefixesConfiguration(void){
+            QStringList list = db_prefix.getPrefixList();
+            QDir dir;
+            QFile file;
+            QString home_path = dir.homePath();
+            for (int i = 0; i < list.size(); ++i){
+                QString path = home_path;
+                QString prefix_name = list.at(i);
+                QHash<QString,QString> result = db_prefix.getByName(prefix_name);
+                QString prefix_path=result.value("path");
+
+                path.append("/.local/share/wineprefixes/");
+                path.append(prefix_name);
+
+                if (!file.exists(path)){
+                    if (!file.link(prefix_path, path))
+                        return false;
+
+                    path.append("/wrapper.cfg");
+                    file.setFileName(path);
+                    if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
+                        return false;
+
+                    QTextStream out(&file);
+                    out << "ww_name=\"" << prefix_name << "\"\n";
+                    out << "ww_winedllpath=\"" << result.value("libs") << "\"\n";
+                    out << "ww_wineserver=\"" << result.value("server") << "\"\n";
+                    out << "ww_wine=\"" << result.value("bin") << "\"\n";
+
+                    file.close();
+                }
+            }
+            return true;
+        }
+
+        QStringList corelib::importPrefixesConfiguration(void){
+            QStringList prefixes;
+            QStringList list = db_prefix.getPrefixList();
+            QDir dir;
+            QFile file;
+            QString path = dir.homePath();
+            path.append("/.local/share/wineprefixes/");
+
+
+            dir.setFilter(QDir::Dirs | QDir::NoDotAndDotDot);
+            dir.setPath(path);
+
+            QFileInfoList p_list = dir.entryInfoList();
+
+            for (int i = 0; i < p_list.size(); ++i) {
+                QFileInfo fileInfo = p_list.at(i);
+                QString prefix_name = fileInfo.fileName();
+                QString prefix_path = fileInfo.absoluteFilePath();
+
+                if (!db_prefix.isExistsByName(prefix_name)){
+                    QFile file(QString("%1/wrapper.cfg").arg(prefix_path));
+                    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+                        return prefixes;
+
+                    QString wine_bin, wine_serv, wine_loader, wine_lib;
+
+                    while (!file.atEnd()) {
+                        QByteArray line = file.readLine().trimmed();
+                        if (line.startsWith("ww_wine=")){
+                            wine_bin=line.mid(9, line.length()-10);
+                        } else if (line.startsWith("ww_winedllpath=")){
+                            wine_lib=line.mid(16, line.length()-17);
+                        } else if (line.startsWith("ww_wineserver=")){
+                            wine_serv=line.mid(15, line.length()-16);
+                        } else if (line.startsWith("ww_wineloader=")){
+                            wine_loader=line.mid(15, line.length()-16);
+                        }
+                    }
+
+                    if (wine_serv.isEmpty())
+                        wine_serv=wine_bin;
+
+                    if (wine_loader.isEmpty())
+                        wine_loader=wine_bin;
+
+                    if (!db_prefix.addPrefix(prefix_name, prefix_path, wine_bin, wine_serv, wine_loader, wine_lib)){
+                        qDebug()<<"[EE] Can't add prefi:x" << prefix_name <<  " into database..";
+                    } else {
+                        this->createPrefixDBStructure(prefix_name);
+                        prefixes.append(prefix_path);
+                    }
+                }
+            }
+
+            return prefixes;
         }

@@ -120,6 +120,9 @@ public slots:
       void getPrefixes();
       void setDefaultFocus(QString prefixName, QString dirName="");
 
+      void expandTree();
+      void collapseTree();
+
 };
 
 #endif // PREFIXTREEWIDGET_H

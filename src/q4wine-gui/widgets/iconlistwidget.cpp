@@ -104,22 +104,27 @@ void IconListWidget::showContents(QString filterString){
             if (QFile::exists (icon_path)){
                 iconItem->setIcon(QIcon(icon_path));
             } else {
-                if (iconsList.at(i)=="console"){
-                    iconItem->setIcon(CoreLib->loadIcon("data/wineconsole.png"));
-                } else if (iconsList.at(i)=="regedit"){
-                    iconItem->setIcon(CoreLib->loadIcon("data/regedit.png"));
-                } else if (iconsList.at(i)=="wordpad"){
-                    iconItem->setIcon(CoreLib->loadIcon("data/notepad.png"));
-                } else if (iconsList.at(i)=="winecfg"){
-                    iconItem->setIcon(CoreLib->loadIcon("data/winecfg.png"));
-                } else if (iconsList.at(i)=="uninstaller"){
-                    iconItem->setIcon(CoreLib->loadIcon("data/uninstaller.png"));
-                } else if (iconsList.at(i)=="eject"){
-                    iconItem->setIcon(CoreLib->loadIcon("data/eject.png"));
-                } else if (iconsList.at(i)=="explorer"){
-                    iconItem->setIcon(CoreLib->loadIcon("data/explorer.png"));
+                icon_path = QString("%1/.local/share/icons/%2").arg(QDir::homePath()).arg(icon_path);
+                if (QFile::exists (icon_path)){
+                    iconItem->setIcon(QIcon(icon_path));
                 } else {
-                    iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
+                    if (iconsList.at(i)=="console"){
+                        iconItem->setIcon(CoreLib->loadIcon("data/wineconsole.png"));
+                    } else if (iconsList.at(i)=="regedit"){
+                        iconItem->setIcon(CoreLib->loadIcon("data/regedit.png"));
+                    } else if (iconsList.at(i)=="wordpad"){
+                        iconItem->setIcon(CoreLib->loadIcon("data/notepad.png"));
+                    } else if (iconsList.at(i)=="winecfg"){
+                        iconItem->setIcon(CoreLib->loadIcon("data/winecfg.png"));
+                    } else if (iconsList.at(i)=="uninstaller"){
+                        iconItem->setIcon(CoreLib->loadIcon("data/uninstaller.png"));
+                    } else if (iconsList.at(i)=="eject"){
+                        iconItem->setIcon(CoreLib->loadIcon("data/eject.png"));
+                    } else if (iconsList.at(i)=="explorer"){
+                        iconItem->setIcon(CoreLib->loadIcon("data/explorer.png"));
+                    } else {
+                        iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
+                    }
                 }
             }
         }

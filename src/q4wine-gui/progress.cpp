@@ -198,6 +198,9 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
             path=line.right(line.length()-5);
         } else if (line.contains(QRegExp("^Icon=*"))){
             icon=line.right(line.length()-5);
+            if (!icon.contains(QRegExp("(png$|xpm$|gif$|jpg$)"))){
+                icon.append(".png");
+            }
         } else if (line.contains(QRegExp("^Exec=*"))){
             //Parse exec string
             QRegExp rxlen("env WINEPREFIX=\"(.+)\" wine (.*)");

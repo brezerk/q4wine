@@ -142,9 +142,17 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(iconToolBar.get(), SIGNAL(searchFilterChange(QString)), lstIcons.get(), SLOT(setFilterString(QString)));
     connect(iconToolBar.get(), SIGNAL(changeView(int)), lstIcons.get(), SLOT(changeView(int)));
 
+    std::auto_ptr<PrefixTreeToolbar> prefixToolBar (new PrefixTreeToolbar(tabPrograms));
+    connect(prefixToolBar.get(), SIGNAL(expandTree()), twPrograms.get(), SLOT(expandTree()));
+    connect(prefixToolBar.get(), SIGNAL(collapseTree()), twPrograms.get(), SLOT(collapseTree()));
+    connect(prefixToolBar.get(), SIGNAL(updatePrefixTree()), this, SLOT(updateDtabaseConnectedItems()));
+    connect(prefixToolBar.get(), SIGNAL(updatePrefixTree()), prefixWidget.get(), SLOT(updateDtabaseItems()));
+
     vlayout.reset(new QVBoxLayout);
+    vlayout->addWidget(prefixToolBar.release());
     vlayout->addWidget(twPrograms.release());
-    vlayout->setContentsMargins(0,3,0,0);
+    vlayout->setMargin(0);
+    vlayout->setSpacing(0);
     std::auto_ptr<QWidget> wid (new QWidget(tabPrograms));
     wid->setLayout(vlayout.release());
 

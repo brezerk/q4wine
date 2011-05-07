@@ -47,6 +47,7 @@
 #include "iconlistwidget.h"
 #include "iconlisttoolbar.h"
 #include "prefixtreewidget.h"
+#include "prefixtreetoolbar.h"
 #include "wineprocesswidget.h"
 #include "prefixcontrolwidget.h"
 
