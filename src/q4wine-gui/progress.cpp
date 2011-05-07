@@ -84,9 +84,9 @@ void Progress::cmdCancel_Click(){
 
 void Progress::runAction(){
     if (action==0){
-
-        qDebug()<<current<<max;
-
+#ifdef DEBUG
+        qDebug()<<" [ii] Current and Max:"<<current<<max;
+#endif
         if ((current>=max) or (max==0)){
             t->stop();
             /* becouse, of desktop folder can contains user subdirs, DO NOT REMOVE this folders
