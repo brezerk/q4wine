@@ -110,5 +110,4 @@ void PrefixTreeToolbar::prefixImport_Click(){
 
 void PrefixTreeToolbar::prefixExport_Click(){
     CoreLib->exportPrefixesConfiguration();
-    emit(updatePrefixTree());
 }
