@@ -859,13 +859,6 @@ void AppSettings::comboMountProfiles_currentIndexChanged(int index){
             return;
         }
         break;
-    case 3:
-#ifndef WITH_EMBEDDED_FUSEISO
-        QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without embedded FuseIso.</p><p>If you wish to compile q4wine with embedded FuseIso add:</p><p> \"-WITH_EMBEDDED_FUSEISO=ON\" to cmake arguments.</p>"));
-        this->comboMountProfiles->setCurrentIndex(0);
-        return;
-#endif
-        break;
     }
 
     txtMountString->setText(CoreLib->getMountString(index));

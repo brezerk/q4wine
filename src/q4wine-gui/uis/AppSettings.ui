@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>688</width>
-    <height>428</height>
+    <width>686</width>
+    <height>426</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -234,7 +234,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QGridLayout" name="gridLayout">
@@ -1625,11 +1625,6 @@
                  <item>
                   <property name="text">
                    <string notr="true">FuseISO</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string notr="true">Embedded FuseISO</string>
                   </property>
                  </item>
                 </widget>

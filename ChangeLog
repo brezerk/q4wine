@@ -20,6 +20,7 @@ Version 0.121
 
  Fixed:
   - build on FreeBSD;
+  - removed embedded fuseiso support (q4wine-mount);
 
 Version 0.120-r1
  Added:

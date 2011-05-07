@@ -164,11 +164,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 #endif
 
         if (CoreLib->getWhichOut("fuseiso", false).isEmpty()){
-#ifdef WITH_EMBEDDED_FUSEISO
-            this->comboMountProfiles->setCurrentIndex(3);
-#else
             this->comboMountProfiles->setCurrentIndex(0);
-#endif
         } else {
             this->comboMountProfiles->setCurrentIndex(2);
         }
@@ -575,13 +571,6 @@ void Wizard::comboMountProfiles_currentIndexChanged(int index){
             this->comboMountProfiles->setCurrentIndex(0);
             return;
         }
-        break;
-    case 3:
-#ifndef WITH_EMBEDDED_FUSEISO
-        QMessageBox::warning(this, tr("Warning"), tr("<p>q4wine was compiled without embedded FuseIso.</p><p>If you wish to compile q4wine with embedded FuseIso add:</p><p> \"-WITH_EMBEDDED_FUSEISO=ON\" to cmake arguments.</p>"));
-        this->comboMountProfiles->setCurrentIndex(0);
-        return;
-#endif
         break;
     }
 

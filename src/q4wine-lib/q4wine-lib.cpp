@@ -278,17 +278,10 @@ void corelib::checkSettings(){
         settings.beginGroup("quickmount");
 
         if (this->getWhichOut("fuseiso", false).isEmpty()){
-#ifdef WITH_EMBEDDED_FUSEISO
-            settings.setValue("type", 3);
-            settings.setValue("mount_drive_string", this->getMountString(3));
-            settings.setValue("mount_image_string", this->getMountImageString(3));
-            settings.setValue("umount_string", this->getUmountString(3));
-#else
             settings.setValue("type", 0);
             settings.setValue("mount_drive_string", this->getMountString(0));
             settings.setValue("mount_image_string", this->getMountImageString(0));
             settings.setValue("umount_string", this->getUmountString(0));
-#endif
         } else {
             settings.setValue("type", 2);
             settings.setValue("mount_drive_string", this->getMountString(2));
@@ -512,11 +505,6 @@ void corelib::getBuildFlags(){
     Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"ON"<<qSetFieldWidth(0)<<endl;
 #else
     Qcout<<qSetFieldWidth(25)<<left<<" WITH_ICOUTILS"<<"OFF"<<qSetFieldWidth(0)<<endl;
-#endif
-#ifdef WITH_EMBEDDED_FUSEISO
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"ON"<<qSetFieldWidth(0)<<endl;
-#else
-    Qcout<<qSetFieldWidth(25)<<left<<" WITH_EMBEDDED_FUSEISO"<<"OFF"<<qSetFieldWidth(0)<<endl;
 #endif
 #ifdef WITH_SYSTEM_SINGLEAPP
     Qcout<<qSetFieldWidth(25)<<left<<" WITH_SYSTEM_SINGLEAPP"<<"ON"<<qSetFieldWidth(0)<<endl;
