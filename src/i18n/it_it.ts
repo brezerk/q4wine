@@ -34,7 +34,7 @@
     <message utf8="true">
         <location filename="../q4wine-gui/uis/About.ui" line="240"/>
         <source>© 2008–2010, brezblock core team.</source>
-        <translation></translation>
+        <translation>© 2008–2010, brezblock core team.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="264"/>
@@ -454,7 +454,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1828"/>
         <source>Prefix tree view</source>
-        <translation type="unfinished"></translation>
+        <translation>Vista dell&apos;albero dei prefissi</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2036"/>
@@ -681,7 +681,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1843"/>
         <source>Expand prefix tree items on startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Espandi l&apos;albero dei prefissi all&apos;avvio.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2089"/>
@@ -1073,7 +1073,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="814"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="836"/>
         <source>Direct3D</source>
-        <translation type="unfinished"></translation>
+        <translation>Direct3D</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="762"/>
@@ -2377,7 +2377,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="942"/>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Lingua</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1007"/>
@@ -2698,7 +2698,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="51"/>
         <source>Logging list</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista dei log</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="101"/>
@@ -2968,7 +2968,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="418"/>
         <source>It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you want to remove it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sembra che un&apos;altra copia di q4wine sia in esecuzione o che q4wine sia stato chiuso in modo non corretto. Vuoi rimuoverla?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="467"/>
@@ -4146,33 +4146,33 @@ Nota: lasciare in bianco per i default.</translation>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="58"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="59"/>
         <source>Expand prefix tree</source>
-        <translation type="unfinished"></translation>
+        <translation>Espandi l&apos;albero dei prefissi</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="62"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="63"/>
         <source>Collapse prefix tree</source>
-        <translation type="unfinished"></translation>
+        <translation>Contrai la l&apos;albero dei prefessi</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="66"/>
         <source>Import prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Importa i prefissi</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="67"/>
         <source>Import prefixes from ~/.local/share/wineprefixes/</source>
-        <translation type="unfinished"></translation>
+        <translation>Importa i prefissi da ~/.local/share/wineprefixes/</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="70"/>
         <source>Export prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Esporta i prefissi</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="71"/>
         <source>Export prefixes to ~/.local/share/wineprefixes/</source>
-        <translation type="unfinished"></translation>
+        <translation>Esporta i prefissi in ~/.local/share/wineprefixes/</translation>
     </message>
 </context>
 <context>
@@ -5253,12 +5253,12 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="147"/>
         <source>sets program nicenes</source>
-        <translation type="unfinished"></translation>
+        <translation>Setta il livello di priorità (nice) del programma</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="148"/>
         <source>sets program virtual desktop resolution</source>
-        <translation type="unfinished"></translation>
+        <translation>Setta la risoluzione del desktop virtuale del programma</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="149"/>
@@ -5278,7 +5278,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="152"/>
         <source>sets program LANG variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Setta la variabile LANG del programma</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="153"/>
@@ -5569,7 +5569,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="871"/>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Lingua</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="936"/>
@@ -6912,32 +6912,32 @@ La funzione di montaggio rapido permette di montare/smontare le immagini CD e di
     <message>
         <location filename="../plugins/winetricks.ui" line="55"/>
         <source>apps</source>
-        <translation type="unfinished"></translation>
+        <translation>Applicazioni</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="60"/>
         <source>benchmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>benchmarks</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="65"/>
         <source>dlls</source>
-        <translation type="unfinished"></translation>
+        <translation>dlls</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="70"/>
         <source>fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>fonts</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="75"/>
         <source>games</source>
-        <translation type="unfinished"></translation>
+        <translation>giochi</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="80"/>
         <source>settings</source>
-        <translation type="unfinished"></translation>
+        <translation>settaggi</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="88"/>
