@@ -635,7 +635,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1828"/>
         <source>Prefix tree view</source>
-        <translation type="unfinished"></translation>
+        <translation>Pohled na strom s předponami</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2036"/>
@@ -757,7 +757,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1843"/>
         <source>Expand prefix tree items on startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozbalit položky stromu s předponami při spuštění.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2194"/>
@@ -1111,7 +1111,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="814"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="836"/>
         <source>Direct3D</source>
-        <translation type="unfinished"></translation>
+        <translation>Direct 3D</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="941"/>
@@ -2074,7 +2074,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="942"/>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Místní</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1007"/>
@@ -2339,7 +2339,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="51"/>
         <source>Logging list</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam zápisů</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="101"/>
@@ -2456,7 +2456,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="418"/>
         <source>It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you want to remove it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdá se, že již běží jiná instance q4wine, nebo byl q4wine ukončen nesprávně. Chcete ji odstranit?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="467"/>
@@ -3173,33 +3173,33 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="58"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="59"/>
         <source>Expand prefix tree</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozbalit strom předpon</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="62"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="63"/>
         <source>Collapse prefix tree</source>
-        <translation type="unfinished"></translation>
+        <translation>Složit strom předpon</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="66"/>
         <source>Import prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavést předpony</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="67"/>
         <source>Import prefixes from ~/.local/share/wineprefixes/</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavést předpony z ~/.local/share/wineprefixes/</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="70"/>
         <source>Export prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyvést předpony</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="71"/>
         <source>Export prefixes to ~/.local/share/wineprefixes/</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyvést předpony do ~/.local/share/wineprefixes/</translation>
     </message>
 </context>
 <context>
@@ -4050,12 +4050,12 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="147"/>
         <source>sets program nicenes</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastaví přesnost programu</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="148"/>
         <source>sets program virtual desktop resolution</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastaví rozlišení virtuální pracovní plochy programu</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="149"/>
@@ -4075,7 +4075,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="152"/>
         <source>sets program LANG variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastaví proměnnou LANG programu</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="153"/>
@@ -4286,7 +4286,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="871"/>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Místní</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="936"/>
@@ -4745,32 +4745,32 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../plugins/winetricks.ui" line="55"/>
         <source>apps</source>
-        <translation type="unfinished"></translation>
+        <translation>Programy</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="60"/>
         <source>benchmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Srovnávací zkoušky</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="65"/>
         <source>dlls</source>
-        <translation type="unfinished"></translation>
+        <translation>dll</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="70"/>
         <source>fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Písma</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="75"/>
         <source>games</source>
-        <translation type="unfinished"></translation>
+        <translation>Hry</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="80"/>
         <source>settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="95"/>
