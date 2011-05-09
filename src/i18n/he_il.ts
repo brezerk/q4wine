@@ -22,7 +22,7 @@
     <message utf8="true">
         <location filename="../q4wine-gui/uis/About.ui" line="240"/>
         <source>© 2008–2010, brezblock core team.</source>
-        <translation>© 2008–2010, צוות הליבה של.</translation>
+        <translation>© 2008–2010, צוות הליבה של brezblock.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="264"/>
@@ -52,7 +52,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="303"/>
         <source>Packages Authors</source>
-        <translation>אורזים</translation>
+        <translation>יוצרי החבילות</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="342"/>
@@ -86,7 +86,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/widgets/appdb/appdbheaderwidget.cpp" line="107"/>
         <source>Page %1 of %2</source>
-        <translation>עמוד%1 מתוך %2</translation>
+        <translation>עמוד %1 מתוך %2</translation>
     </message>
 </context>
 <context>
@@ -619,7 +619,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1828"/>
         <source>Prefix tree view</source>
-        <translation type="unfinished"></translation>
+        <translation>תצוגת עץ קידומות</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2036"/>
@@ -741,7 +741,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1843"/>
         <source>Expand prefix tree items on startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>הרחבת פריטי עץ הקידומות עם ההפעלה.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2194"/>
@@ -1095,7 +1095,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="814"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="836"/>
         <source>Direct3D</source>
-        <translation type="unfinished"></translation>
+        <translation>Direct3D</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="941"/>
@@ -2034,7 +2034,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="942"/>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>אזור</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1007"/>
@@ -2299,7 +2299,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="51"/>
         <source>Logging list</source>
-        <translation type="unfinished"></translation>
+        <translation>רשימת מעקב</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="101"/>
@@ -2416,7 +2416,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="418"/>
         <source>It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you want to remove it?</source>
-        <translation type="unfinished"></translation>
+        <translation>נראה כי ישנו עותק פעיל נוסף של q4wine, או ש־q4wine נסגר שלא כראוי. האם ברצונך להסיר אותו?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="467"/>
@@ -3133,33 +3133,33 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="58"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="59"/>
         <source>Expand prefix tree</source>
-        <translation type="unfinished"></translation>
+        <translation>הרחבת עץ הקידומות</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="62"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="63"/>
         <source>Collapse prefix tree</source>
-        <translation type="unfinished"></translation>
+        <translation>צמצום עץ הקידומות</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="66"/>
         <source>Import prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>יבוא קידומות</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="67"/>
         <source>Import prefixes from ~/.local/share/wineprefixes/</source>
-        <translation type="unfinished"></translation>
+        <translation>יבוא קידומות מהמיקום ~/.local/share/wineprefixes/</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="70"/>
         <source>Export prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>יצוא קידומות</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="71"/>
         <source>Export prefixes to ~/.local/share/wineprefixes/</source>
-        <translation type="unfinished"></translation>
+        <translation>יצוא קידומות אל ~/.local/share/wineprefixes/</translation>
     </message>
 </context>
 <context>
@@ -3998,12 +3998,12 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="147"/>
         <source>sets program nicenes</source>
-        <translation type="unfinished"></translation>
+        <translation>sets program nicenes</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="148"/>
         <source>sets program virtual desktop resolution</source>
-        <translation type="unfinished"></translation>
+        <translation>הגדרת הרזולוציה של שולחן העבודה הווירטואלsets program virtual desktop resolution</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="149"/>
@@ -4023,7 +4023,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="152"/>
         <source>sets program LANG variable</source>
-        <translation type="unfinished"></translation>
+        <translation>sets program LANG variable</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="153"/>
@@ -4234,7 +4234,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="871"/>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>אזור</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="936"/>
@@ -4623,7 +4623,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1798"/>
         <source>Quick mount feature allows you to mountumount cd images and drivers via context menu entry.</source>
-        <translation>תכונה העגינה המהירה מאפשרת לך לעגון תמונות של תקליטורים וכוננים באמצעות רשומה בתפריט ההקשר.</translation>
+        <translation>תכונת העגינה המהירה מאפשרת לך לעגון תמונות של תקליטורים וכוננים באמצעות רשומה בתפריט ההקשר.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1808"/>
@@ -4633,7 +4633,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1839"/>
         <source>Profile strings:</source>
-        <translation>הגדרות הפרופיל:</translation>
+        <translation>מחרוזות הפרופיל:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="2026"/>
@@ -4661,7 +4661,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../plugins/winetricks.ui" line="88"/>
         <source>Install</source>
-        <translation>התקן</translation>
+        <translation>התקנה</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="30"/>
@@ -4681,32 +4681,32 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../plugins/winetricks.ui" line="55"/>
         <source>apps</source>
-        <translation type="unfinished"></translation>
+        <translation>יישומים</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="60"/>
         <source>benchmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>חקר ביצועים</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="65"/>
         <source>dlls</source>
-        <translation type="unfinished"></translation>
+        <translation>קובצי dll</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="70"/>
         <source>fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>גופנים</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="75"/>
         <source>games</source>
-        <translation type="unfinished"></translation>
+        <translation>משחקים</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="80"/>
         <source>settings</source>
-        <translation type="unfinished"></translation>
+        <translation>הגדרות</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="95"/>
