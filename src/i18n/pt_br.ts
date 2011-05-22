@@ -6993,34 +6993,28 @@ Note: deixe em brando se você não precisar dele.</translation>
         <translation>winetricks plug-in</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="55"/>
         <source>apps</source>
-        <translation>programas</translation>
+        <translation type="obsolete">programas</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="60"/>
         <source>benchmarks</source>
-        <translation>benchmarks</translation>
+        <translation type="obsolete">benchmarks</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="65"/>
         <source>dlls</source>
-        <translation>dlls</translation>
+        <translation type="obsolete">dlls</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="70"/>
         <source>fonts</source>
-        <translation>fontes</translation>
+        <translation type="obsolete">fontes</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="75"/>
         <source>games</source>
-        <translation>games</translation>
+        <translation type="obsolete">games</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="80"/>
         <source>settings</source>
-        <translation>configurações</translation>
+        <translation type="obsolete">configurações</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="88"/>

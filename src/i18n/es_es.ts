@@ -6367,35 +6367,29 @@ Montado rápido le permite montar y desmontar imagenes de cd y dispositivos medi
         <translation>Plugin winetricks</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="55"/>
         <source>apps</source>
-        <translation>Aplicaciones</translation>
+        <translation type="obsolete">Aplicaciones</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="60"/>
         <source>benchmarks</source>
         <translatorcomment>Same</translatorcomment>
-        <translation>Benchmarks</translation>
+        <translation type="obsolete">Benchmarks</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="65"/>
         <source>dlls</source>
-        <translation>Librerias</translation>
+        <translation type="obsolete">Librerias</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="70"/>
         <source>fonts</source>
-        <translation>Fuentes</translation>
+        <translation type="obsolete">Fuentes</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="75"/>
         <source>games</source>
-        <translation>Juegos</translation>
+        <translation type="obsolete">Juegos</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="80"/>
         <source>settings</source>
-        <translation>Configuraciones</translation>
+        <translation type="obsolete">Configuraciones</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="88"/>

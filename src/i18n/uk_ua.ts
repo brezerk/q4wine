@@ -546,7 +546,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1843"/>
         <source>Expand prefix tree items on startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Розкривати дерево префіксів під час запуску програми.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2662"/>
@@ -587,7 +587,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1828"/>
         <source>Prefix tree view</source>
-        <translation type="unfinished"></translation>
+        <translation>Показ префіксів</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2036"/>
@@ -1069,7 +1069,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="814"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="836"/>
         <source>Direct3D</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="762"/>
@@ -2137,7 +2137,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="942"/>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Локаль</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1007"/>
@@ -2588,7 +2588,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="51"/>
         <source>Logging list</source>
-        <translation type="unfinished"></translation>
+        <translation>Журнал</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="101"/>
@@ -3207,7 +3207,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="418"/>
         <source>It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you want to remove it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вже запущена ще одна копія q4wine, або роботу q4wine було зупинено невірно. Відлити лок файл?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="467"/>
@@ -4030,33 +4030,33 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="58"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="59"/>
         <source>Expand prefix tree</source>
-        <translation type="unfinished"></translation>
+        <translation>Розкрити дерево префісів</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="62"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="63"/>
         <source>Collapse prefix tree</source>
-        <translation type="unfinished"></translation>
+        <translation>Згорнути дерево префісів</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="66"/>
         <source>Import prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпортувати префікси</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="67"/>
         <source>Import prefixes from ~/.local/share/wineprefixes/</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпортувати префікси з каталогу ~/.local/share/wineprefixes/</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="70"/>
         <source>Export prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортувати префікси</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="71"/>
         <source>Export prefixes to ~/.local/share/wineprefixes/</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортувати префікси з каталогу ~/.local/share/wineprefixes/</translation>
     </message>
 </context>
 <context>
@@ -5096,12 +5096,12 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="147"/>
         <source>sets program nicenes</source>
-        <translation type="unfinished"></translation>
+        <translation>встановлює приорітет програми</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="148"/>
         <source>sets program virtual desktop resolution</source>
-        <translation type="unfinished"></translation>
+        <translation>встановлює розмір віртуальної стільниці</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="149"/>
@@ -5121,7 +5121,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="152"/>
         <source>sets program LANG variable</source>
-        <translation type="unfinished"></translation>
+        <translation>встановлює змінну LANG</translation>
     </message>
     <message>
         <source>setsprogram args</source>
@@ -5299,7 +5299,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="871"/>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Локаль</translation>
     </message>
     <message>
         <source>DISPLAY:</source>
@@ -6537,36 +6537,6 @@ Note: leave it blank if you don&apos;t nead it.</source>
         <location filename="../plugins/winetricks.ui" line="14"/>
         <source>winetricks plugin</source>
         <translation>Додаток winetricks</translation>
-    </message>
-    <message>
-        <location filename="../plugins/winetricks.ui" line="55"/>
-        <source>apps</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plugins/winetricks.ui" line="60"/>
-        <source>benchmarks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plugins/winetricks.ui" line="65"/>
-        <source>dlls</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plugins/winetricks.ui" line="70"/>
-        <source>fonts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plugins/winetricks.ui" line="75"/>
-        <source>games</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plugins/winetricks.ui" line="80"/>
-        <source>settings</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="88"/>

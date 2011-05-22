@@ -52,32 +52,32 @@
     <widget class="QComboBox" name="cbCategories">
      <item>
       <property name="text">
-       <string>apps</string>
+       <string notr="true">apps</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>benchmarks</string>
+       <string notr="true">benchmarks</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>dlls</string>
+       <string notr="true">dlls</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>fonts</string>
+       <string notr="true">fonts</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>games</string>
+       <string notr="true">games</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>settings</string>
+       <string notr="true">settings</string>
       </property>
      </item>
     </widget>

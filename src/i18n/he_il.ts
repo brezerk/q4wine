@@ -4679,34 +4679,28 @@ Note: leave it blank for default.</source>
         <translation>יציאה</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="55"/>
         <source>apps</source>
-        <translation>יישומים</translation>
+        <translation type="obsolete">יישומים</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="60"/>
         <source>benchmarks</source>
-        <translation>חקר ביצועים</translation>
+        <translation type="obsolete">חקר ביצועים</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="65"/>
         <source>dlls</source>
-        <translation>קובצי dll</translation>
+        <translation type="obsolete">קובצי dll</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="70"/>
         <source>fonts</source>
-        <translation>גופנים</translation>
+        <translation type="obsolete">גופנים</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="75"/>
         <source>games</source>
-        <translation>משחקים</translation>
+        <translation type="obsolete">משחקים</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="80"/>
         <source>settings</source>
-        <translation>הגדרות</translation>
+        <translation type="obsolete">הגדרות</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="95"/>

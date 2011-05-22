@@ -4696,34 +4696,28 @@ Domyślnie są puste.</translation>
         <translation>Zakończ</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="55"/>
         <source>apps</source>
-        <translation>programy</translation>
+        <translation type="obsolete">programy</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="60"/>
         <source>benchmarks</source>
-        <translation>benchmarki</translation>
+        <translation type="obsolete">benchmarki</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="65"/>
         <source>dlls</source>
-        <translation>biblioteki dll</translation>
+        <translation type="obsolete">biblioteki dll</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="70"/>
         <source>fonts</source>
-        <translation>czcionki</translation>
+        <translation type="obsolete">czcionki</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="75"/>
         <source>games</source>
-        <translation>gry</translation>
+        <translation type="obsolete">gry</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="80"/>
         <source>settings</source>
-        <translation>ustawienia</translation>
+        <translation type="obsolete">ustawienia</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="95"/>

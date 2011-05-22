@@ -4743,34 +4743,28 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Ukončit</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="55"/>
         <source>apps</source>
-        <translation>Programy</translation>
+        <translation type="obsolete">Programy</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="60"/>
         <source>benchmarks</source>
-        <translation>Srovnávací zkoušky</translation>
+        <translation type="obsolete">Srovnávací zkoušky</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="65"/>
         <source>dlls</source>
-        <translation>dll</translation>
+        <translation type="obsolete">dll</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="70"/>
         <source>fonts</source>
-        <translation>Písma</translation>
+        <translation type="obsolete">Písma</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="75"/>
         <source>games</source>
-        <translation>Hry</translation>
+        <translation type="obsolete">Hry</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="80"/>
         <source>settings</source>
-        <translation>Nastavení</translation>
+        <translation type="obsolete">Nastavení</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="95"/>
