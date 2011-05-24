@@ -3297,7 +3297,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="1109"/>
-        <source>Only one instance of %1 can be runned at same time.</source>
+        <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Одночасно може бути запущена тільки одна копія %1.</translation>
     </message>
     <message>
@@ -4797,7 +4797,7 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">%1 сторінка q4wine: &lt;%1&gt;</translation>
     </message>
     <message>
-        <source>Only one instance of q4wine can be runned at same time.</source>
+        <source>Only one instance of q4wine can be launched at same time.</source>
         <translation type="obsolete">Одночасно може бути запущена тільки одна копія q4wine.</translation>
     </message>
     <message>
@@ -4813,7 +4813,7 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">[EE] Не можу створити теку %1.</translation>
     </message>
     <message>
-        <source>Only one instance of %1 can be runned at same time.</source>
+        <source>Only one instance of %1 can be launched at same time.</source>
         <translation type="obsolete">Одночасно може бути запущена тільки одна копія %1.</translation>
     </message>
     <message>

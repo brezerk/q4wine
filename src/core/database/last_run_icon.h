@@ -62,9 +62,9 @@ public:
      */
     bool addIcon(const QString cmdargs, const QString exec, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0, const QString lang="") const;
 
-    /*! \brief This function reurns list of recent runned icons.
+    /*! \brief This function reurns list of recent launched icons.
      *
-     * \return Return list of last runned icons.
+     * \return Return list of last launched icons.
      */
     QStringList getIcons();
 

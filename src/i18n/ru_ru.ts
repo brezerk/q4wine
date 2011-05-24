@@ -3285,7 +3285,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="1109"/>
-        <source>Only one instance of %1 can be runned at same time.</source>
+        <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Только один экземпляр %1 может быть запущен одновременно.</translation>
     </message>
     <message>
@@ -4798,7 +4798,7 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">[ОШИБКА] Не могу создать каталог %1.</translation>
     </message>
     <message>
-        <source>Only one instance of %1 can be runned at same time.</source>
+        <source>Only one instance of %1 can be launched at same time.</source>
         <translation type="obsolete">Только один экземпляр %1 может быть одновременно запущен.</translation>
     </message>
     <message>
