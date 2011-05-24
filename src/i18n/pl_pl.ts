@@ -627,7 +627,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1828"/>
         <source>Prefix tree view</source>
-        <translation type="unfinished"></translation>
+        <translation>Prefiks - widok drzewa</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2036"/>
@@ -749,7 +749,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1843"/>
         <source>Expand prefix tree items on startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozwiń drzewo prefiksu przy uruchomieniu.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2194"/>
@@ -1103,7 +1103,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="814"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="836"/>
         <source>Direct3D</source>
-        <translation type="unfinished"></translation>
+        <translation>Direct3D</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="941"/>
@@ -1279,7 +1279,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="333"/>
         <source>Can&apos;t create file &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można utworzyć pliku &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1365"/>
@@ -1337,31 +1337,31 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="67"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="68"/>
         <source>Clear search field</source>
-        <translation type="unfinished">Wyczyść pole wyszukiwania</translation>
+        <translation>Wyczyść pole wyszukiwania</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="71"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="72"/>
         <source>Icons view mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Widok ikon</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="75"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="76"/>
         <source>Details view mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Widok szczegółowy</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="79"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="80"/>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>Przybliż</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="83"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="84"/>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Oddal</translation>
     </message>
 </context>
 <context>
@@ -1437,7 +1437,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="408"/>
         <source>No media drives detected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie wykryto napędów.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="419"/>
@@ -2050,7 +2050,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="942"/>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokalizacja</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1007"/>
@@ -2315,7 +2315,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="51"/>
         <source>Logging list</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista logowania</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="101"/>
@@ -2433,7 +2433,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="418"/>
         <source>It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you want to remove it?</source>
-        <translation type="unfinished"></translation>
+        <translation>W tej chwili jest uruchomiona inna instancja q4wine, lub q4wine nie zostało poprawnie zamknięte. Czy chcesz je zakończyć?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="467"/>
@@ -3134,33 +3134,33 @@ Domyślnie są puste.</translation>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="58"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="59"/>
         <source>Expand prefix tree</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozwiń drzewo prefiksu</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="62"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="63"/>
         <source>Collapse prefix tree</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwin drzewo prefiksu</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="66"/>
         <source>Import prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Importuj prefiksy</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="67"/>
         <source>Import prefixes from ~/.local/share/wineprefixes/</source>
-        <translation type="unfinished"></translation>
+        <translation>Importuj prefiksy z  ~/.local/share/wineprefixes/</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="70"/>
         <source>Export prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportuj prefiksy</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="71"/>
         <source>Export prefixes to ~/.local/share/wineprefixes/</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksportuj prefiksy do ~/.local/share/wineprefixes/</translation>
     </message>
 </context>
 <context>
@@ -3227,7 +3227,7 @@ Domyślnie są puste.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="254"/>
         <source>No media drives detected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie wykryto napędów.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="265"/>
@@ -3377,7 +3377,7 @@ Domyślnie są puste.</translation>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="399"/>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="400"/>
         <source>Create new prefix</source>
-        <translation type="unfinished">Utwórz nowy prefiks</translation>
+        <translation>Utwórz nowy prefiks</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="410"/>
@@ -3388,7 +3388,7 @@ Domyślnie są puste.</translation>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="416"/>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="417"/>
         <source>Delete prefix</source>
-        <translation type="unfinished">Usuń prefiks</translation>
+        <translation>Usuń prefiks</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="589"/>
@@ -3409,17 +3409,17 @@ Domyślnie są puste.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="686"/>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
-        <translation type="unfinished">Przepraszamy, nie możesz usunąć prefiksu Domyślny.</translation>
+        <translation>Przepraszamy, nie możesz usunąć prefiksu Domyślny.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="690"/>
         <source>Warning</source>
-        <translation type="unfinished">Ostrzeżenie</translation>
+        <translation>Ostrzeżenie</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="690"/>
         <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="unfinished">Czy na pewno chcesz usunąć prefiks %1 i wszystkie związane z nim ikony?</translation>
+        <translation>Czy na pewno chcesz usunąć prefiks &quot;%1&quot; i wszystkie związane z nim ikony?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="405"/>
@@ -3577,41 +3577,41 @@ Domyślnie są puste.</translation>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="50"/>
         <source>Importing wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see q4wine options dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importowanie ikon pulpitu wine z:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Może to zająć chwilę...&lt;br&gt;&lt;br&gt;&lt;b&gt;Uwaga:&lt;/b&gt; Aby usunąć przetwarzane pliki, otwórz okno opcji q4wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="51"/>
         <source>Importing wine desktop icons: %1 of %2 </source>
-        <translation type="unfinished"></translation>
+        <translation>Importowanie ikon pulpitu wine: %1 of %2 </translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
         <source>Waiting for wine process finish.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oczekiwanie na zakończenie procesu wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
         <source>There are %1 process running for prefix %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchomionych jest %1 procesów dla prefiksu %2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
         <source>While process keep running -- end them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gdy procesy nadal będą działać -- zakończ je ręcznie.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="60"/>
         <location filename="../q4wine-gui/progress.cpp" line="113"/>
         <source>Running process: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Działający proces: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="101"/>
         <source>Importing desktop icons: %1 of %2 </source>
-        <translation type="unfinished"></translation>
+        <translation>Importowanie ikon pulpitu: %1 of %2 </translation>
     </message>
 </context>
 <context>
@@ -4011,12 +4011,12 @@ Domyślnie są puste.</translation>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="147"/>
         <source>sets program nicenes</source>
-        <translation type="unfinished"></translation>
+        <translation>ustawia priorytet (nice) programu</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="148"/>
         <source>sets program virtual desktop resolution</source>
-        <translation type="unfinished"></translation>
+        <translation>ustawia rozdzielczość wirtualnego pulpitu dla programu</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="149"/>
@@ -4036,7 +4036,7 @@ Domyślnie są puste.</translation>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="152"/>
         <source>sets program LANG variable</source>
-        <translation type="unfinished"></translation>
+        <translation>ustawia zmienną LANG dla programu</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="153"/>
@@ -4247,7 +4247,7 @@ Domyślnie są puste.</translation>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="871"/>
         <source>Locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokalizacja</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="936"/>
@@ -4673,62 +4673,56 @@ Domyślnie są puste.</translation>
     <message>
         <location filename="../plugins/winetricks.ui" line="14"/>
         <source>winetricks plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>wtyczka winetricks</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="88"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Instaluj</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="30"/>
         <source>Click on item to show help here</source>
-        <translation type="unfinished"></translation>
+        <translation>Kliknij na element, aby pokazać tu pomoc</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="40"/>
         <source>Install Winetricks</source>
-        <translation type="unfinished"></translation>
+        <translation>Instaluj Winetricks</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="47"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Zakończ</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="55"/>
         <source>apps</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">programy</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="60"/>
         <source>benchmarks</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">benchmarki</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="65"/>
         <source>dlls</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">biblioteki dll</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="70"/>
         <source>fonts</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">czcionki</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="75"/>
         <source>games</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">gry</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="80"/>
         <source>settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">ustawienia</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="95"/>
         <source>Refresh list</source>
-        <translation type="unfinished">Odśwież listę</translation>
+        <translation>Odśwież listę</translation>
     </message>
 </context>
 </TS>

@@ -4639,36 +4639,6 @@ Note: leave it blank for default.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="55"/>
-        <source>apps</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plugins/winetricks.ui" line="60"/>
-        <source>benchmarks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plugins/winetricks.ui" line="65"/>
-        <source>dlls</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plugins/winetricks.ui" line="70"/>
-        <source>fonts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plugins/winetricks.ui" line="75"/>
-        <source>games</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../plugins/winetricks.ui" line="80"/>
-        <source>settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../plugins/winetricks.ui" line="95"/>
         <source>Refresh list</source>
         <translation type="unfinished"></translation>

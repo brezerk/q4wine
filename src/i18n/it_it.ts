@@ -6910,34 +6910,28 @@ La funzione di montaggio rapido permette di montare/smontare le immagini CD e di
         <translation>Plugin di winetricks</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="55"/>
         <source>apps</source>
-        <translation>Applicazioni</translation>
+        <translation type="obsolete">Applicazioni</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="60"/>
         <source>benchmarks</source>
-        <translation>benchmarks</translation>
+        <translation type="obsolete">benchmarks</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="65"/>
         <source>dlls</source>
-        <translation>dlls</translation>
+        <translation type="obsolete">dlls</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="70"/>
         <source>fonts</source>
-        <translation>fonts</translation>
+        <translation type="obsolete">fonts</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="75"/>
         <source>games</source>
-        <translation>giochi</translation>
+        <translation type="obsolete">giochi</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="80"/>
         <source>settings</source>
-        <translation>settaggi</translation>
+        <translation type="obsolete">settaggi</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="88"/>

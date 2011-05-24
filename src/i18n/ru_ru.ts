@@ -6522,34 +6522,28 @@ Note: leave it blank if you don&apos;t nead it.</source>
         <translation>Дополнение winetricks</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="55"/>
         <source>apps</source>
-        <translation>программы</translation>
+        <translation type="obsolete">программы</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="60"/>
         <source>benchmarks</source>
-        <translation>тесты</translation>
+        <translation type="obsolete">тесты</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="65"/>
         <source>dlls</source>
-        <translation>библиотеки</translation>
+        <translation type="obsolete">библиотеки</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="70"/>
         <source>fonts</source>
-        <translation>шрифты</translation>
+        <translation type="obsolete">шрифты</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="75"/>
         <source>games</source>
-        <translation>игры</translation>
+        <translation type="obsolete">игры</translation>
     </message>
     <message>
-        <location filename="../plugins/winetricks.ui" line="80"/>
         <source>settings</source>
-        <translation>настройки</translation>
+        <translation type="obsolete">настройки</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="88"/>
