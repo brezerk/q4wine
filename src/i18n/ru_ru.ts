@@ -566,7 +566,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1665"/>
         <source>Mount:</source>
-        <translation>Монтирование (mount):</translation>
+        <translation>Монтирование:</translation>
     </message>
     <message>
         <source>Show notifications.</source>
@@ -590,7 +590,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1756"/>
         <source>Umount:</source>
-        <translation>Размонтирование (umount):</translation>
+        <translation>Размонтирование:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1828"/>
