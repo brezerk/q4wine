@@ -7,7 +7,7 @@ ChangeLog
 
 Version 0.121
  Added:
-  - updated winetriks plugin;
+  - updated winetricks plugin;
   - option to make Prefix view unexpanded at startup;
   - Polish translation by Frank (nobange);
   - interoperability of wineprefixes between q4wine, wibom, vineyard, and
@@ -52,7 +52,7 @@ Version 0.120
   - Czech translation (thx to Pavel Fric);
   - Added cmake option MANPAGE_ENTRY_PATH;
   - User now can open system terminal from q4wine programs tab menu for selected dir;
-  - Winetriks plugin updates;
+  - Winetricks plugin updates;
   - Added minimize to tray at startup option;
   - Added minimize to tray at application icon startup option;
   - DBUS notification;
@@ -94,7 +94,7 @@ Version 0.119
 
  Fixed:
   - Some fixes for GUI layout;
-  - Winetriks plugin improvement;
+  - Winetricks plugin improvement;
   - Fixed bugs reported by users;
   - Fixed some of English spellings;
 
@@ -117,7 +117,7 @@ Version 0.118
   - A lot of fixes in Fake drive creation\update wizard;
   - Fixed locale detection bugs;
   - Fixes in tray icon support;
-  - Fixes in winetriks plugin;
+  - Fixes in winetricks plugin;
   - A lot fixes in q4wine.desktop file;
   - Removed xdg-utils dependency;
   - A lot of fixes and speedups;
@@ -177,7 +177,7 @@ Version 0.113
   - Added libq4wine implementation;
   - Added translation file for Portuguese (Brazil) by Marcio Moraes;
   - Added *.xpm filter to icon import patten;
-  - Added http proxy support for winetriks;
+  - Added http proxy support for winetricks;
   - Improved icon display widget;
   - Added Drag & Drop support;
   - Added Drag support q4wine icons export;
@@ -226,8 +226,8 @@ Version 0.112
   - Fixed .exe adding to IconName on Program file select;
   - Run, AppSettings, ImageManager, Wizard and IconSettings dialogs now are modal dialogs;
   - Fixed LC_ALL and LS_MESSAGES locale detection;
-  - Winetriks executable now puts into $HOME/.config/q4inwe/ directory;
-  - No sudo now needed for Winetriks download and install;
+  - Winetricks executable now puts into $HOME/.config/q4inwe/ directory;
+  - No sudo now needed for Winetricks download and install;
 
 Version 0.111
  core:
@@ -260,7 +260,7 @@ Version 0.110
   - Added desktop size to Run dialog;
 
   Fixed:
-  - Winetriks prefix fixes;
+  - Winetricks prefix fixes;
   - FreeBSD kmem read exception check;
   - Can't delete image from ImageManager;
   - Table view and resize;

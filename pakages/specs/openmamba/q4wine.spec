@@ -52,7 +52,7 @@ Q4Wine is a qt4 GUI for wine. It will help you manage wine prefixes and installe
     * Easy cd-image use;
     * You can extract icons from PE files (.exe .dll);
     * Easy backup and restore for managed prefixes.
-    * Winetriks support.
+    * Winetricks support.
     * And more... Explore it! ;) 
 
 %description -l it 
@@ -66,7 +66,7 @@ Q4Wine è un'interfaccia grafica per wine. Permette di gestire i prefissi di win
     * Uso semplificato delle immagini dei cd;
     * Permette di estrarre le icone dai file PE (.exe .dll);
     * Backup and restore facilitato per i prefessi gestiti.
-    * Supporto a winetriks.
+    * Supporto a winetricks.
     * e molto altro... Esploratelo! ;)
 
 %prep
@@ -76,7 +76,7 @@ Q4Wine è un'interfaccia grafica per wine. Permette di gestire i prefissi di win
 #cp %{SOURCE2} ./
 #%patch -p1 
 %build
-cmake -d build -DWITH_WINETRIKS=ON -DWITH_APPSDB=ON -DWITH_EMBEDDED_FUSEISO=ON -DCMAKE_INSTALL_PREFIX=/usr .
+cmake -d build -DWITH_APPSDB=ON -DWITH_EMBEDDED_FUSEISO=ON -DCMAKE_INSTALL_PREFIX=/usr .
 %make
 
 %install

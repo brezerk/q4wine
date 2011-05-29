@@ -70,7 +70,7 @@ Authors:
 cd build
 export CFLAGS="%{optflags}"
 export CXXFLAGS="%{optflags}"
-cmake .. -DCMAKE_INSTALL_PREFIX=%{_prefix} -DWITH_WINETRIKS=ON
+cmake .. -DCMAKE_INSTALL_PREFIX=%{_prefix}
 %__make %{?_smp_mflags}
 
 %install
