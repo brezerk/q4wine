@@ -19,65 +19,73 @@
         <translation type="obsolete">Utilidad para el manejo de aplicaciones y prefijos de wine.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="227"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="241"/>
         <source>Utility for Wine applications and prefixes management.</source>
         <translation>Utilidad para el manejo de aplicaciones y prefijos de wine.</translation>
     </message>
-    <message utf8="true">
-        <location filename="../q4wine-gui/uis/About.ui" line="240"/>
-        <source>© 2008–2010, brezblock core team.</source>
-        <translation></translation>
-    </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="264"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="273"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="312"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="351"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="278"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="287"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="326"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="365"/>
         <source>Authors</source>
         <translation>Autores</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="285"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="324"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="363"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="402"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="441"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="214"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translatorcomment>same</translatorcomment>
-        <translation></translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;q4wine 0.121&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="../q4wine-gui/uis/About.ui" line="254"/>
+        <source>© 2008–2011, brezblock core team.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="303"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="299"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="338"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="377"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="416"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="455"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/About.ui" line="317"/>
         <source>Packages Authors</source>
         <translation>Autores de paquetes</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="342"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="356"/>
         <source>Translation</source>
         <translation>Traducciones</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="381"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="395"/>
         <source>Thanks</source>
         <translation>Agradecimientos</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="390"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="404"/>
         <source>Special thanks</source>
         <translation>Agradecimiento especial</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="420"/>
-        <location filename="../q4wine-gui/uis/About.ui" line="429"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="434"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="443"/>
         <source>License agreement</source>
         <translation>Acuerdo de licencia</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/About.ui" line="477"/>
+        <location filename="../q4wine-gui/uis/About.ui" line="491"/>
         <source>OK</source>
         <translation>Aceptar</translation>
     </message>
@@ -98,7 +106,7 @@ p, li { white-space: pre-wrap; }
     <name>AppDBWidget</name>
     <message>
         <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="85"/>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="395"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="399"/>
         <source>Status: Ready</source>
         <translation>Estado: Listo</translation>
     </message>
@@ -108,125 +116,125 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="139"/>
         <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="157"/>
         <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="173"/>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="350"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="354"/>
         <source>Status: Connecting to %1</source>
         <translation>Estado: Conectando a %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="250"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="254"/>
         <source>Applications</source>
         <translation>Applicaciones</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="249"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="253"/>
         <source>Subcategories</source>
         <translation>Subcategorias</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="263"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="267"/>
         <source>Error: can&apos;t read data from %1.</source>
         <translation>Error: no se puede leer de %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="266"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="270"/>
         <source>Error: wrong or broken xml data. Try again later.</source>
         <translation>Error: Infromacion del xml incorrecta o rota. Intente mas tarde.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="269"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="273"/>
         <source>Error: wrong or broken appdb xml version. Application needs to be updated?</source>
         <translation>Error: version de appdb xml erronea o rota. La aplicación necesita actualizarse?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="272"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="276"/>
         <source>Error: xml parse error.</source>
         <translation>Error: Problema en la sintaxis del xml.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="275"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="279"/>
         <source>Error: unexpected error.</source>
         <translation>Error: Error inesperado.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="278"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="282"/>
         <source>Search: No matches found</source>
         <translation>Busqueda: No hubo coincidencias</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="286"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="290"/>
         <source>Open AppDB</source>
         <translation>Abrir AppDB</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="287"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="291"/>
         <source>Open Wine AppDB web site</source>
         <translation>Abrir el sitio AppDB de Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="290"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="294"/>
         <source>Open App page</source>
         <translation>Abrir la pagina de la Aplicación</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="291"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="295"/>
         <source>Open current application page at Wine AppDB web site</source>
         <translation>Abrir la pagina web de AppDB para esta aplicación de Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="295"/>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="296"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="299"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="300"/>
         <source>Clear results</source>
         <translation>Limpiar resultados</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="300"/>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="301"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="304"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="305"/>
         <source>Clear search field</source>
         <translation>Limpiar campo de busqueda</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="304"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="308"/>
         <source>Search in appdb</source>
         <translation>Buscar en appdb</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="305"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="309"/>
         <source>Search in wine appdb</source>
         <translation>Buscar en la AppDB de Wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="308"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="312"/>
         <source>Appdb categoryes list</source>
         <translation>Lista de categorias de AppDB</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="309"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="313"/>
         <source>View wine appdb categoryes list</source>
         <translation>Ver la lista de categorias de AppDB</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="317"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="321"/>
         <source>Error: %1</source>
         <translatorcomment>same</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="353"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="357"/>
         <source>Status: Sending request to the server.</source>
         <translation>Estado: Enviando pedido al servidor.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="356"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="360"/>
         <source>Status: Reading server&apos;s response.</source>
         <translation>Estado: Leyendo la respuesta del servidor.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="359"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="363"/>
         <source>Status: Closing down connection.</source>
         <translation>Estado: Cerrando la conexión.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="363"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="367"/>
         <source>Status: Not connected.</source>
         <translation>Estado: No conectado.</translation>
     </message>
