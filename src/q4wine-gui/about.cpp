@@ -25,6 +25,8 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     setWindowTitle(tr("About %1").arg(APP_NAME));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 
+    lblVersion->setText(QString("<span style=\"font-size:14pt; font-weight:600;\">%1 %2</span>").arg(APP_NAME).arg(APP_VERS));
+
     txtAuthors->setHtml("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\"><html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">p, li { white-space: pre-wrap; }</style></head><body>" \
 
                             "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
