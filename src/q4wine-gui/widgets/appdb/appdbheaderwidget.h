@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -43,25 +43,25 @@
 
 class AppDBHeaderWidget : public QFrame
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	AppDBHeaderWidget(QWidget * parent = 0);
-	void addLabel(QString info);
-	void addLink(QString text, bool enabled = true, short int action = 0, QString search = "", int value = 0);
-	void setLayout(short int direction);
-	void insertStretch(void);
-	void createPagesList(short int count, short int current, QString search);
-	void createCategoryList(const QList<WineAppDBCategory> category);
-	void clear(void);
-	void hideAll(void);
-	void updateFirstLabelText(QString text);
+    AppDBHeaderWidget(QWidget * parent = 0);
+    void addLabel(QString info);
+    void addLink(QString text, bool enabled = true, short int action = 0, QString search = "", int value = 0);
+    void setLayout(short int direction);
+    void insertStretch(void);
+    void createPagesList(short int count, short int current, QString search);
+    void createCategoryList(const QList<WineAppDBCategory> category);
+    void clear(void);
+    void hideAll(void);
+    void updateFirstLabelText(QString text);
 
 signals:
-	void itemTrigged(short int, QString, int, int, int);
+    void itemTrigged(short int, QString, int, int, int);
 
 private:
-	std::auto_ptr<QBoxLayout> contentLayout;
-	short int pages_len;
+    std::auto_ptr<QBoxLayout> contentLayout;
+    short int pages_len;
 
 };
 

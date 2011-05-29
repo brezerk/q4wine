@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009, 2010 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey                                 *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -49,40 +49,40 @@ class AppInfoWidget : public QWidget, public Ui::AppInfoWidget
 {
 Q_OBJECT
 public:
-	/*! \brief class constructor
-	*
-	* \param  name         General application name.
-	* \param  desc  Short  Application description.
-	* \param  versions     An QList of QStringList witch describes tested app versions.
-	* \param  url	       Application url to open.
-	*/
+    /*! \brief class constructor
+    *
+    * \param  name         General application name.
+    * \param  desc  Short  Application description.
+    * \param  versions     An QList of QStringList witch describes tested app versions.
+    * \param  url	       Application url to open.
+    */
 
-	AppInfoWidget(QString name, QString desc, const int appid, QList<WineAppDBVersionInfo> versions, QWidget *parent = 0);
+    AppInfoWidget(QString name, QString desc, const int appid, QList<WineAppDBVersionInfo> versions, QWidget *parent = 0);
 
-	//! \brief class destructor;
-	~AppInfoWidget();
+    //! \brief class destructor;
+    ~AppInfoWidget();
 signals:
-	 void itemTrigged(short int, QString, int, int, int);
+     void itemTrigged(short int, QString, int, int, int);
 
 private:
-	/*! \brief sets general application Name
-	*
-	* \param  name         General application name.
-	* \return Nothing.
-	*/
-	void setAppName(QString name);
+    /*! \brief sets general application Name
+    *
+    * \param  name         General application name.
+    * \return Nothing.
+    */
+    void setAppName(QString name);
 
-	/*! \brief sets general application description and trim it to 255 chars
-	*
-	* \param  desc  Short Application description.
-	* \return Nothing.
-	*/
-	void setAppDesc(QString desc);
+    /*! \brief sets general application description and trim it to 255 chars
+    *
+    * \param  desc  Short Application description.
+    * \return Nothing.
+    */
+    void setAppDesc(QString desc);
 
-	int appid;
+    int appid;
 protected:
-	//! \brief Event filter.
-	bool eventFilter(QObject *obj, QEvent *event);
+    //! \brief Event filter.
+    bool eventFilter(QObject *obj, QEvent *event);
 };
 
 #endif // APPINFOWIDGET_H
