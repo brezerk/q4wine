@@ -3058,7 +3058,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="1109"/>
-        <source>Only one instance of %1 can be runned at same time.</source>
+        <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Si può eseguire una sola istanza di %1 per volta.</translation>
     </message>
     <message>
@@ -4926,7 +4926,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">q4wine-cli %1</translation>
     </message>
     <message>
-        <source>Only one instance of q4wine can be runned at same time.</source>
+        <source>Only one instance of q4wine can be launched at same time.</source>
         <translation type="obsolete">Si può eseguire una sola istanza di q4wine per volta.</translation>
     </message>
     <message>
@@ -4950,7 +4950,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <translation type="obsolete">q4wine %1</translation>
     </message>
     <message>
-        <source>Only one instance of %1 can be runned at same time.</source>
+        <source>Only one instance of %1 can be launched at same time.</source>
         <translation type="obsolete">Si può eseguire una sola istanza di %1 per volta.</translation>
     </message>
     <message>

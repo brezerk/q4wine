@@ -2935,7 +2935,7 @@ Vea la ayuda para mas detalles.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="1109"/>
-        <source>Only one instance of %1 can be runned at same time.</source>
+        <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Solo una entidad de %1 puede ejecutarse al mismo tiempo.</translation>
     </message>
     <message>
@@ -4745,7 +4745,7 @@ Nota: deje en blanco para valores por defecto.</translation>
         <translation type="obsolete">Pagina web de %1:&lt;%1&gt;</translation>
     </message>
     <message>
-        <source>Only one instance of q4wine can be runned at same time.</source>
+        <source>Only one instance of q4wine can be launched at same time.</source>
         <translation type="obsolete">Solo una entidad de q4wine puede ejecutarse al mismo tiempo.</translation>
     </message>
     <message>
@@ -4765,7 +4765,7 @@ Nota: deje en blanco para valores por defecto.</translation>
         <translation type="obsolete">[EE] No es posible crear carpeta %1.</translation>
     </message>
     <message>
-        <source>Only one instance of %1 can be runned at same time.</source>
+        <source>Only one instance of %1 can be launched at same time.</source>
         <translation type="obsolete">Solo una entidad de %1 puede ejecutarse al mismo tiempo.</translation>
     </message>
     <message>

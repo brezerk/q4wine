@@ -13,7 +13,7 @@ Version 0.121
   - interoperability of wineprefixes between q4wine, wibom, vineyard, and
   winetricks (and maybe playonlinux) http://wiki.winehq.org/BottleSpec;
   - German translation by Ron;
-  - experemental build support for MaxOS X;
+  - experimental build support for Mac OS X;
   - extended virtual desktop resolution list [3150062];
   - request for language locale support [3144001 and 3149056];
   - Hebrew translation by Yaron Shahrabani;
@@ -63,19 +63,19 @@ Version 0.120
   - Fixed unescaped characters in q4wine-helper (q4wine-Bugs-3059156);
   - Fixed run dialog bug for gut trunk (q4wine-Bugs-3075628);
   - Fixed bug in q4wine-helper while run games like: Fallout 1\2, Truck Simulator e.t.c.
-  - Fixed some typo and gui layouts;
+  - Fixed some typo and GUI layouts;
   - Fixed fakedrivesettings.cpp rewrite sh scripts in to C++\Qt code;
   - FreeBSD: report error while can't read process info from /proc fs;
-  - Fixed $HOME/.config/q4wine/tmp not requeired any more, we use $WINEPREFIX/tmp instead;
+  - Fixed $HOME/.config/q4wine/tmp not required any more, we use $WINEPREFIX/tmp instead;
   - Desktop file updates;
 
 Version 0.119-r1
  Added:
   - Updated Russian translation (thx to Boris Pek)
-  - Settings dialog online documenatation;
+  - Settings dialog online documentation;
 
  Fixed:
-  - Some of english spell errors;
+  - Some of English spell errors;
   - hyphen-used-as-minus-sign errors for man pages;
   - bug with dll override app run (q4wine-Bugs-3043548);
   - bug with user console wine app run;
@@ -85,7 +85,7 @@ Version 0.119
  Added:
   - New Fake Drive settings dialog (Wizard now obsolete);
   - Added a lot of new Fake Drive options;
-  - Desktop integraion;
+  - Desktop integration;
   - Wine .desktop files import;
   - Sync fake drive settings to head wine version;
   - Various user interface enhancement;
@@ -103,7 +103,7 @@ Version 0.118
   - Wine AppDB support;
   - Helper binary and Application logger subsystem;
   - A lot of GUI improvements;
-  - You can mount iso images just by droping them into q4wine icons list space;
+  - You can mount iso images just by dropping them into q4wine icons list space;
   - Automatic unmounting for mouned media before mount new one;
   - Q4Wine now can be associated with application/x-ms-dos-executable mime type files;
   - Added AUTHORS file;
@@ -112,7 +112,7 @@ Version 0.118
 
  Fixed:
   - CMake now do check for fuseiso;
-  - CMake now make more verbous output;
+  - CMake now make more verbose output;
   - Total rewrite of CMake rules;
   - A lot of fixes in Fake drive creation\update wizard;
   - Fixed locale detection bugs;
@@ -127,12 +127,12 @@ Version 0.118
   - Removed _junk_ includes;
   - MainWindow class cleanup;
   - Deprecated wineprefixcreate command was replaced by wineboot;
-  - Fixed memory leaks repported by Valgrid;
-  - Fixed crush while drop exesting icon;
+  - Fixed memory leaks reported by Valgrid;
+  - Fixed crush while drop existing icon;
   - Fixed not critical error for fake C: symlink;
-  - Fixed white spaces chatch in wine app run engine;
+  - Fixed white spaces catch in wine app run engine;
   - Fixed cmake: appprefix setting now overrides default icon and desktop places;
-  - Fixed strage locale bug on some Slakware distros;
+  - Fixed strange locale bug on some Slakware distros;
 
 Version 0.114-r1
  Fixed:
@@ -153,7 +153,7 @@ Version 0.114
 
  Fixed:
   - Removed _junk_ translation strings from source code and UI;
-  - Fix for misfunctioning check wether or not to use ICOTOOLS. (thx 2 Impulze);
+  - Fix for malfunctioning check whether or not to use ICOTOOLS. (thx 2 Impulze);
   - Prefix combobox change do not set right Prefix in Prefix tree view;
   - Fake drive update wizard now remove registry key while user reset it to 'Default' state;
   - Fix for prefix import and export;
@@ -161,11 +161,11 @@ Version 0.114
 
 Version 0.113
  Added:
-  - Added embeded q4wine-mount (This is a copy of fuseiso + RH path);
-       Note: use this if you too lazy to compile fuseiso from SF and apply pathes;
+  - Added embedded q4wine-mount (This is a copy of fuseiso + RH path);
+       Note: use this if you too lazy to compile fuseiso from SF and apply paths;
   - fuseiso ( http://sourceforge.net/projects/fuseiso/ ) full support.
   - q4wine now remembers 8 recent mounted images;
-  - q4wine now remembers 8 recent runned binaryes via Run dialog;
+  - q4wine now remembers 8 recent launched binaries via Run dialog;
   - QtSingleApp integration. Now you can run only one instance of q4wine-gui;
   - Online documentation;
   - New website: http://q4wine.brezblock.org.ua/;
@@ -223,7 +223,7 @@ Version 0.112
   - Fixed readonly text field on prefix create;
   - Fixed q4wine.desktop GENERIC names;
   - Fixed IconSettings path detections (ProgramPath\WorkDirPath e.t.c.);
-  - Fixed .exe adding to IconName on Prgoram file select;
+  - Fixed .exe adding to IconName on Program file select;
   - Run, AppSettings, ImageManager, Wizard and IconSettings dialogs now are modal dialogs;
   - Fixed LC_ALL and LS_MESSAGES locale detection;
   - Winetriks executable now puts into $HOME/.config/q4inwe/ directory;
@@ -240,7 +240,7 @@ Version 0.111
  core:
   Fixed:
   - Fixed icoutils icon export bugs;
-  - Fixed file name case sense on icon exort;
+  - Fixed file name case sense on icon export;
   - Added .exe or .dll file selection masks on icon export;
   - Fixed start selection file path on icon export;
   - FreeBSD: kvm functions now do not need kmem gid;
@@ -304,7 +304,7 @@ Version 0.109-r1
   - Added INSTALL text file;
 
 Version 0.109
- gui
+ GUI
   New:
   - New CD image manager;
   - New CD mount menu style;
@@ -406,7 +406,7 @@ Version 0.102
   (Note: this action need root privileges. i.e. sudo app.)
 
 Version 0.101
- gui
+ GUI
   Fixed:
   - Fixed TRANSLATIONS variable in q4wine.pro
 
@@ -414,7 +414,7 @@ Version 0.101
   - Full professional Ukrainian translation by Chornoivan Uriy Olexeevich
 
 Version 0.100
- gui
+ GUI
   Fixes:
   - "Programs" tab, was set as default at startup;
   - Fixed tray icon display;

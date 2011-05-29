@@ -1106,7 +1106,7 @@ void MainWindow::messageReceived(const QString message){
         if (isMinimized())
             this->showNormal ();
 
-        statusBar()->showMessage(tr("Only one instance of %1 can be runned at same time.").arg(APP_SHORT_NAME));
+        statusBar()->showMessage(tr("Only one instance of %1 can be launched at same time.").arg(APP_SHORT_NAME));
     } else  {
         if (!QFile(message).exists()){
             if (!trayIcon->isVisible()){

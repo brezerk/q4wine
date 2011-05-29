@@ -2510,7 +2510,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="1109"/>
-        <source>Only one instance of %1 can be runned at same time.</source>
+        <source>Only one instance of %1 can be launched at same time.</source>
         <translation>ניתן להפעיל רק עותק אחד של %1 בעת ובעונה אחת.</translation>
     </message>
     <message>
