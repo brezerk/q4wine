@@ -17,6 +17,7 @@ Version 0.121
   - extended virtual desktop resolution list [3150062];
   - request for language locale support [3144001 and 3149056];
   - Hebrew translation by Yaron Shahrabani;
+  - Prefix alphabetic sort;
 
  Fixed:
   - build on FreeBSD;
