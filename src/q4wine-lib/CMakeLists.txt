@@ -11,7 +11,6 @@ SET ( Q4WINE_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb
     ${CMAKE_SOURCE_DIR}/src/plugins
-
 )
 
 IF (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )

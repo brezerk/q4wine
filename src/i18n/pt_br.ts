@@ -1833,28 +1833,28 @@ Consulte a ajuda para detalhes.</translation>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="709"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="196"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="578"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="580"/>
         <source>Native</source>
         <translation>Nativo</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="714"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="198"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="582"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="584"/>
         <source>Buildin</source>
         <translation>Embutido</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="719"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="200"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="584"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="586"/>
         <source>Native, Buildin</source>
         <translation>Nativo, Embutido</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="724"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="202"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="586"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="588"/>
         <source>Buildin, Native</source>
         <translation>Embutido, Nativo</translation>
     </message>
@@ -1870,7 +1870,7 @@ Consulte a ajuda para detalhes.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="729"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="580"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="582"/>
         <source>Disabled</source>
         <translation>Desabilitado</translation>
     </message>
@@ -1981,48 +1981,48 @@ Consulte a ajuda para detalhes.</translation>
         <translation>Exportando ícone</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="552"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="554"/>
         <source>Selected working directory not exists.</source>
         <translation>Diretório de trabalho selecionado não existe.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="494"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="496"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Convertendo ícone do arquivo binário.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="494"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="496"/>
         <source>Converting icon</source>
         <translation>Convertendo ícone</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="547"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="552"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="557"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="564"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="569"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="549"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="554"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="559"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="566"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="571"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="547"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="549"/>
         <source>No program selected.</source>
         <translation>Nenhum programa selecionado.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="557"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="559"/>
         <source>No program name specified.</source>
         <translation>Nenhum nome de programa especificado.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="564"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="569"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="566"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="571"/>
         <source>Sorry, but icon named %1 already exists.</source>
         <translation>Desculpe, mas o ícone chamado %1 já existe.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="500"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="599"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="601"/>
         <source>No virtual desktop</source>
         <translation>Nenhum deskop virtual</translation>
     </message>

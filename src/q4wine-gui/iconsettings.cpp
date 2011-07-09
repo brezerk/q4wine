@@ -474,12 +474,14 @@ void IconSettings::cmdGetIcon_Click(){
                 args.clear();
                 args << "-x";
 
+                QDir ico_dir(tmpDir);
                 // Updating file index
-                list = tmp.entryInfoList();
+                list = ico_dir.entryInfoList();
 
                 //Creating file list for converting
                 for (int i = 0; i < list.size(); ++i) {
                     QFileInfo fileInfo = list.at(i);
+                    qDebug() << fileInfo.fileName();
                     if (fileInfo.fileName().right(3)=="ico")
                         args << fileInfo.filePath();
                 }

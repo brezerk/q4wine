@@ -1787,28 +1787,28 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="709"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="196"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="578"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="580"/>
         <source>Native</source>
         <translation>Původní</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="714"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="198"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="582"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="584"/>
         <source>Buildin</source>
         <translation>Vestavěná</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="719"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="200"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="584"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="586"/>
         <source>Native, Buildin</source>
         <translation>Původní, Vestavěná</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="724"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="202"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="586"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="588"/>
         <source>Buildin, Native</source>
         <translation>Vestavěná, Původní</translation>
     </message>
@@ -1854,48 +1854,48 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Vyvádí se ikona</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="494"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="496"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Převádí se ikona ze spustitelného souboru.&lt;br&gt;Může to chvíli trvat...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="494"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="496"/>
         <source>Converting icon</source>
         <translation>Převádí se ikona</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="547"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="552"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="557"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="564"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="569"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="549"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="554"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="559"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="566"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="571"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="547"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="549"/>
         <source>No program selected.</source>
         <translation>Nebyl vybrán žádný program.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="552"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="554"/>
         <source>Selected working directory not exists.</source>
         <translation>Vybraný pracovní adresář neexistuje.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="557"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="559"/>
         <source>No program name specified.</source>
         <translation>Není zadán žádný název programu.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="564"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="569"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="566"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="571"/>
         <source>Sorry, but icon named %1 already exists.</source>
         <translation>Promiňte, ale ikona s názvem %1 již existuje.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="500"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="599"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="601"/>
         <source>No virtual desktop</source>
         <translation>Žádná virtuální plocha</translation>
     </message>
@@ -1962,7 +1962,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="729"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="580"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="582"/>
         <source>Disabled</source>
         <translation>Zakázáno</translation>
     </message>
