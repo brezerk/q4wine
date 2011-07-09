@@ -28,10 +28,6 @@ p, li { white-space: pre-wrap; }
         <source>Utility for Wine applications and prefixes management.</source>
         <translation>כלי לניהול יישומים וקידומות של Wine.</translation>
     </message>
-    <message utf8="true">
-        <source>© 2008–2010, brezblock core team.</source>
-        <translation type="obsolete">© 2008–2010, צוות הליבה של brezblock.</translation>
-    </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="278"/>
         <location filename="../q4wine-gui/uis/About.ui" line="287"/>
@@ -39,18 +35,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/About.ui" line="365"/>
         <source>Authors</source>
         <translation>יוצרים</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html style=&quot;direction:rtl;&quot;&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message utf8="true">
         <location filename="../q4wine-gui/uis/About.ui" line="254"/>
@@ -321,14 +305,6 @@ p, li { white-space: pre-wrap; }
         <translation>הקובץ הבינרי %1 שצוין אינו קיים, עמך הסליחה.</translation>
     </message>
     <message>
-        <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;התכנית q4wine הודרה ללא הטמעה של FuseISO.&lt;/p&gt;&lt;p&gt;אם ברצונך להדר את q4wine עם הטמעה של FuseISO יש להוסיף את:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; לארגומנטים של cmake.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="obsolete">אזהרה</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1920"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="167"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="646"/>
@@ -455,14 +431,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/appsettings.cpp" line="816"/>
         <source>Quick Mount</source>
         <translation>עיגון מהיר</translation>
-    </message>
-    <message>
-        <source>FuseISO</source>
-        <translation type="obsolete">FuseISO</translation>
-    </message>
-    <message>
-        <source>Embedded FuseISO</source>
-        <translation type="obsolete">Embedded FuseISO</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2012"/>
@@ -2029,10 +1997,6 @@ See help for details.</source>
         <translation>תצוגה</translation>
     </message>
     <message>
-        <source>DISPLAY:</source>
-        <translation type="obsolete">DISPLAY:</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="838"/>
         <source>Debug options</source>
         <translation>אפשרויות ניפוי שגיאות</translation>
@@ -2041,10 +2005,6 @@ See help for details.</source>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="847"/>
         <source>Run with output in console</source>
         <translation>הפעלה עם פלט במסוף</translation>
-    </message>
-    <message>
-        <source>WINEDEBUG:</source>
-        <translation type="obsolete">WINEDEBUG:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="892"/>
@@ -3020,7 +2980,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="222"/>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="224"/>
         <source>Open File</source>
-        <translation>פתיחת קובץ</translation>
+        <translation type="unfinished">פתיחת קובץ</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="233"/>
@@ -3073,10 +3033,6 @@ See help for details.</source>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="425"/>
         <source>Device:</source>
         <translation>התקן:</translation>
-    </message>
-    <message>
-        <source>&lt;none&gt;</source>
-        <translation type="obsolete">&lt;none&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="381"/>
@@ -3134,26 +3090,6 @@ Note: leave it blank for default.</source>
 </context>
 <context>
     <name>PrefixTreeToolbar</name>
-    <message>
-        <source>Clear search field</source>
-        <translation type="obsolete">ניקוי שדה החיפוש</translation>
-    </message>
-    <message>
-        <source>Icons view mode</source>
-        <translation type="obsolete">מצב תצוגת סמלי</translation>
-    </message>
-    <message>
-        <source>Details view mode</source>
-        <translation type="obsolete">מצב תצוגה מפורטת</translation>
-    </message>
-    <message>
-        <source>Zoom In</source>
-        <translation type="obsolete">התקרבות</translation>
-    </message>
-    <message>
-        <source>Zoom Out</source>
-        <translation type="obsolete">התרחקות</translation>
-    </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="58"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="59"/>
@@ -3636,10 +3572,6 @@ Note: leave it blank for default.</source>
 </context>
 <context>
     <name>QObject</name>
-    <message>
-        <source>&lt;none&gt;</source>
-        <translation type="obsolete">&lt;none&gt;</translation>
-    </message>
     <message>
         <location filename="../core/database/prefix.cpp" line="322"/>
         <location filename="../core/database/prefix.cpp" line="385"/>
@@ -4229,10 +4161,6 @@ Note: leave it blank for default.</source>
         <translation>תצוגה</translation>
     </message>
     <message>
-        <source>DISPLAY:</source>
-        <translation type="obsolete">DISPLAY:</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="767"/>
         <source>Debug options</source>
         <translation>אפשרויות ניפוי שגיאות</translation>
@@ -4241,10 +4169,6 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/uis/Run.ui" line="776"/>
         <source>Run with output in console</source>
         <translation>הפעלה עם פלט במסוף</translation>
-    </message>
-    <message>
-        <source>WINEDEBUG:</source>
-        <translation type="obsolete">WINEDEBUG:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="821"/>
@@ -4558,14 +4482,6 @@ Note: leave it blank for default.</source>
         <translation>סיום</translation>
     </message>
     <message>
-        <source>Warning</source>
-        <translation type="obsolete">אזהרה</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;התכנית q4wine הודרה ללא הטמעה של FuseIso.&lt;/p&gt;&lt;p&gt;אם ברצונך להדר את q4wine עם הטמעת FuseIso נא להוסיף את:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; לארגומנטים של cmake.&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/wizard.cpp" line="551"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;הכול מוכן לסיום התקנת %1. &lt;/p&gt;&lt;p&gt;נא ללחוץ על הלחצן &lt;b&gt;סיום&lt;/b&gt; כדי לסיים את תהליך ההתקנה. או ללחוץ על &lt;b&gt;חזרה&lt;/b&gt; כדי לחזור.&lt;/p&gt;</translation>
@@ -4702,30 +4618,6 @@ Note: leave it blank for default.</source>
         <location filename="../plugins/winetricks.ui" line="47"/>
         <source>Exit</source>
         <translation>יציאה</translation>
-    </message>
-    <message>
-        <source>apps</source>
-        <translation type="obsolete">יישומים</translation>
-    </message>
-    <message>
-        <source>benchmarks</source>
-        <translation type="obsolete">חקר ביצועים</translation>
-    </message>
-    <message>
-        <source>dlls</source>
-        <translation type="obsolete">קובצי dll</translation>
-    </message>
-    <message>
-        <source>fonts</source>
-        <translation type="obsolete">גופנים</translation>
-    </message>
-    <message>
-        <source>games</source>
-        <translation type="obsolete">משחקים</translation>
-    </message>
-    <message>
-        <source>settings</source>
-        <translation type="obsolete">הגדרות</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="95"/>

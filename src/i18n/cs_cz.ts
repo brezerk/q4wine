@@ -28,10 +28,6 @@ p, li { white-space: pre-wrap; }
         <source>Utility for Wine applications and prefixes management.</source>
         <translation>Užitečný program pro programy wine a správu předpon.</translation>
     </message>
-    <message utf8="true">
-        <source>© 2008–2010, brezblock core team.</source>
-        <translation type="obsolete">© 2008–2010, hlavní družstvo brezblock.</translation>
-    </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="278"/>
         <location filename="../q4wine-gui/uis/About.ui" line="287"/>
@@ -39,18 +35,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/About.ui" line="365"/>
         <source>Authors</source>
         <translation>Autoři</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message utf8="true">
         <location filename="../q4wine-gui/uis/About.ui" line="254"/>
@@ -321,14 +305,6 @@ p, li { white-space: pre-wrap; }
         <translation>Promiňte, zadaný spustitelný soubor %1 není.</translation>
     </message>
     <message>
-        <source>Warning</source>
-        <translation type="obsolete">Varování</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;q4wine bylo sestaveno bez vloženého FuseIso.&lt;/p&gt;&lt;p&gt;Pokud si přejete q4wine sestavit s vloženým FuseIso přidejte:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; do argumentů cmake.&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1920"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="167"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="646"/>
@@ -376,10 +352,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="530"/>
         <source>Use tray icon.</source>
         <translation>Používat ikonu v oznamovací části panelu.</translation>
-    </message>
-    <message>
-        <source>Show notifications.</source>
-        <translation type="obsolete">Ukázat oznámení.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="596"/>
@@ -461,22 +433,6 @@ p, li { white-space: pre-wrap; }
         <translation>Rychlé připojení</translation>
     </message>
     <message>
-        <source>sudo</source>
-        <translation type="obsolete">sudo</translation>
-    </message>
-    <message>
-        <source>gui sudo</source>
-        <translation type="obsolete">gui sudo</translation>
-    </message>
-    <message>
-        <source>FuseISO</source>
-        <translation type="obsolete">FuseISO</translation>
-    </message>
-    <message>
-        <source>Embedded FuseISO</source>
-        <translation type="obsolete">Vložené FuseISO</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2012"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2641"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="344"/>
@@ -488,10 +444,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2021"/>
         <source>Logging subsystem:</source>
         <translation>Zapisovací podsystém:</translation>
-    </message>
-    <message>
-        <source>Enable loggin sybsystem.</source>
-        <translation type="obsolete">Povolit zapisovací podsystém.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2049"/>
@@ -1327,10 +1279,6 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Otevřít adresář</translation>
     </message>
     <message>
-        <source>Updateing wine dosdrives</source>
-        <translation type="obsolete">Probíhá obnova dosových ovladačů wine</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="871"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="881"/>
         <source>Joystick Axes Mappings</source>
@@ -1461,10 +1409,6 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1066"/>
         <source>[none]</source>
         <translation>[žádné]</translation>
-    </message>
-    <message>
-        <source>No media was set in prefix settings.</source>
-        <translation type="obsolete">V nastavení předpony nebylo nastaveno žádné médium.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="403"/>
@@ -1726,14 +1670,6 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Kopírovat celou cestu k programu do schránky systému</translation>
     </message>
     <message>
-        <source>wine cmd</source>
-        <translation type="obsolete">Příkaz wine</translation>
-    </message>
-    <message>
-        <source>Copy wine cmd line for current application</source>
-        <translation type="obsolete">Kopírovat řádek s příkazem wine pro nynější program</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="591"/>
         <source>q4wine-cli cmd</source>
         <translation>Příkaz q4wine-cli</translation>
@@ -1752,10 +1688,6 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="778"/>
         <source>Do you wish to delete all of the selected icons?</source>
         <translation>Chcete smazat všechny vybrané ikony?</translation>
-    </message>
-    <message>
-        <source>Error: &quot;%1&quot; is an embedded Wine binary.</source>
-        <translation type="obsolete">Chyba: &quot;%1&quot; je vložený spustitelný soubor wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="603"/>
@@ -2055,10 +1987,6 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Potlačit algoritmus</translation>
     </message>
     <message>
-        <source>Override algorithm</source>
-        <translation type="obsolete">Potlačit algoritmus</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="783"/>
         <source>Advanced</source>
         <translation>Pokročilé</translation>
@@ -2069,10 +1997,6 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Zobrazení</translation>
     </message>
     <message>
-        <source>DISPLAY:</source>
-        <translation type="obsolete">ZOBRAZIT:</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="838"/>
         <source>Debug options</source>
         <translation>Volby pro ladění</translation>
@@ -2081,10 +2005,6 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="847"/>
         <source>Run with output in console</source>
         <translation>Spustit s výstupem do konzole</translation>
-    </message>
-    <message>
-        <source>WINEDEBUG:</source>
-        <translation type="obsolete">WINEDEBUG:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="892"/>
@@ -3060,7 +2980,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="222"/>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="224"/>
         <source>Open File</source>
-        <translation>Otevřít soubor</translation>
+        <translation type="unfinished">Otevřít soubor</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="233"/>
@@ -3113,10 +3033,6 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="425"/>
         <source>Device:</source>
         <translation>Zařízení:</translation>
-    </message>
-    <message>
-        <source>&lt;none&gt;</source>
-        <translation type="obsolete">&lt;žádné&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="381"/>
@@ -3174,26 +3090,6 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
 </context>
 <context>
     <name>PrefixTreeToolbar</name>
-    <message>
-        <source>Clear search field</source>
-        <translation type="obsolete">Smazat vyhledávací pole</translation>
-    </message>
-    <message>
-        <source>Icons view mode</source>
-        <translation type="obsolete">Režim s ikonami</translation>
-    </message>
-    <message>
-        <source>Details view mode</source>
-        <translation type="obsolete">Režim s podrobnostmi</translation>
-    </message>
-    <message>
-        <source>Zoom In</source>
-        <translation type="obsolete">Přiblížit</translation>
-    </message>
-    <message>
-        <source>Zoom Out</source>
-        <translation type="obsolete">Oddálit</translation>
-    </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="58"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="59"/>
@@ -3278,10 +3174,6 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="579"/>
         <source>[none]</source>
         <translation>[žádné]</translation>
-    </message>
-    <message>
-        <source>No media was set in prefix settings.</source>
-        <translation type="obsolete">V nastavení předpony nebylo nastaveno žádné médium.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="249"/>
@@ -3681,10 +3573,6 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
 <context>
     <name>QObject</name>
     <message>
-        <source>&lt;none&gt;</source>
-        <translation type="obsolete">&lt;žádný&gt;</translation>
-    </message>
-    <message>
         <location filename="../core/database/prefix.cpp" line="322"/>
         <location filename="../core/database/prefix.cpp" line="385"/>
         <source>Default</source>
@@ -3787,14 +3675,6 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="365"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>V nastavení předpony nebyl nastaven žádný připojovací bod.</translation>
-    </message>
-    <message>
-        <source>No cdrom drive set in prefix configuration.</source>
-        <translation type="obsolete">V nastavení předpony nebyla nastavena žádná disková jednotka cdrom.</translation>
-    </message>
-    <message>
-        <source>Mounting drive &quot;%1&quot; into mount point &quot;%2&quot;.</source>
-        <translation type="obsolete">Připojuje se disková jednotka &quot;%1&quot; do přípojného bodu &quot;%2&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="317"/>
@@ -4281,10 +4161,6 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Zobrazení</translation>
     </message>
     <message>
-        <source>DISPLAY:</source>
-        <translation type="obsolete">ZOBRAZIT (DISPLAY):</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="767"/>
         <source>Debug options</source>
         <translation>Volby pro ladění</translation>
@@ -4293,10 +4169,6 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location filename="../q4wine-gui/uis/Run.ui" line="776"/>
         <source>Run with output in console</source>
         <translation>Spustit s výstupem do konzole</translation>
-    </message>
-    <message>
-        <source>WINEDEBUG:</source>
-        <translation type="obsolete">WINEDEBUG:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="821"/>
@@ -4474,10 +4346,6 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Tento krok pošle signál KILL(-9) všem procesům wine pro vybrané předpony&lt;br&gt;&lt;br&gt;Opravdu chcete pokračovat?</translation>
     </message>
     <message>
-        <source>It seems &quot;wineserver -kill&quot; for prefix: %1 executed successfully.</source>
-        <translation type="obsolete">Zdá se, že &quot;wineserver -kill&quot; pro předponu: %1 byl spuštěn úspěšně.</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="286"/>
         <source>It seems process %1 renice to %2 end successfully.</source>
         <translation>Zdá se, že proces %1 renice %2 do byl ukončen úspěšně.</translation>
@@ -4614,14 +4482,6 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Dokončit</translation>
     </message>
     <message>
-        <source>Warning</source>
-        <translation type="obsolete">Varování</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Program q4wine byl sestaven bez přidaného FuseIso.&lt;/p&gt;&lt;p&gt;Jestliže byste si přál sestavit q4wine s vloženým FuseIso, přidejte:&lt;/p&gt;&lt;p&gt; do argumentů cmake &quot;-WITH_EMBEDDED_FUSEISO=ON&quot;.&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/wizard.cpp" line="551"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Vše je připraveno pro dokončení nastavení %1. &lt;/p&gt;&lt;p&gt;Stiskněte, prosím, tlačítko &lt;b&gt;Dokončit&lt;/b&gt;, abyste vytvořil proces dokončení nastavení. Nebo stiskněte tlačítko &lt;b&gt;Zpět&lt;/b&gt;, chcete-li se vrátit.&lt;/p&gt;</translation>
@@ -4735,14 +4595,6 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
 <context>
     <name>winetricks</name>
     <message>
-        <source>Plz wait...</source>
-        <translation type="obsolete">Počkejte, prosím...</translation>
-    </message>
-    <message>
-        <source>Downloading and installing winetricks...</source>
-        <translation type="obsolete">Stahují se a instalují kouzla wine...</translation>
-    </message>
-    <message>
         <location filename="../plugins/winetricks.ui" line="14"/>
         <source>winetricks plugin</source>
         <translation>Přídavný modul Kouzla wine</translation>
@@ -4766,30 +4618,6 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location filename="../plugins/winetricks.ui" line="47"/>
         <source>Exit</source>
         <translation>Ukončit</translation>
-    </message>
-    <message>
-        <source>apps</source>
-        <translation type="obsolete">Programy</translation>
-    </message>
-    <message>
-        <source>benchmarks</source>
-        <translation type="obsolete">Srovnávací zkoušky</translation>
-    </message>
-    <message>
-        <source>dlls</source>
-        <translation type="obsolete">dll</translation>
-    </message>
-    <message>
-        <source>fonts</source>
-        <translation type="obsolete">Písma</translation>
-    </message>
-    <message>
-        <source>games</source>
-        <translation type="obsolete">Hry</translation>
-    </message>
-    <message>
-        <source>settings</source>
-        <translation type="obsolete">Nastavení</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="95"/>

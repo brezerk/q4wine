@@ -303,14 +303,6 @@ p, li { white-space: pre-wrap; }
         <translation>Hoppla, die ausgewählte %1 Anwendung existiert nicht.</translation>
     </message>
     <message>
-        <source>Warning</source>
-        <translation type="obsolete">Warnung</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;q4wine wurde ohne embedded FuseIso übersetzt.&lt;/p&gt;&lt;p&gt;Um q4wine mit embedded FuseIso zu übersetzen fügen Sie:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; zu den cmake-Argumenten hinzu.&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1920"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="167"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="646"/>
@@ -1428,10 +1420,6 @@ Weitere Informationen unter Hilfe.</translation>
         <translation>[leer]</translation>
     </message>
     <message>
-        <source>No media was set in prefix settings.</source>
-        <translation type="obsolete">Kein Medium in den Prefix-Einstellungen gesetzt.</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="403"/>
         <source>Mount media drive.</source>
         <translation>Einhängen von Medienlaufwerk.</translation>
@@ -1709,11 +1697,6 @@ Weitere Informationen unter Hilfe.</translation>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="778"/>
         <source>Do you wish to delete all of the selected icons?</source>
         <translation>Sollen die ausgewählten Verknüpfungen gelöscht werden?</translation>
-    </message>
-    <message>
-        <source>Error: &quot;%1&quot; is an embedded Wine binary.</source>
-        <translatorcomment>...</translatorcomment>
-        <translation type="obsolete">Fehler: &quot;%1&quot; ist ein eingebettetes Wine-Programm.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="603"/>
@@ -3021,7 +3004,7 @@ Weitere Informationen unter Hilfe.</translation>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="222"/>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="224"/>
         <source>Open File</source>
-        <translation>Öffne Datei</translation>
+        <translation type="unfinished">Öffne Datei</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="233"/>
@@ -3074,10 +3057,6 @@ Weitere Informationen unter Hilfe.</translation>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="425"/>
         <source>Device:</source>
         <translation>Gerät:</translation>
-    </message>
-    <message>
-        <source>&lt;none&gt;</source>
-        <translation type="obsolete">&lt;keines&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="381"/>
@@ -3134,26 +3113,6 @@ Note: leave it blank for default.</source>
 </context>
 <context>
     <name>PrefixTreeToolbar</name>
-    <message>
-        <source>Clear search field</source>
-        <translation type="obsolete">Suchfeld leeren</translation>
-    </message>
-    <message>
-        <source>Icons view mode</source>
-        <translation type="obsolete">Symbolansicht</translation>
-    </message>
-    <message>
-        <source>Details view mode</source>
-        <translation type="obsolete">Detailansicht</translation>
-    </message>
-    <message>
-        <source>Zoom In</source>
-        <translation type="obsolete">Vergrößern</translation>
-    </message>
-    <message>
-        <source>Zoom Out</source>
-        <translation type="obsolete">Verkleinern</translation>
-    </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="58"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="59"/>
@@ -3240,10 +3199,6 @@ Note: leave it blank for default.</source>
         <source>[none]</source>
         <translatorcomment>...</translatorcomment>
         <translation>[leer]</translation>
-    </message>
-    <message>
-        <source>No media was set in prefix settings.</source>
-        <translation type="obsolete">Kein Medium in den Prefix-Einstellungen gesetzt.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="249"/>
@@ -3455,10 +3410,6 @@ Note: leave it blank for default.</source>
         <translation>Bearbeite Prefix-Einstellungen</translation>
     </message>
     <message>
-        <source>Current prefixes list</source>
-        <translation type="obsolete">Aktuelle Prefixliste</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="236"/>
         <source>Mount ISO...</source>
         <translation>ISO einbinden...</translation>
@@ -3651,10 +3602,6 @@ Note: leave it blank for default.</source>
 <context>
     <name>QObject</name>
     <message>
-        <source>&lt;none&gt;</source>
-        <translation type="obsolete">&lt;keines&gt;</translation>
-    </message>
-    <message>
         <location filename="../core/database/prefix.cpp" line="322"/>
         <location filename="../core/database/prefix.cpp" line="385"/>
         <source>Default</source>
@@ -3760,14 +3707,6 @@ Note: leave it blank for default.</source>
         <source>No mount point set in prefix configuration.</source>
         <translatorcomment>not happy with Mount-Punkt</translatorcomment>
         <translation>Kein Mount-Punkt in der Prefix-Konfiguration gesetzt.</translation>
-    </message>
-    <message>
-        <source>No cdrom drive set in prefix configuration.</source>
-        <translation type="obsolete">Kein CD-Laufwerk in der Prefix-Konfiguration angegeben.</translation>
-    </message>
-    <message>
-        <source>Mounting drive &quot;%1&quot; into mount point &quot;%2&quot;.</source>
-        <translation type="obsolete">Einhängen von Laufwerk &quot;%1&quot; an Mount-Punkt &quot;%2&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="317"/>
@@ -4444,10 +4383,6 @@ Note: leave it blank for default.</source>
         <translation>Dies sendet ein KILL (-9) Signal an alle Wine Prozesse für diesen Prefix&lt;br&gt;&lt;br&gt;Wollen Sie wirklich fortfahren?</translation>
     </message>
     <message>
-        <source>It seems &quot;wineserver -kill&quot; for prefix: %1 executed successfully.</source>
-        <translation type="obsolete">&quot;wineserver -kill&quot; für den Prefix %1 wurde erfolgreich ausgeführt.</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="286"/>
         <source>It seems process %1 renice to %2 end successfully.</source>
         <translation>Die Priorität von Prozess %1 wurde erfolgreich auf %2 gesetzt.</translation>
@@ -4582,14 +4517,6 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/wizard.cpp" line="552"/>
         <source>Finish</source>
         <translation>Fertigstellen</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="obsolete">Warnung</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;q4wine wurde ohne embedded FuseIso übersetzt.&lt;/p&gt;&lt;p&gt;Um q4wine mit embedded FuseIso zu übersetzen fügen Sie:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; zu den cmake-Argumenten hinzu.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="551"/>

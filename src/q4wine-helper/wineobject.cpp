@@ -185,9 +185,9 @@ int WineObject::runSys(){
 
 
     if (this->programBinary=="wineserver"){
-        run_string.append(QString(" %1server ").arg(this->prefixBinary));
+        run_string.append(QString(" '%1server' ").arg(this->prefixBinary));
     } else {
-        run_string.append(QString(" %1 ").arg(this->prefixBinary));
+        run_string.append(QString(" '%1' ").arg(this->prefixBinary));
 }
 
     if (!this->programDesktop.isEmpty()){

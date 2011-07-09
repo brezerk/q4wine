@@ -28,10 +28,6 @@ p, li { white-space: pre-wrap; }
         <source>Utility for Wine applications and prefixes management.</source>
         <translation>Zarządzanie programami Wine i prefiksami.</translation>
     </message>
-    <message utf8="true">
-        <source>© 2008–2010, brezblock core team.</source>
-        <translation type="obsolete">© 2008–2010, brezblock core team.</translation>
-    </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="278"/>
         <location filename="../q4wine-gui/uis/About.ui" line="287"/>
@@ -39,18 +35,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/About.ui" line="365"/>
         <source>Authors</source>
         <translation>Autorzy</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message utf8="true">
         <location filename="../q4wine-gui/uis/About.ui" line="254"/>
@@ -321,14 +305,6 @@ p, li { white-space: pre-wrap; }
         <translation>Przepraszamy, podany plik binarny %1 nie istnieje.</translation>
     </message>
     <message>
-        <source>Warning</source>
-        <translation type="obsolete">Ostrzeżenie</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;q4wine został skompilowany bez wbudowanego FuseIso.&lt;/p&gt;&lt;p&gt;Jeśli chcesz skompilować q4wine z wbudowanym FuseIso, dodaj:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; do argumentów cmake.&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1920"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="167"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="646"/>
@@ -455,22 +431,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/appsettings.cpp" line="816"/>
         <source>Quick Mount</source>
         <translation>Szybkie montowanie</translation>
-    </message>
-    <message>
-        <source>sudo</source>
-        <translation type="obsolete">sudo</translation>
-    </message>
-    <message>
-        <source>gui sudo</source>
-        <translation type="obsolete">gui sudo</translation>
-    </message>
-    <message>
-        <source>FuseISO</source>
-        <translation type="obsolete">FuseISO</translation>
-    </message>
-    <message>
-        <source>Embedded FuseISO</source>
-        <translation type="obsolete">Wbudowane FuseISO</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2012"/>
@@ -1451,10 +1411,6 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation>[żaden]</translation>
     </message>
     <message>
-        <source>No media was set in prefix settings.</source>
-        <translation type="obsolete">W ustawieniach prefiksu nie określono nośnika.</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="403"/>
         <source>Mount media drive.</source>
         <translation>Montuj napęd nośnika.</translation>
@@ -1732,10 +1688,6 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="778"/>
         <source>Do you wish to delete all of the selected icons?</source>
         <translation>Czy na pewno chcesz usunąć wszystkie wybrane ikony?</translation>
-    </message>
-    <message>
-        <source>Error: &quot;%1&quot; is an embedded Wine binary.</source>
-        <translation type="obsolete">Błąd: &quot;%1&quot; jest wbudowanym plikiem binarnym Wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="603"/>
@@ -2045,10 +1997,6 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation>Display</translation>
     </message>
     <message>
-        <source>DISPLAY:</source>
-        <translation type="obsolete">DISPLAY:</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="838"/>
         <source>Debug options</source>
         <translation>Opcje debugowania</translation>
@@ -2057,10 +2005,6 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="847"/>
         <source>Run with output in console</source>
         <translation>Uruchom z wyjściem na konsolę</translation>
-    </message>
-    <message>
-        <source>WINEDEBUG:</source>
-        <translation type="obsolete">WINEDEBUG:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="892"/>
@@ -3037,7 +2981,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="222"/>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="224"/>
         <source>Open File</source>
-        <translation>Otwórz plik</translation>
+        <translation type="unfinished">Otwórz plik</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="233"/>
@@ -3090,10 +3034,6 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="425"/>
         <source>Device:</source>
         <translation>Urządzenie:</translation>
-    </message>
-    <message>
-        <source>&lt;none&gt;</source>
-        <translation type="obsolete">&lt;żadne&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="381"/>
@@ -3151,10 +3091,6 @@ Domyślnie są puste.</translation>
 </context>
 <context>
     <name>PrefixTreeToolbar</name>
-    <message>
-        <source>Clear search field</source>
-        <translation type="obsolete">Wyczyść pole wyszukiwania</translation>
-    </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="58"/>
         <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="59"/>
@@ -3239,10 +3175,6 @@ Domyślnie są puste.</translation>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="579"/>
         <source>[none]</source>
         <translation>[żaden]</translation>
-    </message>
-    <message>
-        <source>No media was set in prefix settings.</source>
-        <translation type="obsolete">Żaden nośnik nie został wybrany w ustawieniach prefiksu.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="249"/>
@@ -3642,10 +3574,6 @@ Domyślnie są puste.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <source>&lt;none&gt;</source>
-        <translation type="obsolete">&lt;żadne&gt;</translation>
-    </message>
-    <message>
         <location filename="../core/database/prefix.cpp" line="322"/>
         <location filename="../core/database/prefix.cpp" line="385"/>
         <source>Default</source>
@@ -3748,14 +3676,6 @@ Domyślnie są puste.</translation>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="365"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>Nie wybrano punktu montowania w konfiguracji prefiksu.</translation>
-    </message>
-    <message>
-        <source>No cdrom drive set in prefix configuration.</source>
-        <translation type="obsolete">Nie wybrano napędu cdrom w konfiguracji prefiksu.</translation>
-    </message>
-    <message>
-        <source>Mounting drive &quot;%1&quot; into mount point &quot;%2&quot;.</source>
-        <translation type="obsolete">Montowanie napędu &quot;%1&quot; w punkcie montowania &quot;%2&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="317"/>
@@ -4242,10 +4162,6 @@ Domyślnie są puste.</translation>
         <translation>Display</translation>
     </message>
     <message>
-        <source>DISPLAY:</source>
-        <translation type="obsolete">DISPLAY:</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="767"/>
         <source>Debug options</source>
         <translation>Opcje debugera</translation>
@@ -4254,10 +4170,6 @@ Domyślnie są puste.</translation>
         <location filename="../q4wine-gui/uis/Run.ui" line="776"/>
         <source>Run with output in console</source>
         <translation>Uruchom z wyjściem na konsolę</translation>
-    </message>
-    <message>
-        <source>WINEDEBUG:</source>
-        <translation type="obsolete">WINEDEBUG:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="821"/>
@@ -4435,10 +4347,6 @@ Domyślnie są puste.</translation>
         <translation>Ta akcja wyśle sygnał KILL(-9) do wszystkich procesów wine dla wybranych prefiksów&lt;br&gt;&lt;br&gt;Czy na pewno chcesz kontynuować?</translation>
     </message>
     <message>
-        <source>It seems &quot;wineserver -kill&quot; for prefix: %1 executed successfully.</source>
-        <translation type="obsolete">Polecenie &quot;wineserver -kill&quot; dla prefiksu: %1 wykonane pomyślnie.</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="286"/>
         <source>It seems process %1 renice to %2 end successfully.</source>
         <translation>Renice procesu %1 do %2 zakończyło się pomyślnie.</translation>
@@ -4573,14 +4481,6 @@ Domyślnie są puste.</translation>
         <location filename="../q4wine-gui/wizard.cpp" line="552"/>
         <source>Finish</source>
         <translation>Koniec</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="obsolete">Ostrzeżenie</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;q4wine was compiled without embedded FuseIso.&lt;/p&gt;&lt;p&gt;If you wish to compile q4wine with embedded FuseIso add:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; to cmake arguments.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;q4wine został skompilowany bez wbudowanego FuseIso.&lt;/p&gt;&lt;p&gt;Jeśli chcesz skompilować q4wine z wbudowanym FuseIso, dodaj:&lt;/p&gt;&lt;p&gt; &quot;-WITH_EMBEDDED_FUSEISO=ON&quot; do argumentów cmake.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="551"/>
@@ -4719,30 +4619,6 @@ Domyślnie są puste.</translation>
         <location filename="../plugins/winetricks.ui" line="47"/>
         <source>Exit</source>
         <translation>Zakończ</translation>
-    </message>
-    <message>
-        <source>apps</source>
-        <translation type="obsolete">programy</translation>
-    </message>
-    <message>
-        <source>benchmarks</source>
-        <translation type="obsolete">benchmarki</translation>
-    </message>
-    <message>
-        <source>dlls</source>
-        <translation type="obsolete">biblioteki dll</translation>
-    </message>
-    <message>
-        <source>fonts</source>
-        <translation type="obsolete">czcionki</translation>
-    </message>
-    <message>
-        <source>games</source>
-        <translation type="obsolete">gry</translation>
-    </message>
-    <message>
-        <source>settings</source>
-        <translation type="obsolete">ustawienia</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="95"/>
