@@ -124,8 +124,13 @@ QString WineObject::createEnvString(){
     if (!this->prefixArch.isEmpty())
         env.append(QString(" WINEARCH='%1' ").arg(this->prefixArch));
 
-    if (!this->programDebug.isEmpty())
+    if (!this->programDebug.isEmpty()){
         env.append(QString(" WINEDEBUG='%1' ").arg(this->programDebug));
+    } else {
+        if ((!this->useConsole) && (CoreLib->getSetting("logging", "enable", false, 0).toInt()==0)){
+                env.append(QString(" WINEDEBUG='-all' "));
+        }
+    }
 
     if (!this->programDisplay.isEmpty())
         env.append(QString(" DISPLAY='%1' ").arg(this->programDisplay));
