@@ -84,8 +84,26 @@ Installation
 8. $ q4wine
 6. Enjoy :)
 
-PS: If you install q4wine in non standart directory, and gets error "error while loading shared libraries: libq4wine-core.so"
-just run q4wine with LD_LIBRARY_PATH={$path_to_q4wine_prefix}/lib/ q4wine
+Known Issues:
+***********************************************
+1. Non standart directory
+
+If you have installed q4wine in non standart directory, 
+and you get a error message: "error while loading shared libraries: libq4wine-core.so"
+then you need to override LD_LIBRARY_PATH variable
+
+LD_LIBRARY_PATH={$path_to_q4wine_prefix}/lib/ q4wine
+
+2. Problem with dual qt3 and qt4 qmake
+
+CMake by default will search for qmake binary.
+On distributions with dual qt3 and qt4 libraries installed, you may
+need to create symbolic link from qmake-qt4 to qmake binary.
+
+Is /usr/bin:
+lrwxrwxrwx 1 root root 23 2011-07-05 21:07 qmake -> qmake-qt4
+-rwxr-xr-x 1 root root 1901408 2011-04-01 19:04 qmake-qt3
+-rwxr-xr-x 1 root root 3444152 2011-06-24 17:52 qmake-qt4
 
 Uninstall:
 ***********************************************
@@ -95,7 +113,7 @@ xargs rm < install_manifest.txt
 Changelog
 ***********************************************
 See changelog file for details
- 
+
 -- 
 Regards,
  
