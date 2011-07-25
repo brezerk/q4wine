@@ -163,11 +163,6 @@ int WineObject::runSys(){
      */
     this->programBinary = this->programBinary.replace(this->programWrkDir, "").replace("/", "");
 
-    if (!env.isEmpty()){
-        run_string.append(" env ");
-        run_string.append(env);
-    }
-
     if (this->useConsole){
         // If we gona use console output, so exec program is program specificed at CONSOLE global variable
         run_string.append(QString(" %1 ").arg(CoreLib->getSetting("console", "bin").toString()));
@@ -176,6 +171,11 @@ int WineObject::runSys(){
             // If we have any conslope parametres, we gona preccess them one by one
             run_string.append(CoreLib->getSetting("console", "args", false).toString());
         }
+    }
+
+    if (!env.isEmpty()){
+        run_string.append(" env ");
+        run_string.append(env);
     }
 
     run_string.append(" /bin/sh -c \"");
