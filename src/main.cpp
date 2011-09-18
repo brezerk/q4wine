@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
     if (!CoreLib->isConfigured()){
         Wizard firstSetupWizard(1);
         if (firstSetupWizard.exec()==QDialog::Rejected){
-            QErr<<"[EE] Application not configured! Rerun setup the wizard or delete broken q4wine configuration files."<<endl;
+            QErr<<"[EE] Application not configured! Rerun the setup wizard or delete broken q4wine configuration files."<<endl;
             return -1;
         }
     }
