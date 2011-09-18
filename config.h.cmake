@@ -28,6 +28,9 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#define D_TREE_COLLAPSE 1
+#define D_TREE_EXPAND 2
+
 #define APP_NAME "Q4Wine"
 #define APP_SHORT_NAME "q4wine"
 #define APP_WEBSITTE "q4wine.brezblock.org.ua"

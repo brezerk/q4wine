@@ -37,6 +37,7 @@ IconListToolbar::IconListToolbar(QWidget *parent) :
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
+    this->sort_order = CoreLib->getSetting("IconWidget", "IconSort", false, D_SORT_TYPE_BY_DATE_ASC).toInt();
     this->createActions();
 
     std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
@@ -54,6 +55,9 @@ IconListToolbar::IconListToolbar(QWidget *parent) :
     toolBar->addSeparator();
     toolBar->addAction(zoomIn.get());
     toolBar->addAction(zoomOut.get());
+    toolBar->addSeparator();
+    toolBar->addAction(sortAlpha.get());
+    toolBar->addAction(sortCreation.get());
 
     std::auto_ptr<QVBoxLayout> layout (new QVBoxLayout(this));
     layout->setSpacing(0);
@@ -61,6 +65,8 @@ IconListToolbar::IconListToolbar(QWidget *parent) :
     layout->addWidget(toolBar.release());
 
     this->setLayout(layout.release());
+
+
 }
 
 void IconListToolbar::createActions(){
@@ -84,6 +90,32 @@ void IconListToolbar::createActions(){
     zoomOut->setStatusTip(tr("Zoom Out"));
     connect(zoomOut.get(), SIGNAL(triggered()), this, SLOT(zoomOut_Click()));
 
+    sortAlpha.reset(new QAction(this));
+    connect(sortAlpha.get(), SIGNAL(triggered()), this, SLOT(sortAlpha_Click()));
+
+    if (this->sort_order == D_SORT_TYPE_BY_NAME_ASC){
+        sortAlpha->setStatusTip(tr("Alphabetic sort descending"));
+        sortAlpha->setText(tr("Alphabetic sort descending"));
+        sortAlpha->setIcon(CoreLib->loadIcon("data/sort-desc.png"));
+    } else {
+        sortAlpha->setStatusTip(tr("Alphabetic sort ascending"));
+        sortAlpha->setText(tr("Alphabetic sort ascending"));
+        sortAlpha->setIcon(CoreLib->loadIcon("data/sort-asc.png"));
+    }
+
+    sortCreation.reset(new QAction(this));
+    connect(sortCreation.get(), SIGNAL(triggered()), this, SLOT(sortCreation_Click()));
+
+    if (this->sort_order == D_SORT_TYPE_BY_DATE_ASC){
+        sortCreation->setStatusTip(tr("Sort descending by create order"));
+        sortCreation->setText(tr("Sort descending by create order"));
+        sortCreation->setIcon(CoreLib->loadIcon("data/sort-create-desc.png"));
+    } else {
+        sortCreation->setStatusTip(tr("Sort ascending by create order"));
+        sortCreation->setText(tr("Sort ascending by create order"));
+        sortCreation->setIcon(CoreLib->loadIcon("data/sort-create-asc.png"));
+    }
+
     return;
 }
 
@@ -105,4 +137,40 @@ void IconListToolbar::zoomIn_Click(){
 
 void IconListToolbar::zoomOut_Click(){
     emit(changeView(3));
+}
+
+void IconListToolbar::sortAlpha_Click(){
+    emit(changeView(4));
+    if (this->sort_order == D_SORT_TYPE_BY_NAME_ASC){
+        this->sort_order = D_SORT_TYPE_BY_NAME_DSC;
+        sortAlpha->setStatusTip(tr("Alphabetic sort ascending"));
+        sortAlpha->setText(tr("Alphabetic sort ascending"));
+        sortAlpha->setIcon(CoreLib->loadIcon("data/sort-asc.png"));
+    } else {
+        this->sort_order = D_SORT_TYPE_BY_NAME_ASC;
+        sortAlpha->setStatusTip(tr("Alphabetic sort descending"));
+        sortAlpha->setText(tr("Alphabetic sort descending"));
+        sortAlpha->setIcon(CoreLib->loadIcon("data/sort-desc.png"));
+    }
+    sortCreation->setStatusTip(tr("Sort ascending by create order"));
+    sortCreation->setText(tr("Sort ascending by create order"));
+    sortCreation->setIcon(CoreLib->loadIcon("data/sort-create-asc.png"));
+}
+
+void IconListToolbar::sortCreation_Click(){
+    emit(changeView(5));
+    if (this->sort_order == D_SORT_TYPE_BY_DATE_ASC){
+        this->sort_order = D_SORT_TYPE_BY_DATE_DSC;
+        sortCreation->setStatusTip(tr("Sort ascending by create order"));
+        sortCreation->setText(tr("Sort ascending by create order"));
+        sortCreation->setIcon(CoreLib->loadIcon("data/sort-create-asc.png"));
+    } else {
+        this->sort_order = D_SORT_TYPE_BY_DATE_ASC;
+        sortCreation->setStatusTip(tr("Sort descending by create order"));
+        sortCreation->setText(tr("Sort descending by create order"));
+        sortCreation->setIcon(CoreLib->loadIcon("data/sort-create-desc.png"));
+    }
+    sortAlpha->setStatusTip(tr("Alphabetic sort ascending"));
+    sortAlpha->setText(tr("Alphabetic sort ascending"));
+    sortAlpha->setIcon(CoreLib->loadIcon("data/sort-asc.png"));
 }

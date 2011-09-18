@@ -64,13 +64,19 @@ private:
     std::auto_ptr<QAction> zoomIn;
     std::auto_ptr<QAction> zoomOut;
 
+    std::auto_ptr<QAction> sortAlpha;
+    std::auto_ptr<QAction> sortCreation;
+
+    int sort_order;
+
 private slots:
     void searchClear_Click();
     void viewIcon_Click();
     void viewList_Click();
     void zoomIn_Click();
     void zoomOut_Click();
-
+    void sortAlpha_Click();
+    void sortCreation_Click();
 };
 
 #endif // ICONLISTTOOLBAR_H

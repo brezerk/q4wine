@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>684</width>
-    <height>424</height>
+    <width>682</width>
+    <height>422</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -234,7 +234,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QGridLayout" name="gridLayout">
@@ -1817,54 +1817,6 @@
           <property name="currentIndex">
            <number>0</number>
           </property>
-          <widget class="QWidget" name="tab">
-           <attribute name="title">
-            <string>Interface</string>
-           </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout_5">
-            <item>
-             <widget class="QGroupBox" name="groupBox_73">
-              <property name="title">
-               <string>Prefix tree view</string>
-              </property>
-              <layout class="QVBoxLayout" name="_159">
-               <property name="margin">
-                <number>3</number>
-               </property>
-               <item>
-                <widget class="QCheckBox" name="cbExpandPrefixTree">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>Expand prefix tree items on startup.</string>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <spacer name="verticalSpacer_4">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>377</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </widget>
           <widget class="QWidget" name="tabLanguage">
            <attribute name="title">
             <string>Language</string>
@@ -2616,11 +2568,6 @@
           <property name="text">
            <string>Interface</string>
           </property>
-          <item>
-           <property name="text">
-            <string>Interface</string>
-           </property>
-          </item>
           <item>
            <property name="text">
             <string>Language</string>

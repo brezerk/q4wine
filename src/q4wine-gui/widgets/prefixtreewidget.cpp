@@ -201,7 +201,7 @@ void PrefixTreeWidget::getPrefixes(){
             std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(this));
             prefixItem->setText(0, QString("%1").arg(list.at(i)));
             prefixItem->setIcon(0, CoreLib->loadIcon("data/wine.png"));
-            if (CoreLib->getSetting("Interface", "expandPrefixTree", false, 1).toInt()==1){
+            if (CoreLib->getSetting("TreeWidget", "State", false, D_TREE_EXPAND).toInt()==D_TREE_EXPAND){
                 prefixItem->setExpanded (TRUE);
             } else {
                 prefixItem->setExpanded (FALSE);

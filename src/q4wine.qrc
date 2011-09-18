@@ -60,5 +60,9 @@
         <file>data/collapse.png</file>
         <file>data/export.png</file>
         <file>data/import.png</file>
+        <file>data/sort-asc.png</file>
+        <file>data/sort-desc.png</file>
+        <file>data/sort-create-asc.png</file>
+        <file>data/sort-create-desc.png</file>
     </qresource>
 </RCC>

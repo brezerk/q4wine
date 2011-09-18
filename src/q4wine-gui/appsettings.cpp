@@ -285,15 +285,6 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     }
     settings.endGroup();
 
-    settings.beginGroup("Interface");
-    if (settings.value("expandPrefixTree", 1).toInt()==1){
-        cbExpandPrefixTree->setChecked(true);
-    } else {
-        cbExpandPrefixTree->setChecked(false);
-    }
-    settings.endGroup();
-
-
     QList<QTreeWidgetItem *> items = optionsTree->findItems (tr("General"), Qt::MatchExactly);
     if (items.count()>0){
         items.at(0)->setExpanded(true);
@@ -334,10 +325,10 @@ void AppSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
         tabwInterface->setCurrentIndex(0);
     } else if (itemText==tr("Language")){
         optionsStack->setCurrentIndex(1);
-        tabwInterface->setCurrentIndex(1);
+        tabwInterface->setCurrentIndex(0);
     } else if (itemText==tr("Themes")){
         optionsStack->setCurrentIndex(1);
-        tabwInterface->setCurrentIndex(2);
+        tabwInterface->setCurrentIndex(1);
     } else if (itemText==tr("Subsystems")){
         optionsStack->setCurrentIndex(2);
         tabwInterface->setCurrentIndex(0);
@@ -747,15 +738,6 @@ void AppSettings::cmdOk_Click(){
     } else {
         settings.setValue("useSystemBrowser", 0);
     }
-    settings.endGroup();
-
-    settings.beginGroup("Interface");
-    if (cbExpandPrefixTree->isChecked()){
-        settings.setValue("expandPrefixTree", 1);
-    } else {
-        settings.setValue("expandPrefixTree", 0);
-    }
-
     settings.endGroup();
 
     accept();

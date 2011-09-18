@@ -30,6 +30,11 @@
 #include <QDebug>
 #include <QVariant>
 
+#define D_SORT_TYPE_BY_NAME_ASC 1
+#define D_SORT_TYPE_BY_NAME_DSC 2
+#define D_SORT_TYPE_BY_DATE_ASC 3
+#define D_SORT_TYPE_BY_DATE_DSC 4
+
 /*!
  * \class Icon
  * \ingroup database
@@ -42,7 +47,7 @@ public:
     //! Class constructor
     Icon();
 
-    QStringList getIconsList(const QString prefix, const QString dir, const QString filter);
+    QStringList getIconsList(const QString prefix, const QString dir, const QString filter, const int sort_type=D_SORT_TYPE_BY_DATE_ASC);
     QString getPixmapIcon(const QString prefix, const QString dir, const QString name);
 
     QHash<QString, QString> getByName(const QString prefix_name, const QString dir_name, const QString icon_name) const;

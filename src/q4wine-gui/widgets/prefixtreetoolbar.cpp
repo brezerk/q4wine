@@ -37,11 +37,11 @@ PrefixTreeToolbar::PrefixTreeToolbar(QWidget *parent) :
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
+    this->tree_state = CoreLib->getSetting("TreeWidget", "State", false, D_TREE_EXPAND).toInt();
     this->createActions();
 
     std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
-    toolBar->addAction(treeExpand.get());
-    toolBar->addAction(treeCollapse.get());
+    toolBar->addAction(treeState.get());
     toolBar->addSeparator();
     toolBar->addAction(prefixExport.get());
     toolBar->addAction(prefixImport.get());
@@ -54,14 +54,28 @@ PrefixTreeToolbar::PrefixTreeToolbar(QWidget *parent) :
     this->setLayout(layout.release());
 }
 
-void PrefixTreeToolbar::createActions(){
-    treeExpand.reset(new QAction(CoreLib->loadIcon("data/expand.png"), tr("Expand prefix tree"), this));
-    treeExpand->setStatusTip(tr("Expand prefix tree"));
-    connect(treeExpand.get(), SIGNAL(triggered()), this, SLOT(treeExpand_Click()));
+PrefixTreeToolbar::~PrefixTreeToolbar(){
+    QSettings settings(APP_SHORT_NAME, "default");
+    settings.beginGroup("TreeWidget");
+    settings.setValue("State", this->tree_state);
+    settings.endGroup();
+}
 
-    treeCollapse.reset(new QAction(CoreLib->loadIcon("data/collapse.png"), tr("Collapse prefix tree"), this));
-    treeCollapse->setStatusTip(tr("Collapse prefix tree"));
-    connect(treeCollapse.get(), SIGNAL(triggered()), this, SLOT(treeCollapse_Click()));
+void PrefixTreeToolbar::createActions(){
+    treeState.reset(new QAction(this));
+    if (this->tree_state == D_TREE_COLLAPSE){
+        treeState->setIcon(CoreLib->loadIcon("data/expand.png"));
+        treeState->setText(tr("Expand prefix tree"));
+        treeState->setStatusTip(tr("Expand prefix tree"));
+        emit(collapseTree());
+    } else {
+        treeState->setIcon(CoreLib->loadIcon("data/collapse.png"));
+        treeState->setText(tr("Collapse prefix tree"));
+        treeState->setStatusTip(tr("Collapse prefix tree"));
+        emit(expandTree());
+    }
+
+    connect(treeState.get(), SIGNAL(triggered()), this, SLOT(treeState_Click()));
 
     prefixImport.reset(new QAction(CoreLib->loadIcon("data/import.png"), tr("Import prefixes"), this));
     prefixImport->setStatusTip(tr("Import prefixes from ~/.local/share/wineprefixes/"));
@@ -74,12 +88,20 @@ void PrefixTreeToolbar::createActions(){
     return;
 }
 
-void PrefixTreeToolbar::treeExpand_Click(){
-    emit(expandTree());
-}
-
-void PrefixTreeToolbar::treeCollapse_Click(){
-    emit(collapseTree());
+void PrefixTreeToolbar::treeState_Click(){
+    if (this->tree_state == D_TREE_EXPAND){
+        emit(collapseTree());
+        this->tree_state = D_TREE_COLLAPSE;
+        treeState->setIcon(CoreLib->loadIcon("data/expand.png"));
+        treeState->setText(tr("Expand prefix tree"));
+        treeState->setStatusTip(tr("Expand prefix tree"));
+    } else {
+        emit(expandTree());
+        this->tree_state = D_TREE_EXPAND;
+        treeState->setIcon(CoreLib->loadIcon("data/collapse.png"));
+        treeState->setText(tr("Collapse prefix tree"));
+        treeState->setStatusTip(tr("Collapse prefix tree"));
+    }
 }
 
 void PrefixTreeToolbar::prefixImport_Click(){

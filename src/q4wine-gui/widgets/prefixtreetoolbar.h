@@ -41,6 +41,7 @@ class PrefixTreeToolbar : public QWidget
 Q_OBJECT
 public:
     explicit PrefixTreeToolbar(QWidget *parent = 0);
+    ~PrefixTreeToolbar();
 
 signals:
     void updatePrefixTree(void);
@@ -58,15 +59,15 @@ private:
 
     void createActions(void);
 
-    std::auto_ptr<QAction> treeExpand;
-    std::auto_ptr<QAction> treeCollapse;
+    std::auto_ptr<QAction> treeState;
 
     std::auto_ptr<QAction> prefixImport;
     std::auto_ptr<QAction> prefixExport;
 
+    int tree_state;
+
 private slots:
-    void treeExpand_Click();
-    void treeCollapse_Click();
+    void treeState_Click();
     void prefixImport_Click();
     void prefixExport_Click();
 

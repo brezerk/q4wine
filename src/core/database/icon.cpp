@@ -23,26 +23,43 @@ Icon::Icon()
 {
 }
 
-QStringList Icon::getIconsList(const QString prefix, const QString dir, const QString filter){
+QStringList Icon::getIconsList(const QString prefix, const QString dir, const QString filter, const int sort_type){
     QStringList list;
     QSqlQuery query;
+    QString sql;
+    QString order;
+
+    if (sort_type == D_SORT_TYPE_BY_NAME_ASC){
+        order = " ORDER BY name ASC ";
+    } else if (sort_type == D_SORT_TYPE_BY_NAME_DSC){
+        order = " ORDER BY name DESC ";
+    } else if (sort_type == D_SORT_TYPE_BY_DATE_ASC){
+        order = " ORDER BY id ASC ";
+    } else if (sort_type == D_SORT_TYPE_BY_DATE_DSC){
+        order = " ORDER BY id DESC ";
+    }
 
     if (dir.isEmpty()){
         if (filter.isEmpty()){
-            query.prepare("SELECT name FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id ISNULL");
+            sql = "SELECT name FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id ISNULL";
         } else {
-            query.prepare(QString("SELECT name FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id ISNULL AND name LIKE \"%%1%\"").arg(filter));
+            sql = QString("SELECT name FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id ISNULL AND name LIKE \"%%1%\"").arg(filter);
         }
+        sql.append(order);
+        query.prepare(sql);
     } else {
         if (filter.isEmpty()){
-            query.prepare("SELECT name FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name1))");
+            sql = "SELECT name FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name1))";
         } else {
-            query.prepare(QString("SELECT name FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name1)) AND name LIKE \"%%1%\"").arg(filter));
+            sql = QString("SELECT name FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name1)) AND name LIKE \"%%1%\"").arg(filter);
         }
+        sql.append(order);
+        query.prepare(sql);
         query.bindValue(":dir_name", dir);
         query.bindValue(":prefix_name1", prefix);
     }
     query.bindValue(":prefix_name", prefix);
+
 
     if (query.exec()){
         while (query.next()) {

@@ -5,6 +5,20 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
+Varsion 0.122
+ Added:
+  - Icon and Prefix sorting (name, date);
+  - Version string to About page;
+  - Handler for wrong url in wine app db;
+  
+  Fixed:
+  - Extended env command after console terminal;
+  - Updated READMIN file: Added "Known Issues" section;
+  - Set WINEDEBUG to '-all' if logging subsystem disabled and programm was
+  exceuted not in console session;
+  - Icon export dialog empty icons [3358599];
+  - Dropped obsolete strings from translation files [3358602];
+
 Version 0.121
  Added:
   - updated winetricks plugin;

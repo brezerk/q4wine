@@ -52,6 +52,8 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
         setDisplayType(true);
     }
 
+    this->sort_order = CoreLib->getSetting("IconWidget", "IconSort", false, D_SORT_TYPE_BY_DATE_ASC).toInt();
+
     connect(this, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(itemClicked (QListWidgetItem *)));
     connect(this, SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(itemDoubleClicked (QListWidgetItem *)));
 
@@ -71,6 +73,7 @@ IconListWidget::~IconListWidget(){
     } else {
         settings.setValue("ViewMode", "ListMode");
     }
+    settings.setValue("IconSort", this->sort_order);
     settings.setValue("IconSize",  iconSize().height());
     settings.endGroup();
 }
@@ -88,7 +91,7 @@ void IconListWidget::showContents(QString filterString){
     this->clear();
     emit(iconItemClick("","","","",""));
 
-    QStringList iconsList=db_icon.getIconsList(this->prefixName, this->dirName, filterString);
+    QStringList iconsList=db_icon.getIconsList(this->prefixName, this->dirName, filterString, this->sort_order);
 
     for (int i = 0; i < iconsList.size(); ++i) {
         std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(this, 0));
@@ -167,8 +170,21 @@ void IconListWidget::changeView(int action){
                 setGridSize(QSize(nSize, nSize));
             }
         }
+    } else if (action==4){
+        if (this->sort_order == D_SORT_TYPE_BY_NAME_ASC){
+            this->sort_order = D_SORT_TYPE_BY_NAME_DSC;
+        } else {
+            this->sort_order = D_SORT_TYPE_BY_NAME_ASC;
+        }
+        this->showContents(this->filterString);
+    } else if (action==5){
+        if (this->sort_order == D_SORT_TYPE_BY_DATE_ASC){
+            this->sort_order = D_SORT_TYPE_BY_DATE_DSC;
+        } else {
+            this->sort_order = D_SORT_TYPE_BY_DATE_ASC;
+        }
+        this->showContents(this->filterString);
     }
-
     return;
 }
 
