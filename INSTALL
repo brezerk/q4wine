@@ -69,13 +69,13 @@ Installation
        USE_GZIP                  : OFF | ON
        WITH_DBUS                 : ON  | OFF
 
-       DEBUG                     : If ON, then q4wine will write debug messages into STDOUT
+       DEBUG                     : If ON, then Q4Wine will send debug messages to STDOUT
                                  : use it in debug or bug report cases;
-       WITH_ICOUTILS             : If ON, then build q4wine with icoutils support;
-       WITH_WINEAPPDB            : If ON, then build q4wine with Wine AppDB browser support;
+       WITH_ICOUTILS             : If ON, then build Q4Wine with icoutils support;
+       WITH_WINEAPPDB            : If ON, then build Q4Wine with Wine AppDB browser support;
        USE_BZIP2                 : Use bzip2 to compress man pages;
        USE_GZIP                  : Use gzip to compress man pages;
-       WITH_DBUS                 : If ON, then build q4wine with QtDBus notification support;
+       WITH_DBUS                 : If ON, then build Q4Wine with QtDBus notification support;
 
 6. $ make
 7. $ make install
