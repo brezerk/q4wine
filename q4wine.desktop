@@ -1,19 +1,19 @@
 [Desktop Entry]
 Categories=Qt;System;Emulator;
 Comment=Qt4 utility for Wine applications and prefixes management.
-Comment[it]=Qt4 programma per gestire le applicazioni con Wine e i prefissi.
-Comment[uk]=Qt4 програма для налаштування програм та керування префіксами Wine.
-Comment[en]=Qt4 utility for Wine applications and prefixes management.
-Comment[ru]=Qt4 программа для настройки приложений и управления префиксами Wine.
 Comment[cz]=Qt4 užitečný program pro programy wine a správu předpon.
+Comment[en]=Qt4 utility for Wine applications and prefixes management.
 Comment[es]=Qt4 utilidad para el manejo de aplicaciones y prefijos de wine.
+Comment[it]=Qt4 programma per gestire le applicazioni con Wine e i prefissi.
+Comment[ru]=Qt4 программа для настройки приложений и управления префиксами Wine.
+Comment[uk]=Qt4 програма для налаштування програм та керування префіксами Wine.
 GenericName=Qt4 utility for Wine applications and prefixes management.
-GenericName[it]=Qt4 programma per gestire le applicazioni con Wine e i prefissi.
-GenericName[uk]=Qt4 програма для налаштування програм та керування префіксами Wine.
-GenericName[en]=Qt4 utility for Wine applications and prefixes management.
-GenericName[ru]=Qt4 программа для настройки приложений и управления префиксами Wine.
 GenericName[cz]=Qt4 užitečný program pro programy wine a správu předpon.
+GenericName[en]=Qt4 utility for Wine applications and prefixes management
 GenericName[es]=Qt4 Utilidad para el manejo de aplicaciones y prefijos de wine.
+GenericName[it]=Qt4 programma per gestire le applicazioni con Wine e i prefissi.
+GenericName[ru]=Qt4 программа для настройки приложений и управления префиксами Wine.
+GenericName[uk]=Qt4 програма для налаштування програм та керування префіксами Wine.
 Exec=q4wine -b %u
 Icon=q4wine
 Name=Q4Wine
