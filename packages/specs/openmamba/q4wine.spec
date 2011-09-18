@@ -99,7 +99,7 @@ cmake -d build -DWITH_APPSDB=ON -DWITH_EMBEDDED_FUSEISO=ON -DCMAKE_INSTALL_PREFI
 %{_datadir}/q4wine/icons/*.png
 %{_datadir}/q4wine/theme/nuvola/data/*.png
 %{_mandir}/man1/*.1.gz
-%doc ChangeLog LICENSE README
+%doc ChangeLog COPYING README
 
 %changelog
 * Mon Oct 04 2010 Ercole 'ercolinux' Carpanetto <ercole69@gmail.com> 0.120-2mamba

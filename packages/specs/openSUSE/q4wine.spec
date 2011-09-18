@@ -85,7 +85,7 @@ popd
 
 %files
 %defattr(-,root,root)
-%doc AUTHORS ChangeLog LICENSE README TODO
+%doc AUTHORS ChangeLog COPYING README TODO
 %{_bindir}/*
 %{_datadir}/%{name}
 %{_libdir}/%{name}
