@@ -39,7 +39,7 @@ p, li { white-space: pre-wrap; }
     <message utf8="true">
         <location filename="../q4wine-gui/uis/About.ui" line="254"/>
         <source>© 2008–2011, brezblock core team.</source>
-        <translation type="unfinished">© 2008–2010, brezblock core team. {2008–2011,?}</translation>
+        <translation type="unfinished">© 2008–2011 the brezblock core team.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="299"/>
@@ -3545,24 +3545,24 @@ Note: leave it blank for default.</translation>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="50"/>
         <source>Importing wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see q4wine options dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take awhile...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note: &lt;/b&gt; to remove processed files, use the Options dialog.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="51"/>
         <source>Importing wine desktop icons: %1 of %2 </source>
-        <translation type="unfinished"></translation>
+        <translation>Importing Wine desktop icons: %1 of %2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
         <source>Waiting for wine process finish.</source>
-        <translation type="unfinished"></translation>
+        <translation>Waiting for Wine process to finish...</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
         <source>There are %1 process running for prefix %2</source>
-        <translation type="unfinished"></translation>
+        <translation>There are %1 processes running for prefix %2.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
@@ -3574,12 +3574,12 @@ Note: leave it blank for default.</translation>
         <location filename="../q4wine-gui/progress.cpp" line="60"/>
         <location filename="../q4wine-gui/progress.cpp" line="113"/>
         <source>Running process: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Running process: %1</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="101"/>
         <source>Importing desktop icons: %1 of %2 </source>
-        <translation type="unfinished"></translation>
+        <translation>Importing desktop icons: %1 of %2</translation>
     </message>
 </context>
 <context>
@@ -3588,7 +3588,7 @@ Note: leave it blank for default.</translation>
         <location filename="../core/database/prefix.cpp" line="322"/>
         <location filename="../core/database/prefix.cpp" line="385"/>
         <source>Default</source>
-        <translation type="unfinished">Default</translation>
+        <translation>Default</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="203"/>
@@ -3619,7 +3619,7 @@ Note: leave it blank for default.</translation>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="234"/>
         <source>PID</source>
-        <translation type="unfinished"></translation>
+        <translation>PID</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="234"/>
@@ -4277,7 +4277,7 @@ Note: leave it blank for default.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="51"/>
         <source>PID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">PID</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="52"/>
