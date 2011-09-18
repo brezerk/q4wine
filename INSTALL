@@ -1,8 +1,7 @@
 Qt4 GUI for Wine
 ***********************************************
  
-Q4Wine is a Qt4 GUI for Wine that helps to
-manage ine prefixes and installed applications.
+Q4Wine is a Qt4 GUI for Wine that helps manage Wine prefixes and installed applications.
  
 This software is published under the terms of the GNU GPL V3 and comes
 without any warranty. Feel free to change or distribute this software.
