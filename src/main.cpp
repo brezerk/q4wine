@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
     if (!CoreLib.get()){
-        QErr<<"[EE] Can't load shared library."<<endl;
+        QErr<<"[EE] Cannot load shared library."<<endl;
         return -1;
     }
 
@@ -107,14 +107,14 @@ int main(int argc, char *argv[])
     DataBase db;
 
     if (!db.checkDb()){
-        QErr<<"[EE] Can't init database engine."<<endl;
+        QErr<<"[EE] Cannot initialize database engine."<<endl;
         return -1;
     }
 
     if (!CoreLib->isConfigured()){
         Wizard firstSetupWizard(1);
         if (firstSetupWizard.exec()==QDialog::Rejected){
-            QErr<<"[EE] App not configured! Re run wizard, or delete q4wine broken config files."<<endl;
+            QErr<<"[EE] Application not configured! Rerun setup wizard or delete broken q4wine configuration files."<<endl;
             return -1;
         }
     }
