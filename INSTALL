@@ -1,26 +1,25 @@
-Qt4 GUI for wine (W.I.N.E)
+Qt4 GUI for Wine
 ***********************************************
  
-Q4Wine is an qt4 GUI for W.I.N.E. It will helps you to
-manage wine prefixes and installed applications.
+Q4Wine is a Qt4 GUI for Wine that helps to
+manage ine prefixes and installed applications.
  
-This Software is published under the terms of the GNU GPL V3 and comes
+This software is published under the terms of the GNU GPL V3 and comes
 without any warranty. Feel free to change or distribute this software.
  
 Notes
 ***********************************************
 This software comes with absolutely no warranty. You will NOT get any support or help for WineTools,
-Wine, software installations, Linux or Microsoft Windows from the author.
+Wine, software installations, Linux, Microsoft Windows, and so forth from the author.
  
-If you need help, ask the mailing lists at http://www.winehq.org/site/forums.
+If you need help with Wine, send a message to the mailing lists at "http://www.winehq.org/site/forums".
  
-If you want support, buy the commercial versions of wine: CodeWeavers CrossOver Office
+If you want support, buy the commercial versions of Wine: CodeWeavers CrossOver Office
 http://www.codeweavers.com for Desktop Applications.
  
-q4wine was initially written by Alexey S. Malakhov aka John Brezerk.
+Q4Wine was initially written by Alexey S. Malakhov (also known as John Brezerk).
  
-General ideia comes from WineTools scripts witch was initially written by Frank Hendriksen.
-It is licensed under the terms GPL v3 license.
+The general idea came from WineTools, which was initially written by Frank Hendriksen.
  
 Build dependencies
 ***********************************************
@@ -51,7 +50,7 @@ Installation
  
    q4wine build options:
 
-       By default, q4wine will install allfile into this directoryes:
+       By default, q4wine will install all files into these directories:
 
        CMAKE_INSTALL_PREFIX      : /usr/local
        DESKTOP_ENTRY_PATH        : /usr/local/share/applications
@@ -60,7 +59,7 @@ Installation
        LIBS_ENTRY_PATH           : /usr/local/lib/q4wine   (for x86    systems)
        LIBS_ENTRY_PATH           : /usr/local/lib64/q4wine (for x86_64 systems)
 
-       Optional buils falgs:     : Default | Possible
+       Optional buils flags:     : Default | Possible
 
        DEBUG                     : OFF | ON
        WITH_ICOUTILS             : ON  | OFF
@@ -74,40 +73,40 @@ Installation
        DEBUG                     : If ON, then q4wine will write debug messages into STDOUT
                                  : use it in debug or bug report cases;
        WITH_ICOUTILS             : If ON, then build q4wine with icoutils support;
-       WITH_WINEAPPDB            : If ON, then build q4wine with wine appdb browser support;
+       WITH_WINEAPPDB            : If ON, then build q4wine with Wine AppDB browser support;
        USE_BZIP2                 : Use bzip2 to compress man pages;
        USE_GZIP                  : Use gzip to compress man pages;
-       WITH_DBUS                 : If ON, then build q4wine with QtDBUS notifycation support;
+       WITH_DBUS                 : If ON, then build q4wine with QtDBus notification support;
 
 6. $ make
 7. $ make install
 8. $ q4wine
-6. Enjoy :)
+9. Enjoy :)
 
 Known Issues:
 ***********************************************
-1. Non standart directory
+1. Non-standard directories
 
-If you have installed q4wine in non standart directory, 
-and you get a error message: "error while loading shared libraries: libq4wine-core.so"
-then you need to override LD_LIBRARY_PATH variable
+If you have installed q4wine in a non-standard directory, 
+and you get the following error message: "error while loading shared libraries: libq4wine-core.so",
+then you need to override LD_LIBRARY_PATH variable.
 
 LD_LIBRARY_PATH={$path_to_q4wine_prefix}/lib/ q4wine
 
-2. Problem with dual qt3 and qt4 qmake
+2. Problem with dual qt3 and qt4 qmake installations
 
-CMake by default will search for qmake binary.
-On distributions with dual qt3 and qt4 libraries installed, you may
-need to create symbolic link from qmake-qt4 to qmake binary.
+CMake, by default, will search for a qmake binary.
+On distributions with both qt3 and qt4 libraries installed, you may
+need to create symbolic link from "qmake-qt4" to "qmake".
 
-Is /usr/bin:
+ls /usr/bin:
 lrwxrwxrwx 1 root root 23 2011-07-05 21:07 qmake -> qmake-qt4
 -rwxr-xr-x 1 root root 1901408 2011-04-01 19:04 qmake-qt3
 -rwxr-xr-x 1 root root 3444152 2011-06-24 17:52 qmake-qt4
 
 Uninstall:
 ***********************************************
-In q4wine build root run:
+To uninstall q4wine, run the following command from within q4wine's build root:
 xargs rm < install_manifest.txt
 
 Changelog
@@ -118,9 +117,9 @@ See changelog file for details
 Regards,
  
 Alexey S. Malakhov
-OpenXlout, q4wine ( http://q4wine.brezblock.org.ua ) main developer.
-BrezBlock ( http://brezblock.org.ua ) maintainer
-e-mail: brezerk@gmail.com
-web: http://brezblock.org.ua
+OpenXlout, q4wine (http://q4wine.brezblock.org.ua) main developer.
+BrezBlock (http://brezblock.org.ua) maintainer
+E-mail address: brezerk@gmail.com
+Website: http://brezblock.org.ua
 BrezBlock, Kiev, Ukraine
 
