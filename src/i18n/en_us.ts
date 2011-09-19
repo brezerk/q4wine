@@ -3549,19 +3549,19 @@ Note: leave it blank for default.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="51"/>
-        <source>Importing wine desktop icons: %1 of %2 </source>
+        <source>Importing Wine desktop icons: %1 of %2</source>
         <translation>Importing Wine desktop icons: %1 of %2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
-        <source>Waiting for wine process finish.</source>
+        <source>Waiting for Wine process to finish...</source>
         <translation>Waiting for Wine process to finish...</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
-        <source>There are %1 process running for prefix %2</source>
+        <source>There are %1 processes running for prefix %2.</source>
         <translation>There are %1 processes running for prefix %2.</translation>
     </message>
     <message>
@@ -3578,7 +3578,7 @@ Note: leave it blank for default.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="101"/>
-        <source>Importing desktop icons: %1 of %2 </source>
+        <source>Importing desktop icons: %1 of %2</source>
         <translation>Importing desktop icons: %1 of %2</translation>
     </message>
 </context>

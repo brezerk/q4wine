@@ -39,7 +39,7 @@ p, li { white-space: pre-wrap; }
     <message utf8="true">
         <location filename="../q4wine-gui/uis/About.ui" line="254"/>
         <source>© 2008–2011, brezblock core team.</source>
-        <translation type="unfinished">© 2008–2010, brezblock core team. {2008–2011,?}</translation>
+        <translation type="unfinished">© 2008–2011 the brezblock core team.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="299"/>
@@ -3574,19 +3574,19 @@ Domyślnie są puste.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="51"/>
-        <source>Importing wine desktop icons: %1 of %2 </source>
+        <source>Importing Wine desktop icons: %1 of %2</source>
         <translation>Importowanie ikon pulpitu wine: %1 of %2 </translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
-        <source>Waiting for wine process finish.</source>
+        <source>Waiting for Wine process to finish...</source>
         <translation>Oczekiwanie na zakończenie procesu wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
-        <source>There are %1 process running for prefix %2</source>
+        <source>There are %1 processes running for prefix %2.</source>
         <translation>Uruchomionych jest %1 procesów dla prefiksu %2</translation>
     </message>
     <message>
@@ -3603,7 +3603,7 @@ Domyślnie są puste.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="101"/>
-        <source>Importing desktop icons: %1 of %2 </source>
+        <source>Importing desktop icons: %1 of %2</source>
         <translation>Importowanie ikon pulpitu: %1 of %2 </translation>
     </message>
 </context>
