@@ -1356,7 +1356,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="173"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="174"/>
         <source>Alphabetic sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Алфавитная сортировка по возрастанию</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="114"/>
@@ -1374,7 +1374,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="151"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="152"/>
         <source>Alphabetic sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Алфавитная сортировка по убыванию</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="110"/>
