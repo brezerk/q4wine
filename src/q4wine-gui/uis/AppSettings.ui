@@ -1607,7 +1607,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox_24">
               <property name="title">
-               <string>Select quick mount profile</string>
+               <string>Select Quick Mount Profile</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_4">
                <item>
@@ -1635,7 +1635,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox_25">
               <property name="title">
-               <string>Profile strings:</string>
+               <string>Profile Strings:</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_18">
                <property name="margin">
