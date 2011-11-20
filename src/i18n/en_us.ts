@@ -1057,7 +1057,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="617"/>
         <source>Disable graphical crash dialog</source>
-        <translation>Disable graphical crash dialog/translation>
+        <translation>Disable graphical crash dialog</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="305"/>
