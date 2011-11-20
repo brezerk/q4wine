@@ -1356,7 +1356,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="173"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="174"/>
         <source>Alphabetic sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Алфавитная сортировка по возрастанию</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="114"/>
@@ -1374,7 +1374,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="151"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="152"/>
         <source>Alphabetic sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Алфавитная сортировка по убыванию</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="110"/>
@@ -3578,19 +3578,19 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="51"/>
-        <source>Importing wine desktop icons: %1 of %2 </source>
+        <source>Importing Wine desktop icons: %1 of %2</source>
         <translation>Импортируются десктопые файлы wine: %1 из %2 </translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
-        <source>Waiting for wine process finish.</source>
+        <source>Waiting for Wine process to finish...</source>
         <translation>Ожидание завершения процесса wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
-        <source>There are %1 process running for prefix %2</source>
+        <source>There are %1 processes running for prefix %2.</source>
         <translation>Для префикса %2 запущено процессов: %1</translation>
     </message>
     <message>
@@ -3607,7 +3607,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="101"/>
-        <source>Importing desktop icons: %1 of %2 </source>
+        <source>Importing desktop icons: %1 of %2</source>
         <translation>Импортируются десктопые иконки: %1 из %2 </translation>
     </message>
 </context>

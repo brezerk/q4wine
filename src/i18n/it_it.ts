@@ -39,7 +39,7 @@ p, li { white-space: pre-wrap; }
     <message utf8="true">
         <location filename="../q4wine-gui/uis/About.ui" line="254"/>
         <source>© 2008–2011, brezblock core team.</source>
-        <translation type="unfinished">© 2008–2010, brezblock core team. {2008–2011,?}</translation>
+        <translation type="unfinished">© 2008–2011 the brezblock core team.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="299"/>
@@ -3576,19 +3576,19 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="51"/>
-        <source>Importing wine desktop icons: %1 of %2 </source>
+        <source>Importing Wine desktop icons: %1 of %2</source>
         <translation>Importazione delle icone del desktop di wine: %1 di %2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
-        <source>Waiting for wine process finish.</source>
+        <source>Waiting for Wine process to finish...</source>
         <translation>Attendi che il processo termini.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
-        <source>There are %1 process running for prefix %2</source>
+        <source>There are %1 processes running for prefix %2.</source>
         <translation>Ci sono %1 processi in corso per il prefisso %2</translation>
     </message>
     <message>
@@ -3605,7 +3605,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="101"/>
-        <source>Importing desktop icons: %1 of %2 </source>
+        <source>Importing desktop icons: %1 of %2</source>
         <translation>Importazione delle icone del desktop di wine: %1 di %2</translation>
     </message>
 </context>

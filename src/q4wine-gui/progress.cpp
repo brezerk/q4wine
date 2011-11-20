@@ -48,7 +48,7 @@ Progress::Progress(int action, QString path, QWidget * parent, Qt::WFlags f) : Q
 
     if (action==0){
         lblInfo->setText(tr("Importing wine desktop icons from:<br>\"%1\"<br><br>This can take a while...<br><br><b>Note:</b> To remove processed files see q4wine options dialog.").arg(path));
-        setWindowTitle(tr("Importing wine desktop icons: %1 of %2 ").arg(0).arg(max));
+        setWindowTitle(tr("Importing Wine desktop icons: %1 of %2").arg(0).arg(max));
 
         this->max = importIcons(path);
 
@@ -56,7 +56,7 @@ Progress::Progress(int action, QString path, QWidget * parent, Qt::WFlags f) : Q
     } else if (action==1){
         this->max = 0;
         int cur = CoreLib->getWineProcessList(path).count();
-        lblInfo->setText(QString("%1<br>%2<br><br>%3").arg(tr("Waiting for wine process finish.")).arg(tr("There are %1 process running for prefix %2").arg(cur).arg(path)).arg(tr("While process keep running -- end them manually.")));
+        lblInfo->setText(QString("%1<br>%2<br><br>%3").arg(tr("Waiting for Wine process to finish...")).arg(tr("There are %1 processes running for prefix %2.").arg(cur).arg(path)).arg(tr("While process keep running -- end them manually.")));
         setWindowTitle(tr("Running process: %1").arg(cur));
         t->start(1000);
     }
@@ -98,7 +98,7 @@ void Progress::runAction(){
         }
 
         int index = current;
-        setWindowTitle(tr("Importing desktop icons: %1 of %2 ").arg(current).arg(max));
+        setWindowTitle(tr("Importing desktop icons: %1 of %2").arg(current).arg(max));
         parseDesktopFile(iconFiles.at(index), iconDirs.at(index));
         progressBar->setValue(index);
 
@@ -109,7 +109,7 @@ void Progress::runAction(){
             this->accept();
             return;
         } else {
-            lblInfo->setText(QString("%1<br>%2<br><br>%3").arg(tr("Waiting for wine process finish.")).arg(tr("There are %1 process running for prefix %2").arg(count).arg(this->path)).arg(tr("While process keep running -- end them manually.")));
+            lblInfo->setText(QString("%1<br>%2<br><br>%3").arg(tr("Waiting for Wine process to finish...")).arg(tr("There are %1 processes running for prefix %2.").arg(count).arg(this->path)).arg(tr("While process keep running -- end them manually.")));
             setWindowTitle(tr("Running process: %1").arg(count));
         }
     }
