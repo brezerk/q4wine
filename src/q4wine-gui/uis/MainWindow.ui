@@ -163,7 +163,7 @@
            </property>
            <widget class="QWidget" name="tab_4">
             <attribute name="title">
-             <string>Base setup</string>
+             <string>Base Setup</string>
             </attribute>
             <layout class="QVBoxLayout" name="_2">
              <item>

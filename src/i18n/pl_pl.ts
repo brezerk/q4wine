@@ -832,12 +832,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2447"/>
-        <source>Wine drives</source>
+        <source>Wine Drives</source>
         <translation>Napędy wine</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="393"/>
-        <source>General settings</source>
+        <source>General Settings</source>
         <translation>Ustawienia ogólne</translation>
     </message>
     <message>
@@ -867,17 +867,17 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="653"/>
-        <source>Wine colors theme</source>
+        <source>Wine Colors Theme</source>
         <translation>Motywy kolorów wine</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="662"/>
-        <source>To change color theme in wine dialogs, select one option below:</source>
+        <source>To change the color theme in Wine dialogs, select one of the following options:</source>
         <translation>Aby zmienić motyw kolorów w oknach wine, wybierz jedną z poniższych opcji:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="672"/>
-        <source>Leave existing</source>
+        <source>Use existing color theme</source>
         <translation>Zostaw istniejący</translation>
     </message>
     <message>
@@ -983,7 +983,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="876"/>
-        <source>Video card settings</source>
+        <source>Video Card Settings</source>
         <translation>Ustawienia karty graficznej</translation>
     </message>
     <message>
@@ -1009,7 +1009,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2932"/>
-        <source>Joystick axes mapping:</source>
+        <source>Joystick Axes Mapping:</source>
         <translation>Mapowanie krzyżaków joysticka:</translation>
     </message>
     <message>
@@ -1055,12 +1055,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="494"/>
-        <source>Fake drive version:</source>
+        <source>Fake Drive Version:</source>
         <translation>Wersja imitacji dysku:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="617"/>
-        <source>Disable graphical crash dialog.</source>
+        <source>Disable graphical crash dialog</source>
         <translation>Wyłącz graficzne powiadamianie o błędach.</translation>
     </message>
     <message>
@@ -1098,7 +1098,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1934"/>
-        <source>Current sound driver</source>
+        <source>Current Sound Driver</source>
         <translation>Bieżący sterownik audio</translation>
     </message>
     <message>
@@ -1108,7 +1108,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2347"/>
-        <source>Misc options:</source>
+        <source>Misc Options:</source>
         <translation>Różne opcje:</translation>
     </message>
     <message>
@@ -1118,7 +1118,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2536"/>
-        <source>Wine desktop paths:</source>
+        <source>Wine Desktop Paths:</source>
         <translation>Ścieżki pulpitu wine:</translation>
     </message>
     <message>
@@ -2640,7 +2640,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="166"/>
-        <source>Base setup</source>
+        <source>Base Setup</source>
         <translation>Podstawowe ustawienia</translation>
     </message>
     <message>
