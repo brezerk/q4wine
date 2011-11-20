@@ -161,7 +161,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Prefix settings</string>
+         <string>Prefix Settings</string>
         </property>
        </widget>
       </item>
@@ -217,7 +217,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_5">
             <property name="title">
-             <string>Prefix settings</string>
+             <string>Prefix Settings</string>
             </property>
             <layout class="QVBoxLayout">
              <property name="margin">
@@ -351,7 +351,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_7">
             <property name="title">
-             <string>Quick mount</string>
+             <string>Quick Mount</string>
             </property>
             <layout class="QVBoxLayout">
              <property name="margin">

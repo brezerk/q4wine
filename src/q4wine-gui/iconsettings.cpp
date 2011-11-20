@@ -195,11 +195,11 @@ void IconSettings::getIconReccord(){
             if (list2.at(1)=="n")
                 overrideorder = tr("Native");
             if (list2.at(1)=="b")
-                overrideorder = tr("Buildin");
+                overrideorder = tr("Built-in");
             if (list2.at(1)=="n,b")
-                overrideorder = tr("Native, Buildin");
+                overrideorder = tr("Native, Built-in");
             if (list2.at(1)=="b,n")
-                overrideorder = tr("Buildin, Native");
+                overrideorder = tr("Built-in, Native");
 
             newItem.reset(new QTableWidgetItem(overrideorder));
             newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
@@ -581,11 +581,11 @@ void IconSettings::cmdOk_Click(){
             override.append("n;");
         if (twDlls->item(i-1, 1)->text()==tr("Disabled"))
             override.append("'';");
-        if (twDlls->item(i-1, 1)->text()==tr("Buildin"))
+        if (twDlls->item(i-1, 1)->text()==tr("Built-in"))
             override.append("b;");
-        if (twDlls->item(i-1, 1)->text()==tr("Native, Buildin"))
+        if (twDlls->item(i-1, 1)->text()==tr("Native, Built-in"))
             override.append("n,b;");
-        if (twDlls->item(i-1, 1)->text()==tr("Buildin, Native"))
+        if (twDlls->item(i-1, 1)->text()==tr("Built-in, Native"))
             override.append("b,n;");
     }
 

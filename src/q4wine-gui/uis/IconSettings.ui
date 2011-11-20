@@ -164,7 +164,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Iconn settings</string>
+         <string>Icon Settings</string>
         </property>
        </widget>
       </item>
@@ -354,7 +354,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_7">
             <property name="title">
-             <string>Icon options</string>
+             <string>Icon Options</string>
             </property>
             <layout class="QGridLayout">
              <property name="margin">
@@ -462,7 +462,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_8">
             <property name="title">
-             <string>Virtual desktop</string>
+             <string>Virtual Desktop</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <property name="margin">
@@ -711,22 +711,22 @@
                </item>
                <item>
                 <property name="text">
-                 <string>Buildin</string>
+                 <string>Built-in</string>
                 </property>
                </item>
                <item>
                 <property name="text">
-                 <string>Native, Buildin</string>
+                 <string>Native, Built-in</string>
                 </property>
                </item>
                <item>
                 <property name="text">
-                 <string>Buildin, Native</string>
+                 <string>Built-in, Native</string>
                 </property>
                </item>
                <item>
                 <property name="text">
-                 <string>Disabled</string>
+                 <string>Disable</string>
                 </property>
                </item>
               </widget>
@@ -763,7 +763,7 @@
                </property>
                <column>
                 <property name="text">
-                 <string>Dll name</string>
+                 <string>DLL Name</string>
                 </property>
                </column>
                <column>
@@ -835,7 +835,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_3">
             <property name="title">
-             <string>Debug options</string>
+             <string>Debug Options</string>
             </property>
             <layout class="QVBoxLayout">
              <property name="margin">
@@ -844,7 +844,7 @@
              <item>
               <widget class="QCheckBox" name="cbUseConsole">
                <property name="text">
-                <string>Run with output in console</string>
+                <string>Run With Output in Console</string>
                </property>
               </widget>
              </item>
@@ -889,7 +889,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_9">
             <property name="title">
-             <string>Nice level priority</string>
+             <string>Nice Priority Level</string>
             </property>
             <layout class="QVBoxLayout" name="_3">
              <property name="margin">

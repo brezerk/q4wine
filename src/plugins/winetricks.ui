@@ -92,7 +92,7 @@
    <item row="0" column="1">
     <widget class="QPushButton" name="cmdRefresh">
      <property name="text">
-      <string>Refresh list</string>
+      <string>Refresh List</string>
      </property>
     </widget>
    </item>

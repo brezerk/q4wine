@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Run program</string>
+   <string>Run Program</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../../q4wine.qrc">
@@ -167,7 +167,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Run program</string>
+         <string>Run Program</string>
         </property>
        </widget>
       </item>
@@ -394,7 +394,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_8">
             <property name="title">
-             <string>Virtual desktop</string>
+             <string>Virtual Desktop</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
@@ -584,7 +584,7 @@
         </widget>
         <widget class="QWidget" name="tab_3">
          <attribute name="title">
-          <string>Override DLL</string>
+          <string>Override DLLs</string>
          </attribute>
          <layout class="QVBoxLayout">
           <property name="margin">
@@ -655,7 +655,7 @@
                </item>
                <item>
                 <property name="text">
-                 <string>Disabled</string>
+                 <string>Disable</string>
                 </property>
                </item>
               </widget>
@@ -764,7 +764,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_3">
             <property name="title">
-             <string>Debug options</string>
+             <string>Debug Options</string>
             </property>
             <layout class="QVBoxLayout">
              <property name="margin">
@@ -773,7 +773,7 @@
              <item>
               <widget class="QCheckBox" name="cbUseConsole">
                <property name="text">
-                <string>Run with output in console</string>
+                <string>Run With Output in Console</string>
                </property>
               </widget>
              </item>
@@ -818,7 +818,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_9">
             <property name="title">
-             <string>Nice level priority</string>
+             <string>Nice Priority Level</string>
             </property>
             <layout class="QVBoxLayout" name="_3">
              <property name="margin">

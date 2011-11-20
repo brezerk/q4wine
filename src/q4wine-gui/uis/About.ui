@@ -401,7 +401,7 @@ p, li { white-space: pre-wrap; }
           <item row="0" column="0">
            <widget class="QGroupBox" name="groupBox_5">
             <property name="title">
-             <string>Special thanks</string>
+             <string>Special Thanks</string>
             </property>
             <layout class="QGridLayout" name="_3">
              <property name="margin">
