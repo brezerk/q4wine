@@ -176,13 +176,13 @@ void PrefixSettings::cmdCancel_Click(){
 
 void PrefixSettings::cmdOk_Click(){
     if (txtPrefixName->text().isEmpty()){
-         QMessageBox::warning(this, tr("Error"), tr("Please, enter prefix name"));
+         QMessageBox::warning(this, tr("Error"), tr("Enter a prefix name"));
           return;
     }
 
     if (prefix_name!=txtPrefixName->text()){
         if (db_prefix.isExistsByName(txtPrefixName->text())){
-            QMessageBox::warning(this, tr("Error"), tr("Sorry, but prefix named %1 already exists.").arg(txtPrefixName->text()));
+            QMessageBox::warning(this, tr("Error"), tr("A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists").arg(txtPrefixName->text()));
             return;
         }
     }

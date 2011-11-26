@@ -109,7 +109,7 @@ void WineProcessWidget::createActions(){
     procKillWine->setEnabled(false);
     connect(procKillWine.get(), SIGNAL(triggered()), this, SLOT(procKillWine_Click()));
 
-    procRefresh.reset(new QAction(CoreLib->loadIcon("data/reload.png"), tr("Refresh list"),this));
+    procRefresh.reset(new QAction(CoreLib->loadIcon("data/reload.png"), tr("Refresh List"),this));
     procRefresh->setStatusTip(tr("Refresh process list"));
     connect(procRefresh.get(), SIGNAL(triggered()), this, SLOT(getWineProcesssInfo()));
 

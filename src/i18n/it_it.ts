@@ -75,7 +75,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="404"/>
-        <source>Special thanks</source>
+        <source>Special Thanks</source>
         <translation>Ringraziamenti speciali</translation>
     </message>
     <message>
@@ -600,12 +600,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1610"/>
-        <source>Select quick mount profile</source>
+        <source>Select Quick Mount Profile</source>
         <translation>Selezione profilo di montaggio rapido</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1638"/>
-        <source>Profile strings:</source>
+        <source>Profile Strings:</source>
         <translation>Stringa del profilo:</translation>
     </message>
     <message>
@@ -837,12 +837,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2447"/>
-        <source>Wine drives</source>
+        <source>Wine Drives</source>
         <translation>Dischi di Wine</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="393"/>
-        <source>General settings</source>
+        <source>General Settings</source>
         <translation>Impostazioni generali</translation>
     </message>
     <message>
@@ -872,17 +872,17 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="653"/>
-        <source>Wine colors theme</source>
+        <source>Wine Colors Theme</source>
         <translation>Tema di colori di wine</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="662"/>
-        <source>To change color theme in wine dialogs, select one option below:</source>
+        <source>To change the color theme in Wine dialogs, select one of the following options:</source>
         <translation>Per cambiare il tema di colore nelle finestre di wine, seleziona una delle opzioni qui sotto:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="672"/>
-        <source>Leave existing</source>
+        <source>Use existing color theme</source>
         <translation>Lascia le esistenti</translation>
     </message>
     <message>
@@ -993,7 +993,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="876"/>
-        <source>Video card settings</source>
+        <source>Video Card Settings</source>
         <translation>Settaggi scheda video</translation>
     </message>
     <message>
@@ -1024,7 +1024,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2932"/>
-        <source>Joystick axes mapping:</source>
+        <source>Joystick Axes Mapping:</source>
         <translation>Mappatura assi joystick:</translation>
     </message>
     <message>
@@ -1075,12 +1075,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="494"/>
-        <source>Fake drive version:</source>
+        <source>Fake Drive Version:</source>
         <translation>Versione del disco virtuale:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="617"/>
-        <source>Disable graphical crash dialog.</source>
+        <source>Disable graphical crash dialog</source>
         <translation>Disabilita i messaggi di crash dell&apos;ambiente grafico.</translation>
     </message>
     <message>
@@ -1103,7 +1103,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="1934"/>
-        <source>Current sound driver</source>
+        <source>Current Sound Driver</source>
         <translation>Driver audio attuali</translation>
     </message>
     <message>
@@ -1113,7 +1113,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2347"/>
-        <source>Misc options:</source>
+        <source>Misc Options:</source>
         <translation>Opzioni varie:</translation>
     </message>
     <message>
@@ -1123,7 +1123,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2536"/>
-        <source>Wine desktop paths:</source>
+        <source>Wine Desktop Paths:</source>
         <translation>Percorso al desktop di Wine:</translation>
     </message>
     <message>
@@ -1819,7 +1819,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="465"/>
-        <source>Virtual desktop</source>
+        <source>Virtual Desktop</source>
         <translation>Desktop virtuale</translation>
     </message>
     <message>
@@ -1833,21 +1833,21 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="714"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="198"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="584"/>
-        <source>Buildin</source>
+        <source>Built-in</source>
         <translation>Incorporato</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="719"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="200"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="586"/>
-        <source>Native, Buildin</source>
+        <source>Native, Built-in</source>
         <translation>Nativo, incorporato</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="724"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="202"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="588"/>
-        <source>Buildin, Native</source>
+        <source>Built-in, Native</source>
         <translation>Incorporato, nativo</translation>
     </message>
     <message>
@@ -1944,7 +1944,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="167"/>
-        <source>Iconn settings</source>
+        <source>Icon Settings</source>
         <translation>Impostazioni icone</translation>
     </message>
     <message>
@@ -1970,7 +1970,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="357"/>
-        <source>Icon options</source>
+        <source>Icon Options</source>
         <translation>Opzioni icone</translation>
     </message>
     <message>
@@ -2001,7 +2001,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="729"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="582"/>
-        <source>Disabled</source>
+        <source>Disable</source>
         <translation>Disabilitato</translation>
     </message>
     <message>
@@ -2016,7 +2016,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="766"/>
-        <source>Dll name</source>
+        <source>DLL Name</source>
         <translation>Nome Dll</translation>
     </message>
     <message>
@@ -2036,17 +2036,17 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="838"/>
-        <source>Debug options</source>
+        <source>Debug Options</source>
         <translation>Opzioni di debug</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="847"/>
-        <source>Run with output in console</source>
+        <source>Run With Output in Console</source>
         <translation>Esegui con l&apos;output in console</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="892"/>
-        <source>Nice level priority</source>
+        <source>Nice Priority Level</source>
         <translation>Priorità di livello nice</translation>
     </message>
     <message>
@@ -2153,7 +2153,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconsView.ui" line="27"/>
-        <source>Avalible icons:</source>
+        <source>Available Icons:</source>
         <translation>Icone disponibili:</translation>
     </message>
     <message>
@@ -2260,7 +2260,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/ImageManager.ui" line="241"/>
-        <source>Disc image name</source>
+        <source>Disc Image Name</source>
         <translation>Nome immagine CD</translation>
     </message>
     <message>
@@ -2293,7 +2293,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/InfoDialog.ui" line="74"/>
-        <source>Don&apos;t show this dialog next time</source>
+        <source>Do not show this dialog next time</source>
         <translation>Non mostrare più questa finestra</translation>
     </message>
     <message>
@@ -2650,7 +2650,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="166"/>
-        <source>Base setup</source>
+        <source>Base Setup</source>
         <translation>Settaggi di base</translation>
     </message>
     <message>
@@ -3029,7 +3029,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="164"/>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="220"/>
-        <source>Prefix settings</source>
+        <source>Prefix Settings</source>
         <translation>Impostazioni prefissi</translation>
     </message>
     <message>
@@ -3064,7 +3064,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="354"/>
-        <source>Quick mount</source>
+        <source>Quick Mount</source>
         <translation>Montaggio rapido</translation>
     </message>
     <message>
@@ -3417,7 +3417,7 @@ Nota: lasciare in bianco per i default.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="410"/>
-        <source>Setup prefix fake drive and applications</source>
+        <source>Set up prefix fake drive and applications</source>
         <translation>Configurazione del disco virtuale e delle applicazioni del prefisso</translation>
     </message>
     <message>
@@ -4044,19 +4044,19 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/run.cpp" line="109"/>
         <location filename="../q4wine-gui/run.cpp" line="174"/>
-        <source>Buildin</source>
+        <source>Built-in</source>
         <translation>Incorporato</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/run.cpp" line="111"/>
         <location filename="../q4wine-gui/run.cpp" line="176"/>
-        <source>Native, Buildin</source>
+        <source>Native, Built-in</source>
         <translation>Nativo, Incorporato</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/run.cpp" line="113"/>
         <location filename="../q4wine-gui/run.cpp" line="178"/>
-        <source>Buildin, Native</source>
+        <source>Built-in, Native</source>
         <translation>Incorporato, Nativo</translation>
     </message>
     <message>
@@ -4099,7 +4099,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="20"/>
         <location filename="../q4wine-gui/uis/Run.ui" line="170"/>
-        <source>Run program</source>
+        <source>Run Program</source>
         <translation>Esegui il programma</translation>
     </message>
     <message>
@@ -4125,7 +4125,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="397"/>
-        <source>Virtual desktop</source>
+        <source>Virtual Desktop</source>
         <translation>Desktop virtual</translation>
     </message>
     <message>
@@ -4136,7 +4136,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="658"/>
         <location filename="../q4wine-gui/run.cpp" line="172"/>
-        <source>Disabled</source>
+        <source>Disable</source>
         <translation>Disabilitato</translation>
     </message>
     <message>
@@ -4156,7 +4156,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="587"/>
-        <source>Override DLL</source>
+        <source>Override DLLs</source>
         <translation>Override Dll</translation>
     </message>
     <message>
@@ -4206,17 +4206,17 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="767"/>
-        <source>Debug options</source>
+        <source>Debug Options</source>
         <translation>Opzioni di debug</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="776"/>
-        <source>Run with output in console</source>
+        <source>Run With Output in Console</source>
         <translation>Esegui con l&apos;output in console</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="821"/>
-        <source>Nice level priority</source>
+        <source>Nice Priority Level</source>
         <translation>Priorità di livello nice</translation>
     </message>
     <message>
@@ -4249,12 +4249,12 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     <name>WineDriveDialog</name>
     <message>
         <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="14"/>
-        <source>Wine drive settings</source>
+        <source>Wine Drive settings</source>
         <translation></translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="23"/>
-        <source>Wine drive</source>
+        <source>Wine Drive</source>
         <translation>Disco di wine</translation>
     </message>
     <message>
@@ -4542,7 +4542,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="454"/>
-        <source>Base info:</source>
+        <source>Base information:</source>
         <translation>Info di base:</translation>
     </message>
     <message>
@@ -4607,12 +4607,12 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1783"/>
-        <source>Select quick mount profile</source>
+        <source>Select Quick Mount Profile</source>
         <translation>Seleziona il profilo di montaggio rapido</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1798"/>
-        <source>Quick mount feature allows you to mountumount cd images and drivers via context menu entry.</source>
+        <source>Quick Mount feature allows you to mountumount cd images and drivers via context menu entry.</source>
         <translation>Il montaggio rapido consente di montare/smontare immagini dei cd e dischi attraverso il menu contestuale.</translation>
     </message>
     <message>
@@ -4622,7 +4622,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1839"/>
-        <source>Profile strings:</source>
+        <source>Profile Strings:</source>
         <translation>Parametri del profilo:</translation>
     </message>
     <message>
@@ -4665,7 +4665,7 @@ Per favore scegliere un altro nome o cancellare l&apos;operazione.</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.ui" line="95"/>
-        <source>Refresh list</source>
+        <source>Refresh List</source>
         <translation>Aggiorna lista</translation>
     </message>
     <message>

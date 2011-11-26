@@ -407,7 +407,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
             menu->addAction(entry.release());
 
             entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Configure fake drive settings"), this));
-            entry->setStatusTip(tr("Setup prefix fake drive and applications"));
+            entry->setStatusTip(tr("Set up prefix fake drive and applications"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuSetupPrefix_Click()));
             menu->addAction(entry.release());
 

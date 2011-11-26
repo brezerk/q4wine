@@ -390,7 +390,7 @@
                <bool>false</bool>
               </property>
               <property name="title">
-               <string>General settings</string>
+               <string>General Settings</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout">
                <property name="margin">
@@ -491,7 +491,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox">
               <property name="title">
-               <string>Fake drive version:</string>
+               <string>Fake Drive Version:</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_23">
                <property name="margin">
@@ -614,7 +614,7 @@
                <item>
                 <widget class="QCheckBox" name="cbCrashDialog">
                  <property name="text">
-                  <string>Disable graphical crash dialog.</string>
+                  <string>Disable graphical crash dialog</string>
                  </property>
                  <property name="checked">
                   <bool>false</bool>
@@ -650,7 +650,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox_18">
               <property name="title">
-               <string>Wine colors theme</string>
+               <string>Wine Colors Theme</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_14">
                <property name="margin">
@@ -659,7 +659,7 @@
                <item>
                 <widget class="QLabel" name="label_37">
                  <property name="text">
-                  <string>To change color theme in wine dialogs, select one option below:</string>
+                  <string>To change the color theme in Wine dialogs, select one of the following options:</string>
                  </property>
                  <property name="wordWrap">
                   <bool>true</bool>
@@ -669,7 +669,7 @@
                <item>
                 <widget class="QRadioButton" name="rbColorsLeave">
                  <property name="text">
-                  <string>Leave existing</string>
+                  <string>Use existing color theme</string>
                  </property>
                  <property name="checked">
                   <bool>true</bool>
@@ -873,7 +873,7 @@
                <bool>false</bool>
               </property>
               <property name="title">
-               <string>Video card settings</string>
+               <string>Video Card Settings</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_17">
                <property name="margin">
@@ -1931,7 +1931,7 @@
                <bool>false</bool>
               </property>
               <property name="title">
-               <string>Current sound driver</string>
+               <string>Current Sound Driver</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_27">
                <property name="margin">
@@ -2344,7 +2344,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox_3">
               <property name="title">
-               <string>Misc options:</string>
+               <string>Misc Options:</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_26">
                <property name="margin">
@@ -2444,7 +2444,7 @@
                <bool>false</bool>
               </property>
               <property name="title">
-               <string>Wine drives</string>
+               <string>Wine Drives</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_19">
                <property name="margin">
@@ -2533,7 +2533,7 @@
             <item>
              <widget class="QGroupBox" name="groupBox_20">
               <property name="title">
-               <string>Wine desktop paths:</string>
+               <string>Wine Desktop Paths:</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_21">
                <property name="margin">
@@ -2929,7 +2929,7 @@
                <bool>false</bool>
               </property>
               <property name="title">
-               <string>Joystick axes mapping:</string>
+               <string>Joystick Axes Mapping:</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_38">
                <property name="margin">

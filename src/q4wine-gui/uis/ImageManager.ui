@@ -238,7 +238,7 @@
         </property>
         <column>
          <property name="text">
-          <string>Disc image name</string>
+          <string>Disc Image Name</string>
          </property>
         </column>
         <column>

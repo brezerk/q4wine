@@ -124,8 +124,8 @@ void PrefixControlWidget::createActions(){
     connect(prefixSettings.get(), SIGNAL(triggered()), this, SLOT(prefixSettings_Click()));
     prefixSettings->setEnabled(FALSE);
 
-    prefixSetup.reset(new QAction(CoreLib->loadIcon("data/eject.png"), tr("Setup prefix fake drive"), this));
-    prefixSetup->setStatusTip(tr("Setup prefix fake drive and applications"));
+    prefixSetup.reset(new QAction(CoreLib->loadIcon("data/eject.png"), tr("Set up prefix fake drive"), this));
+    prefixSetup->setStatusTip(tr("Set up prefix fake drive and applications"));
     connect(prefixSetup.get(), SIGNAL(triggered()), this, SLOT(prefixSetup_Click()));
     prefixSetup->setEnabled(FALSE);
 
