@@ -25,7 +25,7 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QWidget * parent, Qt
 
 	// Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName("libq4wine-core");
+    libq4wine.setFileName(_CORELIB_PATH_);;
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
@@ -64,7 +64,7 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter,
 	setupUi(this);
 
 	// Loading libq4wine-core.so
-	libq4wine.setFileName("libq4wine-core");
+	libq4wine.setFileName(_CORELIB_PATH_);;
 
 	if (!libq4wine.load()){
 		libq4wine.load();

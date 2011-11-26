@@ -101,135 +101,135 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AppDBWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="85"/>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="399"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="86"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="400"/>
         <source>Status: Ready</source>
         <translation>Stav: Připraven</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="105"/>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="124"/>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="139"/>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="157"/>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="173"/>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="354"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="106"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="125"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="140"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="158"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="174"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="355"/>
         <source>Status: Connecting to %1</source>
         <translation>Stav: Spojuje se s %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="254"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="255"/>
         <source>Applications</source>
         <translation>Programy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="253"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="254"/>
         <source>Subcategories</source>
         <translation>Podskupiny</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="267"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="268"/>
         <source>Error: can&apos;t read data from %1.</source>
         <translation>Chyba: nelze číst data z %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="270"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="271"/>
         <source>Error: wrong or broken xml data. Try again later.</source>
         <translation>Chyba: nesprávná nebo poškozená data XML. Zkuste to později znovu.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="273"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="274"/>
         <source>Error: wrong or broken appdb xml version. Application needs to be updated?</source>
         <translation>Chyba: nesprávná nebo poškozená verze XML appdb. Program je potřeba obnovit?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="276"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="277"/>
         <source>Error: xml parse error.</source>
         <translation>Chyba: chyba ve zpracování XML.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="279"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="280"/>
         <source>Error: unexpected error.</source>
         <translation>Chyba: neočekávaná chyba.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="282"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="283"/>
         <source>Search: No matches found</source>
         <translation>Hledání: Nebyly nalezeny žádné odpovídající shody</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="290"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="291"/>
         <source>Open AppDB</source>
         <translation>Otevřít AppDB</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="291"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="292"/>
         <source>Open Wine AppDB web site</source>
         <translation>Otevřít internetové stránky Wine AppDB</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="294"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="295"/>
         <source>Open App page</source>
         <translation>Otevřít stránku programu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="295"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="296"/>
         <source>Open current application page at Wine AppDB web site</source>
         <translation>Otevřít nynější stránku programu na internetových stránkách Wine AppDB</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="299"/>
         <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="300"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="301"/>
         <source>Clear results</source>
         <translation>Smazat výsledky</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="304"/>
         <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="305"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="306"/>
         <source>Clear search field</source>
         <translation>Smazat vyhledávací pole</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="308"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="309"/>
         <source>Search in appdb</source>
         <translation>Hledat v appdb</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="309"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="310"/>
         <source>Search in wine appdb</source>
         <translation>Hledat ve wine appdb</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="312"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="313"/>
         <source>Appdb categoryes list</source>
         <translation>Seznam skupin AppDB</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="313"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="314"/>
         <source>View wine appdb categoryes list</source>
         <translation>Zobrazit wine seznam skupin AppDB</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="321"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="322"/>
         <source>Error: %1</source>
         <translation>Chyba: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="357"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="358"/>
         <source>Status: Sending request to the server.</source>
         <translation>Stav: Posílá se požadavek serveru.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="360"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="361"/>
         <source>Status: Reading server&apos;s response.</source>
         <translation>Stav: Čte se odpověď serveru.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="363"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="364"/>
         <source>Status: Closing down connection.</source>
         <translation>Stav: Ukončuje se spojení.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="367"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="368"/>
         <source>Status: Not connected.</source>
         <translation>Stav: Žádné spojení.</translation>
     </message>
@@ -246,68 +246,73 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1393"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="412"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="571"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="680"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="429"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="595"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="704"/>
         <source>No Proxy</source>
         <translation>Žádné proxy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="378"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="384"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="245"/>
+        <source>generic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/appsettings.cpp" line="395"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="401"/>
         <source>Open File</source>
         <translation>Otevřít soubor</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="380"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="386"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="397"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="403"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="573"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="577"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="755"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="758"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="766"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="769"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="597"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="601"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="779"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="782"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="790"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="793"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="573"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="597"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Promiňte, zadejte hostitele proxy.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="577"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="601"/>
         <source>Sorry, specify proxy port.</source>
         <translation>Promiňte, zadejte přípojku proxy.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="755"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="779"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Promiňte, zadejte adresář %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="758"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="782"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Promiňte, zadejte spustitelný soubor %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="766"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="790"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation>Promiňte, zadaný adresář %1 není.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="769"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="793"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation>Promiňte, zadaný spustitelný soubor %1 není.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1872"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="167"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="637"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="176"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="661"/>
         <source>System Default</source>
         <translation>Výchozí nastavení systému</translation>
     </message>
@@ -316,9 +321,9 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2534"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2539"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2543"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="288"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="308"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="790"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="305"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="325"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="814"/>
         <source>General</source>
         <translation>Obecné</translation>
     </message>
@@ -356,8 +361,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="596"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2548"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="311"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="792"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="328"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="816"/>
         <source>System</source>
         <translation>Systém</translation>
     </message>
@@ -409,8 +414,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1087"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2553"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="314"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="794"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="331"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="818"/>
         <source>Utils</source>
         <translation>Užitečné programy</translation>
     </message>
@@ -427,16 +432,16 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1601"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2563"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="320"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="798"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="337"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="822"/>
         <source>Quick Mount</source>
         <translation>Rychlé připojení</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1964"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2588"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="335"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="808"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="352"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="832"/>
         <source>Logging</source>
         <translation>Zapisování</translation>
     </message>
@@ -458,8 +463,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2100"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2603"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="344"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="814"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="361"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="838"/>
         <source>Winetricks</source>
         <translation>Kouzla wine</translation>
     </message>
@@ -492,8 +497,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1822"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1831"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2573"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="326"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="802"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="343"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="826"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
@@ -501,16 +506,16 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1903"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1912"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2578"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="329"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="804"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="346"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="828"/>
         <source>Themes</source>
         <translation>Témata</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="1343"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2558"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="317"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="796"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="334"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="820"/>
         <source>Network</source>
         <translation>Síť</translation>
     </message>
@@ -636,8 +641,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2128"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2613"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="350"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="818"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="367"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="842"/>
         <source>Defaults</source>
         <translation>Výchozí</translation>
     </message>
@@ -664,8 +669,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2396"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2618"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="353"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="820"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="370"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="844"/>
         <source>Run dialog</source>
         <translation>Spouštěcí dialog</translation>
     </message>
@@ -673,8 +678,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2447"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2456"/>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2623"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="356"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="822"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="373"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="846"/>
         <source>Wine desktop import</source>
         <translation>Zavedení plochy wine</translation>
     </message>
@@ -690,36 +695,36 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2569"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="323"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="800"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="340"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="824"/>
         <source>Interface</source>
         <translation>Rozhraní</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2584"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="332"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="806"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="349"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="830"/>
         <source>Subsystems</source>
         <translation>Podsystémy</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2593"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="338"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="810"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="355"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="834"/>
         <source>AppDb browser</source>
         <translation>Prohlížeč AppDB</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2599"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="341"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="812"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="358"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="836"/>
         <source>Plugins</source>
         <translation>Přídavné moduly</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2609"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="347"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="816"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="364"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="840"/>
         <source>Advanced</source>
         <translation>Rozšířené volby</translation>
     </message>
@@ -744,7 +749,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2182"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="714"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="738"/>
         <source>No virtual desktop</source>
         <translation>Žádná virtuální plocha</translation>
     </message>
@@ -1315,68 +1320,68 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
 <context>
     <name>IconListToolbar</name>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="73"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="74"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="75"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="76"/>
         <source>Clear search field</source>
         <translation>Smazat vyhledávací pole</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="77"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="78"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="79"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="80"/>
         <source>Icons view mode</source>
         <translation>Režim s ikonami</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="81"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="82"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="83"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="84"/>
         <source>Details view mode</source>
         <translation>Režim s podrobnostmi</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="85"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="86"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="87"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="88"/>
         <source>Zoom In</source>
         <translation>Přiblížit</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="89"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="90"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="91"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="92"/>
         <source>Zoom Out</source>
         <translation>Oddálit</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="101"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="102"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="146"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="147"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="173"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="174"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="103"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="104"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="148"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="149"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="175"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="176"/>
         <source>Alphabetic sort ascending</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="114"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="115"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="155"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="156"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="164"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="165"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="116"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="117"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="157"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="158"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="166"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="167"/>
         <source>Sort ascending by create order</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="97"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="98"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="151"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="152"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="99"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="100"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="153"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="154"/>
         <source>Alphabetic sort descending</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="110"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="111"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="169"/>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="170"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="112"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="113"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="171"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="172"/>
         <source>Sort descending by create order</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1384,420 +1389,420 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
 <context>
     <name>IconListWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="250"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="772"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="890"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="252"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="775"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="893"/>
         <source>Sorry. It seems icon already exists.</source>
         <translation>Promiňte, ale zdá se, že ikona již existuje.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="250"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="772"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="890"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="252"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="775"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="893"/>
         <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
         <translation>Promiňte, ale zdá se, že ikona již existuje.&lt;br&gt;Vyberte, prosím, jiný název, nebo operaci zrušte.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="269"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1113"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1130"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="271"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1115"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1132"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 úspěšně připojen.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1091"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1094"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
         <translation>Soubory s obrazy disků (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1094"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1096"/>
         <source>ISO image files (*.iso)</source>
         <translation>Soubory s obrazy ISO (*.iso)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1103"/>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1105"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1107"/>
         <source>Open Disc Image Files</source>
         <translation>Otevřít soubory s obrazy disků</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1115"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1132"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1117"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1134"/>
         <source>Fail to mount %1.</source>
         <translation>Nepodařilo se připojit %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="410"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="413"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>V nastavení předpony nebyl nastaven žádný připojovací bod.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="412"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="415"/>
         <source>Mount [%1]</source>
         <translation>Připojit [%1]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="423"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1082"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="426"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1085"/>
         <source>[none]</source>
         <translation>[žádné]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="419"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="422"/>
         <source>Mount media drive.</source>
         <translation>Připojit diskovou jednotku s médiem.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="424"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="427"/>
         <source>No media drives detected.</source>
         <translation>Nezjištěny žádné diskové jednotky.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="435"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="438"/>
         <source>Mount media image.</source>
         <translation>Připojit obraz s médiem.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="445"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="618"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1035"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1085"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="448"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="621"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1038"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1088"/>
         <source>Browse...</source>
         <translation>Procházet...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="446"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="449"/>
         <source>Browse for media image.</source>
         <translation>Procházet kvůli obrazu s médiem.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="464"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="467"/>
         <source>Unmount [%1]</source>
         <translation>Odpojit [%1]</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="465"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="468"/>
         <source>Unmount media.</source>
         <translation>Odpojit médium.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="472"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="475"/>
         <source>Run</source>
         <translation>Spustit</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="473"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="476"/>
         <source>Run current icon</source>
         <translation>Spustit nynější ikonu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="479"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="482"/>
         <source>Options</source>
         <translation>Volby</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="480"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="483"/>
         <source>Modify current icon options</source>
         <translation>Upravit volby nynější ikony</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="486"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="645"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="489"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="648"/>
         <source>Cut</source>
         <translation>Vyjmout</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="487"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="646"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="490"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="649"/>
         <source>Cut selected icons to buffer</source>
         <translation>Vyjmout vybrané ikony do vyrovnávací paměti</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="491"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="651"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="494"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="654"/>
         <source>Copy</source>
         <translation>Kopírovat</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="492"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="652"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="495"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="655"/>
         <source>Copy selected icons to buffer</source>
         <translation>Kopírovat vybrané ikony do vyrovnávací paměti</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="496"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="657"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="499"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="660"/>
         <source>Paste</source>
         <translation>Vložit</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="497"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="658"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="500"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="661"/>
         <source>Paste selected icons from buffer to selected folder</source>
         <translation>Vložit vybrané ikony z vyrovnávací paměti do vybrané složky</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="506"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="509"/>
         <source>Rename</source>
         <translation>Přejmenovat</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="507"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="510"/>
         <source>Rename current icon</source>
         <translation>Přejmenovat nynější ikonu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="511"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="667"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="514"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="670"/>
         <source>Delete</source>
         <translation>Smazat</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="512"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="668"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="515"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="671"/>
         <source>Delete current icon</source>
         <translation>Smazat nynější ikonu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="516"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="676"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="519"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="679"/>
         <source>Browser</source>
         <translation>Prohlížeč</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="518"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="540"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="521"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="543"/>
         <source>Open application directory</source>
         <translation>Otevřít adresář s programem</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="519"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="522"/>
         <source>Open application directory in system file browser</source>
         <translation>Otevřít adresář s programem v systémovém prohlížeči souborů</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="523"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="545"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="677"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="693"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="526"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="548"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="680"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="696"/>
         <source>Open prefix directory</source>
         <translation>Otevřít adresář s předponou</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="524"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="678"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="527"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="681"/>
         <source>Open prefix directory in system file browser</source>
         <translation>Otevřít adresář s předponou v systémovém prohlížeči souborů</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="528"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="550"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="682"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="698"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="531"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="553"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="685"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="701"/>
         <source>Open mount point directory</source>
         <translation>Otevřít adresář s připojovacím bodem</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="529"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="683"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="532"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="686"/>
         <source>Open mount point directory in system file browser</source>
         <translation>Otevřít adresář s připojovacím bodem v systémovém prohlížeči souborů</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="538"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="692"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="541"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="695"/>
         <source>Wine Browser</source>
         <translation>Prohlížeč wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="541"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="544"/>
         <source>Open application directory in wine file browser</source>
         <translation>Otevřít adresář s programem v prohlížeči souborů wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="546"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="694"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="549"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="697"/>
         <source>Open prefix directory in wine file browser</source>
         <translation>Otevřít adresář s předponou v prohlížeči souborů wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="551"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="699"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="554"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="702"/>
         <source>Open mount point directory in wine file browser</source>
         <translation>Otevřít adresář s připojovacím bodem v prohlížeči souborů wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="559"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="707"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="562"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="710"/>
         <source>Console</source>
         <translation>Konzole</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="561"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="564"/>
         <source>Open console in application directory</source>
         <translation>Otevřít konzoli v adresáři s programem</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="562"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="565"/>
         <source>Open system console in application directory</source>
         <translation>Otevřít systémovou konzoli v adresáři s programem</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="566"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="709"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="569"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="712"/>
         <source>Open console in prefix directory</source>
         <translation>Otevřít konzoli v adresáři s předponou</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="567"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="710"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="570"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="713"/>
         <source>Open system console in prefix directory</source>
         <translation>Otevřít systémovou konzoli v adresáři s předponou</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="571"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="714"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="574"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="717"/>
         <source>Open console in mount point directory</source>
         <translation>Otevřít konzoli v adresáři s přípojným bodem</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="572"/>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="715"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="575"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="718"/>
         <source>Open system console in mount point directory</source>
         <translation>Otevřít systémovou konzoli v adresáři s přípojným bodem</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="581"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="584"/>
         <source>Search in Wine AppDB</source>
         <translation>Hledat ve Wine Appdb</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="582"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="585"/>
         <source>Search for application name in wine AppDB</source>
         <translation>Hledat název programu ve Wine Appdb</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="593"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="596"/>
         <source>Copy to clipboard</source>
         <translation>Kopírovat do schránky</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="595"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="598"/>
         <source>Directory path</source>
         <translation>Cesta k adresáři</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="596"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="599"/>
         <source>Copy application directory path to system&apos;s&apos; clipboard</source>
         <translation>Kopírovat cestu k adresáři s programem do schránky systému</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="600"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="603"/>
         <source>Application path</source>
         <translation>Cesta k programu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="601"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="604"/>
         <source>Copy full application path to system&apos;s&apos; clipboard</source>
         <translation>Kopírovat celou cestu k programu do schránky systému</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="607"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="610"/>
         <source>q4wine-cli cmd</source>
         <translation>Příkaz q4wine-cli</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="608"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="611"/>
         <source>Copy q4wine-cli cmd for current application</source>
         <translation>Kopírovat řádek s příkazem q4wine-cli pro nynější program</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="616"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="619"/>
         <source>Run...</source>
         <translation>Spustit...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="794"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="797"/>
         <source>Do you wish to delete all of the selected icons?</source>
         <translation>Chcete smazat všechny vybrané ikony?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="619"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="622"/>
         <source>Browse for other image</source>
         <translation>Procházet kvůli dalšímu obrazu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="271"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="273"/>
         <source>Failed to mount %1.</source>
         <translation>Nepodařilo se připojit %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="297"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="299"/>
         <source>Preparing to run the Wine binary...</source>
         <translation>Připravuje se spuštění spustitelného souboru wine...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="302"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="304"/>
         <source>Trying to run &quot;%1&quot;...</source>
         <translation>Snaží se spustit &quot;%1&quot;...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="304"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="306"/>
         <source>&quot;%1&quot; failed to start.</source>
         <translation>&quot;%1&quot; se nepodařil spustit.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="406"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="409"/>
         <source>Mount ISO...</source>
         <translation>Připojit ISO...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="443"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="446"/>
         <source>Mount...</source>
         <translation>Připojit...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="639"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="642"/>
         <source>New</source>
         <translation>Nový</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="640"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="643"/>
         <source>Create new icon</source>
         <translation>Vytvořit novou ikonu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="769"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="772"/>
         <source>Enter new icon name</source>
         <translation>Zadat název nové ikony</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="769"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="772"/>
         <source>Icon name:</source>
         <translation>Název ikony:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="794"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="797"/>
         <source>Delete Icon</source>
         <translation>Smazat ikonu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1083"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1086"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1083"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1086"/>
         <source>No device drive specified in prefix settings.</source>
         <translation>V nastavení předpony není zadána žádná disková jednotka zařízení.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1139"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1141"/>
         <source>Drive successfully umounted.</source>
         <translation>Disková jednotka byla úspěšně odpojena.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1141"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="1143"/>
         <source>Fail to umount drive.</source>
         <translation>Diskovou jednotku se nepodařilo odpojit.</translation>
     </message>
@@ -2314,84 +2319,84 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
 <context>
     <name>LoggingWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="51"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="52"/>
         <source>Logging list</source>
         <translation>Seznam zápisů</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="101"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="102"/>
         <source>Clear logs</source>
         <translation>Smazat zápisy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="102"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="103"/>
         <source>Clear logs database</source>
         <translation>Smazat databázi se zápisy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="106"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="107"/>
         <source>Delete log</source>
         <translation>Smazat zápis</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="107"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="108"/>
         <source>Delete current log</source>
         <translation>Smazat nynější zápis</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="111"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="112"/>
         <source>Export log</source>
         <translation>Vyvést zápis</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="112"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="113"/>
         <source>Export current log to file</source>
         <translation>Vyvést nynější zápis do souboru</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="116"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="117"/>
         <source>Select all</source>
         <translation>Vybrat vše</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="117"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="118"/>
         <source>Select all log rows</source>
         <translation>Vybrat všechny řádky zápisu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="121"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="122"/>
         <source>Copy selected</source>
         <translation>Kopírovat vybrané</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="122"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="123"/>
         <source>Copy selection into copy buffer</source>
         <translation>Kopírovat výběr do vyrovnávací paměti pro kopírování</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="175"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="176"/>
         <source>Exec string:</source>
         <translation>Spouštěcí řetězec:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="178"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="179"/>
         <source>Exit code:</source>
         <translation>Spouštěcí kód:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="181"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="182"/>
         <source>App STDOUT and STDERR output:</source>
         <translation>Výstup STDOUT a STDERR programu:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="279"/>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="281"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="280"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="282"/>
         <source>Select file to save</source>
         <translation>Vybrat soubor pro uložení</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="279"/>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="281"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="280"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="282"/>
         <source>Log Files (*.log)</source>
         <translation>Soubory se zápisy (*.log)</translation>
     </message>
@@ -2400,7 +2405,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="15"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="61"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="60"/>
         <source>%1 :. Qt4 GUI for Wine v%2</source>
         <translation>%1 :. Qt4 GUI pro wine v%2</translation>
     </message>
@@ -2542,7 +2547,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Spustitelný soubor %1 neexistuje.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="66"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="65"/>
         <source>Current prefix:</source>
         <translation>Nynější předpona:</translation>
     </message>
@@ -2849,137 +2854,137 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
 <context>
     <name>PrefixControlWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="102"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="103"/>
         <source>Create new</source>
         <translation>Vytvořit novou</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="103"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="104"/>
         <source>Create new prefix</source>
         <translation>Vytvořit novou předponu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="106"/>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="107"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="108"/>
         <source>Import prefix</source>
         <translation>Zavést předponu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="111"/>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="112"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="113"/>
         <source>Export prefix</source>
         <translation>Vyvést předponu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="116"/>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="117"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="118"/>
         <source>Delete prefix</source>
         <translation>Smazat předponu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="121"/>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="122"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="123"/>
         <source>Edit prefix settings</source>
         <translation>Upravit nastavení předpony</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="126"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="127"/>
         <source>Setup prefix fake drive</source>
         <translation>Nastavení předpony nepravé diskové jednotky</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="127"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="128"/>
         <source>Setup prefix fake drive and applications</source>
         <translation>Nastavení nepravé diskové jednotky a programů pro předponu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="199"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="200"/>
         <source>Name</source>
         <translation>Název</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="200"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="201"/>
         <source>Architecture</source>
         <translation>Architektura</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="201"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="202"/>
         <source>Path</source>
         <translation>Cesta</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="222"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="223"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="222"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="223"/>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
         <translation>Promiňte, ale nelze smazat výchozí předponu.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="226"/>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="281"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="227"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="282"/>
         <source>Warning</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="226"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="227"/>
         <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
         <translation>Opravdu chcete smazat předponu s názvem &quot;%1&quot; a všechny přiřazené ikony?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="272"/>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="274"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="273"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="275"/>
         <source>Select file to import</source>
         <translation>Vybrat soubor pro zavedení</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="272"/>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="274"/>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="371"/>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="373"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="273"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="275"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="372"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="374"/>
         <source>Prefix archive images (*.tbz)</source>
         <translation>Obrázky archvu předpon (*.tbz)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="281"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="282"/>
         <source>Do you really wish to delete all old prefix files?</source>
         <translation>Chcete smazat všechny staré soubory s předponami?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="286"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="287"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>Odstraňuje se stará nepravá disková jednotka.&lt;br&gt;Může to chvíli trvat...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="286"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="287"/>
         <source>Removing old fake drive</source>
         <translation>Odstraňuje se stará nepravá disková jednotka</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="302"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="303"/>
         <source>Importing prefix.&lt;br&gt;This can take a while...</source>
         <translation>Zavádí se předpona.&lt;br&gt;Může to chvíli trvat...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="302"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="303"/>
         <source>Importing prefix</source>
         <translation>Zavádí se předpona</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="371"/>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="373"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="372"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="374"/>
         <source>Select file to export</source>
         <translation>Vybrat soubor pro vyvedení</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="385"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="386"/>
         <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
         <translation>Vyvádí se %1 předpona.&lt;br&gt;Může to chvíli trvat...</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="385"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="386"/>
         <source>Exporting prefix</source>
         <translation>Vyvádí se předpona</translation>
     </message>
@@ -2993,30 +2998,30 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Přidat novou předponu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="175"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="181"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="179"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="185"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="175"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="179"/>
         <source>Please, enter prefix name</source>
         <translation>Zadejte, prosím, název předpony</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="181"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="185"/>
         <source>Sorry, but prefix named %1 already exists.</source>
         <translation>Promiňte, ale předpona s názvem %1 již existuje.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="222"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="224"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="226"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="228"/>
         <source>Open File</source>
         <translation type="unfinished">Otevřít soubor</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="233"/>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="235"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="237"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="239"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
@@ -3123,38 +3128,38 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
 <context>
     <name>PrefixTreeToolbar</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="68"/>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="69"/>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="96"/>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="97"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="70"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="71"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="98"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="99"/>
         <source>Expand prefix tree</source>
         <translation>Rozbalit strom předpon</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="73"/>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="74"/>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="102"/>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="103"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="75"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="76"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="104"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="105"/>
         <source>Collapse prefix tree</source>
         <translation>Složit strom předpon</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="80"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="82"/>
         <source>Import prefixes</source>
         <translation>Zavést předpony</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="81"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="83"/>
         <source>Import prefixes from ~/.local/share/wineprefixes/</source>
         <translation>Zavést předpony z ~/.local/share/wineprefixes/</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="84"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="86"/>
         <source>Export prefixes</source>
         <translation>Vyvést předpony</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="85"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="87"/>
         <source>Export prefixes to ~/.local/share/wineprefixes/</source>
         <translation>Vyvést předpony do ~/.local/share/wineprefixes/</translation>
     </message>
@@ -3615,411 +3620,411 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Výchozí</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="203"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="246"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="259"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="290"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="304"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="333"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="385"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="207"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="250"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="263"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="294"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="308"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="337"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="389"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>Není nastavena žádná nynější předpona. Nastavte předponu pomocí klíče &quot;-p &lt;prefix_name&gt;&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="208"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="212"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
         <translation>Není nastavena žádná nynější sada s ikonami. Nastavte ikonu pomocí klíče &quot;-p &lt;prefix_name&gt;&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="228"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="232"/>
         <source>Wine process list</source>
         <translation>Seznam procesů wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="230"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="234"/>
         <source>Wine process list for &quot;%1&quot; prefix</source>
         <translation>Seznam procesů wine pro předponu &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="234"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="238"/>
         <source>PID</source>
         <translation>PID</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="234"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="238"/>
         <source>Nice</source>
         <translation>Nice</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="176"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="234"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="251"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="273"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="283"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="180"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="238"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="255"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="277"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="287"/>
         <source>Name</source>
         <translation>Název</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="234"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="238"/>
         <source>Prefix path</source>
         <translation>Cesta k předponě</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="175"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="179"/>
         <source>Prefix list</source>
         <translation>Seznam předpon</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="176"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="283"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="180"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="287"/>
         <source>Path</source>
         <translation>Cesta</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="250"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="254"/>
         <source>Prefix &quot;%1&quot; has following dir list</source>
         <translation>Předpona &quot;%1&quot; má následující seznam adresářů</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="269"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="273"/>
         <source>Prefix &quot;%1&quot; has following icon list</source>
         <translation>Předpona &quot;%1&quot; má následující seznam ikon</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="271"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="275"/>
         <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
         <translation>Předpona &quot;%1&quot; má následující seznam ikon v adresáři &quot;%2&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="273"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="277"/>
         <source>Description</source>
         <translation>Popis</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="282"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="286"/>
         <source>%1 has the following disc images in the database</source>
         <translation>&quot;%1&quot; má v databázi následující obrazy disků</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="293"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="297"/>
         <source>Killing prefix &quot;%1&quot; wineserver.</source>
         <translation>Zabíjí se wineserver předpony &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="310"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="339"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="365"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="314"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="343"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="369"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>V nastavení předpony nebyl nastaven žádný připojovací bod.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="317"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="321"/>
         <source>No disc image &quot;%1&quot; exists. Run &quot;%2-cli -cl&quot; for disc image list.</source>
         <translation>Neexistuje žádný obraz disku &quot;%1&quot;. Spusťte &quot;%2-cli -cl&quot; pro seznam diskových obrazů.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="426"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="430"/>
         <source>sets the cd iamge name</source>
         <translation>Nastaví název obrazu cd</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="343"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="347"/>
         <source>Umounting mount point &quot;%1&quot;.</source>
         <translation>Odpojuje se přípojný bod &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="355"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="359"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Seznam připojených médií pro všechny předpony</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="356"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="360"/>
         <source>Prefix</source>
         <translation>Předpona</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="356"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="370"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="360"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="374"/>
         <source>Mount point</source>
         <translation>Přípojný bod</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="356"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="370"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="360"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="374"/>
         <source>Media</source>
         <translation>Média</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="369"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="373"/>
         <source>Mounted media list for prefix &quot;%1&quot;</source>
         <translation>Seznam připojených médií pro předponu &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="130"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="378"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="89"/>
+        <location filename="../main.cpp" line="136"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="382"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="93"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>Toto je svobodný program: Máte volnost při jeho úpravě a dalším šíření.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="131"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="379"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="90"/>
+        <location filename="../main.cpp" line="137"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="383"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="94"/>
         <source>There is NO WARRANTY, to the extent permitted by law.</source>
         <translation>Není zde ŽÁDNÁ ZÁRUKA, v rozsahu povoleném zákonem.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="133"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="381"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="92"/>
+        <location filename="../main.cpp" line="139"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="385"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="96"/>
         <source>Author: %1.</source>
         <translation>Autor: %1.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="147"/>
+        <location filename="../main.cpp" line="153"/>
         <source>Open q4wine run dialog for windows binary</source>
         <translation>Otevřít spouštěcí dialog q4wine pro spustitelné soubory Windows</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="150"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="441"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="155"/>
+        <location filename="../main.cpp" line="156"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="445"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="159"/>
         <source>Report %1 bugs to %2</source>
         <translation>Hlásit %1 chyby %2</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="142"/>
+        <location filename="../main.cpp" line="148"/>
         <source>  %1 [KEY]...</source>
         <translation>  %1 [KLÍČ]...</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="148"/>
+        <location filename="../main.cpp" line="154"/>
         <source>minimize %1 main window on startup</source>
         <translation>Zmenšit hlavní okno %1 při spuštění</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="143"/>
+        <location filename="../main.cpp" line="149"/>
         <source>GUI utility for wine applications and prefixes management.</source>
         <translation>Užitečný program s grafickým uživatelským rozhraním pro programy wine a správu předpon.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="392"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="396"/>
         <source>File &quot;%1&quot; not exists.</source>
         <translation>Soubor &quot;%1&quot; neexistuje.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="140"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="414"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="139"/>
+        <location filename="../main.cpp" line="146"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="418"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="143"/>
         <source>Usage:</source>
         <translation>Použití:</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="418"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="422"/>
         <source>Console utility for wine applications and prefixes management.</source>
         <translation>Užitečný program s konzolovým rozhraním pro programy wine a správu předpon.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="144"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="419"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="142"/>
+        <location filename="../main.cpp" line="150"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="423"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="146"/>
         <source>KEYs list:</source>
         <translation>Seznam KLÁVES:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="145"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="420"/>
+        <location filename="../main.cpp" line="151"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="424"/>
         <source>display this help and exit</source>
         <translation>Zobrazit tuto nápovědu a ukončit</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="146"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="421"/>
+        <location filename="../main.cpp" line="152"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="425"/>
         <source>output version information and exit</source>
         <translation>Provést výstup informace o verzi a ukončit</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="422"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="426"/>
         <source>output wine process list for current prefix or for all prefixes and exit </source>
         <translation>Provést výstup seznamu s procesy wine pro nynější předponu nebo pro všechny předpony a ukončit</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="423"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="143"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="427"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="147"/>
         <source>sets the current prefix name</source>
         <translation>Nastaví název nynější předpony</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="424"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="428"/>
         <source>sets the current direcory name</source>
         <translation>Nastaví název nynějšího adresáře</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="425"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="429"/>
         <source>sets the current icon name</source>
         <translation>Nastaví název nynější ikony</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="427"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="431"/>
         <source>sets the path to windows binary for execute with current prefix settings</source>
         <translation>Nastaví cestu k spustitelnému souboru Windows programu pro jeho spuštění s nynějším nastavením předpony</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="439"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="443"/>
         <source> -1 if serious troubles</source>
         <translation> -1 v případě vážným potíží</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="101"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="105"/>
         <source>Prefix named &quot;%1&quot; not exists. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>Neexistuje předpona s názvem &quot;%1&quot;. Spusťte &quot;%2-cli -pl&quot; pro seznam předpon.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="213"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="217"/>
         <source>Icon named &quot;%1&quot; not exists.  Run &quot;%2-cli -il&quot; for icon list.</source>
         <translation>Neexistuje ikona s názvem &quot;%1&quot;. Spusťte &quot;%2-cli -il&quot; pro seznam ikon.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="264"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="268"/>
         <source>Dir named &quot;%1&quot; not exists. Run &quot;%2-cli -dl&quot; for dir list.</source>
         <translation>Neexistuje adresář s názvem &quot;%1&quot;. Spusťte &quot;%2-cli -dl&quot; pro seznam adresářů.</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="415"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="419"/>
         <source>  %1-cli [KEY]...</source>
         <translation>  %1-cli [KLÍČ]...</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="416"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="420"/>
         <source>  %1-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
         <translation>  %1-cli -p &lt;název_předpony&gt; [-d &lt;název_adresáře&gt;] -i &lt;název_ikony&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="417"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="421"/>
         <source>  %1-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [args]</source>
         <translation>  %1-cli -p &lt;název_předpony&gt; -b &lt;cesta_k_spustitelnému_souboru_windows&gt; [argumenty]</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="428"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="432"/>
         <source>sends -9 term signal to current prefix precess or for all prefixes processes</source>
         <translation>Pošle signál -9 term procesu nynější předpony nebo procesům všech předpon</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="429"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="433"/>
         <source>output all exesting prefixes names and exit</source>
         <translation>Provést výstup názvů všech existujících předpon a ukončit</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="430"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="434"/>
         <source>output all exesting dir names for current prefix and exit</source>
         <translation>Provést výstup názvů všech existujících adresářů pro nynější předponu a ukončit</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="431"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="435"/>
         <source>output all exesting icon names for current prefix/directory and exit</source>
         <translation>Provést výstup názvů všech existujících ikon pro nynější předponu/adresář a ukončit</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="432"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="436"/>
         <source>output all cd images list and exit</source>
         <translation>Provést výstup seznamu všech obrazů CD a ukončit</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="433"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="437"/>
         <source>output all mounted media for current prefix or all prefixes and exit</source>
         <translation>Provést výstup všech připojených médií pro nynější předponu nebo všechny předpony a ukončit</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="434"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="438"/>
         <source>mount an cd iamage or drive for current prefix and exit</source>
         <translation>Připojit obraz CD nebo diskovou jednotku pro nynější předponu a ukončit</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="435"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="439"/>
         <source>umount an cd iamage or drive for current prefix and exit</source>
         <translation>Odpojit obraz CD nebo diskovou jednotku pro nynější předponu a ukončit</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="437"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="441"/>
         <source>Exit status:</source>
         <translation>Stav ukončení:</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="438"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="442"/>
         <source>  0 if OK,</source>
         <translation>  0 je-li OK,</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="151"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="442"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="156"/>
+        <location filename="../main.cpp" line="157"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="446"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="160"/>
         <source>%1 homepage: &lt;%2&gt;</source>
         <translation>%1 domovské stránky: &lt;%2&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="152"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="443"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="157"/>
+        <location filename="../main.cpp" line="158"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="447"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="161"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
         <translation>Obecná nápověda za použití programů GNU: &lt;http://www.gnu.org/gethelp/&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="140"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="144"/>
         <source>  %1-helper [KEYs]...</source>
         <translation>  %1-helper [KLÍČE]...</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="144"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="148"/>
         <source>sets WINEDEBUG variable</source>
         <translation>Nastaví proměnnou WINEDEBUG</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="141"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="145"/>
         <source>Console utility for q4wine which helps to handle wine application exit status and it&apos;s stdout\stderr output logging.</source>
         <translation>Užitečný konzolový program pro q4wine, který vám pomůže ovládat stav ukončení programu wine a jeho zápis výstupu stdout\stderr.</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="145"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="149"/>
         <source>run with output in console</source>
         <translation>Spustit s výstupem do konzole</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="146"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="150"/>
         <source>sets DISPLAY variable</source>
         <translation>Nastaví proměnnou DISPLAY</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="147"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="151"/>
         <source>sets program nicenes</source>
         <translation>Nastaví přesnost programu</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="148"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="152"/>
         <source>sets program virtual desktop resolution</source>
         <translation>Nastaví rozlišení virtuální pracovní plochy programu</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="149"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="153"/>
         <source>sets program binary</source>
         <translation>Nastaví spustitelný soubor programu</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="150"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="154"/>
         <source>sets program args</source>
         <translation>Nastaví argumenty programu</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="151"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="155"/>
         <source>sets program working directory</source>
         <translation>Nastaví pracovní adresář programu</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="152"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="156"/>
         <source>sets program LANG variable</source>
         <translation>Nastaví proměnnou LANG programu</translation>
     </message>
     <message>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="153"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="157"/>
         <source>sets WINEDLLOVERRIDES variable</source>
         <translation>Nastaví proměnnou WINEDLLOVERRIDES</translation>
     </message>
@@ -4299,115 +4304,115 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
 <context>
     <name>WineProcessWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="51"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="52"/>
         <source>PID</source>
         <translation>PID</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="52"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="53"/>
         <source>Name</source>
         <translation>Název</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="53"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="54"/>
         <source>Ni</source>
         <translation>Ni</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="54"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="55"/>
         <source>Prefix path</source>
         <translation>Cesta k předponě</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="68"/>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="139"/>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="152"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="69"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="143"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="156"/>
         <source>Total process count: %1</source>
         <translation>Celkový počet procesů: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="101"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="102"/>
         <source>Stop current</source>
         <translation>Zastavit nynější</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="102"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="103"/>
         <source>Send TERM signal to selected process</source>
         <translation>Poslat signál TERM vybranému procesu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="106"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="107"/>
         <source>Stop wine</source>
         <translation>Zastavit wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="107"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="108"/>
         <source>Send TERM signal to main wine process</source>
         <translation>Poslat signál TERM hlavnímu procesu wine</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="111"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
         <source>Refresh list</source>
         <translation>Obnovit seznam</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="113"/>
         <source>Refresh process list</source>
         <translation>Obnovit seznam s procesy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="115"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="116"/>
         <source>Renice</source>
         <translation>Renice</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="116"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="117"/>
         <source>Set process priority</source>
         <translation>Nastavit přednost procesů</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="200"/>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="237"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="204"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="241"/>
         <source>Warning</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="200"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="204"/>
         <source>This action will send a KILL(-9) signal to selected processes&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
         <translation>Tento krok pošle signál KILL(-9) vybraným procesům&lt;br&gt;&lt;br&gt;Jedná se o VELKOU hrozbu, která může poškodit obvyklý stav wine.&lt;br&gt;&lt;br&gt;Opravdu chcete pokračovat?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="237"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="241"/>
         <source>This action will send a KILL(-9) signal to all wine processes for selected prefixes&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
         <translation>Tento krok pošle signál KILL(-9) všem procesům wine pro vybrané předpony&lt;br&gt;&lt;br&gt;Opravdu chcete pokračovat?</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="286"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="290"/>
         <source>It seems process %1 renice to %2 end successfully.</source>
         <translation>Zdá se, že proces %1 renice %2 do byl ukončen úspěšně.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="221"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="221"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>
         <source>Can&apos;t run: %1</source>
         <translation>Nelze spustit: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="226"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="230"/>
         <source>It seems process %1 killed successfully.</source>
         <translation>Zdá se, že proces %1 byl zabit úspěšně.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="266"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="270"/>
         <source>Select process priority</source>
         <translation>Vybrat přednost procesu</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="266"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="270"/>
         <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Hodnota přednosti může být v&lt;br&gt;rozsahu od PRIO_MIN (-20)&lt;br&gt;do PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Kvůli podrobnostem se podívejte na &quot;man renice&quot;.&lt;/p&gt;</translation>
     </message>
@@ -4416,22 +4421,22 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <name>Wizard</name>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="1560"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="189"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="362"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="406"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="215"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="388"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="432"/>
         <source>No Proxy</source>
         <translation>Žádné proxy</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Wizard.ui" line="2056"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="542"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="547"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="568"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="573"/>
         <source>Next &gt;</source>
         <translation>Další &gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="91"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="510"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="536"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation>&lt;b&gt;Krok %1 z %2&lt;/b&gt;</translation>
     </message>
@@ -4446,79 +4451,84 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>&lt;b&gt;Průvodce prvním spuštěním&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="246"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="252"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="204"/>
+        <source>generic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/wizard.cpp" line="272"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="278"/>
         <source>Open File</source>
         <translation>Otevřít soubor</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="248"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="254"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="274"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="280"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="291"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="294"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="302"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="305"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="364"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="368"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="317"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="320"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="328"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="331"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="390"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="394"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="291"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="317"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Promiňte, zadejte adresář %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="294"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="320"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Promiňte, zadejte spustitelný soubor %1.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="302"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="328"/>
         <source>Sorry, specified %1 directory not exists.</source>
         <translation>Promiňte, zadaný adresář %1 není.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="305"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="331"/>
         <source>Sorry, specified %1 binary not exists.</source>
         <translation>Promiňte, zadaný spustitelný soubor %1 není.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="364"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="390"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Promiňte, zadejte hostitele proxy.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="368"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="394"/>
         <source>Sorry, specify proxy port.</source>
         <translation>Promiňte, zadejte přípojku proxy.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="518"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="544"/>
         <source>&lt;b&gt;First startup wizrad&lt;/b&gt;</source>
         <translation>&lt;b&gt;Průvodce prvním spuštěním&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="525"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="551"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Alexey S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; byl původně napsán Alexeyem S. Malakhovem neboli Johnem Brezerkem  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Celková myšlenka má svůj původ ve skriptech &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt;, které byly původně napsány Frankem Hendriksenem [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Povolení je vydáno pod &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Poznámky, hlášení chyb atd. posílejte na adresu[&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Poznámka&lt;/span&gt;&lt;/b&gt;: Tento program je poskytován bez záruky jakéhokoli druhu. Od autora &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NEDOSTANETE&lt;/span&gt;&lt;/b&gt; žádnou podporu nebo nápovědu k WineTools, Wine, instalacím programů, v Linuxu nebo na Microsoft Windows.&lt;/p&gt;&lt;p&gt;Jestliže budete &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;potřebovat pomoc&lt;/span&gt;, zeptejte se na poštovním seznamu &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;A jestliže &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;chcete podporu&lt;/span&gt;, kupte si obchodovanou verzi wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) pro programy provozované na stolním počítači&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="519"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="545"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Vítejte v průvodci prvním spuštěním.&lt;/p&gt;&lt;p&gt;Tento průvodce vám pomůže provést všechny kroky potřebné pro nastavení %1.&lt;/p&gt;&lt;p&gt;Stiskněte, prosím, tlačítko &lt;b&gt;Další&lt;/b&gt;, abyste přešel na další stránku tohoto průvodce. Nebo stiskněte tlačítko &lt;b&gt;Zpět&lt;/b&gt;, chcete-li se vrátit.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="552"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="578"/>
         <source>Finish</source>
         <translation>Dokončit</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="551"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="577"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Vše je připraveno pro dokončení nastavení %1. &lt;/p&gt;&lt;p&gt;Stiskněte, prosím, tlačítko &lt;b&gt;Dokončit&lt;/b&gt;, abyste vytvořil proces dokončení nastavení. Nebo stiskněte tlačítko &lt;b&gt;Zpět&lt;/b&gt;, chcete-li se vrátit.&lt;/p&gt;</translation>
     </message>

@@ -48,6 +48,7 @@
 int main(int argc, char *argv[])
 {
     QtSingleApplication app(argc, argv);
+
     QTextStream QErr(stderr);
 
     QString exec_binary;
@@ -70,10 +71,11 @@ int main(int argc, char *argv[])
 
     // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName("libq4wine-core");
+    libq4wine.setFileName(_CORELIB_PATH_);;
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
+
     if (!libq4wine.load()){
         qDebug()<<libq4wine.errorString();
         libq4wine.load();
@@ -91,7 +93,11 @@ int main(int argc, char *argv[])
     QTranslator qtt;
 
 #ifdef RELEASE
-    QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
+    #ifdef _OS_DARWIN_
+        QString i18nPath = QString("%1/%2.app/Contents/i18n").arg(QDir::currentPath()).arg(APP_SHORT_NAME);
+    #else
+        QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
+    #endif
 #else
     QString i18nPath = QString("%1/i18n").arg(APP_BUILD);
 #endif

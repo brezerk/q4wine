@@ -23,7 +23,7 @@ WineObject::WineObject(QObject *parent) : QObject(parent)
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName("libq4wine-core");
+    libq4wine.setFileName(_CORELIB_PATH_);;
 #else
     libq4wine.setFileName(QString("%1/q4wine-lib/libq4wine-core").arg(APP_BUILD));
 #endif

@@ -24,7 +24,7 @@ PrefixControlWidget::PrefixControlWidget(QWidget *parent) :
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName("libq4wine-core");
+    libq4wine.setFileName(_CORELIB_PATH_);;
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
@@ -40,6 +40,7 @@ PrefixControlWidget::PrefixControlWidget(QWidget *parent) :
     this->createActions();
 
     std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
+    toolBar->setIconSize(QSize(24, 24));
     toolBar->addAction(prefixAdd.get());
     toolBar->addSeparator ();
     toolBar->addAction(prefixImport.get());

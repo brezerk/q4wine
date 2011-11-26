@@ -20,10 +20,9 @@
 #include "mainwindow.h"
 
 MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
-
      // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName("libq4wine-core");
+    libq4wine.setFileName(_CORELIB_PATH_);;
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
@@ -65,6 +64,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     std::auto_ptr<QToolBar> toolbar (new QToolBar(tabPrefixSeup));
     std::auto_ptr<QLabel> label (new QLabel(QString(" %1 ").arg(tr("Current prefix:"))));
 
+    toolbar->setIconSize(QSize(24, 24));
     toolbar->addWidget(label.release());
     toolbar->addWidget(cbPrefixes.get());
 

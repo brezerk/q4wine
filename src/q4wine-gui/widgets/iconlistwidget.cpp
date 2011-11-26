@@ -23,7 +23,7 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName("libq4wine-core");
+    libq4wine.setFileName(_CORELIB_PATH_);;
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
@@ -209,6 +209,7 @@ void IconListWidget::setDisplayType(bool icon){
 }
 
 void IconListWidget::startDrag(){
+#ifndef _OS_DARWIN_
     if (this->prefixName.isEmpty())
         return;
 
@@ -231,6 +232,7 @@ void IconListWidget::startDrag(){
         drag->start(Qt::MoveAction);
         drag.release();
     }
+#endif
 }
 
 void IconListWidget::startDrop(QList<QUrl> files){
@@ -332,6 +334,7 @@ void IconListWidget::mousePressEvent(QMouseEvent *event){
     QListWidget::mousePressEvent(event);
 }
 
+#ifndef _OS_DARWIN_
 void IconListWidget::mouseMoveEvent(QMouseEvent *event){
     if (itemAt(event->pos()) && dragstarted){
         if (event->buttons() & Qt::LeftButton){
@@ -344,9 +347,9 @@ void IconListWidget::mouseMoveEvent(QMouseEvent *event){
             return;
         }
     }
-
     QListWidget::mouseMoveEvent(event);
 }
+#endif
 
 void IconListWidget::dragEnterEvent(QDragEnterEvent *event){
     if (event->mimeData()->hasFormat("text/uri-list"))
@@ -1089,8 +1092,7 @@ void IconListWidget::menuMount_triggered(QAction* action){
         QString fileFilter;
 #ifdef _OS_LINUX_
         fileFilter = tr("Disc image files (*.iso *.nrg *.img *.bin *.mdf)");
-#endif
-#ifdef _OS_FREEBSD_
+#else
         fileFilter =  tr("ISO image files (*.iso)");
 #endif
 

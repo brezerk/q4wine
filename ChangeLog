@@ -5,15 +5,17 @@ See INSTALL file for details
 ChangeLog
 ***********************************************
 
-Varsion 0.122
+Varsion 1.0
  Added:
+  - MacOS X support;
   - Icon and Prefix sorting (name, date);
   - Version string to About page;
   - Handler for wrong url in wine app db;
   
   Fixed:
+  - Fixed process refresh loop;
   - Extended env command after console terminal;
-  - Updated READMIN file: Added "Known Issues" section;
+  - Updated README file: Added "Known Issues" section;
   - Set WINEDEBUG to '-all' if logging subsystem disabled and programm was
   exceuted not in console session;
   - Icon export dialog empty icons [3358599];

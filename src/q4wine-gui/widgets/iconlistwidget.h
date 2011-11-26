@@ -71,7 +71,9 @@ public slots:
 
 private:
       void mousePressEvent(QMouseEvent *event);
+#ifndef _OS_DARWIN_
       void mouseMoveEvent(QMouseEvent *event);
+#endif
       void dragEnterEvent(QDragEnterEvent *event);
       void dragMoveEvent(QDragMoveEvent *event);
       void dropEvent(QDropEvent *event);

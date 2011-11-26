@@ -23,7 +23,7 @@ WineProcessWidget::WineProcessWidget(QWidget *parent) : QWidget(parent)
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName("libq4wine-core");
+    libq4wine.setFileName(_CORELIB_PATH_);;
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
@@ -39,6 +39,7 @@ WineProcessWidget::WineProcessWidget(QWidget *parent) : QWidget(parent)
     this->createActions();
 
     std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
+    toolBar->setIconSize(QSize(24, 24));
     toolBar->addAction(procKillSelected.get());
     toolBar->addAction(procKillWine.get());
     toolBar->addSeparator();
@@ -79,7 +80,7 @@ WineProcessWidget::WineProcessWidget(QWidget *parent) : QWidget(parent)
     this->setLayout(layout.release());
 
     timer.reset(new QTimer());
-    timer->start(1000);
+    //timer->start(1000);
 
     // Connecting signals and slots
     connect(timer.get(), SIGNAL(timeout()), this, SLOT(getWineProcesssInfo()));
@@ -93,7 +94,7 @@ void WineProcessWidget::stopTimer(void){
 
 void WineProcessWidget::startTimer(void){
     this->getWineProcesssInfo();
-    timer->start();
+    timer->start(1000);
     return;
 }
 
@@ -129,6 +130,9 @@ void WineProcessWidget::createActions(){
 }
 
 void WineProcessWidget::getWineProcesssInfo(void){
+#ifdef DEBUG
+    qDebug()<<"[ii] Get Wine process list";
+#endif
     QList<QStringList> proclist = CoreLib->getWineProcessList();
 
     if (proclist.count()<=0){

@@ -26,6 +26,9 @@
  */
 
 #ifndef CONFIG_H
+
+#include <stdlib.h>
+
 #define CONFIG_H
 
 #define D_TREE_COLLAPSE 1
@@ -56,7 +59,21 @@
 
 #cmakedefine WITH_DBUS
 
+//! process_info struct
+typedef struct{
+    char *name;
+    int pid;
+    int nice;
+    char *args;
+} process_info;
 
+//! process_list struct
+typedef struct{
+    process_info** procs;
+    size_t pnum;
+    size_t size;
+    size_t block_size;
+} process_list;
 
 /*
  * Note APP_VERS, APP_PREF and APP_BUILD automatycaly generates by cmake

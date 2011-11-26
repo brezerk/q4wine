@@ -56,7 +56,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 
     // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName("libq4wine-core");
+    libq4wine.setFileName(_CORELIB_PATH_);;
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
@@ -110,14 +110,20 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
         txtWineServerBin->setText(CoreLib->getWhichOut("wineserver"));
         txtWineLoaderBin->setText(CoreLib->getWhichOut("wine"));
 
-        if (QDir("/usr/lib/wine").exists())
-            txtWineDllPath->setText("/usr/lib/wine");
+        QStringList libs_loc, libs_arch;
+        libs_loc << "/usr/lib" << "/usr/local/lib" << "/local/usr/lib";
+        libs_arch << "64" << "32" << "";
 
-        if (QDir("/local/usr/lib/wine").exists())
-            txtWineDllPath->setText("/local/usr/lib/wine");
-
-        if (QDir("/usr/local/lib/wine").exists())
-            txtWineDllPath->setText("/usr/local/lib/wine");
+        foreach (QString loc, libs_loc){
+            foreach (QString arch, libs_arch){
+                QString libs_patch = loc;
+                libs_patch.append(arch);
+                if (QDir(libs_patch).exists()){
+                    txtWineDllPath->setText(libs_patch);
+                    break;
+                }
+            }
+        }
 
         txtTarBin->setText(CoreLib->getWhichOut("tar"));
         txtMountBin->setText(CoreLib->getWhichOut("mount"));
@@ -125,8 +131,11 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
         txtSudoBin->setText(CoreLib->getWhichOut("sudo"));
 
         QStringList guisudo;
+#ifdef _OS_DARWIN_
+        guisudo << "osascript";
+#else
         guisudo << "kdesudo" << "kdesu" << "gksudo" << "gksu" << "sudo";
-
+#endif
         foreach (QString bin, guisudo){
             QString path = CoreLib->getWhichOut(bin, FALSE);
             if (!path.isEmpty()){
@@ -139,6 +148,10 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
         txtReniceBin->setText(CoreLib->getWhichOut("renice"));
         txtShBin->setText(CoreLib->getWhichOut("sh"));
 
+#ifdef _OS_DARWIN_
+        txtConsoleBin->setText("/usr/X11/bin/xterm");
+        txtConsoleArgs->setText("-e");
+#else
         console_w = CoreLib->getWhichOut("konsole", FALSE);
         if (!console_w.isEmpty()){
             txtConsoleBin->setText(console_w);
@@ -150,6 +163,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
                 txtConsoleArgs->setText("-e");
             }
         }
+#endif
 
 #ifdef WITH_ICOUTILS
         txtWrestoolBin->setText(CoreLib->getWhichOut("wrestool"));
@@ -163,11 +177,16 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
         txtIcotoolBin->setEnabled(false);
 #endif
 
+#ifdef _OS_DARWIN_
+        this->comboMountProfiles->setCurrentIndex(0);
+        this->comboMountProfiles_currentIndexChanged(0);
+#else
         if (CoreLib->getWhichOut("fuseiso", false).isEmpty()){
             this->comboMountProfiles->setCurrentIndex(0);
         } else {
             this->comboMountProfiles->setCurrentIndex(2);
         }
+#endif
 
         break;
     }
@@ -178,7 +197,14 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
     this->comboMountProfiles->removeItem(3);
     this->comboMountProfiles->removeItem(2);
 #endif
-
+#ifdef _OS_DARWIN_
+    this->comboMountProfiles->removeItem(3);
+    this->comboMountProfiles->removeItem(2);
+    this->comboMountProfiles->removeItem(1);
+    this->comboMountProfiles->setItemText(0, tr("generic"));
+    this->txtMountString->setEnabled(false);
+    this->frameMount->setVisible(false);
+#endif
 
     this->installEventFilter(this);
 
@@ -573,7 +599,6 @@ void Wizard::comboMountProfiles_currentIndexChanged(int index){
         }
         break;
     }
-
     txtMountString->setText(CoreLib->getMountString(index));
     txtMountImageString->setText(CoreLib->getMountImageString(index));
     txtUmountString->setText(CoreLib->getUmountString(index));

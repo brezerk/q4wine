@@ -234,7 +234,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QGridLayout" name="gridLayout">
@@ -1642,7 +1642,7 @@
                 <number>3</number>
                </property>
                <item>
-                <widget class="QWidget" name="widget_54" native="true">
+                <widget class="QWidget" name="frameMount" native="true">
                  <layout class="QHBoxLayout" name="_41">
                   <property name="margin">
                    <number>0</number>

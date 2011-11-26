@@ -24,7 +24,7 @@ PrefixTreeToolbar::PrefixTreeToolbar(QWidget *parent) :
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName("libq4wine-core");
+    libq4wine.setFileName(_CORELIB_PATH_);;
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
@@ -41,6 +41,8 @@ PrefixTreeToolbar::PrefixTreeToolbar(QWidget *parent) :
     this->createActions();
 
     std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
+
+    toolBar->setIconSize(QSize(24, 24));
     toolBar->addAction(treeState.get());
     toolBar->addSeparator();
     toolBar->addAction(prefixExport.get());

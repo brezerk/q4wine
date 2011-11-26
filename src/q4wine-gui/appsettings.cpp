@@ -23,7 +23,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName("libq4wine-core");
+    libq4wine.setFileName(_CORELIB_PATH_);;
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
@@ -139,6 +139,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     listThemesView->setSelectionMode(QAbstractItemView::SingleSelection);
 
     QString themeDir="";
+
     themeDir.append(QDir::homePath());
     themeDir.append("/.config/");
     themeDir.append(APP_SHORT_NAME);
@@ -154,10 +155,18 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     }
 
     themeDir.clear();
+
+#ifdef _OS_DARWIN_
+    themeDir.append(QDir::currentPath());
+    themeDir.append("/");
+    themeDir.append(APP_SHORT_NAME);
+    themeDir.append(".app/Contents/Resources/theme");
+#else
     themeDir.append(APP_PREF);
     themeDir.append("/share/");
     themeDir.append(APP_SHORT_NAME);
     themeDir.append("/theme");
+#endif
 
     getThemes(settings.value("theme").toString(), themeDir);
 
@@ -228,6 +237,14 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 #ifdef _OS_FREEBSD_
     this->comboMountProfiles->removeItem(3);
     this->comboMountProfiles->removeItem(2);
+#endif
+#ifdef _OS_DARWIN_
+    this->comboMountProfiles->removeItem(3);
+    this->comboMountProfiles->removeItem(2);
+    this->comboMountProfiles->removeItem(1);
+    this->comboMountProfiles->setItemText(0, tr("generic"));
+    this->txtMountString->setEnabled(false);
+    this->frameMount->setVisible(false);
 #endif
 
     settings.beginGroup("advanced");
@@ -427,9 +444,16 @@ void AppSettings::comboProxyType_indexChanged(QString text){
 void AppSettings::getLangs(){
     QString themeDir="";
 #ifdef RELEASE
-    themeDir = APP_PREF;
-    themeDir.append("/share/");
-    themeDir.append(APP_SHORT_NAME);
+    #ifdef _OS_DARWIN_
+        themeDir = QDir::currentPath();
+        themeDir.append("/");
+        themeDir.append(APP_SHORT_NAME);
+        themeDir.append(".app/Contents");
+    #else
+        themeDir = APP_PREF;
+        themeDir.append("/share/");
+        themeDir.append(APP_SHORT_NAME);
+    #endif
 #else
     themeDir = APP_BUILD;
 #endif

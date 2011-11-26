@@ -52,21 +52,18 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
     message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
 #endif
 
-#ifdef _OS_DARWIN_
-    message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
-#endif
-
+#ifndef _OS_DARWIN_
     // Check for /proc directory exists
     QDir dir("/proc");
     if (!dir.exists()){
-        //if (this->showError(message, false) == QMessageBox::Ignore){
+        if (this->showError(message, false) == QMessageBox::Ignore){
         //    procline << "-1";
         //    proclist << procline;
-        proclist.clear();
-        return proclist;
-        //}
+            proclist.clear();
+            return proclist;
+        }
     }
-
+#endif
     /* On Linux:
        * This is new engine for getting process info from /proc directory
        * its fully wrighted with QT and might work more stable =)
@@ -150,7 +147,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
 /* On FreeBSD:
 * This is new engine for getting process info from /proc directory and kmem interface
 */
-#if defined(_OS_FREEBSD_)
+#ifdef _OS_FREEBSD_
     kvm_t *kd;
     int cntproc, i, ni, ipid;
 
@@ -224,16 +221,72 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
 #endif
                 }
 
-                // Puting all fields into QList<QStringList>
                 procline.clear();
-                procline << QString("%1").arg(ipid) << name << nice << prefix;
-                proclist << procline;
+                // Puting all fields into QList<QStringList>
+                if (!prefix_path.isNull()){
+                    if (prefix_path == prefix){
+                        procline << QString("%1").arg(ipid) << name << nice << prefix;
+                        proclist << procline;
+                    }
+                } else {
+                    procline << QString("%1").arg(ipid) << name << nice << prefix;
+                    proclist << procline;
+                }
             }
         }
     }
 
     kvm_close(kd);
 #endif
+
+#ifdef _OS_DARWIN_
+    process_list *p_list = getProcessList();
+
+    if (p_list->pnum > 0){
+        for (unsigned int i=0; i<p_list->pnum; i++){
+            QString pid = QString("%1").arg(p_list->procs[i]->pid);
+            QString nice = QString("%1").arg(p_list->procs[i]->nice);
+            QString name = QString("%1").arg(p_list->procs[i]->name);
+            QStringList args = QString("%1").arg(p_list->procs[i]->args).split(" ");
+
+            free(p_list->procs[i]->name);
+            free(p_list->procs[i]->args);
+
+            QString prefix = "";
+            foreach (const QString &str, args) {
+                int index = str.indexOf("WINEPREFIX=");
+                if (index>=0){
+                    prefix=str.mid(11);
+                    break;
+                }
+            }
+
+            if (name == "wine.bin"){
+                foreach (const QString &str, args) {
+                    int index = str.indexOf(".exe");
+                    if (index>=0){
+                        name=str.split("/").last().split("\\").last();
+                        break;
+                    }
+                }
+            }
+
+            procline.clear();
+            if (!prefix_path.isNull()){
+                if (prefix_path == prefix){
+                    procline << pid << name << nice << prefix;
+                    proclist << procline;
+                }
+            } else {
+                procline << pid << name << nice << prefix;
+                proclist << procline;
+            }
+        }
+        free(p_list->procs);
+        free(p_list);
+    }
+#endif
+
     return proclist;
 }
 
@@ -336,7 +389,11 @@ QString corelib::getTranslationLang(){
     QTranslator qtt;
 
 #ifdef RELEASE
-    QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
+    #ifdef _OS_DARWIN_
+        QString i18nPath = QString("%1/%2.app/Contents/i18n").arg(QDir::currentPath()).arg(APP_SHORT_NAME);
+    #else
+        QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
+    #endif
 #else
     QString i18nPath = QString("%1/i18n").arg(APP_BUILD);
 #endif
@@ -351,6 +408,7 @@ QString corelib::getTranslationLang(){
 
     if (!lang.isNull()){
         if (qtt.load(lang, i18nPath)){
+            qDebug()<<"[ii] loaded:"<<lang;
             return lang;
         } else {
             qDebug()<<"[EE] Can't open user selected translation";
@@ -586,6 +644,9 @@ QString corelib::getWhichOut(const QString fileName, bool showErr){
 
 QStringList corelib::getCdromDevices(void) const{
     QStringList retVal;
+#ifdef _OS_DARWIN_
+    return retVal;
+#endif
 
     QDir dir("/dev/");
     dir.setFilter(QDir::Files | QDir::System);
@@ -673,7 +734,7 @@ QStringList corelib::getCdromDevices(void) const{
             cdrom_mount=cdrom_mount.left(cdrom_mount.length()-1);
         }
 
-        QString image="";
+        QString image="none";
         QStringList arguments;
 
 #ifdef DEBUG
@@ -805,6 +866,60 @@ QStringList corelib::getCdromDevices(void) const{
             }
 #endif
 
+#ifdef _OS_DARWIN_
+
+        arguments << "-c" << "hdiutil info";
+
+        QProcess myProcess;
+        myProcess.start(this->getSetting("system", "sh").toString(), arguments);
+        if (!myProcess.waitForFinished()){
+            qDebug() << "Make failed:" << myProcess.errorString();
+            return QString();
+        }
+
+        QString buffer;
+        buffer = myProcess.readAll();
+
+#ifdef DEBUG
+        //qDebug()<<"corelib::getMountedImages info"<<image;
+#endif
+
+        QStringList lines = buffer.split("\n");
+
+        QRegExp rx_image("^image-path      : (.*)$");
+        QRegExp rx_mount("^/dev/disk.*(/.*)$");
+
+
+
+        for (int i=0; i < lines.size(); i++){
+            if (rx_image.indexIn(lines.at(i)) != -1) {
+                buffer = rx_image.cap(1);
+            }
+            if (rx_mount.indexIn(lines.at(i)) != -1) {
+                if (rx_mount.cap(1) == cdrom_mount){
+                    image = buffer.split("/").last();
+                    break;
+                }
+            }
+        }
+
+
+        /* plist parse info
+        QSettings settings("/Users/brezerk/test.plist", QSettings::NativeFormat);
+        QVariantList lol = settings.value("images").toList();
+
+        qDebug()<<lol.size();
+        for (int i = 0; i < lol.size(); i++) {
+            QString point = lol.at(i).toMap()["system-entities"].toMap()["mount-point"].toString();
+            if (point == cdrom_mount){
+                image = lol.at(i).toMap()["image-path"].toString().split(" ").first().split("/").last();
+                break;
+            }
+        }
+        */
+
+#endif
+
             return image;
         }
 
@@ -873,13 +988,17 @@ QStringList corelib::getCdromDevices(void) const{
 
         bool corelib::runWineBinary(const ExecObject execObj, QString prefix_name, bool detach){
 #ifdef RELEASE
+    #ifdef _OS_DARWIN_
+            QString binary = QString("%1/%2.app/Contents/MacOS/q4wine-helper").arg(QDir::currentPath(), APP_SHORT_NAME);
+    #else
             QString binary = QString("%1/bin/q4wine-helper").arg(APP_PREF);
+    #endif
 #else
-#ifdef _OS_DARWIN
+    #ifdef _OS_DARWIN_
             QString binary = QString("%1/q4wine-helper/q4wine-helper.app/Contents/MacOS/q4wine-helper").arg(APP_BUILD);
-#else
+    #else
             QString binary = QString("%1/q4wine-helper/q4wine-helper").arg(APP_BUILD);
-#endif
+    #endif
 #endif
             QStringList args;
 
@@ -934,7 +1053,7 @@ QStringList corelib::getCdromDevices(void) const{
             QString wrkdir = execObj.wrkdir;
 
             if (wrkdir.isEmpty())
-                wrkdir = QDir::homePath();
+                wrkdir = QDir::currentPath();
 
             args.append("--wrkdir");
             args.append(wrkdir);
@@ -945,9 +1064,9 @@ QStringList corelib::getCdromDevices(void) const{
 
             if (detach){
                 QProcess proc(0);
-                return proc.startDetached(binary, args, wrkdir);
+                return proc.startDetached(binary, args, QDir::currentPath());
             } else {
-                Process proc(args, binary, wrkdir, QObject::tr("Running binary: \"%1\"").arg(execObj.execcmd), QObject::tr("Running binary..."), false);
+                Process proc(args, binary, QDir::currentPath(), QObject::tr("Running binary: \"%1\"").arg(execObj.execcmd), QObject::tr("Running binary..."), false);
                 return proc.exec();
             }
 
@@ -1031,12 +1150,12 @@ QStringList corelib::getCdromDevices(void) const{
                 }
 
         bool corelib::mountImage(const QString image_name, const QString prefix_name){
-
             if (!this->umountImage(prefix_name)){
                 this->showError(QObject::tr("Failed to unmount previously mounted image."));
                 //TODO: allow ignoring this
-                return false;
+                //return false;
             }
+
             QString mount_point=db_prefix.getMountPoint(prefix_name);
 #ifdef DEBUG
             qDebug()<<"[ii] corelib::mountImage: mount point: "<<mount_point;
@@ -1076,7 +1195,6 @@ QStringList corelib::getCdromDevices(void) const{
             mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());
             mount_string.replace("%SUDO%", getSetting("system", "sudo").toString());
             mount_string.replace("%MOUNT_BIN%", getSetting("system", "mount").toString());
-            mount_string.replace("%MOUNT_POINT%", this->getEscapeString(mount_point));
 #endif
             QFile imageFile(image_name);
 
@@ -1110,9 +1228,22 @@ QStringList corelib::getCdromDevices(void) const{
             mount_string.replace("%GUI_SUDO%", getSetting("system", "gui_sudo").toString());
             mount_string.replace("%SUDO%", getSetting("system", "sudo").toString());
             mount_string.replace("%MOUNT_BIN%", getSetting("system", "mount").toString());
-            mount_string.replace("%MOUNT_POINT%", this->getEscapeString(mount_point));
 #endif
 
+#ifdef _OS_DARWIN_
+            mount_string=this->getSetting("quickmount", "mount_image_string", false).toString();
+#ifdef DEBUG
+            qDebug()<<"[ii] corelib::mountImage:Linux image mount base string: "<<mount_string;
+#endif
+            if (!imageFile.exists()){
+                QString imagePath = this->db_image.getPath(image_name);
+                mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(imagePath));
+                imageFile.setFileName(imagePath);
+            } else {
+                mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(image_name));
+            }
+            mount_string.replace("%MOUNT_POINT%", this->getEscapeString(mount_point));
+#endif
             args.clear();
             args.append("-c");
             args.append(mount_string);
@@ -1449,6 +1580,10 @@ QStringList corelib::getCdromDevices(void) const{
                 string.append("/share/q4wine/scripts/mount_image.sh");
                 string.append(" %MOUNT_IMAGE% %MOUNT_POINT%");
 #endif
+#ifdef _OS_DARWIN_
+                string=this->getWhichOut("hdiutil", false);
+                string.append(" mount %MOUNT_IMAGE% -mountpoint %MOUNT_POINT%");
+#endif
                 break;
    case 1:
 #ifdef _OS_LINUX_
@@ -1486,6 +1621,10 @@ QStringList corelib::getCdromDevices(void) const{
                 string.append("/share/q4wine/scripts/umount.sh");
                 string.append(" %MOUNT_POINT%");
 #endif
+#ifdef _OS_DARWIN_
+                string=this->getWhichOut("hdiutil", false);
+                string.append(" unmount %MOUNT_POINT%");
+#endif
                 break;
    case 1:
 #ifdef _OS_LINUX_
@@ -1512,6 +1651,10 @@ QStringList corelib::getCdromDevices(void) const{
 
         bool corelib::reniceProcess(const int pid, const int priority){
             QStringList args;
+#ifdef _OS_DARWIN_
+            args << "-e";
+            args << QString("do shell script \"%1 %2 %3\" with administrator privileges").arg(this->getSetting("system", "renice").toString()).arg(priority).arg(pid);
+#else
             args << this->getSetting("system", "renice").toString();
             args.append(QString("%1").arg(priority));
             args.append(QString("%1").arg(pid));
@@ -1523,12 +1666,13 @@ QStringList corelib::getCdromDevices(void) const{
                 args.clear();
                 args.append(arg);
             }
-
+#endif
             if (this->runProcess(this->getSetting("system", "gui_sudo").toString(), args, QDir::homePath(), false)){
                 return true;
             } else {
                 return false;
             }
+
         }
 
         void corelib::runAutostart(void){

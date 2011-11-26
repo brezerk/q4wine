@@ -37,5 +37,5 @@ add_custom_command (
 endforeach()
 
 IF( RELEASE )
-    install(FILES ${QM_I18N} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/q4wine/i18n)
+    install(FILES ${QM_I18N} DESTINATION ${I18N_ENTRY_PATH})
 ENDIF( RELEASE )

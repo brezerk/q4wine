@@ -25,7 +25,7 @@ winetricks::winetricks(QString prefixName, QWidget * parent, Qt::WFlags f) : QDi
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName("libq4wine-core");
+    libq4wine.setFileName(_CORELIB_PATH_);;
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
@@ -129,7 +129,7 @@ void winetricks::run_winetricks(){
 
         args.append(CoreLib->getWhichOut("sh"));
         args.append("-c");
-        args.append(QString("%1 %2").arg(this->winetricks_bin).arg(lstMain->currentItem()->text()));
+        args.append(QString("%1 --no-isolate %2").arg(this->winetricks_bin).arg(lstMain->currentItem()->text()));
 
     QProcess proc;
     proc.startDetached(console_bin, args, QDir::homePath());

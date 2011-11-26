@@ -26,7 +26,6 @@
 #define Q4WINELIB_H
 
 #include "config.h"
-
 #include <QObject>
 #include <QList>
 #include <QVariant>
@@ -64,15 +63,21 @@
 
 // Experimental Darwin support (no test were preformed)
 #ifdef _OS_DARWIN_
-        #include <fcntl.h>
-        #include <paths.h>
 
-        #include <sys/param.h>
-        #include <sys/user.h>
-        #include <sys/file.h>
-        #include <sys/sysctl.h>
-        #include <limits.h>
+#include <sys/queue.h>
+
+#include <mach/mach.h>
+#include <mach/mach_error.h>
+#include <mach/policy.h>
+#include <mach/task_info.h>
+#include <mach/thread_info.h>
+#include <sys/sysctl.h>
+#include <sys/resourcevar.h>
+
+#include "src/darwin/ps.h"
+
 #endif
+
 
 #include "prefix.h"
 #include "dir.h"

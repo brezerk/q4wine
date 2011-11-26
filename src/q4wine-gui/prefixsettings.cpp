@@ -29,7 +29,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
     // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName("libq4wine-core");
+    libq4wine.setFileName(_CORELIB_PATH_);;
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
@@ -120,7 +120,11 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent,
     this->addNew=true;
 
     // Loading libq4wine-core.so
-    libq4wine.setFileName("libq4wine-core");
+#ifdef RELEASE
+    libq4wine.setFileName(_CORELIB_PATH_);;
+#else
+    libq4wine.setFileName("../q4wine-lib/libq4wine-core");
+#endif;
 
     if (!libq4wine.load()){
         libq4wine.load();
