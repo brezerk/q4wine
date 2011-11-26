@@ -35,7 +35,6 @@ SET( Q4WINE_LIB_SOURCES
         ${CMAKE_SOURCE_DIR}/src/core/database/icon.cpp
         ${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.cpp
-        ${CMAKE_SOURCE_DIR}/src/darwin/ps.c
 )
 
 SET( Q4WINE_LIB_HEADERS
@@ -47,8 +46,18 @@ SET( Q4WINE_LIB_HEADERS
         ${CMAKE_SOURCE_DIR}/src/core/database/icon.h
         ${CMAKE_SOURCE_DIR}/src/core/database/image.h
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
-        ${CMAKE_SOURCE_DIR}/src/darwin/ps.h
 )
+
+IF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
+    SET( Q4WINE_LIB_SOURCES
+        ${Q4WINE_LIB_SOURCES}
+        ${CMAKE_SOURCE_DIR}/src/darwin/ps.c
+    )
+    SET( Q4WINE_LIB_HEADERS
+        ${Q4WINE_LIB_HEADERS}
+        ${CMAKE_SOURCE_DIR}/src/darwin/ps.h
+    )
+ENDIF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 
 SET ( Q4WINE_LIB_MOC_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h

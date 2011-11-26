@@ -836,7 +836,11 @@ p, li { white-space: pre-wrap; }
         <translation>OpenGL</translation>
     </message>
     <message>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="275"/>
+        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2435"/>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2447"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="121"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="822"/>
         <source>Wine Drives</source>
         <translation>כונני Wine</translation>
     </message>
@@ -959,14 +963,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="820"/>
         <source>File System</source>
         <translation>מערכת קבצים</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="275"/>
-        <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="2435"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="121"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="822"/>
-        <source>Wine Drives</source>
-        <translation>כונני Wine</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="280"/>
@@ -1931,6 +1927,11 @@ See help for details.</source>
         <translation>הסמל בשם %1 כבר קיים, עמך הסליחה.</translation>
     </message>
     <message>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="582"/>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="500"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="601"/>
         <source>No virtual desktop</source>
@@ -1999,7 +2000,6 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="729"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="582"/>
         <source>Disable</source>
         <translation>נטרול</translation>
     </message>
@@ -2291,9 +2291,13 @@ See help for details.</source>
         <translation>מידע</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/InfoDialog.ui" line="74"/>
         <source>Do not show this dialog next time</source>
-        <translation>אין להציג תיבת דו־שיח זאת בפעם הבאה</translation>
+        <translation type="obsolete">אין להציג תיבת דו־שיח זאת בפעם הבאה</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/uis/InfoDialog.ui" line="74"/>
+        <source>Don&apos;t show this dialog next time</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/InfoDialog.ui" line="94"/>
@@ -2888,14 +2892,22 @@ See help for details.</source>
         <translation>עריכת הגדרות הקידומת</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="127"/>
         <source>Setup prefix fake drive</source>
-        <translation>התקנת קידומת כונן מזויף</translation>
+        <translation type="obsolete">התקנת קידומת כונן מזויף</translation>
+    </message>
+    <message>
+        <source>Setup prefix fake drive and applications</source>
+        <translation type="obsolete">הגדרת קידומת כונן מזויף ויישומים</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="127"/>
+        <source>Set up prefix fake drive</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="128"/>
-        <source>Setup prefix fake drive and applications</source>
-        <translation>הגדרת קידומת כונן מזויף ויישומים</translation>
+        <source>Set up prefix fake drive and applications</source>
+        <translation type="unfinished">התקנת כונן מזויף ויישומים לקידומת</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="200"/>
@@ -3005,13 +3017,21 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="179"/>
-        <source>Please, enter prefix name</source>
-        <translation>נא להזין שם לקידומת</translation>
+        <source>Enter a prefix name</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="185"/>
+        <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, enter prefix name</source>
+        <translation type="obsolete">נא להזין שם לקידומת</translation>
+    </message>
+    <message>
         <source>Sorry, but prefix named %1 already exists.</source>
-        <translation>הקידומת בשם %1 כבר קיימת, עמך הסליחה.</translation>
+        <translation type="obsolete">הקידומת בשם %1 כבר קיימת, עמך הסליחה.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="226"/>
@@ -3026,6 +3046,7 @@ See help for details.</source>
         <translation>פתיחת תיקייה</translation>
     </message>
     <message>
+        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="14"/>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="164"/>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="220"/>
         <source>Prefix Settings</source>
@@ -3045,11 +3066,6 @@ See help for details.</source>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="247"/>
         <source>Prefix path:</source>
         <translation>נתיב הקידומת:</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="14"/>
-        <source>Prefix Settings</source>
-        <translation>הגדרות קידומת</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/PrefixSettings.ui" line="322"/>
@@ -4039,18 +4055,21 @@ Note: leave it blank for default.</source>
         <translation>ייעודי</translation>
     </message>
     <message>
+        <location filename="../q4wine-gui/uis/Run.ui" line="643"/>
         <location filename="../q4wine-gui/run.cpp" line="109"/>
         <location filename="../q4wine-gui/run.cpp" line="174"/>
         <source>Built-in</source>
         <translation>מובנה</translation>
     </message>
     <message>
+        <location filename="../q4wine-gui/uis/Run.ui" line="648"/>
         <location filename="../q4wine-gui/run.cpp" line="111"/>
         <location filename="../q4wine-gui/run.cpp" line="176"/>
         <source>Native, Built-in</source>
         <translation>ייעודי, מובנה</translation>
     </message>
     <message>
+        <location filename="../q4wine-gui/uis/Run.ui" line="653"/>
         <location filename="../q4wine-gui/run.cpp" line="113"/>
         <location filename="../q4wine-gui/run.cpp" line="178"/>
         <source>Built-in, Native</source>
@@ -4077,6 +4096,11 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/run.cpp" line="163"/>
         <source>Selected working directory not exists.</source>
         <translation>תיקיית העבודה הנבחרת אינה קיימת.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/run.cpp" line="172"/>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../q4wine-gui/run.cpp" line="325"/>
@@ -4132,7 +4156,6 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="658"/>
-        <location filename="../q4wine-gui/run.cpp" line="172"/>
         <source>Disable</source>
         <translation>מנוטרל</translation>
     </message>
@@ -4160,21 +4183,6 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/uis/Run.ui" line="596"/>
         <source>Present Wine DLLs</source>
         <translation>קובצי ה־DLL הנוכחיים של Wine</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="643"/>
-        <source>Built-in</source>
-        <translation>מובנה</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="648"/>
-        <source>Native, Built-in</source>
-        <translation>ייעודי, מובנה</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="653"/>
-        <source>Built-in, Native</source>
-        <translation>מובנה, ייעודי</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="676"/>
@@ -4351,9 +4359,8 @@ Note: leave it blank for default.</source>
         <translation>שליחת אות TERM לתהליך wine הראשי</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
         <source>Refresh list</source>
-        <translation>רענון הרשימה</translation>
+        <translation type="obsolete">רענון הרשימה</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="113"/>
@@ -4395,6 +4402,11 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>
         <source>Error</source>
         <translation>שגיאה</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
+        <source>Refresh List</source>
+        <translation type="unfinished">רענון הרשימה</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>
