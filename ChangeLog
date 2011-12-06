@@ -1,23 +1,16 @@
-Installation
-***********************************************
-See INSTALL file for details
-
-ChangeLog
-***********************************************
-
-Varsion 1.0
+Version 1.0
  Added:
-  - MacOS X support;
+  - Mac OS X support;
   - Icon and Prefix sorting (name, date);
   - Version string to About page;
-  - Handler for wrong url in wine app db;
+  - Handler for wrong URL in wine app db;
   
   Fixed:
   - Fixed process refresh loop;
   - Extended env command after console terminal;
-  - Updated README file: Added "Known Issues" section;
-  - Set WINEDEBUG to '-all' if logging subsystem disabled and programm was
-  exceuted not in console session;
+  - Updated README file: added "Known Issues" section;
+  - Set WINEDEBUG to '-all' if logging subsystem disabled and program was
+  executed not in console session;
   - Icon export dialog empty icons [3358599];
   - Dropped obsolete strings from translation files [3358602];
 
@@ -62,7 +55,6 @@ Version 0.120-r1
   - English fixes by Steven Panek;
   - Fake drive can create unlinked desktop folders;
   - Move File System item upper in Fake Drive Settings dialog;
-  -
 
 Version 0.120
  Added:
