@@ -22,7 +22,7 @@
 MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
      // Loading libq4wine-core.so
 #ifdef RELEASE
-    libq4wine.setFileName(_CORELIB_PATH_);;
+    libq4wine.setFileName(_CORELIB_PATH_);
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
