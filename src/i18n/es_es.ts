@@ -1219,8 +1219,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="413"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="944"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="977"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1329"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1337"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1331"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1339"/>
         <source>Error</source>
         <translatorcomment>same</translatorcomment>
         <translation>Error</translation>
@@ -1276,8 +1276,8 @@ Mire la ayuda para más detalles.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="313"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1329"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1337"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1331"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1339"/>
         <source>Can&apos;t create dir: %1</source>
         <translatorcomment>Revisar</translatorcomment>
         <translation>No se puede crear una carpeta: %1</translation>
@@ -1298,14 +1298,14 @@ Mire la ayuda para más detalles.</translation>
         <translation>No se puede crear archivo:&quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1365"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1371"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1367"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1373"/>
         <source>Open File</source>
         <translation>Abrir archivo</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1367"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1373"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1369"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1375"/>
         <source>Open Directory</source>
         <translation>Abrir carpeta</translation>
     </message>

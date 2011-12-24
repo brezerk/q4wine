@@ -355,7 +355,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -1666,7 +1666,7 @@
                    <widget class="QComboBox" name="comboFakeX11_WR">
                     <item>
                      <property name="text">
-                      <string notr="true">Default</string>
+                      <string notr="true">default</string>
                      </property>
                     </item>
                     <item>
@@ -1713,7 +1713,7 @@
                    <widget class="QComboBox" name="comboFakeX11_AAR">
                     <item>
                      <property name="text">
-                      <string notr="true">Default</string>
+                      <string notr="true">default</string>
                      </property>
                     </item>
                     <item>

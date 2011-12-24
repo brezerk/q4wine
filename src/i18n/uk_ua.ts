@@ -1187,8 +1187,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="413"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="944"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="977"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1329"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1337"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1331"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1339"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
@@ -1240,8 +1240,8 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="313"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1329"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1337"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1331"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1339"/>
         <source>Can&apos;t create dir: %1</source>
         <translation>Не можу створити каталог: %1</translation>
     </message>
@@ -1260,14 +1260,14 @@ See help for details.</source>
         <translation>Не можу створити файл: %1</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1365"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1371"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1367"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1373"/>
         <source>Open File</source>
         <translation>Відкрити файл</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1367"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1373"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1369"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1375"/>
         <source>Open Directory</source>
         <translation>Відкрити каталог</translation>
     </message>

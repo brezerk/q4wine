@@ -1170,7 +1170,9 @@ void FakeDriveSettings::loadSettings(){
     list << "\"Audio\"";
     list = reg.readKeys("user", "Software\\Wine\\Drivers", list);
     if (list.count()>0){
-        if (!list.at(0).isEmpty()){
+        if (list.at(0) == QString::null){
+            comboFakeSound_Driver->setCurrentIndex(comboFakeSound_Driver->findText("default"));
+        } else if (!list.at(0).isEmpty()){
             comboFakeSound_Driver->setCurrentIndex(comboFakeSound_Driver->findText(list.at(0)));
         } else {
             comboFakeSound_Driver->setCurrentIndex(comboFakeSound_Driver->findText("disabled"));

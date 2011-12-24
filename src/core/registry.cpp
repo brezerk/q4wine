@@ -148,7 +148,7 @@ QStringList Registry::readKeys(const QString sysfile, const QString path, const 
 	QString searchPath;
 
 	for (int i=0; i<keys.count(); i++){
-		ret.append("");
+                ret.append(QString::null);
 	}
 
 	searchPath="[";
@@ -185,6 +185,7 @@ QStringList Registry::readKeys(const QString sysfile, const QString path, const 
 		if (((line=="\n") or (line.isEmpty())) and (readFlag))
 			readFlag=false;
 	}
+
 	return ret;
 }
 
