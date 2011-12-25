@@ -706,7 +706,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/appsettings.cpp" line="245"/>
         <source>generic</source>
-        <translation type="unfinished"></translation>
+        <translation>основной</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/appsettings.cpp" line="395"/>
@@ -1367,7 +1367,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="166"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="167"/>
         <source>Sort ascending by create order</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортировать по возрастанию в порядке создания</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="99"/>
@@ -1383,7 +1383,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="171"/>
         <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="172"/>
         <source>Sort descending by create order</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортировать по убыванию в порядке создания</translation>
     </message>
 </context>
 <context>
@@ -2034,7 +2034,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/iconsettings.cpp" line="582"/>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Отключен</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsettings.cpp" line="496"/>
@@ -2301,7 +2301,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/uis/InfoDialog.ui" line="74"/>
         <source>Don&apos;t show this dialog next time</source>
-        <translation type="unfinished"></translation>
+        <translation>Не показывать этот диалог в следующий раз</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/InfoDialog.ui" line="94"/>
@@ -4211,7 +4211,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/run.cpp" line="172"/>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Отключен</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/run.cpp" line="325"/>
@@ -4555,7 +4555,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="204"/>
         <source>generic</source>
-        <translation type="unfinished"></translation>
+        <translation>основной</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="272"/>
