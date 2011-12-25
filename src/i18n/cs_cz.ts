@@ -2892,22 +2892,14 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Upravit nastavení předpony</translation>
     </message>
     <message>
-        <source>Setup prefix fake drive</source>
-        <translation type="obsolete">Nastavení předpony nepravé diskové jednotky</translation>
-    </message>
-    <message>
-        <source>Setup prefix fake drive and applications</source>
-        <translation type="obsolete">Nastavení nepravé diskové jednotky a programů pro předponu</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="127"/>
         <source>Set up prefix fake drive</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení předpony nepravé diskové jednotky</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="128"/>
         <source>Set up prefix fake drive and applications</source>
-        <translation type="unfinished">Nastavení nepravé diskové jednotky a programů pro předponu</translation>
+        <translation>Nastavení nepravé diskové jednotky a programů pro předponu</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="200"/>
@@ -3018,20 +3010,12 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="179"/>
         <source>Enter a prefix name</source>
-        <translation type="unfinished"></translation>
+        <translation>Zadejte, prosím, název předpony</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="185"/>
         <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please, enter prefix name</source>
-        <translation type="obsolete">Zadejte, prosím, název předpony</translation>
-    </message>
-    <message>
-        <source>Sorry, but prefix named %1 already exists.</source>
-        <translation type="obsolete">Promiňte, ale předpona s názvem %1 již existuje.</translation>
+        <translation>Promiňte, ale předpona s názvem %1 již existuje.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="226"/>
@@ -4359,8 +4343,9 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Poslat signál TERM hlavnímu procesu wine</translation>
     </message>
     <message>
-        <source>Refresh list</source>
-        <translation type="obsolete">Obnovit seznam</translation>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
+        <source>Refresh List</source>
+        <translation>Obnovit seznam</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="113"/>
@@ -4402,11 +4387,6 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>
         <source>Error</source>
         <translation>Chyba</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
-        <source>Refresh List</source>
-        <translation type="unfinished">Obnovit seznam</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>

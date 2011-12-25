@@ -2892,22 +2892,14 @@ See help for details.</source>
         <translation>עריכת הגדרות הקידומת</translation>
     </message>
     <message>
-        <source>Setup prefix fake drive</source>
-        <translation type="obsolete">התקנת קידומת כונן מזויף</translation>
-    </message>
-    <message>
-        <source>Setup prefix fake drive and applications</source>
-        <translation type="obsolete">הגדרת קידומת כונן מזויף ויישומים</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="127"/>
         <source>Set up prefix fake drive</source>
-        <translation type="unfinished"></translation>
+        <translation>התקנת קידומת כונן מזויף</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="128"/>
         <source>Set up prefix fake drive and applications</source>
-        <translation type="unfinished">התקנת כונן מזויף ויישומים לקידומת</translation>
+        <translation>הגדרת קידומת כונן מזויף ויישומים</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="200"/>
@@ -3018,20 +3010,12 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="179"/>
         <source>Enter a prefix name</source>
-        <translation type="unfinished"></translation>
+        <translation>נא להזין שם לקידומת</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="185"/>
         <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please, enter prefix name</source>
-        <translation type="obsolete">נא להזין שם לקידומת</translation>
-    </message>
-    <message>
-        <source>Sorry, but prefix named %1 already exists.</source>
-        <translation type="obsolete">הקידומת בשם %1 כבר קיימת, עמך הסליחה.</translation>
+        <translation>הקידומת בשם %1 כבר קיימת, עמך הסליחה.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="226"/>
@@ -4359,8 +4343,9 @@ Note: leave it blank for default.</source>
         <translation>שליחת אות TERM לתהליך wine הראשי</translation>
     </message>
     <message>
-        <source>Refresh list</source>
-        <translation type="obsolete">רענון הרשימה</translation>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
+        <source>Refresh List</source>
+        <translation>רענון הרשימה</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="113"/>
@@ -4402,11 +4387,6 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>
         <source>Error</source>
         <translation>שגיאה</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
-        <source>Refresh List</source>
-        <translation type="unfinished">רענון הרשימה</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>

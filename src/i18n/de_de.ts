@@ -2904,24 +2904,16 @@ Weitere Informationen unter Hilfe.</translation>
         <translation>Bearbeite Prefix-Einstellungen</translation>
     </message>
     <message>
-        <source>Setup prefix fake drive</source>
-        <translatorcomment>...</translatorcomment>
-        <translation type="obsolete">Virtuelles Laufwerk für Prefix einrichten</translation>
-    </message>
-    <message>
-        <source>Setup prefix fake drive and applications</source>
-        <translatorcomment>...</translatorcomment>
-        <translation type="obsolete">Vvirtuelles Laufwerk und Anwendungen für Prefix einrichten</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="127"/>
         <source>Set up prefix fake drive</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>...</translatorcomment>
+        <translation>Virtuelles Laufwerk für Prefix einrichten</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="128"/>
         <source>Set up prefix fake drive and applications</source>
-        <translation type="unfinished">Einstellen der virtuellen Laufwerke und Anwendungen für den Prefix</translation>
+        <translatorcomment>...</translatorcomment>
+        <translation>Vvirtuelles Laufwerk und Anwendungen für Prefix einrichten</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="200"/>
@@ -3034,20 +3026,12 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="179"/>
         <source>Enter a prefix name</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte Prefix-Namen eingeben</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="185"/>
         <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please, enter prefix name</source>
-        <translation type="obsolete">Bitte Prefix-Namen eingeben</translation>
-    </message>
-    <message>
-        <source>Sorry, but prefix named %1 already exists.</source>
-        <translation type="obsolete">Entschuldigung, aber Prefix %1 existiert bereits.</translation>
+        <translation>Entschuldigung, aber Prefix %1 existiert bereits.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="226"/>
@@ -4388,8 +4372,9 @@ Note: leave it blank for default.</source>
         <translation>Sendet ein TERM-Signal an den Wine-Hauptprozess</translation>
     </message>
     <message>
-        <source>Refresh list</source>
-        <translation type="obsolete">Liste aktualisieren</translation>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
+        <source>Refresh List</source>
+        <translation>Liste aktualisieren</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="113"/>
@@ -4431,11 +4416,6 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>
         <source>Error</source>
         <translation>Fehler</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
-        <source>Refresh List</source>
-        <translation type="unfinished">Liste aktualisieren</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>

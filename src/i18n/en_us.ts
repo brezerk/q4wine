@@ -2874,12 +2874,12 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="127"/>
         <source>Set up prefix fake drive</source>
-        <translation type="unfinished"></translation>
+        <translation>Set up prefix fake drive</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="128"/>
         <source>Set up prefix fake drive and applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Set up prefix fake drive and applications</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="200"/>
@@ -2990,12 +2990,12 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="179"/>
         <source>Enter a prefix name</source>
-        <translation type="unfinished"></translation>
+        <translation>Enter a prefix name</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="185"/>
         <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
-        <translation type="unfinished"></translation>
+        <translation>A prefix named &quot;%1&quot; already exists</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="226"/>
@@ -3359,7 +3359,7 @@ Note: leave it blank for default.</translation>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="410"/>
         <source>Set up prefix fake drive and applications</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Set up prefix fake drive and applications</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="416"/>
@@ -4323,6 +4323,11 @@ Note: leave it blank for default.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
+        <source>Refresh List</source>
+        <translation type="unfinished">Refresh List</translation>
+    </message>
+    <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="113"/>
         <source>Refresh process list</source>
         <translation type="unfinished"></translation>
@@ -4362,11 +4367,6 @@ Note: leave it blank for default.</translation>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>
         <source>Error</source>
         <translation type="unfinished">Error</translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="112"/>
-        <source>Refresh List</source>
-        <translation type="unfinished">Refresh List</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>
