@@ -96,29 +96,9 @@
         <translation>Subcategorias</translation>
     </message>
     <message>
-        <source>Error: can&apos;t read data from %1.</source>
-        <translation type="obsolete">Error: no se puede leer de %1.</translation>
-    </message>
-    <message>
-        <source>Error: wrong or broken xml data. Try again later.</source>
-        <translation type="obsolete">Error: Infromacion del xml incorrecta o rota. Intente mas tarde.</translation>
-    </message>
-    <message>
-        <source>Error: wrong or broken appdb xml version. Application needs to be updated?</source>
-        <translation type="obsolete">Error: version de appdb xml erronea o rota. La aplicación necesita actualizarse?</translation>
-    </message>
-    <message>
-        <source>Error: xml parse error.</source>
-        <translation type="obsolete">Error: Problema en la sintaxis del xml.</translation>
-    </message>
-    <message>
         <location line="+26"/>
         <source>Error: unexpected error.</source>
         <translation>Error: Error inesperado.</translation>
-    </message>
-    <message>
-        <source>Search: No matches found</source>
-        <translation type="obsolete">Busqueda: No hubo coincidencias</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -197,22 +177,6 @@
         <location line="+1"/>
         <source>View Wine AppDB categories list</source>
         <translation>Ver la lista de categorias de Wine AppDB</translation>
-    </message>
-    <message>
-        <source>Search in appdb</source>
-        <translation type="obsolete">Buscar en appdb</translation>
-    </message>
-    <message>
-        <source>Search in wine appdb</source>
-        <translation type="obsolete">Buscar en la AppDB de Wine</translation>
-    </message>
-    <message>
-        <source>Appdb categoryes list</source>
-        <translation type="obsolete">Lista de categorias de AppDB</translation>
-    </message>
-    <message>
-        <source>View wine appdb categoryes list</source>
-        <translation type="obsolete">Ver la lista de categorias de AppDB</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -319,14 +283,6 @@
         <translation>Disculpe, el ejecutable %1 no existe.</translation>
     </message>
     <message>
-        <source>Sorry, specified %1 directory not exists.</source>
-        <translation type="obsolete">Disculpe, la carpeta %1 no existe.</translation>
-    </message>
-    <message>
-        <source>Sorry, specified %1 binary not exists.</source>
-        <translation type="obsolete">Disculpe, el ejecutable %1 no existe.</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+479"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-641"/>
         <location line="+499"/>
@@ -365,10 +321,6 @@
         <location line="+57"/>
         <source>Loader:</source>
         <translation>Cargador:</translation>
-    </message>
-    <message>
-        <source>Libs:</source>
-        <translation type="obsolete">Librerias:</translation>
     </message>
     <message>
         <location line="+177"/>
@@ -469,10 +421,6 @@
         <translation>Montaje rápido</translation>
     </message>
     <message>
-        <source>Expand prefix tree items on startup.</source>
-        <translation type="obsolete">Expandir arbol de items del prefijo al comenzar.</translation>
-    </message>
-    <message>
         <location line="+121"/>
         <source>OK</source>
         <translation>Aceptar</translation>
@@ -494,10 +442,6 @@
         <location line="+15"/>
         <source>Clear logs at startup.</source>
         <translation>Limpiar registros al iniciar.</translation>
-    </message>
-    <message>
-        <source>Note: Because of sqlite engine specific, large amount of logging data can reduce q4wine performance. Use it with care. You have been warned.</source>
-        <translation type="obsolete">Nota: Debido al motor de sqlite, grandes cantidades de datos registrados pueden reducir la performance de q4wine. Uselo con cuidado. Ha sido advertido.</translation>
     </message>
     <message>
         <location line="+503"/>
@@ -599,10 +543,6 @@
         <translation>Minimizar a la bandeja el comenzar.</translation>
     </message>
     <message>
-        <source>Minimize to tray at application icon startup.</source>
-        <translation type="obsolete">Minimizar a la bandeja al iniciar la aplicación.</translation>
-    </message>
-    <message>
         <location line="+26"/>
         <source>Show tray icon notifications.</source>
         <translatorcomment>Revisar</translatorcomment>
@@ -655,14 +595,6 @@
         <location line="+44"/>
         <source>Umount:</source>
         <translation>Desmontar:</translation>
-    </message>
-    <message>
-        <source>Prefix tree view</source>
-        <translation type="obsolete">Vista de arbol de prefijo</translation>
-    </message>
-    <message>
-        <source>Enable logging sybsystem.</source>
-        <translation type="obsolete">Activar subsistema de registro.</translation>
     </message>
     <message>
         <location line="+272"/>
@@ -768,10 +700,6 @@
         <translation>Sistema de importacion de Q4Wine</translation>
     </message>
     <message>
-        <source>Import wine desktop files at q4wine startup.</source>
-        <translation type="obsolete">Importar archivos desktop al comienzo de q4wine.</translation>
-    </message>
-    <message>
         <location line="-145"/>
         <source>Remove processed wine desktop files.</source>
         <translation>Remover archivos desktop importados.</translation>
@@ -789,10 +717,6 @@
         <location line="+487"/>
         <source>Subsystems</source>
         <translation>Subsistemas</translation>
-    </message>
-    <message>
-        <source>AppDb browser</source>
-        <translation type="obsolete">Navegador de AppDB</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -853,14 +777,6 @@
 </context>
 <context>
     <name>DataBase</name>
-    <message>
-        <source>Critical error</source>
-        <translation type="obsolete">Error critico</translation>
-    </message>
-    <message>
-        <source>Can not open database file: %1/.config/%2/db/generic.dat ; Error is: %3</source>
-        <translation type="obsolete">No se puede abrir el archivo de la base de datos: %1/.config/%2/db/generic.dat ; El error es %3</translation>
-    </message>
     <message>
         <location filename="../core/database/db.cpp" line="+66"/>
         <source>No database loaded. Aborting...</source>
@@ -1111,10 +1027,6 @@
         <translation></translation>
     </message>
     <message>
-        <source>Direct 3D settings</source>
-        <translation type="obsolete">Ajustes de Direct 3D</translation>
-    </message>
-    <message>
         <location line="+1880"/>
         <source>Joystick Axes Mapping:</source>
         <translation>Configuración de los ejes del joystick:</translation>
@@ -1190,10 +1102,6 @@
         <source>X11 Driver</source>
         <translatorcomment>same</translatorcomment>
         <translation></translation>
-    </message>
-    <message>
-        <source>Note: Q4Wine do not check is selected driver avalible for current wine build or not. Use this option with care.</source>
-        <translation type="obsolete">Nota: Q4Wine no verifica si el driver seleccionado esta disponible o no para el wine compilado. Use esta opcion con cuidado.</translation>
     </message>
     <message>
         <location line="-1057"/>
@@ -1321,35 +1229,6 @@ Por Ejemplo:
 Mire la ayuda para más detalles.</translation>
     </message>
     <message>
-        <source>Can&apos;t read desktop paths!</source>
-        <translatorcomment>Revisar</translatorcomment>
-        <translation type="obsolete">Error en las rutas!</translation>
-    </message>
-    <message>
-        <source>Can&apos;t remove symlink: %1</source>
-        <translatorcomment>Revisar</translatorcomment>
-        <translation type="obsolete">No se puede quitar el enlace simbolico: %1</translation>
-    </message>
-    <message>
-        <source>Can&apos;t symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translatorcomment>Revisar</translatorcomment>
-        <translation type="obsolete">No se puede enlazar: &quot;%1&quot; a &quot;%2&quot;</translation>
-    </message>
-    <message>
-        <source>Can&apos;t create dir: %1</source>
-        <translatorcomment>Revisar</translatorcomment>
-        <translation type="obsolete">No se puede crear una carpeta: %1</translation>
-    </message>
-    <message>
-        <source>Can&apos;t remove dir: %1</source>
-        <translatorcomment>Revisar</translatorcomment>
-        <translation type="obsolete">No se puede quitar la carpeta: %1</translation>
-    </message>
-    <message>
-        <source>Can&apos;t create file &quot;%1&quot;</source>
-        <translation type="obsolete">No se puede crear archivo:&quot;%1&quot;</translation>
-    </message>
-    <message>
         <location line="+1196"/>
         <location line="+6"/>
         <source>Open File</source>
@@ -1426,10 +1305,6 @@ Vea la ayuda para mas detalles.</translation>
         <location line="+63"/>
         <source>Sorry, You cannot delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
         <translation>Lo siento, no puede eliminar o modificar el disco C: de wine.&lt;br&gt;Pero puede cambiarlo en el dialogo de ajustes del prefijo.</translation>
-    </message>
-    <message>
-        <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
-        <translation type="obsolete">Lo siento, no puede eliminar o modificar el disco C: de wine.&lt;br&gt;Pero puede cambiarlo en el dialogo de ajustes del prefijo.</translation>
     </message>
 </context>
 <context>
@@ -1518,14 +1393,6 @@ Vea la ayuda para mas detalles.</translation>
 </context>
 <context>
     <name>IconListWidget</name>
-    <message>
-        <source>Sorry. It seems icon already exists.</source>
-        <translation type="obsolete">Disculpe, el icono ya existe.</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation type="obsolete">Disculpe. el icono ya existe.&lt;br&gt;Por favor elija otro nombre, o cancele la operación.</translation>
-    </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+253"/>
         <location line="+904"/>
@@ -1900,17 +1767,9 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Fallo al desmontar dispositivo.</translation>
     </message>
     <message>
-        <source>Copy application directory path to system&apos;s&apos; clipboard</source>
-        <translation type="obsolete">Copiar la ruta de la carpeta de la aplicación al portapapeles</translation>
-    </message>
-    <message>
         <location line="-595"/>
         <source>Application path</source>
         <translation>Ruta de la aplicación</translation>
-    </message>
-    <message>
-        <source>Copy full application path to system&apos;s&apos; clipboard</source>
-        <translation type="obsolete">Copiar la ruta completa de la aplicación al portapapeles</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1919,17 +1778,9 @@ Vea la ayuda para mas detalles.</translation>
         <translation></translation>
     </message>
     <message>
-        <source>Copy q4wine-cli cmd for current application</source>
-        <translation type="obsolete">Copiar q4wine-cli-cmd para la acual aplicación</translation>
-    </message>
-    <message>
         <location line="+9"/>
         <source>Run...</source>
         <translation>Ejecutar...</translation>
-    </message>
-    <message>
-        <source>Browse for other image</source>
-        <translation type="obsolete">Buscar otra imagen</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -1966,14 +1817,6 @@ Vea la ayuda para mas detalles.</translation>
         <location line="+0"/>
         <source>No device drive specified in prefix settings.</source>
         <translation>No se especifico el dispositivo de disco en los ajustes de prefijo.</translation>
-    </message>
-    <message>
-        <source>Drive successfully umounted.</source>
-        <translation type="obsolete">Dispositivo exitosamente desmontado.</translation>
-    </message>
-    <message>
-        <source>Fail to umount drive.</source>
-        <translation type="obsolete">Fallo al desmontar dispositivo.</translation>
     </message>
 </context>
 <context>
@@ -2083,26 +1926,6 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Extrayendo icono</translation>
     </message>
     <message>
-        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)</source>
-        <translation type="obsolete">Archivos de imagenes y ejecutables de Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Archivos de imagenes (*.png *.jpg *.gif *.bmp *.xpm);;Ejecutables de Win32 (*.exe);;Librerias de Win32 (*.dll);;Ejecutables y librerias de Win32 (*.exe *.dll)</translation>
-    </message>
-    <message>
-        <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Exportando icono de archivo ejecutable.&lt;br&gt;Esto puede tomar un tiempo...</translation>
-    </message>
-    <message>
-        <source>Exporting icon</source>
-        <translation type="obsolete">Exportando icono</translation>
-    </message>
-    <message>
-        <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Convirtiendo icono desde archivo ejecutable.&lt;br&gt;Esto puede tomar un tiempo...</translation>
-    </message>
-    <message>
-        <source>Converting icon</source>
-        <translation type="obsolete">Convirtiendo icono</translation>
-    </message>
-    <message>
         <location line="+53"/>
         <location line="+5"/>
         <location line="+5"/>
@@ -2129,17 +1952,9 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Disculpe, pero el icono %1 ya existe.</translation>
     </message>
     <message>
-        <source>Selected working directory not exists.</source>
-        <translation type="obsolete">La carpeta seleccionada no existe.</translation>
-    </message>
-    <message>
         <location line="-12"/>
         <source>No program name specified.</source>
         <translation>No se especifico el nombre del programa.</translation>
-    </message>
-    <message>
-        <source>Sorry, but icon named %1 already exists.</source>
-        <translation type="obsolete">Disculpe, pero el icono %1 ya existe.</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -2207,14 +2022,6 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Tamaño:</translation>
     </message>
     <message>
-        <source>Override Dll</source>
-        <translation type="obsolete">Reemplazo de librerias</translation>
-    </message>
-    <message>
-        <source>Present wine dlls</source>
-        <translation type="obsolete">Librerias wine en uso</translation>
-    </message>
-    <message>
         <location line="+237"/>
         <source>Disable</source>
         <translatorcomment>same</translatorcomment>
@@ -2224,10 +2031,6 @@ Vea la ayuda para mas detalles.</translation>
         <location line="+8"/>
         <source>Add</source>
         <translation>Añadir</translation>
-    </message>
-    <message>
-        <source>Overrided dlls</source>
-        <translation type="obsolete">Librerias reemplazadas</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -2298,11 +2101,6 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Nota: Los scripts de pre y post ejecución no se utiizarán si el programa es ejecutado con la opción &quot;Ejecutar con salida en la consola&quot;. </translation>
     </message>
     <message>
-        <source>Note: pre and post run scripts will be not executed in case if program will be executed with &quot;Run With Output in Console&quot; option.</source>
-        <translatorcomment>Revisar</translatorcomment>
-        <translation type="obsolete">Nota: Los scripts de pre y post ejecución no se utiizarán si el programa es ejecutado con la opción &quot;Ejecutar con salida en la consola&quot;. </translation>
-    </message>
-    <message>
         <location line="+28"/>
         <source>Pre run:</source>
         <translatorcomment>Revisar</translatorcomment>
@@ -2337,10 +2135,6 @@ Vea la ayuda para mas detalles.</translation>
         <location filename="../q4wine-gui/iconsview.cpp" line="+108"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems file already exists.&lt;br&gt;Replace existent or rename current?</source>
-        <translation type="obsolete">Disculpe, el archivo ya existe.&lt;br&gt;Reemplazar el existente o renombrar el actual?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsview.cpp" line="-6"/>
@@ -2378,14 +2172,6 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Reemplazar el existente o renombrar el actual?</translation>
     </message>
     <message>
-        <source>Sorry. It seems file already exists.</source>
-        <translation type="obsolete">Disculpe, el archivo ya existe.</translation>
-    </message>
-    <message>
-        <source>Replace existent or rename current?</source>
-        <translation type="obsolete">Reemplazar el existente o renombrar el actual?</translation>
-    </message>
-    <message>
         <location line="+27"/>
         <location line="+35"/>
         <source>Error</source>
@@ -2404,10 +2190,6 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Disculpe, no se puede crear el archivo: &lt;br&gt;%1.</translation>
     </message>
     <message>
-        <source>Sorry, i can&apos;t remove file: &lt;br&gt;%1.</source>
-        <translation type="obsolete">Disculpe, no puedo borra el archivo: &lt;br&gt;%1.</translation>
-    </message>
-    <message>
         <location line="-12"/>
         <location line="+2"/>
         <source>Select file to save</source>
@@ -2418,10 +2200,6 @@ Vea la ayuda para mas detalles.</translation>
         <location line="+2"/>
         <source>Images (*.png)</source>
         <translation>Imagenes (*.png)</translation>
-    </message>
-    <message>
-        <source>Sorry, i can&apos;t create file: &lt;br&gt;%1.</source>
-        <translation type="obsolete">Disculpe, no puedo crear el archivo: &lt;br&gt;%1.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconsView.ui" line="-93"/>
@@ -2521,14 +2299,6 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Disculpe. Al parecer la imagen de disco ya existe.&lt;br&gt;Por favor renombrela, o cancele la operación.</translation>
     </message>
     <message>
-        <source>Sorry. It seems CD iamge already exists.</source>
-        <translation type="obsolete">Disculpe. Al parecer la imagen de disco ya existe.</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems CD image file already exists.&lt;br&gt;Please rename it, or cancel add image operation.</source>
-        <translation type="obsolete">Disculpe. Al parecer la imagen de disco ya existe.&lt;br&gt;Por favor renombrela, o cancele la operación.</translation>
-    </message>
-    <message>
         <location line="-8"/>
         <source>Enter new name</source>
         <translation>Ingrese nuevo nombre</translation>
@@ -2537,18 +2307,6 @@ Vea la ayuda para mas detalles.</translation>
         <location line="+0"/>
         <source>Enter new name:</source>
         <translation>Ingrese nuevo nombre:</translation>
-    </message>
-    <message>
-        <source>Sorry. CD iamge name can not be empty.</source>
-        <translation type="obsolete">Disculpe. El nombre de la imagen de disco no puede estar vacio.</translation>
-    </message>
-    <message>
-        <source>Sorry. CD iamge name can not be empty.&lt;br&gt;Please enter new name, or cancel rename image operation.</source>
-        <translation type="obsolete">Disculpe. El nombre de la imagen de disco no puede estar vacio.&lt;br&gt;Por favor ingrese un nuevo nombre, o cancele el renombrado de la imagen de disco.</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems CD image file already exists.&lt;br&gt;Please rename it, or cancel rename image operation.</source>
-        <translation type="obsolete">Disculpe. Al parecer la imagen de disco ya existe.&lt;br&gt;Por favor renombrela, o cancele la operación.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/ImageManager.ui" line="+23"/>
@@ -2593,10 +2351,6 @@ Vea la ayuda para mas detalles.</translation>
         <location line="+47"/>
         <source>Do not show this dialog next time</source>
         <translation>No mostrar esta ventana la proxima vez</translation>
-    </message>
-    <message>
-        <source>Don&apos;t show this dialog next time</source>
-        <translation type="obsolete">No mostrar esta ventana la próxima vez</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -2755,42 +2509,21 @@ Vea la ayuda para mas detalles.</translation>
         <translation>%1 :. Qt4 GUI para Wine v%2</translation>
     </message>
     <message>
-        <source>Removing old fake drive</source>
-        <translation type="obsolete">Removiendo disco virtual viejo</translation>
-    </message>
-    <message>
-        <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before update it!</source>
-        <translation type="obsolete">Lo siento, no se encontro configuración del disco virtual.&lt;br&gt; Cree una configuración del disco virtual antes de actualizarlo!</translation>
-    </message>
-    <message>
-        <source>Manage prefixes</source>
-        <translation type="obsolete">Administrar prefijos</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="+203"/>
         <source>Program: %1&lt;br&gt; Args: %2 </source>
         <translation>Programa: %1&lt;br&gt; Argumentos: %2 </translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+94"/>
         <source>Socket file &quot;%1&quot; already exists!</source>
         <translation>El archivo socket: &quot;%1&quot; ya existe!</translation>
     </message>
     <message>
-        <source>It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you want to remove it?</source>
-        <translatorcomment>Revisar</translatorcomment>
-        <translation type="obsolete">Parece que otra instancia de q4wine ya esta corriendo, o se cerro incorrectamente. ¿Desea cerrarlo?</translation>
-    </message>
-    <message>
-        <location line="+50"/>
+        <location line="+53"/>
         <location line="+4"/>
         <location line="+14"/>
         <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
         <translation>La aplicacion: &quot;%1&quot; comenzo exitosamente para el prefijo: &quot;%2&quot;.</translation>
-    </message>
-    <message>
-        <source>helper notifycation</source>
-        <translation type="obsolete">Notificación del ayudante</translation>
     </message>
     <message>
         <location line="-4"/>
@@ -2804,25 +2537,9 @@ Vea la ayuda para mas detalles.</translation>
         <translation>La aplicación: &quot;%1&quot; finalizo para el prefijo: &quot;%2&quot;. El codigo de salida es &quot;%3&quot;.</translation>
     </message>
     <message>
-        <source>Can&apos;t start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
-        <translation type="obsolete">No se puede iniciar aplicacion: &quot;%1&quot; para el prefijo &quot;%2&quot;.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation type="obsolete">No se puede iniciar aplicación en consola: &quot;%1&quot; en el prefijo: &quot;%2&quot;.</translation>
-    </message>
-    <message>
         <location line="+44"/>
         <source>Unexpected socket message recived.</source>
         <translation>Se recibio un mensaje de socket no esperado.</translation>
-    </message>
-    <message>
-        <source>A fake drive already exists within &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Do you wish to remove &lt;b&gt;all&lt;/b&gt; files from this prefix?</source>
-        <translation type="obsolete">Hay otros discos virtuales instalados en la carpeta %1 del prefijo.&lt;br&gt;&lt;br&gt;Desea REMOVER TODOS LOS ARCHIVOS de la carpeta del prefijo?</translation>
-    </message>
-    <message>
-        <source>Removing old fake drive.&lt;br&gt;This may take awhile...</source>
-        <translation type="obsolete">Removiendo disco virtual viejo. &lt;br&gt;Esto puede tomar un tiempo...</translation>
     </message>
     <message>
         <location line="+254"/>
@@ -2831,16 +2548,12 @@ Vea la ayuda para mas detalles.</translation>
         <translation></translation>
     </message>
     <message>
-        <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
-        <translation type="obsolete">Lo siento, todavia no hay un asistente de instalacion. Sera implementado en v0.110.</translation>
-    </message>
-    <message>
-        <location line="-378"/>
+        <location line="-381"/>
         <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
         <translation>Parece que otra instancia de q4wine ya esta corriendo, o se cerro incorrectamente. ¿Desea cerrarlo?</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+56"/>
         <location line="+14"/>
         <location line="+13"/>
         <location line="+12"/>
@@ -2890,26 +2603,6 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Extrayendo icono</translation>
     </message>
     <message>
-        <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
-        <translation type="obsolete">Ejecutables y librerias de Win32 (*.exe *.dll);;Ejecutables de Win32 (*.exe);;Librerias de Win32 (*.dll)</translation>
-    </message>
-    <message>
-        <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Exportando icono de archivo ejecutable.&lt;br&gt;Esto puede tomar un tiempo...</translation>
-    </message>
-    <message>
-        <source>Exporting icon</source>
-        <translation type="obsolete">Exportando icono</translation>
-    </message>
-    <message>
-        <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Convirtiendo icono desde archivo ejecutable.&lt;br&gt;Esto puede tomar un tiempo...</translation>
-    </message>
-    <message>
-        <source>Converting icon</source>
-        <translation type="obsolete">Convirtiendo icono</translation>
-    </message>
-    <message>
         <location line="+121"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Solo una entidad de %1 puede ejecutarse al mismo tiempo.</translation>
@@ -2927,15 +2620,7 @@ Vea la ayuda para mas detalles.</translation>
         <translation>No se puede ejecutar el archivo</translation>
     </message>
     <message>
-        <source>Can&apos;t run binary</source>
-        <translation type="obsolete">No se puede ejecutar el binario</translation>
-    </message>
-    <message>
-        <source>Binary &quot;%1&quot; do not exists.</source>
-        <translation type="obsolete">El binario &quot;%1&quot; no existe.</translation>
-    </message>
-    <message>
-        <location line="-727"/>
+        <location line="-731"/>
         <source>Description: %1</source>
         <translation>Descripción: %1</translation>
     </message>
@@ -2961,22 +2646,6 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Opciones</translation>
     </message>
     <message>
-        <source>Warning</source>
-        <translation type="obsolete">Advertencia</translation>
-    </message>
-    <message>
-        <source>Current prefix:</source>
-        <translation type="obsolete">Prefijo actual: </translation>
-    </message>
-    <message>
-        <source>Run Winetricks plugin</source>
-        <translation type="obsolete">Ejecutar winetriks</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;You do not set default console binary.&lt;/p&gt;&lt;p&gt;Set it into q4wine option dialog.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Usted no configuro el ejecutable de consola por defecto.&lt;/p&gt;&lt;p&gt;Configurelo en la pestaña de opciones de q4wine.&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location line="-77"/>
         <source>Run...</source>
         <translation>Ejecutar...</translation>
@@ -2991,10 +2660,6 @@ Vea la ayuda para mas detalles.</translation>
         <location line="-171"/>
         <source>Processes</source>
         <translation>Proceso</translation>
-    </message>
-    <message>
-        <source>Support for WIS scripts has not yet been implemented; however, this application is capable of using winetricks (see the current tab&apos;s toolbar actions).</source>
-        <translation type="obsolete">El script WIS todavia no se ha implementado. Por ahora puedes usar el soporte de winetricks (ver barra de la pestaña actual).</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -3017,26 +2682,6 @@ Vea la ayuda para mas detalles.</translation>
         <location line="+171"/>
         <source>Setup</source>
         <translation>Configuración</translation>
-    </message>
-    <message>
-        <source>Base Setup</source>
-        <translation type="obsolete">Configuración de base</translation>
-    </message>
-    <message>
-        <source>This is the point where you have to start when creating new empty prefix. You can also create a new or update an old fake Windows drive.</source>
-        <translation type="obsolete">Para crear un nuevo prefijo comenzar aqui. Tambien puede crear un nuevo o actualizar un viejo disco virtual de Windows.</translation>
-    </message>
-    <message>
-        <source>Create Fake Drive</source>
-        <translation type="obsolete">Crear Disco Virtual</translation>
-    </message>
-    <message>
-        <source>Update Fake Drive</source>
-        <translation type="obsolete">Actualizar Disco Virtual</translation>
-    </message>
-    <message>
-        <source>System Software</source>
-        <translation type="obsolete">Software del sistema</translation>
     </message>
     <message>
         <location line="-112"/>
@@ -3111,10 +2756,6 @@ Vea la ayuda para mas detalles.</translation>
         <location line="+3"/>
         <source>Import Wine Desktop Files</source>
         <translation>Importar archivos desktop de wine</translation>
-    </message>
-    <message>
-        <source>Scan for Wine desktop files and import them into q4wine&apos;s icon view.</source>
-        <translation type="obsolete">Buscar archivos desktop de wine e importarlos en la vista de iconos.</translation>
     </message>
     <message>
         <location line="-87"/>
@@ -3335,10 +2976,6 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Lo siento, no se encontro configuración del disco virtual.&lt;br&gt; Cree una configuración del disco virtual antes de actualizarlo.</translation>
     </message>
     <message>
-        <source>Create or update q4wine&apos;s cache of Winetricks appications.</source>
-        <translation type="obsolete">Crear o actualizar la cache de q4wine para las aplicaciones de Winetricks.</translation>
-    </message>
-    <message>
         <location line="-28"/>
         <source>Warning</source>
         <translation>Advertencia</translation>
@@ -3348,10 +2985,6 @@ Vea la ayuda para mas detalles.</translation>
         <source>A fake drive already exists within &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Do you wish to remove &lt;b&gt;all&lt;/b&gt; files from this prefix?</source>
         <translatorcomment>Revisar</translatorcomment>
         <translation>Ya existe un disco virtual en &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Desea eliminar &lt;b&gt;TODOS &lt;/b&gt; los archivos de la carpeta del prefijo?</translation>
-    </message>
-    <message>
-        <source>Removing old fake drive.&lt;br&gt;This may take awhile...</source>
-        <translation type="obsolete">Eliminando disco virtual viejo. &lt;br&gt;Esto puede tomar un tiempo...</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3368,10 +3001,6 @@ Vea la ayuda para mas detalles.</translation>
         <location line="+14"/>
         <source>Error</source>
         <translation>Error</translation>
-    </message>
-    <message>
-        <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before update it!</source>
-        <translation type="obsolete">Lo siento, no se encontro configuración del disco virtual.&lt;br&gt; Cree una configuración del disco virtual antes de actualizarlo!</translation>
     </message>
 </context>
 <context>
@@ -3452,18 +3081,10 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Desea borra el prefijo &quot;%1&quot; y todos los iconos asociados?</translation>
     </message>
     <message>
-        <source>Sorry, you can&apos;t delete Default prefix.</source>
-        <translation type="obsolete">Lo siento, no puede eliminar el prefijo Default.</translation>
-    </message>
-    <message>
         <location line="+0"/>
         <location line="+61"/>
         <source>Warning</source>
         <translation>Advertencia</translation>
-    </message>
-    <message>
-        <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="obsolete">Desea borra el prefijo &quot;%1&quot; y todos los iconos asociados?</translation>
     </message>
     <message>
         <location line="-9"/>
@@ -3558,11 +3179,6 @@ Vea la ayuda para mas detalles.</translation>
         <translation>La carpeta &quot;%1&quot; ya existe. Desea usarla de cualquier manera?</translation>
     </message>
     <message>
-        <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
-        <translatorcomment>Revisar</translatorcomment>
-        <translation type="obsolete">Disculpe, el prefijo %1 ya existe.</translation>
-    </message>
-    <message>
         <location line="+45"/>
         <location line="+2"/>
         <source>Open File</source>
@@ -3628,13 +3244,6 @@ Vea la ayuda para mas detalles.</translation>
         <location line="+9"/>
         <source>Wine settings</source>
         <translation>Ajustes de wine</translation>
-    </message>
-    <message>
-        <source>If you wish to use different Wine versions, you may wish set custom Wine paths here.
-Note: leave it blank for default.</source>
-        <translation type="obsolete">Si desea utilizar diferentes versiones de wine, puede configurarlo aqui.
-
-Nota: deje en blanco para valores por defecto.</translation>
     </message>
     <message>
         <location line="+302"/>
@@ -3737,7 +3346,7 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
 <context>
     <name>PrefixTreeWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+99"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+100"/>
         <source>Enter new directory name</source>
         <translation>Ingrese nuevo nombre de carpeta</translation>
     </message>
@@ -3748,14 +3357,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation>Nombre de carpeta:</translation>
     </message>
     <message>
-        <source>Sorry. It seems directory already exists.</source>
-        <translation type="obsolete">Disculpe, la carpeta ya existe.</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation type="obsolete">Disculpe. la carpeta ya existe.&lt;br&gt;Por favor elija otro nombre, o cancele la operación.</translation>
-    </message>
-    <message>
         <location line="+0"/>
         <source>Enter new name for directory</source>
         <translation>Ingrese nuevo nombre para la carpeta</translation>
@@ -3764,12 +3365,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <location line="+33"/>
         <source>Q4Wine</source>
         <translation>Q4Wine</translation>
-    </message>
-    <message>
-        <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
-</source>
-        <translation type="obsolete">Desea eliminar la carpeta &quot;%1&quot; y todos los iconos asociados?
-</translation>
     </message>
     <message>
         <location line="+67"/>
@@ -3846,10 +3441,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <location line="+240"/>
         <source>Browse ...</source>
         <translation>Explorar ...</translation>
-    </message>
-    <message>
-        <source>Browse for other image</source>
-        <translation type="obsolete">Buscar otra imagen</translation>
     </message>
     <message>
         <location line="-219"/>
@@ -4012,17 +3603,9 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation>Desea borra el prefijo &quot;%1&quot; y todos los iconos asociados?</translation>
     </message>
     <message>
-        <source>Sorry, you can&apos;t delete Default prefix.</source>
-        <translation type="obsolete">Lo siento, no puede borrar el prefijo Default.</translation>
-    </message>
-    <message>
         <location line="+0"/>
         <source>Warning</source>
         <translation>Advertencia</translation>
-    </message>
-    <message>
-        <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="obsolete">Desea borra el prefijo &quot;%1&quot; y todos los iconos asociados?</translation>
     </message>
     <message>
         <location line="-286"/>
@@ -4061,14 +3644,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation>Configurar ajustes del disco virtual</translation>
     </message>
     <message>
-        <source>Sorry. It seems icon already exists.</source>
-        <translation type="obsolete">Disculpe, el icono ya existe.</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation type="obsolete">Disculpe. el icono ya existe.&lt;br&gt;Por favor elija otro nombre, o cancele la operación.</translation>
-    </message>
-    <message>
         <location line="+177"/>
         <location line="+106"/>
         <source>Error</source>
@@ -4090,14 +3665,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <source>Fail to mount %1.</source>
         <translation>Fallo al montar %1.</translation>
     </message>
-    <message>
-        <source>Drive successfully umounted.</source>
-        <translation type="obsolete">Dispositivo exitosamente desmontado.</translation>
-    </message>
-    <message>
-        <source>Fail to umount drive.</source>
-        <translation type="obsolete">Fallo al desmontar dispositivo.</translation>
-    </message>
 </context>
 <context>
     <name>Process</name>
@@ -4118,10 +3685,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <source>Error</source>
         <translatorcomment>same</translatorcomment>
         <translation></translation>
-    </message>
-    <message>
-        <source>It seems procces fail.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</source>
-        <translation type="obsolete">Parece que el proceso fallo.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</translation>
     </message>
     <message>
         <location line="-42"/>
@@ -4176,14 +3739,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation>Al parecer el proceso fallo.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</translation>
     </message>
     <message>
-        <source>It seems the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
-        <translation type="obsolete">El proceso parece haber terminado de manera normal.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</translation>
-    </message>
-    <message>
-        <source>It seems the process crashed.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
-        <translation type="obsolete">Al parecer el proceso fallo.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</translation>
-    </message>
-    <message>
         <location line="-76"/>
         <location line="+23"/>
         <source>Process: The last waitFor...() function timed out.</source>
@@ -4202,10 +3757,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
 </context>
 <context>
     <name>Progress</name>
-    <message>
-        <source>Importing wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see q4wine options dialog.</source>
-        <translation type="obsolete">Importando iconos del escritorio de wine desde:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Esto puede tomar un tiempo---&lt;br&gt;&lt;br&gt;&lt;b&gt;Nota:&lt;/b&gt; Para remover los archivos agregados vea el cuadro de dialogo de opciones.</translation>
-    </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="+50"/>
         <source>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
@@ -4235,10 +3786,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <location line="+53"/>
         <source>If the processes keep running -- end them manually.</source>
         <translation>Si  los procesos continuan ejecutandose -- cierrelos manualmente.</translation>
-    </message>
-    <message>
-        <source>While process keep running -- end them manually.</source>
-        <translation type="obsolete">Mientras los procesos continuan ejecutandose -- cierrelos manualmente.</translation>
     </message>
     <message>
         <location line="-52"/>
@@ -4396,10 +3943,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation>establece el nombre de la imagen de cd</translation>
     </message>
     <message>
-        <source>Umounting mount point &quot;%1&quot;.</source>
-        <translation type="obsolete">Desmontando punto de montaje &quot;%1&quot;.</translation>
-    </message>
-    <message>
         <location line="-71"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Lista de medios montados para todos los prefijos</translation>
@@ -4449,10 +3992,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation>Autor: %1.</translation>
     </message>
     <message>
-        <source>Open q4wine run dialog for windows binary</source>
-        <translation type="obsolete">Abrir cuadro de dialogo para binarios de windows</translation>
-    </message>
-    <message>
         <location line="+17"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="+60"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+73"/>
@@ -4479,14 +4018,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <location line="+1"/>
         <source>minimize %1 main window on startup</source>
         <translation>Minimizar ventana principal de %1 al iniciar</translation>
-    </message>
-    <message>
-        <source>GUI utility for wine applications and prefixes management.</source>
-        <translation type="obsolete">Utilidad GUI para el manejo de aplicaciones y prefijos de wine.</translation>
-    </message>
-    <message>
-        <source>File &quot;%1&quot; not exists.</source>
-        <translation type="obsolete">Archivo &quot;%1&quot; no existe.</translation>
     </message>
     <message>
         <location line="-8"/>
@@ -4532,17 +4063,9 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation>establece el nombre del prefijo actual</translation>
     </message>
     <message>
-        <source>sets the current direcory name</source>
-        <translation type="obsolete">establece el nombre de la carpeta actual</translation>
-    </message>
-    <message>
         <location line="+2"/>
         <source>sets the current icon name</source>
         <translation>establece el nombre del icono actual</translation>
-    </message>
-    <message>
-        <source>sets the cd iamge name</source>
-        <translation type="obsolete">establece el nombre de la imagen de cd</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4585,25 +4108,9 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation> -1 si hay errores graves</translation>
     </message>
     <message>
-        <source>Prefix named &quot;%1&quot; not exists. Run &quot;%2-cli -pl&quot; for prefix list.</source>
-        <translation type="obsolete">El prefijo &quot;%1&quot; no existe Ejecute &quot;%2-cli -pl&quot; para la lista de prefijos.</translation>
-    </message>
-    <message>
-        <source>Icon named &quot;%1&quot; not exists.  Run &quot;%2-cli -il&quot; for icon list.</source>
-        <translation type="obsolete">El icono llamado &quot;%1&quot; no existe.  Ejecute &quot;%2-cli -il&quot; para la lista de iconos.</translation>
-    </message>
-    <message>
-        <source>Dir named &quot;%1&quot; not exists. Run &quot;%2-cli -dl&quot; for dir list.</source>
-        <translation type="obsolete">La carpeta &quot;%1&quot; no existe. Ejecute &quot;%2-cli -dl&quot; para la lista de carpetas.</translation>
-    </message>
-    <message>
         <location line="-157"/>
         <source>%1 has the following disc images in the database</source>
         <translation>%1 tiene las siguiente imagenes de CD en la base de datos</translation>
-    </message>
-    <message>
-        <source>No disc image &quot;%1&quot; exists. Run &quot;%2-cli -cl&quot; for disc image list.</source>
-        <translation type="obsolete">No existe la imagen de CD &quot;%1&quot;. Ejecute &quot;%2-cli -cl&quot; para una lista de imagenes de CD.</translation>
     </message>
     <message>
         <location line="+133"/>
@@ -4622,22 +4129,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation>  %1-cli -p &lt;nombre_del_prefijo&gt; -b &lt;ruta_del_ejecutable&gt; [argumentos]</translation>
     </message>
     <message>
-        <source>sends -9 term signal to current prefix precess or for all prefixes processes</source>
-        <translation type="obsolete">envia señal -9 term a los procesos del prefijo actual o de todos los prefijos</translation>
-    </message>
-    <message>
-        <source>output all exesting prefixes names and exit</source>
-        <translation type="obsolete">mostrar todos los nombres de prefijos y salir</translation>
-    </message>
-    <message>
-        <source>output all exesting dir names for current prefix and exit</source>
-        <translation type="obsolete">mostrar todos los nombres de carpetas para el prefijo actual y salir</translation>
-    </message>
-    <message>
-        <source>output all exesting icon names for current prefix/directory and exit</source>
-        <translation type="obsolete">mostrar todos los nombres de iconos para el prefijo/carpeta actual y salir</translation>
-    </message>
-    <message>
         <location line="+15"/>
         <source>output all cd images list and exit</source>
         <translation>mostar la lista de imagenes de cd y salir</translation>
@@ -4646,14 +4137,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <location line="+1"/>
         <source>output all mounted media for current prefix or all prefixes and exit</source>
         <translation>mostar todos los medios montados para el prefijo actual o todos los prefijos y salir</translation>
-    </message>
-    <message>
-        <source>mount an cd iamage or drive for current prefix and exit</source>
-        <translation type="obsolete">montar una imagen de cd o dispositivo para el prefijo actual y salir</translation>
-    </message>
-    <message>
-        <source>umount an cd iamage or drive for current prefix and exit</source>
-        <translation type="obsolete">desmontar una imagen de cd o dispositivo para el prefijo actual y salir</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -4685,10 +4168,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation>  %1 ayuda [TECLAs]...</translation>
     </message>
     <message>
-        <source>Console utility for q4wine which helps to handle wine application exit status and it&apos;s stdout\stderr output logging.</source>
-        <translation type="obsolete">Utilidad de consola para q4wine que ayuda a manejar los estados de salida de las aplicaciones de wine para su registro.</translation>
-    </message>
-    <message>
         <location line="+4"/>
         <source>sets WINEDEBUG variable</source>
         <translation>configura la variable WINEDEBUG</translation>
@@ -4702,10 +4181,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <location line="+1"/>
         <source>sets DISPLAY variable</source>
         <translation>configura la variable DISPLAY</translation>
-    </message>
-    <message>
-        <source>sets program nicenes</source>
-        <translation type="obsolete">Ajusta la prioridad de un programa</translation>
     </message>
     <message>
         <location line="-5"/>
@@ -4751,11 +4226,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <location line="+1"/>
         <source>execute script before program run</source>
         <translation>Ejecuta el script antes del programa</translation>
-    </message>
-    <message>
-        <source>execute script before run program</source>
-        <translatorcomment>Revisar</translatorcomment>
-        <translation type="obsolete">Ejecuta el script antes del programa</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4814,10 +4284,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <location line="-5"/>
         <source>No program name specified.</source>
         <translation>No se especifico el nombre del programa.</translation>
-    </message>
-    <message>
-        <source>Selected working directory not exists.</source>
-        <translation type="obsolete">La carpeta seleccionada no existe.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -5035,10 +4501,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation>Lo siento, la carpeta de su dispositivo no existe.</translation>
     </message>
     <message>
-        <source>Sorry, drive directory not exists.</source>
-        <translation type="obsolete">Lo siento, la carpeta de su dispositivo no existe.</translation>
-    </message>
-    <message>
         <location line="+21"/>
         <source>Open Directory</source>
         <translation>Abrir carpeta</translation>
@@ -5136,18 +4598,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation>Al parecer el renice de %1 a %2 del proceso finalizo exitosamente.</translation>
     </message>
     <message>
-        <source>This action will send a KILL(-9) signal to selected processes&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
-        <translation type="obsolete">Esta accion enviara una señal KILL(-9) a los procesos seleccionados&lt;br&gt;&lt;br&gt;Hay un GRAN riesgo de dañar el estado normal de wine.&lt;br&gt;&lt;br&gt;Desea continuar?</translation>
-    </message>
-    <message>
-        <source>This action will send a KILL(-9) signal to all wine processes for selected prefixes&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
-        <translation type="obsolete">Esta acción enviara una señal KILL(-9) a todos los procesos wine de los prefijos seleccionados&lt;br&gt;&lt;br&gt;Desea continuar?</translation>
-    </message>
-    <message>
-        <source>It seems process %1 renice to %2 end successfully.</source>
-        <translation type="obsolete">Al parecer el renice de %1 a %2 del proceso finalizo exitosamente.</translation>
-    </message>
-    <message>
         <location line="-86"/>
         <location line="+37"/>
         <source>Warning</source>
@@ -5162,14 +4612,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <location line="+21"/>
         <source>Error</source>
         <translation>Error</translation>
-    </message>
-    <message>
-        <source>Can&apos;t run: %1</source>
-        <translation type="obsolete">No se puede ejecutar %1</translation>
-    </message>
-    <message>
-        <source>It seems process %1 killed successfully.</source>
-        <translation type="obsolete">El proceso %1 fue terminado exitosamente.</translation>
     </message>
     <message>
         <location line="+45"/>
@@ -5252,14 +4694,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <location line="+3"/>
         <source>Sorry, specify %1 binary.</source>
         <translation>Disculpe, especifique el ejecutable %1.</translation>
-    </message>
-    <message>
-        <source>Sorry, specified %1 directory not exists.</source>
-        <translation type="obsolete">Disculpe, la carpeta %1 no existe.</translation>
-    </message>
-    <message>
-        <source>Sorry, specified %1 binary not exists.</source>
-        <translation type="obsolete">Disculpe, el ejecutable %1 no existe.</translation>
     </message>
     <message>
         <location line="+70"/>
@@ -5411,33 +4845,6 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <location line="+17"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
-    </message>
-</context>
-<context>
-    <name>winetricks</name>
-    <message>
-        <source>Install Winetricks</source>
-        <translation type="obsolete">Instalar Winetricks</translation>
-    </message>
-    <message>
-        <source>winetricks plugin</source>
-        <translation type="obsolete">Plugin winetricks</translation>
-    </message>
-    <message>
-        <source>Install</source>
-        <translation type="obsolete">Instalar</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation type="obsolete">Salir</translation>
-    </message>
-    <message>
-        <source>Refresh List</source>
-        <translation type="obsolete">Actualizar lista</translation>
-    </message>
-    <message>
-        <source>Click on item to show help here</source>
-        <translation type="obsolete">Haga click en un elemento para mostrar aqui la ayuda</translation>
     </message>
 </context>
 </TS>

@@ -15,18 +15,6 @@
         <translation>About</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Q4Wine 0.121&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;q4wine 0.121&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location line="+68"/>
         <source>Utility for Wine applications and prefixes management.</source>
         <translation>Utility for Wine applications and prefixes mangement.</translation>
@@ -38,22 +26,6 @@ p, li { white-space: pre-wrap; }
         <location line="+39"/>
         <source>Authors</source>
         <translation>Authors</translation>
-    </message>
-    <message utf8="true">
-        <source>© 2008–2011, brezblock core team.</source>
-        <translation type="obsolete">© 2008–2011 the brezblock core team.</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {3C?} {4.0/?} {3.?} {40/?} {1&quot;?} {13p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {10p?}</translation>
     </message>
     <message>
         <location line="-48"/>
@@ -206,22 +178,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Search in appdb</source>
-        <translation type="obsolete">Search AppDB</translation>
-    </message>
-    <message>
-        <source>Search in wine appdb</source>
-        <translation type="obsolete">Search Wine AppDB</translation>
-    </message>
-    <message>
-        <source>Appdb categoryes list</source>
-        <translation type="obsolete">AppDB categories list</translation>
-    </message>
-    <message>
-        <source>View wine appdb categoryes list</source>
-        <translation type="obsolete">View Wine AppDB categories list</translation>
-    </message>
-    <message>
         <location line="+8"/>
         <source>Error: %1</source>
         <translation>Error: %1</translation>
@@ -360,10 +316,6 @@ p, li { white-space: pre-wrap; }
         <location line="+57"/>
         <source>Loader:</source>
         <translation>Loader:</translation>
-    </message>
-    <message>
-        <source>Libs:</source>
-        <translation type="obsolete">Libraries:</translation>
     </message>
     <message>
         <location line="+177"/>
@@ -744,10 +696,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>AppDb browser</source>
-        <translation type="obsolete">AppDB Browser</translation>
-    </message>
-    <message>
         <location line="+15"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-478"/>
         <location line="+484"/>
@@ -801,14 +749,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DataBase</name>
     <message>
-        <source>Critical error</source>
-        <translation type="obsolete">Critical error</translation>
-    </message>
-    <message>
-        <source>Can not open database file: %1/.config/%2/db/generic.dat ; Error is: %3</source>
-        <translation type="obsolete">Cannot open database file: %1/.config/%2/db/generic.dat ; Error is %3</translation>
-    </message>
-    <message>
         <location filename="../core/database/db.cpp" line="+66"/>
         <source>No database loaded. Aborting...</source>
         <translation>No database loaded. Aborting...</translation>
@@ -850,10 +790,6 @@ p, li { white-space: pre-wrap; }
         <location line="+4"/>
         <source>Video</source>
         <translation>Video</translation>
-    </message>
-    <message>
-        <source>Direct 3D</source>
-        <translation type="obsolete">Direct3D</translation>
     </message>
     <message>
         <location line="-554"/>
@@ -1043,10 +979,6 @@ p, li { white-space: pre-wrap; }
         <translation>Shaders</translation>
     </message>
     <message>
-        <source>Direct 3D settings</source>
-        <translation type="obsolete">Direct3D Settings</translation>
-    </message>
-    <message>
         <location line="+1880"/>
         <source>Joystick Axes Mapping:</source>
         <translation>Joystick Axes Mapping:</translation>
@@ -1131,10 +1063,6 @@ p, li { white-space: pre-wrap; }
         <location line="-1864"/>
         <source>Memory (MB):</source>
         <translation>Memory (MB):</translation>
-    </message>
-    <message>
-        <source>Note: Q4Wine do not check is selected driver avalible for current wine build or not. Use this option with care.</source>
-        <translation type="obsolete">Note: Q4Wine does not check if the selected driver is available for the current Wine build. Use this option carefully.</translation>
     </message>
     <message>
         <location line="+993"/>
@@ -1248,26 +1176,6 @@ For example:
 
 See help for details.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Can&apos;t read desktop paths!</source>
-        <translation type="obsolete">Cannot read desktop paths!</translation>
-    </message>
-    <message>
-        <source>Can&apos;t remove symlink: %1</source>
-        <translation type="obsolete">Cannot remove symlink: %1</translation>
-    </message>
-    <message>
-        <source>Can&apos;t symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation type="obsolete">Cannot symlink &quot;%1&quot; to &quot;%2&quot;</translation>
-    </message>
-    <message>
-        <source>Can&apos;t create dir: %1</source>
-        <translation type="obsolete">Cannot create directory: %1</translation>
-    </message>
-    <message>
-        <source>Can&apos;t remove dir: %1</source>
-        <translation type="obsolete">Cannot remove directory: %1</translation>
     </message>
     <message>
         <location line="+1196"/>
@@ -2044,14 +1952,6 @@ See help for details.</source>
         <translation>Size:</translation>
     </message>
     <message>
-        <source>Override Dll</source>
-        <translation type="obsolete">Override DLLs</translation>
-    </message>
-    <message>
-        <source>Present wine dlls</source>
-        <translation type="obsolete">Present Wine DLLs</translation>
-    </message>
-    <message>
         <location line="+237"/>
         <source>Disable</source>
         <translation>Disable</translation>
@@ -2060,10 +1960,6 @@ See help for details.</source>
         <location line="+8"/>
         <source>Add</source>
         <translation>Add</translation>
-    </message>
-    <message>
-        <source>Overrided dlls</source>
-        <translation type="obsolete">Overridden DLLs</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -2534,7 +2430,7 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+94"/>
         <source>Socket file &quot;%1&quot; already exists!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2544,7 +2440,7 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+52"/>
         <location line="+4"/>
         <location line="+14"/>
         <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
@@ -2601,11 +2497,7 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Can&apos;t run binary</source>
-        <translation type="obsolete">Cannot run binary</translation>
-    </message>
-    <message>
-        <location line="-720"/>
+        <location line="-724"/>
         <source>Description: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2625,7 +2517,7 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+130"/>
+        <location line="+134"/>
         <location line="+14"/>
         <location line="+13"/>
         <location line="+12"/>
@@ -2667,10 +2559,6 @@ See help for details.</source>
         <translation>Options</translation>
     </message>
     <message>
-        <source>Error</source>
-        <translation type="obsolete">Error</translation>
-    </message>
-    <message>
         <location line="-77"/>
         <source>Run...</source>
         <translation>Run...</translation>
@@ -2688,7 +2576,7 @@ See help for details.</source>
         <translation>Prefixes</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-716"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-720"/>
         <source>Default</source>
         <translation type="unfinished">Default</translation>
     </message>
@@ -2707,26 +2595,6 @@ See help for details.</source>
         <location line="-184"/>
         <source>Processes</source>
         <translation>Processes</translation>
-    </message>
-    <message>
-        <source>Base Setup</source>
-        <translation type="obsolete">Base Setup</translation>
-    </message>
-    <message>
-        <source>Create Fake Drive</source>
-        <translation type="obsolete">Create Fake Drive</translation>
-    </message>
-    <message>
-        <source>Update Fake Drive</source>
-        <translation type="obsolete">Update Fake Drive</translation>
-    </message>
-    <message>
-        <source>System Software</source>
-        <translation type="obsolete">System Software</translation>
-    </message>
-    <message>
-        <source>Support for WIS scripts has not yet been implemented; however, this application is capable of using winetricks (see the current tab&apos;s toolbar actions).</source>
-        <translation type="obsolete">Support for WIS scripts has not yet been implemented; however, this application is capable of using winetricks (see the current tab&apos;s toolbar actions).</translation>
     </message>
     <message>
         <location line="+49"/>
@@ -3203,10 +3071,6 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
-        <translation type="obsolete">A prefix named &quot;%1&quot; already exists</translation>
-    </message>
-    <message>
         <location line="+45"/>
         <location line="+2"/>
         <source>Open File</source>
@@ -3270,12 +3134,6 @@ See help for details.</source>
         <location line="+9"/>
         <source>Wine settings</source>
         <translation>Wine Settings</translation>
-    </message>
-    <message>
-        <source>If you wish to use different Wine versions, you may wish set custom Wine paths here.
-Note: leave it blank for default.</source>
-        <translation type="obsolete">If you wish to use different Wine versions, you may wish to set custom Wine paths here.
-Note: leave it blank for default.</translation>
     </message>
     <message>
         <location line="+302"/>
@@ -3376,7 +3234,7 @@ Note: leave it blank for default.</source>
 <context>
     <name>PrefixTreeWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+99"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+100"/>
         <source>Enter new directory name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3395,11 +3253,6 @@ Note: leave it blank for default.</source>
         <location line="+33"/>
         <source>Q4Wine</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
-</source>
-        <translation type="obsolete">Do you really wish to delete &quot;%1&quot; and all associated icons?</translation>
     </message>
     <message>
         <location line="+67"/>
@@ -3789,10 +3642,6 @@ Note: leave it blank for default.</source>
 </context>
 <context>
     <name>Progress</name>
-    <message>
-        <source>Importing wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see q4wine options dialog.</source>
-        <translation type="obsolete">Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take awhile...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note: &lt;/b&gt; to remove processed files, use the Options dialog.</translation>
-    </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="+50"/>
         <source>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
@@ -4860,25 +4709,6 @@ Note: leave it blank for default.</source>
         <location line="+17"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
-    </message>
-</context>
-<context>
-    <name>winetricks</name>
-    <message>
-        <source>Install</source>
-        <translation type="obsolete">Install</translation>
-    </message>
-    <message>
-        <source>Install Winetricks</source>
-        <translation type="obsolete">Install Winetricks</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation type="obsolete">Exit</translation>
-    </message>
-    <message>
-        <source>Refresh List</source>
-        <translation type="obsolete">Refresh List</translation>
     </message>
 </context>
 </TS>

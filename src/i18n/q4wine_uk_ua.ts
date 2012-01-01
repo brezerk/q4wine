@@ -96,29 +96,9 @@
         <translation>Підкатегорії</translation>
     </message>
     <message>
-        <source>Error: can&apos;t read data from %1.</source>
-        <translation type="obsolete">Помилка: не вдалося отримати данні з %1.</translation>
-    </message>
-    <message>
-        <source>Error: wrong or broken xml data. Try again later.</source>
-        <translation type="obsolete">Помилка: не дійсні, або пошкоджені данні. Спробуйте ще раз пізніше.</translation>
-    </message>
-    <message>
-        <source>Error: wrong or broken appdb xml version. Application needs to be updated?</source>
-        <translation type="obsolete">Помилка: не дійсна, або пошкоджена версія xml. Можливо програма потребує оновлення?</translation>
-    </message>
-    <message>
-        <source>Error: xml parse error.</source>
-        <translation type="obsolete">Помилка: помилка розбору xml.</translation>
-    </message>
-    <message>
         <location line="+26"/>
         <source>Error: unexpected error.</source>
         <translation>Помилка: неочікувана помилка.</translation>
-    </message>
-    <message>
-        <source>Search: No matches found</source>
-        <translation type="obsolete">Пошук: немає результатів</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -198,22 +178,6 @@
         <translation>Показати список категорій AppDB</translation>
     </message>
     <message>
-        <source>Search in appdb</source>
-        <translation type="obsolete">Шукати по базі AppDB</translation>
-    </message>
-    <message>
-        <source>Search in wine appdb</source>
-        <translation type="obsolete">Шукати по базі AppDB</translation>
-    </message>
-    <message>
-        <source>Appdb categoryes list</source>
-        <translation type="obsolete">Список категорій AppDB</translation>
-    </message>
-    <message>
-        <source>View wine appdb categoryes list</source>
-        <translation type="obsolete">Показати список категорій AppDB</translation>
-    </message>
-    <message>
         <location line="+8"/>
         <source>Error: %1</source>
         <translation>Помилка: %1</translation>
@@ -280,10 +244,6 @@
         <location line="+57"/>
         <source>Loader:</source>
         <translation>Завантажувач:</translation>
-    </message>
-    <message>
-        <source>Libs:</source>
-        <translation type="obsolete">Бібліотеки:</translation>
     </message>
     <message>
         <location line="+162"/>
@@ -398,10 +358,6 @@
         <translation>Очищати журнали під час старту.</translation>
     </message>
     <message>
-        <source>Note: Because of sqlite engine specific, large amount of logging data can reduce q4wine performance. Use it with care. You have been warned.</source>
-        <translation type="obsolete">Зауваження: У зв&apos;язку з обмеженнями sqlite, великий об&apos;єм даних  з журналювання, може знизити швидкість роботи q4wine. Використовуйте журналювання обережно. Вас попередили.</translation>
-    </message>
-    <message>
         <location line="+503"/>
         <source>Run recent program</source>
         <translation>Запуск нещодавних програм</translation>
@@ -496,10 +452,6 @@
         <translation>Згортати головне вікно при запуску.</translation>
     </message>
     <message>
-        <source>Minimize to tray at application icon startup.</source>
-        <translation type="obsolete">Згортати головне вікно при запуску піктограми програми.</translation>
-    </message>
-    <message>
         <location line="+26"/>
         <source>Show tray icon notifications.</source>
         <translation>Показувати сповіщення піктограми у лотку.</translation>
@@ -528,10 +480,6 @@
         <location line="+44"/>
         <source>Username:</source>
         <translation>Користувач:</translation>
-    </message>
-    <message>
-        <source>Expand prefix tree items on startup.</source>
-        <translation type="obsolete">Розкривати дерево префіксів під час запуску програми.</translation>
     </message>
     <message>
         <location line="+1175"/>
@@ -564,14 +512,6 @@
         <location line="+44"/>
         <source>Umount:</source>
         <translation>Демонтування:</translation>
-    </message>
-    <message>
-        <source>Prefix tree view</source>
-        <translation type="obsolete">Показ префіксів</translation>
-    </message>
-    <message>
-        <source>Enable logging sybsystem.</source>
-        <translation type="obsolete">Увімкнути підсистему журналювання.</translation>
     </message>
     <message>
         <location line="+272"/>
@@ -692,10 +632,6 @@
         <translation>Імпорт десктоп файлів wine</translation>
     </message>
     <message>
-        <source>Import wine desktop files at q4wine startup.</source>
-        <translation type="obsolete">Імпортувати десктопні файли wine підчас запуску q4wine.</translation>
-    </message>
-    <message>
         <location line="-145"/>
         <source>Remove processed wine desktop files.</source>
         <translation>Видаляти опрацьовані десктопні файли wine.</translation>
@@ -713,10 +649,6 @@
         <location line="+487"/>
         <source>Subsystems</source>
         <translation>Підсистеми</translation>
-    </message>
-    <message>
-        <source>AppDb browser</source>
-        <translation type="obsolete">Навігатор AppDB</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -808,14 +740,6 @@
         <translation>Вибачте, вказаного виконуваного файла %1 не існує.</translation>
     </message>
     <message>
-        <source>Sorry, specified %1 directory not exists.</source>
-        <translation type="obsolete">Вибачте, вказана тека %1 не існує.</translation>
-    </message>
-    <message>
-        <source>Sorry, specified %1 binary not exists.</source>
-        <translation type="obsolete">Вибачте, вказаного виконуваного файла %1 не існує.</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="-891"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-641"/>
         <location line="+499"/>
@@ -825,14 +749,6 @@
 </context>
 <context>
     <name>DataBase</name>
-    <message>
-        <source>Critical error</source>
-        <translation type="obsolete">Критична помилка</translation>
-    </message>
-    <message>
-        <source>Can not open database file: %1/.config/%2/db/generic.dat ; Error is: %3</source>
-        <translation type="obsolete">Не можливо завантажити файл бази даних: %1/.config/%2/db/generic.dat ; Помилка: %3</translation>
-    </message>
     <message>
         <location filename="../core/database/db.cpp" line="+66"/>
         <source>No database loaded. Aborting...</source>
@@ -1076,10 +992,6 @@
         <translation></translation>
     </message>
     <message>
-        <source>Direct 3D settings</source>
-        <translation type="obsolete">Налаштування Direct 3D</translation>
-    </message>
-    <message>
         <location line="+1880"/>
         <source>Joystick Axes Mapping:</source>
         <translation>Маппінг Вісей Джойстика:</translation>
@@ -1152,10 +1064,6 @@
         <location line="-2050"/>
         <source>Memory (MB):</source>
         <translation>Пам&apos;ять (Mb):</translation>
-    </message>
-    <message>
-        <source>Note: Q4Wine do not check is selected driver avalible for current wine build or not. Use this option with care.</source>
-        <translation type="obsolete">Зауваження: Q4Wine не перевіряє наявність драйверів для поточної конфігурації wine. Користуйтеся налаштуваннями обержно.</translation>
     </message>
     <message>
         <location line="+993"/>
@@ -1281,30 +1189,6 @@ See help for details.</source>
 Скористайтесь допомогою для роз&apos;яснення.</translation>
     </message>
     <message>
-        <source>Can&apos;t read desktop paths!</source>
-        <translation type="obsolete">Не можу отримати шляхи стільниці!</translation>
-    </message>
-    <message>
-        <source>Can&apos;t remove symlink: %1</source>
-        <translation type="obsolete">Неможливо вилучити посилання: %1</translation>
-    </message>
-    <message>
-        <source>Can&apos;t symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation type="obsolete">Не можу створити посилання &quot;%1&quot; до &quot;%2&quot;</translation>
-    </message>
-    <message>
-        <source>Can&apos;t create dir: %1</source>
-        <translation type="obsolete">Не можу створити каталог: %1</translation>
-    </message>
-    <message>
-        <source>Can&apos;t remove dir: %1</source>
-        <translation type="obsolete">Не можу вилучити каталог: %1</translation>
-    </message>
-    <message>
-        <source>Can&apos;t create file &quot;%1&quot;</source>
-        <translation type="obsolete">Не можу створити файл: %1</translation>
-    </message>
-    <message>
         <location line="+1196"/>
         <location line="+6"/>
         <source>Open File</source>
@@ -1381,10 +1265,6 @@ See help for details.</source>
         <location line="+63"/>
         <source>Sorry, You cannot delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
         <translation>Вибачте, Ви не можете видалити або змінити диск С:&lt;br&gt;Проте, Ви можете змінити його у диалогу налаштування Префіксу.</translation>
-    </message>
-    <message>
-        <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
-        <translation type="obsolete">Вибачте, Ви не можете видалити або змінити диск С:&lt;br&gt;Проте, Ви можете змінити його у диалогу налаштування Префіксу.</translation>
     </message>
 </context>
 <context>
@@ -1470,14 +1350,6 @@ See help for details.</source>
 </context>
 <context>
     <name>IconListWidget</name>
-    <message>
-        <source>Sorry. It seems icon already exists.</source>
-        <translation type="obsolete">Вибачте, здається, піктограма з такою назвою вже є.</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation type="obsolete">Вибачте. Здаєтся піктограма вже існує.&lt;br&gt;Будь ласка оберіть інше ім&apos;я, або скасуйте дію.</translation>
-    </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+253"/>
         <location line="+904"/>
@@ -1785,26 +1657,14 @@ See help for details.</source>
         <translation>Не вдалося демонтувати пристрій.</translation>
     </message>
     <message>
-        <source>Copy application directory path to system&apos;s&apos; clipboard</source>
-        <translation type="obsolete">Копіювати шлях каталогу до системного буферу</translation>
-    </message>
-    <message>
         <location line="-595"/>
         <source>Application path</source>
         <translation>Шлях програми</translation>
     </message>
     <message>
-        <source>Copy full application path to system&apos;s&apos; clipboard</source>
-        <translation type="obsolete">Копіювати шлях програми до системного буферу</translation>
-    </message>
-    <message>
         <location line="+7"/>
         <source>q4wine-cli cmd</source>
         <translation>Команду q4wine-cli</translation>
-    </message>
-    <message>
-        <source>Copy q4wine-cli cmd for current application</source>
-        <translation type="obsolete">Копіювати команду q4wine-cli до системного буферу</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -1815,10 +1675,6 @@ See help for details.</source>
         <location line="+189"/>
         <source>Do you wish to delete all of the selected icons?</source>
         <translation>Ви справді бажаєте вилучити всі обрані піктограми?</translation>
-    </message>
-    <message>
-        <source>Browse for other image</source>
-        <translation type="obsolete">Пошук іншого образу КД</translation>
     </message>
     <message>
         <location line="-540"/>
@@ -1917,14 +1773,6 @@ See help for details.</source>
         <source>No device drive specified in prefix settings.</source>
         <translation>В конфігурації префікса не вказано пристрій для монтування.</translation>
     </message>
-    <message>
-        <source>Drive successfully umounted.</source>
-        <translation type="obsolete">Пристрій вдало демонтовано.</translation>
-    </message>
-    <message>
-        <source>Fail to umount drive.</source>
-        <translation type="obsolete">Не вдалося демонтувати пристрій.</translation>
-    </message>
 </context>
 <context>
     <name>IconSettings</name>
@@ -1992,14 +1840,6 @@ See help for details.</source>
         <translation>Примітка: скрипти користувача не будуть виконуватися у випадку, якщо програма буде виконуватися з опцією &quot;Запустити з виводом до консолі&quot;.</translation>
     </message>
     <message>
-        <source>Override Dll</source>
-        <translation type="obsolete">Перевизначення Dll</translation>
-    </message>
-    <message>
-        <source>Present wine dlls</source>
-        <translation type="obsolete">Наявні у wine dll</translation>
-    </message>
-    <message>
         <location line="-318"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+99"/>
         <location line="+387"/>
@@ -2036,10 +1876,6 @@ See help for details.</source>
         <location line="+8"/>
         <source>Add</source>
         <translation>Додати</translation>
-    </message>
-    <message>
-        <source>Overrided dlls</source>
-        <translation type="obsolete">Перевизначені dll</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -2086,10 +1922,6 @@ See help for details.</source>
         <location line="+6"/>
         <source>Scripts</source>
         <translation>Скрипти</translation>
-    </message>
-    <message>
-        <source>Note: pre and post run scripts will be not executed in case if program will be executed with &quot;Run With Output in Console&quot; option.</source>
-        <translation type="obsolete">Примітка: скрипти користувача не будуть виконуватися у випадку, якщо програма буде виконуватися з опцією &quot;Запустити з виводом до консолі&quot;.</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -2167,22 +1999,10 @@ See help for details.</source>
         <translation>Експорт піктограми</translation>
     </message>
     <message>
-        <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Експорт піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
-    </message>
-    <message>
-        <source>Exporting icon</source>
-        <translation type="obsolete">Експорт піктограми</translation>
-    </message>
-    <message>
         <location line="+70"/>
         <location line="+5"/>
         <source>Sorry, an icon named %1 already exists.</source>
         <translation>Вибачте, але піктограма з назвою %1 вже існує.</translation>
-    </message>
-    <message>
-        <source>Selected working directory not exists.</source>
-        <translation type="obsolete">Вказана робоча тека не існує.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -2194,14 +2014,6 @@ See help for details.</source>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>Сценарій оболонки (*.sh)</translation>
-    </message>
-    <message>
-        <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Перетворення піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
-    </message>
-    <message>
-        <source>Converting icon</source>
-        <translation type="obsolete">Перетворення піктограми</translation>
     </message>
     <message>
         <location line="-135"/>
@@ -2226,10 +2038,6 @@ See help for details.</source>
         <location line="+5"/>
         <source>No program name specified.</source>
         <translation>Не вказано і&apos;мя програми.</translation>
-    </message>
-    <message>
-        <source>Sorry, but icon named %1 already exists.</source>
-        <translation type="obsolete">Вибачте, але піктограма з назвою %1 вже існує.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="-674"/>
@@ -2292,10 +2100,6 @@ See help for details.</source>
         <translation>Гаразд</translation>
     </message>
     <message>
-        <source>Sorry. It seems file already exists.&lt;br&gt;Replace existent or rename current?</source>
-        <translation type="obsolete">Вибачте, здається, файл вже існує.&lt;br&gt;Замінити існуючий чи перейменувати поточний?</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/iconsview.cpp" line="-6"/>
         <source>Sorry. It seems that the file already exists.&lt;br&gt;Replace existing file or rename current one?</source>
         <translation>Вибачте, здається, файл вже існує.&lt;br&gt;Замінити існуючий чи перейменувати поточний?</translation>
@@ -2331,14 +2135,6 @@ See help for details.</source>
         <translation>Замінити існуючий чи перейменувати поточний?</translation>
     </message>
     <message>
-        <source>Sorry. It seems file already exists.</source>
-        <translation type="obsolete">Вибачте, здається, файл з такою назвою вже є.</translation>
-    </message>
-    <message>
-        <source>Replace existent or rename current?</source>
-        <translation type="obsolete">Замінити існуючий чи перейменувати поточний?</translation>
-    </message>
-    <message>
         <location line="+27"/>
         <location line="+35"/>
         <source>Error</source>
@@ -2355,10 +2151,6 @@ See help for details.</source>
         <translation>Вибачте, не вдалося створити файл: &lt;br&gt;%1.</translation>
     </message>
     <message>
-        <source>Sorry, i can&apos;t remove file: &lt;br&gt;%1.</source>
-        <translation type="obsolete">Вибачте, неможливо вилучити файл: &lt;br&gt;%1.</translation>
-    </message>
-    <message>
         <location line="-12"/>
         <location line="+2"/>
         <source>Select file to save</source>
@@ -2369,10 +2161,6 @@ See help for details.</source>
         <location line="+2"/>
         <source>Images (*.png)</source>
         <translation>Зображення (*.png)</translation>
-    </message>
-    <message>
-        <source>Sorry, i can&apos;t create file: &lt;br&gt;%1.</source>
-        <translation type="obsolete">Вибачте, не вдалося створити файл: &lt;br&gt;%1.</translation>
     </message>
 </context>
 <context>
@@ -2482,14 +2270,6 @@ See help for details.</source>
         <translation>Вибачте, здається, файл образу КД вже існує.&lt;br&gt;Будь ласка, перейменуйте його або скасуйте дію перейменування.</translation>
     </message>
     <message>
-        <source>Sorry. It seems CD iamge already exists.</source>
-        <translation type="obsolete">Вибачте, здається, файл образу КД з такою назвою вже є.</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems CD image file already exists.&lt;br&gt;Please rename it, or cancel add image operation.</source>
-        <translation type="obsolete">Вибачте, здається, файл образу КД вже існує.&lt;br&gt;Будь ласка, змініть його назву або скасуйте дію зі додавання.</translation>
-    </message>
-    <message>
         <location line="-8"/>
         <source>Enter new name</source>
         <translation>Введіть нове і&apos;мя</translation>
@@ -2498,18 +2278,6 @@ See help for details.</source>
         <location line="+0"/>
         <source>Enter new name:</source>
         <translation>Введіть нове і&apos;мя:</translation>
-    </message>
-    <message>
-        <source>Sorry. CD iamge name can not be empty.</source>
-        <translation type="obsolete">Вибачте, ім&apos;я файлу образу КД не може бути порожнім.</translation>
-    </message>
-    <message>
-        <source>Sorry. CD iamge name can not be empty.&lt;br&gt;Please enter new name, or cancel rename image operation.</source>
-        <translation type="obsolete">Вибачте, ім&apos;я файлу образу КД не може бути порожнім.&lt;br&gt;Будь ласка, введіть нове ім&apos;я, або скасуйте операцію перейменування.</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems CD image file already exists.&lt;br&gt;Please rename it, or cancel rename image operation.</source>
-        <translation type="obsolete">Вибачте, здається, файл образу КД вже існує.&lt;br&gt;Будь ласка, перейменуйте його або скасуйте дію перейменування.</translation>
     </message>
 </context>
 <context>
@@ -2523,10 +2291,6 @@ See help for details.</source>
         <location line="+47"/>
         <source>Do not show this dialog next time</source>
         <translation>Не показувати наступного разу</translation>
-    </message>
-    <message>
-        <source>Don&apos;t show this dialog next time</source>
-        <translation type="obsolete">Не показувати наступного разу</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -2731,22 +2495,6 @@ See help for details.</source>
         <translation>Процес</translation>
     </message>
     <message>
-        <source>Base Setup</source>
-        <translation type="obsolete">Базове налаштування</translation>
-    </message>
-    <message>
-        <source>Create Fake Drive</source>
-        <translation type="obsolete">Створити фіктивний диск</translation>
-    </message>
-    <message>
-        <source>Update Fake Drive</source>
-        <translation type="obsolete">Оновити фіктивний диск</translation>
-    </message>
-    <message>
-        <source>System Software</source>
-        <translation type="obsolete">Програми системи</translation>
-    </message>
-    <message>
         <location line="+200"/>
         <source>Extract Images from PE Files</source>
         <translation>Витягнути зображення з PE файлів</translation>
@@ -2778,10 +2526,6 @@ See help for details.</source>
         <translation>Імпортувати десктопні файли wine</translation>
     </message>
     <message>
-        <source>Scan for Wine desktop files and import them into q4wine&apos;s icon view.</source>
-        <translation type="obsolete">Шукати десктопні файли wine та імпортувати їх до бази q4wine.</translation>
-    </message>
-    <message>
         <location line="-218"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
@@ -2790,14 +2534,6 @@ See help for details.</source>
         <location line="+10"/>
         <source>Help</source>
         <translation>Довідка</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="obsolete">Помилка</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="obsolete">Попередження</translation>
     </message>
     <message>
         <location line="-192"/>
@@ -2814,10 +2550,6 @@ See help for details.</source>
         <location line="-66"/>
         <source>Tools</source>
         <translation>Інструменти</translation>
-    </message>
-    <message>
-        <source>Support for WIS scripts has not yet been implemented; however, this application is capable of using winetricks (see the current tab&apos;s toolbar actions).</source>
-        <translation type="obsolete">На жаль, підтримка WIS сценаріїв, ще не доступна. Вона буде доступна у наступних версіях програми. Зарази ві можете скористатися додатком winetrks (дивитеся панель інструментів поточної вкладки).</translation>
     </message>
     <message>
         <location line="+24"/>
@@ -2917,29 +2649,9 @@ See help for details.</source>
         <translation></translation>
     </message>
     <message>
-        <source>&lt;p&gt;You do not set default console binary.&lt;/p&gt;&lt;p&gt;Set it into q4wine option dialog.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Ви не обрали консольну програму.&lt;/p&gt;&lt;p&gt;Перейдіть до діалогу опцій q4wine та встановіть її.&lt;/p&gt;</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="+204"/>
         <source>Description: %1</source>
         <translation>Опис: %1</translation>
-    </message>
-    <message>
-        <source>Removing old fake drive</source>
-        <translation type="obsolete">Знищуємо старий фіктивний диск</translation>
-    </message>
-    <message>
-        <source>Manage prefixes</source>
-        <translation type="obsolete">Керування префіксами</translation>
-    </message>
-    <message>
-        <source>Current prefix:</source>
-        <translation type="obsolete">Поточний префікс:</translation>
-    </message>
-    <message>
-        <source>Run Winetricks plugin</source>
-        <translation type="obsolete">Запуск додатку winetricks</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2947,24 +2659,16 @@ See help for details.</source>
         <translation>Програма: %1&lt;br&gt; Аргументи: %2 </translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+94"/>
         <source>Socket file &quot;%1&quot; already exists!</source>
         <translation>Файл сокету &quot;%1&quot; вже існує!</translation>
     </message>
     <message>
-        <source>It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you want to remove it?</source>
-        <translation type="obsolete">Вже запущена ще одна копія q4wine, або роботу q4wine було зупинено невірно. Відлити лок файл?</translation>
-    </message>
-    <message>
-        <location line="+50"/>
+        <location line="+53"/>
         <location line="+4"/>
         <location line="+14"/>
         <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
         <translation>Програму: &quot;%1&quot; вдало запущено для префіксу: &quot;%2&quot;.</translation>
-    </message>
-    <message>
-        <source>helper notifycation</source>
-        <translation type="obsolete">сповіщення від помічника</translation>
     </message>
     <message>
         <location line="-4"/>
@@ -2978,25 +2682,9 @@ See help for details.</source>
         <translation>Програму: &quot;%1&quot; завершено для префіксу: &quot;%2&quot;. Код завершення: &quot;%3&quot;.</translation>
     </message>
     <message>
-        <source>Can&apos;t start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
-        <translation type="obsolete">Не можу запустити програму: &quot;%1&quot; для префіксу: &quot;%2&quot;.</translation>
-    </message>
-    <message>
-        <source>Can&apos;t start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation type="obsolete">Не можу запустити консоль для програми: &quot;%1&quot; у префіксу: &quot;%2&quot;.</translation>
-    </message>
-    <message>
         <location line="+44"/>
         <source>Unexpected socket message recived.</source>
         <translation>Отримано несподіване повідомлення від сокету.</translation>
-    </message>
-    <message>
-        <source>A fake drive already exists within &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Do you wish to remove &lt;b&gt;all&lt;/b&gt; files from this prefix?</source>
-        <translation type="obsolete">Вказана тека префікса %1 вже містить Фіктивний диск.&lt;br&gt;&lt;br&gt;Ви дійсно бажаєте ЗНИЩІТИ ВСІ ФАЙЛИ з теки префіксу?</translation>
-    </message>
-    <message>
-        <source>Removing old fake drive.&lt;br&gt;This may take awhile...</source>
-        <translation type="obsolete">Знищуємо старий фіктивний диск.&lt;br&gt;Це може зайняти деякий час...</translation>
     </message>
     <message>
         <location line="+254"/>
@@ -3004,16 +2692,12 @@ See help for details.</source>
         <translation>Незавершений проект</translation>
     </message>
     <message>
-        <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
-        <translation type="obsolete">Вибачте, майстра встановлення ще немає. Його буде реалізовано у версії 0.110.</translation>
-    </message>
-    <message>
-        <location line="-378"/>
+        <location line="-381"/>
         <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
         <translation>Вже запущена ще одна копія q4wine, або роботу q4wine було зупинено невірно. Відлити лок файл?</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+56"/>
         <location line="+14"/>
         <location line="+13"/>
         <location line="+12"/>
@@ -3063,18 +2747,6 @@ See help for details.</source>
         <translation>Експорт піктограми</translation>
     </message>
     <message>
-        <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
-        <translation type="obsolete">Виконувані файли та бібліотеки Win32 (*.exe *.dll);;Виконувані файли Win32 (*.exe);;Бібліотеки Win32 (*.dll)</translation>
-    </message>
-    <message>
-        <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Експорт піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
-    </message>
-    <message>
-        <source>Exporting icon</source>
-        <translation type="obsolete">Експорт піктограми</translation>
-    </message>
-    <message>
         <location line="+121"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Одночасно може бути запущена тільки одна копія %1.</translation>
@@ -3091,29 +2763,9 @@ See help for details.</source>
         <translation>Не можу виконати</translation>
     </message>
     <message>
-        <source>Can&apos;t run binary</source>
-        <translation type="obsolete">Не можу виконати</translation>
-    </message>
-    <message>
-        <source>Binary &quot;%1&quot; do not exists.</source>
-        <translation type="obsolete">Виконуваний файл &quot;%1&quot; не існує.</translation>
-    </message>
-    <message>
-        <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="obsolete">Перетворення піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
-    </message>
-    <message>
-        <source>Converting icon</source>
-        <translation type="obsolete">Перетворення піктограми</translation>
-    </message>
-    <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="-80"/>
         <source>Run...</source>
         <translation>Виконати...</translation>
-    </message>
-    <message>
-        <source>This is the point where you have to start when creating new empty prefix. You can also create a new or update an old fake Windows drive.</source>
-        <translation type="obsolete">Це - початкова точка, з якої Вам потрібно розпочати процес налаштування нового префіксу. Ви також можете тут створити новий, або оновити існуючий фіктивний диск Windows.</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -3126,7 +2778,7 @@ See help for details.</source>
         <translation>Про програму</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-723"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-727"/>
         <source>Yes</source>
         <translation>Так</translation>
     </message>
@@ -3139,10 +2791,6 @@ See help for details.</source>
         <location line="+10"/>
         <source>Runs in console: %1&lt;br&gt; Desktop size: %2</source>
         <translation>Запуск у терміналі: %1&lt;br&gt; Стільниця: %2</translation>
-    </message>
-    <message>
-        <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before update it!</source>
-        <translation type="obsolete">Вибачте. Не знайдено конфігурації Фіктивного диску.&lt;br&gt;Створіть Фіктивний диск перед тим, як його оновлювати!</translation>
     </message>
 </context>
 <context>
@@ -3242,10 +2890,6 @@ See help for details.</source>
         <translation>Вибачте. Не знайдено конфігурації Фіктивного диску.&lt;br&gt;Створіть Фіктивний диск перед тим, як його оновлювати.</translation>
     </message>
     <message>
-        <source>Create or update q4wine&apos;s cache of Winetricks appications.</source>
-        <translation type="obsolete">Створити або оновити кеш додатків Winetricks.</translation>
-    </message>
-    <message>
         <location line="-28"/>
         <source>Warning</source>
         <translation>Попередження</translation>
@@ -3254,10 +2898,6 @@ See help for details.</source>
         <location line="+0"/>
         <source>A fake drive already exists within &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Do you wish to remove &lt;b&gt;all&lt;/b&gt; files from this prefix?</source>
         <translation>Вказана тека префікса %1 вже містить фіктивний диск.&lt;br&gt;&lt;br&gt;Ви дійсно бажаєте ЗНИЩІТИ ВСІ ФАЙЛИ з теки префіксу?</translation>
-    </message>
-    <message>
-        <source>Removing old fake drive.&lt;br&gt;This may take awhile...</source>
-        <translation type="obsolete">Знищуємо старий фіктивний диск.&lt;br&gt;Це може зайняти деякий час...</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3274,10 +2914,6 @@ See help for details.</source>
         <location line="+14"/>
         <source>Error</source>
         <translation>Помилка</translation>
-    </message>
-    <message>
-        <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before update it!</source>
-        <translation type="obsolete">Вибачте. Не знайдено конфігурації Фіктивного диску.&lt;br&gt;Створіть Фіктивний диск перед тим, як його оновлювати!</translation>
     </message>
 </context>
 <context>
@@ -3357,18 +2993,10 @@ See help for details.</source>
         <translation>Ви справді бажаєте вилучити префікс з назвою &quot;%1&quot; і всі відповідні піктограми?</translation>
     </message>
     <message>
-        <source>Sorry, you can&apos;t delete Default prefix.</source>
-        <translation type="obsolete">Вибачте, типовий префікс не можна вилучати.</translation>
-    </message>
-    <message>
         <location line="+0"/>
         <location line="+61"/>
         <source>Warning</source>
         <translation>Попередження</translation>
-    </message>
-    <message>
-        <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="obsolete">Ви справді бажаєте вилучити префікс з назвою &quot;%1&quot; і всі відповідні піктограми?</translation>
     </message>
     <message>
         <location line="-9"/>
@@ -3482,12 +3110,6 @@ See help for details.</source>
         <translation>Параметри Wine</translation>
     </message>
     <message>
-        <source>If you wish to use different Wine versions, you may wish set custom Wine paths here.
-Note: leave it blank for default.</source>
-        <translation type="obsolete">Якщо ви маєте намір використовувати декілька версій wine, вам слід вказати тут нетипові шляхи для wine.
-Зауваження: не заповнюйте, якщо не збираєтеся цього робити.</translation>
-    </message>
-    <message>
         <location line="+302"/>
         <source>OK</source>
         <translation>Гаразд</translation>
@@ -3577,10 +3199,6 @@ Note: leave it blank for default.</source>
         <translation>Тека з назвою &quot;%1&quot; вже існує. Ви хочете використовувати її?</translation>
     </message>
     <message>
-        <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
-        <translation type="obsolete">Вибачте, але префікс з назвою %1 вже існує.</translation>
-    </message>
-    <message>
         <location line="+45"/>
         <location line="+2"/>
         <source>Open File</source>
@@ -3635,7 +3253,7 @@ Note: leave it blank for default.</source>
 <context>
     <name>PrefixTreeWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+99"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+100"/>
         <source>Enter new directory name</source>
         <translation>Введіть нову назву теки</translation>
     </message>
@@ -3646,14 +3264,6 @@ Note: leave it blank for default.</source>
         <translation>Назва теки:</translation>
     </message>
     <message>
-        <source>Sorry. It seems directory already exists.</source>
-        <translation type="obsolete">Вибачте, здається, тека з такою назвою вже є.</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation type="obsolete">Вибачте. Здается тека вже існує.&lt;br&gt;Будь ласка оберіть інше ім&apos;я, або скасуйте дію.</translation>
-    </message>
-    <message>
         <location line="+0"/>
         <source>Enter new name for directory</source>
         <translation>Введіть нову назву теки</translation>
@@ -3662,12 +3272,6 @@ Note: leave it blank for default.</source>
         <location line="+33"/>
         <source>Q4Wine</source>
         <translation></translation>
-    </message>
-    <message>
-        <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
-</source>
-        <translation type="obsolete">Ви справді бажаєте вилучити теку з назвою &quot;%1&quot; і всі відповідні піктограми?
-</translation>
     </message>
     <message>
         <location line="+67"/>
@@ -3743,10 +3347,6 @@ Note: leave it blank for default.</source>
         <location line="+240"/>
         <source>Browse ...</source>
         <translation>Пошук...</translation>
-    </message>
-    <message>
-        <source>Browse for other image</source>
-        <translation type="obsolete">Пошук іншого образу</translation>
     </message>
     <message>
         <location line="-219"/>
@@ -3909,17 +3509,9 @@ Note: leave it blank for default.</source>
         <translation>Ви справді бажаєте вилучити префікс з назвою &quot;%1&quot; і всі відповідні піктограми?</translation>
     </message>
     <message>
-        <source>Sorry, you can&apos;t delete Default prefix.</source>
-        <translation type="obsolete">Вибачте, типовий префікс не можна вилучати.</translation>
-    </message>
-    <message>
         <location line="+0"/>
         <source>Warning</source>
         <translation>Попередження</translation>
-    </message>
-    <message>
-        <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="obsolete">Ви справді бажаєте вилучити префікс з назвою «%1» і всі відповідні піктограми?</translation>
     </message>
     <message>
         <location line="-286"/>
@@ -3958,14 +3550,6 @@ Note: leave it blank for default.</source>
         <translation>Налаштувати параметри фіктивного диску</translation>
     </message>
     <message>
-        <source>Sorry. It seems icon already exists.</source>
-        <translation type="obsolete">Вибачте, здається, піктограма з такою назвою вже є.</translation>
-    </message>
-    <message>
-        <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation type="obsolete">Вибачте. Здаєтся піктограма вже існує.&lt;br&gt;Будь ласка оберіть інше ім&apos;я, або скасуйте дію.</translation>
-    </message>
-    <message>
         <location line="+177"/>
         <location line="+106"/>
         <source>Error</source>
@@ -3986,14 +3570,6 @@ Note: leave it blank for default.</source>
         <location line="-15"/>
         <source>Fail to mount %1.</source>
         <translation>Не вдалося змонтувати %1.</translation>
-    </message>
-    <message>
-        <source>Drive successfully umounted.</source>
-        <translation type="obsolete">Пристрій вдало демонтовано.</translation>
-    </message>
-    <message>
-        <source>Fail to umount drive.</source>
-        <translation type="obsolete">Не вдалося демонтувати пристрій.</translation>
     </message>
 </context>
 <context>
@@ -4024,10 +3600,6 @@ Note: leave it blank for default.</source>
         <location line="+3"/>
         <source>Error</source>
         <translation>Помилка</translation>
-    </message>
-    <message>
-        <source>It seems procces fail.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</source>
-        <translation type="obsolete">Здається процес завершився помилкою.&lt;br&gt;&lt;br&gt;Повідомлення про помилку:&lt;br&gt;%1</translation>
     </message>
     <message>
         <location line="-42"/>
@@ -4081,14 +3653,6 @@ Note: leave it blank for default.</source>
         <translation>Здається процес завершився помилкою.&lt;br&gt;&lt;br&gt;Зневадження STDERR:&lt;br&gt;%1</translation>
     </message>
     <message>
-        <source>It seems the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
-        <translation type="obsolete">Здається процес завершився вдало.&lt;br&gt;&lt;br&gt;Зневадження STDERR:&lt;br&gt;%1</translation>
-    </message>
-    <message>
-        <source>It seems the process crashed.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
-        <translation type="obsolete">Здається процес завершився помилкою.&lt;br&gt;&lt;br&gt;Зневадження STDERR:&lt;br&gt;%1</translation>
-    </message>
-    <message>
         <location line="-76"/>
         <location line="+23"/>
         <source>Process: The last waitFor...() function timed out.</source>
@@ -4097,10 +3661,6 @@ Note: leave it blank for default.</source>
 </context>
 <context>
     <name>Progress</name>
-    <message>
-        <source>Importing wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see q4wine options dialog.</source>
-        <translation type="obsolete">Импортую піктограми програм wine з:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Це може зайняти трохи часу...&lt;br&gt;&lt;br&gt;&lt;b&gt;Зауваження:&lt;/b&gt;Щоб автоматично відаляти оброблені файли, подивитись у налаштування q4wine.</translation>
-    </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="+50"/>
         <source>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
@@ -4128,10 +3688,6 @@ Note: leave it blank for default.</source>
         <location line="+53"/>
         <source>If the processes keep running -- end them manually.</source>
         <translation>Якщо процеси не завершаться самі -- прибийте їх власноруч.</translation>
-    </message>
-    <message>
-        <source>While process keep running -- end them manually.</source>
-        <translation type="obsolete">Якщо процеси не завершаться самі -- прибийте їх самі.</translation>
     </message>
     <message>
         <location line="-52"/>
@@ -4287,10 +3843,6 @@ Note: leave it blank for default.</source>
         <translation>встановити поточне ім&apos;я образу КД</translation>
     </message>
     <message>
-        <source>Umounting mount point &quot;%1&quot;.</source>
-        <translation type="obsolete">Демонтуемо &quot;%1&quot;.</translation>
-    </message>
-    <message>
         <location line="-71"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Списк змонтованих носіїв для усіх префіксів</translation>
@@ -4352,14 +3904,6 @@ Note: leave it blank for default.</source>
         <translation>Згортати головне вікно %1 при запуску</translation>
     </message>
     <message>
-        <source>GUI utility for wine applications and prefixes management.</source>
-        <translation type="obsolete">Графічна оболонка для налаштування Wine.</translation>
-    </message>
-    <message>
-        <source>File &quot;%1&quot; not exists.</source>
-        <translation type="obsolete">Файл &quot;%1&quot; не існує.</translation>
-    </message>
-    <message>
         <location line="-8"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="+35"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+57"/>
@@ -4398,10 +3942,6 @@ Note: leave it blank for default.</source>
         <translation>показати інформацію про версію та вийти</translation>
     </message>
     <message>
-        <source>Open q4wine run dialog for windows binary</source>
-        <translation type="obsolete">Відкрити діалог запуску для програми wine</translation>
-    </message>
-    <message>
         <location line="+4"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="+20"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+15"/>
@@ -4420,17 +3960,9 @@ Note: leave it blank for default.</source>
         <translation>встановити поточне ім&apos;я префікса</translation>
     </message>
     <message>
-        <source>sets the current direcory name</source>
-        <translation type="obsolete">встановити поточне ім&apos;я каталогу</translation>
-    </message>
-    <message>
         <location line="+2"/>
         <source>sets the current icon name</source>
         <translation>встановити поточне ім&apos;я піктограми</translation>
-    </message>
-    <message>
-        <source>sets the cd iamge name</source>
-        <translation type="obsolete">встановити поточне ім&apos;я образу КД</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4473,25 +4005,9 @@ Note: leave it blank for default.</source>
         <translation></translation>
     </message>
     <message>
-        <source>Prefix named &quot;%1&quot; not exists. Run &quot;%2-cli -pl&quot; for prefix list.</source>
-        <translation type="obsolete">Префікса  з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;%2-cli -pl&quot; що б отримати список існуючих префіксів.</translation>
-    </message>
-    <message>
-        <source>Icon named &quot;%1&quot; not exists.  Run &quot;%2-cli -il&quot; for icon list.</source>
-        <translation type="obsolete">Піктограма  з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;%2-cli -il&quot; що б отримати список існуючих піктограм.</translation>
-    </message>
-    <message>
-        <source>Dir named &quot;%1&quot; not exists. Run &quot;%2-cli -dl&quot; for dir list.</source>
-        <translation type="obsolete">Директорії з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;%2-cli -dl&quot; що б отримати список існуючих директорій.</translation>
-    </message>
-    <message>
         <location line="-157"/>
         <source>%1 has the following disc images in the database</source>
         <translation>%1 має наступні образи КД занесені до бази данних</translation>
-    </message>
-    <message>
-        <source>No disc image &quot;%1&quot; exists. Run &quot;%2-cli -cl&quot; for disc image list.</source>
-        <translation type="obsolete">КД образ з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;%2-cli -сl&quot; що б отримати список існуючих образів КД.</translation>
     </message>
     <message>
         <location line="+133"/>
@@ -4509,22 +4025,6 @@ Note: leave it blank for default.</source>
         <translation></translation>
     </message>
     <message>
-        <source>sends -9 term signal to current prefix precess or for all prefixes processes</source>
-        <translation type="obsolete">надіслати -9 term сигнал поточному процесу, або процесам поточного префіксу</translation>
-    </message>
-    <message>
-        <source>output all exesting prefixes names and exit</source>
-        <translation type="obsolete">показати список префіксів та вийти</translation>
-    </message>
-    <message>
-        <source>output all exesting dir names for current prefix and exit</source>
-        <translation type="obsolete">показати список директорій для поточного префіксіу та вийти</translation>
-    </message>
-    <message>
-        <source>output all exesting icon names for current prefix/directory and exit</source>
-        <translation type="obsolete">показати список піктограм для поточного префікса/директорія та вийти</translation>
-    </message>
-    <message>
         <location line="+15"/>
         <source>output all cd images list and exit</source>
         <translation>показати список образів КД та вийти</translation>
@@ -4533,14 +4033,6 @@ Note: leave it blank for default.</source>
         <location line="+1"/>
         <source>output all mounted media for current prefix or all prefixes and exit</source>
         <translation>показати список змонтованих пристроїв для поточного префіксу або усіх префіксів</translation>
-    </message>
-    <message>
-        <source>mount an cd iamage or drive for current prefix and exit</source>
-        <translation type="obsolete">змонтовати образ КД або пристрій для поточного префіксу та вийти</translation>
-    </message>
-    <message>
-        <source>umount an cd iamage or drive for current prefix and exit</source>
-        <translation type="obsolete">демонтовати образ КД або пристрій для поточного префіксу та вийти</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -4582,10 +4074,6 @@ Note: leave it blank for default.</source>
         <translation>встановлює змінну WINEDEBUG</translation>
     </message>
     <message>
-        <source>Console utility for q4wine which helps to handle wine application exit status and it&apos;s stdout\stderr output logging.</source>
-        <translation type="obsolete">Консольна програма для q4wine що допомагає отримувати код завершення програми wine та заносити її зневадження до журналу.</translation>
-    </message>
-    <message>
         <location line="+1"/>
         <source>run with output in console</source>
         <translation>виконати з зневадженням до консолі</translation>
@@ -4594,10 +4082,6 @@ Note: leave it blank for default.</source>
         <location line="+1"/>
         <source>sets DISPLAY variable</source>
         <translation>встановлює змінну DISPLAY</translation>
-    </message>
-    <message>
-        <source>sets program nicenes</source>
-        <translation type="obsolete">встановлює приорітет програми</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4638,10 +4122,6 @@ Note: leave it blank for default.</source>
         <location line="+1"/>
         <source>execute script before program run</source>
         <translation>виконати скрипт перед запуском програми</translation>
-    </message>
-    <message>
-        <source>execute script before run program</source>
-        <translation type="obsolete">виконати скрипт перед запуском програми</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4819,10 +4299,6 @@ Note: leave it blank for default.</source>
         <translation>Не вказано і&apos;мя програми.</translation>
     </message>
     <message>
-        <source>Selected working directory not exists.</source>
-        <translation type="obsolete">Вказана робоча тека не існує.</translation>
-    </message>
-    <message>
         <location line="+5"/>
         <source>Selected working directory does not exist.</source>
         <translation>Вказана робоча тека не існує.</translation>
@@ -4910,10 +4386,6 @@ Note: leave it blank for default.</source>
         <location line="+5"/>
         <source>Sorry, drive directory does not exist.</source>
         <translation>Вибачте, вказаний каталог не існує.</translation>
-    </message>
-    <message>
-        <source>Sorry, drive directory not exists.</source>
-        <translation type="obsolete">Вибачте, вказаний каталог не існує.</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -5011,18 +4483,6 @@ Note: leave it blank for default.</source>
         <translation>Здається зміна пріоритету на %2 для процесу %1 пройшла вдало.</translation>
     </message>
     <message>
-        <source>This action will send a KILL(-9) signal to selected processes&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
-        <translation type="obsolete">Ця дія надішле KILL(-9) сигнал до обранних процесів&lt;br&gt;&lt;br&gt;Є висока вірогідність завддати шкоду нормальній роботі wine.&lt;br&gt;&lt;br&gt;Ви дійсно цього бажаєте?</translation>
-    </message>
-    <message>
-        <source>This action will send a KILL(-9) signal to all wine processes for selected prefixes&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
-        <translation type="obsolete">Ця дія надішле KILL(-9) сигнал до всіх процессів з обраними префіксами&lt;br&gt;&lt;br&gt;Ви дійсно цього бажаєте?</translation>
-    </message>
-    <message>
-        <source>It seems process %1 renice to %2 end successfully.</source>
-        <translation type="obsolete">Здається зміна пріоритету на %2 для процесу %1 пройшла вдало.</translation>
-    </message>
-    <message>
         <location line="-86"/>
         <location line="+37"/>
         <source>Warning</source>
@@ -5037,14 +4497,6 @@ Note: leave it blank for default.</source>
         <location line="+21"/>
         <source>Error</source>
         <translation>Помилка</translation>
-    </message>
-    <message>
-        <source>Can&apos;t run: %1</source>
-        <translation type="obsolete">Не можу виконати: %1</translation>
-    </message>
-    <message>
-        <source>It seems process %1 killed successfully.</source>
-        <translation type="obsolete">Здається процес %1 вдало вбито.</translation>
     </message>
     <message>
         <location line="+45"/>
@@ -5248,14 +4700,6 @@ Note: leave it blank for default.</source>
         <translation>Будь ласка, вкажіть виконуваний файл %1.</translation>
     </message>
     <message>
-        <source>Sorry, specified %1 directory not exists.</source>
-        <translation type="obsolete">Вибачте, вказаного каталогу %1 не існує.</translation>
-    </message>
-    <message>
-        <source>Sorry, specified %1 binary not exists.</source>
-        <translation type="obsolete">Вибачте, вказаного виконуваного файла %1 не існує.</translation>
-    </message>
-    <message>
         <location line="+70"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Будь ласка, вкажіть вузол проксі-сервера.</translation>
@@ -5284,33 +4728,6 @@ Note: leave it blank for default.</source>
         <location line="+32"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Все готово для завершення конфігурації %1. &lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Завершити&lt;/b&gt; щоб закінчити процес налаштування. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt; щоб повернутися і змінити обрані параметри.&lt;/p&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>winetricks</name>
-    <message>
-        <source>Install Winetricks</source>
-        <translation type="obsolete">Встановлюю Winetricks</translation>
-    </message>
-    <message>
-        <source>winetricks plugin</source>
-        <translation type="obsolete">Додаток winetricks</translation>
-    </message>
-    <message>
-        <source>Install</source>
-        <translation type="obsolete">Встановити</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation type="obsolete">Вийти</translation>
-    </message>
-    <message>
-        <source>Refresh List</source>
-        <translation type="obsolete">Оновити список</translation>
-    </message>
-    <message>
-        <source>Click on item to show help here</source>
-        <translation type="obsolete">Клацніть на елемент winetriks щоб отримати допомогу</translation>
     </message>
 </context>
 </TS>

@@ -2981,7 +2981,7 @@ Consulte a ajuda para detalhes.</translation>
         <translation>Programa: %1&lt;br&gt; Argumentos: %2 </translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+94"/>
         <source>Socket file &quot;%1&quot; already exists!</source>
         <translation>Arquivo de socket &quot;%1&quot; já existe!</translation>
     </message>
@@ -2990,7 +2990,7 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="obsolete">Parece que outra instância de q4wine está em execução, ou q4wine foi desligar incorretamente. Você deseja removê-lo?</translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+53"/>
         <location line="+4"/>
         <location line="+14"/>
         <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
@@ -3042,12 +3042,12 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="obsolete">Desculpe, ainda não há assistente de instalação. Ele será implementado na versão 0.110.</translation>
     </message>
     <message>
-        <location line="-378"/>
+        <location line="-381"/>
         <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+56"/>
         <location line="+14"/>
         <location line="+13"/>
         <location line="+12"/>
@@ -3164,7 +3164,7 @@ Consulte a ajuda para detalhes.</translation>
         <translation>Sobre</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-723"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-727"/>
         <source>Yes</source>
         <translation>Sim</translation>
     </message>
@@ -3673,7 +3673,7 @@ Note: leave it blank for default.</source>
 <context>
     <name>PrefixTreeWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+99"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+100"/>
         <source>Enter new directory name</source>
         <translation>Digite o nome do novo diretório</translation>
     </message>

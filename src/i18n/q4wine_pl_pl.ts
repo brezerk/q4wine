@@ -2714,7 +2714,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation>Program: %1&lt;br&gt; Args: %2 </translation>
     </message>
     <message>
-        <location line="+93"/>
+        <location line="+94"/>
         <source>Socket file &quot;%1&quot; already exists!</source>
         <translatorcomment>Plik gniazda &quot;%1&quot; już istnieje!</translatorcomment>
         <translation>Socket file &quot;%1&quot; already exists!</translation>
@@ -2724,7 +2724,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation type="obsolete">W tej chwili jest uruchomiona inna instancja q4wine, lub q4wine nie zostało poprawnie zamknięte. Czy chcesz je zakończyć?</translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+53"/>
         <location line="+4"/>
         <location line="+14"/>
         <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
@@ -2819,7 +2819,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation type="obsolete">Uruchom wtyczkę Winetricks</translation>
     </message>
     <message>
-        <location line="-720"/>
+        <location line="-724"/>
         <source>Description: %1</source>
         <translation>Opis: %1</translation>
     </message>
@@ -2839,12 +2839,12 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation>Działa w konsoli: %1&lt;br&gt; Rozmiar pulpitu: %2</translation>
     </message>
     <message>
-        <location line="+77"/>
+        <location line="+78"/>
         <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+438"/>
+        <location line="+441"/>
         <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
         <translation type="unfinished"></translation>
@@ -2937,7 +2937,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation>Prefiksy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-716"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-720"/>
         <source>Default</source>
         <translation>Domyślne</translation>
     </message>
@@ -3649,7 +3649,7 @@ Note: leave it blank for default.</source>
 <context>
     <name>PrefixTreeWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+99"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+100"/>
         <source>Enter new directory name</source>
         <translation>Wpisz nazwę nowego katalofu</translation>
     </message>
