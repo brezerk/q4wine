@@ -93,13 +93,9 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     std::auto_ptr<LoggingWidget> logWidget (new LoggingWidget(tabLogging));
     connect (this, SIGNAL(reloadLogData()), logWidget.get(), SLOT(getLogRecords()));
 
-     if (CoreLib->getSetting("logging", "enable", false, 0).toInt()==1){
-         logWidget->getLogRecords();
-     } else {
-         tabLogging->setEnabled(false);
-     }
+    logWidget->getLogRecords();
 
-     logLayout->addWidget(logWidget.release());
+    logLayout->addWidget(logWidget.release());
 
     std::auto_ptr<IconListWidget> lstIcons (new IconListWidget(tabPrograms));
     connect(lstIcons.get(), SIGNAL(iconItemClick(QString, QString, QString, QString, QString)), this, SLOT(updateIconDesc(QString, QString, QString, QString, QString)));
@@ -834,13 +830,6 @@ void MainWindow::mainOptions_Click(){
         } else {
             QApplication::setQuitOnLastWindowClosed(true);
             trayIcon->hide();
-        }
-
-        if (CoreLib->getSetting("logging", "enable", false, 1).toInt()==1){
-            emit(reloadLogData());
-            tabLogging->setEnabled(true);
-        } else {
-            tabLogging->setEnabled(false);
         }
     }
 

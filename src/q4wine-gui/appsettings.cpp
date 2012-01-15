@@ -89,13 +89,6 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     settings.endGroup();
 
     settings.beginGroup("logging");
-    if (settings.value("enable", 0).toInt()==1){
-        cbEnableLogging->setCheckState(Qt::Checked);
-    } else {
-        cbEnableLogging->setCheckState(Qt::Unchecked);
-    }
-
-    connect (cbEnableLogging, SIGNAL(stateChanged (int)), this, SLOT(cbEnableLogging_stateChanged (int)));
     connect (cbShowTray, SIGNAL(stateChanged (int)), this, SLOT(cbShowTray_stateChanged (int)));
 
     if (settings.value("autoClear", 1).toInt()==1){
@@ -613,13 +606,7 @@ void AppSettings::cmdOk_Click(){
     settings.endGroup();
 
     settings.beginGroup("logging");
-    if (cbEnableLogging->checkState()==Qt::Checked) {
-        settings.setValue("enable", 1);
-    } else {
-        settings.setValue("enable", 0);
-    }
-
-    if ((cbClearLogs->checkState()==Qt::Checked) and (cbEnableLogging->checkState()==Qt::Checked)) {
+    if (cbClearLogs->checkState()==Qt::Checked) {
         settings.setValue("autoClear", 1);
     } else {
         settings.setValue("autoClear", 0);
@@ -871,15 +858,6 @@ void AppSettings::comboMountProfiles_currentIndexChanged(int index){
     txtMountImageString->setText(CoreLib->getMountImageString(index));
     txtUmountString->setText(CoreLib->getUmountString(index));
 }
-
-void AppSettings::cbEnableLogging_stateChanged ( int state ){
-    if (state==0){
-        cbClearLogs->setEnabled(false);
-    } else {
-        cbClearLogs->setEnabled(true);
-    }
-}
-
 
 void AppSettings::cbShowTray_stateChanged ( int state ){
     if (state==0){

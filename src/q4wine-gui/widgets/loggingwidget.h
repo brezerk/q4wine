@@ -40,12 +40,17 @@
 #include <QMenu>
 #include <QKeyEvent>
 #include <QClipboard>
+#include <QPushButton>
 
 #include "logging.h"
 #include "prefix.h"
 
 //q4wine lib
 #include "q4wine-lib.h"
+
+#define D_LOGGING_DISABLED 0
+#define D_LOGGING_ENABLED 1
+
 
 class LoggingWidget : public QWidget
 {
@@ -64,6 +69,7 @@ private slots:
     void logClear_Click(void);
     void logDelete_Click(void);
     void logExport_Click(void);
+    void logEnable_Click(void);
 
     void logCopy_Click(void);
     void logSelectAll_Click(void);
@@ -90,6 +96,11 @@ private:
 
     std::auto_ptr<QAction> logSelectAll;
     std::auto_ptr<QAction> logCopy;
+
+    std::auto_ptr<QAction> logEnable;
+    std::auto_ptr<QLabel> logStatus;
+
+    int log_status;
 
     std::auto_ptr<QTreeWidget> treeWidget;
     std::auto_ptr<QListWidget> listWidget;

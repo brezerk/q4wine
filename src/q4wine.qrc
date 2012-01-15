@@ -64,5 +64,7 @@
         <file>data/sort-desc.png</file>
         <file>data/sort-create-asc.png</file>
         <file>data/sort-create-desc.png</file>
+        <file>data/ledgreen.png</file>
+        <file>data/ledorange.png</file>
     </qresource>
 </RCC>

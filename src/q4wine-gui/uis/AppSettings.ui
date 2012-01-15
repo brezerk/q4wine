@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>682</width>
-    <height>422</height>
+    <width>680</width>
+    <height>420</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -234,7 +234,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QGridLayout" name="gridLayout">
@@ -1976,19 +1976,6 @@
                <property name="margin">
                 <number>3</number>
                </property>
-               <item>
-                <widget class="QCheckBox" name="cbEnableLogging">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string>Enable logging sybsystem.</string>
-                 </property>
-                </widget>
-               </item>
                <item>
                 <widget class="QCheckBox" name="cbClearLogs">
                  <property name="sizePolicy">

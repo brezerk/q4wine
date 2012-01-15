@@ -37,14 +37,24 @@ LoggingWidget::LoggingWidget(QWidget *parent) :
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
+
+    this->log_status = CoreLib->getSetting("logging", "enable", false, D_LOGGING_ENABLED).toInt();
+
+    if (CoreLib->getSetting("logging", "autoClear", false, 1).toInt()==1){
+        this->clearLogs();
+    }
+
     this->createActions();
 
     std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
     toolBar->setIconSize(QSize(24, 24));
     toolBar->addAction(logClear.get());
-    toolBar->addSeparator ();
+    toolBar->addSeparator();
     toolBar->addAction(logDelete.get());
     toolBar->addAction(logExport.get());
+    toolBar->addSeparator();
+    toolBar->addAction(logEnable.get());
+    toolBar->addWidget(logStatus.get());
 
     treeWidget.reset(new QTreeWidget(this));
     treeWidget->setColumnCount(1);
@@ -79,10 +89,6 @@ LoggingWidget::LoggingWidget(QWidget *parent) :
     a.append(CoreLib->getSetting("MainWindow", "splitterLogSize1", false, 379).toInt());
 
     splitter->setSizes(a);
-
-    if ((CoreLib->getSetting("logging", "autoClear", false, 1).toInt()==1) and ((CoreLib->getSetting("logging", "autoClear", false, 1).toInt()==1))){
-        this->clearLogs();
-    }
 }
 
 LoggingWidget::~LoggingWidget(){
@@ -124,6 +130,21 @@ void LoggingWidget::createActions(){
     connect(logCopy.get(), SIGNAL(triggered()), this, SLOT(logCopy_Click()));
     logCopy->setEnabled(false);
 
+    logEnable.reset(new QAction(this));
+    connect(logEnable.get(), SIGNAL(triggered()), this, SLOT(logEnable_Click()));
+
+    logStatus.reset(new QLabel(this));
+    if (this->log_status == D_LOGGING_ENABLED){
+        logEnable->setIcon(CoreLib->loadIcon("data/ledgreen.png"));
+        logStatus->setText(QString("%1: %2").arg(tr("Status")).arg(tr("Logging enabled")));
+        logEnable->setText(tr("Disable logging"));
+        logEnable->setStatusTip(tr("Disable logging"));
+    } else {
+        logEnable->setIcon(CoreLib->loadIcon("data/ledorange.png"));
+        logStatus->setText(QString("%1: %2").arg(tr("Status")).arg(tr("Logging disabled")));
+        logEnable->setText(tr("Enable logging"));
+        logEnable->setStatusTip(tr("Enable logging"));
+    }
 
     return;
 }
@@ -331,6 +352,28 @@ void LoggingWidget::logCopy_Click(){
 
 void LoggingWidget::logSelectAll_Click(){
     listWidget->selectAll();
+    return;
+}
+
+void LoggingWidget::logEnable_Click(){
+    if (this->log_status == D_LOGGING_ENABLED){
+        this->log_status = D_LOGGING_DISABLED;
+        logStatus->setText(QString("%1: %2").arg(tr("Status")).arg(tr("Logging disabled")));
+        logEnable->setText(tr("Enable logging"));
+        logEnable->setStatusTip(tr("Enable logging"));
+        logEnable->setIcon(CoreLib->loadIcon("data/ledorange.png"));
+    } else {
+        this->log_status = D_LOGGING_ENABLED;
+        logStatus->setText(QString("%1: %2").arg(tr("Status")).arg(tr("Logging enabled")));
+        logEnable->setText(tr("Disable logging"));
+        logEnable->setStatusTip(tr("Disable logging"));
+        logEnable->setIcon(CoreLib->loadIcon("data/ledgreen.png"));
+    }
+
+    QSettings settings(APP_SHORT_NAME, "default");
+    settings.beginGroup("logging");
+    settings.setValue("enable", this->log_status);
+    settings.endGroup();
     return;
 }
 

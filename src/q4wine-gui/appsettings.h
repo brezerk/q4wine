@@ -44,7 +44,6 @@ class AppSettings : public QDialog, public Ui::AppSettings
 
         void comboMountProfiles_currentIndexChanged(int index);
 
-        void cbEnableLogging_stateChanged ( int state );
         void cbShowTray_stateChanged ( int state );
 
         void optionsTree_itemClicked ( QTreeWidgetItem *item, int);

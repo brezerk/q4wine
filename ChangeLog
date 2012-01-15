@@ -4,7 +4,8 @@ Version 1.0
   - Icon and Prefix sorting (name, date);
   - Version string to About page;
   - Handler for wrong URL in wine app db;
-  
+  - Add Logging subsystem activation\deactivation button to Logging tab toolbar;
+
   Fixed:
   - Unite Icon\Detail toolbar actions;
   - No translations autoupdate at project build. Use `make translations` insted;
