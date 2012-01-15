@@ -18,7 +18,6 @@ get_directory_property(Q4WINE_LIB_SOURCES DIRECTORY ../q4wine-lib DEFINITION Q4W
 
 add_custom_target (
     translations
-    ALL
     COMMAND ${QT_LUPDATE_EXECUTABLE}
     ${Q4WINE_GUI_SOURCES} ${Q4WINE_GUI_UI_SOURCES}
     ${PLUGINS_GUI_SOURCES} ${PLUGINS_GUI_UI_SOURCES}
@@ -28,9 +27,16 @@ add_custom_target (
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 )
 
+add_custom_target (
+    translations_build
+    ALL
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+)
+
 foreach (LANG ${LINGUAS})
 add_custom_command (
-    TARGET translations
+    TARGET translations_build
+    PRE_BUILD
     COMMAND ${QT_LRELEASE_EXECUTABLE} ${LANG}.ts -qm ${CMAKE_CURRENT_BINARY_DIR}/${LANG}.qm
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     )

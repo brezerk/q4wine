@@ -6,6 +6,7 @@ Version 1.0
   - Handler for wrong URL in wine app db;
   
   Fixed:
+  - No translations autoupdate at project build. Use `make translations` insted;
   - Fixed process refresh loop;
   - Extended env command after console terminal;
   - Updated README file: added "Known Issues" section;

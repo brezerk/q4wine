@@ -78,7 +78,7 @@ IF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 ENDIF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 
 target_link_libraries( q4wine-core ${QT_LIBRARIES})
-add_dependencies( q4wine-core translations )
+add_dependencies( q4wine-core translations_build )
 
 IF( RELEASE )
     install( TARGETS q4wine-core LIBRARY DESTINATION ${LIBS_ENTRY_PATH} NAMELINK_SKIP)

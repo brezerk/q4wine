@@ -45,7 +45,7 @@ ADD_EXECUTABLE( q4wine-helper ${Q4WINE_HELPER_SOURCES}
     ${Q4WINE_LIB_LIB_MOC_SOURCES} ${Q4WINE_HELPER_LIB_MOC_SOURCES}
     ${Q4WINE_HELPER_HEADERS} ${QM_I18N} )
 
-add_dependencies( q4wine-helper translations )
+add_dependencies( q4wine-helper translations_build )
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
     TARGET_LINK_LIBRARIES( q4wine-helper ${QT_LIBRARIES} q4wine-core)
