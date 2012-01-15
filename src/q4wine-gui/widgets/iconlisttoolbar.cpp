@@ -38,6 +38,7 @@ IconListToolbar::IconListToolbar(QWidget *parent) :
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
     this->sort_order = CoreLib->getSetting("IconWidget", "IconSort", false, D_SORT_TYPE_BY_DATE_ASC).toInt();
+    this->view_mode = CoreLib->getSetting("IconWidget", "ViewMode", false, D_VIEW_MODE_ICON).toInt();
     this->createActions();
 
     std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
@@ -52,8 +53,7 @@ IconListToolbar::IconListToolbar(QWidget *parent) :
     toolBar->addWidget(searchField.get());
 
     toolBar->addSeparator();
-    toolBar->addAction(viewIcon.get());
-    toolBar->addAction(viewList.get());
+    toolBar->addAction(viewMode.get());
     toolBar->addSeparator();
     toolBar->addAction(zoomIn.get());
     toolBar->addAction(zoomOut.get());
@@ -76,13 +76,18 @@ void IconListToolbar::createActions(){
     searchClear->setStatusTip(tr("Clear search field"));
     connect(searchClear.get(), SIGNAL(triggered()), this, SLOT(searchClear_Click()));
 
-    viewIcon.reset(new QAction(CoreLib->loadIcon("data/view-list-icons.png"), tr("Icons view mode"), this));
-    viewIcon->setStatusTip(tr("Icons view mode"));
-    connect(viewIcon.get(), SIGNAL(triggered()), this, SLOT(viewIcon_Click()));
+    viewMode.reset(new QAction(this));
+    connect(viewMode.get(), SIGNAL(triggered()), this, SLOT(viewMode_Click()));
 
-    viewList.reset(new QAction(CoreLib->loadIcon("data/view-list-details.png"), tr("Details view mode"), this));
-    viewList->setStatusTip(tr("Details view mode"));
-    connect(viewList.get(), SIGNAL(triggered()), this, SLOT(viewList_Click()));
+    if (this->view_mode == D_VIEW_MODE_LIST) {
+        viewMode->setIcon(CoreLib->loadIcon("data/view-list-icons.png"));
+        viewMode->setText(tr("Icons view mode"));
+        viewMode->setStatusTip(tr("Icons view mode"));
+    } else {
+        viewMode->setIcon(CoreLib->loadIcon("data/view-list-details.png"));
+        viewMode->setText(tr("Details view mode"));
+        viewMode->setStatusTip(tr("Details view mode"));
+    }
 
     zoomIn.reset(new QAction(CoreLib->loadIcon("data/zoom-in.png"), tr("Zoom In"), this));
     zoomIn->setStatusTip(tr("Zoom In"));
@@ -125,12 +130,20 @@ void IconListToolbar::searchClear_Click(){
     searchField->clear();
 }
 
-void IconListToolbar::viewIcon_Click(){
-    emit(changeView(1));
-}
-
-void IconListToolbar::viewList_Click(){
-    emit(changeView(0));
+void IconListToolbar::viewMode_Click(){
+    if (this->view_mode == D_VIEW_MODE_ICON) {
+        this->view_mode = D_VIEW_MODE_LIST;
+        viewMode->setIcon(CoreLib->loadIcon("data/view-list-icons.png"));
+        viewMode->setText(tr("Icons view mode"));
+        viewMode->setStatusTip(tr("Icons view mode"));
+        emit(changeView(0));
+    } else {
+        this->view_mode = D_VIEW_MODE_ICON;
+        viewMode->setIcon(CoreLib->loadIcon("data/view-list-details.png"));
+        viewMode->setText(tr("Details view mode"));
+        viewMode->setStatusTip(tr("Details view mode"));
+        emit(changeView(1));
+    }
 }
 
 void IconListToolbar::zoomIn_Click(){

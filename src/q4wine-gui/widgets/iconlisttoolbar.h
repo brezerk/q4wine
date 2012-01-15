@@ -58,8 +58,7 @@ private:
     std::auto_ptr<QLineEdit> searchField;
 
     std::auto_ptr<QAction> searchClear;
-    std::auto_ptr<QAction> viewIcon;
-    std::auto_ptr<QAction> viewList;
+    std::auto_ptr<QAction> viewMode;
 
     std::auto_ptr<QAction> zoomIn;
     std::auto_ptr<QAction> zoomOut;
@@ -68,11 +67,11 @@ private:
     std::auto_ptr<QAction> sortCreation;
 
     int sort_order;
+    int view_mode;
 
 private slots:
     void searchClear_Click();
-    void viewIcon_Click();
-    void viewList_Click();
+    void viewMode_Click();
     void zoomIn_Click();
     void zoomOut_Click();
     void sortAlpha_Click();

@@ -46,11 +46,8 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
 
     this->setDragEnabled(false);
 
-    if (CoreLib->getSetting("IconWidget", "ViewMode", false, "IconMode").toString()=="ListMode"){
-        setDisplayType(false);
-    } else {
-        setDisplayType(true);
-    }
+    this->view_mode = CoreLib->getSetting("IconWidget", "ViewMode", false, D_VIEW_MODE_ICON).toInt();
+    setDisplayType(this->view_mode);
 
     this->sort_order = CoreLib->getSetting("IconWidget", "IconSort", false, D_SORT_TYPE_BY_DATE_ASC).toInt();
 
@@ -68,11 +65,7 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
 IconListWidget::~IconListWidget(){
     QSettings settings(APP_SHORT_NAME, "default");
     settings.beginGroup("IconWidget");
-    if (viewMode()==QListView::IconMode){
-        settings.setValue("ViewMode", "IconMode");
-    } else {
-        settings.setValue("ViewMode", "ListMode");
-    }
+    settings.setValue("ViewMode", this->view_mode);
     settings.setValue("IconSort", this->sort_order);
     settings.setValue("IconSize",  iconSize().height());
     settings.endGroup();
@@ -147,9 +140,9 @@ void IconListWidget::setFilterString(QString filterString){
 
 void IconListWidget::changeView(int action){
     if (action==0){
-        setDisplayType(false);
+        setDisplayType(D_VIEW_MODE_LIST);
     } else if (action==1){
-        setDisplayType(true);
+        setDisplayType(D_VIEW_MODE_ICON);
     } else if (action==2){
         if (iconSize().height()<64){
             int nSize = iconSize().height()+8;
@@ -188,11 +181,10 @@ void IconListWidget::changeView(int action){
     return;
 }
 
-void IconListWidget::setDisplayType(bool icon){
-
+void IconListWidget::setDisplayType(int type){
     int nSize = CoreLib->getSetting("IconWidget", "IconSize", false, 32).toInt();
-
-    if (icon){
+    this->view_mode = type;
+    if (type == D_VIEW_MODE_ICON) {
         setViewMode(QListView::IconMode);
         setGridSize(QSize(nSize+54, nSize+54));
         setIconSize(QSize(nSize, nSize));

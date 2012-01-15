@@ -80,13 +80,14 @@ private:
       void contextMenuEvent(QContextMenuEvent *event);
       void keyPressEvent (QKeyEvent * event );
 
-      void setDisplayType(bool icon=true);
+      void setDisplayType(int type);
 
       QString prefixName, dirName, prefixMediaDrive, prefixMontPoint, filterString;
       QPoint startPos;
       QStringList cdromDevices;
       bool drag, dragstarted;
       int sort_order;
+      int view_mode;
 
       // Database classes
       Prefix db_prefix;
