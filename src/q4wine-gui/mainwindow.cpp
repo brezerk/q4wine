@@ -619,7 +619,6 @@ void MainWindow::cmdCreateFake_Click(){
     dir.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden | QDir::NoSymLinks | QDir::NoDotAndDotDot);
 
     if (dir.exists()){
-        qDebug()<<dir.path()<<dir.count();
         if (dir.count() > 0){
             if (QMessageBox::warning(this, tr("Warning"), tr("A fake drive already exists within <b>%1</b>.<br><br>Do you wish to remove <b>all</b> files from this prefix directory?").arg(prefixPath), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
             QStringList args;
