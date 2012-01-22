@@ -232,18 +232,9 @@ void FakeDriveSettings::cmdOk_Click(){
 
     QString prefixPath = db_prefix.getPath(prefixName);
 
-    /*
-     * Wine wan't create prefix for different ARCH while empty directory exists
-     * so we try to delete empty directory.
-     *
-     * Note: This will not delete an un empty directory
-     */
-
     QDir dir;
     QFile file;
     QFileInfo fileInfo;
-
-    dir.remove(prefixPath);
 
     QString userDir = prefixPath;
     userDir.append("/drive_c/users/");
@@ -1283,9 +1274,12 @@ void FakeDriveSettings::loadSettings(){
 }
 
 void FakeDriveSettings::loadDefaultSettings(){
-        this->setEnabled(false);
-        QApplication::setOverrideCursor( Qt::BusyCursor );
+    this->setEnabled(false);
+    QApplication::setOverrideCursor(Qt::BusyCursor);
 
+    QString prefixPath = db_prefix.getPath(this->prefixName);
+
+    QDir dir;
     ExecObject execObj;
     execObj.cmdargs = "-u -i";
     execObj.execcmd = "wineboot";
@@ -1316,15 +1310,11 @@ void FakeDriveSettings::loadDefaultSettings(){
     item->setDrive("Z:", "/", "auto");
     listWineDrives->addItem(item.release());
 
-    QString prefixPath = db_prefix.getPath(this->prefixName);
-
     txtWineDesktop->setText(QString("%1/desktop-integration/Desktop").arg(prefixPath));
     txtWineDesktopDoc->setText(QString("%1/desktop-integration/").arg(prefixPath));
     txtWineDesktopMus->setText(QString("%1/desktop-integration/").arg(prefixPath));
     txtWineDesktopPic->setText(QString("%1/desktop-integration/").arg(prefixPath));
     txtWineDesktopVid->setText(QString("%1/desktop-integration/").arg(prefixPath));
-
-        QDir dir;
 
         if (!dir.exists(txtWineDesktopDoc->text())){
             if (!dir.mkdir(txtWineDesktopDoc->text())){

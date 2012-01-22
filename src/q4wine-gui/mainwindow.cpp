@@ -614,25 +614,29 @@ void MainWindow::tbwGeneral_CurrentTabChange(int tabIndex){
 void MainWindow::cmdCreateFake_Click(){
 
     QString prefixPath = db_prefix.getPath(cbPrefixes->currentText());
-    QString sysregPath;
-    sysregPath.append(prefixPath);
-    sysregPath.append("/system.reg");
+    QDir dir(prefixPath);
+    dir.setPath(prefixPath);
+    dir.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden | QDir::NoSymLinks | QDir::NoDotAndDotDot);
 
-    QFile sysreg_file (sysregPath);
-
-    if (sysreg_file.exists()){
-        if (QMessageBox::warning(this, tr("Warning"), tr("A fake drive already exists within <b>%1</b>.<br><br>Do you wish to remove <b>all</b> files from this prefix?").arg(prefixPath), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
-
+    if (dir.exists()){
+        qDebug()<<dir.path()<<dir.count();
+        if (dir.count() > 0){
+            if (QMessageBox::warning(this, tr("Warning"), tr("A fake drive already exists within <b>%1</b>.<br><br>Do you wish to remove <b>all</b> files from this prefix directory?").arg(prefixPath), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
             QStringList args;
-            args << "-rf";
-            args << prefixPath;
-            Process exportProcess(args, "/bin/rm", QDir::homePath(), tr("Removing old fake drive.<br>This may take awhile..."), tr("Removing old fake drive"));
+                args << "-rf";
+                args << prefixPath;
+                Process exportProcess(args, "/bin/rm", QDir::homePath(), tr("Removing old fake drive.<br>This may take awhile..."), tr("Removing old fake drive"));
 
-            if (exportProcess.exec()!=QDialog::Accepted){
+                if (exportProcess.exec()!=QDialog::Accepted){
+                    return;
+                }
+            } else {
                 return;
             }
         } else {
+            if (!dir.rmdir(prefixPath)){
             return;
+            }
         }
     }
 
