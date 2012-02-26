@@ -242,10 +242,10 @@ void FakeDriveSettings::cmdOk_Click(){
 
     if (list.count()==5){
                 desktopFolder = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(0).split("\\\\").last()));
-                desktopDocuments = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(1).split("\\\\").last()));
-                desktopMusic = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(2).split("\\\\").last()));
-                desktopPictures = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(3).split("\\\\").last()));
-                desktopVideos = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(4).split("\\\\").last()));
+                desktopMusic = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(1).split("\\\\").last()));
+                desktopPictures = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(2).split("\\\\").last()));
+                desktopDocuments = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(4).split("\\\\").last()));
+                desktopVideos = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(3).split("\\\\").last()));
     } else {
          QMessageBox::warning(this, tr("Error"), tr("Can't read desktop paths!"));
         this->reject();
@@ -960,10 +960,10 @@ void FakeDriveSettings::loadSettings(){
 
     if (list.count()==5){
         desktopFolder = CoreLib->decodeRegString(list.at(0).split("\\\\").last());
-        desktopDocuments = CoreLib->decodeRegString(list.at(1).split("\\\\").last());
-        desktopMusic = CoreLib->decodeRegString(list.at(2).split("\\\\").last());
-        desktopPictures = CoreLib->decodeRegString(list.at(3).split("\\\\").last());
-        desktopVideos = CoreLib->decodeRegString(list.at(4).split("\\\\").last());
+        desktopMusic = CoreLib->decodeRegString(list.at(1).split("\\\\").last());
+        desktopPictures = CoreLib->decodeRegString(list.at(2).split("\\\\").last());
+        desktopVideos = CoreLib->decodeRegString(list.at(3).split("\\\\").last());
+        desktopDocuments = CoreLib->decodeRegString(list.at(4).split("\\\\").last());
     } else {
         QMessageBox::warning(this, tr("Error"), tr("Can't read desktop paths!"));
         this->reject();
