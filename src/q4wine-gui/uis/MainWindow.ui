@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>597</width>
-    <height>509</height>
+    <width>591</width>
+    <height>503</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -137,114 +137,11 @@
        <attribute name="title">
         <string>Setup</string>
        </attribute>
-       <widget class="QFrame" name="frame">
-        <property name="geometry">
-         <rect>
-          <x>5</x>
-          <y>50</y>
-          <width>571</width>
-          <height>371</height>
-         </rect>
+       <layout class="QGridLayout" name="setupLayout">
+        <property name="margin">
+         <number>0</number>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Sunken</enum>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_1">
-         <property name="margin">
-          <number>2</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QTabWidget" name="twWineSetup">
-           <property name="currentIndex">
-            <number>0</number>
-           </property>
-           <widget class="QWidget" name="tab_4">
-            <attribute name="title">
-             <string>Base Setup</string>
-            </attribute>
-            <layout class="QVBoxLayout" name="_2">
-             <item>
-              <widget class="QLabel" name="label">
-               <property name="text">
-                <string>This is the point where you have to start when creating new empty prefix. You can also create a new or update an old fake Windows drive.</string>
-               </property>
-               <property name="wordWrap">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="cmdCreateFake">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="text">
-                <string>Create Fake Drive</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="cmdUpdateFake">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="text">
-                <string>Update Fake Drive</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer>
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>535</width>
-                 <height>71</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="tab_5">
-            <attribute name="title">
-             <string>System Software</string>
-            </attribute>
-            <layout class="QVBoxLayout" name="_3">
-             <item>
-              <widget class="QLabel" name="label_2">
-               <property name="text">
-                <string>Support for WIS scripts has not yet been implemented; however, this application is capable of using winetricks (see the current tab's toolbar actions).</string>
-               </property>
-               <property name="wordWrap">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="verticalSpacer">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>20</width>
-                 <height>40</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </widget>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+       </layout>
       </widget>
       <widget class="QWidget" name="tabPrefix">
        <attribute name="title">
@@ -291,7 +188,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>597</width>
+     <width>591</width>
      <height>24</height>
     </rect>
    </property>

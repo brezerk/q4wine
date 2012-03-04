@@ -319,14 +319,16 @@ void FakeDriveSettings::cmdOk_Click(){
             }
         }
 
-        if (txtWineDesktop->text().isEmpty()){
+        if (!txtWineDesktop->text().isEmpty()){
+            /*
+            file.setFileName(desktopFolder);
             if (!file.open(QIODevice::WriteOnly)){
                 QMessageBox::warning(this, tr("Error"), tr("Can't create file \"%1\"").arg(desktopFolder));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
             }
-        } else {
+        } else {*/
             if (!file.link(txtWineDesktop->text(), desktopFolder)){
                 QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktop->text()).arg(desktopFolder));
                 QApplication::restoreOverrideCursor();
@@ -336,75 +338,83 @@ void FakeDriveSettings::cmdOk_Click(){
         }
 
         // Doc folder
-        fileInfo.setFile(desktopDocuments);
-        if (fileInfo.isSymLink() || fileInfo.exists()){
-            if (!dir.remove(desktopDocuments)){
-                QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopDocuments));
+        if (!txtWineDesktopDoc->text().isEmpty()){
+            fileInfo.setFile(desktopDocuments);
+            if (fileInfo.isSymLink() || fileInfo.exists()){
+                if (!dir.remove(desktopDocuments)){
+                    QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopDocuments));
+                    QApplication::restoreOverrideCursor();
+                    reject();
+                    return;
+                }
+            }
+
+            if (!file.link(txtWineDesktopDoc->text(), desktopDocuments)){
+                QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopDoc->text()).arg(desktopDocuments));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
             }
-        }
-
-        if (!file.link(txtWineDesktopDoc->text(), desktopDocuments)){
-            QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopDoc->text()).arg(desktopDocuments));
-            QApplication::restoreOverrideCursor();
-            reject();
-            return;
         }
 
         // Music folder
-        fileInfo.setFile(desktopMusic);
-        if (fileInfo.isSymLink() || fileInfo.exists()){
-            if (!dir.remove(desktopMusic)){
-                QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopMusic));
+        if (!txtWineDesktopMus->text().isEmpty()){
+            fileInfo.setFile(desktopMusic);
+            if (fileInfo.isSymLink() || fileInfo.exists()){
+                if (!dir.remove(desktopMusic)){
+                    QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopMusic));
+                    QApplication::restoreOverrideCursor();
+                    reject();
+                    return;
+                }
+            }
+
+            if (!file.link(txtWineDesktopMus->text(), desktopMusic)){
+                QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopMus->text()).arg(desktopMusic));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
             }
-        }
-
-        if (!file.link(txtWineDesktopMus->text(), desktopMusic)){
-            QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopMus->text()).arg(desktopMusic));
-            QApplication::restoreOverrideCursor();
-            reject();
-            return;
         }
 
         // Pic folder
-        fileInfo.setFile(desktopPictures);
-        if (fileInfo.isSymLink() || fileInfo.exists()){
-            if (!dir.remove(desktopPictures)){
-                QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopPictures));
+        if (!txtWineDesktopPic->text().isEmpty()){
+            fileInfo.setFile(desktopPictures);
+            if (fileInfo.isSymLink() || fileInfo.exists()){
+                if (!dir.remove(desktopPictures)){
+                    QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopPictures));
+                    QApplication::restoreOverrideCursor();
+                    reject();
+                    return;
+                }
+            }
+
+            if (!file.link(txtWineDesktopPic->text(), desktopPictures)){
+                QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopPic->text()).arg(desktopPictures));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
             }
-        }
-
-        if (!file.link(txtWineDesktopPic->text(), desktopPictures)){
-            QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopPic->text()).arg(desktopPictures));
-            QApplication::restoreOverrideCursor();
-            reject();
-            return;
         }
 
         // Vid folder
-        fileInfo.setFile(desktopVideos);
-        if (fileInfo.isSymLink() || fileInfo.exists()){
-            if (!dir.remove(desktopVideos)){
-                QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopVideos));
+        if (!txtWineDesktopVid->text().isEmpty()){
+            fileInfo.setFile(desktopVideos);
+            if (fileInfo.isSymLink() || fileInfo.exists()){
+                if (!dir.remove(desktopVideos)){
+                    QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopVideos));
+                    QApplication::restoreOverrideCursor();
+                    reject();
+                    return;
+                }
+            }
+
+            if (!file.link(txtWineDesktopVid->text(), desktopVideos)){
+                QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopVid->text()).arg(desktopVideos));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
             }
-        }
-
-        if (!file.link(txtWineDesktopVid->text(), desktopVideos)){
-            QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopVid->text()).arg(desktopVideos));
-            QApplication::restoreOverrideCursor();
-            reject();
-            return;
         }
 
     // ---- End of Creating Dos drives ----

@@ -58,7 +58,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
         this->showMinimized();
 
     setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
-
+    /*
     cbPrefixes.reset(new QComboBox(tabPrefixSeup));
     cbPrefixes->setMinimumWidth(180);
     std::auto_ptr<QToolBar> toolbar (new QToolBar(tabPrefixSeup));
@@ -88,7 +88,16 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     vlayout->setSpacing(0);
     tabPrefixSeup->setLayout(vlayout.release());
 
-    frame->setAutoFillBackground(true);
+    frame->setAutoFillBackground(true);*/
+
+    std::auto_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
+
+
+    std::auto_ptr<PrefixConfigWidget> configWidget (new PrefixConfigWidget(tabPrefixSeup));
+    connect(configWidget.get(), SIGNAL(updateDatabaseConnections()), this, SLOT(updateDtabaseConnectedItems()));
+    connect(configWidget.get(), SIGNAL(setTabIndex (int)), tbwGeneral, SLOT(setCurrentIndex (int)));
+    connect(this, SIGNAL(updateDatabaseConnections()), configWidget.get(), SLOT(getPrefixes()));
+
 
     std::auto_ptr<LoggingWidget> logWidget (new LoggingWidget(tabLogging));
     connect (this, SIGNAL(reloadLogData()), logWidget.get(), SLOT(getLogRecords()));
@@ -113,8 +122,8 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(twPrograms.get(), SIGNAL(setSearchFocus()), this, SLOT(setSearchFocus()));
     connect(twPrograms.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
     connect(this, SIGNAL(setDefaultFocus(QString, QString)), twPrograms.get(), SLOT(setDefaultFocus(QString, QString)));
-    connect(cbPrefixes.get(), SIGNAL(currentIndexChanged(QString)), twPrograms.get(), SLOT(setDefaultFocus(QString)));
-    connect(twPrograms.get(), SIGNAL(prefixIndexChanged(QString)), this, SLOT(setcbPrefixesIndex(QString)));
+    connect(configWidget.get(), SIGNAL(prefixIndexChanged(QString)), twPrograms.get(), SLOT(setDefaultFocus(QString)));
+    connect(twPrograms.get(), SIGNAL(prefixIndexChanged(QString)), configWidget.get(), SLOT(setPrefix(QString)));
     connect(twPrograms.get(), SIGNAL(setTabIndex (int)), tbwGeneral, SLOT(setCurrentIndex (int)));
 
     connect(twPrograms.get(), SIGNAL(pasteAction()), lstIcons.get(), SLOT(iconPaste_Click()));
@@ -129,8 +138,8 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     std::auto_ptr<PrefixControlWidget> prefixWidget (new PrefixControlWidget(tabPrefix));
     connect(prefixWidget.get(), SIGNAL(updateDatabaseConnections()), twPrograms.get(), SLOT(getPrefixes()));
     connect(prefixWidget.get(), SIGNAL(updateDatabaseConnections()), this, SLOT(updateDtabaseConnectedItems()));
-    connect(cbPrefixes.get(), SIGNAL(currentIndexChanged(QString)), prefixWidget.get(), SLOT(setDefaultFocus(QString)));
-    connect(prefixWidget.get(), SIGNAL(prefixIndexChanged(QString)), this, SLOT(setcbPrefixesIndex(QString)));
+    connect(configWidget.get(), SIGNAL(prefixIndexChanged(QString)), prefixWidget.get(), SLOT(setDefaultFocus(QString)));
+    connect(prefixWidget.get(), SIGNAL(prefixIndexChanged(QString)), configWidget.get(), SLOT(setPrefix(QString)));
     connect(prefixWidget.get(), SIGNAL(setTabIndex (int)), tbwGeneral, SLOT(setCurrentIndex (int)));
     connect(twPrograms.get(), SIGNAL(updateDatabaseConnections()), prefixWidget.get(), SLOT(updateDtabaseItems()));
 
@@ -173,6 +182,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     vlayout->setContentsMargins(3,0,3,3);
     tabPrograms->setLayout(vlayout.release());
     tabPrefixLayout->addWidget(prefixWidget.release());
+    setupLayout->addWidget(configWidget.release());
 
     // Updating database connected items
     updateDtabaseConnectedItems();
@@ -182,8 +192,8 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     this->getSettings();
 
     connect(tbwGeneral, SIGNAL(currentChanged(int)), this, SLOT(tbwGeneral_CurrentTabChange(int)));
-    connect(cmdCreateFake, SIGNAL(clicked()), this, SLOT(cmdCreateFake_Click()));
-    connect(cmdUpdateFake, SIGNAL(clicked()), this, SLOT(cmdUpdateFake_Click()));
+    //connect(cmdCreateFake, SIGNAL(clicked()), this, SLOT(cmdCreateFake_Click()));
+    //connect(cmdUpdateFake, SIGNAL(clicked()), this, SLOT(cmdUpdateFake_Click()));
 
     //Main menu actions connection to slots
     connect(mainRun, SIGNAL(triggered()), this, SLOT(mainRun_Click()));
@@ -269,7 +279,7 @@ void MainWindow::clearTmp(){
 }
 
 void MainWindow::prefixRunWinetricks_Click() {
-    if (CoreLib->getSetting("console", "bin").toString().isEmpty()){
+    /*if (CoreLib->getSetting("console", "bin").toString().isEmpty()){
         QMessageBox::warning(this, tr("Error"), tr("<p>You do not set default console binary.</p><p>Set it into q4wine option dialog.</p>"));
         return;
     }
@@ -281,7 +291,7 @@ void MainWindow::prefixRunWinetricks_Click() {
     }
 
     winetricks tricks(cbPrefixes->currentText());
-    tricks.exec();
+    tricks.exec();*/
     return;
 }
 
@@ -371,18 +381,19 @@ void MainWindow::changeStatusText(QString text){
 }
 
 void MainWindow::updateDtabaseConnectedItems(){
+    /*
     QString curPrefix =  cbPrefixes->currentText();
 
     cbPrefixes->clear();
     QStringList list = db_prefix.getPrefixList();
     cbPrefixes->addItems (list);
-
+    */
     emit(updateDatabaseConnections());
-
+    /*
     if (!curPrefix.isEmpty()){
         cbPrefixes->setCurrentIndex(cbPrefixes->findText(curPrefix));
     }
-
+    */
     return;
 }
 
@@ -611,66 +622,6 @@ void MainWindow::tbwGeneral_CurrentTabChange(int tabIndex){
     return;
 }
 
-void MainWindow::cmdCreateFake_Click(){
-
-    QString prefixPath = db_prefix.getPath(cbPrefixes->currentText());
-    QDir dir(prefixPath);
-    dir.setPath(prefixPath);
-    dir.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden | QDir::NoSymLinks | QDir::NoDotAndDotDot);
-
-    if (dir.exists()){
-        if (dir.count() > 0){
-            if (QMessageBox::warning(this, tr("Warning"), tr("A fake drive already exists within <b>%1</b>.<br><br>Do you wish to remove <b>all</b> files from this prefix directory?").arg(prefixPath), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
-            QStringList args;
-                args << "-rf";
-                args << prefixPath;
-                Process exportProcess(args, "/bin/rm", QDir::homePath(), tr("Removing old fake drive.<br>This may take awhile..."), tr("Removing old fake drive"));
-
-                if (exportProcess.exec()!=QDialog::Accepted){
-                    return;
-                }
-            } else {
-                return;
-            }
-        } else {
-            if (!dir.rmdir(prefixPath)){
-            return;
-            }
-        }
-    }
-
-    FakeDriveSettings settings(cbPrefixes->currentText());
-    settings.loadDefaultPrefixSettings();
-
-    if (settings.exec()==QDialog::Accepted){
-        updateDtabaseConnectedItems();
-    }
-
-    return;
-}
-
-void MainWindow::cmdUpdateFake_Click(){
-    QString prefixPath = db_prefix.getPath(cbPrefixes->currentText());
-
-    QString sysregPath;
-    sysregPath.append(prefixPath);
-    sysregPath.append("/system.reg");
-
-    QFile sysreg_file (sysregPath);
-
-    if (!sysreg_file.exists()){
-        QMessageBox::warning(this, tr("Error"), tr("Sorry, no fake drive configuration found.<br>Create fake drive configuration before update it!"));
-    } else {
-        FakeDriveSettings settings(cbPrefixes->currentText());
-        settings.loadPrefixSettings();
-
-        if (settings.exec()==QDialog::Accepted){
-            updateDtabaseConnectedItems();
-        }
-    }
-    return;
-}
-
 void MainWindow::mainExit_Click(){
     /*
      * main Menu Exit
@@ -796,12 +747,14 @@ void MainWindow::mainRun_Click(){
     /*
      * main Menu shows Run dialog
      */
+    //FIXME
+    /*
     if (cbPrefixes->currentText().isEmpty())
         return;
 
     Run run;
     run.prepare(cbPrefixes->currentText());
-    run.exec();
+    run.exec();*/
     return;
 }
 
@@ -1108,6 +1061,8 @@ void MainWindow::messageReceived(const QString message){
                     this->showNotifycation(tr("Can't run binary"), tr("Binary \"%1\" do not exists.").arg(message));
             }
         } else {
+            //FIXME
+            /*
             if (cbPrefixes->currentText().isEmpty())
                 return;
 
@@ -1116,18 +1071,12 @@ void MainWindow::messageReceived(const QString message){
 
             Run run;
             run.prepare(cbPrefixes->currentText(), wrkDir, "", "", "", "", "", "", 0, message);
-            run.exec();
+            run.exec();*/
         }
     }
 
     return;
 }
-
-void MainWindow::setcbPrefixesIndex(const QString text) const{
-    cbPrefixes->setCurrentIndex(cbPrefixes->findText(text));
-    return;
-}
-
 
 
 /*

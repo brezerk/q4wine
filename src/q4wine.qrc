@@ -66,5 +66,9 @@
         <file>data/sort-create-desc.png</file>
         <file>data/ledgreen.png</file>
         <file>data/ledorange.png</file>
+        <file>data/fakedrive-new.png</file>
+        <file>data/fakedrive-update.png</file>
+        <file>data/winetricks-install.png</file>
+        <file>data/folder-downloads.png</file>
     </qresource>
 </RCC>

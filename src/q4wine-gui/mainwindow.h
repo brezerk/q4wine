@@ -50,6 +50,7 @@
 #include "prefixtreetoolbar.h"
 #include "wineprocesswidget.h"
 #include "prefixcontrolwidget.h"
+#include "prefixconfigwidget.h"
 
 #ifdef WITH_WINEAPPDB
 #include "appdbwidget.h"
@@ -91,7 +92,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 
     public slots:
             void messageReceived(const QString message);
-            void setcbPrefixesIndex(const QString text) const;
             void updateDtabaseConnectedItems(void);
             void setSearchFocus(void);
             void setMeVisible(bool visible);
@@ -110,9 +110,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
         /*
          * Command buttons slots
          */
-
-        void cmdCreateFake_Click(void);
-        void cmdUpdateFake_Click(void);
 
         void prefixManage_Click(void);
         void prefixRunWinetricks_Click (void);

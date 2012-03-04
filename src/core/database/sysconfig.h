@@ -1,7 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2009 by Pavel Zinin (pashazz)                           *
- *   pzinin@gmail.com                                                     *
- *   Copyright (C) 2010 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -19,53 +17,66 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef WINETRICKS_H
-#define WINETRICKS_H
+#ifndef SYSCONFIG_H
+#define SYSCONFIG_H
 
-#include "config.h"
+#include <config.h>
 
+#include <memory>
+
+#include <QList>
 #include <QString>
 #include <QStringList>
-#include <QProcess>
-#include <QMessageBox>
-#include <QLibrary>
-#include <QProgressDialog>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QDebug>
+#include <QDir>
+#include <QVariant>
+#include <QSettings>
 
-#include "process.h"
-
-#include "prefix.h"
-#include "sysconfig.h"
-
-#include "q4wine-lib.h"
-
-class winetricks : public QObject{
-
-public:
-    winetricks(QString prefix_name);
-    void run_winetricks(QString item);
-    void install_winetricks();
-    bool parse();
-
-private:
-    //! This is need for libq4wine-core.so import;
-    typedef void *CoreLibPrototype (bool);
-        CoreLibPrototype *CoreLibClassPointer;
-        std::auto_ptr<corelib> CoreLib;
-
-    QLibrary libq4wine;
-
-    Prefix db_prefix;
-    Sysconfig db_sysconfig;
-
-    QString console_bin;
-    QString console_args;
-    QString prefix_name;
-    QString winetricks_bin;
-
-    QStringList subtypes;
-
-    void downloadwinetricks();
-    QStringList get_stdout_lines(QString command);
+/*!
+ * \class Sysconfig
+ * \ingroup database
+ * \brief This class provide database functions for sysconfig table.
+ *
+ */
+struct ProviderItem {
+    int id;
+    QString name;
+    QString icon;
 };
 
-#endif // WINETRICKS_H
+struct SysconfigItem {
+    int id;
+    QString name;
+    QString icon;
+    QString type;
+    QString desc;
+    int provider_id;
+};
+
+class Sysconfig
+{
+
+  public:
+     /*! \brief This is calss constructor.
+      */
+      Sysconfig();
+
+      QList<ProviderItem> getProviders(void) const;
+      QStringList getProviderSubtypes(int provider_id) const;
+      QList<SysconfigItem> getItems(QString provider, QString type, int sort_order, QString filter) const;
+      bool add_item(QString name, QString icon, QString desc, QString type, int provider_id);
+      bool drop_items(int provider_id);
+
+protected:
+      /*! \brief This function executes requested query.
+      *
+      * \param  SQL Query
+      * \return Return true on success
+      */
+      bool updateQuery(QSqlQuery *sqlQuery) const;
+
+};
+
+#endif // SYSCONFIG_H

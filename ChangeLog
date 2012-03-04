@@ -1,5 +1,8 @@
 Version 1.0
  Added:
+  - Winetricks database cache;
+  - Merge Wintricks core;
+  - New System Config interface;
   - Mac OS X support;
   - Icon and Prefix sorting (name, date);
   - Version string to About page;
@@ -7,6 +10,7 @@ Version 1.0
   - Add Logging subsystem activation\deactivation button to Logging tab toolbar;
 
   Fixed:
+  - Error is Desktop paths are empty;
   - Desktop Paths are wrongly labeled [3491775];
   - Win32 prefix creation while prefix directory exists;
   - Unite Icon\Detail toolbar actions;

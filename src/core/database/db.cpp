@@ -58,7 +58,7 @@ bool DataBase::checkDb(){
     QTextStream QErr(stderr);
 
     QStringList tables;
-    tables << "prefix" << "dir" << "icon" << "images" << "last_run_icon"<<"logging";
+    tables << "prefix" << "dir" << "icon" << "images" << "last_run_icon" << "logging" << "providers" << "sysconfig";
 
     QSqlDatabase db = QSqlDatabase::database();
 
@@ -87,25 +87,67 @@ bool DataBase::checkDb(){
                 if (!query.exec())
                     return false;
                 query.clear();
-            }
-            if (table == "dir"){
+            } else if (table == "dir"){
                 if(!query.exec("CREATE TABLE dir (id INTEGER PRIMARY KEY, name TEXT, prefix_id NUMERIC);"))
                     return false;
-            }
-            if (table == "icon"){
+            } else if (table == "icon"){
                 if(!query.exec("CREATE TABLE icon (wrkdir TEXT, override TEXT, winedebug TEXT, useconsole NUMERIC, display TEXT, cmdargs TEXT, exec TEXT, icon_path TEXT, desc TEXT, desktop TEXT, nice TEXT, dir_id NUMERIC, id INTEGER PRIMARY KEY, name TEXT, prefix_id NUMERIC);"))
                     return false;
-            }
-            if (table == "images"){
+            } else if (table == "images"){
                 if(!query.exec("CREATE TABLE images (id INTEGER PRIMARY KEY, name TEXT, path TEXT);"))
                     return false;
-            }
-            if (table == "last_run_icon"){
+            } else if (table == "last_run_icon"){
                 if(!query.exec("CREATE TABLE last_run_icon (wrkdir TEXT, override TEXT, winedebug TEXT, useconsole NUMERIC, display TEXT, cmdargs TEXT, exec TEXT, desktop TEXT, nice TEXT, id INTEGER PRIMARY KEY);"))
                     return false;
-            }
-            if (table == "logging"){
+            } else if (table == "logging"){
                 if(!query.exec("CREATE TABLE logging (id INTEGER PRIMARY KEY, name TEXT, exit NUMERIC, stdout TEXT, prefix_id NUMERIC, date NUMERIC);"))
+                    return false;
+            } else if (table == "providers"){
+                if(!query.exec("CREATE TABLE providers (id INTEGER PRIMARY KEY, name TEXT, icon TEXT);"))
+                    return false;
+
+                query.prepare("INSERT INTO providers(id, name, icon) VALUES(NULL, :name, :icon);");
+                query.bindValue(":name", "System");
+                query.bindValue(":icon", "wine.png");
+                if (!query.exec())
+                    return false;
+
+                query.bindValue(":name", "Winetricks");
+                query.bindValue(":icon", "regedit.png");
+                if (!query.exec())
+                    return false;
+            } else if (table == "sysconfig"){
+                if(!query.exec("CREATE TABLE sysconfig (id INTEGER PRIMARY KEY, name TEXT, type TEXT, icon TEXT, desc TEXT, provider_id INTEGER);"))
+                    return false;
+
+                // System items
+                query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, 1);");
+                query.bindValue(":name", "%CREATE_FAKE%");
+                query.bindValue(":icon", "fakedrive-new.png");
+                query.bindValue(":desc", "%CREATE_FAKE_DESC%");
+                if (!query.exec())
+                    return false;
+
+                query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, 1);");
+                query.bindValue(":name", "%UPDATE_FAKE%");
+                query.bindValue(":icon", "fakedrive-update.png");
+                query.bindValue(":desc", "%UPDATE_FAKE_DESC%");
+                if (!query.exec())
+                    return false;
+
+                // Wintricks base
+                query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, 2);");
+                query.bindValue(":name", "%INSTALL_WINETRICKS%");
+                query.bindValue(":icon", "winetricks-install.png");
+                query.bindValue(":desc", "%UPDATE_WINETRICKS_DESC%");
+                if (!query.exec())
+                    return false;
+
+                query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, 2);");
+                query.bindValue(":name", "%REFRESH_WINETRICKS%");
+                query.bindValue(":icon", "folder-downloads.png");
+                query.bindValue(":desc", "%REFRESH_WINETRICKS_DESC%");
+                if (!query.exec())
                     return false;
             }
         }

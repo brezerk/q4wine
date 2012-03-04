@@ -30,13 +30,6 @@
 #include <QDebug>
 #include <QVariant>
 
-#define D_VIEW_MODE_ICON 0
-#define D_VIEW_MODE_LIST 1
-#define D_SORT_TYPE_BY_NAME_ASC 1
-#define D_SORT_TYPE_BY_NAME_DSC 2
-#define D_SORT_TYPE_BY_DATE_ASC 3
-#define D_SORT_TYPE_BY_DATE_DSC 4
-
 /*!
  * \class Icon
  * \ingroup database

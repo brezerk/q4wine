@@ -34,6 +34,16 @@
 #define D_TREE_COLLAPSE 1
 #define D_TREE_EXPAND 2
 
+#define D_PROVIDER_SYSTEM 1
+#define D_PROVIDER_WINETRICKS 2
+
+#define D_VIEW_MODE_ICON 0
+#define D_VIEW_MODE_LIST 1
+#define D_SORT_TYPE_BY_NAME_ASC 1
+#define D_SORT_TYPE_BY_NAME_DSC 2
+#define D_SORT_TYPE_BY_DATE_ASC 3
+#define D_SORT_TYPE_BY_DATE_DSC 4
+
 #define APP_NAME "Q4Wine"
 #define APP_SHORT_NAME "q4wine"
 #define APP_WEBSITTE "q4wine.brezblock.org.ua"

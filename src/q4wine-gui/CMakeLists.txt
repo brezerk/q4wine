@@ -18,6 +18,7 @@ SET( Q4WINE_GUI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/logging.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/sysconfig.cpp
     ${CMAKE_SOURCE_DIR}/src/core/registry.cpp
     ${CMAKE_SOURCE_DIR}/src/core/xmlparser.cpp
     ${CMAKE_SOURCE_DIR}/src/core/httpcore.cpp
@@ -40,6 +41,7 @@ SET( Q4WINE_GUI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/loggingwidget.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixconfigwidget.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/fakedrivesettings.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/infodialog.cpp
 )
@@ -54,6 +56,7 @@ SET ( Q4WINE_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.h
     ${CMAKE_SOURCE_DIR}/src/core/database/image.h
     ${CMAKE_SOURCE_DIR}/src/core/database/logging.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/sysconfig.h
     ${CMAKE_SOURCE_DIR}/src/core/appdbstructs.h
     ${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
     ${CMAKE_SOURCE_DIR}/src/core/httpcore.h
@@ -77,6 +80,7 @@ SET ( Q4WINE_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/loggingwidget.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixconfigwidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/fakedrivesettings.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/infodialog.h
 )
@@ -105,6 +109,7 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixcontrolwidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/drivelistwidgetitem.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/loggingwidget.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixconfigwidget.h
     ${CMAKE_SOURCE_DIR}/src/core/database/db.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/fakedrivesettings.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/infodialog.h
