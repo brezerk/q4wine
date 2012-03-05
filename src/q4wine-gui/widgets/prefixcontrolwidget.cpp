@@ -336,15 +336,25 @@ void PrefixControlWidget::prefixExport_Click(){
     /*
      * Function for exporting preefix to file
      */
+#ifdef DEBUG
+    qDebug()<<"[ii] prefixExport_Click()";
+#endif
     if (!prefixTable->currentIndex().isValid())
         return;
-
+#ifdef DEBUG
+    qDebug()<<"[ii] index is valid";
+#endif
     if(prefixTable->currentIndex().row()<0)
         return;
-
+#ifdef DEBUG
+    qDebug()<<"[ii] row is valid";
+#endif
     QString prefixName = model->index(prefixTable->currentIndex().row(), 0, QModelIndex()).data().toString();
     QString prefixPath = model->index(prefixTable->currentIndex().row(), 2, QModelIndex()).data().toString();
 
+#ifdef DEBUG
+    qDebug()<<"[ii] name: " << prefixName << " Path: " << prefixPath;
+#endif
     if (prefixName.isEmpty())
         return;
 
@@ -362,8 +372,15 @@ void PrefixControlWidget::prefixExport_Click(){
     savepath.append(QDate::currentDate().toString(Qt::ISODate));
     savepath.append(".tbz");
 
+#ifdef DEBUG
+    qDebug()<<"[ii] Path: " << prefixPath << " Save Path: " << savepath;
+#endif
+
     //Request user for valid save path
 #if QT_VERSION >= 0x040500
+#ifdef DEBUG
+    qDebug()<<"[ii] QT_VERSION >= 0x040500";
+#endif
     QFileDialog::Options options;
 
     if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
@@ -371,6 +388,9 @@ void PrefixControlWidget::prefixExport_Click(){
 
     QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to export"), savepath , tr("Prefix archive images (*.tbz)"), 0, options);
 #else
+#ifdef DEBUG
+    qDebug()<<"[ii] QT_VERSION <= 0x040500";
+#endif
     QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to export"), savepath , tr("Prefix archive images (*.tbz)"));
 #endif
 
