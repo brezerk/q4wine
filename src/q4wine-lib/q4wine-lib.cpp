@@ -404,7 +404,8 @@ QString corelib::getTranslationLang(){
     qDebug()<<"[ii] i18n path: "<<i18nPath;
 #endif
 
-    QString lang = this->getLang();
+    QString lang = "q4wine_";
+    lang.append(this->getLang());
 
     if (!lang.isNull()){
         if (qtt.load(lang, i18nPath)){

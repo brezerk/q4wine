@@ -5,8 +5,8 @@ MESSAGE(STATUS "Process LINGUAS variable --\n")
 
 foreach (LANG ${LINGUAS})
     MESSAGE(STATUS "Add translation for ${LANG}: ${LANG}.ts")
-    list(APPEND TS_I18N ${CMAKE_SOURCE_DIR}/src/i18n/${LANG}.ts)
-    list(APPEND QM_I18N ${CMAKE_CURRENT_BINARY_DIR}/${LANG}.qm)
+    list(APPEND TS_I18N ${CMAKE_SOURCE_DIR}/src/i18n/q4wine_${LANG}.ts)
+    list(APPEND QM_I18N ${CMAKE_CURRENT_BINARY_DIR}/q4wine_${LANG}.qm)
 endforeach ()
 MESSAGE("\n")
 
@@ -37,7 +37,7 @@ foreach (LANG ${LINGUAS})
 add_custom_command (
     TARGET translations_build
     PRE_BUILD
-    COMMAND ${QT_LRELEASE_EXECUTABLE} ${LANG}.ts -qm ${CMAKE_CURRENT_BINARY_DIR}/${LANG}.qm
+    COMMAND ${QT_LRELEASE_EXECUTABLE} q4wine_${LANG}.ts -qm ${CMAKE_CURRENT_BINARY_DIR}/q4wine_${LANG}.qm
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     )
 endforeach()
