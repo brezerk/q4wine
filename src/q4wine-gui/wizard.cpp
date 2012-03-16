@@ -116,10 +116,12 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
 
         foreach (QString loc, libs_loc){
             foreach (QString arch, libs_arch){
-                QString libs_patch = loc;
-                libs_patch.append(arch);
-                if (QDir(libs_patch).exists()){
-                    txtWineDllPath->setText(libs_patch);
+                QString libs_path = loc;
+                libs_path.append(arch);
+                QString libwine_path = libs_path;
+                libwine_path.append("/libwine.so");
+                if (QFile(libwine_path).exists()){
+                    txtWineDllPath->setText(libs_path);
                     break;
                 }
             }
