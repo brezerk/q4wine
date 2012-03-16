@@ -1756,6 +1756,10 @@ QStringList corelib::getCdromDevices(void) const{
                 QString prefix_path=result.value("path");
 
                 path.append("/.local/share/wineprefixes/");
+
+                if (!dir.mkpath(path))
+                    return false;
+
                 path.append(prefix_name);
 
                 if (!file.exists(path)){

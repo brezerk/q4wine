@@ -10,6 +10,7 @@ Version 1.0
   - Add Logging subsystem activation\deactivation button to Logging tab toolbar;
 
   Fixed:
+  - Create ~/.local/share/wineprefixes directory if it does not exists;
   - Error is Desktop paths are empty;
   - Desktop Paths are wrongly labeled [3491775];
   - Win32 prefix creation while prefix directory exists;
