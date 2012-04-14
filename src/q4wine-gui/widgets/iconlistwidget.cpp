@@ -1023,6 +1023,19 @@ void IconListWidget::iconCopyQ4WineCmd_Click(){
     return;
 };
 
+void IconListWidget::runProgramRequest(QString message){
+    if (this->prefixName.isEmpty())
+        return;
+
+    QString wrkDir;
+    wrkDir = message.left(message.length() - QStringList(message.split("/")).last().length());
+
+    Run run;
+    run.prepare(this->prefixName, wrkDir, "", "", "", "", "", "", 0, message);
+    run.exec();
+    return;
+}
+
 void IconListWidget::menuRun_triggered(QAction* action){
     if (action->text().isEmpty())
         return;

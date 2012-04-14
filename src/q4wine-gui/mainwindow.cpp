@@ -58,46 +58,13 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
         this->showMinimized();
 
     setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
-    /*
-    cbPrefixes.reset(new QComboBox(tabPrefixSeup));
-    cbPrefixes->setMinimumWidth(180);
-    std::auto_ptr<QToolBar> toolbar (new QToolBar(tabPrefixSeup));
-    std::auto_ptr<QLabel> label (new QLabel(QString(" %1 ").arg(tr("Current prefix:"))));
-
-    toolbar->setIconSize(QSize(24, 24));
-    toolbar->addWidget(label.release());
-    toolbar->addWidget(cbPrefixes.get());
-
-    std::auto_ptr<QAction> action (new QAction(CoreLib->loadIcon("data/configure.png"), tr("Manage prefixes"), this));
-    action->setStatusTip(tr("Manage prefixes"));
-    connect(action.get(), SIGNAL(triggered()), this, SLOT(prefixManage_Click()));
-
-    toolbar->addAction(action.release());
-    toolbar->addSeparator();
-
-    action.reset(new QAction(CoreLib->loadIcon("data/regedit.png"), tr("Run Winetricks plugin"), this));
-    action->setStatusTip(tr("Run Winetricks plugin"));
-    connect(action.get(), SIGNAL(triggered()), this, SLOT(prefixRunWinetricks_Click()));
-
-    toolbar->addAction(action.release());
 
     std::auto_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
-    vlayout->addWidget(toolbar.release());
-    vlayout->addWidget(frame);
-    vlayout->setMargin(0);
-    vlayout->setSpacing(0);
-    tabPrefixSeup->setLayout(vlayout.release());
-
-    frame->setAutoFillBackground(true);*/
-
-    std::auto_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
-
 
     std::auto_ptr<PrefixConfigWidget> configWidget (new PrefixConfigWidget(tabPrefixSeup));
     connect(configWidget.get(), SIGNAL(updateDatabaseConnections()), this, SLOT(updateDtabaseConnectedItems()));
     connect(configWidget.get(), SIGNAL(setTabIndex (int)), tbwGeneral, SLOT(setCurrentIndex (int)));
     connect(this, SIGNAL(updateDatabaseConnections()), configWidget.get(), SLOT(getPrefixes()));
-
 
     std::auto_ptr<LoggingWidget> logWidget (new LoggingWidget(tabLogging));
     connect (this, SIGNAL(reloadLogData()), logWidget.get(), SLOT(getLogRecords()));
@@ -107,6 +74,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     logLayout->addWidget(logWidget.release());
 
     std::auto_ptr<IconListWidget> lstIcons (new IconListWidget(tabPrograms));
+    connect(this, SIGNAL(runProgramRequest(QString)), lstIcons.get(), SLOT(runProgramRequest(QString)));
     connect(lstIcons.get(), SIGNAL(iconItemClick(QString, QString, QString, QString, QString)), this, SLOT(updateIconDesc(QString, QString, QString, QString, QString)));
     connect(lstIcons.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
     connect(lstIcons.get(), SIGNAL(appRunned(bool)), this, SLOT(setMeVisible(bool)));
@@ -278,23 +246,6 @@ void MainWindow::clearTmp(){
     return;
 }
 
-void MainWindow::prefixRunWinetricks_Click() {
-    /*if (CoreLib->getSetting("console", "bin").toString().isEmpty()){
-        QMessageBox::warning(this, tr("Error"), tr("<p>You do not set default console binary.</p><p>Set it into q4wine option dialog.</p>"));
-        return;
-    }
-
-    if (CoreLib->getSetting("DialogFlags", "winetricksPlugin", false, 0).toInt()==0){
-        InfoDialog info(0);
-        if (info.exec()==QDialog::Rejected)
-            return;
-    }
-
-    winetricks tricks(cbPrefixes->currentText());
-    tricks.exec();*/
-    return;
-}
-
 void MainWindow::trayIcon_Activate(QSystemTrayIcon::ActivationReason reason){
     if (reason==QSystemTrayIcon::Trigger){
         if (!isVisible()){
@@ -381,19 +332,7 @@ void MainWindow::changeStatusText(QString text){
 }
 
 void MainWindow::updateDtabaseConnectedItems(){
-    /*
-    QString curPrefix =  cbPrefixes->currentText();
-
-    cbPrefixes->clear();
-    QStringList list = db_prefix.getPrefixList();
-    cbPrefixes->addItems (list);
-    */
     emit(updateDatabaseConnections());
-    /*
-    if (!curPrefix.isEmpty()){
-        cbPrefixes->setCurrentIndex(cbPrefixes->findText(curPrefix));
-    }
-    */
     return;
 }
 
@@ -403,11 +342,6 @@ void MainWindow::searchRequest(QString search){
     emit(appdbWidget_startSearch(1, search));
 }
 #endif
-
-void MainWindow::prefixManage_Click(){
-    tbwGeneral->setCurrentIndex (3);
-    return;
-}
 
 bool MainWindow::createSocket(){
     serverSoket.reset(new QLocalServer(this));
@@ -1061,23 +995,11 @@ void MainWindow::messageReceived(const QString message){
                     this->showNotifycation(tr("Can't run binary"), tr("Binary \"%1\" do not exists.").arg(message));
             }
         } else {
-            //FIXME
-            /*
-            if (cbPrefixes->currentText().isEmpty())
-                return;
-
-            QString wrkDir;
-            wrkDir = message.left(message.length() - QStringList(message.split("/")).last().length());
-
-            Run run;
-            run.prepare(cbPrefixes->currentText(), wrkDir, "", "", "", "", "", "", 0, message);
-            run.exec();*/
+            emit (runProgramRequest(message));
         }
     }
-
     return;
 }
-
 
 /*
 void MainWindow::getWineMenuIcons(void){

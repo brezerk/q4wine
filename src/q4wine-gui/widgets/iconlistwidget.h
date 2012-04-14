@@ -68,6 +68,7 @@ public slots:
       void setFilterString(QString filterString);
       void changeView(int action);
       void iconPaste_Click(void);
+      void runProgramRequest(QString);
 
 private:
       void mousePressEvent(QMouseEvent *event);

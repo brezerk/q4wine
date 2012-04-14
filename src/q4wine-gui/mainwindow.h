@@ -110,10 +110,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
         /*
          * Command buttons slots
          */
-
-        void prefixManage_Click(void);
-        void prefixRunWinetricks_Click (void);
-
         void updateIconDesc(QString program, QString args, QString desc, QString console, QString desktop);
 
         //Main menu slots
@@ -148,7 +144,6 @@ private:
 #ifdef WITH_WINEAPPDB
         std::auto_ptr<AppDBWidget> appdbWidget;
 #endif
-        std::auto_ptr<QComboBox> cbPrefixes;
         std::auto_ptr<QLocalServer> serverSoket;
 
         //! This is need for libq4wine-core.so import;
@@ -190,6 +185,7 @@ private:
         void startProcTimer(void);
 
         void reloadLogData(void);
+        void runProgramRequest(QString);
 
     protected:
         // Events
