@@ -36,15 +36,10 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-    setAcceptDrops(true);
     setResizeMode(QListView::Adjust);
     setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
     setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
-    setMovement(QListView::Static);
-    setDragDropMode(QAbstractItemView::NoDragDrop);
     setSelectionMode(QAbstractItemView::ContiguousSelection);
-
-    this->setDragEnabled(false);
 
     this->view_mode = CoreLib->getSetting("IconWidget", "ViewMode", false, D_VIEW_MODE_ICON).toInt();
     setDisplayType(this->view_mode);
@@ -104,23 +99,13 @@ void IconListWidget::showContents(QString filterString){
                 if (QFile::exists (icon_path)){
                     iconItem->setIcon(QIcon(icon_path));
                 } else {
-                    if (iconsList.at(i)=="console"){
-                        iconItem->setIcon(CoreLib->loadIcon("data/wineconsole.png"));
-                    } else if (iconsList.at(i)=="regedit"){
-                        iconItem->setIcon(CoreLib->loadIcon("data/regedit.png"));
-                    } else if (iconsList.at(i)=="wordpad"){
-                        iconItem->setIcon(CoreLib->loadIcon("data/notepad.png"));
-                    } else if (iconsList.at(i)=="winecfg"){
-                        iconItem->setIcon(CoreLib->loadIcon("data/winecfg.png"));
-                    } else if (iconsList.at(i)=="uninstaller"){
-                        iconItem->setIcon(CoreLib->loadIcon("data/uninstaller.png"));
-                    } else if (iconsList.at(i)=="eject"){
-                        iconItem->setIcon(CoreLib->loadIcon("data/eject.png"));
-                    } else if (iconsList.at(i)=="explorer"){
-                        iconItem->setIcon(CoreLib->loadIcon("data/explorer.png"));
-                    } else {
-                        iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
-                    }
+                    QIcon ico = CoreLib->loadIcon(QString("data/%1.png").arg(iconsList.at(i)));
+                    // Do not work due to: https://bugreports.qt-project.org/browse/QTBUG-999
+                    //if (ico.isNull()){
+                    if (ico.availableSizes().isEmpty())
+                        ico = CoreLib->loadIcon("data/exec_wine.png");
+
+                    iconItem->setIcon(ico);
                 }
             }
         }

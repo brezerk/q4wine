@@ -1099,22 +1099,10 @@ QStringList corelib::getCdromDevices(void) const{
             if (icon_path.isEmpty()){
                 out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/exec_wine.png"<<endl;
             } else {
-                if (icon_name=="winecfg"){
-                    out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/winecfg.png"<<endl;
-                } else if (icon_name=="console"){
-                    out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/wineconsole.png"<<endl;
-                } else if (icon_name=="uninstaller"){
-                    out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/uninstaller.png"<<endl;
-                } else if (icon_name=="regedit"){
-                    out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/regedit.png"<<endl;
-                } else if (icon_name=="explorer"){
-                    out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/explorer.png"<<endl;
-                } else if (icon_name=="eject"){
-                    out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/eject.png"<<endl;
-                } else if (icon_name=="wordpad"){
-                    out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/notepad.png"<<endl;
-                } else {
+                if (QFile(icon_path).exists()){
                     out<<"Icon="<<icon_path<<endl;
+                } else {
+                    out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/"<<icon_name<<".png"<<endl;
                 }
             }
             out<<"Type=Application"<<endl;
@@ -1243,8 +1231,8 @@ QStringList corelib::getCdromDevices(void) const{
             } else {
                 mount_string.replace("%MOUNT_IMAGE%", this->getEscapeString(image_name));
             }
-            mount_string.replace("%MOUNT_POINT%", this->getEscapeString(mount_point));
 #endif
+            mount_string.replace("%MOUNT_POINT%", this->getEscapeString(mount_point));
             args.clear();
             args.append("-c");
             args.append(mount_string);
@@ -1701,12 +1689,19 @@ QStringList corelib::getCdromDevices(void) const{
                 db_dir.addDir(prefixName, "system");
                 //Adding icons
                 db_icon.addIcon("", "winecfg.exe", "winecfg", "Configure the general settings for Wine", prefixName, "system", "winecfg");
-                db_icon.addIcon("--backend=user cmd", "wineconsole", "wineconsole", "Wineconsole is similar to wine command wcmd", prefixName, "system", "console");
+                db_icon.addIcon("--backend=user cmd", "wineconsole", "wineconsole", "Wineconsole is similar to wine command wcmd", prefixName, "system", "wineconsole");
                 db_icon.addIcon("", "uninstaller.exe", "uninstaller", "Uninstall Windows programs under Wine properly", prefixName, "system", "uninstaller");
                 db_icon.addIcon("", "regedit.exe", "regedit", "Wine registry editor", prefixName, "system", "regedit");
                 db_icon.addIcon("", "explorer.exe", "explorer", "Browse the files in the virtual Wine Drive", prefixName, "system", "explorer");
                 db_icon.addIcon("", "eject.exe", "eject", "Wine CD eject tool", prefixName, "system", "eject");
                 db_icon.addIcon("", "wordpad.exe", "wordpad", "Wine wordpad text editor", prefixName, "system", "wordpad");
+                db_icon.addIcon("", "taskmgr.exe", "taskmgr", "Wine task manager", prefixName, "system", "taskmgr");
+                db_icon.addIcon("", "winemine.exe", "winemine", "Wine saper game", prefixName, "system", "winemine");
+                db_icon.addIcon("", "oleview.exe", "wordpad", "Wine OLE/COM object viewer", prefixName, "system", "oleview");
+                db_icon.addIcon("", "notepad.exe", "notepad", "Wine notepad text editor", prefixName, "system", "notepad");
+                db_icon.addIcon("", "iexplore.exe", "iexplore", "Wine internet expolrer", prefixName, "system", "iexplore");
+                db_icon.addIcon("", "control.exe", "control", "Wine control panel", prefixName, "system", "control");
+
             }
 
             if (!db_dir.isExistsByName(prefixName, "autostart"))

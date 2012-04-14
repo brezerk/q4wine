@@ -16,7 +16,6 @@
         <file>data/eject.png</file>
         <file>data/winecfg.png</file>
         <file>data/uninstaller.png</file>
-        <file>data/regedit.png</file>
         <file>data/notepad.png</file>
         <file>data/configure.png</file>
         <file>data/down.png</file>
@@ -70,5 +69,10 @@
         <file>data/fakedrive-update.png</file>
         <file>data/winetricks-install.png</file>
         <file>data/folder-downloads.png</file>
+        <file>data/regedit.png</file>
+        <file>data/winemine.png</file>
+        <file>data/iexplore.png</file>
+        <file>data/taskmgr.png</file>
+        <file>data/wordpad.png</file>
     </qresource>
 </RCC>

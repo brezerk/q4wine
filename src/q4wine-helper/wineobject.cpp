@@ -317,7 +317,7 @@ int WineObject::runSys(){
             this->sendMessage(QString("start/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
         }
     }
-        /* Handle error */;
+    /* Handle error */;
 
     while (fgets(path, PATH_MAX, fp) != NULL){
         app_stdout.append(codec->toUnicode(path));

@@ -8,6 +8,8 @@ Version 1.0
   - Version string to About page;
   - Handler for wrong URL in wine app db;
   - Add Logging subsystem activation\deactivation button to Logging tab toolbar;
+  - Add taskmgr, winemine, iexplorer, control, oleview icons to prefix's system folder;
+  - New system icons from latest wine version;
 
   Fixed:
   - Create ~/.local/share/wineprefixes directory if it does not exists;
