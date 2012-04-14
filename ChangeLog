@@ -10,6 +10,8 @@ Version 1.0
   - Add Logging subsystem activation\deactivation button to Logging tab toolbar;
   - Add taskmgr, winemine, iexplorer, control, oleview icons to prefix's system folder;
   - New system icons from latest wine version;
+  - Install program icons in $prefix/share/icons/hicolor/; Add 16,22,32,48,64,96,128,256 icon sizes [3505384];
+  - Add prefix to translation files names [3506372];
 
   Fixed:
   - Create ~/.local/share/wineprefixes directory if it does not exists;

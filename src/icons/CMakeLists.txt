@@ -9,10 +9,13 @@ IF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
         install(FILES ${DESKTOP_PLIST} DESTINATION ${CMAKE_INSTALL_PREFIX}/${APP_NAME_GLOBAL}.app/Contents)
     ENDIF( RELEASE )
 ELSE( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
-    SET( DESKTOP_PIXMAPS ${CMAKE_SOURCE_DIR}/src/icons/q4wine.png )
-    IF( RELEASE )
-        install(FILES ${DESKTOP_PIXMAPS} DESTINATION ${PIXMAPS_ENTRY_PATH})
-    ENDIF( RELEASE )
+    foreach (SIZE 350 256 192 128 96 64 48 32 22 16)
+        SET( DESKTOP_PIXMAPS
+            ${CMAKE_SOURCE_DIR}/src/icons/q4wine-${SIZE}x${SIZE}.png )
+        IF( RELEASE )
+            install(FILES ${DESKTOP_PIXMAPS} DESTINATION ${PIXMAPS_ENTRY_PATH}/${SIZE}x${SIZE}/apps RENAME q4wine.png)
+        ENDIF( RELEASE )
+    endforeach()
 ENDIF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 
 
