@@ -139,24 +139,16 @@ void IconSettings::getIconReccord(){
         if (QFile(iconPath).exists()){
             cmdGetIcon->setIcon (QIcon(iconPath));
         } else {
-            if (iconPath=="console"){
-                cmdGetIcon->setIcon(CoreLib->loadIcon("data/wineconsole.png"));
-            } else if (iconPath=="regedit"){
-                cmdGetIcon->setIcon(CoreLib->loadIcon("data/regedit.png"));
-            } else if (iconPath=="wordpad"){
-                cmdGetIcon->setIcon(CoreLib->loadIcon("data/notepad.png"));
-            } else if (iconPath=="winecfg"){
-                cmdGetIcon->setIcon(CoreLib->loadIcon("data/winecfg.png"));
-            } else if (iconPath=="uninstaller"){
-                cmdGetIcon->setIcon(CoreLib->loadIcon("data/uninstaller.png"));
-            } else if (iconPath=="eject"){
-                cmdGetIcon->setIcon(CoreLib->loadIcon("data/eject.png"));
-            } else if (iconPath=="explorer"){
-                cmdGetIcon->setIcon(CoreLib->loadIcon("data/explorer.png"));
-            } else {
-                cmdGetIcon->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
+            QIcon ico = CoreLib->loadIcon(QString("data/%1.png").arg(iconPath));
+
+            // Do not work due to: https://bugreports.qt-project.org/browse/QTBUG-999
+            //if (ico.isNull()){
+            if (ico.availableSizes().isEmpty()){
+                ico = CoreLib->loadIcon("data/exec_wine.png");
                 iconPath="";
             }
+
+            cmdGetIcon->setIcon(ico);
         }
     }
 
