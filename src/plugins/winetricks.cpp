@@ -172,11 +172,14 @@ bool winetricks::parse() {
             //QMessageBox::warning(Non, QString("Error"), QString("<p>q4wine can't locate winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
         return false;
     }
+    QCoreApplication::processEvents();
 
     db_sysconfig.drop_items(D_PROVIDER_WINETRICKS);
 
     pargs.append(winetricks_bin);
     pargs.append(" list");
+
+    QCoreApplication::processEvents();
 
     QStringList subtypes = this->get_stdout_lines(pargs);
 

@@ -257,14 +257,6 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
                                    "German translation" \
                              "</p><p style=\"margin: 0px\"> </p>" \
 
-                            "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-                                   "Steven Panek (Espreon)" \
-                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-                                   "English fixes and translation" \
-                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-                                   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">majora700@gmail.com</span>" \
-                            "</p><p style=\"margin: 0px\"> </p>" \
-
 
                             "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
                                    "Uriy O. Chornoivan" \
