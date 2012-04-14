@@ -681,14 +681,7 @@ void MainWindow::mainRun_Click(){
     /*
      * main Menu shows Run dialog
      */
-    //FIXME
-    /*
-    if (cbPrefixes->currentText().isEmpty())
-        return;
-
-    Run run;
-    run.prepare(cbPrefixes->currentText());
-    run.exec();*/
+    emit (runProgramRequest(QString()));
     return;
 }
 
