@@ -182,10 +182,21 @@ bool DataBase::fixup(){
             return false;
         }
     }
-
     if (!query.exec("SELECT lang FROM last_run_icon")){
         if (!query.exec("ALTER TABLE last_run_icon ADD COLUMN lang TEXT")){
             qDebug()<<"[EE] Can't alter last_run_icon table";
+            return false;
+        }
+    }
+    if (!query.exec("SELECT prerun FROM icon")){
+        if (!query.exec("ALTER TABLE icon ADD COLUMN prerun TEXT")){
+            qDebug()<<"[EE] Can't alter icon table";
+            return false;
+        }
+    }
+    if (!query.exec("SELECT postrun FROM icon")){
+        if (!query.exec("ALTER TABLE icon ADD COLUMN postrun TEXT")){
+            qDebug()<<"[EE] Can't alter icon table";
             return false;
         }
     }

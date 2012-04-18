@@ -102,9 +102,9 @@ QHash<QString, QString> Icon::getByName(const QString prefix_name, const QString
     QSqlQuery query;
     //                                  0        1     2             3          4          5               6              7           8        9      10       11       12    13         14
     if (dir_name.isEmpty()){
-        query.prepare("SELECT id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id, lang FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id ISNULL AND name=:icon_name");
+        query.prepare("SELECT id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id, lang, prerun, postrun FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id ISNULL AND name=:icon_name");
     } else {
-        query.prepare("SELECT id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id, lang FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name1)) AND name=:icon_name");
+        query.prepare("SELECT id, name, desc, icon_path, wrkdir, override, winedebug, useconsole, display, cmdargs, exec, desktop, nice, prefix_id, dir_id, lang, prerun, postrun FROM icon WHERE prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name) AND dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name1)) AND name=:icon_name");
         query.bindValue(":prefix_name1", prefix_name);
         query.bindValue(":dir_name", dir_name);
     }
@@ -131,6 +131,8 @@ QHash<QString, QString> Icon::getByName(const QString prefix_name, const QString
             icon.insert("prefix_id", query.value(13).toString());
             icon.insert("dir_id", query.value(14).toString());
             icon.insert("lang", query.value(15).toString());
+            icon.insert("prerun", query.value(16).toString());
+            icon.insert("postrun", query.value(17).toString());
         }
     } else {
         qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
@@ -411,9 +413,9 @@ bool Icon::isExistsByName(const QString prefix_name, const QString dir_name, con
     return false;
 }
 
-bool Icon::addIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString override, const QString winedebug, const QString useconsole, const QString display, const QString wrkdir, const QString desktop, const int nice, const QString lang) const{
+bool Icon::addIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString override, const QString winedebug, const QString useconsole, const QString display, const QString wrkdir, const QString desktop, const int nice, const QString lang, const QString prerun, const QString postrun) const{
     QSqlQuery query;
-    query.prepare("INSERT INTO icon(override, winedebug, useconsole, display, cmdargs, exec, icon_path, desc, dir_id, id, name, prefix_id, wrkdir, desktop, nice, lang) VALUES(:override, :winedebug, :useconsole, :display, :cmdargs, :exec, :icon_path, :desc, (SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)), NULL, :name, (SELECT id FROM prefix WHERE name=:prefix_name), :wrkdir, :desktop, :nice, :lang);");
+    query.prepare("INSERT INTO icon(override, winedebug, useconsole, display, cmdargs, exec, icon_path, desc, dir_id, id, name, prefix_id, wrkdir, desktop, nice, lang, prerun, postrun) VALUES(:override, :winedebug, :useconsole, :display, :cmdargs, :exec, :icon_path, :desc, (SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)), NULL, :name, (SELECT id FROM prefix WHERE name=:prefix_name), :wrkdir, :desktop, :nice, :lang, :prerun, :postrun);");
 
     if (cmdargs.isEmpty()){
         query.bindValue(":cmdargs", QVariant(QVariant::String));
@@ -498,6 +500,18 @@ bool Icon::addIcon(const QString cmdargs, const QString exec, const QString icon
         query.bindValue(":lang", lang);
     }
 
+    if (prerun.isEmpty()){
+        query.bindValue(":prerun", QVariant(QVariant::String));
+    } else {
+        query.bindValue(":prerun", prerun);
+    }
+
+    if (postrun.isEmpty()){
+        query.bindValue(":postrun", QVariant(QVariant::String));
+    } else {
+        query.bindValue(":postrun", postrun);
+    }
+
     if (!query.exec()){
         qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
         return false;
@@ -555,10 +569,10 @@ bool Icon::renameIcon(const QString icon_name, const QString prefix_name, const 
     return true;
 }
 
-bool Icon::updateIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString icon_name, const QString override, const QString winedebug, const QString useconsole, const QString display, const QString wrkdir, const QString desktop, const int nice, const QString lang) const{
+bool Icon::updateIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString icon_name, const QString override, const QString winedebug, const QString useconsole, const QString display, const QString wrkdir, const QString desktop, const int nice, const QString lang, const QString prerun, const QString postrun) const{
     QSqlQuery query;
     if (!dir_name.isEmpty()){
-        query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice, lang=:lang WHERE name=:icon_name and dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)) and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
+        query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice, lang=:lang, prerun=:prerun, postrun=:postrun WHERE name=:icon_name and dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)) and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
         query.bindValue(":prefix_dir_name", prefix_name);
 
         if (dir_name.isEmpty()){
@@ -567,7 +581,7 @@ bool Icon::updateIcon(const QString cmdargs, const QString exec, const QString i
             query.bindValue(":dir_name", dir_name);
         }
     } else {
-        query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice, lang=:lang WHERE name=:icon_name and dir_id IS NULL and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
+        query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice, lang=:lang, prerun=:prerun, postrun=:postrun WHERE name=:icon_name and dir_id IS NULL and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
     }
     if (override.isEmpty()){
         query.bindValue(":override", QVariant(QVariant::String));
@@ -641,6 +655,18 @@ bool Icon::updateIcon(const QString cmdargs, const QString exec, const QString i
         query.bindValue(":lang", QVariant(QVariant::String));
     } else {
         query.bindValue(":lang", lang);
+    }
+
+    if (prerun.isEmpty()){
+        query.bindValue(":prerun", QVariant(QVariant::String));
+    } else {
+        query.bindValue(":prerun", prerun);
+    }
+
+    if (postrun.isEmpty()){
+        query.bindValue(":postrun", QVariant(QVariant::String));
+    } else {
+        query.bindValue(":postrun", postrun);
     }
 
     query.bindValue(":icon_name", icon_name);

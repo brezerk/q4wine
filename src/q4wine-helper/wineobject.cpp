@@ -39,6 +39,7 @@ WineObject::WineObject(QObject *parent) : QObject(parent)
     this->programNice = 0;
     this->prefixId = 0;
     this->useConsole=false;
+    this->logEnabled = CoreLib->getSetting("logging", "enable", false, 0).toBool();
 
     this->user = getenv("USER");
 
@@ -112,6 +113,18 @@ void WineObject::setUseConsole(int console){
     return;
 }
 
+void WineObject::setPreRun(QString path){
+    //FIXME add check
+    this->prerun_script = path;
+    return;
+}
+
+void WineObject::setPostRun(QString path){
+    //FIXME add check
+    this->postrun_script = path;
+    return;
+}
+
 QString WineObject::createEnvString(){
     QString env;
     if (this->prefixName.isEmpty())
@@ -145,7 +158,13 @@ QString WineObject::createEnvString(){
 }
 
 int WineObject::runSys(){
-    bool logEnabled = false;
+
+    if (!this->useConsole){
+        int ret = this->runScript(this->prerun_script);
+        if ( ret != 0){
+            return 255;
+        }
+    }
 
     QString env = this->createEnvString();
     QString stdout, app_stdout;
@@ -303,9 +322,6 @@ int WineObject::runSys(){
     qDebug()<<run_string;
 #endif
     stdout.append("Exec string:");
-    stdout.append("\n");
-    stdout.append(run_string.trimmed());
-    stdout.append("\n");
 
     fp = popen(codec->fromUnicode(run_string).data(), "r");
     if (fp == NULL){
@@ -315,7 +331,10 @@ int WineObject::runSys(){
             this->sendMessage(QString("console/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
         } else {
             this->sendMessage(QString("start/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
-        }
+        }    stdout.append("\n");
+        stdout.append(run_string.trimmed());
+        stdout.append("\n");
+
     }
     /* Handle error */;
 
@@ -325,10 +344,11 @@ int WineObject::runSys(){
 
     status = pclose(fp);
 
-    if (CoreLib->getSetting("logging", "enable", false, 0).toInt()==1)
-        logEnabled = true;
-
-
+    if (!this->useConsole){
+        int ret = this->runScript(this->postrun_script);
+        if (ret != 0)
+            return ret;
+    }
 
     stdout.append("Exit code:");
     stdout.append("\n");
@@ -346,7 +366,7 @@ int WineObject::runSys(){
         this->sendMessage(QString("finish/%1/%2/%3").arg(this->programBinaryName).arg(this->prefixName).arg(status));
     } else {
         if (status!=0){
-            if (logEnabled){
+            if (this->logEnabled){
                 uint date = QDateTime::currentDateTime ().toTime_t();
                 db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
             }
@@ -357,10 +377,55 @@ int WineObject::runSys(){
     if (status>0){
         QTextStream QErr(stderr);
         QErr<<stdout;
-
         status=-1;
     }
 
+    return status;
+}
+
+int WineObject::runScript(QString script_path){
+    int status;
+    FILE *fp;
+    char path[PATH_MAX];
+    QString stdout, app_stdout;
+
+    QString env = this->createEnvString();
+    QTextCodec *codec = QTextCodec::codecForName(CoreLib->getLocale().toAscii());
+
+    QString run_string = "";
+    if (!env.isEmpty()){
+        run_string.append(" env ");
+        run_string.append(env);
+    }
+
+    run_string.append(" /bin/sh -c \"");
+    run_string.append(script_path);
+    run_string.append("\" 2>&1");
+
+    fp = popen(codec->fromUnicode(run_string).data(), "r");
+    if (fp == NULL)
+        return 255;
+
+    while (fgets(path, PATH_MAX, fp) != NULL){
+        app_stdout.append(codec->toUnicode(path));
+    }
+
+    status = pclose(fp);
+    if (status != 0){
+        if (this->logEnabled){
+            stdout.append("Exit code:");
+            stdout.append("\n");
+            stdout.append(QString("%1").arg(status));
+            stdout.append("\n");
+            stdout.append("App STDOUT and STDERR output:");
+            stdout.append("\n");
+            stdout.append(app_stdout);
+
+            uint date = QDateTime::currentDateTime().toTime_t();
+            db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
+        }
+        this->sendMessage(QString("finish/%1/%2/%3").arg(this->programBinaryName).arg(this->prefixName).arg(status));
+    }
     return status;
 }
 
@@ -397,3 +462,4 @@ void WineObject::sendMessage(QString message){
 void WineObject::setOverrideDll(QString dll_list){
     this->overrideDllList = dll_list;
 }
+

@@ -149,7 +149,7 @@ public:
      * \param  name			A dir name value.
      * \return Return true on success.
      */
-    bool addIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0, const QString lang="") const;
+    bool addIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0, const QString lang="", const QString prerun="", const QString postrun="") const;
 
     /*! \brief This function updates icon record by name, prefix_name and dir_name.
      *
@@ -162,7 +162,7 @@ public:
      * \param  name			A dir name value.
      * \return Return true on success.
      */
-    bool updateIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString icon_name, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0, const QString lang="") const;
+    bool updateIcon(const QString cmdargs, const QString exec, const QString icon_path, const QString desc, const QString prefix_name, const QString dir_name, const QString name, const QString icon_name, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0, const QString lang="", const QString prerun="", const QString postrun="") const;
 
     /*! \brief This function updates name, prefix_name and dir_name by old_name.
      *

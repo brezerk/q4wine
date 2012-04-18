@@ -57,11 +57,15 @@ public:
     void setProgramOverride(QString override);
     void setProgramWrkdir(QString wrkdir);
     void setProgramLang(QString lang);
+    void setPreRun(QString path);
+    void setPostRun(QString path);
 
     void setUseConsole(int console);
     void setOverrideDll(QString dll_list);
 
     int runSys();
+
+    int runScript(QString script_path);
 
 private:
 
@@ -98,7 +102,10 @@ private:
 
     QString programLang;
 
-    bool useConsole;
+    QString prerun_script;
+    QString postrun_script;
+
+    bool useConsole, logEnabled;
 
     char *user;
 

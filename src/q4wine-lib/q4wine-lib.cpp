@@ -520,7 +520,7 @@ bool corelib::isConfigured(){
 
 bool corelib::checkDirs(){
     QStringList subDirs;
-    subDirs << "" << "db" << "icons" << "prefixes" << "tmp" << "theme" << "tmp/cache";
+    subDirs << "" << "db" << "icons" << "prefixes" << "tmp" << "theme" << "tmp/cache" << "scripts";
 
     QTextStream QErr(stderr);
     QDir dir;
@@ -938,6 +938,8 @@ QStringList corelib::getCdromDevices(void) const{
             execObj.nice = result.value("nice");
             execObj.name = icon_name;
             execObj.lang = result.value("lang");
+            execObj.prerun = result.value("prerun");
+            execObj.postrun = result.value("postrun");
 
             return runWineBinary(execObj, prefix_name);
         }
@@ -1049,6 +1051,16 @@ QStringList corelib::getCdromDevices(void) const{
             if (!execObj.lang.isEmpty()){
                 args.append("--program-lang");
                 args.append(execObj.lang);
+            }
+
+            if (!execObj.prerun.isEmpty()){
+                args.append("--prerun");
+                args.append(QString("\"%1\"").arg(execObj.prerun));
+            }
+
+            if (!execObj.postrun.isEmpty()){
+                args.append("--postrun");
+                args.append(QString("\"%1\"").arg(execObj.postrun));
             }
 
             QString wrkdir = execObj.wrkdir;

@@ -109,6 +109,8 @@ struct ExecObject{
     QString nice;
     QString name;
     QString lang;
+    QString prerun;
+    QString postrun;
 };
 
 class corelib {

@@ -102,6 +102,8 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
     connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
+    connect(cmdGetPreRun, SIGNAL(clicked()), this, SLOT(cmdGetPreRun_Click()));
+    connect(cmdGetPostRun, SIGNAL(clicked()), this, SLOT(cmdGetPostRun_Click()));
 
     connect(cbUseConsole, SIGNAL(stateChanged(int)), this, SLOT(cbUseConsole_stateChanged(int)));
 
@@ -120,7 +122,8 @@ void IconSettings::loadThemeIcons(){
     cmdGetProgram->setIcon(CoreLib->loadIcon("data/folder.png"));
     cmdGetWorkDir->setIcon(CoreLib->loadIcon("data/folder.png"));
     cmdGetIcon->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
-
+    cmdGetPreRun->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetPostRun->setIcon(CoreLib->loadIcon("data/folder.png"));
     return;
 }
 
@@ -197,6 +200,9 @@ void IconSettings::getIconReccord(){
             newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
             twDlls->setItem(0, 1, newItem.release());
     }
+
+    txtPreRun->setText(iconRec.value("prerun"));
+    txtPostRun->setText(iconRec.value("postrun"));
 
     return;
 }
@@ -595,10 +601,10 @@ void IconSettings::cmdOk_Click(){
 
     switch (this->icon_name.isEmpty()){
         case TRUE:
-            db_icon.addIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), desktopSize, spinNice->value(), txtEnvLang->text());
+        db_icon.addIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), desktopSize, spinNice->value(), txtEnvLang->text(), txtPreRun->text(), txtPostRun->text());
         break;
         case FALSE:
-            db_icon.updateIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), icon_name, override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), desktopSize, spinNice->value(), txtEnvLang->text());
+            db_icon.updateIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), icon_name, override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), desktopSize, spinNice->value(), txtEnvLang->text(), txtPreRun->text(), txtPostRun->text());
         break;
     }
 
@@ -606,7 +612,6 @@ void IconSettings::cmdOk_Click(){
 
     return;
 }
-
 
 void IconSettings::cmdHelp_Click(){
     QString rawurl;
@@ -620,6 +625,9 @@ void IconSettings::cmdHelp_Click(){
     case 2:
         rawurl = "08-icon-dialog.html#advanced";
     break;
+    case 3:
+        rawurl = "08-icon-dialog.html#scripts";
+    break;
     default:
         rawurl = "08-icon-dialog.html";
     break;
@@ -628,3 +636,50 @@ void IconSettings::cmdHelp_Click(){
     CoreLib->openHelpUrl(rawurl);
 }
 
+void IconSettings::cmdGetPreRun_Click(){
+    QString fileName;
+    QString searchPath = QDir::homePath();
+    searchPath.append("/.config/q4wine/scripts");
+    QFileDialog dialog(this);
+    dialog.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden );
+    dialog.setWindowTitle(tr("Open Exe file"));
+    dialog.setDirectory(searchPath);
+    dialog.setFileMode(QFileDialog::ExistingFile);
+    dialog.setNameFilter(tr("Shell script (*.sh)"));
+
+#if QT_VERSION >= 0x040500
+    if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
+        dialog.setOptions(QFileDialog::DontUseNativeDialog);
+    }
+#endif
+
+    if (dialog.exec())
+       fileName = dialog.selectedFiles().first();
+
+    txtPreRun->setText(fileName);
+    return;
+}
+
+void IconSettings::cmdGetPostRun_Click(){
+    QString fileName;
+    QString searchPath = QDir::homePath();
+    searchPath.append("/.config/q4wine/scripts");
+    QFileDialog dialog(this);
+    dialog.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden );
+    dialog.setWindowTitle(tr("Open Exe file"));
+    dialog.setDirectory(searchPath);
+    dialog.setFileMode(QFileDialog::ExistingFile);
+    dialog.setNameFilter(tr("Shell script (*.sh)"));
+
+#if QT_VERSION >= 0x040500
+    if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
+        dialog.setOptions(QFileDialog::DontUseNativeDialog);
+    }
+#endif
+
+    if (dialog.exec())
+       fileName = dialog.selectedFiles().first();
+
+    txtPostRun->setText(fileName);
+    return;
+}

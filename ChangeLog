@@ -4,6 +4,7 @@ Version 1.0
   - Merge Wintricks core;
   - New System Config interface;
   - Mac OS X support;
+  - Pre and Post run Icon scripts [3465598][3388054][2716333];
   - Icon and Prefix sorting (name, date);
   - Version string to About page;
   - Handler for wrong URL in wine app db;

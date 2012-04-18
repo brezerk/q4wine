@@ -139,6 +139,14 @@ int main(int argc, char *argv[])
             i++;
             if (i<argc)
                 wineObject.setProgramOverride(app.arguments().at(i));
+        } else if (app.arguments().at(i)=="--prerun") {
+            i++;
+            if (i<argc)
+                wineObject.setPreRun(app.arguments().at(i));
+        } else if (app.arguments().at(i)=="--postrun") {
+            i++;
+            if (i<argc)
+                wineObject.setPostRun(app.arguments().at(i));
         } else {
             Qcout<<QObject::tr("Usage:")<<endl;
             Qcout<<QObject::tr("  %1-helper [KEYs]...").arg(APP_SHORT_NAME)<<endl;
@@ -155,6 +163,8 @@ int main(int argc, char *argv[])
             Qcout<<qSetFieldWidth(25)<<left<<"  --wrkdir"<<QObject::tr("sets program working directory")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --program-lang"<<QObject::tr("sets program LANG variable")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --override"<<QObject::tr("sets WINEDLLOVERRIDES variable")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --prerun"<<QObject::tr("execute script before run program")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --postrun"<<QObject::tr("execute script after program run")<<qSetFieldWidth(0)<<endl;
             Qcout<<endl;
             Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
             Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_SHORT_NAME).arg(APP_WEBSITTE)<<endl;

@@ -101,7 +101,17 @@ class IconSettings : public QDialog, public Ui::IconSettings
          */
         void cmdHelp_Click();
 
+        /*! \brief This slot function gets program icon.
+         */
         void getProgramIcon(QString name);
+
+        /*! \brief This slot function gets path to Pre Run scrip or binary.
+         */
+        void cmdGetPreRun_Click();
+
+        /*! \brief This slot function gets path to Post Run scrip or binary.
+         */
+        void cmdGetPostRun_Click();
 
     private:
         QString prefix_name, dir_name, icon_name, prefix_path, iconPath;
