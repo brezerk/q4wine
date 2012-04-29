@@ -778,14 +778,17 @@ void FakeDriveSettings::waitForWineEnd(){
 
 void FakeDriveSettings::waitForWine(){
     QString prefixPath = db_prefix.getPath(this->prefixName);
+    QString sysRegPath = QString("%1/%2").arg(prefixPath).arg("system.reg");
+    QString usrRegPath = QString("%1/%2").arg(prefixPath).arg("user.reg");
     QFile file;
 
-    if (file.exists(QString("%1/%2").arg(prefixPath).arg("system.reg")) && file.exists(QString("%1/%2").arg(prefixPath).arg("user.reg"))){
+    if (file.exists(sysRegPath) && file.exists(usrRegPath)){
         QApplication::restoreOverrideCursor();
         this->setEnabled(true);
     } else {
         QTimer::singleShot(1000, this, SLOT(waitForWine()));
     }
+    return;
 }
 
 void FakeDriveSettings::cmdCancel_Click(){
