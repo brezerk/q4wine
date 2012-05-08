@@ -1080,7 +1080,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="617"/>
         <source>Disable graphical crash dialog</source>
-        <translation>Отключить графический диалог ошибок.</translation>
+        <translation>Отключить графический диалог ошибок</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="305"/>
@@ -1954,7 +1954,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="854"/>
         <source>Note: This option will disable Pre and Post run scripts.</source>
-        <translation type="unfinished"></translation>
+        <translation>Заметка: эта опция отключит скрипты, выполняемые до и после запуска программы.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="902"/>
@@ -1975,22 +1975,22 @@ See help for details.</source>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1012"/>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1018"/>
         <source>Scripts</source>
-        <translation type="unfinished"></translation>
+        <translation>Скрипты</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1027"/>
         <source>Note: pre and post run scripts will be not executed in case if program will be executed with &quot;Run With Output in Console&quot; option.</source>
-        <translation type="unfinished"></translation>
+        <translation>Заметка: пользовательские скрипты не будут запущены если программа запускается с опцией &quot;Запуск с выводом в консоль&quot;.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1055"/>
         <source>Pre run:</source>
-        <translation type="unfinished"></translation>
+        <translation>Перед запуском:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1099"/>
         <source>Post run:</source>
-        <translation type="unfinished"></translation>
+        <translation>После запуска:</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1147"/>
@@ -2069,7 +2069,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/iconsettings.cpp" line="648"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="672"/>
         <source>Shell script (*.sh)</source>
-        <translation type="unfinished"></translation>
+        <translation>Сценарий оболочки (*.sh)</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsettings.cpp" line="494"/>
@@ -2422,13 +2422,13 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="361"/>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="367"/>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Статус</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="139"/>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="367"/>
         <source>Logging enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Журналирование включено</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="140"/>
@@ -2436,13 +2436,13 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="368"/>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="369"/>
         <source>Disable logging</source>
-        <translation type="unfinished"></translation>
+        <translation>Отключить журналирование</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="144"/>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="361"/>
         <source>Logging disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Журналирование отключено</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="145"/>
@@ -2450,7 +2450,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="362"/>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="363"/>
         <source>Enable logging</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить журналирование</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="197"/>
@@ -2917,25 +2917,25 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="115"/>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="314"/>
         <source>Name</source>
-        <translation type="unfinished">Название</translation>
+        <translation>Название</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="115"/>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="314"/>
         <source>Description</source>
-        <translation type="unfinished">Описание</translation>
+        <translation>Описание</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="166"/>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="167"/>
         <source>Manage prefixes</source>
-        <translation type="unfinished">Управление префиксами</translation>
+        <translation>Управление префиксами</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="170"/>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="171"/>
         <source>Clear search field</source>
-        <translation type="unfinished">Очистить поле поиска</translation>
+        <translation>Очистить поле поиска</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="178"/>
@@ -2943,7 +2943,7 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="413"/>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="414"/>
         <source>Alphabetic sort descending</source>
-        <translation type="unfinished">Алфавитная сортировка по убыванию</translation>
+        <translation>Алфавитная сортировка по убыванию</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="182"/>
@@ -2951,81 +2951,81 @@ See help for details.</source>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="408"/>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="409"/>
         <source>Alphabetic sort ascending</source>
-        <translation type="unfinished">Алфавитная сортировка по возрастанию</translation>
+        <translation>Алфавитная сортировка по возрастанию</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="274"/>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="331"/>
         <source>Create Fake Drive</source>
-        <translation type="unfinished">Создать виртуальный диск</translation>
+        <translation>Создать виртуальный диск</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="275"/>
         <source>Create new Fake Drive configuration. Old Fake Drive will be removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать новый виртуальный диск. Старый виртуальный диск будет удален.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="277"/>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="353"/>
         <source>Update Fake Drive</source>
-        <translation type="unfinished">Обновить виртуальный диск</translation>
+        <translation>Обновить виртуальный диск</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="278"/>
         <source>Update Fake Drive configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновить настройки виртуального диска.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="282"/>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="370"/>
         <source>Install or update Winetricks script</source>
-        <translation type="unfinished"></translation>
+        <translation>Установить или обновить скрипт Winetricks</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="283"/>
         <source>Install new or update installed Winetricks script.</source>
-        <translation type="unfinished"></translation>
+        <translation>Установить новый или обновить установленный скрипт Winetricks.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="285"/>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="367"/>
         <source>Refresh Winetricks application list</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновить список программ Winetricks</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="286"/>
         <source>Create or update q4wine&apos;s cache of Winetricks appications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать или обновить в q4wine кэш программ из Winetricks.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="333"/>
         <source>Warning</source>
-        <translation type="unfinished">Предупреждение</translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="333"/>
         <source>A fake drive already exists within &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Do you wish to remove &lt;b&gt;all&lt;/b&gt; files from this prefix?</source>
-        <translation type="unfinished">Указанный каталог &lt;b&gt;%1&lt;/b&gt; уже содержит фикстивный диск.&lt;br&gt;&lt;br&gt;Вы действительно хотите удалить &lt;b&gt;все&lt;/b&gt; файлы из этого префикса?</translation>
+        <translation>Указанный каталог &lt;b&gt;%1&lt;/b&gt; уже содержит виртуальный диск.&lt;br&gt;&lt;br&gt;Хотите удалить &lt;b&gt;все&lt;/b&gt; файлы из этого префикса?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="338"/>
         <source>Removing old fake drive.&lt;br&gt;This may take awhile...</source>
-        <translation type="unfinished">Удаление старого виртуального диска.&lt;br&gt;Это может занять какое-то время...</translation>
+        <translation>Удаление старого виртуального диска.&lt;br&gt;Это займет какое-то время...</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="338"/>
         <source>Removing old fake drive</source>
-        <translation type="unfinished">Удаление старого виртуального диска</translation>
+        <translation>Удаление старого виртуального диска</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="355"/>
         <source>Error</source>
-        <translation type="unfinished">Ошибка</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="355"/>
         <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before update it!</source>
-        <translation type="unfinished">Извините,не могу найти виртуальный диск.&lt;br&gt; Пожалуйста, создайте виртуальный диск перед обновлением этого!</translation>
+        <translation>Не найден виртуальный диск.&lt;br&gt; Создайте виртуальный диск перед его обновлением!</translation>
     </message>
 </context>
 <context>
@@ -3759,13 +3759,13 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
         <source>Waiting for Wine process to finish...</source>
-        <translation>Ожидание завершения процесса wine.</translation>
+        <translation>Ожидание завершения процесса wine...</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
         <location filename="../q4wine-gui/progress.cpp" line="112"/>
         <source>There are %1 processes running for prefix %2.</source>
-        <translation>Для префикса %2 запущено процессов: %1</translation>
+        <translation>Для префикса %2 запущено процессов: %1.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="59"/>
@@ -4205,12 +4205,12 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="166"/>
         <source>execute script before run program</source>
-        <translation type="unfinished"></translation>
+        <translation>выполнить скрипт перед запуском программы</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="167"/>
         <source>execute script after program run</source>
-        <translation type="unfinished"></translation>
+        <translation>выполнить скрипт после запуска программы</translation>
     </message>
 </context>
 <context>
