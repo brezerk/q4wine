@@ -378,7 +378,6 @@ void LoggingWidget::logEnable_Click(){
 }
 
 void LoggingWidget::getLogRecords(void){
-
     this->treeWidget->clear();
     this->listWidget->clear();
 

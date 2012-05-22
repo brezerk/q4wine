@@ -69,6 +69,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     cmdGetWineServerBin->installEventFilter(this);
     cmdGetWineLoaderBin->installEventFilter(this);
     cmdGetWineLibs->installEventFilter(this);
+    cmdGetWineLibs64->installEventFilter(this);
     cmdGetTarBin->installEventFilter(this);
     cmdGetMountBin->installEventFilter(this);
     cmdGetUmountBin->installEventFilter(this);
@@ -85,7 +86,8 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     txtWineBin->setText(settings.value("WineBin").toString());
     txtWineServerBin->setText(settings.value("ServerBin").toString());
     txtWineLoaderBin->setText(settings.value("LoaderBin").toString());
-    txtWineLibs->setText(settings.value("WineLibs").toString());
+    txtWineLibs->setText(settings.value("WineLibs32").toString());
+    txtWineLibs64->setText(settings.value("WineLibs64").toString());
     settings.endGroup();
 
     settings.beginGroup("logging");
@@ -515,6 +517,7 @@ void AppSettings::loadThemeIcons(){
     cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
     cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
     cmdGetWineLibs->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetWineLibs64->setIcon(CoreLib->loadIcon("data/folder.png"));
 
     cmdGetTarBin->setIcon(CoreLib->loadIcon("data/folder.png"));
     cmdGetMountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
@@ -602,7 +605,8 @@ void AppSettings::cmdOk_Click(){
     settings.setValue("WineBin", txtWineBin->text());
     settings.setValue("ServerBin", txtWineServerBin->text());
     settings.setValue("LoaderBin", txtWineLoaderBin->text());
-    settings.setValue("WineLibs", txtWineLibs->text());
+    settings.setValue("WineLibs32", txtWineLibs->text());
+    settings.setValue("WineLibs64", txtWineLibs64->text());
     settings.endGroup();
 
     settings.beginGroup("logging");

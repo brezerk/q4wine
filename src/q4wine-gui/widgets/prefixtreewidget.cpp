@@ -754,11 +754,6 @@ void PrefixTreeWidget::consoleToMountDir_Click(void){
 void PrefixTreeWidget::setDefaultFocus(QString prefixName, QString dirName){
     if (prefixName.isEmpty())
         prefixName="Default";
-
-    if (prefixName==this->prefixName)
-        return;
-
-    if (prefixName.isEmpty()){
         if (this->topLevelItemCount()>0){
             this->setCurrentItem(this->topLevelItem(0));
             this->itemClicked(this->topLevelItem(0), 0);
@@ -770,8 +765,9 @@ void PrefixTreeWidget::setDefaultFocus(QString prefixName, QString dirName){
             std::auto_ptr<QTreeWidgetItem> item(this->topLevelItem(i));
             if (item->text(0)==prefixName){
                 if (dirName.isEmpty()){
+                    this->setFocus();
                     this->setCurrentItem(item.get());
-                    this->topLevelItem(i)->setExpanded(TRUE);
+                    this->topLevelItem(i)->setExpanded(true);
                     this->itemClicked(item.get(), 0);
                     item.release();
                     break;

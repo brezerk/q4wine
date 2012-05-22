@@ -160,6 +160,7 @@ public:
      * \return Return the full path of binary.
      */
     QString getWhichOut (const QString fileName, bool showErr = TRUE);
+    QStringList getWineLibsPath(void);
 
     /*! \brief This function get cdrom devices from /etc/fstab file.
      *

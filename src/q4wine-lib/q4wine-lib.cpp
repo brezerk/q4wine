@@ -86,7 +86,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
         path.append("/exe");
         QFileInfo exelink(path);
         // Try to read stat file
-        if (exelink.isSymLink() && (exelink.symLinkTarget().contains("wineserver") || exelink.symLinkTarget().contains("wine-preloader"))){
+        if (exelink.isSymLink() && (exelink.symLinkTarget().contains("wineserver") || exelink.symLinkTarget().contains("wine-preloader") || exelink.symLinkTarget().contains("wine64-preloader"))){
             if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
                 QTextStream in(&file);
                 QString line = in.readLine();
@@ -309,6 +309,23 @@ void corelib::checkSettings(){
     /*
      * Getting application settings
      */
+    QString lib32 = this->getSetting("wine", "WineLibs32", false, "").toString();
+    QString lib64 = this->getSetting("wine", "WineLibs64", false, "").toString();
+    if (lib32.isEmpty() and lib64.isEmpty()){
+        QStringList libs_path = this->getWineLibsPath();
+        QSettings settings(APP_SHORT_NAME, "default");
+        settings.beginGroup("wine");
+        settings.setValue("WineLibs32", libs_path.at(0));
+        settings.setValue("WineLibs64", libs_path.at(1));
+        settings.endGroup();
+    }
+
+    lib32 = this->getSetting("wine", "WineLibs32", false, "").toString();
+    lib64 = this->getSetting("wine", "WineLibs64", false, "").toString();
+    if (lib32.isEmpty() and lib64.isEmpty()){
+        this->showError(QObject::tr("<p>Error while loading application settings. wine's library path for 32 and 64 bit is not set.</p><p>Please, go to %1 options dialog and set at least one path.</p>").arg(APP_SHORT_NAME));
+
+    }
 
     this->getSetting("system", "tar");
     this->getSetting("system", "mount");
@@ -641,6 +658,75 @@ QString corelib::getWhichOut(const QString fileName, bool showErr){
     }
 
     return "";
+}
+
+QStringList corelib::getWineLibsPath(void) {
+    QProcess proc;
+    QStringList args;
+    QStringList libs_path;
+    libs_path << "" << ""; // 32, 64
+
+#ifdef _OS_LINUX_
+    QString sh = this->getWhichOut("sh");
+    if (sh.isEmpty())
+        return libs_path;
+
+    QString ldconfig = this->getWhichOut("ldconfig", false);
+    if (ldconfig.isEmpty())
+        ldconfig = "/sbin/ldconfig";
+
+    ldconfig.append(" -p | grep libwine.so");
+
+    args<<"-c"<<ldconfig;
+
+    proc.setWorkingDirectory (QDir::homePath());
+    proc.start(sh, args, QIODevice::ReadOnly);
+    proc.waitForFinished();
+
+    if (proc.exitCode() != 0){
+        qDebug()<<"[EE] Can't get ldconfig data";
+        return libs_path;
+    }
+
+    QString string = proc.readAllStandardOutput();
+    if (!string.isEmpty()){
+        QStringList libs_list = string.split("\n");
+        QRegExp rx_info(".*\\((.*)\\) => (.*\\.so$)");
+
+        foreach (QString lib_info, libs_list){
+            int pos = rx_info.indexIn(lib_info);
+            QString arch, path;
+            if (pos > -1) {
+                arch = rx_info.cap(1).split(",").last();
+                path = rx_info.cap(2);
+            } else {
+                continue;
+            }
+            if (path.isEmpty()){
+                qDebug()<<"[EE] No winelib.so found in: " << lib_info;
+                continue;
+            }
+            QFileInfo file(path);
+            if (!file.exists()){
+                qDebug()<<"[EE] File not exists: " << path;
+                continue;
+            }
+            path = file.absolutePath().append("/wine/");
+            file.setFile(path);
+            if (!file.isDir()){
+                qDebug()<<"[EE] Directory not exists:"<<path;
+                continue;
+            } else {
+                if (arch == "x86-64"){
+                    libs_path.replace(1, path);
+                } else {
+                    libs_path.replace(0, path);
+                }
+            }
+        }
+    }
+#endif
+    return libs_path;
 }
 
 QStringList corelib::getCdromDevices(void) const{

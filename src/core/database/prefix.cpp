@@ -149,7 +149,17 @@ QHash<QString,QString> Prefix::getByName(const QString prefix_name) const{
             if (!query.value(1).toString().isEmpty()){
                 values.insert("libs", query.value(1).toString());
             } else {
-                values.insert("libs", settings.value("WineLibs", "").toString());
+                if (query.value(8).toString() == "win32") {
+                    values.insert("libs", settings.value("WineLibs32", "").toString());
+                } else if (query.value(8).toString() == "win64") {
+                    values.insert("libs", settings.value("WineLibs64", "").toString());
+                } else {
+                    if (settings.value("WineLibs64", "").toString().isEmpty()){
+                        values.insert("libs", settings.value("WineLibs32", "").toString());
+                    } else {
+                        values.insert("libs", settings.value("WineLibs64", "").toString());
+                    }
+                }
             }
             if (!query.value(2).toString().isEmpty()){
                 values.insert("loader", query.value(2).toString());

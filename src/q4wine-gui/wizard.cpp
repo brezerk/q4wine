@@ -30,6 +30,7 @@ void Wizard::loadThemeIcons(int Scene){
         cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
         cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
         cmdGetWineDllPath->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetWineDllPath64->setIcon(CoreLib->loadIcon("data/folder.png"));
         cmdGetTarBin->setIcon(CoreLib->loadIcon("data/folder.png"));
         cmdGetMountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
         cmdGetUmountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
@@ -94,6 +95,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
         cmdGetWineServerBin->installEventFilter(this);
         cmdGetWineLoaderBin->installEventFilter(this);
         cmdGetWineDllPath->installEventFilter(this);
+        cmdGetWineDllPath64->installEventFilter(this);
 
         cmdGetTarBin->installEventFilter(this);
         cmdGetMountBin->installEventFilter(this);
@@ -110,22 +112,29 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : Q
         txtWineServerBin->setText(CoreLib->getWhichOut("wineserver"));
         txtWineLoaderBin->setText(CoreLib->getWhichOut("wine"));
 
-        QStringList libs_loc, libs_arch;
-        libs_loc << "/usr/lib" << "/usr/local/lib" << "/local/usr/lib";
-        libs_arch << "64" << "32" << "";
 
-        foreach (QString loc, libs_loc){
-            foreach (QString arch, libs_arch){
-                QString libs_path = loc;
-                libs_path.append(arch);
-                QString libwine_path = libs_path;
-                libwine_path.append("/libwine.so");
-                if (QFile(libwine_path).exists()){
-                    txtWineDllPath->setText(libs_path);
-                    break;
+        QStringList libs_path = CoreLib->getWineLibsPath();
+        /*
+        if (libs_path.isEmpty()){
+            QStringList libs_loc, libs_arch;
+            libs_loc << "/usr/lib" << "/usr/local/lib" << "/local/usr/lib";
+            libs_arch << "64" << "32" << "";
+
+            foreach (QString loc, libs_loc){
+                foreach (QString arch, libs_arch){
+                    libs_path = loc;
+                    libs_path.append(arch);
+                    QString libwine_path = libs_path;
+                    libwine_path.append("/libwine.so");
+                    if (QFile(libwine_path).exists()){
+                        break;
+                        libs_path.append("/wine`");
+                    }
                 }
             }
-        }
+        }*/
+        txtWineDllPath->setText(libs_path.at(0));
+        txtWineDllPath64->setText(libs_path.at(1));
 
         txtTarBin->setText(CoreLib->getWhichOut("tar"));
         txtMountBin->setText(CoreLib->getWhichOut("mount"));
@@ -405,7 +414,8 @@ void Wizard::nextWizardPage(){
             settings.setValue("WineBin", txtWineBin->text());
             settings.setValue("ServerBin", txtWineServerBin->text());
             settings.setValue("LoaderBin", txtWineLoaderBin->text());
-            settings.setValue("WineLibs", txtWineDllPath->text());
+            settings.setValue("WineLibs32", txtWineDllPath->text());
+            settings.setValue("WineLibs64", txtWineDllPath64->text());
             settings.endGroup();
             settings.beginGroup("system");
             settings.setValue("tar", txtTarBin->text());

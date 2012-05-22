@@ -39,7 +39,7 @@ WineObject::WineObject(QObject *parent) : QObject(parent)
     this->programNice = 0;
     this->prefixId = 0;
     this->useConsole=false;
-    this->logEnabled = CoreLib->getSetting("logging", "enable", false, 0).toBool();
+    this->logEnabled = CoreLib->getSetting("logging", "enable", false, 1).toBool();
 
     this->user = getenv("USER");
 
