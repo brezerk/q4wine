@@ -752,7 +752,7 @@ void PrefixTreeWidget::consoleToMountDir_Click(void){
 }
 
 void PrefixTreeWidget::setDefaultFocus(QString prefixName, QString dirName){
-    if (prefixName.isEmpty())
+    if (prefixName.isEmpty()){
         prefixName="Default";
         if (this->topLevelItemCount()>0){
             this->setCurrentItem(this->topLevelItem(0));
