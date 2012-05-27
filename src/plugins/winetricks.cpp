@@ -161,36 +161,38 @@ bool winetricks::parse() {
     QProgressDialog *pd = new QProgressDialog("Refresh Winetricks application list.", QString(), 0, 100);
     pd->setModal(true);
     pd->setValue(5);
-    QCoreApplication::processEvents();
+    QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
 
     #ifdef DEBUG
         qDebug()<<"[plugin] parsing winetricks output";
     #endif
+
+
 
     QString pargs;
     if (!QFile(this->winetricks_bin).exists()){
             //QMessageBox::warning(Non, QString("Error"), QString("<p>q4wine can't locate winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
         return false;
     }
-    QCoreApplication::processEvents();
+    QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
 
     db_sysconfig.drop_items(D_PROVIDER_WINETRICKS);
 
     pargs.append(winetricks_bin);
     pargs.append(" list");
 
-    QCoreApplication::processEvents();
+    QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
 
     QStringList subtypes = this->get_stdout_lines(pargs);
 
     pd->setValue(10);
-    QCoreApplication::processEvents();
+    QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
 
     int step = 90 / subtypes.length() + 1;
 
     foreach (QString subtype, subtypes){
         pd->setValue(pd->value() + step);
-        QCoreApplication::processEvents();
+        QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
         if (!subtype.isEmpty()){
             subtype = subtype.trimmed();
             pargs.clear();
