@@ -666,7 +666,7 @@ QStringList corelib::getWineLibsPath(void) {
     QStringList libs_path;
     libs_path << "" << ""; // 32, 64
 
-#ifdef _OS_LINUX_
+#ifndef _OS_MACOSX_
     QString sh = this->getWhichOut("sh");
     if (sh.isEmpty())
         return libs_path;
@@ -675,7 +675,12 @@ QStringList corelib::getWineLibsPath(void) {
     if (ldconfig.isEmpty())
         ldconfig = "/sbin/ldconfig";
 
-    ldconfig.append(" -p | grep libwine.so");
+#ifdef _OS_LINUX_
+    ldconfig.append(" -p ");
+#else
+    ldconfig.append(" -r ");
+#endif
+    ldconfig.append(" | grep libwine.so");
 
     args<<"-c"<<ldconfig;
 
@@ -689,10 +694,16 @@ QStringList corelib::getWineLibsPath(void) {
     }
 
     QString string = proc.readAllStandardOutput();
+#ifdef DEBUG
+    qDebug()<<"[ii]"<<string;
+#endif
     if (!string.isEmpty()){
         QStringList libs_list = string.split("\n");
+#ifdef _OS_LINUX_
         QRegExp rx_info(".*\\((.*)\\) => (.*\\.so$)");
-
+#else
+        QRegExp rx_info("(.*) => (.*\\.so.*)");
+#endif
         foreach (QString lib_info, libs_list){
             int pos = rx_info.indexIn(lib_info);
             QString arch, path;
