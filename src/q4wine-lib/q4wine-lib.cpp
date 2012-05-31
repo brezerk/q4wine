@@ -736,6 +736,24 @@ QStringList corelib::getWineLibsPath(void) {
             }
         }
     }
+#else
+    //FIXME: Design search for brew packages: /usr/local/Cellar/wine/1.2.3/lib
+    QStringList libs_loc, libs_arch;
+    libs_loc << "/usr/lib" << "/usr/local/lib" << "/local/usr/lib" << "/opt/local/lib";
+    libs_arch << "64" << "32" << "";
+    foreach (QString loc, libs_loc){
+        foreach (QString arch, libs_arch){
+            loc.append(arch);
+            QString libwine_path = loc;
+            libwine_path.append("/libwine.dylib");
+            if (QFile(libwine_path).exists()){
+                loc.append("/wine");
+                libs_path.replace(0, loc);
+                libs_path.replace(1, loc);
+                break;
+            }
+        }
+    }
 #endif
     return libs_path;
 }
