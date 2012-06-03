@@ -856,14 +856,15 @@ void IconListWidget::iconCopy_Click(void){
 }
 
 void IconListWidget::iconPaste_Click(void){
-    bool fexists=false, ok=false;
+    //bool fexists=false
+    bool ok=false;
     QString newName="";
 
     if (iconBuffer.names.count()>0){
         for (int i=0; i<iconBuffer.names.count(); i++){
             // Checking for not unic names
             newName = iconBuffer.names.at(i);
-            fexists=false;
+            //fexists=false;
             ok=false;
 
             while (db_icon.isExistsByName(this->prefixName, this->dirName, newName)){
