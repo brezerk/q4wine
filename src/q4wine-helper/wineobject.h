@@ -38,8 +38,6 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
-#define WTF_MAX 8192
-
 // Fix for GNU/Hurd, see: 
 // https://www.gnu.org/software/hurd/community/gsoc/project_ideas/maxpath.html
 // http://insanecoding.blogspot.com/2007/11/pathmax-simply-isnt.html
