@@ -47,18 +47,11 @@ ADD_EXECUTABLE( q4wine-helper ${Q4WINE_HELPER_SOURCES}
 
 add_dependencies( q4wine-helper translations_build )
 
-IF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
-    TARGET_LINK_LIBRARIES( q4wine-helper ${QT_LIBRARIES} q4wine-core)
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES Linux)
-
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     SET(BSD_LIBS -lkvm)
-    TARGET_LINK_LIBRARIES( q4wine-helper ${QT_LIBRARIES} ${BSD_LIBS} q4wine-core)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
-IF (${CMAKE_SYSTEM_NAME} MATCHES Darwin)
-    TARGET_LINK_LIBRARIES( q4wine-helper ${QT_LIBRARIES} q4wine-core)
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES Darwin)
+TARGET_LINK_LIBRARIES( q4wine-helper ${QT_LIBRARIES} q4wine-core ${BSD_LIBS})
 
 IF( RELEASE )
     install(TARGETS q4wine-helper DESTINATION ${APPS_ENTRY_PATH})
