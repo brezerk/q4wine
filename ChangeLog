@@ -30,6 +30,8 @@ Version 0.999-rc7
   executed not in console session;
   - Icon export dialog empty icons [3358599];
   - Dropped obsolete strings from translation files [3358602];
+  - Fixed build in Debian GNU/Hurd (should also works in Arch Hurd);
+  - Possibly fixed build in OpenBSD and NetBSD;
 
 Version 0.121
  Added:
