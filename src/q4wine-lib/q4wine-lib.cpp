@@ -1568,7 +1568,7 @@ QStringList corelib::getCdromDevices(void) const{
 
         void corelib::openHelpUrl(const QString rawurl){
             QString url="http://";
-            url.append(APP_WEBSITTE);
+            url.append(APP_WEBSITE);
             url.append("/documentation/");
             url.append(this->getLang());
             url.append("/");
@@ -1580,7 +1580,7 @@ QStringList corelib::getCdromDevices(void) const{
 
         void corelib::openHomeUrl(const QString rawurl){
             QString url="http://";
-            url.append(APP_WEBSITTE);
+            url.append(APP_WEBSITE);
             url.append("/");
             url.append(rawurl);
 
