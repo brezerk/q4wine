@@ -299,7 +299,7 @@ QVariant corelib::getSetting(const QString group, const QString key, const bool 
     settings.endGroup();
     if (checkExist==true)
         if (!QFileInfo(retVal.toString()).exists()){
-        this->showError(QObject::tr("<p>Error while loading application settings by key: '%1'. File or path not exists: \"%2\"</p><p>Please, go to %3 options dialog and set it.</p>").arg(key).arg(retVal.toString()).arg(APP_SHORT_NAME));
+        this->showError(QObject::tr("<p>Error while loading application settings by key: '%1'. File or path does not exist: \"%2\"</p><p>Please, go to the %3 options dialog and set it.</p>").arg(key).arg(retVal.toString()).arg(APP_SHORT_NAME));
         retVal = QVariant();
     }
     return retVal;
@@ -719,13 +719,13 @@ QStringList corelib::getWineLibsPath(void) {
             }
             QFileInfo file(path);
             if (!file.exists()){
-                qDebug()<<"[EE] File not exists: " << path;
+                qDebug()<<"[EE] File does not exist: " << path;
                 continue;
             }
             path = file.absolutePath().append("/wine/");
             file.setFile(path);
             if (!file.isDir()){
-                qDebug()<<"[EE] Directory not exists:"<<path;
+                qDebug()<<"[EE] Directory does not exist:"<<path;
                 continue;
             } else {
                 if (arch == "x86-64"){
@@ -1075,7 +1075,7 @@ QStringList corelib::getCdromDevices(void) const{
             if (path.mid(0,1)=="/"){
                 if (!QFile(path).exists()){
                     if (this->_GUI_MODE){
-                        QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" do not exists.").arg(path));
+                        QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" does not exist.").arg(path));
                     } else {
                         qDebug()<<"[EE] Binary \""<<path<<"\" do not exists. Abort.";
                     }
@@ -1087,15 +1087,15 @@ QStringList corelib::getCdromDevices(void) const{
                     if (this->_GUI_MODE){
                         QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Cannot get unix path for \"%1\".").arg(path));
                     } else {
-                        qDebug()<<"[EE] Binary \""<<path<<"\" do not exists. Abort.";
+                        qDebug()<<"[EE] Binary \""<<path<<"\" does not exist. Abort.";
                     }
                     return false;
                 } else {
                     if (!QFile(u_path).exists()){
                         if (this->_GUI_MODE){
-                            QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" do not exists.").arg(u_path));
+                            QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" does not exist.").arg(u_path));
                         } else {
-                            qDebug()<<"[EE] Binary \""<<u_path<<"\" do not exists. Abort.";
+                            qDebug()<<"[EE] Binary \""<<u_path<<"\" does not exist. Abort.";
                         }
                         return false;
                     }

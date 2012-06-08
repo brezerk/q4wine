@@ -109,7 +109,7 @@ bool Registry::exec(QObject *parent, QString prefix_path, QString prefix_name){
         QDir dir(prefix_path);
 
         if (!dir.exists()){
-            qDebug()<<"[ee] Fake drive dir do not exists!";
+            qDebug()<<"[ee] Fake drive dir does not exist!";
             return false;
         } else {
             dir.setPath(QString("%1/drive_c/temp").arg(dir.path()));

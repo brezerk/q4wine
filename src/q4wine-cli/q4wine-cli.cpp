@@ -102,7 +102,7 @@ int main(int argc, char *argv[])
             if (i<argc)
                 _PREFIX=app.arguments().at(i);
             if (!db_prefix.isExistsByName(_PREFIX)){
-                Qcout<<QObject::tr("Prefix named \"%1\" not exists. Run \"%2-cli -pl\" for prefix list.").arg(_PREFIX).arg(APP_SHORT_NAME)<<endl;
+                Qcout<<QObject::tr("Prefix named \"%1\" does not exist. Run \"%2-cli -pl\" for prefix list.").arg(_PREFIX).arg(APP_SHORT_NAME)<<endl;
                 return -1;
             }
         }
@@ -214,7 +214,7 @@ int main(int argc, char *argv[])
         }
 
         if (!db_icon.isExistsByName(_PREFIX, _DIR, _ICON)){
-            Qcout<<QObject::tr("Icon named \"%1\" not exists.  Run \"%2-cli -il\" for icon list.").arg(_ICON).arg(APP_SHORT_NAME)<<endl;
+            Qcout<<QObject::tr("Icon named \"%1\" does not exist.  Run \"%2-cli -il\" for icon list.").arg(_ICON).arg(APP_SHORT_NAME)<<endl;
             return -1;
         }
 
@@ -265,7 +265,7 @@ int main(int argc, char *argv[])
         }
 
         if (! db_dir.isExistsByName(_PREFIX, _DIR)){
-            Qcout<<QObject::tr("Dir named \"%1\" not exists. Run \"%2-cli -dl\" for dir list.").arg(_DIR).arg(APP_SHORT_NAME)<<endl;
+            Qcout<<QObject::tr("Dir named \"%1\" does not exist. Run \"%2-cli -dl\" for dir list.").arg(_DIR).arg(APP_SHORT_NAME)<<endl;
             return -1;
         } else {
             QStringList list = db_icon.getIconsList(_PREFIX, _DIR, "");
@@ -318,7 +318,7 @@ int main(int argc, char *argv[])
             if (!_IMAGE.isEmpty()){
                 if (!QFile(_IMAGE).exists()){
                     if (!db_image.isExistsByName(_IMAGE)){
-                        Qcout<<QObject::tr("No disc image \"%1\" exists. Run \"%2-cli -cl\" for disc image list.").arg(_IMAGE).arg(APP_SHORT_NAME)<<endl;
+                        Qcout<<QObject::tr("Disc image named \"%1\" does not exist. Run \"%2-cli -cl\" for disc image list.").arg(_IMAGE).arg(APP_SHORT_NAME)<<endl;
                         return -1;
                     }
                 }
@@ -393,7 +393,7 @@ int main(int argc, char *argv[])
         qDebug()<<_IMAGE;
 
         if (!QFile(_IMAGE).exists()){
-            Qcout<<QObject::tr("File \"%1\" not exists.").arg(_IMAGE)<<endl;
+            Qcout<<QObject::tr("File \"%1\" does not exist.").arg(_IMAGE)<<endl;
             return -1;
         }
 

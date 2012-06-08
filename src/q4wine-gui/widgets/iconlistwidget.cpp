@@ -87,7 +87,7 @@ void IconListWidget::showContents(QString filterString){
         iconItem->setToolTip(iconsList.at(i));
 
 
-        //Seting icon. If no icon or icon file not exists -- setting default
+        //Seting icon. If no icon or icon file does not exist -- setting default
         QString icon_path = db_icon.getPixmapIcon(this->prefixName, this->dirName, iconsList.at(i));
         if (icon_path.isEmpty()){
             iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));

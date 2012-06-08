@@ -220,7 +220,7 @@ void PrefixControlWidget::prefixDelete_Click(){
         return;
 
     if (prefixName=="Default"){
-            QMessageBox::warning(this, tr("Error"), tr("Sorry, you can't delete Default prefix."), QMessageBox::Ok);
+            QMessageBox::warning(this, tr("Error"), tr("Sorry, you cannot delete the Default prefix."), QMessageBox::Ok);
             return;
     }
 
