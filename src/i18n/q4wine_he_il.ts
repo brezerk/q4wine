@@ -16,16 +16,16 @@
     </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="214"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;q4wine 0.121&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'Verdana'; font-size:13pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;&lt;span style=" font-size:14pt; font-weight:600;"&gt;q4wine 0.121&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; direction:rtl;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;q4wine 0.121&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'Verdana'; font-size:13pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; direction:rtl;"&gt;&lt;span style=" font-size:14pt; font-weight:600;"&gt;q4wine 0.121&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="241"/>
@@ -51,16 +51,16 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/uis/About.ui" line="377"/>
         <location filename="../q4wine-gui/uis/About.ui" line="416"/>
         <location filename="../q4wine-gui/uis/About.ui" line="455"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'Verdana'; font-size:13pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;"&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; direction:rtl;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'Verdana'; font-size:13pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; direction:rtl;"&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="317"/>
@@ -132,7 +132,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="268"/>
-        <source>Error: can&apos;t read data from %1.</source>
+        <source>Error: can't read data from %1.</source>
         <translation>שגיאה: לא ניתן לקרוא את הנתונים מ־%1.</translation>
     </message>
     <message>
@@ -224,7 +224,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="361"/>
-        <source>Status: Reading server&apos;s response.</source>
+        <source>Status: Reading server's response.</source>
         <translation>מצב: התגובה מהשרת נקראת.</translation>
     </message>
     <message>
@@ -742,8 +742,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2133"/>
-        <source>Default virtual desktop size will be used for &quot;Icon creation&quot; and &quot;Run&quot; dialogs.</source>
-        <translation>גודל שולחן העבודה הווירטואלי בו ייעשה שימוש עבור תיבות הדו־שיח &quot;יצירת סמל&quot; ו&quot;הפעלה&quot;.</translation>
+        <source>Default virtual desktop size will be used for "Icon creation" and "Run" dialogs.</source>
+        <translation>גודל שולחן העבודה הווירטואלי בו ייעשה שימוש עבור תיבות הדו־שיח "יצירת סמל" ו"הפעלה".</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="2161"/>
@@ -1172,8 +1172,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="60"/>
-        <source>Fake drive settings for prefix &quot;%1&quot;</source>
-        <translation>הגדרות כונן מזויפות עבור הקידומת &quot;%1&quot;</translation>
+        <source>Fake drive settings for prefix "%1"</source>
+        <translation>הגדרות כונן מזויפות עבור הקידומת "%1"</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="182"/>
@@ -1205,10 +1205,10 @@ p, li { white-space: pre-wrap; }
 %1
 
 Joystick axes mappings might be defined as:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 For example:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 See help for details.</source>
         <translation>שגיאה במחרוזת:
@@ -1216,22 +1216,22 @@ See help for details.</source>
 %1
 
 ניתן להגדיר את מיפוי צירי הג׳ויסטיק באופן הבא:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 לדוגמה:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 יש לעיין בעזרה לפרטים נוספים.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="250"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="981"/>
-        <source>Can&apos;t read desktop paths!</source>
+        <source>Can't read desktop paths!</source>
         <translation>לא ניתן לקרוא את נתיבי שולחן העבודה!</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="276"/>
-        <source>Can&apos;t remove symlink: %1</source>
+        <source>Can't remove symlink: %1</source>
         <translation>לא ניתן להסיר את הקישור הסימבולי: %1</translation>
     </message>
     <message>
@@ -1241,14 +1241,14 @@ See help for details.</source>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="373"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="393"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="413"/>
-        <source>Can&apos;t symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation>לא ניתן לקשר את &quot;%1&quot; ל־&quot;%2&quot; באופן סימבולי</translation>
+        <source>Can't symlink "%1" to "%2"</source>
+        <translation>לא ניתן לקשר את "%1" ל־"%2" באופן סימבולי</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="304"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1334"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1342"/>
-        <source>Can&apos;t create dir: %1</source>
+        <source>Can't create dir: %1</source>
         <translation>לא ניתן ליצור את התיקייה: %1</translation>
     </message>
     <message>
@@ -1257,12 +1257,12 @@ See help for details.</source>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="365"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="385"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="405"/>
-        <source>Can&apos;t remove dir: %1</source>
+        <source>Can't remove dir: %1</source>
         <translation>לא ניתן להסיר את התיקייה: %1</translation>
     </message>
     <message>
-        <source>Can&apos;t create file &quot;%1&quot;</source>
-        <translation type="obsolete">לא ניתן ליצור את הקובץ &quot;%1&quot;</translation>
+        <source>Can't create file "%1"</source>
+        <translation type="obsolete">לא ניתן ליצור את הקובץ "%1"</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="1370"/>
@@ -1286,23 +1286,23 @@ See help for details.</source>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="875"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="885"/>
         <source>Joystick axes mappings might be defined as:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 For example:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 See help for details.</source>
         <translation>ניתן להגדיר את מיפוי צירי הג׳ויסטיק באופן הבא:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 לדוגמה:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 יש לעיין בעזרה לפרטים נוספים.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="948"/>
-        <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
+        <source>Sorry, You can't delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
         <translation>לא ניתן למחוק או לשנות את הכונן C:‎ של Wine.&lt;br&gt;אך באפשרותך לשנות אותו בתיבת הדו־שיח של הגדרות הקידומת.</translation>
     </message>
 </context>
@@ -1694,7 +1694,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="576"/>
-        <source>Copy application directory path to system&apos;s&apos; clipboard</source>
+        <source>Copy application directory path to system's' clipboard</source>
         <translation>העתקת נתיב תיקיית היישום אל לוח הגזירים של המערכת</translation>
     </message>
     <message>
@@ -1704,7 +1704,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="581"/>
-        <source>Copy full application path to system&apos;s&apos; clipboard</source>
+        <source>Copy full application path to system's' clipboard</source>
         <translation>העתקת הנתיב המלא של היישום ללוח הגזירים של המערכת</translation>
     </message>
     <message>
@@ -1744,13 +1744,13 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="281"/>
-        <source>Trying to run &quot;%1&quot;...</source>
-        <translation>מתבצע ניסיון להפעלת &quot;%1&quot;...</translation>
+        <source>Trying to run "%1"...</source>
+        <translation>מתבצע ניסיון להפעלת "%1"...</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="283"/>
-        <source>&quot;%1&quot; failed to start.</source>
-        <translation>הפעלת &quot;%1&quot; נכשלה.</translation>
+        <source>"%1" failed to start.</source>
+        <translation>הפעלת "%1" נכשלה.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="386"/>
@@ -2084,7 +2084,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="1027"/>
-        <source>Note: pre and post run scripts will be not executed in case if program will be executed with &quot;Run With Output in Console&quot; option.</source>
+        <source>Note: pre and post run scripts will be not executed in case if program will be executed with "Run With Output in Console" option.</source>
         <translation>הערה: סקריפטים שלפני ואחרי ההפעלה לא יופעלו במקרה שהתכנית תופעל עם האפשרות „הפעלה עם פלט במסוף“.</translation>
     </message>
     <message>
@@ -2164,7 +2164,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsview.cpp" line="141"/>
-        <source>Sorry, i can&apos;t remove file: &lt;br&gt;%1.</source>
+        <source>Sorry, i can't remove file: &lt;br&gt;%1.</source>
         <translation>אין אפשרות להסיר את הקובץ:&lt;br&gt;%1, עמך הסליחה.</translation>
     </message>
     <message>
@@ -2181,7 +2181,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsview.cpp" line="176"/>
-        <source>Sorry, i can&apos;t create file: &lt;br&gt;%1.</source>
+        <source>Sorry, i can't create file: &lt;br&gt;%1.</source>
         <translation>לא ניתן ליצור את הקובץ:&lt;br&gt;%1, עמך הסליחה.</translation>
     </message>
     <message>
@@ -2335,7 +2335,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/InfoDialog.ui" line="74"/>
-        <source>Don&apos;t show this dialog next time</source>
+        <source>Don't show this dialog next time</source>
         <translation>אין להציג תיבת דו־שיח זאת בפעם הבאה</translation>
     </message>
     <message>
@@ -2507,8 +2507,8 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="358"/>
-        <source>Socket file &quot;%1&quot; already exists!</source>
-        <translation>קובץ השקע &quot;%1&quot; כבר קיים!</translation>
+        <source>Socket file "%1" already exists!</source>
+        <translation>קובץ השקע "%1" כבר קיים!</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="359"/>
@@ -2519,8 +2519,8 @@ See help for details.</source>
         <location filename="../q4wine-gui/mainwindow.cpp" line="408"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="412"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="426"/>
-        <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
-        <translation>היישום: &quot;%1&quot; הופעל כראוי עבור הקידומת: &quot;%2&quot;.</translation>
+        <source>Application: "%1" started fine for prefix: "%2".</source>
+        <translation>היישום: "%1" הופעל כראוי עבור הקידומת: "%2".</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="412"/>
@@ -2533,26 +2533,26 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="422"/>
-        <source>Console started fine for Application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation>המסוף הופעל כראוי עבור היישום: &quot;%1&quot; בקידומת: &quot;%2&quot;.</translation>
+        <source>Console started fine for Application: "%1" in prefix: "%2".</source>
+        <translation>המסוף הופעל כראוי עבור היישום: "%1" בקידומת: "%2".</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="436"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="439"/>
-        <source>Application: &quot;%1&quot; finished for prefix: &quot;%2&quot;. Exit code is: &quot;%3&quot;.</source>
-        <translation>היישום: &quot;%1&quot; הסתיים עבור הקידומת: &quot;%2&quot;. קוד היציאה הוא: &quot;%3&quot;.</translation>
+        <source>Application: "%1" finished for prefix: "%2". Exit code is: "%3".</source>
+        <translation>היישום: "%1" הסתיים עבור הקידומת: "%2". קוד היציאה הוא: "%3".</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="448"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="451"/>
-        <source>Can&apos;t start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
-        <translation>לא ניתן להפעיל את היישום &quot;%1&quot; עבור הקידומת: &quot;%2&quot;.</translation>
+        <source>Can't start application: "%1" for prefix: "%2".</source>
+        <translation>לא ניתן להפעיל את היישום "%1" עבור הקידומת: "%2".</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="458"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="461"/>
-        <source>Can&apos;t start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation>לא ניתן להפעיל את המסוף עבור היישום: &quot;%1&quot; בקידומת: &quot;%2&quot;.</translation>
+        <source>Can't start console for application: "%1" in prefix: "%2".</source>
+        <translation>לא ניתן להפעיל את המסוף עבור היישום: "%1" בקידומת: "%2".</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="483"/>
@@ -2574,7 +2574,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="737"/>
-        <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
+        <source>Sorry, no install wizard yet. It'l  implemented at v0.110.</source>
         <translation>אין אשף התקנה עדיין. הוא יוטמע בגרסה 0.110, עמך הסליחה.</translation>
     </message>
     <message>
@@ -2610,14 +2610,14 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="988"/>
-        <source>Can&apos;t run binary</source>
+        <source>Can't run binary</source>
         <translation>לא ניתן להפעיל את הקובץ הבינרי</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="985"/>
         <location filename="../q4wine-gui/mainwindow.cpp" line="988"/>
-        <source>Binary &quot;%1&quot; do not exists.</source>
-        <translation>הקובץ הבינרי &quot;%1&quot; אינו קיים.</translation>
+        <source>Binary "%1" do not exists.</source>
+        <translation>הקובץ הבינרי "%1" אינו קיים.</translation>
     </message>
     <message>
         <source>Current prefix:</source>
@@ -2729,7 +2729,7 @@ See help for details.</source>
         <translation type="obsolete">תוכנות המערכת</translation>
     </message>
     <message>
-        <source>Support for WIS scripts has not yet been implemented; however, this application is capable of using winetricks (see the current tab&apos;s toolbar actions).</source>
+        <source>Support for WIS scripts has not yet been implemented; however, this application is capable of using winetricks (see the current tab's toolbar actions).</source>
         <translation type="obsolete">התמיכה בסקריפטים של WIS עדיין לא הוטמעה; עם זאת, יישום זה מסוגל להשתמש ב־winetricks (יש לעיין בפעולות בסרגל הכלים של הלשונית).</translation>
     </message>
     <message>
@@ -2807,7 +2807,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="419"/>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="422"/>
-        <source>Scan for Wine desktop files and import them into q4wine&apos;s icon view.</source>
+        <source>Scan for Wine desktop files and import them into q4wine's icon view.</source>
         <translation>איתור קובצי שולחן עבודה של Wine ויבוא הסמלים לתצוגת הסמלים של q4wine.</translation>
     </message>
     <message>
@@ -2994,7 +2994,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="286"/>
-        <source>Create or update q4wine&apos;s cache of Winetricks appications.</source>
+        <source>Create or update q4wine's cache of Winetricks appications.</source>
         <translation>יצירה או עדכון של מטמון ה־q4wine של יישומי Winetricks.</translation>
     </message>
     <message>
@@ -3096,7 +3096,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="223"/>
-        <source>Sorry, you can&apos;t delete Default prefix.</source>
+        <source>Sorry, you can't delete Default prefix.</source>
         <translation>לא ניתן למחוק את קידומת בררת המחדל, עמך הסליחה.</translation>
     </message>
     <message>
@@ -3107,8 +3107,8 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="227"/>
-        <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation>האם אכן ברצונך למחוק את הקידומת בשם &quot;%1&quot; ואת כל הסמלים המשויכים לה?</translation>
+        <source>Do you really wish to delete prefix named "%1" and all associated icons?</source>
+        <translation>האם אכן ברצונך למחוק את הקידומת בשם "%1" ואת כל הסמלים המשויכים לה?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="273"/>
@@ -3188,7 +3188,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="185"/>
         <source>Sorry, but prefix named %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>הסיומת בשם %1 כבר קיימת, עמך הסליחה.</translation>
     </message>
     <message>
         <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
@@ -3378,9 +3378,9 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="182"/>
-        <source>Do you really wish delete folder named &quot;%1&quot; and all associated icons?
+        <source>Do you really wish delete folder named "%1" and all associated icons?
 </source>
-        <translation>האם אכן ברצונך למחוק את &quot;%1&quot; ואת כל הסמלים המשויכים?</translation>
+        <translation>האם אכן ברצונך למחוק את „%1“ ואת כל הסמלים המשויכים?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="241"/>
@@ -3582,7 +3582,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="686"/>
-        <source>Sorry, you can&apos;t delete Default prefix.</source>
+        <source>Sorry, you can't delete Default prefix.</source>
         <translation>לא ניתן למחוק את קידומת בררת המחדל, עמך הסליחה.</translation>
     </message>
     <message>
@@ -3592,8 +3592,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="690"/>
-        <source>Do you really wish to delete prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation>האם אכן ברצונך למחוק את הקידומת בשם &quot;%1&quot; ואת כל הסמלים המשויכים לה?</translation>
+        <source>Do you really wish to delete prefix named "%1" and all associated icons?</source>
+        <translation>האם אכן ברצונך למחוק את הקידומת בשם "%1" ואת כל הסמלים המשויכים לה?</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="405"/>
@@ -3750,8 +3750,8 @@ Note: leave it blank for default.</source>
     <name>Progress</name>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="50"/>
-        <source>Importing wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see q4wine options dialog.</source>
-        <translation>סמלי שולחן העבודה של wine מיובאים מהמיקום:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;פעולה זו עלולה לארוך זמן מה...&lt;br&gt;&lt;br&gt;&lt;b&gt;לתשומת לבך:&lt;/b&gt; כדיל הסיר תהליכים שעברו עיבוד יש לעיין בו־שיח האפשרויות של q4wine.</translation>
+        <source>Importing wine desktop icons from:&lt;br&gt;"%1"&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see q4wine options dialog.</source>
+        <translation>סמלי שולחן העבודה של wine מיובאים מהמיקום:&lt;br&gt;"%1"&lt;br&gt;&lt;br&gt;פעולה זו עלולה לארוך זמן מה...&lt;br&gt;&lt;br&gt;&lt;b&gt;לתשומת לבך:&lt;/b&gt; כדיל הסיר תהליכים שעברו עיבוד יש לעיין בו־שיח האפשרויות של q4wine.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="51"/>
@@ -3804,13 +3804,13 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="308"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="337"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="389"/>
-        <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
-        <translation>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</translation>
+        <source>No current prefix set. Set prefix via "-p &lt;prefix_name&gt;" key.</source>
+        <translation>No current prefix set. Set prefix via "-p &lt;prefix_name&gt;" key.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="212"/>
-        <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
-        <translation>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</translation>
+        <source>No current icon set. Set icon via "-i &lt;icon_name&gt;" key.</source>
+        <translation>No current icon set. Set icon via "-i &lt;icon_name&gt;" key.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="232"/>
@@ -3819,8 +3819,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="234"/>
-        <source>Wine process list for &quot;%1&quot; prefix</source>
-        <translation>Wine process list for &quot;%1&quot; prefix</translation>
+        <source>Wine process list for "%1" prefix</source>
+        <translation>Wine process list for "%1" prefix</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="238"/>
@@ -3859,18 +3859,18 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="254"/>
-        <source>Prefix &quot;%1&quot; has following dir list</source>
-        <translation>Prefix &quot;%1&quot; has following dir list</translation>
+        <source>Prefix "%1" has following dir list</source>
+        <translation>Prefix "%1" has following dir list</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="273"/>
-        <source>Prefix &quot;%1&quot; has following icon list</source>
-        <translation>Prefix &quot;%1&quot; has following icon list</translation>
+        <source>Prefix "%1" has following icon list</source>
+        <translation>Prefix "%1" has following icon list</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="275"/>
-        <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
-        <translation>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</translation>
+        <source>Prefix "%1" has following icon list at "%2" directory</source>
+        <translation>Prefix "%1" has following icon list at "%2" directory</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="277"/>
@@ -3884,8 +3884,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="297"/>
-        <source>Killing prefix &quot;%1&quot; wineserver.</source>
-        <translation>Killing prefix &quot;%1&quot; wineserver.</translation>
+        <source>Killing prefix "%1" wineserver.</source>
+        <translation>Killing prefix "%1" wineserver.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="314"/>
@@ -3896,8 +3896,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="321"/>
-        <source>No disc image &quot;%1&quot; exists. Run &quot;%2-cli -cl&quot; for disc image list.</source>
-        <translation>No disc image &quot;%1&quot; exists. Run &quot;%2-cli -cl&quot; for disc image list.</translation>
+        <source>No disc image "%1" exists. Run "%2-cli -cl" for disc image list.</source>
+        <translation>No disc image "%1" exists. Run "%2-cli -cl" for disc image list.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="430"/>
@@ -3906,8 +3906,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="347"/>
-        <source>Umounting mount point &quot;%1&quot;.</source>
-        <translation>Umounting mount point &quot;%1&quot;.</translation>
+        <source>Umounting mount point "%1".</source>
+        <translation>Umounting mount point "%1".</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="359"/>
@@ -3933,8 +3933,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="373"/>
-        <source>Mounted media list for prefix &quot;%1&quot;</source>
-        <translation>Mounted media list for prefix &quot;%1&quot;</translation>
+        <source>Mounted media list for prefix "%1"</source>
+        <translation>Mounted media list for prefix "%1"</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="136"/>
@@ -3986,8 +3986,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="396"/>
-        <source>File &quot;%1&quot; not exists.</source>
-        <translation>File &quot;%1&quot; not exists.</translation>
+        <source>File "%1" not exists.</source>
+        <translation>File "%1" not exists.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="146"/>
@@ -4053,18 +4053,18 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="105"/>
-        <source>Prefix named &quot;%1&quot; not exists. Run &quot;%2-cli -pl&quot; for prefix list.</source>
-        <translation>Prefix named &quot;%1&quot; not exists. Run &quot;%2-cli -pl&quot; for prefix list.</translation>
+        <source>Prefix named "%1" not exists. Run "%2-cli -pl" for prefix list.</source>
+        <translation>Prefix named "%1" not exists. Run "%2-cli -pl" for prefix list.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="217"/>
-        <source>Icon named &quot;%1&quot; not exists.  Run &quot;%2-cli -il&quot; for icon list.</source>
-        <translation>Icon named &quot;%1&quot; not exists.  Run &quot;%2-cli -il&quot; for icon list.</translation>
+        <source>Icon named "%1" not exists.  Run "%2-cli -il" for icon list.</source>
+        <translation>Icon named "%1" not exists.  Run "%2-cli -il" for icon list.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="268"/>
-        <source>Dir named &quot;%1&quot; not exists. Run &quot;%2-cli -dl&quot; for dir list.</source>
-        <translation>Dir named &quot;%1&quot; not exists. Run &quot;%2-cli -dl&quot; for dir list.</translation>
+        <source>Dir named "%1" not exists. Run "%2-cli -dl" for dir list.</source>
+        <translation>Dir named "%1" not exists. Run "%2-cli -dl" for dir list.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="419"/>
@@ -4157,8 +4157,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="153"/>
-        <source>Console utility for q4wine which helps to handle wine application exit status and it&apos;s stdout\stderr output logging.</source>
-        <translation>Console utility for q4wine which helps to handle wine application exit status and it&apos;s stdout\stderr output logging.</translation>
+        <source>Console utility for q4wine which helps to handle wine application exit status and it's stdout\stderr output logging.</source>
+        <translation>Console utility for q4wine which helps to handle wine application exit status and it's stdout\stderr output logging.</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="157"/>
@@ -4281,7 +4281,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/run.cpp" line="328"/>
         <source>Exe files (*.exe)</source>
-        <translation>קובצי exe‏ (*.exe)</translation>
+        <translation>קובצי exe‏ (‎*.exe)</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/run.cpp" line="383"/>
@@ -4577,7 +4577,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="225"/>
-        <source>Can&apos;t run: %1</source>
+        <source>Can't run: %1</source>
         <translation>לא ניתן להפעיל: %1</translation>
     </message>
     <message>
@@ -4592,8 +4592,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="270"/>
-        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;ערך העדיפות יכול להיות&lt;br&gt;בטווח שבין PRIO_MIN (-20)&lt;br&gt;ל־PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;יש להפעיל את הפקודה &quot;man renice&quot; לפרטים.&lt;/p&gt;</translation>
+        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See "man renice" for details.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;ערך העדיפות יכול להיות&lt;br&gt;בטווח שבין PRIO_MIN (-20)&lt;br&gt;ל־PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;יש להפעיל את הפקודה "man renice" לפרטים.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -4693,12 +4693,12 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="557"/>
-        <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Alexey S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; נוצר בתחילה על ידי Alexey S. Malakhov הידוע גם בשם John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;הרעיון הכללי הגיע בעקבות הסקריפטים בשם &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; שנכתבו לראשונה על ידי Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;רישוי התכנה כפוף לרישיון &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL גרסה v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;ניתן לשלוח תגובות, דיווחי באגים וכו׳ אל [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;לתשומת לבך&lt;/span&gt;&lt;/b&gt;: תכנית זו מגיעה ללא שום אחריות. היוצר &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;לא&lt;/span&gt;&lt;/b&gt; יספק תמיכה בתחומי WineTools, Wine, התקנת תכנה, לינוקס או Microsoft Windows.&lt;/p&gt;&lt;p&gt;אם &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;יש לך צורך בעזרה&lt;/span&gt;, ניתן לשאול ברשימות הדיוור בכתובת &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;אם ברצונך לקבל &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;תמיכה מקצועית&lt;/span&gt;, באפשרותך לרכוש את הגרסה המסחרית של wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) ליישומי שולחן העבודה&lt;/p&gt;</translation>
+        <source>&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Alexey S. Malakhov aka John Brezerk  [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href='mailto:frank@frankscorner.org'&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style='font-weight:600; color:#7D1D10;'&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style='font-weight:600; color:#6495ed;'&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href='http://www.winehq.org/site/forums'&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style='font-weight:600; color:#6495ed;'&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href='http://www.codeweavers.com'&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
+        <translation>&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;%1&lt;/span&gt;&lt;/b&gt; נוצר בתחילה על ידי Alexey S. Malakhov הידוע גם בשם John Brezerk  [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;הרעיון הכללי הגיע בעקבות הסקריפטים בשם &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;WineTools&lt;/span&gt;&lt;/b&gt; שנכתבו לראשונה על ידי Frank Hendriksen [&lt;a href='mailto:frank@frankscorner.org'&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;רישוי התכנה כפוף לרישיון &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;GPL גרסה v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;ניתן לשלוח תגובות, דיווחי באגים וכו׳ אל [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;לתשומת לבך&lt;/span&gt;&lt;/b&gt;: תכנית זו מגיעה ללא שום אחריות. היוצר &lt;b&gt;&lt;span style='font-weight:600; color:#7D1D10;'&gt;לא&lt;/span&gt;&lt;/b&gt; יספק תמיכה בתחומי WineTools, Wine, התקנת תכנה, לינוקס או Microsoft Windows.&lt;/p&gt;&lt;p&gt;אם &lt;span style='font-weight:600; color:#6495ed;'&gt;יש לך צורך בעזרה&lt;/span&gt;, ניתן לשאול ברשימות הדיוור בכתובת &lt;a href='http://www.winehq.org/site/forums'&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;אם ברצונך לקבל &lt;span style='font-weight:600; color:#6495ed;'&gt;תמיכה מקצועית&lt;/span&gt;, באפשרותך לרכוש את הגרסה המסחרית של wine: CodeWeavers CrossOver Office (&lt;a href='http://www.codeweavers.com'&gt;http://www.codeweavers.com&lt;/a&gt;) ליישומי שולחן העבודה&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/wizard.cpp" line="551"/>
-        <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
+        <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard's page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;ברוך בואך לאשף ההפעלה הראשונית.&lt;/p&gt;&lt;p&gt;אשף זה יסייע לך לבצע את כל השלבים הנחוצים להתקנת %1 כראוי.&lt;/p&gt;&lt;p&gt;נא ללחוץ על הלחצן &lt;b&gt;הבא&lt;/b&gt; כדי לעבור לעמוד הבא באשף. או על הלחצן &lt;b&gt;חזרה&lt;/b&gt; כדי לחזור.&lt;/p&gt;</translation>
     </message>
     <message>
