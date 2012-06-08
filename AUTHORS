@@ -2,7 +2,7 @@
 
 Alexey S. Malakhov (John Brezerk) <brezerk at gmail.com>
     Project maintainer, main developer, web site designer and developer, 
-    project documentation, support, etc.)
+    Ukrainian translation, project documentation, support, etc.)
 
 Sergey Skrypnic (opium) <opium@jabber.com.ua>
     Website developer and hosting administration
@@ -25,7 +25,8 @@ Sergey V. Dyatko <sergey.dyatko at gmail.com>
     Suppot, assistance, testing, and advice for FreeBSD port
 
 Boris Pek <tehnick-8 at mail.ru>
-    Debian GNU/Linux and Ubuntu package maintainer
+    Debian and Ubuntu package maintainer, some fixes,
+    Russian translation
 
 Ercole Carpanetto (ercolinux) <ercole69 at gmail.com>
     openmamba package maintainer and Italian translation
@@ -39,8 +40,11 @@ Kyrill Detinov (Lazy_Kent) <lazy.kent at opensuse.org>
 Andrey A. Maloshtan <andrey.aleksandrovich at googlemail.com>
     Testing and bug reports
 
-Uriy O. Chornoivan
+Uriy O. Chornoivan <yurchor at ukr.net>
     Ukrainian translation
+
+Pavel Zinin (pashazz) <pzinin at gmail.com>
+    Russian translation
 
 MÃ¡rcio Moraes <marciopanto at gmail.com>
     Brazilian Portuguese translation
@@ -54,8 +58,17 @@ Markos Chandras (hwoarang) <hwoarang at gentoo.org>
 Pavel Fric <http://fripohled.blogspot.com/>
     Czech translation
 
-Yaron Shahrabani <sh.yaron@gmail.com>
+Yaron Shahrabani <sh.yaron at gmail.com>
     Hebrew translation
+
+Franciszek Janowski (nobange) <nobange at poczta.onet.pl>
+    Polish translation
+
+Ron Widler
+    German translation
+
+Frederik Schwarzer (icwiener)
+    German translation
 
 And many others
     who find some time to say "Thanks", write a bug report,
