@@ -454,11 +454,11 @@ void IconSettings::cmdGetIcon_Click(){
                 for (int i = 0; i < list.size(); ++i) {
                     QFileInfo fileInfo = list.at(i);
                     if (!tmp.remove(fileInfo.filePath()))
-                        qDebug()<<"[EE] - Can't delete files at: "<<fileInfo.filePath();
+                        qDebug()<<"[EE] - Cannot delete files at: "<<fileInfo.filePath();
                 }
             } else {
                 if (!tmp.mkdir(tmpDir)){
-                    qDebug()<<"[EE] - Can't create temp directory at: "<<tmpDir;
+                    qDebug()<<"[EE] - Cannot create temp directory at: "<<tmpDir;
                 }
             }
 
@@ -522,11 +522,11 @@ void IconSettings::cmdGetIcon_Click(){
             for (int i = 0; i < list.size(); ++i) {
                 QFileInfo fileInfo = list.at(i);
                     if (!QFile::remove(fileInfo.filePath()))
-                        qDebug()<<"[EE] - Can't delete files at: "<<fileInfo.filePath();
+                        qDebug()<<"[EE] - Cannot delete files at: "<<fileInfo.filePath();
             }
 
             if (!tmp.rmdir(tmpDir))
-                qDebug()<<"[EE] - Can't delete tmp dir: "<<tmpDir;
+                qDebug()<<"[EE] - Cannot delete tmp dir: "<<tmpDir;
         }
 
         if (!fileName.isEmpty())

@@ -735,7 +735,7 @@ void PrefixTreeWidget::consoleToPrefixDir_Click(void){
     QString prefix_path = db_prefix.getPath(this->prefixName);
 
     if (prefix_path.isEmpty()){
-        qDebug()<<"[EE] Can't get prefix path";
+        qDebug()<<"[EE] Cannot get prefix path";
     } else {
         CoreLib->openConsole(prefix_path, this->prefixName);
     }

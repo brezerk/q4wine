@@ -115,7 +115,7 @@ bool Registry::exec(QObject *parent, QString prefix_path, QString prefix_name){
             dir.setPath(QString("%1/drive_c/temp").arg(dir.path()));
             if (!dir.exists()){
                 if (!dir.mkdir(dir.path())){
-                    qDebug()<<"[ee] Can't create tmp dir for fake drive dir!";
+                    qDebug()<<"[ee] Cannot create tmp dir for fake drive dir!";
                     return false;
                 }
             }
@@ -162,7 +162,7 @@ QStringList Registry::readKeys(const QString sysfile, const QString path, const 
 
 	QFile file(sfile);
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-		qDebug()<<" [EE] Can't open reg file: "<<regfile;
+		qDebug()<<" [EE] Cannot open reg file: "<<regfile;
 		return ret;
 	}
 
@@ -204,7 +204,7 @@ QStringList Registry::readExcludedKeys(const QString sysfile, const QString path
 
 	QFile file(sfile);
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-		qDebug()<<" [EE] Can't open reg file: "<<regfile;
+		qDebug()<<" [EE] Cannot open reg file: "<<regfile;
 		return ret;
 	}
 

@@ -265,7 +265,7 @@ void AppDBWidget::httpcore_pageDownloaded(void){
 void AppDBWidget::showXmlError(int id){
     switch (id){
     case 1:
-        this->appdbHeader->addLabel(tr("Error: can't read data from %1.").arg(APP_WEBSITTE));
+        this->appdbHeader->addLabel(tr("Error: cannot read data from %1.").arg(APP_WEBSITE));
         break;
     case 2:
         this->appdbHeader->addLabel(tr("Error: wrong or broken xml data. Try again later."));

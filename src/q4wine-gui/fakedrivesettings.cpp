@@ -247,7 +247,7 @@ void FakeDriveSettings::cmdOk_Click(){
                 desktopDocuments = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(4).split("\\\\").last()));
                 desktopVideos = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(3).split("\\\\").last()));
     } else {
-         QMessageBox::warning(this, tr("Error"), tr("Can't read desktop paths!"));
+         QMessageBox::warning(this, tr("Error"), tr("Cannot read desktop paths!"));
         this->reject();
         return;
     }
@@ -273,7 +273,7 @@ void FakeDriveSettings::cmdOk_Click(){
             QFileInfo fileInfo = drivelist.at(i);
             if (fileInfo.isSymLink()){
                             if (!file.remove(fileInfo.filePath())){
-                                QMessageBox::warning(this, tr("Error"), tr("Can't remove symlink: %1").arg(fileInfo.filePath()));
+                                QMessageBox::warning(this, tr("Error"), tr("Cannot remove symlink: %1").arg(fileInfo.filePath()));
                                 QApplication::restoreOverrideCursor();
                                 reject();
                             }
@@ -288,7 +288,7 @@ void FakeDriveSettings::cmdOk_Click(){
             if (item.get()){
                             QString driveLink = QString("%1/%2").arg(prefixPath).arg(item->getLetter().toLower());
                             if (!file.link(item->getPath(), driveLink)){
-                                QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(item->getPath()).arg(driveLink));
+                                QMessageBox::warning(this, tr("Error"), tr("Cannot symlink \"%1\" to \"%2\"").arg(item->getPath()).arg(driveLink));
                                 QApplication::restoreOverrideCursor();
                                 reject();
                                 return;
@@ -301,7 +301,7 @@ void FakeDriveSettings::cmdOk_Click(){
         // Check and create user path
         if (!dir.exists(prefixPath)){
             if (!dir.mkdir(prefixPath)){
-                QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(prefixPath));
+                QMessageBox::warning(this, tr("Error"), tr("Cannot create dir: %1").arg(prefixPath));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
@@ -312,7 +312,7 @@ void FakeDriveSettings::cmdOk_Click(){
         fileInfo.setFile(desktopFolder);
         if (fileInfo.isSymLink() || fileInfo.exists()){
             if (!dir.remove(desktopFolder)){
-                QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopFolder));
+                QMessageBox::warning(this, tr("Error"), tr("Cannot remove dir: %1").arg(desktopFolder));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
@@ -323,14 +323,14 @@ void FakeDriveSettings::cmdOk_Click(){
             /*
             file.setFileName(desktopFolder);
             if (!file.open(QIODevice::WriteOnly)){
-                QMessageBox::warning(this, tr("Error"), tr("Can't create file \"%1\"").arg(desktopFolder));
+                QMessageBox::warning(this, tr("Error"), tr("Cannot create file \"%1\"").arg(desktopFolder));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
             }
         } else {*/
             if (!file.link(txtWineDesktop->text(), desktopFolder)){
-                QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktop->text()).arg(desktopFolder));
+                QMessageBox::warning(this, tr("Error"), tr("Cannot symlink \"%1\" to \"%2\"").arg(txtWineDesktop->text()).arg(desktopFolder));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
@@ -342,7 +342,7 @@ void FakeDriveSettings::cmdOk_Click(){
             fileInfo.setFile(desktopDocuments);
             if (fileInfo.isSymLink() || fileInfo.exists()){
                 if (!dir.remove(desktopDocuments)){
-                    QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopDocuments));
+                    QMessageBox::warning(this, tr("Error"), tr("Cannot remove dir: %1").arg(desktopDocuments));
                     QApplication::restoreOverrideCursor();
                     reject();
                     return;
@@ -350,7 +350,7 @@ void FakeDriveSettings::cmdOk_Click(){
             }
 
             if (!file.link(txtWineDesktopDoc->text(), desktopDocuments)){
-                QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopDoc->text()).arg(desktopDocuments));
+                QMessageBox::warning(this, tr("Error"), tr("Cannot symlink \"%1\" to \"%2\"").arg(txtWineDesktopDoc->text()).arg(desktopDocuments));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
@@ -362,7 +362,7 @@ void FakeDriveSettings::cmdOk_Click(){
             fileInfo.setFile(desktopMusic);
             if (fileInfo.isSymLink() || fileInfo.exists()){
                 if (!dir.remove(desktopMusic)){
-                    QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopMusic));
+                    QMessageBox::warning(this, tr("Error"), tr("Cannot remove dir: %1").arg(desktopMusic));
                     QApplication::restoreOverrideCursor();
                     reject();
                     return;
@@ -370,7 +370,7 @@ void FakeDriveSettings::cmdOk_Click(){
             }
 
             if (!file.link(txtWineDesktopMus->text(), desktopMusic)){
-                QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopMus->text()).arg(desktopMusic));
+                QMessageBox::warning(this, tr("Error"), tr("Cannot symlink \"%1\" to \"%2\"").arg(txtWineDesktopMus->text()).arg(desktopMusic));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
@@ -382,7 +382,7 @@ void FakeDriveSettings::cmdOk_Click(){
             fileInfo.setFile(desktopPictures);
             if (fileInfo.isSymLink() || fileInfo.exists()){
                 if (!dir.remove(desktopPictures)){
-                    QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopPictures));
+                    QMessageBox::warning(this, tr("Error"), tr("Cannot remove dir: %1").arg(desktopPictures));
                     QApplication::restoreOverrideCursor();
                     reject();
                     return;
@@ -390,7 +390,7 @@ void FakeDriveSettings::cmdOk_Click(){
             }
 
             if (!file.link(txtWineDesktopPic->text(), desktopPictures)){
-                QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopPic->text()).arg(desktopPictures));
+                QMessageBox::warning(this, tr("Error"), tr("Cannot symlink \"%1\" to \"%2\"").arg(txtWineDesktopPic->text()).arg(desktopPictures));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
@@ -402,7 +402,7 @@ void FakeDriveSettings::cmdOk_Click(){
             fileInfo.setFile(desktopVideos);
             if (fileInfo.isSymLink() || fileInfo.exists()){
                 if (!dir.remove(desktopVideos)){
-                    QMessageBox::warning(this, tr("Error"), tr("Can't remove dir: %1").arg(desktopVideos));
+                    QMessageBox::warning(this, tr("Error"), tr("Cannot remove dir: %1").arg(desktopVideos));
                     QApplication::restoreOverrideCursor();
                     reject();
                     return;
@@ -410,7 +410,7 @@ void FakeDriveSettings::cmdOk_Click(){
             }
 
             if (!file.link(txtWineDesktopVid->text(), desktopVideos)){
-                QMessageBox::warning(this, tr("Error"), tr("Can't symlink \"%1\" to \"%2\"").arg(txtWineDesktopVid->text()).arg(desktopVideos));
+                QMessageBox::warning(this, tr("Error"), tr("Cannot symlink \"%1\" to \"%2\"").arg(txtWineDesktopVid->text()).arg(desktopVideos));
                 QApplication::restoreOverrideCursor();
                 reject();
                 return;
@@ -945,7 +945,7 @@ void FakeDriveSettings::cmdWineDriveDel_Click(){
         return;
 
     if (item->text().left(2)=="C:"){
-        QMessageBox::warning(this, tr("Error"), tr("Sorry, You can't delete or modify wine C: drive.<br>But You can change it in prefix settings dialog."));
+        QMessageBox::warning(this, tr("Error"), tr("Sorry, You cannot delete or modify wine C: drive.<br>But You can change it in prefix settings dialog."));
         item.release();
         return;
     }
@@ -978,7 +978,7 @@ void FakeDriveSettings::loadSettings(){
         desktopVideos = CoreLib->decodeRegString(list.at(3).split("\\\\").last());
         desktopDocuments = CoreLib->decodeRegString(list.at(4).split("\\\\").last());
     } else {
-        QMessageBox::warning(this, tr("Error"), tr("Can't read desktop paths!"));
+        QMessageBox::warning(this, tr("Error"), tr("Cannot read desktop paths!"));
         this->reject();
         return;
     }
@@ -1331,7 +1331,7 @@ void FakeDriveSettings::loadDefaultSettings(){
 
         if (!dir.exists(txtWineDesktopDoc->text())){
             if (!dir.mkdir(txtWineDesktopDoc->text())){
-                QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(prefixPath));
+                QMessageBox::warning(this, tr("Error"), tr("Cannot create dir: %1").arg(prefixPath));
                 QApplication::restoreOverrideCursor();
                 reject();
             }
@@ -1339,7 +1339,7 @@ void FakeDriveSettings::loadDefaultSettings(){
 
         if (!dir.exists(txtWineDesktop->text())){
             if (!dir.mkdir(txtWineDesktop->text())){
-                QMessageBox::warning(this, tr("Error"), tr("Can't create dir: %1").arg(prefixPath));
+                QMessageBox::warning(this, tr("Error"), tr("Cannot create dir: %1").arg(prefixPath));
                 QApplication::restoreOverrideCursor();
                 reject();
             }

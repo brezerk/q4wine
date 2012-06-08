@@ -244,7 +244,7 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
 
     if (!db_dir.isExistsByName(prefix_name, "import"))
         if (!db_dir.addDir(prefix_name, "import")){
-             qDebug()<<"Can't create dir:"<<"\"import\""<<" for prefix:"<<prefix_name;
+             qDebug()<<"Cannot create dir:"<<"\"import\""<<" for prefix:"<<prefix_name;
              return;
         }
 

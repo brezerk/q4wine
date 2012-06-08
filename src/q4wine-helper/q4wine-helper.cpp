@@ -46,13 +46,13 @@ int main(int argc, char *argv[])
     CoreLib.reset((corelib *)CoreLibClassPointer(false));
 
     if (!CoreLib.get()){
-        QErr<<"[EE] Can't load shared library."<<endl;
+        QErr<<"[EE] Cannot load shared library."<<endl;
         return -1;
     }
 
     DataBase db;
     if (!db.checkDb()){
-        QErr<<"[EE] Can't init database engine."<<endl;
+        QErr<<"[EE] Cannot initialize database engine."<<endl;
         return -1;
     }
 

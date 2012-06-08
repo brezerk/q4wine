@@ -365,7 +365,7 @@ bool MainWindow::createSocket(){
 
     if (!serverSoket->listen(soketFile)){
         QTextStream QErr(stderr);
-        QErr<<"[EE] Can't create q4wine socket: "<<serverSoket->errorString()<<endl;
+        QErr<<"[EE] Cannot create q4wine socket: "<<serverSoket->errorString()<<endl;
         return false;
     }
 
@@ -445,20 +445,20 @@ void MainWindow::newConnection (){
                     }
                 } else if (list.at(0)=="error"){
                     if (list.count()==3){
-                        this->changeStatusText(tr("Can't start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                        this->changeStatusText(tr("Cannot start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                         if ((this->isHidden() || this->isMinimized()) and (trayIcon->isVisible())){
-                            this->showNotifycation(tr("helper notifycation"), tr("Can't start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            this->showNotifycation(tr("helper notification"), tr("Cannot start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
                     } else {
                         this->showSocketError(message);
                     }
                 } else if (list.at(0)=="console_error"){
                     if (list.count()==3){
-                        this->changeStatusText(tr("Can't start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                        this->changeStatusText(tr("Cannot start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                         if ((this->isHidden() || this->isMinimized()) and (trayIcon->isVisible())){
-                            this->showNotifycation(tr("helper notifycation"), tr("Can't start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            this->showNotifycation(tr("helper notification"), tr("Cannot start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
 
                         }
                     } else {
@@ -823,12 +823,12 @@ void MainWindow::mainExportIcons_Click(){
         for (int i = 0; i < list.size(); ++i) {
             QFileInfo fileInfo = list.at(i);
             if (!tmp.remove(fileInfo.filePath()))
-                qDebug()<<"[EE] - Can't delete files at: "<<fileInfo.filePath();
+                qDebug()<<"[EE] - Cannot delete files at: "<<fileInfo.filePath();
         }
 
     } else {
         if (!tmp.mkdir(tmpDir)){
-            qDebug()<<"[EE] - Can't create temp directory at: "<<tmpDir;
+            qDebug()<<"[EE] - Cannot create temp directory at: "<<tmpDir;
         }
     }
 
@@ -882,11 +882,11 @@ void MainWindow::mainExportIcons_Click(){
     for (int i = 0; i < list.size(); ++i) {
         QFileInfo fileInfo = list.at(i);
         if (!QFile::remove(fileInfo.filePath()))
-            qDebug()<<"[EE] - Can't delete files at: "<<fileInfo.filePath();
+            qDebug()<<"[EE] - Cannot delete files at: "<<fileInfo.filePath();
     }
 
     if (!tmp.rmdir(tmpDir))
-        qDebug()<<"[EE] - Can't delete tmp dir: "<<tmpDir;
+        qDebug()<<"[EE] - Cannot delete tmp dir: "<<tmpDir;
 
     return;
 }
@@ -985,7 +985,7 @@ void MainWindow::messageReceived(const QString message){
                 statusBar()->showMessage(tr("Binary \"%1\" do not exists.").arg(message));
             } else {
                 if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
-                    this->showNotifycation(tr("Can't run binary"), tr("Binary \"%1\" do not exists.").arg(message));
+                    this->showNotifycation(tr("Cannot run binary"), tr("Binary \"%1\" does not exist.").arg(message));
             }
         } else {
             emit (runProgramRequest(message));

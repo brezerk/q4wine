@@ -222,7 +222,7 @@ void WineProcessWidget::procKillSelected_Click(void){
         QString cmd = QString("kill -9 %1").arg(procList.at(i));
 
         if (system(cmd.toAscii().data())==-1){
-            QMessageBox::warning(this, tr("Error"), tr("Can't run: %1").arg(cmd.toAscii().data()), QMessageBox::Ok);
+            QMessageBox::warning(this, tr("Error"), tr("Cannot run: %1").arg(cmd.toAscii().data()), QMessageBox::Ok);
 #ifdef DEBUG
             qDebug()<<"[EE] Fail to run: "<<cmd;
 #endif
