@@ -224,7 +224,7 @@ void PrefixControlWidget::prefixDelete_Click(){
             return;
     }
 
-    if(QMessageBox::warning(this, tr("Warning"),	tr("Do you really wish to delete prefix named \"%1\" and all associated icons?").arg(prefixName), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
+    if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete the prefix named \"%1\" and all associated icons?").arg(prefixName), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
         if (db_icon.delIconsByPrefixName(prefixName))
             if(db_dir.delDir(prefixName))
                 db_prefix.delByName(prefixName);

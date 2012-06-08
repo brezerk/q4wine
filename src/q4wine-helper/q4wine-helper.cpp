@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     app.installTranslator(&qtt);
 
     if (!CoreLib->isConfigured()){
-       QErr<<"[EE] App not configured! Re run wizard, or delete q4wine broken config files."<<endl;
+       QErr<<"[EE] App is not configured! Rerun wizard, or delete q4wine broken config files."<<endl;
        return -1;
     }
 

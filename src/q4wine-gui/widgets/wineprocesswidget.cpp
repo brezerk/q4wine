@@ -227,7 +227,7 @@ void WineProcessWidget::procKillSelected_Click(void){
             qDebug()<<"[EE] Fail to run: "<<cmd;
 #endif
         } else {
-            emit(changeStatusText(tr("It seems process %1 killed successfully.").arg(procList.at(i))));
+            emit(changeStatusText(tr("It seems that the process %1 has been killed successfully.").arg(procList.at(i))));
 #ifdef DEBUG
             qDebug()<<"[ii] Run OK: "<<cmd;
 #endif
@@ -238,7 +238,7 @@ void WineProcessWidget::procKillSelected_Click(void){
 }
 
 void WineProcessWidget::procKillWine_Click(void){
-    if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to all wine processes for selected prefixes<br><br>Do you really want to proceed?"), QMessageBox::Yes, QMessageBox::No)==QMessageBox::No)
+    if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to all wine processes of the selected prefixes<br><br>Do you really want to proceed?"), QMessageBox::Yes, QMessageBox::No)==QMessageBox::No)
         return;
 
     QItemSelectionModel *selectionModel = procTable->selectionModel();
@@ -287,7 +287,7 @@ void WineProcessWidget::procRenice_Click(void){
 
     for (int i=0; i<procList.count(); i++){
         if (CoreLib->reniceProcess(procList.at(i), newNice)){
-            emit(changeStatusText(tr("It seems process %1 renice to %2 end successfully.").arg(procList.at(i)).arg(newNice)));
+            emit(changeStatusText(tr("It seems that the process %1 has been reniced to %2 successfully.").arg(procList.at(i)).arg(newNice)));
         }
     }
 

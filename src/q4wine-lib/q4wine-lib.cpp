@@ -323,7 +323,7 @@ void corelib::checkSettings(){
     lib32 = this->getSetting("wine", "WineLibs32", false, "").toString();
     lib64 = this->getSetting("wine", "WineLibs64", false, "").toString();
     if (lib32.isEmpty() and lib64.isEmpty()){
-        this->showError(QObject::tr("<p>Error while loading application settings. wine's library path for 32 and 64 bit is not set.</p><p>Please, go to %1 options dialog and set at least one path.</p>").arg(APP_SHORT_NAME));
+        this->showError(QObject::tr("<p>Error while loading application settings. wine's library path for 32 and 64 bit is not set.</p><p>Please, go to the %1 options dialog and set at least one path.</p>").arg(APP_SHORT_NAME));
 
     }
 
@@ -1278,7 +1278,7 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 
             if (mount_point.isEmpty()){
-                this->showError(QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
+                this->showError(QObject::tr("It seems that no mount point was set in prefix options.<br>You might need to set it manually."));
                 return false;
             }
             if (image_name.isEmpty())
@@ -1422,7 +1422,7 @@ QStringList corelib::getCdromDevices(void) const{
             qDebug()<<"[ii] corelib::umountImage: mount point: "<<mount_point;
 #endif
             if (mount_point.isEmpty()){
-                this->showError(QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
+                this->showError(QObject::tr("It seems that no mount point was set in prefix options.<br>You might need to set it manually."));
                 return false;
             }
 

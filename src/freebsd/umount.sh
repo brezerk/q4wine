@@ -32,7 +32,7 @@ fi
 #Now it's time to umount device
 ${SUDO} ${UMOUNT} ${MOUNT_POINT}
 if [ $? -ne 0 ]; then
-    echo "Error: \"${UMOUNT} ${MOUNT_POINT}\" returns an a error."
+    echo "Error: \"${UMOUNT} ${MOUNT_POINT}\" returns an error."
     exit 255
 fi
 
@@ -41,7 +41,7 @@ fi
 case "${DEVNAME}" in
     (*md*) ${SUDO} ${MDCONFIG_BIN} -d -u${DEVNAME};
             if [ $? -ne 0 ]; then
-                echo "Error: \"mdconfig -d -u${DEVNAME}\" returns an a error."
+                echo "Error: \"mdconfig -d -u${DEVNAME}\" returns an error."
                 exit 255
             fi;;
      (*)        echo "${DEVNAME} does not match"

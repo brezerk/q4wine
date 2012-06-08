@@ -561,12 +561,12 @@ void IconSettings::cmdOk_Click(){
   if (icon_name!=txtName->text()){
       if (this->dir_name.isEmpty()){
           if (db_icon.isExistsByName(this->prefix_name, txtName->text())){
-              QMessageBox::warning(this, tr("Error"), tr("Sorry, but icon named %1 already exists.").arg(txtName->text()));
+              QMessageBox::warning(this, tr("Error"), tr("Sorry, an icon named %1 already exists.").arg(txtName->text()));
               return;
           }
       } else {
           if (db_icon.isExistsByName(this->prefix_name, this->dir_name, txtName->text())){
-              QMessageBox::warning(this, tr("Error"), tr("Sorry, but icon named %1 already exists.").arg(txtName->text()));
+              QMessageBox::warning(this, tr("Error"), tr("Sorry, an icon named %1 already exists.").arg(txtName->text()));
               return;
           }
       }

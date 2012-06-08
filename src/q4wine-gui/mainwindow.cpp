@@ -409,7 +409,7 @@ void MainWindow::newConnection (){
 
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                             if ((this->isHidden() || this->isMinimized()) and (trayIcon->isVisible())){
-                            this->showNotifycation(tr("helper notifycation"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            this->showNotifycation(tr("helper notification"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
 
                         emit(reloadLogData());
@@ -423,7 +423,7 @@ void MainWindow::newConnection (){
 
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                         if ((this->isHidden() || this->isMinimized()) && (trayIcon->isVisible())){
-                            this->showNotifycation(tr("helper notifycation"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            this->showNotifycation(tr("helper notification"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         }
 
                         emit(reloadLogData());
@@ -436,7 +436,7 @@ void MainWindow::newConnection (){
                         this->changeStatusText(tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                         if ((this->isHidden() || this->isMinimized()) && trayIcon->isVisible()){
-                            this->showNotifycation(tr("helper notifycation"), tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
+                            this->showNotifycation(tr("helper notification"), tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
                         }
 
                         emit(reloadLogData());
@@ -734,7 +734,7 @@ void MainWindow::mainInstall_Click(){
      * main Menu shows install Wizard dialog
      */
 
-    QMessageBox::warning(this, tr("WIP"), tr("Sorry, no install wizard yet. It'l  implemented at v0.110."));
+    QMessageBox::warning(this, tr("WIP"), tr("Sorry, the install wizard has not been implemented yet. It will be available in a future version."));
 
     return;
 }

@@ -156,7 +156,7 @@ void PrefixTreeWidget::dirRename_Click(void){
 
             if (ok && !newName.isEmpty()){
                   while (db_dir.isExistsByName(treeItem->parent()->text(0), newName)){
-                        newName = QInputDialog::getText(this, tr("Sorry. It seems directory already exists."), tr("Sorry. It seems directory already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, newName, &ok);
+                        newName = QInputDialog::getText(this, tr("Sorry. It seems that the directory already exists."), tr("Sorry. It seems that the directory already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, newName, &ok);
                         if ((!ok) || (newName.isEmpty())){
                             treeItem.release();
                             return;
@@ -179,7 +179,7 @@ void PrefixTreeWidget::dirDelete_Click(void){
             return;
 
       if (treeItem->parent()){
-            if (QMessageBox::warning(this, tr("Q4Wine"), tr("Do you really wish delete folder named \"%1\" and all associated icons?\n").arg(treeItem->text(0)),
+            if (QMessageBox::warning(this, tr("Q4Wine"), tr("Do you really wish to delete the folder named \"%1\" and all associated icons?\n").arg(treeItem->text(0)),
                                                  QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
 
             if (db_icon.delIcon(this->prefixName, this->dirName, ""))
@@ -683,11 +683,11 @@ void PrefixTreeWidget::menuSetupPrefix_Click(void){
 
 void PrefixTreeWidget::menuDeletePrefix_Click(void){
     if (this->prefixName=="Default"){
-        QMessageBox::warning(this, tr("Error"), tr("Sorry, you can't delete Default prefix."), QMessageBox::Ok);
+        QMessageBox::warning(this, tr("Error"), tr("Sorry, you cannot delete the Default prefix."), QMessageBox::Ok);
         return;
     }
 
-    if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete prefix named \"%1\" and all associated icons?").arg(prefixName), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
+    if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete the prefix named \"%1\" and all associated icons?").arg(prefixName), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
         if (db_icon.delIconsByPrefixName(this->prefixName))
             if(db_dir.delDir(this->prefixName))
                 db_prefix.delByName(this->prefixName);

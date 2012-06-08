@@ -150,12 +150,12 @@ void Process::slotFinished(int, QProcess::ExitStatus exitc){
 		if (!string.isEmpty()){
 			if ((exitc == 0) && (myProcess->exitCode() == 0)){
 				if (showErr){
-					QMessageBox::warning(this, tr("Output"), tr("It seems the process exited normally.<br><br>STDERR log:<br>%1").arg(string));
+					QMessageBox::warning(this, tr("Output"), tr("It seems that the process exited normally.<br><br>STDERR log:<br>%1").arg(string));
 				}
 				accept();
                 return;
 			} else {
-				QMessageBox::warning(this, tr("Output"), tr("It seems the process crashed.<br><br>STDERR log:<br>%1").arg(string));
+				QMessageBox::warning(this, tr("Output"), tr("It seems that the process crashed.<br><br>STDERR log:<br>%1").arg(string));
 				reject();
                 return;
 			}
