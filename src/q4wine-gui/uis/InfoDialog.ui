@@ -71,7 +71,7 @@ p, li { white-space: pre-wrap; }
    <item row="1" column="0">
     <widget class="QCheckBox" name="cbDontShow">
      <property name="text">
-      <string>Don't show this dialog next time</string>
+      <string>Do not show this dialog next time</string>
      </property>
     </widget>
    </item>

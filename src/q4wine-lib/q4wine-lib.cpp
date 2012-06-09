@@ -1378,7 +1378,7 @@ QStringList corelib::getCdromDevices(void) const{
 #ifdef DEBUG
                         qDebug()<<"[ii] Prefix '" << prefix_name << "' does not have a Windows drive set for the mount operation";
 #endif
-                        return success; //don't create the link, return true
+                        return success; //do not create the link, return true
                     }
                 }
                 //drive letter plus two colons links to the actual physical device (in this case the image)
