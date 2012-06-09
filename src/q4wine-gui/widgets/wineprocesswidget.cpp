@@ -201,7 +201,7 @@ void WineProcessWidget::itemClicked(const QModelIndex &){
 }
 
 void WineProcessWidget::procKillSelected_Click(void){
-    if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to selected processes<br><br>It is HIGH risk to damage wine normal state.<br><br>Do you really want to proceed?"), QMessageBox::Yes, QMessageBox::No)==QMessageBox::No)
+    if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to selected processes<br><br>It is HIGH risk to damage wine normal state.<br><br>Do you really wish to proceed?"), QMessageBox::Yes, QMessageBox::No)==QMessageBox::No)
         return;
 
     QItemSelectionModel *selectionModel = procTable->selectionModel();
@@ -238,7 +238,7 @@ void WineProcessWidget::procKillSelected_Click(void){
 }
 
 void WineProcessWidget::procKillWine_Click(void){
-    if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to all wine processes of the selected prefixes<br><br>Do you really want to proceed?"), QMessageBox::Yes, QMessageBox::No)==QMessageBox::No)
+    if (QMessageBox::warning(this, tr("Warning"), tr("This action will send a KILL(-9) signal to all wine processes of the selected prefixes<br><br>Do you really wish to proceed?"), QMessageBox::Yes, QMessageBox::No)==QMessageBox::No)
         return;
 
     QItemSelectionModel *selectionModel = procTable->selectionModel();

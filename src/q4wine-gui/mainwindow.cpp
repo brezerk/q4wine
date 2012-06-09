@@ -356,7 +356,7 @@ bool MainWindow::createSocket(){
     if (QFile(soketFile).exists()){
         QMessageBox msgBox;
         msgBox.setText(tr("Socket file \"%1\" already exists!").arg(soketFile));
-        msgBox.setInformativeText(tr("It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you want to remove it?"));
+        msgBox.setInformativeText(tr("It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you wish to remove it?"));
         msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
         msgBox.setDefaultButton(QMessageBox::Cancel);
         if (msgBox.exec() == QMessageBox::Ok)
