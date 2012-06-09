@@ -18,7 +18,7 @@ option(WITH_SYSTEM_SINGLEAPP "If ON, then use installed in system QtSingleApplic
 option(WITH_WINEAPPDB "If ON, then build q4wine with wine appdb browser support" "ON")
 option(USE_BZIP2 "Use bzip2 to compress man pages" "OFF")
 option(USE_GZIP "Use gzip to compress man pages" "OFF")
-option(WITH_DBUS "If ON, then build q4wine with QtDBUS notifycation support" "ON")
+option(WITH_DBUS "If ON, then build q4wine with QtDBus notification support" "ON")
 option(LINGUAS "Language list" "en_us;ru_ru;uk_ua;pt_br;es_es;it_it;cs_cz;he_il")
 option(LIBS_ENTRY_PATH "Destination directory for q4wine-core library")
 
@@ -48,7 +48,7 @@ FIND_PACKAGE(Qt4 REQUIRED)
          IF(QT_QTNETWORK_FOUND)
              SET(QT_USE_QTNETWORK 1)
          ELSE(QT_QTNETWORK_FOUND)
-             MESSAGE(FATAL ERROR "Qt NetWork libraries missing.")
+             MESSAGE(FATAL ERROR "Qt Network libraries missing.")
          ENDIF(QT_QTNETWORK_FOUND)
 
          IF(QT_QTXML_FOUND)

@@ -15,24 +15,24 @@ if [ $# -lt 1 ]; then
 fi 
 
 if [ ! -d ${MOUNT_POINT} ]; then
-    echo "Error: Can't get mount point directory."
+    echo "Error: Cannot get mount point directory."
     exit 255
 fi
 
 if [ ! -x "${SUDO}" ]; then
-    echo "Error: Can't find sudo binary. Does it accesible by PATH variable?"
+    echo "Error: Cannot find sudo binary. Is it accessible by PATH variable?"
     exit 255
 fi
 
 if [ ! -x "${MDCONFIG_BIN}" ]; then
-    echo "Error: Can't find mdconfig binary. Does it accesible by PATH variable?"
+    echo "Error: Cannot find mdconfig binary. Is it accessible by PATH variable?"
     exit 255
 fi
 
 #Now it's time to umount device
 ${SUDO} ${UMOUNT} ${MOUNT_POINT}
 if [ $? -ne 0 ]; then
-    echo "Error: \"${UMOUNT} ${MOUNT_POINT}\" returns an a error."
+    echo "Error: \"${UMOUNT} ${MOUNT_POINT}\" returns an error."
     exit 255
 fi
 
@@ -41,7 +41,7 @@ fi
 case "${DEVNAME}" in
     (*md*) ${SUDO} ${MDCONFIG_BIN} -d -u${DEVNAME};
             if [ $? -ne 0 ]; then
-                echo "Error: \"mdconfig -d -u${DEVNAME}\" returns an a error."
+                echo "Error: \"mdconfig -d -u${DEVNAME}\" returns an error."
                 exit 255
             fi;;
      (*)        echo "${DEVNAME} does not match"

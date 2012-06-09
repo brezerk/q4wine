@@ -17,7 +17,7 @@ Version 0.999-rc7
   Fixed:
   - Enhanced win64 support for wine;
   - Better Wine library path autodetection [Linux];
-  - Create ~/.local/share/wineprefixes directory if it does not exists;
+  - Create ~/.local/share/wineprefixes directory if it does not exist;
   - Error is Desktop paths are empty;
   - Desktop Paths are wrongly labeled [3491775];
   - Win32 prefix creation while prefix directory exists;
@@ -453,7 +453,7 @@ Version 0.100
   - Translation support;
 
   Fixes:
-  - Fixed "Can't find theme. File or path not exists: Default" error message;
+  - Fixed "Can't find theme. File or path does not exist: Default" error message;
   - Fixed tray icon image load;
   - Fixed process output encoding;
   - run.cpp moved to /src/gui directory;

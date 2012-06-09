@@ -215,7 +215,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
                         j++;
                     }
                 } else {
-                                     prefix = QObject::tr("Can't read process info from /proc or API is changed.");
+                                     prefix = QObject::tr("Cannot read process info from /proc or API is changed.");
 #ifdef DEBUG
                                      qDebug()<< "kvm_getenvv failed: " << kvm_geterr(kd);
 #endif
@@ -299,7 +299,7 @@ QVariant corelib::getSetting(const QString group, const QString key, const bool 
     settings.endGroup();
     if (checkExist==true)
         if (!QFileInfo(retVal.toString()).exists()){
-        this->showError(QObject::tr("<p>Error while loading application settings by key: '%1'. File or path not exists: \"%2\"</p><p>Please, go to %3 options dialog and set it.</p>").arg(key).arg(retVal.toString()).arg(APP_SHORT_NAME));
+        this->showError(QObject::tr("<p>Error while loading application settings by key: '%1'. File or path does not exist: \"%2\"</p><p>Please, go to the %3 options dialog and set it.</p>").arg(key).arg(retVal.toString()).arg(APP_SHORT_NAME));
         retVal = QVariant();
     }
     return retVal;
@@ -323,7 +323,7 @@ void corelib::checkSettings(){
     lib32 = this->getSetting("wine", "WineLibs32", false, "").toString();
     lib64 = this->getSetting("wine", "WineLibs64", false, "").toString();
     if (lib32.isEmpty() and lib64.isEmpty()){
-        this->showError(QObject::tr("<p>Error while loading application settings. wine's library path for 32 and 64 bit is not set.</p><p>Please, go to %1 options dialog and set at least one path.</p>").arg(APP_SHORT_NAME));
+        this->showError(QObject::tr("<p>Error while loading application settings. wine's library path for 32 and 64 bit is not set.</p><p>Please, go to the %1 options dialog and set at least one path.</p>").arg(APP_SHORT_NAME));
 
     }
 
@@ -429,15 +429,15 @@ QString corelib::getTranslationLang(){
             qDebug()<<"[ii] loaded:"<<lang;
             return lang;
         } else {
-            qDebug()<<"[EE] Can't open user selected translation";
+            qDebug()<<"[EE] Cannot open user selected translation";
             if (qtt.load("en_us", i18nPath)){
                 return "en_us";
             } else {
-                qDebug()<<"[EE] Can't open default translation, fall back to native translation ;[";
+                qDebug()<<"[EE] Cannot open default translation, fall back to native translation ;[";
             }
         }
     } else {
-        qDebug()<<"[EE] Can't get LANG variable, fall back to native translation ;[";
+        qDebug()<<"[EE] Cannot get LANG variable, fall back to native translation ;[";
     }
     return "";
 }
@@ -654,7 +654,7 @@ QString corelib::getWhichOut(const QString fileName, bool showErr){
         return string.trimmed();
     } else {
         if (showErr)
-            this->showError(QObject::tr("Can't find or execute the '%1' binary. Make sure that this binary is available by search PATH variable and see also INSTALL file for application depends.").arg(fileName));
+            this->showError(QObject::tr("Cannot find or execute the '%1' binary. Make sure that this binary is available by search PATH variable and see also INSTALL file for application depends.").arg(fileName));
     }
 
     return "";
@@ -689,7 +689,7 @@ QStringList corelib::getWineLibsPath(void) {
     proc.waitForFinished();
 
     if (proc.exitCode() != 0){
-        qDebug()<<"[EE] Can't get ldconfig data";
+        qDebug()<<"[EE] Cannot get ldconfig data";
         return libs_path;
     }
 
@@ -719,13 +719,13 @@ QStringList corelib::getWineLibsPath(void) {
             }
             QFileInfo file(path);
             if (!file.exists()){
-                qDebug()<<"[EE] File not exists: " << path;
+                qDebug()<<"[EE] File does not exist: " << path;
                 continue;
             }
             path = file.absolutePath().append("/wine/");
             file.setFile(path);
             if (!file.isDir()){
-                qDebug()<<"[EE] Directory not exists:"<<path;
+                qDebug()<<"[EE] Directory does not exist:"<<path;
                 continue;
             } else {
                 if (arch == "x86-64"){
@@ -895,7 +895,7 @@ QStringList corelib::getCdromDevices(void) const{
                         }
                     } else if (image.contains("loop")){
                         //FIXME: find a better solution
-                        // I knew it is a horrible dirty hack, but I can't find any other way to get information from loop device.
+                        // I knew it is a horrible dirty hack, but I cannot find any other way to get information from loop device.
                         // If some one knew how to fix it, feel free to mail solution to me :]
                         if (!this->getSetting("system", "sudo").toString().isEmpty()){
                             arguments << "losetup" << image;
@@ -903,7 +903,7 @@ QStringList corelib::getCdromDevices(void) const{
                             myProcess.start(this->getSetting("system", "sudo").toString(), arguments);
                             if (!myProcess.waitForFinished()){
                                 qDebug() << "Make failed:" << myProcess.errorString();
-                                return QString("can't run %1").arg(arguments.at(0));
+                                return QString("cannot run %1").arg(arguments.at(0));
                             } else {
                                 image = myProcess.readAll();
                                 qDebug()<<"[ii] loop: "<<arguments;
@@ -1075,7 +1075,7 @@ QStringList corelib::getCdromDevices(void) const{
             if (path.mid(0,1)=="/"){
                 if (!QFile(path).exists()){
                     if (this->_GUI_MODE){
-                        QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" do not exists.").arg(path));
+                        QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" does not exist.").arg(path));
                     } else {
                         qDebug()<<"[EE] Binary \""<<path<<"\" do not exists. Abort.";
                     }
@@ -1085,17 +1085,17 @@ QStringList corelib::getCdromDevices(void) const{
                 u_path = this->getWinePath(path, "-u");
                 if (u_path.isEmpty()){
                     if (this->_GUI_MODE){
-                        QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Can't get unix path for \"%1\".").arg(path));
+                        QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Cannot get unix path for \"%1\".").arg(path));
                     } else {
-                        qDebug()<<"[EE] Binary \""<<path<<"\" do not exists. Abort.";
+                        qDebug()<<"[EE] Binary \""<<path<<"\" does not exist. Abort.";
                     }
                     return false;
                 } else {
                     if (!QFile(u_path).exists()){
                         if (this->_GUI_MODE){
-                            QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" do not exists.").arg(u_path));
+                            QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" does not exist.").arg(u_path));
                         } else {
-                            qDebug()<<"[EE] Binary \""<<u_path<<"\" do not exists. Abort.";
+                            qDebug()<<"[EE] Binary \""<<u_path<<"\" does not exist. Abort.";
                         }
                         return false;
                     }
@@ -1278,7 +1278,7 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 
             if (mount_point.isEmpty()){
-                this->showError(QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
+                this->showError(QObject::tr("It seems that no mount point was set in prefix options.<br>You might need to set it manually."));
                 return false;
             }
             if (image_name.isEmpty())
@@ -1378,7 +1378,7 @@ QStringList corelib::getCdromDevices(void) const{
 #ifdef DEBUG
                         qDebug()<<"[ii] Prefix '" << prefix_name << "' does not have a Windows drive set for the mount operation";
 #endif
-                        return success; //don't create the link, return true
+                        return success; //do not create the link, return true
                     }
                 }
                 //drive letter plus two colons links to the actual physical device (in this case the image)
@@ -1422,7 +1422,7 @@ QStringList corelib::getCdromDevices(void) const{
             qDebug()<<"[ii] corelib::umountImage: mount point: "<<mount_point;
 #endif
             if (mount_point.isEmpty()){
-                this->showError(QObject::tr("It seems no mount point was set in prefix options.<br>You might need to set it manualy."));
+                this->showError(QObject::tr("It seems that no mount point was set in prefix options.<br>You might need to set it manually."));
                 return false;
             }
 
@@ -1568,7 +1568,7 @@ QStringList corelib::getCdromDevices(void) const{
 
         void corelib::openHelpUrl(const QString rawurl){
             QString url="http://";
-            url.append(APP_WEBSITTE);
+            url.append(APP_WEBSITE);
             url.append("/documentation/");
             url.append(this->getLang());
             url.append("/");
@@ -1580,7 +1580,7 @@ QStringList corelib::getCdromDevices(void) const{
 
         void corelib::openHomeUrl(const QString rawurl){
             QString url="http://";
-            url.append(APP_WEBSITTE);
+            url.append(APP_WEBSITE);
             url.append("/");
             url.append(rawurl);
 
@@ -1643,7 +1643,7 @@ QStringList corelib::getCdromDevices(void) const{
                     QString shell = getenv("SHELL");
                     if (shell.isEmpty()){
                 #ifdef DEBUG
-                        qDebug()<<"[EE] Can't get user shell";
+                        qDebug()<<"[EE] Cannot get user shell";
                 #endif
                         return;
                     }
@@ -1952,7 +1952,7 @@ QStringList corelib::getCdromDevices(void) const{
                         wine_loader=wine_bin;
 
                     if (!db_prefix.addPrefix(prefix_name, prefix_path, wine_bin, wine_serv, wine_loader, wine_lib)){
-                        qDebug()<<"[EE] Can't add prefi:x" << prefix_name <<  " into database..";
+                        qDebug()<<"[EE] Cannot add prefix:" << prefix_name <<  " into database..";
                     } else {
                         this->createPrefixDBStructure(prefix_name);
                         prefixes.append(prefix_path);

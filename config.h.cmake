@@ -46,7 +46,7 @@
 
 #define APP_NAME "Q4Wine"
 #define APP_SHORT_NAME "q4wine"
-#define APP_WEBSITTE "q4wine.brezblock.org.ua"
+#define APP_WEBSITE "q4wine.brezblock.org.ua"
 #define APP_BUG_EMAIL "brezerk@gmail.com"
 
 #define APPDB_EXPORT_VERSION "1.0"

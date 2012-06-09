@@ -87,7 +87,7 @@ void IconListWidget::showContents(QString filterString){
         iconItem->setToolTip(iconsList.at(i));
 
 
-        //Seting icon. If no icon or icon file not exists -- setting default
+        //Seting icon. If no icon or icon file does not exist -- setting default
         QString icon_path = db_icon.getPixmapIcon(this->prefixName, this->dirName, iconsList.at(i));
         if (icon_path.isEmpty()){
             iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
@@ -803,7 +803,7 @@ void IconListWidget::iconCut_Click(void){
 
     // If icon cutted -- set icon disabled style
     // FIXME: It pice works fine, but we need to use pixmaps for grayscale, not Qt::ItemIsEnabled flag....
-    // FIXME: It is optional, i don't work on it until release... ;)
+    // FIXME: It is optional, i do not work on it until release... ;)
     //icoList2 = lstIcons->findItems("*", Qt::MatchWrap | Qt::MatchWildcard);
 
     //	for (int i=0; i<icoList2.count(); i++){
@@ -1223,7 +1223,7 @@ void IconListWidget::consoleToPrefixDir_Click(void){
     QString prefix_path = db_prefix.getPath(this->prefixName);
 
     if (prefix_path.isEmpty()){
-        qDebug()<<"[EE] Can't get prefix path";
+        qDebug()<<"[EE] Cannot get prefix path";
     } else {
         CoreLib->openConsole(prefix_path, this->prefixName);
     }

@@ -587,7 +587,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>If you wish to use different Wine versions, you may wish set custom Wine paths here.
+                <string>If you wish to use different Wine versions, you may wish to set custom Wine paths here.
 Note: leave it blank for default.</string>
                </property>
                <property name="scaledContents">
