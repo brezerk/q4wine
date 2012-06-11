@@ -153,17 +153,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-12"/>
         <source>Error: cannot read data from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка: не удалось получить данные от %1.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Error: wrong or broken appdb xml version. This might be caused by an outdated application version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка: не действительная, или поврежденая версия xml. Возможно программа требует обновления.</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Search: No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск: нет результатов</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -215,7 +215,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+1"/>
         <source>View wine appdb categories list</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать список категорий AppDB</translation>
     </message>
     <message>
         <source>View wine appdb categoryes list</source>
@@ -495,12 +495,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-983"/>
         <source>Libs (32bit):</source>
-        <translation type="unfinished"></translation>
+        <translation>Библиотеки (32-битные):</translation>
     </message>
     <message>
         <location line="+57"/>
         <source>Libs (64bit):</source>
-        <translation type="unfinished"></translation>
+        <translation>Библиотеки (64-битные):</translation>
     </message>
     <message>
         <location line="+79"/>
@@ -770,12 +770,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+8"/>
         <source>Sorry, specified %1 directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Извините, указанной директории %1 не существует.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Sorry, specified %1 binary does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Извините, указанного файла %1 не существует.</translation>
     </message>
     <message>
         <source>Sorry, specified %1 directory not exists.</source>
@@ -1295,12 +1295,12 @@ See help for details.</source>
         <location line="-635"/>
         <location line="+731"/>
         <source>Cannot read desktop paths!</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу получить пути рабочего стола!</translation>
     </message>
     <message>
         <location line="-705"/>
         <source>Cannot remove symlink: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу удалить символьную ссылку: %1</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1310,14 +1310,14 @@ See help for details.</source>
         <location line="+20"/>
         <location line="+20"/>
         <source>Cannot symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу создать символьную ссылку с &quot;%1&quot; на &quot;%2&quot;</translation>
     </message>
     <message>
         <location line="-109"/>
         <location line="+1030"/>
         <location line="+8"/>
         <source>Cannot create dir: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу создать каталог: %1</translation>
     </message>
     <message>
         <location line="-1027"/>
@@ -1326,7 +1326,7 @@ See help for details.</source>
         <location line="+20"/>
         <location line="+20"/>
         <source>Cannot remove dir: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу удалить каталог: %1</translation>
     </message>
     <message>
         <location line="+470"/>
@@ -1349,7 +1349,7 @@ See help for details.</source>
     <message>
         <location line="+63"/>
         <source>Sorry, You cannot delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Извините, Вы не можете удалить или изменить диск C:. &lt;br&gt; Но вы можете сменить его в диалоге настройки префикса.</translation>
     </message>
     <message>
         <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
@@ -2109,7 +2109,7 @@ See help for details.</source>
         <location line="+96"/>
         <location line="+5"/>
         <source>Sorry, an icon named %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Извините, но иконка %1 уже существует.</translation>
     </message>
     <message>
         <source>Selected working directory not exists.</source>
@@ -2153,7 +2153,7 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>Selected working directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Указанный рабочий каталог не существует.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2243,12 +2243,12 @@ See help for details.</source>
     <message>
         <location line="-35"/>
         <source>Sorry, file cannot be removed:&lt;br&gt;%1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Извините, файл не может быть удален: &lt;br&gt;%1.</translation>
     </message>
     <message>
         <location line="+35"/>
         <source>Sorry, file cannot be created:&lt;br&gt;%1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Извините, файл не может быть создан:&lt;br&gt;%1.</translation>
     </message>
     <message>
         <source>Sorry, i can&apos;t remove file: &lt;br&gt;%1.</source>
@@ -2398,7 +2398,7 @@ See help for details.</source>
     <message>
         <location line="+47"/>
         <source>Do not show this dialog next time</source>
-        <translation type="unfinished">Не показывать этот диалог в следующий раз</translation>
+        <translation>Не показывать этот диалог в следующий раз</translation>
     </message>
     <message>
         <source>Don&apos;t show this dialog next time</source>
@@ -2882,7 +2882,7 @@ See help for details.</source>
     <message>
         <location line="-378"/>
         <source>It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you wish to remove it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вероятно, запущен другой экзепляр q4wine или q4wine некорректно завершен. Отключить его?</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -2891,24 +2891,24 @@ See help for details.</source>
         <location line="+12"/>
         <location line="+10"/>
         <source>helper notification</source>
-        <translation type="unfinished"></translation>
+        <translation>оповещение от помощника</translation>
     </message>
     <message>
         <location line="-13"/>
         <location line="+3"/>
         <source>Cannot start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу запустить программу: &quot;%1&quot; для префикса: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+3"/>
         <source>Cannot start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу запустить консоль для программы: &quot;%1&quot; в префиксе: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location line="+276"/>
         <source>Sorry, the install wizard has not been implemented yet. It will be available in a future version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Извините, мастер настройки еще не готов. Он будет реализован в следующих версиях.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -2941,12 +2941,12 @@ See help for details.</source>
         <location line="+4"/>
         <location line="+3"/>
         <source>Binary &quot;%1&quot; does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Бинарный файл &quot;%1&quot; не существует.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Cannot run binary</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу запустить</translation>
     </message>
     <message>
         <source>Binary &quot;%1&quot; do not exists.</source>
@@ -3191,12 +3191,12 @@ See help for details.</source>
     <message>
         <location line="+0"/>
         <source>Sorry, you cannot delete the Default prefix.</source>
-        <translation type="unfinished"></translation>
+        <translation>Извините, нельзя удалить типовой префикс.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить префикс &quot;%1&quot; и все ассоциированные с ним иконки?</translation>
     </message>
     <message>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
@@ -3343,7 +3343,8 @@ Note: leave it blank for default.</source>
         <location line="-32"/>
         <source>If you wish to use different Wine versions, you may wish to set custom Wine paths here.
 Note: leave it blank for default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Если вы намерены использовать несколько версий wine, вам следует указать здесь нетипичные пути для wine.
+Заметка: не заполняйте, если не собираетесь этого делать.</translation>
     </message>
     <message>
         <location line="+76"/>
@@ -3506,18 +3507,18 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-90"/>
         <source>Sorry. It seems that the directory already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Извините, каталог уже существует.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Sorry. It seems that the directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Извините, каталог уже сужествует.&lt;br&gt; Пожалуйста, выберете другое имя, или отмените операцию.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Do you really wish to delete the folder named &quot;%1&quot; and all associated icons?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить префикс &quot;%1&quot; и все ассоциированные с ним иконки?</translation>
     </message>
     <message>
         <location line="+72"/>
@@ -3704,12 +3705,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+83"/>
         <source>Sorry, you cannot delete the Default prefix.</source>
-        <translation type="unfinished"></translation>
+        <translation>Нельзя удалить типовой префикс.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить префикс &quot;%1&quot; и все ассоциированные с ним иконки?</translation>
     </message>
     <message>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
@@ -3861,12 +3862,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-5"/>
         <source>It seems that the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Процесс завершился удачно. &lt;br&gt;&lt;br&gt;Вывод STDERR:&lt;br&gt;%1</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>It seems that the process crashed.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Процесс завершился не удачно. &lt;br&gt;&lt;br&gt;Вывод STDERR:&lt;br&gt;%1</translation>
     </message>
     <message>
         <source>It seems the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
@@ -3991,7 +3992,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-74"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Префикс &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка префиксов.</translation>
     </message>
     <message>
         <location line="+75"/>
@@ -4002,7 +4003,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-70"/>
         <source>Icon named &quot;%1&quot; does not exist.  Run &quot;%2-cli -il&quot; for icon list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Иконка &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка иконок.</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -4012,7 +4013,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+14"/>
         <source>Dir named &quot;%1&quot; does not exist. Run &quot;%2-cli -dl&quot; for dir list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Каталог &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка каталогов.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -4049,27 +4050,27 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-48"/>
         <source>Disc image named &quot;%1&quot; does not exist. Run &quot;%2-cli -cl&quot; for disc image list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Образ &quot;%1&quot; не существует. Выполните &quot;%2-cli -сl&quot; для получения списка дисковых образов.</translation>
     </message>
     <message>
         <location line="+26"/>
         <source>Unmounting mount point &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Размонтирование точки &quot;%1&quot;.</translation>
     </message>
     <message>
         <location line="+49"/>
         <source>File &quot;%1&quot; does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл &quot;%1&quot; не существует.</translation>
     </message>
     <message>
         <location line="+32"/>
         <source>sets the current directory name</source>
-        <translation type="unfinished"></translation>
+        <translation>установить имя текущего каталога</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>sets the cd image name</source>
-        <translation type="unfinished"></translation>
+        <translation>установить имя CD/DVD образа</translation>
     </message>
     <message>
         <source>No disc image &quot;%1&quot; exists. Run &quot;%2-cli -cl&quot; for disc image list.</source>
@@ -4221,32 +4222,32 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>sends -9 term signal to current prefix process or for all prefixes processes</source>
-        <translation type="unfinished"></translation>
+        <translation>Посылает сигнал завершения (-9) процессам в текущем префиксе, или во всех префиксах</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>output all existing prefixes names and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>вывести список всех префиксов и выйти</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>output all existing dir names for current prefix and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>вывести список всех каталогов (для текущего префикса) и выйти</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>output all existing icon names for current prefix/directory and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>вывести список всех иконок (для текущего префикса или каталога) и выйти</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>mount a cd image or drive for current prefix and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>примонтировать образ или дисковод CD/DVD для текущего префикса и выйти</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>unmount a cd image or drive for current prefix and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>размонтировать образ/дисковод CD/DVD для текущего префикса и выйти</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -4585,7 +4586,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+5"/>
         <source>Selected working directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Указанный рабочий каталог не существует.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -4669,7 +4670,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+5"/>
         <source>Sorry, drive directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Каталог для диска не существует.</translation>
     </message>
     <message>
         <source>Sorry, drive directory not exists.</source>
@@ -4759,27 +4760,27 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-37"/>
         <source>This action will send a KILL(-9) signal to selected processes&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really wish to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Будет послан сигнал KILL (-9) всем выбранным процессам.&lt;br&gt;&lt;br&gt;Есть высокая вероятность нарушить нормальную работу wine.&lt;br&gt;&lt;br&gt;Продолжить?</translation>
     </message>
     <message>
         <location line="+21"/>
         <source>Cannot run: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не запускается: %1</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>It seems that the process %1 has been killed successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Процесс %1 был успешно уничтожен.</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>This action will send a KILL(-9) signal to all wine processes of the selected prefixes&lt;br&gt;&lt;br&gt;Do you really wish to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Будет послан сигнал KILL (-9) всем процессам wine для выбранных префиксов.&lt;br&gt;&lt;br&gt;Продолжить?</translation>
     </message>
     <message>
         <location line="+49"/>
         <source>It seems that the process %1 has been reniced to %2 successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменение приоритета для процесса %1 выполнено успешно; текущий приоритет: %2.</translation>
     </message>
     <message>
         <source>This action will send a KILL(-9) signal to selected processes&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
@@ -5028,12 +5029,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-218"/>
         <source>Sorry, specified %1 directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Указанный каталог %1 не существует.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Sorry, specified %1 binary does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Указанный файл %1 не существует.</translation>
     </message>
     <message>
         <location line="+248"/>
