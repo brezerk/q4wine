@@ -286,7 +286,7 @@
     <message>
         <location line="+57"/>
         <source>gui sudo:</source>
-        <translation></translation>
+        <translation>GUI sudo:</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -690,32 +690,32 @@
     <message>
         <location line="-191"/>
         <source>Sorry, specify proxy host.</source>
-        <translation>Пожалуйста, введите узел прокси.</translation>
+        <translation>Введите узел прокси.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Sorry, specify proxy port.</source>
-        <translation>Пожалуйста, введите порт прокси.</translation>
+        <translation>Введите порт прокси.</translation>
     </message>
     <message>
         <location line="+173"/>
         <source>Sorry, specify %1 directory.</source>
-        <translation>Пожалуйста, укажите директорию %1.</translation>
+        <translation>Укажите папку %1.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Sorry, specify %1 binary.</source>
-        <translation>Пожалуйста, укажите файл %1.</translation>
+        <translation>Укажите файл %1.</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Sorry, specified %1 directory does not exist.</source>
-        <translation>Извините, указанной директории %1 не существует.</translation>
+        <translation>Указанная папка %1 не существует.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Sorry, specified %1 binary does not exist.</source>
-        <translation>Извините, указанного файла %1 не существует.</translation>
+        <translation>Указанный файл %1 не существует.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="-792"/>
@@ -813,7 +813,7 @@
     <message>
         <location line="+9"/>
         <source>Please enter user registration information:</source>
-        <translation>Пожалуйста, введите регистрационную информацию пользователя:</translation>
+        <translation>Введите регистрационную информацию пользователя:</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -1081,7 +1081,7 @@
     <message>
         <location line="+180"/>
         <source>Wine Desktop Paths:</source>
-        <translation>Пути к директориям wine:</translation>
+        <translation>Пути к папкам wine:</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -1191,7 +1191,7 @@ See help for details.</source>
         <location line="-4"/>
         <location line="+6"/>
         <source>Open Directory</source>
-        <translation>Открыть каталог</translation>
+        <translation>Открыть папку</translation>
     </message>
     <message>
         <location line="-503"/>
@@ -1225,7 +1225,7 @@ See help for details.</source>
         <location line="+1030"/>
         <location line="+8"/>
         <source>Cannot create dir: %1</source>
-        <translation>Не могу создать каталог: %1</translation>
+        <translation>Невозможно создать папку: %1</translation>
     </message>
     <message>
         <location line="-1027"/>
@@ -1234,7 +1234,7 @@ See help for details.</source>
         <location line="+20"/>
         <location line="+20"/>
         <source>Cannot remove dir: %1</source>
-        <translation>Не могу удалить каталог: %1</translation>
+        <translation>Невозможно удалить папку: %1</translation>
     </message>
     <message>
         <location line="+470"/>
@@ -1257,7 +1257,7 @@ See help for details.</source>
     <message>
         <location line="+63"/>
         <source>Sorry, You cannot delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
-        <translation>Извините, Вы не можете удалить или изменить диск C:. &lt;br&gt; Но вы можете сменить его в диалоге настройки префикса.</translation>
+        <translation>Не возможно удалить или изменить диск C:. &lt;br&gt; Но возможно изменить его в диалоге настройки префикса.</translation>
     </message>
 </context>
 <context>
@@ -1348,14 +1348,14 @@ See help for details.</source>
         <location line="+523"/>
         <location line="+119"/>
         <source>Sorry. It seems icon already exists.</source>
-        <translation>Извините, похоже, что иконка уже существует.</translation>
+        <translation>Иконка уже существует.</translation>
     </message>
     <message>
         <location line="-642"/>
         <location line="+523"/>
         <location line="+119"/>
         <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation>Извините, похоже, что иконка уже существует.&lt;br&gt; Пожалуйста выберете другое имя, или отмените операцию.</translation>
+        <translation>Иконка уже существует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
         <location line="-623"/>
@@ -1528,12 +1528,12 @@ See help for details.</source>
         <location line="-158"/>
         <location line="+22"/>
         <source>Open application directory</source>
-        <translation>Открыть директорию программы</translation>
+        <translation>Открыть папку программы</translation>
     </message>
     <message>
         <location line="-21"/>
         <source>Open application directory in system file browser</source>
-        <translation>Открыть директорию программы с помощью файлового браузера</translation>
+        <translation>Открыть папку программы с помощью файлового браузера</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -1541,13 +1541,13 @@ See help for details.</source>
         <location line="+132"/>
         <location line="+16"/>
         <source>Open prefix directory</source>
-        <translation>Открыть каталог префикса</translation>
+        <translation>Открыть папку префикса</translation>
     </message>
     <message>
         <location line="-169"/>
         <location line="+154"/>
         <source>Open prefix directory in system file browser</source>
-        <translation>Открыть директорию префикса с помощью файлового браузера</translation>
+        <translation>Открыть папку префикса с помощью файлового браузера</translation>
     </message>
     <message>
         <location line="-150"/>
@@ -1572,13 +1572,13 @@ See help for details.</source>
     <message>
         <location line="-151"/>
         <source>Open application directory in wine file browser</source>
-        <translation>Открыть директорию программы с помощью браузера wine</translation>
+        <translation>Открыть папку программы с помощью браузера wine</translation>
     </message>
     <message>
         <location line="+5"/>
         <location line="+148"/>
         <source>Open prefix directory in wine file browser</source>
-        <translation>Открыть директорию программы с помощью браузера wine</translation>
+        <translation>Открыть папку программы с помощью браузера wine</translation>
     </message>
     <message>
         <location line="-143"/>
@@ -1595,36 +1595,36 @@ See help for details.</source>
     <message>
         <location line="-146"/>
         <source>Open console in application directory</source>
-        <translation>Открыть консоль в каталоге программы</translation>
+        <translation>Открыть консоль в папке программы</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Open system console in application directory</source>
-        <translation>Открыть системную консоль в каталоге программы</translation>
+        <translation>Открыть системную консоль в папке программы</translation>
     </message>
     <message>
         <location line="+4"/>
         <location line="+143"/>
         <source>Open console in prefix directory</source>
-        <translation>Открыть консоль в каталоге префикса</translation>
+        <translation>Открыть консоль в папке префикса</translation>
     </message>
     <message>
         <location line="-142"/>
         <location line="+143"/>
         <source>Open system console in prefix directory</source>
-        <translation>Открыть системную консоль в каталоге префикса</translation>
+        <translation>Открыть системную консоль в папке префикса</translation>
     </message>
     <message>
         <location line="-139"/>
         <location line="+143"/>
         <source>Open console in mount point directory</source>
-        <translation>Открыть консоль в каталоге точки монтирования</translation>
+        <translation>Открыть консоль в папке точки монтирования</translation>
     </message>
     <message>
         <location line="-142"/>
         <location line="+143"/>
         <source>Open system console in mount point directory</source>
-        <translation>Открыть системную консоль в каталоге точки монтирования</translation>
+        <translation>Открыть системную консоль в папке точки монтирования</translation>
     </message>
     <message>
         <location line="-134"/>
@@ -1644,12 +1644,12 @@ See help for details.</source>
     <message>
         <location line="+2"/>
         <source>Directory path</source>
-        <translation>Путь к каталогу</translation>
+        <translation>Путь к папке</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Copy application directory path to system&apos;s&apos; clipboard</source>
-        <translation>Копировать путь к каталогу в системный буфер обмена</translation>
+        <translation>Копировать путь к папке в системный буфер обмена</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -1679,7 +1679,7 @@ See help for details.</source>
     <message>
         <location line="+178"/>
         <source>Do you wish to delete all of the selected icons?</source>
-        <translation>Вы действительно хотите удалить все выбранные иконки?</translation>
+        <translation>Удалить все выбранные иконки?</translation>
     </message>
     <message>
         <location line="-175"/>
@@ -1795,7 +1795,7 @@ See help for details.</source>
     <message>
         <location line="+31"/>
         <source>Working dir:</source>
-        <translation>Рабочая директория:</translation>
+        <translation>Рабочая папка:</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -2013,7 +2013,7 @@ See help for details.</source>
         <location line="+96"/>
         <location line="+5"/>
         <source>Sorry, an icon named %1 already exists.</source>
-        <translation>Извините, но иконка %1 уже существует.</translation>
+        <translation>Иконка %1 уже существует.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -2053,7 +2053,7 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>Selected working directory does not exist.</source>
-        <translation>Указанный рабочий каталог не существует.</translation>
+        <translation>Указанная рабочая папка не существует.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2098,7 +2098,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/iconsview.cpp" line="-6"/>
         <source>Sorry. It seems file already exists.&lt;br&gt;Replace existent or rename current?</source>
-        <translation>Извините, кажется файл уже существует.&lt;br&gt; Заменить существующий, или переименовать текущий?</translation>
+        <translation>Файл уже существует.&lt;br&gt; Заменить существующий, или переименовать текущий?</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2123,7 +2123,7 @@ See help for details.</source>
     <message>
         <location line="+6"/>
         <source>Sorry. It seems file already exists.</source>
-        <translation>Извините, кажется файл уже существует.</translation>
+        <translation>Файл уже существует.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2139,12 +2139,12 @@ See help for details.</source>
     <message>
         <location line="-35"/>
         <source>Sorry, file cannot be removed:&lt;br&gt;%1.</source>
-        <translation>Извините, файл не может быть удален: &lt;br&gt;%1.</translation>
+        <translation>Файл не может быть удален: &lt;br&gt;%1.</translation>
     </message>
     <message>
         <location line="+35"/>
         <source>Sorry, file cannot be created:&lt;br&gt;%1.</source>
-        <translation>Извините, файл не может быть создан:&lt;br&gt;%1.</translation>
+        <translation>Файл не может быть создан:&lt;br&gt;%1.</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -2243,12 +2243,12 @@ See help for details.</source>
         <location line="+8"/>
         <location line="+25"/>
         <source>Sorry. It seems CD iamge already exists.</source>
-        <translation>Извините, кажется образ CD уже существует.</translation>
+        <translation>Образ CD уже существует.</translation>
     </message>
     <message>
         <location line="-25"/>
         <source>Sorry. It seems CD image file already exists.&lt;br&gt;Please rename it, or cancel add image operation.</source>
-        <translation>Извините, кажется образ CD уже существует.&lt;br&gt; Пожалуйста, переименуйте его, или отмените добавление образа.</translation>
+        <translation>Образ CD уже существует.&lt;br&gt;Переименуйте его или отмените добавление образа.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2263,17 +2263,17 @@ See help for details.</source>
     <message>
         <location line="+6"/>
         <source>Sorry. CD iamge name can not be empty.</source>
-        <translation>Извините, имя образа CD не может быть пустым.</translation>
+        <translation>Имя образа CD не может быть пустым.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Sorry. CD iamge name can not be empty.&lt;br&gt;Please enter new name, or cancel rename image operation.</source>
-        <translation>Извините, кажется образ CD уже существует.&lt;br&gt; Пожалуйста, введите новое имя, или прервите операцию.</translation>
+        <translation>Образ CD уже существует.&lt;br&gt;Введите новое имя или прервите операцию.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Sorry. It seems CD image file already exists.&lt;br&gt;Please rename it, or cancel rename image operation.</source>
-        <translation>Извините, кажется образ CD уже существует.&lt;br&gt; Пожалуйста, переименуйте его, или отмените добавление образа.</translation>
+        <translation>Образ CD уже существует.&lt;br&gt;Переименуйте его или отмените операцию.</translation>
     </message>
 </context>
 <context>
@@ -2716,7 +2716,7 @@ See help for details.</source>
     <message>
         <location line="+276"/>
         <source>Sorry, the install wizard has not been implemented yet. It will be available in a future version.</source>
-        <translation>Извините, мастер настройки еще не готов. Он будет реализован в следующих версиях.</translation>
+        <translation>Мастер настройки еще не готов. Он будет реализован в следующих версиях.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -2891,7 +2891,7 @@ See help for details.</source>
     <message>
         <location line="+0"/>
         <source>A fake drive already exists within &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Do you wish to remove &lt;b&gt;all&lt;/b&gt; files from this prefix?</source>
-        <translation>Указанный каталог &lt;b&gt;%1&lt;/b&gt; уже содержит виртуальный диск.&lt;br&gt;&lt;br&gt;Хотите удалить &lt;b&gt;все&lt;/b&gt; файлы из этого префикса?</translation>
+        <translation>Указанная папка &lt;b&gt;%1&lt;/b&gt; уже содержит виртуальный диск.&lt;br&gt;&lt;br&gt;Удалить &lt;b&gt;все&lt;/b&gt; файлы из этого префикса?</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2983,7 +2983,7 @@ See help for details.</source>
     <message>
         <location line="+0"/>
         <source>Sorry, you cannot delete the Default prefix.</source>
-        <translation>Извините, нельзя удалить типовой префикс.</translation>
+        <translation>Нельзя удалить типовой префикс.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3013,7 +3013,7 @@ See help for details.</source>
     <message>
         <location line="-112"/>
         <source>Do you really wish to delete all old prefix files?</source>
-        <translation>Вы действительно хотите удалить старые файлы префикса?</translation>
+        <translation>Удалить старые файлы префикса?</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -3170,7 +3170,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+6"/>
         <source>Sorry, but prefix named %1 already exists.</source>
-        <translation>Извините, но префикс с именем %1 уже существует.</translation>
+        <translation>Префикс %1 уже существует.</translation>
     </message>
     <message>
         <location line="+41"/>
@@ -3229,28 +3229,28 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+99"/>
         <source>Enter new directory name</source>
-        <translation>Введите имя новой директории</translation>
+        <translation>Введите имя новой папки</translation>
     </message>
     <message>
         <location line="+0"/>
         <location line="+56"/>
         <source>Directory name:</source>
-        <translation>Имя директории:</translation>
+        <translation>Имя папки:</translation>
     </message>
     <message>
         <location line="-46"/>
         <source>Sorry. It seems directory already exists.</source>
-        <translation>Извините, каталог уже существует.</translation>
+        <translation>Папка уже существует.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Sorry. It seems directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation>Извините, каталог уже сужествует.&lt;br&gt; Пожалуйста, выберете другое имя, или отмените операцию.</translation>
+        <translation>Папка уже сужествует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
         <location line="+46"/>
         <source>Enter new name for directory</source>
-        <translation>Введите новое имя для директории</translation>
+        <translation>Введите новое имя папки</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -3276,12 +3276,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-90"/>
         <source>Sorry. It seems that the directory already exists.</source>
-        <translation>Извините, каталог уже существует.</translation>
+        <translation>Папка уже существует.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Sorry. It seems that the directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation>Извините, каталог уже сужествует.&lt;br&gt; Пожалуйста, выберете другое имя, или отмените операцию.</translation>
+        <translation>Папка уже сужествует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
         <location line="+23"/>
@@ -3349,7 +3349,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>Create new directory</source>
-        <translation>Создать новую директорию</translation>
+        <translation>Создать новую папку</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -3359,7 +3359,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>Rename current directory</source>
-        <translation>Переименовать текущую директорию</translation>
+        <translation>Переименовать текущую папку</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -3369,7 +3369,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>Delete current directory</source>
-        <translation>Удалить текущую директорию</translation>
+        <translation>Удалить текущую папку</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -3380,12 +3380,12 @@ Note: leave it blank for default.</source>
         <location line="+1"/>
         <location line="+16"/>
         <source>Open prefix directory</source>
-        <translation>Открыть каталог префикса</translation>
+        <translation>Открыть папку префикса</translation>
     </message>
     <message>
         <location line="-15"/>
         <source>Open prefix directory in system file browser</source>
-        <translation>Открыть директорию префикса с помощью файлового браузера</translation>
+        <translation>Открыть папку префикса с помощью файлового браузера</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3406,7 +3406,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+2"/>
         <source>Open prefix directory in wine file browser</source>
-        <translation>Открыть директорию программы с помощью браузера wine</translation>
+        <translation>Открыть папку программы с помощью браузера wine</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -3421,22 +3421,22 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+2"/>
         <source>Open console in prefix directory</source>
-        <translation>Открыть консоль в каталоге префикса</translation>
+        <translation>Открыть консоль в папке префикса</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Open system console in prefix directory</source>
-        <translation>Открыть системную консоль в каталоге префикса</translation>
+        <translation>Открыть системную консоль в папке префикса</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Open console in mount point directory</source>
-        <translation>Открыть консоль в каталоге точки монтирования</translation>
+        <translation>Открыть консоль в папке точки монтирования</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Open system console in mount point directory</source>
-        <translation>Открыть системную консоль в каталоге точки монтирования</translation>
+        <translation>Открыть системную консоль в папке точки монтирования</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -3509,12 +3509,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+92"/>
         <source>Sorry. It seems icon already exists.</source>
-        <translation>Извините, похоже, что иконка уже существует.</translation>
+        <translation>Иконка уже существует.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation>Извините, похоже, что иконка уже существует.&lt;br&gt; Пожалуйста выберете другое имя, или отмените операцию.</translation>
+        <translation>Иконка уже существует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
         <location line="+79"/>
@@ -3761,12 +3761,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+37"/>
         <source>Prefix &quot;%1&quot; has following dir list</source>
-        <translation>Префикс &quot;%1&quot; содержит следующий список каталогов</translation>
+        <translation>Префикс &quot;%1&quot; содержит следующий список папок</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Dir named &quot;%1&quot; does not exist. Run &quot;%2-cli -dl&quot; for dir list.</source>
-        <translation>Каталог &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка каталогов.</translation>
+        <translation>Папка &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка папок.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -3776,7 +3776,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+2"/>
         <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
-        <translation>Префикс &quot;%1&quot; содержит следующий список иконок в каталоге &quot;%2&quot;</translation>
+        <translation>Префикс &quot;%1&quot; содержит следующий список иконок в папке &quot;%2&quot;</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -3818,7 +3818,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+32"/>
         <source>sets the current directory name</source>
-        <translation>установить имя текущего каталога</translation>
+        <translation>установить имя текущей папки</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -3965,12 +3965,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>output all existing dir names for current prefix and exit</source>
-        <translation>вывести список всех каталогов (для текущего префикса) и выйти</translation>
+        <translation>вывести список всех папок (для текущего префикса) и выйти</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>output all existing icon names for current prefix/directory and exit</source>
-        <translation>вывести список всех иконок (для текущего префикса или каталога) и выйти</translation>
+        <translation>вывести список всех иконок (для текущего префикса или папки) и выйти</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3995,7 +3995,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>  %1-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
-        <translation>  %1-cli -p &lt;префикс&gt; [-d &lt;каталог&gt;] -i &lt;иконка&gt;</translation>
+        <translation>  %1-cli -p &lt;префикс&gt; [-d &lt;папка&gt;] -i &lt;иконка&gt;</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4084,7 +4084,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>sets program working directory</source>
-        <translation>установить рабочий каталог программы</translation>
+        <translation>установить рабочую папку программы</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4144,7 +4144,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+31"/>
         <source>Working directory:</source>
-        <translation>Рабочая директория:</translation>
+        <translation>Рабочая папка:</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -4279,7 +4279,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+5"/>
         <source>Selected working directory does not exist.</source>
-        <translation>Указанный рабочий каталог не существует.</translation>
+        <translation>Указанная рабочая папка не существует.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -4358,12 +4358,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-5"/>
         <source>Sorry, you need to set existing drive directory.</source>
-        <translation>Извините, нужно  установить существующую папку для диска.</translation>
+        <translation>Необходимо установить существующую папку для диска.</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Sorry, drive directory does not exist.</source>
-        <translation>Каталог для диска не существует.</translation>
+        <translation>Папка для диска не существует.</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -4655,22 +4655,22 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-77"/>
         <source>Sorry, specify %1 directory.</source>
-        <translation>Пожалуйста, укажите директорию %1.</translation>
+        <translation>Укажите папку %1.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Sorry, specify %1 binary.</source>
-        <translation>Пожалуйста, укажите файл %1.</translation>
+        <translation>Укажите файл %1.</translation>
     </message>
     <message>
         <location line="+70"/>
         <source>Sorry, specify proxy host.</source>
-        <translation>Пожалуйста, введите узел прокси.</translation>
+        <translation>Введите узел прокси.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Sorry, specify proxy port.</source>
-        <translation>Пожалуйста, введите порт прокси.</translation>
+        <translation>Введите порт прокси.</translation>
     </message>
     <message>
         <location line="+151"/>
@@ -4685,12 +4685,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-6"/>
         <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Добро пожаловать в мастер первого запуска&lt;/p&gt;&lt;p&gt;Этот мастер поможет вам сделать все шаги для успешной настройки %1. &lt;/p&gt;&lt;p&gt;Пожалуйста, нажмите кнопку &lt;b&gt;Далее&lt;/b&gt;, чтобы перейти к следующей странице мастера. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата. &lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Добро пожаловать в мастер первого запуска&lt;/p&gt;&lt;p&gt;Этот мастер поможет вам сделать все шаги для успешной настройки %1. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Далее&lt;/b&gt;, чтобы перейти к следующей странице мастера. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата. &lt;/p&gt;</translation>
     </message>
     <message>
         <location line="-218"/>
         <source>Sorry, specified %1 directory does not exist.</source>
-        <translation>Указанный каталог %1 не существует.</translation>
+        <translation>Указанная папка %1 не существует.</translation>
     </message>
     <message>
         <location line="+3"/>
