@@ -4007,7 +4007,7 @@ Note: leave it blank for default.</translation>
     </message>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="432"/>
-        <source>sends -9 term signal to current prefix precess or for all prefixes processes</source>
+        <source>sends -9 term signal to current prefix process or for all prefixes processes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

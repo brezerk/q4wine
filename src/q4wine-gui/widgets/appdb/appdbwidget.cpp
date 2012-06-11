@@ -265,13 +265,13 @@ void AppDBWidget::httpcore_pageDownloaded(void){
 void AppDBWidget::showXmlError(int id){
     switch (id){
     case 1:
-        this->appdbHeader->addLabel(tr("Error: can't read data from %1.").arg(APP_WEBSITTE));
+        this->appdbHeader->addLabel(tr("Error: cannot read data from %1.").arg(APP_WEBSITE));
         break;
     case 2:
         this->appdbHeader->addLabel(tr("Error: wrong or broken xml data. Try again later."));
         break;
     case 3:
-        this->appdbHeader->addLabel(tr("Error: wrong or broken appdb xml version. Application needs to be updated?"));
+        this->appdbHeader->addLabel(tr("Error: wrong or broken appdb xml version. This might be caused by an outdated application version."));
         break;
     case 4:
         this->appdbHeader->addLabel(tr("Error: xml parse error."));
@@ -280,7 +280,7 @@ void AppDBWidget::showXmlError(int id){
         this->appdbHeader->addLabel(tr("Error: unexpected error."));
         break;
     case 404:
-        this->appdbHeader->addLabel(tr("Search: No matches found"));
+        this->appdbHeader->addLabel(tr("Search: No matches found."));
         break;
     }
     this->setCursor(QCursor(Qt::ArrowCursor));
@@ -311,7 +311,7 @@ void AppDBWidget::createActions(void){
     connect(appdbSearch.get(), SIGNAL(triggered()), this, SLOT(appdbSearch_Click()));
 
     appdbCat.reset(new QAction(CoreLib->loadIcon("data/list.png"), tr("Appdb categoryes list"),this));
-    appdbCat->setStatusTip(tr("View wine appdb categoryes list"));
+    appdbCat->setStatusTip(tr("View wine appdb categories list"));
     connect(appdbCat.get(), SIGNAL(triggered()), this, SLOT(appdbCat_Click()));
 
     return;

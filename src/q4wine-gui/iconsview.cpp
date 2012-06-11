@@ -138,7 +138,7 @@ void IconsView::cmdOk_Click(){
 					break;
 					case 2:
 						if (!file.remove(saveFile)){
-							QMessageBox::warning(this, tr("Error"), tr("Sorry, i can't remove file: <br>%1.").arg(saveFile), QMessageBox::Ok);
+							QMessageBox::warning(this, tr("Error"), tr("Sorry, file cannot be removed:<br>%1.").arg(saveFile), QMessageBox::Ok);
 						}
 					break;
 					case 3:
@@ -173,7 +173,7 @@ void IconsView::cmdOk_Click(){
 		}
 
 		if (!file.copy(sourceFile, saveFile)){
-			QMessageBox::warning(this, tr("Error"), tr("Sorry, i can't create file: <br>%1.").arg(saveFile), QMessageBox::Ok);
+			QMessageBox::warning(this, tr("Error"), tr("Sorry, file cannot be created:<br>%1.").arg(saveFile), QMessageBox::Ok);
 		}
 
 		selectedFile=saveFile;

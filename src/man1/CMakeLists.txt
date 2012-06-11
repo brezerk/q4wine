@@ -45,7 +45,7 @@ IF( RELEASE )
 ENDIF( RELEASE )
 
  ELSE (ARC)
-    MESSAGE(STATUS "Compresser flags (USE_BZIP2 or USE_GZIP) not set --\n")
+    MESSAGE(STATUS "Compressor flags (USE_BZIP2 or USE_GZIP) not set --\n")
     MESSAGE(STATUS "Installing not compressed man pages --\n")
 
 IF( RELEASE )

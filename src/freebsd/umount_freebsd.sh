@@ -41,7 +41,7 @@
 
 # Check is $2 a directory?
 if [ ! -d $2 ]; then
-	echo "Error: Can't get mount point directory."
+	echo "Error: Cannot get mount point directory."
 	exit 255
 fi
 
@@ -57,7 +57,7 @@ device_name="$(mount | grep $2 | awk '{print $1}')"
 #Getting mdconfig binary and check is it executable binary or not.
 mdconfig="$(which mdconfig 2>&1)"
 if [ ! -x "$mdconfig" ]; then
-	echo "Error: Can't find mdconfig binary. Does it accesible by PATH variable?"
+	echo "Error: Cannot find mdconfig binary. Is it accessible by PATH variable?"
 	exit 255
 fi
 

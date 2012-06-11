@@ -102,7 +102,7 @@ int main(int argc, char *argv[])
             if (i<argc)
                 _PREFIX=app.arguments().at(i);
             if (!db_prefix.isExistsByName(_PREFIX)){
-                Qcout<<QObject::tr("Prefix named \"%1\" not exists. Run \"%2-cli -pl\" for prefix list.").arg(_PREFIX).arg(APP_SHORT_NAME)<<endl;
+                Qcout<<QObject::tr("Prefix named \"%1\" does not exist. Run \"%2-cli -pl\" for prefix list.").arg(_PREFIX).arg(APP_SHORT_NAME)<<endl;
                 return -1;
             }
         }
@@ -214,7 +214,7 @@ int main(int argc, char *argv[])
         }
 
         if (!db_icon.isExistsByName(_PREFIX, _DIR, _ICON)){
-            Qcout<<QObject::tr("Icon named \"%1\" not exists.  Run \"%2-cli -il\" for icon list.").arg(_ICON).arg(APP_SHORT_NAME)<<endl;
+            Qcout<<QObject::tr("Icon named \"%1\" does not exist.  Run \"%2-cli -il\" for icon list.").arg(_ICON).arg(APP_SHORT_NAME)<<endl;
             return -1;
         }
 
@@ -265,7 +265,7 @@ int main(int argc, char *argv[])
         }
 
         if (! db_dir.isExistsByName(_PREFIX, _DIR)){
-            Qcout<<QObject::tr("Dir named \"%1\" not exists. Run \"%2-cli -dl\" for dir list.").arg(_DIR).arg(APP_SHORT_NAME)<<endl;
+            Qcout<<QObject::tr("Dir named \"%1\" does not exist. Run \"%2-cli -dl\" for dir list.").arg(_DIR).arg(APP_SHORT_NAME)<<endl;
             return -1;
         } else {
             QStringList list = db_icon.getIconsList(_PREFIX, _DIR, "");
@@ -318,7 +318,7 @@ int main(int argc, char *argv[])
             if (!_IMAGE.isEmpty()){
                 if (!QFile(_IMAGE).exists()){
                     if (!db_image.isExistsByName(_IMAGE)){
-                        Qcout<<QObject::tr("No disc image \"%1\" exists. Run \"%2-cli -cl\" for disc image list.").arg(_IMAGE).arg(APP_SHORT_NAME)<<endl;
+                        Qcout<<QObject::tr("Disc image named \"%1\" does not exist. Run \"%2-cli -cl\" for disc image list.").arg(_IMAGE).arg(APP_SHORT_NAME)<<endl;
                         return -1;
                     }
                 }
@@ -344,7 +344,7 @@ int main(int argc, char *argv[])
                 return -1;
             }
 
-            Qcout<<QObject::tr("Umounting mount point \"%1\".").arg(mount)<<endl;
+            Qcout<<QObject::tr("Unmounting mount point \"%1\".").arg(mount)<<endl;
             if (CoreLib->umountImage(_PREFIX)){
                 Qcout<<"Done"<<endl;
             } else {
@@ -393,7 +393,7 @@ int main(int argc, char *argv[])
         qDebug()<<_IMAGE;
 
         if (!QFile(_IMAGE).exists()){
-            Qcout<<QObject::tr("File \"%1\" not exists.").arg(_IMAGE)<<endl;
+            Qcout<<QObject::tr("File \"%1\" does not exist.").arg(_IMAGE)<<endl;
             return -1;
         }
 
@@ -425,25 +425,25 @@ int main(int argc, char *argv[])
         Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
         Qcout<<qSetFieldWidth(25)<<left<<"  -ps, --procs"<<QObject::tr("output wine process list for current prefix or for all prefixes and exit ")<<qSetFieldWidth(0)<<endl;
         Qcout<<qSetFieldWidth(25)<<left<<"  -p,  --prefix"<<QObject::tr("sets the current prefix name")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -d,  --dir"<<QObject::tr("sets the current direcory name")<<qSetFieldWidth(0)<<endl;
+        Qcout<<qSetFieldWidth(25)<<left<<"  -d,  --dir"<<QObject::tr("sets the current directory name")<<qSetFieldWidth(0)<<endl;
         Qcout<<qSetFieldWidth(25)<<left<<"  -i,  --icon"<<QObject::tr("sets the current icon name")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -cd, --cdimage"<<QObject::tr("sets the cd iamge name")<<qSetFieldWidth(0)<<endl;
+        Qcout<<qSetFieldWidth(25)<<left<<"  -cd, --cdimage"<<QObject::tr("sets the cd image name")<<qSetFieldWidth(0)<<endl;
         Qcout<<qSetFieldWidth(25)<<left<<"  -b, --binary"<<QObject::tr("sets the path to windows binary for execute with current prefix settings")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -k,  --kill"<<QObject::tr("sends -9 term signal to current prefix precess or for all prefixes processes")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -pl, --prefixlist"<<QObject::tr("output all exesting prefixes names and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -dl, --dirlist"<<QObject::tr("output all exesting dir names for current prefix and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -il, --iconlist"<<QObject::tr("output all exesting icon names for current prefix/directory and exit")<<qSetFieldWidth(0)<<endl;
+        Qcout<<qSetFieldWidth(25)<<left<<"  -k,  --kill"<<QObject::tr("sends -9 term signal to current prefix process or for all prefixes processes")<<qSetFieldWidth(0)<<endl;
+        Qcout<<qSetFieldWidth(25)<<left<<"  -pl, --prefixlist"<<QObject::tr("output all existing prefixes names and exit")<<qSetFieldWidth(0)<<endl;
+        Qcout<<qSetFieldWidth(25)<<left<<"  -dl, --dirlist"<<QObject::tr("output all existing dir names for current prefix and exit")<<qSetFieldWidth(0)<<endl;
+        Qcout<<qSetFieldWidth(25)<<left<<"  -il, --iconlist"<<QObject::tr("output all existing icon names for current prefix/directory and exit")<<qSetFieldWidth(0)<<endl;
         Qcout<<qSetFieldWidth(25)<<left<<"  -cl, --cdlist"<<QObject::tr("output all cd images list and exit")<<qSetFieldWidth(0)<<endl;
         Qcout<<qSetFieldWidth(25)<<left<<"  -ml, --mountlist"<<QObject::tr("output all mounted media for current prefix or all prefixes and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --mount"<<QObject::tr("mount an cd iamage or drive for current prefix and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -u,  --umount"<<QObject::tr("umount an cd iamage or drive for current prefix and exit")<<qSetFieldWidth(0)<<endl;
+        Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --mount"<<QObject::tr("mount a cd image or drive for current prefix and exit")<<qSetFieldWidth(0)<<endl;
+        Qcout<<qSetFieldWidth(25)<<left<<"  -u,  --umount"<<QObject::tr("unmount a cd image or drive for current prefix and exit")<<qSetFieldWidth(0)<<endl;
         Qcout<<endl;
         Qcout<<QObject::tr("Exit status:")<<endl;
         Qcout<<QObject::tr("  0 if OK,")<<endl;
         Qcout<<QObject::tr(" -1 if serious troubles")<<endl;
         Qcout<<endl;
         Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
-        Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_WEBSITTE).arg(APP_SHORT_NAME)<<endl;
+        Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_WEBSITE).arg(APP_SHORT_NAME)<<endl;
         Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
         break;
     }

@@ -454,11 +454,11 @@ void IconSettings::cmdGetIcon_Click(){
                 for (int i = 0; i < list.size(); ++i) {
                     QFileInfo fileInfo = list.at(i);
                     if (!tmp.remove(fileInfo.filePath()))
-                        qDebug()<<"[EE] - Can't delete files at: "<<fileInfo.filePath();
+                        qDebug()<<"[EE] - Cannot delete files at: "<<fileInfo.filePath();
                 }
             } else {
                 if (!tmp.mkdir(tmpDir)){
-                    qDebug()<<"[EE] - Can't create temp directory at: "<<tmpDir;
+                    qDebug()<<"[EE] - Cannot create temp directory at: "<<tmpDir;
                 }
             }
 
@@ -522,11 +522,11 @@ void IconSettings::cmdGetIcon_Click(){
             for (int i = 0; i < list.size(); ++i) {
                 QFileInfo fileInfo = list.at(i);
                     if (!QFile::remove(fileInfo.filePath()))
-                        qDebug()<<"[EE] - Can't delete files at: "<<fileInfo.filePath();
+                        qDebug()<<"[EE] - Cannot delete files at: "<<fileInfo.filePath();
             }
 
             if (!tmp.rmdir(tmpDir))
-                qDebug()<<"[EE] - Can't delete tmp dir: "<<tmpDir;
+                qDebug()<<"[EE] - Cannot delete tmp dir: "<<tmpDir;
         }
 
         if (!fileName.isEmpty())
@@ -549,7 +549,7 @@ void IconSettings::cmdOk_Click(){
   }
 
   if (!QDir(txtWorkDir->text()).exists()){
-      QMessageBox::warning(this, tr("Error"), tr("Selected working directory not exists."));
+      QMessageBox::warning(this, tr("Error"), tr("Selected working directory does not exist."));
       return;
   }
 
@@ -561,12 +561,12 @@ void IconSettings::cmdOk_Click(){
   if (icon_name!=txtName->text()){
       if (this->dir_name.isEmpty()){
           if (db_icon.isExistsByName(this->prefix_name, txtName->text())){
-              QMessageBox::warning(this, tr("Error"), tr("Sorry, but icon named %1 already exists.").arg(txtName->text()));
+              QMessageBox::warning(this, tr("Error"), tr("Sorry, an icon named %1 already exists.").arg(txtName->text()));
               return;
           }
       } else {
           if (db_icon.isExistsByName(this->prefix_name, this->dir_name, txtName->text())){
-              QMessageBox::warning(this, tr("Error"), tr("Sorry, but icon named %1 already exists.").arg(txtName->text()));
+              QMessageBox::warning(this, tr("Error"), tr("Sorry, an icon named %1 already exists.").arg(txtName->text()));
               return;
           }
       }

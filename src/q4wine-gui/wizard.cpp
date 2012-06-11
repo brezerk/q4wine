@@ -336,10 +336,10 @@ bool Wizard::checkEntry(QString fileName, QString info, bool isFile){
         if (!QFile::exists(fileName)){
             switch (isFile){
    case FALSE:
-                QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory not exists.").arg(info));
+                QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory does not exist.").arg(info));
                 break;
    case TRUE:
-                QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary not exists.").arg(info));
+                QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary does not exist.").arg(info));
                 break;
             }
             return FALSE;

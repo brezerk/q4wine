@@ -220,11 +220,11 @@ void PrefixControlWidget::prefixDelete_Click(){
         return;
 
     if (prefixName=="Default"){
-            QMessageBox::warning(this, tr("Error"), tr("Sorry, you can't delete Default prefix."), QMessageBox::Ok);
+            QMessageBox::warning(this, tr("Error"), tr("Sorry, you cannot delete the Default prefix."), QMessageBox::Ok);
             return;
     }
 
-    if(QMessageBox::warning(this, tr("Warning"),	tr("Do you really wish to delete prefix named \"%1\" and all associated icons?").arg(prefixName), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
+    if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete the prefix named \"%1\" and all associated icons?").arg(prefixName), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
         if (db_icon.delIconsByPrefixName(prefixName))
             if(db_dir.delDir(prefixName))
                 db_prefix.delByName(prefixName);

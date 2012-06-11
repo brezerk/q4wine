@@ -137,7 +137,7 @@ void WineDriveDialog::cmdOk_Click(){
 	}
 
 	if (!QDir().exists(txtDrivePath->text())){
-		QMessageBox::warning(this, tr("Error"), tr("Sorry, drive directory not exists."), QMessageBox::Ok);
+		QMessageBox::warning(this, tr("Error"), tr("Sorry, drive directory does not exist."), QMessageBox::Ok);
 		return;
 	}
 
