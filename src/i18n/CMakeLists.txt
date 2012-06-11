@@ -24,6 +24,7 @@ add_custom_target (
     ${Q4WINE_CLI_SOURCES}
     ${Q4WINE_HELPER_SOURCES}
     -ts ${TS_I18N}
+    -locations relative
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 )
 
