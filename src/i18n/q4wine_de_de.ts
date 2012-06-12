@@ -126,17 +126,17 @@
     <message>
         <location line="-12"/>
         <source>Error: cannot read data from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler: Kann Daten von %1 nicht lesen.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Error: wrong or broken appdb xml version. This might be caused by an outdated application version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler: Falsche oder beschädigte AppDB-XML-Version. Die Anwendung muss eventuell aktualisiert werden.</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Search: No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche: Keine Ergebnisse gefunden.</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -188,7 +188,7 @@
     <message>
         <location line="+1"/>
         <source>View wine appdb categories list</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige Wine-AppDB-Kategorieliste an</translation>
     </message>
     <message>
         <source>View wine appdb categoryes list</source>
@@ -289,12 +289,13 @@
     <message>
         <location line="+8"/>
         <source>Sorry, specified %1 directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>TODO: Hint im Original hinzufügen.</translatorcomment>
+        <translation>Hoppla, das ausgewählte %1-Verzeichnis existiert nicht.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Sorry, specified %1 binary does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoppla, die ausgewählte %1-Programmdatei existiert nicht.</translation>
     </message>
     <message>
         <source>Sorry, specified %1 directory not exists.</source>
@@ -552,12 +553,12 @@
     <message>
         <location line="-969"/>
         <source>Libs (32bit):</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibliotheken (32 Bit):</translation>
     </message>
     <message>
         <location line="+57"/>
         <source>Libs (64bit):</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibliotheken (64 Bit):</translation>
     </message>
     <message>
         <location line="+79"/>
@@ -1271,12 +1272,12 @@ Mehr dazu unter Hilfe.</translation>
         <location line="-635"/>
         <location line="+731"/>
         <source>Cannot read desktop paths!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann Desktop-Pfade nicht einlesen!</translation>
     </message>
     <message>
         <location line="-705"/>
         <source>Cannot remove symlink: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann Symlink nicht entfernen: %1</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1286,14 +1287,14 @@ Mehr dazu unter Hilfe.</translation>
         <location line="+20"/>
         <location line="+20"/>
         <source>Cannot symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann &quot;%1&quot; nicht auf &quot;%2&quot; verlinken</translation>
     </message>
     <message>
         <location line="-109"/>
         <location line="+1030"/>
         <location line="+8"/>
         <source>Cannot create dir: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann Verzeichnis nicht erstellen: %1</translation>
     </message>
     <message>
         <location line="-1027"/>
@@ -1302,7 +1303,7 @@ Mehr dazu unter Hilfe.</translation>
         <location line="+20"/>
         <location line="+20"/>
         <source>Cannot remove dir: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann Verzeichnis nicht entfernen: %1</translation>
     </message>
     <message>
         <location line="+470"/>
@@ -1325,7 +1326,7 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="+63"/>
         <source>Sorry, You cannot delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Wine-Laufwerk C: kann nicht gelöscht oder verändert werden.&lt;br&gt;Es kann jedoch in den Präfix-Einstellungen gesetzt werden.</translation>
     </message>
     <message>
         <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
@@ -1948,13 +1949,13 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="+5"/>
         <source>Selected working directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewähltes Arbeitsverzeichnis existiert nicht.</translation>
     </message>
     <message>
         <location line="+12"/>
         <location line="+5"/>
         <source>Sorry, an icon named %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoppla, ein Icon mit dem Namen &quot;%1&quot; existiert bereits.</translation>
     </message>
     <message>
         <source>Selected working directory not exists.</source>
@@ -2203,12 +2204,12 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="-35"/>
         <source>Sorry, file cannot be removed:&lt;br&gt;%1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei kann nicht entfernt werden:&lt;br&gt;%1.</translation>
     </message>
     <message>
         <location line="+35"/>
         <source>Sorry, file cannot be created:&lt;br&gt;%1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei kann nicht erstellt werden:&lt;br&gt;%1.</translation>
     </message>
     <message>
         <source>Sorry, i can&apos;t remove file: &lt;br&gt;%1.</source>
@@ -2378,7 +2379,7 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="+47"/>
         <source>Do not show this dialog next time</source>
-        <translation type="unfinished">Diesen Dialog nicht mehr anzeigen</translation>
+        <translation>Diesen Dialog nicht mehr anzeigen</translation>
     </message>
     <message>
         <source>Don&apos;t show this dialog next time</source>
@@ -2474,7 +2475,7 @@ Weitere Informationen unter Hilfe.</translation>
         <location line="-228"/>
         <location line="+228"/>
         <source>Logging enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Logging aktiviert</translation>
     </message>
     <message>
         <location line="-227"/>
@@ -2482,13 +2483,13 @@ Weitere Informationen unter Hilfe.</translation>
         <location line="+227"/>
         <location line="+1"/>
         <source>Disable logging</source>
-        <translation type="unfinished"></translation>
+        <translation>Logging deaktivieren</translation>
     </message>
     <message>
         <location line="-225"/>
         <location line="+217"/>
         <source>Logging disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Logging deaktiviert</translation>
     </message>
     <message>
         <location line="-216"/>
@@ -2496,7 +2497,7 @@ Weitere Informationen unter Hilfe.</translation>
         <location line="+216"/>
         <location line="+1"/>
         <source>Enable logging</source>
-        <translation type="unfinished"></translation>
+        <translation>Logging aktivieren</translation>
     </message>
     <message>
         <location line="-166"/>
@@ -2687,7 +2688,8 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="+69"/>
         <source>It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you wish to remove it?</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>TODO: Original.</translatorcomment>
+        <translation>Es scheint schon eine Instanz von q4wine zu laufen, oder das Programm wurde fehlerhaft beendet. Soll die Socket-Datei entfernt werden?</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -2696,24 +2698,24 @@ Weitere Informationen unter Hilfe.</translation>
         <location line="+12"/>
         <location line="+10"/>
         <source>helper notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Hilfe-Benachrichtigung</translation>
     </message>
     <message>
         <location line="-13"/>
         <location line="+3"/>
         <source>Cannot start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann Programm nicht starten: &quot;%1&quot; für Präfix: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+3"/>
         <source>Cannot start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann Konsole nicht starten für Programm: &quot;%1&quot; in Präfix: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location line="+276"/>
         <source>Sorry, the install wizard has not been implemented yet. It will be available in a future version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Installationsassistent ist noch nicht implementiert. Er wird in einer zukünftigen Version verfügbar sein.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -2725,12 +2727,12 @@ Weitere Informationen unter Hilfe.</translation>
         <location line="+186"/>
         <location line="+3"/>
         <source>Binary &quot;%1&quot; does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Programm &quot;%1&quot; existiert nicht.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Cannot run binary</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann Programm nicht ausführen</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+319"/>
@@ -3044,7 +3046,7 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="-56"/>
         <source>Create new Fake Drive configuration. Old Fake Drive will be removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue Konfiguration für virtuelles Laufwerk erstellen. Das alte virtuelle Laufwerk wird entfernt.</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -3055,13 +3057,13 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="-75"/>
         <source>Update Fake Drive configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisiere Konfiguration für virtuelles Laufwerk.</translation>
     </message>
     <message>
         <location line="+4"/>
         <location line="+88"/>
         <source>Install or update Winetricks script</source>
-        <translation type="unfinished"></translation>
+        <translation>Installiere oder aktualisiere Winetricks-Skript</translation>
     </message>
     <message>
         <location line="-87"/>
@@ -3072,7 +3074,7 @@ Weitere Informationen unter Hilfe.</translation>
         <location line="+2"/>
         <location line="+82"/>
         <source>Refresh Winetricks application list</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisiere Winetricks-Anwendungsliste</translation>
     </message>
     <message>
         <location line="-81"/>
@@ -3181,12 +3183,12 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="+0"/>
         <source>Sorry, you cannot delete the Default prefix.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Standard-Präfix kann nicht gelöscht werden.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="unfinished"></translation>
+        <translation>Soll der Präfix &quot;%1&quot; und alle damit verbundenen Icons wirklich gelöscht werden?</translation>
     </message>
     <message>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
@@ -3281,7 +3283,7 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="+6"/>
         <source>Sorry, but prefix named %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoppla, ein Präfix mit dem Namen &quot;%1&quot; existiert bereits.</translation>
     </message>
     <message>
         <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
@@ -3371,7 +3373,7 @@ Note: leave it blank for default.</source>
         <location line="-32"/>
         <source>If you wish to use different Wine versions, you may wish to set custom Wine paths here.
 Note: leave it blank for default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um eine andere Version von Wine zu verwenden, können hier angepasste Pfade gesetzt werden. Hinweis: Leere Felder setzen die Standardwerte.</translation>
     </message>
     <message>
         <location line="+76"/>
@@ -3407,7 +3409,7 @@ Note: leave it blank for default.</source>
         <location line="+27"/>
         <location line="+1"/>
         <source>Expand prefix tree</source>
-        <translation type="unfinished"></translation>
+        <translation>Präfix ausklappen</translation>
     </message>
     <message>
         <location line="-24"/>
@@ -3415,27 +3417,27 @@ Note: leave it blank for default.</source>
         <location line="+28"/>
         <location line="+1"/>
         <source>Collapse prefix tree</source>
-        <translation type="unfinished"></translation>
+        <translation>Präfix einklappen</translation>
     </message>
     <message>
         <location line="-23"/>
         <source>Import prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Präfixe importieren</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Import prefixes from ~/.local/share/wineprefixes/</source>
-        <translation type="unfinished"></translation>
+        <translation>Präfixe aus ~/.local/share/wineprefixes/ importieren</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Export prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Präfixe exportieren</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Export prefixes to ~/.local/share/wineprefixes/</source>
-        <translation type="unfinished"></translation>
+        <translation>Präfixe nach ~/.local/share/wineprefixes/ exportieren</translation>
     </message>
 </context>
 <context>
@@ -3497,18 +3499,18 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-90"/>
         <source>Sorry. It seems that the directory already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoppla, das Verzeichnis scheint schon zu existieren.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Sorry. It seems that the directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoppla, das Verzeichnis scheint schon zu existieren.&lt;br /&gt;Bitte einen anderen Namen wählen oder abbrechen.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Do you really wish to delete the folder named &quot;%1&quot; and all associated icons?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Soll der Präfix &quot;%1&quot; und alle damit verbundenen Icons wirklich gelöscht werden?</translation>
     </message>
     <message>
         <location line="+72"/>
@@ -3696,12 +3698,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+83"/>
         <source>Sorry, you cannot delete the Default prefix.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Standard-Präfix kann nicht gelöscht werden.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="unfinished"></translation>
+        <translation>Soll der Präfix &quot;%1&quot; und alle damit verbundenen Icons wirklich gelöscht werden?</translation>
     </message>
     <message>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
@@ -3845,12 +3847,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-5"/>
         <source>It seems that the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Prozess wurde scheinbar normal beendet.&lt;br&gt;&lt;br&gt;STDERR Log:&lt;br&gt;%1</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>It seems that the process crashed.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Prozess scheint abgestürzt zu sein.&lt;br&gt;&lt;br&gt;STDERR Log:&lt;br&gt;%1</translation>
     </message>
     <message>
         <source>It seems the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
@@ -3987,7 +3989,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-74"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Präfix &quot;%1&quot; existiert nicht. &quot;%2-cli -pl&quot; für eine Präfix-Liste ausführen.</translation>
     </message>
     <message>
         <location line="+75"/>
@@ -3998,7 +4000,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-70"/>
         <source>Icon named &quot;%1&quot; does not exist.  Run &quot;%2-cli -il&quot; for icon list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Verknüpfung &quot;%1&quot; existiert nicht. Führe &quot;%2-cli -il&quot; aus um eine Liste der Verknüpfungen auszugeben.</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -4008,7 +4010,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+14"/>
         <source>Dir named &quot;%1&quot; does not exist. Run &quot;%2-cli -dl&quot; for dir list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Verzeichnis &quot;%1&quot; existiert nicht. Führe &quot;%2-cli -dl&quot; aus um eine Liste der Verzeichnisse auszugeben.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -4051,17 +4053,17 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+26"/>
         <source>Unmounting mount point &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aushängen von Mount-Punkt &quot;%1&quot;.</translation>
     </message>
     <message>
         <location line="+49"/>
         <source>File &quot;%1&quot; does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei &quot;%1&quot; existiert nicht.</translation>
     </message>
     <message>
         <location line="+32"/>
         <source>sets the current directory name</source>
-        <translation type="unfinished"></translation>
+        <translation>Setzt den aktuellen Verzeichnisnamen</translation>
     </message>
     <message>
         <source>No disc image &quot;%1&quot; exists. Run &quot;%2-cli -cl&quot; for disc image list.</source>
@@ -4210,7 +4212,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>sets the cd image name</source>
-        <translation type="unfinished"></translation>
+        <translation>Setzt den CD-Abbildnamen</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4220,32 +4222,32 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>sends -9 term signal to current prefix process or for all prefixes processes</source>
-        <translation type="unfinished"></translation>
+        <translation>Sendet TERM-Signal (-9) an den aktuellen (oder alle) Präfix-Prozess(e)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>output all existing prefixes names and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Gibt alle Präfix-Namen aus und beendet sich</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>output all existing dir names for current prefix and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Gibt alle existierenden Verzeichnisnamen für aktuellen Präfix aus und beendet sich</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>output all existing icon names for current prefix/directory and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Gibt alle existierenden Icon-Namen für aktuellen Präfix/Verzeichnis aus und beendet sich</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>mount a cd image or drive for current prefix and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Hängt ein CD-Abbild oder Laufwerk ein und beendet sich</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>unmount a cd image or drive for current prefix and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Hängt ein CD-Abbild oder Laufwerk aus und beendet sich</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -4372,7 +4374,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>sets program virtual desktop resolution</source>
-        <translation type="unfinished"></translation>
+        <translation>Setzt ddie Auflösung des virtuellen Desktops</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4393,7 +4395,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>sets program LANG variable</source>
-        <translation type="unfinished"></translation>
+        <translation>Setzt die LANG-Variable des Programms</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4403,12 +4405,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>execute script before run program</source>
-        <translation type="unfinished"></translation>
+        <translation>Skript ausführen, bevor das Programm gestartet wird</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>execute script after program run</source>
-        <translation type="unfinished"></translation>
+        <translation>Skript ausführen, nachdem das Programm ausgeführt wurde</translation>
     </message>
 </context>
 <context>
@@ -4465,7 +4467,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+5"/>
         <source>Selected working directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewähltes Arbeitsverzeichnis existiert nicht.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -4671,7 +4673,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+5"/>
         <source>Sorry, drive directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoppla, das Laufwerksverzeichnis existiert nicht.</translation>
     </message>
     <message>
         <source>Sorry, drive directory not exists.</source>
@@ -4761,12 +4763,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-37"/>
         <source>This action will send a KILL(-9) signal to selected processes&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really wish to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Dies sendet ein KILL-Signal (-9) an die ausgewählten Prozesse&lt;br&gt;&lt;br&gt;Es besteht ein hohes Risiko, dass Wine dadurch instabil wird.&lt;br&gt;&lt;br&gt;Wollen Sie wirklich fortfahren?</translation>
     </message>
     <message>
         <location line="+21"/>
         <source>Cannot run: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht ausführbar: %1</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -4776,12 +4778,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+11"/>
         <source>This action will send a KILL(-9) signal to all wine processes of the selected prefixes&lt;br&gt;&lt;br&gt;Do you really wish to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Dies sendet ein KILL-Signal (-9) an alle Wine-Prozesse für die ausgewählten Präfixe&lt;br&gt;&lt;br&gt;Wollen Sie wirklich fortfahren?</translation>
     </message>
     <message>
         <location line="+49"/>
         <source>It seems that the process %1 has been reniced to %2 successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Priorität von Prozess %1 wurde erfolgreich auf %2 gesetzt.</translation>
     </message>
     <message>
         <source>This action will send a KILL(-9) signal to selected processes&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
@@ -4925,12 +4927,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-218"/>
         <source>Sorry, specified %1 directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoppla, das ausgewählte %1-Verzeichnis existiert nicht.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Sorry, specified %1 binary does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoppla, die ausgewählte %1-Programmdatei existiert nicht.</translation>
     </message>
     <message>
         <location line="+248"/>
