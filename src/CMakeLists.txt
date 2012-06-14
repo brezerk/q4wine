@@ -67,7 +67,7 @@ FIND_PACKAGE(Qt4 REQUIRED)
              IF(QT_QTDBUS_FOUND)
                  SET(QT_USE_QTDBUS 1)
              ELSE(QT_QTDBUS_FOUND)
-                 MESSAGE(FATAL ERROR "Qt DBUS libraries missing.")
+                 MESSAGE(FATAL ERROR "Qt D-Bus libraries missing.")
              ENDIF(QT_QTDBUS_FOUND)
          ENDIF(WITH_DBUS)
 

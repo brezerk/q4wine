@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# This is cealnup script for cleaning make, tmp and other build files.
+# This is a cleanup script for cleaning make, tmp and other build files.
 #
-# Plz. Use it before commit project to git
+# Plz. Use it before commit project to git.
 
 echo "Run: make clean";
 make clean;

@@ -96,7 +96,7 @@ LD_LIBRARY_PATH={$path_to_q4wine_prefix}/lib/ q4wine
 
 CMake, by default, will search for a qmake binary.
 On distributions with both qt3 and qt4 libraries installed, you may
-need to create symbolic link from "qmake-qt4" to "qmake".
+need to create symbolic link from "qmake" to "qmake-qt4".
 
 ls /usr/bin:
 lrwxrwxrwx 1 root root 23 2011-07-05 21:07 qmake -> qmake-qt4
