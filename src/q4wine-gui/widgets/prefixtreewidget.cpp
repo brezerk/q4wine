@@ -760,6 +760,10 @@ void PrefixTreeWidget::setDefaultFocus(QString prefixName, QString dirName){
             return;
         }
     } else {
+        //skip update
+        if (prefixName == this->prefixName)
+            return;
+
         for(int i=0; i < this->topLevelItemCount(); i++)
         {
             std::auto_ptr<QTreeWidgetItem> item(this->topLevelItem(i));
