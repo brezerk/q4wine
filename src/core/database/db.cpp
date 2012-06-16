@@ -200,5 +200,11 @@ bool DataBase::fixup(){
             return false;
         }
     }
+    if (!query.exec("SELECT run_string FROM prefix")){
+        if (!query.exec("ALTER TABLE prefix ADD COLUMN run_string TEXT")){
+            qDebug()<<"[EE] Cannot alter prefix table";
+            return false;
+        }
+    }
     return true;
 }

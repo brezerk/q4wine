@@ -51,6 +51,8 @@
 
 #define APPDB_EXPORT_VERSION "1.0"
 
+#define RUN_STRING_TEMPLATE "%CONSOLE_BIN% %CONSOLE_ARGS% %ENV_BIN% %ENV_ARGS% /bin/sh -c \"%WORK_DIR% %SET_NICE% %WINE_BIN% %VIRTUAL_DESKTOP% %PROGRAM_BIN% %PROGRAM_ARGS% 2>&1 \""
+
 #define APPDB_HOSTNAME "q4wine.brezblock.org.ua"
 #define BUGS_HOSTNAME "bugs.winehq.org"
 

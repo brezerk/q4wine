@@ -38,7 +38,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
-// Fix for GNU/Hurd, see: 
+// Fix for GNU/Hurd, see:
 // https://www.gnu.org/software/hurd/community/gsoc/project_ideas/maxpath.html
 // http://insanecoding.blogspot.com/2007/11/pathmax-simply-isnt.html
 // The same limitation as in Linux is used here (see <linux/limits.h>):
@@ -95,6 +95,7 @@ private:
     QString prefixLoader;
     QString prefixServer;
     QString prefixBinary;
+    QString prefixRunString;
 
     QString programBinary;
     QString programBinaryName;

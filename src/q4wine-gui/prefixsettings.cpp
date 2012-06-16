@@ -97,6 +97,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
     txtPrefixName->setText(prefix_name);
     txtPrefixPath->setText(result.value("path"));
+    txtRunString->setText(result.value("run_string"));
 
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
@@ -144,6 +145,7 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent,
     cmdGetMountPoint->installEventFilter(this);
 
     //comboArchList->setEnabled(true);
+    txtRunString->setText(RUN_STRING_TEMPLATE);
 
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
@@ -194,12 +196,12 @@ void PrefixSettings::cmdOk_Click(){
     }
 
     if (this->addNew){
-        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboArchList->currentText(), this->comboWinDrive->currentText()))
+        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->text()))
             reject();
 
         CoreLib->createPrefixDBStructure(txtPrefixName->text());
     } else {
-        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), this->prefix_name, comboArchList->currentText(), this->comboWinDrive->currentText()))
+        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), this->prefix_name, comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->text()))
             reject();
     }
 

@@ -27,9 +27,21 @@
         <source>Authors</source>
         <translation>Аutores</translation>
     </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;q4wine 0.121&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;q4wine 0.121&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
     <message utf8="true">
         <source>© 2008–2011, brezblock core team.</source>
-        <translation type="obsolete">© 2008–2010, equipe do núcleo brezblock. {2008–2011,?}</translation>
+        <translation type="obsolete">© 2008–2011, equipe principal brezblock.</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -41,7 +53,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Verdana&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {3C?} {4.0/?} {3.?} {40/?} {1&quot;?} {13p?} {400;?} {0p?} {0p?} {0p?} {0p?} {0;?} {0p?} {10p?}</translation>
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location line="-48"/>
@@ -711,7 +723,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../q4wine-gui/appsettings.cpp" line="-587"/>
         <source>generic</source>
-        <translation type="unfinished"></translation>
+        <translation>genérico</translation>
     </message>
     <message>
         <location line="+150"/>
@@ -1094,7 +1106,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+123"/>
         <source>Disable graphical crash dialog</source>
-        <translation>Desabilitar a caixa de diálogo de crash gráfico.</translation>
+        <translation>Desabilitar o diálogo de crash gráfico</translation>
     </message>
     <message>
         <location line="-312"/>
@@ -1396,7 +1408,7 @@ Consulte a ajuda para detalhes.</translation>
         <location line="+26"/>
         <location line="+1"/>
         <source>Alphabetic sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordem alfabética ascendente</translation>
     </message>
     <message>
         <location line="-68"/>
@@ -1406,7 +1418,7 @@ Consulte a ajuda para detalhes.</translation>
         <location line="+8"/>
         <location line="+1"/>
         <source>Sort ascending by create order</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar ascendente por ordem de criação</translation>
     </message>
     <message>
         <location line="-76"/>
@@ -1414,7 +1426,7 @@ Consulte a ajuda para detalhes.</translation>
         <location line="+61"/>
         <location line="+1"/>
         <source>Alphabetic sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordem alfabética descendente</translation>
     </message>
     <message>
         <location line="-50"/>
@@ -1422,7 +1434,7 @@ Consulte a ajuda para detalhes.</translation>
         <location line="+66"/>
         <location line="+1"/>
         <source>Sort descending by create order</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar descendente por ordem de criação</translation>
     </message>
 </context>
 <context>
@@ -1992,7 +2004,7 @@ Consulte a ajuda para detalhes.</translation>
     <message>
         <location line="+7"/>
         <source>Note: This option will disable Pre and Post run scripts.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: Esta opção irá desativar Pré e Pós execução de scripts.</translation>
     </message>
     <message>
         <location line="+48"/>
@@ -2013,22 +2025,22 @@ Consulte a ajuda para detalhes.</translation>
         <location line="+60"/>
         <location line="+6"/>
         <source>Scripts</source>
-        <translation type="unfinished"></translation>
+        <translation>Scripts</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Note: pre and post run scripts will be not executed in case if program will be executed with &quot;Run With Output in Console&quot; option.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: pré e pós execução dos scripts não serão executados em caso se o programa for executado como a opção &quot;Executar Com Saída No Console&quot;.</translation>
     </message>
     <message>
         <location line="+28"/>
         <source>Pre run:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pré execução:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>Post run:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pós execução:</translation>
     </message>
     <message>
         <location line="+48"/>
@@ -2096,13 +2108,13 @@ Consulte a ajuda para detalhes.</translation>
     <message>
         <location line="+11"/>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Desabilitado</translation>
     </message>
     <message>
         <location line="+68"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
-        <translation type="unfinished"></translation>
+        <translation>Shell script (*.sh)</translation>
     </message>
     <message>
         <location line="-178"/>
@@ -2389,6 +2401,10 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="unfinished">Não mostrar este diálogo da próxima vez</translation>
     </message>
     <message>
+        <source>Don&apos;t show this dialog next time</source>
+        <translation type="obsolete">Não mostrar este diálogo da próxima vez</translation>
+    </message>
+    <message>
         <location line="+20"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
@@ -2472,13 +2488,13 @@ Consulte a ajuda para detalhes.</translation>
         <location line="+217"/>
         <location line="+6"/>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Status</translation>
     </message>
     <message>
         <location line="-228"/>
         <location line="+228"/>
         <source>Logging enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Log habilitado</translation>
     </message>
     <message>
         <location line="-227"/>
@@ -2486,13 +2502,13 @@ Consulte a ajuda para detalhes.</translation>
         <location line="+227"/>
         <location line="+1"/>
         <source>Disable logging</source>
-        <translation type="unfinished"></translation>
+        <translation>Desabilitar log</translation>
     </message>
     <message>
         <location line="-225"/>
         <location line="+217"/>
         <source>Logging disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Log desabilitado</translation>
     </message>
     <message>
         <location line="-216"/>
@@ -2500,7 +2516,7 @@ Consulte a ajuda para detalhes.</translation>
         <location line="+216"/>
         <location line="+1"/>
         <source>Enable logging</source>
-        <translation type="unfinished"></translation>
+        <translation>Habilitar log</translation>
     </message>
     <message>
         <location line="-166"/>
@@ -2995,25 +3011,25 @@ Consulte a ajuda para detalhes.</translation>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="+115"/>
         <location line="+199"/>
         <source>Name</source>
-        <translation type="unfinished">Nome</translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <location line="-199"/>
         <location line="+199"/>
         <source>Description</source>
-        <translation type="unfinished">Descrição</translation>
+        <translation>Descrição</translation>
     </message>
     <message>
         <location line="-148"/>
         <location line="+1"/>
         <source>Manage prefixes</source>
-        <translation type="unfinished">Gerenciar prefixos</translation>
+        <translation>Gerenciar prefixos</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+1"/>
         <source>Clear search field</source>
-        <translation type="unfinished">Limpar campo localizar</translation>
+        <translation>Limpar campo localizar</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3021,7 +3037,7 @@ Consulte a ajuda para detalhes.</translation>
         <location line="+234"/>
         <location line="+1"/>
         <source>Alphabetic sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordem alfabética descendente</translation>
     </message>
     <message>
         <location line="-232"/>
@@ -3029,81 +3045,81 @@ Consulte a ajuda para detalhes.</translation>
         <location line="+225"/>
         <location line="+1"/>
         <source>Alphabetic sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordem alfabética descendente</translation>
     </message>
     <message>
         <location line="-135"/>
         <location line="+57"/>
         <source>Create Fake Drive</source>
-        <translation type="unfinished">Criar Unidade Virtual</translation>
+        <translation>Criar Unidade Virtual</translation>
     </message>
     <message>
         <location line="-56"/>
         <source>Create new Fake Drive configuration. Old Fake Drive will be removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Criar uma nova configuração da Unidade Virtual. A Unidade Virtual Antiga será removida.</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+76"/>
         <source>Update Fake Drive</source>
-        <translation type="unfinished">Atualizar Unidade Virtual</translation>
+        <translation>Atualizar Unidade Virtual</translation>
     </message>
     <message>
         <location line="-75"/>
         <source>Update Fake Drive configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Atualizar configuração da Unidade Virtual.</translation>
     </message>
     <message>
         <location line="+4"/>
         <location line="+88"/>
         <source>Install or update Winetricks script</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar ou atualizar o script Winetricks</translation>
     </message>
     <message>
         <location line="-87"/>
         <source>Install new or update installed Winetricks script.</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar nova ou atualizar script Winetricks instalado.</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+82"/>
         <source>Refresh Winetricks application list</source>
-        <translation type="unfinished"></translation>
+        <translation>Atualizar lista de programas do Winetricks</translation>
     </message>
     <message>
         <location line="-81"/>
         <source>Create or update q4wine&apos;s cache of Winetricks appications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Criar ou atualizar cache de q4wine dos programas Winetricks.</translation>
     </message>
     <message>
         <location line="+47"/>
         <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>A fake drive already exists within &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Do you wish to remove &lt;b&gt;all&lt;/b&gt; files from this prefix?</source>
-        <translation type="unfinished">Um unidade virtual já existe dentro de &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Você deseja remover &lt;b&gt;todos&lt;/b&gt; os arquivos deste prefxo?</translation>
+        <translation>Um unidade virtual já existe dentro de &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Você deseja remover &lt;b&gt;todos&lt;/b&gt; os arquivos deste prefxo?</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Removing old fake drive.&lt;br&gt;This may take awhile...</source>
-        <translation type="unfinished">Removendo a unidade virtual antiga.&lt;br&gt;Isto pode levar um tempo...</translation>
+        <translation>Removendo a unidade virtual antiga.&lt;br&gt;Isto pode levar um tempo...</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Removing old fake drive</source>
-        <translation type="unfinished">Removendo unidade virtual antiga</translation>
+        <translation>Removendo unidade virtual antiga</translation>
     </message>
     <message>
         <location line="+17"/>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before update it!</source>
-        <translation type="unfinished">Desculpe, nenhuma configuração da unidade virtual encontrado.&lt;br&gt;Criar configuração de unidade virtual antes de atualizá-lo!</translation>
+        <translation>Desculpe, nenhuma configuração da unidade virtual encontrado.&lt;br&gt;Criar a configuração de unidade virtual antes de atualizá-lo!</translation>
     </message>
 </context>
 <context>
@@ -3314,12 +3330,12 @@ Note: leave it blank for default.</source>
 Nota: deixe em branco para o padrão.</translation>
     </message>
     <message>
-        <location line="+254"/>
+        <location line="+302"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location line="-207"/>
+        <location line="-255"/>
         <source>Bin:</source>
         <translation>Binário:</translation>
     </message>
@@ -3346,7 +3362,22 @@ Note: leave it blank for default.</source>
         <translation>Bibliotecas:</translation>
     </message>
     <message>
-        <location line="+48"/>
+        <location line="+43"/>
+        <source>Advanced</source>
+        <translation type="unfinished">Avançado</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Execution template string</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>This template will be used to run wine programs. Normally you do not need to change it. See help for details. To restore default value, just leave it blank.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
         <source>Help</source>
         <translation>Ajuda</translation>
     </message>
@@ -3356,13 +3387,13 @@ Note: leave it blank for default.</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="+118"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="+119"/>
         <location line="+1"/>
         <source>Add new Prefix</source>
         <translation>Adicionar novo Prefixo</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+61"/>
         <location line="+6"/>
         <source>Error</source>
         <translation>Erro</translation>
@@ -3379,13 +3410,13 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
-        <translation type="obsolete">Desculpe, mas o prefixo chamado %1 já existe.</translation>
+        <translation type="obsolete">Um prefixo chamado Desculpe, mas o prefixo chamado %1 já existe.quot;%1Desculpe, mas o prefixo chamado %1 já existe.quot; já existe</translation>
     </message>
     <message>
         <location line="+41"/>
         <location line="+2"/>
         <source>Open File</source>
-        <translation type="unfinished">Abrir Arquivo</translation>
+        <translation>Abrir Arquivo</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -3884,13 +3915,13 @@ Note: leave it blank for default.</source>
         <location line="+8"/>
         <location line="+53"/>
         <source>Waiting for Wine process to finish...</source>
-        <translation>Aguardando pelo wine terminar o processo.</translation>
+        <translation>Aguardando pelo processo Wine terminar...</translation>
     </message>
     <message>
         <location line="-53"/>
         <location line="+53"/>
         <source>There are %1 processes running for prefix %2.</source>
-        <translation>Há %1 processos em execução para o prefixo %2</translation>
+        <translation>Há %1 processos em execução para o prefixo %2.</translation>
     </message>
     <message>
         <location line="-53"/>
@@ -3913,8 +3944,8 @@ Note: leave it blank for default.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/database/prefix.cpp" line="+332"/>
-        <location line="+63"/>
+        <location filename="../core/database/prefix.cpp" line="+337"/>
+        <location line="+69"/>
         <source>Default</source>
         <translation>Padrão</translation>
     </message>
@@ -4386,12 +4417,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>execute script before run program</source>
-        <translation type="unfinished"></translation>
+        <translation>executar script antes de executar o programa</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>execute script after program run</source>
-        <translation type="unfinished"></translation>
+        <translation>executar script depois de executar o programa</translation>
     </message>
 </context>
 <context>
@@ -4575,7 +4606,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+9"/>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Desabilitar</translation>
     </message>
     <message>
         <location line="+153"/>
@@ -4943,7 +4974,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+124"/>
         <source>generic</source>
-        <translation type="unfinished"></translation>
+        <translation>genérico</translation>
     </message>
     <message>
         <location line="+68"/>

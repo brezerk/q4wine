@@ -131,7 +131,7 @@ QHash<QString,QString> Prefix::getByName(const QString prefix_name) const{
     QSettings settings(APP_SHORT_NAME, "default");
     settings.beginGroup("wine");
 
-    query.prepare("SELECT path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, id, name, arch, mountpoint_windrive FROM prefix WHERE name=:prefix_name");
+    query.prepare("SELECT path, wine_dllpath, wine_loader, wine_server, wine_exec, cdrom_mount, id, name, arch, mountpoint_windrive, run_string FROM prefix WHERE name=:prefix_name");
     query.bindValue(":prefix_name", prefix_name);
 
     if (query.exec()){
@@ -181,6 +181,11 @@ QHash<QString,QString> Prefix::getByName(const QString prefix_name) const{
             values.insert("name", query.value(7).toString());
             values.insert("arch", query.value(8).toString());
             values.insert("mountpoint_windrive", query.value(9).toString());
+            if (!query.value(10).toString().isEmpty()){
+                values.insert("run_string", query.value(10).toString());
+            } else {
+                values.insert("run_string", RUN_STRING_TEMPLATE);
+            }
         }
     } else {
         qDebug()<<"SqlError: "<<query.lastError();
@@ -287,9 +292,9 @@ bool Prefix::delByName(const QString prefix_name) const{
     return true;
 }
 
-bool Prefix::addPrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString arch, const QString mountpoint_windrive) const{
+bool Prefix::addPrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString arch, const QString mountpoint_windrive, const QString run_string) const{
     QSqlQuery query;
-        query.prepare("INSERT INTO prefix(name, path, wine_exec, wine_server, wine_loader, wine_dllpath, cdrom_mount, arch, mountpoint_windrive) VALUES(:prefix_name, :prefix_path, :wine_exec, :wine_server, :wine_loader, :wine_dllpath, :cdrom_mount, :arch, :mountpoint_windrive);");
+        query.prepare("INSERT INTO prefix(name, path, wine_exec, wine_server, wine_loader, wine_dllpath, cdrom_mount, arch, mountpoint_windrive, run_string) VALUES(:prefix_name, :prefix_path, :wine_exec, :wine_server, :wine_loader, :wine_dllpath, :cdrom_mount, :arch, :mountpoint_windrive, :run_string);");
 
     query.bindValue(":prefix_name", prefix_name);
 
@@ -341,6 +346,12 @@ bool Prefix::addPrefix(const QString prefix_name, const QString prefix_path, con
         query.bindValue(":mountpoint_windrive", mountpoint_windrive);
     }
 
+    if (run_string.isEmpty()){
+        query.bindValue(":run_string", QVariant(QVariant::String));
+    } else {
+        query.bindValue(":run_string", run_string);
+    }
+
     if (!query.exec()){
         qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
         return false;
@@ -349,9 +360,9 @@ bool Prefix::addPrefix(const QString prefix_name, const QString prefix_path, con
     return true;
 }
 
-bool Prefix::updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString old_prefix_name, const QString arch, const QString mountpoint_windrive) const{
+bool Prefix::updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString old_prefix_name, const QString arch, const QString mountpoint_windrive, const QString run_string) const{
     QSqlQuery query;
-        query.prepare("UPDATE prefix SET wine_dllpath=:wine_dllpath, wine_loader=:wine_loader, wine_server=:wine_server, wine_exec=:wine_exec, cdrom_mount=:cdrom_mount, arch=:arch, name=:prefix_name, mountpoint_windrive=:mountpoint_windrive, path=:prefix_path WHERE name=:old_prefix_name");
+        query.prepare("UPDATE prefix SET wine_dllpath=:wine_dllpath, wine_loader=:wine_loader, wine_server=:wine_server, wine_exec=:wine_exec, cdrom_mount=:cdrom_mount, arch=:arch, name=:prefix_name, mountpoint_windrive=:mountpoint_windrive, path=:prefix_path, run_string=:run_string WHERE name=:old_prefix_name");
 
     query.bindValue(":prefix_name", prefix_name);
     query.bindValue(":old_prefix_name", old_prefix_name);
@@ -403,6 +414,13 @@ bool Prefix::updatePrefix(const QString prefix_name, const QString prefix_path, 
     } else {
         query.bindValue(":mountpoint_windrive", mountpoint_windrive);
     }
+
+    if (run_string.isEmpty()){
+        query.bindValue(":run_string", QVariant(QVariant::String));
+    } else {
+        query.bindValue(":run_string", run_string);
+    }
+
     if (!query.exec()){
         qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
         return false;

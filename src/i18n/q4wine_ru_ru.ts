@@ -3108,12 +3108,12 @@ See help for details.</source>
         <translation>Параметры Wine</translation>
     </message>
     <message>
-        <location line="+254"/>
+        <location line="+302"/>
         <source>OK</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location line="-207"/>
+        <location line="-255"/>
         <source>Bin:</source>
         <translation>Исп. файл:</translation>
     </message>
@@ -3141,7 +3141,22 @@ Note: leave it blank for default.</source>
         <translation>Библиотеки:</translation>
     </message>
     <message>
-        <location line="+48"/>
+        <location line="+43"/>
+        <source>Advanced</source>
+        <translation type="unfinished">Дополнительно</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Execution template string</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>This template will be used to run wine programs. Normally you do not need to change it. See help for details. To restore default value, just leave it blank.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
         <source>Help</source>
         <translation>Помощь</translation>
     </message>
@@ -3151,13 +3166,13 @@ Note: leave it blank for default.</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="+118"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="+119"/>
         <location line="+1"/>
         <source>Add new Prefix</source>
         <translation>Создать новый префикс</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+61"/>
         <location line="+6"/>
         <source>Error</source>
         <translation>Ошибка</translation>
@@ -3682,8 +3697,8 @@ Note: leave it blank for default.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/database/prefix.cpp" line="+332"/>
-        <location line="+63"/>
+        <location filename="../core/database/prefix.cpp" line="+337"/>
+        <location line="+69"/>
         <source>Default</source>
         <translation>Умолчания</translation>
     </message>

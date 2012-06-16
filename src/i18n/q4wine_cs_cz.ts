@@ -3271,13 +3271,13 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
 <context>
     <name>PrefixSettings</name>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="+118"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="+119"/>
         <location line="+1"/>
         <source>Add new Prefix</source>
         <translation>Přidat novou předponu</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+61"/>
         <location line="+6"/>
         <source>Error</source>
         <translation>Chyba</translation>
@@ -3368,12 +3368,12 @@ Note: leave it blank for default.</source>
 Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</translation>
     </message>
     <message>
-        <location line="+254"/>
+        <location line="+302"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location line="-207"/>
+        <location line="-255"/>
         <source>Bin:</source>
         <translation>Spustitelný soubor:</translation>
     </message>
@@ -3399,7 +3399,22 @@ Note: leave it blank for default.</source>
         <translation>Knihovny:</translation>
     </message>
     <message>
-        <location line="+48"/>
+        <location line="+43"/>
+        <source>Advanced</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Execution template string</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>This template will be used to run wine programs. Normally you do not need to change it. See help for details. To restore default value, just leave it blank.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+38"/>
         <source>Help</source>
         <translation>Nápověda</translation>
     </message>
@@ -3927,8 +3942,8 @@ Note: leave it blank for default.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/database/prefix.cpp" line="+332"/>
-        <location line="+63"/>
+        <location filename="../core/database/prefix.cpp" line="+337"/>
+        <location line="+69"/>
         <source>Default</source>
         <translation>Výchozí</translation>
     </message>
