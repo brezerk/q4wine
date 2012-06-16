@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>696</width>
-    <height>436</height>
+    <width>694</width>
+    <height>434</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -251,7 +251,7 @@ p, li { white-space: pre-wrap; }
           <item>
            <widget class="QLabel" name="label_3">
             <property name="text">
-             <string notr="true">© 2008–2011, brezblock core team.</string>
+             <string notr="true">© 2008–2012, brezblock core team.</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
