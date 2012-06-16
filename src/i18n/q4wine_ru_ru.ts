@@ -3143,17 +3143,17 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+43"/>
         <source>Advanced</source>
-        <translation type="unfinished">Дополнительно</translation>
+        <translation>Дополнительно</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Execution template string</source>
-        <translation type="unfinished"></translation>
+        <translation>Шаблон строки запуска</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>This template will be used to run wine programs. Normally you do not need to change it. See help for details. To restore default value, just leave it blank.</source>
-        <translation type="unfinished"></translation>
+        <translation>Этот шаблон используется для запуска программ в WINE. Обычно нет необходимости его изменять. Подробности можно найти в справке. Чтобы восстановить значение по умолчанию, просто оставьте поле пустым.</translation>
     </message>
     <message>
         <location line="+38"/>
