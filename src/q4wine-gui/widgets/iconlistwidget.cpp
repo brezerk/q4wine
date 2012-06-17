@@ -226,7 +226,7 @@ void IconListWidget::startDrop(QList<QUrl> files){
 
             while (db_icon.isExistsByName(this->prefixName, this->dirName, fileName)){
                 bool ok=false;
-                fileName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, fileName , &ok);
+                fileName = QInputDialog::getText(this, tr("Sorry. It seems that the icon already exists."), tr("Sorry. It seems that icon already exists.<br>Please choose another name or cancel the operation."), QLineEdit::Normal, fileName , &ok);
 
                 if (!ok){
                     this->showContents("");
@@ -573,19 +573,19 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         subMenu.reset(new QMenu(tr("Copy to clipboard"), this));
 
         entry.reset(new QAction(tr("Directory path"), this));
-        entry->setStatusTip(tr("Copy application directory path to system's' clipboard"));
+        entry->setStatusTip(tr("Copy application directory path to system's clipboard"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyWrkDir_Click()));
         subMenu->addAction(entry.release());
 
         entry.reset(new QAction(tr("Application path"), this));
-        entry->setStatusTip(tr("Copy full application path to system's' clipboard"));
+        entry->setStatusTip(tr("Copy full application path to system's clipboard"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyProgramPath_Click()));
         subMenu->addAction(entry.release());
 
         subMenu->addSeparator();
 
         entry.reset(new QAction(CoreLib->loadIcon("data/q4wine.png"), tr("q4wine-cli cmd"), this));
-        entry->setStatusTip(tr("Copy q4wine-cli cmd for current application"));
+        entry->setStatusTip(tr("Copy q4wine-cli command for current application"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyQ4WineCmd_Click()));
         subMenu->addAction(entry.release());
 
@@ -596,7 +596,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
 
         std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("data/folder.png"), tr("Browse..."), this));
-        entry->setStatusTip(tr("Browse for other image"));
+        entry->setStatusTip(tr("Browse for another image"));
 
         connect(menuRun.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
         menuRun->addAction(entry.release());
@@ -749,7 +749,7 @@ void IconListWidget::iconRename_Click(void){
     QString newName = QInputDialog::getText(this, tr("Enter new icon name"), tr("Icon name:"), QLineEdit::Normal, iconItem->text(), &ok);
     if (ok && !newName.isEmpty()){
         while (db_icon.isExistsByName(this->prefixName, this->dirName, newName)){
-            newName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, newName, &ok);
+            newName = QInputDialog::getText(this, tr("Sorry. It seems that the icon already exists."), tr("Sorry. It seems that the icon already exists.<br>Please choose another name or cancel the operation."), QLineEdit::Normal, newName, &ok);
             if ((!ok) || (newName.isEmpty())){
                 iconItem.release();
                 return;
@@ -868,7 +868,7 @@ void IconListWidget::iconPaste_Click(void){
             ok=false;
 
             while (db_icon.isExistsByName(this->prefixName, this->dirName, newName)){
-                newName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, iconBuffer.names.at(i) , &ok);
+                newName = QInputDialog::getText(this, tr("Sorry. It seems that the icon already exists."), tr("Sorry. It seems that the icon already exists.<br>Please choose another name or cancel the operation."), QLineEdit::Normal, iconBuffer.names.at(i) , &ok);
                 if (!ok){
                     return;
                 }
@@ -1125,16 +1125,16 @@ void IconListWidget::menuMount_triggered(QAction* action){
     if (ret){
         emit(changeStatusText(tr("%1 successfully mounted.").arg(action->text())));
     } else {
-        emit(changeStatusText(tr("Fail to mount %1.").arg(action->text())));
+        emit(changeStatusText(tr("Failed to mount %1.").arg(action->text())));
     }
     return;
 }
 
 void IconListWidget::menuUmount_Click(void){
     if (CoreLib->umountImage(this->prefixName)){
-        emit(changeStatusText(tr("Drive successfully umounted.")));
+        emit(changeStatusText(tr("Drive successfully unmounted.")));
     } else {
-        emit(changeStatusText(tr("Fail to umount drive.")));
+        emit(changeStatusText(tr("Failed to unmount drive.")));
     }
     return;
 }

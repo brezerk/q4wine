@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
     if (app.sendMessage(""))
         return 0;
 
-    //! This is need for libq4wine-core.so import;
+    //! This is needed for libq4wine-core.so import;
     typedef void *CoreLibPrototype (bool);
     CoreLibPrototype *CoreLibClassPointer;
     std::auto_ptr<corelib> CoreLib;

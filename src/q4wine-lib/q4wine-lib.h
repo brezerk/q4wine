@@ -19,7 +19,7 @@
 
 /*!
  * \defgroup libq4wine libq4wine-core
- * \brief libq4wine-core pakage provide general functions for q4wine-gui and q4wine-cli pakages.
+ * \brief libq4wine-core package provides general functions for q4wine-gui and q4wine-cli packages.
  */
 
 #ifndef Q4WINELIB_H
@@ -87,7 +87,7 @@
 /*!
  * \class corelib
  * \ingroup libq4wine
- * \brief This class provide general core functions for q4wine.
+ * \brief This class provides general core functions for Q4Wine.
  *
  * It is not useful by itself, but helps to create user-side applications which
  * can use Q4Wine core functions;

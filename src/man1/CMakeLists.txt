@@ -46,7 +46,7 @@ ENDIF( RELEASE )
 
  ELSE (ARC)
     MESSAGE(STATUS "Compressor flags (USE_BZIP2 or USE_GZIP) not set --\n")
-    MESSAGE(STATUS "Installing not compressed man pages --\n")
+    MESSAGE(STATUS "Installing uncompressed man pages --\n")
 
 IF( RELEASE )
     install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/man1 DESTINATION

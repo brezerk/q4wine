@@ -22,11 +22,11 @@ option(WITH_DBUS "If ON, then build Q4Wine with QtDBus notification support" "ON
 option(LINGUAS "Language list" "en_us;ru_ru;uk_ua;pt_br;es_es;it_it;cs_cz;he_il")
 option(LIBS_ENTRY_PATH "Destination directory for q4wine-core library")
 
-MESSAGE("\n * Utility for management wine applications and prefixes")
+MESSAGE("\n * Utility for Wine applications and prefixes management.")
 MESSAGE(" * (C) 2008-2011, Alexey S. Malakhov")
 MESSAGE(" * http://brezblock.org.ua/\n")
 
-MESSAGE(STATUS "Q4Wine build enveropment -- \n")
+MESSAGE(STATUS "Q4Wine build environment -- \n")
 
 SET(QT_MIN_VERSION "4.4.1")
 FIND_PACKAGE(Qt4 REQUIRED)

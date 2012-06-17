@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey               *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -30,7 +30,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
         libq4wine.load();
     }
 
-    // Getting corelib calss pointer
+    // Getting corelib class pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
@@ -794,9 +794,9 @@ void MainWindow::mainExportIcons_Click(){
         if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
-    fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)"), 0, options );
+    fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)"), 0, options );
 #else
-    fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)") );
+    fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)") );
 #endif
 
     if(fileName.isEmpty())
@@ -858,11 +858,11 @@ void MainWindow::mainExportIcons_Click(){
         }
 
 
-        //Look here, this function checks is some icons found, or not. 5 -- is default number of arguments,
+        //Look here, this function checks if some icons found, or not. 5 -- is default number of arguments,
         //if more -- then we have some ico file to convert
         if (args.size()>=4){
 
-            Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Convering icon from binary file.<br>This can take a while..."), tr("Converting icon"), false);
+            Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Converting icon from binary file.<br>This can take a while..."), tr("Converting icon"), false);
 
             if (exportProcess.exec()==QDialog::Accepted){
                 IconsView iconsView(tmpDir);

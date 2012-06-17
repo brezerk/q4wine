@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey               *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -19,7 +19,7 @@
 
 /*!
  * \defgroup registry Q4Wine registry core
- * \brief Registry core pakage provide general registry functions like reading and wrighting for wine registry files.
+ * \brief Registry core package provides general registry functions like reading and writing for Wine registry files.
  */
 
 #ifndef REGISTRY_H
@@ -96,7 +96,7 @@ public:
 	  */
 	QStringList readKeys(const QString sysfile, const QString path, const QStringList keys) const;
 
-	/*! \brief Read registry all keys (exclude of requested keys) value from regfile by path .
+	/*! \brief Read registry all keys (exclude of requested keys) value from regfile by path.
 	  * \param sysfile
 	  * \param path Registry path.
 	  * \param keys List of keys to be excluded readed from registry.

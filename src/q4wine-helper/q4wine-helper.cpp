@@ -156,14 +156,14 @@ int main(int argc, char *argv[])
             Qcout<<qSetFieldWidth(25)<<left<<"  --wine-debug"<<QObject::tr("sets WINEDEBUG variable")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --console"<<QObject::tr("run with output in console")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --display"<<QObject::tr("sets DISPLAY variable")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --nice"<<QObject::tr("sets program nicenes")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --nice"<<QObject::tr("sets program niceness")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --desktop"<<QObject::tr("sets program virtual desktop resolution")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --program-bin"<<QObject::tr("sets program binary")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --program-args"<<QObject::tr("sets program args")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --wrkdir"<<QObject::tr("sets program working directory")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --program-lang"<<QObject::tr("sets program LANG variable")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --override"<<QObject::tr("sets WINEDLLOVERRIDES variable")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  --prerun"<<QObject::tr("execute script before run program")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  --prerun"<<QObject::tr("execute script before program run")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --postrun"<<QObject::tr("execute script after program run")<<qSetFieldWidth(0)<<endl;
             Qcout<<endl;
             Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;

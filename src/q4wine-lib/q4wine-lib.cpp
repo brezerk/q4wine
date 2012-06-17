@@ -74,7 +74,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
 
     QFileInfoList list = dir.entryInfoList();
 
-    // Getting directoryes one by one
+    // Getting directories one by one
     for (int i = 0; i < list.size(); ++i) {
         QFileInfo fileInfo = list.at(i);
         path = "/proc/";
@@ -1510,7 +1510,7 @@ QStringList corelib::getCdromDevices(void) const{
                 QString string = codec->toUnicode(myProcess.readAllStandardError());
 
                 if (!string.isEmpty()){
-                    showError(QObject::tr("It seems the process crashed. STDERR log: %1").arg(string));
+                    showError(QObject::tr("It seems that the process crashed. STDERR log: %1").arg(string));
                     delete (&codec);
                 }
                 delete (&codec);
