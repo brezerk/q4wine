@@ -346,7 +346,7 @@ void MainWindow::searchRequest(QString search){
 bool MainWindow::createSocket(){
     serverSoket.reset(new QLocalServer(this));
 #ifdef DEBUG
-    qDebug()<<"[ii] Creating q4wine socket";
+    qDebug()<<"[ii] Creating Q4Wine socket";
 #endif
 
     char *user = getenv("USER");
@@ -356,7 +356,7 @@ bool MainWindow::createSocket(){
     if (QFile(soketFile).exists()){
         QMessageBox msgBox;
         msgBox.setText(tr("Socket file \"%1\" already exists!").arg(soketFile));
-        msgBox.setInformativeText(tr("It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you wish to remove it?"));
+        msgBox.setInformativeText(tr("It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?"));
         msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
         msgBox.setDefaultButton(QMessageBox::Cancel);
         if (msgBox.exec() == QMessageBox::Ok)
@@ -365,7 +365,7 @@ bool MainWindow::createSocket(){
 
     if (!serverSoket->listen(soketFile)){
         QTextStream QErr(stderr);
-        QErr<<"[EE] Cannot create q4wine socket: "<<serverSoket->errorString()<<endl;
+        QErr<<"[EE] Cannot create Q4Wine socket: "<<serverSoket->errorString()<<endl;
         return false;
     }
 

@@ -347,7 +347,7 @@ void AppSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("Logging")){
         optionsStack->setCurrentIndex(2);
         tabwSubsystems->setCurrentIndex(0);
-    } else if (itemText==tr("AppDb browser")){
+    } else if (itemText==tr("AppDB browser")){
         optionsStack->setCurrentIndex(2);
         tabwSubsystems->setCurrentIndex(1);
     } else if (itemText==tr("Plugins")){
@@ -822,7 +822,7 @@ void AppSettings::cmdHelp_Click(){
         rawurl = "11-settings.html#logging";
     } else if (itemText==tr("Logging")){
         rawurl = "11-settings.html#logging";
-    } else if (itemText==tr("AppDb browser")){
+    } else if (itemText==tr("AppDB browser")){
         rawurl = "11-settings.html#appdb";
     } else if (itemText==tr("Plugins")){
         rawurl = "11-settings.html";

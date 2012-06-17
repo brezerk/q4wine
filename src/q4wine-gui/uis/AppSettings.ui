@@ -2055,7 +2055,7 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>Note: Because of sqlite engine specific, large amount of logging data can reduce q4wine performance. Use it with care. You have been warned.</string>
+                  <string>Note: Because of SQLite engine specific, large amount of logging data can reduce Q4Wine performance. Use it with care. You have been warned.</string>
                  </property>
                  <property name="wordWrap">
                   <bool>true</bool>
@@ -2506,7 +2506,7 @@
                <item>
                 <widget class="QCheckBox" name="cbImportDesktopFilesAtStartup">
                  <property name="text">
-                  <string>Import wine desktop files at q4wine startup.</string>
+                  <string>Import Wine desktop files at Q4Wine startup.</string>
                  </property>
                 </widget>
                </item>
@@ -2634,7 +2634,7 @@
           </item>
           <item>
            <property name="text">
-            <string>AppDb browser</string>
+            <string>AppDB browser</string>
            </property>
           </item>
          </item>

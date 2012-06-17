@@ -171,7 +171,7 @@ bool winetricks::parse() {
 
     QString pargs;
     if (!QFile(this->winetricks_bin).exists()){
-            //QMessageBox::warning(Non, QString("Error"), QString("<p>q4wine cannot locate winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
+            //QMessageBox::warning(Non, QString("Error"), QString("<p>Q4Wine cannot locate Winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
         return false;
     }
     QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);

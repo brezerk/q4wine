@@ -45,11 +45,11 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
     QString name, procstat, path, prefix, env_arg, nice, message;
 
 #ifdef _OS_LINUX_
-    message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
+    message = "<p>Process is unable to access /proc file system.</p><p>Access is necessary for displaying Wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
 #endif
 
 #ifdef _OS_FREEBSD_
-    message = "<p>Process is unable access to /proc file system.</p><p>Access is necessary for displaying wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
+    message = "<p>Process is unable to access /proc file system.</p><p>Access is necessary for displaying Wine process information.</p><p>You need to set PSEUDOFS and PROCFS option on FreeBSD kernel config file and mount proc file system by running: mount -t procfs proc /proc</p>";
 #endif
 
 #ifndef _OS_DARWIN_
@@ -66,7 +66,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
 #endif
     /* On Linux:
        * This is new engine for getting process info from /proc directory
-       * its fully wrighted with QT and might work more stable =)
+       * it is fully written in Qt and might work more stable =)
        */
 #ifdef _OS_LINUX_
     dir.setFilter(QDir::Dirs | QDir::NoSymLinks);
@@ -157,7 +157,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
 
     kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
     if (!kd){
-        if (this->showError(QObject::tr("<p>It seems q4wine can not run kvm_openfiles.</p>"), false) == QMessageBox::Ignore){
+        if (this->showError(QObject::tr("<p>It seems that Q4Wine cannot run kvm_openfiles.</p>"), false) == QMessageBox::Ignore){
             procline << "-1";
             proclist << procline;
             return proclist;
@@ -166,7 +166,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
     }
     kp = kvm_getprocs(kd, KERN_PROC_PROC, 0, &cntproc);
     if (!kp){
-        if (this->showError(QObject::tr("<p>It seems q4wine can not run kvm_getprocs.</p>"), false) == QMessageBox::Ignore){
+        if (this->showError(QObject::tr("<p>It seems that Q4Wine cannot run kvm_getprocs.</p>"), false) == QMessageBox::Ignore){
             procline << "-1";
             proclist << procline;
             return proclist;

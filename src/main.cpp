@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
     if (!CoreLib->isConfigured()){
         Wizard firstSetupWizard(1);
         if (firstSetupWizard.exec()==QDialog::Rejected){
-            QErr<<"[EE] Application not configured! Rerun the setup wizard or delete broken q4wine configuration files."<<endl;
+            QErr<<"[EE] Application not configured! Rerun the setup wizard or delete broken Q4Wine configuration files."<<endl;
             return -1;
         }
     }
@@ -146,11 +146,11 @@ int main(int argc, char *argv[])
             Qcout<<QObject::tr("Usage:")<<endl;
             Qcout<<QString("  %1 -b <unix_path_to_windown_binary>").arg(APP_SHORT_NAME)<<endl;
             Qcout<<QObject::tr("  %1 [KEY]...").arg(APP_SHORT_NAME)<<endl;
-            Qcout<<QObject::tr("GUI utility for wine applications and prefixes management.")<<endl<<endl;
+            Qcout<<QObject::tr("GUI utility for Wine applications and prefixes management.")<<endl<<endl;
             Qcout<<QObject::tr("KEYs list:")<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  -b,  --binary"<<QObject::tr("Open q4wine run dialog for windows binary")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -b,  --binary"<<QObject::tr("open Q4Wine run dialog for Windows binary")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --minimize"<<QObject::tr("minimize %1 main window on startup").arg(APP_SHORT_NAME)<<qSetFieldWidth(0)<<endl;
             Qcout<<endl;
             Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
