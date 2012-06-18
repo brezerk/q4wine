@@ -616,7 +616,7 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>Minimize to tray at application icon startup.</string>
+                  <string>Minimize to tray at application startup.</string>
                  </property>
                  <property name="checked">
                   <bool>false</bool>
@@ -2055,7 +2055,7 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>Note: Because of SQLite engine specific, large amount of logging data can reduce Q4Wine performance. Use it with care. You have been warned.</string>
+                  <string>Note: Since SQLite was not designed to handle large amount of data, activating this can have a negative impact on the performance of Q4Wine. Use it with care.</string>
                  </property>
                  <property name="wordWrap">
                   <bool>true</bool>

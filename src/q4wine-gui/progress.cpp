@@ -56,7 +56,7 @@ Progress::Progress(int action, QString path, QWidget * parent, Qt::WFlags f) : Q
     } else if (action==1){
         this->max = 0;
         int cur = CoreLib->getWineProcessList(path).count();
-        lblInfo->setText(QString("%1<br>%2<br><br>%3").arg(tr("Waiting for Wine process to finish...")).arg(tr("There are %1 processes running for prefix %2.").arg(cur).arg(path)).arg(tr("While process keep running -- end them manually.")));
+        lblInfo->setText(QString("%1<br>%2<br><br>%3").arg(tr("Waiting for Wine process to finish...")).arg(tr("There are %1 processes running for prefix %2.").arg(cur).arg(path)).arg(tr("If the processes keep running -- end them manually.")));
         setWindowTitle(tr("Running process: %1").arg(cur));
         t->start(1000);
     }
@@ -109,7 +109,7 @@ void Progress::runAction(){
             this->accept();
             return;
         } else {
-            lblInfo->setText(QString("%1<br>%2<br><br>%3").arg(tr("Waiting for Wine process to finish...")).arg(tr("There are %1 processes running for prefix %2.").arg(count).arg(this->path)).arg(tr("While process keep running -- end them manually.")));
+            lblInfo->setText(QString("%1<br>%2<br><br>%3").arg(tr("Waiting for Wine process to finish...")).arg(tr("There are %1 processes running for prefix %2.").arg(count).arg(this->path)).arg(tr("If the processes keep running -- end them manually.")));
             setWindowTitle(tr("Running process: %1").arg(count));
         }
     }

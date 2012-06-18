@@ -836,7 +836,7 @@ void MainWindow::mainExportIcons_Click(){
     args << "-o" << tmpDir;
     args << fileName;
 
-    Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Exporting icon from binary file.<br>This can take a while..."), tr("Exporting icon"), false);
+    Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
 
     if (exportProcess.exec()==QDialog::Accepted){
         //icotool -x -o ./regedit.png --width=32 --height=32 ./regedit.exe_14_100_0.ico
