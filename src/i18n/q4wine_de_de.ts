@@ -83,7 +83,7 @@
         <location line="+16"/>
         <location line="+181"/>
         <source>Status: Connecting to %1</source>
-        <translation>Status: Verbindund mit %1 wird hergestellt</translation>
+        <translation>Status: Verbindung mit %1 wird hergestellt</translation>
     </message>
     <message>
         <location line="-100"/>
@@ -288,12 +288,12 @@
     <message>
         <location line="+8"/>
         <source>Sorry, specified %1 directory does not exist.</source>
-        <translation>Hoppla, der angegebene „%1“-Ordner existiert nicht.</translation>
+        <translation>Der angegebene „%1“-Ordner existiert nicht.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Sorry, specified %1 binary does not exist.</source>
-        <translation>Hoppla, die angegebene „%1“-Programmdatei existiert nicht.</translation>
+        <translation>Die angegebene „%1“-Programmdatei existiert nicht.</translation>
     </message>
     <message>
         <source>Sorry, specified %1 directory not exists.</source>
@@ -595,7 +595,7 @@
     <message>
         <location line="+90"/>
         <source>Select Quick Mount Profile</source>
-        <translation>Profil zum Schnelleinhängen auswählen</translation>
+        <translation>Profil zum Schnelleinbinden auswählen</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -605,12 +605,12 @@
     <message>
         <location line="+27"/>
         <source>Mount:</source>
-        <translation>Einhängen:</translation>
+        <translation>Einbinden:</translation>
     </message>
     <message>
         <location line="+47"/>
         <source>Mount image:</source>
-        <translation>Abbild einhängen:</translation>
+        <translation>Abbild einbinden:</translation>
     </message>
     <message>
         <location line="+44"/>
@@ -1429,7 +1429,7 @@ Weitere Informationen unter Hilfe.</translation>
         <location line="+861"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
-        <translation>%1 erfolgreich eingehängt.</translation>
+        <translation>%1 erfolgreich eingebunden.</translation>
     </message>
     <message>
         <location line="-38"/>
@@ -1451,7 +1451,7 @@ Weitere Informationen unter Hilfe.</translation>
         <location line="+10"/>
         <location line="+17"/>
         <source>Fail to mount %1.</source>
-        <translation>Einhängen von %1 fehlgeschlagen.</translation>
+        <translation>Einbinden von %1 fehlgeschlagen.</translation>
     </message>
     <message>
         <location line="-738"/>
@@ -1472,7 +1472,7 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="-680"/>
         <source>Mount media drive.</source>
-        <translation>Medienlaufwerk einhängen.</translation>
+        <translation>Medienlaufwerk einbinden.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1482,7 +1482,7 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="+11"/>
         <source>Mount media image.</source>
-        <translation>Medien-Abbild einhängen.</translation>
+        <translation>Medien-Abbild einbinden.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -3378,7 +3378,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+43"/>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation>Erweitert</translation>
     </message>
     <message>
         <location line="+6"/>
