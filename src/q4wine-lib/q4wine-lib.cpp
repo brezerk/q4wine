@@ -421,8 +421,7 @@ QString corelib::getTranslationLang(){
     qDebug()<<"[ii] i18n path: "<<i18nPath;
 #endif
 
-    QString lang = "q4wine_";
-    lang.append(this->getLang());
+    QString lang = this->getLang();
 
     if (!lang.isNull()){
         if (qtt.load(lang, i18nPath)){
@@ -430,8 +429,8 @@ QString corelib::getTranslationLang(){
             return lang;
         } else {
             qDebug()<<"[EE] Cannot open user selected translation";
-            if (qtt.load("en_us", i18nPath)){
-                return "en_us";
+            if (qtt.load("q4wine_en_us", i18nPath)){
+                return "q4wine_en_us";
             } else {
                 qDebug()<<"[EE] Cannot open default translation, fall back to native translation ;[";
             }
@@ -444,6 +443,10 @@ QString corelib::getTranslationLang(){
 
 QString  corelib::getLang(){
     QString lang=this->getSetting("app", "lang", false).toString();
+
+    if (!lang.contains("q4wine")){
+        lang = QString("q4wine_%1").arg(lang);
+    }
 
     if (!lang.isEmpty()){
 #ifdef DEBUG
