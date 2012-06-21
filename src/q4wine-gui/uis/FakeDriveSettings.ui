@@ -1918,7 +1918,7 @@
             <item>
              <widget class="QLabel" name="label_71">
               <property name="text">
-               <string>Note: Q4Wine does not check if the selected driver is available in the current Wine build. Use this option with care.</string>
+               <string>Note: q4wine does not check if the selected driver is available in the current Wine build. Use this option with care.</string>
               </property>
               <property name="wordWrap">
                <bool>true</bool>

@@ -179,7 +179,7 @@ void PrefixTreeWidget::dirDelete_Click(void){
             return;
 
       if (treeItem->parent()){
-            if (QMessageBox::warning(this, tr("Q4Wine"), tr("Do you really wish to delete the folder named \"%1\" and all associated icons?\n").arg(treeItem->text(0)),
+            if (QMessageBox::warning(this, tr("q4wine"), tr("Do you really wish to delete the folder named \"%1\" and all associated icons?\n").arg(treeItem->text(0)),
                                                  QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
 
             if (db_icon.delIcon(this->prefixName, this->dirName, ""))

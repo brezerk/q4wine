@@ -44,7 +44,7 @@
 #define D_SORT_TYPE_BY_DATE_ASC 3
 #define D_SORT_TYPE_BY_DATE_DSC 4
 
-#define APP_NAME "Q4Wine"
+#define APP_NAME "q4wine"
 #define APP_SHORT_NAME "q4wine"
 #define APP_WEBSITE "q4wine.brezblock.org.ua"
 #define APP_BUG_EMAIL "brezerk@gmail.com"

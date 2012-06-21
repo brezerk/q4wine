@@ -2055,7 +2055,7 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>Note: Since SQLite was not designed to handle large amount of data, activating this can have a negative impact on the performance of Q4Wine. Use it with care.</string>
+                  <string>Note: Since SQLite was not designed to handle large amount of data, activating this can have a negative impact on the performance of q4wine. Use it with care.</string>
                  </property>
                  <property name="wordWrap">
                   <bool>true</bool>
@@ -2506,7 +2506,7 @@
                <item>
                 <widget class="QCheckBox" name="cbImportDesktopFilesAtStartup">
                  <property name="text">
-                  <string>Import Wine desktop files at Q4Wine startup.</string>
+                  <string>Import Wine desktop files at q4wine startup.</string>
                  </property>
                 </widget>
                </item>

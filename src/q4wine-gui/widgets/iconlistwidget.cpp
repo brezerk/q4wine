@@ -586,7 +586,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
         entry.reset(new QAction(CoreLib->loadIcon("data/q4wine.png"), tr("q4wine-cli cmd"), this));
         entry->setStatusTip(tr("Copy q4wine-cli command for current application"));
-        connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyQ4WineCmd_Click()));
+        connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyq4wineCmd_Click()));
         subMenu->addAction(entry.release());
 
         menu->addMenu(subMenu.release());
@@ -979,7 +979,7 @@ void IconListWidget::iconCopyProgramPath_Click(){
     return;
 }
 
-void IconListWidget::iconCopyQ4WineCmd_Click(){
+void IconListWidget::iconCopyq4wineCmd_Click(){
     if (selectedItems().count()<=0)
         return;
 

@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     app.installTranslator(&qtt);
 
     if (!CoreLib->isConfigured()){
-       QErr<<"[EE] App is not configured! Rerun wizard, or delete Q4Wine broken config files."<<endl;
+       QErr<<"[EE] App is not configured! Rerun wizard, or delete q4wine broken config files."<<endl;
        return -1;
     }
 
@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
         } else {
             Qcout<<QObject::tr("Usage:")<<endl;
             Qcout<<QObject::tr("  %1-helper [KEYs]...").arg(APP_SHORT_NAME)<<endl;
-            Qcout<<QObject::tr("Console utility for Q4Wine which helps to handle Wine application exit status and its stdout/stderr output logging.")<<endl<<endl;
+            Qcout<<QObject::tr("Console utility for q4wine which helps to handle Wine application exit status and its stdout/stderr output logging.")<<endl<<endl;
             Qcout<<QObject::tr("KEYs list:")<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --prefix"<<QObject::tr("sets the current prefix name")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --wine-debug"<<QObject::tr("sets WINEDEBUG variable")<<qSetFieldWidth(0)<<endl;
@@ -195,7 +195,7 @@ int main(int argc, char *argv[])
             Qcout<<QObject::tr("KEYs list:")<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
-            Qcout<<qSetFieldWidth(25)<<left<<"  -b,  --binary"<<QObject::tr("Open Q4Wine run dialog for windows binary")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -b,  --binary"<<QObject::tr("Open q4wine run dialog for windows binary")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --minimize"<<QObject::tr("minimize %1 main window on startup").arg(APP_SHORT_NAME)<<qSetFieldWidth(0)<<endl;
             Qcout<<endl;
             Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;

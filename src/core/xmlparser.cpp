@@ -35,7 +35,7 @@ int XmlParser::parseIOSream(QString file){
 
 		if (root.tagName() != "appdb_export") {
 #ifdef DEBUG
-			qDebug()<<"[EE] File does not have Q4Wine AppDB export format";
+			qDebug()<<"[EE] File does not have q4wine AppDB export format";
 #endif
 			return 2;
 		}
