@@ -40,7 +40,7 @@ Requires:       wine
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
-q4wine is an Qt4-based GUI for WINE. It will help you to manage wine
+q4wine is a Qt4-based GUI for WINE. It will help you to manage wine
 prefixes and installed applications.
 
 General features:

@@ -122,7 +122,7 @@ public:
      *
      * It gets process values: pid, name, nice priority and WINEPREFIX environment variable
      * \note On Linux it uses /proc file system, and on FreeBSD/MacOS it uses /dev/kmem and kvm.h functions.
-     * \return Return an array of QList which contains an QStringList
+     * \return Return an array of QList which contains a QStringList
      */
     QList<QStringList> getWineProcessList(const QString prefix_name = "");
 

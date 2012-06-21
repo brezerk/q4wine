@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
         } else {
             Qcout<<QObject::tr("Usage:")<<endl;
             Qcout<<QObject::tr("  %1-helper [KEYs]...").arg(APP_SHORT_NAME)<<endl;
-            Qcout<<QObject::tr("Console utility for q4wine which helps to handle Wine application exit status and its stdout/stderr output logging.")<<endl<<endl;
+            Qcout<<QObject::tr("Console utility for q4wine which helps to handle Wine application exit status and its stdout\\stderr output logging.")<<endl<<endl;
             Qcout<<QObject::tr("KEYs list:")<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --prefix"<<QObject::tr("sets the current prefix name")<<qSetFieldWidth(0)<<endl;
             Qcout<<qSetFieldWidth(25)<<left<<"  --wine-debug"<<QObject::tr("sets WINEDEBUG variable")<<qSetFieldWidth(0)<<endl;
