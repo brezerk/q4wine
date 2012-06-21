@@ -1,8 +1,8 @@
 Name:          q4wine
 Version:       0.120
 Release:       2mamba
-Summary:       q4wine is a Qt4 GUI for wine.
-Summary(it):   q4wine è un interfaccia grafica per wine
+Summary:       Q4Wine is a Qt4 GUI for wine.
+Summary(it):   Q4Wine è un interfaccia grafica per wine
 Group:         Graphical Desktop/Applications/Utilities
 Vendor:        openmamba
 Distribution:  openmamba
@@ -42,7 +42,7 @@ requires: icoutils
 requires: fuseiso
 
 %description
-q4wine is a Qt4 GUI for Wine. It will help you manage Wine prefixes and installed applications.
+Q4Wine is a Qt4 GUI for Wine. It will help you manage Wine prefixes and installed applications.
     * Can export Qt color theme into Wine colors settings.
     * Can easy work with different Wine versions at same time;
     * Easy creating, deleting and managing prefixes (WINEPREFIX);
@@ -56,7 +56,7 @@ q4wine is a Qt4 GUI for Wine. It will help you manage Wine prefixes and installe
     * And more... Explore it! ;) 
 
 %description -l it 
-q4wine è un'interfaccia grafica per wine. Permette di gestire i prefissi di wine e le applicazioni installate
+Q4Wine è un'interfaccia grafica per wine. Permette di gestire i prefissi di wine e le applicazioni installate
     * Può esportare i temi di colore di QT nei settaggi colore di wine.
     * Permette di lavorare facilmente con versioni diverse di wine contemporaneamente;
     * Permette di creare, cancellare e gestire facilmente i prefissi (WINEPREFIX);

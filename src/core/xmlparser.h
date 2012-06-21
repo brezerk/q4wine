@@ -37,7 +37,7 @@
 /*!
  * \class Registry
  * \ingroup registry
- * \brief This class provides general registry functions for q4wine.
+ * \brief This class provides general registry functions for Q4Wine.
  *
  * This class can create registry files to export via Wine regedit.
  * Also this class can read keys value from Wine registry.

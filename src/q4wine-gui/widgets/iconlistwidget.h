@@ -124,7 +124,7 @@ private slots:
       void iconSearchAppDB_Click(void);
       void iconCopyWrkDir_Click(void);
       void iconCopyProgramPath_Click(void);
-      void iconCopyq4wineCmd_Click(void);
+      void iconCopyQ4WineCmd_Click(void);
 
 
       void menuRun_triggered(QAction*);

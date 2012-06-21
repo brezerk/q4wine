@@ -1,7 +1,7 @@
 Qt4 GUI for Wine
 ***********************************************
  
-q4wine is a Qt4 GUI for Wine that helps manage Wine prefixes and installed applications.
+Q4Wine is a Qt4 GUI for Wine that helps manage Wine prefixes and installed applications.
  
 This software is published under the terms of the GNU GPL V3 and comes
 without any warranty. Feel free to change or distribute this software.
@@ -16,7 +16,7 @@ If you need help with Wine, send a message to the mailing lists at "http://www.w
 If you want support, buy the commercial versions of Wine: CodeWeavers CrossOver Office
 http://www.codeweavers.com for Desktop Applications.
  
-q4wine was initially written by Alexey S. Malakhov (also known as John Brezerk).
+Q4Wine was initially written by Alexey S. Malakhov (also known as John Brezerk).
  
 The general idea came from WineTools, which was initially written by Frank Hendriksen.
  
@@ -69,13 +69,13 @@ Installation
        USE_GZIP                  : OFF | ON
        WITH_DBUS                 : ON  | OFF
 
-       DEBUG                     : If ON, then q4wine will send debug messages to STDOUT
+       DEBUG                     : If ON, then Q4Wine will send debug messages to STDOUT
                                  : use it in debug or bug report cases;
-       WITH_ICOUTILS             : If ON, then build q4wine with icoutils support;
-       WITH_WINEAPPDB            : If ON, then build q4wine with Wine AppDB browser support;
+       WITH_ICOUTILS             : If ON, then build Q4Wine with icoutils support;
+       WITH_WINEAPPDB            : If ON, then build Q4Wine with Wine AppDB browser support;
        USE_BZIP2                 : Use bzip2 to compress man pages;
        USE_GZIP                  : Use gzip to compress man pages;
-       WITH_DBUS                 : If ON, then build q4wine with QtDBus notification support;
+       WITH_DBUS                 : If ON, then build Q4Wine with QtDBus notification support;
 
 6. $ make
 7. $ make install

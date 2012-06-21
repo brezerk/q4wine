@@ -283,7 +283,7 @@ void PrefixConfigWidget::get_icons(){
                     desc = tr("Install new or update installed Winetricks script.");
                 } else if (items.at(i).name == "%REFRESH_WINETRICKS%"){
                     name = tr("Refresh Winetricks application list");
-                    desc = tr("Create or update q4wine's cache of Winetricks appications.");
+                    desc = tr("Create or update Q4Wine's cache of Winetricks appications.");
                 }
             }
             iconItem->setText(name);

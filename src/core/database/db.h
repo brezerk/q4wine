@@ -18,8 +18,8 @@
  ***************************************************************************/
 
 /*!
- * \defgroup database q4wine database core
- * \brief Database core package provides general database functions for q4wine.
+ * \defgroup database Q4Wine database core
+ * \brief Database core package provides general database functions for Q4Wine.
  */
 
 #ifndef DB_H

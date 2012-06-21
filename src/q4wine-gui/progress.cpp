@@ -47,7 +47,7 @@ Progress::Progress(int action, QString path, QWidget * parent, Qt::WFlags f) : Q
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
 
     if (action==0){
-        lblInfo->setText(tr("Importing Wine desktop icons from:<br>\"%1\"<br><br>This can take a while...<br><br><b>Note:</b> To remove processed files see q4wine options dialog.").arg(path));
+        lblInfo->setText(tr("Importing Wine desktop icons from:<br>\"%1\"<br><br>This can take a while...<br><br><b>Note:</b> To remove processed files see Q4Wine options dialog.").arg(path));
         setWindowTitle(tr("Importing Wine desktop icons: %1 of %2").arg(0).arg(max));
 
         this->max = importIcons(path);

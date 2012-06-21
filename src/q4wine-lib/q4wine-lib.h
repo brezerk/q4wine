@@ -87,10 +87,10 @@
 /*!
  * \class corelib
  * \ingroup libq4wine
- * \brief This class provides general core functions for q4wine.
+ * \brief This class provides general core functions for Q4Wine.
  *
  * It is not useful by itself, but helps to create user-side applications which
- * can use q4wine core functions;
+ * can use Q4Wine core functions;
  *
  */
 
@@ -300,7 +300,7 @@ public:
 
     /*! \brief This function is used to export prefix info.
      *
-     * This function will export q4wine prefixes information according with http://wiki.winehq.org/BottleSpec
+     * This function will export Q4Wine prefixes information according with http://wiki.winehq.org/BottleSpec
      *
      * \return true on success.
      */

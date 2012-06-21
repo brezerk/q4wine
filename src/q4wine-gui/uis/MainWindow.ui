@@ -416,10 +416,10 @@
     <string>Import Wine Desktop Files</string>
    </property>
    <property name="toolTip">
-    <string>Scan for Wine desktop files and import them into q4wine's icon view.</string>
+    <string>Scan for Wine desktop files and import them into Q4Wine's icon view.</string>
    </property>
    <property name="statusTip">
-    <string>Scan for Wine desktop files and import them into q4wine's icon view.</string>
+    <string>Scan for Wine desktop files and import them into Q4Wine's icon view.</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+I</string>

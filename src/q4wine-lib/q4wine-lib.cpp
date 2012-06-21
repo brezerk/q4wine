@@ -157,7 +157,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
 
     kd = kvm_openfiles(_PATH_DEVNULL, _PATH_DEVNULL, NULL, O_RDONLY, buf);
     if (!kd){
-        if (this->showError(QObject::tr("<p>It seems that q4wine cannot run kvm_openfiles.</p>"), false) == QMessageBox::Ignore){
+        if (this->showError(QObject::tr("<p>It seems that Q4Wine cannot run kvm_openfiles.</p>"), false) == QMessageBox::Ignore){
             procline << "-1";
             proclist << procline;
             return proclist;
@@ -166,7 +166,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
     }
     kp = kvm_getprocs(kd, KERN_PROC_PROC, 0, &cntproc);
     if (!kp){
-        if (this->showError(QObject::tr("<p>It seems that q4wine cannot run kvm_getprocs.</p>"), false) == QMessageBox::Ignore){
+        if (this->showError(QObject::tr("<p>It seems that Q4Wine cannot run kvm_getprocs.</p>"), false) == QMessageBox::Ignore){
             procline << "-1";
             proclist << procline;
             return proclist;

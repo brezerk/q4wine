@@ -133,7 +133,7 @@ Version 0.118
   - A lot of GUI improvements;
   - You can mount iso images just by dropping them into q4wine icons list space;
   - Automatic unmounting for mouned media before mount new one;
-  - q4wine now can be associated with application/x-ms-dos-executable mime type files;
+  - Q4Wine now can be associated with application/x-ms-dos-executable mime type files;
   - Added AUTHORS file;
   - Added man pages;
   - Try to get program's icon from ~/.local/share/icons by it's name;
@@ -399,7 +399,7 @@ Version 0.105
  core
   New:
   - New winetool class.
-  - q4wine now can import QT palette in to wine color settings
+  - Q4Wine now can import QT palette in to wine color settings
   Fixed:
   - Bug when deleting folder with icons.
   - Bug in UpdateDatabaseConnectedItems.
