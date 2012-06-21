@@ -491,7 +491,7 @@ void IconSettings::cmdGetIcon_Click(){
                 //Look here, this function checks if some icons found, or not. 5 -- is default number of arguments,
                 //if more -- then we have some ico file to convert
                 if (args.size()>=4){
-                    Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Converting icon from binary file.<br>This can take a while..."), tr("Converting icon"), FALSE);
+                    Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), FALSE);
                     if (exportProcess.exec()==QDialog::Accepted){
                         IconsView iconsView(tmpDir);
                         if (iconsView.exec()==QDialog::Accepted){

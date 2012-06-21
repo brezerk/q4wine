@@ -862,7 +862,7 @@ void MainWindow::mainExportIcons_Click(){
         //if more -- then we have some ico file to convert
         if (args.size()>=4){
 
-            Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Converting icon from binary file.<br>This can take a while..."), tr("Converting icon"), false);
+            Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
 
             if (exportProcess.exec()==QDialog::Accepted){
                 IconsView iconsView(tmpDir);
