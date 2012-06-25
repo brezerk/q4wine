@@ -177,7 +177,7 @@
     <message>
         <location line="+1"/>
         <source>Search in wine appdb</source>
-        <translation>In Wine-AppDB suchen</translation>
+        <translation>In Wine AppDB suchen</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -615,7 +615,7 @@
     <message>
         <location line="+44"/>
         <source>Umount:</source>
-        <translation>Aushängen:</translation>
+        <translation>Einbindung lösen:</translation>
     </message>
     <message>
         <source>Enable logging sybsystem.</source>
@@ -629,7 +629,7 @@
     <message>
         <location line="+9"/>
         <source>AppDB browser subsystem:</source>
-        <translation>AppDB-Browser-Subsystem:</translation>
+        <translation>AppDB-Browser-Subsystem</translation>
     </message>
     <message>
         <location line="+6"/>
