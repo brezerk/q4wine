@@ -69,7 +69,7 @@ void Process::slotError(QProcess::ProcessError err){
 		QString string = codec->toUnicode(myProcess->readAllStandardError());
 
 		if (!string.isEmpty()){
-			QMessageBox::warning(this, tr("Error"), tr("It seems procces fail.<br><br>Error log:<br>%1").arg(string));
+			QMessageBox::warning(this, tr("Error"), tr("It seems that the process failed.<br><br>Error log:<br>%1").arg(string));
 		} else {
 			switch (err){
 			case 0:

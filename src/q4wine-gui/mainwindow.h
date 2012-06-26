@@ -19,7 +19,7 @@
 
 /*!
  * \defgroup q4wine-gui Q4Wine GUI
- * \brief q4wine-gui pakage provide general GUI functions for q4wine.
+ * \brief q4wine-gui package provides general GUI functions for Q4Wine.
  */
 
 #ifndef MAINWINDOW_H

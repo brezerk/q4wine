@@ -4,7 +4,7 @@
 
 1. Fix\Test for whitespaces;
 2. Corelib preget xdg-utils .e.t.c.;
-3. Move xmlexport into appdb upstream (change DB engine to appdb)
+3. Move xmlexport into AppDB upstream (change DB engine to AppDB)
 4. Icons Load to CoreLib;
 
 x. Have fun ;]

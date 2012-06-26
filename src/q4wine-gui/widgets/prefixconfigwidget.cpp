@@ -283,7 +283,7 @@ void PrefixConfigWidget::get_icons(){
                     desc = tr("Install new or update installed Winetricks script.");
                 } else if (items.at(i).name == "%REFRESH_WINETRICKS%"){
                     name = tr("Refresh Winetricks application list");
-                    desc = tr("Create or update q4wine's cache of Winetricks appications.");
+                    desc = tr("Create or update Q4Wine's cache of Winetricks appications.");
                 }
             }
             iconItem->setText(name);
@@ -335,7 +335,7 @@ void PrefixConfigWidget::itemDoubleClicked (QListWidgetItem *item){
                     QStringList args;
                     args << "-rf";
                     args << prefixPath;
-                    Process exportProcess(args, "/bin/rm", QDir::homePath(), tr("Removing old fake drive.<br>This may take awhile..."), tr("Removing old fake drive"));
+                    Process exportProcess(args, "/bin/rm", QDir::homePath(), tr("Removing old fake drive.<br>This may take a while..."), tr("Removing old fake drive"));
 
                     if (exportProcess.exec()!=QDialog::Accepted){
                         return;
@@ -352,7 +352,7 @@ void PrefixConfigWidget::itemDoubleClicked (QListWidgetItem *item){
             }
         } else if (item->text() == tr("Update Fake Drive")){
             if (!sysreg_file.exists()){
-                QMessageBox::warning(this, tr("Error"), tr("Sorry, no fake drive configuration found.<br>Create fake drive configuration before update it!"));
+                QMessageBox::warning(this, tr("Error"), tr("Sorry, no fake drive configuration found.<br>Create fake drive configuration before attempting to update it."));
             } else {
                 FakeDriveSettings settings(cbPrefixes->currentText());
                 settings.loadPrefixSettings();

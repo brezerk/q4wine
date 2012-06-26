@@ -201,7 +201,7 @@ void ImageManager::actionAddImage(){
 	if(!fileName.isEmpty()){
 		newName = fileName.split("/").last();
 		while (db_image.isExistsByName(newName)){
-			newName = QInputDialog::getText(this, tr("Sorry. It seems CD iamge already exists."), tr("Sorry. It seems CD image file already exists.<br>Please rename it, or cancel add image operation."), QLineEdit::Normal, fileName.split("/").last() , &ok);
+			newName = QInputDialog::getText(this, tr("Sorry. It seems that the CD image already exists."), tr("Sorry. It seems that the CD image file already exists.<br>Please rename it, or cancel add image operation."), QLineEdit::Normal, fileName.split("/").last() , &ok);
 			if (!ok){
 				return;
 			}
@@ -224,9 +224,9 @@ void ImageManager::actionRenameImage(){
 			return;
 		}
 		if (newName.isEmpty()){
-			newName = QInputDialog::getText(this, tr("Sorry. CD iamge name can not be empty."), tr("Sorry. CD iamge name can not be empty.<br>Please enter new name, or cancel rename image operation."), QLineEdit::Normal, newName, &ok);
+			newName = QInputDialog::getText(this, tr("Sorry. CD image name cannot be empty."), tr("Sorry. CD image name cannot be empty.<br>Please enter new name, or cancel rename image operation."), QLineEdit::Normal, newName, &ok);
 		} else {
-			newName = QInputDialog::getText(this, tr("Sorry. It seems CD iamge already exists."), tr("Sorry. It seems CD image file already exists.<br>Please rename it, or cancel rename image operation."), QLineEdit::Normal, newName, &ok);
+			newName = QInputDialog::getText(this, tr("Sorry. It seems that the CD image already exists."), tr("Sorry. It seems that the CD image file already exists.<br>Please rename it, or cancel rename image operation."), QLineEdit::Normal, newName, &ok);
 		}
 	}
 	if (!db_image.renameImage(newName, tableImage->item(tableImage->currentRow(), 0)->text()))

@@ -49,7 +49,7 @@ AppInfoWidget::~AppInfoWidget(){
 }
 
 void AppInfoWidget::setAppName(QString name){
-    //FIXME: url might pint to web xml engine
+    //FIXME: url might point to web XML engine
     lblAppName->setText(name);
     return;
 }

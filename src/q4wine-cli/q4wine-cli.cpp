@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey               *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
     app.installTranslator(&qtt);
 
     if (!CoreLib->isConfigured()){
-        QErr<<"[EE] App not configured! Re run wizard, or delete q4wine broken config files."<<endl;
+        QErr<<"[EE] App not configured! Rerun wizard, or delete Q4Wine broken config files."<<endl;
         return -1;
     }
 

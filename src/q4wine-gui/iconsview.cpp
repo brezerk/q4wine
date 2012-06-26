@@ -99,7 +99,7 @@ void IconsView::cmdOk_Click(){
 		saveFileName=lstIcons->currentItem()->text();
 
 		QMessageBox message;
-			message.setText(tr("Sorry. It seems file already exists.<br>Replace existent or rename current?"));
+			message.setText(tr("Sorry. It seems that the file already exists.<br>Replace existing file or rename current one?"));
 			message.setWindowTitle(tr("Exporting icon"));
 			message.setIcon(QMessageBox::Question);
 			message.addButton(tr("Rename"),QMessageBox::ResetRole);
@@ -110,8 +110,8 @@ void IconsView::cmdOk_Click(){
 			while (QFile::exists (saveFile)){
 				switch (message.exec()){
 					case 0:
-						saveFileName = QInputDialog::getText(this, tr("Sorry. It seems file already exists."),
-																		tr("Replace existent or rename current?"), QLineEdit::Normal,
+						saveFileName = QInputDialog::getText(this, tr("Sorry. It seems that the file already exists."),
+																		tr("Replace existing file or rename current one?"), QLineEdit::Normal,
 																	saveFileName , &ok);
 						if ((!saveFileName.isEmpty()) && (ok)){
 							saveFile.clear();

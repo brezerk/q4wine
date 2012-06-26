@@ -106,7 +106,7 @@ void PrefixTreeWidget::dirAdd_Click(void){
 
       if (ok && !dirname.isEmpty()){
            while (db_dir.isExistsByName(this->prefixName, dirname)){
-                dirname = QInputDialog::getText(this, tr("Sorry. It seems directory already exists."), tr("Sorry. It seems directory already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, dirname, &ok);
+                dirname = QInputDialog::getText(this, tr("Sorry. It seems that the directory already exists."), tr("Sorry. It seems that the directory already exists.<br>Please choose another name or cancel the operation."), QLineEdit::Normal, dirname, &ok);
                 if ((!ok) || (dirname.isEmpty())){
                     treeItem.release();
                     return;
@@ -156,7 +156,7 @@ void PrefixTreeWidget::dirRename_Click(void){
 
             if (ok && !newName.isEmpty()){
                   while (db_dir.isExistsByName(treeItem->parent()->text(0), newName)){
-                        newName = QInputDialog::getText(this, tr("Sorry. It seems that the directory already exists."), tr("Sorry. It seems that the directory already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, newName, &ok);
+                        newName = QInputDialog::getText(this, tr("Sorry. It seems that the directory already exists."), tr("Sorry. It seems that the directory already exists.<br>Please choose another name or cancel the operation."), QLineEdit::Normal, newName, &ok);
                         if ((!ok) || (newName.isEmpty())){
                             treeItem.release();
                             return;
@@ -302,7 +302,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
             std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
 
             std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("data/folder.png"), tr("Browse ..."), this));
-            entry->setStatusTip(tr("Browse for other image"));
+            entry->setStatusTip(tr("Browse for another image"));
 
             connect(menuRun.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
             menuRun->addAction(entry.release());
@@ -498,7 +498,7 @@ void PrefixTreeWidget::moveDesktopFile(QUrl url, QString prefixName, QString dir
     QString newName = icon;
 
     while (db_icon.isExistsByName(prefixName, dirName, newName)){
-          newName = QInputDialog::getText(this, tr("Sorry. It seems icon already exists."), tr("Sorry. It seems icon already exists.<br>Please choose another name, or cancel operation."), QLineEdit::Normal, icon , &ok);
+          newName = QInputDialog::getText(this, tr("Sorry. It seems that the icon already exists."), tr("Sorry. It seems that the icon already exists.<br>Please choose another name or cancel the operation."), QLineEdit::Normal, icon , &ok);
           if (!ok){
                 return;
           }
@@ -627,16 +627,16 @@ void PrefixTreeWidget::menuMount_triggered(QAction* action){
       if (ret){
             emit(changeStatusText(tr("%1 successfully mounted.").arg(action->text())));
       } else {
-            emit(changeStatusText(tr("Fail to mount %1.").arg(action->text())));
+            emit(changeStatusText(tr("Failed to mount %1.").arg(action->text())));
       }
       return;
 }
 
 void PrefixTreeWidget::menuUmount_Click(void){
       if (CoreLib->umountImage(this->prefixName)){
-            emit(changeStatusText(tr("Drive successfully umounted.")));
+            emit(changeStatusText(tr("Drive successfully unmounted.")));
       } else {
-            emit(changeStatusText(tr("Fail to umount drive.")));
+            emit(changeStatusText(tr("Failed to unmount drive.")));
       }
       return;
 }

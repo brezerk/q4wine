@@ -1169,7 +1169,7 @@
           </widget>
           <widget class="QWidget" name="tab_4">
            <attribute name="title">
-            <string>Direct 3D</string>
+            <string>Direct3D</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_8">
             <property name="margin">
@@ -1191,7 +1191,7 @@
                <bool>false</bool>
               </property>
               <property name="title">
-               <string>Direct 3D settings</string>
+               <string>Direct3D settings</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_6">
                <property name="margin">
@@ -1918,7 +1918,7 @@
             <item>
              <widget class="QLabel" name="label_71">
               <property name="text">
-               <string>Note: Q4Wine do not check is selected driver avalible for current wine build or not. Use this option with care.</string>
+               <string>Note: Q4Wine does not check if the selected driver is available in the current Wine build. Use this option with care.</string>
               </property>
               <property name="wordWrap">
                <bool>true</bool>
@@ -2802,7 +2802,7 @@
           </property>
           <widget class="QWidget" name="tab_16">
            <attribute name="title">
-            <string>Direct 3D</string>
+            <string>Direct3D</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_37">
             <property name="margin">

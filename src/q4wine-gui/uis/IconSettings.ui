@@ -655,7 +655,7 @@
         </widget>
         <widget class="QWidget" name="tab_3">
          <attribute name="title">
-          <string>Override Dll</string>
+          <string>Override DLL</string>
          </attribute>
          <layout class="QVBoxLayout">
           <property name="margin">
@@ -664,7 +664,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_5">
             <property name="title">
-             <string>Present wine dlls</string>
+             <string>Present Wine DLLs</string>
             </property>
             <layout class="QHBoxLayout">
              <property name="margin">
@@ -744,7 +744,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_6">
             <property name="title">
-             <string>Overrided dlls</string>
+             <string>Overridden DLLs</string>
             </property>
             <layout class="QGridLayout">
              <property name="margin">
@@ -1024,7 +1024,7 @@
              <item>
               <widget class="QLabel" name="label_4">
                <property name="text">
-                <string>Note: pre and post run scripts will be not executed in case if program will be executed with &quot;Run With Output in Console&quot; option.</string>
+                <string>Note: Pre and post run scripts will not be executed in case the &quot;Run With Output in Console&quot; option is enabled.</string>
                </property>
                <property name="wordWrap">
                 <bool>true</bool>

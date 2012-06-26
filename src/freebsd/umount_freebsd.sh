@@ -29,10 +29,10 @@
 # ***************************************************************************/
 
 #
-# In fact, FreeBSD don't destroy md device automatically, so i need
-# to create this script for q4wine. It is better to use sh, then make it on C++.
+# In fact, FreeBSD does not destroy md device automatically, so I need
+# to create this script for Q4Wine. It is better to use sh, then make it on C++.
 #
-# With this hack, q4wine umounts iso images property and have support
+# With this hack, Q4Wine umounts iso images property and have support
 # for Quick Mount profiles, as well, as it can be done.
 #
 

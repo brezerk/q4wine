@@ -29,7 +29,7 @@ DataBase::DataBase(QObject * parent): QObject(parent){
 #endif
 
     if (!QSqlDatabase::drivers().contains("QSQLITE")){
-        QErr<<"[EE] "<<tr("Critical error")<<" : "<<"Unable to load database SQLITE driver. You need to compile qt-sql with sqlite database support"<<endl;
+        QErr<<"[EE] "<<"Critical error"<<" : "<<"Unable to load SQLite database driver. You need to compile qt-sql with SQLite database support"<<endl;
         return;
     }
 
@@ -42,7 +42,7 @@ DataBase::DataBase(QObject * parent): QObject(parent){
     db.setDatabaseName(QString("%1/.config/%2/db/generic.dat").arg(QDir::homePath()).arg(APP_SHORT_NAME));
 
     if (!db.open()){
-        QErr<<"[EE] "<<tr("Critical error")<<" : "<<tr("Can not open database file: %1/.config/%2/db/generic.dat ; Error is: %3").arg(QDir::homePath()).arg(APP_SHORT_NAME).arg(db.lastError().text())<<endl;
+        QErr<<"[EE] "<<"Critical error"<<" : "<<QString("Cannot open database file: %1/.config/%2/db/generic.dat ; Error is: %3").arg(QDir::homePath()).arg(APP_SHORT_NAME).arg(db.lastError().text())<<endl;
         return;
     }
 

@@ -421,7 +421,7 @@ void IconSettings::cmdGetIcon_Click(){
         #ifndef WITH_ICOUTILS
         dialog.setNameFilter(tr("Image files (*.png *.jpg *.gif *.bmp *.xpm)"));
         #else
-        dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)"));
+        dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)"));
         #endif
       //dialog.setSidebarUrls(add_prefix_urls);
 
@@ -465,7 +465,7 @@ void IconSettings::cmdGetIcon_Click(){
             args << "-o" << tmpDir;
             args << fileName;
 
-            Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Exporting icon from binary file.<br>This can take a while..."), tr("Exporting icon"), FALSE);
+            Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), FALSE);
 
             if (exportProcess.exec()==QDialog::Accepted){
             //icotool -x -o ./regedit.png --width=32 --height=32 ./regedit.exe_14_100_0.ico
@@ -488,10 +488,10 @@ void IconSettings::cmdGetIcon_Click(){
 
                 //Converting ico files to png
 
-                //Look here, this function checks is some icons found, or not. 5 -- is default number of arguments,
+                //Look here, this function checks if some icons found, or not. 5 -- is default number of arguments,
                 //if more -- then we have some ico file to convert
                 if (args.size()>=4){
-                    Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Convering icon from binary file.<br>This can take a while..."), tr("Converting icon"), FALSE);
+                    Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), FALSE);
                     if (exportProcess.exec()==QDialog::Accepted){
                         IconsView iconsView(tmpDir);
                         if (iconsView.exec()==QDialog::Accepted){

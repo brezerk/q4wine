@@ -19,7 +19,7 @@
 
 /*!
  * \defgroup libq4wine libq4wine-core
- * \brief libq4wine-core pakage provide general functions for q4wine-gui and q4wine-cli pakages.
+ * \brief libq4wine-core package provides general functions for q4wine-gui and q4wine-cli packages.
  */
 
 #ifndef Q4WINELIB_H
@@ -87,10 +87,10 @@
 /*!
  * \class corelib
  * \ingroup libq4wine
- * \brief This class provide general core functions for q4wine.
+ * \brief This class provides general core functions for Q4Wine.
  *
  * It is not useful by itself, but helps to create user-side applications which
- * can use q4wine core functions;
+ * can use Q4Wine core functions;
  *
  */
 
@@ -122,7 +122,7 @@ public:
      *
      * It gets process values: pid, name, nice priority and WINEPREFIX environment variable
      * \note On Linux it uses /proc file system, and on FreeBSD/MacOS it uses /dev/kmem and kvm.h functions.
-     * \return Return an array of QList which contains an QStringList
+     * \return Return an array of QList which contains a QStringList
      */
     QList<QStringList> getWineProcessList(const QString prefix_name = "");
 
@@ -300,7 +300,7 @@ public:
 
     /*! \brief This function is used to export prefix info.
      *
-     * This function will export q4wine prefixes information according with http://wiki.winehq.org/BottleSpec
+     * This function will export Q4Wine prefixes information according with http://wiki.winehq.org/BottleSpec
      *
      * \return true on success.
      */

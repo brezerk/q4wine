@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>q4wine</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Utility for management wine applications and prefixes</string>
+	<string>Utility for Wine applications and prefixes management</string>
 	<key>CFBundleIconFile</key>
 	<string>q4wine-128x128.icns</string>
 	<key>CFBundleIdentifier</key>

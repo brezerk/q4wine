@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey                           *
+ *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey               *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -30,7 +30,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
         libq4wine.load();
     }
 
-    // Getting corelib calss pointer
+    // Getting corelib class pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
@@ -346,7 +346,7 @@ void MainWindow::searchRequest(QString search){
 bool MainWindow::createSocket(){
     serverSoket.reset(new QLocalServer(this));
 #ifdef DEBUG
-    qDebug()<<"[ii] Creating q4wine socket";
+    qDebug()<<"[ii] Creating Q4Wine socket";
 #endif
 
     char *user = getenv("USER");
@@ -356,7 +356,7 @@ bool MainWindow::createSocket(){
     if (QFile(soketFile).exists()){
         QMessageBox msgBox;
         msgBox.setText(tr("Socket file \"%1\" already exists!").arg(soketFile));
-        msgBox.setInformativeText(tr("It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you wish to remove it?"));
+        msgBox.setInformativeText(tr("It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?"));
         msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
         msgBox.setDefaultButton(QMessageBox::Cancel);
         if (msgBox.exec() == QMessageBox::Ok)
@@ -365,7 +365,7 @@ bool MainWindow::createSocket(){
 
     if (!serverSoket->listen(soketFile)){
         QTextStream QErr(stderr);
-        QErr<<"[EE] Cannot create q4wine socket: "<<serverSoket->errorString()<<endl;
+        QErr<<"[EE] Cannot create Q4Wine socket: "<<serverSoket->errorString()<<endl;
         return false;
     }
 
@@ -794,9 +794,9 @@ void MainWindow::mainExportIcons_Click(){
         if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
-    fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)"), 0, options );
+    fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)"), 0, options );
 #else
-    fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)") );
+    fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)") );
 #endif
 
     if(fileName.isEmpty())
@@ -836,7 +836,7 @@ void MainWindow::mainExportIcons_Click(){
     args << "-o" << tmpDir;
     args << fileName;
 
-    Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Exporting icon from binary file.<br>This can take a while..."), tr("Exporting icon"), false);
+    Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
 
     if (exportProcess.exec()==QDialog::Accepted){
         //icotool -x -o ./regedit.png --width=32 --height=32 ./regedit.exe_14_100_0.ico
@@ -858,11 +858,11 @@ void MainWindow::mainExportIcons_Click(){
         }
 
 
-        //Look here, this function checks is some icons found, or not. 5 -- is default number of arguments,
+        //Look here, this function checks if some icons found, or not. 5 -- is default number of arguments,
         //if more -- then we have some ico file to convert
         if (args.size()>=4){
 
-            Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Convering icon from binary file.<br>This can take a while..."), tr("Converting icon"), false);
+            Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
 
             if (exportProcess.exec()==QDialog::Accepted){
                 IconsView iconsView(tmpDir);

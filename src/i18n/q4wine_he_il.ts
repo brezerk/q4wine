@@ -128,21 +128,19 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">שגיאה: לא ניתן לקרוא את הנתונים מ־%1.</translation>
     </message>
     <message>
-        <location line="+17"/>
         <source>Error: wrong or broken xml data. Try again later.</source>
-        <translation>שגיאה: נתוני ה־XML שגויים או פגומים. נא לנסות שוב מאוחר יותר.</translation>
+        <translation type="obsolete">שגיאה: נתוני ה־XML שגויים או פגומים. נא לנסות שוב מאוחר יותר.</translation>
     </message>
     <message>
         <source>Error: wrong or broken appdb xml version. Application needs to be updated?</source>
         <translation type="obsolete">שגיאה: גרסת ה־xml של ה־appds שגויה או פגומה. האם יש לעדכן את היישום?</translation>
     </message>
     <message>
-        <location line="+6"/>
         <source>Error: xml parse error.</source>
-        <translation>שגיאה: שגיאת ניתוח xml.</translation>
+        <translation type="obsolete">שגיאה: שגיאת ניתוח xml.</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+26"/>
         <source>Error: unexpected error.</source>
         <translation>שגיאה: שגיאה בלתי צפויה.</translation>
     </message>
@@ -156,12 +154,22 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>Error: wrong or broken appdb xml version. This might be caused by an outdated application version.</source>
+        <location line="+3"/>
+        <source>Error: wrong or broken XML data. Try again later.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+3"/>
+        <source>Error: wrong or broken AppDB XML version. This might be caused by an outdated application version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Error: XML parse error.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+6"/>
         <source>Search: No matches found.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -199,23 +207,35 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+3"/>
-        <source>Search in appdb</source>
-        <translation>חיפוש ב־AppDB</translation>
+        <source>Search in AppDB</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Search in wine appdb</source>
-        <translation>חיפוש ב־AppDB של Wine</translation>
+        <source>Search in Wine AppDB</source>
+        <translation type="unfinished">חיפוש ב־AppDB של Wine</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Appdb categoryes list</source>
-        <translation>רשימת הקטגוריות ב־AppDB</translation>
+        <source>AppDB categories list</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>View wine appdb categories list</source>
+        <source>View Wine AppDB categories list</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search in appdb</source>
+        <translation type="obsolete">חיפוש ב־AppDB</translation>
+    </message>
+    <message>
+        <source>Search in wine appdb</source>
+        <translation type="obsolete">חיפוש ב־AppDB של Wine</translation>
+    </message>
+    <message>
+        <source>Appdb categoryes list</source>
+        <translation type="obsolete">רשימת הקטגוריות ב־AppDB</translation>
     </message>
     <message>
         <source>View wine appdb categoryes list</source>
@@ -379,7 +399,12 @@ p, li { white-space: pre-wrap; }
         <translation>שימוש בסמל באזור הדיווחים.</translation>
     </message>
     <message>
-        <location line="+66"/>
+        <location line="+32"/>
+        <source>Minimize to tray at application startup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+34"/>
         <location line="+1939"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-482"/>
         <location line="+484"/>
@@ -477,8 +502,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+13"/>
+        <source>Note: Since SQLite was not designed to handle large amount of data, activating this can have a negative impact on the performance of Q4Wine. Use it with care.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Note: Because of sqlite engine specific, large amount of logging data can reduce q4wine performance. Use it with care. You have been warned.</source>
-        <translation>לתשומת לבך: עקב השימוש במנוע של sqlite, כמות גדולה של נתונים עלולה לפגום בביצועים של q4wine. כדאי לקחת זאת בחשבון.</translation>
+        <translation type="obsolete">לתשומת לבך: עקב השימוש במנוע של sqlite, כמות גדולה של נתונים עלולה לפגום בביצועים של q4wine. כדאי לקחת זאת בחשבון.</translation>
     </message>
     <message>
         <location line="+86"/>
@@ -590,12 +619,11 @@ p, li { white-space: pre-wrap; }
         <translation>מזעור לאזור הדיווחים עם ההפעלה.</translation>
     </message>
     <message>
-        <location line="+16"/>
         <source>Minimize to tray at application icon startup.</source>
-        <translation>מזעור לאזור הדיווחים של המערכת עם הפעלת היישום.</translation>
+        <translation type="obsolete">מזעור לאזור הדיווחים של המערכת עם הפעלת היישום.</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+26"/>
         <source>Show tray icon notifications.</source>
         <translation>הצגת התרעות סמלים באזור הדיווחים.</translation>
     </message>
@@ -654,11 +682,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+272"/>
+        <location line="+552"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-461"/>
+        <location line="+475"/>
         <source>AppDB browser</source>
         <translation>דפדפן AppDB</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-543"/>
         <source>AppDB browser subsystem:</source>
         <translation>תת־מערכת דפדפן ה־AppDB:</translation>
     </message>
@@ -670,7 +701,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+72"/>
         <location line="+485"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-449"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-463"/>
         <location line="+471"/>
         <source>Defaults</source>
         <translation>בררות מחדל</translation>
@@ -713,12 +744,11 @@ p, li { white-space: pre-wrap; }
         <translation>יבוא משולחן עבודה Wine</translation>
     </message>
     <message>
-        <location line="-158"/>
         <source>Import wine desktop files at q4wine startup.</source>
-        <translation>יבוא קובצי שולחן עבודה של Wine עם הפעלת q4wine.</translation>
+        <translation type="obsolete">יבוא קובצי שולחן עבודה של Wine עם הפעלת q4wine.</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="-145"/>
         <source>Remove processed wine desktop files.</source>
         <translation>הסרת קובצי שולחן העבודה של wine שעובדו.</translation>
     </message>
@@ -737,15 +767,12 @@ p, li { white-space: pre-wrap; }
         <translation>תת־מערכות</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-471"/>
-        <location line="+475"/>
         <source>AppDb browser</source>
-        <translation>דפדפן ה־AppDB</translation>
+        <translation type="obsolete">דפדפן ה־AppDB</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-472"/>
+        <location line="+15"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-468"/>
         <location line="+474"/>
         <source>Plugins</source>
         <translation>תוספים</translation>
@@ -783,7 +810,12 @@ p, li { white-space: pre-wrap; }
         <translation>אין שולחן עבודה וירטואלי</translation>
     </message>
     <message>
-        <location line="+475"/>
+        <location line="+283"/>
+        <source>Import Wine desktop files at Q4Wine startup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+192"/>
         <source>Help</source>
         <translation>עזרה</translation>
     </message>
@@ -796,18 +828,15 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DataBase</name>
     <message>
-        <location filename="../core/database/db.cpp" line="+32"/>
-        <location line="+13"/>
         <source>Critical error</source>
-        <translation>שגיאה קריטית</translation>
+        <translation type="obsolete">שגיאה קריטית</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Can not open database file: %1/.config/%2/db/generic.dat ; Error is: %3</source>
-        <translation>לא ניתן לפתוח את קובץ מסד הנתונים: %1/.config/%2/db/generic.dat ; השגיאה היא %3</translation>
+        <translation type="obsolete">לא ניתן לפתוח את קובץ מסד הנתונים: %1/.config/%2/db/generic.dat ; השגיאה היא %3</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location filename="../core/database/db.cpp" line="+66"/>
         <source>No database loaded. Aborting...</source>
         <translation>לא נטען מסד נתונים. התכנית מבוטלת...</translation>
     </message>
@@ -850,13 +879,11 @@ p, li { white-space: pre-wrap; }
         <translation>וידאו</translation>
     </message>
     <message>
-        <location line="+318"/>
-        <location line="+1633"/>
         <source>Direct 3D</source>
-        <translation>Direct3D</translation>
+        <translation type="obsolete">Direct3D</translation>
     </message>
     <message>
-        <location line="-2505"/>
+        <location line="-554"/>
         <location line="+1264"/>
         <location line="+12"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-710"/>
@@ -941,7 +968,17 @@ p, li { white-space: pre-wrap; }
         <translation>לתשומת לבך: יש להשאיר ריק לבררת מחדל</translation>
     </message>
     <message>
-        <location line="+145"/>
+        <location line="-1806"/>
+        <source>Direct3D settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+727"/>
+        <source>Note: Q4Wine does not check if the selected driver is available in the current Wine build. Use this option with care.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1224"/>
         <source>OK</source>
         <translation>אישור</translation>
     </message>
@@ -1033,12 +1070,11 @@ p, li { white-space: pre-wrap; }
         <translation>הצללות</translation>
     </message>
     <message>
-        <location line="+142"/>
         <source>Direct 3D settings</source>
-        <translation>הגדרות Direct3D</translation>
+        <translation type="obsolete">הגדרות Direct3D</translation>
     </message>
     <message>
-        <location line="+1738"/>
+        <location line="+1880"/>
         <source>Joystick Axes Mapping:</source>
         <translation>מיפוי צירי הג׳ויסטיק:</translation>
     </message>
@@ -1109,6 +1145,8 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="-2696"/>
         <location line="+20"/>
+        <location line="+857"/>
+        <location line="+1633"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-733"/>
         <location line="+33"/>
         <location line="+676"/>
@@ -1117,17 +1155,16 @@ p, li { white-space: pre-wrap; }
         <translation>Direct3D</translation>
     </message>
     <message>
-        <location line="+626"/>
+        <location line="-1864"/>
         <source>Memory (MB):</source>
         <translation>זיכרון (מ״ב):</translation>
     </message>
     <message>
-        <location line="+980"/>
         <source>Note: Q4Wine do not check is selected driver avalible for current wine build or not. Use this option with care.</source>
-        <translation>לתשומת לבך: התכנית Q4Wine אינה בודקת האם מנהל ההתקן הנבחר זמין עבור הבנייה הנוכחית של Wine או לא. יש להשתמש באפשרות זו בזהירות.</translation>
+        <translation type="obsolete">לתשומת לבך: התכנית Q4Wine אינה בודקת האם מנהל ההתקן הנבחר זמין עבור הבנייה הנוכחית של Wine או לא. יש להשתמש באפשרות זו בזהירות.</translation>
     </message>
     <message>
-        <location line="+13"/>
+        <location line="+993"/>
         <source>Current Sound Driver</source>
         <translation>מנהל התקן השמע הנוכחי</translation>
     </message>
@@ -1440,21 +1477,15 @@ See help for details.</source>
 <context>
     <name>IconListWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+229"/>
-        <location line="+523"/>
-        <location line="+119"/>
         <source>Sorry. It seems icon already exists.</source>
-        <translation>נראה כי הסמל כבר קיים, עמך הסליחה.</translation>
+        <translation type="obsolete">נראה כי הסמל כבר קיים, עמך הסליחה.</translation>
     </message>
     <message>
-        <location line="-642"/>
-        <location line="+523"/>
-        <location line="+119"/>
         <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation>נראה כי הסמל כבר קיים.&lt;br&gt;נא לבחור בשם אחר או לבטל את הפעולה, עמך הסליחה.</translation>
+        <translation type="obsolete">נראה כי הסמל כבר קיים.&lt;br&gt;נא לבחור בשם אחר או לבטל את הפעולה, עמך הסליחה.</translation>
     </message>
     <message>
-        <location line="-623"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+248"/>
         <location line="+861"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
@@ -1478,12 +1509,11 @@ See help for details.</source>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+17"/>
         <source>Fail to mount %1.</source>
         <translation>אירע כשל בעיגון %1.</translation>
     </message>
     <message>
-        <location line="-738"/>
+        <location line="-721"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>לא הוגדרה נקודת עגינה בתצורת הקידומת.</translation>
     </message>
@@ -1504,7 +1534,19 @@ See help for details.</source>
         <translation>עיגון כונן מדיה.</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-170"/>
+        <location line="+523"/>
+        <location line="+119"/>
+        <source>Sorry. It seems that the icon already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-642"/>
+        <source>Sorry. It seems that icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+175"/>
         <source>No media drives detected.</source>
         <translation>לא זוהו כונני מדיה.</translation>
     </message>
@@ -1743,32 +1785,39 @@ See help for details.</source>
         <translation>נתיב התיקייה</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Copy application directory path to system&apos;s&apos; clipboard</source>
-        <translation>העתקת נתיב תיקיית היישום אל לוח הגזירים של המערכת</translation>
+        <location line="+560"/>
+        <source>Drive successfully unmounted.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+2"/>
+        <source>Failed to unmount drive.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy application directory path to system&apos;s&apos; clipboard</source>
+        <translation type="obsolete">העתקת נתיב תיקיית היישום אל לוח הגזירים של המערכת</translation>
+    </message>
+    <message>
+        <location line="-557"/>
         <source>Application path</source>
         <translation>נתיב היישום</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Copy full application path to system&apos;s&apos; clipboard</source>
-        <translation>העתקת הנתיב המלא של היישום ללוח הגזירים של המערכת</translation>
+        <translation type="obsolete">העתקת הנתיב המלא של היישום ללוח הגזירים של המערכת</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+7"/>
         <source>q4wine-cli cmd</source>
         <translation>q4wine-cli cmd</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Copy q4wine-cli cmd for current application</source>
-        <translation>העתקת ה־q4wine-cli cmd עבור היישום הנוכחי</translation>
+        <translation type="obsolete">העתקת ה־q4wine-cli cmd עבור היישום הנוכחי</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Run...</source>
         <translation>הפעלה...</translation>
     </message>
@@ -1778,17 +1827,17 @@ See help for details.</source>
         <translation>האם ברצונך למחוק את כל הסמלים הנבחרים?</translation>
     </message>
     <message>
-        <location line="-175"/>
         <source>Browse for other image</source>
-        <translation>עיון אחר תמונה אחרת</translation>
+        <translation type="obsolete">עיון אחר תמונה אחרת</translation>
     </message>
     <message>
-        <location line="-349"/>
+        <location line="-524"/>
+        <location line="+878"/>
         <source>Failed to mount %1.</source>
         <translation>אירע כשל בעיגון %1.</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="-852"/>
         <source>Preparing to run the Wine binary...</source>
         <translation>בהכנות לקראת הפעלת קובץ ה־Wine הבינרי...</translation>
     </message>
@@ -1813,7 +1862,27 @@ See help for details.</source>
         <translation>עיגון...</translation>
     </message>
     <message>
-        <location line="+196"/>
+        <location line="+153"/>
+        <source>Copy application directory path to system&apos;s clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Copy full application path to system&apos;s clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Copy q4wine-cli command for current application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>Browse for another image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+20"/>
         <source>New</source>
         <translation>חדש</translation>
     </message>
@@ -1833,7 +1902,13 @@ See help for details.</source>
         <translation>שם הסמל:</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+3"/>
+        <location line="+119"/>
+        <source>Sorry. It seems that the icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-97"/>
         <source>Delete Icon</source>
         <translation>מחיקת סמל</translation>
     </message>
@@ -1848,14 +1923,12 @@ See help for details.</source>
         <translation>לא צוין התקן כונן בהגדרות הקידומת.</translation>
     </message>
     <message>
-        <location line="+55"/>
         <source>Drive successfully umounted.</source>
-        <translation>הכונן עוגן בהצלחה.</translation>
+        <translation type="obsolete">הכונן עוגן בהצלחה.</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Fail to umount drive.</source>
-        <translation>אירע כשל בניתוק הכונן.</translation>
+        <translation type="obsolete">אירע כשל בניתוק הכונן.</translation>
     </message>
 </context>
 <context>
@@ -1873,7 +1946,17 @@ See help for details.</source>
         <translation>Virtual Desktop</translation>
     </message>
     <message>
-        <location line="+244"/>
+        <location line="+193"/>
+        <source>Override DLL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Present Wine DLLs</source>
+        <translation type="unfinished">קובצי ה־DLL הנוכחיים של Wine</translation>
+    </message>
+    <message>
+        <location line="+42"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+99"/>
         <location line="+387"/>
         <source>Native</source>
@@ -1934,24 +2017,37 @@ See help for details.</source>
         <translation>קובצי תמונה (*.png *.jpg *.gif *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location line="+46"/>
-        <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation>מיוצאים סמלים מקובץ בינרי.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
+        <location line="+2"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+0"/>
-        <source>Exporting icon</source>
-        <translation>הסמל מיוצא</translation>
-    </message>
-    <message>
+        <location line="+44"/>
         <location line="+26"/>
-        <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation>מתבצעת המרה של סמל מקובץ בינרי.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
+        <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-26"/>
+        <location line="+26"/>
+        <source>Extracting icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
+        <translation type="obsolete">מיוצאים סמלים מקובץ בינרי.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
+    </message>
+    <message>
+        <source>Exporting icon</source>
+        <translation type="obsolete">הסמל מיוצא</translation>
+    </message>
+    <message>
+        <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
+        <translation type="obsolete">מתבצעת המרה של סמל מקובץ בינרי.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
+    </message>
+    <message>
         <source>Converting icon</source>
-        <translation>המרת סמל</translation>
+        <translation type="obsolete">המרת סמל</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -2009,12 +2105,11 @@ See help for details.</source>
         <translation>אין שולחן עבודה וירטואלי</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-175"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll);;Win32 Executable and Shared libraies (*.exe *.dll)</source>
-        <translation>תמונות וקבצים בינריים של Win32‏ (‎*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;קובצי תמונות (‎*.png *.jpg *.gif *.bmp *.xpm);;קובצי הפעלה שלWin32‏ (‎*.exe);;,ספריות שיתופיות וקובצי הפעלה של Win32‏ (‎*.dll);;קובצי הפעלה וספריות שיתופיות של Win32‏ (‎*.exe *.dll)</translation>
+        <translation type="obsolete">תמונות וקבצים בינריים של Win32‏ (‎*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;קובצי תמונות (‎*.png *.jpg *.gif *.bmp *.xpm);;קובצי הפעלה שלWin32‏ (‎*.exe);;,ספריות שיתופיות וקובצי הפעלה של Win32‏ (‎*.dll);;קובצי הפעלה וספריות שיתופיות של Win32‏ (‎*.exe *.dll)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="-333"/>
+        <location line="-333"/>
         <source>Icon Settings</source>
         <translation>הגדרות סמל</translation>
     </message>
@@ -2060,17 +2155,15 @@ See help for details.</source>
         <translation>גודל:</translation>
     </message>
     <message>
-        <location line="+166"/>
         <source>Override Dll</source>
-        <translation>דריסת DLL</translation>
+        <translation type="obsolete">דריסת DLL</translation>
     </message>
     <message>
-        <location line="+9"/>
         <source>Present wine dlls</source>
-        <translation>קובצי DLL נוכחיים של Wine</translation>
+        <translation type="obsolete">קובצי DLL נוכחיים של Wine</translation>
     </message>
     <message>
-        <location line="+62"/>
+        <location line="+237"/>
         <source>Disable</source>
         <translation>נטרול</translation>
     </message>
@@ -2080,9 +2173,13 @@ See help for details.</source>
         <translation>הוספה</translation>
     </message>
     <message>
-        <location line="+10"/>
         <source>Overrided dlls</source>
-        <translation>קובצי DLL שנדרסו</translation>
+        <translation type="obsolete">קובצי DLL שנדרסו</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Overridden DLLs</source>
+        <translation type="unfinished">קובצי DLL שנדרסו</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -2142,8 +2239,12 @@ See help for details.</source>
     </message>
     <message>
         <location line="+9"/>
+        <source>Note: Pre and post run scripts will not be executed in case the &quot;Run With Output in Console&quot; option is enabled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Note: pre and post run scripts will be not executed in case if program will be executed with &quot;Run With Output in Console&quot; option.</source>
-        <translation>הערה: סקריפטים שלפני ואחרי ההפעלה לא יופעלו במקרה שהתכנית תופעל עם האפשרות „הפעלה עם פלט במסוף“.</translation>
+        <translation type="obsolete">הערה: סקריפטים שלפני ואחרי ההפעלה לא יופעלו במקרה שהתכנית תופעל עם האפשרות „הפעלה עם פלט במסוף“.</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -2180,9 +2281,13 @@ See help for details.</source>
         <translation>ביטול</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsview.cpp" line="-6"/>
         <source>Sorry. It seems file already exists.&lt;br&gt;Replace existent or rename current?</source>
-        <translation>מסתבר כי הקובץ כבר קיים, עמך הסליחה.&lt;br&gt;האם להחליף את הקיים או לשנות את שם הנוכחי?</translation>
+        <translation type="obsolete">מסתבר כי הקובץ כבר קיים, עמך הסליחה.&lt;br&gt;האם להחליף את הקיים או לשנות את שם הנוכחי?</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/iconsview.cpp" line="-6"/>
+        <source>Sorry. It seems that the file already exists.&lt;br&gt;Replace existing file or rename current one?</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2206,13 +2311,21 @@ See help for details.</source>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems file already exists.</source>
-        <translation>מסתבר כי הקובץ כבר קיים, עמך הסליחה.</translation>
+        <source>Sorry. It seems that the file already exists.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>Replace existing file or rename current one?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sorry. It seems file already exists.</source>
+        <translation type="obsolete">מסתבר כי הקובץ כבר קיים, עמך הסליחה.</translation>
+    </message>
+    <message>
         <source>Replace existent or rename current?</source>
-        <translation>האם להחליף את הקיים או לשנות את שם הנוכחי?</translation>
+        <translation type="obsolete">האם להחליף את הקיים או לשנות את שם הנוכחי?</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -2305,22 +2418,45 @@ See help for details.</source>
         <translation>רענון רשימת התמונות</translation>
     </message>
     <message>
-        <location line="+69"/>
-        <source>Sorry. CD iamge name can not be empty.</source>
-        <translation>שם תמונת התקליטור לא יכול להיות ריק. עמך סליחה.</translation>
+        <location line="+46"/>
+        <location line="+25"/>
+        <source>Sorry. It seems that the CD image already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-25"/>
+        <source>Sorry. It seems that the CD image file already exists.&lt;br&gt;Please rename it, or cancel add image operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Sorry. CD image name cannot be empty.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+0"/>
+        <source>Sorry. CD image name cannot be empty.&lt;br&gt;Please enter new name, or cancel rename image operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Sorry. It seems that the CD image file already exists.&lt;br&gt;Please rename it, or cancel rename image operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sorry. CD iamge name can not be empty.</source>
+        <translation type="obsolete">שם תמונת התקליטור לא יכול להיות ריק. עמך סליחה.</translation>
+    </message>
+    <message>
         <source>Sorry. CD iamge name can not be empty.&lt;br&gt;Please enter new name, or cancel rename image operation.</source>
-        <translation>שם תמונת התקליטור לא יכול להישאר ריק, עמך הסליחה.&lt;br&gt;נא להזין שם חדש או לבטל את פעולת שינוי השם של התמונה.</translation>
+        <translation type="obsolete">שם תמונת התקליטור לא יכול להישאר ריק, עמך הסליחה.&lt;br&gt;נא להזין שם חדש או לבטל את פעולת שינוי השם של התמונה.</translation>
     </message>
     <message>
-        <location line="-23"/>
         <source>Sorry. It seems CD image file already exists.&lt;br&gt;Please rename it, or cancel add image operation.</source>
-        <translation>מסתבר כי קובץ תמונת התקליטור כבר קיים, עמך הסליחה.&lt;br&gt;נא לשנות את שמו או לבטל את פעולת הוספת התמונה.</translation>
+        <translation type="obsolete">מסתבר כי קובץ תמונת התקליטור כבר קיים, עמך הסליחה.&lt;br&gt;נא לשנות את שמו או לבטל את פעולת הוספת התמונה.</translation>
     </message>
     <message>
-        <location line="-22"/>
+        <location line="-47"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
         <translation>קובצי תמונות תקליטורים‏ ‎(*.iso *.nrg *.img *.bin *.mdf)‎</translation>
     </message>
@@ -2336,13 +2472,11 @@ See help for details.</source>
         <translation>פתיחת קובץ תמונת ISO</translation>
     </message>
     <message>
-        <location line="+8"/>
-        <location line="+25"/>
         <source>Sorry. It seems CD iamge already exists.</source>
-        <translation>מסתבר כי תמונת התקליטור כבר קיימת, עמך הסליחה.</translation>
+        <translation type="obsolete">מסתבר כי תמונת התקליטור כבר קיימת, עמך הסליחה.</translation>
     </message>
     <message>
-        <location line="-8"/>
+        <location line="+25"/>
         <source>Enter new name</source>
         <translation>נא להזין שם חדש</translation>
     </message>
@@ -2352,9 +2486,8 @@ See help for details.</source>
         <translation>נא להזין שם חדש:</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>Sorry. It seems CD image file already exists.&lt;br&gt;Please rename it, or cancel rename image operation.</source>
-        <translation>מסתבר כי קובץ תמונת התקליטור כבר קיים, עמך סליחה.&lt;br&gt;נא לשנות את שמו או לבטל את פעולת שינוי שם התמונה.</translation>
+        <translation type="obsolete">מסתבר כי קובץ תמונת התקליטור כבר קיים, עמך סליחה.&lt;br&gt;נא לשנות את שמו או לבטל את פעולת שינוי שם התמונה.</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/ImageManager.ui" line="+23"/>
@@ -2639,27 +2772,23 @@ See help for details.</source>
         <translation>פתיחת קובץ תמונה</translation>
     </message>
     <message>
-        <location line="+40"/>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation>מיוצא סמל מקובץ בינרי.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
+        <translation type="obsolete">מיוצא סמל מקובץ בינרי.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Exporting icon</source>
-        <translation>הסמל מיוצא</translation>
+        <translation type="obsolete">הסמל מיוצא</translation>
     </message>
     <message>
-        <location line="+26"/>
         <source>Convering icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation>מתבצעת המרה של סמל מקובץ בינרי.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
+        <translation type="obsolete">מתבצעת המרה של סמל מקובץ בינרי.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Converting icon</source>
-        <translation>הסמל עובר המרה</translation>
+        <translation type="obsolete">הסמל עובר המרה</translation>
     </message>
     <message>
-        <location line="+116"/>
+        <location line="+182"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>ניתן להפעיל רק עותק אחד של %1 בעת ובעונה אחת.</translation>
     </message>
@@ -2701,11 +2830,29 @@ See help for details.</source>
     </message>
     <message>
         <location line="+69"/>
-        <source>It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you wish to remove it?</source>
+        <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+438"/>
+        <location line="+2"/>
+        <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+40"/>
+        <location line="+26"/>
+        <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-26"/>
+        <location line="+26"/>
+        <source>Extracting icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-453"/>
         <location line="+14"/>
         <location line="+13"/>
         <location line="+12"/>
@@ -2731,13 +2878,11 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+60"/>
-        <location line="+2"/>
         <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
-        <translation>קובצי הפעלה וספריות משותפות של Win32‏ (‎*.exe *.dll);;קובצי הפעלה של Win32‏ (‎*.exe);;ספריות משותפות של Win32‏ (‎*.dll)</translation>
+        <translation type="obsolete">קובצי הפעלה וספריות משותפות של Win32‏ (‎*.exe *.dll);;קובצי הפעלה של Win32‏ (‎*.exe);;ספריות משותפות של Win32‏ (‎*.dll)</translation>
     </message>
     <message>
-        <location line="+186"/>
+        <location line="+248"/>
         <location line="+3"/>
         <source>Binary &quot;%1&quot; does not exist.</source>
         <translation type="unfinished"></translation>
@@ -2899,13 +3044,11 @@ See help for details.</source>
         <translation>יבוא קובצי שולחן העבודה של Wine</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <location line="+3"/>
         <source>Scan for Wine desktop files and import them into q4wine&apos;s icon view.</source>
-        <translation>איתור קובצי שולחן עבודה של Wine ויבוא הסמלים לתצוגת הסמלים של q4wine.</translation>
+        <translation type="obsolete">איתור קובצי שולחן עבודה של Wine ויבוא הסמלים לתצוגת הסמלים של q4wine.</translation>
     </message>
     <message>
-        <location line="-93"/>
+        <location line="-87"/>
         <source>Extract images from PE files using icoutils.</source>
         <translation>חילוץ תמונות מ־PE באמצעות icoutils.</translation>
     </message>
@@ -2915,7 +3058,13 @@ See help for details.</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+11"/>
+        <location line="+3"/>
+        <source>Scan for Wine desktop files and import them into Q4Wine&apos;s icon view.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+I</translation>
     </message>
@@ -3088,11 +3237,20 @@ See help for details.</source>
     </message>
     <message>
         <location line="-81"/>
-        <source>Create or update q4wine&apos;s cache of Winetricks appications.</source>
-        <translation>יצירה או עדכון של מטמון ה־q4wine של יישומי Winetricks.</translation>
+        <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+47"/>
+        <location line="+69"/>
+        <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before attempting to update it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create or update q4wine&apos;s cache of Winetricks appications.</source>
+        <translation type="obsolete">יצירה או עדכון של מטמון ה־q4wine של יישומי Winetricks.</translation>
+    </message>
+    <message>
+        <location line="-22"/>
         <source>Warning</source>
         <translation>אזהרה</translation>
     </message>
@@ -3102,14 +3260,18 @@ See help for details.</source>
         <translation>כבר קיים כונן מזויף בתוך &lt;b&gt;%1&lt;/b&gt;.&lt;br&gt;&lt;br&gt;האם ברצונך להסיר את &lt;b&gt;כל&lt;/b&gt; הקבצים מקידומת זו?</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Removing old fake drive.&lt;br&gt;This may take awhile...</source>
-        <translation>הכונן המזויף הישן מוסר.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
+        <translation type="obsolete">הכונן המזויף הישן מוסר.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Removing old fake drive</source>
+        <translation>הכונן המזויף הישן מוסר כעת</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Removing old fake drive</source>
-        <translation>הכונן המזויף הישן מוסר כעת</translation>
+        <source>Removing old fake drive.&lt;br&gt;This may take a while...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+17"/>
@@ -3117,9 +3279,8 @@ See help for details.</source>
         <translation>שגיאה</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before update it!</source>
-        <translation>לא נמצאה תצורה של כונן מזויף, עמך הסליחה.&lt;br&gt;נא ליצור תצורת כונן מזויף בטרם העדכון!</translation>
+        <translation type="obsolete">לא נמצאה תצורה של כונן מזויף, עמך הסליחה.&lt;br&gt;נא ליצור תצורת כונן מזויף בטרם העדכון!</translation>
     </message>
 </context>
 <context>
@@ -3477,17 +3638,15 @@ Note: leave it blank for default.</source>
         <translation>שם התיקייה:</translation>
     </message>
     <message>
-        <location line="-46"/>
         <source>Sorry. It seems directory already exists.</source>
-        <translation>מסתבר כי התיקייה כבר קיימת, עמך הסליחה.</translation>
+        <translation type="obsolete">מסתבר כי התיקייה כבר קיימת, עמך הסליחה.</translation>
+    </message>
+    <message>
+        <source>Sorry. It seems directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
+        <translation type="obsolete">מסתבר כי התיקייה כבר קיימת, עמך הסליחה.&lt;br&gt;נא לבחור בשם אחר או לבטל את הפעולה.</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Sorry. It seems directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation>מסתבר כי התיקייה כבר קיימת, עמך הסליחה.&lt;br&gt;נא לבחור בשם אחר או לבטל את הפעולה.</translation>
-    </message>
-    <message>
-        <location line="+46"/>
         <source>Enter new name for directory</source>
         <translation>נא להזין שם חדש עבור התיקייה</translation>
     </message>
@@ -3518,13 +3677,9 @@ Note: leave it blank for default.</source>
         <translation>עיגון כונן מדיה.</translation>
     </message>
     <message>
-        <location line="-90"/>
+        <location line="-140"/>
+        <location line="+50"/>
         <source>Sorry. It seems that the directory already exists.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Sorry. It seems that the directory already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3581,12 +3736,11 @@ Note: leave it blank for default.</source>
         <translation>עיון ...</translation>
     </message>
     <message>
-        <location line="-233"/>
         <source>Browse for other image</source>
-        <translation>עיון אחר תמונה אחרת</translation>
+        <translation type="obsolete">עיון אחר תמונה אחרת</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="-213"/>
         <source>New</source>
         <translation>חדשה</translation>
     </message>
@@ -3700,7 +3854,17 @@ Note: leave it blank for default.</source>
         <translation>מחיקת קידומת</translation>
     </message>
     <message>
-        <location line="+172"/>
+        <location line="+84"/>
+        <source>Sorry. It seems that the icon already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Sorry. It seems that the icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+88"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
         <translation>קובצי תמונות תקליטורים‏ ‎(*.iso *.nrg *.img *.bin *.mdf)‎</translation>
     </message>
@@ -3716,7 +3880,22 @@ Note: leave it blank for default.</source>
         <translation>פתיחת קובצי תמונות תקליטורים</translation>
     </message>
     <message>
-        <location line="+83"/>
+        <location line="+27"/>
+        <source>Failed to mount %1.</source>
+        <translation type="unfinished">אירע כשל בעיגון %1.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Drive successfully unmounted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Failed to unmount drive.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+47"/>
         <source>Sorry, you cannot delete the Default prefix.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3749,7 +3928,18 @@ Note: leave it blank for default.</source>
         <translation>עיגון ISO...</translation>
     </message>
     <message>
-        <location line="+168"/>
+        <location line="-127"/>
+        <location line="+50"/>
+        <source>Sorry. It seems that the directory already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+146"/>
+        <source>Browse for another image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+99"/>
         <source>Configure prefix settings</source>
         <translation>הגדרת תצורת הקידומת</translation>
     </message>
@@ -3759,17 +3949,15 @@ Note: leave it blank for default.</source>
         <translation>הגדרת תצורת כונן מזויף</translation>
     </message>
     <message>
-        <location line="+92"/>
         <source>Sorry. It seems icon already exists.</source>
-        <translation>מסתבר כי הסמל כבר קיים, עמך הסליחה.</translation>
+        <translation type="obsolete">מסתבר כי הסמל כבר קיים, עמך הסליחה.</translation>
     </message>
     <message>
-        <location line="+0"/>
         <source>Sorry. It seems icon already exists.&lt;br&gt;Please choose another name, or cancel operation.</source>
-        <translation>מסתבר כי הסמל כבר קיים.&lt;br&gt;נא לבחור בשם אחר או לבטל את הפעולה.</translation>
+        <translation type="obsolete">מסתבר כי הסמל כבר קיים.&lt;br&gt;נא לבחור בשם אחר או לבטל את הפעולה.</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="+171"/>
         <location line="+106"/>
         <source>Error</source>
         <translation>שגיאה</translation>
@@ -3787,19 +3975,16 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="-15"/>
-        <location line="+17"/>
         <source>Fail to mount %1.</source>
         <translation>אירע כשל בעיגון %1.</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>Drive successfully umounted.</source>
-        <translation>הכונן נותק בהצלחה.</translation>
+        <translation type="obsolete">הכונן נותק בהצלחה.</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Fail to umount drive.</source>
-        <translation>אירע כשל בניתוק הכונן.</translation>
+        <translation type="obsolete">אירע כשל בניתוק הכונן.</translation>
     </message>
 </context>
 <context>
@@ -3822,9 +4007,13 @@ Note: leave it blank for default.</source>
         <translation>שגיאה</translation>
     </message>
     <message>
-        <location line="-42"/>
         <source>It seems procces fail.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</source>
-        <translation>נראה כי התהליך נכשל.&lt;br&gt;&lt;br&gt;יומן השגיאות:&lt;br&gt;%1</translation>
+        <translation type="obsolete">נראה כי התהליך נכשל.&lt;br&gt;&lt;br&gt;יומן השגיאות:&lt;br&gt;%1</translation>
+    </message>
+    <message>
+        <location line="-42"/>
+        <source>It seems that the process failed.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3900,9 +4089,13 @@ Note: leave it blank for default.</source>
 <context>
     <name>Progress</name>
     <message>
-        <location filename="../q4wine-gui/progress.cpp" line="+50"/>
         <source>Importing wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see q4wine options dialog.</source>
-        <translation>סמלי שולחן העבודה של wine מיובאים מהמיקום:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;פעולה זו עלולה לארוך זמן מה...&lt;br&gt;&lt;br&gt;&lt;b&gt;לתשומת לבך:&lt;/b&gt; כדיל הסיר תהליכים שעברו עיבוד יש לעיין בו־שיח האפשרויות של q4wine.</translation>
+        <translation type="obsolete">סמלי שולחן העבודה של wine מיובאים מהמיקום:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;פעולה זו עלולה לארוך זמן מה...&lt;br&gt;&lt;br&gt;&lt;b&gt;לתשומת לבך:&lt;/b&gt; כדיל הסיר תהליכים שעברו עיבוד יש לעיין בו־שיח האפשרויות של q4wine.</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/progress.cpp" line="+50"/>
+        <source>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3924,8 +4117,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-53"/>
         <location line="+53"/>
+        <source>If the processes keep running -- end them manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>While process keep running -- end them manually.</source>
-        <translation>בזמן שהתהליכים עדיין פעילים –– הם יסתיימו ידנית.</translation>
+        <translation type="obsolete">בזמן שהתהליכים עדיין פעילים –– הם יסתיימו ידנית.</translation>
     </message>
     <message>
         <location line="-52"/>
@@ -4141,12 +4338,11 @@ Note: leave it blank for default.</source>
         <translation>Author: %1.</translation>
     </message>
     <message>
-        <location line="+14"/>
         <source>Open q4wine run dialog for windows binary</source>
-        <translation>פתיחת תיבת הדו־שיח לפעלת קבצים בינריים של Windows</translation>
+        <translation type="obsolete">פתיחת תיבת הדו־שיח לפעלת קבצים בינריים של Windows</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+17"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="+60"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+73"/>
         <source>Report %1 bugs to %2</source>
@@ -4158,21 +4354,30 @@ Note: leave it blank for default.</source>
         <translation>  %1 [KEY]...</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+1"/>
+        <source>GUI utility for Wine applications and prefixes management.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>open Q4Wine run dialog for Windows binary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>minimize %1 main window on startup</source>
         <translation>מזעור החלון הראשי של %1 עם ההפעלה</translation>
     </message>
     <message>
-        <location line="-5"/>
         <source>GUI utility for wine applications and prefixes management.</source>
-        <translation>כלי מנשק משתמש לניהול יישומים וקידומות של Wine.</translation>
+        <translation type="obsolete">כלי מנשק משתמש לניהול יישומים וקידומות של Wine.</translation>
     </message>
     <message>
         <source>File &quot;%1&quot; not exists.</source>
         <translation type="obsolete">File &quot;%1&quot; not exists.</translation>
     </message>
     <message>
-        <location line="-3"/>
+        <location line="-8"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="-27"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="-18"/>
         <source>Usage:</source>
@@ -4358,17 +4563,21 @@ Note: leave it blank for default.</source>
         <translation>  %1-helper [KEYs]...</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+1"/>
+        <source>Console utility for Q4Wine which helps to handle Wine application exit status and its stdout/stderr output logging.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>sets WINEDEBUG variable</source>
         <translation>sets WINEDEBUG variable</translation>
     </message>
     <message>
-        <location line="-3"/>
         <source>Console utility for q4wine which helps to handle wine application exit status and it&apos;s stdout\stderr output logging.</source>
-        <translation>Console utility for q4wine which helps to handle wine application exit status and it&apos;s stdout\stderr output logging.</translation>
+        <translation type="obsolete">Console utility for q4wine which helps to handle wine application exit status and it&apos;s stdout\stderr output logging.</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+1"/>
         <source>run with output in console</source>
         <translation>run with output in console</translation>
     </message>
@@ -4378,9 +4587,13 @@ Note: leave it blank for default.</source>
         <translation>sets DISPLAY variable</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>sets program nicenes</source>
-        <translation>sets program nicenes</translation>
+        <translation type="obsolete">sets program nicenes</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>sets program niceness</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4414,8 +4627,12 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+1"/>
+        <source>execute script before program run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>execute script before run program</source>
-        <translation>הפעלת סקריפט לפני הרצת תכנית</translation>
+        <translation type="obsolete">הפעלת סקריפט לפני הרצת תכנית</translation>
     </message>
     <message>
         <location line="+1"/>
