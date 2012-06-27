@@ -1,3 +1,11 @@
+Varsion 0.999-rc8
+ Added:
+  - Prefix execution template string;
+
+ Fixed:
+  - regression: selection focus jumps to prefix name on subdirectory selection;
+  - regression: can't load user selected language
+
 Version 0.999-rc7
  Added:
   - Winetricks database cache;
