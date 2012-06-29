@@ -120,17 +120,17 @@
     <message>
         <location line="+3"/>
         <source>Error: wrong or broken XML data. Try again later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка: не действительные, или поврежденные данные. Попробуйте еще раз позже.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Error: wrong or broken AppDB XML version. This might be caused by an outdated application version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка: не действительная, или поврежденая версия XML. Возможно программа требует обновления.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Error: XML parse error.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка: ошибка разбора XML.</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -172,22 +172,22 @@
     <message>
         <location line="+3"/>
         <source>Search in AppDB</source>
-        <translation type="unfinished"></translation>
+        <translation>Искать по базе AppDB</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Search in Wine AppDB</source>
-        <translation type="unfinished">Искать в базе AppDB</translation>
+        <translation>Искать в базе AppDB</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>AppDB categories list</source>
-        <translation type="unfinished"></translation>
+        <translation>Список категорий AppDB</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>View Wine AppDB categories list</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать список категорий AppDB</translation>
     </message>
     <message>
         <source>Search in appdb</source>
@@ -281,7 +281,7 @@
     <message>
         <location line="+47"/>
         <source>Minimize to tray at application startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cворачивать в системный лоток при запуске.</translation>
     </message>
     <message>
         <location line="+34"/>
@@ -528,7 +528,7 @@
     <message>
         <location line="+932"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортировать десктопные файлы Wine при запуске Q4Wine</translation>
     </message>
     <message>
         <location line="+144"/>
@@ -565,7 +565,7 @@
     <message>
         <location line="+245"/>
         <source>Note: Since SQLite was not designed to handle large amount of data, activating this can have a negative impact on the performance of Q4Wine. Use it with care.</source>
-        <translation type="unfinished"></translation>
+        <translation>Замечание: В связи с ограничениями SQLite, большой объем данных журналирования может снизить скорость работы Q4Wine. Используйте журналирование осторожно.</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -998,12 +998,12 @@
     <message>
         <location line="+291"/>
         <source>Direct3D settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройки Direct 3D</translation>
     </message>
     <message>
         <location line="+727"/>
         <source>Note: Q4Wine does not check if the selected driver is available in the current Wine build. Use this option with care.</source>
-        <translation type="unfinished"></translation>
+        <translation>Замечание: Q4Wine не проверяет наличие драйверов для текущей конфигурации Wine. Пользуйтесь настройками осторожно.</translation>
     </message>
     <message>
         <location line="+1224"/>
@@ -1450,12 +1450,12 @@ See help for details.</source>
         <location line="+523"/>
         <location line="+119"/>
         <source>Sorry. It seems that the icon already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Иконка уже существует.</translation>
     </message>
     <message>
         <location line="-642"/>
         <source>Sorry. It seems that icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Иконка уже существует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
         <location line="+175"/>
@@ -1699,12 +1699,12 @@ See help for details.</source>
     <message>
         <location line="+560"/>
         <source>Drive successfully unmounted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Устройство успешно отмонтировано.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Failed to unmount drive.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось отмонтировать устройство.</translation>
     </message>
     <message>
         <source>Copy application directory path to system&apos;s&apos; clipboard</source>
@@ -1776,22 +1776,22 @@ See help for details.</source>
     <message>
         <location line="+153"/>
         <source>Copy application directory path to system&apos;s clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Копировать путь к папке в системный буфер обмена</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Copy full application path to system&apos;s clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Копировать полный путь к программе в системный буфер обмена</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Copy q4wine-cli command for current application</source>
-        <translation type="unfinished"></translation>
+        <translation>Копировать команду q4wine-cli для данной программы</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Browse for another image</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск другого дискового образа</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -1817,7 +1817,7 @@ See help for details.</source>
         <location line="+3"/>
         <location line="+119"/>
         <source>Sorry. It seems that the icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Иконка уже существует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
         <location line="-97"/>
@@ -1956,17 +1956,17 @@ See help for details.</source>
     <message>
         <location line="-79"/>
         <source>Override DLL</source>
-        <translation type="unfinished"></translation>
+        <translation>Переопределение DLL</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Present Wine DLLs</source>
-        <translation type="unfinished">Присутствующие DDL</translation>
+        <translation>Присутствующие DLL</translation>
     </message>
     <message>
         <location line="+80"/>
         <source>Overridden DLLs</source>
-        <translation type="unfinished">Замещенные dll`ки</translation>
+        <translation>Замещенные DLL</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -2027,7 +2027,7 @@ See help for details.</source>
     <message>
         <location line="+9"/>
         <source>Note: Pre and post run scripts will not be executed in case the &quot;Run With Output in Console&quot; option is enabled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Заметка: пользовательские скрипты не будут запущены если программа запускается с опцией &quot;Запуск с выводом в консоль&quot;.</translation>
     </message>
     <message>
         <source>Note: pre and post run scripts will be not executed in case if program will be executed with &quot;Run With Output in Console&quot; option.</source>
@@ -2094,19 +2094,19 @@ See help for details.</source>
     <message>
         <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
+        <translation>Изображения и файлы для Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Изображения (*.png *.jpg *.gif *.bmp *.xpm);;Исполняемые файлы Win32 (*.exe);;Win32 разделяемые библиотеки (*.dll);;Файлы для Win32 (*.exe *.dll)</translation>
     </message>
     <message>
         <location line="+44"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished"></translation>
+        <translation>Извлечение иконки из бинарного файла.&lt;br&gt;Это может занять некоторое время...</translation>
     </message>
     <message>
         <location line="-26"/>
         <location line="+26"/>
         <source>Extracting icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Извлечение иконки</translation>
     </message>
     <message>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
@@ -2257,17 +2257,17 @@ See help for details.</source>
     <message>
         <location line="-64"/>
         <source>Sorry. It seems that the file already exists.&lt;br&gt;Replace existing file or rename current one?</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл уже существует.&lt;br&gt;Перезаписать существующий или переименовать текущий?</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Sorry. It seems that the file already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл уже существует.</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Replace existing file or rename current one?</source>
-        <translation type="unfinished"></translation>
+        <translation>Заменить существующий или переименовать текущий?</translation>
     </message>
     <message>
         <location line="+50"/>
@@ -2360,27 +2360,27 @@ See help for details.</source>
         <location line="+8"/>
         <location line="+25"/>
         <source>Sorry. It seems that the CD image already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Образ CD уже существует.</translation>
     </message>
     <message>
         <location line="-25"/>
         <source>Sorry. It seems that the CD image file already exists.&lt;br&gt;Please rename it, or cancel add image operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Образ CD уже существует.&lt;br&gt;Переименуйте его или отмените операцию.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Sorry. CD image name cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя образа CD не может быть пустым.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Sorry. CD image name cannot be empty.&lt;br&gt;Please enter new name, or cancel rename image operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя образа CD не может быть пустым.&lt;br&gt;Введите новое имя или прервите операцию.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Sorry. It seems that the CD image file already exists.&lt;br&gt;Please rename it, or cancel rename image operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Образ CD уже существует.&lt;br&gt;Переименуйте его или отмените операцию.</translation>
     </message>
     <message>
         <source>Sorry. It seems CD iamge already exists.</source>
@@ -2743,7 +2743,7 @@ See help for details.</source>
         <location line="+11"/>
         <location line="+3"/>
         <source>Scan for Wine desktop files and import them into Q4Wine&apos;s icon view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Искать десктопные файлы Wine и импортировать их в базу Q4Wine.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2803,7 +2803,7 @@ See help for details.</source>
     <message>
         <location line="+1"/>
         <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вероятно, запущен другой экзепляр Q4Wine или Q4Wine некорректно завершен. Отключить его?</translation>
     </message>
     <message>
         <location line="+49"/>
@@ -2837,19 +2837,19 @@ See help for details.</source>
         <location line="+60"/>
         <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
-        <translation type="unfinished"></translation>
+        <translation>Исполняемые файлы и библиотеки Win32 (*.exe *.dll);;Исполняемые файлы Win32 (*.exe);;Библиотеки Win32 (*.dll)</translation>
     </message>
     <message>
         <location line="+40"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished"></translation>
+        <translation>Извлечение иконки из бинарного файла.&lt;br&gt;Это может занять некоторое время...</translation>
     </message>
     <message>
         <location line="-26"/>
         <location line="+26"/>
         <source>Extracting icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Извлечение иконки</translation>
     </message>
     <message>
         <source>It seems another instance of q4wine is running, or q4wine was shutdown incorrectly. Do you wish to remove it?</source>
@@ -3038,12 +3038,12 @@ See help for details.</source>
     <message>
         <location line="-81"/>
         <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать или обновить в Q4Wine кэш программ из Winetricks.</translation>
     </message>
     <message>
         <location line="+69"/>
         <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before attempting to update it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не найден виртуальный диск.&lt;br&gt; Создайте виртуальный диск перед его обновлением.</translation>
     </message>
     <message>
         <source>Create or update q4wine&apos;s cache of Winetricks appications.</source>
@@ -3071,7 +3071,7 @@ See help for details.</source>
     <message>
         <location line="+0"/>
         <source>Removing old fake drive.&lt;br&gt;This may take a while...</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаление старого виртуального диска.&lt;br&gt;Это займет какое-то время...</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -3639,12 +3639,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+84"/>
         <source>Sorry. It seems that the icon already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Иконка уже существует.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Sorry. It seems that the icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Иконка уже существует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
         <location line="+88"/>
@@ -3665,17 +3665,17 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+27"/>
         <source>Failed to mount %1.</source>
-        <translation type="unfinished">Не удалось примонтировать %1.</translation>
+        <translation>Не удалось примонтировать %1.</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Drive successfully unmounted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Устройство успешно отмонтировано.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Failed to unmount drive.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось отмонтировать устройство.</translation>
     </message>
     <message>
         <location line="+47"/>
@@ -3701,7 +3701,7 @@ Note: leave it blank for default.</source>
         <location line="-296"/>
         <location line="+50"/>
         <source>Sorry. It seems that the directory already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Папка уже сужествует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
         <location line="+77"/>
@@ -3711,7 +3711,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+69"/>
         <source>Browse for another image</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск другого дискового образа</translation>
     </message>
     <message>
         <location line="+99"/>
@@ -3798,7 +3798,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-42"/>
         <source>It seems that the process failed.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Процесс завершился неудачно.&lt;br&gt;&lt;br&gt;Лог ошибок:&lt;br&gt;%1</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3862,7 +3862,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="+50"/>
         <source>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортируются десктоные файлы Wine из:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Это может занять какое-то время...&lt;br&gt;&lt;br&gt;&lt;b&gt;Примечание:&lt;/b&gt; для удаления обработанных файлов см. диалог настроек Q4Wine.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3885,7 +3885,7 @@ Note: leave it blank for default.</source>
         <location line="-53"/>
         <location line="+53"/>
         <source>If the processes keep running -- end them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Если процесс продолжает выполняться, завершите его вручную.</translation>
     </message>
     <message>
         <source>While process keep running -- end them manually.</source>
@@ -4116,12 +4116,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>GUI utility for Wine applications and prefixes management.</source>
-        <translation type="unfinished"></translation>
+        <translation>Графическая утилита для управления приложениями и префиксами (песочницами) Wine.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>open Q4Wine run dialog for Windows binary</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть диалог запуска программы</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4276,7 +4276,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>Console utility for Q4Wine which helps to handle Wine application exit status and its stdout/stderr output logging.</source>
-        <translation type="unfinished"></translation>
+        <translation>Консольная утилита для Q4Wine, которая помогает получать код завершения программы Wine и заносит ее уведомления в журнал.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4304,7 +4304,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>sets program niceness</source>
-        <translation type="unfinished"></translation>
+        <translation>установить приоритет программы</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4339,7 +4339,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>execute script before program run</source>
-        <translation type="unfinished"></translation>
+        <translation>выполнить скрипт перед запуском программы</translation>
     </message>
     <message>
         <source>execute script before run program</source>
