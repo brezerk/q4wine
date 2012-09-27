@@ -444,11 +444,10 @@ QString corelib::getTranslationLang(){
 QString  corelib::getLang(){
     QString lang=this->getSetting("app", "lang", false).toString();
 
-    if (!lang.contains("q4wine")){
-        lang = QString("q4wine_%1").arg(lang);
-    }
-
     if (!lang.isEmpty()){
+        if (!lang.contains("q4wine")){
+            lang = QString("q4wine_%1").arg(lang);
+        }
 #ifdef DEBUG
         qDebug()<<"[ii] Get lang from settings:"<<lang;
 #endif
@@ -483,6 +482,8 @@ QString  corelib::getLang(){
     if (lang.contains("=")){
         lang = lang.split("=").last();
     }
+
+    lang = QString("q4wine_%1").arg(lang);
 
 #ifdef DEBUG
     qDebug()<<"[ii] Lang to load: "<<lang;
