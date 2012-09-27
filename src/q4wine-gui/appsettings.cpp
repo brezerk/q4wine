@@ -540,7 +540,6 @@ void AppSettings::cmdCancel_Click(){
 }
 
 void AppSettings::cmdOk_Click(){
-
     if (!checkEntry(txtWineBin->text(), "wine"))
         return;
 

@@ -146,7 +146,7 @@ public:
     QString getLocale();
 
     bool isConfigured();
-    bool checkDirs();
+    bool checkDirs(QStringList subDirs = QStringList());
 
     void getBuildFlags();
 
@@ -313,6 +313,14 @@ public:
      * \return true on success.
      */
     QStringList importPrefixesConfiguration(void);
+
+    /*! \brief This function is used to remove directory.
+     *
+     * This function is used to remove directory
+     *
+     * \return true on success.
+     */
+    bool removeDirectory(QString dirPath);
 
 private:
     /*! Define is library operate in CLI or GUI mode.

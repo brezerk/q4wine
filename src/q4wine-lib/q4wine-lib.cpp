@@ -538,9 +538,10 @@ bool corelib::isConfigured(){
     return false;
 }
 
-bool corelib::checkDirs(){
-    QStringList subDirs;
-    subDirs << "" << "db" << "icons" << "prefixes" << "tmp" << "theme" << "tmp/cache" << "scripts";
+bool corelib::checkDirs(QStringList subDirs){
+    if (subDirs.isEmpty()){
+        subDirs << "" << "db" << "icons" << "prefixes" << "tmp" << "theme" << "tmp/cache" << "scripts";
+    }
 
     QTextStream QErr(stderr);
     QDir dir;
@@ -1964,4 +1965,29 @@ QStringList corelib::getCdromDevices(void) const{
             }
 
             return prefixes;
+        }
+
+        bool corelib::removeDirectory(QString dirPath){
+            QDir dir(dirPath);
+            dir.setFilter(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files);
+            QFileInfoList list = dir.entryInfoList();
+            for (int i = 0; i < list.size(); ++i) {
+                //if (list.)
+                if (list.at(i).isDir() && !list.at(i).isSymLink()){
+                    if (not this->removeDirectory(list.at(i).absoluteFilePath()))
+                        return false;
+#ifdef DEBUG
+                    qDebug()<<"[DD] Remove dir "<<list.at(i).absoluteFilePath();
+#endif
+                    if (not dir.rmdir(list.at(i).absoluteFilePath()))
+                        return false;
+                } else {
+#ifdef DEBUG
+                    qDebug()<<"[DD] Remove file "<< list.at(i).absoluteFilePath();
+#endif
+                    if (not QFile(list.at(i).absoluteFilePath()).remove())
+                        return false;
+                }
+            }
+            return true;
         }

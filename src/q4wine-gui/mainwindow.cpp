@@ -224,25 +224,15 @@ void MainWindow::clearTmp(){
     fileName.append(APP_SHORT_NAME);
     fileName.append("/tmp/");
 
-    QDir dir(fileName);
-    dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
-
-    QFileInfoList list = dir.entryInfoList();
-    for (int i = 0; i < list.size(); ++i) {
-        QFile(list.at(i).absoluteFilePath()).remove();
+    if (not CoreLib->removeDirectory(fileName)){
+        qWarning()<<"[WW] Can't clear "<<fileName;
+        return;
     }
 
-    fileName = QDir::homePath();
-    fileName.append("/.config/");
-    fileName.append(APP_SHORT_NAME);
-    fileName.append("/tmp/cache/");
-
-    dir.setPath(fileName);
-
-    list = dir.entryInfoList();
-    for (int i = 0; i < list.size(); ++i) {
-        QFile(list.at(i).absoluteFilePath()).remove();
+    if (!CoreLib->checkDirs(QStringList() << "tmp" << "tmp/cache")){
+        return;
     }
+
     return;
 }
 
