@@ -56,7 +56,6 @@ class Prefix
       QHash<QString,QString> getByName(const QString prefix_name) const;
       QString getMountPoint(const QString prefix_name) const;
       QChar getMountPointWindrive(const QString prefix_name) const;
-      QString getLibsPath(const QString prefix_name) const;
       QStringList getPrefixList(void) const;
 
      /*! \brief This function gets prefix id by name.

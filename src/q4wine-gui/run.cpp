@@ -244,11 +244,11 @@ void Run::getPrefixes(){
         comboPrefixes->addItem(list.at(i));
         if (list.at(i)==this->prefix_name){
             comboPrefixes->setCurrentIndex ( comboPrefixes->findText(list.at(i)) );
-            prefix_dir = db_prefix.getPath(list.at(i));
-            getWineDlls(db_prefix.getLibsPath(list.at(i)));
+            QHash<QString,QString> pref = db_prefix.getByName(prefix_name);
+            prefix_dir = pref.value("path");
+            getWineDlls(pref.value("libs"));
         }
     }
-
     return;
 }
 

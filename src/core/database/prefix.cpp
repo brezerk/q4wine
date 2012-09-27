@@ -235,25 +235,6 @@ QChar Prefix::getMountPointWindrive(const QString prefix_name) const{
     return value[0];
 }
 
-QString Prefix::getLibsPath(const QString prefix_name) const{
-    QString value;
-    QSqlQuery query;
-
-    query.prepare("SELECT wine_dllpath FROM prefix WHERE name=:prefix_name");
-    query.bindValue(":prefix_name", prefix_name);
-
-    if (query.exec()){
-        query.first();
-        if (query.isValid()){
-            value = query.value(0).toString();
-        }
-    } else {
-        qDebug()<<"SqlError: "<<query.lastError();
-    }
-    query.clear();
-    return value;
-}
-
 QStringList Prefix::getPrefixList(void) const{
     QStringList value;
     QSqlQuery query;
