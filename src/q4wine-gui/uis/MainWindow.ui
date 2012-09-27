@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>591</width>
-    <height>503</height>
+    <width>589</width>
+    <height>501</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -188,7 +188,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>591</width>
+     <width>589</width>
      <height>24</height>
     </rect>
    </property>
@@ -197,7 +197,6 @@
      <string>&amp;File</string>
     </property>
     <addaction name="mainRun"/>
-    <addaction name="mainInstall"/>
     <addaction name="separator"/>
     <addaction name="mainOptions"/>
     <addaction name="separator"/>
