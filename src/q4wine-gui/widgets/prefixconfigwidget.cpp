@@ -329,21 +329,34 @@ void PrefixConfigWidget::itemDoubleClicked (QListWidgetItem *item){
         QFile sysreg_file (sysregPath);
 
         if (item->text() == tr("Create Fake Drive")){
-            if (sysreg_file.exists()){
-                if (QMessageBox::warning(this, tr("Warning"), tr("A fake drive already exists within <b>%1</b>.<br><br>Do you wish to remove <b>all</b> files from this prefix?").arg(prefixPath), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
 
-                    QStringList args;
-                    args << "-rf";
-                    args << prefixPath;
-                    Process exportProcess(args, "/bin/rm", QDir::homePath(), tr("Removing old fake drive.<br>This may take a while..."), tr("Removing old fake drive"));
+            QDir dir(prefixPath);
+            dir.setFilter(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files);
 
-                    if (exportProcess.exec()!=QDialog::Accepted){
+            // wineboot require not existing directory. see BUG-14 details.
+            if (dir.exists(prefixPath)){
+                QFileInfoList list = dir.entryInfoList();
+                if (list.size() > 0){
+                    if (QMessageBox::warning(this, tr("Warning"), tr("A fake drive already exists within <b>%1</b>.<br><br>Do you wish to remove <b>all</b> files from this prefix?").arg(prefixPath), QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
+                        QStringList args;
+                        args << "-rf";
+                        args << prefixPath;
+                        Process exportProcess(args, "/bin/rm", QDir::homePath(), tr("Removing old fake drive.<br>This may take a while..."), tr("Removing old fake drive"));
+
+                        if (exportProcess.exec()!=QDialog::Accepted){
+                            return;
+                        }
+                    } else {
                         return;
                     }
                 } else {
-                    return;
+                    if (!dir.rmdir(prefixPath)){
+                        QMessageBox::critical(this, tr("Error"), tr("Fail to remove %1").arg(prefixPath));
+                        return;
+                    }
                 }
             }
+
             FakeDriveSettings settings(this->cbPrefixes->currentText());
             settings.loadDefaultPrefixSettings();
 

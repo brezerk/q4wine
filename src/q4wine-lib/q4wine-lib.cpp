@@ -1970,6 +1970,8 @@ QStringList corelib::getCdromDevices(void) const{
 
         bool corelib::removeDirectory(QString dirPath){
             QDir dir(dirPath);
+            if (not dir.exists())
+                return true;
             dir.setFilter(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files);
             QFileInfoList list = dir.entryInfoList();
             for (int i = 0; i < list.size(); ++i) {

@@ -222,7 +222,7 @@ void MainWindow::clearTmp(){
     QString fileName = QDir::homePath();
     fileName.append("/.config/");
     fileName.append(APP_SHORT_NAME);
-    fileName.append("/tmp/");
+    fileName.append("/tmp");
 
     if (not CoreLib->removeDirectory(fileName)){
         qWarning()<<"[WW] Can't clear "<<fileName;

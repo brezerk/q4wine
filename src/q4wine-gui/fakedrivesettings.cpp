@@ -1293,6 +1293,7 @@ void FakeDriveSettings::loadDefaultSettings(){
     QString prefixPath = db_prefix.getPath(this->prefixName);
 
     QDir dir;
+
     ExecObject execObj;
     execObj.cmdargs = "-u -i";
     execObj.execcmd = "wineboot";
