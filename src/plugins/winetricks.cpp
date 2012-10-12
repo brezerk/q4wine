@@ -74,25 +74,28 @@ void winetricks::run_winetricks(QString item){
 
         QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
 
-        args.append("env");
+        QStringList sh_args;
+        sh_args.append("env");
 
         if (!proxy_host.isEmpty()){
-            args.append(QString("HTTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
-            args.append(QString("FTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+            sh_args.append(QString("HTTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+            sh_args.append(QString("FTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
         }
 
         QHash<QString, QString> prefix_info = db_prefix.getByName(this->prefix_name);
 
-        args << QString("WINEPREFIX=%1").arg(prefix_info.value("path"));
-        args << QString("WINEDLLPATH=%1").arg(prefix_info.value("libs"));
-        args << QString("WINELOADER=%1").arg(prefix_info.value("loader"));
-        args << QString("WINESERVER=%1").arg(prefix_info.value("server"));
+        sh_args << QString("WINEPREFIX=%1").arg(prefix_info.value("path"));
+        sh_args << QString("WINEDLLPATH=%1").arg(prefix_info.value("libs"));
+        sh_args << QString("WINELOADER=%1").arg(prefix_info.value("loader"));
+        sh_args << QString("WINESERVER=%1").arg(prefix_info.value("server"));
         if (!prefix_info.value("arch").isEmpty())
-            args << QString("WINEARCH=%1").arg(prefix_info.value("arch"));
+            sh_args << QString("WINEARCH=%1").arg(prefix_info.value("arch"));
 
-        args.append(CoreLib->getWhichOut("sh"));
-        args.append("-c");
-        args.append(QString("%1 --no-isolate %2").arg(this->winetricks_bin).arg(item));
+
+        sh_args.append(CoreLib->getWhichOut("sh"));
+        sh_args.append("-c");
+        sh_args.append(QString("\"%1 --no-isolate %2\"").arg(this->winetricks_bin).arg(item));
+        args.append(sh_args.join(" "));
 
 #ifdef DEBUG
         qDebug()<<"[DD] winetricks args: "<<args;
@@ -126,17 +129,17 @@ void winetricks::downloadwinetricks () {
         args.append(QString("FTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
     }
 
-    args.append(CoreLib->getWhichOut("sh"));
-    args.append("-c");
-
     QString arg;
-        arg.append(CoreLib->getWhichOut("wget"));
-        arg.append(" http://kegel.com/wine/winetricks -O ");
-        arg.append(this->winetricks_bin);
-        arg.append(" && ");
-        arg.append(CoreLib->getWhichOut("chmod"));
-        arg.append(" +x ");
-        arg.append(this->winetricks_bin);
+    arg.append(CoreLib->getWhichOut("sh"));
+    arg.append(" -c \"");
+    arg.append(CoreLib->getWhichOut("wget"));
+    arg.append(" http://kegel.com/wine/winetricks -O ");
+    arg.append(this->winetricks_bin);
+    arg.append(" && ");
+    arg.append(CoreLib->getWhichOut("chmod"));
+    arg.append(" +x ");
+    arg.append(this->winetricks_bin);
+    arg.append("\"");
     args.append(arg);
 
 #ifdef DEBUG

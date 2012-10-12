@@ -1,5 +1,6 @@
 Version 1.0
  Fixed:
+  - Winetricks functionality fails to work [BUG-15]
   - Cannot run 'Create Fake Drive' for a new prefix with a win32 architecture [BUG-14]
   - System Language autodetection does not work [BUG-13]
   - Error while loading application settings by key: 'WineLibs'. File or path does not exist: "" [BUG-12]
