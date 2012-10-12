@@ -183,9 +183,11 @@ int WineObject::runSys(){
     this->programBinary = this->programBinary.replace(this->programWrkDir, "").replace("/", "");
 
     if (this->useConsole){
+        // Owerride " with \" in case of using console app.
+        run_string.replace("\"", "\\\"");
         // If we gona use console output, so exec program is program specificed at CONSOLE global variable
         run_string.replace("%CONSOLE_BIN%", CoreLib->getSetting("console", "bin").toString());
-        run_string.replace("%CONSOLE_ARGS%", CoreLib->getSetting("console", "args", false).toString());
+        run_string.replace("%CONSOLE_ARGS%", QString("%1 \"").arg(CoreLib->getSetting("console", "args", false).toString()));
     } else {
         run_string.replace("%CONSOLE_BIN%", "");
         run_string.replace("%CONSOLE_ARGS%", "");
@@ -248,6 +250,10 @@ int WineObject::runSys(){
     } else {
         run_string.replace("%PROGRAM_BIN%", QString("\'%1\'").arg(this->programBinary));
         run_string.replace("%PROGRAM_ARGS%", programArgs);
+    }
+
+    if (this->useConsole){
+        run_string.append("\"");
     }
 
 #ifdef DEBUG

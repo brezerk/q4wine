@@ -1,5 +1,6 @@
 Version 1.0
  Fixed:
+  - Quote run string in case of console useage (gnome-terminal, see BUG-15)
   - Winetricks functionality fails to work [BUG-15]
   - Cannot run 'Create Fake Drive' for a new prefix with a win32 architecture [BUG-14]
   - System Language autodetection does not work [BUG-13]
