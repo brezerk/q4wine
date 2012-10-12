@@ -1655,19 +1655,21 @@ QStringList corelib::getCdromDevices(void) const{
 
                     QHash<QString, QString> prefix_info = db_prefix.getByName(prefix_name);
 
-                    args << "env";
-                    args << QString("WINEPREFIX=%1").arg(prefix_info.value("path"));
-                    args << QString("WINEDLLPATH=%1").arg(prefix_info.value("libs"));
-                    args << QString("WINELOADER=%1").arg(prefix_info.value("loader"));
-                    args << QString("WINESERVER=%1").arg(prefix_info.value("server"));
+                    QStringList sh_args;
+                    sh_args << "env";
+                    sh_args << QString("WINEPREFIX=%1").arg(prefix_info.value("path"));
+                    sh_args << QString("WINEDLLPATH=%1").arg(prefix_info.value("libs"));
+                    sh_args << QString("WINELOADER=%1").arg(prefix_info.value("loader"));
+                    sh_args << QString("WINESERVER=%1").arg(prefix_info.value("server"));
                     if (!prefix_info.value("arch").isEmpty())
-                        args << QString("WINEARCH=%1").arg(prefix_info.value("arch"));
+                        sh_args << QString("WINEARCH=%1").arg(prefix_info.value("arch"));
 
                     QString prefix_path=path;
                     prefix_path.replace("'", "'\\''");
 
-                    args << "/bin/sh" << "-c" << QString("cd \'%1\' && echo \'\' && echo \' [ii] wine environment variables are set to \"%2\" prefix settings.\' && echo \'\' && %3 ").arg(prefix_path).arg(prefix_name).arg(shell);
+                    sh_args << "/bin/sh" << "-c" << QString("\"cd \'%1\' && echo \'\' && echo \' [ii] wine environment variables are set to \\\"%2\\\" prefix settings.\' && echo \'\' && %3 \"").arg(prefix_path).arg(prefix_name).arg(shell);
 
+                    args << sh_args.join(" ");
 #ifdef DEBUG
                     qDebug()<<"[ii] Open console args:"<<args;
 #endif
