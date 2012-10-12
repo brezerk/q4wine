@@ -94,6 +94,10 @@ void winetricks::run_winetricks(QString item){
         args.append("-c");
         args.append(QString("%1 --no-isolate %2").arg(this->winetricks_bin).arg(item));
 
+#ifdef DEBUG
+        qDebug()<<"[DD] winetricks args: "<<args;
+#endif
+
     QProcess proc;
     proc.startDetached(console_bin, args, QDir::homePath());
 
@@ -135,6 +139,9 @@ void winetricks::downloadwinetricks () {
         arg.append(this->winetricks_bin);
     args.append(arg);
 
+#ifdef DEBUG
+        qDebug()<<"[DD] winetricks exec: "<<console_bin<<args;
+#endif
     QProcess proc(this);
     proc.startDetached(console_bin, args);
     #ifdef DEBUG
