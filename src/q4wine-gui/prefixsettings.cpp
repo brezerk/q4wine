@@ -108,6 +108,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
     cmdGetMountPoint->installEventFilter(this);
 
     cmdOk->setFocus(Qt::ActiveWindowFocusReason);
+
     return;
 }
 
@@ -144,14 +145,15 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent,
     cmdGetWineLibs->installEventFilter(this);
     cmdGetMountPoint->installEventFilter(this);
 
-    //comboArchList->setEnabled(true);
     txtRunString->setText(RUN_STRING_TEMPLATE);
 
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
     connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
-    cmdCancel->setFocus(Qt::ActiveWindowFocusReason);
+    connect(txtPrefixName, SIGNAL(textChanged(QString)), this, SLOT(setDefPath(QString)));
+
+    txtPrefixName->setFocus(Qt::ActiveWindowFocusReason);
     return;
 }
 
@@ -196,6 +198,12 @@ void PrefixSettings::cmdOk_Click(){
     }
 
     if (this->addNew){
+
+        if (QDir(path).exists()){
+            if(QMessageBox::warning(this, tr("Warning"), tr("Directory \"%1\" already exists. Do you wish to use it anyway?").arg(path), QMessageBox::Yes, QMessageBox::No)==QMessageBox::No)
+                return;
+        }
+
         if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->text()))
             reject();
 
@@ -297,4 +305,12 @@ void PrefixSettings::getWineCdromLetter(){
             comboWinDrive->setCurrentIndex(comboWinDrive->findText(QString("%1:").arg(letter.toUpper())));
         }
     }
+}
+
+void PrefixSettings::setDefPath(QString prefix_name){
+    QString path = CoreLib->getSetting("advanced", "prefixDefaultPath").toString();
+    if (!path.endsWith("/"))
+        path.append("/");
+    path.append(prefix_name);
+    this->txtPrefixPath->setText(path);
 }

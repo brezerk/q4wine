@@ -343,7 +343,7 @@ void corelib::checkSettings(){
     this->getSetting("icotool", "icotool");
 #endif
 
-    if (this->getSetting("quickmount", "type", FALSE).toString().isEmpty()){
+    if (this->getSetting("quickmount", "type", false).toString().isEmpty()){
         QSettings settings(APP_SHORT_NAME, "default");
         settings.beginGroup("quickmount");
 
@@ -358,6 +358,16 @@ void corelib::checkSettings(){
             settings.setValue("mount_image_string", this->getMountImageString(2));
             settings.setValue("umount_string", this->getUmountString(2));
         }
+        settings.endGroup();
+    }
+
+    if (this->getSetting("advanced", "prefixDefaultPath", false).toString().isEmpty()){
+        QString path = QDir::homePath();
+        path.append("/.local/share/wineprefixes");
+
+        QSettings settings(APP_SHORT_NAME, "default");
+        settings.beginGroup("advanced");
+        settings.setValue("prefixDefaultPath", path);
         settings.endGroup();
     }
 

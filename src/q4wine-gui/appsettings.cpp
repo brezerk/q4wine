@@ -79,6 +79,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     cmdGetReniceBin->installEventFilter(this);
     cmdGetConsoleBin->installEventFilter(this);
     cmdGetShBin->installEventFilter(this);
+    cmdGetDefPrefixPath->installEventFilter(this);
 
     QSettings settings(APP_SHORT_NAME, "default");
 
@@ -243,6 +244,8 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 #endif
 
     settings.beginGroup("advanced");
+    txtDefPrefixPath->setText(settings.value("prefixDefaultPath").toString());
+
     if (settings.value("openRunDialog", 0).toInt()==0){
         cbOpenRunDialog->setChecked(false);
     } else {
@@ -531,6 +534,7 @@ void AppSettings::loadThemeIcons(){
     cmdGetConsoleBin->setIcon(CoreLib->loadIcon("data/folder.png"));
     cmdGetWrestoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
     cmdGetIcotoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetDefPrefixPath->setIcon(CoreLib->loadIcon("data/folder.png"));
     return;
 }
 
@@ -704,6 +708,7 @@ void AppSettings::cmdOk_Click(){
     settings.endGroup();
 
     settings.beginGroup("advanced");
+    settings.setValue("prefixDefaultPath", txtDefPrefixPath->text());
     if (cbOpenRunDialog->isChecked()){
         settings.setValue("openRunDialog", 1);
     } else {

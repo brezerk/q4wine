@@ -106,6 +106,11 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
          */
         void getWineCdromLetter();
 
+        /*!
+         * \brief Set default path on prefix creation
+         */
+        void setDefPath(QString prefix_name);
+
 };
 
 #endif

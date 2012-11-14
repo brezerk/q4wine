@@ -10,6 +10,9 @@ Version 1.0
  Removed:
   - File -> Install wizard menu entry;
 
+ Added:
+  - Option to set default directory for new wine prefixes (default: $HOME/.local/share/wineprefixes)
+
 Version 0.999-rc8
  Added:
   - Prefix execution template string;
