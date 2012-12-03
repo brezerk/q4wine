@@ -186,8 +186,15 @@ int WineObject::runSys(){
         // Owerride " with \" in case of using console app.
         run_string.replace("\"", "\\\"");
         // If we gona use console output, so exec program is program specificed at CONSOLE global variable
-        run_string.replace("%CONSOLE_BIN%", CoreLib->getSetting("console", "bin").toString());
-        run_string.replace("%CONSOLE_ARGS%", QString("%1 \"").arg(CoreLib->getSetting("console", "args", false).toString()));
+        QString console_bin = CoreLib->getSetting("console", "bin").toString();
+        QString console_args = CoreLib->getSetting("console", "args", false).toString();
+
+        if (console_bin.split("/").last() == "konsole"){
+            console_args.append(" /bin/sh -c ");
+        }
+
+        run_string.replace("%CONSOLE_BIN%", console_bin);
+        run_string.replace("%CONSOLE_ARGS%", QString("%1 \"").arg(console_args));
     } else {
         run_string.replace("%CONSOLE_BIN%", "");
         run_string.replace("%CONSOLE_ARGS%", "");

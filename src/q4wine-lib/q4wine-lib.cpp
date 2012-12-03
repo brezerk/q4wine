@@ -1248,7 +1248,7 @@ QStringList corelib::getCdromDevices(void) const{
                 }
             }
             out<<"Type=Application"<<endl;
-            out<<"X-KDE-StartupNotify=true"<<endl;
+            out<<"StartupNotify=true"<<endl;
             out<<"GenericName="<<result.value("name")<<endl;
             out<<"Name="<<result.value("name")<<endl;
             out<<"Path="<<result.value("wrkdir")<<endl;
@@ -1646,6 +1646,11 @@ QStringList corelib::getCdromDevices(void) const{
 
                     if (!console.isEmpty()){
                         args = this->getSetting("console", "args", false).toString().split(" ");
+
+                        if (console.split("/").last() == "konsole"){
+                            args.append("/bin/sh");
+                            args.append("-c");
+                        }
                     } else {
                 #ifdef DEBUG
                         qDebug()<<"[EE] No console binary set";

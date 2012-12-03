@@ -48,7 +48,6 @@ winetricks::winetricks(QString prefixName)
     this->console_args = CoreLib->getSetting("console", "args", FALSE).toString();
 }
 
-
 void winetricks::install_winetricks() {
     this->downloadwinetricks();
 }
@@ -95,6 +94,12 @@ void winetricks::run_winetricks(QString item){
         sh_args.append(CoreLib->getWhichOut("sh"));
         sh_args.append("-c");
         sh_args.append(QString("\"%1 --no-isolate %2\"").arg(this->winetricks_bin).arg(item));
+
+        if (console_bin.split("/").last() == "konsole"){
+            args.append("/bin/sh");
+            args.append("-c");
+        }
+
         args.append(sh_args.join(" "));
 
 #ifdef DEBUG
@@ -140,6 +145,12 @@ void winetricks::downloadwinetricks () {
     arg.append(" +x ");
     arg.append(this->winetricks_bin);
     arg.append("\"");
+
+    if (console_bin.split("/").last() == "konsole"){
+        args.append("/bin/sh");
+        args.append("-c");
+    }
+
     args.append(arg);
 
 #ifdef DEBUG
