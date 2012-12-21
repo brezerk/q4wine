@@ -65,7 +65,7 @@ Installation
        Optional buils flags:     : Default | Possible
 
        DEBUG                     : OFF | ON
-       RELEASE			 : OFF | ON
+       RELEASE                   : OFF | ON
        WITH_ICOUTILS             : ON  | OFF
        WITH_SYSTEM_SINGLEAPP     : OFF | ON
        WITH_WINEAPPDB            : ON  | OFF
