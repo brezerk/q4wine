@@ -58,24 +58,31 @@ Installation
        LIBS_ENTRY_PATH           : /usr/local/lib/q4wine   (for x86    systems)
        LIBS_ENTRY_PATH           : /usr/local/lib64/q4wine (for x86_64 systems)
 
+       By default, q4wine will build and install all translations:
+
+       LINGUAS                   : "en_us;ru_ru;uk_ua;pt_br;es_es;it_it;cs_cz;he_il;fo_ds;fa_ir"
+
        Optional buils flags:     : Default | Possible
 
        DEBUG                     : OFF | ON
+       RELEASE			 : OFF | ON
        WITH_ICOUTILS             : ON  | OFF
-       WITH_EMBEDDED_FUSEISO     : OFF | ON
-       SYSTEM_QTSINGLEAPP        : OFF | ON
+       WITH_SYSTEM_SINGLEAPP     : OFF | ON
        WITH_WINEAPPDB            : ON  | OFF
        USE_BZIP2                 : OFF | ON
        USE_GZIP                  : OFF | ON
        WITH_DBUS                 : ON  | OFF
 
-       DEBUG                     : If ON, then Q4Wine will send debug messages to STDOUT
-                                 : use it in debug or bug report cases;
-       WITH_ICOUTILS             : If ON, then build Q4Wine with icoutils support;
-       WITH_WINEAPPDB            : If ON, then build Q4Wine with Wine AppDB browser support;
+       DEBUG                     : If ON, then q4wine will send debug messages to STDOUT.
+                                 : Use it for development or bug reportint purposes;
+       RELEASE                   : If OFF, then force q4wine to use APP_BUILD as CMAKE_INSTALL_PREFIX. 
+                                 : Use it for development purposes;
+       WITH_ICOUTILS             : If ON, then build q4wine with icoutils support;
+       WITH_SYSTEM_SINGLEAPP     : If ON, then use system QtSingleApplication library instead building one;
+       WITH_WINEAPPDB            : If ON, then build q4wine with Wine AppDB browser support;
        USE_BZIP2                 : Use bzip2 to compress man pages;
        USE_GZIP                  : Use gzip to compress man pages;
-       WITH_DBUS                 : If ON, then build Q4Wine with QtDBus notification support;
+       WITH_DBUS                 : If ON, then build q4wine with QtDBus notification support;
 
 6. $ make
 7. $ make install
