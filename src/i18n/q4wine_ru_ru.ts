@@ -637,7 +637,7 @@
     <message>
         <location line="+13"/>
         <source>Default directory for new wine prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Папка по умолчанию для новых префиксов wine</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -3048,7 +3048,7 @@ See help for details.</source>
     <message>
         <location line="+68"/>
         <source>Fail to remove %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось удалить %1</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -3370,12 +3370,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+14"/>
         <source>Warning</source>
-        <translation type="unfinished">Предупреждение</translation>
+        <translation>Предупреждение</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Directory &quot;%1&quot; already exists. Do you wish to use it anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Папка &quot;%1&quot; уже соществует. Использовать ее?</translation>
     </message>
     <message>
         <location line="+33"/>
