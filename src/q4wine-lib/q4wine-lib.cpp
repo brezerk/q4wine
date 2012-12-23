@@ -1216,18 +1216,36 @@ QStringList corelib::getCdromDevices(void) const{
                   return false;
         }
 
-        QString corelib::createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const{
+        QString corelib::createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name, const bool is_menu) const{
             QHash<QString, QString> result = db_icon.getByName(prefix_name, dir_name, icon_name);
 
-            QString fileName = QDir::homePath();
-            fileName.append("/.config/");
-            fileName.append(APP_SHORT_NAME);
-            fileName.append("/tmp/");
+            QString fileName;
+
+            //FIXME:
+            QString base_icon = QString("%1/.local/share/applications/").arg(QDir::homePath());
+
+
+            if (is_menu){
+                fileName = base_icon;
+                fileName.append(APP_SHORT_NAME);
+                fileName.append("/");
+                fileName.append(prefix_name);
+                fileName.append("/");
+                fileName.append(dir_name);
+                fileName.append("/");
+            } else {
+                fileName = QDir::homePath();
+                fileName.append("/.config/");
+                fileName.append(APP_SHORT_NAME);
+                fileName.append("/tmp/");
+            }
+
             fileName.append(result.value("name"));
             fileName.append(".desktop");
 
             QFile file(fileName);
-            file.open(QIODevice::Truncate | QIODevice::WriteOnly);
+            if (!file.open(QIODevice::Truncate | QIODevice::WriteOnly | QIODevice::Text))
+                return "";
 
             QTextStream out(&file);
             out<<"[Desktop Entry]"<<endl;
@@ -1256,6 +1274,30 @@ QStringList corelib::getCdromDevices(void) const{
             file.close();
 
             return fileName;
+        }
+
+        bool corelib::deleteDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const{
+            QString fileName;
+
+            //FIXME:
+            QString base_icon = QString("%1/.local/share/applications/").arg(QDir::homePath());
+
+            fileName = base_icon;
+            fileName.append(APP_SHORT_NAME);
+            fileName.append("/");
+            fileName.append(prefix_name);
+            fileName.append("/");
+            fileName.append(dir_name);
+            fileName.append("/");
+
+            fileName.append(icon_name);
+            fileName.append(".desktop");
+
+            QFile file(fileName);
+            if (file.exists()){
+                return file.remove();
+            }
+            return true;
         }
 
         QString corelib::getEscapeString(const QString string, const bool spaces) const{

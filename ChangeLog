@@ -12,6 +12,7 @@ Version 1.0
 
  Added:
   - Option to set default directory for new wine prefixes (default: $HOME/.local/share/wineprefixes)
+  - q4wine desktop menu tree [BUG-16]
 
 Version 0.999-rc8
  Added:

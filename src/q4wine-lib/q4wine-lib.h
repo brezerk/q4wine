@@ -243,7 +243,8 @@ public:
     bool checkFileExists(QString path);
 
 
-    QString createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const;
+    QString createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name, const bool is_menu = false) const;
+    bool deleteDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const;
 
     QString getWinePath(const QString path, const QString option);
 

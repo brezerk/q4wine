@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>674</width>
-    <height>414</height>
+    <width>672</width>
+    <height>412</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -230,11 +230,11 @@
         <x>280</x>
         <y>10</y>
         <width>395</width>
-        <height>437</height>
+        <height>551</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QGridLayout" name="gridLayout">
@@ -2139,10 +2139,62 @@
           <property name="currentIndex">
            <number>0</number>
           </property>
-          <widget class="QWidget" name="tabWineTricks">
+          <widget class="QWidget" name="tabDesktopMenu">
            <attribute name="title">
-            <string>Winetricks</string>
+            <string>Desktop Menu</string>
            </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QGroupBox" name="groupBox_3">
+              <property name="title">
+               <string>Desktop menu plugin</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_8">
+               <item>
+                <widget class="QCheckBox" name="cbEnableDesktopMenu">
+                 <property name="text">
+                  <string>Enable automatic generation of desktop menu </string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="cmdDesktopMenu_Regen">
+                 <property name="text">
+                  <string>Regenerate desktop menu</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="Line" name="line">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="cmdDesktopMenu_Remove">
+                 <property name="text">
+                  <string>Remove desktop menu entries</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>365</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>
@@ -2691,7 +2743,7 @@
           </property>
           <item>
            <property name="text">
-            <string>Winetricks</string>
+            <string>Desktop Menu</string>
            </property>
           </item>
          </item>

@@ -314,6 +314,14 @@ void MainWindow::getSettings(){
 
     emit(setDefaultFocus(CoreLib->getSetting("LastPrefix", "prefix", false).toString(), CoreLib->getSetting("LastPrefix", "dir", false).toString()));
 
+#ifndef _OS_DARWIN_
+    //make root
+    if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
+        sys_menu.create_dir_info();
+        sys_menu.generateSystemMenu();
+    }
+#endif
+
     return;
 }
 
@@ -931,6 +939,11 @@ void MainWindow::mainImportWineIcons_Click(){
         Progress progress(0, path);
         progress.exec();
     }
+
+#ifndef _OS_DARWIN_
+    if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
+        sys_menu.generateSystemMenu();
+#endif
 
     updateDtabaseConnectedItems();
     return;

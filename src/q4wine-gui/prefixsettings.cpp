@@ -180,8 +180,8 @@ void PrefixSettings::cmdCancel_Click(){
 
 void PrefixSettings::cmdOk_Click(){
     if (txtPrefixName->text().isEmpty()){
-         QMessageBox::warning(this, tr("Error"), tr("Enter a prefix name"));
-          return;
+        QMessageBox::warning(this, tr("Error"), tr("Enter a prefix name"));
+        return;
     }
 
     if (prefix_name!=txtPrefixName->text()){
@@ -208,9 +208,21 @@ void PrefixSettings::cmdOk_Click(){
             reject();
 
         CoreLib->createPrefixDBStructure(txtPrefixName->text());
+#ifndef _OS_DARWIN_
+        if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
+            sys_menu.generateSystemMenu(txtPrefixName->text());
+#endif
     } else {
         if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), this->prefix_name, comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->text()))
             reject();
+#ifndef _OS_DARWIN_
+        if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
+            if (this->prefix_name != txtPrefixName->text()){
+                sys_menu.remove_dir_info(this->prefix_name);
+                sys_menu.generateSystemMenu(txtPrefixName->text());
+            }
+        }
+#endif
     }
 
     accept();

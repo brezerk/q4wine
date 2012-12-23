@@ -535,6 +535,10 @@ bool Icon::updateIcon(const QString icon_name, const QString prefix_id, const QS
     query.bindValue(":dir_id", dir_id);
     query.bindValue(":old_prefix_id", old_prefix_id);
 
+#ifdef DEBUG
+    qDebug()<< icon_name << prefix_id << dir_id << old_prefix_id << old_dir_id << old_icon_name;
+#endif
+
     if (!query.exec()){
         qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
         return false;

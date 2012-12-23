@@ -760,6 +760,13 @@ void FakeDriveSettings::cmdOk_Click(){
 
         if (registry.exec(this, db_prefix.getPath(prefixName), prefixName)){
         CoreLib->createPrefixDBStructure(prefixName);
+#ifndef _OS_DARWIN_
+        if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
+            system_menu sys_menu;
+            sys_menu.generateSystemMenu(prefixName);
+        }
+#endif
+
 #ifdef DEBUG
     qDebug()<<"[ii] Wizard::done";
 #endif

@@ -35,6 +35,9 @@
 #include "q4wine-lib.h"
 
 #include "src/core/registry.h"
+#ifndef _OS_DARWIN_
+#include "sysmenu.h"
+#endif
 
 class PrefixTreeToolbar : public QWidget
 {

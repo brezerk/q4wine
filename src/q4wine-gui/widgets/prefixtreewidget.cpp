@@ -117,6 +117,12 @@ void PrefixTreeWidget::dirAdd_Click(void){
                   treeItem.release();
                   return;
             }
+#ifndef _OS_DARWIN_
+            if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
+                sys_menu.create_dir_info(this->prefixName, dirname);
+                sys_menu.writeXMLSystemMenu();
+            }
+#endif
 
             if (treeItem->parent()){
                 std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem->parent()));
@@ -163,6 +169,12 @@ void PrefixTreeWidget::dirRename_Click(void){
                         }
                   }
                   db_dir.renameDir(treeItem->text(0), treeItem->parent()->text(0), newName);
+#ifndef _OS_DARWIN_
+                  if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
+                      sys_menu.move_dir_info(treeItem->parent()->text(0), treeItem->text(0), newName);
+                      sys_menu.writeXMLSystemMenu();
+                  }
+#endif
                   treeItem->setText(0, newName);
                   this->itemClicked(treeItem.get(), 0);
             }
@@ -175,21 +187,29 @@ void PrefixTreeWidget::dirRename_Click(void){
 void PrefixTreeWidget::dirDelete_Click(void){
     std::auto_ptr<QTreeWidgetItem> treeItem (this->currentItem());
 
-      if (!treeItem.get())
-            return;
+    if (!treeItem.get())
+        return;
 
-      if (treeItem->parent()){
-            if (QMessageBox::warning(this, tr("Q4Wine"), tr("Do you really wish to delete the folder named \"%1\" and all associated icons?\n").arg(treeItem->text(0)),
-                                                 QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
+    if (treeItem->parent()){
+        if (QMessageBox::warning(this, tr("Q4Wine"), tr("Do you really wish to delete the folder named \"%1\" and all associated icons?\n").arg(treeItem->text(0)),
+                                 QMessageBox::Yes, QMessageBox::No)==QMessageBox::Yes){
 
             if (db_icon.delIcon(this->prefixName, this->dirName, ""))
-            if (db_dir.delDir(this->prefixName, this->dirName))
-                treeItem->parent()->removeChild(treeItem.get());
-                this->itemClicked(this->currentItem(), 0);
-            }
-      }
-      treeItem.release();
-      return;
+                if (db_dir.delDir(this->prefixName, this->dirName)){
+#ifndef _OS_DARWIN_
+                    if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
+                        sys_menu.remove_dir_info(this->prefixName, this->dirName);
+                        sys_menu.writeXMLSystemMenu();
+                    }
+#endif
+                    treeItem->parent()->removeChild(treeItem.get());
+                }
+            this->itemClicked(this->currentItem(), 0);
+
+        }
+    }
+    treeItem.release();
+    return;
 }
 
 void PrefixTreeWidget::getPrefixes(){
@@ -503,10 +523,16 @@ void PrefixTreeWidget::moveDesktopFile(QUrl url, QString prefixName, QString dir
                 return;
           }
     }
-
     if (!db_icon.updateIcon(newName, db_prefix.getId(prefixName), db_dir.getId(dirName, prefixName), db_prefix.getId(prefix), db_dir.getId(dir, prefix), icon))
         return;
 
+#ifndef _OS_DARWIN_
+    if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
+        CoreLib->deleteDesktopFile(prefix, dir, icon);
+        CoreLib->createDesktopFile(prefixName, dirName, newName, true);
+        sys_menu.writeXMLSystemMenu();
+    }
+#endif
 }
 
 QStringList PrefixTreeWidget::mimeTypes () const

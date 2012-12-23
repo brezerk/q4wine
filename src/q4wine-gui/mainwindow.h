@@ -41,6 +41,9 @@
 #include "prefix.h"
 #include "dir.h"
 #include "icon.h"
+#ifndef _OS_DARWIN_
+#include "sysmenu.h"
+#endif
 
 //Widgets
 #include "loggingwidget.h"
@@ -156,7 +159,9 @@ private:
         Prefix db_prefix;
         Dir db_dir;
         Icon db_icon;
-
+#ifndef _OS_DARWIN_
+        system_menu sys_menu;
+#endif
         // Tray icon
         std::auto_ptr<QSystemTrayIcon> trayIcon;
 

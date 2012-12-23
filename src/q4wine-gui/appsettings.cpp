@@ -300,6 +300,22 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     }
     settings.endGroup();
 
+#ifndef _OS_DARWIN_
+    settings.beginGroup("Plugins");
+    if (settings.value("enableMenuDesktop", 1).toInt()==1){
+        cbEnableDesktopMenu->setChecked(true);
+    } else {
+        cbEnableDesktopMenu->setChecked(false);
+    }
+    settings.endGroup();
+    connect(cmdDesktopMenu_Regen, SIGNAL(clicked()), this, SLOT(cmdDesktopMenu_Regen_Click()));
+    connect(cmdDesktopMenu_Remove, SIGNAL(clicked()), this, SLOT(cmdDesktopMenu_Remove_Click()));
+#else
+    cbEnableDesktopMenu->setEnabled(false);
+    cmdDesktopMenu_Regen->setEnabled(false);
+    cmdDesktopMenu_Remove->setEnabled(false);
+#endif
+
     QList<QTreeWidgetItem *> items = optionsTree->findItems (tr("General"), Qt::MatchExactly);
     if (items.count()>0){
         items.at(0)->setExpanded(true);
@@ -356,7 +372,7 @@ void AppSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("Plugins")){
         optionsStack->setCurrentIndex(3);
         tabwPlugins->setCurrentIndex(1);
-    } else if (itemText==tr("Winetricks")){
+    } else if (itemText==tr("Desktop Menu")){
         optionsStack->setCurrentIndex(3);
         tabwPlugins->setCurrentIndex(1);
     } else if (itemText==tr("Advanced")){
@@ -758,6 +774,15 @@ void AppSettings::cmdOk_Click(){
         settings.setValue("useSystemBrowser", 0);
     }
     settings.endGroup();
+#ifndef _OS_DARWIN_
+    settings.beginGroup("Plugins");
+    if (cbEnableDesktopMenu->isChecked()){
+        settings.setValue("enableMenuDesktop", 1);
+    } else {
+        settings.setValue("enableMenuDesktop", 0);
+    }
+    settings.endGroup();
+#endif
 
     accept();
     return;
@@ -829,9 +854,9 @@ void AppSettings::cmdHelp_Click(){
     } else if (itemText==tr("AppDB browser")){
         rawurl = "11-settings.html#appdb";
     } else if (itemText==tr("Plugins")){
-        rawurl = "11-settings.html";
-    } else if (itemText==tr("Winetricks")){
-        rawurl = "11-settings.html";
+        rawurl = "11-settings.html#plugins";
+    } else if (itemText==tr("Desktop Menu")){
+        rawurl = "11-settings.html#desktopmenu";
     } else if (itemText==tr("Advanced")){
         rawurl = "11-settings.html#defaults";
     } else if (itemText==tr("Defaults")){
@@ -875,3 +900,13 @@ void AppSettings::cbShowTray_stateChanged ( int state ){
     }
 }
 
+void AppSettings::cmdDesktopMenu_Regen_Click(){
+    system_menu sys_menu;
+    sys_menu.create_dir_info();
+    sys_menu.generateSystemMenu();
+}
+
+void AppSettings::cmdDesktopMenu_Remove_Click(){
+    system_menu sys_menu;
+    sys_menu.wipeSystemMenu();
+}

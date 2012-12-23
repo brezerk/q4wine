@@ -129,6 +129,13 @@ void PrefixTreeToolbar::prefixImport_Click(){
         progress.exec();
     }
 
+#ifndef _OS_DARWIN_
+    if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
+        system_menu sys_menu;
+        sys_menu.generateSystemMenu();
+    }
+#endif
+
     emit(updatePrefixTree());
 }
 

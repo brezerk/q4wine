@@ -600,11 +600,21 @@ void IconSettings::cmdOk_Click(){
         desktopSize="";
 
     switch (this->icon_name.isEmpty()){
-        case TRUE:
-        db_icon.addIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), desktopSize, spinNice->value(), txtEnvLang->text(), txtPreRun->text(), txtPostRun->text());
+        case true:
+            db_icon.addIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), desktopSize, spinNice->value(), txtEnvLang->text(), txtPreRun->text(), txtPostRun->text());
+#ifndef _OS_DARWIN_
+            if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
+                CoreLib->createDesktopFile(this->prefix_name, this->dir_name, txtName->text(), true);
+#endif
         break;
-        case FALSE:
+        case false:
             db_icon.updateIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), icon_name, override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), desktopSize, spinNice->value(), txtEnvLang->text(), txtPreRun->text(), txtPostRun->text());
+#ifndef _OS_DARWIN_
+            if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
+                CoreLib->deleteDesktopFile(this->prefix_name, this->dir_name, this->icon_name);
+                CoreLib->createDesktopFile(this->prefix_name, this->dir_name, txtName->text(), true);
+            }
+#endif
         break;
     }
 

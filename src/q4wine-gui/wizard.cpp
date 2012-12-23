@@ -465,6 +465,11 @@ void Wizard::nextWizardPage(){
 
             CoreLib->createPrefixDBStructure("Default");
 
+#ifndef _OS_DARWIN_
+                system_menu sys_menu;
+                sys_menu.generateSystemMenu();
+#endif
+
             accept();
             break;
         }

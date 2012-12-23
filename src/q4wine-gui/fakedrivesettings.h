@@ -42,6 +42,10 @@
 #include "src/core/database/icon.h"
 #include "src/core/database/dir.h"
 
+#ifndef _OS_DARWIN_
+#include "sysmenu.h"
+#endif
+
 class FakeDriveSettings : public QDialog, public Ui::FakeDriveSettings
 {
     Q_OBJECT

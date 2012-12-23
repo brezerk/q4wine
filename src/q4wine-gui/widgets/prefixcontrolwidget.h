@@ -30,6 +30,9 @@
 #include "prefix.h"
 #include "dir.h"
 #include "icon.h"
+#ifndef _OS_DARWIN_
+#include "sysmenu.h"
+#endif
 
 //Qt includes
 #include <QSqlQueryModel>
@@ -88,6 +91,9 @@ private:
 	Prefix db_prefix;
 	Dir db_dir;
 	Icon db_icon;
+#ifndef _OS_DARWIN_
+    system_menu sys_menu;
+#endif
 
 private slots:
 	void customContextMenuRequested(const QPoint &pos);

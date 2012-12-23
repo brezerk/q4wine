@@ -253,20 +253,20 @@
     </message>
     <message>
         <location line="+1277"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+367"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+370"/>
         <location line="+167"/>
         <location line="+104"/>
         <source>No Proxy</source>
         <translation>Sin proxy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-455"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-457"/>
         <source>generic</source>
         <translatorcomment>Revisar</translatorcomment>
         <translation>Generico</translation>
     </message>
     <message>
-        <location line="+150"/>
+        <location line="+152"/>
         <location line="+6"/>
         <source>Open File</source>
         <translation>Abrir archivo</translation>
@@ -280,7 +280,7 @@
     <message>
         <location line="+195"/>
         <location line="+4"/>
-        <location line="+173"/>
+        <location line="+174"/>
         <location line="+3"/>
         <location line="+8"/>
         <location line="+3"/>
@@ -289,7 +289,7 @@
         <translation></translation>
     </message>
     <message>
-        <location line="-191"/>
+        <location line="-192"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Disculpe, especifique el host del proxy.</translation>
     </message>
@@ -299,7 +299,7 @@
         <translation>Disculpe, especifique el puerto del proxy.</translation>
     </message>
     <message>
-        <location line="+173"/>
+        <location line="+174"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Disculpe, especifique la carpeta %1.</translation>
     </message>
@@ -328,25 +328,25 @@
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+479"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-613"/>
-        <location line="+481"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-616"/>
+        <location line="+483"/>
         <source>System Default</source>
         <translation>Sistema por defecto</translation>
     </message>
     <message>
         <location line="-1669"/>
-        <location line="+2318"/>
+        <location line="+2365"/>
         <location line="+5"/>
         <location line="+4"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-352"/>
         <location line="+20"/>
-        <location line="+485"/>
+        <location line="+486"/>
         <source>General</source>
         <translatorcomment>same</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location line="-2318"/>
+        <location line="-2365"/>
         <source>Wine settings</source>
         <translation>Ajustes de wine</translation>
     </message>
@@ -383,14 +383,14 @@
     </message>
     <message>
         <location line="+34"/>
-        <location line="+1939"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-482"/>
-        <location line="+484"/>
+        <location line="+1986"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-483"/>
+        <location line="+485"/>
         <source>System</source>
         <translation>Sistema</translation>
     </message>
     <message>
-        <location line="-1930"/>
+        <location line="-1977"/>
         <source>System utils</source>
         <translation>Utilidades del sistema</translation>
     </message>
@@ -444,14 +444,14 @@
     </message>
     <message>
         <location line="+56"/>
-        <location line="+1453"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-481"/>
-        <location line="+483"/>
+        <location line="+1500"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-482"/>
+        <location line="+484"/>
         <source>Utils</source>
         <translation>Utilidades</translation>
     </message>
     <message>
-        <location line="-1444"/>
+        <location line="-1491"/>
         <source>Console</source>
         <translation>Consola</translation>
     </message>
@@ -462,9 +462,9 @@
     </message>
     <message>
         <location line="+421"/>
-        <location line="+949"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-477"/>
-        <location line="+481"/>
+        <location line="+996"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-478"/>
+        <location line="+482"/>
         <source>Quick Mount</source>
         <translation>Montaje rápido</translation>
     </message>
@@ -478,15 +478,15 @@
         <translation>Aceptar</translation>
     </message>
     <message>
-        <location line="-707"/>
-        <location line="+611"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-466"/>
-        <location line="+476"/>
+        <location line="-754"/>
+        <location line="+658"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-467"/>
+        <location line="+477"/>
         <source>Logging</source>
         <translation>Registro</translation>
     </message>
     <message>
-        <location line="-602"/>
+        <location line="-649"/>
         <source>Logging subsystem:</source>
         <translation>Subsistema de registro:</translation>
     </message>
@@ -501,9 +501,9 @@
     </message>
     <message>
         <location line="+99"/>
-        <location line="+503"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-467"/>
-        <location line="+473"/>
+        <location line="+550"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-468"/>
+        <location line="+474"/>
         <source>Winetricks</source>
         <translation></translation>
     </message>
@@ -518,7 +518,7 @@
         <translation>Mostrar el cuadro de dialogo ejecutar.</translation>
     </message>
     <message>
-        <location line="-1177"/>
+        <location line="-1224"/>
         <source>wrestool:</source>
         <translatorcomment>same</translatorcomment>
         <translation></translation>
@@ -532,31 +532,31 @@
     <message>
         <location line="+535"/>
         <location line="+9"/>
-        <location line="+729"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-491"/>
-        <location line="+479"/>
+        <location line="+776"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-492"/>
+        <location line="+480"/>
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
     <message>
-        <location line="-657"/>
+        <location line="-704"/>
         <location line="+9"/>
-        <location line="+653"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-476"/>
-        <location line="+478"/>
+        <location line="+700"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-477"/>
+        <location line="+479"/>
         <source>Themes</source>
         <translation>Temas</translation>
     </message>
     <message>
-        <location line="-1222"/>
-        <location line="+1202"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-490"/>
-        <location line="+482"/>
+        <location line="-1269"/>
+        <location line="+1249"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-491"/>
+        <location line="+483"/>
         <source>Network</source>
         <translation>Red</translation>
     </message>
     <message>
-        <location line="-1193"/>
+        <location line="-1240"/>
         <source>Proxy settings</source>
         <translation>Ajustes del proxy</translation>
     </message>
@@ -674,14 +674,14 @@
     </message>
     <message>
         <location line="+272"/>
-        <location line="+552"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-461"/>
-        <location line="+475"/>
+        <location line="+599"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-462"/>
+        <location line="+476"/>
         <source>AppDB browser</source>
         <translation>Navegador de AppDB</translation>
     </message>
     <message>
-        <location line="-543"/>
+        <location line="-590"/>
         <source>AppDB browser subsystem:</source>
         <translation>Subsistema del navegador de AppDB:</translation>
     </message>
@@ -692,15 +692,15 @@
     </message>
     <message>
         <location line="+72"/>
-        <location line="+485"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-463"/>
-        <location line="+471"/>
+        <location line="+532"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-464"/>
+        <location line="+472"/>
         <source>Defaults</source>
         <translatorcomment>same</translatorcomment>
         <translation></translation>
     </message>
     <message>
-        <location line="-287"/>
+        <location line="-337"/>
         <source>Program icons</source>
         <translation>Iconos de aplicaciones</translation>
     </message>
@@ -720,10 +720,15 @@
         <translation>Usar el cuadro de dialogo nativo.</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+13"/>
+        <source>Default directory for new wine prefixes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+64"/>
         <location line="+222"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-468"/>
-        <location line="+470"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-469"/>
+        <location line="+471"/>
         <source>Run dialog</source>
         <translation>Cuadro de dialogo Ejecutar</translation>
     </message>
@@ -731,8 +736,8 @@
         <location line="-171"/>
         <location line="+9"/>
         <location line="+167"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-467"/>
-        <location line="+469"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-468"/>
+        <location line="+470"/>
         <source>Wine desktop import</source>
         <translation>Sistema de importacion de Q4Wine</translation>
     </message>
@@ -747,15 +752,15 @@
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-502"/>
-        <location line="+480"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-503"/>
+        <location line="+481"/>
         <source>Interface</source>
         <translation>Interfaz</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-471"/>
-        <location line="+477"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-472"/>
+        <location line="+478"/>
         <source>Subsystems</source>
         <translation>Subsistemas</translation>
     </message>
@@ -765,31 +770,31 @@
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-468"/>
-        <location line="+474"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-469"/>
+        <location line="+475"/>
         <source>Plugins</source>
         <translatorcomment>same</translatorcomment>
         <translation></translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-468"/>
-        <location line="+472"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-469"/>
+        <location line="+473"/>
         <source>Advanced</source>
         <translation>Avanzado</translation>
     </message>
     <message>
-        <location line="-472"/>
+        <location line="-522"/>
         <source>Default virtual desktop</source>
         <translation>Escritorio virtual por defecto</translation>
     </message>
     <message>
-        <location line="-123"/>
+        <location line="-120"/>
         <source>Note: Since SQLite was not designed to handle large amount of data, activating this can have a negative impact on the performance of Q4Wine. Use it with care.</source>
         <translation>Nota: Dado que SQLite no fue diseñada para manejar grandes cantidades de información, activar esta opción puede tener un impacto negativo en el rendimiento de Q4Wine. Use con cuidado.</translation>
     </message>
     <message>
-        <location line="+132"/>
+        <location line="+129"/>
         <source>Default virtual desktop size will be used for &quot;Icon creation&quot; and &quot;Run&quot; dialogs.</source>
         <translation>El tamaño del escritorio virtual por defecto sera usado por los dialogos &quot;Creación de iconos&quot; y &quot;Ejecutar&quot;.</translation>
     </message>
@@ -805,7 +810,7 @@
         <translation>Sin escritorio virtual</translation>
     </message>
     <message>
-        <location line="+283"/>
+        <location line="+333"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
         <translation>Importar archivos de escritorio de Wine al comienzo de Q4wine.</translation>
     </message>
@@ -1258,14 +1263,14 @@
         <location line="+8"/>
         <location line="+535"/>
         <location line="+33"/>
-        <location line="+353"/>
+        <location line="+354"/>
         <location line="+8"/>
         <source>Error</source>
         <translatorcomment>same</translatorcomment>
         <translation>Error</translation>
     </message>
     <message>
-        <location line="-1160"/>
+        <location line="-1161"/>
         <source>Error in string:
 
 %1
@@ -1319,7 +1324,7 @@ Mire la ayuda para más detalles.</translation>
         <translation type="obsolete">No se puede crear archivo:&quot;%1&quot;</translation>
     </message>
     <message>
-        <location line="+1188"/>
+        <location line="+1189"/>
         <location line="+6"/>
         <source>Open File</source>
         <translation>Abrir archivo</translation>
@@ -1331,7 +1336,7 @@ Mire la ayuda para más detalles.</translation>
         <translation>Abrir carpeta</translation>
     </message>
     <message>
-        <location line="-503"/>
+        <location line="-504"/>
         <location line="+10"/>
         <source>Joystick Axes Mappings</source>
         <translation>Configuración de los ejes del joystick</translation>
@@ -1359,13 +1364,13 @@ Mire la ayuda para más detalles.</translation>
     </message>
     <message>
         <location line="-109"/>
-        <location line="+1030"/>
+        <location line="+1031"/>
         <location line="+8"/>
         <source>Cannot create dir: %1</source>
         <translation>No se puede crear la carpeta: %1</translation>
     </message>
     <message>
-        <location line="-1027"/>
+        <location line="-1028"/>
         <location line="+30"/>
         <location line="+20"/>
         <location line="+20"/>
@@ -2736,7 +2741,7 @@ Vea la ayuda para mas detalles.</translation>
         <translation type="obsolete">Administrar prefijos</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="+213"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="+203"/>
         <source>Program: %1&lt;br&gt; Args: %2 </source>
         <translation>Programa: %1&lt;br&gt; Argumentos: %2 </translation>
     </message>
@@ -2925,7 +2930,7 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Se ejecuta en consola: %1&lt;br&gt; Tamaño del escritorio: %2</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="+319"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="+318"/>
         <source>Options</source>
         <translation>Opciones</translation>
     </message>
@@ -2951,13 +2956,13 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Ejecutar...</translation>
     </message>
     <message>
-        <location line="-224"/>
-        <location line="+264"/>
+        <location line="-223"/>
+        <location line="+263"/>
         <source>Programs</source>
         <translation>Programas</translation>
     </message>
     <message>
-        <location line="-172"/>
+        <location line="-171"/>
         <source>Processes</source>
         <translation>Proceso</translation>
     </message>
@@ -2967,7 +2972,7 @@ Vea la ayuda para mas detalles.</translation>
     </message>
     <message>
         <location line="+23"/>
-        <location line="+170"/>
+        <location line="+169"/>
         <source>Prefixes</source>
         <translation>Prefijos</translation>
     </message>
@@ -2982,8 +2987,8 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Proceso</translation>
     </message>
     <message>
-        <location line="-164"/>
-        <location line="+172"/>
+        <location line="-163"/>
+        <location line="+171"/>
         <source>Setup</source>
         <translation>Configuración</translation>
     </message>
@@ -3008,12 +3013,12 @@ Vea la ayuda para mas detalles.</translation>
         <translation type="obsolete">Software del sistema</translation>
     </message>
     <message>
-        <location line="-113"/>
+        <location line="-112"/>
         <source>&amp;File</source>
         <translation>&amp;Archivo</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+10"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
@@ -3156,13 +3161,13 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Manual</translation>
     </message>
     <message>
-        <location line="-51"/>
+        <location line="-50"/>
         <source>Wine AppDB</source>
         <translation>AppDB de Wine</translation>
     </message>
     <message>
         <location line="+13"/>
-        <location line="+223"/>
+        <location line="+222"/>
         <source>Logging</source>
         <translation>Registro</translation>
     </message>
@@ -3231,23 +3236,23 @@ Vea la ayuda para mas detalles.</translation>
     <message>
         <location line="+7"/>
         <location line="+1"/>
-        <location line="+234"/>
+        <location line="+247"/>
         <location line="+1"/>
         <source>Alphabetic sort descending</source>
         <translatorcomment>Revisar</translatorcomment>
         <translation>Ordenar alfabéticamente de forma descendente</translation>
     </message>
     <message>
-        <location line="-232"/>
+        <location line="-245"/>
         <location line="+1"/>
-        <location line="+225"/>
+        <location line="+238"/>
         <location line="+1"/>
         <source>Alphabetic sort ascending</source>
         <translatorcomment>Revisar</translatorcomment>
         <translation>Ordenar alfabéticamente de forma ascendente</translation>
     </message>
     <message>
-        <location line="-135"/>
+        <location line="-148"/>
         <location line="+57"/>
         <source>Create Fake Drive</source>
         <translation>Crear Disco Virtual</translation>
@@ -3260,40 +3265,45 @@ Vea la ayuda para mas detalles.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+76"/>
+        <location line="+89"/>
         <source>Update Fake Drive</source>
         <translation>Actualizar Disco Virtual</translation>
     </message>
     <message>
-        <location line="-75"/>
+        <location line="-88"/>
         <source>Update Fake Drive configuration.</source>
         <translatorcomment>Revisar</translatorcomment>
         <translation>Actualizar la configuración del Disco Virtual.</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+88"/>
+        <location line="+101"/>
         <source>Install or update Winetricks script</source>
         <translation>Instalar o actualizar el script Winetricks</translation>
     </message>
     <message>
-        <location line="-87"/>
+        <location line="-100"/>
         <source>Install new or update installed Winetricks script.</source>
         <translation>Reinstalar o actualizar el script Winetricks instalado.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+82"/>
+        <location line="+95"/>
         <source>Refresh Winetricks application list</source>
         <translation>Actualizar la lista de aplicaciones de Winetricks</translation>
     </message>
     <message>
-        <location line="-81"/>
+        <location line="-94"/>
         <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
         <translation>Crear o actualizar la cache de q4wine para las aplicaciones de Winetricks.</translation>
     </message>
     <message>
-        <location line="+69"/>
+        <location line="+68"/>
+        <source>Fail to remove %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
         <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before attempting to update it.</source>
         <translation>Lo siento, no se encontro configuración del disco virtual.&lt;br&gt; Cree una configuración del disco virtual antes de actualizarlo.</translation>
     </message>
@@ -3302,7 +3312,7 @@ Vea la ayuda para mas detalles.</translation>
         <translation type="obsolete">Crear o actualizar la cache de q4wine para las aplicaciones de Winetricks.</translation>
     </message>
     <message>
-        <location line="-22"/>
+        <location line="-28"/>
         <source>Warning</source>
         <translation>Advertencia</translation>
     </message>
@@ -3317,7 +3327,7 @@ Vea la ayuda para mas detalles.</translation>
         <translation type="obsolete">Eliminando disco virtual viejo. &lt;br&gt;Esto puede tomar un tiempo...</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+4"/>
         <source>Removing old fake drive</source>
         <translation>Eliminando disco virtual viejo</translation>
     </message>
@@ -3327,7 +3337,8 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Removiendo disco virtual anterior. &lt;br&gt;Esto puede tomar un tiempo...</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+10"/>
+        <location line="+14"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -3486,13 +3497,13 @@ Vea la ayuda para mas detalles.</translation>
 <context>
     <name>PrefixSettings</name>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="+119"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="+120"/>
         <location line="+1"/>
         <source>Add new Prefix</source>
         <translation>Añadir nuevo prefijo</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="+62"/>
         <location line="+6"/>
         <source>Error</source>
         <translatorcomment>same</translatorcomment>
@@ -3509,12 +3520,22 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Disculpe, pero el prefijo %1 ya existe.</translation>
     </message>
     <message>
+        <location line="+14"/>
+        <source>Warning</source>
+        <translation type="unfinished">Advertencia</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Directory &quot;%1&quot; already exists. Do you wish to use it anyway?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
         <translatorcomment>Revisar</translatorcomment>
         <translation type="obsolete">Disculpe, el prefijo %1 ya existe.</translation>
     </message>
     <message>
-        <location line="+41"/>
+        <location line="+33"/>
         <location line="+2"/>
         <source>Open File</source>
         <translation>Abrir archivo</translation>
@@ -3539,17 +3560,17 @@ Vea la ayuda para mas detalles.</translation>
         <translation></translation>
     </message>
     <message>
-        <location line="+80"/>
+        <location line="+36"/>
         <source>Name:</source>
         <translation>Nombre:</translation>
     </message>
     <message>
-        <location line="-44"/>
+        <location line="+31"/>
         <source>Prefix path:</source>
         <translation>Ruta del prefijo:</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+44"/>
         <source>Architecture:</source>
         <translatorcomment>Revisar</translatorcomment>
         <translation>Arquitectura:</translation>
@@ -4206,7 +4227,7 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/database/prefix.cpp" line="+337"/>
+        <location filename="../core/database/prefix.cpp" line="+318"/>
         <location line="+69"/>
         <source>Default</source>
         <translation>Por defecto</translation>

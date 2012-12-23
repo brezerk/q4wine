@@ -23,7 +23,7 @@ option(LINGUAS "Language list" "en_us;ru_ru;uk_ua;pt_br;es_es;it_it;cs_cz;he_il;
 option(LIBS_ENTRY_PATH "Destination directory for q4wine-core library")
 
 MESSAGE("\n * Utility for Wine applications and prefixes management.")
-MESSAGE(" * (C) 2008-2011, Alexey S. Malakhov")
+MESSAGE(" * (C) 2008-2013, Alexey S. Malakhov")
 MESSAGE(" * http://brezblock.org.ua/\n")
 
 MESSAGE(STATUS "Q4Wine build environment -- \n")

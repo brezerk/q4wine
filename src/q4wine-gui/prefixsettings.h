@@ -32,7 +32,9 @@
 #include "src/core/database/prefix.h"
 #include "src/core/database/icon.h"
 #include "src/core/database/dir.h"
-
+#ifndef _OS_DARWIN_
+#include "sysmenu.h"
+#endif
 #include "q4wine-lib.h"
 
 /*!
@@ -76,7 +78,9 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
         Prefix db_prefix;
         Icon db_icon;
         Dir db_dir;
-
+#ifndef _OS_DARWIN_
+        system_menu sys_menu;
+#endif
         //! This is need for libq4wine-core.so import.
         QLibrary libq4wine;
         typedef void *CoreLibPrototype (bool);

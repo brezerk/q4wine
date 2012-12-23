@@ -35,6 +35,9 @@
 //Windows
 #include "run.h"
 #include "iconsettings.h"
+#ifndef _OS_DARWIN_
+#include "sysmenu.h"
+#endif
 
 //Qt includes
 #include <QMenu>
@@ -95,6 +98,9 @@ private:
       Dir db_dir;
       Icon db_icon;
       Image db_image;
+#ifndef _OS_DARWIN_
+      system_menu sys_menu;
+#endif
 
       // Copy/Paste buffer
       iconCopyBuffer iconBuffer;

@@ -27,6 +27,10 @@
 
 #include "q4wine-lib.h"
 
+#ifndef _OS_DARWIN_
+#include "sysmenu.h"
+#endif
+
 #include <QSplitter>
 
 class AppSettings : public QDialog, public Ui::AppSettings
@@ -41,12 +45,11 @@ class AppSettings : public QDialog, public Ui::AppSettings
         void comboProxyType_indexChanged(QString text);
         //! \brief cmdHelo click slot.
         void cmdHelp_Click();
-
         void comboMountProfiles_currentIndexChanged(int index);
-
         void cbShowTray_stateChanged ( int state );
-
         void optionsTree_itemClicked ( QTreeWidgetItem *item, int);
+        void cmdDesktopMenu_Regen_Click();
+        void cmdDesktopMenu_Remove_Click();
 
     private:
         bool eventFilter (QObject *object, QEvent *event);

@@ -242,6 +242,11 @@ void IconListWidget::startDrop(QList<QUrl> files){
             } else {
                 db_icon.addIcon("", file, "", "", this->prefixName, this->dirName, fileName, "", "", "", "", file.left(file.length() - file.split("/").last().length()), "", 0);
             }
+#ifndef _OS_DARWIN_
+            if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
+                CoreLib->createDesktopFile(this->prefixName, this->dirName, fileName, true);
+#endif
+
         } else if (files.at(i).toLocalFile().contains(".iso", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".mdf", Qt::CaseInsensitive) || files.at(i).toLocalFile().contains(".nrg", Qt::CaseInsensitive)){
 
             if (CoreLib->mountImage(files.at(i).toLocalFile(), this->prefixName)){
@@ -253,6 +258,11 @@ void IconListWidget::startDrop(QList<QUrl> files){
             CoreLib->updateRecentImagesList(files.at(i).toLocalFile());
         }
     }
+#ifndef _OS_DARWIN_
+    if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
+        sys_menu.writeXMLSystemMenu();
+#endif
+
     this->showContents("");
 }
 
@@ -730,6 +740,10 @@ void IconListWidget::iconAdd_Click(void){
     IconSettings iconAddWizard(this->prefixName, this->dirName);
     if (iconAddWizard.exec() == QDialog::Accepted){
         this->showContents("");
+#ifndef _OS_DARWIN_
+        if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
+            sys_menu.writeXMLSystemMenu();
+#endif
     }
     return;
 }
@@ -756,6 +770,13 @@ void IconListWidget::iconRename_Click(void){
             }
         }
         db_icon.renameIcon(iconItem->text(), this->prefixName, this->dirName, newName);
+#ifndef _OS_DARWIN_
+        if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
+            CoreLib->deleteDesktopFile(this->prefixName, this->dirName, iconItem->text());
+            CoreLib->createDesktopFile(this->prefixName, this->dirName, newName, true);
+            sys_menu.writeXMLSystemMenu();
+        }
+#endif
     }
     iconItem.release();
     this->showContents(this->filterString);
@@ -774,7 +795,15 @@ void IconListWidget::iconDelete_Click(void){
     if (QMessageBox::warning(this, tr("Delete Icon"), tr("Do you wish to delete all of the selected icons?"),  QMessageBox::Yes, QMessageBox::No	)==QMessageBox::Yes){
         for (int i=0; i<icoList.count(); i++){
             db_icon.delIcon(this->prefixName, this->dirName, icoList.at(i)->text());
+#ifndef _OS_DARWIN_
+            if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
+                CoreLib->deleteDesktopFile(this->prefixName, this->dirName, icoList.at(i)->text());
+#endif
         }
+#ifndef _OS_DARWIN_
+        if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
+            sys_menu.writeXMLSystemMenu();
+#endif
         this->showContents(this->filterString);
     }
     return;
@@ -878,13 +907,28 @@ void IconListWidget::iconPaste_Click(void){
             case false:
                 if (!db_icon.copyIcon(iconBuffer.names.at(i), iconBuffer.prefix_name, iconBuffer.dir_name, newName, this->prefixName, this->dirName))
                     return;
+#ifndef _OS_DARWIN_
+                if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
+                    CoreLib->createDesktopFile(this->prefixName, this->dirName, newName, true);
+#endif
                 break;
             case true:
                 if (!db_icon.updateIcon(newName, db_prefix.getId(this->prefixName), db_dir.getId(this->dirName, this->prefixName), db_prefix.getId(iconBuffer.prefix_name), db_dir.getId(iconBuffer.dir_name, iconBuffer.prefix_name), iconBuffer.names.at(i)))
                     return;
+#ifndef _OS_DARWIN_
+                if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
+                    CoreLib->deleteDesktopFile(iconBuffer.prefix_name, iconBuffer.dir_name, iconBuffer.names.at(i));
+                    CoreLib->createDesktopFile(this->prefixName, this->dirName, newName, true);
+                }
+#endif
+                break;
             }
 
         }
+#ifndef _OS_DARWIN_
+        if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
+            sys_menu.writeXMLSystemMenu();
+#endif
     }
 
     if (iconBuffer.move){
@@ -909,6 +953,10 @@ void IconListWidget::iconOption_Click(void){
     IconSettings iconAddWizard(this->prefixName, this->dirName, iconItem->text());
     if (iconAddWizard.exec() == QDialog::Accepted){
         this->showContents(this->filterString);
+#ifndef _OS_DARWIN_
+        if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
+            sys_menu.writeXMLSystemMenu();
+#endif
     }
     iconItem.release();
     return;
