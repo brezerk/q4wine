@@ -700,27 +700,27 @@ p, li { white-space: pre-wrap; }
         <location filename="../q4wine-gui/appsettings.cpp" line="-479"/>
         <location line="+483"/>
         <source>Desktop Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>תפריט שולחן העבודה</translation>
     </message>
     <message>
         <location line="-596"/>
         <source>Desktop menu plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>תוסף תפריט שולחן העבודה</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Enable automatic generation of desktop menu </source>
-        <translation type="unfinished"></translation>
+        <translation>הפעלת יצירה אוטומטית של תפריט שולחן העבודה</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Regenerate desktop menu</source>
-        <translation type="unfinished"></translation>
+        <translation>יצירת תפריט שולחן העבודה מחדש</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Remove desktop menu entries</source>
-        <translation type="unfinished"></translation>
+        <translation>הסרת רשומות מתפריט שולחן העבודה</translation>
     </message>
     <message>
         <location line="+47"/>
@@ -753,7 +753,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location line="+13"/>
         <source>Default directory for new wine prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>תיקיית בררת המחדל לקידומות חדשות של wine</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -3272,7 +3272,7 @@ See help for details.</source>
     <message>
         <location line="+68"/>
         <source>Fail to remove %1</source>
-        <translation type="unfinished"></translation>
+        <translation>ההסרה של %1 נכשלה</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -3491,12 +3491,12 @@ See help for details.</source>
     <message>
         <location line="+14"/>
         <source>Warning</source>
-        <translation type="unfinished">אזהרה</translation>
+        <translation>אזהרה</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Directory &quot;%1&quot; already exists. Do you wish to use it anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>התיקייה „%1“ כבר קיימת. האם ברצונך להשתמש בה בכל מקרה?</translation>
     </message>
     <message>
         <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
