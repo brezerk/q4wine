@@ -305,6 +305,9 @@ void PrefixSettings::cmdHelp_Click(){
     case 1:
         rawurl = "10-prefix-settings.html#winepath";
     break;
+    case 2:
+        rawurl = "10-prefix-settings.html#advanced";
+    break;
     }
 
     CoreLib->openHelpUrl(rawurl);
