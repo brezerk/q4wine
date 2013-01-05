@@ -123,27 +123,27 @@
     <message>
         <location line="-12"/>
         <source>Error: cannot read data from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка: не вдалося отримати данні з %1.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Error: wrong or broken XML data. Try again later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка: не дійсні, або пошкоджені данні. Спробуйте ще раз пізніше.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Error: wrong or broken AppDB XML version. This might be caused by an outdated application version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка: не дійсна, або пошкоджена версія AppDB XML. Можливо програма потребує оновлення.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Error: XML parse error.</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка: помилка розбору формату XML.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Search: No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пошук: немає результатів.</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -180,22 +180,22 @@
     <message>
         <location line="+3"/>
         <source>Search in AppDB</source>
-        <translation type="unfinished"></translation>
+        <translation>Пошук по AppDB</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Search in Wine AppDB</source>
-        <translation type="unfinished">Шукати по базі AppDB</translation>
+        <translation>Шукати по Wine AppDB</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>AppDB categories list</source>
-        <translation type="unfinished"></translation>
+        <translation>Список категорій AppDB</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>View Wine AppDB categories list</source>
-        <translation type="unfinished"></translation>
+        <translation>Показати список категорій AppDB</translation>
     </message>
     <message>
         <source>Search in appdb</source>
@@ -293,7 +293,7 @@
     <message>
         <location line="+47"/>
         <source>Minimize to tray at application startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Згортати головне вікно при запуску програми.</translation>
     </message>
     <message>
         <location line="+34"/>
@@ -483,12 +483,12 @@
     <message>
         <location line="-983"/>
         <source>Libs (32bit):</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+57"/>
         <source>Libs (64bit):</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+79"/>
@@ -597,27 +597,28 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-479"/>
         <location line="+483"/>
         <source>Desktop Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Меню стільниці</translation>
     </message>
     <message>
         <location line="-596"/>
         <source>Desktop menu plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Додаток меню стільниці</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Enable automatic generation of desktop menu </source>
-        <translation type="unfinished"></translation>
+        <translation>Дозволити автоматичну генерацію меню стільниці</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Regenerate desktop menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Оновити меню стільниці</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Remove desktop menu entries</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Видалити пункти з меню стільниці</translatorcomment>
+        <translation>Вилучити пункти </translation>
     </message>
     <message>
         <location line="+47"/>
@@ -671,7 +672,7 @@
     <message>
         <location line="+13"/>
         <source>Default directory for new wine prefixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Типовий каталог для нових префіксів wine</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -737,12 +738,12 @@
     <message>
         <location line="-742"/>
         <source>Note: Since SQLite was not designed to handle large amount of data, activating this can have a negative impact on the performance of Q4Wine. Use it with care.</source>
-        <translation type="unfinished"></translation>
+        <translation>Зауваження: У зв&apos;язку з обмеженнями sqlite, великий об&apos;єм даних з журналювання, може знизити швидкість роботи Q4Wine. Використовуйте журналювання обережно. Вас попередили.</translation>
     </message>
     <message>
         <location line="+550"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпортувати десктопні файли Wine підчас запуску Q4Wine.</translation>
     </message>
     <message>
         <location line="+212"/>
@@ -799,12 +800,12 @@
     <message>
         <location line="+8"/>
         <source>Sorry, specified %1 directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, вказана тека %1 не існує.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Sorry, specified %1 binary does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, вказаного виконуваного файла %1 не існує.</translation>
     </message>
     <message>
         <source>Sorry, specified %1 directory not exists.</source>
@@ -1051,12 +1052,12 @@
     <message>
         <location line="+291"/>
         <source>Direct3D settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування Direct3D</translation>
     </message>
     <message>
         <location line="+727"/>
         <source>Note: Q4Wine does not check if the selected driver is available in the current Wine build. Use this option with care.</source>
-        <translation type="unfinished"></translation>
+        <translation>Зауваження: Q4Wine не перевіряє наявність драйверів для поточної конфігурації Wine. Користуйтеся налаштуваннями обержно.</translation>
     </message>
     <message>
         <location line="+1224"/>
@@ -1325,12 +1326,12 @@ See help for details.</source>
         <location line="-642"/>
         <location line="+738"/>
         <source>Cannot read desktop paths!</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можу отримати шляхи стільниці!</translation>
     </message>
     <message>
         <location line="-712"/>
         <source>Cannot remove symlink: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Неможливо вилучити посилання: %1</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1340,14 +1341,14 @@ See help for details.</source>
         <location line="+20"/>
         <location line="+20"/>
         <source>Cannot symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можу створити посилання &quot;%1&quot; до &quot;%2&quot;</translation>
     </message>
     <message>
         <location line="-109"/>
         <location line="+1038"/>
         <location line="+8"/>
         <source>Cannot create dir: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можу створити каталог: %1</translation>
     </message>
     <message>
         <location line="-1035"/>
@@ -1356,7 +1357,7 @@ See help for details.</source>
         <location line="+20"/>
         <location line="+20"/>
         <source>Cannot remove dir: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можу вилучити каталог: %1</translation>
     </message>
     <message>
         <location line="+477"/>
@@ -1379,7 +1380,7 @@ See help for details.</source>
     <message>
         <location line="+63"/>
         <source>Sorry, You cannot delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, Ви не можете видалити або змінити диск С:&lt;br&gt;Проте, Ви можете змінити його у диалогу налаштування Префіксу.</translation>
     </message>
     <message>
         <source>Sorry, You can&apos;t delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
@@ -1531,12 +1532,12 @@ See help for details.</source>
         <location line="+537"/>
         <location line="+134"/>
         <source>Sorry. It seems that the icon already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, здається, піктограма з такою назвою вже є.</translation>
     </message>
     <message>
         <location line="-671"/>
         <source>Sorry. It seems that icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте. Здаєтся піктограма вже існує.&lt;br&gt;Будь ласка оберіть інше ім&apos;я, або скасуйте дію.</translation>
     </message>
     <message>
         <location line="+196"/>
@@ -1776,12 +1777,12 @@ See help for details.</source>
     <message>
         <location line="+598"/>
         <source>Drive successfully unmounted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пристрій вдало демонтовано.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Failed to unmount drive.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося демонтувати пристрій.</translation>
     </message>
     <message>
         <source>Copy application directory path to system&apos;s&apos; clipboard</source>
@@ -1858,22 +1859,22 @@ See help for details.</source>
     <message>
         <location line="+153"/>
         <source>Copy application directory path to system&apos;s clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Копіювати шлях каталогу до системного буферу</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Copy full application path to system&apos;s clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Копіювати шлях програми до системного буферу</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Copy q4wine-cli command for current application</source>
-        <translation type="unfinished"></translation>
+        <translation>Копіювати команду q4wine-cli до системного буферу</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Browse for another image</source>
-        <translation type="unfinished"></translation>
+        <translation>Пошук іншого образу КД</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -1899,7 +1900,7 @@ See help for details.</source>
         <location line="+3"/>
         <location line="+134"/>
         <source>Sorry. It seems that the icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте. Здаєтся піктограма вже існує.&lt;br&gt;Будь ласка оберіть інше ім&apos;я, або скасуйте дію.</translation>
     </message>
     <message>
         <location line="-105"/>
@@ -1988,7 +1989,7 @@ See help for details.</source>
     <message>
         <location line="+535"/>
         <source>Note: Pre and post run scripts will not be executed in case the &quot;Run With Output in Console&quot; option is enabled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Примітка: скрипти користувача не будуть виконуватися у випадку, якщо програма буде виконуватися з опцією &quot;Запустити з виводом до консолі&quot;.</translation>
     </message>
     <message>
         <source>Override Dll</source>
@@ -2151,19 +2152,19 @@ See help for details.</source>
     <message>
         <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+44"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
         <location line="-26"/>
         <location line="+26"/>
         <source>Extracting icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт піктограми</translation>
     </message>
     <message>
         <source>Exporting icon from binary file.&lt;br&gt;This can take a while...</source>
@@ -2177,7 +2178,7 @@ See help for details.</source>
         <location line="+70"/>
         <location line="+5"/>
         <source>Sorry, an icon named %1 already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, але піктограма з назвою %1 вже існує.</translation>
     </message>
     <message>
         <source>Selected working directory not exists.</source>
@@ -2219,7 +2220,7 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>Selected working directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вказана робоча тека не існує.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2239,17 +2240,17 @@ See help for details.</source>
     <message>
         <location line="+158"/>
         <source>Override DLL</source>
-        <translation type="unfinished"></translation>
+        <translation>Перевизначення DLL</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Present Wine DLLs</source>
-        <translation type="unfinished">Наявні у wine dll</translation>
+        <translation>Наявні у Wine DLL</translation>
     </message>
     <message>
         <location line="+80"/>
         <source>Overridden DLLs</source>
-        <translation type="unfinished">Перевизначені dll</translation>
+        <translation>Перевизначені DLL</translation>
     </message>
     <message>
         <location line="+155"/>
@@ -2297,7 +2298,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/iconsview.cpp" line="-6"/>
         <source>Sorry. It seems that the file already exists.&lt;br&gt;Replace existing file or rename current one?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, здається, файл вже існує.&lt;br&gt;Замінити існуючий чи перейменувати поточний?</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2322,12 +2323,12 @@ See help for details.</source>
     <message>
         <location line="+6"/>
         <source>Sorry. It seems that the file already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, здається, файл з такою назвою вже є.</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Replace existing file or rename current one?</source>
-        <translation type="unfinished"></translation>
+        <translation>Замінити існуючий чи перейменувати поточний?</translation>
     </message>
     <message>
         <source>Sorry. It seems file already exists.</source>
@@ -2346,12 +2347,12 @@ See help for details.</source>
     <message>
         <location line="-35"/>
         <source>Sorry, file cannot be removed:&lt;br&gt;%1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, неможливо вилучити файл: &lt;br&gt;%1.</translation>
     </message>
     <message>
         <location line="+35"/>
         <source>Sorry, file cannot be created:&lt;br&gt;%1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, не вдалося створити файл: &lt;br&gt;%1.</translation>
     </message>
     <message>
         <source>Sorry, i can&apos;t remove file: &lt;br&gt;%1.</source>
@@ -2458,27 +2459,27 @@ See help for details.</source>
         <location line="+8"/>
         <location line="+25"/>
         <source>Sorry. It seems that the CD image already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, здається, файл образу КД з такою назвою вже є.</translation>
     </message>
     <message>
         <location line="-25"/>
         <source>Sorry. It seems that the CD image file already exists.&lt;br&gt;Please rename it, or cancel add image operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, здається, файл образу КД вже існує.&lt;br&gt;Будь ласка, перейменуйте його або скасуйте дію перейменування.</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Sorry. CD image name cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, ім&apos;я файлу образу КД не може бути порожнім.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Sorry. CD image name cannot be empty.&lt;br&gt;Please enter new name, or cancel rename image operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, ім&apos;я файлу образу КД не може бути порожнім.&lt;br&gt;Будь ласка, введіть нове ім&apos;я, або скасуйте операцію перейменування.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Sorry. It seems that the CD image file already exists.&lt;br&gt;Please rename it, or cancel rename image operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, здається, файл образу КД вже існує.&lt;br&gt;Будь ласка, перейменуйте його або скасуйте дію перейменування.</translation>
     </message>
     <message>
         <source>Sorry. It seems CD iamge already exists.</source>
@@ -2521,7 +2522,7 @@ See help for details.</source>
     <message>
         <location line="+47"/>
         <source>Do not show this dialog next time</source>
-        <translation type="unfinished">Не показувати наступного разу</translation>
+        <translation>Не показувати наступного разу</translation>
     </message>
     <message>
         <source>Don&apos;t show this dialog next time</source>
@@ -2873,7 +2874,7 @@ See help for details.</source>
         <location line="+11"/>
         <location line="+3"/>
         <source>Scan for Wine desktop files and import them into Q4Wine&apos;s icon view.</source>
-        <translation type="unfinished"></translation>
+        <translation>Шукати десктопні файли Wine та імпортувати їх до бази Q4Wine.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3009,7 +3010,7 @@ See help for details.</source>
     <message>
         <location line="-378"/>
         <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вже запущена ще одна копія q4wine, або роботу q4wine було зупинено невірно. Відлити лок файл?</translation>
     </message>
     <message>
         <location line="+53"/>
@@ -3018,24 +3019,24 @@ See help for details.</source>
         <location line="+12"/>
         <location line="+10"/>
         <source>helper notification</source>
-        <translation type="unfinished"></translation>
+        <translation>сповіщення від помічника</translation>
     </message>
     <message>
         <location line="-13"/>
         <location line="+3"/>
         <source>Cannot start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можу запустити програму: &quot;%1&quot; для префіксу: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+3"/>
         <source>Cannot start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можу запустити консоль для програми: &quot;%1&quot; у префіксу: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location line="+276"/>
         <source>Sorry, the install wizard has not been implemented yet. It will be available in a future version.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+60"/>
@@ -3047,19 +3048,19 @@ See help for details.</source>
         <location line="-2"/>
         <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
-        <translation type="unfinished"></translation>
+        <translation>Виконувані файли та бібліотеки Win32 (*.exe *.dll);;Виконувані файли Win32 (*.exe);;Бібліотеки Win32 (*.dll)</translation>
     </message>
     <message>
         <location line="+40"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт піктограми з виконуваного файла.&lt;br&gt;Будь ласка, зачекайте...</translation>
     </message>
     <message>
         <location line="-26"/>
         <location line="+26"/>
         <source>Extracting icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Експорт піктограми</translation>
     </message>
     <message>
         <source>Win32 Executable and Shared libraies (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraies (*.dll)</source>
@@ -3082,12 +3083,12 @@ See help for details.</source>
         <location line="+4"/>
         <location line="+3"/>
         <source>Binary &quot;%1&quot; does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Виконуваний файл &quot;%1&quot; не існує.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Cannot run binary</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можу виконати</translation>
     </message>
     <message>
         <source>Can&apos;t run binary</source>
@@ -3228,17 +3229,17 @@ See help for details.</source>
     <message>
         <location line="-94"/>
         <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Створити або оновити кеш додатків Winetricks.</translation>
     </message>
     <message>
         <location line="+68"/>
         <source>Fail to remove %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можу вилучити  %1</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Sorry, no fake drive configuration found.&lt;br&gt;Create fake drive configuration before attempting to update it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте. Не знайдено конфігурації Фіктивного диску.&lt;br&gt;Створіть Фіктивний диск перед тим, як його оновлювати.</translation>
     </message>
     <message>
         <source>Create or update q4wine&apos;s cache of Winetricks appications.</source>
@@ -3266,7 +3267,7 @@ See help for details.</source>
     <message>
         <location line="+0"/>
         <source>Removing old fake drive.&lt;br&gt;This may take a while...</source>
-        <translation type="unfinished"></translation>
+        <translation>Знищуємо старий фіктивний диск.&lt;br&gt;Це може зайняти деякий час...</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -3348,12 +3349,12 @@ See help for details.</source>
     <message>
         <location line="+0"/>
         <source>Sorry, you cannot delete the Default prefix.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, типовий префікс не можна вилучати.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви справді бажаєте вилучити префікс з назвою &quot;%1&quot; і всі відповідні піктограми?</translation>
     </message>
     <message>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
@@ -3500,7 +3501,8 @@ Note: leave it blank for default.</source>
         <location line="-32"/>
         <source>If you wish to use different Wine versions, you may wish to set custom Wine paths here.
 Note: leave it blank for default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Якщо ви маєте намір використовувати декілька версій Wine, вам слід вказати тут нетипові шляхи для Wine.
+Зауваження: не заповнюйте, якщо не збираєтеся цього робити.</translation>
     </message>
     <message>
         <location line="+76"/>
@@ -3520,17 +3522,17 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+43"/>
         <source>Advanced</source>
-        <translation type="unfinished">Додатково</translation>
+        <translation>Додатково</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Execution template string</source>
-        <translation type="unfinished"></translation>
+        <translation>Шаблон строки запуску</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>This template will be used to run wine programs. Normally you do not need to change it. See help for details. To restore default value, just leave it blank.</source>
-        <translation type="unfinished"></translation>
+        <translation>Шаблон строки запуску буде використано під час запуску програм Wine. Зазвичай, вам не потрібно змінювати цей шаблон. Ознайомтесь з довідкою щоб дізнатись подробиці. Щоб відновити типовий шаблон, залиште це поле пустим.</translation>
     </message>
     <message>
         <location line="+38"/>
@@ -3567,12 +3569,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+14"/>
         <source>Warning</source>
-        <translation type="unfinished">Попередження</translation>
+        <translation>Попередження</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Directory &quot;%1&quot; already exists. Do you wish to use it anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Тека з назвою &quot;%1&quot; вже існує. Ви хочете використовувати її?</translation>
     </message>
     <message>
         <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
@@ -3687,13 +3689,13 @@ Note: leave it blank for default.</source>
         <location line="-160"/>
         <location line="+56"/>
         <source>Sorry. It seems that the directory already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, здається, тека з такою назвою вже існує.</translation>
     </message>
     <message>
         <location line="+29"/>
         <source>Do you really wish to delete the folder named &quot;%1&quot; and all associated icons?
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Ви справді бажаєте вилучити каталог назвою &quot;%1&quot; і всі відповідні піктограми?</translation>
     </message>
     <message>
         <location line="+80"/>
@@ -3858,12 +3860,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+84"/>
         <source>Sorry. It seems that the icon already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, здається, піктограма з такою назвою вже є.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Sorry. It seems that the icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте. Здаєтся піктограма вже існує.&lt;br&gt;Будь ласка оберіть інше ім&apos;я, або скасуйте дію.</translation>
     </message>
     <message>
         <location line="+94"/>
@@ -3884,27 +3886,27 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+27"/>
         <source>Failed to mount %1.</source>
-        <translation type="unfinished">Не вдалося змонтувати %1.</translation>
+        <translation>Не вдалося змонтувати %1.</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Drive successfully unmounted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пристрій вдало демонтовано.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Failed to unmount drive.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося демонтувати пристрій.</translation>
     </message>
     <message>
         <location line="+47"/>
         <source>Sorry, you cannot delete the Default prefix.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, типовий префікс не можна вилучати.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви справді бажаєте вилучити префікс з назвою &quot;%1&quot; і всі відповідні піктограми?</translation>
     </message>
     <message>
         <source>Sorry, you can&apos;t delete Default prefix.</source>
@@ -3933,7 +3935,7 @@ Note: leave it blank for default.</source>
         <location line="-316"/>
         <location line="+56"/>
         <source>Sorry. It seems that the directory already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте. Здается тека вже існує.&lt;br&gt;Будь ласка оберіть інше ім&apos;я, або скасуйте дію.</translation>
     </message>
     <message>
         <location line="+91"/>
@@ -3943,7 +3945,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+69"/>
         <source>Browse for another image</source>
-        <translation type="unfinished"></translation>
+        <translation>Пошук іншого образу КД</translation>
     </message>
     <message>
         <location line="+99"/>
@@ -4030,7 +4032,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-42"/>
         <source>It seems that the process failed.&lt;br&gt;&lt;br&gt;Error log:&lt;br&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Здається процес завершився помилкою.&lt;br&gt;&lt;br&gt;Зневадження STDERR:&lt;br&gt;%1</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -4071,12 +4073,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-5"/>
         <source>It seems that the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Здається процес завершився помилкою.&lt;br&gt;&lt;br&gt;Зневадження STDERR:&lt;br&gt;%1</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>It seems that the process crashed.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Здається процес завершився помилкою.&lt;br&gt;&lt;br&gt;Зневадження STDERR:&lt;br&gt;%1</translation>
     </message>
     <message>
         <source>It seems the process exited normally.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
@@ -4102,7 +4104,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="+50"/>
         <source>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортую піктограми програм wine з:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Це може зайняти трохи часу...&lt;br&gt;&lt;br&gt;&lt;b&gt;Зауваження:&lt;/b&gt;Щоб автоматично відаляти оброблені файли, подивитись у налаштування q4wine.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4125,7 +4127,7 @@ Note: leave it blank for default.</source>
         <location line="-53"/>
         <location line="+53"/>
         <source>If the processes keep running -- end them manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Якщо процеси не завершаться самі -- прибийте їх власноруч.</translation>
     </message>
     <message>
         <source>While process keep running -- end them manually.</source>
@@ -4209,7 +4211,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-74"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Префікса  з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;%2-cli -pl&quot; що б отримати список існуючих префіксів.</translation>
     </message>
     <message>
         <location line="+75"/>
@@ -4220,7 +4222,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-70"/>
         <source>Icon named &quot;%1&quot; does not exist.  Run &quot;%2-cli -il&quot; for icon list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Піктограма  з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;%2-cli -il&quot; що б отримати список існуючих піктограм.</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -4230,7 +4232,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+14"/>
         <source>Dir named &quot;%1&quot; does not exist. Run &quot;%2-cli -dl&quot; for dir list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Директорії з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;%2-cli -dl&quot; що б отримати список існуючих директорій.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -4262,27 +4264,27 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-48"/>
         <source>Disc image named &quot;%1&quot; does not exist. Run &quot;%2-cli -cl&quot; for disc image list.</source>
-        <translation type="unfinished"></translation>
+        <translation>КД образ з ім&apos;ям &quot;%1&quot; не існує. Виконайте команду &quot;%2-cli -сl&quot; що б отримати список існуючих образів КД.</translation>
     </message>
     <message>
         <location line="+26"/>
         <source>Unmounting mount point &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Демонтуемо &quot;%1&quot;.</translation>
     </message>
     <message>
         <location line="+49"/>
         <source>File &quot;%1&quot; does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл &quot;%1&quot; не існує.</translation>
     </message>
     <message>
         <location line="+32"/>
         <source>sets the current directory name</source>
-        <translation type="unfinished"></translation>
+        <translation>встановити поточне ім&apos;я каталогу</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>sets the cd image name</source>
-        <translation type="unfinished"></translation>
+        <translation>встановити поточне ім&apos;я образу КД</translation>
     </message>
     <message>
         <source>Umounting mount point &quot;%1&quot;.</source>
@@ -4337,12 +4339,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>GUI utility for Wine applications and prefixes management.</source>
-        <translation type="unfinished"></translation>
+        <translation>Графічна оболонка для налаштування Wine.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>open Q4Wine run dialog for Windows binary</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити діалог запуску для програми</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4438,32 +4440,32 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>sends -9 term signal to current prefix process or for all prefixes processes</source>
-        <translation type="unfinished"></translation>
+        <translation>надіслати -9 term сигнал поточному процесу, або процесам поточного префіксу</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>output all existing prefixes names and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>показати список префіксів та вийти</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>output all existing dir names for current prefix and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>показати список директорій для поточного префіксіу та вийти</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>output all existing icon names for current prefix/directory and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>показати список піктограм для поточного префікса/директорія та вийти</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>mount a cd image or drive for current prefix and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>змонтовати образ КД або пристрій для поточного префіксу та вийти</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>unmount a cd image or drive for current prefix and exit</source>
-        <translation type="unfinished"></translation>
+        <translation>демонтовати образ КД або пристрій для поточного префіксу та вийти</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -4572,7 +4574,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>Console utility for Q4Wine which helps to handle Wine application exit status and its stdout/stderr output logging.</source>
-        <translation type="unfinished"></translation>
+        <translation>Консольна програма для Q4Wine що допомагає отримувати код завершення програми Wine та заносити її зневадження до журналу.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4600,7 +4602,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>sets program niceness</source>
-        <translation type="unfinished"></translation>
+        <translation>встановлює приорітет програми</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4635,7 +4637,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>execute script before program run</source>
-        <translation type="unfinished"></translation>
+        <translation>виконати скрипт перед запуском програми</translation>
     </message>
     <message>
         <source>execute script before run program</source>
@@ -4823,7 +4825,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+5"/>
         <source>Selected working directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вказана робоча тека не існує.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -4907,7 +4909,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+5"/>
         <source>Sorry, drive directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, вказаний каталог не існує.</translation>
     </message>
     <message>
         <source>Sorry, drive directory not exists.</source>
@@ -4991,22 +4993,22 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+108"/>
         <source>Cannot run: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не можу виконати: %1</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>It seems that the process %1 has been killed successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Здається процес %1 вдало вбито.</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>This action will send a KILL(-9) signal to all wine processes of the selected prefixes&lt;br&gt;&lt;br&gt;Do you really wish to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ця дія надішле KILL(-9) сигнал до всіх процессів з обраними префіксами&lt;br&gt;&lt;br&gt;Ви дійсно цього бажаєте?</translation>
     </message>
     <message>
         <location line="+49"/>
         <source>It seems that the process %1 has been reniced to %2 successfully.</source>
-        <translation type="unfinished"></translation>
+        <translation>Здається зміна пріоритету на %2 для процесу %1 пройшла вдало.</translation>
     </message>
     <message>
         <source>This action will send a KILL(-9) signal to selected processes&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really want to proceed?</source>
@@ -5029,7 +5031,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-37"/>
         <source>This action will send a KILL(-9) signal to selected processes&lt;br&gt;&lt;br&gt;It is HIGH risk to damage wine normal state.&lt;br&gt;&lt;br&gt;Do you really wish to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ця дія надішле KILL(-9) сигнал до обранних процесів&lt;br&gt;&lt;br&gt;Є висока вірогідність завддати шкоду нормальній роботі wine.&lt;br&gt;&lt;br&gt;Ви дійсно цього бажаєте?</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -5154,12 +5156,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-66"/>
         <source>Sorry, specified %1 directory does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, вказана тека %1 не існує.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Sorry, specified %1 binary does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вибачте, вказаного виконуваного файла %1 не існує.</translation>
     </message>
     <message>
         <location line="+253"/>
