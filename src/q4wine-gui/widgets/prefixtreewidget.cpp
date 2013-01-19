@@ -46,7 +46,8 @@ PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) :
       this->prefixName="";
       this->prefixMontPoint="";
 
-      this->setAcceptDrops(true);
+      //Disabled due to buggy logic
+      this->setAcceptDrops(false);
 
       this->cdromDevices=CoreLib->getCdromDevices();
 }
