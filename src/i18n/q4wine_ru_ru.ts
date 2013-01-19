@@ -587,27 +587,27 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-479"/>
         <location line="+483"/>
         <source>Desktop Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Меню рабочего стола</translation>
     </message>
     <message>
         <location line="-596"/>
         <source>Desktop menu plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Дополнение меню рабочего стола</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Enable automatic generation of desktop menu </source>
-        <translation type="unfinished"></translation>
+        <translation>Включить автоматическое создание меню рабочего стола </translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Regenerate desktop menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновить меню рабочего стола</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Remove desktop menu entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить элементы меню рабочего стола</translation>
     </message>
     <message>
         <location line="+47"/>
