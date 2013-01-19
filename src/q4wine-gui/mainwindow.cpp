@@ -288,9 +288,9 @@ void MainWindow::getSettings(){
      */
     QVariant val;
 
-    val = CoreLib->getSetting("MainWindow", "size", false, QSize(400, 450));
+    val = CoreLib->getSetting("MainWindow", "size", false, QSize(600, 500));
     this->resize(val.toSize());
-    val = CoreLib->getSetting("MainWindow", "pos", false, QPoint(200, 200));
+    val = CoreLib->getSetting("MainWindow", "pos", false, QPoint(100, 100));
     this->move(val.toPoint());
 
     QList<int> a;
