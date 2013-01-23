@@ -83,12 +83,12 @@ void winetricks::run_winetricks(QString item){
 
         QHash<QString, QString> prefix_info = db_prefix.getByName(this->prefix_name);
 
-        sh_args << QString("WINEPREFIX=%1").arg(prefix_info.value("path"));
-        sh_args << QString("WINEDLLPATH=%1").arg(prefix_info.value("libs"));
-        sh_args << QString("WINELOADER=%1").arg(prefix_info.value("loader"));
-        sh_args << QString("WINESERVER=%1").arg(prefix_info.value("server"));
+        sh_args << QString("WINEPREFIX='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("path")));
+        sh_args << QString("WINEDLLPATH='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("libs")));
+        sh_args << QString("WINELOADER='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("loader")));
+        sh_args << QString("WINESERVER='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("server")));
         if (!prefix_info.value("arch").isEmpty())
-            sh_args << QString("WINEARCH=%1").arg(prefix_info.value("arch"));
+            sh_args << QString("WINEARCH='%1'").arg(prefix_info.value("arch"));
 
 
         sh_args.append(CoreLib->getWhichOut("sh"));

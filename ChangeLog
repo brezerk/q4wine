@@ -1,3 +1,7 @@
+Version 1.0-r1
+ Fixed:
+  - Winetricks doesn't work properly if WINEPATH contain spaces [BUG-19];
+
 Version 1.0
  Fixed:
   - Quote run string in case of console useage (gnome-terminal, see BUG-15)
