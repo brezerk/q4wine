@@ -348,8 +348,10 @@ bool MainWindow::createSocket(){
 #endif
 
     char *user = getenv("USER");
-
-    QString soketFile = QString("/tmp/q4wine-%1.sock").arg(user);
+    QString soketFile = QString("/tmp/q4wine-%1.sock").arg(QString::fromUtf8(user));
+#ifdef DEBUG
+    qDebug()<<"[ii] Socket file name:"<<soketFile;
+#endif
 
     if (QFile(soketFile).exists()){
         QMessageBox msgBox;
@@ -927,7 +929,7 @@ void MainWindow::mainImportWineIcons_Click(){
 
 
         prefixPath.append("/dosdevices/c:/users/");
-        prefixPath.append(getenv("USER"));
+        prefixPath.append(QString::fromUtf8(getenv("USER")));
 
         QFileInfo fileinfo(QString("%1/%2").arg(prefixPath).arg(CoreLib->decodeRegString(list.at(0).split("\\\\").last())));
         if (fileinfo.isSymLink()){

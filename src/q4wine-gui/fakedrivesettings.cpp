@@ -238,7 +238,7 @@ void FakeDriveSettings::cmdOk_Click(){
 
     QString userDir = prefixPath;
     userDir.append("/drive_c/users/");
-    userDir.append(getenv("USER"));
+    userDir.append(QString::fromUtf8(getenv("USER")));
 
     if (list.count()==5){
                 desktopFolder = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(0).split("\\\\").last()));
@@ -1246,7 +1246,7 @@ void FakeDriveSettings::loadSettings(){
     }
 
     prefixPath.append("c:/users/");
-    prefixPath.append(getenv("USER"));
+    prefixPath.append(QString::fromUtf8(getenv("USER")));
 
     if (!wineDriveDir.cd(prefixPath)){
         qDebug()<<"Cannot cd to prefix directory: "<<prefixPath;
@@ -1311,7 +1311,7 @@ void FakeDriveSettings::loadDefaultSettings(){
         return;
     }
 
-    txtOwner->setText(getenv("USER"));
+    txtOwner->setText(QString::fromUtf8(getenv("USER")));
 
     std::auto_ptr<DriveListWidgetItem> item;
     item.reset(new DriveListWidgetItem(listWineDrives));

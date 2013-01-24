@@ -41,7 +41,7 @@ WineObject::WineObject(QObject *parent) : QObject(parent)
     this->useConsole=false;
     this->logEnabled = CoreLib->getSetting("logging", "enable", false, 1).toBool();
 
-    this->user = getenv("USER");
+    this->user = QString::fromUtf8(getenv("USER"));
 
     return;
 }

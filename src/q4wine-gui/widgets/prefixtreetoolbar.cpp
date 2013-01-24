@@ -116,7 +116,7 @@ void PrefixTreeToolbar::prefixImport_Click(){
 
 
         prefixPath.append("/dosdevices/c:/users/");
-        prefixPath.append(getenv("USER"));
+        prefixPath.append(QString::fromUtf8(getenv("USER")));
 
         QFileInfo fileinfo(QString("%1/%2").arg(prefixPath).arg(CoreLib->decodeRegString(list.at(0).split("\\\\").last())));
         if (fileinfo.isSymLink()){

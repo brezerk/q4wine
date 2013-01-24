@@ -1,5 +1,6 @@
 Version 1.0-r1
  Fixed:
+  - Support for utf8 system user name [BUG-20];
   - Winetricks doesn't work properly if WINEPATH contain spaces [BUG-19];
 
 Version 1.0

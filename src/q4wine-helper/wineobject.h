@@ -114,7 +114,7 @@ private:
 
     bool useConsole, logEnabled;
 
-    char *user;
+    QString user;
 
 signals:
 
