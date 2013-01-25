@@ -359,14 +359,17 @@ bool MainWindow::createSocket(){
         msgBox.setInformativeText(tr("It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?"));
         msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
         msgBox.setDefaultButton(QMessageBox::Cancel);
-        if (msgBox.exec() == QMessageBox::Ok)
+        if (msgBox.exec() == QMessageBox::Ok){
             QFile(soketFile).remove();
+        } else {
+            exit(255);
+        }
     }
 
     if (!serverSoket->listen(soketFile)){
         QTextStream QErr(stderr);
         QErr<<"[EE] Cannot create Q4Wine socket: "<<serverSoket->errorString()<<endl;
-        return false;
+        exit(255);
     }
 
     connect (serverSoket.get(), SIGNAL(newConnection()), this, SLOT(newConnection()));
