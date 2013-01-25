@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
         QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
     #endif
 #else
-    QString i18nPath = QString("%1/i18n").arg(APP_BUILD);
+    QString i18nPath = QString("%1/i18n").arg(QString::fromUtf8(APP_BUILD));
 #endif
 
 
