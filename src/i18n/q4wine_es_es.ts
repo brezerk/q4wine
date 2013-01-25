@@ -688,27 +688,32 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-479"/>
         <location line="+483"/>
         <source>Desktop Menu</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>Menu Escritorio</translation>
     </message>
     <message>
         <location line="-596"/>
         <source>Desktop menu plugin</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>Plugin menu Escritorio</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Enable automatic generation of desktop menu </source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>Activar generación automatica del menu Escritorio</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Regenerate desktop menu</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>Regenerar menu Escritorio</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Remove desktop menu entries</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>Quitar entradas del menu Escritorio</translation>
     </message>
     <message>
         <location line="+47"/>
@@ -742,7 +747,8 @@
     <message>
         <location line="+13"/>
         <source>Default directory for new wine prefixes</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>Carpeta por defecto para los nuevos prefijos de wine</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -3320,7 +3326,8 @@ Vea la ayuda para mas detalles.</translation>
     <message>
         <location line="+68"/>
         <source>Fail to remove %1</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>Fallo al eliminar %1</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -3542,12 +3549,13 @@ Vea la ayuda para mas detalles.</translation>
     <message>
         <location line="+14"/>
         <source>Warning</source>
-        <translation type="unfinished">Advertencia</translation>
+        <translation>Advertencia</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Directory &quot;%1&quot; already exists. Do you wish to use it anyway?</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Revisar</translatorcomment>
+        <translation>La carpeta &quot;%1&quot; ya existe. Desea usarla de cualquier manera?</translation>
     </message>
     <message>
         <source>A prefix named Sorry, but prefix named %1 already exists.quot;%1Sorry, but prefix named %1 already exists.quot; already exists</source>
