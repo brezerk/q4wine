@@ -41,8 +41,6 @@ WineObject::WineObject(QObject *parent) : QObject(parent)
     this->useConsole=false;
     this->logEnabled = CoreLib->getSetting("logging", "enable", false, 1).toBool();
 
-    this->user = QString::fromUtf8(getenv("USER"));
-
     return;
 }
 
@@ -377,7 +375,7 @@ int WineObject::runScript(QString script_path){
 
 void WineObject::sendMessage(QString message){
     QLocalSocket socket(this);
-    socket.connectToServer( QString("/tmp/q4wine-%1.sock").arg(this->user) , QIODevice::WriteOnly );
+    socket.connectToServer( QString("/tmp/q4wine-%1.sock").arg(getuid()) , QIODevice::WriteOnly );
 
     if (socket.waitForConnected()){
 #ifdef DEBUG

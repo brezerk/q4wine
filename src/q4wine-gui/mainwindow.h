@@ -25,6 +25,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <unistd.h>
+
 #include <src/q4wine-gui/ui_MainWindow.h>
 
 //Qt includes

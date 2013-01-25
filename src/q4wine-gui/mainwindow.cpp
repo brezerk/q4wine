@@ -347,8 +347,7 @@ bool MainWindow::createSocket(){
     qDebug()<<"[ii] Creating Q4Wine socket";
 #endif
 
-    char *user = getenv("USER");
-    QString soketFile = QString("/tmp/q4wine-%1.sock").arg(QString::fromUtf8(user));
+    QString soketFile = QString("/tmp/q4wine-%1.sock").arg(getuid());
 #ifdef DEBUG
     qDebug()<<"[ii] Socket file name:"<<soketFile;
 #endif

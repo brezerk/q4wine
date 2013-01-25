@@ -114,8 +114,6 @@ private:
 
     bool useConsole, logEnabled;
 
-    QString user;
-
 signals:
 
 public slots:
