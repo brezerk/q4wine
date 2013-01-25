@@ -419,10 +419,10 @@ QString corelib::getTranslationLang(){
     #ifdef _OS_DARWIN_
         QString i18nPath = QString("%1/%2.app/Contents/i18n").arg(QDir::currentPath()).arg(APP_SHORT_NAME);
     #else
-        QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
+        QString i18nPath = QString("%1/share/%2/i18n").arg(QString::fromUtf8(APP_PREF)).arg(APP_SHORT_NAME);
     #endif
 #else
-    QString i18nPath = QString("%1/i18n").arg(APP_BUILD);
+    QString i18nPath = QString("%1/i18n").arg(QString::fromUtf8(APP_BUILD));
 #endif
 
 
@@ -581,7 +581,7 @@ bool corelib::checkDirs(QStringList subDirs){
 void corelib::getBuildFlags(){
     QTextStream Qcout(stdout);
     Qcout<<QObject::tr("Buildtime flags are:")<<endl<<endl;
-    Qcout<<qSetFieldWidth(25)<<left<<" CMAKE_INSTALL_PREFIX"<<APP_PREF<<qSetFieldWidth(0)<<endl<<endl;
+    Qcout<<qSetFieldWidth(25)<<left<<" CMAKE_INSTALL_PREFIX"<<QString::fromUtf8(APP_PREF)<<qSetFieldWidth(0)<<endl<<endl;
 #ifdef RELEASE
     Qcout<<qSetFieldWidth(25)<<left<<" RELEASE"<<"ON"<<qSetFieldWidth(0)<<endl;
 #else
@@ -1124,13 +1124,13 @@ QStringList corelib::getCdromDevices(void) const{
     #ifdef _OS_DARWIN_
             QString binary = QString("%1/%2.app/Contents/MacOS/q4wine-helper").arg(QDir::currentPath(), APP_SHORT_NAME);
     #else
-            QString binary = QString("%1/bin/q4wine-helper").arg(APP_PREF);
+            QString binary = QString("%1/bin/q4wine-helper").arg(QString::fromUtf8(APP_PREF));
     #endif
 #else
     #ifdef _OS_DARWIN_
-            QString binary = QString("%1/q4wine-helper/q4wine-helper.app/Contents/MacOS/q4wine-helper").arg(APP_BUILD);
+            QString binary = QString("%1/q4wine-helper/q4wine-helper.app/Contents/MacOS/q4wine-helper").arg(QString::fromUtf8(APP_BUILD));
     #else
-            QString binary = QString("%1/q4wine-helper/q4wine-helper").arg(APP_BUILD);
+            QString binary = QString("%1/q4wine-helper/q4wine-helper").arg(QString::fromUtf8(APP_BUILD));
     #endif
 #endif
             QStringList args;
@@ -1249,7 +1249,7 @@ QStringList corelib::getCdromDevices(void) const{
 
             QTextStream out(&file);
             out<<"[Desktop Entry]"<<endl;
-            out<<"Exec="<<APP_PREF<<"/bin/q4wine-cli -p \""<<prefix_name<<"\" ";
+            out<<"Exec="<<QString::fromUtf8(APP_PREF)<<"/bin/q4wine-cli -p \""<<prefix_name<<"\" ";
             if (!dir_name.isEmpty())
                 out<<" -d \""<<dir_name<<"\" ";
             out<<" -i \""<<icon_name<<"\" "<<endl;
@@ -1257,12 +1257,12 @@ QStringList corelib::getCdromDevices(void) const{
             QString icon_path = result.value("icon_path");
 
             if (icon_path.isEmpty()){
-                out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/exec_wine.png"<<endl;
+                out<<"Icon="<<QString::fromUtf8(APP_PREF)<<"/share/q4wine/icons/exec_wine.png"<<endl;
             } else {
                 if (QFile(icon_path).exists()){
                     out<<"Icon="<<icon_path<<endl;
                 } else {
-                    out<<"Icon="<<APP_PREF<<"/share/q4wine/icons/"<<icon_name<<".png"<<endl;
+                    out<<"Icon="<<QString::fromUtf8(APP_PREF)<<"/share/q4wine/icons/"<<icon_name<<".png"<<endl;
                 }
             }
             out<<"Type=Application"<<endl;
@@ -1674,7 +1674,7 @@ QStringList corelib::getCdromDevices(void) const{
                 string.append(" %MOUNT_DRIVE% %MOUNT_POINT%");
                 break;
    case 3:
-                string=APP_PREF;
+                string=QString::fromUtf8(APP_PREF);
                 string.append("/bin/q4wine-mount %MOUNT_DRIVE% %MOUNT_POINT%");
                 break;
             }
@@ -1756,7 +1756,7 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 #ifdef _OS_FREEBSD_
                 string="";
-                string.append(APP_PREF);
+                string.append(QString::fromUtf8(APP_PREF));
                 string.append("/share/q4wine/scripts/mount_image.sh");
                 string.append(" %MOUNT_IMAGE% %MOUNT_POINT%");
 #endif
@@ -1771,7 +1771,7 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 #ifdef _OS_FREEBSD_
                 string="";
-                string.append(APP_PREF);
+                string.append(QString::fromUtf8(APP_PREF));
                 string.append("/share/q4wine/scripts/mount_image.sh");
                 string.append(" %MOUNT_IMAGE% %MOUNT_POINT%");
 #endif
@@ -1781,7 +1781,7 @@ QStringList corelib::getCdromDevices(void) const{
                 string.append(" %MOUNT_IMAGE% %MOUNT_POINT%");
                 break;
    case 3:
-                string=APP_PREF;
+                string=QString::fromUtf8(APP_PREF);
                 string.append("/bin/q4wine-mount %MOUNT_IMAGE% %MOUNT_POINT%");
                 break;
             }
@@ -1797,7 +1797,7 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 #ifdef _OS_FREEBSD_
                 string="";
-                string.append(APP_PREF);
+                string.append(QString::fromUtf8(APP_PREF));
                 string.append("/share/q4wine/scripts/umount.sh");
                 string.append(" %MOUNT_POINT%");
 #endif
@@ -1812,7 +1812,7 @@ QStringList corelib::getCdromDevices(void) const{
 #endif
 #ifdef _OS_FREEBSD_
                 string = "";
-                string.append(APP_PREF);
+                string.append(QString::fromUtf8(APP_PREF));
                 string.append("/share/q4wine/scripts/umount.sh");
                 string.append(" %MOUNT_POINT%");
 #endif

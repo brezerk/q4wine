@@ -158,7 +158,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     themeDir.append(APP_SHORT_NAME);
     themeDir.append(".app/Contents/Resources/theme");
 #else
-    themeDir.append(APP_PREF);
+    themeDir.append(QString::fromUtf8(APP_PREF));
     themeDir.append("/share/");
     themeDir.append(APP_SHORT_NAME);
     themeDir.append("/theme");
@@ -469,7 +469,7 @@ void AppSettings::getLangs(){
         themeDir.append(APP_SHORT_NAME);
     #endif
 #else
-    themeDir = APP_BUILD;
+    themeDir = QString::fromUtf8(APP_BUILD);
 #endif
     themeDir.append("/i18n");
 

@@ -1035,7 +1035,7 @@ void IconListWidget::iconCopyQ4WineCmd_Click(){
     if (!iconItem.get())
         return;
 
-    QString run_string = QString("%1/bin/q4wine-cli ").arg(APP_PREF);
+    QString run_string = QString("%1/bin/q4wine-cli ").arg(QString::fromUtf8(APP_PREF));
     run_string.append(" -p \"");
     run_string.append(this->prefixName);
     run_string.append("\"");

@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
     #ifdef _OS_DARWIN_
         QString i18nPath = QString("%1/%2.app/Contents/i18n").arg(QDir::currentPath()).arg(APP_SHORT_NAME);
     #else
-        QString i18nPath = QString("%1/share/%2/i18n").arg(APP_PREF).arg(APP_SHORT_NAME);
+        QString i18nPath = QString("%1/share/%2/i18n").arg(QString::fromUtf8(APP_PREF)).arg(APP_SHORT_NAME);
     #endif
 #else
     QString i18nPath = QString("%1/i18n").arg(QString::fromUtf8(APP_BUILD));
