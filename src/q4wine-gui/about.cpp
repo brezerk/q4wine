@@ -32,9 +32,9 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
                             "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
                                    "Alexey S. Malakhov (John Brezerk)" \
                             "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-                                                                   "Project maintainer, main developer, website designer and developer, project documentation, support, etc. ;)" \
+                                                                   "Project maintainer, lead developer, website designer and developer, project documentation, support, etc. ;)" \
                             "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-                                   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">brezerk@gmail</span>" \
+                                   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">brezerk@gmail.com</span>" \
                             "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
                                    "Kiev, Ukraine" \
 
@@ -160,9 +160,20 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
                             "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
                                    "Ukrainian translation" \
                             "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-                                   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">brezerk@gmail</span>" \
+                                   "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">brezerk@gmail.com</span>" \
                             "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
                                    "Kiev, Ukraine" \
+
+                            "</p><p style=\"margin: 0px\"> </p>" \
+
+                            "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                       "Artem Vorotnikov" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                            "German translation" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                       "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">vorot93@yandex.ru</span>" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                       "<span style=\" color:#6495ed;\">Web</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">https://launchpad.net/~skybon</span>" \
 
                             "</p><p style=\"margin: 0px\"> </p>" \
 
