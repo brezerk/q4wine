@@ -1,3 +1,7 @@
+Version 1.0-r2
+ Added:
+  - Persian translation. Thx 2 Arash Ariayee;
+
 Version 1.0-r1
  Fixed:
   - Prefix tree "Delete" menu item do not remove menu tree.
