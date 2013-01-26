@@ -179,7 +179,7 @@ QStringList winetricks::get_stdout_lines(QString command){
 }
 
 bool winetricks::parse() {
-    QProgressDialog *pd = new QProgressDialog("Refresh Winetricks application list.", QString(), 0, 100);
+    QProgressDialog *pd = new QProgressDialog("Refreshing winetricks application list.", QString(), 0, 100);
     pd->setModal(true);
     pd->show();
     pd->setValue(5);
