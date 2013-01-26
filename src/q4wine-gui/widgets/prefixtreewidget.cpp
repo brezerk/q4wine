@@ -716,8 +716,15 @@ void PrefixTreeWidget::menuDeletePrefix_Click(void){
 
     if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete the prefix named \"%1\" and all associated icons?").arg(prefixName), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
         if (db_icon.delIconsByPrefixName(this->prefixName))
-            if(db_dir.delDir(this->prefixName))
+            if(db_dir.delDir(this->prefixName)){
                 db_prefix.delByName(this->prefixName);
+#ifndef _OS_DARWIN_
+                if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
+                    sys_menu.remove_dir_info(this->prefixName);
+                    sys_menu.writeXMLSystemMenu();
+                }
+#endif
+            }
 
         emit(updateDatabaseConnections());
     }
