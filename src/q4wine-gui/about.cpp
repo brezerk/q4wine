@@ -269,6 +269,19 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
                              "</p><p style=\"margin: 0px\"> </p>" \
 
                             "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                       "Rosva (رسوا\)"
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                            "Persian Translation" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                       "<span style=\" color:#6495ed;\">E-Mail</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">mojsh2020@gmail.com</span>" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                       "<span style=\" color:#6495ed;\">Web</span>: <span style=\" text-decoration: underline; color:#5f9ea0;\">http://20ss20.wordpress.com</span>" \
+                            "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
+                                       "Talesh, Iran" \
+
+                            "</p><p style=\"margin: 0px\"> </p>" \
+
+                            "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
                                    "Frederik Schwarzer (icwiener)" \
                             "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
                                    "German translation" \

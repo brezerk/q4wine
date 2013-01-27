@@ -18,7 +18,7 @@
         <location line="+68"/>
         <source>Utility for Wine applications and prefixes management.</source>
         <translatorcomment>واین چون اسم خاص است به همان شکل ترجمه می شود. یعنی تنها حروف انگلیسی به حروف فارسی ترجمه می شوند. ترجمه ی سطح یک یا transliteration</translatorcomment>
-        <translation>برنامه ای برای مدیریت پیشوند ها و برنامه های اجرا شونده تحت واین(شراب).</translation>
+        <translation>برنامه ای برای مدیریت پیشوند ها و برنامه های اجرا شونده تحت شراب.</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -166,7 +166,7 @@
     <message>
         <location line="+1"/>
         <source>Search in Wine AppDB</source>
-        <translation>جستجو در  Wine AppDB (پایگاه داده ی برنامه های واین)</translation>
+        <translation>جستجو در  Wine AppDB (پایگاه داده ی برنامه های شراب)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -228,7 +228,7 @@
     <message>
         <location line="-2417"/>
         <source>Wine settings</source>
-        <translation>تنظیمات واین (شراب)</translation>
+        <translation>تنظیمات شراب</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -535,27 +535,27 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-479"/>
         <location line="+483"/>
         <source>Desktop Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>منوی میزکار</translation>
     </message>
     <message>
         <location line="-596"/>
         <source>Desktop menu plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>افزونه ی منوی میزکار</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Enable automatic generation of desktop menu </source>
-        <translation type="unfinished"></translation>
+        <translation>تولید خودکار منوی میزکار را فعال کن</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Regenerate desktop menu</source>
-        <translation type="unfinished"></translation>
+        <translation>منوی میزکار را دوباره ایجاد کن</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Remove desktop menu entries</source>
-        <translation type="unfinished"></translation>
+        <translation>ورودی های منوی میزکار را حذف کن</translation>
     </message>
     <message>
         <source>Winetricks</source>
@@ -613,7 +613,7 @@
     <message>
         <location line="+13"/>
         <source>Default directory for new wine prefixes</source>
-        <translation>استفاده از پوشه ی پیش فرض برای پیشوندهای جدید واین(شراب)</translation>
+        <translation>استفاده از پوشه ی پیش فرض برای پیشوندهای جدید شراب</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -640,17 +640,17 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-477"/>
         <location line="+479"/>
         <source>Wine desktop import</source>
-        <translation>واردکردن میزکار واین</translation>
+        <translation>واردکردن میزکار شراب</translation>
     </message>
     <message>
         <location line="-158"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
-        <translation>فایل های میزکار واین را در ابتدای اجرای Q4Wine وارد کن.</translation>
+        <translation>فایل های میزکار شراب را در ابتدای اجرای Q4Wine وارد کن.</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>Remove processed wine desktop files.</source>
-        <translation>فایل های پردازش شده ی میزکار واین را حذف کن.</translation>
+        <translation>فایل های پردازش شده ی میزکار شراب را حذف کن.</translation>
     </message>
     <message>
         <location line="+91"/>
