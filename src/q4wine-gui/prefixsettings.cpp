@@ -324,8 +324,11 @@ void PrefixSettings::getWineCdromLetter(){
 
 void PrefixSettings::setDefPath(QString prefix_name){
     QString path = CoreLib->getSetting("advanced", "prefixDefaultPath").toString();
-    if (!path.endsWith("/"))
-        path.append("/");
-    path.append(prefix_name);
-    this->txtPrefixPath->setText(path);
+    if (this->txtPrefixPath->text().isEmpty() or this->txtPrefixPath->text().startsWith(path)){
+        if (!path.endsWith("/"))
+            path.append("/");
+        path.append(prefix_name);
+
+        this->txtPrefixPath->setText(path);
+    }
 }

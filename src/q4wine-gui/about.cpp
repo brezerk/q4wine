@@ -269,7 +269,7 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
                              "</p><p style=\"margin: 0px\"> </p>" \
 
                             "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
-                                       "Rosva (رسوا\)"
+                                       "Rosva (رسوا)"
                             "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
                             "Persian Translation" \
                             "</p><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">" \
