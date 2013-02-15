@@ -17,7 +17,7 @@
     <message>
         <location line="+68"/>
         <source>Utility for Wine applications and prefixes management.</source>
-        <translation>Программа для настройки приложений и управления префиксами Wine.</translation>
+        <translation>Программа для настройки приложений и префиксов Wine.</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -46,7 +46,7 @@
     <message>
         <location line="+48"/>
         <source>OK</source>
-        <translation>Ok</translation>
+        <translation>ОК</translation>
     </message>
     <message>
         <location line="-96"/>
@@ -185,17 +185,17 @@
     <message>
         <location line="+36"/>
         <source>Status: Sending request to the server.</source>
-        <translation>Статус: Отсылаем запрос к серверу.</translation>
+        <translation>Статус: Отправка запроса к серверу.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Status: Reading server&apos;s response.</source>
-        <translation>Статус: Читаем ответ сервера.</translation>
+        <translation>Статус: Чтение ответа сервера.</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Status: Closing down connection.</source>
-        <translation>Статус: Закрываем соединение.</translation>
+        <translation>Статус: Закрытие соединения.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -248,7 +248,7 @@
     <message>
         <location line="+162"/>
         <source>Tray Icon</source>
-        <translation>Иконка в системном лотке</translation>
+        <translation>Значок в системном лотке</translation>
     </message>
     <message>
         <location line="+47"/>
@@ -271,42 +271,42 @@
     <message>
         <location line="+27"/>
         <source>tar:</source>
-        <translation>tar:</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+57"/>
         <source>mount:</source>
-        <translation>mount:</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+57"/>
         <source>umount:</source>
-        <translation>umount:</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+57"/>
         <source>sudo:</source>
-        <translation>sudo:</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+57"/>
         <source>gui sudo:</source>
-        <translation>GUI sudo:</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+57"/>
         <source>nice:</source>
-        <translation>nice:</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+57"/>
         <source>renice:</source>
-        <translation>renice:</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+57"/>
         <source>sh:</source>
-        <translation>sh:</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+56"/>
@@ -337,7 +337,7 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-487"/>
         <location line="+491"/>
         <source>Quick Mount</source>
-        <translation>Быстрое монтирование</translation>
+        <translation>Быстрое подключение</translation>
     </message>
     <message>
         <location line="-685"/>
@@ -370,17 +370,17 @@
     <message>
         <location line="-1276"/>
         <source>wrestool:</source>
-        <translation>wrestool:</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="-700"/>
         <source>Use tray icon.</source>
-        <translation>Показывать иконку в системном лотке.</translation>
+        <translation>Показывать значок в системном лотке.</translation>
     </message>
     <message>
         <location line="+757"/>
         <source>icotool:</source>
-        <translation>icotool:</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+535"/>
@@ -454,22 +454,22 @@
     <message>
         <location line="+26"/>
         <source>Show tray icon notifications.</source>
-        <translation>Показывать оповещения на иконке в системном лотке.</translation>
+        <translation>Показывать оповещения на значке в системном лотке.</translation>
     </message>
     <message>
         <location line="+826"/>
         <source>HTTP</source>
-        <translation>HTTP</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Socks v5</source>
-        <translation>Socks v5</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+29"/>
         <source>Host:</source>
-        <translation>Узел:</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="+44"/>
@@ -484,7 +484,7 @@
     <message>
         <location line="+1031"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
-        <translation>Импортировать десктопные файлы Wine при запуске Q4Wine.</translation>
+        <translation>Импортировать файлы рабочего стола Wine при запуске Q4Wine.</translation>
     </message>
     <message>
         <location line="+144"/>
@@ -496,12 +496,12 @@
     <message>
         <location line="-1030"/>
         <source>Mount:</source>
-        <translation>Монтирование:</translation>
+        <translation>Подключение:</translation>
     </message>
     <message>
         <location line="-55"/>
         <source>Select Quick Mount Profile</source>
-        <translation>Выберите профиль быстрого монтирования</translation>
+        <translation>Выберите профиль быстрого подключения</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -511,17 +511,17 @@
     <message>
         <location line="+74"/>
         <source>Mount image:</source>
-        <translation>Монтирование образа:</translation>
+        <translation>Подключение образа:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>Umount:</source>
-        <translation>Размонтирование:</translation>
+        <translation>Отключение:</translation>
     </message>
     <message>
         <location line="+245"/>
         <source>Note: Since SQLite was not designed to handle large amount of data, activating this can have a negative impact on the performance of Q4Wine. Use it with care.</source>
-        <translation>Замечание: В связи с ограничениями SQLite, большой объем данных журналирования может снизить скорость работы Q4Wine. Используйте журналирование осторожно.</translation>
+        <translation>Примечание: Из-за ограничений SQLite большой объем данных журналирования может снизить скорость работы Q4Wine. Используйте журналирование с осторожностью.</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -529,17 +529,17 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-491"/>
         <location line="+485"/>
         <source>AppDB browser</source>
-        <translation>Навигатор AppDB</translation>
+        <translation>Обозреватель AppDB</translation>
     </message>
     <message>
         <location line="-642"/>
         <source>AppDB browser subsystem:</source>
-        <translation>Подсистема навигации AppDB:</translation>
+        <translation>Подсистема обозревателя AppDB:</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Open application details in system browser</source>
-        <translation>Открыть страницу программы с помощью системного навигатора</translation>
+        <translation>Открыть страницу программы с помощью системного обозревателя</translation>
     </message>
     <message>
         <location line="+44"/>
@@ -575,17 +575,17 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-477"/>
         <location line="+481"/>
         <source>Defaults</source>
-        <translation>Типовые</translation>
+        <translation>Стандартные</translation>
     </message>
     <message>
         <location line="-526"/>
         <source>Default virtual desktop</source>
-        <translation>Типичный виртуальный рабочий стол</translation>
+        <translation>Стандартный виртуальный рабочий стол</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Default virtual desktop size will be used for &quot;Icon creation&quot; and &quot;Run&quot; dialogs.</source>
-        <translation>Типичный размер виртуального рабочего стола будет использован для диалогов &quot;Запуска&quot; и &quot;Создание иконки&quot;.</translation>
+        <translation>Стандартный размер виртуального рабочего стола будет использован для диалогов &quot;Запуска&quot; и &quot;Создание значка&quot;.</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -601,7 +601,7 @@
     <message>
         <location line="+144"/>
         <source>Program icons</source>
-        <translation>Иконки программ</translation>
+        <translation>Значки программ</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -621,7 +621,7 @@
     <message>
         <location line="+13"/>
         <source>Default directory for new wine prefixes</source>
-        <translation>Папка по умолчанию для новых префиксов wine</translation>
+        <translation>Каталог по умолчанию для новых префиксов wine</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -638,7 +638,7 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-477"/>
         <location line="+479"/>
         <source>Wine desktop import</source>
-        <translation>Импорт десктоп-файлов wine</translation>
+        <translation>Импорт файлов рабочего стола wine</translation>
     </message>
     <message>
         <location line="-145"/>
@@ -669,7 +669,7 @@
     <message>
         <location line="+85"/>
         <source>OK</source>
-        <translation>Ok</translation>
+        <translation>ОК</translation>
     </message>
     <message>
         <location line="-27"/>
@@ -721,7 +721,7 @@
     <message>
         <location line="+183"/>
         <source>Sorry, specify %1 directory.</source>
-        <translation>Укажите папку %1.</translation>
+        <translation>Укажите каталог %1.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -731,7 +731,7 @@
     <message>
         <location line="+8"/>
         <source>Sorry, specified %1 directory does not exist.</source>
-        <translation>Указанная папка %1 не существует.</translation>
+        <translation>Указанный каталог %1 не существует.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -743,7 +743,7 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-641"/>
         <location line="+499"/>
         <source>System Default</source>
-        <translation></translation>
+        <translation>Системные умолчания</translation>
     </message>
 </context>
 <context>
@@ -798,7 +798,7 @@
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-717"/>
         <location line="+715"/>
         <source>OpenGL</source>
-        <translation>OpenGL</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="-1301"/>
@@ -857,7 +857,7 @@
     <message>
         <location line="+10"/>
         <source>Reset to default</source>
-        <translation>Сбросить до типовой</translation>
+        <translation>Сбросить до умолчаний</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -883,7 +883,7 @@
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-730"/>
         <location line="+718"/>
         <source>Wine Browsers</source>
-        <translation>Браузеры Wine</translation>
+        <translation>Обозреватели Wine</translation>
     </message>
     <message>
         <location line="-475"/>
@@ -942,12 +942,12 @@
         <location line="+683"/>
         <location line="+22"/>
         <source>Direct3D</source>
-        <translation>Direct3D</translation>
+        <translation></translation>
     </message>
     <message>
         <location line="-2043"/>
         <source>Browsers:</source>
-        <translation>Браузеры:</translation>
+        <translation>Обозреватели:</translation>
     </message>
     <message>
         <location line="+38"/>
@@ -967,17 +967,17 @@
     <message>
         <location line="+291"/>
         <source>Direct3D settings</source>
-        <translation>Настройки Direct 3D</translation>
+        <translation>Настройки Direct3D</translation>
     </message>
     <message>
         <location line="+727"/>
         <source>Note: Q4Wine does not check if the selected driver is available in the current Wine build. Use this option with care.</source>
-        <translation>Замечание: Q4Wine не проверяет наличие драйверов для текущей конфигурации Wine. Пользуйтесь настройками осторожно.</translation>
+        <translation>Примечание: Q4Wine не проверяет наличие драйверов для текущей конфигурации Wine. Пользуйтесь настройками осторожно.</translation>
     </message>
     <message>
         <location line="+1224"/>
         <source>OK</source>
-        <translation>Ok</translation>
+        <translation>ОК</translation>
     </message>
     <message>
         <location line="-2166"/>
@@ -1062,12 +1062,12 @@
         <location line="+684"/>
         <location line="+20"/>
         <source>X11 Driver</source>
-        <translation>X11 Driver</translation>
+        <translation>Драйвер X11</translation>
     </message>
     <message>
         <location line="-1057"/>
         <source>Current Sound Driver</source>
-        <translation>Поточный звуковой драйвер</translation>
+        <translation>Текущий звуковой драйвер</translation>
     </message>
     <message>
         <location line="+130"/>
@@ -1102,7 +1102,7 @@
     <message>
         <location line="+44"/>
         <source>My Pictures:</source>
-        <translation>Мои рисунки:</translation>
+        <translation>Мои изображения:</translation>
     </message>
     <message>
         <location line="+44"/>
@@ -1214,7 +1214,7 @@ See help for details.</source>
     <message>
         <location line="-712"/>
         <source>Cannot remove symlink: %1</source>
-        <translation>Не могу удалить символьную ссылку: %1</translation>
+        <translation>Невозможно удалить символьную ссылку: %1</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1224,7 +1224,7 @@ See help for details.</source>
         <location line="+20"/>
         <location line="+20"/>
         <source>Cannot symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation>Не могу создать символьную ссылку с &quot;%1&quot; на &quot;%2&quot;</translation>
+        <translation>Невозможно создать символьную ссылку с &quot;%1&quot; на &quot;%2&quot;</translation>
     </message>
     <message>
         <location line="-109"/>
@@ -1253,17 +1253,17 @@ For example:
 
 See help for details.</source>
         <translation>Карта осей джойстика должна быть определена так:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+&quot;Имя джойстика&quot;=&quot;карта осей&quot;
 
 Например:
 &quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
 
-Смотрите помощь для получения информации.</translation>
+См. помощь для подробной информации.</translation>
     </message>
     <message>
         <location line="+63"/>
         <source>Sorry, You cannot delete or modify wine C: drive.&lt;br&gt;But You can change it in prefix settings dialog.</source>
-        <translation>Не возможно удалить или изменить диск C:. &lt;br&gt; Но возможно изменить его в диалоге настройки префикса.</translation>
+        <translation>Невозможно удалить или изменить диск C:. &lt;br&gt; Но возможно изменить его в диалоге настройки префикса.</translation>
     </message>
 </context>
 <context>
@@ -1288,7 +1288,7 @@ See help for details.</source>
         <location line="+52"/>
         <location line="+1"/>
         <source>Icons view mode</source>
-        <translation>Режим просмотра иконок</translation>
+        <translation>Режим просмотра значков</translation>
     </message>
     <message>
         <location line="-50"/>
@@ -1354,7 +1354,7 @@ See help for details.</source>
         <location line="+904"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
-        <translation>%1 смонтировано удачно.</translation>
+        <translation>%1 успешно подключено.</translation>
     </message>
     <message>
         <location line="-38"/>
@@ -1375,17 +1375,17 @@ See help for details.</source>
     <message>
         <location line="+10"/>
         <source>Fail to mount %1.</source>
-        <translation>Не удалось смонтировать %1.</translation>
+        <translation>Не удалось подключить %1.</translation>
     </message>
     <message>
         <location line="-759"/>
         <source>No mount point set in prefix configuration.</source>
-        <translation>В настройках префикса не указана точка монтирования.</translation>
+        <translation>В настройках префикса не указана точка подключения.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Mount [%1]</source>
-        <translation>Смонтировать [%1]</translation>
+        <translation>Подключить [%1]</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1396,19 +1396,19 @@ See help for details.</source>
     <message>
         <location line="-718"/>
         <source>Mount media drive.</source>
-        <translation>Примонтировать дисковод.</translation>
+        <translation>Подключить дисковод.</translation>
     </message>
     <message>
         <location line="-180"/>
         <location line="+537"/>
         <location line="+134"/>
         <source>Sorry. It seems that the icon already exists.</source>
-        <translation>Иконка уже существует.</translation>
+        <translation>Значок уже существует.</translation>
     </message>
     <message>
         <location line="-671"/>
         <source>Sorry. It seems that icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
-        <translation>Иконка уже существует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
+        <translation>Значок уже существует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
         <location line="+185"/>
@@ -1418,7 +1418,7 @@ See help for details.</source>
     <message>
         <location line="+11"/>
         <source>Mount media image.</source>
-        <translation>Примонтировать образ диска.</translation>
+        <translation>Подключить образ диска.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1436,12 +1436,12 @@ See help for details.</source>
     <message>
         <location line="+18"/>
         <source>Unmount [%1]</source>
-        <translation>Отмонтировать [%1]</translation>
+        <translation>Отключить [%1]</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Unmount media.</source>
-        <translation>Отмонтировать устройство.</translation>
+        <translation>Отключить устройство.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1451,17 +1451,17 @@ See help for details.</source>
     <message>
         <location line="+1"/>
         <source>Run current icon</source>
-        <translation>Запустить текущую иконку</translation>
+        <translation>Запустить текущий значок</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Options</source>
-        <translation>Параметры</translation>
+        <translation>Опции</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Modify current icon options</source>
-        <translation>Изменить настройки текущей иконки</translation>
+        <translation>Изменить настройки текущего значка</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -1473,7 +1473,7 @@ See help for details.</source>
         <location line="-158"/>
         <location line="+159"/>
         <source>Cut selected icons to buffer</source>
-        <translation>Вырезать выбранные иконки в буфер</translation>
+        <translation>Вырезать выбранные значки в буфер</translation>
     </message>
     <message>
         <location line="-155"/>
@@ -1485,7 +1485,7 @@ See help for details.</source>
         <location line="-159"/>
         <location line="+160"/>
         <source>Copy selected icons to buffer</source>
-        <translation>Копировать выбранные иконки в буфер</translation>
+        <translation>Копировать выбранные значки в буфер</translation>
     </message>
     <message>
         <location line="-156"/>
@@ -1497,7 +1497,7 @@ See help for details.</source>
         <location line="-160"/>
         <location line="+161"/>
         <source>Paste selected icons from buffer to selected folder</source>
-        <translation>Вставить выбранные иконки из буфера в указанный каталог</translation>
+        <translation>Вставить выбранные значки из буфера в указанный каталог</translation>
     </message>
     <message>
         <location line="-152"/>
@@ -1507,7 +1507,7 @@ See help for details.</source>
     <message>
         <location line="+1"/>
         <source>Rename current icon</source>
-        <translation>Переименовать текущую иконку</translation>
+        <translation>Переименовать текущий значок</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -1519,24 +1519,24 @@ See help for details.</source>
         <location line="-155"/>
         <location line="+156"/>
         <source>Delete current icon</source>
-        <translation>Удалить текущую иконку</translation>
+        <translation>Удалить текущий значок</translation>
     </message>
     <message>
         <location line="-152"/>
         <location line="+160"/>
         <source>Browser</source>
-        <translation>Браузер</translation>
+        <translation>Обозреватель</translation>
     </message>
     <message>
         <location line="-158"/>
         <location line="+22"/>
         <source>Open application directory</source>
-        <translation>Открыть папку программы</translation>
+        <translation>Открыть каталог программы</translation>
     </message>
     <message>
         <location line="-21"/>
         <source>Open application directory in system file browser</source>
-        <translation>Открыть папку программы с помощью файлового браузера</translation>
+        <translation>Открыть каталог программы с помощью диспетчера файлов</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -1544,13 +1544,13 @@ See help for details.</source>
         <location line="+132"/>
         <location line="+16"/>
         <source>Open prefix directory</source>
-        <translation>Открыть папку префикса</translation>
+        <translation>Открыть каталог префикса</translation>
     </message>
     <message>
         <location line="-169"/>
         <location line="+154"/>
         <source>Open prefix directory in system file browser</source>
-        <translation>Открыть папку префикса с помощью файлового браузера</translation>
+        <translation>Открыть каталог префикса с помощью диспетчера файлов</translation>
     </message>
     <message>
         <location line="-150"/>
@@ -1558,36 +1558,36 @@ See help for details.</source>
         <location line="+132"/>
         <location line="+16"/>
         <source>Open mount point directory</source>
-        <translation>Открыть точку монтирования</translation>
+        <translation>Открыть точку подключения</translation>
     </message>
     <message>
         <location line="-169"/>
         <location line="+154"/>
         <source>Open mount point directory in system file browser</source>
-        <translation>Открыть точку монтирования с помошью файлового браузера</translation>
+        <translation>Открыть точку подключения с помошью файлового обозревателя</translation>
     </message>
     <message>
         <location line="-145"/>
         <location line="+154"/>
         <source>Wine Browser</source>
-        <translation>Браузер wine</translation>
+        <translation>Обозреватель wine</translation>
     </message>
     <message>
         <location line="-151"/>
         <source>Open application directory in wine file browser</source>
-        <translation>Открыть папку программы с помощью браузера wine</translation>
+        <translation>Открыть каталог программы с помощью обозревателя wine</translation>
     </message>
     <message>
         <location line="+5"/>
         <location line="+148"/>
         <source>Open prefix directory in wine file browser</source>
-        <translation>Открыть папку программы с помощью браузера wine</translation>
+        <translation>Открыть каталог префикса с помощью обозревателя wine</translation>
     </message>
     <message>
         <location line="-143"/>
         <location line="+148"/>
         <source>Open mount point directory in wine file browser</source>
-        <translation>Открыть точку монтирования с помощью браузера wine</translation>
+        <translation>Открыть точку подключения с помощью обозревателя wine</translation>
     </message>
     <message>
         <location line="-140"/>
@@ -1598,36 +1598,36 @@ See help for details.</source>
     <message>
         <location line="-146"/>
         <source>Open console in application directory</source>
-        <translation>Открыть консоль в папке программы</translation>
+        <translation>Открыть консоль в каталоге программы</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Open system console in application directory</source>
-        <translation>Открыть системную консоль в папке программы</translation>
+        <translation>Открыть системную консоль в каталогк программы</translation>
     </message>
     <message>
         <location line="+4"/>
         <location line="+143"/>
         <source>Open console in prefix directory</source>
-        <translation>Открыть консоль в папке префикса</translation>
+        <translation>Открыть консоль в каталоге префикса</translation>
     </message>
     <message>
         <location line="-142"/>
         <location line="+143"/>
         <source>Open system console in prefix directory</source>
-        <translation>Открыть системную консоль в папке префикса</translation>
+        <translation>Открыть системную консоль в каталоге префикса</translation>
     </message>
     <message>
         <location line="-139"/>
         <location line="+143"/>
         <source>Open console in mount point directory</source>
-        <translation>Открыть консоль в папке точки монтирования</translation>
+        <translation>Открыть консоль в точке подключения</translation>
     </message>
     <message>
         <location line="-142"/>
         <location line="+143"/>
         <source>Open system console in mount point directory</source>
-        <translation>Открыть системную консоль в папке точки монтирования</translation>
+        <translation>Открыть системную консоль в точке подключения</translation>
     </message>
     <message>
         <location line="-134"/>
@@ -1652,12 +1652,12 @@ See help for details.</source>
     <message>
         <location line="+598"/>
         <source>Drive successfully unmounted.</source>
-        <translation>Устройство успешно отмонтировано.</translation>
+        <translation>Устройство успешно отключено.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Failed to unmount drive.</source>
-        <translation>Не удалось отмонтировать устройство.</translation>
+        <translation>Не удалось отключить устройство.</translation>
     </message>
     <message>
         <location line="-595"/>
@@ -1677,43 +1677,43 @@ See help for details.</source>
     <message>
         <location line="+189"/>
         <source>Do you wish to delete all of the selected icons?</source>
-        <translation>Удалить все выбранные иконки?</translation>
+        <translation>Удалить выбранные значки?</translation>
     </message>
     <message>
         <location line="-540"/>
         <location line="+921"/>
         <source>Failed to mount %1.</source>
-        <translation>Не удалось примонтировать %1.</translation>
+        <translation>Не удалось подключить %1.</translation>
     </message>
     <message>
         <location line="-890"/>
         <source>Preparing to run the Wine binary...</source>
-        <translation>Готовимся к запуску бинарного файла wine...</translation>
+        <translation>Подготовка к запуску двоичного файла wine...</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Trying to run &quot;%1&quot;...</source>
-        <translation>Пробуем запустить &quot;%1&quot;...</translation>
+        <translation>Попытка запустить &quot;%1&quot;...</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>&quot;%1&quot; failed to start.</source>
-        <translation>Не удалось запустить &quot;%1&quot;.</translation>
+        <translation>Невозможно запустить &quot;%1&quot;.</translation>
     </message>
     <message>
         <location line="+103"/>
         <source>Mount ISO...</source>
-        <translation>Смонтировать iso...</translation>
+        <translation>Подключить ISO...</translation>
     </message>
     <message>
         <location line="+37"/>
         <source>Mount...</source>
-        <translation>Смонтировать...</translation>
+        <translation>Подключить...</translation>
     </message>
     <message>
         <location line="+153"/>
         <source>Copy application directory path to system&apos;s clipboard</source>
-        <translation>Копировать путь к папке в системный буфер обмена</translation>
+        <translation>Копировать путь к каталогу в системный буфер обмена</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1738,28 +1738,28 @@ See help for details.</source>
     <message>
         <location line="+1"/>
         <source>Create new icon</source>
-        <translation>Создать новую иконку</translation>
+        <translation>Создать новый значок</translation>
     </message>
     <message>
         <location line="+133"/>
         <source>Enter new icon name</source>
-        <translation>Введите новое название иконки</translation>
+        <translation>Введите новое название значка</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Icon name:</source>
-        <translation>Название иконки:</translation>
+        <translation>Название значка:</translation>
     </message>
     <message>
         <location line="+3"/>
         <location line="+134"/>
         <source>Sorry. It seems that the icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
-        <translation>Иконка уже существует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
+        <translation>Значок уже существует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
         <location line="-105"/>
         <source>Delete Icon</source>
-        <translation>Удалить иконку</translation>
+        <translation>Удалить значок</translation>
     </message>
     <message>
         <location line="+333"/>
@@ -1769,7 +1769,7 @@ See help for details.</source>
     <message>
         <location line="+0"/>
         <source>No device drive specified in prefix settings.</source>
-        <translation>В настройках префикса не указано устройство для монтирования.</translation>
+        <translation>В настройках префикса не указано устройство для подключения.</translation>
     </message>
 </context>
 <context>
@@ -1779,18 +1779,18 @@ See help for details.</source>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+91"/>
         <location line="+1"/>
         <source>Icon settings</source>
-        <translation>Параметры иконок</translation>
+        <translation>Настройки значка</translation>
     </message>
     <message>
         <location line="+150"/>
         <source>Icon Settings</source>
-        <translation>Параметры иконок</translation>
+        <translation>Настройки значка</translation>
     </message>
     <message>
         <location line="+50"/>
         <location line="+9"/>
         <source>General</source>
-        <translation>Главные</translation>
+        <translation>Общее</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -1805,12 +1805,12 @@ See help for details.</source>
     <message>
         <location line="+31"/>
         <source>Working dir:</source>
-        <translation>Рабочая папка:</translation>
+        <translation>Рабочий каталог:</translation>
     </message>
     <message>
         <location line="+29"/>
         <source>Icon Options</source>
-        <translation>Параметры иконок</translation>
+        <translation>Настройки значка</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -1832,28 +1832,28 @@ See help for details.</source>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+99"/>
         <location line="+387"/>
         <source>Native</source>
-        <translation>Родные</translation>
+        <translation>Родной</translation>
     </message>
     <message>
         <location line="+5"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="-385"/>
         <location line="+389"/>
         <source>Built-in</source>
-        <translation>Встроенные</translation>
+        <translation>Встроенный</translation>
     </message>
     <message>
         <location line="+5"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="-387"/>
         <location line="+389"/>
         <source>Native, Built-in</source>
-        <translation>Родные, Встроенные</translation>
+        <translation>Родной, Встроенный</translation>
     </message>
     <message>
         <location line="+5"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="-387"/>
         <location line="+389"/>
         <source>Built-in, Native</source>
-        <translation>Встроенные, Родные</translation>
+        <translation>Встроенный, Родной</translation>
     </message>
     <message>
         <location line="-232"/>
@@ -1873,12 +1873,12 @@ See help for details.</source>
     <message>
         <location line="-79"/>
         <source>Override DLL</source>
-        <translation>Переопределение DLL</translation>
+        <translation>Замещение DLL</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Present Wine DLLs</source>
-        <translation>Присутствующие DLL</translation>
+        <translation>Имеющиеся DLL</translation>
     </message>
     <message>
         <location line="+80"/>
@@ -1888,12 +1888,12 @@ See help for details.</source>
     <message>
         <location line="+19"/>
         <source>DLL Name</source>
-        <translation>Название Dll</translation>
+        <translation>Название DLL</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Override Algorithm</source>
-        <translation>Алгоритм перезаписи</translation>
+        <translation>Алгоритм замещения</translation>
     </message>
     <message>
         <location line="+12"/>
@@ -1918,7 +1918,7 @@ See help for details.</source>
     <message>
         <location line="+7"/>
         <source>Note: This option will disable Pre and Post run scripts.</source>
-        <translation>Заметка: эта опция отключит скрипты, выполняемые до и после запуска программы.</translation>
+        <translation>Примечание: эта опция отключит скрипты, выполняемые до и после запуска программы.</translation>
     </message>
     <message>
         <location line="+48"/>
@@ -1944,7 +1944,7 @@ See help for details.</source>
     <message>
         <location line="+9"/>
         <source>Note: Pre and post run scripts will not be executed in case the &quot;Run With Output in Console&quot; option is enabled.</source>
-        <translation>Заметка: пользовательские скрипты не будут запущены если программа запускается с опцией &quot;Запуск с выводом в консоль&quot;.</translation>
+        <translation>Примечание: пользовательские скрипты не будут запущены если программа запускается с опцией &quot;Запуск с выводом в консоль&quot;.</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -1969,18 +1969,18 @@ See help for details.</source>
     <message>
         <location line="+7"/>
         <source>OK</source>
-        <translation>Ok</translation>
+        <translation>ОК</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsettings.cpp" line="-506"/>
         <location line="+1"/>
         <source>Adding new icon</source>
-        <translation>Добавить новую иконку</translation>
+        <translation>Добавление нового значка</translation>
     </message>
     <message>
         <location line="+208"/>
         <source>Open Directory</source>
-        <translation>Открыть папку</translation>
+        <translation>Открыть каталог</translation>
     </message>
     <message>
         <location line="+56"/>
@@ -1992,7 +1992,7 @@ See help for details.</source>
     <message>
         <location line="-331"/>
         <source>Exe files (*.exe)</source>
-        <translation>Exe файлы (*.exe)</translation>
+        <translation>Exe-файлы (*.exe)</translation>
     </message>
     <message>
         <location line="+59"/>
@@ -2002,7 +2002,7 @@ See help for details.</source>
     <message>
         <location line="+15"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm)</source>
-        <translation></translation>
+        <translation>Изображения (*.png *.jpg *.gif *.bmp *.xpm)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2013,19 +2013,19 @@ See help for details.</source>
         <location line="+44"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation>Извлечение иконки из бинарного файла.&lt;br&gt;Это может занять некоторое время...</translation>
+        <translation>Извлечение значка из двоичного файла.&lt;br&gt;Это может занять некоторое время...</translation>
     </message>
     <message>
         <location line="-26"/>
         <location line="+26"/>
         <source>Extracting icon</source>
-        <translation>Извлечение иконки</translation>
+        <translation>Извлечение значка</translation>
     </message>
     <message>
         <location line="+70"/>
         <location line="+5"/>
         <source>Sorry, an icon named %1 already exists.</source>
-        <translation>Иконка %1 уже существует.</translation>
+        <translation>Значок %1 уже существует.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -2036,7 +2036,7 @@ See help for details.</source>
         <location line="+78"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
-        <translation>Сценарий оболочки (*.sh)</translation>
+        <translation>Скрипт (*.sh)</translation>
     </message>
     <message>
         <location line="-135"/>
@@ -2055,7 +2055,7 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>Selected working directory does not exist.</source>
-        <translation>Указанная рабочая папка не существует.</translation>
+        <translation>Указанный рабочий каталог не существует.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2074,17 +2074,17 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/uis/IconsView.ui" line="+14"/>
         <source>Icons Export</source>
-        <translation>Экпорт иконки</translation>
+        <translation>Экспорт значков</translation>
     </message>
     <message>
         <location line="+13"/>
         <source>Available Icons:</source>
-        <translation>Имеющиеся иконки:</translation>
+        <translation>Имеющиеся значки:</translation>
     </message>
     <message>
         <location line="+52"/>
         <source>Export icons to default place</source>
-        <translation>Экспортировать иконки в место по-умолчанию</translation>
+        <translation>Экспортировать значки в место по-умолчанию</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -2095,12 +2095,12 @@ See help for details.</source>
     <message>
         <location line="+7"/>
         <source>OK</source>
-        <translation>Ok</translation>
+        <translation>ОК</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/iconsview.cpp" line="-5"/>
         <source>Exporting icon</source>
-        <translation>Экспорт иконки</translation>
+        <translation>Экспорт значка</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2110,7 +2110,7 @@ See help for details.</source>
     <message>
         <location line="+1"/>
         <source>Use existing</source>
-        <translation>Исользовать существующее</translation>
+        <translation>Использовать существующий</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2126,12 +2126,12 @@ See help for details.</source>
     <message>
         <location line="-35"/>
         <source>Sorry, file cannot be removed:&lt;br&gt;%1.</source>
-        <translation>Файл не может быть удален: &lt;br&gt;%1.</translation>
+        <translation>Невозможно удалить файл:&lt;br&gt;%1.</translation>
     </message>
     <message>
         <location line="+35"/>
         <source>Sorry, file cannot be created:&lt;br&gt;%1.</source>
-        <translation>Файл не может быть создан:&lt;br&gt;%1.</translation>
+        <translation>Невозможно создать файл:&lt;br&gt;%1.</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -2142,7 +2142,7 @@ See help for details.</source>
     <message>
         <location line="-64"/>
         <source>Sorry. It seems that the file already exists.&lt;br&gt;Replace existing file or rename current one?</source>
-        <translation>Файл уже существует.&lt;br&gt;Перезаписать существующий или переименовать текущий?</translation>
+        <translation>Файл уже существует.&lt;br&gt;Заменить существующий или переименовать текущий?</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -2192,7 +2192,7 @@ See help for details.</source>
     <message>
         <location line="+20"/>
         <source>OK</source>
-        <translation>Ok</translation>
+        <translation>ОК</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/imagemanager.cpp" line="+57"/>
@@ -2704,13 +2704,13 @@ See help for details.</source>
         <location line="+40"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
-        <translation>Извлечение иконки из бинарного файла.&lt;br&gt;Это может занять некоторое время...</translation>
+        <translation>Извлечение значка из двоичного файла.&lt;br&gt;Это может занять некоторое время...</translation>
     </message>
     <message>
         <location line="-26"/>
         <location line="+26"/>
         <source>Extracting icon</source>
-        <translation>Извлечение иконки</translation>
+        <translation>Извлечение значка</translation>
     </message>
     <message>
         <location line="-453"/>
@@ -2753,7 +2753,7 @@ See help for details.</source>
         <location line="+4"/>
         <location line="+3"/>
         <source>Binary &quot;%1&quot; does not exist.</source>
-        <translation>Бинарный файл &quot;%1&quot; не существует.</translation>
+        <translation>Двоичный файл &quot;%1&quot; не существует.</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -2983,18 +2983,18 @@ See help for details.</source>
     <message>
         <location line="+0"/>
         <source>Sorry, you cannot delete the Default prefix.</source>
-        <translation>Нельзя удалить типовой префикс.</translation>
+        <translation>Нельзя удалить стандартный префикс.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation>Удалить префикс &quot;%1&quot; и все ассоциированные с ним иконки?</translation>
+        <translation>Удалить префикс &quot;%1&quot; и все связанные с ним значки?</translation>
     </message>
     <message>
         <location line="+0"/>
         <location line="+61"/>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation>Внимание</translation>
     </message>
     <message>
         <location line="-9"/>
@@ -3089,7 +3089,7 @@ See help for details.</source>
     <message>
         <location line="+24"/>
         <source>Quick Mount</source>
-        <translation>Быстрое монтирование</translation>
+        <translation>Быстрое подключение</translation>
     </message>
     <message>
         <location line="+71"/>
@@ -3099,7 +3099,7 @@ See help for details.</source>
     <message>
         <location line="-44"/>
         <source>Mount point:</source>
-        <translation>Точка монтирования:</translation>
+        <translation>Точка подключения:</translation>
     </message>
     <message>
         <location line="+185"/>
@@ -3275,7 +3275,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+67"/>
         <source>Mount [%1]</source>
-        <translation>Смонтировать [%1]</translation>
+        <translation>Подключить [%1]</translation>
     </message>
     <message>
         <location line="+12"/>
@@ -3286,7 +3286,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-336"/>
         <source>Mount media drive.</source>
-        <translation>Примонтировать дисковод.</translation>
+        <translation>Подключить дисковод.</translation>
     </message>
     <message>
         <location line="-160"/>
@@ -3298,7 +3298,8 @@ Note: leave it blank for default.</source>
         <location line="+29"/>
         <source>Do you really wish to delete the folder named &quot;%1&quot; and all associated icons?
 </source>
-        <translation>Удалить префикс &quot;%1&quot; и все ассоциированные с ним иконки?</translation>
+        <translation>Удалить каталог &quot;%1&quot; и все связанные с ним значки?
+</translation>
     </message>
     <message>
         <location line="+80"/>
@@ -3308,12 +3309,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+11"/>
         <source>Mount media image.</source>
-        <translation>Примонтировать образ диска.</translation>
+        <translation>Подключить образ диска.</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Mount ...</source>
-        <translation>Смонтировать...</translation>
+        <translation>Подключить...</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -3329,12 +3330,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+18"/>
         <source>Unmount [%1]</source>
-        <translation>Отмонтировать [%1]</translation>
+        <translation>Отключить [%1]</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Unmount media.</source>
-        <translation>Отмонтировать устройство.</translation>
+        <translation>Отключить устройство.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3365,7 +3366,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>Rename current directory</source>
-        <translation>Переименовать текущую папку</translation>
+        <translation>Переименовать текущий каталог</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -3375,49 +3376,49 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>Delete current directory</source>
-        <translation>Удалить текущую папку</translation>
+        <translation>Удалить текущий каталог</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Browser</source>
-        <translation>Браузер</translation>
+        <translation>Обозреватель</translation>
     </message>
     <message>
         <location line="+1"/>
         <location line="+16"/>
         <source>Open prefix directory</source>
-        <translation>Открыть папку префикса</translation>
+        <translation>Открыть каталог префикса</translation>
     </message>
     <message>
         <location line="-15"/>
         <source>Open prefix directory in system file browser</source>
-        <translation>Открыть папку префикса с помощью файлового браузера</translation>
+        <translation>Открыть каталог префикса с помощью диспетчера файлов</translation>
     </message>
     <message>
         <location line="+4"/>
         <location line="+16"/>
         <source>Open mount point directory</source>
-        <translation>Открыть папку точки монтирования</translation>
+        <translation>Открыть каталог точки подключения</translation>
     </message>
     <message>
         <location line="-15"/>
         <source>Open mount point directory in system file browser</source>
-        <translation>Открыть точку монтирования с помошью файлового браузера</translation>
+        <translation>Открыть точку подключения с помошью файлового обозревателя</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Wine Browser</source>
-        <translation>Браузер wine</translation>
+        <translation>Обозреватель wine</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Open prefix directory in wine file browser</source>
-        <translation>Открыть папку программы с помощью браузера wine</translation>
+        <translation>Открыть папку программы с помощью обозревателя wine</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Open mount point directory in wine file browser</source>
-        <translation>Открыть точку монтирования с помощью браузера wine</translation>
+        <translation>Открыть точку подключения с помощью обозревателя wine</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -3437,12 +3438,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+4"/>
         <source>Open console in mount point directory</source>
-        <translation>Открыть консоль в папке точки монтирования</translation>
+        <translation>Открыть консоль в каталоге точки подключения</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Open system console in mount point directory</source>
-        <translation>Открыть системную консоль в папке точки монтирования</translation>
+        <translation>Открыть системную консоль в каталоге точки подключения</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -3464,12 +3465,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+84"/>
         <source>Sorry. It seems that the icon already exists.</source>
-        <translation>Иконка уже существует.</translation>
+        <translation>Значок уже существует.</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Sorry. It seems that the icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
-        <translation>Иконка уже существует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
+        <translation>Значок уже существует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
         <location line="+94"/>
@@ -3490,27 +3491,27 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+27"/>
         <source>Failed to mount %1.</source>
-        <translation>Не удалось примонтировать %1.</translation>
+        <translation>Невозможно подключить %1.</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Drive successfully unmounted.</source>
-        <translation>Устройство успешно отмонтировано.</translation>
+        <translation>Устройство успешно отключено.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Failed to unmount drive.</source>
-        <translation>Не удалось отмонтировать устройство.</translation>
+        <translation>Невозможно отключить устройство.</translation>
     </message>
     <message>
         <location line="+47"/>
         <source>Sorry, you cannot delete the Default prefix.</source>
-        <translation>Нельзя удалить типовой префикс.</translation>
+        <translation>Нельзя удалить стандартный префикс.</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation>Удалить префикс &quot;%1&quot; и все ассоциированные с ним иконки?</translation>
+        <translation>Удалить префикс &quot;%1&quot; и все связанные с ним значки?</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -3531,7 +3532,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+91"/>
         <source>Mount ISO...</source>
-        <translation>Смонтировать iso...</translation>
+        <translation>Подключить iso...</translation>
     </message>
     <message>
         <location line="+69"/>
@@ -3557,18 +3558,18 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-106"/>
         <source>No device drive specified in prefix settings.</source>
-        <translation>В настройках префикса не указано устройство для монтирования.</translation>
+        <translation>В настройках префикса не указано устройство для подключения.</translation>
     </message>
     <message>
         <location line="+31"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
-        <translation>%1 смонтировано удачно.</translation>
+        <translation>%1 успешно подключено.</translation>
     </message>
     <message>
         <location line="-15"/>
         <source>Fail to mount %1.</source>
-        <translation>Не удалось смонтировать %1.</translation>
+        <translation>Невозможно подключить %1.</translation>
     </message>
 </context>
 <context>
@@ -3576,7 +3577,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/uis/Process.ui" line="+17"/>
         <source>Mounting image...</source>
-        <translation>Монтирование образа...</translation>
+        <translation>Подключение образа...</translation>
     </message>
     <message>
         <location line="+99"/>
@@ -3609,31 +3610,31 @@ Note: leave it blank for default.</source>
         <location line="+4"/>
         <location line="+23"/>
         <source>Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program.</source>
-        <translation>Process: Процесс не запущен. Проверьте, что возможно, выполение программы невозможно. Или вы не имеете прав для запуска программы.</translation>
+        <translation>Процесс: Процесс не запущен. Вызываемая программа отсутствует или у Вас недостаточно прав для её запуска.</translation>
     </message>
     <message>
         <location line="-20"/>
         <location line="+23"/>
         <source>Process: The process crashed some time after starting successfully.</source>
-        <translation>Process: Произошел выход из процесса и его перезапуск.</translation>
+        <translation>Процесс: Произошел выход из процесса и его перезапуск.</translation>
     </message>
     <message>
         <location line="-17"/>
         <location line="+23"/>
         <source>Process: An error occurred when attempting to read from the process. For example, the process may not be running.</source>
-        <translation>Process: Произошла ошибка при чтении из процесса. Например, процесс не запущен.</translation>
+        <translation>Процесс: Произошла ошибка при чтении из процесса. Например, процесс может быть не запущен.</translation>
     </message>
     <message>
         <location line="-20"/>
         <location line="+23"/>
         <source>Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel.</source>
-        <translation>Process: Произошла ошибка при записи в процесс. Например, процесс не запущен.</translation>
+        <translation>Процесс: Произошла ошибка при записи в процесс. Например, процесс может быть не запущен либо он закрыл свой канал ввода.</translation>
     </message>
     <message>
         <location line="-20"/>
         <location line="+23"/>
         <source>Process: An unknown error occurred. This is the default return value of error().</source>
-        <translation>Process: произошла неизвестная ошибка. Это обычное сообщение для error().</translation>
+        <translation>Процесс: произошла неизвестная ошибка. Это обычное сообщение для error().</translation>
     </message>
     <message>
         <location line="+39"/>
@@ -3649,13 +3650,13 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+5"/>
         <source>It seems that the process crashed.&lt;br&gt;&lt;br&gt;STDERR log:&lt;br&gt;%1</source>
-        <translation>Процесс завершился не удачно. &lt;br&gt;&lt;br&gt;Вывод STDERR:&lt;br&gt;%1</translation>
+        <translation>Процесс завершился неудачно. &lt;br&gt;&lt;br&gt;Вывод STDERR:&lt;br&gt;%1</translation>
     </message>
     <message>
         <location line="-76"/>
         <location line="+23"/>
         <source>Process: The last waitFor...() function timed out.</source>
-        <translation></translation>
+        <translation>Процесс: Истекло время ожидания последней функции waitFor...().</translation>
     </message>
 </context>
 <context>
@@ -3697,7 +3698,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-12"/>
         <source>Importing desktop icons: %1 of %2</source>
-        <translation>Импортируются десктопые иконки: %1 из %2 </translation>
+        <translation>Импорт значков рабочего стола: %1 из %2 </translation>
     </message>
 </context>
 <context>
@@ -3722,7 +3723,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-177"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
-        <translation>Иконка не установлена. Укажите иконку, запустив приложение с ключом &quot;-i &lt;имя_иконки&gt;&quot;.</translation>
+        <translation>Значок не установлен. Укажите значок с помощью ключа &quot;-i &lt;имя_значка&gt;&quot;.</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -3777,7 +3778,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-70"/>
         <source>Icon named &quot;%1&quot; does not exist.  Run &quot;%2-cli -il&quot; for icon list.</source>
-        <translation>Иконка &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка иконок.</translation>
+        <translation>Значок &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка значков.</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -3792,12 +3793,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+5"/>
         <source>Prefix &quot;%1&quot; has following icon list</source>
-        <translation>Префикс &quot;%1&quot; содержит следующий список иконок</translation>
+        <translation>Префикс &quot;%1&quot; содержит следующий список значков</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
-        <translation>Префикс &quot;%1&quot; содержит следующий список иконок в папке &quot;%2&quot;</translation>
+        <translation>Префикс &quot;%1&quot; содержит следующий список значков в каталоге &quot;%2&quot;</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -3819,7 +3820,7 @@ Note: leave it blank for default.</source>
         <location line="+29"/>
         <location line="+26"/>
         <source>No mount point set in prefix configuration.</source>
-        <translation>В настройках префикса не установлено точки монтирования.</translation>
+        <translation>В настройках префикса не установлена точка подключения.</translation>
     </message>
     <message>
         <location line="-48"/>
@@ -3829,7 +3830,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+26"/>
         <source>Unmounting mount point &quot;%1&quot;.</source>
-        <translation>Размонтирование точки &quot;%1&quot;.</translation>
+        <translation>Отключение точки &quot;%1&quot;.</translation>
     </message>
     <message>
         <location line="+49"/>
@@ -3849,7 +3850,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-71"/>
         <source>Mounted media list for all prefixes</source>
-        <translation>Список примонтированных дисков для всех префиксов</translation>
+        <translation>Список подключённых дисков для всех префиксов</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3860,7 +3861,7 @@ Note: leave it blank for default.</source>
         <location line="+0"/>
         <location line="+14"/>
         <source>Mount point</source>
-        <translation>Точка монтирования</translation>
+        <translation>Точка подключения</translation>
     </message>
     <message>
         <location line="-14"/>
@@ -3871,7 +3872,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-1"/>
         <source>Mounted media list for prefix &quot;%1&quot;</source>
-        <translation>Список примонтированных дисков для префикса &quot;%1&quot;</translation>
+        <translation>Список подключённых дисков для префикса &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="+136"/>
@@ -3966,7 +3967,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+2"/>
         <source>sets the current icon name</source>
-        <translation>установить имя текущей иконки</translation>
+        <translation>установить имя текущего значка</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -3991,17 +3992,17 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>output all existing icon names for current prefix/directory and exit</source>
-        <translation>вывести список всех иконок (для текущего префикса или папки) и выйти</translation>
+        <translation>вывести список всех значков (для текущего префикса или папки) и выйти</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>mount a cd image or drive for current prefix and exit</source>
-        <translation>примонтировать образ или дисковод CD/DVD для текущего префикса и выйти</translation>
+        <translation>подключить образ или дисковод CD/DVD для текущего префикса и выйти</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>unmount a cd image or drive for current prefix and exit</source>
-        <translation>размонтировать образ/дисковод CD/DVD для текущего префикса и выйти</translation>
+        <translation>отключить образ/дисковод CD/DVD для текущего префикса и выйти</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -4016,7 +4017,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>  %1-cli -p &lt;prefix_name&gt; [-d &lt;dir_name&gt;] -i &lt;icon_name&gt;</source>
-        <translation>  %1-cli -p &lt;префикс&gt; [-d &lt;папка&gt;] -i &lt;иконка&gt;</translation>
+        <translation>  %1-cli -p &lt;префикс&gt; [-d &lt;папка&gt;] -i &lt;значок&gt;</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4031,7 +4032,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>output all mounted media for current prefix or all prefixes and exit</source>
-        <translation>вывести все смонтированные ресурсы для текущего префикса или всех префиксов и выйти</translation>
+        <translation>вывести все подключённые ресурсы для текущего префикса или всех префиксов и выйти</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -4566,7 +4567,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-1282"/>
         <source>Default Wine paths:</source>
-        <translation>Типовые пути wine:</translation>
+        <translation>Стандартные пути wine:</translation>
     </message>
     <message>
         <location line="+323"/>
@@ -4591,12 +4592,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+264"/>
         <source>Select Quick Mount Profile</source>
-        <translation>Выберите профиль быстрого монтирования</translation>
+        <translation>Выберите профиль быстрого подключения</translation>
     </message>
     <message>
         <location line="+15"/>
         <source>Quick Mount feature allows you to mountumount cd images and drivers via context menu entry.</source>
-        <translation>Быстрое монтирование поможет вам смонтировать или отмонтировать дисковые образы через контекстное меню q4wine.</translation>
+        <translation>Быстрое подключение позволяет подключать и отключать дисковые образы и приводы через контекстное меню q4wine.</translation>
     </message>
     <message>
         <location line="+10"/>
