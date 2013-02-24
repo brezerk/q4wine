@@ -229,7 +229,7 @@ void MainWindow::clearTmp(){
         return;
     }
 
-    if (!CoreLib->checkDirs(QStringList() << "tmp" << "tmp/cache")){
+    if (!CoreLib->checkDirs(QString("%1/.config/%2").arg(QDir::homePath()).arg(APP_SHORT_NAME), QStringList() << "tmp" << "tmp/cache")){
         return;
     }
 

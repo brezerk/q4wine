@@ -146,7 +146,7 @@ public:
     QString getLocale();
 
     bool isConfigured();
-    bool checkDirs(QStringList subDirs = QStringList());
+    bool checkDirs(QString rootPath, QStringList subDirs = QStringList());
 
     void getBuildFlags();
 

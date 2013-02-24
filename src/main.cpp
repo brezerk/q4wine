@@ -102,11 +102,14 @@ int main(int argc, char *argv[])
     QString i18nPath = QString("%1/i18n").arg(QString::fromUtf8(APP_BUILD));
 #endif
 
-
     qtt.load(CoreLib->getTranslationLang(), i18nPath);
     app.installTranslator(&qtt);
 
-    if (!CoreLib->checkDirs()){
+    if (!CoreLib->checkDirs(QString("%1/.config/%2").arg(QDir::homePath()).arg(APP_SHORT_NAME))){
+        return -1;
+    }
+
+    if (!CoreLib->checkDirs(QDir::homePath(), QStringList() << ".local/share/wineprefixes")){
         return -1;
     }
 

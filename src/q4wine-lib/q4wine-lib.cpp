@@ -549,17 +549,16 @@ bool corelib::isConfigured(){
     return false;
 }
 
-bool corelib::checkDirs(QStringList subDirs){
+bool corelib::checkDirs(QString rootPath, QStringList subDirs){
     if (subDirs.isEmpty()){
         subDirs << "" << "db" << "icons" << "prefixes" << "tmp" << "theme" << "tmp/cache" << "scripts";
     }
 
     QTextStream QErr(stderr);
     QDir dir;
-    QString rootConfPath = QString("%1/.config/%2").arg(QDir::homePath()).arg(APP_SHORT_NAME);
 
     for (int i=0; i<subDirs.size(); ++i){
-        QString subDir=rootConfPath;
+        QString subDir=rootPath;
         subDir.append("/");
         subDir.append(subDirs.at(i).toLocal8Bit().constData());
 
@@ -568,7 +567,7 @@ bool corelib::checkDirs(QStringList subDirs){
 #endif
 
         if (!dir.exists(subDir)){
-            if (!dir.mkdir(subDir)){
+            if (!dir.mkpath(subDir)){
                 QErr<<"[EE] "<<"Unable to create directory "<<subDir;
                 return false;
             }
