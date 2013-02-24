@@ -21,7 +21,7 @@
 
 #include "winetricks.h"
 
-winetricks::winetricks(QString prefixName)
+winetricks::winetricks(QString prefixName) : QWidget()
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE
@@ -52,7 +52,17 @@ void winetricks::install_winetricks() {
     this->downloadwinetricks();
 }
 
+bool winetricks::check_script(){
+    if (!QFile(this->winetricks_bin).exists()){
+        QMessageBox::warning(this, QString(tr("Error")), QString(tr("Cannot locate Winetricks script. Install Winetricks script first.")));
+        return false;
+    }
+    return true;
+}
+
 void winetricks::run_winetricks(QString item){
+    if (!check_script())
+        return;
 
     if (item.isEmpty())
         return;
@@ -179,7 +189,10 @@ QStringList winetricks::get_stdout_lines(QString command){
 }
 
 bool winetricks::parse() {
-    QProgressDialog *pd = new QProgressDialog("Refreshing winetricks application list.", QString(), 0, 100);
+    if (!check_script())
+        return false;
+
+    QProgressDialog *pd = new QProgressDialog(tr("Refreshing winetricks application list."), QString(), 0, 100);
     pd->setModal(true);
     pd->show();
     pd->setValue(5);
@@ -190,10 +203,6 @@ bool winetricks::parse() {
     #endif
 
     QString pargs;
-    if (!QFile(this->winetricks_bin).exists()){
-            //QMessageBox::warning(Non, QString("Error"), QString("<p>Q4Wine cannot locate Winetricks at %1 path!</p><p>The script is maintained and hosted by DanKegel at http://www.kegel.com/wine/winetricks.  You can get it from the commandline with the command:</p><p>wget http://www.kegel.com/wine/winetricks</p><p>Or use \"Install winetricks\" button.</p>").arg(this->winetricks_bin));
-        return false;
-    }
     QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
 
     db_sysconfig.drop_items(D_PROVIDER_WINETRICKS);

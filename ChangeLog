@@ -1,6 +1,7 @@
 Version 1.1
  Fixed:
   - Clean setup: error while loading application settings by key: prefixDefaultPath [BUG-25];
+  - Winetricks plugin does not check script presence [BUG-26];
 
 Version 1.0-r2
  Added:

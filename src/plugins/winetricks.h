@@ -38,7 +38,7 @@
 
 #include "q4wine-lib.h"
 
-class winetricks : public QObject{
+class winetricks : public QWidget{
 
 public:
     winetricks(QString prefix_name);
@@ -65,6 +65,7 @@ private:
     QStringList subtypes;
 
     void downloadwinetricks();
+    bool check_script();
     QStringList get_stdout_lines(QString command);
 };
 
