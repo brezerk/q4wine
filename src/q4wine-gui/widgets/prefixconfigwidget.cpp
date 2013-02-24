@@ -114,6 +114,7 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
 
     infoName.reset(new QLabel(QString("%1:\n\%2:").arg(tr("Name")).arg(tr("Description")), this));
     infoName->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    infoName->setTextInteractionFlags(Qt::TextSelectableByMouse);
     std::auto_ptr<QFrame> frame(new QFrame(this));
 
     layout.reset(new QVBoxLayout(this));
