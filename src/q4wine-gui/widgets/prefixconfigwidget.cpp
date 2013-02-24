@@ -312,6 +312,10 @@ void PrefixConfigWidget::itemClicked (QListWidgetItem *item){
         return;
 
     this->infoName->setText(QString("%1: %2\n\%3: %4").arg(tr("Name")).arg(item->text()).arg(tr("Description")).arg(item->toolTip()));
+
+    if (CoreLib->getSetting("advanced", "useSingleClick", false, 0).toInt()==1)
+        itemDoubleClicked (item);
+
     return;
 }
 
