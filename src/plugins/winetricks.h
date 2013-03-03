@@ -65,7 +65,7 @@ private:
     QStringList subtypes;
 
     void downloadwinetricks();
-    bool check_script();
+    bool check_script(bool warn = true);
     QStringList get_stdout_lines(QString command);
 };
 

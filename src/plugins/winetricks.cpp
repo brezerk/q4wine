@@ -38,10 +38,14 @@ winetricks::winetricks(QString prefixName) : QWidget()
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-    this->winetricks_bin.append(QDir::homePath());
+    this->winetricks_bin = QDir::homePath();
     this->winetricks_bin.append("/.config/");
     this->winetricks_bin.append(APP_SHORT_NAME);
     this->winetricks_bin.append("/winetricks");
+
+    if (!check_script(false)){
+        this->winetricks_bin = CoreLib->getWhichOut("winetricks", false);
+    }
 
     this->prefix_name = prefixName;
     this->console_bin = CoreLib->getSetting("console", "bin").toString();
@@ -52,9 +56,10 @@ void winetricks::install_winetricks() {
     this->downloadwinetricks();
 }
 
-bool winetricks::check_script(){
+bool winetricks::check_script(bool warn){
     if (!QFile(this->winetricks_bin).exists()){
-        QMessageBox::warning(this, QString(tr("Error")), QString(tr("Cannot locate Winetricks script. Install Winetricks script first.")));
+        if (warn)
+            QMessageBox::warning(this, QString(tr("Error")), QString(tr("Cannot locate Winetricks script. Install Winetricks script first.")));
         return false;
     }
     return true;
@@ -126,6 +131,10 @@ void winetricks::downloadwinetricks () {
         /*
          * Downloading winetricks and installing it
          */
+    this->winetricks_bin = QDir::homePath();
+    this->winetricks_bin.append("/.config/");
+    this->winetricks_bin.append(APP_SHORT_NAME);
+    this->winetricks_bin.append("/winetricks");
 
     QStringList args;
     if (!console_args.isEmpty()){

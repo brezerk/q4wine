@@ -1,12 +1,11 @@
-Version 1.1
+Version 1.0-r2
  Fixed:
   - Clean setup: error while loading application settings by key: prefixDefaultPath [BUG-25];
   - Winetricks plugin does not check script presence [BUG-26];
   - "Use single-click to run icons" does not affect icons in "setup" tab [BUG-27];
-
-Version 1.0-r2
  Added:
   - Persian translation. Thx 2 Arash Ariayee;
+  - Winetricks plugin can use script installed in system [BUG-28];
 
 Version 1.0-r1
  Fixed:
