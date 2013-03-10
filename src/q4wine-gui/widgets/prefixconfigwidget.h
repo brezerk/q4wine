@@ -76,6 +76,8 @@ private slots:
     void treeWidget_currentItemChanged (QTreeWidgetItem *item, QTreeWidgetItem *);
     void itemClicked (QListWidgetItem *item);
     void itemDoubleClicked (QListWidgetItem *item);
+    void currentItemChanged (QListWidgetItem *item, QListWidgetItem *);
+    void keyPressEvent ( QKeyEvent * event );
     void searchClear_Click();
     void sortAlpha_Click();
     void searchFilterChange(QString);

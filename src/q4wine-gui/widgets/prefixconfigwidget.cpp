@@ -86,6 +86,7 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
     listWidget->setWordWrap(false);
     connect(listWidget.get(), SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(itemClicked (QListWidgetItem *)));
     connect(listWidget.get(), SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(itemDoubleClicked (QListWidgetItem *)));
+    connect(listWidget.get(), SIGNAL(currentItemChanged (QListWidgetItem *, QListWidgetItem *)), this, SLOT(currentItemChanged (QListWidgetItem *, QListWidgetItem *)));
 
     std::auto_ptr<QWidget> treeFrameWidget(new QWidget(this));
 
@@ -314,9 +315,28 @@ void PrefixConfigWidget::itemClicked (QListWidgetItem *item){
 
     this->infoName->setText(QString("%1: %2\n\%3: %4").arg(tr("Name")).arg(item->text()).arg(tr("Description")).arg(item->toolTip()));
 
-    if (CoreLib->getSetting("advanced", "useSingleClick", false, 0).toInt()==1)
-        itemDoubleClicked (item);
+    if (QApplication::mouseButtons() == Qt::LeftButton)
+        if (CoreLib->getSetting("advanced", "useSingleClick", false, 0).toInt()==1)
+            itemDoubleClicked (item);
 
+    return;
+}
+
+void PrefixConfigWidget::keyPressEvent ( QKeyEvent * event ){
+    QListWidgetItem *item = this->listWidget->currentItem();
+
+    if (!item)
+        return;
+
+    if (event->key() == Qt::Key_Return)
+        itemDoubleClicked(item);
+}
+
+void PrefixConfigWidget::currentItemChanged (QListWidgetItem *item, QListWidgetItem *){
+    if (!item)
+        return;
+
+    itemClicked(item);
     return;
 }
 

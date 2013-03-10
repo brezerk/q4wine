@@ -119,6 +119,7 @@ private slots:
 
       void itemClicked (QListWidgetItem *item);
       void itemDoubleClicked (QListWidgetItem *item);
+      void itemChanged (QListWidgetItem *item, QListWidgetItem *);
 
       void iconAdd_Click(void);
       void iconRename_Click(void);

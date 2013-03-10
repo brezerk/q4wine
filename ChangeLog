@@ -1,3 +1,10 @@
+Version 1.0-r3
+ Fixed:
+  - "Use single-click to run icons" does not affect icons in "setup" tab [BUG-27];
+
+ Added:
+  - Keyboard navigation for items in "setup" and "icon" tabs;
+
 Version 1.0-r2
  Fixed:
   - Clean setup: error while loading application settings by key: prefixDefaultPath [BUG-25];

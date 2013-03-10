@@ -48,6 +48,8 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
 
     connect(this, SIGNAL(itemClicked (QListWidgetItem *)), this, SLOT(itemClicked (QListWidgetItem *)));
     connect(this, SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(itemDoubleClicked (QListWidgetItem *)));
+    connect(this, SIGNAL(currentItemChanged (QListWidgetItem *, QListWidgetItem *)), this, SLOT(itemChanged (QListWidgetItem *, QListWidgetItem *)));
+
 
     this->dirName="";
     this->prefixName="";
@@ -273,8 +275,9 @@ void IconListWidget::itemClicked (QListWidgetItem *item){
     QHash<QString, QString> result=db_icon.getByName(this->prefixName, this->dirName, item->text());
     emit(iconItemClick(result.value("exec").split('/').last().split('\\').last(), result.value("cmdargs"), result.value("desc"), result.value("useconsole"), result.value("desktop")));
 
-    if (CoreLib->getSetting("advanced", "useSingleClick", false, 0).toInt()==1)
-        itemDoubleClicked (item);
+    if (QApplication::mouseButtons() == Qt::LeftButton)
+        if (CoreLib->getSetting("advanced", "useSingleClick", false, 0).toInt()==1)
+            itemDoubleClicked (item);
 
     return;
 }
@@ -1303,5 +1306,13 @@ void IconListWidget::consoleToIconDir_Click(void){
     }
 
     item.release();
+    return;
+}
+
+void IconListWidget::itemChanged (QListWidgetItem *item, QListWidgetItem *){
+    if (!item)
+        return;
+
+    itemClicked(item);
     return;
 }
