@@ -2,10 +2,10 @@ Qt4 GUI for Wine
 ***********************************************
  
 Q4Wine is a Qt4 GUI for Wine that helps manage Wine prefixes and installed applications.
- 
+
 This software is published under the terms of the GNU GPL V3 and comes
 without any warranty. Feel free to change or distribute this software.
- 
+
 Notes
 ***********************************************
 This software comes with absolutely no warranty. You will NOT get any support or help for WineTools,
@@ -20,27 +20,26 @@ Q4Wine was initially written by Alexey S. Malakhov (also known as John Brezerk).
  
 The general idea came from WineTools, which was initially written by Frank Hendriksen.
  
-Build dependencies
-***********************************************
+Dependencies:
+cmake
 sudo
 wine
 >=sqlite-3.5.6
 >=which-2.19
 >=icoutils-0.26.0
 >=qt-4.4.0
->=qt-sql-4.4.0       NOTE: qt-sql might have sqlite drivers support!
+>=qt-sql-4.4.0		NOTE: qt-sql might have sqlite drivers support!
 >=qt-gui-4.4.0
 >=qt-core-4.4.0
 >=qt-network-4.4.0
 >=qt-dbus-4.4.0
+>=qt-sdk-4.4.0
 wget
+fuseiso 		***optional***
 
-Optional dependencies
-***********************************************
-fuseiso
- 
 Installation
 ***********************************************
+
 1. $ tar -xvzf q4wine-x.xxx-rx.tar.gz
 2. $ cd q4wine
 3. $ mkdir build
@@ -109,6 +108,9 @@ ls /usr/bin:
 lrwxrwxrwx 1 root root 23 2011-07-05 21:07 qmake -> qmake-qt4
 -rwxr-xr-x 1 root root 1901408 2011-04-01 19:04 qmake-qt3
 -rwxr-xr-x 1 root root 3444152 2011-06-24 17:52 qmake-qt4
+
+3. Problem with dual qt4 and qt5 installations
+Make sure you select Qt4 as default Qt version. Install relevant package (e.g. qt4-default in Ubuntu 13.04) if necessary.
 
 Uninstall:
 ***********************************************

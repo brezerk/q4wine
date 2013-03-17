@@ -253,7 +253,7 @@
     <message>
         <location line="+47"/>
         <source>Minimize to tray at application startup.</source>
-        <translation>Cворачивать в системный лоток при запуске.</translation>
+        <translation>Cворачивать в системный лоток при запуске Win32-приложения.</translation>
     </message>
     <message>
         <location line="+34"/>
@@ -449,7 +449,7 @@
     <message>
         <location line="+79"/>
         <source>Minimize to tray at startup.</source>
-        <translation>Cворачивать в системный лоток при запуске.</translation>
+        <translation>Cворачивать в системный лоток при запуске Q4Wine.</translation>
     </message>
     <message>
         <location line="+26"/>
@@ -1497,7 +1497,7 @@ See help for details.</source>
         <location line="-160"/>
         <location line="+161"/>
         <source>Paste selected icons from buffer to selected folder</source>
-        <translation>Вставить выбранные значки из буфера в указанный каталог</translation>
+        <translation>Вставить выбранные значки из буфера в указанную папку</translation>
     </message>
     <message>
         <location line="-152"/>
@@ -3298,7 +3298,7 @@ Note: leave it blank for default.</source>
         <location line="+29"/>
         <source>Do you really wish to delete the folder named &quot;%1&quot; and all associated icons?
 </source>
-        <translation>Удалить каталог &quot;%1&quot; и все связанные с ним значки?
+        <translation>Удалить папку &quot;%1&quot; и все связанные с ней значки?
 </translation>
     </message>
     <message>
@@ -3356,7 +3356,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>Create new directory</source>
-        <translation>Создать новую папку</translation>
+        <translation>Создать новый каталог</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -3413,7 +3413,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+2"/>
         <source>Open prefix directory in wine file browser</source>
-        <translation>Открыть папку программы с помощью обозревателя wine</translation>
+        <translation>Открыть каталог программы с помощью обозревателя wine</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -3428,12 +3428,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+2"/>
         <source>Open console in prefix directory</source>
-        <translation>Открыть консоль в папке префикса</translation>
+        <translation>Открыть консоль в каталоге префикса</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Open system console in prefix directory</source>
-        <translation>Открыть системную консоль в папке префикса</translation>
+        <translation>Открыть системную консоль в каталоге префикса</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3527,7 +3527,7 @@ Note: leave it blank for default.</source>
         <location line="-316"/>
         <location line="+56"/>
         <source>Sorry. It seems that the directory already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
-        <translation>Папка уже сужествует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
+        <translation>Каталог уже сужествует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
         <location line="+91"/>
@@ -3840,7 +3840,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+32"/>
         <source>sets the current directory name</source>
-        <translation>установить имя текущей папки</translation>
+        <translation>установить имя текущего каталога</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -3992,7 +3992,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>output all existing icon names for current prefix/directory and exit</source>
-        <translation>вывести список всех значков (для текущего префикса или папки) и выйти</translation>
+        <translation>вывести список всех значков (для текущего префикса или каталога) и выйти</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4106,7 +4106,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>sets program working directory</source>
-        <translation>установить рабочую папку программы</translation>
+        <translation>установить рабочий каталог программы</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4166,7 +4166,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+31"/>
         <source>Working directory:</source>
-        <translation>Рабочая папка:</translation>
+        <translation>Рабочий каталог:</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -4301,7 +4301,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+5"/>
         <source>Selected working directory does not exist.</source>
-        <translation>Указанная рабочая папка не существует.</translation>
+        <translation>Указанный рабочий каталог не существует.</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -4321,7 +4321,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+55"/>
         <source>Open Directory</source>
-        <translation>Открыть папку</translation>
+        <translation>Открыть каталог</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/Run.ui" line="+392"/>
@@ -4380,17 +4380,17 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-5"/>
         <source>Sorry, you need to set existing drive directory.</source>
-        <translation>Необходимо установить существующую папку для диска.</translation>
+        <translation>Необходимо установить существующий каталог для диска.</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Sorry, drive directory does not exist.</source>
-        <translation>Папка для диска не существует.</translation>
+        <translation>Каталог диска не существует.</translation>
     </message>
     <message>
         <location line="+21"/>
         <source>Open Directory</source>
-        <translation>Открыть папку</translation>
+        <translation>Открыть каталог</translation>
     </message>
 </context>
 <context>
@@ -4662,7 +4662,7 @@ Note: leave it blank for default.</source>
         <location line="-4"/>
         <location line="+6"/>
         <source>Open Directory</source>
-        <translation>Открыть папку</translation>
+        <translation>Открыть каталог</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -4677,7 +4677,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-77"/>
         <source>Sorry, specify %1 directory.</source>
-        <translation>Укажите папку %1.</translation>
+        <translation>Укажите каталог %1.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4712,7 +4712,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-223"/>
         <source>Sorry, specified %1 directory does not exist.</source>
-        <translation>Указанная папка %1 не существует.</translation>
+        <translation>Указанный каталог %1 не существует.</translation>
     </message>
     <message>
         <location line="+3"/>

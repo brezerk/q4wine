@@ -326,7 +326,7 @@
     <message>
         <location line="+32"/>
         <source>Minimize to tray at application startup.</source>
-        <translation>Beim Start in den Systemabschitt der Kontrollleiste minimieren.</translation>
+        <translation>Beim Start von Win32-App in den Systemabschitt der Kontrollleiste minimieren.</translation>
     </message>
     <message>
         <location line="+34"/>
@@ -524,7 +524,7 @@
     <message>
         <location line="+79"/>
         <source>Minimize to tray at startup.</source>
-        <translation>Beim Start in den Systemabschitt der Kontrollleiste minimieren.</translation>
+        <translation>Beim Start von Q4Wine in den Systemabschitt der Kontrollleiste minimieren.</translation>
     </message>
     <message>
         <location line="+26"/>
