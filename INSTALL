@@ -21,6 +21,7 @@ Q4Wine was initially written by Alexey S. Malakhov (also known as John Brezerk).
 The general idea came from WineTools, which was initially written by Frank Hendriksen.
  
 Dependencies:
+***********************************************
 cmake
 sudo
 wine
@@ -65,6 +66,7 @@ Installation
 
        DEBUG                     : OFF | ON
        RELEASE                   : OFF | ON
+       QT5                       : OFF | ON
        WITH_ICOUTILS             : ON  | OFF
        WITH_SYSTEM_SINGLEAPP     : OFF | ON
        WITH_WINEAPPDB            : ON  | OFF
@@ -76,6 +78,7 @@ Installation
                                  : Use it for development or bug reportint purposes;
        RELEASE                   : If OFF, then force q4wine to use APP_BUILD as CMAKE_INSTALL_PREFIX. 
                                  : Use it for development purposes;
+       QT5                       : If ON, then q4wine will be built with Qt 5.x.
        WITH_ICOUTILS             : If ON, then build q4wine with icoutils support;
        WITH_SYSTEM_SINGLEAPP     : If ON, then use system QtSingleApplication library instead building one;
        WITH_WINEAPPDB            : If ON, then build q4wine with Wine AppDB browser support;
