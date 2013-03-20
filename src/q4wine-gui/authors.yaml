@@ -1,0 +1,281 @@
+/***************************************************************************
+ *   Copyright (C) 2013 by Artem Vorotnikov                                *
+ *   skybon@gmail.com                                                      *
+ *                                                                         *
+ *   This program is free software: you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation, either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
+ *                                                                         *
+ ***************************************************************************/
+
+--- # authors
+
+Name: Alexey S. Malakhov
+Nickname: John Brezerk
+Role: Project maintainer, lead developer, website designer and developer, project documentation, support etc. ;)
+E-Mail: brezerk@gmail.com
+Web: 
+Location: Kiev, Ukraine
+
+Name: Sergey Skrypnic
+Nickname: opium
+Role: Website developer, hosting administration
+E-Mail: opium@jabber.com.ua
+Web: 
+Location: Kharkov, Ukraine
+
+Name: Pavel Zinin
+Nickname: pashazz
+Role: Winetricks support, fixes
+E-Mail: pzinin@gmail.com
+Web: 
+Location: Sergiev Posad, Moscow Oblast, Russia
+
+Name: Dmitry Marakasov
+Nickname: amdmi
+Role: FreeBSD support fixes
+E-Mail: amdmi3@amdmi3.ru
+Web: 
+Location: Moscow, Russia
+
+Name: Artem Vorotnikov
+Nickname: skybon
+Role: General fixes
+E-Mail: skybon@gmail.com
+Web: https://launchpad.net/~skybon
+Location: Moscow, Russia
+
+--- # package maintainers
+
+Name: Sergey V. Dyatko
+Nickname: 
+Role: FreeBSD port maintainer
+E-Mail: sergey.dyatko@gmail.com
+Web: 
+Location: Minsk, Belarus
+
+Name: Markos Chandras
+Nickname: hwoarang
+Role: Gentoo ebuild maintainer
+E-Mail: hwoarang@gentoo.org
+Web: http://hwoarang.silverarrow.gr
+Location: Greece
+
+Name: Kyrill Detinov
+Nickname: Lazy_Kent
+Role: openSUSE package maintainer
+E-Mail: lazy.kent@opensuse.org
+Web: 
+Location: Russia
+
+Name: Ercole Carpanetto
+Nickname: ercolinux
+Role: openmamba package maintainer
+E-Mail: ercole69@gmail.com
+Web: 
+Location: Italy
+
+Name: Boris Pek
+Nickname: 
+Role: Debian and Ubuntu package maintainer, some fixes
+E-Mail: tehnick-8@mail.ru
+Web: http://tehnick-8.narod.ru/
+Location: Ukraine
+
+Name: Chris.Giles
+Nickname: 
+Role: Arch Linux package maintainer
+E-Mail: 
+Web: 
+Location: 
+
+Name: Boris Savelev
+Nickname: 
+Role: Sisyphus package maintainer
+E-Mail: 
+Web: 
+Location: 
+
+Name: MiRacLe
+Nickname: 
+Role: Slackware Linux package maintainer
+E-Mail: 
+Web: 
+Location: 
+
+--- # translators
+
+Name: Alexey S. Malakhov
+Nickname: John Brezerk
+Role: Ukrainian translation maintainer
+E-Mail: brezerk@gmail.com
+Web: 
+Location: Kiev, Ukraine
+
+Name: Boris Pek
+Nickname: 
+Role: Russian translation maintainer
+E-Mail: tehnick-8@mail.ru
+Web: http://tehnick-8.narod.ru/
+Location: Ukraine
+
+Name: Artem Vorotnikov
+Nickname: skybon
+Role: German translation maintainer
+XMPP: vorot93@jabber.ru
+E-Mail: skybon@gmail.com
+Web: https://launchpad.net/~skybon
+Location: Moscow, Russia
+
+Name: Carlos Ignacio Ruax
+Nickname: Spanish translation
+Role: 
+E-Mail: ignacioruax@gmail.com
+Web: 
+Location: Spain
+
+Name: Ercole Carpanetto
+Nickname: ercolinux
+Role: Italian translation
+E-Mail: ercole69@gmail.com
+Web: 
+Location: Italy
+
+Name: Franciszek Janowski
+Nickname: nobange
+Role: Polish translation
+E-Mail: nobange@poczta.onet.pl
+Web: 
+Location: Gorzów Wielkopolski, Poland
+
+Name: Márcio Moraes
+Nickname: 
+Role: Brazilian Portuguese translation
+E-Mail: marciopanto@gmail.com
+Web: 
+Location: 
+
+Name: Yaron Shahrabani
+Nickname: 
+Role: Hebrew translation
+E-Mail: sh.yaron@gmail.com
+Web: https://launchpad.net/~sh-yaron
+Location: Misgav, Israel
+
+Name: Pavel Fric
+Nickname: 
+Role: Czech translation
+E-Mail: 
+Web: http://fripohled.blogspot.com/
+Location: Czech Republic
+
+Name: Pavel Zinin
+Nickname: pashazz
+Role: Russian translation
+E-Mail: pzinin@gmail.com
+Web: 
+Location: Sergiev Posad, Moscow Oblast, Russia
+
+Name: Ron Widler
+Nickname: 
+Role: German translation
+E-Mail: 
+Web: 
+Location: 
+
+Name: Rosva
+Nickname: رسوا
+Role: Persian Translation
+E-Mail: mojsh2020@gmail.com
+Web: http://20ss20.wordpress.com
+Location: Talesh, Iran
+
+Name: Frederik Schwarzer
+Nickname: icwiener
+Role: 
+E-Mail: 
+Web: 
+Location: German translation
+
+Name: Uriy O. Chornoivan
+Nickname: 
+Role: Ukrainian translation
+E-Mail: yurchor@ukr.net
+Web: 
+Location: Kiev, Ukraine
+
+Name: Dmitry Marakasov
+Nickname: amdmi3
+Role: Ukrainian translation
+E-Mail: amdmi3@amdmi3.ru
+Web: 
+Location: Russia
+
+--- # thanks
+
+Icon: :/data/love.png
+Name: Irina V. Malakhova
+Nickname: 
+Role: Thanks for patience, love and countenance =]
+E-Mail: 
+Web: 
+Location: 
+
+Name: Sergey V. Dyatko
+Nickname: 
+Role: Support, assistance, testing and advice for FreeBSD port
+E-Mail: sergey.dyatko@gmail.com
+Web: 
+Location: Minsk, Belarus
+
+Name: Sergey Golivets
+Nickname: B@RT
+Role: Testing, bug reports and feature requests
+XMPP: bartlab@jabber.ru
+E-Mail: 
+Web: 
+Location: Mariupol, Ukraine
+
+Name: Sergey Skrypnic
+Nickname: opium
+Role: Website developer, hosting administration
+E-Mail: opium@jabber.com.ua
+Web: 
+Location: Kharkov, Ukraine
+
+Name: Boris Pek
+Nickname: 
+Role: Bug reports, testing
+E-Mail: tehnick-8@mail.ru
+Web: http://tehnick-8.narod.ru/
+Location: Ukraine
+
+Name: Sergey Kishchenko
+Nickname: tilarids
+Role: Testing, bug reports
+E-Mail: voidwrk@gmail.com
+Web: 
+Location: Kharkov, Ukraine
+
+Name: Kyrill Detinov
+Nickname: Lazy_Kent
+Role: Testing, bug reports
+E-Mail: lazy.kent@opensuse.org
+Web: 
+Location: Russia
+
+Name: Andrey A. Maloshtan
+Nickname: 
+Role: Testing, bug reports
+E-Mail: andrey.aleksandrovich@googlemail.com
+Web: 
+Location: Kharkov, Ukraine
