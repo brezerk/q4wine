@@ -18,7 +18,7 @@
 
 #
 # This file is used by toos/gen_authors.py to regenerate src/q4wine-gui/authors.h file
-# Note: after update, please, run this tool manually or with make 'tools'
+# Note: after update, please, run this tool manually or with 'make authors'
 #
 
 #
