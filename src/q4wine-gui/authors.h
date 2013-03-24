@@ -38,7 +38,7 @@
 	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:brezerk@jabber.com.ua' style='text-decoration: none; color:#5f9ea0;'>brezerk@jabber.com.ua</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='brezblock.org.ua' style='color:#5f9ea0;'>brezblock.org.ua</a>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='http://brezblock.org.ua' style='color:#5f9ea0;'>http://brezblock.org.ua</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Kiev, Ukraine" \
@@ -132,7 +132,7 @@
 	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:brezerk@jabber.com.ua' style='text-decoration: none; color:#5f9ea0;'>brezerk@jabber.com.ua</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='brezblock.org.ua' style='color:#5f9ea0;'>brezblock.org.ua</a>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='http://brezblock.org.ua' style='color:#5f9ea0;'>http://brezblock.org.ua</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Kiev, Ukraine" \
@@ -156,13 +156,16 @@
 	    " " \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Boris Pek " \
+	    "Boris Pek (tehnick)" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Russian translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:tehnick-8@mail.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@mail.ru</a>" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:tehnick@jabber.spbu.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick@jabber.spbu.ru</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick-8.narod.ru/' style='color:#5f9ea0;'>http://tehnick-8.narod.ru/</a>" \
@@ -343,13 +346,16 @@
     "</head>" \
     "<body>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Boris Pek " \
+	    "Boris Pek (tehnick)" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Debian and Ubuntu package maintainer, some fixes" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:tehnick-8@mail.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@mail.ru</a>" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:tehnick@jabber.spbu.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick@jabber.spbu.ru</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick-8.narod.ru/' style='color:#5f9ea0;'>http://tehnick-8.narod.ru/</a>" \
@@ -494,13 +500,16 @@
 	    " " \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Boris Pek " \
+	    "Boris Pek (tehnick)" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Bug reports, testing" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:tehnick-8@mail.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@mail.ru</a>" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:tehnick@jabber.spbu.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick@jabber.spbu.ru</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick-8.narod.ru/' style='color:#5f9ea0;'>http://tehnick-8.narod.ru/</a>" \

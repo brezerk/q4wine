@@ -17,7 +17,7 @@
 #
 
 #
-# This file is used by toos/gen_authors.py to regenerate src/q4wine-gui/authors.h file
+# This file is used by tools/gen_authors.py to regenerate src/q4wine-gui/authors.h file
 # Note: after update, please, run this tool manually or with make 'tools'
 #
 
@@ -76,9 +76,11 @@ developers:
 
 pkg_maintainers:
         - name: Boris Pek
+          nick: tehnick
           info: Debian and Ubuntu package maintainer, some fixes
           mail: tehnick-8@mail.ru
           web: http://tehnick-8.narod.ru/
+          jid: tehnick@jabber.spbu.ru
           location: Ukraine
 
         - name: Dmitrij S. Kryzhevich
@@ -123,9 +125,11 @@ translations:
           web: https://launchpad.net/~skybon
 
         - name: Boris Pek
+          nick: tehnick
           info: Russian translation
           mail: tehnick-8@mail.ru
           web: http://tehnick-8.narod.ru/
+          jid: tehnick@jabber.spbu.ru
           location: Ukraine
 
         - name: Carlos Ignacio Ruax
@@ -205,9 +209,11 @@ thanks:
           location: Kharkov, Ukraine
 
         - name: Boris Pek
+          nick: tehnick
           info: Bug reports, testing
           mail: tehnick-8@mail.ru
           web: http://tehnick-8.narod.ru/
+          jid: tehnick@jabber.spbu.ru
           location: Ukraine
 
         - name: Dmitry Marakasov
