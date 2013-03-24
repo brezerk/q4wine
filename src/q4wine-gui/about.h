@@ -22,7 +22,8 @@
 
 #include "config.h"
 
-#include <src/q4wine-gui/ui_About.h>
+#include "src/q4wine-gui/ui_About.h"
+#include "src/q4wine-gui/authors.h"
 
 class About : public QDialog, public Ui::About
 {

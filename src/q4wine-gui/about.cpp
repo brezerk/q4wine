@@ -27,6 +27,11 @@ About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
 
     lblVersion->setText(QString("<span style=\"font-size:14pt; font-weight:600;\">%1 %2</span>").arg(APP_NAME).arg(APP_VERS));
 
+    txtAuthors->setHtml(T_DEVELOPERS);
+    txtPAuthors->setHtml(T_PKG_MAINTAINERS);
+    txtTranslation->setHtml(T_TRANSLATIONS);
+    txtThanks->setHtml(T_THANKS);
+
     cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 
     return;

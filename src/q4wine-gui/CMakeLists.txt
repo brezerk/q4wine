@@ -48,6 +48,7 @@ SET( Q4WINE_GUI_SOURCES
 
 SET ( Q4WINE_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/run.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/authors.h
     ${CMAKE_SOURCE_DIR}/src/core/registry.h
     ${CMAKE_SOURCE_DIR}/src/core/database/db.h
     ${CMAKE_SOURCE_DIR}/src/core/database/prefix.h
