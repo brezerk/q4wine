@@ -1,3 +1,22 @@
+/***************************************************************************
+*   Copyright (C) 2008-2013 by Malakhov Alexey                            *
+*   brezerk@gmail.com                                                     *
+*                                                                         *
+*   This program is free software: you can redistribute it and/or modify  *
+*   it under the terms of the GNU General Public License as published by  *
+*   the Free Software Foundation, either version 3 of the License, or     *
+*   (at your option) any later version.                                   *
+*                                                                         *
+*   This program is distributed in the hope that it will be useful,       *
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+*   GNU General Public License for more details.                          *
+*                                                                         *
+*   You should have received a copy of the GNU General Public License     *
+*   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
+*                                                                         *
+***************************************************************************/
+
 
 #define T_DEVELOPERS "<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0//EN' 'http://www.w3.org/TR/REC-html40/strict.dtd'>" \
 "<html>" \
@@ -13,11 +32,14 @@
 	    "Project maintainer, lead developer, website designer and developer, project documentation, support etc. ;)" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:brezerk@gmail.com' style='text-decoration: none; color:#5f9ea0;'>brezerk@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:brezerk@gmail.com' style='text-decoration: none; color:#5f9ea0;'>brezerk@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:brezerk@jabber.com.ua' style='text-decoration: none; color:#5f9ea0;'>brezerk@jabber.com.ua</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:brezerk@jabber.com.ua' style='text-decoration: none; color:#5f9ea0;'>brezerk@jabber.com.ua</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='brezblock.org.ua' style='color:#5f9ea0;'>brezblock.org.ua</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='brezblock.org.ua' style='color:#5f9ea0;'>brezblock.org.ua</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Kiev, Ukraine" \
 	"</p>" \
@@ -31,9 +53,11 @@
 	    "General fixes" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:skybon@gmail.com' style='text-decoration: none; color:#5f9ea0;'>skybon@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:skybon@gmail.com' style='text-decoration: none; color:#5f9ea0;'>skybon@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='https://launchpad.net/~skybon' style='color:#5f9ea0;'>https://launchpad.net/~skybon</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='https://launchpad.net/~skybon' style='color:#5f9ea0;'>https://launchpad.net/~skybon</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Moscow, Russia" \
 	"</p>" \
@@ -47,7 +71,8 @@
 	    "Website developer, hosting administration" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:opium@jabber.com.ua' style='text-decoration: none; color:#5f9ea0;'>opium@jabber.com.ua</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:opium@jabber.com.ua' style='text-decoration: none; color:#5f9ea0;'>opium@jabber.com.ua</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Kharkov, Ukraine" \
 	"</p>" \
@@ -61,7 +86,8 @@
 	    "Winetricks support, fixes" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:pzinin@gmail.com' style='text-decoration: none; color:#5f9ea0;'>pzinin@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:pzinin@gmail.com' style='text-decoration: none; color:#5f9ea0;'>pzinin@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Sergiev Posad, Moscow region, Russia" \
 	"</p>" \
@@ -75,7 +101,8 @@
 	    "FreeBSD support fixes" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:amdmi3@amdmi3.ru' style='text-decoration: none; color:#5f9ea0;'>amdmi3@amdmi3.ru</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:amdmi3@amdmi3.ru' style='text-decoration: none; color:#5f9ea0;'>amdmi3@amdmi3.ru</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Moscow, Russia" \
 	"</p>" \
@@ -99,11 +126,14 @@
 	    "Ukrainian translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:brezerk@gmail.com' style='text-decoration: none; color:#5f9ea0;'>brezerk@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:brezerk@gmail.com' style='text-decoration: none; color:#5f9ea0;'>brezerk@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:brezerk@jabber.com.ua' style='text-decoration: none; color:#5f9ea0;'>brezerk@jabber.com.ua</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:brezerk@jabber.com.ua' style='text-decoration: none; color:#5f9ea0;'>brezerk@jabber.com.ua</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='brezblock.org.ua' style='color:#5f9ea0;'>brezblock.org.ua</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='brezblock.org.ua' style='color:#5f9ea0;'>brezblock.org.ua</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Kiev, Ukraine" \
 	"</p>" \
@@ -117,9 +147,11 @@
 	    "German translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:vorot93@yandex.ru' style='text-decoration: none; color:#5f9ea0;'>vorot93@yandex.ru</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:vorot93@yandex.ru' style='text-decoration: none; color:#5f9ea0;'>vorot93@yandex.ru</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='https://launchpad.net/~skybon' style='color:#5f9ea0;'>https://launchpad.net/~skybon</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='https://launchpad.net/~skybon' style='color:#5f9ea0;'>https://launchpad.net/~skybon</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    " " \
 	"</p>" \
@@ -130,9 +162,11 @@
 	    "Russian translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:tehnick-8@mail.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@mail.ru</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:tehnick-8@mail.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@mail.ru</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick-8.narod.ru/' style='color:#5f9ea0;'>http://tehnick-8.narod.ru/</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick-8.narod.ru/' style='color:#5f9ea0;'>http://tehnick-8.narod.ru/</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Ukraine" \
 	"</p>" \
@@ -146,7 +180,8 @@
 	    "Spanish translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:ignacioruax@gmail.com' style='text-decoration: none; color:#5f9ea0;'>ignacioruax@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:ignacioruax@gmail.com' style='text-decoration: none; color:#5f9ea0;'>ignacioruax@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Spain" \
 	"</p>" \
@@ -160,7 +195,8 @@
 	    "Italian translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:ercole69@gmail.com' style='text-decoration: none; color:#5f9ea0;'>ercole69@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:ercole69@gmail.com' style='text-decoration: none; color:#5f9ea0;'>ercole69@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Italy" \
 	"</p>" \
@@ -174,7 +210,8 @@
 	    "Polish translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:nobange@poczta.onet.pl' style='text-decoration: none; color:#5f9ea0;'>nobange@poczta.onet.pl</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:nobange@poczta.onet.pl' style='text-decoration: none; color:#5f9ea0;'>nobange@poczta.onet.pl</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Poland" \
 	"</p>" \
@@ -188,7 +225,8 @@
 	    "Portuguese (Brazil) translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:marciopanto@gmail.com' style='text-decoration: none; color:#5f9ea0;'>marciopanto@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:marciopanto@gmail.com' style='text-decoration: none; color:#5f9ea0;'>marciopanto@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Italy" \
 	"</p>" \
@@ -202,9 +240,11 @@
 	    "Hebrew translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:sh.yaron@gmail.com' style='text-decoration: none; color:#5f9ea0;'>sh.yaron@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:sh.yaron@gmail.com' style='text-decoration: none; color:#5f9ea0;'>sh.yaron@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='https://launchpad.net/~sh-yaron' style='color:#5f9ea0;'>https://launchpad.net/~sh-yaron</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='https://launchpad.net/~sh-yaron' style='color:#5f9ea0;'>https://launchpad.net/~sh-yaron</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Misgav, Israel" \
 	"</p>" \
@@ -218,7 +258,8 @@
 	    "Czech translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='http://fripohled.blogspot.com/' style='color:#5f9ea0;'>http://fripohled.blogspot.com/</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='http://fripohled.blogspot.com/' style='color:#5f9ea0;'>http://fripohled.blogspot.com/</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Czech Republic" \
 	"</p>" \
@@ -232,7 +273,8 @@
 	    "Russian translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:pzinin@gmail.com' style='text-decoration: none; color:#5f9ea0;'>pzinin@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:pzinin@gmail.com' style='text-decoration: none; color:#5f9ea0;'>pzinin@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Sergiev Posad, Moscow region, Russia" \
 	"</p>" \
@@ -255,9 +297,11 @@
 	    "Persian Translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:mojsh2020@gmail.com' style='text-decoration: none; color:#5f9ea0;'>mojsh2020@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:mojsh2020@gmail.com' style='text-decoration: none; color:#5f9ea0;'>mojsh2020@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='http://20ss20.wordpress.com' style='color:#5f9ea0;'>http://20ss20.wordpress.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='http://20ss20.wordpress.com' style='color:#5f9ea0;'>http://20ss20.wordpress.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Talesh, Iran" \
 	"</p>" \
@@ -280,7 +324,8 @@
 	    "Ukrainian translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:yurchor@ukr.net' style='text-decoration: none; color:#5f9ea0;'>yurchor@ukr.net</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:yurchor@ukr.net' style='text-decoration: none; color:#5f9ea0;'>yurchor@ukr.net</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Kiev, Ukraine" \
 	"</p>" \
@@ -304,9 +349,11 @@
 	    "Debian and Ubuntu package maintainer, some fixes" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:tehnick-8@mail.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@mail.ru</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:tehnick-8@mail.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@mail.ru</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick-8.narod.ru/' style='color:#5f9ea0;'>http://tehnick-8.narod.ru/</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick-8.narod.ru/' style='color:#5f9ea0;'>http://tehnick-8.narod.ru/</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Ukraine" \
 	"</p>" \
@@ -329,7 +376,8 @@
 	    "openmamba package maintainer" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:ercole69@gmail.com' style='text-decoration: none; color:#5f9ea0;'>ercole69@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:ercole69@gmail.com' style='text-decoration: none; color:#5f9ea0;'>ercole69@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Italy" \
 	"</p>" \
@@ -343,7 +391,8 @@
 	    "openSUSE package maintainer" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:lazy.kent@opensuse.org' style='text-decoration: none; color:#5f9ea0;'>lazy.kent@opensuse.org</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:lazy.kent@opensuse.org' style='text-decoration: none; color:#5f9ea0;'>lazy.kent@opensuse.org</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Russia" \
 	"</p>" \
@@ -357,9 +406,11 @@
 	    "Gentoo ebuild maintainer" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:hwoarang@gentoo.org' style='text-decoration: none; color:#5f9ea0;'>hwoarang@gentoo.org</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:hwoarang@gentoo.org' style='text-decoration: none; color:#5f9ea0;'>hwoarang@gentoo.org</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='http://hwoarang.silverarrow.gr' style='color:#5f9ea0;'>http://hwoarang.silverarrow.gr</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='http://hwoarang.silverarrow.gr' style='color:#5f9ea0;'>http://hwoarang.silverarrow.gr</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Greece" \
 	"</p>" \
@@ -373,7 +424,8 @@
 	    "FreeBSD port maintainer" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:sergey.dyatko@gmail.com' style='text-decoration: none; color:#5f9ea0;'>sergey.dyatko@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:sergey.dyatko@gmail.com' style='text-decoration: none; color:#5f9ea0;'>sergey.dyatko@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Minsk, Republic of Belarus" \
 	"</p>" \
@@ -406,7 +458,8 @@
 	    "Suppot, assistance, testing and advice for FreeBSD port" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:sergey.dyatko@gmail.com' style='text-decoration: none; color:#5f9ea0;'>sergey.dyatko@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:sergey.dyatko@gmail.com' style='text-decoration: none; color:#5f9ea0;'>sergey.dyatko@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    " " \
 	"</p>" \
@@ -417,7 +470,8 @@
 	    "Testing, bugreports and feature requests" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:bartlab@jabber.ru' style='text-decoration: none; color:#5f9ea0;'>bartlab@jabber.ru</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:bartlab@jabber.ru' style='text-decoration: none; color:#5f9ea0;'>bartlab@jabber.ru</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Ukraine, Mariupol" \
 	"</p>" \
@@ -431,7 +485,8 @@
 	    "Website developer, hosting administration" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:opium@jabber.com.ua' style='text-decoration: none; color:#5f9ea0;'>opium@jabber.com.ua</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:opium@jabber.com.ua' style='text-decoration: none; color:#5f9ea0;'>opium@jabber.com.ua</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Kharkov, Ukraine" \
 	"</p>" \
@@ -445,9 +500,11 @@
 	    "Bug reports, testing" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:tehnick-8@mail.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@mail.ru</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:tehnick-8@mail.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@mail.ru</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick-8.narod.ru/' style='color:#5f9ea0;'>http://tehnick-8.narod.ru/</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick-8.narod.ru/' style='color:#5f9ea0;'>http://tehnick-8.narod.ru/</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Ukraine" \
 	"</p>" \
@@ -461,7 +518,8 @@
 	    "Ukrainian translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:amdmi3@amdmi3.ru' style='text-decoration: none; color:#5f9ea0;'>amdmi3@amdmi3.ru</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:amdmi3@amdmi3.ru' style='text-decoration: none; color:#5f9ea0;'>amdmi3@amdmi3.ru</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Russia" \
 	"</p>" \
@@ -475,7 +533,8 @@
 	    "Testing, bug reports" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:voidwrk@gmail.com' style='text-decoration: none; color:#5f9ea0;'>voidwrk@gmail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:voidwrk@gmail.com' style='text-decoration: none; color:#5f9ea0;'>voidwrk@gmail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Kharkov, Ukraine" \
 	"</p>" \
@@ -489,7 +548,8 @@
 	    "Testing, bug reports" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:lazy.kent@opensuse.org' style='text-decoration: none; color:#5f9ea0;'>lazy.kent@opensuse.org</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:lazy.kent@opensuse.org' style='text-decoration: none; color:#5f9ea0;'>lazy.kent@opensuse.org</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Russia" \
 	"</p>" \
@@ -503,7 +563,8 @@
 	    "Testing, bug reports" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:andrey.aleksandrovich@googlemail.com' style='text-decoration: none; color:#5f9ea0;'>andrey.aleksandrovich@googlemail.com</a>" 	"</p>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:andrey.aleksandrovich@googlemail.com' style='text-decoration: none; color:#5f9ea0;'>andrey.aleksandrovich@googlemail.com</a>" \
+	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Kharkov, Ukraine" \
 	"</p>" \

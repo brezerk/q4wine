@@ -22,6 +22,28 @@ import yaml
 
 D_DATADIR = os.path.join(os.path.dirname(__file__), '../src/q4wine-gui')
 
+def write_header():
+    return u"""/***************************************************************************
+*   Copyright (C) 2008-2013 by Malakhov Alexey                            *
+*   brezerk@gmail.com                                                     *
+*                                                                         *
+*   This program is free software: you can redistribute it and/or modify  *
+*   it under the terms of the GNU General Public License as published by  *
+*   the Free Software Foundation, either version 3 of the License, or     *
+*   (at your option) any later version.                                   *
+*                                                                         *
+*   This program is distributed in the hope that it will be useful,       *
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+*   GNU General Public License for more details.                          *
+*                                                                         *
+*   You should have received a copy of the GNU General Public License     *
+*   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
+*                                                                         *
+***************************************************************************/
+
+"""
+
 def html_head(group):
     return u"""
 #define T_%s \"<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0//EN' 'http://www.w3.org/TR/REC-html40/strict.dtd'>\" \\
@@ -47,13 +69,13 @@ def html_line(text=" "):
 def html_mail_to(mail, text='E-Mail'):
     return u"""
         \"<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>\" \\
-	    \"<span style='color:#6495ed;'>%s</span>: <a href='mailto:%s' style='text-decoration: none; color:#5f9ea0;'>%s</a>\" \
+	    \"<span style='color:#6495ed;'>%s</span>: <a href='mailto:%s' style='text-decoration: none; color:#5f9ea0;'>%s</a>\" \\
 	\"</p>\" \\""" % (text, mail, mail)
 
 def html_web(web):
     return u"""
         \"<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>\" \\
-	    \"<span style='color:#6495ed;'>Web</span>: <a href='%s' style='color:#5f9ea0;'>%s</a>\" \
+	    \"<span style='color:#6495ed;'>Web</span>: <a href='%s' style='color:#5f9ea0;'>%s</a>\" \\
 	\"</p>\" \\""" % (web, web)
 
 def generate_authors():
@@ -62,7 +84,7 @@ def generate_authors():
 
     filename = os.path.join(D_DATADIR, 'authors.h')
     with open(filename, 'w') as h:
-
+	h.write(write_header())
         data = yaml.safe_load(yamlfile)
         for group, persons in data.iteritems():
             h.write(html_head(group))
@@ -82,6 +104,8 @@ def generate_authors():
                     h.write(html_line(person['location']))
                 h.write(html_line())
             h.write(html_footer())
+
+    yamlfile.close()
 
 
 if __name__ == '__main__':

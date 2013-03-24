@@ -45,7 +45,7 @@ developers:
           nick: brezerk
           info: Project maintainer, lead developer, website designer and developer, project documentation, support etc. ;)
           mail: brezerk@gmail.com
-          web: brezblock.org.ua
+          web: http://brezblock.org.ua
           jid: brezerk@jabber.com.ua
           location: Kiev, Ukraine
 
@@ -113,7 +113,7 @@ translations:
           nick: brezerk
           info: Ukrainian translation
           mail: brezerk@gmail.com
-          web: brezblock.org.ua
+          web: http://brezblock.org.ua
           jid: brezerk@jabber.com.ua
           location: Kiev, Ukraine
 
