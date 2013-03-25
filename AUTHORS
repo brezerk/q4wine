@@ -1,81 +1,203 @@
-..oo --< Active developers >-- oo..
 
-Alexey S. Malakhov (John Brezerk) <brezerk at gmail.com>
-    Project maintainer, lead developer, web site designer and developer, 
-    Ukrainian translation, project documentation, support, etc.)
+	                      ==BrezBlock==
 
-Sergey Skrypnic (opium) <opium@jabber.com.ua>
-    Website developer and hosting administration
+	                                      Volume 0x00, Issue 0x00
 
-..oo ---< Inactive developers >--- oo..
+|=-------------------------=[ Introduction ]=----------------------------=|
 
-Pavel Zinin (pashazz) <pzinin at gmail.com>
-    Winetricks plugin developer
+                "A journey of a thousand miles begins with a single step."
+                                             --Lao-tzu, The Way of Lao-tzu
+                                     Chinese philosopher (604 BC - 531 BC)
 
-Dmitry Marakasov (amdmi3) <amdmi3 at amdmi3.ru>
-    FreeBSD support fixes
+Thanks to all people who made this software become avaliable to the public
+Thanks for your hard work, debugging, translating, packaging e.t.c.
+There was done tremendous work. But we did it :)
+
+There are also a lot of people who provide feature requests, bug reports
+and feed backs. Despite the fact that they are not listed in this file,
+their contribution is invaluable.
 
 
-..oo ---< Special thanks to >--- oo.
+|=-------------------------=[ developers ]=----------------------------=|
 
-Irina Radchuk
-    Thanks for patience, love, and countenance =]
+Alexey S. Malakhov (brezerk)
+Project maintainer, lead developer, website designer and developer, project documentation, support etc. ;)
+mail: brezerk@gmail.com
+jabber: brezerk@jabber.com.ua
+web: http://brezblock.org.ua
+Kiev, Ukraine
+ 
+Artem Vorotnikov (skybon)
+General fixes
+mail: skybon@gmail.com
+web: https://launchpad.net/~skybon
+Moscow, Russia
+ 
+Sergey Skrypnic (opium)
+Website developer, hosting administration
+mail: opium@jabber.com.ua
+Kharkov, Ukraine
+ 
+Pavel Zinin (pashazz)
+Winetricks support, fixes
+mail: pzinin@gmail.com
+Sergiev Posad, Moscow region, Russia
+ 
+Dmitry Marakasov (amdmi3)
+FreeBSD support fixes
+mail: amdmi3@amdmi3.ru
+Moscow, Russia
+ 
+|=-------------------------=[ translations ]=----------------------------=|
 
-Sergey V. Dyatko <sergey.dyatko at gmail.com>
-    Support, assistance, testing, and advice for FreeBSD port
+Alexey S. Malakhov (brezerk)
+Ukrainian translation
+mail: brezerk@gmail.com
+jabber: brezerk@jabber.com.ua
+web: http://brezblock.org.ua
+Kiev, Ukraine
+ 
+Artem Vorotnikov 
+German translation
+mail: vorot93@yandex.ru
+web: https://launchpad.net/~skybon
+ 
+Boris Pek (tehnick)
+Russian translation
+mail: tehnick-8@mail.ru
+jabber: tehnick@jabber.spbu.ru
+web: http://tehnick-8.narod.ru/
+Ukraine
+ 
+Carlos Ignacio Ruax 
+Spanish translation
+mail: ignacioruax@gmail.com
+Spain
+ 
+Ercole Carpanetto (ercolinux)
+Italian translation
+mail: ercole69@gmail.com
+Italy
+ 
+Franciszek Janowski (nobange)
+Polish translation
+mail: nobange@poczta.onet.pl
+Poland
+ 
+Marcio Moraes 
+Portuguese (Brazil) translation
+mail: marciopanto@gmail.com
+Italy
+ 
+Yaron Shahrabani 
+Hebrew translation
+mail: sh.yaron@gmail.com
+web: https://launchpad.net/~sh-yaron
+Misgav, Israel
+ 
+Pavel Fric 
+Czech translation
+web: http://fripohled.blogspot.com/
+Czech Republic
+ 
+Pavel Zinin (pashazz)
+Russian translation
+mail: pzinin@gmail.com
+Sergiev Posad, Moscow region, Russia
+ 
+Ron Widler 
+German translation
+ 
+Rosva (None)
+Persian Translation
+mail: mojsh2020@gmail.com
+web: http://20ss20.wordpress.com
+Talesh, Iran
+ 
+Frederik Schwarzer (icwiener) 
+German translation
+ 
+Uriy O. Chornoivan 
+Ukrainian translation
+mail: yurchor@ukr.net
+Kiev, Ukraine
+ 
+|=-------------------------=[ pkg_maintainers ]=----------------------------=|
 
-Boris Pek <tehnick-8 at mail.ru>
-    Debian and Ubuntu package maintainer, some fixes,
-    Russian translation
+Boris Pek (tehnick)
+Debian and Ubuntu package maintainer, some fixes
+mail: tehnick-8@mail.ru
+jabber: tehnick@jabber.spbu.ru
+web: http://tehnick-8.narod.ru/
+Ukraine
+ 
+Dmitrij S. Kryzhevich 
+Fedora package maintainer
+ 
+Ercole Carpanetto (ercolinux)
+openmamba package maintainer
+mail: ercole69@gmail.com
+Italy
+ 
+Kyrill Detinov (Lazy_Kent)
+openSUSE package maintainer
+mail: lazy.kent@opensuse.org
+Russia
+ 
+Markos Chandras (hwoarang)
+Gentoo ebuild maintainer
+mail: hwoarang@gentoo.org
+web: http://hwoarang.silverarrow.gr
+Greece
+ 
+Sergey V. Dyatko 
+FreeBSD port maintainer
+mail: sergey.dyatko@gmail.com
+Minsk, Republic of Belarus
+ 
+|=-------------------------=[ thanks ]=----------------------------=|
 
-Ercole Carpanetto (ercolinux) <ercole69 at gmail.com>
-    openmamba package maintainer and Italian translation
-
-Sergey Kishchenko (tilarids) <voidwrk at gmail.com>
-    Idea generator, testing, and bug reports
-
-Kyrill Detinov (Lazy_Kent) <lazy.kent at opensuse.org>
-    openSUSE package maintainer, testing, and bug reports
-
-Andrey A. Maloshtan <andrey.aleksandrovich at googlemail.com>
-    Testing and bug reports
-
-Uriy O. Chornoivan <yurchor at ukr.net>
-    Ukrainian translation
-
-Pavel Zinin (pashazz) <pzinin at gmail.com>
-    Russian translation
-
-MÃ¡rcio Moraes <marciopanto at gmail.com>
-    Brazilian Portuguese translation
-
-Carlos Ignacio Ruax <ignacioruax at gmail.com>
-    Spanish translation
-
-Markos Chandras (hwoarang) <hwoarang at gentoo.org>
-    Gentoo ebuild maintainer
-
-Pavel Fric <http://fripohled.blogspot.com/>
-    Czech translation
-
-Yaron Shahrabani <sh.yaron at gmail.com>
-    Hebrew translation
-
-Franciszek Janowski (nobange) <nobange at poczta.onet.pl>
-    Polish translation
-
-Ron Widler
-    German translation
-
-Frederik Schwarzer (icwiener) <schwarzerf@gmail.com>
-    German translation
-
-Artem Vorotnikov (skybon) <skybon at gmail.com>
-    German and Russian translation
-
-Rosva (رسوا) <mojsh2020@gmail.com>
-    Persian Translation
-
-And many others
-    who find some time to say "Thanks", write a bug report,
-    or make a donation. Thanks to all of you!
+<img src=':/data/love.png' /> Irina V. Malakhova 
+Thanks for patience, love and countenance =]
+ 
+Sergey V. Dyatko 
+Suppot, assistance, testing and advice for FreeBSD port
+mail: sergey.dyatko@gmail.com
+ 
+Sergey Golivets (B@RT)
+Testing, bugreports and feature requests
+jabber: bartlab@jabber.ru
+Ukraine, Mariupol
+ 
+Sergey Skrypnic (opium) 
+Website developer, hosting administration
+mail: opium@jabber.com.ua
+Kharkov, Ukraine
+ 
+Boris Pek (tehnick)
+Bug reports, testing
+mail: tehnick-8@mail.ru
+jabber: tehnick@jabber.spbu.ru
+web: http://tehnick-8.narod.ru/
+Ukraine
+ 
+Dmitry Marakasov (amdmi3)
+Ukrainian translation
+mail: amdmi3@amdmi3.ru
+Russia
+ 
+Sergey Kishchenko (tilarids)
+Testing, bug reports
+mail: voidwrk@gmail.com
+Kharkov, Ukraine
+ 
+Kyrill Detinov (Lazy_Kent)
+Testing, bug reports
+mail: lazy.kent@opensuse.org
+Russia
+ 
+Andrey A. Maloshtan 
+Testing, bug reports
+mail: andrey.aleksandrovich@googlemail.com
+Kharkov, Ukraine
+ 

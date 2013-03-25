@@ -21,14 +21,59 @@ import os
 import yaml
 
 D_DATADIR = os.path.join(os.path.dirname(__file__), '../src/q4wine-gui')
+D_TXTDIR = os.path.join(os.path.dirname(__file__), '../')
 
+class AuthrosTxtTemplate:
+    def __init__(self):
+        filename = os.path.join(D_TXTDIR, 'AUTHORS')
+	print("-- Writing %s --\n" % filename)
+	self.header__ = open(filename, 'w')
+	self.header()
+	self.index__=2
 
-class AuthrosTemplate:
+    def close(self):
+        self.header__.close()
+
+    def header(self):
+        self.header__.write("""
+	                      ==BrezBlock==
+
+	                                      Volume 0x00, Issue 0x00
+
+|=-------------------------=[ Introduction ]=----------------------------=|
+
+                "A journey of a thousand miles begins with a single step."
+                                             --Lao-tzu, The Way of Lao-tzu
+                                     Chinese philosopher (604 BC - 531 BC)
+
+Thanks to all people who made this software become avaliable to the public
+Thanks for your hard work, debugging, translating, packaging e.t.c.
+There was done tremendous work. But we did it :)
+
+There are also a lot of people who provide feature requests, bug reports
+and feed backs. Despite the fact that they are not listed in this file,
+their contribution is invaluable.
+
+""")
+
+    def head(self, group):
+        self.header__.write("""
+|=-------------------------=[ %s ]=----------------------------=|
+""" % group)
+
+    def line(self, text=" "):
+        self.header__.write("""
+%s""" % text)
+
+class AuthrosHtmlTemplate:
     def __init__(self):
         filename = os.path.join(D_DATADIR, 'authors.h')
         print("-- Writing %s --\n" % filename)
         self.header__ = open(filename, 'w')
 	self.header()
+
+    def close(self):
+        self.header__.close()
 
     def header(self):
         self.header__.write("""/***************************************************************************
@@ -102,26 +147,39 @@ def generate_authors():
     with open(filename, 'r') as f:
        data = yaml.safe_load(f)
 
-    tmplate = AuthrosTemplate()
+    html_tpl = AuthrosHtmlTemplate()
+    txt_tpl = AuthrosTxtTemplate()
+
     for group, persons in data.iteritems():
         print("-- Parse group T_%s --\n" % group.upper())
-        tmplate.head(group)
+        html_tpl.head(group)
+	txt_tpl.head(group)
         for person in persons:
             nick = ""
             if person.has_key('nick'):
                 nick = u"(%s)" % person['nick']
-            tmplate.line(u"%s %s" % (person['name'], nick))
-            tmplate.line(person['info'])
+            html_tpl.line(u"%s %s" % (person['name'], nick))
+            html_tpl.line(person['info'])
+            txt_tpl.line(u"%s %s" % (person['name'], nick))
+            txt_tpl.line(person['info'])
             if person.has_key('mail'):
-                tmplate.mail_to(person['mail'])
+                html_tpl.mail_to(person['mail'])
+                txt_tpl.line("mail: %s" % person['mail'])
             if person.has_key('jid'):
-                tmplate.mail_to(person['jid'], "Jabber")
+                html_tpl.mail_to(person['jid'], "Jabber")
+                txt_tpl.line("jabber: %s" % person['jid'])
             if person.has_key('web'):
-                tmplate.web(person['web'])
+                html_tpl.web(person['web'])
+                txt_tpl.line("web: %s" % person['web'])
             if person.has_key('location'):
-                tmplate.line(person['location'])
-            tmplate.line()
-        tmplate.footer()
+                html_tpl.line(person['location'])
+                txt_tpl.line(person['location'])
+            html_tpl.line()
+            txt_tpl.line()
+        html_tpl.footer()
+
+    html_tpl.close()
+    txt_tpl.close()
 
     print("-- Done --\n")
 
