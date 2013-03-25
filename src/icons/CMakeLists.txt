@@ -16,6 +16,9 @@ ELSE( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
             install(FILES ${DESKTOP_PIXMAPS} DESTINATION ${PIXMAPS_ENTRY_PATH}/${SIZE}x${SIZE}/apps RENAME q4wine.png)
         ENDIF( RELEASE )
     endforeach()
+    IF( RELEASE )
+    install(FILES q4wine.svg DESTINATION ${PIXMAPS_ENTRY_PATH}/scalable/apps)
+    ENDIF( RELEASE )
 ENDIF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 
 
