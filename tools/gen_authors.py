@@ -47,7 +47,7 @@ class AuthrosTxtTemplate:
                                      Chinese philosopher (604 BC - 531 BC)
 
 Thanks to all people who made this software become avaliable to the public
-Thanks for your hard work, debugging, translating, packaging e.t.c.
+Thanks for your hard work, debugging, translating, packaging etc
 There was done tremendous work. But we did it :)
 
 There are also a lot of people who provide feature requests, bug reports
