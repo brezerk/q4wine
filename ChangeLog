@@ -2,6 +2,7 @@ Version 1.0-r3
  Fixed:
   - "Use single-click to run icons" does not affect icons in "setup" tab [BUG-27];
   - q4wine.desktop value "" for key "Path" in group "Desktop Entry" [BUG-29];
+  - Pre and Post run Icon scripts unusable, if the path contains ")" [BUG-33];
 
  Added:
   - Keyboard navigation for items in "setup" and "icon" tabs;
