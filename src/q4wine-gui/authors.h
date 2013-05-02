@@ -173,6 +173,18 @@
 	    " " \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "Danie Wessels " \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "Afrikaans translation" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:danie.wessels@live.co.za' style='text-decoration: none; color:#5f9ea0;'>danie.wessels@live.co.za</a>" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    " " \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Artem Vorotnikov (skybon)" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
@@ -311,7 +323,7 @@
 	    " " \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Rosva (None)" \
+	    "Rosva " \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Persian Translation" \

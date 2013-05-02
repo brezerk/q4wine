@@ -22,7 +22,7 @@
 #
 
 #
-# Supporter fields are:
+# Supported fields are:
 #
 #        - name: Person's Name
 #          nick: Person's nick                      (optional)
@@ -128,6 +128,10 @@ translations:
           jid: tehnick@jabber.spbu.ru
           location: Ukraine
 
+        - name: Danie Wessels
+          info: Afrikaans translation
+          mail: danie.wessels@live.co.za
+
         - name: Artem Vorotnikov
           nick: skybon
           info: German translation
@@ -179,7 +183,6 @@ translations:
           info: German translation
 
         - name: Rosva
-          nick:
           info: Persian Translation
           mail: mojsh2020@gmail.com
           web: http://20ss20.wordpress.com
