@@ -129,8 +129,11 @@ translations:
           location: Ukraine
 
         - name: Danie Wessels
+          nick: DanieW
           info: Afrikaans translation
           mail: danie.wessels@live.co.za
+          web: https://sites.google.com/site/pcproblemdoctor/
+          location: Centurion, Gauteng, South Africa
 
         - name: Artem Vorotnikov
           nick: skybon
