@@ -74,5 +74,6 @@
         <file>data/iexplore.png</file>
         <file>data/taskmgr.png</file>
         <file>data/wordpad.png</file>
+        <file>data/save.png</file>
     </qresource>
 </RCC>

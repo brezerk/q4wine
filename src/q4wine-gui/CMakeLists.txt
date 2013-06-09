@@ -12,12 +12,15 @@ SET( Q4WINE_GUI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/run.cpp
     ${CMAKE_SOURCE_DIR}/src/main.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/table.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/versions.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/dir.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/icon.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/image.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/logging.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/versions.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/sysconfig.cpp
     ${CMAKE_SOURCE_DIR}/src/core/registry.cpp
     ${CMAKE_SOURCE_DIR}/src/core/xmlparser.cpp
@@ -33,6 +36,7 @@ SET( Q4WINE_GUI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.cpp
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/versions.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlisttoolbar.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.cpp
@@ -51,12 +55,15 @@ SET ( Q4WINE_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/authors.h
     ${CMAKE_SOURCE_DIR}/src/core/registry.h
     ${CMAKE_SOURCE_DIR}/src/core/database/db.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/table.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/versions.h
     ${CMAKE_SOURCE_DIR}/src/core/database/prefix.h
     ${CMAKE_SOURCE_DIR}/src/core/database/dir.h
     ${CMAKE_SOURCE_DIR}/src/core/database/icon.h
     ${CMAKE_SOURCE_DIR}/src/core/database/last_run_icon.h
     ${CMAKE_SOURCE_DIR}/src/core/database/image.h
     ${CMAKE_SOURCE_DIR}/src/core/database/logging.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/versions.h
     ${CMAKE_SOURCE_DIR}/src/core/database/sysconfig.h
     ${CMAKE_SOURCE_DIR}/src/core/appdbstructs.h
     ${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
@@ -72,6 +79,7 @@ SET ( Q4WINE_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/versions.h
     ${CMAKE_SOURCE_DIR}/config.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlisttoolbar.h
@@ -102,6 +110,7 @@ SET ( Q4WINE_GUI_MOC_HEADEDRS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/wizard.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/versions.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlisttoolbar.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.h
@@ -131,6 +140,7 @@ SET ( Q4WINE_GUI_UI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/ImageManager.ui
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/WineDriveDialog.ui
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/InfoDialog.ui
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/uis/VersionManager.ui
 )
 
 IF (${WITH_WINEAPPDB} MATCHES ON )

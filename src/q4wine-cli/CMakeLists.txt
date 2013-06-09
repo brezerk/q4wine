@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 2.6)
 SET( Q4WINE_CLI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-cli/q4wine-cli.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/table.cpp
+    ${CMAKE_SOURCE_DIR}/src/core/database/versions.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/dir.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/icon.cpp
@@ -15,6 +17,8 @@ SET( Q4WINE_CLI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-cli/q4wine-cli.h
     ${CMAKE_SOURCE_DIR}/config.h
     ${CMAKE_SOURCE_DIR}/src/core/database/db.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/table.h
+    ${CMAKE_SOURCE_DIR}/src/core/database/versions.h
     ${CMAKE_SOURCE_DIR}/src/core/database/prefix.h
     ${CMAKE_SOURCE_DIR}/src/core/database/dir.h
     ${CMAKE_SOURCE_DIR}/src/core/database/icon.h

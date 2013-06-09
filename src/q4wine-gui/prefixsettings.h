@@ -32,6 +32,9 @@
 #include "src/core/database/prefix.h"
 #include "src/core/database/icon.h"
 #include "src/core/database/dir.h"
+#include "src/core/database/versions.h"
+
+#include "src/q4wine-gui/versions.h"
 #ifndef _OS_DARWIN_
 #include "sysmenu.h"
 #endif
@@ -72,7 +75,7 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
         /*!
          * Prefix id, and name
          */
-        QString prefix_id, prefix_name;
+        QString prefix_id, prefix_name, version_name;
 
         //! Database prefix class defenition.
         Prefix db_prefix;
@@ -88,6 +91,8 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
         std::auto_ptr<corelib> CoreLib;
 
         bool addNew;
+
+        void getVersionsList();
 
     private slots:
         /*!
@@ -114,7 +119,15 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
          * \brief Set default path on prefix creation
          */
         void setDefPath(QString prefix_name);
+        void setVersion(QString version_name);
 
+        void cmdClnWineBin_Click();
+        void cmdClnWineServerBin_Click();
+        void cmdClnWineLoaderBin_Click();
+        void cmdClnWineLibs_Click();
+        void cmdAddVersion_Click();
+
+        void comboVersionList_Change(const QString & text);
 };
 
 #endif

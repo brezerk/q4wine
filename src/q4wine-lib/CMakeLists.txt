@@ -30,6 +30,7 @@ INCLUDE_DIRECTORIES( ${Q4WINE_HEADERS_DIR} ${CMAKE_BINARY_DIR} )
 SET( Q4WINE_LIB_SOURCES
         ${CMAKE_SOURCE_DIR}/src/q4wine-lib/q4wine-lib.cpp
         ${CMAKE_SOURCE_DIR}/src/core/database/db.cpp
+        ${CMAKE_SOURCE_DIR}/src/core/database/table.cpp
         ${CMAKE_SOURCE_DIR}/src/core/database/prefix.cpp
         ${CMAKE_SOURCE_DIR}/src/core/database/dir.cpp
         ${CMAKE_SOURCE_DIR}/src/core/database/icon.cpp
@@ -41,6 +42,7 @@ SET( Q4WINE_LIB_HEADERS
         ${CMAKE_SOURCE_DIR}/src/q4wine-lib/q4wine-lib.h
         ${CMAKE_SOURCE_DIR}/config.h
         ${CMAKE_SOURCE_DIR}/src/core/database/db.h
+        ${CMAKE_SOURCE_DIR}/src/core/database/table.h
         ${CMAKE_SOURCE_DIR}/src/core/database/prefix.h
         ${CMAKE_SOURCE_DIR}/src/core/database/dir.h
         ${CMAKE_SOURCE_DIR}/src/core/database/icon.h

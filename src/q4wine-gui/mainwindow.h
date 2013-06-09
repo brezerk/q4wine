@@ -76,6 +76,7 @@
 #include "run.h"
 #include "infodialog.h"
 #include "fakedrivesettings.h"
+#include "src/q4wine-gui/versions.h"
 
 #include "winetricks.h"
 
@@ -140,6 +141,7 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
         void mainAppDB_Click(void);
         void mainHelpThisTab_Click(void);
         void mainImportWineIcons_Click(void);
+        void mainVersionManager_Click();
 
         void newConnection();
 

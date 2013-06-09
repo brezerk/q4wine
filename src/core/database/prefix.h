@@ -91,7 +91,7 @@ class Prefix
       * \param  cdrom_mount    A cdrom mount directory.
       * \return Return true on success.
       */
-      bool addPrefix(const QString prefix_name, const QString prefix_path="", const QString wine_exec="", const QString wine_server="", const QString wine_loader="", const QString wine_dllpath="", const QString cdrom_mount="", const QString arch="", const QString mountpoint_windrive="", const QString run_string="") const;
+      bool addPrefix(const QString prefix_name, const QString prefix_path="", const QString wine_exec="", const QString wine_server="", const QString wine_loader="", const QString wine_dllpath="", const QString cdrom_mount="", const QString arch="", const QString mountpoint_windrive="", const QString run_string="", const QString version_id="") const;
 
      /*! \brief This function check is reccord exists by prefix name or not.
       *
@@ -113,7 +113,7 @@ class Prefix
       * \param  mountpoint_windrive The windows drive to use for this mountpoint
       * \return Return true on success.
       */
-          bool updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString old_prefix_name, const QString arch, const QString mountpoint_windrive, const QString run_string) const;
+      bool updatePrefix(const QString prefix_name, const QString prefix_path, const QString wine_exec, const QString wine_server, const QString wine_loader, const QString wine_dllpath, const QString cdrom_mount, const QString old_prefix_name, const QString arch, const QString mountpoint_windrive, const QString run_string, const QString version_id) const;
 
       void fixPrefixPath();
 protected:

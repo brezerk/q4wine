@@ -185,6 +185,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
     connect(menuHelpThisTab, SIGNAL(triggered()), this, SLOT(mainHelpThisTab_Click()));
     connect(mainImportWineIcons, SIGNAL(triggered()), this, SLOT(mainImportWineIcons_Click()));
+    connect(mainVersionManager, SIGNAL(triggered()), this, SLOT(mainVersionManager_Click()));
 
     CoreLib->runAutostart();
 
@@ -204,11 +205,11 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     tabAppDBLayout->addWidget(appdbWidget.release());
 #endif
 
-        if (!run_binary.isEmpty())
-            messageReceived(run_binary);
+    if (!run_binary.isEmpty())
+        messageReceived(run_binary);
 
-        if (!trayIcon->isVisible())
-            show();
+    if (!trayIcon->isVisible())
+        show();
 
     return;
 }
@@ -951,6 +952,12 @@ void MainWindow::mainImportWineIcons_Click(){
 
     updateDtabaseConnectedItems();
     return;
+}
+
+void MainWindow::mainVersionManager_Click(){
+    VersionManager* vers = new VersionManager();
+    vers->exec();
+    delete(vers);
 }
 
 void MainWindow::showNotifycation(const QString header, const QString message){

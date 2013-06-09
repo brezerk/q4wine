@@ -410,13 +410,15 @@ void Wizard::nextWizardPage(){
                 case 8:
             QSettings settings(APP_SHORT_NAME, "default");
             settings.setValue("configure", "yes");
-            settings.beginGroup("wine");
-            settings.setValue("WineBin", txtWineBin->text());
-            settings.setValue("ServerBin", txtWineServerBin->text());
-            settings.setValue("LoaderBin", txtWineLoaderBin->text());
-            settings.setValue("WineLibs32", txtWineDllPath->text());
-            settings.setValue("WineLibs64", txtWineDllPath64->text());
-            settings.endGroup();
+            Version vers;
+            vers.name_ = "Default";
+            vers.load();
+            vers.wine_exec_ = txtWineBin->text();
+            vers.wine_loader_ = txtWineLoaderBin->text();
+            vers.wine_server_ = txtWineServerBin->text();
+            vers.wine_dllpath32_ = txtWineDllPath->text();
+            vers.wine_dllpath64_ = txtWineDllPath64->text();
+            vers.save();
             settings.beginGroup("system");
             settings.setValue("tar", txtTarBin->text());
             settings.setValue("mount", txtMountBin->text());

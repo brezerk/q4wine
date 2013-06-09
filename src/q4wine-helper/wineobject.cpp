@@ -40,23 +40,26 @@ WineObject::WineObject(QObject *parent) : QObject(parent)
     this->prefixId = 0;
     this->useConsole=false;
     this->logEnabled = CoreLib->getSetting("logging", "enable", false, 1).toBool();
-
     return;
 }
 
-void WineObject::setPrefix(QString prefix){
+bool WineObject::setPrefix(QString prefix){
     QHash<QString, QString> prefix_info = db_prefix.getByName(prefix);
 
     this->prefixId=prefix_info.value("id").toInt();
     this->prefixName=prefix_info.value("name");
-    this->prefixBinary=CoreLib->getStrictEscapeString(prefix_info.value("bin"));
-    this->prefixDllPath=CoreLib->getStrictEscapeString(prefix_info.value("libs"));
-    this->prefixLoader=CoreLib->getStrictEscapeString(prefix_info.value("loader"));
-    this->prefixPath=CoreLib->getStrictEscapeString(prefix_info.value("path"));
-    this->prefixServer=CoreLib->getStrictEscapeString(prefix_info.value("server"));
     this->prefixArch=prefix_info.value("arch");
     this->prefixRunString=prefix_info.value("run_string");
-    return;
+    this->prefixPath=CoreLib->getStrictEscapeString(prefix_info.value("path"));
+    if (!prefix_info.value("bin").isEmpty()){
+        this->prefixBinary=CoreLib->getStrictEscapeString(prefix_info.value("bin"));
+        this->prefixDllPath=CoreLib->getStrictEscapeString(prefix_info.value("libs"));
+        this->prefixLoader=CoreLib->getStrictEscapeString(prefix_info.value("loader"));
+        this->prefixServer=CoreLib->getStrictEscapeString(prefix_info.value("server"));
+    } else {
+        this->versionId = prefix_info.value("version_id");
+    }
+    return true;
 }
 
 void WineObject::setProgramBinary(QString binary){
@@ -66,7 +69,7 @@ void WineObject::setProgramBinary(QString binary){
 }
 
 void WineObject::setProgramArgs(QString args){
-        this->programArgs=args;
+    this->programArgs=args;
     return;
 }
 
@@ -129,6 +132,31 @@ QString WineObject::createEnvString(){
     if (this->prefixName.isEmpty())
         this->setPrefix("Default");
 
+    if (!this->versionId.isEmpty()){
+        this->prefixBinary.clear();
+        this->prefixDllPath.clear();
+        this->prefixLoader.clear();
+        this->prefixServer.clear();
+        Version vers;
+        vers.id_ = this->versionId;
+        if (vers.load()){
+            this->prefixBinary = vers.wine_exec_;
+            this->prefixLoader = vers.wine_loader_;
+            this->prefixServer = vers.wine_server_;
+            if (this->prefixArch == "win32"){
+                this->prefixDllPath = vers.wine_dllpath32_;
+            } else if (this->prefixArch == "win64"){
+                this->prefixDllPath = vers.wine_dllpath64_;
+            } else {
+                if (vers.wine_dllpath64_.isEmpty()){
+                    this->prefixDllPath = vers.wine_dllpath32_;
+                } else {
+                    this->prefixDllPath = vers.wine_dllpath64_;
+                }
+            }
+        }
+    }
+
     env.append(QString(" WINEPREFIX='%1' ").arg(this->prefixPath));
     env.append(QString(" WINESERVER='%1' ").arg(this->prefixServer));
     env.append(QString(" WINELOADER='%1' ").arg(this->prefixLoader));
@@ -166,7 +194,7 @@ int WineObject::runSys(){
     }
 
     QString env = this->createEnvString();
-    QString stdout, app_stdout;
+    QString app_stdout;
 
     QTextCodec *codec = QTextCodec::codecForName(CoreLib->getLocale().toAscii());
 
@@ -265,7 +293,21 @@ int WineObject::runSys(){
     qDebug()<<"Template string: "<<this->prefixRunString;
     qDebug()<<"Exec string    : "<<run_string;
 #endif
-    stdout.append("Exec string:");
+
+    stdout.append("Exec string:\n");
+    stdout.append(run_string.trimmed());
+    stdout.append("\n");
+
+    if (this->prefixBinary.isEmpty() or this->prefixDllPath.isEmpty() or \
+        this->prefixLoader.isEmpty() or this->prefixServer.isEmpty()){
+        stdout.append("Exit code:");
+        stdout.append("\n");
+        stdout.append(QString("%1").arg(10));
+        stdout.append("\n");
+        stdout.append("App STDOUT and STDERR output:\n");
+        stdout.append("Can't load version information. Check prefix and/or version settings.");
+        return 10;
+    }
 
     fp = popen(codec->fromUnicode(run_string).data(), "r");
     if (fp == NULL){
@@ -275,10 +317,7 @@ int WineObject::runSys(){
             this->sendMessage(QString("console/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
         } else {
             this->sendMessage(QString("start/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
-        }    stdout.append("\n");
-        stdout.append(run_string.trimmed());
-        stdout.append("\n");
-
+        }
     }
     /* Handle error */;
 
@@ -302,28 +341,19 @@ int WineObject::runSys(){
     stdout.append("\n");
     stdout.append(app_stdout);
 
-    if (!this->useConsole){
-        if (logEnabled){
-            uint date = QDateTime::currentDateTime ().toTime_t();
-            db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
-        }
-        this->sendMessage(QString("finish/%1/%2/%3").arg(this->programBinaryName).arg(this->prefixName).arg(status));
-    } else {
-        if (status!=0){
-            if (this->logEnabled){
-                uint date = QDateTime::currentDateTime ().toTime_t();
-                db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
-            }
-            this->sendMessage(QString("console_error/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
-        }
-    }
-
     if (status>0){
         QTextStream QErr(stderr);
         QErr<<stdout;
         status=-1;
     }
 
+    return status;
+}
+
+int WineObject::run(){
+    int status;
+    status = runSys();
+    logStdout(status);
     return status;
 }
 
@@ -371,6 +401,24 @@ int WineObject::runScript(QString script_path){
         this->sendMessage(QString("finish/%1/%2/%3").arg(this->programBinaryName).arg(this->prefixName).arg(status));
     }
     return status;
+}
+
+void WineObject::logStdout(int status){
+    if (!this->useConsole){
+        if (logEnabled){
+            uint date = QDateTime::currentDateTime ().toTime_t();
+            db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
+        }
+        this->sendMessage(QString("finish/%1/%2/%3").arg(this->programBinaryName).arg(this->prefixName).arg(status));
+    } else {
+        if (status!=0){
+            if (this->logEnabled){
+                uint date = QDateTime::currentDateTime ().toTime_t();
+                db_logging.addLogRecord(this->prefixId, this->programBinaryName, status, stdout, date);
+            }
+            this->sendMessage(QString("console_error/%1/%2").arg(this->programBinaryName).arg(this->prefixName));
+        }
+    }
 }
 
 void WineObject::sendMessage(QString message){

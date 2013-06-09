@@ -58,7 +58,7 @@ bool DataBase::checkDb(){
     QTextStream QErr(stderr);
 
     QStringList tables;
-    tables << "prefix" << "dir" << "icon" << "images" << "last_run_icon" << "logging" << "providers" << "sysconfig";
+    tables << "prefix" << "dir" << "icon" << "images" << "last_run_icon" << "logging" << "providers" << "sysconfig" << "versions";
 
     QSqlDatabase db = QSqlDatabase::database();
 
@@ -149,6 +149,27 @@ bool DataBase::checkDb(){
                 query.bindValue(":desc", "%REFRESH_WINETRICKS_DESC%");
                 if (!query.exec())
                     return false;
+            } else if (table == "versions"){
+                if(!query.exec("CREATE TABLE versions (wine_dllpath32 TEXT, wine_dllpath64 TEXT, wine_loader TEXT, wine_server TEXT, wine_exec TEXT, id INTEGER PRIMARY KEY, name TEXT);"))
+                    return false;
+
+                // Creating default version reccord
+                Version vers;
+                vers.name_ = "Default";
+
+                // Use previous data is any
+                QSettings settings(APP_SHORT_NAME, "default");
+                if (settings.value("configure", "no") == "yes"){
+                    settings.beginGroup("wine");
+                    vers.wine_exec_ = settings.value("WineBin", QString()).toString();
+                    vers.wine_server_ = settings.value("ServerBin", QString()).toString();
+                    vers.wine_loader_ = settings.value("LoaderBin", QString()).toString();
+                    vers.wine_dllpath32_ = settings.value("WineLibs32", QString()).toString();
+                    vers.wine_dllpath64_ = settings.value("WineLibs64", QString()).toString();
+                    settings.endGroup();
+                }
+                if (!vers.save())
+                    return false;
             }
         }
     }
@@ -203,6 +224,20 @@ bool DataBase::fixup(){
     if (!query.exec("SELECT run_string FROM prefix")){
         if (!query.exec("ALTER TABLE prefix ADD COLUMN run_string TEXT")){
             qDebug()<<"[EE] Cannot alter prefix table";
+            return false;
+        }
+    }
+    if (!query.exec("SELECT version_id FROM prefix")){
+        if (!query.exec("ALTER TABLE prefix ADD COLUMN version_id INTEGER")){
+            qDebug()<<"[EE] Cannot alter prefix table";
+            return false;
+        }
+        if (!query.exec("UPDATE prefix SET version_id=NULL")){
+            qDebug()<<"[EE] Cannot update prefix table";
+            return false;
+        }
+        if (!query.exec("UPDATE prefix SET version_id=1 WHERE name='Default'")){
+            qDebug()<<"[EE] Cannot update prefix table";
             return false;
         }
     }

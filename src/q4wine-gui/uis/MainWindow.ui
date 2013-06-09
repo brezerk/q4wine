@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>589</width>
-    <height>501</height>
+    <width>587</width>
+    <height>499</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -188,7 +188,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>589</width>
+     <width>587</width>
      <height>24</height>
     </rect>
    </property>
@@ -245,6 +245,7 @@
     <addaction name="mainImportWineIcons"/>
     <addaction name="separator"/>
     <addaction name="mainImageManage"/>
+    <addaction name="mainVersionManager"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menuTools"/>
@@ -422,6 +423,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="mainVersionManager">
+   <property name="text">
+    <string>Version Manager</string>
    </property>
   </action>
  </widget>

@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey                                 *
+ *   Copyright (C) 2008, 2009, 2010, 2011 by Malakhov Alexey                           *
  *   brezerk@gmail.com                                                     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -17,59 +17,40 @@
  *                                                                         *
  ***************************************************************************/
 
-/*!
- * \defgroup database Q4Wine database core
- * \brief Database core package provides general database functions for Q4Wine.
- */
+#ifndef VERSIONS_H
+#define VERSIONS_H
 
-#ifndef DB_H
-#define DB_H
+#include <config.h>
+#include "core/database/table.h"
 
-#include <QSqlDatabase>
-#include <QSqlRecord>
+#include <memory>
+
+#include <QList>
+#include <QString>
 #include <QStringList>
 #include <QSqlQuery>
 #include <QSqlError>
-#include <QTextStream>
-#include <QString>
-#include <QVariant>
 #include <QDebug>
 #include <QDir>
-#include <QObject>
+#include <QVariant>
 #include <QSettings>
 
-#include "config.h"
-#include "core/database/versions.h"
-
-/*!
- * \class DataBase
- * \ingroup database
- * \brief This class provide general database functions for q4wine.
- *
- * It is not useful by itself, but it creates database connections
- * and provides basic database check.
- *
- */
-class DataBase : public QObject
-{
-    Q_OBJECT
+class Version : public Table {
 public:
-    //! Constructor
-    DataBase(QObject * parent = 0);
+    Version();
+    QString id_;
+    QString name_;
+    QString wine_exec_;
+    QString wine_server_;
+    QString wine_loader_;
+    QString wine_dllpath32_;
+    QString wine_dllpath64_;
 
-    /*! \brief This function tries to check database structure.
-	*
-	* It gets process values: pid, name, nice priority and WINEPREFIX environment variable.
-	* \param  tables  List of tables name.
-	* \return Return true on success otherwise false.
-	*/
-    bool checkDb();
-
-    /*! \brief This function close database connection.
-	*/
-    void close();
-    bool fixup();
-
+    bool load();
+    bool save();
+    bool remove();
+    void clear();
+    QList<Version> load_all(QString filter = "");
 };
 
-#endif // DB_H
+#endif // VERSIONS_H

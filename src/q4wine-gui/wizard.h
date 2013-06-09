@@ -39,6 +39,7 @@
 #include "src/core/database/prefix.h"
 #include "src/core/database/icon.h"
 #include "src/core/database/dir.h"
+#include "src/core/database/versions.h"
 #ifndef _OS_DARWIN_
 #include "sysmenu.h"
 #endif

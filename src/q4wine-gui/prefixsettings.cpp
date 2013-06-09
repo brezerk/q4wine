@@ -50,25 +50,20 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
     prefix_id=result.value("id");
 
+    Version ver;
+    ver.id_ = result.value("version_id");
+    ver.load();
+    version_name=ver.name_;
+
     txtMountPoint->setText(result.value("mount"));
 
     connect(txtMountPoint, SIGNAL(editingFinished()), this, SLOT(getWineCdromLetter()));
 
     if (prefix_name=="Default"){
-        txtPrefixName->setEnabled(FALSE);
-        txtPrefixPath->setEnabled(FALSE);
+        txtPrefixName->setEnabled(false);
+        txtPrefixPath->setEnabled(false);
 
-        cmdGetPrefixPath->setEnabled(FALSE);
-
-        txtWineLibs->setEnabled(FALSE);
-        txtWineLoaderBin->setEnabled(FALSE);
-        txtWineServerBin->setEnabled(FALSE);
-        txtWineBin->setEnabled(FALSE);
-
-        cmdGetWineLibs->setEnabled(FALSE);
-        cmdGetWineLoaderBin->setEnabled(FALSE);
-        cmdGetWineServerBin->setEnabled(FALSE);
-        cmdGetWineBin->setEnabled(FALSE);
+        cmdGetPrefixPath->setEnabled(false);
 
         txtWineLibs->setText("");
         txtWineLoaderBin->setText("");
@@ -76,15 +71,23 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
         txtWineBin->setText("");
     } else {
         cmdGetPrefixPath->installEventFilter(this);
-        cmdGetWineBin->installEventFilter(this);
-        cmdGetWineServerBin->installEventFilter(this);
-        cmdGetWineLoaderBin->installEventFilter(this);
-        cmdGetWineLibs->installEventFilter(this);
 
         txtWineLibs->setText(result.value("libs"));
         txtWineLoaderBin->setText(result.value("loader"));
         txtWineServerBin->setText(result.value("server"));
         txtWineBin->setText(result.value("bin"));
+
+        if (!result.value("libs").isEmpty())
+            cmdClnWineLibs->setEnabled(true);
+
+        if (!result.value("loader").isEmpty())
+            cmdClnWineLoaderBin->setEnabled(true);
+
+        if (!result.value("server").isEmpty())
+            cmdClnWineServerBin->setEnabled(true);
+
+        if (!result.value("bin").isEmpty())
+            cmdClnWineBin->setEnabled(true);
     }
 
     if (!result.value("arch").isEmpty())
@@ -103,7 +106,16 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
     connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
+    connect(cmdClnWineBin, SIGNAL(clicked()), this, SLOT(cmdClnWineBin_Click()));
+    connect(cmdClnWineServerBin, SIGNAL(clicked()), this, SLOT(cmdClnWineServerBin_Click()));
+    connect(cmdClnWineLoaderBin, SIGNAL(clicked()), this, SLOT(cmdClnWineLoaderBin_Click()));
+    connect(cmdClnWineLibs, SIGNAL(clicked()), this, SLOT(cmdClnWineLibs_Click()));
+
+    connect(comboVersionList, SIGNAL(currentIndexChanged(const QString)), this, SLOT(comboVersionList_Change(const QString)));
+    connect(cmdAddVersion, SIGNAL(clicked()), this, SLOT(cmdAddVersion_Click()));
        // comboArchList->setEnabled(false);
+
+    getVersionsList();
 
     cmdGetMountPoint->installEventFilter(this);
 
@@ -139,10 +151,6 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent,
     this->loadThemeIcons();
 
     cmdGetPrefixPath->installEventFilter(this);
-    cmdGetWineBin->installEventFilter(this);
-    cmdGetWineServerBin->installEventFilter(this);
-    cmdGetWineLoaderBin->installEventFilter(this);
-    cmdGetWineLibs->installEventFilter(this);
     cmdGetMountPoint->installEventFilter(this);
 
     txtRunString->setText(RUN_STRING_TEMPLATE);
@@ -151,7 +159,18 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent,
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
     connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
+    connect(cmdClnWineBin, SIGNAL(clicked()), this, SLOT(cmdClnWineBin_Click()));
+    connect(cmdClnWineServerBin, SIGNAL(clicked()), this, SLOT(cmdClnWineServerBin_Click()));
+    connect(cmdClnWineLoaderBin, SIGNAL(clicked()), this, SLOT(cmdClnWineLoaderBin_Click()));
+    connect(cmdClnWineLibs, SIGNAL(clicked()), this, SLOT(cmdClnWineLibs_Click()));
+
     connect(txtPrefixName, SIGNAL(textChanged(QString)), this, SLOT(setDefPath(QString)));
+
+    connect(comboVersionList, SIGNAL(currentIndexChanged(const QString)), this, SLOT(comboVersionList_Change(const QString)));
+    connect(cmdAddVersion, SIGNAL(clicked()), this, SLOT(cmdAddVersion_Click()));
+       // comboArchList->setEnabled(false);
+
+    getVersionsList();
 
     txtPrefixName->setFocus(Qt::ActiveWindowFocusReason);
     return;
@@ -164,12 +183,14 @@ QString PrefixSettings::getPrefixName(){
 void PrefixSettings::loadThemeIcons(){
     lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
 
-    cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineLibs->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdClnWineBin->setIcon(CoreLib->loadIcon("data/kill.png"));
+    cmdClnWineServerBin->setIcon(CoreLib->loadIcon("data/kill.png"));
+    cmdClnWineLoaderBin->setIcon(CoreLib->loadIcon("data/kill.png"));
+    cmdClnWineLibs->setIcon(CoreLib->loadIcon("data/kill.png"));
     cmdGetMountPoint->setIcon(CoreLib->loadIcon("data/folder.png"));
     cmdGetPrefixPath->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdAddVersion->setIcon(CoreLib->loadIcon("data/add.png"));
+
     return;
 }
 
@@ -197,6 +218,11 @@ void PrefixSettings::cmdOk_Click(){
         txtPrefixPath->setText(path);
     }
 
+    Version ver;
+    ver.name_ = comboVersionList->currentText();
+    if (!ver.load())
+        return;
+
     if (this->addNew){
 
         if (QDir(path).exists()){
@@ -204,7 +230,7 @@ void PrefixSettings::cmdOk_Click(){
                 return;
         }
 
-        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->text()))
+        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->text(), ver.id_))
             reject();
 
         CoreLib->createPrefixDBStructure(txtPrefixName->text());
@@ -213,7 +239,7 @@ void PrefixSettings::cmdOk_Click(){
             sys_menu.generateSystemMenu(txtPrefixName->text());
 #endif
     } else {
-        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), this->prefix_name, comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->text()))
+        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), this->prefix_name, comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->text(), ver.id_))
             reject();
 #ifndef _OS_DARWIN_
         if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
@@ -293,7 +319,7 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
         }
     }
 
-    return FALSE;
+    return false;
 }
 
 void PrefixSettings::cmdHelp_Click(){
@@ -331,4 +357,51 @@ void PrefixSettings::setDefPath(QString prefix_name){
 
         this->txtPrefixPath->setText(path);
     }
+}
+
+void PrefixSettings::cmdClnWineBin_Click(){
+    txtWineBin->clear();
+}
+
+void PrefixSettings::cmdClnWineServerBin_Click(){
+    txtWineServerBin->clear();
+}
+
+void PrefixSettings::cmdClnWineLoaderBin_Click(){
+    txtWineLoaderBin->clear();
+}
+
+void PrefixSettings::cmdClnWineLibs_Click(){
+    txtWineLibs->clear();
+}
+
+void PrefixSettings::cmdAddVersion_Click(){
+    VersionManager* vers = new VersionManager();
+    if (!comboVersionList->currentText().isEmpty())
+        vers->setVersionFocus(comboVersionList->currentText());
+    connect(vers, SIGNAL(setVersion(QString)), this, SLOT(setVersion(QString)));
+    vers->exec();
+    disconnect(this, SLOT(setVersion(QString)));
+    delete(vers);
+
+}
+
+void PrefixSettings::getVersionsList(){
+    comboVersionList->clear();
+    Version ver;
+    QList<Version> list = ver.load_all();
+
+    for (int i = 0; i < list.size(); ++i)
+        comboVersionList->addItem(list.at(i).name_);
+
+    comboVersionList->setCurrentIndex(comboVersionList->findText(version_name));
+}
+
+void PrefixSettings::comboVersionList_Change(const QString & text){
+    //version_name = text;
+}
+
+void PrefixSettings::setVersion(QString version_name){
+    this->version_name = version_name;
+    getVersionsList();
 }

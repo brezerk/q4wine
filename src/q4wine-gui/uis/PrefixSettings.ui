@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>686</width>
-    <height>426</height>
+    <width>670</width>
+    <height>432</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -204,7 +204,7 @@
       <item>
        <widget class="QTabWidget" name="twbGeneral">
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_4">
          <attribute name="title">
@@ -565,19 +565,13 @@
          <attribute name="title">
           <string>Wine settings</string>
          </attribute>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <property name="margin">
-           <number>3</number>
-          </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
            <widget class="QGroupBox" name="groupBox">
             <property name="title">
              <string>Wine settings</string>
             </property>
-            <layout class="QVBoxLayout">
-             <property name="margin">
-              <number>3</number>
-             </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
               <widget class="QLabel" name="label_4">
                <property name="sizePolicy">
@@ -587,8 +581,84 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>If you wish to use different Wine versions, you may wish to set custom Wine paths here.
-Note: leave it blank for default.</string>
+                <string>If you wish to use different Wine versions, you may wish to select here one.</string>
+               </property>
+               <property name="scaledContents">
+                <bool>false</bool>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_20" native="true">
+               <layout class="QHBoxLayout" name="_4">
+                <property name="margin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_20">
+                  <property name="minimumSize">
+                   <size>
+                    <width>140</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>140</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Version:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="comboVersionList">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="cmdAddVersion">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>16</width>
+                    <height>16</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="line_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_6">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Options below are deprecated, please, use version manager instead:</string>
                </property>
                <property name="scaledContents">
                 <bool>false</bool>
@@ -624,10 +694,17 @@ Note: leave it blank for default.</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtWineBin"/>
+                 <widget class="QLineEdit" name="txtWineBin">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetWineBin">
+                 <widget class="QPushButton" name="cmdClnWineBin">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>
@@ -668,10 +745,17 @@ Note: leave it blank for default.</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtWineServerBin"/>
+                 <widget class="QLineEdit" name="txtWineServerBin">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetWineServerBin">
+                 <widget class="QPushButton" name="cmdClnWineServerBin">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>
@@ -712,10 +796,17 @@ Note: leave it blank for default.</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtWineLoaderBin"/>
+                 <widget class="QLineEdit" name="txtWineLoaderBin">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetWineLoaderBin">
+                 <widget class="QPushButton" name="cmdClnWineLoaderBin">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>
@@ -756,10 +847,17 @@ Note: leave it blank for default.</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txtWineLibs"/>
+                 <widget class="QLineEdit" name="txtWineLibs">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="cmdGetWineLibs">
+                 <widget class="QPushButton" name="cmdClnWineLibs">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>

@@ -29,6 +29,7 @@
 
 #include "prefix.h"
 #include "logging.h"
+#include "core/database/versions.h"
 
 #include "q4wine-lib.h"
 
@@ -52,7 +53,7 @@ Q_OBJECT
 public:
     explicit WineObject(QObject *parent = 0);
 
-    void setPrefix(QString prefix);
+    bool setPrefix(QString prefix);
 
     void setProgramBinary(QString binary);
     void setProgramArgs(QString args);
@@ -68,12 +69,12 @@ public:
 
     void setUseConsole(int console);
     void setOverrideDll(QString dll_list);
-
-    int runSys();
-
-    int runScript(QString script_path);
+    int run();
 
 private:
+    int runSys();
+    int runScript(QString script_path);
+    void logStdout(int status);
 
     //! This is need for libq4wine-core.so import;
     typedef void *CoreLibPrototype (bool);
@@ -87,11 +88,13 @@ private:
     Prefix db_prefix;
     Logging db_logging;
 
+    QString stdout;
     QString prefixName;
     QString prefixPath;
     QString prefixArch;
     QString prefixDllPath;
     int prefixId;
+    QString versionId;
     QString prefixLoader;
     QString prefixServer;
     QString prefixBinary;
