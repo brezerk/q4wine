@@ -46,12 +46,12 @@ class AuthrosTxtTemplate:
                                              --Lao-tzu, The Way of Lao-tzu
                                      Chinese philosopher (604 BC - 531 BC)
 
-Thanks to all people who made this software become avaliable to the public
-Thanks for your hard work, debugging, translating, packaging etc
-There was done tremendous work. But we did it :)
+Thank you all who made this software become available to the public
+Thank you for your hard work, debugging, translations, packaging and so forth.
+Tremendous work was done. But we were successful :)
 
 There are also a lot of people who provide feature requests, bug reports
-and feed backs. Despite the fact that they are not listed in this file,
+and feedback. Despite the fact that they are not listed in this file,
 their contribution is invaluable.
 
 """)

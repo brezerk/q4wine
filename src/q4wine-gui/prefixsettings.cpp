@@ -225,9 +225,18 @@ void PrefixSettings::cmdOk_Click(){
 
     if (this->addNew){
 
-        if (QDir(path).exists()){
+        QDir directory(path);
+        if (directory.exists()){
             if(QMessageBox::warning(this, tr("Warning"), tr("Directory \"%1\" already exists. Do you wish to use it anyway?").arg(path), QMessageBox::Yes, QMessageBox::No)==QMessageBox::No)
                 return;
+        } else {
+            // In case of non default arch, wine will fail to run wine programs from existent
+            // empty prefix directory.
+            // So we will try to create parent folders, but not prefix dir itself.
+            if (!directory.mkpath("./../")) {
+                QMessageBox::critical(this, tr("Error"), tr("The directory \"%1\" could not be created.").arg(path), QMessageBox::Ok);
+                return;
+            }
         }
 
         if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->text(), ver.id_))

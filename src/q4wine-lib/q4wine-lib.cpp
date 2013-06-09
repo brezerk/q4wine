@@ -1149,7 +1149,7 @@ QStringList corelib::getCdromDevices(void) const{
 
             if (!execObj.override.isEmpty()){
                 args.append("--override");
-                args.append(QString("\"%1\"").arg(execObj.override));
+                args.append(QString("'%1'").arg(execObj.override));
             }
 
             if (execObj.useconsole == "1"){
@@ -1184,12 +1184,12 @@ QStringList corelib::getCdromDevices(void) const{
 
             if (!execObj.prerun.isEmpty()){
                 args.append("--prerun");
-                args.append(QString("\"%1\"").arg(execObj.prerun));
+                args.append(QString("'%1'").arg(execObj.prerun));
             }
 
             if (!execObj.postrun.isEmpty()){
                 args.append("--postrun");
-                args.append(QString("\"%1\"").arg(execObj.postrun));
+                args.append(QString("'%1'").arg(execObj.postrun));
             }
 
             QString wrkdir = execObj.wrkdir;

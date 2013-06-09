@@ -22,7 +22,7 @@
 #
 
 #
-# Supporter fields are:
+# Supported fields are:
 #
 #        - name: Person's Name
 #          nick: Person's nick                      (optional)
@@ -53,6 +53,7 @@ developers:
           nick: skybon
           info: General fixes
           mail: skybon@gmail.com
+          jid: vorot93@jabber.ru
           web: https://launchpad.net/~skybon
           location: Moscow, Russia 
 
@@ -119,11 +120,6 @@ translations:
           jid: brezerk@jabber.com.ua
           location: Kiev, Ukraine
 
-        - name: Artem Vorotnikov
-          info: German translation
-          mail: vorot93@yandex.ru
-          web: https://launchpad.net/~skybon
-
         - name: Boris Pek
           nick: tehnick
           info: Russian translation
@@ -131,6 +127,21 @@ translations:
           web: http://tehnick-8.narod.ru/
           jid: tehnick@jabber.spbu.ru
           location: Ukraine
+
+        - name: Danie Wessels
+          nick: DanieW
+          info: Afrikaans translation
+          mail: danie.wessels@live.co.za
+          web: https://sites.google.com/site/pcproblemdoctor/
+          location: Centurion, Gauteng, South Africa
+
+        - name: Artem Vorotnikov
+          nick: skybon
+          info: German translation
+          mail: skybon@gmail.com
+          jid: vorot93@jabber.ru
+          web: https://launchpad.net/~skybon
+          location: Moscow, Russia 
 
         - name: Carlos Ignacio Ruax
           info: Spanish translation
@@ -175,7 +186,6 @@ translations:
           info: German translation
 
         - name: Rosva
-          nick:
           info: Persian Translation
           mail: mojsh2020@gmail.com
           web: http://20ss20.wordpress.com
