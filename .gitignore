@@ -1,11 +1,14 @@
+latex/
 build/
 qt-creator/
 qtcreator-build/
 *~
 CMakeFiles/
 CMakeCache.txt
+CMakeLists.txt.user
 Makefile
 cmake_install.cmake
+install_manifest.txt
 *.qm
 *.o
 *.so
