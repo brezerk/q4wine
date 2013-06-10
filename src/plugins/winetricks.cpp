@@ -1,8 +1,7 @@
 /***************************************************************************
  *   Copyright (C) 2009 by Pavel Zinin (pashazz)                              *
  *   pzinin@gmail.com                                                     *
- *   Copyright (C) 2010 by Malakhov Alexey                           *
- *   brezerk@gmail.com                                                     *
+ *   Copyright (C) 2008-2013 by Alexey S. Malakhov <brezerk@gmail.com>     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *

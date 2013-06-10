@@ -26,7 +26,7 @@ option(LINGUAS "Language list" "en_us;ru_ru;uk_ua;pt_br;es_es;it_it;cs_cz;he_il;
 option(LIBS_ENTRY_PATH "Destination directory for q4wine-core library")
 
 MESSAGE("\n * Utility for Wine applications and prefixes management.")
-MESSAGE(" * (C) 2008-2013, Alexey S. Malakhov")
+MESSAGE(" * Copyright (C) 2008-2013 by Alexey S. Malakhov <brezerk@gmail.com>")
 MESSAGE(" * http://brezblock.org.ua/\n")
 
 MESSAGE(STATUS "Q4Wine build environment -- \n")
@@ -108,7 +108,7 @@ IF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
     SET( MACOSX_BUNDLE_VERSION ${APP_VERSION} )
     SET( MACOSX_BUNDLE_LONG_VERSION_STRING Version ${APP_VERSION} )
     SET( MACOSX_BUNDLE_GUI_IDENTIFIER "http://q4wine.brezblock.org.ua/" )
-    SET( MACOSX_BUNDLE_COPYRIGH "(C) 2008-2011, Alexey S. Malakhov" )
+    SET( MACOSX_BUNDLE_COPYRIGH "Copyright (C) 2008-2013 by Alexey S. Malakhov <brezerk@gmail.com>" )
     SET( DESKTOP_ENTRY_PATH ${CMAKE_INSTALL_PREFIX}/${APP_NAME_GLOBAL}.app/Contents/Applications )
     SET( PIXMAPS_ENTRY_PATH ${CMAKE_INSTALL_PREFIX}/${APP_NAME_GLOBAL}.app/Contents/Resources )
     SET( DATA_ENTRY_PATH ${CMAKE_INSTALL_PREFIX}/${APP_NAME_GLOBAL}.app/Contents/Resources/icons )
