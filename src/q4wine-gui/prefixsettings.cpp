@@ -55,7 +55,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
         ver.clear();
         ver.name_ = "Default";
         if (!ver.load()){
-            QMessageBox::critical(this, tr("Error"), tr("Fail to load version by name: %1").arg(ver.name_));
+            QMessageBox::critical(this, tr("Error"), tr("Unable to load version by name: %1").arg(ver.name_));
             return;
         }
     }
@@ -472,7 +472,7 @@ void PrefixSettings::txtRunString_Changed(){
         ver.clear();
         ver.name_ = comboVersionList->currentText();
         if (!ver.load()){
-            QMessageBox::critical(this, tr("Error"), tr("Fail to load version by name: %1").arg(ver.name_));
+            QMessageBox::critical(this, tr("Error"), tr("Unable to load version by name: %1").arg(ver.name_));
             return;
         }
     }

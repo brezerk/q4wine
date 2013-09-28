@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>690</width>
-    <height>437</height>
+    <width>686</width>
+    <height>433</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -658,7 +658,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>Options below are deprecated, please delete them and use version manager instead:</string>
+                <string>Options below are obsolete, please delete them and use version manager instead:</string>
                </property>
                <property name="scaledContents">
                 <bool>false</bool>
@@ -943,12 +943,12 @@
                  <widget class="QComboBox" name="comboTemplatesList">
                   <item>
                    <property name="text">
-                    <string>Custom</string>
+                    <string notr="true">Custom</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>Default</string>
+                    <string notr="true">Default</string>
                    </property>
                   </item>
                   <item>
@@ -993,14 +993,14 @@ p, li { white-space: pre-wrap; }
              <item>
               <widget class="QLabel" name="label_7">
                <property name="text">
-                <string>Resulting template string:</string>
+                <string>Parse result:</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QLabel" name="lblTemalate">
                <property name="text">
-                <string>TextLabel</string>
+                <string notr="true">TextLabel</string>
                </property>
                <property name="wordWrap">
                 <bool>true</bool>

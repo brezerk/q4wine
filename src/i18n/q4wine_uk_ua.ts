@@ -5,7 +5,7 @@
     <name>About</name>
     <message>
         <location filename="../q4wine-gui/uis/About.ui" line="+20"/>
-        <location filename="../q4wine-gui/about.cpp" line="+25"/>
+        <location filename="../q4wine-gui/about.cpp" line="+24"/>
         <source>About %1</source>
         <translation>Про %1</translation>
     </message>
@@ -23,7 +23,7 @@
         <location line="+37"/>
         <location line="+9"/>
         <location line="+39"/>
-        <location line="+39"/>
+        <location line="+32"/>
         <source>Authors</source>
         <translation>Автори</translation>
     </message>
@@ -39,17 +39,17 @@
         <translation>Ліцензійна угода</translation>
     </message>
     <message>
-        <location line="+48"/>
+        <location line="+233"/>
         <source>OK</source>
         <translation>Гаразд</translation>
     </message>
     <message>
-        <location line="-174"/>
+        <location line="-352"/>
         <source>Packages Authors</source>
         <translation>Автори пакетів</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+71"/>
         <source>Thanks</source>
         <translation>Подяка</translation>
     </message>
@@ -62,7 +62,7 @@
 <context>
     <name>AppDBHeaderWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbheaderwidget.cpp" line="+107"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbheaderwidget.cpp" line="+106"/>
         <source>Page %1 of %2</source>
         <translation>Крок %1 з %2</translation>
     </message>
@@ -70,7 +70,7 @@
 <context>
     <name>AppDBWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="+86"/>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="+85"/>
         <location line="+314"/>
         <source>Status: Ready</source>
         <translation>Статус: Готовий</translation>
@@ -208,14 +208,14 @@
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+17"/>
         <location line="+156"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+56"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+55"/>
         <location line="+1"/>
         <source>%1 settings</source>
         <translation>Налаштування %1</translation>
     </message>
     <message>
         <location line="+87"/>
-        <location line="+2417"/>
+        <location line="+2442"/>
         <location line="+5"/>
         <location line="+4"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="+262"/>
@@ -225,7 +225,7 @@
         <translation>Загальні</translation>
     </message>
     <message>
-        <location line="-2417"/>
+        <location line="-2442"/>
         <source>Wine settings</source>
         <translation>Параметри Wine</translation>
     </message>
@@ -257,14 +257,14 @@
     </message>
     <message>
         <location line="+34"/>
-        <location line="+2038"/>
+        <location line="+2063"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-492"/>
         <location line="+494"/>
         <source>System</source>
         <translation>Система</translation>
     </message>
     <message>
-        <location line="-2029"/>
+        <location line="-2054"/>
         <source>System utils</source>
         <translation>Системні засоби</translation>
     </message>
@@ -310,14 +310,14 @@
     </message>
     <message>
         <location line="+56"/>
-        <location line="+1552"/>
+        <location line="+1577"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-491"/>
         <location line="+493"/>
         <source>Utils</source>
         <translation>Утиліти</translation>
     </message>
     <message>
-        <location line="-1543"/>
+        <location line="-1568"/>
         <source>Console</source>
         <translation>Консоль</translation>
     </message>
@@ -333,22 +333,22 @@
     </message>
     <message>
         <location line="+398"/>
-        <location line="+1048"/>
+        <location line="+1073"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-487"/>
         <location line="+491"/>
         <source>Quick Mount</source>
         <translation>Швидке Монтування</translation>
     </message>
     <message>
-        <location line="-685"/>
-        <location line="+710"/>
+        <location line="-710"/>
+        <location line="+735"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-476"/>
         <location line="+486"/>
         <source>Logging</source>
         <translation>Журналювання</translation>
     </message>
     <message>
-        <location line="-701"/>
+        <location line="-726"/>
         <source>Logging subsystem:</source>
         <translation>Підсистема журналювання:</translation>
     </message>
@@ -358,7 +358,7 @@
         <translation>Очищати журнали під час старту.</translation>
     </message>
     <message>
-        <location line="+503"/>
+        <location line="+528"/>
         <source>Run recent program</source>
         <translation>Запуск нещодавних програм</translation>
     </message>
@@ -368,7 +368,7 @@
         <translation>Відкривати диалог запуску.</translation>
     </message>
     <message>
-        <location line="-1276"/>
+        <location line="-1301"/>
         <source>wrestool:</source>
         <translation>wrestool:</translation>
     </message>
@@ -385,36 +385,36 @@
     <message>
         <location line="+535"/>
         <location line="+9"/>
-        <location line="+828"/>
+        <location line="+853"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-495"/>
         <location line="+489"/>
         <source>Language</source>
         <translation>Мова</translation>
     </message>
     <message>
-        <location line="-801"/>
+        <location line="-826"/>
         <source>Language:</source>
         <translation>Мова:</translation>
     </message>
     <message>
         <location line="+45"/>
         <location line="+9"/>
-        <location line="+752"/>
+        <location line="+777"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-486"/>
         <location line="+488"/>
         <source>Themes</source>
         <translation>Теми</translation>
     </message>
     <message>
-        <location line="-1321"/>
-        <location line="+1301"/>
+        <location line="-1346"/>
+        <location line="+1326"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-500"/>
         <location line="+492"/>
         <source>Network</source>
         <translation>Мережа</translation>
     </message>
     <message>
-        <location line="-1292"/>
+        <location line="-1317"/>
         <source>Proxy settings</source>
         <translation>Параметри проксі</translation>
     </message>
@@ -482,14 +482,14 @@
         <translation>Користувач:</translation>
     </message>
     <message>
-        <location line="+1175"/>
+        <location line="+1200"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-336"/>
         <location line="+482"/>
         <source>Advanced</source>
         <translation>Додатково</translation>
     </message>
     <message>
-        <location line="-1030"/>
+        <location line="-1055"/>
         <source>Mount:</source>
         <translation>Монтування:</translation>
     </message>
@@ -515,14 +515,14 @@
     </message>
     <message>
         <location line="+272"/>
-        <location line="+651"/>
+        <location line="+676"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-491"/>
         <location line="+485"/>
         <source>AppDB browser</source>
         <translation>Навігатор AppDB</translation>
     </message>
     <message>
-        <location line="-642"/>
+        <location line="-667"/>
         <source>AppDB browser subsystem:</source>
         <translation>Підсистема навігації AppDB:</translation>
     </message>
@@ -533,14 +533,14 @@
     </message>
     <message>
         <location line="+44"/>
-        <location line="+602"/>
+        <location line="+627"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-479"/>
         <location line="+483"/>
         <source>Desktop Menu</source>
         <translation>Меню стільниці</translation>
     </message>
     <message>
-        <location line="-596"/>
+        <location line="-621"/>
         <source>Desktop menu plugin</source>
         <translation>Додаток меню стільниці</translation>
     </message>
@@ -562,14 +562,14 @@
     </message>
     <message>
         <location line="+47"/>
-        <location line="+532"/>
+        <location line="+557"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-477"/>
         <location line="+481"/>
         <source>Defaults</source>
         <translation>Типові</translation>
     </message>
     <message>
-        <location line="-526"/>
+        <location line="-551"/>
         <source>Default virtual desktop</source>
         <translation>Типова віртуальна стільниця</translation>
     </message>
@@ -590,7 +590,7 @@
         <translation>Немає віртуальної стільниці</translation>
     </message>
     <message>
-        <location line="+144"/>
+        <location line="+169"/>
         <source>Program icons</source>
         <translation>Піктограми програм</translation>
     </message>
@@ -668,12 +668,12 @@
         <translation>Довідка</translation>
     </message>
     <message>
-        <location line="-742"/>
+        <location line="-767"/>
         <source>Note: Since SQLite was not designed to handle large amount of data, activating this can have a negative impact on the performance of Q4Wine. Use it with care.</source>
         <translation>Зауваження: У зв&apos;язку з обмеженнями sqlite, великий об&apos;єм даних з журналювання, може знизити швидкість роботи Q4Wine. Використовуйте журналювання обережно. Вас попередили.</translation>
     </message>
     <message>
-        <location line="+550"/>
+        <location line="+575"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
         <translation>Імпортувати десктопні файли Wine підчас запуску Q4Wine.</translation>
     </message>
@@ -740,7 +740,7 @@
         <translation>Вибачте, вказаного виконуваного файла %1 не існує.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-891"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-916"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-641"/>
         <location line="+499"/>
         <source>System Default</source>
@@ -750,7 +750,7 @@
 <context>
     <name>DataBase</name>
     <message>
-        <location filename="../core/database/db.cpp" line="+66"/>
+        <location filename="../core/database/db.cpp" line="+65"/>
         <source>No database loaded. Aborting...</source>
         <translation>Не завантажено жодної бази даних. Виходимо...</translation>
     </message>
@@ -764,7 +764,7 @@
     </message>
     <message>
         <location line="+152"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+59"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+58"/>
         <source>Fake drive settings</source>
         <translation>Налаштування фіктивного диску</translation>
     </message>
@@ -1270,7 +1270,7 @@ See help for details.</source>
 <context>
     <name>HttpCore</name>
     <message>
-        <location filename="../core/httpcore.cpp" line="+173"/>
+        <location filename="../core/httpcore.cpp" line="+172"/>
         <source>Download failed: %1.</source>
         <translation>Помилка завантаження: %1.</translation>
     </message>
@@ -1278,7 +1278,7 @@ See help for details.</source>
 <context>
     <name>IconListToolbar</name>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="+75"/>
+        <location filename="../q4wine-gui/widgets/iconlisttoolbar.cpp" line="+74"/>
         <location line="+1"/>
         <source>Clear search field</source>
         <translation>Очистити поле пошуку</translation>
@@ -1351,8 +1351,8 @@ See help for details.</source>
 <context>
     <name>IconListWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+253"/>
-        <location line="+904"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+254"/>
+        <location line="+905"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 вдало змонтовано.</translation>
@@ -1400,19 +1400,19 @@ See help for details.</source>
         <translation>Змонтувати пристрій КД.</translation>
     </message>
     <message>
-        <location line="-180"/>
-        <location line="+537"/>
+        <location line="-181"/>
+        <location line="+538"/>
         <location line="+134"/>
         <source>Sorry. It seems that the icon already exists.</source>
         <translation>Вибачте, здається, піктограма з такою назвою вже є.</translation>
     </message>
     <message>
-        <location line="-671"/>
+        <location line="-672"/>
         <source>Sorry. It seems that icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
         <translation>Вибачте. Здаєтся піктограма вже існує.&lt;br&gt;Будь ласка оберіть інше ім&apos;я, або скасуйте дію.</translation>
     </message>
     <message>
-        <location line="+196"/>
+        <location line="+197"/>
         <source>Mount media image.</source>
         <translation>Змонтувати образ КД.</translation>
     </message>
@@ -1677,8 +1677,8 @@ See help for details.</source>
         <translation>Ви справді бажаєте вилучити всі обрані піктограми?</translation>
     </message>
     <message>
-        <location line="-540"/>
-        <location line="+921"/>
+        <location line="-541"/>
+        <location line="+922"/>
         <source>Failed to mount %1.</source>
         <translation>Не вдалося змонтувати %1.</translation>
     </message>
@@ -1778,7 +1778,7 @@ See help for details.</source>
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+91"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+90"/>
         <location line="+1"/>
         <source>Icon settings</source>
         <translation>Параметри піктограм</translation>
@@ -1835,7 +1835,7 @@ See help for details.</source>
         <translation>Розмір:</translation>
     </message>
     <message>
-        <location line="+535"/>
+        <location line="+560"/>
         <source>Note: Pre and post run scripts will not be executed in case the &quot;Run With Output in Console&quot; option is enabled.</source>
         <translation>Примітка: скрипти користувача не будуть виконуватися у випадку, якщо програма буде виконуватися з опцією &quot;Запустити з виводом до консолі&quot;.</translation>
     </message>
@@ -2040,13 +2040,13 @@ See help for details.</source>
         <translation>Не вказано і&apos;мя програми.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="-674"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="-699"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+42"/>
         <source>No virtual desktop</source>
         <translation>Немає віртуальної стільниці</translation>
     </message>
     <message>
-        <location line="+158"/>
+        <location line="+183"/>
         <source>Override DLL</source>
         <translation>Перевизначення DLL</translation>
     </message>
@@ -2090,7 +2090,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+28"/>
-        <location filename="../q4wine-gui/iconsview.cpp" line="+108"/>
+        <location filename="../q4wine-gui/iconsview.cpp" line="+107"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
@@ -2197,7 +2197,7 @@ See help for details.</source>
         <translation>Гаразд</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/imagemanager.cpp" line="+57"/>
+        <location filename="../q4wine-gui/imagemanager.cpp" line="+56"/>
         <source>File path: %1</source>
         <translation>Шлях до файлу: %1</translation>
     </message>
@@ -2303,7 +2303,7 @@ See help for details.</source>
         <translation>Гаразд</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/infodialog.cpp" line="+30"/>
+        <location filename="../q4wine-gui/infodialog.cpp" line="+29"/>
         <source>Winetricks plugin notification</source>
         <translation>Cповіщення від додатку winetriks</translation>
     </message>
@@ -2316,7 +2316,7 @@ See help for details.</source>
 <context>
     <name>LoggingWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="+62"/>
+        <location filename="../q4wine-gui/widgets/loggingwidget.cpp" line="+61"/>
         <source>Logging list</source>
         <translation>Журнал</translation>
     </message>
@@ -2438,13 +2438,13 @@ See help for details.</source>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+33"/>
-        <location line="+263"/>
+        <location line="+264"/>
         <source>Programs</source>
         <translation>Програми</translation>
     </message>
     <message>
-        <location line="-148"/>
-        <location line="+169"/>
+        <location line="-149"/>
+        <location line="+170"/>
         <source>Prefixes</source>
         <translation>Префікси</translation>
     </message>
@@ -2454,8 +2454,8 @@ See help for details.</source>
         <translation>Типові</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/MainWindow.ui" line="-179"/>
-        <location line="+171"/>
+        <location filename="../q4wine-gui/uis/MainWindow.ui" line="-180"/>
+        <location line="+172"/>
         <source>Setup</source>
         <translation>Налаштувати</translation>
     </message>
@@ -2490,12 +2490,12 @@ See help for details.</source>
         <translation>Параметри</translation>
     </message>
     <message>
-        <location line="-208"/>
+        <location line="-209"/>
         <source>Processes</source>
         <translation>Процес</translation>
     </message>
     <message>
-        <location line="+200"/>
+        <location line="+201"/>
         <source>Extract Images from PE Files</source>
         <translation>Витягнути зображення з PE файлів</translation>
     </message>
@@ -2526,7 +2526,7 @@ See help for details.</source>
         <translation>Імпортувати десктопні файли wine</translation>
     </message>
     <message>
-        <location line="-218"/>
+        <location line="-219"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
@@ -2537,22 +2537,22 @@ See help for details.</source>
     </message>
     <message>
         <location line="-192"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-215"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-216"/>
         <source>%1 :. Qt4 GUI for Wine v%2</source>
         <translation>%1 : Графічна оболонка на Qt4 для Wine версії %2</translation>
     </message>
     <message>
-        <location line="+286"/>
+        <location line="+287"/>
         <source>Process</source>
         <translation>Процес</translation>
     </message>
     <message>
-        <location line="-66"/>
+        <location line="-67"/>
         <source>Tools</source>
         <translation>Інструменти</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Ctrl+Z</source>
         <translation></translation>
     </message>
@@ -2567,7 +2567,7 @@ See help for details.</source>
         <translation></translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="-65"/>
         <source>Handbook</source>
         <translation>Підручник</translation>
     </message>
@@ -2578,7 +2578,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+13"/>
-        <location line="+222"/>
+        <location line="+223"/>
         <source>Logging</source>
         <translation>Журналювання</translation>
     </message>
@@ -2614,7 +2614,12 @@ See help for details.</source>
         <translation></translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="+5"/>
+        <source>Version Manager</source>
+        <translation>Керування версіями</translation>
+    </message>
+    <message>
+        <location line="-125"/>
         <source>Ctrl+S</source>
         <translation></translation>
     </message>
@@ -2649,7 +2654,7 @@ See help for details.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="+204"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="+205"/>
         <source>Description: %1</source>
         <translation>Опис: %1</translation>
     </message>
@@ -2747,7 +2752,7 @@ See help for details.</source>
         <translation>Експорт піктограми</translation>
     </message>
     <message>
-        <location line="+121"/>
+        <location line="+127"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Одночасно може бути запущена тільки одна копія %1.</translation>
     </message>
@@ -2778,7 +2783,7 @@ See help for details.</source>
         <translation>Про програму</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-727"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-733"/>
         <source>Yes</source>
         <translation>Так</translation>
     </message>
@@ -2797,13 +2802,13 @@ See help for details.</source>
     <name>PrefixConfigWidget</name>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="+115"/>
-        <location line="+199"/>
+        <location line="+200"/>
         <source>Name</source>
         <translation>Назва</translation>
     </message>
     <message>
-        <location line="-199"/>
-        <location line="+199"/>
+        <location line="-200"/>
+        <location line="+200"/>
         <source>Description</source>
         <translation>Опис</translation>
     </message>
@@ -2822,65 +2827,65 @@ See help for details.</source>
     <message>
         <location line="+7"/>
         <location line="+1"/>
-        <location line="+247"/>
+        <location line="+270"/>
         <location line="+1"/>
         <source>Alphabetic sort descending</source>
         <translation>Впорядкувати абеткою за спаданням</translation>
     </message>
     <message>
-        <location line="-245"/>
+        <location line="-268"/>
         <location line="+1"/>
-        <location line="+238"/>
+        <location line="+261"/>
         <location line="+1"/>
         <source>Alphabetic sort ascending</source>
         <translation>Впорядкувати абеткою за зростанням</translation>
     </message>
     <message>
-        <location line="-148"/>
-        <location line="+57"/>
+        <location line="-171"/>
+        <location line="+80"/>
         <source>Create Fake Drive</source>
         <translation>Створити фіктивний диск</translation>
     </message>
     <message>
-        <location line="-56"/>
+        <location line="-79"/>
         <source>Create new Fake Drive configuration. Old Fake Drive will be removed.</source>
         <translation>Створити новий фіктивний диск. Старий фіктивний диск буде видалено.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+89"/>
+        <location line="+112"/>
         <source>Update Fake Drive</source>
         <translation>Оновити фіктивний диск</translation>
     </message>
     <message>
-        <location line="-88"/>
+        <location line="-111"/>
         <source>Update Fake Drive configuration.</source>
         <translation>Оновити конфігурцію фіктивного диска.</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+101"/>
+        <location line="+124"/>
         <source>Install or update Winetricks script</source>
         <translation>Встановити або оновити Winetricks</translation>
     </message>
     <message>
-        <location line="-100"/>
+        <location line="-123"/>
         <source>Install new or update installed Winetricks script.</source>
         <translation>Встановити або оновити Winetricks скрипт.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+95"/>
+        <location line="+118"/>
         <source>Refresh Winetricks application list</source>
         <translation>Оновити список додатків Winetricks</translation>
     </message>
     <message>
-        <location line="-94"/>
+        <location line="-117"/>
         <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
         <translation>Створити або оновити кеш додатків Winetricks.</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+91"/>
         <source>Fail to remove %1</source>
         <translation>Не можу вилучити  %1</translation>
     </message>
@@ -2919,7 +2924,7 @@ See help for details.</source>
 <context>
     <name>PrefixControlWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="+103"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="+102"/>
         <source>Create new</source>
         <translation>Створити новий</translation>
     </message>
@@ -2968,9 +2973,18 @@ See help for details.</source>
         <translation>Назва</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Architecture</source>
+        <translation type="obsolete">Архітектура</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Arch</source>
         <translation>Архітектура</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Version</source>
+        <translation>Версія</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3099,50 +3113,83 @@ See help for details.</source>
         <translation>Пристрій:</translation>
     </message>
     <message>
-        <location line="-44"/>
+        <location line="+236"/>
+        <source>Options below are obsolete, please delete them and use version manager instead:</source>
+        <translation>Опції зазначені нижче застарілі, будь ласка, видалите їх і використовуйте натомість менеджер версій:</translation>
+    </message>
+    <message>
+        <location line="+335"/>
+        <source>Parse result:</source>
+        <translation>Результат обробки:</translation>
+    </message>
+    <message>
+        <location line="-615"/>
         <source>Mount point:</source>
         <translation>Точка монтування:</translation>
     </message>
     <message>
         <location line="+185"/>
-        <location line="+9"/>
+        <location line="+6"/>
         <source>Wine settings</source>
         <translation>Параметри Wine</translation>
     </message>
     <message>
-        <location line="+302"/>
+        <location line="+12"/>
+        <source>If you wish to use different Wine versions, you may wish to select here one.</source>
+        <translation>Якщо ви маєте намір використовувати декілька версій Wine, вам слід вказати тут потрібний.</translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>Version:</source>
+        <translation>Версія:</translation>
+    </message>
+    <message>
+        <source>Options below are deprecated, please delete them and use version manager instead:</source>
+        <translation type="obsolete">Опції зазначені нижче застарілі, будь ласка, видалите їх і використовуйте натомість менеджер версій:</translation>
+    </message>
+    <message>
+        <location line="+292"/>
+        <source>This template will be used to run wine programs. Normally you do not need to change it. See help for details.</source>
+        <translation>Шаблон строки запуску буде використано під час запуску програм Wine. Зазвичай, вам не потрібно змінювати цей шаблон. Ознайомтесь з довідкою щоб дізнатись подробиці.</translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>Predefined:</source>
+        <translation>Попередньо визначені:</translation>
+    </message>
+    <message>
+        <location line="+127"/>
         <source>OK</source>
         <translation>Гаразд</translation>
     </message>
     <message>
-        <location line="-255"/>
+        <location line="-373"/>
         <source>Bin:</source>
         <translation>Вик.файл:</translation>
     </message>
     <message>
-        <location line="-32"/>
         <source>If you wish to use different Wine versions, you may wish to set custom Wine paths here.
 Note: leave it blank for default.</source>
-        <translation>Якщо ви маєте намір використовувати декілька версій Wine, вам слід вказати тут нетипові шляхи для Wine.
+        <translation type="obsolete">Якщо ви маєте намір використовувати декілька версій Wine, вам слід вказати тут нетипові шляхи для Wine.
 Зауваження: не заповнюйте, якщо не збираєтеся цього робити.</translation>
     </message>
     <message>
-        <location line="+76"/>
+        <location line="+51"/>
         <source>Server:</source>
         <translation>Сервер:</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+51"/>
         <source>Loader:</source>
         <translation>Завантажувач:</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+51"/>
         <source>Libs:</source>
         <translation>Бібліотеки:</translation>
     </message>
     <message>
-        <location line="+43"/>
+        <location line="+50"/>
         <source>Advanced</source>
         <translation>Додатково</translation>
     </message>
@@ -3152,12 +3199,11 @@ Note: leave it blank for default.</source>
         <translation>Шаблон строки запуску</translation>
     </message>
     <message>
-        <location line="+9"/>
         <source>This template will be used to run wine programs. Normally you do not need to change it. See help for details. To restore default value, just leave it blank.</source>
-        <translation>Шаблон строки запуску буде використано під час запуску програм Wine. Зазвичай, вам не потрібно змінювати цей шаблон. Ознайомтесь з довідкою щоб дізнатись подробиці. Щоб відновити типовий шаблон, залиште це поле пустим.</translation>
+        <translation type="obsolete">Шаблон строки запуску буде використано під час запуску програм Wine. Зазвичай, вам не потрібно змінювати цей шаблон. Ознайомтесь з довідкою щоб дізнатись подробиці. Щоб відновити типовий шаблон, залиште це поле пустим.</translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="+137"/>
         <source>Help</source>
         <translation>Довідка</translation>
     </message>
@@ -3167,29 +3213,44 @@ Note: leave it blank for default.</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="+120"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="+142"/>
         <location line="+1"/>
         <source>Add new Prefix</source>
         <translation>Додати новий префікс</translation>
     </message>
     <message>
-        <location line="+62"/>
+        <location line="-85"/>
+        <location line="+163"/>
         <location line="+6"/>
+        <location line="+14"/>
+        <location line="+15"/>
+        <location line="+219"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location line="-6"/>
+        <location line="-234"/>
+        <source>Fail to load version by name: %1</source>
+        <translation>Неможливо завантажити версію за ім&apos;ям: %1</translation>
+    </message>
+    <message>
+        <location line="-20"/>
         <source>Enter a prefix name</source>
         <translation>Будь ласка, введіть назву префікса</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-163"/>
+        <location line="+417"/>
+        <source>Unable to load version by name: %1</source>
+        <translation>Неможливо завантажити версію за ім&apos;ям: %1</translation>
+    </message>
+    <message>
+        <location line="-248"/>
         <source>Sorry, but prefix named %1 already exists.</source>
         <translation>Вибачте, але префікс з назвою %1 вже існує.</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+22"/>
         <source>Warning</source>
         <translation>Попередження</translation>
     </message>
@@ -3199,7 +3260,12 @@ Note: leave it blank for default.</source>
         <translation>Тека з назвою &quot;%1&quot; вже існує. Ви хочете використовувати її?</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+7"/>
+        <source>The directory &quot;%1&quot; could not be created.</source>
+        <translation>Неможливо створити каталог &quot;%1&quot;.</translation>
+    </message>
+    <message>
+        <location line="+46"/>
         <location line="+2"/>
         <source>Open File</source>
         <translation>Відкрити файл</translation>
@@ -3214,7 +3280,7 @@ Note: leave it blank for default.</source>
 <context>
     <name>PrefixTreeToolbar</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="+70"/>
+        <location filename="../q4wine-gui/widgets/prefixtreetoolbar.cpp" line="+69"/>
         <location line="+1"/>
         <location line="+27"/>
         <location line="+1"/>
@@ -3253,7 +3319,7 @@ Note: leave it blank for default.</source>
 <context>
     <name>PrefixTreeWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+100"/>
+        <location filename="../q4wine-gui/widgets/prefixtreewidget.cpp" line="+99"/>
         <source>Enter new directory name</source>
         <translation>Введіть нову назву теки</translation>
     </message>
@@ -3585,7 +3651,7 @@ Note: leave it blank for default.</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="+72"/>
+        <location filename="../q4wine-gui/process.cpp" line="+71"/>
         <location line="+4"/>
         <location line="+3"/>
         <location line="+3"/>
@@ -3662,7 +3728,7 @@ Note: leave it blank for default.</source>
 <context>
     <name>Progress</name>
     <message>
-        <location filename="../q4wine-gui/progress.cpp" line="+50"/>
+        <location filename="../q4wine-gui/progress.cpp" line="+49"/>
         <source>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
         <translation>Импортую піктограми програм wine з:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Це може зайняти трохи часу...&lt;br&gt;&lt;br&gt;&lt;b&gt;Зауваження:&lt;/b&gt;Щоб автоматично відаляти оброблені файли, подивитись у налаштування q4wine.</translation>
     </message>
@@ -3705,12 +3771,12 @@ Note: leave it blank for default.</source>
     <name>QObject</name>
     <message>
         <location filename="../core/database/prefix.cpp" line="+318"/>
-        <location line="+69"/>
+        <location line="+75"/>
         <source>Default</source>
         <translation>Типова</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+207"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+206"/>
         <location line="+43"/>
         <location line="+13"/>
         <location line="+31"/>
@@ -3870,9 +3936,9 @@ Note: leave it blank for default.</source>
         <translation>Списк змонтованих носіїв для префіксу &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="+136"/>
+        <location filename="../main.cpp" line="+138"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="+9"/>
-        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+93"/>
+        <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation></translation>
     </message>
@@ -4180,7 +4246,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+217"/>
-        <location filename="../q4wine-gui/run.cpp" line="+107"/>
+        <location filename="../q4wine-gui/run.cpp" line="+106"/>
         <location line="+63"/>
         <source>Native</source>
         <translation>Рідні</translation>
@@ -4335,6 +4401,143 @@ Note: leave it blank for default.</source>
     </message>
 </context>
 <context>
+    <name>VersionManager</name>
+    <message>
+        <location filename="../q4wine-gui/uis/VersionManager.ui" line="+23"/>
+        <location line="+156"/>
+        <source>Wine Version Manager</source>
+        <translation>Керування версіями Wine</translation>
+    </message>
+    <message>
+        <location line="+117"/>
+        <source>Bin:</source>
+        <translation>Вик.файл:</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>Server:</source>
+        <translation>Сервер:</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>Loader:</source>
+        <translation>Завантажувач:</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>Libs 32:</source>
+        <translation>Бібліотеки 32:</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>Libs 64:</source>
+        <translation>Бібліотеки 64:</translation>
+    </message>
+    <message>
+        <location line="+52"/>
+        <source>Help</source>
+        <translation>Довідка</translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>OK</source>
+        <translation>Гаразд</translation>
+    </message>
+    <message>
+        <location filename="../q4wine-gui/versions.cpp" line="+204"/>
+        <source>The Version settings has been modified.</source>
+        <translation>Налаштування версії було змінено.</translation>
+    </message>
+    <message>
+        <location line="+32"/>
+        <location line="+6"/>
+        <location line="+114"/>
+        <location line="+1"/>
+        <source>Add version</source>
+        <translation>Додати версію</translation>
+    </message>
+    <message>
+        <location line="-120"/>
+        <source>Version name:</source>
+        <translation>Ім&apos;я версії:</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <translation>Вибачте. Здаєтся версія з такою назвою вже існує.&lt;br&gt;Будь ласка оберіть інше ім&apos;я.</translation>
+    </message>
+    <message>
+        <location line="+25"/>
+        <location line="+26"/>
+        <location line="+22"/>
+        <location line="+9"/>
+        <location line="+6"/>
+        <location line="+6"/>
+        <source>Error</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <location line="-68"/>
+        <source>Default version can not be removed.</source>
+        <translation>Вибачте, типову версію не можна вилучати.</translation>
+    </message>
+    <message>
+        <location line="+26"/>
+        <source>32 or 64 wine library path required.</source>
+        <translation>Потрібно вказати 32 або 64 разрядні бібліотеки.</translation>
+    </message>
+    <message>
+        <location line="+22"/>
+        <source>Can&apos;t save changes...</source>
+        <translation>Не можу зберегти зміни...</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Path &apos;%1&apos; is not exists.</source>
+        <translation>Шлях &quot;%1&quot; не існує.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Path &apos;%1&apos; is not a directory.</source>
+        <translation>Шлях &quot;%1&quot; не є каталог.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Path &apos;%1&apos; is not a file.</source>
+        <translation>Шлях &quot;%1&quot; не є файл.</translation>
+    </message>
+    <message>
+        <location line="+21"/>
+        <location line="+1"/>
+        <source>Remove version</source>
+        <translation>Видалити версію</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <location line="+1"/>
+        <source>Save changes</source>
+        <translation>Зберегти зміни</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <location line="+1"/>
+        <source>Clear search field</source>
+        <translation>Очистити поле пошуку</translation>
+    </message>
+    <message>
+        <location line="+105"/>
+        <location line="+2"/>
+        <source>Open File</source>
+        <translation>Відкрити файл</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <location line="+2"/>
+        <source>Open Directory</source>
+        <translation>Відкрити каталог</translation>
+    </message>
+</context>
+<context>
     <name>WineDriveDialog</name>
     <message>
         <location filename="../q4wine-gui/uis/WineDriveDialog.ui" line="+14"/>
@@ -4372,7 +4575,7 @@ Note: leave it blank for default.</source>
         <translation>Гаразд</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/winedrivedialog.cpp" line="+135"/>
+        <location filename="../q4wine-gui/winedrivedialog.cpp" line="+134"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>Помилка</translation>
@@ -4396,7 +4599,7 @@ Note: leave it blank for default.</source>
 <context>
     <name>WineProcessWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="+52"/>
+        <location filename="../q4wine-gui/widgets/wineprocesswidget.cpp" line="+51"/>
         <source>PID</source>
         <translation></translation>
     </message>
@@ -4573,7 +4776,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+7"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="+585"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="+586"/>
         <location line="+5"/>
         <source>Next &gt;</source>
         <translation>Вперед &gt;</translation>
@@ -4584,13 +4787,13 @@ Note: leave it blank for default.</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="-498"/>
-        <location line="+461"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="-500"/>
+        <location line="+463"/>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
         <translation>&lt;b&gt;Крок %1 з %2&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="-268"/>
+        <location line="-270"/>
         <location line="+6"/>
         <source>Open Directory</source>
         <translation>Відкрити каталог</translation>
@@ -4616,7 +4819,7 @@ Note: leave it blank for default.</source>
         <translation>Вибачте, вказаного виконуваного файла %1 не існує.</translation>
     </message>
     <message>
-        <location line="+253"/>
+        <location line="+255"/>
         <source>Finish</source>
         <translation>Завершити</translation>
     </message>
@@ -4642,9 +4845,9 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="-369"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="-371"/>
         <location line="+173"/>
-        <location line="+45"/>
+        <location line="+47"/>
         <source>No Proxy</source>
         <translation>Без проксі-сервера</translation>
     </message>
@@ -4669,7 +4872,7 @@ Note: leave it blank for default.</source>
         <translation>Пароль:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="-354"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="-356"/>
         <source>First startup wizard</source>
         <translation>Майстер початкового налаштування</translation>
     </message>
@@ -4710,7 +4913,7 @@ Note: leave it blank for default.</source>
         <translation>Будь ласка, вкажіть порт проксі-сервера.</translation>
     </message>
     <message>
-        <location line="+156"/>
+        <location line="+158"/>
         <source>&lt;b&gt;First startup wizrad&lt;/b&gt;</source>
         <translation>&lt;b&gt;Майстер початкового налаштування&lt;/b&gt;</translation>
     </message>
@@ -4728,6 +4931,24 @@ Note: leave it blank for default.</source>
         <location line="+32"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Все готово для завершення конфігурації %1. &lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Завершити&lt;/b&gt; щоб закінчити процес налаштування. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt; щоб повернутися і змінити обрані параметри.&lt;/p&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>winetricks</name>
+    <message>
+        <location filename="../plugins/winetricks.cpp" line="+61"/>
+        <source>Error</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
+        <translation>Не можу знайти виконуваний файл winetricks. Встановите Wintricks.</translation>
+    </message>
+    <message>
+        <location line="+142"/>
+        <source>Refreshing winetricks application list.</source>
+        <translation>Оновити список додатків Winetricks.</translation>
     </message>
 </context>
 </TS>
