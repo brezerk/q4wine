@@ -1,3 +1,9 @@
+Version 1.1
+ Added:
+  - extended list of a virtual desktop resolutions [BUG-35];
+  - configure multiple wine paths globally to allow easily selection in prefixes [BUG-23];
+  - create predefined execution template strings for optirun, separate X display, e.t.c. [BUG-37];
+
 Version 1.0-r3
  Fixed:
   - "Use single-click to run icons" does not affect icons in "setup" tab [BUG-27];

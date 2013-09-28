@@ -226,7 +226,7 @@ int WineObject::runSys(){
     }
 
     if (!env.isEmpty()){
-        run_string.replace("%ENV_BIN%", "env");
+        run_string.replace("%ENV_BIN%", CoreLib->getWhichOut("env"));
         run_string.replace("%ENV_ARGS%", env);
     } else {
         run_string.replace("%ENV_BIN%", "");

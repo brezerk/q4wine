@@ -1076,12 +1076,6 @@ QStringList corelib::getCdromDevices(void) const{
             QString u_path;
 
             if (path.length()<=0){
-                /* if (this->_GUI_MODE){
-                    qDebug()<<"[EE] No binary passed sSsssssssssssSSSSSSSSSSSs ============"<<path;
-                    QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("No binary passed to function"));
-                } else {
-                    qDebug()<<"[EE] No binary passed";
-                } */
                 return true;
             }
 

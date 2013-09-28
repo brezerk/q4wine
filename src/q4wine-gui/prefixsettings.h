@@ -127,6 +127,9 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
         void cmdAddVersion_Click();
 
         void comboVersionList_Change(const QString & text);
+        void comboTemplatesList_Change(const int id);
+
+        void txtRunString_Changed();
 };
 
 #endif

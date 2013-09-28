@@ -183,7 +183,7 @@ QHash<QString,QString> Prefix::getByName(const QString prefix_name) const{
             if (!query.value(10).toString().isEmpty()){
                 values.insert("run_string", query.value(10).toString());
             } else {
-                values.insert("run_string", RUN_STRING_TEMPLATE);
+                values.insert("run_string", RUN_STRING_TEMPLATE_DEFAULT);
             }
             values.insert("version_id", query.value(11).toString());
         }

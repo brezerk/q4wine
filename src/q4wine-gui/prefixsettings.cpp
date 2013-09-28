@@ -51,7 +51,14 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
     Version ver;
     ver.id_ = result.value("version_id");
-    ver.load();
+    if (!ver.load()){
+        ver.clear();
+        ver.name_ = "Default";
+        if (!ver.load()){
+            QMessageBox::critical(this, tr("Error"), tr("Fail to load version by name: %1").arg(ver.name_));
+            return;
+        }
+    }
     version_name=ver.name_;
 
     txtMountPoint->setText(result.value("mount"));
@@ -99,7 +106,6 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
 
     txtPrefixName->setText(prefix_name);
     txtPrefixPath->setText(result.value("path"));
-    txtRunString->setText(result.value("run_string"));
 
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
@@ -111,10 +117,15 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
     connect(cmdClnWineLibs, SIGNAL(clicked()), this, SLOT(cmdClnWineLibs_Click()));
 
     connect(comboVersionList, SIGNAL(currentIndexChanged(const QString)), this, SLOT(comboVersionList_Change(const QString)));
+    connect(comboTemplatesList, SIGNAL(currentIndexChanged(const int)), this, SLOT(comboTemplatesList_Change(const int)));
     connect(cmdAddVersion, SIGNAL(clicked()), this, SLOT(cmdAddVersion_Click()));
-       // comboArchList->setEnabled(false);
 
     getVersionsList();
+    connect(txtRunString, SIGNAL(textChanged()), this, SLOT(txtRunString_Changed()));
+       // comboArchList->setEnabled(false);
+
+    txtRunString->setText(result.value("run_string"));
+
 
     cmdGetMountPoint->installEventFilter(this);
 
@@ -152,7 +163,7 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent,
     cmdGetPrefixPath->installEventFilter(this);
     cmdGetMountPoint->installEventFilter(this);
 
-    txtRunString->setText(RUN_STRING_TEMPLATE);
+
 
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
@@ -166,10 +177,16 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent,
     connect(txtPrefixName, SIGNAL(textChanged(QString)), this, SLOT(setDefPath(QString)));
 
     connect(comboVersionList, SIGNAL(currentIndexChanged(const QString)), this, SLOT(comboVersionList_Change(const QString)));
+    connect(comboTemplatesList, SIGNAL(currentIndexChanged(const int)), this, SLOT(comboTemplatesList_Change(const int)));
     connect(cmdAddVersion, SIGNAL(clicked()), this, SLOT(cmdAddVersion_Click()));
-       // comboArchList->setEnabled(false);
 
     getVersionsList();
+    connect(txtRunString, SIGNAL(textChanged()), this, SLOT(txtRunString_Changed()));
+
+    txtRunString->setText(RUN_STRING_TEMPLATE_DEFAULT);
+       // comboArchList->setEnabled(false);
+
+
 
     txtPrefixName->setFocus(Qt::ActiveWindowFocusReason);
     return;
@@ -219,8 +236,10 @@ void PrefixSettings::cmdOk_Click(){
 
     Version ver;
     ver.name_ = comboVersionList->currentText();
-    if (!ver.load())
+    if (!ver.load()){
+        QMessageBox::critical(this, tr("Error"), tr("Fail to load version by name: %1").arg(ver.name_));
         return;
+    }
 
     if (this->addNew){
 
@@ -238,7 +257,7 @@ void PrefixSettings::cmdOk_Click(){
             }
         }
 
-        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->text(), ver.id_))
+        if (!db_prefix.addPrefix(txtPrefixName->text(),  txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->toPlainText(), ver.id_))
             reject();
 
         CoreLib->createPrefixDBStructure(txtPrefixName->text());
@@ -247,7 +266,7 @@ void PrefixSettings::cmdOk_Click(){
             sys_menu.generateSystemMenu(txtPrefixName->text());
 #endif
     } else {
-        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), this->prefix_name, comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->text(), ver.id_))
+        if (!db_prefix.updatePrefix(txtPrefixName->text(), txtPrefixPath->text(), txtWineBin->text(), txtWineServerBin->text(), txtWineLoaderBin->text(), txtWineLibs->text(), txtMountPoint->text(), this->prefix_name, comboArchList->currentText(), this->comboWinDrive->currentText(), this->txtRunString->toPlainText(), ver.id_))
             reject();
 #ifndef _OS_DARWIN_
         if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
@@ -409,7 +428,80 @@ void PrefixSettings::comboVersionList_Change(const QString & text){
     //version_name = text;
 }
 
+void PrefixSettings::comboTemplatesList_Change(const int id){
+    if (id == 1){
+        txtRunString->setText(RUN_STRING_TEMPLATE_DEFAULT);
+    } else if (id == 2){
+        txtRunString->setText(RUN_STRING_TEMPLATE_X11);
+    } else if (id == 3){
+        txtRunString->setText(RUN_STRING_TEMPLATE_SETARCH);
+    } else if (id == 4){
+        txtRunString->setText(RUN_STRING_TEMPLATE_OPTIRUN);
+    } else if (id == 5){
+        txtRunString->setText(RUN_STRING_TEMPLATE_PRIMUSRUN);
+    }
+}
+
 void PrefixSettings::setVersion(QString version_name){
     this->version_name = version_name;
     getVersionsList();
+}
+
+void PrefixSettings::txtRunString_Changed(){
+    QString run_string = txtRunString->toPlainText().replace("\"", "\\\"");
+
+    QString console_bin = CoreLib->getSetting("console", "bin").toString();
+    QString console_args = CoreLib->getSetting("console", "args", false).toString();
+
+    if (console_bin.split("/").last() == "konsole"){
+        console_args.append(" /bin/sh -c ");
+    }
+
+    run_string.replace("%CONSOLE_BIN%", console_bin);
+    run_string.replace("%CONSOLE_ARGS%", QString("%1 \"").arg(console_args));
+
+    Version ver;
+    if (!txtWineBin->text().isEmpty()){
+        ver.wine_exec_ = txtWineBin->text();
+        ver.wine_loader_ = txtWineLoaderBin->text();
+        ver.wine_server_ = txtWineServerBin->text();
+        ver.wine_dllpath32_ = txtWineLibs->text();
+        ver.wine_dllpath64_ = txtWineLibs->text();
+    } else {
+        ver.clear();
+        ver.name_ = comboVersionList->currentText();
+        if (!ver.load()){
+            QMessageBox::critical(this, tr("Error"), tr("Fail to load version by name: %1").arg(ver.name_));
+            return;
+        }
+    }
+
+    QString env;
+    env.append(QString(" WINEPREFIX='%1' ").arg(txtPrefixPath->text()));
+    env.append(QString(" WINESERVER='%1' ").arg(ver.wine_server_));
+    env.append(QString(" WINELOADER='%1' ").arg(ver.wine_loader_));
+    if (comboArchList->currentText()=="win64"){
+        env.append(QString(" WINEDLLPATH='%1' ").arg(ver.wine_dllpath64_));
+    } else if (comboArchList->currentText()=="win32"){
+        env.append(QString(" WINEDLLPATH='%1' ").arg(ver.wine_dllpath32_));
+    }
+    env.append(QString(" WINEARCH='%1' ").arg(comboArchList->currentText()));
+    env.append(QString(" WINEDEBUG='%1' ").arg("-all"));
+    env.append(QString(" WINEDLLOVERRIDES='' "));
+    env.append(QString(" LANG='' "));
+
+    run_string.replace("%ENV_BIN%", CoreLib->getWhichOut("env"));
+    run_string.replace("%ENV_ARGS%", env);
+
+    run_string.replace("%WORK_DIR%", QString("cd \'%1\' &&").arg(QDir::homePath()));
+    run_string.replace("%SET_NICE%", QString("%1 -n 10").arg(CoreLib->getSetting("system", "nice", false).toString()));
+
+    run_string.replace("%WINE_BIN%", ver.wine_exec_);
+
+    run_string.replace("%VIRTUAL_DESKTOP%", " explorer.exe /desktop=winecfg,800x600 ");
+    run_string.replace("%PROGRAM_BIN%", "\'winecfg\'");
+    run_string.replace("%PROGRAM_ARGS%", "-h");
+    run_string.append(" \"");
+
+    lblTemalate->setText(run_string);
 }
