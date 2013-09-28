@@ -181,6 +181,7 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent,
     connect(cmdAddVersion, SIGNAL(clicked()), this, SLOT(cmdAddVersion_Click()));
 
     getVersionsList();
+    comboVersionList->setCurrentIndex(0);
     connect(txtRunString, SIGNAL(textChanged()), this, SLOT(txtRunString_Changed()));
 
     txtRunString->setText(RUN_STRING_TEMPLATE_DEFAULT);
