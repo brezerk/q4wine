@@ -2687,7 +2687,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="+14"/>
         <source>Version Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Správce verzí</translation>
     </message>
     <message>
         <location line="-101"/>
@@ -2977,12 +2977,12 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="+1"/>
         <source>Arch</source>
-        <translation type="unfinished"></translation>
+        <translation>Arch</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Verze</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3087,7 +3087,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="-234"/>
         <source>Fail to load version by name: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se nahrát verzi podle názvu: %1</translation>
     </message>
     <message>
         <location line="-20"/>
@@ -3098,7 +3098,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location line="-163"/>
         <location line="+417"/>
         <source>Unable to load version by name: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze nahrát verzi podle názvu: %1</translation>
     </message>
     <message>
         <location line="-248"/>
@@ -3118,7 +3118,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="+7"/>
         <source>The directory &quot;%1&quot; could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresář neexistuje &quot;%1&quot; se nepodařilo vytvořit.</translation>
     </message>
     <message>
         <location line="+46"/>
@@ -3177,12 +3177,12 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="+236"/>
         <source>Options below are obsolete, please delete them and use version manager instead:</source>
-        <translation type="unfinished"></translation>
+        <translation>Volby níže jsou zastaralé. Smažte je, prosím, a místo nich použijte správce verzí:</translation>
     </message>
     <message>
         <location line="+335"/>
         <source>Parse result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výsledek zpracování:</translation>
     </message>
     <message>
         <location line="-615"/>
@@ -3198,22 +3198,22 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="+12"/>
         <source>If you wish to use different Wine versions, you may wish to select here one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud si přejete použít jinou verzi Wine, můžete zde jednu vybrat.</translation>
     </message>
     <message>
         <location line="+31"/>
         <source>Version:</source>
-        <translation type="unfinished">Verze:</translation>
+        <translation>Verze:</translation>
     </message>
     <message>
         <location line="+292"/>
         <source>This template will be used to run wine programs. Normally you do not need to change it. See help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tato předloha se bude používat na spouštění programů wine. Obyčejně ji není potřeba měnit. Podrobnosti naleznete v nápovědě.</translation>
     </message>
     <message>
         <location line="+31"/>
         <source>Predefined:</source>
-        <translation type="unfinished"></translation>
+        <translation>Přednastaveno:</translation>
     </message>
     <message>
         <location line="+127"/>
@@ -4400,47 +4400,47 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location filename="../q4wine-gui/uis/VersionManager.ui" line="+23"/>
         <location line="+156"/>
         <source>Wine Version Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Správce verzí Wine</translation>
     </message>
     <message>
         <location line="+117"/>
         <source>Bin:</source>
-        <translation type="unfinished">Spustitelný soubor:</translation>
+        <translation>Spustitelný soubor:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>Server:</source>
-        <translation type="unfinished">Server:</translation>
+        <translation>Server:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>Loader:</source>
-        <translation type="unfinished">Zavaděč:</translation>
+        <translation>Zavaděč:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>Libs 32:</source>
-        <translation type="unfinished"></translation>
+        <translation>Libs 32:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>Libs 64:</source>
-        <translation type="unfinished"></translation>
+        <translation>Libs 64:</translation>
     </message>
     <message>
         <location line="+52"/>
         <source>Help</source>
-        <translation type="unfinished">Nápověda</translation>
+        <translation>Nápověda</translation>
     </message>
     <message>
         <location line="+20"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/versions.cpp" line="+204"/>
         <source>The Version settings has been modified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení verze bylo změněno.</translation>
     </message>
     <message>
         <location line="+32"/>
@@ -4448,17 +4448,17 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location line="+114"/>
         <location line="+1"/>
         <source>Add version</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat verzi</translation>
     </message>
     <message>
         <location line="-120"/>
         <source>Version name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Název verze:</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Promiňte, ale zdá se, že název verze již existuje.&lt;br&gt;Vyberte, prosím, jiný název verze.</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -4468,67 +4468,67 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location line="+6"/>
         <location line="+6"/>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location line="-68"/>
         <source>Default version can not be removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí verzi nelze odstranit.</translation>
     </message>
     <message>
         <location line="+26"/>
         <source>32 or 64 wine library path required.</source>
-        <translation type="unfinished"></translation>
+        <translation>Je požadována cesta ke knihovně wine 32 nebo 64.</translation>
     </message>
     <message>
         <location line="+22"/>
         <source>Can&apos;t save changes...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze uložit změny...</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Path &apos;%1&apos; is not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cesta &apos;%1&apos; neexistuje.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Path &apos;%1&apos; is not a directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cesta &apos;%1&apos; není adresář.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Path &apos;%1&apos; is not a file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cesta &apos;%1&apos; není soubor.</translation>
     </message>
     <message>
         <location line="+21"/>
         <location line="+1"/>
         <source>Remove version</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit verzi</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+1"/>
         <source>Save changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit změny</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+1"/>
         <source>Clear search field</source>
-        <translation type="unfinished">Smazat vyhledávací pole</translation>
+        <translation>Smazat vyhledávací pole</translation>
     </message>
     <message>
         <location line="+105"/>
         <location line="+2"/>
         <source>Open File</source>
-        <translation type="unfinished">Otevřít soubor</translation>
+        <translation>Otevřít soubor</translation>
     </message>
     <message>
         <location line="+9"/>
         <location line="+2"/>
         <source>Open Directory</source>
-        <translation type="unfinished">Otevřít adresář</translation>
+        <translation>Otevřít adresář</translation>
     </message>
 </context>
 <context>
@@ -4932,17 +4932,17 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze najít skript Winetricks (Kouzla wine). Nejprve skript nainstalujte.</translation>
     </message>
     <message>
         <location line="+142"/>
         <source>Refreshing winetricks application list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovení seznamu programů Winetricks (Kouzla wine).</translation>
     </message>
 </context>
 </TS>
