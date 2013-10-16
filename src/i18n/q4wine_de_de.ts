@@ -2694,7 +2694,7 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="+14"/>
         <source>Version Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Version-Manager</translation>
     </message>
     <message>
         <location line="-101"/>
@@ -2986,12 +2986,12 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="+1"/>
         <source>Arch</source>
-        <translation type="unfinished"></translation>
+        <translation>Arch</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3096,7 +3096,7 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="-234"/>
         <source>Fail to load version by name: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler bei der Ladung von version: %1</translation>
     </message>
     <message>
         <location line="-20"/>
@@ -3107,7 +3107,7 @@ Weitere Informationen unter Hilfe.</translation>
         <location line="-163"/>
         <location line="+417"/>
         <source>Unable to load version by name: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler bei der Ladung von version: %1</translation>
     </message>
     <message>
         <location line="-248"/>
@@ -3127,7 +3127,7 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="+7"/>
         <source>The directory &quot;%1&quot; could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei %1 kann nicht erstellt werden.</translation>
     </message>
     <message>
         <location line="+46"/>
@@ -3186,12 +3186,12 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="+236"/>
         <source>Options below are obsolete, please delete them and use version manager instead:</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Optionen herunter sind veraltet, bitte löschen Sie sie und nutzen Version-Manager stattdessen.</translation>
     </message>
     <message>
         <location line="+335"/>
         <source>Parse result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Analyseergebnisse</translation>
     </message>
     <message>
         <location line="-615"/>
@@ -3207,22 +3207,22 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location line="+12"/>
         <source>If you wish to use different Wine versions, you may wish to select here one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Um eine andere Version von Wine zu verwenden, können hier Version gewählt werden.</translation>
     </message>
     <message>
         <location line="+31"/>
         <source>Version:</source>
-        <translation type="unfinished">Version:</translation>
+        <translation>Version:</translation>
     </message>
     <message>
         <location line="+292"/>
         <source>This template will be used to run wine programs. Normally you do not need to change it. See help for details.</source>
-        <translation type="unfinished"></translation>
+        <translation>Diese Vorlage wird um Wine-Programme zu ausführen genutzt. Normalerweise braucht sie nicht zu geändert werden. Sehen Sie Hilfe für Details.</translation>
     </message>
     <message>
         <location line="+31"/>
         <source>Predefined:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vordefinierten:</translation>
     </message>
     <message>
         <location line="+127"/>
@@ -4408,47 +4408,47 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-gui/uis/VersionManager.ui" line="+23"/>
         <location line="+156"/>
         <source>Wine Version Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Wine-Version-Manager</translation>
     </message>
     <message>
         <location line="+117"/>
         <source>Bin:</source>
-        <translation type="unfinished">Programmdatei:</translation>
+        <translation>Programmdatei:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>Server:</source>
-        <translation type="unfinished">Server:</translation>
+        <translation>Server:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>Loader:</source>
-        <translation type="unfinished">Loader:</translation>
+        <translation>Loader:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>Libs 32:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibliotheken 32:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>Libs 64:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibliotheken 64:</translation>
     </message>
     <message>
         <location line="+52"/>
         <source>Help</source>
-        <translation type="unfinished">Hilfe</translation>
+        <translation>Hilfe</translation>
     </message>
     <message>
         <location line="+20"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/versions.cpp" line="+204"/>
         <source>The Version settings has been modified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Versioneinstellungen wurde geändert.</translation>
     </message>
     <message>
         <location line="+32"/>
@@ -4456,17 +4456,17 @@ Note: leave it blank for default.</source>
         <location line="+114"/>
         <location line="+1"/>
         <source>Add version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version hinzufügen</translation>
     </message>
     <message>
         <location line="-120"/>
         <source>Version name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Versionsname:</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Version scheint schon zu existieren.&lt;br&gt;Bitte geben Sie einen anderen Namen ein.</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -4476,67 +4476,67 @@ Note: leave it blank for default.</source>
         <location line="+6"/>
         <location line="+6"/>
         <source>Error</source>
-        <translation type="unfinished">Fehler</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <location line="-68"/>
         <source>Default version can not be removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Standartversion kann nicht entfernt werden.</translation>
     </message>
     <message>
         <location line="+26"/>
         <source>32 or 64 wine library path required.</source>
-        <translation type="unfinished"></translation>
+        <translation>32- oder 64-bit Winebibliothekphad ist erforderlich.</translation>
     </message>
     <message>
         <location line="+22"/>
         <source>Can&apos;t save changes...</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Änderungen können nicht gespeichert werden</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Path &apos;%1&apos; is not exists.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pfad &apos;%1&quot; existiert nicht.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Path &apos;%1&apos; is not a directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pfad &apos;%1&apos; ist kein Ordner.</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Path &apos;%1&apos; is not a file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pfad &apos;%1&apos; ist keine Datei.</translation>
     </message>
     <message>
         <location line="+21"/>
         <location line="+1"/>
         <source>Remove version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version entfernen</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+1"/>
         <source>Save changes</source>
-        <translation type="unfinished"></translation>
+        <translation>Änderungen speichern</translation>
     </message>
     <message>
         <location line="+2"/>
         <location line="+1"/>
         <source>Clear search field</source>
-        <translation type="unfinished">Suchfeld leeren</translation>
+        <translation>Suchfeld leeren</translation>
     </message>
     <message>
         <location line="+105"/>
         <location line="+2"/>
         <source>Open File</source>
-        <translation type="unfinished">Datei öffnen</translation>
+        <translation>Datei öffnen</translation>
     </message>
     <message>
         <location line="+9"/>
         <location line="+2"/>
         <source>Open Directory</source>
-        <translation type="unfinished">Ordner öffnen</translation>
+        <translation>Ordner öffnen</translation>
     </message>
 </context>
 <context>
@@ -4940,17 +4940,17 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
         <source>Error</source>
-        <translation type="unfinished">Fehler</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
-        <translation type="unfinished"></translation>
+        <translation>Winetricks nicht gefunden. Bitte installieren Sie Winetricks.</translation>
     </message>
     <message>
         <location line="+142"/>
         <source>Refreshing winetricks application list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Winetricks-Anwendungsliste wird aktualisiert</translation>
     </message>
 </context>
 </TS>
