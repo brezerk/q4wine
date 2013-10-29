@@ -46,6 +46,7 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <QTranslator>
+#include <locale.h>
 
 #include "process.h"
 
