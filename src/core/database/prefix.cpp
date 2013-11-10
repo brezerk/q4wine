@@ -145,36 +145,10 @@ QHash<QString,QString> Prefix::getByName(const QString prefix_name) const{
                     values.insert("path", query.value(0).toString());
                 }
             }
-            if (!query.value(1).toString().isEmpty()){
-                values.insert("libs", query.value(1).toString());
-            } else {
-                if (query.value(8).toString() == "win32") {
-                    values.insert("libs", settings.value("WineLibs32", "").toString());
-                } else if (query.value(8).toString() == "win64") {
-                    values.insert("libs", settings.value("WineLibs64", "").toString());
-                } else {
-                    if (settings.value("WineLibs64", "").toString().isEmpty()){
-                        values.insert("libs", settings.value("WineLibs32", "").toString());
-                    } else {
-                        values.insert("libs", settings.value("WineLibs64", "").toString());
-                    }
-                }
-            }
-            if (!query.value(2).toString().isEmpty()){
-                values.insert("loader", query.value(2).toString());
-            } else {
-                values.insert("loader", settings.value("LoaderBin", "").toString());
-            }
-            if (!query.value(3).toString().isEmpty()){
-                values.insert("server", query.value(3).toString());
-            } else {
-                values.insert("server", settings.value("ServerBin", "").toString());
-            }
-            if (!query.value(4).toString().isEmpty()){
-                values.insert("bin", query.value(4).toString());
-            } else {
-                values.insert("bin", settings.value("WineBin", "").toString());
-            }
+            values.insert("libs", query.value(1).toString());
+            values.insert("loader", query.value(2).toString());
+            values.insert("server", query.value(3).toString());
+            values.insert("bin", query.value(4).toString());
             values.insert("mount", query.value(5).toString());
             values.insert("id", query.value(6).toString());
             values.insert("name", query.value(7).toString());

@@ -231,11 +231,7 @@ bool DataBase::fixup(){
             qDebug()<<"[EE] Cannot alter prefix table";
             return false;
         }
-        if (!query.exec("UPDATE prefix SET version_id=NULL")){
-            qDebug()<<"[EE] Cannot update prefix table";
-            return false;
-        }
-        if (!query.exec("UPDATE prefix SET version_id=1 WHERE name='Default'")){
+        if (!query.exec("UPDATE prefix SET version_id=1")){
             qDebug()<<"[EE] Cannot update prefix table";
             return false;
         }

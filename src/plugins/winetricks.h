@@ -37,6 +37,8 @@
 
 #include "q4wine-lib.h"
 
+#include "core/database/versions.h"
+
 class winetricks : public QWidget{
 
 public:
