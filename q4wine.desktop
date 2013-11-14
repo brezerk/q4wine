@@ -1,13 +1,5 @@
 [Desktop Entry]
 Categories=Qt;System;Emulator;
-Comment=Qt4 utility for Wine applications and prefixes management.
-Comment[cz]=Qt4 užitečný program pro programy wine a správu předpon.
-Comment[de]=Qt4-Werkzeug zur Verwaltung der Wine-Anwendungen und -Präfixe.
-Comment[en]=Qt4 utility for Wine applications and prefixes management.
-Comment[es]=Qt4 utilidad para el manejo de aplicaciones y prefijos de wine.
-Comment[it]=Qt4 programma per gestire le applicazioni con Wine e i prefissi.
-Comment[ru]=Qt4-программа для настройки приложений и управления префиксами Wine.
-Comment[uk]=Qt4 програма для налаштування програм та керування префіксами Wine.
 GenericName=Qt4 utility for Wine applications and prefixes management.
 GenericName[cz]=Qt4 užitečný program pro programy wine a správu předpon.
 GenericName[de]=Qt4-Werkzeug zur Verwaltung der Wine-Anwendungen und -Präfixe.
