@@ -35,6 +35,7 @@
 #include "process.h"
 
 #include "prefix.h"
+#include "src/core/database/versions.h"
 #include "last_run_icon.h"
 
 #include "q4wine-lib.h"

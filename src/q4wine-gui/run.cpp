@@ -245,7 +245,6 @@ void Run::getPrefixes(){
             comboPrefixes->setCurrentIndex ( comboPrefixes->findText(list.at(i)) );
             QHash<QString,QString> pref = db_prefix.getByName(prefix_name);
             prefix_dir = pref.value("path");
-            getWineDlls(pref.value("libs"));
         }
     }
     return;
@@ -256,15 +255,35 @@ void Run::comboPrefixes_indexChanged (int){
      * If user select prefix -- rebuild wine dlls list
      */
     QHash<QString,QString> result = db_prefix.getByName(comboPrefixes->currentText());
+    QString libs_path;
 
     if (result.value("path").isEmpty()){
         prefix_dir = QDir::homePath();
         prefix_dir.append("/.wine/drive_c/");
     } else {
         prefix_dir = result.value("path");
+        libs_path = result.value("libs");
     }
 
-    getWineDlls(result.value("libs"));
+    if (libs_path.isEmpty()){
+        Version vers;
+        vers.id_ = result.value("version_id");
+        if (vers.load()){
+            if (result.value("arch") == "win32"){
+                libs_path = vers.wine_dllpath32_;
+            } else if (result.value("arch") == "win64"){
+                libs_path = vers.wine_dllpath64_;
+            } else {
+                if (vers.wine_dllpath64_.isEmpty()){
+                    libs_path = vers.wine_dllpath32_;
+                } else {
+                    libs_path = vers.wine_dllpath64_;
+                }
+            }
+        }
+    }
+
+    getWineDlls(libs_path);
 
     return;
 }
