@@ -2,6 +2,8 @@ Version 1.1-r1
  Fixed:
   - Error while loading application settings by key: 'WineLibs' [BUG-42];
   - Updated Afrikaans translation. thx 2 Danie Wessels;
+  - Fixed cmake warnings;
+  - Updated .desktop file;
 
 Version 1.1
  Added:
