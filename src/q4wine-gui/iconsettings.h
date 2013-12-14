@@ -33,6 +33,7 @@
 //Db
 #include "prefix.h"
 #include "icon.h"
+#include "src/core/database/versions.h"
 
 //Qt inc
 

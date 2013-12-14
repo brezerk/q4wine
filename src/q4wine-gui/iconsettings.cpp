@@ -46,9 +46,11 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
     this->prefix_name = prefix_name;
+    QHash<QString,QString> result = db_prefix.getByName(this->prefix_name);
+
     this->dir_name = dir_name;
     this->icon_name = icon_name;
-    this->prefix_path = db_prefix.getByName(this->prefix_name).value("path");
+    this->prefix_path = result.value("path");
     if (this->prefix_path.isEmpty()){
           this->prefix_path = QDir::homePath();
           this->prefix_path.append("/.wine/drive_c/");
@@ -64,7 +66,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
     if (QDir(this->prefix_path).exists())
        prefix_urls << QUrl::fromLocalFile(this->prefix_path);
 
-    QString cd_mount = db_prefix.getMountPoint(this->prefix_name);
+    QString cd_mount = result.value("mount");
 
     if (!cd_mount.isEmpty())
       if (QDir().exists(cd_mount))
@@ -108,7 +110,30 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 
     twDlls->installEventFilter(this);
 
-    cboxDlls->addItems(CoreLib->getWineDlls(db_prefix.getByName(prefix_name).value("libs")));
+    QString libs_path = result.value("libs");
+
+    if (libs_path.isEmpty()){
+        Version vers;
+        vers.id_ = result.value("version_id");
+        if (vers.load()){
+            if (result.value("arch") == "win32"){
+                libs_path = vers.wine_dllpath32_;
+            } else if (result.value("arch") == "win64"){
+                libs_path = vers.wine_dllpath64_;
+            } else {
+                if (vers.wine_dllpath64_.isEmpty()){
+                    libs_path = vers.wine_dllpath32_;
+                } else {
+                    libs_path = vers.wine_dllpath64_;
+                }
+            }
+        }
+    }
+
+
+
+    cboxDlls->addItems(CoreLib->getWineDlls(libs_path));
+
     cboxDlls->setMaxVisibleItems (10);
 
     cmdOk->setFocus(Qt::ActiveWindowFocusReason);
