@@ -106,6 +106,10 @@ pkg_maintainers:
           web: http://hwoarang.silverarrow.gr
           location: Greece
 
+        - name: Rusmir Dusko
+          info: FreeBSD port maintainer
+          mail: nemysis@FreeBSD.org
+
         - name: Sergey V. Dyatko
           info: FreeBSD port maintainer
           mail: sergey.dyatko@gmail.com
