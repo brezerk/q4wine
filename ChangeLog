@@ -1,3 +1,7 @@
+Version 1.1-r2
+ Fixed:
+  - Error while loading application settings by key: 'WineLibs' [BUG-42];
+
 Version 1.1-r1
  Fixed:
   - Error while loading application settings by key: 'WineLibs' [BUG-42];
