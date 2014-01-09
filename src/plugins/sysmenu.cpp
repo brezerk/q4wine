@@ -346,7 +346,6 @@ bool system_menu::wipeSystemMenu(){
     dir.setPath(dir_path);
     if (dir.exists()){
         CoreLib->removeDirectory(dir_path);
-        dir.rmdir(dir_path);
     }
 
     return true;

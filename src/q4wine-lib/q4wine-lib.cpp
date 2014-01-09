@@ -2033,8 +2033,6 @@ QStringList corelib::getCdromDevices(void) const{
 #ifdef DEBUG
                     qDebug()<<"[DD] Remove dir "<<list.at(i).absoluteFilePath();
 #endif
-                    if (not dir.rmdir(list.at(i).absoluteFilePath()))
-                        return false;
                 } else {
 #ifdef DEBUG
                     qDebug()<<"[DD] Remove file "<< list.at(i).absoluteFilePath();
@@ -2043,5 +2041,7 @@ QStringList corelib::getCdromDevices(void) const{
                         return false;
                 }
             }
+            if (not dir.rmdir(dirPath))
+                return false;
             return true;
         }

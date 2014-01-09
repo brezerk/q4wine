@@ -36,6 +36,7 @@
 //Qt includes
 #include <QSqlQueryModel>
 #include <QTableView>
+#include <QCheckBox>
 #include <QToolBar>
 #include <QMenu>
 #include <QHeaderView>

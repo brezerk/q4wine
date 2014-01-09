@@ -215,6 +215,7 @@ void PrefixControlWidget::prefixDelete_Click(){
         return;
 
     QString prefixName = model->index(prefixTable->currentIndex().row(), 0, QModelIndex()).data().toString();
+    QString prefixPath = model->index(prefixTable->currentIndex().row(), 3, QModelIndex()).data().toString();
 
     if (prefixName.isEmpty())
         return;
@@ -224,7 +225,22 @@ void PrefixControlWidget::prefixDelete_Click(){
             return;
     }
 
-    if(QMessageBox::warning(this, tr("Warning"), tr("Do you really wish to delete the prefix named \"%1\" and all associated icons?").arg(prefixName), QMessageBox::Ok, QMessageBox::Cancel)==QMessageBox::Ok){
+    QMessageBox msgBox(this);
+    QCheckBox dontPrompt(QObject::tr("Remove prefix directory"), &msgBox);
+    dontPrompt.blockSignals(true);
+
+    msgBox.setIcon(QMessageBox::Warning);
+    msgBox.setWindowTitle(tr("Warning"));
+    msgBox.setText(tr("Do you really wish to delete the prefix named \"%1\" and all associated icons?").arg(prefixName));
+    msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+    msgBox.setDefaultButton(QMessageBox::Cancel);
+
+    msgBox.addButton(&dontPrompt, QMessageBox::ActionRole);
+
+    if(msgBox.exec()==QMessageBox::Ok){
+        if (dontPrompt.checkState() == Qt::Checked){
+            CoreLib->removeDirectory(prefixPath);
+        }
         if (db_icon.delIconsByPrefixName(prefixName))
             if(db_dir.delDir(prefixName)){
                 db_prefix.delByName(prefixName);
@@ -356,7 +372,7 @@ void PrefixControlWidget::prefixExport_Click(){
     qDebug()<<"[ii] row is valid";
 #endif
     QString prefixName = model->index(prefixTable->currentIndex().row(), 0, QModelIndex()).data().toString();
-    QString prefixPath = model->index(prefixTable->currentIndex().row(), 2, QModelIndex()).data().toString();
+    QString prefixPath = model->index(prefixTable->currentIndex().row(), 3, QModelIndex()).data().toString();
 
 #ifdef DEBUG
     qDebug()<<"[ii] name: " << prefixName << " Path: " << prefixPath;

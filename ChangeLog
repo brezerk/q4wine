@@ -1,3 +1,9 @@
+Version 1.2
+ Added:
+  - Deleting prefix does not remove prefix folder in ~/.local/share/wineprefixes [BUG-43];
+ Fixed:
+  - Backup/Restore prefix path handler;
+
 Version 1.1-r2
  Fixed:
   - Error while loading application settings by key: 'WineLibs' [BUG-42];
