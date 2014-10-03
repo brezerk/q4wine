@@ -25,10 +25,10 @@ D_TXTDIR = os.path.join(os.path.dirname(__file__), '../')
 class AuthrosTxtTemplate:
     def __init__(self):
         filename = os.path.join(D_TXTDIR, 'AUTHORS')
-	print("-- Writing %s --\n" % filename)
-	self.header__ = open(filename, 'w')
-	self.header()
-	self.index__=2
+        print("-- Writing %s --\n" % filename)
+        self.header__ = open(filename, 'w')
+        self.header()
+        self.index__=2
 
     def close(self):
         self.header__.close()
@@ -69,7 +69,7 @@ class AuthrosHtmlTemplate:
         filename = os.path.join(D_DATADIR, 'authors.h')
         print("-- Writing %s --\n" % filename)
         self.header__ = open(filename, 'w')
-	self.header()
+        self.header()
 
     def close(self):
         self.header__.close()
@@ -143,7 +143,7 @@ def generate_authors():
     print("-- Reading %s --\n" % filename)
 
     with open(filename, 'r') as f:
-       data = yaml.safe_load(f)
+        data = yaml.safe_load(f)
 
     html_tpl = AuthrosHtmlTemplate()
     txt_tpl = AuthrosTxtTemplate()
@@ -151,7 +151,7 @@ def generate_authors():
     for group, persons in data.iteritems():
         print("-- Parse group T_%s --\n" % group.upper())
         html_tpl.head(group)
-	txt_tpl.head(group)
+        txt_tpl.head(group)
         for person in persons:
             nick = ""
             if person.has_key('nick'):
