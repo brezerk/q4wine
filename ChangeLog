@@ -3,6 +3,7 @@ Version 1.2
   - Deleting prefix does not remove prefix folder in ~/.local/share/wineprefixes [BUG-43];
  Fixed:
   - Backup/Restore prefix path handler;
+  - Can't use pre/post run scripts without standalone script [BUG-49];
 
 Version 1.1-r2
  Fixed:

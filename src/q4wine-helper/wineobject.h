@@ -72,7 +72,7 @@ public:
 
 private:
     int runSys();
-    int runScript(QString script_path);
+    int runScript(QString script_path, bool pre_run=true);
     void logStdout(int status);
 
     //! This is need for libq4wine-core.so import;

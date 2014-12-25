@@ -193,17 +193,23 @@ void LoggingWidget::treeWidget_itemClicked (QTreeWidgetItem * item, int colum){
                         }
 
                         if (rows.at(j) == "Exec string:"){
-                             iconItem->setText(tr("Exec string:"));
-                             iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
-                         } else if (rows.at(j) == "Exit code:"){
-                             iconItem->setText(tr("Exit code:"));
-                             iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
-                         } else if (rows.at(j) == "App STDOUT and STDERR output:"){
-                             iconItem->setText(tr("App STDOUT and STDERR output:"));
-                             iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
-                         } else {
-                              iconItem->setText(rows.at(j));
-                         }
+                            iconItem->setText(tr("Exec string:"));
+                            iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
+                        } else if (rows.at(j) == "Prerun Exec string:"){
+                            iconItem->setText(tr("Prerun Exec string:"));
+                            iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
+                        } else if (rows.at(j) == "Postrun Exec string:"){
+                            iconItem->setText(tr("Postrun Exec string:"));
+                            iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
+                        } else if (rows.at(j) == "Exit code:"){
+                            iconItem->setText(tr("Exit code:"));
+                            iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
+                        } else if (rows.at(j) == "App STDOUT and STDERR output:"){
+                            iconItem->setText(tr("App STDOUT and STDERR output:"));
+                            iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
+                        } else {
+                            iconItem->setText(rows.at(j));
+                        }
 
                         iconItem.release();
                     }

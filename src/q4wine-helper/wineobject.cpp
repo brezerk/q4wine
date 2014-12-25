@@ -186,9 +186,11 @@ QString WineObject::createEnvString(){
 int WineObject::runSys(){
 
     if (!this->useConsole){
-        int ret = this->runScript(this->prerun_script);
-        if ( ret != 0){
-            return 255;
+        if (!this->prerun_script.isEmpty()){
+            int ret = this->runScript(this->prerun_script);
+            if ( ret != 0){
+                return 255;
+            }
         }
     }
 
@@ -327,9 +329,11 @@ int WineObject::runSys(){
     status = pclose(fp);
 
     if (!this->useConsole){
-        int ret = this->runScript(this->postrun_script);
-        if (ret != 0)
-            return ret;
+        if (!this->postrun_script.isEmpty()){
+            int ret = this->runScript(this->postrun_script, false);
+            if (ret != 0)
+                return ret;
+        }
     }
 
     stdout.append("Exit code:");
@@ -356,7 +360,7 @@ int WineObject::run(){
     return status;
 }
 
-int WineObject::runScript(QString script_path){
+int WineObject::runScript(QString script_path, bool pre_run){
     int status;
     FILE *fp;
     char path[PATH_MAX];
@@ -371,9 +375,9 @@ int WineObject::runScript(QString script_path){
         run_string.append(env);
     }
 
-    run_string.append(" /bin/sh -c \"");
+    run_string.append(" /bin/sh -c ");
     run_string.append(script_path);
-    run_string.append("\" 2>&1");
+    run_string.append(" 2>&1");
 
     fp = popen(codec->fromUnicode(run_string).data(), "r");
     if (fp == NULL)
@@ -386,6 +390,14 @@ int WineObject::runScript(QString script_path){
     status = pclose(fp);
     if (status != 0){
         if (this->logEnabled){
+            if (pre_run){
+                stdout.append("Prerun Exec string:");
+            } else {
+                stdout.append("Postrun Exec string:");
+            }
+            stdout.append("\n");
+            stdout.append(run_string);
+            stdout.append("\n");
             stdout.append("Exit code:");
             stdout.append("\n");
             stdout.append(QString("%1").arg(status));
