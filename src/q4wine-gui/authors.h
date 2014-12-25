@@ -54,19 +54,19 @@
 	    " " \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Artem Vorotnikov (skybon)" \
+	    "Artem Vorotnikov" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "General fixes" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:skybon@gmail.com' style='text-decoration: none; color:#5f9ea0;'>skybon@gmail.com</a>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:artem@vorotnikov.me' style='text-decoration: none; color:#5f9ea0;'>artem@vorotnikov.me</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:vorot93@jabber.ru' style='text-decoration: none; color:#5f9ea0;'>vorot93@jabber.ru</a>" \
+	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:artem@vorotnikov.me' style='text-decoration: none; color:#5f9ea0;'>artem@vorotnikov.me</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='https://launchpad.net/~skybon' style='color:#5f9ea0;'>https://launchpad.net/~skybon</a>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='https://launchpad.net/~a.vorotnikov' style='color:#5f9ea0;'>https://launchpad.net/~a.vorotnikov</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Moscow, Russia" \
@@ -190,19 +190,19 @@
 	    " " \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Artem Vorotnikov (skybon)" \
+	    "Artem Vorotnikov" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "German translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:skybon@gmail.com' style='text-decoration: none; color:#5f9ea0;'>skybon@gmail.com</a>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:artem@vorotnikov.me' style='text-decoration: none; color:#5f9ea0;'>artem@vorotnikov.me</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:vorot93@jabber.ru' style='text-decoration: none; color:#5f9ea0;'>vorot93@jabber.ru</a>" \
+	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:artem@vorotnikov.me' style='text-decoration: none; color:#5f9ea0;'>artem@vorotnikov.me</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='https://launchpad.net/~skybon' style='color:#5f9ea0;'>https://launchpad.net/~skybon</a>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='https://launchpad.net/~a.vorotnikov' style='color:#5f9ea0;'>https://launchpad.net/~a.vorotnikov</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Moscow, Russia" \

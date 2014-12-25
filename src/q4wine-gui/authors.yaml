@@ -1,6 +1,6 @@
 ﻿#
-# Copyright (C) 2013 by Artem Vorotnikov
-# skybon@gmail.com
+# Copyright (C) 2013-2014 by Alexey S. Malakhov
+# brezerk@gmail.com
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 #
 
 #
-# This file is used by tools/gen_authors.py to regenerate src/q4wine-gui/authors.h file
+# This file is used by tools/gen_authors.py to regenerate AUTHORS and src/q4wine-gui/authors.h files
 # Note: after update, please, run this tool manually or with 'make authors'
 #
 
@@ -50,11 +50,10 @@ developers:
           location: Kiev, Ukraine
 
         - name: Artem Vorotnikov
-          nick: skybon
           info: General fixes
-          mail: skybon@gmail.com
-          jid: vorot93@jabber.ru
-          web: https://launchpad.net/~skybon
+          mail: artem@vorotnikov.me
+          jid: artem@vorotnikov.me
+          web: https://launchpad.net/~a.vorotnikov
           location: Moscow, Russia 
 
         - name: Sergey Skrypnic
@@ -140,11 +139,10 @@ translations:
           location: Centurion, Gauteng, South Africa
 
         - name: Artem Vorotnikov
-          nick: skybon
           info: German translation
-          mail: skybon@gmail.com
-          jid: vorot93@jabber.ru
-          web: https://launchpad.net/~skybon
+          mail: artem@vorotnikov.me
+          jid: artem@vorotnikov.me
+          web: https://launchpad.net/~a.vorotnikov
           location: Moscow, Russia 
 
         - name: Carlos Ignacio Ruax
