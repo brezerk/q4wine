@@ -4762,7 +4762,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+158"/>
-        <source>&lt;b&gt;First startup wizrad&lt;/b&gt;</source>
+        <source>&lt;b&gt;First startup wizard&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

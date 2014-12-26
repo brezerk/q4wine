@@ -4818,7 +4818,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     </message>
     <message>
         <location line="+158"/>
-        <source>&lt;b&gt;First startup wizrad&lt;/b&gt;</source>
+        <source>&lt;b&gt;First startup wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Eerste-instellings towenaar&lt;/b&gt;</translation>
     </message>
     <message>

@@ -559,7 +559,7 @@ void Wizard::updateScena(){
                 */
         switch (Page){
   case 1:
-            lblCaption->setText(Wizard::tr("<b>First startup wizrad</b>"));
+            lblCaption->setText(Wizard::tr("<b>First startup wizard</b>"));
             lblWizardInfo->setText(Wizard::tr("<p>Welcome to first startup wizard.</p><p>This wizard helps you to make all necessary steps for successful %1 setup.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
             stkWizards->setCurrentIndex(0);
             cmdNext->setEnabled(TRUE);

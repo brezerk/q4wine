@@ -2,6 +2,7 @@ Version 1.2
  Added:
   - Deleting prefix does not remove prefix folder in ~/.local/share/wineprefixes [BUG-43];
  Fixed:
+  - Fixed typo in Startup Wizard;
   - Fixup Wine Libs detection [BUG-50];
   - Remove Wine settings from App settings [BUG-50,BUG-23];
   - Make Wine64 libs optional (for x86 only platforms) [BUG-50];

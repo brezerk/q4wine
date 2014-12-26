@@ -4790,7 +4790,7 @@ Nota: lascia in bianco per il default.</translation>
     </message>
     <message>
         <location line="+158"/>
-        <source>&lt;b>First startup wizrad&lt;/b></source>
+        <source>&lt;b>First startup wizard&lt;/b></source>
         <translation>&lt;b> Prima esecuzione del wizard&lt;/b></translation>
     </message>
     <message>

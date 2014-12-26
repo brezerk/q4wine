@@ -5346,7 +5346,7 @@ Domyślnie są puste.</translation>
     </message>
     <message>
         <location line="+158"/>
-        <source>&lt;b&gt;First startup wizrad&lt;/b&gt;</source>
+        <source>&lt;b&gt;First startup wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;Kreator pierwszego uruchomienia&lt;/b&gt;</translation>
     </message>
     <message>
