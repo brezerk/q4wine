@@ -186,8 +186,9 @@ void VersionManager::cmdOk_Click()
     if (!fileExists(this->txtWineLibs32->text(), true))
         return;
 
-    if (!fileExists(this->txtWineLibs64->text(), true))
-        return;
+    if (!this->txtWineLibs64->text().isEmpty())
+        if (!fileExists(this->txtWineLibs64->text(), true))
+            return;
 
     accept();
     return;

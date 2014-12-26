@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>587</width>
-    <height>499</height>
+    <width>585</width>
+    <height>497</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -188,8 +188,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>587</width>
-     <height>24</height>
+     <width>585</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -427,7 +427,10 @@
   </action>
   <action name="mainVersionManager">
    <property name="text">
-    <string>Version Manager</string>
+    <string>Wine Version Manager</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
    </property>
   </action>
  </widget>

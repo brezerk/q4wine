@@ -23,7 +23,7 @@
 #include <src/q4wine-gui/ui_AppSettings.h>
 
 #include "config.h"
-
+#include "versions.h"
 #include "q4wine-lib.h"
 
 #ifndef _OS_DARWIN_
@@ -41,6 +41,7 @@ class AppSettings : public QDialog, public Ui::AppSettings
     private slots:
         void cmdCancel_Click();
         void cmdOk_Click();
+        void cmdVersionManager_Click();
         void comboProxyType_indexChanged(QString text);
         //! \brief cmdHelo click slot.
         void cmdHelp_Click();

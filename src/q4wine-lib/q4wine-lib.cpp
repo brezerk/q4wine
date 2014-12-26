@@ -713,11 +713,14 @@ QStringList corelib::getWineLibsPath(void) {
     if (!string.isEmpty()){
         QStringList libs_list = string.split("\n");
 #ifdef _OS_LINUX_
-        QRegExp rx_info(".*\\((.*)\\) => (.*\\.so$)");
+        QRegExp rx_info(".*\\((.*)\\) => (.*\\.so.*$)");
 #else
         QRegExp rx_info("(.*) => (.*\\.so.*)");
 #endif
         foreach (QString lib_info, libs_list){
+#ifdef DEBUG
+            qDebug()<<"[ii] work with: " <<  lib_info;
+#endif
             int pos = rx_info.indexIn(lib_info);
             QString arch, path;
             if (pos > -1) {
@@ -726,11 +729,15 @@ QStringList corelib::getWineLibsPath(void) {
             } else {
                 continue;
             }
+#ifdef DEBUG
+            qDebug()<<"[ii] Found: " <<  arch << " " << path;
+#endif
             if (path.isEmpty()){
                 qDebug()<<"[EE] No winelib.so found in: " << lib_info;
                 continue;
             }
             QFileInfo file(path);
+
             if (!file.exists()){
                 qDebug()<<"[EE] File does not exist: " << path;
                 continue;

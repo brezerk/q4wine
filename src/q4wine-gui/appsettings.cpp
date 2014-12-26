@@ -60,15 +60,11 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
     connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
+    connect(cmdVersionManager, SIGNAL(clicked()), this, SLOT(cmdVersionManager_Click()));
 
     connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
 
     //Installing event filters for get buttuns
-    cmdGetWineBin->installEventFilter(this);
-    cmdGetWineServerBin->installEventFilter(this);
-    cmdGetWineLoaderBin->installEventFilter(this);
-    cmdGetWineLibs->installEventFilter(this);
-    cmdGetWineLibs64->installEventFilter(this);
     cmdGetTarBin->installEventFilter(this);
     cmdGetMountBin->installEventFilter(this);
     cmdGetUmountBin->installEventFilter(this);
@@ -81,14 +77,6 @@ AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
     cmdGetDefPrefixPath->installEventFilter(this);
 
     QSettings settings(APP_SHORT_NAME, "default");
-
-    settings.beginGroup("wine");
-    txtWineBin->setText(settings.value("WineBin").toString());
-    txtWineServerBin->setText(settings.value("ServerBin").toString());
-    txtWineLoaderBin->setText(settings.value("LoaderBin").toString());
-    txtWineLibs->setText(settings.value("WineLibs32").toString());
-    txtWineLibs64->setText(settings.value("WineLibs64").toString());
-    settings.endGroup();
 
     settings.beginGroup("logging");
     connect (cbShowTray, SIGNAL(stateChanged (int)), this, SLOT(cbShowTray_stateChanged (int)));
@@ -531,12 +519,6 @@ void AppSettings::getThemes(QString selTheme, QString themeDir){
 void AppSettings::loadThemeIcons(){
     lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
 
-    cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineLibs->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineLibs64->setIcon(CoreLib->loadIcon("data/folder.png"));
-
     cmdGetTarBin->setIcon(CoreLib->loadIcon("data/folder.png"));
     cmdGetMountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
     cmdGetUmountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
@@ -559,17 +541,6 @@ void AppSettings::cmdCancel_Click(){
 }
 
 void AppSettings::cmdOk_Click(){
-    if (!checkEntry(txtWineBin->text(), "wine"))
-        return;
-
-    if (!checkEntry(txtWineServerBin->text(), "wine server"))
-        return;
-
-    if (!checkEntry(txtWineLoaderBin->text(), "wine loader"))
-        return;
-
-    if (!checkEntry(txtWineLibs->text(), "wine library", FALSE))
-        return;
 
     if (!checkEntry(txtTarBin->text(), "tar"))
         return;
@@ -618,14 +589,6 @@ void AppSettings::cmdOk_Click(){
     }
 
     QSettings settings(APP_SHORT_NAME, "default");
-
-    settings.beginGroup("wine");
-    settings.setValue("WineBin", txtWineBin->text());
-    settings.setValue("ServerBin", txtWineServerBin->text());
-    settings.setValue("LoaderBin", txtWineLoaderBin->text());
-    settings.setValue("WineLibs32", txtWineLibs->text());
-    settings.setValue("WineLibs64", txtWineLibs64->text());
-    settings.endGroup();
 
     settings.beginGroup("logging");
     if (cbClearLogs->checkState()==Qt::Checked) {
@@ -908,4 +871,10 @@ void AppSettings::cmdDesktopMenu_Regen_Click(){
 void AppSettings::cmdDesktopMenu_Remove_Click(){
     system_menu sys_menu;
     sys_menu.wipeSystemMenu();
+}
+
+void AppSettings::cmdVersionManager_Click(){
+    VersionManager* vers = new VersionManager();
+    vers->exec();
+    delete(vers);
 }

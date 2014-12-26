@@ -2,6 +2,8 @@ Version 1.2
  Added:
   - Deleting prefix does not remove prefix folder in ~/.local/share/wineprefixes [BUG-43];
  Fixed:
+  - Remove Wine settings from App settings [BUG-50,BUG-23];
+  - Make Wine64 libs optional (for x86 only platforms) [BUG-50];
   - Backup/Restore prefix path handler;
   - Can't use pre/post run scripts without standalone script [BUG-49];
 
