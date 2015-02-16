@@ -45,7 +45,7 @@ class VersionManager : public QDialog, public Ui::VersionManager
 {
     Q_OBJECT
 public:
-    VersionManager(QWidget * parent = 0, Qt::WFlags f = 0);
+    VersionManager(QWidget * parent = 0, Qt::WindowFlags f = 0);
     ~VersionManager();
     void setVersionFocus(QString version);
 signals:

@@ -18,7 +18,7 @@
 
 #include "appsettings.h"
 
-AppSettings::AppSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE

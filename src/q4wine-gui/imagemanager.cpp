@@ -17,7 +17,7 @@
  ***************************************************************************/
 #include "imagemanager.h"
 
-ImageManager::ImageManager(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+ImageManager::ImageManager(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
 	//setModal(true);
 	setupUi(this);

@@ -18,7 +18,7 @@
 
 #include "run.h"
 
-Run::Run(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+Run::Run(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
     // Setup base UI
     setupUi(this);

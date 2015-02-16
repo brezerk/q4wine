@@ -18,7 +18,7 @@
 
 #include "progress.h"
 
-Progress::Progress(int action, QString path, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+Progress::Progress(int action, QString path, QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
     setupUi(this);
 

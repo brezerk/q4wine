@@ -53,8 +53,8 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
          *
          * \param  prefix_name  Current prefix name.
          */
-        PrefixSettings(QString prefix_name, QWidget * parent = 0, Qt::WFlags f = 0);
-        PrefixSettings(QWidget * parent = 0, Qt::WFlags f = 0);
+        PrefixSettings(QString prefix_name, QWidget * parent = 0, Qt::WindowFlags f = 0);
+        PrefixSettings(QWidget * parent = 0, Qt::WindowFlags f = 0);
         QString getPrefixName();
 
     private:

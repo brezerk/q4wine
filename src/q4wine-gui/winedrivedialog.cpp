@@ -18,7 +18,7 @@
 
 #include "winedrivedialog.h"
 
-WineDriveDialog::WineDriveDialog(QStringList removeLetters, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+WineDriveDialog::WineDriveDialog(QStringList removeLetters, QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
 	setupUi(this);
 
@@ -58,7 +58,7 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QWidget * parent, Qt
 
 }
 
-WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter, QString drivePath, QString driveType, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter, QString drivePath, QString driveType, QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
 	setupUi(this);
 

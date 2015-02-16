@@ -18,7 +18,7 @@
 
 #include "src/q4wine-gui/versions.h"
 
-VersionManager::VersionManager(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+VersionManager::VersionManager(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE

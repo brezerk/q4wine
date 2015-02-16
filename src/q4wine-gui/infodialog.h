@@ -33,7 +33,7 @@ class InfoDialog : public QDialog, public Ui::InfoDialog
 {
 Q_OBJECT
 public:
-    explicit InfoDialog(int action, QWidget *parent = 0, Qt::WFlags f = 0);
+    explicit InfoDialog(int action, QWidget *parent = 0, Qt::WindowFlags f = 0);
 
 private:
     int action;

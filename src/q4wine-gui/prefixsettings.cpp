@@ -18,7 +18,7 @@
 
 #include "prefixsettings.h"
 
-PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
     // Setup base UI
     setupUi(this);
@@ -134,7 +134,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::WFlags
     return;
 }
 
-PrefixSettings::PrefixSettings(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+PrefixSettings::PrefixSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
     // Setup base UI
     setupUi(this);

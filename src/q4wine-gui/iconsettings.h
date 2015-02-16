@@ -62,7 +62,7 @@ class IconSettings : public QDialog, public Ui::IconSettings
          * \param  dir_name		Current directory name.
          * \param  icon_name	Current directory name.
          */
-        IconSettings(QString prefix_name, QString dir_name, QString icon_name = "", QWidget * parent = 0, Qt::WFlags f = 0);
+        IconSettings(QString prefix_name, QString dir_name, QString icon_name = "", QWidget * parent = 0, Qt::WindowFlags f = 0);
 
     private slots:
         /*! \brief This slot function resize dialog content.

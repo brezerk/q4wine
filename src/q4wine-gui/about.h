@@ -28,7 +28,7 @@ class About : public QDialog, public Ui::About
 {
 	Q_OBJECT
 	public:
-		About(QWidget * parent = 0, Qt::WFlags f = 0);
+		About(QWidget * parent = 0, Qt::WindowFlags f = 0);
 
 	private slots:
 		void cmdOk_Click();

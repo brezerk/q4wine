@@ -18,7 +18,7 @@
 
 #include "iconsview.h"
 
-IconsView::IconsView(QString tmpDir, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+IconsView::IconsView(QString tmpDir, QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE

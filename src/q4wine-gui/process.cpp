@@ -18,7 +18,7 @@
 
 #include "process.h"
 
-Process::Process (QStringList args, QString exec, QString dir, QString info, QString caption, bool showErr, QStringList env, QWidget * parent, Qt::WFlags f)
+Process::Process (QStringList args, QString exec, QString dir, QString info, QString caption, bool showErr, QStringList env, QWidget * parent, Qt::WindowFlags f)
 {
 	setupUi(this);
 

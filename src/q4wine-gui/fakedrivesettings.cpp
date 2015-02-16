@@ -18,7 +18,7 @@
 
 #include "fakedrivesettings.h"
 
-FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE

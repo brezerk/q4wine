@@ -18,7 +18,7 @@
 
 #include "about.h"
 
-About::About(QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+About::About(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
     setupUi(this);
     setWindowTitle(tr("About %1").arg(APP_NAME));

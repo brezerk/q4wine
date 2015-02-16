@@ -18,7 +18,7 @@
 
 #include "iconsettings.h"
 
-IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_name, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_name, QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
     /*
      ** This functions is constructor for IconSettings dialog

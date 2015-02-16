@@ -18,7 +18,7 @@
 
 #include "infodialog.h"
 
-InfoDialog::InfoDialog(int action, QWidget *parent, Qt::WFlags f) :  QDialog(parent, f)
+InfoDialog::InfoDialog(int action, QWidget *parent, Qt::WindowFlags f) :  QDialog(parent, f)
 {
     setupUi(this);
 

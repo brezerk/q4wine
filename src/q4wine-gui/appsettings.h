@@ -36,7 +36,7 @@ class AppSettings : public QDialog, public Ui::AppSettings
 {
     Q_OBJECT
     public:
-        AppSettings(QWidget * parent = 0, Qt::WFlags f = 0);
+        AppSettings(QWidget * parent = 0, Qt::WindowFlags f = 0);
 
     private slots:
         void cmdCancel_Click();

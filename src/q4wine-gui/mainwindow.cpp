@@ -18,7 +18,7 @@
 
 #include "mainwindow.h"
 
-MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt::WFlags f) : QMainWindow(parent, f){
+MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt::WindowFlags f) : QMainWindow(parent, f){
      // Loading libq4wine-core.so
 #ifdef RELEASE
     libq4wine.setFileName(_CORELIB_PATH_);

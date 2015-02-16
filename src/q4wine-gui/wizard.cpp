@@ -46,7 +46,7 @@ void Wizard::loadThemeIcons(int Scene){
     return;
 }
 
-Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WFlags f) : QDialog(parent, f)
+Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
     /*
         Note: var1 is optional data, used for different scene actions ;)

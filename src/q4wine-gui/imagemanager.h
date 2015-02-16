@@ -46,7 +46,7 @@ class ImageManager : public QDialog, public Ui::ImageManager
 	Q_OBJECT
 	public:
 		//! Class constructor
-		ImageManager(QWidget * parent = 0, Qt::WFlags f = 0);
+		ImageManager(QWidget * parent = 0, Qt::WindowFlags f = 0);
 
 	private slots:
 		//! Ok button click slot
