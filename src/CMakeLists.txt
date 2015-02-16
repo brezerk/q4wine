@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.11)
 
 PROJECT(q4wine)
 
@@ -11,9 +11,7 @@ if(POLICY CMP0011)
     cmake_policy(SET CMP0011 NEW)
 endif(POLICY CMP0011)
 
-IF(${CMAKE_VERSION} GREATER OR EQUAL 2.8.8)
 option(QT5 "If ON, then q4wine will be built with Qt 5.x." "OFF")
-ENDIF(${CMAKE_VERSION} GREATER OR EQUAL 2.8.8)
 option(DEBUG "If ON, then q4wine will send debug messages to STDOUT. Use it for development or bug reportint purposes." "OFF")
 option(RELEASE "If OFF, then force q4wine to use APP_BUILD as CMAKE_INSTALL_PREFIX. Use it for development purposes." "ON")
 option(WITH_ICOUTILS "If ON, then build q4wine with icoutils support." "ON")

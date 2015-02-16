@@ -1,5 +1,5 @@
 # i18n cmake lists
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.11)
 
 MESSAGE(STATUS "Process LINGUAS variable --\n")
 

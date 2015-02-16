@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.11)
 
 SET( DESKTOP_GUI_ENTRY
     ${CMAKE_SOURCE_DIR}/q4wine.desktop

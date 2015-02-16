@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.11)
 
 SET( Q4WINE_CLI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/q4wine-cli/q4wine-cli.cpp

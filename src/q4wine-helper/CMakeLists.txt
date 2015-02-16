@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.11)
 
 SET ( Q4WINE_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}
