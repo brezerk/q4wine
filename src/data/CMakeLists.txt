@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.11)
+cmake_minimum_required(VERSION 2.8.0)
 
 SET( ICON_PIXMAPS
     ${CMAKE_SOURCE_DIR}/src/data/eject.png
