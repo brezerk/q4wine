@@ -33,7 +33,12 @@ IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     SET(BSD_LIBS -lkvm)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
+if(QT5 MATCHES ON)
+    qt5_use_modules(q4wine-cli Core DBus Network Sql Widgets Xml)
+    target_link_libraries(q4wine-cli q4wine-core ${BSD_LIBS})
+else(QT5 MATCHES ON)
 TARGET_LINK_LIBRARIES( q4wine-cli ${QT_LIBRARIES} q4wine-core ${BSD_LIBS})
+endif(QT5 MATCHES ON)
 
 IF( RELEASE )
     install(TARGETS q4wine-cli DESTINATION ${APPS_ENTRY_PATH})

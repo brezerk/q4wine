@@ -303,8 +303,13 @@ IF (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
 					 /usr/include
 					 ${QT_INCLUDE_DIR}
 					 ${FRAMEWORK_INCLUDE_DIR})
+    if(QT5 MATCHES ON)
+    find_library(QTSINGLEAPPLIB Qt5Solutions_SingleApplication-head
+			        libQt5Solutions_SingleApplication-head)
+    else(QT5 MATCHES ON)
     find_library(QTSINGLEAPPLIB QtSolutions_SingleApplication-2.6
 			        libQtSolutions_SingleApplication-2.6)
+    endif(QT5 MATCHES ON)
 
     IF (QTSINGLEAPPLIB_INCLUDE_DIR AND QTSINGLEAPPLIB )
         MESSAGE(STATUS "     library : ${QTSINGLEAPPLIB}")

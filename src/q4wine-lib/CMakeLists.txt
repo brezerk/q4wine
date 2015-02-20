@@ -84,7 +84,11 @@ IF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
     SET_TARGET_PROPERTIES(q4wine-core PROPERTIES INSTALL_NAME_DIR "@executable_path/../Frameworks")
 ENDIF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 
+if(QT5 MATCHES ON)
+    qt5_use_modules(q4wine-core Core DBus Network Sql Widgets Xml)
+else(QT5 MATCHES ON)
 target_link_libraries( q4wine-core ${QT_LIBRARIES})
+endif(QT5 MATCHES ON)
 add_dependencies( q4wine-core translations_build )
 
 IF( RELEASE )
