@@ -239,9 +239,9 @@ void MainWindow::clearTmp(){
 void MainWindow::trayIcon_Activate(QSystemTrayIcon::ActivationReason reason){
     if (reason==QSystemTrayIcon::Trigger){
         if (!isVisible()){
-            setMeVisible(TRUE);
+            setMeVisible(true);
         } else {
-            setMeVisible(FALSE);
+            setMeVisible(false);
         }
     }
     return;
@@ -594,7 +594,7 @@ void MainWindow::mainPrograms_Click(){
      */
 
     if (!isVisible())
-        setMeVisible(TRUE);
+        setMeVisible(true);
 
     if (isMinimized ())
         showNormal ();
@@ -610,7 +610,7 @@ void MainWindow::mainProcess_Click(){
      */
 
     if (!isVisible())
-        setMeVisible(TRUE);
+        setMeVisible(true);
 
     if (isMinimized ())
         showNormal ();
@@ -625,7 +625,7 @@ void MainWindow::mainSetup_Click(){
      */
 
     if (!isVisible())
-        setMeVisible(TRUE);
+        setMeVisible(true);
 
     if (isMinimized ())
         showNormal ();
@@ -640,7 +640,7 @@ void MainWindow::mainLogging_Click(){
      */
 
     if (!isVisible())
-        setMeVisible(TRUE);
+        setMeVisible(true);
 
     if (isMinimized ())
         showNormal ();
@@ -659,7 +659,7 @@ void MainWindow::mainPrefix_Click(){
      */
 
     if (!isVisible())
-        setMeVisible(TRUE);
+        setMeVisible(true);
 
     if (isMinimized ())
         showNormal ();
@@ -773,7 +773,7 @@ void MainWindow::mainBugs_Click(){
 
 void MainWindow::mainAppDB_Click(){
     if (!isVisible())
-        setMeVisible(TRUE);
+        setMeVisible(true);
 
     if (isMinimized ())
         showNormal ();
@@ -986,7 +986,7 @@ void MainWindow::showNotifycation(const QString header, const QString message){
 void MainWindow::messageReceived(const QString message){
     if (message.isEmpty()){
         if (!isVisible())
-            this->setMeVisible(TRUE);
+            this->setMeVisible(true);
 
         if (isMinimized())
             this->showNormal ();

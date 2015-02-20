@@ -106,27 +106,27 @@ void PrefixControlWidget::createActions(){
     prefixImport.reset(new QAction(CoreLib->loadIcon("data/down.png"), tr("Import prefix"), this));
     prefixImport->setStatusTip(tr("Import prefix"));
     connect(prefixImport.get(), SIGNAL(triggered()), this, SLOT(prefixImport_Click()));
-    prefixImport->setEnabled(FALSE);
+    prefixImport->setEnabled(false);
 
     prefixExport.reset(new QAction(CoreLib->loadIcon("data/up.png"), tr("Export prefix"), this));
     prefixExport->setStatusTip(tr("Export prefix"));
     connect(prefixExport.get(), SIGNAL(triggered()), this, SLOT(prefixExport_Click()));
-    prefixExport->setEnabled(FALSE);
+    prefixExport->setEnabled(false);
 
     prefixDelete.reset(new QAction(CoreLib->loadIcon("data/kill.png"), tr("Delete prefix"), this));
     prefixDelete->setStatusTip(tr("Delete prefix"));
     connect(prefixDelete.get(), SIGNAL(triggered()), this, SLOT(prefixDelete_Click()));
-    prefixDelete->setEnabled(FALSE);
+    prefixDelete->setEnabled(false);
 
     prefixSettings.reset(new QAction(CoreLib->loadIcon("data/configure.png"), tr("Edit prefix settings"), this));
     prefixSettings->setStatusTip(tr("Edit prefix settings"));
     connect(prefixSettings.get(), SIGNAL(triggered()), this, SLOT(prefixSettings_Click()));
-    prefixSettings->setEnabled(FALSE);
+    prefixSettings->setEnabled(false);
 
     prefixSetup.reset(new QAction(CoreLib->loadIcon("data/eject.png"), tr("Set up prefix fake drive"), this));
     prefixSetup->setStatusTip(tr("Set up prefix fake drive and applications"));
     connect(prefixSetup.get(), SIGNAL(triggered()), this, SLOT(prefixSetup_Click()));
-    prefixSetup->setEnabled(FALSE);
+    prefixSetup->setEnabled(false);
 
     menu.reset(new QMenu(this));
     menu->addAction(prefixAdd.get());

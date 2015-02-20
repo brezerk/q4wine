@@ -147,7 +147,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
         guisudo << "kdesudo" << "kdesu" << "gksudo" << "gksu" << "sudo";
 #endif
         foreach (QString bin, guisudo){
-            QString path = CoreLib->getWhichOut(bin, FALSE);
+            QString path = CoreLib->getWhichOut(bin, false);
             if (!path.isEmpty()){
                 txtGuiSudoBin->setText(path);
                 break;
@@ -162,12 +162,12 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
         txtConsoleBin->setText("/usr/X11/bin/xterm");
         txtConsoleArgs->setText("-e");
 #else
-        console_w = CoreLib->getWhichOut("konsole", FALSE);
+        console_w = CoreLib->getWhichOut("konsole", false);
         if (!console_w.isEmpty()){
             txtConsoleBin->setText(console_w);
             txtConsoleArgs->setText("--noclose -e");
         } else {
-            console_w = CoreLib->getWhichOut("xterm", FALSE);
+            console_w = CoreLib->getWhichOut("xterm", false);
             if (!console_w.isEmpty()){
                 txtConsoleBin->setText(console_w);
                 txtConsoleArgs->setText("-e");
@@ -223,15 +223,15 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
 
 void Wizard::comboProxyType_indexChanged(QString text){
     if (text==tr("No Proxy")){
-        txtProxyHost->setEnabled(FALSE);
-        txtProxyPort->setEnabled(FALSE);
-        txtProxyUser->setEnabled(FALSE);
-        txtProxyPass->setEnabled(FALSE);
+        txtProxyHost->setEnabled(false);
+        txtProxyPort->setEnabled(false);
+        txtProxyUser->setEnabled(false);
+        txtProxyPass->setEnabled(false);
     } else {
-        txtProxyHost->setEnabled(TRUE);
-        txtProxyPort->setEnabled(TRUE);
-        txtProxyUser->setEnabled(TRUE);
-        txtProxyPass->setEnabled(TRUE);
+        txtProxyHost->setEnabled(true);
+        txtProxyPort->setEnabled(true);
+        txtProxyUser->setEnabled(true);
+        txtProxyPass->setEnabled(true);
     }
 
     return;
@@ -248,9 +248,9 @@ void Wizard::changeBoxState(int state){
             switch (Page){
                 case 2:
                     if (state==Qt::Checked){
-                        cbFakeVersion->setEnabled(TRUE);
+                        cbFakeVersion->setEnabled(true);
                     } else {
-                        cbFakeVersion->setEnabled(FALSE);
+                        cbFakeVersion->setEnabled(false);
                     }
                 break;
             }
@@ -267,7 +267,7 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
     */
 
     if (obj->objectName()== "Wizard")
-        return FALSE;
+        return false;
 
     if (event->type() == QEvent::MouseButtonRelease) {
         QString file;
@@ -313,7 +313,7 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
             }
         }
     }
-    return FALSE;
+    return false;
 }
 
 bool Wizard::checkEntry(QString fileName, QString info, bool isFile){
@@ -323,29 +323,29 @@ bool Wizard::checkEntry(QString fileName, QString info, bool isFile){
 
     if (fileName.isEmpty()){
         switch (isFile){
-  case FALSE:
+  case false:
             QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 directory.").arg(info));
             break;
-  case TRUE:
+  case true:
             QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 binary.").arg(info));
             break;
         }
-        return FALSE;
+        return false;
     } else {
         if (!QFile::exists(fileName)){
             switch (isFile){
-   case FALSE:
+   case false:
                 QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory does not exist.").arg(info));
                 break;
-   case TRUE:
+   case true:
                 QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary does not exist.").arg(info));
                 break;
             }
-            return FALSE;
+            return false;
         }
     }
 
-    return TRUE;
+    return true;
 }
 
 void Wizard::nextWizardPage(){
@@ -363,7 +363,7 @@ void Wizard::nextWizardPage(){
                 return;
             if (!checkEntry(txtWineLoaderBin->text(), "wine loader"))
                 return;
-            if (!checkEntry(txtWineDllPath->text(), "wine library", FALSE))
+            if (!checkEntry(txtWineDllPath->text(), "wine library", false))
                 return;
             break;
   case 4:
@@ -562,14 +562,14 @@ void Wizard::updateScena(){
             lblCaption->setText(Wizard::tr("<b>First startup wizard</b>"));
             lblWizardInfo->setText(Wizard::tr("<p>Welcome to first startup wizard.</p><p>This wizard helps you to make all necessary steps for successful %1 setup.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
             stkWizards->setCurrentIndex(0);
-            cmdNext->setEnabled(TRUE);
-            cmdBack->setEnabled(FALSE);
+            cmdNext->setEnabled(true);
+            cmdBack->setEnabled(false);
             break;
   case 2:
             txtInfo->setText(tr("<p><b><span style='font-weight:600; color:#6495ed;'>%1</span></b> was initially written by Alexey S. Malakhov aka John Brezerk  [<a href='mailto:brezerk@gmail.com'>brezerk@gmail.com</a>]</p><p>General idea comes from <b><span style='font-weight:600; color:#6495ed;'>WineTools</span></b> scripts which was initially written by Frank Hendriksen [<a href='mailto:frank@frankscorner.org'>frank@frankscorner.org</a>]</p><p>It is licensed under the <b><span style='font-weight:600; color:#6495ed;'>GPL v3</span></b>.</p><p>Send comments, bugreports, etc. to [<a href='mailto:brezerk@gmail.com'>brezerk@gmail.com</a>]</p><p><b><span style='font-weight:600; color:#6495ed;'>Note</span></b>: This software comes with absolutely no warranty. You will <b><span style='font-weight:600; color:#7D1D10;'>NOT</span></b> get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.</p><p>If you <span style='font-weight:600; color:#6495ed;'>need help</span>, ask the mailing lists at <a href='http://www.winehq.org/site/forums'>http://www.winehq.org/site/forums</a>.</p><p>If you <span style='font-weight:600; color:#6495ed;'>want support</span>, buy the commercial versions of wine: CodeWeavers CrossOver Office (<a href='http://www.codeweavers.com'>http://www.codeweavers.com</a>) for Desktop Applications</p>").arg(APP_NAME));
             stkWizards->setCurrentIndex(1);
-            cmdNext->setEnabled(TRUE);
-            cmdBack->setEnabled(TRUE);
+            cmdNext->setEnabled(true);
+            cmdBack->setEnabled(true);
             break;
   case 3:
             stkWizards->setCurrentIndex(2);

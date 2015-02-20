@@ -77,7 +77,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 
     QString res;
     switch (icon_name.isEmpty()){
-        case TRUE:
+        case true:
             lblCaption->setText(tr("Adding new icon"));
             setWindowTitle(tr("Adding new icon"));
 
@@ -88,7 +88,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
                 cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(res));
             }
         break;
-        case FALSE:
+        case false:
             lblCaption->setText(tr("Icon settings"));
             setWindowTitle(tr("Icon settings"));
             getIconReccord();
@@ -195,10 +195,10 @@ void IconSettings::getIconReccord(){
 
     if (iconRec.value("useconsole")=="1"){
         cbUseConsole->setCheckState(Qt::Checked);
-        txtWinedebug->setEnabled(TRUE);
+        txtWinedebug->setEnabled(true);
     } else {
         cbUseConsole->setCheckState(Qt::Unchecked);
-        txtWinedebug->setEnabled(FALSE);
+        txtWinedebug->setEnabled(false);
     }
 
     QStringList override = iconRec.value("override").split(";");
@@ -254,7 +254,7 @@ void IconSettings::ResizeContent(int TabIndex){
         case 1:
             twDlls->resizeRowsToContents();
             twDlls->resizeColumnsToContents();
-            twDlls->horizontalHeader()->setStretchLastSection(TRUE);
+            twDlls->horizontalHeader()->setStretchLastSection(true);
         break;
     }
 
@@ -273,13 +273,13 @@ void IconSettings::resizeEvent (QResizeEvent){
 void IconSettings::cbUseConsole_stateChanged(int){
     switch(cbUseConsole->checkState()){
         case Qt::PartiallyChecked:
-            txtWinedebug->setEnabled(TRUE);
+            txtWinedebug->setEnabled(true);
         break;
         case Qt::Checked:
-            txtWinedebug->setEnabled(TRUE);
+            txtWinedebug->setEnabled(true);
         break;
         case Qt::Unchecked:
-            txtWinedebug->setEnabled(FALSE);
+            txtWinedebug->setEnabled(false);
         break;
     }
 
@@ -341,7 +341,7 @@ void IconSettings::cmdAdd_Click(){
 
     twDlls->resizeRowsToContents();
     twDlls->resizeColumnsToContents();
-    twDlls->horizontalHeader()->setStretchLastSection(TRUE);
+    twDlls->horizontalHeader()->setStretchLastSection(true);
     return;
 }
 
@@ -489,7 +489,7 @@ void IconSettings::cmdGetIcon_Click(){
             args << "-o" << tmpDir;
             args << fileName;
 
-            Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), FALSE);
+            Process exportProcess(args, CoreLib->getSetting("icotool", "wrestool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
 
             if (exportProcess.exec()==QDialog::Accepted){
             //icotool -x -o ./regedit.png --width=32 --height=32 ./regedit.exe_14_100_0.ico
@@ -515,7 +515,7 @@ void IconSettings::cmdGetIcon_Click(){
                 //Look here, this function checks if some icons found, or not. 5 -- is default number of arguments,
                 //if more -- then we have some ico file to convert
                 if (args.size()>=4){
-                    Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), FALSE);
+                    Process exportProcess(args, CoreLib->getSetting("icotool", "icotool").toString(), QDir::homePath(), tr("Extracting icon from binary file.<br>This can take a while..."), tr("Extracting icon"), false);
                     if (exportProcess.exec()==QDialog::Accepted){
                         IconsView iconsView(tmpDir);
                         if (iconsView.exec()==QDialog::Accepted){

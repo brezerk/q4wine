@@ -84,7 +84,7 @@ void Run::prepare(QString prefix_name, QString wrkdir, QString override, QString
         txtProgramBin->setText(exec);
 
     if (useconsole=="1")
-        cbUseConsole->setChecked(TRUE);
+        cbUseConsole->setChecked(true);
 
     if (!desktop.isEmpty())
         cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(desktop));
@@ -148,7 +148,7 @@ void Run::cmdAdd_Click(){
 
     twDlls->resizeRowsToContents();
     twDlls->resizeColumnsToContents();
-    twDlls->horizontalHeader()->setStretchLastSection(TRUE);
+    twDlls->horizontalHeader()->setStretchLastSection(true);
     return;
 }
 
@@ -295,10 +295,10 @@ void Run::comboPrefixes_indexChanged (int){
 void Run::cbUseConsole_stateChanged(int){
     switch(cbUseConsole->checkState()){
  case Qt::Checked:
-        txtWinedebug->setEnabled(TRUE);
+        txtWinedebug->setEnabled(true);
         break;
  default:
-        txtWinedebug->setEnabled(FALSE);
+        txtWinedebug->setEnabled(false);
         break;
     }
 
@@ -310,7 +310,7 @@ void Run::ResizeContent(int TabIndex){
  case 1:
         twDlls->resizeRowsToContents();
         twDlls->resizeColumnsToContents();
-        twDlls->horizontalHeader()->setStretchLastSection(TRUE);
+        twDlls->horizontalHeader()->setStretchLastSection(true);
         break;
     }
 

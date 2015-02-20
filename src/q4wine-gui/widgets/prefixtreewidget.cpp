@@ -222,9 +222,9 @@ void PrefixTreeWidget::getPrefixes(){
             prefixItem->setText(0, QString("%1").arg(list.at(i)));
             prefixItem->setIcon(0, CoreLib->loadIcon("data/wine.png"));
             if (CoreLib->getSetting("TreeWidget", "State", false, D_TREE_EXPAND).toInt()==D_TREE_EXPAND){
-                prefixItem->setExpanded (TRUE);
+                prefixItem->setExpanded (true);
             } else {
-                prefixItem->setExpanded (FALSE);
+                prefixItem->setExpanded (false);
             }
             this->addTopLevelItem(prefixItem.get());
 

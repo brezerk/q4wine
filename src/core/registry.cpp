@@ -45,7 +45,7 @@ Registry::Registry(QString prefixPath){
 
 bool Registry::init(){
 	regfile_image="REGEDIT4";
-	return TRUE;
+	return true;
 }
 
 void Registry::append(QString reg_keys){

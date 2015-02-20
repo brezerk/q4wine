@@ -1362,7 +1362,7 @@ bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
     */
 
     if (obj->objectName()== "FakeDriveSettings")
-        return FALSE;
+        return false;
 
     if (event->type() == QEvent::MouseButtonRelease) {
         QString file;
@@ -1407,5 +1407,5 @@ bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
             }
         }
     }
-    return FALSE;
+    return false;
 }

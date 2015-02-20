@@ -66,9 +66,9 @@ void ImageManager::tableImage_showContextMenu(const QPoint){
 	menu.addAction(actionRefresh.get());
 	menu.addSeparator();
 	if (tableImage->currentRow()>=0){
-		actionRemove->setEnabled(TRUE);
+		actionRemove->setEnabled(true);
 	} else {
-		actionRemove->setEnabled(FALSE);
+		actionRemove->setEnabled(false);
 	}
 	menu.addAction(actionRemove.get());
 	menu.exec(QCursor::pos());
@@ -129,7 +129,7 @@ void ImageManager::getCDImages(void){
 
 	tableImage->resizeRowsToContents();
 	tableImage->resizeColumnsToContents();
-	tableImage->horizontalHeader()->setStretchLastSection(TRUE);
+	tableImage->horizontalHeader()->setStretchLastSection(true);
 
 	return;
 }

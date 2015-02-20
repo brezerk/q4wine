@@ -222,7 +222,7 @@ void PrefixConfigWidget::createTree(){
         if (item->text(0)==this->provider){
 
             this->treeWidget.get()->setCurrentItem(item.get());
-            this->treeWidget.get()->topLevelItem(i)->setExpanded(TRUE);
+            this->treeWidget.get()->topLevelItem(i)->setExpanded(true);
             this->treeWidget_itemClicked(item.get(), 0);
             item.release();
             break;

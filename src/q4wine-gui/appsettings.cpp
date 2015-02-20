@@ -423,20 +423,20 @@ bool AppSettings::eventFilter(QObject *obj, QEvent *event){
         }
     }
 
-    return FALSE;
+    return false;
 }
 
 void AppSettings::comboProxyType_indexChanged(QString text){
     if (text==tr("No Proxy")){
-        txtProxyHost->setEnabled(FALSE);
-        txtProxyPort->setEnabled(FALSE);
-        txtProxyUser->setEnabled(FALSE);
-        txtProxyPass->setEnabled(FALSE);
+        txtProxyHost->setEnabled(false);
+        txtProxyPort->setEnabled(false);
+        txtProxyUser->setEnabled(false);
+        txtProxyPass->setEnabled(false);
     } else {
-        txtProxyHost->setEnabled(TRUE);
-        txtProxyPort->setEnabled(TRUE);
-        txtProxyUser->setEnabled(TRUE);
-        txtProxyPass->setEnabled(TRUE);
+        txtProxyHost->setEnabled(true);
+        txtProxyPort->setEnabled(true);
+        txtProxyUser->setEnabled(true);
+        txtProxyPass->setEnabled(true);
     }
 
     return;
@@ -757,29 +757,29 @@ bool AppSettings::checkEntry(QString fileName, QString info, bool isFile){
 
     if (fileName.isEmpty()){
         switch (isFile){
-  case FALSE:
+  case false:
             QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 directory.").arg(info));
             break;
-  case TRUE:
+  case true:
             QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 binary.").arg(info));
             break;
         }
-        return FALSE;
+        return false;
     } else {
         if (!QFile::exists(fileName)){
             switch (isFile){
-   case FALSE:
+   case false:
                 QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory does not exist.").arg(info));
                 break;
-   case TRUE:
+   case true:
                 QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary does not exist.").arg(info));
                 break;
             }
-            return FALSE;
+            return false;
         }
     }
 
-    return TRUE;
+    return true;
 }
 
 void AppSettings::cmdHelp_Click(){

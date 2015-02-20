@@ -89,7 +89,7 @@ class Wizard : public QDialog, public Ui::Wizard
         int Scena, Page, TotalPage;
 
         //! \brief Function for checking user selected elements.
-        bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
+        bool checkEntry(QString fileName, QString info, bool isFile = true);
 
         //! Database prefix class defenition.
         Prefix db_prefix;

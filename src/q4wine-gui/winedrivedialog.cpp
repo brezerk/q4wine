@@ -93,10 +93,10 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter,
 	}
 
 	if (driveLetter=="C:"){
-		cbDriveLetter->setEnabled(FALSE);
-		cbDriveType->setEnabled(FALSE);
-		cmdGetDrivePath->setEnabled(FALSE);
-		txtDrivePath->setEnabled(FALSE);
+		cbDriveLetter->setEnabled(false);
+		cbDriveType->setEnabled(false);
+		cmdGetDrivePath->setEnabled(false);
+		txtDrivePath->setEnabled(false);
 	}
 
 	connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));

@@ -55,7 +55,7 @@ class AppSettings : public QDialog, public Ui::AppSettings
         bool eventFilter (QObject *object, QEvent *event);
         void getThemes(QString selTheme, QString themeDir);
         void getLangs();
-        bool checkEntry(QString fileName, QString info, bool isFile = TRUE);
+        bool checkEntry(QString fileName, QString info, bool isFile = true);
         void loadThemeIcons();
 
         std::auto_ptr<QSplitter> splitter;

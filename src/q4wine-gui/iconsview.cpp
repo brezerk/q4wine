@@ -80,7 +80,7 @@ void IconsView::cmdOk_Click(){
 		QFile file;
 
 		QString sourceFile, saveFile, saveFileName;
-		bool ok=FALSE;
+		bool ok=false;
 
 		sourceFile.clear();
 		sourceFile.append(tempDirectory);

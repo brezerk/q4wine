@@ -398,7 +398,7 @@ void LoggingWidget::getLogRecords(void){
             std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeWidget.get()));
             prefixItem->setText(0, QString("%1").arg(p_list.at(i)));
             prefixItem->setIcon(0, CoreLib->loadIcon("data/wine.png"));
-            prefixItem->setExpanded (TRUE);
+            prefixItem->setExpanded (true);
             treeWidget->addTopLevelItem(prefixItem.get());
 
             for (int j=0; j<app_list.count(); j++){

@@ -48,7 +48,7 @@ winetricks::winetricks(QString prefixName) : QWidget()
 
     this->prefix_name = prefixName;
     this->console_bin = CoreLib->getSetting("console", "bin").toString();
-    this->console_args = CoreLib->getSetting("console", "args", FALSE).toString();
+    this->console_args = CoreLib->getSetting("console", "args", false).toString();
 }
 
 void winetricks::install_winetricks() {

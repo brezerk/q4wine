@@ -40,7 +40,7 @@ class Process : public QDialog, public Ui::Process
 {
 	Q_OBJECT
 	public:
-		Process(QStringList args, QString exec, QString dir, QString info, QString caption, bool showErr = TRUE, QStringList env = QProcess::systemEnvironment(), QWidget * parent = 0, Qt::WindowFlags f = 0);
+		Process(QStringList args, QString exec, QString dir, QString info, QString caption, bool showErr = true, QStringList env = QProcess::systemEnvironment(), QWidget * parent = 0, Qt::WindowFlags f = 0);
 
 	private slots:
 		void slotFinished(int, QProcess::ExitStatus);

@@ -134,7 +134,7 @@ public:
      * \param  checkExist  If true - then we need to check exists file or dir by value or not.
      * \return Return an a key value.
      */
-    QVariant getSetting(const QString group, const QString key, const bool checkExist = TRUE, const QVariant defaultVal = QVariant()) const;
+    QVariant getSetting(const QString group, const QString key, const bool checkExist = true, const QVariant defaultVal = QVariant()) const;
 
     void checkSettings(void);
 
@@ -159,7 +159,7 @@ public:
      *
      * \return Return the full path of binary.
      */
-    QString getWhichOut (const QString fileName, bool showErr = TRUE);
+    QString getWhichOut (const QString fileName, bool showErr = true);
     QStringList getWineLibsPath(void);
 
     /*! \brief This function get cdrom devices from /etc/fstab file.
@@ -262,7 +262,7 @@ public:
      * \param  dir	  Exec directory.
      * \return True on success.
      */
-    bool runProcess(const QString exec, const QStringList args, QString dir = "", bool showLog = TRUE);
+    bool runProcess(const QString exec, const QStringList args, QString dir = "", bool showLog = true);
     bool runProcess(const QStringList args, const QString caption, const QString message);
 
     /*! \brief Get's string with escaped special characters
