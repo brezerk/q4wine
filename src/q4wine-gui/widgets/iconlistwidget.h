@@ -39,7 +39,9 @@
 #endif
 
 //Qt includes
+#include <QDrag>
 #include <QMenu>
+#include <QMimeData>
 #include <QDesktopServices>
 #include <QListView>
 #include <QClipboard>

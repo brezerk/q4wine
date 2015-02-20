@@ -266,7 +266,7 @@ void WineProcessWidget::procKillWine_Click(void){
 
 void WineProcessWidget::procRenice_Click(void){
     bool ok=false;
-    int newNice = QInputDialog::getInteger(this, tr("Select process priority"), tr("<p>Priority value can be in<br>the range from PRIO_MIN (-20)<br>to PRIO_MAX (20).</p><p>See \"man renice\" for details.</p>"), 0, -20, 20, 1, &ok);
+    int newNice = QInputDialog::getInt(this, tr("Select process priority"), tr("<p>Priority value can be in<br>the range from PRIO_MIN (-20)<br>to PRIO_MAX (20).</p><p>See \"man renice\" for details.</p>"), 0, -20, 20, 1, &ok);
     if (!ok)
         return;
 

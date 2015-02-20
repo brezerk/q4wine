@@ -44,6 +44,7 @@
 //Qt includes
 #include <QTreeWidgetItem>
 #include <QMenu>
+#include <QMimeData>
 #include <QDesktopServices>
 
 #ifdef DEBUG
