@@ -56,7 +56,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     if (startState == 1)
         this->showMinimized();
 
-    setWindowTitle(tr("%1 :. Qt4 GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
+    setWindowTitle(tr("%1 :. Qt GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
 
     std::auto_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
 

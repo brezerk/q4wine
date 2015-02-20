@@ -50,10 +50,10 @@ developers:
           location: Kiev, Ukraine
 
         - name: Artem Vorotnikov
-          info: General fixes
+          info: Qt 5 port, numerous fixes
           mail: artem@vorotnikov.me
           jid: artem@vorotnikov.me
-          web: https://launchpad.net/~a.vorotnikov
+          web: https://github.com/skybon
           location: Moscow, Russia 
 
         - name: Sergey Skrypnic
@@ -142,7 +142,7 @@ translations:
           info: German translation
           mail: artem@vorotnikov.me
           jid: artem@vorotnikov.me
-          web: https://launchpad.net/~a.vorotnikov
+          web: https://github.com/skybon
           location: Moscow, Russia 
 
         - name: Carlos Ignacio Ruax

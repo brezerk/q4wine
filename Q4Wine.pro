@@ -105,7 +105,6 @@ OTHER_FILES += \
     src/data/ledgreen.png \
     src/data/kill.png \
     src/data/iso_manager.png \
-    src/data/info.png \
     src/data/important.png \
     src/data/import.png \
     src/data/iexplore.png \
