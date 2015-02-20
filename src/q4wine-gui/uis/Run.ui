@@ -931,13 +931,6 @@
       <item>
        <layout class="QHBoxLayout">
         <item>
-         <widget class="QPushButton" name="cmdHelp">
-          <property name="text">
-           <string>Help</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <spacer>
           <property name="orientation">
            <enum>Qt::Horizontal</enum>

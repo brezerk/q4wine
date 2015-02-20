@@ -156,19 +156,6 @@
         </property>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabAppDB">
-       <attribute name="title">
-        <string>Wine AppDB</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="tabAppDBLayout">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="margin">
-         <number>0</number>
-        </property>
-       </layout>
-      </widget>
       <widget class="QWidget" name="tabLogging">
        <attribute name="title">
         <string>Logging</string>
@@ -206,29 +193,8 @@
     <property name="title">
      <string>Help</string>
     </property>
-    <widget class="QMenu" name="menuHandbook">
-     <property name="title">
-      <string>Handbook</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../../q4wine.qrc">
-       <normaloff>:/data/help.png</normaloff>:/data/help.png</iconset>
-     </property>
-     <addaction name="mainFirstSteps"/>
-     <addaction name="mainFAQ"/>
-     <addaction name="separator"/>
-     <addaction name="mainIndex"/>
-    </widget>
     <addaction name="mainAbout"/>
     <addaction name="mainAboutQt"/>
-    <addaction name="separator"/>
-    <addaction name="menuHandbook"/>
-    <addaction name="mainWebsite"/>
-    <addaction name="mainBugs"/>
-    <addaction name="separator"/>
-    <addaction name="mainDonate"/>
-    <addaction name="separator"/>
-    <addaction name="menuHelpThisTab"/>
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
@@ -238,7 +204,6 @@
     <addaction name="mainProcess"/>
     <addaction name="mainSetup"/>
     <addaction name="mainPrefix"/>
-    <addaction name="mainAppDB"/>
     <addaction name="mainLogging"/>
     <addaction name="separator"/>
     <addaction name="mainExportIcons"/>
@@ -342,70 +307,12 @@
     <string>Disc Image Manager</string>
    </property>
   </action>
-  <action name="mainFirstSteps">
-   <property name="text">
-    <string>First Steps</string>
-   </property>
-  </action>
-  <action name="mainFAQ">
-   <property name="text">
-    <string>Short FAQ</string>
-   </property>
-  </action>
-  <action name="mainIndex">
-   <property name="text">
-    <string>Index</string>
-   </property>
-  </action>
-  <action name="mainWebsite">
-   <property name="icon">
-    <iconset resource="../../q4wine.qrc">
-     <normaloff>:/data/go-home.png</normaloff>:/data/go-home.png</iconset>
-   </property>
-   <property name="text">
-    <string>Website</string>
-   </property>
-  </action>
-  <action name="mainDonate">
-   <property name="icon">
-    <iconset resource="../../q4wine.qrc">
-     <normaloff>:/data/bookmark-new.png</normaloff>:/data/bookmark-new.png</iconset>
-   </property>
-   <property name="text">
-    <string>Donate</string>
-   </property>
-  </action>
-  <action name="mainBugs">
-   <property name="icon">
-    <iconset resource="../../q4wine.qrc">
-     <normaloff>:/data/tools-report-bug.png</normaloff>:/data/tools-report-bug.png</iconset>
-   </property>
-   <property name="text">
-    <string>Bugs</string>
-   </property>
-  </action>
-  <action name="mainAppDB">
-   <property name="text">
-    <string>Wine AppDB Browser</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+B</string>
-   </property>
-  </action>
   <action name="mainLogging">
    <property name="text">
     <string>Logging</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+L</string>
-   </property>
-  </action>
-  <action name="menuHelpThisTab">
-   <property name="text">
-    <string>Help for This Tab</string>
-   </property>
-   <property name="shortcut">
-    <string>F1</string>
    </property>
   </action>
   <action name="mainImportWineIcons">

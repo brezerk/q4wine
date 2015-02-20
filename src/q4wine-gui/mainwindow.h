@@ -56,10 +56,6 @@
 #include "prefixcontrolwidget.h"
 #include "prefixconfigwidget.h"
 
-#ifdef WITH_WINEAPPDB
-#include "appdbwidget.h"
-#endif
-
 #ifdef WITH_DBUS
 #include <QDBusInterface>
 #endif
@@ -101,10 +97,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
             void setSearchFocus(void);
             void setMeVisible(bool visible);
 
-#ifdef WITH_WINEAPPDB
-        void searchRequest(QString search);
-#endif
-
     private slots:
         void tbwGeneral_CurrentTabChange(int tabIndex);
 
@@ -131,14 +123,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
         void mainRun_Click(void);
         void mainOptions_Click(void);
         void mainInstall_Click(void);
-        void mainFirstSteps_Click(void);
-        void mainFAQ_Click(void);
-        void mainIndex_Click(void);
-        void mainWebsite_Click(void);
-        void mainDonate_Click(void);
-        void mainBugs_Click(void);
-        void mainAppDB_Click(void);
-        void mainHelpThisTab_Click(void);
         void mainImportWineIcons_Click(void);
         void mainVersionManager_Click();
 
@@ -147,9 +131,6 @@ class MainWindow : public QMainWindow, public Ui::MainWindow
 private:
         //! Custom Widgets
         //DragListWidget* lstIcons;
-#ifdef WITH_WINEAPPDB
-        std::auto_ptr<AppDBWidget> appdbWidget;
-#endif
         std::auto_ptr<QLocalServer> serverSoket;
 
         //! This is need for libq4wine-core.so import;
@@ -183,10 +164,6 @@ private:
 //        void parseIcons(void);
 
     signals:
-#ifdef WITH_WINEAPPDB
-        void appdbWidget_startSearch(short int, QString);
-        void setAppDBFocus();
-#endif
         void updateDatabaseConnections(void);
         void setDefaultFocus(QString, QString);
         void stopProcTimer(void);

@@ -2078,13 +2078,6 @@ p, li { white-space: pre-wrap; }
           <number>0</number>
          </property>
          <item>
-          <widget class="QPushButton" name="cmdHelp">
-           <property name="text">
-            <string>Help</string>
-           </property>
-          </widget>
-         </item>
-         <item>
           <spacer>
            <property name="orientation">
             <enum>Qt::Horizontal</enum>

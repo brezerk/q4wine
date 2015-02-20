@@ -64,10 +64,6 @@ class ImageManager : public QDialog, public Ui::ImageManager
 		void tableImage_showContextMenu(const QPoint);
 		//! Update lilPAthInfo slot
 		void update_lblPathInfo(const QModelIndex);
-		/*!
-		 * \bref Help button click slot
-		 */
-		void cmdHelp_Click();
 
 
 	private:

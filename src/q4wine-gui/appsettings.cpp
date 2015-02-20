@@ -59,7 +59,6 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
 
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
-    connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
     connect(cmdVersionManager, SIGNAL(clicked()), this, SLOT(cmdVersionManager_Click()));
 
     connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
@@ -279,14 +278,6 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
     }
     settings.endGroup();
 
-    settings.beginGroup("AppDB");
-    if (settings.value("useSystemBrowser", 1).toInt()==1){
-        cbUseSystemBrowser->setChecked(true);
-    } else {
-        cbUseSystemBrowser->setChecked(false);
-    }
-    settings.endGroup();
-
 #ifndef _OS_DARWIN_
     settings.beginGroup("Plugins");
     if (settings.value("enableMenuDesktop", 1).toInt()==1){
@@ -353,9 +344,6 @@ void AppSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("Logging")){
         optionsStack->setCurrentIndex(2);
         tabwSubsystems->setCurrentIndex(0);
-    } else if (itemText==tr("AppDB browser")){
-        optionsStack->setCurrentIndex(2);
-        tabwSubsystems->setCurrentIndex(1);
     } else if (itemText==tr("Plugins")){
         optionsStack->setCurrentIndex(3);
         tabwPlugins->setCurrentIndex(1);
@@ -728,14 +716,6 @@ void AppSettings::cmdOk_Click(){
         settings.setValue("importAtStartup", 0);
     }
     settings.endGroup();
-
-    settings.beginGroup("AppDB");
-    if (cbUseSystemBrowser->isChecked()){
-        settings.setValue("useSystemBrowser", 1);
-    } else {
-        settings.setValue("useSystemBrowser", 0);
-    }
-    settings.endGroup();
 #ifndef _OS_DARWIN_
     settings.beginGroup("Plugins");
     if (cbEnableDesktopMenu->isChecked()){
@@ -780,59 +760,6 @@ bool AppSettings::checkEntry(QString fileName, QString info, bool isFile){
     }
 
     return true;
-}
-
-void AppSettings::cmdHelp_Click(){
-    QString rawurl;
-
-    std::auto_ptr<QTreeWidgetItem> item (optionsTree->currentItem());
-    if (!item.get()){
-         item.release();
-         return;
-    }
-
-    QString itemText = item->text(0);
-
-    if (itemText==tr("General")){
-        rawurl = "11-settings.html#general";
-    } else if (itemText==tr("System")){
-        rawurl = "11-settings.html#sysutils";
-    } else if (itemText==tr("Utils")){
-        rawurl = "11-settings.html#userutils";
-    } else if (itemText==tr("Network")){
-        rawurl = "11-settings.html#network";
-    } else if (itemText==tr("Quick Mount")){
-        rawurl = "11-settings.html#qmount";
-    } else if (itemText==tr("Interface")){
-        rawurl = "11-settings.html#interface";
-    } else if (itemText==tr("Language")){
-        rawurl = "11-settings.html#interface";
-    } else if (itemText==tr("Themes")){
-        rawurl = "11-settings.html#interface";
-    } else if (itemText==tr("Subsystems")){
-        rawurl = "11-settings.html#logging";
-    } else if (itemText==tr("Logging")){
-        rawurl = "11-settings.html#logging";
-    } else if (itemText==tr("AppDB browser")){
-        rawurl = "11-settings.html#appdb";
-    } else if (itemText==tr("Plugins")){
-        rawurl = "11-settings.html#plugins";
-    } else if (itemText==tr("Desktop Menu")){
-        rawurl = "11-settings.html#desktopmenu";
-    } else if (itemText==tr("Advanced")){
-        rawurl = "11-settings.html#defaults";
-    } else if (itemText==tr("Defaults")){
-        rawurl = "11-settings.html#defaults";
-    } else if (itemText==tr("Run dialog")){
-        rawurl = "11-settings.html#rundialog";
-    } else if (itemText==tr("Wine desktop import")){
-        rawurl = "11-settings.html#wineimport";
-    }
-
-    item.release();
-
-    CoreLib->openHelpUrl(rawurl);
-    return;
 }
 
 void AppSettings::comboMountProfiles_currentIndexChanged(int index){

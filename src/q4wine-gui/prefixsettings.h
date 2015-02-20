@@ -105,11 +105,6 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
         void cmdOk_Click();
 
         /*!
-         * \bref Help button click slot
-         */
-        void cmdHelp_Click();
-
-        /*!
          * \brief Get wine cdrom letter
          */
         void getWineCdromLetter();

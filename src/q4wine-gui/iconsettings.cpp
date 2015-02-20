@@ -102,7 +102,6 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
     connect(cmdGetIcon, SIGNAL(clicked()), this, SLOT(cmdGetIcon_Click()));
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
-    connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
     connect(cmdGetPreRun, SIGNAL(clicked()), this, SLOT(cmdGetPreRun_Click()));
     connect(cmdGetPostRun, SIGNAL(clicked()), this, SLOT(cmdGetPostRun_Click()));
 
@@ -645,29 +644,6 @@ void IconSettings::cmdOk_Click(){
     accept();
 
     return;
-}
-
-void IconSettings::cmdHelp_Click(){
-    QString rawurl;
-    switch (twbGeneral->currentIndex()){
-    case 0:
-        rawurl = "08-icon-dialog.html#general";
-    break;
-    case 1:
-        rawurl = "08-icon-dialog.html#override";
-    break;
-    case 2:
-        rawurl = "08-icon-dialog.html#advanced";
-    break;
-    case 3:
-        rawurl = "08-icon-dialog.html#scripts";
-    break;
-    default:
-        rawurl = "08-icon-dialog.html";
-    break;
-    }
-
-    CoreLib->openHelpUrl(rawurl);
 }
 
 void IconSettings::cmdGetPreRun_Click(){

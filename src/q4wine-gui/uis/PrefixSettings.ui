@@ -904,7 +904,7 @@
              <item>
               <widget class="QLabel" name="label_5">
                <property name="text">
-                <string>This template will be used to run wine programs. Normally you do not need to change it. See help for details.</string>
+                <string>This template will be used to run wine programs. Normally you do not need to change it.</string>
                </property>
                <property name="textFormat">
                 <enum>Qt::PlainText</enum>
@@ -1032,13 +1032,6 @@ p, li { white-space: pre-wrap; }
       </item>
       <item>
        <layout class="QHBoxLayout">
-        <item>
-         <widget class="QPushButton" name="cmdHelp">
-          <property name="text">
-           <string>Help</string>
-          </property>
-         </widget>
-        </item>
         <item>
          <spacer>
           <property name="orientation">

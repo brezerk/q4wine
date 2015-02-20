@@ -178,18 +178,6 @@ public:
      */
     QChar getCdromWineDrive(QString prefix_path, QString mount_point);
 
-    /*! \brief This function opens help url in xdg-open browser.
-     *
-     * \return Return nothing.
-     */
-    void openHelpUrl(const QString rawurl);
-
-    /*! \brief This function opens url in xdg-open browser.
-     *
-     * \return Return nothing.
-     */
-    void openHomeUrl(const QString rawurl);
-    void openUrl(const QString rawurl);
         void openConsole(const QString path, const QString prefix_name);
     void updateRecentImagesList(const QString media) const;
 

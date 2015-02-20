@@ -66,7 +66,6 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
     searchField.reset (new QLineEdit(this));
     connect(searchField.get(), SIGNAL(textChanged(QString)), this, SLOT(searchFilterChange(QString)));
 
-    //connect(searchField.get(), SIGNAL(returnPressed()), this, SLOT(appdbSearch_Click()));
     iconsToolBar->addAction(searchClear.get());
     iconsToolBar->addWidget(searchField.get());
     iconsToolBar->addAction(sortAlpha.get());

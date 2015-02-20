@@ -42,7 +42,6 @@ VersionManager::VersionManager(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
     loadThemeIcons();
 
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
-    connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
     std::auto_ptr<QToolBar> tbPrefix (new QToolBar(this));
     tbPrefix->setIconSize(QSize(24, 24));
@@ -192,11 +191,6 @@ void VersionManager::cmdOk_Click()
 
     accept();
     return;
-}
-
-void VersionManager::cmdHelp_Click(){
-    QString rawurl="14-version-manager-dialog.html";
-    CoreLib->openHelpUrl(rawurl);
 }
 
 bool VersionManager::askSaveChangeds(){

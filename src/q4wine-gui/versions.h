@@ -53,7 +53,6 @@ signals:
 
 private slots:
     void cmdOk_Click();
-    void cmdHelp_Click();
     void keyPressEvent (QKeyEvent * event);
     void itemClicked (QListWidgetItem *item);
     void currentItemChanged (QListWidgetItem *item, QListWidgetItem *old_item);

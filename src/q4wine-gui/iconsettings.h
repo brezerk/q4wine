@@ -97,10 +97,6 @@ class IconSettings : public QDialog, public Ui::IconSettings
          */
         void cmdOk_Click();
 
-        /*! \brief This slot for help button.
-         */
-        void cmdHelp_Click();
-
         /*! \brief This slot function gets program icon.
          */
         void getProgramIcon(QString name);
