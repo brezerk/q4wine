@@ -128,7 +128,7 @@ bool Registry::exec(QObject *parent, QString prefix_path, QString prefix_name){
 
 	QFile file(full_file_path);
 	file.open(QIODevice::WriteOnly);
-	file.write(regfile_image.toAscii());        // write to stderr
+	file.write(regfile_image.toLatin1());        // write to stderr
 	file.close();
 
     ExecObject execObj;

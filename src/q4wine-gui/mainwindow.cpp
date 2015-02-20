@@ -1035,7 +1035,7 @@ void MainWindow::getWineMenuIcons(void){
                      for (int j=0; j<parts.count(); j++){
                          if (parts.at(j).left(1)=="x"){
                              QString test = QString("0%1").arg(parts.at(j).left(4));
-                             QByteArray temp = QByteArray::fromHex(test.toAscii().data());
+                             QByteArray temp = QByteArray::fromHex(test.toLatin1().data());
                              dir.append(codec->toUnicode(temp));
                          }
 

@@ -197,7 +197,7 @@ int WineObject::runSys(){
     QString env = this->createEnvString();
     QString app_stdout;
 
-    QTextCodec *codec = QTextCodec::codecForName(CoreLib->getLocale().toAscii());
+    QTextCodec *codec = QTextCodec::codecForName(CoreLib->getLocale().toLatin1());
 
     FILE *fp;
     int status;
@@ -367,7 +367,7 @@ int WineObject::runScript(QString script_path, bool pre_run){
     QString stdout, app_stdout;
 
     QString env = this->createEnvString();
-    QTextCodec *codec = QTextCodec::codecForName(CoreLib->getLocale().toAscii());
+    QTextCodec *codec = QTextCodec::codecForName(CoreLib->getLocale().toLatin1());
 
     QString run_string = "";
     if (!env.isEmpty()){

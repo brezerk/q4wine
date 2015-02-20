@@ -213,7 +213,7 @@ QStringList winetricks::get_stdout_lines(QString command){
     #ifdef DEBUG
         qDebug()<<lang;
     #endif
-    QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+    QTextCodec *codec = QTextCodec::codecForName(lang.toLatin1());
 
     p.start(command);
     p.waitForFinished();

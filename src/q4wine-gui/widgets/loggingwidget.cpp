@@ -329,7 +329,7 @@ void LoggingWidget::logExport_Click(){
                 return;
             }
 
-            file.write(list.toAscii().data(), qstrlen(list.toAscii().data()));
+            file.write(list.toLatin1().data(), qstrlen(list.toLatin1().data()));
 
             file.close();
         }

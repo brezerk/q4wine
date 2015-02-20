@@ -1562,7 +1562,7 @@ QStringList corelib::getCdromDevices(void) const{
                 QString lang=this->getLocale();
 
                 // Read STDERR with locale support
-                QTextCodec *codec = QTextCodec::codecForName(lang.toAscii());
+                QTextCodec *codec = QTextCodec::codecForName(lang.toLatin1());
                 QString string = codec->toUnicode(myProcess.readAllStandardError());
 
                 if (!string.isEmpty()){
@@ -1913,7 +1913,7 @@ QStringList corelib::getCdromDevices(void) const{
                 for (int j=0; j<parts.count(); j++){
                     if (parts.at(j).left(1)=="x"){
                         QString test = QString("0%1").arg(parts.at(j).left(4));
-                        QByteArray temp = QByteArray::fromHex(test.toAscii().data());
+                        QByteArray temp = QByteArray::fromHex(test.toLatin1().data());
                         ret.append(codec->toUnicode(temp));
                     }
 
