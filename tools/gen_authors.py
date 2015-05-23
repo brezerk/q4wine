@@ -183,7 +183,7 @@ def generate_authors():
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Parse authors.jaml file and create authors.h file.')
+    parser = argparse.ArgumentParser(description='Parse authors.yaml file and create authors.h file.')
     parser.add_argument('--generate', dest='generate', action='store_true',
                         required=True,
                         help='Generate authors.h file')
