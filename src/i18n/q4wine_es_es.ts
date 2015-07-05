@@ -4304,6 +4304,109 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translatorcomment>Revisar</translatorcomment>
         <translation>Ejecuta el script despues del programa</translation>
     </message>
+    <message>
+        <location filename="../q4wine-lib/q4wine-lib.cpp" line="+159"/>
+        <source>&lt;p&gt;It seems that Q4Wine cannot run kvm_openfiles.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Parece que Q4Wine no puede correr kvm_openfiles.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>&lt;p&gt;It seems that Q4Wine cannot run kvm_getprocs.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Parece que Q4Wine no puede correr kvm_getprocs.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location line="+49"/>
+        <source>Cannot read process info from /proc or API is changed.</source>
+        <translation>No se puede leer la información de procesos de /proc o cambió la API.</translation>
+    </message>
+    <message>
+        <location line="+84"/>
+        <source>&lt;p&gt;Error while loading application settings by key: &apos;%1&apos;. File or path does not exist: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Please, go to the %3 options dialog and set it.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Error al cargar la configuración del programa por la clave: &apos;%1&apos;. El archivo o ruta no existe: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Por favor, vaya a el diálogo de opciones %3 y establézcala.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>&lt;p&gt;Error while loading application settings. wine&apos;s library path for 32 and 64 bit is not set.&lt;/p&gt;&lt;p&gt;Please, go to the %1 options dialog and set at least one path.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Error al cargar la configuración del programa. La ruta de librerías de wine de 32 y 64 bit no está establecida.&lt;/p&gt;&lt;p&gt;Por favor, vaya al diálogo de opciones %1 y establezca al menos una ruta.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location line="+257"/>
+        <source>Buildtime flags are:</source>
+        <translation>Los flags de tiempo de compilación son:</translation>
+    </message>
+    <message>
+        <location line="+89"/>
+        <source>Cannot find or execute the &apos;%1&apos; binary. Make sure that this binary is available by search PATH variable and see also INSTALL file for application depends.</source>
+        <translation>No se puede encontrar o ejecutar el binario &apos;%1&apos;. Asegúrese que esté disponible en la variable PATH y de ver sus dependencias en el archivo INSTALL. </translation>
+    </message>
+    <message>
+        <location line="+416"/>
+        <location line="+10"/>
+        <location line="+8"/>
+        <location line="+478"/>
+        <location line="+4"/>
+        <location line="+16"/>
+        <location line="+3"/>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <location line="-519"/>
+        <location line="+18"/>
+        <source>Binary file &quot;%1&quot; does not exist.</source>
+        <translation>El archivo binario &quot;%1&quot; no existe.</translation>
+    </message>
+    <message>
+        <location line="-8"/>
+        <source>Cannot get unix path for &quot;%1&quot;.</source>
+        <translation>No se puede obtener la ruta unix para &quot;%1&quot;.</translation>
+    </message>
+    <message>
+        <location line="+114"/>
+        <source>Running binary: &quot;%1&quot;</source>
+        <translation>Ejecutando binario: &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Running binary...</source>
+        <translation>Ejecutando binario...</translation>
+    </message>
+    <message>
+        <location line="+115"/>
+        <source>Failed to unmount previously mounted image.</source>
+        <translation>Falló el desmontaje de la imagen previamente montada.</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <location line="+144"/>
+        <source>It seems that no mount point was set in prefix options.&lt;br&gt;You might need to set it manually.</source>
+        <translation>Parece que no se estableció un punto de montaje en las opciones del prefijo.&lt;br&gt;Puede necesitar establecerlo manualmente.</translation>
+    </message>
+    <message>
+        <location line="-55"/>
+        <source>Mounting...</source>
+        <translation>Montando...</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Mounting %1 into %2</source>
+        <translation>Montando %1 en %2</translation>
+    </message>
+    <message>
+        <location line="+79"/>
+        <source>Umounting...</source>
+        <translation>Desmontando...</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Umounting point: %1</source>
+        <translation>Desmontando punto: %1</translation>
+    </message>
+    <message>
+        <location line="+64"/>
+        <source>It seems that the process crashed. STDERR log: %1</source>
+        <translation>Parece que el proceso falló. Log de STDERR: %1 </translation>
+    </message>
 </context>
 <context>
     <name>Run</name>
@@ -4917,12 +5020,7 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation>Disculpe, especifique el puerto del proxy.</translation>
     </message>
     <message>
-        <location line="+158"/>
-        <source>&lt;b&gt;First startup wizard&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Asistente del primer arranque&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location line="+7"/>
+        <location line="+165"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Alexey S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; fue escrito inicialmente por Malakhov Alexey tambien conocido como John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt; La idea general proviene de &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; un script que fue inicialmente escrito por Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Esta bajo la licencia &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Envie comentarios, reporte de errores, etc. a [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Nota&lt;/span&gt;&lt;/b&gt;: Este software no provee ninguna garantia. Usted &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NO&lt;/span&gt;&lt;/b&gt; obtendra ningun soporte o ayuda para WineTools, Wine, instalacion de software, Linux o Microsoft Windows del autor.&lt;/p&gt;&lt;p&gt;Si &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;necesita ayuda&lt;/span&gt;, pregunte en las listar de mail en&lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Si usted &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;quiere soporte técnico&lt;/span&gt;, compre la versión comercial de wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) para aplicaciones de escritorio&lt;/p&gt;</translation>
     </message>
@@ -5076,6 +5174,36 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <source>Refreshing winetricks application list.</source>
         <translatorcomment>Revisar</translatorcomment>
         <translation>Actualizando lista de aplicaciones de winetricks.</translation>
+    </message>
+    <message>
+        <location filename="../plugins/winetricks.ui" line="+14"/>
+        <source>winetricks plugin</source>
+        <translation>complemento winetricks</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Click on item to show help here</source>
+        <translation>Haga click en un ítem para mostrar su ayuda</translation>
+    </message>
+    <message>
+        <location line="+10"/>
+        <source>Install Winetricks</source>
+        <translation>Instalar Winetricks</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Exit</source>
+        <translation>Salir</translation>
+    </message>
+    <message>
+        <location line="+41"/>
+        <source>Install</source>
+        <translation>Instalar</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Refresh List</source>
+        <translation>Actualizar lista</translation>
     </message>
 </context>
 </TS>
