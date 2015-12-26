@@ -46,7 +46,6 @@ Run::Run(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
     connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
     connect(comboPrefixes, SIGNAL(currentIndexChanged (int)), this, SLOT(comboPrefixes_indexChanged (int)));
     connect(cbUseConsole, SIGNAL(stateChanged(int)), this, SLOT(cbUseConsole_stateChanged(int)));
-    connect(twbGeneral, SIGNAL(currentChanged(int)), this, SLOT(ResizeContent(int)));
 
     QString res = CoreLib->getSetting("advanced", "defaultDesktopSize", false, "").toString();
     if (res.isEmpty()){
@@ -55,9 +54,13 @@ Run::Run(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
         cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(res));
     }
 
+    twDlls->horizontalHeader()->setStretchLastSection(true);
+    twDlls->setColumnWidth(0, 400);
+
     cmdGetProgramBin->installEventFilter(this);
     cmdGetWorkDir->installEventFilter(this);
     cmdOk->setFocus(Qt::ActiveWindowFocusReason);
+
     return;
 }
 
@@ -139,16 +142,20 @@ void Run::cmdAdd_Click(){
     if (!cboxDlls->currentText().isEmpty()){
         twDlls->insertRow (0);
         std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(cboxDlls->currentText()));
-        newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+        newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable );
         twDlls->setItem(0, 0, newItem.release());
-        newItem.reset(new QTableWidgetItem(cboxOveride->currentText()));
-        newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-        twDlls->setItem(0, 1, newItem.release());
+
+        std::auto_ptr<QComboBox> overidebox (new QComboBox(twDlls));
+        overidebox->addItem(tr("Native"));
+        overidebox->addItem(tr("Built-in"));
+        overidebox->addItem(tr("Native, Built-in"));
+        overidebox->addItem(tr("Built-in, Native"));
+        overidebox->addItem(tr("Disabled"));
+        overidebox->setCurrentIndex(overidebox->findText(cboxOveride->currentText()));
+
+        twDlls->setCellWidget( 0, 1, overidebox.release());
     }
 
-    twDlls->resizeRowsToContents();
-    twDlls->resizeColumnsToContents();
-    twDlls->horizontalHeader()->setStretchLastSection(true);
     return;
 }
 
@@ -164,17 +171,19 @@ void Run::cmdOk_Click(){
     }
 
     QString override="";
-    for (int i=1; i<=twDlls->rowCount(); i++){
-        override.append(QString("%1=").arg(twDlls->item(i-1, 0)->text()));
-        if (twDlls->item(i-1, 1)->text()==tr("Native"))
+    for (int i=0; i<=twDlls->rowCount()-1; i++){
+        override.append(QString("%1=").arg(twDlls->item(i, 0)->text()));
+        QString method = twDlls->cellWidget(i, 1)->property("currentText").toString();
+
+        if (method==tr("Native"))
             override.append("n;");
-        if (twDlls->item(i-1, 1)->text()==tr("Disabled"))
-            override.append("'';");
-        if (twDlls->item(i-1, 1)->text()==tr("Built-in"))
+        if (method==tr("Disabled"))
+            override.append(";");
+        if (method==tr("Built-in"))
             override.append("b;");
-        if (twDlls->item(i-1, 1)->text()==tr("Native, Built-in"))
+        if (method==tr("Native, Built-in"))
             override.append("n,b;");
-        if (twDlls->item(i-1, 1)->text()==tr("Built-in, Native"))
+        if (method==tr("Built-in, Native"))
             override.append("b,n;");
     }
 
@@ -299,18 +308,6 @@ void Run::cbUseConsole_stateChanged(int){
         break;
  default:
         txtWinedebug->setEnabled(false);
-        break;
-    }
-
-    return;
-}
-
-void Run::ResizeContent(int TabIndex){
-    switch (TabIndex){
- case 1:
-        twDlls->resizeRowsToContents();
-        twDlls->resizeColumnsToContents();
-        twDlls->horizontalHeader()->setStretchLastSection(true);
         break;
     }
 

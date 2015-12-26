@@ -68,8 +68,6 @@ class Run : public QDialog, public Ui::Run
         void comboPrefixes_indexChanged (int);
         //! \brief CheckBox change slot.
         void cbUseConsole_stateChanged(int);
-        //! \brief Resize window content slot.
-        void ResizeContent(int TabIndex);
         //! \brief Get program slot.
         void cmdGetProgram_Click();
         //! \brief Get work dir slot.

@@ -9,6 +9,7 @@ Version 1.2
   - Backup/Restore prefix path handler;
   - Can't use pre/post run scripts without standalone script [BUG-49];
   - Do not force startpage open;
+  - add custom dll overrides outside from the list [BUG-60];
 
 Version 1.1-r2
  Fixed:

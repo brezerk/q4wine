@@ -95,7 +95,6 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
         break;
     }
 
-    connect(twbGeneral, SIGNAL(currentChanged(int)), this, SLOT(ResizeContent(int)));
     connect(cmdAdd, SIGNAL(clicked()), this, SLOT(cmdAdd_Click()));
     connect(cmdGetProgram, SIGNAL(clicked()), this, SLOT(cmdGetProgram_Click()));
     connect(cmdGetWorkDir, SIGNAL(clicked()), this, SLOT(cmdGetWorkDir_Click()));
@@ -130,10 +129,10 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
         }
     }
 
-
+    twDlls->horizontalHeader()->setStretchLastSection(true);
+    twDlls->setColumnWidth(0, 400);
 
     cboxDlls->addItems(CoreLib->getWineDlls(libs_path));
-
     cboxDlls->setMaxVisibleItems (10);
 
     cmdOk->setFocus(Qt::ActiveWindowFocusReason);
@@ -208,21 +207,30 @@ void IconSettings::getIconReccord(){
         QStringList list2 = override.at(i).split("=");
             twDlls->insertRow (0);
             std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(list2.at(0)));
-            newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+            newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable );
             twDlls->setItem(0, 0, newItem.release());
 
-            if (list2.at(1)=="n")
+            if (list2.at(1)=="n"){
                 overrideorder = tr("Native");
-            if (list2.at(1)=="b")
+            } else if (list2.at(1)=="b"){
                 overrideorder = tr("Built-in");
-            if (list2.at(1)=="n,b")
+            } else if (list2.at(1)=="n,b"){
                 overrideorder = tr("Native, Built-in");
-            if (list2.at(1)=="b,n")
+            } else if (list2.at(1)=="b,n"){
                 overrideorder = tr("Built-in, Native");
+            } else {
+                overrideorder = tr("Disabled");
+            }
 
-            newItem.reset(new QTableWidgetItem(overrideorder));
-            newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-            twDlls->setItem(0, 1, newItem.release());
+            std::auto_ptr<QComboBox> overidebox (new QComboBox(twDlls));
+            overidebox->addItem(tr("Native"));
+            overidebox->addItem(tr("Built-in"));
+            overidebox->addItem(tr("Native, Built-in"));
+            overidebox->addItem(tr("Built-in, Native"));
+            overidebox->addItem(tr("Disabled"));
+            overidebox->setCurrentIndex(overidebox->findText(overrideorder));
+
+            twDlls->setCellWidget( 0, 1, overidebox.release());
     }
 
     txtPreRun->setText(iconRec.value("prerun"));
@@ -246,24 +254,6 @@ bool IconSettings::eventFilter( QObject *object, QEvent *event )
         }
 
     return QWidget::eventFilter(object, event);
-}
-
-void IconSettings::ResizeContent(int TabIndex){
-
-    switch (TabIndex){
-        case 1:
-            twDlls->resizeRowsToContents();
-            twDlls->resizeColumnsToContents();
-            twDlls->horizontalHeader()->setStretchLastSection(true);
-        break;
-    }
-
-    return;
-}
-
-void IconSettings::resizeEvent (QResizeEvent){
-    ResizeContent(2);
-    return;
 }
 
 /*************************************************************\
@@ -332,16 +322,19 @@ void IconSettings::cmdAdd_Click(){
     if (!cboxDlls->currentText().isEmpty()){
         twDlls->insertRow (0);
         std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(cboxDlls->currentText()));
-        newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
+        newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable );
         twDlls->setItem(0, 0, newItem.release());
-        newItem.reset(new QTableWidgetItem(cboxOveride->currentText()));
-        newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
-        twDlls->setItem(0, 1, newItem.release());
-    }
 
-    twDlls->resizeRowsToContents();
-    twDlls->resizeColumnsToContents();
-    twDlls->horizontalHeader()->setStretchLastSection(true);
+        std::auto_ptr<QComboBox> overidebox (new QComboBox(twDlls));
+        overidebox->addItem(tr("Native"));
+        overidebox->addItem(tr("Built-in"));
+        overidebox->addItem(tr("Native, Built-in"));
+        overidebox->addItem(tr("Built-in, Native"));
+        overidebox->addItem(tr("Disabled"));
+        overidebox->setCurrentIndex(overidebox->findText(cboxOveride->currentText()));
+
+        twDlls->setCellWidget(0, 1, overidebox.release());
+    }
     return;
 }
 
@@ -597,17 +590,20 @@ void IconSettings::cmdOk_Click(){
   }
 
     QString override="";
-    for (int i=1; i<=twDlls->rowCount(); i++){
-        override.append(QString("%1=").arg(twDlls->item(i-1, 0)->text()));
-        if (twDlls->item(i-1, 1)->text()==tr("Native"))
+    for (int i=0; i<=twDlls->rowCount()-1; i++){
+        override.append(QString("%1=").arg(twDlls->item(i, 0)->text()));
+
+        QString method = twDlls->cellWidget(i, 1)->property("currentText").toString();
+
+        if (method==tr("Native"))
             override.append("n;");
-        if (twDlls->item(i-1, 1)->text()==tr("Disabled"))
-            override.append("'';");
-        if (twDlls->item(i-1, 1)->text()==tr("Built-in"))
+        if (method==tr("Disabled"))
+            override.append(";");
+        if (method==tr("Built-in"))
             override.append("b;");
-        if (twDlls->item(i-1, 1)->text()==tr("Native, Built-in"))
+        if (method==tr("Native, Built-in"))
             override.append("n,b;");
-        if (twDlls->item(i-1, 1)->text()==tr("Built-in, Native"))
+        if (method==tr("Built-in, Native"))
             override.append("b,n;");
     }
 

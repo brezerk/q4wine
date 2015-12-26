@@ -65,10 +65,6 @@ class IconSettings : public QDialog, public Ui::IconSettings
         IconSettings(QString prefix_name, QString dir_name, QString icon_name = "", QWidget * parent = 0, Qt::WindowFlags f = 0);
 
     private slots:
-        /*! \brief This slot function resize dialog content.
-         */
-        void ResizeContent(int);
-
         /*! \brief This slot function adds selected dll to override list.
          */
         void cmdAdd_Click();
@@ -119,7 +115,6 @@ class IconSettings : public QDialog, public Ui::IconSettings
         /*! \brief This function gets icon parms from database.
          */
         void getIconReccord();
-        void resizeEvent (QResizeEvent);
         bool eventFilter (QObject *object, QEvent *event);
 
         void loadThemeIcons();
