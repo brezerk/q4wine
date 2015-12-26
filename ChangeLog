@@ -10,6 +10,7 @@ Version 1.2
   - Can't use pre/post run scripts without standalone script [BUG-49];
   - Do not force startpage open;
   - add custom dll overrides outside from the list [BUG-60];
+  - Revert "Kill dead online components" breaks the Qt5 build [BUG-62];
 
 Version 1.1-r2
  Fixed:

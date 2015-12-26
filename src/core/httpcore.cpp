@@ -20,6 +20,12 @@
 
 HttpCore::HttpCore()
 {
+#ifdef QT5
+    http.reset(new QNetworkAccessManager(this));
+
+    connect(http.get(), SIGNAL(finished(QNetworkReply*)),
+            this, SLOT(readResponseHeader(QNetworkReply*)));
+#else
     http.reset(new QHttp(this));
 
     connect(http.get(), SIGNAL(requestFinished(int, bool)),
@@ -30,7 +36,7 @@ HttpCore::HttpCore()
                  this, SIGNAL(stateChanged(int)));
     connect(http.get(), SIGNAL(responseHeaderReceived(const QHttpResponseHeader &)),
                  this, SLOT(readResponseHeader(const QHttpResponseHeader &)));
-
+#endif
     // Loading libq4wine-core.so
 #ifdef RELEASE
     libq4wine.setFileName(_CORELIB_PATH_);
@@ -56,7 +62,23 @@ HttpCore::HttpCore()
         proxyPort = CoreLib->getSetting("network", "port", false).toInt();
         proxyUser = CoreLib->getSetting("network", "user", false).toString();
         proxyPass = CoreLib->getSetting("network", "pass", false).toString();
+        #ifdef QT5
+        QNetworkProxy proxy;
+        if (type == 0){
+            proxy.setType(QNetworkProxy::NoProxy);
+        } else if (type == 1){
+            proxy.setType(QNetworkProxy::HttpProxy);
+        } else if (type == 2){
+            proxy.setType(QNetworkProxy::Socks5Proxy);
+        }
+        proxy.setHostName(proxyHost);
+        proxy.setPort(proxyPort);
+        proxy.setUser(proxyUser);
+        proxy.setPassword(proxyPass);
+        http->setProxy(proxy);
+        #else
         http->setProxy(proxyHost, proxyPort, proxyUser, proxyPass);
+        #endif
     }
 
     //Create user_agent string
@@ -71,7 +93,18 @@ void HttpCore::getAppDBXMLPage(QString host, short int port, QString page)
 {
     this->page = page;
     if (!this->getCacheFile(page)){
+#ifdef QT5
+        QString url = QString("http://%1:%2/%3").arg(host, QString::number(port), page);
+        QNetworkRequest request = QNetworkRequest(QUrl(url));
+        request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+        request.setHeader(QNetworkRequest::UserAgentHeader, user_agent);
+        http->get(request);
+#ifdef DEBUG
+        qDebug()<<"[ii] Reuested page is: "<<QUrl(url);
+#endif
 
+        this->xmlreply="";
+#else
         http->setHost(host, QHttp::ConnectionModeHttp, port);
 
         QByteArray enc_page = QUrl::toPercentEncoding(page, "/");
@@ -90,6 +123,7 @@ void HttpCore::getAppDBXMLPage(QString host, short int port, QString page)
         this->xmlreply="";
         this->aborted=false;
         this->getId = http->request(header, "");
+#endif
     } else {
 #ifdef DEBUG
         qDebug()<<"[ii] Cache hit";
@@ -137,6 +171,22 @@ QString HttpCore::getXMLReply(){
     return xmlreply;
 }
 
+#ifdef QT5
+void HttpCore::readResponseHeader(QNetworkReply* reply)
+{
+    if (reply->error() == QNetworkReply::NoError)
+    {
+        xmlreply = reply->readAll();
+#ifdef DEBUG
+        qDebug()<<"[ii] Received page:"<<xmlreply;
+#endif
+    }
+
+
+
+    emit(pageReaded());
+}
+#else
 void HttpCore::httpRequestFinished(int requestId, bool error){
     if (this->aborted)
         return;
@@ -175,4 +225,4 @@ void HttpCore::readResponseHeader(const QHttpResponseHeader &responseHeader){
          }
     return;
 }
-
+#endif

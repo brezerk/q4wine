@@ -24,8 +24,13 @@
 #include <memory>
 
 #include <QUrl>
+#ifdef QT5
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#else
 #include <QHttp>
 #include <QHttpRequestHeader>
+#endif
 #include <QNetworkProxy>
 #include <QMessageBox>
  #include <QCryptographicHash>
@@ -52,11 +57,19 @@ signals:
 	void stateChanged (int);
 
 private slots:
-	void httpRequestFinished(int requestId, bool error);
+#ifdef QT5
+    void readResponseHeader(QNetworkReply* reply);
+#else
+    void httpRequestFinished(int requestId, bool error);
 	void readResponseHeader(const QHttpResponseHeader &responseHeader);
+#endif
 
 private:
+#ifdef QT5
+    std::auto_ptr<QNetworkAccessManager> http;
+#else
 	std::auto_ptr<QHttp> http;
+#endif
 	QString user_agent;
 	QString xmlreply;
     QString page;

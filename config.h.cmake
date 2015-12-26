@@ -73,6 +73,8 @@
 #cmakedefine DEBUG
 #cmakedefine RELEASE
 
+#cmakedefine QT5
+
 #cmakedefine WITH_DBUS
 
 //! process_info struct
