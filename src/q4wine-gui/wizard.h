@@ -76,6 +76,9 @@ class Wizard : public QDialog, public Ui::Wizard
         //! \brief ComboBox change slot.
         void comboProxyType_indexChanged(QString text);
 
+        //! \brief cmdHelo click slot.
+        void cmdHelp_Click();
+
         //! \brief mounts profile combobox index cahnge slot
         void comboMountProfiles_currentIndexChanged(int index);
 

@@ -43,6 +43,8 @@ class AppSettings : public QDialog, public Ui::AppSettings
         void cmdOk_Click();
         void cmdVersionManager_Click();
         void comboProxyType_indexChanged(QString text);
+        //! \brief cmdHelo click slot.
+        void cmdHelp_Click();
         void comboMountProfiles_currentIndexChanged(int index);
         void cbShowTray_stateChanged ( int state );
         void optionsTree_itemClicked ( QTreeWidgetItem *item, int);

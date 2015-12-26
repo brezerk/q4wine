@@ -39,6 +39,7 @@ ImageManager::ImageManager(QWidget * parent, Qt::WindowFlags f) : QDialog(parent
 	loadThemeIcons();
 
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
+	connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 	connect(tableImage, SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(tableImage_showContextMenu(const QPoint &)));
 	connect(tableImage, SIGNAL(clicked(const QModelIndex &)), this, SLOT(update_lblPathInfo(const QModelIndex &)));
 
@@ -246,3 +247,8 @@ void ImageManager::actionRefreshImageList(){
 	getCDImages();
 	return;
 }
+
+void ImageManager::cmdHelp_Click(){
+	CoreLib->openHelpUrl("09-image-manager.html");
+}
+

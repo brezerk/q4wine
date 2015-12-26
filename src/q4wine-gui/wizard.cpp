@@ -78,6 +78,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(reject ()));
     connect(cmdNext, SIGNAL(clicked()), this, SLOT(nextWizardPage()));
     connect(cmdBack, SIGNAL(clicked()), this, SLOT(previosWizardPage()));
+    connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
     connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
     connect(comboMountProfiles, SIGNAL(currentIndexChanged(int)), this, SLOT(comboMountProfiles_currentIndexChanged(int)));
 
@@ -461,6 +462,8 @@ void Wizard::nextWizardPage(){
 
             settings.endGroup();
 
+            CoreLib->openHelpUrl("05-first-steps.html");
+
             CoreLib->createPrefixDBStructure("Default");
 
 #ifndef _OS_DARWIN_
@@ -477,6 +480,54 @@ void Wizard::nextWizardPage(){
     Page++;
     updateScena();
     return;
+}
+
+
+void Wizard::cmdHelp_Click(){
+    QString rawurl;
+    switch (Scena){
+ case 0:
+        switch (Page){
+  case 2:
+            rawurl = "06-prefix-creation-wizard.html#general";
+            break;
+  case 3:
+            rawurl = "06-prefix-creation-wizard.html#winepath";
+            break;
+  case 4:
+            rawurl = "06-prefix-creation-wizard.html#quickmount";
+            break;
+  default:
+            rawurl = "06-prefix-creation-wizard.html";
+            break;
+        }
+        break;
+        case 1:
+        switch (Page){
+  case 3:
+            rawurl = "03-first-startup-wizard.html#winepath";
+            break;
+  case 4:
+            rawurl = "03-first-startup-wizard.html#sysutils";
+            break;
+
+  case 5:
+            rawurl = "03-first-startup-wizard.html#userutils";
+            break;
+  case 6:
+            rawurl = "03-first-startup-wizard.html#proxy";
+            break;
+  case 7:
+            rawurl = "03-first-startup-wizard.html#qmount";
+            break;
+  default:
+            rawurl = "03-first-startup-wizard.html";
+            break;
+        }
+        break;
+    }
+
+    CoreLib->openHelpUrl(rawurl);
 }
 
 void Wizard::previosWizardPage(){

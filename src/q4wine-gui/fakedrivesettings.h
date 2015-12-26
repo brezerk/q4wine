@@ -61,6 +61,7 @@ private slots:
 
     void cmdCancel_Click();
     void cmdOk_Click();
+    void cmdHelp_Click();
 
     //! \brief cmdJoystickEdit click slot.
     void cmdJoystickEdit_Click();

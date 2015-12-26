@@ -48,6 +48,7 @@ IconListToolbar::IconListToolbar(QWidget *parent) :
     searchField.reset (new QLineEdit(this));
     connect(searchField.get(), SIGNAL(textChanged(QString)), this, SIGNAL(searchFilterChange(QString)));
 
+    //connect(searchField.get(), SIGNAL(returnPressed()), this, SLOT(appdbSearch_Click()));
     toolBar->addWidget(searchField.get());
 
     toolBar->addSeparator();

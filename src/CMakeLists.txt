@@ -20,6 +20,7 @@ option(DEBUG "If ON, then q4wine will send debug messages to STDOUT. Use it for 
 option(RELEASE "If OFF, then force q4wine to use APP_BUILD as CMAKE_INSTALL_PREFIX. Use it for development purposes." "ON")
 option(WITH_ICOUTILS "If ON, then build q4wine with icoutils support." "ON")
 option(WITH_SYSTEM_SINGLEAPP "If ON, then use system QtSingleApplication library instead building one." "OFF")
+option(WITH_WINEAPPDB "If ON, then build q4wine with Wine AppDB browser support." "ON")
 option(USE_BZIP2 "Use bzip2 to compress man pages." "OFF")
 option(USE_GZIP "Use gzip to compress man pages." "OFF")
 option(WITH_DBUS "If ON, then build q4wine with QtDBus notification support." "ON")
@@ -234,6 +235,7 @@ IF(${CMAKE_VERSION} GREATER OR EQUAL 2.8.8)
 ENDIF(${CMAKE_VERSION} GREATER OR EQUAL 2.8.8)
     MESSAGE(STATUS "WITH_ICOUTILS                 : ${WITH_ICOUTILS}")
     MESSAGE(STATUS "WITH_SYSTEM_SINGLEAPP         : ${WITH_SYSTEM_SINGLEAPP}")
+    MESSAGE(STATUS "WITH_WINEAPPDB                : ${WITH_WINEAPPDB}")
     MESSAGE(STATUS "USE_BZIP2                     : ${USE_BZIP2}")
     MESSAGE(STATUS "USE_GZIP                      : ${USE_GZIP}")
     MESSAGE(STATUS "WITH_DBUS                     : ${WITH_DBUS}\n")
@@ -289,6 +291,7 @@ SET ( Q4WINE_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}/src/q4wine-lib
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets
+    ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb
     ${CMAKE_SOURCE_DIR}/src/plugins
 )
 

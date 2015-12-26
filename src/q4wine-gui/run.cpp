@@ -43,6 +43,7 @@ Run::Run(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
     connect(cmdGetProgramBin, SIGNAL(clicked()), this, SLOT(cmdGetProgram_Click()));
     connect(cmdGetWorkDir, SIGNAL(clicked()), this, SLOT(cmdGetWorkDir_Click()));
     connect(cmdAdd, SIGNAL(clicked()), this, SLOT(cmdAdd_Click()));
+    connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
     connect(comboPrefixes, SIGNAL(currentIndexChanged (int)), this, SLOT(comboPrefixes_indexChanged (int)));
     connect(cbUseConsole, SIGNAL(stateChanged(int)), this, SLOT(cbUseConsole_stateChanged(int)));
     connect(twbGeneral, SIGNAL(currentChanged(int)), this, SLOT(ResizeContent(int)));
@@ -417,3 +418,24 @@ void Run::cmdGetWorkDir_Click(){
     }
     return;
 }
+
+void Run::cmdHelp_Click(){
+    QString rawurl="";
+    switch (twbGeneral->currentIndex()){
+ case 0:
+        rawurl = "12-run-dialog.html#general";
+        break;
+ case 1:
+        rawurl = "12-run-dialog.html#override";
+        break;
+ case 2:
+        rawurl = "12-run-dialog.html#advanced";
+        break;
+ default:
+        return;
+        break;
+    }
+
+    CoreLib->openHelpUrl(rawurl);
+}
+

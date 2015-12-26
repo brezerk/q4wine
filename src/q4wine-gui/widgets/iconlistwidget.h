@@ -129,6 +129,7 @@ private slots:
       void iconCut_Click(void);
       void iconCopy_Click(void);
       void iconOption_Click(void);
+      void iconSearchAppDB_Click(void);
       void iconCopyWrkDir_Click(void);
       void iconCopyProgramPath_Click(void);
       void iconCopyQ4WineCmd_Click(void);

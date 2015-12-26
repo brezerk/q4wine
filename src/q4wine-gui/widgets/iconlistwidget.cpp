@@ -570,6 +570,16 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         menu->addMenu(subMenu.release());
 
         menu->addSeparator();
+        entry.reset(new QAction(tr("Search in Wine AppDB"), this));
+        entry->setStatusTip(tr("Search for application name in wine AppDB"));
+#ifdef WITH_WINEAPPDB
+        connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconSearchAppDB_Click()));
+#else
+        entry->setEnabled(false);
+#endif
+        menu->addAction(entry.release());
+
+        menu->addSeparator();
         // -- Clipboad functions --
 
         subMenu.reset(new QMenu(tr("Copy to clipboard"), this));
@@ -950,6 +960,33 @@ void IconListWidget::iconOption_Click(void){
             sys_menu.writeXMLSystemMenu();
 #endif
     }
+    iconItem.release();
+    return;
+}
+
+void IconListWidget::iconSearchAppDB_Click(void){
+    if (selectedItems().count()<=0)
+        return;
+
+    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+    if (!iconItem.get())
+        return;
+
+    QString iconText = iconItem->text();
+
+    if (this->dirName=="import"){
+        QStringList list = iconText.split(" - ");
+        iconText.clear();
+        if (list.count()>1){
+            for (int i=1; i<list.count(); i++){
+                iconText.append(list.at(i));
+                if (i<list.count()-1)
+                    iconText.append(" - ");
+            }
+        }
+    }
+
+    emit(searchRequest(iconText));
     iconItem.release();
     return;
 }

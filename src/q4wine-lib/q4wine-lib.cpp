@@ -600,6 +600,11 @@ void corelib::getBuildFlags(){
 #else
     Qcout<<qSetFieldWidth(25)<<left<<" WITH_SYSTEM_SINGLEAPP"<<"OFF"<<qSetFieldWidth(0)<<endl;
 #endif
+#ifdef WITH_WINEAPPDB
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"ON"<<qSetFieldWidth(0)<<endl;
+#else
+    Qcout<<qSetFieldWidth(25)<<left<<" WITH_WINEAPPDB "<<"OFF"<<qSetFieldWidth(0)<<endl;
+#endif
 #ifdef WITH_DBUS
     Qcout<<qSetFieldWidth(25)<<left<<" WITH_DBUS"<<"ON"<<qSetFieldWidth(0)<<endl;
 #else
@@ -1615,6 +1620,33 @@ QStringList corelib::getCdromDevices(void) const{
             }
 
             return true;
+        }
+
+        void corelib::openHelpUrl(const QString rawurl){
+            QString url="http://";
+            url.append(APP_WEBSITE);
+            url.append("/documentation/");
+            url.append(this->getLang());
+            url.append("/");
+            url.append(rawurl);
+
+            this->openUrl(url);
+            return;
+        }
+
+        void corelib::openHomeUrl(const QString rawurl){
+            QString url="http://";
+            url.append(APP_WEBSITE);
+            url.append("/");
+            url.append(rawurl);
+
+            this->openUrl(url);
+            return;
+        }
+
+        void corelib::openUrl(const QString url){
+            QDesktopServices::openUrl(QUrl(url, QUrl::TolerantMode));
+            return;
         }
 
         QString corelib::getMountString(const int profile){

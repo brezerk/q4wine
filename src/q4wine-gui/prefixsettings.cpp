@@ -109,6 +109,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::Window
 
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
+    connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
     connect(cmdClnWineBin, SIGNAL(clicked()), this, SLOT(cmdClnWineBin_Click()));
     connect(cmdClnWineServerBin, SIGNAL(clicked()), this, SLOT(cmdClnWineServerBin_Click()));
@@ -166,6 +167,7 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
 
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
+    connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
     connect(cmdClnWineBin, SIGNAL(clicked()), this, SLOT(cmdClnWineBin_Click()));
     connect(cmdClnWineServerBin, SIGNAL(clicked()), this, SLOT(cmdClnWineServerBin_Click()));
@@ -346,6 +348,23 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
     }
 
     return false;
+}
+
+void PrefixSettings::cmdHelp_Click(){
+    QString rawurl;
+    switch (twbGeneral->currentIndex()){
+    case 0:
+        rawurl = "10-prefix-settings.html#general";
+    break;
+    case 1:
+        rawurl = "10-prefix-settings.html#winepath";
+    break;
+    case 2:
+        rawurl = "10-prefix-settings.html#advanced";
+    break;
+    }
+
+    CoreLib->openHelpUrl(rawurl);
 }
 
 void PrefixSettings::getWineCdromLetter(){

@@ -74,6 +74,8 @@ class Run : public QDialog, public Ui::Run
         void cmdGetProgram_Click();
         //! \brief Get work dir slot.
         void cmdGetWorkDir_Click();
+        //! \brief view online help.
+        void cmdHelp_Click();
     private:
         QString prefix_name, prefix_dir;
 

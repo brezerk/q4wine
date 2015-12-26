@@ -38,6 +38,15 @@ InfoDialog::InfoDialog(int action, QWidget *parent, Qt::WindowFlags f) :  QDialo
                                <p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p> \
                                <p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">NOTE: Q4Wine</span> officially does not support <span style=\" font-weight:600;\">winetricks</span>, so report all bugs directly to the developers of <span style=\" font-weight:600;\">winetricks</span>.</p></body></html>");
         break;
+    case 1:
+        this->setWindowTitle(tr("AppDB browser notification"));
+        this->txtInfo->setHtml("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\"> \
+                               <html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\"> \
+                               p, li { white-space: pre-wrap; } \
+                               </style></head><body><p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">AppDB browser</span> allows you to browse <a href=\"http://appdb.winehq.org/\"><span style=\" text-decoration: underline; color:#0057ae;\">wine AppDB database</span></a>.</p> \
+                               <p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Note</span>: Because we have <span style=\" color:#aa0000;\">no direct access</span> to AppDB database, we cannot use it actual copy.</p> \
+                               <p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Note</span>: In case you want to add my xmlexport code to AppDB engine, I can provide information and support, just feel free to contact <a href=\"mailto:brezerk@gmail.com\"><span style=\" text-decoration: underline; color:#0057ae;\">me</span></a>.</p></body></html>");
+        break;
     }
 
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_clicked()));
@@ -51,6 +60,9 @@ void InfoDialog::cmdOk_clicked(){
     switch(this->action){
     case 0:
         settings.setValue("winetricksPlugin", 1);
+        break;
+    case 1:
+        settings.setValue("appdbBrowser", 1);
         break;
     }
     settings.endGroup();

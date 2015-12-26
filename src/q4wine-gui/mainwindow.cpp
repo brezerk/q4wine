@@ -78,6 +78,10 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(lstIcons.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
     connect(lstIcons.get(), SIGNAL(appRunned(bool)), this, SLOT(setMeVisible(bool)));
 
+#ifdef WITH_WINEAPPDB
+    connect(lstIcons.get(), SIGNAL(searchRequest(QString)), this, SLOT(searchRequest(QString)));
+#endif
+
     std::auto_ptr<PrefixTreeWidget> twPrograms (new PrefixTreeWidget(tabPrograms));
     connect(twPrograms.get(), SIGNAL(updateDatabaseConnections()), this, SLOT(updateDtabaseConnectedItems()));
     connect(this, SIGNAL(updateDatabaseConnections()), twPrograms.get(), SLOT(getPrefixes()));
@@ -169,9 +173,16 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(mainAbout, SIGNAL(triggered()), this, SLOT(mainAbout_Click()));
     connect(mainAboutQt, SIGNAL(triggered()), this, SLOT(mainAboutQt_Click()));
     connect(mainExportIcons, SIGNAL(triggered()), this, SLOT(mainExportIcons_Click()));
+    connect(mainFirstSteps, SIGNAL(triggered()), this, SLOT(mainFirstSteps_Click()));
+    connect(mainFAQ, SIGNAL(triggered()), this, SLOT(mainFAQ_Click()));
+    connect(mainIndex, SIGNAL(triggered()), this, SLOT(mainIndex_Click()));
+    connect(mainWebsite, SIGNAL(triggered()), this, SLOT(mainWebsite_Click()));
+    connect(mainDonate, SIGNAL(triggered()), this, SLOT(mainDonate_Click()));
+    connect(mainBugs, SIGNAL(triggered()), this, SLOT(mainBugs_Click()));
     connect(mainOptions, SIGNAL(triggered()), this, SLOT(mainOptions_Click()));
     connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
     connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
+    connect(menuHelpThisTab, SIGNAL(triggered()), this, SLOT(mainHelpThisTab_Click()));
     connect(mainImportWineIcons, SIGNAL(triggered()), this, SLOT(mainImportWineIcons_Click()));
     connect(mainVersionManager, SIGNAL(triggered()), this, SLOT(mainVersionManager_Click()));
 
@@ -179,6 +190,18 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 
 #ifndef WITH_ICOUTILS
     mainExportIcons->setEnabled(false);
+#endif
+
+#ifndef WITH_WINEAPPDB
+    mainAppDB->setEnabled(false);
+    tabAppDB->deleteLater();
+#else
+    connect(mainAppDB, SIGNAL(triggered()), this, SLOT(mainAppDB_Click()));
+    // Creating AppDBScrollWidget and place it into frameAppDBWidget layout
+    appdbWidget.reset(new AppDBWidget(this));
+    connect (this, SIGNAL(appdbWidget_startSearch(short int, QString)), appdbWidget.get(), SLOT(itemTrigged(short int, QString)));
+    connect (this, SIGNAL(setAppDBFocus()), appdbWidget.get(), SLOT(setFocus()));
+    tabAppDBLayout->addWidget(appdbWidget.release());
 #endif
 
     if (!run_binary.isEmpty())
@@ -310,6 +333,13 @@ void MainWindow::updateDtabaseConnectedItems(){
     emit(updateDatabaseConnections());
     return;
 }
+
+#ifdef WITH_WINEAPPDB
+void MainWindow::searchRequest(QString search){
+    tbwGeneral->setCurrentIndex (4);
+    emit(appdbWidget_startSearch(1, search));
+}
+#endif
 
 bool MainWindow::createSocket(){
     serverSoket.reset(new QLocalServer(this));
@@ -468,6 +498,7 @@ void MainWindow::createTrayIcon(){
     trayIconMenu->addAction(mainProcess);
     trayIconMenu->addAction(mainSetup);
     trayIconMenu->addAction(mainPrefix);
+    trayIconMenu->addAction(mainAppDB);
     trayIconMenu->addAction(mainLogging);
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(mainExit);
@@ -511,6 +542,16 @@ void MainWindow::tbwGeneral_CurrentTabChange(int tabIndex){
         //Initiate /proc reading
         emit(startProcTimer());
     }
+#ifdef WITH_WINEAPPDB
+    else if (tabIndex==4){
+        if (CoreLib->getSetting("DialogFlags", "appdbBrowser", false, 0).toInt()==0){
+            InfoDialog info(1);
+            info.exec();
+        }
+        emit(stopProcTimer());
+        emit(setAppDBFocus());
+    }
+#endif
     else {
         emit(stopProcTimer());
     }
@@ -604,7 +645,11 @@ void MainWindow::mainLogging_Click(){
     if (isMinimized ())
         showNormal ();
 
+#ifndef WITH_WINEAPPDB
     tbwGeneral->setCurrentIndex ( 4 );
+#else
+    tbwGeneral->setCurrentIndex ( 5 );
+#endif
     return;
 }
 
@@ -693,6 +738,47 @@ void MainWindow::mainInstall_Click(){
 
     QMessageBox::warning(this, tr("WIP"), tr("Sorry, the install wizard has not been implemented yet. It will be available in a future version."));
 
+    return;
+}
+
+void MainWindow::mainFirstSteps_Click(){
+    CoreLib->openHelpUrl("05-first-steps.html");
+    return;
+}
+
+void MainWindow::mainFAQ_Click(){
+    CoreLib->openHelpUrl("00-short-faq.html");
+    return;
+}
+
+void MainWindow::mainIndex_Click(){
+    CoreLib->openHelpUrl("index.html");
+    return;
+}
+
+void MainWindow::mainWebsite_Click(){
+    CoreLib->openHomeUrl("");
+    return;
+}
+
+void MainWindow::mainDonate_Click(){
+    CoreLib->openHomeUrl("donate/");
+    return;
+}
+
+void MainWindow::mainBugs_Click(){
+    CoreLib->openHomeUrl("bugs/");
+    return;
+}
+
+void MainWindow::mainAppDB_Click(){
+    if (!isVisible())
+        setMeVisible(true);
+
+    if (isMinimized ())
+        showNormal ();
+
+    tbwGeneral->setCurrentIndex ( 4 );
     return;
 }
 
@@ -804,6 +890,33 @@ void MainWindow::mainExportIcons_Click(){
     if (!tmp.rmdir(tmpDir))
         qDebug()<<"[EE] - Cannot delete tmp dir: "<<tmpDir;
 
+    return;
+}
+
+void MainWindow::mainHelpThisTab_Click(){
+    QString rawurl="";
+    switch (tbwGeneral->currentIndex()){
+case 0:
+       rawurl = "04-general-gui-description.html#programs";
+       break;
+case 1:
+       rawurl = "04-general-gui-description.html#process";
+       break;
+case 2:
+       rawurl = "04-general-gui-description.html#setup";
+       break;
+case 3:
+       rawurl = "04-general-gui-description.html#prefixes";
+       break;
+case 4:
+       rawurl = "04-general-gui-description.html#appdb";
+       break;
+case 5:
+       rawurl = "04-general-gui-description.html#logging";
+       break;
+   }
+
+    CoreLib->openHelpUrl(rawurl);
     return;
 }
 
