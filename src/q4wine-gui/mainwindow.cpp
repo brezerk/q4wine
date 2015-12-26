@@ -200,6 +200,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     // Creating AppDBScrollWidget and place it into frameAppDBWidget layout
     appdbWidget.reset(new AppDBWidget(this));
     connect (this, SIGNAL(appdbWidget_startSearch(short int, QString)), appdbWidget.get(), SLOT(itemTrigged(short int, QString)));
+
     connect (this, SIGNAL(setAppDBFocus()), appdbWidget.get(), SLOT(setFocus()));
     tabAppDBLayout->addWidget(appdbWidget.release());
 #endif

@@ -23,8 +23,6 @@ SET( Q4WINE_GUI_SOURCES
     ${CMAKE_SOURCE_DIR}/src/core/database/versions.cpp
     ${CMAKE_SOURCE_DIR}/src/core/database/sysconfig.cpp
     ${CMAKE_SOURCE_DIR}/src/core/registry.cpp
-    ${CMAKE_SOURCE_DIR}/src/core/xmlparser.cpp
-    ${CMAKE_SOURCE_DIR}/src/core/httpcore.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/about.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.cpp
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsettings.cpp
@@ -65,9 +63,6 @@ SET ( Q4WINE_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/core/database/logging.h
     ${CMAKE_SOURCE_DIR}/src/core/database/versions.h
     ${CMAKE_SOURCE_DIR}/src/core/database/sysconfig.h
-    ${CMAKE_SOURCE_DIR}/src/core/appdbstructs.h
-    ${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
-    ${CMAKE_SOURCE_DIR}/src/core/httpcore.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/about.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsettings.h
@@ -96,8 +91,6 @@ SET ( Q4WINE_GUI_HEADERS
 
 SET ( Q4WINE_GUI_MOC_HEADEDRS
     ${CMAKE_SOURCE_DIR}/src/core/registry.h
-    ${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
-    ${CMAKE_SOURCE_DIR}/src/core/httpcore.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/appsettings.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsettings.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/iconsview.h
@@ -154,6 +147,8 @@ IF (${WITH_WINEAPPDB} MATCHES ON )
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/lineitemwidget.cpp
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/apptestwidget.cpp
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/commentwidget.cpp
+        ${CMAKE_SOURCE_DIR}/src/core/xmlparser.cpp
+        ${CMAKE_SOURCE_DIR}/src/core/httpcore.cpp
     )
 
     SET ( Q4WINE_GUI_HEADERS
@@ -166,6 +161,9 @@ IF (${WITH_WINEAPPDB} MATCHES ON )
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/lineitemwidget.h
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/apptestwidget.h
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/commentwidget.h
+        ${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
+        ${CMAKE_SOURCE_DIR}/src/core/httpcore.h
+        ${CMAKE_SOURCE_DIR}/src/core/appdbstructs.h
     )
 
     SET ( Q4WINE_GUI_MOC_HEADEDRS
@@ -178,6 +176,8 @@ IF (${WITH_WINEAPPDB} MATCHES ON )
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/lineitemwidget.h
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/apptestwidget.h
         ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/appdb/commentwidget.h
+        ${CMAKE_SOURCE_DIR}/src/core/xmlparser.h
+        ${CMAKE_SOURCE_DIR}/src/core/httpcore.h
     )
 
     SET ( Q4WINE_GUI_UI_SOURCES
