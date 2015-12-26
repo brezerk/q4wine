@@ -79,8 +79,11 @@ class Wizard : public QDialog, public Ui::Wizard
         //! \brief cmdHelo click slot.
         void cmdHelp_Click();
 
-        //! \brief mounts profile combobox index cahnge slot
+        //! \brief mounts profile combobox index cahnge slot.
         void comboMountProfiles_currentIndexChanged(int index);
+
+        //! \brief open start page of requested.
+        void cmdFirstSteps_click();
 
     private:
         //! \brief Function for updateing scene elements.

@@ -8,6 +8,7 @@ Version 1.2
   - Make Wine64 libs optional (for x86 only platforms) [BUG-50];
   - Backup/Restore prefix path handler;
   - Can't use pre/post run scripts without standalone script [BUG-49];
+  - Do not force startpage open;
 
 Version 1.1-r2
  Fixed:

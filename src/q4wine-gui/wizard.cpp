@@ -81,6 +81,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
     connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
     connect(comboProxyType, SIGNAL(currentIndexChanged(QString)), this, SLOT(comboProxyType_indexChanged(QString)));
     connect(comboMountProfiles, SIGNAL(currentIndexChanged(int)), this, SLOT(comboMountProfiles_currentIndexChanged(int)));
+    connect(cmdFirstSteps, SIGNAL(clicked(bool)), this, SLOT(cmdFirstSteps_click()));
 
     switch (Scena){
  case 1:
@@ -89,6 +90,8 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
         setWindowTitle(tr("First startup wizard"));
         lblCaption->setText(tr("<b>First startup wizard</b>"));
         lblStep->setText(tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
+
+        cmdFirstSteps->setVisible(false);
 
         cmdGetWineBin->installEventFilter(this);
         cmdGetWineServerBin->installEventFilter(this);
@@ -462,8 +465,6 @@ void Wizard::nextWizardPage(){
 
             settings.endGroup();
 
-            CoreLib->openHelpUrl("05-first-steps.html");
-
             CoreLib->createPrefixDBStructure("Default");
 
 #ifndef _OS_DARWIN_
@@ -589,10 +590,12 @@ void Wizard::updateScena(){
             stkFirstStartup->setCurrentIndex(4);
             stkWizards->setCurrentIndex(2);
             cmdNext->setText(tr("Next >"));
+            cmdFirstSteps->setVisible(false);
             break;
   case 8:
             stkWizards->setCurrentIndex(0);
-            lblWizardInfo->setText(tr("<p>All ready for finishing %1 setup. </p><p>Please, press the <b>Finish</b> button to create finish setup process. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
+            lblWizardInfo->setText(tr("<p>Everything is ready for finishing %1 setup. </p><p>Please, press the <b>Finish</b> button to finish setup process. Or press <b>Back</b> button for return.</p><p><b>Note:</b> You can access online documentation at any time by pressing <b>F1</b> key or by clicking \"Help\" button.</p></p>If you are new to %1, please check our online guide:</p>").arg(APP_NAME));
+            cmdFirstSteps->setVisible(true);
             cmdNext->setText(tr("Finish"));
             break;
         }
@@ -620,4 +623,8 @@ void Wizard::comboMountProfiles_currentIndexChanged(int index){
     txtMountString->setText(CoreLib->getMountString(index));
     txtMountImageString->setText(CoreLib->getMountImageString(index));
     txtUmountString->setText(CoreLib->getUmountString(index));
+}
+
+void Wizard::cmdFirstSteps_click(){
+    CoreLib->openHelpUrl("05-first-steps.html");
 }

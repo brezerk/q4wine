@@ -11,7 +11,7 @@
     <x>0</x>
     <y>0</y>
     <width>677</width>
-    <height>438</height>
+    <height>492</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -246,7 +246,16 @@
       <item>
        <widget class="QWidget" name="widget_2" native="true">
         <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <property name="margin">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
           <number>0</number>
          </property>
          <item>
@@ -415,13 +424,38 @@
          <item>
           <widget class="QStackedWidget" name="stkWizards">
            <property name="currentIndex">
-            <number>2</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="pageInfo">
             <layout class="QGridLayout" name="gridLayout_3">
-             <property name="margin">
+             <property name="leftMargin">
               <number>3</number>
              </property>
+             <property name="topMargin">
+              <number>3</number>
+             </property>
+             <property name="rightMargin">
+              <number>3</number>
+             </property>
+             <property name="bottomMargin">
+              <number>3</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>12</number>
+             </property>
+             <item row="2" column="0">
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
              <item row="0" column="0">
               <widget class="QLabel" name="lblWizardInfo">
                <property name="text">
@@ -441,11 +475,27 @@
                </property>
               </widget>
              </item>
+             <item row="1" column="0">
+              <widget class="QPushButton" name="cmdFirstSteps">
+               <property name="text">
+                <string>Open online guide</string>
+               </property>
+              </widget>
+             </item>
             </layout>
            </widget>
            <widget class="QWidget" name="pageRichText">
             <layout class="QGridLayout" name="gridLayout_13">
-             <property name="margin">
+             <property name="leftMargin">
+              <number>3</number>
+             </property>
+             <property name="topMargin">
+              <number>3</number>
+             </property>
+             <property name="rightMargin">
+              <number>3</number>
+             </property>
+             <property name="bottomMargin">
               <number>3</number>
              </property>
              <item row="0" column="0">
@@ -454,7 +504,16 @@
                 <string>Base information:</string>
                </property>
                <layout class="QGridLayout" name="_15">
-                <property name="margin">
+                <property name="leftMargin">
+                 <number>3</number>
+                </property>
+                <property name="topMargin">
+                 <number>3</number>
+                </property>
+                <property name="rightMargin">
+                 <number>3</number>
+                </property>
+                <property name="bottomMargin">
                  <number>3</number>
                 </property>
                 <item row="0" column="0">
@@ -472,7 +531,7 @@
                    <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="textInteractionFlags">
@@ -487,7 +546,16 @@ p, li { white-space: pre-wrap; }
            </widget>
            <widget class="QWidget" name="pageFirstStartup">
             <layout class="QGridLayout" name="gridLayout_7">
-             <property name="margin">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
               <number>0</number>
              </property>
              <item row="0" column="0">
@@ -497,7 +565,16 @@ p, li { white-space: pre-wrap; }
                </property>
                <widget class="QWidget" name="pageWinePath">
                 <layout class="QVBoxLayout" name="verticalLayout_20">
-                 <property name="margin">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
                   <number>3</number>
                  </property>
                  <item>
@@ -506,13 +583,31 @@ p, li { white-space: pre-wrap; }
                     <string>Default Wine paths:</string>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_10">
-                    <property name="margin">
+                    <property name="leftMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="bottomMargin">
                      <number>3</number>
                     </property>
                     <item>
                      <widget class="QWidget" name="widget_15" native="true">
                       <layout class="QHBoxLayout" name="_7">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -569,7 +664,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_21" native="true">
                       <layout class="QHBoxLayout" name="_8">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -626,7 +730,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_22" native="true">
                       <layout class="QHBoxLayout" name="_9">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -683,7 +796,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_20" native="true">
                       <layout class="QHBoxLayout" name="_10">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -740,7 +862,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_33" native="true">
                       <layout class="QHBoxLayout" name="_11">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -817,7 +948,16 @@ p, li { white-space: pre-wrap; }
                </widget>
                <widget class="QWidget" name="pageSystemUtils">
                 <layout class="QGridLayout" name="gridLayout_8">
-                 <property name="margin">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
                   <number>3</number>
                  </property>
                  <item row="0" column="0">
@@ -829,13 +969,31 @@ p, li { white-space: pre-wrap; }
                     <string>System utils paths:</string>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_3">
-                    <property name="margin">
+                    <property name="leftMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="bottomMargin">
                      <number>3</number>
                     </property>
                     <item>
                      <widget class="QWidget" name="widget_14" native="true">
                       <layout class="QHBoxLayout" name="_17">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -892,7 +1050,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_17" native="true">
                       <layout class="QHBoxLayout" name="_18">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -949,7 +1116,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_18" native="true">
                       <layout class="QHBoxLayout" name="_19">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1006,7 +1182,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_19" native="true">
                       <layout class="QHBoxLayout" name="_20">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1063,7 +1248,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_50" native="true">
                       <layout class="QHBoxLayout" name="_21">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1120,7 +1314,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_24" native="true">
                       <layout class="QHBoxLayout" name="_22">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1177,7 +1380,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_25" native="true">
                       <layout class="QHBoxLayout" name="_23">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1234,7 +1446,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_28" native="true">
                       <layout class="QHBoxLayout" name="_24">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1308,7 +1529,16 @@ p, li { white-space: pre-wrap; }
                </widget>
                <widget class="QWidget" name="pageUserUtils">
                 <layout class="QGridLayout" name="gridLayout_9">
-                 <property name="margin">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
                   <number>3</number>
                  </property>
                  <item row="2" column="0">
@@ -1333,13 +1563,31 @@ p, li { white-space: pre-wrap; }
                     <string>media-gfx/icoutils settings:</string>
                    </property>
                    <layout class="QVBoxLayout" name="_30">
-                    <property name="margin">
+                    <property name="leftMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="bottomMargin">
                      <number>3</number>
                     </property>
                     <item>
                      <widget class="QWidget" name="widget_26" native="true">
                       <layout class="QHBoxLayout" name="_31">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1396,7 +1644,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_27" native="true">
                       <layout class="QHBoxLayout" name="_32">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1459,13 +1716,31 @@ p, li { white-space: pre-wrap; }
                     <string>Console application settings:</string>
                    </property>
                    <layout class="QVBoxLayout" name="_27">
-                    <property name="margin">
+                    <property name="leftMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="bottomMargin">
                      <number>3</number>
                     </property>
                     <item>
                      <widget class="QWidget" name="widget_12" native="true">
                       <layout class="QHBoxLayout" name="_28">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1522,7 +1797,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_16" native="true">
                       <layout class="QHBoxLayout" name="_29">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1564,7 +1848,16 @@ p, li { white-space: pre-wrap; }
                </widget>
                <widget class="QWidget" name="pageNetwork">
                 <layout class="QGridLayout" name="gridLayout_10">
-                 <property name="margin">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
                   <number>3</number>
                  </property>
                  <item row="0" column="0">
@@ -1576,13 +1869,31 @@ p, li { white-space: pre-wrap; }
                     <string>Network settings</string>
                    </property>
                    <layout class="QVBoxLayout" name="_34">
-                    <property name="margin">
+                    <property name="leftMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="bottomMargin">
                      <number>3</number>
                     </property>
                     <item>
                      <widget class="QWidget" name="widget_30" native="true">
                       <layout class="QHBoxLayout" name="_35">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1635,7 +1946,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_23" native="true">
                       <layout class="QHBoxLayout" name="_36">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1679,7 +1999,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_32" native="true">
                       <layout class="QHBoxLayout" name="_37">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1713,7 +2042,7 @@ p, li { white-space: pre-wrap; }
                           </sizepolicy>
                          </property>
                          <property name="inputMask">
-                          <string notr="true">0000000000; </string>
+                          <string notr="true">0000000000</string>
                          </property>
                         </widget>
                        </item>
@@ -1723,7 +2052,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_29" native="true">
                       <layout class="QHBoxLayout" name="_38">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1767,7 +2105,16 @@ p, li { white-space: pre-wrap; }
                     <item>
                      <widget class="QWidget" name="widget_31" native="true">
                       <layout class="QHBoxLayout" name="_39">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>0</number>
                        </property>
                        <item>
@@ -1828,7 +2175,16 @@ p, li { white-space: pre-wrap; }
                </widget>
                <widget class="QWidget" name="pageMountProfile">
                 <layout class="QGridLayout" name="gridLayout_11">
-                 <property name="margin">
+                 <property name="leftMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>3</number>
+                 </property>
+                 <property name="bottomMargin">
                   <number>3</number>
                  </property>
                  <item row="0" column="0">
@@ -1840,7 +2196,16 @@ p, li { white-space: pre-wrap; }
                     <string>Select Quick Mount Profile</string>
                    </property>
                    <layout class="QVBoxLayout" name="_57">
-                    <property name="margin">
+                    <property name="leftMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>3</number>
+                    </property>
+                    <property name="bottomMargin">
                      <number>3</number>
                     </property>
                     <item>
@@ -1865,7 +2230,16 @@ p, li { white-space: pre-wrap; }
                        <string>Profiles:</string>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_12">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>3</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>3</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>3</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>3</number>
                        </property>
                        <item>
@@ -1896,13 +2270,31 @@ p, li { white-space: pre-wrap; }
                        <string>Profile Strings:</string>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_11">
-                       <property name="margin">
+                       <property name="leftMargin">
+                        <number>3</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>3</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>3</number>
+                       </property>
+                       <property name="bottomMargin">
                         <number>3</number>
                        </property>
                        <item>
                         <widget class="QWidget" name="frameMount" native="true">
                          <layout class="QHBoxLayout" name="_6">
-                          <property name="margin">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
                            <number>0</number>
                           </property>
                           <item>
@@ -1943,7 +2335,16 @@ p, li { white-space: pre-wrap; }
                        <item>
                         <widget class="QWidget" name="widget_52" native="true">
                          <layout class="QHBoxLayout" name="_58">
-                          <property name="margin">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
                            <number>0</number>
                           </property>
                           <item>
@@ -1984,7 +2385,16 @@ p, li { white-space: pre-wrap; }
                        <item>
                         <widget class="QWidget" name="widget_53" native="true">
                          <layout class="QHBoxLayout" name="_59">
-                          <property name="margin">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
                            <number>0</number>
                           </property>
                           <item>
@@ -2069,12 +2479,21 @@ p, li { white-space: pre-wrap; }
         </property>
         <layout class="QHBoxLayout">
          <property name="spacing">
-          <number>-1</number>
+          <number>6</number>
          </property>
          <property name="sizeConstraint">
           <enum>QLayout::SetMinimumSize</enum>
          </property>
-         <property name="margin">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
           <number>0</number>
          </property>
          <item>
