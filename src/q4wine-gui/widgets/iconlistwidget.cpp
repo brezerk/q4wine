@@ -1079,7 +1079,7 @@ void IconListWidget::menuRun_triggered(QAction* action){
     if (action->text().isEmpty())
         return;
 
-    if (action->text()==tr("Browse...")){
+    if (action->text()==tr("&Browse...")){
         Run run;
         run.prepare(this->prefixName);
         run.exec();
