@@ -135,7 +135,7 @@ private slots:
       void iconCopyQ4WineCmd_Click(void);
 
 
-      void menuRun_triggered(QAction*);
+      void menuRunRecent_triggered(QAction* action);
       void menuMount_triggered(QAction*);
       void menuUmount_Click(void);
 

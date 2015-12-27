@@ -444,7 +444,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
             submenuMount->addSeparator();
 
         for (int i = 0; i < files.size(); ++i){
-            entry.reset (new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"),files.at(i).split("/").last(), this));
+            entry.reset (new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"), files.at(i).split("/").last(), this));
             entry->setStatusTip(files.at(i));
             submenuMount->addAction(entry.release());
         }
@@ -608,9 +608,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
 
         std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("data/folder.png"), tr("Browse..."), this));
-        entry->setStatusTip(tr("Browse for another image"));
-
-        connect(menuRun.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
+        entry->setStatusTip(tr("Browse for application"));
         menuRun->addAction(entry.release());
 
         Last_Run_Icon db_last_run_icon;
@@ -621,10 +619,11 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
             for (int i=0; i<result.size(); ++i){
                 entry.reset(new QAction(result.at(i).split("/").last(), this));
                 entry->setStatusTip(result.at(i));
+
                 menuRun->addAction(entry.release());
             }
         }
-
+        connect(menuRun.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuRunRecent_triggered(QAction*)));
         menu->addMenu(menuRun.release());
         menu->addSeparator();
 
@@ -1075,11 +1074,9 @@ void IconListWidget::runProgramRequest(QString message){
     return;
 }
 
-void IconListWidget::menuRun_triggered(QAction* action){
-    if (action->text().isEmpty())
-        return;
+void IconListWidget::menuRunRecent_triggered(QAction* action){
 
-    if (action->text()==tr("&Browse...")){
+    if (action->statusTip() == tr("Browse for application")){
         Run run;
         run.prepare(this->prefixName);
         run.exec();
@@ -1088,7 +1085,6 @@ void IconListWidget::menuRun_triggered(QAction* action){
 
     Last_Run_Icon db_last_run_icon;
     QStringList result = db_last_run_icon.getByExec(action->statusTip());
-
     if (result.count()<=0){
 #ifdef DEBUG
         qDebug()<<"[ee] db_last_run_icon.getByExec return an enpty result";
@@ -1129,7 +1125,7 @@ void IconListWidget::menuMount_triggered(QAction* action){
     if (action->text()==tr("[none]")){
         QMessageBox::warning(this, tr("Error"),  tr("No device drive specified in prefix settings."), QMessageBox::Ok);
         return;
-    } else if (action->text()==tr("Browse...")) {
+    } else if (action->statusTip() == tr("Browse for media image.")) {
         /*
             Request for unmounting cdrom drve described at wine prefix settings
             */
