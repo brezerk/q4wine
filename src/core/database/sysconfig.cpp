@@ -102,17 +102,19 @@ QList<SysconfigItem> Sysconfig::getItems(QString provider, QString type, int sor
 bool Sysconfig::add_item(QString name, QString icon, QString desc, QString type, int provider_id){
     QSqlQuery query;
     if (type.isEmpty()){
-        query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, :provider);");
+        query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, :provider_id);");
     } else {
-        query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, :type, :desc, :provider);");
+        query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, :type, :desc, :provider_id);");
         query.bindValue(":type", type);
     }
     query.bindValue(":name", name);
     query.bindValue(":icon", icon);
     query.bindValue(":desc", desc);
     query.bindValue(":provider_id", provider_id);
-    if (!query.exec())
+    if (!query.exec()){
+        qDebug() << "Error sysconfig::add_item: " << query.lastError().text();
         return false;
+    }
     return true;
 }
 

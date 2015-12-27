@@ -210,9 +210,9 @@ void winetricks::downloadwinetricks () {
 QStringList winetricks::get_stdout_lines(QString command){
     QProcess p(this);
     QString lang = CoreLib->getLocale();
-    #ifdef DEBUG
-        qDebug()<<lang;
-    #endif
+#ifdef DEBUG
+    qDebug()<<lang;
+#endif
     QTextCodec *codec = QTextCodec::codecForName(lang.toLatin1());
 
     p.start(command);
@@ -265,7 +265,6 @@ bool winetricks::parse() {
             foreach (QString item, this->get_stdout_lines(pargs)){
                 if (item.isEmpty())
                     continue;
-
                 db_sysconfig.add_item(item.left(24).trimmed(), "exec.png", item.mid(24).trimmed(), subtype, D_PROVIDER_WINETRICKS);
             }
         }
