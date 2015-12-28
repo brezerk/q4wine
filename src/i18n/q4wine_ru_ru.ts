@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru">
+<TS version="2.1" language="ru">
 <context>
     <name>About</name>
     <message>
@@ -496,12 +496,12 @@
     <message>
         <location line="-1173"/>
         <source>You can call it via Tools menu or via shortcut Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы можете вызвать это окно используя меню &quot;Инструменты&quot; или клавиатурное сокращение Ctrl+M</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Wine Version Manager</source>
-        <translation type="unfinished">Управление версиями Wine</translation>
+        <translation>Управление версиями Wine</translation>
     </message>
     <message>
         <location line="+1111"/>
@@ -1657,7 +1657,7 @@ See help for details.</source>
         <location line="+24"/>
         <location line="+468"/>
         <source>Browse for application</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск приложения</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2432,12 +2432,12 @@ See help for details.</source>
     <message>
         <location line="+3"/>
         <source>Prerun Exec string:</source>
-        <translation type="unfinished"></translation>
+        <translation>Строка предзапуска:</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Postrun Exec string:</source>
-        <translation type="unfinished"></translation>
+        <translation>Строка постзапуска:</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2643,12 +2643,12 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>Wine Version Manager</source>
-        <translation type="unfinished">Управление версиями Wine</translation>
+        <translation>Управление версиями Wine</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <source>Version Manager</source>
@@ -2702,7 +2702,7 @@ See help for details.</source>
     <message>
         <location line="-205"/>
         <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 :. Qt4 GUI для Wine v%2</translation>
     </message>
     <message>
         <location line="+299"/>
@@ -4236,7 +4236,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-199"/>
         <source>Remove prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить каталог префикса</translation>
     </message>
 </context>
 <context>
@@ -4824,7 +4824,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-102"/>
         <source>Open online guide</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть онлайн руководство</translation>
     </message>
     <message>
         <location line="+488"/>
@@ -4975,7 +4975,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+253"/>
         <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking &quot;Help&quot; button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Все готово для завершения установки %1. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Закончить&lt;/b&gt; для завершения процесса установки. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Заметка:&lt;/b&gt; Вы можете получить доступ к онлайн-документации в любой момент, нажав клавишу &lt;b&gt;F1&lt;/b&gt; или кликнув на кнопку &quot;Помощь&quot;.&lt;/p&gt;&lt;/p&gt;Если вы новичок %1, пожалуйста, ознакомьтесь с нашим онлайн руководством:&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="+2"/>
