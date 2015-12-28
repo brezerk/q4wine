@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="uk_UA">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>About</name>
     <message>
@@ -483,12 +483,13 @@
     <message>
         <location line="-1173"/>
         <source>You can call it via Tools menu or via shortcut Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Ви можете викликати це вікно використовуючи меню &quot;Інструменти&quot; або клавіатурне скорочення Ctrl+M</translatorcomment>
+        <translation></translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Wine Version Manager</source>
-        <translation type="unfinished">Керування версіями Wine</translation>
+        <translation>Керування версіями Wine</translation>
     </message>
     <message>
         <location line="+1111"/>
@@ -1646,7 +1647,8 @@ See help for details.</source>
         <location line="+24"/>
         <location line="+468"/>
         <source>Browse for application</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Пошук додатку</translatorcomment>
+        <translation></translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2426,12 +2428,12 @@ See help for details.</source>
     <message>
         <location line="+3"/>
         <source>Prerun Exec string:</source>
-        <translation type="unfinished"></translation>
+        <translation>Виконати попередньо:</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Postrun Exec string:</source>
-        <translation type="unfinished"></translation>
+        <translation>Виконати після:</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2637,12 +2639,12 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>Wine Version Manager</source>
-        <translation type="unfinished">Керування версіями Wine</translation>
+        <translation>Керування версіями Wine</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <source>Version Manager</source>
@@ -2734,7 +2736,7 @@ See help for details.</source>
     <message>
         <location line="-300"/>
         <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 :. Графічна оболонка на Qt4 для Wine v%2</translation>
     </message>
     <message>
         <location line="+356"/>
@@ -4232,7 +4234,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-199"/>
         <source>Remove prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити теку префіксу</translation>
     </message>
 </context>
 <context>
@@ -4767,7 +4769,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+463"/>
         <source>Open online guide</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити онлайн інструкцію</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -4871,7 +4873,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+253"/>
         <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking &quot;Help&quot; button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Все готово для завершення конфігурації %1. &lt;/p&gt;&lt;p&gt;Будь ласка, натисніть кнопку &lt;b&gt;Завершити&lt;/b&gt; щоб закінчити процес налаштування. Або натисніть кнопку &lt;b&gt;Назад&lt;/b&gt; щоб повернутися і змінити обрані параметри.&lt;/p&gt;&lt;p&gt; &lt;b&gt; Замітка: &lt;/b&gt;Ви можете отримати доступ до онлайн-документації в будь-який момент, натиснувши клавішу &lt;b&gt;F1&lt;/b&gt; або клікнувши на кнопку &quot;Допомога&quot;.&lt;/p&gt;&lt;p&gt; якщо ви новачок %1, будь ласка, ознайомтеся з нашою онлайн інструкцією:&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="+2"/>
