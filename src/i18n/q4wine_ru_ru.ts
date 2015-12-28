@@ -4975,7 +4975,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+253"/>
         <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking &quot;Help&quot; button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Все готово для завершения установки %1. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Закончить&lt;/b&gt; для завершения процесса установки. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Заметка:&lt;/b&gt; Вы можете получить доступ к онлайн-документации в любой момент, нажав клавишу &lt;b&gt;F1&lt;/b&gt; или кликнув на кнопку &quot;Помощь&quot;.&lt;/p&gt;&lt;/p&gt;Если вы новичок %1, пожалуйста, ознакомьтесь с нашим онлайн руководством:&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Все готово для завершения установки %1. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Закончить&lt;/b&gt; для завершения процесса установки. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Заметка:&lt;/b&gt; Вы можете получить доступ к онлайн-документации в любой момент, нажав клавишу &lt;b&gt;F1&lt;/b&gt; или кликнув на кнопку &quot;Помощь&quot;.&lt;/p&gt;&lt;p&gt;Если вы новичок %1, пожалуйста, ознакомьтесь с нашим онлайн руководством:&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="+2"/>
