@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.0" language="he" sourcelanguage="en">
 <context>
@@ -9,7 +10,7 @@
         <translation>על אודות %1</translation>
     </message>
     <message>
-        <location line="+153"/>
+        <location line="+49"/>
         <source>About</source>
         <translation>על אודות</translation>
     </message>
@@ -188,7 +189,7 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Status: Reading server's response.</source>
+        <source>Status: Reading server&apos;s response.</source>
         <translation>מצב: התגובה מהשרת נקראת.</translation>
     </message>
     <message>
@@ -213,15 +214,15 @@
         <translation>הגדרות %1</translation>
     </message>
     <message>
-        <location line="+1277"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+386"/>
-        <location line="+167"/>
-        <location line="+104"/>
+        <location line="+1006"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+374"/>
+        <location line="+150"/>
+        <location line="+96"/>
         <source>No Proxy</source>
         <translation>אין מתווך</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-473"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-448"/>
         <source>generic</source>
         <translation>כללי</translation>
     </message>
@@ -238,9 +239,9 @@
         <translation>פתיחת תיקייה</translation>
     </message>
     <message>
-        <location line="+195"/>
+        <location line="+178"/>
         <location line="+4"/>
-        <location line="+183"/>
+        <location line="+175"/>
         <location line="+3"/>
         <location line="+8"/>
         <location line="+3"/>
@@ -248,7 +249,7 @@
         <translation>שגיאה</translation>
     </message>
     <message>
-        <location line="-201"/>
+        <location line="-193"/>
         <source>Sorry, specify proxy host.</source>
         <translation>נא לציין את מארח המתווך, עמך הסליחה.</translation>
     </message>
@@ -258,7 +259,7 @@
         <translation>נא לציין את הפתחה במתווך, עמך הסליחה.</translation>
     </message>
     <message>
-        <location line="+183"/>
+        <location line="+175"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>נא לציין תיקיית %1, עמך הסליחה.</translation>
     </message>
@@ -279,45 +280,42 @@
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+479"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-641"/>
-        <location line="+499"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-616"/>
+        <location line="+474"/>
         <source>System Default</source>
         <translation>בררת המחדל של המערכת</translation>
     </message>
     <message>
-        <location line="-1669"/>
-        <location line="+2442"/>
+        <location line="-1398"/>
+        <location line="+2171"/>
         <location line="+5"/>
         <location line="+4"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-352"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-327"/>
         <location line="+20"/>
-        <location line="+495"/>
+        <location line="+470"/>
         <source>General</source>
         <translation>כללי</translation>
     </message>
     <message>
-        <location line="-2442"/>
+        <location line="-2171"/>
         <source>Wine settings</source>
         <translation>הגדרות Wine</translation>
     </message>
     <message>
-        <location line="+27"/>
-        <location line="+884"/>
+        <location line="+640"/>
         <source>Bin:</source>
         <translation>בינרי:</translation>
     </message>
     <message>
-        <location line="-827"/>
         <source>Server:</source>
-        <translation>שרת:</translation>
+        <translation type="obsolete">שרת:</translation>
     </message>
     <message>
-        <location line="+57"/>
         <source>Loader:</source>
-        <translation>תכנית טעינה:</translation>
+        <translation type="obsolete">תכנית טעינה:</translation>
     </message>
     <message>
-        <location line="+177"/>
+        <location line="-593"/>
         <source>Use tray icon.</source>
         <translation>שימוש בסמל באזור הדיווחים.</translation>
     </message>
@@ -329,8 +327,8 @@
     <message>
         <location line="+34"/>
         <location line="+2063"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-492"/>
-        <location line="+494"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-467"/>
+        <location line="+469"/>
         <source>System</source>
         <translation>מערכת</translation>
     </message>
@@ -382,8 +380,8 @@
     <message>
         <location line="+56"/>
         <location line="+1577"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-491"/>
-        <location line="+493"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-466"/>
+        <location line="+468"/>
         <source>Utils</source>
         <translation>כלים</translation>
     </message>
@@ -400,16 +398,16 @@
     <message>
         <location line="+421"/>
         <location line="+1073"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-487"/>
-        <location line="+491"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-462"/>
+        <location line="+466"/>
         <source>Quick Mount</source>
         <translation>עיגון מהיר</translation>
     </message>
     <message>
         <location line="-710"/>
         <location line="+735"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-476"/>
-        <location line="+486"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-451"/>
+        <location line="+461"/>
         <source>Logging</source>
         <translation>מעקב</translation>
     </message>
@@ -457,8 +455,8 @@
         <location line="+535"/>
         <location line="+9"/>
         <location line="+853"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-495"/>
-        <location line="+489"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-470"/>
+        <location line="+464"/>
         <source>Language</source>
         <translation>שפה</translation>
     </message>
@@ -466,16 +464,16 @@
         <location line="-781"/>
         <location line="+9"/>
         <location line="+777"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-486"/>
-        <location line="+488"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-461"/>
+        <location line="+463"/>
         <source>Themes</source>
         <translation>ערכות נושא</translation>
     </message>
     <message>
         <location line="-1346"/>
         <location line="+1326"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-500"/>
-        <location line="+492"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-475"/>
+        <location line="+467"/>
         <source>Network</source>
         <translation>רשת</translation>
     </message>
@@ -515,17 +513,15 @@
         <translation>סוג המתווך:</translation>
     </message>
     <message>
-        <location line="-969"/>
         <source>Libs (32bit):</source>
-        <translation>ספריות (32 סיביות):</translation>
+        <translation type="obsolete">ספריות (32 סיביות):</translation>
     </message>
     <message>
-        <location line="+57"/>
         <source>Libs (64bit):</source>
-        <translation>ספריות (64 סיביות):</translation>
+        <translation type="obsolete">ספריות (64 סיביות):</translation>
     </message>
     <message>
-        <location line="+79"/>
+        <location line="-833"/>
         <source>Minimize to tray at startup.</source>
         <translation>מזעור לאזור הדיווחים עם ההפעלה.</translation>
     </message>
@@ -582,8 +578,8 @@
     <message>
         <location line="+272"/>
         <location line="+676"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-471"/>
-        <location line="+485"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-446"/>
+        <location line="+460"/>
         <source>AppDB browser</source>
         <translation>דפדפן AppDB</translation>
     </message>
@@ -600,8 +596,8 @@
     <message>
         <location line="+44"/>
         <location line="+627"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-479"/>
-        <location line="+483"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-454"/>
+        <location line="+458"/>
         <source>Desktop Menu</source>
         <translation>תפריט שולחן העבודה</translation>
     </message>
@@ -628,8 +624,8 @@
     <message>
         <location line="+47"/>
         <location line="+557"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-477"/>
-        <location line="+481"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-452"/>
+        <location line="+456"/>
         <source>Defaults</source>
         <translation>בררות מחדל</translation>
     </message>
@@ -661,8 +657,8 @@
     <message>
         <location line="+64"/>
         <location line="+222"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-478"/>
-        <location line="+480"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-453"/>
+        <location line="+455"/>
         <source>Run dialog</source>
         <translation>תיבת דו־שיח הפעלה</translation>
     </message>
@@ -670,8 +666,8 @@
         <location line="-171"/>
         <location line="+9"/>
         <location line="+167"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-477"/>
-        <location line="+479"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-452"/>
+        <location line="+454"/>
         <source>Wine desktop import</source>
         <translation>יבוא משולחן עבודה Wine</translation>
     </message>
@@ -682,29 +678,29 @@
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-512"/>
-        <location line="+490"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-487"/>
+        <location line="+465"/>
         <source>Interface</source>
         <translation>מנשק</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-481"/>
-        <location line="+487"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-456"/>
+        <location line="+462"/>
         <source>Subsystems</source>
         <translation>תת־מערכות</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-478"/>
-        <location line="+484"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-453"/>
+        <location line="+459"/>
         <source>Plugins</source>
         <translation>תוספים</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-478"/>
-        <location line="+482"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-453"/>
+        <location line="+457"/>
         <source>Advanced</source>
         <translation>מתקדם</translation>
     </message>
@@ -714,9 +710,19 @@
         <translation>שולחן העבודה הווירטואלי כבררת מחדל</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Default virtual desktop size will be used for "Icon creation" and "Run" dialogs.</source>
-        <translation>גודל שולחן העבודה הווירטואלי בו ייעשה שימוש עבור תיבות הדו־שיח "יצירת סמל" ו"הפעלה".</translation>
+        <location line="-1681"/>
+        <source>You can call it via Tools menu or via shortcut Ctrl+M</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Wine Version Manager</source>
+        <translation type="unfinished">מנהל גרסאות Wine</translation>
+    </message>
+    <message>
+        <location line="+1683"/>
+        <source>Default virtual desktop size will be used for &quot;Icon creation&quot; and &quot;Run&quot; dialogs.</source>
+        <translation>גודל שולחן העבודה הווירטואלי בו ייעשה שימוש עבור תיבות הדו־שיח &quot;יצירת סמל&quot; ו&quot;הפעלה&quot;.</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -1135,8 +1141,8 @@
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-787"/>
-        <source>Fake drive settings for prefix "%1"</source>
-        <translation>הגדרות כונן מזויפות עבור הקידומת "%1"</translation>
+        <source>Fake drive settings for prefix &quot;%1&quot;</source>
+        <translation>הגדרות כונן מזויפות עבור הקידומת &quot;%1&quot;</translation>
     </message>
     <message>
         <location line="+122"/>
@@ -1168,10 +1174,10 @@
 %1
 
 Joystick axes mappings might be defined as:
-"Joystick name"="axes mapping"
+&quot;Joystick name&quot;=&quot;axes mapping&quot;
 
 For example:
-"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
+&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
 
 See help for details.</source>
         <translation>שגיאה במחרוזת:
@@ -1179,10 +1185,10 @@ See help for details.</source>
 %1
 
 ניתן להגדיר את מיפוי צירי הג׳ויסטיק באופן הבא:
-"Joystick name"="axes mapping"
+&quot;Joystick name&quot;=&quot;axes mapping&quot;
 
 לדוגמה:
-"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
+&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
 
 יש לעיין בעזרה לפרטים נוספים.</translation>
     </message>
@@ -1222,8 +1228,8 @@ See help for details.</source>
         <location line="+20"/>
         <location line="+20"/>
         <location line="+20"/>
-        <source>Cannot symlink "%1" to "%2"</source>
-        <translation>לא ניתן לקשר את "%1" ל־"%2" באופן סימבולי</translation>
+        <source>Cannot symlink &quot;%1&quot; to &quot;%2&quot;</source>
+        <translation>לא ניתן לקשר את &quot;%1&quot; ל־&quot;%2&quot; באופן סימבולי</translation>
     </message>
     <message>
         <location line="-109"/>
@@ -1245,17 +1251,17 @@ See help for details.</source>
         <location line="+477"/>
         <location line="+10"/>
         <source>Joystick axes mappings might be defined as:
-"Joystick name"="axes mapping"
+&quot;Joystick name&quot;=&quot;axes mapping&quot;
 
 For example:
-"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
+&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
 
 See help for details.</source>
         <translation>ניתן להגדיר את מיפוי צירי הג׳ויסטיק באופן הבא:
-"Joystick name"="axes mapping"
+&quot;Joystick name&quot;=&quot;axes mapping&quot;
 
 לדוגמה:
-"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
+&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
 
 יש לעיין בעזרה לפרטים נוספים.</translation>
     </message>
@@ -1268,7 +1274,7 @@ See help for details.</source>
 <context>
     <name>HttpCore</name>
     <message>
-        <location filename="../core/httpcore.cpp" line="+172"/>
+        <location filename="../core/httpcore.cpp" line="+222"/>
         <source>Download failed: %1.</source>
         <translation>ההורדה נכשלה: %1.</translation>
     </message>
@@ -1350,7 +1356,7 @@ See help for details.</source>
     <name>IconListWidget</name>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+254"/>
-        <location line="+905"/>
+        <location line="+901"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 עוגן בהצלחה.</translation>
@@ -1377,7 +1383,7 @@ See help for details.</source>
         <translation>אירע כשל בעיגון %1.</translation>
     </message>
     <message>
-        <location line="-759"/>
+        <location line="-755"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>לא הוגדרה נקודת עגינה בתצורת הקידומת.</translation>
     </message>
@@ -1388,24 +1394,24 @@ See help for details.</source>
     </message>
     <message>
         <location line="+11"/>
-        <location line="+714"/>
+        <location line="+710"/>
         <source>[none]</source>
         <translation>[ללא]</translation>
     </message>
     <message>
-        <location line="-718"/>
+        <location line="-714"/>
         <source>Mount media drive.</source>
         <translation>עיגון כונן מדיה.</translation>
     </message>
     <message>
         <location line="-181"/>
-        <location line="+538"/>
+        <location line="+537"/>
         <location line="+134"/>
         <source>Sorry. It seems that the icon already exists.</source>
         <translation>מסתבר כי הסמל כבר קיים, עמך הסליחה.</translation>
     </message>
     <message>
-        <location line="-672"/>
+        <location line="-671"/>
         <source>Sorry. It seems that icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
         <translation>מסתבר כי הסמל כבר קיים.&lt;br&gt;נא לבחור בשם אחר או לבטל את הפעולה, עמך הסליחה.</translation>
     </message>
@@ -1422,18 +1428,17 @@ See help for details.</source>
     <message>
         <location line="+10"/>
         <location line="+173"/>
-        <location line="+472"/>
-        <location line="+50"/>
         <source>Browse...</source>
         <translation>עיון...</translation>
     </message>
     <message>
-        <location line="-694"/>
+        <location line="-172"/>
+        <location line="+690"/>
         <source>Browse for media image.</source>
         <translation>עיון אחר תמונת מדיה.</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-672"/>
         <source>Unmount [%1]</source>
         <translation>ניתוק [%1]</translation>
     </message>
@@ -1464,42 +1469,42 @@ See help for details.</source>
     </message>
     <message>
         <location line="+6"/>
-        <location line="+159"/>
+        <location line="+158"/>
         <source>Cut</source>
         <translation>גזירה</translation>
     </message>
     <message>
-        <location line="-158"/>
-        <location line="+159"/>
+        <location line="-157"/>
+        <location line="+158"/>
         <source>Cut selected icons to buffer</source>
         <translation>גזירת הסמלים הנבחרים למאגר</translation>
     </message>
     <message>
-        <location line="-155"/>
-        <location line="+160"/>
+        <location line="-154"/>
+        <location line="+159"/>
         <source>Copy</source>
         <translation>העתקה</translation>
     </message>
     <message>
-        <location line="-159"/>
-        <location line="+160"/>
+        <location line="-158"/>
+        <location line="+159"/>
         <source>Copy selected icons to buffer</source>
         <translation>העתקת הסמלים הנבחרים למאגר</translation>
     </message>
     <message>
-        <location line="-156"/>
-        <location line="+161"/>
+        <location line="-155"/>
+        <location line="+160"/>
         <source>Paste</source>
         <translation>הדבקה</translation>
     </message>
     <message>
-        <location line="-160"/>
-        <location line="+161"/>
+        <location line="-159"/>
+        <location line="+160"/>
         <source>Paste selected icons from buffer to selected folder</source>
         <translation>הדבקת הסמלים הנבחרים מהמאגר אל התיקייה הנבחרת</translation>
     </message>
     <message>
-        <location line="-152"/>
+        <location line="-151"/>
         <source>Rename</source>
         <translation>שינוי שם</translation>
     </message>
@@ -1510,24 +1515,24 @@ See help for details.</source>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+156"/>
+        <location line="+155"/>
         <source>Delete</source>
         <translation>מחיקה</translation>
     </message>
     <message>
-        <location line="-155"/>
-        <location line="+156"/>
+        <location line="-154"/>
+        <location line="+155"/>
         <source>Delete current icon</source>
         <translation>מחיקת הסמל הנוכחי</translation>
     </message>
     <message>
-        <location line="-152"/>
-        <location line="+160"/>
+        <location line="-151"/>
+        <location line="+159"/>
         <source>Browser</source>
         <translation>דפדפן</translation>
     </message>
     <message>
-        <location line="-158"/>
+        <location line="-157"/>
         <location line="+22"/>
         <source>Open application directory</source>
         <translation>פתיחת תיקייה היישום</translation>
@@ -1540,62 +1545,62 @@ See help for details.</source>
     <message>
         <location line="+4"/>
         <location line="+22"/>
-        <location line="+132"/>
+        <location line="+131"/>
         <location line="+16"/>
         <source>Open prefix directory</source>
         <translation>פתיחת תיקיית הקידומת</translation>
     </message>
     <message>
-        <location line="-169"/>
-        <location line="+154"/>
+        <location line="-168"/>
+        <location line="+153"/>
         <source>Open prefix directory in system file browser</source>
         <translation>פתיחת תיקיית הקידומת בדפדפן הקבצים של המערכת</translation>
     </message>
     <message>
-        <location line="-150"/>
+        <location line="-149"/>
         <location line="+22"/>
-        <location line="+132"/>
+        <location line="+131"/>
         <location line="+16"/>
         <source>Open mount point directory</source>
         <translation>פתיחת תיקיית נקודת העגינה</translation>
     </message>
     <message>
-        <location line="-169"/>
-        <location line="+154"/>
+        <location line="-168"/>
+        <location line="+153"/>
         <source>Open mount point directory in system file browser</source>
         <translation>פתיחת תיקיית נקודת העגינה בדפדפן הקבצים של המערכת</translation>
     </message>
     <message>
-        <location line="-145"/>
-        <location line="+154"/>
+        <location line="-144"/>
+        <location line="+153"/>
         <source>Wine Browser</source>
         <translation>דפדפן Wine</translation>
     </message>
     <message>
-        <location line="-151"/>
+        <location line="-150"/>
         <source>Open application directory in wine file browser</source>
         <translation>פתיחת תיקיית היישום בדפדפן הקבצים של wine</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location line="+148"/>
+        <location line="+147"/>
         <source>Open prefix directory in wine file browser</source>
         <translation>פתיחת תיקיית הקידומת בדפדפן הקבצים של wine</translation>
     </message>
     <message>
-        <location line="-143"/>
-        <location line="+148"/>
+        <location line="-142"/>
+        <location line="+147"/>
         <source>Open mount point directory in wine file browser</source>
         <translation>פתיחת תיקיית נקודת העגינה בדפדפן הקבצים של wine</translation>
     </message>
     <message>
-        <location line="-140"/>
-        <location line="+148"/>
+        <location line="-139"/>
+        <location line="+147"/>
         <source>Console</source>
         <translation>מסוף</translation>
     </message>
     <message>
-        <location line="-146"/>
+        <location line="-145"/>
         <source>Open console in application directory</source>
         <translation>פתיחת המסוף בתיקיית היישום</translation>
     </message>
@@ -1606,30 +1611,30 @@ See help for details.</source>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+143"/>
+        <location line="+142"/>
         <source>Open console in prefix directory</source>
         <translation>פתיחת המסוף בתיקיית הקידומת</translation>
     </message>
     <message>
-        <location line="-142"/>
-        <location line="+143"/>
+        <location line="-141"/>
+        <location line="+142"/>
         <source>Open system console in prefix directory</source>
         <translation>פתיחת מסוף המערכת בתיקיית הקידומת</translation>
     </message>
     <message>
-        <location line="-139"/>
-        <location line="+143"/>
+        <location line="-138"/>
+        <location line="+142"/>
         <source>Open console in mount point directory</source>
         <translation>פתיחת המסוף בתיקיית נקודת העגינה</translation>
     </message>
     <message>
-        <location line="-142"/>
-        <location line="+143"/>
+        <location line="-141"/>
+        <location line="+142"/>
         <source>Open system console in mount point directory</source>
         <translation>פתיחת מסוף המערכת בתיקיית נקודת העגינה</translation>
     </message>
     <message>
-        <location line="-134"/>
+        <location line="-133"/>
         <source>Search in Wine AppDB</source>
         <translation>חיפוש ב־AppDB של Wine</translation>
     </message>
@@ -1649,7 +1654,13 @@ See help for details.</source>
         <translation>נתיב התיקייה</translation>
     </message>
     <message>
-        <location line="+598"/>
+        <location line="+24"/>
+        <location line="+468"/>
+        <source>Browse for application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+102"/>
         <source>Drive successfully unmounted.</source>
         <translation>הכונן נותק בהצלחה.</translation>
     </message>
@@ -1659,7 +1670,7 @@ See help for details.</source>
         <translation>ניתוק הכונן נכשל.</translation>
     </message>
     <message>
-        <location line="-595"/>
+        <location line="-591"/>
         <source>Application path</source>
         <translation>נתיב היישום</translation>
     </message>
@@ -1674,30 +1685,30 @@ See help for details.</source>
         <translation>הפעלה...</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+188"/>
         <source>Do you wish to delete all of the selected icons?</source>
         <translation>האם ברצונך למחוק את כל הסמלים הנבחרים?</translation>
     </message>
     <message>
-        <location line="-541"/>
-        <location line="+922"/>
+        <location line="-540"/>
+        <location line="+918"/>
         <source>Failed to mount %1.</source>
         <translation>אירע כשל בעיגון %1.</translation>
     </message>
     <message>
-        <location line="-890"/>
+        <location line="-886"/>
         <source>Preparing to run the Wine binary...</source>
         <translation>בהכנות לקראת הפעלת קובץ ה־Wine הבינרי...</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Trying to run "%1"...</source>
-        <translation>מתבצע ניסיון להפעלת "%1"...</translation>
+        <source>Trying to run &quot;%1&quot;...</source>
+        <translation>מתבצע ניסיון להפעלת &quot;%1&quot;...</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>"%1" failed to start.</source>
-        <translation>הפעלת "%1" נכשלה.</translation>
+        <source>&quot;%1&quot; failed to start.</source>
+        <translation>הפעלת &quot;%1&quot; נכשלה.</translation>
     </message>
     <message>
         <location line="+103"/>
@@ -1711,12 +1722,12 @@ See help for details.</source>
     </message>
     <message>
         <location line="+153"/>
-        <source>Copy application directory path to system's clipboard</source>
+        <source>Copy application directory path to system&apos;s clipboard</source>
         <translation>העתקת נתיב תיקיית היישום אל לוח הגזירים של המערכת</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Copy full application path to system's clipboard</source>
+        <source>Copy full application path to system&apos;s clipboard</source>
         <translation>העתקת הנתיב המלא של היישום ללוח הגזירים של המערכת</translation>
     </message>
     <message>
@@ -1725,12 +1736,11 @@ See help for details.</source>
         <translation>העתקת פקודת ה־q4wine-cli עבור היישום הנוכחי</translation>
     </message>
     <message>
-        <location line="+11"/>
         <source>Browse for another image</source>
-        <translation>עיון אחר תמונה אחרת</translation>
+        <translation type="obsolete">עיון אחר תמונה אחרת</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+30"/>
         <source>New</source>
         <translation>חדש</translation>
     </message>
@@ -1761,7 +1771,7 @@ See help for details.</source>
         <translation>מחיקת סמל</translation>
     </message>
     <message>
-        <location line="+333"/>
+        <location line="+330"/>
         <source>Error</source>
         <translation>שגיאה</translation>
     </message>
@@ -1775,74 +1785,82 @@ See help for details.</source>
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+90"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+92"/>
         <location line="+1"/>
         <source>Icon settings</source>
         <translation>Icon Settings</translation>
     </message>
     <message>
-        <location line="+448"/>
+        <location line="+538"/>
         <source>Virtual Desktop</source>
         <translation>Virtual Desktop</translation>
     </message>
     <message>
-        <location line="+218"/>
+        <location line="+236"/>
         <source>Override DLL</source>
         <translation>דריסת DLL</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>Present Wine DLLs</source>
         <translation>קובצי DLL נוכחיים של Wine</translation>
     </message>
     <message>
-        <location line="+42"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+99"/>
-        <location line="+387"/>
+        <location line="+54"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+121"/>
+        <location line="+12"/>
+        <location line="+103"/>
+        <location line="+269"/>
         <source>Native</source>
         <translation>Native</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-385"/>
-        <location line="+389"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-382"/>
+        <location line="+11"/>
+        <location line="+103"/>
+        <location line="+272"/>
         <source>Built-in</source>
         <translation>Builtin</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-387"/>
-        <location line="+389"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-384"/>
+        <location line="+10"/>
+        <location line="+103"/>
+        <location line="+273"/>
         <source>Native, Built-in</source>
         <translation>ייעודי, מובנה</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-387"/>
-        <location line="+389"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-384"/>
+        <location line="+9"/>
+        <location line="+103"/>
+        <location line="+274"/>
         <source>Built-in, Native</source>
         <translation>מובנה, ייעודי</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-506"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-525"/>
         <location line="+1"/>
         <source>Adding new icon</source>
         <translation>הוספת סמל חדש</translation>
     </message>
     <message>
-        <location line="+208"/>
+        <location line="+221"/>
         <source>Open Directory</source>
         <translation>פתיחת תיקייה</translation>
     </message>
     <message>
-        <location line="+56"/>
-        <location line="+310"/>
+        <location line="+59"/>
+        <location line="+313"/>
         <location line="+24"/>
         <source>Open Exe file</source>
         <translation>פתיחת קובץ exe</translation>
     </message>
     <message>
-        <location line="-331"/>
+        <location line="-334"/>
         <source>Exe files (*.exe)</source>
         <translation>קובצי Exe‏ (*.exe)</translation>
     </message>
@@ -1904,7 +1922,10 @@ See help for details.</source>
         <translation>לא הוגדר שם לתכנית.</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="-352"/>
+        <location line="+8"/>
+        <location line="+103"/>
+        <location line="+267"/>
         <source>Disabled</source>
         <translation>מנוטרל</translation>
     </message>
@@ -1915,34 +1936,34 @@ See help for details.</source>
         <translation>סקריפט Shell ‏(‎*.sh)</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/IconSettings.ui" line="-249"/>
+        <location filename="../q4wine-gui/uis/IconSettings.ui" line="-270"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="-83"/>
         <source>No virtual desktop</source>
         <translation>אין שולחן עבודה וירטואלי</translation>
     </message>
     <message>
-        <location line="-333"/>
+        <location line="-432"/>
         <source>Icon Settings</source>
         <translation>הגדרות סמל</translation>
     </message>
     <message>
         <location line="+50"/>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>General</source>
         <translation>כללי</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+45"/>
         <source>Program:</source>
         <translation>תכנית:</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+53"/>
         <source>Cmd Args:</source>
         <translation>ארגומנטים:</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+40"/>
         <source>Working dir:</source>
         <translation>תיקיית העבודה:</translation>
     </message>
@@ -1952,22 +1973,22 @@ See help for details.</source>
         <translation>אפשרויות סמל</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+45"/>
         <source>Name:</source>
         <translation>שם:</translation>
     </message>
     <message>
-        <location line="+65"/>
+        <location line="+83"/>
         <source>Description:</source>
         <translation>תיאור:</translation>
     </message>
     <message>
-        <location line="+43"/>
+        <location line="+61"/>
         <source>Size:</source>
         <translation>גודל:</translation>
     </message>
     <message>
-        <location line="+262"/>
+        <location line="+283"/>
         <source>Disable</source>
         <translation>נטרול</translation>
     </message>
@@ -1982,7 +2003,7 @@ See help for details.</source>
         <translation>קובצי DLL שנדרסו</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+31"/>
         <source>DLL Name</source>
         <translation>שם ה־Dll</translation>
     </message>
@@ -1997,17 +2018,17 @@ See help for details.</source>
         <translation>מתקדם</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>Display</source>
         <translation>תצוגה</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+64"/>
         <source>Debug Options</source>
         <translation>אפשרויות ניפוי שגיאות</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>Run With Output in Console</source>
         <translation>הפעלה עם פלט במסוף</translation>
     </message>
@@ -2017,12 +2038,12 @@ See help for details.</source>
         <translation>הערה: אפשרות זו תבטל את הסקריפטים שאמורים לרוץ לפני ואחרי.</translation>
     </message>
     <message>
-        <location line="+48"/>
+        <location line="+57"/>
         <source>Nice Priority Level</source>
         <translation>עדיפות רמת ה־Nice</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+45"/>
         <source>Priority:</source>
         <translation>עדיפות:</translation>
     </message>
@@ -2032,23 +2053,23 @@ See help for details.</source>
         <translation>אזור</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+78"/>
         <location line="+6"/>
         <source>Scripts</source>
         <translation>סקריפטים</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>Note: Pre and post run scripts will not be executed in case the "Run With Output in Console" option is enabled.</source>
+        <location line="+18"/>
+        <source>Note: Pre and post run scripts will not be executed in case the &quot;Run With Output in Console&quot; option is enabled.</source>
         <translation>לתשומת לבך: סקריפטים שלפני ואחרי ההרצה לא יופעלו כאשר מסומנת התיבה „הפעלה עם פלט במסוף“.</translation>
     </message>
     <message>
-        <location line="+28"/>
+        <location line="+37"/>
         <source>Pre run:</source>
         <translation>לפני ההרצה:</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+53"/>
         <source>Post run:</source>
         <translation>אחרי ההרצה:</translation>
     </message>
@@ -2370,43 +2391,53 @@ See help for details.</source>
     <message>
         <location line="+10"/>
         <location line="+5"/>
-        <location line="+217"/>
+        <location line="+223"/>
         <location line="+6"/>
         <source>Status</source>
         <translation>מצב</translation>
     </message>
     <message>
-        <location line="-228"/>
-        <location line="+228"/>
+        <location line="-234"/>
+        <location line="+234"/>
         <source>Logging enabled</source>
         <translation>הרישום פעיל</translation>
     </message>
     <message>
-        <location line="-227"/>
+        <location line="-233"/>
         <location line="+1"/>
-        <location line="+227"/>
+        <location line="+233"/>
         <location line="+1"/>
         <source>Disable logging</source>
         <translation>נטרול הרישום</translation>
     </message>
     <message>
-        <location line="-225"/>
-        <location line="+217"/>
+        <location line="-231"/>
+        <location line="+223"/>
         <source>Logging disabled</source>
         <translation>הרישום מנוטרל</translation>
     </message>
     <message>
-        <location line="-216"/>
+        <location line="-222"/>
         <location line="+1"/>
-        <location line="+216"/>
+        <location line="+222"/>
         <location line="+1"/>
         <source>Enable logging</source>
         <translation>הפעלת הרישום</translation>
     </message>
     <message>
-        <location line="-166"/>
+        <location line="-172"/>
         <source>Exec string:</source>
         <translation>מחרוזת ההפעלה:</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Prerun Exec string:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Postrun Exec string:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2435,37 +2466,36 @@ See help for details.</source>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="+59"/>
         <source>%1 :. Qt4 GUI for Wine v%2</source>
         <translation>%1 :. מנשק Qt4 עבור Wine גרסה %2</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="+204"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="+264"/>
         <source>Program: %1&lt;br&gt; Args: %2 </source>
         <translation>התכנית %1&lt;br&gt; ארגומנטים: %2 </translation>
     </message>
     <message>
         <location line="+94"/>
-        <source>Socket file "%1" already exists!</source>
-        <translation>קובץ השקע "%1" כבר קיים!</translation>
+        <source>Socket file &quot;%1&quot; already exists!</source>
+        <translation>קובץ השקע &quot;%1&quot; כבר קיים!</translation>
     </message>
     <message>
         <location line="+53"/>
         <location line="+4"/>
         <location line="+14"/>
-        <source>Application: "%1" started fine for prefix: "%2".</source>
-        <translation>היישום: "%1" הופעל כראוי עבור הקידומת: "%2".</translation>
+        <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
+        <translation>היישום: &quot;%1&quot; הופעל כראוי עבור הקידומת: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location line="-4"/>
-        <source>Console started fine for Application: "%1" in prefix: "%2".</source>
-        <translation>המסוף הופעל כראוי עבור היישום: "%1" בקידומת: "%2".</translation>
+        <source>Console started fine for Application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
+        <translation>המסוף הופעל כראוי עבור היישום: &quot;%1&quot; בקידומת: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location line="+14"/>
         <location line="+3"/>
-        <source>Application: "%1" finished for prefix: "%2". Exit code is: "%3".</source>
-        <translation>היישום: "%1" הסתיים עבור הקידומת: "%2". קוד היציאה הוא: "%3".</translation>
+        <source>Application: &quot;%1&quot; finished for prefix: &quot;%2&quot;. Exit code is: &quot;%3&quot;.</source>
+        <translation>היישום: &quot;%1&quot; הסתיים עבור הקידומת: &quot;%2&quot;. קוד היציאה הוא: &quot;%3&quot;.</translation>
     </message>
     <message>
         <location line="+44"/>
@@ -2494,7 +2524,12 @@ See help for details.</source>
         <translation>תיאור: %1</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="-206"/>
+        <source>%1 :. Qt GUI for Wine v%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+210"/>
         <source>Yes</source>
         <translation>כן</translation>
     </message>
@@ -2543,14 +2578,14 @@ See help for details.</source>
     <message>
         <location line="-13"/>
         <location line="+3"/>
-        <source>Cannot start application: "%1" for prefix: "%2".</source>
-        <translation>לא ניתן להפעיל את היישום "%1" עבור הקידומת: "%2".</translation>
+        <source>Cannot start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
+        <translation>לא ניתן להפעיל את היישום &quot;%1&quot; עבור הקידומת: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+3"/>
-        <source>Cannot start console for application: "%1" in prefix: "%2".</source>
-        <translation>לא ניתן להפעיל את המסוף עבור היישום: "%1" בקידומת: "%2".</translation>
+        <source>Cannot start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
+        <translation>לא ניתן להפעיל את המסוף עבור היישום: &quot;%1&quot; בקידומת: &quot;%2&quot;.</translation>
     </message>
     <message>
         <location line="+276"/>
@@ -2560,8 +2595,8 @@ See help for details.</source>
     <message>
         <location line="+259"/>
         <location line="+3"/>
-        <source>Binary "%1" does not exist.</source>
-        <translation>הקובץ הבינרי "%1" אינו קיים.</translation>
+        <source>Binary &quot;%1&quot; does not exist.</source>
+        <translation>הקובץ הבינרי &quot;%1&quot; אינו קיים.</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -2685,11 +2720,20 @@ See help for details.</source>
     </message>
     <message>
         <location line="+14"/>
-        <source>Version Manager</source>
-        <translation>מנהל גרסאות</translation>
+        <source>Wine Version Manager</source>
+        <translation type="unfinished">מנהל גרסאות Wine</translation>
     </message>
     <message>
-        <location line="-101"/>
+        <location line="+3"/>
+        <source>Ctrl+M</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version Manager</source>
+        <translation type="obsolete">מנהל גרסאות</translation>
+    </message>
+    <message>
+        <location line="-104"/>
         <source>Extract images from PE files using icoutils.</source>
         <translation>חילוץ תמונות מ־PE באמצעות icoutils.</translation>
     </message>
@@ -2701,7 +2745,7 @@ See help for details.</source>
     <message>
         <location line="+11"/>
         <location line="+3"/>
-        <source>Scan for Wine desktop files and import them into Q4Wine's icon view.</source>
+        <source>Scan for Wine desktop files and import them into Q4Wine&apos;s icon view.</source>
         <translation>איתור קובצי שולחן עבודה של Wine ויבוא הסמלים לתצוגת הסמלים של Q4Wine.</translation>
     </message>
     <message>
@@ -2878,7 +2922,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="-117"/>
-        <source>Create or update Q4Wine's cache of Winetricks appications.</source>
+        <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
         <translation>יצירה או עדכון של מטמון ה־Q4Wine של יישומי Winetricks.</translation>
     </message>
     <message>
@@ -2989,7 +3033,7 @@ See help for details.</source>
         <translation>נתיב</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+22"/>
         <source>Error</source>
         <translation>שגיאה</translation>
     </message>
@@ -2999,13 +3043,13 @@ See help for details.</source>
         <translation>לא ניתן למחוק את קידומת בררת המחדל, עמך הסליחה.</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>Do you really wish to delete the prefix named "%1" and all associated icons?</source>
-        <translation>האם אכן ברצונך למחוק את הקידומת בשם "%1" ואת כל הסמלים המשויכים לה?</translation>
+        <location line="+10"/>
+        <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
+        <translation>האם אכן ברצונך למחוק את הקידומת בשם &quot;%1&quot; ואת כל הסמלים המשויכים לה?</translation>
     </message>
     <message>
-        <location line="+0"/>
-        <location line="+61"/>
+        <location line="-1"/>
+        <location line="+71"/>
         <source>Warning</source>
         <translation>אזהרה</translation>
     </message>
@@ -3111,12 +3155,12 @@ See help for details.</source>
     </message>
     <message>
         <location line="+0"/>
-        <source>Directory "%1" already exists. Do you wish to use it anyway?</source>
+        <source>Directory &quot;%1&quot; already exists. Do you wish to use it anyway?</source>
         <translation>התיקייה „%1“ כבר קיימת. האם ברצונך להשתמש בה בכל מקרה?</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>The directory "%1" could not be created.</source>
+        <source>The directory &quot;%1&quot; could not be created.</source>
         <translation>לא ניתן ליצור את התיקייה „%1“.</translation>
     </message>
     <message>
@@ -3356,9 +3400,9 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+29"/>
-        <source>Do you really wish to delete the folder named "%1" and all associated icons?
+        <source>Do you really wish to delete the folder named &quot;%1&quot; and all associated icons?
 </source>
-        <translation>האם אכן ברצונך למחוק את התיקייה בשם "%1" ואת כל הסמלים המשויכים לה?
+        <translation>האם אכן ברצונך למחוק את התיקייה בשם &quot;%1&quot; ואת כל הסמלים המשויכים לה?
 </translation>
     </message>
     <message>
@@ -3570,8 +3614,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Do you really wish to delete the prefix named "%1" and all associated icons?</source>
-        <translation>האם אכן ברצונך למחוק את הקידומת בשם "%1" ואת כל הסמלים המשויכים לה?</translation>
+        <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
+        <translation>האם אכן ברצונך למחוק את הקידומת בשם &quot;%1&quot; ואת כל הסמלים המשויכים לה?</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -3723,8 +3767,8 @@ Note: leave it blank for default.</source>
     <name>Progress</name>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="+49"/>
-        <source>Importing Wine desktop icons from:&lt;br&gt;"%1"&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
-        <translation>סמלי שולחן העבודה של Wine מיובאים מהמיקום:&lt;br&gt;"%1"&lt;br&gt;&lt;br&gt;פעולה זו עלולה לארוך זמן מה...&lt;br&gt;&lt;br&gt;&lt;b&gt;לתשומת לבך:&lt;/b&gt; כדיל הסיר תהליכים שעברו עיבוד יש לעיין בו־שיח האפשרויות של Q4Wine.</translation>
+        <source>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
+        <translation>סמלי שולחן העבודה של Wine מיובאים מהמיקום:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;פעולה זו עלולה לארוך זמן מה...&lt;br&gt;&lt;br&gt;&lt;b&gt;לתשומת לבך:&lt;/b&gt; כדיל הסיר תהליכים שעברו עיבוד יש לעיין בו־שיח האפשרויות של Q4Wine.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3764,7 +3808,7 @@ Note: leave it blank for default.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../core/database/prefix.cpp" line="+318"/>
+        <location filename="../core/database/prefix.cpp" line="+292"/>
         <location line="+75"/>
         <source>Default</source>
         <translation>בררת מחדל</translation>
@@ -3777,13 +3821,13 @@ Note: leave it blank for default.</source>
         <location line="+14"/>
         <location line="+29"/>
         <location line="+52"/>
-        <source>No current prefix set. Set prefix via "-p &lt;prefix_name&gt;" key.</source>
-        <translation>No current prefix set. Set prefix via "-p &lt;prefix_name&gt;" key.</translation>
+        <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
+        <translation>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</translation>
     </message>
     <message>
         <location line="-177"/>
-        <source>No current icon set. Set icon via "-i &lt;icon_name&gt;" key.</source>
-        <translation>No current icon set. Set icon via "-i &lt;icon_name&gt;" key.</translation>
+        <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
+        <translation>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -3792,8 +3836,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Wine process list for "%1" prefix</source>
-        <translation>Wine process list for "%1" prefix</translation>
+        <source>Wine process list for &quot;%1&quot; prefix</source>
+        <translation>Wine process list for &quot;%1&quot; prefix</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3826,8 +3870,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="-74"/>
-        <source>Prefix named "%1" does not exist. Run "%2-cli -pl" for prefix list.</source>
-        <translation>Prefix named "%1" does not exist. Run "%2-cli -pl" for prefix list.</translation>
+        <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
+        <translation>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</translation>
     </message>
     <message>
         <location line="+75"/>
@@ -3837,28 +3881,28 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="-70"/>
-        <source>Icon named "%1" does not exist.  Run "%2-cli -il" for icon list.</source>
-        <translation>Icon named "%1" does not exist.  Run "%2-cli -il" for icon list.</translation>
+        <source>Icon named &quot;%1&quot; does not exist.  Run &quot;%2-cli -il&quot; for icon list.</source>
+        <translation>Icon named &quot;%1&quot; does not exist.  Run &quot;%2-cli -il&quot; for icon list.</translation>
     </message>
     <message>
         <location line="+37"/>
-        <source>Prefix "%1" has following dir list</source>
-        <translation>Prefix "%1" has following dir list</translation>
+        <source>Prefix &quot;%1&quot; has following dir list</source>
+        <translation>Prefix &quot;%1&quot; has following dir list</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Dir named "%1" does not exist. Run "%2-cli -dl" for dir list.</source>
-        <translation>Dir named "%1" does not exist. Run "%2-cli -dl" for dir list.</translation>
+        <source>Dir named &quot;%1&quot; does not exist. Run &quot;%2-cli -dl&quot; for dir list.</source>
+        <translation>Dir named &quot;%1&quot; does not exist. Run &quot;%2-cli -dl&quot; for dir list.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Prefix "%1" has following icon list</source>
-        <translation>Prefix "%1" has following icon list</translation>
+        <source>Prefix &quot;%1&quot; has following icon list</source>
+        <translation>Prefix &quot;%1&quot; has following icon list</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Prefix "%1" has following icon list at "%2" directory</source>
-        <translation>Prefix "%1" has following icon list at "%2" directory</translation>
+        <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
+        <translation>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -3872,8 +3916,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+11"/>
-        <source>Killing prefix "%1" wineserver.</source>
-        <translation>Killing prefix "%1" wineserver.</translation>
+        <source>Killing prefix &quot;%1&quot; wineserver.</source>
+        <translation>Killing prefix &quot;%1&quot; wineserver.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -3884,18 +3928,18 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="-48"/>
-        <source>Disc image named "%1" does not exist. Run "%2-cli -cl" for disc image list.</source>
-        <translation>Disc image named "%1" does not exist. Run "%2-cli -cl" for disc image list.</translation>
+        <source>Disc image named &quot;%1&quot; does not exist. Run &quot;%2-cli -cl&quot; for disc image list.</source>
+        <translation>Disc image named &quot;%1&quot; does not exist. Run &quot;%2-cli -cl&quot; for disc image list.</translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>Unmounting mount point "%1".</source>
-        <translation>Unmounting mount point "%1".</translation>
+        <source>Unmounting mount point &quot;%1&quot;.</source>
+        <translation>Unmounting mount point &quot;%1&quot;.</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>File "%1" does not exist.</source>
-        <translation>File "%1" does not exist.</translation>
+        <source>File &quot;%1&quot; does not exist.</source>
+        <translation>File &quot;%1&quot; does not exist.</translation>
     </message>
     <message>
         <location line="+32"/>
@@ -3926,8 +3970,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="-1"/>
-        <source>Mounted media list for prefix "%1"</source>
-        <translation>Mounted media list for prefix "%1"</translation>
+        <source>Mounted media list for prefix &quot;%1&quot;</source>
+        <translation>Mounted media list for prefix &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="+138"/>
@@ -4188,45 +4232,54 @@ Note: leave it blank for default.</source>
         <source>execute script after program run</source>
         <translation>הפעלת סקריפט לאחר הרצת תכנית</translation>
     </message>
+    <message>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-199"/>
+        <source>Remove prefix directory</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Run</name>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="+638"/>
-        <location filename="../q4wine-gui/run.cpp" line="+106"/>
-        <location line="+63"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="+740"/>
+        <location filename="../q4wine-gui/run.cpp" line="+109"/>
+        <location line="+40"/>
+        <location line="+29"/>
         <source>Native</source>
         <translation>ייעודי</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/run.cpp" line="-61"/>
-        <location line="+65"/>
+        <location filename="../q4wine-gui/run.cpp" line="-67"/>
+        <location line="+39"/>
+        <location line="+32"/>
         <source>Built-in</source>
         <translation>מובנה</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/run.cpp" line="-63"/>
-        <location line="+65"/>
+        <location filename="../q4wine-gui/run.cpp" line="-69"/>
+        <location line="+38"/>
+        <location line="+33"/>
         <source>Native, Built-in</source>
         <translation>ייעודי, מובנה</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/run.cpp" line="-63"/>
-        <location line="+65"/>
+        <location filename="../q4wine-gui/run.cpp" line="-69"/>
+        <location line="+37"/>
+        <location line="+34"/>
         <source>Built-in, Native</source>
         <translation>מובנה, ייעודי</translation>
     </message>
     <message>
-        <location line="-224"/>
+        <location line="-245"/>
         <location filename="../q4wine-gui/run.cpp" line="+19"/>
         <source>No virtual desktop</source>
         <translation>אין שולחן עבודה וירטואלי</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/run.cpp" line="-39"/>
+        <location filename="../q4wine-gui/run.cpp" line="-41"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>שגיאה</translation>
@@ -4242,12 +4295,13 @@ Note: leave it blank for default.</source>
         <translation>תיקיית העבודה הנבחרת אינה קיימת.</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-16"/>
+        <location line="+27"/>
         <source>Disabled</source>
         <translation>מנוטרל</translation>
     </message>
     <message>
-        <location line="+153"/>
+        <location line="+160"/>
         <source>Open Exe file</source>
         <translation>פתיחת קובץ exe</translation>
     </message>
@@ -4262,44 +4316,44 @@ Note: leave it blank for default.</source>
         <translation>פתיחת תיקייה</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="-409"/>
-        <location line="+150"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="-490"/>
+        <location line="+159"/>
         <source>Run Program</source>
         <translation>הפעלת תכנית</translation>
     </message>
     <message>
         <location line="+44"/>
-        <location line="+52"/>
+        <location line="+79"/>
         <source>General</source>
         <translation>כללי</translation>
     </message>
     <message>
-        <location line="-43"/>
+        <location line="-61"/>
         <source>Prefix</source>
         <translation>קידומת</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+45"/>
         <source>Name:</source>
         <translation>שם:</translation>
     </message>
     <message>
-        <location line="+43"/>
+        <location line="+61"/>
         <source>Program:</source>
         <translation>תכנית:</translation>
     </message>
     <message>
-        <location line="+104"/>
+        <location line="+122"/>
         <source>Virtual Desktop</source>
         <translation>שולחן עבודה וירטואלי</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+33"/>
         <source>Size:</source>
         <translation>גודל:</translation>
     </message>
     <message>
-        <location line="+237"/>
+        <location line="+258"/>
         <source>Disable</source>
         <translation>מנוטרל</translation>
     </message>
@@ -4309,32 +4363,32 @@ Note: leave it blank for default.</source>
         <translation>הוספה</translation>
     </message>
     <message>
-        <location line="-329"/>
+        <location line="-368"/>
         <source>Arguments:</source>
         <translation>ארגומנטים:</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+40"/>
         <source>Working directory:</source>
         <translation>תיקיית העבודה:</translation>
     </message>
     <message>
-        <location line="+219"/>
+        <location line="+228"/>
         <source>Override DLLs</source>
         <translation>DLL דריסה</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>Present Wine DLLs</source>
         <translation>קובצי ה־DLL הנוכחיים של Wine</translation>
     </message>
     <message>
-        <location line="+80"/>
+        <location line="+92"/>
         <source>Overridden DLLs</source>
         <translation>קובצי DLL שנדרסו</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+28"/>
         <source>DLL Name</source>
         <translation>שם קובץ ה־DLL</translation>
     </message>
@@ -4349,27 +4403,27 @@ Note: leave it blank for default.</source>
         <translation>מתקדם</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>Display</source>
         <translation>תצוגה</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+64"/>
         <source>Debug Options</source>
         <translation>אפשרויות ניפוי שגיאות</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>Run With Output in Console</source>
         <translation>הפעלה עם פלט במסוף</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+54"/>
         <source>Nice Priority Level</source>
         <translation>עדיפות רמת ה־Nice</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+45"/>
         <source>Priority:</source>
         <translation>עדיפות:</translation>
     </message>
@@ -4379,7 +4433,7 @@ Note: leave it blank for default.</source>
         <translation>אזור</translation>
     </message>
     <message>
-        <location line="+65"/>
+        <location line="+83"/>
         <source>Help</source>
         <translation>עזרה</translation>
     </message>
@@ -4438,7 +4492,7 @@ Note: leave it blank for default.</source>
         <translation>אישור</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/versions.cpp" line="+204"/>
+        <location filename="../q4wine-gui/versions.cpp" line="+205"/>
         <source>The Version settings has been modified.</source>
         <translation>הגדרות הגרסה השתנו.</translation>
     </message>
@@ -4482,22 +4536,22 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+22"/>
-        <source>Can't save changes...</source>
+        <source>Can&apos;t save changes...</source>
         <translation>לא ניתן לשמור את השינויים…</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Path '%1' is not exists.</source>
+        <source>Path &apos;%1&apos; is not exists.</source>
         <translation>הנתיב ‚%1‘ לא קיים.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Path '%1' is not a directory.</source>
+        <source>Path &apos;%1&apos; is not a directory.</source>
         <translation>הנתיב ‚%1‘ היא אינה תיקייה.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Path '%1' is not a file.</source>
+        <source>Path &apos;%1&apos; is not a file.</source>
         <translation>הנתיב ‚%1‘ איננו קובץ.</translation>
     </message>
     <message>
@@ -4702,23 +4756,23 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+0"/>
-        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See "man renice" for details.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;ערך העדיפות יכול להיות&lt;br&gt;בטווח שבין PRIO_MIN (-20)&lt;br&gt;ל־PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;יש להפעיל את הפקודה "man renice" לפרטים.&lt;/p&gt;</translation>
+        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;ערך העדיפות יכול להיות&lt;br&gt;בטווח שבין PRIO_MIN (-20)&lt;br&gt;ל־PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;יש להפעיל את הפקודה &quot;man renice&quot; לפרטים.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
     <name>Wizard</name>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="+1617"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="+225"/>
+        <location filename="../q4wine-gui/uis/Wizard.ui" line="+1928"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="+228"/>
         <location line="+173"/>
         <location line="+47"/>
         <source>No Proxy</source>
         <translation>ללא מתווך</translation>
     </message>
     <message>
-        <location line="+496"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="+141"/>
+        <location line="+604"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="+139"/>
         <location line="+5"/>
         <source>Next &gt;</source>
         <translation>הבא &gt;</translation>
@@ -4736,11 +4790,12 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+1"/>
+        <location line="+472"/>
         <source>&lt;b&gt;First startup wizard&lt;/b&gt;</source>
         <translation>&lt;b&gt;אשף ההפעלה הראשונה&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+124"/>
+        <location line="-346"/>
         <source>generic</source>
         <translation>כללי</translation>
     </message>
@@ -4787,22 +4842,17 @@ Note: leave it blank for default.</source>
         <translation>נא לציין את הפתחה במתווך, עמך הסליחה.</translation>
     </message>
     <message>
-        <location line="+158"/>
-        <source>&lt;b&gt;First startup wizard&lt;/b&gt;</source>
-        <translation>&lt;b&gt;אשף ההפעלה הראשונה&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Alexey S. Malakhov aka John Brezerk  [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href='mailto:frank@frankscorner.org'&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style='font-weight:600; color:#7D1D10;'&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style='font-weight:600; color:#6495ed;'&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href='http://www.winehq.org/site/forums'&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style='font-weight:600; color:#6495ed;'&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href='http://www.codeweavers.com'&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;%1&lt;/span&gt;&lt;/b&gt; נוצר בתחילה על ידי Alexey S. Malakhov הידוע גם בשם John Brezerk  [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;הרעיון הכללי הגיע בעקבות הסקריפטים בשם &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;WineTools&lt;/span&gt;&lt;/b&gt; שנכתבו לראשונה על ידי Frank Hendriksen [&lt;a href='mailto:frank@frankscorner.org'&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;רישוי התכנה כפוף לרישיון &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;GPL גרסה v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;ניתן לשלוח תגובות, דיווחי באגים וכו׳ אל [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;לתשומת לבך&lt;/span&gt;&lt;/b&gt;: תכנית זו מגיעה ללא שום אחריות. היוצר &lt;b&gt;&lt;span style='font-weight:600; color:#7D1D10;'&gt;לא&lt;/span&gt;&lt;/b&gt; יספק תמיכה בתחומי WineTools, Wine, התקנת תכנה, לינוקס או Microsoft Windows.&lt;/p&gt;&lt;p&gt;אם &lt;span style='font-weight:600; color:#6495ed;'&gt;יש לך צורך בעזרה&lt;/span&gt;, ניתן לשאול ברשימות הדיוור בכתובת &lt;a href='http://www.winehq.org/site/forums'&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;אם ברצונך לקבל &lt;span style='font-weight:600; color:#6495ed;'&gt;תמיכה מקצועית&lt;/span&gt;, באפשרותך לרכוש את הגרסה המסחרית של wine: CodeWeavers CrossOver Office (&lt;a href='http://www.codeweavers.com'&gt;http://www.codeweavers.com&lt;/a&gt;) ליישומי שולחן העבודה&lt;/p&gt;</translation>
+        <location line="+163"/>
+        <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Alexey S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
+        <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; נוצר בתחילה על ידי Alexey S. Malakhov הידוע גם בשם John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;הרעיון הכללי הגיע בעקבות הסקריפטים בשם &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; שנכתבו לראשונה על ידי Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;רישוי התכנה כפוף לרישיון &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL גרסה v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;ניתן לשלוח תגובות, דיווחי באגים וכו׳ אל [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;לתשומת לבך&lt;/span&gt;&lt;/b&gt;: תכנית זו מגיעה ללא שום אחריות. היוצר &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;לא&lt;/span&gt;&lt;/b&gt; יספק תמיכה בתחומי WineTools, Wine, התקנת תכנה, לינוקס או Microsoft Windows.&lt;/p&gt;&lt;p&gt;אם &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;יש לך צורך בעזרה&lt;/span&gt;, ניתן לשאול ברשימות הדיוור בכתובת &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;אם ברצונך לקבל &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;תמיכה מקצועית&lt;/span&gt;, באפשרותך לרכוש את הגרסה המסחרית של wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) ליישומי שולחן העבודה&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="-6"/>
-        <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard's page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
+        <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;ברוך בואך לאשף ההפעלה הראשונית.&lt;/p&gt;&lt;p&gt;אשף זה יסייע לך לבצע את כל השלבים הנחוצים להתקנת %1 כראוי.&lt;/p&gt;&lt;p&gt;נא ללחוץ על הלחצן &lt;b&gt;הבא&lt;/b&gt; כדי לעבור לעמוד הבא באשף. או על הלחצן &lt;b&gt;חזרה&lt;/b&gt; כדי לחזור.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location line="-225"/>
+        <location line="-223"/>
         <source>Sorry, specified %1 directory does not exist.</source>
         <translation>תיקיית ה־%1 שצוינה אינה קיימת, עמך הסליחה.</translation>
     </message>
@@ -4812,92 +4862,101 @@ Note: leave it blank for default.</source>
         <translation>הקובץ הבינרי %1 שצוין אינו קיים, עמך הסליחה.</translation>
     </message>
     <message>
-        <location line="+255"/>
+        <location line="+253"/>
+        <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking &quot;Help&quot; button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Finish</source>
         <translation>סיום</translation>
     </message>
     <message>
-        <location line="-1"/>
         <source>&lt;p&gt;All ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to create finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;הכול מוכן לסיום התקנת %1. &lt;/p&gt;&lt;p&gt;נא ללחוץ על הלחצן &lt;b&gt;סיום&lt;/b&gt; כדי לסיים את תהליך ההתקנה. או ללחוץ על &lt;b&gt;חזרה&lt;/b&gt; כדי לחזור.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p&gt;הכול מוכן לסיום התקנת %1. &lt;/p&gt;&lt;p&gt;נא ללחוץ על הלחצן &lt;b&gt;סיום&lt;/b&gt; כדי לסיים את תהליך ההתקנה. או ללחוץ על &lt;b&gt;חזרה&lt;/b&gt; כדי לחזור.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="-2095"/>
+        <location filename="../q4wine-gui/uis/Wizard.ui" line="-2514"/>
         <source>Wizard</source>
         <translation>אשף</translation>
     </message>
     <message>
-        <location line="+436"/>
+        <location line="+486"/>
         <source>Base information:</source>
         <translation>פרטים בסיסיים:</translation>
     </message>
     <message>
-        <location line="+1032"/>
+        <location line="+1257"/>
         <source>Bin:</source>
         <translation>קובץ בינרי:</translation>
     </message>
     <message>
-        <location line="+57"/>
+        <location line="+66"/>
         <source>Args:</source>
         <translation>ארגומנטים:</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+87"/>
         <source>Proxy type:</source>
         <translation>סוג המתווך:</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+62"/>
         <source>Host:</source>
         <translation>מארח:</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+53"/>
         <source>Port:</source>
         <translation>פתחה:</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+53"/>
         <source>Username:</source>
         <translation>שם משתמש:</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+53"/>
         <source>Password:</source>
         <translation>ססמה:</translation>
     </message>
     <message>
-        <location line="-1282"/>
+        <location line="-1552"/>
         <source>Default Wine paths:</source>
         <translation>נתיבי Wine כבררת מחדל:</translation>
     </message>
     <message>
-        <location line="+323"/>
+        <location line="-102"/>
+        <source>Open online guide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+488"/>
         <source>System utils paths:</source>
         <translation>נתיבי כלי המערכת:</translation>
     </message>
     <message>
-        <location line="+504"/>
+        <location line="+594"/>
         <source>media-gfx/icoutils settings:</source>
         <translation>הגדרות media-gfx/icoutils:</translation>
     </message>
     <message>
-        <location line="+126"/>
+        <location line="+153"/>
         <source>Console application settings:</source>
         <translation>הגדרות יישום המסוף:</translation>
     </message>
     <message>
-        <location line="+117"/>
+        <location line="+153"/>
         <source>Network settings</source>
         <translation>הגדרות רשת</translation>
     </message>
     <message>
-        <location line="+264"/>
+        <location line="+327"/>
         <source>Select Quick Mount Profile</source>
         <translation>בחירת פרופיל לעגינה מהירה</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+24"/>
         <source>Quick Mount feature allows you to mountumount cd images and drivers via context menu entry.</source>
         <translation>תכונת העגינה המהירה מאפשרת לך לעגון תמונות של תקליטורים וכוננים באמצעות רשומה בתפריט ההקשר.</translation>
     </message>
@@ -4907,12 +4966,12 @@ Note: leave it blank for default.</source>
         <translation>פרופילים:</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+40"/>
         <source>Profile Strings:</source>
         <translation>מחרוזות הפרופיל:</translation>
     </message>
     <message>
-        <location line="+187"/>
+        <location line="+232"/>
         <source>Help</source>
         <translation>עזרה</translation>
     </message>
@@ -4940,7 +4999,7 @@ Note: leave it blank for default.</source>
         <translation>לא ניתן לאתר את הסקריפט Winetricks. נא להתקין אותו תחילה.</translation>
     </message>
     <message>
-        <location line="+142"/>
+        <location line="+167"/>
         <source>Refreshing winetricks application list.</source>
         <translation>רשימת היישומים של winetricks עוברת רענון.</translation>
     </message>
