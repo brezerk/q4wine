@@ -15,6 +15,7 @@ Version 1.2
   - 'Run -> Browser' on Programs window not work [BUG-54];
   - QT5: Winetricks application list fails to refresh and causes segfault on quit [BUG-53];
   - Make -DQT5 flag visible during cmake build and runtime;
+  - CLI: -v/-h options must not trigger nor database check nor wizard startup;
 
 Version 1.1-r2
  Fixed:

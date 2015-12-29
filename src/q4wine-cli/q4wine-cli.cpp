@@ -45,17 +45,6 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    //Classes
-    DataBase db;
-
-    if (!db.checkDb())
-        return -1;
-
-    Prefix db_prefix;
-    Dir db_dir;
-    Icon db_icon;
-    Image db_image;
-
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset((corelib *)CoreLibClassPointer(false));
@@ -75,23 +64,70 @@ int main(int argc, char *argv[])
     qtt.load(CoreLib->getTranslationLang(), i18nPath);
     app.installTranslator(&qtt);
 
+    _ACTION=-1;
+
+    for (int i=1; i<argc; i++){
+        if ((app.arguments().at(i)=="--help") or (app.arguments().at(i)=="-h")){
+            Qcout<<QObject::tr("Usage:")<<endl;
+            Qcout<<QObject::tr("  %1-cli [KEY]...").arg(APP_SHORT_NAME)<<endl;
+            Qcout<<QObject::tr("  %1-cli -p <prefix_name> [-d <dir_name>] -i <icon_name>").arg(APP_SHORT_NAME)<<endl;
+            Qcout<<QObject::tr("  %1-cli -p <prefix_name> -b <windows_binary_path> [args]").arg(APP_SHORT_NAME)<<endl;
+            Qcout<<QObject::tr("Console utility for wine applications and prefixes management.")<<endl<<endl;
+            Qcout<<QObject::tr("KEYs list:")<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -ps, --procs"<<QObject::tr("output wine process list for current prefix or for all prefixes and exit ")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -p,  --prefix"<<QObject::tr("sets the current prefix name")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -d,  --dir"<<QObject::tr("sets the current directory name")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -i,  --icon"<<QObject::tr("sets the current icon name")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -cd, --cdimage"<<QObject::tr("sets the cd image name")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -b, --binary"<<QObject::tr("sets the path to windows binary for execute with current prefix settings")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -k,  --kill"<<QObject::tr("sends -9 term signal to current prefix process or for all prefixes processes")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -pl, --prefixlist"<<QObject::tr("output all existing prefixes names and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -dl, --dirlist"<<QObject::tr("output all existing dir names for current prefix and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -il, --iconlist"<<QObject::tr("output all existing icon names for current prefix/directory and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -cl, --cdlist"<<QObject::tr("output all cd images list and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -ml, --mountlist"<<QObject::tr("output all mounted media for current prefix or all prefixes and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --mount"<<QObject::tr("mount a cd image or drive for current prefix and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<qSetFieldWidth(25)<<left<<"  -u,  --umount"<<QObject::tr("unmount a cd image or drive for current prefix and exit")<<qSetFieldWidth(0)<<endl;
+            Qcout<<endl;
+            Qcout<<QObject::tr("Exit status:")<<endl;
+            Qcout<<QObject::tr("  0 if OK,")<<endl;
+            Qcout<<QObject::tr(" -1 if serious troubles")<<endl;
+            Qcout<<endl;
+            Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
+            Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_WEBSITE).arg(APP_SHORT_NAME)<<endl;
+            Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
+            return 0;
+        }
+        if ((app.arguments().at(i)=="--version") or (app.arguments().at(i)=="-v")){
+            Qcout<<QString("%1-cli %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
+            Qcout<<QString("Copyright (C) 2008-2013 by Alexey S. Malakhov <brezerk@gmail.com>")<<endl;
+            Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
+            Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
+            Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
+            CoreLib->getBuildFlags();
+            Qcout<<QObject::tr("Author: %1.").arg("Alexey S. Malakhov")<<endl;
+            return 0;
+        }
+    }
+
+    //Classes
+    DataBase db;
+    if (!db.checkDb())
+        return -1;
+
+    Prefix db_prefix;
+    Dir db_dir;
+    Icon db_icon;
+    Image db_image;
+
     if (!CoreLib->isConfigured()){
         QErr<<"[EE] App not configured! Rerun wizard, or delete Q4Wine broken config files."<<endl;
         return -1;
     }
 
-    _ACTION=-1;
-
     for (int i=1; i<argc; i++){
-        if ((app.arguments().at(i)=="--help") or (app.arguments().at(i)=="-h")){
-            _ACTION=-1;
-            break;
-        }
-        if ((app.arguments().at(i)=="--version") or (app.arguments().at(i)=="-v")){
-            _ACTION=11;
-            break;
-        }
-
         if ((app.arguments().at(i)=="--procs") or (app.arguments().at(i)=="-ps")){
             _ACTION=1;
         }
@@ -170,9 +206,6 @@ int main(int argc, char *argv[])
         }
     }
 
-
-
-
     if (_ACTION==2){
         QStringList list = db_prefix.getPrefixList();
         Qcout<<QObject::tr("Prefix list")<<endl;
@@ -187,12 +220,6 @@ int main(int argc, char *argv[])
         }
         return 0;
     }
-
-
-
-
-
-
 
     QList<QStringList> result;
     QStringList sresult;
@@ -374,15 +401,6 @@ int main(int argc, char *argv[])
             Qcout<<" "<<qSetFieldWidth(25)<<left<<mount<<CoreLib->getMountedImages(mount)<<qSetFieldWidth(0)<<endl;
         }
         break;
-    case 11:
-        Qcout<<QString("%1-cli %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
-        Qcout<<QString("Copyright (C) 2008-2013 by Alexey S. Malakhov <brezerk@gmail.com>")<<endl;
-        Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
-        Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
-        Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
-                CoreLib->getBuildFlags();
-        Qcout<<QObject::tr("Author: %1.").arg("Alexey S. Malakhov")<<endl;
-        break;
     case 12:
         if (_PREFIX.isEmpty()){
             Qcout<<QObject::tr("No current prefix set. Set prefix via \"-p <prefix_name>\" key.")<<endl;
@@ -414,37 +432,7 @@ int main(int argc, char *argv[])
         }
         break;
     default:
-        Qcout<<QObject::tr("Usage:")<<endl;
-        Qcout<<QObject::tr("  %1-cli [KEY]...").arg(APP_SHORT_NAME)<<endl;
-        Qcout<<QObject::tr("  %1-cli -p <prefix_name> [-d <dir_name>] -i <icon_name>").arg(APP_SHORT_NAME)<<endl;
-        Qcout<<QObject::tr("  %1-cli -p <prefix_name> -b <windows_binary_path> [args]").arg(APP_SHORT_NAME)<<endl;
-        Qcout<<QObject::tr("Console utility for wine applications and prefixes management.")<<endl<<endl;
-        Qcout<<QObject::tr("KEYs list:")<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -h,  --help"<<QObject::tr("display this help and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -v,  --version"<<QObject::tr("output version information and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -ps, --procs"<<QObject::tr("output wine process list for current prefix or for all prefixes and exit ")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -p,  --prefix"<<QObject::tr("sets the current prefix name")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -d,  --dir"<<QObject::tr("sets the current directory name")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -i,  --icon"<<QObject::tr("sets the current icon name")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -cd, --cdimage"<<QObject::tr("sets the cd image name")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -b, --binary"<<QObject::tr("sets the path to windows binary for execute with current prefix settings")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -k,  --kill"<<QObject::tr("sends -9 term signal to current prefix process or for all prefixes processes")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -pl, --prefixlist"<<QObject::tr("output all existing prefixes names and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -dl, --dirlist"<<QObject::tr("output all existing dir names for current prefix and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -il, --iconlist"<<QObject::tr("output all existing icon names for current prefix/directory and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -cl, --cdlist"<<QObject::tr("output all cd images list and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -ml, --mountlist"<<QObject::tr("output all mounted media for current prefix or all prefixes and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -m,  --mount"<<QObject::tr("mount a cd image or drive for current prefix and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<qSetFieldWidth(25)<<left<<"  -u,  --umount"<<QObject::tr("unmount a cd image or drive for current prefix and exit")<<qSetFieldWidth(0)<<endl;
-        Qcout<<endl;
-        Qcout<<QObject::tr("Exit status:")<<endl;
-        Qcout<<QObject::tr("  0 if OK,")<<endl;
-        Qcout<<QObject::tr(" -1 if serious troubles")<<endl;
-        Qcout<<endl;
-        Qcout<<QObject::tr("Report %1 bugs to %2").arg(APP_SHORT_NAME).arg(APP_BUG_EMAIL)<<endl;
-        Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_WEBSITE).arg(APP_SHORT_NAME)<<endl;
-        Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
-        break;
+        exit (255);
     }
 
     db.close();

@@ -104,29 +104,6 @@ int main(int argc, char *argv[])
     qtt.load(CoreLib->getTranslationLang(), i18nPath);
     app.installTranslator(&qtt);
 
-    if (!CoreLib->checkDirs(QString("%1/.config/%2").arg(QDir::homePath()).arg(APP_SHORT_NAME))){
-        return -1;
-    }
-
-    if (!CoreLib->checkDirs(QDir::homePath(), QStringList() << ".local/share/wineprefixes")){
-        return -1;
-    }
-
-    DataBase db;
-
-    if (!db.checkDb()){
-        QErr<<"[EE] Cannot initialize database engine."<<endl;
-        return -1;
-    }
-
-    if (!CoreLib->isConfigured()){
-        Wizard firstSetupWizard(1);
-        if (firstSetupWizard.exec()==QDialog::Rejected){
-            QErr<<"[EE] Application not configured! Rerun the setup wizard or delete broken Q4Wine configuration files."<<endl;
-            return -1;
-        }
-    }
-
     QTextStream Qcout(stdout);
     int result, startState=0;
 
@@ -159,6 +136,29 @@ int main(int argc, char *argv[])
             Qcout<<QObject::tr("%1 homepage: <%2>").arg(APP_SHORT_NAME).arg(APP_WEBSITE)<<endl;
             Qcout<<QObject::tr("General help using GNU software: <http://www.gnu.org/gethelp/>")<<endl;
             return 0;
+        }
+    }
+
+    if (!CoreLib->checkDirs(QString("%1/.config/%2").arg(QDir::homePath()).arg(APP_SHORT_NAME))){
+        return -1;
+    }
+
+    if (!CoreLib->checkDirs(QDir::homePath(), QStringList() << ".local/share/wineprefixes")){
+        return -1;
+    }
+
+    DataBase db;
+
+    if (!db.checkDb()){
+        QErr<<"[EE] Cannot initialize database engine."<<endl;
+        return -1;
+    }
+
+    if (!CoreLib->isConfigured()){
+        Wizard firstSetupWizard(1);
+        if (firstSetupWizard.exec()==QDialog::Rejected){
+            QErr<<"[EE] Application not configured! Rerun the setup wizard or delete broken Q4Wine configuration files."<<endl;
+            return -1;
         }
     }
 
