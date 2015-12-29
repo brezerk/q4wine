@@ -1,4 +1,4 @@
-Version 1.2
+Version 1.2-r1
  Added:
   - Deleting prefix does not remove prefix folder in ~/.local/share/wineprefixes [BUG-43];
  Fixed:
