@@ -20,8 +20,6 @@
 #define FAKEDRIVESETTINGS_H
 
 #include <src/q4wine-gui/ui_FakeDriveSettings.h>
-//#include <src/q4wine-gui/ui_AppSettings.h>
-#include "src/q4wine-gui/ui_InfoDialog.h"
 
 #include "config.h"
 #include "registry.h"

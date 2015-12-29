@@ -73,7 +73,6 @@
 #include "about.h"
 #include "appsettings.h"
 #include "run.h"
-#include "infodialog.h"
 #include "fakedrivesettings.h"
 #include "src/q4wine-gui/versions.h"
 
