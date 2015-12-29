@@ -2318,34 +2318,28 @@ Sien hulp vir verderre besonderhede.</translation>
 <context>
     <name>InfoDialog</name>
     <message>
-        <location filename="../q4wine-gui/uis/InfoDialog.ui" line="+27"/>
         <source>Information</source>
-        <translation>Inligting</translation>
+        <translation type="obsolete">Inligting</translation>
     </message>
     <message>
-        <location line="+47"/>
         <source>Do not show this dialog next time</source>
-        <translation>Moenie hierdie venter weer vertoon nie</translation>
+        <translation type="obsolete">Moenie hierdie venter weer vertoon nie</translation>
     </message>
     <message>
-        <location line="+20"/>
         <source>Cancel</source>
-        <translation>Kanselleer</translation>
+        <translation type="obsolete">Kanselleer</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>OK</source>
-        <translation>Goed</translation>
+        <translation type="obsolete">Goed</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/infodialog.cpp" line="+29"/>
         <source>Winetricks plugin notification</source>
-        <translation>Winetricks inprop kennisgewing</translation>
+        <translation type="obsolete">Winetricks inprop kennisgewing</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>AppDB browser notification</source>
-        <translation>AppDB blaaier kennisgewing</translation>
+        <translation type="obsolete">AppDB blaaier kennisgewing</translation>
     </message>
 </context>
 <context>
@@ -2526,7 +2520,7 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Onverwagte sok boodskap ontvang.</translation>
     </message>
     <message>
-        <location line="+254"/>
+        <location line="+250"/>
         <source>WIP</source>
         <translation>WIP</translation>
     </message>
@@ -2560,7 +2554,7 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Slegs een instansie van %1 kan op &apos;n slag loop.</translation>
     </message>
     <message>
-        <location line="-730"/>
+        <location line="-726"/>
         <source>Description: %1</source>
         <translation>Beskrywing: %1</translation>
     </message>
@@ -2606,7 +2600,7 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Kan nie konsole vir program begin nie: &quot;%1&quot; in Wine-tuiste: &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location line="+276"/>
+        <location line="+272"/>
         <source>Sorry, the install wizard has not been implemented yet. It will be available in a future version.</source>
         <translation>Jammer, die installerings towenaar is nog nie geïmplementeer nie. Dit sal in &apos;n volgende weergawe beskikbaar wees.</translation>
     </message>
@@ -2644,7 +2638,7 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Wine-tuistes</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-726"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-722"/>
         <source>Default</source>
         <translation>Verstek</translation>
     </message>
@@ -3835,18 +3829,18 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Verstek</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+206"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+233"/>
         <location line="+43"/>
         <location line="+13"/>
         <location line="+31"/>
         <location line="+14"/>
         <location line="+29"/>
-        <location line="+52"/>
+        <location line="+43"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>Geen wine-tuiste is tans gestel nie. Stel wine-tuiste via &quot;-p &lt;prefix_name&gt;&quot; sleutel.</translation>
     </message>
     <message>
-        <location line="-177"/>
+        <location line="-168"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
         <translation>Geen ikoon is tans gestel nie. Stel ikoon via &quot;-i &lt;icon_name&gt;&quot; sleutel.</translation>
     </message>
@@ -3871,8 +3865,8 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>&apos;Nice&apos; Prioriteit</translation>
     </message>
     <message>
-        <location line="-58"/>
-        <location line="+58"/>
+        <location line="-52"/>
+        <location line="+52"/>
         <location line="+17"/>
         <location line="+22"/>
         <location line="+10"/>
@@ -3885,18 +3879,18 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Wine tuiste pad</translation>
     </message>
     <message>
-        <location line="-59"/>
+        <location line="-53"/>
         <source>Prefix list</source>
         <translation>Wine tuiste lys</translation>
     </message>
     <message>
-        <location line="-74"/>
+        <location line="-71"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>Wine tuiste genaamd &quot;%1&quot;, bestaan nie. Loop &quot;%2-cli -pl&quot; vir wine-tuiste lys.</translation>
     </message>
     <message>
-        <location line="+75"/>
-        <location line="+107"/>
+        <location line="+72"/>
+        <location line="+101"/>
         <source>Path</source>
         <translation>Pad</translation>
     </message>
@@ -3958,12 +3952,12 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Ontheg hegtingspunt &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+40"/>
         <source>File &quot;%1&quot; does not exist.</source>
         <translation>Lêer %1 bestaan nie.</translation>
     </message>
     <message>
-        <location line="-37"/>
+        <location line="-28"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Gehegde media lys vir alle Wine tuistes</translation>
     </message>
@@ -3990,8 +3984,8 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Gehegde media lys vir Wine tuiste &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="+138"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+9"/>
+        <location filename="../main.cpp" line="+115"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-292"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>Hierdie is gratis programmatuur: u is vry om dit te verander en om dit te versprei.</translation>
@@ -4012,7 +4006,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     </message>
     <message>
         <location line="+17"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+60"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-12"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+73"/>
         <source>Report %1 bugs to %2</source>
         <translation>Reporteer %1 foute aan %2</translation>

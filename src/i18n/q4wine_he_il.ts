@@ -2301,34 +2301,28 @@ See help for details.</source>
 <context>
     <name>InfoDialog</name>
     <message>
-        <location filename="../q4wine-gui/uis/InfoDialog.ui" line="+27"/>
         <source>Information</source>
-        <translation>מידע</translation>
+        <translation type="obsolete">מידע</translation>
     </message>
     <message>
-        <location line="+47"/>
         <source>Do not show this dialog next time</source>
-        <translation>אין להציג תיבת דו־שיח זאת בפעם הבאה</translation>
+        <translation type="obsolete">אין להציג תיבת דו־שיח זאת בפעם הבאה</translation>
     </message>
     <message>
-        <location line="+20"/>
         <source>Cancel</source>
-        <translation>ביטול</translation>
+        <translation type="obsolete">ביטול</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>OK</source>
-        <translation>אישור</translation>
+        <translation type="obsolete">אישור</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/infodialog.cpp" line="+29"/>
         <source>Winetricks plugin notification</source>
-        <translation>התרעה מהתוסף Winetricks</translation>
+        <translation type="obsolete">התרעה מהתוסף Winetricks</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>AppDB browser notification</source>
-        <translation>התרעה מדפדפן ה־AppDB</translation>
+        <translation type="obsolete">התרעה מדפדפן ה־AppDB</translation>
     </message>
 </context>
 <context>
@@ -2503,7 +2497,7 @@ See help for details.</source>
         <translation>התקבלה הודעה בלתי צפויה מהשקע.</translation>
     </message>
     <message>
-        <location line="+254"/>
+        <location line="+250"/>
         <source>WIP</source>
         <translation>WIP</translation>
     </message>
@@ -2519,7 +2513,7 @@ See help for details.</source>
         <translation>ניתן להפעיל רק עותק אחד של %1 בעת ובעונה אחת.</translation>
     </message>
     <message>
-        <location line="-730"/>
+        <location line="-726"/>
         <source>Description: %1</source>
         <translation>תיאור: %1</translation>
     </message>
@@ -2549,7 +2543,7 @@ See help for details.</source>
         <translation>מסתבר כי ישנו עותק פעיל נוסף של Q4Wine, או ש־Q4Wine נסגר שלא כראוי. האם ברצונך להסיר את קובץ השקע?</translation>
     </message>
     <message>
-        <location line="+441"/>
+        <location line="+437"/>
         <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
         <translation>קובצי הפעלה וספריות משותפות לסביבת Win32‏ (‎*.exe *.dll);;קובצי הפעלה לסביבת Win32 (‏‎*.exe);;ספריות משותפות לסביבת Win32‏ (‎*.dll)</translation>
@@ -2567,7 +2561,7 @@ See help for details.</source>
         <translation>הסמל מחולץ</translation>
     </message>
     <message>
-        <location line="-453"/>
+        <location line="-449"/>
         <location line="+14"/>
         <location line="+13"/>
         <location line="+12"/>
@@ -2588,7 +2582,7 @@ See help for details.</source>
         <translation>לא ניתן להפעיל את המסוף עבור היישום: &quot;%1&quot; בקידומת: &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location line="+276"/>
+        <location line="+272"/>
         <source>Sorry, the install wizard has not been implemented yet. It will be available in a future version.</source>
         <translation>אשף ההתקנה עדיין לא הוטמע, עמך הסליחה. יתכן שיהיה זמין באחת הגרסאות העתידיות.</translation>
     </message>
@@ -2626,7 +2620,7 @@ See help for details.</source>
         <translation>קידומות</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-726"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-722"/>
         <source>Default</source>
         <translation>בררת מחדל</translation>
     </message>
@@ -3814,18 +3808,18 @@ Note: leave it blank for default.</source>
         <translation>בררת מחדל</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+206"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+233"/>
         <location line="+43"/>
         <location line="+13"/>
         <location line="+31"/>
         <location line="+14"/>
         <location line="+29"/>
-        <location line="+52"/>
+        <location line="+43"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</translation>
     </message>
     <message>
-        <location line="-177"/>
+        <location line="-168"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
         <translation>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</translation>
     </message>
@@ -3850,8 +3844,8 @@ Note: leave it blank for default.</source>
         <translation>Nice</translation>
     </message>
     <message>
-        <location line="-58"/>
-        <location line="+58"/>
+        <location line="-52"/>
+        <location line="+52"/>
         <location line="+17"/>
         <location line="+22"/>
         <location line="+10"/>
@@ -3864,18 +3858,18 @@ Note: leave it blank for default.</source>
         <translation>Prefix path</translation>
     </message>
     <message>
-        <location line="-59"/>
+        <location line="-53"/>
         <source>Prefix list</source>
         <translation>Prefix list</translation>
     </message>
     <message>
-        <location line="-74"/>
+        <location line="-71"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</translation>
     </message>
     <message>
-        <location line="+75"/>
-        <location line="+107"/>
+        <location line="+72"/>
+        <location line="+101"/>
         <source>Path</source>
         <translation>Path</translation>
     </message>
@@ -3937,17 +3931,17 @@ Note: leave it blank for default.</source>
         <translation>Unmounting mount point &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+40"/>
         <source>File &quot;%1&quot; does not exist.</source>
         <translation>File &quot;%1&quot; does not exist.</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="-332"/>
         <source>sets the current directory name</source>
         <translation>sets the current directory name</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="+304"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Mounted media list for all prefixes</translation>
     </message>
@@ -3974,8 +3968,8 @@ Note: leave it blank for default.</source>
         <translation>Mounted media list for prefix &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="+138"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+9"/>
+        <location filename="../main.cpp" line="+115"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-292"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>This is free software: you are free to change and redistribute it.</translation>
@@ -3996,7 +3990,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+17"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+60"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-12"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+73"/>
         <source>Report %1 bugs to %2</source>
         <translation>דיווח על באגים ב־ %1 אל %2</translation>

@@ -2301,34 +2301,28 @@ See help for details.</source>
 <context>
     <name>InfoDialog</name>
     <message>
-        <location filename="../q4wine-gui/uis/InfoDialog.ui" line="+27"/>
         <source>Information</source>
-        <translation>Информация</translation>
+        <translation type="obsolete">Информация</translation>
     </message>
     <message>
-        <location line="+47"/>
         <source>Do not show this dialog next time</source>
-        <translation>Не показывать этот диалог в следующий раз</translation>
+        <translation type="obsolete">Не показывать этот диалог в следующий раз</translation>
     </message>
     <message>
-        <location line="+20"/>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation type="obsolete">Отмена</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>OK</source>
-        <translation>Ok</translation>
+        <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/infodialog.cpp" line="+29"/>
         <source>Winetricks plugin notification</source>
-        <translation>Оповещение от дополнения winetriks</translation>
+        <translation type="obsolete">Оповещение от дополнения winetriks</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>AppDB browser notification</source>
-        <translation>Оповещения от навигатора AppDB</translation>
+        <translation type="obsolete">Оповещения от навигатора AppDB</translation>
     </message>
 </context>
 <context>
@@ -2738,7 +2732,7 @@ See help for details.</source>
         <translation>Получено неожиданное сообщение от сокета.</translation>
     </message>
     <message>
-        <location line="+254"/>
+        <location line="+250"/>
         <source>WIP</source>
         <translation>WIP</translation>
     </message>
@@ -2761,7 +2755,7 @@ See help for details.</source>
         <translation>Извлечение значка</translation>
     </message>
     <message>
-        <location line="-453"/>
+        <location line="-449"/>
         <location line="+14"/>
         <location line="+13"/>
         <location line="+12"/>
@@ -2782,7 +2776,7 @@ See help for details.</source>
         <translation>Не могу запустить консоль для программы: &quot;%1&quot; в префиксе: &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location line="+276"/>
+        <location line="+272"/>
         <source>Sorry, the install wizard has not been implemented yet. It will be available in a future version.</source>
         <translation>Мастер настройки еще не готов. Он будет реализован в следующих версиях.</translation>
     </message>
@@ -2824,7 +2818,7 @@ See help for details.</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-733"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-729"/>
         <source>Yes</source>
         <translation>Да</translation>
     </message>
@@ -3815,18 +3809,18 @@ Note: leave it blank for default.</source>
         <translation>Умолчания</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+206"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+233"/>
         <location line="+43"/>
         <location line="+13"/>
         <location line="+31"/>
         <location line="+14"/>
         <location line="+29"/>
-        <location line="+52"/>
+        <location line="+43"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>Префикс не установлен. Установите префикс, запустив приложение с ключом &quot;-p &lt;имя_префикса&gt;.</translation>
     </message>
     <message>
-        <location line="-177"/>
+        <location line="-168"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
         <translation>Значок не установлен. Укажите значок с помощью ключа &quot;-i &lt;имя_значка&gt;&quot;.</translation>
     </message>
@@ -3851,8 +3845,8 @@ Note: leave it blank for default.</source>
         <translation>Приоритет</translation>
     </message>
     <message>
-        <location line="-58"/>
-        <location line="+58"/>
+        <location line="-52"/>
+        <location line="+52"/>
         <location line="+17"/>
         <location line="+22"/>
         <location line="+10"/>
@@ -3865,18 +3859,18 @@ Note: leave it blank for default.</source>
         <translation>Путь к префиксу</translation>
     </message>
     <message>
-        <location line="-59"/>
+        <location line="-53"/>
         <source>Prefix list</source>
         <translation>Список префиксов</translation>
     </message>
     <message>
-        <location line="-74"/>
+        <location line="-71"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>Префикс &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка префиксов.</translation>
     </message>
     <message>
-        <location line="+75"/>
-        <location line="+107"/>
+        <location line="+72"/>
+        <location line="+101"/>
         <source>Path</source>
         <translation>Путь</translation>
     </message>
@@ -3938,12 +3932,12 @@ Note: leave it blank for default.</source>
         <translation>Отключение точки &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+40"/>
         <source>File &quot;%1&quot; does not exist.</source>
         <translation>Файл &quot;%1&quot; не существует.</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="-332"/>
         <source>sets the current directory name</source>
         <translation>установить имя текущего каталога</translation>
     </message>
@@ -3953,7 +3947,7 @@ Note: leave it blank for default.</source>
         <translation>установить имя CD/DVD образа</translation>
     </message>
     <message>
-        <location line="-71"/>
+        <location line="+302"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Список подключённых дисков для всех префиксов</translation>
     </message>
@@ -3980,8 +3974,8 @@ Note: leave it blank for default.</source>
         <translation>Список подключённых дисков для префикса &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="+138"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+9"/>
+        <location filename="../main.cpp" line="+115"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-292"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>Это свободное программное обеспечение. Вы можете изменять и распространять его.</translation>
@@ -4002,7 +3996,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+17"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+60"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-12"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+73"/>
         <source>Report %1 bugs to %2</source>
         <translation>Отправляйте сообщения об ошибках %1 к %2</translation>

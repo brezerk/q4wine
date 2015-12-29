@@ -2308,34 +2308,28 @@ See help for details.</source>
 <context>
     <name>InfoDialog</name>
     <message>
-        <location filename="../q4wine-gui/uis/InfoDialog.ui" line="+27"/>
         <source>Information</source>
-        <translation>اطلاعات</translation>
+        <translation type="obsolete">اطلاعات</translation>
     </message>
     <message>
-        <location line="+47"/>
         <source>Do not show this dialog next time</source>
-        <translation>این پنجره محاوره را بار دیگر نشان نده</translation>
+        <translation type="obsolete">این پنجره محاوره را بار دیگر نشان نده</translation>
     </message>
     <message>
-        <location line="+20"/>
         <source>Cancel</source>
-        <translation>لغو کردن</translation>
+        <translation type="obsolete">لغو کردن</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>OK</source>
-        <translation>قبول کردن</translation>
+        <translation type="obsolete">قبول کردن</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/infodialog.cpp" line="+29"/>
         <source>Winetricks plugin notification</source>
-        <translation>هشدارهای افزونه ی کلک رشتی</translation>
+        <translation type="obsolete">هشدارهای افزونه ی کلک رشتی</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>AppDB browser notification</source>
-        <translation>هشدارهای پویشگر بانک اطلاعاتی نرم افزار ها</translation>
+        <translation type="obsolete">هشدارهای پویشگر بانک اطلاعاتی نرم افزار ها</translation>
     </message>
 </context>
 <context>
@@ -2792,7 +2786,7 @@ See help for details.</source>
         <translation>پیام غیرقابل پیش بینی سوکت دریافت شد.</translation>
     </message>
     <message>
-        <location line="+254"/>
+        <location line="+250"/>
         <source>WIP</source>
         <translation>WIP</translation>
     </message>
@@ -3809,8 +3803,8 @@ Note: leave it blank for default.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="+138"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+381"/>
+        <location filename="../main.cpp" line="+115"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+107"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>این یک نرم افزار آزاد است: شما مجاز به تغییر و دوباره توزیع آن هستید.</translation>
@@ -3831,7 +3825,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+7"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+33"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-39"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+55"/>
         <source>Usage:</source>
         <translation>موارد استفاده:</translation>
@@ -3903,18 +3897,18 @@ Note: leave it blank for default.</source>
         <translation>پیش فرض</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-342"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+40"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>پیشوندی با نام &quot;%1&quot; وجود ندارد. برای مشاهده ی لیست پیشوند ها &quot;%2-cli -pl&quot; را اجرا کنید.</translation>
     </message>
     <message>
-        <location line="+74"/>
+        <location line="+71"/>
         <source>Prefix list</source>
         <translation>لیست پیشوند ها</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+58"/>
+        <location line="+52"/>
         <location line="+17"/>
         <location line="+22"/>
         <location line="+10"/>
@@ -3922,8 +3916,8 @@ Note: leave it blank for default.</source>
         <translation>نام</translation>
     </message>
     <message>
-        <location line="-107"/>
-        <location line="+107"/>
+        <location line="-101"/>
+        <location line="+101"/>
         <source>Path</source>
         <translation>آدرس</translation>
     </message>
@@ -3934,12 +3928,12 @@ Note: leave it blank for default.</source>
         <location line="+31"/>
         <location line="+14"/>
         <location line="+29"/>
-        <location line="+52"/>
+        <location line="+43"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>هیچگونه پیشوندی تنظیم نشده است. از طریق کلید &quot;-p &lt;نام-پیشوندـprefix_name&gt;&quot;آن را تنظیم کنید.</translation>
     </message>
     <message>
-        <location line="-177"/>
+        <location line="-168"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
         <translation>هیچگونه تنظیمات آیکون موجود نیست. از طریق کلید &quot;-i &lt;نام-آیکون_icon_name&gt;&quot;آن را تنظیم کنید.</translation>
     </message>
@@ -4053,12 +4047,12 @@ Note: leave it blank for default.</source>
         <translation>نمایش لیست رسانه های سوار شده بر ایستگاه سوار شدن سیستم فایل در پیشوند&quot;%1&quot;</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+14"/>
         <source>File &quot;%1&quot; does not exist.</source>
         <translation>فایل &quot;%1&quot; وجود ندارد.</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="-341"/>
         <source>  %1-cli [KEY]...</source>
         <translation>%1-cli [کلید]...</translation>
     </message>

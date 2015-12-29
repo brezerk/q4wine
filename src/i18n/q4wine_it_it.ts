@@ -2303,34 +2303,28 @@ Vedi l&apos;help per gli esempi.</translation>
 <context>
     <name>InfoDialog</name>
     <message>
-        <location filename="../q4wine-gui/uis/InfoDialog.ui" line="+27"/>
         <source>Information</source>
-        <translation>Informazioni</translation>
+        <translation type="obsolete">Informazioni</translation>
     </message>
     <message>
-        <location line="+47"/>
         <source>Do not show this dialog next time</source>
-        <translation type="unfinished">Non mostrare più questa finestra</translation>
+        <translation type="obsolete">Non mostrare più questa finestra</translation>
     </message>
     <message>
-        <location line="+20"/>
         <source>Cancel</source>
-        <translation>Cancella</translation>
+        <translation type="obsolete">Cancella</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>OK</source>
-        <translation>Ok</translation>
+        <translation type="obsolete">Ok</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/infodialog.cpp" line="+29"/>
         <source>Winetricks plugin notification</source>
-        <translation>Notifica dei plugin di winetricks</translation>
+        <translation type="obsolete">Notifica dei plugin di winetricks</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>AppDB browser notification</source>
-        <translation>Notifiche del browser di AppDB</translation>
+        <translation type="obsolete">Notifiche del browser di AppDB</translation>
     </message>
 </context>
 <context>
@@ -2505,12 +2499,12 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation>Ricevuto un messaggio inatteso  per il socket.</translation>
     </message>
     <message>
-        <location line="+254"/>
+        <location line="+250"/>
         <source>WIP</source>
         <translation>WIP</translation>
     </message>
     <message>
-        <location line="-381"/>
+        <location line="-377"/>
         <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
         <translation>Sembra che un&apos;altra istanza di Q4Wine sia in esecuzione, o Q4Wine non è stato terminato in modo corretto. Vuoi rimuovere il file socket?</translation>
     </message>
@@ -2541,7 +2535,7 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation>Non posso avviare la console per l&apos;applicazione: &quot;%1&quot; nel prefisso: &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location line="+276"/>
+        <location line="+272"/>
         <source>Sorry, the install wizard has not been implemented yet. It will be available in a future version.</source>
         <translation>Spiacente, il wizard di installazione non è ancora stato implementato. Sarà disponibile nelle versioni future.</translation>
     </message>
@@ -2586,7 +2580,7 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation>Non posso eseguire il file binario</translation>
     </message>
     <message>
-        <location line="-737"/>
+        <location line="-733"/>
         <source>Description: %1</source>
         <translation>Descrizione:%1</translation>
     </message>
@@ -3815,18 +3809,18 @@ Nota: lascia in bianco per il default.</translation>
         <translation>Default</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+206"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+233"/>
         <location line="+43"/>
         <location line="+13"/>
         <location line="+31"/>
         <location line="+14"/>
         <location line="+29"/>
-        <location line="+52"/>
+        <location line="+43"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>Nessun prefisso impostato. Imposta un prefisso con &quot;-p &lt;nome prefisso&gt;&quot;.</translation>
     </message>
     <message>
-        <location line="-177"/>
+        <location line="-168"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
         <translation>Nessuna icona selezionata. Selezione l&apos;icona con &quot;-i &lt;nome icona&gt;&quot;.</translation>
     </message>
@@ -3851,8 +3845,8 @@ Nota: lascia in bianco per il default.</translation>
         <translation>Nice</translation>
     </message>
     <message>
-        <location line="-58"/>
-        <location line="+58"/>
+        <location line="-52"/>
+        <location line="+52"/>
         <location line="+17"/>
         <location line="+22"/>
         <location line="+10"/>
@@ -3865,18 +3859,18 @@ Nota: lascia in bianco per il default.</translation>
         <translation>Percorso del prefisso</translation>
     </message>
     <message>
-        <location line="-59"/>
+        <location line="-53"/>
         <source>Prefix list</source>
         <translation>Lista dei prefissi</translation>
     </message>
     <message>
-        <location line="-74"/>
+        <location line="-71"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>Il prefisso &quot;%1&quot; non esiste. Esegui &quot;%2-cli -pl&quot; per la lista dei prefissi.</translation>
     </message>
     <message>
-        <location line="+75"/>
-        <location line="+107"/>
+        <location line="+72"/>
+        <location line="+101"/>
         <source>Path</source>
         <translation>Percorso</translation>
     </message>
@@ -3933,12 +3927,12 @@ Nota: lascia in bianco per il default.</translation>
         <translation>Smonta il mount point &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+40"/>
         <source>File &quot;%1&quot; does not exist.</source>
         <translation>File &quot;%1&quot; non esiste.</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="-332"/>
         <source>sets the current directory name</source>
         <translation>imposta il nome della directory corrente</translation>
     </message>
@@ -3948,7 +3942,7 @@ Nota: lascia in bianco per il default.</translation>
         <translation>imposta il nome dell&apos;immagine del cd</translation>
     </message>
     <message>
-        <location line="-71"/>
+        <location line="+302"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Montata la lista dei dischi per tutti i prefissi</translation>
     </message>
@@ -3975,8 +3969,8 @@ Nota: lascia in bianco per il default.</translation>
         <translation>Montata la lista di dischi per il prefisso &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="+138"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+9"/>
+        <location filename="../main.cpp" line="+115"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-292"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>Questo è free software: sei libero di modificarlo e ridistribuirlo.</translation>
@@ -4010,7 +4004,7 @@ Nota: lascia in bianco per il default.</translation>
     </message>
     <message>
         <location line="-8"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+35"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-37"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+57"/>
         <source>Usage:</source>
         <translation>Uso:</translation>
@@ -4022,14 +4016,14 @@ Nota: lascia in bianco per il default.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="-7"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-37"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+35"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="-55"/>
         <source>Author: %1.</source>
         <translation>Autore: %1.</translation>
     </message>
     <message>
         <location line="+11"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+38"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-34"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+58"/>
         <source>KEYs list:</source>
         <translation>Lista delle chiavi:</translation>
@@ -4110,12 +4104,12 @@ Nota: lascia in bianco per il default.</translation>
         <translation>-1 se ci sono problemi gravi</translation>
     </message>
     <message>
-        <location line="-157"/>
+        <location line="+216"/>
         <source>%1 has the following disc images in the database</source>
         <translation>%1 ha le seguenti immagini CD nel database</translation>
     </message>
     <message>
-        <location line="+133"/>
+        <location line="-240"/>
         <source>  %1-cli [KEY]...</source>
         <translation>%1-cli [KEY]...</translation>
     </message>

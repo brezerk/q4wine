@@ -2545,34 +2545,28 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
 <context>
     <name>InfoDialog</name>
     <message>
-        <location filename="../q4wine-gui/uis/InfoDialog.ui" line="+27"/>
         <source>Information</source>
-        <translation>Informacja</translation>
+        <translation type="obsolete">Informacja</translation>
     </message>
     <message>
-        <location line="+47"/>
         <source>Do not show this dialog next time</source>
-        <translation type="unfinished">Nie pokazuj więcej tego okna</translation>
+        <translation type="obsolete">Nie pokazuj więcej tego okna</translation>
     </message>
     <message>
-        <location line="+20"/>
         <source>Cancel</source>
-        <translation>Anuluj</translation>
+        <translation type="obsolete">Anuluj</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation type="obsolete">OK</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/infodialog.cpp" line="+29"/>
         <source>Winetricks plugin notification</source>
-        <translation>Powiadomienie wtyczki winetricks</translation>
+        <translation type="obsolete">Powiadomienie wtyczki winetricks</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>AppDB browser notification</source>
-        <translation>Powiadomienie przeglądarki AppDB</translation>
+        <translation type="obsolete">Powiadomienie przeglądarki AppDB</translation>
     </message>
 </context>
 <context>
@@ -2784,7 +2778,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation type="obsolete">Usuwanie starej imitacji dysku.&lt;br&gt;To może chwilę potrwać...</translation>
     </message>
     <message>
-        <location line="+254"/>
+        <location line="+250"/>
         <source>WIP</source>
         <translation>WIP</translation>
     </message>
@@ -2836,7 +2830,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation type="obsolete">Uruchom wtyczkę Winetricks</translation>
     </message>
     <message>
-        <location line="-730"/>
+        <location line="-726"/>
         <source>Description: %1</source>
         <translation>Opis: %1</translation>
     </message>
@@ -2861,7 +2855,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+441"/>
+        <location line="+437"/>
         <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
         <translation type="unfinished"></translation>
@@ -2879,7 +2873,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-453"/>
+        <location line="-449"/>
         <location line="+14"/>
         <location line="+13"/>
         <location line="+12"/>
@@ -2905,7 +2899,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+276"/>
+        <location line="+272"/>
         <source>Sorry, the install wizard has not been implemented yet. It will be available in a future version.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2959,7 +2953,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation>Prefiksy</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-726"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-722"/>
         <source>Default</source>
         <translation>Domyślne</translation>
     </message>
@@ -4247,18 +4241,18 @@ Domyślnie są puste.</translation>
         <translation>Domyślne</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+206"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+233"/>
         <location line="+43"/>
         <location line="+13"/>
         <location line="+31"/>
         <location line="+14"/>
         <location line="+29"/>
-        <location line="+52"/>
+        <location line="+43"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>Nie wybrano bieżącego prefiksu. Ustaw prefiks poprzez &quot;-p &lt;prefix_name&gt;&quot;.</translation>
     </message>
     <message>
-        <location line="-177"/>
+        <location line="-168"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
         <translation>Nie wybrano ikony. Ustaw ikonę poprzez &quot;-i &lt;icon_name&gt;&quot;.</translation>
     </message>
@@ -4283,8 +4277,8 @@ Domyślnie są puste.</translation>
         <translation>Nice</translation>
     </message>
     <message>
-        <location line="-58"/>
-        <location line="+58"/>
+        <location line="-52"/>
+        <location line="+52"/>
         <location line="+17"/>
         <location line="+22"/>
         <location line="+10"/>
@@ -4297,18 +4291,18 @@ Domyślnie są puste.</translation>
         <translation>Ścieżka prefiksu</translation>
     </message>
     <message>
-        <location line="-59"/>
+        <location line="-53"/>
         <source>Prefix list</source>
         <translation>Lista prefiksów</translation>
     </message>
     <message>
-        <location line="-74"/>
+        <location line="-71"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+75"/>
-        <location line="+107"/>
+        <location line="+72"/>
+        <location line="+101"/>
         <source>Path</source>
         <translation>Ścieżka</translation>
     </message>
@@ -4370,12 +4364,12 @@ Domyślnie są puste.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+40"/>
         <source>File &quot;%1&quot; does not exist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="-332"/>
         <source>sets the current directory name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4392,7 +4386,7 @@ Domyślnie są puste.</translation>
         <translation type="obsolete">Odmontowywanie punktu montowania &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="+304"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Lista zamontowanych nośników dla wszystkich prefiksów</translation>
     </message>
@@ -4419,8 +4413,8 @@ Domyślnie są puste.</translation>
         <translation>Lista zamontowanych nośników dla prefiksu &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="+138"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+9"/>
+        <location filename="../main.cpp" line="+115"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-292"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>To jest wolne oprogramowanie: Możesz je modyfikować i rozprowadzać.</translation>
@@ -4445,7 +4439,7 @@ Domyślnie są puste.</translation>
     </message>
     <message>
         <location line="+17"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+60"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-12"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+73"/>
         <source>Report %1 bugs to %2</source>
         <translation>Raportuj %1 bugów do %2</translation>

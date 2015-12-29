@@ -2301,34 +2301,28 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
 <context>
     <name>InfoDialog</name>
     <message>
-        <location filename="../q4wine-gui/uis/InfoDialog.ui" line="+27"/>
         <source>Information</source>
-        <translation>Informace</translation>
+        <translation type="obsolete">Informace</translation>
     </message>
     <message>
-        <location line="+47"/>
         <source>Do not show this dialog next time</source>
-        <translation>Příště už tento dialog neukazovat</translation>
+        <translation type="obsolete">Příště už tento dialog neukazovat</translation>
     </message>
     <message>
-        <location line="+20"/>
         <source>Cancel</source>
-        <translation>Zrušit</translation>
+        <translation type="obsolete">Zrušit</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation type="obsolete">OK</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/infodialog.cpp" line="+29"/>
         <source>Winetricks plugin notification</source>
-        <translation>Oznámení přídavného modulu Winetricks (Kouzla wine)</translation>
+        <translation type="obsolete">Oznámení přídavného modulu Winetricks (Kouzla wine)</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>AppDB browser notification</source>
-        <translation>Oznámení prohlížeče AppDB</translation>
+        <translation type="obsolete">Oznámení prohlížeče AppDB</translation>
     </message>
 </context>
 <context>
@@ -2503,7 +2497,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Přijata neočekávaná zpráva od zásuvky (socket).</translation>
     </message>
     <message>
-        <location line="+254"/>
+        <location line="+250"/>
         <source>WIP</source>
         <translation>WIP</translation>
     </message>
@@ -2519,7 +2513,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Pouze jedna instance %1 může běžet v tu samou dobu.</translation>
     </message>
     <message>
-        <location line="-730"/>
+        <location line="-726"/>
         <source>Description: %1</source>
         <translation>Popis: %1</translation>
     </message>
@@ -2549,7 +2543,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Zdá se, že již běží jiná instance Q4Wine, nebo byl Q4Wine ukončen nesprávně. Chcete odstranit soubor zásuvky (socket)?</translation>
     </message>
     <message>
-        <location line="+441"/>
+        <location line="+437"/>
         <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
         <translation>Spustitelný soubor a sdílené knihovny Win32 (*.exe *.dll);;Spustitelný soubor Win32 (*.exe);;Sdílené knihovny Win32 (*.dll)</translation>
@@ -2567,7 +2561,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Vytahuje se ikona</translation>
     </message>
     <message>
-        <location line="-453"/>
+        <location line="-449"/>
         <location line="+14"/>
         <location line="+13"/>
         <location line="+12"/>
@@ -2588,7 +2582,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Nelze spustit konzoli: &quot;%1&quot; v předponě: &quot;%2&quot;.</translation>
     </message>
     <message>
-        <location line="+276"/>
+        <location line="+272"/>
         <source>Sorry, the install wizard has not been implemented yet. It will be available in a future version.</source>
         <translation>Promiňte, ale průvodce instalací ještě nebyl udělán. Bude dostupný v budoucí verzi.</translation>
     </message>
@@ -2626,7 +2620,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Předpony</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="-726"/>
+        <location filename="../q4wine-gui/mainwindow.cpp" line="-722"/>
         <source>Default</source>
         <translation>Výchozí</translation>
     </message>
@@ -3813,18 +3807,18 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Výchozí</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+206"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+233"/>
         <location line="+43"/>
         <location line="+13"/>
         <location line="+31"/>
         <location line="+14"/>
         <location line="+29"/>
-        <location line="+52"/>
+        <location line="+43"/>
         <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
         <translation>Není nastavena žádná nynější předpona. Nastavte předponu pomocí klíče &quot;-p &lt;prefix_name&gt;&quot;.</translation>
     </message>
     <message>
-        <location line="-177"/>
+        <location line="-168"/>
         <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
         <translation>Není nastavena žádná nynější sada s ikonami. Nastavte ikonu pomocí klíče &quot;-p &lt;prefix_name&gt;&quot;.</translation>
     </message>
@@ -3849,8 +3843,8 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Nice</translation>
     </message>
     <message>
-        <location line="-58"/>
-        <location line="+58"/>
+        <location line="-52"/>
+        <location line="+52"/>
         <location line="+17"/>
         <location line="+22"/>
         <location line="+10"/>
@@ -3863,18 +3857,18 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Cesta k předponě</translation>
     </message>
     <message>
-        <location line="-59"/>
+        <location line="-53"/>
         <source>Prefix list</source>
         <translation>Seznam předpon</translation>
     </message>
     <message>
-        <location line="-74"/>
+        <location line="-71"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>Neexistuje předpona s názvem &quot;%1&quot;. Spusťte &quot;%2-cli -pl&quot; pro seznam předpon.</translation>
     </message>
     <message>
-        <location line="+75"/>
-        <location line="+107"/>
+        <location line="+72"/>
+        <location line="+101"/>
         <source>Path</source>
         <translation>Cesta</translation>
     </message>
@@ -3936,17 +3930,17 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Odpojuje se přípojný bod &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+40"/>
         <source>File &quot;%1&quot; does not exist.</source>
         <translation>Spustitelný soubor %1 neexistuje.</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="-332"/>
         <source>sets the current directory name</source>
         <translation>Nastaví název nynějšího adresáře</translation>
     </message>
     <message>
-        <location line="-69"/>
+        <location line="+304"/>
         <source>Mounted media list for all prefixes</source>
         <translation>Seznam připojených médií pro všechny předpony</translation>
     </message>
@@ -3973,8 +3967,8 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Seznam připojených médií pro předponu &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="+138"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+9"/>
+        <location filename="../main.cpp" line="+115"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-292"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>Toto je svobodný program: Máte volnost při jeho úpravě a dalším šíření.</translation>
@@ -3995,7 +3989,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+17"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+60"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-12"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+73"/>
         <source>Report %1 bugs to %2</source>
         <translation>Hlásit %1 chyby %2</translation>
