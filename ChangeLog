@@ -16,6 +16,7 @@ Version 1.2
   - QT5: Winetricks application list fails to refresh and causes segfault on quit [BUG-53];
   - Make -DQT5 flag visible during cmake build and runtime;
   - CLI: -v/-h options must not trigger nor database check nor wizard startup;
+  - Remove useless and confusing appdb startup dialog;
 
 Version 1.1-r2
  Fixed:

@@ -545,10 +545,6 @@ void MainWindow::tbwGeneral_CurrentTabChange(int tabIndex){
     }
 #ifdef WITH_WINEAPPDB
     else if (tabIndex==4){
-        if (CoreLib->getSetting("DialogFlags", "appdbBrowser", false, 0).toInt()==0){
-            InfoDialog info(1);
-            info.exec();
-        }
         emit(stopProcTimer());
         emit(setAppDBFocus());
     }
