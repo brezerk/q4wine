@@ -712,12 +712,12 @@
     <message>
         <location line="-1681"/>
         <source>You can call it via Tools menu or via shortcut Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation>Můžete jej zavolat pomocí nabídky Nástroje nebo pomocí zkratky Ctrl+M</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Wine Version Manager</source>
-        <translation type="unfinished">Správce verzí Wine</translation>
+        <translation>Správce verzí Wine</translation>
     </message>
     <message>
         <location line="+1683"/>
@@ -1657,7 +1657,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location line="+24"/>
         <location line="+468"/>
         <source>Browse for application</source>
-        <translation type="unfinished"></translation>
+        <translation>Procházet programy</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2426,12 +2426,12 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="+3"/>
         <source>Prerun Exec string:</source>
-        <translation type="unfinished"></translation>
+        <translation>Předspouštěcí řetězec:</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Postrun Exec string:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pospouštěcí řetězec:</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2520,7 +2520,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="-206"/>
         <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 :. Qt GUI pro Wine v%2</translation>
     </message>
     <message>
         <location line="+210"/>
@@ -2715,12 +2715,12 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="+14"/>
         <source>Wine Version Manager</source>
-        <translation type="unfinished">Správce verzí Wine</translation>
+        <translation>Správce verzí Wine</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+M</translation>
     </message>
     <message>
         <source>Version Manager</source>
@@ -4228,7 +4228,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-199"/>
         <source>Remove prefix directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit adresář předpony</translation>
     </message>
 </context>
 <context>
@@ -4857,7 +4857,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location line="+253"/>
         <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking &quot;Help&quot; button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Vše je připraveno k dokončení nastavení %1. &lt;/p&gt;&lt;p&gt;Stiskněte, prosím, tlačítko &lt;b&gt;Dokončit&lt;/b&gt; k dokončení postupu nastavení. Nebo stiskněte tlačítko &lt;b&gt;Zpět&lt;/b&gt; pro návrat zpět.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Poznámka:&lt;/b&gt; Kdykoli můžete přistoupit k dokumentaci umístěné na internetu stisknutím klávesy &lt;b&gt;F1&lt;/b&gt; nebo klepnutím na tlačítko Nápověda.&lt;/p&gt;&lt;/p&gt;Pokud jste v %1 nový, podívejte se, prosím, do našeho internetového průvodce:&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4921,7 +4921,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location line="-102"/>
         <source>Open online guide</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít internetového průvodce</translation>
     </message>
     <message>
         <location line="+488"/>
