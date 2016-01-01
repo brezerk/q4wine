@@ -49,13 +49,6 @@ developers:
           jid: brezerk@jabber.com.ua
           location: Kiev, Ukraine
 
-        - name: Artem Vorotnikov
-          info: Qt 5 port, numerous fixes
-          mail: artem@vorotnikov.me
-          jid: artem@vorotnikov.me
-          web: https://github.com/skybon
-          location: Moscow, Russia 
-
         - name: Sergey Skrypnic
           nick: opium
           info: Website developer, hosting administration
@@ -137,13 +130,6 @@ translations:
           mail: danie.wessels@live.co.za
           web: https://sites.google.com/site/pcproblemdoctor/
           location: Centurion, Gauteng, South Africa
-
-        - name: Artem Vorotnikov
-          info: German translation
-          mail: artem@vorotnikov.me
-          jid: artem@vorotnikov.me
-          web: https://github.com/skybon
-          location: Moscow, Russia 
 
         - name: Carlos Ignacio Ruax
           info: Spanish translation

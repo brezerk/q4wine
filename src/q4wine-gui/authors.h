@@ -54,27 +54,6 @@
 	    " " \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Artem Vorotnikov" \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Qt 5 port, numerous fixes" \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:artem@vorotnikov.me' style='text-decoration: none; color:#5f9ea0;'>artem@vorotnikov.me</a>" \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:artem@vorotnikov.me' style='text-decoration: none; color:#5f9ea0;'>artem@vorotnikov.me</a>" \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='https://github.com/skybon' style='color:#5f9ea0;'>https://github.com/skybon</a>" \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Moscow, Russia" \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    " " \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Sergey Skrypnic (opium)" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
@@ -185,27 +164,6 @@
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Centurion, Gauteng, South Africa" \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    " " \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Artem Vorotnikov " \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "German translation" \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:artem@vorotnikov.me' style='text-decoration: none; color:#5f9ea0;'>artem@vorotnikov.me</a>" \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:artem@vorotnikov.me' style='text-decoration: none; color:#5f9ea0;'>artem@vorotnikov.me</a>" \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='https://github.com/skybon' style='color:#5f9ea0;'>https://github.com/skybon</a>" \
-	"</p>" \
-        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Moscow, Russia" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    " " \
