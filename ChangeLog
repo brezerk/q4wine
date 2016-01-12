@@ -1,4 +1,6 @@
 Version 1.2-r2
+ Added:
+  - Czech translation update (thx 2 Pavel Fric);
  Fixed:
   - QtSystemApplication library detection does not work well for Qt5 [BUG-64];
 
