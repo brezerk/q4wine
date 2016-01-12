@@ -1,3 +1,7 @@
+Version 1.2-r2
+ Fixed:
+  - QtSystemApplication library detection does not work well for Qt5 [BUG-64];
+
 Version 1.2-r1
  Added:
   - Deleting prefix does not remove prefix folder in ~/.local/share/wineprefixes [BUG-43];

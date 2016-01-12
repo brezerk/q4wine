@@ -295,19 +295,30 @@ SET ( Q4WINE_HEADERS_DIR
 
 IF (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
     MESSAGE(STATUS "Searching for QtSingleApplication package (WITH_SYSTEM_SINGLEAPP=ON) --\n")
+
+    IF (${QT5} MATCHES ON)
+        SET(QT_INCLUDE_DIR "/usr/include/qt5")
+    ELSE (${QT5} MATCHES ON)
+        SET(QT_INCLUDE_DIR "/usr/include/qt4")
+    ENDIF (${QT5} MATCHES ON)
+
     find_path(QTSINGLEAPPLIB_INCLUDE_DIR NAMES QtSingleApplication
 					 PATH_SUFFIXES QtSolutions
 					 PATHS
 					 /usr/include
 					 ${QT_INCLUDE_DIR}
 					 ${FRAMEWORK_INCLUDE_DIR})
-    if(QT5 MATCHES ON)
-    find_library(QTSINGLEAPPLIB Qt5Solutions_SingleApplication-head
-			        libQt5Solutions_SingleApplication-head)
-    else(QT5 MATCHES ON)
-    find_library(QTSINGLEAPPLIB QtSolutions_SingleApplication-2.6
-			        libQtSolutions_SingleApplication-2.6)
-    endif(QT5 MATCHES ON)
+    IF (${QT5} MATCHES ON)
+        find_library(QTSINGLEAPPLIB Qt5Solutions_SingleApplication-2.6
+                                    libQt5Solutions_SingleApplication-2.6)
+        IF (NOT QTSINGLEAPPLIB_INCLUDE_DIR OR NOT QTSINGLEAPPLIB)
+            find_library(QTSINGLEAPPLIB Qt5Solutions_SingleApplication-head
+                                    libQt5Solutions_SingleApplication-head)
+        ENDIF (NOT QTSINGLEAPPLIB_INCLUDE_DIR OR NOT QTSINGLEAPPLIB)
+    ELSE (${QT5} MATCHES ON)
+        find_library(QTSINGLEAPPLIB QtSolutions_SingleApplication-2.6
+                                    libQtSolutions_SingleApplication-2.6)
+    ENDIF (${QT5} MATCHES ON)
 
     IF (QTSINGLEAPPLIB_INCLUDE_DIR AND QTSINGLEAPPLIB )
         MESSAGE(STATUS "     library : ${QTSINGLEAPPLIB}")
