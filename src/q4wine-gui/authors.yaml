@@ -67,6 +67,10 @@ developers:
           mail: amdmi3@amdmi3.ru
           location: Moscow, Russia
 
+        - name: Xavier Corredor Llano
+          info: build-in nuvoX icon theme 
+          mail: xavier.corredor.llano@gmail.com
+
 pkg_maintainers:
         - name: Boris Pek
           nick: tehnick

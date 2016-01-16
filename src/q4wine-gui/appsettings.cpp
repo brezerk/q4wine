@@ -113,45 +113,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
         cbMinimizeToTrayApp->setCheckState(Qt::Unchecked);
     }
 
-        listThemesView->clear();
-
-    std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(listThemesView, 0));
-    iconItem->setText("Default [Aughtor: Xavier Corredor Llano (xavier.corredor.llano@gmail.com); License: GPL v.2.1]");
-    iconItem->setIcon(QIcon(":data/wine.png"));
-    iconItem->setToolTip("Default");
-    listThemesView->setSelectionMode(QAbstractItemView::SingleSelection);
-
-    QString themeDir="";
-
-    themeDir.append(QDir::homePath());
-    themeDir.append("/.config/");
-    themeDir.append(APP_SHORT_NAME);
-    themeDir.append("/theme/");
-
-
-    getThemes(settings.value("theme").toString(), themeDir);
-
     loadThemeIcons();
-
-    if (settings.value("theme").toString()=="Default"){
-        listThemesView->setCurrentItem(iconItem.release());
-    }
-
-    themeDir.clear();
-
-#ifdef _OS_DARWIN_
-    themeDir.append(QDir::currentPath());
-    themeDir.append("/");
-    themeDir.append(APP_SHORT_NAME);
-    themeDir.append(".app/Contents/Resources/theme");
-#else
-    themeDir.append(QString::fromUtf8(APP_PREF));
-    themeDir.append("/share/");
-    themeDir.append(APP_SHORT_NAME);
-    themeDir.append("/theme");
-#endif
-
-    getThemes(settings.value("theme").toString(), themeDir);
 
     getLangs();
 
@@ -473,49 +435,6 @@ void AppSettings::getLangs(){
     return;
 }
 
-void AppSettings::getThemes(QString selTheme, QString themeDir){
-    //Getting installed themes
-
-    QString aughtor="", license="";
-
-    QDir tmp(themeDir);
-    tmp.setFilter(QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
-    QFileInfoList list = tmp.entryInfoList();
-
-    // Getting converted icons from temp directory
-    for (int i = 0; i < list.size(); ++i) {
-        QFileInfo fileInfo = list.at(i);
-        std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(listThemesView, 0));
-
-        QFile file(QString("%1/%2/theme.info").arg(themeDir).arg(fileInfo.fileName()));
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-            aughtor = file.readLine();
-            aughtor.remove ( "\n" );
-            license = file.readLine();
-        }
-
-        if ((!aughtor.isEmpty()) and (!license.isEmpty())){
-            iconItem->setText(QString("%1 [%2; %3]").arg(fileInfo.fileName()).arg(aughtor).arg(license));
-        } else {
-            iconItem->setText(fileInfo.fileName());
-        }
-        iconItem->setToolTip(QString("%1/%2").arg(themeDir).arg(fileInfo.fileName()));
-        iconItem->setIcon(QIcon(QString("%1/%2/data/wine.png").arg(themeDir).arg(fileInfo.fileName())));
-
-        if (!selTheme.isNull()){
-            if (selTheme==fileInfo.filePath()){
-                //Setting selection to selected theme
-                listThemesView->setCurrentItem(iconItem.release());
-                //Loading pixmaps from theme
-                //loadThemeIcons(fileInfo.filePath());
-            }
-        }
-    }
-
-    return;
-}
-
-
 void AppSettings::loadThemeIcons(){
     lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
 
@@ -622,13 +541,6 @@ void AppSettings::cmdOk_Click(){
     } else {
         settings.setValue("showNotifications", 0);
     }
-
-    if (listThemesView->currentItem()){
-        settings.setValue("theme", listThemesView->currentItem()->toolTip());
-    } else {
-        settings.setValue("theme", "Default");
-    }
-
 
     if (comboLangs->currentText()==tr("System Default")){
         settings.setValue("lang", "");

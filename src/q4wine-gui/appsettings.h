@@ -53,7 +53,6 @@ class AppSettings : public QDialog, public Ui::AppSettings
 
     private:
         bool eventFilter (QObject *object, QEvent *event);
-        void getThemes(QString selTheme, QString themeDir);
         void getLangs();
         bool checkEntry(QString fileName, QString info, bool isFile = true);
         void loadThemeIcons();

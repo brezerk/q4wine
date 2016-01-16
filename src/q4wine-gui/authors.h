@@ -98,6 +98,18 @@
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    " " \
 	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "Xavier Corredor Llano " \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "build-in nuvoX icon theme" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:xavier.corredor.llano@gmail.com' style='text-decoration: none; color:#5f9ea0;'>xavier.corredor.llano@gmail.com</a>" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    " " \
+	"</p>" \
      "</body>" \
 "<html>"
 
