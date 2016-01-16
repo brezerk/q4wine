@@ -730,7 +730,7 @@
     <message>
         <location line="+358"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
-        <translation>在 Q4Wine 啟動時匯入 WIne 桌面檔案。</translation>
+        <translation>在 Q4Wine 啟動時匯入 Wine 桌面檔案。</translation>
     </message>
     <message>
         <location line="+192"/>
