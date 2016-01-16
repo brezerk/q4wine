@@ -128,18 +128,18 @@ void PrefixTreeWidget::dirAdd_Click(void){
                 std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem->parent()));
                 prefixItem->setText(0, dirname);
                 if (dirname=="import"){
-                    prefixItem->setIcon(0, CoreLib->loadIcon("data/folder-import.png"));
+                    prefixItem->setIcon(0, CoreLib->loadIcon("folder-cyan"));
                 } else {
-                    prefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
+                    prefixItem->setIcon(0, CoreLib->loadIcon("folder"));
                 }
                 prefixItem.release();
             } else {
                 std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem.get()));
                 prefixItem->setText(0, dirname);
                 if (dirname=="import"){
-                    prefixItem->setIcon(0, CoreLib->loadIcon("data/folder-import.png"));
+                    prefixItem->setIcon(0, CoreLib->loadIcon("folder-cyan"));
                 } else {
-                    prefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
+                    prefixItem->setIcon(0, CoreLib->loadIcon("folder"));
                 }
                 prefixItem.release();
             }
@@ -220,7 +220,7 @@ void PrefixTreeWidget::getPrefixes(){
             // Inserting root items into programs tree view
             std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(this));
             prefixItem->setText(0, QString("%1").arg(list.at(i)));
-            prefixItem->setIcon(0, CoreLib->loadIcon("data/wine.png"));
+            prefixItem->setIcon(0, CoreLib->loadIcon("wine"));
             if (CoreLib->getSetting("TreeWidget", "State", false, D_TREE_EXPAND).toInt()==D_TREE_EXPAND){
                 prefixItem->setExpanded (true);
             } else {
@@ -234,9 +234,9 @@ void PrefixTreeWidget::getPrefixes(){
                   std::auto_ptr<QTreeWidgetItem> subPrefixItem (new QTreeWidgetItem(prefixItem.get(), 0));
                   subPrefixItem->setText(0, QString("%1").arg(subresult.at(j)));
                   if (subresult.at(j)=="import"){
-                      subPrefixItem->setIcon(0, CoreLib->loadIcon("data/folder-import.png"));
+                      subPrefixItem->setIcon(0, CoreLib->loadIcon("folder-cyan"));
                   } else {
-                      subPrefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
+                      subPrefixItem->setIcon(0, CoreLib->loadIcon("folder"));
                   }
                   subPrefixItem.release();
             }
@@ -265,12 +265,12 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
             if (this->cdromDevices.count() > 0){
                 QString drive;
                 foreach (drive, this->cdromDevices){
-                    entry.reset (new QAction(CoreLib->loadIcon("/data/drive_menu.png"), drive, this));
+                    entry.reset (new QAction(CoreLib->loadIcon("drive-optical"), drive, this));
                     entry->setStatusTip(tr("Mount media drive."));
                     submenuMount->addAction(entry.release());
                 }
             } else {
-                entry.reset (new QAction(CoreLib->loadIcon("/data/drive_menu.png"), tr("[none]"), this));
+                entry.reset (new QAction(CoreLib->loadIcon("drive-optical"), tr("[none]"), this));
                 entry->setStatusTip(tr("No media drives detected."));
                 submenuMount->addAction(entry.release());
             }
@@ -281,7 +281,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
                   submenuMount->addSeparator();
 
             for (int i = 0; i < images.size(); ++i) {
-                  entry.reset (new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"), images.at(i).at(0), this));
+                  entry.reset (new QAction(CoreLib->loadIcon("media-optical"), images.at(i).at(0), this));
                   entry->setStatusTip(tr("Mount media image."));
                   submenuMount->addAction(entry.release());
             }
@@ -292,7 +292,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 
             submenuMount.reset (new QMenu(tr("Mount ..."), this));
 
-            entry.reset (new QAction(CoreLib->loadIcon("/data/folder.png"), tr("Browse..."), this));
+            entry.reset (new QAction(CoreLib->loadIcon("drive-optical"), tr("Browse..."), this));
             entry->setStatusTip(tr("Browse for media image."));
             submenuMount->addAction(entry.release());
 
@@ -302,7 +302,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
                   submenuMount->addSeparator();
 
             for (int i = 0; i < files.size(); ++i){
-                  entry.reset (new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"),files.at(i).split("/").last(), this));
+                  entry.reset (new QAction(CoreLib->loadIcon("media-optical"),files.at(i).split("/").last(), this));
                   entry->setStatusTip(files.at(i));
                   submenuMount->addAction(entry.release());
             }
@@ -321,7 +321,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
       // Default menu
             std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
 
-            std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("data/folder.png"), tr("Browse ..."), this));
+            std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("document-open"), tr("Browse ..."), this));
             entry->setStatusTip(tr("Browse for another image"));
 
             connect(menuRun.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
@@ -367,12 +367,12 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
             }
 
             std::auto_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
-            entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Open prefix directory"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("drive-harddisk"), tr("Open prefix directory"), this));
             entry->setStatusTip(tr("Open prefix directory in system file browser"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenPrefixDir_Click()));
             subMenu->addAction(entry.release());
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/cdrom_menu.png"), tr("Open mount point directory"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("drive-optical"), tr("Open mount point directory"), this));
             entry->setStatusTip(tr("Open mount point directory in system file browser"));
             if (this->prefixMontPoint.isEmpty())
                   entry->setEnabled(false);
@@ -383,12 +383,12 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
             menu->addMenu(subMenu.release());
 
             subMenu.reset(new QMenu(tr("Wine Browser"), this));
-            entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Open prefix directory"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("drive-harddisk"), tr("Open prefix directory"), this));
             entry->setStatusTip(tr("Open prefix directory in wine file browser"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenPrefixDir_Click()));
             subMenu->addAction(entry.release());
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/cdrom_menu.png"), tr("Open mount point directory"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("drive-optical"), tr("Open mount point directory"), this));
             entry->setStatusTip(tr("Open mount point directory in wine file browser"));
             if (this->prefixMontPoint.isEmpty())
                   entry->setEnabled(false);
@@ -399,12 +399,12 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 
                         subMenu.reset(new QMenu(tr("Console"), this));
 
-                        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in prefix directory"), this));
+                        entry.reset(new QAction(CoreLib->loadIcon("utilities-terminal"), tr("Open console in prefix directory"), this));
                         entry->setStatusTip(tr("Open system console in prefix directory"));
                         connect(entry.get(), SIGNAL(triggered()), this, SLOT(consoleToPrefixDir_Click()));
                         subMenu->addAction(entry.release());
 
-                        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in mount point directory"), this));
+                        entry.reset(new QAction(CoreLib->loadIcon("utilities-terminal"), tr("Open console in mount point directory"), this));
                         entry->setStatusTip(tr("Open system console in mount point directory"));
                         if (this->prefixMontPoint.isEmpty())
                                   entry->setEnabled(false);
@@ -416,24 +416,24 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 
             menu->addSeparator();
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/wizard.png"), tr("Create new prefix"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("document-new"), tr("Create new prefix"), this));
             entry->setStatusTip(tr("Create new prefix"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuCreatePrefix_Click()));
             menu->addAction(entry.release());
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/configure.png"), tr("Configure prefix settings"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("document-edit"), tr("Configure prefix settings"), this));
             entry->setStatusTip(tr("Edit prefix settings"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuConfigurePrefix_Click()));
             menu->addAction(entry.release());
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Configure fake drive settings"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("configure"), tr("Configure fake drive settings"), this));
             entry->setStatusTip(tr("Set up prefix fake drive and applications"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuSetupPrefix_Click()));
             menu->addAction(entry.release());
 
             menu->addSeparator();
 
-            entry.reset(new QAction(CoreLib->loadIcon("data/kill.png"), tr("Delete prefix"), this));
+            entry.reset(new QAction(CoreLib->loadIcon("edit-delete"), tr("Delete prefix"), this));
             entry->setStatusTip(tr("Delete prefix"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(menuDeletePrefix_Click()));
             menu->addAction(entry.release());

@@ -507,7 +507,7 @@ void MainWindow::createTrayIcon(){
     trayIcon.reset(new QSystemTrayIcon(this));
     trayIcon->setContextMenu(trayIconMenu.release());
 
-    QIcon icon = CoreLib->loadIcon("data/q4wine.png");
+    QIcon icon = CoreLib->loadIcon("q4wine");
 
     trayIcon->setIcon(icon);
     setWindowIcon(icon);

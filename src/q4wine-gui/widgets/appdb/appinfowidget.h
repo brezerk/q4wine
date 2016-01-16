@@ -33,6 +33,9 @@
 //Struct
 #include "appdbstructs.h"
 
+//q4wine lib
+#include "q4wine-lib.h"
+
 //Qt inicludes
 #ifdef DEBUG
 #include <QDebug>
@@ -64,6 +67,12 @@ signals:
      void itemTrigged(short int, QString, int, int, int);
 
 private:
+    //! This is need for libq4wine-core.so import.
+    QLibrary libq4wine;
+    typedef void *CoreLibPrototype (bool);
+    CoreLibPrototype *CoreLibClassPointer;
+    std::auto_ptr<corelib> CoreLib;
+
     /*! \brief sets general application Name
     *
     * \param  name         General application name.

@@ -40,6 +40,8 @@ AppInfoWidget::AppInfoWidget(QString name, QString desc, const int appid, QList<
 
     lblAppName->installEventFilter(this);
     lblAppName->setCursor(Qt::PointingHandCursor);
+    lblIcon->setPixmap(CoreLib->loadPixmap("application-x-ms-dos-executable").scaled(64, 64, Qt::KeepAspectRatio));
+
     return;
 }
 

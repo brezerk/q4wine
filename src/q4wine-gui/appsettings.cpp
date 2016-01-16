@@ -438,19 +438,19 @@ void AppSettings::getLangs(){
 void AppSettings::loadThemeIcons(){
     lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
 
-    cmdGetTarBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetMountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetUmountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetSudoBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetGuiSudoBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetNiceBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetReniceBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetShBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetTarBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetMountBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetUmountBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetSudoBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetGuiSudoBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetNiceBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetReniceBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetShBin->setIcon(CoreLib->loadIcon("document-open"));
 
-    cmdGetConsoleBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWrestoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetIcotoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetDefPrefixPath->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetConsoleBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWrestoolBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetIcotoolBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetDefPrefixPath->setIcon(CoreLib->loadIcon("document-open"));
     return;
 }
 

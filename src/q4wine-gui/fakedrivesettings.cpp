@@ -863,11 +863,11 @@ void FakeDriveSettings::loadThemeIcons(){
     connect(cmdWineDriveEdit, SIGNAL(clicked()), this, SLOT(cmdWineDriveEdit_Click()));
     connect(cmdWineDriveAdd, SIGNAL(clicked()), this, SLOT(cmdWineDriveAdd_Click()));
     connect(cmdWineDriveDel, SIGNAL(clicked()), this, SLOT(cmdWineDriveDel_Click()));
-    cmdGetWineDesktop->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineDesktopDoc->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineDesktopPic->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineDesktopMus->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineDesktopVid->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetWineDesktop->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWineDesktopDoc->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWineDesktopPic->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWineDesktopMus->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWineDesktopVid->setIcon(CoreLib->loadIcon("document-open"));
 
     return;
 }

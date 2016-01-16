@@ -200,13 +200,13 @@ QString PrefixSettings::getPrefixName(){
 void PrefixSettings::loadThemeIcons(){
     lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
 
-    cmdClnWineBin->setIcon(CoreLib->loadIcon("data/kill.png"));
-    cmdClnWineServerBin->setIcon(CoreLib->loadIcon("data/kill.png"));
-    cmdClnWineLoaderBin->setIcon(CoreLib->loadIcon("data/kill.png"));
-    cmdClnWineLibs->setIcon(CoreLib->loadIcon("data/kill.png"));
-    cmdGetMountPoint->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetPrefixPath->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdAddVersion->setIcon(CoreLib->loadIcon("data/add.png"));
+    cmdClnWineBin->setIcon(CoreLib->loadIcon("edit-delete"));
+    cmdClnWineServerBin->setIcon(CoreLib->loadIcon("edit-delete"));
+    cmdClnWineLoaderBin->setIcon(CoreLib->loadIcon("edit-delete"));
+    cmdClnWineLibs->setIcon(CoreLib->loadIcon("edit-delete"));
+    cmdGetMountPoint->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetPrefixPath->setIcon(CoreLib->loadIcon("document-open"));
+    cmdAddVersion->setIcon(CoreLib->loadIcon("document-new"));
 
     return;
 }

@@ -84,6 +84,7 @@ private:
 	std::auto_ptr<QAction> prefixImport;
 	std::auto_ptr<QAction> prefixExport;
     std::auto_ptr<QAction> prefixSetup;
+    std::auto_ptr<QAction> versionsSetup;
 
 	void updateTableModel(void);
 
@@ -105,6 +106,7 @@ private slots:
 	void prefixImport_Click(void);
 	void prefixSettings_Click(void);
     void prefixSetup_Click(void);
+    void versionsSetup_Click(void);
 
 signals:
 	void updateDatabaseConnections();

@@ -104,17 +104,17 @@ LoggingWidget::~LoggingWidget(){
 }
 
 void LoggingWidget::createActions(){
-    logClear.reset(new QAction(CoreLib->loadIcon("data/clear-list.png"), tr("Clear logs"), this));
+    logClear.reset(new QAction(CoreLib->loadIcon("edit-clear-list"), tr("Clear logs"), this));
     logClear->setStatusTip(tr("Clear logs database"));
     connect(logClear.get(), SIGNAL(triggered()), this, SLOT(logClear_Click()));
     logClear->setEnabled(false);
 
-    logDelete.reset(new QAction(CoreLib->loadIcon("data/kill.png"), tr("Delete log"), this));
+    logDelete.reset(new QAction(CoreLib->loadIcon("edit-delete"), tr("Delete log"), this));
     logDelete->setStatusTip(tr("Delete current log"));
     connect(logDelete.get(), SIGNAL(triggered()), this, SLOT(logDelete_Click()));
     logDelete->setEnabled(false);
 
-    logExport.reset(new QAction(CoreLib->loadIcon("data/up.png"), tr("Export log"), this));
+    logExport.reset(new QAction(CoreLib->loadIcon("document-export"), tr("Export log"), this));
     logExport->setStatusTip(tr("Export current log to file"));
     connect(logExport.get(), SIGNAL(triggered()), this, SLOT(logExport_Click()));
     logExport->setEnabled(false);
@@ -134,12 +134,12 @@ void LoggingWidget::createActions(){
 
     logStatus.reset(new QLabel(this));
     if (this->log_status == D_LOGGING_ENABLED){
-        logEnable->setIcon(CoreLib->loadIcon("data/ledgreen.png"));
+        logEnable->setIcon(CoreLib->loadIcon("dialog-ok"));
         logStatus->setText(QString("%1: %2").arg(tr("Status")).arg(tr("Logging enabled")));
         logEnable->setText(tr("Disable logging"));
         logEnable->setStatusTip(tr("Disable logging"));
     } else {
-        logEnable->setIcon(CoreLib->loadIcon("data/ledorange.png"));
+        logEnable->setIcon(CoreLib->loadIcon("dialog-cancel"));
         logStatus->setText(QString("%1: %2").arg(tr("Status")).arg(tr("Logging disabled")));
         logEnable->setText(tr("Enable logging"));
         logEnable->setStatusTip(tr("Enable logging"));
@@ -194,19 +194,19 @@ void LoggingWidget::treeWidget_itemClicked (QTreeWidgetItem * item, int colum){
 
                         if (rows.at(j) == "Exec string:"){
                             iconItem->setText(tr("Exec string:"));
-                            iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
+                            iconItem->setIcon(CoreLib->loadIcon("go-down"));
                         } else if (rows.at(j) == "Prerun Exec string:"){
                             iconItem->setText(tr("Prerun Exec string:"));
-                            iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
+                            iconItem->setIcon(CoreLib->loadIcon("go-down"));
                         } else if (rows.at(j) == "Postrun Exec string:"){
                             iconItem->setText(tr("Postrun Exec string:"));
-                            iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
+                            iconItem->setIcon(CoreLib->loadIcon("go-down"));
                         } else if (rows.at(j) == "Exit code:"){
                             iconItem->setText(tr("Exit code:"));
-                            iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
+                            iconItem->setIcon(CoreLib->loadIcon("go-down"));
                         } else if (rows.at(j) == "App STDOUT and STDERR output:"){
                             iconItem->setText(tr("App STDOUT and STDERR output:"));
-                            iconItem->setIcon(CoreLib->loadIcon("data/down_log.png"));
+                            iconItem->setIcon(CoreLib->loadIcon("go-down"));
                         } else {
                             iconItem->setText(rows.at(j));
                         }
@@ -366,13 +366,13 @@ void LoggingWidget::logEnable_Click(){
         logStatus->setText(QString("%1: %2").arg(tr("Status")).arg(tr("Logging disabled")));
         logEnable->setText(tr("Enable logging"));
         logEnable->setStatusTip(tr("Enable logging"));
-        logEnable->setIcon(CoreLib->loadIcon("data/ledorange.png"));
+        logEnable->setIcon(CoreLib->loadIcon("dialog-cancel"));
     } else {
         this->log_status = D_LOGGING_ENABLED;
         logStatus->setText(QString("%1: %2").arg(tr("Status")).arg(tr("Logging enabled")));
         logEnable->setText(tr("Disable logging"));
         logEnable->setStatusTip(tr("Disable logging"));
-        logEnable->setIcon(CoreLib->loadIcon("data/ledgreen.png"));
+        logEnable->setIcon(CoreLib->loadIcon("dialog-ok"));
     }
 
     QSettings settings(APP_SHORT_NAME, "default");
@@ -422,9 +422,9 @@ void LoggingWidget::getLogRecords(void){
                     dateItem->setText(0, QString("%1").arg(date.toString("dd.MM.yyyy hh:mm:ss")));
 
                     if (exit==0){
-                        dateItem->setIcon(0, CoreLib->loadIcon("data/ok.png"));
+                        dateItem->setIcon(0, CoreLib->loadIcon("dialog-ok"));
                     } else {
-                        dateItem->setIcon(0, CoreLib->loadIcon("data/fail.png"));
+                        dateItem->setIcon(0, CoreLib->loadIcon("dialog-cancel"));
                     }
 
                     dateItem.release();

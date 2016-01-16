@@ -128,8 +128,8 @@ void Run::prepare(QString prefix_name, QString wrkdir, QString override, QString
 void Run::loadThemeIcons(){
     lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
 
-    cmdGetProgramBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWorkDir->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetProgramBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWorkDir->setIcon(CoreLib->loadIcon("document-open"));
     return;
 }
 

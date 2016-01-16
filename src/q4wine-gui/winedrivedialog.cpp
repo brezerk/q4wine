@@ -52,7 +52,7 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QWidget * parent, Qt
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 	connect(cmdGetDrivePath, SIGNAL(clicked()), this, SLOT(cmdGetDrivePath_Click()));
 
-	cmdGetDrivePath->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetDrivePath->setIcon(CoreLib->loadIcon("document-open"));
 
 	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 
@@ -103,7 +103,7 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter,
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 	connect(cmdGetDrivePath, SIGNAL(clicked()), this, SLOT(cmdGetDrivePath_Click()));
 
-	cmdGetDrivePath->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetDrivePath->setIcon(CoreLib->loadIcon("document-open"));
 
 	cmdOk->setFocus(Qt::ActiveWindowFocusReason);
 }

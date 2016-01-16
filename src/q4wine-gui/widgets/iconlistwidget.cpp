@@ -91,7 +91,7 @@ void IconListWidget::showContents(QString filterString){
         //Seting icon. If no icon or icon file does not exist -- setting default
         QString icon_path = db_icon.getPixmapIcon(this->prefixName, this->dirName, iconsList.at(i));
         if (icon_path.isEmpty()){
-            iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
+            iconItem->setIcon(CoreLib->loadIcon("application-x-ms-dos-executable"));
         } else {
             if (QFile::exists (icon_path)){
                 iconItem->setIcon(QIcon(icon_path));
@@ -100,11 +100,11 @@ void IconListWidget::showContents(QString filterString){
                 if (QFile::exists (icon_path)){
                     iconItem->setIcon(QIcon(icon_path));
                 } else {
-                    QIcon ico = CoreLib->loadIcon(QString("data/%1.png").arg(iconsList.at(i)));
+                    QIcon ico = CoreLib->loadIcon(iconsList.at(i));
                     // Do not work due to: https://bugreports.qt-project.org/browse/QTBUG-999
                     //if (ico.isNull()){
                     if (ico.availableSizes().isEmpty())
-                        ico = CoreLib->loadIcon("data/exec_wine.png");
+                        ico = CoreLib->loadIcon("application-x-ms-dos-executable");
 
                     iconItem->setIcon(ico);
                 }
@@ -407,12 +407,12 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         if (this->cdromDevices.count() > 0){
             QString drive;
             foreach (drive, this->cdromDevices){
-                entry.reset (new QAction(CoreLib->loadIcon("/data/drive_menu.png"), drive, this));
+                entry.reset (new QAction(CoreLib->loadIcon("drive-optical"), drive, this));
                 entry->setStatusTip(tr("Mount media drive."));
                 submenuMount->addAction(entry.release());
             }
         } else {
-            entry.reset (new QAction(CoreLib->loadIcon("/data/drive_menu.png"), tr("[none]"), this));
+            entry.reset (new QAction(CoreLib->loadIcon("drive-optical"), tr("[none]"), this));
             entry->setStatusTip(tr("No media drives detected."));
             submenuMount->addAction(entry.release());
         }
@@ -423,7 +423,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
             submenuMount->addSeparator();
 
         for (int i = 0; i < images.size(); ++i) {
-            entry.reset (new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"), images.at(i).at(0), this));
+            entry.reset (new QAction(CoreLib->loadIcon("media-optical"), images.at(i).at(0), this));
             entry->setStatusTip(tr("Mount media image."));
             submenuMount->addAction(entry.release());
         }
@@ -434,7 +434,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
         submenuMount.reset (new QMenu(tr("Mount..."), this));
 
-        entry.reset (new QAction(CoreLib->loadIcon("/data/folder.png"), tr("Browse..."), this));
+        entry.reset (new QAction(CoreLib->loadIcon("document-open"), tr("Browse..."), this));
         entry->setStatusTip(tr("Browse for media image."));
         submenuMount->addAction(entry.release());
 
@@ -444,7 +444,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
             submenuMount->addSeparator();
 
         for (int i = 0; i < files.size(); ++i){
-            entry.reset (new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"), files.at(i).split("/").last(), this));
+            entry.reset (new QAction(CoreLib->loadIcon("media-optical"), files.at(i).split("/").last(), this));
             entry->setStatusTip(files.at(i));
             submenuMount->addAction(entry.release());
         }
@@ -507,17 +507,17 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
         std::auto_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
 
-        entry.reset(new QAction(CoreLib->loadIcon("data/fileopen.png"), tr("Open application directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("document-open"), tr("Open application directory"), this));
         entry->setStatusTip(tr("Open application directory in system file browser"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenIconDir_Click()));
         subMenu->addAction(entry.release());
 
-        entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Open prefix directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("drive-harddisk"), tr("Open prefix directory"), this));
         entry->setStatusTip(tr("Open prefix directory in system file browser"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenPrefixDir_Click()));
         subMenu->addAction(entry.release());
 
-        entry.reset(new QAction(CoreLib->loadIcon("data/cdrom_menu.png"), tr("Open mount point directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("media-optical"), tr("Open mount point directory"), this));
         entry->setStatusTip(tr("Open mount point directory in system file browser"));
         if (this->prefixMontPoint.isEmpty())
             entry->setEnabled(false);
@@ -529,17 +529,17 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
         subMenu.reset(new QMenu(tr("Wine Browser"), this));
 
-        entry.reset(new QAction(CoreLib->loadIcon("data/fileopen.png"), tr("Open application directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("document-open"), tr("Open application directory"), this));
         entry->setStatusTip(tr("Open application directory in wine file browser"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenIconDir_Click()));
         subMenu->addAction(entry.release());
 
-        entry.reset(new QAction(CoreLib->loadIcon("data/drive_menu.png"), tr("Open prefix directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("drive-harddisk"), tr("Open prefix directory"), this));
         entry->setStatusTip(tr("Open prefix directory in wine file browser"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenPrefixDir_Click()));
         subMenu->addAction(entry.release());
 
-        entry.reset(new QAction(CoreLib->loadIcon("data/cdrom_menu.png"), tr("Open mount point directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("media-optical"), tr("Open mount point directory"), this));
         entry->setStatusTip(tr("Open mount point directory in wine file browser"));
         if (this->prefixMontPoint.isEmpty())
             entry->setEnabled(false);
@@ -550,17 +550,17 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
         subMenu.reset(new QMenu(tr("Console"), this));
 
-        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in application directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("utilities-terminal"), tr("Open console in application directory"), this));
         entry->setStatusTip(tr("Open system console in application directory"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(consoleToIconDir_Click()));
         subMenu->addAction(entry.release());
 
-        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in prefix directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("utilities-terminal"), tr("Open console in prefix directory"), this));
         entry->setStatusTip(tr("Open system console in prefix directory"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(consoleToPrefixDir_Click()));
         subMenu->addAction(entry.release());
 
-        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in mount point directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("utilities-terminal"), tr("Open console in mount point directory"), this));
         entry->setStatusTip(tr("Open system console in mount point directory"));
         if (this->prefixMontPoint.isEmpty())
             entry->setEnabled(false);
@@ -596,7 +596,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
         subMenu->addSeparator();
 
-        entry.reset(new QAction(CoreLib->loadIcon("data/q4wine.png"), tr("q4wine-cli cmd"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("q4wine"), tr("q4wine-cli cmd"), this));
         entry->setStatusTip(tr("Copy q4wine-cli command for current application"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconCopyQ4WineCmd_Click()));
         subMenu->addAction(entry.release());
@@ -607,7 +607,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         // Default menu
         std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
 
-        std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("data/folder.png"), tr("Browse..."), this));
+        std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("document-open"), tr("Browse..."), this));
         entry->setStatusTip(tr("Browse for application"));
         menuRun->addAction(entry.release());
 
@@ -665,12 +665,12 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         menu->addMenu(menuMount.release());
 
         std::auto_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
-        entry.reset(new QAction(CoreLib->loadIcon("/data/drive_menu.png"), tr("Open prefix directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("drive-harddisk"), tr("Open prefix directory"), this));
         entry->setStatusTip(tr("Open prefix directory in system file browser"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenPrefixDir_Click()));
         subMenu->addAction(entry.release());
 
-        entry.reset(new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"), tr("Open mount point directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("drive-optical"), tr("Open mount point directory"), this));
         entry->setStatusTip(tr("Open mount point directory in system file browser"));
         if (this->prefixMontPoint.isEmpty())
             entry->setEnabled(false);
@@ -681,12 +681,12 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         menu->addMenu(subMenu.release());
 
         subMenu.reset(new QMenu(tr("Wine Browser"), this));
-        entry.reset(new QAction(CoreLib->loadIcon("/data/drive_menu.png"), tr("Open prefix directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("drive-harddisk"), tr("Open prefix directory"), this));
         entry->setStatusTip(tr("Open prefix directory in wine file browser"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(winefileOpenPrefixDir_Click()));
         subMenu->addAction(entry.release());
 
-        entry.reset(new QAction(CoreLib->loadIcon("/data/cdrom_menu.png"), tr("Open mount point directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("drive-optical"), tr("Open mount point directory"), this));
         entry->setStatusTip(tr("Open mount point directory in wine file browser"));
         if (this->prefixMontPoint.isEmpty())
             entry->setEnabled(false);
@@ -697,12 +697,12 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
         subMenu.reset(new QMenu(tr("Console"), this));
 
-        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in prefix directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("utilities-terminal"), tr("Open console in prefix directory"), this));
         entry->setStatusTip(tr("Open system console in prefix directory"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(consoleToPrefixDir_Click()));
         subMenu->addAction(entry.release());
 
-        entry.reset(new QAction(CoreLib->loadIcon("data/terminal.png"), tr("Open console in mount point directory"), this));
+        entry.reset(new QAction(CoreLib->loadIcon("utilities-terminal"), tr("Open console in mount point directory"), this));
         entry->setStatusTip(tr("Open system console in mount point directory"));
         if (this->prefixMontPoint.isEmpty())
             entry->setEnabled(false);

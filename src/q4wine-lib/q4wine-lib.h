@@ -138,7 +138,7 @@ public:
 
     void checkSettings(void);
 
-    QIcon loadIcon(QString iconName);
+    QIcon loadIcon(QString iconName, bool fromTheme = true);
     QPixmap loadPixmap(QString pixmapName);
 
     QString getTranslationLang();

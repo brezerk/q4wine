@@ -71,7 +71,7 @@ IconListToolbar::IconListToolbar(QWidget *parent) :
 }
 
 void IconListToolbar::createActions(){
-    searchClear.reset(new QAction(CoreLib->loadIcon("data/clear-ltr.png"), tr("Clear search field"), this));
+    searchClear.reset(new QAction(CoreLib->loadIcon("edit-clear"), tr("Clear search field"), this));
     searchClear->setStatusTip(tr("Clear search field"));
     connect(searchClear.get(), SIGNAL(triggered()), this, SLOT(searchClear_Click()));
 
@@ -79,20 +79,20 @@ void IconListToolbar::createActions(){
     connect(viewMode.get(), SIGNAL(triggered()), this, SLOT(viewMode_Click()));
 
     if (this->view_mode == D_VIEW_MODE_LIST) {
-        viewMode->setIcon(CoreLib->loadIcon("data/view-list-icons.png"));
+        viewMode->setIcon(CoreLib->loadIcon("view-list-icons"));
         viewMode->setText(tr("Icons view mode"));
         viewMode->setStatusTip(tr("Icons view mode"));
     } else {
-        viewMode->setIcon(CoreLib->loadIcon("data/view-list-details.png"));
+        viewMode->setIcon(CoreLib->loadIcon("view-list-details"));
         viewMode->setText(tr("Details view mode"));
         viewMode->setStatusTip(tr("Details view mode"));
     }
 
-    zoomIn.reset(new QAction(CoreLib->loadIcon("data/zoom-in.png"), tr("Zoom In"), this));
+    zoomIn.reset(new QAction(CoreLib->loadIcon("zoom-in"), tr("Zoom In"), this));
     zoomIn->setStatusTip(tr("Zoom In"));
     connect(zoomIn.get(), SIGNAL(triggered()), this, SLOT(zoomIn_Click()));
 
-    zoomOut.reset(new QAction(CoreLib->loadIcon("data/zoom-out.png"), tr("Zoom Out"), this));
+    zoomOut.reset(new QAction(CoreLib->loadIcon("zoom-out"), tr("Zoom Out"), this));
     zoomOut->setStatusTip(tr("Zoom Out"));
     connect(zoomOut.get(), SIGNAL(triggered()), this, SLOT(zoomOut_Click()));
 
@@ -102,11 +102,11 @@ void IconListToolbar::createActions(){
     if (this->sort_order == D_SORT_TYPE_BY_NAME_ASC){
         sortAlpha->setStatusTip(tr("Alphabetic sort descending"));
         sortAlpha->setText(tr("Alphabetic sort descending"));
-        sortAlpha->setIcon(CoreLib->loadIcon("data/sort-desc.png"));
+        sortAlpha->setIcon(CoreLib->loadIcon("view-sort-descending"));
     } else {
         sortAlpha->setStatusTip(tr("Alphabetic sort ascending"));
         sortAlpha->setText(tr("Alphabetic sort ascending"));
-        sortAlpha->setIcon(CoreLib->loadIcon("data/sort-asc.png"));
+        sortAlpha->setIcon(CoreLib->loadIcon("view-sort-ascending"));
     }
 
     sortCreation.reset(new QAction(this));
@@ -115,11 +115,11 @@ void IconListToolbar::createActions(){
     if (this->sort_order == D_SORT_TYPE_BY_DATE_ASC){
         sortCreation->setStatusTip(tr("Sort descending by create order"));
         sortCreation->setText(tr("Sort descending by create order"));
-        sortCreation->setIcon(CoreLib->loadIcon("data/sort-create-desc.png"));
+        sortCreation->setIcon(CoreLib->loadIcon("view-sort-descending"));
     } else {
         sortCreation->setStatusTip(tr("Sort ascending by create order"));
         sortCreation->setText(tr("Sort ascending by create order"));
-        sortCreation->setIcon(CoreLib->loadIcon("data/sort-create-asc.png"));
+        sortCreation->setIcon(CoreLib->loadIcon("view-sort-ascending"));
     }
 
     return;
@@ -132,13 +132,13 @@ void IconListToolbar::searchClear_Click(){
 void IconListToolbar::viewMode_Click(){
     if (this->view_mode == D_VIEW_MODE_ICON) {
         this->view_mode = D_VIEW_MODE_LIST;
-        viewMode->setIcon(CoreLib->loadIcon("data/view-list-icons.png"));
+        viewMode->setIcon(CoreLib->loadIcon("view-list-icons"));
         viewMode->setText(tr("Icons view mode"));
         viewMode->setStatusTip(tr("Icons view mode"));
         emit(changeView(0));
     } else {
         this->view_mode = D_VIEW_MODE_ICON;
-        viewMode->setIcon(CoreLib->loadIcon("data/view-list-details.png"));
+        viewMode->setIcon(CoreLib->loadIcon("view-list-details"));
         viewMode->setText(tr("Details view mode"));
         viewMode->setStatusTip(tr("Details view mode"));
         emit(changeView(1));
@@ -159,16 +159,16 @@ void IconListToolbar::sortAlpha_Click(){
         this->sort_order = D_SORT_TYPE_BY_NAME_DSC;
         sortAlpha->setStatusTip(tr("Alphabetic sort ascending"));
         sortAlpha->setText(tr("Alphabetic sort ascending"));
-        sortAlpha->setIcon(CoreLib->loadIcon("data/sort-asc.png"));
+        sortAlpha->setIcon(CoreLib->loadIcon("view-sort-ascending"));
     } else {
         this->sort_order = D_SORT_TYPE_BY_NAME_ASC;
         sortAlpha->setStatusTip(tr("Alphabetic sort descending"));
         sortAlpha->setText(tr("Alphabetic sort descending"));
-        sortAlpha->setIcon(CoreLib->loadIcon("data/sort-desc.png"));
+        sortAlpha->setIcon(CoreLib->loadIcon("view-sort-descending"));
     }
     sortCreation->setStatusTip(tr("Sort ascending by create order"));
     sortCreation->setText(tr("Sort ascending by create order"));
-    sortCreation->setIcon(CoreLib->loadIcon("data/sort-create-asc.png"));
+    sortCreation->setIcon(CoreLib->loadIcon("view-sort-ascending"));
 }
 
 void IconListToolbar::sortCreation_Click(){
@@ -177,14 +177,14 @@ void IconListToolbar::sortCreation_Click(){
         this->sort_order = D_SORT_TYPE_BY_DATE_DSC;
         sortCreation->setStatusTip(tr("Sort ascending by create order"));
         sortCreation->setText(tr("Sort ascending by create order"));
-        sortCreation->setIcon(CoreLib->loadIcon("data/sort-create-asc.png"));
+        sortCreation->setIcon(CoreLib->loadIcon("view-sort-ascending"));
     } else {
         this->sort_order = D_SORT_TYPE_BY_DATE_ASC;
         sortCreation->setStatusTip(tr("Sort descending by create order"));
         sortCreation->setText(tr("Sort descending by create order"));
-        sortCreation->setIcon(CoreLib->loadIcon("data/sort-create-desc.png"));
+        sortCreation->setIcon(CoreLib->loadIcon("view-sort-descending"));
     }
     sortAlpha->setStatusTip(tr("Alphabetic sort ascending"));
     sortAlpha->setText(tr("Alphabetic sort ascending"));
-    sortAlpha->setIcon(CoreLib->loadIcon("data/sort-asc.png"));
+    sortAlpha->setIcon(CoreLib->loadIcon("view-sort-ascending"));
 }

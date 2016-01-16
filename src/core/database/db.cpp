@@ -236,5 +236,15 @@ bool DataBase::fixup(){
             return false;
         }
     }
+    if (query.exec("SELECT icon FROM providers WHERE icon='wine.png'")){
+        if (!query.exec("UPDATE providers SET icon='regedit' WHERE icon='regedit.png'")){
+            qDebug()<<"[EE] Cannot update providers table";
+            return false;
+        }
+        if (!query.exec("UPDATE providers SET icon='wine' WHERE icon='wine.png'")){
+            qDebug()<<"[EE] Cannot update providers table";
+            return false;
+        }
+    }
     return true;
 }

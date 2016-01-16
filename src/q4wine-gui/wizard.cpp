@@ -25,22 +25,22 @@ void Wizard::loadThemeIcons(int Scene){
         // First startup
         lblPicture->setPixmap(CoreLib->loadPixmap("data/firstc.png"));
 
-        cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetWineDllPath->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetWineDllPath64->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetTarBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetMountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetUmountBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetSudoBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetGuiSudoBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetNiceBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetReniceBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetShBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetConsoleBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetWrestoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-        cmdGetIcotoolBin->setIcon(CoreLib->loadIcon("data/folder.png"));
+        cmdGetWineBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetWineServerBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetWineDllPath->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetWineDllPath64->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetTarBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetMountBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetUmountBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetSudoBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetGuiSudoBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetNiceBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetReniceBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetShBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetConsoleBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetWrestoolBin->setIcon(CoreLib->loadIcon("document-open"));
+        cmdGetIcotoolBin->setIcon(CoreLib->loadIcon("document-open"));
         break;
     }
     return;

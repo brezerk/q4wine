@@ -141,20 +141,20 @@ void ImageManager::loadThemeIcons(){
 	std::auto_ptr<QToolBar> managerToolBar (new QToolBar(tlbManager));
 
 
-	actionAdd.reset(managerToolBar->addAction (CoreLib->loadIcon("data/add.png"), tr("Add image")));
+    actionAdd.reset(managerToolBar->addAction (CoreLib->loadIcon("document-new"), tr("Add image")));
 	connect(actionAdd.get(), SIGNAL(triggered()), this, SLOT(actionAddImage()));
 
-	actionRename.reset(managerToolBar->addAction (CoreLib->loadIcon("data/configure.png"), tr("Rename image")));
+    actionRename.reset(managerToolBar->addAction (CoreLib->loadIcon("document-properties"), tr("Rename image")));
 	connect(actionRename.get(), SIGNAL(triggered()), this, SLOT(actionRenameImage()));
 
 	managerToolBar->addSeparator ();
 
-	actionRemove.reset(managerToolBar->addAction (CoreLib->loadIcon("data/remove.png"), tr("Remove image")));
+    actionRemove.reset(managerToolBar->addAction (CoreLib->loadIcon("edit-delete"), tr("Remove image")));
 	connect(actionRemove.get(), SIGNAL(triggered()), this, SLOT(actionRemoveImage()));
 
 	managerToolBar->addSeparator ();
 
-	actionRefresh.reset(managerToolBar->addAction (CoreLib->loadIcon("data/reload.png"), tr("Refresh image list")));
+    actionRefresh.reset(managerToolBar->addAction (CoreLib->loadIcon("view-refresh"), tr("Refresh image list")));
 	connect(actionRefresh.get(), SIGNAL(triggered()), this, SLOT(actionRefreshImageList()));
 
 	std::auto_ptr<QBoxLayout> layout (new QBoxLayout(QBoxLayout::TopToBottom));

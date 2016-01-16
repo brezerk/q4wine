@@ -65,12 +65,12 @@ PrefixTreeToolbar::~PrefixTreeToolbar(){
 void PrefixTreeToolbar::createActions(){
     treeState.reset(new QAction(this));
     if (this->tree_state == D_TREE_COLLAPSE){
-        treeState->setIcon(CoreLib->loadIcon("data/expand.png"));
+        treeState->setIcon(CoreLib->loadIcon("view-list-tree"));
         treeState->setText(tr("Expand prefix tree"));
         treeState->setStatusTip(tr("Expand prefix tree"));
         emit(collapseTree());
     } else {
-        treeState->setIcon(CoreLib->loadIcon("data/collapse.png"));
+        treeState->setIcon(CoreLib->loadIcon("view-list-details"));
         treeState->setText(tr("Collapse prefix tree"));
         treeState->setStatusTip(tr("Collapse prefix tree"));
         emit(expandTree());
@@ -78,11 +78,11 @@ void PrefixTreeToolbar::createActions(){
 
     connect(treeState.get(), SIGNAL(triggered()), this, SLOT(treeState_Click()));
 
-    prefixImport.reset(new QAction(CoreLib->loadIcon("data/import.png"), tr("Import prefixes"), this));
+    prefixImport.reset(new QAction(CoreLib->loadIcon("document-import"), tr("Import prefixes"), this));
     prefixImport->setStatusTip(tr("Import prefixes from ~/.local/share/wineprefixes/"));
     connect(prefixImport.get(), SIGNAL(triggered()), this, SLOT(prefixImport_Click()));
 
-    prefixExport.reset(new QAction(CoreLib->loadIcon("data/export.png"), tr("Export prefixes"), this));
+    prefixExport.reset(new QAction(CoreLib->loadIcon("document-export"), tr("Export prefixes"), this));
     prefixExport->setStatusTip(tr("Export prefixes to ~/.local/share/wineprefixes/"));
     connect(prefixExport.get(), SIGNAL(triggered()), this, SLOT(prefixExport_Click()));
 
@@ -93,13 +93,13 @@ void PrefixTreeToolbar::treeState_Click(){
     if (this->tree_state == D_TREE_EXPAND){
         emit(collapseTree());
         this->tree_state = D_TREE_COLLAPSE;
-        treeState->setIcon(CoreLib->loadIcon("data/expand.png"));
+        treeState->setIcon(CoreLib->loadIcon("view-list-tree"));
         treeState->setText(tr("Expand prefix tree"));
         treeState->setStatusTip(tr("Expand prefix tree"));
     } else {
         emit(expandTree());
         this->tree_state = D_TREE_EXPAND;
-        treeState->setIcon(CoreLib->loadIcon("data/collapse.png"));
+        treeState->setIcon(CoreLib->loadIcon("view-list-details"));
         treeState->setText(tr("Collapse prefix tree"));
         treeState->setStatusTip(tr("Collapse prefix tree"));
     }

@@ -142,11 +142,11 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 
 void IconSettings::loadThemeIcons(){
     lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
-    cmdGetProgram->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWorkDir->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetIcon->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
-    cmdGetPreRun->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetPostRun->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetProgram->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWorkDir->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetIcon->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetPreRun->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetPostRun->setIcon(CoreLib->loadIcon("document-open"));
     return;
 }
 

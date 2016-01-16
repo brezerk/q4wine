@@ -287,29 +287,29 @@ void AppDBWidget::showXmlError(int id){
 }
 
 void AppDBWidget::createActions(void){
-    appdbOpen.reset(new QAction(CoreLib->loadIcon("data/wineappdb.png"), tr("Open AppDB"), this));
+    appdbOpen.reset(new QAction(CoreLib->loadIcon("wine"), tr("Open AppDB"), this));
     appdbOpen->setStatusTip(tr("Open Wine AppDB web site"));
     connect(appdbOpen.get(), SIGNAL(triggered()), this, SLOT(appdbOpen_Click()));
 
-    appdbAppPage.reset(new QAction(CoreLib->loadIcon("data/wineappdb-app.png"), tr("Open App page"), this));
+    appdbAppPage.reset(new QAction(CoreLib->loadIcon("document-preview"), tr("Open App page"), this));
     appdbAppPage->setStatusTip(tr("Open current application page at Wine AppDB web site"));
     appdbAppPage->setEnabled(false);
     connect(appdbAppPage.get(), SIGNAL(triggered()), this, SLOT(appdbAppPage_Click()));
 
-    appdbClear.reset(new QAction(CoreLib->loadIcon("data/clear-list.png"), tr("Clear results"),this));
+    appdbClear.reset(new QAction(CoreLib->loadIcon("edit-clear-list"), tr("Clear results"),this));
     appdbClear->setStatusTip(tr("Clear results"));
     appdbClear->setEnabled(false);
     connect(appdbClear.get(), SIGNAL(triggered()), this, SLOT(appdbClear_Click()));
 
-    appdbClearSearch.reset(new QAction(CoreLib->loadIcon("data/clear-ltr.png"), tr("Clear search field"),this));
+    appdbClearSearch.reset(new QAction(CoreLib->loadIcon("edit-clear"), tr("Clear search field"),this));
     appdbClearSearch->setStatusTip(tr("Clear search field"));
     connect(appdbClearSearch.get(), SIGNAL(triggered()), this, SLOT(appdbClearSearch_Click()));
 
-    appdbSearch.reset(new QAction(CoreLib->loadIcon("data/find.png"), tr("Search in AppDB"),this));
+    appdbSearch.reset(new QAction(CoreLib->loadIcon("edit-find"), tr("Search in AppDB"),this));
     appdbSearch->setStatusTip(tr("Search in Wine AppDB"));
     connect(appdbSearch.get(), SIGNAL(triggered()), this, SLOT(appdbSearch_Click()));
 
-    appdbCat.reset(new QAction(CoreLib->loadIcon("data/list.png"), tr("AppDB categories list"),this));
+    appdbCat.reset(new QAction(CoreLib->loadIcon("view-catalog"), tr("AppDB categories list"),this));
     appdbCat->setStatusTip(tr("View Wine AppDB categories list"));
     connect(appdbCat.get(), SIGNAL(triggered()), this, SLOT(appdbCat_Click()));
 

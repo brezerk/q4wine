@@ -50,6 +50,7 @@ PrefixControlWidget::PrefixControlWidget(QWidget *parent) :
     toolBar->addAction(prefixSettings.get());
     toolBar->addSeparator ();
     toolBar->addAction(prefixSetup.get());
+    toolBar->addAction(versionsSetup.get());
 
     prefixTable.reset(new QTableView(this));
     connect(prefixTable.get(), SIGNAL(customContextMenuRequested(const QPoint &)), this, SLOT(customContextMenuRequested(const QPoint &)));
@@ -99,34 +100,40 @@ void PrefixControlWidget::setDefaultFocus(QString prefixName){
 }
 
 void PrefixControlWidget::createActions(){
-    prefixAdd.reset(new QAction(CoreLib->loadIcon("data/wizard.png"), tr("Create new"), this));
+    prefixAdd.reset(new QAction(CoreLib->loadIcon("document-new"), tr("Create new"), this));
     prefixAdd->setStatusTip(tr("Create new prefix"));
     connect(prefixAdd.get(), SIGNAL(triggered()), this, SLOT(prefixAdd_Click()));
 
-    prefixImport.reset(new QAction(CoreLib->loadIcon("data/down.png"), tr("Import prefix"), this));
+    prefixImport.reset(new QAction(CoreLib->loadIcon("document-import"), tr("Import prefix"), this));
     prefixImport->setStatusTip(tr("Import prefix"));
     connect(prefixImport.get(), SIGNAL(triggered()), this, SLOT(prefixImport_Click()));
     prefixImport->setEnabled(false);
 
-    prefixExport.reset(new QAction(CoreLib->loadIcon("data/up.png"), tr("Export prefix"), this));
+    prefixExport.reset(new QAction(CoreLib->loadIcon("document-export"), tr("Export prefix"), this));
     prefixExport->setStatusTip(tr("Export prefix"));
     connect(prefixExport.get(), SIGNAL(triggered()), this, SLOT(prefixExport_Click()));
     prefixExport->setEnabled(false);
 
-    prefixDelete.reset(new QAction(CoreLib->loadIcon("data/kill.png"), tr("Delete prefix"), this));
+    prefixDelete.reset(new QAction(CoreLib->loadIcon("edit-delete"), tr("Delete prefix"), this));
     prefixDelete->setStatusTip(tr("Delete prefix"));
     connect(prefixDelete.get(), SIGNAL(triggered()), this, SLOT(prefixDelete_Click()));
     prefixDelete->setEnabled(false);
 
-    prefixSettings.reset(new QAction(CoreLib->loadIcon("data/configure.png"), tr("Edit prefix settings"), this));
+    prefixSettings.reset(new QAction(CoreLib->loadIcon("document-edit"), tr("Edit prefix settings"), this));
     prefixSettings->setStatusTip(tr("Edit prefix settings"));
     connect(prefixSettings.get(), SIGNAL(triggered()), this, SLOT(prefixSettings_Click()));
     prefixSettings->setEnabled(false);
 
-    prefixSetup.reset(new QAction(CoreLib->loadIcon("data/eject.png"), tr("Set up prefix fake drive"), this));
+    prefixSetup.reset(new QAction(CoreLib->loadIcon("document-properties"), tr("Set up prefix fake drive"), this));
     prefixSetup->setStatusTip(tr("Set up prefix fake drive and applications"));
     connect(prefixSetup.get(), SIGNAL(triggered()), this, SLOT(prefixSetup_Click()));
     prefixSetup->setEnabled(false);
+
+    versionsSetup.reset(new QAction(CoreLib->loadIcon("configure"), tr("Configure wine versions"), this));
+    versionsSetup->setStatusTip(tr("Configure wine versions"));
+    connect(versionsSetup.get(), SIGNAL(triggered()), this, SLOT(versionsSetup_Click()));
+    versionsSetup->setEnabled(true);
+
 
     menu.reset(new QMenu(this));
     menu->addAction(prefixAdd.get());
@@ -139,6 +146,7 @@ void PrefixControlWidget::createActions(){
     menu->addAction(prefixSettings.get());
     menu->addSeparator();
     menu->addAction(prefixSetup.get());
+    menu->addAction(versionsSetup.get());
 
     return;
 }
@@ -435,4 +443,10 @@ void PrefixControlWidget::prefixExport_Click(){
 void PrefixControlWidget::prefixSetup_Click(){
     emit (setTabIndex (2));
     return;
+}
+
+void PrefixControlWidget::versionsSetup_Click(){
+    VersionManager* vers = new VersionManager();
+    vers->exec();
+    delete(vers);
 }

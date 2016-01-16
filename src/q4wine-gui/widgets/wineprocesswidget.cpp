@@ -98,17 +98,17 @@ void WineProcessWidget::startTimer(void){
 }
 
 void WineProcessWidget::createActions(){
-    procKillSelected.reset(new QAction(CoreLib->loadIcon("data/kill.png"), tr("Stop current"), this));
+    procKillSelected.reset(new QAction(CoreLib->loadIcon("process-stop"), tr("Stop current"), this));
     procKillSelected->setStatusTip(tr("Send TERM signal to selected process"));
     procKillSelected->setEnabled(false);
     connect(procKillSelected.get(), SIGNAL(triggered()), this, SLOT(procKillSelected_Click()));
 
-    procKillWine.reset(new QAction(CoreLib->loadIcon("data/stop.png"), tr("Stop wine"), this));
+    procKillWine.reset(new QAction(CoreLib->loadIcon("system-shutdown"), tr("Stop wine"), this));
     procKillWine->setStatusTip(tr("Send TERM signal to main wine process"));
     procKillWine->setEnabled(false);
     connect(procKillWine.get(), SIGNAL(triggered()), this, SLOT(procKillWine_Click()));
 
-    procRefresh.reset(new QAction(CoreLib->loadIcon("data/reload.png"), tr("Refresh List"),this));
+    procRefresh.reset(new QAction(CoreLib->loadIcon("view-refresh"), tr("Refresh List"),this));
     procRefresh->setStatusTip(tr("Refresh process list"));
     connect(procRefresh.get(), SIGNAL(triggered()), this, SLOT(getWineProcesssInfo()));
 

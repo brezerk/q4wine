@@ -345,25 +345,25 @@ bool VersionManager::fileExists(QString path, bool check_dir){
 
 void VersionManager::loadThemeIcons(){
     lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
-    cmdGetWineBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineServerBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineLibs32->setIcon(CoreLib->loadIcon("data/folder.png"));
-    cmdGetWineLibs64->setIcon(CoreLib->loadIcon("data/folder.png"));
+    cmdGetWineBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWineServerBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWineLibs32->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWineLibs64->setIcon(CoreLib->loadIcon("document-open"));
     return;
 }
 
 void VersionManager::createActions(){
-    addVersion.reset(new QAction(CoreLib->loadIcon("data/add.png"), tr("Add version"), this));
+    addVersion.reset(new QAction(CoreLib->loadIcon("document-new"), tr("Add version"), this));
     addVersion->setStatusTip(tr("Add version"));
     connect(addVersion.get(), SIGNAL(triggered()), this, SLOT(addVersion_Click()));
-    delVersion.reset(new QAction(CoreLib->loadIcon("data/remove.png"), tr("Remove version"), this));
+    delVersion.reset(new QAction(CoreLib->loadIcon("edit-delete"), tr("Remove version"), this));
     delVersion->setStatusTip(tr("Remove version"));
     connect(delVersion.get(), SIGNAL(triggered()), this, SLOT(delVersion_Click()));
-    saveVersion.reset(new QAction(CoreLib->loadIcon("data/save.png"), tr("Save changes"), this));
+    saveVersion.reset(new QAction(CoreLib->loadIcon("document-save"), tr("Save changes"), this));
     saveVersion->setStatusTip(tr("Save changes"));
     connect(saveVersion.get(), SIGNAL(triggered()), this, SLOT(saveVersion_Click()));
-    searchClear.reset(new QAction(CoreLib->loadIcon("data/clear-ltr.png"), tr("Clear search field"), this));
+    searchClear.reset(new QAction(CoreLib->loadIcon("edit-clear"), tr("Clear search field"), this));
     searchClear->setStatusTip(tr("Clear search field"));
     connect(searchClear.get(), SIGNAL(triggered()), this, SLOT(searchClear_Click()));
 }
@@ -379,7 +379,7 @@ void VersionManager::getVersions(){
         iconItem.reset(new QListWidgetItem(listPrefix, 0));
         iconItem->setText(list.at(i).name_);
         iconItem->setToolTip(list.at(i).name_);
-        iconItem->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
+        iconItem->setIcon(CoreLib->loadIcon("application-x-executable"));
         iconItem.release();
     }
 

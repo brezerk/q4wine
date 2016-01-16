@@ -65,18 +65,18 @@ QString DriveListWidgetItem::getType(){
 QString DriveListWidgetItem::getDrivePic(QString driveType){
 	QString pic;
 	if (driveType.isEmpty()){
-		pic = "data/drive_menu.png";
+        pic = "drive-harddisk";
 	} else {
 		if (driveType=="hd"){
-			pic = "data/drive_menu.png";
+            pic = "drive-harddisk";
 		} else if (driveType=="network"){
-			pic = "data/drive_menu.png";
+            pic = "folder-network";
 		} else if (driveType=="floppy"){
-			pic = "data/drive_menu.png";
+            pic = "media-floppy";
 		} else if (driveType=="cdrom"){
-			pic = "data/cdrom_menu.png";
+            pic = "media-optical";
 		} else {
-			pic = "data/drive_menu.png";
+            pic = "drive-harddisk";
 		}
 	}
 	return pic;

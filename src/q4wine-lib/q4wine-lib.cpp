@@ -373,21 +373,15 @@ void corelib::checkSettings(){
     return;
 }
 
-QIcon corelib::loadIcon(QString iconName){
+QIcon corelib::loadIcon(QString iconName, bool fromTheme){
     // Function tryes to load icon image from theme dir
     // If it fails -> load default from rsource file
 
-    QIcon icon;
-    QString themeName = this->getSetting("app", "theme", false, "Default").toString();
+    qDebug() << "try to load: " << iconName;
 
-    if ((!themeName.isEmpty()) and (themeName!="Default")){
-        icon.addFile(QString("%1/%2").arg(themeName).arg(iconName));
-        if (icon.isNull()){
-            icon.addFile(QString(":/%1").arg(iconName));
-        }
-    } else {
-        icon.addFile(QString(":/%1").arg(iconName));
-    }
+    QIcon icon;
+    icon.addFile(QString(":%1").arg(iconName));
+
 
     return icon;
 }
@@ -397,16 +391,7 @@ QPixmap corelib::loadPixmap(QString iconName){
     // If it fails -> load default from rsource file
 
     QPixmap pixmap;
-    QString themeName = this->getSetting("app", "theme", false, "Default").toString();
-
-    if ((!themeName.isEmpty()) and (themeName!="Default")){
-        pixmap.load(QString("%1/%2").arg(themeName).arg(iconName));
-        if (pixmap.isNull()){
-            pixmap.load(QString(":/%1").arg(iconName));
-        }
-    } else {
-        pixmap.load(QString(":/%1").arg(iconName));
-    }
+    pixmap.load(QString(":/%1").arg(iconName));
 
     return pixmap;
 }

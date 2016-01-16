@@ -1,78 +1,61 @@
 <RCC>
     <qresource prefix="/">
         <file>data/blockdevice.png</file>
-        <file>data/tools-report-bug.png</file>
-        <file>data/bookmark-new.png</file>
-        <file>data/help.png</file>
-        <file>data/drive_menu.png</file>
         <file>data/q4wine-128x128.png</file>
-        <file>data/cdrom_menu.png</file>
-        <file>data/iso_manager.png</file>
-        <file>data/add.png</file>
-        <file>data/remove.png</file>
-        <file>data/important.png</file>
-        <file>data/explorer.png</file>
-        <file>data/wineconsole.png</file>
-        <file>data/eject.png</file>
-        <file>data/winecfg.png</file>
-        <file>data/uninstaller.png</file>
-        <file>data/notepad.png</file>
-        <file>data/configure.png</file>
-        <file>data/down.png</file>
-        <file>data/exec.png</file>
-        <file>data/exec_wine.png</file>
-        <file>data/fileopen.png</file>
+        <file alias="winecfg">data/winecfg.png</file>
         <file>data/firstc.png</file>
-        <file>data/folder.png</file>
-        <file>data/folder_open.png</file>
-        <file>data/kill.png</file>
         <file>data/prefixc.png</file>
-        <file>data/rebuild.png</file>
-        <file>data/reload.png</file>
-        <file>data/stop.png</file>
-        <file>data/up.png</file>
-        <file>data/wine.png</file>
-        <file>data/wizard.png</file>
-        <file>data/q4wine.png</file>
-        <file>data/go-home.png</file>
-        <file>data/filter.png</file>
-        <file>data/find.png</file>
-        <file>data/clear-ltr.png</file>
-        <file>data/clear-rtl.png</file>
-        <file>data/wineappdb.png</file>
-        <file>data/clear-list.png</file>
-        <file>data/wineappdb-app.png</file>
-        <file>data/list.png</file>
-        <file>data/date.png</file>
-        <file>data/ok.png</file>
-        <file>data/fail.png</file>
-        <file>data/down_log.png</file>
-        <file>data/love.png</file>
-        <file>data/folder-import.png</file>
-        <file>data/zoom-in.png</file>
-        <file>data/zoom-out.png</file>
-        <file>data/view-list-icons.png</file>
-        <file>data/view-list-details.png</file>
-        <file>data/terminal.png</file>
-        <file>data/expand.png</file>
-        <file>data/collapse.png</file>
-        <file>data/export.png</file>
-        <file>data/import.png</file>
-        <file>data/sort-asc.png</file>
-        <file>data/sort-desc.png</file>
-        <file>data/sort-create-asc.png</file>
-        <file>data/sort-create-desc.png</file>
-        <file>data/ledgreen.png</file>
-        <file>data/ledorange.png</file>
-        <file>data/fakedrive-new.png</file>
-        <file>data/fakedrive-update.png</file>
-        <file>data/winetricks-install.png</file>
-        <file>data/folder-downloads.png</file>
-        <file>data/regedit.png</file>
-        <file>data/winemine.png</file>
-        <file>data/iexplore.png</file>
-        <file>data/taskmgr.png</file>
-        <file>data/wordpad.png</file>
-        <file>data/save.png</file>
+        <file alias="q4wine">data/q4wine.png</file>
+        <file alias="regedit">data/regedit.png</file>
+        <file alias="winemine">data/winemine.png</file>
+        <file alias="iexplore">data/iexplore.png</file>
+        <file alias="taskmgr">data/taskmgr.png</file>
+        <file alias="wordpad">data/wordpad.png</file>
+        <file alias="document-edit">data/oxygen/document-edit.svgz</file>
+        <file alias="document-export">data/oxygen/document-export.svgz</file>
+        <file alias="document-import">data/oxygen/document-import.svgz</file>
+        <file alias="document-new">data/oxygen/document-new.svgz</file>
+        <file alias="document-open">data/oxygen/document-open.svgz</file>
+        <file alias="document-save">data/oxygen/document-save.svgz</file>
+        <file alias="document-properties">data/oxygen/document-properties.svgz</file>
+        <file alias="drive-optical">data/oxygen/drive-optical.svgz</file>
+        <file alias="edit-clear-list">data/oxygen/edit-clear-list.svgz</file>
+        <file alias="edit-clear">data/oxygen/edit-clear.svgz</file>
+        <file alias="edit-delete">data/oxygen/edit-delete.svgz</file>
+        <file alias="folder-network">data/oxygen/folder-network.svgz</file>
+        <file alias="media-floppy">data/oxygen/media-floppy.svgz</file>
+        <file alias="media-optical">data/oxygen/media-optical.svgz</file>
+        <file alias="process-stop">data/oxygen/process-stop.svgz</file>
+        <file alias="system-shutdown">data/oxygen/system-shutdown.svgz</file>
+        <file alias="view-list-details">data/oxygen/view-list-details.svgz</file>
+        <file alias="view-list-icons">data/oxygen/view-list-icons.svgz</file>
+        <file alias="view-list-tree">data/oxygen/view-list-tree.svgz</file>
+        <file alias="view-sort-ascending">data/oxygen/view-sort-ascending.svgz</file>
+        <file alias="view-sort-descending">data/oxygen/view-sort-descending.svgz</file>
+        <file alias="drive-harddisk">data/oxygen/drive-harddisk.svgz</file>
+        <file alias="zoom-in">data/oxygen/zoom-in.svgz</file>
+        <file alias="zoom-out">data/oxygen/zoom-out.svgz</file>
+        <file alias="utilities-terminal">data/oxygen/utilities-terminal.svgz</file>
+        <file alias="dialog-ok">data/oxygen/dialog-ok.svgz</file>
+        <file alias="dialog-cancel">data/oxygen/dialog-cancel.svgz</file>
+        <file alias="go-down">data/oxygen/go-down.svgz</file>
+        <file alias="folder">data/oxygen/folder.svgz</file>
+        <file alias="application-x-executable">data/oxygen/application-x-executable.svgz</file>
+        <file alias="application-x-ms-dos-executable">data/oxygen/application-x-ms-dos-executable.svgz</file>
+        <file>data/oxygen/application-x-executable-script.svgz</file>
+        <file alias="edit-redo">data/oxygen/edit-redo.svgz</file>
+        <file alias="download">data/oxygen/download.svgz</file>
+        <file alias="wine">data/oxygen/wine.svgz</file>
+        <file alias="view-refresh">data/oxygen/view-refresh.svgz</file>
+        <file alias="configure">data/oxygen/configure.svgz</file>
+        <file alias="folder-cyan">data/oxygen/folder-cyan.svgz</file>
+        <file alias="notepad">data/notepad.png</file>
+        <file alias="explorer">data/explorer.png</file>
+        <file alias="wineconsole">data/wineconsole.png</file>
+        <file alias="eject">data/eject.png</file>
+        <file alias="uninstaller">data/uninstaller.png</file>
+        <file alias="document-preview">data/oxygen/document-preview.svgz</file>
+        <file alias="view-catalog">data/oxygen/view-catalog.svgz</file>
+        <file alias="edit-find">data/oxygen/edit-find.svgz</file>
     </qresource>
 </RCC>

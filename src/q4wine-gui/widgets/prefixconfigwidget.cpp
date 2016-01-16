@@ -164,11 +164,11 @@ PrefixConfigWidget::~PrefixConfigWidget(){
 }
 
 void PrefixConfigWidget::createActions(){
-    prefixManage.reset(new QAction(CoreLib->loadIcon("data/configure.png"), tr("Manage prefixes"), this));
+    prefixManage.reset(new QAction(CoreLib->loadIcon("document-properties"), tr("Manage prefixes"), this));
     prefixManage->setStatusTip(tr("Manage prefixes"));
     connect(prefixManage.get(), SIGNAL(triggered()), this, SLOT(prefixManage_Click()));
 
-    searchClear.reset(new QAction(CoreLib->loadIcon("data/clear-ltr.png"), tr("Clear search field"), this));
+    searchClear.reset(new QAction(CoreLib->loadIcon("edit-clear"), tr("Clear search field"), this));
     searchClear->setStatusTip(tr("Clear search field"));
     connect(searchClear.get(), SIGNAL(triggered()), this, SLOT(searchClear_Click()));
 
@@ -178,11 +178,11 @@ void PrefixConfigWidget::createActions(){
     if (this->sort_order == D_SORT_TYPE_BY_NAME_ASC){
         sortAlpha->setStatusTip(tr("Alphabetic sort descending"));
         sortAlpha->setText(tr("Alphabetic sort descending"));
-        sortAlpha->setIcon(CoreLib->loadIcon("data/sort-desc.png"));
+        sortAlpha->setIcon(CoreLib->loadIcon("view-sort-descending"));
     } else {
         sortAlpha->setStatusTip(tr("Alphabetic sort ascending"));
         sortAlpha->setText(tr("Alphabetic sort ascending"));
-        sortAlpha->setIcon(CoreLib->loadIcon("data/sort-asc.png"));
+        sortAlpha->setIcon(CoreLib->loadIcon("view-sort-ascending"));
     }
 
     return;
@@ -197,7 +197,7 @@ void PrefixConfigWidget::createTree(){
     for (int i = 0; i < providers.size(); i++){
         prefixItem.reset(new QTreeWidgetItem(this->treeWidget.get()));
         prefixItem->setText(0, providers.at(i).name);
-        prefixItem->setIcon(0, CoreLib->loadIcon(QString("data/%1").arg(providers.at(i).icon)));
+        prefixItem->setIcon(0, CoreLib->loadIcon(providers.at(i).icon));
         prefixItem->setExpanded(true);
 
         QStringList subtypes = db_sysconfig.getProviderSubtypes(providers.at(i).id);
@@ -205,7 +205,7 @@ void PrefixConfigWidget::createTree(){
             if (!subtypes.at(j).isEmpty()){
                 std::auto_ptr<QTreeWidgetItem> subPrefixItem (new QTreeWidgetItem(prefixItem.get(), 0));
                 subPrefixItem->setText(0, QString("%1").arg(subtypes.at(j)));
-                subPrefixItem->setIcon(0, CoreLib->loadIcon("data/folder.png"));
+                subPrefixItem->setIcon(0, CoreLib->loadIcon("folder"));
                 subPrefixItem.release();
             }
         }
@@ -274,17 +274,21 @@ void PrefixConfigWidget::get_icons(){
                 if (items.at(i).name == "%CREATE_FAKE%"){
                     name = tr("Create Fake Drive");
                     desc = tr("Create new Fake Drive configuration. Old Fake Drive will be removed.");
+                    iconItem->setIcon(CoreLib->loadIcon("document-new"));
                 } else if (items.at(i).name == "%UPDATE_FAKE%"){
                     name = tr("Update Fake Drive");
                     desc = tr("Update Fake Drive configuration.");
+                    iconItem->setIcon(CoreLib->loadIcon("document-edit"));
                 }
             } else if (this->provider=="Winetricks"){
                 if (items.at(i).name == "%INSTALL_WINETRICKS%"){
                     name = tr("Install or update Winetricks script");
                     desc = tr("Install new or update installed Winetricks script.");
+                    iconItem->setIcon(CoreLib->loadIcon("download"));
                 } else if (items.at(i).name == "%REFRESH_WINETRICKS%"){
                     name = tr("Refresh Winetricks application list");
                     desc = tr("Create or update Q4Wine's cache of Winetricks appications.");
+                    iconItem->setIcon(CoreLib->loadIcon("edit-redo"));
                 }
             }
             iconItem->setText(name);
@@ -292,8 +296,8 @@ void PrefixConfigWidget::get_icons(){
         } else {
             iconItem->setText(items.at(i).name);
             iconItem->setToolTip(items.at(i).desc);
+            iconItem->setIcon(CoreLib->loadIcon("application-x-executable-script"));
         }
-        iconItem->setIcon(CoreLib->loadIcon(QString("data/%1").arg(items.at(i).icon)));
         iconItem.release();
     }
 }
@@ -444,12 +448,12 @@ void PrefixConfigWidget::sortAlpha_Click(){
         this->sort_order = D_SORT_TYPE_BY_NAME_DSC;
         sortAlpha->setStatusTip(tr("Alphabetic sort ascending"));
         sortAlpha->setText(tr("Alphabetic sort ascending"));
-        sortAlpha->setIcon(CoreLib->loadIcon("data/sort-asc.png"));
+        sortAlpha->setIcon(CoreLib->loadIcon("view-sort-ascending"));
     } else {
         this->sort_order = D_SORT_TYPE_BY_NAME_ASC;
         sortAlpha->setStatusTip(tr("Alphabetic sort descending"));
         sortAlpha->setText(tr("Alphabetic sort descending"));
-        sortAlpha->setIcon(CoreLib->loadIcon("data/sort-desc.png"));
+        sortAlpha->setIcon(CoreLib->loadIcon("view-sort-descending"));
     }
     this->get_icons();
 }
