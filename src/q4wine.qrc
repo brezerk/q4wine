@@ -1,10 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file alias="brezblock">data/blockdevice.png</file>
-        <file alias="q4wine-big">data/q4wine-128x128.png</file>
         <file alias="winecfg">data/winecfg.png</file>
         <file alias="firstc">data/firstc.png</file>
-        <file alias="q4wine">data/q4wine.png</file>
         <file alias="regedit">data/regedit.png</file>
         <file alias="winemine">data/winemine.png</file>
         <file alias="iexplore">data/iexplore.png</file>
@@ -63,5 +61,7 @@
         <file alias="help-contents">data/oxygen/help-contents.svgz</file>
         <file alias="go-home">data/oxygen/go-home.svgz</file>
         <file alias="help-contextual">data/oxygen/help-contextual.svgz</file>
+        <file alias="q4wine">data/q4wine.svgz</file>
+        <file alias="wine">data/wine.svgz</file>
     </qresource>
 </RCC>

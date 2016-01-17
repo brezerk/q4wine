@@ -40,6 +40,7 @@ About::About(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
     setWindowIcon(CoreLib->loadIcon("q4wine"));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 
+    lblLogo->setPixmap(CoreLib->loadPixmap("q4wine"));
     lblVersion->setText(QString("<span style=\"font-size:14pt; font-weight:600;\">%1 %2</span>").arg(APP_NAME).arg(APP_VERS));
 
     txtAuthors->setHtml(T_DEVELOPERS);

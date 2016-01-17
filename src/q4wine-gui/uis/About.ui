@@ -90,7 +90,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="lblLogo">
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -99,9 +99,6 @@
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/data/q4wine-128x128.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>false</bool>
@@ -154,7 +151,7 @@ p, li { white-space: pre-wrap; }
           <item>
            <widget class="QLabel" name="label_3">
             <property name="text">
-             <string notr="true">© 2008-2016 Q4Wine Dev Team</string>
+             <string notr="true">© 2008-2016 by Alexey S. Malakhov &lt;brezerk@gmail.com&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
