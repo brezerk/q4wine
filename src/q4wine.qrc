@@ -42,7 +42,6 @@
         <file alias="application-x-executable-script">data/oxygen/application-x-executable-script.svgz</file>
         <file alias="edit-redo">data/oxygen/edit-redo.svgz</file>
         <file alias="download">data/oxygen/download.svgz</file>
-        <file alias="wine">data/oxygen/wine.svgz</file>
         <file alias="view-refresh">data/oxygen/view-refresh.svgz</file>
         <file alias="configure">data/oxygen/configure.svgz</file>
         <file alias="folder-cyan">data/oxygen/folder-cyan.svgz</file>
@@ -63,5 +62,7 @@
         <file alias="help-contextual">data/oxygen/help-contextual.svgz</file>
         <file alias="q4wine">data/q4wine.svgz</file>
         <file alias="wine">data/wine.svgz</file>
+        <file alias="oleview">data/oleview.png</file>
+        <file alias="control">data/control.png</file>
     </qresource>
 </RCC>
