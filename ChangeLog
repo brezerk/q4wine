@@ -1,6 +1,8 @@
 Version 1.2-r3
  Added:
   - Taiwan translation (thx 2 Jeff Huang);
+  - Use icons from the system icon theme where possible [BUG-22];
+  - WIP: Replace default raster icons with SVG analogs [BUG-21];
 
 Version 1.2-r2
  Added:

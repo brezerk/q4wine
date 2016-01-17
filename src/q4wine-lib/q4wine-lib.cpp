@@ -376,10 +376,7 @@ void corelib::checkSettings(){
 QIcon corelib::loadIcon(QString iconName, bool fromTheme){
     // Function tryes to load icon image from theme dir
     // If it fails -> load default from rsource file
-
-    QIcon icon;
-    icon.addFile(QString(":%1").arg(iconName));
-    return icon;
+    return QIcon::fromTheme(iconName, QIcon(QString(":%1").arg(iconName)));
 }
 
 QPixmap corelib::loadPixmap(QString iconName){
