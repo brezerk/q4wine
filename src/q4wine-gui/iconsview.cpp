@@ -27,15 +27,18 @@ IconsView::IconsView(QString tmpDir, QWidget * parent, Qt::WindowFlags f) : QDia
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
 
-   if (!libq4wine.load()){
-       libq4wine.load();
-   }
+    if (!libq4wine.load()){
+        libq4wine.load();
+    }
 
-   // Getting corelib calss pointer
-   CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-   CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    // Getting corelib calss pointer
+    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-	setupUi(this);
+    setupUi(this);
+
+    setWindowIcon(CoreLib->loadIcon("q4wine"));
+
 	tempDirectory=tmpDir;
 
 	QDir tmp(tmpDir);

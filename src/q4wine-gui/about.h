@@ -24,14 +24,22 @@
 #include "src/q4wine-gui/ui_About.h"
 #include "src/q4wine-gui/authors.h"
 
+#include "q4wine-lib.h"
+
 class About : public QDialog, public Ui::About
 {
 	Q_OBJECT
-	public:
-		About(QWidget * parent = 0, Qt::WindowFlags f = 0);
+public:
+    About(QWidget * parent = 0, Qt::WindowFlags f = 0);
 
-	private slots:
-		void cmdOk_Click();
+private:
+    //! This is need for libq4wine-core.so import.
+    QLibrary libq4wine;
+    typedef void *CoreLibPrototype (bool);
+    CoreLibPrototype *CoreLibClassPointer;
+    std::auto_ptr<corelib> CoreLib;
+private slots:
+    void cmdOk_Click();
 };
 
 #endif

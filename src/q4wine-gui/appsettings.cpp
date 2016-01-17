@@ -53,7 +53,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
     widgetContent->setLayout(vlayout.release());
 
     setWindowTitle(tr("%1 settings").arg(APP_NAME));
-    lblCaption->setText(tr("%1 settings").arg(APP_NAME));
+    setWindowIcon(CoreLib->loadIcon("q4wine"));
 
     connect(optionsTree, SIGNAL(itemClicked (QTreeWidgetItem *, int)), this, SLOT(optionsTree_itemClicked ( QTreeWidgetItem *, int)));
 
@@ -436,8 +436,6 @@ void AppSettings::getLangs(){
 }
 
 void AppSettings::loadThemeIcons(){
-    lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
-
     cmdGetTarBin->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetMountBin->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetUmountBin->setIcon(CoreLib->loadIcon("document-open"));

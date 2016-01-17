@@ -88,8 +88,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
         TotalPage=8;
 
         setWindowTitle(tr("First startup wizard"));
-        lblCaption->setText(tr("<b>First startup wizard</b>"));
-        lblStep->setText(tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
+        setWindowIcon(CoreLib->loadIcon("q4wine"));
 
         cmdFirstSteps->setVisible(false);
 
@@ -552,7 +551,6 @@ void Wizard::previosWizardPage(){
 }
 
 void Wizard::updateScena(){
-    lblStep->setText(Wizard::tr("<b>Step %1 of %2</b>").arg(Page).arg(TotalPage));
     switch(Scena){
  case 1:
                /*
@@ -560,7 +558,6 @@ void Wizard::updateScena(){
                 */
         switch (Page){
   case 1:
-            lblCaption->setText(Wizard::tr("<b>First startup wizard</b>"));
             lblWizardInfo->setText(Wizard::tr("<p>Welcome to first startup wizard.</p><p>This wizard helps you to make all necessary steps for successful %1 setup.</p><p>Please, press the <b>Next</b> button to go to the next wizard's page. Or press <b>Back</b> button for return.</p>").arg(APP_NAME));
             stkWizards->setCurrentIndex(0);
             cmdNext->setEnabled(true);

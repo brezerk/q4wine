@@ -14,13 +14,18 @@
   <property name="windowTitle">
    <string>%1 :. Qt4 GUI for Wine v%2</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="../../q4wine.qrc">
-    <normaloff>:/data/q4wine.png</normaloff>:/data/q4wine.png</iconset>
-  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout">
-    <property name="margin">
+    <property name="leftMargin">
+     <number>3</number>
+    </property>
+    <property name="topMargin">
+     <number>3</number>
+    </property>
+    <property name="rightMargin">
+     <number>3</number>
+    </property>
+    <property name="bottomMargin">
      <number>3</number>
     </property>
     <item row="0" column="0">
@@ -54,7 +59,16 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
-         <property name="margin">
+         <property name="leftMargin">
+          <number>2</number>
+         </property>
+         <property name="topMargin">
+          <number>2</number>
+         </property>
+         <property name="rightMargin">
+          <number>2</number>
+         </property>
+         <property name="bottomMargin">
           <number>2</number>
          </property>
          <property name="spacing">
@@ -128,7 +142,16 @@
         <property name="spacing">
          <number>0</number>
         </property>
-        <property name="margin">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
          <number>0</number>
         </property>
        </layout>
@@ -138,7 +161,16 @@
         <string>Setup</string>
        </attribute>
        <layout class="QGridLayout" name="setupLayout">
-        <property name="margin">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
          <number>0</number>
         </property>
        </layout>
@@ -151,7 +183,16 @@
         <property name="spacing">
          <number>0</number>
         </property>
-        <property name="margin">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
          <number>0</number>
         </property>
        </layout>
@@ -164,7 +205,16 @@
         <property name="spacing">
          <number>0</number>
         </property>
-        <property name="margin">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
          <number>0</number>
         </property>
        </layout>
@@ -174,7 +224,16 @@
         <string>Logging</string>
        </attribute>
        <layout class="QGridLayout" name="logLayout">
-        <property name="margin">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
          <number>0</number>
         </property>
        </layout>
@@ -189,7 +248,7 @@
      <x>0</x>
      <y>0</y>
      <width>585</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -204,15 +263,11 @@
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
-     <string>Help</string>
+     <string>He&amp;lp</string>
     </property>
     <widget class="QMenu" name="menuHandbook">
      <property name="title">
-      <string>Handbook</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../../q4wine.qrc">
-       <normaloff>:/data/help.png</normaloff>:/data/help.png</iconset>
+      <string>&amp;Handbook</string>
      </property>
      <addaction name="mainFirstSteps"/>
      <addaction name="mainFAQ"/>
@@ -254,7 +309,7 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="mainRun">
    <property name="text">
-    <string>Run...</string>
+    <string>&amp;Run...</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Z</string>
@@ -262,7 +317,7 @@
   </action>
   <action name="mainExit">
    <property name="text">
-    <string>Quit</string>
+    <string>&amp;Quit</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
@@ -270,7 +325,7 @@
   </action>
   <action name="mainAbout">
    <property name="text">
-    <string>About</string>
+    <string>&amp;About</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+E</string>
@@ -278,7 +333,7 @@
   </action>
   <action name="mainAboutQt">
    <property name="text">
-    <string>About Qt</string>
+    <string>About &amp;Qt</string>
    </property>
   </action>
   <action name="mainInstall">
@@ -294,12 +349,12 @@
   </action>
   <action name="mainPrograms">
    <property name="text">
-    <string>Programs</string>
+    <string>&amp;Programs</string>
    </property>
   </action>
   <action name="mainProcess">
    <property name="text">
-    <string>Process</string>
+    <string>P&amp;rocess</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
@@ -307,7 +362,7 @@
   </action>
   <action name="mainSetup">
    <property name="text">
-    <string>Setup</string>
+    <string>&amp;Setup</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+D</string>
@@ -315,7 +370,7 @@
   </action>
   <action name="mainPrefix">
    <property name="text">
-    <string>Prefixes</string>
+    <string>Pre&amp;fixes</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+F</string>
@@ -323,7 +378,7 @@
   </action>
   <action name="mainExportIcons">
    <property name="text">
-    <string>Extract Images from PE Files</string>
+    <string>&amp;Extract Images from PE Files</string>
    </property>
    <property name="statusTip">
     <string>Extract images from PE files using icoutils.</string>
@@ -331,7 +386,7 @@
   </action>
   <action name="mainOptions">
    <property name="text">
-    <string>Options</string>
+    <string>&amp;Options</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+W</string>
@@ -339,54 +394,42 @@
   </action>
   <action name="mainImageManage">
    <property name="text">
-    <string>Disc Image Manager</string>
+    <string>&amp;Disc Image Manager</string>
    </property>
   </action>
   <action name="mainFirstSteps">
    <property name="text">
-    <string>First Steps</string>
+    <string>&amp;First Steps</string>
    </property>
   </action>
   <action name="mainFAQ">
    <property name="text">
-    <string>Short FAQ</string>
+    <string>&amp;Short FAQ</string>
    </property>
   </action>
   <action name="mainIndex">
    <property name="text">
-    <string>Index</string>
+    <string>&amp;Index</string>
    </property>
   </action>
   <action name="mainWebsite">
-   <property name="icon">
-    <iconset resource="../../q4wine.qrc">
-     <normaloff>:/data/go-home.png</normaloff>:/data/go-home.png</iconset>
-   </property>
    <property name="text">
-    <string>Website</string>
+    <string>&amp;Website</string>
    </property>
   </action>
   <action name="mainDonate">
-   <property name="icon">
-    <iconset resource="../../q4wine.qrc">
-     <normaloff>:/data/bookmark-new.png</normaloff>:/data/bookmark-new.png</iconset>
-   </property>
    <property name="text">
-    <string>Donate</string>
+    <string>&amp;Donate</string>
    </property>
   </action>
   <action name="mainBugs">
-   <property name="icon">
-    <iconset resource="../../q4wine.qrc">
-     <normaloff>:/data/tools-report-bug.png</normaloff>:/data/tools-report-bug.png</iconset>
-   </property>
    <property name="text">
-    <string>Bugs</string>
+    <string>&amp;Bugs</string>
    </property>
   </action>
   <action name="mainAppDB">
    <property name="text">
-    <string>Wine AppDB Browser</string>
+    <string>&amp;Wine AppDB Browser</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+B</string>
@@ -394,7 +437,7 @@
   </action>
   <action name="mainLogging">
    <property name="text">
-    <string>Logging</string>
+    <string>&amp;Logging</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+L</string>
@@ -402,7 +445,7 @@
   </action>
   <action name="menuHelpThisTab">
    <property name="text">
-    <string>Help for This Tab</string>
+    <string>Help &amp;for This Tab</string>
    </property>
    <property name="shortcut">
     <string>F1</string>
@@ -410,7 +453,7 @@
   </action>
   <action name="mainImportWineIcons">
    <property name="text">
-    <string>Import Wine Desktop Files</string>
+    <string>&amp;Import Wine Desktop Files</string>
    </property>
    <property name="iconText">
     <string>Import Wine Desktop Files</string>
@@ -427,7 +470,7 @@
   </action>
   <action name="mainVersionManager">
    <property name="text">
-    <string>Wine Version Manager</string>
+    <string>Wine &amp;Version Manager</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+M</string>
@@ -435,9 +478,7 @@
   </action>
  </widget>
  <layoutdefault spacing="2" margin="3"/>
- <resources>
-  <include location="../../q4wine.qrc"/>
- </resources>
+ <resources/>
  <connections/>
  <designerdata>
   <property name="gridDeltaX">

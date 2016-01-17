@@ -191,7 +191,7 @@ translations:
           mail: yurchor@ukr.net
           location: Kiev, Ukraine
 thanks:
-        - name: <img src=':/data/love.png' /> Irina V. Malakhova
+        - name: <img src=':emblem-favorite' /> Irina V. Malakhova
           info: Thanks for patience, love and countenance =]
 
         - name: Sergey V. Dyatko

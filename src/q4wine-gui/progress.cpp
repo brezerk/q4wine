@@ -36,6 +36,8 @@ Progress::Progress(int action, QString path, QWidget * parent, Qt::WindowFlags f
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
+    setWindowIcon(CoreLib->loadIcon("q4wine"));
+
     this->max=0;
     this->current=0;
     this->action=action;

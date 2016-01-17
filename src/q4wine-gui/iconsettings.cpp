@@ -52,10 +52,10 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
     this->icon_name = icon_name;
     this->prefix_path = result.value("path");
     if (this->prefix_path.isEmpty()){
-          this->prefix_path = QDir::homePath();
-          this->prefix_path.append("/.wine/drive_c/");
+        this->prefix_path = QDir::homePath();
+        this->prefix_path.append("/.wine/drive_c/");
     } else {
-          this->prefix_path.append("/drive_c/");
+        this->prefix_path.append("/drive_c/");
     }
 
 
@@ -72,15 +72,14 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
       if (QDir().exists(cd_mount))
           prefix_urls << QUrl::fromLocalFile(cd_mount);
 
+    setWindowIcon(CoreLib->loadIcon("q4wine"));
     this->loadThemeIcons();
 
 
     QString res;
     switch (icon_name.isEmpty()){
         case true:
-            lblCaption->setText(tr("Adding new icon"));
             setWindowTitle(tr("Adding new icon"));
-
             res = CoreLib->getSetting("advanced", "defaultDesktopSize", false, "").toString();
             if (res.isEmpty()){
                 cboxDesktopSize->setCurrentIndex(0);
@@ -89,7 +88,6 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
             }
         break;
         case false:
-            lblCaption->setText(tr("Icon settings"));
             setWindowTitle(tr("Icon settings"));
             getIconReccord();
         break;
@@ -141,10 +139,9 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 }
 
 void IconSettings::loadThemeIcons(){
-    lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
     cmdGetProgram->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetWorkDir->setIcon(CoreLib->loadIcon("document-open"));
-    cmdGetIcon->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetIcon->setIcon(CoreLib->loadIcon("application-x-ms-dos-executable"));
     cmdGetPreRun->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetPostRun->setIcon(CoreLib->loadIcon("document-open"));
     return;
@@ -165,12 +162,12 @@ void IconSettings::getIconReccord(){
         if (QFile(iconPath).exists()){
             cmdGetIcon->setIcon (QIcon(iconPath));
         } else {
-            QIcon ico = CoreLib->loadIcon(QString("data/%1.png").arg(iconPath));
+            QIcon ico = CoreLib->loadIcon(iconPath);
 
             // Do not work due to: https://bugreports.qt-project.org/browse/QTBUG-999
             //if (ico.isNull()){
             if (ico.availableSizes().isEmpty()){
-                ico = CoreLib->loadIcon("data/exec_wine.png");
+                ico = CoreLib->loadIcon("application-x-ms-dos-executable");
                 iconPath="";
             }
 
@@ -400,7 +397,7 @@ void IconSettings::getProgramIcon(QString name){
         cmdGetIcon->setIcon (QIcon(list.at(0).filePath()));
         this->iconPath=list.at(0).filePath();
     } else {
-        cmdGetIcon->setIcon(CoreLib->loadIcon("data/exec_wine.png"));
+        cmdGetIcon->setIcon(CoreLib->loadIcon("application-x-ms-dos-executable"));
     }
     return;
 }
@@ -513,7 +510,7 @@ void IconSettings::cmdGetIcon_Click(){
                         IconsView iconsView(tmpDir);
                         if (iconsView.exec()==QDialog::Accepted){
                             fileName=iconsView.selectedFile;
-                            cmdGetIcon->setIcon (QIcon(fileName));
+                            cmdGetIcon->setIcon(QIcon(fileName));
                         } else {
                             fileName.clear();
                         }
@@ -522,7 +519,7 @@ void IconSettings::cmdGetIcon_Click(){
                     IconsView iconsView(tmpDir);
                     if (iconsView.exec()==QDialog::Accepted){
                         fileName=iconsView.selectedFile;
-                        cmdGetIcon->setIcon (QIcon(fileName));
+                        cmdGetIcon->setIcon(QIcon(fileName));
                     } else {
                         fileName.clear();
                     }

@@ -20,8 +20,24 @@
 
 About::About(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {
+    // Loading libq4wine-core.so
+#ifdef RELEASE
+    libq4wine.setFileName(_CORELIB_PATH_);
+#else
+    libq4wine.setFileName("../q4wine-lib/libq4wine-core");
+#endif
+
+    if (!libq4wine.load()){
+        libq4wine.load();
+    }
+
+    // Getting corelib calss pointer
+    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+
     setupUi(this);
     setWindowTitle(tr("About %1").arg(APP_NAME));
+    setWindowIcon(CoreLib->loadIcon("q4wine"));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 
     lblVersion->setText(QString("<span style=\"font-size:14pt; font-weight:600;\">%1 %2</span>").arg(APP_NAME).arg(APP_VERS));

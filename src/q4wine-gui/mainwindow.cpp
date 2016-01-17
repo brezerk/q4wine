@@ -57,6 +57,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
         this->showMinimized();
 
     setWindowTitle(tr("%1 :. Qt GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
+    setWindowIcon(CoreLib->loadIcon("q4wine"));
 
     std::auto_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
 
@@ -175,13 +176,17 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(mainExportIcons, SIGNAL(triggered()), this, SLOT(mainExportIcons_Click()));
     connect(mainFirstSteps, SIGNAL(triggered()), this, SLOT(mainFirstSteps_Click()));
     connect(mainFAQ, SIGNAL(triggered()), this, SLOT(mainFAQ_Click()));
+    mainIndex->setIcon(CoreLib->loadIcon("help-contents"));
     connect(mainIndex, SIGNAL(triggered()), this, SLOT(mainIndex_Click()));
+    mainWebsite->setIcon(CoreLib->loadIcon("go-home"));
     connect(mainWebsite, SIGNAL(triggered()), this, SLOT(mainWebsite_Click()));
     connect(mainDonate, SIGNAL(triggered()), this, SLOT(mainDonate_Click()));
+    mainBugs->setIcon(CoreLib->loadIcon("tools-report-bug"));
     connect(mainBugs, SIGNAL(triggered()), this, SLOT(mainBugs_Click()));
     connect(mainOptions, SIGNAL(triggered()), this, SLOT(mainOptions_Click()));
     connect(mainInstall, SIGNAL(triggered()), this, SLOT(mainInstall_Click()));
     connect(mainExit, SIGNAL(triggered()), this, SLOT(mainExit_Click()));
+    menuHelpThisTab->setIcon(CoreLib->loadIcon("help-contextual"));
     connect(menuHelpThisTab, SIGNAL(triggered()), this, SLOT(mainHelpThisTab_Click()));
     connect(mainImportWineIcons, SIGNAL(triggered()), this, SLOT(mainImportWineIcons_Click()));
     connect(mainVersionManager, SIGNAL(triggered()), this, SLOT(mainVersionManager_Click()));

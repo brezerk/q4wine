@@ -397,14 +397,14 @@ void LoggingWidget::getLogRecords(void){
 
             std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeWidget.get()));
             prefixItem->setText(0, QString("%1").arg(p_list.at(i)));
-            prefixItem->setIcon(0, CoreLib->loadIcon("data/wine.png"));
+            prefixItem->setIcon(0, CoreLib->loadIcon("wine"));
             prefixItem->setExpanded (true);
             treeWidget->addTopLevelItem(prefixItem.get());
 
             for (int j=0; j<app_list.count(); j++){
                 std::auto_ptr<QTreeWidgetItem> appItem (new QTreeWidgetItem(prefixItem.get(), 0));
                 appItem->setText(0, QString("%1").arg(app_list.at(j)));
-                appItem->setIcon(0, CoreLib->loadIcon("data/exec.png"));
+                appItem->setIcon(0, CoreLib->loadIcon("application-x-ms-dos-executable"));
                 appItem->setExpanded(true);
 
                 QHash<uint, int> date_list = db_log.getDates(p_list.at(i), app_list.at(j));

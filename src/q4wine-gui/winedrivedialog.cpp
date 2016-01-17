@@ -36,6 +36,8 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QWidget * parent, Qt
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
+    setWindowIcon(CoreLib->loadIcon("q4wine"));
+
 	if (removeLetters.count()>0){
 		for (int i=0; i<removeLetters.count(); i++){
 			if (cbDriveLetter->findText(removeLetters.at(i), Qt::MatchExactly)>=0){

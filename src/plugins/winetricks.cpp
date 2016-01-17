@@ -265,7 +265,7 @@ bool winetricks::parse() {
             foreach (QString item, this->get_stdout_lines(pargs)){
                 if (item.isEmpty())
                     continue;
-                db_sysconfig.add_item(item.left(24).trimmed(), "exec.png", item.mid(24).trimmed(), subtype, D_PROVIDER_WINETRICKS);
+                db_sysconfig.add_item(item.left(24).trimmed(), "application-x-ms-dos-executable", item.mid(24).trimmed(), subtype, D_PROVIDER_WINETRICKS);
             }
         }
     }

@@ -13,12 +13,17 @@
   <property name="windowTitle">
    <string>Icons Export</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>:/data/q4wine.png</normaloff>:/data/q4wine.png</iconset>
-  </property>
   <layout class="QVBoxLayout">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>3</number>
+   </property>
+   <property name="topMargin">
+    <number>3</number>
+   </property>
+   <property name="rightMargin">
+    <number>3</number>
+   </property>
+   <property name="bottomMargin">
     <number>3</number>
    </property>
    <item>
@@ -27,7 +32,16 @@
       <string>Available Icons:</string>
      </property>
      <layout class="QVBoxLayout">
-      <property name="margin">
+      <property name="leftMargin">
+       <number>3</number>
+      </property>
+      <property name="topMargin">
+       <number>3</number>
+      </property>
+      <property name="rightMargin">
+       <number>3</number>
+      </property>
+      <property name="bottomMargin">
        <number>3</number>
       </property>
       <item>
@@ -119,8 +133,6 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="q4wine.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

@@ -37,6 +37,7 @@ VersionManager::VersionManager(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
 
     setupUi(this);
     setWindowTitle("Wine Version Manager");
+    setWindowIcon(CoreLib->loadIcon("q4wine"));
 
     createActions();
     loadThemeIcons();
@@ -344,7 +345,6 @@ bool VersionManager::fileExists(QString path, bool check_dir){
 }
 
 void VersionManager::loadThemeIcons(){
-    lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
     cmdGetWineBin->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetWineServerBin->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("document-open"));

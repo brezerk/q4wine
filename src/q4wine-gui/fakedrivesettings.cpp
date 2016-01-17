@@ -56,10 +56,9 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
     widgetContent->setLayout(vlayout.release());
 
     setWindowTitle(tr("Fake drive settings"));
-    lblCaption->setText(tr("Fake drive settings for prefix \"%1\"").arg(this->prefixName));
+    setWindowIcon(CoreLib->loadIcon("q4wine"));
 
     connect(optionsTree, SIGNAL(itemClicked (QTreeWidgetItem *, int)), this, SLOT(optionsTree_itemClicked ( QTreeWidgetItem *, int)));
-
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     QString pic="", line="", prefixPath="";
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
@@ -856,7 +855,6 @@ void FakeDriveSettings::cmdHelp_Click(){
 }
 
 void FakeDriveSettings::loadThemeIcons(){
-    lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
     connect(cmdJoystickEdit, SIGNAL(clicked()), this, SLOT(cmdJoystickEdit_Click()));
     connect(cmdJoystickAdd, SIGNAL(clicked()), this, SLOT(cmdJoystickAdd_Click()));
     connect(cmdJoystickDel, SIGNAL(clicked()), this, SLOT(cmdJoystickDel_Click()));
@@ -868,7 +866,6 @@ void FakeDriveSettings::loadThemeIcons(){
     cmdGetWineDesktopPic->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetWineDesktopMus->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetWineDesktopVid->setIcon(CoreLib->loadIcon("document-open"));
-
     return;
 }
 

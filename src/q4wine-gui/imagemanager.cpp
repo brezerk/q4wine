@@ -36,6 +36,7 @@ ImageManager::ImageManager(QWidget * parent, Qt::WindowFlags f) : QDialog(parent
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
+    setWindowIcon(CoreLib->loadIcon("q4wine"));
 	loadThemeIcons();
 
 	connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
@@ -102,16 +103,16 @@ void ImageManager::getCDImages(void){
 			tableImage->item(curRows - 1, 0)->setText(result.at(i).at(0));
 			tableImage->item(curRows - 1, 1)->setText(tr("%1 Mb").arg(size));
 			if (!file.exists ()){
-				tableImage->item(curRows - 1, 0)->setIcon (QIcon(":/data/important.png"));
+                tableImage->item(curRows - 1, 0)->setIcon (CoreLib->loadIcon("dialog-warning"));
 			} else {
 				tableImage->item(curRows - 1, 0)->setIcon (QIcon());
 			}
 		} else {
 			std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(result.at(i).at(0)));
 			if (!file.exists ()){
-				newItem->setIcon ( QIcon(":/data/important.png") );
+                newItem->setIcon (CoreLib->loadIcon("dialog-warning"));
 			} else {
-				newItem->setIcon ( QIcon() );
+                newItem->setIcon (QIcon());
 			}
 			newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
 			tableImage->setItem(curRows - 1, 0, newItem.release());
@@ -135,11 +136,7 @@ void ImageManager::getCDImages(void){
 }
 
 void ImageManager::loadThemeIcons(){
-
-	lblLogo->setPixmap(CoreLib->loadPixmap("data/iso_manager.png"));
-
 	std::auto_ptr<QToolBar> managerToolBar (new QToolBar(tlbManager));
-
 
     actionAdd.reset(managerToolBar->addAction (CoreLib->loadIcon("document-new"), tr("Add image")));
 	connect(actionAdd.get(), SIGNAL(triggered()), this, SLOT(actionAddImage()));

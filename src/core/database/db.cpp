@@ -107,12 +107,12 @@ bool DataBase::checkDb(){
 
                 query.prepare("INSERT INTO providers(id, name, icon) VALUES(NULL, :name, :icon);");
                 query.bindValue(":name", "System");
-                query.bindValue(":icon", "wine.png");
+                query.bindValue(":icon", "wine");
                 if (!query.exec())
                     return false;
 
                 query.bindValue(":name", "Winetricks");
-                query.bindValue(":icon", "regedit.png");
+                query.bindValue(":icon", "regedit");
                 if (!query.exec())
                     return false;
             } else if (table == "sysconfig"){
@@ -122,14 +122,14 @@ bool DataBase::checkDb(){
                 // System items
                 query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, 1);");
                 query.bindValue(":name", "%CREATE_FAKE%");
-                query.bindValue(":icon", "fakedrive-new.png");
+                query.bindValue(":icon", "document-new");
                 query.bindValue(":desc", "%CREATE_FAKE_DESC%");
                 if (!query.exec())
                     return false;
 
                 query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, 1);");
                 query.bindValue(":name", "%UPDATE_FAKE%");
-                query.bindValue(":icon", "fakedrive-update.png");
+                query.bindValue(":icon", "document-edit");
                 query.bindValue(":desc", "%UPDATE_FAKE_DESC%");
                 if (!query.exec())
                     return false;
@@ -137,14 +137,14 @@ bool DataBase::checkDb(){
                 // Wintricks base
                 query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, 2);");
                 query.bindValue(":name", "%INSTALL_WINETRICKS%");
-                query.bindValue(":icon", "winetricks-install.png");
+                query.bindValue(":icon", "download");
                 query.bindValue(":desc", "%UPDATE_WINETRICKS_DESC%");
                 if (!query.exec())
                     return false;
 
                 query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, 2);");
                 query.bindValue(":name", "%REFRESH_WINETRICKS%");
-                query.bindValue(":icon", "folder-downloads.png");
+                query.bindValue(":icon", "edit-redo");
                 query.bindValue(":desc", "%REFRESH_WINETRICKS_DESC%");
                 if (!query.exec())
                     return false;

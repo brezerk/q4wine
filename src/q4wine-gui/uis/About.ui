@@ -19,10 +19,6 @@
   <property name="windowTitle">
    <string>About %1</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="../../q4wine.qrc">
-    <normaloff>:/data/q4wine.png</normaloff>:/data/q4wine.png</iconset>
-  </property>
   <layout class="QVBoxLayout">
    <property name="spacing">
     <number>0</number>
@@ -68,13 +64,6 @@
     </widget>
    </item>
    <item>
-    <widget class="Line" name="line">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QWidget" name="widget" native="true">
      <layout class="QVBoxLayout">
       <item>
@@ -112,7 +101,7 @@
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../../q4wine.qrc">:/data/q4wine-128x128.png</pixmap>
+             <pixmap>:/data/q4wine-128x128.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>false</bool>
@@ -681,8 +670,6 @@ p, li { white-space: pre-wrap; }
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../q4wine.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

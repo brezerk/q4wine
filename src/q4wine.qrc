@@ -1,10 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file>data/blockdevice.png</file>
-        <file>data/q4wine-128x128.png</file>
+        <file alias="brezblock">data/blockdevice.png</file>
+        <file alias="q4wine-big">data/q4wine-128x128.png</file>
         <file alias="winecfg">data/winecfg.png</file>
-        <file>data/firstc.png</file>
-        <file>data/prefixc.png</file>
+        <file alias="firstc">data/firstc.png</file>
         <file alias="q4wine">data/q4wine.png</file>
         <file alias="regedit">data/regedit.png</file>
         <file alias="winemine">data/winemine.png</file>
@@ -42,7 +41,7 @@
         <file alias="folder">data/oxygen/folder.svgz</file>
         <file alias="application-x-executable">data/oxygen/application-x-executable.svgz</file>
         <file alias="application-x-ms-dos-executable">data/oxygen/application-x-ms-dos-executable.svgz</file>
-        <file>data/oxygen/application-x-executable-script.svgz</file>
+        <file alias="application-x-executable-script">data/oxygen/application-x-executable-script.svgz</file>
         <file alias="edit-redo">data/oxygen/edit-redo.svgz</file>
         <file alias="download">data/oxygen/download.svgz</file>
         <file alias="wine">data/oxygen/wine.svgz</file>
@@ -57,5 +56,12 @@
         <file alias="document-preview">data/oxygen/document-preview.svgz</file>
         <file alias="view-catalog">data/oxygen/view-catalog.svgz</file>
         <file alias="edit-find">data/oxygen/edit-find.svgz</file>
+        <file alias="exec_wine">data/exec_wine.png</file>
+        <file alias="emblem-favorite">data/oxygen/emblem-favorite.svgz</file>
+        <file alias="dialog-warning">data/oxygen/dialog-warning.svgz</file>
+        <file alias="tools-report-bug">data/oxygen/tools-report-bug.svgz</file>
+        <file alias="help-contents">data/oxygen/help-contents.svgz</file>
+        <file alias="go-home">data/oxygen/go-home.svgz</file>
+        <file alias="help-contextual">data/oxygen/help-contextual.svgz</file>
     </qresource>
 </RCC>

@@ -377,12 +377,8 @@ QIcon corelib::loadIcon(QString iconName, bool fromTheme){
     // Function tryes to load icon image from theme dir
     // If it fails -> load default from rsource file
 
-    qDebug() << "try to load: " << iconName;
-
     QIcon icon;
     icon.addFile(QString(":%1").arg(iconName));
-
-
     return icon;
 }
 
@@ -392,7 +388,6 @@ QPixmap corelib::loadPixmap(QString iconName){
 
     QPixmap pixmap;
     pixmap.load(QString(":/%1").arg(iconName));
-
     return pixmap;
 }
 
@@ -1246,12 +1241,12 @@ QStringList corelib::getCdromDevices(void) const{
             QString icon_path = result.value("icon_path");
 
             if (icon_path.isEmpty()){
-                out<<"Icon="<<QString::fromUtf8(APP_PREF)<<"/share/q4wine/icons/exec_wine.png"<<endl;
+                out<<"Icon=application-x-ms-dos-executable"<<endl;
             } else {
                 if (QFile(icon_path).exists()){
                     out<<"Icon="<<icon_path<<endl;
                 } else {
-                    out<<"Icon="<<QString::fromUtf8(APP_PREF)<<"/share/q4wine/icons/"<<icon_name<<".png"<<endl;
+                    out<<"Icon=application-x-ms-dos-executable"<<endl;
                 }
             }
             out<<"Type=Application"<<endl;

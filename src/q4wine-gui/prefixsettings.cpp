@@ -140,7 +140,6 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
     setupUi(this);
 
     this->setWindowTitle(tr("Add new Prefix"));
-    this->lblCaption->setText(tr("Add new Prefix"));
     this->addNew=true;
 
     // Loading libq4wine-core.so
@@ -158,6 +157,7 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
+    setWindowIcon(CoreLib->loadIcon("q4wine"));
     this->loadThemeIcons();
 
     cmdGetPrefixPath->installEventFilter(this);
@@ -198,8 +198,6 @@ QString PrefixSettings::getPrefixName(){
 }
 
 void PrefixSettings::loadThemeIcons(){
-    lblLogo->setPixmap(CoreLib->loadPixmap("data/exec.png"));
-
     cmdClnWineBin->setIcon(CoreLib->loadIcon("edit-delete"));
     cmdClnWineServerBin->setIcon(CoreLib->loadIcon("edit-delete"));
     cmdClnWineLoaderBin->setIcon(CoreLib->loadIcon("edit-delete"));
@@ -207,7 +205,6 @@ void PrefixSettings::loadThemeIcons(){
     cmdGetMountPoint->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetPrefixPath->setIcon(CoreLib->loadIcon("document-open"));
     cmdAddVersion->setIcon(CoreLib->loadIcon("document-new"));
-
     return;
 }
 
