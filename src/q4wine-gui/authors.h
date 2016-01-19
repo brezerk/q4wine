@@ -226,6 +226,24 @@
 	    " " \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "Jeff Huang (s8321414)" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "zh_tw locale translator" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:s8321414@gmail.com' style='text-decoration: none; color:#5f9ea0;'>s8321414@gmail.com</a>" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='https://about.me/s8321414' style='color:#5f9ea0;'>https://about.me/s8321414</a>" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "Taiwan" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    " " \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Marcio Moraes " \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \

@@ -152,6 +152,13 @@ translations:
           mail: nobange@poczta.onet.pl
           location: Poland
 
+        - name: Jeff Huang
+          nick: s8321414
+          info: zh_tw locale translator
+          mail: s8321414@gmail.com
+          web: https://about.me/s8321414
+          location: Taiwan
+
         - name: Marcio Moraes
           info: Portuguese (Brazil) translation
           mail: marciopanto@gmail.com
