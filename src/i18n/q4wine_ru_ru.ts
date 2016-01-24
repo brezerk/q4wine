@@ -2696,7 +2696,7 @@ See help for details.</source>
     <message>
         <location line="-205"/>
         <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation>%1 :. Qt4 GUI для Wine v%2</translation>
+        <translation>%1 :. Qt GUI для Wine v%2</translation>
     </message>
     <message>
         <location line="+299"/>
