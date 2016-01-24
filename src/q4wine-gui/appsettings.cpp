@@ -666,24 +666,18 @@ bool AppSettings::checkEntry(QString fileName, QString info, bool isFile){
       */
 
     if (fileName.isEmpty()){
-        switch (isFile){
-  case false:
+        if (!isFile){
             QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 directory.").arg(info));
-            break;
-  case true:
+        } else {
             QMessageBox::warning(this, tr("Error"), tr("Sorry, specify %1 binary.").arg(info));
-            break;
         }
         return false;
     } else {
         if (!QFile::exists(fileName)){
-            switch (isFile){
-   case false:
+            if (!isFile){
                 QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 directory does not exist.").arg(info));
-                break;
-   case true:
+            } else {
                 QMessageBox::warning(this, tr("Error"), tr("Sorry, specified %1 binary does not exist.").arg(info));
-                break;
             }
             return false;
         }

@@ -1558,35 +1558,26 @@ QStringList corelib::getCdromDevices(void) const{
         }
 
         int corelib::showError(const QString message, const bool info) const{
-            switch (this->_GUI_MODE){
-   case true:
-                switch (info){
-    case true:
+            if (this->_GUI_MODE){
+                if (info){
                     QMessageBox::warning(0, QObject::tr("Error"), message);
                     return 0;
-                    break;
-    case false:
+                } else {
                     return QMessageBox::warning(0, QObject::tr("Error"), message, QMessageBox::Retry, QMessageBox::Ignore);
-                    break;
                 }
-                break;
-            case false:
+            } else {
                 QTextStream stdErr(stderr);
                 stdErr<<"[ee] "<<message<<endl; // message.toLatin1();
-                break;
             }
             return 0;
         }
 
         void corelib::showError(const QString message) const{
             QTextStream Qcout(stdout);
-            switch (this->_GUI_MODE){
-   case true:
+            if (this->_GUI_MODE){
                 QMessageBox::warning(0, QObject::tr("Error"), message);
-                break;
-   case false:
+            } else {
                 Qcout<<QObject::tr("Error")<<endl<<message<<endl;
-                break;
             }
             return;
         }

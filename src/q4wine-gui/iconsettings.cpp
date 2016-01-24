@@ -77,8 +77,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 
 
     QString res;
-    switch (icon_name.isEmpty()){
-        case true:
+    if (icon_name.isEmpty()){
             setWindowTitle(tr("Adding new icon"));
             res = CoreLib->getSetting("advanced", "defaultDesktopSize", false, "").toString();
             if (res.isEmpty()){
@@ -86,11 +85,9 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
             } else {
                 cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(res));
             }
-        break;
-        case false:
+    } else {
             setWindowTitle(tr("Icon settings"));
             getIconReccord();
-        break;
     }
 
     connect(cmdAdd, SIGNAL(clicked()), this, SLOT(cmdAdd_Click()));
@@ -616,15 +613,13 @@ void IconSettings::cmdOk_Click(){
     if (desktopSize==tr("No virtual desktop"))
         desktopSize="";
 
-    switch (this->icon_name.isEmpty()){
-        case true:
+    if (this->icon_name.isEmpty()){
             db_icon.addIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), desktopSize, spinNice->value(), txtEnvLang->text(), txtPreRun->text(), txtPostRun->text());
 #ifndef _OS_DARWIN_
             if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
                 CoreLib->createDesktopFile(this->prefix_name, this->dir_name, txtName->text(), true);
 #endif
-        break;
-        case false:
+    } else {
             db_icon.updateIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), icon_name, override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), desktopSize, spinNice->value(), txtEnvLang->text(), txtPreRun->text(), txtPostRun->text());
 #ifndef _OS_DARWIN_
             if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
@@ -632,7 +627,6 @@ void IconSettings::cmdOk_Click(){
                 CoreLib->createDesktopFile(this->prefix_name, this->dir_name, txtName->text(), true);
             }
 #endif
-        break;
     }
 
     accept();
