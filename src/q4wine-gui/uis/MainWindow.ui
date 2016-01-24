@@ -12,7 +12,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>%1 :. Qt4 GUI for Wine v%2</string>
+   <string>%1 :. Qt GUI for Wine v%2</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout">
