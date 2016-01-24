@@ -2555,7 +2555,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="-192"/>
-        <source>%1 :. Qt4 GUI for Wine v%2</source>
+        <source>%1 :. Qt GUI for Wine v%2</source>
         <translation>%1 : Графічна оболонка на Qt4 для Wine версії %2</translation>
     </message>
     <message>

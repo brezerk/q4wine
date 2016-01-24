@@ -2460,8 +2460,8 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
-        <source>%1 :. Qt4 GUI for Wine v%2</source>
-        <translation>%1 :. Qt4 GUI pro wine v%2</translation>
+        <source>%1 :. Qt GUI for Wine v%2</source>
+        <translation>%1 :. Qt GUI pro wine v%2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="+264"/>

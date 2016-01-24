@@ -2462,7 +2462,7 @@ Vedi l&apos;help per gli esempi.</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
-        <source>%1 :. Qt4 GUI for Wine v%2</source>
+        <source>%1 :. Qt GUI for Wine v%2</source>
         <translation>%1: Interfaccia Qt4 per Wine v%2</translation>
     </message>
     <message>
