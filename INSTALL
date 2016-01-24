@@ -63,6 +63,7 @@ Installation
        QT5                       : OFF | ON
        WITH_ICOUTILS             : ON  | OFF
        WITH_SYSTEM_SINGLEAPP     : OFF | ON
+       WITH_WINEAPPDB            : ON  | OFF
        USE_BZIP2                 : OFF | ON
        USE_GZIP                  : OFF | ON
        WITH_DBUS                 : ON  | OFF
@@ -74,6 +75,7 @@ Installation
        QT5                       : If ON, then q4wine will be built with Qt 5.x.
        WITH_ICOUTILS             : If ON, then build q4wine with icoutils support;
        WITH_SYSTEM_SINGLEAPP     : If ON, then use system QtSingleApplication library instead building one;
+       WITH_WINEAPPDB            : If ON, then build q4wine with Wine AppDB browser support;
        USE_BZIP2                 : Use bzip2 to compress man pages;
        USE_GZIP                  : Use gzip to compress man pages;
        WITH_DBUS                 : If ON, then build q4wine with QtDBus notification support;
