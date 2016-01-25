@@ -4531,7 +4531,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation>Jammer. Dit blyk dat die weergawenaam alreeds bestaan.&lt;br&gt;Kies asseblief &apos;n ander weergawenaam.</translation>
     </message>
     <message>

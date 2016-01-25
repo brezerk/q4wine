@@ -4504,7 +4504,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation>Promiňte, ale zdá se, že název verze již existuje.&lt;br&gt;Vyberte, prosím, jiný název verze.</translation>
     </message>
     <message>

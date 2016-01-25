@@ -4462,7 +4462,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

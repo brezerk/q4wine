@@ -4478,7 +4478,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation>抱歉，該版本名稱似乎已經存在。&lt;br&gt;請選取其他的版本名稱。</translation>
     </message>
     <message>

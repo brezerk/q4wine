@@ -242,7 +242,7 @@ void VersionManager::addVersion_Click(){
         vers->name_ = name;
         while (vers->load()){
             name = QInputDialog::getText(this, tr("Add version"),
-                                         tr("Sorry. It seems that the version name aready exists.<br>Please choose another version name."), QLineEdit::Normal,
+                                         tr("Sorry. It seems that the version name already exists.<br>Please choose another version name."), QLineEdit::Normal,
                                          name, &ok);
             if (!ok || name.isEmpty())
                 break;

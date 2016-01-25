@@ -5058,7 +5058,7 @@ Nota: deixe em branco para o padrão.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation>Desculpe. Parece que o nome da versão já existe.&lt;br&gt;Por favor, escolha outro nome da versão.</translation>
     </message>
     <message>

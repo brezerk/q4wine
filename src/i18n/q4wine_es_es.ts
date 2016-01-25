@@ -4704,7 +4704,7 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation>Disculpe. el nombre de la versión ya existe.&lt;br&gt;Por favor elija otro nombre.</translation>
     </message>
     <message>
