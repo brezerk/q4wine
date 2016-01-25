@@ -2694,11 +2694,6 @@ See help for details.</source>
         <translation>Программа: %1&lt;br&gt; Агрументы: %2 </translation>
     </message>
     <message>
-        <location line="-205"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation>%1 :. Qt GUI для Wine v%2</translation>
-    </message>
-    <message>
         <location line="+299"/>
         <source>Socket file &quot;%1&quot; already exists!</source>
         <translation>Файл сокета &quot;%1&quot; уже существует!</translation>

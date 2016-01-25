@@ -2882,11 +2882,6 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-405"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location line="+392"/>
         <location line="+3"/>
         <source>Cannot start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>

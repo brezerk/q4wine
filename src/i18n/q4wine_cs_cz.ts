@@ -2518,11 +2518,6 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Popis: %1</translation>
     </message>
     <message>
-        <location line="-206"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation>%1 :. Qt GUI pro Wine v%2</translation>
-    </message>
-    <message>
         <location line="+210"/>
         <source>Yes</source>
         <translation>Ano</translation>

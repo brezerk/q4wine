@@ -2556,7 +2556,7 @@ See help for details.</source>
     <message>
         <location line="-192"/>
         <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation>%1 : Графічна оболонка на Qt4 для Wine версії %2</translation>
+        <translation>%1 : Графічна оболонка на Qt для Wine версії %2</translation>
     </message>
     <message>
         <location line="+287"/>
@@ -2726,11 +2726,6 @@ See help for details.</source>
         <location line="-377"/>
         <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
         <translation>Вже запущена ще одна копія q4wine, або роботу q4wine було зупинено невірно. Відлити лок файл?</translation>
-    </message>
-    <message>
-        <location line="-300"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation>%1 :. Графічна оболонка на Qt4 для Wine v%2</translation>
     </message>
     <message>
         <location line="+356"/>

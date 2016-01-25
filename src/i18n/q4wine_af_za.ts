@@ -2559,11 +2559,6 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Beskrywing: %1</translation>
     </message>
     <message>
-        <location line="-206"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location line="+210"/>
         <source>Yes</source>
         <translation>Ja</translation>

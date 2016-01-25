@@ -2468,7 +2468,7 @@ Weitere Informationen unter Hilfe.</translation>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
         <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation>%1: Qt4-Oberfläche für Wine v%2</translation>
+        <translation>%1: Qt-Oberfläche für Wine v%2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="+264"/>
@@ -2523,11 +2523,6 @@ Weitere Informationen unter Hilfe.</translation>
         <location line="-726"/>
         <source>Description: %1</source>
         <translation>Beschreibung: %1</translation>
-    </message>
-    <message>
-        <location line="-206"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+210"/>

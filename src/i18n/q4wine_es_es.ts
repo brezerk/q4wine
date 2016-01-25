@@ -2576,11 +2576,6 @@ Vea la ayuda para mas detalles.</translation>
         <translation>Parece que otra instancia de q4wine ya esta corriendo, o se cerro incorrectamente. ¿Desea cerrarlo?</translation>
     </message>
     <message>
-        <location line="-300"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location line="+356"/>
         <location line="+14"/>
         <location line="+13"/>

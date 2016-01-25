@@ -2461,7 +2461,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
         <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation>%1 :. מנשק Qt4 עבור Wine גרסה %2</translation>
+        <translation>%1 :. מנשק Qt עבור Wine גרסה %2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="+264"/>
@@ -2516,11 +2516,6 @@ See help for details.</source>
         <location line="-726"/>
         <source>Description: %1</source>
         <translation>תיאור: %1</translation>
-    </message>
-    <message>
-        <location line="-206"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+210"/>

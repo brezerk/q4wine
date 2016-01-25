@@ -2468,7 +2468,7 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
         <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation>%1 :.رابط گرافیکی کاربرِ Qt4 برای شراب نسخه ی %2</translation>
+        <translation>%1 :.رابط گرافیکی کاربرِ Qt برای شراب نسخه ی %2</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -2694,11 +2694,6 @@ See help for details.</source>
     <message>
         <location line="+3"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="+59"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

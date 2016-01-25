@@ -2737,7 +2737,7 @@ Consulte a ajuda para detalhes.</translation>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
         <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation>%1 : Interface Qt4 para o Wine, v%2</translation>
+        <translation>%1 : Interface Qt para o Wine, v%2</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -3077,11 +3077,6 @@ Consulte a ajuda para detalhes.</translation>
     <message>
         <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
         <translation type="obsolete">Desculpe, ainda não há assistente de instalação. Ele será implementado na versão 0.110.</translation>
-    </message>
-    <message>
-        <location line="-677"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+300"/>
