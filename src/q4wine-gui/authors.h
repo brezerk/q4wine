@@ -151,13 +151,13 @@
 	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:tehnick-8@mail.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@mail.ru</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:tehnick@jabber.spbu.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick@jabber.spbu.ru</a>" \
+	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:tehnick-8@ya.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@ya.ru</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick-8.narod.ru/' style='color:#5f9ea0;'>http://tehnick-8.narod.ru/</a>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick.github.io/' style='color:#5f9ea0;'>http://tehnick.github.io/</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Ukraine" \
+	    "Russian Federation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    " " \
@@ -377,13 +377,13 @@
 	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:tehnick-8@mail.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@mail.ru</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:tehnick@jabber.spbu.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick@jabber.spbu.ru</a>" \
+	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:tehnick-8@ya.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@ya.ru</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick-8.narod.ru/' style='color:#5f9ea0;'>http://tehnick-8.narod.ru/</a>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick.github.io/' style='color:#5f9ea0;'>http://tehnick.github.io/</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Ukraine" \
+	    "Russian Federation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    " " \
@@ -537,19 +537,19 @@
 	    "Boris Pek (tehnick)" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Bug reports, testing" \
+	    "Bug reports, testing, some fixes" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:tehnick-8@mail.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@mail.ru</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:tehnick@jabber.spbu.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick@jabber.spbu.ru</a>" \
+	    "<span style='color:#6495ed;'>Jabber</span>: <a href='mailto:tehnick-8@ya.ru' style='text-decoration: none; color:#5f9ea0;'>tehnick-8@ya.ru</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick-8.narod.ru/' style='color:#5f9ea0;'>http://tehnick-8.narod.ru/</a>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='http://tehnick.github.io/' style='color:#5f9ea0;'>http://tehnick.github.io/</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Ukraine" \
+	    "Russian Federation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    " " \
