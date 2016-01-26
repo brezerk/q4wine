@@ -904,16 +904,14 @@ void IconListWidget::iconPaste_Click(void){
                 }
             }
 
-            switch (iconBuffer.move){
-            case false:
+            if (!iconBuffer.move){
                 if (!db_icon.copyIcon(iconBuffer.names.at(i), iconBuffer.prefix_name, iconBuffer.dir_name, newName, this->prefixName, this->dirName))
                     return;
 #ifndef _OS_DARWIN_
                 if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool())
                     CoreLib->createDesktopFile(this->prefixName, this->dirName, newName, true);
 #endif
-                break;
-            case true:
+            } else {
                 if (!db_icon.updateIcon(newName, db_prefix.getId(this->prefixName), db_dir.getId(this->dirName, this->prefixName), db_prefix.getId(iconBuffer.prefix_name), db_dir.getId(iconBuffer.dir_name, iconBuffer.prefix_name), iconBuffer.names.at(i)))
                     return;
 #ifndef _OS_DARWIN_
@@ -922,7 +920,6 @@ void IconListWidget::iconPaste_Click(void){
                     CoreLib->createDesktopFile(this->prefixName, this->dirName, newName, true);
                 }
 #endif
-                break;
             }
 
         }

@@ -2467,8 +2467,8 @@ See help for details.</source>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
-        <source>%1 :. Qt4 GUI for Wine v%2</source>
-        <translation>%1 :.رابط گرافیکی کاربرِ Qt4 برای شراب نسخه ی %2</translation>
+        <source>%1 :. Qt GUI for Wine v%2</source>
+        <translation>%1 :.رابط گرافیکی کاربرِ Qt برای شراب نسخه ی %2</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -2694,11 +2694,6 @@ See help for details.</source>
     <message>
         <location line="+3"/>
         <source>Ctrl+M</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../q4wine-gui/mainwindow.cpp" line="+59"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4506,7 +4501,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

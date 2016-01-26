@@ -76,9 +76,9 @@ pkg_maintainers:
           nick: tehnick
           info: Debian and Ubuntu package maintainer, some fixes
           mail: tehnick-8@mail.ru
-          web: http://tehnick-8.narod.ru/
-          jid: tehnick@jabber.spbu.ru
-          location: Ukraine
+          web: http://tehnick.github.io/
+          jid: tehnick-8@ya.ru
+          location: Russian Federation
 
         - name: Dmitrij S. Kryzhevich
           info: Fedora package maintainer
@@ -124,9 +124,9 @@ translations:
           nick: tehnick
           info: Russian translation
           mail: tehnick-8@mail.ru
-          web: http://tehnick-8.narod.ru/
-          jid: tehnick@jabber.spbu.ru
-          location: Ukraine
+          web: http://tehnick.github.io/
+          jid: tehnick-8@ya.ru
+          location: Russian Federation
 
         - name: Danie Wessels
           nick: DanieW
@@ -219,11 +219,11 @@ thanks:
 
         - name: Boris Pek
           nick: tehnick
-          info: Bug reports, testing
+          info: Bug reports, testing, some fixes
           mail: tehnick-8@mail.ru
-          web: http://tehnick-8.narod.ru/
-          jid: tehnick@jabber.spbu.ru
-          location: Ukraine
+          web: http://tehnick.github.io/
+          jid: tehnick-8@ya.ru
+          location: Russian Federation
 
         - name: Dmitry Marakasov
           nick: amdmi3

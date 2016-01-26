@@ -2460,8 +2460,8 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
-        <source>%1 :. Qt4 GUI for Wine v%2</source>
-        <translation>%1 :. Qt4 GUI pro wine v%2</translation>
+        <source>%1 :. Qt GUI for Wine v%2</source>
+        <translation>%1 :. Qt GUI pro wine v%2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="+264"/>
@@ -2516,11 +2516,6 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location line="-726"/>
         <source>Description: %1</source>
         <translation>Popis: %1</translation>
-    </message>
-    <message>
-        <location line="-206"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation>%1 :. Qt GUI pro Wine v%2</translation>
     </message>
     <message>
         <location line="+210"/>
@@ -4504,7 +4499,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation>Promiňte, ale zdá se, že název verze již existuje.&lt;br&gt;Vyberte, prosím, jiný název verze.</translation>
     </message>
     <message>

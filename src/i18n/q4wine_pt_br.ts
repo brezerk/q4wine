@@ -2736,8 +2736,8 @@ Consulte a ajuda para detalhes.</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
-        <source>%1 :. Qt4 GUI for Wine v%2</source>
-        <translation>%1 : Interface Qt4 para o Wine, v%2</translation>
+        <source>%1 :. Qt GUI for Wine v%2</source>
+        <translation>%1 : Interface Qt para o Wine, v%2</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -3077,11 +3077,6 @@ Consulte a ajuda para detalhes.</translation>
     <message>
         <source>Sorry, no install wizard yet. It&apos;l  implemented at v0.110.</source>
         <translation type="obsolete">Desculpe, ainda não há assistente de instalação. Ele será implementado na versão 0.110.</translation>
-    </message>
-    <message>
-        <location line="-677"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+300"/>
@@ -5058,7 +5053,7 @@ Nota: deixe em branco para o padrão.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation>Desculpe. Parece que o nome da versão já existe.&lt;br&gt;Por favor, escolha outro nome da versão.</translation>
     </message>
     <message>

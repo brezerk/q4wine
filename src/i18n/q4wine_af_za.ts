@@ -2478,8 +2478,8 @@ Sien hulp vir verderre besonderhede.</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
-        <source>%1 :. Qt4 GUI for Wine v%2</source>
-        <translation>%1 :. Qt4 GUI vir Wine v%2</translation>
+        <source>%1 :. Qt GUI for Wine v%2</source>
+        <translation>%1 :. Qt GUI vir Wine v%2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="+264"/>
@@ -2557,11 +2557,6 @@ Sien hulp vir verderre besonderhede.</translation>
         <location line="-726"/>
         <source>Description: %1</source>
         <translation>Beskrywing: %1</translation>
-    </message>
-    <message>
-        <location line="-206"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+210"/>
@@ -4531,7 +4526,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation>Jammer. Dit blyk dat die weergawenaam alreeds bestaan.&lt;br&gt;Kies asseblief &apos;n ander weergawenaam.</translation>
     </message>
     <message>

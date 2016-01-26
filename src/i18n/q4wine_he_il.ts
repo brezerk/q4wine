@@ -2460,8 +2460,8 @@ See help for details.</source>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
-        <source>%1 :. Qt4 GUI for Wine v%2</source>
-        <translation>%1 :. מנשק Qt4 עבור Wine גרסה %2</translation>
+        <source>%1 :. Qt GUI for Wine v%2</source>
+        <translation>%1 :. מנשק Qt עבור Wine גרסה %2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="+264"/>
@@ -2516,11 +2516,6 @@ See help for details.</source>
         <location line="-726"/>
         <source>Description: %1</source>
         <translation>תיאור: %1</translation>
-    </message>
-    <message>
-        <location line="-206"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+210"/>
@@ -4505,7 +4500,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation>נראה כי כבר קיימת גרסה בשם הזה.&lt;br&gt;נא לבחור בשם אחר לגרסה.</translation>
     </message>
     <message>

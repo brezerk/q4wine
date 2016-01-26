@@ -2432,7 +2432,7 @@ See help for details.</source>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
-        <source>%1 :. Qt4 GUI for Wine v%2</source>
+        <source>%1 :. Qt GUI for Wine v%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2510,11 +2510,6 @@ See help for details.</source>
     <message>
         <location line="-726"/>
         <source>Description: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-206"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4462,7 +4457,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

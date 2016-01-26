@@ -2448,8 +2448,8 @@ See help for details.</source>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
-        <source>%1 :. Qt4 GUI for Wine v%2</source>
-        <translation>%1 :.Wine v%2 的 Qt4 圖形使用者介面</translation>
+        <source>%1 :. Qt GUI for Wine v%2</source>
+        <translation>%1 :.Wine v%2 的 Qt 圖形使用者介面</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="+264"/>
@@ -2527,11 +2527,6 @@ See help for details.</source>
         <location line="-726"/>
         <source>Description: %1</source>
         <translation>描述：%1</translation>
-    </message>
-    <message>
-        <location line="-206"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation>%1 :.Wine v%2 的 Qt 圖形使用者介面</translation>
     </message>
     <message>
         <location line="+210"/>
@@ -4478,7 +4473,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation>抱歉，該版本名稱似乎已經存在。&lt;br&gt;請選取其他的版本名稱。</translation>
     </message>
     <message>

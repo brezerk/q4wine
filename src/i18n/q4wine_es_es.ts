@@ -2528,8 +2528,8 @@ Vea la ayuda para mas detalles.</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+15"/>
-        <source>%1 :. Qt4 GUI for Wine v%2</source>
-        <translation>%1 :. Qt4 GUI para Wine v%2</translation>
+        <source>%1 :. Qt GUI for Wine v%2</source>
+        <translation>%1 :. Qt GUI para Wine v%2</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/mainwindow.cpp" line="+264"/>
@@ -2574,11 +2574,6 @@ Vea la ayuda para mas detalles.</translation>
         <location line="-377"/>
         <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
         <translation>Parece que otra instancia de q4wine ya esta corriendo, o se cerro incorrectamente. ¿Desea cerrarlo?</translation>
-    </message>
-    <message>
-        <location line="-300"/>
-        <source>%1 :. Qt GUI for Wine v%2</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+356"/>
@@ -4704,7 +4699,7 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Sorry. It seems that the version name aready exists.&lt;br&gt;Please choose another version name.</source>
+        <source>Sorry. It seems that the version name already exists.&lt;br&gt;Please choose another version name.</source>
         <translation>Disculpe. el nombre de la versión ya existe.&lt;br&gt;Por favor elija otro nombre.</translation>
     </message>
     <message>
