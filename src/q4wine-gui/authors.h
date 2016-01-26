@@ -483,7 +483,7 @@
     "</head>" \
     "<body>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<img src=':emblem-favorite' /> Irina V. Malakhova " \
+	    "<img src=':emblem-favorite' width='16'/> Irina V. Malakhova " \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Thanks for patience, love and countenance =]" \
