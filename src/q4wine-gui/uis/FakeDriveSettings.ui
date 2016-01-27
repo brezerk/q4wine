@@ -175,7 +175,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -194,7 +194,7 @@
         <item>
          <widget class="QTabWidget" name="tabwGeneral">
           <property name="currentIndex">
-           <number>2</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tab">
            <attribute name="title">
@@ -570,7 +570,7 @@
                <item>
                 <widget class="QRadioButton" name="rbColorsLeave">
                  <property name="text">
-                  <string>Use existing color theme</string>
+                  <string>Use e&amp;xisting color theme</string>
                  </property>
                  <property name="checked">
                   <bool>true</bool>
@@ -587,7 +587,7 @@
                <item>
                 <widget class="QRadioButton" name="rbColorsQt4">
                  <property name="text">
-                  <string>Use current Qt4 colors</string>
+                  <string>Use current &amp;Qt colors</string>
                  </property>
                 </widget>
                </item>
