@@ -53,7 +53,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
     widgetContent->setLayout(vlayout.release());
 
     setWindowTitle(tr("%1 settings").arg(APP_NAME));
-    setWindowIcon(CoreLib->loadIcon("q4wine"));
+    setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
 
     connect(optionsTree, SIGNAL(itemClicked (QTreeWidgetItem *, int)), this, SLOT(optionsTree_itemClicked ( QTreeWidgetItem *, int)));
 
@@ -89,6 +89,14 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
     settings.endGroup();
 
     settings.beginGroup("app");
+
+    QString appIcon = settings.value("icon").toString();
+    if (appIcon == "q4wine-ambiance"){
+        comboAppIcons->setCurrentIndex(comboAppIcons->findText(tr("Monochrome")));
+    } else {
+        comboAppIcons->setCurrentIndex(comboAppIcons->findText(tr("Default")));
+    }
+
     if (settings.value("showTrareyIcon", 0).toInt()==1){
         cbShowTray->setCheckState(Qt::Checked);
     } else {
@@ -516,6 +524,13 @@ void AppSettings::cmdOk_Click(){
     settings.endGroup();
 
     settings.beginGroup("app");
+
+    if (comboAppIcons->currentText() == tr("Monochrome")){
+        settings.setValue("icon", "q4wine-ambiance");
+    } else {
+        settings.setValue("icon", "q4wine");
+    }
+
     if (cbShowTray->checkState()==Qt::Checked) {
         settings.setValue("showTrareyIcon", 1);
     } else {
@@ -545,6 +560,8 @@ void AppSettings::cmdOk_Click(){
     } else {
         settings.setValue("lang", comboLangs->currentText());
     }
+
+
 
     settings.endGroup();
     settings.beginGroup("system");

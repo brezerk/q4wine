@@ -36,8 +36,8 @@ VersionManager::VersionManager(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
     setupUi(this);
-    setWindowTitle("Wine Version Manager");
-    setWindowIcon(CoreLib->loadIcon("q4wine"));
+    setWindowTitle(tr("Wine Version Manager"));
+    setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
 
     createActions();
     loadThemeIcons();

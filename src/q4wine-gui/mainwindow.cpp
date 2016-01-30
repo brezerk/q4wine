@@ -57,7 +57,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
         this->showMinimized();
 
     setWindowTitle(tr("%1 :. Qt GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
-    setWindowIcon(CoreLib->loadIcon("q4wine"));
+    setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
 
     std::auto_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
 
@@ -512,7 +512,7 @@ void MainWindow::createTrayIcon(){
     trayIcon.reset(new QSystemTrayIcon(this));
     trayIcon->setContextMenu(trayIconMenu.release());
 
-    QIcon icon = CoreLib->loadIcon("q4wine");
+    QIcon icon = CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString());
 
     trayIcon->setIcon(icon);
     setWindowIcon(icon);

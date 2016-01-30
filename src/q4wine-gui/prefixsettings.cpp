@@ -43,6 +43,8 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::Window
     this->addNew=false;
     this->loadThemeIcons();
 
+    setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
+
     QHash<QString,QString> result = db_prefix.getByName(prefix_name);
     if (result.value("id").isEmpty())
         return;

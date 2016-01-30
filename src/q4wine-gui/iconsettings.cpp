@@ -72,7 +72,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
       if (QDir().exists(cd_mount))
           prefix_urls << QUrl::fromLocalFile(cd_mount);
 
-    setWindowIcon(CoreLib->loadIcon("q4wine"));
+    setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
     this->loadThemeIcons();
 
 

@@ -64,5 +64,6 @@
         <file alias="wine">data/wine.svgz</file>
         <file alias="oleview">data/oleview.png</file>
         <file alias="control">data/control.png</file>
+        <file alias="q4wine-ambiance">data/q4wine-ambiance.svgz</file>
     </qresource>
 </RCC>

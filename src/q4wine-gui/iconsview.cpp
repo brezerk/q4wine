@@ -37,7 +37,7 @@ IconsView::IconsView(QString tmpDir, QWidget * parent, Qt::WindowFlags f) : QDia
 
     setupUi(this);
 
-    setWindowIcon(CoreLib->loadIcon("q4wine"));
+    setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
 
 	tempDirectory=tmpDir;
 

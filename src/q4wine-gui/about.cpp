@@ -37,7 +37,7 @@ About::About(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 
     setupUi(this);
     setWindowTitle(tr("About %1").arg(APP_NAME));
-    setWindowIcon(CoreLib->loadIcon("q4wine"));
+    setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
 
     lblLogo->setPixmap(CoreLib->loadPixmap("q4wine"));

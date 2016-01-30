@@ -88,7 +88,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
         TotalPage=8;
 
         setWindowTitle(tr("First startup wizard"));
-        setWindowIcon(CoreLib->loadIcon("q4wine"));
+        setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
 
         cmdFirstSteps->setVisible(false);
 

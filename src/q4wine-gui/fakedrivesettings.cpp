@@ -56,7 +56,7 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
     widgetContent->setLayout(vlayout.release());
 
     setWindowTitle(tr("Fake drive settings"));
-    setWindowIcon(CoreLib->loadIcon("q4wine"));
+    setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
 
     connect(optionsTree, SIGNAL(itemClicked (QTreeWidgetItem *, int)), this, SLOT(optionsTree_itemClicked ( QTreeWidgetItem *, int)));
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));

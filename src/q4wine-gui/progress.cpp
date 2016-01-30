@@ -36,7 +36,7 @@ Progress::Progress(int action, QString path, QWidget * parent, Qt::WindowFlags f
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
-    setWindowIcon(CoreLib->loadIcon("q4wine"));
+    setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
 
     this->max=0;
     this->current=0;
@@ -62,11 +62,7 @@ Progress::Progress(int action, QString path, QWidget * parent, Qt::WindowFlags f
         t->start(1000);
     }
 
-
     progressBar->setMaximum(this->max);
-
-
-
 
     return;
 }

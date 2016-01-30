@@ -22,8 +22,6 @@ Process::Process (QStringList args, QString exec, QString dir, QString info, QSt
 {
 	setupUi(this);
 
-
-
 	this->showErr=showErr;
 
 	myProcess.reset(new QProcess(parent));
