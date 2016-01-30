@@ -1,13 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file alias="brezblock">data/blockdevice.png</file>
-        <file alias="winecfg">data/winecfg.png</file>
         <file alias="firstc">data/firstc.png</file>
-        <file alias="regedit">data/regedit.png</file>
-        <file alias="winemine">data/winemine.png</file>
-        <file alias="iexplore">data/iexplore.png</file>
-        <file alias="taskmgr">data/taskmgr.png</file>
-        <file alias="wordpad">data/wordpad.png</file>
         <file alias="document-edit">data/oxygen/document-edit.svgz</file>
         <file alias="document-export">data/oxygen/document-export.svgz</file>
         <file alias="document-import">data/oxygen/document-import.svgz</file>
@@ -45,11 +39,6 @@
         <file alias="view-refresh">data/oxygen/view-refresh.svgz</file>
         <file alias="configure">data/oxygen/configure.svgz</file>
         <file alias="folder-cyan">data/oxygen/folder-cyan.svgz</file>
-        <file alias="notepad">data/notepad.png</file>
-        <file alias="explorer">data/explorer.png</file>
-        <file alias="wineconsole">data/wineconsole.png</file>
-        <file alias="eject">data/eject.png</file>
-        <file alias="uninstaller">data/uninstaller.png</file>
         <file alias="document-preview">data/oxygen/document-preview.svgz</file>
         <file alias="view-catalog">data/oxygen/view-catalog.svgz</file>
         <file alias="edit-find">data/oxygen/edit-find.svgz</file>
@@ -62,8 +51,19 @@
         <file alias="help-contextual">data/oxygen/help-contextual.svgz</file>
         <file alias="q4wine">data/q4wine.svgz</file>
         <file alias="wine">data/wine.svgz</file>
-        <file alias="oleview">data/oleview.png</file>
-        <file alias="control">data/control.png</file>
         <file alias="q4wine-ambiance">data/q4wine-ambiance.svgz</file>
+        <file alias="winecfg">data/wine/winecfg.svg</file>
+        <file alias="regedit">data/wine/regedit.svg</file>
+        <file alias="iexplore">data/wine/iexplore.svg</file>
+        <file alias="taskmgr">data/wine/taskmgr.svg</file>
+        <file alias="wordpad">data/wine/wordpad.svg</file>
+        <file alias="winemine">data/wine/winemine.svg</file>
+        <file alias="notepad">data/wine/notepad.svg</file>
+        <file alias="explorer">data/wine/winefile.svg</file>
+        <file alias="control">data/wine/control.svg</file>
+        <file alias="wineconsole">data/wine/wcmd.svg</file>
+        <file alias="uninstaller">data/wine/trash_file.svg</file>
+        <file alias="eject">data/wine/cdrom.svg</file>
+        <file alias="oleview">data/wine/oic_winlogo.svg</file>
     </qresource>
 </RCC>
