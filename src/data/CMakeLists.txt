@@ -1,22 +1,27 @@
 cmake_minimum_required(VERSION 2.8.0)
 
 SET( ICON_PIXMAPS
-    ${CMAKE_SOURCE_DIR}/src/data/eject.png
-    ${CMAKE_SOURCE_DIR}/src/data/explorer.png
-    ${CMAKE_SOURCE_DIR}/src/data/iexplore.png
-    ${CMAKE_SOURCE_DIR}/src/data/oleview.png
-    ${CMAKE_SOURCE_DIR}/src/data/control.png
-    ${CMAKE_SOURCE_DIR}/src/data/taskmgr.png
     ${CMAKE_SOURCE_DIR}/src/data/exec_wine.png
-    ${CMAKE_SOURCE_DIR}/src/data/notepad.png
-    ${CMAKE_SOURCE_DIR}/src/data/regedit.png
-    ${CMAKE_SOURCE_DIR}/src/data/uninstaller.png
-    ${CMAKE_SOURCE_DIR}/src/data/winecfg.png
-    ${CMAKE_SOURCE_DIR}/src/data/winemine.png
-    ${CMAKE_SOURCE_DIR}/src/data/wordpad.png
-    ${CMAKE_SOURCE_DIR}/src/data/wineconsole.png
+)
+
+SET( ICON_SCALABLE
+    ${CMAKE_SOURCE_DIR}/src/data/wine/cdrom.svg
+    ${CMAKE_SOURCE_DIR}/src/data/wine/winefile.svg
+    ${CMAKE_SOURCE_DIR}/src/data/wine/iexplore.svg
+    ${CMAKE_SOURCE_DIR}/src/data/wine/oic_winlogo.svg
+    ${CMAKE_SOURCE_DIR}/src/data/wine/control.svg
+    ${CMAKE_SOURCE_DIR}/src/data/wine/taskmgr.svg
+    ${CMAKE_SOURCE_DIR}/src/data/wine/notepad.svg
+    ${CMAKE_SOURCE_DIR}/src/data/wine/regedit.svg
+    ${CMAKE_SOURCE_DIR}/src/data/wine/trash_file.svg
+    ${CMAKE_SOURCE_DIR}/src/data/wine/winecfg.svg
+    ${CMAKE_SOURCE_DIR}/src/data/wine/winemine.svg
+    ${CMAKE_SOURCE_DIR}/src/data/wine/wordpad.svg
+    ${CMAKE_SOURCE_DIR}/src/data/wine/wcmd.svg
 )
 
 IF( RELEASE )
-    install(FILES ${ICON_PIXMAPS} DESTINATION  ${DATA_ENTRY_PATH})
+    install(FILES ${ICON_PIXMAPS} DESTINATION ${DATA_ENTRY_PATH})
+    install(FILES ${ICON_SCALABLE} DESTINATION ${DATA_ENTRY_PATH})
 ENDIF( RELEASE )
+

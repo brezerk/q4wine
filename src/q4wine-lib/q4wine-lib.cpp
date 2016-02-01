@@ -1205,6 +1205,11 @@ QStringList corelib::getCdromDevices(void) const{
             //FIXME:
             QString base_icon = QString("%1/.local/share/applications/").arg(QDir::homePath());
 
+#ifdef _OS_DARWIN_
+            QString embedded_icon_path = QString("%1/%2.app/Contents/Resources/icons/share/q4wine/icons/").arg(APP_PREF, APP_NAME);
+#else
+            QString embedded_icon_path = QString("%1/share/q4wine/icons/").arg(APP_PREF);
+#endif
 
             if (is_menu){
                 fileName = base_icon;
@@ -1243,13 +1248,41 @@ QStringList corelib::getCdromDevices(void) const{
                 if (QFile(icon_path).exists()){
                     out<<"Icon="<<icon_path<<endl;
                 } else {
-                    out<<"Icon=application-x-ms-dos-executable"<<endl;
+                    if (icon_name == "eject"){
+                        out<<"Icon="<<embedded_icon_path<<"cdrom"<<".svg"<<endl;
+                    } else if (icon_name == "explorer"){
+                        out<<"Icon="<<embedded_icon_path<<"winefile"<<".svg"<<endl;
+                    } else if (icon_name == "winecfg"){
+                        out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                    } else if (icon_name == "iexplore"){
+                        out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                    } else if (icon_name == "oleview"){
+                        out<<"Icon="<<embedded_icon_path<<"oic_winlogo"<<".svg"<<endl;
+                    } else if (icon_name == "taskmgr"){
+                        out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                    } else if (icon_name == "control"){
+                        out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                    } else if (icon_name == "notepad"){
+                        out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                    } else if (icon_name == "regedit"){
+                        out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                    } else if (icon_name == "uninstaller"){
+                        out<<"Icon="<<embedded_icon_path<<"trash_file"<<".svg"<<endl;
+                    } else if (icon_name == "winemine"){
+                        out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                    } else if (icon_name == "wordpad"){
+                        out<<"Icon="<<embedded_icon_path<<icon_name<<".svg"<<endl;
+                    } else if (icon_name == "wineconsole"){
+                        out<<"Icon="<<embedded_icon_path<<"wcmd"<<".svg"<<endl;
+                    } else {
+                        out<<"Icon=application-x-ms-dos-executable"<<endl;
+                    }
                 }
             }
             out<<"Type=Application"<<endl;
             out<<"StartupNotify=true"<<endl;
-            out<<"GenericName="<<result.value("name")<<endl;
-            out<<"Name="<<result.value("name")<<endl;
+            out<<"GenericName="<<icon_name<<endl;
+            out<<"Name="<<icon_name<<endl;
             out<<"Path="<<result.value("wrkdir")<<endl;
 
             file.close();
