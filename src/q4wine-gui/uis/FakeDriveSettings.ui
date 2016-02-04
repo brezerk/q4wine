@@ -112,12 +112,12 @@
           </item>
           <item>
            <property name="text">
-            <string>Direct3D</string>
+            <string notr="true">Direct3D</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>OpenGL</string>
+            <string notr="true">OpenGL</string>
            </property>
           </item>
           <item>
@@ -132,7 +132,7 @@
           </property>
           <item>
            <property name="text">
-            <string>Direct3D</string>
+            <string notr="true">Direct3D</string>
            </property>
           </item>
           <item>

@@ -212,15 +212,15 @@
         <translation>%1 Settings</translation>
     </message>
     <message>
-        <location line="+1185"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+337"/>
+        <location line="+2319"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+345"/>
         <location line="+105"/>
-        <location line="+89"/>
+        <location line="+98"/>
         <source>No Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-396"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-405"/>
         <source>generic</source>
         <translation type="unfinished"></translation>
     </message>
@@ -239,7 +239,7 @@
     <message>
         <location line="+133"/>
         <location line="+4"/>
-        <location line="+167"/>
+        <location line="+176"/>
         <location line="+2"/>
         <location line="+6"/>
         <location line="+2"/>
@@ -247,7 +247,7 @@
         <translation type="unfinished">Error</translation>
     </message>
     <message>
-        <location line="-181"/>
+        <location line="-190"/>
         <source>Sorry, specify proxy host.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -257,7 +257,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+167"/>
+        <location line="+176"/>
         <source>Sorry, specify %1 directory.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -277,30 +277,30 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="+587"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-559"/>
-        <location line="+422"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-2176"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-568"/>
+        <location line="+429"/>
         <source>System Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1713"/>
-        <location line="+2565"/>
+        <location line="+852"/>
         <location line="+5"/>
         <location line="+4"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-275"/>
+        <location line="+111"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-282"/>
         <location line="+20"/>
-        <location line="+412"/>
+        <location line="+421"/>
         <source>General</source>
         <translation type="unfinished">General</translation>
     </message>
     <message>
-        <location line="-2556"/>
+        <location line="+18"/>
         <source>Wine settings</source>
         <translation type="unfinished">Wine Settings</translation>
     </message>
     <message>
-        <location line="+775"/>
+        <location line="+853"/>
         <source>Bin:</source>
         <translation>Binary:</translation>
     </message>
@@ -323,68 +323,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+34"/>
-        <location line="+2430"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-409"/>
-        <location line="+411"/>
+        <location line="-299"/>
+        <location line="+333"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-418"/>
+        <location line="+420"/>
         <source>System</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-2412"/>
+        <location line="+18"/>
         <source>System utils</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+45"/>
-        <source>tar:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+66"/>
-        <source>mount:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+66"/>
-        <source>umount:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+66"/>
-        <source>sudo:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+66"/>
-        <source>gui sudo:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+66"/>
-        <source>nice:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+66"/>
-        <source>renice:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+66"/>
-        <source>sh:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+56"/>
-        <location line="+1854"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-408"/>
-        <location line="+410"/>
+        <location line="-346"/>
+        <location line="+909"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-417"/>
+        <location line="+419"/>
         <source>Utils</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1836"/>
+        <location line="+18"/>
         <source>Console</source>
         <translation type="unfinished"></translation>
     </message>
@@ -394,23 +354,23 @@
         <translation type="unfinished">Arguments:</translation>
     </message>
     <message>
-        <location line="+511"/>
-        <location line="+1224"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-404"/>
-        <location line="+408"/>
+        <location line="-1028"/>
+        <location line="+1539"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-413"/>
+        <location line="+417"/>
         <source>Quick Mount</source>
         <translation type="unfinished">Quick Mount</translation>
     </message>
     <message>
-        <location line="-827"/>
-        <location line="+847"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-393"/>
-        <location line="+403"/>
+        <location line="-2366"/>
+        <location line="+852"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-402"/>
+        <location line="+412"/>
         <source>Logging</source>
         <translation type="unfinished">Logging</translation>
     </message>
     <message>
-        <location line="-829"/>
+        <location line="-834"/>
         <source>Logging subsystem:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -430,45 +390,35 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+277"/>
+        <location line="+1999"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location line="-1783"/>
-        <source>wrestool:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+66"/>
-        <source>icotool:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+643"/>
+        <location line="-2796"/>
         <location line="+18"/>
         <location line="+950"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-412"/>
-        <location line="+406"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-421"/>
+        <location line="+415"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-403"/>
-        <location line="+405"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-412"/>
+        <location line="+414"/>
         <source>Themes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-1555"/>
-        <location line="+1540"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-417"/>
-        <location line="+409"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-15"/>
+        <location line="+1223"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-426"/>
+        <location line="+418"/>
         <source>Network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1522"/>
+        <location line="+18"/>
         <source>Proxy settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -478,32 +428,46 @@
         <translation type="unfinished">Password:</translation>
     </message>
     <message>
-        <location line="-199"/>
-        <source>HTTP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-1072"/>
+        <location line="-1271"/>
         <source>Tray Icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+823"/>
-        <source>Icoutils</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+817"/>
+        <location line="-1123"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-587"/>
+        <location line="+2176"/>
         <source>Proxy type:</source>
         <translation type="unfinished">Proxy type:</translation>
     </message>
     <message>
-        <location line="-1013"/>
+        <location line="-1266"/>
+        <location line="+129"/>
+        <source>App Icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
+        <source>App Icon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-626"/>
+        <source>Default</source>
+        <translation type="unfinished">Default</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-2"/>
+        <location line="+433"/>
+        <source>Monochrome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+60"/>
         <source>Minimize to tray at startup.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -513,12 +477,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1011"/>
-        <source>Socks v5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+38"/>
+        <location line="+1049"/>
         <source>Host:</source>
         <translation type="unfinished">Host:</translation>
     </message>
@@ -558,20 +517,20 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+252"/>
+        <location line="-2511"/>
         <source>Note: Since SQLite was not designed to handle large amount of data, activating this can have a negative impact on the performance of Q4Wine. Use it with care.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+27"/>
-        <location line="+770"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-388"/>
-        <location line="+402"/>
+        <location line="+775"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-202"/>
+        <location line="+411"/>
         <source>AppDB browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-752"/>
+        <location line="-757"/>
         <source>AppDB browser subsystem:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -582,14 +541,14 @@
     </message>
     <message>
         <location line="+44"/>
-        <location line="+712"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-396"/>
-        <location line="+400"/>
+        <location line="+717"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-405"/>
+        <location line="+409"/>
         <source>Desktop Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-706"/>
+        <location line="-711"/>
         <source>Desktop menu plugin</source>
         <translation type="unfinished"></translation>
     </message>
@@ -610,14 +569,14 @@
     </message>
     <message>
         <location line="+47"/>
-        <location line="+642"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-394"/>
-        <location line="+398"/>
+        <location line="+647"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-403"/>
+        <location line="+407"/>
         <source>Defaults</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-404"/>
+        <location line="-409"/>
         <source>Program icons</source>
         <translation type="unfinished"></translation>
     </message>
@@ -643,61 +602,61 @@
     </message>
     <message>
         <location line="+82"/>
-        <location line="+253"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-395"/>
-        <location line="+397"/>
+        <location line="+258"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-404"/>
+        <location line="+406"/>
         <source>Run dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-184"/>
+        <location line="-189"/>
         <location line="+18"/>
-        <location line="+171"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-394"/>
-        <location line="+396"/>
+        <location line="+176"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-403"/>
+        <location line="+405"/>
         <source>Wine desktop import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-140"/>
+        <location line="-145"/>
         <source>Remove processed wine desktop files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-429"/>
-        <location line="+407"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
+        <location line="+416"/>
         <source>Interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-398"/>
-        <location line="+404"/>
+        <location line="+15"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-407"/>
+        <location line="+413"/>
         <source>Subsystems</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-395"/>
-        <location line="+401"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-404"/>
+        <location line="+410"/>
         <source>Plugins</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-395"/>
-        <location line="+399"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-404"/>
+        <location line="+408"/>
         <source>Advanced</source>
         <translation type="unfinished">Advanced</translation>
     </message>
     <message>
-        <location line="-632"/>
+        <location line="-637"/>
         <source>Default virtual desktop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1967"/>
+        <location line="+718"/>
         <source>You can call it via Tools menu or via shortcut Ctrl+M</source>
         <translation type="unfinished"></translation>
     </message>
@@ -707,7 +666,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1978"/>
+        <location line="-707"/>
         <source>Default virtual desktop size will be used for &quot;Icon creation&quot; and &quot;Run&quot; dialogs.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -728,7 +687,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+187"/>
+        <location line="+1909"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
@@ -783,11 +742,8 @@
         <translation>Video</translation>
     </message>
     <message>
-        <location line="-671"/>
-        <location line="+1543"/>
+        <location line="+872"/>
         <location line="+21"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-717"/>
-        <location line="+715"/>
         <source>OpenGL</source>
         <translation>OpenGL</translation>
     </message>
@@ -795,7 +751,7 @@
         <location line="-1589"/>
         <location line="+2646"/>
         <location line="+21"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-706"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-708"/>
         <location line="+712"/>
         <source>Wine Drives</source>
         <translation>Wine Drives</translation>
@@ -1037,14 +993,9 @@
         <translation>X11 Driver</translation>
     </message>
     <message>
-        <location line="-3326"/>
-        <location line="+20"/>
-        <location line="+1055"/>
+        <location line="-2251"/>
         <location line="+2011"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-740"/>
-        <location line="+33"/>
-        <location line="+683"/>
-        <location line="+22"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-2"/>
         <source>Direct3D</source>
         <translation>Direct3D</translation>
     </message>
@@ -3161,7 +3112,7 @@ See help for details.</source>
 <context>
     <name>PrefixSettings</name>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="+142"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="+144"/>
         <source>Add new Prefix</source>
         <translation>Add New Prefix</translation>
     </message>
@@ -3715,7 +3666,7 @@ See help for details.</source>
 <context>
     <name>Process</name>
     <message>
-        <location filename="../q4wine-gui/process.cpp" line="+71"/>
+        <location filename="../q4wine-gui/process.cpp" line="+69"/>
         <location line="+4"/>
         <location line="+3"/>
         <location line="+3"/>
@@ -3813,25 +3764,25 @@ See help for details.</source>
     </message>
     <message>
         <location line="+8"/>
-        <location line="+53"/>
+        <location line="+49"/>
         <source>Waiting for Wine process to finish...</source>
         <translation>Waiting for Wine process to finish...</translation>
     </message>
     <message>
-        <location line="-53"/>
-        <location line="+53"/>
+        <location line="-49"/>
+        <location line="+49"/>
         <source>There are %1 processes running for prefix %2.</source>
         <translation>There are %1 processes running for prefix %2.</translation>
     </message>
     <message>
-        <location line="-53"/>
-        <location line="+53"/>
+        <location line="-49"/>
+        <location line="+49"/>
         <source>If the processes keep running -- end them manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-52"/>
-        <location line="+53"/>
+        <location line="-48"/>
+        <location line="+49"/>
         <source>Running process: %1</source>
         <translation>Running process: %1</translation>
     </message>
@@ -4487,6 +4438,7 @@ See help for details.</source>
     <name>VersionManager</name>
     <message>
         <location filename="../q4wine-gui/uis/VersionManager.ui" line="+23"/>
+        <location filename="../q4wine-gui/versions.cpp" line="+39"/>
         <source>Wine Version Manager</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4526,7 +4478,7 @@ See help for details.</source>
         <translation type="unfinished">OK</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/versions.cpp" line="+206"/>
+        <location filename="../q4wine-gui/versions.cpp" line="+167"/>
         <source>The Version settings has been modified.</source>
         <translation type="unfinished"></translation>
     </message>
