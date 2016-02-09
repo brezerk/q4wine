@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="q4wine-dark.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1156"
+     inkscape:window-height="631"
+     id="namedview9"
+     showgrid="false"
+     inkscape:zoom="0.4609375"
+     inkscape:cx="256"
+     inkscape:cy="256"
+     inkscape:window-x="30"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <title
+     id="title2992">Q4Wine logo</title>
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Q4Wine logo</dc:title>
+        <cc:license
+           rdf:resource="http://www.fsf.org/licensing/licenses/gpl.html" />
+        <dc:date>2013-03-26</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Artem Vorotnikov</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4" />
+  <path
+     d="M 101,419 C 96.2,440 163,465 189,477 210,484 253,496 270,489 295,472 252,457 235,446 212,435 211,411 217,386 224,361 235,335 249,326 257,321 269,313 269,313 L 225,316 196,284 C 186,280 201,304 204,311 210,323 209,333 209,345 185,469 123,388 101,419 z"
+     id="path6"
+     style="fill:#1a1a1a;fill-opacity:1;stroke:none" />
+  <path
+     d="M 357,147 C 357,147 348,139 342,137 338,136 335,136 331,137 323,139 315,144 307,147 298,151 290,156 281,158 273,160 265,160 257,158 251,157 245,154 240,151 229,144 210,124 210,124"
+     id="path3084"
+     style="fill:none;stroke:#1a1a1a;stroke-width:14.4;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  <path
+     d="M 228,59.6 C 213,111 193,175 189,224 188,245 189,283 206,299 263,350 311,266 332,213 345,175 357,140 369,105 371,98 375,93.2 375,86 360,52.4 291,35.1 261,36.6 235,38 234,37.1 228,59.6 z"
+     id="path10"
+     style="fill:none;stroke:#1a1a1a;stroke-width:12.96;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+</svg>

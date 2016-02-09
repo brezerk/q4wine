@@ -92,7 +92,9 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
 
     QString appIcon = settings.value("icon").toString();
     if (appIcon == "q4wine-ambiance"){
-        comboAppIcons->setCurrentIndex(comboAppIcons->findText(tr("Monochrome")));
+        comboAppIcons->setCurrentIndex(comboAppIcons->findText(tr("Ambient Light")));
+    } else if (appIcon == "q4wine-ambiance-dark"){
+        comboAppIcons->setCurrentIndex(comboAppIcons->findText(tr("Ambient Dark")));
     } else {
         comboAppIcons->setCurrentIndex(comboAppIcons->findText(tr("Default")));
     }
@@ -525,8 +527,10 @@ void AppSettings::cmdOk_Click(){
 
     settings.beginGroup("app");
 
-    if (comboAppIcons->currentText() == tr("Monochrome")){
+    if (comboAppIcons->currentText() == tr("Ambient Light")){
         settings.setValue("icon", "q4wine-ambiance");
+    } else if (comboAppIcons->currentText() == tr("Ambient Dark")){
+        settings.setValue("icon", "q4wine-ambiance-dark");
     } else {
         settings.setValue("icon", "q4wine");
     }
