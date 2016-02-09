@@ -130,7 +130,7 @@ void IconListWidget::changeView(int action){
     } else if (action==1){
         setDisplayType(D_VIEW_MODE_ICON);
     } else if (action==2){
-        if (iconSize().height()<64){
+        if (iconSize().height()<512){
             int nSize = iconSize().height()+8;
             setIconSize(QSize(nSize, nSize));
             if (viewMode()==QListView::IconMode){

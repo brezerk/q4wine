@@ -10,12 +10,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64"
-   height="64"
+   width="512"
+   height="512"
    id="svg4907"
    version="1.1"
    inkscape:version="0.91 r13725"
-   viewBox="0 0 64 64"
+   viewBox="0 0 512 512"
    sodipodi:docname="cdrom.svg">
   <defs
      id="defs4909">
@@ -255,9 +255,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.5"
-     inkscape:cx="-8.0909091"
-     inkscape:cy="32"
+     inkscape:zoom="0.48613591"
+     inkscape:cx="81.891357"
+     inkscape:cy="43.052903"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
@@ -282,10 +282,11 @@
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     transform="translate(0,448)">
     <g
        id="layer2"
-       transform="matrix(1.2519046,0,0,1.2519046,2.0206203,-0.30111716)">
+       transform="matrix(10.132264,0,0,10.132264,15.138962,-430.10664)">
       <g
          style="fill-rule:nonzero"
          id="g6707"

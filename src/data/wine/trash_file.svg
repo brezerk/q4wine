@@ -10,12 +10,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64"
-   height="64"
+   width="512"
+   height="512"
    id="svg4389"
    version="1.1"
    inkscape:version="0.91 r13725"
-   viewBox="0 0 64 64"
+   viewBox="0 0 512 512"
    sodipodi:docname="trash_file.svg">
   <defs
      id="defs4391">
@@ -218,9 +218,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.5"
-     inkscape:cx="-8.0909091"
-     inkscape:cy="32"
+     inkscape:zoom="0.48613591"
+     inkscape:cx="25.019804"
+     inkscape:cy="-67.376395"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
@@ -245,10 +245,11 @@
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     transform="translate(0,448)">
     <g
        id="g3409"
-       transform="matrix(1.3497598,0,0,1.3497598,-11.266002,-13.395687)">
+       transform="matrix(10.842106,0,0,10.842106,-90.669346,-548.98239)">
       <rect
          id="rect6709"
          style="color:#000000;opacity:0.40206;fill:url(#linearGradient3755);fill-rule:nonzero"

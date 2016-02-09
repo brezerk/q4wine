@@ -10,12 +10,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64"
-   height="64"
+   width="512"
+   height="512"
    id="svg4507"
    version="1.1"
    inkscape:version="0.91 r13725"
-   viewBox="0 0 64 64"
+   viewBox="0 0 512 512"
    sodipodi:docname="winefile.svg">
   <defs
      id="defs4509">
@@ -479,9 +479,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.5"
-     inkscape:cx="-12.063887"
-     inkscape:cy="50.12274"
+     inkscape:zoom="0.48613591"
+     inkscape:cx="-70.772529"
+     inkscape:cy="271.68171"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
@@ -506,9 +506,10 @@
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     transform="translate(0,448)">
     <g
-       transform="matrix(1.3681006,0,0,1.3681006,0.24905027,-4.220136)"
+       transform="matrix(11.115363,0,0,11.115363,-3.8058109,-475.48929)"
        id="g3150">
       <rect
          x="7.1497002"

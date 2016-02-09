@@ -10,12 +10,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64"
-   height="64"
+   width="512"
+   height="512"
    id="svg4719"
    version="1.1"
    inkscape:version="0.91 r13725"
-   viewBox="0 0 64 64"
+   viewBox="0 0 512 512"
    sodipodi:docname="iexplore.svg">
   <defs
      id="defs4721">
@@ -609,9 +609,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.5"
-     inkscape:cx="-8.0909091"
-     inkscape:cy="32"
+     inkscape:zoom="0.48613591"
+     inkscape:cx="224.76688"
+     inkscape:cy="240.01104"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
@@ -636,10 +636,11 @@
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     transform="translate(0,448)">
     <g
        id="g5148"
-       transform="matrix(1.3159392,0,0,1.3159392,-10.585819,-10.3543)">
+       transform="matrix(10.606599,0,0,10.606599,-87.412077,-531.69681)">
       <path
          id="path4112-4"
          d="m 45.053,38.909 a 20.203,7.4751 0 1 1 -40.406,0 20.203,7.4751 0 1 1 40.406,0 z"

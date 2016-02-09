@@ -10,12 +10,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64"
-   height="64"
+   width="512"
+   height="512"
    id="svg4675"
    version="1.1"
    inkscape:version="0.91 r13725"
-   viewBox="0 0 64 64"
+   viewBox="0 0 512 512"
    sodipodi:docname="winecfg.svg">
   <defs
      id="defs4677">
@@ -817,9 +817,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.8890873"
-     inkscape:cx="-7.7200895"
-     inkscape:cy="30.969802"
+     inkscape:zoom="0.48613591"
+     inkscape:cx="-200.29777"
+     inkscape:cy="-42.644513"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
@@ -844,10 +844,11 @@
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     transform="translate(0,448)">
     <g
        id="g3226"
-       transform="matrix(1.3109426,0,0,1.3109426,-9.9298642,-11.952019)">
+       transform="matrix(10.544895,0,0,10.544895,-84.29725,-540.14811)">
       <path
          d="m 40.214,29.106 a 9.2291,2.2853 0 0 1 -18.458,0 9.2291,2.2853 0 1 1 18.458,0 z"
          id="path3228"

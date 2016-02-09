@@ -10,12 +10,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64"
-   height="64"
+   width="512"
+   height="512"
    id="svg5281"
    version="1.1"
    inkscape:version="0.91 r13725"
-   viewBox="0 0 64 64"
+   viewBox="0 0 512 512"
    sodipodi:docname="control.svg">
   <defs
      id="defs5283">
@@ -397,9 +397,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="13.140625"
-     inkscape:cx="32"
-     inkscape:cy="41.70437"
+     inkscape:zoom="0.41064453"
+     inkscape:cx="-258.4608"
+     inkscape:cy="106.4824"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
@@ -417,17 +417,18 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     transform="translate(0,448)">
     <g
        id="g3430"
-       transform="matrix(1.3096351,0,0,1.4494294,0.44313167,-9.6379125)">
+       transform="matrix(10.389297,0,0,11.498281,6.4459464,-522.82161)">
       <g
          style="fill-rule:nonzero"
          id="g6707"

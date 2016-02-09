@@ -10,12 +10,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64"
-   height="64"
+   width="512"
+   height="512"
    id="svg4378"
    version="1.1"
    inkscape:version="0.91 r13725"
-   viewBox="0 0 64 64"
+   viewBox="0 0 512 512"
    sodipodi:docname="winemine.svg">
   <defs
      id="defs4380">
@@ -434,9 +434,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.7781746"
-     inkscape:cx="18.690824"
-     inkscape:cy="38.284633"
+     inkscape:zoom="0.6875"
+     inkscape:cx="375.88677"
+     inkscape:cy="151.13777"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
@@ -461,9 +461,10 @@
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     transform="translate(0,448)">
     <g
-       transform="matrix(1.2926011,0,0,1.2926011,0.90107652,0.95961772)"
+       transform="matrix(10.444813,0,0,10.444813,4.9079407,-443.2222)"
        id="g3062">
       <path
          d="m 47.982,45.657 c 0.0031,1.4674 -10.739,2.6572 -23.991,2.6572 -13.252,0 -23.994,-1.19 -23.991,-2.657 -0.0031724,-1.468 10.739,-2.658 23.991,-2.658 13.252,0 23.994,1.1898 23.991,2.6572 z"

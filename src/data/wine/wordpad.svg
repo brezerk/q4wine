@@ -10,12 +10,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64"
-   height="64"
+   width="512"
+   height="512"
    id="svg4936"
    version="1.1"
    inkscape:version="0.91 r13725"
-   viewBox="0 0 64 64"
+   viewBox="0 0 512 512"
    sodipodi:docname="wordpad.svg">
   <defs
      id="defs4938">
@@ -699,9 +699,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.5"
-     inkscape:cx="35.76921"
-     inkscape:cy="17.334533"
+     inkscape:zoom="0.97227183"
+     inkscape:cx="341.26257"
+     inkscape:cy="227.62504"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
@@ -726,10 +726,11 @@
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     transform="translate(0,448)">
     <g
        id="g3283"
-       transform="matrix(1.2603601,0,0,1.2603598,-7.7667434,-9.3292402)">
+       transform="matrix(10.368552,0,0,10.36855,-72.434906,-531.01836)">
       <rect
          x="15.45"
          y="45.008999"

@@ -10,12 +10,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64"
-   height="64"
+   width="512"
+   height="512"
    id="svg4386"
    version="1.1"
    inkscape:version="0.91 r13725"
-   viewBox="0 0 64 64"
+   viewBox="0 0 512 512"
    sodipodi:docname="oic_winlogo.svg">
   <defs
      id="defs4388">
@@ -274,9 +274,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.5"
-     inkscape:cx="-8.0909091"
-     inkscape:cy="32"
+     inkscape:zoom="0.48613591"
+     inkscape:cx="145.12589"
+     inkscape:cy="-147.10741"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
@@ -301,9 +301,10 @@
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     transform="translate(0,448)">
     <g
-       transform="matrix(1.3679089,0,0,1.3679089,-11.509925,-12.740744)"
+       transform="matrix(11.050046,0,0,11.050046,-93.315488,-551.63541)"
        id="g3985">
       <path
          style="opacity:0.07000002;fill:url(#radialGradient3961)"
