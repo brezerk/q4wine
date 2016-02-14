@@ -212,23 +212,37 @@
         <translation>Параметры %1</translation>
     </message>
     <message>
-        <location line="+995"/>
+        <location line="+59"/>
+        <location line="+2648"/>
         <location line="+5"/>
         <location line="+4"/>
-        <location line="+111"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+221"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+223"/>
         <location line="+20"/>
-        <location line="+421"/>
+        <location line="+423"/>
         <source>General</source>
         <translation>Главные</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-2639"/>
         <source>Wine settings</source>
         <translation>Параметры Wine</translation>
     </message>
     <message>
-        <location line="+853"/>
+        <location line="+99"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-626"/>
+        <location line="+435"/>
+        <source>Ambient Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
+        <location line="+435"/>
+        <source>Ambient Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+754"/>
         <source>Bin:</source>
         <translation>Исп. файл:</translation>
     </message>
@@ -251,28 +265,28 @@
         <translation>Cворачивать в системный лоток при запуске Win32-приложения.</translation>
     </message>
     <message>
-        <location line="-299"/>
-        <location line="+333"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-418"/>
-        <location line="+420"/>
+        <location line="+34"/>
+        <location line="+2430"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-231"/>
+        <location line="+422"/>
         <source>System</source>
         <translation>Система</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-2412"/>
         <source>System utils</source>
         <translation>Системные утилиты</translation>
     </message>
     <message>
-        <location line="-346"/>
-        <location line="+909"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-417"/>
-        <location line="+419"/>
+        <location line="+563"/>
+        <location line="+1854"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-419"/>
+        <location line="+421"/>
         <source>Utils</source>
         <translation>Утилиты</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-1836"/>
         <source>Console</source>
         <translation>Консоль</translation>
     </message>
@@ -282,23 +296,23 @@
         <translation>Аргументы:</translation>
     </message>
     <message>
-        <location line="-1028"/>
-        <location line="+1539"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-413"/>
-        <location line="+417"/>
+        <location line="+511"/>
+        <location line="+1224"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-415"/>
+        <location line="+419"/>
         <source>Quick Mount</source>
         <translation>Быстрое подключение</translation>
     </message>
     <message>
-        <location line="-2366"/>
-        <location line="+852"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-402"/>
-        <location line="+412"/>
+        <location line="-827"/>
+        <location line="+847"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-404"/>
+        <location line="+414"/>
         <source>Logging</source>
         <translation>Журналирование</translation>
     </message>
     <message>
-        <location line="-834"/>
+        <location line="-829"/>
         <source>Logging subsystem:</source>
         <translation>Подсистема журналирования:</translation>
     </message>
@@ -318,16 +332,16 @@
         <translation>Открыть диалог запуска.</translation>
     </message>
     <message>
-        <location line="+413"/>
+        <location line="-2350"/>
         <source>Use tray icon.</source>
         <translation>Показывать значок в системном лотке.</translation>
     </message>
     <message>
-        <location line="-1210"/>
+        <location line="+1553"/>
         <location line="+18"/>
         <location line="+950"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-421"/>
-        <location line="+415"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-423"/>
+        <location line="+417"/>
         <source>Language</source>
         <translation>Язык</translation>
     </message>
@@ -337,21 +351,21 @@
         <translation>Язык:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-412"/>
-        <location line="+414"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-414"/>
+        <location line="+416"/>
         <source>Themes</source>
         <translation>Темы</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="+890"/>
-        <location line="+1223"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-426"/>
-        <location line="+418"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-650"/>
+        <location line="+1540"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-428"/>
+        <location line="+420"/>
         <source>Network</source>
         <translation>Сеть</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-1522"/>
         <source>Proxy settings</source>
         <translation>Настройки прокси</translation>
     </message>
@@ -367,9 +381,9 @@
     </message>
     <message>
         <location line="-204"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-323"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-325"/>
         <location line="+105"/>
-        <location line="+98"/>
+        <location line="+100"/>
         <source>No Proxy</source>
         <translation>Без прокси</translation>
     </message>
@@ -407,24 +421,24 @@
         <translation>Пользователь:</translation>
     </message>
     <message>
-        <location line="-1547"/>
+        <location line="+1216"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
         <translation>Импортировать файлы рабочего стола Wine при запуске Q4Wine.</translation>
     </message>
     <message>
-        <location line="+144"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-268"/>
-        <location line="+408"/>
+        <location line="+139"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-270"/>
+        <location line="+410"/>
         <source>Advanced</source>
         <translation>Дополнительно</translation>
     </message>
     <message>
-        <location line="+1584"/>
+        <location line="-1174"/>
         <source>Mount:</source>
         <translation>Подключение:</translation>
     </message>
     <message>
-        <location line="-1503"/>
+        <location line="-1508"/>
         <source>You can call it via Tools menu or via shortcut Ctrl+M</source>
         <translation>Вы можете вызвать это окно используя меню &quot;Инструменты&quot; или клавиатурное сокращение Ctrl+M</translation>
     </message>
@@ -434,8 +448,7 @@
         <translation>Управление версиями Wine</translation>
     </message>
     <message>
-        <location line="-119"/>
-        <location line="+129"/>
+        <location line="+10"/>
         <source>App Icon</source>
         <translation type="unfinished"></translation>
     </message>
@@ -446,19 +459,12 @@
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-646"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-648"/>
         <source>Default</source>
         <translation type="unfinished">Умолчания</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-2"/>
-        <location line="+433"/>
-        <source>Monochrome</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1349"/>
+        <location line="+1359"/>
         <source>Select Quick Mount Profile</source>
         <translation>Выберите профиль быстрого подключения</translation>
     </message>
@@ -478,20 +484,20 @@
         <translation>Отключение:</translation>
     </message>
     <message>
-        <location line="-2511"/>
+        <location line="+252"/>
         <source>Note: Since SQLite was not designed to handle large amount of data, activating this can have a negative impact on the performance of Q4Wine. Use it with care.</source>
         <translation>Примечание: Из-за ограничений SQLite большой объем данных журналирования может снизить скорость работы Q4Wine. Используйте журналирование с осторожностью.</translation>
     </message>
     <message>
         <location line="+27"/>
-        <location line="+775"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-202"/>
-        <location line="+411"/>
+        <location line="+770"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+229"/>
+        <location line="+413"/>
         <source>AppDB browser</source>
         <translation>Обозреватель AppDB</translation>
     </message>
     <message>
-        <location line="-757"/>
+        <location line="-752"/>
         <source>AppDB browser subsystem:</source>
         <translation>Подсистема обозревателя AppDB:</translation>
     </message>
@@ -502,14 +508,14 @@
     </message>
     <message>
         <location line="+44"/>
-        <location line="+717"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-405"/>
-        <location line="+409"/>
+        <location line="+712"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-407"/>
+        <location line="+411"/>
         <source>Desktop Menu</source>
         <translation>Меню рабочего стола</translation>
     </message>
     <message>
-        <location line="-711"/>
+        <location line="-706"/>
         <source>Desktop menu plugin</source>
         <translation>Дополнение меню рабочего стола</translation>
     </message>
@@ -530,14 +536,14 @@
     </message>
     <message>
         <location line="+47"/>
-        <location line="+647"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-403"/>
-        <location line="+407"/>
+        <location line="+642"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-405"/>
+        <location line="+409"/>
         <source>Defaults</source>
         <translation>Стандартные</translation>
     </message>
     <message>
-        <location line="-641"/>
+        <location line="-636"/>
         <source>Default virtual desktop</source>
         <translation>Стандартный виртуальный рабочий стол</translation>
     </message>
@@ -584,49 +590,49 @@
     </message>
     <message>
         <location line="+82"/>
-        <location line="+258"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-297"/>
-        <location line="+406"/>
+        <location line="+253"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-299"/>
+        <location line="+408"/>
         <source>Run dialog</source>
         <translation>Диалог запуска</translation>
     </message>
     <message>
-        <location line="-189"/>
+        <location line="-184"/>
         <location line="+18"/>
-        <location line="+176"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-403"/>
-        <location line="+405"/>
+        <location line="+171"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-405"/>
+        <location line="+407"/>
         <source>Wine desktop import</source>
         <translation>Импорт файлов рабочего стола wine</translation>
     </message>
     <message>
-        <location line="-145"/>
+        <location line="-140"/>
         <source>Remove processed wine desktop files.</source>
         <translation>Удалять обработанные десктопные файлы wine.</translation>
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
-        <location line="+416"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-440"/>
+        <location line="+418"/>
         <source>Interface</source>
         <translation>Интерфейс</translation>
     </message>
     <message>
-        <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-407"/>
-        <location line="+413"/>
+        <location line="+10"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-409"/>
+        <location line="+415"/>
         <source>Subsystems</source>
         <translation>Подсистемы</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-404"/>
-        <location line="+410"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-406"/>
+        <location line="+412"/>
         <source>Plugins</source>
         <translation>Дополнения</translation>
     </message>
     <message>
-        <location line="+1802"/>
+        <location line="+85"/>
         <source>OK</source>
         <translation>ОК</translation>
     </message>
@@ -641,7 +647,7 @@
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-541"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-543"/>
         <source>generic</source>
         <translation>основной</translation>
     </message>
@@ -660,7 +666,7 @@
     <message>
         <location line="+133"/>
         <location line="+4"/>
-        <location line="+176"/>
+        <location line="+178"/>
         <location line="+2"/>
         <location line="+6"/>
         <location line="+2"/>
@@ -668,7 +674,7 @@
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="-190"/>
+        <location line="-192"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Введите узел прокси.</translation>
     </message>
@@ -678,7 +684,7 @@
         <translation>Введите порт прокси.</translation>
     </message>
     <message>
-        <location line="+176"/>
+        <location line="+178"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Укажите каталог %1.</translation>
     </message>
@@ -698,9 +704,9 @@
         <translation>Указанный файл %1 не существует.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-2712"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-568"/>
-        <location line="+429"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-990"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-570"/>
+        <location line="+431"/>
         <source>System Default</source>
         <translation>Системные умолчания</translation>
     </message>
@@ -1966,17 +1972,15 @@ See help for details.</source>
         <translation>Открыть файл изображения</translation>
     </message>
     <message>
-        <location line="+15"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm)</source>
-        <translation>Изображения (*.png *.jpg *.gif *.bmp *.xpm)</translation>
+        <translation type="vanished">Изображения (*.png *.jpg *.gif *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation>Изображения и файлы для Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Изображения (*.png *.jpg *.gif *.bmp *.xpm);;Исполняемые файлы Win32 (*.exe);;Win32 разделяемые библиотеки (*.dll);;Файлы для Win32 (*.exe *.dll)</translation>
+        <translation type="vanished">Изображения и файлы для Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Изображения (*.png *.jpg *.gif *.bmp *.xpm);;Исполняемые файлы Win32 (*.exe);;Win32 разделяемые библиотеки (*.dll);;Файлы для Win32 (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+61"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Извлечение значка из двоичного файла.&lt;br&gt;Это может занять некоторое время...</translation>
@@ -2017,7 +2021,17 @@ See help for details.</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="-22"/>
+        <location line="-147"/>
+        <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+123"/>
         <source>No program selected.</source>
         <translation>Программа не выбрана.</translation>
     </message>

@@ -213,18 +213,18 @@
         <translation>%1  تنظیمات</translation>
     </message>
     <message>
-        <location line="+995"/>
+        <location line="+59"/>
+        <location line="+2648"/>
         <location line="+5"/>
         <location line="+4"/>
-        <location line="+111"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+221"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+223"/>
         <location line="+20"/>
-        <location line="+421"/>
+        <location line="+423"/>
         <source>General</source>
         <translation>عمومی</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-2639"/>
         <source>Wine settings</source>
         <translation>تنظیمات شراب</translation>
     </message>
@@ -239,8 +239,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-119"/>
-        <location line="+129"/>
+        <location line="+10"/>
         <source>App Icon</source>
         <translation type="unfinished"></translation>
     </message>
@@ -251,19 +250,12 @@
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-620"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-622"/>
         <source>Default</source>
         <translation type="unfinished">پیش فرض</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-2"/>
-        <location line="+433"/>
-        <source>Monochrome</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+754"/>
+        <location line="+764"/>
         <source>Bin:</source>
         <translatorcomment>ترجمه ی کلمه ی Binary به معنی دودویی یا مبنای دو می باشد برای ترجمه ی این کلمه بهترین گزینه همان دودویی می باشد.</translatorcomment>
         <translation>دودویی:</translation>
@@ -310,15 +302,15 @@
         <translation>هشدارها را در نوار اطلاعات نمایش بده.</translation>
     </message>
     <message>
-        <location line="-309"/>
-        <location line="+333"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-229"/>
-        <location line="+420"/>
+        <location line="+24"/>
+        <location line="+2430"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+202"/>
+        <location line="+422"/>
         <source>System</source>
         <translation>سیستم</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-2412"/>
         <source>System utils</source>
         <translation>امکانات سیستم</translation>
     </message>
@@ -356,15 +348,15 @@
         <translation type="vanished">شین:</translation>
     </message>
     <message>
-        <location line="-346"/>
-        <location line="+909"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-417"/>
-        <location line="+419"/>
+        <location line="+563"/>
+        <location line="+1854"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-419"/>
+        <location line="+421"/>
         <source>Utils</source>
         <translation>امکانات</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-1836"/>
         <source>Console</source>
         <translation>خط فرمان</translation>
     </message>
@@ -382,15 +374,15 @@
         <translation type="vanished">ابزار آیکون:</translation>
     </message>
     <message>
-        <location line="-1033"/>
-        <location line="+1223"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-416"/>
-        <location line="+418"/>
+        <location line="+190"/>
+        <location line="+1540"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-418"/>
+        <location line="+420"/>
         <source>Network</source>
         <translation>شبکه</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-1522"/>
         <source>Proxy settings</source>
         <translation>تنظیمات پروکسی</translation>
     </message>
@@ -401,9 +393,9 @@
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-323"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-325"/>
         <location line="+105"/>
-        <location line="+98"/>
+        <location line="+100"/>
         <source>No Proxy</source>
         <translation>عدم استفادهاز پروکسی</translation>
     </message>
@@ -436,15 +428,15 @@
         <translation>گذرواژه:</translation>
     </message>
     <message>
-        <location line="-1499"/>
-        <location line="+1539"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-295"/>
-        <location line="+417"/>
+        <location line="+40"/>
+        <location line="+1224"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-297"/>
+        <location line="+419"/>
         <source>Quick Mount</source>
         <translation>سوارکردن سریع سیستم فایل</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-1206"/>
         <source>Select Quick Mount Profile</source>
         <translation>انتخاب پروفایل سوارکردن سریع سیستم فایل</translation>
     </message>
@@ -469,11 +461,11 @@
         <translation>پیاده کردن سیستم فایل:</translation>
     </message>
     <message>
-        <location line="-2697"/>
+        <location line="+66"/>
         <location line="+18"/>
         <location line="+950"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-411"/>
-        <location line="+415"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-413"/>
+        <location line="+417"/>
         <source>Language</source>
         <translation>زبان</translation>
     </message>
@@ -484,27 +476,27 @@
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-600"/>
-        <location line="+429"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-602"/>
+        <location line="+431"/>
         <source>System Default</source>
         <translation>تنظیمات پیش فرض سیستم</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-241"/>
-        <location line="+414"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-243"/>
+        <location line="+416"/>
         <source>Themes</source>
         <translation>الگوهای گرافیکی</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+54"/>
-        <location line="+852"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-408"/>
-        <location line="+412"/>
+        <location line="+847"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-410"/>
+        <location line="+414"/>
         <source>Logging</source>
         <translation>ثبت ورود و خروج</translation>
     </message>
     <message>
-        <location line="-834"/>
+        <location line="-829"/>
         <source>Logging subsystem:</source>
         <translation>زیرسیستم ثبت ورود و خروج:</translation>
     </message>
@@ -520,14 +512,14 @@
     </message>
     <message>
         <location line="+27"/>
-        <location line="+775"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-409"/>
-        <location line="+411"/>
+        <location line="+770"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-411"/>
+        <location line="+413"/>
         <source>AppDB browser</source>
         <translation>پویشگر بانک اطلاعاتی نرم افزار</translation>
     </message>
     <message>
-        <location line="-757"/>
+        <location line="-752"/>
         <source>AppDB browser subsystem:</source>
         <translation>زیرسیستم پویشگر بانک اطلاعاتی نرم افزار:</translation>
     </message>
@@ -538,14 +530,14 @@
     </message>
     <message>
         <location line="+44"/>
-        <location line="+717"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-405"/>
-        <location line="+409"/>
+        <location line="+712"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-407"/>
+        <location line="+411"/>
         <source>Desktop Menu</source>
         <translation>منوی میزکار</translation>
     </message>
     <message>
-        <location line="-711"/>
+        <location line="-706"/>
         <source>Desktop menu plugin</source>
         <translation>افزونه ی منوی میزکار</translation>
     </message>
@@ -569,15 +561,29 @@
         <translation type="obsolete">کلک رشتی ها</translation>
     </message>
     <message>
-        <location line="+47"/>
-        <location line="+647"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-403"/>
-        <location line="+407"/>
+        <location line="-1916"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-650"/>
+        <location line="+435"/>
+        <source>Ambient Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
+        <location line="+435"/>
+        <source>Ambient Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1958"/>
+        <location line="+642"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-192"/>
+        <location line="+409"/>
         <source>Defaults</source>
         <translation>پیش فرض ها</translation>
     </message>
     <message>
-        <location line="-641"/>
+        <location line="-636"/>
         <source>Default virtual desktop</source>
         <translation>میزکار مجازی پیش فرض</translation>
     </message>
@@ -624,14 +630,14 @@
     </message>
     <message>
         <location line="+82"/>
-        <location line="+258"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-297"/>
-        <location line="+406"/>
+        <location line="+253"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-299"/>
+        <location line="+408"/>
         <source>Run dialog</source>
         <translation>پنجره ی اجرا</translation>
     </message>
     <message>
-        <location line="-240"/>
+        <location line="-235"/>
         <source>Run recent program</source>
         <translation>اجرای برنامه ی کنونی</translation>
     </message>
@@ -643,14 +649,14 @@
     <message>
         <location line="+27"/>
         <location line="+18"/>
-        <location line="+176"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-403"/>
-        <location line="+405"/>
+        <location line="+171"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-405"/>
+        <location line="+407"/>
         <source>Wine desktop import</source>
         <translation>واردکردن میزکار شراب</translation>
     </message>
     <message>
-        <location line="-158"/>
+        <location line="-153"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
         <translation>فایل های میزکار شراب را در ابتدای اجرای Q4Wine وارد کن.</translation>
     </message>
@@ -661,34 +667,34 @@
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
-        <location line="+416"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-440"/>
+        <location line="+418"/>
         <source>Interface</source>
         <translation>رابط</translation>
     </message>
     <message>
-        <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-407"/>
-        <location line="+413"/>
+        <location line="+10"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-409"/>
+        <location line="+415"/>
         <source>Subsystems</source>
         <translation>زیرسیستم</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-404"/>
-        <location line="+410"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-406"/>
+        <location line="+412"/>
         <source>Plugins</source>
         <translation>برنامه های جانبی</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-404"/>
-        <location line="+408"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-406"/>
+        <location line="+410"/>
         <source>Advanced</source>
         <translation>پیشرفته</translation>
     </message>
     <message>
-        <location line="+1765"/>
+        <location line="+48"/>
         <source>Help</source>
         <translation>اطلاعات آموزشی</translation>
     </message>
@@ -703,7 +709,7 @@
         <translation>قبول کردن</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-545"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-547"/>
         <source>generic</source>
         <translation>عمومی</translation>
     </message>
@@ -722,7 +728,7 @@
     <message>
         <location line="+133"/>
         <location line="+4"/>
-        <location line="+176"/>
+        <location line="+178"/>
         <location line="+2"/>
         <location line="+6"/>
         <location line="+2"/>
@@ -730,7 +736,7 @@
         <translation>خطا</translation>
     </message>
     <message>
-        <location line="-190"/>
+        <location line="-192"/>
         <source>Sorry, specify proxy host.</source>
         <translation>با عرض پوزش، لطفا میزبان پروکسی رامشخص کنید.</translation>
     </message>
@@ -740,7 +746,7 @@
         <translation>با عرض پوزش، لطفا پورت وردوی پروکسی را مشخص کنید.</translation>
     </message>
     <message>
-        <location line="+176"/>
+        <location line="+178"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>با عرض پوزش، لطفا پوشه ی %1 را مشخص کنید.</translation>
     </message>
@@ -2027,17 +2033,15 @@ See help for details.</source>
         <translation>باز کردن فایل تصویر (Image)</translation>
     </message>
     <message>
-        <location line="+15"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm)</source>
-        <translation>فایل های فرتور (*.png, *.jpg, *gif, *.bmp, *.xpm)</translation>
+        <translation type="vanished">فایل های فرتور (*.png, *.jpg, *gif, *.bmp, *.xpm)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation>فرتور و فایل های دودویی ویندوز ۳۲ بیتی (*.png, *.jpg, *.gif, *.bmp, *.xpm, *.exe, *.dll);;فایل های فرتور (*.png, *.jpg,*.gif, *.bmp, *.xpm);; فایل های اجرایی ویندوز ۳۲ بیتی(*.exe);; کتابخانه های اشتراکی ویندوز ۳۲ بیتی (*.dll);;فایل های اجرایی ویندوز ۳۲ بیتی و کتابخانه های اشتراکی (*.exe, *.dll)</translation>
+        <translation type="vanished">فرتور و فایل های دودویی ویندوز ۳۲ بیتی (*.png, *.jpg, *.gif, *.bmp, *.xpm, *.exe, *.dll);;فایل های فرتور (*.png, *.jpg,*.gif, *.bmp, *.xpm);; فایل های اجرایی ویندوز ۳۲ بیتی(*.exe);; کتابخانه های اشتراکی ویندوز ۳۲ بیتی (*.dll);;فایل های اجرایی ویندوز ۳۲ بیتی و کتابخانه های اشتراکی (*.exe, *.dll)</translation>
     </message>
     <message>
-        <location line="+44"/>
+        <location line="+61"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>جداسازی آیکون از فایل دودویی.&lt;br&gt; این کار اندکی زمان بر است...</translation>
@@ -2087,7 +2091,17 @@ See help for details.</source>
         <translation>غیرفعال</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="-161"/>
+        <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+234"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>تکه برنامه ی مخصوص پوسته(*.sh)</translation>
