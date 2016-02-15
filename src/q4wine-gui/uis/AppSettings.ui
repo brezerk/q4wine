@@ -147,7 +147,7 @@
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../icons/q4wine.svg</normaloff>../../icons/q4wine.svg</iconset>
+                       <normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine.svg</normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine.svg</iconset>
                      </property>
                     </item>
                     <item>
@@ -156,7 +156,7 @@
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../icons/q4wine-ambiance.svg</normaloff>../../icons/q4wine-ambiance.svg</iconset>
+                       <normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine-ambiance.svg</normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine-ambiance.svg</iconset>
                      </property>
                     </item>
                     <item>
@@ -165,7 +165,7 @@
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../icons/q4wine-ambiance-dark.svg</normaloff>../../icons/q4wine-ambiance-dark.svg</iconset>
+                       <normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine-ambiance-dark.svg</normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine-ambiance-dark.svg</iconset>
                      </property>
                     </item>
                    </widget>
