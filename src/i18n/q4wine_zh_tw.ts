@@ -493,18 +493,18 @@
     <message>
         <location line="-1142"/>
         <source>App Icon</source>
-        <translation type="unfinished"></translation>
+        <translation>應用程式圖示</translation>
     </message>
     <message>
         <location line="+45"/>
         <source>App Icon:</source>
-        <translation type="unfinished"></translation>
+        <translation>應用程式圖示：</translation>
     </message>
     <message>
         <location line="+14"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-628"/>
         <source>Default</source>
-        <translation type="unfinished">預設</translation>
+        <translation>預設值</translation>
     </message>
     <message>
         <location line="+70"/>
@@ -714,14 +714,14 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-652"/>
         <location line="+435"/>
         <source>Ambient Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Ambient Light</translation>
     </message>
     <message>
         <location line="+5"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
         <location line="+435"/>
         <source>Ambient Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Ambient Dark</translation>
     </message>
     <message>
         <location line="+1982"/>
@@ -1060,12 +1060,12 @@
     <message>
         <location line="-2628"/>
         <source>Use e&amp;xisting color theme</source>
-        <translation type="unfinished"></translation>
+        <translation>使用已經存在的色彩主題 (&amp;X)</translation>
     </message>
     <message>
         <location line="+17"/>
         <source>Use current &amp;Qt colors</source>
-        <translation type="unfinished"></translation>
+        <translation>使用目前的 Qt 色彩 (&amp;Q)</translation>
     </message>
     <message>
         <location line="+324"/>
@@ -1926,12 +1926,12 @@ See help for details.</source>
     <message>
         <location line="-161"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
-        <translation type="unfinished"></translation>
+        <translation>圖片檔 (*.png *.jpg *.gif *.bmp *.xpm)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
+        <translation>圖片與 Win32 二進位檔 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;圖片檔 (*.png *.jpg *.gif *.bmp *.xpm);;Win32 可執行檔 (*.exe);;Win32 共享函式庫 (*.dll);;Win32 可執行檔及共享函式庫 (*.exe *.dll)</translation>
     </message>
     <message>
         <location line="+234"/>
@@ -2713,112 +2713,112 @@ See help for details.</source>
     <message>
         <location line="-118"/>
         <source>He&amp;lp</source>
-        <translation type="unfinished"></translation>
+        <translation>說明 (&amp;L)</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&amp;Handbook</source>
-        <translation type="unfinished"></translation>
+        <translation>手冊 (&amp;H)</translation>
     </message>
     <message>
         <location line="+42"/>
         <source>&amp;Run...</source>
-        <translation type="unfinished"></translation>
+        <translation>執行(&amp;R)...</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>結束 (&amp;Q)</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>關於 (&amp;A)</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>關於 Qt (&amp;Q)</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>&amp;Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>程式 (&amp;P)</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>P&amp;rocess</source>
-        <translation type="unfinished"></translation>
+        <translation>處理程序 (&amp;R)</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>設定 (&amp;S)</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Pre&amp;fixes</source>
-        <translation type="unfinished"></translation>
+        <translation>前綴 (&amp;F)</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Extract Images from PE Files</source>
-        <translation type="unfinished"></translation>
+        <translation>從 PE 檔案解壓縮圖片 (&amp;E)</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Options</source>
-        <translation type="unfinished"></translation>
+        <translation>選項 (&amp;O)</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Disc Image Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>磁碟映像檔管理員 (&amp;D)</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;First Steps</source>
-        <translation type="unfinished"></translation>
+        <translation>第一步 (&amp;F)</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Short FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation>簡短的 FAQ (&amp;S)</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Index</source>
-        <translation type="unfinished"></translation>
+        <translation>索引 (&amp;I)</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Website</source>
-        <translation type="unfinished"></translation>
+        <translation>網頁 (&amp;W)</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Donate</source>
-        <translation type="unfinished"></translation>
+        <translation>捐款 (&amp;D)</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Bugs</source>
-        <translation type="unfinished"></translation>
+        <translation>臭蟲 (&amp;B)</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Wine AppDB Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Wine AppDB 瀏覽器 (&amp;W)</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Logging</source>
-        <translation type="unfinished"></translation>
+        <translation>紀錄 (&amp;L)</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Help &amp;for This Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>這個分頁的說明 (&amp;F)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2828,7 +2828,7 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>&amp;Import Wine Desktop Files</source>
-        <translation type="unfinished"></translation>
+        <translation>匯入 Wine 桌面檔案 (&amp;I)</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2844,7 +2844,7 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>Wine &amp;Version Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Wine 版本管理員 (&amp;V)</translation>
     </message>
     <message>
         <source>Short FAQ</source>
@@ -3141,7 +3141,7 @@ See help for details.</source>
         <location line="-180"/>
         <location line="+1"/>
         <source>Configure wine versions</source>
-        <translation type="unfinished"></translation>
+        <translation>設定 wine 版本</translation>
     </message>
     <message>
         <location line="+170"/>
