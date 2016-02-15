@@ -24,7 +24,7 @@ option(WITH_WINEAPPDB "If ON, then build q4wine with Wine AppDB browser support.
 option(USE_BZIP2 "Use bzip2 to compress man pages." "OFF")
 option(USE_GZIP "Use gzip to compress man pages." "OFF")
 option(WITH_DBUS "If ON, then build q4wine with QtDBus notification support." "ON")
-option(LINGUAS "Language list" "en_us;ru_ru;uk_ua;pt_br;es_es;it_it;cs_cz;he_il;pl_pl;de_de;fa_ir;af_za;zh_tw")
+option(LINGUAS "Language list" "af;cs;de;en;es;fa;he;it;pl;pt_BR;ru;uk;zh_TW")
 option(LIBS_ENTRY_PATH "Destination directory for q4wine-core library")
 
 MESSAGE("\n * Utility for Wine applications and prefixes management.")
@@ -193,7 +193,7 @@ IF( NOT ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 ENDIF( NOT ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 
 IF( NOT LINGUAS )
-    SET ( LINGUAS en_us ru_ru uk_ua pt_br es_es it_it cs_cz he_il pl_pl de_de fa_ir af_za zh_tw )
+    SET ( LINGUAS af cs de en es fa he it pl pt_BR ru uk zh_TW )
 ENDIF( NOT LINGUAS )
 
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )

@@ -411,65 +411,47 @@ QString corelib::getTranslationLang(){
 
     if (!lang.isNull()){
         if (qtt.load(lang, i18nPath)){
-            qDebug()<<"[ii] loaded:"<<lang;
+            qDebug()<<"[ii] Loading translation: "<<lang;
             return lang;
         } else {
-            qDebug()<<"[EE] Cannot open user selected translation";
-            if (qtt.load("q4wine_en_us", i18nPath)){
-                return "q4wine_en_us";
+            qDebug()<<"[EE] Cannot open user selected translation: "<<lang;
+            lang = this->getLang(false);
+            if (qtt.load(lang, i18nPath)){
+                qDebug()<<"[ii] Loading translation: "<<lang;
+                return lang;
             } else {
-                qDebug()<<"[EE] Cannot open default translation, fall back to native translation ;[";
+                qDebug()<<"[EE] Cannot open system selected translation: "<<lang;
+                if (qtt.load("q4wine_en", i18nPath)){
+                    qDebug()<<"[ii] Loading translation: q4wine_en"<<lang;
+                    return "q4wine_en";
+                } else {
+                    qDebug()<<"[EE] Cannot open default translation, not using translation engine.";
+                }
             }
         }
     } else {
-        qDebug()<<"[EE] Cannot get LANG variable, fall back to native translation ;[";
+        qDebug()<<"[EE] Cannot get system locale, not using translation engine.";
     }
     return "";
 }
 
-QString  corelib::getLang(){
-    QString lang=this->getSetting("app", "lang", false).toString();
+QString  corelib::getLang(bool fromSettings){
+    QString lang;
 
-    if (!lang.isEmpty()){
-        if (!lang.contains("q4wine")){
-            lang = QString("q4wine_%1").arg(lang);
-        }
+    if (fromSettings){
+        lang=this->getSetting("app", "lang", false).toString();
+        if (!lang.isEmpty()){
+            if (!lang.contains("q4wine")){
+                lang = QString("q4wine_%1").arg(lang);
+            }
 #ifdef DEBUG
-        qDebug()<<"[ii] Get lang from settings:"<<lang;
+            qDebug()<<"[ii] Get lang from settings:"<<lang;
 #endif
-        return lang;
-    }
-
-    // This is hack for next QLocale bug:
-    //  http://bugs.gentoo.org/150745
-
-    lang = setlocale(LC_ALL, "");
-#ifdef DEBUG
-    qDebug()<<"[ii] LC_ALL: "<<lang;
-#endif
-    if (lang.isEmpty()){
-        lang = setlocale(LC_MESSAGES, "");
-#ifdef DEBUG
-        qDebug()<<"[ii] LC_MESSAGES: "<<lang;
-#endif
-        if (lang.isEmpty()){
-            lang = getenv("LANG");
-#ifdef DEBUG
-            qDebug()<<"[ii] Env LANG: "<<lang;
-#endif
+            return lang;
         }
     }
 
-#ifdef DEBUG
-    qDebug()<<"[ii] Lang before split: "<<lang;
-#endif
-
-    lang = lang.split(".").at(0).toLower();
-    if (lang.contains("=")){
-        lang = lang.split("=").last();
-    }
-
-    lang = QString("q4wine_%1").arg(lang);
+    lang = QString("q4wine_%1").arg(QLocale::system().name());
 
 #ifdef DEBUG
     qDebug()<<"[ii] Lang to load: "<<lang;
@@ -478,45 +460,11 @@ QString  corelib::getLang(){
 }
 
 QString  corelib::getLocale(){
-    QString lang;
-        lang = setlocale(LC_ALL, "");
+    QString lang = QLocale::system().name();
 #ifdef DEBUG
-        qDebug()<<"[ii] LC_ALL: "<<lang;
+    qDebug()<<"[ii] Locale to use: "<<lang;
 #endif
-        if (lang.isEmpty()){
-                lang = setlocale(LC_MESSAGES, "");
-#ifdef DEBUG
-                qDebug()<<"[ii] LC_MESSAGES: "<<lang;
-#endif
-                if (lang.isEmpty()){
-                        lang = getenv("LANG");
-#ifdef DEBUG
-                        qDebug()<<"[ii] Env LANG: "<<lang;
-#endif
-                }
-        }
-
-#ifdef DEBUG
-        qDebug()<<"[ii] Lang before split: "<<lang;
-#endif
-
-        QStringList loc = lang.split(".");
-#ifdef DEBUG
-        qDebug()<<"[ii] loc.count(): "<<loc.count();
-#endif
-        if (loc.count()==2){
-            lang = loc.at(1).toLower();
-        } else {
-            lang = "utf8";
-        }
-
-        if (lang.contains(";"))
-            lang = lang.split(";").first();
-
-#ifdef DEBUG
-        qDebug()<<"[ii] Locale to use: "<<lang;
-#endif
-        return lang;
+    return lang;
 }
 
 bool corelib::isConfigured(){
@@ -1630,9 +1578,13 @@ QStringList corelib::getCdromDevices(void) const{
 
         void corelib::openHelpUrl(const QString rawurl){
             QString url="http://";
+            QString lang = this->getLang();
+            if (lang.contains("q4wine_")){
+                lang = lang.mid(7, -1);
+            }
             url.append(APP_WEBSITE);
             url.append("/documentation/");
-            url.append(this->getLang());
+            url.append(lang);
             url.append("/");
             url.append(rawurl);
 

@@ -142,7 +142,7 @@ public:
     QPixmap loadPixmap(QString pixmapName);
 
     QString getTranslationLang();
-    QString getLang();
+    QString getLang(bool fromSettings = true);
     QString getLocale();
 
     bool isConfigured();
