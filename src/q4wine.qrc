@@ -65,5 +65,6 @@
         <file alias="uninstaller">data/wine/trash_file.svg</file>
         <file alias="eject">data/wine/cdrom.svg</file>
         <file alias="oleview">data/wine/oic_winlogo.svg</file>
+        <file alias="q4wine-ambiance-dark">icons/q4wine-ambiance-dark.svg</file>
     </qresource>
 </RCC>
