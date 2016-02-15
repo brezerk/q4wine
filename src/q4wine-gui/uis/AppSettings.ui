@@ -20,16 +20,7 @@
    <property name="spacing">
     <number>0</number>
    </property>
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
+   <property name="margin">
     <number>0</number>
    </property>
    <item>
@@ -76,16 +67,7 @@
             <string>General</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_12">
-            <property name="leftMargin">
-             <number>3</number>
-            </property>
-            <property name="topMargin">
-             <number>3</number>
-            </property>
-            <property name="rightMargin">
-             <number>3</number>
-            </property>
-            <property name="bottomMargin">
+            <property name="margin">
              <number>3</number>
             </property>
             <item>
@@ -94,16 +76,7 @@
                <string>Wine settings</string>
               </property>
               <layout class="QVBoxLayout" name="_10">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
@@ -132,31 +105,13 @@
                <string>App Icon</string>
               </property>
               <layout class="QVBoxLayout" name="_102">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
                 <widget class="QWidget" name="widget_99" native="true">
                  <layout class="QHBoxLayout" name="_103">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -191,8 +146,8 @@
                       <string>Default</string>
                      </property>
                      <property name="icon">
-                      <iconset resource="../../q4wine.qrc">
-                       <normaloff>:/q4wine</normaloff>:/q4wine</iconset>
+                      <iconset>
+                       <normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine.svg</normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine.svg</iconset>
                      </property>
                     </item>
                     <item>
@@ -200,8 +155,8 @@
                       <string>Ambient Light</string>
                      </property>
                      <property name="icon">
-                      <iconset resource="../../q4wine.qrc">
-                       <normaloff>:/q4wine-ambiance</normaloff>:/q4wine-ambiance</iconset>
+                      <iconset>
+                       <normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine-ambiance.svg</normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine-ambiance.svg</iconset>
                      </property>
                     </item>
                     <item>
@@ -209,8 +164,8 @@
                       <string>Ambient Dark</string>
                      </property>
                      <property name="icon">
-                      <iconset resource="../../q4wine.qrc">
-                       <normaloff>:/q4wine-ambiance-dark</normaloff>:/q4wine-ambiance-dark</iconset>
+                      <iconset>
+                       <normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine-ambiance-dark.svg</normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine-ambiance-dark.svg</iconset>
                      </property>
                     </item>
                    </widget>
@@ -233,16 +188,7 @@
                <string>Tray Icon</string>
               </property>
               <layout class="QVBoxLayout" name="_15">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
@@ -323,16 +269,7 @@
             <string>System</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_13">
-            <property name="leftMargin">
-             <number>3</number>
-            </property>
-            <property name="topMargin">
-             <number>3</number>
-            </property>
-            <property name="rightMargin">
-             <number>3</number>
-            </property>
-            <property name="bottomMargin">
+            <property name="margin">
              <number>3</number>
             </property>
             <item>
@@ -341,31 +278,13 @@
                <string>System utils</string>
               </property>
               <layout class="QVBoxLayout" name="_16">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
                 <widget class="QWidget" name="widget_36" native="true">
                  <layout class="QHBoxLayout" name="_17">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -422,16 +341,7 @@
                <item>
                 <widget class="QWidget" name="widget_37" native="true">
                  <layout class="QHBoxLayout" name="_18">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -488,16 +398,7 @@
                <item>
                 <widget class="QWidget" name="widget_38" native="true">
                  <layout class="QHBoxLayout" name="_19">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -554,16 +455,7 @@
                <item>
                 <widget class="QWidget" name="widget_39" native="true">
                  <layout class="QHBoxLayout" name="_20">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -620,16 +512,7 @@
                <item>
                 <widget class="QWidget" name="widget_40" native="true">
                  <layout class="QHBoxLayout" name="_21">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -686,16 +569,7 @@
                <item>
                 <widget class="QWidget" name="widget_41" native="true">
                  <layout class="QHBoxLayout" name="_22">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -752,16 +626,7 @@
                <item>
                 <widget class="QWidget" name="widget_42" native="true">
                  <layout class="QHBoxLayout" name="_23">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -818,16 +683,7 @@
                <item>
                 <widget class="QWidget" name="widget_43" native="true">
                  <layout class="QHBoxLayout" name="_24">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -904,16 +760,7 @@
             <string>Utils</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_14">
-            <property name="leftMargin">
-             <number>3</number>
-            </property>
-            <property name="topMargin">
-             <number>3</number>
-            </property>
-            <property name="rightMargin">
-             <number>3</number>
-            </property>
-            <property name="bottomMargin">
+            <property name="margin">
              <number>3</number>
             </property>
             <item>
@@ -922,31 +769,13 @@
                <string>Console</string>
               </property>
               <layout class="QVBoxLayout" name="_25">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
                 <widget class="QWidget" name="widget_44" native="true">
                  <layout class="QHBoxLayout" name="_26">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1003,16 +832,7 @@
                <item>
                 <widget class="QWidget" name="widget_45" native="true">
                  <layout class="QHBoxLayout" name="_27">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1056,31 +876,13 @@
                <string notr="true">Icoutils</string>
               </property>
               <layout class="QVBoxLayout" name="_28">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
                 <widget class="QWidget" name="widget_46" native="true">
                  <layout class="QHBoxLayout" name="_29">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1137,16 +939,7 @@
                <item>
                 <widget class="QWidget" name="widget_47" native="true">
                  <layout class="QHBoxLayout" name="_30">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1223,16 +1016,7 @@
             <string>Network</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_15">
-            <property name="leftMargin">
-             <number>3</number>
-            </property>
-            <property name="topMargin">
-             <number>3</number>
-            </property>
-            <property name="rightMargin">
-             <number>3</number>
-            </property>
-            <property name="bottomMargin">
+            <property name="margin">
              <number>3</number>
             </property>
             <item>
@@ -1241,31 +1025,13 @@
                <string>Proxy settings</string>
               </property>
               <layout class="QVBoxLayout" name="_35">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
                 <widget class="QWidget" name="widget_49" native="true">
                  <layout class="QHBoxLayout" name="_36">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1318,16 +1084,7 @@
                <item>
                 <widget class="QWidget" name="widget_50" native="true">
                  <layout class="QHBoxLayout" name="_37">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1371,16 +1128,7 @@
                <item>
                 <widget class="QWidget" name="widget_51" native="true">
                  <layout class="QHBoxLayout" name="_38">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1424,16 +1172,7 @@
                <item>
                 <widget class="QWidget" name="widget_52" native="true">
                  <layout class="QHBoxLayout" name="_39">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1474,16 +1213,7 @@
                <item>
                 <widget class="QWidget" name="widget_53" native="true">
                  <layout class="QHBoxLayout" name="_40">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1544,16 +1274,7 @@
             <string>Quick Mount</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_16">
-            <property name="leftMargin">
-             <number>3</number>
-            </property>
-            <property name="topMargin">
-             <number>3</number>
-            </property>
-            <property name="rightMargin">
-             <number>3</number>
-            </property>
-            <property name="bottomMargin">
+            <property name="margin">
              <number>3</number>
             </property>
             <item>
@@ -1590,31 +1311,13 @@
                <string>Profile Strings:</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_18">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
                 <widget class="QWidget" name="frameMount" native="true">
                  <layout class="QHBoxLayout" name="_41">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1661,16 +1364,7 @@
                <item>
                 <widget class="QWidget" name="widget_55" native="true">
                  <layout class="QHBoxLayout" name="_42">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1714,16 +1408,7 @@
                <item>
                 <widget class="QWidget" name="widget_56" native="true">
                  <layout class="QHBoxLayout" name="_43">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1810,16 +1495,7 @@
             <string>Language</string>
            </attribute>
            <layout class="QVBoxLayout" name="_99">
-            <property name="leftMargin">
-             <number>3</number>
-            </property>
-            <property name="topMargin">
-             <number>3</number>
-            </property>
-            <property name="rightMargin">
-             <number>3</number>
-            </property>
-            <property name="bottomMargin">
+            <property name="margin">
              <number>3</number>
             </property>
             <item>
@@ -1828,31 +1504,13 @@
                <string>Language</string>
               </property>
               <layout class="QVBoxLayout" name="_100">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
                 <widget class="QWidget" name="widget_98" native="true">
                  <layout class="QHBoxLayout" name="_101">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -1941,16 +1599,7 @@
             <string>Logging</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_38">
-            <property name="leftMargin">
-             <number>3</number>
-            </property>
-            <property name="topMargin">
-             <number>3</number>
-            </property>
-            <property name="rightMargin">
-             <number>3</number>
-            </property>
-            <property name="bottomMargin">
+            <property name="margin">
              <number>3</number>
             </property>
             <item>
@@ -1959,16 +1608,7 @@
                <string>Logging subsystem:</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_39">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
@@ -2023,16 +1663,7 @@
             <string>AppDB browser</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_40">
-            <property name="leftMargin">
-             <number>3</number>
-            </property>
-            <property name="topMargin">
-             <number>3</number>
-            </property>
-            <property name="rightMargin">
-             <number>3</number>
-            </property>
-            <property name="bottomMargin">
+            <property name="margin">
              <number>3</number>
             </property>
             <item>
@@ -2177,16 +1808,7 @@
                <string>Default virtual desktop</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_55">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
@@ -2202,16 +1824,7 @@
                <item>
                 <widget class="QWidget" name="widget_136" native="true">
                  <layout class="QHBoxLayout" name="horizontalLayout_2">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -2409,16 +2022,7 @@
                <string>Program icons</string>
               </property>
               <layout class="QVBoxLayout" name="_156">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
@@ -2446,16 +2050,7 @@
                <string>File dialogs</string>
               </property>
               <layout class="QVBoxLayout" name="_157">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
@@ -2483,31 +2078,13 @@
                <string>Default directory for new wine prefixes</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_5">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
                 <widget class="QWidget" name="widget_7" native="true">
                  <layout class="QHBoxLayout" name="_32">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
+                  <property name="margin">
                    <number>0</number>
                   </property>
                   <item>
@@ -2565,16 +2142,7 @@
             <string>Run dialog</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout">
-            <property name="leftMargin">
-             <number>3</number>
-            </property>
-            <property name="topMargin">
-             <number>3</number>
-            </property>
-            <property name="rightMargin">
-             <number>3</number>
-            </property>
-            <property name="bottomMargin">
+            <property name="margin">
              <number>3</number>
             </property>
             <item>
@@ -2583,16 +2151,7 @@
                <string>Run recent program</string>
               </property>
               <layout class="QVBoxLayout" name="_154">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
@@ -2634,16 +2193,7 @@
             <string>Wine desktop import</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_3">
-            <property name="leftMargin">
-             <number>3</number>
-            </property>
-            <property name="topMargin">
-             <number>3</number>
-            </property>
-            <property name="rightMargin">
-             <number>3</number>
-            </property>
-            <property name="bottomMargin">
+            <property name="margin">
              <number>3</number>
             </property>
             <item>
@@ -2652,16 +2202,7 @@
                <string>Wine desktop import</string>
               </property>
               <layout class="QVBoxLayout" name="_158">
-               <property name="leftMargin">
-                <number>3</number>
-               </property>
-               <property name="topMargin">
-                <number>3</number>
-               </property>
-               <property name="rightMargin">
-                <number>3</number>
-               </property>
-               <property name="bottomMargin">
+               <property name="margin">
                 <number>3</number>
                </property>
                <item>
@@ -2890,8 +2431,6 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../q4wine.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
