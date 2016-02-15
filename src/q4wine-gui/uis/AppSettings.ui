@@ -187,15 +187,27 @@
                      <property name="text">
                       <string>Default</string>
                      </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../../icons/q4wine.svg</normaloff>../../icons/q4wine.svg</iconset>
+                     </property>
                     </item>
                     <item>
                      <property name="text">
                       <string>Ambient Light</string>
                      </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../../icons/q4wine-ambiance.svg</normaloff>../../icons/q4wine-ambiance.svg</iconset>
+                     </property>
                     </item>
                     <item>
                      <property name="text">
                       <string>Ambient Dark</string>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../../icons/q4wine-ambiance-dark.svg</normaloff>../../icons/q4wine-ambiance-dark.svg</iconset>
                      </property>
                     </item>
                    </widget>
