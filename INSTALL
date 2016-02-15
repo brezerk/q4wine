@@ -54,7 +54,7 @@ Installation
 
        By default, q4wine will build and install all translations:
 
-       LINGUAS                   : "en_us;ru_ru;uk_ua;pt_br;es_es;it_it;cs_cz;he_il;fo_ds;fa_ir"
+       LINGUAS                   : "af;cs;de;en;es;fa;he;it;pl;pt_BR;ru;uk;zh_TW"
 
        Optional buils flags:     : Default | Possible
 
@@ -102,4 +102,4 @@ xargs rm < install_manifest.txt
 
 Changelog
 ***********************************************
-See changelog file for details
+See ChangeLog file for details
