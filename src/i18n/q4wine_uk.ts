@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk_ua">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>About</name>
     <message>
@@ -232,14 +232,14 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-626"/>
         <location line="+435"/>
         <source>Ambient Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Монохромна світла</translation>
     </message>
     <message>
         <location line="+5"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
         <location line="+435"/>
         <source>Ambient Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Монохромна темна</translation>
     </message>
     <message>
         <location line="+754"/>
@@ -2042,12 +2042,12 @@ See help for details.</source>
     <message>
         <location line="-147"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файли зображень (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
+        <translation>Зображення і файли для Win32 (* .png * .jpg * .gif * .bmp * .xpm * .exe * .dll);;Зображення (* .png * .jpg * .gif * .bmp * .xpm * .svg * .svgz);;Виконувані файли Win32 (* .exe);;Розподілювані бібліотеки Win32 (* .dll);;Файли для Win32 (* .exe * .dll)</translation>
     </message>
     <message>
         <location line="+123"/>
@@ -2618,7 +2618,7 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>&amp;Import Wine Desktop Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Імпортувати десктопні файли Wine</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2657,7 +2657,7 @@ See help for details.</source>
     <message>
         <location line="-78"/>
         <source>He&amp;lp</source>
-        <translation>Допомога</translation>
+        <translation>Довідка</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -2762,7 +2762,7 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>&amp;Wine AppDB Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Навігатор по Wine AppDB</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3149,7 +3149,7 @@ See help for details.</source>
         <location line="-180"/>
         <location line="+1"/>
         <source>Configure wine versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштувати версії Wine</translation>
     </message>
     <message>
         <location line="+170"/>

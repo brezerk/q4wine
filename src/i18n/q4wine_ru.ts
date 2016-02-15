@@ -232,14 +232,14 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-626"/>
         <location line="+435"/>
         <source>Ambient Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Монохромная светлая</translation>
     </message>
     <message>
         <location line="+5"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
         <location line="+435"/>
         <source>Ambient Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Монохромная тёмная</translation>
     </message>
     <message>
         <location line="+754"/>
@@ -450,18 +450,18 @@
     <message>
         <location line="+10"/>
         <source>App Icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Значок программы</translation>
     </message>
     <message>
         <location line="+45"/>
         <source>App Icon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Значок программы:</translation>
     </message>
     <message>
         <location line="+14"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-648"/>
         <source>Default</source>
-        <translation type="unfinished">Умолчания</translation>
+        <translation>По умолчанию</translation>
     </message>
     <message>
         <location line="+1359"/>
@@ -1021,12 +1021,12 @@
     <message>
         <location line="-2868"/>
         <source>Use e&amp;xisting color theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Оставить существующий</translation>
     </message>
     <message>
         <location line="+17"/>
         <source>Use current &amp;Qt colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать цветовую схему Qt</translation>
     </message>
     <message>
         <location line="+1533"/>
@@ -2023,12 +2023,12 @@ See help for details.</source>
     <message>
         <location line="-147"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Изображения (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
+        <translation>Изображения и файлы для Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Изображения (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Исполняемые файлы Win32 (*.exe);;Разделяемые библиотеки Win32 (*.dll);;Файлы для Win32 (*.exe *.dll)</translation>
     </message>
     <message>
         <location line="+123"/>
@@ -2564,7 +2564,7 @@ See help for details.</source>
     <message>
         <location line="+64"/>
         <source>Help &amp;for This Tab</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать справку для текущей вкладки</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2574,7 +2574,7 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>&amp;Import Wine Desktop Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортировать десктопные файлы Wine</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2613,47 +2613,47 @@ See help for details.</source>
     <message>
         <location line="-78"/>
         <source>He&amp;lp</source>
-        <translation type="unfinished"></translation>
+        <translation>Справка</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>&amp;Handbook</source>
-        <translation type="unfinished"></translation>
+        <translation>Руководство</translation>
     </message>
     <message>
         <location line="+42"/>
         <source>&amp;Run...</source>
-        <translation type="unfinished"></translation>
+        <translation>Запустить...</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Выход</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>О программе</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>О Qt</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>&amp;Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Программы</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>P&amp;rocess</source>
-        <translation type="unfinished"></translation>
+        <translation>Процесс</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>Настроить</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2663,7 +2663,7 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>Pre&amp;fixes</source>
-        <translation type="unfinished"></translation>
+        <translation>Префиксы</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2673,52 +2673,52 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>&amp;Extract Images from PE Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Извлечь изображения из PE файлов</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Параметры</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>&amp;Disc Image Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Менеджер дисковых образов</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;First Steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Первые шаги</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Short FAQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Короткое ЧаВо/FAQ</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Индекс</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Website</source>
-        <translation type="unfinished"></translation>
+        <translation>Веб-сайт</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Donate</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожертвования</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Bugs</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибки</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>&amp;Wine AppDB Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Навигатор AppDB по wine</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2728,7 +2728,7 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>&amp;Logging</source>
-        <translation type="unfinished"></translation>
+        <translation>Журналирование</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2738,7 +2738,7 @@ See help for details.</source>
     <message>
         <location line="+30"/>
         <source>Wine &amp;Version Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Управление версиями Wine</translation>
     </message>
     <message>
         <location line="-81"/>
@@ -3105,7 +3105,7 @@ See help for details.</source>
         <location line="-180"/>
         <location line="+1"/>
         <source>Configure wine versions</source>
-        <translation type="unfinished"></translation>
+        <translation>Настроить версии Wine</translation>
     </message>
     <message>
         <location line="+170"/>
