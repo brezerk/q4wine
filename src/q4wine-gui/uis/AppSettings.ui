@@ -146,8 +146,8 @@
                       <string>Default</string>
                      </property>
                      <property name="icon">
-                      <iconset>
-                       <normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine.svg</normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine.svg</iconset>
+                      <iconset resource="../../q4wine.qrc">
+                       <normaloff>:/q4wine</normaloff>:/q4wine</iconset>
                      </property>
                     </item>
                     <item>
@@ -155,8 +155,8 @@
                       <string>Ambient Light</string>
                      </property>
                      <property name="icon">
-                      <iconset>
-                       <normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine-ambiance.svg</normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine-ambiance.svg</iconset>
+                      <iconset resource="../../q4wine.qrc">
+                       <normaloff>:/q4wine-ambiance</normaloff>:/q4wine-ambiance</iconset>
                      </property>
                     </item>
                     <item>
@@ -164,8 +164,8 @@
                       <string>Ambient Dark</string>
                      </property>
                      <property name="icon">
-                      <iconset>
-                       <normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine-ambiance-dark.svg</normaloff>/usr/share/icons/hicolor/scalable/apps/q4wine-ambiance-dark.svg</iconset>
+                      <iconset resource="../../q4wine.qrc">
+                       <normaloff>:/q4wine-ambiance-dark</normaloff>:/q4wine-ambiance-dark</iconset>
                      </property>
                     </item>
                    </widget>
@@ -2431,6 +2431,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../q4wine.qrc"/>
+ </resources>
  <connections/>
 </ui>
