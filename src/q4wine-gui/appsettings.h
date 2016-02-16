@@ -64,6 +64,7 @@ class AppSettings : public QDialog, public Ui::AppSettings
         typedef void *CoreLibPrototype (bool);
         CoreLibPrototype *CoreLibClassPointer;
         std::auto_ptr<corelib> CoreLib;
+        QHash<QString, QString> lng_hash;
 };
 
 #endif

@@ -130,7 +130,10 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
     if (settings.value("lang").toString().isEmpty()){
         comboLangs->setCurrentIndex(comboLangs->findText(tr("System Default")));
     } else {
-        comboLangs->setCurrentIndex(comboLangs->findText(settings.value("lang").toString()));
+        QString lName = settings.value("lang").toString();
+        //Strip q4wine_ from setting if any
+        lName.replace("q4wine_", "");
+        comboLangs->setCurrentIndex(comboLangs->findText(QLocale(lName).nativeLanguageName()));
     }
 
     settings.endGroup();
@@ -439,8 +442,13 @@ void AppSettings::getLangs(){
 
     for (int i = 0; i < list.size(); ++i) {
         QFileInfo fileInfo = list.at(i);
-        if (fileInfo.fileName().right(2)=="qm")
-            comboLangs->addItem(fileInfo.fileName().split(".").at(0));
+        if (fileInfo.fileName().right(2)=="qm"){
+            QString lName = fileInfo.fileName().replace("q4wine_", "");
+            QLocale lObj = QLocale(lName);
+            QString lNameNative = lObj.nativeLanguageName();
+            lng_hash[lNameNative] = lObj.name();
+            comboLangs->addItem(lNameNative);
+        }
     }
     return;
 }
@@ -562,10 +570,8 @@ void AppSettings::cmdOk_Click(){
     if (comboLangs->currentText()==tr("System Default")){
         settings.setValue("lang", "");
     } else {
-        settings.setValue("lang", comboLangs->currentText());
+        settings.setValue("lang", lng_hash[comboLangs->currentText()]);
     }
-
-
 
     settings.endGroup();
     settings.beginGroup("system");
