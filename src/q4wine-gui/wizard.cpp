@@ -23,8 +23,7 @@ void Wizard::loadThemeIcons(int Scene){
     switch (Scene){
     case 1:
         // First startup
-        lblPicture->setPixmap(CoreLib->loadPixmap("data/firstc.png"));
-
+        lblPicture->setPixmap(CoreLib->loadPixmap("firstc"));
         cmdGetWineBin->setIcon(CoreLib->loadIcon("document-open"));
         cmdGetWineServerBin->setIcon(CoreLib->loadIcon("document-open"));
         cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("document-open"));
