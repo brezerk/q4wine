@@ -197,7 +197,11 @@ int WineObject::runSys(){
     QString env = this->createEnvString();
     QString app_stdout;
 
-    QTextCodec *codec = QTextCodec::codecForName(CoreLib->getLocale().toLatin1());
+    QTextCodec *codec = QTextCodec::codecForLocale();
+    if (codec == NULL){
+        qDebug()<<"[EE] Error getting code locale for 'System'. Abort.";
+        return 10;
+    }
 
     FILE *fp;
     int status;
@@ -367,7 +371,11 @@ int WineObject::runScript(QString script_path, bool pre_run){
     QString stdout, app_stdout;
 
     QString env = this->createEnvString();
-    QTextCodec *codec = QTextCodec::codecForName(CoreLib->getLocale().toLatin1());
+    QTextCodec *codec = QTextCodec::codecForLocale();
+    if (codec == NULL){
+        qDebug()<<"[EE] Error getting code locale for 'System'. Abort.";
+        return 10;
+    }
 
     QString run_string = "";
     if (!env.isEmpty()){
