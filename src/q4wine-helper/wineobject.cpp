@@ -159,10 +159,11 @@ QString WineObject::createEnvString(){
     env.append(QString(" WINEPREFIX='%1' ").arg(this->prefixPath));
     env.append(QString(" WINESERVER='%1' ").arg(this->prefixServer));
     env.append(QString(" WINELOADER='%1' ").arg(this->prefixLoader));
-    env.append(QString(" WINEDLLPATH='%1' ").arg(this->prefixDllPath));
+
+    if (!this->prefixDllPath.isEmpty())
+        env.append(QString(" WINEDLLPATH='%1' ").arg(this->prefixDllPath));
     if (!this->prefixArch.isEmpty())
         env.append(QString(" WINEARCH='%1' ").arg(this->prefixArch));
-
     if (!this->programDebug.isEmpty()){
         env.append(QString(" WINEDEBUG='%1' ").arg(this->programDebug));
     } else {
@@ -303,7 +304,7 @@ int WineObject::runSys(){
     stdout.append(run_string.trimmed());
     stdout.append("\n");
 
-    if (this->prefixBinary.isEmpty() or this->prefixDllPath.isEmpty() or \
+    if (this->prefixBinary.isEmpty() or \
         this->prefixLoader.isEmpty() or this->prefixServer.isEmpty()){
         stdout.append("Exit code:");
         stdout.append("\n");

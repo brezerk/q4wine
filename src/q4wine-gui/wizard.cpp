@@ -27,8 +27,6 @@ void Wizard::loadThemeIcons(int Scene){
         cmdGetWineBin->setIcon(CoreLib->loadIcon("document-open"));
         cmdGetWineServerBin->setIcon(CoreLib->loadIcon("document-open"));
         cmdGetWineLoaderBin->setIcon(CoreLib->loadIcon("document-open"));
-        cmdGetWineDllPath->setIcon(CoreLib->loadIcon("document-open"));
-        cmdGetWineDllPath64->setIcon(CoreLib->loadIcon("document-open"));
         cmdGetTarBin->setIcon(CoreLib->loadIcon("document-open"));
         cmdGetMountBin->setIcon(CoreLib->loadIcon("document-open"));
         cmdGetUmountBin->setIcon(CoreLib->loadIcon("document-open"));
@@ -94,8 +92,6 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
         cmdGetWineBin->installEventFilter(this);
         cmdGetWineServerBin->installEventFilter(this);
         cmdGetWineLoaderBin->installEventFilter(this);
-        cmdGetWineDllPath->installEventFilter(this);
-        cmdGetWineDllPath64->installEventFilter(this);
 
         cmdGetTarBin->installEventFilter(this);
         cmdGetMountBin->installEventFilter(this);
@@ -111,31 +107,6 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
         txtWineBin->setText(CoreLib->getWhichOut("wine"));
         txtWineServerBin->setText(CoreLib->getWhichOut("wineserver"));
         txtWineLoaderBin->setText(CoreLib->getWhichOut("wine"));
-
-
-        QStringList libs_path = CoreLib->getWineLibsPath();
-        /*
-        if (libs_path.isEmpty()){
-            QStringList libs_loc, libs_arch;
-            libs_loc << "/usr/lib" << "/usr/local/lib" << "/local/usr/lib";
-            libs_arch << "64" << "32" << "";
-
-            foreach (QString loc, libs_loc){
-                foreach (QString arch, libs_arch){
-                    libs_path = loc;
-                    libs_path.append(arch);
-                    QString libwine_path = libs_path;
-                    libwine_path.append("/libwine.so");
-                    if (QFile(libwine_path).exists()){
-                        break;
-                        libs_path.append("/wine`");
-                    }
-                }
-            }
-        }*/
-        txtWineDllPath->setText(libs_path.at(0));
-        txtWineDllPath64->setText(libs_path.at(1));
-
         txtTarBin->setText(CoreLib->getWhichOut("tar"));
         txtMountBin->setText(CoreLib->getWhichOut("mount"));
         txtUmountBin->setText(CoreLib->getWhichOut("umount"));
@@ -358,8 +329,6 @@ void Wizard::nextWizardPage(){
                 return;
             if (!checkEntry(txtWineLoaderBin->text(), "wine loader"))
                 return;
-            if (!checkEntry(txtWineDllPath->text(), "wine library", false))
-                return;
             break;
   case 4:
             if (!checkEntry(txtTarBin->text(), "tar"))
@@ -410,8 +379,6 @@ void Wizard::nextWizardPage(){
             vers.wine_exec_ = txtWineBin->text();
             vers.wine_loader_ = txtWineLoaderBin->text();
             vers.wine_server_ = txtWineServerBin->text();
-            vers.wine_dllpath32_ = txtWineDllPath->text();
-            vers.wine_dllpath64_ = txtWineDllPath64->text();
             vers.save();
             settings.beginGroup("system");
             settings.setValue("tar", txtTarBin->text());

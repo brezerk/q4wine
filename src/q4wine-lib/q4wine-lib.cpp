@@ -308,24 +308,6 @@ void corelib::checkSettings(){
     /*
      * Getting application settings
      */
-    QString lib32 = this->getSetting("wine", "WineLibs32", false, "").toString();
-    QString lib64 = this->getSetting("wine", "WineLibs64", false, "").toString();
-    if (lib32.isEmpty() and lib64.isEmpty()){
-        QStringList libs_path = this->getWineLibsPath();
-        QSettings settings(APP_SHORT_NAME, "default");
-        settings.beginGroup("wine");
-        settings.setValue("WineLibs32", libs_path.at(0));
-        settings.setValue("WineLibs64", libs_path.at(1));
-        settings.endGroup();
-    }
-
-    lib32 = this->getSetting("wine", "WineLibs32", false, "").toString();
-    lib64 = this->getSetting("wine", "WineLibs64", false, "").toString();
-    if (lib32.isEmpty() and lib64.isEmpty()){
-        this->showError(QObject::tr("<p>Error while loading application settings. wine's library path for 32 and 64 bit is not set.</p><p>Please, go to the %1 options dialog and set at least one path.</p>").arg(APP_SHORT_NAME));
-
-    }
-
     this->getSetting("system", "tar");
     this->getSetting("system", "mount");
     this->getSetting("system", "umount");
@@ -603,111 +585,6 @@ QString corelib::getWhichOut(const QString fileName, bool showErr){
     return "";
 }
 
-QStringList corelib::getWineLibsPath(void) {
-    QProcess proc;
-    QStringList args;
-    QStringList libs_path;
-    libs_path << "" << ""; // 32, 64
-
-#ifndef _OS_MACOSX_
-    QString sh = this->getWhichOut("sh");
-    if (sh.isEmpty())
-        return libs_path;
-
-    QString ldconfig = this->getWhichOut("ldconfig", false);
-    if (ldconfig.isEmpty())
-        ldconfig = "/sbin/ldconfig";
-
-#ifdef _OS_LINUX_
-    ldconfig.append(" -p ");
-#else
-    ldconfig.append(" -r ");
-#endif
-    ldconfig.append(" | grep libwine.so");
-
-    args<<"-c"<<ldconfig;
-
-    proc.setWorkingDirectory (QDir::homePath());
-    proc.start(sh, args, QIODevice::ReadOnly);
-    proc.waitForFinished();
-
-    if (proc.exitCode() != 0){
-        qDebug()<<"[EE] Cannot get ldconfig data";
-        return libs_path;
-    }
-
-    QString string = proc.readAllStandardOutput();
-#ifdef DEBUG
-    qDebug()<<"[ii]"<<string;
-#endif
-    if (!string.isEmpty()){
-        QStringList libs_list = string.split("\n");
-#ifdef _OS_LINUX_
-        QRegExp rx_info(".*\\((.*)\\) => (.*\\.so.*$)");
-#else
-        QRegExp rx_info("(.*) => (.*\\.so.*)");
-#endif
-        foreach (QString lib_info, libs_list){
-#ifdef DEBUG
-            qDebug()<<"[ii] work with: " <<  lib_info;
-#endif
-            int pos = rx_info.indexIn(lib_info);
-            QString arch, path;
-            if (pos > -1) {
-                arch = rx_info.cap(1).split(",").last();
-                path = rx_info.cap(2);
-            } else {
-                continue;
-            }
-#ifdef DEBUG
-            qDebug()<<"[ii] Found: " <<  arch << " " << path;
-#endif
-            if (path.isEmpty()){
-                qDebug()<<"[EE] No winelib.so found in: " << lib_info;
-                continue;
-            }
-            QFileInfo file(path);
-
-            if (!file.exists()){
-                qDebug()<<"[EE] File does not exist: " << path;
-                continue;
-            }
-            path = file.absolutePath().append("/wine/");
-            file.setFile(path);
-            if (!file.isDir()){
-                qDebug()<<"[EE] Directory does not exist:"<<path;
-                continue;
-            } else {
-                if (arch == "x86-64"){
-                    libs_path.replace(1, path);
-                } else {
-                    libs_path.replace(0, path);
-                }
-            }
-        }
-    }
-#else
-    //FIXME: Design search for brew packages: /usr/local/Cellar/wine/1.2.3/lib
-    QStringList libs_loc, libs_arch;
-    libs_loc << "/usr/lib" << "/usr/local/lib" << "/local/usr/lib" << "/opt/local/lib";
-    libs_arch << "64" << "32" << "";
-    foreach (QString loc, libs_loc){
-        foreach (QString arch, libs_arch){
-            loc.append(arch);
-            QString libwine_path = loc;
-            libwine_path.append("/libwine.dylib");
-            if (QFile(libwine_path).exists()){
-                loc.append("/wine");
-                libs_path.replace(0, loc);
-                libs_path.replace(1, loc);
-                break;
-            }
-        }
-    }
-#endif
-    return libs_path;
-}
-
 QStringList corelib::getCdromDevices(void) const{
     QStringList retVal;
 #ifdef _OS_DARWIN_
@@ -777,7 +654,7 @@ QStringList corelib::getCdromDevices(void) const{
     QStringList corelib::getWineDlls(QString prefix_lib_path) const{
         QStringList dllList;
         if (prefix_lib_path.isEmpty()){
-            prefix_lib_path=this->getSetting("wine", "WineLibs").toString();
+            prefix_lib_path=this->getSetting("wine", "WineLibs", false, "").toString();
         }
 
         QDir dir(prefix_lib_path);
@@ -1672,7 +1549,8 @@ QStringList corelib::getCdromDevices(void) const{
                     QStringList sh_args;
                     sh_args << "env";
                     sh_args << QString("WINEPREFIX=%1").arg(prefix_info.value("path"));
-                    sh_args << QString("WINEDLLPATH=%1").arg(prefix_info.value("libs"));
+                    if (!prefix_info.value("libs").isEmpty())
+                        sh_args << QString("WINEDLLPATH=%1").arg(prefix_info.value("libs"));
                     sh_args << QString("WINELOADER=%1").arg(prefix_info.value("loader"));
                     sh_args << QString("WINESERVER=%1").arg(prefix_info.value("server"));
                     if (!prefix_info.value("arch").isEmpty())

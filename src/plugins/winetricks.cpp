@@ -100,7 +100,8 @@ void winetricks::run_winetricks(QString item){
         sh_args << QString("WINEPREFIX='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("path")));
 
         if (!prefix_info.value("server").isEmpty()){
-            sh_args << QString("WINEDLLPATH='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("libs")));
+            if (!prefix_info.value("libs").isEmpty())
+                sh_args << QString("WINEDLLPATH='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("libs")));
             sh_args << QString("WINELOADER='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("loader")));
             sh_args << QString("WINESERVER='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("server")));
         } else {
@@ -119,7 +120,8 @@ void winetricks::run_winetricks(QString item){
                         prefixDllPath = vers.wine_dllpath64_;
                     }
                 }
-                sh_args << QString("WINEDLLPATH='%1'").arg(CoreLib->getStrictEscapeString(prefixDllPath));
+                if (!prefixDllPath.isEmpty())
+                    sh_args << QString("WINEDLLPATH='%1'").arg(CoreLib->getStrictEscapeString(prefixDllPath));
                 sh_args << QString("WINELOADER='%1'").arg(CoreLib->getStrictEscapeString(vers.wine_loader_));
                 sh_args << QString("WINESERVER='%1'").arg(CoreLib->getStrictEscapeString(vers.wine_server_));
             }
@@ -209,11 +211,8 @@ void winetricks::downloadwinetricks () {
 
 QStringList winetricks::get_stdout_lines(QString command){
     QProcess p(this);
-    QString lang = CoreLib->getLocale();
-#ifdef DEBUG
-    qDebug()<<lang;
-#endif
-    QTextCodec *codec = QTextCodec::codecForName(lang.toLatin1());
+
+    QTextCodec *codec = QTextCodec::codecForLocale();
 
     p.start(command);
     p.waitForFinished();

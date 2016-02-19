@@ -184,8 +184,9 @@ void VersionManager::cmdOk_Click()
     if (!fileExists(this->txtWineServerBin->text()))
         return;
 
-    if (!fileExists(this->txtWineLibs32->text(), true))
-        return;
+    if (!this->txtWineLibs32->text().isEmpty())
+        if (!fileExists(this->txtWineLibs32->text(), true))
+            return;
 
     if (!this->txtWineLibs64->text().isEmpty())
         if (!fileExists(this->txtWineLibs64->text(), true))
@@ -291,12 +292,6 @@ bool VersionManager::saveChanges(){
 
     if (!fileExists(this->txtWineServerBin->text()))
         return false;
-
-    if (this->txtWineLibs64->text().isEmpty() and this->txtWineLibs32->text().isEmpty()){
-        QMessageBox::critical(this, tr("Error"),
-                              tr("32 or 64 wine library path required."));
-        return false;
-    }
 
     if (!this->txtWineLibs32->text().isEmpty())
         if (!fileExists(this->txtWineLibs32->text(), true))
