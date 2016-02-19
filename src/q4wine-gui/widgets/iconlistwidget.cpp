@@ -82,6 +82,8 @@ void IconListWidget::showContents(QString filterString){
 
     QStringList iconsList=db_icon.getIconsList(this->prefixName, this->dirName, filterString, this->sort_order);
 
+    QIcon defIcon = CoreLib->loadIcon("application-x-executable-script");
+
     for (int i = 0; i < iconsList.size(); ++i) {
         std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(this, 0));
         iconItem->setText(iconsList.at(i));
@@ -91,7 +93,7 @@ void IconListWidget::showContents(QString filterString){
         //Seting icon. If no icon or icon file does not exist -- setting default
         QString icon_path = db_icon.getPixmapIcon(this->prefixName, this->dirName, iconsList.at(i));
         if (icon_path.isEmpty()){
-            iconItem->setIcon(CoreLib->loadIcon("application-x-ms-dos-executable"));
+            iconItem->setIcon(defIcon);
         } else {
             if (QFile::exists (icon_path)){
                 iconItem->setIcon(QIcon(icon_path));
@@ -104,7 +106,7 @@ void IconListWidget::showContents(QString filterString){
                     // Do not work due to: https://bugreports.qt-project.org/browse/QTBUG-999
                     //if (ico.isNull()){
                     if (ico.availableSizes().isEmpty())
-                        ico = CoreLib->loadIcon("application-x-ms-dos-executable");
+                        ico = defIcon;
 
                     iconItem->setIcon(ico);
                 }

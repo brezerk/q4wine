@@ -263,6 +263,8 @@ void PrefixConfigWidget::treeWidget_itemClicked (QTreeWidgetItem * item, int col
 void PrefixConfigWidget::get_icons(){
     this->listWidget.get()->clear();
 
+    QIcon defIcon = CoreLib->loadIcon("application-x-executable-script");
+
     QList<SysconfigItem> items = db_sysconfig.getItems(this->provider, this->subtype, this->sort_order, this->searchField->text());
     std::auto_ptr<QListWidgetItem> iconItem;
     for (int i = 0; i < items.size(); i++){
@@ -296,7 +298,7 @@ void PrefixConfigWidget::get_icons(){
         } else {
             iconItem->setText(items.at(i).name);
             iconItem->setToolTip(items.at(i).desc);
-            iconItem->setIcon(CoreLib->loadIcon("application-x-executable-script"));
+            iconItem->setIcon(defIcon);
         }
         iconItem.release();
     }
