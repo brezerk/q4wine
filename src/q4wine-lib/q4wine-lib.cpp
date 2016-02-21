@@ -35,7 +35,6 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
     QList<QStringList> proclist;
     QStringList procline;
 
-
     QString prefix_path;
 
     if (!prefix_name.isEmpty())
@@ -85,6 +84,13 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
         path.append("/exe");
         QFileInfo exelink(path);
         // Try to read stat file
+        #ifdef DEBUG
+        if (exelink.isSymLink()){
+            qDebug()<<"exelink:"<<exelink.filePath()<<" target: "<<exelink.symLinkTarget();
+        } else {
+            qDebug()<<"not symlink, skip:"<<exelink.filePath();
+        }
+        #endif
         if (exelink.isSymLink() && (exelink.symLinkTarget().contains("wineserver") || exelink.symLinkTarget().contains("wine-preloader") || exelink.symLinkTarget().contains("wine64-preloader"))){
             if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
                 QTextStream in(&file);
