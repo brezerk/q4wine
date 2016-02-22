@@ -1,0 +1,83 @@
+Qt GUI for Wine
+***********************************************
+ 
+Q4Wine is a Qt GUI for Wine that helps manage Wine prefixes and installed applications.
+
+This software is published under the terms of the GNU GPL V3 and comes
+without any warranty. Feel free to change or distribute this software.
+
+Notes
+***********************************************
+This software comes with absolutely no warranty. You will NOT get any support or help for WineTools,
+Wine, software installations, Linux, Microsoft Windows, and so forth from the author.
+
+If you need help with Wine, send a message to the mailing lists at "http://www.winehq.org/site/forums".
+
+If you want support, buy the commercial versions of Wine: CodeWeavers CrossOver Office
+http://www.codeweavers.com for Desktop Applications.
+
+Q4Wine was initially written by Alexey S. Malakhov (also known as John Brezerk).
+
+The general idea came from WineTools, which was initially written by Frank Hendriksen.
+
+Dependencies:
+***********************************************
+cmake >= 2.8.12
+sudo
+wine
+>=sqlite-3.5.6
+>=which-2.19
+>=icoutils-0.26.0
+qt5 >= 5.2.1
+wget
+fuseiso 		***optional***
+
+Installation
+***********************************************
+
+1. $ tar -xvzf q4wine-x.xxx-rx.tar.gz
+2. $ cd q4wine
+3. $ mkdir build
+4. $ cd build
+5. $ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+ 
+   q4wine build options:
+
+       By default, q4wine will install all files into these directories:
+
+       CMAKE_INSTALL_PREFIX      : /usr/local
+       DESKTOP_ENTRY_PATH        : /usr/local/share/applications
+       PIXMAPS_ENTRY_PATH        : /usr/local/share/pixmaps
+       MANPAGE_ENTRY_PATH        : /usr/local/share/man
+       LIBS_ENTRY_PATH           : /usr/local/lib/q4wine   (for x86    systems)
+       LIBS_ENTRY_PATH           : /usr/local/lib64/q4wine (for x86_64 systems)
+
+       By default, q4wine will build and install all translations:
+
+       LINGUAS                   : "af;cs;de;en;es;fa;he;it;pl;pt_BR;ru;uk;zh_TW"
+
+       Optional buils flags:     : Default | Possible
+
+       RELEASE                   : ON  | OFF
+                                 : Use it for development or bug reportint purposes;
+       RELEASE                   : If OFF, then force q4wine to use APP_BUILD as CMAKE_INSTALL_PREFIX. 
+                                 : Use it for development purposes;
+
+6. $ make
+7. $ make install
+8. $ q4wine
+9. Enjoy :)
+
+Known Issues:
+***********************************************
+Non-standard directories
+
+If you have installed q4wine in a non-standard directory, 
+and you get the following error message: "error while loading shared libraries: libq4wine-core.so",
+then you need to override LD_LIBRARY_PATH variable.
+
+LD_LIBRARY_PATH={$path_to_q4wine_prefix}/lib/ q4wine
+
+Changelog
+***********************************************
+See ChangeLog file for details

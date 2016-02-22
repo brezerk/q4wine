@@ -1,0 +1,67 @@
+#=============================================================================
+# Copyright (C) 2008-2016 by Alexey S. Malakhov <brezerk@gmail.com>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#=============================================================================
+
+cmake_minimum_required(VERSION 2.8.12)
+
+#q4wine gui sources
+set(Q4WINE_GUI_HEADERS_DIR
+	${CMAKE_SOURCE_DIR}
+	${CMAKE_SOURCE_DIR}/src
+	${CMAKE_SOURCE_DIR}/src/gui
+)
+
+set(Q4WINE_GUI_SOURCES
+	${CMAKE_SOURCE_DIR}/src/gui/main.cpp
+)
+
+set(Q4WINE_GUI_MOC_HEADEDRS
+	""
+)
+
+set(Q4WINE_GUI_UI_SOURCES
+	""
+)
+
+set(Q4WINE_GUI_RESOURCE_SOURCES
+	""
+)
+
+#qt5_add_resources(RCC_SRCS ${Q4WINE_RESOURCE_SOURCES})
+qt5_wrap_ui(Q4WINE_GUI_UI_HEADERS ${Q4WINE_GUI_UI_SOURCES})
+qt5_wrap_cpp(Q4WINE_GUI_MOC_SOURCES ${Q4WINE_GUI_MOC_HEADEDRS})
+
+add_executable(q4wine
+	${Q4WINE_GUI_SOURCES}
+	${Q4WINE_GUI_HEADERS}
+	${Q4WINE_GUI_UI_HEADERS}
+	${Q4WINE_GUI_MOC_SOURCES}
+	${RCC_SRCS}
+	${QM_I18N}
+)
+
+add_dependencies(q4wine get_version)
+
+include_directories(${Q4WINE_GUI_HEADERS_DIR} ${CMAKE_BINARY_DIR})
+qt5_use_modules(q4wine Core DBus Network Sql Widgets Xml)
+
+#Install targets
+if(RELEASE)
+	install(TARGETS q4wine DESTINATION ${BIN_PREFIX})
+	install(FILES ${DESKTOP_GUI_ENTRY} DESTINATION ${DESKTOP_ENTRY_PATH})
+endif(RELEASE)
+
+#EOF

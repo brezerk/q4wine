@@ -17,6 +17,7 @@ install_manifest.txt
 *.cxx
 ui_*.h
 config.h
+version.h
 q4wine-mount
 q4wine-cli
 q4wine

@@ -1,0 +1,17 @@
+IF(RELEASE)
+	SET (VERSION "${APP_VERSION}")
+ELSE(RELEASE)
+	IF(GIT_EXECUTABLE)
+		EXECUTE_PROCESS(
+			COMMAND ${GIT_EXECUTABLE} describe --tags --always --dirty --match "[0-9]*.[0-9]*"
+			OUTPUT_VARIABLE VERSION
+			OUTPUT_STRIP_TRAILING_WHITESPACE
+		)
+		SET (VERSION "${APP_VERSION}-${VERSION}")
+	ELSE(GIT_EXECUTABLE)
+		MESSAGE(WARNING "Git binary not found. Build version will be set to NULL. Install Git package or use -DGIT_BINARY to set path to git binary.")
+		SET (VERSION "${APP_VERSION}")
+	ENDIF(GIT_EXECUTABLE)
+ENDIF(RELEASE)
+
+CONFIGURE_FILE(${SRC} ${DST} @ONLY)
