@@ -10,6 +10,7 @@ Version 1.3
   - Use native language name for language selection;
  Fixed:
   - WineLibs paths are no longer strictly required [BUG-68];
+  - Process explorer is broken [BUG-70];
 
 Version 1.2-r2
  Added:

@@ -77,74 +77,70 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
         QFileInfo fileInfo = list.at(i);
         path = "/proc/";
         path.append(fileInfo.fileName());
-        path.append("/stat");
-        QFile file(path);
-        path = "/proc/";
-        path.append(fileInfo.fileName());
-        path.append("/exe");
-        QFileInfo exelink(path);
-        // Try to read stat file
-        #ifdef DEBUG
-        if (exelink.isSymLink()){
-            qDebug()<<"exelink:"<<exelink.filePath()<<" target: "<<exelink.symLinkTarget();
-        } else {
-            qDebug()<<"not symlink, skip:"<<exelink.filePath();
-        }
-        #endif
-        if (exelink.isSymLink() && (exelink.symLinkTarget().contains("wineserver") || exelink.symLinkTarget().contains("wine-preloader") || exelink.symLinkTarget().contains("wine64-preloader"))){
-            if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
-                QTextStream in(&file);
-                QString line = in.readLine();
-                if (!line.isNull()){
-                    // Getting nice and name of the process
-                    nice = line.section(' ', 18, 18);
-                    name = line.section(' ', 1, 1);
-                    name.remove(QChar('('));
-                    name.remove(QChar(')'));
-                    name = name.toLower();
+        path.append("/comm");
+        QFile file_c(path);
+        if (file_c.open(QIODevice::ReadOnly | QIODevice::Text)){
+            // Try to read com file
+            QTextStream in(&file_c);
+            QString name = in.readLine();
+#ifdef DEBUG
+            qDebug()<<"path: "<<fileInfo.fileName()<<" comm: "<<name;
+#endif
+            if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
+                path = "/proc/";
+                path.append(fileInfo.fileName());
+                path.append("/stat");
+                QFile file_s(path);
+                if (file_s.open(QIODevice::ReadOnly | QIODevice::Text)){
+                    // Try to read com file
+                    QTextStream in(&file_s);
+                    QString line = in.readLine();
+                    if (!line.isNull()){
+                        // Getting nice and name of the process
+                        nice = line.section(' ', 18, 18);
+                        name = line.section(' ', 1, 1);
+                        name.remove(QChar('('));
+                        name.remove(QChar(')'));
+                        name = name.toLower();
 
-                    // If name contains wine or .exe and not contains q4wine,
-                    // then we try to get environ variables.
-                    //if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
-                    path = "/proc/";
-                    path.append(fileInfo.fileName());
-                    path.append("/environ");
-                    QFile e_file(path);
-
-                    // Getting WINEPREFIX variable.
-                    if (e_file.open(QIODevice::ReadOnly | QIODevice::Text)){
-                        QTextStream e_in(&e_file);
-                        QString e_line = e_in.readLine();
-                        int index = e_line.indexOf("WINEPREFIX=");
-                        prefix="";
-                        if (index!=-1)
-                            for (int i=index+11; i<=e_line.length(); i++){
-                            if (e_line.mid(i, 1).data()->isPrint()){
-                                prefix.append(e_line.mid(i, 1));
-                            } else {
-                                break;
-                            }
+                        path = "/proc/";
+                        path.append(fileInfo.fileName());
+                        path.append("/environ");
+                        QFile file_e(path);
+                        // Getting WINEPREFIX variable.
+                        if (file_e.open(QIODevice::ReadOnly | QIODevice::Text)){
+                            // Try to read environ file
+                            QTextStream e_in(&file_e);
+                            QString e_line = e_in.readLine();
+                            int index = e_line.indexOf("WINEPREFIX=");
+                            prefix="";
+                            if (index!=-1)
+                                for (int i=index+11; i<=e_line.length(); i++){
+                                    if (e_line.mid(i, 1).data()->isPrint()){
+                                        prefix.append(e_line.mid(i, 1));
+                                    } else {
+                                        break;
+                                    }
+                                }
+                            file_e.close();
                         }
-                    }
 
-                    // Puting all fields into QList<QStringList>
-                    procline.clear();
-
-
-                    if (!prefix_path.isNull()){
-                        if (prefix_path == prefix){
+                        // Puting all fields into QList<QStringList>
+                        procline.clear();
+                        if (!prefix_path.isNull()){
+                            if (prefix_path == prefix){
+                                procline << fileInfo.fileName() << name << nice << prefix;
+                                proclist << procline;
+                            }
+                        } else {
                             procline << fileInfo.fileName() << name << nice << prefix;
                             proclist << procline;
                         }
-                    } else {
-                        procline << fileInfo.fileName() << name << nice << prefix;
-                        proclist << procline;
                     }
-
-                    //}
+                    file_s.close();
                 }
-                file.close();
             }
+            file_c.close();
         }
     }
 #endif
