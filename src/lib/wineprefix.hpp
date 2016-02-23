@@ -20,44 +20,29 @@
 
 #include <QString>
 
+#include "src/lib/defines.hpp"
 #include "src/lib/wineversion.hpp"
 
 namespace q4wine {
 namespace lib {
 
-enum WineArch { WIN32, WIN64 };
-
 /*! \class WinePrefix wineprefix.h <q4wine/src/lib/wineprefix.h>
  * \brief Describes a wine prefix configuration.
  *
  * \par Wine Terms
+ *
  * In terms of Wine WINEPREFIX is a directory which holds a virtual
  * windows drive with separate wine settings (drives, virtual desktop,
  * special dlls and so on).
  *
  * \par Q4Wine Terms
- * In terms of Q4Wine WinePrefix: is a set of options which describe basic
+ *
+ * In terms of Q4Wine WinePrefix is a set of options which describe basic
  * WINEPREFIX configuration.
- * \note It is possible to have multiple WinePrefix: pointed to the single
- * directory. In combination with WineVersion: stups is possible to run a
+ *
+ * \note It is possible to have multiple WinePrefix pointed to the single
+ * directory. In combination with WineVersion: setups is possible to run a
  * number of truly independent wine processes.
- *
- * \par Members
- * WinePrefix::_name is user defined name, should be unique.
- * WinePrefix::_path the name of the directory where Wine will store its data.
- * WinePrefix::_arch is the architecture supported by a given Wine prefix. It
- * is set at prefix creation time and cannot be changed afterwards without
- * wiping prefix directory content.
- *
- * WinePrefix::_mountPoint an mount point directory where Disk images or
- * CD/DVD drives will be mounted by user request.
- *
- * WinePrefix::_virtualDevice an virtual device letter for mount point.
- *
- * WinePrefix::execTemplate will be used to format command line string to run wine
- * programs.
- *
- * WINEARCH
  *
  * \author Alexey S. Malakhov <brezerk@gmail.com>
  */
@@ -65,7 +50,28 @@ class WinePrefix {
  public:
     /*! Constructs an empty WineConfiguration object. */
     WinePrefix();
-    /*! Constructs an WineConfiguration object. */
+    /*! Constructs an WineConfiguration object.
+     *
+     * \param name is user defined name, should be unique. See also: #setName #getName
+     *
+     * \param path the name of the directory where Wine will store its data. See also: #setPath #getPath
+     *
+     * \param arch is the architecture supported by a given Wine prefix. It
+     * is set at prefix creation time and cannot be changed afterwards without
+     * wiping prefix directory content.
+     * See also: #setArch #getArch
+     *
+     * \param mountPoint an mount point directory where Disk images or
+     * CD/DVD drives will be mounted by user request.
+     * See also: #setMountPoint #getMountPoint
+     *
+     * \param virtualDevice an virtual device letter for mount point.
+     * See also: #setVirtualDevice #getVirtualDevice
+     *
+     * \param execTemplate will be used to format command line string to run wine
+     * programs.
+     * See alse: #setExecutionTemplate #getExecutionTemplate
+    */
     WinePrefix(
             QString name,
             QString path,

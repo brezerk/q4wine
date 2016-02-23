@@ -34,6 +34,7 @@ set(Q4WINE_LIB_HEADERS_DIR
     )
 
 set(Q4WINE_LIB_HEADERS
+    ${CMAKE_SOURCE_DIR}/src/lib/defines.hpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineprefix.hpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineversion.hpp
     )

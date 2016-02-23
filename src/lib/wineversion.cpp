@@ -80,9 +80,14 @@ const QString WineVersion::getLibs64(void) const {
     return libs64_;
 }
 
-const QString WineVersion::getLibs(QString arch) const {
-    // FIXME: return 32 or 64 libs depending on provied version
-    return arch;
+const QString WineVersion::getLibs(q4wine::lib::WineArch arch) const {
+    if (arch == q4wine::lib::WIN32) {
+        return libs32_;
+    } else if (arch == q4wine::lib::WIN64) {
+        return libs64_;
+    } else {
+        return libs32_;
+    }
 }
 
 }  // namespace lib

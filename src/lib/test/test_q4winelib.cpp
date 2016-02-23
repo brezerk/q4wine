@@ -16,8 +16,9 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QtTest>
+#include <QtTest/QtTest>
 
+#include "src/lib/defines.hpp"
 #include "src/lib/wineprefix.hpp"
 #include "src/lib/wineversion.hpp"
 
@@ -36,6 +37,8 @@ void test_Q4WineLib::testWineVersion() {
     QCOMPARE(version.getLoader(), QString("loader"));
     QCOMPARE(version.getLibs32(), QString("libs32"));
     QCOMPARE(version.getLibs64(), QString("libs64"));
+    QCOMPARE(version.getLibs(q4wine::lib::WIN32), QString("libs32"));
+    QCOMPARE(version.getLibs(q4wine::lib::WIN64), QString("libs64"));
 }
 
 void test_Q4WineLib::testWinePrefix() {

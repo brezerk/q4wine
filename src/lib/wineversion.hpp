@@ -20,12 +20,63 @@
 
 #include <QString>
 
+#include "src/lib/defines.hpp"
+
 namespace q4wine {
 namespace lib {
 
+/*! \class WineVersion wineversion.h <q4wine/src/lib/wineversion.h>
+ * \brief Describes a wine version configuration.
+ *
+ * \par Wine Terms
+ *
+ * Wine allows user to set WINESERVER, WINELOADER and WINEDLLPATH env
+ * variables to use different binaries. This allows user to have multiple
+ * wine instances installed on the system.
+ *
+ * \par Q4Wine Terms
+ *
+ * \note It is possible to have multiple WinePrefix pointed to the single
+ * directory. In combination with WineVersion: setups is possible to run a
+ * number of truly independent wine processes.
+ *
+ * \author Alexey S. Malakhov <brezerk@gmail.com>
+ */
 class WineVersion {
  public:
+    /*! Constructs an empty WineVersion object. */
     WineVersion();
+    /*! Constructs an WineVersion object.
+     *
+     * \param binary general wine binary. Defaults to /usr/bin/wine if not
+     * set and if this doesn't exist we will then look for a file named "wine"
+     * in the path and in a few other likely locations.
+     * See also: #setBinary #getBinary
+     *
+     * \param loader specifies the path and name of the wine binary to use to
+     * launch new Windows processes. If not set, Wine will try to load
+     * /usr/bin/wine, and if this doesn't exist it will then look for a file
+     * named "wine" in the path and in a few other likely locations.
+     * See also: #setLoader #getLoader
+     *
+     * \param server specifies the path and name of the wineserver binary.
+     * If not set, Wine will try to load /usr/bin/wineserver, and if this
+     * doesn't exist it will then look for a file named "wineserver" in the
+     * path and in a few other likely locations.
+     * See also: #setServer #getServer
+     *
+     * \param libs32 Specifies the path(s) in which to search for builtin
+     * dlls and Winelib applications. This is a list of directories separated
+     * by ":". In addition to any directory specified in WINEDLLPATH, Wine
+     * will also look in /usr/lib32/wine.
+     * See also: #setLibs32 #getLibs32 #getLibs
+     *
+     * \param libs64 Specifies the path(s) in which to search for builtin
+     * dlls and Winelib applications. This is a list of directories separated
+     * by ":". In addition to any directory specified in WINEDLLPATH, Wine
+     * will also look in /usr/lib64/wine.
+     * See also: #setLibs64 #getLibs64 #getLibs
+    */
     WineVersion(
             QString binary,
             QString loader,
@@ -44,8 +95,8 @@ class WineVersion {
     const QString getServer(void) const;
     const QString getLibs32(void) const;
     const QString getLibs64(void) const;
-    // FIXME: Use global enum WineArch
-    const QString getLibs(QString arch) const;
+    /*! Return libs configured for provided version */
+    const QString getLibs(q4wine::lib::WineArch arch) const;
 
  private:
     QString binary_;
