@@ -17,26 +17,27 @@
 
 cmake_minimum_required(VERSION 2.8.12)
 
-#Get GIT version strings
+# Get GIT version strings
 add_custom_target (
-	get_version
-	DEPENDS ${CMAKE_SOURCE_DIR}/src/version.h
-	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-)
+    get_version
+    DEPENDS ${CMAKE_SOURCE_DIR}/src/version.h
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    )
 
 add_custom_command (
-	OUTPUT ${CMAKE_SOURCE_DIR}/src/version.h
-	COMMAND ${CMAKE_COMMAND}
-		-D SRC=${CMAKE_SOURCE_DIR}/src/version.h.in
-		-D DST=${CMAKE_SOURCE_DIR}/src/version.h
-		-D RELEASE=${RELEASE}
-		-D GIT_EXECUTABLE=${GIT_EXECUTABLE}
-		-D APP_VERSION=${APP_VERSION}
-		-P ${CMAKE_SOURCE_DIR}/src/version.cmake
-	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-)
+    OUTPUT ${CMAKE_SOURCE_DIR}/src/version.h
+    COMMAND ${CMAKE_COMMAND}
+    -D SRC=${CMAKE_SOURCE_DIR}/src/version.h.in
+    -D DST=${CMAKE_SOURCE_DIR}/src/version.h
+    -D RELEASE=${RELEASE}
+    -D GIT_EXECUTABLE=${GIT_EXECUTABLE}
+    -D APP_VERSION=${APP_VERSION}
+    -P ${CMAKE_SOURCE_DIR}/src/version.cmake
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    )
 
-#Add project subdirs
+# Add project subdirs
+add_subdirectory(lib)
 add_subdirectory(gui)
 
-#EOF
+# EOF
