@@ -21,7 +21,9 @@
 namespace q4wine {
 namespace lib {
 
-WinePrefix::WinePrefix() {
+const QString WinePrefix::tableName_ = "prefix";
+
+WinePrefix::WinePrefix() : DBObject(tableName_) {
 }
 
 WinePrefix::WinePrefix(
@@ -31,7 +33,9 @@ WinePrefix::WinePrefix(
         WineVersion version,
         QString mountPoint,
         QString virtualDevice,
-        QString execTemplate):
+        QString execTemplate,
+        uint32_t id):
+    DBObject(tableName_, id),
     name_(name),
     path_(path),
     arch_(arch),
@@ -42,6 +46,20 @@ WinePrefix::WinePrefix(
 }
 
 WinePrefix::~WinePrefix() {
+}
+
+/*! \fixme ok. this is cool. but we need to use execution template
+* string instead :)
+*/
+QString WinePrefix::getWineEnv() {
+    QStringList wineStrings;
+    wineStrings.append(QString("WINEPREFIX='%1'").arg(getPath()));
+    wineStrings.append(version_.getEnvVariables(arch_));
+    QString arch = getArchString();
+    if (!arch.isEmpty()) {
+        wineStrings.append(QString("WINEARCH='%1'").arg(arch));
+    }
+    return wineStrings.join(" ");
 }
 
 void WinePrefix::setName(QString name) {
@@ -82,6 +100,18 @@ const QString WinePrefix::getPath(void) const {
 
 WineArch WinePrefix::getArch(void) const {
     return arch_;
+}
+
+const QString WinePrefix::getArchString(void) const {
+    QString arch;
+    if (arch_ == q4wine::lib::WIN32) {
+        arch = "win32";
+    } else if (arch_ == q4wine::lib::WIN32) {
+        arch = "win64";
+    } else {
+        arch = QString::null;
+    }
+    return arch;
 }
 
 WineVersion WinePrefix::getVersion(void) const {

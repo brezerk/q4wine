@@ -18,14 +18,18 @@
 
 #pragma once
 
+#include <stdint.h>
+
 #include <QString>
+#include <QStringList>
 
 #include "src/lib/defines.hpp"
+#include "src/lib/dbobject.hpp"
 
 namespace q4wine {
 namespace lib {
 
-/*! \class WineVersion wineversion.h <q4wine/src/lib/wineversion.h>
+/*! \class WineVersion wineversion.hpp <q4wine/src/lib/wineversion.hpp>
  * \brief Describes a wine version configuration.
  *
  * \par Wine Terms
@@ -42,7 +46,7 @@ namespace lib {
  *
  * \author Alexey S. Malakhov <brezerk@gmail.com>
  */
-class WineVersion {
+class WineVersion : public DBObject {
  public:
     /*! Constructs an empty WineVersion object. */
     WineVersion();
@@ -79,11 +83,27 @@ class WineVersion {
     */
     WineVersion(
             QString binary,
-            QString loader,
-            QString server,
-            QString libs32,
-            QString libs64);
+            QString loader = QString::null,
+            QString server = QString::null,
+            QString libs32 = QString::null,
+            QString libs64 = QString::null,
+            uint32_t id = 0);
     ~WineVersion();
+
+    /*! Constructs env variables (WINESERVER, WINELOADER, WINEDLLPATH) from
+     * WineVersion data.
+     *
+     * Example:
+     * WINESERVER='/usr/bin/wineserver'
+     * WINELOADER='/usr/bin/wine'
+     * WINEDLLPATH='/usr/lib64/wine/'
+     *
+     * \param arch desired Wine Arch \see WinePrefix
+     *
+     * \return QString formatted env variables
+    */
+    QString getEnvVariables(q4wine::lib::WineArch arch);
+
     void setBinary(QString binary);
     void setLoader(QString loader);
     void setServer(QString server);
@@ -99,11 +119,14 @@ class WineVersion {
     const QString getLibs(q4wine::lib::WineArch arch) const;
 
  private:
+    /*! Set the table name in q4wine database to lookup object data */
+    static const QString tableName_;
     QString binary_;
     QString loader_;
     QString server_;
     QString libs32_;
     QString libs64_;
 };
+
 }  // namespace lib
 }  // namespace q4wine

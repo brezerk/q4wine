@@ -18,15 +18,19 @@
 
 #pragma once
 
+#include <stdint.h>
+
 #include <QString>
+#include <QStringList>
 
 #include "src/lib/defines.hpp"
+#include "src/lib/dbobject.hpp"
 #include "src/lib/wineversion.hpp"
 
 namespace q4wine {
 namespace lib {
 
-/*! \class WinePrefix wineprefix.h <q4wine/src/lib/wineprefix.h>
+/*! \class WinePrefix wineprefix.hpp <q4wine/src/lib/wineprefix.hpp>
  * \brief Describes a wine prefix configuration.
  *
  * \par Wine Terms
@@ -46,7 +50,7 @@ namespace lib {
  *
  * \author Alexey S. Malakhov <brezerk@gmail.com>
  */
-class WinePrefix {
+class WinePrefix : public DBObject {
  public:
     /*! Constructs an empty WineConfiguration object. */
     WinePrefix();
@@ -72,16 +76,30 @@ class WinePrefix {
      * programs.
      * See alse: #setExecutionTemplate #getExecutionTemplate
     */
-    WinePrefix(
-            QString name,
+    WinePrefix(QString name,
             QString path,
             WineArch arch,
             WineVersion version,
-            QString mountPoint,
-            QString virtualDevice,
-            QString execTemplate);
+            QString mountPoint = QString::null,
+            QString virtualDevice = QString::null,
+            QString execTemplate = QString::null,
+            uint32_t id = 0);
     /*! Destroys this WinePrefix object. */
     ~WinePrefix();
+
+    /*! Constructs wine env variables (WINEPREFIX, WINESERVER, WINELOADER,
+     * WINEDLLPATH, WINEARCH) using WinePrefix and WineVersion data.
+     *
+     * Example:
+     * WINEPREFIX='/mnt/ssd/wine/'
+     * WINESERVER='/usr/bin/wineserver'
+     * WINELOADER='/usr/bin/wine'
+     * WINEDLLPATH='/usr/lib64/wine/'
+     * WINEARCH='win64'
+     *
+     * \return QString formatted env variables
+     */
+    QString getWineEnv();
 
     void setName(QString name);
     void setPath(QString path);
@@ -93,12 +111,16 @@ class WinePrefix {
     const QString getName(void) const;
     const QString getPath(void) const;
     WineArch getArch(void) const;
+    /*! Return arch string representation */
+    const QString getArchString(void) const;
     WineVersion getVersion(void) const;
     const QString getMountPoint(void) const;
     const QString getVirtualDevice(void) const;
     const QString getExecutionTemplate(void) const;
 
  private:
+    /*! Set the table name in q4wine database to lookup object data */
+    static const QString tableName_;
     QString name_;
     QString path_;
     WineArch arch_;
@@ -107,5 +129,6 @@ class WinePrefix {
     QString virtualDevice_;
     QString execTemplate_;
 };
+
 }  // namespace lib
 }  // namespace q4wine

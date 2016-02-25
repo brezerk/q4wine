@@ -35,11 +35,13 @@ set(Q4WINE_LIB_HEADERS_DIR
 
 set(Q4WINE_LIB_HEADERS
     ${CMAKE_SOURCE_DIR}/src/lib/defines.hpp
+    ${CMAKE_SOURCE_DIR}/src/lib/dbobject.hpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineprefix.hpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineversion.hpp
     )
 
 set(Q4WINE_LIB_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/lib/dbobject.cpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineprefix.cpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineversion.cpp
     )

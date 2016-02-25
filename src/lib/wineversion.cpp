@@ -21,7 +21,9 @@
 namespace q4wine {
 namespace lib {
 
-WineVersion::WineVersion() {
+const QString WineVersion::tableName_ = "version";
+
+WineVersion::WineVersion() : DBObject(tableName_) {
 }
 
 WineVersion::WineVersion(
@@ -29,7 +31,9 @@ WineVersion::WineVersion(
             QString loader,
             QString server,
             QString libs32,
-            QString libs64):
+            QString libs64,
+            uint32_t id):
+    DBObject(tableName_, id),
     binary_(binary),
     loader_(loader),
     server_(server),
@@ -38,6 +42,18 @@ WineVersion::WineVersion(
 }
 
 WineVersion::~WineVersion() {
+}
+
+QString WineVersion::getEnvVariables(q4wine::lib::WineArch arch) {
+    QStringList wineStrings;
+    if (!server_.isEmpty())
+        wineStrings.append(QString("WINESERVER='%1'").arg(server_));
+    if (!loader_.isEmpty())
+        wineStrings.append(QString("WINELOADER='%1'").arg(loader_));
+    QString libs = getLibs(arch);
+    if (!libs.isEmpty())
+        wineStrings.append(QString("WINEDLLPATH='%1'").arg(libs));
+    return wineStrings.join(" ");
 }
 
 void WineVersion::setBinary(QString binary) {
