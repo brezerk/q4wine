@@ -36,6 +36,21 @@ add_custom_command (
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
 
+if(DOC)
+    # Doxygen target
+    add_custom_target (
+        docs ALL
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        )
+
+    add_custom_command (
+        TARGET docs
+        COMMAND ${DOXYGEN_EXECUTABLE}
+        Doxyfile
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        )
+endif(DOC)
+
 # Add project subdirs
 add_subdirectory(lib)
 add_subdirectory(gui)

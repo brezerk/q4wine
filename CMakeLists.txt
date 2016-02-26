@@ -37,6 +37,7 @@ include(CheckCXXCompilerFlag)
 
 # Build options
 option(RELEASE		"Disable debug. Use it for user-ready buils."		"OFF")
+option(DOC              "Generate source documentation"                         "OFF")
 option(LANGUAGES	"Compile localization files for specified languages."	""   )
 option(DYNAMIC_LINKING	"Use dynamic linking. Or build static binaries."	"ON" )
 
@@ -45,6 +46,9 @@ if(RELEASE)
     message("\n * Utility for Wine applications and prefixes management.")
     message(" * Copyright (C) 2008-2016 by Alexey S. Malakhov <brezerk@gmail.com>")
     message(" * http://brezblock.org.ua/\n")
+else(RELEASE)
+    # Force doc in dev mode
+    set(DOC "ON")
 endif(RELEASE)
 
 message(STATUS "${PROJECT_NAME} build environment --\n")
@@ -187,6 +191,18 @@ else(RELEASE)
         endif(NOT PYTHONINTERP_FOUND )
     endif(PYTHON_BINARY)
     message(STATUS "PYTHON_BINARY           : ${PYTHON_EXECUTABLE}")
+    if(DOXYGEN_BINARY)
+        set(DOXYGEN_EXECUTABLE ${GIT_PYTHON})
+    else(DOXYGEN_BINARY)
+        find_package(Doxygen REQUIRED)
+        if(NOT DOXYGEN_FOUND)
+            message(ERROR
+                "Doxygen binary not found. Install Doxyen package or "
+                "use -DDOXYGEN_BINARY to set path to Doxyen binary."
+                )
+        endif(NOT DOXYGEN_FOUND )
+    endif(DOXYGEN_BINARY)
+    message(STATUS "DOXYGEN_BINARY          : ${DOXYGEN_EXECUTABLE}")
 endif(RELEASE)
 
 # We gona use c++11 standart
