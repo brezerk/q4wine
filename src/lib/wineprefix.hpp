@@ -65,6 +65,8 @@ class WinePrefix : public DBObject {
      * wiping prefix directory content.
      * See also: #setArch #getArch
      *
+     * \param version An WineVersion instance.
+     *
      * \param mountPoint An mount point directory where Disk images or
      * CD/DVD drives will be mounted by user request.
      * See also: #setMountPoint #getMountPoint

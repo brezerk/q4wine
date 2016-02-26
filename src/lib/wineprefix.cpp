@@ -48,7 +48,7 @@ WinePrefix::WinePrefix(
 WinePrefix::~WinePrefix() {
 }
 
-/*! \fixme ok. this is cool. but we need to use execution template
+/*! FIXME: ok. this is cool. but we need to use execution template
 * string instead :)
 */
 QString WinePrefix::getWineEnv() {

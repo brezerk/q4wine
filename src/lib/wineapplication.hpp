@@ -69,14 +69,16 @@ class WineApplication : public DBObject {
      * \param path The program name may be specified in DOS or Unix formats.
      * See also: #setPath #getPath
      *
+     * \param args The programm arguments.
+     *
      * \param workDirectory The name of the directory where app store its
      * data. See also: #setWorkDirectory #setWorkDirectory
      *
-     * \param icon The name of the pixmap icon to be used to display
-     * application icon
+     * \param iconName The name of the pixmap icon to be used to display
+     * application icon.
      * See also: #setIconName #getIconName #getIcon
      *
-     * \param description An user defined application description
+     * \param description An user defined application description.
      * See also: #setDescription #getDescription
      *
      * \param overrideDlls Defines the override type and load order of dlls
@@ -110,6 +112,9 @@ class WineApplication : public DBObject {
      * in a separate window.
      * See also: #setVirtualDesktop #getVirtualDesktop
      *
+     * \param lang The lanvuage to use. Usefill if app requre language differ
+     * then the system one.
+     *
      * \param useTerminal If set, then application will be executed using
      * user-defined terminal application instead of q4wine-helper.
      * See also: #setUseTerminal #getUseTerminal
@@ -128,12 +133,12 @@ class WineApplication : public DBObject {
      * \param postRunScript
      * See also: #setPostRunScript #getPostRunScript
      *
-     * \param prefix_id The associated row id for WinePrefix object.
+     * \param prefixId The associated row id for WinePrefix object.
      * If it set to 0, then the object is not associated with any
      * database record.
      * See also: setPrefixId getPrefixId
      *
-     * \param dir_id The associated row id for  WineApplication object.
+     * \param dirId The associated row id for  WineApplication object.
      * If it set to 0, then the object is not associated with any
      * database record.
      * See also: setDirId getDirId

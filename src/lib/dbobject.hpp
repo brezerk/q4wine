@@ -41,6 +41,9 @@ class DBObject {
  public:
     /*! Constructs an DBObject object.
      *
+     * \param tableName The q4wine database table name where the object
+     * is stored.
+     *
      * \param id The associated row id. If it set to 0, then the object
      * is not associated with any database record.
      * See also: #setId #getId
