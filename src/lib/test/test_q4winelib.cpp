@@ -19,6 +19,7 @@
 #include <QtTest/QtTest>
 
 #include "src/lib/defines.hpp"
+#include "src/lib/wineapplication.hpp"
 #include "src/lib/wineprefix.hpp"
 #include "src/lib/wineversion.hpp"
 
@@ -27,6 +28,7 @@ class test_Q4WineLib: public QObject {
  private slots:
     void testWineVersion();
     void testWinePrefix();
+    void testWineApplication();
 };
 
 void test_Q4WineLib::testWineVersion() {
@@ -61,6 +63,28 @@ void test_Q4WineLib::testWinePrefix() {
     QCOMPARE(prefix.getWineEnv(), QString("WINEPREFIX='/root' "
 "WINESERVER='server' WINELOADER='loader' WINEDLLPATH='libs32' "
 "WINEARCH='win32'"));
+}
+
+void test_Q4WineLib::testWineApplication() {
+    q4wine::lib::WineApplication application = q4wine::lib::WineApplication(
+                "test app",
+                "C://test.exe",
+                "--make all --quality=good",
+                "C://",
+                "",
+                "Some test app",
+                "libgcc.dll=b,n",
+                "warn+dll,+heap",
+                "600x800",
+                "RU_ru",
+                true,
+                ":1",
+                -110,
+                "/usr/lib/pre_run.sh",
+                "echo done >> /tmp/lol");
+    QCOMPARE(application.getName(), QString("test app"));
+    QCOMPARE(application.getPath(), QString("C://test.exe"));
+    QCOMPARE(application.getArgs(), QString("--make all --quality=good"));
 }
 
 QTEST_MAIN(test_Q4WineLib)

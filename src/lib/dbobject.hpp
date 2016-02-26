@@ -41,7 +41,7 @@ class DBObject {
  public:
     /*! Constructs an DBObject object.
      *
-     * \param id associated row id. If it set to 0, then the object
+     * \param id The associated row id. If it set to 0, then the object
      * is not associated with any database record.
      * See also: #setId #getId
      */
@@ -50,7 +50,7 @@ class DBObject {
     virtual ~DBObject();
 
     void setId(uint32_t id);
-    uint32_t getId(void);
+    uint32_t getId(void) const;
  protected:
     QString tableName_;
     uint32_t id_;

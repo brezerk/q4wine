@@ -36,7 +36,7 @@ void DBObject::setId(uint32_t id) {
     id_ = id;
 }
 
-uint32_t DBObject::getId(void) {
+uint32_t DBObject::getId(void) const {
     return id_;
 }
 

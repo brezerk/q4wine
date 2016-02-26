@@ -52,29 +52,33 @@ namespace lib {
  */
 class WinePrefix : public DBObject {
  public:
-    /*! Constructs an empty WineConfiguration object. */
+    /*! Constructs an empty WinePreifx object. */
     WinePrefix();
-    /*! Constructs an WineConfiguration object.
+    /*! Constructs an WinePreifx object.
      *
-     * \param name is user defined name, should be unique. See also: #setName #getName
+     * \param name Is user defined name, should be unique. See also: #setName #getName
      *
-     * \param path the name of the directory where Wine will store its data. See also: #setPath #getPath
+     * \param path The name of the directory where Wine will store its data. See also: #setPath #getPath
      *
-     * \param arch is the architecture supported by a given Wine prefix. It
+     * \param arch Is the architecture supported by a given Wine prefix. It
      * is set at prefix creation time and cannot be changed afterwards without
      * wiping prefix directory content.
      * See also: #setArch #getArch
      *
-     * \param mountPoint an mount point directory where Disk images or
+     * \param mountPoint An mount point directory where Disk images or
      * CD/DVD drives will be mounted by user request.
      * See also: #setMountPoint #getMountPoint
      *
-     * \param virtualDevice an virtual device letter for mount point.
+     * \param virtualDevice An virtual device letter for mount point.
      * See also: #setVirtualDevice #getVirtualDevice
      *
-     * \param execTemplate will be used to format command line string to run wine
+     * \param execTemplate Will be used to format command line string to run wine
      * programs.
      * See alse: #setExecutionTemplate #getExecutionTemplate
+     *
+     * \param id The associated row id. If it set to 0, then the object
+     * is not associated with any database record.
+     * See also: DBObject#setId DBObject#getId
     */
     WinePrefix(QString name,
             QString path,

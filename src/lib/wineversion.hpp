@@ -52,18 +52,18 @@ class WineVersion : public DBObject {
     WineVersion();
     /*! Constructs an WineVersion object.
      *
-     * \param binary general wine binary. Defaults to /usr/bin/wine if not
+     * \param binary The general wine binary. Defaults to /usr/bin/wine if not
      * set and if this doesn't exist we will then look for a file named "wine"
      * in the path and in a few other likely locations.
      * See also: #setBinary #getBinary
      *
-     * \param loader specifies the path and name of the wine binary to use to
+     * \param loader Specifies the path and name of the wine binary to use to
      * launch new Windows processes. If not set, Wine will try to load
      * /usr/bin/wine, and if this doesn't exist it will then look for a file
      * named "wine" in the path and in a few other likely locations.
      * See also: #setLoader #getLoader
      *
-     * \param server specifies the path and name of the wineserver binary.
+     * \param server Specifies the path and name of the wineserver binary.
      * If not set, Wine will try to load /usr/bin/wineserver, and if this
      * doesn't exist it will then look for a file named "wineserver" in the
      * path and in a few other likely locations.
@@ -80,6 +80,10 @@ class WineVersion : public DBObject {
      * by ":". In addition to any directory specified in WINEDLLPATH, Wine
      * will also look in /usr/lib64/wine.
      * See also: #setLibs64 #getLibs64 #getLibs
+     *
+     * \param id The associated row id. If it set to 0, then the object
+     * is not associated with any database record.
+     * See also: DBObject#setId DBObject#getId
     */
     WineVersion(
             QString binary,
