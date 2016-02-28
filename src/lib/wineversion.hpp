@@ -18,10 +18,13 @@
 
 #pragma once
 
-#include <stdint.h>
-
 #include <QString>
 #include <QStringList>
+
+#include <stdint.h>
+
+#include <iostream>
+#include <memory>
 
 #include "src/lib/defines.hpp"
 #include "src/lib/dbobject.hpp"

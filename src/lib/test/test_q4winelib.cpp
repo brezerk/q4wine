@@ -45,24 +45,28 @@ void test_Q4WineLib::testWineVersion() {
 }
 
 void test_Q4WineLib::testWinePrefix() {
-    q4wine::lib::WineVersion version = q4wine::lib::WineVersion("binary",
-                                  "loader", "server", "libs32", "libs64");
-    q4wine::lib::WinePrefix prefix = q4wine::lib::WinePrefix("test", "/root",
-                             q4wine::lib::WIN32, version, "/mnt/cdrom", "D:",
-                             "some_exec_tempalte", 12);
+    q4wine::lib::WinePrefix* prefix = new q4wine::lib::WinePrefix("test",
+                "/root", q4wine::lib::WIN32,
+                new q4wine::lib::WineVersion("binary",
+                "loader", "server", "libs32", "libs64"),
+                "/mnt/cdrom", "D:",
+                "some_exec_tempalte", 12);
+
     // Basic unit tests
-    QCOMPARE(prefix.getId(), uint32_t(12));
-    QCOMPARE(prefix.getName(), QString("test"));
-    QCOMPARE(prefix.getPath(), QString("/root"));
-    QCOMPARE(prefix.getArch(), q4wine::lib::WIN32);
-    QCOMPARE(prefix.getMountPoint(), QString("/mnt/cdrom"));
-    QCOMPARE(prefix.getVirtualDevice(), QString("D:"));
-    QCOMPARE(prefix.getExecutionTemplate(), QString("some_exec_tempalte"));
+    QCOMPARE(prefix->getId(), uint32_t(12));
+    QCOMPARE(prefix->getName(), QString("test"));
+    QCOMPARE(prefix->getPath(), QString("/root"));
+    QCOMPARE(prefix->getArch(), q4wine::lib::WIN32);
+    QCOMPARE(prefix->getMountPoint(), QString("/mnt/cdrom"));
+    QCOMPARE(prefix->getVirtualDevice(), QString("D:"));
+    QCOMPARE(prefix->getExecutionTemplate(), QString("some_exec_tempalte"));
 
     // Advanced unit tests
-    QCOMPARE(prefix.getWineEnv(), QString("WINEPREFIX='/root' "
+    QCOMPARE(prefix->getWineEnv(), QString("WINEPREFIX='/root' "
 "WINESERVER='server' WINELOADER='loader' WINEDLLPATH='libs32' "
 "WINEARCH='win32'"));
+
+    delete(prefix);
 }
 
 void test_Q4WineLib::testWineApplication() {

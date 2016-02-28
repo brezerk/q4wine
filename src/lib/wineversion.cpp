@@ -42,6 +42,7 @@ WineVersion::WineVersion(
 }
 
 WineVersion::~WineVersion() {
+    std::cout << "Destroy Version" << std::endl;
 }
 
 QString WineVersion::getEnvVariables(q4wine::lib::WineArch arch) {

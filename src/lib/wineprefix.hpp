@@ -18,14 +18,20 @@
 
 #pragma once
 
-#include <stdint.h>
+
+
 
 #include <QString>
 #include <QStringList>
 
+#include <stdint.h>
+#include <memory>
+
 #include "src/lib/defines.hpp"
 #include "src/lib/dbobject.hpp"
 #include "src/lib/wineversion.hpp"
+
+
 
 namespace q4wine {
 namespace lib {
@@ -85,7 +91,7 @@ class WinePrefix : public DBObject {
     WinePrefix(QString name,
             QString path,
             WineArch arch,
-            WineVersion version,
+            WineVersion* version,
             QString mountPoint = QString::null,
             QString virtualDevice = QString::null,
             QString execTemplate = QString::null,
@@ -110,7 +116,7 @@ class WinePrefix : public DBObject {
     void setName(QString name);
     void setPath(QString path);
     void setArch(WineArch arch);
-    void setVersion(WineVersion version);
+    void setVersion(WineVersion* version);
     void setMountPoint(QString mountPoint);
     void setVirtualDevice(QString virtualDevice);
     void setExecutionTemplate(QString execTemplate);
@@ -119,7 +125,7 @@ class WinePrefix : public DBObject {
     WineArch getArch(void) const;
     /*! Return arch string representation */
     const QString getArchString(void) const;
-    WineVersion getVersion(void) const;
+    WineVersion* getVersion(void) const;
     const QString getMountPoint(void) const;
     const QString getVirtualDevice(void) const;
     const QString getExecutionTemplate(void) const;
@@ -130,7 +136,7 @@ class WinePrefix : public DBObject {
     QString name_;
     QString path_;
     WineArch arch_;
-    WineVersion version_;
+    std::shared_ptr<WineVersion> version_;
     QString mountPoint_;
     QString virtualDevice_;
     QString execTemplate_;

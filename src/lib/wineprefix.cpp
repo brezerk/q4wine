@@ -30,7 +30,7 @@ WinePrefix::WinePrefix(
         QString name,
         QString path,
         WineArch arch,
-        WineVersion version,
+        WineVersion* version,
         QString mountPoint,
         QString virtualDevice,
         QString execTemplate,
@@ -39,13 +39,14 @@ WinePrefix::WinePrefix(
     name_(name),
     path_(path),
     arch_(arch),
-    version_(version),
+    version_(std::shared_ptr<WineVersion>(version)),
     mountPoint_(mountPoint),
     virtualDevice_(virtualDevice),
     execTemplate_(execTemplate) {
 }
 
 WinePrefix::~WinePrefix() {
+    std::cout << "Destroy WinePrefix" << std::endl;
 }
 
 /*! FIXME: ok. this is cool. but we need to use execution template
@@ -54,7 +55,7 @@ WinePrefix::~WinePrefix() {
 QString WinePrefix::getWineEnv() {
     QStringList wineStrings;
     wineStrings.append(QString("WINEPREFIX='%1'").arg(getPath()));
-    wineStrings.append(version_.getEnvVariables(arch_));
+    wineStrings.append(version_->getEnvVariables(arch_));
     QString arch = getArchString();
     if (!arch.isEmpty()) {
         wineStrings.append(QString("WINEARCH='%1'").arg(arch));
@@ -74,8 +75,8 @@ void WinePrefix::setArch(WineArch arch) {
     arch_ = arch;
 }
 
-void WinePrefix::setVersion(WineVersion version) {
-    version_ = version;
+void WinePrefix::setVersion(WineVersion* version) {
+    version_ = std::unique_ptr<WineVersion>(version);
 }
 
 void WinePrefix::setMountPoint(QString mountPoint) {
@@ -114,8 +115,8 @@ const QString WinePrefix::getArchString(void) const {
     return arch;
 }
 
-WineVersion WinePrefix::getVersion(void) const {
-    return version_;
+WineVersion* WinePrefix::getVersion(void) const {
+    return version_.get();
 }
 
 const QString WinePrefix::getMountPoint(void) const {
