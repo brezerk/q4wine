@@ -17,21 +17,22 @@
  ***************************************************************************/
 
 #include "src/lib/wineversion.hpp"
+#include <string>
 
 namespace q4wine {
 namespace lib {
 
-const QString WineVersion::tableName_ = "version";
+const std::string WineVersion::tableName_ = "version";
 
 WineVersion::WineVersion() : DBObject(tableName_) {
 }
 
 WineVersion::WineVersion(
-            QString binary,
-            QString loader,
-            QString server,
-            QString libs32,
-            QString libs64,
+            std::string binary,
+            std::string loader,
+            std::string server,
+            std::string libs32,
+            std::string libs64,
             uint32_t id):
     DBObject(tableName_, id),
     binary_(binary),
@@ -45,59 +46,60 @@ WineVersion::~WineVersion() {
     std::cout << "Destroy Version" << std::endl;
 }
 
-QString WineVersion::getEnvVariables(q4wine::lib::WineArch arch) {
-    QStringList wineStrings;
+/*
+std::string WineVersion::getEnvVariables(q4wine::lib::WineArch arch) {
+    std::stringList wineStrings;
     if (!server_.isEmpty())
-        wineStrings.append(QString("WINESERVER='%1'").arg(server_));
+        wineStrings.append(std::string("WINESERVER='%1'").arg(server_));
     if (!loader_.isEmpty())
-        wineStrings.append(QString("WINELOADER='%1'").arg(loader_));
-    QString libs = getLibs(arch);
+        wineStrings.append(std::string("WINELOADER='%1'").arg(loader_));
+    std::string libs = getLibs(arch);
     if (!libs.isEmpty())
-        wineStrings.append(QString("WINEDLLPATH='%1'").arg(libs));
+        wineStrings.append(std::string("WINEDLLPATH='%1'").arg(libs));
     return wineStrings.join(" ");
-}
+}*/
 
-void WineVersion::setBinary(QString binary) {
+void WineVersion::setBinary(std::string binary) {
     binary_ = binary;
 }
 
-void WineVersion::setLoader(QString loader) {
+void WineVersion::setLoader(std::string loader) {
     loader_ = loader;
 }
 
-void WineVersion::setServer(QString server) {
+void WineVersion::setServer(std::string server) {
     server_ = server;
 }
 
-void WineVersion::setLibs32(QString libs32) {
+void WineVersion::setLibs32(std::string libs32) {
     libs32_ = libs32;
 }
 
-void WineVersion::setLibs64(QString libs64) {
+void WineVersion::setLibs64(std::string libs64) {
     libs64_ = libs64;
 }
 
-const QString WineVersion::getBinary(void) const {
+const std::string WineVersion::getBinary(void) const {
     return binary_;
 }
 
-const QString WineVersion::getLoader(void) const {
+const std::string WineVersion::getLoader(void) const {
     return loader_;
 }
 
-const QString WineVersion::getServer(void) const {
+const std::string WineVersion::getServer(void) const {
     return server_;
 }
 
-const QString WineVersion::getLibs32(void) const {
+const std::string WineVersion::getLibs32(void) const {
     return libs32_;
 }
 
-const QString WineVersion::getLibs64(void) const {
+const std::string WineVersion::getLibs64(void) const {
     return libs64_;
 }
 
-const QString WineVersion::getLibs(q4wine::lib::WineArch arch) const {
+const std::string WineVersion::getLibs(q4wine::lib::WineArch arch) const {
     if (arch == q4wine::lib::WIN32) {
         return libs32_;
     } else if (arch == q4wine::lib::WIN64) {

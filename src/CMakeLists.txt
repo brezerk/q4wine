@@ -53,6 +53,9 @@ endif(DOC)
 
 # Add project subdirs
 add_subdirectory(lib)
-add_subdirectory(gui)
+
+if(QT5)
+    add_subdirectory(gui)
+endif(QT5)
 
 # EOF

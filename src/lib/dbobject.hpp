@@ -20,7 +20,7 @@
 
 #include <stdint.h>
 
-#include <QString>
+#include <string>
 
 #include "src/lib/defines.hpp"
 
@@ -48,14 +48,14 @@ class DBObject {
      * is not associated with any database record.
      * See also: #setId #getId
      */
-    explicit DBObject(QString tableName, uint32_t id = 0);
+    explicit DBObject(std::string tableName, uint32_t id = 0);
     /*! Destroys this DBObject object. */
     virtual ~DBObject();
 
     void setId(uint32_t id);
     uint32_t getId(void) const;
  protected:
-    QString tableName_;
+    std::string tableName_;
     uint32_t id_;
 };
 

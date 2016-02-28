@@ -18,14 +18,9 @@
 
 #pragma once
 
-
-
-
-#include <QString>
-#include <QStringList>
-
 #include <stdint.h>
 #include <memory>
+#include <string>
 
 #include "src/lib/defines.hpp"
 #include "src/lib/dbobject.hpp"
@@ -88,13 +83,13 @@ class WinePrefix : public DBObject {
      * is not associated with any database record.
      * See also: DBObject#setId DBObject#getId
     */
-    WinePrefix(QString name,
-            QString path,
+    WinePrefix(std::string name,
+            std::string path,
             WineArch arch,
             WineVersion* version,
-            QString mountPoint = QString::null,
-            QString virtualDevice = QString::null,
-            QString execTemplate = QString::null,
+            std::string mountPoint = std::string(),
+            std::string virtualDevice = std::string(),
+            std::string execTemplate = std::string(),
             uint32_t id = 0);
     /*! Destroys this WinePrefix object. */
     ~WinePrefix();
@@ -109,37 +104,37 @@ class WinePrefix : public DBObject {
      * WINEDLLPATH='/usr/lib64/wine/'
      * WINEARCH='win64'
      *
-     * \return QString formatted env variables
+     * \return std::string formatted env variables
      */
-    QString getWineEnv();
+    //  std::string getWineEnv();
 
-    void setName(QString name);
-    void setPath(QString path);
+    void setName(std::string name);
+    void setPath(std::string path);
     void setArch(WineArch arch);
     void setVersion(WineVersion* version);
-    void setMountPoint(QString mountPoint);
-    void setVirtualDevice(QString virtualDevice);
-    void setExecutionTemplate(QString execTemplate);
-    const QString getName(void) const;
-    const QString getPath(void) const;
+    void setMountPoint(std::string mountPoint);
+    void setVirtualDevice(std::string virtualDevice);
+    void setExecutionTemplate(std::string execTemplate);
+    const std::string getName(void) const;
+    const std::string getPath(void) const;
     WineArch getArch(void) const;
     /*! Return arch string representation */
-    const QString getArchString(void) const;
+    const std::string getArchString(void) const;
     WineVersion* getVersion(void) const;
-    const QString getMountPoint(void) const;
-    const QString getVirtualDevice(void) const;
-    const QString getExecutionTemplate(void) const;
+    const std::string getMountPoint(void) const;
+    const std::string getVirtualDevice(void) const;
+    const std::string getExecutionTemplate(void) const;
 
  private:
     /*! Set the table name in q4wine database to lookup object data */
-    static const QString tableName_;
-    QString name_;
-    QString path_;
+    static const std::string tableName_;
+    std::string name_;
+    std::string path_;
     WineArch arch_;
     std::shared_ptr<WineVersion> version_;
-    QString mountPoint_;
-    QString virtualDevice_;
-    QString execTemplate_;
+    std::string mountPoint_;
+    std::string virtualDevice_;
+    std::string execTemplate_;
 };
 
 }  // namespace lib

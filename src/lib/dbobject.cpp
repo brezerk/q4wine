@@ -17,12 +17,13 @@
  ***************************************************************************/
 
 #include "src/lib/dbobject.hpp"
+#include <string>
 
 namespace q4wine {
 namespace lib {
 
 DBObject::DBObject(
-        QString tableName,
+        std::string tableName,
         uint32_t id)
     :
       tableName_(tableName),

@@ -19,9 +19,7 @@
 #pragma once
 
 #include <stdint.h>
-
-#include <QString>
-#include <QStringList>
+#include <string>
 
 #include "src/lib/defines.hpp"
 #include "src/lib/dbobject.hpp"
@@ -147,79 +145,79 @@ class WineApplication : public DBObject {
      * is not associated with any database record.
      * See also: DBObject#setId DBObject#getId
     */
-    WineApplication(QString name,
-            QString path,
-            QString args,
-            QString workDirectory,
-            QString iconName = QString::null,
-            QString description = QString::null,
-            QString overrideDlls = QString::null,
-            QString wineDebug = QString::null,
-            QString virtualDesktop = QString::null,
-            QString lang = QString::null,
+    WineApplication(std::string name,
+            std::string path,
+            std::string args,
+            std::string workDirectory,
+            std::string iconName = std::string(),
+            std::string description = std::string(),
+            std::string overrideDlls = std::string(),
+            std::string wineDebug = std::string(),
+            std::string virtualDesktop = std::string(),
+            std::string lang = std::string(),
             bool useTerminal = false,
-            QString display = QString::null,
+            std::string display = std::string(),
             int32_t priority = 0,
-            QString preRunScript = QString::null,
-            QString postRunScript = QString::null,
+            std::string preRunScript = std::string(),
+            std::string postRunScript = std::string(),
             uint32_t prefixId = 0,
             uint32_t dirId = 0,
             uint32_t id = 0);
     /*! Destroys this WineApplication object. */
     ~WineApplication();
 
-    void setName(QString name);
-    void setPath(QString path);
-    void setArgs(QString args);
-    void setWorkDirectory(QString workDirectory);
-    void setIconName(QString iconName);
-    void setDescription(QString description);
-    void setOverrideDlls(QString overrideDlls);
-    void setWineDebug(QString wineDebug);
-    void setVirtualDesktop(QString virtualDesktop);
+    void setName(std::string name);
+    void setPath(std::string path);
+    void setArgs(std::string args);
+    void setWorkDirectory(std::string workDirectory);
+    void setIconName(std::string iconName);
+    void setDescription(std::string description);
+    void setOverrideDlls(std::string overrideDlls);
+    void setWineDebug(std::string wineDebug);
+    void setVirtualDesktop(std::string virtualDesktop);
     void setUseTerminal(bool useTerminal);
-    void setDisplay(QString display);
+    void setDisplay(std::string display);
     void setPriority(int32_t priority);
-    void setPreRunScript(QString preRunScript);
-    void setPostRunScript(QString postRunScript);
+    void setPreRunScript(std::string preRunScript);
+    void setPostRunScript(std::string postRunScript);
     void setPrefixId(uint32_t prefixId);
     void setDirId(uint32_t dirId);
 
-    const QString getName(void) const;
-    const QString getPath(void) const;
-    const QString getArgs(void) const;
-    const QString getWorkDirectory(void) const;
-    const QString getIconName(void) const;
-    const QString getDescription(void) const;
-    const QString getOverrideDlls(void) const;
-    const QString getWineDebug(void) const;
-    const QString getVirtualDesktop(void) const;
+    const std::string getName(void) const;
+    const std::string getPath(void) const;
+    const std::string getArgs(void) const;
+    const std::string getWorkDirectory(void) const;
+    const std::string getIconName(void) const;
+    const std::string getDescription(void) const;
+    const std::string getOverrideDlls(void) const;
+    const std::string getWineDebug(void) const;
+    const std::string getVirtualDesktop(void) const;
     bool getUseTerminal(void) const;
-    const QString getDisplay(void) const;
+    const std::string getDisplay(void) const;
     int32_t getPriority(void) const;
-    const QString getPreRunScript(void) const;
-    const QString getPostRunScript(void) const;
+    const std::string getPreRunScript(void) const;
+    const std::string getPostRunScript(void) const;
     uint32_t getPrefixId(void) const;
     uint32_t getDirId(void) const;
 
  private:
     /*! Set the table name in q4wine database to lookup object data */
-    static const QString tableName_;
-    QString name_;
-    QString path_;
-    QString args_;
-    QString workDirectory_;
-    QString iconName_;
-    QString description_;
-    QString overrideDlls_;
-    QString wineDebug_;
-    QString virtualDesktop_;
-    QString lang_;
+    static const std::string tableName_;
+    std::string name_;
+    std::string path_;
+    std::string args_;
+    std::string workDirectory_;
+    std::string iconName_;
+    std::string description_;
+    std::string overrideDlls_;
+    std::string wineDebug_;
+    std::string virtualDesktop_;
+    std::string lang_;
     bool useTerminal_;
-    QString display_;
+    std::string display_;
     int32_t priority_;
-    QString preRunScript_;
-    QString postRunScript_;
+    std::string preRunScript_;
+    std::string postRunScript_;
     uint32_t prefixId_;
     uint32_t dirId_;
 };

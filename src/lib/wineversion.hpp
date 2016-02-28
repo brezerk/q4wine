@@ -18,13 +18,11 @@
 
 #pragma once
 
-#include <QString>
-#include <QStringList>
-
 #include <stdint.h>
 
 #include <iostream>
 #include <memory>
+#include <string>
 
 #include "src/lib/defines.hpp"
 #include "src/lib/dbobject.hpp"
@@ -89,11 +87,11 @@ class WineVersion : public DBObject {
      * See also: DBObject#setId DBObject#getId
     */
     WineVersion(
-            QString binary,
-            QString loader = QString::null,
-            QString server = QString::null,
-            QString libs32 = QString::null,
-            QString libs64 = QString::null,
+            std::string binary,
+            std::string loader = std::string(),
+            std::string server = std::string(),
+            std::string libs32 = std::string(),
+            std::string libs64 = std::string(),
             uint32_t id = 0);
     ~WineVersion();
 
@@ -107,32 +105,32 @@ class WineVersion : public DBObject {
      *
      * \param arch desired Wine Arch \see WinePrefix
      *
-     * \return QString formatted env variables
+     * \return std::string formatted env variables
     */
-    QString getEnvVariables(q4wine::lib::WineArch arch);
+    // std::string getEnvVariables(q4wine::lib::WineArch arch);
 
-    void setBinary(QString binary);
-    void setLoader(QString loader);
-    void setServer(QString server);
-    void setLibs32(QString libs32);
-    void setLibs64(QString libs64);
+    void setBinary(std::string binary);
+    void setLoader(std::string loader);
+    void setServer(std::string server);
+    void setLibs32(std::string libs32);
+    void setLibs64(std::string libs64);
 
-    const QString getBinary(void) const;
-    const QString getLoader(void) const;
-    const QString getServer(void) const;
-    const QString getLibs32(void) const;
-    const QString getLibs64(void) const;
+    const std::string getBinary(void) const;
+    const std::string getLoader(void) const;
+    const std::string getServer(void) const;
+    const std::string getLibs32(void) const;
+    const std::string getLibs64(void) const;
     /*! Return libs configured for provided version */
-    const QString getLibs(q4wine::lib::WineArch arch) const;
+    const std::string getLibs(q4wine::lib::WineArch arch) const;
 
  private:
     /*! Set the table name in q4wine database to lookup object data */
-    static const QString tableName_;
-    QString binary_;
-    QString loader_;
-    QString server_;
-    QString libs32_;
-    QString libs64_;
+    static const std::string tableName_;
+    std::string binary_;
+    std::string loader_;
+    std::string server_;
+    std::string libs32_;
+    std::string libs64_;
 };
 
 }  // namespace lib

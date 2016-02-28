@@ -16,35 +16,37 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QtTest/QtTest>
+
+
+#define BOOST_TEST_DYN_LINK
+#define BOOST_TEST_MODULE "tesWineObjects"
+#include <boost/test/unit_test.hpp>
+
+#include <string>
 
 #include "src/lib/defines.hpp"
 #include "src/lib/wineapplication.hpp"
 #include "src/lib/wineprefix.hpp"
 #include "src/lib/wineversion.hpp"
 
-class test_Q4WineLib: public QObject {
-    Q_OBJECT
- private slots:
-    void testWineVersion();
-    void testWinePrefix();
-    void testWineApplication();
-};
+BOOST_AUTO_TEST_SUITE(testSuiteWineObjects)
 
-void test_Q4WineLib::testWineVersion() {
+BOOST_AUTO_TEST_CASE(testWineVersion) {
     q4wine::lib::WineVersion version = q4wine::lib::WineVersion("binary",
                                   "loader", "server", "libs32", "libs64");
-    QCOMPARE(version.getId(), uint32_t(0));
-    QCOMPARE(version.getBinary(), QString("binary"));
-    QCOMPARE(version.getServer(), QString("server"));
-    QCOMPARE(version.getLoader(), QString("loader"));
-    QCOMPARE(version.getLibs32(), QString("libs32"));
-    QCOMPARE(version.getLibs64(), QString("libs64"));
-    QCOMPARE(version.getLibs(q4wine::lib::WIN32), QString("libs32"));
-    QCOMPARE(version.getLibs(q4wine::lib::WIN64), QString("libs64"));
+    BOOST_CHECK_EQUAL(version.getId(), uint32_t(0));
+    BOOST_CHECK_EQUAL(version.getBinary(), std::string("binary"));
+    BOOST_CHECK_EQUAL(version.getServer(), std::string("server"));
+    BOOST_CHECK_EQUAL(version.getLoader(), std::string("loader"));
+    BOOST_CHECK_EQUAL(version.getLibs32(), std::string("libs32"));
+    BOOST_CHECK_EQUAL(version.getLibs64(), std::string("libs64"));
+    BOOST_CHECK_EQUAL(version.getLibs(q4wine::lib::WIN32),
+                      std::string("libs32"));
+    BOOST_CHECK_EQUAL(version.getLibs(q4wine::lib::WIN64),
+                      std::string("libs64"));
 }
 
-void test_Q4WineLib::testWinePrefix() {
+BOOST_AUTO_TEST_CASE(testWinePrefix) {
     q4wine::lib::WinePrefix* prefix = new q4wine::lib::WinePrefix("test",
                 "/root", q4wine::lib::WIN32,
                 new q4wine::lib::WineVersion("binary",
@@ -53,23 +55,24 @@ void test_Q4WineLib::testWinePrefix() {
                 "some_exec_tempalte", 12);
 
     // Basic unit tests
-    QCOMPARE(prefix->getId(), uint32_t(12));
-    QCOMPARE(prefix->getName(), QString("test"));
-    QCOMPARE(prefix->getPath(), QString("/root"));
-    QCOMPARE(prefix->getArch(), q4wine::lib::WIN32);
-    QCOMPARE(prefix->getMountPoint(), QString("/mnt/cdrom"));
-    QCOMPARE(prefix->getVirtualDevice(), QString("D:"));
-    QCOMPARE(prefix->getExecutionTemplate(), QString("some_exec_tempalte"));
+    BOOST_CHECK_EQUAL(prefix->getId(), uint32_t(12));
+    BOOST_CHECK_EQUAL(prefix->getName(), std::string("test"));
+    BOOST_CHECK_EQUAL(prefix->getPath(), std::string("/root"));
+    BOOST_CHECK_EQUAL(prefix->getArch(), q4wine::lib::WIN32);
+    BOOST_CHECK_EQUAL(prefix->getMountPoint(), std::string("/mnt/cdrom"));
+    BOOST_CHECK_EQUAL(prefix->getVirtualDevice(), std::string("D:"));
+    BOOST_CHECK_EQUAL(prefix->getExecutionTemplate(),
+                      std::string("some_exec_tempalte"));
 
-    // Advanced unit tests
-    QCOMPARE(prefix->getWineEnv(), QString("WINEPREFIX='/root' "
+    /* Advanced unit tests
+    // BOOST_CHECK_EQUAL(prefix->getWineEnv(), std::string("WINEPREFIX='/root' "
 "WINESERVER='server' WINELOADER='loader' WINEDLLPATH='libs32' "
 "WINEARCH='win32'"));
-
+*/
     delete(prefix);
 }
 
-void test_Q4WineLib::testWineApplication() {
+BOOST_AUTO_TEST_CASE(testWineApplication) {
     q4wine::lib::WineApplication application = q4wine::lib::WineApplication(
                 "test app",
                 "C://test.exe",
@@ -86,10 +89,10 @@ void test_Q4WineLib::testWineApplication() {
                 -110,
                 "/usr/lib/pre_run.sh",
                 "echo done >> /tmp/lol");
-    QCOMPARE(application.getName(), QString("test app"));
-    QCOMPARE(application.getPath(), QString("C://test.exe"));
-    QCOMPARE(application.getArgs(), QString("--make all --quality=good"));
+    BOOST_CHECK_EQUAL(application.getName(), std::string("test app"));
+    BOOST_CHECK_EQUAL(application.getPath(), std::string("C://test.exe"));
+    BOOST_CHECK_EQUAL(application.getArgs(),
+                      std::string("--make all --quality=good"));
 }
 
-QTEST_MAIN(test_Q4WineLib)
-#include "test_q4winelib.moc"
+BOOST_AUTO_TEST_SUITE_END()  // End of tests

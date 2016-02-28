@@ -40,6 +40,7 @@ option(RELEASE		"Disable debug. Use it for user-ready buils."		"OFF")
 option(DOC              "Generate source documentation"                         "OFF")
 option(LANGUAGES	"Compile localization files for specified languages."	""   )
 option(DYNAMIC_LINKING	"Use dynamic linking. Or build static binaries."	"ON" )
+option(QT5              "Build Qt5 GUI."                                        "OFF")
 
 # Banner
 if(RELEASE)
@@ -229,23 +230,31 @@ if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
 endif(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
 
 # Search for required libraries
-set(QT_MIN_VERSION "5.2.1")
 
-find_package(Qt5Core REQUIRED)
-find_package(Qt5LinguistTools REQUIRED)
-find_package(Qt5Network REQUIRED)
-find_package(Qt5Sql REQUIRED)
-find_package(Qt5Widgets REQUIRED)
-find_package(Qt5Xml REQUIRED)
-find_package(Qt5Test REQUIRED)
+if(RELESE)
+    find_package(Boost COMPONENTS filesystem system REQUIRED)
+else(RELESE)
+    find_package(Boost COMPONENTS filesystem system unit_test_framework REQUIRED)
+endif(RELESE)
 
-if(Qt5Core_FOUND)
-    message(STATUS "Fount Qt Core version   : ${Qt5Core_VERSION}")
-else(Qt5Core_FOUND)
-    message(FATAL_ERROR
-        "Qt Core libs not found. Please install Qt ${QT_MIN_VERSION}."
-        )
-endif(Qt5Core_FOUND)
+if(QT5)
+    set(QT_MIN_VERSION "5.2.1")
+    find_package(Qt5Core REQUIRED)
+    find_package(Qt5LinguistTools REQUIRED)
+    find_package(Qt5Network REQUIRED)
+    find_package(Qt5Sql REQUIRED)
+    find_package(Qt5Widgets REQUIRED)
+    find_package(Qt5Xml REQUIRED)
+    find_package(Qt5Test REQUIRED)
+
+    if(Qt5Core_FOUND)
+        message(STATUS "Fount Qt Core version   : ${Qt5Core_VERSION}")
+    else(Qt5Core_FOUND)
+        message(FATAL_ERROR
+            "Qt Core libs not found. Please install Qt ${QT_MIN_VERSION}."
+            )
+    endif(Qt5Core_FOUND)
+endif(QT5)
 
 # Add project subdirs
 add_subdirectory(src)

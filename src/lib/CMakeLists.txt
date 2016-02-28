@@ -74,7 +74,8 @@ add_custom_command (
 
 add_executable(test_libq4wine ${Q4WINE_LIB_TEST_SOURCE} ${Q4WINE_LIB_SOURCES} ${Q4WINE_LIB_HEADERS})
 add_dependencies(test_libq4wine cpplint_lib)
-qt5_use_modules(test_libq4wine Core Test)
+target_link_libraries(test_libq4wine ${Boost_LIBRARIES})
+#qt5_use_modules(test_libq4wine Core Test)
 add_test(libq4wine test_libq4wine)
 
 add_library(libq4wine SHARED ${Q4WINE_LIB_SOURCES} ${Q4WINE_LIB_HEADERS})
@@ -87,7 +88,7 @@ set_target_properties(libq4wine
     OUTPUT_NAME libq4wine
     )
 
-qt5_use_modules(libq4wine Core Network Sql)
+#qt5_use_modules(libq4wine Core Network Sql)
 
 # Install targets
 if(RELEASE)

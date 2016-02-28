@@ -17,31 +17,32 @@
  ***************************************************************************/
 
 #include "src/lib/wineapplication.hpp"
+#include <string>
 
 namespace q4wine {
 namespace lib {
 
-const QString WineApplication::tableName_ = "icon";
+const std::string WineApplication::tableName_ = "icon";
 
 WineApplication::WineApplication() : DBObject(tableName_) {
 }
 
 WineApplication::WineApplication(
-        QString name,
-        QString path,
-        QString args,
-        QString workDirectory,
-        QString iconName,
-        QString description,
-        QString overrideDlls,
-        QString wineDebug,
-        QString virtualDesktop,
-        QString lang,
+        std::string name,
+        std::string path,
+        std::string args,
+        std::string workDirectory,
+        std::string iconName,
+        std::string description,
+        std::string overrideDlls,
+        std::string wineDebug,
+        std::string virtualDesktop,
+        std::string lang,
         bool useTerminal,
-        QString display,
+        std::string display,
         int32_t priority,
-        QString preRunScript,
-        QString postRunScript,
+        std::string preRunScript,
+        std::string postRunScript,
         uint32_t prefixId,
         uint32_t dirId,
         uint32_t id):
@@ -68,39 +69,39 @@ WineApplication::WineApplication(
 WineApplication::~WineApplication() {
 }
 
-void WineApplication::setName(QString name) {
+void WineApplication::setName(std::string name) {
     name_ = name;
 }
 
-void WineApplication::setPath(QString path) {
+void WineApplication::setPath(std::string path) {
     path_ = path;
 }
 
-void WineApplication::setArgs(QString args) {
+void WineApplication::setArgs(std::string args) {
     path_ = args;
 }
 
-void WineApplication::setWorkDirectory(QString workDirectory) {
+void WineApplication::setWorkDirectory(std::string workDirectory) {
     workDirectory_ = workDirectory;
 }
 
-void WineApplication::setIconName(QString iconName) {
+void WineApplication::setIconName(std::string iconName) {
     iconName_ = iconName;
 }
 
-void WineApplication::setDescription(QString description) {
+void WineApplication::setDescription(std::string description) {
     description_ = description;
 }
 
-void WineApplication::setOverrideDlls(QString overrideDlls) {
+void WineApplication::setOverrideDlls(std::string overrideDlls) {
     overrideDlls_ = overrideDlls;
 }
 
-void WineApplication::setWineDebug(QString wineDebug) {
+void WineApplication::setWineDebug(std::string wineDebug) {
     wineDebug_ = wineDebug;
 }
 
-void WineApplication::setVirtualDesktop(QString virtualDesktop) {
+void WineApplication::setVirtualDesktop(std::string virtualDesktop) {
     virtualDesktop_ = virtualDesktop;
 }
 
@@ -108,7 +109,7 @@ void WineApplication::setUseTerminal(bool useTerminal) {
     useTerminal_ = useTerminal;
 }
 
-void WineApplication::setDisplay(QString display) {
+void WineApplication::setDisplay(std::string display) {
     display_ = display;
 }
 
@@ -116,11 +117,11 @@ void WineApplication::setPriority(int32_t priority) {
     priority_ = priority;
 }
 
-void WineApplication::setPreRunScript(QString preRunScript) {
+void WineApplication::setPreRunScript(std::string preRunScript) {
     preRunScript_ = preRunScript;
 }
 
-void WineApplication::setPostRunScript(QString postRunScript) {
+void WineApplication::setPostRunScript(std::string postRunScript) {
     postRunScript_ = postRunScript;
 }
 
@@ -132,39 +133,39 @@ void WineApplication::setDirId(uint32_t dirId) {
     dirId_ = dirId;
 }
 
-const QString WineApplication::getName(void) const {
+const std::string WineApplication::getName(void) const {
     return name_;
 }
 
-const QString WineApplication::getPath(void) const {
+const std::string WineApplication::getPath(void) const {
     return path_;
 }
 
-const QString WineApplication::getArgs(void) const {
+const std::string WineApplication::getArgs(void) const {
     return args_;
 }
 
-const QString WineApplication::getWorkDirectory(void) const {
+const std::string WineApplication::getWorkDirectory(void) const {
     return workDirectory_;
 }
 
-const QString WineApplication::getIconName(void) const {
+const std::string WineApplication::getIconName(void) const {
     return iconName_;
 }
 
-const QString WineApplication::getDescription(void) const {
+const std::string WineApplication::getDescription(void) const {
     return description_;
 }
 
-const QString WineApplication::getOverrideDlls(void) const {
+const std::string WineApplication::getOverrideDlls(void) const {
     return overrideDlls_;
 }
 
-const QString WineApplication::getWineDebug(void) const {
+const std::string WineApplication::getWineDebug(void) const {
     return wineDebug_;
 }
 
-const QString WineApplication::getVirtualDesktop(void) const {
+const std::string WineApplication::getVirtualDesktop(void) const {
     return virtualDesktop_;
 }
 
@@ -172,7 +173,7 @@ bool WineApplication::getUseTerminal(void) const {
     return useTerminal_;
 }
 
-const QString WineApplication::getDisplay(void) const {
+const std::string WineApplication::getDisplay(void) const {
     return display_;
 }
 
@@ -180,11 +181,11 @@ int32_t WineApplication::getPriority(void) const {
     return priority_;
 }
 
-const QString WineApplication::getPreRunScript(void) const {
+const std::string WineApplication::getPreRunScript(void) const {
     return preRunScript_;
 }
 
-const QString WineApplication::getPostRunScript(void) const {
+const std::string WineApplication::getPostRunScript(void) const {
     return postRunScript_;
 }
 
