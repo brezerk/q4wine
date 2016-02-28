@@ -46,18 +46,19 @@ WineVersion::~WineVersion() {
     std::cout << "Destroy Version" << std::endl;
 }
 
-/*
-std::string WineVersion::getEnvVariables(q4wine::lib::WineArch arch) {
-    std::stringList wineStrings;
-    if (!server_.isEmpty())
-        wineStrings.append(std::string("WINESERVER='%1'").arg(server_));
-    if (!loader_.isEmpty())
-        wineStrings.append(std::string("WINELOADER='%1'").arg(loader_));
+const std::string WineVersion::getEnvVariables(
+        q4wine::lib::WineArch arch) const {
+    std::ostringstream env_stream;
+    if (!server_.empty())
+        env_stream << "WINESERVER='" << server_ << "' ";
+    if (!loader_.empty())
+        env_stream << "WINELOADER='" << loader_ << "' ";
     std::string libs = getLibs(arch);
-    if (!libs.isEmpty())
-        wineStrings.append(std::string("WINEDLLPATH='%1'").arg(libs));
-    return wineStrings.join(" ");
-}*/
+    if (!libs.empty())
+        env_stream << "WINEDLLPATH='" << libs << "'";
+
+    return env_stream.str();
+}
 
 void WineVersion::setBinary(std::string binary) {
     binary_ = binary;

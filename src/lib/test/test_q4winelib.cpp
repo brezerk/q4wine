@@ -16,10 +16,8 @@
  *                                                                         *
  ***************************************************************************/
 
-
-
 #define BOOST_TEST_DYN_LINK
-#define BOOST_TEST_MODULE "tesWineObjects"
+#define BOOST_TEST_MODULE "testWineObjects"
 #include <boost/test/unit_test.hpp>
 
 #include <string>
@@ -46,32 +44,6 @@ BOOST_AUTO_TEST_CASE(testWineVersion) {
                       std::string("libs64"));
 }
 
-BOOST_AUTO_TEST_CASE(testWinePrefix) {
-    q4wine::lib::WinePrefix* prefix = new q4wine::lib::WinePrefix("test",
-                "/root", q4wine::lib::WIN32,
-                new q4wine::lib::WineVersion("binary",
-                "loader", "server", "libs32", "libs64"),
-                "/mnt/cdrom", "D:",
-                "some_exec_tempalte", 12);
-
-    // Basic unit tests
-    BOOST_CHECK_EQUAL(prefix->getId(), uintptr_t(12));
-    BOOST_CHECK_EQUAL(prefix->getName(), std::string("test"));
-    BOOST_CHECK_EQUAL(prefix->getPath(), std::string("/root"));
-    BOOST_CHECK_EQUAL(prefix->getArch(), q4wine::lib::WIN32);
-    BOOST_CHECK_EQUAL(prefix->getMountPoint(), std::string("/mnt/cdrom"));
-    BOOST_CHECK_EQUAL(prefix->getVirtualDevice(), std::string("D:"));
-    BOOST_CHECK_EQUAL(prefix->getExecutionTemplate(),
-                      std::string("some_exec_tempalte"));
-
-    /* Advanced unit tests
-    // BOOST_CHECK_EQUAL(prefix->getWineEnv(), std::string("WINEPREFIX='/root' "
-"WINESERVER='server' WINELOADER='loader' WINEDLLPATH='libs32' "
-"WINEARCH='win32'"));
-*/
-    delete(prefix);
-}
-
 BOOST_AUTO_TEST_CASE(testWineApplication) {
     q4wine::lib::WineApplication application = q4wine::lib::WineApplication(
                 "test app",
@@ -93,6 +65,61 @@ BOOST_AUTO_TEST_CASE(testWineApplication) {
     BOOST_CHECK_EQUAL(application.getPath(), std::string("C://test.exe"));
     BOOST_CHECK_EQUAL(application.getArgs(),
                       std::string("--make all --quality=good"));
+}
+
+BOOST_AUTO_TEST_CASE(testWinePrefix) {
+    q4wine::lib::WinePrefix* prefix = new
+            q4wine::lib::WinePrefix("test",
+                "/root", q4wine::lib::WIN32,
+                new q4wine::lib::WineVersion("binary",
+                "loader", "server", "libs32", "libs64"),
+                "/mnt/cdrom", "D:",
+                q4wine::lib::DEFAULT_EXEC_TEMPLATE, 12);
+
+    // Basic unit tests
+    BOOST_CHECK_EQUAL(prefix->getId(), uintptr_t(12));
+    BOOST_CHECK_EQUAL(prefix->getName(), std::string("test"));
+    BOOST_CHECK_EQUAL(prefix->getPath(), std::string("/root"));
+    BOOST_CHECK_EQUAL(prefix->getArch(), q4wine::lib::WIN32);
+    BOOST_CHECK_EQUAL(prefix->getMountPoint(), std::string("/mnt/cdrom"));
+    BOOST_CHECK_EQUAL(prefix->getVirtualDevice(), std::string("D:"));
+    BOOST_CHECK_EQUAL(prefix->getExecutionTemplate(),
+                      q4wine::lib::DEFAULT_EXEC_TEMPLATE);
+
+    /* Advanced unit tests */
+    BOOST_CHECK_EQUAL(prefix->getEnvVariables(),
+                      std::string("WINEPREFIX='/root' WINESERVER='server' "
+                      "WINELOADER='loader' WINEDLLPATH='libs32' "
+                      "WINEARCH='win32' "));
+
+    q4wine::lib::WineApplication* application = new
+            q4wine::lib::WineApplication(
+                "test app",
+                "C://test.exe",
+                "--make all --quality=good",
+                "C://",
+                "",
+                "Some test app",
+                "libgcc.dll=b,n",
+                "warn+dll,+heap",
+                "600x800",
+                "RU_ru",
+                true,
+                ":1",
+                -110,
+                "/usr/lib/pre_run.sh",
+                "echo done >> /tmp/lol");
+
+    BOOST_CHECK_EQUAL(prefix->getExecutionString(application),
+                      std::string("/usb/bin/konsole --noclose -e /usb/bin/env "
+                      "WINEPREFIX='/root' WINESERVER='server' "
+                      "WINELOADER='loader' WINEDLLPATH='libs32' "
+                      "WINEARCH='win32'  /bin/sh -c \"C:// /usb/bin/env "
+                      "binary explorer.exe /desktop=test.app,600x800 "
+                      "C://test.exe --make all --quality=good 2>&1 \""));
+
+    delete(prefix);
+    delete(application);
 }
 
 BOOST_AUTO_TEST_SUITE_END()  // End of tests

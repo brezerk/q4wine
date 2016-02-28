@@ -69,6 +69,15 @@ WineApplication::WineApplication(
 WineApplication::~WineApplication() {
 }
 
+const std::string WineApplication::getNiceCmd(void) const {
+    std::ostringstream s_cmd;
+    if (priority_ != 0) {
+        // FIXME: get nice cmd from settings or env
+        s_cmd << "/usr/bin/nice " <<  priority_ << " ";
+    }
+    return s_cmd.str();
+}
+
 void WineApplication::setName(std::string name) {
     name_ = name;
 }
@@ -166,6 +175,16 @@ const std::string WineApplication::getWineDebug(void) const {
 }
 
 const std::string WineApplication::getVirtualDesktop(void) const {
+    if (!virtualDesktop_.empty()) {
+        std::ostringstream str_stream;
+        str_stream << "explorer.exe /desktop=";
+        std::string tmpl = std::regex_replace(getName(),
+                                std::regex("[^a-zA-Z0-9.]"),
+                                ".");
+        str_stream << tmpl << "," << virtualDesktop_;
+        return str_stream.str();
+    }
+
     return virtualDesktop_;
 }
 

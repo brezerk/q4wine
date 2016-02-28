@@ -21,15 +21,23 @@
 #include <stdint.h>
 #include <memory>
 #include <string>
+#include <sstream>
+#include <iostream>
+#include <iterator>
+#include <regex>
 
 #include "src/lib/defines.hpp"
 #include "src/lib/dbobject.hpp"
 #include "src/lib/wineversion.hpp"
-
-
+#include "src/lib/wineapplication.hpp"
 
 namespace q4wine {
 namespace lib {
+
+const std::string DEFAULT_EXEC_TEMPLATE = "%CONSOLE_BIN% %CONSOLE_ARGS% " \
+                    "%ENV_BIN% %ENV_ARGS% /bin/sh -c \"%WORK_DIR% " \
+                    "%SET_NICE% %WINE_BIN% " \
+                    "%VIRTUAL_DESKTOP% %PROGRAM_BIN% %PROGRAM_ARGS% 2>&1 \"";
 
 /*! \class WinePrefix wineprefix.hpp <q4wine/src/lib/wineprefix.hpp>
  * \brief Describes a wine prefix configuration.
@@ -89,7 +97,7 @@ class WinePrefix : public DBObject {
             WineVersion* version,
             std::string mountPoint = std::string(),
             std::string virtualDevice = std::string(),
-            std::string execTemplate = std::string(),
+            std::string execTemplate = DEFAULT_EXEC_TEMPLATE,
             uintptr_t id = 0);
     /*! Destroys this WinePrefix object. */
     ~WinePrefix();
@@ -104,9 +112,18 @@ class WinePrefix : public DBObject {
      * WINEDLLPATH='/usr/lib64/wine/'
      * WINEARCH='win64'
      *
-     * \return std::string formatted env variables
+     * \return Formatted env variables
      */
-    //  std::string getWineEnv();
+    std::string getEnvVariables();
+
+    /*! Construct execution string from temaplteString using WineAppliction
+     * data.
+     *
+     * \param wineApp An reference to WineApplication instace;
+     *
+     * \return Execution string
+     */
+    std::string getExecutionString(const WineApplication* wineApp);
 
     void setName(std::string name);
     void setPath(std::string path);

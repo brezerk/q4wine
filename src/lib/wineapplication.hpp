@@ -20,6 +20,8 @@
 
 #include <stdint.h>
 #include <string>
+#include <sstream>
+#include <regex>
 
 #include "src/lib/defines.hpp"
 #include "src/lib/dbobject.hpp"
@@ -74,7 +76,7 @@ class WineApplication : public DBObject {
      *
      * \param iconName The name of the pixmap icon to be used to display
      * application icon.
-     * See also: #setIconName #getIconName #getIcon
+     * See also: #setIconName #getIconName
      *
      * \param description An user defined application description.
      * See also: #setDescription #getDescription
@@ -165,6 +167,12 @@ class WineApplication : public DBObject {
             uintptr_t id = 0);
     /*! Destroys this WineApplication object. */
     ~WineApplication();
+
+    /*!
+     * \brief getNiceCmd Construct nice command
+     * \return Nice command if priority_ !=0. Empty string otherwice.
+     */
+    const std::string getNiceCmd(void) const;
 
     void setName(std::string name);
     void setPath(std::string path);

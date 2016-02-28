@@ -23,6 +23,7 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <sstream>
 
 #include "src/lib/defines.hpp"
 #include "src/lib/dbobject.hpp"
@@ -103,11 +104,11 @@ class WineVersion : public DBObject {
      * WINELOADER='/usr/bin/wine'
      * WINEDLLPATH='/usr/lib64/wine/'
      *
-     * \param arch desired Wine Arch \see WinePrefix
+     * \param arch Desired Wine Arch \see WinePrefix
      *
-     * \return std::string formatted env variables
+     * \return Formatted env variables
     */
-    // std::string getEnvVariables(q4wine::lib::WineArch arch);
+    const std::string getEnvVariables(q4wine::lib::WineArch arch) const;
 
     void setBinary(std::string binary);
     void setLoader(std::string loader);

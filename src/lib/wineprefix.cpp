@@ -50,20 +50,43 @@ WinePrefix::~WinePrefix() {
     std::cout << "Destroy WinePrefix" << std::endl;
 }
 
-/*! FIXME: ok. this is cool. but we need to use execution template
-* string instead :)
-*/
-/*
-std::string WinePrefix::getWineEnv() {
-    std::stringList wineStrings;
-    wineStrings.append(std::string("WINEPREFIX='%1'").arg(getPath()));
-    wineStrings.append(version_->getEnvVariables(arch_));
+std::string WinePrefix::getEnvVariables() {
+    std::ostringstream env_stream;
+    env_stream << "WINEPREFIX='" << getPath() << "' ";
+    env_stream << version_->getEnvVariables(arch_) << " ";
+    // wineStrings.append();
     std::string arch = getArchString();
-    if (!arch.isEmpty()) {
-        wineStrings.append(std::string("WINEARCH='%1'").arg(arch));
-    }
-    return wineStrings.join(" ");
-}*/
+    if (!arch.empty())
+        env_stream << "WINEARCH='" << arch << "' ";
+
+    return env_stream.str();
+}
+
+std::string WinePrefix::getExecutionString(const WineApplication* wineApp) {
+    std::string tmpl = execTemplate_;
+    tmpl = std::regex_replace(tmpl, std::regex("%CONSOLE_BIN%"),
+                              "/usb/bin/konsole");
+    tmpl = std::regex_replace(tmpl, std::regex("%CONSOLE_ARGS%"),
+                              "--noclose -e");
+    tmpl = std::regex_replace(tmpl, std::regex("%ENV_BIN%"),
+                              "/usb/bin/env");
+    tmpl = std::regex_replace(tmpl, std::regex("%ENV_ARGS%"),
+                              getEnvVariables());
+    tmpl = std::regex_replace(tmpl, std::regex("%WORK_DIR%"),
+                              wineApp->getWorkDirectory());
+    tmpl = std::regex_replace(tmpl, std::regex("%SET_NICE%"),
+                              "/usb/bin/env");
+    tmpl = std::regex_replace(tmpl, std::regex("%WINE_BIN%"),
+                              version_->getBinary());
+    tmpl = std::regex_replace(tmpl, std::regex("%VIRTUAL_DESKTOP%"),
+                              wineApp->getVirtualDesktop());
+    tmpl = std::regex_replace(tmpl, std::regex("%PROGRAM_BIN%"),
+                              wineApp->getPath());
+    tmpl = std::regex_replace(tmpl, std::regex("%PROGRAM_ARGS%"),
+                              wineApp->getArgs());
+
+    return tmpl;
+}
 
 void WinePrefix::setName(std::string name) {
     name_ = name;

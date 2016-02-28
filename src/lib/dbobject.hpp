@@ -19,7 +19,6 @@
 #pragma once
 
 #include <stdint.h>
-
 #include <string>
 
 #include "src/lib/defines.hpp"
