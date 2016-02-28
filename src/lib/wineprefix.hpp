@@ -90,7 +90,7 @@ class WinePrefix : public DBObject {
             std::string mountPoint = std::string(),
             std::string virtualDevice = std::string(),
             std::string execTemplate = std::string(),
-            uint32_t id = 0);
+            uintptr_t id = 0);
     /*! Destroys this WinePrefix object. */
     ~WinePrefix();
 

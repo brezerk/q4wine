@@ -48,15 +48,15 @@ class DBObject {
      * is not associated with any database record.
      * See also: #setId #getId
      */
-    explicit DBObject(std::string tableName, uint32_t id = 0);
+    explicit DBObject(std::string tableName, uintptr_t id = 0);
     /*! Destroys this DBObject object. */
     virtual ~DBObject();
 
-    void setId(uint32_t id);
-    uint32_t getId(void) const;
+    void setId(uintptr_t id);
+    uintptr_t getId(void) const;
  protected:
     std::string tableName_;
-    uint32_t id_;
+    uintptr_t id_;
 };
 
 }  // namespace lib

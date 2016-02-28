@@ -92,7 +92,7 @@ class WineVersion : public DBObject {
             std::string server = std::string(),
             std::string libs32 = std::string(),
             std::string libs64 = std::string(),
-            uint32_t id = 0);
+            uintptr_t id = 0);
     ~WineVersion();
 
     /*! Constructs env variables (WINESERVER, WINELOADER, WINEDLLPATH) from

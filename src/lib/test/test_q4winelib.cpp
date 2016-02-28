@@ -34,7 +34,7 @@ BOOST_AUTO_TEST_SUITE(testSuiteWineObjects)
 BOOST_AUTO_TEST_CASE(testWineVersion) {
     q4wine::lib::WineVersion version = q4wine::lib::WineVersion("binary",
                                   "loader", "server", "libs32", "libs64");
-    BOOST_CHECK_EQUAL(version.getId(), uint32_t(0));
+    BOOST_CHECK_EQUAL(version.getId(), uintptr_t(0));
     BOOST_CHECK_EQUAL(version.getBinary(), std::string("binary"));
     BOOST_CHECK_EQUAL(version.getServer(), std::string("server"));
     BOOST_CHECK_EQUAL(version.getLoader(), std::string("loader"));
@@ -55,7 +55,7 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
                 "some_exec_tempalte", 12);
 
     // Basic unit tests
-    BOOST_CHECK_EQUAL(prefix->getId(), uint32_t(12));
+    BOOST_CHECK_EQUAL(prefix->getId(), uintptr_t(12));
     BOOST_CHECK_EQUAL(prefix->getName(), std::string("test"));
     BOOST_CHECK_EQUAL(prefix->getPath(), std::string("/root"));
     BOOST_CHECK_EQUAL(prefix->getArch(), q4wine::lib::WIN32);

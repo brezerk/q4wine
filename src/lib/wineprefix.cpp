@@ -35,7 +35,7 @@ WinePrefix::WinePrefix(
         std::string mountPoint,
         std::string virtualDevice,
         std::string execTemplate,
-        uint32_t id):
+        uintptr_t id):
     DBObject(tableName_, id),
     name_(name),
     path_(path),

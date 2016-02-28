@@ -24,7 +24,7 @@ namespace lib {
 
 DBObject::DBObject(
         std::string tableName,
-        uint32_t id)
+        uintptr_t id)
     :
       tableName_(tableName),
       id_(id) {
@@ -33,11 +33,11 @@ DBObject::DBObject(
 DBObject::~DBObject() {
 }
 
-void DBObject::setId(uint32_t id) {
+void DBObject::setId(uintptr_t id) {
     id_ = id;
 }
 
-uint32_t DBObject::getId(void) const {
+uintptr_t DBObject::getId(void) const {
     return id_;
 }
 

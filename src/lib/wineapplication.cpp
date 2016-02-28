@@ -40,12 +40,12 @@ WineApplication::WineApplication(
         std::string lang,
         bool useTerminal,
         std::string display,
-        int32_t priority,
+        intptr_t priority,
         std::string preRunScript,
         std::string postRunScript,
-        uint32_t prefixId,
-        uint32_t dirId,
-        uint32_t id):
+        uintptr_t prefixId,
+        uintptr_t dirId,
+        uintptr_t id):
     DBObject(tableName_, id),
     name_(name),
     path_(path),
@@ -113,7 +113,7 @@ void WineApplication::setDisplay(std::string display) {
     display_ = display;
 }
 
-void WineApplication::setPriority(int32_t priority) {
+void WineApplication::setPriority(intptr_t priority) {
     priority_ = priority;
 }
 
@@ -125,11 +125,11 @@ void WineApplication::setPostRunScript(std::string postRunScript) {
     postRunScript_ = postRunScript;
 }
 
-void WineApplication::setPrefixId(uint32_t prefixId) {
+void WineApplication::setPrefixId(uintptr_t prefixId) {
     prefixId_ = prefixId;
 }
 
-void WineApplication::setDirId(uint32_t dirId) {
+void WineApplication::setDirId(uintptr_t dirId) {
     dirId_ = dirId;
 }
 
@@ -177,7 +177,7 @@ const std::string WineApplication::getDisplay(void) const {
     return display_;
 }
 
-int32_t WineApplication::getPriority(void) const {
+intptr_t WineApplication::getPriority(void) const {
     return priority_;
 }
 
@@ -189,11 +189,11 @@ const std::string WineApplication::getPostRunScript(void) const {
     return postRunScript_;
 }
 
-uint32_t WineApplication::getPrefixId(void) const {
+uintptr_t WineApplication::getPrefixId(void) const {
     return prefixId_;
 }
 
-uint32_t WineApplication::getDirId(void) const {
+uintptr_t WineApplication::getDirId(void) const {
     return dirId_;
 }
 

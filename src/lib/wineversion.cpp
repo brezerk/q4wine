@@ -33,7 +33,7 @@ WineVersion::WineVersion(
             std::string server,
             std::string libs32,
             std::string libs64,
-            uint32_t id):
+            uintptr_t id):
     DBObject(tableName_, id),
     binary_(binary),
     loader_(loader),

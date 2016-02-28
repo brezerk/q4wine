@@ -157,12 +157,12 @@ class WineApplication : public DBObject {
             std::string lang = std::string(),
             bool useTerminal = false,
             std::string display = std::string(),
-            int32_t priority = 0,
+            intptr_t priority = 0,
             std::string preRunScript = std::string(),
             std::string postRunScript = std::string(),
-            uint32_t prefixId = 0,
-            uint32_t dirId = 0,
-            uint32_t id = 0);
+            uintptr_t prefixId = 0,
+            uintptr_t dirId = 0,
+            uintptr_t id = 0);
     /*! Destroys this WineApplication object. */
     ~WineApplication();
 
@@ -177,11 +177,11 @@ class WineApplication : public DBObject {
     void setVirtualDesktop(std::string virtualDesktop);
     void setUseTerminal(bool useTerminal);
     void setDisplay(std::string display);
-    void setPriority(int32_t priority);
+    void setPriority(intptr_t priority);
     void setPreRunScript(std::string preRunScript);
     void setPostRunScript(std::string postRunScript);
-    void setPrefixId(uint32_t prefixId);
-    void setDirId(uint32_t dirId);
+    void setPrefixId(uintptr_t prefixId);
+    void setDirId(uintptr_t dirId);
 
     const std::string getName(void) const;
     const std::string getPath(void) const;
@@ -194,11 +194,11 @@ class WineApplication : public DBObject {
     const std::string getVirtualDesktop(void) const;
     bool getUseTerminal(void) const;
     const std::string getDisplay(void) const;
-    int32_t getPriority(void) const;
+    intptr_t getPriority(void) const;
     const std::string getPreRunScript(void) const;
     const std::string getPostRunScript(void) const;
-    uint32_t getPrefixId(void) const;
-    uint32_t getDirId(void) const;
+    uintptr_t getPrefixId(void) const;
+    uintptr_t getDirId(void) const;
 
  private:
     /*! Set the table name in q4wine database to lookup object data */
@@ -215,11 +215,11 @@ class WineApplication : public DBObject {
     std::string lang_;
     bool useTerminal_;
     std::string display_;
-    int32_t priority_;
+    intptr_t priority_;
     std::string preRunScript_;
     std::string postRunScript_;
-    uint32_t prefixId_;
-    uint32_t dirId_;
+    uintptr_t prefixId_;
+    uintptr_t dirId_;
 };
 
 }  // namespace lib
