@@ -342,15 +342,10 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
             menu->addMenu(menuRun.release());
             menu->addSeparator();
 
-            entry.reset(new QAction(tr("New"), this));
+            entry.reset(new QAction(tr("New directory"), this));
             entry->setStatusTip(tr("Create new directory"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(dirAdd_Click()));
             menu->addAction(entry.release());
-
-            menu->addSeparator();
-            menu->addMenu(menuMount.release());
-
-            menu->addSeparator();
 
             if (this->currentItem()->parent()){
                 entry.reset(new QAction(tr("Rename"), this));
@@ -358,13 +353,16 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
                 connect(entry.get(), SIGNAL(triggered()), this, SLOT(dirRename_Click()));
                 menu->addAction(entry.release());
 
-                menu->addSeparator();
-
                 entry.reset(new QAction(tr("Delete"), this));
                 entry->setStatusTip(tr("Delete current directory"));
                 connect(entry.get(), SIGNAL(triggered()), this, SLOT(dirDelete_Click()));
                 menu->addAction(entry.release());
             }
+
+            menu->addSeparator();
+            menu->addMenu(menuMount.release());
+
+            menu->addSeparator();
 
             std::auto_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
             entry.reset(new QAction(CoreLib->loadIcon("drive-harddisk"), tr("Open prefix directory"), this));

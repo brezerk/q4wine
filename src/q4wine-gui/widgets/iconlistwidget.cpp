@@ -629,7 +629,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         menu->addMenu(menuRun.release());
         menu->addSeparator();
 
-        entry.reset(new QAction(tr("New"), this));
+        entry.reset(new QAction(tr("New icon"), this));
         entry->setStatusTip(tr("Create new icon"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconAdd_Click()));
         menu->addAction(entry.release());
