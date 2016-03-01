@@ -1108,7 +1108,12 @@ QStringList corelib::getCdromDevices(void) const{
             }
             out<<"Type=Application"<<endl;
             out<<"StartupNotify=true"<<endl;
-            out<<"GenericName="<<icon_name<<endl;
+            QString desc = result.value("desc");
+            if (desc.isEmpty()) {
+                out<<"GenericName="<<icon_name<<endl;
+            } else {
+                out<<"GenericName="<<desc<<endl;
+            }
             out<<"Name="<<icon_name<<endl;
             out<<"Path="<<result.value("wrkdir")<<endl;
 
