@@ -50,12 +50,12 @@ const std::string WineVersion::getEnvVariables(
         q4wine::lib::WineArch arch) const {
     std::ostringstream env_stream;
     if (!server_.empty())
-        env_stream << "WINESERVER='" << server_ << "' ";
+        env_stream << " WINESERVER='" << server_ << "'";
     if (!loader_.empty())
-        env_stream << "WINELOADER='" << loader_ << "' ";
+        env_stream << " WINELOADER='" << loader_ << "'";
     std::string libs = getLibs(arch);
     if (!libs.empty())
-        env_stream << "WINEDLLPATH='" << libs << "'";
+        env_stream << " WINEDLLPATH='" << libs << "'";
 
     return env_stream.str();
 }

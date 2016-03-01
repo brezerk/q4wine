@@ -237,6 +237,8 @@ else(RELESE)
     find_package(Boost COMPONENTS filesystem system unit_test_framework REQUIRED)
 endif(RELESE)
 
+find_package(SQLite3 REQUIRED)
+
 if(QT5)
     set(QT_MIN_VERSION "5.2.1")
     find_package(Qt5Core REQUIRED)

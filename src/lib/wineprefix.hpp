@@ -114,7 +114,7 @@ class WinePrefix : public DBObject {
      *
      * \return Formatted env variables
      */
-    std::string getEnvVariables();
+    std::string getEnvVariables(const WineApplication *wineApp);
 
     /*! Construct execution string from temaplteString using WineAppliction
      * data.

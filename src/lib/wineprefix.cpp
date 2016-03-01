@@ -50,14 +50,17 @@ WinePrefix::~WinePrefix() {
     std::cout << "Destroy WinePrefix" << std::endl;
 }
 
-std::string WinePrefix::getEnvVariables() {
+std::string WinePrefix::getEnvVariables(const WineApplication* wineApp) {
     std::ostringstream env_stream;
-    env_stream << "WINEPREFIX='" << getPath() << "' ";
-    env_stream << version_->getEnvVariables(arch_) << " ";
+    if (wineApp)
+        env_stream << wineApp->getEnvVariables();
+    env_stream << " WINEPREFIX='" << getPath() << "'";
+    if (version_)
+        env_stream << version_->getEnvVariables(arch_);
     // wineStrings.append();
     std::string arch = getArchString();
     if (!arch.empty())
-        env_stream << "WINEARCH='" << arch << "' ";
+        env_stream << " WINEARCH='" << arch << "'";
 
     return env_stream.str();
 }
@@ -71,7 +74,7 @@ std::string WinePrefix::getExecutionString(const WineApplication* wineApp) {
     tmpl = std::regex_replace(tmpl, std::regex("%ENV_BIN%"),
                               "/usb/bin/env");
     tmpl = std::regex_replace(tmpl, std::regex("%ENV_ARGS%"),
-                              getEnvVariables());
+                              getEnvVariables(wineApp));
     tmpl = std::regex_replace(tmpl, std::regex("%WORK_DIR%"),
                               wineApp->getWorkDirectory());
     tmpl = std::regex_replace(tmpl, std::regex("%SET_NICE%"),
@@ -80,10 +83,21 @@ std::string WinePrefix::getExecutionString(const WineApplication* wineApp) {
                               version_->getBinary());
     tmpl = std::regex_replace(tmpl, std::regex("%VIRTUAL_DESKTOP%"),
                               wineApp->getVirtualDesktop());
+    std::string program = wineApp->getPath();
+    std::string args = wineApp->getArgs();
+    std::string extenson = program.substr(program.length()-4);
+
+    if (extenson == ".msi") {
+        args = "/i " + program + " " + args;
+        program = "msiexec";
+    } else if (extenson == ".bat") {
+        args = program + " " + args;
+        program = "wineconsole";
+    }
     tmpl = std::regex_replace(tmpl, std::regex("%PROGRAM_BIN%"),
-                              wineApp->getPath());
+                              program);
     tmpl = std::regex_replace(tmpl, std::regex("%PROGRAM_ARGS%"),
-                              wineApp->getArgs());
+                              args);
 
     return tmpl;
 }

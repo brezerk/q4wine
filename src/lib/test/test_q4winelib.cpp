@@ -23,29 +23,39 @@
 #include <string>
 
 #include "src/lib/defines.hpp"
+#include "src/lib/db.hpp"
 #include "src/lib/wineapplication.hpp"
 #include "src/lib/wineprefix.hpp"
 #include "src/lib/wineversion.hpp"
 
 BOOST_AUTO_TEST_SUITE(testSuiteWineObjects)
 
+BOOST_AUTO_TEST_CASE(testDBEngine) {
+    std::unique_ptr<q4wine::lib::DBEngine> db = \
+    std::unique_ptr<q4wine::lib::DBEngine>(
+                q4wine::lib::DBEngine::getInstance());
+    db->open("/tmp/q4wine.db");
+}
+
 BOOST_AUTO_TEST_CASE(testWineVersion) {
-    q4wine::lib::WineVersion version = q4wine::lib::WineVersion("binary",
-                                  "loader", "server", "libs32", "libs64");
-    BOOST_CHECK_EQUAL(version.getId(), uintptr_t(0));
-    BOOST_CHECK_EQUAL(version.getBinary(), std::string("binary"));
-    BOOST_CHECK_EQUAL(version.getServer(), std::string("server"));
-    BOOST_CHECK_EQUAL(version.getLoader(), std::string("loader"));
-    BOOST_CHECK_EQUAL(version.getLibs32(), std::string("libs32"));
-    BOOST_CHECK_EQUAL(version.getLibs64(), std::string("libs64"));
-    BOOST_CHECK_EQUAL(version.getLibs(q4wine::lib::WIN32),
+    std::unique_ptr<q4wine::lib::WineVersion> version(
+                                  new q4wine::lib::WineVersion("binary",
+                                  "loader", "server", "libs32", "libs64"));
+    BOOST_CHECK_EQUAL(version->getId(), uintptr_t(0));
+    BOOST_CHECK_EQUAL(version->getBinary(), std::string("binary"));
+    BOOST_CHECK_EQUAL(version->getServer(), std::string("server"));
+    BOOST_CHECK_EQUAL(version->getLoader(), std::string("loader"));
+    BOOST_CHECK_EQUAL(version->getLibs32(), std::string("libs32"));
+    BOOST_CHECK_EQUAL(version->getLibs64(), std::string("libs64"));
+    BOOST_CHECK_EQUAL(version->getLibs(q4wine::lib::WIN32),
                       std::string("libs32"));
-    BOOST_CHECK_EQUAL(version.getLibs(q4wine::lib::WIN64),
+    BOOST_CHECK_EQUAL(version->getLibs(q4wine::lib::WIN64),
                       std::string("libs64"));
 }
 
 BOOST_AUTO_TEST_CASE(testWineApplication) {
-    q4wine::lib::WineApplication application = q4wine::lib::WineApplication(
+    std::unique_ptr<q4wine::lib::WineApplication> application(
+                new q4wine::lib::WineApplication(
                 "test app",
                 "C://test.exe",
                 "--make all --quality=good",
@@ -60,21 +70,21 @@ BOOST_AUTO_TEST_CASE(testWineApplication) {
                 ":1",
                 -110,
                 "/usr/lib/pre_run.sh",
-                "echo done >> /tmp/lol");
-    BOOST_CHECK_EQUAL(application.getName(), std::string("test app"));
-    BOOST_CHECK_EQUAL(application.getPath(), std::string("C://test.exe"));
-    BOOST_CHECK_EQUAL(application.getArgs(),
+                "echo done >> /tmp/lol"));
+    BOOST_CHECK_EQUAL(application->getName(), std::string("test app"));
+    BOOST_CHECK_EQUAL(application->getPath(), std::string("C://test.exe"));
+    BOOST_CHECK_EQUAL(application->getArgs(),
                       std::string("--make all --quality=good"));
 }
 
 BOOST_AUTO_TEST_CASE(testWinePrefix) {
-    q4wine::lib::WinePrefix* prefix = new
-            q4wine::lib::WinePrefix("test",
+    std::shared_ptr<q4wine::lib::WinePrefix> prefix(
+                new q4wine::lib::WinePrefix("test",
                 "/root", q4wine::lib::WIN32,
                 new q4wine::lib::WineVersion("binary",
                 "loader", "server", "libs32", "libs64"),
                 "/mnt/cdrom", "D:",
-                q4wine::lib::DEFAULT_EXEC_TEMPLATE, 12);
+                q4wine::lib::DEFAULT_EXEC_TEMPLATE, 12));
 
     // Basic unit tests
     BOOST_CHECK_EQUAL(prefix->getId(), uintptr_t(12));
@@ -86,13 +96,7 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
     BOOST_CHECK_EQUAL(prefix->getExecutionTemplate(),
                       q4wine::lib::DEFAULT_EXEC_TEMPLATE);
 
-    /* Advanced unit tests */
-    BOOST_CHECK_EQUAL(prefix->getEnvVariables(),
-                      std::string("WINEPREFIX='/root' WINESERVER='server' "
-                      "WINELOADER='loader' WINEDLLPATH='libs32' "
-                      "WINEARCH='win32' "));
-
-    q4wine::lib::WineApplication* application = new
+    std::shared_ptr<q4wine::lib::WineApplication> application (new
             q4wine::lib::WineApplication(
                 "test app",
                 "C://test.exe",
@@ -108,18 +112,54 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
                 ":1",
                 -110,
                 "/usr/lib/pre_run.sh",
-                "echo done >> /tmp/lol");
+                "echo done >> /tmp/lol"));
 
-    BOOST_CHECK_EQUAL(prefix->getExecutionString(application),
-                      std::string("/usb/bin/konsole --noclose -e /usb/bin/env "
+    /* Advanced unit tests */
+    BOOST_CHECK_EQUAL(prefix->getEnvVariables(application.get()),
+                      std::string(" LANG='RU_ru' DISPLAY=':1' "
+                      "WINEDLLOVERRIDES='libgcc.dll=b,n' "
                       "WINEPREFIX='/root' WINESERVER='server' "
                       "WINELOADER='loader' WINEDLLPATH='libs32' "
-                      "WINEARCH='win32'  /bin/sh -c \"C:// /usb/bin/env "
+                      "WINEARCH='win32'"));
+
+    BOOST_CHECK_EQUAL(prefix->getExecutionString(application.get()),
+                      std::string("/usb/bin/konsole --noclose -e /usb/bin/env "
+                      " LANG='RU_ru' DISPLAY=':1' "
+                      "WINEDLLOVERRIDES='libgcc.dll=b,n' "
+                      "WINEPREFIX='/root' WINESERVER='server' "
+                      "WINELOADER='loader' WINEDLLPATH='libs32' "
+                      "WINEARCH='win32' /bin/sh -c \"C:// /usb/bin/env "
                       "binary explorer.exe /desktop=test.app,600x800 "
                       "C://test.exe --make all --quality=good 2>&1 \""));
 
-    delete(prefix);
-    delete(application);
+    application->setPath("installer.msi");
+    application->setName("installer.msi");
+
+    BOOST_CHECK_EQUAL(prefix->getExecutionString(application.get()),
+                      std::string("/usb/bin/konsole --noclose -e /usb/bin/env "
+                      " LANG='RU_ru' DISPLAY=':1' "
+                      "WINEDLLOVERRIDES='libgcc.dll=b,n' "
+                      "WINEPREFIX='/root' WINESERVER='server' "
+                      "WINELOADER='loader' WINEDLLPATH='libs32' "
+                      "WINEARCH='win32' /bin/sh -c \"C:// /usb/bin/env "
+                      "binary explorer.exe /desktop=installer.msi,600x800 "
+                      "msiexec /i installer.msi --make all --quality=good "
+                      "2>&1 \""));
+
+    application->setPath("script.bat");
+    application->setName("MySQL RESET");
+    application->setVirtualDesktop("");
+
+    BOOST_CHECK_EQUAL(prefix->getExecutionString(application.get()),
+                      std::string("/usb/bin/konsole --noclose -e /usb/bin/env "
+                      " LANG='RU_ru' DISPLAY=':1' "
+                      "WINEDLLOVERRIDES='libgcc.dll=b,n' "
+                      "WINEPREFIX='/root' WINESERVER='server' "
+                      "WINELOADER='loader' WINEDLLPATH='libs32' "
+                      "WINEARCH='win32' /bin/sh -c \"C:// /usb/bin/env "
+                      "binary  "
+                      "wineconsole script.bat --make all --quality=good "
+                      "2>&1 \""));
 }
 
 BOOST_AUTO_TEST_SUITE_END()  // End of tests

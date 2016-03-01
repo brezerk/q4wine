@@ -34,6 +34,7 @@ set(Q4WINE_LIB_HEADERS_DIR
     )
 
 set(Q4WINE_LIB_HEADERS
+    ${CMAKE_SOURCE_DIR}/src/lib/db.hpp
     ${CMAKE_SOURCE_DIR}/src/lib/defines.hpp
     ${CMAKE_SOURCE_DIR}/src/lib/dbobject.hpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineprefix.hpp
@@ -42,6 +43,7 @@ set(Q4WINE_LIB_HEADERS
     )
 
 set(Q4WINE_LIB_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/lib/db.cpp
     ${CMAKE_SOURCE_DIR}/src/lib/dbobject.cpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineprefix.cpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineversion.cpp
@@ -74,7 +76,7 @@ add_custom_command (
 
 add_executable(test_libq4wine ${Q4WINE_LIB_TEST_SOURCE} ${Q4WINE_LIB_SOURCES} ${Q4WINE_LIB_HEADERS})
 add_dependencies(test_libq4wine cpplint_lib)
-target_link_libraries(test_libq4wine ${Boost_LIBRARIES})
+target_link_libraries(test_libq4wine ${Boost_LIBRARIES} ${SQLITE3_LIBRARIES})
 #qt5_use_modules(test_libq4wine Core Test)
 add_test(libq4wine test_libq4wine)
 

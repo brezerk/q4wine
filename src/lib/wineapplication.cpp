@@ -78,6 +78,17 @@ const std::string WineApplication::getNiceCmd(void) const {
     return s_cmd.str();
 }
 
+const std::string WineApplication::getEnvVariables() const {
+    std::ostringstream s_env;
+    if (!lang_.empty())
+        s_env << " LANG='" << lang_ << "'";
+    if (!display_.empty())
+        s_env << " DISPLAY='" << display_ << "'";
+    if (!overrideDlls_.empty())
+        s_env << " WINEDLLOVERRIDES='" << overrideDlls_ << "'";
+    return s_env.str();
+}
+
 void WineApplication::setName(std::string name) {
     name_ = name;
 }
