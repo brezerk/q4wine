@@ -174,12 +174,14 @@ class WineApplication : public DBObject {
      */
     const std::string getNiceCmd(void) const;
 
-    /*! Constructs wine env variables (LANG, DISPLAY) using WineApplication
-     * data.
+    /*! Constructs wine env variables (LANG, DISPLAY, WINEDLLOVERRIDES
+     * WINEDEBUG) using WineApplication data.
      *
      * Example:
-     * LANG='ru_RU.UTF8'
+     * LANG='uk_UA.UTF8'
      * DISPLAY=':0'
+     * WINEDLLOVERRIDES='comdlg32,shell32=n;c:\\foo\\bar\\baz=b'
+     * WINEDEBUG='fixme-all,warn+cursor,+relay'
      *
      * \return Formatted env variables
      */

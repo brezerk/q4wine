@@ -86,6 +86,8 @@ const std::string WineApplication::getEnvVariables() const {
         s_env << " DISPLAY='" << display_ << "'";
     if (!overrideDlls_.empty())
         s_env << " WINEDLLOVERRIDES='" << overrideDlls_ << "'";
+    if (!wineDebug_.empty())
+        s_env << " WINEDEBUG='" << wineDebug_ << "'";
     return s_env.str();
 }
 

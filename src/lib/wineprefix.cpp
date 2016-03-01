@@ -67,10 +67,15 @@ std::string WinePrefix::getEnvVariables(const WineApplication* wineApp) {
 
 std::string WinePrefix::getExecutionString(const WineApplication* wineApp) {
     std::string tmpl = execTemplate_;
-    tmpl = std::regex_replace(tmpl, std::regex("%CONSOLE_BIN%"),
-                              "/usb/bin/konsole");
-    tmpl = std::regex_replace(tmpl, std::regex("%CONSOLE_ARGS%"),
-                              "--noclose -e");
+    if (wineApp->getUseTerminal()) {
+        tmpl = std::regex_replace(tmpl, std::regex("%CONSOLE_BIN%"),
+                                  "/usb/bin/konsole");
+        tmpl = std::regex_replace(tmpl, std::regex("%CONSOLE_ARGS%"),
+                                  "--noclose -e");
+    } else {
+        tmpl = std::regex_replace(tmpl, std::regex("%CONSOLE_BIN%"), "");
+        tmpl = std::regex_replace(tmpl, std::regex("%CONSOLE_ARGS%"), "");
+    }
     tmpl = std::regex_replace(tmpl, std::regex("%ENV_BIN%"),
                               "/usb/bin/env");
     tmpl = std::regex_replace(tmpl, std::regex("%ENV_ARGS%"),

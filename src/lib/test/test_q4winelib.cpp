@@ -105,7 +105,7 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
                 "",
                 "Some test app",
                 "libgcc.dll=b,n",
-                "warn+dll,+heap",
+                "",
                 "600x800",
                 "RU_ru",
                 true,
@@ -160,6 +160,22 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
                       "binary  "
                       "wineconsole script.bat --make all --quality=good "
                       "2>&1 \""));
+
+    application->setUseTerminal(false);
+    application->setArgs("--ololo");
+    application->setDisplay("");
+    application->setPriority(0);
+    application->setWineDebug("fixme-all,warn+cursor,+relay");
+
+    BOOST_CHECK_EQUAL(prefix->getExecutionString(application.get()),
+                      std::string("  /usb/bin/env  LANG='RU_ru' "
+                      "WINEDLLOVERRIDES='libgcc.dll=b,n' "
+                      "WINEDEBUG='fixme-all,warn+cursor,+relay' "
+                      "WINEPREFIX='/root' WINESERVER='server' "
+                      "WINELOADER='loader' WINEDLLPATH='libs32' "
+                      "WINEARCH='win32' /bin/sh -c \"C:// "
+                      "/usb/bin/env binary  --ololo --make all "
+                      "--quality=good 2>&1 \""));
 }
 
 BOOST_AUTO_TEST_SUITE_END()  // End of tests
