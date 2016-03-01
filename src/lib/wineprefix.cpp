@@ -83,7 +83,7 @@ std::string WinePrefix::getExecutionString(const WineApplication* wineApp) {
     tmpl = std::regex_replace(tmpl, std::regex("%WORK_DIR%"),
                               wineApp->getWorkDirectory());
     tmpl = std::regex_replace(tmpl, std::regex("%SET_NICE%"),
-                              "/usb/bin/env");
+                              wineApp->getNiceCmd());
     tmpl = std::regex_replace(tmpl, std::regex("%WINE_BIN%"),
                               version_->getBinary());
     tmpl = std::regex_replace(tmpl, std::regex("%VIRTUAL_DESKTOP%"),

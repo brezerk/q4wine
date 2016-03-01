@@ -59,11 +59,11 @@ WineApplication::WineApplication(
     lang_(lang),
     useTerminal_(useTerminal),
     display_(display),
-    priority_(priority),
     preRunScript_(preRunScript),
     postRunScript_(postRunScript),
     prefixId_(prefixId),
     dirId_(dirId) {
+    setPriority(priority);
 }
 
 WineApplication::~WineApplication() {
@@ -73,7 +73,7 @@ const std::string WineApplication::getNiceCmd(void) const {
     std::ostringstream s_cmd;
     if (priority_ != 0) {
         // FIXME: get nice cmd from settings or env
-        s_cmd << "/usr/bin/nice " <<  priority_ << " ";
+        s_cmd << "/usr/bin/nice -n " <<  priority_;
     }
     return s_cmd.str();
 }
@@ -100,7 +100,7 @@ void WineApplication::setPath(std::string path) {
 }
 
 void WineApplication::setArgs(std::string args) {
-    path_ = args;
+    args_ = args;
 }
 
 void WineApplication::setWorkDirectory(std::string workDirectory) {
@@ -136,7 +136,11 @@ void WineApplication::setDisplay(std::string display) {
 }
 
 void WineApplication::setPriority(intptr_t priority) {
-    priority_ = priority;
+    if ((priority > 19) || (priority < -20)) {
+        priority_ = 0;
+    } else {
+        priority_ = priority;
+    }
 }
 
 void WineApplication::setPreRunScript(std::string preRunScript) {
