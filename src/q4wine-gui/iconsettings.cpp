@@ -356,7 +356,8 @@ void IconSettings::cmdGetProgram_Click(){
       dialog.setWindowTitle(tr("Open Exe file"));
       dialog.setDirectory(searchPath);
       dialog.setFileMode(QFileDialog::ExistingFile);
-      dialog.setNameFilter(tr("Exe files (*.exe)"));
+      dialog.setNameFilter(tr("Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)"));
+
 
 #if QT_VERSION >= 0x040500
       if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){

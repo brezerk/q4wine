@@ -14,5 +14,5 @@ Name=Q4Wine
 StartupNotify=true
 Terminal=false
 Type=Application
-MimeType=application/x-ms-dos-executable;
+MimeType=application/x-ms-dos-executable;application/x-msi;
 Keywords=Wine;Windows;Emulator;

@@ -287,8 +287,18 @@ int WineObject::runSys(){
         run_string.replace("%PROGRAM_BIN%", "");
         run_string.replace("%PROGRAM_ARGS%", programArgs);
     } else {
-        run_string.replace("%PROGRAM_BIN%", QString("\'%1\'").arg(this->programBinary));
-        run_string.replace("%PROGRAM_ARGS%", programArgs);
+        if (this->programBinary.endsWith(".msi")){
+            run_string.replace("%PROGRAM_BIN%", "msiexec");
+            programArgs = QString("/i %1 %2").arg(this->programBinary).arg(programArgs);
+            run_string.replace("%PROGRAM_ARGS%", programArgs);
+        } else if (this->programBinary.endsWith(".bat")){
+            run_string.replace("%PROGRAM_BIN%", "wineconsole");
+            programArgs = QString("%1 %2").arg(this->programBinary).arg(programArgs);
+            run_string.replace("%PROGRAM_ARGS%", programArgs);
+        } else {
+            run_string.replace("%PROGRAM_BIN%", QString("\'%1\'").arg(this->programBinary));
+            run_string.replace("%PROGRAM_ARGS%", programArgs);
+        }
     }
 
     if (this->useConsole){
