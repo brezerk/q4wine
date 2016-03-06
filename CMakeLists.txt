@@ -21,7 +21,9 @@ project(q4wine)
 set(APP_VERSION "2.0")
 
 # Enable tests
-enable_testing()
+#enable_testing()
+#set(CTEST_OUTPUT_ON_FAILURE ON)
+add_custom_target(test COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure)
 
 # Execute moc if needed
 set(CMAKE_AUTOMOC ON)

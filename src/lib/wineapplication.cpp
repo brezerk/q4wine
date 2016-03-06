@@ -69,6 +69,10 @@ WineApplication::WineApplication(
 WineApplication::~WineApplication() {
 }
 
+bool WineApplication::save(void) {
+    return false;
+}
+
 const std::string WineApplication::getNiceCmd(void) const {
     std::ostringstream s_cmd;
     if (priority_ != 0) {

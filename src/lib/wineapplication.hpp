@@ -168,6 +168,8 @@ class WineApplication : public DBObject {
     /*! Destroys this WineApplication object. */
     ~WineApplication();
 
+    virtual bool save(void);
+
     /*!
      * \brief getNiceCmd Construct nice command
      * \return Nice command if priority_ !=0. Empty string otherwice.

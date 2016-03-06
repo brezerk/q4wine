@@ -50,11 +50,6 @@ set(Q4WINE_LIB_SOURCES
     ${CMAKE_SOURCE_DIR}/src/lib/wineapplication.cpp
     )
 
-# Q4Wine lib tests
-set(Q4WINE_LIB_TEST_SOURCE
-    ${CMAKE_SOURCE_DIR}/src/lib/test/test_q4winelib.cpp
-    )
-
 include_directories(${Q4WINE_LIB_HEADERS_DIR} ${CMAKE_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 
 # cpplint target
@@ -70,18 +65,15 @@ add_custom_command (
             --extensions=hpp,cpp
             ${Q4WINE_LIB_SOURCES}
             ${Q4WINE_LIB_HEADERS}
-            ${Q4WINE_LIB_TEST_SOURCE}
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
 
-add_executable(test_libq4wine ${Q4WINE_LIB_TEST_SOURCE} ${Q4WINE_LIB_SOURCES} ${Q4WINE_LIB_HEADERS})
-add_dependencies(test_libq4wine cpplint_lib)
-target_link_libraries(test_libq4wine ${Boost_LIBRARIES} ${SQLITE3_LIBRARIES})
-#qt5_use_modules(test_libq4wine Core Test)
-add_test(libq4wine test_libq4wine)
-
 add_library(libq4wine SHARED ${Q4WINE_LIB_SOURCES} ${Q4WINE_LIB_HEADERS})
 add_dependencies(libq4wine cpplint_lib)
+
+if (NOT RELEASE)
+    add_subdirectory(test)
+endif (NOT RELEASE)
 
 set_target_properties(libq4wine
     PROPERTIES

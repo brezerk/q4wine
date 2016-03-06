@@ -23,19 +23,11 @@
 #include <string>
 
 #include "src/lib/defines.hpp"
-#include "src/lib/db.hpp"
 #include "src/lib/wineapplication.hpp"
 #include "src/lib/wineprefix.hpp"
 #include "src/lib/wineversion.hpp"
 
 BOOST_AUTO_TEST_SUITE(testSuiteWineObjects)
-
-BOOST_AUTO_TEST_CASE(testDBEngine) {
-    std::unique_ptr<q4wine::lib::DBEngine> db = \
-    std::unique_ptr<q4wine::lib::DBEngine>(
-                q4wine::lib::DBEngine::getInstance());
-    db->open("/tmp/q4wine.db");
-}
 
 BOOST_AUTO_TEST_CASE(testWineVersion) {
     std::unique_ptr<q4wine::lib::WineVersion> version(
@@ -60,6 +52,7 @@ BOOST_AUTO_TEST_CASE(testWineVersion) {
                       std::string("/home/develop/win32"));
     BOOST_CHECK_EQUAL(version->getLibs(q4wine::lib::WIN64),
                       std::string("/home/develop/win64"));
+    version->save();
 }
 
 BOOST_AUTO_TEST_CASE(testWineApplication) {
@@ -139,16 +132,16 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
                       "WINEARCH='win32'"));
 
     BOOST_CHECK_EQUAL(prefix->getExecutionString(application.get()),
-                      std::string("/usb/bin/konsole --noclose -e /usb/bin/env "
+                      std::string("/usr/bin/konsole --noclose -e /usr/bin/env "
                       " LANG='RU_ru' DISPLAY=':1' "
                       "WINEDLLOVERRIDES='libgcc.dll=b,n' "
                       "WINEPREFIX='/home/brezerk/.wine' "
                       "WINESERVER='/usr/bin/wineserver' "
                       "WINELOADER='/usr/bin/wine' "
                       "WINEDLLPATH='/home/develop/win32' "
-                      "WINEARCH='win32' /bin/sh -c \"/home/brezerk  "
-                      "/usr/bin/wine explorer.exe /desktop=test.app,600x800 "
-                      "winecfg --make all --quality=good 2>&1 \""));
+                      "WINEARCH='win32' "
+                      " /usr/bin/wine explorer.exe /desktop=test.app,600x800 "
+                      "winecfg --make all --quality=good 2>&1"));
 
     prefix->setVersion(new q4wine::lib::WineVersion(
                            "/usr/bin/wine",
@@ -158,41 +151,41 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
                            ""));
 
     BOOST_CHECK_EQUAL(prefix->getExecutionString(application.get()),
-                      std::string("/usb/bin/konsole --noclose -e /usb/bin/env "
+                      std::string("/usr/bin/konsole --noclose -e /usr/bin/env "
                       " LANG='RU_ru' DISPLAY=':1' "
                       "WINEDLLOVERRIDES='libgcc.dll=b,n' "
                       "WINEPREFIX='/home/brezerk/.wine' "
-                      "WINEARCH='win32' /bin/sh -c \"/home/brezerk  "
-                      "/usr/bin/wine explorer.exe /desktop=test.app,600x800 "
-                      "winecfg --make all --quality=good 2>&1 \""));
+                      "WINEARCH='win32' "
+                      " /usr/bin/wine explorer.exe /desktop=test.app,600x800 "
+                      "winecfg --make all --quality=good 2>&1"));
 
     application->setPath("installer.msi");
     application->setName("installer.msi");
 
     BOOST_CHECK_EQUAL(prefix->getExecutionString(application.get()),
-                      std::string("/usb/bin/konsole --noclose -e /usb/bin/env "
+                      std::string("/usr/bin/konsole --noclose -e /usr/bin/env "
                       " LANG='RU_ru' DISPLAY=':1' "
                       "WINEDLLOVERRIDES='libgcc.dll=b,n' "
                       "WINEPREFIX='/home/brezerk/.wine' "
-                      "WINEARCH='win32' /bin/sh -c \"/home/brezerk  "
-                      "/usr/bin/wine explorer.exe "
+                      "WINEARCH='win32' "
+                      " /usr/bin/wine explorer.exe "
                       "/desktop=installer.msi,600x800 "
                       "msiexec /i installer.msi --make all --quality=good "
-                      "2>&1 \""));
+                      "2>&1"));
 
     application->setPath("script.bat");
     application->setName("MySQL RESET");
     application->setVirtualDesktop("");
 
     BOOST_CHECK_EQUAL(prefix->getExecutionString(application.get()),
-                      std::string("/usb/bin/konsole --noclose -e /usb/bin/env "
+                      std::string("/usr/bin/konsole --noclose -e /usr/bin/env "
                       " LANG='RU_ru' DISPLAY=':1' "
                       "WINEDLLOVERRIDES='libgcc.dll=b,n' "
                       "WINEPREFIX='/home/brezerk/.wine' "
-                      "WINEARCH='win32' /bin/sh -c \"/home/brezerk  "
-                      "/usr/bin/wine  "
+                      "WINEARCH='win32' "
+                      " /usr/bin/wine  "
                       "wineconsole script.bat --make all --quality=good "
-                      "2>&1 \""));
+                      "2>&1"));
 
     application->setUseTerminal(false);
     application->setArgs("--ololo");
@@ -201,14 +194,16 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
     application->setWineDebug("fixme-all,warn+cursor,+relay");
 
     BOOST_CHECK_EQUAL(prefix->getExecutionString(application.get()),
-                      std::string("  /usb/bin/env  LANG='RU_ru' "
+                      std::string("  /usr/bin/env  LANG='RU_ru' "
                       "WINEDLLOVERRIDES='libgcc.dll=b,n' "
                       "WINEDEBUG='fixme-all,warn+cursor,+relay' "
                       "WINEPREFIX='/home/brezerk/.wine' "
-                      "WINEARCH='win32' /bin/sh -c \"/home/brezerk "
+                      "WINEARCH='win32' "
                       "/usr/bin/nice -n 10"
                       " /usr/bin/wine  wineconsole script.bat "
-                      "--ololo 2>&1 \""));
+                      "--ololo 2>&1"));
+
+    std::cout << prefix->getExecutionString(application.get());
 }
 
 BOOST_AUTO_TEST_SUITE_END()  // End of tests

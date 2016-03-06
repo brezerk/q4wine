@@ -35,9 +35,9 @@ namespace q4wine {
 namespace lib {
 
 const std::string DEFAULT_EXEC_TEMPLATE = "%CONSOLE_BIN% %CONSOLE_ARGS% " \
-                    "%ENV_BIN% %ENV_ARGS% /bin/sh -c \"%WORK_DIR% " \
+                    "%ENV_BIN% %ENV_ARGS% " \
                     "%SET_NICE% %WINE_BIN% " \
-                    "%VIRTUAL_DESKTOP% %PROGRAM_BIN% %PROGRAM_ARGS% 2>&1 \"";
+                    "%VIRTUAL_DESKTOP% %PROGRAM_BIN% %PROGRAM_ARGS% 2>&1";
 
 /*! \class WinePrefix wineprefix.hpp <q4wine/src/lib/wineprefix.hpp>
  * \brief Describes a wine prefix configuration.
@@ -101,6 +101,8 @@ class WinePrefix : public DBObject {
             uintptr_t id = 0);
     /*! Destroys this WinePrefix object. */
     ~WinePrefix();
+
+    virtual bool save(void);
 
     /*! Constructs wine env variables (WINEPREFIX, WINESERVER, WINELOADER,
      * WINEDLLPATH, WINEARCH) using WinePrefix and WineVersion data.

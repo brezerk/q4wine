@@ -50,6 +50,10 @@ WinePrefix::~WinePrefix() {
     std::cout << "Destroy WinePrefix" << std::endl;
 }
 
+bool WinePrefix::save(void) {
+    return false;
+}
+
 std::string WinePrefix::getEnvVariables(const WineApplication* wineApp) {
     std::ostringstream env_stream;
     if (wineApp)
@@ -69,7 +73,7 @@ std::string WinePrefix::getExecutionString(const WineApplication* wineApp) {
     std::string tmpl = execTemplate_;
     if (wineApp->getUseTerminal()) {
         tmpl = std::regex_replace(tmpl, std::regex("%CONSOLE_BIN%"),
-                                  "/usb/bin/konsole");
+                                  "/usr/bin/konsole");
         tmpl = std::regex_replace(tmpl, std::regex("%CONSOLE_ARGS%"),
                                   "--noclose -e");
     } else {
@@ -77,11 +81,13 @@ std::string WinePrefix::getExecutionString(const WineApplication* wineApp) {
         tmpl = std::regex_replace(tmpl, std::regex("%CONSOLE_ARGS%"), "");
     }
     tmpl = std::regex_replace(tmpl, std::regex("%ENV_BIN%"),
-                              "/usb/bin/env");
+                              "/usr/bin/env");
     tmpl = std::regex_replace(tmpl, std::regex("%ENV_ARGS%"),
                               getEnvVariables(wineApp));
+
+    // Kept for backward comtibility
     tmpl = std::regex_replace(tmpl, std::regex("%WORK_DIR%"),
-                              wineApp->getWorkDirectory());
+                              "");
     tmpl = std::regex_replace(tmpl, std::regex("%SET_NICE%"),
                               wineApp->getNiceCmd());
     tmpl = std::regex_replace(tmpl, std::regex("%WINE_BIN%"),

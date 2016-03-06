@@ -50,6 +50,7 @@ class DBObject {
     explicit DBObject(std::string tableName, uintptr_t id = 0);
     /*! Destroys this DBObject object. */
     virtual ~DBObject();
+    virtual bool save(void) = 0;
 
     void setId(uintptr_t id);
     uintptr_t getId(void) const;

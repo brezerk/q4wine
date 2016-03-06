@@ -96,6 +96,8 @@ class WineVersion : public DBObject {
             uintptr_t id = 0);
     ~WineVersion();
 
+    virtual bool save(void);
+
     /*! Constructs env variables (WINESERVER, WINELOADER, WINEDLLPATH) from
      * WineVersion data.
      *

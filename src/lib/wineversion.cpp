@@ -46,6 +46,16 @@ WineVersion::~WineVersion() {
     std::cout << "Destroy Version" << std::endl;
 }
 
+bool WineVersion::save(void) {
+    std::string sql_s;
+    if (id_ == 0) {
+        sql_s = "INSERT INTO test (foo, bar) VALUES (?,?)";
+    } else {
+        sql_s = "UPDATE test (foo, bar) VALUES (?,?)";
+    }
+    return false;
+}
+
 const std::string WineVersion::getEnvVariables(
         q4wine::lib::WineArch arch) const {
     std::ostringstream env_stream;

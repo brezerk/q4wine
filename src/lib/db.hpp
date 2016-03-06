@@ -23,13 +23,23 @@
 #include <string>
 #include <memory>
 #include <iostream>
+#include <initializer_list>
+#include <typeinfo>
+#include <algorithm>
+#include <map>
+#include <vector>
+#include <utility>
 
 #include "src/lib/defines.hpp"
 
 namespace q4wine {
 namespace lib {
 
-/*! \class DBEngine dbengine.hpp <q4wine/src/lib/dbengine.hpp>
+typedef std::map<std::string, std::string> result;
+typedef std::pair<std::string, std::string> result_p;
+typedef std::vector<result> rows;
+
+/*! \class DBEngine db.hpp <q4wine/src/lib/db.hpp>
  * \brief SQLite3 engine
  *
  * \author Alexey S. Malakhov <brezerk@gmail.com>
@@ -37,16 +47,16 @@ namespace lib {
 class DBEngine {
  public:
      /**
-     * @brief getInstance
+     * \brief getInstance
      * Check current instance. If it is NULL
      * then create new one.
      * Otherwise return existing one.
      *
-     * @return instance of DBEngine
+     * \return instance of DBEngine
      */
     static DBEngine* getInstance();
 
-        /*! Disable copy */
+    /*! Disable copy */
     DBEngine(DBEngine const&) = delete;
     /*! Disable copy on =*/
     DBEngine& operator=(DBEngine const&) = delete;
@@ -55,7 +65,50 @@ class DBEngine {
     /*! Destroys this DBEngine object. */
     ~DBEngine();
 
+    /*!
+     * \brief open Open SQLite database
+     * \param name A database file name
+     * \return true on success
+     */
     bool open(std::string name);
+
+    /*!
+     * \brief init Itialize empty database
+     * \return SQLITE_OK or RC error code.
+     */
+    intptr_t init(void);
+
+    /*!
+     * \brief exec Execute raw SQL statement.
+     * Use this fuction to call raw SQL statements.
+     * If you need to bind values, use overloaded function @sa exec
+     * \param sql_s raw SQL string
+     * \return SQLITE_OK or RC error code.
+     */
+    intptr_t exec(const std::string& sql_s) const;
+
+    /*!
+     * \brief exec Prepare and execute SQL statement with provided arguments.
+     * \param sql_s raw SQL string
+     * \param args a list of values to bound
+     * \return SQLITE_OK or RC error code.
+     */
+    intptr_t exec(const std::string& sql_s,
+              std::initializer_list<std::string> args);
+
+    /*!
+     * \brief select Execute raw SQL statement and return the result
+     * \param sql_s raw SQL string
+     * \return return a map of rows
+     */
+    rows select(const std::string& sql_s) const;
+
+    /*!
+     * \brief select Execute raw SQL statement and return the result
+     * \param sql_s raw SQL string
+     * \return return single result
+     */
+    result select_one(const std::string& sql_s) const;
 
  protected:
     /*! Instance of DBEngine object. */
