@@ -110,6 +110,12 @@ class DBEngine {
      */
     result select_one(const std::string& sql_s) const;
 
+    /*!
+     * \brief get_id Get last insert rowid
+     * \return rowid
+     */
+    intptr_t get_id() const;
+
  protected:
     /*! Instance of DBEngine object. */
     static DBEngine* DBEngine_instance;

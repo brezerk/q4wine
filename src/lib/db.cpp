@@ -194,6 +194,9 @@ result DBEngine::select_one(const std::string& sql_s) const {
     return ret;
 }
 
+intptr_t DBEngine::get_id() const {
+    return intptr_t(sqlite3_last_insert_rowid(db_));
+}
 
 DBEngine::~DBEngine() {
     std::cout << "Closing DB" << std::endl;

@@ -38,9 +38,13 @@ BOOST_AUTO_TEST_CASE(testDBEngine) {
              { std::string("lol"),
              std::string("kek") });
 
+    BOOST_CHECK_EQUAL(db->get_id(), intptr_t(1));
+
     db->exec(std::string("INSERT INTO test (foo, bar) VALUES (?,?)"),
              { std::string("wow"),
              std::string("zap") });
+
+    BOOST_CHECK_EQUAL(db->get_id(), intptr_t(2));
 
     q4wine::lib::rows rows = db->select(std::string("SELECT * FROM test"));
 
