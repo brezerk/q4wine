@@ -22,6 +22,7 @@
 #include <string>
 
 #include "src/lib/defines.hpp"
+#include "src/lib/db.hpp"
 
 namespace q4wine {
 namespace lib {
@@ -47,16 +48,18 @@ class DBObject {
      * is not associated with any database record.
      * See also: #setId #getId
      */
-    explicit DBObject(std::string tableName, uintptr_t id = 0);
+    explicit DBObject(std::string tableName, intptr_t id = 0);
     /*! Destroys this DBObject object. */
     virtual ~DBObject();
     virtual bool save(void) = 0;
 
-    void setId(uintptr_t id);
-    uintptr_t getId(void) const;
+    void setId(intptr_t id);
+    intptr_t getId(void) const;
+
  protected:
+    DBEngine* db_;
     std::string tableName_;
-    uintptr_t id_;
+    intptr_t id_;
 };
 
 }  // namespace lib

@@ -54,6 +54,8 @@ class WineVersion : public DBObject {
     WineVersion();
     /*! Constructs an WineVersion object.
      *
+     * \param name User defined name.
+     *
      * \param binary The general wine binary. Defaults to /usr/bin/wine if not
      * set and if this doesn't exist we will then look for a file named "wine"
      * in the path and in a few other likely locations.
@@ -88,15 +90,22 @@ class WineVersion : public DBObject {
      * See also: DBObject#setId DBObject#getId
     */
     WineVersion(
+            std::string name,
             std::string binary,
-            std::string loader = std::string(),
             std::string server = std::string(),
+            std::string loader = std::string(),
             std::string libs32 = std::string(),
             std::string libs64 = std::string(),
-            uintptr_t id = 0);
+            intptr_t id = 0);
     ~WineVersion();
 
+    /*!
+     * \brief save Object
+     * \return true on success
+     */
     virtual bool save(void);
+
+    static WineVersion* getInstance(intptr_t id);
 
     /*! Constructs env variables (WINESERVER, WINELOADER, WINEDLLPATH) from
      * WineVersion data.
@@ -112,15 +121,17 @@ class WineVersion : public DBObject {
     */
     const std::string getEnvVariables(q4wine::lib::WineArch arch) const;
 
+    void setName(std::string name);
     void setBinary(std::string binary);
-    void setLoader(std::string loader);
     void setServer(std::string server);
+    void setLoader(std::string loader);
     void setLibs32(std::string libs32);
     void setLibs64(std::string libs64);
 
+    const std::string getName(void) const;
     const std::string getBinary(void) const;
-    const std::string getLoader(void) const;
     const std::string getServer(void) const;
+    const std::string getLoader(void) const;
     const std::string getLibs32(void) const;
     const std::string getLibs64(void) const;
     /*! Return libs configured for provided version */
@@ -129,9 +140,10 @@ class WineVersion : public DBObject {
  private:
     /*! Set the table name in q4wine database to lookup object data */
     static const std::string tableName_;
+    std::string name_;
     std::string binary_;
-    std::string loader_;
     std::string server_;
+    std::string loader_;
     std::string libs32_;
     std::string libs64_;
 };

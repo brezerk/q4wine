@@ -23,6 +23,7 @@
 #include <string>
 
 #include "src/lib/defines.hpp"
+#include "src/lib/db.hpp"
 #include "src/lib/wineapplication.hpp"
 #include "src/lib/wineprefix.hpp"
 #include "src/lib/wineversion.hpp"
@@ -30,11 +31,16 @@
 BOOST_AUTO_TEST_SUITE(testSuiteWineObjects)
 
 BOOST_AUTO_TEST_CASE(testWineVersion) {
+    q4wine::lib::DBEngine* db =
+            q4wine::lib::DBEngine::getInstance();
+    db->open(":memory:");
+    db->init();
     std::unique_ptr<q4wine::lib::WineVersion> version(
                                   new q4wine::lib::WineVersion(
-                                  "/usr/bin/wine",
+                                  "test",
                                   "/usr/bin/wine",
                                   "/usr/bin/wineserver",
+                                  "/usr/bin/wine",
                                   "/home/develop/win32",
                                   "/home/develop/win64"));
     BOOST_CHECK_EQUAL(version->getId(), uintptr_t(0));
@@ -53,6 +59,7 @@ BOOST_AUTO_TEST_CASE(testWineVersion) {
     BOOST_CHECK_EQUAL(version->getLibs(q4wine::lib::WIN64),
                       std::string("/home/develop/win64"));
     version->save();
+    BOOST_CHECK_EQUAL(version->getId(), uintptr_t(1));
 }
 
 BOOST_AUTO_TEST_CASE(testWineApplication) {
@@ -83,15 +90,10 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
     std::shared_ptr<q4wine::lib::WinePrefix> prefix(
                 new q4wine::lib::WinePrefix("test",
                 "/home/brezerk/.wine", q4wine::lib::WIN32,
-                new q4wine::lib::WineVersion(
-                    "/usr/bin/wine",
-                    "/usr/bin/wine",
-                    "/usr/bin/wineserver",
-                    "/home/develop/win32",
-                    "/home/develop/win64"),
-                    "/mnt/cdrom", "D:",
-                    q4wine::lib::DEFAULT_EXEC_TEMPLATE,
-                    12));
+                q4wine::lib::WineVersion::getInstance(1),
+                "/mnt/cdrom", "D:",
+                q4wine::lib::DEFAULT_EXEC_TEMPLATE,
+                12));
 
     // Basic unit tests
     BOOST_CHECK_EQUAL(prefix->getId(), uintptr_t(12));
@@ -121,7 +123,7 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
                 "/usr/lib/pre_run.sh",
                 "echo done >> /tmp/lol"));
 
-    /* Advanced unit tests */
+    // Advanced unit tests
     BOOST_CHECK_EQUAL(prefix->getEnvVariables(application.get()),
                       std::string(" LANG='RU_ru' DISPLAY=':1' "
                       "WINEDLLOVERRIDES='libgcc.dll=b,n' "
@@ -143,12 +145,15 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
                       " /usr/bin/wine explorer.exe /desktop=test.app,600x800 "
                       "winecfg --make all --quality=good 2>&1"));
 
-    prefix->setVersion(new q4wine::lib::WineVersion(
-                           "/usr/bin/wine",
-                           "",
-                           "",
-                           "",
-                           ""));
+    q4wine::lib::WineVersion* vers = q4wine::lib::WineVersion::getInstance(1);
+    vers->setLoader("");
+    vers->setServer("");
+    vers->setLibs32("");
+    vers->setLibs64("");
+    vers->save();
+    delete(vers);
+
+    prefix->setVersion(q4wine::lib::WineVersion::getInstance(1));
 
     BOOST_CHECK_EQUAL(prefix->getExecutionString(application.get()),
                       std::string("/usr/bin/konsole --noclose -e /usr/bin/env "
@@ -204,6 +209,11 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
                       "--ololo 2>&1"));
 
     std::cout << prefix->getExecutionString(application.get());
+}
+
+BOOST_AUTO_TEST_CASE(testWineVersion2) {
+    q4wine::lib::WineVersion* vers = q4wine::lib::WineVersion::getInstance(999);
+    BOOST_CHECK(vers == NULL);
 }
 
 BOOST_AUTO_TEST_SUITE_END()  // End of tests

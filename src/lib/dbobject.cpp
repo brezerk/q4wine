@@ -24,8 +24,9 @@ namespace lib {
 
 DBObject::DBObject(
         std::string tableName,
-        uintptr_t id)
+        intptr_t id)
     :
+      db_(q4wine::lib::DBEngine::getInstance()),
       tableName_(tableName),
       id_(id) {
 }
@@ -33,11 +34,11 @@ DBObject::DBObject(
 DBObject::~DBObject() {
 }
 
-void DBObject::setId(uintptr_t id) {
+void DBObject::setId(intptr_t id) {
     id_ = id;
 }
 
-uintptr_t DBObject::getId(void) const {
+intptr_t DBObject::getId(void) const {
     return id_;
 }
 

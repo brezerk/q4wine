@@ -46,11 +46,24 @@ bool DBEngine::open(std::string name) {
 }
 
 intptr_t DBEngine::init(void) {
-    std::string sql = "CREATE TABLE test ("
-                      "id INTEGER PRIMARY KEY,"
-                      "foo REAL,"
-                      "bar TEXT"
-                      ")";
+    /*
+     * FIXME: We need 1.x -> 2.x migration shema.
+     *
+     * 2.x changes:
+     *
+     *    CONSTRAINT's
+     *    versions.wine_exec      -> binary
+     *    versions.wine_server    -> server
+     *    versions.wine_loader    -> loader
+     *    versions.wine_dllpath32 -> libs32
+     *    versions.wine_dllpath64 -> libs64
+     */
+    std::string sql = "CREATE TABLE IF NOT EXISTS versions "
+                      "(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+                      "name TEXT, binary TEXT, "
+                      "server TEXT, loader TEXT, "
+                      "libs32 TEXT, libs64 TEXT, "
+                      "CONSTRAINT name_unique UNIQUE (name));";
     return exec(sql);
 }
 
@@ -69,6 +82,7 @@ intptr_t DBEngine::exec(const std::string &sql_s) const {
 intptr_t DBEngine::exec(const std::string& sql_s,
                     std::initializer_list<std::string> args) {
     sqlite3_stmt *stmt = NULL;
+
     intptr_t rc = sqlite3_prepare_v2(db_, sql_s.c_str(), -1, &stmt, NULL);
     if (rc != SQLITE_OK) {
         std::cerr << "Can't prepare statment: '" << sql_s << "'" << std::endl;
@@ -77,28 +91,19 @@ intptr_t DBEngine::exec(const std::string& sql_s,
         sqlite3_finalize(stmt);
         return rc;
     }
-    intptr_t j = 1;
-    for (auto i = args.begin(); i != args.end(); i++, j++) {
-        // size_t si = i->length();
 
-        // char* val_s = ;
-        /*
-        std::copy(i->begin(), i->end(), val_s);
-        val_s[i->size()] = '\0';  // don't forget the terminating 0
-        */
-        rc = sqlite3_bind_text(stmt, j, (*i).data(),
-                               (*i).size(), NULL);
+    intptr_t i = 1;
+    for (auto j = args.begin(); j != args.end(); j++, i++) {
+        rc = sqlite3_bind_text(stmt, i, (*j).data(),
+                               (*j).size(), NULL);
         if (rc != SQLITE_OK) {
-            std::cerr << "Can't binding value (" << j << ") in: '" \
+            std::cerr << "Can't binding value (" << i << ") in: '" \
                       << sql_s << "'" << std::endl;
             std::cerr << "Error: (" << rc << ") " << sqlite3_errmsg(db_) \
                       << std::endl;
             sqlite3_finalize(stmt);
             return rc;
-        } else {
-            std::cout << "Successfully bound: " << *i << std::endl;
         }
-        // delete[] val_s;
     }
 
     rc = sqlite3_step(stmt);
@@ -109,16 +114,20 @@ intptr_t DBEngine::exec(const std::string& sql_s,
                   << std::endl;
         sqlite3_finalize(stmt);
         return rc;
-    } else {
-        std::cout << "Done." << std::endl;
     }
     sqlite3_finalize(stmt);
     return rc;
 }
 
 rows DBEngine::select(const std::string& sql_s) const {
+    return select(sql_s, {});
+}
+
+rows DBEngine::select(const std::string& sql_s,
+                      std::initializer_list<std::string> args) const {
     rows ret;
     sqlite3_stmt *stmt = NULL;
+
     intptr_t rc = sqlite3_prepare_v2(db_, sql_s.c_str(), -1, &stmt, NULL);
     if (rc != SQLITE_OK) {
         std::cerr << "Can't prepare statment: '" << sql_s << "'" << std::endl;
@@ -127,14 +136,25 @@ rows DBEngine::select(const std::string& sql_s) const {
         sqlite3_finalize(stmt);
         return ret;
     }
-    intptr_t i = 0;
+
+    intptr_t i = 1;
+    for (auto j = args.begin(); j != args.end(); j++, i++) {
+        rc = sqlite3_bind_text(stmt, i, (*j).data(),
+                               (*j).size(), NULL);
+        if (rc != SQLITE_OK) {
+            std::cerr << "Can't binding value (" << i << ") in: '" \
+                      << sql_s << "'" << std::endl;
+            std::cerr << "Error: (" << rc << ") " << sqlite3_errmsg(db_) \
+                      << std::endl;
+            sqlite3_finalize(stmt);
+            return ret;
+        }
+    }
+
+    i = 0;
     while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {;
-        std::cout << "Found row" << std::endl;
         result res;
         for (intptr_t j = 0; j < sqlite3_column_count(stmt); j++) {
-            std::cout << "Column " << sqlite3_column_name(stmt, j) \
-                      << "(" << j << "): " \
-                      << sqlite3_column_text(stmt, j) << std::endl;
             res.insert(result_p(
                            std::string(sqlite3_column_name(stmt, j)),
                            std::string(
@@ -149,17 +169,21 @@ rows DBEngine::select(const std::string& sql_s) const {
                   << sql_s << "'" << std::endl;
         std::cerr << "Error: (" << rc << ") " << sqlite3_errmsg(db_) \
                   << std::endl;
-    } else {
-        std::cout << "SELECT successfully completed" << std::endl;
     }
     sqlite3_finalize(stmt);
     return ret;
 }
 
 result DBEngine::select_one(const std::string& sql_s) const {
+    return select_one(sql_s, {});
+}
+
+result DBEngine::select_one(const std::string& sql_s,
+                            std::initializer_list<std::string> args) const {
     result ret;
     sqlite3_stmt *stmt = NULL;
     std::string sql_lim_s = sql_s + " LIMIT 1";
+
     intptr_t rc = sqlite3_prepare_v2(db_, sql_lim_s.c_str(), -1, &stmt, NULL);
     if (rc != SQLITE_OK) {
         std::cerr << "Can't prepare statment: '" << sql_lim_s << "'" \
@@ -169,12 +193,23 @@ result DBEngine::select_one(const std::string& sql_s) const {
         sqlite3_finalize(stmt);
         return ret;
     }
+
+    intptr_t i = 1;
+    for (auto j = args.begin(); j != args.end(); j++, i++) {
+        rc = sqlite3_bind_text(stmt, i, (*j).data(),
+                               (*j).size(), NULL);
+        if (rc != SQLITE_OK) {
+            std::cerr << "Can't binding value (" << i << ") in: '" \
+                      << sql_s << "'" << std::endl;
+            std::cerr << "Error: (" << rc << ") " << sqlite3_errmsg(db_) \
+                      << std::endl;
+            sqlite3_finalize(stmt);
+            return ret;
+        }
+    }
+
     if ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {;
-        std::cout << "Found row" << std::endl;
         for (intptr_t j = 0; j < sqlite3_column_count(stmt); j++) {
-            std::cout << "Column " << sqlite3_column_name(stmt, j) \
-                      << "(" << j << "): " \
-                      << sqlite3_column_text(stmt, j) << std::endl;
             ret.insert(result_p(
                            std::string(sqlite3_column_name(stmt, j)),
                            std::string(
@@ -187,18 +222,24 @@ result DBEngine::select_one(const std::string& sql_s) const {
                   << sql_lim_s << "'" << std::endl;
         std::cerr << "Error: (" << rc << ") " << sqlite3_errmsg(db_) \
                   << std::endl;
-    } else {
-        std::cout << "SELECT successfully completed" << std::endl;
     }
     sqlite3_finalize(stmt);
     return ret;
 }
 
-intptr_t DBEngine::get_id() const {
+intptr_t DBEngine::get_id(void) const {
     return intptr_t(sqlite3_last_insert_rowid(db_));
 }
 
 DBEngine::~DBEngine() {
+    close();
+}
+
+bool DBEngine::is_open(void) const {
+    return is_open_;
+}
+
+void DBEngine::close(void) const {
     std::cout << "Closing DB" << std::endl;
     sqlite3_close(db_);
 }

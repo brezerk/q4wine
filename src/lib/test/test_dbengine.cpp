@@ -28,12 +28,17 @@
 BOOST_AUTO_TEST_SUITE(testSuiteDBEngine)
 
 BOOST_AUTO_TEST_CASE(testDBEngine) {
-    std::unique_ptr<q4wine::lib::DBEngine> db = \
-    std::unique_ptr<q4wine::lib::DBEngine>(
-                q4wine::lib::DBEngine::getInstance());
+    q4wine::lib::DBEngine* db =
+            q4wine::lib::DBEngine::getInstance();
     // db->open("/tmp/q4wine.db");
     db->open(":memory:");
-    db->init();
+
+    db->exec(std::string("CREATE TABLE test ("
+                         "id INTEGER PRIMARY KEY,"
+                         "foo REAL,"
+                         "bar TEXT"
+                         ")"));
+
     db->exec(std::string("INSERT INTO test (foo, bar) VALUES (?,?)"),
              { std::string("lol"),
              std::string("kek") });
@@ -68,6 +73,8 @@ BOOST_AUTO_TEST_CASE(testDBEngine) {
     BOOST_CHECK_EQUAL(res["id"], std::string("1"));
     BOOST_CHECK_EQUAL(res["foo"], std::string("lol2"));
     BOOST_CHECK_EQUAL(res["bar"], std::string("kek2"));
+
+    db->close();
 }
 
 BOOST_AUTO_TEST_SUITE_END()  // End of tests

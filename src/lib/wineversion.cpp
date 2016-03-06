@@ -27,17 +27,18 @@ const std::string WineVersion::tableName_ = "version";
 WineVersion::WineVersion() : DBObject(tableName_) {
 }
 
-WineVersion::WineVersion(
+WineVersion::WineVersion(std::string name,
             std::string binary,
-            std::string loader,
             std::string server,
+            std::string loader,
             std::string libs32,
             std::string libs64,
-            uintptr_t id):
+            intptr_t id):
     DBObject(tableName_, id),
+    name_(name),
     binary_(binary),
-    loader_(loader),
     server_(server),
+    loader_(loader),
     libs32_(libs32),
     libs64_(libs64) {
 }
@@ -49,11 +50,49 @@ WineVersion::~WineVersion() {
 bool WineVersion::save(void) {
     std::string sql_s;
     if (id_ == 0) {
-        sql_s = "INSERT INTO test (foo, bar) VALUES (?,?)";
+        sql_s = "INSERT INTO versions("
+                "name, binary, server, loader, "
+                "libs32, libs64"
+                ") VALUES(?, ?, ?, ?, ?, ?)";
+        if (db_->exec(sql_s, {this->getName(),
+                          this->getBinary(),
+                          this->getServer(),
+                          this->getLoader(),
+                          this->getLibs32(),
+                          this->getLibs64()})) {
+            this->setId(db_->get_id());
+            return true;
+        }
     } else {
-        sql_s = "UPDATE test (foo, bar) VALUES (?,?)";
+        sql_s = "UPDATE versions SET name=?, binary=?, "
+                "server=?, loader=?, libs32=?, "
+                "libs64=? WHERE id=?";
+        return db_->exec(sql_s, {this->getName(),
+                          this->getBinary(),
+                          this->getServer(),
+                          this->getLoader(),
+                          this->getLibs32(),
+                          this->getLibs64(),
+                          std::to_string(this->getId())});
     }
     return false;
+}
+
+WineVersion* WineVersion::getInstance(intptr_t id) {
+    q4wine::lib::DBEngine* db =
+            q4wine::lib::DBEngine::getInstance();
+    std::string sql_s = "SELECT * FROM versions "
+            "WHERE id = ?";
+    result res = db->select_one(sql_s, {std::to_string(id)});
+    if (!res.empty()) {
+        WineVersion* ret = new WineVersion(res["name"],
+                res["binary"], res["server"],
+                res["loader"], res["libs32"],
+                res["libs64"], std::stoi(res["id"]));
+        return ret;
+    } else {
+        return NULL;
+    }
 }
 
 const std::string WineVersion::getEnvVariables(
@@ -68,6 +107,10 @@ const std::string WineVersion::getEnvVariables(
         env_stream << " WINEDLLPATH='" << libs << "'";
 
     return env_stream.str();
+}
+
+void WineVersion::setName(std::string name) {
+    name_ = name;
 }
 
 void WineVersion::setBinary(std::string binary) {
@@ -88,6 +131,10 @@ void WineVersion::setLibs32(std::string libs32) {
 
 void WineVersion::setLibs64(std::string libs64) {
     libs64_ = libs64;
+}
+
+const std::string WineVersion::getName(void) const {
+    return name_;
 }
 
 const std::string WineVersion::getBinary(void) const {

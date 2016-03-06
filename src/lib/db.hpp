@@ -56,15 +56,6 @@ class DBEngine {
      */
     static DBEngine* getInstance();
 
-    /*! Disable copy */
-    DBEngine(DBEngine const&) = delete;
-    /*! Disable copy on =*/
-    DBEngine& operator=(DBEngine const&) = delete;
-    /*! Constructs an DBObject object.*/
-    DBEngine();
-    /*! Destroys this DBEngine object. */
-    ~DBEngine();
-
     /*!
      * \brief open Open SQLite database
      * \param name A database file name
@@ -102,6 +93,8 @@ class DBEngine {
      * \return return a map of rows
      */
     rows select(const std::string& sql_s) const;
+    rows select(const std::string& sql_s,
+                std::initializer_list<std::string> args) const;
 
     /*!
      * \brief select Execute raw SQL statement and return the result
@@ -109,14 +102,37 @@ class DBEngine {
      * \return return single result
      */
     result select_one(const std::string& sql_s) const;
+    result select_one(const std::string& sql_s,
+                std::initializer_list<std::string> args) const;
 
     /*!
      * \brief get_id Get last insert rowid
      * \return rowid
      */
-    intptr_t get_id() const;
+    intptr_t get_id(void) const;
+
+    /*!
+     * \brief is_open
+     * \return true if db is open
+     */
+    bool is_open(void) const;
+
+    /*!
+     * \brief close database
+     * Close database. Call this on app shutdown.
+     */
+    void close(void) const;
 
  protected:
+     /*! Disable copy */
+    DBEngine(DBEngine const&) = delete;
+    /*! Disable copy on =*/
+    DBEngine& operator=(DBEngine const&) = delete;
+    /*! Constructs an DBObject object.*/
+    DBEngine();
+    /*! Destroys this DBEngine object. */
+    ~DBEngine();
+
     /*! Instance of DBEngine object. */
     static DBEngine* DBEngine_instance;
 
