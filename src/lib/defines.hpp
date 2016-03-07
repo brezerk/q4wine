@@ -18,14 +18,10 @@
 
 #pragma once
 
+#include <string>
+
 namespace q4wine {
 namespace lib {
-
-/*! Specifies the Windows architecture to support. It can be set either to
- * win32 (support only 32-bit applications), or to win64 (support both
- * 64-bit applications and 32-bit ones in WoW64 mode).
- */
-enum WineArch { DEFAULT, WIN32, WIN64 };
 
 }  // namespace lib
 }  // namespace q4wine

@@ -54,9 +54,9 @@ BOOST_AUTO_TEST_CASE(testWineVersion) {
                       std::string("/home/develop/win32"));
     BOOST_CHECK_EQUAL(version->getLibs64(),
                       std::string("/home/develop/win64"));
-    BOOST_CHECK_EQUAL(version->getLibs(q4wine::lib::WIN32),
+    BOOST_CHECK_EQUAL(version->getLibs("win32"),
                       std::string("/home/develop/win32"));
-    BOOST_CHECK_EQUAL(version->getLibs(q4wine::lib::WIN64),
+    BOOST_CHECK_EQUAL(version->getLibs("win64"),
                       std::string("/home/develop/win64"));
     version->save();
     BOOST_CHECK_EQUAL(version->getId(), uintptr_t(1));
@@ -89,21 +89,28 @@ BOOST_AUTO_TEST_CASE(testWineApplication) {
 BOOST_AUTO_TEST_CASE(testWinePrefix) {
     std::shared_ptr<q4wine::lib::WinePrefix> prefix(
                 new q4wine::lib::WinePrefix("test",
-                "/home/brezerk/.wine", q4wine::lib::WIN32,
+                "/home/brezerk/.wine", "win32",
                 q4wine::lib::WineVersion::getInstance(1),
                 "/mnt/cdrom", "D:",
                 q4wine::lib::DEFAULT_EXEC_TEMPLATE,
-                12));
+                0));
 
     // Basic unit tests
-    BOOST_CHECK_EQUAL(prefix->getId(), uintptr_t(12));
+    BOOST_CHECK_EQUAL(prefix->getId(), uintptr_t(0));
     BOOST_CHECK_EQUAL(prefix->getName(), std::string("test"));
     BOOST_CHECK_EQUAL(prefix->getPath(), std::string("/home/brezerk/.wine"));
-    BOOST_CHECK_EQUAL(prefix->getArch(), q4wine::lib::WIN32);
+    BOOST_CHECK_EQUAL(prefix->getArch(), std::string("win32"));
     BOOST_CHECK_EQUAL(prefix->getMountPoint(), std::string("/mnt/cdrom"));
-    BOOST_CHECK_EQUAL(prefix->getVirtualDevice(), std::string("D:"));
+    BOOST_CHECK_EQUAL(prefix->getVirtualDrive(), std::string("D:"));
     BOOST_CHECK_EQUAL(prefix->getExecutionTemplate(),
                       q4wine::lib::DEFAULT_EXEC_TEMPLATE);
+
+    prefix->save();
+}
+
+BOOST_AUTO_TEST_CASE(testWinePrefix2) {
+    std::shared_ptr<q4wine::lib::WinePrefix> prefix(
+                q4wine::lib::WinePrefix::getInstance(1));
 
     std::shared_ptr<q4wine::lib::WineApplication> application (new
             q4wine::lib::WineApplication(
@@ -211,9 +218,11 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
     std::cout << prefix->getExecutionString(application.get());
 }
 
-BOOST_AUTO_TEST_CASE(testWineVersion2) {
+BOOST_AUTO_TEST_CASE(testNoDBRecord) {
     q4wine::lib::WineVersion* vers = q4wine::lib::WineVersion::getInstance(999);
     BOOST_CHECK(vers == NULL);
+    q4wine::lib::WinePrefix* pref = q4wine::lib::WinePrefix::getInstance(999);
+    BOOST_CHECK(pref == NULL);
 }
 
 BOOST_AUTO_TEST_SUITE_END()  // End of tests

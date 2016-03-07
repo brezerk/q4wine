@@ -80,8 +80,8 @@ class WinePrefix : public DBObject {
      * CD/DVD drives will be mounted by user request.
      * See also: #setMountPoint #getMountPoint
      *
-     * \param virtualDevice An virtual device letter for mount point.
-     * See also: #setVirtualDevice #getVirtualDevice
+     * \param virtualDrive An virtual drive letter for mount point.
+     * See also: #setVirtualDrive #getVirtualDrive
      *
      * \param execTemplate Will be used to format command line string to run wine
      * programs.
@@ -93,16 +93,27 @@ class WinePrefix : public DBObject {
     */
     WinePrefix(std::string name,
             std::string path,
-            WineArch arch,
+            std::string arch,
             WineVersion* version,
             std::string mountPoint = std::string(),
-            std::string virtualDevice = std::string(),
+            std::string virtualDrive = std::string(),
             std::string execTemplate = DEFAULT_EXEC_TEMPLATE,
             uintptr_t id = 0);
     /*! Destroys this WinePrefix object. */
     ~WinePrefix();
 
+    /*!
+     * \brief save Object into DB
+     * \return true on success
+     */
     virtual bool save(void);
+
+    /*!
+     * \brief getInstance Create WinePrefix object from DB by version.id
+     * \param id Record id
+     * \return WinePrefix object or NULL of not found.
+     */
+    static WinePrefix* getInstance(intptr_t id);
 
     /*! Constructs wine env variables (WINEPREFIX, WINESERVER, WINELOADER,
      * WINEDLLPATH, WINEARCH) using WinePrefix and WineVersion data.
@@ -129,19 +140,17 @@ class WinePrefix : public DBObject {
 
     void setName(std::string name);
     void setPath(std::string path);
-    void setArch(WineArch arch);
+    void setArch(std::string arch);
     void setVersion(WineVersion* version);
     void setMountPoint(std::string mountPoint);
-    void setVirtualDevice(std::string virtualDevice);
+    void setVirtualDrive(std::string virtualDevice);
     void setExecutionTemplate(std::string execTemplate);
     const std::string getName(void) const;
     const std::string getPath(void) const;
-    WineArch getArch(void) const;
-    /*! Return arch string representation */
-    const std::string getArchString(void) const;
+    const std::string getArch(void) const;
     WineVersion* getVersion(void) const;
     const std::string getMountPoint(void) const;
-    const std::string getVirtualDevice(void) const;
+    const std::string getVirtualDrive(void) const;
     const std::string getExecutionTemplate(void) const;
 
  private:
@@ -149,10 +158,10 @@ class WinePrefix : public DBObject {
     static const std::string tableName_;
     std::string name_;
     std::string path_;
-    WineArch arch_;
+    std::string arch_;
     std::shared_ptr<WineVersion> version_;
     std::string mountPoint_;
-    std::string virtualDevice_;
+    std::string virtualDrive_;
     std::string execTemplate_;
 };
 

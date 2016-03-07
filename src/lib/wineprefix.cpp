@@ -27,13 +27,12 @@ const std::string WinePrefix::tableName_ = "prefix";
 WinePrefix::WinePrefix() : DBObject(tableName_) {
 }
 
-WinePrefix::WinePrefix(
-        std::string name,
+WinePrefix::WinePrefix(std::string name,
         std::string path,
-        WineArch arch,
+        std::string arch,
         WineVersion* version,
         std::string mountPoint,
-        std::string virtualDevice,
+        std::string virtualDrive,
         std::string execTemplate,
         uintptr_t id):
     DBObject(tableName_, id),
@@ -42,7 +41,7 @@ WinePrefix::WinePrefix(
     arch_(arch),
     version_(std::shared_ptr<WineVersion>(version)),
     mountPoint_(mountPoint),
-    virtualDevice_(virtualDevice),
+    virtualDrive_(virtualDrive),
     execTemplate_(execTemplate) {
 }
 
@@ -51,7 +50,58 @@ WinePrefix::~WinePrefix() {
 }
 
 bool WinePrefix::save(void) {
+    std::string sql_s;
+    if (id_ == 0) {
+        sql_s = "INSERT INTO prefix("
+                "name, path, arch, version, "
+                "mount_point, virtual_drive, "
+                "exec_template"
+                ") VALUES(?, ?, ?, ?, ?, ?, ?)";
+        if (db_->exec(sql_s, {this->getName(),
+                          this->getPath(),
+                          this->getArch(),
+                          std::to_string(this->getVersion()->getId()),
+                          this->getMountPoint(),
+                          this->getVirtualDrive(),
+                          this->getExecutionTemplate()})) {
+            this->setId(db_->get_id());
+            return true;
+        }
+    } else {
+        sql_s = "UPDATE versions SET name=?, path=?, "
+                "arch=?, version=?, mount_point=?, "
+                "virtual_drive=?, exec_template=? WHERE id=?";
+        return db_->exec(sql_s, {this->getName(),
+                          this->getPath(),
+                          this->getArch(),
+                          std::to_string(this->getVersion()->getId()),
+                          this->getMountPoint(),
+                          this->getVirtualDrive(),
+                          this->getExecutionTemplate(),
+                          std::to_string(this->getId())});
+    }
     return false;
+}
+
+WinePrefix* WinePrefix::getInstance(intptr_t id) {
+    q4wine::lib::DBEngine* db =
+            q4wine::lib::DBEngine::getInstance();
+    std::string sql_s = "SELECT * FROM prefix "
+            "WHERE id = ?";
+    result res = db->select_one(sql_s, {std::to_string(id)});
+    if (!res.empty()) {
+        WinePrefix* ret = new WinePrefix(res["name"],
+                res["path"],
+                res["arch"],
+                WineVersion::getInstance(std::stoi(res["version"])),
+                res["mount_point"],
+                res["virtual_drive"],
+                res["exec_template"],
+                std::stoi(res["id"]));
+        return ret;
+    } else {
+        return NULL;
+    }
 }
 
 std::string WinePrefix::getEnvVariables(const WineApplication* wineApp) {
@@ -62,7 +112,7 @@ std::string WinePrefix::getEnvVariables(const WineApplication* wineApp) {
     if (version_)
         env_stream << version_->getEnvVariables(arch_);
     // wineStrings.append();
-    std::string arch = getArchString();
+    std::string arch = getArch();
     if (!arch.empty())
         env_stream << " WINEARCH='" << arch << "'";
 
@@ -121,7 +171,7 @@ void WinePrefix::setPath(std::string path) {
     path_ = path;
 }
 
-void WinePrefix::setArch(WineArch arch) {
+void WinePrefix::setArch(std::string arch) {
     arch_ = arch;
 }
 
@@ -133,8 +183,8 @@ void WinePrefix::setMountPoint(std::string mountPoint) {
     mountPoint_ = mountPoint;
 }
 
-void WinePrefix::setVirtualDevice(std::string virtualDevice) {
-    virtualDevice_ = virtualDevice;
+void WinePrefix::setVirtualDrive(std::string virtualDrive) {
+    virtualDrive_ = virtualDrive;
 }
 
 void WinePrefix::setExecutionTemplate(std::string execTemplate) {
@@ -149,20 +199,8 @@ const std::string WinePrefix::getPath(void) const {
     return path_;
 }
 
-WineArch WinePrefix::getArch(void) const {
+const std::string WinePrefix::getArch(void) const {
     return arch_;
-}
-
-const std::string WinePrefix::getArchString(void) const {
-    std::string arch;
-    if (arch_ == q4wine::lib::WIN32) {
-        arch = "win32";
-    } else if (arch_ == q4wine::lib::WIN32) {
-        arch = "win64";
-    } else {
-        arch = std::string();
-    }
-    return arch;
 }
 
 WineVersion* WinePrefix::getVersion(void) const {
@@ -173,10 +211,9 @@ const std::string WinePrefix::getMountPoint(void) const {
     return mountPoint_;
 }
 
-const std::string WinePrefix::getVirtualDevice(void) const {
-    return virtualDevice_;
+const std::string WinePrefix::getVirtualDrive(void) const {
+    return virtualDrive_;
 }
-
 
 const std::string WinePrefix::getExecutionTemplate(void) const {
     return execTemplate_;

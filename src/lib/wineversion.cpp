@@ -95,8 +95,7 @@ WineVersion* WineVersion::getInstance(intptr_t id) {
     }
 }
 
-const std::string WineVersion::getEnvVariables(
-        q4wine::lib::WineArch arch) const {
+const std::string WineVersion::getEnvVariables(const std::string arch) const {
     std::ostringstream env_stream;
     if (!server_.empty())
         env_stream << " WINESERVER='" << server_ << "'";
@@ -157,10 +156,10 @@ const std::string WineVersion::getLibs64(void) const {
     return libs64_;
 }
 
-const std::string WineVersion::getLibs(q4wine::lib::WineArch arch) const {
-    if (arch == q4wine::lib::WIN32) {
+const std::string WineVersion::getLibs(const std::string arch) const {
+    if (arch == "win32") {
         return libs32_;
-    } else if (arch == q4wine::lib::WIN64) {
+    } else if (arch == "win64") {
         return libs64_;
     } else {
         return libs32_;

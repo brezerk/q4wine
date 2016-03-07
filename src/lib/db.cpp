@@ -51,20 +51,44 @@ intptr_t DBEngine::init(void) {
      *
      * 2.x changes:
      *
-     *    CONSTRAINT's
+     *    versions.CONSTRAINT
      *    versions.wine_exec      -> binary
      *    versions.wine_server    -> server
      *    versions.wine_loader    -> loader
      *    versions.wine_dllpath32 -> libs32
      *    versions.wine_dllpath64 -> libs64
+     *
+     *    prefix.CONSTRAINT
+     *    prefix.version          -> FOREIGN KEY version.id
+     *    prefix.cdrom_mount      -> mount_point
+     *    prefix.mountpoint_windrive -> virtual_drive
+     *    prefix.run_string       -> exec_template
      */
-    std::string sql = "CREATE TABLE IF NOT EXISTS versions "
-                      "(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
-                      "name TEXT, binary TEXT, "
-                      "server TEXT, loader TEXT, "
-                      "libs32 TEXT, libs64 TEXT, "
-                      "CONSTRAINT name_unique UNIQUE (name));";
-    return exec(sql);
+
+    std::string sql = "PRAGMA foreign_keys = ON;";
+    if (exec(sql) != SQLITE_OK)
+        return false;
+
+    sql = "CREATE TABLE IF NOT EXISTS versions "
+          "(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+          "name TEXT, binary TEXT, "
+          "server TEXT, loader TEXT, "
+          "libs32 TEXT, libs64 TEXT, "
+          "CONSTRAINT name_unique UNIQUE (name));";
+    if (exec(sql) != SQLITE_OK)
+        return false;
+
+    sql = "CREATE TABLE IF NOT EXISTS prefix "
+          "(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+          "name TEXT, path TEXT, arch TEXT, "
+          "version INTEGER, "
+          "mount_point TEXT, virtual_drive TEXT, "
+          "exec_template TEXT, "
+          "FOREIGN KEY(version) REFERENCES versions(id), "
+          "CONSTRAINT name_unique UNIQUE (name));";
+    if (exec(sql) != SQLITE_OK)
+        return false;
+    return true;
 }
 
 intptr_t DBEngine::exec(const std::string &sql_s) const {

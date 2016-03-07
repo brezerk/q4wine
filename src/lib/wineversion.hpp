@@ -100,11 +100,16 @@ class WineVersion : public DBObject {
     ~WineVersion();
 
     /*!
-     * \brief save Object
+     * \brief save Object into DB
      * \return true on success
      */
     virtual bool save(void);
 
+    /*!
+     * \brief getInstance Create WineVersion object from DB by version.id
+     * \param id Record id
+     * \return WineVersion object or NULL of not found.
+     */
     static WineVersion* getInstance(intptr_t id);
 
     /*! Constructs env variables (WINESERVER, WINELOADER, WINEDLLPATH) from
@@ -119,7 +124,7 @@ class WineVersion : public DBObject {
      *
      * \return Formatted env variables
     */
-    const std::string getEnvVariables(q4wine::lib::WineArch arch) const;
+    const std::string getEnvVariables(const std::string arch) const;
 
     void setName(std::string name);
     void setBinary(std::string binary);
@@ -135,7 +140,7 @@ class WineVersion : public DBObject {
     const std::string getLibs32(void) const;
     const std::string getLibs64(void) const;
     /*! Return libs configured for provided version */
-    const std::string getLibs(q4wine::lib::WineArch arch) const;
+    const std::string getLibs(const std::string arch) const;
 
  private:
     /*! Set the table name in q4wine database to lookup object data */
