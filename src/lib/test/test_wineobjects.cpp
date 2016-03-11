@@ -84,10 +84,12 @@ BOOST_AUTO_TEST_CASE(testWineApplication) {
     BOOST_CHECK_EQUAL(application->getPath(), std::string("winecfg"));
     BOOST_CHECK_EQUAL(application->getArgs(),
                       std::string("--make all --quality=good"));
+
+    BOOST_CHECK_EQUAL(application->save(), true);
 }
 
 BOOST_AUTO_TEST_CASE(testWinePrefix) {
-    std::shared_ptr<q4wine::lib::WinePrefix> prefix(
+    std::unique_ptr<q4wine::lib::WinePrefix> prefix(
                 new q4wine::lib::WinePrefix("test",
                 "/home/brezerk/.wine", "win32",
                 q4wine::lib::WineVersion::getInstance(1),
@@ -105,35 +107,25 @@ BOOST_AUTO_TEST_CASE(testWinePrefix) {
     BOOST_CHECK_EQUAL(prefix->getExecutionTemplate(),
                       q4wine::lib::DEFAULT_EXEC_TEMPLATE);
 
-    prefix->save();
+    BOOST_CHECK_EQUAL(prefix->save(), true);
+    prefix->setName("test2");
+    BOOST_CHECK_EQUAL(prefix->save(), true);
 }
 
 BOOST_AUTO_TEST_CASE(testWinePrefix2) {
     std::shared_ptr<q4wine::lib::WinePrefix> prefix(
                 q4wine::lib::WinePrefix::getInstance(1));
 
-    std::shared_ptr<q4wine::lib::WineApplication> application (new
-            q4wine::lib::WineApplication(
-                "test app",
-                "winecfg",
-                "--make all --quality=good",
-                "/home/brezerk",
-                "",
-                "Some test app",
-                "libgcc.dll=b,n",
-                "",
-                "600x800",
-                "RU_ru",
-                true,
-                ":1",
-                -110,
-                "/usr/lib/pre_run.sh",
-                "echo done >> /tmp/lol"));
+    BOOST_CHECK_EQUAL(prefix->getName(), std::string("test2"));
+
+    std::unique_ptr<q4wine::lib::WineApplication> application(
+                q4wine::lib::WineApplication::getInstance(1));
 
     // Advanced unit tests
     BOOST_CHECK_EQUAL(prefix->getEnvVariables(application.get()),
                       std::string(" LANG='RU_ru' DISPLAY=':1' "
                       "WINEDLLOVERRIDES='libgcc.dll=b,n' "
+                      "WINEDEBUG='warn+dll,+heap' "
                       "WINEPREFIX='/home/brezerk/.wine' "
                       "WINESERVER='/usr/bin/wineserver' "
                       "WINELOADER='/usr/bin/wine' "
@@ -144,6 +136,7 @@ BOOST_AUTO_TEST_CASE(testWinePrefix2) {
                       std::string("/usr/bin/konsole --noclose -e /usr/bin/env "
                       " LANG='RU_ru' DISPLAY=':1' "
                       "WINEDLLOVERRIDES='libgcc.dll=b,n' "
+                      "WINEDEBUG='warn+dll,+heap' "
                       "WINEPREFIX='/home/brezerk/.wine' "
                       "WINESERVER='/usr/bin/wineserver' "
                       "WINELOADER='/usr/bin/wine' "
@@ -152,15 +145,22 @@ BOOST_AUTO_TEST_CASE(testWinePrefix2) {
                       " /usr/bin/wine explorer.exe /desktop=test.app,600x800 "
                       "winecfg --make all --quality=good 2>&1"));
 
-    q4wine::lib::WineVersion* vers = q4wine::lib::WineVersion::getInstance(1);
+    //  delete(application);
+
+    //  application = q4wine::lib::WineApplication::ge
+
+    std::unique_ptr<q4wine::lib::WineVersion> vers(
+                q4wine::lib::WineVersion::getInstance(1));
     vers->setLoader("");
     vers->setServer("");
     vers->setLibs32("");
     vers->setLibs64("");
-    vers->save();
-    delete(vers);
+
+    BOOST_CHECK_EQUAL(vers->save(), true);
 
     prefix->setVersion(q4wine::lib::WineVersion::getInstance(1));
+
+    application->setWineDebug("");
 
     BOOST_CHECK_EQUAL(prefix->getExecutionString(application.get()),
                       std::string("/usr/bin/konsole --noclose -e /usr/bin/env "
@@ -173,6 +173,10 @@ BOOST_AUTO_TEST_CASE(testWinePrefix2) {
 
     application->setPath("installer.msi");
     application->setName("installer.msi");
+
+    BOOST_CHECK_EQUAL(application->save(), true);
+
+    application.reset(q4wine::lib::WineApplication::getInstance(1));
 
     BOOST_CHECK_EQUAL(prefix->getExecutionString(application.get()),
                       std::string("/usr/bin/konsole --noclose -e /usr/bin/env "
@@ -219,10 +223,15 @@ BOOST_AUTO_TEST_CASE(testWinePrefix2) {
 }
 
 BOOST_AUTO_TEST_CASE(testNoDBRecord) {
-    q4wine::lib::WineVersion* vers = q4wine::lib::WineVersion::getInstance(999);
+    q4wine::lib::WineVersion* vers = \
+            q4wine::lib::WineVersion::getInstance(999);
     BOOST_CHECK(vers == NULL);
-    q4wine::lib::WinePrefix* pref = q4wine::lib::WinePrefix::getInstance(999);
+    q4wine::lib::WinePrefix* pref = \
+            q4wine::lib::WinePrefix::getInstance(999);
     BOOST_CHECK(pref == NULL);
+    q4wine::lib::WineApplication* app = \
+            q4wine::lib::WineApplication::getInstance(999);
+    BOOST_CHECK(app == NULL);
 }
 
 BOOST_AUTO_TEST_SUITE_END()  // End of tests

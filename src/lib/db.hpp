@@ -65,26 +65,26 @@ class DBEngine {
 
     /*!
      * \brief init Itialize empty database
-     * \return SQLITE_OK or RC error code.
+     * \return true on success.
      */
-    intptr_t init(void);
+    bool init(void);
 
     /*!
      * \brief exec Execute raw SQL statement.
      * Use this fuction to call raw SQL statements.
      * If you need to bind values, use overloaded function @sa exec
      * \param sql_s raw SQL string
-     * \return SQLITE_OK or RC error code.
+     * \return true on success.
      */
-    intptr_t exec(const std::string& sql_s) const;
+    bool exec(const std::string& sql_s) const;
 
     /*!
      * \brief exec Prepare and execute SQL statement with provided arguments.
      * \param sql_s raw SQL string
      * \param args a list of values to bound
-     * \return SQLITE_OK or RC error code.
+     * \return true on success.
      */
-    intptr_t exec(const std::string& sql_s,
+    bool exec(const std::string& sql_s,
               std::initializer_list<std::string> args);
 
     /*!

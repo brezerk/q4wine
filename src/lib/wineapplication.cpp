@@ -67,10 +67,124 @@ WineApplication::WineApplication(
 }
 
 WineApplication::~WineApplication() {
+    std::cout << "Destroy Application" << std::endl;
 }
 
 bool WineApplication::save(void) {
-    return false;
+    std::string sql_s;
+    std::string dir_i, prefix_i;
+
+    if (this->getDirId() > 0) {
+        dir_i = std::to_string(this->getDirId());
+    }
+
+    if (this->getPrefixId() > 0) {
+        prefix_i = std::to_string(this->getPrefixId());
+    }
+
+    if (id_ == 0) {
+        sql_s = "INSERT INTO icon("
+                "name, path, args, workdir, "
+                "icon_name, description, "
+                "override_dlls, wine_debug, "
+                "virtual_desktop, lang, "
+                "use_terminal, display, "
+                "priority, pre_run_script, "
+                "post_run_script, prefix, "
+                "dir"
+                ") VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
+                "?, ?, ?, ?, ?, ?, ?)";
+
+        if (db_->exec(sql_s, {this->getName(),
+                      this->getPath(),
+                      this->getArgs(),
+                      this->getWorkDirectory(),
+                      this->getIconName(),
+                      this->getDescription(),
+                      this->getOverrideDlls(),
+                      this->getWineDebug(),
+                      this->getVirtualDesktop(),
+                      this->getLang(),
+                      std::to_string(this->getUseTerminal()),
+                      this->getDisplay(),
+                      std::to_string(this->getPriority()),
+                      this->getPostRunScript(),
+                      this->getPostRunScript(),
+                      prefix_i,
+                      dir_i})) {
+            this->setId(db_->get_id());
+            return true;
+        }
+    } else {
+        sql_s = "UPDATE icon SET "
+                "name=?, path=?, args=?, workdir=?, "
+                "icon_name=?, description=?, "
+                "override_dlls=?, wine_debug=?, "
+                "virtual_desktop=?, lang=?, "
+                "use_terminal=?, display=?, "
+                "priority=?, pre_run_script=?, "
+                "post_run_script=?, prefix=?, "
+                "dir=? "
+                "WHERE id=?";
+        return (db_->exec(sql_s, {this->getName(),
+                                  this->getPath(),
+                                  this->getArgs(),
+                                  this->getWorkDirectory(),
+                                  this->getIconName(),
+                                  this->getDescription(),
+                                  this->getOverrideDlls(),
+                                  this->getWineDebug(),
+                                  this->getVirtualDesktop(),
+                                  this->getLang(),
+                                  std::to_string(this->getUseTerminal()),
+                                  this->getDisplay(),
+                                  std::to_string(this->getPriority()),
+                                  this->getPostRunScript(),
+                                  this->getPostRunScript(),
+                                  prefix_i,
+                                  dir_i,
+                                  std::to_string(this->getId())}));
+        }
+        return false;
+}
+
+WineApplication* WineApplication::getInstance(intptr_t id) {
+    q4wine::lib::DBEngine* db =
+            q4wine::lib::DBEngine::getInstance();
+    std::string sql_s = "SELECT * FROM icon "
+            "WHERE id = ?";
+    result res = db->select_one(sql_s, {std::to_string(id)});
+    if (!res.empty()) {
+        bool use_terminal = false;
+        intptr_t dir_i = 0, prefix_i = 0;
+        if (res["use_terminal"] == "1")
+            use_terminal = true;
+        if (!res["dir"].empty())
+            dir_i = std::stoi(res["dir"]);
+        if (!res["prefix"].empty())
+            prefix_i = std::stoi(res["prefix"]);
+        WineApplication* ret = new WineApplication(res["name"],
+                res["path"],
+                res["args"],
+                res["workdir"],
+                res["icon_name"],
+                res["description"],
+                res["override_dlls"],
+                res["wine_debug"],
+                res["virtual_desktop"],
+                res["lang"],
+                use_terminal,
+                res["display"],
+                std::stoi(res["priority"]),
+                res["pre_run_script"],
+                res["post_run_script"],
+                prefix_i,
+                dir_i,
+                std::stoi(res["id"]));
+        return ret;
+    } else {
+        return NULL;
+    }
 }
 
 const std::string WineApplication::getNiceCmd(void) const {
@@ -129,6 +243,10 @@ void WineApplication::setWineDebug(std::string wineDebug) {
 
 void WineApplication::setVirtualDesktop(std::string virtualDesktop) {
     virtualDesktop_ = virtualDesktop;
+}
+
+void WineApplication::setLand(std::string lang) {
+    lang_ = lang;
 }
 
 void WineApplication::setUseTerminal(bool useTerminal) {
@@ -195,7 +313,7 @@ const std::string WineApplication::getWineDebug(void) const {
     return wineDebug_;
 }
 
-const std::string WineApplication::getVirtualDesktop(void) const {
+const std::string WineApplication::formatVirtualDesktop() const {
     if (!virtualDesktop_.empty()) {
         std::ostringstream str_stream;
         str_stream << "explorer.exe /desktop=";
@@ -207,6 +325,14 @@ const std::string WineApplication::getVirtualDesktop(void) const {
     }
 
     return virtualDesktop_;
+}
+
+const std::string WineApplication::getVirtualDesktop() const {
+    return virtualDesktop_;
+}
+
+const std::string WineApplication::getLang(void) const {
+    return lang_;
 }
 
 bool WineApplication::getUseTerminal(void) const {

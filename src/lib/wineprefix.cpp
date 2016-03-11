@@ -68,7 +68,7 @@ bool WinePrefix::save(void) {
             return true;
         }
     } else {
-        sql_s = "UPDATE versions SET name=?, path=?, "
+        sql_s = "UPDATE prefix SET name=?, path=?, "
                 "arch=?, version=?, mount_point=?, "
                 "virtual_drive=?, exec_template=? WHERE id=?";
         return db_->exec(sql_s, {this->getName(),
@@ -143,7 +143,7 @@ std::string WinePrefix::getExecutionString(const WineApplication* wineApp) {
     tmpl = std::regex_replace(tmpl, std::regex("%WINE_BIN%"),
                               version_->getBinary());
     tmpl = std::regex_replace(tmpl, std::regex("%VIRTUAL_DESKTOP%"),
-                              wineApp->getVirtualDesktop());
+                              wineApp->formatVirtualDesktop());
     std::string program = wineApp->getPath();
     std::string args = wineApp->getArgs();
     std::string extenson = program.substr(program.length()-4);

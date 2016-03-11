@@ -45,7 +45,7 @@ bool DBEngine::open(std::string name) {
     return is_open_;
 }
 
-intptr_t DBEngine::init(void) {
+bool DBEngine::init(void) {
     /*
      * FIXME: We need 1.x -> 2.x migration shema.
      *
@@ -66,7 +66,7 @@ intptr_t DBEngine::init(void) {
      */
 
     std::string sql = "PRAGMA foreign_keys = ON;";
-    if (exec(sql) != SQLITE_OK)
+    if (!exec(sql))
         return false;
 
     sql = "CREATE TABLE IF NOT EXISTS versions "
@@ -75,7 +75,7 @@ intptr_t DBEngine::init(void) {
           "server TEXT, loader TEXT, "
           "libs32 TEXT, libs64 TEXT, "
           "CONSTRAINT name_unique UNIQUE (name));";
-    if (exec(sql) != SQLITE_OK)
+    if (!exec(sql))
         return false;
 
     sql = "CREATE TABLE IF NOT EXISTS prefix "
@@ -86,24 +86,57 @@ intptr_t DBEngine::init(void) {
           "exec_template TEXT, "
           "FOREIGN KEY(version) REFERENCES versions(id), "
           "CONSTRAINT name_unique UNIQUE (name));";
-    if (exec(sql) != SQLITE_OK)
+    if (!exec(sql))
         return false;
+
+    sql = "CREATE TABLE IF NOT EXISTS dir "
+          "(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+          "name TEXT, "
+          "prefix NUMERIC, "
+          "dir NUMERIC, "
+          "FOREIGN KEY(prefix) REFERENCES prefix(id), "
+          "FOREIGN KEY(dir) REFERENCES dir(id), "
+          "CONSTRAINT name_unique UNIQUE (name, prefix, dir)"
+          ");";
+    if (!exec(sql))
+        return false;
+
+    sql = "CREATE TABLE IF NOT EXISTS icon "
+          "(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+          "name TEXT, path TEXT, args TEXT, "
+          "workdir TEXT, icon_name TEXT, "
+          "description TEXT, override_dlls TEXT, "
+          "wine_debug TEXT, virtual_desktop TEXT, "
+          "lang TEXT, use_terminal NUMERIC, "
+          "display TEXT, priority NUMERIC, "
+          "pre_run_script TEXT, "
+          "post_run_script TEXT, "
+          "prefix NUMERIC, "
+          "dir NUMERIC, "
+          "FOREIGN KEY(prefix) REFERENCES prefix(id), "
+          "FOREIGN KEY(dir) REFERENCES dir(id), "
+          "CONSTRAINT name_unique UNIQUE (name));";
+    if (!exec(sql))
+        return false;
+
     return true;
 }
 
-intptr_t DBEngine::exec(const std::string &sql_s) const {
+bool DBEngine::exec(const std::string &sql_s) const {
     char *msg_e;
     intptr_t rc = sqlite3_exec(db_, sql_s.c_str(), NULL, NULL, &msg_e);
     if (rc != SQLITE_OK) {
         std::cerr << "Can't execute SQL: '" << sql_s << "'" << std::endl;
         std::cerr << "Error: " << msg_e << std::endl;
         std::cerr << "Error: (" << rc << ") " << msg_e << std::endl;
+        sqlite3_free(msg_e);
+        return false;
     }
     sqlite3_free(msg_e);
-    return rc;
+    return true;
 }
 
-intptr_t DBEngine::exec(const std::string& sql_s,
+bool DBEngine::exec(const std::string& sql_s,
                     std::initializer_list<std::string> args) {
     sqlite3_stmt *stmt = NULL;
 
@@ -113,20 +146,24 @@ intptr_t DBEngine::exec(const std::string& sql_s,
         std::cerr << "Error: (" << rc << ") " << sqlite3_errmsg(db_) \
                   << std::endl;
         sqlite3_finalize(stmt);
-        return rc;
+        return false;
     }
 
     intptr_t i = 1;
     for (auto j = args.begin(); j != args.end(); j++, i++) {
-        rc = sqlite3_bind_text(stmt, i, (*j).data(),
-                               (*j).size(), NULL);
+        if ((*j).empty()) {
+            rc = sqlite3_bind_null(stmt, i);
+        } else {
+            rc = sqlite3_bind_text(stmt, i, (*j).data(),
+                                   (*j).size(), NULL);
+        }
         if (rc != SQLITE_OK) {
             std::cerr << "Can't binding value (" << i << ") in: '" \
                       << sql_s << "'" << std::endl;
             std::cerr << "Error: (" << rc << ") " << sqlite3_errmsg(db_) \
                       << std::endl;
             sqlite3_finalize(stmt);
-            return rc;
+            return false;
         }
     }
 
@@ -137,10 +174,10 @@ intptr_t DBEngine::exec(const std::string& sql_s,
         std::cerr << "Error: (" << rc << ") " << sqlite3_errmsg(db_) \
                   << std::endl;
         sqlite3_finalize(stmt);
-        return rc;
+        return false;
     }
     sqlite3_finalize(stmt);
-    return rc;
+    return true;
 }
 
 rows DBEngine::select(const std::string& sql_s) const {
@@ -179,11 +216,14 @@ rows DBEngine::select(const std::string& sql_s,
     while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {;
         result res;
         for (intptr_t j = 0; j < sqlite3_column_count(stmt); j++) {
+            std::string val;
+            if (sqlite3_column_type(stmt, j) != SQLITE_NULL) {
+                val = reinterpret_cast<const char*>(
+                            sqlite3_column_text(stmt, j));
+            }
             res.insert(result_p(
                            std::string(sqlite3_column_name(stmt, j)),
-                           std::string(
-                               reinterpret_cast<const char*>(
-                                   sqlite3_column_text(stmt, j)))));
+                           val));
         }
         ret.push_back(res);
         i++;
@@ -234,11 +274,14 @@ result DBEngine::select_one(const std::string& sql_s,
 
     if ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {;
         for (intptr_t j = 0; j < sqlite3_column_count(stmt); j++) {
+            std::string val;
+            if (sqlite3_column_type(stmt, j) != SQLITE_NULL) {
+                val = reinterpret_cast<const char*>(
+                            sqlite3_column_text(stmt, j));
+            }
             ret.insert(result_p(
                            std::string(sqlite3_column_name(stmt, j)),
-                           std::string(
-                               reinterpret_cast<const char*>(
-                                   sqlite3_column_text(stmt, j)))));
+                           val));
         }
     }
     if ((rc = sqlite3_step(stmt)) != SQLITE_DONE) {

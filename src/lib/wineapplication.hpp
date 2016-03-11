@@ -171,6 +171,13 @@ class WineApplication : public DBObject {
     virtual bool save(void);
 
     /*!
+     * \brief getInstance Create WineApplication object from DB by version.id
+     * \param id Record id
+     * \return WineApplication object or NULL of not found.
+     */
+    static WineApplication* getInstance(intptr_t id);
+
+    /*!
      * \brief getNiceCmd Construct nice command
      * \return Nice command if priority_ !=0. Empty string otherwice.
      */
@@ -198,6 +205,7 @@ class WineApplication : public DBObject {
     void setOverrideDlls(std::string overrideDlls);
     void setWineDebug(std::string wineDebug);
     void setVirtualDesktop(std::string virtualDesktop);
+    void setLand(std::string lang);
     void setUseTerminal(bool useTerminal);
     void setDisplay(std::string display);
     void setPriority(intptr_t priority);
@@ -214,7 +222,9 @@ class WineApplication : public DBObject {
     const std::string getDescription(void) const;
     const std::string getOverrideDlls(void) const;
     const std::string getWineDebug(void) const;
+    const std::string formatVirtualDesktop(void) const;
     const std::string getVirtualDesktop(void) const;
+    const std::string getLang(void) const;
     bool getUseTerminal(void) const;
     const std::string getDisplay(void) const;
     intptr_t getPriority(void) const;
