@@ -85,7 +85,7 @@ class DBEngine {
      * \return true on success.
      */
     bool exec(const std::string& sql_s,
-              std::initializer_list<std::string> args);
+              const std::initializer_list<std::string>& args) const;
 
     /*!
      * \brief select Execute raw SQL statement and return the result
@@ -94,7 +94,7 @@ class DBEngine {
      */
     rows select(const std::string& sql_s) const;
     rows select(const std::string& sql_s,
-                std::initializer_list<std::string> args) const;
+                const std::initializer_list<std::string>& args) const;
 
     /*!
      * \brief select Execute raw SQL statement and return the result
@@ -103,7 +103,7 @@ class DBEngine {
      */
     result select_one(const std::string& sql_s) const;
     result select_one(const std::string& sql_s,
-                std::initializer_list<std::string> args) const;
+                const std::initializer_list<std::string>& args) const;
 
     /*!
      * \brief get_id Get last insert rowid
@@ -137,6 +137,9 @@ class DBEngine {
     static DBEngine* DBEngine_instance;
 
  private:
+    bool bind_args(sqlite3_stmt *stmt,
+                   const std::string& sql_s,
+                   const std::initializer_list<std::string>& args) const;
     std::string name_;
     sqlite3* db_;
     bool is_open_;

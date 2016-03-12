@@ -31,23 +31,25 @@ BOOST_AUTO_TEST_CASE(testDBEngine) {
     q4wine::lib::DBEngine* db =
             q4wine::lib::DBEngine::getInstance();
     // db->open("/tmp/q4wine.db");
-    db->open(":memory:");
+    BOOST_CHECK_EQUAL(db->open(":memory:"), true);
 
-    db->exec(std::string("CREATE TABLE test ("
+    BOOST_CHECK_EQUAL(db->exec(std::string("CREATE TABLE test ("
                          "id INTEGER PRIMARY KEY,"
                          "foo REAL,"
                          "bar TEXT"
-                         ")"));
+                         ")")), true);
 
-    db->exec(std::string("INSERT INTO test (foo, bar) VALUES (?,?)"),
+    BOOST_CHECK_EQUAL(db->exec(std::string("INSERT INTO test ("
+             "foo, bar) VALUES (?,?)"),
              { std::string("lol"),
-             std::string("kek") });
+             std::string("kek") }), true);
 
     BOOST_CHECK_EQUAL(db->get_id(), intptr_t(1));
 
-    db->exec(std::string("INSERT INTO test (foo, bar) VALUES (?,?)"),
+    BOOST_CHECK_EQUAL(db->exec(std::string("INSERT INTO test ("
+             "foo, bar) VALUES (?,?)"),
              { std::string("wow"),
-             std::string("zap") });
+             std::string("zap") }), true);
 
     BOOST_CHECK_EQUAL(db->get_id(), intptr_t(2));
 
@@ -62,10 +64,11 @@ BOOST_AUTO_TEST_CASE(testDBEngine) {
     BOOST_CHECK_EQUAL(rows[1]["foo"], std::string("wow"));
     BOOST_CHECK_EQUAL(rows[1]["bar"], std::string("zap"));
 
-    db->exec(std::string("UPDATE test SET foo = ?, bar = ? WHERE id = ?"),
+    BOOST_CHECK_EQUAL(db->exec(std::string("UPDATE test SET foo = ?, bar = ? "
+             "WHERE id = ?"),
              { std::string("lol2"),
              std::string("kek2"),
-             std::string("1") });
+             std::string("1") }), true);
 
     q4wine::lib::result res = db->select_one(
                 std::string("SELECT * FROM test"));
@@ -73,6 +76,68 @@ BOOST_AUTO_TEST_CASE(testDBEngine) {
     BOOST_CHECK_EQUAL(res["id"], std::string("1"));
     BOOST_CHECK_EQUAL(res["foo"], std::string("lol2"));
     BOOST_CHECK_EQUAL(res["bar"], std::string("kek2"));
+
+    BOOST_CHECK_EQUAL(db->exec(std::string("UPDTE test SET foo = ?, bar = ? "
+             "WHERE id = ?"),
+             { std::string("lol2") }), false);
+
+    BOOST_CHECK_EQUAL(db->exec(std::string("UPDATE test SET foo = ?, bar = ? "
+             "WHERE id = ?"),
+             { std::string("lol2") }), false);
+
+    BOOST_CHECK_EQUAL(db->exec(std::string("UPDATE test SET foo = ?, bar = ? "
+             "WHERE id = ?"),
+             { std::string("lol2"),
+               std::string("lol2"),
+               std::string("lol2"),
+               std::string("lol2")}), false);
+
+    rows.clear();
+    rows = db->select(std::string("SEECT * FROM test"));
+    BOOST_CHECK_EQUAL(rows.size(), intptr_t(0));
+
+    rows.clear();
+    rows = db->select(std::string("SELECT * FROM test WHERE foo = ? and"
+                                  " bar = ?"));
+    BOOST_CHECK_EQUAL(rows.size(), intptr_t(0));
+
+    rows.clear();
+    rows = db->select(std::string("SELECT * FROM test WHERE foo = ? and"
+                                  " bar = ?"), { std::string("lol2") });
+    BOOST_CHECK_EQUAL(rows.size(), intptr_t(0));
+
+    rows.clear();
+    rows = db->select(std::string("SELECT * FROM test WHERE foo = ? and"
+                                  " bar = ?"), { std::string("lol2"),
+                                                 std::string("lol2"),
+                                                 std::string("lol2") });
+    BOOST_CHECK_EQUAL(rows.size(), intptr_t(0));
+
+    res.clear();
+    res = db->select_one(
+                std::string("SEECT * FROM test WHERE foo = ? and"
+                                  " bar = ?"));
+    BOOST_CHECK_EQUAL(res.size(), intptr_t(0));
+
+    res.clear();
+    res = db->select_one(
+                std::string("SELECT * FROM test WHERE foo = ? and"
+                                  " bar = ?"));
+    BOOST_CHECK_EQUAL(res.size(), intptr_t(0));
+
+    res.clear();
+    res = db->select_one(
+                std::string("SELECT * FROM test WHERE foo = ? and"
+                                  " bar = ?"), { std::string("lol2") });
+    BOOST_CHECK_EQUAL(res.size(), intptr_t(0));
+
+    res.clear();
+    res = db->select_one(
+                std::string("SELECT * FROM test WHERE foo = ? and"
+                                  " bar = ?"), { std::string("lol2"),
+                                                 std::string("lol2"),
+                                                 std::string("lol2") });
+    BOOST_CHECK_EQUAL(res.size(), intptr_t(0));
 
     db->close();
 }
