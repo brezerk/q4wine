@@ -37,6 +37,7 @@ set(Q4WINE_LIB_HEADERS
     ${CMAKE_SOURCE_DIR}/src/lib/db.hpp
     ${CMAKE_SOURCE_DIR}/src/lib/defines.hpp
     ${CMAKE_SOURCE_DIR}/src/lib/dbobject.hpp
+    ${CMAKE_SOURCE_DIR}/src/lib/dir.hpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineprefix.hpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineversion.hpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineapplication.hpp
@@ -45,6 +46,7 @@ set(Q4WINE_LIB_HEADERS
 set(Q4WINE_LIB_SOURCES
     ${CMAKE_SOURCE_DIR}/src/lib/db.cpp
     ${CMAKE_SOURCE_DIR}/src/lib/dbobject.cpp
+    ${CMAKE_SOURCE_DIR}/src/lib/dir.cpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineprefix.cpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineversion.cpp
     ${CMAKE_SOURCE_DIR}/src/lib/wineapplication.cpp

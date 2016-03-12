@@ -24,6 +24,7 @@
 
 #include "src/lib/defines.hpp"
 #include "src/lib/db.hpp"
+#include "src/lib/dir.hpp"
 #include "src/lib/wineapplication.hpp"
 #include "src/lib/wineprefix.hpp"
 #include "src/lib/wineversion.hpp"
@@ -174,6 +175,21 @@ BOOST_AUTO_TEST_CASE(testWinePrefix2) {
     application->setPath("installer.msi");
     application->setName("installer.msi");
 
+    std::unique_ptr<q4wine::lib::Dir> dir(
+                new q4wine::lib::Dir("mydir", prefix->getId()));
+    BOOST_CHECK_EQUAL(dir->getName(), std::string("mydir"));
+    BOOST_CHECK_EQUAL(dir->getPrefixId(), 1);
+    BOOST_CHECK_EQUAL(dir->getDirId(), 0);
+    BOOST_CHECK_EQUAL(dir->save(), true);
+
+    std::unique_ptr<q4wine::lib::Dir> dir2(
+                new q4wine::lib::Dir("mydir2", prefix->getId()));
+    BOOST_CHECK_EQUAL(dir2->save(), true);
+
+    dir->setDirId(dir2->getId());
+    BOOST_CHECK_EQUAL(dir->save(), true);
+
+    application->setDirId(dir->getId());
     BOOST_CHECK_EQUAL(application->save(), true);
 
     application.reset(q4wine::lib::WineApplication::getInstance(1));
