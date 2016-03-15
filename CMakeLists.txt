@@ -23,7 +23,7 @@ set(APP_VERSION "2.0")
 # Enable tests
 #enable_testing()
 #set(CTEST_OUTPUT_ON_FAILURE ON)
-add_custom_target(test COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure)
+add_custom_target(tests COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure)
 
 # Execute moc if needed
 set(CMAKE_AUTOMOC ON)
@@ -42,7 +42,11 @@ option(RELEASE		"Disable debug. Use it for user-ready buils."		"OFF")
 option(DOC              "Generate source documentation"                         "OFF")
 option(LANGUAGES	"Compile localization files for specified languages."	""   )
 option(DYNAMIC_LINKING	"Use dynamic linking. Or build static binaries."	"ON" )
-option(QT5              "Build Qt5 GUI."                                        "OFF")
+option(QT               "Build Qt5 GUI."                                        "OFF")
+option(FLTK             "Build Fltk GUI."                                       "OFF")
+option(GTK              "Build GTK GUI."                                        "OFF")
+option(CLI              "Build simple cli interface."                           "OFF")
+option(CURSES           "Build Curses GUI."                                     "OFF")
 
 # Banner
 if(RELEASE)
@@ -156,8 +160,8 @@ else(RELEASE)
     set(CMAKE_BUILD_TYPE DEBUG)
     #Set error tolerance to zero
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wextra -Wall")
-    #Some extra
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wshadow")
+    #Some extra (-Wshadow)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
     #And more extra
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wstrict-aliasing -Wstrict-overflow")
     #And even more
@@ -217,6 +221,11 @@ message(STATUS "RELEASE                 : ${RELEASE}\n")
 
 message(STATUS "LANGUAGES               : ${LANGUAGES}\n")
 
+message(STATUS "QT                      : ${QT}")
+message(STATUS "GTK                     : ${GTK}")
+message(STATUS "CLI                     : ${CLI}")
+message(STATUS "CURSES                  : ${CURSES}\n")
+
 message(STATUS "See INSTALL file for details and more info --\n")
 
 # Force out-of-source build
@@ -241,7 +250,7 @@ endif(RELESE)
 
 find_package(SQLite3 REQUIRED)
 
-if(QT5)
+if(QT)
     set(QT_MIN_VERSION "5.2.1")
     find_package(Qt5Core REQUIRED)
     find_package(Qt5LinguistTools REQUIRED)
@@ -258,7 +267,23 @@ if(QT5)
             "Qt Core libs not found. Please install Qt ${QT_MIN_VERSION}."
             )
     endif(Qt5Core_FOUND)
-endif(QT5)
+endif(QT)
+
+if(FLTK)
+    find_package(FLTK REQUIRED)
+    find_package(OpenGL REQUIRED)
+endif(FLTK)
+
+if(GTK)
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
+endif(GTK)
+
+if(CURSES)
+    set(CURSES_NEED_NCURSES TRUE)
+    set(CURSES_NEED_WIDE TRUE)
+    find_package(Curses REQUIRED)
+endif(CURSES)
 
 # Add project subdirs
 add_subdirectory(src)

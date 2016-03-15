@@ -17,61 +17,49 @@
 
 cmake_minimum_required(VERSION 2.8.12)
 
-# Get GIT version strings
+# Q4Wine gui sources
+set(Q4WINE_CLI_HEADERS_DIR
+    ${CMAKE_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/src/cli
+    )
+
+set(Q4WINE_CLI_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/cli/main.cpp
+    )
+
+add_executable(q4wine-cli
+    ${Q4WINE_CLI_SOURCES}
+    ${Q4WINE_CLI_HEADERS}
+    )
+
+# cpplint target
 add_custom_target (
-    get_version
-    DEPENDS ${CMAKE_SOURCE_DIR}/src/version.h
+    cpplint_cli
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
 
 add_custom_command (
-    OUTPUT ${CMAKE_SOURCE_DIR}/src/version.h
-    COMMAND ${CMAKE_COMMAND}
-    -D SRC=${CMAKE_SOURCE_DIR}/src/version.h.in
-    -D DST=${CMAKE_SOURCE_DIR}/src/version.h
-    -D RELEASE=${RELEASE}
-    -D GIT_EXECUTABLE=${GIT_EXECUTABLE}
-    -D APP_VERSION=${APP_VERSION}
-    -P ${CMAKE_SOURCE_DIR}/src/version.cmake
+    TARGET cpplint_cli
+    COMMAND ${PYTHON_EXECUTABLE}
+            ${CMAKE_SOURCE_DIR}/tools/cpplint.py
+            --extensions=hpp,cpp
+	    ${Q4WINE_CLI_SOURCES}
+	    ${Q4WINE_CLI_HEADERS}
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
 
-if(DOC)
-    # Doxygen target
-    add_custom_target (
-        docs ALL
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        )
+add_dependencies(q4wine-cli cpplint_cli)
+add_dependencies(q4wine-cli get_version)
 
-    add_custom_command (
-        TARGET docs
-        COMMAND ${DOXYGEN_EXECUTABLE}
-        Doxyfile
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        )
-endif(DOC)
+include_directories(${Q4WINE_CLI_HEADERS_DIR} ${CMAKE_BINARY_DIR})
 
-# Add project subdirs
-add_subdirectory(lib)
+target_link_libraries(q4wine-cli q4wine)
 
-if(QT)
-    add_subdirectory(qt)
-endif(QT)
-
-if(GTK)
-    add_subdirectory(gtk)
-endif(GTK)
-
-if(FLTK)
-    add_subdirectory(fltk)
-endif(FLTK)
-
-if(CLI)
-    add_subdirectory(cli)
-endif(CLI)
-
-if(CURSES)
-    add_subdirectory(curses)
-endif(CURSES)
+# Install targets
+if(RELEASE)
+    install(TARGETS q4wine-cli DESTINATION ${BIN_PREFIX})
+    install(FILES ${DESKTOP_GUI_ENTRY} DESTINATION ${DESKTOP_ENTRY_PATH})
+endif(RELEASE)
 
 # EOF

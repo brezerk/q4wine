@@ -18,49 +18,68 @@
 cmake_minimum_required(VERSION 2.8.12)
 
 # Q4Wine gui sources
-set(Q4WINE_GUI_HEADERS_DIR
+set(Q4WINE_QT_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/src/gui
+    ${CMAKE_SOURCE_DIR}/src/qt
     )
 
-set(Q4WINE_GUI_SOURCES
-    ${CMAKE_SOURCE_DIR}/src/gui/main.cpp
+set(Q4WINE_QT_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/qt/main.cpp
     )
 
-set(Q4WINE_GUI_MOC_HEADEDRS
+set(Q4WINE_QT_MOC_HEADEDRS
     ""
     )
 
-set(Q4WINE_GUI_UI_SOURCES
+set(Q4WINE_QT_UI_SOURCES
     ""
     )
 
-set(Q4WINE_GUI_RESOURCE_SOURCES
+set(Q4WINE_QT_RESOURCE_SOURCES
     ""
     )
 
 # qt5_add_resources(RCC_SRCS ${Q4WINE_RESOURCE_SOURCES})
-qt5_wrap_ui(Q4WINE_GUI_UI_HEADERS ${Q4WINE_GUI_UI_SOURCES})
-qt5_wrap_cpp(Q4WINE_GUI_MOC_SOURCES ${Q4WINE_GUI_MOC_HEADEDRS})
+qt5_wrap_ui(Q4WINE_GUI_UI_HEADERS ${Q4WINE_QT_UI_SOURCES})
+qt5_wrap_cpp(Q4WINE_GUI_MOC_SOURCES ${Q4WINE_QT_MOC_HEADEDRS})
 
-add_executable(q4wine
-    ${Q4WINE_GUI_SOURCES}
-    ${Q4WINE_GUI_HEADERS}
-    ${Q4WINE_GUI_UI_HEADERS}
-    ${Q4WINE_GUI_MOC_SOURCES}
+add_executable(q4wine-qt
+    ${Q4WINE_QT_SOURCES}
+    ${Q4WINE_QT_HEADERS}
+    ${Q4WINE_QT_UI_HEADERS}
+    ${Q4WINE_QT_MOC_SOURCES}
     ${RCC_SRCS}
     ${QM_I18N}
     )
 
-add_dependencies(q4wine get_version)
+# cpplint target
+add_custom_target (
+    cpplint_qt
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    )
 
-include_directories(${Q4WINE_GUI_HEADERS_DIR} ${CMAKE_BINARY_DIR})
-qt5_use_modules(q4wine Core DBus Network Sql Widgets Xml)
+add_custom_command (
+    TARGET cpplint_qt
+    COMMAND ${PYTHON_EXECUTABLE}
+            ${CMAKE_SOURCE_DIR}/tools/cpplint.py
+            --extensions=hpp,cpp
+            ${Q4WINE_QT_SOURCES}
+            ${Q4WINE_QT_HEADERS}
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    )
+
+add_dependencies(q4wine-qt cpplint_qt)
+add_dependencies(q4wine-qt get_version)
+
+include_directories(${Q4WINE_QT_HEADERS_DIR} ${CMAKE_BINARY_DIR})
+qt5_use_modules(q4wine-qt Core DBus Network Sql Widgets Xml)
+
+target_link_libraries(q4wine-qt q4wine)
 
 # Install targets
 if(RELEASE)
-    install(TARGETS q4wine DESTINATION ${BIN_PREFIX})
+    install(TARGETS q4wine-qt DESTINATION ${BIN_PREFIX})
     install(FILES ${DESKTOP_GUI_ENTRY} DESTINATION ${DESKTOP_ENTRY_PATH})
 endif(RELEASE)
 

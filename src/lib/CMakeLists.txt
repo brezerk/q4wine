@@ -18,10 +18,10 @@
 cmake_minimum_required(VERSION 2.8.12)
 
 # Set the library versions
-set(LIB_VERSION_MAJOR 1)
+set(LIB_VERSION_MAJOR 2)
 set(LIB_VERSION_MINOR 0)
 set(LIB_VERSION_PATCH 0)
-set(LIB_API_VERSION ${LIBQTWINE_VERSION_MAJOR})
+set(LIB_API_VERSION ${LIB_VERSION_MAJOR})
 set(LIB_VERSION
     ${LIB_VERSION_MAJOR}.${LIB_VERSION_MINOR}.${LIB_VERSION_PATCH}
     )
@@ -70,25 +70,27 @@ add_custom_command (
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
 
-add_library(libq4wine SHARED ${Q4WINE_LIB_SOURCES} ${Q4WINE_LIB_HEADERS})
-add_dependencies(libq4wine cpplint_lib)
+add_library(q4wine SHARED ${Q4WINE_LIB_SOURCES} ${Q4WINE_LIB_HEADERS})
+add_dependencies(q4wine cpplint_lib)
 
 if (NOT RELEASE)
     add_subdirectory(test)
 endif (NOT RELEASE)
 
-set_target_properties(libq4wine
+set_target_properties(q4wine
     PROPERTIES
-    VERSION ${LIBQTWINE_VERSION}
-    SOVERSION ${LIBQTWINE_API_VERSION}
-    OUTPUT_NAME libq4wine
+    VERSION ${LIB_VERSION}
+    SOVERSION ${LIB_API_VERSION}
     )
 
-#qt5_use_modules(libq4wine Core Network Sql)
+target_link_libraries(q4wine
+    ${SQLITE3_LIBRARIES}
+    )
 
 # Install targets
 if(RELEASE)
-    install(TARGETS libq4wine DESTINATION ${LIB_PREFIX})
+    install(TARGETS q4wine DESTINATION ${LIB_PREFIX})
+    #FIXME: Install headers too
 endif(RELEASE)
 
 # EOF
