@@ -18,64 +18,61 @@
 cmake_minimum_required(VERSION 2.8.12)
 
 # Q4Wine gui sources
-set(Q4WINE_FLTK_HEADERS_DIR
+set(Q4WINE_EFL_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/src/fltk
+    ${CMAKE_SOURCE_DIR}/src/efl
     )
 
-set(Q4WINE_FLTK_SOURCES
-    ${CMAKE_SOURCE_DIR}/src/fltk/main.cpp
+set(Q4WINE_EFL_SOURCES
+    ${CMAKE_SOURCE_DIR}/src/efl/main.cpp
     )
 
-set(Q4WINE_FLTK_UI_SOURCES
-    ${CMAKE_SOURCE_DIR}/src/fltk/ui.fl
-    )
-
-fltk_wrap_ui(Ui ${Q4WINE_FLTK_UI_SOURCES})
-# add_library(Ui callbacks.cxx ${Q4WINE_FLTK_SOURCES})
-
-add_executable(q4wine-fltk
-	${Q4WINE_FLTK_SOURCES}
-	${Q4WINE_FLTK_HEADERS}
+add_executable(q4wine-efl
+        ${Q4WINE_EFL_SOURCES}
+        ${Q4WINE_EFL_HEADERS}
     )
 
 # cpplint target
 add_custom_target (
-    cpplint_fltk
+    cpplint_efl
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
 
 add_custom_command (
-    TARGET cpplint_fltk
+    TARGET cpplint_efl
     COMMAND ${PYTHON_EXECUTABLE}
             ${CMAKE_SOURCE_DIR}/tools/cpplint.py
             --extensions=hpp,cpp
-	    ${Q4WINE_FLTK_SOURCES}
-	    ${Q4WINE_FLTK_HEADERS}
+            ${Q4WINE_EFL_SOURCES}
+            ${Q4WINE_EFL_HEADERS}
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
 
-add_dependencies(q4wine-fltk cpplint_qt)
-add_dependencies(q4wine-fltk get_version)
+add_dependencies(q4wine-efl cpplint_qt)
+add_dependencies(q4wine-efl get_version)
 #add_dependencies(q4wine-fltk Ui)
 
 include_directories(
-    ${Q4WINE_FLTK_HEADERS_DIR}
+    ${Q4WINE_EFL_HEADERS_DIR}
     ${CMAKE_BINARY_DIR}
-    ${FLTK_INCLUDE_DIR}
+    ${EINA_CXX_INCLUDE_DIRS}
+    ${EFL_CXX_INCLUDE_DIRS}
+    ${ECORE_CXX_INCLUDE_DIRS}
+    ${ELEMENTARY_CXX_INCLUDE_DIRS}
     )
 
-target_link_libraries(q4wine-fltk
+target_link_libraries(q4wine-efl
     q4wine
 #    Ui
-    ${FLTK_LIBRARIES}
-    ${OPENGL_LIBRARIES}
+    ${ECORE_CXX_LIBRARIES}
+    ${EFL_CXX_LIBRARIES}
+    ${ELEMENTARY_CXX_LIBRARIES}
     )
 
 # Install targets
 if(RELEASE)
-    install(TARGETS q4wine-fltk DESTINATION ${BIN_PREFIX})
+    install(TARGETS q4wine-efl DESTINATION ${BIN_PREFIX})
     install(FILES ${DESKTOP_GUI_ENTRY} DESTINATION ${DESKTOP_ENTRY_PATH})
 endif(RELEASE)
 

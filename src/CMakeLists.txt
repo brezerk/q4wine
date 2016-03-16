@@ -62,9 +62,9 @@ if(GTK)
     add_subdirectory(gtk)
 endif(GTK)
 
-if(FLTK)
-    add_subdirectory(fltk)
-endif(FLTK)
+if(EFL)
+    add_subdirectory(efl)
+endif(EFL)
 
 if(CLI)
     add_subdirectory(cli)
