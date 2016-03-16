@@ -65,9 +65,11 @@ class WinePrefix : public DBObject {
     WinePrefix();
     /*! Constructs an WinePreifx object.
      *
-     * \param name Is user defined name, should be unique. See also: #setName #getName
+     * \param name Is user defined name, should be unique.
+     * See also: #setName #getName
      *
-     * \param path The name of the directory where Wine will store its data. See also: #setPath #getPath
+     * \param path The name of the directory where Wine will store its data.
+     * See also: #setPath #getPath
      *
      * \param arch Is the architecture supported by a given Wine prefix. It
      * is set at prefix creation time and cannot be changed afterwards without
@@ -75,6 +77,7 @@ class WinePrefix : public DBObject {
      * See also: #setArch #getArch
      *
      * \param version An WineVersion instance.
+     * See alse: #setVersion #getVersion
      *
      * \param mountPoint An mount point directory where Disk images or
      * CD/DVD drives will be mounted by user request.
@@ -103,15 +106,15 @@ class WinePrefix : public DBObject {
     ~WinePrefix();
 
     /*!
-     * \brief save Object into DB
-     * \return true on success
+     * \brief Object into DB.
+     * \return True on success.
      */
     virtual bool save(void);
 
     /*!
-     * \brief getInstance Create WinePrefix object from DB by version.id
-     * \param id Record id
-     * \return WinePrefix object or NULL of not found.
+     * \brief Create WinePrefix object from DB by version.id.
+     * \param id Record id.
+     * \return WinePrefix object or NULL if not found.
      */
     static WinePrefix* getInstance(intptr_t id);
 
@@ -129,12 +132,12 @@ class WinePrefix : public DBObject {
      */
     std::string getEnvVariables(const WineApplication *wineApp);
 
-    /*! Construct execution string from temaplteString using WineAppliction
+    /*! Constructs execution string from temaplteString using WineAppliction
      * data.
      *
-     * \param wineApp An reference to WineApplication instace;
+     * \param wineApp An reference to WineApplication instace.
      *
-     * \return Execution string
+     * \return Execution string.
      */
     std::string getExecutionString(const WineApplication* wineApp);
 

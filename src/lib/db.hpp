@@ -35,98 +35,135 @@
 namespace q4wine {
 namespace lib {
 
+/*!
+ * \brief A map that represents SQL result.
+ * The key is row name, the value is row value.
+ * \note In case if SQL return no results, the map will be empty.
+ */
 typedef std::map<std::string, std::string> result;
 typedef std::pair<std::string, std::string> result_p;
+/*!
+ * \brief An a vector of resuls.
+ * \note In case if SQL return no results, the vector will be empty.
+ * \sa result
+ */
 typedef std::vector<result> rows;
 
 /*! \class DBEngine db.hpp <q4wine/src/lib/db.hpp>
- * \brief SQLite3 engine
+ * \brief q4wine's SQLite3 engine warper.
+ * This class provides basic common SQL workflow, like making SQL queries,
+ * retrieving and inserting data.
  *
  * \author Alexey S. Malakhov <brezerk@gmail.com>
  */
 class DBEngine {
  public:
      /**
-     * \brief getInstance
+     * \brief Return instance of DBEngine object.
      * Check current instance. If it is NULL
-     * then create new one.
+     * then create a new one.
      * Otherwise return existing one.
      *
-     * \return instance of DBEngine
+     * \return instance of DBEngine.
      */
     static DBEngine* getInstance();
 
     /*!
-     * \brief open Open SQLite database
-     * \param name A database file name
-     * \return true on success
+     * \brief Open SQLite database.
+     * \param name A URI file name. The path component of the URI specifies
+     * the disk file that is the SQLite database to be opened. If the path
+     * component is omitted, then the database is stored in a temporary
+     * file that will be automatically deleted when the database
+     * connection closes.
+     * \return True on success
      */
     bool open(std::string name);
 
     /*!
-     * \brief init Itialize empty database
-     * \return true on success.
+     * \brief Itialize database.
+     * Create tables and default bootsrap data on first startup.
+     * \return True on success.
      */
     bool init(void);
 
     /*!
-     * \brief exec Execute raw SQL statement.
+     * \brief Execute raw SQL statement.
      * Use this fuction to call raw SQL statements.
-     * If you need to bind values, use overloaded function @sa exec
-     * \param sql_s raw SQL string
-     * \return true on success.
+     * If you need to bind values, use overloaded function \sa exec
+     * \param sql_s Raw SQL string
+     * \return True on success.
      */
     bool exec(const std::string& sql_s) const;
 
     /*!
-     * \brief exec Prepare and execute SQL statement with provided arguments.
-     * \param sql_s raw SQL string
-     * \param args a list of values to bound
-     * \return true on success.
+     * \brief Prepare and execute SQL statement with provided arguments.
+     * \param sql_s Raw SQL string.
+     * \param args A list of values to bound.
+     * \return True on success.
      */
     bool exec(const std::string& sql_s,
               const std::initializer_list<std::string>& args) const;
 
     /*!
-     * \brief select Execute raw SQL statement and return the result
-     * \param sql_s raw SQL string
-     * \return return a map of rows
+     * \brief Execute raw SQL statement and return the result.
+     * \param sql_s Raw SQL string.
+     * \return Return a map of rows \sa rows.
      */
     rows select(const std::string& sql_s) const;
+
+    /*!
+     * \brief Prepare and execute SQL statement with provided arguments
+     * and return the result.
+     * \param sql_s Raw SQL string.
+     * \param args A list of values to bound.
+     * \return A map of rows \sa rows.
+     */
     rows select(const std::string& sql_s,
                 const std::initializer_list<std::string>& args) const;
 
     /*!
-     * \brief select Execute raw SQL statement and return the result
-     * \param sql_s raw SQL string
-     * \return return single result
+     * \brief select Execute raw SQL statement and return the single result
+     * \note You don't need to specify SQL LIMIT command, this function will
+     * add it by default.
+     * \param sql_s Raw SQL string.
+     * \return Return single result \sa result.
      */
     result select_one(const std::string& sql_s) const;
+
+    /*!
+     * \brief Prepare and execute SQL statement with provided arguments
+     * and return the single result.
+     * \note You don't need to specify SQL LIMIT command, this function will
+     * add it by default.
+     * \param sql_s Raw SQL string.
+     * \param args A list of values to bound.
+     * \return Return single result \sa result.
+     */
     result select_one(const std::string& sql_s,
                 const std::initializer_list<std::string>& args) const;
 
     /*!
-     * \brief get_id Get last insert rowid
-     * \return rowid
+     * \brief Get last insert rowid.
+     * \return Row id
      */
     intptr_t get_id(void) const;
 
     /*!
-     * \brief is_open
-     * \return true if db is open
+     * \brief Check if database already open.
+     * \return True if db is open.
      */
     bool is_open(void) const;
 
     /*!
-     * \brief close database
-     * Close database. Call this on app shutdown.
+     * \brief Close database.
+     * Call this on app shutdown.
      */
     void close(void) const;
 
  protected:
      /*! Disable copy */
     DBEngine(DBEngine const&) = delete;
-    /*! Disable copy on =*/
+    /*! Disable copy on = */
     DBEngine& operator=(DBEngine const&) = delete;
     /*! Constructs an DBObject object.*/
     DBEngine();
@@ -137,6 +174,13 @@ class DBEngine {
     static DBEngine* DBEngine_instance;
 
  private:
+    /*!
+     * \brief Bind arguments to the sqlite prepared query.
+     * \param stmt Sqlite prepared query.
+     * \param sql_s Raw SQL string. Used for error reporting.
+     * \param args A list of values to bound.
+     * \return True on success.
+     */
     bool bind_args(sqlite3_stmt *stmt,
                    const std::string& sql_s,
                    const std::initializer_list<std::string>& args) const;

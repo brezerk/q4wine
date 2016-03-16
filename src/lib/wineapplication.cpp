@@ -245,7 +245,7 @@ void WineApplication::setVirtualDesktop(std::string virtualDesktop) {
     virtualDesktop_ = virtualDesktop;
 }
 
-void WineApplication::setLand(std::string lang) {
+void WineApplication::setLang(std::string lang) {
     lang_ = lang;
 }
 

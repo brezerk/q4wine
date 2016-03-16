@@ -54,6 +54,7 @@ class DBObject {
     virtual bool save(void) = 0;
 
     void setId(intptr_t id);
+
     intptr_t getId(void) const;
 
  protected:

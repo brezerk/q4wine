@@ -55,6 +55,7 @@ class WineVersion : public DBObject {
     /*! Constructs an WineVersion object.
      *
      * \param name User defined name.
+     * See alse: #setName #getName
      *
      * \param binary The general wine binary. Defaults to /usr/bin/wine if not
      * set and if this doesn't exist we will then look for a file named "wine"
@@ -100,15 +101,15 @@ class WineVersion : public DBObject {
     ~WineVersion();
 
     /*!
-     * \brief save Object into DB
-     * \return true on success
+     * \brief Object into DB.
+     * \return True on success.
      */
     virtual bool save(void);
 
     /*!
-     * \brief getInstance Create WineVersion object from DB by version.id
-     * \param id Record id
-     * \return WineVersion object or NULL of not found.
+     * \brief Create WineVersion object from DB by version.id.
+     * \param id Record id.
+     * \return WineVersion object or NULL if not found.
      */
     static WineVersion* getInstance(intptr_t id);
 
@@ -120,9 +121,9 @@ class WineVersion : public DBObject {
      * WINELOADER='/usr/bin/wine'
      * WINEDLLPATH='/usr/lib64/wine/'
      *
-     * \param arch Desired Wine Arch \see WinePrefix
+     * \param arch Desired Wine Arch \see WinePrefix.
      *
-     * \return Formatted env variables
+     * \return Formatted env variables.
     */
     const std::string getEnvVariables(const std::string arch) const;
 

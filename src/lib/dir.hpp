@@ -47,12 +47,12 @@ class Dir : public DBObject {
      * \param prefixId The associated row id for WinePrefix object.
      * If it set to 0, then the object is not associated with any
      * database record.
-     * See also: setPrefixId getPrefixId
+     * See also: #setPrefixId #getPrefixId
      *
      * \param dirId The associated row id for  WineApplication object.
      * If it set to 0, then the object is not associated with any
      * database record.
-     * See also: setDirId getDirId
+     * See also: #setDirId #getDirId
      *
      * \param id The associated row id. If it set to 0, then the object
      * is not associated with any database record.
@@ -66,15 +66,15 @@ class Dir : public DBObject {
     ~Dir();
 
     /*!
-     * \brief save Object into DB
-     * \return true on success
+     * \brief Save Object into DB
+     * \return True on success
      */
     virtual bool save(void);
 
     /*!
-     * \brief getInstance Create Dir object from DB by version.id
-     * \param id Record id
-     * \return Dir object or NULL of not found.
+     * \brief Create Dir object from DB by version.id.
+     * \param id Record id.
+     * \return Dir object or NULL if not found.
      */
     static Dir* getInstance(intptr_t id);
 

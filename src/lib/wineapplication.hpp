@@ -70,6 +70,7 @@ class WineApplication : public DBObject {
      * See also: #setPath #getPath
      *
      * \param args The programm arguments.
+     * See alse: #setArgs #getArgs
      *
      * \param workDirectory The name of the directory where app store its
      * data. See also: #setWorkDirectory #setWorkDirectory
@@ -102,6 +103,7 @@ class WineApplication : public DBObject {
      *
      * \param wineDebug Turns debugging messages on or off. The syntax of the
      * variable is of the form [class][+|-]channel[,[class2][+|-]channel2]
+     * See also: #setWineDebug #getWineDebug
      *
      * This optin will be converted
      * into env variable WINEDEBUG during application execution.
@@ -114,6 +116,7 @@ class WineApplication : public DBObject {
      *
      * \param lang The lanvuage to use. Usefill if app requre language differ
      * then the system one.
+     * See also: #setLang #getLang
      *
      * \param useTerminal If set, then application will be executed using
      * user-defined terminal application instead of q4wine-helper.
@@ -136,12 +139,12 @@ class WineApplication : public DBObject {
      * \param prefixId The associated row id for WinePrefix object.
      * If it set to 0, then the object is not associated with any
      * database record.
-     * See also: setPrefixId getPrefixId
+     * See also: #setPrefixId #getPrefixId
      *
      * \param dirId The associated row id for  WineApplication object.
      * If it set to 0, then the object is not associated with any
      * database record.
-     * See also: setDirId getDirId
+     * See also: #setDirId #getDirId
      *
      * \param id The associated row id. If it set to 0, then the object
      * is not associated with any database record.
@@ -171,14 +174,14 @@ class WineApplication : public DBObject {
     virtual bool save(void);
 
     /*!
-     * \brief getInstance Create WineApplication object from DB by version.id
-     * \param id Record id
-     * \return WineApplication object or NULL of not found.
+     * \brief Create WineApplication object from DB by version.id.
+     * \param id Record id.
+     * \return WineApplication object or NULL if not found.
      */
     static WineApplication* getInstance(intptr_t id);
 
     /*!
-     * \brief getNiceCmd Construct nice command
+     * \brief Construct nice command.
      * \return Nice command if priority_ !=0. Empty string otherwice.
      */
     const std::string getNiceCmd(void) const;
@@ -192,7 +195,7 @@ class WineApplication : public DBObject {
      * WINEDLLOVERRIDES='comdlg32,shell32=n;c:\\foo\\bar\\baz=b'
      * WINEDEBUG='fixme-all,warn+cursor,+relay'
      *
-     * \return Formatted env variables
+     * \return Formatted env variables.
      */
     const std::string getEnvVariables() const;
 
@@ -205,7 +208,7 @@ class WineApplication : public DBObject {
     void setOverrideDlls(std::string overrideDlls);
     void setWineDebug(std::string wineDebug);
     void setVirtualDesktop(std::string virtualDesktop);
-    void setLand(std::string lang);
+    void setLang(std::string lang);
     void setUseTerminal(bool useTerminal);
     void setDisplay(std::string display);
     void setPriority(intptr_t priority);
