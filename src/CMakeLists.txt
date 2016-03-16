@@ -36,7 +36,7 @@ add_custom_command (
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
 
-if(DOC)
+if(INSTALL_DOC)
     # Doxygen target
     add_custom_target (
         docs ALL
@@ -49,29 +49,29 @@ if(DOC)
         Doxyfile
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
         )
-endif(DOC)
+endif(INSTALL_DOC)
 
 # Add project subdirs
 add_subdirectory(lib)
 
-if(QT)
+if(ENABLE_QT)
     add_subdirectory(qt)
-endif(QT)
+endif(ENABLE_QT)
 
-if(GTK)
+if(ENABLE_GTK)
     add_subdirectory(gtk)
-endif(GTK)
+endif(ENABLE_GTK)
 
-if(EFL)
+if(ENABLE_EFL)
     add_subdirectory(efl)
-endif(EFL)
+endif(ENABLE_EFL)
 
-if(CLI)
+if(ENABLE_CLI)
     add_subdirectory(cli)
-endif(CLI)
+endif(ENABLE_CLI)
 
-if(CURSES)
+if(ENABLE_CURSES)
     add_subdirectory(curses)
-endif(CURSES)
+endif(ENABLE_CURSES)
 
 # EOF

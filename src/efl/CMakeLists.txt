@@ -49,7 +49,7 @@ add_custom_command (
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     )
 
-add_dependencies(q4wine-efl cpplint_qt)
+add_dependencies(q4wine-efl cpplint_efl)
 add_dependencies(q4wine-efl get_version)
 #add_dependencies(q4wine-fltk Ui)
 
@@ -68,6 +68,11 @@ target_link_libraries(q4wine-efl
     ${ECORE_CXX_LIBRARIES}
     ${EFL_CXX_LIBRARIES}
     ${ELEMENTARY_CXX_LIBRARIES}
+    )
+
+# EFL has poor-quality code, disable error on compiler warnings:
+set(CMAKE_CXX_FLAGS
+    "${CMAKE_CXX_FLAGS} -Wno-error"
     )
 
 # Install targets

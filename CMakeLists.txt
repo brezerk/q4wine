@@ -39,14 +39,16 @@ include(CheckCXXCompilerFlag)
 
 # Build options
 option(RELEASE		"Disable debug. Use it for user-ready buils."		"OFF")
-option(DOC              "Generate source documentation"                         "OFF")
 option(LANGUAGES	"Compile localization files for specified languages."	""   )
 option(DYNAMIC_LINKING	"Use dynamic linking. Or build static binaries."	"ON" )
-option(QT               "Build Qt5 GUI."                                        "OFF")
-option(EFL              "Build EFL GUI."                                        "OFF")
-option(GTK              "Build GTK GUI."                                        "OFF")
-option(CLI              "Build simple cli interface."                           "OFF")
-option(CURSES           "Build Curses GUI."                                     "OFF")
+option(ENABLE_QT        "Build Qt5 graphical interafe."                         "OFF")
+option(ENABLE_EFL       "Build EFL graphical interafe."                         "OFF")
+option(ENABLE_GTK       "Build GTK+ graphical interafe."                        "OFF")
+option(ENABLE_CLI       "Build simple command-line interface."                  "ON" )
+option(ENABLE_CURSES    "Build Curses GUI."                                     "OFF")
+option(ENABLE_TESTS     "Build unit tests."                                     "OFF")
+option(INSTALL_DOC      "Build/install documentation."                          "ON" )
+option(INSTALL_LIB      "Install the library and headers."                      "OFF")
 
 # Banner
 if(RELEASE)
@@ -55,7 +57,7 @@ if(RELEASE)
     message(" * http://brezblock.org.ua/\n")
 else(RELEASE)
     # Force doc in dev mode
-    set(DOC "ON")
+    set(INSTALL_DOC "ON")
 endif(RELEASE)
 
 message(STATUS "${PROJECT_NAME} build environment --\n")
@@ -159,15 +161,15 @@ if(RELEASE)
 else(RELEASE)
     set(CMAKE_BUILD_TYPE DEBUG)
     #Set error tolerance to zero
-    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wextra -Wall")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wextra -Wall")
     #Some extra (-Wshadow)
-    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
     #And more extra
-    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wstrict-aliasing -Wstrict-overflow")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wstrict-aliasing -Wstrict-overflow")
     #And even more
     check_cxx_compiler_flag (-pedantic HAVE_PEDANTIC_FLAG)
     if(HAVE_PEDANTIC_FLAG)
-    #    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic")
     endif(HAVE_PEDANTIC_FLAG)
     set(CMAKE_VERBOSE_MAKEFILE ON)
     message(STATUS
@@ -221,11 +223,11 @@ message(STATUS "RELEASE                 : ${RELEASE}\n")
 
 message(STATUS "LANGUAGES               : ${LANGUAGES}\n")
 
-message(STATUS "QT                      : ${QT}")
-message(STATUS "EFL                     : ${EFL}")
-message(STATUS "GTK                     : ${GTK}")
-message(STATUS "CLI                     : ${CLI}")
-message(STATUS "CURSES                  : ${CURSES}\n")
+message(STATUS "ENABLE_QT               : ${ENABLE_QT}")
+message(STATUS "ENABLE_EFL              : ${ENABLE_EFL}")
+message(STATUS "ENABLE_GTK              : ${ENABLE_GTK}")
+message(STATUS "ENABLE_CLI              : ${ENABLE_CLI}")
+message(STATUS "ENABLE_CURSES           : ${ENABLE_CURSES}\n")
 
 message(STATUS "See INSTALL file for details and more info --\n")
 
@@ -251,7 +253,7 @@ endif(RELESE)
 
 find_package(SQLite3 REQUIRED)
 
-if(QT)
+if(ENABLE_QT)
     set(QT_MIN_VERSION "5.2.1")
     find_package(Qt5Core REQUIRED)
     find_package(Qt5LinguistTools REQUIRED)
@@ -268,26 +270,26 @@ if(QT)
             "Qt Core libs not found. Please install Qt ${QT_MIN_VERSION}."
             )
     endif(Qt5Core_FOUND)
-endif(QT)
+endif(ENABLE_QT)
 
-if(EFL)
+if(ENABLE_EFL)
     find_package(PkgConfig REQUIRED)
     pkg_check_modules(EFL_CXX REQUIRED efl-cxx)
     pkg_check_modules(ECORE_CXX REQUIRED ecore-cxx)
     pkg_check_modules(EINA_CXX REQUIRED eina-cxx)
     pkg_check_modules(ELEMENTARY_CXX REQUIRED elementary-cxx)
-endif(EFL)
+endif(ENABLE_EFL)
 
-if(GTK)
+if(ENABLE_GTK)
     find_package(PkgConfig REQUIRED)
     pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
-endif(GTK)
+endif(ENABLE_GTK)
 
-if(CURSES)
+if(ENABLE_CURSES)
     set(CURSES_NEED_NCURSES TRUE)
     set(CURSES_NEED_WIDE TRUE)
     find_package(Curses REQUIRED)
-endif(CURSES)
+endif(ENABLE_CURSES)
 
 # Add project subdirs
 add_subdirectory(src)

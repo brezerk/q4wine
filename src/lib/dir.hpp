@@ -44,6 +44,16 @@ class Dir : public DBObject {
      *
      * \param name User defined name.
      *
+     * \param prefixId The associated row id for WinePrefix object.
+     * If it set to 0, then the object is not associated with any
+     * database record.
+     * See also: setPrefixId getPrefixId
+     *
+     * \param dirId The associated row id for  WineApplication object.
+     * If it set to 0, then the object is not associated with any
+     * database record.
+     * See also: setDirId getDirId
+     *
      * \param id The associated row id. If it set to 0, then the object
      * is not associated with any database record.
      * See also: DBObject#setId DBObject#getId
