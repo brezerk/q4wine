@@ -38,7 +38,7 @@ set(Q4WINE_QT_MOC_HEADEDRS
     )
 
 set(Q4WINE_QT_UI_SOURCES
-    ${CMAKE_SOURCE_DIR}/src/qt/ui/mainwindow.ui
+#    ${CMAKE_SOURCE_DIR}/src/qt/ui/mainwindow.ui
     )
 
 set(Q4WINE_QT_RESOURCE_SOURCES
