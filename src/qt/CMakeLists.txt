@@ -24,16 +24,21 @@ set(Q4WINE_QT_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}/src/qt
     )
 
+set(Q4WINE_QT_HEADEDRS
+    ${CMAKE_SOURCE_DIR}/src/qt/mainwindow.hpp
+    )
+
 set(Q4WINE_QT_SOURCES
     ${CMAKE_SOURCE_DIR}/src/qt/main.cpp
+    ${CMAKE_SOURCE_DIR}/src/qt/mainwindow.cpp
     )
 
 set(Q4WINE_QT_MOC_HEADEDRS
-    ""
+    ${CMAKE_SOURCE_DIR}/src/qt/mainwindow.hpp
     )
 
 set(Q4WINE_QT_UI_SOURCES
-    ""
+    ${CMAKE_SOURCE_DIR}/src/qt/ui/mainwindow.ui
     )
 
 set(Q4WINE_QT_RESOURCE_SOURCES
@@ -41,8 +46,8 @@ set(Q4WINE_QT_RESOURCE_SOURCES
     )
 
 # qt5_add_resources(RCC_SRCS ${Q4WINE_RESOURCE_SOURCES})
-qt5_wrap_ui(Q4WINE_GUI_UI_HEADERS ${Q4WINE_QT_UI_SOURCES})
-qt5_wrap_cpp(Q4WINE_GUI_MOC_SOURCES ${Q4WINE_QT_MOC_HEADEDRS})
+qt5_wrap_ui(Q4WINE_QT_UI_HEADERS ${Q4WINE_QT_UI_SOURCES})
+qt5_wrap_cpp(Q4WINE_QT_MOC_SOURCES ${Q4WINE_QT_MOC_HEADEDRS})
 
 add_executable(q4wine-qt
     ${Q4WINE_QT_SOURCES}

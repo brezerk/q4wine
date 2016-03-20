@@ -16,48 +16,46 @@
  *                                                                         *
  ***************************************************************************/
 
+#pragma once
+
 #include <QApplication>
-#include <QCommandLineParser>
-#include <QCommandLineOption>
+#include <QDesktopWidget>
+#include <QWidget>
+#include <QMainWindow>
+#include <QSettings>
+#include <QAction>
+#include <QMenu>
+#include <QMenuBar>
+#include <QStatusBar>
+#include <QToolBar>
+#include <QVBoxLayout>
+#include <QTabBar>
 
-#include "src/version.h"
-#include "src/qt/mainwindow.hpp"
-
-#include "lib/db.hpp"
-
-int main(int argc, char **argv) {
-    //  Q_INIT_RESOURCE(application);
-
-    QApplication app(argc, argv);
-
-    QCoreApplication::setOrganizationName("brezblock");
-    QCoreApplication::setOrganizationDomain("brezblock.org.ua");
-
-    QCoreApplication::setApplicationName("q4wine-qt");
-    QCoreApplication::setApplicationVersion(VERSION);
-
-    QCommandLineParser parser;
-    parser.setApplicationDescription(QCoreApplication::applicationName());
-    parser.addHelpOption();
-    parser.addVersionOption();
-
-    parser.addOptions({
-        {{"b", "binary"},
-            QCoreApplication::tr("The Windows <binary> file to open."),
-            QCoreApplication::tr("binary")},
-        {{"m", "minimize"},
-            QCoreApplication::tr("Minimize window on startup.")},
-    });
-
-    parser.process(app);
-
-    MainWindow main_w;
-    main_w.show();
-
-    q4wine::lib::DBEngine* db =
-            q4wine::lib::DBEngine::getInstance();
-    db->open(":memory:");
-
-    return app.exec();
+namespace Ui {
+class MainWindow;
 }
 
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+ public:
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
+
+ private:
+    void createActions();
+    void createStatusBar();
+    void createWidgets();
+    void readSettings();
+    void writeSettings();
+    /*!
+     * \brief Get QIcon from them or resource file.
+     * Returns the QIcon corresponding to name in the current icon theme.
+     * If no such icon is found in the current theme icon from resource file
+     * returned instead.
+     * \param Name of the icon.
+     * \return QIcon instance.
+     */
+    const QIcon getIcon(QString name) const;
+};

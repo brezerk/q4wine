@@ -25,8 +25,8 @@ set(APP_VERSION "2.0")
 #set(CTEST_OUTPUT_ON_FAILURE ON)
 add_custom_target(tests COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure)
 
-# Execute moc if needed
-set(CMAKE_AUTOMOC ON)
+# Do not do stuff automatically :)
+set(CMAKE_AUTOMOC OFF)
 
 # Modules path
 set(CMAKE_MODULE_PATH
