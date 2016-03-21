@@ -107,14 +107,14 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
 
     iconsFrameWidget->setLayout(layout.release());
 
-
     splitter.reset(new QSplitter(this));
     splitter->addWidget(treeFrameWidget.release());
     splitter->addWidget(iconsFrameWidget.release());
 
     infoName.reset(new QLabel(QString("%1:\n\%2:").arg(tr("Name")).arg(tr("Description")), this));
-    infoName->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+    infoName->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
     infoName->setTextInteractionFlags(Qt::TextSelectableByMouse);
+    infoName->setWordWrap(true);
     std::auto_ptr<QFrame> frame(new QFrame(this));
 
     layout.reset(new QVBoxLayout(this));
@@ -123,7 +123,7 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
     layout->addWidget(infoName.get());
 
     frame->setLayout(layout.release());
-    frame->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+    frame->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
     infoName->setFrameStyle(QFrame::Raised);
     infoName->setFrameShape(QFrame::StyledPanel);
 
