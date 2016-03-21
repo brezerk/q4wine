@@ -109,7 +109,7 @@ void MainWindow::createActions() {
 
     act = helpMenu->addAction(getIcon("help-about"),
                               tr("&About Qt"));
-    act->setStatusTip(tr("Show logs tab."));
+    act->setStatusTip(tr("About Qt."));
     connect(act, &QAction::triggered, this, &QApplication::aboutQt);
     helpMenu->addAction(act);
 
