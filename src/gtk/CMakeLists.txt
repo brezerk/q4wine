@@ -24,8 +24,13 @@ set(Q4WINE_GTK_HEADERS_DIR
     ${CMAKE_SOURCE_DIR}/src/gtk
     )
 
+set(Q4WINE_GTK_HEADERS
+    ${CMAKE_SOURCE_DIR}/src/gtk/mainwindow.hpp
+    )
+
 set(Q4WINE_GTK_SOURCES
     ${CMAKE_SOURCE_DIR}/src/gtk/main.cpp
+    ${CMAKE_SOURCE_DIR}/src/gtk/mainwindow.cpp
     )
 
 add_executable(q4wine-gtk
@@ -65,6 +70,7 @@ include_directories(
 
 target_link_libraries(q4wine-gtk q4wine ${GTKMM_LIBRARIES})
 add_definitions(${GTKMM_CFLAGS_OTHER})
+add_definitions(-DCMAKE_SOURCE_DIR="${CMAKE_SOURCE_DIR}")
 
 # Install targets
 if(RELEASE)

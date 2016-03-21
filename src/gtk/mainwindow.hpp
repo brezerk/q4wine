@@ -16,34 +16,23 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <gtkmm/application.h>
-#include <gtkmm/window.h>
-#include <gtkmm/button.h>
-#include <string>
+#pragma once
 
-#include "src/version.h"
+#include <gtkmm.h>
 
-#include "src/gtk/mainwindow.hpp"
+class MainWindow : public Gtk::Window {
+ public:
+    explicit MainWindow(BaseObjectType* cobject,
+                        const Glib::RefPtr<Gtk::Builder>& builder);
+    virtual ~MainWindow();
 
-#include "lib/db.hpp"
-
-int main(int argc, char *argv[]) {
-    q4wine::lib::DBEngine* db =
-            q4wine::lib::DBEngine::getInstance();
-    db->open(":memory:");
-
-    auto app = Gtk::Application::create(argc, argv,
-                                        "ua.org.brezblock.q4wine");
-
-    std::string glade_s = CMAKE_SOURCE_DIR;
-    glade_s += "/src/gtk/ui/mainwindow.glade";
-
-    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_file(
-          glade_s);
-
-    MainWindow *mainWindow = 0;
-    builder->get_widget_derived("mainWindow", mainWindow);
-
-    app->run(*mainWindow);
-    delete mainWindow;
-}
+ private:
+    // Signal handlers:
+    void on_action_file_run();
+    void on_action_file_quit();
+    void on_action_file_preferences();
+    void on_action_tool_desktop();
+ protected:
+    Glib::RefPtr<Gtk::Builder> builder_;
+    Gtk::Statusbar* statusBar_;
+};

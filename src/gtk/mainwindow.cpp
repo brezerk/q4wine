@@ -16,34 +16,38 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <gtkmm/application.h>
-#include <gtkmm/window.h>
-#include <gtkmm/button.h>
-#include <string>
-
-#include "src/version.h"
-
 #include "src/gtk/mainwindow.hpp"
+#include <gtkmm.h>
+#include <iostream>
 
-#include "lib/db.hpp"
+MainWindow::MainWindow(BaseObjectType* cobject,
+                       const Glib::RefPtr<Gtk::Builder>& builder) :
+    Gtk::Window(cobject), builder_(builder) {
+    Gtk::ImageMenuItem* act;
+    builder->get_widget("appStatusBar", statusBar_);
+    builder->get_widget("menuActionExit", act);
+    act->signal_activate().connect(
+                sigc::mem_fun(*this, &MainWindow::on_action_file_quit));
+    act = NULL;
 
-int main(int argc, char *argv[]) {
-    q4wine::lib::DBEngine* db =
-            q4wine::lib::DBEngine::getInstance();
-    db->open(":memory:");
+    statusBar_->push("Ready");
+}
 
-    auto app = Gtk::Application::create(argc, argv,
-                                        "ua.org.brezblock.q4wine");
+MainWindow::~MainWindow() {
+}
 
-    std::string glade_s = CMAKE_SOURCE_DIR;
-    glade_s += "/src/gtk/ui/mainwindow.glade";
+void MainWindow::on_action_file_quit() {
+    hide();  // Closes the main window to stop the app->run().
+}
 
-    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_file(
-          glade_s);
+void MainWindow::on_action_file_run() {
+    std::cout << "A Run menu item was selected." << std::endl;
+}
 
-    MainWindow *mainWindow = 0;
-    builder->get_widget_derived("mainWindow", mainWindow);
+void MainWindow::on_action_file_preferences() {
+    std::cout << "A menu item was selected." << std::endl;
+}
 
-    app->run(*mainWindow);
-    delete mainWindow;
+void MainWindow::on_action_tool_desktop() {
+    std::cout << "The toggle menu item was selected." << std::endl;
 }
