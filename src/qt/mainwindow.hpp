@@ -30,6 +30,11 @@
 #include <QToolBar>
 #include <QVBoxLayout>
 #include <QTabBar>
+#include <QSplitter>
+#include <QTreeWidget>
+#include <QListWidget>
+
+#include <memory>
 
 namespace Ui {
 class MainWindow;
@@ -48,6 +53,7 @@ class MainWindow : public QMainWindow
     void createStatusBar();
     void createWidgets();
     void readSettings();
+    QWidget* populateTabDesktop();
     void writeSettings();
     /*!
      * \brief Get QIcon from them or resource file.

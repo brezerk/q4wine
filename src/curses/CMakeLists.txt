@@ -54,7 +54,7 @@ add_dependencies(q4wine-curses get_version)
 
 include_directories(${Q4WINE_CURSES_HEADERS_DIR} ${CMAKE_BINARY_DIR} ${CURSES_INCLUDE_DIR})
 
-target_link_libraries(q4wine-curses q4wine ${CURSES_LIBRARIES})
+target_link_libraries(q4wine-curses q4wine ${CURSES_LIBRARIES} -lmenu)
 
 # Install targets
 if(RELEASE)

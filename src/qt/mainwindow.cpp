@@ -123,12 +123,14 @@ void MainWindow::createActions() {
 
 void MainWindow::createWidgets() {
     QTabWidget* tab = new QTabWidget(this);
-    QWidget* desktopWidget = new QWidget(tab);
+    //  QWidget* desktopWidget = new QWidget(tab);
     QWidget* processWidget = new QWidget(tab);
     QWidget* configureWidget = new QWidget(tab);
     QWidget* prefixpWidget = new QWidget(tab);
     QWidget* logWidget = new QWidget(tab);
-    tab->addTab(desktopWidget, getIcon("view-list-icons"), tr("&Desktop"));
+    tab->addTab(this->populateTabDesktop(),
+                getIcon("view-list-icons"),
+                tr("&Desktop"));
     tab->addTab(processWidget, getIcon("view-list-details"), tr("&Process"));
     tab->addTab(configureWidget, getIcon("tools-wizard"), tr("&Configuration"));
     tab->addTab(prefixpWidget, getIcon("configure"), tr("&Prefix"));
@@ -154,6 +156,15 @@ void MainWindow::readSettings() {
     } else {
         restoreGeometry(geometry);
     }
+}
+
+QWidget *MainWindow::populateTabDesktop() {
+    QTreeWidget* w_PrefixTree = new QTreeWidget();
+    QListWidget* w_IconList = new QListWidget();
+    QSplitter* splitter = new QSplitter();
+    splitter->addWidget(w_PrefixTree);
+    splitter->addWidget(w_IconList);
+    return splitter;
 }
 
 void MainWindow::writeSettings() {
