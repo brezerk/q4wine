@@ -5,6 +5,7 @@ Version 1.3.1
   - Allow to execute and create icons for *.bat and *.msi files [BUG-69];
   - Icon description is not exported into *.desktop file [BUG-69];
   - Winetrick's item description label doesn't wrap properly [BUG-71];
+  - Added Chinese (China) translation (thx 2 Mingye Wang and Mingcong Bai);
 
 Version 1.3
  Added:

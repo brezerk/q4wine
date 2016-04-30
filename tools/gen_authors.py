@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2.7
 #
 # Copyright (C) 2008-2016 by Alexey S. Malakhov <brezerk@gmail.com>
 #
