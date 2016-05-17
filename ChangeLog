@@ -6,6 +6,7 @@ Version 1.3.1
   - Icon description is not exported into *.desktop file [BUG-69];
   - Winetrick's item description label doesn't wrap properly [BUG-71];
   - Added Chinese (China) translation (thx 2 Mingye Wang and Mingcong Bai);
+  - Qt5: detailed view item selection duplicate [BUG-75];
 
 Version 1.3
  Added:

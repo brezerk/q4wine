@@ -138,7 +138,7 @@ void IconListWidget::changeView(int action){
             if (viewMode()==QListView::IconMode){
                 setGridSize(QSize(nSize+54, nSize+54));
             } else {
-                setGridSize(QSize(nSize, nSize));
+                setGridSize(QSize());
             }
         }
     } else if (action==3){
@@ -148,7 +148,7 @@ void IconListWidget::changeView(int action){
             if (viewMode()==QListView::IconMode){
                 setGridSize(QSize(nSize+54, nSize+54));
             } else {
-                setGridSize(QSize(nSize, nSize));
+                setGridSize(QSize());
             }
         }
     } else if (action==4){
@@ -180,7 +180,7 @@ void IconListWidget::setDisplayType(int type){
         setWordWrap(true);
     } else {
         setViewMode(QListView::ListMode);
-        setGridSize(QSize(nSize, nSize));
+        setGridSize(QSize());
         setIconSize(QSize(nSize, nSize));
         setWrapping(false);
         setWordWrap(false);
@@ -270,6 +270,7 @@ void IconListWidget::startDrop(QList<QUrl> files){
 }
 
 void IconListWidget::itemClicked (QListWidgetItem *item){
+    return;
     if (!item)
         return;
 

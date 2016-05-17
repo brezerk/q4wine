@@ -79,7 +79,7 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
     listWidget->setMovement(QListView::Static);
     int nSize = CoreLib->getSetting("IconWidget", "IconSize", false, 32).toInt();
     listWidget->setViewMode(QListView::ListMode);
-    listWidget->setGridSize(QSize(nSize, nSize));
+    listWidget->setGridSize(QSize());
     listWidget->setIconSize(QSize(nSize, nSize));
     listWidget->setWrapping(false);
     listWidget->setWordWrap(false);
