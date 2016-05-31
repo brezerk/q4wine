@@ -164,6 +164,13 @@ translations:
           mail: marciopanto@gmail.com
           location: Italy
 
+        - name: Masanori Kakura
+          nick: kakurasan
+          info: Japanese translation
+          mail: kakurasan@gmail.com
+          web: https://kakurasan.blogspot.com/
+          location: Japan
+
         - name: Mingye Wang
           info: Chinese (China) translation
           location: Wilton, CT, USA
