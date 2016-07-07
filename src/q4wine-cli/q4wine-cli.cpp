@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
     QTextStream QErr(stderr);
     QString _PREFIX, _DIR, _ICON, _IMAGE;
     QString path;
+    QStringList extra_args;
     int _ACTION=0;
 
     //! This is need for libq4wine-core.so import;
@@ -130,12 +131,14 @@ int main(int argc, char *argv[])
     for (int i=1; i<argc; i++){
         if ((app.arguments().at(i)=="--procs") or (app.arguments().at(i)=="-ps")){
             _ACTION=1;
+            continue;
         }
 
         if ((app.arguments().at(i)=="--prefix") or (app.arguments().at(i)=="-p")){
             i++;
             if (i<argc)
                 _PREFIX=app.arguments().at(i);
+                continue;
             if (!db_prefix.isExistsByName(_PREFIX)){
                 Qcout<<QObject::tr("Prefix named \"%1\" does not exist. Run \"%2-cli -pl\" for prefix list.").arg(_PREFIX).arg(APP_SHORT_NAME)<<endl;
                 return -1;
@@ -146,6 +149,7 @@ int main(int argc, char *argv[])
             i++;
             if (i<argc)
                 _DIR=app.arguments().at(i);
+            continue;
         }
 
         if ((app.arguments().at(i)=="--icon") or (app.arguments().at(i)=="-i")){
@@ -154,44 +158,54 @@ int main(int argc, char *argv[])
                 _ICON=app.arguments().at(i);
             if (_ACTION==-1)
                 _ACTION=0;
+            continue;
         }
 
         if ((app.arguments().at(i)=="--cdimage") or (app.arguments().at(i)=="-cd")){
             i++;
             if (i<argc)
                 _IMAGE=app.arguments().at(i);
+            continue;
         }
 
         if ((app.arguments().at(i)=="--prefixlist") or (app.arguments().at(i)=="-pl")){
             _ACTION=2;
+            continue;
         }
 
         if ((app.arguments().at(i)=="--dirlist") or (app.arguments().at(i)=="-dl")){
             _ACTION=3;
+            continue;
         }
 
         if ((app.arguments().at(i)=="--iconlist") or (app.arguments().at(i)=="-il")){
             _ACTION=4;
+            continue;
         }
 
         if ((app.arguments().at(i)=="--cdlist") or (app.arguments().at(i)=="-cl")){
             _ACTION=5;
+            continue;
         }
 
         if ((app.arguments().at(i)=="--kill") or (app.arguments().at(i)=="-k")){
             _ACTION=6;
+            continue;
         }
 
         if ((app.arguments().at(i)=="--mount") or (app.arguments().at(i)=="-m")){
             _ACTION=7;
+            continue;
         }
 
         if ((app.arguments().at(i)=="--umount") or (app.arguments().at(i)=="-u")){
             _ACTION=8;
+            continue;
         }
 
         if ((app.arguments().at(i)=="--mountlist") or (app.arguments().at(i)=="-ml")){
             _ACTION=10;
+            continue;
         }
 
         if ((app.arguments().at(i)=="--binary") or (app.arguments().at(i)=="-b")){
@@ -203,7 +217,10 @@ int main(int argc, char *argv[])
                 path.append(app.arguments().at(j));
             }
             _ACTION=12;
+            continue;
         }
+
+        extra_args.append(app.arguments().at(i));
     }
 
     if (_ACTION==2){
@@ -244,7 +261,7 @@ int main(int argc, char *argv[])
             return -1;
         }
 
-        if (CoreLib->runIcon(_PREFIX, _DIR, _ICON)){
+        if (CoreLib->runIcon(_PREFIX, _DIR, _ICON, extra_args)){
             Qcout<<"Done"<<endl;
         } else {
             Qcout<<"Error"<<endl;

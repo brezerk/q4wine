@@ -868,7 +868,7 @@ QStringList corelib::getCdromDevices(void) const{
             return image;
         }
 
-        bool corelib::runIcon(const QString prefix_name, const QString dir_name, const QString icon_name){
+        bool corelib::runIcon(const QString prefix_name, const QString dir_name, const QString icon_name, const QStringList extra_args){
             QHash<QString, QString> result = db_icon.getByName(prefix_name, dir_name, icon_name);
             ExecObject execObj;
             execObj.wrkdir = result.value("wrkdir");
@@ -876,7 +876,11 @@ QStringList corelib::getCdromDevices(void) const{
             execObj.winedebug = result.value("winedebug");
             execObj.useconsole = result.value("useconsole");
             execObj.display = result.value("display");
-            execObj.cmdargs = result.value("cmdargs");
+            if (extra_args.isEmpty()){
+                execObj.cmdargs = result.value("cmdargs");
+            } else {
+                execObj.cmdargs = QString("%1 %2").arg(result.value("cmdargs")).arg(extra_args.join(" "));
+            }
             execObj.execcmd = result.value("exec");
             execObj.desktop = result.value("desktop");
             execObj.nice = result.value("nice");
@@ -1065,7 +1069,7 @@ QStringList corelib::getCdromDevices(void) const{
             out<<"Exec="<<QString::fromUtf8(APP_PREF)<<"/bin/q4wine-cli -p \""<<prefix_name<<"\" ";
             if (!dir_name.isEmpty())
                 out<<" -d \""<<dir_name<<"\" ";
-            out<<" -i \""<<icon_name<<"\" "<<endl;
+            out<<" -i \""<<icon_name<<"\" "<<" %f"<<endl;
 
             QString icon_path = result.value("icon_path");
 

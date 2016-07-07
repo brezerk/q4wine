@@ -229,7 +229,7 @@ public:
      * \param  icon_name	Icon name.
      * \return Return true on success.
      */
-    bool runIcon(const QString prefix_name, const QString dir_name, const QString icon_name);
+    bool runIcon(const QString prefix_name, const QString dir_name, const QString icon_name, const QStringList extra_args = QStringList());
 
     /*! \brief Prepare icon data for run wine.
      *
