@@ -25,3 +25,4 @@ q4wine-helper
 *.user
 *.gz
 *.bz2
+*.autosave

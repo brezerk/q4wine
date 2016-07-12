@@ -1,12 +1,12 @@
-# i18n cmake lists
+# l10n cmake lists
 cmake_minimum_required(VERSION 2.8.0)
 
 MESSAGE(STATUS "Process LINGUAS variable --\n")
 
 foreach (LANG ${LINGUAS})
     MESSAGE(STATUS "Add translation for ${LANG}: ${LANG}.ts")
-    list(APPEND TS_I18N ${CMAKE_SOURCE_DIR}/src/i18n/q4wine_${LANG}.ts)
-    list(APPEND QM_I18N ${CMAKE_CURRENT_BINARY_DIR}/q4wine_${LANG}.qm)
+    list(APPEND TS_L10N ${CMAKE_SOURCE_DIR}/src/l10n/q4wine_${LANG}.ts)
+    list(APPEND QM_L10N ${CMAKE_CURRENT_BINARY_DIR}/q4wine_${LANG}.qm)
 endforeach ()
 MESSAGE("\n")
 
@@ -24,7 +24,7 @@ add_custom_target (
     ${PLUGINS_GUI_SOURCES} ${PLUGINS_GUI_UI_SOURCES}
     ${Q4WINE_CLI_SOURCES}
     ${Q4WINE_HELPER_SOURCES}
-    -ts ${TS_I18N}
+    -ts ${TS_L10N}
     -locations relative
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 )
@@ -36,7 +36,7 @@ add_custom_target (
     ${PLUGINS_GUI_SOURCES} ${PLUGINS_GUI_UI_SOURCES}
     ${Q4WINE_CLI_SOURCES}
     ${Q4WINE_HELPER_SOURCES}
-    -ts ${TS_I18N}
+    -ts ${TS_L10N}
     -locations relative
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 )
@@ -69,5 +69,5 @@ endforeach()
 endif(QT5 MATCHES ON)
 
 IF( RELEASE )
-    install(FILES ${QM_I18N} DESTINATION ${I18N_ENTRY_PATH})
+    install(FILES ${QM_L10N} DESTINATION ${L10N_ENTRY_PATH})
 ENDIF( RELEASE )

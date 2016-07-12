@@ -433,7 +433,7 @@ void AppSettings::getLangs(){
 #else
     themeDir = QString::fromUtf8(APP_BUILD);
 #endif
-    themeDir.append("/i18n");
+    themeDir.append("/l10n");
 
     QDir tmp(themeDir);
     tmp.setFilter(QDir::Files | QDir::NoSymLinks);

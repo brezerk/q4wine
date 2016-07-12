@@ -11,6 +11,7 @@ Version 1.3.1
   - Winetrick's item description label doesn't wrap properly [BUG-71];
   - Qt5: detailed view item selection duplicate [BUG-75];
   - q4wine-cli does not accept extra app arguments [BUG-78];
+  - Translation files moved from i18n to l10n;
 
 Version 1.3
  Added:

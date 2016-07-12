@@ -377,35 +377,35 @@ QString corelib::getTranslationLang(){
 
 #ifdef RELEASE
     #ifdef _OS_DARWIN_
-        QString i18nPath = QString("%1/%2.app/Contents/i18n").arg(QDir::currentPath()).arg(APP_SHORT_NAME);
+        QString l10nPath = QString("%1/%2.app/Contents/l10n").arg(QDir::currentPath()).arg(APP_SHORT_NAME);
     #else
-        QString i18nPath = QString("%1/share/%2/i18n").arg(QString::fromUtf8(APP_PREF)).arg(APP_SHORT_NAME);
+        QString l10nPath = QString("%1/share/%2/l10n").arg(QString::fromUtf8(APP_PREF)).arg(APP_SHORT_NAME);
     #endif
 #else
-    QString i18nPath = QString("%1/i18n").arg(QString::fromUtf8(APP_BUILD));
+    QString l10nPath = QString("%1/l10n").arg(QString::fromUtf8(APP_BUILD));
 #endif
 
 
 
 #ifdef DEBUG
-    qDebug()<<"[ii] i18n path: "<<i18nPath;
+    qDebug()<<"[ii] l10n path: "<<l10nPath;
 #endif
 
     QString lang = this->getLang();
 
     if (!lang.isNull()){
-        if (qtt.load(lang, i18nPath)){
+        if (qtt.load(lang, l10nPath)){
             qDebug()<<"[ii] Loading translation: "<<lang;
             return lang;
         } else {
             qDebug()<<"[EE] Cannot open user selected translation: "<<lang;
             lang = this->getLang(false);
-            if (qtt.load(lang, i18nPath)){
+            if (qtt.load(lang, l10nPath)){
                 qDebug()<<"[ii] Loading translation: "<<lang;
                 return lang;
             } else {
                 qDebug()<<"[EE] Cannot open system selected translation: "<<lang;
-                if (qtt.load("q4wine_en", i18nPath)){
+                if (qtt.load("q4wine_en", l10nPath)){
                     qDebug()<<"[ii] Loading translation: q4wine_en"<<lang;
                     return "q4wine_en";
                 } else {

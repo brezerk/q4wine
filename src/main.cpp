@@ -93,15 +93,15 @@ int main(int argc, char *argv[])
 
 #ifdef RELEASE
     #ifdef _OS_DARWIN_
-        QString i18nPath = QString("%1/%2.app/Contents/i18n").arg(QDir::currentPath()).arg(APP_SHORT_NAME);
+        QString l10nPath = QString("%1/%2.app/Contents/l10n").arg(QDir::currentPath()).arg(APP_SHORT_NAME);
     #else
-        QString i18nPath = QString("%1/share/%2/i18n").arg(QString::fromUtf8(APP_PREF)).arg(APP_SHORT_NAME);
+        QString l10nPath = QString("%1/share/%2/l10n").arg(QString::fromUtf8(APP_PREF)).arg(APP_SHORT_NAME);
     #endif
 #else
-    QString i18nPath = QString("%1/i18n").arg(QString::fromUtf8(APP_BUILD));
+    QString l10nPath = QString("%1/l10n").arg(QString::fromUtf8(APP_BUILD));
 #endif
 
-    qtt.load(CoreLib->getTranslationLang(), i18nPath);
+    qtt.load(CoreLib->getTranslationLang(), l10nPath);
     app.installTranslator(&qtt);
 
     QTextStream Qcout(stdout);
