@@ -191,7 +191,7 @@ else(RELEASE)
     if(PYTHON_BINARY)
         set(PYTHON_EXECUTABLE ${GIT_PYTHON})
     else(PYTHON_BINARY)
-        find_package(PythonInterp REQUIRED)
+        find_package(PythonInterp 2.7 REQUIRED)
         if(NOT PYTHONINTERP_FOUND)
             message(ERROR
                 "Python binary not found. Install Python package or "
