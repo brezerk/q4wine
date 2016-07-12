@@ -17,7 +17,6 @@
  ***************************************************************************/
 
 #include "src/qt/mainwindow.hpp"
-//  #include "src/qt/ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     createActions();
