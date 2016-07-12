@@ -98,6 +98,11 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::Window
             cmdClnWineBin->setEnabled(true);
     }
 
+    // Hide advanced settings if there are no deprecated settings defined
+    if ((txtWineBin->text().isEmpty()) && (txtWineLoaderBin->text().isEmpty()) && (txtWineServerBin->text().isEmpty()) && (txtWineBin->text().isEmpty())){
+        widDeprecated->setVisible(false);
+    }
+
     if (!result.value("arch").isEmpty())
         comboArchList->setCurrentIndex(comboArchList->findText(result.value("arch")));
     if (!result.value("mountpoint_windrive").isEmpty()){
@@ -165,7 +170,8 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
     cmdGetPrefixPath->installEventFilter(this);
     cmdGetMountPoint->installEventFilter(this);
 
-
+    // Hide deprecated options
+    widDeprecated->setVisible(false);
 
     connect(cmdCancel, SIGNAL(clicked()), this, SLOT(cmdCancel_Click()));
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));

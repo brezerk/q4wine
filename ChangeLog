@@ -12,6 +12,7 @@ Version 1.3.1
   - Qt5: detailed view item selection duplicate [BUG-75];
   - q4wine-cli does not accept extra app arguments [BUG-78];
   - Translation files moved from i18n to l10n;
+  - Hide deprecated prefix options if values are not set;
 
 Version 1.3
  Added:
