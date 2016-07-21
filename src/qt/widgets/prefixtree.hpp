@@ -25,9 +25,7 @@
 #include <QVBoxLayout>
 #include <QSplitter>
 #include <QTreeWidget>
-#include <QListWidget>
-#include <QTextEdit>
-#include <QLabel>
+#include <QHeaderView>
 
 #include <memory>
 
@@ -53,4 +51,9 @@ class PrefixTreeWidget : public QWidget
     std::shared_ptr<QTreeWidget> w_PrefixTree;
 
     std::shared_ptr<QVBoxLayout> layout_;
+
+ private slots:
+    void a_TreeState_Click();
+    void a_Export_Click();
+    void a_Import_Click();
 };

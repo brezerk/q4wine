@@ -26,10 +26,13 @@
 #include <QLabel>
 #include <QIcon>
 #include <QSplitter>
+#include <QGridLayout>
+#include <QVBoxLayout>
 
 #include <memory>
 
 #include "src/qt/widgets/prefixtree.hpp"
+#include "src/qt/widgets/iconlist.hpp"
 
 class DesktopWidget : public QWidget
 {
@@ -44,7 +47,7 @@ class DesktopWidget : public QWidget
     const QIcon getIcon(QString name) const;
 
     std::shared_ptr<PrefixTreeWidget> w_PrefixTree;
-    std::shared_ptr<QListWidget> w_IconList;
+    std::shared_ptr<IconListWidget> w_IconList;
 
     std::shared_ptr<QLabel> lbl_IconInfoName,
                             lbl_IconInfoArgs,

@@ -24,46 +24,45 @@
 #include <QToolBar>
 #include <QVBoxLayout>
 #include <QSplitter>
-#include <QTreeWidget>
 #include <QListWidget>
-#include <QTextEdit>
+#include <QLineEdit>
 #include <QLabel>
 
 #include <memory>
 
-class PrefixTreeWidget : public QWidget
+class IconListWidget : public QWidget
 {
     Q_OBJECT
 
  public:
-    explicit PrefixTreeWidget(QWidget *parent = 0);
-    ~PrefixTreeWidget();
+    explicit IconListWidget(QWidget *parent = 0);
+    ~IconListWidget();
 
  private:
     void createActions();
     void createWidgets();
     const QIcon getIcon(QString name) const;
 
-    std::shared_ptr<QMenu> m_Prefix, m_Icon;
+    std::shared_ptr<QToolBar> m_ToolBar;
 
-    std::shared_ptr<QAction> a_TreeSate,
-                           a_Export,
-                           a_Import,
-                           a_IconSearchClear,
-                           a_IconViewMode,
-                           a_IconZoomIn,
-                           a_IconZoomOut,
-                           a_IconSortName,
-                           a_IconSortDate;
+    std::shared_ptr<QAction> a_Clear,
+                           a_Mode,
+                           a_ZoomIn,
+                           a_ZoomOut,
+                           a_SortAlpha,
+                           a_SortDate;
 
-    std::shared_ptr<QTextEdit> txt_IconSearch;
+    std::shared_ptr<QLineEdit> txt_Filter;
 
-    std::shared_ptr<QTreeWidget> w_PrefixTree;
-    std::shared_ptr<QListWidget> w_IconList;
+    std::shared_ptr<QListWidget> w_IconsList;
 
-    std::shared_ptr<QLabel> lbl_IconInfoName,
-                            lbl_IconInfoArgs,
-                            lbl_IconInfoDesc,
-                            lbl_IconInfoTerminal,
-                            lbl_IconInfoDesktopSize;
+    std::shared_ptr<QVBoxLayout> layout_;
+
+ private slots:
+    void a_Clear_Click();
+    void a_Mode_Click();
+    void a_ZoomIn_Click();
+    void a_ZoomOut_Click();
+    void a_SortAlpha_Click();
+    void a_SortDate_Click();
 };

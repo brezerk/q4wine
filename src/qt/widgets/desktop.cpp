@@ -27,10 +27,42 @@ DesktopWidget::~DesktopWidget() {
 
 void DesktopWidget::createWidgets() {
     w_PrefixTree.reset(new PrefixTreeWidget());
-    w_IconList.reset(new QListWidget());
+    w_IconList.reset(new IconListWidget());
+
     QSplitter* splitter = new QSplitter(this);
     splitter->addWidget(w_PrefixTree.get());
     splitter->addWidget(w_IconList.get());
+    splitter->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    lbl_IconInfoName.reset(new QLabel());
+    lbl_IconInfoArgs.reset(new QLabel());
+    lbl_IconInfoTerminal.reset(new QLabel());
+    lbl_IconInfoDesktopSize.reset(new QLabel());
+    lbl_IconInfoDesc.reset(new QLabel());
+
+    QGridLayout* layout = new QGridLayout();
+    layout->setMargin(0);
+    layout->setSpacing(4);
+    layout->addWidget(splitter,
+                      0, 0, 1, 2);
+    layout->addWidget(lbl_IconInfoName.get(),
+                      1, 0);
+    layout->addWidget(lbl_IconInfoTerminal.get(),
+                      1, 1);
+    layout->addWidget(lbl_IconInfoArgs.get(),
+                      2, 0);
+    layout->addWidget(lbl_IconInfoDesktopSize.get(),
+                      2, 1);
+    layout->addWidget(lbl_IconInfoDesc.get(),
+                      3, 0, 1, 2);
+    this->setLayout(layout);
+
+    lbl_IconInfoName->setText(tr("Name:"));
+    lbl_IconInfoArgs->setText(tr("Args:"));
+    lbl_IconInfoTerminal->setText(tr("Run in terminal:"));
+    lbl_IconInfoDesktopSize->setText(tr("Desktop:"));
+    lbl_IconInfoDesc->setText(tr("Some loooooooooooooooooooooooooooooooooooooo"
+                                 "oooooooooooooooooooooooooooooooooong desc"));
 }
 
 const QIcon DesktopWidget::getIcon(QString name) const {

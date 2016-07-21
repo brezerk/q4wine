@@ -16,46 +16,137 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "src/qt/widgets/prefixtree.hpp"
+#include "src/qt/widgets/iconlist.hpp"
 
-PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) : QWidget(parent) {
+IconListWidget::IconListWidget(QWidget *parent) : QWidget(parent) {
+    layout_.reset(new QVBoxLayout(this));
+    layout_->setMargin(0);
+    layout_->setSpacing(0);
     createActions();
     createWidgets();
 }
 
-PrefixTreeWidget::~PrefixTreeWidget() {
+IconListWidget::~IconListWidget() {
 }
 
-void PrefixTreeWidget::createActions() {
-    treeState.reset(new QAction(this));
-    if (this->tree_state == D_TREE_COLLAPSE){
-        treeState->setIcon(CoreLib->loadIcon("view-list-tree"));
-        treeState->setText(tr("Expand prefix tree"));
-        treeState->setStatusTip(tr("Expand prefix tree"));
-        emit(collapseTree());
-    } else {
-        treeState->setIcon(CoreLib->loadIcon("view-list-details"));
-        treeState->setText(tr("Collapse prefix tree"));
-        treeState->setStatusTip(tr("Collapse prefix tree"));
-        emit(expandTree());
-    }
+void IconListWidget::createActions() {
+    a_Clear.reset(new QAction(getIcon("edit-clear"),
+                              tr("Clear search field"),
+                               this));
+    a_Clear->setStatusTip(tr("Clear search field"));
 
-    connect(treeState.get(), SIGNAL(triggered()), this, SLOT(treeState_Click()));
+    a_Mode.reset(new QAction(this));
+    a_Mode->setIcon(getIcon("view-list-tree"));
+    a_Mode->setText(tr("Icons view mode"));
+    a_Mode->setStatusTip(tr("Icons view mode"));
 
-    prefixImport.reset(new QAction(CoreLib->loadIcon("document-import"), tr("Import prefixes"), this));
-    prefixImport->setStatusTip(tr("Import prefixes from ~/.local/share/wineprefixes/"));
-    connect(prefixImport.get(), SIGNAL(triggered()), this, SLOT(prefixImport_Click()));
+    /*
+        viewMode->setIcon(CoreLib->loadIcon("view-list-details"));
+        viewMode->setText(tr("Details view mode"));
+        viewMode->setStatusTip(tr("Details view mode"));
+     */
 
-    prefixExport.reset(new QAction(CoreLib->loadIcon("document-export"), tr("Export prefixes"), this));
-    prefixExport->setStatusTip(tr("Export prefixes to ~/.local/share/wineprefixes/"));
-    connect(prefixExport.get(), SIGNAL(triggered()), this, SLOT(prefixExport_Click()));
+    a_ZoomIn.reset(new QAction(getIcon("zoom-in"),
+                               tr("Zoom In"),
+                               this));
+    a_ZoomIn->setStatusTip(tr("Zoom In"));
+
+    a_ZoomOut.reset(new QAction(getIcon("zoom-out"),
+                               tr("Zoom Out"),
+                               this));
+    a_ZoomOut->setStatusTip(tr("Zoom Out"));
+
+    a_SortAlpha.reset(new QAction(getIcon("view-sort-descending"),
+                               tr("Alphabetic sort descending"),
+                               this));
+    a_SortAlpha->setStatusTip(tr("Alphabetic sort descending"));
+
+    /*
+        sortAlpha->setStatusTip(tr("Alphabetic sort ascending"));
+        sortAlpha->setText(tr("Alphabetic sort ascending"));
+        sortAlpha->setIcon(CoreLib->loadIcon("view-sort-ascending"));
+     */
+
+    a_SortDate.reset(new QAction(getIcon("view-sort-descending"),
+                               tr("Sort descending by create order"),
+                               this));
+    a_SortDate->setStatusTip(tr("Sort descending by create order"));
+
+    /*
+        sortCreation->setStatusTip(tr("Sort ascending by create order"));
+        sortCreation->setText(tr("Sort ascending by create order"));
+        sortCreation->setIcon(CoreLib->loadIcon("view-sort-ascending"));
+     */
+    txt_Filter.reset(new QLineEdit(this));
+
+    m_ToolBar.reset(new QToolBar(tr("Prefix"), this));
+    m_ToolBar->addAction(a_Clear.get());
+    m_ToolBar->addWidget(txt_Filter.get());
+    m_ToolBar->addAction(a_Mode.get());
+    m_ToolBar->addSeparator();
+    m_ToolBar->addAction(a_ZoomIn.get());
+    m_ToolBar->addAction(a_ZoomOut.get());
+    m_ToolBar->addSeparator();
+    m_ToolBar->addAction(a_SortAlpha.get());
+    m_ToolBar->addAction(a_SortDate.get());
+
+    layout_->addWidget(m_ToolBar.get());
+
+    connect(a_Clear.get(),
+            SIGNAL(triggered()),
+            this,
+            SLOT(a_Clear_Click()));
+    connect(a_Mode.get(),
+            SIGNAL(triggered()),
+            this,
+            SLOT(a_Mode_Click()));
+    connect(a_ZoomIn.get(),
+            SIGNAL(triggered()),
+            this,
+            SLOT(a_ZoomIn_Click()));
+    connect(a_ZoomOut.get(),
+            SIGNAL(triggered()),
+            this,
+            SLOT(a_ZoomOut_Click()));
+    connect(a_SortAlpha.get(),
+            SIGNAL(triggered()),
+            this,
+            SLOT(a_SortAlpha_Click()));
+    connect(a_SortDate.get(),
+            SIGNAL(triggered()),
+            this,
+            SLOT(a_SortDate_Click()));
 }
 
-void PrefixTreeWidget::createWidgets() {
-    w_PrefixTree.reset(new QTreeWidget());
-    w_IconList.reset(new QListWidget());
+void IconListWidget::createWidgets() {
+    w_IconsList.reset(new QListWidget(this));
+    layout_->addWidget(w_IconsList.get());
 }
 
-const QIcon PrefixTreeWidget::getIcon(QString name) const {
+const QIcon IconListWidget::getIcon(QString name) const {
     return QIcon::fromTheme(name, QIcon(QString(":%1").arg(name)));
+}
+
+void IconListWidget::a_Clear_Click() {
+    return;
+}
+
+void IconListWidget::a_Mode_Click() {
+    return;
+}
+
+void IconListWidget::a_ZoomIn_Click() {
+    return;
+}
+
+void IconListWidget::a_ZoomOut_Click() {
+    return;
+}
+
+void IconListWidget::a_SortAlpha_Click() {
+    return;
+}
+
+void IconListWidget::a_SortDate_Click() {
+    return;
 }
