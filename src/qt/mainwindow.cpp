@@ -127,7 +127,8 @@ void MainWindow::createWidgets() {
     QWidget* configureWidget = new QWidget(tab);
     QWidget* prefixpWidget = new QWidget(tab);
     QWidget* logWidget = new QWidget(tab);
-    tab->addTab(this->populateTabDesktop(),
+    QWidget* desktop = new DesktopWidget(tab);
+    tab->addTab(desktop,
                 getIcon("view-list-icons"),
                 tr("&Desktop"));
     tab->addTab(processWidget, getIcon("view-list-details"), tr("&Process"));

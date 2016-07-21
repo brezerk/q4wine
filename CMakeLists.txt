@@ -194,8 +194,8 @@ else(RELEASE)
         find_package(PythonInterp 2.7 REQUIRED)
         if(NOT PYTHONINTERP_FOUND)
             message(ERROR
-                "Python binary not found. Install Python package or "
-                "use -DPYTHON_BINARY to set path to Python binary."
+                "Python2.7 binary not found. Install Python2.7 package or "
+                "use -DPYTHON_BINARY to set path to Python2.7 binary."
                 )
         endif(NOT PYTHONINTERP_FOUND )
     endif(PYTHON_BINARY)

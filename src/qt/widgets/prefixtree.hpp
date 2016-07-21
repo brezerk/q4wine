@@ -16,22 +16,41 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "src/qt/widgets/program.hpp"
+#pragma once
 
-ProgramWidget::ProgramWidget(QWidget *parent) : QWidget(parent) {
-    createActions();
-    createWidgets();
-}
+#include <QWidget>
+#include <QAction>
+#include <QMenu>
+#include <QToolBar>
+#include <QVBoxLayout>
+#include <QSplitter>
+#include <QTreeWidget>
+#include <QListWidget>
+#include <QTextEdit>
+#include <QLabel>
 
-ProgramWidget::~ProgramWidget() {
-}
+#include <memory>
 
-void ProgramWidget::createActions() {
-}
+class PrefixTreeWidget : public QWidget
+{
+    Q_OBJECT
 
-void ProgramWidget::createWidgets() {
-}
+ public:
+    explicit PrefixTreeWidget(QWidget *parent = 0);
+    ~PrefixTreeWidget();
 
-const QIcon ProgramWidget::getIcon(QString name) const {
-    return QIcon::fromTheme(name, QIcon(QString(":%1").arg(name)));
-}
+ private:
+    void createActions();
+    void createWidgets();
+    const QIcon getIcon(QString name) const;
+
+    std::shared_ptr<QToolBar> m_ToolBar;
+
+    std::shared_ptr<QAction> a_TreeState,
+                           a_Export,
+                           a_Import;
+
+    std::shared_ptr<QTreeWidget> w_PrefixTree;
+
+    std::shared_ptr<QVBoxLayout> layout_;
+};

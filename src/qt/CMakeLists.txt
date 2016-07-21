@@ -25,19 +25,22 @@ set(Q4WINE_QT_HEADERS_DIR
     )
 
 set(Q4WINE_QT_HEADEDRS
-    ${CMAKE_SOURCE_DIR}/src/qt/widgets/program.hpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/prefixtree.hpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/desktop.hpp
     ${CMAKE_SOURCE_DIR}/src/qt/mainwindow.hpp
     )
 
 set(Q4WINE_QT_SOURCES
-    ${CMAKE_SOURCE_DIR}/src/qt/widgets/program.cpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/prefixtree.cpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/desktop.cpp
     ${CMAKE_SOURCE_DIR}/src/qt/mainwindow.cpp
     ${CMAKE_SOURCE_DIR}/src/qt/main.cpp
     )
 
 set(Q4WINE_QT_MOC_HEADEDRS
     ${CMAKE_SOURCE_DIR}/src/qt/mainwindow.hpp
-    ${CMAKE_SOURCE_DIR}/src/qt/widgets/program.hpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/desktop.hpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/prefixtree.hpp
     )
 
 set(Q4WINE_QT_UI_SOURCES
