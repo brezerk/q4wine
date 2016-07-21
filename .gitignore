@@ -26,3 +26,5 @@ q4wine-helper
 *.gz
 *.bz2
 *.autosave
+doc/
+src/version.h
