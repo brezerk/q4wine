@@ -1,28 +1,33 @@
-q4wine was initially written by Alaxey S. Malakhov
+q4wine was originally written by Alaxey S. Malakhov
 
-General idea comes from WineTools script which was initially written by Frank Hendriksen.
-It is licensed under the terms of GPLv3.
+The general idea for it came from the WineTools script which was originally
+written by Frank Hendriksen. It is licensed under the terms of GPLv3.
 
-Send comments, bugreports, etc. to me ;)
+Send comments, bug reports, etc. to me ;)
 
-Note: This software comes with absolutely no warranty. You will NOT get any support or help for WineTools,
-Wine, software installations, Linux or Microsoft Windows from the author.
+Note: This program comes with absolutely no warranty. You will NOT get any
+support or help for WineTools, Wine, software installations, Linux or
+Microsoft Windows from the author.
 
-If you need help, ask the mailing lists at http://www.winehq.org/site/forums. 
+If you need help, ask the mailing lists at http://www.winehq.org/site/forums .
 
-If you want support, buy the commercial versions of wine: CodeWeavers CrossOver Office 
-http://www.codeweavers.com for Desktop Applications.
+If you want support, buy the commercial versions of wine:
+CodeWeavers CrossOver Office http://www.codeweavers.com/ for Desktop
+Applications.
 
-Postinstall:
+Post-install:
 ***********************************************
 
 -NOTE-
-This instructions may be outdated, please see last version of this howto here:
+These instructions may be outdated, so please see the latest version of this
+howto here:
+
 http://q4wine.brezblock.org.ua/documentation/en_us/02-post-installation.html
+
 ------
 
-If you plan to use kdesu\gksu\xdg-su, then you might add folowing lines
-to /etc/sudoers (use visudo)
+If you plan to use kdesu, gksu or xdg-su, then you may wish to add the
+following lines to /etc/sudoers (using visudo)
 
 #---------- Cut here -------------------------
 Cmnd_Alias Q4WINE_COMMS=/sbin/losetup
@@ -31,27 +36,27 @@ User_Alias Q4WINE_USERS=%games,%users
 Q4WINE_USERS ALL=(ALL) NOPASSWD: Q4WINE_COMMS
 #---------- End of Cut -----------------------
 
-This will allow to run /sbin/losetup, which is used for building mounted iso's menu list,
-with out prompting root password.
+This will allow to run /sbin/losetup, which is used for building the mounted
+.isos menues' lists, with out prompting for root password.
 
-Otherwise you can't get mount menu working =)
+Otherwise you will not be able to get the mount menu working. =)
 
 Uninstall:
 ***********************************************
-In q4wine build root run:
+In the q4wine's build root run:
 xargs rm < install_manifest.txt
 
 Changelog
 ***********************************************
-See changelog file for details
+See the changelog file for details
 
--- 
+--
 Regards,
 
 Alexey S. Malakhov
-q4wine ( http://q4wine.brezblock.org.ua ) lead developer
-BrezBlock ( http://brezblock.org.ua ) maintainer
-e-mail: brezerk@gmail.com
-web: http://brezblock.org.ua
+q4wine ( http://q4wine.brezblock.org.ua/ ) lead developer
+BrezBlock ( http://brezblock.org.ua/ ) maintainer
+E-mail: brezerk@gmail.com
+Web-site: http://brezblock.org.ua/
 BrezBlock, Kiev, Ukraine
 
