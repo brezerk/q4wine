@@ -18,53 +18,34 @@
 
 #pragma once
 
-#include <QApplication>
-#include <QDesktopWidget>
 #include <QWidget>
-#include <QMainWindow>
-#include <QSettings>
-#include <QAction>
-#include <QMenu>
-#include <QMenuBar>
-#include <QStatusBar>
-#include <QToolBar>
-#include <QVBoxLayout>
-#include <QTabBar>
 #include <QSplitter>
 #include <QTreeWidget>
-#include <QListWidget>
+#include <QLabel>
+#include <QIcon>
+#include <QSplitter>
+#include <QGridLayout>
 
 #include <memory>
 
-#include "src/qt/widgets/desktop.hpp"
-#include "src/qt/widgets/process.hpp"
+#include "src/qt/widgets/prefixtree.hpp"
+#include "src/qt/widgets/processlist.hpp"
 
-namespace Ui {
-class MainWindow;
-}
-
-class MainWindow : public QMainWindow
+class ProcessWidget : public QWidget
 {
     Q_OBJECT
 
  public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    explicit ProcessWidget(QWidget *parent = 0);
+    ~ProcessWidget();
 
  private:
-    void createActions();
-    void createStatusBar();
     void createWidgets();
-    void readSettings();
-    QWidget* populateTabDesktop();
-    void writeSettings();
-    /*!
-     * \brief Get QIcon from them or resource file.
-     * Returns the QIcon corresponding to name in the current icon theme.
-     * If no such icon is found in the current theme icon from resource file
-     * returned instead.
-     * \param Name of the icon.
-     * \return QIcon instance.
-     */
     const QIcon getIcon(QString name) const;
+
+    std::shared_ptr<PrefixTreeWidget> w_PrefixTree;
+    std::shared_ptr<ProcessListWidget> w_ProcessList;
+
+    std::shared_ptr<QLabel> lbl_ProcessCount,
+                            lbl_PrefixCount;
 };

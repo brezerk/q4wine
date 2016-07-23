@@ -123,7 +123,7 @@ void MainWindow::createActions() {
 void MainWindow::createWidgets() {
     QTabWidget* tab = new QTabWidget(this);
     //  QWidget* desktopWidget = new QWidget(tab);
-    QWidget* processWidget = new QWidget(tab);
+    QWidget* processWidget = new ProcessWidget(tab);
     QWidget* configureWidget = new QWidget(tab);
     QWidget* prefixpWidget = new QWidget(tab);
     QWidget* logWidget = new QWidget(tab);

@@ -18,53 +18,48 @@
 
 #pragma once
 
-#include <QApplication>
-#include <QDesktopWidget>
 #include <QWidget>
-#include <QMainWindow>
-#include <QSettings>
 #include <QAction>
 #include <QMenu>
-#include <QMenuBar>
-#include <QStatusBar>
 #include <QToolBar>
 #include <QVBoxLayout>
-#include <QTabBar>
 #include <QSplitter>
-#include <QTreeWidget>
-#include <QListWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QTimer>
+#include <QStandardItemModel>
+#include <QTableView>
+#include <QTableWidgetItem>
 
 #include <memory>
 
-#include "src/qt/widgets/desktop.hpp"
-#include "src/qt/widgets/process.hpp"
-
-namespace Ui {
-class MainWindow;
-}
-
-class MainWindow : public QMainWindow
+class ProcessListWidget : public QWidget
 {
     Q_OBJECT
 
  public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    explicit ProcessListWidget(QWidget *parent = 0);
+    ~ProcessListWidget();
 
  private:
     void createActions();
-    void createStatusBar();
     void createWidgets();
-    void readSettings();
-    QWidget* populateTabDesktop();
-    void writeSettings();
-    /*!
-     * \brief Get QIcon from them or resource file.
-     * Returns the QIcon corresponding to name in the current icon theme.
-     * If no such icon is found in the current theme icon from resource file
-     * returned instead.
-     * \param Name of the icon.
-     * \return QIcon instance.
-     */
     const QIcon getIcon(QString name) const;
+
+    std::shared_ptr<QToolBar> m_ToolBar;
+
+    std::shared_ptr<QAction> a_Kill,
+                           a_KillAll,
+                           a_Refresh;
+
+    std::shared_ptr<QTableView> w_ProcessList;
+
+    std::shared_ptr<QVBoxLayout> layout_;
+
+    std::shared_ptr<QStandardItemModel> model_;
+
+ private slots:
+    void a_Kill_Click();
+    void a_KillAll_Click();
+    void a_Refresh_Click();
 };
