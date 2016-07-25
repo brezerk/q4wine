@@ -1,3 +1,7 @@
+Version 1.3.2
+ Fixed:
+  - [regression, bisected] Icon information is not displayed correctly [BUG-80];
+
 Version 1.3.1
  Added:
   - Allow to execute and create icons for *.bat and *.msi files [BUG-69];

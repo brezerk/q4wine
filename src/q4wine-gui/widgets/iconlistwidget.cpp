@@ -270,7 +270,6 @@ void IconListWidget::startDrop(QList<QUrl> files){
 }
 
 void IconListWidget::itemClicked (QListWidgetItem *item){
-    return;
     if (!item)
         return;
 
