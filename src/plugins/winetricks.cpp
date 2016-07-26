@@ -154,13 +154,29 @@ void winetricks::run_winetricks(QString item){
 }
 
 void winetricks::downloadwinetricks () {
-        /*
-         * Downloading winetricks and installing it
-         */
+    /*
+     * Downloading winetricks and installing it
+     */
     this->winetricks_bin = QDir::homePath();
     this->winetricks_bin.append("/.config/");
     this->winetricks_bin.append(APP_SHORT_NAME);
     this->winetricks_bin.append("/winetricks");
+
+    QFile file(this->winetricks_bin);
+
+    if (file.exists()){
+        if (!file.open(QIODevice::ReadWrite | QIODevice::Text)){
+            QMessageBox::warning(this, QString(tr("Error")), QString(tr("File '%1' is not writable or not readable. Check file permissions.").arg(this->winetricks_bin)));
+            return;
+        }
+    } else {
+        if (!file.open(QIODevice::ReadWrite | QIODevice::Text)){
+            QMessageBox::warning(this, QString(tr("Error")), QString(tr("Can't create file '%1'. Check folder permissions.").arg(this->winetricks_bin)));
+            return;
+        } else {
+            file.remove();
+        }
+    }
 
     QStringList args;
     if (!console_args.isEmpty()){
