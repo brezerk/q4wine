@@ -165,8 +165,10 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
 #else
         if (CoreLib->getWhichOut("fuseiso", false).isEmpty()){
             this->comboMountProfiles->setCurrentIndex(0);
+            this->comboMountProfiles_currentIndexChanged(0);
         } else {
             this->comboMountProfiles->setCurrentIndex(2);
+            this->comboMountProfiles_currentIndexChanged(2);
         }
 #endif
 
@@ -569,10 +571,12 @@ void Wizard::comboMountProfiles_currentIndexChanged(int index){
     case 2:
         if (CoreLib->getWhichOut("fusermount").isEmpty()){
             this->comboMountProfiles->setCurrentIndex(0);
+            this->comboMountProfiles_currentIndexChanged(0);
             return;
         }
         if (CoreLib->getWhichOut("fuseiso").isEmpty()){
             this->comboMountProfiles->setCurrentIndex(0);
+            this->comboMountProfiles_currentIndexChanged(0);
             return;
         }
         break;

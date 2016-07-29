@@ -2,6 +2,7 @@ Version 1.3.2
  Fixed:
   - [regression, bisected] Icon information is not displayed correctly [BUG-80];
   - Winetricks does not update [BUG-77];
+  - First startup wizard (quick mount profile): profile strings are initially empty if fuseiso is not installed [BUG-81];
 
 Version 1.3.1
  Added:
