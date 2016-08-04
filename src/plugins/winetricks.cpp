@@ -92,6 +92,7 @@ void winetricks::run_winetricks(QString item){
 
         if (!proxy_host.isEmpty()){
             sh_args.append(QString("HTTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+            sh_args.append(QString("HTTPS_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
             sh_args.append(QString("FTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
         }
 
@@ -199,7 +200,7 @@ void winetricks::downloadwinetricks () {
     arg.append(CoreLib->getWhichOut("sh"));
     arg.append(" -c \"");
     arg.append(CoreLib->getWhichOut("wget"));
-    arg.append(" http://kegel.com/wine/winetricks -O ");
+    arg.append(" https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks -O ");
     arg.append(this->winetricks_bin);
     arg.append(" && ");
     arg.append(CoreLib->getWhichOut("chmod"));
@@ -270,7 +271,8 @@ bool winetricks::parse() {
     foreach (QString subtype, subtypes){
         pd->setValue(pd->value() + step);
         QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
-        if (!subtype.isEmpty()){
+        if ((!subtype.isEmpty()) and (!subtype.startsWith("Using winetricks"))) {
+            qDebug() << "\"" << subtype << "\"";
             subtype = subtype.trimmed();
             pargs.clear();
             pargs.append(winetricks_bin);
@@ -278,7 +280,7 @@ bool winetricks::parse() {
             pargs.append(subtype);
             pargs.append(" list");
             foreach (QString item, this->get_stdout_lines(pargs)){
-                if (item.isEmpty())
+                if ((item.isEmpty()) or (item.startsWith("Using winetricks")))
                     continue;
                 db_sysconfig.add_item(item.left(24).trimmed(), "application-x-ms-dos-executable", item.mid(24).trimmed(), subtype, D_PROVIDER_WINETRICKS);
             }
