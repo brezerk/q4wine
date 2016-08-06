@@ -91,9 +91,9 @@ void winetricks::run_winetricks(QString item){
         sh_args.append("env");
 
         if (!proxy_host.isEmpty()){
-            sh_args.append(QString("HTTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
-            sh_args.append(QString("HTTPS_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
-            sh_args.append(QString("FTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+            sh_args.append(QString("http_proxy=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+            sh_args.append(QString("https_proxy=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+            sh_args.append(QString("ftp_proxy=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
         }
 
         QHash<QString, QString> prefix_info = db_prefix.getByName(this->prefix_name);
@@ -192,8 +192,7 @@ void winetricks::downloadwinetricks () {
     QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
     if (!proxy_host.isEmpty()){
         args.append("env");
-        args.append(QString("HTTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
-        args.append(QString("FTP_PROXY=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+        args.append(QString("https_proxy=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
     }
 
     QString arg;
