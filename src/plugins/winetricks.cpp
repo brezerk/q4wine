@@ -189,15 +189,15 @@ void winetricks::downloadwinetricks () {
         }
     }
 
-    QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
-    if (!proxy_host.isEmpty()){
-        args.append("env");
-        args.append(QString("https_proxy=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
-    }
-
     QString arg;
     arg.append(CoreLib->getWhichOut("sh"));
     arg.append(" -c \"");
+
+    QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
+    if (!proxy_host.isEmpty()){
+        arg.append(QString("env https_proxy=http://%1:%2 ").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+    }
+
     arg.append(CoreLib->getWhichOut("wget"));
     arg.append(" https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks -O ");
     arg.append(this->winetricks_bin);
