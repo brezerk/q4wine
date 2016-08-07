@@ -91,9 +91,15 @@ void winetricks::run_winetricks(QString item){
         sh_args.append("env");
 
         if (!proxy_host.isEmpty()){
-            sh_args.append(QString("http_proxy=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
-            sh_args.append(QString("https_proxy=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
-            sh_args.append(QString("ftp_proxy=http://%1:%2").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+            QString proxy_auth = CoreLib->getSetting("network", "user", false).toString();
+            if (!proxy_auth.isEmpty()){
+                QString proxy_pass = CoreLib->getSetting("network", "pass", false).toString();
+                proxy_auth.append(QString(":%1@").arg(proxy_pass));
+            }
+            QString proxy_var = QString("http://%1%2:%3").arg(proxy_auth).arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString());
+            sh_args.append(QString("http_proxy='%1'").arg(proxy_var));
+            sh_args.append(QString("https_proxy='%1'").arg(proxy_var));
+            sh_args.append(QString("ftp_proxy='%1'").arg(proxy_var));
         }
 
         QHash<QString, QString> prefix_info = db_prefix.getByName(this->prefix_name);
@@ -195,7 +201,13 @@ void winetricks::downloadwinetricks () {
 
     QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
     if (!proxy_host.isEmpty()){
-        arg.append(QString("env https_proxy=http://%1:%2 ").arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString()));
+        QString proxy_auth = CoreLib->getSetting("network", "user", false).toString();
+        if (!proxy_auth.isEmpty()){
+            QString proxy_pass = CoreLib->getSetting("network", "pass", false).toString();
+            proxy_auth.append(QString(":%1@").arg(proxy_pass));
+        }
+        QString proxy_var = QString("http://%1%2:%3").arg(proxy_auth).arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString());
+        arg.append(QString("env https_proxy='%1' ").arg(proxy_var));
     }
 
     arg.append(CoreLib->getWhichOut("wget"));
