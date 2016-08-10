@@ -4,6 +4,9 @@ Version 1.3.2
   - Winetricks does not update [BUG-77];
   - First startup wizard (quick mount profile): profile strings are initially empty if fuseiso is not installed [BUG-81];
   - Download (latest) Winetricks from GitHub [BUG-82];
+  - Correct proxy-related environment variables in Winetricks plugin [BUG-83];
+  - Use env command in the command line to download Winetricks [BUG-83];
+  - Support proxy username/password in Winetricks plugin [BUG-83];
 
 Version 1.3.1
  Added:
