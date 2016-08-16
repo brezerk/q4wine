@@ -293,7 +293,7 @@ bool winetricks::parse() {
             foreach (QString item, this->get_stdout_lines(pargs)){
                 if ((item.isEmpty()) or (item.startsWith("Using winetricks")))
                     continue;
-                db_sysconfig.add_item(item.left(24).trimmed(), "application-x-ms-dos-executable", item.mid(24).trimmed(), subtype, D_PROVIDER_WINETRICKS);
+                db_sysconfig.add_item(item.section(' ', 0, 0), "application-x-ms-dos-executable", item.section(' ', 1, -1, QString::SectionSkipEmpty), subtype, D_PROVIDER_WINETRICKS);
             }
         }
     }
