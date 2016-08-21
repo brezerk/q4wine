@@ -199,15 +199,17 @@ void winetricks::downloadwinetricks () {
     arg.append(CoreLib->getWhichOut("sh"));
     arg.append(" -c \"");
 
-    QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
-    if (!proxy_host.isEmpty()){
-        QString proxy_auth = CoreLib->getSetting("network", "user", false).toString();
-        if (!proxy_auth.isEmpty()){
-            QString proxy_pass = CoreLib->getSetting("network", "pass", false).toString();
-            proxy_auth.append(QString(":%1@").arg(proxy_pass));
+    if (CoreLib->getSetting("network", "type", 0).toInt() != 0){
+        QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
+        if (!proxy_host.isEmpty()){
+            QString proxy_auth = CoreLib->getSetting("network", "user", false).toString();
+            if (!proxy_auth.isEmpty()){
+                QString proxy_pass = CoreLib->getSetting("network", "pass", false).toString();
+                proxy_auth.append(QString(":%1@").arg(proxy_pass));
+            }
+            QString proxy_var = QString("http://%1%2:%3").arg(proxy_auth).arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString());
+            arg.append(QString("env https_proxy='%1' ").arg(proxy_var));
         }
-        QString proxy_var = QString("http://%1%2:%3").arg(proxy_auth).arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString());
-        arg.append(QString("env https_proxy='%1' ").arg(proxy_var));
     }
 
     arg.append(CoreLib->getWhichOut("wget"));
@@ -244,6 +246,7 @@ QStringList winetricks::get_stdout_lines(QString command){
 
     p.start(command);
     p.waitForFinished();
+
     QString stdout = codec->toUnicode(p.readAllStandardOutput());
     return stdout.split("\n");
 }
