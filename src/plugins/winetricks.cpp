@@ -255,9 +255,11 @@ bool winetricks::parse() {
     if (!check_script())
         return false;
 
-    QProgressDialog *pd = new QProgressDialog(tr("Refreshing winetricks application list."), QString(), 0, 100);
+    QProgressDialog *pd = new QProgressDialog(tr("Refreshing Winetricks application list."), QString(), 0, 100);
     pd->setModal(true);
-    pd->show();
+    pd->setWindowTitle(tr("Winetricks plugin"));
+    pd->setFixedWidth(400);
+    pd->show();  
     pd->setValue(5);
     QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
 
@@ -284,6 +286,7 @@ bool winetricks::parse() {
 
     foreach (QString subtype, subtypes){
         pd->setValue(pd->value() + step);
+        pd->setLabelText(tr("Reading category: %1").arg(subtype));
         QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
         if ((!subtype.isEmpty()) and (!subtype.startsWith("Using winetricks"))) {
             qDebug() << "\"" << subtype << "\"";
