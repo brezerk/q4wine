@@ -117,7 +117,7 @@ VersionManager::VersionManager(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
 
     connect(txtWineBin, SIGNAL(textChanged(QString)), this, SLOT(versionSettingsChanged(QString)));
     connect(txtWineLibs32, SIGNAL(textChanged(QString)), this, SLOT(versionSettingsChanged(QString)));
-    connect(txtWineLibs32, SIGNAL(textChanged(QString)), this, SLOT(versionSettingsChanged(QString)));
+    connect(txtWineLibs64, SIGNAL(textChanged(QString)), this, SLOT(versionSettingsChanged(QString)));
     connect(txtWineLoaderBin, SIGNAL(textChanged(QString)), this, SLOT(versionSettingsChanged(QString)));
     connect(txtWineServerBin, SIGNAL(textChanged(QString)), this, SLOT(versionSettingsChanged(QString)));
 
