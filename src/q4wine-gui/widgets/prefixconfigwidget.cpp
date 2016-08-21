@@ -110,20 +110,20 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
     splitter.reset(new QSplitter(this));
     splitter->addWidget(treeFrameWidget.release());
     splitter->addWidget(iconsFrameWidget.release());
+    splitter->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     infoName.reset(new QLabel(QString("%1:\n\%2:").arg(tr("Name")).arg(tr("Description")), this));
-    infoName->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
     infoName->setTextInteractionFlags(Qt::TextSelectableByMouse);
     infoName->setWordWrap(true);
     std::auto_ptr<QFrame> frame(new QFrame(this));
 
     layout.reset(new QVBoxLayout(this));
-    layout->setSpacing(0);
+    layout->setSpacing(3);
     layout->setContentsMargins(0,6,0,0);
     layout->addWidget(infoName.get());
 
     frame->setLayout(layout.release());
-    frame->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
+    frame->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     infoName->setFrameStyle(QFrame::Raised);
     infoName->setFrameShape(QFrame::StyledPanel);
 
