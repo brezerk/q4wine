@@ -148,6 +148,13 @@ bool DataBase::checkDb(){
                 query.bindValue(":desc", "%REFRESH_WINETRICKS_DESC%");
                 if (!query.exec())
                     return false;
+
+                query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, 2);");
+                query.bindValue(":name", "%ABOUT_WINETRICKS%");
+                query.bindValue(":icon", "go-home");
+                query.bindValue(":desc", "%ABOUT_WINETRICKS_DESC%");
+                if (!query.exec())
+                    return false;
             } else if (table == "versions"){
                 if(!query.exec("CREATE TABLE versions (wine_dllpath32 TEXT, wine_dllpath64 TEXT, wine_loader TEXT, wine_server TEXT, wine_exec TEXT, id INTEGER PRIMARY KEY, name TEXT);"))
                     return false;
@@ -236,13 +243,25 @@ bool DataBase::fixup(){
             return false;
         }
     }
-    if (query.exec("SELECT icon FROM providers WHERE icon='wine.png'")){
+    query.exec("SELECT icon FROM providers WHERE icon='wine.png'");
+    if (query.next()){
         if (!query.exec("UPDATE providers SET icon='regedit' WHERE icon='regedit.png'")){
             qDebug()<<"[EE] Cannot update providers table";
             return false;
         }
         if (!query.exec("UPDATE providers SET icon='wine' WHERE icon='wine.png'")){
             qDebug()<<"[EE] Cannot update providers table";
+            return false;
+        }
+    }
+    query.exec("SELECT id FROM sysconfig WHERE icon='go-home'");
+    if (!query.next()){
+        query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, 2);");
+        query.bindValue(":name", "%ABOUT_WINETRICKS%");
+        query.bindValue(":icon", "go-home");
+        query.bindValue(":desc", "%ABOUT_WINETRICKS_DESC%");
+        if (!query.exec()){
+            qDebug()<<"[EE] Cannot update sysconfig table";
             return false;
         }
     }

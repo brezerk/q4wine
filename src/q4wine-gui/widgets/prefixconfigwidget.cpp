@@ -291,6 +291,10 @@ void PrefixConfigWidget::get_icons(){
                     name = tr("Refresh Winetricks application list");
                     desc = tr("Create or update Q4Wine's cache of Winetricks appications.");
                     iconItem->setIcon(CoreLib->loadIcon("edit-redo"));
+                } else if (items.at(i).name == "%ABOUT_WINETRICKS%"){
+                    name = tr("Goto Winetricks homepage");
+                    desc = tr("Read news, report bugs and join the Winetricks community at https://github.com/Winetricks/winetricks");
+                    iconItem->setIcon(CoreLib->loadIcon("go-home"));
                 }
             }
             iconItem->setText(name);
@@ -412,6 +416,8 @@ void PrefixConfigWidget::itemDoubleClicked (QListWidgetItem *item){
             this->createTree();
         } else if (item->text() == tr("Install or update Winetricks script")){
             wine_t.install_winetricks();
+        } else if (item->text() == tr("Goto Winetricks homepage")){
+            CoreLib->openUrl("https://github.com/Winetricks/winetricks");
         } else {
             wine_t.run_winetricks(item->text());
         }
