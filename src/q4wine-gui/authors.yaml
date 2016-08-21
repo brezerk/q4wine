@@ -258,3 +258,10 @@ thanks:
           info: Testing, bug reports
           mail: andrey.aleksandrovich@googlemail.com
           location: Kharkov, Ukraine
+
+        - name: Masanori Kakura
+          nick: kakurasan
+          info: Bug reports, testing, some fixes, feature requests
+          mail: kakurasan@gmail.com
+          web: https://kakurasan.blogspot.com/
+          location: Japan
