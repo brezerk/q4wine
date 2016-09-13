@@ -266,7 +266,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
                 QString drive;
                 foreach (drive, this->cdromDevices){
                     entry.reset (new QAction(CoreLib->loadIcon("drive-optical"), drive, this));
-                    entry->setStatusTip(tr("Mount media drive."));
+                    entry->setStatusTip(drive);
                     submenuMount->addAction(entry.release());
                 }
             } else {
@@ -322,7 +322,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
             std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
 
             std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("document-open"), tr("Browse ..."), this));
-            entry->setStatusTip(tr("Browse for another image"));
+            entry->setStatusTip(tr("Browse for wine binary"));
 
             connect(menuRun.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
             menuRun->addAction(entry.release());
@@ -559,7 +559,7 @@ void PrefixTreeWidget::menuRun_triggered(QAction* action){
       if (action->text().isEmpty())
             return;
 
-      if (action->text()==tr("Browse ...")){
+      if (action->statusTip()==tr("Browse for wine binary")){
             Run run;
             run.prepare(this->prefixName);
             run.exec();
@@ -603,7 +603,7 @@ void PrefixTreeWidget::menuMount_triggered(QAction* action){
       if (action->text()==tr("[none]")){
             QMessageBox::warning(this, tr("Error"),  tr("No device drive specified in prefix settings."), QMessageBox::Ok);
             return;
-      } else if (action->text()==tr("Browse...")) {
+      } else if (action->statusTip()==tr("Browse for media image.")) {
             /*
             Request for unmounting cdrom drve described at wine prefix settings
             */

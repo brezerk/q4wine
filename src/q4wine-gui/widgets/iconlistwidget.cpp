@@ -410,7 +410,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
             QString drive;
             foreach (drive, this->cdromDevices){
                 entry.reset (new QAction(CoreLib->loadIcon("drive-optical"), drive, this));
-                entry->setStatusTip(tr("Mount media drive."));
+                entry->setStatusTip(drive);
                 submenuMount->addAction(entry.release());
             }
         } else {

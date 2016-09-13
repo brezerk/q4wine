@@ -46,7 +46,8 @@ QList<QStringList> Image::getFields(void) const{
 
 QString Image::getPath(const QString name) const{
     QString result;
-    QSqlQuery query("SELECT path FROM images WHERE name=:name ORDER BY name");
+    QSqlQuery query;
+    query.prepare("SELECT path FROM images WHERE name=:name ORDER BY name");
     query.bindValue(":name", name);
     if (query.exec()){
         query.next();
@@ -75,8 +76,8 @@ bool Image::isExistsByName(const QString name) const{
 bool Image::addImage(const QString name, const QString path) const{
     QSqlQuery query;
     query.prepare("INSERT INTO images(name, path) VALUES(:name, :path)");
-    query.bindValue("name", name);
-    query.bindValue("path", path);
+    query.bindValue(":name", name);
+    query.bindValue(":path", path);
 
     if (!query.exec()){
         qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
@@ -88,8 +89,8 @@ bool Image::addImage(const QString name, const QString path) const{
 bool Image::renameImage(const QString name, const QString old_name) const{
     QSqlQuery query;
     query.prepare("UPDATE images SET name=:name WHERE name=:old_name");
-    query.bindValue("name", name);
-    query.bindValue("old_name", old_name);
+    query.bindValue(":name", name);
+    query.bindValue(":old_name", old_name);
 
     if (!query.exec()){
         qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
@@ -101,7 +102,7 @@ bool Image::renameImage(const QString name, const QString old_name) const{
 bool Image::delImage(const QString name) const{
     QSqlQuery query;
     query.prepare("DELETE FROM images WHERE name=:name");
-    query.bindValue("name", name);
+    query.bindValue(":name", name);
 
     if (!query.exec()){
         qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
@@ -109,4 +110,3 @@ bool Image::delImage(const QString name) const{
     }
     return true;
 }
-

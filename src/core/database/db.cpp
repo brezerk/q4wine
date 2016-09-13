@@ -265,5 +265,6 @@ bool DataBase::fixup(){
             return false;
         }
     }
+    query.exec("DELETE FROM images WHERE name IS NULL");
     return true;
 }

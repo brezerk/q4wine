@@ -1,3 +1,7 @@
+Version 1.3.3
+ Fixed:
+  - Problem opening file dialog to mount ISO [BUG-86];
+
 Version 1.3.2
  Fixed:
   - [regression, bisected] Icon information is not displayed correctly [BUG-80];
