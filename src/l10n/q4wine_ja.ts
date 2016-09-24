@@ -1286,26 +1286,26 @@ See help for details.</source>
     <name>IconListWidget</name>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+232"/>
-        <location line="+538"/>
+        <location line="+537"/>
         <location line="+134"/>
         <source>Sorry. It seems that the icon already exists.</source>
         <translation>アイコンは既に存在しているようです。</translation>
     </message>
     <message>
-        <location line="-672"/>
+        <location line="-671"/>
         <source>Sorry. It seems that icon already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
         <translation>アイコンは既に存在しているようです。&lt;br&gt;別の名前を選択するか、操作をキャンセルしてください。</translation>
     </message>
     <message>
         <location line="+24"/>
-        <location line="+899"/>
+        <location line="+898"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 は正常にマウントされました。</translation>
     </message>
     <message>
-        <location line="-914"/>
-        <location line="+916"/>
+        <location line="-913"/>
+        <location line="+915"/>
         <source>Failed to mount %1.</source>
         <translation>%1 のマウントに失敗しました。</translation>
     </message>
@@ -2739,19 +2739,19 @@ See help for details.</source>
 <context>
     <name>PrefixConfigWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="+114"/>
-        <location line="+207"/>
+        <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="+115"/>
+        <location line="+210"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>
     <message>
-        <location line="-207"/>
-        <location line="+207"/>
+        <location line="-210"/>
+        <location line="+210"/>
         <source>Description</source>
         <translation>説明</translation>
     </message>
     <message>
-        <location line="-154"/>
+        <location line="-158"/>
         <location line="+1"/>
         <source>Manage prefixes</source>
         <translation>実行環境を管理</translation>
@@ -2765,62 +2765,73 @@ See help for details.</source>
     <message>
         <location line="+7"/>
         <location line="+1"/>
-        <location line="+276"/>
+        <location line="+282"/>
         <location line="+1"/>
         <source>Alphabetic sort descending</source>
         <translation>アルファベットの降順で並び替え</translation>
     </message>
     <message>
-        <location line="-274"/>
+        <location line="-280"/>
         <location line="+1"/>
-        <location line="+267"/>
+        <location line="+273"/>
         <location line="+1"/>
         <source>Alphabetic sort ascending</source>
         <translation>アルファベットの昇順で並び替え</translation>
     </message>
     <message>
-        <location line="-175"/>
-        <location line="+84"/>
+        <location line="-181"/>
+        <location line="+88"/>
         <source>Create Fake Drive</source>
         <translation>仮想ドライブを作成</translation>
     </message>
     <message>
-        <location line="-83"/>
+        <location line="-87"/>
         <source>Create new Fake Drive configuration. Old Fake Drive will be removed.</source>
         <translation>新しい仮想ドライブ設定を作成します。古い仮想ドライブは削除されます。</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+115"/>
+        <location line="+119"/>
         <source>Update Fake Drive</source>
         <translation>仮想ドライブを更新</translation>
     </message>
     <message>
-        <location line="-114"/>
+        <location line="-118"/>
         <source>Update Fake Drive configuration.</source>
         <translation>仮想ドライブの設定を更新します。</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location line="+126"/>
+        <location line="+130"/>
         <source>Install or update Winetricks script</source>
         <translation>Winetricks スクリプトのインストールもしくは更新</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-129"/>
         <source>Install new or update installed Winetricks script.</source>
         <translation>Winetricks スクリプトを新規にインストールするか、もしくは更新します。</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+119"/>
+        <location line="+123"/>
         <source>Refresh Winetricks application list</source>
         <translation>Winetricks のアプリケーション一覧を再読み込み</translation>
     </message>
     <message>
-        <location line="-118"/>
+        <location line="-122"/>
         <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
         <translation>Q4Wine による Winetricks アプリケーションのキャッシュを作成もしくは更新します。</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <location line="+124"/>
+        <source>Goto Winetricks homepage</source>
+        <translation>Winetricks のホームページを開く</translation>
+    </message>
+    <message>
+        <location line="-123"/>
+        <source>Read news, report bugs and join the Winetricks community at https://github.com/Winetricks/winetricks</source>
+        <translation>最新情報、 Winetricks コミュニティへの参加とバグ報告は https://github.com/Winetricks/winetricks へ</translation>
     </message>
     <message>
         <location line="+78"/>
@@ -3073,7 +3084,7 @@ See help for details.</source>
         <translation>バージョン:</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+61"/>
         <source>Options below are obsolete, please delete them and use version manager instead:</source>
         <translation>以下のオプションは古いため、削除した上でバージョン マネージャを代わりに使用してください:</translation>
     </message>
@@ -3098,7 +3109,7 @@ See help for details.</source>
         <translation>ライブラリ:</translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+60"/>
         <source>Advanced</source>
         <translation>高度な設定</translation>
     </message>
@@ -3129,7 +3140,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../q4wine-gui/prefixsettings.cpp" line="+60"/>
-        <location line="+160"/>
+        <location line="+166"/>
         <location line="+6"/>
         <location line="+14"/>
         <location line="+15"/>
@@ -3138,18 +3149,18 @@ See help for details.</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location line="-414"/>
-        <location line="+414"/>
+        <location line="-420"/>
+        <location line="+420"/>
         <source>Unable to load version by name: %1</source>
         <translation>名前: %1 のバージョンを読み込めません</translation>
     </message>
     <message>
-        <location line="-330"/>
+        <location line="-331"/>
         <source>Add new Prefix</source>
         <translation>新しい実行環境を追加</translation>
     </message>
     <message>
-        <location line="+76"/>
+        <location line="+77"/>
         <source>Enter a prefix name</source>
         <translation>実行環境の名前を入力</translation>
     </message>
@@ -3702,7 +3713,7 @@ See help for details.</source>
     </message>
     <message>
         <location filename="../main.cpp" line="+115"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+107"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+108"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>これは自由なソフトウェアです: 変更や再頒布を自由に行うことができます。</translation>
@@ -3789,12 +3800,12 @@ See help for details.</source>
         <translation>GNU ソフトウェアの使用に関する一般的なヘルプ: &lt;http://www.gnu.org/gethelp/&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+40"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+42"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>&quot;%1&quot; という名前の実行環境は存在しません。&quot;%2-cli -pl&quot; を実行して実行環境を一覧してください。</translation>
     </message>
     <message>
-        <location line="+71"/>
+        <location line="+85"/>
         <source>Prefix list</source>
         <translation>実行環境の一覧</translation>
     </message>
@@ -3944,7 +3955,7 @@ See help for details.</source>
         <translation>ファイル &quot;%1&quot; は存在しません。</translation>
     </message>
     <message>
-        <location line="-341"/>
+        <location line="-357"/>
         <source>  %1-cli [KEY]...</source>
         <translation>  %1-cli [キー]...</translation>
     </message>
@@ -4343,7 +4354,7 @@ See help for details.</source>
         <translation>Wine バージョン マネージャ</translation>
     </message>
     <message>
-        <location line="+107"/>
+        <location line="+113"/>
         <source>Bin:</source>
         <translation>実行ファイル:</translation>
     </message>
@@ -4358,7 +4369,12 @@ See help for details.</source>
         <translation>ローダ:</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+29"/>
+        <source>Optional</source>
+        <translation>追加の設定</translation>
+    </message>
+    <message>
+        <location line="+33"/>
         <source>Libs 32:</source>
         <translation>ライブラリ 32:</translation>
     </message>
@@ -4368,7 +4384,7 @@ See help for details.</source>
         <translation>ライブラリ 64:</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+61"/>
         <source>Help</source>
         <translation>ヘルプ</translation>
     </message>
@@ -4694,7 +4710,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="+197"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="+199"/>
         <location line="+165"/>
         <location line="+45"/>
         <source>No Proxy</source>
@@ -4758,12 +4774,12 @@ See help for details.</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="-462"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="-464"/>
         <source>First startup wizard</source>
         <translation>初回実行ウィザード</translation>
     </message>
     <message>
-        <location line="+99"/>
+        <location line="+101"/>
         <source>generic</source>
         <translation>generic</translation>
     </message>
@@ -4854,18 +4870,40 @@ See help for details.</source>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
+        <location line="+115"/>
+        <location line="+5"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-120"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Winetricks のスクリプトが見つかりません。先にインストールしてください。</translation>
     </message>
     <message>
-        <location line="+166"/>
-        <source>Refreshing winetricks application list.</source>
+        <location line="+115"/>
+        <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
+        <translation>ファイル &apos;%1&apos; は読み書き不可能です。ファイルのアクセス権を確認してください。</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Can&apos;t create file &apos;%1&apos;. Check folder permissions.</source>
+        <translation>ファイル &apos;%1&apos; が作成できません。フォルダのアクセス権を確認してください。</translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Refreshing Winetricks application list.</source>
         <translation>Winetricks のアプリケーション一覧を更新しています。</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Winetricks plugin</source>
+        <translation>Winetricks プラグイン</translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Reading category: %1</source>
+        <translation>カテゴリを読み込んでいます: %1</translation>
     </message>
 </context>
 </TS>
