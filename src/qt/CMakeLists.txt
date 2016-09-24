@@ -25,20 +25,22 @@ set(Q4WINE_QT_HEADERS_DIR
     )
 
 set(Q4WINE_QT_HEADEDRS
-    ${CMAKE_SOURCE_DIR}/src/qt/widgets/iconlist.hpp
-    ${CMAKE_SOURCE_DIR}/src/qt/widgets/processlist.hpp
-    ${CMAKE_SOURCE_DIR}/src/qt/widgets/prefixtree.hpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/desktop/iconlist.hpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/desktop/prefixtree.hpp
     ${CMAKE_SOURCE_DIR}/src/qt/widgets/desktop.hpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/process/processlist.hpp
     ${CMAKE_SOURCE_DIR}/src/qt/widgets/process.hpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/configuration.hpp
     ${CMAKE_SOURCE_DIR}/src/qt/mainwindow.hpp
     )
 
 set(Q4WINE_QT_SOURCES
-    ${CMAKE_SOURCE_DIR}/src/qt/widgets/iconlist.cpp
-    ${CMAKE_SOURCE_DIR}/src/qt/widgets/processlist.cpp
-    ${CMAKE_SOURCE_DIR}/src/qt/widgets/prefixtree.cpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/desktop/iconlist.cpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/desktop/prefixtree.cpp
     ${CMAKE_SOURCE_DIR}/src/qt/widgets/desktop.cpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/process/processlist.cpp
     ${CMAKE_SOURCE_DIR}/src/qt/widgets/process.cpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/configuration.cpp
     ${CMAKE_SOURCE_DIR}/src/qt/mainwindow.cpp
     ${CMAKE_SOURCE_DIR}/src/qt/main.cpp
     )

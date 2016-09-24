@@ -31,8 +31,8 @@
 
 #include <memory>
 
-#include "src/qt/widgets/prefixtree.hpp"
-#include "src/qt/widgets/iconlist.hpp"
+#include "src/qt/widgets/desktop/prefixtree.hpp"
+#include "src/qt/widgets/desktop/iconlist.hpp"
 
 class DesktopWidget : public QWidget
 {

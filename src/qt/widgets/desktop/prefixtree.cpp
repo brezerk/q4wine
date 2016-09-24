@@ -16,7 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "src/qt/widgets/prefixtree.hpp"
+#include "src/qt/widgets/desktop/prefixtree.hpp"
 
 PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) : QWidget(parent) {
     layout_.reset(new QVBoxLayout(this));

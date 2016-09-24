@@ -28,8 +28,7 @@
 
 #include <memory>
 
-#include "src/qt/widgets/prefixtree.hpp"
-#include "src/qt/widgets/processlist.hpp"
+#include "src/qt/widgets/process/processlist.hpp"
 
 class ProcessWidget : public QWidget
 {
@@ -43,7 +42,6 @@ class ProcessWidget : public QWidget
     void createWidgets();
     const QIcon getIcon(QString name) const;
 
-    std::shared_ptr<PrefixTreeWidget> w_PrefixTree;
     std::shared_ptr<ProcessListWidget> w_ProcessList;
 
     std::shared_ptr<QLabel> lbl_ProcessCount,

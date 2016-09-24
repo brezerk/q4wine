@@ -16,35 +16,42 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "src/qt/widgets/process.hpp"
+#pragma once
 
-ProcessWidget::ProcessWidget(QWidget *parent) : QWidget(parent) {
-    createWidgets();
-}
+#include <QWidget>
+#include <QVBoxLayout>
+#include <QSplitter>
+#include <QTreeWidget>
+#include <QListWidget>
+#include <QLabel>
+#include <QIcon>
+#include <QSplitter>
+#include <QGridLayout>
+#include <QVBoxLayout>
 
-ProcessWidget::~ProcessWidget() {
-}
+#include <memory>
 
-void ProcessWidget::createWidgets() {
-    w_ProcessList.reset(new ProcessListWidget());
-    lbl_ProcessCount.reset(new QLabel());
-    lbl_PrefixCount.reset(new QLabel());
+#include "src/qt/widgets/desktop/prefixtree.hpp"
+#include "src/qt/widgets/desktop/iconlist.hpp"
 
-    QGridLayout* layout = new QGridLayout();
-    layout->setMargin(0);
-    layout->setSpacing(4);
-    layout->addWidget(w_ProcessList.get(),
-                      0, 0, 1, 2);
-    layout->addWidget(lbl_ProcessCount.get(),
-                      1, 0);
-    layout->addWidget(lbl_PrefixCount.get(),
-                      1, 1);
-    this->setLayout(layout);
+class ConfigurationWidget : public QWidget
+{
+    Q_OBJECT
 
-    lbl_ProcessCount->setText(tr("Total process count:"));
-    lbl_PrefixCount->setText(tr("Running prefixes:"));
-}
+ public:
+    explicit ConfigurationWidget(QWidget *parent = 0);
+    ~ConfigurationWidget();
 
-const QIcon ProcessWidget::getIcon(QString name) const {
-    return QIcon::fromTheme(name, QIcon(QString(":%1").arg(name)));
-}
+ private:
+    void createWidgets();
+    const QIcon getIcon(QString name) const;
+
+    std::shared_ptr<PrefixTreeWidget> w_PrefixTree;
+    std::shared_ptr<IconListWidget> w_IconList;
+
+    std::shared_ptr<QLabel> lbl_IconInfoName,
+                            lbl_IconInfoArgs,
+                            lbl_IconInfoDesc,
+                            lbl_IconInfoTerminal,
+                            lbl_IconInfoDesktopSize;
+};

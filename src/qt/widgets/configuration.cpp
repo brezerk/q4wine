@@ -16,35 +16,59 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "src/qt/widgets/process.hpp"
+#include "src/qt/widgets/configuration.hpp"
 
-ProcessWidget::ProcessWidget(QWidget *parent) : QWidget(parent) {
+ConfigurationWidget::ConfigurationWidget(QWidget *parent) : QWidget(parent) {
     createWidgets();
 }
 
-ProcessWidget::~ProcessWidget() {
+ConfigurationWidget::~ConfigurationWidget() {
 }
 
-void ProcessWidget::createWidgets() {
-    w_ProcessList.reset(new ProcessListWidget());
-    lbl_ProcessCount.reset(new QLabel());
-    lbl_PrefixCount.reset(new QLabel());
+void ConfigurationWidget::createWidgets() {
+    w_PrefixTree.reset(new PrefixTreeWidget());
+    w_IconList.reset(new IconListWidget());
+
+    QSplitter* splitter = new QSplitter(this);
+    splitter->addWidget(w_PrefixTree.get());
+    splitter->addWidget(w_IconList.get());
+    splitter->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    QList<int> sizes;
+    sizes << 150 << 400;
+    splitter->setSizes(sizes);
+
+    lbl_IconInfoName.reset(new QLabel());
+    lbl_IconInfoArgs.reset(new QLabel());
+    lbl_IconInfoTerminal.reset(new QLabel());
+    lbl_IconInfoDesktopSize.reset(new QLabel());
+    lbl_IconInfoDesc.reset(new QLabel());
 
     QGridLayout* layout = new QGridLayout();
     layout->setMargin(0);
     layout->setSpacing(4);
-    layout->addWidget(w_ProcessList.get(),
+    layout->addWidget(splitter,
                       0, 0, 1, 2);
-    layout->addWidget(lbl_ProcessCount.get(),
+    layout->addWidget(lbl_IconInfoName.get(),
                       1, 0);
-    layout->addWidget(lbl_PrefixCount.get(),
+    layout->addWidget(lbl_IconInfoTerminal.get(),
                       1, 1);
+    layout->addWidget(lbl_IconInfoArgs.get(),
+                      2, 0);
+    layout->addWidget(lbl_IconInfoDesktopSize.get(),
+                      2, 1);
+    layout->addWidget(lbl_IconInfoDesc.get(),
+                      3, 0, 1, 2);
     this->setLayout(layout);
 
-    lbl_ProcessCount->setText(tr("Total process count:"));
-    lbl_PrefixCount->setText(tr("Running prefixes:"));
+    lbl_IconInfoName->setText(tr("Name:"));
+    lbl_IconInfoArgs->setText(tr("Args:"));
+    lbl_IconInfoTerminal->setText(tr("Run in terminal:"));
+    lbl_IconInfoDesktopSize->setText(tr("Desktop:"));
+    lbl_IconInfoDesc->setText(tr("Some loooooooooooooooooooooooooooooooooooooo"
+                                 "oooooooooooooooooooooooooooooooooong desc"));
 }
 
-const QIcon ProcessWidget::getIcon(QString name) const {
+const QIcon ConfigurationWidget::getIcon(QString name) const {
     return QIcon::fromTheme(name, QIcon(QString(":%1").arg(name)));
 }

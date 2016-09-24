@@ -16,7 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "src/qt/widgets/processlist.hpp"
+#include "src/qt/widgets/process/processlist.hpp"
 
 ProcessListWidget::ProcessListWidget(QWidget *parent) : QWidget(parent) {
     layout_.reset(new QVBoxLayout(this));

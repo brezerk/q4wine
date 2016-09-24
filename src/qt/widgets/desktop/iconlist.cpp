@@ -16,7 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "src/qt/widgets/iconlist.hpp"
+#include "src/qt/widgets/desktop/iconlist.hpp"
 
 IconListWidget::IconListWidget(QWidget *parent) : QWidget(parent) {
     layout_.reset(new QVBoxLayout(this));
