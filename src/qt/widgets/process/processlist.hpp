@@ -30,6 +30,7 @@
 #include <QStandardItemModel>
 #include <QTableView>
 #include <QTableWidgetItem>
+#include <QHeaderView>
 
 #include <memory>
 

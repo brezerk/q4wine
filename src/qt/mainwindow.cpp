@@ -125,7 +125,7 @@ void MainWindow::createWidgets() {
     //  QWidget* desktopWidget = new QWidget(tab);
     QWidget* processWidget = new ProcessWidget(tab);
     QWidget* configureWidget = new ConfigurationWidget(tab);
-    QWidget* prefixpWidget = new QWidget(tab);
+    QWidget* prefixpWidget = new PrefixConfigWidget(tab);
     QWidget* logWidget = new QWidget(tab);
     QWidget* desktop = new DesktopWidget(tab);
     tab->addTab(desktop,

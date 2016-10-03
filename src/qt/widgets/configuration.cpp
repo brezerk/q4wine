@@ -39,32 +39,20 @@ void ConfigurationWidget::createWidgets() {
     splitter->setSizes(sizes);
 
     lbl_IconInfoName.reset(new QLabel());
-    lbl_IconInfoArgs.reset(new QLabel());
-    lbl_IconInfoTerminal.reset(new QLabel());
-    lbl_IconInfoDesktopSize.reset(new QLabel());
     lbl_IconInfoDesc.reset(new QLabel());
 
     QGridLayout* layout = new QGridLayout();
     layout->setMargin(0);
     layout->setSpacing(4);
     layout->addWidget(splitter,
-                      0, 0, 1, 2);
+                      0, 0);
     layout->addWidget(lbl_IconInfoName.get(),
                       1, 0);
-    layout->addWidget(lbl_IconInfoTerminal.get(),
-                      1, 1);
-    layout->addWidget(lbl_IconInfoArgs.get(),
-                      2, 0);
-    layout->addWidget(lbl_IconInfoDesktopSize.get(),
-                      2, 1);
     layout->addWidget(lbl_IconInfoDesc.get(),
-                      3, 0, 1, 2);
+                      3, 0);
     this->setLayout(layout);
 
     lbl_IconInfoName->setText(tr("Name:"));
-    lbl_IconInfoArgs->setText(tr("Args:"));
-    lbl_IconInfoTerminal->setText(tr("Run in terminal:"));
-    lbl_IconInfoDesktopSize->setText(tr("Desktop:"));
     lbl_IconInfoDesc->setText(tr("Some loooooooooooooooooooooooooooooooooooooo"
                                  "oooooooooooooooooooooooooooooooooong desc"));
 }

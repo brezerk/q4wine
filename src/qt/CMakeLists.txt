@@ -33,6 +33,7 @@ set(Q4WINE_QT_HEADEDRS
     ${CMAKE_SOURCE_DIR}/src/qt/widgets/configuration.hpp
     ${CMAKE_SOURCE_DIR}/src/qt/widgets/configuration/iconlist.hpp
     ${CMAKE_SOURCE_DIR}/src/qt/widgets/configuration/configtree.hpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/prefix.hpp
     ${CMAKE_SOURCE_DIR}/src/qt/mainwindow.hpp
     )
 
@@ -45,6 +46,7 @@ set(Q4WINE_QT_SOURCES
     ${CMAKE_SOURCE_DIR}/src/qt/widgets/configuration.cpp
     ${CMAKE_SOURCE_DIR}/src/qt/widgets/configuration/iconlist.cpp
     ${CMAKE_SOURCE_DIR}/src/qt/widgets/configuration/configtree.cpp
+    ${CMAKE_SOURCE_DIR}/src/qt/widgets/prefix.cpp
     ${CMAKE_SOURCE_DIR}/src/qt/mainwindow.cpp
     ${CMAKE_SOURCE_DIR}/src/qt/main.cpp
     )

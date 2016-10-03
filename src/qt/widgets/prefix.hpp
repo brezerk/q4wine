@@ -19,36 +19,61 @@
 #pragma once
 
 #include <QWidget>
+#include <QAction>
+#include <QMenu>
+#include <QToolBar>
 #include <QVBoxLayout>
 #include <QSplitter>
-#include <QTreeWidget>
-#include <QListWidget>
+#include <QStandardItemModel>
+#include <QTableView>
+#include <QTableWidgetItem>
+#include <QHeaderView>
+#include <QLineEdit>
 #include <QLabel>
-#include <QIcon>
-#include <QSplitter>
-#include <QGridLayout>
-#include <QVBoxLayout>
 
 #include <memory>
 
-#include "src/qt/widgets/configuration/configtree.hpp"
-#include "src/qt/widgets/configuration/iconlist.hpp"
-
-class ConfigurationWidget : public QWidget
+class PrefixConfigWidget : public QWidget
 {
     Q_OBJECT
 
  public:
-    explicit ConfigurationWidget(QWidget *parent = 0);
-    ~ConfigurationWidget();
+    explicit PrefixConfigWidget(QWidget *parent = 0);
+    ~PrefixConfigWidget();
 
  private:
+    void createActions();
     void createWidgets();
     const QIcon getIcon(QString name) const;
 
-    std::shared_ptr<ConfigTreeWidget> w_ConfigTree;
-    std::shared_ptr<ConfigurationIconListWidget> w_ConfigIconList;
+    std::shared_ptr<QToolBar> m_ToolBar;
 
-    std::shared_ptr<QLabel> lbl_IconInfoName,
-                            lbl_IconInfoDesc;
+    std::shared_ptr<QAction> a_Clear,
+                           a_SortAlpha,
+                           a_New,
+                           a_Import,
+                           a_Export,
+                           a_Delete,
+                           a_Edit,
+                           a_Configure,
+                           a_ConfigureVersions;
+
+    std::shared_ptr<QLineEdit> txt_Filter;
+
+    std::shared_ptr<QTableView> tbl_Prefixes;
+
+    std::shared_ptr<QVBoxLayout> layout_;
+    std::shared_ptr<QStandardItemModel> model_;
+
+ private slots:
+    void a_Clear_Click();
+    void a_SortAlpha_Click();
+    void a_New_Click();
+    void a_Import_Click();
+    void a_Export_Click();
+    void a_Delete_Click();
+    void a_Edit_Click();
+    void a_Configure_Click();
+    void a_ConfigureVersions_Click();
+
 };

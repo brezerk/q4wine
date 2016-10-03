@@ -87,6 +87,9 @@ void ProcessListWidget::createWidgets() {
     w_ProcessList->setContextMenuPolicy(Qt::CustomContextMenu);
     w_ProcessList->setModel(model_.get());
 
+    w_ProcessList->horizontalHeader()->setSectionResizeMode(
+                3, QHeaderView::Stretch);
+
     layout_->addWidget(w_ProcessList.get());
 }
 

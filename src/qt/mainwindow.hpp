@@ -39,6 +39,7 @@
 #include "src/qt/widgets/desktop.hpp"
 #include "src/qt/widgets/process.hpp"
 #include "src/qt/widgets/configuration.hpp"
+#include "src/qt/widgets/prefix.hpp"
 
 namespace Ui {
 class MainWindow;
