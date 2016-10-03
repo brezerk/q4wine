@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="af" sourcelanguage="en">
+<TS version="2.0" language="af" sourcelanguage="en">
 <context>
     <name>About</name>
     <message>
@@ -215,16 +215,16 @@
         <translation>%1 instellings</translation>
     </message>
     <message>
-        <location line="+1268"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+347"/>
-        <location line="+105"/>
-        <location line="+100"/>
+        <location line="+1049"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+350"/>
+        <location line="+110"/>
+        <location line="+98"/>
         <source>No Proxy</source>
         <translatorcomment>?</translatorcomment>
         <translation>Geen instaanbediener nie</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-407"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-410"/>
         <source>generic</source>
         <translation>generic</translation>
     </message>
@@ -241,9 +241,9 @@
         <translation>Open Gids</translation>
     </message>
     <message>
-        <location line="+133"/>
+        <location line="+138"/>
         <location line="+4"/>
-        <location line="+178"/>
+        <location line="+176"/>
         <location line="+2"/>
         <location line="+6"/>
         <location line="+2"/>
@@ -251,7 +251,7 @@
         <translation>Fout</translation>
     </message>
     <message>
-        <location line="-192"/>
+        <location line="-190"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Jammer, spesifiseer instaanbediener.</translation>
     </message>
@@ -262,7 +262,7 @@
         <translation>Jammer, spesifiseer instaanbedienerpoort.</translation>
     </message>
     <message>
-        <location line="+178"/>
+        <location line="+176"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Jammer, spesifiseer %1 gids.</translation>
     </message>
@@ -282,44 +282,44 @@
         <translation>Jammer, die gespesifiseerde %1 binêre lêer bestaan nie.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="+587"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-570"/>
-        <location line="+431"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="+479"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-576"/>
+        <location line="+439"/>
         <source>System Default</source>
         <translation>Stelsel Verstek Instellings</translation>
     </message>
     <message>
-        <location line="-1796"/>
-        <location line="+2648"/>
+        <location line="-1478"/>
+        <location line="+2213"/>
         <location line="+5"/>
         <location line="+4"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-284"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-289"/>
         <location line="+20"/>
-        <location line="+423"/>
+        <location line="+426"/>
         <source>General</source>
         <translation>Algemeen</translation>
     </message>
     <message>
-        <location line="-2639"/>
+        <location line="-2213"/>
         <source>Wine settings</source>
         <translation>Wine instellings</translation>
     </message>
     <message>
-        <location line="+99"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-626"/>
-        <location line="+435"/>
+        <location line="+79"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-632"/>
+        <location line="+443"/>
         <source>Ambient Light</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
-        <location line="+435"/>
+        <location line="+9"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-441"/>
+        <location line="+443"/>
         <source>Ambient Dark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+754"/>
+        <location line="+632"/>
         <source>Bin:</source>
         <translation>Binêre Lêer:</translation>
     </message>
@@ -332,7 +332,7 @@
         <translation type="obsolete">Laaier:</translation>
     </message>
     <message>
-        <location line="-710"/>
+        <location line="-593"/>
         <source>Use tray icon.</source>
         <translatorcomment>??</translatorcomment>
         <translation>Gebruik skinkbordstaaf ikoon.</translation>
@@ -345,172 +345,172 @@
     </message>
     <message>
         <location line="+34"/>
-        <location line="+2430"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-231"/>
-        <location line="+422"/>
+        <location line="+2025"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-236"/>
+        <location line="+425"/>
         <source>System</source>
         <translation>Stelsel</translation>
     </message>
     <message>
-        <location line="-2412"/>
+        <location line="-2016"/>
         <source>System utils</source>
         <translation>Stelsel nutsprogramme</translation>
     </message>
     <message>
         <source>tar:</source>
-        <translation type="vanished">tar:</translation>
+        <translation type="obsolete">tar:</translation>
     </message>
     <message>
         <source>mount:</source>
-        <translation type="vanished">Heg (&apos;mount&apos;):</translation>
+        <translation type="obsolete">Heg (&apos;mount&apos;):</translation>
     </message>
     <message>
         <source>umount:</source>
-        <translation type="vanished">Ontheg (&apos;umount&apos;):</translation>
+        <translation type="obsolete">Ontheg (&apos;umount&apos;):</translation>
     </message>
     <message>
         <source>sudo:</source>
-        <translation type="vanished">sudo:</translation>
+        <translation type="obsolete">sudo:</translation>
     </message>
     <message>
         <source>gui sudo:</source>
-        <translation type="vanished">gui sudo:</translation>
+        <translation type="obsolete">gui sudo:</translation>
     </message>
     <message>
         <source>nice:</source>
-        <translation type="vanished">nice:</translation>
+        <translation type="obsolete">nice:</translation>
     </message>
     <message>
         <source>renice:</source>
-        <translation type="vanished">renice:</translation>
+        <translation type="obsolete">renice:</translation>
     </message>
     <message>
         <source>sh:</source>
-        <translation type="vanished">sh:</translation>
+        <translation type="obsolete">sh:</translation>
     </message>
     <message>
-        <location line="+563"/>
-        <location line="+1854"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-419"/>
-        <location line="+421"/>
+        <location line="+482"/>
+        <location line="+1539"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-422"/>
+        <location line="+424"/>
         <source>Utils</source>
         <translation>Nutsgoed (&apos;Utils&apos;)</translation>
     </message>
     <message>
-        <location line="-1836"/>
+        <location line="-1530"/>
         <source>Console</source>
         <translation>Konsole</translation>
     </message>
     <message>
-        <location line="+111"/>
+        <location line="+84"/>
         <source>Args:</source>
         <translatorcomment>??</translatorcomment>
         <translation>Parameters (&apos;Args&apos;):</translation>
     </message>
     <message>
-        <location line="+511"/>
-        <location line="+1224"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-415"/>
-        <location line="+419"/>
+        <location line="+421"/>
+        <location line="+1035"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-418"/>
+        <location line="+422"/>
         <source>Quick Mount</source>
         <translation>Vinnige Hegting</translation>
     </message>
     <message>
-        <location line="-827"/>
-        <location line="+847"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-404"/>
-        <location line="+414"/>
+        <location line="-710"/>
+        <location line="+730"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-407"/>
+        <location line="+417"/>
         <source>Logging</source>
         <translation>Boekstawing</translation>
     </message>
     <message>
-        <location line="-829"/>
+        <location line="-721"/>
         <source>Logging subsystem:</source>
         <translation>Boekstawing substelsel:</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+15"/>
         <source>Clear logs at startup.</source>
         <translation>Herstel boekstawing tydens aanskakeling.</translation>
     </message>
     <message>
-        <location line="+600"/>
+        <location line="+528"/>
         <source>Run recent program</source>
         <translation>Loop onlangse program</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+15"/>
         <source>Open Run dialog.</source>
         <translatorcomment>?</translatorcomment>
         <translation>Open Loop dialoog.</translation>
     </message>
     <message>
-        <location line="+277"/>
+        <location line="+259"/>
         <source>OK</source>
         <translation>Goed</translation>
     </message>
     <message>
         <source>wrestool:</source>
-        <translation type="vanished">wrestool:</translation>
+        <translation type="obsolete">wrestool:</translation>
     </message>
     <message>
         <source>icotool:</source>
-        <translation type="vanished">icotool:</translation>
+        <translation type="obsolete">icotool:</translation>
     </message>
     <message>
-        <location line="-1074"/>
-        <location line="+18"/>
-        <location line="+950"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-423"/>
-        <location line="+417"/>
+        <location line="-930"/>
+        <location line="+9"/>
+        <location line="+815"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-426"/>
+        <location line="+420"/>
         <source>Language</source>
         <translation>Taal</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-414"/>
-        <location line="+416"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-417"/>
+        <location line="+419"/>
         <source>Themes</source>
         <translation>Temas</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-1555"/>
-        <location line="+1540"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-428"/>
-        <location line="+420"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-1303"/>
+        <location line="+1288"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-431"/>
+        <location line="+423"/>
         <source>Network</source>
         <translation>Netwerk</translation>
     </message>
     <message>
-        <location line="-1522"/>
+        <location line="-1279"/>
         <source>Proxy settings</source>
         <translation>Instaanbediener instellings</translation>
     </message>
     <message>
-        <location line="+263"/>
+        <location line="+209"/>
         <source>Password:</source>
         <translation>Wagwoord:</translation>
     </message>
     <message>
         <source>HTTP</source>
-        <translation type="vanished">HTTP</translation>
+        <translation type="obsolete">HTTP</translation>
     </message>
     <message>
-        <location line="-1271"/>
+        <location line="-1046"/>
         <source>Tray Icon</source>
         <translatorcomment>Skinkbord ??</translatorcomment>
         <translation>Skinkbord-ikoon</translation>
     </message>
     <message>
         <source>Icoutils</source>
-        <translation type="vanished">Icoutils</translation>
+        <translation type="obsolete">Icoutils</translation>
     </message>
     <message>
-        <location line="+1640"/>
+        <location line="+1343"/>
         <source>Language:</source>
         <translation>Taal:</translation>
     </message>
     <message>
-        <location line="-587"/>
+        <location line="-479"/>
         <source>Proxy type:</source>
         <translation>Instaanbediener tipe:</translation>
     </message>
@@ -523,7 +523,7 @@
         <translation type="obsolete">Biblioteke (64bis):</translation>
     </message>
     <message>
-        <location line="-1013"/>
+        <location line="-833"/>
         <source>Minimize to tray at startup.</source>
         <translation>Minimiseer na skinkbordstaaf tydens aanskakeling.</translation>
     </message>
@@ -534,25 +534,25 @@
     </message>
     <message>
         <source>Socks v5</source>
-        <translation type="vanished">Socks v5</translation>
+        <translation type="obsolete">Socks v5</translation>
     </message>
     <message>
-        <location line="+1049"/>
+        <location line="+860"/>
         <source>Host:</source>
         <translation>Gasheer:</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+44"/>
         <source>Port:</source>
         <translation>Poort:</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+44"/>
         <source>Username:</source>
         <translation>Gebruikernaam:</translation>
     </message>
     <message>
-        <location line="+108"/>
+        <location line="+90"/>
         <source>Select Quick Mount Profile</source>
         <translatorcomment>-?</translatorcomment>
         <translation>Kies Vinnigehegtingsprofiel</translation>
@@ -563,35 +563,35 @@
         <translation>Profiel Stringe:</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+27"/>
         <source>Mount:</source>
         <translation>Heg:</translation>
     </message>
     <message>
-        <location line="+56"/>
+        <location line="+47"/>
         <source>Mount image:</source>
         <translation>Heg databeeld:</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+44"/>
         <source>Umount:</source>
         <translation>Ontheg:</translation>
     </message>
     <message>
-        <location line="+252"/>
+        <location line="+207"/>
         <source>Note: Since SQLite was not designed to handle large amount of data, activating this can have a negative impact on the performance of Q4Wine. Use it with care.</source>
         <translation>Nota: Aangesien SQLite nie ontwerp was om groot hoeveelheid data te kan hanteer nie, kan die aktivering hiervan &apos;n negatiewe effek hê op die gedrag van Q4Wine. Gebruik met omsigtigheid.</translation>
     </message>
     <message>
         <location line="+27"/>
-        <location line="+770"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-399"/>
-        <location line="+413"/>
+        <location line="+671"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-402"/>
+        <location line="+416"/>
         <source>AppDB browser</source>
         <translation>AppDB blaaier</translation>
     </message>
     <message>
-        <location line="-752"/>
+        <location line="-662"/>
         <source>AppDB browser subsystem:</source>
         <translation>AppDB blaaier substelsel:</translation>
     </message>
@@ -602,14 +602,14 @@
     </message>
     <message>
         <location line="+44"/>
-        <location line="+712"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-407"/>
-        <location line="+411"/>
+        <location line="+622"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-410"/>
+        <location line="+414"/>
         <source>Desktop Menu</source>
         <translation>Lessenaar Gids</translation>
     </message>
     <message>
-        <location line="-706"/>
+        <location line="-616"/>
         <source>Desktop menu plugin</source>
         <translation>Lessenaar gids inprop</translation>
     </message>
@@ -630,19 +630,19 @@
     </message>
     <message>
         <location line="+47"/>
-        <location line="+642"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-405"/>
-        <location line="+409"/>
+        <location line="+552"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-408"/>
+        <location line="+412"/>
         <source>Defaults</source>
         <translation>Verstek waardes</translation>
     </message>
     <message>
-        <location line="-404"/>
+        <location line="-332"/>
         <source>Program icons</source>
         <translation>Program ikone</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+15"/>
         <source>Use single-click to run program icons.</source>
         <translation>Gebruik enkel klik om program ikone te loop.</translation>
     </message>
@@ -652,7 +652,7 @@
         <translation>Lêer dialoë</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+15"/>
         <source>Use the native file dialogs.</source>
         <translation>Gebruik die oorsproklike lêer dialoë.</translation>
     </message>
@@ -663,19 +663,19 @@
         <translation>Verstek gids vir nuwe wine wine-tuistee</translation>
     </message>
     <message>
-        <location line="+82"/>
-        <location line="+253"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-406"/>
-        <location line="+408"/>
+        <location line="+64"/>
+        <location line="+217"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-409"/>
+        <location line="+411"/>
         <source>Run dialog</source>
         <translation>Loop dialoog</translation>
     </message>
     <message>
-        <location line="-184"/>
-        <location line="+18"/>
-        <location line="+171"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-405"/>
-        <location line="+407"/>
+        <location line="-166"/>
+        <location line="+9"/>
+        <location line="+162"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-408"/>
+        <location line="+410"/>
         <source>Wine desktop import</source>
         <translatorcomment>?</translatorcomment>
         <translation>Wine lessenaar intrek</translation>
@@ -687,44 +687,44 @@
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-440"/>
-        <location line="+418"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-443"/>
+        <location line="+421"/>
         <source>Interface</source>
         <translation>Koppelvlak</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-409"/>
-        <location line="+415"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-412"/>
+        <location line="+418"/>
         <source>Subsystems</source>
         <translation>Substelsel</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-406"/>
-        <location line="+412"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-409"/>
+        <location line="+415"/>
         <source>Plugins</source>
         <translation>Inproppe</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-406"/>
-        <location line="+410"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-409"/>
+        <location line="+413"/>
         <source>Advanced</source>
         <translation>Gevorderd</translation>
     </message>
     <message>
-        <location line="-632"/>
+        <location line="-542"/>
         <source>Default virtual desktop</source>
         <translation>Verstek virtuele lessenaar</translation>
     </message>
     <message>
-        <location line="-2050"/>
+        <location line="-1723"/>
         <source>You can call it via Tools menu or via shortcut Ctrl+M</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+10"/>
         <source>Wine Version Manager</source>
         <translation type="unfinished">Wine weergawebestuurder</translation>
     </message>
@@ -734,34 +734,34 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+27"/>
         <source>App Icon:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-648"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-654"/>
         <source>Default</source>
         <translation type="unfinished">Verstek</translation>
     </message>
     <message>
-        <location line="+1992"/>
+        <location line="+1671"/>
         <source>Default virtual desktop size will be used for &quot;Icon creation&quot; and &quot;Run&quot; dialogs.</source>
         <translation>Verstek virtuele lessenaar grootte wat vir die ikoon skepping en loop dialoë gebruik word.</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+28"/>
         <source>Size:</source>
         <translation>Grootte:</translation>
     </message>
     <message>
         <location line="+8"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+543"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+549"/>
         <source>No virtual desktop</source>
         <translation>Geen virtuele lessenaar nie</translation>
     </message>
     <message>
-        <location line="+430"/>
+        <location line="+358"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
         <translation>Trek Wine lessenaar lêers in tydens Q4Wine aanskakeling.</translation>
     </message>
@@ -878,7 +878,7 @@
     </message>
     <message>
         <source>Use existing color theme</source>
-        <translation type="vanished">Gebruik bestaande kleurtema</translation>
+        <translation type="obsolete">Gebruik bestaande kleurtema</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -887,7 +887,7 @@
     </message>
     <message>
         <source>Use current Qt4 colors</source>
-        <translation type="vanished">Gebruik huidige Qt4 kleure</translation>
+        <translation type="obsolete">Gebruik huidige Qt4 kleure</translation>
     </message>
     <message>
         <location line="+49"/>
@@ -1166,7 +1166,7 @@
     </message>
     <message>
         <source>Fake drive settings for prefix &quot;%1&quot;</source>
-        <translation type="vanished">Vals skyf instellings vir Wine tuiste &quot;%1&quot;</translation>
+        <translation type="obsolete">Vals skyf instellings vir Wine tuiste &quot;%1&quot;</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-665"/>
@@ -1379,7 +1379,7 @@ Sien hulp vir verderre besonderhede.</translation>
 <context>
     <name>IconListWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+254"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+256"/>
         <location line="+898"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
@@ -1423,12 +1423,11 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>[geen]</translation>
     </message>
     <message>
-        <location line="-711"/>
         <source>Mount media drive.</source>
-        <translation>Heg media skyf.</translation>
+        <translation type="obsolete">Heg media skyf.</translation>
     </message>
     <message>
-        <location line="-181"/>
+        <location line="-892"/>
         <location line="+537"/>
         <location line="+134"/>
         <source>Sorry. It seems that the icon already exists.</source>
@@ -1684,7 +1683,12 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+102"/>
+        <location line="-446"/>
+        <source>New icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+548"/>
         <source>Drive successfully unmounted.</source>
         <translation>Skyf was suksesvol ontheg.</translation>
     </message>
@@ -1764,12 +1768,11 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation type="obsolete">Blaai vir &apos;n ander beeld</translation>
     </message>
     <message>
-        <location line="+30"/>
         <source>New</source>
-        <translation>Nuut</translation>
+        <translation type="obsolete">Nuut</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+31"/>
         <source>Create new icon</source>
         <translation>Skep nuwe ikoon</translation>
     </message>
@@ -1833,39 +1836,39 @@ Sien hulp vir verderre besonderhede.</translation>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+119"/>
         <location line="+12"/>
         <location line="+103"/>
-        <location line="+269"/>
+        <location line="+270"/>
         <source>Native</source>
         <translation>Oorspronklik</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-382"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-383"/>
         <location line="+11"/>
         <location line="+103"/>
-        <location line="+272"/>
+        <location line="+273"/>
         <source>Built-in</source>
         <translation>Ingebou</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-384"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-385"/>
         <location line="+10"/>
         <location line="+103"/>
-        <location line="+273"/>
+        <location line="+274"/>
         <source>Native, Built-in</source>
         <translation>Oorspronklik, Ingebou</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-384"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-385"/>
         <location line="+9"/>
         <location line="+103"/>
-        <location line="+274"/>
+        <location line="+275"/>
         <source>Built-in, Native</source>
         <translation>Ingebou, Oorspronklik</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-519"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-520"/>
         <source>Adding new icon</source>
         <translation>Voeg nuwe ikoon in</translation>
     </message>
@@ -1876,24 +1879,23 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <location line="+59"/>
-        <location line="+310"/>
+        <location line="+311"/>
         <location line="+24"/>
         <source>Open Exe file</source>
         <translation>Open Exe Lêer</translation>
     </message>
     <message>
-        <location line="-331"/>
         <source>Exe files (*.exe)</source>
-        <translation>Exe lêers (*.exe)</translation>
+        <translation type="obsolete">Exe lêers (*.exe)</translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="-272"/>
         <source>Open image file</source>
         <translation>Open beeld lêers</translation>
     </message>
     <message>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm)</source>
-        <translation type="vanished">Beeld lêers (*.png *.jpg *.gif *.bmp *.xpm)</translation>
+        <translation type="obsolete">Beeld lêers (*.png *.jpg *.gif *.bmp *.xpm)</translation>
     </message>
     <message>
         <location line="+140"/>
@@ -1928,7 +1930,7 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
         <translatorcomment>?</translatorcomment>
-        <translation type="vanished">Beeld en Win32 binêre lêers (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Uitvoerbare lêers (*.exe);;Win32 Gedeelde biblioteek lêers (*.dll);;Win32 Uitvoerbare en Gedeelde biblioteke (*.exe *.dll)</translation>
+        <translation type="obsolete">Beeld en Win32 binêre lêers (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm);;Win32 Uitvoerbare lêers (*.exe);;Win32 Gedeelde biblioteek lêers (*.dll);;Win32 Uitvoerbare en Gedeelde biblioteke (*.exe *.dll)</translation>
     </message>
     <message>
         <location line="-89"/>
@@ -1944,15 +1946,20 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Onttrekking van ikoon</translation>
     </message>
     <message>
-        <location line="-289"/>
+        <location line="-290"/>
         <location line="+8"/>
         <location line="+103"/>
-        <location line="+267"/>
+        <location line="+268"/>
         <source>Disabled</source>
         <translation>Ge-deaktiveer</translation>
     </message>
     <message>
-        <location line="-161"/>
+        <location line="-236"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+75"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1975,7 +1982,7 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <source>Icon Settings</source>
-        <translation type="vanished">Ikoon Instellings</translation>
+        <translation type="obsolete">Ikoon Instellings</translation>
     </message>
     <message>
         <location line="-382"/>
@@ -2627,11 +2634,11 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation type="vanished">Keuses</translation>
+        <translation type="obsolete">Keuses</translation>
     </message>
     <message>
         <source>Run...</source>
-        <translation type="vanished">Loop...</translation>
+        <translation type="obsolete">Loop...</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="+23"/>
@@ -2650,7 +2657,7 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <source>Process</source>
-        <translation type="vanished">Proses</translation>
+        <translation type="obsolete">Proses</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="-19"/>
@@ -2674,7 +2681,7 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation type="vanished">Hulp</translation>
+        <translation type="obsolete">Hulp</translation>
     </message>
     <message>
         <location line="+34"/>
@@ -2688,7 +2695,7 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <source>Quit</source>
-        <translation type="vanished">Verlaat</translation>
+        <translation type="obsolete">Verlaat</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -2697,7 +2704,7 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="vanished">Omtrent</translation>
+        <translation type="obsolete">Omtrent</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -2711,15 +2718,15 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <source>Disc Image Manager</source>
-        <translation type="vanished">Skyfbeeld Bestuurder</translation>
+        <translation type="obsolete">Skyfbeeld Bestuurder</translation>
     </message>
     <message>
         <source>First Steps</source>
-        <translation type="vanished">Eerste Treetjies</translation>
+        <translation type="obsolete">Eerste Treetjies</translation>
     </message>
     <message>
         <source>Help for This Tab</source>
-        <translation type="vanished">Hulp vir hierdie Oortjie</translation>
+        <translation type="obsolete">Hulp vir hierdie Oortjie</translation>
     </message>
     <message>
         <location line="+115"/>
@@ -2882,27 +2889,27 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <source>Short FAQ</source>
-        <translation type="vanished">Kort &apos;FAQ&apos;</translation>
+        <translation type="obsolete">Kort &apos;FAQ&apos;</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="vanished">Inhoudsopgaaf</translation>
+        <translation type="obsolete">Inhoudsopgaaf</translation>
     </message>
     <message>
         <source>Website</source>
-        <translation type="vanished">Webwerf</translation>
+        <translation type="obsolete">Webwerf</translation>
     </message>
     <message>
         <source>Donate</source>
-        <translation type="vanished">Donasies</translation>
+        <translation type="obsolete">Donasies</translation>
     </message>
     <message>
         <source>Bugs</source>
-        <translation type="vanished">Goggas</translation>
+        <translation type="obsolete">Goggas</translation>
     </message>
     <message>
         <source>Wine AppDB Browser</source>
-        <translation type="vanished">Wine AppDB Blaaier</translation>
+        <translation type="obsolete">Wine AppDB Blaaier</translation>
     </message>
     <message>
         <location line="-38"/>
@@ -2916,7 +2923,7 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <source>Handbook</source>
-        <translation type="vanished">Handleiding</translation>
+        <translation type="obsolete">Handleiding</translation>
     </message>
     <message>
         <location line="-241"/>
@@ -2925,7 +2932,7 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation type="vanished">Omtrent Qt</translation>
+        <translation type="obsolete">Omtrent Qt</translation>
     </message>
     <message>
         <location line="+145"/>
@@ -2949,7 +2956,7 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <source>Extract Images from PE Files</source>
-        <translation type="vanished">Onttrek beelde vanaf die PE lêers</translation>
+        <translation type="obsolete">Onttrek beelde vanaf die PE lêers</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -2961,18 +2968,18 @@ Sien hulp vir verderre besonderhede.</translation>
     <name>PrefixConfigWidget</name>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="+115"/>
-        <location line="+204"/>
+        <location line="+210"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location line="-204"/>
-        <location line="+204"/>
+        <location line="-210"/>
+        <location line="+210"/>
         <source>Description</source>
         <translation>Beskrywing</translation>
     </message>
     <message>
-        <location line="-152"/>
+        <location line="-158"/>
         <location line="+1"/>
         <source>Manage prefixes</source>
         <translation>Bestuur Wine-tuistes</translation>
@@ -2986,62 +2993,73 @@ Sien hulp vir verderre besonderhede.</translation>
     <message>
         <location line="+7"/>
         <location line="+1"/>
-        <location line="+274"/>
+        <location line="+282"/>
         <location line="+1"/>
         <source>Alphabetic sort descending</source>
         <translation>Alfabetiese sortering - afnemend</translation>
     </message>
     <message>
-        <location line="-272"/>
+        <location line="-280"/>
         <location line="+1"/>
-        <location line="+265"/>
+        <location line="+273"/>
         <location line="+1"/>
         <source>Alphabetic sort ascending</source>
         <translation>Alfabetiese sortering - toenemend</translation>
     </message>
     <message>
-        <location line="-175"/>
-        <location line="+84"/>
+        <location line="-181"/>
+        <location line="+88"/>
         <source>Create Fake Drive</source>
         <translation>Skep Vals Skyf</translation>
     </message>
     <message>
-        <location line="-83"/>
+        <location line="-87"/>
         <source>Create new Fake Drive configuration. Old Fake Drive will be removed.</source>
         <translation>Skep &apos;n nuwe Vals Skyf opstelling. Die ou Vals Skyf sal verwyder word.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+115"/>
+        <location line="+119"/>
         <source>Update Fake Drive</source>
         <translation>Opdateer Vals Skyf</translation>
     </message>
     <message>
-        <location line="-114"/>
+        <location line="-118"/>
         <source>Update Fake Drive configuration.</source>
         <translation>Opdateer Vals Skyf opstelling.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location line="+126"/>
+        <location line="+130"/>
         <source>Install or update Winetricks script</source>
         <translation>Installeer of dateer Winetricks skrip op</translation>
     </message>
     <message>
-        <location line="-125"/>
+        <location line="-129"/>
         <source>Install new or update installed Winetricks script.</source>
         <translation>Installeer &apos;n nuwe of opdateer &apos;n Winetricks skrip.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+119"/>
+        <location line="+123"/>
         <source>Refresh Winetricks application list</source>
         <translation>Verfris Winetricks progammatuur lys</translation>
     </message>
     <message>
-        <location line="-118"/>
+        <location line="-122"/>
         <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
         <translation>Installeer &apos;n nuwe of opdateer &apos;n Q4Wine kas vir Winetricks programmatuur.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <location line="+124"/>
+        <source>Goto Winetricks homepage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-123"/>
+        <source>Read news, report bugs and join the Winetricks community at https://github.com/Winetricks/winetricks</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+92"/>
@@ -3237,13 +3255,13 @@ Sien hulp vir verderre besonderhede.</translation>
 <context>
     <name>PrefixSettings</name>
     <message>
-        <location filename="../q4wine-gui/prefixsettings.cpp" line="+144"/>
+        <location filename="../q4wine-gui/prefixsettings.cpp" line="+149"/>
         <source>Add new Prefix</source>
         <translation>Voeg nuwe Wine-tuiste by</translation>
     </message>
     <message>
-        <location line="-84"/>
-        <location line="+160"/>
+        <location line="-89"/>
+        <location line="+166"/>
         <location line="+6"/>
         <location line="+14"/>
         <location line="+15"/>
@@ -3262,8 +3280,8 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Gee die wine-tuiste &apos;n naam</translation>
     </message>
     <message>
-        <location line="-160"/>
-        <location line="+414"/>
+        <location line="-166"/>
+        <location line="+420"/>
         <source>Unable to load version by name: %1</source>
         <translation>Kon nie weergawe met dié naam laai nie: %1</translation>
     </message>
@@ -3341,17 +3359,17 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Toestel:</translation>
     </message>
     <message>
-        <location line="+245"/>
+        <location line="+260"/>
         <source>Options below are obsolete, please delete them and use version manager instead:</source>
         <translation>Die keuse hieronder is nie meer van toepassing nie, verwyder dit en gebruik eerder die weergawebestuurder:</translation>
     </message>
     <message>
-        <location line="+380"/>
+        <location line="+390"/>
         <source>Parse result:</source>
         <translation>Ontledingsresultaat:</translation>
     </message>
     <message>
-        <location line="-678"/>
+        <location line="-703"/>
         <source>Mount point:</source>
         <translation>Hegtingspunt:</translation>
     </message>
@@ -3372,7 +3390,7 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Weergawe:</translation>
     </message>
     <message>
-        <location line="+328"/>
+        <location line="+353"/>
         <source>This template will be used to run wine programs. Normally you do not need to change it. See help for details.</source>
         <translation>Hierdie templaat sal vir die Wine programmatuur gebruik word. U hoef dit nie gewoonlik te verander nie. Sien hulp vir meer besonderhede.</translation>
     </message>
@@ -3387,7 +3405,7 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Goed</translation>
     </message>
     <message>
-        <location line="-409"/>
+        <location line="-419"/>
         <source>Bin:</source>
         <translation>Binêre lêer:</translation>
     </message>
@@ -3413,7 +3431,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Biblioteke:</translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+60"/>
         <source>Advanced</source>
         <translation>Gevorderd</translation>
     </message>
@@ -3506,17 +3524,16 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     </message>
     <message>
         <location line="+12"/>
-        <location line="+332"/>
+        <location line="+330"/>
         <source>[none]</source>
         <translation>[geen]</translation>
     </message>
     <message>
-        <location line="-336"/>
         <source>Mount media drive.</source>
-        <translation>Heg media skyf.</translation>
+        <translation type="obsolete">Heg media skyf.</translation>
     </message>
     <message>
-        <location line="-160"/>
+        <location line="-494"/>
         <location line="+56"/>
         <source>Sorry. It seems that the directory already exists.</source>
         <translation>Jammer. Dit blyk dat dié gids alreeds bestaan.</translation>
@@ -3545,17 +3562,17 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+313"/>
         <source>Browse...</source>
         <translation>Blaai...</translation>
     </message>
     <message>
-        <location line="-312"/>
+        <location line="+1"/>
+        <location line="+310"/>
         <source>Browse for media image.</source>
         <translation>Blaai vir media beeld.</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-292"/>
         <source>Unmount [%1]</source>
         <translation>Ontheg [%1]</translation>
     </message>
@@ -3571,14 +3588,23 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+240"/>
         <source>Browse ...</source>
         <translation>Blaai ...</translation>
     </message>
     <message>
-        <location line="-219"/>
         <source>New</source>
-        <translation>Nuut</translation>
+        <translation type="obsolete">Nuut</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+237"/>
+        <source>Browse for wine binary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-217"/>
+        <source>New directory</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3586,7 +3612,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Skep nuwe gids</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+5"/>
         <source>Rename</source>
         <translation>Herbenoem</translation>
     </message>
@@ -3596,7 +3622,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Herbenoem huidige gids</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+4"/>
         <source>Delete</source>
         <translation>Verwyder</translation>
     </message>
@@ -3606,7 +3632,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Verwyder huidige gids</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="+10"/>
         <source>Browser</source>
         <translation>Blaaier</translation>
     </message>
@@ -3752,7 +3778,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Redigeer Wine-tuiste instellings</translation>
     </message>
     <message>
-        <location line="-316"/>
+        <location line="-314"/>
         <location line="+56"/>
         <source>Sorry. It seems that the directory already exists.&lt;br&gt;Please choose another name or cancel the operation.</source>
         <translation>Jammer. Dit blyk of dié gids alreeds bestaan.&lt;br&gt;Kies asseblief &apos;n ander naam of kanselleer die aksie.</translation>
@@ -3763,12 +3789,11 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Heg ISO...</translation>
     </message>
     <message>
-        <location line="+69"/>
         <source>Browse for another image</source>
-        <translation>Blaai vir &apos;n ander beeld</translation>
+        <translation type="obsolete">Blaai vir &apos;n ander beeld</translation>
     </message>
     <message>
-        <location line="+99"/>
+        <location line="+166"/>
         <source>Configure prefix settings</source>
         <translation>Stel Wine-tuiste instellings op</translation>
     </message>
@@ -3939,7 +3964,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Verstek</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+233"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+250"/>
         <location line="+43"/>
         <location line="+13"/>
         <location line="+31"/>
@@ -3994,12 +4019,12 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Wine tuiste lys</translation>
     </message>
     <message>
-        <location line="-71"/>
+        <location line="-85"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>Wine tuiste genaamd &quot;%1&quot;, bestaan nie. Loop &quot;%2-cli -pl&quot; vir wine-tuiste lys.</translation>
     </message>
     <message>
-        <location line="+72"/>
+        <location line="+86"/>
         <location line="+101"/>
         <source>Path</source>
         <translation>Pad</translation>
@@ -4095,7 +4120,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="+115"/>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-292"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="-308"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
         <source>This is free software: you are free to change and redistribute it.</source>
         <translation>Hierdie is gratis programmatuur: u is vry om dit te verander en om dit te versprei.</translation>
@@ -4425,7 +4450,12 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Gespesifiseerde werksgids bestaan nie.</translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="+174"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-190"/>
         <location line="+27"/>
         <source>Disabled</source>
         <translation>Gedeaktiveer</translation>
@@ -4436,12 +4466,11 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Open Exe Lêer</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Exe files (*.exe)</source>
-        <translation>Exe lêers (*.exe)</translation>
+        <translation type="obsolete">Exe lêers (*.exe)</translation>
     </message>
     <message>
-        <location line="+55"/>
+        <location line="+58"/>
         <source>Open Directory</source>
         <translation>Open Gids</translation>
     </message>
@@ -4586,7 +4615,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Wine weergawebestuurder</translation>
     </message>
     <message>
-        <location line="+107"/>
+        <location line="+113"/>
         <source>Bin:</source>
         <translation>Bin:</translation>
     </message>
@@ -4601,7 +4630,12 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Laaier:</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+29"/>
+        <source>Optional</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+33"/>
         <source>Libs 32:</source>
         <translation>Libs 32:</translation>
     </message>
@@ -4611,7 +4645,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Libs 64:</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+61"/>
         <source>Help</source>
         <translation>Hulp</translation>
     </message>
@@ -4621,20 +4655,20 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Goed</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/versions.cpp" line="+167"/>
+        <location filename="../q4wine-gui/versions.cpp" line="+168"/>
         <source>The Version settings has been modified.</source>
         <translation>Die weergawe instellings was verander.</translation>
     </message>
     <message>
         <location line="+32"/>
         <location line="+6"/>
-        <location line="+113"/>
+        <location line="+107"/>
         <location line="+1"/>
         <source>Add version</source>
         <translation>Voeg weergawe by</translation>
     </message>
     <message>
-        <location line="-119"/>
+        <location line="-113"/>
         <source>Version name:</source>
         <translation>Weergawenaam:</translation>
     </message>
@@ -4645,8 +4679,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     </message>
     <message>
         <location line="+25"/>
-        <location line="+26"/>
-        <location line="+22"/>
+        <location line="+42"/>
         <location line="+9"/>
         <location line="+6"/>
         <location line="+6"/>
@@ -4654,17 +4687,16 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Fout</translation>
     </message>
     <message>
-        <location line="-68"/>
+        <location line="-62"/>
         <source>Default version can not be removed.</source>
         <translation>Verstek weergawe kan nie verwyder word nie.</translation>
     </message>
     <message>
-        <location line="+26"/>
         <source>32 or 64 wine library path required.</source>
-        <translation>32 of 64 Wine-biblioteekpad word benodig.</translation>
+        <translation type="obsolete">32 of 64 Wine-biblioteekpad word benodig.</translation>
     </message>
     <message>
-        <location line="+22"/>
+        <location line="+42"/>
         <source>Can&apos;t save changes...</source>
         <translation>Kan nie veranderings stoor nie...</translation>
     </message>
@@ -4892,10 +4924,10 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
 <context>
     <name>Wizard</name>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="+1727"/>
-        <location filename="../q4wine-gui/wizard.cpp" line="+227"/>
-        <location line="+167"/>
-        <location line="+47"/>
+        <location filename="../q4wine-gui/uis/Wizard.ui" line="+1595"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="+199"/>
+        <location line="+165"/>
+        <location line="+45"/>
         <source>No Proxy</source>
         <translatorcomment>?</translatorcomment>
         <translation>Geen instaanbediener nie</translation>
@@ -4909,20 +4941,20 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Step %1 of %2&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;Stap %1 van %2&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Stap %1 van %2&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="-493"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="-464"/>
         <source>First startup wizard</source>
         <translatorcomment>?</translatorcomment>
         <translation>Eerste-instellings towenaar</translation>
     </message>
     <message>
         <source>&lt;b&gt;First startup wizard&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;Eerste-instellings towenaar&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Eerste-instellings towenaar&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+126"/>
+        <location line="+101"/>
         <source>generic</source>
         <translation>generic</translation>
     </message>
@@ -4943,13 +4975,13 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <location line="+2"/>
         <location line="+6"/>
         <location line="+2"/>
-        <location line="+58"/>
+        <location line="+56"/>
         <location line="+4"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location line="-72"/>
+        <location line="-70"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Jammer, spesifiseer %1 gids.</translation>
     </message>
@@ -4959,7 +4991,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Jammer, spesifiseer %1 binêre lêer.</translation>
     </message>
     <message>
-        <location line="+66"/>
+        <location line="+64"/>
         <source>Sorry, specify proxy host.</source>
         <translatorcomment>?</translatorcomment>
         <translation>Jammer, spesifiseer instaanbediener.</translation>
@@ -4970,7 +5002,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Jammer, spesifiseer instaanbedienerpoort.</translation>
     </message>
     <message>
-        <location line="+161"/>
+        <location line="+159"/>
         <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Alexey S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was oorspronklik deur Alexey S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;] geskryf.&lt;/p&gt;&lt;p&gt;Die algemene idee van die &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; skripte het gekom en was aanvanklik geskryf deur Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;].&lt;/p&gt;&lt;p&gt;Dit word gelisensieer onder &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Stuur kommentaar, foutverslae, ens. na [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Let Wel&lt;/span&gt;&lt;/b&gt;: Hierdie programmatuur kom met absoluut geen waarborg nie. U sal &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;GEEN&lt;/span&gt;&lt;/b&gt; ondersteuning of hulp vir WineTools, Wine, programmatuur installasies, Linux of Microsoft Windows kry, vanaf die outeur nie.&lt;/p&gt;&lt;p&gt;Indien u &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;hulp benodig&lt;/span&gt;, vra op die eposlys by &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Indien u &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;ondersteuning verlang&lt;/span&gt;, koop dan asseblief die kommersiële weergawes van Wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) vir &quot;Desktop Applications&quot;&lt;/p&gt;</translation>
     </message>
@@ -4980,7 +5012,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>&lt;p&gt;Welkom by die eerste-instellings towenaar.&lt;/p&gt;&lt;p&gt;Hierdie towenaar sal u help om al die nodige stappe vir suksesvolle %1 instelling op te stel.&lt;/p&gt;&lt;p&gt;Druk asseblief die &lt;b&gt;Volgende&lt;/b&gt; knoppie om voort te gaan na die volgende bladsy. Of druk die &lt;b&gt;Terug&lt;/b&gt; knoppie om terug te gaan.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location line="-219"/>
+        <location line="-215"/>
         <source>Sorry, specified %1 directory does not exist.</source>
         <translation>Jammer, gespesifiseerde %1 gids bestaan nie.</translation>
     </message>
@@ -4990,7 +5022,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Jammer, gespesifiseerde %1 binêre leër bestaan nie.</translation>
     </message>
     <message>
-        <location line="+250"/>
+        <location line="+246"/>
         <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking &quot;Help&quot; button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5004,7 +5036,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation type="obsolete">&lt;p&gt;Alles reg vir voltooiing van %1 opstelling. &lt;/p&gt;&lt;p&gt;Druk asseblief die &lt;b&gt;Voltooi&lt;/b&gt; konppie om die opstellingsproses te voltooi. Of druk die &lt;b&gt;Terug&lt;/b&gt; knoppie om terug te keer.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Wizard.ui" line="-2313"/>
+        <location filename="../q4wine-gui/uis/Wizard.ui" line="-2181"/>
         <source>Wizard</source>
         <translation>Towenaar</translation>
     </message>
@@ -5014,7 +5046,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Basiese inligting:</translation>
     </message>
     <message>
-        <location line="+1257"/>
+        <location line="+1125"/>
         <source>Bin:</source>
         <translation>Binêre Lêer:</translation>
     </message>
@@ -5051,7 +5083,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Wagwoord:</translation>
     </message>
     <message>
-        <location line="-1552"/>
+        <location line="-1420"/>
         <source>Default Wine paths:</source>
         <translation>Verstek Wine paaie:</translation>
     </message>
@@ -5061,7 +5093,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+488"/>
+        <location line="+356"/>
         <source>System utils paths:</source>
         <translation>Stelsel nuts paaie:</translation>
     </message>
@@ -5120,18 +5152,44 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
+        <location line="+115"/>
+        <location line="+5"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-120"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Kan nie Winetricks skrip vind nie. Installeer eers Winetricks skrip.</translation>
     </message>
     <message>
-        <location line="+167"/>
+        <location line="+115"/>
+        <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Can&apos;t create file &apos;%1&apos;. Check folder permissions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Refreshing Winetricks application list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Winetricks plugin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+29"/>
+        <source>Reading category: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Refreshing winetricks application list.</source>
-        <translation>Verfris Winetricks progammatuurlys.</translation>
+        <translation type="obsolete">Verfris Winetricks progammatuurlys.</translation>
     </message>
 </context>
 </TS>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>About</name>
     <message>
@@ -1340,12 +1340,11 @@ See help for details.</source>
         <translation>マウント [%1]</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>Mount media drive.</source>
-        <translation>メディア ドライブをマウントします。</translation>
+        <translation type="obsolete">メディア ドライブをマウントします。</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+11"/>
         <location line="+707"/>
         <source>[none]</source>
         <translation>[なし]</translation>
@@ -3304,12 +3303,11 @@ See help for details.</source>
         <translation>マウント [%1]</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>Mount media drive.</source>
-        <translation>メディア ドライブをマウントします。</translation>
+        <translation type="obsolete">メディア ドライブをマウントします。</translation>
     </message>
     <message>
-        <location line="+4"/>
+        <location line="+12"/>
         <location line="+330"/>
         <source>[none]</source>
         <translation>[なし]</translation>
@@ -3331,17 +3329,17 @@ See help for details.</source>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+311"/>
         <source>Browse...</source>
         <translation>参照...</translation>
     </message>
     <message>
-        <location line="-310"/>
+        <location line="+1"/>
+        <location line="+310"/>
         <source>Browse for media image.</source>
         <translation>メディア イメージの場所を参照します。</translation>
     </message>
     <message>
-        <location line="+18"/>
+        <location line="-292"/>
         <source>Unmount [%1]</source>
         <translation>マウント解除 [%1]</translation>
     </message>
@@ -3357,17 +3355,21 @@ See help for details.</source>
     </message>
     <message>
         <location line="+2"/>
-        <location line="+238"/>
         <source>Browse ...</source>
         <translation>参照 ...</translation>
     </message>
     <message>
-        <location line="-237"/>
         <source>Browse for another image</source>
-        <translation>他のプログラムを参照</translation>
+        <translation type="obsolete">他のプログラムを参照</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+1"/>
+        <location line="+237"/>
+        <source>Browse for wine binary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-217"/>
         <source>New directory</source>
         <translation>新しいディレクトリ</translation>
     </message>
