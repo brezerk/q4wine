@@ -26,12 +26,12 @@ ConfigurationWidget::~ConfigurationWidget() {
 }
 
 void ConfigurationWidget::createWidgets() {
-    w_PrefixTree.reset(new PrefixTreeWidget());
-    w_IconList.reset(new IconListWidget());
+    w_ConfigTree.reset(new ConfigTreeWidget());
+    w_ConfigIconList.reset(new ConfigurationIconListWidget());
 
     QSplitter* splitter = new QSplitter(this);
-    splitter->addWidget(w_PrefixTree.get());
-    splitter->addWidget(w_IconList.get());
+    splitter->addWidget(w_ConfigTree.get());
+    splitter->addWidget(w_ConfigIconList.get());
     splitter->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     QList<int> sizes;

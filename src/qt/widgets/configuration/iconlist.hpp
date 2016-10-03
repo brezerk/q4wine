@@ -19,39 +19,42 @@
 #pragma once
 
 #include <QWidget>
+#include <QAction>
+#include <QMenu>
+#include <QToolBar>
 #include <QVBoxLayout>
 #include <QSplitter>
-#include <QTreeWidget>
 #include <QListWidget>
+#include <QLineEdit>
 #include <QLabel>
-#include <QIcon>
-#include <QSplitter>
-#include <QGridLayout>
-#include <QVBoxLayout>
 
 #include <memory>
 
-#include "src/qt/widgets/configuration/configtree.hpp"
-#include "src/qt/widgets/configuration/iconlist.hpp"
-
-class ConfigurationWidget : public QWidget
+class ConfigurationIconListWidget : public QWidget
 {
     Q_OBJECT
 
  public:
-    explicit ConfigurationWidget(QWidget *parent = 0);
-    ~ConfigurationWidget();
+    explicit ConfigurationIconListWidget(QWidget *parent = 0);
+    ~ConfigurationIconListWidget();
 
  private:
+    void createActions();
     void createWidgets();
     const QIcon getIcon(QString name) const;
 
-    std::shared_ptr<ConfigTreeWidget> w_ConfigTree;
-    std::shared_ptr<ConfigurationIconListWidget> w_ConfigIconList;
+    std::shared_ptr<QToolBar> m_ToolBar;
 
-    std::shared_ptr<QLabel> lbl_IconInfoName,
-                            lbl_IconInfoArgs,
-                            lbl_IconInfoDesc,
-                            lbl_IconInfoTerminal,
-                            lbl_IconInfoDesktopSize;
+    std::shared_ptr<QAction> a_Clear,
+                             a_SortAlpha;
+
+    std::shared_ptr<QLineEdit> txt_Filter;
+
+    std::shared_ptr<QListWidget> w_IconsList;
+
+    std::shared_ptr<QVBoxLayout> layout_;
+
+ private slots:
+    void a_Clear_Click();
+    void a_SortAlpha_Click();
 };

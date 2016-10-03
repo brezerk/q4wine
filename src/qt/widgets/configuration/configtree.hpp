@@ -19,39 +19,40 @@
 #pragma once
 
 #include <QWidget>
+#include <QAction>
+#include <QMenu>
+#include <QToolBar>
 #include <QVBoxLayout>
 #include <QSplitter>
 #include <QTreeWidget>
-#include <QListWidget>
-#include <QLabel>
-#include <QIcon>
-#include <QSplitter>
-#include <QGridLayout>
-#include <QVBoxLayout>
+#include <QHeaderView>
+#include <QComboBox>
 
 #include <memory>
 
-#include "src/qt/widgets/configuration/configtree.hpp"
-#include "src/qt/widgets/configuration/iconlist.hpp"
-
-class ConfigurationWidget : public QWidget
+class ConfigTreeWidget : public QWidget
 {
     Q_OBJECT
 
  public:
-    explicit ConfigurationWidget(QWidget *parent = 0);
-    ~ConfigurationWidget();
+    explicit ConfigTreeWidget(QWidget *parent = 0);
+    ~ConfigTreeWidget();
 
  private:
+    void createActions();
     void createWidgets();
     const QIcon getIcon(QString name) const;
 
-    std::shared_ptr<ConfigTreeWidget> w_ConfigTree;
-    std::shared_ptr<ConfigurationIconListWidget> w_ConfigIconList;
+    std::shared_ptr<QToolBar> m_ToolBar;
 
-    std::shared_ptr<QLabel> lbl_IconInfoName,
-                            lbl_IconInfoArgs,
-                            lbl_IconInfoDesc,
-                            lbl_IconInfoTerminal,
-                            lbl_IconInfoDesktopSize;
+    std::shared_ptr<QAction> a_PrefixControl;
+
+    std::shared_ptr<QComboBox> cb_Prefix;
+
+    std::shared_ptr<QTreeWidget> w_ConfigTree;
+
+    std::shared_ptr<QVBoxLayout> layout_;
+
+ private slots:
+    void a_PrefixControl_Click();
 };
