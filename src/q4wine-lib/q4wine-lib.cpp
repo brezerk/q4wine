@@ -1558,6 +1558,7 @@ QStringList corelib::getCdromDevices(void) const{
 
                     QStringList sh_args;
                     sh_args << "env";
+                    sh_args << QString("WINE='%1'").arg(prefix_info.value("bin"));
                     sh_args << QString("WINEPREFIX=%1").arg(prefix_info.value("path"));
                     if (!prefix_info.value("libs").isEmpty())
                         sh_args << QString("WINEDLLPATH=%1").arg(prefix_info.value("libs"));

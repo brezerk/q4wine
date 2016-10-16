@@ -483,6 +483,7 @@ void PrefixSettings::txtRunString_Changed(){
     }
 
     QString env;
+    env.append(QString(" WINE='%1' ").arg(ver.wine_exec_));
     env.append(QString(" WINEPREFIX='%1' ").arg(txtPrefixPath->text()));
     env.append(QString(" WINESERVER='%1' ").arg(ver.wine_server_));
     env.append(QString(" WINELOADER='%1' ").arg(ver.wine_loader_));

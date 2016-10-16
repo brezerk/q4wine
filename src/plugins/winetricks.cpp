@@ -107,6 +107,7 @@ void winetricks::run_winetricks(QString item){
         sh_args << QString("WINEPREFIX='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("path")));
 
         if (!prefix_info.value("server").isEmpty()){
+            sh_args << QString("WINE='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("bin")));
             if (!prefix_info.value("libs").isEmpty())
                 sh_args << QString("WINEDLLPATH='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("libs")));
             sh_args << QString("WINELOADER='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("loader")));
@@ -127,6 +128,7 @@ void winetricks::run_winetricks(QString item){
                         prefixDllPath = vers.wine_dllpath64_;
                     }
                 }
+                sh_args << QString("WINE='%1'").arg(CoreLib->getStrictEscapeString(vers.wine_exec_));
                 if (!prefixDllPath.isEmpty())
                     sh_args << QString("WINEDLLPATH='%1'").arg(CoreLib->getStrictEscapeString(prefixDllPath));
                 sh_args << QString("WINELOADER='%1'").arg(CoreLib->getStrictEscapeString(vers.wine_loader_));

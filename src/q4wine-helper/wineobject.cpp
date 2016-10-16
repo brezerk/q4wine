@@ -156,6 +156,7 @@ QString WineObject::createEnvString(){
         }
     }
 
+    env.append(QString(" WINE='%1' ").arg(this->prefixBinary));
     env.append(QString(" WINEPREFIX='%1' ").arg(this->prefixPath));
     env.append(QString(" WINESERVER='%1' ").arg(this->prefixServer));
     env.append(QString(" WINELOADER='%1' ").arg(this->prefixLoader));
