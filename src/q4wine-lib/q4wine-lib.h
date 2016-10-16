@@ -83,6 +83,7 @@
 #include "dir.h"
 #include "icon.h"
 #include "image.h"
+#include "versions.h"
 
 /*!
  * \class corelib

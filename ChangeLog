@@ -1,6 +1,8 @@
 Version 1.3.4
  Added:
   - Add WINE env var to console environment [BUG-91];
+ Fixed:
+  - Console launch environment uses dead setting fields [BUG-90];
 
 Version 1.3.3
  Fixed:
