@@ -2517,7 +2517,7 @@ Vedi l&apos;help per gli esempi.</translation>
     </message>
     <message>
         <location line="+44"/>
-        <source>Unexpected socket message recived.</source>
+        <source>Unexpected socket message received.</source>
         <translation>Ricevuto un messaggio inatteso  per il socket.</translation>
     </message>
     <message>

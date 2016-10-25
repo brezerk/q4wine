@@ -2515,7 +2515,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location line="+44"/>
-        <source>Unexpected socket message recived.</source>
+        <source>Unexpected socket message received.</source>
         <translation>Přijata neočekávaná zpráva od zásuvky (socket).</translation>
     </message>
     <message>

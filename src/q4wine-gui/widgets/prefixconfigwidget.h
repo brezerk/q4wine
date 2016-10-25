@@ -71,7 +71,7 @@ signals:
       void setTabIndex(int);
 
 private slots:
-    void treeWidget_itemClicked (QTreeWidgetItem * item, int colum);
+    void treeWidget_itemClicked (QTreeWidgetItem * item, int column);
     void treeWidget_currentItemChanged (QTreeWidgetItem *item, QTreeWidgetItem *);
     void itemClicked (QListWidgetItem *item);
     void itemDoubleClicked (QListWidgetItem *item);
