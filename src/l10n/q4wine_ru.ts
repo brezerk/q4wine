@@ -1320,17 +1320,15 @@ See help for details.</source>
         <translation>%1 успешно подключено.</translation>
     </message>
     <message>
-        <location line="-38"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Файлы образов (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Файлы образов (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>ISO image files (*.iso)</source>
-        <translation>Файлы ISO (*.iso)</translation>
+        <translation type="obsolete">Файлы ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-27"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>Открыть файлы дисковых образов</translation>
@@ -1622,7 +1620,17 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+548"/>
+        <location line="+501"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
         <source>Drive successfully unmounted.</source>
         <translation>Устройство успешно отключено.</translation>
     </message>
@@ -2008,7 +2016,17 @@ See help for details.</source>
         <translation>Отключен</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="-236"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+234"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>Скрипт (*.sh)</translation>
@@ -2023,22 +2041,16 @@ See help for details.</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="-222"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+75"/>
+        <location line="-147"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
         <translation>Изображения (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation>Изображения и файлы для Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Изображения (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Исполняемые файлы Win32 (*.exe);;Разделяемые библиотеки Win32 (*.dll);;Файлы для Win32 (*.exe *.dll)</translation>
+        <translation type="obsolete">Изображения и файлы для Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Изображения (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Исполняемые файлы Win32 (*.exe);;Разделяемые библиотеки Win32 (*.dll);;Файлы для Win32 (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="+123"/>
+        <location line="+125"/>
         <source>No program selected.</source>
         <translation>Программа не выбрана.</translation>
     </message>
@@ -2215,17 +2227,15 @@ See help for details.</source>
         <translation>Обновить список образов</translation>
     </message>
     <message>
-        <location line="+24"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Файлы образов (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Файлы образов (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>Файлы ISO (*.iso)</translation>
+        <translation type="obsolete">Файлы ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+36"/>
         <location line="+2"/>
         <source>Open ISO image file</source>
         <translation>Открыть файл образа ISO</translation>
@@ -2262,7 +2272,17 @@ See help for details.</source>
         <translation>Введите новое имя</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-39"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+36"/>
         <source>Enter new name:</source>
         <translation>Введите новое имя:</translation>
     </message>
@@ -2801,13 +2821,11 @@ See help for details.</source>
         <translation>WIP</translation>
     </message>
     <message>
-        <location line="+60"/>
-        <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
-        <translation>Исполняемые файлы и библиотеки Win32 (*.exe *.dll);;Исполняемые файлы Win32 (*.exe);;Библиотеки Win32 (*.dll)</translation>
+        <translation type="obsolete">Исполняемые файлы и библиотеки Win32 (*.exe *.dll);;Исполняемые файлы Win32 (*.exe);;Библиотеки Win32 (*.dll)</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+102"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Извлечение значка из двоичного файла.&lt;br&gt;Это может занять некоторое время...</translation>
@@ -2849,6 +2867,12 @@ See help for details.</source>
         <location line="+2"/>
         <source>Open image file</source>
         <translation>Открыть файл изображения</translation>
+    </message>
+    <message>
+        <location line="-2"/>
+        <location line="+2"/>
+        <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+193"/>
@@ -3132,8 +3156,6 @@ See help for details.</source>
         <translation>Выберите файл для импорта</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
         <location line="+114"/>
         <location line="+5"/>
         <source>Prefix archive images (*.tbz)</source>
@@ -3145,7 +3167,13 @@ See help for details.</source>
         <translation>Удалить старые файлы префикса?</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-9"/>
+        <location line="+2"/>
+        <source>Prefix archive images (*.tbz);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>Удаление старого виртуального диска. &lt;br&gt; Это может занять какое-то время...</translation>
     </message>
@@ -3656,17 +3684,15 @@ Note: leave it blank for default.</source>
         <translation>Значок уже существует.&lt;br&gt;Выберите другое имя или отмените операцию.</translation>
     </message>
     <message>
-        <location line="+94"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Файлы образов (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Файлы образов (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>Файлы ISO (*.iso)</translation>
+        <translation type="obsolete">Файлы ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+106"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>Открыть файлы дисковых образов</translation>
@@ -3743,7 +3769,17 @@ Note: leave it blank for default.</source>
         <translation>В настройках префикса не указано устройство для подключения.</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+9"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 успешно подключено.</translation>
@@ -4495,7 +4531,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+174"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5070,18 +5106,18 @@ Note: leave it blank for default.</source>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
-        <location line="+115"/>
+        <location line="+117"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="-122"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Невозможно найти скрипт winetricks. Установите Winetricks.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+117"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>

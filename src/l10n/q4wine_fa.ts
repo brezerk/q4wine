@@ -1717,6 +1717,16 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location line="+501"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Browse for another image</source>
         <translation type="obsolete">دنبال تصویر(Image) دیگر بگرد</translation>
     </message>
@@ -1725,7 +1735,7 @@ See help for details.</source>
         <translation type="obsolete">جدید</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="-502"/>
         <source>Create new icon</source>
         <translation>آیکون جدید بساز</translation>
     </message>
@@ -1766,17 +1776,15 @@ See help for details.</source>
         <translation>هیچ گونه درایوی برای دستگاه در تنظیمات پیشوند مشخص نشده است.</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>فایل های تصویر(Image) دیسک.(*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">فایل های تصویر(Image) دیسک.(*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>ISO image files (*.iso)</source>
-        <translation>فایل های تصویری (Image) از نوع (*.iso)</translation>
+        <translation type="obsolete">فایل های تصویری (Image) از نوع (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+19"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>فایل های تصویری(Image) دیسک را باز کن</translation>
@@ -2043,7 +2051,17 @@ See help for details.</source>
         <translation type="obsolete">فرتور و فایل های دودویی ویندوز ۳۲ بیتی (*.png, *.jpg, *.gif, *.bmp, *.xpm, *.exe, *.dll);;فایل های فرتور (*.png, *.jpg,*.gif, *.bmp, *.xpm);; فایل های اجرایی ویندوز ۳۲ بیتی(*.exe);; کتابخانه های اشتراکی ویندوز ۳۲ بیتی (*.dll);;فایل های اجرایی ویندوز ۳۲ بیتی و کتابخانه های اشتراکی (*.exe, *.dll)</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="-60"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+44"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>جداسازی آیکون از فایل دودویی.&lt;br&gt; این کار اندکی زمان بر است...</translation>
@@ -2093,22 +2111,12 @@ See help for details.</source>
         <translation>غیرفعال</translation>
     </message>
     <message>
-        <location line="-236"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+75"/>
+        <location line="-161"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+234"/>
+        <location line="+236"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>تکه برنامه ی مخصوص پوسته(*.sh)</translation>
@@ -2270,14 +2278,22 @@ See help for details.</source>
         <translation>نوسازی لیست تصاویر(Images)</translation>
     </message>
     <message>
-        <location line="+24"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>فایل های تصویری(Image) دیسک ها (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">فایل های تصویری(Image) دیسک ها (*.iso *.nrg *.img *.bin *.mdf)</translation>
+    </message>
+    <message>
+        <source>ISO image files (*.iso)</source>
+        <translation type="obsolete">فایل های تصویر استاندارد (*.iso)</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>ISO image files (*.iso)</source>
-        <translation>فایل های تصویر استاندارد (*.iso)</translation>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+9"/>
@@ -2909,8 +2925,12 @@ See help for details.</source>
     <message>
         <location line="-2"/>
         <location line="+2"/>
+        <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
-        <translation>فایل های اجرایی و کتابخانه های اشتراکی ویندوز ۳۲ بیتی‌ (*.exe *.dll);;فایل های اجرایی ویندوز ۳۲ بیتی(*.exe);;فایل های کتابخانه های اشتراکی ویندوز ۳۲ بیتی(*.dll)</translation>
+        <translation type="obsolete">فایل های اجرایی و کتابخانه های اشتراکی ویندوز ۳۲ بیتی‌ (*.exe *.dll);;فایل های اجرایی ویندوز ۳۲ بیتی(*.exe);;فایل های کتابخانه های اشتراکی ویندوز ۳۲ بیتی(*.dll)</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -3181,6 +3201,10 @@ See help for details.</source>
     <message>
         <location line="-2"/>
         <location line="+2"/>
+        <source>Prefix archive images (*.tbz);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+114"/>
         <location line="+5"/>
         <source>Prefix archive images (*.tbz)</source>
@@ -3742,13 +3766,21 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+9"/>
-        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>فایل های تصویر(Image) دیسک.(*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
+        <translation type="obsolete">فایل های تصویر(Image) دیسک.(*.iso *.nrg *.img *.bin *.mdf)</translation>
+    </message>
+    <message>
         <source>ISO image files (*.iso)</source>
-        <translation>فایل های تصویری (Image) از نوع (*.iso)</translation>
+        <translation type="obsolete">فایل های تصویری (Image) از نوع (*.iso)</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -4549,7 +4581,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+174"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5110,18 +5142,18 @@ Note: leave it blank for default.</source>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
-        <location line="+115"/>
+        <location line="+117"/>
         <location line="+5"/>
         <source>Error</source>
         <translation type="unfinished">خطا</translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="-122"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+117"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>

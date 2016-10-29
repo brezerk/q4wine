@@ -1536,17 +1536,15 @@ Consulte a ajuda para detalhes.</translation>
         <translation>%1 montada com sucesso.</translation>
     </message>
     <message>
-        <location line="-38"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Arquivos de imagem de disco (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Arquivos de imagem de disco (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>ISO image files (*.iso)</source>
-        <translation>Arquivos de imagem ISO (*.iso)</translation>
+        <translation type="obsolete">Arquivos de imagem ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-27"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>Abrir Arquivos De Imagem De Disco</translation>
@@ -1838,7 +1836,17 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+548"/>
+        <location line="+501"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
         <source>Drive successfully unmounted.</source>
         <translation>Unidade desmontada com sucesso.</translation>
     </message>
@@ -2272,22 +2280,12 @@ Consulte a ajuda para detalhes.</translation>
         <translation>Desabilitado</translation>
     </message>
     <message>
-        <location line="-236"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+75"/>
+        <location line="-161"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+234"/>
+        <location line="+236"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>Shell script (*.sh)</translation>
@@ -2301,7 +2299,17 @@ Consulte a ajuda para detalhes.</translation>
         <translation type="obsolete">Convertendo ícone</translation>
     </message>
     <message>
-        <location line="-135"/>
+        <location line="-335"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+123"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+7"/>
@@ -2520,13 +2528,21 @@ Consulte a ajuda para detalhes.</translation>
     </message>
     <message>
         <location line="+24"/>
-        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Arquivos de imagem de disco  (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
+        <translation type="obsolete">Arquivos de imagem de disco  (*.iso *.nrg *.img *.bin *.mdf)</translation>
+    </message>
+    <message>
         <source>ISO image files (*.iso)</source>
-        <translation>Arquivos de imagem ISO (*.iso)</translation>
+        <translation type="obsolete">Arquivos de imagem ISO (*.iso)</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -3239,8 +3255,12 @@ Consulte a ajuda para detalhes.</translation>
     <message>
         <location line="-2"/>
         <location line="+2"/>
+        <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
-        <translation>Executáveis e bibliotecas Compartilhadas Win32 (*.exe *.dll);;Executáveis Win32 (*.exe);;Bibliotecas compartilhadas Win32 (*.dll)</translation>
+        <translation type="obsolete">Executáveis e bibliotecas Compartilhadas Win32 (*.exe *.dll);;Executáveis Win32 (*.exe);;Bibliotecas compartilhadas Win32 (*.dll)</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -3596,8 +3616,6 @@ Consulte a ajuda para detalhes.</translation>
         <translation>Selecionar um arquivo para importar</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
         <location line="+114"/>
         <location line="+5"/>
         <source>Prefix archive images (*.tbz)</source>
@@ -3609,7 +3627,13 @@ Consulte a ajuda para detalhes.</translation>
         <translation>Você realmente deseja excluir todos os arquivos antigos do prefixo?</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-9"/>
+        <location line="+2"/>
+        <source>Prefix archive images (*.tbz);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>Removendo unidade virtual antiga.&lt;br&gt;Isso pode demorar um pouco...</translation>
     </message>
@@ -4136,17 +4160,15 @@ Nota: deixe em branco para o padrão.</translation>
         <translation>Desculpe. Parece que o ícone já existe.&lt;br&gt;Por favor, escolha outro nome ou cancele a operação.</translation>
     </message>
     <message>
-        <location line="+94"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Arquivos de imagem de disco (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Arquivos de imagem de disco (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>Arquivos de imagem ISO (*.iso)</translation>
+        <translation type="obsolete">Arquivos de imagem ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+106"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>Abrir Arquivos De Imagem De Disco</translation>
@@ -4239,7 +4261,17 @@ Nota: deixe em branco para o padrão.</translation>
         <translation>Nenhuma unidade de dispositivo especificada nas configurações do prefixo.</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+9"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 montada com sucesso.</translation>
@@ -5090,7 +5122,7 @@ Nota: deixe em branco para o padrão.</translation>
     </message>
     <message>
         <location line="+179"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5730,18 +5762,18 @@ Nota: deixe em branco para o padrão.</translation>
     </message>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
-        <location line="+115"/>
+        <location line="+117"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="-122"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Não foi possível localizar o script Winetricks. Instale o script Winetricks primeiro.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+117"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>

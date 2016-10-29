@@ -1372,17 +1372,15 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>%1 úspěšně připojen.</translation>
     </message>
     <message>
-        <location line="-38"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Soubory s obrazy disků (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Soubory s obrazy disků (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>ISO image files (*.iso)</source>
-        <translation>Soubory s obrazy ISO (*.iso)</translation>
+        <translation type="obsolete">Soubory s obrazy ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-27"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>Otevřít soubory s obrazy disků</translation>
@@ -1674,7 +1672,17 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+548"/>
+        <location line="+501"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
         <source>Drive successfully unmounted.</source>
         <translation>Disková jednotka byla úspěšně odpojena.</translation>
     </message>
@@ -1888,7 +1896,17 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation type="obsolete">Soubory s obrázky a spustitelné soubory Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Soubory s obrázky (*.png *.jpg *.gif *.bmp *.xpm);;Spustitelné soubory Win32 (*.exe);;Sdílené knihovny Win32 (*.dll);;Spustitelné soubory Win32 a sdílené knihovny (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="-60"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+44"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Vytahuje se ikona ze spustitelného souboru.&lt;br&gt;Může to chvíli trvat...</translation>
@@ -1938,22 +1956,12 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Zakázáno</translation>
     </message>
     <message>
-        <location line="-236"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+75"/>
+        <location line="-161"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+234"/>
+        <location line="+236"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>Shellový skript (*.sh)</translation>
@@ -2237,7 +2245,17 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Obnovit seznam s obrazy</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+24"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+25"/>
         <source>Sorry. It seems that the CD image already exists.</source>
         <translation>Promiňte, ale zdá se, že soubor s obrazem CD již existuje.</translation>
@@ -2263,17 +2281,15 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Promiňte, ale zdá se, že soubor s obrazem CD již existuje.&lt;br&gt;Přejmenujte jej, prosím, nebo zrušte operaci přejmenování obrazu.</translation>
     </message>
     <message>
-        <location line="-47"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Soubory s obrazy disků (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Soubory s obrazy disků (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>Soubory s obrazy ISO (*.iso)</translation>
+        <translation type="obsolete">Soubory s obrazy ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-35"/>
         <location line="+2"/>
         <source>Open ISO image file</source>
         <translation>Otevřít soubor s obrazem ISO</translation>
@@ -2530,6 +2546,12 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Otevřít soubor s obrazem</translation>
     </message>
     <message>
+        <location line="-2"/>
+        <location line="+2"/>
+        <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+193"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Pouze jedna instance %1 může běžet v tu samou dobu.</translation>
@@ -2560,13 +2582,11 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Zdá se, že již běží jiná instance Q4Wine, nebo byl Q4Wine ukončen nesprávně. Chcete odstranit soubor zásuvky (socket)?</translation>
     </message>
     <message>
-        <location line="+437"/>
-        <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
-        <translation>Spustitelný soubor a sdílené knihovny Win32 (*.exe *.dll);;Spustitelný soubor Win32 (*.exe);;Sdílené knihovny Win32 (*.dll)</translation>
+        <translation type="obsolete">Spustitelný soubor a sdílené knihovny Win32 (*.exe *.dll);;Spustitelný soubor Win32 (*.exe);;Sdílené knihovny Win32 (*.dll)</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+479"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Vytahuje se ikona ze spustitelného souboru.&lt;br&gt;Může to chvíli trvat...</translation>
@@ -3184,8 +3204,6 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Vybrat soubor pro zavedení</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
         <location line="+114"/>
         <location line="+5"/>
         <source>Prefix archive images (*.tbz)</source>
@@ -3197,7 +3215,13 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <translation>Chcete smazat všechny staré soubory s předponami?</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-9"/>
+        <location line="+2"/>
+        <source>Prefix archive images (*.tbz);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>Odstraňuje se stará nepravá disková jednotka.&lt;br&gt;Může to chvíli trvat...</translation>
     </message>
@@ -3706,17 +3730,15 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>Promiňte, ale zdá se, že ikona již existuje.&lt;br&gt;Vyberte, prosím, jiný název, nebo operaci zrušte.</translation>
     </message>
     <message>
-        <location line="+94"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Soubory s obrazy disků (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Soubory s obrazy disků (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>Soubory s obrazy ISO (*.iso)</translation>
+        <translation type="obsolete">Soubory s obrazy ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+106"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>Otevřít soubory s obrazy disků</translation>
@@ -3793,7 +3815,17 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <translation>V nastavení předpony není zadána žádná disková jednotka zařízení.</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+9"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 úspěšně připojen.</translation>
@@ -4424,7 +4456,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+174"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5120,18 +5152,18 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
-        <location line="+115"/>
+        <location line="+117"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="-122"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Nelze najít skript Winetricks (Kouzla wine). Nejprve skript nainstalujte.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+117"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1372,17 +1372,15 @@ See help for details.</source>
         <translation>%1 עוגן בהצלחה.</translation>
     </message>
     <message>
-        <location line="-38"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>קבצי תמונות תקליטורים ‎(*.iso *.nrg *.img *.bin *.mdf)‎</translation>
+        <translation type="obsolete">קבצי תמונות תקליטורים ‎(*.iso *.nrg *.img *.bin *.mdf)‎</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>ISO image files (*.iso)</source>
-        <translation>קובצי תמונות ISO ‏‎(*.iso)‎</translation>
+        <translation type="obsolete">קובצי תמונות ISO ‏‎(*.iso)‎</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-27"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>פתיחת קובצי תמונות תקליטורים</translation>
@@ -1674,7 +1672,17 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+548"/>
+        <location line="+501"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
         <source>Drive successfully unmounted.</source>
         <translation>הכונן נותק בהצלחה.</translation>
     </message>
@@ -1888,7 +1896,17 @@ See help for details.</source>
         <translation type="obsolete">תמונות וקבצים בינריים של Win32‏ (‎*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;קובצי תמונות (‎*.png *.jpg *.gif *.bmp *.xpm);;קובצי הפעלה של Win32‏ (‎*.exe);;ספריות שיתופיות וקובצי הפעלה של Win32‏ (‎*.dll);;קובצי הפעלה וספריות שיתופיות של Win32‏ (‎*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="-60"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+44"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>מחולץ סמל מקובץ בינרי.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
@@ -1938,22 +1956,12 @@ See help for details.</source>
         <translation>מנוטרל</translation>
     </message>
     <message>
-        <location line="-236"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+75"/>
+        <location line="-161"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+234"/>
+        <location line="+236"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>סקריפט Shell ‏(‎*.sh)</translation>
@@ -2237,7 +2245,17 @@ See help for details.</source>
         <translation>רענון רשימת התמונות</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+24"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+25"/>
         <source>Sorry. It seems that the CD image already exists.</source>
         <translation>מסתבר כי תמונת התקליטור כבר קיימת, עמך הסליחה.</translation>
@@ -2263,17 +2281,15 @@ See help for details.</source>
         <translation>מסתבר כי קובץ תמונת התקליטור כבר קיים, עמך הסליחה.&lt;br&gt;נא לשנות את שמו או לבטל את פעולת שינוי שם התמונה.</translation>
     </message>
     <message>
-        <location line="-47"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>קובצי תמונות תקליטורים‏ ‎(*.iso *.nrg *.img *.bin *.mdf)‎</translation>
+        <translation type="obsolete">קובצי תמונות תקליטורים‏ ‎(*.iso *.nrg *.img *.bin *.mdf)‎</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>קובצי תמונות ISO ‏‎(*.iso)‎</translation>
+        <translation type="obsolete">קובצי תמונות ISO ‏‎(*.iso)‎</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-35"/>
         <location line="+2"/>
         <source>Open ISO image file</source>
         <translation>פתיחת קובץ תמונת ISO</translation>
@@ -2530,6 +2546,12 @@ See help for details.</source>
         <translation>פתיחת קובץ תמונה</translation>
     </message>
     <message>
+        <location line="-2"/>
+        <location line="+2"/>
+        <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+193"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>ניתן להפעיל רק עותק אחד של %1 בעת ובעונה אחת.</translation>
@@ -2560,13 +2582,11 @@ See help for details.</source>
         <translation>מסתבר כי ישנו עותק פעיל נוסף של Q4Wine, או ש־Q4Wine נסגר שלא כראוי. האם ברצונך להסיר את קובץ השקע?</translation>
     </message>
     <message>
-        <location line="+437"/>
-        <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
-        <translation>קובצי הפעלה וספריות משותפות לסביבת Win32‏ (‎*.exe *.dll);;קובצי הפעלה לסביבת Win32 (‏‎*.exe);;ספריות משותפות לסביבת Win32‏ (‎*.dll)</translation>
+        <translation type="obsolete">קובצי הפעלה וספריות משותפות לסביבת Win32‏ (‎*.exe *.dll);;קובצי הפעלה לסביבת Win32 (‏‎*.exe);;ספריות משותפות לסביבת Win32‏ (‎*.dll)</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+479"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>מחולץ סמל מקובץ בינרי.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
@@ -3184,8 +3204,6 @@ See help for details.</source>
         <translation>בחירת קובץ ליבוא</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
         <location line="+114"/>
         <location line="+5"/>
         <source>Prefix archive images (*.tbz)</source>
@@ -3197,7 +3215,13 @@ See help for details.</source>
         <translation>האם אכן ברצונך למחוק את כל קובצי הקידומת הישנים?</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-9"/>
+        <location line="+2"/>
+        <source>Prefix archive images (*.tbz);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>הכונן המזויף הישן מוסר.&lt;br&gt;פעולה זו עלולה לארוך זמן מה...</translation>
     </message>
@@ -3707,17 +3731,15 @@ Note: leave it blank for default.</source>
         <translation>מסתבר כי הסמל כבר קיים.&lt;br&gt;נא לבחור בשם אחר או לבטל את הפעולה, עמך הסליחה.</translation>
     </message>
     <message>
-        <location line="+94"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>קובצי תמונות תקליטורים‏ ‎(*.iso *.nrg *.img *.bin *.mdf)‎</translation>
+        <translation type="obsolete">קובצי תמונות תקליטורים‏ ‎(*.iso *.nrg *.img *.bin *.mdf)‎</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>קובצי תמונות ISO ‏‎(*.iso)‎</translation>
+        <translation type="obsolete">קובצי תמונות ISO ‏‎(*.iso)‎</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+106"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>פתיחת קובצי תמונות תקליטורים</translation>
@@ -3794,7 +3816,17 @@ Note: leave it blank for default.</source>
         <translation>לא הוגדר התקן כונן בהגדרות הקידומת.</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+9"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 עוגן בהצלחה.</translation>
@@ -4425,7 +4457,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+174"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5121,18 +5153,18 @@ Note: leave it blank for default.</source>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
-        <location line="+115"/>
+        <location line="+117"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>שגיאה</translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="-122"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>לא ניתן לאתר את הסקריפט Winetricks. נא להתקין אותו תחילה.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+117"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>

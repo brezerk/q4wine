@@ -1374,17 +1374,15 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation>%1 montato con successo.</translation>
     </message>
     <message>
-        <location line="-38"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>File immagine di un CD (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">File immagine di un CD (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>ISO image files (*.iso)</source>
-        <translation>File iso (*.iso)</translation>
+        <translation type="obsolete">File iso (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-27"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>Apri il file immagine del CD</translation>
@@ -1671,7 +1669,17 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+548"/>
+        <location line="+501"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
         <source>Drive successfully unmounted.</source>
         <translation>Disco smontato con successo.</translation>
     </message>
@@ -1916,7 +1924,17 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation>Disabilitato</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="-236"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+234"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>Script (*.sh)</translation>
@@ -1931,22 +1949,12 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation>Errore</translation>
     </message>
     <message>
-        <location line="-222"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+75"/>
+        <location line="-147"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+123"/>
+        <location line="+125"/>
         <source>No program selected.</source>
         <translation>Nessun programma selezionato.</translation>
     </message>
@@ -2239,17 +2247,15 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation>Aggiorna lista immagini</translation>
     </message>
     <message>
-        <location line="+24"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>File immagine di un CD (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">File immagine di un CD (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>File ISO (*.iso)</translation>
+        <translation type="obsolete">File ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+36"/>
         <location line="+2"/>
         <source>Open ISO image file</source>
         <translation>Apri l&apos;immagine ISO</translation>
@@ -2286,7 +2292,17 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation>Inserisci un nuovo nome</translation>
     </message>
     <message>
-        <location line="+0"/>
+        <location line="-39"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+36"/>
         <source>Enter new name:</source>
         <translation>Inserisci un nuovo nome:</translation>
     </message>
@@ -2526,7 +2542,13 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation>WIP</translation>
     </message>
     <message>
-        <location line="-377"/>
+        <location line="+60"/>
+        <location line="+2"/>
+        <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-439"/>
         <source>It seems that another instance of Q4Wine is running, or Q4Wine was shutdown incorrectly. Do you wish to remove the socket file?</source>
         <translation>Sembra che un&apos;altra istanza di Q4Wine sia in esecuzione, o Q4Wine non è stato terminato in modo corretto. Vuoi rimuovere il file socket?</translation>
     </message>
@@ -2563,10 +2585,8 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation>Apertura file immagine</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
-        <translation>Eseguibili e librerie condivise Win32 (*.exe *.dll);;Eseguibili Win32 (*.exe);;Librerie condivise Win32 (*.dll)</translation>
+        <translation type="obsolete">Eseguibili e librerie condivise Win32 (*.exe *.dll);;Eseguibili Win32 (*.exe);;Librerie condivise Win32 (*.dll)</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -3186,8 +3206,6 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation>Seleziona il file da importare</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
         <location line="+114"/>
         <location line="+5"/>
         <source>Prefix archive images (*.tbz)</source>
@@ -3199,7 +3217,13 @@ Vedi l&apos;help per gli esempi.</translation>
         <translation>Vuoi veramente cancellare tutti i vecchi file di prefisso?</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-9"/>
+        <location line="+2"/>
+        <source>Prefix archive images (*.tbz);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>Rimozione dei vecchi dischi virtuali.&lt;br&gt;Ci può impiegare un po&apos; di tempo...</translation>
     </message>
@@ -3692,17 +3716,15 @@ Nota: lascia in bianco per il default.</translation>
         <translation>Spiacente. Sembra che l&apos;icona esista già.&lt;br&gt;Per favore scegli un altro nome o cancella l&apos;operazione.</translation>
     </message>
     <message>
-        <location line="+94"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>File immagine di un CD (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">File immagine di un CD (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>File iso (*.iso)</translation>
+        <translation type="obsolete">File iso (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+106"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>Apri il file immagine del CD</translation>
@@ -3795,7 +3817,17 @@ Nota: lascia in bianco per il default.</translation>
         <translation>Nessun disco specificato nei prefissi di settaggio.</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+9"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 montato con successo.</translation>
@@ -4426,7 +4458,7 @@ Nota: lascia in bianco per il default.</translation>
     </message>
     <message>
         <location line="+174"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5122,18 +5154,18 @@ Nota: lascia in bianco per il default.</translation>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
-        <location line="+115"/>
+        <location line="+117"/>
         <location line="+5"/>
         <source>Error</source>
         <translation type="unfinished">Errore</translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="-122"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Non trovo lo script Winetricks. Installa prima lo script Winetricks.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+117"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>

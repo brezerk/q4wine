@@ -1660,13 +1660,21 @@ See help for details.</source>
     </message>
     <message>
         <location line="+8"/>
-        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>ディスク イメージ ファイル (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
+        <translation type="obsolete">ディスク イメージ ファイル (*.iso *.nrg *.img *.bin *.mdf)</translation>
+    </message>
+    <message>
         <source>ISO image files (*.iso)</source>
-        <translation>ISO イメージ ファイル (*.iso)</translation>
+        <translation type="obsolete">ISO イメージ ファイル (*.iso)</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -1926,12 +1934,22 @@ See help for details.</source>
         <translation>EXE ファイルを開く</translation>
     </message>
     <message>
-        <location line="-272"/>
+        <location line="-332"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+60"/>
         <source>Open image file</source>
         <translation>画像ファイルを開く</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="+17"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+44"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>バイナリ ファイルからアイコンを抽出しています。&lt;br&gt;これにはしばらくかかるかもしれません...</translation>
@@ -1981,12 +1999,11 @@ See help for details.</source>
         <translation>無効化</translation>
     </message>
     <message>
-        <location line="-236"/>
         <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
-        <translation>EXE, MSI, BAT ファイル (*.exe *.msi *.bat);;EXE ファイル (*.exe);;MSI ファイル (*.msi);;BAT ファイル (*.bat)</translation>
+        <translation type="obsolete">EXE, MSI, BAT ファイル (*.exe *.msi *.bat);;EXE ファイル (*.exe);;MSI ファイル (*.msi);;BAT ファイル (*.bat)</translation>
     </message>
     <message>
-        <location line="+311"/>
+        <location line="+75"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>シェル スクリプト (*.sh)</translation>
@@ -2002,9 +2019,8 @@ See help for details.</source>
         <translation>画像ファイル (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation>画像ファイル と Win32 バイナリ ファイル (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;画像ファイル (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 実行形式 (*.exe);;Win32 共有ライブラリ (*.dll);;Win32 実行形式 と 共有ライブラリ (*.exe *.dll)</translation>
+        <translation type="obsolete">画像ファイル と Win32 バイナリ ファイル (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;画像ファイル (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 実行形式 (*.exe);;Win32 共有ライブラリ (*.dll);;Win32 実行形式 と 共有ライブラリ (*.exe *.dll)</translation>
     </message>
 </context>
 <context>
@@ -2158,14 +2174,22 @@ See help for details.</source>
         <translation>イメージの一覧を再読み込み</translation>
     </message>
     <message>
-        <location line="+24"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>ディスク イメージ ファイル (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">ディスク イメージ ファイル (*.iso *.nrg *.img *.bin *.mdf)</translation>
+    </message>
+    <message>
+        <source>ISO image files (*.iso)</source>
+        <translation type="obsolete">ISO イメージ ファイル (*.iso)</translation>
+    </message>
+    <message>
+        <location line="+24"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>ISO image files (*.iso)</source>
-        <translation>ISO イメージ ファイル (*.iso)</translation>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+9"/>
@@ -2568,8 +2592,12 @@ See help for details.</source>
     <message>
         <location line="-2"/>
         <location line="+2"/>
+        <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
-        <translation>Win32 実行ファイルと共有ライブラリ (*.exe *.dll);;Win32 実行ファイル (*.exe);;Win32 共有ライブラリ (*.dll)</translation>
+        <translation type="obsolete">Win32 実行ファイルと共有ライブラリ (*.exe *.dll);;Win32 実行ファイル (*.exe);;Win32 共有ライブラリ (*.dll)</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -2965,6 +2993,10 @@ See help for details.</source>
     <message>
         <location line="-2"/>
         <location line="+2"/>
+        <source>Prefix archive images (*.tbz);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+114"/>
         <location line="+5"/>
         <source>Prefix archive images (*.tbz)</source>
@@ -3520,13 +3552,21 @@ See help for details.</source>
     </message>
     <message>
         <location line="+9"/>
-        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>ディスク イメージ ファイル (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
+        <translation type="obsolete">ディスク イメージ ファイル (*.iso *.nrg *.img *.bin *.mdf)</translation>
+    </message>
+    <message>
         <source>ISO image files (*.iso)</source>
-        <translation>ISO イメージ ファイル (*.iso)</translation>
+        <translation type="obsolete">ISO イメージ ファイル (*.iso)</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -4321,12 +4361,11 @@ See help for details.</source>
         <translation>選択された作業ディレクトリは存在しません。</translation>
     </message>
     <message>
-        <location line="+174"/>
         <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
-        <translation>EXE, MSI, BAT ファイル (*.exe *.msi *.bat);;EXE ファイル (*.exe);;MSI ファイル (*.msi);;BAT ファイル (*.bat)</translation>
+        <translation type="obsolete">EXE, MSI, BAT ファイル (*.exe *.msi *.bat);;EXE ファイル (*.exe);;MSI ファイル (*.msi);;BAT ファイル (*.bat)</translation>
     </message>
     <message>
-        <location line="-190"/>
+        <location line="-16"/>
         <location line="+27"/>
         <source>Disabled</source>
         <translation>無効化</translation>
@@ -4337,7 +4376,12 @@ See help for details.</source>
         <translation>EXE ファイルを開く</translation>
     </message>
     <message>
-        <location line="+58"/>
+        <location line="+3"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+55"/>
         <source>Open Directory</source>
         <translation>ディレクトリを開く</translation>
     </message>
@@ -4872,18 +4916,18 @@ See help for details.</source>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
-        <location line="+115"/>
+        <location line="+117"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="-122"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Winetricks のスクリプトが見つかりません。先にインストールしてください。</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+117"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation>ファイル &apos;%1&apos; は読み書き不可能です。ファイルのアクセス権を確認してください。</translation>
     </message>

@@ -1371,17 +1371,15 @@ See help for details.</source>
         <translation>已成功挂载 %1。</translation>
     </message>
     <message>
-        <location line="-38"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>光盘映像文件 (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">光盘映像文件 (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>ISO image files (*.iso)</source>
-        <translation>ISO 映像文件 (*.iso)</translation>
+        <translation type="obsolete">ISO 映像文件 (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-27"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>打开光盘映像文件</translation>
@@ -1673,7 +1671,17 @@ See help for details.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+548"/>
+        <location line="+501"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
         <source>Drive successfully unmounted.</source>
         <translation>已成功卸载驱动器。</translation>
     </message>
@@ -1879,7 +1887,17 @@ See help for details.</source>
         <translation type="obsolete">图像文件 (*.png *.jpg *.gif *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location line="+140"/>
+        <location line="-60"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+123"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+7"/>
@@ -1933,22 +1951,16 @@ See help for details.</source>
         <translation>已禁用</translation>
     </message>
     <message>
-        <location line="-236"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+75"/>
+        <location line="-161"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
         <translation>图像文件 (*.png *.jpg *.gif *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation>图像与 Win32 二进制文件 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;图像文件 (*.png *.jpg *.gif *.bmp *.xpm);;Win32 可执行文件 (*.exe);;Win32 共享库 (*.dll);;Win32 可执行文件及共享库 (*.exe *.dll)</translation>
+        <translation type="obsolete">图像与 Win32 二进制文件 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;图像文件 (*.png *.jpg *.gif *.bmp *.xpm);;Win32 可执行文件 (*.exe);;Win32 共享库 (*.dll);;Win32 可执行文件及共享库 (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="+234"/>
+        <location line="+236"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>Shell 脚本 (*.sh)</translation>
@@ -2232,7 +2244,17 @@ See help for details.</source>
         <translation>刷新映像列表</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+24"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+25"/>
         <source>Sorry. It seems that the CD image already exists.</source>
         <translation>抱歉。该 CD 映像似乎已存在。</translation>
@@ -2258,17 +2280,15 @@ See help for details.</source>
         <translation>抱歉。该 CD 映像似乎已存在。&lt;br&gt;请选择一个新名称或取消重命名映像操作。</translation>
     </message>
     <message>
-        <location line="-47"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>光盘映像文件 (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">光盘映像文件 (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>ISO 映像文件 (*.iso)</translation>
+        <translation type="obsolete">ISO 映像文件 (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-35"/>
         <location line="+2"/>
         <source>Open ISO image file</source>
         <translation>打开 ISO 映像文件</translation>
@@ -2530,10 +2550,8 @@ See help for details.</source>
         <translation>打开图像文件</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
-        <translation>Win32 可执行文件或共享库 (*.exe *.dll);;Win32 可执行文件 (*.exe);;Win32 共享库 (*.dll)</translation>
+        <translation type="obsolete">Win32 可执行文件或共享库 (*.exe *.dll);;Win32 可执行文件 (*.exe);;Win32 共享库 (*.dll)</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -2599,7 +2617,13 @@ See help for details.</source>
         <translation>抱歉，安装向导尚未实现。该功能将在未来版本中可用。</translation>
     </message>
     <message>
-        <location line="+259"/>
+        <location line="+60"/>
+        <location line="+2"/>
+        <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+197"/>
         <location line="+3"/>
         <source>Binary &quot;%1&quot; does not exist.</source>
         <translation>二进制文件“%1”不存在。</translation>
@@ -3175,8 +3199,6 @@ See help for details.</source>
         <translation>选取要导入的文件</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
         <location line="+114"/>
         <location line="+5"/>
         <source>Prefix archive images (*.tbz)</source>
@@ -3188,7 +3210,13 @@ See help for details.</source>
         <translation>您真的想要删除所有旧的前缀文件吗？</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-9"/>
+        <location line="+2"/>
+        <source>Prefix archive images (*.tbz);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>正在移除旧的虚拟磁盘。&lt;br&gt;这会花费一点时间...</translation>
     </message>
@@ -3687,17 +3715,15 @@ See help for details.</source>
         <translation>抱歉。该图标似乎已存在。&lt;br&gt;请选择其他名称或取消操作。</translation>
     </message>
     <message>
-        <location line="+94"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>磁盘映像文件 (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">磁盘映像文件 (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>ISO 映像文件 (*.iso)</translation>
+        <translation type="obsolete">ISO 映像文件 (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+106"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>开启磁盘映像文件</translation>
@@ -3774,7 +3800,17 @@ See help for details.</source>
         <translation>未在前缀设置中指定设备磁盘。</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+9"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 成功挂载。</translation>
@@ -4405,7 +4441,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+174"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5097,18 +5133,18 @@ See help for details.</source>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
-        <location line="+115"/>
+        <location line="+117"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="-122"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>无法定位 Winetricks 脚本。请先安装 Winetricks 脚本。</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+117"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>

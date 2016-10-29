@@ -1386,17 +1386,15 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>%1 suksesvol geheg.</translation>
     </message>
     <message>
-        <location line="-38"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Skyf beeld lêers (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Skyf beeld lêers (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>ISO image files (*.iso)</source>
-        <translation>ISO beeld lêers (*.iso)</translation>
+        <translation type="obsolete">ISO beeld lêers (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-27"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>Open Skyf Beeld Lêers</translation>
@@ -1688,7 +1686,17 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+548"/>
+        <location line="+501"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
         <source>Drive successfully unmounted.</source>
         <translation>Skyf was suksesvol ontheg.</translation>
     </message>
@@ -1898,7 +1906,17 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation type="obsolete">Beeld lêers (*.png *.jpg *.gif *.bmp *.xpm)</translation>
     </message>
     <message>
-        <location line="+140"/>
+        <location line="-60"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+123"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+7"/>
@@ -1954,22 +1972,12 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Ge-deaktiveer</translation>
     </message>
     <message>
-        <location line="-236"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+75"/>
+        <location line="-161"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+234"/>
+        <location line="+236"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>Skulp skrip (*.sh)</translation>
@@ -2254,7 +2262,17 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Verfris beeld lys</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+24"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+25"/>
         <source>Sorry. It seems that the CD image already exists.</source>
         <translation>Jammer. Dit blyk of die CD beeld alreeds bestaan.</translation>
@@ -2280,17 +2298,15 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Jammer. Dit blyk of die CD beeld alreeds bestaan.&lt;br&gt;Kies asseblief &apos;n ander naam of kanselleer die aksie.</translation>
     </message>
     <message>
-        <location line="-47"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Skyf beeldlêers (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Skyf beeldlêers (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>ISO beeld lêers (*.iso)</translation>
+        <translation type="obsolete">ISO beeld lêers (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-35"/>
         <location line="+2"/>
         <source>Open ISO image file</source>
         <translation>Open ISO beeld lêer</translation>
@@ -2553,10 +2569,8 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Open beeldlêer</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
-        <translation>Win32 Uitvoerbare kode en Gedeelde biblioteke (*.exe *.dll);;Win32 Uitvoerbare kode (*.exe);;Win32 Gedeelde biblioteke (*.dll)</translation>
+        <translation type="obsolete">Win32 Uitvoerbare kode en Gedeelde biblioteke (*.exe *.dll);;Win32 Uitvoerbare kode (*.exe);;Win32 Gedeelde biblioteke (*.dll)</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -2622,7 +2636,13 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Jammer, die installerings towenaar is nog nie geïmplementeer nie. Dit sal in &apos;n volgende weergawe beskikbaar wees.</translation>
     </message>
     <message>
-        <location line="+259"/>
+        <location line="+60"/>
+        <location line="+2"/>
+        <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+197"/>
         <location line="+3"/>
         <source>Binary &quot;%1&quot; does not exist.</source>
         <translation>Binêre lêer &quot;%1&quot; bestaan nie.</translation>
@@ -3202,8 +3222,6 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Kies die lêer om in te trek</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
         <location line="+114"/>
         <location line="+5"/>
         <source>Prefix archive images (*.tbz)</source>
@@ -3216,7 +3234,13 @@ Sien hulp vir verderre besonderhede.</translation>
         <translation>Wil u regtig graag al die wine-tuiste leers verwyder?</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-9"/>
+        <location line="+2"/>
+        <source>Prefix archive images (*.tbz);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>Verwydering van ou vals skyf.&lt;br&gt;Dit mag &apos;n wyle neem...</translation>
     </message>
@@ -3727,17 +3751,15 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Jammer. Dit blyk of dié ikoon alreeds bestaan.&lt;br&gt;Kies asseblief &apos;n ander naam of kanselleer die aksie.</translation>
     </message>
     <message>
-        <location line="+94"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Skyf beeld lêers (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Skyf beeld lêers (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>ISO beeld lêers (*.iso)</translation>
+        <translation type="obsolete">ISO beeld lêers (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+106"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>Open Skyf Beeld Lêers</translation>
@@ -3814,7 +3836,17 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
         <translation>Geen stelsel skyf gestel in wine-tuiste opstelling.</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+9"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 suksesvol geheg.</translation>
@@ -4451,7 +4483,7 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     </message>
     <message>
         <location line="+174"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5152,18 +5184,18 @@ Nota: Laat die veld oop vir verstek waardes.</translation>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
-        <location line="+115"/>
+        <location line="+117"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="-122"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Kan nie Winetricks skrip vind nie. Installeer eers Winetricks skrip.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+117"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>

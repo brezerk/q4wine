@@ -1379,17 +1379,15 @@ Weitere Informationen unter Hilfe.</translation>
         <translation>%1 erfolgreich eingebunden.</translation>
     </message>
     <message>
-        <location line="-38"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Disk-Abbilder (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Disk-Abbilder (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>ISO image files (*.iso)</source>
-        <translation>ISO-Abbilder (*.iso)</translation>
+        <translation type="obsolete">ISO-Abbilder (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-27"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>Disk-Abbilder öffnen</translation>
@@ -1681,7 +1679,17 @@ Weitere Informationen unter Hilfe.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+548"/>
+        <location line="+501"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
         <source>Drive successfully unmounted.</source>
         <translation>Laufwerkseinbindung erfolgreich gelöst.</translation>
     </message>
@@ -1895,7 +1903,17 @@ Weitere Informationen unter Hilfe.</translation>
         <translation type="obsolete">Bild- und Win32-Binärdateien (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Bilddateien (*.png *.jpg *.gif *.bmp *.xpm);;Win32-Programmdateien (*.exe);;Win32-Shared libraries (*.dll);;Win32-Programmdateien und Shared libraries (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="-60"/>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+77"/>
+        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+44"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Symbol wird aus Programmdatei exportiert.&lt;br&gt;Das kann etwas dauern ...</translation>
@@ -1945,22 +1963,12 @@ Weitere Informationen unter Hilfe.</translation>
         <translation>Deaktiviert</translation>
     </message>
     <message>
-        <location line="-236"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+75"/>
+        <location line="-161"/>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+234"/>
+        <location line="+236"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>Shell-Skript (*.sh)</translation>
@@ -2244,7 +2252,17 @@ Weitere Informationen unter Hilfe.</translation>
         <translation>Liste aktualisieren</translation>
     </message>
     <message>
-        <location line="+46"/>
+        <location line="+24"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+25"/>
         <source>Sorry. It seems that the CD image already exists.</source>
         <translation>Das CD-Abbild scheint bereits zu existieren.</translation>
@@ -2270,17 +2288,15 @@ Weitere Informationen unter Hilfe.</translation>
         <translation>Das CD-Abbild scheint bereits zu existieren.&lt;br&gt;Bitte geben Sie einen anderen Namen ein oder brechen Sie die Aktion ab.</translation>
     </message>
     <message>
-        <location line="-47"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Disk-Abbilder (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Disk-Abbilder (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>ISO-Abbilder (*.iso)</translation>
+        <translation type="obsolete">ISO-Abbilder (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="-35"/>
         <location line="+2"/>
         <source>Open ISO image file</source>
         <translation>ISO-Abbild öffnen</translation>
@@ -2537,6 +2553,12 @@ Weitere Informationen unter Hilfe.</translation>
         <translation>Abbild öffnen</translation>
     </message>
     <message>
+        <location line="-2"/>
+        <location line="+2"/>
+        <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location line="+193"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Es kann nur eine Instanz von %1 zur gleichen Zeit ausgeführt werden.</translation>
@@ -2567,13 +2589,11 @@ Weitere Informationen unter Hilfe.</translation>
         <translation>Es scheint schon eine Instanz von Q4Wine zu laufen, oder das Programm wurde fehlerhaft beendet. Soll die Socket-Datei entfernt werden?</translation>
     </message>
     <message>
-        <location line="+437"/>
-        <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
-        <translation>Win32-Programme und Shared Libraries (*.exe *.dll);;Win32-Programme (*.exe);;Win32 Shared Libraries (*.dll)</translation>
+        <translation type="obsolete">Win32-Programme und Shared Libraries (*.exe *.dll);;Win32-Programme (*.exe);;Win32 Shared Libraries (*.dll)</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+479"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Symbol wird aus Programmdatei extrahiert.&lt;br&gt;Das kann etwas dauern ...</translation>
@@ -3193,8 +3213,6 @@ Weitere Informationen unter Hilfe.</translation>
         <translation>Zu importierende Datei auswählen</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
         <location line="+114"/>
         <location line="+5"/>
         <source>Prefix archive images (*.tbz)</source>
@@ -3206,7 +3224,13 @@ Weitere Informationen unter Hilfe.</translation>
         <translation>Sollen alle alten Präfix-Dateien gelöscht werden?</translation>
     </message>
     <message>
-        <location line="+5"/>
+        <location line="-9"/>
+        <location line="+2"/>
+        <source>Prefix archive images (*.tbz);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+12"/>
         <source>Removing old fake drive.&lt;br&gt;This can take a while...</source>
         <translation>Altes virtuelles Laufwerk wird entfernt.&lt;br&gt;Das kann etwas dauern ...</translation>
     </message>
@@ -3714,17 +3738,15 @@ Note: leave it blank for default.</source>
         <translation>Das Symbol scheint schon zu existieren.&lt;br&gt;Bitte geben Sie einen anderen Namen ein, oder brechen Sie die Aktion ab.</translation>
     </message>
     <message>
-        <location line="+94"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
-        <translation>Disk-Abbilder (*.iso *.nrg *.img *.bin *.mdf)</translation>
+        <translation type="obsolete">Disk-Abbilder (*.iso *.nrg *.img *.bin *.mdf)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>ISO image files (*.iso)</source>
-        <translation>ISO-Abbilder (*.iso)</translation>
+        <translation type="obsolete">ISO-Abbilder (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+106"/>
         <location line="+2"/>
         <source>Open Disc Image Files</source>
         <translation>Disk-Abbilder öffnen</translation>
@@ -3801,7 +3823,17 @@ Note: leave it blank for default.</source>
         <translation>Kein Laufwerks-Gerät in den Präfix-Einstellungen eingestellt.</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+9"/>
+        <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>ISO image files (*.iso);;All files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 erfolgreich eingebunden.</translation>
@@ -4432,7 +4464,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+174"/>
-        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)</source>
+        <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5128,18 +5160,18 @@ Note: leave it blank for default.</source>
     <name>winetricks</name>
     <message>
         <location filename="../plugins/winetricks.cpp" line="+61"/>
-        <location line="+115"/>
+        <location line="+117"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location line="-120"/>
+        <location line="-122"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>Winetricks nicht gefunden. Bitte installieren Sie Winetricks.</translation>
     </message>
     <message>
-        <location line="+115"/>
+        <location line="+117"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>
