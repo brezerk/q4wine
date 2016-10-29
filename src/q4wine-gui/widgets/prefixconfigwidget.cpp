@@ -238,7 +238,7 @@ void PrefixConfigWidget::getPrefixes(){
     cbPrefixes->addItems (list);
 }
 
-void PrefixConfigWidget::treeWidget_itemClicked (QTreeWidgetItem * item, int colum){
+void PrefixConfigWidget::treeWidget_itemClicked (QTreeWidgetItem * item, int column){
     this->provider = "";
     this->subtype = "";
 

@@ -2887,7 +2887,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+22"/>
-        <source>Unexpected socket message recived.</source>
+        <source>Unexpected socket message received.</source>
         <translation>پیام غیرقابل پیش بینی سوکت دریافت شد.</translation>
     </message>
     <message>

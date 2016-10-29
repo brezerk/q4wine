@@ -2508,7 +2508,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+44"/>
-        <source>Unexpected socket message recived.</source>
+        <source>Unexpected socket message received.</source>
         <translation>收到未預期的 socket 訊息。</translation>
     </message>
     <message>

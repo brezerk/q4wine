@@ -1554,56 +1554,65 @@ QStringList corelib::getCdromDevices(void) const{
                         return;
                     }
 
-                    QHash<QString, QString> prefix_info = db_prefix.getByName(prefix_name);
 
-                    QStringList sh_args;
-                    sh_args << "env";
+                    // Start shell
+                    {
+                        QHash<QString, QString> prefix_info = db_prefix.getByName(prefix_name);
+                        QStringList sh_args;
+                        sh_args << "env";
 
-                    if (!prefix_info.value("server").isEmpty()){
-                        sh_args << QString("WINE='%1'").arg(getStrictEscapeString(prefix_info.value("bin")));
-                        if (!prefix_info.value("libs").isEmpty())
-                            sh_args << QString("WINEDLLPATH='%1'").arg(getStrictEscapeString(prefix_info.value("libs")));
-                        sh_args << QString("WINELOADER='%1'").arg(getStrictEscapeString(prefix_info.value("loader")));
-                        sh_args << QString("WINESERVER='%1'").arg(getStrictEscapeString(prefix_info.value("server")));
-                    } else {
-                        QString prefixDllPath;
-                        Version vers;
-                        vers.id_ = prefix_info.value("version_id");
-                        if (vers.load()){
-                            if (prefix_info.value("arch") == "win32"){
-                                prefixDllPath = vers.wine_dllpath32_;
-                            } else if (prefix_info.value("arch") == "win64"){
-                                prefixDllPath = vers.wine_dllpath64_;
-                            } else {
-                                if (vers.wine_dllpath64_.isEmpty()){
+                        sh_args << QString("WINEPREFIX='%1'").arg(getStrictEscapeString(prefix_info.value("path")));
+                        if (!prefix_info.value("server").isEmpty()){
+                            sh_args << QString("WINE='%1'").arg(getStrictEscapeString(prefix_info.value("bin")));
+                            if (!prefix_info.value("libs").isEmpty())
+                                sh_args << QString("WINEDLLPATH='%1'").arg(getStrictEscapeString(prefix_info.value("libs")));
+                            sh_args << QString("WINELOADER='%1'").arg(getStrictEscapeString(prefix_info.value("loader")));
+                            sh_args << QString("WINESERVER='%1'").arg(getStrictEscapeString(prefix_info.value("server")));
+                        } else {
+                            QString prefixDllPath;
+                            Version vers;
+                            vers.id_ = prefix_info.value("version_id");
+                            if (vers.load()){
+                                if (prefix_info.value("arch") == "win32"){
                                     prefixDllPath = vers.wine_dllpath32_;
-                                } else {
+                                } else if (prefix_info.value("arch") == "win64"){
                                     prefixDllPath = vers.wine_dllpath64_;
+                                } else {
+                                    if (vers.wine_dllpath64_.isEmpty()){
+                                        prefixDllPath = vers.wine_dllpath32_;
+                                    } else {
+                                        prefixDllPath = vers.wine_dllpath64_;
+                                    }
                                 }
+                                sh_args << QString("WINE='%1'").arg(getStrictEscapeString(vers.wine_exec_));
+                                if (!prefixDllPath.isEmpty())
+                                    sh_args << QString("WINEDLLPATH='%1'").arg(getStrictEscapeString(prefixDllPath));
+                                sh_args << QString("WINELOADER='%1'").arg(getStrictEscapeString(vers.wine_loader_));
+                                sh_args << QString("WINESERVER='%1'").arg(getStrictEscapeString(vers.wine_server_));
                             }
-                            sh_args << QString("WINE='%1'").arg(getStrictEscapeString(vers.wine_exec_));
-                            if (!prefixDllPath.isEmpty())
-                                sh_args << QString("WINEDLLPATH='%1'").arg(getStrictEscapeString(prefixDllPath));
-                            sh_args << QString("WINELOADER='%1'").arg(getStrictEscapeString(vers.wine_loader_));
-                            sh_args << QString("WINESERVER='%1'").arg(getStrictEscapeString(vers.wine_server_));
                         }
-                    }
 
-                    if (!prefix_info.value("arch").isEmpty())
-                        sh_args << QString("WINEARCH=%1").arg(prefix_info.value("arch"));
+                        if (!prefix_info.value("arch").isEmpty())
+                            sh_args << QString("WINEARCH=%1").arg(prefix_info.value("arch"));
 
-                    QString prefix_path=path;
-                    prefix_path.replace("'", "'\\''");
+                        QString prefix_path = path;
+                        prefix_path.replace("'", "'\\''");
 
-                    sh_args << "/bin/sh" << "-c" << QString("\"cd \'%1\' && echo \'\' && echo \' [ii] wine environment variables are set to \\\"%2\\\" prefix settings.\' && echo \'\' && %3 \"").arg(prefix_path).arg(prefix_name).arg(shell);
+                        sh_args 
+                            << "/bin/sh" 
+                            << "-c" 
+                            << QString("\"echo \'\\n\\tq4wine: wine environment variables are set to \\\"%2\\\" prefix settings.\\n\' && %3 \"")
+                                .arg(prefix_name)
+                                .arg(shell);
 
-                    args << sh_args.join(" ");
+                        args << sh_args.join(" ");
 #ifdef DEBUG
-                    qDebug()<<"[ii] Open console args:"<<args;
+                        qDebug()<<"[ii] Open console args:"<<args;
 #endif
 
-                    QProcess proc;
-                    proc.startDetached(console, args, QDir::homePath());
+                        QProcess proc;
+                        proc.startDetached(console, args, path);
+                    }
                 }
 
         void corelib::updateRecentImagesList(const QString media) const{

@@ -153,7 +153,7 @@ void LoggingWidget::clearLogs(void){
     return;
 }
 
-void LoggingWidget::treeWidget_itemClicked (QTreeWidgetItem * item, int colum){
+void LoggingWidget::treeWidget_itemClicked (QTreeWidgetItem * item, int column){
     if (!item){
         logExport->setEnabled(false);
         logDelete->setEnabled(false);

@@ -2522,7 +2522,7 @@ Weitere Informationen unter Hilfe.</translation>
     </message>
     <message>
         <location line="+44"/>
-        <source>Unexpected socket message recived.</source>
+        <source>Unexpected socket message received.</source>
         <translation>Unerwartete Socket-Nachricht erhalten.</translation>
     </message>
     <message>

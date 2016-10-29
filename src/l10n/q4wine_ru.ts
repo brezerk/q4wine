@@ -2792,7 +2792,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+44"/>
-        <source>Unexpected socket message recived.</source>
+        <source>Unexpected socket message received.</source>
         <translation>Получено неожиданное сообщение от сокета.</translation>
     </message>
     <message>

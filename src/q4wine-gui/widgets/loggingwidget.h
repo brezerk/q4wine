@@ -73,7 +73,7 @@ private slots:
     void logCopy_Click(void);
     void logSelectAll_Click(void);
 
-    void treeWidget_itemClicked (QTreeWidgetItem * item, int colum);
+    void treeWidget_itemClicked (QTreeWidgetItem * item, int column);
     void treeWidget_currentItemChanged (QTreeWidgetItem *item, QTreeWidgetItem *);
 
     void treeWidget_customContextMenuRequested(const QPoint &pos);

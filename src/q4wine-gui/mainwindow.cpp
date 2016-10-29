@@ -488,7 +488,7 @@ void MainWindow::newConnection (){
 void MainWindow::showSocketError(QString message){
     QTextStream QErr(stderr);
     QErr<<"[ee] Unexpected socket message: "<<message;
-    this->changeStatusText(tr("Unexpected socket message recived."));
+    this->changeStatusText(tr("Unexpected socket message received."));
     return;
 }
 

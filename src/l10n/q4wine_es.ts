@@ -2523,7 +2523,7 @@ Vea la ayuda para mas detalles.</translation>
     </message>
     <message>
         <location line="+44"/>
-        <source>Unexpected socket message recived.</source>
+        <source>Unexpected socket message received.</source>
         <translation>Se recibio un mensaje de socket no esperado.</translation>
     </message>
     <message>

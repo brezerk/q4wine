@@ -2538,7 +2538,7 @@ Sien hulp vir verderre besonderhede.</translation>
     </message>
     <message>
         <location line="+44"/>
-        <source>Unexpected socket message recived.</source>
+        <source>Unexpected socket message received.</source>
         <translation>Onverwagte sok boodskap ontvang.</translation>
     </message>
     <message>

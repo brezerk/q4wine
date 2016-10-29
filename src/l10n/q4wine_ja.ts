@@ -2546,7 +2546,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+22"/>
-        <source>Unexpected socket message recived.</source>
+        <source>Unexpected socket message received.</source>
         <translation>予期しないソケット メッセージを受け取りました。</translation>
     </message>
     <message>

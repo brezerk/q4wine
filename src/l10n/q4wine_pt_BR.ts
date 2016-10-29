@@ -3179,7 +3179,7 @@ Consulte a ajuda para detalhes.</translation>
     </message>
     <message>
         <location line="+44"/>
-        <source>Unexpected socket message recived.</source>
+        <source>Unexpected socket message received.</source>
         <translation>Recebida mensagem inesperada do socket.</translation>
     </message>
     <message>

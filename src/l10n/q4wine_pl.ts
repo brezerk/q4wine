@@ -2784,7 +2784,7 @@ Zajrzyj do pomocy, aby poznać szczegóły.</translation>
     </message>
     <message>
         <location line="+44"/>
-        <source>Unexpected socket message recived.</source>
+        <source>Unexpected socket message received.</source>
         <translation>Otrzymano nieoczekiwaną wiadomość gniazda.</translation>
     </message>
     <message>
