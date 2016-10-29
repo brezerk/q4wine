@@ -340,7 +340,7 @@ void Run::cmdGetProgram_Click(){
     dialog.setWindowTitle(tr("Open Exe file"));
     dialog.setDirectory(searchPath);
     dialog.setFileMode(QFileDialog::ExistingFile);
-    dialog.setNameFilter(tr("Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat)"));
+    dialog.setNameFilter(tr("Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)"));
     //dialog.setSidebarUrls(prefix_urls);
 
 #if QT_VERSION >= 0x040500
