@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="zh_TW" sourcelanguage="en">
+<TS version="2.1" language="zh_TW" sourcelanguage="en">
 <context>
     <name>About</name>
     <message>
@@ -1661,17 +1661,17 @@ See help for details.</source>
     <message>
         <location line="-446"/>
         <source>New icon</source>
-        <translation type="unfinished"></translation>
+        <translation>新圖示</translation>
     </message>
     <message>
         <location line="+501"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>磁碟映像檔過濾器 (*.iso *.nrg *.img *.bin *.mdf);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>ISO image files (*.iso);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO 映像檔 (*.iso);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+45"/>
@@ -1882,12 +1882,12 @@ See help for details.</source>
     <message>
         <location line="-60"/>
         <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Exe, MSI, BAT 檔案 (*.exe *.msi *.bat);;Exe 檔案 (*.exe);;MSI 檔案 (*.msi);;BAT 檔案 (*.bat);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+77"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>圖片與 Win32 二進位檔 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;圖片檔 (*.png *.jpg *.gif *.bmp *.xpm);;Win32 可執行檔 (*.exe);;Win32 共享函式庫 (*.dll);;Win32 可執行檔及共享函式庫 (*.exe *.dll);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+123"/>
@@ -2239,12 +2239,12 @@ See help for details.</source>
     <message>
         <location line="+24"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>磁碟映像檔 (*.iso *.nrg *.img *.bin *.mdf);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ISO image files (*.iso);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO 映像檔 (*.iso);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -2613,7 +2613,7 @@ See help for details.</source>
         <location line="+60"/>
         <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Win32 可執行檔與共享函式庫 (*.exe *.dll);;Win32 可執行檔 (*.exe);;Win32 共享函式庫 (*.dll);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+197"/>
@@ -3044,12 +3044,12 @@ See help for details.</source>
         <location line="+3"/>
         <location line="+124"/>
         <source>Goto Winetricks homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>到 Winetricks 首頁</translation>
     </message>
     <message>
         <location line="-123"/>
         <source>Read news, report bugs and join the Winetricks community at https://github.com/Winetricks/winetricks</source>
-        <translation type="unfinished"></translation>
+        <translation>在 https://github.com/Winetricks/winetricks 上閱讀新聞、回報臭蟲並加入 Winetricks 社群</translation>
     </message>
     <message>
         <location line="+92"/>
@@ -3206,7 +3206,7 @@ See help for details.</source>
         <location line="-9"/>
         <location line="+2"/>
         <source>Prefix archive images (*.tbz);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>前綴封存映像檔 (*.tbz);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+12"/>
@@ -3581,12 +3581,12 @@ See help for details.</source>
         <location line="+1"/>
         <location line="+237"/>
         <source>Browse for wine binary</source>
-        <translation type="unfinished"></translation>
+        <translation>瀏覽 wine 二進位檔案</translation>
     </message>
     <message>
         <location line="-217"/>
         <source>New directory</source>
-        <translation type="unfinished"></translation>
+        <translation>新目錄</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3795,12 +3795,12 @@ See help for details.</source>
     <message>
         <location line="+9"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>磁碟映像檔 (*.iso *.nrg *.img *.bin *.mdf);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ISO image files (*.iso);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO 映像檔 (*.iso);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -4435,7 +4435,7 @@ See help for details.</source>
     <message>
         <location line="+174"/>
         <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Exe, MSI, BAT 檔案 (*.exe *.msi *.bat);;Exe 檔案 (*.exe);;MSI 檔案 (*.msi);;BAT 檔案 (*.bat);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="-190"/>
@@ -4615,7 +4615,7 @@ See help for details.</source>
     <message>
         <location line="+29"/>
         <source>Optional</source>
-        <translation type="unfinished"></translation>
+        <translation>選擇性</translation>
     </message>
     <message>
         <location line="+33"/>
@@ -5139,27 +5139,27 @@ See help for details.</source>
     <message>
         <location line="+117"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>檔案「%1」不可寫入或讀取。請檢查檔案權限。</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Can&apos;t create file &apos;%1&apos;. Check folder permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>無法建立檔案「%1」。請檢查資料夾權限。</translation>
     </message>
     <message>
         <location line="+77"/>
         <source>Refreshing Winetricks application list.</source>
-        <translation type="unfinished"></translation>
+        <translation>正在重新整理 Winetricks 應用程式清單。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Winetricks plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Winetricks 外掛程式</translation>
     </message>
     <message>
         <location line="+29"/>
         <source>Reading category: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>正在讀取分類：%1</translation>
     </message>
     <message>
         <source>Refreshing winetricks application list.</source>
