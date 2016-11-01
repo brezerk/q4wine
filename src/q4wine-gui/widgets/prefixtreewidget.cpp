@@ -610,10 +610,10 @@ void PrefixTreeWidget::menuMount_triggered(QAction* action){
 
           QString fileFilter;
 #ifdef _OS_LINUX_
-    fileFilter = tr("Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)");
+    fileFilter = tr("Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)");
 #endif
 #ifdef _OS_FREEBSD_
-    fileFilter =  tr("ISO image files (*.iso);;All files (*)");
+    fileFilter =  tr("ISO image files (*.iso *.ISO);;All files (*)");
 #endif
 
 #if QT_VERSION >= 0x040500

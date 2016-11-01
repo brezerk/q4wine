@@ -300,9 +300,9 @@ void PrefixControlWidget::prefixImport_Click(){
     if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
         options = QFileDialog::DontUseNativeDialog;
 
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Select file to import"), openpath , tr("Prefix archive images (*.tbz);;All files (*)"), 0, options);
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Select file to import"), openpath , tr("Prefix archive images (*.tbz *.TBZ);;All files (*)"), 0, options);
 #else
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Select file to import"), openpath , tr("Prefix archive images (*.tbz);;All files (*)"));
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Select file to import"), openpath , tr("Prefix archive images (*.tbz *.TBZ);;All files (*)"));
 #endif
 
     if (!fileName.isEmpty()){
