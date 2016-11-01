@@ -4,6 +4,7 @@ Version 1.3.4
  Fixed:
   - Console launch environment uses dead setting fields [BUG-90];
   - Q4Wine file selectors filters files with upper case extension [BUG-94];
+  - Refactor winetrkics parser;
 
 Version 1.3.3
  Fixed:
