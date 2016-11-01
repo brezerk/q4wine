@@ -29,6 +29,9 @@
 #include <QMessageBox>
 #include <QLibrary>
 #include <QProgressDialog>
+#include <QTextStream>
+#include <QFile>
+#include <QMap>
 
 #include "process.h"
 
@@ -38,6 +41,9 @@
 #include "q4wine-lib.h"
 
 #include "core/database/versions.h"
+
+typedef QMap<QString, QString> qstring_map;
+typedef QMap<QString, qstring_map> metadata_type;
 
 class winetricks : public QWidget{
 
