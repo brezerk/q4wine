@@ -73,7 +73,6 @@ private:
 
     void downloadwinetricks();
     bool check_script(bool warn = true);
-    QStringList get_stdout_lines(QString command);
 };
 
 #endif // WINETRICKS_H
