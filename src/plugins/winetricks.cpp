@@ -307,6 +307,8 @@ bool winetricks::parse() {
     file.close();
     pd->setValue(10);
 
+    db_sysconfig.begin();
+
     int all_verbs = metadata.size();
     int added_verb = 0;
     foreach (qstring_map verb, metadata)
@@ -326,6 +328,8 @@ bool winetricks::parse() {
         added_verb++;
         QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
     }
+
+    db_sysconfig.commit();
 
     #ifdef DEBUG
         qDebug()<<"[plugin] parsing winetricks script done";

@@ -126,3 +126,19 @@ bool Sysconfig::drop_items(int provider_id){
         return false;
     return true;
 }
+
+bool Sysconfig::begin(){
+    QSqlQuery query;
+    query.prepare("BEGIN");
+    if (!query.exec())
+        return false;
+    return true;
+}
+
+bool Sysconfig::commit(){
+    QSqlQuery query;
+    query.prepare("COMMIT");
+    if (!query.exec())
+        return false;
+    return true;
+}

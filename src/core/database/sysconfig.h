@@ -68,6 +68,9 @@ class Sysconfig
       bool add_item(QString name, QString icon, QString desc, QString type, int provider_id);
       bool drop_items(int provider_id);
 
+      bool begin();
+      bool commit();
+
 protected:
       /*! \brief This function executes requested query.
       *

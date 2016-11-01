@@ -356,7 +356,7 @@ void IconSettings::cmdGetProgram_Click(){
       dialog.setWindowTitle(tr("Open Exe file"));
       dialog.setDirectory(searchPath);
       dialog.setFileMode(QFileDialog::ExistingFile);
-      dialog.setNameFilter(tr("Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)"));
+      dialog.setNameFilter(tr("Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)"));
 
 
 #if QT_VERSION >= 0x040500
@@ -431,9 +431,9 @@ void IconSettings::cmdGetIcon_Click(){
       dialog.setDirectory(searchPath);
 
         #ifndef WITH_ICOUTILS
-        dialog.setNameFilter(tr("Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)"));
+        dialog.setNameFilter(tr("Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)"));
         #else
-        dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)"));
+        dialog.setNameFilter(tr("Image and Win32 binary files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;All files (*)"));
         #endif
       //dialog.setSidebarUrls(add_prefix_urls);
 
