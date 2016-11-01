@@ -241,18 +241,6 @@ void winetricks::downloadwinetricks () {
     return;
 }
 
-QStringList winetricks::get_stdout_lines(QString command){
-    QProcess p(this);
-
-    QTextCodec *codec = QTextCodec::codecForLocale();
-
-    p.start(command);
-    p.waitForFinished();
-
-    QString stdout = codec->toUnicode(p.readAllStandardOutput());
-    return stdout.split("\n");
-}
-
 bool winetricks::parse() {
     if (!check_script())
         return false;
@@ -261,53 +249,86 @@ bool winetricks::parse() {
     pd->setModal(true);
     pd->setWindowTitle(tr("Winetricks plugin"));
     pd->setFixedWidth(400);
-    pd->show();  
-    pd->setValue(5);
+    pd->show();
+    pd->setValue(2);
     QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
 
     #ifdef DEBUG
-        qDebug()<<"[plugin] parsing winetricks output";
+        qDebug()<<"[plugin] parsing winetricks script";
     #endif
-
-    QString pargs;
-    QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
 
     db_sysconfig.drop_items(D_PROVIDER_WINETRICKS);
 
-    pargs.append(winetricks_bin);
-    pargs.append(" list");
-
     QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
 
-    QStringList subtypes = this->get_stdout_lines(pargs);
+    metadata_type metadata;
+    QString infile = QString(winetricks_bin);
+    QFile file(infile);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return false;
+    else
+    {
+        QTextStream textinputstream(&file);
 
-    pd->setValue(10);
-    QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
-
-    int step = 90 / subtypes.length() + 1;
-
-    foreach (QString subtype, subtypes){
-        pd->setValue(pd->value() + step);
-        pd->setLabelText(tr("Reading category: %1").arg(subtype));
+        pd->setValue(5);
         QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
-        if ((!subtype.isEmpty()) and (!subtype.startsWith("Using winetricks"))) {
-            qDebug() << "\"" << subtype << "\"";
-            subtype = subtype.trimmed();
-            pargs.clear();
-            pargs.append(winetricks_bin);
-            pargs.append(" ");
-            pargs.append(subtype);
-            pargs.append(" list");
-            foreach (QString item, this->get_stdout_lines(pargs)){
-                if ((item.isEmpty()) or (item.startsWith("Using winetricks")))
-                    continue;
-                db_sysconfig.add_item(item.section(' ', 0, 0), "application-x-ms-dos-executable", item.section(' ', 1, -1, QString::SectionSkipEmpty), subtype, D_PROVIDER_WINETRICKS);
+
+        while (!textinputstream.atEnd())
+        {
+            QString l = textinputstream.readLine();
+            if (textinputstream.status() != QTextStream::Ok)
+            {
+                file.close();
+                return false;
             }
+            if (l.startsWith("w_metadata "))
+            {
+                QString name;
+                QStringList wmeta = l.split(' ', QString::SkipEmptyParts);
+                name = wmeta.at(1);
+                metadata[name]["name"] = name;
+                metadata[name]["category"] = wmeta.at(2);
+                while (!l.startsWith("load_"))
+                {
+                    l = textinputstream.readLine().trimmed();
+                    if (l.startsWith("title="))
+                        metadata[name]["title"] = l.section("\"", 1, 1);
+                    else if (l.startsWith("publisher="))
+                        metadata[name]["publisher"] = l.section("\"", 1, 1);
+                    else if (l.startsWith("year="))
+                        metadata[name]["year"] = l.section("\"", 1, 1);
+                    else if (l.startsWith("media="))
+                        metadata[name]["media"] = l.section("\"", 1, 1);
+                }
+            }
+            QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
         }
+    }
+    file.close();
+    pd->setValue(10);
+
+    int all_verbs = metadata.size();
+    int added_verb = 0;
+    foreach (qstring_map verb, metadata)
+    {
+        QString name = verb["name"];
+        QString desc = verb["title"];
+        qstring_map::const_iterator const it_publisher = verb.find("publisher");
+        qstring_map::const_iterator const it_year = verb.find("year");
+        if (it_publisher != verb.end() && it_year != verb.end())
+            desc += " (" + verb["publisher"] + ", " + verb["year"] + ")";
+        qstring_map::const_iterator const it_media = verb.find("media");
+        if (it_media != verb.end() && verb["media"] == "download")
+          desc += " [downloadable]";  // TODO: "cached" flag
+        pd->setValue(90 * added_verb / all_verbs + 10);
+        pd->setLabelText(tr("Adding verb: %1").arg(name));
+        db_sysconfig.add_item(verb["name"], "application-x-ms-dos-executable", desc, verb["category"], D_PROVIDER_WINETRICKS);
+        added_verb++;
+        QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
     }
 
     #ifdef DEBUG
-        qDebug()<<"[plugin] parsing winetricks output done";
+        qDebug()<<"[plugin] parsing winetricks script done";
     #endif
 
     pd->setValue(100);
