@@ -200,7 +200,7 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
             }
         } else if (line.contains(QRegExp("^Exec=*"))){
             //Parse exec string
-            QRegExp rxlen("env WINEPREFIX=\"(.+)\" wine (.*)");
+            QRegExp rxlen(".*WINEPREFIX=\"(.+)\" .*wine (\\S*) ?(.*)?");
             if (rxlen.indexIn(line) != -1){
                 QStringList cap = rxlen.capturedTexts();
 #ifdef DEBUG
@@ -209,7 +209,7 @@ void Progress::parseDesktopFile(QString filePath, QString dirName){
                 if (cap.count()>=3){
                     prefix_path = cap.at(1).trimmed();
                     exec = cap.at(2).trimmed().replace("\\\\ ", " ").replace("\\\\\\\\", "\\");
-                    if (cap.count()>=4){
+                    if (cap.count()==4){
                         args = cap.at(3).trimmed();
                     }
                 }
