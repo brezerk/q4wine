@@ -273,6 +273,8 @@ bool winetricks::parse() {
         pd->setValue(5);
         QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
 
+        QString name;
+        bool in_metadata = false;
         while (!textinputstream.atEnd())
         {
             QString l = textinputstream.readLine();
@@ -283,23 +285,27 @@ bool winetricks::parse() {
             }
             if (l.startsWith("w_metadata "))
             {
-                QString name;
                 QStringList wmeta = l.split(' ', QString::SkipEmptyParts);
                 name = wmeta.at(1);
                 metadata[name]["name"] = name;
                 metadata[name]["category"] = wmeta.at(2);
-                while (!l.startsWith("load_"))
-                {
-                    l = textinputstream.readLine().trimmed();
-                    if (l.startsWith("title="))
-                        metadata[name]["title"] = l.section("\"", 1, 1);
-                    else if (l.startsWith("publisher="))
-                        metadata[name]["publisher"] = l.section("\"", 1, 1);
-                    else if (l.startsWith("year="))
-                        metadata[name]["year"] = l.section("\"", 1, 1);
-                    else if (l.startsWith("media="))
-                        metadata[name]["media"] = l.section("\"", 1, 1);
-                }
+                in_metadata = true;
+            }
+            else if (l.startsWith("load_"))
+            {
+                in_metadata = false;
+            }
+            else if (in_metadata)
+            {
+                l = l.trimmed();
+                if (l.startsWith("title="))
+                    metadata[name]["title"] = l.section("\"", 1, 1);
+                else if (l.startsWith("publisher="))
+                    metadata[name]["publisher"] = l.section("\"", 1, 1);
+                else if (l.startsWith("year="))
+                    metadata[name]["year"] = l.section("\"", 1, 1);
+                else if (l.startsWith("media="))
+                    metadata[name]["media"] = l.section("\"", 1, 1);
             }
             QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
         }
