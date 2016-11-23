@@ -7,6 +7,7 @@ Version 1.3.4
   - Refactor winetrkics parser: use direct parser + transactions;
   - Links imported from Windows desktop do not work [BUG-103];
   - Import from Windows desktop is not working in some cases [BUG-103];
+  - Processes tab does not detect some wine processes correctly [BUG-100];
 
 Version 1.3.3
  Fixed:

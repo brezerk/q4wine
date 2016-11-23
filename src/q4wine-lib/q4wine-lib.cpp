@@ -75,18 +75,45 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
     // Getting directories one by one
     for (int i = 0; i < list.size(); ++i) {
         QFileInfo fileInfo = list.at(i);
+        QFileInfo info(QString("%1/exe").arg(fileInfo.filePath()));
+        if (info.isSymLink()) {
+            QString fileName = info.symLinkTarget();
+#ifdef DEBUG
+            qDebug()<< "Traget for: " << info.filePath() << " is: " << fileName;
+#endif
+            if ((!fileName.contains("wine") && !fileName.contains(".exe")) || fileName.contains(APP_SHORT_NAME)){
+                continue;
+            }
+        } else {
+            continue;
+        }
+        name = "";
         path = "/proc/";
         path.append(fileInfo.fileName());
-        path.append("/comm");
+        path.append("/cmdline");
         QFile file_c(path);
         if (file_c.open(QIODevice::ReadOnly | QIODevice::Text)){
             // Try to read com file
             QTextStream in(&file_c);
-            QString name = in.readLine();
+            QString comm_char;
+            while (true) {
+                comm_char = in.read(1).toLatin1();
+                if ((comm_char.isNull()) or (comm_char == "\n")){
+                    break;
+                }
+                if (comm_char.isEmpty()){
+                    name.append(" ");
+                } else {
+                    name.append(comm_char);
+                }
+            }
+            //Remove args
+            name = name.split(" ")[0];
 #ifdef DEBUG
             qDebug()<<"path: "<<fileInfo.fileName()<<" comm: "<<name;
 #endif
-            if ((name.contains("wine") || name.contains(".exe")) && !name.contains(APP_SHORT_NAME)){
+
+
                 path = "/proc/";
                 path.append(fileInfo.fileName());
                 path.append("/stat");
@@ -98,10 +125,10 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
                     if (!line.isNull()){
                         // Getting nice and name of the process
                         nice = line.section(' ', 18, 18);
-                        name = line.section(' ', 1, 1);
-                        name.remove(QChar('('));
-                        name.remove(QChar(')'));
-                        name = name.toLower();
+
+                        //Remove path
+                        name = name.split("/").last();
+                        name = name.split("\\").last();
 
                         path = "/proc/";
                         path.append(fileInfo.fileName());
@@ -139,7 +166,6 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
                     }
                     file_s.close();
                 }
-            }
             file_c.close();
         }
     }
