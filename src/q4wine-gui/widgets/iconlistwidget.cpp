@@ -89,28 +89,13 @@ void IconListWidget::showContents(QString filterString){
         iconItem->setText(iconsList.at(i));
         iconItem->setToolTip(iconsList.at(i));
 
-
         //Seting icon. If no icon or icon file does not exist -- setting default
         QString icon_path = db_icon.getPixmapIcon(this->prefixName, this->dirName, iconsList.at(i));
         if (icon_path.isEmpty()){
             iconItem->setIcon(defIcon);
         } else {
-            if (QFile::exists (icon_path)){
-                iconItem->setIcon(QIcon(icon_path));
-            } else {
-                icon_path = QString("%1/.local/share/icons/%2").arg(QDir::homePath()).arg(icon_path);
-                if (QFile::exists (icon_path)){
-                    iconItem->setIcon(QIcon(icon_path));
-                } else {
-                    QIcon ico = CoreLib->loadIcon(iconsList.at(i));
-                    // Do not work due to: https://bugreports.qt-project.org/browse/QTBUG-999
-                    //if (ico.isNull()){
-                    if (ico.availableSizes().isEmpty())
-                        ico = defIcon;
-
-                    iconItem->setIcon(ico);
-                }
-            }
+            QIcon ico = CoreLib->loadAppIcon(icon_path);
+            iconItem->setIcon(ico);
         }
         iconItem.release();
     }

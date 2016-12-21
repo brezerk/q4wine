@@ -386,7 +386,27 @@ void corelib::checkSettings(){
 QIcon corelib::loadIcon(QString iconName, bool fromTheme){
     // Function tryes to load icon image from theme dir
     // If it fails -> load default from rsource file
-    return QIcon::fromTheme(iconName, QIcon(QString(":%1").arg(iconName)));
+    return QIcon::fromTheme(iconName, QIcon(QString(":/%1").arg(iconName)));
+}
+
+QIcon corelib::loadAppIcon(QString iconName){
+    // Function tryes to load icon image from theme dir
+    // If it fails -> load default from rsource file
+    QIcon ico;
+
+    if (QFile(iconName).exists()){
+        ico = QIcon(iconName);
+    } else {
+        ico = QIcon::fromTheme(iconName, QIcon(QString(":/%1").arg(iconName)));
+#if QT_VERSION >= 0x050700
+            if (ico.isNull()){
+#else
+            if (ico.availableSizes().isEmpty()){
+#endif
+                return loadIcon("application-x-ms-dos-executable");
+            }
+    }
+    return ico;
 }
 
 QPixmap corelib::loadPixmap(QString iconName){

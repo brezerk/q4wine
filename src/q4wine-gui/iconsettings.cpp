@@ -156,20 +156,8 @@ void IconSettings::getIconReccord(){
     iconPath = iconRec.value("icon_path");
 
     if (!iconPath.isEmpty()){
-        if (QFile(iconPath).exists()){
-            cmdGetIcon->setIcon (QIcon(iconPath));
-        } else {
-            QIcon ico = CoreLib->loadIcon(iconPath);
-
-            // Do not work due to: https://bugreports.qt-project.org/browse/QTBUG-999
-            //if (ico.isNull()){
-            if (ico.availableSizes().isEmpty()){
-                ico = CoreLib->loadIcon("application-x-ms-dos-executable");
-                iconPath="";
-            }
-
-            cmdGetIcon->setIcon(ico);
-        }
+        QIcon ico = CoreLib->loadAppIcon(iconPath);
+        cmdGetIcon->setIcon(ico);
     }
 
     txtDesc->setText(iconRec.value("desc"));
