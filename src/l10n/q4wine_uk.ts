@@ -491,7 +491,7 @@
     <message>
         <location line="+27"/>
         <source>App Icon:</source>
-        <translation>Значок</translation>
+        <translation>Значок:</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -557,7 +557,7 @@
     <message>
         <location line="+6"/>
         <source>Enable automatic generation of desktop menu </source>
-        <translation>Дозволити автоматичну генерацію меню стільниці</translation>
+        <translation>Дозволити автоматичну генерацію меню стільниці </translation>
     </message>
     <message>
         <location line="+7"/>
@@ -568,7 +568,7 @@
         <location line="+14"/>
         <source>Remove desktop menu entries</source>
         <translatorcomment>Видалити пункти з меню стільниці</translatorcomment>
-        <translation>Вилучити пункти </translation>
+        <translation>Вилучити пункти</translation>
     </message>
     <message>
         <location line="+47"/>
@@ -1057,7 +1057,7 @@
         <location line="+684"/>
         <location line="+20"/>
         <source>X11 Driver</source>
-        <translation></translation>
+        <translation>Драйвер X11</translation>
     </message>
     <message>
         <location line="-2868"/>
@@ -1092,7 +1092,7 @@
     <message>
         <location line="+18"/>
         <source>DirectSound workaround for bug #9612</source>
-        <translation></translation>
+        <translation>DirectSound обхідний шлях для помилки #9612</translation>
     </message>
     <message>
         <location line="+225"/>
@@ -2704,7 +2704,7 @@ See help for details.</source>
     <message>
         <location line="+8"/>
         <source>&amp;About</source>
-        <translation>Про програму </translation>
+        <translation>Про програму</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -2719,7 +2719,7 @@ See help for details.</source>
     <message>
         <location line="+5"/>
         <source>P&amp;rocess</source>
-        <translation>Процеси </translation>
+        <translation>Процеси</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -2894,7 +2894,7 @@ See help for details.</source>
     <message>
         <location line="+272"/>
         <source>Sorry, the install wizard has not been implemented yet. It will be available in a future version.</source>
-        <translation></translation>
+        <translation>На жаль, майстер установки ще не був реалізований. Він буде доступний в майбутніх версіях.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -3547,7 +3547,8 @@ Note: leave it blank for default.</source>
         <location line="+29"/>
         <source>Do you really wish to delete the folder named "%1" and all associated icons?
 </source>
-        <translation>Ви справді бажаєте вилучити каталог назвою "%1" і всі відповідні піктограми?</translation>
+        <translation>Ви справді бажаєте вилучити каталог назвою "%1" і всі відповідні піктограми?
+</translation>
     </message>
     <message>
         <location line="+80"/>
@@ -3874,31 +3875,31 @@ Note: leave it blank for default.</source>
         <location line="+4"/>
         <location line="+23"/>
         <source>Process: The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program.</source>
-        <translation></translation>
+        <translation>Процес: Процес не вдалося запустити. Або викликається програма яка відсутня, або ви не маєте достатніх дозволів для запуску програми.</translation>
     </message>
     <message>
         <location line="-20"/>
         <location line="+23"/>
         <source>Process: The process crashed some time after starting successfully.</source>
-        <translation></translation>
+        <translation>Процес: Процес аварійно завершився через деякий час після успішного запуску.</translation>
     </message>
     <message>
         <location line="-17"/>
         <location line="+23"/>
         <source>Process: An error occurred when attempting to read from the process. For example, the process may not be running.</source>
-        <translation></translation>
+        <translation>Процес: Сталася помилка при спробі читання даних процесу. Наприклад, цей процес не запущений.</translation>
     </message>
     <message>
         <location line="-20"/>
         <location line="+23"/>
         <source>Process: An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel.</source>
-        <translation></translation>
+        <translation>Процес: Сталася помилка при спробі запису в процес. Наприклад, цей процес не запущений, чи він закрив свій вхідний канал.</translation>
     </message>
     <message>
         <location line="-20"/>
         <location line="+23"/>
         <source>Process: An unknown error occurred. This is the default return value of error().</source>
-        <translation></translation>
+        <translation>Процес: Виникла невідома помилка. Це значення за замовчуванням повернення помилки().</translation>
     </message>
     <message>
         <location line="+39"/>
@@ -3920,7 +3921,7 @@ Note: leave it blank for default.</source>
         <location line="-76"/>
         <location line="+23"/>
         <source>Process: The last waitFor...() function timed out.</source>
-        <translation></translation>
+        <translation>Процес: Остання функція waitFor...() завершилась з тайм-аутом.</translation>
     </message>
 </context>
 <context>
@@ -3933,7 +3934,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>Importing Wine desktop icons: %1 of %2</source>
-        <translation>Імпортую десктопні файли wine: %1 з %2 </translation>
+        <translation>Імпортую файли робочого столу для wine: %1 з %2</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -3962,7 +3963,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-12"/>
         <source>Importing desktop icons: %1 of %2</source>
-        <translation>Імпортую десктопні файли wine: %1 з %2 </translation>
+        <translation>Імпортую файли робочого столу для wine: %1 з %2</translation>
     </message>
 </context>
 <context>
@@ -4072,7 +4073,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+20"/>
         <source>Killing prefix "%1" wineserver.</source>
-        <translation></translation>
+        <translation>Вбиваємо wineserver для префіксу "%1".</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -4138,14 +4139,14 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="-308"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+92"/>
         <source>This is free software: you are free to change and redistribute it.</source>
-        <translation></translation>
+        <translation>Це вільне програмне забезпечення: ви можете вільно змінювати та поширювати його.</translation>
     </message>
     <message>
         <location line="+1"/>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="+1"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+1"/>
         <source>There is NO WARRANTY, to the extent permitted by law.</source>
-        <translation></translation>
+        <translation>Немає жодних гарантій, в межах, що допускаються законом.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -4177,7 +4178,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="+4"/>
         <source>Console utility for wine applications and prefixes management.</source>
-        <translation></translation>
+        <translation>Консольна утиліта для управління додатками та префіксами wine.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="-7"/>
@@ -4191,7 +4192,7 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="-34"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+58"/>
         <source>KEYs list:</source>
-        <translation></translation>
+        <translation>Список КЛЮЧів:</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4215,7 +4216,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="-19"/>
         <source>output wine process list for current prefix or for all prefixes and exit </source>
-        <translation>показати список процесів wine для поточного префіксу або для усіх префіксів та вийти</translation>
+        <translation>показати список процесів wine для поточного префіксу або для усіх префіксів та вийти </translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4266,7 +4267,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+4"/>
         <source> -1 if serious troubles</source>
-        <translation></translation>
+        <translation> -1 у разі серйозних проблем</translation>
     </message>
     <message>
         <location line="+232"/>
@@ -4276,7 +4277,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-256"/>
         <source>  %1-cli [KEY]...</source>
-        <translation></translation>
+        <translation>  %1-cli [КЛЮЧ]...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4286,7 +4287,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>  %1-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [args]</source>
-        <translation></translation>
+        <translation>  %1-cli -p &lt;prefix_name&gt; -b &lt;windows_binary_path&gt; [аргументи]</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -4301,7 +4302,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+4"/>
         <source>Exit status:</source>
-        <translation></translation>
+        <translation>Коди завершення:</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4320,12 +4321,12 @@ Note: leave it blank for default.</source>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="+1"/>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="+1"/>
         <source>General help using GNU software: &lt;http://www.gnu.org/gethelp/&gt;</source>
-        <translation></translation>
+        <translation>Загальна допомога при користуванні програмного забезпечення GNU: &lt;http://www.gnu.org/gethelp/&gt;</translation>
     </message>
     <message>
         <location filename="../q4wine-helper/q4wine-helper.cpp" line="-19"/>
         <source>  %1-helper [KEYs]...</source>
-        <translation></translation>
+        <translation>  %1-helper [КЛЮЧі]...</translation>
     </message>
     <message>
         <location line="+1"/>
