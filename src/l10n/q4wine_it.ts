@@ -2918,7 +2918,7 @@ Vedi l'help per gli esempi.</translation>
     <message>
         <location line="+5"/>
         <source>&amp;Short FAQ</source>
-        <translation>FAQ Brevi</translation>
+        <translation>FAQ Brevi(&amp;S)</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -3158,7 +3158,7 @@ Vedi l'help per gli esempi.</translation>
     <message>
         <location line="+1"/>
         <source>Arch</source>
-        <translation>Arch</translation>
+        <translation>Architettura</translation>
     </message>
     <message>
         <location line="+1"/>
