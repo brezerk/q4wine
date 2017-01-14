@@ -1,4 +1,4 @@
-q4wine was originally written by Alexey S. Malakhov
+q4wine was originally written by Oleksii S. Malakhov
 
 The general idea for it came from the WineTools script which was originally
 written by Frank Hendriksen. It is licensed under the terms of GPLv3.
@@ -53,7 +53,7 @@ See the ChangeLog file for details
 --
 Regards,
 
-Alexey S. Malakhov
+Oleksii S. Malakhov
 q4wine ( http://q4wine.brezblock.org.ua/ ) lead developer
 BrezBlock ( http://brezblock.org.ua/ ) maintainer
 E-mail: brezerk@gmail.com

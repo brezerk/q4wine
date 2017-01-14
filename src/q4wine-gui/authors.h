@@ -1,5 +1,5 @@
 /***************************************************************************
-*   Copyright (C) 2008-2016 by Alexey S. Malakhov <brezerk@gmail.com>     *
+*   Copyright (C) 2008-2016 by Oleksii S. Malakhov <brezerk@gmail.com>     *
 *                                                                         *
 *   This program is free software: you can redistribute it and/or modify  *
 *   it under the terms of the GNU General Public License as published by  *
@@ -33,7 +33,7 @@
     "</head>" \
     "<body>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Alexey S. Malakhov (brezerk)" \
+	    "Oleksii S. Malakhov (brezerk)" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Project maintainer, lead developer, website designer and developer, project documentation, support etc. ;)" \
@@ -121,7 +121,7 @@
     "</head>" \
     "<body>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "Alexey S. Malakhov (brezerk)" \
+	    "Oleksii S. Malakhov (brezerk)" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Ukrainian translation" \

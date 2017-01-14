@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author>Malakov Alexey</author>
+ <author>Malakov Oleksii</author>
  <class>Wizard</class>
  <widget class="QDialog" name="Wizard">
   <property name="windowModality">

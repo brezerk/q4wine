@@ -1,5 +1,5 @@
 ﻿#
-# Copyright (C) 2013-2014 by Alexey S. Malakhov
+# Copyright (C) 2013-2014 by Oleksii S. Malakhov
 # brezerk@gmail.com
 #
 # This program is free software: you can redistribute it and/or modify
@@ -41,7 +41,7 @@
 #
 
 developers:
-        - name: Alexey S. Malakhov
+        - name: Oleksii S. Malakhov
           nick: brezerk
           info: Project maintainer, lead developer, website designer and developer, project documentation, support etc. ;)
           mail: brezerk@gmail.com
@@ -112,7 +112,7 @@ pkg_maintainers:
           location: Minsk, Republic of Belarus
 
 translations:
-        - name: Alexey S. Malakhov
+        - name: Oleksii S. Malakhov
           nick: brezerk
           info: Ukrainian translation
           mail: brezerk@gmail.com
