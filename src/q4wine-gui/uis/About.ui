@@ -151,7 +151,7 @@ p, li { white-space: pre-wrap; }
           <item>
            <widget class="QLabel" name="label_3">
             <property name="text">
-             <string notr="true">© 2008-2016 by Alexey S. Malakhov &lt;brezerk@gmail.com&gt;</string>
+             <string notr="true">© 2008-2017 by Oleksii S. Malakhov &lt;brezerk@gmail.com&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>

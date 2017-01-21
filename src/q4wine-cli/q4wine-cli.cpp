@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2008-2016 by Alexey S. Malakhov <brezerk@gmail.com>     *
+ *   Copyright (C) 2008-2017 by Oleksii S. Malakhov <brezerk@gmail.com>     *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -103,12 +103,12 @@ int main(int argc, char *argv[])
         }
         if ((app.arguments().at(i)=="--version") or (app.arguments().at(i)=="-v")){
             Qcout<<QString("%1-cli %2").arg(APP_SHORT_NAME).arg(APP_VERS)<<endl;
-            Qcout<<QString("Copyright (C) 2008-2016 by Alexey S. Malakhov <brezerk@gmail.com>")<<endl;
+            Qcout<<QString("Copyright (C) 2008-2017 by Oleksii S. Malakhov <brezerk@gmail.com>")<<endl;
             Qcout<<QString("License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")<<endl;
             Qcout<<QObject::tr("This is free software: you are free to change and redistribute it.")<<endl;
             Qcout<<QObject::tr("There is NO WARRANTY, to the extent permitted by law.")<<endl;
             CoreLib->getBuildFlags();
-            Qcout<<QObject::tr("Author: %1.").arg("Alexey S. Malakhov")<<endl;
+            Qcout<<QObject::tr("Author: %1.").arg("Oleksii S. Malakhov")<<endl;
             return 0;
         }
     }
