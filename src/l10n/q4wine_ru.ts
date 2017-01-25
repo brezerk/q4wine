@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru">
+<TS version="2.1" language="ru">
 <context>
     <name>About</name>
     <message>
@@ -1617,17 +1617,17 @@ See help for details.</source>
     <message>
         <location line="-446"/>
         <source>New icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Новый значок</translation>
     </message>
     <message>
         <location line="+501"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы образов (*.iso *.nrg *.img *.bin *.mdf);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>ISO image files (*.iso);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы ISO (*.iso);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+45"/>
@@ -2018,12 +2018,12 @@ See help for details.</source>
     <message>
         <location line="-236"/>
         <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Исполняемые файлы exe, MSI, BAT (*.exe *.msi *.bat);;Исполняемые файлы (*.exe);;Установочные файлы MSI (*.msi);;Исполняемые скрипты BAT (*.bat);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+77"/>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Изображения и файлы для Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Изображения (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Исполняемые файлы Win32 (*.exe);;Разделяемые библиотеки Win32 (*.dll);;Файлы для Win32 (*.exe *.dll);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+234"/>
@@ -2274,12 +2274,12 @@ See help for details.</source>
     <message>
         <location line="-39"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы образов (*.iso *.nrg *.img *.bin *.mdf);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ISO image files (*.iso);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы ISO (*.iso);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+36"/>
@@ -2872,7 +2872,7 @@ See help for details.</source>
         <location line="-2"/>
         <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Исполняемые файлы и библиотеки Win32 (*.exe *.dll);;Исполняемые файлы Win32 (*.exe);;Библиотеки Win32 (*.dll);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+193"/>
@@ -3008,12 +3008,12 @@ See help for details.</source>
         <location line="+3"/>
         <location line="+124"/>
         <source>Goto Winetricks homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть сайт проекта Winetricks</translation>
     </message>
     <message>
         <location line="-123"/>
         <source>Read news, report bugs and join the Winetricks community at https://github.com/Winetricks/winetricks</source>
-        <translation type="unfinished"></translation>
+        <translation>Читайте новости, сообщайте об ошибках, присоединяйтесь к сообществу Winetricks: https://github.com/Winetricks/winetricks</translation>
     </message>
     <message>
         <location line="+92"/>
@@ -3170,7 +3170,7 @@ See help for details.</source>
         <location line="-9"/>
         <location line="+2"/>
         <source>Prefix archive images (*.tbz);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Архив образов префиксов(*.tbz);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+12"/>
@@ -3557,12 +3557,12 @@ Note: leave it blank for default.</source>
         <location line="+1"/>
         <location line="+237"/>
         <source>Browse for wine binary</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск программы wine</translation>
     </message>
     <message>
         <location line="-217"/>
         <source>New directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая папка</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3771,12 +3771,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+9"/>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы образов (*.iso *.nrg *.img *.bin *.mdf);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ISO image files (*.iso);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы ISO (*.iso);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -4532,7 +4532,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+174"/>
         <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Исполняемые файлы exe, MSI, BAT (*.exe *.msi *.bat);;Исполняемые файлы (*.exe);;Установочные файлы MSI (*.msi);;Исполняемые скрипты BAT (*.bat);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="-190"/>
@@ -4591,7 +4591,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+29"/>
         <source>Optional</source>
-        <translation type="unfinished"></translation>
+        <translation>Дополнительно</translation>
     </message>
     <message>
         <location line="+33"/>
@@ -5119,27 +5119,27 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+117"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл &apos;%1&apos; недоступен для чтения или записи. Проверьте права доступа к файлу.</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Can&apos;t create file &apos;%1&apos;. Check folder permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно создать файл &apos;%1&apos;. Проверьте права доступа к папке.</translation>
     </message>
     <message>
         <location line="+77"/>
         <source>Refreshing Winetricks application list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновление списка программ Winetricks.</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Winetricks plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Плагин winetricks</translation>
     </message>
     <message>
         <location line="+29"/>
         <source>Reading category: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Чтение категории: %1</translation>
     </message>
     <message>
         <source>Refreshing winetricks application list.</source>
