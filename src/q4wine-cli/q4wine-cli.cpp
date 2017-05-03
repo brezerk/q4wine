@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(false));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(false)));
 
     QTranslator qtt;
 
@@ -136,9 +136,10 @@ int main(int argc, char *argv[])
 
         if ((app.arguments().at(i)=="--prefix") or (app.arguments().at(i)=="-p")){
             i++;
-            if (i<argc)
+            if (i<argc){
                 _PREFIX=app.arguments().at(i);
                 continue;
+            }
             if (!db_prefix.isExistsByName(_PREFIX)){
                 Qcout<<QObject::tr("Prefix named \"%1\" does not exist. Run \"%2-cli -pl\" for prefix list.").arg(_PREFIX).arg(APP_SHORT_NAME)<<endl;
                 return -1;
@@ -437,7 +438,7 @@ int main(int argc, char *argv[])
         execObj.winedebug = "";
         execObj.useconsole = "";
         execObj.display = "";
-        execObj.cmdargs = path;
+//        execObj.cmdargs = path;
         execObj.cmdargs = "";
         execObj.desktop = "";
         execObj.execcmd=_IMAGE;

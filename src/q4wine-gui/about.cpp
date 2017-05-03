@@ -33,7 +33,7 @@ About::About(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     setupUi(this);
     setWindowTitle(tr("About %1").arg(APP_NAME));

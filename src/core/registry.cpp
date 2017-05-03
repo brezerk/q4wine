@@ -19,33 +19,32 @@
 #include "registry.h"
 
 Registry::Registry(){
-	// Loading libq4wine-core.so
+    // Loading libq4wine-core.so
 #ifdef RELEASE
     libq4wine.setFileName(_CORELIB_PATH_);
 #else
     libq4wine.setFileName("../q4wine-lib/libq4wine-core");
 #endif
 
-	if (!libq4wine.load()){
-		libq4wine.load();
-	}
+    if (!libq4wine.load()){
+        libq4wine.load();
+    }
 
-	// Getting corelib calss pointer
-	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib.reset((corelib *)CoreLibClassPointer(true));
-	return;
+    // Getting corelib calss pointer
+    CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
+    return;
 }
 
-Registry::Registry(QString prefixPath){
-	regfile.append(prefixPath);
-	regfile.append("/");
-
-	return;
+Registry::Registry(QString prefixPath): Registry(){
+    regfile.append(prefixPath);
+    regfile.append("/");
+    return;
 }
 
 bool Registry::init(){
-	regfile_image="REGEDIT4";
-	return true;
+    regfile_image="REGEDIT4";
+    return true;
 }
 
 void Registry::append(QString reg_keys){

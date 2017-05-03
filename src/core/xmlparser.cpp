@@ -20,7 +20,10 @@
 
 XmlParser::XmlParser(void)
 {
-	return;
+    appdb_appinfo=WineAppDBInfo();
+    page_current=0;
+    page_count=0;
+    return;
 }
 
 int XmlParser::parseIOSream(QString file){
@@ -88,7 +91,7 @@ QList<WineAppDBInfo> XmlParser::getAppSearchInfoList(){
 }
 
 WineAppDBInfo XmlParser::getAppSearchInfo(){
-	return appdb_appinfo;
+    return appdb_appinfo;
 }
 
 QList<WineAppDBCategory> XmlParser::getCategorysList(){

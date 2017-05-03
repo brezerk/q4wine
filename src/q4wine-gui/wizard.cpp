@@ -64,7 +64,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     Scena=WizardType;
     Page=1;

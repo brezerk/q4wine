@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(false));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(false)));
 
     if (!CoreLib.get()){
         QErr<<"[EE] Cannot load shared library."<<endl;

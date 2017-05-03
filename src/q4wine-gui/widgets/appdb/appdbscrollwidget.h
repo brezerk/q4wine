@@ -40,7 +40,7 @@ class AppDBScrollWidget : public QScrollArea
 {
 	Q_OBJECT
 public:
-	AppDBScrollWidget(QWidget * parent = 0);
+    explicit AppDBScrollWidget(QWidget * parent = 0);
 	void addSearchWidget(const WineAppDBInfo appinfo);
 	void addTestWidget(const WineAppDBInfo appinfo);
 	void addVersionFrame(QList<WineAppDBCategory> list, QString frame_caption, short int action);

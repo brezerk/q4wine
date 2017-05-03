@@ -33,7 +33,7 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     setResizeMode(QListView::Adjust);
     setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);

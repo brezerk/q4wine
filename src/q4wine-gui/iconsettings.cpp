@@ -43,7 +43,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     this->prefix_name = prefix_name;
     QHash<QString,QString> result = db_prefix.getByName(this->prefix_name);

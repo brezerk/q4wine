@@ -34,7 +34,7 @@ ImageManager::ImageManager(QWidget * parent, Qt::WindowFlags f) : QDialog(parent
 
 	// Getting corelib calss pointer
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-	CoreLib.reset((corelib *)CoreLibClassPointer(true));
+	CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
 	loadThemeIcons();

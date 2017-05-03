@@ -51,16 +51,13 @@ QStringList Last_Run_Icon::getIcons(){
     query.prepare("SELECT exec FROM last_run_icon ORDER BY id DESC");
 
     if (query.exec()){
-        int i=0;
         while (query.next()) {
-            i++;
             list.append(query.value(0).toString());
         }
     } else {
         qDebug()<<"SqlError: "<<query.lastError()<<query.executedQuery();
         list.clear();
     }
-
 
     return list;
 }

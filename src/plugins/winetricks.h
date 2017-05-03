@@ -48,7 +48,7 @@ typedef QMap<QString, qstring_map> metadata_type;
 class winetricks : public QWidget{
 
 public:
-    winetricks(QString prefix_name);
+    explicit winetricks(QString prefix_name);
     void run_winetricks(QString item);
     void install_winetricks();
     bool parse();

@@ -34,7 +34,7 @@ LoggingWidget::LoggingWidget(QWidget *parent) :
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
 
     this->log_status = CoreLib->getSetting("logging", "enable", false, D_LOGGING_ENABLED).toInt();

@@ -35,7 +35,7 @@ winetricks::winetricks(QString prefixName) : QWidget()
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     this->winetricks_bin = QDir::homePath();
     this->winetricks_bin.append("/.config/");

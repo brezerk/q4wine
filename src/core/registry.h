@@ -54,7 +54,7 @@ public:
 	/*! \brief This is calss constructor.
 	  * \param prefixPath Base prefix path. This is need to get wine system registry file path.
 	  */
-	Registry(QString prefixPath);
+    explicit Registry(QString prefixPath);
 
 	/*! \brief Creates heade information for  exported reg file.
 	  *

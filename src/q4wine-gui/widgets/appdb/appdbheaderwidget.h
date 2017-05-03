@@ -44,7 +44,7 @@ class AppDBHeaderWidget : public QFrame
 {
     Q_OBJECT
 public:
-    AppDBHeaderWidget(QWidget * parent = 0);
+    explicit AppDBHeaderWidget(QWidget * parent = 0);
     void addLabel(QString info);
     void addLink(QString text, bool enabled = true, short int action = 0, QString search = "", int value = 0);
     void setLayout(short int direction);

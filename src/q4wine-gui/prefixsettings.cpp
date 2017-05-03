@@ -38,7 +38,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::Window
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     this->addNew=false;
     this->loadThemeIcons();
@@ -162,7 +162,7 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     setWindowIcon(CoreLib->loadIcon("q4wine"));
     this->loadThemeIcons();

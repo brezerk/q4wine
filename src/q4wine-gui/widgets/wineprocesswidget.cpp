@@ -33,7 +33,7 @@ WineProcessWidget::WineProcessWidget(QWidget *parent) : QWidget(parent)
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     this->createActions();
 

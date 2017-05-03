@@ -176,7 +176,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
 */
 #ifdef _OS_FREEBSD_
     kvm_t *kd;
-    int cntproc, i, ni, ipid;
+    int cntproc, i, ni;
 
     struct kinfo_proc *kp;
     char buf[_POSIX2_LINE_MAX];
@@ -204,7 +204,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
     QStringList cur_pids;
     for (i=0; i<cntproc;i++){
         prefix="";
-        ipid = kp[i].ki_pid;
+        int ipid = kp[i].ki_pid;
 
         if (cur_pids.indexOf(QString("%1").arg(ipid))==-1){
             cur_pids << QString("%1").arg(ipid);
@@ -1463,9 +1463,7 @@ QStringList corelib::getCdromDevices(void) const{
 
                 if (!string.isEmpty()){
                     showError(QObject::tr("It seems that the process crashed. STDERR log: %1").arg(string));
-                    delete (&codec);
                 }
-                delete (&codec);
                 return false;
             }
             return true;

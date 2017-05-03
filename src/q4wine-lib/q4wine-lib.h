@@ -117,7 +117,7 @@ struct ExecObject{
 class corelib {
 public:
     //! Create an mainlib class
-    corelib(bool _GUI_MODE);
+    explicit corelib(bool _GUI_MODE);
 
     /*! \brief This function tries to get wine process list running in the current system.
      *

@@ -33,7 +33,7 @@ WineObject::WineObject(QObject *parent) : QObject(parent)
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     this->programNice = 0;
     this->prefixId = 0;

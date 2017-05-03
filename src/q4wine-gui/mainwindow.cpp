@@ -31,7 +31,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 
     // Getting corelib class pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib *)CoreLibClassPointer(true));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     clearTmp();
 
@@ -396,11 +396,9 @@ void MainWindow::newConnection (){
 
 
             quint16 blockSize = 0;
-            if (blockSize == 0) {
-                if (localSocket->bytesAvailable() < (int)sizeof(quint16))
-                    return;
-                in >> blockSize;
-            }
+            if (localSocket->bytesAvailable() < (int)sizeof(quint16))
+                return;
+            in >> blockSize;
 
             if (in.atEnd())
                 return;

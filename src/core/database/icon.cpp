@@ -577,12 +577,7 @@ bool Icon::updateIcon(const QString cmdargs, const QString exec, const QString i
     if (!dir_name.isEmpty()){
         query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice, lang=:lang, prerun=:prerun, postrun=:postrun WHERE name=:icon_name and dir_id=(SELECT id FROM dir WHERE name=:dir_name AND prefix_id=(SELECT id FROM prefix WHERE name=:prefix_dir_name)) and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
         query.bindValue(":prefix_dir_name", prefix_name);
-
-        if (dir_name.isEmpty()){
-            query.bindValue(":dir_name", QVariant(QVariant::String));
-        } else {
-            query.bindValue(":dir_name", dir_name);
-        }
+        query.bindValue(":dir_name", dir_name);
     } else {
         query.prepare("UPDATE icon SET override=:override, winedebug=:winedebug, useconsole=:useconsole, display=:display,  cmdargs=:cmdargs, exec=:exec, icon_path=:icon_path, desc=:desc, name=:name, wrkdir=:wrkdir, desktop=:desktop, nice=:nice, lang=:lang, prerun=:prerun, postrun=:postrun WHERE name=:icon_name and dir_id IS NULL and prefix_id=(SELECT id FROM prefix WHERE name=:prefix_name)");
     }

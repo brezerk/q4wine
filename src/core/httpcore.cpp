@@ -50,7 +50,7 @@ HttpCore::HttpCore()
 
     // Getting corelib calss pointer
     CoreLibClassPointer = (CoreLibPrototype*) libq4wine.resolve("createCoreLib");
-    CoreLib.reset((corelib*) CoreLibClassPointer(true));
+    CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
     int type = CoreLib->getSetting("network", "type", false).toInt();
 
@@ -64,9 +64,7 @@ HttpCore::HttpCore()
         proxyPass = CoreLib->getSetting("network", "pass", false).toString();
         #ifdef QT5
         QNetworkProxy proxy;
-        if (type == 0){
-            proxy.setType(QNetworkProxy::NoProxy);
-        } else if (type == 1){
+        if (type == 1){
             proxy.setType(QNetworkProxy::HttpProxy);
         } else if (type == 2){
             proxy.setType(QNetworkProxy::Socks5Proxy);
