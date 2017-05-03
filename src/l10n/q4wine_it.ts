@@ -404,7 +404,7 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-407"/>
         <location line="+417"/>
         <source>Logging</source>
-        <translation>Logging</translation>
+        <translation>Registrazione</translation>
     </message>
     <message>
         <location line="-2174"/>
@@ -554,7 +554,7 @@
     <message>
         <location line="+27"/>
         <source>Mount:</source>
-        <translation>Mount:</translation>
+        <translation>Mountt:</translation>
     </message>
     <message>
         <location line="+47"/>
@@ -1818,7 +1818,7 @@ Vedi l'help per gli esempi.</translation>
     <message>
         <location line="+236"/>
         <source>Override DLL</source>
-        <translation>Override DLL</translation>
+        <translation>DLL da sostituire</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -2096,12 +2096,12 @@ Vedi l'help per gli esempi.</translation>
     <message>
         <location line="+37"/>
         <source>Pre run:</source>
-        <translation>Pre run:</translation>
+        <translation>Preesecuzione:</translation>
     </message>
     <message>
         <location line="+53"/>
         <source>Post run:</source>
-        <translation>Post run:</translation>
+        <translation>Post esecuzione:</translation>
     </message>
     <message>
         <location line="+48"/>
@@ -2669,7 +2669,7 @@ Vedi l'help per gli esempi.</translation>
     <message>
         <location filename="../q4wine-gui/uis/MainWindow.ui" line="-19"/>
         <source>Setup</source>
-        <translation>Setup</translation>
+        <translation>Settaggi</translation>
     </message>
     <message>
         <location line="+95"/>
@@ -2814,7 +2814,7 @@ Vedi l'help per gli esempi.</translation>
     <message>
         <location line="+22"/>
         <source>Logging</source>
-        <translation>Logging</translation>
+        <translation>Registrazione</translation>
     </message>
     <message>
         <source>About Qt</source>
