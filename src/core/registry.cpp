@@ -213,6 +213,8 @@ QStringList Registry::readExcludedKeys(const QString sysfile, const QString path
 		QByteArray line = file.readLine();
 
 		if ((readFlag) && (!line.trimmed().isEmpty())){
+			if (line.startsWith("#time"))
+				continue;
 			QList<QByteArray> key = line.trimmed().split('=');
 			int index = keys.indexOf(key.at(0));
 			if (index==-1){
