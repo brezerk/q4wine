@@ -98,22 +98,14 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
             QString comm_char;
             while (true) {
                 comm_char = in.read(1).toLatin1();
-                if ((comm_char.isNull()) or (comm_char == "\n")){
+                if ((comm_char.isNull()) or (comm_char == "\n") or comm_char.isEmpty()){
                     break;
                 }
-                if (comm_char.isEmpty()){
-                    name.append(" ");
-                } else {
-                    name.append(comm_char);
-                }
+                name.append(comm_char);
             }
-            //Remove args
-            name = name.split(" ")[0];
 #ifdef DEBUG
             qDebug()<<"path: "<<fileInfo.fileName()<<" comm: "<<name;
 #endif
-
-
                 path = "/proc/";
                 path.append(fileInfo.fileName());
                 path.append("/stat");
@@ -124,6 +116,8 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
                     QString line = in.readLine();
                     if (!line.isNull()){
                         // Getting nice and name of the process
+                        // Replace process name in case it contains spaces
+                        line.replace(QRegExp("\\(.*\\)"), "name");
                         nice = line.section(' ', 18, 18);
 
                         //Remove path
