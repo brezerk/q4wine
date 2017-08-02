@@ -18,7 +18,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <property name="spacing">
-    <number>0</number>
+    <number>1</number>
    </property>
    <property name="margin">
     <number>0</number>
@@ -36,8 +36,8 @@
        <rect>
         <x>310</x>
         <y>10</y>
-        <width>413</width>
-        <height>609</height>
+        <width>450</width>
+        <height>600</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -1795,7 +1795,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tabDefaults">
            <attribute name="title">
@@ -2137,6 +2137,258 @@
             </item>
            </layout>
           </widget>
+          <widget class="QWidget" name="tab">
+           <attribute name="title">
+            <string>Desktop Integration</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="QGroupBox" name="groupBox_21">
+              <property name="title">
+               <string>Default Wine Desktop Paths for new prefixes.</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_21">
+               <property name="margin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QWidget" name="widget_48" native="true">
+                 <layout class="QHBoxLayout" name="_60">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_46">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Desktop:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="txtWineDesktop"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="cmdGetWineDesktop">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>16</width>
+                      <height>16</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_58" native="true">
+                 <layout class="QHBoxLayout" name="_66">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_65">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>My Documents:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="txtWineDesktopDoc"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="cmdGetWineDesktopDoc">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>16</width>
+                      <height>16</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_54" native="true">
+                 <layout class="QHBoxLayout" name="_63">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_60">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>My Pictures:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="txtWineDesktopPic"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="cmdGetWineDesktopPic">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>16</width>
+                      <height>16</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_57" native="true">
+                 <layout class="QHBoxLayout" name="_64">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_63">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>My Music:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="txtWineDesktopMus"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="cmdGetWineDesktopMus">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>16</width>
+                      <height>16</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_59" native="true">
+                 <layout class="QHBoxLayout" name="_65">
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_64">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>My Videos:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="txtWineDesktopVid"/>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="cmdGetWineDesktopVid">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>16</width>
+                      <height>16</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="spacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>357</width>
+                <height>310</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
           <widget class="QWidget" name="tabRunDialog">
            <attribute name="title">
             <string>Run dialog</string>
@@ -2352,6 +2604,11 @@
           <item>
            <property name="text">
             <string>Defaults</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Desktop Integration</string>
            </property>
           </item>
           <item>
