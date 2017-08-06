@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>About</name>
     <message>
@@ -209,7 +209,7 @@
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+17"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="+55"/>
         <source>%1 settings</source>
-        <translation>%1 の設定</translation>
+        <translation>%1 設定</translation>
     </message>
     <message>
         <location line="+50"/>
@@ -515,37 +515,37 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-311"/>
         <location line="+428"/>
         <source>Desktop Integration</source>
-        <translation type="unfinished"></translation>
+        <translation>デスクトップ統合</translation>
     </message>
     <message>
         <location line="-463"/>
         <source>Default Wine Desktop Paths for new prefixes.</source>
-        <translation type="unfinished"></translation>
+        <translation>新しい実行環境の既定のデスクトップ パスを指定します。</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Desktop:</source>
-        <translation type="unfinished">デスクトップ:</translation>
+        <translation>デスクトップ:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>My Documents:</source>
-        <translation type="unfinished">マイ ドキュメント:</translation>
+        <translation>マイ ドキュメント:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>My Pictures:</source>
-        <translation type="unfinished">マイ ピクチャ:</translation>
+        <translation>マイ ピクチャ:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>My Music:</source>
-        <translation type="unfinished">マイ ミュージック:</translation>
+        <translation>マイ ミュージック:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>My Videos:</source>
-        <translation type="unfinished">マイ ビデオ:</translation>
+        <translation>マイ ビデオ:</translation>
     </message>
     <message>
         <location line="+43"/>
@@ -682,12 +682,12 @@
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="-2577"/>
         <source>App Icon</source>
-        <translation>アプリケーションのアイコン</translation>
+        <translation>Q4Wine のアイコン</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>App Icon:</source>
-        <translation>アプリケーションのアイコン:</translation>
+        <translation>Q4Wine のアイコン:</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -2884,7 +2884,7 @@ See help for details.</source>
         <location line="+3"/>
         <location line="+123"/>
         <source>Refresh Winetricks application list</source>
-        <translation>Winetricks のアプリケーション一覧を再読み込み</translation>
+        <translation>Winetricks のアプリケーション一覧を更新</translation>
     </message>
     <message>
         <location line="-122"/>
