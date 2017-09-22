@@ -286,16 +286,24 @@ bool winetricks::parse() {
     pd->setWindowTitle(tr("Winetricks plugin"));
     pd->setFixedWidth(400);
     pd->show();
-    pd->setValue(2);
+    pd->setValue(1);
     QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
 
     #ifdef DEBUG
         qDebug()<<"[plugin] parsing winetricks script";
     #endif
 
+    pd->setLabelText(tr("Dropping stale items..."));
+    db_sysconfig.begin();
     db_sysconfig.drop_items(D_PROVIDER_WINETRICKS);
-
+    db_sysconfig.commit();
     QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
+
+    pd->setValue(2);
+    pd->setLabelText(tr("Getting list of installed items..."));
+    QStringList installed_apps = this->get_installed();
+    QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
+    pd->setValue(4);
 
     metadata_type metadata;
     QString infile = QString(winetricks_bin);
@@ -349,8 +357,6 @@ bool winetricks::parse() {
     file.close();
     pd->setValue(10);
 
-    QStringList installed_apps = this->get_installed();
-
     db_sysconfig.begin();
 
     int all_verbs = metadata.size();
@@ -374,6 +380,8 @@ bool winetricks::parse() {
     }
 
     db_sysconfig.commit();
+
+    db_sysconfig.vacuum();
 
     #ifdef DEBUG
         qDebug()<<"[plugin] parsing winetricks script done";

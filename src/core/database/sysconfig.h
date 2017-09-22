@@ -71,6 +71,7 @@ class Sysconfig
 
       bool begin();
       bool commit();
+      bool vacuum();
 
 protected:
       /*! \brief This function executes requested query.

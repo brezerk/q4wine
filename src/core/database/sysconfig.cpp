@@ -144,3 +144,11 @@ bool Sysconfig::commit(){
         return false;
     return true;
 }
+
+bool Sysconfig::vacuum(){
+    QSqlQuery query;
+    query.prepare("VACUUM");
+    if (!query.exec())
+        return false;
+    return true;
+}
