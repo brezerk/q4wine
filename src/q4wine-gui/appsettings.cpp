@@ -75,6 +75,11 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
     cmdGetConsoleBin->installEventFilter(this);
     cmdGetShBin->installEventFilter(this);
     cmdGetDefPrefixPath->installEventFilter(this);
+    cmdGetWineDesktop->installEventFilter(this);
+    cmdGetWineDesktopDoc->installEventFilter(this);
+    cmdGetWineDesktopMus->installEventFilter(this);
+    cmdGetWineDesktopPic->installEventFilter(this);
+    cmdGetWineDesktopVid->installEventFilter(this);
 
     QSettings settings(APP_SHORT_NAME, "default");
 
@@ -278,6 +283,14 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
     cmdDesktopMenu_Remove->setEnabled(false);
 #endif
 
+    settings.beginGroup("DesktopIntegration");
+    this->txtWineDesktop->setText(settings.value("WineDesktop", "").toString());
+    this->txtWineDesktopDoc->setText(settings.value("WineDesktopDoc", "").toString());
+    this->txtWineDesktopMus->setText(settings.value("WineDesktopMus", "").toString());
+    this->txtWineDesktopPic->setText(settings.value("WineDesktopPic", "").toString());
+    this->txtWineDesktopVid->setText(settings.value("WineDesktopVid", "").toString());
+    settings.endGroup();
+
     QList<QTreeWidgetItem *> items = optionsTree->findItems (tr("General"), Qt::MatchExactly);
     if (items.count()>0){
         items.at(0)->setExpanded(true);
@@ -341,14 +354,17 @@ void AppSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
         optionsStack->setCurrentIndex(4);
         pabwAdvanced->setCurrentIndex(0);
     } else if (itemText==tr("Defaults")){
-        optionsStack->setCurrentIndex(4);
+       optionsStack->setCurrentIndex(4);
         pabwAdvanced->setCurrentIndex(0);
-    } else if (itemText==tr("Run dialog")){
+    } else if (itemText==tr("Desktop Integration")){
         optionsStack->setCurrentIndex(4);
         pabwAdvanced->setCurrentIndex(1);
-    } else if (itemText==tr("Wine desktop import")){
+    } else if (itemText==tr("Run dialog")){
         optionsStack->setCurrentIndex(4);
         pabwAdvanced->setCurrentIndex(2);
+    } else if (itemText==tr("Wine desktop import")){
+        optionsStack->setCurrentIndex(4);
+        pabwAdvanced->setCurrentIndex(3);
     }
 }
 
@@ -467,6 +483,12 @@ void AppSettings::loadThemeIcons(){
     cmdGetWrestoolBin->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetIcotoolBin->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetDefPrefixPath->setIcon(CoreLib->loadIcon("document-open"));
+
+    cmdGetWineDesktop->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWineDesktopDoc->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWineDesktopMus->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWineDesktopPic->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetWineDesktopVid->setIcon(CoreLib->loadIcon("document-open"));
     return;
 }
 
@@ -683,6 +705,14 @@ void AppSettings::cmdOk_Click(){
     settings.endGroup();
 #endif
 
+    settings.beginGroup("DesktopIntegration");
+    settings.setValue("WineDesktop", this->txtWineDesktop->text());
+    settings.setValue("WineDesktopDoc", this->txtWineDesktopDoc->text());
+    settings.setValue("WineDesktopMus", this->txtWineDesktopMus->text());
+    settings.setValue("WineDesktopPic", this->txtWineDesktopPic->text());
+    settings.setValue("WineDesktopVid", this->txtWineDesktopVid->text());
+    settings.endGroup();
+
     accept();
     return;
 }
@@ -754,6 +784,8 @@ void AppSettings::cmdHelp_Click(){
         rawurl = "11-settings.html#defaults";
     } else if (itemText==tr("Defaults")){
         rawurl = "11-settings.html#defaults";
+    } else if (itemText==tr("Desktop Integration")){
+        rawurl = "11-settings.html#desktopintegration";
     } else if (itemText==tr("Run dialog")){
         rawurl = "11-settings.html#rundialog";
     } else if (itemText==tr("Wine desktop import")){

@@ -79,9 +79,6 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
     cmdGetWineDesktopPic->installEventFilter(this);
     cmdGetWineDesktopMus->installEventFilter(this);
     cmdGetWineDesktopVid->installEventFilter(this);
-
-
-
 }
 
 void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
@@ -239,13 +236,13 @@ void FakeDriveSettings::cmdOk_Click(){
     userDir.append(QString::fromUtf8(getenv("USER")));
 
     if (list.count()==5){
-                desktopFolder = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(0).split("\\\\").last()));
-                desktopMusic = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(1).split("\\\\").last()));
-                desktopPictures = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(2).split("\\\\").last()));
-                desktopDocuments = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(4).split("\\\\").last()));
-                desktopVideos = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(3).split("\\\\").last()));
+        desktopFolder = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(0).split("\\\\").last()));
+        desktopMusic = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(1).split("\\\\").last()));
+        desktopPictures = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(2).split("\\\\").last()));
+        desktopDocuments = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(4).split("\\\\").last()));
+        desktopVideos = QString("%1/%2").arg(userDir).arg(CoreLib->decodeRegString(list.at(3).split("\\\\").last()));
     } else {
-         QMessageBox::warning(this, tr("Error"), tr("Cannot read desktop paths!"));
+        QMessageBox::warning(this, tr("Error"), tr("Cannot read desktop paths!"));
         this->reject();
         return;
     }
@@ -1327,30 +1324,54 @@ void FakeDriveSettings::loadDefaultSettings(){
     item->setDrive("Z:", "/", "auto");
     listWineDrives->addItem(item.release());
 
-    txtWineDesktop->setText(QString("%1/desktop-integration/Desktop").arg(prefixPath));
-    txtWineDesktopDoc->setText(QString("%1/desktop-integration/").arg(prefixPath));
-    txtWineDesktopMus->setText(QString("%1/desktop-integration/").arg(prefixPath));
-    txtWineDesktopPic->setText(QString("%1/desktop-integration/").arg(prefixPath));
-    txtWineDesktopVid->setText(QString("%1/desktop-integration/").arg(prefixPath));
+    QString wineDesktopPath = CoreLib->getSetting("DesktopIntegration", "WineDesktop", false, QString("%1/desktop-integration/Desktop").arg(prefixPath)).toString();
+    if (wineDesktopPath.isEmpty()){
+        wineDesktopPath = QString("%1/desktop-integration/Desktop").arg(prefixPath);
+    }
+    txtWineDesktop->setText(wineDesktopPath);
 
-        if (!dir.exists(txtWineDesktopDoc->text())){
-            if (!dir.mkdir(txtWineDesktopDoc->text())){
-                QMessageBox::warning(this, tr("Error"), tr("Cannot create dir: %1").arg(prefixPath));
-                QApplication::restoreOverrideCursor();
-                reject();
-            }
+    wineDesktopPath = CoreLib->getSetting("DesktopIntegration", "WineDesktopDoc", false, QString("%1/desktop-integration/").arg(prefixPath)).toString();
+    if (wineDesktopPath.isEmpty()){
+        wineDesktopPath = QString("%1/desktop-integration/Desktop").arg(prefixPath);
+    }
+    txtWineDesktopDoc->setText(wineDesktopPath);
+
+    wineDesktopPath = CoreLib->getSetting("DesktopIntegration", "WineDesktopMus", false, QString("%1/desktop-integration/").arg(prefixPath)).toString();
+    if (wineDesktopPath.isEmpty()){
+        wineDesktopPath = QString("%1/desktop-integration/").arg(prefixPath);
+    }
+    txtWineDesktopMus->setText(wineDesktopPath);
+
+    wineDesktopPath = CoreLib->getSetting("DesktopIntegration", "WineDesktopPic", false, QString("%1/desktop-integration/").arg(prefixPath)).toString();
+    if (wineDesktopPath.isEmpty()){
+        wineDesktopPath = QString("%1/desktop-integration/").arg(prefixPath);
+    }
+    txtWineDesktopPic->setText(wineDesktopPath);
+
+    wineDesktopPath = CoreLib->getSetting("DesktopIntegration", "WineDesktopVid", false, QString("%1/desktop-integration/").arg(prefixPath)).toString();
+    if (wineDesktopPath.isEmpty()){
+        wineDesktopPath = QString("%1/desktop-integration/").arg(prefixPath);
+    }
+    txtWineDesktopVid->setText(wineDesktopPath);
+
+    if (!dir.exists(txtWineDesktopDoc->text())){
+        if (!dir.mkdir(txtWineDesktopDoc->text())){
+            QMessageBox::warning(this, tr("Error"), tr("Cannot create dir: %1").arg(prefixPath));
+            QApplication::restoreOverrideCursor();
+            reject();
         }
+    }
 
-        if (!dir.exists(txtWineDesktop->text())){
-            if (!dir.mkdir(txtWineDesktop->text())){
-                QMessageBox::warning(this, tr("Error"), tr("Cannot create dir: %1").arg(prefixPath));
-                QApplication::restoreOverrideCursor();
-                reject();
-            }
+    if (!dir.exists(txtWineDesktop->text())){
+        if (!dir.mkdir(txtWineDesktop->text())){
+            QMessageBox::warning(this, tr("Error"), tr("Cannot create dir: %1").arg(prefixPath));
+            QApplication::restoreOverrideCursor();
+            reject();
         }
+    }
 
-        // We need to wait for wine while it writes .reg files....
-        QTimer::singleShot(1000, this, SLOT(waitForWine()));
+    // We need to wait for wine while it writes .reg files....
+    QTimer::singleShot(1000, this, SLOT(waitForWine()));
 }
 
 bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){

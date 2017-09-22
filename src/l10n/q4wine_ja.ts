@@ -209,21 +209,21 @@
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+17"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="+55"/>
         <source>%1 settings</source>
-        <translation>%1 の設定</translation>
+        <translation>%1 設定</translation>
     </message>
     <message>
         <location line="+50"/>
-        <location line="+2213"/>
+        <location line="+2465"/>
         <location line="+5"/>
         <location line="+4"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+226"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+239"/>
         <location line="+20"/>
-        <location line="+426"/>
+        <location line="+443"/>
         <source>General</source>
         <translation>一般</translation>
     </message>
     <message>
-        <location line="-2213"/>
+        <location line="-2465"/>
         <source>Wine settings</source>
         <translation>Wine の設定</translation>
     </message>
@@ -264,27 +264,27 @@
     </message>
     <message>
         <location line="+24"/>
-        <location line="+2025"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-423"/>
-        <location line="+425"/>
+        <location line="+2277"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-440"/>
+        <location line="+442"/>
         <source>System</source>
         <translation>システム</translation>
     </message>
     <message>
-        <location line="-2016"/>
+        <location line="-2268"/>
         <source>System utils</source>
         <translation>システム ユーティリティ</translation>
     </message>
     <message>
         <location line="+482"/>
-        <location line="+1539"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-422"/>
-        <location line="+424"/>
+        <location line="+1791"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-439"/>
+        <location line="+441"/>
         <source>Utils</source>
         <translation>ユーティリティ</translation>
     </message>
     <message>
-        <location line="-1530"/>
+        <location line="-1782"/>
         <source>Console</source>
         <translation>端末</translation>
     </message>
@@ -300,14 +300,14 @@
     </message>
     <message>
         <location line="+163"/>
-        <location line="+1288"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-421"/>
-        <location line="+423"/>
+        <location line="+1540"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
+        <location line="+440"/>
         <source>Network</source>
         <translation>ネットワーク</translation>
     </message>
     <message>
-        <location line="-1279"/>
+        <location line="-1531"/>
         <source>Proxy settings</source>
         <translation>プロキシ設定</translation>
     </message>
@@ -318,8 +318,8 @@
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-328"/>
-        <location line="+110"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-342"/>
+        <location line="+116"/>
         <location line="+98"/>
         <source>No Proxy</source>
         <translation>プロキシなし</translation>
@@ -346,14 +346,14 @@
     </message>
     <message>
         <location line="+40"/>
-        <location line="+1035"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-300"/>
-        <location line="+422"/>
+        <location line="+1287"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-309"/>
+        <location line="+439"/>
         <source>Quick Mount</source>
         <translation>クイック マウント</translation>
     </message>
     <message>
-        <location line="-1026"/>
+        <location line="-1278"/>
         <source>Select Quick Mount Profile</source>
         <translation>クイック マウントのプロファイルを選択</translation>
     </message>
@@ -380,40 +380,40 @@
     <message>
         <location line="+66"/>
         <location line="+9"/>
-        <location line="+815"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-416"/>
-        <location line="+420"/>
+        <location line="+1067"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
+        <location line="+437"/>
         <source>Language</source>
         <translation>言語</translation>
     </message>
     <message>
-        <location line="-788"/>
+        <location line="-1040"/>
         <source>Language:</source>
         <translation>言語:</translation>
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-608"/>
-        <location line="+439"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-633"/>
+        <location line="+456"/>
         <source>System Default</source>
         <translation>システムの既定値</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-248"/>
-        <location line="+419"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-257"/>
+        <location line="+436"/>
         <source>Themes</source>
         <translation>テーマ</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+54"/>
-        <location line="+730"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-413"/>
-        <location line="+417"/>
+        <location line="+982"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-430"/>
+        <location line="+434"/>
         <source>Logging</source>
         <translation>ログの記録</translation>
     </message>
     <message>
-        <location line="-721"/>
+        <location line="-973"/>
         <source>Logging subsystem:</source>
         <translation>ロギング サブシステム:</translation>
     </message>
@@ -429,14 +429,14 @@
     </message>
     <message>
         <location line="+86"/>
-        <location line="+622"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-408"/>
-        <location line="+414"/>
+        <location line="+874"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-425"/>
+        <location line="+431"/>
         <source>Desktop Menu</source>
         <translation>デスクトップ メニュー</translation>
     </message>
     <message>
-        <location line="-616"/>
+        <location line="-868"/>
         <source>Desktop menu plugin</source>
         <translation>デスクトップ メニュー プラグイン</translation>
     </message>
@@ -457,14 +457,14 @@
     </message>
     <message>
         <location line="+47"/>
-        <location line="+552"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-408"/>
-        <location line="+412"/>
+        <location line="+804"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-425"/>
+        <location line="+429"/>
         <source>Defaults</source>
         <translation>既定の項目</translation>
     </message>
     <message>
-        <location line="-546"/>
+        <location line="-798"/>
         <source>Default virtual desktop</source>
         <translation>既定の仮想デスクトップ</translation>
     </message>
@@ -480,7 +480,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-107"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-115"/>
         <source>No virtual desktop</source>
         <translation>仮想デスクトップなし</translation>
     </message>
@@ -511,14 +511,52 @@
     </message>
     <message>
         <location line="+64"/>
-        <location line="+217"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-302"/>
-        <location line="+411"/>
+        <location line="+469"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-311"/>
+        <location line="+428"/>
+        <source>Desktop Integration</source>
+        <translation>デスクトップ統合</translation>
+    </message>
+    <message>
+        <location line="-463"/>
+        <source>Default Wine Desktop Paths for new prefixes.</source>
+        <translation>新しい実行環境の既定のデスクトップ パスを指定します。</translation>
+    </message>
+    <message>
+        <location line="+27"/>
+        <source>Desktop:</source>
+        <translation>デスクトップ:</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>My Documents:</source>
+        <translation>マイ ドキュメント:</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>My Pictures:</source>
+        <translation>マイ ピクチャ:</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>My Music:</source>
+        <translation>マイ ミュージック:</translation>
+    </message>
+    <message>
+        <location line="+44"/>
+        <source>My Videos:</source>
+        <translation>マイ ビデオ:</translation>
+    </message>
+    <message>
+        <location line="+43"/>
+        <location line="+222"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-425"/>
+        <location line="+427"/>
         <source>Run dialog</source>
         <translation>実行ダイアログ</translation>
     </message>
     <message>
-        <location line="-208"/>
+        <location line="-213"/>
         <source>Run recent program</source>
         <translation>最近実行したプログラムの実行</translation>
     </message>
@@ -530,14 +568,14 @@
     <message>
         <location line="+27"/>
         <location line="+9"/>
-        <location line="+162"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-408"/>
-        <location line="+410"/>
+        <location line="+167"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-424"/>
+        <location line="+426"/>
         <source>Wine desktop import</source>
         <translation>Wine デスクトップ インポート</translation>
     </message>
     <message>
-        <location line="-153"/>
+        <location line="-158"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
         <translation>Wine のデスクトップ ファイルを Q4Wine の開始時にインポートする</translation>
     </message>
@@ -548,34 +586,34 @@
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-443"/>
-        <location line="+421"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-462"/>
+        <location line="+438"/>
         <source>Interface</source>
         <translation>インターフェース</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-412"/>
-        <location line="+418"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-429"/>
+        <location line="+435"/>
         <source>Subsystems</source>
         <translation>サブシステム</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-409"/>
-        <location line="+415"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-426"/>
+        <location line="+432"/>
         <source>Plugins</source>
         <translation>プラグイン</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-409"/>
-        <location line="+413"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-426"/>
+        <location line="+430"/>
         <source>Advanced</source>
         <translation>高度な設定</translation>
     </message>
     <message>
-        <location line="+68"/>
+        <location line="+73"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
@@ -585,12 +623,12 @@
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-550"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-575"/>
         <source>generic</source>
         <translation>generic</translation>
     </message>
     <message>
-        <location line="+168"/>
+        <location line="+179"/>
         <location line="+6"/>
         <source>Open File</source>
         <translation>ファイルを開く</translation>
@@ -602,9 +640,9 @@
         <translation>ディレクトリを開く</translation>
     </message>
     <message>
-        <location line="+138"/>
+        <location line="+144"/>
         <location line="+4"/>
-        <location line="+176"/>
+        <location line="+184"/>
         <location line="+2"/>
         <location line="+6"/>
         <location line="+2"/>
@@ -612,7 +650,7 @@
         <translation>エラー</translation>
     </message>
     <message>
-        <location line="-190"/>
+        <location line="-198"/>
         <source>Sorry, specify proxy host.</source>
         <translation>プロキシのホストを指定してください。</translation>
     </message>
@@ -622,7 +660,7 @@
         <translation>プロキシのポートを指定してください。</translation>
     </message>
     <message>
-        <location line="+176"/>
+        <location line="+184"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>%1 のディレクトリを指定してください。</translation>
     </message>
@@ -642,45 +680,45 @@
         <translation>指定された %1 のバイナリは存在しません。</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-2320"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-2577"/>
         <source>App Icon</source>
-        <translation>アプリケーションのアイコン</translation>
+        <translation>Q4Wine のアイコン</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>App Icon:</source>
-        <translation>アプリケーションのアイコン:</translation>
+        <translation>Q4Wine のアイコン:</translation>
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-608"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-633"/>
         <source>Default</source>
         <translation>既定</translation>
     </message>
     <message>
         <location line="+9"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-4"/>
-        <location line="+443"/>
+        <location line="+460"/>
         <source>Ambient Light</source>
         <translation>アンビエント ライト (Ambient Light)</translation>
     </message>
     <message>
         <location line="+9"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-441"/>
-        <location line="+443"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-458"/>
+        <location line="+460"/>
         <source>Ambient Dark</source>
         <translation>アンビエント ダーク (Ambient Dark)</translation>
     </message>
     <message>
         <location line="+1499"/>
-        <location line="+671"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-209"/>
-        <location line="+416"/>
+        <location line="+923"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-218"/>
+        <location line="+433"/>
         <source>AppDB browser</source>
         <translation>AppDB ブラウザ</translation>
     </message>
     <message>
-        <location line="-662"/>
+        <location line="-914"/>
         <source>AppDB browser subsystem:</source>
         <translation>AppDB ブラウザ サブシステム:</translation>
     </message>
@@ -690,7 +728,7 @@
         <translation>システム ブラウザでアプリケーションの詳細を開く</translation>
     </message>
     <message>
-        <location line="+720"/>
+        <location line="+977"/>
         <source>Help</source>
         <translation>ヘルプ</translation>
     </message>
@@ -721,7 +759,7 @@
         <location line="+4"/>
         <location line="+126"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+11"/>
-        <location line="+26"/>
+        <location line="+23"/>
         <location line="+720"/>
         <source>General</source>
         <translation>一般</translation>
@@ -1077,13 +1115,13 @@
         <location line="+8"/>
         <location line="+540"/>
         <location line="+33"/>
-        <location line="+354"/>
+        <location line="+378"/>
         <location line="+8"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location line="-1166"/>
+        <location line="-1190"/>
         <source>Error in string:
 
 %1
@@ -1130,13 +1168,13 @@ See help for details.</source>
     </message>
     <message>
         <location line="-109"/>
-        <location line="+1036"/>
+        <location line="+1060"/>
         <location line="+8"/>
         <source>Cannot create dir: %1</source>
         <translation>ディレクトリを作成できません: %1</translation>
     </message>
     <message>
-        <location line="-1033"/>
+        <location line="-1057"/>
         <location line="+30"/>
         <location line="+20"/>
         <location line="+20"/>
@@ -1174,7 +1212,7 @@ See help for details.</source>
         <translation>C: ドライブは削除や変更ができません。&lt;br&gt;しかし、実行環境の設定ダイアログにて変更することは可能です。</translation>
     </message>
     <message>
-        <location line="+423"/>
+        <location line="+447"/>
         <location line="+6"/>
         <source>Open File</source>
         <translation>ファイルを開く</translation>
@@ -1204,7 +1242,7 @@ See help for details.</source>
 <context>
     <name>HttpCore</name>
     <message>
-        <location filename="../core/httpcore.cpp" line="+222"/>
+        <location filename="../core/httpcore.cpp" line="+220"/>
         <source>Download failed: %1.</source>
         <translation>ダウンロードに失敗しました: %1。</translation>
     </message>
@@ -1285,7 +1323,7 @@ See help for details.</source>
 <context>
     <name>IconListWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+232"/>
+        <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+217"/>
         <location line="+537"/>
         <location line="+134"/>
         <source>Sorry. It seems that the icon already exists.</source>
@@ -1770,7 +1808,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+8"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+525"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+513"/>
         <source>No virtual desktop</source>
         <translation>仮想デスクトップなし</translation>
     </message>
@@ -1917,12 +1955,12 @@ See help for details.</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-520"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-508"/>
         <source>Adding new icon</source>
         <translation>新しいアイコンを追加</translation>
     </message>
     <message>
-        <location line="+216"/>
+        <location line="+204"/>
         <source>Open Directory</source>
         <translation>ディレクトリを開く</translation>
     </message>
@@ -2020,7 +2058,7 @@ See help for details.</source>
     </message>
     <message>
         <source>Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</source>
-        <translation type="vanished">画像ファイル (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</translation>
+        <translation type="obsolete">画像ファイル (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz)</translation>
     </message>
     <message>
         <source>Image and Win32 binary files (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Image files (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll);;Win32 Executable and Shared libraries (*.exe *.dll)</source>
@@ -2534,7 +2572,7 @@ See help for details.</source>
         <translation>別の Q4Wine が動作中か、もしくは前回 Q4Wine が正常に終了しなかったようです。ソケット ファイルを削除しますか?</translation>
     </message>
     <message>
-        <location line="+52"/>
+        <location line="+50"/>
         <location line="+4"/>
         <location line="+14"/>
         <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
@@ -2846,7 +2884,7 @@ See help for details.</source>
         <location line="+3"/>
         <location line="+123"/>
         <source>Refresh Winetricks application list</source>
-        <translation>Winetricks のアプリケーション一覧を再読み込み</translation>
+        <translation>Winetricks のアプリケーション一覧を更新</translation>
     </message>
     <message>
         <location line="-122"/>
@@ -3846,7 +3884,7 @@ See help for details.</source>
         <translation>GNU ソフトウェアの使用に関する一般的なヘルプ: &lt;http://www.gnu.org/gethelp/&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+42"/>
+        <location filename="../q4wine-cli/q4wine-cli.cpp" line="+43"/>
         <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
         <translation>&quot;%1&quot; という名前の実行環境は存在しません。&quot;%2-cli -pl&quot; を実行して実行環境を一覧してください。</translation>
     </message>
@@ -4001,7 +4039,7 @@ See help for details.</source>
         <translation>ファイル &quot;%1&quot; は存在しません。</translation>
     </message>
     <message>
-        <location line="-357"/>
+        <location line="-358"/>
         <source>  %1-cli [KEY]...</source>
         <translation>  %1-cli [キー]...</translation>
     </message>
@@ -4951,13 +4989,13 @@ See help for details.</source>
         <translation>Winetricks プラグイン</translation>
     </message>
     <message>
-        <location line="+76"/>
+        <location line="+82"/>
         <source>Adding verb: %1</source>
         <translation>項目を追加しています: %1</translation>
     </message>
     <message>
         <source>Reading category: %1</source>
-        <translation type="vanished">カテゴリを読み込んでいます: %1</translation>
+        <translation type="obsolete">カテゴリを読み込んでいます: %1</translation>
     </message>
 </context>
 </TS>
