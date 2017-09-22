@@ -266,5 +266,15 @@ bool DataBase::fixup(){
         }
     }
     query.exec("DELETE FROM images WHERE name IS NULL");
+    if (!query.exec("SELECT is_installed FROM sysconfig")){
+        if (!query.exec("ALTER TABLE sysconfig ADD COLUMN is_installed INTEGER")){
+            qDebug()<<"[EE] Cannot alter sysconfig table";
+            return false;
+        }
+        if (!query.exec("UPDATE sysconfig SET is_installed=0")){
+            qDebug()<<"[EE] Cannot update sysconfig table";
+            return false;
+        }
+    }
     return true;
 }

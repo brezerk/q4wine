@@ -50,7 +50,9 @@ class winetricks : public QWidget{
 public:
     explicit winetricks(QString prefix_name);
     void run_winetricks(QString item);
+    QStringList get_installed();
     void install_winetricks();
+    QStringList get_command(QString item);
     bool parse();
 
 private:

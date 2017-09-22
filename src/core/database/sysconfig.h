@@ -52,6 +52,7 @@ struct SysconfigItem {
     QString type;
     QString desc;
     int provider_id;
+    bool is_installed;
 };
 
 class Sysconfig
@@ -65,7 +66,7 @@ class Sysconfig
       QList<ProviderItem> getProviders(void) const;
       QStringList getProviderSubtypes(int provider_id) const;
       QList<SysconfigItem> getItems(QString provider, QString type, int sort_order, QString filter) const;
-      bool add_item(QString name, QString icon, QString desc, QString type, int provider_id);
+      bool add_item(QString name, QString icon, QString desc, QString type, int provider_id, bool is_installed);
       bool drop_items(int provider_id);
 
       bool begin();

@@ -264,6 +264,7 @@ void PrefixConfigWidget::get_icons(){
     this->listWidget.get()->clear();
 
     QIcon defIcon = CoreLib->loadIcon("application-x-executable-script");
+    QIcon defIconInstalled = CoreLib->loadIcon("application-x-ms-dos-executable");
 
     QList<SysconfigItem> items = db_sysconfig.getItems(this->provider, this->subtype, this->sort_order, this->searchField->text());
     std::auto_ptr<QListWidgetItem> iconItem;
@@ -302,7 +303,11 @@ void PrefixConfigWidget::get_icons(){
         } else {
             iconItem->setText(items.at(i).name);
             iconItem->setToolTip(items.at(i).desc);
-            iconItem->setIcon(defIcon);
+            if (items.at(i).is_installed) {
+                iconItem->setIcon(defIconInstalled);
+            } else {
+                iconItem->setIcon(defIcon);
+            }
         }
         iconItem.release();
     }

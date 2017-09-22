@@ -51,6 +51,40 @@ winetricks::winetricks(QString prefixName) : QWidget()
     this->console_args = CoreLib->getSetting("console", "args", false).toString();
 }
 
+QStringList winetricks::get_installed() {
+
+    QStringList installed_apps;
+
+    if (!check_script())
+        return installed_apps;
+
+    QString infile = QString(winetricks_bin);
+
+    QProcess process;
+
+    QStringList args; // = get_command("list-installed");
+    args.append("-c");
+    args.append(get_command("list-installed").join(" "));
+
+    QString exec = "/bin/sh";
+
+    process.start(exec, args);
+    process.waitForFinished(-1); // will wait forever until finished
+
+    QString stdout = process.readAllStandardOutput();
+    QString stderr = process.readAllStandardError();
+
+    QString pkg_name;
+    foreach(pkg_name, stdout.split("------------------------------------------------------").last().split("\n")){
+        if (!pkg_name.isEmpty()){
+            qDebug() << pkg_name;
+            installed_apps.append(pkg_name);
+        }
+    }
+
+    return installed_apps;
+}
+
 void winetricks::install_winetricks() {
     this->downloadwinetricks();
 }
@@ -85,72 +119,12 @@ void winetricks::run_winetricks(QString item){
                 }
         }
 
-        QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
-
-        QStringList sh_args;
-        sh_args.append("env");
-
-        if (!proxy_host.isEmpty()){
-            QString proxy_auth = CoreLib->getSetting("network", "user", false).toString();
-            if (!proxy_auth.isEmpty()){
-                QString proxy_pass = CoreLib->getSetting("network", "pass", false).toString();
-                proxy_auth.append(QString(":%1@").arg(proxy_pass));
-            }
-            QString proxy_var = QString("http://%1%2:%3").arg(proxy_auth).arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString());
-            sh_args.append(QString("http_proxy='%1'").arg(proxy_var));
-            sh_args.append(QString("https_proxy='%1'").arg(proxy_var));
-            sh_args.append(QString("ftp_proxy='%1'").arg(proxy_var));
-        }
-
-        QHash<QString, QString> prefix_info = db_prefix.getByName(this->prefix_name);
-
-        sh_args << QString("WINEPREFIX='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("path")));
-
-        if (!prefix_info.value("server").isEmpty()){
-            sh_args << QString("WINE='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("bin")));
-            if (!prefix_info.value("libs").isEmpty())
-                sh_args << QString("WINEDLLPATH='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("libs")));
-            sh_args << QString("WINELOADER='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("loader")));
-            sh_args << QString("WINESERVER='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("server")));
-        } else {
-            QString prefixDllPath;
-            Version vers;
-            vers.id_ = prefix_info.value("version_id");
-            if (vers.load()){
-                if (prefix_info.value("arch") == "win32"){
-                    prefixDllPath = vers.wine_dllpath32_;
-                } else if (prefix_info.value("arch") == "win64"){
-                    prefixDllPath = vers.wine_dllpath64_;
-                } else {
-                    if (vers.wine_dllpath64_.isEmpty()){
-                        prefixDllPath = vers.wine_dllpath32_;
-                    } else {
-                        prefixDllPath = vers.wine_dllpath64_;
-                    }
-                }
-                sh_args << QString("WINE='%1'").arg(CoreLib->getStrictEscapeString(vers.wine_exec_));
-                if (!prefixDllPath.isEmpty())
-                    sh_args << QString("WINEDLLPATH='%1'").arg(CoreLib->getStrictEscapeString(prefixDllPath));
-                sh_args << QString("WINELOADER='%1'").arg(CoreLib->getStrictEscapeString(vers.wine_loader_));
-                sh_args << QString("WINESERVER='%1'").arg(CoreLib->getStrictEscapeString(vers.wine_server_));
-            }
-        }
-
-
-        if (!prefix_info.value("arch").isEmpty())
-            sh_args << QString("WINEARCH='%1'").arg(prefix_info.value("arch"));
-
-
-        sh_args.append(CoreLib->getWhichOut("sh"));
-        sh_args.append("-c");
-        sh_args.append(QString("\"%1 --no-isolate %2\"").arg(this->winetricks_bin).arg(item));
-
         if (console_bin.split("/").last() == "konsole"){
             args.append("/bin/sh");
             args.append("-c");
         }
 
-        args.append(sh_args.join(" "));
+        args.append(get_command(item).join(" "));
 
 #ifdef DEBUG
         qDebug()<<"[DD] winetricks args: "<<args;
@@ -160,6 +134,68 @@ void winetricks::run_winetricks(QString item){
     proc.startDetached(console_bin, args, QDir::homePath());
 
     return;
+}
+
+QStringList winetricks::get_command(QString item){
+    QStringList sh_args;
+    QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
+    sh_args.append("env");
+
+    if (!proxy_host.isEmpty()){
+        QString proxy_auth = CoreLib->getSetting("network", "user", false).toString();
+        if (!proxy_auth.isEmpty()){
+            QString proxy_pass = CoreLib->getSetting("network", "pass", false).toString();
+            proxy_auth.append(QString(":%1@").arg(proxy_pass));
+        }
+        QString proxy_var = QString("http://%1%2:%3").arg(proxy_auth).arg(proxy_host).arg(CoreLib->getSetting("network", "port", false).toString());
+        sh_args.append(QString("http_proxy='%1'").arg(proxy_var));
+        sh_args.append(QString("https_proxy='%1'").arg(proxy_var));
+        sh_args.append(QString("ftp_proxy='%1'").arg(proxy_var));
+    }
+
+    QHash<QString, QString> prefix_info = db_prefix.getByName(this->prefix_name);
+
+    sh_args << QString("WINEPREFIX='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("path")));
+
+    if (!prefix_info.value("server").isEmpty()){
+        sh_args << QString("WINE='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("bin")));
+        if (!prefix_info.value("libs").isEmpty())
+            sh_args << QString("WINEDLLPATH='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("libs")));
+        sh_args << QString("WINELOADER='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("loader")));
+        sh_args << QString("WINESERVER='%1'").arg(CoreLib->getStrictEscapeString(prefix_info.value("server")));
+    } else {
+        QString prefixDllPath;
+        Version vers;
+        vers.id_ = prefix_info.value("version_id");
+        if (vers.load()){
+            if (prefix_info.value("arch") == "win32"){
+                prefixDllPath = vers.wine_dllpath32_;
+            } else if (prefix_info.value("arch") == "win64"){
+                prefixDllPath = vers.wine_dllpath64_;
+            } else {
+                if (vers.wine_dllpath64_.isEmpty()){
+                    prefixDllPath = vers.wine_dllpath32_;
+                } else {
+                    prefixDllPath = vers.wine_dllpath64_;
+                }
+            }
+            sh_args << QString("WINE='%1'").arg(CoreLib->getStrictEscapeString(vers.wine_exec_));
+            if (!prefixDllPath.isEmpty())
+                sh_args << QString("WINEDLLPATH='%1'").arg(CoreLib->getStrictEscapeString(prefixDllPath));
+            sh_args << QString("WINELOADER='%1'").arg(CoreLib->getStrictEscapeString(vers.wine_loader_));
+            sh_args << QString("WINESERVER='%1'").arg(CoreLib->getStrictEscapeString(vers.wine_server_));
+        }
+    }
+
+
+    if (!prefix_info.value("arch").isEmpty())
+        sh_args << QString("WINEARCH='%1'").arg(prefix_info.value("arch"));
+
+
+    sh_args.append(CoreLib->getWhichOut("sh"));
+    sh_args.append("-c");
+    sh_args.append(QString("\"%1 --no-isolate %2\"").arg(this->winetricks_bin).arg(item));
+    return sh_args;
 }
 
 void winetricks::downloadwinetricks () {
@@ -313,6 +349,8 @@ bool winetricks::parse() {
     file.close();
     pd->setValue(10);
 
+    QStringList installed_apps = this->get_installed();
+
     db_sysconfig.begin();
 
     int all_verbs = metadata.size();
@@ -330,7 +368,7 @@ bool winetricks::parse() {
           desc += " [downloadable]";  // TODO: "cached" flag
         pd->setValue(90 * added_verb / all_verbs + 10);
         pd->setLabelText(tr("Adding verb: %1").arg(name));
-        db_sysconfig.add_item(verb["name"], "application-x-ms-dos-executable", desc, verb["category"], D_PROVIDER_WINETRICKS);
+        db_sysconfig.add_item(verb["name"], "application-x-ms-dos-executable", desc, verb["category"], D_PROVIDER_WINETRICKS, installed_apps.contains(verb["name"]));
         added_verb++;
         QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
     }

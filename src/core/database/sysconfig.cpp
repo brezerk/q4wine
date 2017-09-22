@@ -68,17 +68,17 @@ QList<SysconfigItem> Sysconfig::getItems(QString provider, QString type, int sor
 
     if (type.isEmpty()){
         if (filter.isEmpty()){
-            sql = "SELECT id, name, icon, desc FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type IS NULL";
+            sql = "SELECT id, name, icon, desc, is_installed FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type IS NULL";
         } else {
-            sql = QString("SELECT id, name, icon, desc FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type IS NULL AND name LIKE \"%%1%\"").arg(filter);
+            sql = QString("SELECT id, name, icon, desc, is_installed FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type IS NULL AND name LIKE \"%%1%\"").arg(filter);
         }
         sql.append(order);
         query.prepare(sql);
     } else {
         if (filter.isEmpty()){
-            sql = "SELECT id, name, icon, desc FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type=:type";
+            sql = "SELECT id, name, icon, desc, is_installed FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type=:type";
         } else {
-            sql = QString("SELECT id, name, icon, desc FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type=:type AND name LIKE \"%%1%\"").arg(filter);
+            sql = QString("SELECT id, name, icon, desc, is_installed FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type=:type AND name LIKE \"%%1%\"").arg(filter);
         }
         sql.append(order);
         query.prepare(sql);
@@ -92,6 +92,7 @@ QList<SysconfigItem> Sysconfig::getItems(QString provider, QString type, int sor
             item.name = query.value(1).toString();
             item.icon = query.value(2).toString();
             item.desc = query.value(3).toString();
+            item.is_installed = query.value(4).toBool();
             items.append(item);
         }
     }
@@ -99,18 +100,19 @@ QList<SysconfigItem> Sysconfig::getItems(QString provider, QString type, int sor
     return items;
 }
 
-bool Sysconfig::add_item(QString name, QString icon, QString desc, QString type, int provider_id){
+bool Sysconfig::add_item(QString name, QString icon, QString desc, QString type, int provider_id, bool is_installed){
     QSqlQuery query;
     if (type.isEmpty()){
-        query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, NULL, :desc, :provider_id);");
+        query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id, is_installed) VALUES(NULL, :name, :icon, NULL, :desc, :provider_id, :is_installed);");
     } else {
-        query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id) VALUES(NULL, :name, :icon, :type, :desc, :provider_id);");
+        query.prepare("INSERT INTO sysconfig(id, name, icon, type, desc, provider_id, is_installed) VALUES(NULL, :name, :icon, :type, :desc, :provider_id, :is_installed);");
         query.bindValue(":type", type);
     }
     query.bindValue(":name", name);
     query.bindValue(":icon", icon);
     query.bindValue(":desc", desc);
     query.bindValue(":provider_id", provider_id);
+    query.bindValue(":is_installed", (is_installed)? 1 : 0);
     if (!query.exec()){
         qDebug() << "Error sysconfig::add_item: " << query.lastError().text();
         return false;
