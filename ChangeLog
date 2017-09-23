@@ -1,7 +1,8 @@
 Version 1.3.6
  Updated:
-  - added indication of applications which was installed through winetricks [BUG-106][BUG-111];
+  - Added indication of applications which was installed through winetricks [BUG-106][BUG-111];
   - Default Wine Desktop Integartion path settings for new prefixes [BUG-106];
+  - Added option to run custom scripts with fake drive settings after creation of fake drive [BUG-106];
 
 Version 1.3.5
  Updated:

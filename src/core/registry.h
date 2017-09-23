@@ -85,7 +85,7 @@ public:
 	  *
 	  * \return ture on success.
 	  */
-        bool exec(QObject *parent, QString prefix_path, QString prefix_name = "Default");
+    bool exec(QObject *parent, QString prefix_path, QString prefix_name = "Default", QString post_run = "");
 
 	/*! \brief Read registry keys value from regfile by path.
 	  * \param path Registry path.

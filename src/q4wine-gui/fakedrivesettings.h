@@ -34,6 +34,11 @@
 #include <QVBoxLayout>
 #include <QInputDialog>
 #include <QTimer>
+#include <QStringListModel>
+#include <QMetaType>
+#include <QVariant>
+
+Q_DECLARE_METATYPE(QList<int>)
 
 #include "src/core/database/prefix.h"
 #include "src/core/database/icon.h"

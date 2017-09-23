@@ -85,6 +85,11 @@
             <string>Wine Browsers</string>
            </property>
           </item>
+          <item>
+           <property name="text">
+            <string>Scripts</string>
+           </property>
+          </item>
          </item>
          <item>
           <property name="text">
@@ -170,8 +175,8 @@
        <rect>
         <x>300</x>
         <y>10</y>
-        <width>360</width>
-        <height>310</height>
+        <width>440</width>
+        <height>498</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -194,7 +199,7 @@
         <item>
          <widget class="QTabWidget" name="tabwGeneral">
           <property name="currentIndex">
-           <number>1</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="tab">
            <attribute name="title">
@@ -580,14 +585,14 @@
                <item>
                 <widget class="QRadioButton" name="rbColorsDefault">
                  <property name="text">
-                  <string>Reset to default</string>
+                  <string>&amp;Reset to default</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QRadioButton" name="rbColorsQt4">
                  <property name="text">
-                  <string>Use current &amp;Qt colors</string>
+                  <string>&amp;Use current Qt colors</string>
                  </property>
                 </widget>
                </item>
@@ -763,6 +768,120 @@
                <size>
                 <width>20</width>
                 <height>178</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_14">
+           <attribute name="title">
+            <string>Scripts</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_15">
+            <item>
+             <widget class="QGroupBox" name="groupBox_6">
+              <property name="title">
+               <string>Scripts</string>
+              </property>
+              <layout class="QVBoxLayout" name="_22">
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_4">
+                 <property name="text">
+                  <string>Post run script will be executed after the Prefix update. Wine environment settings will be exported as well.</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_16" native="true">
+                 <layout class="QHBoxLayout" name="_9">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_15">
+                    <property name="minimumSize">
+                     <size>
+                      <width>140</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>140</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Post run:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="txtPostRunBin">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="editable">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="cmdGetPostRunBin">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>16</width>
+                      <height>16</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_11">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>323</height>
                </size>
               </property>
              </spacer>

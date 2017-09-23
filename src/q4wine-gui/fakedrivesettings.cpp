@@ -35,6 +35,8 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
+    qRegisterMetaTypeStreamOperators<QList<int> >("QList<int>");
+
     this->prefixName=prefixName;
     wine64=false;
 
@@ -79,6 +81,14 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
     cmdGetWineDesktopPic->installEventFilter(this);
     cmdGetWineDesktopMus->installEventFilter(this);
     cmdGetWineDesktopVid->installEventFilter(this);
+    cmdGetPostRunBin->installEventFilter(this);
+
+    QSettings settings(APP_SHORT_NAME, "default");
+    settings.beginGroup("LastItems");
+    txtPostRunBin->addItems(settings.value("prefix").toStringList());
+    txtPostRunBin->setCurrentText("");
+    settings.endGroup();
+
 }
 
 void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
@@ -98,6 +108,9 @@ void FakeDriveSettings::optionsTree_itemClicked ( QTreeWidgetItem *item, int){
     } else if (itemText==tr("Wine Browsers")){
         optionsStack->setCurrentIndex(0);
         tabwGeneral->setCurrentIndex(2);
+    } else if (itemText==tr("Scripts")){
+        optionsStack->setCurrentIndex(0);
+        tabwGeneral->setCurrentIndex(3);
     } else if (itemText==tr("Video")){
         optionsStack->setCurrentIndex(1);
         tabwVideo->setCurrentIndex(0);
@@ -162,6 +175,7 @@ void FakeDriveSettings::loadDefaultPrefixSettings(){
 }
 
 void FakeDriveSettings::cmdOk_Click(){
+
 #ifdef DEBUG
     qDebug()<<"[ii] Saveing fake drive settings";
 #endif
@@ -753,7 +767,22 @@ void FakeDriveSettings::cmdOk_Click(){
     qDebug()<<"[ii] Wizard::run registry import";
 #endif
 
-        if (registry.exec(this, db_prefix.getPath(prefixName), prefixName)){
+    QSettings settings(APP_SHORT_NAME, "default");
+
+    settings.beginGroup("LastItems");
+    QStringList last_items;
+    for (int index = 0; index < txtPostRunBin->count(); index++){
+        QString item_text = txtPostRunBin->itemText(index);
+        if ((!last_items.contains(item_text)) and (!item_text.isEmpty()))
+            last_items << txtPostRunBin->itemText(index);
+    }
+    QString curr_text = txtPostRunBin->currentText();
+    if ((!curr_text.isEmpty()) and (!curr_text.isNull()) and (!last_items.contains(curr_text)))
+        last_items.append(txtPostRunBin->currentText());
+    settings.setValue("prefix", QVariant::fromValue(last_items));
+    settings.endGroup();
+
+    if (registry.exec(this, db_prefix.getPath(prefixName), prefixName, curr_text)){
         CoreLib->createPrefixDBStructure(prefixName);
 #ifndef _OS_DARWIN_
         if (CoreLib->getSetting("Plugins", "enableMenuDesktop", false, true).toBool()){
@@ -763,13 +792,15 @@ void FakeDriveSettings::cmdOk_Click(){
 #endif
 
 #ifdef DEBUG
-    qDebug()<<"[ii] Wizard::done";
+        qDebug()<<"[ii] Wizard::done";
 #endif
-    QTimer::singleShot(3000, this, SLOT(waitForWineEnd()));
-        } else {
-            QApplication::restoreOverrideCursor();
-            reject();
+        QTimer::singleShot(3000, this, SLOT(waitForWineEnd()));
+    } else {
+        if (!this->txtPostRunBin->currentText().isEmpty()){
         }
+        QApplication::restoreOverrideCursor();
+        reject();
+    }
     return;
 }
 
@@ -815,6 +846,8 @@ void FakeDriveSettings::cmdHelp_Click(){
         rawurl = "07-fake-drive-settings.html#colors";
     } else if (itemText==tr("Wine Browsers")){
         rawurl = "07-fake-drive-settings.html#winebrowsers";
+    } else if (itemText==tr("Scripts")){
+        rawurl = "07-fake-drive-settings.html#scripts";
     } else if (itemText==tr("Video")){
         rawurl = "07-fake-drive-settings.html#video";
     } else if (itemText=="Direct3D" && item->parent()->text(0)==tr("Video")){
@@ -863,6 +896,7 @@ void FakeDriveSettings::loadThemeIcons(){
     cmdGetWineDesktopPic->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetWineDesktopMus->setIcon(CoreLib->loadIcon("document-open"));
     cmdGetWineDesktopVid->setIcon(CoreLib->loadIcon("document-open"));
+    cmdGetPostRunBin->setIcon(CoreLib->loadIcon("document-open"));
     return;
 }
 
@@ -1392,7 +1426,7 @@ bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
                 options = QFileDialog::DontUseNativeDialog | QFileDialog::DontResolveSymlinks;
 
         if (obj->objectName().right(3)=="Bin"){
-            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)", 0, options);
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(), "All files (*)", 0, options);
         } else {
             file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),  options);
         }
@@ -1403,19 +1437,28 @@ bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
             file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath());
         }
 #endif
-
         if (!file.isEmpty()){
             QString a;
             a.append("txt");
             a.append(obj->objectName().right(obj->objectName().length()-6));
 
-            std::auto_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
-            if (lineEdit.get()){
-                lineEdit->setText(file);
+            if (QString("%1").arg(findChild<QWidget *>(a)->metaObject()->className()) == "QComboBox") {
+                std::unique_ptr<QComboBox> cbEdit (findChild<QComboBox *>(a));
+                if (cbEdit.get()){
+                    cbEdit->setCurrentText(file);
+                } else {
+                    qDebug("Error");
+                }
+                cbEdit.release();
             } else {
-                qDebug("Error");
+                std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
+                if (lineEdit.get()){
+                    lineEdit->setText(file);
+                } else {
+                    qDebug("Error");
+                }
+                lineEdit.release();
             }
-            lineEdit.release();
 
             if (obj==cmdGetWineDesktop){
                 txtWineDesktopDoc->setText(file);

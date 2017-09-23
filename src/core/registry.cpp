@@ -99,7 +99,7 @@ void Registry::unsetPath(QString path, const QString hkey){
 	return;
 }
 
-bool Registry::exec(QObject *parent, QString prefix_path, QString prefix_name){
+bool Registry::exec(QObject *parent, QString prefix_path, QString prefix_name, QString post_run){
 
 	//This function wrights regfile_image into file, then run regedit.exe and import this file.
 	//Also, clean files before end
@@ -133,6 +133,8 @@ bool Registry::exec(QObject *parent, QString prefix_path, QString prefix_name){
     ExecObject execObj;
     execObj.cmdargs = QString("C:/temp/%1.reg").arg(file_name);
     execObj.execcmd = "regedit.exe";
+    if (!post_run.isEmpty())
+        execObj.postrun = post_run;
 
     bool ret = CoreLib->runWineBinary(execObj, prefix_name, false);
 

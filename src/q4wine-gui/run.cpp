@@ -160,6 +160,7 @@ void Run::cmdAdd_Click(){
 }
 
 void Run::cmdOk_Click(){
+
     if (txtProgramBin->text().isEmpty()){
         QMessageBox::warning(this, tr("Error"), tr("No program name specified."));
         return;
