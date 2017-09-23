@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fa_IR">
+<TS version="2.1" language="fa_IR">
 <context>
     <name>About</name>
     <message>
@@ -820,7 +820,7 @@
         <translation>پنجره</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+58"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+60"/>
         <source>Fake drive settings</source>
         <translation>تنظیمات درایو ساختگی</translation>
     </message>
@@ -828,69 +828,79 @@
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="+52"/>
         <location line="+5"/>
         <location line="+4"/>
-        <location line="+126"/>
+        <location line="+131"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+11"/>
-        <location line="+23"/>
-        <location line="+720"/>
+        <location line="+35"/>
+        <location line="+741"/>
         <source>General</source>
         <translation>عمومی</translation>
     </message>
     <message>
-        <location line="-121"/>
-        <location line="+447"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-717"/>
-        <location line="+719"/>
+        <location line="-126"/>
+        <location line="+452"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-738"/>
+        <location line="+740"/>
         <source>Color Theme</source>
         <translation>اگوی تنظیمات رنگ</translation>
     </message>
     <message>
-        <location line="-442"/>
-        <location line="+529"/>
+        <location line="-447"/>
+        <location line="+534"/>
         <location line="+31"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-716"/>
-        <location line="+718"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-737"/>
+        <location line="+739"/>
         <source>Wine Browsers</source>
         <translation>پویشگر شراب</translation>
     </message>
     <message>
         <location line="-554"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-703"/>
-        <location line="+713"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-721"/>
+        <location line="+733"/>
         <source>File System</source>
         <translation>سیستم فایل</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+2646"/>
+        <location line="+2772"/>
         <location line="+21"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-710"/>
-        <location line="+712"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-730"/>
+        <location line="+732"/>
         <source>Wine Drives</source>
         <translation>درایوهای شراب</translation>
     </message>
     <message>
-        <location line="-2662"/>
-        <location line="+2760"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-709"/>
-        <location line="+711"/>
+        <location line="-2788"/>
+        <location line="+2886"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-729"/>
+        <location line="+731"/>
         <source>Desktop Paths</source>
         <translation>مسیرهای میزکار</translation>
     </message>
     <message>
-        <location line="-2754"/>
+        <location line="-2880"/>
         <location line="+4"/>
-        <location line="+681"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-729"/>
+        <location line="+807"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-749"/>
         <location line="+3"/>
         <location line="+6"/>
-        <location line="+708"/>
+        <location line="+728"/>
         <location line="+2"/>
         <location line="+4"/>
         <source>Video</source>
         <translation>ویدئوها</translation>
     </message>
     <message>
-        <location line="+399"/>
+        <location line="-334"/>
+        <source>&amp;Reset to default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>&amp;Use current Qt colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+726"/>
         <location line="+2011"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+18"/>
         <source>Direct3D</source>
@@ -903,24 +913,33 @@
         <translation>اوپن جی ال</translation>
     </message>
     <message>
-        <location line="-1559"/>
+        <location line="-1685"/>
         <location line="+15"/>
-        <location line="+1589"/>
+        <location line="+1715"/>
         <location line="+31"/>
         <location line="+1681"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-732"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-752"/>
         <location line="+30"/>
-        <location line="+684"/>
+        <location line="+704"/>
         <location line="+20"/>
         <source>X11 Driver</source>
         <translation>راه انداز ایکس ۱۱</translation>
     </message>
     <message>
-        <location line="-3310"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-710"/>
+        <location line="-3482"/>
+        <location line="+689"/>
+        <location line="+18"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-766"/>
+        <location line="+738"/>
+        <source>Scripts</source>
+        <translation type="unfinished">تکه برنامه ها</translation>
+    </message>
+    <message>
+        <location line="-661"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-702"/>
         <location line="+3"/>
         <location line="+3"/>
-        <location line="+700"/>
+        <location line="+720"/>
         <location line="+2"/>
         <location line="+2"/>
         <source>Input</source>
@@ -928,37 +947,37 @@
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-722"/>
-        <location line="+710"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-742"/>
+        <location line="+730"/>
         <source>Audio</source>
         <translation>صدا</translation>
     </message>
     <message>
         <location line="+4"/>
-        <location line="+1942"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-707"/>
-        <location line="+709"/>
+        <location line="+2068"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-727"/>
+        <location line="+729"/>
         <source>Sound Driver</source>
         <translation>کارت صدا</translation>
     </message>
     <message>
-        <location line="-1937"/>
-        <location line="+2094"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-706"/>
-        <location line="+708"/>
+        <location line="-2063"/>
+        <location line="+2220"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-726"/>
+        <location line="+728"/>
         <source>ALSA Driver</source>
         <translation>راه انداز آلسا</translation>
     </message>
     <message>
-        <location line="-2089"/>
-        <location line="+2447"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-705"/>
-        <location line="+707"/>
+        <location line="-2215"/>
+        <location line="+2573"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-725"/>
+        <location line="+727"/>
         <source>Misc Audio</source>
         <translation>تنظیمات مختلف صدا</translation>
     </message>
     <message>
-        <location line="-2385"/>
+        <location line="-2511"/>
         <source>General Settings</source>
         <translation>تنظیمات عمومی</translation>
     </message>
@@ -1012,27 +1031,21 @@
         <translation type="obsolete">از الگوی رنگگ فعلی استفاده کن</translation>
     </message>
     <message>
-        <location line="+20"/>
         <source>Reset to default</source>
-        <translation>بازگشت به تنظیمات پیش فرض</translation>
+        <translation type="vanished">بازگشت به تنظیمات پیش فرض</translation>
     </message>
     <message>
         <source>Use current Qt4 colors</source>
         <translation type="obsolete">استفاده از تنظیمات فعلی Qt4</translation>
     </message>
     <message>
-        <location line="-10"/>
+        <location line="+10"/>
         <source>Use e&amp;xisting color theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+17"/>
-        <source>Use current &amp;Qt colors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+42"/>
-        <location line="+177"/>
+        <location line="+59"/>
+        <location line="+303"/>
         <location line="+399"/>
         <location line="+539"/>
         <location line="+520"/>
@@ -1043,7 +1056,7 @@
         <translation>توضیح: در صورتی که پیش فرض مد نظرتان است، این قسمت را خالی بگذارید</translation>
     </message>
     <message>
-        <location line="-2769"/>
+        <location line="-2895"/>
         <source>Browsers:</source>
         <translation>پویشگر ها:</translation>
     </message>
@@ -1053,7 +1066,17 @@
         <translation>فرستنده های نامه ی الکترونیکی:</translation>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="+73"/>
+        <source>Post run script will be executed after the Prefix update. Wine environment settings will be exported as well.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+37"/>
+        <source>Post run:</source>
+        <translation type="unfinished">پس اجرا:</translation>
+    </message>
+    <message>
+        <location line="+101"/>
         <source>Video Card Settings</source>
         <translation>تنظیمات کارت تصویر</translation>
     </message>
@@ -1196,7 +1219,7 @@
         <translation type="obsolete">تنظیمات درایو ساختگی برای پپیشوند &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-661"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-680"/>
         <location line="+68"/>
         <location line="+26"/>
         <location line="+15"/>
@@ -1211,7 +1234,7 @@
         <location line="+8"/>
         <location line="+12"/>
         <location line="+8"/>
-        <location line="+540"/>
+        <location line="+560"/>
         <location line="+33"/>
         <location line="+378"/>
         <location line="+8"/>
@@ -1219,7 +1242,7 @@
         <translation>خطا</translation>
     </message>
     <message>
-        <location line="-1190"/>
+        <location line="-1210"/>
         <source>Error in string:
 
 %1
@@ -1245,12 +1268,12 @@ See help for details.</source>
     </message>
     <message>
         <location line="+68"/>
-        <location line="+736"/>
+        <location line="+756"/>
         <source>Cannot read desktop paths!</source>
         <translation>عدم توانایی در خواندن مسیرهای میزکار!</translation>
     </message>
     <message>
-        <location line="-710"/>
+        <location line="-730"/>
         <source>Cannot remove symlink: %1</source>
         <translation>عدم توانایی در حذف symlink: %1</translation>
     </message>
@@ -1266,13 +1289,13 @@ See help for details.</source>
     </message>
     <message>
         <location line="-109"/>
-        <location line="+1060"/>
+        <location line="+1080"/>
         <location line="+8"/>
         <source>Cannot create dir: %1</source>
         <translation>عدم توانایی در ایجاد پوشه: %1</translation>
     </message>
     <message>
-        <location line="-1057"/>
+        <location line="-1077"/>
         <location line="+30"/>
         <location line="+20"/>
         <location line="+20"/>
@@ -1281,7 +1304,7 @@ See help for details.</source>
         <translation>عدم توانایی در حذف پوشه:%1</translation>
     </message>
     <message>
-        <location line="+475"/>
+        <location line="+495"/>
         <location line="+10"/>
         <source>Joystick Axes Mappings</source>
         <translation>نقشه برداری های محورهای دسته ی بازی</translation>
@@ -3003,18 +3026,18 @@ See help for details.</source>
     <name>PrefixConfigWidget</name>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="+115"/>
-        <location line="+210"/>
+        <location line="+215"/>
         <source>Name</source>
         <translation>نام</translation>
     </message>
     <message>
-        <location line="-210"/>
-        <location line="+210"/>
+        <location line="-215"/>
+        <location line="+215"/>
         <source>Description</source>
         <translation>توضیحات</translation>
     </message>
     <message>
-        <location line="-158"/>
+        <location line="-163"/>
         <location line="+1"/>
         <source>Manage prefixes</source>
         <translation>مدیریت پیشوندها</translation>
@@ -3028,76 +3051,76 @@ See help for details.</source>
     <message>
         <location line="+7"/>
         <location line="+1"/>
-        <location line="+282"/>
+        <location line="+287"/>
         <location line="+1"/>
         <source>Alphabetic sort descending</source>
         <translation>مرتب سازی نزولی بر اساس حروف الفبا</translation>
     </message>
     <message>
-        <location line="-280"/>
+        <location line="-285"/>
         <location line="+1"/>
-        <location line="+273"/>
+        <location line="+278"/>
         <location line="+1"/>
         <source>Alphabetic sort ascending</source>
         <translation>مرتب سازی صعودی بر اساس حروف الفبا</translation>
     </message>
     <message>
-        <location line="-181"/>
-        <location line="+88"/>
+        <location line="-185"/>
+        <location line="+92"/>
         <source>Create Fake Drive</source>
         <translation>ایجاد درایو ساختگی</translation>
     </message>
     <message>
-        <location line="-87"/>
+        <location line="-91"/>
         <source>Create new Fake Drive configuration. Old Fake Drive will be removed.</source>
         <translation>ایجاد تنظیمات درایو ساختگی جدید. درایو ساختگی قدیمی حذف خواهد شد.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+119"/>
+        <location line="+123"/>
         <source>Update Fake Drive</source>
         <translation>به روزآوری درایو ساختگی</translation>
     </message>
     <message>
-        <location line="-118"/>
+        <location line="-122"/>
         <source>Update Fake Drive configuration.</source>
         <translation>تنظیمات درایو ساختگی را به روز کن.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location line="+130"/>
+        <location line="+134"/>
         <source>Install or update Winetricks script</source>
         <translation>تکه برنامه ی کلک رشتی را نصب و یا به روز آوری کن</translation>
     </message>
     <message>
-        <location line="-129"/>
+        <location line="-133"/>
         <source>Install new or update installed Winetricks script.</source>
         <translation>نصب تازه ها و یا به روز آوری های تکه  برنامه ی کلک رشتی.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+123"/>
+        <location line="+127"/>
         <source>Refresh Winetricks application list</source>
         <translation>نوسازی لیست برنامه های کلک رشتی</translation>
     </message>
     <message>
-        <location line="-122"/>
+        <location line="-126"/>
         <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
         <translation>ایجاد و یا به روز آوری حافظه ی کَشQt4Wine از برنامه های کلک رشتی.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+124"/>
+        <location line="+128"/>
         <source>Goto Winetricks homepage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-123"/>
+        <location line="-127"/>
         <source>Read news, report bugs and join the Winetricks community at https://github.com/Winetricks/winetricks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+82"/>
         <source>Warning</source>
         <translation>هشدار</translation>
     </message>
@@ -4480,7 +4503,7 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+8"/>
-        <location filename="../q4wine-gui/run.cpp" line="+205"/>
+        <location filename="../q4wine-gui/run.cpp" line="+206"/>
         <source>No virtual desktop</source>
         <translation>عدم وجود میزکار مجازی</translation>
     </message>
@@ -4496,33 +4519,33 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+54"/>
-        <location filename="../q4wine-gui/run.cpp" line="-94"/>
+        <location filename="../q4wine-gui/run.cpp" line="-95"/>
         <location line="+38"/>
-        <location line="+29"/>
+        <location line="+30"/>
         <source>Native</source>
         <translation>ذاتی</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/run.cpp" line="-65"/>
+        <location filename="../q4wine-gui/run.cpp" line="-66"/>
         <location line="+37"/>
-        <location line="+32"/>
+        <location line="+33"/>
         <source>Built-in</source>
         <translation>درونی</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/run.cpp" line="-67"/>
+        <location filename="../q4wine-gui/run.cpp" line="-68"/>
         <location line="+36"/>
-        <location line="+33"/>
+        <location line="+34"/>
         <source>Native, Built-in</source>
         <translation>ذاتی، درونی</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/run.cpp" line="-67"/>
+        <location filename="../q4wine-gui/run.cpp" line="-68"/>
         <location line="+35"/>
-        <location line="+34"/>
+        <location line="+35"/>
         <source>Built-in, Native</source>
         <translation>درونی، ذاتی</translation>
     </message>
@@ -4623,8 +4646,8 @@ Note: leave it blank for default.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-190"/>
-        <location line="+27"/>
+        <location line="-191"/>
+        <location line="+28"/>
         <source>Disabled</source>
         <translation>غیرفعال</translation>
     </message>
@@ -5179,19 +5202,19 @@ Note: leave it blank for default.</source>
 <context>
     <name>winetricks</name>
     <message>
-        <location filename="../plugins/winetricks.cpp" line="+61"/>
-        <location line="+117"/>
+        <location filename="../plugins/winetricks.cpp" line="+95"/>
+        <location line="+119"/>
         <location line="+5"/>
         <source>Error</source>
         <translation type="unfinished">خطا</translation>
     </message>
     <message>
-        <location line="-122"/>
+        <location line="-124"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+117"/>
+        <location line="+119"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5211,7 +5234,17 @@ Note: leave it blank for default.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+82"/>
+        <location line="+10"/>
+        <source>Dropping stale items...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Getting list of installed items...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+73"/>
         <source>Adding verb: %1</source>
         <translation type="unfinished"></translation>
     </message>

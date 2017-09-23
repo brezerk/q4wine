@@ -8,6 +8,10 @@ SET ( PLUGINS_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/plugins/winetricks.h
 )
 
+SET ( PLUGINS_GUI_MOC_HEADERS
+    ${CMAKE_SOURCE_DIR}/src/plugins/winetricks.h
+)
+
 IF( NOT ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
     SET ( PLUGINS_GUI_SOURCES
         ${PLUGINS_GUI_SOURCES}

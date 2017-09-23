@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="zh_TW" sourcelanguage="en">
+<TS version="2.1" language="zh_TW" sourcelanguage="en">
 <context>
     <name>About</name>
     <message>
@@ -809,7 +809,7 @@
         <translation>對話框</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+58"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+60"/>
         <source>Fake drive settings</source>
         <translation>虛擬磁碟設定</translation>
     </message>
@@ -817,21 +817,21 @@
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="+52"/>
         <location line="+5"/>
         <location line="+4"/>
-        <location line="+126"/>
+        <location line="+131"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+11"/>
-        <location line="+23"/>
-        <location line="+720"/>
+        <location line="+35"/>
+        <location line="+741"/>
         <source>General</source>
         <translation>一般</translation>
     </message>
     <message>
         <location line="-95"/>
         <location line="+4"/>
-        <location line="+681"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-711"/>
+        <location line="+807"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-729"/>
         <location line="+3"/>
         <location line="+6"/>
-        <location line="+708"/>
+        <location line="+728"/>
         <location line="+2"/>
         <location line="+4"/>
         <source>Video</source>
@@ -844,16 +844,25 @@
         <translation>OpenGL</translation>
     </message>
     <message>
-        <location line="-1589"/>
-        <location line="+2646"/>
+        <location line="-1715"/>
+        <location line="+2772"/>
         <location line="+21"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-708"/>
-        <location line="+712"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-728"/>
+        <location line="+732"/>
         <source>Wine Drives</source>
         <translation>Wine 磁碟</translation>
     </message>
     <message>
-        <location line="-2540"/>
+        <location line="-2803"/>
+        <location line="+689"/>
+        <location line="+18"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-750"/>
+        <location line="+738"/>
+        <source>Scripts</source>
+        <translation type="unfinished">指令稿</translation>
+    </message>
+    <message>
+        <location line="-570"/>
         <source>General Settings</source>
         <translation>一般設定</translation>
     </message>
@@ -897,17 +906,16 @@
         <translation type="obsolete">使用已有的色彩主題</translation>
     </message>
     <message>
-        <location line="+20"/>
         <source>Reset to default</source>
-        <translation>重置為預設值</translation>
+        <translation type="vanished">重置為預設值</translation>
     </message>
     <message>
         <source>Use current Qt4 colors</source>
         <translation type="obsolete">使用目前的 Qt4 色彩</translation>
     </message>
     <message>
-        <location line="+49"/>
-        <location line="+177"/>
+        <location line="+69"/>
+        <location line="+303"/>
         <location line="+399"/>
         <location line="+539"/>
         <location line="+520"/>
@@ -933,63 +941,73 @@
         <translation>是</translation>
     </message>
     <message>
-        <location line="-3537"/>
-        <location line="+529"/>
+        <location line="-3668"/>
+        <location line="+534"/>
         <location line="+31"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-730"/>
-        <location line="+718"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-741"/>
+        <location line="+739"/>
         <source>Wine Browsers</source>
         <translation>Wine 瀏覽器</translation>
     </message>
     <message>
-        <location line="-565"/>
-        <location line="+447"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-721"/>
-        <location line="+719"/>
+        <location line="-570"/>
+        <location line="+452"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-742"/>
+        <location line="+740"/>
         <source>Color Theme</source>
         <translation>色彩主題</translation>
     </message>
     <message>
         <location line="-377"/>
-        <location line="+1942"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-689"/>
-        <location line="+709"/>
+        <location line="+2068"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-707"/>
+        <location line="+729"/>
         <source>Sound Driver</source>
         <translation>音效驅動程式</translation>
     </message>
     <message>
-        <location line="-1937"/>
-        <location line="+2094"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-706"/>
-        <location line="+708"/>
+        <location line="-2063"/>
+        <location line="+2220"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-726"/>
+        <location line="+728"/>
         <source>ALSA Driver</source>
         <translation>ALSA 驅動程式</translation>
     </message>
     <message>
-        <location line="-2089"/>
-        <location line="+2447"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-705"/>
-        <location line="+707"/>
+        <location line="-2215"/>
+        <location line="+2573"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-725"/>
+        <location line="+727"/>
         <source>Misc Audio</source>
         <translation>混合音訊</translation>
     </message>
     <message>
-        <location line="-2516"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-725"/>
-        <location line="+713"/>
+        <location line="-2642"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-745"/>
+        <location line="+733"/>
         <source>File System</source>
         <translation>檔案系統</translation>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+2760"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-707"/>
-        <location line="+711"/>
+        <location line="+2886"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-727"/>
+        <location line="+731"/>
         <source>Desktop Paths</source>
         <translation>桌面路徑</translation>
     </message>
     <message>
-        <location line="-2170"/>
+        <location line="-2403"/>
+        <source>&amp;Reset to default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>&amp;Use current Qt colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+100"/>
         <source>Browsers:</source>
         <translation>瀏覽器：</translation>
     </message>
@@ -999,7 +1017,17 @@
         <translation>寄信程式：</translation>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="+73"/>
+        <source>Post run script will be executed after the Prefix update. Wine environment settings will be exported as well.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+37"/>
+        <source>Post run:</source>
+        <translation type="unfinished">執行後：</translation>
+    </message>
+    <message>
+        <location line="+101"/>
         <source>Video Card Settings</source>
         <translation>視訊卡設定</translation>
     </message>
@@ -1048,11 +1076,11 @@
         <translation>已停用的擴展：</translation>
     </message>
     <message>
-        <location line="-1571"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-696"/>
+        <location line="-1697"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-716"/>
         <location line="+3"/>
         <location line="+3"/>
-        <location line="+700"/>
+        <location line="+720"/>
         <location line="+2"/>
         <location line="+2"/>
         <source>Input</source>
@@ -1060,8 +1088,8 @@
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-722"/>
-        <location line="+710"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-742"/>
+        <location line="+730"/>
         <source>Audio</source>
         <translation>音訊</translation>
     </message>
@@ -1078,12 +1106,12 @@
     <message>
         <location line="-375"/>
         <location line="+15"/>
-        <location line="+1589"/>
+        <location line="+1715"/>
         <location line="+31"/>
         <location line="+1681"/>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-722"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-742"/>
         <location line="+30"/>
-        <location line="+684"/>
+        <location line="+704"/>
         <location line="+20"/>
         <source>X11 Driver</source>
         <translation>X11 驅動程式</translation>
@@ -1096,17 +1124,16 @@
         <translation>Direct3D</translation>
     </message>
     <message>
-        <location line="-2628"/>
+        <location line="-2754"/>
         <source>Use e&amp;xisting color theme</source>
         <translation>使用已經存在的色彩主題 (&amp;X)</translation>
     </message>
     <message>
-        <location line="+17"/>
         <source>Use current &amp;Qt colors</source>
-        <translation>使用目前的 Qt 色彩 (&amp;Q)</translation>
+        <translation type="vanished">使用目前的 Qt 色彩 (&amp;Q)</translation>
     </message>
     <message>
-        <location line="+324"/>
+        <location line="+467"/>
         <source>Memory (MB):</source>
         <translation>記憶體 (MB)：</translation>
     </message>
@@ -1185,7 +1212,7 @@
         <translation type="obsolete">「%1」前綴的虛擬磁碟設定</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-665"/>
+        <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-684"/>
         <location line="+68"/>
         <location line="+26"/>
         <location line="+15"/>
@@ -1200,7 +1227,7 @@
         <location line="+8"/>
         <location line="+12"/>
         <location line="+8"/>
-        <location line="+540"/>
+        <location line="+560"/>
         <location line="+33"/>
         <location line="+378"/>
         <location line="+8"/>
@@ -1208,7 +1235,7 @@
         <translation>錯誤</translation>
     </message>
     <message>
-        <location line="-1190"/>
+        <location line="-1210"/>
         <source>Error in string:
 
 %1
@@ -1233,7 +1260,7 @@ See help for details.</source>
 見說明以取得更多詳細資訊。</translation>
     </message>
     <message>
-        <location line="+1218"/>
+        <location line="+1238"/>
         <location line="+6"/>
         <source>Open File</source>
         <translation>開啟檔案</translation>
@@ -1251,13 +1278,13 @@ See help for details.</source>
         <translation>搖桿軸映射</translation>
     </message>
     <message>
-        <location line="-640"/>
-        <location line="+736"/>
+        <location line="-660"/>
+        <location line="+756"/>
         <source>Cannot read desktop paths!</source>
         <translation>無法讀取桌面路徑！</translation>
     </message>
     <message>
-        <location line="-710"/>
+        <location line="-730"/>
         <source>Cannot remove symlink: %1</source>
         <translation>無法移除符號連結：%1</translation>
     </message>
@@ -1273,13 +1300,13 @@ See help for details.</source>
     </message>
     <message>
         <location line="-109"/>
-        <location line="+1060"/>
+        <location line="+1080"/>
         <location line="+8"/>
         <source>Cannot create dir: %1</source>
         <translation>無法建立目錄：%1</translation>
     </message>
     <message>
-        <location line="-1057"/>
+        <location line="-1077"/>
         <location line="+30"/>
         <location line="+20"/>
         <location line="+20"/>
@@ -1288,7 +1315,7 @@ See help for details.</source>
         <translation>無法移除目錄：%1</translation>
     </message>
     <message>
-        <location line="+475"/>
+        <location line="+495"/>
         <location line="+10"/>
         <source>Joystick axes mappings might be defined as:
 &quot;Joystick name&quot;=&quot;axes mapping&quot;
@@ -3028,18 +3055,18 @@ See help for details.</source>
     <name>PrefixConfigWidget</name>
     <message>
         <location filename="../q4wine-gui/widgets/prefixconfigwidget.cpp" line="+115"/>
-        <location line="+210"/>
+        <location line="+215"/>
         <source>Name</source>
         <translation>名稱</translation>
     </message>
     <message>
-        <location line="-210"/>
-        <location line="+210"/>
+        <location line="-215"/>
+        <location line="+215"/>
         <source>Description</source>
         <translation>描述</translation>
     </message>
     <message>
-        <location line="-158"/>
+        <location line="-163"/>
         <location line="+1"/>
         <source>Manage prefixes</source>
         <translation>管理前綴</translation>
@@ -3053,76 +3080,76 @@ See help for details.</source>
     <message>
         <location line="+7"/>
         <location line="+1"/>
-        <location line="+282"/>
+        <location line="+287"/>
         <location line="+1"/>
         <source>Alphabetic sort descending</source>
         <translation>字母排序遞減</translation>
     </message>
     <message>
-        <location line="-280"/>
+        <location line="-285"/>
         <location line="+1"/>
-        <location line="+273"/>
+        <location line="+278"/>
         <location line="+1"/>
         <source>Alphabetic sort ascending</source>
         <translation>字母排序遞增</translation>
     </message>
     <message>
-        <location line="-181"/>
-        <location line="+88"/>
+        <location line="-185"/>
+        <location line="+92"/>
         <source>Create Fake Drive</source>
         <translation>建立虛擬磁碟</translation>
     </message>
     <message>
-        <location line="-87"/>
+        <location line="-91"/>
         <source>Create new Fake Drive configuration. Old Fake Drive will be removed.</source>
         <translation>建立新的虛擬磁碟設定。舊的虛擬磁碟將會被移除。</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+119"/>
+        <location line="+123"/>
         <source>Update Fake Drive</source>
         <translation>更新虛擬磁碟</translation>
     </message>
     <message>
-        <location line="-118"/>
+        <location line="-122"/>
         <source>Update Fake Drive configuration.</source>
         <translation>更新虛擬磁碟設定。</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location line="+130"/>
+        <location line="+134"/>
         <source>Install or update Winetricks script</source>
         <translation>安裝或更新 Winetricks 指令稿</translation>
     </message>
     <message>
-        <location line="-129"/>
+        <location line="-133"/>
         <source>Install new or update installed Winetricks script.</source>
         <translation>安裝新的或更新已安裝的 Winetricks 指令稿。</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+123"/>
+        <location line="+127"/>
         <source>Refresh Winetricks application list</source>
         <translation>重新整理 Winetricks 應用程式清單</translation>
     </message>
     <message>
-        <location line="-122"/>
+        <location line="-126"/>
         <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
         <translation>建立或更新 Q4Wine 的 Winetricks 應用程式快取。</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+124"/>
+        <location line="+128"/>
         <source>Goto Winetricks homepage</source>
         <translation>到 Winetricks 首頁</translation>
     </message>
     <message>
-        <location line="-123"/>
+        <location line="-127"/>
         <source>Read news, report bugs and join the Winetricks community at https://github.com/Winetricks/winetricks</source>
         <translation>在 https://github.com/Winetricks/winetricks 上閱讀新聞、回報臭蟲並加入 Winetricks 社群</translation>
     </message>
     <message>
-        <location line="+92"/>
+        <location line="+96"/>
         <source>Fail to remove %1</source>
         <translation>移除 %1 失敗</translation>
     </message>
@@ -4464,31 +4491,31 @@ See help for details.</source>
         <location filename="../q4wine-gui/uis/Run.ui" line="+565"/>
         <location filename="../q4wine-gui/run.cpp" line="+111"/>
         <location line="+38"/>
-        <location line="+29"/>
+        <location line="+30"/>
         <source>Native</source>
         <translation>原生</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/run.cpp" line="-65"/>
+        <location filename="../q4wine-gui/run.cpp" line="-66"/>
         <location line="+37"/>
-        <location line="+32"/>
+        <location line="+33"/>
         <source>Built-in</source>
         <translation>內建</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/run.cpp" line="-67"/>
+        <location filename="../q4wine-gui/run.cpp" line="-68"/>
         <location line="+36"/>
-        <location line="+33"/>
+        <location line="+34"/>
         <source>Native, Built-in</source>
         <translation>原生、內建</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/run.cpp" line="-67"/>
+        <location filename="../q4wine-gui/run.cpp" line="-68"/>
         <location line="+35"/>
-        <location line="+34"/>
+        <location line="+35"/>
         <source>Built-in, Native</source>
         <translation>內建、原生</translation>
     </message>
@@ -4524,8 +4551,8 @@ See help for details.</source>
         <translation type="obsolete">Exe, MSI, BAT 檔案 (*.exe *.msi *.bat);;Exe 檔案 (*.exe);;MSI 檔案 (*.msi);;BAT 檔案 (*.bat);;所有檔案 (*)</translation>
     </message>
     <message>
-        <location line="-190"/>
-        <location line="+27"/>
+        <location line="-191"/>
+        <location line="+28"/>
         <source>Disabled</source>
         <translation>已停用</translation>
     </message>
@@ -5211,19 +5238,19 @@ See help for details.</source>
 <context>
     <name>winetricks</name>
     <message>
-        <location filename="../plugins/winetricks.cpp" line="+61"/>
-        <location line="+117"/>
+        <location filename="../plugins/winetricks.cpp" line="+95"/>
+        <location line="+119"/>
         <location line="+5"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location line="-122"/>
+        <location line="-124"/>
         <source>Cannot locate Winetricks script. Install Winetricks script first.</source>
         <translation>無法定位 Winetricks 指令稿。請先安裝 Winetricks 指令稿。</translation>
     </message>
     <message>
-        <location line="+117"/>
+        <location line="+119"/>
         <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
         <translation>檔案「%1」不可寫入或讀取。請檢查檔案權限。</translation>
     </message>
@@ -5243,7 +5270,17 @@ See help for details.</source>
         <translation>Winetricks 外掛程式</translation>
     </message>
     <message>
-        <location line="+82"/>
+        <location line="+10"/>
+        <source>Dropping stale items...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Getting list of installed items...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+73"/>
         <source>Adding verb: %1</source>
         <translation type="unfinished"></translation>
     </message>

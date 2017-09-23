@@ -16,7 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "src/q4wine-gui/versions.h"
+#include "versions.h"
 
 VersionManager::VersionManager(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
 {

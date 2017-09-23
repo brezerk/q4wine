@@ -181,7 +181,8 @@ SOURCES += \
     src/q4wine-gui/iconsettings.cpp \
     src/q4wine-gui/fakedrivesettings.cpp \
     src/q4wine-gui/appsettings.cpp \
-    src/q4wine-gui/about.cpp
+    src/q4wine-gui/about.cpp \
+    src/q4wine-gui/versions.cpp
 
 HEADERS += \
     src/q4wine-gui/wizard.h \
@@ -196,7 +197,8 @@ HEADERS += \
     src/q4wine-gui/iconsettings.h \
     src/q4wine-gui/fakedrivesettings.h \
     src/q4wine-gui/appsettings.h \
-    src/q4wine-gui/about.h
+    src/q4wine-gui/about.h \
+    src/q4wine-gui/versions.h
 
 OTHER_FILES += \
     src/q4wine-gui/CMakeLists.txt
