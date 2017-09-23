@@ -22,13 +22,13 @@ The general idea came from WineTools, which was initially written by Frank Hendr
 
 Dependencies:
 ***********************************************
-cmake >= 2.8.0 for Qt 4, >= 2.8.11 for Qt 5
+cmake >= 2.8.11 for Qt5 or >= 2.8.0 for qt4
 sudo
 wine
 >=sqlite-3.5.6
 >=which-2.19
 >=icoutils-0.26.0
-qt4 >= 4.4.0 or qt5 >= 5.2.1
+qt5 >= 5.2.1 or qt4 >= 4.4.0
 wget
 fuseiso 		***optional***
 
@@ -60,7 +60,7 @@ Installation
 
        DEBUG                     : OFF | ON
        RELEASE                   : ON  | OFF
-       QT5                       : OFF | ON
+       QT5                       : ON  | OFF
        WITH_ICOUTILS             : ON  | OFF
        WITH_SYSTEM_SINGLEAPP     : OFF | ON
        WITH_WINEAPPDB            : ON  | OFF
