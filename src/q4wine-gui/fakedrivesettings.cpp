@@ -86,7 +86,11 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
     QSettings settings(APP_SHORT_NAME, "default");
     settings.beginGroup("LastItems");
     txtPostRunBin->addItems(settings.value("prefix").toStringList());
+#if QT_VERSION >= 0x050000
     txtPostRunBin->setCurrentText("");
+#else
+    txtPostRunBin->setEditText("");
+#endif
     settings.endGroup();
 
 }
@@ -1445,7 +1449,11 @@ bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
             if (QString("%1").arg(findChild<QWidget *>(a)->metaObject()->className()) == "QComboBox") {
                 std::unique_ptr<QComboBox> cbEdit (findChild<QComboBox *>(a));
                 if (cbEdit.get()){
+#if QT_VERSION >= 0x050000
                     cbEdit->setCurrentText(file);
+#else
+                    cbEdit->setEditText(file);
+#endif
                 } else {
                     qDebug("Error");
                 }

@@ -779,6 +779,18 @@
             <string>Scripts</string>
            </attribute>
            <layout class="QVBoxLayout" name="verticalLayout_15">
+            <property name="leftMargin">
+             <number>3</number>
+            </property>
+            <property name="topMargin">
+             <number>3</number>
+            </property>
+            <property name="rightMargin">
+             <number>3</number>
+            </property>
+            <property name="bottomMargin">
+             <number>3</number>
+            </property>
             <item>
              <widget class="QGroupBox" name="groupBox_6">
               <property name="title">
