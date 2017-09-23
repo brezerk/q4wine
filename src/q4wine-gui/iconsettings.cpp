@@ -188,7 +188,7 @@ void IconSettings::getIconReccord(){
     for (int i=0; i<override.count()-1; i++){
         QStringList list2 = override.at(i).split("=");
             twDlls->insertRow (0);
-            std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(list2.at(0)));
+            std::unique_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(list2.at(0)));
             newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable );
             twDlls->setItem(0, 0, newItem.release());
 
@@ -204,7 +204,7 @@ void IconSettings::getIconReccord(){
                 overrideorder = tr("Disabled");
             }
 
-            std::auto_ptr<QComboBox> overidebox (new QComboBox(twDlls));
+            std::unique_ptr<QComboBox> overidebox (new QComboBox(twDlls));
             overidebox->addItem(tr("Native"));
             overidebox->addItem(tr("Built-in"));
             overidebox->addItem(tr("Native, Built-in"));
@@ -227,7 +227,7 @@ bool IconSettings::eventFilter( QObject *object, QEvent *event )
     if (object == twDlls)
         if (event->type() == QEvent::KeyPress)
         {   // if yes, we need to cast the event
-        std::auto_ptr<QKeyEvent> keyEvent (static_cast<QKeyEvent*>(event));
+        std::unique_ptr<QKeyEvent> keyEvent (static_cast<QKeyEvent*>(event));
         if (keyEvent->key()==Qt::Key_Delete)
             twDlls->removeRow(twDlls->currentRow());
 
@@ -303,11 +303,11 @@ void IconSettings::cmdGetWorkDir_Click(){
 void IconSettings::cmdAdd_Click(){
     if (!cboxDlls->currentText().isEmpty()){
         twDlls->insertRow (0);
-        std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(cboxDlls->currentText()));
+        std::unique_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(cboxDlls->currentText()));
         newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable );
         twDlls->setItem(0, 0, newItem.release());
 
-        std::auto_ptr<QComboBox> overidebox (new QComboBox(twDlls));
+        std::unique_ptr<QComboBox> overidebox (new QComboBox(twDlls));
         overidebox->addItem(tr("Native"));
         overidebox->addItem(tr("Built-in"));
         overidebox->addItem(tr("Native, Built-in"));

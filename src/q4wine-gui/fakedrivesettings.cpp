@@ -51,7 +51,7 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
 
     splitter->setSizes(size);
 
-    std::auto_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
+    std::unique_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
     vlayout->addWidget(splitter.release());
     vlayout->setMargin(0);
     vlayout->setSpacing(0);
@@ -296,7 +296,7 @@ void FakeDriveSettings::cmdOk_Click(){
 
     if (listWineDrives->count()>0){
         for (int i=0; i<listWineDrives->count(); i++){
-            std::auto_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->item(i)));
+            std::unique_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->item(i)));
 
             if (item.get()){
                             QString driveLink = QString("%1/%2").arg(prefixPath).arg(item->getLetter().toLower());
@@ -470,7 +470,7 @@ void FakeDriveSettings::cmdOk_Click(){
 #endif
 
     for (int i=0; i<listWineDrives->count(); i++){
-        std::auto_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->item(i)));
+        std::unique_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->item(i)));
 #ifdef DEBUG
         qDebug()<<"[ii] Wizard::get DriveListWidgetItem for "<<listWineDrives->item(i)->text();
 #endif
@@ -836,7 +836,7 @@ void FakeDriveSettings::cmdCancel_Click(){
 void FakeDriveSettings::cmdHelp_Click(){
     QString rawurl;
 
-    std::auto_ptr<QTreeWidgetItem> item (optionsTree->currentItem());
+    std::unique_ptr<QTreeWidgetItem> item (optionsTree->currentItem());
     if (!item.get()){
          item.release();
          return;
@@ -928,7 +928,7 @@ void FakeDriveSettings::cmdJoystickAdd_Click(){
 }
 
 void FakeDriveSettings::cmdJoystickDel_Click(){
-    std::auto_ptr<QListWidgetItem> item (listJoystickAxesMappings->currentItem());
+    std::unique_ptr<QListWidgetItem> item (listJoystickAxesMappings->currentItem());
     if (!item.get())
         return;
 
@@ -937,7 +937,7 @@ void FakeDriveSettings::cmdJoystickDel_Click(){
 }
 
 void FakeDriveSettings::cmdWineDriveEdit_Click(){
-    std::auto_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->currentItem()));
+    std::unique_ptr<DriveListWidgetItem> item (dynamic_cast<DriveListWidgetItem*>(listWineDrives->currentItem()));
 
     if (!item.get())
         return;
@@ -970,7 +970,7 @@ void FakeDriveSettings::cmdWineDriveAdd_Click(){
 
     WineDriveDialog drevedialog(drives);
     if (drevedialog.exec()==QDialog::Accepted){
-        std::auto_ptr<DriveListWidgetItem> item (new DriveListWidgetItem(listWineDrives));
+        std::unique_ptr<DriveListWidgetItem> item (new DriveListWidgetItem(listWineDrives));
         item->setDrive(drevedialog.getLetter(), drevedialog.getPath(), drevedialog.getType());
         listWineDrives->addItem(item.release());
     }
@@ -978,7 +978,7 @@ void FakeDriveSettings::cmdWineDriveAdd_Click(){
 }
 
 void FakeDriveSettings::cmdWineDriveDel_Click(){
-    std::auto_ptr<QListWidgetItem> item (listWineDrives->currentItem());
+    std::unique_ptr<QListWidgetItem> item (listWineDrives->currentItem());
     if (!item.get())
         return;
 
@@ -994,7 +994,7 @@ void FakeDriveSettings::cmdWineDriveDel_Click(){
 
 void FakeDriveSettings::loadSettings(){
     QString prefixPath = db_prefix.getPath(prefixName);
-    std::auto_ptr<DriveListWidgetItem> item;
+    std::unique_ptr<DriveListWidgetItem> item;
 
     if (prefixPath.isEmpty()){
         qDebug()<<" [EE] Cant get prefix path: "<<prefixName;
@@ -1344,7 +1344,7 @@ void FakeDriveSettings::loadDefaultSettings(){
 
     txtOwner->setText(QString::fromUtf8(getenv("USER")));
 
-    std::auto_ptr<DriveListWidgetItem> item;
+    std::unique_ptr<DriveListWidgetItem> item;
     item.reset(new DriveListWidgetItem(listWineDrives));
     item->setDrive("C:", "../drive_c", "auto");
     listWineDrives->addItem(item.release());

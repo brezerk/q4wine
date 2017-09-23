@@ -64,23 +64,23 @@ private:
 	void createActions(void);
 
 	//! AppDB core clases
-	std::auto_ptr<XmlParser> xmlparser;
-	std::auto_ptr<HttpCore> httpcore;
+	std::unique_ptr<XmlParser> xmlparser;
+	std::unique_ptr<HttpCore> httpcore;
 
 	//! AppDB custom widgets
-	std::auto_ptr<AppDBScrollWidget> appdbScrollArea;
-	std::auto_ptr<AppDBHeaderWidget> appdbHeader;
+	std::unique_ptr<AppDBScrollWidget> appdbScrollArea;
+	std::unique_ptr<AppDBHeaderWidget> appdbHeader;
 
 	//! Delay timer
-	std::auto_ptr<QTimer> timer;
-	std::auto_ptr<QAction> appdbOpen;
-	std::auto_ptr<QAction> appdbAppPage;
-	std::auto_ptr<QAction> appdbCat;
-	std::auto_ptr<QAction> appdbClear;
-	std::auto_ptr<QAction> appdbClearSearch;
-	std::auto_ptr<QAction> appdbSearch;
+	std::unique_ptr<QTimer> timer;
+	std::unique_ptr<QAction> appdbOpen;
+	std::unique_ptr<QAction> appdbAppPage;
+	std::unique_ptr<QAction> appdbCat;
+	std::unique_ptr<QAction> appdbClear;
+	std::unique_ptr<QAction> appdbClearSearch;
+	std::unique_ptr<QAction> appdbSearch;
 
-	std::auto_ptr<QLineEdit> searchField;
+	std::unique_ptr<QLineEdit> searchField;
 
 	//! State variables
 	QString search;
@@ -95,7 +95,7 @@ private:
 	QLibrary libq4wine;
 	typedef void *CoreLibPrototype (bool);
 	CoreLibPrototype *CoreLibClassPointer;
-	std::auto_ptr<corelib> CoreLib;
+	std::unique_ptr<corelib> CoreLib;
 
 private slots:
 	void timer_timeout(void);

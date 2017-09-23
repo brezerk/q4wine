@@ -45,7 +45,7 @@ VersionManager::VersionManager(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
     connect(cmdOk, SIGNAL(clicked()), this, SLOT(cmdOk_Click()));
     connect(cmdHelp, SIGNAL(clicked()), this, SLOT(cmdHelp_Click()));
 
-    std::auto_ptr<QToolBar> tbPrefix (new QToolBar(this));
+    std::unique_ptr<QToolBar> tbPrefix (new QToolBar(this));
     tbPrefix->setIconSize(QSize(24, 24));
     tbPrefix->addAction(searchClear.get());
 
@@ -55,7 +55,7 @@ VersionManager::VersionManager(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
 
     //listPrefix.reset(new VersionListWidget(this));
 
-    std::auto_ptr<QVBoxLayout> layout (new QVBoxLayout(wPrefix));
+    std::unique_ptr<QVBoxLayout> layout (new QVBoxLayout(wPrefix));
     layout->setSpacing(0);
     layout->setContentsMargins(0,0,0,0);
     layout->addWidget(tbPrefix.release());
@@ -63,7 +63,7 @@ VersionManager::VersionManager(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
 
     wPrefix->setLayout(layout.release());
 
-    std::auto_ptr<QToolBar> tbSettings (new QToolBar(this));
+    std::unique_ptr<QToolBar> tbSettings (new QToolBar(this));
     tbSettings->setIconSize(QSize(24, 24));
     tbSettings->addAction(saveVersion.get());
     tbSettings->addSeparator();
@@ -71,7 +71,7 @@ VersionManager::VersionManager(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
     tbSettings->addAction(delVersion.get());
 
 
-    std::auto_ptr<QVBoxLayout> s_layout (new QVBoxLayout(wSettings));
+    std::unique_ptr<QVBoxLayout> s_layout (new QVBoxLayout(wSettings));
     s_layout->setSpacing(0);
     s_layout->setContentsMargins(0,0,0,0);
     s_layout->addWidget(tbSettings.release());
@@ -89,7 +89,7 @@ VersionManager::VersionManager(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
 
     splitter->setSizes(a);
 
-    std::auto_ptr<QVBoxLayout> g_layout (new QVBoxLayout(wContent));
+    std::unique_ptr<QVBoxLayout> g_layout (new QVBoxLayout(wContent));
     g_layout->setSpacing(0);
     g_layout->setContentsMargins(6,0,6,0);
     g_layout->addWidget(splitter.get());
@@ -368,7 +368,7 @@ void VersionManager::getVersions(){
 
     Version ver;
     QList<Version> list = ver.load_all(searchField->text());
-    std::auto_ptr<QListWidgetItem> iconItem;
+    std::unique_ptr<QListWidgetItem> iconItem;
 
     for (int i = 0; i < list.size(); i++){
         iconItem.reset(new QListWidgetItem(listPrefix, 0));
@@ -491,7 +491,7 @@ bool VersionManager::eventFilter(QObject *obj, QEvent *event){
             a.append("txt");
             a.append(obj->objectName().right(obj->objectName().length()-6));
 
-            std::auto_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
+            std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
 
             if (lineEdit.get()){
                 lineEdit->setText(file);

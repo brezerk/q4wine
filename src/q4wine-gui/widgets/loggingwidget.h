@@ -84,28 +84,28 @@ private:
     QLibrary libq4wine;
     typedef void *CoreLibPrototype (bool);
     CoreLibPrototype *CoreLibClassPointer;
-    std::auto_ptr<corelib> CoreLib;
+    std::unique_ptr<corelib> CoreLib;
 
     Logging db_log;
     Prefix db_prefix;
 
-    std::auto_ptr<QAction> logClear;
-    std::auto_ptr<QAction> logDelete;
-    std::auto_ptr<QAction> logExport;
+    std::unique_ptr<QAction> logClear;
+    std::unique_ptr<QAction> logDelete;
+    std::unique_ptr<QAction> logExport;
 
-    std::auto_ptr<QAction> logSelectAll;
-    std::auto_ptr<QAction> logCopy;
+    std::unique_ptr<QAction> logSelectAll;
+    std::unique_ptr<QAction> logCopy;
 
-    std::auto_ptr<QAction> logEnable;
-    std::auto_ptr<QLabel> logStatus;
+    std::unique_ptr<QAction> logEnable;
+    std::unique_ptr<QLabel> logStatus;
 
     int log_status;
 
-    std::auto_ptr<QTreeWidget> treeWidget;
-    std::auto_ptr<QListWidget> listWidget;
-    std::auto_ptr<QSplitter> splitter;
+    std::unique_ptr<QTreeWidget> treeWidget;
+    std::unique_ptr<QListWidget> listWidget;
+    std::unique_ptr<QSplitter> splitter;
 
-    //std::auto_ptr<QMenu> menu;
+    //std::unique_ptr<QMenu> menu;
 
     void createActions(void);
     void clearLogs(void);

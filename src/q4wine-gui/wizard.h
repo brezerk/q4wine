@@ -103,7 +103,7 @@ class Wizard : public QDialog, public Ui::Wizard
         QLibrary libq4wine;
         typedef void *CoreLibPrototype (bool);
         CoreLibPrototype *CoreLibClassPointer;
-        std::auto_ptr<corelib> CoreLib;
+        std::unique_ptr<corelib> CoreLib;
 
     protected:
         //! \brief Event filter.

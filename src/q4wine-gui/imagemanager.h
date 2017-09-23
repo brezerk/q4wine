@@ -81,16 +81,16 @@ class ImageManager : public QDialog, public Ui::ImageManager
 		 //! This is need for libq4wine-core.so import;
 		typedef void *CoreLibPrototype (bool);
 		CoreLibPrototype *CoreLibClassPointer;
-		std::auto_ptr<corelib> CoreLib;
+		std::unique_ptr<corelib> CoreLib;
 		QLibrary libq4wine;
 
 		Image db_image;
 
 		//! Actions
-		std::auto_ptr<QAction> actionAdd;
-		std::auto_ptr<QAction> actionRemove;
-		std::auto_ptr<QAction> actionRename;
-		std::auto_ptr<QAction> actionRefresh;
+		std::unique_ptr<QAction> actionAdd;
+		std::unique_ptr<QAction> actionRemove;
+		std::unique_ptr<QAction> actionRename;
+		std::unique_ptr<QAction> actionRefresh;
 };
 
 #endif

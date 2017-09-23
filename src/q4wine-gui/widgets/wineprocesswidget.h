@@ -59,25 +59,25 @@ public slots:
 	void startTimer(void);
 
 private:
-	std::auto_ptr<QTimer> timer;
-	std::auto_ptr<QStandardItemModel> model;
+	std::unique_ptr<QTimer> timer;
+	std::unique_ptr<QStandardItemModel> model;
 
 	//! This is need for libq4wine-core.so import.
 	QLibrary libq4wine;
 	typedef void *CoreLibPrototype (bool);
 	CoreLibPrototype *CoreLibClassPointer;
-	std::auto_ptr<corelib> CoreLib;
+	std::unique_ptr<corelib> CoreLib;
 
 	void createActions();
 
-	std::auto_ptr<QTableView> procTable;
-	std::auto_ptr<QLabel> lblInfo;
+	std::unique_ptr<QTableView> procTable;
+	std::unique_ptr<QLabel> lblInfo;
 
-	std::auto_ptr<QMenu> menu;
-	std::auto_ptr<QAction> procKillSelected;
-	std::auto_ptr<QAction> procKillWine;
-	std::auto_ptr<QAction> procRefresh;
-	std::auto_ptr<QAction> procRenice;
+	std::unique_ptr<QMenu> menu;
+	std::unique_ptr<QAction> procKillSelected;
+	std::unique_ptr<QAction> procKillWine;
+	std::unique_ptr<QAction> procRefresh;
+	std::unique_ptr<QAction> procRenice;
 
 private slots:
 	void getWineProcesssInfo(void);

@@ -49,7 +49,7 @@ class IconsView : public QDialog, public Ui::IconsView
         //! This is need for libq4wine-core.so import;
         typedef void *CoreLibPrototype (bool);
             CoreLibPrototype *CoreLibClassPointer;
-            std::auto_ptr<corelib> CoreLib;
+            std::unique_ptr<corelib> CoreLib;
         QLibrary libq4wine;
 
 		QString tempDirectory;

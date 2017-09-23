@@ -50,20 +50,20 @@ private:
     QLibrary libq4wine;
     typedef void *CoreLibPrototype (bool);
     CoreLibPrototype *CoreLibClassPointer;
-    std::auto_ptr<corelib> CoreLib;
+    std::unique_ptr<corelib> CoreLib;
 
     void createActions(void);
 
-    std::auto_ptr<QLineEdit> searchField;
+    std::unique_ptr<QLineEdit> searchField;
 
-    std::auto_ptr<QAction> searchClear;
-    std::auto_ptr<QAction> viewMode;
+    std::unique_ptr<QAction> searchClear;
+    std::unique_ptr<QAction> viewMode;
 
-    std::auto_ptr<QAction> zoomIn;
-    std::auto_ptr<QAction> zoomOut;
+    std::unique_ptr<QAction> zoomIn;
+    std::unique_ptr<QAction> zoomOut;
 
-    std::auto_ptr<QAction> sortAlpha;
-    std::auto_ptr<QAction> sortCreation;
+    std::unique_ptr<QAction> sortAlpha;
+    std::unique_ptr<QAction> sortCreation;
 
     int sort_order;
     int view_mode;

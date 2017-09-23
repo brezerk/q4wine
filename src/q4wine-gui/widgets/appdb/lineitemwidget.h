@@ -66,7 +66,7 @@ public:
 	void setEnabled(bool enable);
 
 private:
-	std::auto_ptr<QBoxLayout> contentLayout;
+	std::unique_ptr<QBoxLayout> contentLayout;
 	int appid;
 	int verid;
 	int testid;

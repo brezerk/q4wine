@@ -66,9 +66,9 @@ private slots:
 
 private:
 #ifdef QT5
-    std::auto_ptr<QNetworkAccessManager> http;
+    std::unique_ptr<QNetworkAccessManager> http;
 #else
-	std::auto_ptr<QHttp> http;
+	std::unique_ptr<QHttp> http;
 #endif
 	QString user_agent;
 	QString xmlreply;
@@ -81,7 +81,7 @@ private:
     //! This is need for libq4wine-core.so import;
     typedef void *CoreLibPrototype (bool);
     CoreLibPrototype *CoreLibClassPointer;
-    std::auto_ptr<corelib> CoreLib;
+    std::unique_ptr<corelib> CoreLib;
     QLibrary libq4wine;
 
 };

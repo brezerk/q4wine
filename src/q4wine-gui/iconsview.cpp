@@ -52,7 +52,7 @@ IconsView::IconsView(QString tmpDir, QWidget * parent, Qt::WindowFlags f) : QDia
 	for (int i = 0; i < list.size(); ++i) {
 		QFileInfo fileInfo = list.at(i);
 		if (fileInfo.fileName().right(3)=="png"){
-			std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(lstIcons, 0));
+			std::unique_ptr<QListWidgetItem> iconItem (new QListWidgetItem(lstIcons, 0));
 			iconItem->setText(fileInfo.fileName());
 			iconItem->setIcon(QIcon(fileInfo.filePath()));
 			iconItem.release();

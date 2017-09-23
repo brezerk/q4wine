@@ -59,21 +59,21 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     setWindowTitle(tr("%1 :. Qt GUI for Wine v%2").arg(APP_NAME) .arg(APP_VERS));
     setWindowIcon(CoreLib->loadIcon(CoreLib->getSetting("app", "icon", false, "q4wine").toString()));
 
-    std::auto_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
+    std::unique_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
 
-    std::auto_ptr<PrefixConfigWidget> configWidget (new PrefixConfigWidget(tabPrefixSeup));
+    std::unique_ptr<PrefixConfigWidget> configWidget (new PrefixConfigWidget(tabPrefixSeup));
     connect(configWidget.get(), SIGNAL(updateDatabaseConnections()), this, SLOT(updateDtabaseConnectedItems()));
     connect(configWidget.get(), SIGNAL(setTabIndex (int)), tbwGeneral, SLOT(setCurrentIndex (int)));
     connect(this, SIGNAL(updateDatabaseConnections()), configWidget.get(), SLOT(getPrefixes()));
 
-    std::auto_ptr<LoggingWidget> logWidget (new LoggingWidget(tabLogging));
+    std::unique_ptr<LoggingWidget> logWidget (new LoggingWidget(tabLogging));
     connect (this, SIGNAL(reloadLogData()), logWidget.get(), SLOT(getLogRecords()));
 
     logWidget->getLogRecords();
 
     logLayout->addWidget(logWidget.release());
 
-    std::auto_ptr<IconListWidget> lstIcons (new IconListWidget(tabPrograms));
+    std::unique_ptr<IconListWidget> lstIcons (new IconListWidget(tabPrograms));
     connect(this, SIGNAL(runProgramRequest(QString)), lstIcons.get(), SLOT(runProgramRequest(QString)));
     connect(lstIcons.get(), SIGNAL(iconItemClick(QString, QString, QString, QString, QString)), this, SLOT(updateIconDesc(QString, QString, QString, QString, QString)));
     connect(lstIcons.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
@@ -83,7 +83,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(lstIcons.get(), SIGNAL(searchRequest(QString)), this, SLOT(searchRequest(QString)));
 #endif
 
-    std::auto_ptr<PrefixTreeWidget> twPrograms (new PrefixTreeWidget(tabPrograms));
+    std::unique_ptr<PrefixTreeWidget> twPrograms (new PrefixTreeWidget(tabPrograms));
     connect(twPrograms.get(), SIGNAL(updateDatabaseConnections()), this, SLOT(updateDtabaseConnectedItems()));
     connect(this, SIGNAL(updateDatabaseConnections()), twPrograms.get(), SLOT(getPrefixes()));
     connect(twPrograms.get(), SIGNAL(showFolderContents(QString, QString)), lstIcons.get(), SLOT(showFolderContents(QString, QString)));
@@ -97,13 +97,13 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(twPrograms.get(), SIGNAL(pasteAction()), lstIcons.get(), SLOT(iconPaste_Click()));
 
 
-    std::auto_ptr<WineProcessWidget> procWidget (new WineProcessWidget(tabProcess));
+    std::unique_ptr<WineProcessWidget> procWidget (new WineProcessWidget(tabProcess));
     connect(this, SIGNAL(stopProcTimer()), procWidget.get(), SLOT(stopTimer()));
     connect(this, SIGNAL(startProcTimer()), procWidget.get(), SLOT(startTimer()));
     connect(procWidget.get(), SIGNAL(changeStatusText(QString)), this, SLOT(changeStatusText(QString)));
     tabProcessLayout->addWidget(procWidget.release());
 
-    std::auto_ptr<PrefixControlWidget> prefixWidget (new PrefixControlWidget(tabPrefix));
+    std::unique_ptr<PrefixControlWidget> prefixWidget (new PrefixControlWidget(tabPrefix));
     connect(prefixWidget.get(), SIGNAL(updateDatabaseConnections()), twPrograms.get(), SLOT(getPrefixes()));
     connect(prefixWidget.get(), SIGNAL(updateDatabaseConnections()), this, SLOT(updateDtabaseConnectedItems()));
     connect(configWidget.get(), SIGNAL(prefixIndexChanged(QString)), prefixWidget.get(), SLOT(setDefaultFocus(QString)));
@@ -111,11 +111,11 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     connect(prefixWidget.get(), SIGNAL(setTabIndex (int)), tbwGeneral, SLOT(setCurrentIndex (int)));
     connect(twPrograms.get(), SIGNAL(updateDatabaseConnections()), prefixWidget.get(), SLOT(updateDtabaseItems()));
 
-    std::auto_ptr<IconListToolbar> iconToolBar (new IconListToolbar(tabPrograms));
+    std::unique_ptr<IconListToolbar> iconToolBar (new IconListToolbar(tabPrograms));
     connect(iconToolBar.get(), SIGNAL(searchFilterChange(QString)), lstIcons.get(), SLOT(setFilterString(QString)));
     connect(iconToolBar.get(), SIGNAL(changeView(int)), lstIcons.get(), SLOT(changeView(int)));
 
-    std::auto_ptr<PrefixTreeToolbar> prefixToolBar (new PrefixTreeToolbar(tabPrograms));
+    std::unique_ptr<PrefixTreeToolbar> prefixToolBar (new PrefixTreeToolbar(tabPrograms));
     connect(prefixToolBar.get(), SIGNAL(expandTree()), twPrograms.get(), SLOT(expandTree()));
     connect(prefixToolBar.get(), SIGNAL(collapseTree()), twPrograms.get(), SLOT(collapseTree()));
     connect(prefixToolBar.get(), SIGNAL(updatePrefixTree()), this, SLOT(updateDtabaseConnectedItems()));
@@ -126,7 +126,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     vlayout->addWidget(twPrograms.release());
     vlayout->setMargin(0);
     vlayout->setSpacing(0);
-    std::auto_ptr<QWidget> wid (new QWidget(tabPrograms));
+    std::unique_ptr<QWidget> wid (new QWidget(tabPrograms));
     wid->setLayout(vlayout.release());
 
     splitter.reset(new QSplitter(tabPrograms));
@@ -385,7 +385,7 @@ bool MainWindow::createSocket(){
 void MainWindow::newConnection (){
 
     if (serverSoket->hasPendingConnections ()){
-        std::auto_ptr<QLocalSocket> localSocket;
+        std::unique_ptr<QLocalSocket> localSocket;
         localSocket.reset(serverSoket->nextPendingConnection ());
 
         connect(localSocket.get(), SIGNAL(disconnected()), localSocket.get(), SLOT(deleteLater()));
@@ -491,7 +491,7 @@ void MainWindow::showSocketError(QString message){
 }
 
 void MainWindow::createTrayIcon(){
-    std::auto_ptr<QMenu> trayIconMenu(new QMenu(this));
+    std::unique_ptr<QMenu> trayIconMenu(new QMenu(this));
     trayIconMenu->addAction(mainRun);
     trayIconMenu->addSeparator();
     trayIconMenu->addAction(mainExportIcons);

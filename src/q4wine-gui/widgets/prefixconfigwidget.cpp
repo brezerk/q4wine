@@ -40,7 +40,7 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
 
     this->createActions();
 
-    std::auto_ptr<QToolBar> treeToolBar (new QToolBar(this));
+    std::unique_ptr<QToolBar> treeToolBar (new QToolBar(this));
     treeToolBar->setIconSize(QSize(24, 24));
 
     cbPrefixes.reset(new QComboBox(this));
@@ -60,7 +60,7 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
 
     treeWidget->installEventFilter(this);
 
-    std::auto_ptr<QToolBar> iconsToolBar (new QToolBar(this));
+    std::unique_ptr<QToolBar> iconsToolBar (new QToolBar(this));
     iconsToolBar->setIconSize(QSize(24, 24));
 
     searchField.reset (new QLineEdit(this));
@@ -87,9 +87,9 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
     connect(listWidget.get(), SIGNAL(itemDoubleClicked (QListWidgetItem *)), this, SLOT(itemDoubleClicked (QListWidgetItem *)));
     connect(listWidget.get(), SIGNAL(currentItemChanged (QListWidgetItem *, QListWidgetItem *)), this, SLOT(currentItemChanged (QListWidgetItem *, QListWidgetItem *)));
 
-    std::auto_ptr<QWidget> treeFrameWidget(new QWidget(this));
+    std::unique_ptr<QWidget> treeFrameWidget(new QWidget(this));
 
-    std::auto_ptr<QVBoxLayout> layout (new QVBoxLayout(this));
+    std::unique_ptr<QVBoxLayout> layout (new QVBoxLayout(this));
     layout->setSpacing(0);
     layout->setContentsMargins(0,0,0,0);
     layout->addWidget(treeToolBar.release());
@@ -97,7 +97,7 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
 
     treeFrameWidget->setLayout(layout.release());
 
-    std::auto_ptr<QWidget> iconsFrameWidget(new QWidget(this));
+    std::unique_ptr<QWidget> iconsFrameWidget(new QWidget(this));
 
     layout.reset(new QVBoxLayout(this));
     layout->setSpacing(0);
@@ -115,7 +115,7 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
     infoName.reset(new QLabel(QString("%1:\n\%2:").arg(tr("Name")).arg(tr("Description")), this));
     infoName->setTextInteractionFlags(Qt::TextSelectableByMouse);
     infoName->setWordWrap(true);
-    std::auto_ptr<QFrame> frame(new QFrame(this));
+    std::unique_ptr<QFrame> frame(new QFrame(this));
 
     layout.reset(new QVBoxLayout(this));
     layout->setSpacing(3);
@@ -193,7 +193,7 @@ void PrefixConfigWidget::createTree(){
     this->listWidget->clear();
 
     QList<ProviderItem> providers = db_sysconfig.getProviders();
-    std::auto_ptr<QTreeWidgetItem> prefixItem;
+    std::unique_ptr<QTreeWidgetItem> prefixItem;
     for (int i = 0; i < providers.size(); i++){
         prefixItem.reset(new QTreeWidgetItem(this->treeWidget.get()));
         prefixItem->setText(0, providers.at(i).name);
@@ -203,7 +203,7 @@ void PrefixConfigWidget::createTree(){
         QStringList subtypes = db_sysconfig.getProviderSubtypes(providers.at(i).id);
         for (int j = 0; j < subtypes.size(); j++){
             if (!subtypes.at(j).isEmpty()){
-                std::auto_ptr<QTreeWidgetItem> subPrefixItem (new QTreeWidgetItem(prefixItem.get(), 0));
+                std::unique_ptr<QTreeWidgetItem> subPrefixItem (new QTreeWidgetItem(prefixItem.get(), 0));
                 subPrefixItem->setText(0, QString("%1").arg(subtypes.at(j)));
                 subPrefixItem->setIcon(0, CoreLib->loadIcon("folder"));
                 subPrefixItem.release();
@@ -218,7 +218,7 @@ void PrefixConfigWidget::createTree(){
 
     for(int i=0; i < this->treeWidget.get()->topLevelItemCount(); i++)
     {
-        std::auto_ptr<QTreeWidgetItem> item(this->treeWidget.get()->topLevelItem(i));
+        std::unique_ptr<QTreeWidgetItem> item(this->treeWidget.get()->topLevelItem(i));
         if (item->text(0)==this->provider){
 
             this->treeWidget.get()->setCurrentItem(item.get());
@@ -249,7 +249,7 @@ void PrefixConfigWidget::treeWidget_itemClicked (QTreeWidgetItem * item, int col
     if (!item->parent()){
         this->provider = item->text(0);
     } else {
-        std::auto_ptr<QTreeWidgetItem> p_item (item->parent());
+        std::unique_ptr<QTreeWidgetItem> p_item (item->parent());
         this->provider = p_item->text(0);
         this->subtype = item->text(0);
         p_item.release();
@@ -267,7 +267,7 @@ void PrefixConfigWidget::get_icons(){
     QIcon defIconInstalled = CoreLib->loadIcon("application-x-ms-dos-executable");
 
     QList<SysconfigItem> items = db_sysconfig.getItems(this->provider, this->subtype, this->sort_order, this->searchField->text());
-    std::auto_ptr<QListWidgetItem> iconItem;
+    std::unique_ptr<QListWidgetItem> iconItem;
     for (int i = 0; i < items.size(); i++){
         iconItem.reset(new QListWidgetItem(this->listWidget.get(), 0));
         if (this->subtype.isEmpty()){

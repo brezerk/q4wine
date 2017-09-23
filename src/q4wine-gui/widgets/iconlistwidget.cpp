@@ -85,7 +85,7 @@ void IconListWidget::showContents(QString filterString){
     QIcon defIcon = CoreLib->loadIcon("application-x-executable-script");
 
     for (int i = 0; i < iconsList.size(); ++i) {
-        std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(this, 0));
+        std::unique_ptr<QListWidgetItem> iconItem (new QListWidgetItem(this, 0));
         iconItem->setText(iconsList.at(i));
         iconItem->setToolTip(iconsList.at(i));
 
@@ -182,7 +182,7 @@ void IconListWidget::startDrag(){
 
     if (items.count()>0){
         QString fileName;
-        std::auto_ptr<QMimeData> mimeData(new QMimeData());
+        std::unique_ptr<QMimeData> mimeData(new QMimeData());
         QList<QUrl> urls;
 
         for (int i=0; i<items.count(); i++){
@@ -191,7 +191,7 @@ void IconListWidget::startDrag(){
         }
 
         mimeData->setUrls(urls);
-        std::auto_ptr<QDrag> drag(new QDrag(this));
+        std::unique_ptr<QDrag> drag(new QDrag(this));
         drag->setMimeData(mimeData.release());
         drag->setPixmap(items.at(0)->icon().pixmap(32));
         drag->start(Qt::MoveAction);
@@ -295,7 +295,7 @@ void IconListWidget::mousePressEvent(QMouseEvent *event){
     }
 
     if (QApplication::keyboardModifiers()==Qt::CTRL){
-        std::auto_ptr<QListWidgetItem> item (this->itemAt(event->x(), event->y()));
+        std::unique_ptr<QListWidgetItem> item (this->itemAt(event->x(), event->y()));
         if (item.get()){
             QListWidget::itemClicked ( item.get() );
             if (!item->isSelected()){
@@ -342,7 +342,7 @@ void IconListWidget::dragEnterEvent(QDragEnterEvent *event){
 }
 
 void IconListWidget::dragMoveEvent(QDragMoveEvent *event){
-    std::auto_ptr<IconListWidget> source (qobject_cast<IconListWidget *>(event->source()));
+    std::unique_ptr<IconListWidget> source (qobject_cast<IconListWidget *>(event->source()));
     if (source.get() && source.get() != this){
         event->setDropAction(Qt::MoveAction);
         event->accept();
@@ -351,7 +351,7 @@ void IconListWidget::dragMoveEvent(QDragMoveEvent *event){
 }
 
 void IconListWidget::dropEvent(QDropEvent *event){
-    std::auto_ptr<IconListWidget> source (qobject_cast<IconListWidget *>(event->source()));
+    std::unique_ptr<IconListWidget> source (qobject_cast<IconListWidget *>(event->source()));
     if (source.get() && source.get() != this){
         event->setDropAction(Qt::MoveAction);
         event->accept();
@@ -366,7 +366,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
 
     bool isItemSelected=false, isOnItemEvent=false;
 
-    std::auto_ptr<QListWidgetItem> item (this->itemAt(event->pos().x(), event->pos().y()));
+    std::unique_ptr<QListWidgetItem> item (this->itemAt(event->pos().x(), event->pos().y()));
     if (item.get()){
         isOnItemEvent=true;
     } else {
@@ -380,16 +380,16 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         isItemSelected=false;
     }
 
-    std::auto_ptr<QMenu> menu (new QMenu(this));
+    std::unique_ptr<QMenu> menu (new QMenu(this));
 
-    std::auto_ptr<QMenu> menuMount (new QMenu(tr("Mount ISO..."), this));
+    std::unique_ptr<QMenu> menuMount (new QMenu(tr("Mount ISO..."), this));
 
     if (this->prefixMontPoint.isEmpty()){
         menuMount->setEnabled(false);
         emit(changeStatusText(tr("No mount point set in prefix configuration.")));
     } else {
-        std::auto_ptr<QMenu> submenuMount (new QMenu(tr("Mount [%1]").arg(CoreLib->getMountedImages(this->prefixMontPoint)), this));
-        std::auto_ptr<QAction> entry;
+        std::unique_ptr<QMenu> submenuMount (new QMenu(tr("Mount [%1]").arg(CoreLib->getMountedImages(this->prefixMontPoint)), this));
+        std::unique_ptr<QAction> entry;
 
         if (this->cdromDevices.count() > 0){
             QString drive;
@@ -448,7 +448,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
     }
 
     if (isOnItemEvent){
-        std::auto_ptr<QAction> entry (new QAction(tr("Run"), this));
+        std::unique_ptr<QAction> entry (new QAction(tr("Run"), this));
         entry->setStatusTip(tr("Run current icon"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconRun_Click()));
         menu->addAction(entry.release());
@@ -492,7 +492,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(iconDelete_Click()));
         menu->addAction(entry.release());
 
-        std::auto_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
+        std::unique_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
 
         entry.reset(new QAction(CoreLib->loadIcon("document-open"), tr("Open application directory"), this));
         entry->setStatusTip(tr("Open application directory in system file browser"));
@@ -592,9 +592,9 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         // End of clipboard meny
     } else {
         // Default menu
-        std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
+        std::unique_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
 
-        std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("document-open"), tr("Browse..."), this));
+        std::unique_ptr<QAction> entry (new QAction(CoreLib->loadIcon("document-open"), tr("Browse..."), this));
         entry->setStatusTip(tr("Browse for application"));
         menuRun->addAction(entry.release());
 
@@ -651,7 +651,7 @@ void IconListWidget::contextMenuEvent (QContextMenuEvent * event){
         menu->addSeparator();
         menu->addMenu(menuMount.release());
 
-        std::auto_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
+        std::unique_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
         entry.reset(new QAction(CoreLib->loadIcon("drive-harddisk"), tr("Open prefix directory"), this));
         entry->setStatusTip(tr("Open prefix directory in system file browser"));
         connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenPrefixDir_Click()));
@@ -742,7 +742,7 @@ void IconListWidget::iconRename_Click(void){
     if (selectedItems().count()<=0)
         return;
 
-    std::auto_ptr<QListWidgetItem> iconItem (selectedItems().first());
+    std::unique_ptr<QListWidgetItem> iconItem (selectedItems().first());
     if (!iconItem.get()){
         iconItem.release();
         return;
@@ -798,7 +798,7 @@ void IconListWidget::iconDelete_Click(void){
 }
 
 void IconListWidget::iconRun_Click(void){
-    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+    std::unique_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
     if (iconItem.get())
         this->itemDoubleClicked(iconItem.get());
 
@@ -931,7 +931,7 @@ void IconListWidget::iconOption_Click(void){
     if (selectedItems().count()<=0)
         return;
 
-    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+    std::unique_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
     if (!iconItem.get())
         return;
 
@@ -951,7 +951,7 @@ void IconListWidget::iconSearchAppDB_Click(void){
     if (selectedItems().count()<=0)
         return;
 
-    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+    std::unique_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
     if (!iconItem.get())
         return;
 
@@ -978,7 +978,7 @@ void IconListWidget::iconCopyWrkDir_Click(){
     if (selectedItems().count()<=0)
         return;
 
-    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+    std::unique_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
     if (!iconItem.get())
         return;
 
@@ -998,7 +998,7 @@ void IconListWidget::iconCopyProgramPath_Click(){
     if (selectedItems().count()<=0)
         return;
 
-    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+    std::unique_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
     if (!iconItem.get())
         return;
 
@@ -1016,7 +1016,7 @@ void IconListWidget::iconCopyQ4WineCmd_Click(){
     if (selectedItems().count()<=0)
         return;
 
-    std::auto_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
+    std::unique_ptr<QListWidgetItem> iconItem (this->selectedItems().first());
     if (!iconItem.get())
         return;
 
@@ -1182,7 +1182,7 @@ void IconListWidget::xdgOpenMountDir_Click(void){
 void IconListWidget::xdgOpenIconDir_Click(void){
     QCursor cur;
 
-    std::auto_ptr<QListWidgetItem> item (this->currentItem());
+    std::unique_ptr<QListWidgetItem> item (this->currentItem());
     if (!item.get()){
         item.release();
         return;
@@ -1224,7 +1224,7 @@ void IconListWidget::winefileOpenMountDir_Click(void){
 void IconListWidget::winefileOpenIconDir_Click(void){
     QCursor cur;
 
-    std::auto_ptr<QListWidgetItem> item (this->currentItem());
+    std::unique_ptr<QListWidgetItem> item (this->currentItem());
     if (!item.get()){
         item.release();
         return;
@@ -1270,7 +1270,7 @@ void IconListWidget::consoleToMountDir_Click(void){
 }
 
 void IconListWidget::consoleToIconDir_Click(void){
-    std::auto_ptr<QListWidgetItem> item (this->currentItem());
+    std::unique_ptr<QListWidgetItem> item (this->currentItem());
     if (!item.get()){
         item.release();
         return;

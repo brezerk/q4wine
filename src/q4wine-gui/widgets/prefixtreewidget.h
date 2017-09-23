@@ -79,7 +79,7 @@ private:
       QLibrary libq4wine;
       typedef void *CoreLibPrototype (bool);
       CoreLibPrototype *CoreLibClassPointer;
-      std::auto_ptr<corelib> CoreLib;
+      std::unique_ptr<corelib> CoreLib;
 
       // Database classes
       Image db_image;

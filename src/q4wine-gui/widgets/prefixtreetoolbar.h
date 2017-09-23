@@ -57,14 +57,14 @@ private:
     QLibrary libq4wine;
     typedef void *CoreLibPrototype (bool);
     CoreLibPrototype *CoreLibClassPointer;
-    std::auto_ptr<corelib> CoreLib;
+    std::unique_ptr<corelib> CoreLib;
 
     void createActions(void);
 
-    std::auto_ptr<QAction> treeState;
+    std::unique_ptr<QAction> treeState;
 
-    std::auto_ptr<QAction> prefixImport;
-    std::auto_ptr<QAction> prefixExport;
+    std::unique_ptr<QAction> prefixImport;
+    std::unique_ptr<QAction> prefixExport;
 
     int tree_state;
 

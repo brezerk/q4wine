@@ -103,7 +103,7 @@ void Run::prepare(QString prefix_name, QString wrkdir, QString override, QString
 
             QStringList list2 = overrideS.at(i).split("=");
             twDlls->insertRow (0);
-            std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(list2.at(0)));
+            std::unique_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(list2.at(0)));
             newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable );
             twDlls->setItem(0, 0, newItem.release());
 
@@ -141,11 +141,11 @@ void Run::cmdCancel_Click(){
 void Run::cmdAdd_Click(){
     if (!cboxDlls->currentText().isEmpty()){
         twDlls->insertRow (0);
-        std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(cboxDlls->currentText()));
+        std::unique_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(cboxDlls->currentText()));
         newItem->setFlags( Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable );
         twDlls->setItem(0, 0, newItem.release());
 
-        std::auto_ptr<QComboBox> overidebox (new QComboBox(twDlls));
+        std::unique_ptr<QComboBox> overidebox (new QComboBox(twDlls));
         overidebox->addItem(tr("Native"));
         overidebox->addItem(tr("Built-in"));
         overidebox->addItem(tr("Native, Built-in"));
@@ -223,7 +223,7 @@ bool Run::eventFilter( QObject *object, QEvent *event )
     if (object == twDlls)
         if (event->type() == QEvent::KeyPress)
         {   // if yes, we need to cast the event
-        std::auto_ptr<QKeyEvent> keyEvent (static_cast<QKeyEvent*>(event));
+        std::unique_ptr<QKeyEvent> keyEvent (static_cast<QKeyEvent*>(event));
         if (keyEvent->key()==Qt::Key_Delete)
             twDlls->removeRow(twDlls->currentRow());
         keyEvent.release();

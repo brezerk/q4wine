@@ -35,7 +35,7 @@ AppTestWidget::AppTestWidget(const WineAppDBInfo appinfo, QWidget *parent) : QWi
         lblWhatWasNotTested->setText(appinfo.nottested);
 
         if (!appinfo.url.isEmpty()){
-            std::auto_ptr<LinkItemWidget> label(new LinkItemWidget("App web page", 6));
+            std::unique_ptr<LinkItemWidget> label(new LinkItemWidget("App web page", 6));
             label->setSearchUrl(appinfo.url);
             label->setToolTip(appinfo.url);
             connect (label.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SIGNAL(itemTrigged(short int, QString, int, int, int)));
@@ -85,7 +85,7 @@ void AppTestWidget::addBugs(QList<WineAppDBBug> bugs){
         grpKnownBugs->setVisible(false);
 
     for (int i=0; i<bugs.count(); i++){
-        std::auto_ptr<LineItemWidget> version(new LineItemWidget(7));
+        std::unique_ptr<LineItemWidget> version(new LineItemWidget(7));
         version->setAppId(bugs.at(i).id);
         version->addLabel(QString("%1").arg(bugs.at(i).id), 70, 1);
         version->addLabel(bugs.at(i).desc, -1, 3, true);
@@ -99,7 +99,7 @@ void AppTestWidget::addBugs(QList<WineAppDBBug> bugs){
 
 void AppTestWidget::addComments(QList<WineAppDBComment> comments){
     for (int i=0; i<comments.count(); i++){
-        std::auto_ptr<CommentWidget> comment (new CommentWidget(comments.at(i)));
+        std::unique_ptr<CommentWidget> comment (new CommentWidget(comments.at(i)));
         connect(comment.get(), SIGNAL(requestParentComment(int)), this, SLOT(requestParentComment(int)));
         TestLayout->addWidget(comment.release());
     }
@@ -112,7 +112,7 @@ void AppTestWidget::addTestResults(QList<WineAppDBTestResult> tests){
         grpTestResults->setVisible(false);
 
     for (int i=0; i<tests.count(); i++){
-        std::auto_ptr<LineItemWidget> version (new LineItemWidget(4));
+        std::unique_ptr<LineItemWidget> version (new LineItemWidget(4));
         version->setAppId(this->appid);
         version->setAppVerId(this->verid);
         version->setTestId(tests.at(i).id);

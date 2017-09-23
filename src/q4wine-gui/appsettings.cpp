@@ -46,7 +46,7 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
 
     splitter->setSizes(size);
 
-    std::auto_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
+    std::unique_ptr<QVBoxLayout> vlayout (new QVBoxLayout);
     vlayout->addWidget(splitter.release());
     vlayout->setMargin(0);
     vlayout->setSpacing(0);
@@ -402,7 +402,7 @@ bool AppSettings::eventFilter(QObject *obj, QEvent *event){
             a.append("txt");
             a.append(obj->objectName().right(obj->objectName().length()-6));
 
-            std::auto_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
+            std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
 
             if (lineEdit.get()){
                 lineEdit->setText(file);
@@ -746,7 +746,7 @@ bool AppSettings::checkEntry(QString fileName, QString info, bool isFile){
 void AppSettings::cmdHelp_Click(){
     QString rawurl;
 
-    std::auto_ptr<QTreeWidgetItem> item (optionsTree->currentItem());
+    std::unique_ptr<QTreeWidgetItem> item (optionsTree->currentItem());
     if (!item.get()){
          item.release();
          return;

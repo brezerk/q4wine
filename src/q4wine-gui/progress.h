@@ -59,7 +59,7 @@ private:
     QLibrary libq4wine;
     typedef void *CoreLibPrototype (bool);
     CoreLibPrototype *CoreLibClassPointer;
-    std::auto_ptr<corelib> CoreLib;
+    std::unique_ptr<corelib> CoreLib;
 
     Dir db_dir;
     Icon db_icon;
@@ -73,7 +73,7 @@ private:
     QStringList iconDirs;
     QStringList iconFiles;
 
-    std::auto_ptr<QTimer> t;
+    std::unique_ptr<QTimer> t;
 
 private slots:
     void runAction();

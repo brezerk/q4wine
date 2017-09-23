@@ -32,7 +32,7 @@ CommentWidget::CommentWidget(const WineAppDBComment comment, QWidget * parent) :
 }
 
 void CommentWidget::setTopic(QString topic, int type){
-	std::auto_ptr<LinkItemWidget> label(new LinkItemWidget(topic, 8));
+	std::unique_ptr<LinkItemWidget> label(new LinkItemWidget(topic, 8));
 	label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 	label->setBold(true);
 	label->setWordWrap(true);
@@ -63,7 +63,7 @@ void CommentWidget::setTopic(QString topic, int type){
 }
 
 void CommentWidget::setDate(QString autor, QString date){
-	std::auto_ptr<QLabel> label(new QLabel());
+	std::unique_ptr<QLabel> label(new QLabel());
 	label->setText(QString("by %1 on %2").arg(autor).arg(date));
 	widgetLabelLayout->addWidget(label.release());
 	return;

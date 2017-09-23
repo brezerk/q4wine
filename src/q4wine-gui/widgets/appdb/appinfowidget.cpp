@@ -26,7 +26,7 @@ AppInfoWidget::AppInfoWidget(QString name, QString desc, const int appid, QList<
     this->appid=appid;
 
     for (int i=0; i<versions.count(); i++){
-        std::auto_ptr<LineItemWidget> version(new LineItemWidget(4));
+        std::unique_ptr<LineItemWidget> version(new LineItemWidget(4));
         version->setAppId(appid);
         version->setAppVerId(versions.at(i).id);
         version->addLabel(versions.at(i).appver);

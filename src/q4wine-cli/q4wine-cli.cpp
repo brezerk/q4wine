@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     //! This is need for libq4wine-core.so import;
     typedef void *CoreLibPrototype (bool);
     CoreLibPrototype *CoreLibClassPointer;
-    std::auto_ptr<corelib> CoreLib;
+    std::unique_ptr<corelib> CoreLib;
 
     // Loading libq4wine-core.so
     QLibrary libq4wine;

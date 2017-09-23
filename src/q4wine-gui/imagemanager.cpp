@@ -108,7 +108,7 @@ void ImageManager::getCDImages(void){
 				tableImage->item(curRows - 1, 0)->setIcon (QIcon());
 			}
 		} else {
-			std::auto_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(result.at(i).at(0)));
+			std::unique_ptr<QTableWidgetItem> newItem (new QTableWidgetItem(result.at(i).at(0)));
 			if (!file.exists ()){
                 newItem->setIcon (CoreLib->loadIcon("dialog-warning"));
 			} else {
@@ -136,7 +136,7 @@ void ImageManager::getCDImages(void){
 }
 
 void ImageManager::loadThemeIcons(){
-	std::auto_ptr<QToolBar> managerToolBar (new QToolBar(tlbManager));
+	std::unique_ptr<QToolBar> managerToolBar (new QToolBar(tlbManager));
 
     actionAdd.reset(managerToolBar->addAction (CoreLib->loadIcon("document-new"), tr("Add image")));
 	connect(actionAdd.get(), SIGNAL(triggered()), this, SLOT(actionAddImage()));
@@ -154,7 +154,7 @@ void ImageManager::loadThemeIcons(){
     actionRefresh.reset(managerToolBar->addAction (CoreLib->loadIcon("view-refresh"), tr("Refresh image list")));
 	connect(actionRefresh.get(), SIGNAL(triggered()), this, SLOT(actionRefreshImageList()));
 
-	std::auto_ptr<QBoxLayout> layout (new QBoxLayout(QBoxLayout::TopToBottom));
+	std::unique_ptr<QBoxLayout> layout (new QBoxLayout(QBoxLayout::TopToBottom));
 	layout->addWidget(managerToolBar.release());
 	layout->setMargin(0);
 	layout->setSpacing(0);

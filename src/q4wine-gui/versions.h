@@ -72,7 +72,7 @@ private:
     QLibrary libq4wine;
     typedef void *CoreLibPrototype (bool);
     CoreLibPrototype *CoreLibClassPointer;
-    std::auto_ptr<corelib> CoreLib;
+    std::unique_ptr<corelib> CoreLib;
 
     void createActions();
     void loadThemeIcons();
@@ -81,16 +81,16 @@ private:
     bool saveChanges();
     bool fileExists(QString path, bool check_dir = false);
 
-    //std::auto_ptr<VersionListWidget> listPrefix;
-    std::auto_ptr<Version> currentVersion;
+    //std::unique_ptr<VersionListWidget> listPrefix;
+    std::unique_ptr<Version> currentVersion;
     bool currentVersionChanged_;
 
-    std::auto_ptr<QSplitter> splitter;
-    std::auto_ptr<QAction> addVersion;
-    std::auto_ptr<QAction> delVersion;
-    std::auto_ptr<QAction> saveVersion;
-    std::auto_ptr<QLineEdit> searchField;
-    std::auto_ptr<QAction> searchClear;
+    std::unique_ptr<QSplitter> splitter;
+    std::unique_ptr<QAction> addVersion;
+    std::unique_ptr<QAction> delVersion;
+    std::unique_ptr<QAction> saveVersion;
+    std::unique_ptr<QLineEdit> searchField;
+    std::unique_ptr<QAction> searchClear;
 
 protected:
     bool eventFilter(QObject *obj, QEvent *ev);

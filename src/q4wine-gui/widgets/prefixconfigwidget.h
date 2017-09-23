@@ -87,29 +87,29 @@ private:
     QLibrary libq4wine;
     typedef void *CoreLibPrototype (bool);
     CoreLibPrototype *CoreLibClassPointer;
-    std::auto_ptr<corelib> CoreLib;
+    std::unique_ptr<corelib> CoreLib;
 
     Prefix db_prefix;
     Sysconfig db_sysconfig;
 
-    std::auto_ptr<QAction> prefixManage;
-    std::auto_ptr<QAction> searchClear;
-    std::auto_ptr<QAction> sortAlpha;
-    std::auto_ptr<QLineEdit> searchField;
+    std::unique_ptr<QAction> prefixManage;
+    std::unique_ptr<QAction> searchClear;
+    std::unique_ptr<QAction> sortAlpha;
+    std::unique_ptr<QLineEdit> searchField;
 
-    std::auto_ptr<QComboBox> cbPrefixes;
-    std::auto_ptr<QLabel> infoName;
+    std::unique_ptr<QComboBox> cbPrefixes;
+    std::unique_ptr<QLabel> infoName;
 
     QString provider;
     QString subtype;
 
     int sort_order;
 
-    std::auto_ptr<QTreeWidget> treeWidget;
-    std::auto_ptr<QListWidget> listWidget;
-    std::auto_ptr<QSplitter> splitter;
+    std::unique_ptr<QTreeWidget> treeWidget;
+    std::unique_ptr<QListWidget> listWidget;
+    std::unique_ptr<QSplitter> splitter;
 
-    //std::auto_ptr<QMenu> menu;
+    //std::unique_ptr<QMenu> menu;
 
     void createActions(void);
     void createTree(void);

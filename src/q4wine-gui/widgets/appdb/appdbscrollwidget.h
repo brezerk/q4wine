@@ -57,8 +57,8 @@ private:
 	void gotoCommentId(int id);
 	void hideAll(void);
 
-	std::auto_ptr<QWidget> contentWidget;
-	std::auto_ptr<QVBoxLayout> contentLayout;
+	std::unique_ptr<QWidget> contentWidget;
+	std::unique_ptr<QVBoxLayout> contentLayout;
 
 };
 

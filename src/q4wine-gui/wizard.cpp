@@ -270,7 +270,7 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
             a.append("txt");
             a.append(obj->objectName().right(obj->objectName().length()-6));
 
-            std::auto_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
+            std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
             if (lineEdit.get()){
                 lineEdit->setText(file);
             } else {

@@ -147,14 +147,14 @@ private:
         //! Custom Widgets
         //DragListWidget* lstIcons;
 #ifdef WITH_WINEAPPDB
-        std::auto_ptr<AppDBWidget> appdbWidget;
+        std::unique_ptr<AppDBWidget> appdbWidget;
 #endif
-        std::auto_ptr<QLocalServer> serverSoket;
+        std::unique_ptr<QLocalServer> serverSoket;
 
         //! This is need for libq4wine-core.so import;
         typedef void *CoreLibPrototype (bool);
             CoreLibPrototype *CoreLibClassPointer;
-            std::auto_ptr<corelib> CoreLib;
+            std::unique_ptr<corelib> CoreLib;
         QLibrary libq4wine;
 
         //Classes
@@ -165,7 +165,7 @@ private:
         system_menu sys_menu;
 #endif
         // Tray icon
-        std::auto_ptr<QSystemTrayIcon> trayIcon;
+        std::unique_ptr<QSystemTrayIcon> trayIcon;
 
         bool createSocket();
         void showSocketError(QString message);
@@ -176,7 +176,7 @@ private:
         void clearTmp();
         void showNotifycation(const QString header, const QString message);
 
-        std::auto_ptr<QSplitter> splitter;
+        std::unique_ptr<QSplitter> splitter;
 
 //        void getWineMenuIcons(void);
 //        void parseIcons(void);

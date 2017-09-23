@@ -37,7 +37,7 @@ AppDBScrollWidget::AppDBScrollWidget(QWidget *parent) : QScrollArea(parent)
 
 void AppDBScrollWidget::addSearchWidget(const WineAppDBInfo appinfo){
     if (contentLayout.get()){
-        std::auto_ptr<AppInfoWidget> AppDBWidget(new AppInfoWidget(appinfo.name, appinfo.desc, appinfo.id, appinfo.versions));
+        std::unique_ptr<AppInfoWidget> AppDBWidget(new AppInfoWidget(appinfo.name, appinfo.desc, appinfo.id, appinfo.versions));
         connect(AppDBWidget.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SIGNAL(itemTrigged(short int, QString, int, int, int)));
         contentLayout->addWidget(AppDBWidget.release());
     }
@@ -46,7 +46,7 @@ void AppDBScrollWidget::addSearchWidget(const WineAppDBInfo appinfo){
 
 void AppDBScrollWidget::addTestWidget(const WineAppDBInfo appinfo){
     if (contentLayout.get()){
-        std::auto_ptr<AppTestWidget> AppDBTestWidget (new AppTestWidget(appinfo));
+        std::unique_ptr<AppTestWidget> AppDBTestWidget (new AppTestWidget(appinfo));
         AppDBTestWidget->setObjectName("appViewTestWidget");
         connect(AppDBTestWidget.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SIGNAL(itemTrigged(short int, QString, int, int, int)));
         connect(AppDBTestWidget.get(), SIGNAL(scrollToPos(int)), this, SLOT(scrollToPos(int)));
@@ -81,7 +81,7 @@ void AppDBScrollWidget::clear(void){
 
 void AppDBScrollWidget::insertStretch(void){
     if (contentLayout.get()){
-        std::auto_ptr<QWidget> visibleStrech(new QWidget());
+        std::unique_ptr<QWidget> visibleStrech(new QWidget());
         visibleStrech->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
         contentLayout->addWidget(visibleStrech.release());
     }
@@ -91,11 +91,11 @@ void AppDBScrollWidget::addVersionFrame(QList<WineAppDBCategory> list, QString f
     if (list.count()<=0)
         return;
 
-    std::auto_ptr<QGroupBox> frame(new QGroupBox(QString("%1:").arg(frame_caption)));
-    std::auto_ptr<QVBoxLayout> layout(new QVBoxLayout());
+    std::unique_ptr<QGroupBox> frame(new QGroupBox(QString("%1:").arg(frame_caption)));
+    std::unique_ptr<QVBoxLayout> layout(new QVBoxLayout());
 
     for (int i=0; i<list.count(); i++){
-        std::auto_ptr<LineItemWidget> version(new LineItemWidget(action));
+        std::unique_ptr<LineItemWidget> version(new LineItemWidget(action));
         version->setAppId(list.at(i).id);
         version->addLabel(list.at(i).name, 240, 3);
         version->addLabel(list.at(i).desc, -1, 3, true);

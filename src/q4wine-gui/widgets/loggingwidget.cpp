@@ -45,7 +45,7 @@ LoggingWidget::LoggingWidget(QWidget *parent) :
 
     this->createActions();
 
-    std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
+    std::unique_ptr<QToolBar> toolBar (new QToolBar(this));
     toolBar->setIconSize(QSize(24, 24));
     toolBar->addAction(logClear.get());
     toolBar->addSeparator();
@@ -75,7 +75,7 @@ LoggingWidget::LoggingWidget(QWidget *parent) :
     splitter->addWidget(treeWidget.get());
     splitter->addWidget(listWidget.get());
 
-    std::auto_ptr<QVBoxLayout> layout (new QVBoxLayout(this));
+    std::unique_ptr<QVBoxLayout> layout (new QVBoxLayout(this));
     layout->setSpacing(0);
     layout->setContentsMargins(0,0,0,0);
     layout->addWidget(toolBar.release());
@@ -166,7 +166,7 @@ void LoggingWidget::treeWidget_itemClicked (QTreeWidgetItem * item, int column){
         logDelete->setEnabled(true);
         return;
     } else {
-        std::auto_ptr<QTreeWidgetItem> p_item (item->parent());
+        std::unique_ptr<QTreeWidgetItem> p_item (item->parent());
         if (!p_item->parent()){
             p_item.release();
             logExport->setEnabled(false);
@@ -184,7 +184,7 @@ void LoggingWidget::treeWidget_itemClicked (QTreeWidgetItem * item, int column){
                 for (int j=0; j<rows.count(); j++){
                     if (!rows.at(j).isEmpty()){
 
-                        std::auto_ptr<QListWidgetItem> iconItem (new QListWidgetItem(this->listWidget.get(), 0));
+                        std::unique_ptr<QListWidgetItem> iconItem (new QListWidgetItem(this->listWidget.get(), 0));
 
 
                         if( j & 1 ){
@@ -247,10 +247,10 @@ void LoggingWidget::logDelete_Click(){
     if (!this->treeWidget->currentItem())
         return;
 
-    std::auto_ptr<QTreeWidgetItem> item (this->treeWidget->currentItem());
+    std::unique_ptr<QTreeWidgetItem> item (this->treeWidget->currentItem());
 
     if (item->parent()){
-        std::auto_ptr<QTreeWidgetItem> parentItem (item->parent());
+        std::unique_ptr<QTreeWidgetItem> parentItem (item->parent());
 
         if (parentItem->parent()){
             db_log.deleteLogs(parentItem->parent()->text(0), parentItem->text(0), item->text(0));
@@ -273,7 +273,7 @@ void LoggingWidget::logExport_Click(){
     if (!this->treeWidget->currentItem())
         return;
 
-    std::auto_ptr<QTreeWidgetItem> item (this->treeWidget->currentItem());
+    std::unique_ptr<QTreeWidgetItem> item (this->treeWidget->currentItem());
 
     if (!item.get()){
         logExport->setEnabled(false);
@@ -289,7 +289,7 @@ void LoggingWidget::logExport_Click(){
         item.release();
         return;
     } else {
-        std::auto_ptr<QTreeWidgetItem> p_item (item->parent());
+        std::unique_ptr<QTreeWidgetItem> p_item (item->parent());
         if (!p_item->parent()){
             p_item.release();
             logExport->setEnabled(false);
@@ -395,14 +395,14 @@ void LoggingWidget::getLogRecords(void){
 
             logClear->setEnabled(true);
 
-            std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeWidget.get()));
+            std::unique_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeWidget.get()));
             prefixItem->setText(0, QString("%1").arg(p_list.at(i)));
             prefixItem->setIcon(0, CoreLib->loadIcon("wine"));
             prefixItem->setExpanded (true);
             treeWidget->addTopLevelItem(prefixItem.get());
 
             for (int j=0; j<app_list.count(); j++){
-                std::auto_ptr<QTreeWidgetItem> appItem (new QTreeWidgetItem(prefixItem.get(), 0));
+                std::unique_ptr<QTreeWidgetItem> appItem (new QTreeWidgetItem(prefixItem.get(), 0));
                 appItem->setText(0, QString("%1").arg(app_list.at(j)));
                 appItem->setIcon(0, CoreLib->loadIcon("application-x-ms-dos-executable"));
                 appItem->setExpanded(true);
@@ -418,7 +418,7 @@ void LoggingWidget::getLogRecords(void){
 
                     int exit = date_list.value(date_keys.at(n));
 
-                    std::auto_ptr<QTreeWidgetItem> dateItem (new QTreeWidgetItem(appItem.get(), 0));
+                    std::unique_ptr<QTreeWidgetItem> dateItem (new QTreeWidgetItem(appItem.get(), 0));
                     dateItem->setText(0, QString("%1").arg(date.toString("dd.MM.yyyy hh:mm:ss")));
 
                     if (exit==0){

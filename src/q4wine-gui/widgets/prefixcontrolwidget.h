@@ -70,21 +70,21 @@ private:
 	QLibrary libq4wine;
 	typedef void *CoreLibPrototype (bool);
 	CoreLibPrototype *CoreLibClassPointer;
-	std::auto_ptr<corelib> CoreLib;
+	std::unique_ptr<corelib> CoreLib;
 
 	void createActions();
 
-	std::auto_ptr<QSqlQueryModel> model;
+	std::unique_ptr<QSqlQueryModel> model;
 
-	std::auto_ptr<QTableView> prefixTable;
-	std::auto_ptr<QMenu> menu;
-	std::auto_ptr<QAction> prefixAdd;
-	std::auto_ptr<QAction> prefixDelete;
-	std::auto_ptr<QAction> prefixSettings;
-	std::auto_ptr<QAction> prefixImport;
-	std::auto_ptr<QAction> prefixExport;
-    std::auto_ptr<QAction> prefixSetup;
-    std::auto_ptr<QAction> versionsSetup;
+	std::unique_ptr<QTableView> prefixTable;
+	std::unique_ptr<QMenu> menu;
+	std::unique_ptr<QAction> prefixAdd;
+	std::unique_ptr<QAction> prefixDelete;
+	std::unique_ptr<QAction> prefixSettings;
+	std::unique_ptr<QAction> prefixImport;
+	std::unique_ptr<QAction> prefixExport;
+    std::unique_ptr<QAction> prefixSetup;
+    std::unique_ptr<QAction> versionsSetup;
 
 	void updateTableModel(void);
 

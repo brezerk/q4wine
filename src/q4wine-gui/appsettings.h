@@ -57,13 +57,13 @@ class AppSettings : public QDialog, public Ui::AppSettings
         bool checkEntry(QString fileName, QString info, bool isFile = true);
         void loadThemeIcons();
 
-        std::auto_ptr<QSplitter> splitter;
+        std::unique_ptr<QSplitter> splitter;
 
         //! This is need for libq4wine-core.so import.
         QLibrary libq4wine;
         typedef void *CoreLibPrototype (bool);
         CoreLibPrototype *CoreLibClassPointer;
-        std::auto_ptr<corelib> CoreLib;
+        std::unique_ptr<corelib> CoreLib;
         QHash<QString, QString> lng_hash;
 };
 

@@ -39,7 +39,7 @@ LineItemWidget::~LineItemWidget(){
 }
 
 void LineItemWidget::addLabel(const QString text, const short int width, const short int aligment, const bool worldwarp){
-    std::auto_ptr<QLabel> label(new QLabel(this));
+    std::unique_ptr<QLabel> label(new QLabel(this));
 
     switch (aligment){
         case 0:

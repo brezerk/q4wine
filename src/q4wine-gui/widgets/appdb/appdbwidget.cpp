@@ -45,7 +45,7 @@ AppDBWidget::AppDBWidget(QWidget *parent) : QWidget(parent)
 
     this->createActions();
 
-    std::auto_ptr<QToolBar> toolbar (new QToolBar());
+    std::unique_ptr<QToolBar> toolbar (new QToolBar());
     toolbar->setIconSize(QSize(24, 24));
     toolbar->addAction(appdbOpen.get());
     toolbar->addAction(appdbAppPage.get());
@@ -67,7 +67,7 @@ AppDBWidget::AppDBWidget(QWidget *parent) : QWidget(parent)
     connect(appdbScrollArea.get(), SIGNAL(itemTrigged(short int, QString, int, int, int)), this, SLOT(itemTrigged(short int, QString, int, int, int)));
 
     //Add custom widgets to mail layout
-    std::auto_ptr<QVBoxLayout> contentLayout(new QVBoxLayout(this));
+    std::unique_ptr<QVBoxLayout> contentLayout(new QVBoxLayout(this));
     contentLayout->setMargin(0);
     contentLayout->setSpacing(0);
     contentLayout->addWidget(toolbar.release());

@@ -32,7 +32,7 @@ AppDBHeaderWidget::AppDBHeaderWidget(QWidget * parent) : QFrame(parent)
 
 void AppDBHeaderWidget::addLabel(QString info){
     if (contentLayout.get()){
-        std::auto_ptr<QLabel> label(new QLabel(info));
+        std::unique_ptr<QLabel> label(new QLabel(info));
         contentLayout->addWidget(label.release());
     }
     return;
@@ -41,7 +41,7 @@ void AppDBHeaderWidget::addLabel(QString info){
 void AppDBHeaderWidget::addLink(QString text, bool enabled, short int action, QString search, int value){
     if (contentLayout.get()){
 
-        std::auto_ptr<LinkItemWidget> label(new LinkItemWidget(text, action));
+        std::unique_ptr<LinkItemWidget> label(new LinkItemWidget(text, action));
         if (!enabled)
             label->setEnabled(enabled);
         label->setSearchUrl(search);
@@ -66,7 +66,7 @@ void AppDBHeaderWidget::setLayout(short int direction){
 }
 
 void AppDBHeaderWidget::insertStretch(void){
-    std::auto_ptr<QWidget> visibleStrech(new QWidget());
+    std::unique_ptr<QWidget> visibleStrech(new QWidget());
     visibleStrech->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     contentLayout->addWidget(visibleStrech.release());
     return;

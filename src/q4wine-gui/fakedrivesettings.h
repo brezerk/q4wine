@@ -95,13 +95,13 @@ private:
    bool eventFilter(QObject *obj, QEvent *event);
    bool wine64;
 
-    std::auto_ptr<QSplitter> splitter;
+    std::unique_ptr<QSplitter> splitter;
 
     //! This is need for libq4wine-core.so import.
     QLibrary libq4wine;
     typedef void *CoreLibPrototype (bool);
     CoreLibPrototype *CoreLibClassPointer;
-    std::auto_ptr<corelib> CoreLib;
+    std::unique_ptr<corelib> CoreLib;
 
     //! Database prefix class defenition.
     Prefix db_prefix;

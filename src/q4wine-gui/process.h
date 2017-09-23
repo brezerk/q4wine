@@ -49,7 +49,7 @@ class Process : public QDialog, public Ui::Process
 
 	private:
 		bool showErr;
-		std::auto_ptr<QProcess> myProcess;
+		std::unique_ptr<QProcess> myProcess;
 
 		QString getLocale();
 };

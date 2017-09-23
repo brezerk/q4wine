@@ -39,7 +39,7 @@ PrefixTreeToolbar::PrefixTreeToolbar(QWidget *parent) :
     this->tree_state = CoreLib->getSetting("TreeWidget", "State", false, D_TREE_EXPAND).toInt();
     this->createActions();
 
-    std::auto_ptr<QToolBar> toolBar (new QToolBar(this));
+    std::unique_ptr<QToolBar> toolBar (new QToolBar(this));
 
     toolBar->setIconSize(QSize(24, 24));
     toolBar->addAction(treeState.get());
@@ -47,7 +47,7 @@ PrefixTreeToolbar::PrefixTreeToolbar(QWidget *parent) :
     toolBar->addAction(prefixExport.get());
     toolBar->addAction(prefixImport.get());
 
-    std::auto_ptr<QVBoxLayout> layout (new QVBoxLayout(this));
+    std::unique_ptr<QVBoxLayout> layout (new QVBoxLayout(this));
     layout->setSpacing(0);
     layout->setContentsMargins(0,0,0,0);
     layout->addWidget(toolBar.release());

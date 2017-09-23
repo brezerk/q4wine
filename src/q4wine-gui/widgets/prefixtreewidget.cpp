@@ -52,7 +52,7 @@ PrefixTreeWidget::PrefixTreeWidget(QWidget *parent) :
 }
 
 PrefixTreeWidget::~PrefixTreeWidget(){
-    std::auto_ptr<QTreeWidgetItem> treeItem (this->currentItem());
+    std::unique_ptr<QTreeWidgetItem> treeItem (this->currentItem());
 
     QSettings settings(APP_SHORT_NAME, "default");
     settings.beginGroup("LastPrefix");
@@ -97,7 +97,7 @@ void PrefixTreeWidget::itemClicked (QTreeWidgetItem *item, int){
 void PrefixTreeWidget::dirAdd_Click(void){
       bool ok=false;
       QString dirname = QInputDialog::getText(this, tr("Enter new directory name"), tr("Directory name:"), QLineEdit::Normal, "" , &ok);
-      std::auto_ptr<QTreeWidgetItem> treeItem (this->currentItem());
+      std::unique_ptr<QTreeWidgetItem> treeItem (this->currentItem());
 
       if (!treeItem.get()){
             treeItem.release();
@@ -125,7 +125,7 @@ void PrefixTreeWidget::dirAdd_Click(void){
 #endif
 
             if (treeItem->parent()){
-                std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem->parent()));
+                std::unique_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem->parent()));
                 prefixItem->setText(0, dirname);
                 if (dirname=="import"){
                     prefixItem->setIcon(0, CoreLib->loadIcon("folder-cyan"));
@@ -134,7 +134,7 @@ void PrefixTreeWidget::dirAdd_Click(void){
                 }
                 prefixItem.release();
             } else {
-                std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem.get()));
+                std::unique_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(treeItem.get()));
                 prefixItem->setText(0, dirname);
                 if (dirname=="import"){
                     prefixItem->setIcon(0, CoreLib->loadIcon("folder-cyan"));
@@ -151,7 +151,7 @@ void PrefixTreeWidget::dirAdd_Click(void){
 }
 
 void PrefixTreeWidget::dirRename_Click(void){
-    std::auto_ptr<QTreeWidgetItem> treeItem (this->currentItem());
+    std::unique_ptr<QTreeWidgetItem> treeItem (this->currentItem());
 
       if (!treeItem.get())
             return;
@@ -185,7 +185,7 @@ void PrefixTreeWidget::dirRename_Click(void){
 }
 
 void PrefixTreeWidget::dirDelete_Click(void){
-    std::auto_ptr<QTreeWidgetItem> treeItem (this->currentItem());
+    std::unique_ptr<QTreeWidgetItem> treeItem (this->currentItem());
 
     if (!treeItem.get())
         return;
@@ -218,7 +218,7 @@ void PrefixTreeWidget::getPrefixes(){
       QStringList list = db_prefix.getPrefixList();
       for (int i = 0; i < list.size(); ++i) {
             // Inserting root items into programs tree view
-            std::auto_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(this));
+            std::unique_ptr<QTreeWidgetItem> prefixItem (new QTreeWidgetItem(this));
             prefixItem->setText(0, QString("%1").arg(list.at(i)));
             prefixItem->setIcon(0, CoreLib->loadIcon("wine"));
             if (CoreLib->getSetting("TreeWidget", "State", false, D_TREE_EXPAND).toInt()==D_TREE_EXPAND){
@@ -231,7 +231,7 @@ void PrefixTreeWidget::getPrefixes(){
             // Inserting subfolders items into programs tree view
             QStringList subresult = db_dir.getDirList(list.at(i));
             for (int j = 0; j < subresult.size(); ++j) {
-                  std::auto_ptr<QTreeWidgetItem> subPrefixItem (new QTreeWidgetItem(prefixItem.get(), 0));
+                  std::unique_ptr<QTreeWidgetItem> subPrefixItem (new QTreeWidgetItem(prefixItem.get(), 0));
                   subPrefixItem->setText(0, QString("%1").arg(subresult.at(j)));
                   if (subresult.at(j)=="import"){
                       subPrefixItem->setIcon(0, CoreLib->loadIcon("folder-cyan"));
@@ -252,14 +252,14 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 
       this->itemClicked (this->currentItem(), 0);
 
-      std::auto_ptr<QMenu> menu (new QMenu(this));
-      std::auto_ptr<QMenu> menuMount (new QMenu(tr("Mount ISO..."), this));
+      std::unique_ptr<QMenu> menu (new QMenu(this));
+      std::unique_ptr<QMenu> menuMount (new QMenu(tr("Mount ISO..."), this));
 
       if (this->prefixMontPoint.isEmpty()){
             menuMount->setEnabled(false);
       } else {
-            std::auto_ptr<QMenu> submenuMount (new QMenu(tr("Mount [%1]").arg(CoreLib->getMountedImages(this->prefixMontPoint)), this));
-            std::auto_ptr<QAction> entry;
+            std::unique_ptr<QMenu> submenuMount (new QMenu(tr("Mount [%1]").arg(CoreLib->getMountedImages(this->prefixMontPoint)), this));
+            std::unique_ptr<QAction> entry;
 
 
             if (this->cdromDevices.count() > 0){
@@ -319,9 +319,9 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
       }
 
       // Default menu
-            std::auto_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
+            std::unique_ptr<QMenu> menuRun (new QMenu(tr("Run..."), this));
 
-            std::auto_ptr<QAction> entry (new QAction(CoreLib->loadIcon("document-open"), tr("Browse ..."), this));
+            std::unique_ptr<QAction> entry (new QAction(CoreLib->loadIcon("document-open"), tr("Browse ..."), this));
             entry->setStatusTip(tr("Browse for wine binary"));
 
             connect(menuRun.get(), SIGNAL(triggered(QAction*)), this, SLOT(menuRun_triggered(QAction*)));
@@ -364,7 +364,7 @@ void PrefixTreeWidget::contextMenuEvent (QContextMenuEvent * event){
 
             menu->addSeparator();
 
-            std::auto_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
+            std::unique_ptr<QMenu> subMenu (new QMenu(tr("Browser"), this));
             entry.reset(new QAction(CoreLib->loadIcon("drive-harddisk"), tr("Open prefix directory"), this));
             entry->setStatusTip(tr("Open prefix directory in system file browser"));
             connect(entry.get(), SIGNAL(triggered()), this, SLOT(xdgOpenPrefixDir_Click()));
@@ -797,7 +797,7 @@ void PrefixTreeWidget::setDefaultFocus(QString prefixName, QString dirName){
 
         for(int i=0; i < this->topLevelItemCount(); i++)
         {
-            std::auto_ptr<QTreeWidgetItem> item(this->topLevelItem(i));
+            std::unique_ptr<QTreeWidgetItem> item(this->topLevelItem(i));
             if (item->text(0)==prefixName){
                 if (dirName.isEmpty()){
                     this->setFocus();
@@ -808,7 +808,7 @@ void PrefixTreeWidget::setDefaultFocus(QString prefixName, QString dirName){
                     break;
                 } else {
                     for (int j=0; j < item->childCount(); j++){
-                        std::auto_ptr<QTreeWidgetItem> childItem(item->child(j));
+                        std::unique_ptr<QTreeWidgetItem> childItem(item->child(j));
                         if (childItem->text(0)==dirName){
                             this->setCurrentItem(childItem.get());
                             this->itemClicked(childItem.get(), 0);

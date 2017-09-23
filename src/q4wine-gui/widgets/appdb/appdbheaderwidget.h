@@ -59,7 +59,7 @@ signals:
     void itemTrigged(short int, QString, int, int, int);
 
 private:
-    std::auto_ptr<QBoxLayout> contentLayout;
+    std::unique_ptr<QBoxLayout> contentLayout;
     short int pages_len;
 
 };
