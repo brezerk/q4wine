@@ -650,37 +650,37 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-426"/>
         <location line="+428"/>
         <source>Desktop Integration</source>
-        <translation type="unfinished"></translation>
+        <translation>桌面整合</translation>
     </message>
     <message>
         <location line="-463"/>
         <source>Default Wine Desktop Paths for new prefixes.</source>
-        <translation type="unfinished"></translation>
+        <translation>新前綴的預設 Wine 桌面路徑。</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Desktop:</source>
-        <translation type="unfinished">桌面：</translation>
+        <translation>桌面：</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>My Documents:</source>
-        <translation type="unfinished">我的文件：</translation>
+        <translation>我的文件：</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>My Pictures:</source>
-        <translation type="unfinished">我的圖片：</translation>
+        <translation>我的圖片：</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>My Music:</source>
-        <translation type="unfinished">我的音樂：</translation>
+        <translation>我的音樂：</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>My Videos:</source>
-        <translation type="unfinished">我的影片：</translation>
+        <translation>我的影片：</translation>
     </message>
     <message>
         <location line="+43"/>
@@ -859,7 +859,7 @@
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-750"/>
         <location line="+738"/>
         <source>Scripts</source>
-        <translation type="unfinished">指令稿</translation>
+        <translation>指令稿</translation>
     </message>
     <message>
         <location line="-570"/>
@@ -999,12 +999,12 @@
     <message>
         <location line="-2403"/>
         <source>&amp;Reset to default</source>
-        <translation type="unfinished"></translation>
+        <translation>重設為預設值(&amp;R)</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>&amp;Use current Qt colors</source>
-        <translation type="unfinished"></translation>
+        <translation>使用目前的 Qt 色彩(&amp;U)</translation>
     </message>
     <message>
         <location line="+100"/>
@@ -1019,12 +1019,12 @@
     <message>
         <location line="+73"/>
         <source>Post run script will be executed after the Prefix update. Wine environment settings will be exported as well.</source>
-        <translation type="unfinished"></translation>
+        <translation>後執行指令稿將會在前綴更新後執行。Wine 環境設定也將會被匯出。</translation>
     </message>
     <message>
         <location line="+37"/>
         <source>Post run:</source>
-        <translation type="unfinished">執行後：</translation>
+        <translation>後執行：</translation>
     </message>
     <message>
         <location line="+101"/>
@@ -1731,12 +1731,12 @@ See help for details.</source>
     <message>
         <location line="+501"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>磁碟映像檔 (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO 映像檔 (*.iso *.ISO);;所有檔案 (*)</translation>
     </message>
     <message>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
@@ -1963,17 +1963,17 @@ See help for details.</source>
     <message>
         <location line="-60"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Exe, MSI, BAT 檔案 (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe 檔案 (*.exe *.EXE);;MSI 檔案 (*.msi *.MSI);;BAT 檔案 (*.bat *.BAT);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+75"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
-        <translation type="unfinished"></translation>
+        <translation>圖片檔 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>圖片與 Win32 二進位檔 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;圖片檔 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 可執行檔 (*.exe *.EXE);;Win32 共享函式庫 (*.dll *.DLL);;Win32 可執行檔與共享函式庫 (*.exe *.EXE *.dll *.DLL);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+123"/>
@@ -2324,12 +2324,12 @@ See help for details.</source>
     <message>
         <location line="+24"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>磁碟映像檔 (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO 映像檔 (*.iso *.ISO);;所有檔案 (*)</translation>
     </message>
     <message>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
@@ -2639,7 +2639,7 @@ See help for details.</source>
         <location line="-2"/>
         <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Win32 可執行檔與共享函式庫 (*.exe *.EXE *.dll *.DLL);;Win32 可執行檔 (*.exe *.EXE);;Win32 共享函式庫 (*.dll *.DLL);;所有檔案 (*)</translation>
     </message>
     <message>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
@@ -3292,7 +3292,7 @@ See help for details.</source>
         <location line="-2"/>
         <location line="+2"/>
         <source>Prefix archive images (*.tbz *.TBZ);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>前綴封存映像檔 (*.tbz *.TBZ);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+114"/>
@@ -3811,12 +3811,12 @@ See help for details.</source>
     <message>
         <location line="+94"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>磁碟映像檔 (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;所有檔案 (*)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO 映像檔 (*.iso *.ISO);;所有檔案 (*)</translation>
     </message>
     <message>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
@@ -4544,7 +4544,7 @@ See help for details.</source>
     <message>
         <location line="+174"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Exe, MSI, BAT 檔案 (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe 檔案 (*.exe *.EXE);;MSI 檔案 (*.msi *.MSI);;BAT 檔案 (*.bat *.BAT);;所有檔案 (*)</translation>
     </message>
     <message>
         <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
@@ -5272,17 +5272,17 @@ See help for details.</source>
     <message>
         <location line="+10"/>
         <source>Dropping stale items...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在丟棄陳舊的項目...</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Getting list of installed items...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在取得已安裝項目的清單...</translation>
     </message>
     <message>
         <location line="+73"/>
         <source>Adding verb: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>正在加入動詞：%1</translation>
     </message>
     <message>
         <source>Reading category: %1</source>
