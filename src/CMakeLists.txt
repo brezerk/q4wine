@@ -106,18 +106,18 @@ MESSAGE(STATUS "Build realm is   : ${CMAKE_SYSTEM_NAME} ${CMAKE_HOST_SYSTEM_PROC
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
     SET(_OS_LINUX_ 1)
-    ADD_DEFINITIONS(-Wall -g)
+    ADD_DEFINITIONS(-Wall -g -std=c++11)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES Linux)
 
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     SET(_OS_FREEBSD_ 1)
-    ADD_DEFINITIONS(-Wall -g -DKERNEL)
+    ADD_DEFINITIONS(-Wall -g -DKERNEL -std=c++11)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
 IF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
     link_directories(/usr/lib)
     SET(_OS_DARWIN_ 1)
-    ADD_DEFINITIONS(-Wall -g -DKERNEL)
+    ADD_DEFINITIONS(-Wall -g -DKERNEL -std=c++11)
     SET( PROGNAME q4wine )
     SET( MACOSX_BUNDLE_ICON_FILE "q4wine-128x128.icns" )
     SET( MACOSX_BUNDLE_INFO_STRING "Qt utility for Wine applications and prefixes management" )
