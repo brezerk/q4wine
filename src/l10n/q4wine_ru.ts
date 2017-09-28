@@ -594,37 +594,37 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-311"/>
         <location line="+428"/>
         <source>Desktop Integration</source>
-        <translation type="unfinished"></translation>
+        <translation>Интеграция с рабочим столом</translation>
     </message>
     <message>
         <location line="-463"/>
         <source>Default Wine Desktop Paths for new prefixes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Каталог по умолчанию для рабочего стола в новых префиксах wine</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>Desktop:</source>
-        <translation type="unfinished">Рабочий стол:</translation>
+        <translation>Рабочий стол:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>My Documents:</source>
-        <translation type="unfinished">Мои документы:</translation>
+        <translation>Мои документы:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>My Pictures:</source>
-        <translation type="unfinished">Мои изображения:</translation>
+        <translation>Мои изображения:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>My Music:</source>
-        <translation type="unfinished">Моя музыка:</translation>
+        <translation>Моя музыка:</translation>
     </message>
     <message>
         <location line="+44"/>
         <source>My Videos:</source>
-        <translation type="unfinished">Мои видеозаписи:</translation>
+        <translation>Мои видеозаписи:</translation>
     </message>
     <message>
         <location line="+43"/>
@@ -815,7 +815,7 @@
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-750"/>
         <location line="+738"/>
         <source>Scripts</source>
-        <translation type="unfinished">Скрипты</translation>
+        <translation>Скрипты</translation>
     </message>
     <message>
         <location line="-570"/>
@@ -952,12 +952,12 @@
     <message>
         <location line="-107"/>
         <source>&amp;Reset to default</source>
-        <translation type="unfinished"></translation>
+        <translation>Сбросить до умолчаний</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>&amp;Use current Qt colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать цветовую схему Qt</translation>
     </message>
     <message>
         <location line="+147"/>
@@ -967,12 +967,12 @@
     <message>
         <location line="+73"/>
         <source>Post run script will be executed after the Prefix update. Wine environment settings will be exported as well.</source>
-        <translation type="unfinished"></translation>
+        <translation>Данных скрипт будет запущен после обновления префикса wine. А также будут экспортированы настройки окружения wine.</translation>
     </message>
     <message>
         <location line="+37"/>
         <source>Post run:</source>
-        <translation type="unfinished">После запуска:</translation>
+        <translation>После запуска:</translation>
     </message>
     <message>
         <location line="+101"/>
@@ -1687,12 +1687,12 @@ See help for details.</source>
     <message>
         <location line="+501"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы образов (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы ISO (*.iso *.ISO);;Все файлы (*)</translation>
     </message>
     <message>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf);;All files (*)</source>
@@ -2048,17 +2048,17 @@ See help for details.</source>
     <message>
         <location line="-332"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Исполняемые файлы (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Исполняемые файлы EXE (*.exe *.EXE);;Установочные файлы MSI (*.msi *.MSI);;Исполняемые скрипты BAT (*.bat *.BAT);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+75"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
-        <translation type="unfinished"></translation>
+        <translation>Изображения (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Image and Win32 binary files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Изображения и файлы для Win32 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;Изображения (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Исполняемые файлы Win32 (*.exe *.EXE);;Разделяемые библиотеки Win32 (*.dll *.DLL);;Исполняемые файлы и библиотеки Win32 (*.exe *.EXE *.dll *.DLL);;Все файлы (*)</translation>
     </message>
     <message>
         <source>Exe files (*.exe)</source>
@@ -2314,12 +2314,12 @@ See help for details.</source>
     <message>
         <location line="+24"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы образов (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы ISO (*.iso *.ISO);;Все файлы (*)</translation>
     </message>
     <message>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
@@ -2917,7 +2917,7 @@ See help for details.</source>
         <location line="+60"/>
         <location line="+2"/>
         <source>Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Исполняемые файлы и библиотеки Win32 (*.exe *.EXE *.dll *.DLL);;Исполняемые файлы Win32 (*.exe *.EXE);;Библиотеки Win32 (*.dll *.DLL);;Все файлы (*)</translation>
     </message>
     <message>
         <source>Win32 Executable and Shared libraries (*.exe *.dll);;Win32 Executable (*.exe);;Win32 Shared libraries (*.dll)</source>
@@ -3256,7 +3256,7 @@ See help for details.</source>
         <location line="-2"/>
         <location line="+2"/>
         <source>Prefix archive images (*.tbz *.TBZ);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Архив образов префиксов (*.tbz *.TBZ);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+114"/>
@@ -3787,12 +3787,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+94"/>
         <source>Disc image files (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы образов (*.iso *.ISO *.nrg *.NRG *.img *.IMG *.bin *.BIN *.mdf *.MDF);;Все файлы (*)</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>ISO image files (*.iso *.ISO);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы ISO (*.iso *.ISO);;Все файлы (*)</translation>
     </message>
     <message>
         <source>Disc image files (*.iso *.nrg *.img *.bin *.mdf)</source>
@@ -4641,7 +4641,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+174"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Исполняемые файлы (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Исполняемые файлы EXE (*.exe *.EXE);;Установочные файлы MSI (*.msi *.MSI);;Исполняемые скрипты BAT (*.bat *.BAT);;Все файлы (*)</translation>
     </message>
     <message>
         <source>Exe, MSI, BAT files (*.exe *.msi *.bat);;Exe files (*.exe);;MSI files (*.msi);;BAT files (*.bat);;All files (*)</source>
@@ -5252,17 +5252,17 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+10"/>
         <source>Dropping stale items...</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаление устаревших элементов...</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Getting list of installed items...</source>
-        <translation type="unfinished"></translation>
+        <translation>Получение списка установленных элементов...</translation>
     </message>
     <message>
         <location line="+73"/>
         <source>Adding verb: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавление свойства: %1</translation>
     </message>
     <message>
         <source>Reading category: %1</source>
