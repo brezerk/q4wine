@@ -152,7 +152,7 @@ static char* getenvinfo(KINFO *k)
 {
     int mib[3], argmax, nargs, c = 0;
     size_t size;
-    char	 *procargs, *sp, *np, *cp;
+    char	 *procargs, *sp = NULL, *np, *cp;
 
     /* Get the maximum process arguments size. */
     mib[0] = CTL_KERN;

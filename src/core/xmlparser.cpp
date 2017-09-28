@@ -18,9 +18,8 @@
 
 #include "xmlparser.h"
 
-XmlParser::XmlParser(void)
+XmlParser::XmlParser(void): appdb_appinfo(WineAppDBInfo())
 {
-    appdb_appinfo=WineAppDBInfo();
     page_current=0;
     page_count=0;
     return;

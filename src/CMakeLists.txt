@@ -365,3 +365,18 @@ add_subdirectory(l10n)
 IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     add_subdirectory(freebsd)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
+
+add_custom_target(cppcheck COMMAND cppcheck
+	--quiet
+	--force
+	--inconclusive
+	--error-exitcode=254
+	-I ${CMAKE_SOURCE_DIR}
+	-I ${CMAKE_SOURCE_DIR}/src/q4wine-gui
+	-I ${CMAKE_SOURCE_DIR}/src/q4wine-cli
+	-I ${CMAKE_SOURCE_DIR}/src/q4wine-helper
+	-I ${CMAKE_SOURCE_DIR}/src/q4wine-lib
+	-i qrc_q4wine.cpp
+	-i ${CMAKE_SOURCE_DIR}/build/
+	${CMAKE_SOURCE_DIR}
+	)
