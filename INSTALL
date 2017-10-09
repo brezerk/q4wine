@@ -87,7 +87,7 @@ Installation
 
 Known Issues:
 ***********************************************
-Non-standard directories
+1. Non-standard directories
 
 If you have installed q4wine in a non-standard directory, 
 and you get the following error message: "error while loading shared libraries: libq4wine-core.so",
@@ -95,10 +95,24 @@ then you need to override LD_LIBRARY_PATH variable.
 
 LD_LIBRARY_PATH={$path_to_q4wine_prefix}/lib/ q4wine
 
+
+2. q4wine prevents user from running winecfg from KRunner even after uninstalling:
+
+You may wish to remove Desktop menu structure as well:
+$HOME/.local/share/applications/q4wine
+
+Don't forget to refresh Application cache by runing kbuildsycoca or kbuildsycoca5 (for KDE)
+
+
 Uninstall:
 ***********************************************
 To uninstall q4wine, run the following command from within q4wine's build root:
 xargs rm < install_manifest.txt
+
+You may wish to remove Desktop menu structure as well:
+$HOME/.local/share/applications/q4wine
+
+Don't forget to refresh Application cache by runing kbuildsycoca or kbuildsycoca5 (for KDE)
 
 Changelog
 ***********************************************
