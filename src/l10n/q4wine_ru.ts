@@ -189,7 +189,7 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Status: Reading server&apos;s response.</source>
+        <source>Status: Reading server's response.</source>
         <translation>Статус: Чтение ответа сервера.</translation>
     </message>
     <message>
@@ -440,7 +440,7 @@
     <message>
         <location line="-1253"/>
         <source>You can call it via Tools menu or via shortcut Ctrl+M</source>
-        <translation>Вы можете вызвать это окно используя меню &quot;Инструменты&quot; или клавиатурное сокращение Ctrl+M</translation>
+        <translation>Вы можете вызвать это окно используя меню "Инструменты" или клавиатурное сокращение Ctrl+M</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -549,8 +549,8 @@
     </message>
     <message>
         <location line="+9"/>
-        <source>Default virtual desktop size will be used for &quot;Icon creation&quot; and &quot;Run&quot; dialogs.</source>
-        <translation>Стандартный размер виртуального рабочего стола будет использован для диалогов &quot;Запуска&quot; и &quot;Создание значка&quot;.</translation>
+        <source>Default virtual desktop size will be used for "Icon creation" and "Run" dialogs.</source>
+        <translation>Стандартный размер виртуального рабочего стола будет использован для диалогов "Запуска" и "Создание значка".</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -1164,8 +1164,8 @@
         <translation>Отмена</translation>
     </message>
     <message>
-        <source>Fake drive settings for prefix &quot;%1&quot;</source>
-        <translation type="obsolete">Настройка виртуального диска для префикса &quot;%1&quot;</translation>
+        <source>Fake drive settings for prefix "%1"</source>
+        <translation type="obsolete">Настройка виртуального диска для префикса "%1"</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-686"/>
@@ -1197,10 +1197,10 @@
 %1
 
 Joystick axes mappings might be defined as:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 For example:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 See help for details.</source>
         <translation>Строка ошибки:
@@ -1208,10 +1208,10 @@ See help for details.</source>
 %1
 
 Карты осей джойстика должны быть указаны как:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 Например:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 Смотрите справку для получения информации.</translation>
     </message>
@@ -1251,8 +1251,8 @@ See help for details.</source>
         <location line="+20"/>
         <location line="+20"/>
         <location line="+20"/>
-        <source>Cannot symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation>Невозможно создать символьную ссылку с &quot;%1&quot; на &quot;%2&quot;</translation>
+        <source>Cannot symlink "%1" to "%2"</source>
+        <translation>Невозможно создать символьную ссылку с "%1" на "%2"</translation>
     </message>
     <message>
         <location line="-109"/>
@@ -1274,17 +1274,17 @@ See help for details.</source>
         <location line="+495"/>
         <location line="+10"/>
         <source>Joystick axes mappings might be defined as:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 For example:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 See help for details.</source>
         <translation>Карта осей джойстика должна быть определена так:
-&quot;Имя джойстика&quot;=&quot;карта осей&quot;
+"Имя джойстика"="карта осей"
 
 Например:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 См. помощь для подробной информации.</translation>
     </message>
@@ -1682,7 +1682,7 @@ See help for details.</source>
     <message>
         <location line="-446"/>
         <source>New icon</source>
-        <translation>Новый значок</translation>
+        <translation>New icon</translation>
     </message>
     <message>
         <location line="+501"/>
@@ -1745,13 +1745,13 @@ See help for details.</source>
     </message>
     <message>
         <location line="+5"/>
-        <source>Trying to run &quot;%1&quot;...</source>
-        <translation>Попытка запустить &quot;%1&quot;...</translation>
+        <source>Trying to run "%1"...</source>
+        <translation>Попытка запустить "%1"...</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>&quot;%1&quot; failed to start.</source>
-        <translation>Невозможно запустить &quot;%1&quot;.</translation>
+        <source>"%1" failed to start.</source>
+        <translation>Невозможно запустить "%1".</translation>
     </message>
     <message>
         <location line="+103"/>
@@ -1765,12 +1765,12 @@ See help for details.</source>
     </message>
     <message>
         <location line="+153"/>
-        <source>Copy application directory path to system&apos;s clipboard</source>
+        <source>Copy application directory path to system's clipboard</source>
         <translation>Копировать путь к каталогу в системный буфер обмена</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Copy full application path to system&apos;s clipboard</source>
+        <source>Copy full application path to system's clipboard</source>
         <translation>Копировать полный путь к программе в системный буфер обмена</translation>
     </message>
     <message>
@@ -2000,8 +2000,8 @@ See help for details.</source>
     </message>
     <message>
         <location line="+18"/>
-        <source>Note: Pre and post run scripts will not be executed in case the &quot;Run With Output in Console&quot; option is enabled.</source>
-        <translation>Примечание: пользовательские скрипты не будут запущены если программа запускается с опцией &quot;Запуск с выводом в консоль&quot;.</translation>
+        <source>Note: Pre and post run scripts will not be executed in case the "Run With Output in Console" option is enabled.</source>
+        <translation>Примечание: пользовательские скрипты не будут запущены если программа запускается с опцией "Запуск с выводом в консоль".</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -2699,7 +2699,7 @@ See help for details.</source>
     <message>
         <location line="+6"/>
         <location line="+3"/>
-        <source>Scan for Wine desktop files and import them into Q4Wine&apos;s icon view.</source>
+        <source>Scan for Wine desktop files and import them into Q4Wine's icon view.</source>
         <translation>Искать десктопные файлы Wine и импортировать их в базу Q4Wine.</translation>
     </message>
     <message>
@@ -2877,8 +2877,8 @@ See help for details.</source>
     </message>
     <message>
         <location line="+94"/>
-        <source>Socket file &quot;%1&quot; already exists!</source>
-        <translation>Файл сокета &quot;%1&quot; уже существует!</translation>
+        <source>Socket file "%1" already exists!</source>
+        <translation>Файл сокета "%1" уже существует!</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2889,19 +2889,19 @@ See help for details.</source>
         <location line="+50"/>
         <location line="+4"/>
         <location line="+14"/>
-        <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
-        <translation>Программа: &quot;%1&quot; успешно запущена для префикса: &quot;%2&quot;.</translation>
+        <source>Application: "%1" started fine for prefix: "%2".</source>
+        <translation>Программа: "%1" успешно запущена для префикса: "%2".</translation>
     </message>
     <message>
         <location line="-4"/>
-        <source>Console started fine for Application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation>Консоль успешно запущена для программы: &quot;%1&quot; в префиксе: &quot;%2&quot;.</translation>
+        <source>Console started fine for Application: "%1" in prefix: "%2".</source>
+        <translation>Консоль успешно запущена для программы: "%1" в префиксе: "%2".</translation>
     </message>
     <message>
         <location line="+14"/>
         <location line="+3"/>
-        <source>Application: &quot;%1&quot; finished for prefix: &quot;%2&quot;. Exit code is: &quot;%3&quot;.</source>
-        <translation>Программа: &quot;%1&quot; завершена для префикса: &quot;%2&quot;. Код завершения: &quot;%3&quot;.</translation>
+        <source>Application: "%1" finished for prefix: "%2". Exit code is: "%3".</source>
+        <translation>Программа: "%1" завершена для префикса: "%2". Код завершения: "%3".</translation>
     </message>
     <message>
         <location line="+44"/>
@@ -2947,14 +2947,14 @@ See help for details.</source>
     <message>
         <location line="-13"/>
         <location line="+3"/>
-        <source>Cannot start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
-        <translation>Не могу запустить программу: &quot;%1&quot; для префикса: &quot;%2&quot;.</translation>
+        <source>Cannot start application: "%1" for prefix: "%2".</source>
+        <translation>Не могу запустить программу: "%1" для префикса: "%2".</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+3"/>
-        <source>Cannot start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation>Не могу запустить консоль для программы: &quot;%1&quot; в префиксе: &quot;%2&quot;.</translation>
+        <source>Cannot start console for application: "%1" in prefix: "%2".</source>
+        <translation>Не могу запустить консоль для программы: "%1" в префиксе: "%2".</translation>
     </message>
     <message>
         <location line="+272"/>
@@ -2979,8 +2979,8 @@ See help for details.</source>
     <message>
         <location line="+4"/>
         <location line="+3"/>
-        <source>Binary &quot;%1&quot; does not exist.</source>
-        <translation>Двоичный файл &quot;%1&quot; не существует.</translation>
+        <source>Binary "%1" does not exist.</source>
+        <translation>Двоичный файл "%1" не существует.</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -3098,7 +3098,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="-126"/>
-        <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
+        <source>Create or update Q4Wine's cache of Winetricks appications.</source>
         <translation>Создать или обновить в Q4Wine кэш программ из Winetricks.</translation>
     </message>
     <message>
@@ -3231,8 +3231,8 @@ See help for details.</source>
     </message>
     <message>
         <location line="+10"/>
-        <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation>Удалить префикс &quot;%1&quot; и все связанные с ним значки?</translation>
+        <source>Do you really wish to delete the prefix named "%1" and all associated icons?</source>
+        <translation>Удалить префикс "%1" и все связанные с ним значки?</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -3493,13 +3493,13 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+0"/>
-        <source>Directory &quot;%1&quot; already exists. Do you wish to use it anyway?</source>
-        <translation>Папка &quot;%1&quot; уже соществует. Использовать ее?</translation>
+        <source>Directory "%1" already exists. Do you wish to use it anyway?</source>
+        <translation>Папка "%1" уже соществует. Использовать ее?</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>The directory &quot;%1&quot; could not be created.</source>
-        <translation>Невозможно создать папку &quot;%1&quot;.</translation>
+        <source>The directory "%1" could not be created.</source>
+        <translation>Невозможно создать папку "%1".</translation>
     </message>
     <message>
         <location line="+46"/>
@@ -3599,9 +3599,9 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+29"/>
-        <source>Do you really wish to delete the folder named &quot;%1&quot; and all associated icons?
+        <source>Do you really wish to delete the folder named "%1" and all associated icons?
 </source>
-        <translation>Удалить папку &quot;%1&quot; и все связанные с ней значки?
+        <translation>Удалить папку "%1" и все связанные с ней значки?
 </translation>
     </message>
     <message>
@@ -3830,8 +3830,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+4"/>
-        <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation>Удалить префикс &quot;%1&quot; и все связанные с ним значки?</translation>
+        <source>Do you really wish to delete the prefix named "%1" and all associated icons?</source>
+        <translation>Удалить префикс "%1" и все связанные с ним значки?</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -3990,8 +3990,8 @@ Note: leave it blank for default.</source>
     <name>Progress</name>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="+51"/>
-        <source>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
-        <translation>Импортируются десктоные файлы Wine из:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Это может занять какое-то время...&lt;br&gt;&lt;br&gt;&lt;b&gt;Примечание:&lt;/b&gt; для удаления обработанных файлов см. диалог настроек Q4Wine.</translation>
+        <source>Importing Wine desktop icons from:&lt;br&gt;"%1"&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
+        <translation>Импортируются десктоные файлы Wine из:&lt;br&gt;"%1"&lt;br&gt;&lt;br&gt;Это может занять какое-то время...&lt;br&gt;&lt;br&gt;&lt;b&gt;Примечание:&lt;/b&gt; для удаления обработанных файлов см. диалог настроек Q4Wine.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4044,13 +4044,13 @@ Note: leave it blank for default.</source>
         <location line="+14"/>
         <location line="+29"/>
         <location line="+43"/>
-        <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
-        <translation>Префикс не установлен. Установите префикс, запустив приложение с ключом &quot;-p &lt;имя_префикса&gt;.</translation>
+        <source>No current prefix set. Set prefix via "-p &lt;prefix_name&gt;" key.</source>
+        <translation>Префикс не установлен. Установите префикс, запустив приложение с ключом "-p &lt;имя_префикса&gt;.</translation>
     </message>
     <message>
         <location line="-168"/>
-        <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
-        <translation>Значок не установлен. Укажите значок с помощью ключа &quot;-i &lt;имя_значка&gt;&quot;.</translation>
+        <source>No current icon set. Set icon via "-i &lt;icon_name&gt;" key.</source>
+        <translation>Значок не установлен. Укажите значок с помощью ключа "-i &lt;имя_значка&gt;".</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -4059,8 +4059,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+2"/>
-        <source>Wine process list for &quot;%1&quot; prefix</source>
-        <translation>Список процессов Wine для префикса &quot;%1&quot;</translation>
+        <source>Wine process list for "%1" prefix</source>
+        <translation>Список процессов Wine для префикса "%1"</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -4093,8 +4093,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="-85"/>
-        <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
-        <translation>Префикс &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка префиксов.</translation>
+        <source>Prefix named "%1" does not exist. Run "%2-cli -pl" for prefix list.</source>
+        <translation>Префикс "%1" не существует. Запустите "%2"-cli -pl для получения списка префиксов.</translation>
     </message>
     <message>
         <location line="+86"/>
@@ -4104,28 +4104,28 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="-70"/>
-        <source>Icon named &quot;%1&quot; does not exist.  Run &quot;%2-cli -il&quot; for icon list.</source>
-        <translation>Значок &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка значков.</translation>
+        <source>Icon named "%1" does not exist.  Run "%2-cli -il" for icon list.</source>
+        <translation>Значок "%1" не существует. Запустите "%2"-cli -pl для получения списка значков.</translation>
     </message>
     <message>
         <location line="+37"/>
-        <source>Prefix &quot;%1&quot; has following dir list</source>
-        <translation>Префикс &quot;%1&quot; содержит следующий список папок</translation>
+        <source>Prefix "%1" has following dir list</source>
+        <translation>Префикс "%1" содержит следующий список папок</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Dir named &quot;%1&quot; does not exist. Run &quot;%2-cli -dl&quot; for dir list.</source>
-        <translation>Папка &quot;%1&quot; не существует. Запустите &quot;%2&quot;-cli -pl для получения списка папок.</translation>
+        <source>Dir named "%1" does not exist. Run "%2-cli -dl" for dir list.</source>
+        <translation>Папка "%1" не существует. Запустите "%2"-cli -pl для получения списка папок.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Prefix &quot;%1&quot; has following icon list</source>
-        <translation>Префикс &quot;%1&quot; содержит следующий список значков</translation>
+        <source>Prefix "%1" has following icon list</source>
+        <translation>Префикс "%1" содержит следующий список значков</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
-        <translation>Префикс &quot;%1&quot; содержит следующий список значков в каталоге &quot;%2&quot;</translation>
+        <source>Prefix "%1" has following icon list at "%2" directory</source>
+        <translation>Префикс "%1" содержит следующий список значков в каталоге "%2"</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4139,8 +4139,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+11"/>
-        <source>Killing prefix &quot;%1&quot; wineserver.</source>
-        <translation>Завершаю Wine в префиксе &quot;%1&quot;.</translation>
+        <source>Killing prefix "%1" wineserver.</source>
+        <translation>Завершаю Wine в префиксе "%1".</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -4151,18 +4151,18 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="-48"/>
-        <source>Disc image named &quot;%1&quot; does not exist. Run &quot;%2-cli -cl&quot; for disc image list.</source>
-        <translation>Образ &quot;%1&quot; не существует. Выполните &quot;%2-cli -сl&quot; для получения списка дисковых образов.</translation>
+        <source>Disc image named "%1" does not exist. Run "%2-cli -cl" for disc image list.</source>
+        <translation>Образ "%1" не существует. Выполните "%2-cli -сl" для получения списка дисковых образов.</translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>Unmounting mount point &quot;%1&quot;.</source>
-        <translation>Отключение точки &quot;%1&quot;.</translation>
+        <source>Unmounting mount point "%1".</source>
+        <translation>Отключение точки "%1".</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>File &quot;%1&quot; does not exist.</source>
-        <translation>Файл &quot;%1&quot; не существует.</translation>
+        <source>File "%1" does not exist.</source>
+        <translation>Файл "%1" не существует.</translation>
     </message>
     <message>
         <location line="-349"/>
@@ -4198,8 +4198,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="-1"/>
-        <source>Mounted media list for prefix &quot;%1&quot;</source>
-        <translation>Список подключённых дисков для префикса &quot;%1&quot;</translation>
+        <source>Mounted media list for prefix "%1"</source>
+        <translation>Список подключённых дисков для префикса "%1"</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="+115"/>
@@ -4769,23 +4769,23 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+42"/>
-        <source>Can&apos;t save changes...</source>
+        <source>Can't save changes...</source>
         <translation>Невозможно сохранить изменения...</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Path &apos;%1&apos; is not exists.</source>
-        <translation>Путь &quot;%1&quot; не существует.</translation>
+        <source>Path '%1' is not exists.</source>
+        <translation>Путь "%1" не существует.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Path &apos;%1&apos; is not a directory.</source>
-        <translation>Путь &quot;%1&quot; не является папкой.</translation>
+        <source>Path '%1' is not a directory.</source>
+        <translation>Путь "%1" не является папкой.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Path &apos;%1&apos; is not a file.</source>
-        <translation>Путь &quot;%1&quot; не является файлом.</translation>
+        <source>Path '%1' is not a file.</source>
+        <translation>Путь "%1" не является файлом.</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -4989,8 +4989,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+0"/>
-        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Значение приоритета может быть &lt;br&gt;от PRIO_MIN (-20)&lt;br&gt;до PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;См. &quot;man renice&quot; для получения дополнительной информации..&lt;/p&gt;</translation>
+        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See "man renice" for details.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Значение приоритета может быть &lt;br&gt;от PRIO_MIN (-20)&lt;br&gt;до PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;См. "man renice" для получения дополнительной информации..&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -5182,12 +5182,12 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+159"/>
-        <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Oleksii S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Oleksii S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</translation>
+        <source>&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Oleksii S. Malakhov aka John Brezerk  [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href='mailto:frank@frankscorner.org'&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style='font-weight:600; color:#7D1D10;'&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style='font-weight:600; color:#6495ed;'&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href='http://www.winehq.org/site/forums'&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style='font-weight:600; color:#6495ed;'&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href='http://www.codeweavers.com'&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
+        <translation>&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Oleksii S. Malakhov aka John Brezerk  [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href='mailto:frank@frankscorner.org'&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style='font-weight:600; color:#7D1D10;'&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style='font-weight:600; color:#6495ed;'&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href='http://www.winehq.org/site/forums'&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style='font-weight:600; color:#6495ed;'&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href='http://www.codeweavers.com'&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="-6"/>
-        <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
+        <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard's page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Добро пожаловать в мастер первого запуска&lt;/p&gt;&lt;p&gt;Этот мастер поможет вам сделать все шаги для успешной настройки %1. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Далее&lt;/b&gt;, чтобы перейти к следующей странице мастера. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата. &lt;/p&gt;</translation>
     </message>
     <message>
@@ -5202,8 +5202,8 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+246"/>
-        <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking &quot;Help&quot; button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Все готово для завершения установки %1. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Закончить&lt;/b&gt; для завершения процесса установки. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Заметка:&lt;/b&gt; Вы можете получить доступ к онлайн-документации в любой момент, нажав клавишу &lt;b&gt;F1&lt;/b&gt; или кликнув на кнопку &quot;Помощь&quot;.&lt;/p&gt;&lt;p&gt;Если вы новичок %1, пожалуйста, ознакомьтесь с нашим онлайн руководством:&lt;/p&gt;</translation>
+        <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking "Help" button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Все готово для завершения установки %1. &lt;/p&gt;&lt;p&gt;Нажмите кнопку &lt;b&gt;Закончить&lt;/b&gt; для завершения процесса установки. Или нажмите &lt;b&gt;Назад&lt;/b&gt; для возврата.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Заметка:&lt;/b&gt; Вы можете получить доступ к онлайн-документации в любой момент, нажав клавишу &lt;b&gt;F1&lt;/b&gt; или кликнув на кнопку "Помощь".&lt;/p&gt;&lt;p&gt;Если вы новичок %1, пожалуйста, ознакомьтесь с нашим онлайн руководством:&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -5231,13 +5231,13 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+119"/>
-        <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
-        <translation>Файл &apos;%1&apos; недоступен для чтения или записи. Проверьте права доступа к файлу.</translation>
+        <source>File '%1' is not writable or not readable. Check file permissions.</source>
+        <translation>Файл '%1' недоступен для чтения или записи. Проверьте права доступа к файлу.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Can&apos;t create file &apos;%1&apos;. Check folder permissions.</source>
-        <translation>Невозможно создать файл &apos;%1&apos;. Проверьте права доступа к папке.</translation>
+        <source>Can't create file '%1'. Check folder permissions.</source>
+        <translation>Невозможно создать файл '%1'. Проверьте права доступа к папке.</translation>
     </message>
     <message>
         <location line="+65"/>
