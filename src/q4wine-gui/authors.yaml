@@ -46,13 +46,11 @@ developers:
           info: Project maintainer, lead developer, website designer and developer, project documentation, support etc. ;)
           mail: brezerk@gmail.com
           web: http://brezblock.org.ua
-          jid: brezerk@jabber.com.ua
           location: Kiev, Ukraine
 
         - name: Sergey Skrypnic
           nick: opium
           info: Website developer, hosting administration
-          mail: opium@jabber.com.ua
           location: Kharkov, Ukraine
 
         - name: Pavel Zinin
@@ -117,7 +115,6 @@ translations:
           info: Ukrainian translation
           mail: brezerk@gmail.com
           web: http://brezblock.org.ua
-          jid: brezerk@jabber.com.ua
           location: Kiev, Ukraine
 
         - name: Boris Pek
@@ -225,7 +222,6 @@ thanks:
 
         - name: Sergey Skrypnic (opium)
           info: Website developer, hosting administration
-          mail: opium@jabber.com.ua
           location: Kharkov, Ukraine
 
         - name: Boris Pek
