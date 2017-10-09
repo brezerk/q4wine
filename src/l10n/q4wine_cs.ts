@@ -189,7 +189,7 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Status: Reading server&apos;s response.</source>
+        <source>Status: Reading server's response.</source>
         <translation>Stav: Čte se odpověď serveru.</translation>
     </message>
     <message>
@@ -605,7 +605,7 @@
     <message>
         <location line="+6"/>
         <source>Enable automatic generation of desktop menu </source>
-        <translation>Povolit automatické vytvoření nabídky plochy</translation>
+        <translation>Povolit automatické vytvoření nabídky plochy </translation>
     </message>
     <message>
         <location line="+7"/>
@@ -756,12 +756,12 @@
     <message>
         <location line="+10"/>
         <source>App Icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikona Aplikace</translation>
     </message>
     <message>
         <location line="+27"/>
         <source>App Icon:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikona Aplikace:</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -771,8 +771,8 @@
     </message>
     <message>
         <location line="+1671"/>
-        <source>Default virtual desktop size will be used for &quot;Icon creation&quot; and &quot;Run&quot; dialogs.</source>
-        <translation>Velikost výchozí virtuální plochy bude použita pro dialogy &quot;Vytvoření ikony&quot; a &quot;Spuštění&quot;.</translation>
+        <source>Default virtual desktop size will be used for "Icon creation" and "Run" dialogs.</source>
+        <translation>Velikost výchozí virtuální plochy bude použita pro dialogy "Vytvoření ikony" a "Spuštění".</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -1109,7 +1109,7 @@
     <message>
         <location line="+150"/>
         <source>Disable graphical crash dialog</source>
-        <translation>Zakázat grafický dialog pro pády.</translation>
+        <translation>Zakázat grafický dialog pro pády</translation>
     </message>
     <message>
         <location line="-375"/>
@@ -1212,8 +1212,8 @@
         <translation>Zrušit</translation>
     </message>
     <message>
-        <source>Fake drive settings for prefix &quot;%1&quot;</source>
-        <translation type="obsolete">Nastavení nepravé diskové jednotky pro předponu &quot;%1&quot;</translation>
+        <source>Fake drive settings for prefix "%1"</source>
+        <translation type="obsolete">Nastavení nepravé diskové jednotky pro předponu "%1"</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-684"/>
@@ -1245,10 +1245,10 @@
 %1
 
 Joystick axes mappings might be defined as:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 For example:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 See help for details.</source>
         <translation>Chyba v řetězci:
@@ -1256,10 +1256,10 @@ See help for details.</source>
 %1
 
 Přiřazení os pákového ovladače mohou být stanovena jako:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 Například:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
@@ -1299,8 +1299,8 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location line="+20"/>
         <location line="+20"/>
         <location line="+20"/>
-        <source>Cannot symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation>Nelze symbolicky odkázat &quot;%1&quot; na &quot;%2&quot;</translation>
+        <source>Cannot symlink "%1" to "%2"</source>
+        <translation>Nelze symbolicky odkázat "%1" na "%2"</translation>
     </message>
     <message>
         <location line="-109"/>
@@ -1322,17 +1322,17 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
         <location line="+495"/>
         <location line="+10"/>
         <source>Joystick axes mappings might be defined as:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 For example:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 See help for details.</source>
         <translation>Přiřazení os pákového ovladače mohou být stanovena jako:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 Například:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
@@ -1785,13 +1785,13 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Trying to run &quot;%1&quot;...</source>
-        <translation>Snaží se spustit &quot;%1&quot;...</translation>
+        <source>Trying to run "%1"...</source>
+        <translation>Snaží se spustit "%1"...</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>&quot;%1&quot; failed to start.</source>
-        <translation>&quot;%1&quot; se nepodařil spustit.</translation>
+        <source>"%1" failed to start.</source>
+        <translation>"%1" se nepodařil spustit.</translation>
     </message>
     <message>
         <location line="+103"/>
@@ -1805,12 +1805,12 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location line="+153"/>
-        <source>Copy application directory path to system&apos;s clipboard</source>
+        <source>Copy application directory path to system's clipboard</source>
         <translation>Kopírovat cestu k adresáři s programem do schránky systému</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Copy full application path to system&apos;s clipboard</source>
+        <source>Copy full application path to system's clipboard</source>
         <translation>Kopírovat celou cestu k programu do schránky systému</translation>
     </message>
     <message>
@@ -2151,8 +2151,8 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>Note: Pre and post run scripts will not be executed in case the &quot;Run With Output in Console&quot; option is enabled.</source>
-        <translation>Poznámka: spouštěcí skripty před a po nebudou provedeny v případě, že bude program spuštěn s volbou &quot;Spustit s výstupem do konzole&quot;.</translation>
+        <source>Note: Pre and post run scripts will not be executed in case the "Run With Output in Console" option is enabled.</source>
+        <translation>Poznámka: spouštěcí skripty před a po nebudou provedeny v případě, že bude program spuštěn s volbou "Spustit s výstupem do konzole".</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -2569,26 +2569,26 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location line="+94"/>
-        <source>Socket file &quot;%1&quot; already exists!</source>
-        <translation>Soubor zásuvky (socket) &quot;%1&quot; již existuje!</translation>
+        <source>Socket file "%1" already exists!</source>
+        <translation>Soubor zásuvky (socket) "%1" již existuje!</translation>
     </message>
     <message>
         <location line="+51"/>
         <location line="+4"/>
         <location line="+14"/>
-        <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
-        <translation>Program: &quot;%1&quot; se spustil dobře pro předponu: &quot;%2&quot;.</translation>
+        <source>Application: "%1" started fine for prefix: "%2".</source>
+        <translation>Program: "%1" se spustil dobře pro předponu: "%2".</translation>
     </message>
     <message>
         <location line="-4"/>
-        <source>Console started fine for Application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation>Konzole se spustila dobře pro program: &quot;%1&quot; v předponě: &quot;%2&quot;.</translation>
+        <source>Console started fine for Application: "%1" in prefix: "%2".</source>
+        <translation>Konzole se spustila dobře pro program: "%1" v předponě: "%2".</translation>
     </message>
     <message>
         <location line="+14"/>
         <location line="+3"/>
-        <source>Application: &quot;%1&quot; finished for prefix: &quot;%2&quot;. Exit code is: &quot;%3&quot;.</source>
-        <translation>Program: &quot;%1&quot; ukončen pro předponu: &quot;%2&quot;. Kód ukončení je: &quot;%3&quot;.</translation>
+        <source>Application: "%1" finished for prefix: "%2". Exit code is: "%3".</source>
+        <translation>Program: "%1" ukončen pro předponu: "%2". Kód ukončení je: "%3".</translation>
     </message>
     <message>
         <location line="+44"/>
@@ -2664,14 +2664,14 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="-13"/>
         <location line="+3"/>
-        <source>Cannot start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
-        <translation>Nelze spustit program: &quot;%1&quot; pro předponu: &quot;%2&quot;.</translation>
+        <source>Cannot start application: "%1" for prefix: "%2".</source>
+        <translation>Nelze spustit program: "%1" pro předponu: "%2".</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+3"/>
-        <source>Cannot start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation>Nelze spustit konzoli: &quot;%1&quot; v předponě: &quot;%2&quot;.</translation>
+        <source>Cannot start console for application: "%1" in prefix: "%2".</source>
+        <translation>Nelze spustit konzoli: "%1" v předponě: "%2".</translation>
     </message>
     <message>
         <location line="+272"/>
@@ -2687,7 +2687,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="+197"/>
         <location line="+3"/>
-        <source>Binary &quot;%1&quot; does not exist.</source>
+        <source>Binary "%1" does not exist.</source>
         <translation>Spustitelný soubor %1 neexistuje.</translation>
     </message>
     <message>
@@ -2937,7 +2937,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     <message>
         <location line="+6"/>
         <location line="+3"/>
-        <source>Scan for Wine desktop files and import them into Q4Wine&apos;s icon view.</source>
+        <source>Scan for Wine desktop files and import them into Q4Wine's icon view.</source>
         <translation>Prohlédnout na soubory plochy wine a zavést je do pohledu s ikonami programu Q4Wine.</translation>
     </message>
     <message>
@@ -3110,7 +3110,7 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location line="-126"/>
-        <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
+        <source>Create or update Q4Wine's cache of Winetricks appications.</source>
         <translation>Vytvořit nebo aktualizovat vyrovnávací paměť Q4Wine programů Winetricks (Kouzla wine).</translation>
     </message>
     <message>
@@ -3243,8 +3243,8 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation>Opravdu chcete smazat předponu s názvem &quot;%1&quot; a všechny přiřazené ikony?</translation>
+        <source>Do you really wish to delete the prefix named "%1" and all associated icons?</source>
+        <translation>Opravdu chcete smazat předponu s názvem "%1" a všechny přiřazené ikony?</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -3363,13 +3363,13 @@ Podívejte se do nápovědy kvůli podrobnostem.</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Directory &quot;%1&quot; already exists. Do you wish to use it anyway?</source>
-        <translation>Adresář &quot;%1&quot; již existuje. Přesto jej chcete použít?</translation>
+        <source>Directory "%1" already exists. Do you wish to use it anyway?</source>
+        <translation>Adresář "%1" již existuje. Přesto jej chcete použít?</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>The directory &quot;%1&quot; could not be created.</source>
-        <translation>Adresář neexistuje &quot;%1&quot; se nepodařilo vytvořit.</translation>
+        <source>The directory "%1" could not be created.</source>
+        <translation>Adresář neexistuje "%1" se nepodařilo vytvořit.</translation>
     </message>
     <message>
         <location line="+46"/>
@@ -3606,9 +3606,10 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+29"/>
-        <source>Do you really wish to delete the folder named &quot;%1&quot; and all associated icons?
+        <source>Do you really wish to delete the folder named "%1" and all associated icons?
 </source>
-        <translation>Opravdu chcete smazat složku s názvem &quot;%1&quot; a všechny přiřazené ikony?</translation>
+        <translation>Opravdu chcete smazat složku s názvem "%1" a všechny přiřazené ikony?
+</translation>
     </message>
     <message>
         <location line="+80"/>
@@ -3836,8 +3837,8 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+4"/>
-        <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation>Opravdu chcete smazat předponu s názvem &quot;%1&quot; a všechny přiřazené ikony?</translation>
+        <source>Do you really wish to delete the prefix named "%1" and all associated icons?</source>
+        <translation>Opravdu chcete smazat předponu s názvem "%1" a všechny přiřazené ikony?</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -3988,13 +3989,13 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <name>Progress</name>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="+51"/>
-        <source>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
-        <translation>Zavádí se ikony plochy Wine z:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Může to chvíli trvat...&lt;br&gt;&lt;br&gt;&lt;b&gt;Poznámka:&lt;/b&gt; Pro odstranění zpracovaných souborů se podívejte na dialog s volbami Q4Wine.</translation>
+        <source>Importing Wine desktop icons from:&lt;br&gt;"%1"&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
+        <translation>Zavádí se ikony plochy Wine z:&lt;br&gt;"%1"&lt;br&gt;&lt;br&gt;Může to chvíli trvat...&lt;br&gt;&lt;br&gt;&lt;b&gt;Poznámka:&lt;/b&gt; Pro odstranění zpracovaných souborů se podívejte na dialog s volbami Q4Wine.</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Importing Wine desktop icons: %1 of %2</source>
-        <translation>Zavádí se ikony plochy wine: %1 z %2 </translation>
+        <translation>Zavádí se ikony plochy wine: %1 z %2</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -4023,7 +4024,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location line="-12"/>
         <source>Importing desktop icons: %1 of %2</source>
-        <translation>Zavádí se ikony plochy: %1 z %2 </translation>
+        <translation>Zavádí se ikony plochy: %1 z %2</translation>
     </message>
 </context>
 <context>
@@ -4042,13 +4043,13 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
         <location line="+14"/>
         <location line="+29"/>
         <location line="+43"/>
-        <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
-        <translation>Není nastavena žádná nynější předpona. Nastavte předponu pomocí klíče &quot;-p &lt;prefix_name&gt;&quot;.</translation>
+        <source>No current prefix set. Set prefix via "-p &lt;prefix_name&gt;" key.</source>
+        <translation>Není nastavena žádná nynější předpona. Nastavte předponu pomocí klíče "-p &lt;prefix_name&gt;".</translation>
     </message>
     <message>
         <location line="-168"/>
-        <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
-        <translation>Není nastavena žádná nynější sada s ikonami. Nastavte ikonu pomocí klíče &quot;-p &lt;prefix_name&gt;&quot;.</translation>
+        <source>No current icon set. Set icon via "-i &lt;icon_name&gt;" key.</source>
+        <translation>Není nastavena žádná nynější sada s ikonami. Nastavte ikonu pomocí klíče "-p &lt;prefix_name&gt;".</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -4057,8 +4058,8 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+2"/>
-        <source>Wine process list for &quot;%1&quot; prefix</source>
-        <translation>Seznam procesů wine pro předponu &quot;%1&quot;</translation>
+        <source>Wine process list for "%1" prefix</source>
+        <translation>Seznam procesů wine pro předponu "%1"</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -4091,8 +4092,8 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="-85"/>
-        <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
-        <translation>Neexistuje předpona s názvem &quot;%1&quot;. Spusťte &quot;%2-cli -pl&quot; pro seznam předpon.</translation>
+        <source>Prefix named "%1" does not exist. Run "%2-cli -pl" for prefix list.</source>
+        <translation>Neexistuje předpona s názvem "%1". Spusťte "%2-cli -pl" pro seznam předpon.</translation>
     </message>
     <message>
         <location line="+86"/>
@@ -4102,28 +4103,28 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="-70"/>
-        <source>Icon named &quot;%1&quot; does not exist.  Run &quot;%2-cli -il&quot; for icon list.</source>
-        <translation>Neexistuje ikona s názvem &quot;%1&quot;. Spusťte &quot;%2-cli -il&quot; pro seznam ikon.</translation>
+        <source>Icon named "%1" does not exist.  Run "%2-cli -il" for icon list.</source>
+        <translation>Neexistuje ikona s názvem "%1". Spusťte "%2-cli -il" pro seznam ikon.</translation>
     </message>
     <message>
         <location line="+37"/>
-        <source>Prefix &quot;%1&quot; has following dir list</source>
-        <translation>Předpona &quot;%1&quot; má následující seznam adresářů</translation>
+        <source>Prefix "%1" has following dir list</source>
+        <translation>Předpona "%1" má následující seznam adresářů</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Dir named &quot;%1&quot; does not exist. Run &quot;%2-cli -dl&quot; for dir list.</source>
-        <translation>Neexistuje adresář s názvem &quot;%1&quot;. Spusťte &quot;%2-cli -dl&quot; pro seznam adresářů.</translation>
+        <source>Dir named "%1" does not exist. Run "%2-cli -dl" for dir list.</source>
+        <translation>Neexistuje adresář s názvem "%1". Spusťte "%2-cli -dl" pro seznam adresářů.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Prefix &quot;%1&quot; has following icon list</source>
-        <translation>Předpona &quot;%1&quot; má následující seznam ikon</translation>
+        <source>Prefix "%1" has following icon list</source>
+        <translation>Předpona "%1" má následující seznam ikon</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
-        <translation>Předpona &quot;%1&quot; má následující seznam ikon v adresáři &quot;%2&quot;</translation>
+        <source>Prefix "%1" has following icon list at "%2" directory</source>
+        <translation>Předpona "%1" má následující seznam ikon v adresáři "%2"</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4133,12 +4134,12 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location line="+9"/>
         <source>%1 has the following disc images in the database</source>
-        <translation>&quot;%1&quot; má v databázi následující obrazy disků</translation>
+        <translation>"%1" má v databázi následující obrazy disků</translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>Killing prefix &quot;%1&quot; wineserver.</source>
-        <translation>Zabíjí se wineserver předpony &quot;%1&quot;.</translation>
+        <source>Killing prefix "%1" wineserver.</source>
+        <translation>Zabíjí se wineserver předpony "%1".</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -4149,17 +4150,17 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="-48"/>
-        <source>Disc image named &quot;%1&quot; does not exist. Run &quot;%2-cli -cl&quot; for disc image list.</source>
-        <translation>Neexistuje žádný obraz disku &quot;%1&quot;. Spusťte &quot;%2-cli -cl&quot; pro seznam diskových obrazů.</translation>
+        <source>Disc image named "%1" does not exist. Run "%2-cli -cl" for disc image list.</source>
+        <translation>Neexistuje žádný obraz disku "%1". Spusťte "%2-cli -cl" pro seznam diskových obrazů.</translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>Unmounting mount point &quot;%1&quot;.</source>
-        <translation>Odpojuje se přípojný bod &quot;%1&quot;.</translation>
+        <source>Unmounting mount point "%1".</source>
+        <translation>Odpojuje se přípojný bod "%1".</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>File &quot;%1&quot; does not exist.</source>
+        <source>File "%1" does not exist.</source>
         <translation>Spustitelný soubor %1 neexistuje.</translation>
     </message>
     <message>
@@ -4191,8 +4192,8 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="-1"/>
-        <source>Mounted media list for prefix &quot;%1&quot;</source>
-        <translation>Seznam připojených médií pro předponu &quot;%1&quot;</translation>
+        <source>Mounted media list for prefix "%1"</source>
+        <translation>Seznam připojených médií pro předponu "%1"</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="+115"/>
@@ -4276,7 +4277,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="+1"/>
         <source>output wine process list for current prefix or for all prefixes and exit </source>
-        <translation>Provést výstup seznamu s procesy wine pro nynější předponu nebo pro všechny předpony a ukončit</translation>
+        <translation>Provést výstup seznamu s procesy wine pro nynější předponu nebo pro všechny předpony a ukončit </translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4763,23 +4764,23 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+42"/>
-        <source>Can&apos;t save changes...</source>
+        <source>Can't save changes...</source>
         <translation>Nelze uložit změny...</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Path &apos;%1&apos; is not exists.</source>
-        <translation>Cesta &apos;%1&apos; neexistuje.</translation>
+        <source>Path '%1' is not exists.</source>
+        <translation>Cesta '%1' neexistuje.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Path &apos;%1&apos; is not a directory.</source>
-        <translation>Cesta &apos;%1&apos; není adresář.</translation>
+        <source>Path '%1' is not a directory.</source>
+        <translation>Cesta '%1' není adresář.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Path &apos;%1&apos; is not a file.</source>
-        <translation>Cesta &apos;%1&apos; není soubor.</translation>
+        <source>Path '%1' is not a file.</source>
+        <translation>Cesta '%1' není soubor.</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -4983,8 +4984,8 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+0"/>
-        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Hodnota přednosti může být v&lt;br&gt;rozsahu od PRIO_MIN (-20)&lt;br&gt;do PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Kvůli podrobnostem se podívejte na &quot;man renice&quot;.&lt;/p&gt;</translation>
+        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See "man renice" for details.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Hodnota přednosti může být v&lt;br&gt;rozsahu od PRIO_MIN (-20)&lt;br&gt;do PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Kvůli podrobnostem se podívejte na "man renice".&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -5066,12 +5067,12 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+159"/>
-        <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Oleksii S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; byl původně napsán Oleksiiem S. Malakhovem neboli Johnem Brezerkem  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Celková myšlenka má svůj původ ve skriptech &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt;, které byly původně napsány Frankem Hendriksenem [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Povolení je vydáno pod &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Poznámky, hlášení chyb atd. posílejte na adresu[&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Poznámka&lt;/span&gt;&lt;/b&gt;: Tento program je poskytován bez záruky jakéhokoli druhu. Od autora &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NEDOSTANETE&lt;/span&gt;&lt;/b&gt; žádnou podporu nebo nápovědu k WineTools, Wine, instalacím programů, v Linuxu nebo na Microsoft Windows.&lt;/p&gt;&lt;p&gt;Jestliže budete &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;potřebovat pomoc&lt;/span&gt;, zeptejte se na poštovním seznamu &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;A jestliže &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;chcete podporu&lt;/span&gt;, kupte si obchodovanou verzi wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) pro programy provozované na stolním počítači&lt;/p&gt;</translation>
+        <source>&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Oleksii S. Malakhov aka John Brezerk  [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href='mailto:frank@frankscorner.org'&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style='font-weight:600; color:#7D1D10;'&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style='font-weight:600; color:#6495ed;'&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href='http://www.winehq.org/site/forums'&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style='font-weight:600; color:#6495ed;'&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href='http://www.codeweavers.com'&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
+        <translation>&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;%1&lt;/span&gt;&lt;/b&gt; byl původně napsán Oleksiiem S. Malakhovem neboli Johnem Brezerkem  [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Celková myšlenka má svůj původ ve skriptech &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;WineTools&lt;/span&gt;&lt;/b&gt;, které byly původně napsány Frankem Hendriksenem [&lt;a href='mailto:frank@frankscorner.org'&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Povolení je vydáno pod &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Poznámky, hlášení chyb atd. posílejte na adresu[&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;Poznámka&lt;/span&gt;&lt;/b&gt;: Tento program je poskytován bez záruky jakéhokoli druhu. Od autora &lt;b&gt;&lt;span style='font-weight:600; color:#7D1D10;'&gt;NEDOSTANETE&lt;/span&gt;&lt;/b&gt; žádnou podporu nebo nápovědu k WineTools, Wine, instalacím programů, v Linuxu nebo na Microsoft Windows.&lt;/p&gt;&lt;p&gt;Jestliže budete &lt;span style='font-weight:600; color:#6495ed;'&gt;potřebovat pomoc&lt;/span&gt;, zeptejte se na poštovním seznamu &lt;a href='http://www.winehq.org/site/forums'&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;A jestliže &lt;span style='font-weight:600; color:#6495ed;'&gt;chcete podporu&lt;/span&gt;, kupte si obchodovanou verzi wine: CodeWeavers CrossOver Office (&lt;a href='http://www.codeweavers.com'&gt;http://www.codeweavers.com&lt;/a&gt;) pro programy provozované na stolním počítači&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="-6"/>
-        <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
+        <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard's page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Vítejte v průvodci prvním spuštěním.&lt;/p&gt;&lt;p&gt;Tento průvodce vám pomůže provést všechny kroky potřebné pro nastavení %1.&lt;/p&gt;&lt;p&gt;Stiskněte, prosím, tlačítko &lt;b&gt;Další&lt;/b&gt;, abyste přešel na další stránku tohoto průvodce. Nebo stiskněte tlačítko &lt;b&gt;Zpět&lt;/b&gt;, chcete-li se vrátit.&lt;/p&gt;</translation>
     </message>
     <message>
@@ -5086,7 +5087,7 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+246"/>
-        <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking &quot;Help&quot; button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
+        <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking "Help" button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
         <translation>&lt;p&gt;Vše je připraveno k dokončení nastavení %1. &lt;/p&gt;&lt;p&gt;Stiskněte, prosím, tlačítko &lt;b&gt;Dokončit&lt;/b&gt; k dokončení postupu nastavení. Nebo stiskněte tlačítko &lt;b&gt;Zpět&lt;/b&gt; pro návrat zpět.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Poznámka:&lt;/b&gt; Kdykoli můžete přistoupit k dokumentaci umístěné na internetu stisknutím klávesy &lt;b&gt;F1&lt;/b&gt; nebo klepnutím na tlačítko Nápověda.&lt;/p&gt;&lt;/p&gt;Pokud jste v %1 nový, podívejte se, prosím, do našeho internetového průvodce:&lt;/p&gt;</translation>
     </message>
     <message>
@@ -5225,18 +5226,18 @@ Poznámka: Ponechejte prázdné pro zachování výchozího nastavení.</transla
     </message>
     <message>
         <location line="+119"/>
-        <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
+        <source>File '%1' is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Can&apos;t create file &apos;%1&apos;. Check folder permissions.</source>
+        <source>Can't create file '%1'. Check folder permissions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+65"/>
         <source>Refreshing Winetricks application list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovuji seznam aplikací Winetricks.</translation>
     </message>
     <message>
         <location line="+2"/>
