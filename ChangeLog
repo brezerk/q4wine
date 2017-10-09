@@ -4,6 +4,16 @@ Version 1.3.6
   - Default Wine Desktop Integartion path settings for new prefixes [BUG-106];
   - Added option to run custom scripts with fake drive settings after creation of fake drive [BUG-106];
   - Qt5 build enabled by default;
+  - Taiwan translation;
+  - Russian translation;
+  - Ukrainian translation;
+  - Spanish translation;
+  - Czech translation;
+ Documented:
+  - q4wine prevents user from running winecfg from KRunner even after uninstalling [BUG-98];
+ Fixed:
+  - Static code analysis: errors and warnings [BUG-116];
+  - Error: wrong or broken XML data. Try again later. [BUG-114];
 
 Version 1.3.5
  Updated:
