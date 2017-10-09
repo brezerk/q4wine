@@ -191,7 +191,7 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Status: Reading server&apos;s response.</source>
+        <source>Status: Reading server's response.</source>
         <translation>Estado: Leyendo la respuesta del servidor.</translation>
     </message>
     <message>
@@ -385,14 +385,14 @@
         <location filename="../q4wine-gui/appsettings.cpp" line="-675"/>
         <location line="+460"/>
         <source>Ambient Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Ambiente claro</translation>
     </message>
     <message>
         <location line="+9"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-458"/>
         <location line="+460"/>
         <source>Ambient Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Ambiente oscuro</translation>
     </message>
     <message>
         <location line="+1444"/>
@@ -740,8 +740,8 @@
     </message>
     <message>
         <location line="+181"/>
-        <source>Default virtual desktop size will be used for &quot;Icon creation&quot; and &quot;Run&quot; dialogs.</source>
-        <translation>El tamaño del escritorio virtual por defecto sera usado por los dialogos &quot;Creación de iconos&quot; y &quot;Ejecutar&quot;.</translation>
+        <source>Default virtual desktop size will be used for "Icon creation" and "Run" dialogs.</source>
+        <translation>El tamaño del escritorio virtual por defecto sera usado por los dialogos "Creación de iconos" y "Ejecutar".</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -1192,8 +1192,8 @@
         <translation>Cancelar</translation>
     </message>
     <message>
-        <source>Fake drive settings for prefix &quot;%1&quot;</source>
-        <translation type="obsolete">Ajustes del disco virtual para el prefijo &quot;%1&quot;</translation>
+        <source>Fake drive settings for prefix "%1"</source>
+        <translation type="obsolete">Ajustes del disco virtual para el prefijo "%1"</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="-686"/>
@@ -1226,10 +1226,10 @@
 %1
 
 Joystick axes mappings might be defined as:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 For example:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 See help for details.</source>
         <translation>Error en la cadena:
@@ -1237,10 +1237,10 @@ See help for details.</source>
 %1
 
 La configuración de los ejes del Joysticj puede ser definida como:
-&quot;Nombre del Joystick&quot;=&quot;Configuración de los ejes&quot;
+"Nombre del Joystick"="Configuración de los ejes"
 
 Por Ejemplo:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 Mire la ayuda para más detalles.</translation>
     </message>
@@ -1280,8 +1280,8 @@ Mire la ayuda para más detalles.</translation>
         <location line="+20"/>
         <location line="+20"/>
         <location line="+20"/>
-        <source>Cannot symlink &quot;%1&quot; to &quot;%2&quot;</source>
-        <translation>No se puede enlazar: &quot;%1&quot; a &quot;%2&quot;</translation>
+        <source>Cannot symlink "%1" to "%2"</source>
+        <translation>No se puede enlazar: "%1" a "%2"</translation>
     </message>
     <message>
         <location line="-109"/>
@@ -1303,17 +1303,17 @@ Mire la ayuda para más detalles.</translation>
         <location line="+495"/>
         <location line="+10"/>
         <source>Joystick axes mappings might be defined as:
-&quot;Joystick name&quot;=&quot;axes mapping&quot;
+"Joystick name"="axes mapping"
 
 For example:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 See help for details.</source>
         <translation>La configuracion de los ejes del joystick puede ser definida como:
-&quot;Nombre del Joystick&quot;=&quot;Configuracion de los ejes&quot;
+"Nombre del Joystick"="Configuracion de los ejes"
 
 Por ejemplo:
-&quot;Logitech Logitech Dual Action&quot;=&quot;X,Y,Rz,Slider1,POV1&quot;
+"Logitech Logitech Dual Action"="X,Y,Rz,Slider1,POV1"
 
 Vea la ayuda para mas detalles.</translation>
     </message>
@@ -1429,13 +1429,13 @@ Vea la ayuda para mas detalles.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Trying to run &quot;%1&quot;...</source>
-        <translation>Intentando ejecutar &quot;%1&quot;...</translation>
+        <source>Trying to run "%1"...</source>
+        <translation>Intentando ejecutar "%1"...</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>&quot;%1&quot; failed to start.</source>
-        <translation>&quot;%1&quot; fallo al comenzar.</translation>
+        <source>"%1" failed to start.</source>
+        <translation>"%1" fallo al comenzar.</translation>
     </message>
     <message>
         <location line="+103"/>
@@ -1455,12 +1455,12 @@ Vea la ayuda para mas detalles.</translation>
     </message>
     <message>
         <location line="+153"/>
-        <source>Copy application directory path to system&apos;s clipboard</source>
+        <source>Copy application directory path to system's clipboard</source>
         <translation>Copiar la ruta de la carpeta de la aplicación al portapapeles</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Copy full application path to system&apos;s clipboard</source>
+        <source>Copy full application path to system's clipboard</source>
         <translation>Copiar la ruta completa de la aplicación al portapapeles</translation>
     </message>
     <message>
@@ -2148,8 +2148,8 @@ Vea la ayuda para mas detalles.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>Note: Pre and post run scripts will not be executed in case the &quot;Run With Output in Console&quot; option is enabled.</source>
-        <translation>Nota: Los scripts de pre y post ejecución no se utiizarán si el programa es ejecutado con la opción &quot;Ejecutar con salida en la consola&quot;. </translation>
+        <source>Note: Pre and post run scripts will not be executed in case the "Run With Output in Console" option is enabled.</source>
+        <translation>Nota: Los scripts de pre y post ejecución no se utiizarán si el programa es ejecutado con la opción "Ejecutar con salida en la consola". </translation>
     </message>
     <message>
         <location line="+37"/>
@@ -2577,26 +2577,26 @@ Vea la ayuda para mas detalles.</translation>
     </message>
     <message>
         <location line="+94"/>
-        <source>Socket file &quot;%1&quot; already exists!</source>
-        <translation>El archivo socket: &quot;%1&quot; ya existe!</translation>
+        <source>Socket file "%1" already exists!</source>
+        <translation>El archivo socket: "%1" ya existe!</translation>
     </message>
     <message>
         <location line="+51"/>
         <location line="+4"/>
         <location line="+14"/>
-        <source>Application: &quot;%1&quot; started fine for prefix: &quot;%2&quot;.</source>
-        <translation>La aplicacion: &quot;%1&quot; comenzo exitosamente para el prefijo: &quot;%2&quot;.</translation>
+        <source>Application: "%1" started fine for prefix: "%2".</source>
+        <translation>La aplicacion: "%1" comenzo exitosamente para el prefijo: "%2".</translation>
     </message>
     <message>
         <location line="-4"/>
-        <source>Console started fine for Application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation>La consola se inicio exitosamete para la aplicación: &quot;%1&quot; en el prefijo: &quot;%2&quot;.</translation>
+        <source>Console started fine for Application: "%1" in prefix: "%2".</source>
+        <translation>La consola se inicio exitosamete para la aplicación: "%1" en el prefijo: "%2".</translation>
     </message>
     <message>
         <location line="+14"/>
         <location line="+3"/>
-        <source>Application: &quot;%1&quot; finished for prefix: &quot;%2&quot;. Exit code is: &quot;%3&quot;.</source>
-        <translation>La aplicación: &quot;%1&quot; finalizo para el prefijo: &quot;%2&quot;. El codigo de salida es &quot;%3&quot;.</translation>
+        <source>Application: "%1" finished for prefix: "%2". Exit code is: "%3".</source>
+        <translation>La aplicación: "%1" finalizo para el prefijo: "%2". El codigo de salida es "%3".</translation>
     </message>
     <message>
         <location line="+44"/>
@@ -2632,14 +2632,14 @@ Vea la ayuda para mas detalles.</translation>
     <message>
         <location line="-13"/>
         <location line="+3"/>
-        <source>Cannot start application: &quot;%1&quot; for prefix: &quot;%2&quot;.</source>
-        <translation>No se puede iniciar aplicacion: &quot;%1&quot; para el prefijo &quot;%2&quot;.</translation>
+        <source>Cannot start application: "%1" for prefix: "%2".</source>
+        <translation>No se puede iniciar aplicacion: "%1" para el prefijo "%2".</translation>
     </message>
     <message>
         <location line="+7"/>
         <location line="+3"/>
-        <source>Cannot start console for application: &quot;%1&quot; in prefix: &quot;%2&quot;.</source>
-        <translation>No se puede iniciar aplicación en consola: &quot;%1&quot; en el prefijo: &quot;%2&quot;.</translation>
+        <source>Cannot start console for application: "%1" in prefix: "%2".</source>
+        <translation>No se puede iniciar aplicación en consola: "%1" en el prefijo: "%2".</translation>
     </message>
     <message>
         <location line="+272"/>
@@ -2676,8 +2676,8 @@ Vea la ayuda para mas detalles.</translation>
     <message>
         <location line="+4"/>
         <location line="+3"/>
-        <source>Binary &quot;%1&quot; does not exist.</source>
-        <translation>El ejecutable &quot;%1&quot; no existe.</translation>
+        <source>Binary "%1" does not exist.</source>
+        <translation>El ejecutable "%1" no existe.</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -2892,7 +2892,7 @@ Vea la ayuda para mas detalles.</translation>
     <message>
         <location line="+6"/>
         <location line="+3"/>
-        <source>Scan for Wine desktop files and import them into Q4Wine&apos;s icon view.</source>
+        <source>Scan for Wine desktop files and import them into Q4Wine's icon view.</source>
         <translation>Buscar archivos desktop de wine e importarlos en la vista de iconos.</translation>
     </message>
     <message>
@@ -3138,7 +3138,7 @@ Vea la ayuda para mas detalles.</translation>
     </message>
     <message>
         <location line="-126"/>
-        <source>Create or update Q4Wine&apos;s cache of Winetricks appications.</source>
+        <source>Create or update Q4Wine's cache of Winetricks appications.</source>
         <translation>Crear o actualizar la cache de q4wine para las aplicaciones de Winetricks.</translation>
     </message>
     <message>
@@ -3275,8 +3275,8 @@ Vea la ayuda para mas detalles.</translation>
     </message>
     <message>
         <location line="+10"/>
-        <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation>Desea borra el prefijo &quot;%1&quot; y todos los iconos asociados?</translation>
+        <source>Do you really wish to delete the prefix named "%1" and all associated icons?</source>
+        <translation>Desea borra el prefijo "%1" y todos los iconos asociados?</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -3397,15 +3397,15 @@ Vea la ayuda para mas detalles.</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Directory &quot;%1&quot; already exists. Do you wish to use it anyway?</source>
+        <source>Directory "%1" already exists. Do you wish to use it anyway?</source>
         <translatorcomment>Revisar</translatorcomment>
-        <translation>La carpeta &quot;%1&quot; ya existe. Desea usarla de cualquier manera?</translation>
+        <translation>La carpeta "%1" ya existe. Desea usarla de cualquier manera?</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>The directory &quot;%1&quot; could not be created.</source>
+        <source>The directory "%1" could not be created.</source>
         <translatorcomment>Revisar</translatorcomment>
-        <translation>No se pudo crear la carpeta &quot;%1&quot;.</translation>
+        <translation>No se pudo crear la carpeta "%1".</translation>
     </message>
     <message>
         <location line="+46"/>
@@ -3650,9 +3650,9 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="+29"/>
-        <source>Do you really wish to delete the folder named &quot;%1&quot; and all associated icons?
+        <source>Do you really wish to delete the folder named "%1" and all associated icons?
 </source>
-        <translation>Desea eliminar la carpeta &quot;%1&quot; y todos los iconos asociados?
+        <translation>Desea eliminar la carpeta "%1" y todos los iconos asociados?
 </translation>
     </message>
     <message>
@@ -3865,8 +3865,8 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>Do you really wish to delete the prefix named &quot;%1&quot; and all associated icons?</source>
-        <translation>Desea borra el prefijo &quot;%1&quot; y todos los iconos asociados?</translation>
+        <source>Do you really wish to delete the prefix named "%1" and all associated icons?</source>
+        <translation>Desea borra el prefijo "%1" y todos los iconos asociados?</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -4035,8 +4035,8 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     <name>Progress</name>
     <message>
         <location filename="../q4wine-gui/progress.cpp" line="+51"/>
-        <source>Importing Wine desktop icons from:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
-        <translation>Importando iconos del escritorio de wine desde:&lt;br&gt;&quot;%1&quot;&lt;br&gt;&lt;br&gt;Esto puede tomar un tiempo---&lt;br&gt;&lt;br&gt;&lt;b&gt;Nota:&lt;/b&gt; Para remover los archivos agregados vea el cuadro de dialogo de opciones.</translation>
+        <source>Importing Wine desktop icons from:&lt;br&gt;"%1"&lt;br&gt;&lt;br&gt;This can take a while...&lt;br&gt;&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; To remove processed files see Q4Wine options dialog.</source>
+        <translation>Importando iconos del escritorio de wine desde:&lt;br&gt;"%1"&lt;br&gt;&lt;br&gt;Esto puede tomar un tiempo---&lt;br&gt;&lt;br&gt;&lt;b&gt;Nota:&lt;/b&gt; Para remover los archivos agregados vea el cuadro de dialogo de opciones.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4091,13 +4091,13 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <location line="+14"/>
         <location line="+29"/>
         <location line="+43"/>
-        <source>No current prefix set. Set prefix via &quot;-p &lt;prefix_name&gt;&quot; key.</source>
-        <translation>No se configuró el prefijo actual. Configure el prefijo mediante la opción &quot;-p &lt;nombre_del_prefijo&gt;&quot;.</translation>
+        <source>No current prefix set. Set prefix via "-p &lt;prefix_name&gt;" key.</source>
+        <translation>No se configuró el prefijo actual. Configure el prefijo mediante la opción "-p &lt;nombre_del_prefijo&gt;".</translation>
     </message>
     <message>
         <location line="-168"/>
-        <source>No current icon set. Set icon via &quot;-i &lt;icon_name&gt;&quot; key.</source>
-        <translation>No se configuró el icono actual. Configurelo mediante la opción &quot;-i &lt;nombre_del_icono&gt;&quot;.</translation>
+        <source>No current icon set. Set icon via "-i &lt;icon_name&gt;" key.</source>
+        <translation>No se configuró el icono actual. Configurelo mediante la opción "-i &lt;nombre_del_icono&gt;".</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -4106,8 +4106,8 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Wine process list for &quot;%1&quot; prefix</source>
-        <translation>Lista de procesos de wine para el prefijo &quot;%1&quot; </translation>
+        <source>Wine process list for "%1" prefix</source>
+        <translation>Lista de procesos de wine para el prefijo "%1" </translation>
     </message>
     <message>
         <location line="+4"/>
@@ -4142,8 +4142,8 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="-85"/>
-        <source>Prefix named &quot;%1&quot; does not exist. Run &quot;%2-cli -pl&quot; for prefix list.</source>
-        <translation>El prefijo &quot;%1&quot; no existe Ejecute &quot;%2-cli -pl&quot; para la lista de prefijos.</translation>
+        <source>Prefix named "%1" does not exist. Run "%2-cli -pl" for prefix list.</source>
+        <translation>El prefijo "%1" no existe Ejecute "%2-cli -pl" para la lista de prefijos.</translation>
     </message>
     <message>
         <location line="+86"/>
@@ -4153,28 +4153,28 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="-70"/>
-        <source>Icon named &quot;%1&quot; does not exist.  Run &quot;%2-cli -il&quot; for icon list.</source>
-        <translation>El icono &quot;%1&quot; no existe.  Ejecute &quot;%2-cli -il&quot; para la lista de iconos.</translation>
+        <source>Icon named "%1" does not exist.  Run "%2-cli -il" for icon list.</source>
+        <translation>El icono "%1" no existe.  Ejecute "%2-cli -il" para la lista de iconos.</translation>
     </message>
     <message>
         <location line="+37"/>
-        <source>Prefix &quot;%1&quot; has following dir list</source>
-        <translation>El prefijo &quot;%1&quot; tiene la siguiente lista de carpetas</translation>
+        <source>Prefix "%1" has following dir list</source>
+        <translation>El prefijo "%1" tiene la siguiente lista de carpetas</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Dir named &quot;%1&quot; does not exist. Run &quot;%2-cli -dl&quot; for dir list.</source>
-        <translation>La carpeta &quot;%1&quot; no existe. Ejecute &quot;%2-cli -dl&quot; para la lista de carpetas.</translation>
+        <source>Dir named "%1" does not exist. Run "%2-cli -dl" for dir list.</source>
+        <translation>La carpeta "%1" no existe. Ejecute "%2-cli -dl" para la lista de carpetas.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Prefix &quot;%1&quot; has following icon list</source>
-        <translation>El prefijo &quot;%1&quot; tiene la siguiente lista de iconos</translation>
+        <source>Prefix "%1" has following icon list</source>
+        <translation>El prefijo "%1" tiene la siguiente lista de iconos</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Prefix &quot;%1&quot; has following icon list at &quot;%2&quot; directory</source>
-        <translation>El prefijo &quot;%1&quot; tiene la siguiente lista de iconos en la carpeta &quot;%2&quot;</translation>
+        <source>Prefix "%1" has following icon list at "%2" directory</source>
+        <translation>El prefijo "%1" tiene la siguiente lista de iconos en la carpeta "%2"</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4183,8 +4183,8 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="+20"/>
-        <source>Killing prefix &quot;%1&quot; wineserver.</source>
-        <translation>Matando prefijo &quot;%1&quot; wineserver.</translation>
+        <source>Killing prefix "%1" wineserver.</source>
+        <translation>Matando prefijo "%1" wineserver.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -4195,18 +4195,18 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="-48"/>
-        <source>Disc image named &quot;%1&quot; does not exist. Run &quot;%2-cli -cl&quot; for disc image list.</source>
-        <translation>No existe la imagen de disco &quot;%1&quot;. Ejecute &quot;%2-cli -cl&quot; para una lista de imagenes de CD.</translation>
+        <source>Disc image named "%1" does not exist. Run "%2-cli -cl" for disc image list.</source>
+        <translation>No existe la imagen de disco "%1". Ejecute "%2-cli -cl" para una lista de imagenes de CD.</translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>Unmounting mount point &quot;%1&quot;.</source>
-        <translation>Desmontando punto de montaje &quot;%1&quot;.</translation>
+        <source>Unmounting mount point "%1".</source>
+        <translation>Desmontando punto de montaje "%1".</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>File &quot;%1&quot; does not exist.</source>
-        <translation>El archivo &quot;%1&quot; no existe.</translation>
+        <source>File "%1" does not exist.</source>
+        <translation>El archivo "%1" no existe.</translation>
     </message>
     <message>
         <location line="-349"/>
@@ -4243,8 +4243,8 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="-1"/>
-        <source>Mounted media list for prefix &quot;%1&quot;</source>
-        <translation>Lista de medios montados para el prefijo &quot;%1&quot;</translation>
+        <source>Mounted media list for prefix "%1"</source>
+        <translation>Lista de medios montados para el prefijo "%1"</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="+115"/>
@@ -4522,11 +4522,11 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation type="obsolete">No se puede leer la información de procesos de /proc o cambió la API.</translation>
     </message>
     <message>
-        <source>&lt;p&gt;Error while loading application settings by key: &apos;%1&apos;. File or path does not exist: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Please, go to the %3 options dialog and set it.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Error al cargar la configuración del programa por la clave: &apos;%1&apos;. El archivo o ruta no existe: &quot;%2&quot;&lt;/p&gt;&lt;p&gt;Por favor, vaya a el diálogo de opciones %3 y establézcala.&lt;/p&gt;</translation>
+        <source>&lt;p&gt;Error while loading application settings by key: '%1'. File or path does not exist: "%2"&lt;/p&gt;&lt;p&gt;Please, go to the %3 options dialog and set it.&lt;/p&gt;</source>
+        <translation type="obsolete">&lt;p&gt;Error al cargar la configuración del programa por la clave: '%1'. El archivo o ruta no existe: "%2"&lt;/p&gt;&lt;p&gt;Por favor, vaya a el diálogo de opciones %3 y establézcala.&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>&lt;p&gt;Error while loading application settings. wine&apos;s library path for 32 and 64 bit is not set.&lt;/p&gt;&lt;p&gt;Please, go to the %1 options dialog and set at least one path.&lt;/p&gt;</source>
+        <source>&lt;p&gt;Error while loading application settings. wine's library path for 32 and 64 bit is not set.&lt;/p&gt;&lt;p&gt;Please, go to the %1 options dialog and set at least one path.&lt;/p&gt;</source>
         <translation type="obsolete">&lt;p&gt;Error al cargar la configuración del programa. La ruta de librerías de wine de 32 y 64 bit no está establecida.&lt;/p&gt;&lt;p&gt;Por favor, vaya al diálogo de opciones %1 y establezca al menos una ruta.&lt;/p&gt;</translation>
     </message>
     <message>
@@ -4534,24 +4534,24 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
         <translation type="obsolete">Los flags de tiempo de compilación son:</translation>
     </message>
     <message>
-        <source>Cannot find or execute the &apos;%1&apos; binary. Make sure that this binary is available by search PATH variable and see also INSTALL file for application depends.</source>
-        <translation type="obsolete">No se puede encontrar o ejecutar el binario &apos;%1&apos;. Asegúrese que esté disponible en la variable PATH y de ver sus dependencias en el archivo INSTALL. </translation>
+        <source>Cannot find or execute the '%1' binary. Make sure that this binary is available by search PATH variable and see also INSTALL file for application depends.</source>
+        <translation type="obsolete">No se puede encontrar o ejecutar el binario '%1'. Asegúrese que esté disponible en la variable PATH y de ver sus dependencias en el archivo INSTALL. </translation>
     </message>
     <message>
         <source>Error</source>
         <translation type="obsolete">Error</translation>
     </message>
     <message>
-        <source>Binary file &quot;%1&quot; does not exist.</source>
-        <translation type="obsolete">El archivo binario &quot;%1&quot; no existe.</translation>
+        <source>Binary file "%1" does not exist.</source>
+        <translation type="obsolete">El archivo binario "%1" no existe.</translation>
     </message>
     <message>
-        <source>Cannot get unix path for &quot;%1&quot;.</source>
-        <translation type="obsolete">No se puede obtener la ruta unix para &quot;%1&quot;.</translation>
+        <source>Cannot get unix path for "%1".</source>
+        <translation type="obsolete">No se puede obtener la ruta unix para "%1".</translation>
     </message>
     <message>
-        <source>Running binary: &quot;%1&quot;</source>
-        <translation type="obsolete">Ejecutando binario: &quot;%1&quot;</translation>
+        <source>Running binary: "%1"</source>
+        <translation type="obsolete">Ejecutando binario: "%1"</translation>
     </message>
     <message>
         <source>Running binary...</source>
@@ -4904,24 +4904,24 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="+42"/>
-        <source>Can&apos;t save changes...</source>
+        <source>Can't save changes...</source>
         <translatorcomment>Revisar</translatorcomment>
         <translation>No se pueden guardar los cambios...</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Path &apos;%1&apos; is not exists.</source>
-        <translation>La ruta &quot;%1&quot; no existe.</translation>
+        <source>Path '%1' is not exists.</source>
+        <translation>La ruta "%1" no existe.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Path &apos;%1&apos; is not a directory.</source>
-        <translation>La ruta &quot;%1&quot; no es una carpeta.</translation>
+        <source>Path '%1' is not a directory.</source>
+        <translation>La ruta "%1" no es una carpeta.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Path &apos;%1&apos; is not a file.</source>
-        <translation>La ruta &quot;%1&quot; no es un archivo.</translation>
+        <source>Path '%1' is not a file.</source>
+        <translation>La ruta "%1" no es un archivo.</translation>
     </message>
     <message>
         <location line="+20"/>
@@ -5128,8 +5128,8 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See &quot;man renice&quot; for details.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;El valor de prioridad puede estar &lt;br&gt; en el rango de PRIO_MIN (-20)&lt;br&gt;a PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Ver &quot;man renice&quot; para mas detalles.&lt;/p&gt;</translation>
+        <source>&lt;p&gt;Priority value can be in&lt;br&gt;the range from PRIO_MIN (-20)&lt;br&gt;to PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;See "man renice" for details.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;El valor de prioridad puede estar &lt;br&gt; en el rango de PRIO_MIN (-20)&lt;br&gt;a PRIO_MAX (20).&lt;/p&gt;&lt;p&gt;Ver "man renice" para mas detalles.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -5212,12 +5212,12 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="+159"/>
-        <source>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Oleksii S. Malakhov aka John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;%1&lt;/span&gt;&lt;/b&gt; fue escrito inicialmente por Malakhov Oleksii tambien conocido como John Brezerk  [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt; La idea general proviene de &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;WineTools&lt;/span&gt;&lt;/b&gt; un script que fue inicialmente escrito por Frank Hendriksen [&lt;a href=&apos;mailto:frank@frankscorner.org&apos;&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Esta bajo la licencia &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Envie comentarios, reporte de errores, etc. a [&lt;a href=&apos;mailto:brezerk@gmail.com&apos;&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;Nota&lt;/span&gt;&lt;/b&gt;: Este software no provee ninguna garantia. Usted &lt;b&gt;&lt;span style=&apos;font-weight:600; color:#7D1D10;&apos;&gt;NO&lt;/span&gt;&lt;/b&gt; obtendra ningun soporte o ayuda para WineTools, Wine, instalacion de software, Linux o Microsoft Windows del autor.&lt;/p&gt;&lt;p&gt;Si &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;necesita ayuda&lt;/span&gt;, pregunte en las listar de mail en&lt;a href=&apos;http://www.winehq.org/site/forums&apos;&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Si usted &lt;span style=&apos;font-weight:600; color:#6495ed;&apos;&gt;quiere soporte técnico&lt;/span&gt;, compre la versión comercial de wine: CodeWeavers CrossOver Office (&lt;a href=&apos;http://www.codeweavers.com&apos;&gt;http://www.codeweavers.com&lt;/a&gt;) para aplicaciones de escritorio&lt;/p&gt;</translation>
+        <source>&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;%1&lt;/span&gt;&lt;/b&gt; was initially written by Oleksii S. Malakhov aka John Brezerk  [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;General idea comes from &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;WineTools&lt;/span&gt;&lt;/b&gt; scripts which was initially written by Frank Hendriksen [&lt;a href='mailto:frank@frankscorner.org'&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;It is licensed under the &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Send comments, bugreports, etc. to [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;Note&lt;/span&gt;&lt;/b&gt;: This software comes with absolutely no warranty. You will &lt;b&gt;&lt;span style='font-weight:600; color:#7D1D10;'&gt;NOT&lt;/span&gt;&lt;/b&gt; get any support or help for WineTools, Wine, software installations, Linux or Microsoft Windows from the author.&lt;/p&gt;&lt;p&gt;If you &lt;span style='font-weight:600; color:#6495ed;'&gt;need help&lt;/span&gt;, ask the mailing lists at &lt;a href='http://www.winehq.org/site/forums'&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;If you &lt;span style='font-weight:600; color:#6495ed;'&gt;want support&lt;/span&gt;, buy the commercial versions of wine: CodeWeavers CrossOver Office (&lt;a href='http://www.codeweavers.com'&gt;http://www.codeweavers.com&lt;/a&gt;) for Desktop Applications&lt;/p&gt;</source>
+        <translation>&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;%1&lt;/span&gt;&lt;/b&gt; fue escrito inicialmente por Malakhov Oleksii tambien conocido como John Brezerk  [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt; La idea general proviene de &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;WineTools&lt;/span&gt;&lt;/b&gt; un script que fue inicialmente escrito por Frank Hendriksen [&lt;a href='mailto:frank@frankscorner.org'&gt;frank@frankscorner.org&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;Esta bajo la licencia &lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;GPL v3&lt;/span&gt;&lt;/b&gt;.&lt;/p&gt;&lt;p&gt;Envie comentarios, reporte de errores, etc. a [&lt;a href='mailto:brezerk@gmail.com'&gt;brezerk@gmail.com&lt;/a&gt;]&lt;/p&gt;&lt;p&gt;&lt;b&gt;&lt;span style='font-weight:600; color:#6495ed;'&gt;Nota&lt;/span&gt;&lt;/b&gt;: Este software no provee ninguna garantia. Usted &lt;b&gt;&lt;span style='font-weight:600; color:#7D1D10;'&gt;NO&lt;/span&gt;&lt;/b&gt; obtendra ningun soporte o ayuda para WineTools, Wine, instalacion de software, Linux o Microsoft Windows del autor.&lt;/p&gt;&lt;p&gt;Si &lt;span style='font-weight:600; color:#6495ed;'&gt;necesita ayuda&lt;/span&gt;, pregunte en las listar de mail en&lt;a href='http://www.winehq.org/site/forums'&gt;http://www.winehq.org/site/forums&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Si usted &lt;span style='font-weight:600; color:#6495ed;'&gt;quiere soporte técnico&lt;/span&gt;, compre la versión comercial de wine: CodeWeavers CrossOver Office (&lt;a href='http://www.codeweavers.com'&gt;http://www.codeweavers.com&lt;/a&gt;) para aplicaciones de escritorio&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="-6"/>
-        <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard&apos;s page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
+        <source>&lt;p&gt;Welcome to first startup wizard.&lt;/p&gt;&lt;p&gt;This wizard helps you to make all necessary steps for successful %1 setup.&lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Next&lt;/b&gt; button to go to the next wizard's page. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Bienvenido al asistente del primer arranque.&lt;/p&gt;&lt;p&gt;Este asistente le ayudara a realizar todos los pasos necesarios para la configuracion exitosa de %1.&lt;/p&gt;&lt;p&gt;Por favor, presione el boton &lt;b&gt;Siguiente&lt;/b&gt; para ir a la siguiente pagina del asistente. O presione el boton &lt;b&gt;Atras&lt;/b&gt; para regresar.&lt;/p&gt;</translation>
     </message>
     <message>
@@ -5232,7 +5232,7 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="+246"/>
-        <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking &quot;Help&quot; button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
+        <source>&lt;p&gt;Everything is ready for finishing %1 setup. &lt;/p&gt;&lt;p&gt;Please, press the &lt;b&gt;Finish&lt;/b&gt; button to finish setup process. Or press &lt;b&gt;Back&lt;/b&gt; button for return.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; You can access online documentation at any time by pressing &lt;b&gt;F1&lt;/b&gt; key or by clicking "Help" button.&lt;/p&gt;&lt;/p&gt;If you are new to %1, please check our online guide:&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5373,12 +5373,12 @@ Nota: deje en blanco para usar los valores por defecto.</translation>
     </message>
     <message>
         <location line="+119"/>
-        <source>File &apos;%1&apos; is not writable or not readable. Check file permissions.</source>
+        <source>File '%1' is not writable or not readable. Check file permissions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Can&apos;t create file &apos;%1&apos;. Check folder permissions.</source>
+        <source>Can't create file '%1'. Check folder permissions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
