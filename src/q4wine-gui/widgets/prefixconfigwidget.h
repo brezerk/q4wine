@@ -79,6 +79,8 @@ private slots:
     void keyPressEvent ( QKeyEvent * event );
     void searchClear_Click();
     void sortAlpha_Click();
+    void zoomIn_Click();
+    void zoomOut_Click();
     void searchFilterChange(QString);
     void prefixManage_Click();
 
@@ -96,6 +98,8 @@ private:
     std::unique_ptr<QAction> searchClear;
     std::unique_ptr<QAction> sortAlpha;
     std::unique_ptr<QLineEdit> searchField;
+    std::unique_ptr<QAction> zoomIn;
+    std::unique_ptr<QAction> zoomOut;
 
     std::unique_ptr<QComboBox> cbPrefixes;
     std::unique_ptr<QLabel> infoName;
@@ -115,9 +119,6 @@ private:
     void createTree(void);
 
     void get_icons(void);
-
-protected:
-    bool eventFilter(QObject *obj, QEvent *ev);
 
 };
 

@@ -58,7 +58,7 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
     treeWidget->header()->close();
     connect (treeWidget.get(), SIGNAL(currentItemChanged (QTreeWidgetItem *, QTreeWidgetItem *)), this, SLOT(treeWidget_currentItemChanged (QTreeWidgetItem *, QTreeWidgetItem *)));
 
-    treeWidget->installEventFilter(this);
+    //treeWidget->installEventFilter(this);
 
     std::unique_ptr<QToolBar> iconsToolBar (new QToolBar(this));
     iconsToolBar->setIconSize(QSize(24, 24));
@@ -67,8 +67,12 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
     connect(searchField.get(), SIGNAL(textChanged(QString)), this, SLOT(searchFilterChange(QString)));
 
     //connect(searchField.get(), SIGNAL(returnPressed()), this, SLOT(appdbSearch_Click()));
+
     iconsToolBar->addAction(searchClear.get());
     iconsToolBar->addWidget(searchField.get());
+    iconsToolBar->addAction(zoomIn.get());
+    iconsToolBar->addAction(zoomOut.get());
+    iconsToolBar->addSeparator();
     iconsToolBar->addAction(sortAlpha.get());
 
     listWidget.reset(new QListWidget(this));
@@ -77,8 +81,10 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
     listWidget->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
     listWidget->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
     listWidget->setMovement(QListView::Static);
-    int nSize = CoreLib->getSetting("IconWidget", "IconSize", false, 32).toInt();
     listWidget->setViewMode(QListView::ListMode);
+    //listWidget->installEventFilter(this);
+
+    int nSize = CoreLib->getSetting("WinetricksWidget", "IconSize", false, 32).toInt();
     listWidget->setGridSize(QSize());
     listWidget->setIconSize(QSize(nSize, nSize));
     listWidget->setWrapping(false);
@@ -146,21 +152,23 @@ PrefixConfigWidget::PrefixConfigWidget(QWidget *parent) :
 }
 
 PrefixConfigWidget::~PrefixConfigWidget(){
-    treeWidget.release();
-    listWidget.release();
-    infoName.release();
-
+    QSettings settings(APP_SHORT_NAME, "default");
     if (splitter->sizes().at(0) != splitter->sizes().at(1)){
-        QSettings settings(APP_SHORT_NAME, "default");
         settings.beginGroup("MainWindow");
         settings.setValue("splitterPrefixConfigSize0", splitter->sizes().at(0));
         settings.setValue("splitterPrefixConfigSize1", splitter->sizes().at(1));
         settings.endGroup();
-        settings.beginGroup("WinetricksWidget");
-        settings.setValue("IconSort", this->sort_order);
-        settings.endGroup();
     }
+
+    settings.beginGroup("WinetricksWidget");
+    settings.setValue("IconSort", this->sort_order);
+    settings.setValue("IconSize", this->listWidget->iconSize().height());
+    settings.endGroup();
+
     splitter.release();
+    treeWidget.release();
+    listWidget.release();
+    infoName.release();
 }
 
 void PrefixConfigWidget::createActions(){
@@ -184,6 +192,16 @@ void PrefixConfigWidget::createActions(){
         sortAlpha->setText(tr("Alphabetic sort ascending"));
         sortAlpha->setIcon(CoreLib->loadIcon("view-sort-ascending"));
     }
+
+    zoomIn.reset(new QAction(CoreLib->loadIcon("zoom-in"), tr("Zoom In"), this));
+    zoomIn->setStatusTip(tr("Zoom In"));
+    zoomIn->setShortcut(Qt::Key_Plus);
+    connect(zoomIn.get(), SIGNAL(triggered()), this, SLOT(zoomIn_Click()));
+
+    zoomOut.reset(new QAction(CoreLib->loadIcon("zoom-out"), tr("Zoom Out"), this));
+    zoomOut->setStatusTip(tr("Zoom Out"));
+    zoomOut->setShortcut(Qt::Key_Minus);
+    connect(zoomOut.get(), SIGNAL(triggered()), this, SLOT(zoomOut_Click()));
 
     return;
 }
@@ -342,8 +360,9 @@ void PrefixConfigWidget::keyPressEvent ( QKeyEvent * event ){
     if (!item)
         return;
 
-    if (event->key() == Qt::Key_Return)
+    if (event->key() == Qt::Key_Return) {
         itemDoubleClicked(item);
+    }
 }
 
 void PrefixConfigWidget::currentItemChanged (QListWidgetItem *item, QListWidgetItem *){
@@ -430,23 +449,6 @@ void PrefixConfigWidget::itemDoubleClicked (QListWidgetItem *item){
     return;
 }
 
-bool PrefixConfigWidget::eventFilter(QObject *obj, QEvent *event)
- {
-     if (obj == this->treeWidget.get()) {
-         if (event->type() == QEvent::KeyPress) {
-             QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
-
-             if (keyEvent->matches(QKeySequence::Delete)){
-                 return true;
-             }
-         } else {
-             return false;
-         }
-     }
-     // pass the event on to the parent class
-     return QWidget::eventFilter(obj, event);
- }
-
 void PrefixConfigWidget::setPrefix(QString prefix){
     this->cbPrefixes.get()->setCurrentIndex(cbPrefixes.get()->findText(prefix));
 }
@@ -455,6 +457,23 @@ void PrefixConfigWidget::searchClear_Click(){
     this->searchField->setText("");
     this->get_icons();
 }
+
+void PrefixConfigWidget::zoomIn_Click(){
+    QSize i_size = this->listWidget->iconSize();
+    if (i_size.height()){
+        int nSize = i_size.height()+8;
+        this->listWidget->setIconSize(QSize(nSize, nSize));
+    }
+}
+
+void PrefixConfigWidget::zoomOut_Click(){
+    QSize i_size = this->listWidget->iconSize();
+    if (i_size.height()>16){
+        int nSize = i_size.height()-8;
+        this->listWidget->setIconSize(QSize(nSize, nSize));
+    }
+}
+
 
 void PrefixConfigWidget::sortAlpha_Click(){
     if (this->sort_order == D_SORT_TYPE_BY_NAME_ASC){

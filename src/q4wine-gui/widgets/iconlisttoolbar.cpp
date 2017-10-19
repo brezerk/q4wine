@@ -90,10 +90,12 @@ void IconListToolbar::createActions(){
 
     zoomIn.reset(new QAction(CoreLib->loadIcon("zoom-in"), tr("Zoom In"), this));
     zoomIn->setStatusTip(tr("Zoom In"));
+    zoomIn->setShortcut(Qt::Key_Plus);
     connect(zoomIn.get(), SIGNAL(triggered()), this, SLOT(zoomIn_Click()));
 
     zoomOut.reset(new QAction(CoreLib->loadIcon("zoom-out"), tr("Zoom Out"), this));
     zoomOut->setStatusTip(tr("Zoom Out"));
+    zoomOut->setShortcut(Qt::Key_Minus);
     connect(zoomOut.get(), SIGNAL(triggered()), this, SLOT(zoomOut_Click()));
 
     sortAlpha.reset(new QAction(this));
