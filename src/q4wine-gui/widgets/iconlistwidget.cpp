@@ -719,6 +719,10 @@ void IconListWidget::keyPressEvent (QKeyEvent * event ){
         this->iconPaste_Click();
     } else if (event->key() == Qt::Key_X && event->modifiers() & Qt::ControlModifier) {
         this->iconCut_Click();
+    } else if (event->key() == Qt::Key_Plus) {
+        this->changeView(2);
+    } else if (event->key() == Qt::Key_Minus) {
+        this->changeView(3);
     } else {
         QListWidget::keyPressEvent(event);
     }

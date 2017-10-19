@@ -9,6 +9,7 @@ Version 1.3.6
   - Ukrainian translation;
   - Spanish translation;
   - Czech translation;
+  - Bind Plus and Minus keys for Program tab for +\- zoom respectively [BUT-112];
  Documented:
   - q4wine prevents user from running winecfg from KRunner even after uninstalling [BUG-98];
  Fixed:
