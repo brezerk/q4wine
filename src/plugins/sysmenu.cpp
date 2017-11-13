@@ -254,7 +254,7 @@ bool system_menu::create_dir_info(const QString prefix_name, const QString dir_n
 }
 
 bool system_menu::writeXMLSystemMenu(){
-
+    bool export_sysdir = CoreLib->getSetting("Plugins", "ExportSystemFolder", false, false).toBool();
     menu_xml = QDomDocument("Menu PUBLIC \"-//freedesktop//DTD Menu 1.0//EN\" \"http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd\"");
     QDomElement root = menu_xml.createElement("Menu");
     menu_xml.appendChild(root);
@@ -273,6 +273,9 @@ bool system_menu::writeXMLSystemMenu(){
         this->add_dom_icons(menu_xml, root_l1, list.at(i), "", iconsList);
         QStringList subresult = db_dir.getDirList(list.at(i));
         for (int j = 0; j < subresult.size(); ++j) {
+            if ((!export_sysdir) && (subresult.at(j) == "system")) {
+                continue;
+            }
             QDomElement root_l2 = this->create_dom_menu(menu_xml, root_l1, list.at(i), subresult.at(j));
             QStringList iconsList=db_icon.getIconsList(list.at(i), subresult.at(j), "");
             this->add_dom_icons(menu_xml, root_l2, list.at(i), subresult.at(j), iconsList);
@@ -292,6 +295,10 @@ bool system_menu::writeXMLSystemMenu(){
 }
 
 bool system_menu::generateSystemMenu(const QString prefix_name, const QString dir_name){
+    //if ((prefix_name.isEmpty()) && (dir_name.isEmpty())) {
+    //    this->wipeSystemMenu();
+    //}
+
     QStringList prefixes;
     QStringList subdirs;
 
@@ -300,6 +307,8 @@ bool system_menu::generateSystemMenu(const QString prefix_name, const QString di
     } else {
         prefixes << prefix_name;
     }
+
+    bool export_sysdir = CoreLib->getSetting("Plugins", "ExportSystemFolder", false, false).toBool();
 
     for (int i = 0; i < prefixes.size(); ++i) {
         this->create_dir_info(prefixes.at(i));
@@ -315,6 +324,9 @@ bool system_menu::generateSystemMenu(const QString prefix_name, const QString di
         }
 
         for (int j = 0; j < subdirs.size(); ++j) {
+            if ((!export_sysdir) && (subdirs.at(j) == "system")) {
+                continue;
+            }
             this->create_dir_info(prefixes.at(i), subdirs.at(j));
             QStringList iconsList=db_icon.getIconsList(prefixes.at(i), subdirs.at(j), "");
             for (int z = 0; z < iconsList.size(); ++z) {

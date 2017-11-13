@@ -24,11 +24,13 @@
 #include <QTextStream>
 
 #ifdef DEBUG
+
 #include <QDebug>
 #endif
 
 #include <QString>
 #include <QLibrary>
+
 
 #include "mainwindow.h"
 
