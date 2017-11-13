@@ -1513,16 +1513,16 @@ QStringList corelib::getCdromDevices(void) const{
             url.append("/");
             if (rawurl.contains('#')) {
                 QStringList list = rawurl.split('#');
-		url.append(list.at(0));
-	        url.append("?version=");
-	        url.append(APP_VERS);
-		url.append('#');
-		url.append(list.at(1));
+                url.append(list.at(0));
+                url.append("?version=");
+                url.append(APP_VERS);
+                url.append('#');
+                url.append(list.at(1));
             } else {
                 url.append(rawurl);
-	        url.append("?version=");
-	        url.append(APP_VERS);
-	    }
+                url.append("?version=");
+                url.append(APP_VERS);
+            }
 
             this->openUrl(url);
             return;
