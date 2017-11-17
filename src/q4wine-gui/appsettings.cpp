@@ -274,6 +274,12 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
     } else {
         cbEnableDesktopMenu->setChecked(false);
     }
+    if (settings.value("ExportSystemFolder", 0).toInt()==1){
+        cbExportSystemFolder->setChecked(true);
+    } else {
+        cbExportSystemFolder->setChecked(false);
+    }
+
     settings.endGroup();
     connect(cmdDesktopMenu_Regen, SIGNAL(clicked()), this, SLOT(cmdDesktopMenu_Regen_Click()));
     connect(cmdDesktopMenu_Remove, SIGNAL(clicked()), this, SLOT(cmdDesktopMenu_Remove_Click()));
@@ -701,6 +707,11 @@ void AppSettings::cmdOk_Click(){
         settings.setValue("enableMenuDesktop", 1);
     } else {
         settings.setValue("enableMenuDesktop", 0);
+    }
+    if (cbExportSystemFolder->isChecked()){
+        settings.setValue("ExportSystemFolder", 1);
+    } else {
+        settings.setValue("ExportSystemFolder", 0);
     }
     settings.endGroup();
 #endif
