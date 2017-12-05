@@ -199,7 +199,7 @@ IF( NOT ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 ENDIF( NOT ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 
 IF( NOT LINGUAS )
-	SET ( LINGUAS af cs de en es fa he it ja pl pt_BR ru uk zh_TW zh_CN )
+    SET ( LINGUAS af cs de en es fa he it ja pl pt_BR ru uk zh_TW zh_CN fr )
 ENDIF( NOT LINGUAS )
 
 configure_file(${CMAKE_SOURCE_DIR}/config.h.cmake ${CMAKE_SOURCE_DIR}/config.h )

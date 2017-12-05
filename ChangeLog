@@ -2,7 +2,7 @@ Version 1.3.7
  Updated:
   - Wine stock icons to be organised through Q4Wine [BUG-117];
   - Add gnome-terminal into terminal detection logic [BUG-118];
-
+  - Added French translation (thx 2 seigneurfuo);
 Version 1.3.6
  Updated:
   - Added indication of applications which was installed through winetricks [BUG-106][BUG-111];
