@@ -759,7 +759,7 @@
     <message>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+60"/>
         <source>Fake drive settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres des faux disques</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/FakeDriveSettings.ui" line="+52"/>
