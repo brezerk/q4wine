@@ -22,13 +22,13 @@ The general idea came from WineTools, which was initially written by Frank Hendr
 
 Dependencies:
 ***********************************************
-cmake >= 2.8.11 for Qt5 or >= 2.8.0 for qt4
+cmake >= 2.8.11
 sudo
 wine
 >=sqlite-3.5.6
 >=which-2.19
 >=icoutils-0.26.0
-qt5 >= 5.2.1 or qt4 >= 4.4.0
+qt5 >= 5.2.1 (core, gui, svg, network, xml, widgets)
 wget
 fuseiso 		***optional***
 
