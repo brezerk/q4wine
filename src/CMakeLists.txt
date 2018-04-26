@@ -24,7 +24,7 @@ option(WITH_WINEAPPDB "If ON, then build q4wine with Wine AppDB browser support.
 option(USE_BZIP2 "Use bzip2 to compress man pages." "OFF")
 option(USE_GZIP "Use gzip to compress man pages." "OFF")
 option(WITH_DBUS "If ON, then build q4wine with QtDBus notification support." "ON")
-option(LINGUAS "Language list" "af;cs;de;en;es;fa;he;it;ja;pl;pt_BR;ru;uk;zh_TW;zh_CN")
+option(LINGUAS "Language list" "af;cs;de;en;es;fa;fr;he;it;ja;pl;pt_BR;ru;uk;zh_TW;zh_CN")
 option(LIBS_ENTRY_PATH "Destination directory for q4wine-core library")
 
 MESSAGE("\n * Utility for Wine applications and prefixes management.")

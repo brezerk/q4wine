@@ -1,5 +1,5 @@
 /***************************************************************************
-*   Copyright (C) 2008-2017 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+*   Copyright (C) 2008-2017 by Oleksii S. Malakhov <brezerk@gmail.com>     *
 *                                                                         *
 *   This program is free software: you can redistribute it and/or modify  *
 *   it under the terms of the GNU General Public License as published by  *
@@ -374,6 +374,18 @@
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Kiev, Ukraine" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    " " \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "seigneurfuo " \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "French translation" \
+	"</p>" \
+        "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='http://atheo.esy.es' style='color:#5f9ea0;'>http://atheo.esy.es</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    " " \

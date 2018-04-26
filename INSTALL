@@ -40,7 +40,7 @@ Installation
 3. $ mkdir build
 4. $ cd build
 5. $ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
- 
+
    q4wine build options:
 
        By default, q4wine will install all files into these directories:
@@ -54,7 +54,7 @@ Installation
 
        By default, q4wine will build and install all translations:
 
-       LINGUAS                   : "af;cs;de;en;es;fa;he;it;ja;pl;pt_BR;ru;uk;zh_TW"
+       LINGUAS                   : "af;cs;de;en;es;fa;fr;he;it;ja;pl;pt_BR;ru;uk;zh_TW"
 
        Optional buils flags:     : Default | Possible
 
