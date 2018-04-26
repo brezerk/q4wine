@@ -837,6 +837,22 @@ void AppSettings::cbShowTray_stateChanged ( int state ){
 }
 
 void AppSettings::cmdDesktopMenu_Regen_Click(){
+
+    //save changes in order to apply user-selected settings
+    QSettings settings(APP_SHORT_NAME, "default");
+    settings.beginGroup("Plugins");
+    if (cbEnableDesktopMenu->isChecked()){
+        settings.setValue("enableMenuDesktop", 1);
+    } else {
+        settings.setValue("enableMenuDesktop", 0);
+    }
+    if (cbExportSystemFolder->isChecked()){
+        settings.setValue("ExportSystemFolder", 1);
+    } else {
+        settings.setValue("ExportSystemFolder", 0);
+    }
+    settings.endGroup();
+
     system_menu sys_menu;
     sys_menu.create_dir_info();
     sys_menu.generateSystemMenu();
