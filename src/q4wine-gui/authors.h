@@ -385,7 +385,7 @@
 	    "French translation" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='http://atheo.esy.es' style='color:#5f9ea0;'>http://atheo.esy.es</a>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='https://seigneurfuo.wordpress.com' style='color:#5f9ea0;'>https://seigneurfuo.wordpress.com</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    " " \
