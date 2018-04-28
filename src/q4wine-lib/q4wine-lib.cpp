@@ -334,7 +334,25 @@ void corelib::checkSettings(){
     this->getSetting("system", "mount");
     this->getSetting("system", "umount");
     this->getSetting("system", "sudo");
-    this->getSetting("system", "gui_sudo");
+    if (this->getWhichOut(this->getSetting("system", "gui_sudo", false).toString(), false).isEmpty()){
+        QStringList guisudo;
+#ifdef _OS_DARWIN_
+        guisudo << "osascript";
+#else
+        guisudo << "pkexec" << "kdesudo" << "kdesu" << "gksudo" << "gksu" << "sudo";
+#endif
+        foreach (QString bin, guisudo){
+            QString path = this->getWhichOut(bin, false);
+            if (!path.isEmpty()){
+                QSettings settings(APP_SHORT_NAME, "default");
+                settings.beginGroup("system");
+                settings.setValue("gui_sudo", path);
+                settings.endGroup();
+                break;
+            }
+        }
+        this->getSetting("system", "gui_sudo");
+    }
     this->getSetting("system", "nice");
     this->getSetting("system", "renice");
     this->getSetting("system", "sh");
@@ -1445,6 +1463,7 @@ QStringList corelib::getCdromDevices(void) const{
 
             if (!myProcess.waitForFinished())
                 return false;
+
             int exitcode = myProcess.exitCode();
             QProcess::ExitStatus exitStatus = myProcess.exitStatus();
             if (showLog && (exitcode != 0 || exitStatus == QProcess::CrashExit)){
@@ -1770,7 +1789,7 @@ QStringList corelib::getCdromDevices(void) const{
 
             QString sudobin = this->getSetting("system", "gui_sudo").toString();
 
-            if (!sudobin.contains(QRegExp("/sudo$"))){
+            if (!sudobin.contains(QRegExp("/(sudo|pkexec)$"))){
                 QString arg =args.join(" ");
                 args.clear();
                 args.append(arg);

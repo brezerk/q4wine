@@ -116,7 +116,7 @@ Wizard::Wizard(int WizardType, QString var1, QWidget * parent, Qt::WindowFlags f
 #ifdef _OS_DARWIN_
         guisudo << "osascript";
 #else
-        guisudo << "kdesudo" << "kdesu" << "gksudo" << "gksu" << "sudo";
+        guisudo << "pkexec" << "kdesudo" << "kdesu" << "gksudo" << "gksu" << "sudo";
 #endif
         foreach (QString bin, guisudo){
             QString path = CoreLib->getWhichOut(bin, false);
