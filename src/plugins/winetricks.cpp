@@ -138,10 +138,11 @@ void winetricks::run_winetricks(QString item){
 
 QStringList winetricks::get_command(QString item){
     QStringList sh_args;
-    QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
+    int proxy_type = CoreLib->getSetting("network", "type", false, 0).toInt();
     sh_args.append("env");
 
-    if (!proxy_host.isEmpty()){
+    if (proxy_type > 0){
+        QString proxy_host = CoreLib->getSetting("network", "host", false).toString();
         QString proxy_auth = CoreLib->getSetting("network", "user", false).toString();
         if (!proxy_auth.isEmpty()){
             QString proxy_pass = CoreLib->getSetting("network", "pass", false).toString();
