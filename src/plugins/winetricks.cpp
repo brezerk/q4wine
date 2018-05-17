@@ -53,36 +53,60 @@ winetricks::winetricks(QString prefixName) : QWidget()
 
 QStringList winetricks::get_installed() {
 
-    QStringList installed_apps;
-
-    if (!check_script())
-        return installed_apps;
-
-    QString infile = QString(winetricks_bin);
-
-    QProcess process;
-
-    QStringList args; // = get_command("list-installed");
-    args.append("-c");
-    args.append(get_command("list-installed").join(" "));
-
-    QString exec = "/bin/sh";
-
-    process.start(exec, args);
-    process.waitForFinished(-1); // will wait forever until finished
-
-    QString stdout = process.readAllStandardOutput();
-    QString stderr = process.readAllStandardError();
-
-    QString pkg_name;
-    foreach(pkg_name, stdout.split("------------------------------------------------------").last().split("\n")){
-        if (!pkg_name.isEmpty()){
-            qDebug() << pkg_name;
-            installed_apps.append(pkg_name);
+    QStringList installed_verbs;
+    qstring_map name_val_settings;
+    QString winver = nullptr;
+    QHash<QString, QString> prefix_info = db_prefix.getByName(this->prefix_name);
+    QString logfile = QString("%1/winetricks.log").arg(CoreLib->getStrictEscapeString(prefix_info.value("path")));
+    QFile file(logfile);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        return installed_verbs;
+    } else {
+        const QString winver_verbs[] = {
+            "nt40", "vista", "win2k", "win2k3", "win2k8", "win31", "win7",
+            "win8", "win81", "win10", "win95", "win98", "winver=", "winxp",
+            nullptr};
+        QTextStream textinputstream(&file);
+        while (!textinputstream.atEnd()) {
+            QString l = textinputstream.readLine();
+            if (textinputstream.status() != QTextStream::Ok) {
+                file.close();
+                return installed_verbs;
+            } else if (installed_verbs.contains(l)) {
+                // Ignore duplicate
+                continue;
+            } else if (l.count('=') == 1 && !l.endsWith('=')) {
+                // For some "name=value" settings,
+                // use map to add the last (valid) one
+                QString key = l.section('=', 0, 0);
+                QString val = l.section('=', 1, 1);
+                // If old "name=value" setting exists, it is overwritten
+                name_val_settings[key] = val;
+            } else {
+                // If the verb is used for setting OS version, add the last one
+                bool is_winver = false;
+                for (int i = 0; winver_verbs[i] != nullptr; i++) {
+                    if (l == winver_verbs[i]) {
+                        is_winver = true;
+                        winver = l;
+                        break;
+                    }
+                }
+                if (!is_winver) {
+                    installed_verbs.append(l);
+                }
+            }
         }
     }
+    file.close();
+    foreach (QString key, name_val_settings.keys()) {
+        installed_verbs.append(QString("%1=%2").arg(key).arg(name_val_settings[key]));
+    }
+    if (winver != nullptr) {
+        installed_verbs.append(winver);
+    }
 
-    return installed_apps;
+    return installed_verbs;
 }
 
 void winetricks::install_winetricks() {
