@@ -62,10 +62,7 @@ QStringList winetricks::get_installed() {
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         return installed_verbs;
     } else {
-        const QString winver_verbs[] = {
-            "nt40", "vista", "win2k", "win2k3", "win2k8", "win31", "win7",
-            "win8", "win81", "win10", "win95", "win98", "winver=", "winxp",
-            nullptr};
+        QRegExp winver_regexp("^nt40|vista|win([0-9][0-9k]?[0-9]?|xp|ver=)$");
         QTextStream textinputstream(&file);
         while (!textinputstream.atEnd()) {
             QString l = textinputstream.readLine();
@@ -84,15 +81,9 @@ QStringList winetricks::get_installed() {
                 name_val_settings[key] = val;
             } else {
                 // If the verb is used for setting OS version, add the last one
-                bool is_winver = false;
-                for (int i = 0; winver_verbs[i] != nullptr; i++) {
-                    if (l == winver_verbs[i]) {
-                        is_winver = true;
-                        winver = l;
-                        break;
-                    }
-                }
-                if (!is_winver) {
+                if (winver_regexp.indexIn(l) != -1) {
+                    winver = l;
+                } else {
                     installed_verbs.append(l);
                 }
             }
