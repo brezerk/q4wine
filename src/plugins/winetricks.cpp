@@ -62,7 +62,7 @@ QStringList winetricks::get_installed() {
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         return installed_verbs;
     } else {
-        QRegExp winver_regexp("^nt40|vista|win([0-9][0-9k]?[0-9]?|xp|ver=)$");
+        QRegExp winver_regexp("^(nt40|vista|win([0-9][0-9k]?[0-9]?|xp|ver=))$");
         QTextStream textinputstream(&file);
         while (!textinputstream.atEnd()) {
             QString l = textinputstream.readLine();
