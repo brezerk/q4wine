@@ -1,3 +1,7 @@
+Version 1.3.9
+ Fixed:
+  - Fixed build with Qt >= 5.11 [BUG-125];
+
 Version 1.3.8
  Updated:
   - gui_sudo missing in Ubuntu 18.04 [BUG-120];
