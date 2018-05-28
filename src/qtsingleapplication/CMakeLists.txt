@@ -23,5 +23,5 @@ ENDIF( QT5 MATCHES ON )
 
 ADD_LIBRARY( qtsingleapp STATIC ${QSINGLEAPP_LIB_SOURCES} ${QSINGLEAPP_LIB_HEADERS} ${QTSINGLEAPPLICATION-LIB-MOC-SRCS}  )
 if(QT5 MATCHES ON)
-    qt5_use_modules(qtsingleapp Core Network Widgets)
+    target_link_libraries(qtsingleapp Qt5::Core Qt5::Network Qt5::Widgets)
 endif(QT5 MATCHES ON)
