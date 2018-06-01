@@ -45,7 +45,7 @@ developers:
           nick: brezerk
           info: Project maintainer, lead developer, website designer and developer, project documentation, support etc. ;)
           mail: brezerk@gmail.com
-          web: http://brezblock.org.ua
+          web: https://brezblock.org.ua
           location: Kiev, Ukraine
 
         - name: Sergey Skrypnic
@@ -114,7 +114,7 @@ translations:
           nick: brezerk
           info: Ukrainian translation
           mail: brezerk@gmail.com
-          web: http://brezblock.org.ua
+          web: https://brezblock.org.ua
           location: Kiev, Ukraine
 
         - name: Boris Pek

@@ -42,7 +42,7 @@
 	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:brezerk@gmail.com' style='text-decoration: none; color:#5f9ea0;'>brezerk@gmail.com</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='http://brezblock.org.ua' style='color:#5f9ea0;'>http://brezblock.org.ua</a>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='https://brezblock.org.ua' style='color:#5f9ea0;'>https://brezblock.org.ua</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Kiev, Ukraine" \
@@ -124,7 +124,7 @@
 	    "<span style='color:#6495ed;'>E-Mail</span>: <a href='mailto:brezerk@gmail.com' style='text-decoration: none; color:#5f9ea0;'>brezerk@gmail.com</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
-	    "<span style='color:#6495ed;'>Web</span>: <a href='http://brezblock.org.ua' style='color:#5f9ea0;'>http://brezblock.org.ua</a>" \
+	    "<span style='color:#6495ed;'>Web</span>: <a href='https://brezblock.org.ua' style='color:#5f9ea0;'>https://brezblock.org.ua</a>" \
 	"</p>" \
         "<p style='margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;'>" \
 	    "Kiev, Ukraine" \
