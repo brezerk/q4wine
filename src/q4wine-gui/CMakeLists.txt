@@ -209,7 +209,7 @@ IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
 if (QT5 MATCHES ON)
-    qt5_use_modules(q4wine Core DBus Network Sql Widgets Xml)
+    target_link_libraries(q4wine Qt5::Core Qt5::DBus Qt5::Network Qt5::Sql Qt5::Widgets Qt5::Xml)
     target_link_libraries(q4wine q4wine-core ${BSD_LIBS} ${QTSINGLEAPPLIB})
 else (QT5 MATCHES ON)
 TARGET_LINK_LIBRARIES( q4wine ${QT_LIBRARIES} q4wine-core ${BSD_LIBS} ${QTSINGLEAPPLIB})

@@ -85,7 +85,7 @@ IF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 ENDIF( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
 
 if(QT5 MATCHES ON)
-    qt5_use_modules(q4wine-core Core DBus Network Sql Widgets Xml)
+    target_link_libraries(q4wine-core Qt5::Core Qt5::DBus Qt5::Network Qt5::Sql Qt5::Widgets Qt5::Xml)
 else(QT5 MATCHES ON)
 target_link_libraries( q4wine-core ${QT_LIBRARIES})
 endif(QT5 MATCHES ON)
