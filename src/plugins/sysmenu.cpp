@@ -299,6 +299,10 @@ bool system_menu::generateSystemMenu(const QString prefix_name, const QString di
     //    this->wipeSystemMenu();
     //}
 
+#ifdef DEBUG
+    qDebug() << "[DD] system_menu::generateSystemMenu: " << prefix_name << " " << dir_name;
+#endif
+
     QStringList prefixes;
     QStringList subdirs;
 
@@ -310,10 +314,21 @@ bool system_menu::generateSystemMenu(const QString prefix_name, const QString di
 
     bool export_sysdir = CoreLib->getSetting("Plugins", "ExportSystemFolder", false, false).toBool();
 
+#ifdef DEBUG
+    qDebug() << "[DD] system_menu::generateSystemMenu: export_sysdir " << export_sysdir;
+#endif
+
     for (int i = 0; i < prefixes.size(); ++i) {
         this->create_dir_info(prefixes.at(i));
+#ifdef DEBUG
+        qDebug() << "[DD] system_menu::generateSystemMenu: on prefix: " << prefixes.at(i);
+#endif
+
         QStringList iconsList=db_icon.getIconsList(prefixes.at(i), "", "");
         for (int m = 0; m < iconsList.size(); ++m) {
+#ifdef DEBUG
+            qDebug() << "[DD] system_menu::generateSystemMenu: createDesktopFile " << prefixes.at(i) << " " << iconsList.at(m);
+#endif
             CoreLib->createDesktopFile(prefixes.at(i), "", iconsList.at(m), true);
         }
 
@@ -327,15 +342,25 @@ bool system_menu::generateSystemMenu(const QString prefix_name, const QString di
             if ((!export_sysdir) && (subdirs.at(j) == "system")) {
                 continue;
             }
+#ifdef DEBUG
+            qDebug() << "[DD] system_menu::generateSystemMenu: on subdir: " << subdirs.at(j);
+#endif
             this->create_dir_info(prefixes.at(i), subdirs.at(j));
             QStringList iconsList=db_icon.getIconsList(prefixes.at(i), subdirs.at(j), "");
             for (int z = 0; z < iconsList.size(); ++z) {
+#ifdef DEBUG
+                qDebug() << "[DD] system_menu::generateSystemMenu: createDesktopFile " << prefixes.at(i) << " " << subdirs.at(j) << " " << iconsList.at(z);
+#endif
                 CoreLib->createDesktopFile(prefixes.at(i), subdirs.at(j), iconsList.at(z), true);
             }
         }
     }
 
     return writeXMLSystemMenu();
+
+#ifdef DEBUG
+    qDebug() << "[DD] system_menu::generateSystemMenu: done";
+#endif
 }
 
 bool system_menu::wipeSystemMenu(){
