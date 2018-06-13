@@ -493,7 +493,7 @@
     <message>
         <location line="+7"/>
         <source>Export &apos;system&apos; folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспортировать &quot;системную&quot; папку</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3031,13 +3031,13 @@ See help for details.</source>
         <location line="-286"/>
         <location line="+1"/>
         <source>Zoom In</source>
-        <translation type="unfinished">Увеличить</translation>
+        <translation>Увеличить</translation>
     </message>
     <message>
         <location line="+4"/>
         <location line="+1"/>
         <source>Zoom Out</source>
-        <translation type="unfinished">Уменьшить</translation>
+        <translation>Уменьшить</translation>
     </message>
     <message>
         <location line="+94"/>
