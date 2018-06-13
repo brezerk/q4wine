@@ -528,7 +528,7 @@
     <message>
         <location line="+7"/>
         <source>Export &apos;system&apos; folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортувати &quot;системну&quot; теку</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3075,13 +3075,13 @@ See help for details.</source>
         <location line="-286"/>
         <location line="+1"/>
         <source>Zoom In</source>
-        <translation type="unfinished">Збільшити</translation>
+        <translation>Збільшити</translation>
     </message>
     <message>
         <location line="+4"/>
         <location line="+1"/>
         <source>Zoom Out</source>
-        <translation type="unfinished">Зменшити</translation>
+        <translation>Зменшити</translation>
     </message>
     <message>
         <location line="+94"/>
