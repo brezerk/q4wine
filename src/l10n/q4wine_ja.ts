@@ -62,145 +62,111 @@
 <context>
     <name>AppDBHeaderWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbheaderwidget.cpp" line="+106"/>
         <source>Page %1 of %2</source>
-        <translation>ページ %1 / %2</translation>
+        <translation type="vanished">ページ %1 / %2</translation>
     </message>
 </context>
 <context>
     <name>AppDBWidget</name>
     <message>
-        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="+85"/>
-        <location line="+314"/>
         <source>Status: Ready</source>
-        <translation>状態: 準備完了</translation>
+        <translation type="vanished">状態: 準備完了</translation>
     </message>
     <message>
-        <location line="-294"/>
-        <location line="+19"/>
-        <location line="+15"/>
-        <location line="+18"/>
-        <location line="+16"/>
-        <location line="+181"/>
         <source>Status: Connecting to %1</source>
-        <translation>状態: %1 に接続しています</translation>
+        <translation type="vanished">状態: %1 に接続しています</translation>
     </message>
     <message>
-        <location line="-101"/>
         <source>Subcategories</source>
-        <translation>サブ カテゴリ</translation>
+        <translation type="vanished">サブ カテゴリ</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Applications</source>
-        <translation>アプリケーション</translation>
+        <translation type="vanished">アプリケーション</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Error: cannot read data from %1.</source>
-        <translation>エラー: %1 からデータを読み込めません。</translation>
+        <translation type="vanished">エラー: %1 からデータを読み込めません。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Error: wrong or broken XML data. Try again later.</source>
-        <translation>エラー: XML データが間違っているか破損しています。また後で試してください。</translation>
+        <translation type="vanished">エラー: XML データが間違っているか破損しています。また後で試してください。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Error: wrong or broken AppDB XML version. This might be caused by an outdated application version.</source>
-        <translation>エラー: AppDB XML のバージョンが不正です。これはアプリケーションのバージョンが古い場合に起こります。</translation>
+        <translation type="vanished">エラー: AppDB XML のバージョンが不正です。これはアプリケーションのバージョンが古い場合に起こります。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Error: XML parse error.</source>
-        <translation>エラー: XML の構文解析エラーです。</translation>
+        <translation type="vanished">エラー: XML の構文解析エラーです。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Error: unexpected error.</source>
-        <translation>エラー: 予期しないエラーです。</translation>
+        <translation type="vanished">エラー: 予期しないエラーです。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Search: No matches found.</source>
-        <translation>検索: 一致した結果が見つかりませんでした。</translation>
+        <translation type="vanished">検索: 一致した結果が見つかりませんでした。</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>Open AppDB</source>
-        <translation>AppDB を開く</translation>
+        <translation type="vanished">AppDB を開く</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Open Wine AppDB web site</source>
-        <translation>Wine 公式の AppDB の Web サイトを開く</translation>
+        <translation type="vanished">Wine 公式の AppDB の Web サイトを開く</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Open App page</source>
-        <translation>アプリケーションのページを開く</translation>
+        <translation type="vanished">アプリケーションのページを開く</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Open current application page at Wine AppDB web site</source>
-        <translation>Wine 公式の AppDB の Web サイトで現在のアプリケーションのページを開く</translation>
+        <translation type="vanished">Wine 公式の AppDB の Web サイトで現在のアプリケーションのページを開く</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <location line="+1"/>
         <source>Clear results</source>
-        <translation>結果をクリア</translation>
+        <translation type="vanished">結果をクリア</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <location line="+1"/>
         <source>Clear search field</source>
-        <translation>検索フィールドをクリア</translation>
+        <translation type="vanished">検索フィールドをクリア</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Search in AppDB</source>
-        <translation>AppDB で検索</translation>
+        <translation type="vanished">AppDB で検索</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Search in Wine AppDB</source>
-        <translation>Wine AppDBで検索</translation>
+        <translation type="vanished">Wine AppDBで検索</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>AppDB categories list</source>
-        <translation>AppDB カテゴリ一覧</translation>
+        <translation type="vanished">AppDB カテゴリ一覧</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>View Wine AppDB categories list</source>
-        <translation>Wine AppDB のカテゴリ一覧を表示</translation>
+        <translation type="vanished">Wine AppDB のカテゴリ一覧を表示</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>Error: %1</source>
-        <translation>エラー: %1</translation>
+        <translation type="vanished">エラー: %1</translation>
     </message>
     <message>
-        <location line="+36"/>
         <source>Status: Sending request to the server.</source>
-        <translation>状態: サーバに要求を送信しています。</translation>
+        <translation type="vanished">状態: サーバに要求を送信しています。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Status: Reading server&apos;s response.</source>
-        <translation>状態: サーバの応答を読み込んでいます。</translation>
+        <translation type="vanished">状態: サーバの応答を読み込んでいます。</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Status: Closing down connection.</source>
-        <translation>状態: 接続を切断しています。</translation>
+        <translation type="vanished">状態: 接続を切断しています。</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Status: Not connected.</source>
-        <translation>状態: 接続されていません。</translation>
+        <translation type="vanished">状態: 接続されていません。</translation>
     </message>
 </context>
 <context>
@@ -1274,9 +1240,8 @@ See help for details.</source>
 <context>
     <name>HttpCore</name>
     <message>
-        <location filename="../core/httpcore.cpp" line="+220"/>
         <source>Download failed: %1.</source>
-        <translation>ダウンロードに失敗しました: %1。</translation>
+        <translation type="vanished">ダウンロードに失敗しました: %1。</translation>
     </message>
 </context>
 <context>
