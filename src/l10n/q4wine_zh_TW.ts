@@ -390,7 +390,7 @@
     <message>
         <location line="+282"/>
         <source>OK</source>
-        <translation>是</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <source>wrestool:</source>
@@ -570,7 +570,7 @@
     <message>
         <location line="+7"/>
         <source>Export &apos;system&apos; folder</source>
-        <translation type="unfinished"></translation>
+        <translation>匯出「系統」資料夾</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -3067,13 +3067,13 @@ See help for details.</source>
         <location line="-286"/>
         <location line="+1"/>
         <source>Zoom In</source>
-        <translation type="unfinished">放大</translation>
+        <translation>放大</translation>
     </message>
     <message>
         <location line="+4"/>
         <location line="+1"/>
         <source>Zoom Out</source>
-        <translation type="unfinished">縮小</translation>
+        <translation>縮小</translation>
     </message>
     <message>
         <location line="+94"/>
