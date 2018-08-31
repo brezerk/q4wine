@@ -174,6 +174,14 @@ void HttpCore::readResponseHeader(QNetworkReply* reply)
 {
     if (reply->error() == QNetworkReply::NoError)
     {
+        int status_code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+        if (status_code == 301 || status_code == 302) {
+            QVariant possibleRedirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
+            QNetworkRequest request = QNetworkRequest(QUrl(possibleRedirectUrl.toString()));
+            request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+            request.setHeader(QNetworkRequest::UserAgentHeader, user_agent);
+            http->get(request);
+        }
         xmlreply = reply->readAll();
 #ifdef DEBUG
         qDebug()<<"[ii] Received page:"<<xmlreply;
