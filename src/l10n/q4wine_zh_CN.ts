@@ -62,111 +62,145 @@
 <context>
     <name>AppDBHeaderWidget</name>
     <message>
+        <location filename="../q4wine-gui/widgets/appdb/appdbheaderwidget.cpp" line="+106"/>
         <source>Page %1 of %2</source>
-        <translation type="vanished">第 %1 页，共 %2 页</translation>
+        <translation>第 %1 页，共 %2 页</translation>
     </message>
 </context>
 <context>
     <name>AppDBWidget</name>
     <message>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="+85"/>
+        <location line="+314"/>
         <source>Status: Ready</source>
-        <translation type="vanished">状态：就绪</translation>
+        <translation>状态：就绪</translation>
     </message>
     <message>
+        <location line="-294"/>
+        <location line="+19"/>
+        <location line="+15"/>
+        <location line="+18"/>
+        <location line="+16"/>
+        <location line="+181"/>
         <source>Status: Connecting to %1</source>
-        <translation type="vanished">状态：正在连接到 %1</translation>
+        <translation>状态：正在连接到 %1</translation>
     </message>
     <message>
+        <location line="-100"/>
         <source>Applications</source>
-        <translation type="vanished">应用程序</translation>
+        <translation>应用程序</translation>
     </message>
     <message>
+        <location line="-1"/>
         <source>Subcategories</source>
-        <translation type="vanished">子类</translation>
+        <translation>子类</translation>
     </message>
     <message>
+        <location line="+26"/>
         <source>Error: unexpected error.</source>
-        <translation type="vanished">错误：未知错误。</translation>
+        <translation>错误：未知错误。</translation>
     </message>
     <message>
+        <location line="-12"/>
         <source>Error: cannot read data from %1.</source>
-        <translation type="vanished">错误：无法从 %1 读取数据。</translation>
+        <translation>错误：无法从 %1 读取数据。</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Error: wrong or broken XML data. Try again later.</source>
-        <translation type="vanished">错误：不正确或已损坏的 XML 数据。请稍候重试。</translation>
+        <translation>错误：不正确或已损坏的 XML 数据。请稍候重试。</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Error: wrong or broken AppDB XML version. This might be caused by an outdated application version.</source>
-        <translation type="vanished">错误：不正确或无法使用的 AppDB XML 版本。这可能是应用程序版本过老导致的。</translation>
+        <translation>错误：不正确或无法使用的 AppDB XML 版本。这可能是应用程序版本过老导致的。</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Error: XML parse error.</source>
-        <translation type="vanished">错误：XML 解析错误。</translation>
+        <translation>错误：XML 解析错误。</translation>
     </message>
     <message>
+        <location line="+6"/>
         <source>Search: No matches found.</source>
-        <translation type="vanished">搜索：未找到匹配项。</translation>
+        <translation>搜索：未找到匹配项。</translation>
     </message>
     <message>
+        <location line="+8"/>
         <source>Open AppDB</source>
-        <translation type="vanished">打开 AppDB</translation>
+        <translation>打开 AppDB</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Open Wine AppDB web site</source>
-        <translation type="vanished">打开 Wine AppDB 站点</translation>
+        <translation>打开 Wine AppDB 站点</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Open App page</source>
-        <translation type="vanished">打开应用程序页面</translation>
+        <translation>打开应用程序页面</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Open current application page at Wine AppDB web site</source>
-        <translation type="vanished">打开 Wine AppDB 站点上关于当前应用程序的页面</translation>
+        <translation>打开 Wine AppDB 站点上关于当前应用程序的页面</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <location line="+1"/>
         <source>Clear results</source>
-        <translation type="vanished">清除结果</translation>
+        <translation>清除结果</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <location line="+1"/>
         <source>Clear search field</source>
-        <translation type="vanished">清除搜索栏</translation>
+        <translation>清除搜索栏</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Search in AppDB</source>
-        <translation type="vanished">在 AppDB 中搜索</translation>
+        <translation>在 AppDB 中搜索</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Search in Wine AppDB</source>
-        <translation type="vanished">在 Wine AppDB 中搜索</translation>
+        <translation>在 Wine AppDB 中搜索</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>AppDB categories list</source>
-        <translation type="vanished">AppDB 分类列表</translation>
+        <translation>AppDB 分类列表</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>View Wine AppDB categories list</source>
-        <translation type="vanished">查看 Wine AppDB 分类列表</translation>
+        <translation>查看 Wine AppDB 分类列表</translation>
     </message>
     <message>
+        <location line="+8"/>
         <source>Error: %1</source>
-        <translation type="vanished">错误：%1</translation>
+        <translation>错误：%1</translation>
     </message>
     <message>
+        <location line="+36"/>
         <source>Status: Sending request to the server.</source>
-        <translation type="vanished">状态：正在向服务器发送请求。</translation>
+        <translation>状态：正在向服务器发送请求。</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Status: Reading server&apos;s response.</source>
-        <translation type="vanished">状态：正在读取服务器响应。</translation>
+        <translation>状态：正在读取服务器响应。</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Status: Closing down connection.</source>
-        <translation type="vanished">状态：正在关闭连接。</translation>
+        <translation>状态：正在关闭连接。</translation>
     </message>
     <message>
+        <location line="+4"/>
         <source>Status: Not connected.</source>
-        <translation type="vanished">错误：未连接。</translation>
+        <translation>错误：未连接。</translation>
     </message>
 </context>
 <context>
@@ -179,19 +213,19 @@
     </message>
     <message>
         <location line="+1283"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+372"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+377"/>
         <location line="+116"/>
         <location line="+98"/>
         <source>No Proxy</source>
         <translation>无代理服务器</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
         <source>generic</source>
         <translation>通用</translation>
     </message>
     <message>
-        <location line="+185"/>
+        <location line="+190"/>
         <location line="+6"/>
         <source>Open File</source>
         <translation>打开文件</translation>
@@ -205,7 +239,8 @@
     <message>
         <location line="+144"/>
         <location line="+4"/>
-        <location line="+189"/>
+        <location line="+132"/>
+        <location line="+64"/>
         <location line="+2"/>
         <location line="+6"/>
         <location line="+2"/>
@@ -213,7 +248,7 @@
         <translation>错误</translation>
     </message>
     <message>
-        <location line="-203"/>
+        <location line="-210"/>
         <source>Sorry, specify proxy host.</source>
         <translation>抱歉，请指定代理服务器主机。</translation>
     </message>
@@ -223,7 +258,12 @@
         <translation>抱歉，请指定代理服务器端口。</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+132"/>
+        <source>Invalid virtual desktop size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+64"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>错误：请指定 %1 的目录。</translation>
     </message>
@@ -244,24 +284,24 @@
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="+587"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-612"/>
-        <location line="+462"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-624"/>
+        <location line="+467"/>
         <source>System Default</source>
         <translation>系统默认</translation>
     </message>
     <message>
         <location line="-1811"/>
-        <location line="+2976"/>
+        <location line="+2979"/>
         <location line="+5"/>
         <location line="+4"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-298"/>
         <location line="+20"/>
-        <location line="+448"/>
+        <location line="+455"/>
         <source>General</source>
         <translation>常规</translation>
     </message>
     <message>
-        <location line="-2967"/>
+        <location line="-2970"/>
         <source>Wine settings</source>
         <translation>Wine 设置</translation>
     </message>
@@ -290,14 +330,14 @@
     </message>
     <message>
         <location line="+34"/>
-        <location line="+2743"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-445"/>
-        <location line="+447"/>
+        <location line="+2746"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-452"/>
+        <location line="+454"/>
         <source>System</source>
         <translation>系统</translation>
     </message>
     <message>
-        <location line="-2725"/>
+        <location line="-2728"/>
         <source>System utils</source>
         <translation>系统实用工具</translation>
     </message>
@@ -335,14 +375,14 @@
     </message>
     <message>
         <location line="+563"/>
-        <location line="+2167"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-444"/>
-        <location line="+446"/>
+        <location line="+2170"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-451"/>
+        <location line="+453"/>
         <source>Utils</source>
         <translation>实用工具</translation>
     </message>
     <message>
-        <location line="-2149"/>
+        <location line="-2152"/>
         <source>Console</source>
         <translation>控制台</translation>
     </message>
@@ -353,22 +393,22 @@
     </message>
     <message>
         <location line="+511"/>
-        <location line="+1537"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-440"/>
-        <location line="+444"/>
+        <location line="+1540"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-447"/>
+        <location line="+451"/>
         <source>Quick Mount</source>
         <translation>快速挂载</translation>
     </message>
     <message>
-        <location line="-1140"/>
-        <location line="+1160"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-429"/>
-        <location line="+439"/>
+        <location line="-1143"/>
+        <location line="+1163"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
+        <location line="+446"/>
         <source>Logging</source>
         <translation>日志</translation>
     </message>
     <message>
-        <location line="-1142"/>
+        <location line="-1145"/>
         <source>Logging subsystem:</source>
         <translation>日志子系统：</translation>
     </message>
@@ -378,7 +418,7 @@
         <translation>启动时清除日志。</translation>
     </message>
     <message>
-        <location line="+913"/>
+        <location line="+916"/>
         <source>Run recent program</source>
         <translation>运行最近使用的程序</translation>
     </message>
@@ -401,30 +441,30 @@
         <translation type="obsolete">icotool 命令：</translation>
     </message>
     <message>
-        <location line="-1392"/>
+        <location line="-1395"/>
         <location line="+18"/>
-        <location line="+1263"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-448"/>
-        <location line="+442"/>
+        <location line="+1266"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-455"/>
+        <location line="+449"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-439"/>
-        <location line="+441"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-446"/>
+        <location line="+448"/>
         <source>Themes</source>
         <translation>主题</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-1868"/>
-        <location line="+1853"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-453"/>
-        <location line="+445"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-1871"/>
+        <location line="+1856"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-460"/>
+        <location line="+452"/>
         <source>Network</source>
         <translation>网络</translation>
     </message>
     <message>
-        <location line="-1835"/>
+        <location line="-1838"/>
         <source>Proxy settings</source>
         <translation>代理服务器设置</translation>
     </message>
@@ -468,7 +508,7 @@
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-670"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-682"/>
         <source>Default</source>
         <translation>默认值</translation>
     </message>
@@ -533,14 +573,14 @@
     </message>
     <message>
         <location line="+27"/>
-        <location line="+1083"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+246"/>
-        <location line="+438"/>
+        <location line="+1086"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+251"/>
+        <location line="+445"/>
         <source>AppDB browser</source>
         <translation>AppDB 浏览器</translation>
     </message>
     <message>
-        <location line="-1065"/>
+        <location line="-1068"/>
         <source>AppDB browser subsystem:</source>
         <translation>AppDB 浏览器子系统：</translation>
     </message>
@@ -551,14 +591,14 @@
     </message>
     <message>
         <location line="+44"/>
-        <location line="+1025"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-432"/>
-        <location line="+436"/>
+        <location line="+1028"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-439"/>
+        <location line="+443"/>
         <source>Desktop Menu</source>
         <translation>桌面菜单</translation>
     </message>
     <message>
-        <location line="-1019"/>
+        <location line="-1022"/>
         <source>Desktop menu plugin</source>
         <translation>桌面菜单插件</translation>
     </message>
@@ -584,9 +624,9 @@
     </message>
     <message>
         <location line="+47"/>
-        <location line="+948"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-430"/>
-        <location line="+434"/>
+        <location line="+951"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
+        <location line="+441"/>
         <source>Defaults</source>
         <translation>默认值</translation>
     </message>
@@ -618,8 +658,8 @@
     <message>
         <location line="+82"/>
         <location line="+559"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-431"/>
-        <location line="+433"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
+        <location line="+440"/>
         <source>Desktop Integration</source>
         <translation type="unfinished"></translation>
     </message>
@@ -656,8 +696,8 @@
     <message>
         <location line="+43"/>
         <location line="+258"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-430"/>
-        <location line="+432"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
+        <location line="+439"/>
         <source>Run dialog</source>
         <translation>运行对话框</translation>
     </message>
@@ -665,8 +705,8 @@
         <location line="-189"/>
         <location line="+18"/>
         <location line="+176"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-429"/>
-        <location line="+431"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
+        <location line="+438"/>
         <source>Wine desktop import</source>
         <translation>Wine 桌面导入</translation>
     </message>
@@ -677,34 +717,34 @@
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-467"/>
-        <location line="+443"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-474"/>
+        <location line="+450"/>
         <source>Interface</source>
         <translation>界面</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-434"/>
-        <location line="+440"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-441"/>
+        <location line="+447"/>
         <source>Subsystems</source>
         <translation>子系统</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-431"/>
-        <location line="+437"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
+        <location line="+444"/>
         <source>Plugins</source>
         <translation>插件</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-431"/>
-        <location line="+435"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
+        <location line="+442"/>
         <source>Advanced</source>
         <translation>高级</translation>
     </message>
     <message>
-        <location line="-938"/>
+        <location line="-941"/>
         <source>Default virtual desktop</source>
         <translation>默认虚拟桌面</translation>
     </message>
@@ -720,15 +760,15 @@
     </message>
     <message>
         <location line="+78"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-694"/>
-        <location line="+466"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-706"/>
+        <location line="+471"/>
         <source>Ambient Light</source>
         <translation>周边亮色</translation>
     </message>
     <message>
         <location line="+9"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-464"/>
-        <location line="+466"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-469"/>
+        <location line="+471"/>
         <source>Ambient Dark</source>
         <translation>周边暗色</translation>
     </message>
@@ -743,7 +783,7 @@
         <translation>大小：</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+11"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="+108"/>
         <source>No virtual desktop</source>
         <translation>无虚拟桌面</translation>
@@ -1319,8 +1359,9 @@ See help for details.</source>
 <context>
     <name>HttpCore</name>
     <message>
+        <location filename="../core/httpcore.cpp" line="+228"/>
         <source>Download failed: %1.</source>
-        <translation type="vanished">下载失败：%1。</translation>
+        <translation>下载失败：%1。</translation>
     </message>
 </context>
 <context>
@@ -1836,7 +1877,7 @@ See help for details.</source>
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+89"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+98"/>
         <source>Icon settings</source>
         <translation>图标设置</translation>
     </message>
@@ -1846,7 +1887,7 @@ See help for details.</source>
         <translation>虚拟桌面</translation>
     </message>
     <message>
-        <location line="+236"/>
+        <location line="+239"/>
         <source>Override DLL</source>
         <translation>覆盖 DLL</translation>
     </message>
@@ -1857,7 +1898,7 @@ See help for details.</source>
     </message>
     <message>
         <location line="+54"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+107"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+117"/>
         <location line="+12"/>
         <location line="+103"/>
         <location line="+270"/>
@@ -1892,18 +1933,18 @@ See help for details.</source>
         <translation>内置，原生</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-508"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-527"/>
         <source>Adding new icon</source>
         <translation>正在新增图标</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+223"/>
         <source>Open Directory</source>
         <translation>打开目录</translation>
     </message>
     <message>
         <location line="+59"/>
-        <location line="+311"/>
+        <location line="+318"/>
         <location line="+24"/>
         <source>Open Exe file</source>
         <translation>打开可执行文件</translation>
@@ -1913,7 +1954,7 @@ See help for details.</source>
         <translation type="obsolete">可执行文件 (*.exe)</translation>
     </message>
     <message>
-        <location line="-272"/>
+        <location line="-279"/>
         <source>Open image file</source>
         <translation>打开图像文件</translation>
     </message>
@@ -1942,11 +1983,12 @@ See help for details.</source>
         <location line="+5"/>
         <location line="+7"/>
         <location line="+5"/>
+        <location line="+38"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location line="-22"/>
+        <location line="-60"/>
         <source>No program selected.</source>
         <translation>未指定程序。</translation>
     </message>
@@ -1962,7 +2004,12 @@ See help for details.</source>
         <translation>错误，名称为 %1 的图标已存在。</translation>
     </message>
     <message>
-        <location line="-12"/>
+        <location line="+38"/>
+        <source>Invalid virtual desktop size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-50"/>
         <source>No program name specified.</source>
         <translation>未执行程序名称。</translation>
     </message>
@@ -1999,14 +2046,14 @@ See help for details.</source>
         <translation type="obsolete">图像与 Win32 二进制文件 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;图像文件 (*.png *.jpg *.gif *.bmp *.xpm);;Win32 可执行文件 (*.exe);;Win32 共享库 (*.dll);;Win32 可执行文件及共享库 (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+82"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>Shell 脚本 (*.sh)</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="-270"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-80"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-87"/>
         <source>No virtual desktop</source>
         <translation>无虚拟桌面</translation>
     </message>
@@ -2015,7 +2062,7 @@ See help for details.</source>
         <translation type="obsolete">图标设置</translation>
     </message>
     <message>
-        <location line="-382"/>
+        <location line="-385"/>
         <location line="+18"/>
         <source>General</source>
         <translation>常规</translation>
@@ -2056,7 +2103,7 @@ See help for details.</source>
         <translation>大小：</translation>
     </message>
     <message>
-        <location line="+283"/>
+        <location line="+286"/>
         <source>Disable</source>
         <translation>禁用</translation>
     </message>
@@ -4437,8 +4484,8 @@ See help for details.</source>
 <context>
     <name>Run</name>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="+565"/>
-        <location filename="../q4wine-gui/run.cpp" line="+111"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="+568"/>
+        <location filename="../q4wine-gui/run.cpp" line="+122"/>
         <location line="+38"/>
         <location line="+30"/>
         <source>Native</source>
@@ -4477,11 +4524,12 @@ See help for details.</source>
     <message>
         <location filename="../q4wine-gui/run.cpp" line="-41"/>
         <location line="+5"/>
+        <location line="+41"/>
         <source>Error</source>
         <translation>错误</translation>
     </message>
     <message>
-        <location line="-5"/>
+        <location line="-46"/>
         <source>No program name specified.</source>
         <translation>未指定程序名称。</translation>
     </message>
@@ -4491,18 +4539,23 @@ See help for details.</source>
         <translation>选定的工作目录不存在。</translation>
     </message>
     <message>
-        <location line="+174"/>
+        <location line="+41"/>
+        <source>Invalid virtual desktop size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+138"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-191"/>
+        <location line="-196"/>
         <location line="+28"/>
         <source>Disabled</source>
         <translation>已停用</translation>
     </message>
     <message>
-        <location line="+160"/>
+        <location line="+165"/>
         <source>Open Exe file</source>
         <translation>开启可运行文件</translation>
     </message>
@@ -4516,7 +4569,7 @@ See help for details.</source>
         <translation>开启目录</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/Run.ui" line="-315"/>
+        <location filename="../q4wine-gui/uis/Run.ui" line="-318"/>
         <source>Run Program</source>
         <translation>运行</translation>
     </message>
@@ -4552,7 +4605,7 @@ See help for details.</source>
         <translation>大小：</translation>
     </message>
     <message>
-        <location line="+258"/>
+        <location line="+261"/>
         <source>Disable</source>
         <translation>停用</translation>
     </message>
@@ -4562,7 +4615,7 @@ See help for details.</source>
         <translation>添加</translation>
     </message>
     <message>
-        <location line="-368"/>
+        <location line="-371"/>
         <source>Arguments:</source>
         <translation>参数：</translation>
     </message>
@@ -4572,7 +4625,7 @@ See help for details.</source>
         <translation>工作目录：</translation>
     </message>
     <message>
-        <location line="+228"/>
+        <location line="+231"/>
         <source>Override DLLs</source>
         <translation>Override DLLs</translation>
     </message>

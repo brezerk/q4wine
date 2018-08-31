@@ -62,111 +62,145 @@
 <context>
     <name>AppDBHeaderWidget</name>
     <message>
+        <location filename="../q4wine-gui/widgets/appdb/appdbheaderwidget.cpp" line="+106"/>
         <source>Page %1 of %2</source>
-        <translation type="vanished">Шаг %1 из %2</translation>
+        <translation>Шаг %1 из %2</translation>
     </message>
 </context>
 <context>
     <name>AppDBWidget</name>
     <message>
+        <location filename="../q4wine-gui/widgets/appdb/appdbwidget.cpp" line="+85"/>
+        <location line="+314"/>
         <source>Status: Ready</source>
-        <translation type="vanished">Статус: Готов</translation>
+        <translation>Статус: Готов</translation>
     </message>
     <message>
+        <location line="-294"/>
+        <location line="+19"/>
+        <location line="+15"/>
+        <location line="+18"/>
+        <location line="+16"/>
+        <location line="+181"/>
         <source>Status: Connecting to %1</source>
-        <translation type="vanished">Статус: Подключение к %1</translation>
+        <translation>Статус: Подключение к %1</translation>
     </message>
     <message>
+        <location line="-101"/>
         <source>Subcategories</source>
-        <translation type="vanished">Подкатегории</translation>
+        <translation>Подкатегории</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Applications</source>
-        <translation type="vanished">Программы</translation>
+        <translation>Программы</translation>
     </message>
     <message>
+        <location line="+25"/>
         <source>Error: unexpected error.</source>
-        <translation type="vanished">Ошибка: неожиданная ошибка.</translation>
+        <translation>Ошибка: неожиданная ошибка.</translation>
     </message>
     <message>
+        <location line="-12"/>
         <source>Error: cannot read data from %1.</source>
-        <translation type="vanished">Ошибка: не удалось получить данные от %1.</translation>
+        <translation>Ошибка: не удалось получить данные от %1.</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Error: wrong or broken XML data. Try again later.</source>
-        <translation type="vanished">Ошибка: не действительные, или поврежденные данные. Попробуйте еще раз позже.</translation>
+        <translation>Ошибка: не действительные, или поврежденные данные. Попробуйте еще раз позже.</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Error: wrong or broken AppDB XML version. This might be caused by an outdated application version.</source>
-        <translation type="vanished">Ошибка: не действительная, или поврежденая версия XML. Возможно программа требует обновления.</translation>
+        <translation>Ошибка: не действительная, или поврежденая версия XML. Возможно программа требует обновления.</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Error: XML parse error.</source>
-        <translation type="vanished">Ошибка: ошибка разбора XML.</translation>
+        <translation>Ошибка: ошибка разбора XML.</translation>
     </message>
     <message>
+        <location line="+6"/>
         <source>Search: No matches found.</source>
-        <translation type="vanished">Поиск: нет результатов.</translation>
+        <translation>Поиск: нет результатов.</translation>
     </message>
     <message>
+        <location line="+8"/>
         <source>Open AppDB</source>
-        <translation type="vanished">Открыть страницу AppDB</translation>
+        <translation>Открыть страницу AppDB</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Open Wine AppDB web site</source>
-        <translation type="vanished">Открыть страницу AppDB</translation>
+        <translation>Открыть страницу AppDB</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Open App page</source>
-        <translation type="vanished">Открыть страницу программы на сайте AppDB</translation>
+        <translation>Открыть страницу программы на сайте AppDB</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Open current application page at Wine AppDB web site</source>
-        <translation type="vanished">Открыть страницу программы на сайте AppDB</translation>
+        <translation>Открыть страницу программы на сайте AppDB</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <location line="+1"/>
         <source>Clear results</source>
-        <translation type="vanished">Очистить результаты</translation>
+        <translation>Очистить результаты</translation>
     </message>
     <message>
+        <location line="+4"/>
+        <location line="+1"/>
         <source>Clear search field</source>
-        <translation type="vanished">Очистить поле поиска</translation>
+        <translation>Очистить поле поиска</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Search in AppDB</source>
-        <translation type="vanished">Искать по базе AppDB</translation>
+        <translation>Искать по базе AppDB</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Search in Wine AppDB</source>
-        <translation type="vanished">Искать в базе AppDB</translation>
+        <translation>Искать в базе AppDB</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>AppDB categories list</source>
-        <translation type="vanished">Список категорий AppDB</translation>
+        <translation>Список категорий AppDB</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>View Wine AppDB categories list</source>
-        <translation type="vanished">Показать список категорий AppDB</translation>
+        <translation>Показать список категорий AppDB</translation>
     </message>
     <message>
+        <location line="+8"/>
         <source>Error: %1</source>
-        <translation type="vanished">Ошибка: %1</translation>
+        <translation>Ошибка: %1</translation>
     </message>
     <message>
+        <location line="+36"/>
         <source>Status: Sending request to the server.</source>
-        <translation type="vanished">Статус: Отправка запроса к серверу.</translation>
+        <translation>Статус: Отправка запроса к серверу.</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Status: Reading server&apos;s response.</source>
-        <translation type="vanished">Статус: Чтение ответа сервера.</translation>
+        <translation>Статус: Чтение ответа сервера.</translation>
     </message>
     <message>
+        <location line="+3"/>
         <source>Status: Closing down connection.</source>
-        <translation type="vanished">Статус: Закрытие соединения.</translation>
+        <translation>Статус: Закрытие соединения.</translation>
     </message>
     <message>
+        <location line="+4"/>
         <source>Status: Not connected.</source>
-        <translation type="vanished">Статус: Не подключено.</translation>
+        <translation>Статус: Не подключено.</translation>
     </message>
 </context>
 <context>
@@ -179,31 +213,31 @@
     </message>
     <message>
         <location line="+59"/>
-        <location line="+2976"/>
+        <location line="+2979"/>
         <location line="+5"/>
         <location line="+4"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+245"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+250"/>
         <location line="+20"/>
-        <location line="+448"/>
+        <location line="+455"/>
         <source>General</source>
         <translation>Главные</translation>
     </message>
     <message>
-        <location line="-2967"/>
+        <location line="-2970"/>
         <source>Wine settings</source>
         <translation>Параметры Wine</translation>
     </message>
     <message>
         <location line="+106"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-668"/>
-        <location line="+466"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-680"/>
+        <location line="+471"/>
         <source>Ambient Light</source>
         <translation>Монохромная светлая</translation>
     </message>
     <message>
         <location line="+9"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-464"/>
-        <location line="+466"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-469"/>
+        <location line="+471"/>
         <source>Ambient Dark</source>
         <translation>Монохромная тёмная</translation>
     </message>
@@ -232,27 +266,27 @@
     </message>
     <message>
         <location line="+34"/>
-        <location line="+2743"/>
+        <location line="+2746"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-245"/>
-        <location line="+447"/>
+        <location line="+454"/>
         <source>System</source>
         <translation>Система</translation>
     </message>
     <message>
-        <location line="-2725"/>
+        <location line="-2728"/>
         <source>System utils</source>
         <translation>Системные утилиты</translation>
     </message>
     <message>
         <location line="+563"/>
-        <location line="+2167"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-444"/>
-        <location line="+446"/>
+        <location line="+2170"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-451"/>
+        <location line="+453"/>
         <source>Utils</source>
         <translation>Утилиты</translation>
     </message>
     <message>
-        <location line="-2149"/>
+        <location line="-2152"/>
         <source>Console</source>
         <translation>Консоль</translation>
     </message>
@@ -263,22 +297,22 @@
     </message>
     <message>
         <location line="+511"/>
-        <location line="+1537"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-440"/>
-        <location line="+444"/>
+        <location line="+1540"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-447"/>
+        <location line="+451"/>
         <source>Quick Mount</source>
         <translation>Быстрое подключение</translation>
     </message>
     <message>
-        <location line="-1140"/>
-        <location line="+1160"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-429"/>
-        <location line="+439"/>
+        <location line="-1143"/>
+        <location line="+1163"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
+        <location line="+446"/>
         <source>Logging</source>
         <translation>Журналирование</translation>
     </message>
     <message>
-        <location line="-1142"/>
+        <location line="-1145"/>
         <source>Logging subsystem:</source>
         <translation>Подсистема журналирования:</translation>
     </message>
@@ -288,7 +322,7 @@
         <translation>Очищать журналы во время запуска.</translation>
     </message>
     <message>
-        <location line="+913"/>
+        <location line="+916"/>
         <source>Run recent program</source>
         <translation>Запустить недавнюю программу</translation>
     </message>
@@ -298,40 +332,40 @@
         <translation>Открыть диалог запуска.</translation>
     </message>
     <message>
-        <location line="-2663"/>
+        <location line="-2666"/>
         <source>Use tray icon.</source>
         <translation>Показывать значок в системном лотке.</translation>
     </message>
     <message>
         <location line="+1553"/>
         <location line="+18"/>
-        <location line="+1263"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-448"/>
-        <location line="+442"/>
+        <location line="+1266"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-455"/>
+        <location line="+449"/>
         <source>Language</source>
         <translation>Язык</translation>
     </message>
     <message>
-        <location line="-1218"/>
+        <location line="-1221"/>
         <source>Language:</source>
         <translation>Язык:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-439"/>
-        <location line="+441"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-446"/>
+        <location line="+448"/>
         <source>Themes</source>
         <translation>Темы</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="-650"/>
-        <location line="+1853"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-453"/>
-        <location line="+445"/>
+        <location line="+1856"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-460"/>
+        <location line="+452"/>
         <source>Network</source>
         <translation>Сеть</translation>
     </message>
     <message>
-        <location line="-1835"/>
+        <location line="-1838"/>
         <source>Proxy settings</source>
         <translation>Настройки прокси</translation>
     </message>
@@ -347,7 +381,7 @@
     </message>
     <message>
         <location line="-204"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-347"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-354"/>
         <location line="+116"/>
         <location line="+98"/>
         <source>No Proxy</source>
@@ -387,19 +421,19 @@
         <translation>Пользователь:</translation>
     </message>
     <message>
-        <location line="+1529"/>
+        <location line="+1532"/>
         <source>Import Wine desktop files at Q4Wine startup.</source>
         <translation>Импортировать файлы рабочего стола Wine при запуске Q4Wine.</translation>
     </message>
     <message>
         <location line="+139"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-282"/>
-        <location line="+435"/>
+        <location line="+442"/>
         <source>Advanced</source>
         <translation>Дополнительно</translation>
     </message>
     <message>
-        <location line="-1487"/>
+        <location line="-1490"/>
         <source>Mount:</source>
         <translation>Подключение:</translation>
     </message>
@@ -425,7 +459,7 @@
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-690"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-702"/>
         <source>Default</source>
         <translation>По умолчанию</translation>
     </message>
@@ -456,14 +490,14 @@
     </message>
     <message>
         <location line="+27"/>
-        <location line="+1083"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+246"/>
-        <location line="+438"/>
+        <location line="+1086"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+251"/>
+        <location line="+445"/>
         <source>AppDB browser</source>
         <translation>Обозреватель AppDB</translation>
     </message>
     <message>
-        <location line="-1065"/>
+        <location line="-1068"/>
         <source>AppDB browser subsystem:</source>
         <translation>Подсистема обозревателя AppDB:</translation>
     </message>
@@ -474,14 +508,14 @@
     </message>
     <message>
         <location line="+44"/>
-        <location line="+1025"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-432"/>
-        <location line="+436"/>
+        <location line="+1028"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-439"/>
+        <location line="+443"/>
         <source>Desktop Menu</source>
         <translation>Меню рабочего стола</translation>
     </message>
     <message>
-        <location line="-1019"/>
+        <location line="-1022"/>
         <source>Desktop menu plugin</source>
         <translation>Дополнение меню рабочего стола</translation>
     </message>
@@ -507,14 +541,14 @@
     </message>
     <message>
         <location line="+47"/>
-        <location line="+948"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-430"/>
-        <location line="+434"/>
+        <location line="+951"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
+        <location line="+441"/>
         <source>Defaults</source>
         <translation>Стандартные</translation>
     </message>
     <message>
-        <location line="-942"/>
+        <location line="-945"/>
         <source>Default virtual desktop</source>
         <translation>Стандартный виртуальный рабочий стол</translation>
     </message>
@@ -529,8 +563,8 @@
         <translation>Размер:</translation>
     </message>
     <message>
-        <location line="+8"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-120"/>
+        <location line="+11"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-127"/>
         <source>No virtual desktop</source>
         <translation>Без виртуального рабочего стола</translation>
     </message>
@@ -563,7 +597,7 @@
         <location line="+82"/>
         <location line="+559"/>
         <location filename="../q4wine-gui/appsettings.cpp" line="-311"/>
-        <location line="+433"/>
+        <location line="+440"/>
         <source>Desktop Integration</source>
         <translation>Интеграция с рабочим столом</translation>
     </message>
@@ -600,8 +634,8 @@
     <message>
         <location line="+43"/>
         <location line="+258"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-430"/>
-        <location line="+432"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
+        <location line="+439"/>
         <source>Run dialog</source>
         <translation>Диалог запуска</translation>
     </message>
@@ -609,8 +643,8 @@
         <location line="-189"/>
         <location line="+18"/>
         <location line="+176"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-429"/>
-        <location line="+431"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
+        <location line="+438"/>
         <source>Wine desktop import</source>
         <translation>Импорт файлов рабочего стола wine</translation>
     </message>
@@ -621,22 +655,22 @@
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-467"/>
-        <location line="+443"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-474"/>
+        <location line="+450"/>
         <source>Interface</source>
         <translation>Интерфейс</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-434"/>
-        <location line="+440"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-441"/>
+        <location line="+447"/>
         <source>Subsystems</source>
         <translation>Подсистемы</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-431"/>
-        <location line="+437"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
+        <location line="+444"/>
         <source>Plugins</source>
         <translation>Дополнения</translation>
     </message>
@@ -656,12 +690,12 @@
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-582"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-594"/>
         <source>generic</source>
         <translation>основной</translation>
     </message>
     <message>
-        <location line="+185"/>
+        <location line="+190"/>
         <location line="+6"/>
         <source>Open File</source>
         <translation>Открыть файл</translation>
@@ -675,7 +709,8 @@
     <message>
         <location line="+144"/>
         <location line="+4"/>
-        <location line="+189"/>
+        <location line="+132"/>
+        <location line="+64"/>
         <location line="+2"/>
         <location line="+6"/>
         <location line="+2"/>
@@ -683,7 +718,7 @@
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="-203"/>
+        <location line="-210"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Введите узел прокси.</translation>
     </message>
@@ -693,7 +728,12 @@
         <translation>Введите порт прокси.</translation>
     </message>
     <message>
-        <location line="+189"/>
+        <location line="+132"/>
+        <source>Invalid virtual desktop size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+64"/>
         <source>Sorry, specify %1 directory.</source>
         <translation>Укажите каталог %1.</translation>
     </message>
@@ -713,9 +753,9 @@
         <translation>Указанный файл %1 не существует.</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-1308"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-612"/>
-        <location line="+462"/>
+        <location filename="../q4wine-gui/uis/AppSettings.ui" line="-1311"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-624"/>
+        <location line="+467"/>
         <source>System Default</source>
         <translation>Системные умолчания</translation>
     </message>
@@ -1268,8 +1308,9 @@ See help for details.</source>
 <context>
     <name>HttpCore</name>
     <message>
+        <location filename="../core/httpcore.cpp" line="+228"/>
         <source>Download failed: %1.</source>
-        <translation type="vanished">Ошибка загрузки: %1.</translation>
+        <translation>Ошибка загрузки: %1.</translation>
     </message>
 </context>
 <context>
@@ -1797,7 +1838,7 @@ See help for details.</source>
     <name>IconSettings</name>
     <message>
         <location filename="../q4wine-gui/uis/IconSettings.ui" line="+17"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+89"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+98"/>
         <source>Icon settings</source>
         <translation>Настройки значка</translation>
     </message>
@@ -1847,8 +1888,8 @@ See help for details.</source>
         <translation>Виртуальный рабочий стол</translation>
     </message>
     <message>
-        <location line="+308"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="+107"/>
+        <location line="+311"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="+117"/>
         <location line="+12"/>
         <location line="+103"/>
         <location line="+270"/>
@@ -1883,12 +1924,12 @@ See help for details.</source>
         <translation>Встроенный, Родной</translation>
     </message>
     <message>
-        <location line="-278"/>
+        <location line="-281"/>
         <source>Size:</source>
         <translation>Размер:</translation>
     </message>
     <message>
-        <location line="+283"/>
+        <location line="+286"/>
         <source>Disable</source>
         <translation>Отключено</translation>
     </message>
@@ -1999,24 +2040,24 @@ See help for details.</source>
         <translation>ОК</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-508"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-527"/>
         <source>Adding new icon</source>
         <translation>Добавление нового значка</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+223"/>
         <source>Open Directory</source>
         <translation>Открыть каталог</translation>
     </message>
     <message>
         <location line="+59"/>
-        <location line="+311"/>
+        <location line="+318"/>
         <location line="+24"/>
         <source>Open Exe file</source>
         <translation>Открыть EXE-файл</translation>
     </message>
     <message>
-        <location line="-332"/>
+        <location line="-339"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation>Исполняемые файлы (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Исполняемые файлы EXE (*.exe *.EXE);;Установочные файлы MSI (*.msi *.MSI);;Исполняемые скрипты BAT (*.bat *.BAT);;Все файлы (*)</translation>
     </message>
@@ -2031,11 +2072,16 @@ See help for details.</source>
         <translation>Изображения и файлы для Win32 (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.exe *.EXE *.dll *.DLL);;Изображения (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ);;Исполняемые файлы Win32 (*.exe *.EXE);;Разделяемые библиотеки Win32 (*.dll *.DLL);;Исполняемые файлы и библиотеки Win32 (*.exe *.EXE *.dll *.DLL);;Все файлы (*)</translation>
     </message>
     <message>
+        <location line="+183"/>
+        <source>Invalid virtual desktop size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Exe files (*.exe)</source>
         <translation type="obsolete">Exe-файлы (*.exe)</translation>
     </message>
     <message>
-        <location line="-17"/>
+        <location line="-200"/>
         <source>Open image file</source>
         <translation>Открыть файл изображения</translation>
     </message>
@@ -2082,17 +2128,18 @@ See help for details.</source>
         <translation type="obsolete">Изображения и файлы для Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Изображения (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Исполняемые файлы Win32 (*.exe);;Разделяемые библиотеки Win32 (*.dll);;Файлы для Win32 (*.exe *.dll);;Все файлы (*)</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+82"/>
         <location line="+24"/>
         <source>Shell script (*.sh)</source>
         <translation>Скрипт (*.sh)</translation>
     </message>
     <message>
-        <location line="-135"/>
+        <location line="-142"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+7"/>
         <location line="+5"/>
+        <location line="+38"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
@@ -2105,7 +2152,7 @@ See help for details.</source>
         <translation type="obsolete">Изображения и файлы для Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Изображения (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Исполняемые файлы Win32 (*.exe);;Разделяемые библиотеки Win32 (*.dll);;Файлы для Win32 (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="-22"/>
+        <location line="-60"/>
         <source>No program selected.</source>
         <translation>Программа не выбрана.</translation>
     </message>
@@ -4492,8 +4539,8 @@ Note: leave it blank for default.</source>
         <translation>Размер:</translation>
     </message>
     <message>
-        <location line="+238"/>
-        <location filename="../q4wine-gui/run.cpp" line="+111"/>
+        <location line="+241"/>
+        <location filename="../q4wine-gui/run.cpp" line="+122"/>
         <location line="+38"/>
         <location line="+30"/>
         <source>Native</source>
@@ -4607,11 +4654,12 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-gui/run.cpp" line="-41"/>
         <location line="+5"/>
+        <location line="+41"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="-5"/>
+        <location line="-46"/>
         <source>No program name specified.</source>
         <translation>Не указано имя программы.</translation>
     </message>
@@ -4621,7 +4669,12 @@ Note: leave it blank for default.</source>
         <translation>Указанный рабочий каталог не существует.</translation>
     </message>
     <message>
-        <location line="+174"/>
+        <location line="+41"/>
+        <source>Invalid virtual desktop size.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+138"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation>Исполняемые файлы (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Исполняемые файлы EXE (*.exe *.EXE);;Установочные файлы MSI (*.msi *.MSI);;Исполняемые скрипты BAT (*.bat *.BAT);;Все файлы (*)</translation>
     </message>
@@ -4630,13 +4683,13 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Исполняемые файлы exe, MSI, BAT (*.exe *.msi *.bat);;Исполняемые файлы (*.exe);;Установочные файлы MSI (*.msi);;Исполняемые скрипты BAT (*.bat);;Все файлы (*)</translation>
     </message>
     <message>
-        <location line="-191"/>
+        <location line="-196"/>
         <location line="+28"/>
         <source>Disabled</source>
         <translation>Отключен</translation>
     </message>
     <message>
-        <location line="+160"/>
+        <location line="+165"/>
         <source>Open Exe file</source>
         <translation>Открыть EXE-файл</translation>
     </message>
