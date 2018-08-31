@@ -217,6 +217,11 @@ void Run::cmdOk_Click(){
     if (cboxDesktopSize->currentText()==tr("No virtual desktop")){
         execObj.desktop="";
     } else {
+        QRegExp res_match("^\\d{3,}x\\d{3,}$");
+        if (!res_match.exactMatch(cboxDesktopSize->currentText())){
+            QMessageBox::warning(this, tr("Error"), tr("Invalid virtual desktop size."));
+            return;
+        }
         execObj.desktop=cboxDesktopSize->currentText();
     }
 

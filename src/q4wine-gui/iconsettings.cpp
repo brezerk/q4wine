@@ -618,8 +618,15 @@ void IconSettings::cmdOk_Click(){
 
     QString desktopSize=cboxDesktopSize->currentText();
 
-    if (desktopSize==tr("No virtual desktop"))
+    if (desktopSize==tr("No virtual desktop")) {
         desktopSize="";
+    } else {
+        QRegExp res_match("^\\d{3,}x\\d{3,}$");
+        if (!res_match.exactMatch(desktopSize)){
+            QMessageBox::warning(this, tr("Error"), tr("Invalid virtual desktop size."));
+            return;
+        }
+    }
 
     if (this->icon_name.isEmpty()){
             db_icon.addIcon(txtCmdArgs->text(), txtProgramPath->text(), iconPath, txtDesc->text(), this->prefix_name, this->dir_name, txtName->text(), override, txtWinedebug->text(), useconsole, txtDisplay->text(), txtWorkDir->text(), desktopSize, spinNice->value(), txtEnvLang->text(), txtPreRun->text(), txtPostRun->text());

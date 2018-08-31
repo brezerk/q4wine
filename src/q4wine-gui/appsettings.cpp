@@ -678,8 +678,15 @@ void AppSettings::cmdOk_Click(){
 #endif
 
     QString desktopSize=cboxDesktopSize->currentText();
-    if (desktopSize==tr("No virtual desktop"))
+    if (desktopSize==tr("No virtual desktop")){
         desktopSize="";
+    } else {
+        QRegExp res_match("^\\d{3,}x\\d{3,}$");
+        if (!res_match.exactMatch(desktopSize)){
+            QMessageBox::warning(this, tr("Error"), tr("Invalid virtual desktop size."));
+            return;
+        }
+    }
 
     settings.setValue("defaultDesktopSize", desktopSize);
 
