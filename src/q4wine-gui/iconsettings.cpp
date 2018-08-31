@@ -83,7 +83,16 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
             if (res.isEmpty()){
                 cboxDesktopSize->setCurrentIndex(0);
             } else {
-                cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(res));
+                if (res.isEmpty()){
+                    cboxDesktopSize->setCurrentIndex(0);
+                } else {
+                    int i = cboxDesktopSize->findText(res);
+                    if (i >= 0) {
+                        cboxDesktopSize->setCurrentIndex(i);
+                    } else {
+                        cboxDesktopSize->setCurrentText(res);
+                    }
+                }
             }
     } else {
             setWindowTitle(tr("Icon settings"));

@@ -53,7 +53,12 @@ Run::Run(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, f)
     if (res.isEmpty()){
         cboxDesktopSize->setCurrentIndex(0);
     } else {
-        cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(res));
+        int i = cboxDesktopSize->findText(res);
+        if (i >= 0) {
+            cboxDesktopSize->setCurrentIndex(i);
+        } else {
+            cboxDesktopSize->setCurrentText(res);
+        }
     }
 
     twDlls->horizontalHeader()->setStretchLastSection(true);
@@ -91,8 +96,14 @@ void Run::prepare(QString prefix_name, QString wrkdir, QString override, QString
     if (useconsole=="1")
         cbUseConsole->setChecked(true);
 
-    if (!desktop.isEmpty())
-        cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(desktop));
+    if (!desktop.isEmpty()) {
+        int i = cboxDesktopSize->findText(desktop);
+        if (i >= 0) {
+            cboxDesktopSize->setCurrentIndex(i);
+        } else {
+            cboxDesktopSize->setCurrentText(desktop);
+        }
+    }
 
     if (!override.isEmpty()){
         QStringList overrideS = override.split(";");

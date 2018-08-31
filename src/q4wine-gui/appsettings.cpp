@@ -239,7 +239,12 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
     if (res.isEmpty()){
         cboxDesktopSize->setCurrentIndex(0);
     } else {
-        cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(res));
+        int i = cboxDesktopSize->findText(res);
+        if (i >= 0) {
+            cboxDesktopSize->setCurrentIndex(i);
+        } else {
+            cboxDesktopSize->setCurrentText(res);
+        }
     }
 
     settings.endGroup();

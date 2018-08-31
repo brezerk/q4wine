@@ -50,7 +50,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="pageGeneral">
        <layout class="QGridLayout" name="gridLayout">
@@ -2171,7 +2171,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tabDefaults">
            <attribute name="title">
@@ -2242,6 +2242,9 @@
                   </item>
                   <item>
                    <widget class="QComboBox" name="cboxDesktopSize">
+                    <property name="editable">
+                     <bool>true</bool>
+                    </property>
                     <item>
                      <property name="text">
                       <string>No virtual desktop</string>
