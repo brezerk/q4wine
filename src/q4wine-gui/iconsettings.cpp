@@ -169,7 +169,17 @@ void IconSettings::getIconReccord(){
     if (iconRec.value("desktop").isEmpty()){
         cboxDesktopSize->setCurrentIndex(0);
     } else {
-        cboxDesktopSize->setCurrentIndex(cboxDesktopSize->findText(iconRec.value("desktop")));
+        QString res = iconRec.value("desktop");
+        if (res.isEmpty()){
+            cboxDesktopSize->setCurrentIndex(0);
+        } else {
+            int i = cboxDesktopSize->findText(res);
+            if (i >= 0) {
+                cboxDesktopSize->setCurrentIndex(i);
+            } else {
+                cboxDesktopSize->setCurrentText(res);
+            }
+        }
     }
 
     spinNice->setValue(iconRec.value("nice").toInt());

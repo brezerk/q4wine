@@ -1,6 +1,7 @@
 Version 1.3.9
  Fixed:
   - Fixed build with Qt >= 5.11 [BUG-125];
+  - Custom virtual desktop resolution size [BUG-131];
 
 Version 1.3.8
  Updated:

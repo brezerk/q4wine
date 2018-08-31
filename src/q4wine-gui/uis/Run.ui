@@ -330,6 +330,9 @@
                 </item>
                 <item>
                  <widget class="QComboBox" name="cboxDesktopSize">
+                  <property name="editable">
+                   <bool>true</bool>
+                  </property>
                   <item>
                    <property name="text">
                     <string>No virtual desktop</string>
