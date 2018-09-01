@@ -776,7 +776,7 @@
     <message>
         <location line="+132"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неприпустимий розмір віртуального робочого столу.</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -2097,7 +2097,7 @@ See help for details.</source>
     <message>
         <location line="+183"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неприпустимий розмір віртуального робочого столу.</translation>
     </message>
     <message>
         <source>Exe files (*.exe)</source>
@@ -4718,7 +4718,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+41"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неприпустимий розмір віртуального робочого столу.</translation>
     </message>
     <message>
         <location line="+138"/>
