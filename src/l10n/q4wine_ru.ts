@@ -604,7 +604,7 @@
     <message>
         <location line="-553"/>
         <source>Default Wine Desktop Paths for new prefixes.</source>
-        <translation>Каталог по умолчанию для рабочего стола в новых префиксах wine</translation>
+        <translation>Каталог по умолчанию для рабочего стола в новых префиксах wine.</translation>
     </message>
     <message>
         <location line="+45"/>
@@ -730,7 +730,7 @@
     <message>
         <location line="+132"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Недопустимый размер виртуального рабочего стола.</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -2074,7 +2074,7 @@ See help for details.</source>
     <message>
         <location line="+183"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Недопустимый размер виртуального рабочего стола.</translation>
     </message>
     <message>
         <source>Exe files (*.exe)</source>
@@ -3442,8 +3442,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+60"/>
         <source>Server:</source>
-        <translation>Сервер:
-</translation>
+        <translation>Сервер:</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -4025,7 +4024,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>Importing Wine desktop icons: %1 of %2</source>
-        <translation>Импортируются десктопые файлы wine: %1 из %2 </translation>
+        <translation>Импортируются десктопые файлы wine: %1 из %2</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -4054,7 +4053,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-12"/>
         <source>Importing desktop icons: %1 of %2</source>
-        <translation>Импорт значков рабочего стола: %1 из %2 </translation>
+        <translation>Импорт значков рабочего стола: %1 из %2</translation>
     </message>
 </context>
 <context>
@@ -4261,7 +4260,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="-8"/>
         <source>  %1 [KEY]...</source>
-        <translation>%1 [КЛЮЧ]...</translation>
+        <translation>  %1 [КЛЮЧ]...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4312,7 +4311,7 @@ Note: leave it blank for default.</source>
     <message>
         <location filename="../q4wine-cli/q4wine-cli.cpp" line="+1"/>
         <source>output wine process list for current prefix or for all prefixes and exit </source>
-        <translation>показать все процессы Wine для данного префикса или для всех и выйти</translation>
+        <translation>показать все процессы Wine для данного префикса или для всех и выйти </translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4363,12 +4362,12 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+4"/>
         <source> -1 if serious troubles</source>
-        <translation>-1, если серьезные неприятности</translation>
+        <translation> -1, если серьезные неприятности</translation>
     </message>
     <message>
         <location line="-24"/>
         <source>  %1-cli [KEY]...</source>
-        <translation>%1-cli [КЛЮЧ]...</translation>
+        <translation>  %1-cli [КЛЮЧ]...</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4398,7 +4397,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+1"/>
         <source>  0 if OK,</source>
-        <translation>0, если все хорошо,</translation>
+        <translation>  0, если все хорошо,</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="+5"/>
@@ -4671,7 +4670,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+41"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Недопустимый размер виртуального рабочего стола.</translation>
     </message>
     <message>
         <location line="+138"/>
