@@ -260,7 +260,7 @@
     <message>
         <location line="+132"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的虛擬桌面大小。</translation>
     </message>
     <message>
         <location line="+64"/>
@@ -2015,7 +2015,7 @@ See help for details.</source>
     <message>
         <location line="+38"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的虛擬桌面大小。</translation>
     </message>
     <message>
         <location line="-50"/>
@@ -4574,7 +4574,7 @@ See help for details.</source>
     <message>
         <location line="+41"/>
         <source>Invalid virtual desktop size.</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的虛擬桌面大小。</translation>
     </message>
     <message>
         <location line="+138"/>
