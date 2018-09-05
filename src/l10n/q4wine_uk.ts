@@ -2551,7 +2551,7 @@ See help for details.</source>
         <location line="-231"/>
         <location line="+223"/>
         <source>Logging disabled</source>
-        <translation>Журналювання вімкнено</translation>
+        <translation>Журналювання вимкнено</translation>
     </message>
     <message>
         <location line="-222"/>
