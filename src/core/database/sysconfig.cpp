@@ -68,17 +68,17 @@ QList<SysconfigItem> Sysconfig::getItems(QString provider, QString type, int sor
 
     if (type.isEmpty()){
         if (filter.isEmpty()){
-            sql = "SELECT id, name, icon, desc, is_installed FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type IS NULL";
+            sql = "SELECT id, name, icon, desc, is_installed, provider_id FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type IS NULL";
         } else {
-            sql = QString("SELECT id, name, icon, desc, is_installed FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type IS NULL AND name LIKE \"%%1%\"").arg(filter);
+            sql = QString("SELECT id, name, icon, desc, is_installed, provider_id FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type IS NULL AND name LIKE \"%%1%\"").arg(filter);
         }
         sql.append(order);
         query.prepare(sql);
     } else {
         if (filter.isEmpty()){
-            sql = "SELECT id, name, icon, desc, is_installed FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type=:type";
+            sql = "SELECT id, name, icon, desc, is_installed, provider_id FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type=:type";
         } else {
-            sql = QString("SELECT id, name, icon, desc, is_installed FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type=:type AND name LIKE \"%%1%\"").arg(filter);
+            sql = QString("SELECT id, name, icon, desc, is_installed, provider_id FROM sysconfig WHERE provider_id=(SELECT id FROM providers WHERE name=:provider) AND type=:type AND name LIKE \"%%1%\"").arg(filter);
         }
         sql.append(order);
         query.prepare(sql);
@@ -93,6 +93,7 @@ QList<SysconfigItem> Sysconfig::getItems(QString provider, QString type, int sor
             item.icon = query.value(2).toString();
             item.desc = query.value(3).toString();
             item.is_installed = query.value(4).toBool();
+            item.provider_id = query.value(5).toInt();
             items.append(item);
         }
     }
