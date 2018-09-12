@@ -2,6 +2,9 @@ Version 1.3.10
  Fixed:
   - cppcheck: Uninitialized struct member: item.provider_id;
 
+ Add:
+  - cleanup.sh: to get rid of all non-release stuff;
+
 Version 1.3.9
  Fixed:
   - Fixed build with Qt >= 5.11 [BUG-125];
