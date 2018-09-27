@@ -1,15 +1,20 @@
 #!/bin/bash
 
-echo ' * Following script will remove all files not needed for release process. Hit C^ to abort or any key to continue.'
+set -e
+
+echo ' * Following script will remove all files not needed for release process.
+ * Hit ^C to abort or any key to continue.'
 read
 
-rm -rf .git build config.h
+SRC_DIR="$(dirname $(realpath -s ${0}))"
+
+cd "${SRC_DIR}"
+rm   -rf .git build config.h doc
 find -name CMakeLists.txt.user -delete
 find -name CMakeCache.txt -delete
 find -name cmake_install.cmake -delete
 find -name '*.swo' -delete
 find -name '*.swp' -delete
-find doc -mindepth 1 -delete
-
+find -depth -empty -type d -delete
 
 echo 'Done. Happy releasing :P'
