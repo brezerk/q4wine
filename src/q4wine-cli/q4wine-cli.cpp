@@ -339,7 +339,7 @@ int main(int argc, char *argv[])
             return -1;
         } else {
             Qcout<<QObject::tr("Killing prefix \"%1\" wineserver.").arg(_PREFIX)<<endl;
-            if (CoreLib->killWineServer(db_prefix.getPath(_PREFIX))){
+            if (CoreLib->killWineServer(db_prefix.getPath(_PREFIX), "")){
                 Qcout<<"Done"<<endl;
             } else {
                 Qcout<<"Error"<<endl;

@@ -55,8 +55,6 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
     QDir dir("/proc");
     if (!dir.exists()){
         if (this->showError(message, false) == QMessageBox::Ignore){
-        //    procline << "-1";
-        //    proclist << procline;
             proclist.clear();
             return proclist;
         }
@@ -109,6 +107,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
                 path = "/proc/";
                 path.append(fileInfo.fileName());
                 path.append("/stat");
+
                 QFile file_s(path);
                 if (file_s.open(QIODevice::ReadOnly | QIODevice::Text)){
                     // Try to read com file
@@ -134,9 +133,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
                             QTextStream e_in(&file_e);
                             QString e_line = e_in.readLine();
                             while(!e_line.isNull()) {
-                                qDebug() << e_line;
                                 int index = e_line.indexOf("WINEPREFIX=");
-                                qDebug() << "INDEX OF:" << index;
                                 prefix="";
                                 if (index!=-1)
                                     for (int i=index+11; i<=e_line.length(); i++){
@@ -1512,16 +1509,98 @@ QStringList corelib::getCdromDevices(void) const{
             return;
         }
 
-        bool corelib::killWineServer(const QString prefix_path){
+        bool corelib::killWineServer(const QString prefix_path, const QString pid){
 
-            ExecObject execObj;
-            execObj.cmdargs = "-kill";
-            execObj.execcmd = "wineserver";
+            if (!pid.isEmpty()){
 
-            if (!this->runWineBinary(execObj, db_prefix.getName(prefix_path), false)){
-                return false;
+#ifdef _OS_LINUX_
+
+                QString message;
+
+                // Check for /proc directory exists
+                QDir dir("/proc");
+                if (!dir.exists()){
+                    message = "<p>Process is unable to access /proc file system.</p><p>Access is necessary for displaying Wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
+                    if (this->showError(message, false) == QMessageBox::Ignore){
+                        return false;
+                    }
+                }
+
+                QFileInfo info(QString("/proc/%1/exe").arg(pid));
+                if (info.isSymLink()) {
+                    QString fileName = info.symLinkTarget();
+#ifdef DEBUG
+                    qDebug()<< "Traget for: " << info.filePath() << " is: " << fileName;
+#endif
+                    if ((!fileName.contains("wine") && !fileName.contains(".exe")) || fileName.contains(APP_SHORT_NAME)){
+                        message = "Not an wine process.";
+                        if (this->showError(message, false) == QMessageBox::Ignore){
+                            return false;
+                        }
+                    }
+                } else {
+                    message = "Not an wine process.";
+                    if (this->showError(message, false) == QMessageBox::Ignore){
+                        return false;
+                    }
+                }
+
+                QStringList args;
+                QStringList keywords;
+                keywords << "WINEPREFIX" << "WINEARCH" << "WINELOADERNOEXEC";
+                keywords << "WINESERVERSOCKET" << "WINEDLLPATH" << "WINEESYNC" << "PATH";
+                keywords << "WINESERVER" << "WINELOADER";
+
+                QFile file_e(QString("/proc/%1/environ").arg(pid));
+                // Getting WINE* variables.
+                if (file_e.open(QIODevice::ReadOnly | QIODevice::Text)){
+                    // Try to read environ file
+                    QTextStream e_in(&file_e);
+                    QString e_line = e_in.readLine();
+
+                    while(!e_line.isNull()) {
+                        qDebug() << e_line;
+                        foreach (const QString &env, e_line.split('\0')) {
+                            QRegExp rx_env("^(.*)=(.*)?");
+                            if (rx_env.indexIn(env) != -1){
+                                if (keywords.contains(rx_env.cap(1))){
+                                    args << env;
+                                }
+                            }
+                        }
+                        e_line = e_in.readLine();
+                    }
+                    file_e.close();
+                }
+
+                args << "wineserver";
+                args << "-k";
+
+#ifdef DEBUG
+                qDebug() << args;
+#endif
+
+                return this->runProcess(this->getWhichOut("env"), args);
+#else
+                //FIXME: FreeBSD and MacOS hooks required
+                ExecObject execObj;
+                execObj.cmdargs = "-kill";
+                execObj.execcmd = "wineserver";
+
+                if (!this->runWineBinary(execObj, db_prefix.getName(prefix_path), false)){
+                    return false;
+                }
+#endif
+
+            } else {
+                ExecObject execObj;
+                execObj.cmdargs = "-kill";
+                execObj.execcmd = "wineserver";
+
+                if (!this->runWineBinary(execObj, db_prefix.getName(prefix_path), false)){
+                    return false;
+                }
             }
-
             return true;
         }
 

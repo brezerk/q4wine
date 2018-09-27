@@ -249,16 +249,9 @@ void WineProcessWidget::procKillWine_Click(void){
     foreach(index, indexes) {
         if (index.column()==3){
             QString path = model->index(index.row(), 3, QModelIndex()).data().toString();
-            if (prefixList.indexOf(path, 0)<0)
-                prefixList.append(path);
+            QString pid = model->index(index.row(), 0, QModelIndex()).data().toString();
+            CoreLib->killWineServer(path, pid);
         }
-    }
-
-    if (prefixList.count()<=0)
-        return;
-
-    for (int i=0; i<prefixList.count(); i++){
-        CoreLib->killWineServer(prefixList.at(i));
     }
 
     return;

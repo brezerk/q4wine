@@ -222,7 +222,7 @@ public:
      * \param  prefix_path	Prefix name.
      * \return Return an list of cdrom devices.
      */
-    bool killWineServer(const QString prefix_path);
+    bool killWineServer(const QString prefix_path, const QString pid);
 
     /*! \brief Prepare icon data for run wine.
      *
