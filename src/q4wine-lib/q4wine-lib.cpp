@@ -1560,7 +1560,7 @@ QStringList corelib::getCdromDevices(void) const{
 
                     while(!e_line.isNull()) {
                         qDebug() << e_line;
-                        foreach (const QString &env, e_line.split('\0')) {
+                        foreach (const QString &env, e_line.split("\0")) {
                             QRegExp rx_env("^(.*)=(.*)?");
                             if (rx_env.indexIn(env) != -1){
                                 if (keywords.contains(rx_env.cap(1))){
