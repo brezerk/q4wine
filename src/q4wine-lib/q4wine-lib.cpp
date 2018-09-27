@@ -133,16 +133,21 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
                             // Try to read environ file
                             QTextStream e_in(&file_e);
                             QString e_line = e_in.readLine();
-                            int index = e_line.indexOf("WINEPREFIX=");
-                            prefix="";
-                            if (index!=-1)
-                                for (int i=index+11; i<=e_line.length(); i++){
-                                    if (e_line.mid(i, 1).data()->isPrint()){
-                                        prefix.append(e_line.mid(i, 1));
-                                    } else {
-                                        break;
+                            while(!e_line.isNull()) {
+                                qDebug() << e_line;
+                                int index = e_line.indexOf("WINEPREFIX=");
+                                qDebug() << "INDEX OF:" << index;
+                                prefix="";
+                                if (index!=-1)
+                                    for (int i=index+11; i<=e_line.length(); i++){
+                                        if (e_line.mid(i, 1).data()->isPrint()){
+                                            prefix.append(e_line.mid(i, 1));
+                                        } else {
+                                            break;
+                                        }
                                     }
-                                }
+                                e_line = e_in.readLine();
+                            }
                             file_e.close();
                         }
 
