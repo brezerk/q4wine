@@ -28,7 +28,7 @@ SET( Q4WINE_HELPER_SOURCES
 
 SET( Q4WINE_HELPER_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-helper/q4wine-helper.h
-    ${CMAKE_SOURCE_DIR}/config.h
+    ${PROJECT_BINARY_DIR}/config.h
     ${CMAKE_SOURCE_DIR}/src/core/database/db.h
     ${CMAKE_SOURCE_DIR}/src/core/database/table.h
     ${CMAKE_SOURCE_DIR}/src/core/database/versions.h

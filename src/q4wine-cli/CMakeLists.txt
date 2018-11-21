@@ -15,7 +15,7 @@ SET( Q4WINE_CLI_SOURCES
 SET( Q4WINE_CLI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-lib/q4wine-lib.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-cli/q4wine-cli.h
-    ${CMAKE_SOURCE_DIR}/config.h
+    ${PROJECT_BINARY_DIR}/config.h
     ${CMAKE_SOURCE_DIR}/src/core/database/db.h
     ${CMAKE_SOURCE_DIR}/src/core/database/table.h
     ${CMAKE_SOURCE_DIR}/src/core/database/versions.h

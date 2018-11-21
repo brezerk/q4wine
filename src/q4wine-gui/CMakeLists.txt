@@ -74,7 +74,7 @@ SET ( Q4WINE_GUI_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/imagemanager.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/winedrivedialog.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/versions.h
-    ${CMAKE_SOURCE_DIR}/config.h
+    ${PROJECT_BINARY_DIR}/config.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlistwidget.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/iconlisttoolbar.h
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/widgets/prefixtreewidget.h
