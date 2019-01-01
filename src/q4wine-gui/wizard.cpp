@@ -251,6 +251,14 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
 
     if (event->type() == QEvent::MouseButtonRelease) {
         QString file;
+        QString obj_name;
+        QString search_path;
+
+        obj_name.append("txt");
+        obj_name.append(obj->objectName().right(obj->objectName().length()-6));
+
+        std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(obj_name));
+        search_path = lineEdit.get()->text();
 
 #if QT_VERSION >= 0x040500
         QFileDialog::Options options;
@@ -259,24 +267,19 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
                 options = QFileDialog::DontUseNativeDialog | QFileDialog::DontResolveSymlinks;
 
         if (obj->objectName().right(3)=="Bin"){
-            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)", 0, options);
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path, "All files (*)", 0, options);
         } else {
-            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),  options);
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path,  options);
         }
 #else
         if (obj->objectName().right(3)=="Bin"){
-            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path, "All files (*)");
         } else {
-            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath());
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path);
         }
 #endif
 
         if (!file.isEmpty()){
-            QString a;
-            a.append("txt");
-            a.append(obj->objectName().right(obj->objectName().length()-6));
-
-            std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
             if (lineEdit.get()){
                 lineEdit->setText(file);
             } else {
@@ -292,6 +295,7 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
                 txtWineLoaderBin->setText(QString("%1wine").arg(wrkDir));
             }
         }
+        lineEdit.release();
     }
     return false;
 }

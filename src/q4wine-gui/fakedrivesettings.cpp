@@ -1422,6 +1422,21 @@ bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
 
     if (event->type() == QEvent::MouseButtonRelease) {
         QString file;
+        QString obj_name;
+        QString search_path;
+
+        obj_name.append("txt");
+        obj_name.append(obj->objectName().right(obj->objectName().length()-6));
+        if (QString("%1").arg(findChild<QWidget *>(obj_name)->metaObject()->className()) == "QComboBox") {
+            std::unique_ptr<QComboBox> cbEdit (findChild<QComboBox *>(obj_name));
+            search_path = cbEdit.get()->currentText();
+            cbEdit.release();
+        } else {
+            std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(obj_name));
+            search_path = lineEdit.get()->text();
+            lineEdit.release();
+        }
+
 
 #if QT_VERSION >= 0x040500
         QFileDialog::Options options;
@@ -1430,24 +1445,21 @@ bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
                 options = QFileDialog::DontUseNativeDialog | QFileDialog::DontResolveSymlinks;
 
         if (obj->objectName().right(3)=="Bin"){
-            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(), "All files (*)", 0, options);
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path, "All files (*)", 0, options);
         } else {
-            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(),  options);
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path,  options);
         }
 #else
         if (obj->objectName().right(3)=="Bin"){
-            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(),   "All files (*)");
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path,   "All files (*)");
         } else {
-            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath());
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path);
         }
 #endif
         if (!file.isEmpty()){
-            QString a;
-            a.append("txt");
-            a.append(obj->objectName().right(obj->objectName().length()-6));
 
-            if (QString("%1").arg(findChild<QWidget *>(a)->metaObject()->className()) == "QComboBox") {
-                std::unique_ptr<QComboBox> cbEdit (findChild<QComboBox *>(a));
+            if (QString("%1").arg(findChild<QWidget *>(obj_name)->metaObject()->className()) == "QComboBox") {
+                std::unique_ptr<QComboBox> cbEdit (findChild<QComboBox *>(obj_name));
                 if (cbEdit.get()){
 #if QT_VERSION >= 0x050000
                     cbEdit->setCurrentText(file);
@@ -1459,7 +1471,7 @@ bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
                 }
                 cbEdit.release();
             } else {
-                std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
+                std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(obj_name));
                 if (lineEdit.get()){
                     lineEdit->setText(file);
                 } else {

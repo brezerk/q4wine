@@ -283,19 +283,17 @@ void IconSettings::cbUseConsole_stateChanged(int){
 
 void IconSettings::cmdGetWorkDir_Click(){
 
-    QString fileName, searchPath=this->prefix_path;
+    QString fileName, searchPath;
 
-    if ((!txtProgramPath->text().isEmpty()) and (QDir().exists(txtProgramPath->text()))){
-        searchPath=txtProgramPath->text().left(txtProgramPath->text().length() - txtProgramPath->text().split("/").last().length());;
-    }
-
-    if (!QDir(searchPath).exists()){
-        if (QDir(this->prefix_path).exists()){
-           searchPath=this->prefix_path;
+    if (txtWorkDir->text().isEmpty()){
+        searchPath = this->prefix_path;
+    } else {
+        if (QDir(txtWorkDir->text()).exists()) {
+            searchPath = txtWorkDir->text();
         } else {
-           searchPath=QDir::homePath();
+            searchPath = this->prefix_path;
         }
-     }
+    }
 
     QFileDialog dialog(this);
       dialog.setFilter(QDir::Dirs | QDir::Hidden);
@@ -340,23 +338,17 @@ void IconSettings::cmdAdd_Click(){
 }
 
 void IconSettings::cmdGetProgram_Click(){
-    QString fileName, searchPath = this->prefix_path;
+    QString fileName, searchPath;
 
-    if (!txtProgramPath->text().isEmpty()){
-        if (!txtWorkDir->text().isEmpty()){
-        searchPath=txtWorkDir->text();
+    if (txtProgramPath->text().isEmpty()){
+        searchPath = this->prefix_path;
+    } else {
+        if (QFile(txtProgramPath->text()).exists()){
+            searchPath = QFileInfo(txtProgramPath->text()).absolutePath();
         } else {
-        searchPath=txtProgramPath->text().left(txtProgramPath->text().length() - txtProgramPath->text().split("/").last().length());;
+            searchPath = this->prefix_path;
         }
     }
-
-    if ((!QDir(searchPath).exists()) or (searchPath.isEmpty())){
-        if (QDir(dir_name).exists()){
-           searchPath=this->prefix_path;
-        } else {
-           searchPath=QDir::homePath();
-        }
-     }
 
     QFileDialog dialog(this);
       dialog.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden );
@@ -674,8 +666,13 @@ void IconSettings::cmdHelp_Click(){
 
 void IconSettings::cmdGetPreRun_Click(){
     QString fileName;
-    QString searchPath = QDir::homePath();
-    searchPath.append("/.config/q4wine/scripts");
+    QString searchPath = "";
+    if (txtPreRun->text().isEmpty()) {
+        searchPath = QDir::homePath();
+        searchPath.append("/.config/q4wine/scripts");
+    } else {
+        searchPath = QFileInfo(txtPreRun->text()).absolutePath();
+    }
     QFileDialog dialog(this);
     dialog.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden );
     dialog.setWindowTitle(tr("Open Exe file"));
@@ -689,17 +686,22 @@ void IconSettings::cmdGetPreRun_Click(){
     }
 #endif
 
-    if (dialog.exec())
+    if (dialog.exec()){
        fileName = dialog.selectedFiles().first();
-
-    txtPreRun->setText(fileName);
+       txtPreRun->setText(fileName);
+    }
     return;
 }
 
 void IconSettings::cmdGetPostRun_Click(){
     QString fileName;
-    QString searchPath = QDir::homePath();
-    searchPath.append("/.config/q4wine/scripts");
+    QString searchPath = "";
+    if (txtPostRun->text().isEmpty()) {
+        searchPath = QDir::homePath();
+        searchPath.append("/.config/q4wine/scripts");
+    } else {
+        searchPath = QFileInfo(txtPostRun->text()).absolutePath();
+    }
     QFileDialog dialog(this);
     dialog.setFilter(QDir::Dirs | QDir::Files | QDir::Hidden );
     dialog.setWindowTitle(tr("Open Exe file"));

@@ -1,3 +1,7 @@
+Version 1.3.12
+ Fixed:
+  - Improve all dialogs of choosing files [BUG-139];
+
 Version 1.3.11
  Fixed:
   - Display of Valve Proton in Processes view [BUG-138];

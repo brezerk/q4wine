@@ -295,7 +295,15 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
 
     if (event->type() == QEvent::MouseButtonRelease) {
 
-        QString file="";
+        QString file;
+        QString obj_name;
+        QString search_path;
+
+        obj_name.append("txt");
+        obj_name.append(obj->objectName().right(obj->objectName().length()-6));
+
+        std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(obj_name));
+        search_path = lineEdit.get()->text();
 
         if (obj->objectName().right(3)=="Bin"){
 #if QT_VERSION >= 0x040500
@@ -304,9 +312,9 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
             if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
-            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(), "All files (*)", 0, options);
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path, "All files (*)", 0, options);
 #else
-            file = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::homePath(), "All files (*)");
+            file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path, "All files (*)");
 #endif
         } else {
 #if QT_VERSION >= 0x040500
@@ -315,9 +323,9 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
             if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
-            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(), options);
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path, options);
 #else
-            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), QDir::homePath(), QFileDialog::DontResolveSymlinks);
+            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path, QFileDialog::DontResolveSymlinks);
 #endif
         }
 
@@ -325,13 +333,6 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
             if (file.right(1)=="/"){
                 file=file.left(file.length()-1);
             }
-
-            QString a="";
-
-            a.append("txt");
-            a.append(obj->objectName().right(obj->objectName().length()-6));
-
-            std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(a));
 
             if (lineEdit.get()){
                 lineEdit->setText(file);
@@ -350,6 +351,7 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
             }
 
         }
+        lineEdit.release();
     }
 
     return false;

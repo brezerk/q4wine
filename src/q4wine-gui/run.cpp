@@ -333,22 +333,15 @@ void Run::cbUseConsole_stateChanged(int){
 
 void Run::cmdGetProgram_Click(){
 
-    QString fileName="";
-    QString searchPath=prefix_dir;
+    QString fileName, searchPath;
 
-    if (!txtProgramBin->text().isEmpty()){
-        if (!txtWorkDir->text().isEmpty()){
-            searchPath=txtWorkDir->text();
+    if (txtProgramBin->text().isEmpty()){
+        searchPath = prefix_dir;
+    } else {
+        if (QFile(txtProgramBin->text()).exists()){
+            searchPath = QFileInfo(txtProgramBin->text()).absolutePath();
         } else {
-            searchPath=txtProgramBin->text().left(txtProgramBin->text().length() - txtProgramBin->text().split("/").last().length());;
-        }
-    }
-
-    if ((!QDir(searchPath).exists()) or (searchPath.isEmpty())){
-        if (QDir(prefix_dir).exists()){
-            searchPath=prefix_dir;
-        } else {
-            searchPath=QDir::homePath();
+            searchPath = prefix_dir;
         }
     }
 
@@ -382,18 +375,16 @@ void Run::cmdGetProgram_Click(){
 }
 
 void Run::cmdGetWorkDir_Click(){
-    QString searchPath=prefix_dir;
-    QString fileName="";
 
-    if ((!txtProgramBin->text().isEmpty()) and (QDir().exists(txtProgramBin->text()))){
-        searchPath=txtProgramBin->text().left(txtProgramBin->text().length() - txtProgramBin->text().split("/").last().length());;
-    }
+    QString fileName, searchPath;
 
-    if (!QDir(searchPath).exists()){
-        if (QDir(prefix_dir).exists()){
-            searchPath=prefix_dir;
+    if (txtWorkDir->text().isEmpty()){
+        searchPath = prefix_dir;
+    } else {
+        if (QDir(txtWorkDir->text()).exists()) {
+            searchPath = txtWorkDir->text();
         } else {
-            searchPath=QDir::homePath();
+            searchPath = prefix_dir;
         }
     }
 
