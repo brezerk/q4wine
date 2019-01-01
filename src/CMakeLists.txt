@@ -1,8 +1,4 @@
-if(QT5 MATCHES ON)
 cmake_minimum_required(VERSION 2.8.11)
-else(QT5 MATCHES ON)
-cmake_minimum_required(VERSION 2.8.0)
-endif(QT5 MATCHES ON)
 
 PROJECT(q4wine)
 
@@ -15,7 +11,7 @@ if(POLICY CMP0011)
     cmake_policy(SET CMP0011 NEW)
 endif(POLICY CMP0011)
 
-option(QT5 "If ON, then q4wine will be built with Qt 5.x." "ON")
+option(QT5 "If ON, then q4wine will be built with Qt 5.x. (OBSOLETE)" "ON")
 option(DEBUG "If ON, then q4wine will send debug messages to STDOUT. Use it for development or bug reportint purposes." "OFF")
 option(RELEASE "If OFF, then force q4wine to use APP_BUILD as CMAKE_INSTALL_PREFIX. Use it for development purposes." "ON")
 option(WITH_ICOUTILS "If ON, then build q4wine with icoutils support." "ON")
@@ -33,7 +29,6 @@ MESSAGE(" * http://brezblock.org.ua/\n")
 
 MESSAGE(STATUS "Q4Wine build environment -- \n")
 
-if(QT5 MATCHES ON)
 set(QT_MIN_VERSION "5.2.1")
 find_package(Qt5Core REQUIRED)
 find_package(Qt5LinguistTools REQUIRED)
@@ -42,66 +37,17 @@ find_package(Qt5Sql REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Xml REQUIRED)
 find_package(Qt5Svg REQUIRED)
-    if (Qt5Core_FOUND)
-        message("\n-- Found Qt Core version : ${Qt5Core_VERSION}")
-    else (Qt5Core_FOUND)
-        message(FATAL ERROR "Qt Core libs not found. Please install Qt ${QT_MIN_VERSION}.")
-    endif (Qt5Core_FOUND)
-    if (WITH_DBUS MATCHES ON)
-        find_package(Qt5DBus REQUIRED)
-        if (NOT Qt5DBus_FOUND)
-            message(FATAL ERROR "Qt DBus libraries missing. Please install Qt DBus ${QT_MIN_VERSION} or set WITH_DBUS to OFF")
-        endif (NOT Qt5DBus_FOUND)
-    endif (WITH_DBUS MATCHES ON)
-else(QT5 MATCHES ON)
-    set(QT_MIN_VERSION "4.4.0")
-    find_package(Qt4 REQUIRED)
-    IF(QT_FOUND)
-	MESSAGE("\n-- Found Qt version : ${QTVERSION}")
-
-	IF(QT_QTSQL_FOUND)
-	     SET(QT_USE_QTSQL 1)
-	ELSE(QT_QTSQL_FOUND)
-	     MESSAGE(FATAL ERROR "Qt SQL libraries missing.")
-	ENDIF(QT_QTSQL_FOUND)
-
-	IF(QT_QTGUI_FOUND)
-	     SET(QT_USE_QTGUI 1)
-	ELSE(QT_QTGUI_FOUND)
-             MESSAGE(FATAL ERROR "Qt GUI libraries missing.")
-	ENDIF(QT_QTGUI_FOUND)
-
-	IF(QT_QTNETWORK_FOUND)
-	     SET(QT_USE_QTNETWORK 1)
-	ELSE(QT_QTNETWORK_FOUND)
-	     MESSAGE(FATAL ERROR "Qt Network libraries missing.")
-	ENDIF(QT_QTNETWORK_FOUND)
-
-	IF(QT_QTXML_FOUND)
-             SET(QT_USE_QTXML 1)
-	ELSE(QT_QTXML_FOUND)
-             MESSAGE(FATAL ERROR "Qt XML libraries missing.")
-	ENDIF(QT_QTXML_FOUND)
-
-	IF(QT_QTCORE_FOUND)
-             SET(QT_USE_QTCORE 1)
-	ELSE(QT_QTCORE_FOUND)
-             MESSAGE(FATAL ERROR "Qt Core libraries missing.")
-	ENDIF(QT_QTCORE_FOUND)
-
-	IF(WITH_DBUS)
-		IF(QT_QTDBUS_FOUND)
-		    SET(QT_USE_QTDBUS 1)
-		ELSE(QT_QTDBUS_FOUND)
-		    MESSAGE(FATAL ERROR "Qt D-Bus libraries missing.")
-		ENDIF(QT_QTDBUS_FOUND)
-	ENDIF(WITH_DBUS)
-
-	INCLUDE(${QT_USE_FILE})
-     ELSE(QT_FOUND)
-	MESSAGE(FATAL ERROR "Qt not found.")
-     ENDIF(QT_FOUND)
-endif(QT5 MATCHES ON)
+if (Qt5Core_FOUND)
+    message("\n-- Found Qt Core version : ${Qt5Core_VERSION}")
+else (Qt5Core_FOUND)
+    message(FATAL ERROR "Qt Core libs not found. Please install Qt ${QT_MIN_VERSION}.")
+endif (Qt5Core_FOUND)
+if (WITH_DBUS MATCHES ON)
+    find_package(Qt5DBus REQUIRED)
+    if (NOT Qt5DBus_FOUND)
+        message(FATAL ERROR "Qt DBus libraries missing. Please install Qt DBus ${QT_MIN_VERSION} or set WITH_DBUS to OFF")
+    endif (NOT Qt5DBus_FOUND)
+endif (WITH_DBUS MATCHES ON)
 
 MESSAGE(STATUS "Build realm is   : ${CMAKE_SYSTEM_NAME} ${CMAKE_HOST_SYSTEM_PROCESSOR}\n")
 
@@ -146,8 +92,8 @@ ELSE( ${CMAKE_SYSTEM_NAME} MATCHES Darwin )
         SET( THEMES_ENTRY_PATH ${CMAKE_INSTALL_PREFIX}/share/q4wine )
     ENDIF( NOT THEMES_ENTRY_PATH )
     IF( I18N_ENTRY_PATH )
-	MESSAGE(WARNING "-DI18N_ENTRY_PATH is obsolete. Use -DL10N_ENTRY_PATH instead.")
-	SET( L10N_ENTRY_PATH ${I18N_ENTRY_PATH} )
+        MESSAGE(WARNING "-DI18N_ENTRY_PATH is obsolete. Use -DL10N_ENTRY_PATH instead.")
+        SET( L10N_ENTRY_PATH ${I18N_ENTRY_PATH} )
     ENDIF( I18N_ENTRY_PATH )
     IF( NOT L10N_ENTRY_PATH )
         SET( L10N_ENTRY_PATH ${CMAKE_INSTALL_PREFIX}/share/q4wine/l10n )
@@ -237,7 +183,6 @@ file(APPEND ${PROJECT_BINARY_DIR}/config.h "\n#endif\n" )
 IF( NOT RELEASE )
     file(APPEND ${PROJECT_BINARY_DIR}/config.h "#define APP_BUILD \"${CMAKE_CURRENT_BINARY_DIR}\"\n" )
 ENDIF ( NOT RELEASE )
-    MESSAGE(STATUS "QT5                           : ${QT5}")
     MESSAGE(STATUS "WITH_ICOUTILS                 : ${WITH_ICOUTILS}")
     MESSAGE(STATUS "WITH_SYSTEM_SINGLEAPP         : ${WITH_SYSTEM_SINGLEAPP}")
     MESSAGE(STATUS "WITH_WINEAPPDB                : ${WITH_WINEAPPDB}")
@@ -303,29 +248,20 @@ SET ( Q4WINE_HEADERS_DIR
 IF (${WITH_SYSTEM_SINGLEAPP} MATCHES ON )
     MESSAGE(STATUS "Searching for QtSingleApplication package (WITH_SYSTEM_SINGLEAPP=ON) --\n")
 
-    IF (${QT5} MATCHES ON)
-        SET(QT_INCLUDE_DIR "/usr/include/qt5")
-    ELSE (${QT5} MATCHES ON)
-        SET(QT_INCLUDE_DIR "/usr/include/qt4")
-    ENDIF (${QT5} MATCHES ON)
+    SET(QT_INCLUDE_DIR "/usr/include/qt5")
 
     find_path(QTSINGLEAPPLIB_INCLUDE_DIR NAMES QtSingleApplication
-					 PATH_SUFFIXES QtSolutions
-					 PATHS
-					 /usr/include
-					 ${QT_INCLUDE_DIR}
-					 ${FRAMEWORK_INCLUDE_DIR})
-    IF (${QT5} MATCHES ON)
-        find_library(QTSINGLEAPPLIB Qt5Solutions_SingleApplication-2.6
-                                    libQt5Solutions_SingleApplication-2.6)
-        IF (NOT QTSINGLEAPPLIB_INCLUDE_DIR OR NOT QTSINGLEAPPLIB)
-            find_library(QTSINGLEAPPLIB Qt5Solutions_SingleApplication-head
+              PATH_SUFFIXES QtSolutions
+              PATHS
+              /usr/include
+              ${QT_INCLUDE_DIR}
+              ${FRAMEWORK_INCLUDE_DIR})
+    find_library(QTSINGLEAPPLIB Qt5Solutions_SingleApplication-2.6
+                                libQt5Solutions_SingleApplication-2.6)
+    IF (NOT QTSINGLEAPPLIB_INCLUDE_DIR OR NOT QTSINGLEAPPLIB)
+        find_library(QTSINGLEAPPLIB Qt5Solutions_SingleApplication-head
                                     libQt5Solutions_SingleApplication-head)
-        ENDIF (NOT QTSINGLEAPPLIB_INCLUDE_DIR OR NOT QTSINGLEAPPLIB)
-    ELSE (${QT5} MATCHES ON)
-        find_library(QTSINGLEAPPLIB QtSolutions_SingleApplication-2.6
-                                    libQtSolutions_SingleApplication-2.6)
-    ENDIF (${QT5} MATCHES ON)
+    ENDIF (NOT QTSINGLEAPPLIB_INCLUDE_DIR OR NOT QTSINGLEAPPLIB)
 
     IF (QTSINGLEAPPLIB_INCLUDE_DIR AND QTSINGLEAPPLIB )
         MESSAGE(STATUS "     library : ${QTSINGLEAPPLIB}")
@@ -368,16 +304,16 @@ IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 ENDIF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
 add_custom_target(cppcheck COMMAND cppcheck
-	--quiet
-	--force
-	--inconclusive
-	--error-exitcode=254
-	-I ${CMAKE_SOURCE_DIR}
-	-I ${CMAKE_SOURCE_DIR}/src/q4wine-gui
-	-I ${CMAKE_SOURCE_DIR}/src/q4wine-cli
-	-I ${CMAKE_SOURCE_DIR}/src/q4wine-helper
-	-I ${CMAKE_SOURCE_DIR}/src/q4wine-lib
-	-i qrc_q4wine.cpp
-	-i ${CMAKE_SOURCE_DIR}/build/
-	${CMAKE_SOURCE_DIR}
-	)
+    --quiet
+    --force
+    --inconclusive
+    --error-exitcode=254
+    -I ${CMAKE_SOURCE_DIR}
+    -I ${CMAKE_SOURCE_DIR}/src/q4wine-gui
+    -I ${CMAKE_SOURCE_DIR}/src/q4wine-cli
+    -I ${CMAKE_SOURCE_DIR}/src/q4wine-helper
+    -I ${CMAKE_SOURCE_DIR}/src/q4wine-lib
+    -i qrc_q4wine.cpp
+    -i ${CMAKE_SOURCE_DIR}/build/
+    ${CMAKE_SOURCE_DIR}
+    )

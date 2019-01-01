@@ -353,11 +353,9 @@ void Run::cmdGetProgram_Click(){
     dialog.setNameFilter(tr("Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)"));
     //dialog.setSidebarUrls(prefix_urls);
 
-#if QT_VERSION >= 0x040500
       if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
           dialog.setOptions(QFileDialog::DontUseNativeDialog);
       }
-#endif
 
     if (dialog.exec())
         fileName = dialog.selectedFiles().first();
@@ -405,14 +403,10 @@ void Run::cmdGetWorkDir_Click(){
     dialog.setFileMode(QFileDialog::Directory);
     dialog.setWindowTitle(tr("Open Directory"));
     dialog.setDirectory(searchPath);
-    // This option wirksonly it qt 4.5. In fact this not works correctly with QDir::Hidden,  so I comment it out for a some  time
-    //dialog.setOption(QFileDialog::ShowDirsOnly, true);
 
-#if QT_VERSION >= 0x040500
       if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
           dialog.setOptions(QFileDialog::DontUseNativeDialog);
       }
-#endif
 
     dialog.setSidebarUrls(prefix_urls);
     if (dialog.exec())

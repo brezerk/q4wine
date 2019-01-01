@@ -297,16 +297,12 @@ void LoggingWidget::logExport_Click(){
             item.release();
             return;
         } else {
-#if QT_VERSION >= 0x040500
             QFileDialog::Options options;
 
             if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
             QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to save"), QDir::homePath(), tr("Log Files (*.log)"), 0, options);
-#else
-            QString fileName = QFileDialog::getSaveFileName(this, tr("Select file to save"), QDir::homePath(), tr("Log Files (*.log)"));
-#endif
 
             if (fileName.isEmpty()){
                 item.release();

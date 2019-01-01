@@ -42,11 +42,7 @@ SET ( Q4WINE_HELPER_MOC_HEADERS
     ${CMAKE_SOURCE_DIR}/src/q4wine-gui/process.h
 )
 
-IF( QT5 )
 QT5_WRAP_CPP( Q4WINE_HELPER_LIB_MOC_SOURCES ${Q4WINE_HELPER_MOC_HEADERS} )
-ELSE( QT5 )
-QT4_WRAP_CPP( Q4WINE_HELPER_LIB_MOC_SOURCES ${Q4WINE_HELPER_MOC_HEADERS} )
-ENDIF( QT5 )
 
 ADD_EXECUTABLE( q4wine-helper ${Q4WINE_HELPER_SOURCES}
     ${Q4WINE_HELPER_UI_HEADERS} ${Q4WINE_LIB_UI_HEADERS}
@@ -59,12 +55,8 @@ IF (${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
     SET(BSD_LIBS -lkvm)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES FreeBSD)
 
-if(QT5 MATCHES ON)
-    target_link_libraries(q4wine-helper Qt5::Core Qt5::DBus Qt5::Network Qt5::Sql Qt5::Widgets Qt5::Xml)
-    target_link_libraries(q4wine-helper q4wine-core ${BSD_LIBS})
-else(QT5 MATCHES ON)
-TARGET_LINK_LIBRARIES( q4wine-helper ${QT_LIBRARIES} q4wine-core ${BSD_LIBS})
-endif(QT5 MATCHES ON)
+target_link_libraries(q4wine-helper Qt5::Core Qt5::DBus Qt5::Network Qt5::Sql Qt5::Widgets Qt5::Xml)
+target_link_libraries(q4wine-helper q4wine-core ${BSD_LIBS})
 
 IF( RELEASE )
     install(TARGETS q4wine-helper DESTINATION ${APPS_ENTRY_PATH})

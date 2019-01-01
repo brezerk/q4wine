@@ -225,15 +225,11 @@ AppSettings::AppSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(parent, 
         cbUseSingleClick->setChecked(true);
     }
 
-#if QT_VERSION >= 0x040500
     if (settings.value("useNativeFileDialog", 1).toInt()==1){
         cbUseNativeDialog->setChecked(true);
     } else {
         cbUseNativeDialog->setChecked(false);
     }
-#else
-    cbUseNativeDialog->setEnabled(false);
-#endif
 
     QString res = settings.value("defaultDesktopSize").toString();
     if (res.isEmpty()){
@@ -395,7 +391,6 @@ bool AppSettings::eventFilter(QObject *obj, QEvent *event){
         std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(obj_name));
         search_path = lineEdit.get()->text();
 
-#if QT_VERSION >= 0x040500
         QFileDialog::Options options;
 
         if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
@@ -406,13 +401,6 @@ bool AppSettings::eventFilter(QObject *obj, QEvent *event){
         } else {
             file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path,  options);
         }
-#else
-        if (obj->objectName().right(3)=="Bin"){
-            file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path, "All files (*)");
-        } else {
-            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path);
-        }
-#endif
 
         if (!file.isEmpty()){
             if (lineEdit.get()){
@@ -671,13 +659,11 @@ void AppSettings::cmdOk_Click(){
         settings.setValue("useSingleClick", 0);
     }
 
-#if QT_VERSION >= 0x040500
     if (cbUseNativeDialog->isChecked()){
         settings.setValue("useNativeFileDialog", 1);
     } else {
         settings.setValue("useNativeFileDialog", 0);
     }
-#endif
 
     QString desktopSize=cboxDesktopSize->currentText();
     if (desktopSize==tr("No virtual desktop")){

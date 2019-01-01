@@ -86,11 +86,7 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
     QSettings settings(APP_SHORT_NAME, "default");
     settings.beginGroup("LastItems");
     txtPostRunBin->addItems(settings.value("prefix").toStringList());
-#if QT_VERSION >= 0x050000
     txtPostRunBin->setCurrentText("");
-#else
-    txtPostRunBin->setEditText("");
-#endif
     settings.endGroup();
 
 }
@@ -1437,8 +1433,6 @@ bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
             lineEdit.release();
         }
 
-
-#if QT_VERSION >= 0x040500
         QFileDialog::Options options;
 
         if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
@@ -1449,23 +1443,13 @@ bool FakeDriveSettings::eventFilter(QObject *obj, QEvent *event){
         } else {
             file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path,  options);
         }
-#else
-        if (obj->objectName().right(3)=="Bin"){
-            file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path,   "All files (*)");
-        } else {
-            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path);
-        }
-#endif
+
         if (!file.isEmpty()){
 
             if (QString("%1").arg(findChild<QWidget *>(obj_name)->metaObject()->className()) == "QComboBox") {
                 std::unique_ptr<QComboBox> cbEdit (findChild<QComboBox *>(obj_name));
                 if (cbEdit.get()){
-#if QT_VERSION >= 0x050000
                     cbEdit->setCurrentText(file);
-#else
-                    cbEdit->setEditText(file);
-#endif
                 } else {
                     qDebug("Error");
                 }

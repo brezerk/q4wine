@@ -60,7 +60,6 @@ Installation
 
        DEBUG                     : OFF | ON
        RELEASE                   : ON  | OFF
-       QT5                       : ON  | OFF
        WITH_ICOUTILS             : ON  | OFF
        WITH_SYSTEM_SINGLEAPP     : OFF | ON
        WITH_WINEAPPDB            : ON  | OFF

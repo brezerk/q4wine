@@ -790,16 +790,12 @@ void MainWindow::mainExportIcons_Click(){
     QString fileName, tmpDir;
     QStringList args;
 
-#if QT_VERSION >= 0x040500
         QFileDialog::Options options;
 
         if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
     fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;All files (*)"), 0, options );
-#else
-    fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;All files (*)") );
-#endif
 
     if(fileName.isEmpty())
         return;

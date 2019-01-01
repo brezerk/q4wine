@@ -20,23 +20,10 @@
 
 HttpCore::HttpCore()
 {
-#ifdef QT5
     http.reset(new QNetworkAccessManager(this));
 
     connect(http.get(), SIGNAL(finished(QNetworkReply*)),
             this, SLOT(readResponseHeader(QNetworkReply*)));
-#else
-    http.reset(new QHttp(this));
-
-    connect(http.get(), SIGNAL(requestFinished(int, bool)),
-                 this, SLOT(httpRequestFinished(int, bool)));
-    connect(http.get(), SIGNAL(dataReadProgress(int, int)),
-                 this, SIGNAL(updateDataReadProgress(int, int)));
-    connect(http.get(), SIGNAL(stateChanged(int)),
-                 this, SIGNAL(stateChanged(int)));
-    connect(http.get(), SIGNAL(responseHeaderReceived(const QHttpResponseHeader &)),
-                 this, SLOT(readResponseHeader(const QHttpResponseHeader &)));
-#endif
     // Loading libq4wine-core.so
 #ifdef RELEASE
     libq4wine.setFileName(_CORELIB_PATH_);
@@ -62,7 +49,6 @@ HttpCore::HttpCore()
         proxyPort = CoreLib->getSetting("network", "port", false).toInt();
         proxyUser = CoreLib->getSetting("network", "user", false).toString();
         proxyPass = CoreLib->getSetting("network", "pass", false).toString();
-        #ifdef QT5
         QNetworkProxy proxy;
         if (type == 1){
             proxy.setType(QNetworkProxy::HttpProxy);
@@ -74,9 +60,6 @@ HttpCore::HttpCore()
         proxy.setUser(proxyUser);
         proxy.setPassword(proxyPass);
         http->setProxy(proxy);
-        #else
-        http->setProxy(proxyHost, proxyPort, proxyUser, proxyPass);
-        #endif
     }
 
     //Create user_agent string
@@ -91,7 +74,6 @@ void HttpCore::getAppDBXMLPage(QString host, short int port, QString page)
 {
     this->page = page;
     if (!this->getCacheFile(page)){
-#ifdef QT5
         QString url = QString("http://%1:%2/%3").arg(host, QString::number(port), page);
         QNetworkRequest request = QNetworkRequest(QUrl(url));
         request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
@@ -102,26 +84,6 @@ void HttpCore::getAppDBXMLPage(QString host, short int port, QString page)
 #endif
 
         this->xmlreply="";
-#else
-        http->setHost(host, QHttp::ConnectionModeHttp, port);
-
-        QByteArray enc_page = QUrl::toPercentEncoding(page, "/");
-
-        QHttpRequestHeader header("POST", enc_page);
-        header.setValue("Host", host);
-        header.setValue("Port", QString("%1").arg(port));
-        header.setContentType("application/x-www-form-urlencoded");
-        header.setValue("Accept-Encoding", "deflate");
-        header.setValue("User-Agent", user_agent);
-
-#ifdef DEBUG
-        qDebug()<<"[ii] Connecting to"<<host<<":"<<port<<" reuested page is: "<<enc_page;
-#endif
-
-        this->xmlreply="";
-        this->aborted=false;
-        this->getId = http->request(header, "");
-#endif
     } else {
 #ifdef DEBUG
         qDebug()<<"[ii] Cache hit";
@@ -169,7 +131,6 @@ QString HttpCore::getXMLReply(){
     return xmlreply;
 }
 
-#ifdef QT5
 void HttpCore::readResponseHeader(QNetworkReply* reply)
 {
     if (reply->error() == QNetworkReply::NoError)
@@ -192,43 +153,4 @@ void HttpCore::readResponseHeader(QNetworkReply* reply)
 
     emit(pageReaded());
 }
-#else
-void HttpCore::httpRequestFinished(int requestId, bool error){
-    if (this->aborted)
-        return;
 
-    if (this->getId!=requestId)
-        return;
-
-    if (error){
-        xmlreply="";
-        emit(requestError(http->errorString()));
-    } else {
-        xmlreply=http->readAll();
-
-#ifdef DEBUG
-        qDebug()<<"[ii] Received page:"<<xmlreply;
-#endif
-        emit(pageReaded());
-    }
-
-    return;
-}
-
-void HttpCore::readResponseHeader(const QHttpResponseHeader &responseHeader){
-    switch (responseHeader.statusCode()) {
-         case 200:                   // Ok
-         case 301:                   // Moved Permanently
-         case 303:                   // See Other
-         case 307:                   // Temporary Redirect
-             // these are not error conditions
-             break;
-
-         default:
-             emit(requestError(tr("Download failed: %1.").arg(responseHeader.reasonPhrase())));;
-             this->aborted=true;
-             http->abort();
-         }
-    return;
-}
-#endif

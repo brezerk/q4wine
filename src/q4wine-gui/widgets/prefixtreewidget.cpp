@@ -616,16 +616,12 @@ void PrefixTreeWidget::menuMount_triggered(QAction* action){
     fileFilter =  tr("ISO image files (*.iso *.ISO);;All files (*)");
 #endif
 
-#if QT_VERSION >= 0x040500
     QFileDialog::Options options;
 
     if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
         options = QFileDialog::DontUseNativeDialog;
 
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open Disc Image Files"), QDir::homePath(), fileFilter, 0, options);
-#else
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Disc Image Files"), QDir::homePath(), fileFilter);
-#endif
 
             if(fileName.isEmpty()){
                   return;

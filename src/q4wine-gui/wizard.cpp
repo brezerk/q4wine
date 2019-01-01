@@ -260,7 +260,6 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
         std::unique_ptr<QLineEdit> lineEdit (findChild<QLineEdit *>(obj_name));
         search_path = lineEdit.get()->text();
 
-#if QT_VERSION >= 0x040500
         QFileDialog::Options options;
 
         if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
@@ -271,13 +270,6 @@ bool Wizard::eventFilter(QObject *obj, QEvent *event){
         } else {
             file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path,  options);
         }
-#else
-        if (obj->objectName().right(3)=="Bin"){
-            file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path, "All files (*)");
-        } else {
-            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path);
-        }
-#endif
 
         if (!file.isEmpty()){
             if (lineEdit.get()){

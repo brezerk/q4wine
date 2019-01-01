@@ -152,11 +152,9 @@ void WineDriveDialog::cmdGetDrivePath_Click(){
 	QFileDialog dialog(this);
 	  dialog.setFilter(QDir::Dirs | QDir::Hidden);
 
-#if QT_VERSION >= 0x040500
       if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
           dialog.setOptions(QFileDialog::DontUseNativeDialog);
       }
-#endif
 
 	  dialog.setFileMode(QFileDialog::Directory);
 	  dialog.setWindowTitle(tr("Open Directory"));

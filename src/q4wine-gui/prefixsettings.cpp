@@ -306,27 +306,21 @@ bool PrefixSettings::eventFilter(QObject *obj, QEvent *event){
         search_path = lineEdit.get()->text();
 
         if (obj->objectName().right(3)=="Bin"){
-#if QT_VERSION >= 0x040500
             QFileDialog::Options options;
 
             if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
             file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path, "All files (*)", 0, options);
-#else
-            file = QFileDialog::getOpenFileName(this, tr("Open File"), search_path, "All files (*)");
-#endif
+
         } else {
-#if QT_VERSION >= 0x040500
+
             QFileDialog::Options options;
 
             if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
                 options = QFileDialog::DontUseNativeDialog;
 
             file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path, options);
-#else
-            file = QFileDialog::getExistingDirectory(this, tr("Open Directory"), search_path, QFileDialog::DontResolveSymlinks);
-#endif
         }
 
         if (!file.isEmpty()){

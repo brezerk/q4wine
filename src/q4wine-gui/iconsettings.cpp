@@ -302,11 +302,9 @@ void IconSettings::cmdGetWorkDir_Click(){
       dialog.setWindowTitle(tr("Open Directory"));
       dialog.setDirectory(searchPath);
 
-#if QT_VERSION >= 0x040500
       if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
           dialog.setOptions(QFileDialog::DontUseNativeDialog);
       }
-#endif
 
     if (dialog.exec())
         fileName = dialog.selectedFiles().first();
@@ -357,12 +355,9 @@ void IconSettings::cmdGetProgram_Click(){
       dialog.setFileMode(QFileDialog::ExistingFile);
       dialog.setNameFilter(tr("Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)"));
 
-
-#if QT_VERSION >= 0x040500
       if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
           dialog.setOptions(QFileDialog::DontUseNativeDialog);
       }
-#endif
 
      if (dialog.exec())
         fileName = dialog.selectedFiles().first();
@@ -417,11 +412,9 @@ void IconSettings::cmdGetIcon_Click(){
       dialog.setFileMode(QFileDialog::ExistingFile);
       dialog.setWindowTitle(tr("Open image file"));
 
-#if QT_VERSION >= 0x040500
       if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
           dialog.setOptions(QFileDialog::DontUseNativeDialog);
       }
-#endif
 
       if ((!iconPath.isEmpty()) and (QFile(iconPath).exists())){
           QStringList list = iconPath.split("/");
@@ -680,11 +673,9 @@ void IconSettings::cmdGetPreRun_Click(){
     dialog.setFileMode(QFileDialog::ExistingFile);
     dialog.setNameFilter(tr("Shell script (*.sh)"));
 
-#if QT_VERSION >= 0x040500
     if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
         dialog.setOptions(QFileDialog::DontUseNativeDialog);
     }
-#endif
 
     if (dialog.exec()){
        fileName = dialog.selectedFiles().first();
@@ -709,11 +700,9 @@ void IconSettings::cmdGetPostRun_Click(){
     dialog.setFileMode(QFileDialog::ExistingFile);
     dialog.setNameFilter(tr("Shell script (*.sh)"));
 
-#if QT_VERSION >= 0x040500
     if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0){
         dialog.setOptions(QFileDialog::DontUseNativeDialog);
     }
-#endif
 
     if (dialog.exec())
        fileName = dialog.selectedFiles().first();

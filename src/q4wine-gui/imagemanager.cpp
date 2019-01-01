@@ -181,18 +181,12 @@ void ImageManager::actionAddImage(){
     fileFilter =  tr("ISO image files (*.iso *.ISO);;All files (*)");
 #endif
 
-#if QT_VERSION >= 0x040500
     QFileDialog::Options options;
 
     if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
         options = QFileDialog::DontUseNativeDialog;
 
     fileName = QFileDialog::getOpenFileName(this, tr("Open ISO image file"), QDir::homePath(), fileFilter, 0, options);
-#else
-    fileName = QFileDialog::getOpenFileName(this, tr("Open ISO image file"), QDir::homePath(), fileFilter);
-#endif
-
-
 
 	if(!fileName.isEmpty()){
 		newName = fileName.split("/").last();
