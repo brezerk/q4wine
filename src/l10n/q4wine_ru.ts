@@ -216,9 +216,9 @@
         <location line="+2979"/>
         <location line="+5"/>
         <location line="+4"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+250"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+246"/>
         <location line="+20"/>
-        <location line="+455"/>
+        <location line="+447"/>
         <source>General</source>
         <translation>Главные</translation>
     </message>
@@ -229,15 +229,15 @@
     </message>
     <message>
         <location line="+106"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-680"/>
-        <location line="+471"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-668"/>
+        <location line="+461"/>
         <source>Ambient Light</source>
         <translation>Монохромная светлая</translation>
     </message>
     <message>
         <location line="+9"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-469"/>
-        <location line="+471"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-459"/>
+        <location line="+461"/>
         <source>Ambient Dark</source>
         <translation>Монохромная тёмная</translation>
     </message>
@@ -267,8 +267,8 @@
     <message>
         <location line="+34"/>
         <location line="+2746"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-245"/>
-        <location line="+454"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-239"/>
+        <location line="+446"/>
         <source>System</source>
         <translation>Система</translation>
     </message>
@@ -280,8 +280,8 @@
     <message>
         <location line="+563"/>
         <location line="+2170"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-451"/>
-        <location line="+453"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-443"/>
+        <location line="+445"/>
         <source>Utils</source>
         <translation>Утилиты</translation>
     </message>
@@ -298,16 +298,16 @@
     <message>
         <location line="+511"/>
         <location line="+1540"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-447"/>
-        <location line="+451"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-439"/>
+        <location line="+443"/>
         <source>Quick Mount</source>
         <translation>Быстрое подключение</translation>
     </message>
     <message>
         <location line="-1143"/>
         <location line="+1163"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
-        <location line="+446"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-428"/>
+        <location line="+438"/>
         <source>Logging</source>
         <translation>Журналирование</translation>
     </message>
@@ -340,8 +340,8 @@
         <location line="+1553"/>
         <location line="+18"/>
         <location line="+1266"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-455"/>
-        <location line="+449"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-447"/>
+        <location line="+441"/>
         <source>Language</source>
         <translation>Язык</translation>
     </message>
@@ -351,16 +351,16 @@
         <translation>Язык:</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-446"/>
-        <location line="+448"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
+        <location line="+440"/>
         <source>Themes</source>
         <translation>Темы</translation>
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="-650"/>
         <location line="+1856"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-460"/>
-        <location line="+452"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-452"/>
+        <location line="+444"/>
         <source>Network</source>
         <translation>Сеть</translation>
     </message>
@@ -381,7 +381,7 @@
     </message>
     <message>
         <location line="-204"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-354"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-352"/>
         <location line="+116"/>
         <location line="+98"/>
         <source>No Proxy</source>
@@ -427,8 +427,8 @@
     </message>
     <message>
         <location line="+139"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-282"/>
-        <location line="+442"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-276"/>
+        <location line="+434"/>
         <source>Advanced</source>
         <translation>Дополнительно</translation>
     </message>
@@ -459,7 +459,7 @@
     </message>
     <message>
         <location line="+14"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-702"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-690"/>
         <source>Default</source>
         <translation>По умолчанию</translation>
     </message>
@@ -491,8 +491,8 @@
     <message>
         <location line="+27"/>
         <location line="+1086"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="+251"/>
-        <location line="+445"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="+247"/>
+        <location line="+437"/>
         <source>AppDB browser</source>
         <translation>Обозреватель AppDB</translation>
     </message>
@@ -509,8 +509,8 @@
     <message>
         <location line="+44"/>
         <location line="+1028"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-439"/>
-        <location line="+443"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-431"/>
+        <location line="+435"/>
         <source>Desktop Menu</source>
         <translation>Меню рабочего стола</translation>
     </message>
@@ -542,8 +542,8 @@
     <message>
         <location line="+47"/>
         <location line="+951"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
-        <location line="+441"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-429"/>
+        <location line="+433"/>
         <source>Defaults</source>
         <translation>Стандартные</translation>
     </message>
@@ -596,8 +596,8 @@
     <message>
         <location line="+82"/>
         <location line="+559"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-311"/>
-        <location line="+440"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-303"/>
+        <location line="+432"/>
         <source>Desktop Integration</source>
         <translation>Интеграция с рабочим столом</translation>
     </message>
@@ -634,8 +634,8 @@
     <message>
         <location line="+43"/>
         <location line="+258"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-437"/>
-        <location line="+439"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-429"/>
+        <location line="+431"/>
         <source>Run dialog</source>
         <translation>Диалог запуска</translation>
     </message>
@@ -643,8 +643,8 @@
         <location line="-189"/>
         <location line="+18"/>
         <location line="+176"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-436"/>
-        <location line="+438"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-428"/>
+        <location line="+430"/>
         <source>Wine desktop import</source>
         <translation>Импорт файлов рабочего стола wine</translation>
     </message>
@@ -655,22 +655,22 @@
     </message>
     <message>
         <location line="+91"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-474"/>
-        <location line="+450"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-466"/>
+        <location line="+442"/>
         <source>Interface</source>
         <translation>Интерфейс</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-441"/>
-        <location line="+447"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-433"/>
+        <location line="+439"/>
         <source>Subsystems</source>
         <translation>Подсистемы</translation>
     </message>
     <message>
         <location line="+15"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-438"/>
-        <location line="+444"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-430"/>
+        <location line="+436"/>
         <source>Plugins</source>
         <translation>Дополнения</translation>
     </message>
@@ -690,26 +690,24 @@
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-594"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-582"/>
         <source>generic</source>
         <translation>основной</translation>
     </message>
     <message>
-        <location line="+190"/>
-        <location line="+6"/>
+        <location line="+192"/>
         <source>Open File</source>
         <translation>Открыть файл</translation>
     </message>
     <message>
-        <location line="-4"/>
-        <location line="+6"/>
+        <location line="+2"/>
         <source>Open Directory</source>
         <translation>Открыть папку</translation>
     </message>
     <message>
-        <location line="+144"/>
+        <location line="+138"/>
         <location line="+4"/>
-        <location line="+132"/>
+        <location line="+130"/>
         <location line="+64"/>
         <location line="+2"/>
         <location line="+6"/>
@@ -718,7 +716,7 @@
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="-210"/>
+        <location line="-208"/>
         <source>Sorry, specify proxy host.</source>
         <translation>Введите узел прокси.</translation>
     </message>
@@ -728,7 +726,7 @@
         <translation>Введите порт прокси.</translation>
     </message>
     <message>
-        <location line="+132"/>
+        <location line="+130"/>
         <source>Invalid virtual desktop size.</source>
         <translation>Недопустимый размер виртуального рабочего стола.</translation>
     </message>
@@ -754,8 +752,8 @@
     </message>
     <message>
         <location filename="../q4wine-gui/uis/AppSettings.ui" line="-1311"/>
-        <location filename="../q4wine-gui/appsettings.cpp" line="-624"/>
-        <location line="+467"/>
+        <location filename="../q4wine-gui/appsettings.cpp" line="-612"/>
+        <location line="+457"/>
         <source>System Default</source>
         <translation>Системные умолчания</translation>
     </message>
@@ -786,7 +784,7 @@
         <location line="+4"/>
         <location line="+131"/>
         <location filename="../q4wine-gui/fakedrivesettings.cpp" line="+11"/>
-        <location line="+35"/>
+        <location line="+31"/>
         <location line="+741"/>
         <source>General</source>
         <translation>Основные</translation>
@@ -1227,19 +1225,17 @@ See help for details.</source>
 Смотрите справку для получения информации.</translation>
     </message>
     <message>
-        <location line="+1238"/>
-        <location line="+6"/>
+        <location line="+1251"/>
         <source>Open File</source>
         <translation>Открыть файл</translation>
     </message>
     <message>
-        <location line="-4"/>
-        <location line="+6"/>
+        <location line="+2"/>
         <source>Open Directory</source>
         <translation>Открыть папку</translation>
     </message>
     <message>
-        <location line="-528"/>
+        <location line="-535"/>
         <location line="+10"/>
         <source>Joystick Axes Mappings</source>
         <translation>Карты осей джойстика</translation>
@@ -1308,9 +1304,8 @@ See help for details.</source>
 <context>
     <name>HttpCore</name>
     <message>
-        <location filename="../core/httpcore.cpp" line="+228"/>
         <source>Download failed: %1.</source>
-        <translation>Ошибка загрузки: %1.</translation>
+        <translation type="vanished">Ошибка загрузки: %1.</translation>
     </message>
 </context>
 <context>
@@ -1390,7 +1385,7 @@ See help for details.</source>
     <name>IconListWidget</name>
     <message>
         <location filename="../q4wine-gui/widgets/iconlistwidget.cpp" line="+241"/>
-        <location line="+898"/>
+        <location line="+895"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 успешно подключено.</translation>
@@ -1404,8 +1399,7 @@ See help for details.</source>
         <translation type="obsolete">Файлы ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="-27"/>
-        <location line="+2"/>
+        <location line="-25"/>
         <source>Open Disc Image Files</source>
         <translation>Открыть файлы дисковых образов</translation>
     </message>
@@ -1415,7 +1409,7 @@ See help for details.</source>
         <translation>Не удалось подключить %1.</translation>
     </message>
     <message>
-        <location line="-752"/>
+        <location line="-749"/>
         <source>No mount point set in prefix configuration.</source>
         <translation>В настройках префикса не указана точка подключения.</translation>
     </message>
@@ -1714,7 +1708,7 @@ See help for details.</source>
         <translation type="obsolete">Файлы ISO (*.iso);;Все файлы (*)</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+42"/>
         <source>Drive successfully unmounted.</source>
         <translation>Устройство успешно отключено.</translation>
     </message>
@@ -1724,7 +1718,7 @@ See help for details.</source>
         <translation>Не удалось отключить устройство.</translation>
     </message>
     <message>
-        <location line="-588"/>
+        <location line="-585"/>
         <source>Application path</source>
         <translation>Путь к программе</translation>
     </message>
@@ -1745,12 +1739,12 @@ See help for details.</source>
     </message>
     <message>
         <location line="-540"/>
-        <location line="+915"/>
+        <location line="+912"/>
         <source>Failed to mount %1.</source>
         <translation>Не удалось подключить %1.</translation>
     </message>
     <message>
-        <location line="-883"/>
+        <location line="-880"/>
         <source>Preparing to run the Wine binary...</source>
         <translation>Подготовка к запуску двоичного файла wine...</translation>
     </message>
@@ -1891,35 +1885,35 @@ See help for details.</source>
         <location line="+311"/>
         <location filename="../q4wine-gui/iconsettings.cpp" line="+117"/>
         <location line="+12"/>
-        <location line="+103"/>
-        <location line="+270"/>
+        <location line="+99"/>
+        <location line="+259"/>
         <source>Native</source>
         <translation>Родной</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-383"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-368"/>
         <location line="+11"/>
-        <location line="+103"/>
-        <location line="+273"/>
+        <location line="+99"/>
+        <location line="+262"/>
         <source>Built-in</source>
         <translation>Встроенный</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-385"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
         <location line="+10"/>
-        <location line="+103"/>
-        <location line="+274"/>
+        <location line="+99"/>
+        <location line="+263"/>
         <source>Native, Built-in</source>
         <translation>Родной, Встроенный</translation>
     </message>
     <message>
         <location line="+5"/>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-385"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-370"/>
         <location line="+9"/>
-        <location line="+103"/>
-        <location line="+275"/>
+        <location line="+99"/>
+        <location line="+264"/>
         <source>Built-in, Native</source>
         <translation>Встроенный, Родной</translation>
     </message>
@@ -2040,29 +2034,29 @@ See help for details.</source>
         <translation>ОК</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/iconsettings.cpp" line="-527"/>
+        <location filename="../q4wine-gui/iconsettings.cpp" line="-512"/>
         <source>Adding new icon</source>
         <translation>Добавление нового значка</translation>
     </message>
     <message>
-        <location line="+223"/>
+        <location line="+221"/>
         <source>Open Directory</source>
         <translation>Открыть каталог</translation>
     </message>
     <message>
-        <location line="+59"/>
+        <location line="+51"/>
         <location line="+318"/>
-        <location line="+24"/>
+        <location line="+27"/>
         <source>Open Exe file</source>
         <translation>Открыть EXE-файл</translation>
     </message>
     <message>
-        <location line="-339"/>
+        <location line="-342"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation>Исполняемые файлы (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Исполняемые файлы EXE (*.exe *.EXE);;Установочные файлы MSI (*.msi *.MSI);;Исполняемые скрипты BAT (*.bat *.BAT);;Все файлы (*)</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+70"/>
         <source>Image files (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</source>
         <translation>Изображения (*.png *.PNG *.jpg *.JPG *.gif *.GIF *.bmp *.BMP *.xpm *.XPM *.svg *.SVG *.svgz *.SVGZ)</translation>
     </message>
@@ -2081,7 +2075,7 @@ See help for details.</source>
         <translation type="obsolete">Exe-файлы (*.exe)</translation>
     </message>
     <message>
-        <location line="-200"/>
+        <location line="-198"/>
         <source>Open image file</source>
         <translation>Открыть файл изображения</translation>
     </message>
@@ -2094,7 +2088,7 @@ See help for details.</source>
         <translation type="obsolete">Изображения и файлы для Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Изображения (*.png *.jpg *.gif *.bmp *.xpm);;Исполняемые файлы Win32 (*.exe);;Win32 разделяемые библиотеки (*.dll);;Файлы для Win32 (*.exe *.dll)</translation>
     </message>
     <message>
-        <location line="+61"/>
+        <location line="+59"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Извлечение значка из двоичного файла.&lt;br&gt;Это может занять некоторое время...</translation>
@@ -2112,10 +2106,10 @@ See help for details.</source>
         <translation>Значок %1 уже существует.</translation>
     </message>
     <message>
-        <location line="-365"/>
+        <location line="-350"/>
         <location line="+8"/>
-        <location line="+103"/>
-        <location line="+268"/>
+        <location line="+99"/>
+        <location line="+257"/>
         <source>Disabled</source>
         <translation>Отключен</translation>
     </message>
@@ -2128,13 +2122,13 @@ See help for details.</source>
         <translation type="obsolete">Изображения и файлы для Win32 (*.png *.jpg *.gif *.bmp *.xpm *.exe *.dll);;Изображения (*.png *.jpg *.gif *.bmp *.xpm *.svg *.svgz);;Исполняемые файлы Win32 (*.exe);;Разделяемые библиотеки Win32 (*.dll);;Файлы для Win32 (*.exe *.dll);;Все файлы (*)</translation>
     </message>
     <message>
-        <location line="+82"/>
-        <location line="+24"/>
+        <location line="+87"/>
+        <location line="+27"/>
         <source>Shell script (*.sh)</source>
         <translation>Скрипт (*.sh)</translation>
     </message>
     <message>
-        <location line="-142"/>
+        <location line="-150"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+7"/>
@@ -2223,28 +2217,27 @@ See help for details.</source>
     </message>
     <message>
         <location line="+34"/>
-        <location line="+35"/>
+        <location line="+31"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="-35"/>
+        <location line="-31"/>
         <source>Sorry, file cannot be removed:&lt;br&gt;%1.</source>
         <translation>Невозможно удалить файл:&lt;br&gt;%1.</translation>
     </message>
     <message>
-        <location line="+35"/>
+        <location line="+31"/>
         <source>Sorry, file cannot be created:&lt;br&gt;%1.</source>
         <translation>Невозможно создать файл:&lt;br&gt;%1.</translation>
     </message>
     <message>
-        <location line="-12"/>
-        <location line="+2"/>
+        <location line="-9"/>
         <source>Select file to save</source>
         <translation>Выберите файл для сохранения</translation>
     </message>
     <message>
-        <location line="-64"/>
+        <location line="-61"/>
         <source>Sorry. It seems that the file already exists.&lt;br&gt;Replace existing file or rename current one?</source>
         <translation>Файл уже существует.&lt;br&gt;Заменить существующий или переименовать текущий?</translation>
     </message>
@@ -2259,8 +2252,7 @@ See help for details.</source>
         <translation>Заменить существующий или переименовать текущий?</translation>
     </message>
     <message>
-        <location line="+50"/>
-        <location line="+2"/>
+        <location line="+49"/>
         <source>Images (*.png)</source>
         <translation>Изображения (*.png)</translation>
     </message>
@@ -2347,13 +2339,12 @@ See help for details.</source>
         <translation type="obsolete">Файлы ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <location line="+2"/>
+        <location line="+8"/>
         <source>Open ISO image file</source>
         <translation>Открыть файл образа ISO</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+5"/>
         <location line="+25"/>
         <source>Sorry. It seems that the CD image already exists.</source>
         <translation>Образ CD уже существует.</translation>
@@ -2484,41 +2475,41 @@ See help for details.</source>
     <message>
         <location line="+10"/>
         <location line="+5"/>
-        <location line="+223"/>
+        <location line="+219"/>
         <location line="+6"/>
         <source>Status</source>
         <translation>Статус</translation>
     </message>
     <message>
-        <location line="-234"/>
-        <location line="+234"/>
+        <location line="-230"/>
+        <location line="+230"/>
         <source>Logging enabled</source>
         <translation>Журналирование включено</translation>
     </message>
     <message>
-        <location line="-233"/>
+        <location line="-229"/>
         <location line="+1"/>
-        <location line="+233"/>
+        <location line="+229"/>
         <location line="+1"/>
         <source>Disable logging</source>
         <translation>Отключить журналирование</translation>
     </message>
     <message>
-        <location line="-231"/>
-        <location line="+223"/>
+        <location line="-227"/>
+        <location line="+219"/>
         <source>Logging disabled</source>
         <translation>Журналирование отключено</translation>
     </message>
     <message>
-        <location line="-222"/>
+        <location line="-218"/>
         <location line="+1"/>
-        <location line="+222"/>
+        <location line="+218"/>
         <location line="+1"/>
         <source>Enable logging</source>
         <translation>Включить журналирование</translation>
     </message>
     <message>
-        <location line="-172"/>
+        <location line="-168"/>
         <source>Exec string:</source>
         <translation>Строка запуска:</translation>
     </message>
@@ -2543,14 +2534,12 @@ See help for details.</source>
         <translation>Вывод STDOUT и STDERR:</translation>
     </message>
     <message>
-        <location line="+98"/>
-        <location line="+2"/>
+        <location line="+97"/>
         <source>Select file to save</source>
         <translation>Выберите файл для сохранения</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
+        <location line="+0"/>
         <source>Log Files (*.log)</source>
         <translation>Файлы журналов (*.log)</translation>
     </message>
@@ -2931,8 +2920,7 @@ See help for details.</source>
         <translation>WIP</translation>
     </message>
     <message>
-        <location line="+60"/>
-        <location line="+2"/>
+        <location line="+59"/>
         <source>Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;All files (*)</source>
         <translation>Исполняемые файлы и библиотеки Win32 (*.exe *.EXE *.dll *.DLL);;Исполняемые файлы Win32 (*.exe *.EXE);;Библиотеки Win32 (*.dll *.DLL);;Все файлы (*)</translation>
     </message>
@@ -2941,7 +2929,7 @@ See help for details.</source>
         <translation type="obsolete">Исполняемые файлы и библиотеки Win32 (*.exe *.dll);;Исполняемые файлы Win32 (*.exe);;Библиотеки Win32 (*.dll)</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="+39"/>
         <location line="+26"/>
         <source>Extracting icon from binary file.&lt;br&gt;This can take a while...</source>
         <translation>Извлечение значка из двоичного файла.&lt;br&gt;Это может занять некоторое время...</translation>
@@ -2953,7 +2941,7 @@ See help for details.</source>
         <translation>Извлечение значка</translation>
     </message>
     <message>
-        <location line="-449"/>
+        <location line="-445"/>
         <location line="+14"/>
         <location line="+13"/>
         <location line="+12"/>
@@ -2979,8 +2967,7 @@ See help for details.</source>
         <translation>Мастер настройки еще не готов. Он будет реализован в следующих версиях.</translation>
     </message>
     <message>
-        <location line="+60"/>
-        <location line="+2"/>
+        <location line="+59"/>
         <source>Open image file</source>
         <translation>Открыть файл изображения</translation>
     </message>
@@ -2989,7 +2976,7 @@ See help for details.</source>
         <translation type="obsolete">Исполняемые файлы и библиотеки Win32 (*.exe *.dll);;Исполняемые файлы Win32 (*.exe);;Библиотеки Win32 (*.dll);;Все файлы (*)</translation>
     </message>
     <message>
-        <location line="+193"/>
+        <location line="+192"/>
         <source>Only one instance of %1 can be launched at same time.</source>
         <translation>Только один экземпляр %1 может быть запущен одновременно.</translation>
     </message>
@@ -3017,7 +3004,7 @@ See help for details.</source>
         <translation type="obsolete">О программе</translation>
     </message>
     <message>
-        <location line="-727"/>
+        <location line="-723"/>
         <source>Yes</source>
         <translation>Да</translation>
     </message>
@@ -3265,36 +3252,33 @@ See help for details.</source>
     </message>
     <message>
         <location line="-1"/>
-        <location line="+71"/>
+        <location line="+67"/>
         <source>Warning</source>
         <translation>Внимание</translation>
     </message>
     <message>
-        <location line="-180"/>
+        <location line="-176"/>
         <location line="+1"/>
         <source>Configure wine versions</source>
         <translation>Настроить версии Wine</translation>
     </message>
     <message>
-        <location line="+170"/>
-        <location line="+2"/>
+        <location line="+169"/>
         <source>Select file to import</source>
         <translation>Выберите файл для импорта</translation>
     </message>
     <message>
-        <location line="-2"/>
-        <location line="+2"/>
+        <location line="+0"/>
         <source>Prefix archive images (*.tbz *.TBZ);;All files (*)</source>
         <translation>Архив образов префиксов (*.tbz *.TBZ);;Все файлы (*)</translation>
     </message>
     <message>
-        <location line="+114"/>
-        <location line="+5"/>
+        <location line="+109"/>
         <source>Prefix archive images (*.tbz)</source>
         <translation>Архив образов префиксов(*.tbz)</translation>
     </message>
     <message>
-        <location line="-112"/>
+        <location line="-103"/>
         <source>Do you really wish to delete all old prefix files?</source>
         <translation>Удалить старые файлы префикса?</translation>
     </message>
@@ -3323,13 +3307,12 @@ See help for details.</source>
         <translation>Импорт префикса</translation>
     </message>
     <message>
-        <location line="+86"/>
-        <location line="+5"/>
+        <location line="+82"/>
         <source>Select file to export</source>
         <translation>Выберите файл для экспорта</translation>
     </message>
     <message>
-        <location line="+12"/>
+        <location line="+11"/>
         <source>Exporting %1 prefix.&lt;br&gt;This can take a while...</source>
         <translation>Экспорт префиса  %1.&lt;br&gt; Это может занять какое-то время...</translation>
     </message>
@@ -3489,12 +3472,12 @@ Note: leave it blank for default.</source>
         <location line="+6"/>
         <location line="+14"/>
         <location line="+15"/>
-        <location line="+219"/>
+        <location line="+215"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="-234"/>
+        <location line="-230"/>
         <source>Fail to load version by name: %1</source>
         <translation>Невозможно загрузить версию с именем: %1</translation>
     </message>
@@ -3505,12 +3488,12 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="-166"/>
-        <location line="+420"/>
+        <location line="+416"/>
         <source>Unable to load version by name: %1</source>
         <translation>Невозможно загрузить версию с именем: %1</translation>
     </message>
     <message>
-        <location line="-248"/>
+        <location line="-244"/>
         <source>Sorry, but prefix named %1 already exists.</source>
         <translation>Префикс %1 уже существует.</translation>
     </message>
@@ -3530,14 +3513,12 @@ Note: leave it blank for default.</source>
         <translation>Невозможно создать папку &quot;%1&quot;.</translation>
     </message>
     <message>
-        <location line="+46"/>
-        <location line="+2"/>
+        <location line="+53"/>
         <source>Open File</source>
         <translation>Открыть файл</translation>
     </message>
     <message>
         <location line="+9"/>
-        <location line="+2"/>
         <source>Open Directory</source>
         <translation>Открыть папку</translation>
     </message>
@@ -3831,13 +3812,12 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Файлы ISO (*.iso)</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <location line="+2"/>
+        <location line="+8"/>
         <source>Open Disc Image Files</source>
         <translation>Открыть файлы дисковых образов</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+26"/>
         <source>Failed to mount %1.</source>
         <translation>Невозможно подключить %1.</translation>
     </message>
@@ -3867,7 +3847,7 @@ Note: leave it blank for default.</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location line="-291"/>
+        <location line="-287"/>
         <source>Edit prefix settings</source>
         <translation>Редактировать настройки префикса</translation>
     </message>
@@ -3898,12 +3878,12 @@ Note: leave it blank for default.</source>
     </message>
     <message>
         <location line="+177"/>
-        <location line="+106"/>
+        <location line="+102"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="-106"/>
+        <location line="-102"/>
         <source>No device drive specified in prefix settings.</source>
         <translation>В настройках префикса не указано устройство для подключения.</translation>
     </message>
@@ -3916,7 +3896,7 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Файлы ISO (*.iso);;Все файлы (*)</translation>
     </message>
     <message>
-        <location line="+31"/>
+        <location line="+27"/>
         <location line="+17"/>
         <source>%1 successfully mounted.</source>
         <translation>%1 успешно подключено.</translation>
@@ -4484,7 +4464,7 @@ Note: leave it blank for default.</source>
         <translation>выполнить скрипт после запуска программы</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-199"/>
+        <location filename="../q4wine-gui/widgets/prefixcontrolwidget.cpp" line="-185"/>
         <source>Remove prefix directory</source>
         <translation>Удалить каталог префикса</translation>
     </message>
@@ -4673,7 +4653,7 @@ Note: leave it blank for default.</source>
         <translation>Недопустимый размер виртуального рабочего стола.</translation>
     </message>
     <message>
-        <location line="+138"/>
+        <location line="+131"/>
         <source>Exe, MSI, BAT files (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Exe files (*.exe *.EXE);;MSI files (*.msi *.MSI);;BAT files (*.bat *.BAT);;All files (*)</source>
         <translation>Исполняемые файлы (*.exe *.EXE *.msi *.MSI *.bat *.BAT);;Исполняемые файлы EXE (*.exe *.EXE);;Установочные файлы MSI (*.msi *.MSI);;Исполняемые скрипты BAT (*.bat *.BAT);;Все файлы (*)</translation>
     </message>
@@ -4682,13 +4662,13 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Исполняемые файлы exe, MSI, BAT (*.exe *.msi *.bat);;Исполняемые файлы (*.exe);;Установочные файлы MSI (*.msi);;Исполняемые скрипты BAT (*.bat);;Все файлы (*)</translation>
     </message>
     <message>
-        <location line="-196"/>
+        <location line="-189"/>
         <location line="+28"/>
         <source>Disabled</source>
         <translation>Отключен</translation>
     </message>
     <message>
-        <location line="+165"/>
+        <location line="+158"/>
         <source>Open Exe file</source>
         <translation>Открыть EXE-файл</translation>
     </message>
@@ -4697,7 +4677,7 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">Exe файлы (*.exe)</translation>
     </message>
     <message>
-        <location line="+58"/>
+        <location line="+54"/>
         <source>Open Directory</source>
         <translation>Открыть каталог</translation>
     </message>
@@ -4906,7 +4886,7 @@ Note: leave it blank for default.</source>
         <translation>Каталог диска не существует.</translation>
     </message>
     <message>
-        <location line="+21"/>
+        <location line="+19"/>
         <source>Open Directory</source>
         <translation>Открыть каталог</translation>
     </message>
@@ -5007,17 +4987,17 @@ Note: leave it blank for default.</source>
         <translation>Будет послан сигнал KILL (-9) всем процессам wine для выбранных префиксов.&lt;br&gt;&lt;br&gt;Продолжить?</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+42"/>
         <source>It seems that the process %1 has been reniced to %2 successfully.</source>
         <translation>Изменение приоритета для процесса %1 выполнено успешно; текущий приоритет: %2.</translation>
     </message>
     <message>
-        <location line="-65"/>
+        <location line="-58"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location line="+45"/>
+        <location line="+38"/>
         <source>Select process priority</source>
         <translation>Выбрать приоритет процесса</translation>
     </message>
@@ -5057,7 +5037,7 @@ Note: leave it blank for default.</source>
     <message>
         <location line="+14"/>
         <location filename="../q4wine-gui/wizard.cpp" line="+205"/>
-        <location line="+165"/>
+        <location line="+161"/>
         <location line="+45"/>
         <source>No Proxy</source>
         <translation>Без прокси</translation>
@@ -5159,7 +5139,7 @@ Note: leave it blank for default.</source>
         <translation type="obsolete">&lt;b&gt;Шаг %1 из %2&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../q4wine-gui/wizard.cpp" line="-470"/>
+        <location filename="../q4wine-gui/wizard.cpp" line="-466"/>
         <source>First startup wizard</source>
         <translation>Мастер первого запуска</translation>
     </message>
@@ -5173,19 +5153,17 @@ Note: leave it blank for default.</source>
         <translation>основной</translation>
     </message>
     <message>
-        <location line="+68"/>
-        <location line="+6"/>
+        <location line="+75"/>
         <source>Open File</source>
         <translation>Открыть файл</translation>
     </message>
     <message>
-        <location line="-4"/>
-        <location line="+6"/>
+        <location line="+2"/>
         <source>Open Directory</source>
         <translation>Открыть каталог</translation>
     </message>
     <message>
-        <location line="+36"/>
+        <location line="+31"/>
         <location line="+2"/>
         <location line="+6"/>
         <location line="+2"/>
