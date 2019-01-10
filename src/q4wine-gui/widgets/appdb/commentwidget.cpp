@@ -26,7 +26,7 @@ CommentWidget::CommentWidget(const WineAppDBComment comment, QWidget * parent) :
 	this->setId(comment.id);
 	this->setParentId(comment.parent_id);
 	setTopic(comment.topic, comment.id);
-	setDate(comment.autor, comment.date);
+	setDate(comment.author, comment.date);
 	setMessage(comment.message);
 	return;
 }
@@ -62,9 +62,9 @@ void CommentWidget::setTopic(QString topic, int type){
 	return;
 }
 
-void CommentWidget::setDate(QString autor, QString date){
+void CommentWidget::setDate(QString author, QString date){
 	std::unique_ptr<QLabel> label(new QLabel());
-	label->setText(QString("by %1 on %2").arg(autor).arg(date));
+	label->setText(QString("by %1 on %2").arg(author).arg(date));
 	widgetLabelLayout->addWidget(label.release());
 	return;
 }

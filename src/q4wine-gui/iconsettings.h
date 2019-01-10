@@ -122,7 +122,7 @@ class IconSettings : public QDialog, public Ui::IconSettings
         //! Side bar URLs list.
         QList<QUrl> prefix_urls;
 
-        //! Database prefix class defenition.
+        //! Database prefix class definition.
         Prefix db_prefix;
         Icon db_icon;
 

@@ -44,7 +44,7 @@ struct WineAppDBComment {
 	int id;
 	QString topic;
 	QString date;
-	QString autor;
+	QString author;
 	int parent_id;
 	QString message;
 };

@@ -67,10 +67,10 @@ class Wizard : public QDialog, public Ui::Wizard
         //! \brief Next page button click slot.
         void nextWizardPage();
 
-        //! \brief Previos page button click slot.
+        //! \brief Previous page button click slot.
         void previosWizardPage();
 
-        //! \brief ChekBox change slot.
+        //! \brief CheckBox change slot.
         void changeBoxState(int state);
 
         //! \brief ComboBox change slot.
@@ -86,7 +86,7 @@ class Wizard : public QDialog, public Ui::Wizard
         void cmdFirstSteps_click();
 
     private:
-        //! \brief Function for updateing scene elements.
+        //! \brief Function for updating scene elements.
         void updateScena();
 
         int Scena, Page, TotalPage;
@@ -94,7 +94,7 @@ class Wizard : public QDialog, public Ui::Wizard
         //! \brief Function for checking user selected elements.
         bool checkEntry(QString fileName, QString info, bool isFile = true);
 
-        //! Database prefix class defenition.
+        //! Database prefix class definition.
         Prefix db_prefix;
         Icon db_icon;
         Dir db_dir;

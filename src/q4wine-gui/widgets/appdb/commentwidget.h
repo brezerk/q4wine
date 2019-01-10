@@ -54,7 +54,7 @@ signals:
 
 private:
 	void setTopic(QString topic, int type);
-	void setDate(QString autor, QString date);
+	void setDate(QString author, QString date);
 	void setMessage(QString message);
 	int id;
 	int parentid;

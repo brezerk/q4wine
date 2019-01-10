@@ -391,8 +391,8 @@ void XmlParser::parseComment(const QDomElement &element, WineAppDBInfo &appinfo)
 			comment.id = element.attribute("id").toInt();
 		} else if (node.toElement().tagName()=="date"){
 			comment.date = getChildNodeData(node.firstChild());
-		} else if (node.toElement().tagName()=="autor"){
-			comment.autor = getChildNodeData(node.firstChild());
+		} else if (node.toElement().tagName()=="author"){
+			comment.author = getChildNodeData(node.firstChild());
 		} else if (node.toElement().tagName()=="parent"){
 			comment.parent_id = getChildNodeData(node.firstChild()).toInt();
 		} else if (node.toElement().tagName()=="message"){

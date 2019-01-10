@@ -100,7 +100,7 @@ LD_LIBRARY_PATH={$path_to_q4wine_prefix}/lib/ q4wine
 You may wish to remove Desktop menu structure as well:
 $HOME/.local/share/applications/q4wine
 
-Don't forget to refresh Application cache by runing kbuildsycoca or kbuildsycoca5 (for KDE)
+Don't forget to refresh Application cache by running kbuildsycoca or kbuildsycoca5 (for KDE)
 
 
 Uninstall:
@@ -111,7 +111,7 @@ xargs rm < install_manifest.txt
 You may wish to remove Desktop menu structure as well:
 $HOME/.local/share/applications/q4wine
 
-Don't forget to refresh Application cache by runing kbuildsycoca or kbuildsycoca5 (for KDE)
+Don't forget to refresh Application cache by running kbuildsycoca or kbuildsycoca5 (for KDE)
 
 Changelog
 ***********************************************

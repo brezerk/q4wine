@@ -72,8 +72,8 @@ void WineObject::setProgramArgs(QString args){
     return;
 }
 
-void WineObject::setProgramDisplay(QString dislpay){
-    this->programDisplay=dislpay;
+void WineObject::setProgramDisplay(QString display){
+    this->programDisplay=display;
     return;
 }
 

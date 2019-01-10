@@ -87,7 +87,7 @@ class Run : public QDialog, public Ui::Run
         //! \brief Load theme images.
         void loadThemeIcons();
 
-        //! Database prefix class defenition.
+        //! Database prefix class definition.
         Prefix db_prefix;
         Last_Run_Icon db_last_run_icon;
 

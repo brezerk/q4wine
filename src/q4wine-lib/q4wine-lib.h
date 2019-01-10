@@ -266,7 +266,7 @@ public:
     bool runProcess(const QString exec, const QStringList args, QString dir = "", bool showLog = true);
     bool runProcess(const QStringList args, const QString caption, const QString message);
 
-    /*! \brief Get's string with escaped special characters
+    /*! \brief Gets string with escaped special characters
      *
      * \param string	Base string
      */
@@ -276,19 +276,19 @@ public:
         QString getStrictEscapeString(QString string);
 
 
-    /*! \brief Get's mount string based on QuikMount type profile
+    /*! \brief Gets mount string based on QuikMount type profile
      *
      * \param profile	Profile type ID
      */
     QString getMountString(const int profile);
 
-    /*! \brief Get's mount image string based on QuikMount type profile
+    /*! \brief Gets mount image string based on QuikMount type profile
      *
      * \param profile	Profile type ID
      */
     QString getMountImageString(const int profile);
 
-    /*! \brief Get's umount string based on QuikMount type profile
+    /*! \brief Gets umount string based on QuikMount type profile
      *
      * \param profile	Profile type ID
      */

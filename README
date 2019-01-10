@@ -36,7 +36,7 @@ User_Alias Q4WINE_USERS=%games,%users
 Q4WINE_USERS ALL=(ALL) NOPASSWD: Q4WINE_COMMS
 #---------- End of Cut -----------------------
 
-This will allow to run /sbin/losetup, which is used for building the mounted
+This will allow one to run /sbin/losetup, which is used for building the mounted
 .isos menues' lists, with out prompting for root password.
 
 Otherwise you will not be able to get the mount menu working. =)
@@ -49,7 +49,7 @@ xargs rm < install_manifest.txt
 You may wish to remove Desktop menu structure as well:
 $HOME/.local/share/applications/q4wine
 
-Don't forget to refresh Application cache by runing kbuildsycoca or kbuildsycoca5 (for KDE)
+Don't forget to refresh Application cache by running kbuildsycoca or kbuildsycoca5 (for KDE)
 
 Changelog
 ***********************************************

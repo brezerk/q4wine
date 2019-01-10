@@ -56,7 +56,7 @@ public:
 
     void setProgramBinary(QString binary);
     void setProgramArgs(QString args);
-    void setProgramDisplay(QString dislpay);
+    void setProgramDisplay(QString display);
     void setProgramDebug(QString debug);
     void setProgramNice(int nice);
     void setProgramDesktop(QString desktop);

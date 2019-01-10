@@ -51,7 +51,7 @@ public:
 	 */
 	QString getPath(const QString name) const;\
 
-	/*! \brief Chek for image existance by name
+	/*! \brief Check for image existence by name
 	 * \param  name   image name
 	 * \return If image exists -- returns true.
 	 */

@@ -125,7 +125,7 @@ void AppDBHeaderWidget::clear(){
     // Start from 1 becouse of 0 -- is VBoxLayout
     for (int i=1; i<list.count(); i++){
 #ifdef DEBUG
-        qDebug()<<"[ii] Shedule QObject for deletetion. object type is:"<<list.at(i)->metaObject()->className();
+        qDebug()<<"[ii] Schedule QObject for deletetion. object type is:"<<list.at(i)->metaObject()->className();
 #endif
             list.at(i)->setProperty("visible", false);
             list.at(i)->disconnect();

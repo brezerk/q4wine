@@ -67,14 +67,14 @@ public:
 	  */
 	void append(QString reg_keys);
 
-	/*! \brief Append setted key to exported reg file.
+	/*! \brief Append set key to exported reg file.
 	  * \param path  Registry path
 	  * \param key   Registry key name
 	  * \param value Keristry key value
 	  */
 	void set(QString path, const QString key, const QString value, const QString hkey = "HKEY_CURRENT_USER");
 
-	/*! \brief Append setted unsetkey to exported reg file.
+	/*! \brief Append set unsetkey to exported reg file.
 	  * \param path  Registry path
 	  * \param key   Registry key name
 	  */

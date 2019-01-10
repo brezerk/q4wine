@@ -809,7 +809,7 @@ void IconListWidget::iconRun_Click(void){
 void IconListWidget::iconCut_Click(void){
     /*
             This function fill iconBuffer with selected icons names
-            and sets other informations required for copy\cut
+            and sets other information required for copy\cut
 
             see struct iconCopyBuffer definition for details
       */
@@ -847,7 +847,7 @@ void IconListWidget::iconCut_Click(void){
 void IconListWidget::iconCopy_Click(void){
     /*
       * This function fill iconBuffer with selected icons names
-      * and sets other informations required for copy\cut
+      * and sets other information required for copy\cut
       *
       * see struct iconCopyBuffer definition for details
       */

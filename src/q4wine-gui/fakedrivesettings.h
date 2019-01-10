@@ -103,7 +103,7 @@ private:
     CoreLibPrototype *CoreLibClassPointer;
     std::unique_ptr<corelib> CoreLib;
 
-    //! Database prefix class defenition.
+    //! Database prefix class definition.
     Prefix db_prefix;
     Dir db_dir;
     Icon db_icon;

@@ -43,7 +43,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
     QString name, procstat, path, prefix, env_arg, nice, message;
 
 #ifdef _OS_LINUX_
-    message = "<p>Process is unable to access /proc file system.</p><p>Access is necessary for displaying Wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
+    message = "<p>Process is unable to access /proc file system.</p><p>Access is necessary for displaying Wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on Linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
 #endif
 
 #ifdef _OS_FREEBSD_
@@ -1515,7 +1515,7 @@ QStringList corelib::getCdromDevices(void) const{
                 // Check for /proc directory exists
                 QDir dir("/proc");
                 if (!dir.exists()){
-                    message = "<p>Process is unable to access /proc file system.</p><p>Access is necessary for displaying Wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
+                    message = "<p>Process is unable to access /proc file system.</p><p>Access is necessary for displaying Wine process information.</p><p>You need to set CONFIG_PROC_FS=y option on Linux kernel config file and mount proc file system by running: mount -t proc none /proc</p>";
                     if (this->showError(message, false) == QMessageBox::Ignore){
                         return false;
                     }

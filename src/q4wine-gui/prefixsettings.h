@@ -76,7 +76,7 @@ class PrefixSettings : public QDialog, public Ui::PrefixSettings
          */
         QString prefix_id, prefix_name, version_name;
 
-        //! Database prefix class defenition.
+        //! Database prefix class definition.
         Prefix db_prefix;
         Icon db_icon;
         Dir db_dir;
