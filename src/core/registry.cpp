@@ -30,7 +30,7 @@ Registry::Registry(){
         libq4wine.load();
     }
 
-    // Getting corelib calss pointer
+    // Getting corelib calls pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
     return;
@@ -209,7 +209,7 @@ QStringList Registry::readExcludedKeys(const QString sysfile, const QString path
 	}
 
 	bool readFlag=false;
-	int readed=1;
+	int read=1;
 
 	while (!file.atEnd()) {
 		QByteArray line = file.readLine();
@@ -221,8 +221,8 @@ QStringList Registry::readExcludedKeys(const QString sysfile, const QString path
 			int index = keys.indexOf(key.at(0));
 			if (index==-1){
 				ret.append(line.trimmed());
-				readed++;
-				if (readed>count)
+				read++;
+				if (read>count)
 					return ret;
 			}
 		} else {

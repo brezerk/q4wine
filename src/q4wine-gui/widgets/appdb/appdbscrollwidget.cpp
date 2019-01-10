@@ -66,7 +66,7 @@ void AppDBScrollWidget::scrollToPos(int pos){
 void AppDBScrollWidget::clear(void){
     if (contentWidget.get()){
         QList<QObject*> list = contentWidget->children();
-        // Start from 1 becouse of 0 -- is VBoxLayout
+        // Start from 1 because of 0 -- is VBoxLayout
         for (int i=1; i<list.count(); i++){
 #ifdef DEBUG
             qDebug()<<"[ii] Schedule QObject for deletetion. object type is:"<<list.at(i)->metaObject()->className();

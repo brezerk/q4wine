@@ -61,7 +61,7 @@
         #include <paths.h>
 #endif
 
-// Experimental Darwin support (no test were preformed)
+// Experimental Darwin support (no test were performed)
 #ifdef _OS_DARWIN_
 
 #include <sys/queue.h>

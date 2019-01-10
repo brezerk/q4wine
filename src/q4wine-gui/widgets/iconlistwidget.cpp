@@ -31,7 +31,7 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
         libq4wine.load();
     }
 
-    // Getting corelib calss pointer
+    // Getting corelib calls pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
@@ -89,7 +89,7 @@ void IconListWidget::showContents(QString filterString){
         iconItem->setText(iconsList.at(i));
         iconItem->setToolTip(iconsList.at(i));
 
-        //Seting icon. If no icon or icon file does not exist -- setting default
+        //Setting icon. If no icon or icon file does not exist -- setting default
         QString icon_path = db_icon.getPixmapIcon(this->prefixName, this->dirName, iconsList.at(i));
         if (icon_path.isEmpty()){
             iconItem->setIcon(defIcon);

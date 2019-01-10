@@ -58,7 +58,7 @@ class Wizard : public QDialog, public Ui::Wizard
         /*! \brief This is class constructor.
          *
          * \param  WizardType	Type of wizard scenario.
-         * \param  var1			This variable used for different scenarion actions.
+         * \param  var1			This variable used for different scenario actions.
          */
         Wizard(int WizardType, QString var1 = "", QWidget * parent = 0, Qt::WindowFlags f = 0);
         QString getPrefixName();

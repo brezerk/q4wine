@@ -38,10 +38,10 @@ LineItemWidget::~LineItemWidget(){
     //nothig but...
 }
 
-void LineItemWidget::addLabel(const QString text, const short int width, const short int aligment, const bool worldwarp){
+void LineItemWidget::addLabel(const QString text, const short int width, const short int alignment, const bool worldwarp){
     std::unique_ptr<QLabel> label(new QLabel(this));
 
-    switch (aligment){
+    switch (alignment){
         case 0:
         label->setAlignment(Qt::AlignLeft);
         break;

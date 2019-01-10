@@ -194,7 +194,7 @@ Version 1.0-r1
 
 Version 1.0
  Fixed:
-  - Quote run string in case of console useage (gnome-terminal, see BUG-15)
+  - Quote run string in case of console usage (gnome-terminal, see BUG-15)
   - Winetricks functionality fails to work [BUG-15]
   - Cannot run 'Create Fake Drive' for a new prefix with a win32 architecture [BUG-14]
   - System Language autodetection does not work [BUG-13]
@@ -241,7 +241,7 @@ Version 0.999-rc7
   - Desktop Paths are wrongly labeled [3491775];
   - Win32 prefix creation while prefix directory exists;
   - Unite Icon\Detail toolbar actions;
-  - No translations autoupdate at project build. Use `make translations` insted;
+  - No translations autoupdate at project build. Use `make translations` instead;
   - Fixed process refresh loop;
   - Extended env command after console terminal;
   - Updated README file: added "Known Issues" section;

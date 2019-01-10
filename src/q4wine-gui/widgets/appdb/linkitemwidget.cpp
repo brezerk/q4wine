@@ -80,7 +80,7 @@ void LinkItemWidget::setSearchUrl(QString url){
 
 void LinkItemWidget::setAppId(int id){
     /* App Id
-        Saveing App Id
+        Saving App Id
     */
     this->appid=id;
     return;
@@ -88,7 +88,7 @@ void LinkItemWidget::setAppId(int id){
 
 void LinkItemWidget::setVerId(int id){
     /* Version Id
-        Saveing Version Id
+        Saving Version Id
     */
     this->verid=id;
     return;
@@ -96,7 +96,7 @@ void LinkItemWidget::setVerId(int id){
 
 void LinkItemWidget::setCatId(int id){
     /* Category Id
-        Saveing Category Id
+        Saving Category Id
     */
     this->catid=id;
     return;
@@ -104,7 +104,7 @@ void LinkItemWidget::setCatId(int id){
 
 void LinkItemWidget::setPage(short int id){
     /* Category Id
-        Saveing Category Id
+        Saving Category Id
     */
     this->page=id;
     return;
@@ -112,7 +112,7 @@ void LinkItemWidget::setPage(short int id){
 
 void LinkItemWidget::setParentId(int id){
     /* Parent comment Id
-        Saveing id of parent comment
+        Saving id of parent comment
     */
     this->parentid=id;
     return;

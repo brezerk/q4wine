@@ -252,7 +252,7 @@ Section 6 states terms for distribution of such executables.
   When a "work that uses the Library" uses material from a header file
 that is part of the Library, the object code for the work may be a
 derivative work of the Library even though the source code is not.
-Whether this is true is especially significant if the work can be
+Whether this is true is especially significan't if the work can be
 linked without the Library, or if the work is itself a library.  The
 threshold for this to be true is not precisely defined by law.
 

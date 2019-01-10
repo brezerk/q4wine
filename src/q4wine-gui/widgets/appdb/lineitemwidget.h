@@ -55,7 +55,7 @@ public:
 	//! Class destructor
 	~LineItemWidget();
 
-	void addLabel(const QString text, const short int width=-1, const short int aligment=0, const bool worldwarp=false);
+	void addLabel(const QString text, const short int width=-1, const short int alignment=0, const bool worldwarp=false);
 	void insertStretch(void);
 	void setBold(void);
 

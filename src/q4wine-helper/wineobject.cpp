@@ -31,7 +31,7 @@ WineObject::WineObject(QObject *parent) : QObject(parent)
         libq4wine.load();
     }
 
-    // Getting corelib calss pointer
+    // Getting corelib calls pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
@@ -218,7 +218,7 @@ int WineObject::runSys(){
     if (this->useConsole){
         // Owerride " with \" in case of using console app.
         run_string.replace("\"", "\\\"");
-        // If we gona use console output, so exec program is program specificed at CONSOLE global variable
+        // If we gona use console output, so exec program is program specified at CONSOLE global variable
         QString console_bin = CoreLib->getSetting("console", "bin").toString();
         QString console_args = CoreLib->getSetting("console", "args", false).toString();
 

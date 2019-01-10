@@ -44,7 +44,7 @@ if [ ! -d $2 ]; then
 	exit 255
 fi
 
-# Check is $1 an executable bianry
+# Check is $1 an executable binary
 if [ ! -x $1 ]; then
 	echo "Error: $1 is not an executable file."
 	exit 255

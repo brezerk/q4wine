@@ -33,7 +33,7 @@
  * Copyright (c) 2004  - Garance Alistair Drosehn <gad@FreeBSD.org>.
  * All rights reserved.
  *
- * Significant modifications made to bring `ps' options somewhat closer
+ * Significan't modifications made to bring `ps' options somewhat closer
  * to the standard for `ps' as described in SingleUnixSpec-v3.
  * ------+---------+---------+-------- + --------+---------+---------+---------*
  */

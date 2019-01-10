@@ -32,7 +32,7 @@ Progress::Progress(int action, QString path, QWidget * parent, Qt::WindowFlags f
           libq4wine.load();
     }
 
-    // Getting corelib calss pointer
+    // Getting corelib calls pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
@@ -70,7 +70,7 @@ Progress::Progress(int action, QString path, QWidget * parent, Qt::WindowFlags f
 void Progress::cmdCancel_Click(){
     t->stop();
     if (action==0){
-        /* becouse, of desktop folder can contains user subdirs, DO NOT REMOVE this folders
+        /* because, of desktop folder can contains user subdirs, DO NOT REMOVE this folders
         if (CoreLib->getSetting("DesktopImport", "remove", false, 0)==1)
             removeEmptyFolders(this->path);
         */
@@ -86,7 +86,7 @@ void Progress::runAction(){
 #endif
         if ((current>=max) or (max==0)){
             t->stop();
-            /* becouse, of desktop folder can contains user subdirs, DO NOT REMOVE this folders
+            /* because, of desktop folder can contains user subdirs, DO NOT REMOVE this folders
             if (CoreLib->getSetting("DesktopImport", "remove", false, 0)==1)
                 removeEmptyFolders(this->path);
             */

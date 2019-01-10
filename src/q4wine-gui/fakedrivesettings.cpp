@@ -31,7 +31,7 @@ FakeDriveSettings::FakeDriveSettings(QString prefixName, QWidget * parent, Qt::W
         libq4wine.load();
     }
 
-    // Getting corelib calss pointer
+    // Getting corelib calls pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
@@ -177,7 +177,7 @@ void FakeDriveSettings::loadDefaultPrefixSettings(){
 void FakeDriveSettings::cmdOk_Click(){
 
 #ifdef DEBUG
-    qDebug()<<"[ii] Saveing fake drive settings";
+    qDebug()<<"[ii] Saving fake drive settings";
 #endif
     QRegExp rx("^\".*\"=\".*\"$");
     QList<QListWidgetItem *> listItems = listJoystickAxesMappings->findItems(QString("*"), Qt::MatchWrap | Qt::MatchWildcard);
@@ -603,7 +603,7 @@ void FakeDriveSettings::cmdOk_Click(){
 
     if (listJoystickAxesMappings->count()>0){
 #ifdef DEBUG
-        qDebug()<<"[ii] Wizard::creating registry cfg for joystik";
+        qDebug()<<"[ii] Wizard::creating registry cfg for joystick";
 #endif
 
         for (int i=0; i<listJoystickAxesMappings->count(); i++){
@@ -728,7 +728,7 @@ void FakeDriveSettings::cmdOk_Click(){
         registry.set("Control Panel\\Colors", "Menu", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
         registry.set("Control Panel\\Colors", "MenuBar", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
         registry.set("Control Panel\\Colors", "Scrollbar", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
-        registry.set("Control Panel\\Colors", "MenuHilight", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+        registry.set("Control Panel\\Colors", "MenuHighlight", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
         registry.set("Control Panel\\Colors", "ButtonFace", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
         color = cur_palette.color(QPalette::AlternateBase);
@@ -740,7 +740,7 @@ void FakeDriveSettings::cmdOk_Click(){
         registry.set("Control Panel\\Colors", "GrayText", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
         color = cur_palette.color(QPalette::Light);
-        registry.set("Control Panel\\Colors", "ButtonHilight", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+        registry.set("Control Panel\\Colors", "ButtonHighlight", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
         color = cur_palette.color(QPalette::ButtonText);
         registry.set("Control Panel\\Colors", "ButtonText", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
@@ -751,10 +751,10 @@ void FakeDriveSettings::cmdOk_Click(){
         registry.set("Control Panel\\Colors", "WindowText", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
         color = cur_palette.color(QPalette::Highlight);
-        registry.set("Control Panel\\Colors", "Hilight", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+        registry.set("Control Panel\\Colors", "Highlight", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
         color = cur_palette.color(QPalette::HighlightedText);
-        registry.set("Control Panel\\Colors", "HilightText", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
+        registry.set("Control Panel\\Colors", "HighlightText", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
 
         color = cur_palette.color(QPalette::ToolTipBase);
         registry.set("Control Panel\\Colors", "InfoWindow", QString("%1 %2 %3").arg(QString::number(color.red())) .arg(QString::number(color.green())) .arg(QString::number(color.blue())));
@@ -993,7 +993,7 @@ void FakeDriveSettings::loadSettings(){
     std::unique_ptr<DriveListWidgetItem> item;
 
     if (prefixPath.isEmpty()){
-        qDebug()<<" [EE] Cant get prefix path: "<<prefixName;
+        qDebug()<<" [EE] Can't get prefix path: "<<prefixName;
         return;
     }
 

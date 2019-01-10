@@ -31,7 +31,7 @@ DriveListWidgetItem::DriveListWidgetItem(QListWidget *parent, int type): QObject
 		  libq4wine.load();
 	}
 
-	// Getting corelib calss pointer
+	// Getting corelib calls pointer
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 	return;

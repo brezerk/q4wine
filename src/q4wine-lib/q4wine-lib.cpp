@@ -148,7 +148,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
                             file_e.close();
                         }
 
-                        // Puting all fields into QList<QStringList>
+                        // Putting all fields into QList<QStringList>
                         procline.clear();
                         if (!prefix_path.isNull()){
                             if (prefix_path == prefix){
@@ -245,7 +245,7 @@ QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
                 }
 
                 procline.clear();
-                // Puting all fields into QList<QStringList>
+                // Putting all fields into QList<QStringList>
                 if (!prefix_path.isNull()){
                     if (prefix_path == prefix){
                         procline << QString("%1").arg(ipid) << name << nice << prefix;
@@ -398,14 +398,14 @@ void corelib::checkSettings(){
 }
 
 QIcon corelib::loadIcon(QString iconName, bool fromTheme){
-    // Function tryes to load icon image from theme dir
-    // If it fails -> load default from rsource file
+    // Function tries to load icon image from theme dir
+    // If it fails -> load default from resource file
     return QIcon::fromTheme(iconName, QIcon(QString(":/%1").arg(iconName)));
 }
 
 QIcon corelib::loadAppIcon(QString iconName){
-    // Function tryes to load icon image from theme dir
-    // If it fails -> load default from rsource file
+    // Function tries to load icon image from theme dir
+    // If it fails -> load default from resource file
     QIcon ico;
 
     if (QFile(iconName).exists()){
@@ -424,8 +424,8 @@ QIcon corelib::loadAppIcon(QString iconName){
 }
 
 QPixmap corelib::loadPixmap(QString iconName){
-    // Function tryes to load icon image from theme dir
-    // If it fails -> load default from rsource file
+    // Function tries to load icon image from theme dir
+    // If it fails -> load default from resource file
 
     QPixmap pixmap;
     pixmap.load(QString(":/%1").arg(iconName));
@@ -773,9 +773,9 @@ QStringList corelib::getCdromDevices(void) const{
                             }
                         } else {
 #ifdef DEBUG
-                            qDebug()<<"corelib::fuseiso cant read mtab.fuseiso"<<image;
+                            qDebug()<<"corelib::fuseiso can't read mtab.fuseiso"<<image;
 #endif
-                            return QString("cant read %1").arg(filename);
+                            return QString("can't read %1").arg(filename);
                         }
                     } else if (image.contains("loop")){
                         //FIXME: find a better solution
@@ -800,7 +800,7 @@ QStringList corelib::getCdromDevices(void) const{
                 }
             }
         } else {
-            return "cant read /etc/mtab";
+            return "can't read /etc/mtab";
         }
 
         return "none";
@@ -855,7 +855,7 @@ QStringList corelib::getCdromDevices(void) const{
                                     image = line.split(" ").first().split("/").last();
                             }
                         } else {
-                            image = "fuseiso [cant read $HOME/.mtab.fuseiso]";
+                            image = "fuseiso [can't read $HOME/.mtab.fuseiso]";
                         }
                     }
                 } else {

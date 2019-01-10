@@ -52,7 +52,7 @@ void AppTestWidget::requestParentComment(int id){
     QList<QObject*> list = this->children();
     QPalette p(palette());
     int y_pos = -1;
-    // Start from 1 becouse of 0 -- is VBoxLayout
+    // Start from 1 because of 0 -- is VBoxLayout
     for (int i=1; i<list.count(); i++){
         if (list.at(i)->objectName().toInt()==id){
             p.setColor(QPalette::Window, QColor(255,0,0));

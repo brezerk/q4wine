@@ -48,17 +48,17 @@ class Registry: public QObject
 {
 	Q_OBJECT
 public:
-	/*! \brief This is empty calss constructor.
+	/*! \brief This is empty calls constructor.
 	  */
 	Registry();
-	/*! \brief This is calss constructor.
+	/*! \brief This is calls constructor.
 	  * \param prefixPath Base prefix path. This is need to get wine system registry file path.
 	  */
     explicit Registry(QString prefixPath);
 
 	/*! \brief Creates heade information for  exported reg file.
 	  *
-	  * \return ture on success.
+	  * \return true on success.
 	  */
 	bool init();
 
@@ -83,25 +83,25 @@ public:
 
 	/*! \brief Executes regedit to import exported file into wine registry.
 	  *
-	  * \return ture on success.
+	  * \return true on success.
 	  */
     bool exec(QObject *parent, QString prefix_path, QString prefix_name = "Default", QString post_run = "");
 
 	/*! \brief Read registry keys value from regfile by path.
 	  * \param path Registry path.
-	  * \param keys List of keys to be readed from registry.
+	  * \param keys List of keys to be read from registry.
 	  *
-	  * \return List of readed key's value. Index of readed keys identical to requested keys.
+	  * \return List of read key's value. Index of read keys identical to requested keys.
 	  */
 	QStringList readKeys(const QString sysfile, const QString path, const QStringList keys) const;
 
 	/*! \brief Read registry all keys (exclude of requested keys) value from regfile by path.
 	  * \param sysfile
 	  * \param path Registry path.
-	  * \param keys List of keys to be excluded readed from registry.
-	  * \param count Number of keys to be readed from registry.
+	  * \param keys List of keys to be excluded read from registry.
+	  * \param count Number of keys to be read from registry.
 	  *
-	  * \return List of readed key's value. Index of readed keys identical to requested keys.
+	  * \return List of read key's value. Index of read keys identical to requested keys.
 	  */
 	QStringList readExcludedKeys(const QString sysfile, const QString path, const QStringList keys, const int count) const;
 

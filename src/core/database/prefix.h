@@ -43,7 +43,7 @@ class Prefix
 {
 
   public:
-     /*! \brief This is calss constructor.
+     /*! \brief This is calls constructor.
       */
       Prefix();
 

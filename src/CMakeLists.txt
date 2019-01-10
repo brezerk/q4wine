@@ -229,7 +229,7 @@ ENDIF (WITH_ICOUTILS MATCHES ON)
 IF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
     MESSAGE(FATAL_ERROR "    ERROR: Embedded fuseiso is not supported any more, plese remove WITH_EMBEDDED_FUSEISO flag")
     MESSAGE(FATAL_ERROR "    ERROR: and use native fuseiso instead!\n")
-    MESSAGE(FATAL_ERROR "    ERROR: fuseiso package avalible here: https://sourceforge.net/projects/fuseiso/ \n")
+    MESSAGE(FATAL_ERROR "    ERROR: fuseiso package available here: https://sourceforge.net/projects/fuseiso/ \n")
 ENDIF (${WITH_EMBEDDED_FUSEISO} MATCHES ON )
 
 SET ( Q4WINE_HEADERS_DIR

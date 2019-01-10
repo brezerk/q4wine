@@ -43,7 +43,7 @@ public:
 	/*! \brief This is class constructor.
 	 *
 	 * \param  WizardType	Type of wizard scenario.
-	 * \param  var1			This variable used for different scenarion actions.
+	 * \param  var1			This variable used for different scenario actions.
 	 */
 	WineDriveDialog(QStringList removeLetters, QWidget * parent = 0, Qt::WindowFlags f = 0);
 	WineDriveDialog(QStringList removeLetters, QString driveLetter, QString drivePath, QString driveType, QWidget * parent = 0, Qt::WindowFlags f = 0);

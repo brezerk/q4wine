@@ -288,7 +288,7 @@ TYPEDEF_HIDES_STRUCT   = NO
 # For small to medium size projects (<1000 input files) the default value is 
 # probably good enough. For larger projects a too small cache size can cause 
 # doxygen to be busy swapping symbols to and from disk most of the time 
-# causing a significant performance penalty. 
+# causing a significan't performance penalty. 
 # If the system has enough physical memory increasing the cache will improve the 
 # performance by keeping more symbols in memory. Note that the value works on 
 # a logarithmic scale so increasing the size by one will roughly double the 
@@ -1153,7 +1153,7 @@ XML_DTD                =
 # If the XML_PROGRAMLISTING tag is set to YES Doxygen will 
 # dump the program listings (including syntax highlighting 
 # and cross-referencing information) to the XML output. Note that 
-# enabling this will significantly increase the size of the XML output.
+# enabling this will significan'tly increase the size of the XML output.
 
 XML_PROGRAMLISTING     = YES
 
@@ -1415,7 +1415,7 @@ INCLUDED_BY_GRAPH      = YES
 
 # If the CALL_GRAPH and HAVE_DOT options are set to YES then 
 # doxygen will generate a call dependency graph for every global function 
-# or class method. Note that enabling this option will significantly increase 
+# or class method. Note that enabling this option will significan'tly increase 
 # the time of a run. So in most cases it will be better to enable call graphs 
 # for selected functions only using the \callgraph command.
 
@@ -1423,7 +1423,7 @@ CALL_GRAPH             = NO
 
 # If the CALLER_GRAPH and HAVE_DOT tags are set to YES then 
 # doxygen will generate a caller dependency graph for every global function 
-# or class method. Note that enabling this option will significantly increase 
+# or class method. Note that enabling this option will significan'tly increase 
 # the time of a run. So in most cases it will be better to enable caller 
 # graphs for selected functions only using the \callergraph command.
 
