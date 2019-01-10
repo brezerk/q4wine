@@ -59,7 +59,7 @@ class Sysconfig
 {
 
   public:
-     /*! \brief This is calls constructor.
+     /*! \brief This is class constructor.
       */
       Sysconfig();
 

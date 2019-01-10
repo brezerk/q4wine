@@ -31,7 +31,7 @@ IconListWidget::IconListWidget(QWidget *parent) : QListWidget (parent)
         libq4wine.load();
     }
 
-    // Getting corelib calls pointer
+    // Getting corelib class pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 

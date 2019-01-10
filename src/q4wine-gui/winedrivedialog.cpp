@@ -32,7 +32,7 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QWidget * parent, Qt
 		libq4wine.load();
 	}
 
-	// Getting corelib calls pointer
+	// Getting corelib class pointer
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
@@ -71,7 +71,7 @@ WineDriveDialog::WineDriveDialog(QStringList removeLetters, QString driveLetter,
 		libq4wine.load();
 	}
 
-	// Getting corelib calls pointer
+	// Getting corelib class pointer
 	CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
 	CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 

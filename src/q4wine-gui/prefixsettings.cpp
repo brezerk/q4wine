@@ -36,7 +36,7 @@ PrefixSettings::PrefixSettings(QString prefix_name, QWidget * parent, Qt::Window
         libq4wine.load();
     }
 
-    // Getting corelib calls pointer
+    // Getting corelib class pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 
@@ -160,7 +160,7 @@ PrefixSettings::PrefixSettings(QWidget * parent, Qt::WindowFlags f) : QDialog(pa
         libq4wine.load();
     }
 
-    // Getting corelib calls pointer
+    // Getting corelib class pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 

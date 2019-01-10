@@ -41,7 +41,7 @@ IconSettings::IconSettings(QString prefix_name, QString dir_name, QString icon_n
         libq4wine.load();
     }
 
-    // Getting corelib calls pointer
+    // Getting corelib class pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset(static_cast<corelib *>(CoreLibClassPointer(true)));
 

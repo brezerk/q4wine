@@ -48,10 +48,10 @@ class Registry: public QObject
 {
 	Q_OBJECT
 public:
-	/*! \brief This is empty calls constructor.
+	/*! \brief This is empty class constructor.
 	  */
 	Registry();
-	/*! \brief This is calls constructor.
+	/*! \brief This is class constructor.
 	  * \param prefixPath Base prefix path. This is need to get wine system registry file path.
 	  */
     explicit Registry(QString prefixPath);

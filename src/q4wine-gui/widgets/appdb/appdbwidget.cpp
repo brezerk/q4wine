@@ -32,7 +32,7 @@ AppDBWidget::AppDBWidget(QWidget *parent) : QWidget(parent)
           libq4wine.load();
     }
 
-    // Getting corelib calls pointer
+    // Getting corelib class pointer
     CoreLibClassPointer = (CoreLibPrototype *) libq4wine.resolve("createCoreLib");
     CoreLib.reset((corelib *)CoreLibClassPointer(true));
 
