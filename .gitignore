@@ -1,5 +1,5 @@
 latex/
-build/
+build*/
 qt-creator/
 qtcreator-build/
 *~
