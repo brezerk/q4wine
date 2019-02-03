@@ -83,7 +83,7 @@
         <location line="+16"/>
         <location line="+181"/>
         <source>Status: Connecting to %1</source>
-        <translation>Status: Verbindund mit %1 wird hergestellt</translation>
+        <translation>Status: Verbindung mit %1 wird hergestellt</translation>
     </message>
     <message>
         <location line="-100"/>
