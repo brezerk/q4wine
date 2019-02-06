@@ -18,17 +18,13 @@
 
 #include "q4wine-lib.h"
 
-corelib::corelib(bool _GUI_MODE)
+corelib::corelib(const bool GUI_MODE) :
+    m_GUI_MODE(GUI_MODE) // Setting gui mode, if false - cli mode else gui mode
 {
-    // Setting gui mode, if false - cli mode else gui mode
-    this->_GUI_MODE=_GUI_MODE;
-    this->mdconfig="";
-    this->fuseiso="";
-    this->fusermount="";
 }
 
-corelib* createCoreLib(bool _GUI_MODE){
-    return new corelib(_GUI_MODE);
+corelib* createCoreLib(const bool GUI_MODE){
+    return new corelib(GUI_MODE);
 }
 
 QList<QStringList> corelib::getWineProcessList(const QString prefix_name){
@@ -956,7 +952,7 @@ QStringList corelib::getCdromDevices(void) const{
 
             if (path.mid(0,1)=="/"){
                 if (!QFile(path).exists()){
-                    if (this->_GUI_MODE){
+                    if (m_GUI_MODE){
                         QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" does not exist.").arg(path));
                     } else {
                         qDebug()<<"[EE] Binary \""<<path<<"\" do not exists. Abort.";
@@ -966,7 +962,7 @@ QStringList corelib::getCdromDevices(void) const{
             } else if (path.mid(1,2)==":\\"){
                 u_path = this->getWinePath(path, "-u");
                 if (u_path.isEmpty()){
-                    if (this->_GUI_MODE){
+                    if (m_GUI_MODE){
                         QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Cannot get unix path for \"%1\".").arg(path));
                     } else {
                         qDebug()<<"[EE] Binary \""<<path<<"\" does not exist. Abort.";
@@ -974,7 +970,7 @@ QStringList corelib::getCdromDevices(void) const{
                     return false;
                 } else {
                     if (!QFile(u_path).exists()){
-                        if (this->_GUI_MODE){
+                        if (m_GUI_MODE){
                             QMessageBox::warning(0, QObject::tr("Error"), QObject::tr("Binary file \"%1\" does not exist.").arg(u_path));
                         } else {
                             qDebug()<<"[EE] Binary \""<<u_path<<"\" does not exist. Abort.";
@@ -1416,7 +1412,7 @@ QStringList corelib::getCdromDevices(void) const{
             qDebug()<<"[ii] corelib::runProcess: args: "<<args;
 #endif
 
-            if (this->_GUI_MODE){
+            if (m_GUI_MODE){
                 Process proc(args, this->getSetting("system", "sh").toString(), QDir::homePath(), message, caption, false);
                 return (proc.exec());
             } else {
@@ -1480,7 +1476,7 @@ QStringList corelib::getCdromDevices(void) const{
         }
 
         int corelib::showError(const QString message, const bool info) const{
-            if (this->_GUI_MODE){
+            if (m_GUI_MODE){
                 if (info){
                     QMessageBox::warning(0, QObject::tr("Error"), message);
                     return 0;
@@ -1496,7 +1492,7 @@ QStringList corelib::getCdromDevices(void) const{
 
         void corelib::showError(const QString message) const{
             QTextStream Qcout(stdout);
-            if (this->_GUI_MODE){
+            if (m_GUI_MODE){
                 QMessageBox::warning(0, QObject::tr("Error"), message);
             } else {
                 Qcout<<QObject::tr("Error")<<endl<<message<<endl;

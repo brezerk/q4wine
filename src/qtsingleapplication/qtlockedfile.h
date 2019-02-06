@@ -82,8 +82,8 @@ public:
 
 private:
 #ifdef Q_OS_WIN
-    Qt::HANDLE wmutex;
-    Qt::HANDLE rmutex;
+    Qt::HANDLE wmutex = 0;
+    Qt::HANDLE rmutex = 0;
     QVector<Qt::HANDLE> rmutexes;
     QString mutexname;
 

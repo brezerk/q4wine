@@ -117,7 +117,7 @@ struct ExecObject{
 class corelib {
 public:
     //! Create an mainlib class
-    explicit corelib(bool _GUI_MODE);
+    explicit corelib(const bool GUI_MODE);
 
     /*! \brief This function tries to get wine process list running in the current system.
      *
@@ -328,7 +328,7 @@ private:
     /*! Define is library operate in CLI or GUI mode.
      * \note This is typically need for error message display.
      */
-    bool _GUI_MODE;
+    bool m_GUI_MODE;
 
     QString mdconfig, fuseiso, fusermount, ln, rm, sh;
 
@@ -360,6 +360,6 @@ private:
  * \return Return an a pointer to core lib class instance.
  * \note This function is exported from shared library.
  */
-extern "C" corelib* createCoreLib(bool _GUI_MODE);
+extern "C" corelib* createCoreLib(const bool GUI_MODE);
 
 #endif
