@@ -22,7 +22,7 @@ Last_Run_Icon::Last_Run_Icon()
 {
 }
 
-QStringList Last_Run_Icon::getByExec(const QString exec) const{
+QStringList Last_Run_Icon::getByExec(const QString &exec) const{
     QStringList valuelist;
     QSqlQuery query;
     //                    0       1         2          3           4        5        6        7
@@ -62,7 +62,16 @@ QStringList Last_Run_Icon::getIcons(){
     return list;
 }
 
-bool Last_Run_Icon::addIcon(const QString cmdargs, const QString exec, QString override, const QString winedebug, const QString useconsole, const QString display, const QString wrkdir, const QString desktop, const int nice, const QString lang) const{
+bool Last_Run_Icon::addIcon(const QString &cmdargs,
+                            const QString &exec,
+                            const QString &override,
+                            const QString &winedebug,
+                            const QString &useconsole,
+                            const QString &display,
+                            const QString &wrkdir,
+                            const QString &desktop,
+                            const int nice,
+                            const QString &lang) const{
     QSqlQuery query;
     query.prepare("DELETE FROM last_run_icon WHERE exec=:exec");
     query.bindValue(":exec", exec);

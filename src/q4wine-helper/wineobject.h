@@ -48,41 +48,41 @@
 
 class WineObject : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     explicit WineObject(QObject *parent = 0);
 
-    bool setPrefix(QString prefix);
+    bool setPrefix(const QString &prefix);
 
-    void setProgramBinary(QString binary);
-    void setProgramArgs(QString args);
-    void setProgramDisplay(QString display);
-    void setProgramDebug(QString debug);
-    void setProgramNice(int nice);
-    void setProgramDesktop(QString desktop);
-    void setProgramOverride(QString override);
-    void setProgramWrkdir(QString wrkdir);
-    void setProgramLang(QString lang);
-    void setPreRun(QString path);
-    void setPostRun(QString path);
+    void setProgramBinary(const QString &binary);
+    void setProgramArgs(const QString &args);
+    void setProgramDisplay(const QString &display);
+    void setProgramDebug(const QString &debug);
+    void setProgramNice(const int nice);
+    void setProgramDesktop(const QString &desktop);
+    void setProgramOverride(const QString &override);
+    void setProgramWrkdir(const QString &wrkdir);
+    void setProgramLang(const QString &lang);
+    void setPreRun(const QString &path);
+    void setPostRun(const QString &path);
 
-    void setUseConsole(int console);
-    void setOverrideDll(QString dll_list);
+    void setUseConsole(const int console);
+    void setOverrideDll(const QString &dll_list);
     int run();
 
 private:
     int runSys();
-    int runScript(QString script_path, bool pre_run=true);
-    void logStdout(int status);
+    int runScript(const QString &script_path, const bool pre_run=true);
+    void logStdout(const int status);
 
     //! This is need for libq4wine-core.so import;
     typedef void *CoreLibPrototype (bool);
-        CoreLibPrototype *CoreLibClassPointer;
-        std::unique_ptr<corelib> CoreLib;
+    CoreLibPrototype *CoreLibClassPointer;
+    std::unique_ptr<corelib> CoreLib;
     QLibrary libq4wine;
 
     QString createEnvString(void);
-    void sendMessage(QString message);
+    void sendMessage(const QString &message);
 
     Prefix db_prefix;
     Logging db_logging;

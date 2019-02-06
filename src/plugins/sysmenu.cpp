@@ -29,7 +29,7 @@ system_menu::system_menu()
 #endif
 
     if (!libq4wine.load()){
-          libq4wine.load();
+        libq4wine.load();
     }
 
     // Getting corelib class pointer
@@ -43,7 +43,7 @@ system_menu::system_menu()
     base_menu = QString("%1/.config/menus/applications-merged/%2.menu").arg(home_path).arg(APP_SHORT_NAME);
 }
 
-bool system_menu::add_dom_icons(QDomDocument & menu_xml, QDomElement & root, const QString prefix_name, const QString dir_name, const QStringList & iconsList){
+bool system_menu::add_dom_icons(QDomDocument &menu_xml, QDomElement &root, const QString &prefix_name, const QString &dir_name, const QStringList &iconsList){
     if (iconsList.count() <= 0)
         return true;
 
@@ -74,7 +74,7 @@ bool system_menu::add_dom_icons(QDomDocument & menu_xml, QDomElement & root, con
     return true;
 }
 
-QDomElement system_menu::create_dom_menu(QDomDocument & menu_xml, QDomElement & root, const QString prefix_name, const QString dir_name){
+QDomElement system_menu::create_dom_menu(QDomDocument &menu_xml, QDomElement &root, const QString &prefix_name, const QString &dir_name){
     QString entry;
     if (prefix_name.isEmpty()){
         entry = APP_SHORT_NAME;
@@ -99,7 +99,7 @@ QDomElement system_menu::create_dom_menu(QDomDocument & menu_xml, QDomElement & 
     return nroot;
 }
 
-QString system_menu::get_dir_path(const QString prefix_name, const QString dir_name){
+QString system_menu::get_dir_path(const QString &prefix_name, const QString &dir_name){
     QStringList path;
     path << base_icon;
     path << APP_SHORT_NAME;
@@ -114,7 +114,7 @@ QString system_menu::get_dir_path(const QString prefix_name, const QString dir_n
     return path.join("/");
 }
 
-QString system_menu::get_dirfile_path(const QString prefix_name, const QString dir_name){
+QString system_menu::get_dirfile_path(const QString &prefix_name, const QString &dir_name){
     QStringList path;
     QStringList name;
 
@@ -135,7 +135,7 @@ QString system_menu::get_dirfile_path(const QString prefix_name, const QString d
     return path.join("/").append("/").append(name.join("-"));
 }
 
-bool system_menu::move_dir_info(const QString prefix_name, const QString dir_name, const QString new_name) {
+bool system_menu::move_dir_info(const QString &prefix_name, const QString &dir_name, const QString &new_name) {
     QString file_path;
     QString dir_path;
     QString dir_path_new;
@@ -172,7 +172,7 @@ bool system_menu::move_dir_info(const QString prefix_name, const QString dir_nam
     return true;
 }
 
-bool system_menu::remove_dir_info(const QString prefix_name, const QString dir_name) {
+bool system_menu::remove_dir_info(const QString &prefix_name, const QString &dir_name) {
     QString file_path;
     QString dir_path;
 
@@ -208,7 +208,7 @@ bool system_menu::remove_dir_info(const QString prefix_name, const QString dir_n
     return true;
 }
 
-bool system_menu::create_dir_info(const QString prefix_name, const QString dir_name) {
+bool system_menu::create_dir_info(const QString &prefix_name, const QString &dir_name) {
     QString name;
     QString icon;
 
@@ -294,7 +294,7 @@ bool system_menu::writeXMLSystemMenu(){
     return true;
 }
 
-bool system_menu::generateSystemMenu(const QString prefix_name, const QString dir_name){
+bool system_menu::generateSystemMenu(const QString &prefix_name, const QString &dir_name){
     //if ((prefix_name.isEmpty()) && (dir_name.isEmpty())) {
     //    this->wipeSystemMenu();
     //}

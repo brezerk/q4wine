@@ -20,7 +20,7 @@
 
 #include "winetricks.h"
 
-winetricks::winetricks(QString prefixName) : QWidget()
+winetricks::winetricks(const QString &prefixName) : QWidget()
 {
     // Loading libq4wine-core.so
 #ifdef RELEASE
@@ -113,7 +113,7 @@ bool winetricks::check_script(bool warn){
     return true;
 }
 
-void winetricks::run_winetricks(QString item){
+void winetricks::run_winetricks(const QString &item){
     if (!check_script())
         return;
 
@@ -124,25 +124,25 @@ void winetricks::run_winetricks(QString item){
     qDebug()<<"[plugin] run item";
 #endif
 
-   QStringList args;
-        if (!console_args.isEmpty()){
-                // If we have any conslope parametres, we gona preccess them one by one
-                QStringList cons_args = console_args.split(" ");
-                for (int i=0; i<cons_args.count(); i++){
-                        if (!cons_args.at(i).isEmpty())
-                                args.append(cons_args.at(i));
-                }
+    QStringList args;
+    if (!console_args.isEmpty()){
+        // If we have any conslope parametres, we gona preccess them one by one
+        QStringList cons_args = console_args.split(" ");
+        for (int i=0; i<cons_args.count(); i++){
+            if (!cons_args.at(i).isEmpty())
+                args.append(cons_args.at(i));
         }
+    }
 
-        if (console_bin.split("/").last() == "konsole"){
-            args.append("/bin/sh");
-            args.append("-c");
-        }
+    if (console_bin.split("/").last() == "konsole"){
+        args.append("/bin/sh");
+        args.append("-c");
+    }
 
-        args.append(get_command(item).join(" "));
+    args.append(get_command(item).join(" "));
 
 #ifdef DEBUG
-        qDebug()<<"[DD] winetricks args: "<<args;
+    qDebug()<<"[DD] winetricks args: "<<args;
 #endif
 
     QProcess proc;
@@ -151,7 +151,7 @@ void winetricks::run_winetricks(QString item){
     return;
 }
 
-QStringList winetricks::get_command(QString item){
+QStringList winetricks::get_command(const QString &item){
     QStringList sh_args;
     int proxy_type = CoreLib->getSetting("network", "type", false, 0).toInt();
     sh_args.append("env");
@@ -283,13 +283,13 @@ void winetricks::downloadwinetricks () {
     args.append(arg);
 
 #ifdef DEBUG
-        qDebug()<<"[DD] winetricks exec: "<<console_bin<<args;
+    qDebug()<<"[DD] winetricks exec: "<<console_bin<<args;
 #endif
     QProcess proc(this);
     proc.startDetached(console_bin, args);
-    #ifdef DEBUG
+#ifdef DEBUG
     qDebug()<<"[plugin] download done";
-    #endif
+#endif
     return;
 }
 
@@ -305,9 +305,9 @@ bool winetricks::parse() {
     pd->setValue(1);
     QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents, 100);
 
-    #ifdef DEBUG
-        qDebug()<<"[plugin] parsing winetricks script";
-    #endif
+#ifdef DEBUG
+    qDebug()<<"[plugin] parsing winetricks script";
+#endif
 
     pd->setLabelText(tr("Dropping stale items..."));
     db_sysconfig.begin();
@@ -387,7 +387,7 @@ bool winetricks::parse() {
             desc += " (" + verb["publisher"] + ", " + verb["year"] + ")";
         qstring_map::const_iterator const it_media = verb.find("media");
         if (it_media != verb.end() && verb["media"] == "download")
-          desc += " [downloadable]";  // TODO: "cached" flag
+            desc += " [downloadable]";  // TODO: "cached" flag
         pd->setValue(90 * added_verb / all_verbs + 10);
         pd->setLabelText(tr("Adding verb: %1").arg(name));
         db_sysconfig.add_item(verb["name"], "application-x-ms-dos-executable", desc, verb["category"], D_PROVIDER_WINETRICKS, installed_apps.contains(verb["name"]));
@@ -399,9 +399,9 @@ bool winetricks::parse() {
 
     db_sysconfig.vacuum();
 
-    #ifdef DEBUG
-        qDebug()<<"[plugin] parsing winetricks script done";
-    #endif
+#ifdef DEBUG
+    qDebug()<<"[plugin] parsing winetricks script done";
+#endif
 
     pd->setValue(100);
 

@@ -41,12 +41,12 @@ public:
     //! Class constructor
     Last_Run_Icon();
 
-   /*! \brief This function gets all icons fields by prefix_name (optional by icon name) keys value from table.
+    /*! \brief This function gets all icons fields by prefix_name (optional by icon name) keys value from table.
     *
     * \param  exec			A exec binary value.
     * \return Return a list of table fields value.
     */
-    QStringList getByExec(const QString exec) const;
+    QStringList getByExec(const QString &exec) const;
 
     /*! \brief This function add icon record.
      *
@@ -59,7 +59,16 @@ public:
      * \param  name			A dir name value.
      * \return Return true on success.
      */
-    bool addIcon(const QString cmdargs, const QString exec, const QString override="", const QString winedebug="", const QString useconsole="", const QString display="", const QString wrkdir="", const QString desktop="", const int nice=0, const QString lang="") const;
+    bool addIcon(const QString &cmdargs,
+                 const QString &exec,
+                 const QString &override="",
+                 const QString &winedebug="",
+                 const QString &useconsole="",
+                 const QString &display="",
+                 const QString &wrkdir="",
+                 const QString &desktop="",
+                 const int nice=0,
+                 const QString &lang="") const;
 
     /*! \brief This function reurns list of recent launched icons.
      *
@@ -67,6 +76,6 @@ public:
      */
     QStringList getIcons();
 
- };
+};
 
 #endif // LAST_RUN_ICON_H

@@ -42,7 +42,7 @@ WineObject::WineObject(QObject *parent) : QObject(parent)
     return;
 }
 
-bool WineObject::setPrefix(QString prefix){
+bool WineObject::setPrefix(const QString &prefix){
     QHash<QString, QString> prefix_info = db_prefix.getByName(prefix);
 
     this->prefixId=prefix_info.value("id").toInt();
@@ -61,51 +61,51 @@ bool WineObject::setPrefix(QString prefix){
     return true;
 }
 
-void WineObject::setProgramBinary(QString binary){
+void WineObject::setProgramBinary(const QString &binary){
     this->programBinaryName=binary.split("/").last().split("\\").last();
     this->programBinary=CoreLib->getShellEscapeString(binary);
     return;
 }
 
-void WineObject::setProgramArgs(QString args){
+void WineObject::setProgramArgs(const QString &args){
     this->programArgs=args;
     return;
 }
 
-void WineObject::setProgramDisplay(QString display){
+void WineObject::setProgramDisplay(const QString &display){
     this->programDisplay=display;
     return;
 }
 
-void WineObject::setProgramDebug(QString debug){
+void WineObject::setProgramDebug(const QString &debug){
     this->programDebug=debug;
     return;
 }
 
-void WineObject::setProgramNice(int nice){
+void WineObject::setProgramNice(const int nice){
     this->programNice = nice;
     return;
 }
 
-void WineObject::setProgramDesktop(QString desktop){
+void WineObject::setProgramDesktop(const QString &desktop){
     this->programDesktop=desktop;
     return;
 }
 
-void WineObject::setProgramOverride(QString override){
+void WineObject::setProgramOverride(const QString &override){
     this->overrideDllList = override;
 }
 
-void WineObject::setProgramWrkdir(QString wrkdir){
+void WineObject::setProgramWrkdir(const QString &wrkdir){
     this->programWrkDir = CoreLib->getShellEscapeString(wrkdir);
 }
 
-void WineObject::setProgramLang(QString lang){
+void WineObject::setProgramLang(const QString &lang){
     this->programLang=lang;
     return;
 }
 
-void WineObject::setUseConsole(int console){
+void WineObject::setUseConsole(const int console){
     if (console==1){
         this->useConsole=true;
     } else {
@@ -114,13 +114,13 @@ void WineObject::setUseConsole(int console){
     return;
 }
 
-void WineObject::setPreRun(QString path){
+void WineObject::setPreRun(const QString &path){
     //FIXME add check
     this->prerun_script = path;
     return;
 }
 
-void WineObject::setPostRun(QString path){
+void WineObject::setPostRun(const QString &path){
     //FIXME add check
     this->postrun_script = path;
     return;
@@ -169,7 +169,7 @@ QString WineObject::createEnvString(){
         env.append(QString(" WINEDEBUG='%1' ").arg(this->programDebug));
     } else {
         if ((!this->useConsole) && (CoreLib->getSetting("logging", "enable", false, 0).toInt()==0)){
-                env.append(QString(" WINEDEBUG='-all' "));
+            env.append(QString(" WINEDEBUG='-all' "));
         }
     }
 
@@ -376,7 +376,7 @@ int WineObject::run(){
     return status;
 }
 
-int WineObject::runScript(QString script_path, bool pre_run){
+int WineObject::runScript(const QString &script_path, const bool pre_run){
     int status;
     FILE *fp;
     char path[PATH_MAX];
@@ -434,7 +434,7 @@ int WineObject::runScript(QString script_path, bool pre_run){
     return status;
 }
 
-void WineObject::logStdout(int status){
+void WineObject::logStdout(const int status){
     if (!this->useConsole){
         if (logEnabled){
             uint date = QDateTime::currentDateTime ().toTime_t();
@@ -452,7 +452,7 @@ void WineObject::logStdout(int status){
     }
 }
 
-void WineObject::sendMessage(QString message){
+void WineObject::sendMessage(const QString &message){
     QLocalSocket socket(this);
     socket.connectToServer( QString("/tmp/q4wine-%1.sock").arg(getuid()) , QIODevice::WriteOnly );
 
@@ -482,7 +482,7 @@ void WineObject::sendMessage(QString message){
     return;
 }
 
-void WineObject::setOverrideDll(QString dll_list){
+void WineObject::setOverrideDll(const QString &dll_list){
     this->overrideDllList = dll_list;
 }
 

@@ -44,9 +44,13 @@ class system_menu
 public:
     system_menu();
 
-    bool move_dir_info(const QString prefix_name, const QString dir_name, const QString new_name);
-    bool create_dir_info(const QString prefix_name = "", const QString dir_name = "");
-    bool remove_dir_info(const QString prefix_name, const QString dir_name = "");
+    bool move_dir_info(const QString &prefix_name,
+                       const QString &dir_name,
+                       const QString &new_name);
+    bool create_dir_info(const QString &prefix_name = "",
+                         const QString &dir_name = "");
+    bool remove_dir_info(const QString &prefix_name,
+                         const QString &dir_name = "");
 
     /*! \brief Generate System Menu (xml, desktop and directory files)
      *
@@ -55,7 +59,8 @@ public:
      *
      * \return true on success
      */
-    bool generateSystemMenu(const QString prefix_name = "", const QString dir_name = "");
+    bool generateSystemMenu(const QString &prefix_name = "",
+                            const QString &dir_name = "");
 
     /*! \brief Write xml menu file
      *
@@ -78,14 +83,23 @@ private:
 
     /*! \brief Create dom menu structure
      */
-    QDomElement create_dom_menu(QDomDocument & menu_xml, QDomElement & root, const QString prefix_name = "", const QString dir_name = "");
+    QDomElement create_dom_menu(QDomDocument &menu_xml,
+                                QDomElement &root,
+                                const QString &prefix_name = "",
+                                const QString &dir_name = "");
 
     /*! \brief Populate menu entry with icons descriptions
      */
-    bool add_dom_icons(QDomDocument & menu_xml, QDomElement & root, const QString prefix_name, const QString dir_name, const QStringList & iconsList);
+    bool add_dom_icons(QDomDocument &menu_xml,
+                       QDomElement &root,
+                       const QString &prefix_name,
+                       const QString &dir_name,
+                       const QStringList &iconsList);
 
-    QString get_dir_path(const QString prefix_name = "", const QString dir_name = "");
-    QString get_dirfile_path(const QString prefix_name = "", const QString dir_name = "");
+    QString get_dir_path(const QString &prefix_name = "",
+                         const QString &dir_name = "");
+    QString get_dirfile_path(const QString &prefix_name = "",
+                             const QString &dir_name = "");
 
     QDomDocument menu_xml;
 

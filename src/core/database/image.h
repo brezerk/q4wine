@@ -38,33 +38,33 @@
 class Image
 {
 public:
-	//! Class constructor
-	Image();
-	/*! \brief Getting images list.
-	 * \return Return QList on QStringList containing images.
-	 */
-	QList<QStringList> getFields(void) const;
+    //! Class constructor
+    Image();
+    /*! \brief Getting images list.
+     * \return Return QList on QStringList containing images.
+     */
+    QList<QStringList> getFields(void) const;
 
-	/*! \brief Getting file path reccord by image name
-	 * \param  name   image name
-	 * \return Return QList on QStringList containing images.
-	 */
-	QString getPath(const QString name) const;\
+    /*! \brief Getting file path reccord by image name
+     * \param  name   image name
+     * \return Return QList on QStringList containing images.
+     */
+    QString getPath(const QString &name) const;\
 
-	/*! \brief Check for image existence by name
-	 * \param  name   image name
-	 * \return If image exists -- returns true.
-	 */
-	bool isExistsByName(const QString name) const;
+    /*! \brief Check for image existence by name
+     * \param  name   image name
+     * \return If image exists -- returns true.
+     */
+    bool isExistsByName(const QString &name) const;
 
-	/*! \brief Add image reccord
-	 * \param  name   image name
-	 * \param  path   image file path
-	 * \return If image exists -- returns true.
-	 */
-	bool addImage(const QString name, const QString path) const;
-	bool delImage(const QString name) const;
-	bool renameImage(const QString name, const QString old_name) const;
+    /*! \brief Add image reccord
+     * \param  name   image name
+     * \param  path   image file path
+     * \return If image exists -- returns true.
+     */
+    bool addImage(const QString &name, const QString &path) const;
+    bool delImage(const QString &name) const;
+    bool renameImage(const QString &name, const QString &old_name) const;
 };
 
 #endif // IMAGE_H

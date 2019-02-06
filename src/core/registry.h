@@ -46,74 +46,88 @@
  */
 class Registry: public QObject
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	/*! \brief This is empty class constructor.
-	  */
-	Registry();
-	/*! \brief This is class constructor.
-	  * \param prefixPath Base prefix path. This is need to get wine system registry file path.
-	  */
-    explicit Registry(QString prefixPath);
+    /*! \brief This is empty class constructor.
+      */
+    Registry();
+    /*! \brief This is class constructor.
+      * \param prefixPath Base prefix path. This is need to get wine system registry file path.
+      */
+    explicit Registry(const QString &prefixPath);
 
-	/*! \brief Creates heade information for  exported reg file.
-	  *
-	  * \return true on success.
-	  */
-	bool init();
+    /*! \brief Creates heade information for  exported reg file.
+      *
+      * \return true on success.
+      */
+    bool init();
 
-	/*! \brief Appends path and keys to exported reg file.
-	  * \param reg_keys QString of keys and it's values.
-	  */
-	void append(QString reg_keys);
+    /*! \brief Appends path and keys to exported reg file.
+      * \param reg_keys QString of keys and it's values.
+      */
+    void append(const QString &reg_keys);
 
-	/*! \brief Append set key to exported reg file.
-	  * \param path  Registry path
-	  * \param key   Registry key name
-	  * \param value Keristry key value
-	  */
-	void set(QString path, const QString key, const QString value, const QString hkey = "HKEY_CURRENT_USER");
+    /*! \brief Append set key to exported reg file.
+      * \param path  Registry path
+      * \param key   Registry key name
+      * \param value Keristry key value
+      */
+    void set(const QString &path,
+             const QString &key,
+             const QString &value,
+             const QString &hkey = "HKEY_CURRENT_USER");
 
-	/*! \brief Append set unsetkey to exported reg file.
-	  * \param path  Registry path
-	  * \param key   Registry key name
-	  */
-	void unset(QString path, const QString key, const QString hkey = "HKEY_CURRENT_USER");
-	void unsetPath(QString path, const QString hkey = "HKEY_CURRENT_USER");
+    /*! \brief Append set unsetkey to exported reg file.
+      * \param path  Registry path
+      * \param key   Registry key name
+      */
+    void unset(const QString &path,
+               const QString &key,
+               const QString &hkey = "HKEY_CURRENT_USER");
+    void unsetPath(const QString &path,
+                   const QString &hkey = "HKEY_CURRENT_USER");
 
-	/*! \brief Executes regedit to import exported file into wine registry.
-	  *
-	  * \return true on success.
-	  */
-    bool exec(QObject *parent, QString prefix_path, QString prefix_name = "Default", QString post_run = "");
+    /*! \brief Executes regedit to import exported file into wine registry.
+      *
+      * \return true on success.
+      */
+    bool exec(QObject *parent,
+              const QString &prefix_path,
+              const QString &prefix_name = "Default",
+              const QString &post_run = "");
 
-	/*! \brief Read registry keys value from regfile by path.
-	  * \param path Registry path.
-	  * \param keys List of keys to be read from registry.
-	  *
-	  * \return List of read key's value. Index of read keys identical to requested keys.
-	  */
-	QStringList readKeys(const QString sysfile, const QString path, const QStringList keys) const;
+    /*! \brief Read registry keys value from regfile by path.
+      * \param path Registry path.
+      * \param keys List of keys to be read from registry.
+      *
+      * \return List of read key's value. Index of read keys identical to requested keys.
+      */
+    QStringList readKeys(const QString &sysfile,
+                         const QString &path,
+                         const QStringList &keys) const;
 
-	/*! \brief Read registry all keys (exclude of requested keys) value from regfile by path.
-	  * \param sysfile
-	  * \param path Registry path.
-	  * \param keys List of keys to be excluded read from registry.
-	  * \param count Number of keys to be read from registry.
-	  *
-	  * \return List of read key's value. Index of read keys identical to requested keys.
-	  */
-	QStringList readExcludedKeys(const QString sysfile, const QString path, const QStringList keys, const int count) const;
+    /*! \brief Read registry all keys (exclude of requested keys) value from regfile by path.
+      * \param sysfile
+      * \param path Registry path.
+      * \param keys List of keys to be excluded read from registry.
+      * \param count Number of keys to be read from registry.
+      *
+      * \return List of read key's value. Index of read keys identical to requested keys.
+      */
+    QStringList readExcludedKeys(const QString &sysfile,
+                                 const QString &path,
+                                 const QStringList &keys,
+                                 const int count) const;
 
 private:
-	//! This is need for libq4wine-core.so import;
-	typedef void *CoreLibPrototype (bool);
-		CoreLibPrototype *CoreLibClassPointer;
-		std::unique_ptr<corelib> CoreLib;
-	QLibrary libq4wine;
+    //! This is need for libq4wine-core.so import;
+    typedef void *CoreLibPrototype (bool);
+    CoreLibPrototype *CoreLibClassPointer;
+    std::unique_ptr<corelib> CoreLib;
+    QLibrary libq4wine;
 
-	QString regfile;
-	QString regfile_image;
+    QString regfile;
+    QString regfile_image;
 };
 
 #endif

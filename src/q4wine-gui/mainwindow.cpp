@@ -18,8 +18,8 @@
 
 #include "mainwindow.h"
 
-MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt::WindowFlags f) : QMainWindow(parent, f){
-     // Loading libq4wine-core.so
+MainWindow::MainWindow(const int startState, const QString &run_binary, QWidget * parent, const Qt::WindowFlags f) : QMainWindow(parent, f){
+    // Loading libq4wine-core.so
 #ifdef RELEASE
     libq4wine.setFileName(_CORELIB_PATH_);
 #else
@@ -51,7 +51,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
     if (!this->createSocket()){
         this->close();
         return;
-     }
+    }
 
     if (startState == 1)
         this->showMinimized();
@@ -220,7 +220,7 @@ MainWindow::MainWindow(int startState, QString run_binary, QWidget * parent, Qt:
 }
 
 void MainWindow::setSearchFocus(){
-//    txtIconFilter->setFocus(Qt::OtherFocusReason);
+    //    txtIconFilter->setFocus(Qt::OtherFocusReason);
     return;
 }
 
@@ -253,7 +253,7 @@ void MainWindow::trayIcon_Activate(QSystemTrayIcon::ActivationReason reason){
     return;
 }
 
-void MainWindow::updateIconDesc(QString program, QString args, QString desc, QString console, QString desktop){
+void MainWindow::updateIconDesc(const QString &program, QString args, const QString &desc, const QString &console, const QString &desktop){
     /*
      * This is function for selection icons, and displaying
      * icon informationm like path and description
@@ -331,7 +331,7 @@ void MainWindow::getSettings(){
     return;
 }
 
-void MainWindow::changeStatusText(QString text){
+void MainWindow::changeStatusText(const QString &text){
     statusBar()->showMessage(text);
 }
 
@@ -341,7 +341,7 @@ void MainWindow::updateDtabaseConnectedItems(){
 }
 
 #ifdef WITH_WINEAPPDB
-void MainWindow::searchRequest(QString search){
+void MainWindow::searchRequest(const QString &search){
     tbwGeneral->setCurrentIndex (4);
     emit(appdbWidget_startSearch(1, search));
 }
@@ -415,8 +415,8 @@ void MainWindow::newConnection (){
 
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
                             if ((this->isHidden() || this->isMinimized()) and (trayIcon->isVisible())){
-                            this->showNotifycation(tr("helper notification"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
-                        }
+                                this->showNotifycation(tr("helper notification"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            }
 
                         emit(reloadLogData());
 
@@ -428,9 +428,9 @@ void MainWindow::newConnection (){
                         this->changeStatusText(tr("Console started fine for Application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
 
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
-                        if ((this->isHidden() || this->isMinimized()) && (trayIcon->isVisible())){
-                            this->showNotifycation(tr("helper notification"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
-                        }
+                            if ((this->isHidden() || this->isMinimized()) && (trayIcon->isVisible())){
+                                this->showNotifycation(tr("helper notification"), tr("Application: \"%1\" started fine for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            }
 
                         emit(reloadLogData());
 
@@ -441,9 +441,9 @@ void MainWindow::newConnection (){
                     if (list.count()==4){
                         this->changeStatusText(tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
-                        if ((this->isHidden() || this->isMinimized()) && trayIcon->isVisible()){
-                            this->showNotifycation(tr("helper notification"), tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
-                        }
+                            if ((this->isHidden() || this->isMinimized()) && trayIcon->isVisible()){
+                                this->showNotifycation(tr("helper notification"), tr("Application: \"%1\" finished for prefix: \"%2\". Exit code is: \"%3\".").arg(list.at(1)).arg(list.at(2)).arg(list.at(3)));
+                            }
 
                         emit(reloadLogData());
                     } else {
@@ -453,9 +453,9 @@ void MainWindow::newConnection (){
                     if (list.count()==3){
                         this->changeStatusText(tr("Cannot start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
-                        if ((this->isHidden() || this->isMinimized()) and (trayIcon->isVisible())){
-                            this->showNotifycation(tr("helper notification"), tr("Cannot start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
-                        }
+                            if ((this->isHidden() || this->isMinimized()) and (trayIcon->isVisible())){
+                                this->showNotifycation(tr("helper notification"), tr("Cannot start application: \"%1\" for prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            }
                     } else {
                         this->showSocketError(message);
                     }
@@ -463,10 +463,10 @@ void MainWindow::newConnection (){
                     if (list.count()==3){
                         this->changeStatusText(tr("Cannot start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
                         if (CoreLib->getSetting("app", "showNotifications", false, 1).toInt()==1)
-                        if ((this->isHidden() || this->isMinimized()) and (trayIcon->isVisible())){
-                            this->showNotifycation(tr("helper notification"), tr("Cannot start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
+                            if ((this->isHidden() || this->isMinimized()) and (trayIcon->isVisible())){
+                                this->showNotifycation(tr("helper notification"), tr("Cannot start console for application: \"%1\" in prefix: \"%2\".").arg(list.at(1)).arg(list.at(2)));
 
-                        }
+                            }
                     } else {
                         this->showSocketError(message);
                     }
@@ -537,7 +537,7 @@ void MainWindow::closeEvent(QCloseEvent *event){
     return;
 }
 
-void MainWindow::tbwGeneral_CurrentTabChange(int tabIndex){
+void MainWindow::tbwGeneral_CurrentTabChange(const int tabIndex){
 
     if (tabIndex==0){
         emit(stopProcTimer());
@@ -790,10 +790,10 @@ void MainWindow::mainExportIcons_Click(){
     QString fileName, tmpDir;
     QStringList args;
 
-        QFileDialog::Options options;
+    QFileDialog::Options options;
 
-        if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
-                options = QFileDialog::DontUseNativeDialog;
+    if (CoreLib->getSetting("advanced", "useNativeFileDialog", false, 1)==0)
+        options = QFileDialog::DontUseNativeDialog;
 
     fileName = QFileDialog::getOpenFileName(this, tr("Open image file"), QDir::homePath(), tr("Win32 Executable and Shared libraries (*.exe *.EXE *.dll *.DLL);;Win32 Executable (*.exe *.EXE);;Win32 Shared libraries (*.dll *.DLL);;All files (*)"), 0, options );
 
@@ -892,25 +892,25 @@ void MainWindow::mainExportIcons_Click(){
 void MainWindow::mainHelpThisTab_Click(){
     QString rawurl="";
     switch (tbwGeneral->currentIndex()){
-case 0:
-       rawurl = "04-general-gui-description.html#programs";
-       break;
-case 1:
-       rawurl = "04-general-gui-description.html#process";
-       break;
-case 2:
-       rawurl = "04-general-gui-description.html#setup";
-       break;
-case 3:
-       rawurl = "04-general-gui-description.html#prefixes";
-       break;
-case 4:
-       rawurl = "04-general-gui-description.html#appdb";
-       break;
-case 5:
-       rawurl = "04-general-gui-description.html#logging";
-       break;
-   }
+    case 0:
+        rawurl = "04-general-gui-description.html#programs";
+        break;
+    case 1:
+        rawurl = "04-general-gui-description.html#process";
+        break;
+    case 2:
+        rawurl = "04-general-gui-description.html#setup";
+        break;
+    case 3:
+        rawurl = "04-general-gui-description.html#prefixes";
+        break;
+    case 4:
+        rawurl = "04-general-gui-description.html#appdb";
+        break;
+    case 5:
+        rawurl = "04-general-gui-description.html#logging";
+        break;
+    }
 
     CoreLib->openHelpUrl(rawurl);
     return;
@@ -955,7 +955,7 @@ void MainWindow::mainVersionManager_Click(){
     delete(vers);
 }
 
-void MainWindow::showNotifycation(const QString header, const QString message){
+void MainWindow::showNotifycation(const QString &header, const QString &message){
 #ifdef WITH_DBUS
     QVariantList args;
     args << QString(APP_NAME);
@@ -979,7 +979,7 @@ void MainWindow::showNotifycation(const QString header, const QString message){
 #endif
 }
 
-void MainWindow::messageReceived(const QString message){
+void MainWindow::messageReceived(const QString &message){
     if (message.isEmpty()){
         if (!isVisible())
             this->setMeVisible(true);

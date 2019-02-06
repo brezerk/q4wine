@@ -46,21 +46,21 @@ typedef QMap<QString, QString> qstring_map;
 typedef QMap<QString, qstring_map> metadata_type;
 
 class winetricks : public QWidget{
-Q_OBJECT
+    Q_OBJECT
 
 public:
-    explicit winetricks(QString prefix_name);
-    void run_winetricks(QString item);
+    explicit winetricks(const QString &prefix_name);
+    void run_winetricks(const QString &item);
     QStringList get_installed();
     void install_winetricks();
-    QStringList get_command(QString item);
+    QStringList get_command(const QString &item);
     bool parse();
 
 private:
     //! This is need for libq4wine-core.so import;
     typedef void *CoreLibPrototype (bool);
-        CoreLibPrototype *CoreLibClassPointer;
-        std::unique_ptr<corelib> CoreLib;
+    CoreLibPrototype *CoreLibClassPointer;
+    std::unique_ptr<corelib> CoreLib;
 
     QLibrary libq4wine;
 

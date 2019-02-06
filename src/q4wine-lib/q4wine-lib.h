@@ -52,13 +52,13 @@
 
 // FreeBSD support
 #ifdef _OS_FREEBSD_
-        #include <kvm.h>
-        #include <sys/param.h>
-        #include <sys/user.h>
-        #include <sys/file.h>
-        #include <sys/sysctl.h>
-        #include <limits.h>
-        #include <paths.h>
+#include <kvm.h>
+#include <sys/param.h>
+#include <sys/user.h>
+#include <sys/file.h>
+#include <sys/sysctl.h>
+#include <limits.h>
+#include <paths.h>
 #endif
 
 // Experimental Darwin support (no test were performed)
@@ -125,7 +125,7 @@ public:
      * \note On Linux it uses /proc file system, and on FreeBSD/MacOS it uses /dev/kmem and kvm.h functions.
      * \return Return an array of QList which contains a QStringList
      */
-    QList<QStringList> getWineProcessList(const QString prefix_name = "");
+    QList<QStringList> getWineProcessList(const QString &prefix_name = "");
 
     /*! \brief This function get application settings.
      *
@@ -135,20 +135,24 @@ public:
      * \param  checkExist  If true - then we need to check exists file or dir by value or not.
      * \return Return an a key value.
      */
-    QVariant getSetting(const QString group, const QString key, const bool checkExist = true, const QVariant defaultVal = QVariant()) const;
+    QVariant getSetting(const QString &group,
+                        const QString &key,
+                        const bool checkExist = true,
+                        const QVariant &defaultVal = QVariant()) const;
 
     void checkSettings(void);
 
-    QIcon loadIcon(QString iconName, bool fromTheme = true);
-    QIcon loadAppIcon(QString iconName);
-    QPixmap loadPixmap(QString pixmapName);
+    QIcon loadIcon(const QString &iconName, bool fromTheme = true);
+    QIcon loadAppIcon(const QString &iconName);
+    QPixmap loadPixmap(const QString &pixmapName);
 
     QString getTranslationLang();
-    QString getLang(bool fromSettings = true);
+    QString getLang(const bool fromSettings = true);
     QString getLocale();
 
     bool isConfigured();
-    bool checkDirs(QString rootPath, QStringList subDirs = QStringList());
+    bool checkDirs(const QString &rootPath,
+                   QStringList subDirs = QStringList()) const;
 
     void getBuildFlags();
 
@@ -161,7 +165,7 @@ public:
      *
      * \return Return the full path of binary.
      */
-    QString getWhichOut (const QString fileName, bool showErr = true);
+    QString getWhichOut (const QString &fileName, bool showErr = true);
 
     /*! \brief This function get cdrom devices from /etc/fstab file.
      *
@@ -177,22 +181,23 @@ public:
      *
      * \return Return an drive letter on success or null on fail
      */
-    QChar getCdromWineDrive(QString prefix_path, QString mount_point);
+    QChar getCdromWineDrive(QString prefix_path,
+                            const QString &mount_point);
 
     /*! \brief This function opens help url in xdg-open browser.
      *
      * \return Return nothing.
      */
-    void openHelpUrl(const QString rawurl);
+    void openHelpUrl(const QString &rawurl);
 
     /*! \brief This function opens url in xdg-open browser.
      *
      * \return Return nothing.
      */
-    void openHomeUrl(const QString rawurl);
-    void openUrl(const QString rawurl);
-        void openConsole(const QString path, const QString prefix_name);
-    void updateRecentImagesList(const QString media) const;
+    void openHomeUrl(const QString &rawurl) const;
+    void openUrl(const QString &rawurl) const;
+    void openConsole(const QString &path, const QString &prefix_name);
+    void updateRecentImagesList(const QString &media) const;
 
 
     /*! \brief This function gets mouted image or media.
@@ -200,7 +205,7 @@ public:
      * \param  crom_mount	Mount point path.
      * \return Return an list of cdrom devices.
      */
-    QString getMountedImages(QString cdrom_mount);
+    QString getMountedImages(QString cdrom_mount) const;
 
     /*! \brief This function mount an image or drive to prefix mount point.
      *
@@ -208,21 +213,21 @@ public:
      * \param  prefix_name	Prefix name.
      * \return Return an list of cdrom devices.
      */
-        bool mountImage(QString image_name, const QString prefix_name);
+    bool mountImage(const QString &image_name, const QString &prefix_name);
 
     /*! \brief This function umount an image or drive from prefix mount point.
      *
      * \param  prefix_name	Prefix name.
      * \return @c true on success or @c false on error.
      */
-    bool umountImage(const QString prefix_name);
+    bool umountImage(const QString &prefix_name);
 
     /*! \brief This function kills wineserver.
      *
      * \param  prefix_path	Prefix name.
      * \return Return an list of cdrom devices.
      */
-    bool killWineServer(const QString prefix_path, const QString pid);
+    bool killWineServer(const QString &prefix_path, const QString &pid);
 
     /*! \brief Prepare icon data for run wine.
      *
@@ -231,7 +236,10 @@ public:
      * \param  icon_name	Icon name.
      * \return Return true on success.
      */
-    bool runIcon(const QString prefix_name, const QString dir_name, const QString icon_name, const QStringList extra_args = QStringList());
+    bool runIcon(const QString &prefix_name,
+                 const QString &dir_name,
+                 const QString &icon_name,
+                 const QStringList &extra_args = QStringList());
 
     /*! \brief Prepare icon data for run wine.
      *
@@ -239,15 +247,22 @@ public:
      * \param  prefix_name	Prefix name.
      * \return Return true on success.
      */
-    bool runWineBinary(const ExecObject execObj, const QString prefix_name, bool detach=true);
+    bool runWineBinary(const ExecObject &execObj,
+                       const QString &prefix_name,
+                       const bool detach=true);
     //bool runWineBinary(const QString winebinary, const QString cmdargs, const QString prefix_name, const QString wineAppendBin="", const bool releaseProc = true);
-    bool checkFileExists(QString path);
+    bool checkFileExists(const QString &path);
 
 
-    QString createDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name, const bool is_menu = false) const;
-    bool deleteDesktopFile(const QString prefix_name, const QString dir_name, const QString icon_name) const;
+    QString createDesktopFile(const QString &prefix_name,
+                              const QString &dir_name,
+                              const QString &icon_name,
+                              const bool is_menu = false) const;
+    bool deleteDesktopFile(const QString &prefix_name,
+                           const QString &dir_name,
+                           const QString &icon_name) const;
 
-    QString getWinePath(const QString path, const QString option);
+    QString getWinePath(const QString &path, const QString &option);
 
     /*! \brief This function builds wine dlls list for prefix_lib_path.
      *
@@ -263,17 +278,23 @@ public:
      * \param  dir	  Exec directory.
      * \return True on success.
      */
-    bool runProcess(const QString exec, const QStringList args, QString dir = "", bool showLog = true);
-    bool runProcess(const QStringList args, const QString caption, const QString message);
+    bool runProcess(const QString &exec,
+                    const QStringList &args,
+                    QString dir = "",
+                    const bool showLog = true);
+    bool runProcess(const QStringList &args,
+                    const QString &caption,
+                    const QString &message);
 
     /*! \brief Gets string with escaped special characters
      *
      * \param string	Base string
      */
-    QString getEscapeString(const QString string, const bool spaces = true) const;
+    QString getEscapeString(const QString &string,
+                            const bool spaces = true) const;
 
-        QString getShellEscapeString(QString string);
-        QString getStrictEscapeString(QString string);
+    QString getShellEscapeString(QString string);
+    QString getStrictEscapeString(QString string);
 
 
     /*! \brief Gets mount string based on QuikMount type profile
@@ -296,9 +317,9 @@ public:
     bool reniceProcess(const int pid, const int priority);
     void runAutostart(void);
 
-    void createPrefixDBStructure(QString prefixName);
+    void createPrefixDBStructure(const QString &prefixName);
 
-    QString decodeRegString(QString string);
+    QString decodeRegString(const QString &string);
 
     /*! \brief This function is used to export prefix info.
      *
@@ -322,7 +343,7 @@ public:
      *
      * \return true on success.
      */
-    bool removeDirectory(QString dirPath);
+    bool removeDirectory(const QString &dirPath);
 
 private:
     /*! Define is library operate in CLI or GUI mode.
@@ -338,13 +359,13 @@ private:
      * \param  info	   Define display type. If false - user interactive message.
      * \return When using an interactive display type, this functions returns a user selected value.
      */
-    int showError(const QString message, const bool info) const;
+    int showError(const QString &message, const bool info) const;
 
     /*! \brief Displays error message depending on _GUI_MODE variable value
      *
      * \param  message     Error message.
      */
-    void showError(const QString message) const;
+    void showError(const QString &message) const;
 
     Prefix db_prefix;
     Image db_image;

@@ -91,112 +91,119 @@
 class MainWindow : public QMainWindow, public Ui::MainWindow
 {
     Q_OBJECT
-    public:
-        MainWindow(int startState, QString run_binary, QWidget * parent = 0, Qt::WindowFlags f = 0);
+public:
+    MainWindow(const int startState,
+               const QString &run_binary,
+               QWidget * parent = 0,
+               const Qt::WindowFlags f = 0);
 
-    public slots:
-            void messageReceived(const QString message);
-            void updateDtabaseConnectedItems(void);
-            void setSearchFocus(void);
-            void setMeVisible(bool visible);
+public slots:
+    void messageReceived(const QString &message);
+    void updateDtabaseConnectedItems(void);
+    void setSearchFocus(void);
+    void setMeVisible(const bool visible);
 
 #ifdef WITH_WINEAPPDB
-        void searchRequest(QString search);
+    void searchRequest(const QString &search);
 #endif
 
-    private slots:
-        void tbwGeneral_CurrentTabChange(int tabIndex);
+private slots:
+    void tbwGeneral_CurrentTabChange(const int tabIndex);
 
-        void changeStatusText(QString text);
+    void changeStatusText(const QString &text);
 
-        void trayIcon_Activate(QSystemTrayIcon::ActivationReason reason);
+    void trayIcon_Activate(QSystemTrayIcon::ActivationReason reason);
 
-        /*
+    /*
          * Command buttons slots
          */
-        void updateIconDesc(QString program, QString args, QString desc, QString console, QString desktop);
+    void updateIconDesc(const QString &program,
+                        QString args,
+                        const QString &desc,
+                        const QString &console,
+                        const QString &desktop);
 
-        //Main menu slots
-        void mainExit_Click(void);
-        void mainPrograms_Click(void);
-        void mainImageManager_Click(void);
-        void mainProcess_Click(void);
-        void mainSetup_Click(void);
-        void mainLogging_Click(void);
-        void mainPrefix_Click(void);
-        void mainAbout_Click(void);
-        void mainAboutQt_Click(void);
-        void mainExportIcons_Click(void);
-        void mainRun_Click(void);
-        void mainOptions_Click(void);
-        void mainInstall_Click(void);
-        void mainFirstSteps_Click(void);
-        void mainFAQ_Click(void);
-        void mainIndex_Click(void);
-        void mainWebsite_Click(void);
-        void mainDonate_Click(void);
-        void mainBugs_Click(void);
-        void mainAppDB_Click(void);
-        void mainHelpThisTab_Click(void);
-        void mainImportWineIcons_Click(void);
-        void mainVersionManager_Click();
+    //Main menu slots
+    void mainExit_Click(void);
+    void mainPrograms_Click(void);
+    void mainImageManager_Click(void);
+    void mainProcess_Click(void);
+    void mainSetup_Click(void);
+    void mainLogging_Click(void);
+    void mainPrefix_Click(void);
+    void mainAbout_Click(void);
+    void mainAboutQt_Click(void);
+    void mainExportIcons_Click(void);
+    void mainRun_Click(void);
+    void mainOptions_Click(void);
+    void mainInstall_Click(void);
+    void mainFirstSteps_Click(void);
+    void mainFAQ_Click(void);
+    void mainIndex_Click(void);
+    void mainWebsite_Click(void);
+    void mainDonate_Click(void);
+    void mainBugs_Click(void);
+    void mainAppDB_Click(void);
+    void mainHelpThisTab_Click(void);
+    void mainImportWineIcons_Click(void);
+    void mainVersionManager_Click();
 
-        void newConnection();
+    void newConnection();
 
 private:
-        //! Custom Widgets
-        //DragListWidget* lstIcons;
+    //! Custom Widgets
+    //DragListWidget* lstIcons;
 #ifdef WITH_WINEAPPDB
-        std::unique_ptr<AppDBWidget> appdbWidget;
+    std::unique_ptr<AppDBWidget> appdbWidget;
 #endif
-        std::unique_ptr<QLocalServer> serverSoket;
+    std::unique_ptr<QLocalServer> serverSoket;
 
-        //! This is need for libq4wine-core.so import;
-        typedef void *CoreLibPrototype (bool);
-            CoreLibPrototype *CoreLibClassPointer;
-            std::unique_ptr<corelib> CoreLib;
-        QLibrary libq4wine;
+    //! This is need for libq4wine-core.so import;
+    typedef void *CoreLibPrototype (bool);
+    CoreLibPrototype *CoreLibClassPointer;
+    std::unique_ptr<corelib> CoreLib;
+    QLibrary libq4wine;
 
-        //Classes
-        Prefix db_prefix;
-        Dir db_dir;
-        Icon db_icon;
+    //Classes
+    Prefix db_prefix;
+    Dir db_dir;
+    Icon db_icon;
 #ifndef _OS_DARWIN_
-        system_menu sys_menu;
+    system_menu sys_menu;
 #endif
-        // Tray icon
-        std::unique_ptr<QSystemTrayIcon> trayIcon;
+    // Tray icon
+    std::unique_ptr<QSystemTrayIcon> trayIcon;
 
-        bool createSocket();
-        void showSocketError(QString message);
+    bool createSocket();
+    void showSocketError(QString message);
 
-        void createTrayIcon();
+    void createTrayIcon();
 
-        void getSettings(void);
-        void clearTmp();
-        void showNotifycation(const QString header, const QString message);
+    void getSettings(void);
+    void clearTmp();
+    void showNotifycation(const QString &header, const QString &message);
 
-        std::unique_ptr<QSplitter> splitter;
+    std::unique_ptr<QSplitter> splitter;
 
-//        void getWineMenuIcons(void);
-//        void parseIcons(void);
+    //        void getWineMenuIcons(void);
+    //        void parseIcons(void);
 
-    signals:
+signals:
 #ifdef WITH_WINEAPPDB
-        void appdbWidget_startSearch(short int, QString);
-        void setAppDBFocus();
+    void appdbWidget_startSearch(short int, QString);
+    void setAppDBFocus();
 #endif
-        void updateDatabaseConnections(void);
-        void setDefaultFocus(QString, QString);
-        void stopProcTimer(void);
-        void startProcTimer(void);
+    void updateDatabaseConnections(void);
+    void setDefaultFocus(QString, QString);
+    void stopProcTimer(void);
+    void startProcTimer(void);
 
-        void reloadLogData(void);
-        void runProgramRequest(QString);
+    void reloadLogData(void);
+    void runProgramRequest(QString);
 
-    protected:
-        // Events
-        void closeEvent(QCloseEvent *event);
+protected:
+    // Events
+    void closeEvent(QCloseEvent *event);
 
 };
 
