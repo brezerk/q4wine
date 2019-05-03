@@ -1460,11 +1460,9 @@ bool corelib::runProcess(const QString &exec, const QStringList &args, QString d
     int exitcode = myProcess.exitCode();
     QProcess::ExitStatus exitStatus = myProcess.exitStatus();
     if (showLog && (exitcode != 0 || exitStatus == QProcess::CrashExit)){
-        // Getting env LANG variable
-        QString lang=this->getLocale();
 
-        // Read STDERR with locale support
-        QTextCodec *codec = QTextCodec::codecForName(lang.toLatin1());
+        // Read STDERR with locale encoding
+        QTextCodec *codec = QTextCodec::codecForLocale();
         QString string = codec->toUnicode(myProcess.readAllStandardError());
 
         if (!string.isEmpty()){
@@ -1551,7 +1549,7 @@ bool corelib::killWineServer(const QString &prefix_path, const QString &pid){
 
             while(!e_line.isNull()) {
                 qDebug() << e_line;
-                foreach (const QString &env, e_line.split("\0")) {
+                foreach (const QString &env, e_line.split(QChar('\0'))) {
                     QRegExp rx_env("^(.*)=(.*)?");
                     if (rx_env.indexIn(env) != -1){
                         if (keywords.contains(rx_env.cap(1))){
